@@ -1,7 +1,13 @@
-# Example [MkDocs](http://mkdocs.org/) website using GitLab Pages.
+![Build Status](https://gitlab.com/pages/mkdocs/badges/master/build.svg)
+
+---
+
+Example [MkDocs] website using GitLab Pages.
 
 Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation http://doc.gitlab.com/ee/pages/README.html.
+documentation https://docs.gitlab.com/ce/user/project/pages/.
+
+---
 
 ## GitLab CI
 
@@ -13,7 +19,8 @@ image: python:alpine
 
 before_script:
   - pip install mkdocs
-  # add your custom theme (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes) if not inside a theme_dir
+  ## Add your custom theme if not inside a theme_dir
+  ## (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
   # - pip install mkdocs-material
 
 pages:
@@ -32,17 +39,13 @@ pages:
 To work locally with this project, you'll have to follow the steps below:
 
 1. Fork, clone or download this project
-1. [Install](http://www.mkdocs.org/#installation) MkDocs
-1. Preview your project: `mkdocs serve`
+1. [Install][] MkDocs
+1. Preview your project: `mkdocs serve`,
+   your site can be accessed under `localhost:8000`
 1. Add content
 1. Generate the website: `mkdocs build` (optional)
 
-Read more at MkDocs's [documentation](http://www.mkdocs.org/).
-
-### Preview your site
-
-If you clone or download this project to your local computer and run `mkdocs serve`,
-your site can be accessed under `localhost:8000`.
+Read more at MkDocs [documentation][].
 
 ## GitLab User or Group Pages
 
@@ -52,6 +55,32 @@ your `username` or `groupname`. This can be done by navigating to your
 project's **Settings**.
 
 You'll need to configure your site too: change this line
-in your `mkdocs.yml`, from `"https://pages.gitlab.io/hugo/"` to `site_url = "https://namespace.gitlab.io"`.
+in your `mkdocs.yml`, from `"https://pages.gitlab.io/hugo/"` to
+`site_url = "https://namespace.gitlab.io"`.
 
 Read more about [user/group Pages][userpages] and [project Pages][projpages].
+
+## Did you fork this project?
+
+If you forked this project for your own use, please go to your project's
+**Settings** and remove the forking relationship, which won't be necessary
+unless you want to contribute back to the upstream project.
+
+## Troubleshooting
+
+1. CSS is missing! That means two things:
+
+    Either that you have wrongly set up the CSS URL in your templates, or
+    your static generator has a configuration option that needs to be explicitly
+    set in order to serve static assets under a relative URL.
+
+[ci]: https://about.gitlab.com/gitlab-ci/
+[mkdocs]: http://www.mkdocs.org
+[install]: http://www.mkdocs.org/#installation
+[documentation]: http://www.mkdocs.org
+[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
+[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
+
+---
+
+Forked from https://gitlab.com/morph027/mkdocs
