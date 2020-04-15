@@ -1,4 +1,4 @@
-image: python:alpine
+image: python:3.6-buster
 
 before_script:
   - pip install mkdocs
