@@ -8,7 +8,7 @@ before_script:
 
 pages:
   script:
-  - mkdocs build
+  - mkdocs build --strict --verbose
   artifacts:
     paths:
     - public
