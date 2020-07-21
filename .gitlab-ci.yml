@@ -6,7 +6,18 @@ before_script:
   # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
   # - pip install mkdocs-material
 
+test:
+  stage: test
+  script:
+  - mkdocs build --strict --verbose --site-dir test
+  artifacts:
+    paths:
+    - test
+  except:
+  - master
+
 pages:
+  stage: deploy
   script:
   - mkdocs build --strict --verbose
   artifacts:
