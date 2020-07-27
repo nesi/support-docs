@@ -18,15 +18,22 @@ defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
 image: python:3.8-buster
 
 before_script:
-  - pip install mkdocs
-  ## Add your custom theme if not inside a theme_dir
-  ## (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
-  # - pip install mkdocs-material
+  - pip install -r requirements.txt
+
+test:
+  stage: test
+  script:
+  - mkdocs build --strict --verbose --site-dir test
+  artifacts:
+    paths:
+    - test
+  except:
+  - master
 
 pages:
+  stage: deploy
   script:
-  - mkdocs build
-  - mv site public
+  - mkdocs build --strict --verbose
   artifacts:
     paths:
     - public
