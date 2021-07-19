@@ -1,3 +1,5 @@
+[hosted](https://cwal219.pages.hpcf.nesi.org.nz/mkdocs)
+
 ![Build Status](https://gitlab.com/pages/mkdocs/badges/master/build.svg)
 
 ---
