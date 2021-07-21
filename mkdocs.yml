@@ -14,3 +14,4 @@ markdown_extensions:
     locale: en
 plugins:
     - search
+    - section-index
