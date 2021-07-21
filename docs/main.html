@@ -1,0 +1,239 @@
+<main role="main">
+    <style>
+  .sidenav-articles, .sidenav-subsections {
+    display: none !important;
+  }
+</style>
+
+<script src="//theme.zdassets.com/theme_assets/85418/905247fc997b0a23dab1e14985b1adaf20ec1dbb.js"></script>
+<script src="//theme.zdassets.com/theme_assets/85418/d1a25165c0b31b763dcc501d5f255a5a7a3bdc63.js"></script>
+<script>
+  var labels = d3.set();
+</script>
+<section>
+  <script>
+    var scheduledColumn = $('#scheduled-column');
+    var incidentsColumn = $('#incidents-column');
+    var formatTime = d3.timeFormat("%d/%m/%Y %H%M");
+    var sp = new StatusPage.page({ page: 'nbt2wg9kltqd' });
+    sp.summary({
+      success: function (data) {
+        if (data.components.length) {
+          data.components.filter(d => d.group_id == null).forEach(function (d, i) {
+            d3.select("#componentsstatus").selectAll("span")
+              .data([d])
+              .enter()
+              .append("svg")
+              .attr("width", 16)
+              .attr("height", 16)
+              .append("circle")
+              .attr("r", 8)
+              .attr("cx", 8)
+              .attr("cy", 8)
+              .style("fill", function (d) {
+                return d.status == "operational" ? "green" : "orange";
+              })
+              .append("title")
+              .text(d => d.name)
+          })
+        }
+        if (data.scheduled_maintenances.length) {
+          data.scheduled_maintenances.forEach(function (d, i) {
+
+            d3.select("#scheduled-column").selectAll("ul")
+              .data([d])
+              .enter().append("li")
+              .append("a")
+              .attr("href", d => d.shortlink)
+              .text(d => `${d.name} - ${formatTime(new Date(d.scheduled_for))}`)
+            // format date/time nicer!
+          })
+          d3.selectAll(".statuspage-scheduled").style("display", "block")
+        } else if (data.scheduled_maintenances.length == null) {
+          d3.select("#scheduled-column").selectAll("ul")
+            .text("No scheduled maintenance")
+        }
+        if (data.incidents.length) {
+          d3.selectAll(".statuspage-incidents").style("display", "block")
+          data.incidents.forEach(function (d, i) {
+            d3.select("#incidents-column").selectAll("ul")
+              .data([d])
+              .enter().append("li")
+              .append("a")
+              .attr("href", d => d.shortlink)
+              .text(d => d.name)
+          })
+        } else if (data.incidents.length == null) {
+          d3.select("#incidents-column").selectAll("ul")
+            .text("No reported incident")
+        }
+
+        /*
+        d3.select("#nonoperational").selectAll("li")
+          .data(data.components.filter(d => d.status!=='operational'))
+          .enter().append("li")
+          .text(e => `${e.name}: ${e.status}, created: ${e.created_at}, updated: ${e.updated_at}`)
+        */
+      }
+    });
+  </script>
+      <div class="section-tree" id="statuspageUrl">
+      <section class="section-tree__column">
+    <h4>HPC Service Status</h4>
+      <span id="componentsstatus" style="visibility: visible"><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>Apply for Access</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>Data Transfer</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>Submit new HPC Jobs</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>Jobs running on HPC</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>Jupyter on NeSI (beta)</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>HPC Storage</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>Long-term Storage (Early Access)</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>User Support System</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>NeSI HPC Compute Infrastructure</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>NeSI Storage Infrastructure</title></circle></svg><svg width="16" height="16"><circle r="8" cx="8" cy="8" style="fill: green;"><title>NeSI Data Transfer Infrastructure</title></circle></svg></span>
+      <p>Subscribe to status updates or see all details: <a href="http://status.nesi.org.nz">status.nesi.org.nz</a>. Learn more about <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000751636">status notifications at NeSI.</a></p>
+      <div class="announcements statuspage-scheduled" style="display: block;">
+        <h4>Scheduled Maintenance</h4>
+        <ul id="scheduled-column">
+        <li><a href="https://stspg.io/2k8qp98lfvdw">my.nesi.org.nz system update - 21/07/2021 1630</a></li></ul>
+      </div>
+      <div class="announcements statuspage-incidents" style="display: none">
+        <h4>Incidents</h4>
+        <ul id="incidents-column">
+        </ul>
+      </div>
+    </section>
+    <section class="section-tree__column">
+      <div class="flex-item-300 announcements" style="display: block">
+        <h4>Recent Announcements</h4>
+  <div class="article-div announcements">
+    <div style="display: none" data-labels="">
+      announcement
+    </div>
+    <div class="label_data" data-labelsection=""> <ul><li class="content_by_label"><a href="https://support.nesi.org.nz/hc/en-gb/articles/360004491956-New-capabilities-for-Machine-Learning-and-GPU-pricing-updates">New capabilities for Machine Learning and GPU pricing updates <span class="show_lastMod">26/05/2021</span> <span class="show_labels">(announcement)</span></a></li><li class="content_by_label"><a href="https://support.nesi.org.nz/hc/en-gb/articles/360003984776-University-of-Auckland-ANSYS-users">University of Auckland - ANSYS users <span class="show_lastMod">04/04/2021</span> <span class="show_labels">(announcement)</span></a></li><li class="content_by_label"><a href="https://support.nesi.org.nz/hc/en-gb/articles/360001829555-Improvements-to-Fair-Share-job-prioritisation-on-M%C4%81ui">Improvements to Fair Share job prioritisation on Māui <span class="show_lastMod">02/02/2021</span> <span class="show_labels">(announcement)</span></a></li></ul></div>
+  </div>
+      </div>
+    </section>
+    </div>
+<!--   </div> -->
+</section>
+<hr>
+<section class="title-block">
+  <h1 class="h1">Welcome to the NeSI User Support Centre</h1>
+  <p>Use the categories and sections to browse the content, or perform a search from the top menu.</p>
+  <div class="menu_navbar menu">
+    
+  </div>
+</section>
+<section>
+  <div>
+  	<h2>User Resource Guide</h2>
+  	<p>This overview provides some useful links to get you started.</p>
+  </div>
+    <div class="section-tree">
+      <section class="section-tree__column">
+		<h3>How to request an account</h3>
+<p>
+  For information on getting an account and allocation with us, please visit
+</p>
+<p><a href="https://support.nesi.org.nz/hc/en-gb/articles/360000159715">Creating a NeSI Account</a><br>
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000174976">Applying for a NeSI project</a>
+</p>
+<h5>NeSI Account Portal</h5>
+<p>
+  This is our web portal for managing your account, project, authorized users, etc.
+</p>
+<p>
+  <a href="https://my.nesi.org.nz">my.nesi.org.nz</a>
+</p>
+<p>
+  Please use <a href="https://my.nesi.org.nz/">MyNeSI</a> to update your password,
+  manage the 2-factor authentication token, and check/request project membership.
+</p>
+</section><section class="section-tree__column">
+<h3><img src="//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png" width="42" height="42"> Getting connected</h3>
+<p>
+  Logging in to NeSI resources is primarily accomplished via SSH (or “secure shell”).
+  This is a method of getting a command-line interface on our clusters, which runs
+  a version of the Linux operating system. For more details on how to connect to
+  our systems, please visit
+</p>
+<p>
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001016335">Connecting to the NeSI Clusters via SSH</a>
+</p>
+<p>
+  If that sounds too intimidating, and you would like to try a zero-client web-browser
+  approach to using NeSI, you can log in to our JupyterHub: 
+  <a href="https://jupyter.nesi.org.nz/">https://jupyter.nesi.org.nz</a>
+</p>
+<p>
+  For an introduction to the features of Jupyter on NeSI, check out 
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615">Jupyter on NeSI</a>
+</p>
+</section><section class="section-tree__column">
+<h3><img src="//theme.zdassets.com/theme_assets/85418/79671a6d774b40afcb09faac902942fed76cfca8.png" width="42" height="42"> Transferring Files</h3>
+<p>
+  Small files can be moved to and from NeSI systems inside of Jupyter. SCP (Secure
+  CoPy) is another common method. If you have a large amount of data to move, you
+  can schedule transfers via
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000576776">Globus on NeSI.</a><br>
+  <a href="https://transfer.nesi.org.nz/">NESI Globus Web App https://transfer.nesi.org.nz/</a>
+</p>
+</section><section class="section-tree__column">
+<h3><img src="//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png" width="42" height="42"> Submitting Jobs</h3>
+<p>
+  Instructions to be executed by the node(s) assigned to you when your request
+  for resources can be met by the scheduler – can get very complicated, so it’s
+  best to refer to the documentation for the software you want to use to get started.
+</p>
+<p>
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000684396">Submitting your first job</a>
+</p>
+<p>
+  We also have a more detailed guide on the batch system that we recommend new
+  users read. It provides information about scheduling, job submission and how
+  to write scripts to accomplish various tasks.
+</p>
+<p>
+  <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000030876">Running Jobs on Māui and Mahuika</a>
+</p>
+</section><section class="section-tree__column">
+<h3><img src="//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png" width="42" height="42"> Usage reporting</h3>
+<p>
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000903776">Checking Slurm job efficiency</a><br>
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000691716">Slurm Reference Sheet</a>
+  <br>
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000177256">NeSI File Systems and Quotas</a>.
+</p>
+</section><section class="section-tree__column">
+<h3><img src="//theme.zdassets.com/theme_assets/85418/d84f915c1b7b670c39e246a991d877c9ac21d3e2.png" width="42" height="42"> Training</h3>
+<h4>Introductory Workshops</h4>
+<p>
+  We offer introductory workshops for new HPC users on most weeks of the year.
+  For more information on when we hold these and how to register your interest,
+  see
+  <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000428676" target="_blank" rel="noopener">NeSI Introductory Workshop</a>.
+</p>
+<p>
+  If you want to learn more about using the command line, we have some useful resources
+  on UNIX Basics.
+  <a href="/hc/en-gb/articles/360001393596" target="_blank" rel="noopener">Unix Shell: Reference Sheet</a>
+</p>
+</section><section class="section-tree__column">
+<!-- <h2>Need Help?</h2> -->
+<h3>Help desk</h3>
+<p>
+  The NeSI help desk can be contacted via email
+  <a href="mailto:support@nesi.org.nz">support@nesi.org.nz</a> or this
+  <a href="https://support.nesi.org.nz/hc/en-gb/requests/new" target="_blank" rel="noopener">support.nesi.org.nz</a>
+  site.
+</p>
+<!-- <h3>Knowledge base</h3>
+<p>
+  The user support documentation is published in the knowledge base site&nbsp;<a href="https://support.nesi.org.nz/hc/en-gb/categories/360000013856" target="_blank" rel="noopener">support.nesi.org.nz</a>.
+</p> -->
+</section><section class="section-tree__column">
+    <h3><img src="//theme.zdassets.com/theme_assets/85418/9a90082aeba086623edb2a7d51d4dc02cfeb391f.png" width="42" height="42"> NeSI Consultancy</h3>
+    <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000751916" target="_blank" rel="noopener">NeSI's Consultancy service provides scientific and HPC-focussed computational and data science support to research project across a range of domains.</a>
+</section>
+</div>
+</section>
+<section>
+  
+</section>
+
+<section class="submit-ticket is-hidden">
+  <h2 class="h2">Didn’t find what you were looking for?</h2>
+  <p class="h5">Let us help you!</p>
+</section>
+</main>

@@ -4,6 +4,7 @@ from json2html import json2html
 import json
 import re
 import importlib
+import subprocess
 
 class ZendeskAPI:
     def __init__(self, zendesk_url, username, password):
@@ -78,7 +79,15 @@ class ZendeskAPI:
                 }}
         result = self._post(f"en-gb/sections/{section_id}/articles", json = article)
         return result
-    
+
+def to_markdown(html):
+    """ Use pandoc to convert HTML pages to Markdown """
+    markdown = subprocess.run(["pandoc", "-t","markdown+grid_tables", "-f", "html"],
+                            input = html, stdout = subprocess.PIPE,
+                            check = True,
+                            encoding='utf-8').stdout
+    return markdown
+
 def create_category_index(category):
     return f"""\
         {{% extends "category.md" -%}}
@@ -87,6 +96,8 @@ def create_category_index(category):
         {{% endblock %}}
     """
 
+def create_article(article):
+    return to_markdown(article["body"])
 
 
 
@@ -136,6 +147,10 @@ for category in z._get("categories.json").json()["categories"]:
 
         print(f"    {section['name']}")
         for article in z._get(f"sections/{section['id']}/articles.json").json()["articles"]:
+            article_sanitized=article['name'].replace(' ', '_').replace('/', '-')
+
+            with open(f"{doc_root_dir}/{category_sanitized}/{section_sanitized}/{article_sanitized}.md", 'w') as article_file:
+                article_file.write(create_article(article))
             print(f"        {article['name']}")
 
 
