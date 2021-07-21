@@ -19,7 +19,7 @@ pages:
   # - mkdir .public
   # - cp -r * .public
   # - mv .public public
-  - mkdocs build --strict --verbose
+  - mkdocs build --strict --verbose --site-dir public
   artifacts:
     paths:
     - public
