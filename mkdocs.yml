@@ -1,13 +1,9 @@
 site_name: NeSI Support Center
 site_url: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
-site_dir: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
+site_dir: public
 repo_url: https://github.com/example/repository/
 repo_name: GitLab
 site_description: NeSI Support Documentation
-nav:
-    - 'index.md'
-    - 'about.md'
-    - 'New Request': https://support.nesi.org.nz/hc/en-gb
 theme:
     name: readthedocs
 markdown_extensions:
@@ -15,3 +11,6 @@ markdown_extensions:
       permalink: True
       baselevel: 1
       toc_depth: 3
+    locale: en
+plugins:
+    - search
