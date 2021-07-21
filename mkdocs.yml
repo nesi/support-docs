@@ -10,7 +10,4 @@ theme:
 plugins:
     - search
 nav:
-    - Getting_Started
-    - Scientific_Computing
-    - Storage
-    - General
+
