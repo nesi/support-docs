@@ -7,8 +7,8 @@ site_description: NeSI Support Documentation
 theme:
     name: readthedocs
     locale: en
-    features:
-        - navigation.indexes
+    custom_dir: 'theme/'
+
 markdown_extensions:
     - toc:
         permalink: True
