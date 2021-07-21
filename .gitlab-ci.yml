@@ -16,9 +16,9 @@ test:
 pages:
   stage: deploy
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+  # - mkdir .public
+  # - cp -r * .public
+  # - mv .public public
   - mkdocs build --strict --verbose
   artifacts:
     paths:
