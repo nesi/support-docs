@@ -1,3 +1,12 @@
-site_name: My Docs by GitLab Pages
+site_name: NeSI Support Center
 site_url: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
-site_dir: public
+site_dir: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
+repo_url: https://github.com/example/repository/
+repo_name: GitLab
+site_description: NeSI Support Documentation
+# nav:
+#     - Home: index.md'
+#     - My requests
+#     - Submit a request
+theme:
+    name: readthedocs
