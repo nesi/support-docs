@@ -4,10 +4,40 @@ site_dir: public
 repo_url: https://github.com/example/repository/
 repo_name: GitLab
 site_description: NeSI Support Documentation
+# nav:
+#     - 'index.md'
+#     - 'about.md'
+#     - 'New Request': https://support.nesi.org.nz/hc/en-gb
 nav:
-    - 'index.md'
-    - 'about.md'
-    - 'New Request': https://support.nesi.org.nz/hc/en-gb
+  General:
+    Announcements: {}
+    FAQs: {}
+    NeSI_Policies: {}
+    Release_Notes: {}
+  Getting_Started:
+    Accessing_the_HPCs: {}
+    Accounts,_Projects_and_Allocations: {}
+    Cheat_Sheets: {}
+    First_Steps: {}
+    Getting_Help: {}
+    Release_Notes_my.nesi.org.nz: {}
+    my.nesi.org.nz: {}
+  Scientific_Computing:
+    HPC_Software_Environment: {}
+    Interactive_computing_using_Jupyter: {}
+    Manuals,_User_Guides_and_Training: {}
+    Profiling_and_Debugging: {}
+    Release_Notes_jupyter.nesi.org.nz: {}
+    "Running_Jobs_on_M\u0101ui_and_Mahuika": {}
+    Supported_Applications: {}
+    Terminal_Setup: {}
+    The_NeSI_High_Performance_Computers: {}
+  Storage:
+    Data_Recovery: {}
+    Data_Transfer_Services: {}
+    File_Systems_and_Quotas: {}
+    Long-Term_Storage: {}
+    Release_Notes_Long-Term_Storage: {}
 theme:
     name: readthedocs
     locale: en
