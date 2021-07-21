@@ -10,6 +10,6 @@ nav:
     - 'New Request': https://support.nesi.org.nz/hc/en-gb
 theme:
     name: readthedocs
-    locale: en-gb
+    locale: en
 plugins:
     - search
