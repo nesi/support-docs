@@ -4,7 +4,9 @@ site_dir: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
 repo_url: https://github.com/example/repository/
 repo_name: GitLab
 site_description: NeSI Support Documentation
-nav:
-    - Home: index.md'
-    - My requests
-    - Submit a request
+# nav:
+#     - Home: index.md'
+#     - My requests
+#     - Submit a request
+theme:
+    name: readthedocs
