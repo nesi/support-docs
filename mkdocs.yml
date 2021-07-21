@@ -10,39 +10,7 @@ theme:
 plugins:
     - search
 nav:
-    - Getting_Started:
-        - Release_Notes_my.nesi.org.nz
-        - Accounts,_Projects_and_Allocations
-        - Accessing_the_HPCs
-        - First_Steps
-        - Getting_Help
-        - Cheat_Sheets
-        - my.nesi.org.nz
-        - Logging_in_to_my.nesi.org.nz
-        - Navigating_the_my.nesi.org.nz_web_interface
-        - The_NeSI_Project_Request_Form
-        - User_Feedback_Portal_for_my.nesi.org.nz
-    - Scientific_Computing:
-        - Release_Notes_jupyter.nesi.org.nz
-        - Interactive_computing_using_Jupyter
-        - The_NeSI_High_Performance_Computers
-        - Supported_Applications
-        - "Running_Jobs_on_M\u0101ui_and_Mahuika"
-        - Profiling_and_Debugging
-        - HPC_Software_Environment
-        - Terminal_Setup
-        - Manuals,_User_Guides_and_Training
-        - '''Quick_Tips''_Training_Webinars'
-        - Manuals
-        - XC50_Aries_Network_Architecture
-    - Storage:
-        - Release_Notes_Long-Term_Storage
-        - File_Systems_and_Quotas
-        - Data_Recovery
-        - Data_Transfer_Services
-        - Long-Term_Storage
-    - General:
-        - Announcements
-        - FAQs
-        - Release_Notes
-        - NeSI_Policies
+    - Getting_Started
+    - Scientific_Computing
+    - Storage
+    - General
