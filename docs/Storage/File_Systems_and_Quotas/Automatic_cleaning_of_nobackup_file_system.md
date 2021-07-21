@@ -29,6 +29,11 @@ Files are deleted if they meet **all** of the following criteria:
     previously, and as such is listed in a the project\'s
     nobackup `.policy` directory.
 
+> ### Tip {#prerequisites}
+>
+> You can get a list of files marked for deletion with the command
+> `nn_doomed_list`.
+
 The general process will follow a schedule as follows:
 
 -   **Notify**[ (at 106 days), then two weeks later

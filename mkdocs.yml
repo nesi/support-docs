@@ -10,3 +10,8 @@ nav:
     - 'New Request': https://support.nesi.org.nz/hc/en-gb
 theme:
     name: readthedocs
+markdown_extensions:
+  - toc:
+      permalink: True
+      baselevel: 1
+      toc_depth: 3

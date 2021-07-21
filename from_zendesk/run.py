@@ -5,7 +5,7 @@ import json
 import re
 import importlib
 import subprocess
-
+import yaml
 class ZendeskAPI:
     def __init__(self, zendesk_url, username, password):
         self.zendesk_url = zendesk_url
@@ -121,11 +121,14 @@ zendesk_url = "https://nesi.zendesk.com/api/v2/help_center"
 #         for article in thing["articles"]: unpack(article, indent+4)
 
 
+site_nav={"nav":[]}
+
 z = ZendeskAPI(zendesk_url, username, password)
 
 for category in z._get("categories.json").json()["categories"]:
 
     category_sanitized=category['name'].replace(' ', '_')
+    site_nav["nav"].append({category_sanitized:[]})
 
     try: os.mkdir(f"{doc_root_dir}/{category_sanitized}")
     except FileExistsError: pass
@@ -134,7 +137,7 @@ for category in z._get("categories.json").json()["categories"]:
         index_file.write(create_category_index(category))
 
     print(category["description"])
-
+    section_nav=[]
     for section in z._get(f"categories/{category['id']}/sections.json").json()["sections"]:
 
         section_sanitized=section['name'].replace(' ', '_')
@@ -146,11 +149,14 @@ for category in z._get("categories.json").json()["categories"]:
             index_file.write(create_category_index(category))
 
         print(f"    {section['name']}")
+        nav_article=[]
         for article in z._get(f"sections/{section['id']}/articles.json").json()["articles"]:
             article_sanitized=article['name'].replace(' ', '_').replace('/', '-')
-
+            nav_article.append(article_sanitized)
             with open(f"{doc_root_dir}/{category_sanitized}/{section_sanitized}/{article_sanitized}.md", 'w') as article_file:
                 article_file.write(create_article(article))
             print(f"        {article['name']}")
+        section_nav.append({section_sanitized:nav_article})
+    site_nav["nav"].append({category_sanitized:section_nav})
 
-
+print(yaml.dump(site_nav))
