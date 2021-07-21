@@ -7,11 +7,11 @@ site_description: NeSI Support Documentation
 theme:
     name: readthedocs
     locale: en
-markdown_extensions:
-    - toc:
-        permalink: True
-        baselevel: 1
-        toc_depth: 3
+# markdown_extensions:
+#     - toc:
+#         permalink: True
+#         baselevel: 1
+#         toc_depth: 3
 plugins:
-    # - search
+    - search
     - section-index
