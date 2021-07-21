@@ -9,5 +9,3 @@ theme:
     locale: en
 plugins:
     - search
-nav:
-
