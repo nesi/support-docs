@@ -10,7 +10,6 @@ site_description: NeSI Support Documentation
 #     custom_dir: 'theme/'
 theme:
     name: readthedocs
-    locale: en
 # markdown_extensions:
 #     - toc:
 #         permalink: True
