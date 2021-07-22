@@ -1,14 +1,20 @@
-{%- if not nav_item.children %}
-<li>
-    <a href="{{ nav_item.url|url }}" class="dropdown-item{% if nav_item.active %} active{% endif %}">{{ nav_item.title }}</a>
-</li>
-{%- else %}
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">{{ nav_item.title }}</a>
-    <ul class="dropdown-menu">
-        {%- for nav_item in nav_item.children %}
-            {% include "nav-sub.html" %}
-        {%- endfor %}
-    </ul>
-  </li>
-{%- endif %}
+<ul>
+  {% for nav_item in nav %}
+      {% if nav_item.children %}
+          <li>{{ nav_item.title }}
+              <ul>
+              {% for nav_item in nav_item.children %}
+                  <li class="{% if nav_item.active%}current{%endif%}">
+                      <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                  </li>
+              {% endfor %}
+              </ul>
+          </li>
+      {% else %}
+          <li class="{% if nav_item.active%}current{%endif%}">
+              <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+          </li>
+      {% endif %}
+
+  {% endfor %}
+</ul>
