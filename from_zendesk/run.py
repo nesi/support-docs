@@ -133,8 +133,8 @@ for category in z._get("categories.json").json()["categories"]:
     try: os.mkdir(f"{doc_root_dir}/{category_sanitized}")
     except FileExistsError: pass
 
-    with open(f"{doc_root_dir}/{category_sanitized}/index.md", 'w') as index_file:
-        index_file.write(create_category_index(category))
+    # with open(f"{doc_root_dir}/{category_sanitized}/index.md", 'w') as index_file:
+    #     index_file.write(create_category_index(category))
 
     print(category["description"])
     section_nav=[]
@@ -145,8 +145,8 @@ for category in z._get("categories.json").json()["categories"]:
         try: os.mkdir(f"{doc_root_dir}/{category_sanitized}/{section_sanitized}")
         except FileExistsError: pass
 
-        with open(f"{doc_root_dir}/{category_sanitized}/{section_sanitized}/index.md", 'w') as index_file:
-            index_file.write(create_category_index(category))
+        # with open(f"{doc_root_dir}/{category_sanitized}/{section_sanitized}/index.md", 'w') as index_file:
+        #     index_file.write(create_category_index(category))
 
         print(f"    {section['name']}")
         nav_article=[]
