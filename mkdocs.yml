@@ -6,11 +6,14 @@ repo_name: GitLab
 site_description: NeSI Support Documentation
 theme:
     name: readthedocs
-markdown_extensions:
-  - toc:
-      permalink: True
-      baselevel: 1
-      toc_depth: 3
     locale: en
+    custom_dir: 'theme/'
+
+markdown_extensions:
+    - toc:
+        permalink: True
+        baselevel: 1
+        toc_depth: 4
 plugins:
     - search
+    # - section-index
