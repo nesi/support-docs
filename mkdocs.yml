@@ -4,16 +4,18 @@ site_dir: public
 repo_url: https://github.com/example/repository/
 repo_name: GitLab
 site_description: NeSI Support Documentation
+# theme:
+#     name: bootstrap4
+#     locale: en
+#     custom_dir: 'theme/'
 theme:
-    name: bootstrap4
+    name: readthedocs
     locale: en
-#    custom_dir: 'theme/'
-
-markdown_extensions:
-    - toc:
-        permalink: True
-        baselevel: 1
-        toc_depth: 4
+# markdown_extensions:
+#     - toc:
+#         permalink: True
+#         baselevel: 1
+#         toc_depth: 4
 plugins:
     - search
     # - section-index
