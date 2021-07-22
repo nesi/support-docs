@@ -10,7 +10,7 @@ site_description: NeSI Support Documentation
 #     custom_dir: 'theme/'
 theme:
     name: bootstrap4
-    custom_dir: 'theme/'
+    custom_dir: 'mkdocs_bootstrap4/'
 markdown_extensions:
     - toc:
         permalink: True
