@@ -9,12 +9,13 @@ site_description: NeSI Support Documentation
 #     locale: en
 #     custom_dir: 'theme/'
 theme:
-    name: mkdocs
-# markdown_extensions:
-#     - toc:
-#         permalink: True
-#         baselevel: 1
-#         toc_depth: 4
+    name: mkdocs_bootstrap4
+    custom_dir: 'theme/'
+markdown_extensions:
+    - toc:
+        permalink: True
+        baselevel: 1
+        toc_depth: 4
 plugins:
     - search
     # - section-index
