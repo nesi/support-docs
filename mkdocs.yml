@@ -9,13 +9,13 @@ site_description: NeSI Support Documentation
 #     locale: en
 #     custom_dir: 'theme/'
 theme:
-    name: readthedocs
-    custom_dir: 'readthedocs'
-markdown_extensions:
-    - toc:
-        permalink: True
-        baselevel: 1
-        toc_depth: 4
+    name: mkdocs
+    custom_dir: 'mkdocs'
+# markdown_extensions:
+#     - toc:
+#         permalink: True
+#         baselevel: 1
+#         toc_depth: 4
 plugins:
     - search
     # - section-index
