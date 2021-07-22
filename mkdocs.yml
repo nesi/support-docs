@@ -7,7 +7,7 @@ site_description: NeSI Support Documentation
 theme:
     name: bootstrap4
     locale: en
-#    custom_dir: 'theme/'
+    custom_dir: 'theme/'
 
 markdown_extensions:
     - toc:
