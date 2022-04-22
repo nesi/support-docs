@@ -1,4 +1,3 @@
 .vscode/*
 from_zendesk/cache/**
-docs/**
 pubic/**
