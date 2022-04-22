@@ -50,7 +50,7 @@ the cluster and your ssh config file is set up as described
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
-to with `sftp://mahuika`. (ctrl + L opens address bar)
+to with `sftp://mahuika`. ([ctrl]{.kbd} + [L]{.kbd} opens address bar)
 
 This does not work for File Explorer (Windows default)
 

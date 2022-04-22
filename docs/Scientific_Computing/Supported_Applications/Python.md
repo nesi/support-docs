@@ -9,8 +9,21 @@ System Python vs Environment Modules
 Our operating systems include Python but not an up to date version, so
 we strongly recommend that you load one of our Python environment
 modules instead.  They include optimised builds of the most popular
-Python packages for computational work such as numpy, scipy, matplotlib,
-and many more.
+Python packages for computational work such as *numpy*, *scipy*,
+*matplotlib*, and many more.
+
+NeSI Customisations
+-------------------
+
+Our most recent Python environment modules have:
+
+-   *multiprocessing.cpu\_count()* patched to return only the number of
+    CPUs available to the process, which in a Slurm job can be fewer
+    than the number of CPUs on the node.
+
+-   PYTHONUSERBASE set to a path which includes the toolchain, so that
+    incompatible builds of the same version of Python don\'t attempt to
+    share user-installed libraries.
 
 Example scripts
 ===============
@@ -298,14 +311,16 @@ Depending on the package you can install packages using:
 
 -   the Python Package Manager PIP
 
+```{=html}
 <!-- -->
-
+```
     $ pip install --prefix /nesi/project/<projectID>/PyPackages cogent
 
 -   use source code
 
+```{=html}
 <!-- -->
-
+```
     $ python setup.py install --prefix /nesi/project/<projectID>/PyPackages
 
  Python will not find the package by default, therefore you need to add
@@ -330,10 +345,10 @@ Therefore we create a modulefile let\'s say at
 `/nesi/project/<projectID>/modulefiles/PyXtra` and assume we installed a
 Python package into `/nesi/project/<projectID>/PyPackages`:
 
-    #%module
+    #%Module
     module load Python/3.7.3-gimkl-2018b
        # provide a description
-    whatis "The packageXY for python."
+    module-whatis "The packageXY for python."
     proc ModulesHelp { } {  puts stderr "This module loads the packageXY. It requires python3." }
 
     set PKG_PREFIX /nesi/project/<projectID>/PyPackages

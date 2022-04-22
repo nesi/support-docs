@@ -4,24 +4,15 @@ NeSI software stack is supported. If you would like to build your own
 desktop containers with the code
 [here](https://github.com/nesi/nesi-singularity-recipes).
 
-Rendering is done cluster-side, and compressed before being sent to your
-local machine. This means any rendering should be significantly more
-responsive than when using X11 on its own (approximately 40 times
-faster).
+Rendering is d[one cluster-side]{.dfn .dictionary-of-numbers}, and
+compressed before being sent to your local machine. This means any
+rendering should be significantly more responsive than when using X[11
+on its own ]{.dfn .dictionary-of-numbers}(approximately [40 times
+faster)]{.dfn .dictionary-of-numbers}.
 
 The quickest and easiest way to get started with a desktop is through
 Jupyter on NeSI,[ ]{style="font-size: 15px;"}[connect
 here](https://jupyter.nesi.org.nz/)[.]{style="font-size: 15px;"}
-
-First Time Install
-------------------
-
-In a terminal, run the command:
-
-    pip install --user git+https://github.com/nesi/nesi-virtual-desktops
-
-Restart your JupyterLab instance and you should see a \'VirtualDesktop\'
-icon.
 
 Connecting
 ----------
@@ -29,16 +20,27 @@ Connecting
 Click the icon labelled \'VirtualDesktop\', The desktop instance will
 last as long as your Jupyter session.
 
+Setup Scripts
+-------------
+
+Several scripts are available that will help you get started by setting
+up desktop shortcuts and loading module in the base environment. These
+can be found at `$VDT_ROOT/setup_scripts`
+
 Settings
 ========
 
-Modules
--------
+Environment {#modules}
+-----------
 
 You may manage modules inside a terminal as usual using the `module`
 command, however these changes won\'t propagate to the desktop
 environment. Modules to be loaded in the desktop can be set by modifying
-the file at `~/.vnc/setup.config`
+the file at `~/.vdt/vdtrc.sh`. This file is sourced before launching the
+desktop.
+
+ 
+-
 
 noVNC
 -----

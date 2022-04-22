@@ -6,8 +6,8 @@ Slurm Commands
 --------------
 
 A complete list of Slurm commands can be found
-[here](https://slurm.schedmd.com/man_index.html), or by entering man
-slurm into a terminal
+[here](https://slurm.schedmd.com/man_index.html), or by entering [man
+slurm]{.kbd} into a terminal
 
 sbatch
 
@@ -83,7 +83,8 @@ Shows the current state of our SLURM partitions.
 ----------------
 
 A complete list of *sbatch* options can be found
-[here](https://slurm.schedmd.com/sbatch.html), or by running man sbatch
+[here](https://slurm.schedmd.com/sbatch.html), or by running [man
+sbatch]{.kbd}
 
 Options can be provided on the command line or in the batch file as an
 `#SBATCH` directive.  The option name and value can be separated using
@@ -153,55 +154,55 @@ Will send message at *80%* walltime
 |                       |                       | run across 2 nodes.   |
 +-----------------------+-----------------------+-----------------------+
 | \--ntasks             | `#SBATCH --ntasks=2`  | Will start 2          |
-|                       |                       | [MPI](https://support |
-|                       |                       | .nesi.org.nz/knowledg |
-|                       |                       | e/articles/3600006902 |
-|                       |                       | 75/)                  |
+|                       |                       | [MPI                  |
+|                       |                       | ](https://support.nes |
+|                       |                       | i.org.nz/knowledge/ar |
+|                       |                       | ticles/360000690275/) |
 |                       |                       | tasks.                |
 +-----------------------+-----------------------+-----------------------+
-| \--ntasks-per-node    | `#SBATCH --ntasks-per | Will start 1 task per |
-|                       | -node=1`              | requested node        |
+| \--ntasks-per-node    | `#SBATCH              | Will start 1 task per |
+|                       |  --ntasks-per-node=1` | requested node        |
 +-----------------------+-----------------------+-----------------------+
-| \--cpus-per-task      | `#SBATCH --cpus-per-t | Will request 10       |
-|                       | ask=10`               | *logical* CPUs per    |
+| \--cpus-per-task      | `#SBATC               | Will request 10       |
+|                       | H --cpus-per-task=10` | *logical* CPUs per    |
 |                       |                       | task.                 |
 |                       |                       |                       |
 |                       |                       | See                   |
-|                       |                       | [Hyperthreading](http |
-|                       |                       | s://support.nesi.org. |
-|                       |                       | nz/hc/en-gb/articles/ |
-|                       |                       | 360000568236-Hyperthr |
-|                       |                       | eading).              |
+|                       |                       | [Hyperth              |
+|                       |                       | reading](https://supp |
+|                       |                       | ort.nesi.org.nz/hc/en |
+|                       |                       | -gb/articles/36000056 |
+|                       |                       | 8236-Hyperthreading). |
 +-----------------------+-----------------------+-----------------------+
-| \--mem-per-cpu        | `#SBATCH --mem-per-cp | Memory Per *logical*  |
-|                       | u=512MB`              | CPU.                  |
+| \--mem-per-cpu        | `#SBATCH              | Memory Per *logical*  |
+|                       |  --mem-per-cpu=512MB` | CPU.                  |
 |                       |                       |                       |
 |                       |                       | `--mem` Should be     |
 |                       |                       | used if shared memory |
 |                       |                       | job.                  |
 |                       |                       |                       |
 |                       |                       | See [How do I request |
-|                       |                       | memory?](https://supp |
-|                       |                       | ort.nesi.org.nz/hc/en |
-|                       |                       | -gb/articles/36000110 |
-|                       |                       | 8756).                |
+|                       |                       | memory                |
+|                       |                       | ?](https://support.ne |
+|                       |                       | si.org.nz/hc/en-gb/ar |
+|                       |                       | ticles/360001108756). |
 +-----------------------+-----------------------+-----------------------+
 | \--array              | `#SBATCH --array=1-5` | Will submit job 5     |
 |                       |                       | times each with a     |
 |                       |                       | different             |
-|                       |                       | `$SLURM_ARRAY_TASK_ID |
 |                       |                       | `                     |
+|                       |                       | $SLURM_ARRAY_TASK_ID` |
 |                       |                       | (1,2,3,4,5)           |
 +-----------------------+-----------------------+-----------------------+
-|                       | `#SBATCH --array=0-20 | Will submit job 5     |
-|                       | :5`                   | times each with a     |
+|                       | `#S                   | Will submit job 5     |
+|                       | BATCH --array=0-20:5` | times each with a     |
 |                       |                       | different             |
-|                       |                       | `$SLURM_ARRAY_TASK_ID |
 |                       |                       | `                     |
+|                       |                       | $SLURM_ARRAY_TASK_ID` |
 |                       |                       | (0,5,10,15,20)        |
 +-----------------------+-----------------------+-----------------------+
-|                       | `#SBATCH --array=1-10 | Will submit 1 though  |
-|                       | 0%10`                 | to 100 jobs but no    |
+|                       | `#SBA                 | Will submit 1 though  |
+|                       | TCH --array=1-100%10` | to 100 jobs but no    |
 |                       |                       | more than 10 at once. |
 +-----------------------+-----------------------+-----------------------+
 
@@ -215,28 +216,28 @@ Will send message at *80%* walltime
 |                       |                       | at a time, max 15     |
 |                       |                       | minutes*.             |
 +-----------------------+-----------------------+-----------------------+
-| \--profile            | `#SBATCH --profile=AL | Allows generation of  |
-|                       | L`                    | a .h5 file containing |
+| \--profile            | `#                    | Allows generation of  |
+|                       | SBATCH --profile=ALL` | a .h5 file containing |
 |                       |                       | job profile           |
 |                       |                       | information.          |
 |                       |                       |                       |
 |                       |                       | See [Slurm Native     |
-|                       |                       | Profiling](https://su |
-|                       |                       | pport.nesi.org.nz/hc/ |
-|                       |                       | en-gb/articles/360000 |
-|                       |                       | 810616-How-can-I-prof |
-|                       |                       | ile-a-SLURM-job-).    |
+|                       |                       | Profiling](https:/    |
+|                       |                       | /support.nesi.org.nz/ |
+|                       |                       | hc/en-gb/articles/360 |
+|                       |                       | 000810616-How-can-I-p |
+|                       |                       | rofile-a-SLURM-job-). |
 +-----------------------+-----------------------+-----------------------+
-| \--dependency         | `#SBATCH --dependency | Will only start after |
-|                       | =afterok:123456789`   | the job 123456789 has |
+| \--dependency         | `#SBATCH --dependen   | Will only start after |
+|                       | cy=afterok:123456789` | the job 123456789 has |
 |                       |                       | completed.            |
 +-----------------------+-----------------------+-----------------------+
-| \--hint               | `#SBATCH --hint=nomul | Disables              |
-|                       | tithread`             | [hyperthreading](http |
-|                       |                       | s://support.nesi.org. |
-|                       |                       | nz/hc/en-gb/articles/ |
-|                       |                       | 360000568236-Hyperthr |
-|                       |                       | eading),              |
+| \--hint               | `#SBATCH              | Disables              |
+|                       | --hint=nomultithread` | [hyperth              |
+|                       |                       | reading](https://supp |
+|                       |                       | ort.nesi.org.nz/hc/en |
+|                       |                       | -gb/articles/36000056 |
+|                       |                       | 8236-Hyperthreading), |
 |                       |                       | be aware that this    |
 |                       |                       | will significantly    |
 |                       |                       | change how your job   |

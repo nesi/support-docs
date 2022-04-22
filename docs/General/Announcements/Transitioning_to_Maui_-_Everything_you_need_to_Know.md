@@ -1,7 +1,7 @@
-To make your transition experience (from Kupe to Maui) as seamless as
+To make your transition experience (from Kupe to Māui) as seamless as
 possible, there are several important steps and points you need to take
 into consideration. **Please read this entire article before trying to
-access Maui.**
+access Māui.**
 
 **Note: **Please
 [report](mailto:support@nesi.org.nz?subject=Reporting%20an%20error%20in%20the%20Transition%20to%20Maui%20documentation)
@@ -76,9 +76,9 @@ If you must access NeSI from outside NIWA you will need to set up
 authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication).
 
 If using two factor authentication, then you will be ready to log on to
-the NeSI lander node, then to jump to a Maui login node.
+the NeSI lander node, then to jump to a Māui login node.
 
--   To log on to Maui, follow the instructions
+-   To log on to Māui, follow the instructions
     [here](https://support.nesi.org.nz/hc/en-gb/articles/360000161315-Logging-in-to-the-HPCs).
 
 Other Important Information
@@ -87,11 +87,11 @@ Other Important Information
 [This link](https://support.nesi.org.nz/hc/en-gb/sections/360000034335)
 provides useful information about the new HPCs.
 
-You can gain a better understanding of the Maui filesystems
+You can gain a better understanding of the Māui filesystems
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas).
 In particular, please note:
 
--   Maui (shared with Mahuika), i.e. the HPCF, has a very large, very
+-   Māui (shared with Mahuika), i.e. the HPCF, has a very large, very
     high performance scratch file system called `/nesi/nobackup`. You
     should do most of your computing in this file system.
 -   Data in `/nesi/nobackup` will be automatically removed from time to
@@ -100,7 +100,7 @@ In particular, please note:
     disk and onto tape, and vice versa.
 
 Details of how the workload manager (Slurm) is configured (for NeSI
-users) on Maui can be
+users) on Māui can be
 found [here](https://support.nesi.org.nz/hc/en-gb/articles/360000204116-M%C4%81ui-Slurm-Partitions).
 In particular, please note:
 
@@ -112,18 +112,18 @@ In particular, please note:
 -   There is a Slurm primer
     [here](https://support.nesi.org.nz/hc/en-gb/articles/360000359576-Primer-Slurm-Usage)
     that provides additional information about how to submit jobs
-    between the Maui and Maui\_Ancil Slurm clusters.
+    between the Māui and Māui\_Ancil Slurm clusters.
 
 You should have access to the same software you used Kupe. See how to
 [find
 modules](https://support.nesi.org.nz/hc/en-gb/articles/360000360576-Finding-Software)
-using the -S option on Maui (which will also be available of Maui\_Ancil
+using the -S option on Māui (which will also be available of Māui\_Ancil
 nodes in November).  Notice too that we are introducing a [new support
 model](https://support.nesi.org.nz/hc/en-gb/articles/360000170355-NeSI-Application-Support-Model).
 
 The following link provides information on how to [compile and link
 software](https://support.nesi.org.nz/hc/en-gb/articles/360000336076-Compiling-software-on-M%C4%81ui)
-on Maui:
+on Māui:
 
 If you run into a problem, please put in a
 [ticket](https://support.nesi.org.nz/hc/en-gb/requests/new).
@@ -153,7 +153,7 @@ Data Synchronisation
 
 Unless you have advised us otherwise, all the data you have stored on
 Kupe's  `/home, /nesi/project`, and `/nesi/nobackup` filesystems has
-been transferred to Maui's `/home, /nesi/project`, and `/nesi/nobackup`
+been transferred to Māui's `/home, /nesi/project`, and `/nesi/nobackup`
 filesystems. 
 
 **Syncing will continue until you delete the files**:
@@ -162,9 +162,9 @@ filesystems. 
 -   `/nesi/project/<project_id>/KUPE_SYNC`
 -   `/nesi/nobackup/<project_id>/KUPE_SYNC`
 
-From either Kupe or Maui. 
+From either Kupe or Māui. 
 
-**Until you delete these files any file you create on Maui will be
+**Until you delete these files any file you create on Māui will be
 removed at the next sync.**
 
 ### Data Loss Risk Mitigation
@@ -208,7 +208,7 @@ and what your current quotas are use:
 Then re-run with the appropriate settings.
 
 We will need to set new quotas for all users and projects transitioning
-from Kupe to Maui (i.e. the shared HPCF filesystems). You should review
+from Kupe to Māui (i.e. the shared HPCF filesystems). You should review
 the purpose of each filesystem as explained
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas),
 and the [associated

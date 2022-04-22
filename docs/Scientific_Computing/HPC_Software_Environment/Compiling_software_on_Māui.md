@@ -65,7 +65,7 @@ modules may be swapped.
 ### The build node
 
 Māui has a dedicated build node,
-`login.maui.niwa.co.nz`{.highlighter-rouge}, which should be used for
+`login.maui.nesi.org.nz`{.highlighter-rouge}, which should be used for
 building code. Please do not build code on the compute nodes by
 submitting a build job through SLURM:
 
@@ -145,7 +145,7 @@ Note: There is not **the** best compiler. Depending on your
 application/algorithms, different compilers can optimise the code
 better. Keep in mind trying different compilers.
 
-### Targetting a CPU
+### Targeting a CPU {#targetting-a-cpu}
 
 Compiling a program translates source code into machine instructions. It
 is important to let the compiler know for which CPU ("target") the
@@ -168,7 +168,7 @@ module swap craype-x86-skylake craype-broadwell
 :::
 
 Choosing the "Broadwell" target is also necessary if you want to build
-code using the older GCC compilers prior to GCC v6.1.0, which were
+code using the older GCC compilers prior to GCC 6.1.0, which were
 released before Skylake became available. If you see the error message
 
 ::: {.highlighter-rouge}
@@ -202,9 +202,9 @@ module swap craype-x86-skylake craype-broadwell
 
 and try again.
 
-Make sure that a target is always set - otherwise the compilers will
-produce generic code that runs on many processors of the "x86-64"
-family, and the program will thus not be able to benefit from
+Make sure that a target is always set. If you do not set a target, the
+compilers will produce generic code that runs on many processors of the
+"x86-64" family, and the program will thus not be able to benefit from
 capabilities such as AVX-512. You will see the following warning message
 when you run a compiler:
 

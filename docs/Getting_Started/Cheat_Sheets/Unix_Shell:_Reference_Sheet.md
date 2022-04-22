@@ -60,9 +60,10 @@ head
 
 head file.txt
 
-Prints the top 10 lines of the specified file.
+Prints the top [10 lines of the ]{.dfn .dictionary-of-numbers}specified
+file.
 
-head -n 2 file.txt
+head -n [2 file]{.dfn .dictionary-of-numbers}.txt
 
 Prints the top n lines of the specified file (in this case 2).
 
@@ -70,9 +71,10 @@ tail
 
 tail file.txt
 
-Prints the bottom 10 lines of the specified file.
+Prints the bottom [10 lines of the ]{.dfn
+.dictionary-of-numbers}specified file.
 
-tail -n 2 file.txt
+tail -n [2 file]{.dfn .dictionary-of-numbers}.txt
 
 Prints the bottom n lines of the specified file (in this case 2).
 

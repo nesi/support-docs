@@ -1,39 +1,4 @@
 ::: {.toc}
--   [Description](#description)
--   [Licence](#licence)
--   [Example scripts](#example-scripts)
-    -   [Example R scripts](#example-r-scripts)
-        -   [Example serial R script](#example-serial-r-script)
-        -   [Example array R script](#example-array-r-script)
-        -   [Example parallel script using
-            doParallel](#example-parallel-script-using-doparallel)
-        -   [Example parallel script using
-            doMPI](#example-parallel-script-using-dompi)
-        -   [Example parallel script using
-            snow](#example-parallel-script-using-snow)
-    -   [Example job submission
-        scripts](#example-job-submission-scripts-for-the-pan-cluster)
-        -   [Example job submission script for a serial R
-            job](#example-job-submission-script-for-a-serial-r-job-on-the-pan-cluster)
-        -   [Example job submission script for an array R
-            job](#example-job-submission-script-for-an-array-r-job-on-the-pan-cluster)
-        -   [Example job submission script for an MPI R
-            job](#example-job-submission-script-for-an-mpi-r-job-on-the-pan-cluster)
--   [Further notes](#further-notes)
-    -   [Generating images and plots](#generating-images-and-plots)
-    -   [Dealing with packages](#dealing-with-packages)
-        -   [Getting a list of available
-            packages](#getting-a-list-of-available-packages)
-        -   [Getting a list of available
-            libraries](#getting-a-list-of-available-libraries)
-        -   [Specifying custom library
-            directories](#specifying-custom-library-directories)
-        -   [Downloading and installing a new
-            package](#downloading-and-installing-a-new-package)
-        -   [Compiling a C library for use with
-            R](#compiling-a-c-library-for-use-with-r)
-    -   [Quitting an interactive R
-        session](#quitting-an-interactive-r-session)
 :::
 
 Description
@@ -55,15 +20,33 @@ to participation in that activity.
 
 The R home page is at <http://www.r-project.org>.
 
-Available modules
-=================
-
 Licence
 =======
 
 R is made available at no cost under the terms of version 2 of the GNU
 General Public Licence. The full text of the R licence is available at
 <https://www.r-project.org/COPYING>.
+
+NeSI Customisations {#available-modules}
+===================
+
+-   We patch the *snow* package so that there is no need to use RMPISNOW
+    when using it over MPI.
+-   Our most recent R environment modules set R\_LIBS\_USER to a path
+    which includes the compiler toolchain, so for
+    example *\~/R/gimkl-2020a/4.1 *rather than the usual default
+    of *\~/R/x86\_64-pc-linux-gnu-library/4.1*.
+
+Related environment modules
+===========================
+
+We also have some environment modules which extend the base R ones with
+extra packages:
+
+-    *R-Geo* with rgeos, rgdal and other geometric and geospatial
+    packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
+-   *R-bundle-BioConductor* with many of the BioConductor suite of
+    packages.
 
 Example scripts
 ===============
@@ -236,16 +219,6 @@ Please note that different installations of R, even on the same NeSI
 cluster, may contain different collections of packages. Furthermore, if
 you have your own packages in a directory that R can automatically
 detect, these will also be shown in a separate section.
-
-### Other environment modules
-
-We also have some environment modules which extend the base R ones with
-extra packages:
-
--    *R-Geo* with rgeos, rgdal and other geometric and geospatial
-    packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
--   *R-bundle-BioConductor* with many of the BioConductor suite of
-    packages.
 
 ### Getting a list of available libraries
 

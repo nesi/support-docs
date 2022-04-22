@@ -2,7 +2,7 @@ The Māui Ancillary Nodes provide access to a Virtualised environment
 that supports:
 
 1.  Pre- and post-processing of data for jobs running on the
-    [Maui](https://support.nesi.org.nz/hc/articles/360000163695)
+    [Māui](https://support.nesi.org.nz/hc/articles/360000163695)
     Supercomputer or
     [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575) HPC
     Cluster. Typically, as serial processes on a Slurm partition running
@@ -24,49 +24,28 @@ and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.
 1.  The `/home, /nesi/project`, and `/nesi/nobackup`
     [filesystems](https://support.nesi.org.nz/hc/articles/360000177256)
     are mounted on the Māui Ancillary Nodes.
-2.  The Maui Ancillary nodes have Skylake processors, while the Mahuika
+2.  The Māui Ancillary nodes have Skylake processors, while the Mahuika
     nodes use Broadwell processors.
 
 Ancillary Node Specifications
 -----------------------------
 
-+-----------------------------------+-----------------------------------+
-| **Multi-Purpose nodes**           | 1,120 cores in 28 × Skylake (Gold |
-|                                   | 6148, 2.4 GHz, dual socket 20     |
-|                                   | cores per socket) nodes, which    |
-|                                   | will appear as 2,240 logical      |
-|                                   | cores.                            |
-+-----------------------------------+-----------------------------------+
-| **Hyperthreading**                | Enabled                           |
-+-----------------------------------+-----------------------------------+
-| **Local Disk**                    | 1.2TB SSD                         |
-+-----------------------------------+-----------------------------------+
-| **Operating System**              | CentOS 7.4                        |
-+-----------------------------------+-----------------------------------+
-| **GPGPUs**                        | 5 NVIDIA Tesla P100 PCIe 12GB (5  |
-|                                   | nodes with 1 GPU)                 |
-+-----------------------------------+-----------------------------------+
-| **Remote Visualisation**          | [NICE                             |
-|                                   | DCV](https://www.nice-software.co |
-|                                   | m/products/dcv)                   |
-+-----------------------------------+-----------------------------------+
-| **Memory capacity per             | 768 GB                            |
-| Multi-Purpose node**              |                                   |
-+-----------------------------------+-----------------------------------+
-| **Interconnect**                  | EDR (100 Gb/s) InfiniBand         |
-+-----------------------------------+-----------------------------------+
-| **Workload Manager**              | Slurm (Multi-Cluster)             |
-+-----------------------------------+-----------------------------------+
-| **OpenStack**                     | The Cray CS500 Ancillary nodes    |
-|                                   | will normally be presented to     |
-|                                   | users as Virtual Machines,        |
-|                                   | provisioned from the physical     |
-|                                   | hardware as required.             |
-+-----------------------------------+-----------------------------------+
+  -------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------
+  **Multi-Purpose nodes**                      1,120 cores in 28 × Skylake (Gold 6148, 2.4 GHz, dual socket 20 cores per socket) nodes, which will appear as 2,240 logical cores.
+  **Hyperthreading**                           Enabled
+  **Local Disk**                               1.2TB SSD
+  **Operating System**                         CentOS 7.4
+  **GPGPUs**                                   5 NVIDIA Tesla P100 PCIe 12GB (5 nodes with 1 GPU)
+  **Remote Visualisation**                     [NICE DCV](https://www.nice-software.com/products/dcv)
+  **Memory capacity per Multi-Purpose node**   768 GB
+  **Interconnect**                             EDR (100 Gb/s) InfiniBand
+  **Workload Manager**                         Slurm (Multi-Cluster)
+  **OpenStack**                                The Cray CS500 Ancillary nodes will normally be presented to users as Virtual Machines, provisioned from the physical hardware as required.
+  -------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------
 
  
 
-The Māui\_Ancil nodes have different working environment than the Maui
+The Māui\_Ancil nodes have different working environment than the Māui
 (login) nodes. Therefore a CS500 login node is provided, to create and
 submit your jobs on this architecture. To use you need to login from
 maui login nodes to:

@@ -134,7 +134,8 @@ Daily, last 10 versions of any given file retained for up to 90 days.
 
 None
 
-Replicated between Wellington and Auckland tape libraries
+Replication  between Wellington and Auckland tape libraries (under
+development)
 
 **Snapshots**
 
@@ -162,13 +163,15 @@ Slow
 -   SCP
 -   Globus data transfer
 
+```{=html}
 <!-- -->
-
+```
 -   Native Spectrum Scale mounts
 -   SCP
 
+```{=html}
 <!-- -->
-
+```
 -   Native Spectrum Scale mounts
 -   SCP
 -   Globus data transfer

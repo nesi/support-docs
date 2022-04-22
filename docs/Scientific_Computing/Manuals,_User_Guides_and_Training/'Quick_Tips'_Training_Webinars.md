@@ -13,7 +13,7 @@ The Quick Tips Training Webinars playlist contains:
 -   Sharing Data with Groups Using Globus
 -   High performance modelling
 
-::: {.g-ytsubscribe data-channelid="UCiEDJKtjWUVv-VSmD-jfWTA" data-layout="default" data-count="hidden"}
+::: {.g-ytsubscribe channelid="UCiEDJKtjWUVv-VSmD-jfWTA" layout="default" count="hidden"}
 :::
 
  

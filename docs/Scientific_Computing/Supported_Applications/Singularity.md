@@ -37,35 +37,64 @@ Containerisation technologies, both the fundamental underlying Linux
 kernel features, the various runtime support tools, and associated
 cloud-services (such as container libraries, remote builders, and image
 signing services), are a broad and fast moving landscape. The
-information here is provided as an overview and may not be necessarily
-be completely up-to-date with the latest available features, however we
+information here is provided as an overview and may not necessarily be
+completely up-to-date with the latest available features, however we
 will endeavour to ensure it accurately reflects NeSI\'s currently
 supported Singularity version.
 
 Building a new container
 ========================
 
-Please note that **building a new container from a container definition
-file is not currently possible on any NeSI machines **as it requires
-either elevated privileges (\"root access\") or use of *user namespaces*
-(which we do not yet support). If you see error messages of the kind
+For more general information on building containers please see the
+[Singularity
+Documentation](https://sylabs.io/guides/3.0/user-guide/build_a_container.html). 
 
-    FATAL: Unable to build from my_new_container.def: you must be the root user to build from a definition file
+As building a container requires root privileges, this cannot be done
+directly on any NeSI nodes. You will need to copy a [Singularity Image
+Format (SIF)](https://github.com/sylabs/sif) to the cluster from on a
+local Linux machine or the cloud. \
+Alternatively you can make use of a remote build service (currently only
+the [syslabs](https://cloud.sylabs.io/builder) builder is available).
 
-during the build process, you will need to build the container on a
-local Linux system or in the cloud using the [Singularity Image Format
-(SIF)](https://github.com/sylabs/sif). The SIF format produces a single
-compressed container image that can be easily moved to the HPC
-afterwards.
+Remote Build Service
+--------------------
 
-Note that the build process from definition files can be quite demanding
-in terms of privilege requirements - even if you have root access to
-your system, further Linux security features such as restrictive
-partition mount options can inhibit a successful build. Please refer to
-the [Singularity documentation](https://sylabs.io/docs/) for further
-details.
+Running the command `singularity remote login` will provide you with a
+link to [syslabs.io](https://cloud.sylabs.io/), once you have logged in
+you will be prompted to create a key. Copying the string from your newly
+created key into your terminal will authorise remote builds from your
+current host.
 
- 
+Specify you want to use the remote builder by adding the `--remote` flag
+to the build command.
+
+    singularity build --remote myContainer.sif myContainer.def
+
+> ### Note {#prerequisites}
+>
+> The error **\"FATAL: -B/\--bind option is not supported for remote
+> build\" **can be fixed by unloading the XALT module before build:
+>
+>     module unload XALT
+>     singularity build --remote myContainer.sif myContainer.def
+
+Build Environment Variables
+---------------------------
+
+The environment variables `SINGULARITY_TMPDIR` and
+`SINGULARITY_CACHEDIR` environment can be used to overwrite the default
+location of these directories. By default both of these values are set
+to `/tmp` which has limited space, large builds may exceed this
+limitation causing the builder to crash.
+
+You may wish to change these values to somewhere in your project or
+nobackup directory.
+
+    export SINGULARITY_TMPDIR=/nesi/project/nesi99999/.s_tmpdir
+
+    export SINGULARITY_CACHEDIR=/nesi/project/nesi99999/.s_cachedir
+
+Please Sir, may I have a build node?
 
 Moving a container to NeSI
 ==========================
@@ -89,6 +118,33 @@ To download a container, use commands such as
 
 Please refer to the [Singularity documentation](https://sylabs.io/docs/)
 for further details.
+
+Using a Docker container
+========================
+
+Singularity can transparently use Docker containers, without the need to
+be root or to have Docker installed.
+
+To download and convert a Docker container as a Singularity image, use
+the `pull` command with a `docker://` prefix. The following example
+downloads the latest version of the Ubuntu docker container and save it
+in the `ubuntu.sif` Singularity image file:
+
+    singularity pull ubuntu.sif docker://ubuntu
+
+Access to private containers that needs registration is also supported,
+as detailed in the [Singularity
+documentation](https://sylabs.io/guides/master/user-guide/singularity_and_docker.html).
+
+If you are building your own containers, you can also use Docker
+containers as basis for a Singularity image, by specifying it in the
+definition file as follows:
+
+    Bootstrap: docker
+    From: ubuntu:latest
+
+    %post
+        # intallation instructions go here
 
 Running a container on Mahuika or Māui Ancil
 ============================================
@@ -116,11 +172,11 @@ it using
 
 Note the prompt is now prefixed with \"Singularity\",
 
-    Singularity my_container.sif:~>
+    Singularity>
 
 Exit the container by running the command
 
-    Singularity my_container.sif:~> exit
+    Singularity> exit
 
 which will bring you back to the host system.
 
@@ -148,20 +204,30 @@ locations to a new path inside the container using, e.g.,
     singularity run --bind "/nesi/project/<your project ID>/inputdata:/var/inputdata,\
     /nesi/nobackup/<your project ID>/outputdata:/var/outputdata" my_container.sif
 
-Directories \"inputdata\" and \"outputdata\" can now be accessed inside
-your container under \"/var/inputdata\" and \"/var/outputdata\".
-Alternatively, you can set environment variable \"SINGULARITY\_BIND\"
-before running your container,
+Directories `inputdata` and `outputdata` can now be accessed inside your
+container under `/var/inputdata` and `/var/outputdata`. Alternatively,
+you can set environment variable `SINGULARITY_BIND` before running your
+container,
 
     export SINGULARITY_BIND="/nesi/project/<your project ID>/inputdata:/var/inputdata,\
     /nesi/nobackup/<your project ID>/outputdata:/var/outputdata"
+
+Accessing a GPU
+---------------
+
+If your Slurm job has requested access to an NVIDIA GPU (see [GPU use on
+NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) to
+learn how to request a GPU), a singularity container can transparently
+access it using the `--nv` flag:
+
+    singularity run --nv my_container.sif
 
 Network isolation
 -----------------
 
 Singularity bridges the host network into the container by default. If
-you want to isolate the network, add flags \"\--net \--network=none\"
-when you run the container, e.g.,
+you want to isolate the network, add flags `--net --network=none` when
+you run the container, e.g.,
 
     singularity run --net --network=none my_container.sif
 

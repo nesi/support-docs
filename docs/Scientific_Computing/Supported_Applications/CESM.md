@@ -8,11 +8,11 @@ run-off, land-ice, and sea-ice, plus one central coupler/moderator
 component, CESM allows researchers to conduct fundamental research into
 the Earth's past, present, and future climate states.
 
-Building CESM2 on Maui
+Building CESM2 on Māui {#building-cesm2-on-maui}
 ======================
 
 Here we provide a guide for downloading, building and running a CESM
-test case yourself on Maui. This guide is based on CESM 2.1.
+test case yourself on Māui. This guide is based on CESM 2.1.
 
 Prerequisites
 -------------

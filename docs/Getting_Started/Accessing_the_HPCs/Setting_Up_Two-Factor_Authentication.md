@@ -20,19 +20,24 @@ smartphone.
 
 If you some reason you can\'t do this, please contact NeSI support.
 
+ 
+
 Linking a device to your account
 --------------------------------
 
 1.  Log in to [My NeSI](https://my.nesi.org.nz) via your browser.
 
-2.  Click on Accounts, or refresh the page, and you will see an option
-    to \"Setup Two-Factor Authentication device\".
+2.  Click **My HPC Account** on left hand panel  and then **Setup
+    Two-Factor Authentication device**
 
-    ![NeSI\_account.jpg](https://support.nesi.org.nz/hc/article_attachments/360004939776/NeSI_account.jpg)
+    ![authentication\_factor\_setup.png](https://support.nesi.org.nz/hc/article_attachments/4414700806543/authentication_factor_setup.png){width="560"
+    height="210"}
 
 3.  Click the \"**Setup Two-Factor Authentication device**\" link.\
     ![](https://support.nesi.org.nz/hc/article_attachments/360001267755/mceclip0.png)
+
 4.  After clicking on \"Continue\" you will retrieve the QR code.
+
 5.  Open your Authy or Google Authenticator app and click on the add
     button and select \"**Scan a barcode**\".
 

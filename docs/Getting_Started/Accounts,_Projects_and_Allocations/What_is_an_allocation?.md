@@ -43,12 +43,13 @@ Share adjusted core-hour\" on Mahuika\'s standard compute nodes.
 The price of hardware in terms of compute units is shown in the
 following table.
 
-  Hardware type     Fair Share Price
-  ----------------- -----------------------------------------
-  CPU               0.35 compute units per logical-CPU-hour
-  Memory (RAM)      0.10 compute units per GB-hour
-  P100 GPU device   7.0 compute units per device-hour
-  A100 GPU device   18.0 compute units per device-hour
+  Hardware type            Fair Share Price
+  ------------------------ -----------------------------------------
+  CPU                      0.35 compute units per logical-CPU-hour
+  Memory (RAM)             0.10 compute units per GB-hour
+  P100 GPU device          7.0 compute units per device-hour
+  A100 GPU device          18.0 compute units per device-hour
+  A100-1g.5gb GPU device   3.0 compute units per device-hour
 
 The total compute unit cost of a job is the sum of these three
 components. Once the job has finished running, this composite price is

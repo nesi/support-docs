@@ -20,12 +20,28 @@ run successfully.
 
     # Slurm header '#SBATCH etc etc
 
-    sbatch --dependency=afterok:${SLURM_JOB_ID} "slurm_script.sl"
+    sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" 
+    # "$0" is equal to the name of this script.
 
     # Code that implements checkpointing
 
-This has the advantage of adding the next job to the queue *before*
-starting, saving queue time in between jobs.
+This job will resubmit itself forever until stopped.
+
+Another example for a job requiring explicit step inputs.
+
+    # Slurm header '#SBATCH etc etc
+
+    n_steps=1000
+    starting_step=${1:-0} # Will be equal to first argument, or '0' if unset.
+    ending_step=$(( starting_step + n_steps )) 
+
+    # Submit next step with starting step equal to ending step of this job.
+    sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" ${ending_step}
+
+    my-program --nfirst ${starting_step} --nlast ${ending_step}
+
+The use of `--dependency` has the advantage of adding the next job to
+the queue *before* starting, saving queue time in between jobs.
 
 Examples
 ========

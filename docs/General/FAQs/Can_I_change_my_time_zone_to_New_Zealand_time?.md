@@ -1,3 +1,26 @@
+
+=== "C"
+
+    ``` c
+    #include <stdio.h>
+
+    int main(void) {
+      printf("Hello world!\n");
+      return 0;
+    }
+    ```
+
+=== "C++"
+
+    ``` c++
+    #include <iostream>
+
+    int main(void) {
+      std::cout << "Hello world!" << std::endl;
+      return 0;
+    }
+    ```
+
 The time displayed in your shell is controlled by a system variable
 called
 `TZ`{style="font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;"}.

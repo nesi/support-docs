@@ -37,7 +37,7 @@ At this prompt, enter only your password (a.k.a. first factor).
 Māui
 ----
 
-Maui differs slightly in how you are authenticated.
+Māui differs slightly in how you are authenticated.
 
     ssh login.maui.nesi.org.nz
 
@@ -51,7 +51,7 @@ Unlike on Mahuika, `Password` is equal to `First Factor` +
 Job Limits
 ==========
 
-Both Maui and Mahuika have limits on the size and types of jobs you can
+Both Māui and Mahuika have limits on the size and types of jobs you can
 run, but the limits on each machine is different.
 
 Mahuika
@@ -83,7 +83,7 @@ in units of nodes, so the smallest possible job takes a whole node, and
 there can never be more than one job on a node at a time.
 
 Additionally, projects with valid allocations on Māui will also have
-access to [Maui\'s ancilliary
+access to [Māui\'s ancilliary
 nodes,](https://support.nesi.org.nz/hc/en-gb/articles/360000203776)
 where jobs requiring up to 768 GB of memory or jobs that require GPUs
 can be run. When submitting a job to the Māui ancillary nodes you may

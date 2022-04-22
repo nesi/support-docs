@@ -20,17 +20,13 @@ configurations.
 1.  In a new local terminal
     run; `mkdir -p ~/.ssh/sockets`{.nohighlight} this will create a
     hidden file in your home directory to store socket configurations.
-2.  Open your ssh config file
-    with  `nano ~/.ssh/config`{.nohighlight} and add the
-    following (replacing `<username>`{.nohighlight} with your username):
 
-        Host *
-            ControlMaster auto
-            ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-            ControlPersist 1
+2.  Open your ssh config file with  `nano ~/.ssh/config`{.nohighlight}
+    and add the following (replacing **`username`{.nohighlight}** with
+    your username):
 
         Host mahuika
-           User <username>
+           User username
            Hostname login.mahuika.nesi.org.nz
            ProxyCommand ssh -W %h:%p lander
            ForwardX11 yes
@@ -39,7 +35,7 @@ configurations.
            ServerAliveCountMax 2
 
         Host maui
-           User <username>
+           User username
            Hostname login.maui.nesi.org.nz
            ProxyCommand ssh -W %h:%p lander
            ForwardX11 yes
@@ -48,14 +44,19 @@ configurations.
            ServerAliveCountMax 2
 
         Host lander
-           User <username>
+           User username
            HostName lander.nesi.org.nz
            ForwardX11 yes
            ForwardX11Trusted yes
            ServerAliveInterval 300
            ServerAliveCountMax 2
 
-    Close and save with ctrl x, y, Enter
+        Host *
+            ControlMaster auto
+            ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+            ControlPersist 1
+
+    Close and save with [ctrl x]{.kbd}, [y]{.kbd}, [Enter]{.kbd}
 
 3.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.

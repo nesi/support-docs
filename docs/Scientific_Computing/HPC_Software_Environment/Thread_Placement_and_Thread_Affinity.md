@@ -220,8 +220,9 @@ Let us start with the following setup:
 -   Bind thread IDs to logical core IDs in simple numerical order by
     setting permute and offset specifiers to 0
 
+```{=html}
 <!-- -->
-
+```
     #!/bin/bash -e
     #SBATCH --job-name=thread_placement_affinity
     #SBATCH --time=00:00:30

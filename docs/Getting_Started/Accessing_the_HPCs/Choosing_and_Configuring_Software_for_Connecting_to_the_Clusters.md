@@ -16,6 +16,23 @@ to set up such a connection, you will need a suitable Terminal (or
 equivalent application). The correct option for you depends on your
 operating system and level of experience.
 
+Web Browser {#h_c1bbd761-1133-499b-a61a-57b9c4320a1a}
+===========
+
+-   JupyterHub
+    ----------
+
+    JupyterHub is a service providing access to Jupyter Notebooks on
+    NeSI. A terminal similar to the other setups describe below can be
+    accessed through the Jupyter Launcher.\
+    \
+
+    > ### What next? {#prerequisites}
+    >
+    > -   More info on [Jupyter
+    >     Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
+    > -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
+
 Linux or Mac OS {#h_c1bbd761-1133-499b-a61a-57b9c4320a1a}
 ===============
 
@@ -42,6 +59,13 @@ different options, listed in order of preference.
 -   Ubuntu Terminal (Windows 10)
     ----------------------------
 
+    > ### Note {#wsl-admin-tip}
+    >
+    > The Ubuntu Terminal and Windows Subsystem for Linux require
+    > administrative privileges to enable and install them. If your
+    > institution has not given you such privileges, consider using
+    > another option such as MobaXTerm Portable Edition (see below).
+
     This is the most functional replication of a Unix terminal available
     on Windows, and allows users to follow the same set of instructions
     given to Mac/Linux users. It may be necessary to enable Windows
@@ -53,6 +77,8 @@ different options, listed in order of preference.
     >     [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
     > -   Setting up the [Ubuntu
     >     Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575)
+    > -   Setting up
+    >     [X-Forwarding](https://support.nesi.org.nz/hc/en-gb/articles/4407442866703)
 
 -   MobaXterm
     ---------
@@ -64,8 +90,10 @@ different options, listed in order of preference.
     MobaXterm can be downloaded from
     [here](https://mobaxterm.mobatek.net/download-home-edition.html).
     The portable edition will allow you to use MobaXterm without needing
-    root privileges, however it introduces several bugs so we *highly*
-    recommend using the installer edition if possible.
+    administrator privileges, however it introduces several bugs so we
+    *highly* recommend using the installer edition if you have
+    administrator privileges on your workstation or if your
+    institution\'s IT team supports MobaXTerm.
 
     > ### What next? {#prerequisites}
     >

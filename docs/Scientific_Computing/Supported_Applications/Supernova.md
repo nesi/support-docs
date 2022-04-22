@@ -21,19 +21,19 @@ distances.
 The Supernova software package includes two processing pipelines and one
 for post-processing:
 
--   **supernova mkfastq** wraps Illumina\'s bcl2fastq to correctly
-    demultiplex Chromium-prepared sequencing samples and to convert
-    barcode and read data to FASTQ files.
--   **supernova run** takes FASTQ files containing barcoded reads from
-    supernova mkfastq and builds a graph-based assembly. The approach is
-    to first build an assembly using read kmers (K = 48), then resolve
-    this assembly using read pairs (to K = 200), then use barcodes to
-    effectively resolve this assembly to K ≈ 100,000. The final step
-    pulls apart homologous chromosomes into phase blocks, which are
-    often several megabases in length.
--   **supernova mkoutput** takes Supernova\'s graph-based assemblies and
-    produces several styles of FASTA suitable for downstream processing
-    and analysis.
+-   **`supernova mkfastq`{.sample}** wraps Illumina\'s bcl2fastq to
+    correctly demultiplex Chromium-prepared sequencing samples and to
+    convert barcode and read data to FASTQ files.
+-   **`supernova run`{.sample}** takes FASTQ files containing barcoded
+    reads from `supernova mkfastq`{.sample} and builds a graph-based
+    assembly. The approach is to first build an assembly using read
+    kmers (K = 48), then resolve this assembly using read pairs (to K =
+    200), then use barcodes to effectively resolve this assembly to K ≈
+    100,000. The final step pulls apart homologous chromosomes into
+    phase blocks, which are often several megabases in length.
+-   **`supernova mkoutput`{.sample}** takes Supernova\'s graph-based
+    assemblies and produces several styles of FASTA suitable for
+    downstream processing and analysis.
 
 Download latest release from 10xGenomics.
 

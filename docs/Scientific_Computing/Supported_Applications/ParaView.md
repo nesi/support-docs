@@ -40,8 +40,9 @@ setup:
 
         module load ParaView
 
+```{=html}
 <!-- -->
-
+```
 -   To start the ParaView server run;\
 
         pvserver
@@ -52,8 +53,9 @@ setup:
         Connection URL: cs://mahuika02:11111
         Accepting connection(s): mahuika02:11111
 
+```{=html}
 <!-- -->
-
+```
 -   Create an SSH tunnel for port \"11111\" from your local machine to
     the cluster. e.g.
 
@@ -65,10 +67,13 @@ setup:
 -   Launch the ParaView GUI on your local machine and go to \"File \>
     Connect\" or click
     the ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002161075/mceclip0.png) button.
+
 -   Click on \"Add Server\", choose server type \"Client / Server\",
     host \"localhost\" (as we will be using the SSH tunnel), and port
     \"11111\", then click on \"Configure\" .
+
 -   ![mceclip1.png](https://support.nesi.org.nz/hc/article_attachments/360002269756/mceclip1.png)
+
 -   Select the new server and click on \"Connect\"
 
 ### Parallelisation

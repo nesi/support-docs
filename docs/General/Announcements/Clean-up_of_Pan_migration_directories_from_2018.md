@@ -16,8 +16,8 @@ A summary of the instructions from that email is shared below:
 -   **If you\'ve already retrieved your Pan-migrated data**\
     If you and your colleagues have already retrieved all the data you
     need from
-    [[/nesi/project/\<project\_code\>/pan\_project]{data-mark-type="annotation"
-    data-mark-annotation-type="inlineComment"
+    [[/nesi/project/\<project\_code\>/pan\_project]{mark-type="annotation"
+    mark-annotation-type="inlineComment"
     data-id="aab75685-9ad6-45a0-b863-4bc470fb50e5"}]{.code}, please
     [contact Support](https://support.nesi.org.nz/hc/en-gb/requests/new)
     to confirm you are no longer using this directory. We will then
@@ -26,8 +26,7 @@ A summary of the instructions from that email is shared below:
 -   **If you still need to retrieve your Pan-migrated data**\
     If there is data that you still need to retrieve, you must complete
     this task by the close of business on **[Thursday 12
-    ]{data-mark-type="annotation"
-    data-mark-annotation-type="inlineComment"
+    ]{mark-type="annotation" mark-annotation-type="inlineComment"
     data-id="22175b8c-de00-437a-9be9-3ebcb4824975"}March**. Data can be
     moved to your other project directories on NeSI, such
     as [/nesi/project/\<project\_code\>]{.code}

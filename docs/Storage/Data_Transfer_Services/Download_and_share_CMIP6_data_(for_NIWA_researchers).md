@@ -5,15 +5,14 @@ The [Coupled Model Intercomparison
 Project](https://www.wcrp-climate.org/wgcm-cmip), which began in 1995
 under the auspices of the [World Climate Research Programme
 (WCRP)](https://www.wcrp-climate.org/about-wcrp/wcrp-overview), is now
-in its sixth phase (CMIP6). CMIP6 orchestrates somewhat
-independent [model intercomparison activities and their
-experiments](https://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html) which
-have adopted a common infrastructure for collecting, organising, and
+in its sixth phase (CMIP6). CMIP6 orchestrates somewhat independent
+model intercomparison activities and their experiments, which have
+adopted a common infrastructure for collecting, organising, and
 distributing output from models performing common sets of experiments.
 
 This document shows how to explore which CMIP6 data are available and
 how to download the data once you have figured out what you need. The
-data will be downloaded tewst asynchronously[ - no need to
+data will be downloaded asynchronously[ - no need to
 st]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[are
 at a screen for hours.  The downloaded data will reside in a shared
 directory and hence will also be accessible to your
@@ -22,7 +21,7 @@ collaborators.]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI
 The instructions are geared towards members of the niwa02916 group -
 send a message to <support@nesi.org.nz> if you are a NIWA employee and
 want to become part of this group. Other NeSI users may want to
-read [this](https://support.nesi.org.nz/knowledge/articles/360001208256/en-gb?brand_id=30406&return_to=%2Fhc%2Fen-gb%2Farticles%2F360001208256),
+read [this](https://support.nesi.org.nz/hc/en-gb/articles/360001208256-Synda),
 which explains how to install the synda tool. Once installed, you can
 then type similar commands to the ones below to test your configuration.
 

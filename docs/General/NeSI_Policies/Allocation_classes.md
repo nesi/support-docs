@@ -53,6 +53,9 @@ A named investigator on a peer reviewed research grant or contract
 covering the entire allocation period. Students under the supervision of
 a named investigator are eligible at NeSI\'s discretion.
 
+If your institution is a NeSI Collaborator, your project\'s allocation,
+if approved, will be provided out of your institution\'s entitlement.
+
 Examples likely to qualify:
 
 -   MBIE managed research funds
@@ -96,13 +99,13 @@ Highest
 
 Standard allocation for anyone enrolled at a New Zealand degree-granting
 institution and working on a postgraduate research programme (e.g. PhD
-or Masters by research) approved by that institution. If your
-institution is a NeSI Collaborator or Subscriber, your project\'s
-allocation, if approved, will be provided out of your institution\'s
-entitlement.
+or Masters by research) approved by that institution. If your
+institution is a NeSI Collaborator, your project\'s allocation, if
+approved, will be provided out of your institution\'s entitlement.
 
 *Applicants in undergraduate programmes (including Honours programmes)
-or graduate programmes based on coursework are not eligible.*
+or graduate programmes based on coursework are not eligible for
+Postgraduate allocations.*
 
 Allocations Granted:
 

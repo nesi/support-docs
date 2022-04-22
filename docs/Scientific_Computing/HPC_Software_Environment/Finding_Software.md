@@ -14,7 +14,6 @@ Using the `module`{.highlighter-rouge} command you can:
     ```
     :::
     :::
-
 -   List all available modules
     ::: {.highlighter-rouge}
     ::: {.highlight}
@@ -23,7 +22,6 @@ Using the `module`{.highlighter-rouge} command you can:
     ```
     :::
     :::
-
 -   Load a module:
     ::: {.highlighter-rouge}
     ::: {.highlight}
@@ -32,7 +30,6 @@ Using the `module`{.highlighter-rouge} command you can:
     ```
     :::
     :::
-
 -   Switch out a loaded module for a different version:
     ::: {.highlighter-rouge}
     ::: {.highlight}
@@ -61,7 +58,6 @@ you can:
     ```
     :::
     :::
-
 -   List all available modules:
     ::: {.highlighter-rouge}
     ::: {.highlight}
@@ -70,7 +66,6 @@ you can:
     ```
     :::
     :::
-
 -   Use "spider" to search for modules, e.g. "Python" modules:
     ::: {.highlighter-rouge}
     ::: {.highlight}
@@ -79,7 +74,6 @@ you can:
     ```
     :::
     :::
-
 -   Load a module:
     ::: {.highlighter-rouge}
     ::: {.highlight}
@@ -88,7 +82,6 @@ you can:
     ```
     :::
     :::
-
 -   Prefix a module with "-" to unload it, e.g. switch from Python 2 to
     Python 3:
     ::: {.highlighter-rouge}
@@ -98,7 +91,6 @@ you can:
     ```
     :::
     :::
-
 -   To get a fresh environment, we recommend that you log out and log in
     again. By logging out and logging in again you will revert to not
     only the default set of modules, but also the default set of

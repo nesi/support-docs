@@ -1,13 +1,19 @@
-### Please make sure you have followed the recommended setup. See [Choosing and Configuring Software for Connecting to the Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335) for more information.
+> ### Requirements {#prerequisites}
+>
+> Please make sure you have followed the recommended setup. See
+> [Choosing and Configuring Software for Connecting to the
+> Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
+> for more information.
 
-*Notes to new command line users:*
-
--   *Most terminals do not give an indication of how many characters
-    have been typed when entering a password.*
--   *Paste is not usually bound to ctrl + v*
+> ### New Command Line Users {#prerequisites}
+>
+> -   Most terminals do not give an indication of how many characters
+>     have been typed when entering a password.
+> -   Paste is not usually bound to `ctrl` + `V` and will vary based on
+>     your method of access.
 
 Repeatedly asking for First and Second Factor.
-----------------------------------------------
+==============================================
 
 In addition to using an incorrect First/Second factor there are several
 other issues that will cause a similar looking failure to log in. 
@@ -40,7 +46,7 @@ ssh login.<mahuika/maui>.nesi.org.nz
 ```
 
 **If this fails:** Are you logging in to the correct cluster?
-Mahuika/Maui have separate access control, also Maui requires your
+Mahuika/Māui have separate access control, also Māui requires your
 password input in a different format, see
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360001244876-Mahuika-M%C4%81ui-Differences).
 
@@ -78,24 +84,29 @@ contact the person or team responsible for supporting it.
 
 ### 5. Ensure you\'re not reusing the same 6-digit code from your token.
 
-Login will fail if the same 6-digit code is used to access the Māui or
-Mahuika login node after it has been used to access the lander node, or
-for consecutive login attempts to any node. If in doubt, wait 30 seconds
-for a new token to be generated.
+Login will fail if the same 6-digit code[ is ]{.dfn
+.dictionary-of-numbers}used to access the Māui or Mahuika login node
+after it has been used to access the lander node, or for consecutive
+login attempts to any node. If in doubt, wait [30 seconds]{.dfn
+.dictionary-of-numbers .dictionary-of-numbers-quantity-30s
+.dictionary-of-numbers-processed} for a new token to be generated.
 
 ### 6. Ensure the correct Second Factor token is being used
 
 Two-factor authentication is becoming a common security measure. Many
 people have multiple tokens and occasionally mix them up.
 
-### 7. Wait four hours
+### 7. Wait [four hours]{.dfn .dictionary-of-numbers .dictionary-of-numbers-quantity-14400s .dictionary-of-numbers-processed}
 
-Six failed login attempts within five minutes will trigger a four-hour
-lockout. Users experiencing login issues can inadvertently trigger the
-lockout, making diagnosing the original issue much more difficult.  
+[Six failed login attempts ]{.dfn .dictionary-of-numbers}within [five
+minutes]{.dfn .dictionary-of-numbers
+.dictionary-of-numbers-quantity-300s .dictionary-of-numbers-processed}
+will trigger a four-hour lockout. Users experiencing login issues can
+inadvertently trigger the lockout, making diagnosing the original issue
+much more difficult.  
 
 Connection closed by \.... (MobaXterm) {#mobaPassPassPass}
---------------------------------------
+======================================
 
 ### 1. Skip password prompts.
 
@@ -129,20 +140,20 @@ MobaXterm can be updated through: \'help\>check for updates\'
 ### 3. Reinstall your MobaXTerm client.
 
 Asked for \'Password\' instead of \'First Factor\'
---------------------------------------------------
+==================================================
 
 ### 1. Check the status using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
 
 ### 2. See [above](#mobaPassPassPass).
 
 Authentication token manipulation error
----------------------------------------
+=======================================
 
 This occurs when your authentication token is out of sync. You will have
 to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 Nothing here has helped? {#contactNesi}
-------------------------
+========================
 
 [Contact NeSI support](https://support.nesi.org.nz/hc/requests/new).
 
@@ -152,10 +163,10 @@ Helpful things to include:
     etc.).
 -   The nature of the problem, including the precise text of any error
     message you have been receiving.
-    -   Did you start out having one login problem and are now getting a
-        different one? If so, when did the change happen, and were you
-        doing anything in particular related to logging in at the time
-        things changed?
+    -   Did you start out having [one login problem and ]{.dfn
+        .dictionary-of-numbers}are now getting a different one? If so,
+        when did the change happen, and were you doing anything in
+        particular related to logging in at the time things changed?
 -   Have you successfully logged in in the past? if so when was the last
     time you successfully logged in, and to what NeSI cluster?
 -   Has anything administrative and relevant to NeSI access changed

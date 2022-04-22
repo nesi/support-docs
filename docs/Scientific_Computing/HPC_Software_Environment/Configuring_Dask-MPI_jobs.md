@@ -20,14 +20,13 @@ other, it is advisable to use the same MPI distribution as the host HPC
 system for reliability. The Mahuika and Māui Ancil clusters use Intel
 MPI.
 
-Installing Dask-MPI with Pip on Mahuika {#h_3e6b313b-a712-4e88-8246-5550cac1d77c}
-=======================================
+Using Dask-MPI on Mahuika {#h_3e6b313b-a712-4e88-8246-5550cac1d77c}
+=========================
 
-Dask-MPI can be readily installed with pip based on one of the Python
-modules available on Mahuika that come with the mpi4py package, e.g.,
+Dask-MPI can be readily used with the more recent Python modules
+available on Mahuika that come with the mpi4py package, e.g.
 
-    module load Python
-    pip install --user dask-mpi
+    module load Python/3.9.9-gimkl-2020a
 
 Installing Dask-MPI with Conda on Mahuika and Māui Ancil {#h_3e6b313b-a712-4e88-8246-5550cac1d77c}
 ========================================================
@@ -37,7 +36,7 @@ install mpi4py with the Intel MPI distribution *before* installing the
 Dask-MPI package:
 
     conda install -c intel mpi4py
-    conda install dask-mpi
+    conda install -c conda-forge dask-mpi
 
 If you use an environment file, add the \"intel\" channel at the end of
 the list (so that it will not take priority over other channels) and
@@ -52,6 +51,13 @@ request mpi4py with the Intel MPI distribution as follows:
       - anotherpackage
       - intel::mpi4py
       - dask-mpi
+
+> ### See also {#llama-tip}
+>
+> See the
+> [Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
+> page for more information on how to create and manage Miniconda
+> environments on NeSI.
 
 Configuring Slurm {#h_75b008cc-7843-40b2-bdb4-8252ca807fab}
 =================
@@ -157,16 +163,6 @@ Python program
     print("Dask result:", c.result())
     print("Local result:", add(inc(1), inc(2)))
 
-Conda environment
------------------
-
-Set up a simple conda environment with Dask-MPI using the following
-commands, replacing \"\<project ID\>\" with your project ID number:
-
-    module load Anaconda3/2019.03-gimkl-2018b
-    conda create -p /nesi/project/<project ID>/daskenv \
-      intel::mpi4py conda-forge::dask-mpi
-
 Slurm script
 ------------
 
@@ -181,10 +177,8 @@ Replace \"\<project ID\>\" with your project ID number and use the
     #SBATCH --cpus-per-task=1
     #SBATCH --mem-per-cpu=512M
 
-    # Activate conda environment
-    module load Anaconda3/2019.03-gimkl-2018b
-    . $EBROOTANACONDA3/etc/profile.d/conda.sh
-    conda activate /nesi/project/<project ID>/daskenv
+    module purge
+    module load Python/3.9.9-gimkl-2020a
 
     srun python dask_example.py
 
@@ -219,8 +213,9 @@ guidelines should help with configuring the container correctly.
     following command to the \"%runscript\" section in the Singularity
     build recipe if a Conda environment is used:
 
+```{=html}
 <!-- -->
-
+```
     %runscript
      exec /bin/bash -c \
       ". /opt/conda/etc/profile.d/conda.sh; conda activate myenv; python $@"

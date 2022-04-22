@@ -5,7 +5,8 @@ capacity of 500 TB. In the second step, the data on the staging file
 system is moved to tape.
 
 To reduce the burden on our tape drives and file catalogue, project
-teams are strongly encouraged to store only large files on nearline.
+teams are strongly encouraged to store only large files on nearline, and
+in fact attemps to upload files smaller than 64 MB will be rejected.
 Because your project or nobackup directory, or any subdirectory of the
 same, will almost certainly contain some small files and may have a
 large number of them, this article offers instructions for how to

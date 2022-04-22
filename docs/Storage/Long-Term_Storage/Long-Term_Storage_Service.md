@@ -14,11 +14,49 @@
 > We recommend that you do at least a basic verification of all
 > transfers.
 >
+> **Please note:** Best practice in research data management and data
+> archiving is to use multiple storage technologies. In particular, any
+> data that is irreplaceable and/or has regulatory retention
+> requirements, should not rely solely on NeSI's Nearline service as the
+> only copy.
+>
 > Please **send feedback** about your user experience at
 > <https://support.nesi.org.nz/hc/requests/new>, which may include
 > functionality issues, intuitive or counter-intuitive behaviours,
 > behaviours or features that you like, suggestions for improvements,
 > transfers taking too long, etc.
+
+> ### Retrievals {#retrieval}
+>
+> Some users of Nearline have reported that attempts to retrieve files
+> from tape using `nlget` (see below) will not retrieve all files.
+> Instead, only some files will come back, and the job will finish with
+> the following output:
+>
+>     recall failed some syncs might still run (042)
+>
+> We are aware of this problem, which we believe to be caused by the
+> Nearline job timing out while waiting for a tape drive to become
+> available. If some of the requested files are still on the Nearline
+> staging disk, they will be retrieved despite the lack of a free tape
+> drive.
+>
+> This problem or one like it may also occur if you attempt to retrieve
+> multiple files, together adding to a large amount of data, from
+> nearline.
+>
+> Unfortunately, a proper fix requires a fundamental redesign and
+> rebuild of the Nearline server architecture, work that is on hold
+> pending decisions regarding the direction in which we take NeSI\'s
+> data services. We appreciate your patience as we work through these
+> decisions.
+>
+> In the meantime, if you encounter this problem, the recommended
+> workaround is to wait a couple of hours (or overnight, if at the end
+> of a day) and try again once a tape drive is more likely to be free.
+> You may have to try several times, waiting between each attempt. We
+> apologise for any inconvenience caused to you by tape drive
+> contention.
 
 Long-Term Storage Service
 =========================
@@ -90,52 +128,10 @@ which are accessible by loading the following module:
 Help us troubleshoot!
 =====================
 
-> ### Tip {#tmux}
->
-> We highly recommend running the below commands, and especially `nlget`
-> and `nlpurge`, from within a tmux or screen session.
-
-The nearline user interface is still being refined. In particular, if
-you discover a problem (for example, `nljobstatus` reports an error -
-see below), it will be difficult for you to find out which command gave
-rise to the problem. We will also have the same difficulty when we
-investigate.
-
-To assist both yourself and us in the event of a problem, please
-run `nlput` commands in the following manner:
-
-::: {.confluence-information-macro-body}
-``` {.c-mrkdwn__pre data-stringify-type="pre"}
-{ { echo "----------" ; echo "Date and time: $(date)"; echo "Working directory: $(pwd)"; set -x; nlput --nowait <nlput_arguments>; set +x ; }  2>&1 ; } | tee -a ~/nearline.log
-```
-:::
-
-On the other hand, please run `nlget` and `nlpurge` commands in the
-following manner, so that if necessary you can cancel them from the
-command line with Ctrl-C:
-
-::: {.confluence-information-macro-body}
-``` {.c-mrkdwn__pre data-stringify-type="pre"}
-{ { echo "----------" ; echo "Date and time: $(date)"; echo "Working directory: $(pwd)"; set -x; nearline_command <nearline_cmd_arguments> set +x ; }  2>&1 ; } | tee -a ~/nearline.log
-```
-:::
-
-The semicolons and curly braces in the above commands are important. In
-the second command, `nearline_command` should be replaced
-with `nlget` or `nlpurge` as desired, and `nearline_cmd_arguments` with
-the appropriate compulsory and optional arguments.
-
-The effect of all this syntax is to capture the following information
-about each wrapped nearline command:
-
--   Date and time of execution / submission
--   Your working directory when you issued the command
--   The text of the command itself, including arguments
--   The nearline job ID
-
-These will be recorded in a file called `nearline.log` in your home
-directory. With this information in `nearline.log`, you will be able to
-match the job ID (shown by `nljobstatus`) to a specific command.
+If you have a problem while running a Nearline job and need to ask us
+for help solving it, please provide us with the relevant lines in
+`~/.librarian/librarian_client.log`. This will tell us the timestamp,
+the job ID, and the error (if any) reported by the client.
 
 View files
 ==========
@@ -228,7 +224,7 @@ The source directory or file list needs to be located under
 >     nlput nesi12345 /nesi/project/nesi12345/some_directory
 
 The data will be mapped into the same directory structure under
-`/nesi/nearline`/ (see below).
+`/nesi/nearline/` (see below).
 
 The recommended file size to archive is between 1 GB and 1 TB. The
 client will not accept any directory or file list containing any file
@@ -271,6 +267,22 @@ nearline (either tape or staging disk) will be skipped in the migration
 process without notification.
 
 ### Put - directory {#Nearlineearlyaccessuserguide-Put-directory}
+
+> ### Warning {#directories-with-spaces}
+>
+> If you try to upload to Nearline a path containing spaces, especially
+> multiple consecutive spaces, you will get some very unexpected
+> results, such as the job being dropped. We are aware of the issue and
+> may introduce a fix in a future release. In the meantime, we suggest
+> avoiding supplying such arguments to `nlput`. You can work around it
+> by renaming the directory and all its ancestors to avoid spaces, or by
+> putting the directory (or its ancestor whose name contains a space)
+> into an archive file.
+>
+> This problem does not affect when your directory to upload happens to
+> have contents (files or directories) with spaces in their names, i.e.
+> to cause a problem the space must be in the name of the directory to
+> be uploaded or one of its ancestor directories.
 
 All files and subdirectories within a specified directory will be
 transferred into nearline. The target location maps with the source
@@ -368,6 +380,14 @@ nearline.
 > -   Paths to files or directories to be retrieved must be absolute and
 >     start with `/nesi/nearline`, whether supplied on the command line
 >     (as a directory) or as entries in a file list.
+> -   Directories whose names contain spaces, especially multiple
+>     consecutive spaces, cannot be retrieved from Nearline directly
+>     using `nlget`. You must retrieve the contents of such a directory
+>     using a filelist, or retrieve one of its ancestors that doesn\'t
+>     have a space in the name or path. That is, instead of retrieving
+>     `/nesi/project/nesi12345/ab/c  d` directly, retrieve
+>     `/nesi/project/nesi12345/ab`. We are aware of the problem and may
+>     address it in a later Nearline release.
 
 The destination `dest_dir` needs to be defined. The whole directory
 structure after `/nesi/nearline/` will be created at the destination and
@@ -398,10 +418,18 @@ Purge {#Nearlineearlyaccessuserguide-Purge}
 The `nlpurge` command deletes specified data on the nearline file system
 permanently. The syntax is
 
+    nlpurge [--nowait] <src_dir>
     nlpurge [ --nowait ] <projectID> { <src_dir> | <file_list> }
 
-A **directory** `src_dir` **(no single files accepted)** or a file list
-`file_list` needs to be specified (see `nlput` above).
+A **directory** `src_dir` already on nearline **(no single files
+accepted)** or a file list `file_list` needs to be specified (see
+`nlput` above).
+
+If the thing to be deleted is a directory, the project code is optional.
+If you are instead deleting the entries of a file list, the project code
+is compulsory, and moreover all entries in the file list must denote
+files within (or supposed to be within) the chosen project\'s nearline
+directory.
 
 > ### Warnings {#nlpurge-file-list}
 >
@@ -510,10 +538,10 @@ finished.
 
 [The process of what data goes into tape and when is
 automated]{.inline-comment-marker
-data-ref="78239edd-ceab-49eb-a747-0140db19a948"}, and is not something
-you will have control over. The service is designed to optimise
-interaction with the nearline filesystem and avoid problem workloads for
-the benefit of all users.
+ref="78239edd-ceab-49eb-a747-0140db19a948"}, and is not something you
+will have control over. The service is designed to optimise interaction
+with the nearline filesystem and avoid problem workloads for the benefit
+of all users.
 
 If your files are on tape, it will take time to retrieve them. Access to
 tape readers is on a first come first served basis, and the amount of

@@ -30,7 +30,10 @@ add the following option at the beginning of your submission script:
     #SBATCH --gpus-per-node=1
 
 You can specify the type of GPU you need, depending on which ones you
-have access to with your allocation.
+have access to with your allocation. If you wish to use the A100 GPUs
+please [contact our support
+team](https://support.nesi.org.nz/hc/requests/new) to learn more about
+getting access to the A100 GPU cards.
 
 For example, to access a P100 card, use the following option:
 

@@ -91,8 +91,9 @@ local directories:
 > ### Note {#prerequisites}
 >
 > Parpool will throw a warning when started due to a difference in how
-> time zone is specified. To fix this, add the following line to your
-> SLURM script: `export TZ="Pacific/Auckland'`
+> time z[one is specified]{.dfn .dictionary-of-numbers}. To fix this,
+> add the following line to your SLURM script:
+> `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 
@@ -342,5 +343,24 @@ For example, adding OpenMP flags for a fortran compile:
 
 > ### Compiler Version Errors
 >
-> Using an \'unsuppoted\' compiler with versions of MATLAB 2020b onward
+> Using an \'unsupported\' compiler with versions of MATLAB 2020b onward
 > will result in an Error (previously was a \'Warning\').
+
+Known Bugs
+==========
+
+When using versions of MATLAB more recent than 2021a you may notice the
+following warning.
+
+::: {.content}
+``` {.SC7580F400}
+glibc_shim: Didn't find correct code to patch
+```
+
+This warning appears whenever MATLAB interfaces with the operating
+system (e.g. `ls` or `system()` or use of the `!` prefix).
+
+Most of the time this should not affect your work.
+
+We expect this issue to be fixed by our next operating system upgrade.
+:::

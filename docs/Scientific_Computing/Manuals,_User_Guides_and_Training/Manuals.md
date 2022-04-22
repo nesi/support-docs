@@ -29,7 +29,7 @@ guides.
 
 Cray Data Analytics packages (URIKA)
 
--   URIKA-XC (available on Maui) [software
+-   URIKA-XC (available on Māui) [software
     stack](https://pubs.cray.com/content/S-2588/1.1.UP00/xctm-series-urika-xc-installation-guide/urika-xc-quick-reference-information)
 -   URIKA-CS (as on September 2018, not yet available) [software
     stack](%20https://pubs.cray.com/content/S-3023/1.0.UP00/cstm-series-urika-cs-ai-and-analytics-installation-guide/quick-reference-information)

@@ -49,8 +49,9 @@ with the following information.
 
 -   What cluster were you on (mahuika, maui, maui\_ancil).
 
+```{=html}
 <!-- -->
-
+```
 -   MobaXterm config file, [MobaXterm.ini]{.code},\
     This can be found
     `C:\Users\<username>\Documents\MobaXterm\MobaXterm.ini` for the

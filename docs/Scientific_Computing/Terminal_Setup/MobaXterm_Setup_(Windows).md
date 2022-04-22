@@ -12,38 +12,46 @@ Setting up MobaXterm as shown below will allow you to connect to the
 Cluster with less keyboard inputs as well as allow use of the file
 transfer GUI.
 
-1.  Download the Installer Edition of MobaXTerm
-    [here](https://mobaxterm.mobatek.net/download-home-edition.html).
-2.  To set up a session, Click \'Sessions \> New Session\':
-3.  In \"Basic SSH settings\",
+1.  Download MobaXTerm
+    [here](https://mobaxterm.mobatek.net/download-home-edition.html)
+    -   Use the Portable Edition if you don\'t have administrator rights
+        on your machine. This is the recommended way for NIWA
+        researchers.
+    -   Otherwise, choose freely the Portable or Installer Edition.
+2.  To set up a session, Click \'Session\' in the top left corner:
+3.  In \"SSH\",
     -   Set the remote host to `login.mahuika.nesi.org.nz` for Mahuika
-        users or `login.maui.nesi.org.nz` for Maui users.
+        users or `login.maui.nesi.org.nz` for Māui users.
     -   Enable the \"Specify username\" option and put your Username in
         the corresponding box.
-4.  In \"Advanced SSH settings\"
-    -   Set SSH-browser type to **SCP**.
+4.  In the \"Advanced SSH settings\"
+    -   Set SSH-browser type to \'**SCP (enhanced speed)**\'.
     -   Optionally, tick the \'Follow SSH path\' button.
 
+```{=html}
 <!-- -->
-
+```
 6.  In the "Network settings" tab:
-    -   Enable \"Connect through SSH gateway (jump host)\"
-    -   Enter `lander.nesi.org.nz`{.highlighter-rouge} in the "Gateway
-        SSH server" field, as well as your NeSI username in the User
-        field for the gateway SSH server.
+    -   Select \"SSH gateway (jump host)\" to open a popup window
+    -   In this window enter `lander.nesi.org.nz`{.highlighter-rouge} in
+        the "Gateway host" field, as well as your NeSI username in the
+        Username field for the gateway SSH server then select OK to
+        close the window.
 
-![MobaXterm\_loginWindow.JPG](https://support.nesi.org.nz/hc/article_attachments/360002833995/MobaXterm_loginWindow.JPG)
+![mceclip4.png](https://support.nesi.org.nz/hc/article_attachments/4411672582031/mceclip4.png)
 
-7.  Click \'OK\', usually this will start a new session immediately.
-    *See usage below.*
+![mceclip5.png](https://support.nesi.org.nz/hc/article_attachments/4411672594191/mceclip5.png)
+
+7.  Click \'OK\' on the open window, usually this will start a new
+    session immediately. *See usage below.*
 
 > ### WARNING {#moba-bug}
 >
 > There is a bug which causes some users to be repeatedly prompted
-> \<username\>\@lander.nesi.org.nz\'s password:\
+> `<username>@lander.nesi.org.nz's password:`{.sample}\
 > This can be resolved by clicking \"OK\" each time you are prompted
-> then logging in as normal once you are prompted for your First Factor:
-> or Password:.\
+> then logging in as normal once you are prompted for your
+> `First Factor:`{.sample} or `Password:`{.sample}.\
 > See [Login
 > Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
 > for more details
@@ -54,7 +62,7 @@ Usage
 You will see your saved session in the left hand panel under
 \'Sessions\'. Double click to start.
 
-![moba3.png](https://support.nesi.org.nz/hc/article_attachments/360002490096/moba3.png)
+![mceclip6.png](https://support.nesi.org.nz/hc/article_attachments/4411680807951/mceclip6.png)
 
 You will be prompted by dialogue box.
 
@@ -72,11 +80,11 @@ Then Mahuika users may be prompted again:
 
 Enter your password again
 
-Maui users will instead be prompted with:
+Māui users will instead be prompted with:
 
     Password:
 
-Maui users must enter their password combined with their second factor.
+Māui users must enter their password combined with their second factor.
 For example, if your password is \"Password\" and your current second
 factor is \"123456\" then you must enter \"Password123456\".
 

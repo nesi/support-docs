@@ -62,10 +62,10 @@ then you may receive a warning, please do not ignore this. E.g.:
  
 
 +--------+--------+--------+--------+--------+--------+--------+--------+
-| **Name | **Max  | **Node | **CPUs | **GPUs | **Avai | **Avai | **Desc |
-| **     | Wallti | s**    | /Node* | /Node\ | lable  | lable  | riptio |
-|        | me**   |        | *      | **     | Mem/CP | Mem/No | n**    |
-|        |        |        |        |        | U**    | de**   |        |
+| **     | **Max  | **N    | *      | **GPUs | **Ava  | **Ava  | **D    |
+| Name** | Wall   | odes** | *CPUs/ | /Node\ | ilable | ilable | escrip |
+|        | time** |        | Node** | **     | Mem    | Mem/   | tion** |
+|        |        |        |        |        | /CPU** | Node** |        |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 | long   | 3      | 69     | 72     |        | 1500   | 105 GB | For    |
 |        | weeks  |        |        |        | MB     |        | jobs   |
@@ -77,56 +77,76 @@ then you may receive a warning, please do not ignore this. E.g.:
 |        |        |        |        |        |        |        | than 3 |
 |        |        |        |        |        |        |        | days.  |
 +--------+--------+--------+--------+--------+--------+--------+--------+
-| large  | 3 days | *long* | 72     |        | 1500   | 105 GB | Defaul |
-|        |        | + 157  |        |        | MB     |        | t      |
-|        |        |        |        |        |        |        | partit |
-|        |        |        |        |        |        |        | ion.   |
+| large  | 3 days | *long* | 72     |        | 1500   | 105 GB | D      |
+|        |        | + 157  |        |        | MB     |        | efault |
+|        |        |        |        |        |        |        | part   |
+|        |        |        |        |        |        |        | ition. |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 | bigmem | 7 days | 6      | 72     |        | 6300   | 460 GB | Jobs   |
-| /      |        |        |        |        | MB     |        | requir |
-|        |        | 6      | 54     |        |        | 300 GB | ing    |
+| /      |        |        |        |        | MB     |        | req    |
+|        |        | 6      | 54     |        |        | 300 GB | uiring |
 | infill |        |        |        |        | 5500   |        | large  |
-|        |        |        |        |        | MB     |        | amount |
-|        |        |        |        |        |        |        | s      |
+|        |        |        |        |        | MB     |        | a      |
+|        |        |        |        |        |        |        | mounts |
 |        |        |        |        |        |        |        | of     |
-|        |        |        |        |        |        |        | memory |
-|        |        |        |        |        |        |        | .      |
+|        |        |        |        |        |        |        | m      |
+|        |        |        |        |        |        |        | emory. |
 +--------+--------+--------+--------+--------+--------+--------+--------+
-| hugeme | 7 days | 4      | 80\    |        | 18 GB\ | 1,500  | Jobs   |
-| m      |        |        | 128\   |        | 30 GB\ | GB\    | requir |
-|        |        |        | 176    |        | 35 GB  | 4,000  | ing    |
+| h      | 7 days | 4      | 80\    |        | 18 GB\ | 1,500  | Jobs   |
+| ugemem |        |        | 128\   |        | 30 GB\ | GB\    | req    |
+|        |        |        | 176    |        | 35 GB  | 4,000  | uiring |
 |        |        |        |        |        |        | GB\    | very   |
 |        |        |        |        |        |        | 6,000  | large  |
-|        |        |        |        |        |        | GB     | amount |
-|        |        |        |        |        |        |        | s      |
+|        |        |        |        |        |        | GB     | a      |
+|        |        |        |        |        |        |        | mounts |
 |        |        |        |        |        |        |        | of     |
-|        |        |        |        |        |        |        | memory |
-|        |        |        |        |        |        |        | .      |
+|        |        |        |        |        |        |        | m      |
+|        |        |        |        |        |        |        | emory. |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 | gpu    | 3 days | 4      | 18,    | 2      | 6300   | 160    | See    |
-|        |        |        | plus   | P100\* | MB     | GB,    | below  |
-|        |        | 4      | 54     | \*     |        | plus   | for    |
-|        |        |        | shared |        |        | 300 GB | more   |
-|        |        | 2      | with   | 1      |        | shared | info.  |
-|        |        |        | *infil | A100\* |        | with   |        |
-|        |        |        | l*     |        |        | *infil |        |
-|        |        |        |        | 2      |        | l*     |        |
-|        |        |        |        | A100\* |        |        |        |
+|        |        |        | plus   | P100\* | MB     | GB,    | bel    |
+|        |        | 2      | 54     |        |        | plus   | ow for |
+|        |        |        | shared | 1      |        | 300 GB | more   |
+|        |        | 2      | with   | A1     |        | shared | info.  |
+|        |        |        | *i     | 00\*\* |        | with   |        |
+|        |        | 1      | nfill* |        |        | *i     |        |
+|        |        |        |        | 2      |        | nfill* |        |
+|        |        |        |        | A1     |        |        |        |
+|        |        |        |        | 00\*\* |        |        |        |
+|        |        |        |        |        |        |        |        |
+|        |        |        |        | 7      |        |        |        |
+|        |        |        |        | A100-  |        |        |        |
+|        |        |        |        | 1g.5gb |        |        |        |
+|        |        |        |        | \*\*\* |        |        |        |
 +--------+--------+--------+--------+--------+--------+--------+--------+
 
-\* NVIDIA A100 PCIe 40GB cards (4 nodes with 1 GPU, 2 nodes with 2 GPUs)
+\* NVIDIA Tesla P100 PCIe 12GB cards
 
-\*\* NVIDIA Tesla P100 PCIe 12GB card
+\*\* NVIDIA Tesla A100 PCIe 40GB cards
 
-Debug QoS
----------
+\*\*\* 1 NVIDIA Tesla A100 PCIe 40GB card divided into [7 MIG GPU
+slices](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/)
+(5GB each)
+
+Quality of Service
+------------------
 
 Orthogonal to the partitions, each job has a \"Quality of Service\",
 with the default QoS for a job being determined by the allocation class
-of its project. Specifying `--qos=debug` will override that and give the
-job very high priority, but is subject to strict limits: 15 minutes per
-job, and only 1 job at a time per user. Debug jobs may not span more
-than two nodes.
+of its project.  There are other QoSs which you can select with the
+`--qos`option:
+
+### Debug
+
+Specifying `--qos=debug` will give the job very high priority, but is
+subject to strict limits: 15 minutes per job, and only 1 job at a time
+per user. Debug jobs may not span more than two nodes.
+
+### Interactive
+
+Specifying `--qos=interactive` will give the job very high priority, but
+is subject to some limits: up to 4 jobs, 16 hours duration, 4 CPUs, 128
+GB, and 1 GPU.
 
 Requesting GPUs {#req_gpu}
 ---------------
@@ -160,6 +180,7 @@ more details about Slurm and CUDA settings.
     debugging jobs on to a GPU in a reasonably timely manner. For
     example you can have: one 3-day 1-GPU job, one 2-day 2-GPU job, or 6
     GPUs used by jobs of 15 hours or less.
+-   There is a limit of 1 A100-1g.5gb GPU job per user.
 
 Mahuika Infiniband Islands
 --------------------------

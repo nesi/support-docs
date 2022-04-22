@@ -250,8 +250,9 @@ setup:
 -   Load one of the ParaView Server modules listed above and launch the
     server in your interactive visualisation session on the HPC:
 
+```{=html}
 <!-- -->
-
+```
     mpiexec -np <number of MPI ranks> pvserver
 
 -   Create an SSH tunnel for port \"11111\" from the HPC to your local

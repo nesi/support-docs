@@ -2,8 +2,10 @@
 >
 > This documentation contains our legacy instructions for running
 > JupyterLab by tunnelling through the lander node.\
-> [For documentation on jupyter.nesi.org.nz see another
-> article.](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
+> [[If you are a Mahuika cluster user, we recommend using jupyter via 
+> jupyter.nesi.org.nz. Follow this link for more
+> information](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
+> ]{.wysiwyg-font-size-large}
 
 NeSI provides a service for working on Jupyter Notebooks. As a first
 step JupyterLab can be used on Mahuika nodes. JupyterLab is a
@@ -48,8 +50,6 @@ This number needs to be used while establishing the port forwarding and
 while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
- 
-
 Setup SSH port forwarding  {#h_22b17d98-8054-4898-871e-38a42a2e3849}
 --------------------------
 
@@ -79,7 +79,7 @@ Local Port\".
 
 > ### Tips {#prerequisites}
 >
-> -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
+> -   For Māui\_Ancil, e.g. w-mauivlab01 you may want to add the
 >     following to your `.ssh/config` to avoid establishing the
 >     additional hop manually.
 >
@@ -94,7 +94,7 @@ Local Port\".
 >
 >     \<username\> needs to be changed. Hostnames can be adapted for
 >     other nodes, e.g. `w-clim01`
->
+
 ### MobaXterm GUI {#h_cc633523-5df0-4f24-a460-391ced9a0316}
 
 > ### Tips {#prerequisites}

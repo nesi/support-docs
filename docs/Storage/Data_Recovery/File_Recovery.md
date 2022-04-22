@@ -33,5 +33,5 @@ cp /nesi/project/.snapshots/Sunday/nesi99999/file.txt /nesi/project/nesi99999/fi
 
 > ### Tip {#prerequisites}
 >
-> For copying directories use the flag -ir or just -r if you don\'t want
-> to be prompted before overwriting.
+> For copying directories use the flag [-ir]{.kbd} or just [-r]{.kbd} if
+> you don\'t want to be prompted before overwriting.

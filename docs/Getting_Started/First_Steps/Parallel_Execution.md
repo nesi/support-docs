@@ -1,11 +1,12 @@
-[Many scientific software applications are written to take advantage of
-multiple CPUs in some way. But often this must be specifically requested
-by the user at the time they run the program, rather than happening
+[Many scientific software applications are writ[ten to take advantage
+]{.dfn .dictionary-of-numbers}of multiple CPUs in some way. But of[ten
+this must be ]{.dfn .dictionary-of-numbers}specifically requested by the
+user at the time they run the program, rather than happening
 automatically.]{style="font-weight: 400;"}[\
 ]{style="font-weight: 400;"}
 
-The are three types of parallel execution we will cover
-are [Multi-Threading(oMP)](#t_multi),
+The are [three types of parallel ]{.dfn .dictionary-of-numbers}execution
+we will cover are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
 
 > ### Note
@@ -14,7 +15,8 @@ are [Multi-Threading(oMP)](#t_multi),
 > (**2** *logical* CPU\'s = **1** *physical* core).\
 >
 > -   `--cpus-per-task=4` will give you 4 *logical* cores.
-> -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
+> -   `--mem-per-cpu=512MB` will give [512 MB of RAM]{.dfn
+>     .dictionary-of-numbers} per *logical* core.
 > -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
 >     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
 >     logical cores.
@@ -29,13 +31,14 @@ Multi-threading {#t_multi}
 [Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
-(Threading Building Blocks), or pthread (POSIX
-threads).]{style="font-weight: 400;"}
+(Threading Building Blocks), or pthread (PO[SIX threads)]{.dfn
+.dictionary-of-numbers}.]{style="font-weight: 400;"}
 
 ::: {.panel}
 ![Diagram showing serial
 operations.](https://support.nesi.org.nz/hc/article_attachments/360001532455/serial.png){.figure-img}\
-*Fig. 1: In a serial operation, tasks complete one after another.*
+*Fig. 1: In a serial operation, tasks complete [one after another]{.dfn
+.dictionary-of-numbers}.*
 :::
 
 ####  
@@ -116,7 +119,8 @@ Job Arrays {#t_array}
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
 executed in any order and don\'t have to run at the same time. This kind
-of work is often described as *embarrassingly parallel*.
+of work is of[ten described as ]{.dfn
+.dictionary-of-numbers}*embarrassingly parallel*.
 
 A job array will submit the same script repeatedly over a designated
 index using the SBATCH command `#SBATCH --array`{.nohighlight}
@@ -133,9 +137,10 @@ For example, the following code:
     pwd
     echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
-will submit,  `ArrayJob_1`{."nohighlight} and
-`ArrayJob_2`{.nohighlight}, which will return the results This is result
-1 and This is result 2 respectively.
+will submit,  `ArrayJob_1`{.\"nohighlight} and
+`ArrayJob_2`{.nohighlight}, which will return the results
+`This is result 1`{.sample .nohighlight} and `This is result 2`{.sample
+.nohighlight} respectively.
 
 Using SLURM\_ARRAY\_TASK\_ID
 ----------------------------
@@ -174,6 +179,7 @@ is the recommended method of variation between the jobs. For example:
     *\
     Using a seed is important, otherwise multiple jobs may receive the
     same pseudo-random numbers.*
+
 -   As an index to an array of filenames. 
 
         files=( inputs/*.dat )

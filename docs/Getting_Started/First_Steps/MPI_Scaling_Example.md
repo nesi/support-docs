@@ -137,7 +137,7 @@ took to get there.
 
       #!/bin/bash -e
       #SBATCH --job-name=MPIScaling2
-      #SBATCH --ntask=2
+      #SBATCH --ntasks=2
       #SBATCH --time=00:30:00
       #SBATCH --mem-per-cpu=512MB
 

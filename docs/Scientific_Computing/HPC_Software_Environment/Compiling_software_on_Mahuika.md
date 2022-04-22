@@ -359,11 +359,11 @@ Cray Programming Environment {#compiler-options}
 The Cray Programming Environment includes the Cray compiler, various
 libraries and tools. These work nicely together and provide certain
 user-friendly features by using compiler wrappers. This works very
-similar as the Cray XC environment, provided on Maui, and is described
+similar as the Cray XC environment, provided on Māui, and is described
 in detail on the page [Building Code on
-Maui](https://support.nesi.org.nz/hc/en-gb/articles/360000336076).
+Māui](https://support.nesi.org.nz/hc/en-gb/articles/360000336076).
 
-**Note:** on Maui the three compilers (Cray, Gnu and Intel) are provided
+**Note:** on Māui the three compilers (Cray, Gnu and Intel) are provided
 in this special environment, which provides support for both dynamic and
 static linking. In contrast to that, on Mahuika only the Cray compiler
 is provided in this environment. Furthermore, it only provides support

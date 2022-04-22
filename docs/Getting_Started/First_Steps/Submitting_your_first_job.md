@@ -5,8 +5,8 @@ Environment Modules
 cluster. They prepare the environment you need to run an
 application.]{style="font-weight: 400;"}
 
-[For a full list of module commands run man
-module]{style="font-weight: 400;"}
+[For a full list of module commands run [man
+module]{.kbd}]{style="font-weight: 400;"}
 
   ------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   `module spider [ <string> ]`   List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)
@@ -40,7 +40,7 @@ and a header of information needed by our job scheduler
 Creating a batch script
 -----------------------
 
-Create a new file and open it with nano myjob.sl
+Create a new file and open it with [nano myjob.sl]{.kbd}
 
 ``` {.nohighlight}
 #!/bin/bash -e
@@ -69,7 +69,7 @@ sbatch myjob.sl
 
 You should receive an output 
 
-Submitted batch job 1748836
+`Submitted batch job 1748836`{.sample}
 
 Job Queue
 ---------
@@ -99,23 +99,24 @@ then additional lines for each job step.
 
 > ### Tips {#prerequisites}
 >
-> sacct -X Only show parent processes.
+> [sacct -X]{.kbd} Only show parent processes.
 >
-> sacct \--state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
-> state.
+> [sacct \--state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT]{.kbd} Filter
+> jobs by state.
 
 Cancelling
 ----------
 
-scancel \<jobid\> will cancel the job described by \<jobid\>. You can
-obtain the job ID by using sacct or squeue.
+[scancel \<jobid\>]{.kbd} will cancel the job described by
+[\<jobid\>]{.kbd}. You can obtain the job ID by using [sacct]{.kbd} or
+[squeue]{.kbd}.
 
 > ### Tips {#prerequisites}
 >
-> scancel -u \[username\] Kill all jobs submitted by you.
+> [scancel -u \[username\]]{.kbd} Kill all jobs submitted by you.
 >
-> scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
-> \[n2\]
+> [scancel {\[n1\]..\[n2\]}]{.kbd} Kill all jobs with an id between
+> [\[n1\]]{.kbd} and [\[n2\]]{.kbd}
 
 Job Output
 ----------

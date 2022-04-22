@@ -10,9 +10,13 @@ Setting Your Password {#h_d7de94ee-b517-41dd-b70e-6fca380b38a6}
 
 1.  Log into the [My NeSI portal](https://my.nesi.org.nz) via your
     browser.\
-    Click **Set Password** (If you are resetting your password this will
-    read **Reset Password**).\
-    Note your** Username.**
+    Click **My HPC Account** on left hand panel and then **Set
+    Password** (If you are resetting your password this will read
+    **Reset Password**).\
+    Note your** Username.\
+    ![authentication\_factor\_setup.png](https://support.nesi.org.nz/hc/article_attachments/4414700833935/authentication_factor_setup.png){width="442"
+    height="166"}\
+    **
 2.  Enter and verify your new password, making sure it follows the
     [password
     policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).
