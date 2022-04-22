@@ -2,34 +2,11 @@
 ::: {.section}
 ::: {#statuspageUrl .section-tree}
 ::: {.section .section-tree__column}
+{% include 'service_status_script.md'}
 #### HPC Service Status
+{% include 'service_status.md' %}
 
-Apply for Access
 
-Data Transfer
-
-Submit new HPC Jobs
-
-Jobs running on HPC
-
-Jupyter on NeSI (beta)
-
-HPC Storage
-
-Long-term Storage (Early Access)
-
-User Support System
-
-NeSI HPC Compute Infrastructure
-
-NeSI Storage Infrastructure
-
-NeSI Data Transfer Infrastructure
-
-Subscribe to status updates or see all details:
-[status.nesi.org.nz](http://status.nesi.org.nz). Learn more about
-[status notifications at
-NeSI.](https://support.nesi.org.nz/hc/en-gb/articles/360000751636)
 
 ::: {.announcements .statuspage-scheduled style="display: block;"}
 #### Scheduled Maintenance
