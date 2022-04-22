@@ -9,13 +9,31 @@ site_description: NeSI Support Documentation
 #     locale: en
 #     custom_dir: 'theme/'
 theme:
-    name: mkdocs
-    custom_dir: 'mkdocs'
+    name: material
+# theme:
+#     name: null
+#     custom_dir: nesi_theme/
+
 markdown_extensions:
     - toc:
         permalink: True
         baselevel: 1
         toc_depth: 4
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true 
 plugins:
     - search
+    - spellcheck:
+        known_words: ../dictionary.txt
+        ignore_code: yes
+        min_length: 3
+        max_capital: 1
+        allow_unicode: no
+    - mkdocs-simple-hooks:
+        hooks:
+extra_javascript:
+  - JavaScripts/se-v2.js
+            # on_post_build: "custom_hooks:test"
     # - section-index
+
