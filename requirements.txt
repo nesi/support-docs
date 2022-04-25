@@ -4,7 +4,9 @@ mkdocs-section-index
 mkdocs-bootstrap4
 mkdocs-material
 mkdocs-spellcheck
+mkdocs-simple-hooks
 proselint
+linkcheckmd
 
 
 # Add your custom theme if not inside a theme_dir
