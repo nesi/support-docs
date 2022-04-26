@@ -3,6 +3,7 @@ Jupyter
 Mahuika
 NeSI
 Slurm
+srun
 NZ
 eScience
 lockdown
@@ -21,3 +22,6 @@ precompiled
 namespaces
 runtime
 sudo
+walltime
+Māui
+Mahuika
