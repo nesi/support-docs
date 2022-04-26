@@ -6,12 +6,12 @@ before_script:
 test:
   stage: test
   script:
-  - mkdocs build --strict --verbose --site-dir test
+  - mkdocs build --verbose --site-dir test
   artifacts:
     paths:
     - test
   except:
-  - master
+  - main
 
 pages:
   stage: deploy
@@ -19,9 +19,10 @@ pages:
   # - mkdir .public
   # - cp -r * .public
   # - mv .public public
-  - mkdocs build --strict --verbose
+  - mkdocs build --verbose
+  # --strict
   artifacts:
     paths:
     - public
   only:
-  - master
+  - main
