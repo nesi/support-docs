@@ -1,7 +1,7 @@
 image: python:3.8-buster
 
 update_cache:
-  stage: .pre
+  # stage: .pre
   rules:
   - when: manual
   before_script:
@@ -10,7 +10,7 @@ update_cache:
     - python from_zendesk/refresh_cache.py
 
 migrate:
-  stage: .pre
+  # stage: .pre
   rules:
     - changes: 
       - "from_zendesk/pandoc/*"
@@ -22,9 +22,7 @@ migrate:
     - python from_zendesk/convert_docs.py
 
 build_pages:
-  stage: build
-  rules:
-    - if: $CI_COMMIT_TAG
+  # stage: build
   only:
     - main
   before_script:
