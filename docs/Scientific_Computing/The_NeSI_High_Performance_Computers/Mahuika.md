@@ -74,11 +74,11 @@ Mahuika HPC Cluster (Cray CS400)
  Storage (IBM ESS)
 ------------------
 
-  ------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
   **Scratch storage**      4,412 TB (IBM Spectrum Scale, version 5.0). Total I/O bandwidth to disks is \~130 GB/s
-  **Persistent storage**   1,765 TB (IBM Spectrum Scale, version 5.0). Shared between Mahuika and Māui. Total I/O bandwidth to disks is \~65 GB/s (i.e. the /home and /nesi/project filesystems)
+  **Persistent storage**   1,765 TB (IBM Spectrum Scale, version 5.0). Shared between Mahuika and Māui Total I/O bandwidth to disks is \~65 GB/s (i.e. the /home and /nesi/project filesystems)
   **Offline storage**      Of the order of 100 PB (compressed)
-  ------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Scratch and persistent storage are accessible from Mahuika, as well as
 from Māui and the ancillary nodes. Offline storage will in due course be

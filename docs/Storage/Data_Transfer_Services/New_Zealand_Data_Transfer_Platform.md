@@ -13,7 +13,7 @@ allows data to be accessible to any person who has a Globus account.
 | ellington D | Globus      | ansferring  | [           | esi.org.nz> |
 | TN`](https: | Endpoint,   | files       | conditions] |             |
 | //app.globu | being       | to/from     | (https://su |             |
-| s.org/file- | dec         | ma          | pport.nesi. |             |
+| s.org/file- | dec         | Mā          | pport.nesi. |             |
 | manager?ori | ommissioned | ui/mahuika, | org.nz/hc/e |             |
 | gin_id=3064 | 2021-12-08  | and         | n-gb/articl |             |
 | bb28-e940-1 |             | fi          | es/36000057 |             |
@@ -25,7 +25,7 @@ allows data to be accessible to any person who has a Globus account.
 | `NeSI Welli | Endpoint    | ansferring  | [           | esi.org.nz> |
 | ngton DTN V | Version 5,  | files       | conditions] |             |
 | 5`](https:/ | located at  | to/from     | (https://su |             |
-| /app.globus | NIWA        | ma          | pport.nesi. |             |
+| /app.globus | NIWA        | Mā          | pport.nesi. |             |
 | .org/file-m | Wellington  | ui/mahuika, | org.nz/hc/e |             |
 | anager?orig | (Greta      | and         | n-gb/articl |             |
 | in_id=3064b | Point)      | fi          | es/36000057 |             |
@@ -51,8 +51,8 @@ allows data to be accessible to any person who has a Globus account.
 | rch Data DT | UoA         | between UoA | chdata@auck |             |
 | N `](https: | research    | research    | land.ac.nz) |             |
 | //app.globu | data.       | drives and  |             |             |
-| s.org/file- |             | m           |             |             |
-| manager?ori |             | aui/mahuika |             |             |
+| s.org/file- |             | M           |             |             |
+| manager?ori |             | āui/mahuika |             |             |
 | gin_id=e7f6 |             |             |             |             |
 | aaae-fe52-1 |             |             |             |             |
 | 1e8-9345-0e |             |             |             |             |

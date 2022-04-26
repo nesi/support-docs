@@ -1,16 +1,3 @@
-::: {.toc}
--   [Description](#description)
--   [Licensing requirements](#licensing-requirements)
--   [Example jobs](#example-jobs)\
-    -   [Example job submission script](#example-job-submission-script)
-    -   [Example input file](#example-input-file)
--   [Further notes](#further-notes)
-    -   [Setting the memory and number of
-        cores](#setting-the-memory-and-number-of-cores)
-    -   [Saving temporary working files (for advanced
-        users)](#saving-temporary-working-files-for-advanced-users)
-:::
-
 Description
 -----------
 

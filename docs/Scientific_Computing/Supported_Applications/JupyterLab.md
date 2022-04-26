@@ -79,7 +79,7 @@ Local Port\".
 
 > ### Tips {#prerequisites}
 >
-> -   For Māui\_Ancil, e.g. w-mauivlab01 you may want to add the
+> -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
 >     following to your `.ssh/config` to avoid establishing the
 >     additional hop manually.
 >

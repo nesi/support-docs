@@ -33,10 +33,9 @@ transfer GUI.
 ```
 6.  In the "Network settings" tab:
     -   Select \"SSH gateway (jump host)\" to open a popup window
-    -   In this window enter `lander.nesi.org.nz`{.highlighter-rouge} in
-        the "Gateway host" field, as well as your NeSI username in the
-        Username field for the gateway SSH server then select OK to
-        close the window.
+    -   In this window enter `lander.nesi.org.nz` in the "Gateway host"
+        field, as well as your NeSI username in the Username field for
+        the gateway SSH server then select OK to close the window.
 
 ![mceclip4.png](https://support.nesi.org.nz/hc/article_attachments/4411672582031/mceclip4.png)
 
@@ -48,10 +47,10 @@ transfer GUI.
 > ### WARNING {#moba-bug}
 >
 > There is a bug which causes some users to be repeatedly prompted
-> `<username>@lander.nesi.org.nz's password:`{.sample}\
+> `<username>@lander.nesi.org.nz's password:`\
 > This can be resolved by clicking \"OK\" each time you are prompted
 > then logging in as normal once you are prompted for your
-> `First Factor:`{.sample} or `Password:`{.sample}.\
+> `First Factor:` or `Password:`.\
 > See [Login
 > Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
 > for more details

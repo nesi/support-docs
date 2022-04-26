@@ -38,8 +38,8 @@ facility storage and a worldwide network of Globus endpoints. This is
 achieved using Globus.org, a web-based service that solves many of the
 challenges encountered moving large volumes of data between systems.
 While NeSI supports use of other data transfer tools and protocols such
-as `scp`{.bash}, Globus provides the most comprehensive, efficient, and
-easy to use service for NeSI users who need to move large data sets
+as `#!['bash']scp`, Globus provides the most comprehensive, efficient,
+and easy to use service for NeSI users who need to move large data sets
 (more than a few gigabytes at a time).
 
 Types of Globus endpoints or Data Transfer Nodes
@@ -116,13 +116,11 @@ that.
 The NeSI Wellington DTN V5 endpoint is protected by a second factor
 authentication (2FA-same as accessing NeSI clusters).  In the
 \'**Username\'** field, enter your Māui/Mahuika username. In the
-\'**Password\'** field, your `Password`{.c-mrkdwn__code
-stringify-type="code"} will be equal to
-`Login Password (First Factor)`{.c-mrkdwn__code stringify-type="code"} +
-`Authenticator Code (Second Factor)`{.c-mrkdwn__code
-stringify-type="code"} e.g. `password123456`{.c-mrkdwn__code
-stringify-type="code"}. (***Do not*** use any additional characters or
-spaces between your password and the token number.)
+\'**Password\'** field, your `Password` will be equal to
+`Login Password (First Factor)` +
+`Authenticator Code (Second Factor)` e.g. `password123456`. (***Do
+not*** use any additional characters or spaces between your password and
+the token number.)
 
                            
 ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/4408962414351/mceclip0.png)

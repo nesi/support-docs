@@ -4,38 +4,30 @@ Environment Modules
 NeSI uses environment modules to manage [installed
 software](https://support.nesi.org.nz/hc/articles/360000170355).
 
-Using the `module`{.highlighter-rouge} command you can:
+Using the `module` command you can:
 
 -   View loaded modules:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    module list
-    ```
+        module list
     :::
     :::
 -   List all available modules
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    module avail
-    ```
+        module avail
     :::
     :::
 -   Load a module:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    module load Python/2.7.14-gimkl-2017a
-    ```
+        module load Python/2.7.14-gimkl-2017a
     :::
     :::
 -   Switch out a loaded module for a different version:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    module switch Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
-    ```
+        module switch Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
     :::
     :::
 
@@ -46,49 +38,38 @@ As on Pan, Mahuika uses an enhanced version of modules called
 [Lmod](https://lmod.readthedocs.io/en/latest/010_user.html) .
 
 Lmod extends the basic environment modules by adding simple shortcuts
-and a more powerful search capability. The `ml`{.highlighter-rouge}
-shortcut can be used in place of `module`{.highlighter-rouge}. With Lmod
-you can:
+and a more powerful search capability. The `ml` shortcut can be used in
+place of `module`. With Lmod you can:
 
 -   View loaded modules:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    ml
-    ```
+        ml
     :::
     :::
 -   List all available modules:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    ml spider
-    ```
+        ml spider
     :::
     :::
 -   Use "spider" to search for modules, e.g. "Python" modules:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    ml spider Python
-    ```
+        ml spider Python
     :::
     :::
 -   Load a module:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    ml Python/2.7.14-gimkl-2017a
-    ```
+        ml Python/2.7.14-gimkl-2017a
     :::
     :::
 -   Prefix a module with "-" to unload it, e.g. switch from Python 2 to
     Python 3:
     ::: {.highlighter-rouge}
     ::: {.highlight}
-    ``` {.highlight}
-    ml -Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
-    ```
+        ml -Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
     :::
     :::
 -   To get a fresh environment, we recommend that you log out and log in
@@ -112,9 +93,7 @@ using the \"-S\" option, e.g.
 
 ::: {.highlighter-rouge}
 ::: {.highlight}
-``` {.highlight}
-module avail -S netcdf
-```
+    module avail -S netcdf
 :::
 :::
 

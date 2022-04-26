@@ -91,9 +91,8 @@ local directories:
 > ### Note {#prerequisites}
 >
 > Parpool will throw a warning when started due to a difference in how
-> time z[one is specified]{.dfn .dictionary-of-numbers}. To fix this,
-> add the following line to your SLURM script:
-> `export TZ="Pacific/Auckland'`
+> time zone is specified. To fix this, add the following line to your
+> SLURM script: `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 
@@ -131,7 +130,7 @@ it to be run asynchronously. e.g.
 
     end
 
-`fetchOutputs`{.matlab} is used to retrieve the values.
+`fetchOutputs` is used to retrieve the values.
 
 More info
 [here](https://au.mathworks.com/help/parallel-computing/parfeval.html).
@@ -308,13 +307,13 @@ MATLAB supports the following compilers.
   --------- --------------------------
 
 The most up to date compilers supported by MATLAB can be loaded on NeSI
-using `module load gimkl/2017a`{.code-bash}
+using `module load gimkl/2017a`
 
 If no GCC module is loaded, the default system version of these
 compilers will be used.
 
 Further configuration can be done within MATLAB using the command
-`mex -setup`{.code-matlab}
+`mex -setup`
 
 `mex <file_name>`  will then compile the mex function. 
 
@@ -353,9 +352,7 @@ When using versions of MATLAB more recent than 2021a you may notice the
 following warning.
 
 ::: {.content}
-``` {.SC7580F400}
-glibc_shim: Didn't find correct code to patch
-```
+    glibc_shim: Didn't find correct code to patch
 
 This warning appears whenever MATLAB interfaces with the operating
 system (e.g. `ls` or `system()` or use of the `!` prefix).

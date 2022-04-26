@@ -18,8 +18,7 @@ news](https://slurm.schedmd.com/news.html)
 []{.c-mrkdwn__br stringify-type="paragraph-break"}***squeue***
 :::
 
--   Added `--me`{.c-mrkdwn__code stringify-type="code"} option,
-    equivalent to` --user=$USER`{.c-mrkdwn__code stringify-type="code"}.
+-   Added `--me` option, equivalent to` --user=$USER`.
 -   Added \"pendingtime\" as a option for \--Format.
 -   Put sorted start times of \"N/A\" or 0 at the end of the list.
 
@@ -38,13 +37,9 @@ news](https://slurm.schedmd.com/news.html)
 -   MAGNETIC flag on reservations. Reservations the user doesn\'t have
     to even request.
 -   The LicensesUsed line has been removed
-    from[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show config`{.c-mrkdwn__code
-    style="font-size: 15px;"
-    stringify-type="code"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[.
+    from[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show config`[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[.
     Please use
-    updated]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show licenses`{.c-mrkdwn__code
-    style="font-size: 15px;"
-    stringify-type="code"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[command
+    updated]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show licenses`[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[command
     as an
     alternative.]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}
 
@@ -53,17 +48,13 @@ news](https://slurm.schedmd.com/news.html)
 []{.c-mrkdwn__br stringify-type="paragraph-break"}
 :::
 
--    `--threads-per-core`{.c-mrkdwn__code stringify-type="code"} now
-    influences task layout/binding, not just allocation.
--   `--gpus-per-node`{.c-mrkdwn__code style="font-size: 15px;"
-    stringify-type="code"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[can
+-    `--threads-per-core` now influences task layout/binding, not just
+    allocation.
+-   `--gpus-per-node`[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[can
     be used instead
-    of]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--gres=GPU`{.c-mrkdwn__code
-    style="font-size: 15px;" stringify-type="code"}
--   `--hint=nomultithread`{.c-mrkdwn__code style="font-size: 15px;"
-    stringify-type="code"}[ can now be replaced
-    ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[with]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--threads-per-core=1`{.c-mrkdwn__code
-    style="font-size: 15px;" stringify-type="code"}
+    of]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--gres=GPU`
+-   `--hint=nomultithread`[ can now be replaced
+    ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[with]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--threads-per-core=1`
 -   The inconsistent terminology and environment variable naming for
     Heterogeneous Job (\"HetJob\") support has been tidied up.
 -   The correct term for these jobs are \"HetJobs\", references to

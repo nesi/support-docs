@@ -48,13 +48,13 @@ Ancillary Node Specifications
 The Māui\_Ancil nodes have different working environment than the Māui
 (login) nodes. Therefore a CS500 login node is provided, to create and
 submit your jobs on this architecture. To use you need to login from
-maui login nodes to:
+Māui login nodes to:
 
     w-mauivlab01.maui.nesi.org.nz
 
 If you are looking for accessing this node from your local machine you
-could add the following section to `~/.ssh/config`{.nohighlight}
-(extending the [recommended terminal
+could add the following section to `~/.ssh/config` (extending the
+[recommended terminal
 setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup))
 
     Host w-mauivlab01 

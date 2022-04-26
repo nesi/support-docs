@@ -1,7 +1,7 @@
 To make your transition experience (from Kupe to Māui) as seamless as
 possible, there are several important steps and points you need to take
 into consideration. **Please read this entire article before trying to
-access Māui.**
+access Māui**
 
 **Note: **Please
 [report](mailto:support@nesi.org.nz?subject=Reporting%20an%20error%20in%20the%20Transition%20to%20Maui%20documentation)
@@ -112,12 +112,12 @@ In particular, please note:
 -   There is a Slurm primer
     [here](https://support.nesi.org.nz/hc/en-gb/articles/360000359576-Primer-Slurm-Usage)
     that provides additional information about how to submit jobs
-    between the Māui and Māui\_Ancil Slurm clusters.
+    between the Māui and Maui\_Ancil Slurm clusters.
 
 You should have access to the same software you used Kupe. See how to
 [find
 modules](https://support.nesi.org.nz/hc/en-gb/articles/360000360576-Finding-Software)
-using the -S option on Māui (which will also be available of Māui\_Ancil
+using the -S option on Māui (which will also be available of Maui\_Ancil
 nodes in November).  Notice too that we are introducing a [new support
 model](https://support.nesi.org.nz/hc/en-gb/articles/360000170355-NeSI-Application-Support-Model).
 
@@ -134,13 +134,13 @@ While all relevant software has been migrated from kupe, kupe\_mp and
 the Virtual Labs, a few important changes have been made:
 
 -   There is now a clearer separation between the maui\_ancil, and
-    Virtual Labs (CS500) and maui (XC50) software stacks: the maui
+    Virtual Labs (CS500) and Māui (XC50) software stacks: the Māui
     software stack only contains software needed for large jobs (e.g.,
     XIOS and the grib\_api library), while general tools and libraries
     (e.g., Anaconda, NCO, and Mule) can now only be found on the
     maui\_ancil and Virtual Lab machines. This ensures that we make best
     use of system capabilities, and **avoid single core jobs running on
-    maui** (i.e. XC50).
+    Māui** (i.e. XC50).
 -   The maui\_ancil and Virtual Labs software stack now uses a more
     recent GNU toolchain based on GCC v7.1.0, to benefit from Intel
     Skylake architecture capabilities. Module names have therefore
@@ -162,7 +162,7 @@ filesystems. 
 -   `/nesi/project/<project_id>/KUPE_SYNC`
 -   `/nesi/nobackup/<project_id>/KUPE_SYNC`
 
-From either Kupe or Māui. 
+From either Kupe or Māui
 
 **Until you delete these files any file you create on Māui will be
 removed at the next sync.**

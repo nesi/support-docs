@@ -1,12 +1,11 @@
-[Many scientific software applications are writ[ten to take advantage
-]{.dfn .dictionary-of-numbers}of multiple CPUs in some way. But of[ten
-this must be ]{.dfn .dictionary-of-numbers}specifically requested by the
-user at the time they run the program, rather than happening
+[Many scientific software applications are written to take advantage of
+multiple CPUs in some way. But often this must be specifically requested
+by the user at the time they run the program, rather than happening
 automatically.]{style="font-weight: 400;"}[\
 ]{style="font-weight: 400;"}
 
-The are [three types of parallel ]{.dfn .dictionary-of-numbers}execution
-we will cover are [Multi-Threading(oMP)](#t_multi),
+The are three types of parallel execution we will cover
+are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
 
 > ### Note
@@ -15,8 +14,7 @@ we will cover are [Multi-Threading(oMP)](#t_multi),
 > (**2** *logical* CPU\'s = **1** *physical* core).\
 >
 > -   `--cpus-per-task=4` will give you 4 *logical* cores.
-> -   `--mem-per-cpu=512MB` will give [512 MB of RAM]{.dfn
->     .dictionary-of-numbers} per *logical* core.
+> -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
 > -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
 >     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
 >     logical cores.
@@ -31,14 +29,13 @@ Multi-threading {#t_multi}
 [Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
-(Threading Building Blocks), or pthread (PO[SIX threads)]{.dfn
-.dictionary-of-numbers}.]{style="font-weight: 400;"}
+(Threading Building Blocks), or pthread (POSIX
+threads).]{style="font-weight: 400;"}
 
 ::: {.panel}
 ![Diagram showing serial
 operations.](https://support.nesi.org.nz/hc/article_attachments/360001532455/serial.png){.figure-img}\
-*Fig. 1: In a serial operation, tasks complete [one after another]{.dfn
-.dictionary-of-numbers}.*
+*Fig. 1: In a serial operation, tasks complete one after another.*
 :::
 
 ####  
@@ -80,18 +77,16 @@ limitation of requiring shared memory and thus can be used across
 multiple nodes, but has higher communication and memory
 overheads.]{style="font-weight: 400;"}
 
-For MPI jobs you need to set `--ntasks`{.highlighter-rouge} to a value
-larger than 1, or if you want all nodes to run the same number of tasks,
-set `--ntasks-per-node`{.highlighter-rouge} and
-`--nodes`{.highlighter-rouge} instead.
+For MPI jobs you need to set `--ntasks` to a value larger than 1, or if
+you want all nodes to run the same number of tasks, set
+`--ntasks-per-node` and `--nodes` instead.
 
 MPI programs require a launcher to start the *ntasks* processes on
 multiple CPUs, which may belong to different nodes. On Slurm systems
 like ours, the preferred launcher is `srun` rather than `mpi-run`.
 
 Since the distribution of tasks across different nodes may be
-unpredictable, `--mem-per-cpu` should be used instead
-of `--mem`.``{.nohighlight}
+unpredictable, `--mem-per-cpu` should be used instead of `--mem`.``
 
     #!/bin/bash -e
     #SBATCH --job-name=MPIJob       # job name (shows up in the queue)
@@ -119,11 +114,10 @@ Job Arrays {#t_array}
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
 executed in any order and don\'t have to run at the same time. This kind
-of work is of[ten described as ]{.dfn
-.dictionary-of-numbers}*embarrassingly parallel*.
+of work is often described as *embarrassingly parallel*.
 
 A job array will submit the same script repeatedly over a designated
-index using the SBATCH command `#SBATCH --array`{.nohighlight}
+index using the SBATCH command `#SBATCH --array`
 
 For example, the following code:
 
@@ -137,16 +131,14 @@ For example, the following code:
     pwd
     echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
-will submit,  `ArrayJob_1`{.\"nohighlight} and
-`ArrayJob_2`{.nohighlight}, which will return the results
-`This is result 1`{.sample .nohighlight} and `This is result 2`{.sample
-.nohighlight} respectively.
+will submit,  `ArrayJob_1` and `ArrayJob_2`, which will return the
+results `This is result 1` and `This is result 2` respectively.
 
 Using SLURM\_ARRAY\_TASK\_ID
 ----------------------------
 
-Use of the environment variable `${SLURM_ARRAY_TASK_ID}`{.nohighlight}
-is the recommended method of variation between the jobs. For example:
+Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
+recommended method of variation between the jobs. For example:
 
 -   As a direct input to a function.\
 
@@ -164,17 +156,13 @@ is the recommended method of variation between the jobs. For example:
 -   As a seed for a pseudo-random number.\
     -   In R
 
-        ``` {dir="ltr"}
-        task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-        set.seed(task_id)
-        ```
+            task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+            set.seed(task_id)
 
     -   In MATLAB
 
-        ``` {dir="ltr"}
-        task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-        rng(task_id)
-        ```
+            task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+            rng(task_id)
 
     *\
     Using a seed is important, otherwise multiple jobs may receive the
@@ -190,8 +178,8 @@ is the recommended method of variation between the jobs. For example:
     in \'inputs\' as the variable input (in alphabetcial order).
 
 Environment variables *will not work* in the Slurm header. In place
-of `${SLURM_ARRAY_TASK_ID}`{.nohighlight}, you can use the token `%a`.
-This can be useful for sorting your output files e.g.
+of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
+useful for sorting your output files e.g.
 
     #SBATCH --output=outputs/run_%a/slurm_output.out
     #SBATCH --output=outputs/run_%a/slurm_error.err

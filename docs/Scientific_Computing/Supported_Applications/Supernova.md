@@ -1,14 +1,3 @@
-::: {.toc}
--   [Description](#description)
--   [License](#licence)
--   [Example script](#example-scripts)
--   [Getting Supernova to run
-    successfully](#getting-supernova-to-run-successfully)
--   [Tracking job progress via
-    browser](#tracking-job-progress-via-browser)
--   [Things to watch out for](#things-to-watch-out-for)
-:::
-
 Description
 ===========
 
@@ -21,19 +10,19 @@ distances.
 The Supernova software package includes two processing pipelines and one
 for post-processing:
 
--   **`supernova mkfastq`{.sample}** wraps Illumina\'s bcl2fastq to
-    correctly demultiplex Chromium-prepared sequencing samples and to
-    convert barcode and read data to FASTQ files.
--   **`supernova run`{.sample}** takes FASTQ files containing barcoded
-    reads from `supernova mkfastq`{.sample} and builds a graph-based
-    assembly. The approach is to first build an assembly using read
-    kmers (K = 48), then resolve this assembly using read pairs (to K =
-    200), then use barcodes to effectively resolve this assembly to K ≈
-    100,000. The final step pulls apart homologous chromosomes into
-    phase blocks, which are often several megabases in length.
--   **`supernova mkoutput`{.sample}** takes Supernova\'s graph-based
-    assemblies and produces several styles of FASTA suitable for
-    downstream processing and analysis.
+-   **`supernova mkfastq`** wraps Illumina\'s bcl2fastq to correctly
+    demultiplex Chromium-prepared sequencing samples and to convert
+    barcode and read data to FASTQ files.
+-   **`supernova run`** takes FASTQ files containing barcoded reads from
+    `supernova mkfastq` and builds a graph-based assembly. The approach
+    is to first build an assembly using read kmers (K = 48), then
+    resolve this assembly using read pairs (to K = 200), then use
+    barcodes to effectively resolve this assembly to K ≈ 100,000. The
+    final step pulls apart homologous chromosomes into phase blocks,
+    which are often several megabases in length.
+-   **`supernova mkoutput`** takes Supernova\'s graph-based assemblies
+    and produces several styles of FASTA suitable for downstream
+    processing and analysis.
 
 Download latest release from 10xGenomics.
 
@@ -54,22 +43,20 @@ own licensing agreement.
 
 <https://support.10xgenomics.com/de-novo-assembly/software/downloads/latest>
 
-Example script``{.bash} {#example-scripts}
-=======================
+Example script`#!['bash']` {#example-scripts}
+==========================
 
-``` {dir="ltr"}
-#SBATCH -J mySupernovajob
-#SBATCH --partition=hugemem
-#SBATCH --ntasks=1
-#SBATCH --mem=460G
-#SBATCH --cpus-per-task=16
-#SBATCH --time=168:00:00
-#SBATCH --hint=nomultithread
+    #SBATCH -J mySupernovajob
+    #SBATCH --partition=hugemem
+    #SBATCH --ntasks=1
+    #SBATCH --mem=460G
+    #SBATCH --cpus-per-task=16
+    #SBATCH --time=168:00:00
+    #SBATCH --hint=nomultithread
 
-module load Supernova/2.1.1
+    module load Supernova/2.1.1
 
-supernova run --id=.....................
-```
+    supernova run --id=.....................
 
 Getting Supernova to run successfully
 =====================================
@@ -83,17 +70,17 @@ Further to that we also suggest,
     Recommended
     reading..[https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/\#\
      ](https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/#)<http://qb.cshl.edu/genomescope/>
--   When passing `--localmem`{.bash} to supernova, ensure this number is
-    less than the total memory passed to Slurm. ``{.bash}
--   Pass `${SLURM_CPUS_PER_TASK}`{.bash} to supernova with the
-    `--localcores`{.bash} argument.
+-   When passing `#!['bash']--localmem` to supernova, ensure this number
+    is less than the total memory passed to Slurm. `#!['bash']`
+-   Pass `#!['bash']${SLURM_CPUS_PER_TASK}` to supernova with the
+    `#!['bash']--localcores` argument.
 
 Tracking job progress via browser
 =================================
 
-Find the beginning of the `_log `{.bash} file, located in the directory
-where the call to supernova was run, or the path specified in the Slurm
-batch file via `--output`{.bash}.
+Find the beginning of the `#!['bash']_log ` file, located in the
+directory where the call to supernova was run, or the path specified in
+the Slurm batch file via `#!['bash']--output`.
 
     >head -n 30 <job_name>.out
 
@@ -123,7 +110,7 @@ The link assumes the form..
 In a new local terminal window open an ssh tunnel to the node. This
 takes the following general form
 
-`ssh -L <d>:<node>:<port> -N <server>`{.bash}
+`#!['bash']ssh -L <d>:<node>:<port> -N <server>`
 
 -   \<d\> An integer
 -   \<server\> see: [\
@@ -153,8 +140,8 @@ Things to watch out for
 -   Supernova will create checkpoints after completing stages in the
     pipeline. In order to run from a previously created checkpoint you
     will first need to delete the \_lock file located in the main output
-    directory (the directory named by `ID=${SLURM_JOB_NAME}`{.bash}
-    where the `_log `{.bash} file is also located) and passed to
-    supernova in the `--id=${ID}`{.bash} argument in the sample Slurm
+    directory (the directory named by `#!['bash']ID=${SLURM_JOB_NAME}`
+    where the `#!['bash']_log ` file is also located) and passed to
+    supernova in the `#!['bash']--id=${ID}` argument in the sample Slurm
     script above. Avoid changing any other settings in both the call to
-    Slurm and supernova.``{.bash}``{.bash}``{.bash}
+    Slurm and supernova.`#!['bash']``#!['bash']``#!['bash']`

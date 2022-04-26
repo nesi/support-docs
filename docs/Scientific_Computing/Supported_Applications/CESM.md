@@ -12,7 +12,7 @@ Building CESM2 on Māui {#building-cesm2-on-maui}
 ======================
 
 Here we provide a guide for downloading, building and running a CESM
-test case yourself on Māui. This guide is based on CESM 2.1.
+test case yourself on Māui This guide is based on CESM 2.1.
 
 Prerequisites
 -------------
@@ -89,7 +89,7 @@ First, create the case:
     ./create_newcase --case /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test --compset B1850 --res f19_g17 --machine maui --compiler intel
     cd /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test
 
-The *\--machine maui \--compiler intel* arguments to *./create\_case*
+The *\--machine Māui \--compiler intel* arguments to *./create\_case*
 tell CESM to use the NeSI specific configuration we added to your home
 directory in the previous step.
 

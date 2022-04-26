@@ -112,9 +112,7 @@ height="415"}
     your batch script:
     -   #SBATCH --export=NONE
 
-    -   ``` {.c-mrkdwn__pre stringify-type="pre"}
-        export SLURM_EXPORT_ENV=ALL
-        ```
+    -   export SLURM_EXPORT_ENV=ALL
 
 Ending your interactive session and logging out
 ===============================================

@@ -2,25 +2,22 @@
 License Types
 -------------
 
-The [three main ANSYS licenses ]{.dfn .dictionary-of-numbers}are;
+The three main ANSYS licenses are;
 
 -   **ANSYS Teaching License **(aa\_t)
 
-    This is the default license type, it can be used on up to [16 CPUs
-    on models ]{.dfn .dictionary-of-numbers}with less than [[512k
-    nodes]{.dfn .dictionary-of-numbers}]{style="font-style: italic;"}
+    This is the default license type, it can be used on up to 16 CPUs on
+    models with less than [512k nodes]{style="font-style: italic;"}
 
 -   **ANSYS Research license** (aa\_r)
 
-    No node restrictions. Can be used on up to [16 CPUs]{.dfn
-    .dictionary-of-numbers}, for every additional CPU over [16 you must
-    request ]{.dfn .dictionary-of-numbers}additional \'aa\_r\_hpc\'
+    No node restrictions. Can be used on up to 16 CPUs, for every
+    additional CPU over 16 you must request additional \'aa\_r\_hpc\'
     licenses.
 
 -   **ANSYS HPC License** (aa\_r\_hpc)**\
-    **[One of these is ]{.dfn .dictionary-of-numbers}required for each
-    CPU over [16 when using a ]{.dfn .dictionary-of-numbers}research
-    license.
+    **One of these is required for each CPU over 16 when using
+    a research license.
 
 License Order
 -------------
@@ -30,9 +27,9 @@ If your job is greater than the node limit, not switching to the
 research license before submitting a job will **cause the job to fail**.
 
 The license order can be changed in workbench under tools \> license
-preferences (provided you have X[11 forwarding set up)]{.dfn
-.dictionary-of-numbers}, or by running either of the following (ANSYS
-module must be loaded first using `module load ANSYS`).
+preferences (provided you have X11 forwarding set up), or by running
+either of the following (ANSYS module must be loaded first using
+`module load ANSYS`).
 
     prefer_research_license
 
@@ -49,10 +46,10 @@ Journal files
 =============
 
 Some ANSYS applications take a \'journal\' text file as input. It is
-of[ten useful to create ]{.dfn .dictionary-of-numbers}this journal file
-in your SLURM script (tidiness, submitting jobs programmatically, etc).
-This can be d[one by using ]{.dfn .dictionary-of-numbers}`cat` to make a
-file from a \'[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)\'.
+often useful to create this journal file in your SLURM script (tidiness,
+submitting jobs programmatically, etc). This can be done by using `cat`
+to make a file from a
+\'[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)\'.
 
 Below is an example of this from a fluent script.
 
@@ -79,11 +76,10 @@ Below is an example of this from a fluent script.
     fluent -v3ddp -g -i ${JOURNAL_FILE}
     rm ${JOURNAL_FILE}
 
-`JOURNAL_FILE`{.bash} is a variable holding the name of a file, the next
-line `cat` creates the file then writes a block of text into it. The
-block of text writ[ten is everything betweenan ]{.dfn
-.dictionary-of-numbers}arbitrary string (in this case `EOF`) and its
-next occurrence.
+`#!['bash']JOURNAL_FILE` is a variable holding the name of a file, the
+next line `cat` creates the file then writes a block of text into it.
+The block of text written is everything betweenan arbitrary string (in
+this case `EOF`) and its next occurrence.
 
 In this case (assuming it is the first run of the array and the
 jobid=1234567), the file  `fluent_1234567.in` will be created:
@@ -101,8 +97,9 @@ jobid=1234567), the file  `fluent_1234567.in` will be created:
     exit yes
     ; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).)
 
-then called as an input `fluent -v3ddp -g -i fluent_1234567.in`{.bash},\
-then deleted `rm fluent_1234567.in`{.bash}
+then called as an
+input `#!['bash']fluent -v3ddp -g -i fluent_1234567.in`,\
+then deleted `#!['bash']rm fluent_1234567.in`
 
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
@@ -118,14 +115,14 @@ Fluent {#ansys-fluent}
 
 `fluent -help` for a list of commands.
 
-Must have [one of these flags]{.dfn .dictionary-of-numbers}. 
+Must have one of these flags. 
 
-  -------- -------------------------------------------------------------------
-  `2d`     [2D solver]{.dfn .dictionary-of-numbers}, single point precision.
-  `3d`     [3D solver]{.dfn .dictionary-of-numbers}, single point precision.
-  `2ddp`   [2D solver]{.dfn .dictionary-of-numbers}, double point precision.
-  `3ddp`   [3D solver]{.dfn .dictionary-of-numbers}, double point precision.
-  -------- -------------------------------------------------------------------
+  -------- ------------------------------------
+  `2d`     2D solver, single point precision.
+  `3d`     3D solver, single point precision.
+  `2ddp`   2D solver, double point precision.
+  `3ddp`   3D solver, double point precision.
+  -------- ------------------------------------
 
  
 
@@ -136,13 +133,13 @@ Must have [one of these flags]{.dfn .dictionary-of-numbers}. 
 | -------------------------------   | TCH --job-name      Fluent-Serial |
 |                                   |     #SBATCH --licenses      aa_r  |
 | Single *process* with a single    | @uoa_foe:1 #One research license. |
-| *thread* [(2 threads if           |     #SBATCH --time                |
-| hyperthreading ]{.dfn             |      00:05:00          # Walltime |
-| .dictionary-of-numbers}enabled).  |     #SBATCH --                    |
-|                                   | cpus-per-task 1                 # |
-| Usually submitted as part of an   |  Double if hyperthreading enabled |
-| array, as in the case of          |     #                             |
-| parameter sweeps.                 | SBATCH --mem           512MB      |
+| *thread* (2 threads if            |     #SBATCH --time                |
+| hyperthreading enabled).          |      00:05:00          # Walltime |
+|                                   |     #SBATCH --                    |
+| Usually submitted as part of an   | cpus-per-task 1                 # |
+| array, as in the case of          |  Double if hyperthreading enabled |
+| parameter sweeps.                 |     #                             |
+|                                   | SBATCH --mem           512MB      |
 |                                   |         # total memory (per node) |
 |                                   |     #                             |
 |                                   | SBATCH --hint          nomultithr |
@@ -163,22 +160,22 @@ Must have [one of these flags]{.dfn .dictionary-of-numbers}. 
 | Multiple *processes* each with a  |      00:05:00          # Walltime |
 | single *thread*.                  |     #SBATCH --licenses          a |
 |                                   | a_r@uoa_foe:1,aa_r_hpc@uoa_foe:20 |
-| Not limited to [one node]{.dfn    |     ##One research                |
-| .dictionary-of-numbers}.\         | license, (ntasks-16) hpc licenses |
-| Model will be segmented into      |     #SBATCH -                     |
-| `-t` pieces which should be equal | -nodes             1              |
-| to `--ntasks`.                    |     # Limit to n nodes (Optional) |
-|                                   |                                   |
-| Each task could be running on a   |   #SBATCH --ntasks            8   |
-| different node leading to         |                # Number processes |
-| increased communication overhead. |     #SBATCH --cpus                |
-| Jobs can be limited to a single   | -per-task     1                 # |
-| node by                           |  Double if hyperthreading enabled |
-| adding  `--nodes=1`{              |     #SBATCH --mem-per-cpu         |
-| style="font-size: 14px;"} however |        1500              # Fine f |
-| this will increase your time in   | or small jobs; increase if needed |
-| the queue as contiguous cpu\'s    |     #SBAT                         |
-| are harder to schedule.           | CH --hint              nomultithr |
+| Not limited to one node.\         |     ##One research                |
+| Model will be segmented into      | license, (ntasks-16) hpc licenses |
+| `-t` pieces which should be equal |     #SBATCH -                     |
+| to `--ntasks`.                    | -nodes             1              |
+|                                   |     # Limit to n nodes (Optional) |
+| Each task could be running on a   |                                   |
+| different node leading to         |   #SBATCH --ntasks            8   |
+| increased communication overhead. |                # Number processes |
+| Jobs can be limited to a single   |     #SBATCH --cpus                |
+| node by                           | -per-task     1                 # |
+| adding  `--nodes=1` however this  |  Double if hyperthreading enabled |
+| will increase your time in the    |     #SBATCH --mem-per-cpu         |
+| queue as contiguous cpu\'s are    |        1500              # Fine f |
+| harder to schedule.               | or small jobs; increase if needed |
+|                                   |     #SBAT                         |
+|                                   | CH --hint              nomultithr |
 |                                   | ead     # Hyperthreading disabled |
 |                                   |                                   |
 |                                   |     module load ANSYS/19.2        |
@@ -292,9 +289,7 @@ named \"libudf\"), these will be rebuilt when the UDF is first loaded.
 If it is not possible to specify the UDF in the `.cas` file, you may do
 so in the journal file.
 
-``` {dir="ltr"}
-define/user-defined/compiled-functions compile libudf yes myUDF.c "" ""
-```
+    define/user-defined/compiled-functions compile libudf yes myUDF.c "" ""
 
 Will compile the code `myUDF.c` into a library named `libudf` 
 
@@ -314,13 +309,13 @@ CFX {#ansys-CFX}
 | -------------------------------   | SBATCH --job-name      CFX-serial |
 |                                   |     #SBATCH --licenses      aa_r  |
 | Single *process* with a single    | @uoa_foe:1 #One research license. |
-| *thread* [(2 threads if           |     #SBATCH --time                |
-| hyperthreading ]{.dfn             |      00:05:00          # Walltime |
-| .dictionary-of-numbers}enabled).  |     #SBATCH --                    |
-|                                   | cpus-per-task 1                 # |
-| Usually submitted as part of an   |  Double if hyperthreading enabled |
-| array, as in the case of          |     #SBATCH --mem                 |
-| parameter sweeps.                 |     512MB             # total mem |
+| *thread* (2 threads if            |     #SBATCH --time                |
+| hyperthreading enabled).          |      00:05:00          # Walltime |
+|                                   |     #SBATCH --                    |
+| Usually submitted as part of an   | cpus-per-task 1                 # |
+| array, as in the case of          |  Double if hyperthreading enabled |
+| parameter sweeps.                 |     #SBATCH --mem                 |
+|                                   |     512MB             # total mem |
 |                                   |     #                             |
 |                                   | SBATCH --hint          nomultithr |
 |                                   | ead     # Hyperthreading disabled |
@@ -339,22 +334,22 @@ CFX {#ansys-CFX}
 | Multiple *processes* each with a  |      00:05:00          # Walltime |
 | single *thread*.                  |     #SBATCH --licenses          a |
 |                                   | a_r@uoa_foe:1,aa_r_hpc@uoa_foe:20 |
-| Not limited to [one node]{.dfn    |     ##One research                |
-| .dictionary-of-numbers}.\         | license, (ntasks-16) hpc licenses |
-| Model will be segmented into      |     #SBATCH -                     |
-| `-np` pieces which should be      | -nodes             1              |
-| equal to `--ntasks`.              |     # Limit to n nodes (Optional) |
-|                                   |                                   |
-| Each task could be running on a   |   #SBATCH --ntasks            36  |
-| different node leading to         |                # Number processes |
-| increased communication overhead\ |     #SBATCH --cpus                |
-| .Jobs can be limited to a single  | -per-task     1                 # |
-| node by                           |  Double if hyperthreading enabled |
-| adding  `--nodes=1`{              |     #SBATCH --                    |
-| style="font-size: 14px;"} however | mem-per-cpu       512MB           |
-| this will increase your time in   |    # Standard for large partition |
-| the queue as contiguous cpu\'s    |     #SBAT                         |
-| are harder to schedule.           | CH --hint              nomultithr |
+| Not limited to one node.\         |     ##One research                |
+| Model will be segmented into      | license, (ntasks-16) hpc licenses |
+| `-np` pieces which should be      |     #SBATCH -                     |
+| equal to `--ntasks`.              | -nodes             1              |
+|                                   |     # Limit to n nodes (Optional) |
+| Each task could be running on a   |                                   |
+| different node leading to         |   #SBATCH --ntasks            36  |
+| increased communication overhead\ |                # Number processes |
+| .Jobs can be limited to a single  |     #SBATCH --cpus                |
+| node by                           | -per-task     1                 # |
+| adding  `--nodes=1` however this  |  Double if hyperthreading enabled |
+| will increase your time in the    |     #SBATCH --                    |
+| queue as contiguous cpu\'s are    | mem-per-cpu       512MB           |
+| harder to schedule.               |    # Standard for large partition |
+|                                   |     #SBAT                         |
+|                                   | CH --hint              nomultithr |
 |                                   | ead     # Hyperthreading disabled |
 |                                   |                                   |
 |                                   |     module load ANSYS/19.2        |
@@ -374,9 +369,8 @@ CFX-Post
 
 Even when running headless (without a GUI) CFX-Post requires connection
 to a graphical output. For some cases it may be suitable running
-CFX-Post on the login node and using your X[-11 display]{.dfn
-.dictionary-of-numbers}, but for larger batch compute jobs you will need
-to make use of a dummy X[-11 server]{.dfn .dictionary-of-numbers}.
+CFX-Post on the login node and using your X-11 display, but for larger
+batch compute jobs you will need to make use of a dummy X-11 server.
 
 This is as simple as prepending your command with the X Virtual Frame
 Buffer command.
@@ -391,8 +385,8 @@ Serial Example
 
 ------------------------------------------------------------------------
 
-Single *process* with a single *thread* [(2 threads if hyperthreading
-]{.dfn .dictionary-of-numbers}enabled).
+Single *process* with a single *thread* (2 threads if hyperthreading
+enabled).
 
 Usually submitted as part of an array, as in the case of parameter
 sweeps.
@@ -446,15 +440,15 @@ Distributed Memory Example
 
 Multiple *processes* each with a single *thread*.
 
-Not limited to [one node]{.dfn .dictionary-of-numbers}.\
+Not limited to one node.\
 Model will be segmented into `-np` pieces which should be equal
 to `--ntasks`.
 
 Each task could be running on a different node leading to increased
 communication overhead\
-.Jobs can be limited to a single node by
-adding  `--nodes=1`{style="font-size: 14px;"} however this will increase
-your time in the queue as contiguous cpu\'s are harder to schedule.
+.Jobs can be limited to a single node by adding  `--nodes=1` however
+this will increase your time in the queue as contiguous cpu\'s are
+harder to schedule.
 
 **Distributed Memory Parallel is currently not supported on Māui.**
 
@@ -618,9 +612,9 @@ Currently FENSAP-ICE is only available on Mahuika and in ANSYS 19.2.
 The following FENSAP solvers are compatible with MPI
 
 -   FENSAP
--   DROP[3D]{.dfn .dictionary-of-numbers}
--   ICE[3D]{.dfn .dictionary-of-numbers}
--   C[3D]{.dfn .dictionary-of-numbers}
+-   DROP3D
+-   ICE3D
+-   C3D
 -   OptiGrid
 
 Case setup[ ]{style="font-size: 15px;"}
@@ -629,9 +623,8 @@ Case setup[ ]{style="font-size: 15px;"}
 With GUI
 --------
 
-If you have set up X[-11 forwarding]{.dfn .dictionary-of-numbers}, you
-may launch the FENSAP ice using the command `fensapiceGUI` from within
-your FENSAP project directory. 
+If you have set up X-11 forwarding, you may launch the FENSAP ice using
+the command `fensapiceGUI` from within your FENSAP project directory. 
 
 +-----------------------------------+-----------------------------------+
 | 1\. Launch the run and select the | !                                 |
@@ -678,8 +671,8 @@ opening the GUI within the project folder.
 >     a job from a given step/shot you must select so in the dropdown
 >     menu.
 
-Using fensap[2slurm]{.dfn .dictionary-of-numbers} {#fensap2slurm}
--------------------------------------------------
+Using fensap2slurm {#fensap2slurm}
+------------------
 
 Set up your model as you would normally, except rather than starting the
 run just click \'save\'. You *do not* need to set number of CPUs or MPI
@@ -707,10 +700,10 @@ RSM
 ---
 
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
-manager) running on all nodes. The command `startRSM` has been writ[ten
-to facilitate this ]{.dfn .dictionary-of-numbers}and needs to be run
-*after* starting the slurm job but *before* running edt. Please contact
-NeSI support if the command is not working for you.
+manager) running on all nodes. The command `startRSM` has been written
+to facilitate this and needs to be run *after* starting the slurm job
+but *before* running edt. Please contact NeSI support if the command is
+not working for you.
 
 Example Slurm Script
 --------------------
@@ -800,6 +793,5 @@ Hyperthreading
 
 Utilising hyperthreading (ie: removing the \"\--hint=nomultithread\"
 sbatch directive and doubling the number of tasks) will give a small
-speedup on most jobs with less than [8 cores]{.dfn
-.dictionary-of-numbers}, but also doubles the number of `aa_r_hpc`
-license tokens required.
+speedup on most jobs with less than 8 cores, but also doubles the number
+of `aa_r_hpc` license tokens required.

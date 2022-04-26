@@ -51,15 +51,15 @@ Not all solvers are compatible with all types of parallelisation.
 |                                   |     #SBA                          |
 | -------------------------------   | TCH --job-name      ABAQUS-Shared |
 |                                   |     #SBATCH --time                |
-| For when only [one CPU is         |         00:05:00       # Walltime |
-| required]{.dfn                    |     #SBATC                        |
-| .dictionary-of-numbers},          | H --cpus-per-task 1               |
-| generally as part of an [job      |     #SBATCH --mem                 |
-| array](https://support.nesi.      |         1500          # total mem |
-| org.nz/hc/en-gb/articles/36000069 |                                   |
-| 0275-Parallel-Execution#t_array). |     module load ABAQUS/2019       |
-|                                   |                                   |
-|                                   |     abaqus job="propeller_s       |
+| For when only one CPU is          |         00:05:00       # Walltime |
+| required, generally as part of an |     #SBATC                        |
+| [job                              | H --cpus-per-task 1               |
+| array](https://support.nesi.      |     #SBATCH --mem                 |
+| org.nz/hc/en-gb/articles/36000069 |         1500          # total mem |
+| 0275-Parallel-Execution#t_array). |                                   |
+|                                   |     module load ABAQUS/2019       |
+|                                   |                                   |
+|                                   |     abaqus job="propeller_s       |
 |                                   | 4rs_c3d8r" verbose=2 interactive  |
 +-----------------------------------+-----------------------------------+
 | Shared Memory                     |     #!/bin/bash -e                |
@@ -112,22 +112,20 @@ Not all solvers are compatible with all types of parallelisation.
 | Multiple *processes* each with a  | H --ntasks        8               |
 | single *thread*.                  |                                   |
 |                                   |   #SBATCH --mem-per-cpu   1500    |
-| Not limited to [one node]{.dfn    |        # Each CPU needs it's own. |
-| .dictionary-of-numbers}.\         |     #SBATCH --nodes         1     |
-| Model will be segmented into      |                                   |
-| `-np` pieces which should be      |     module load ABAQUS/2019       |
-| equal to `--ntasks`.              |                                   |
-|                                   |     abaqus job="propeller_s4      |
-| Each task could be running on a   | rs_c3d8r" verbose=2 interactive \ |
-| different node leading to         |                                   |
-| increased communication overhead\ |  cpus=${SLURM_NTASKS} mp_mode=mpi |
-| .Jobs can be limited to a single  |                                   |
+| Not limited to one node.\         |        # Each CPU needs it's own. |
+| Model will be segmented into      |     #SBATCH --nodes         1     |
+| `-np` pieces which should be      |                                   |
+| equal to `--ntasks`.              |     module load ABAQUS/2019       |
+|                                   |                                   |
+| Each task could be running on a   |     abaqus job="propeller_s4      |
+| different node leading to         | rs_c3d8r" verbose=2 interactive \ |
+| increased communication overhead\ |                                   |
+| .Jobs can be limited to a single  |  cpus=${SLURM_NTASKS} mp_mode=mpi |
 | node by                           |                                   |
-| adding  `--nodes=1`{              |                                   |
-| style="font-size: 14px;"} however |                                   |
-| this will increase your time in   |                                   |
-| the queue as contiguous cpu\'s    |                                   |
-| are harder to schedule.           |                                   |
+| adding  `--nodes=1` however this  |                                   |
+| will increase your time in the    |                                   |
+| queue as contiguous cpu\'s are    |                                   |
+| harder to schedule.               |                                   |
 |                                   |                                   |
 | This is the default method if     |                                   |
 | `mp_mode` is left unspecified.    |                                   |
@@ -137,17 +135,17 @@ Not all solvers are compatible with all types of parallelisation.
 |                                   |     #                             |
 | -------------------------------   | SBATCH --job-name      ABAQUS-gpu |
 |                                   |     #SBATCH --time                |
-| The GPU nodes are limited to [16  |         00:05:00       # Walltime |
-| CPUs]{.dfn                        |     #SBATC                        |
-| .dictionary-of-numbers}           | H --cpus-per-task 4               |
-|                                   |     #SBATCH --mem                 |
-| In order for the GPUs to be       |            4G         # total mem |
-| worthwhile, you should see a      |     #SBATCH --gpus-per-node 1     |
-| speedup equivalent to [56         |                                   |
-| CPU]{.dfn                         |     module load ABAQUS/2019       |
-| .dictionary-of-numbers}\'s per    |     module load CUDA              |
-| GPU used. GPU modes will          |                                   |
-| generally have less memory/cpus   |     abaqus job="propeller_s4      |
+| The GPU nodes are limited to 16   |         00:05:00       # Walltime |
+| CPUs                              |     #SBATC                        |
+|                                   | H --cpus-per-task 4               |
+| In order for the GPUs to be       |     #SBATCH --mem                 |
+| worthwhile, you should see a      |            4G         # total mem |
+| speedup equivalent to 56 CPU\'s   |     #SBATCH --gpus-per-node 1     |
+| per GPU used. GPU modes will      |                                   |
+| generally have less memory/cpus   |     module load ABAQUS/2019       |
+|                                   |     module load CUDA              |
+|                                   |                                   |
+|                                   |     abaqus job="propeller_s4      |
 |                                   | rs_c3d8r" verbose=2 interactive \ |
 |                                   |         cpus=                     |
 |                                   | ${SLURM_CPUS_PER_TASK} gpus=${SLU |
@@ -199,6 +197,5 @@ only.
 
  
 
-*Note: Hyperthreading off, testing d[one on small mechanical ]{.dfn
-.dictionary-of-numbers}FEA model. Results highly model dependant. Do
-your own tests.*
+*Note: Hyperthreading off, testing done on small mechanical FEA model.
+Results highly model dependant. Do your own tests.*

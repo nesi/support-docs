@@ -128,7 +128,7 @@ ATP (Cray Abnormal Termination Processing) {#h_214a9eb8-a227-421d-a4c2-57f0309a6
 **Note:** this tool is only available on Māui.
 
 Abnormal Termination Processing (ATP) is a system that monitors Cray XC
-System (Māui) user applications, and should an application take a system
+System (Maui) user applications, and should an application take a system
 trap, ATP preforms analysis on the dying application. All of the stack
 backtraces of the application processes are gathered into a merged\
 stack backtrace tree and written to disk as the file

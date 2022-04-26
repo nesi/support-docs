@@ -1,15 +1,3 @@
-::: {.toc}
--   [Description](#description)
--   [Available modules](#available-modules)
-    -   [Packages with modules](#packages-with-modules)
--   [Licensing requirements](#licensing-requirements)
--   [Example scripts](#example-scripts)
-    -   [Example script for the Mahuika
-        cluster](#example-script-for-the-pan-cluster)
--   [Documentation](#documentation)
--   [Parallel Versions](#parallel-versions)
-:::
-
 Description
 ===========
 

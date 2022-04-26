@@ -35,18 +35,14 @@ OR
 
 You can test what part of your connection has failed by first running:
 
-``` {.highlight}
-ssh <user>@lander.nesi.org.nz
-```
+    ssh <user>@lander.nesi.org.nz
 
 **If this succeeds**: Run the following:
 
-``` {.highlight}
-ssh login.<mahuika/maui>.nesi.org.nz
-```
+    ssh login.<mahuika/maui>.nesi.org.nz
 
 **If this fails:** Are you logging in to the correct cluster?
-Mahuika/Māui have separate access control, also Māui requires your
+Mahuika/Maui have separate access control, also Māui requires your
 password input in a different format, see
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360001244876-Mahuika-M%C4%81ui-Differences).
 
@@ -84,26 +80,21 @@ contact the person or team responsible for supporting it.
 
 ### 5. Ensure you\'re not reusing the same 6-digit code from your token.
 
-Login will fail if the same 6-digit code[ is ]{.dfn
-.dictionary-of-numbers}used to access the Māui or Mahuika login node
-after it has been used to access the lander node, or for consecutive
-login attempts to any node. If in doubt, wait [30 seconds]{.dfn
-.dictionary-of-numbers .dictionary-of-numbers-quantity-30s
-.dictionary-of-numbers-processed} for a new token to be generated.
+Login will fail if the same 6-digit code is used to access the Māui or
+Mahuika login node after it has been used to access the lander node, or
+for consecutive login attempts to any node. If in doubt, wait 30 seconds
+for a new token to be generated.
 
 ### 6. Ensure the correct Second Factor token is being used
 
 Two-factor authentication is becoming a common security measure. Many
 people have multiple tokens and occasionally mix them up.
 
-### 7. Wait [four hours]{.dfn .dictionary-of-numbers .dictionary-of-numbers-quantity-14400s .dictionary-of-numbers-processed}
+### 7. Wait four hours
 
-[Six failed login attempts ]{.dfn .dictionary-of-numbers}within [five
-minutes]{.dfn .dictionary-of-numbers
-.dictionary-of-numbers-quantity-300s .dictionary-of-numbers-processed}
-will trigger a four-hour lockout. Users experiencing login issues can
-inadvertently trigger the lockout, making diagnosing the original issue
-much more difficult.  
+Six failed login attempts within five minutes will trigger a four-hour
+lockout. Users experiencing login issues can inadvertently trigger the
+lockout, making diagnosing the original issue much more difficult.  
 
 Connection closed by \.... (MobaXterm) {#mobaPassPassPass}
 ======================================
@@ -121,14 +112,12 @@ input before pressing Enter will cause the login to fail.
 
 The expected processes is as follows:
 
-``` {.highlight}
-ssh <user>@lander.nesi.org.nz 
-<user>@lander.nesi.org.nz's password: <Enter>
-<user>@lander.nesi.org.nz's password: <Enter>
-<user>@lander.nesi.org.nz's password: <Enter>
-Login Password (First Factor): 
-Authenticator Code (Second Factor):
-```
+    ssh <user>@lander.nesi.org.nz 
+    <user>@lander.nesi.org.nz's password: <Enter>
+    <user>@lander.nesi.org.nz's password: <Enter>
+    <user>@lander.nesi.org.nz's password: <Enter>
+    Login Password (First Factor): 
+    Authenticator Code (Second Factor):
 
 *Note: Sometimes MobaXterm will prompt with a dialogue box.*
 
@@ -163,10 +152,10 @@ Helpful things to include:
     etc.).
 -   The nature of the problem, including the precise text of any error
     message you have been receiving.
-    -   Did you start out having [one login problem and ]{.dfn
-        .dictionary-of-numbers}are now getting a different one? If so,
-        when did the change happen, and were you doing anything in
-        particular related to logging in at the time things changed?
+    -   Did you start out having one login problem and are now getting a
+        different one? If so, when did the change happen, and were you
+        doing anything in particular related to logging in at the time
+        things changed?
 -   Have you successfully logged in in the past? if so when was the last
     time you successfully logged in, and to what NeSI cluster?
 -   Has anything administrative and relevant to NeSI access changed
