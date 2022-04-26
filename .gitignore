@@ -1,4 +1,4 @@
 .vscode/*
 from_zendesk/cache/**
-pubic/**
+public/*
 **.pyc
