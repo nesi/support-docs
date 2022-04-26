@@ -4,10 +4,6 @@ site_dir: public
 repo_url: https://github.com/example/repository/
 repo_name: GitLab
 site_description: NeSI Support Documentation
-# theme:
-#     name: bootstrap4
-#     locale: en
-#     custom_dir: 'theme/'
 theme:
     name: material
 # theme:
@@ -20,6 +16,9 @@ markdown_extensions:
         baselevel: 1
         toc_depth: 4
     - pymdownx.superfences
+    - pymdownx.highlight        # code blocks
+    - pymdownx.inlinehilite     # code blocks  
+    - pymdownx.snippets         # code blocks
     - pymdownx.tabbed:
         alternate_style: true 
 plugins:
@@ -29,11 +28,14 @@ plugins:
         ignore_code: yes
         min_length: 3
         max_capital: 1
-        allow_unicode: no
+        allow_unicode: yes
     - mkdocs-simple-hooks:
-        hooks:
-extra_javascript:
-  - JavaScripts/se-v2.js
-            # on_post_build: "custom_hooks:test"
+        hooks: 
+            # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
+            on_post_build: "custom_hooks:lint"
+
+
+#extra_javascript:
+#  - JavaScripts/se-v2.js # js for statuspage thingie
     # - section-index
 
