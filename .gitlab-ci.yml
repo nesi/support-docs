@@ -1,6 +1,6 @@
 image: python:3.8-buster
 
-update:
+update_cache:
   stage: .pre
   rules:
   - when: manual
