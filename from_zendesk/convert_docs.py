@@ -21,7 +21,6 @@ def main():
     site_nav = [
         writeCategories(category, doc_root_dir) for category in rootload["categories"]
     ]
-    
 
     print(yaml.dump(site_nav))
 
@@ -103,17 +102,27 @@ def writeCategories(category, filepath):
 # "-L", "pandoc/filters/spellcheck.lua",
 def to_markdown(html):
     """Use pandoc to convert HTML pages to Markdown"""
+
+    output_format = [
+        "markdown",  # duh
+        "simple_tables"  # other tables include 'grid_tables','multiline_tables'
+        # Commented out because only works when *reading* markdown.
+        # "fenced_code_attributes",  # classes for fenced code
+        # "backtick_code_blocks",  # use fenced rather than tab code blocks
+        # "inline_code_attributes",  # allow attributes for inline code
+    ]
+
     markdown = subprocess.run(
         [
             "pandoc",
             "-t",
-            "markdown+grid_tables",
+            "+".join(output_format),
             "-f",
             "html",
             "--css",
             "style.css",
             "--filter",
-            "pandoc/filters/macronify.py",
+            "pandoc/filters/custom_filters.py",
         ],
         input=html,
         stdout=subprocess.PIPE,
