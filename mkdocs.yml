@@ -6,6 +6,11 @@ repo_name: GitLab
 site_description: NeSI Support Documentation
 theme:
     name: material
+    features:
+    #- navigation.indexes    # Allow navigation to secion pages
+    - navigation.top        # Adds 'return to top' button
+
+
 # theme:
 #     name: null
 #     custom_dir: nesi_theme/
@@ -14,13 +19,14 @@ markdown_extensions:
     - toc:
         permalink: True
         baselevel: 1
-        toc_depth: 4
+        toc_depth: 3
     - pymdownx.superfences
     - pymdownx.highlight        # code blocks
     - pymdownx.inlinehilite     # code blocks  
-    - pymdownx.snippets         # code blocks
     - pymdownx.tabbed:
         alternate_style: true 
+    - abbr
+    - pymdownx.snippets
 plugins:
     - search
     - spellcheck:
