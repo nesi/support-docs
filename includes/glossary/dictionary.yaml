@@ -1,0 +1,40 @@
+---
+# Proper names
+Globus:
+Jupyter:
+Slurm:
+Glib: 
+Libio:
+Skylake:
+
+# Commands
+srun:
+Nano:
+  checkcase: false
+
+# Acronyms
+NeSI: 
+  long: New Zealand eScience Infrastructure
+NZ:
+HTTPS:
+CUDA:
+
+# Jargon
+eScience:
+nearline:
+nobackup:
+precompiled:
+namespaces:
+runtime:
+sudo:
+walltime:
+
+# Misc
+lockdown:
+onboarding:
+rollout:
+deprioritised:
+
+# Maori
+Māui:
+Mahuika:
