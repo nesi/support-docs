@@ -29,3 +29,13 @@ The command `ls -latr`
 Or preferably
 
 This codeblock '#!bash echo "is inline"
+
+
+
+
+
+## Includes
+
+```md
+--8<-- "includes/glossary/.dictionary.md"
+```
