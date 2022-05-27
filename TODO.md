@@ -36,4 +36,4 @@ images currently hosted support.nesi need to be copied to `/includes/images` and
 
 - [] SLURM lexxer?
 - [] Automate checking all SLURM codeblocks run on the cluster.
-
+- [] Replace dynamic app blocks with templates.

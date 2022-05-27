@@ -12,7 +12,8 @@ def main():
     """main"""
     global cache_root_dir
 
-    doc_root_dir = "docs"
+    # doc_root_dir = "docs"
+    doc_root_dir = "from_zendesk/import_worktree/docs"
     cache_root_dir = "from_zendesk/cache"
     # module_list_location = os.environ["ZENDESK_MODULE_LIST"]
 
@@ -105,13 +106,13 @@ def to_markdown(html):
 
     output_format = [
         "markdown",  # duh
-        "simple_tables"  # other tables include 'grid_tables','multiline_tables'
+        "grid_tables"  # other tables include 'grid_tables','multiline_tables'
         # Commented out because only works when *reading* markdown.
         # "fenced_code_attributes",  # classes for fenced code
         # "backtick_code_blocks",  # use fenced rather than tab code blocks
         # "inline_code_attributes",  # allow attributes for inline code
     ]
-
+    # print(html)
     markdown = subprocess.run(
         [
             "pandoc",
@@ -121,8 +122,11 @@ def to_markdown(html):
             "html",
             "--css",
             "style.css",
+            "--self-contained",
+            "--data-dir",
+            "data",
             "--filter",
-            "pandoc/filters/custom_filters.py",
+            "from_zendesk/pandoc/filters/custom_filters.py",
         ],
         input=html,
         stdout=subprocess.PIPE,

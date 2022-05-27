@@ -2,3 +2,4 @@ zenpy
 json2html
 pandocfilters
 pyyaml
+mkdocs-rss-plugin
