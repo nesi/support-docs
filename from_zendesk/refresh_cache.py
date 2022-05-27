@@ -27,7 +27,6 @@ def main():
     except FileExistsError:
         pass
     root = z._get("categories.json").json()
-    root = z._get("").json()
 
     with open(f"{cache_root_dir}/root.json", "w+") as f:
         f.write(json.dumps(root))
