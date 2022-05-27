@@ -1,4 +1,5 @@
-::: {#append_lic}
+{% include 'application_header.html' %}
+
 License Types
 -------------
 
