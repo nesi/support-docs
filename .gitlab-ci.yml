@@ -16,7 +16,7 @@ update_source:
     - .doc
   script:
     - mkdir -p .doc
-    - curl --location --output .doc/response.html "https://git.hpcf.nesi.org.nz/cwal219/migratedocs/-/jobs/artifacts/main/download?job=test&job_token=$CI_JOB_TOKEN"
+    - curl --location --output .doc/response.html "https://git.hpcf.nesi.org.nz/cwal219/migratedocs/-/jobs/artifacts/main/download?job=convert_docs&job_token=$CI_JOB_TOKEN"
     - ls -latr
 build_pages:
   stage: build
