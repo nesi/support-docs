@@ -14,11 +14,6 @@ update_source:
   script:
     - curl --location --output doc.zip "https://git.hpcf.nesi.org.nz/cwal219/migratedocs/-/jobs/artifacts/main/download?job=test&job_token=$CI_JOB_TOKEN"
     - echo "working"
-  needs:
-    - project: cwal219/migratedocs
-      job: trigger_pr
-      ref: main
-      artifacts: true
 build_pages:
   stage: build
   only:
