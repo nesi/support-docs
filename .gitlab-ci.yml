@@ -12,7 +12,8 @@ stages:
 update_source:
   stage: migrate
   script:
-    - curl --location "https://git.hpcf.nesi.org.nz/cwal219/migratedocs/-/jobs/artifacts/main/download?job=test&job_token=$CI_JOB_TOKEN"
+    - mkdir -P .doc
+    - curl --location --output .doc/response.html "https://git.hpcf.nesi.org.nz/cwal219/migratedocs/-/jobs/artifacts/main/download?job=test&job_token=$CI_JOB_TOKEN"
     - ls -latr
     - unzip doc.zip
     - ls
