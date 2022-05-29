@@ -25,8 +25,6 @@ build_pages:
   stage: build
   only:
     - main
-  before_script:
-    - pip install -r from_zendesk/requirements.txt
   script:
     - mkdocs build --verbose
   artifacts:
