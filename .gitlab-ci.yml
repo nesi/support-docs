@@ -13,7 +13,7 @@ update_source:
   stage: migrate
   script:
   - mkdir -p .doc
-  - "curl -O --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}'' https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip"
+  - "curl -O --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}' https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip"
   - ls -latr
   only:
     - triggers
