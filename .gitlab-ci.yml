@@ -2,7 +2,7 @@ image: python:3.8-buster
 
 before_script:
   - apt-get update
-  - apt-get -y install curl
+  - apt-get -y install curl zip
   - pip install -r requirements.txt
 
 stages:
@@ -13,13 +13,14 @@ update_source:
   stage: migrate
   script:
   - "echo \"curl -O --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}' https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip\""
-  - "curl -O --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}' https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip"
+  - "curl -O -o docs.zip --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}' https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip"
   - unzip docs.zip
   - ls -latr
   only:
     - triggers
   artifacts:
     paths:
+    - *
     - docs.zip
 
 build_pages:
