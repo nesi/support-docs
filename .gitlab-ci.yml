@@ -12,14 +12,13 @@ stages:
 update_source:
   stage: migrate
   script:
-  - curl -O -o docs.zip --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip
+  - 'curl -O --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip'
   - unzip docs.zip
   - ls -latr
   only:
     - triggers
   artifacts:
-    untracked: true
-    when: on_failure
+    when: always
     paths:  
     - ./*
     - docs.zip
