@@ -19,9 +19,11 @@ update_source:
   only:
     - triggers
   artifacts:
-    paths:
+    untracked: true
+    paths:  
     - ./*
     - docs.zip
+    - docs
 
 build_pages:
   stage: build
