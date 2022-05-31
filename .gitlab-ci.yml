@@ -20,7 +20,7 @@ update_source:
     - triggers
   artifacts:
     paths:
-    - *
+    - ./*
     - docs.zip
 
 build_pages:
