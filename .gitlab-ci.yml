@@ -4,6 +4,8 @@ before_script:
   - apt-get update
   - apt-get -y install curl zip
   - pip install -r requirements.txt
+  - git config --global user.email "$GITLAB_USER_EMAIL"
+  - git config --global user.name "$GITLAB_USER_NAME"
 
 stages:
   - migrate
