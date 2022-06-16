@@ -20,7 +20,7 @@ update_source:
   #- git clone --branch import https://gitlab-ci-token:${CI_JOB_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs
   - ls
   #- cd mkdocs
-  - unzip -o mkdocs.zip
+  - unzip -o mkdocs.zip -d ./
   - ls
   #- git add --all && git commit -m "$(date)" && git push origin import
   only:
