@@ -33,7 +33,7 @@ merge_request:
   only:
     - import
   script:
-  - "curl -X POST \"${HOST}${CI_PROJECT_ID}/merge_requests\"
+  - 'curl -X POST \"${HOST}${CI_PROJECT_ID}/merge_requests\"
     --header \"PRIVATE-TOKEN:${PRIVATE_TOKEN}\"
     --header \"Content-Type: application/json\"
     --data \"{
@@ -45,7 +45,7 @@ merge_request:
       \"allow_collaboration\": true,
       \"subscribed\" : true,
       \"title\": \"${GITLAB_USER_NAME} merge request for: ${CI_COMMIT_REF_SLUG}\"
-    }\";
+    }\"'
 
 build_pages:
   stage: build
