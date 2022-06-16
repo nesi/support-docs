@@ -13,9 +13,9 @@ stages:
 update_source:
   stage: migrate
   script:
+  - 'curl -O --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/mkdocs.zip'
   - git clone --branch import https://gitlab-ci-token:${CI_JOB_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs
   - cd mkdocs
-  - 'curl -O --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/mkdocs.zip'
   - unzip -o ../mkdocs.zip
   - git add --all && git commit -m "$(date)"" && git push origin import
   only:
