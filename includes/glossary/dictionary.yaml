@@ -4,8 +4,8 @@ Globus:
 Jupyter:
 Slurm:
 Glib: 
-Libio:
 Skylake:
+Lmod:
 
 # Commands
 srun:
@@ -28,6 +28,7 @@ namespaces:
 runtime:
 sudo:
 walltime:
+libio:
 
 # Misc
 lockdown:
