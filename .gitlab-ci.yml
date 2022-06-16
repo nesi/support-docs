@@ -4,25 +4,32 @@ before_script:
   - apt-get update
   - apt-get -y install curl zip
   - pip install -r requirements.txt
+  - git clone --branch import https://git.hpcf.nesi.org.nz/cwal219/mkdocs
 
 stages:
   - migrate
+  - merge
   - build
 
 update_source:
   stage: migrate
   script:
-  - 'curl -O --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip'
-  - unzip -o docs.zip
-  - ls -latr
+  - 'curl -O --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/mkdocs.zip'
+  - cd mkdocs
+  - git pull origin import
+  - unzip -o ../mkdocs.zip
+  - git add --all && git commit -m $(date) && git push origin import
   only:
     - triggers
   artifacts:
     when: always
     paths:  
     - ./*
-    - docs.zip
-    - docs
+    - mkdocs.zip
+    - mkdocs
+
+# merge_request:
+#   stage: merge
 
 build_pages:
   stage: build
