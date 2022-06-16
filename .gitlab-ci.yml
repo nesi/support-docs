@@ -17,10 +17,10 @@ update_source:
   script:
   - ls
   - 'curl -O --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/mkdocs.zip'
-  - git clone --branch import https://gitlab-ci-token:${CI_JOB_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs
+  #- git clone --branch import https://gitlab-ci-token:${CI_JOB_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs
   - ls
   - cd mkdocs
-  - unzip -o ../mkdocs.zip -d .
+  - unzip -o ../mkdocs.zip
   - ls ../
   - git add --all && git commit -m "$(date)" && git push origin import
   only:
