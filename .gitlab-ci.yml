@@ -18,7 +18,7 @@ update_source:
   - cd mkdocs
   - git pull origin import
   - unzip -o ../mkdocs.zip
-  - git add --all && git commit -m $(date) && git push origin import
+  - git add --all && git commit -m "$(date)"" && git push origin import
   only:
     - triggers
   artifacts:
