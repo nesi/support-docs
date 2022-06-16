@@ -1,28 +1,32 @@
 image: python:3.8-buster
 
 before_script:
+  - apt-get update
+  - apt-get -y install curl
   - pip install -r requirements.txt
 
-test:
-  stage: test
+stages:
+  - migrate
+  - build
+
+update_source:
+  stage: migrate
   script:
-  - mkdocs build --verbose --site-dir test
+  - mkdir -p .doc
+  - "echo \"curl -O --header 'PRIVATE-TOKEN: ${GITLAB_API_TOKEN}' https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/docs.zip\""
+  - ls -latr
+  only:
+    - triggers
   artifacts:
     paths:
-    - test
-  except:
-  - main
+    - .doc
 
-pages:
-  stage: deploy
+build_pages:
+  stage: build
+  only:
+    - main
   script:
-  # - mkdir .public
-  # - cp -r * .public
-  # - mv .public public
-  - mkdocs build --verbose
-  # --strict
+    - mkdocs build --verbose
   artifacts:
     paths:
     - public
-  only:
-  - main
