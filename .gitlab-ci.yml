@@ -21,6 +21,7 @@ update_source:
   - git add --all && git commit -m "$(date)"" && git push origin import
   only:
     - triggers
+    - import
   artifacts:
     when: always
     paths:  
@@ -28,8 +29,24 @@ update_source:
     - mkdocs.zip
     - mkdocs
 
-# merge_request:
-#   stage: merge
+merge_request:
+  stage: merge
+  only:
+    - import
+  script:
+  - "curl -X POST \"${HOST}${CI_PROJECT_ID}/merge_requests\"
+    --header \"PRIVATE-TOKEN:${PRIVATE_TOKEN}\"
+    --header \"Content-Type: application/json\"
+    --data \"{
+      \"project_id\": ${CI_PROJECT_ID},
+      \"source_branch\": \"${CI_COMMIT_REF_NAME}\",
+      \"target_branch\": \"main\",
+      \"remove_source_branch\": false,
+      \"force_remove_source_branch\": false,
+      \"allow_collaboration\": true,
+      \"subscribed\" : true,
+      \"title\": \"${GITLAB_USER_NAME} merge request for: ${CI_COMMIT_REF_SLUG}\"
+    }\";
 
 build_pages:
   stage: build
