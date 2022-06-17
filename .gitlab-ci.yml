@@ -25,8 +25,7 @@ update_source:
   - git status
   - echo "$(date)" >> import.log || echo "$(date)" > import.log
   - ls
-  - git branch -a 
-  - git add --all && git commit -m "$(date)" && git push
+  - git add --all && git commit -m "$(date)" && git push origin HEAD:import
   - git status
   only:
     - triggers
