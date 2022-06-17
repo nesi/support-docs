@@ -22,6 +22,7 @@ update_source:
   - git status
   - ls
   - unzip -o mkdocs.zip -d ./
+  - rm mkdocs.zip
   - git status
   - echo "$(date)" >> import.log || echo "$(date)" > import.log
   - ls
