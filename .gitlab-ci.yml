@@ -16,13 +16,16 @@ update_source:
   stage: migrate
   script:
   - ls
+  - git status
   - 'curl -O --header "PRIVATE-TOKEN: ${GITLAB_API_TOKEN}" https://git.hpcf.nesi.org.nz/api/v4/projects/350/jobs/${REMOTE_JOB_ID}/artifacts/mkdocs.zip'
-  #- git clone --branch import https://gitlab-ci-token:${CI_JOB_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs
+  - git clone --branch import https://gitlab-ci-token:${CI_JOB_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs .
+  - git status
   - ls
-  #- cd mkdocs
   - unzip -o mkdocs.zip -d ./
+  - git status
   - ls
-  #- git add --all && git commit -m "$(date)" && git push origin import
+  - git add --all && git commit -m "$(date)" && git push origin import
+  - git status
   only:
     - triggers
     - import
