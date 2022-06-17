@@ -23,8 +23,10 @@ update_source:
   - ls
   - unzip -o mkdocs.zip -d ./
   - git status
+  - echo "$(date)" >> import.log || echo "$(date)" > import.log
   - ls
-  - git add --all && git commit -m "$(date)" && git push origin import
+  - git branch -a 
+  - git add --all && git commit -m "$(date)" && git push
   - git status
   only:
     - triggers
