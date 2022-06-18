@@ -20,7 +20,7 @@ update_source:
   - unzip -o mkdocs.zip -d ./
   - rm mkdocs.zip
   - echo "$(date)" >> import.log || echo "$(date)" > import.log
-  - git add --all && git commit -m "Import update: $(date)" && git push https://gitlab-ci-token:${GITLAB_API_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs HEAD:import
+  - git add --all && git commit -m "Import update $(date)" && git push https://gitlab-ci-token:${GITLAB_API_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs HEAD:import
   - git status
   only:
     - triggers
