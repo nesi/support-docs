@@ -22,8 +22,6 @@ update_source:
   - echo "$(date)" >> import.log || echo "$(date)" > import.log
   - git add --all && git commit -m "Import update $(date)" && git push https://gitlab-ci-token:${GITLAB_API_TOKEN}@git.hpcf.nesi.org.nz/cwal219/mkdocs HEAD:import
   - git status
-  only:
-    - triggers
   artifacts:
     when: always
     paths:  
@@ -31,8 +29,6 @@ update_source:
 
 merge_request:
   stage: merge
-  only:
-    - import
   script:
   - 'curl -X POST \"${HOST}${CI_PROJECT_ID}/merge_requests\"
     --header \"PRIVATE-TOKEN:${PRIVATE_TOKEN}\"
