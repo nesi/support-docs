@@ -1,10 +1,9 @@
 The NeSI High Performance Computers
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) and
-[Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575)
-(collectively the High Performance Computing Facility, HPCF) provide the
-New Zealand research community with access to a national data-centric
-and data intensive research computing environment built on leading edge
-high performance computing (HPC) systems.
+[Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575) provide
+the New Zealand research community with access to a national
+data-centric and data intensive research computing environment built on
+leading edge high performance computing (HPC) systems.
 
 -   Māui, which in Maori mythology is credited with catching a giant
     fish using a fishhook taken from his grandmother\'s jaw-bone; the
@@ -37,9 +36,9 @@ the research community with:
     -   Virtual Laboratories that provide interactive access to science
         domain specific tools \[Coming soon\];
     -   Remote visualisation services \[Coming soon\];
-    -   Advanced data analytics tools \[Coming soon\], and
+    -   Advanced data analytics tools, and
     -   The ability to seamlessly move data between high performance
-        disk storage and offline tape \[Coming soon\].
+        disk storage and offline tape.
 -   Offsite replication of critical data (both online and offline).
 
 These systems are

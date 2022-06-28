@@ -92,7 +92,8 @@ consumed by shared libraries)\
 (proportional allocation of memory consumed by shared libraries)\
 **USS-Unique Set Size** - Process consumed physical memory alone (does
 not contain the memory occupied by the shared library)\
-`PSS = USS + (RSS/# shared processes)`
+`PSS = USS + (RSS/# shared processes)`{.c-mrkdwn__code
+data-stringify-type="code"}
 
 During Runtime
 ==============
@@ -106,7 +107,7 @@ Finding Job Node
 If \'nodelist\' is not one of the fields in the output of your `sacct`
 or `squeue` commands you can find the node a job is running on using the
 command; `squeue -h -o %N   -j <jobid>` The node will look something
-like `wbn123` on Mahuika or `nid00123` on Māui
+like `wbn123` on Mahuika or `nid00123` on Maui.
 
 > ### Note {#prerequisites}
 >

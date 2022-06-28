@@ -39,7 +39,7 @@ In summary:
     link to the new *Guest Collection*.
 
  Bookmarks
----------
+----------
 
 1.  Create bookmarks to **NeSI Wellington DTN V5** and new Guest
     Collections\

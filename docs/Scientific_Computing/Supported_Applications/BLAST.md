@@ -65,7 +65,7 @@ Multiple threads and local database copy
 For jobs which need more than 24 CPU-hours, eg: those that use large
 databases (\> 10 GB) or large amounts of query sequence (\> 1 GB), or
 slow BLAST searches such as classic *blastn*
-(`#!['bash']blastn -task blastn`).
+(`blastn -task blastn`{.bash}).
 
 This script copies the BLAST database into the per-job temporary
 directory \$TMPDIR before starting the search. Since compute nodes do

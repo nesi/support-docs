@@ -4,15 +4,15 @@ Example scripts
 +-----------------------------------+-----------------------------------+
 | Serial                            |     #!/bin/bash -e                |
 | ------                            |                                   |
-|                                   |                                   |
-| -------------------------------   |   #SBATCH --job-name      Delft3D |
-|                                   |     #SBATCH --time                |
-| For when only one CPU is          |         00:05:00       # Walltime |
-| required, generally as part of an |     #SBATCH --mem                 |
-| [job                              |     512M           # Total Memory |
-| array](https://support.nesi.      |                                   |
-| org.nz/hc/en-gb/articles/36000069 |   #SBATCH --hint          nomulti |
-| 0275-Parallel-Execution#t_array). | thread  # Hyperthreading disabled |
+|                                   |     #SBATCH --job-name      Delft |
+| -------------------------------   | 3D                                |
+|                                   |     #SBATCH --time          00:05 |
+| For when only one CPU is          | :00       # Walltime              |
+| required, generally as part of an |     #SBATCH --mem           512M  |
+| [job                              |           # Total Memory          |
+| array](https://support.nesi.org.n |     #SBATCH --hint          nomul |
+| z/hc/en-gb/articles/360000690275- | tithread  # Hyperthreading disabl |
+| Parallel-Execution#t_array).      | ed                                |
 |                                   |                                   |
 |                                   |     module load Delft3D           |
 |                                   |                                   |
@@ -20,17 +20,17 @@ Example scripts
 +-----------------------------------+-----------------------------------+
 | Multi-threaded                    |     #!/bin/bash -e                |
 | ---------------                   |                                   |
-|                                   |                                   |
-| -------------------------------   |  #SBATCH --job-name      Delft3D  |
-|                                   |     #SBATCH --time                |
-| [For domain based                 |         00:05:00       # Walltime |
-| decom                             |     #SBATC                        |
-| positions.]{.wysiwyg-color-black} | H --cpus-per-task 4               |
-|                                   |     #SBATCH --mem                 |
-| [Use `#!['bash']cpus-per-task` to |     2G             # Total Memory |
-| allocate                          |                                   |
-| resources.]{.wysiwyg-color-black} |   #SBATCH --hint          nomulti |
-|                                   | thread  # Hyperthreading disabled |
+|                                   |     #SBATCH --job-name      Delft |
+| -------------------------------   | 3D                                |
+|                                   |     #SBATCH --time          00:05 |
+| [For domain based                 | :00       # Walltime              |
+| decompositions.]{.wysiwyg-color-b |     #SBATCH --cpus-per-task 4     |
+| lack}                             |                                   |
+|                                   |     #SBATCH --mem           2G    |
+| [Use `cpus-per-task`{.bash} to    |           # Total Memory          |
+| allocate                          |     #SBATCH --hint          nomul |
+| resources.]{.wysiwyg-color-black} | tithread  # Hyperthreading disabl |
+|                                   | ed                                |
 | Each subdomain runs in a          |                                   |
 | separate\                         |     module load Delft3D           |
 | thread, inside one executable.    |                                   |
@@ -38,17 +38,17 @@ Example scripts
 +-----------------------------------+-----------------------------------+
 | MPI                               |     #!/bin/bash -e                |
 | ---                               |                                   |
-|                                   |                                   |
-| -------------------------------   |  #SBATCH --job-name      Delft3D  |
-|                                   |     #SBATCH --time                |
-| Domain is split automatically in  |         00:05:00       # Walltime |
-| stripwise partitions. *Can run    |     #SBATC                        |
-| across multiple nodes.*           | H --ntasks        4               |
-|                                   |     #SBATC                        |
-| Use `#!['bash']ntasks` to         | H --mem-per-cpu   1G              |
-| allocate resources.               |                                   |
-|                                   |   #SBATCH --hint          nomulti |
-| **Cannot** be used in conjunction | thread  # Hyperthreading disabled |
+|                                   |     #SBATCH --job-name      Delft |
+| -------------------------------   | 3D                                |
+|                                   |     #SBATCH --time          00:05 |
+| Domain is split automatically in  | :00       # Walltime              |
+| stripwise partitions. *Can run    |     #SBATCH --ntasks        4     |
+| across multiple nodes.*           |                                   |
+|                                   |     #SBATCH --mem-per-cpu   1G    |
+| Use `ntasks`{.bash} to allocate   |                                   |
+| resources.                        |     #SBATCH --hint          nomul |
+|                                   | tithread  # Hyperthreading disabl |
+| **Cannot** be used in conjunction | ed                                |
 | with:                             |                                   |
 |                                   |     module load Delft3D           |
 | -   DomainDecomposition           |                                   |

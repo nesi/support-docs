@@ -23,14 +23,12 @@ There are a few ways to deal with file count problems
     The nobackup directory has a significantly higher inode count and no
     disk space limits. Files here are not backed up, so best used for
     intermediary or replaceable data.
-
 -   **Delete unnecessary files**\
     Some applications will generate a large number of files during
     runtime, using the command `du --inodes -d 1 | sort -hr` (for
     inodes) or `du -h -d 1 | sort -hr` for disk space.  You can then
     drill down into the directories with the largest file count deleting
     files as viable.
-
 -   **SquashFS archive (recommended)**\
     Many files can be compressed into a single SquashFS archive. We have
     written a utility, `nn_archive_files`, to help with this process.

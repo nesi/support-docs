@@ -5,8 +5,8 @@ Environment Modules
 cluster. They prepare the environment you need to run an
 application.]{style="font-weight: 400;"}
 
-[For a full list of module commands run [man
-module]{.kbd}]{style="font-weight: 400;"}
+[For a full list of module commands run man
+module]{style="font-weight: 400;"}
 
   ------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   `module spider [ <string> ]`   List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)
@@ -40,18 +40,22 @@ and a header of information needed by our job scheduler
 Creating a batch script
 -----------------------
 
-Create a new file and open it with [nano myjob.sl]{.kbd}
+Create a new file and open it with nano myjob.sl
 
-    #!/bin/bash -e
-    #SBATCH --job-name=SerialJob # job name (shows up in the queue)
-    #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
-    #SBATCH --mem=512MB          # Memory in MB
+``` {.nohighlight}
+#!/bin/bash -e
+#SBATCH --job-name=SerialJob # job name (shows up in the queue)
+#SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
+#SBATCH --mem=512MB          # Memory in MB
 
 
-    pwd # Prints working directory
+pwd # Prints working directory
+```
 
 Copy in the above text and save and exit the text editor with \'ctrl +
 x\'.
+
+Note:`#!/bin/bash`is expected by Slurm
 
 Note: if you are a member of multiple accounts you should add the line
 `#SBATCH --account=<projectcode>`
@@ -61,24 +65,39 @@ Submitting
 
 Jobs are submitted to the scheduler using:
 
-    sbatch myjob.sl
+``` {.nohighlight}
+sbatch myjob.sl
+```
 
-You should receive an output 
+You should receive an output
 
-`Submitted batch job 1748836`
+Submitted batch job 1748836
+
+`sbatch`can take command line arguments similar to those used in the
+shell script through SBATCH pragmas
+
+You can find more details on its use on the [Slurm
+Documentation](https://slurm.schedmd.com/sbatch.html)
 
 Job Queue
 ---------
 
 The currently queued jobs can be checked using 
 
-    squeue
+``` {.nohighlight}
+squeue
+```
 
 You can filter to just your jobs by adding the flag
 
     squeue -u usr9999
 
-where \'usr9999\' is replaced with your username.
+You can also filter to just your jobs using
+
+    squeue --me
+
+You can find more details on its use on the [Slurm
+Documentation](https://slurm.schedmd.com/squeue.html)
 
 You can check all jobs submitted by you in the past day using:
 
@@ -93,24 +112,29 @@ then additional lines for each job step.
 
 > ### Tips {#prerequisites}
 >
-> [sacct -X]{.kbd} Only show parent processes.
+> sacct -X Only show parent processes.
 >
-> [sacct \--state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT]{.kbd} Filter
-> jobs by state.
+> sacct \--state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
+> state.
 
-Cancelling
-----------
+You can find more details on its use on the [Slurm
+Documentation](https://slurm.schedmd.com/sacct.html)
 
-[scancel \<jobid\>]{.kbd} will cancel the job described by
-[\<jobid\>]{.kbd}. You can obtain the job ID by using [sacct]{.kbd} or
-[squeue]{.kbd}.
+ Cancelling
+-----------
+
+scancel \<jobid\> will cancel the job described by \<jobid\>. You can
+obtain the job ID by using sacct or squeue.
 
 > ### Tips {#prerequisites}
 >
-> [scancel -u \[username\]]{.kbd} Kill all jobs submitted by you.
+> scancel -u \[username\] Kill all jobs submitted by you.
 >
-> [scancel {\[n1\]..\[n2\]}]{.kbd} Kill all jobs with an id between
-> [\[n1\]]{.kbd} and [\[n2\]]{.kbd}
+> scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
+> \[n2\]
+
+You can find more details on its use on the [Slurm
+Documentation](https://slurm.schedmd.com/scancel.html)
 
 Job Output
 ----------

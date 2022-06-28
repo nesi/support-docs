@@ -2,7 +2,7 @@ There are 4 dual socket nodes on blade, connected to a single Aries
 (switch) chip, and there are 16 Aries chips in a chassis connected to
 the backplane. On Māui, this implies each chassis contains 64 nodes, or
 2,560 Skylake cores. There are 3 chassis in an XC50 cabinet, and two
-XC50 cabinets are an Electrical \"group\". Māui has 1.5 groups.
+XC50 cabinets are an Electrical \"group\". Maui has 1.5 groups.
 
 ![UPM\_html\_2d91e9cdd34d272d.gif](https://support.nesi.org.nz/hc/article_attachments/360000488576/UPM_html_2d91e9cdd34d272d.gif){width="298"
 height="263"}

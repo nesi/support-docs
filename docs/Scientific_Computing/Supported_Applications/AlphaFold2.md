@@ -59,21 +59,147 @@ downloaded, verified and stored in NeSI filesystem
     ├── params
     ├── pdb70
     ├── pdb_mmcif
+    │   └── mmcif_files
+    ├── pdb_seqres
     ├── small_bfd
     ├── uniclust30
+    │   └── uniclust30_2018_08
+    ├── uniprot
     └── uniref90
 :::
+
+-   `pdb_seqres` & `uniprot` are for `multimer`
 
 Singularity container
 ---------------------
 
-We prepared a Singularity container image based on the official
-Dockerfile with some modifications. Image (.*simg*) and the
-corresponding definition file (*.def*) are stored in
-`/opt/nesi/containers/AlphaFold/2021-10-07`
+We prepared a Singularity container image based on the [official
+Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
+modifications. Image (.*simg*) and the corresponding definition file
+(*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
-[](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script){#user-content-example-slurm-script .anchor}Example Slurm script
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+-
+
+[](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script){#user-content-example-slurm-script .anchor}Example Slurm scripts
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+
+### AlphaFold2 : v2.2.0 (supports `multimer`)
+
+#### [Monomer]{.wysiwyg-underline}[]{.wysiwyg-underline}
+
+Input *fasta* used in following example  is 3RGK
+(<https://www.rcsb.org/structure/3rgk>).
+
+![3rgk\_assembly-1.jpeg](https://support.nesi.org.nz/hc/article_attachments/4687073473679/3rgk_assembly-1.jpeg){width="180"
+height="180"}
+
+    #!/bin/bash -e
+
+    #SBATCH --account       nesi12345
+    #SBATCH --job-name      alphafold2_monomer_example
+    #SBATCH --mem           30G
+    #SBATCH --cpus-per-task 6
+    #SBATCH --gpus-per-node P100:1 
+    #SBATCH --time          02:00:00
+    #SBATCH --output        slurmout.%j.out
+
+    module purge
+    module unload XALT
+    module load cuDNN/8.1.1.33-CUDA-11.2.0 Singularity/3.9.8
+
+    INPUT=/path/to/input_data
+    OUTPUT=/path/to/results
+    DATABASE=/opt/nesi/db/alphafold_db
+
+    export SINGULARITY_BIND="$INPUT,$OUTPUT,$DATABASE"
+
+    singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python /app/alphafold/run_alphafold.py \
+    --use_gpu_relax \
+    --data_dir=$DATABASE \
+    --uniref90_database_path=$DATABASE/uniref90/uniref90.fasta \
+    --mgnify_database_path=$DATABASE/mgnify/mgy_clusters_2018_12.fa \
+    --bfd_database_path=$DATABASE/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+    --uniclust30_database_path=$DATABASE/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
+    --pdb70_database_path=$DATABASE/pdb70/pdb70 \
+    --template_mmcif_dir=$DATABASE/pdb_mmcif/mmcif_files \
+    --obsolete_pdbs_path=$DATABASE/pdb_mmcif/obsolete.dat \
+    --model_preset=monomer \
+    --max_template_date=2022-1-1 \
+    --db_preset=full_dbs \
+    --output_dir=$OUTPUT \
+    --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+
+ 
+
+#### [Multimer]{.wysiwyg-underline}
+
+Input *fasta* used in following example
+
+    >T1083
+    GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRYKEAAEENRALAKLHHELAIVED
+    >T1084
+    MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
+
+![protter\_custom\_sequence.png](https://support.nesi.org.nz/hc/article_attachments/4687128946831/protter_custom_sequence.png){width="249"
+height="254"}
+
+ 
+
+    #!/bin/bash -e
+
+    #SBATCH --account       nesi12345
+    #SBATCH --job-name      alphafold2_monomer_example
+    #SBATCH --mem           30G
+    #SBATCH --cpus-per-task 6
+    #SBATCH --gpus-per-node P100:1 
+    #SBATCH --time          02:00:00
+    #SBATCH --output        slurmout.%j.out
+
+    module purge
+    module unload XALT
+    module load cuDNN/8.1.1.33-CUDA-11.2.0 Singularity/3.9.8
+
+    INPUT=/path/to/input_data
+    OUTPUT=/path/to/results
+    DATABASE=/opt/nesi/db/alphafold_db
+
+    export SINGULARITY_BIND="$INPUT,$OUTPUT,$DATABASE"
+
+    singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python /app/alphafold/run_alphafold.py \
+    --use_gpu_relax \
+    --data_dir=$DATABASE \
+    --uniref90_database_path=$DATABASE/uniref90/uniref90.fasta \
+    --mgnify_database_path=$DATABASE/mgnify/mgy_clusters_2018_12.fa \
+    --bfd_database_path=$DATABASE/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+    --uniclust30_database_path=$DATABASE/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
+    --pdb_seqres_database_path=$DATABASE/pdb_seqres/pdb_seqres.txt \
+    --template_mmcif_dir=$DATABASE/pdb_mmcif/mmcif_files \
+    --obsolete_pdbs_path=$DATABASE/pdb_mmcif/obsolete.dat \
+    --model_preset=multimer \
+    --max_template_date=2022-1-1 \
+    --db_preset=full_dbs \
+    --output_dir=$OUTPUT \
+    --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+
+###  
+
+### Explanation of Slurm variables and Singularity flags {#h_01G0ZDA2HNWJ1DV8VJSN2J0GV0}
+
+1.  Values for `--mem` , `--cpus-per-task` and `--time` Slurm variables
+    are for *3RGK.fasta*. Adjust them accordingly
+2.  We have tested this on both P100 and A100 GPUs where the runtimes
+    were identical. Therefore, the above example was set to former
+    via `P100:1`
+3.  The `--nv` flag enables GPU support.
+4.  `--pwd /app/alphafold` is to workaround this [existing
+    issue](https://github.com/deepmind/alphafold/issues/32)
+
+###  
+
+### AlphaFold2 : Initial Release ( this version does not support `multimer`)
 
 Input *fasta* used in following example and subsequent benchmarking is
 3RGK (<https://www.rcsb.org/structure/3rgk>).
@@ -115,13 +241,14 @@ Input *fasta* used in following example and subsequent benchmarking is
 
 ###  
 
-### [](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#explanation-of-slurm-variables-and--singularity-flags){#user-content-explanation-of-slurm-variables-and--singularity-flags .anchor}Explanation of Slurm variables and Singularity flags
+Troubleshooting
+---------------
 
-1.  Values for `--mem` , `--cpus-per-task` and `--time` Slurm variables
-    are for *3RGK.fasta*. Adjust them accordingly
-2.  We have tested this on both P100 and A100 GPUs where the runtimes
-    were identical. Therefore, the above example was set to former
-    via `P100:1`
-3.  The `--nv` flag enables GPU support.
-4.  `--pwd /app/alphafold` is to workaround this [existing
-    issue](https://github.com/deepmind/alphafold/issues/32)
+-   If you are to encounter the message \"*RuntimeError: Resource
+    exhausted: Out of memory*\" , add the following variables to the
+    slurm script
+
+<!-- -->
+
+    export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1
+    export SINGULARITYENV_XLA_PYTHON_CLIENT_MEM_FRACTION=4.0

@@ -1,9 +1,8 @@
 There are three commands with which a OpenSees job can be launched.
 
--   [OpenSees]{.kbd} - For running a job in serial (single CPU).
--   [OpenSeesSP]{.kbd} - Intended for the single analysis of very large
-    models.
--   [OpenSeesMP]{.kbd} - For advanced parametric studies.
+-   OpenSees - For running a job in serial (single CPU).
+-   OpenSeesSP - Intended for the single analysis of very large models.
+-   OpenSeesMP - For advanced parametric studies.
 
  
 
@@ -13,18 +12,18 @@ More info can be found about running OpenSees in parallel
 +-----------------------------------+-----------------------------------+
 | ### Serial                        |     #!/bin/bash -e                |
 |                                   |                                   |
-| -------------------------------   |     #SBATC                        |
-|                                   | H --job-name      OpenSees-Serial |
-| Single *process* with a single    |     #SBATCH --time                |
-| *thread.*                         |      00:05:00          # Walltime |
-|                                   |     #SBATCH --                    |
-| Usually submitted as part of an   | cpus-per-task 1                 # |
-| array, as in the case of          |  Double if hyperthreading enabled |
-| parameter sweeps.                 |     #SBATCH --mem                 |
-|                                   |     512MB             # total mem |
-|                                   |     #                             |
-|                                   | SBATCH --hint          nomultithr |
-|                                   | ead     # Hyperthreading disabled |
+| -------------------------------   |     #SBATCH --job-name      OpenS |
+|                                   | ees-Serial                        |
+| Single *process* with a single    |     #SBATCH --time          00:05 |
+| *thread.*                         | :00          # Walltime           |
+|                                   |     #SBATCH --cpus-per-task 1     |
+| Usually submitted as part of an   |              # Double if hyperthr |
+| array, as in the case of          | eading enabled                    |
+| parameter sweeps.                 |     #SBATCH --mem           512MB |
+|                                   |              # total mem          |
+|                                   |     #SBATCH --hint          nomul |
+|                                   | tithread     # Hyperthreading dis |
+|                                   | abled                             |
 |                                   |                                   |
 |                                   |     module load OpenSees          |
 |                                   |                                   |

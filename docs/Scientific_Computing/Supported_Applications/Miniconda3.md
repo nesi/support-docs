@@ -15,10 +15,11 @@ packages and no curation by the NeSI team.
 >     environment
 >     module](https://support.nesi.org.nz/hc/en-gb/articles/207782537-Python).
 
-> ### Note about Māui Ancillary Nodes {#octopus-warning}
+> ### Māui Ancillary Nodes {#llama-tip}
 >
-> The `Miniconda3` module is not available on Māui Ancillary Nodes, use
-> the `Anaconda3` module instead.
+> On Māui Ancillary Nodes, you can also use the `Anaconda3` module,
+> which provides a default environment pre-installed with a set of
+> numerical libraries (numpy, scipy, matplotlib, etc.).
 
 Module loading and conda environments isolation
 ===============================================
@@ -46,6 +47,12 @@ Here are the explanations for each line of this snippet:
     `X.Y` is the Python version, e.g. 3.8) by `pip install --user` are
     included in your conda environments.
 
+> ### Do not use `conda init` {#octopus-warning}
+>
+> We **strongly** recommend against using `conda init`. It inserts a
+> snippet in your `~/.bashrc` file that will freeze the version of conda
+> used, bypassing the environment module system.
+
 Prevent conda from using /home storage
 ======================================
 
@@ -61,7 +68,14 @@ packages on the `nobackup` folder of your project:
     conda config --add pkgs_dirs /nesi/nobackup/<project_code>/$USER/conda_pkgs
 
 where `<project_code>` should be replace with your project code. This
-setting is saved in your `~/.condarc` configuration file.
+setting is saved in your `~/.condarc` configuration file.  **NOTE**: 
+your package cache will be subject to the nobackup autodelete process
+(details about autodelete can be found here: [Nobackup
+autodelete)](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system)
+The package cache folder is for temporary storage so it is safe if files
+within the cache folder are removed.
+
+ 
 
 Next, we recommend using the `-p` or `--prefix` options when creating
 new conda environments, instead of `-n` or `--name` options. Using `-p`

@@ -213,9 +213,8 @@ guidelines should help with configuring the container correctly.
     following command to the \"%runscript\" section in the Singularity
     build recipe if a Conda environment is used:
 
-```{=html}
 <!-- -->
-```
+
     %runscript
      exec /bin/bash -c \
       ". /opt/conda/etc/profile.d/conda.sh; conda activate myenv; python $@"

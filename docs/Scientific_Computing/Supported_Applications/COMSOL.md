@@ -43,73 +43,73 @@ Example Scripts {#example-script}
 +-----------------------------------+-----------------------------------+
 | Serial Example                    |     #!/bin/bash -e                |
 | --------------                    |                                   |
-|                                   |     #SBA                          |
-| -------------------------------   | TCH --job-name      COMSOL-serial |
-|                                   |     #SBATC                        |
-| Single *process* with a single    | H --licenses      comsol@uoa_foe  |
-| *thread*                          |     #SBATCH --time                |
-|                                   |      00:05:00          # Walltime |
-| Usually submitted as part of an   |     #SBATCH --mem                 |
-| array, as in the case of          |    1512               # total mem |
+|                                   |     #SBATCH --job-name      COMSO |
+| -------------------------------   | L-serial                          |
+|                                   |     #SBATCH --licenses      comso |
+| Single *process* with a single    | l@uoa_foe                         |
+| *thread*                          |     #SBATCH --time          00:05 |
+|                                   | :00          # Walltime           |
+| Usually submitted as part of an   |     #SBATCH --mem           1512  |
+| array, as in the case of          |               # total mem         |
 | parameter sweeps.                 |                                   |
 |                                   |     module load COMSOL/5.5        |
 |                                   |                                   |
-|                                   |     com                           |
-|                                   | sol batch -inputfile my_input.mph |
+|                                   |     comsol batch -inputfile my_in |
+|                                   | put.mph                           |
 +-----------------------------------+-----------------------------------+
 | Shared Memory Example             |     #!/bin/bash -e                |
 | ---------------------             |                                   |
-|                                   |     #SBA                          |
-| -------------------------------   | TCH --job-name      COMSOL-shared |
-|                                   |     #SBATC                        |
-|                                   | H --licenses      comsol@uoa_foe  |
-|                                   |     #SBATCH --time                |
-|                                   |        00:05:00        # Walltime |
+|                                   |     #SBATCH --job-name      COMSO |
+| -------------------------------   | L-shared                          |
+|                                   |     #SBATCH --licenses      comso |
+|                                   | l@uoa_foe                         |
+|                                   |     #SBATCH --time          00:05 |
+|                                   | :00        # Walltime             |
 |                                   |     #SBATCH --cpus-per-task 8     |
-|                                   |     #SBATCH --mem                 |
-|                                   |       4G              # total mem |
+|                                   |     #SBATCH --mem           4G    |
+|                                   |            # total mem            |
 |                                   |                                   |
 |                                   |     module load COMSOL/5.5        |
 |                                   |                                   |
-|                                   |     comsol batch -mpibootst       |
-|                                   | rap slurm -inputfile my_input.mph |
+|                                   |     comsol batch -mpibootstrap sl |
+|                                   | urm -inputfile my_input.mph       |
 +-----------------------------------+-----------------------------------+
 | Distributed Memory Example        |     #!/bin/bash -e                |
 | --------------------------        |                                   |
-|                                   |     #SBATCH --                    |
-| -------------------------------   | job-name      COMSOL-distributed  |
-|                                   |     #SBATC                        |
-|                                   | H --licenses      comsol@uoa_foe  |
-|                                   |     #SBATCH --time                |
-|                                   |    00:05:00            # Walltime |
-|                                   |     #SB                           |
-|                                   | ATCH --ntasks        8            |
-|                                   |     #SBATCH --mem-per-cpu         |
-|                                   | 1500                # mem per cpu |
+|                                   |     #SBATCH --job-name      COMSO |
+| -------------------------------   | L-distributed                     |
+|                                   |     #SBATCH --licenses      comso |
+|                                   | l@uoa_foe                         |
+|                                   |     #SBATCH --time          00:05 |
+|                                   | :00            # Walltime         |
+|                                   |     #SBATCH --ntasks        8     |
+|                                   |                                   |
+|                                   |     #SBATCH --mem-per-cpu   1500  |
+|                                   |                # mem per cpu      |
 |                                   |                                   |
 |                                   |     module load COMSOL/5.5        |
 |                                   |                                   |
-|                                   |     comsolbatch -mpibootst        |
-|                                   | rap slurm -inputfile my_input.mph |
+|                                   |     comsolbatch -mpibootstrap slu |
+|                                   | rm -inputfile my_input.mph        |
 +-----------------------------------+-----------------------------------+
 | Hybrid Example                    |     #!/bin/bash -e                |
 | --------------                    |                                   |
-|                                   |     #SBATCH                       |
-| -------------------------------   | --job-name         COMSOL-hybrid  |
-|                                   |     #SBATCH                       |
-|                                   | --licenses         comsol@uoa_foe |
-|                                   |     #SBATCH --time                |
-|                                   |      00:05:00          # Walltime |
-|                                   |     #SBATCH --ntasks              |
-|                                   |     4                 # total mem |
+|                                   |     #SBATCH --job-name         CO |
+| -------------------------------   | MSOL-hybrid                       |
+|                                   |     #SBATCH --licenses         co |
+|                                   | msol@uoa_foe                      |
+|                                   |     #SBATCH --time             00 |
+|                                   | :05:00          # Walltime        |
+|                                   |     #SBATCH --ntasks           4  |
+|                                   |                 # total mem       |
 |                                   |     #SBATCH --cpus-per-task    16 |
-|                                   |     #SBATCH --mem-per-cpu         |
-|                                   |     1500B             # total mem |
+|                                   |     #SBATCH --mem-per-cpu      15 |
+|                                   | 00B             # total mem       |
 |                                   |                                   |
 |                                   |     module load COMSOL/5.5        |
 |                                   |                                   |
-|                                   |     comsol batch -mpibootst       |
-|                                   | rap slurm -inputfile my_input.mph |
+|                                   |     comsol batch -mpibootstrap sl |
+|                                   | urm -inputfile my_input.mph       |
 +-----------------------------------+-----------------------------------+
 
 > ### Important

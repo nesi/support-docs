@@ -38,7 +38,7 @@ Figure 1: Cray XC50 DVS architecture.
 
 This *reduces the I/O performance of Māui for metadata and small (e.g.
 4KB) I/O operations*. It does not impact the total bandwidth available
-from the Māui (i.e. \~130 GB/s when writing to the filesystem).
+from the Maui (i.e. \~130 GB/s when writing to the filesystem).
 Accordingly, the equivalent performance numbers for DVS connected
 compute nodes are:
 

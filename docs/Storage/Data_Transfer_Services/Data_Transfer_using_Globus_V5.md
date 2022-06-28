@@ -38,8 +38,8 @@ facility storage and a worldwide network of Globus endpoints. This is
 achieved using Globus.org, a web-based service that solves many of the
 challenges encountered moving large volumes of data between systems.
 While NeSI supports use of other data transfer tools and protocols such
-as `#!['bash']scp`, Globus provides the most comprehensive, efficient,
-and easy to use service for NeSI users who need to move large data sets
+as `scp`{.bash}, Globus provides the most comprehensive, efficient, and
+easy to use service for NeSI users who need to move large data sets
 (more than a few gigabytes at a time).
 
 Types of Globus endpoints or Data Transfer Nodes
@@ -91,9 +91,9 @@ listing of available endpoints on the New Zealand Data Transfer
 Platform.
 :::
 
-NeSI endpoints start with
-\"nesi\#\":![](https://support.nesi.org.nz/hc/article_attachments/360002070816/mceclip0.png){width="788"
-height="315"}
+NeSI endpoints start with \"nesi\#\":
+
+![filemanage\_nesi.png](https://support.nesi.org.nz/hc/article_attachments/4940171187343/filemanage_nesi.png)
 
 Select the endpoint \"Nesi Wellington DTN V5\", and you will be asked to
 authenticate your access to the endpoint. Click Continue to the next
@@ -116,11 +116,14 @@ that.
 The NeSI Wellington DTN V5 endpoint is protected by a second factor
 authentication (2FA-same as accessing NeSI clusters).  In the
 \'**Username\'** field, enter your Māui/Mahuika username. In the
-\'**Password\'** field, your `Password` will be equal to
-`Login Password (First Factor)` +
-`Authenticator Code (Second Factor)` e.g. `password123456`. (***Do
-not*** use any additional characters or spaces between your password and
-the token number.)
+\'**Password\'** field, your `Password`{.c-mrkdwn__code
+data-stringify-type="code"} will be equal to
+`Login Password (First Factor)`{.c-mrkdwn__code
+data-stringify-type="code"} +
+`Authenticator Code (Second Factor)`{.c-mrkdwn__code
+data-stringify-type="code"} e.g. `password123456`{.c-mrkdwn__code
+data-stringify-type="code"}. (***Do not*** use any additional characters
+or spaces between your password and the token number.)
 
                            
 ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/4408962414351/mceclip0.png)
@@ -128,13 +131,12 @@ the token number.)
 After the login, you will navigate to the default root(display as \"/\")
 path, then you could change the path to
 
-\(1\) your ***/home/\<username\>*** directory,
+\(1) your ***/home/\<username\>*** directory,
 
-\(2\) project directory (read-only)
-***/nesi/project/\<project\_code\>*** 
+\(2) project directory (read-only) ***/nesi/project/\<project\_code\>*** 
 
-\(3\) project sub-directories of ***/nesi/nobackup/\<project\_code\>*** 
-- see [Globus Paths, Permissions,  Storage
+\(3) project sub-directories of ***/nesi/nobackup/\<project\_code\>***  -
+see [Globus Paths, Permissions,  Storage
 Allocation.](https://support.nesi.org.nz/hc/en-gb/articles/360000812776-Globus-Paths-Permissions-Storage-Allocation)\
 \
 Navigate to your selected directory. e.g. the *nobackup* filesystem

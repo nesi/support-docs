@@ -44,8 +44,8 @@ not.]{.wysiwyg-color-black} 
 |                       |     cores that it     |                       |
 |                       |     reserved but      |                       |
 |                       |     didn\'t           |                       |
-|                       |     use)]{            |                       |
-|                       | .wysiwyg-color-black} |                       |
+|                       |     use)]{.wysiwyg-co |                       |
+|                       | lor-black}            |                       |
 +-----------------------+-----------------------+-----------------------+
 | Memory                | -   The job may wait  | -   Your job will     |
 |                       |     in the queue for  |     fail, probably    |
@@ -54,14 +54,14 @@ not.]{.wysiwyg-color-black} 
 |                       |     score will fall   |     segmentation      |
 |                       |     more than         |     fault or bus      |
 |                       |     necessary. (see   |     error. This may   |
-|                       |     [here](           |     not happen        |
-|                       | https://support.nesi. |     immediately.      |
-|                       | org.nz/hc/en-gb/artic |                       |
-|                       | les/360000204076) and |                       |
-|                       |     [he               |                       |
-|                       | re](https://support.n |                       |
-|                       | esi.org.nz/hc/en-gb/a |                       |
-|                       | rticles/360000204116) |                       |
+|                       |     [here](https://su |     not happen        |
+|                       | pport.nesi.org.nz/hc/ |     immediately.      |
+|                       | en-gb/articles/360000 |                       |
+|                       | 204076) and           |                       |
+|                       |     [here](https://su |                       |
+|                       | pport.nesi.org.nz/hc/ |                       |
+|                       | en-gb/articles/360000 |                       |
+|                       | 204116)               |                       |
 |                       |     for information   |                       |
 |                       |     about how memory  |                       |
 |                       |     use is charged to |                       |
@@ -83,21 +83,21 @@ Job Scaling
 
 Before you start submitting the main bulk of your jobs, it is [advisable
 to first submit a *test job*. ]{.SDZsVb tabindex="0"
-term-for-update="advisable"
-ved="2ahUKEwj-0-zoj-fhAhXCfX0KHYH_DJYQ_SowAHoECAwQDA"}
+data-term-for-update="advisable"
+data-ved="2ahUKEwj-0-zoj-fhAhXCfX0KHYH_DJYQ_SowAHoECAwQDA"}
 
 [A test job should be representative of the main body of your work,
 scaled down (e.g. a small subset of your data or a low number of job
 steps). Aim for your test job to run for around 10 minutes, too much
 shorter and your job will be spending a high proportion of its time on
 overhead and therefore be less accurate for the purposes of
-scaling.]{.SDZsVb tabindex="0" term-for-update="advisable"
-ved="2ahUKEwj-0-zoj-fhAhXCfX0KHYH_DJYQ_SowAHoECAwQDA"}
+scaling.]{.SDZsVb tabindex="0" data-term-for-update="advisable"
+data-ved="2ahUKEwj-0-zoj-fhAhXCfX0KHYH_DJYQ_SowAHoECAwQDA"}
 
 [Keeping your test job small ensures a short queue time, short run time
 and that minimal resources are expended.]{.SDZsVb tabindex="0"
-term-for-update="advisable"
-ved="2ahUKEwj-0-zoj-fhAhXCfX0KHYH_DJYQ_SowAHoECAwQDA"}
+data-term-for-update="advisable"
+data-ved="2ahUKEwj-0-zoj-fhAhXCfX0KHYH_DJYQ_SowAHoECAwQDA"}
 
 [When scaling your jobs, one of the most beneficial things you can do is
 to first scale down your data and calculations to as small as you can.

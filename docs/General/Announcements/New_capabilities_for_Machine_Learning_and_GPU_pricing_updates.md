@@ -14,26 +14,26 @@ researchers to ensure this new capability is fit-for-purpose and tuned
 to communities\' specific software and tool requirements. 
 
 [These new A100s, alongside ]{.fabric-editor-annotation
-mark-type="annotation" mark-annotation-type="inlineComment"
+data-mark-type="annotation" data-mark-annotation-type="inlineComment"
 data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"}[[software optimised for
-data science]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+data science]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"}](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-)[,
 are available to researchers using ]{.fabric-editor-annotation
-mark-type="annotation" mark-annotation-type="inlineComment"
+data-mark-type="annotation" data-mark-annotation-type="inlineComment"
 data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"}**[machine
-learning]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+learning]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"}**[ approaches. If this
-is you, ]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+is you, ]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"}[[contact NeSI
-Support]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+Support]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"}](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new)[
 to discuss how these new resources could support your
-work.]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+work.]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"}
 
  
@@ -52,11 +52,11 @@ If you need a larger or new allocation on Mahuika, you can [apply for
 access](https://www.nesi.org.nz/services/applyforaccess) now, but
 requests will likely be considered as part of our next allocation call
 window: [[31 August - 01 October]{.fabric-editor-annotation
-mark-type="annotation" mark-annotation-type="inlineComment"
+data-mark-type="annotation" data-mark-annotation-type="inlineComment"
 data-id="002aaecf-7fd3-4a49-846d-50a7a88096a6"}](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
 
 [For more technical information]{.fabric-editor-annotation
-mark-type="annotation" mark-annotation-type="inlineComment"
+data-mark-type="annotation" data-mark-annotation-type="inlineComment"
 data-id="27b58294-6e03-46a6-921a-0652d7a5b841"} about using GPUs on
 NeSI, [click
 here](https://support.nesi.org.nz/hc/en-gb/articles/360001471955). If
@@ -94,15 +94,15 @@ These activities will enable us to expand GPU access to an even broader
 community of users, as well as support more advanced and demanding
 performance needs across domains. [If you're interested in using these
 A100s for something other than machine learning, let us know by
-]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="d92de427-dd8f-4965-a484-8faf3deebc67"}[[contacting NeSI
-Support]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+Support]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="d92de427-dd8f-4965-a484-8faf3deebc67"}](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new)[
 - that way we can keep you up to date on our plans.
-]{.fabric-editor-annotation mark-type="annotation"
-mark-annotation-type="inlineComment"
+]{.fabric-editor-annotation data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
 data-id="d92de427-dd8f-4965-a484-8faf3deebc67"}
 
  

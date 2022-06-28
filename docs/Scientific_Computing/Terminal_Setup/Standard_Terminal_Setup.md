@@ -17,12 +17,12 @@ First time setup {#recLinux}
 The login process can be simplified significantly with a few easy
 configurations.
 
-1.  In a new local terminal run; `mkdir -p ~/.ssh/sockets` this will
-    create a hidden file in your home directory to store socket
-    configurations.
-
-2.  Open your ssh config file with  `nano ~/.ssh/config` and add the
-    following (replacing **`username`** with your username):
+1.  In a new local terminal
+    run; `mkdir -p ~/.ssh/sockets`{.nohighlight} this will create a
+    hidden file in your home directory to store socket configurations.
+2.  Open your ssh config file with  `nano ~/.ssh/config`{.nohighlight}
+    and add the following (replacing **`username`{.nohighlight}** with
+    your username):
 
         Host mahuika
            User username
@@ -55,7 +55,7 @@ configurations.
             ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
             ControlPersist 1
 
-    Close and save with [ctrl x]{.kbd}, [y]{.kbd}, [Enter]{.kbd}
+    Close and save with ctrl x, y, Enter
 
 3.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.

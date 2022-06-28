@@ -24,24 +24,6 @@ Once RStudio is launched, you should briefly see a login screen. It will
 be auto-filled using a pre-generated password, unless you disabled
 javascript in your web browser.
 
-Troubleshooting
-===============
-
-If you get an error 500 after clicking on the launcher icon, this could
-be due to RStudio taking too much time to start, which is interpreted as
-a failure by JupyterLab. Please try to start RStudio again from the
-launcher. If the problem persists, contact our support team at
-<support@nesi.org.nz>.
-
-![error\_500.PNG](https://support.nesi.org.nz/hc/article_attachments/4614666941455/error_500.PNG)
-
-If you have disabled javascript in your web browser, you will need to
-enter your password manually in the RStudio login screen. To retrieve
-the password, open a terminal in JupyterLab and enter the following to
-print the password:
-
-    $ cat ~/.config/rstudio_on_nesi/server_password
-
 Changing R version
 ==================
 
@@ -49,17 +31,35 @@ You can configure a set of [environment
 modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
 to preload before starting RStudio. This can be useful if you want to
 change the version of the R interpreter or use NeSI\'s *R-Geo* or
-*R-bundle-BioConductor* modules.
+*R-bundle-Bioconductor* modules.
 
 The module needs to be entered in the configuration file
-`~/.config/rstudio_on_nesi/prelude.bash`. In the following example, we
-use the version 3.6.1 of R:
+`~/.config/rstudio_on_nesi/prelude.bash`.
 
-    $ echo "module load R/3.6.1-gimkl-2018b" > ~/.config/rstudio_on_nesi/prelude.bash
+In the following example, we use the module that is built for R/4.1.0
+
+    $ echo "module load R/4.1.0-gimkl-2020a" > ~/.config/rstudio_on_nesi/prelude.bash
 
 Once your configuration file is ready, make sure to restart your Jupyter
 session and re-launch RStudio for these changes to be taken into
-account.
+account. Check that the correct version of R has loaded and that the
+correct Library Paths are available. For R/4.1.0 the command
+`.libPaths()` will return the following:
+
+``` {#rstudio_console_output .GAQXDSOBH1B tabindex="0" role="document" aria-label="Console Output"}
+> .libPaths()
+[1] "/home/YOUR_USER_NAME/R/gimkl-2020a/4.1"                            
+[2] "/opt/nesi/CS400_centos7_bdw/R/4.1.0-gimkl-2020a/lib64/R/library"
+```
+
+Package Installation
+====================
+
+It is currently recommended, that package installations are still done
+as a terminal session with the same R module loaded. This avoids
+potential read/write issues with a full temp directory. After an
+installation the package will be immediately available in RStudio
+without the need to restart.
 
 Advanced usage
 ==============
@@ -95,3 +95,23 @@ place to start is looking at the log file from jupyter, for the current
 session:
 
     $ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
+
+Troubleshooting
+===============
+
+If you get an error 500 after clicking on the launcher icon, this could
+be due to RStudio taking too much time to start, which is interpreted as
+a failure by JupyterLab. Please try to start RStudio again from the
+launcher. If the problem persists, contact our support team at
+<support@nesi.org.nz>.
+
+![error\_500.PNG](https://support.nesi.org.nz/hc/article_attachments/4614666941455/error_500.PNG)
+
+If you have disabled javascript in your web browser, you will need to
+enter your password manually in the RStudio login screen. To retrieve
+the password, open a terminal in JupyterLab and enter the following to
+print the password:
+
+    $ cat ~/.config/rstudio_on_nesi/server_password
+
+ 

@@ -163,15 +163,13 @@ Slow
 -   SCP
 -   Globus data transfer
 
-```{=html}
 <!-- -->
-```
+
 -   Native Spectrum Scale mounts
 -   SCP
 
-```{=html}
 <!-- -->
-```
+
 -   Native Spectrum Scale mounts
 -   SCP
 -   Globus data transfer

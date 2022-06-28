@@ -37,15 +37,15 @@ CPU-hours.
 There is only one partition available to NeSI jobs:
 
 +-----------+-----------+-----------+-----------+-----------+-----------+
-| *         | **Nodes** | **Max     | **Avail / | **Max /   | **Desc    |
-| * Name ** |           | W         | Node**    | Account** | ription** |
-|           |           | alltime** |           |           |           |
+| ** Name * | **Nodes** | **Max     | **Avail / | **Max /   | **Descrip |
+| *         |           | Walltime* | Node**    | Account** | tion**    |
+|           |           | *         |           |           |           |
 +-----------+-----------+-----------+-----------+-----------+-----------+
-| nesi\     | 316       | 24 hours  | 80 CPUs   | 240 nodes | Standard  |
-| _research |           |           |           |           | partition |
+| nesi\_res | 316       | 24 hours  | 80 CPUs   | 240 nodes | Standard  |
+| earch     |           |           |           |           | partition |
 |           |           |           | 90 or 180 | 1200      | for all   |
-|           |           |           | GB RAM    | n         | NeSI      |
-|           |           |           |           | ode-hours | jobs.\    |
+|           |           |           | GB RAM    | node-hour | NeSI      |
+|           |           |           |           | s         | jobs.\    |
 |           |           |           |           | running   | \         |
 +-----------+-----------+-----------+-----------+-----------+-----------+
 
@@ -69,7 +69,7 @@ limit:
 Most of the time [job
 priority](https://support.nesi.org.nz/hc/en-gb/articles/360000201636) will
 be the most important influence on how long your jobs have to wait - the
-above limits are just backstops to ensure that Māui\'s resources are not
+above limits are just backstops to ensure that Maui\'s resources are not
 all committed too far into the future, so that debug and other
 higher-priority jobs can start reasonably quickly.
 
@@ -92,26 +92,26 @@ Māui\_Ancil (CS500) Slurm Partitions
  
 
 +---------+---------+---------+---------+---------+---------+---------+
-| *       | **      | **Max   | **Avail | **Max / | **Max / | *       |
-| *Name** | Nodes** | Wal     | /       | Job**   | User**  | *Descri |
-|         |         | ltime** | Node**  |         |         | ption** |
+| **Name* | **Nodes | **Max   | **Avail | **Max / | **Max / | **Descr |
+| *       | **      | Walltim | /       | Job**   | User**  | iption* |
+|         |         | e**     | Node**  |         |         | *       |
 +---------+---------+---------+---------+---------+---------+---------+
-| nesi\_  | 4       | 24      | 80 CPUs | 20 CPUs | 80 CPUs | Pre and |
-| prepost |         | hours   |         |         |         | post    |
-|         |         |         | 720 GB  | 700 GB  | 700 GB  | pro     |
-|         |         |         | RAM     | RAM     | RAM     | cessing |
+| nesi\_p | 4       | 24      | 80 CPUs | 20 CPUs | 80 CPUs | Pre and |
+| repost  |         | hours   |         |         |         | post    |
+|         |         |         | 720 GB  | 700 GB  | 700 GB  | process |
+|         |         |         | RAM     | RAM     | RAM     | ing     |
 |         |         |         |         |         |         | tasks.  |
 +---------+---------+---------+---------+---------+---------+---------+
-| ne      | 4 to 5  | 72      | 4 CPUs  | 4 CPUs  | 4 CPUs  | GPU     |
-| si\_gpu |         | hours   |         |         |         | jobs    |
-|         |         |         | 12 GB   | 12 GB   | 12 GB   | and v   |
-|         |         |         | RAM     | RAM     | RAM     | isualis |
-|         |         |         |         |         |         | ation.  |
+| nesi\_g | 4 to 5  | 72      | 4 CPUs  | 4 CPUs  | 4 CPUs  | GPU     |
+| pu      |         | hours   |         |         |         | jobs    |
+|         |         |         | 12 GB   | 12 GB   | 12 GB   | and vis |
+|         |         |         | RAM     | RAM     | RAM     | ualisat |
+|         |         |         |         |         |         | ion.    |
 |         |         |         | 1 P100  | 1 P100  | 1 P100  |         |
 |         |         |         | GPU\*   | GPU     | GPU     |         |
 +---------+---------+---------+---------+---------+---------+---------+
-| nes     | 0 to 1  | 2 hours | 4 CPUs  | 4 CPUs  | 4 CPUs  | Inte    |
-| i\_igpu |         |         |         |         |         | ractive |
+| nesi\_i | 0 to 1  | 2 hours | 4 CPUs  | 4 CPUs  | 4 CPUs  | Interac |
+| gpu     |         |         |         |         |         | tive    |
 |         |         |         | 12 GB   | 12 GB   | 12 GB   | GPU     |
 |         |         |         | RAM     | RAM     | RAM     | access  |
 |         |         |         |         |         |         | 7am -   |

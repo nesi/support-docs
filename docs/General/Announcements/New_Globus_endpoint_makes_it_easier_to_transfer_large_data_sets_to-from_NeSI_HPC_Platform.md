@@ -14,7 +14,7 @@ DTN]{style="font-weight: 400;"}*[, will be deactivated on 8 December
 -   [If you\'ve ever created a bookmark or shared a collection to the
     NeSI endpoint, you will need to re-create and/or re-share using the
     new endpoint name - ]{style="font-weight: 400;"}**NeSI Wellington
-    DTN V5**[.]{style="font-weight: 400;"} [[Instructions are available
+    DTN V5**[.]{style="font-weight: 400;"}[[Instructions are available
     here]{style="font-weight: 400;"}](https://support.nesi.org.nz/hc/en-gb/articles/4409759247887-Re-creating-Shared-Collections-and-Bookmarks-in-Globus-V5)[.]{style="font-weight: 400;"}
 
 **Endpoint functionality improvements:**
@@ -36,7 +36,7 @@ details and a demo of the new endpoint features. The recording is
 embedded below:]{style="font-weight: 400;"}
 
 [If you would like more information about the endpoint upgrade, you
-can]{style="font-weight: 400;"} [refer to these documentation pages [in
+can]{style="font-weight: 400;"}[refer to these documentation pages [in
 NeSI
 Support]{style="font-weight: 400;"}](https://support.nesi.org.nz/hc/en-gb/sections/360000040596-Data-Transfer-Services)[
 or send questions to

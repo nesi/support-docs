@@ -59,7 +59,7 @@ Example Script
     srun simpleFoam -parallel       
     reconstructPar -latestTime     #Collect 
 
-Filesystem Limitations {#OpenFOAM-OpenFOAMandtheFilesystem fm-marker="140"}
+Filesystem Limitations {#OpenFOAM-OpenFOAMandtheFilesystem data-fm-marker="140"}
 ======================
 
 OpenFOAM generates a large number of files during run-time. In addition
@@ -74,25 +74,23 @@ There are a few ways to mitigate this
 -   **Use** `/nesi/nobackup`\
     The nobackup directory has a significantly higher inode count and no
     disk space limits.
-
 -   **ControlDict Settings**\
-    -   `WriteInterval`\
+    -   `WriteInterval`{data-fm-marker="146"}\
         Using a high write interval reduce number of output files and
         I/O load.
     -   `deltaT`\
         Consider carefully an appropriate time-step, use adjustTimeStep
         if suitable.
-    -   `purgeWrite`\
+    -   `purgeWrite`{data-fm-marker="155"}\
         Not applicable for many jobs, this keeps only the last n steps,
         e.g. purgeWrite 5 will keep the last 5 time-steps, with the
         directories being constantly overwritten.
-    -   `runTimeModifiable`\
+    -   `runTimeModifiable`{data-fm-marker="159"}\
         When true, dictionaries will be re-read at the start of every
         time step. Setting this to false will decrease I/O load.
-    -   `writeFormat`\
+    -   `writeFormat`{data-fm-marker="162"}\
         Setting this to binary as opposed to ascii will decrease disk
         use and I/O load.
-
 -   **Monitor Filesystem **\
     The command `nn_storage_quota` should be used to track filesystem
     usage. There is a delay between making changes to a filesystem and
@@ -108,7 +106,7 @@ There are a few ways to mitigate this
     concerned about indoes, open a support ticket and we can raise the
     limit for you.
 
-Environment Variables {#environment-variables fm-marker="140"}
+Environment Variables {#environment-variables data-fm-marker="140"}
 =====================
 
 You may find it useful to use environment variables in your dictionaries
@@ -122,7 +120,12 @@ Or create your variables to be set in your Slurm script.
 
  This is essential when running parameter sweeps.
 
-Recommended Resources    {#OpenFOAM-OpenFOAMandtheFilesystem fm-marker="140"}
+You can also directly edit your dictionaries with `sed`, e.g.
+
+    NSUBDOMAINS=10
+    sed -i "s/\(numberOfSubdomains \)[[:digit:]]*\(;\)/\1 $NSUBDOMAINS\2/g" system/controlDict
+
+Recommended Resources    {#OpenFOAM-OpenFOAMandtheFilesystem data-fm-marker="140"}
 ========================
 
 Generally, using 16 or less tasks will keep your job reasonably
@@ -224,5 +227,6 @@ and before running the solvers.
 
 > ### Warning {#securitywarning}
 >
-> Make sure to `export` your custom paths before `source $FOAM_BASH`
-> else they will be reset to default.
+> Make sure to `export` your custom paths
+> before `source $FOAM_BASH`{style="font-size: 15px;"} else they will be
+> reset to default.
