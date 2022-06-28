@@ -30,7 +30,9 @@ Setup
 
 On mahuika or [w-mauivlab01.maui.nesi.org.nz]{.s1}:
 
-    source /nesi/project/niwa02916/synda_env.sh
+``` {.p1}
+source /nesi/project/niwa02916/synda_env.sh
+```
 
 This will load the Anaconda3 environment and set the ST\_HOME variable.
 You should also now be able to invoke
@@ -51,7 +53,9 @@ variable etc. A full list can be glanced
 from <https://esgf-node.llnl.gov/search/cmip6/>. A possible search might
 involve
 
-    synda search institution_id=NCAR experiment_id=1pctCO2 variable=ta
+``` {.p1}
+synda search institution_id=NCAR experiment_id=1pctCO2 variable=ta
+```
 
 [which returns]{.s1}
 

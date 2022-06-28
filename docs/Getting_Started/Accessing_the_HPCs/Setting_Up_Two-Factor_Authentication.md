@@ -35,9 +35,7 @@ Linking a device to your account
 
 3.  Click the \"**Setup Two-Factor Authentication device**\" link.\
     ![](https://support.nesi.org.nz/hc/article_attachments/360001267755/mceclip0.png)
-
 4.  After clicking on \"Continue\" you will retrieve the QR code.
-
 5.  Open your Authy or Google Authenticator app and click on the add
     button and select \"**Scan a barcode**\".
 

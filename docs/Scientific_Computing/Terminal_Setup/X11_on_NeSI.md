@@ -1,8 +1,8 @@
 > ### Requirements {#prerequisites}
 >
 > -   Have working
->     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
->     set up.
+>     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)set
+>     up.
 
 X-11 is a protocol for rendering graphical user interfaces (GUIs) that
 can be sent along an SSH tunnel. If you plan on using a GUI on a NeSI

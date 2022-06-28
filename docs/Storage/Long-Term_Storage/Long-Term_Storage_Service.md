@@ -538,10 +538,10 @@ finished.
 
 [The process of what data goes into tape and when is
 automated]{.inline-comment-marker
-ref="78239edd-ceab-49eb-a747-0140db19a948"}, and is not something you
-will have control over. The service is designed to optimise interaction
-with the nearline filesystem and avoid problem workloads for the benefit
-of all users.
+data-ref="78239edd-ceab-49eb-a747-0140db19a948"}, and is not something
+you will have control over. The service is designed to optimise
+interaction with the nearline filesystem and avoid problem workloads for
+the benefit of all users.
 
 If your files are on tape, it will take time to retrieve them. Access to
 tape readers is on a first come first served basis, and the amount of

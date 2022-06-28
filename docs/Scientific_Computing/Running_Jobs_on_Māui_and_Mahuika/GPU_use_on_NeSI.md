@@ -7,9 +7,13 @@ this page.
 
 > ### Important {#prerequisites}
 >
-> Details about[ ]{.diff-removed-string}GPU cards available for each
-> system[ ]{.diff-removed-string}and [usage]{.diff-added-string} limits
-> are available in the [Mahuika Slurm
+> An overview of available GPU cards is available in the [Available GPUs
+> on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
+> support page.
+>
+> Details about[ ]{.diff-removed-string}GPU cards for each system[
+> ]{.diff-removed-string}and [usage]{.diff-added-string} limits are in
+> the [Mahuika Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
 > and [Māui\_Ancil (CS500) Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
@@ -52,6 +56,10 @@ Conversely, to request A100 GPU devices, do this:
 -   To use two A100s:
 
         #SBATCH --gpus-per-node=A100:2
+
+To access an A100-1g.5gb GPU, use:
+
+    #SBATCH --gpus-per-node=A100-1g.5gb:1
 
 If not specified, the default GPU type is *P100*.
 
@@ -110,8 +118,8 @@ The CUDA module also provides access to additional command line tools:
 
 -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
     to directly monitor GPU resource utilisation,
--   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
-    to compile CUDA programs,
+-   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)to
+    compile CUDA programs,
 -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html) to
     debug CUDA applications.
 

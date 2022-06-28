@@ -1,3 +1,8 @@
+::: {.toc}
+The Problem
+-----------
+:::
+
 In a plain text file, to tell the computer that a line of text doesn\'t
 continue forever, the end of each line is marked by a sequence of one or
 more invisible characters, called *control characters*. While there are

@@ -20,7 +20,6 @@ Our most recent Python environment modules have:
 -   *multiprocessing.cpu\_count()* patched to return only the number of
     CPUs available to the process, which in a Slurm job can be fewer
     than the number of CPUs on the node.
-
 -   PYTHONUSERBASE set to a path which includes the toolchain, so that
     incompatible builds of the same version of Python don\'t attempt to
     share user-installed libraries.
@@ -311,16 +310,14 @@ Depending on the package you can install packages using:
 
 -   the Python Package Manager PIP
 
-```{=html}
 <!-- -->
-```
+
     $ pip install --prefix /nesi/project/<projectID>/PyPackages cogent
 
 -   use source code
 
-```{=html}
 <!-- -->
-```
+
     $ python setup.py install --prefix /nesi/project/<projectID>/PyPackages
 
  Python will not find the package by default, therefore you need to add

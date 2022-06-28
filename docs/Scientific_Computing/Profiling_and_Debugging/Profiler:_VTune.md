@@ -2,7 +2,7 @@
 -
 
  What is VTune?  
---------------
+----------------
 
 VTune is a **performance** analysis tool.\
 It can be used to identify and **analyse** various aspects in both
@@ -16,7 +16,7 @@ user interface (**GUI**).\
  
 
 Where to find more resources on VTune?  
---------------------------------------
+---------------------------------------
 
 -   Main page is at
     [https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html#gs.bjani9)
@@ -27,7 +27,7 @@ Where to find more resources on VTune?
 -
 
  How to use VTune?
------------------
+------------------
 
 \
 VTune is available on Mahuika by loading the VTune **module**.
@@ -49,7 +49,7 @@ To use the VTune amplifier command line tool help run:
 -
 
  How do I profile an application with VTune?  
--------------------------------------------
+---------------------------------------------
 
 The hotspot analysis is the most commonly used analysis and generally
 the first approach to optimizing an application.
@@ -58,9 +58,8 @@ the first approach to optimizing an application.
     The matrix sample is composed of a pre-built matrix in C++ for
     matrix multiplication.
 
-```{=html}
 <!-- -->
-```
+
     $ ml VTune/2019_update8
     $ cp -r /opt/nesi/mahuika/VTune/2019_update8/samples_2019/en/vtune_amplifier/C++/matrix .
     $ cd matrix
@@ -149,9 +148,8 @@ results.
 1.  First launch VDT then open a terminal and cd to directory.
 2.  Then run:
 
-```{=html}
 <!-- -->
-```
+
     module load VTune
     amplxe-gui --path-to-open <vtune_result_dir>
 

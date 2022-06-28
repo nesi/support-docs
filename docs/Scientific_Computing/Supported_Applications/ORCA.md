@@ -72,9 +72,8 @@ To restart from an existing GBW file, you should do the following:
     \"checkpoint.gbw\" with the name of the GBW file you intend to read
     from:
 
-```{=html}
 <!-- -->
-```
+
     ! moread
     % moinp "checkpoint.gbw"
 

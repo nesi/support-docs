@@ -27,7 +27,7 @@ Performing Globus transfers to/from Māui/Mahuika
     `/nesi/project` or `/nesi/nobackup` first, via your HPC access
 -   Sign in to Globus and navigate the file manager to the path
     associated with your project (viz. `/nesi/project/<project_code>` or
-    `/nesi/nobackup/<project_code>`)
+    `/nesi/nobackup/<project_code>`{style="font-size: 15px;"})
 -   Click the \"two-panels\" area in the file manager and select the
     other endpoint
 -   Select source of transfer

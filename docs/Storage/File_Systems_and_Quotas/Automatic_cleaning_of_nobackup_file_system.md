@@ -58,11 +58,9 @@ The general process will follow a schedule as follows:
 -   **Notify**[ (at 106 days), then two weeks later
     ]{style="font-weight: 400;"}**Delete**[ (at 120
     days)]{style="font-weight: 400;"}.
-
 -   [Every fortnight on Tuesday morning, we will be reviewing files
     stored in the nobackup filesystem and identifying candidates for
     expiry]{style="font-weight: 400;"}.
-
 -   Project teams will be notified by email if they have file candidates
     for deletion. Emails will be sent two weeks in advance of any
     deletion taking place.
@@ -118,12 +116,10 @@ keep beyond the scheduled expiry date, you have four options:
     before you can do this. [Submit a Support
     request](https://support.nesi.org.nz/hc/en-gb/requests/new). We
     assess such requests on a case-by-case basis.
-
 -   Move or copy the file to a storage system outside NeSI, for example
     a research storage device at your institution. We expect most
     projects to do this for finalised output data and appreciate prompt
     egress of data once it is no longer used for processing.
-
 -   Access or modify the file before the deletion date, in which case
     the file will not be deleted even though it is listed in `.policy`.
     This must only be done in cases where you expect to begin active use
@@ -142,12 +138,26 @@ keep beyond the scheduled expiry date, you have four options:
 Where should I put my data?
 ---------------------------
 
-  --------------------------------------------------------------- ---------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------
-  **How often will my team\'s HPC jobs be accessing the data?**   **How often will my team\'s HPC jobs be modifying the data? **   **Recommended option **
-  Often                                                           Often (at least once every two months)                           Leave in the nobackup directory (but ensure key result data is copied to the persistent project directory)
-  Often                                                           Seldom                                                           Put in the persistent project directory
-  Seldom                                                          Seldom                                                           Store the data elsewhere (e.g. at your institution)
-  --------------------------------------------------------------- ---------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------
++-----------------------+-----------------------+-----------------------+
+| **How often will my   | **How often will my   | **Recommended         |
+| team\'s HPC jobs be   | team\'s HPC jobs be   | option **             |
+| accessing the data?** | modifying the         |                       |
+|                       | data? **              |                       |
++-----------------------+-----------------------+-----------------------+
+| Often                 | Often (at least once  | Leave in the nobackup |
+|                       | every two months)     | directory (but ensure |
+|                       |                       | key result data is    |
+|                       |                       | copied to the         |
+|                       |                       | persistent project    |
+|                       |                       | directory)            |
++-----------------------+-----------------------+-----------------------+
+| Often                 | Seldom                | Put in the persistent |
+|                       |                       | project directory     |
++-----------------------+-----------------------+-----------------------+
+| Seldom                | Seldom                | Store the data        |
+|                       |                       | elsewhere (e.g. at    |
+|                       |                       | your institution)     |
++-----------------------+-----------------------+-----------------------+
 
 In general, the persistent project directory should be used for
 reference data, tools, and job submission and management scripts. The

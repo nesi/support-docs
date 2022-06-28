@@ -13,9 +13,11 @@ the names):
 
 <div>
 
-    # create a mount point and connect
-    mkdir -p ~/mahuika-home
-    sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
+``` {.line-numbers .language-none}
+# create a mount point and connect
+mkdir -p ~/mahuika-home
+sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
+```
 
 </div>
 
@@ -25,7 +27,9 @@ directory run:
 
 <div>
 
-    fusermount -u ~/mahuika-home
+``` {.line-numbers .language-none}
+fusermount -u ~/mahuika-home
+```
 
 </div>
 
@@ -33,9 +37,11 @@ To mount a project directory, you could run:
 
 <div>
 
-    # create a mount point and connect
-    mkdir -p ~/mahuika-project
-    sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
+``` {.line-numbers .language-none}
+# create a mount point and connect
+mkdir -p ~/mahuika-project
+sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
+```
 
 </div>
 
@@ -48,11 +54,13 @@ and give the volume a sensible name:
 
 <div>
 
-    # create a mount point and connect
-    mkdir -p ~/mahuika-home
-    sshfs mahuika: ~/mahuika-home \
-        -oauto_cache,follow_symlinks \
-        -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
+``` {.line-numbers .language-none}
+# create a mount point and connect
+mkdir -p ~/mahuika-home
+sshfs mahuika: ~/mahuika-home \
+    -oauto_cache,follow_symlinks \
+    -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
+```
 
 </div>
 
@@ -60,6 +68,8 @@ To unmount the directory on MacOS, either eject from Finder or run:
 
 <div>
 
-    umount ~/mahuika-home
+``` {.line-numbers .language-none}
+umount ~/mahuika-home
+```
 
 </div>

@@ -13,7 +13,7 @@
 WinSCP is an SCP client for windows implementing the SSH protocol from
 PuTTY.
 
-::: {container=""}
+::: {data-container=""}
 WinSCP can be downloaded [here](https://winscp.net/eng/download.php).
 
 Upon startup:
@@ -22,8 +22,8 @@ Upon startup:
 
 1. Add a *New Site* and set:
 
--   Enter in *Host Name: *[login.mahuika.nesi.org.nz]{.kbd} or
-    [login.maui.nesi.org.nz]{.kbd}
+-   Enter in *Host Name: *login.mahuika.nesi.org.nz or
+    login.maui.nesi.org.nz
 -   Enter your NeSI account username into *User name:* (Password
     optional)
 
@@ -45,7 +45,7 @@ Upon startup:
 6\. Navigate to *Connection \> Tunnel *and set:
 
 -   Enable \"Connect through SSH tunnel\".
--   Under \"Host name:\" enter [lander.nesi.org.nz]{.kbd}
+-   Under \"Host name:\" enter lander.nesi.org.nz
 -   Under \"User name:\" enter your username.
 -   Optionally, enter your password in the \"Password:\" box.
 
@@ -63,8 +63,8 @@ recommend you use the PuTTY terminal instead.
 
 ![WinSCP2-5.png](https://support.nesi.org.nz/hc/article_attachments/360001342495/WinSCP2-5.png)
 
-3\. Under *Integration \> Applications* enable *Remember session
-password and pass it to PuTTY*
+3\. Under *Integration \> Applications* enable *Remember session password
+and pass it to PuTTY*
 
 ![WinSCP4.png](https://support.nesi.org.nz/hc/article_attachments/360001344315/WinSCP4.png)
 

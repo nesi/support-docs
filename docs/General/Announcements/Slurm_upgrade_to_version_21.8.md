@@ -1,5 +1,5 @@
 ::: {.p-rich_text_section}
-Slurm, the scheduler that controls Māui and Mahuika, has been upgraded
+Slurm, the scheduler that controls Maui and Mahuika, has been upgraded
 to version 21.8 on machines.  Below are the highlights of the changes
 expected in the new version. The full list of bugfixes, improvements and
 changes is available on Schemd  website: [Slurm
@@ -7,23 +7,25 @@ news](https://slurm.schedmd.com/news.html)
 :::
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}
 :::
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}
 :::
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}***squeue***
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}***squeue***
 :::
 
--   Added `--me` option, equivalent to` --user=$USER`.
+-   Added `--me`{.c-mrkdwn__code data-stringify-type="code"} option,
+    equivalent to` --user=$USER`{.c-mrkdwn__code
+    data-stringify-type="code"}.
 -   Added \"pendingtime\" as a option for \--Format.
 -   Put sorted start times of \"N/A\" or 0 at the end of the list.
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}***sacct***
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}***sacct***
 :::
 
 -   Add time specification: \"now-\" (i.e. subtract from the present)
@@ -31,30 +33,39 @@ news](https://slurm.schedmd.com/news.html)
     instead. 
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}***scontrol***
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}***scontrol***
 :::
 
 -   MAGNETIC flag on reservations. Reservations the user doesn\'t have
     to even request.
 -   The LicensesUsed line has been removed
-    from[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show config`[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[.
+    from[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show config`{.c-mrkdwn__code
+    style="font-size: 15px;"
+    data-stringify-type="code"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[.
     Please use
-    updated]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show licenses`[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[command
+    updated]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`scontrol show licenses`{.c-mrkdwn__code
+    style="font-size: 15px;"
+    data-stringify-type="code"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[command
     as an
     alternative.]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}***sbatch***\
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}***sbatch***\
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}
 :::
 
--    `--threads-per-core` now influences task layout/binding, not just
-    allocation.
--   `--gpus-per-node`[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[can
+-    `--threads-per-core`{.c-mrkdwn__code
+    data-stringify-type="code"} now influences task layout/binding, not
+    just allocation.
+-   `--gpus-per-node`{.c-mrkdwn__code style="font-size: 15px;"
+    data-stringify-type="code"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[can
     be used instead
-    of]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--gres=GPU`
--   `--hint=nomultithread`[ can now be replaced
-    ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[with]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--threads-per-core=1`
+    of]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--gres=GPU`{.c-mrkdwn__code
+    style="font-size: 15px;" data-stringify-type="code"}
+-   `--hint=nomultithread`{.c-mrkdwn__code style="font-size: 15px;"
+    data-stringify-type="code"}[ can now be replaced
+    ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[with]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}[ ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}`--threads-per-core=1`{.c-mrkdwn__code
+    style="font-size: 15px;" data-stringify-type="code"}
 -   The inconsistent terminology and environment variable naming for
     Heterogeneous Job (\"HetJob\") support has been tidied up.
 -   The correct term for these jobs are \"HetJobs\", references to
@@ -63,7 +74,7 @@ news](https://slurm.schedmd.com/news.html)
     \"components\",   references to \"packs\" have been corrected.
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}**salloc**
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}**salloc**
 :::
 
 -   Added support for an \"Interactive Step\", designed to be used with
@@ -72,7 +83,7 @@ news](https://slurm.schedmd.com/news.html)
     of LaunchParameters.
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}***srun***
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}***srun***
 :::
 
 -    By default, a step started with srun will be granted exclusive (or
@@ -93,7 +104,7 @@ news](https://slurm.schedmd.com/news.html)
     resources unless both steps have specified \'\--overlap\'.
 
 ::: {.p-rich_text_section}
-[]{.c-mrkdwn__br stringify-type="paragraph-break"}***scrontab***
+[]{.c-mrkdwn__br data-stringify-type="paragraph-break"}***scrontab***
 :::
 
 -   New command which permits crontab-compatible job scripts to be

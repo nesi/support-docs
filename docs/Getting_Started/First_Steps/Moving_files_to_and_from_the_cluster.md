@@ -50,7 +50,7 @@ the cluster and your ssh config file is set up as described
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
-to with `sftp://mahuika`. ([ctrl]{.kbd} + [L]{.kbd} opens address bar)
+to with `sftp://mahuika`. (ctrl + L opens address bar)
 
 This does not work for File Explorer (Windows default)
 
@@ -86,9 +86,21 @@ to authenticate again on your first file operation of the session. The
 second prompt for your 2FA can be skipped, just the same as with login
 authentication.
 
- 
+Globus
+======
 
- 
+Globus is available for those with large amounts of data, security
+concerns, or connection consistency issues.\
+You can find more details on its use on our [Globus support
+page](https://support.nesi.org.nz/hc/en-gb/articles/4405623380751-Data-Transfer-using-Globus-V5).
+
+Rclone
+======
+
+Rclone is available for those that need to transfer data from cloud
+storage services like Google drive or OneDrive.\
+You can find more details on its use on the[Rclone
+documentation](https://rclone.org/docs).
 
  
 

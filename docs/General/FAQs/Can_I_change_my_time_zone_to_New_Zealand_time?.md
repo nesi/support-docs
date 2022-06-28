@@ -1,6 +1,7 @@
 The time displayed in your shell is controlled by a system variable
-called `TZ`. To change to New Zealand time you need to set the variable
-as follows:
+called
+`TZ`{style="font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;"}.
+To change to New Zealand time you need to set the variable as follows:
 
     export TZ="NZ"
 
@@ -12,9 +13,11 @@ Making the change persistent
 ----------------------------
 
 You can make your time zone setting persistent by adding the above line
-to your `~/.bashrc`. If you do this, we recommend adding the following
-line to your `~/.bash_profile`, or to your `~/.profile` if you have the
-latter but not the former:
+to your
+`~/.bashrc`{style="font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;"}.
+If you do this, we recommend adding the following line to your
+`~/.bash_profile`, or to your `~/.profile` if you have the latter but
+not the former:
 
     test -r ~/.bashrc && . ~/.bashrc
 

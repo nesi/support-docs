@@ -5,9 +5,8 @@ Environment Modules
 cluster. They prepare the environment you need to run an
 application.]{style="font-weight: 400;"}
 
-[For a full list of module commands run [man
-module]{.kbd}]{style="font-weight: 400;"} or visit the lmod
-documentation
+[For a full list of module commands run man
+module]{style="font-weight: 400;"} or visit the lmod documentation
 [here](https://lmod.readthedocs.io/en/latest/010_user.html).
 
   ------------------------------- ---------------------------------------------------------------

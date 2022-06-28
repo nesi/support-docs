@@ -93,9 +93,8 @@ input, altered as appropriate:
 -   Using MPI parallelisation and hyperthreading, but no OpenMP
     parallelisation:
 
-```{=html}
 <!-- -->
-```
+
     #SBATCH --nodes           4    # May vary
     #SBATCH --ntasks-per-node 72   # Must be 72
                                    # (the number of logical cores per node)
@@ -104,9 +103,8 @@ input, altered as appropriate:
 -   Using MPI parallelisation with neither hyperthreading nor OpenMP
     parallelisation:
 
-```{=html}
 <!-- -->
-```
+
     #SBATCH --nodes           4    # May vary
     #SBATCH --ntasks-per-node 36   # Must be 36
                                    # (the number of physical cores per node)
@@ -115,9 +113,8 @@ input, altered as appropriate:
 
 -   Using hybrid (OpenMP + MPI) parallelisation and hyperthreading:
 
-```{=html}
 <!-- -->
-```
+
     #SBATCH --nodes           4    # May vary
     #SBATCH --ntasks-per-node 1    # Must be 1
     #SBATCH --cpus-per-task   72   # Must be 72
@@ -125,9 +122,8 @@ input, altered as appropriate:
 
 -   Using hybrid (OpenMP + MPI) parallelisation but not hyperthreading:
 
-```{=html}
 <!-- -->
-```
+
     #SBATCH --nodes           4    # May vary
     #SBATCH --ntasks-per-node 1    # Must be 1
     #SBATCH --cpus-per-task   36   # Must be 36

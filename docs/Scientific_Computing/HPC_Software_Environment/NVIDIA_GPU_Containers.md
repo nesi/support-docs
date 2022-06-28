@@ -22,13 +22,16 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
 1.  Download the APOA1 benchmark data:
     -   wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
             cd apoa1
+
 2.  [Load the Singularity module:]{style="font-weight: 400;"}
     -   module load Singularity
+
 3.  [Build the Singularity image. This step differs from the NVIDIA
     instructions because instead of using \"build\" we \"pull\" the
     image directly, which does not require root
     access:]{style="font-weight: 400;"}
     -   singularity pull namd_2.13-singlenode.sif docker://nvcr.io/hpc/namd:2.13-singlenode
+
 4.  [Copy the following into a Slurm script named
     *run.sl*:]{style="font-weight: 400;"}
     -   #!/bin/bash
@@ -51,8 +54,10 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
 
             # run NAMD
             ${SINGULARITY} ${NAMD_EXE} +ppn ${SLURM_CPUS_PER_TASK} +idlepoll ${NAMD_INPUT}
+
 5.  Submit the job:
     -   sbatch run.sl
+
 6.  View the standard output from the simulation in the Slurm .out file.
 
  We expect similar steps to work for other NGC containers.

@@ -6,7 +6,8 @@ workload concurrently. OpenMP is suited for the Mahuika and Māui HPCs as
 each platform has 36, respectively 40 physical cores per node.  Each
 physical core can handle up to two threads in parallel using
 [Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236).
-Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui
+Therefore you can run up to 72 threads on Mahuika and 80 threads on
+Maui. 
 
 The environment variable that controls the number of threads is
 OMP\_NUM\_THREADS, e.g.,
@@ -38,12 +39,11 @@ consistent, additional information can be found in our article [Thread
 Placement and Thread
 Affinity](https://support.nesi.org.nz/hc/en-gb/articles/360000995575).
 
-1\. \--hint=nomultithread. Set this in conjunction with srun or sbatch
-to tell SLURM that you don\'t want to use hyperthreads. Your program
-will only be presented with physical cores. Inversely,
-\--hint=multithread will request two threads per physical core. If
-\--hint is not set, SLURM will currently assume \--hint=multithread by
-default.
+1\. \--hint=nomultithread. Set this in conjunction with srun or sbatch to
+tell SLURM that you don\'t want to use hyperthreads. Your program will
+only be presented with physical cores. Inversely, \--hint=multithread
+will request two threads per physical core. If \--hint is not set, SLURM
+will currently assume \--hint=multithread by default.
 
 2\. OMP\_PROC\_BIND. Set this to \"true\" to pin the threads down during
 program execution. By default, threads may migrate from one core to
@@ -61,25 +61,25 @@ code [upwindCxx -numCells 256 -numSteps
 gimpi/2018b toolchain on Mahuika.
 
 +-----------------+-----------------+-----------------+-----------------+
-| Number of       | \--hint not     | \--hint=[no]{   | \--h            |
-| physical cores  | used,           | .wysiwyg-color- | int=multithread |
-|                 | OMP\_PROC\_BIND | red}multithread |                 |
-|                 | and OMP\_PLACES |                 | OMP\_           |
-|                 | unset           | OMP\_           | PROC\_BIND=true |
-|                 |                 | PROC\_BIND=true |                 |
-|                 |                 |                 |  OMP\_PLACES    |
-|                 |                 |  OMP\_PLAC      | =[threads]{.wys |
-|                 |                 | ES=[cores]{.wys | iwyg-color-red} |
-|                 |                 | iwyg-color-red} |                 |
+| Number of       | \--hint not     | \--hint=[no]{.w | \--hint=multith |
+| physical cores  | used,           | ysiwyg-color-re | read            |
+|                 | OMP\_PROC\_BIND | d}multithread   |                 |
+|                 | and OMP\_PLACES |                 | OMP\_PROC\_BIND |
+|                 | unset           | OMP\_PROC\_BIND | =true           |
+|                 |                 | =true           |                 |
+|                 |                 |                 |  OMP\_PLACES=[t |
+|                 |                 |  OMP\_PLACES=[c | hreads]{.wysiwy |
+|                 |                 | ores]{.wysiwyg- | g-color-red}    |
+|                 |                 | color-red}      |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | 1               | 1m43s, 1m42s    | 1m42s, 1m42s    | 1m30s, 1m30s    |
 +-----------------+-----------------+-----------------+-----------------+
 | 2               | 1m30s, 1m31s    | 1m03, 55s       | 56s, 56s        |
 +-----------------+-----------------+-----------------+-----------------+
 | 4               | **[58s,         | **[45s,         | **[27s,         |
-|                 | 1m27s]{.wysiw   | 41s]{.wysiwyg-  | 2               |
-|                 | yg-color-red}** | color-blue90}** | 8s]{.wysiwyg-co |
-|                 |                 |                 | lor-green110}** |
+|                 | 1m27s]{.wysiwyg | 41s]{.wysiwyg-c | 28s]{.wysiwyg-c |
+|                 | -color-red}**   | olor-blue90}**  | olor-green110}* |
+|                 |                 |                 | *               |
 +-----------------+-----------------+-----------------+-----------------+
 | 8               | 24s, 27s        | 18s, 17s        | 16s, 16s        |
 +-----------------+-----------------+-----------------+-----------------+

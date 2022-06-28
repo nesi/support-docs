@@ -53,9 +53,9 @@ Example Slurm script
     #SBATCH --output         slurmout.%j.out
 
     module purge
-    module load ont-guppy-gpu/6.0.1
+    module load ont-guppy-gpu/6.1.2
 
     guppy_basecaller -i /path/to/input/data/directory -s /path/to/save/fastq/files \
-    --config /opt/nesi/CS400_centos7_bdw/ont-guppy-gpu/6.0.1/data/nameof.cfg \
+    --config /opt/nesi/CS400_centos7_bdw/ont-guppy-gpu/6.1.2/data/nameof.cfg \
     --device auto --recursive --records_per_fastq 4000 \
-    --min_qscore 7 --calib_detect --calib_reference lambda_3.6kb.fasta --detect_mid_strand_adapter
+    --calib_detect --calib_reference lambda_3.6kb.fasta --detect_mid_strand_adapter

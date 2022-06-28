@@ -9,6 +9,10 @@
 Example script {#example-script-for-the-pan-cluster}
 ==============
 
+> Note A GPU device-hour costs more than a core-hour, depending on the
+> type of GPU. You can find a comparison table in our What is an
+> allocation? support page.
+>
 > ### Note {#prerequisites}
 >
 > When developing MATLAB code on your local machine, take measures to
@@ -60,7 +64,8 @@ Parallelism
 
 MATLAB does not support MPI therefore \#SBATCH \--ntasks should always
 be 1, but if given the necessary resources some MATLAB functions can
-make use of multiple threads (\--cpus-per-task) or GPUs (\--gres gpu).
+make use of multiple threads (\--cpus-per-task) or GPUs
+(\--gpus-per-node).
 
 Implicit parallelism.
 ---------------------
@@ -130,7 +135,7 @@ it to be run asynchronously. e.g.
 
     end
 
-`fetchOutputs` is used to retrieve the values.
+`fetchOutputs`{.matlab} is used to retrieve the values.
 
 More info
 [here](https://au.mathworks.com/help/parallel-computing/parfeval.html).
@@ -161,36 +166,52 @@ Using GPUs {#GPU}
 
 As with standard parallelism, some MATLAB functions will work implicitly
 on GPUs while other require setup. More info on using GPUs with MATLAB
-[here](https://au.mathworks.com/help/parallel-computing/run-matlab-functions-on-a-gpu.html#mw_d2a09dd5-200d-450f-9448-736c4ac2bc6f),
+[here](https://au.mathworks.com/help/parallel-computing/run-matlab-functions-on-a-gpu.html),
 and writing code for GPUs
 [here](https://au.mathworks.com/hardware-support/nvidia-tesla.html).
 
-MATLAB uses Nvidia CUDA drivers, so make sure to include
-`module load CUDA` before launching MATLAB.
+MATLAB uses NVIDIA CUDA toolkit. Depending on the version of MATLAB, a
+different version of CUDA is needed, see [GPU Support by
+Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)
+in MATLAB documentation. Use `module spider CUDA` to list all available
+CUDA modules and select the appropriate one. For example, for MATLAB
+R2021a, use `module load CUDA/11.0.2` before launching MATLAB.
+
+If you want to know more about how to access the different type of
+available GPUs on NeSI, check the [GPU use on
+NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955)
+support page.
+
+> ### Support for A100 GPUs {#octopus-warning}
+>
+> To use MATLAB with a A100 or a A100-1g.5gb GPU, you need to use a
+> version of MATLAB supporting the *Ampere* architecture (see [GPU
+> Support by
+> Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)).
+> We recommend that you use R2021a or a more recent version.
+
+> ### Note on GPU cost {#llama-tip}
+>
+> A GPU device-hour costs more than a core-hour, depending on the type
+> of GPU. You can find a comparison table in our [What is an
+> allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
+> support page.
 
 GPU Example {#gpuexample}
 -----------
 
     #!/bin/bash -e
     #SBATCH --job-name       MATLAB_GPU    # Name to appear in squeue
-    #SBATCH --time           06:00:00      # Max walltime
-    #SBATCH --mem            50G           # 50G per GPU
+    #SBATCH --time           01:00:00      # Max walltime
+    #SBATCH --mem            10G           # 10G per GPU
     #SBATCH --cpus-per-task  4             # 4 CPUs per GPU
-    #SBATCH --output         %x.log        #Location of output log
-    #SBATCH --gres           gpu:1         # Number of GPUs to use (max 2)
-    #SBATCH --partition      gpu           # Must be run on GPU partition.
+    #SBATCH --output         %x.%j.log     # Location of output log
+    #SBATCH --gpus-per-node  1             # Number of GPUs to use (max 2)
 
-    module load MATLAB/2018b
-    module load CUDA                       # Drivers for using GPU
+    module load MATLAB/2021a
+    module load CUDA/11.0.2  # Drivers for using GPU
 
-    #Job run 
-    matlab -nodisplay -r "gpuDeviceCount()"
-
-> ### Note {#prerequisites}
->
-> One GPU hour is costed the same as 56 CPU hours. The GPUs are a
-> powerful resource and should only be used if you expect *significant*
-> speedup.
+    matlab -nodisplay -r "gpuDevice()"
 
 Adding Support Packages
 =======================
@@ -204,8 +225,6 @@ the path using the MATLAB command
 `matlabshared.supportpkg.getSupportPackageRoot` if it is unset, you can
 specify it with
 ` matlabshared.supportpkg.setSupportPackageRoot("<path>")`
-
- 
 
 mexopencv
 ---------
@@ -307,13 +326,13 @@ MATLAB supports the following compilers.
   --------- --------------------------
 
 The most up to date compilers supported by MATLAB can be loaded on NeSI
-using `module load gimkl/2017a`
+using `module load gimkl/2017a`{.code-bash}
 
 If no GCC module is loaded, the default system version of these
 compilers will be used.
 
 Further configuration can be done within MATLAB using the command
-`mex -setup`
+`mex -setup`{.code-matlab}
 
 `mex <file_name>`  will then compile the mex function. 
 
@@ -334,8 +353,6 @@ For example, adding OpenMP flags for a fortran compile:
 ::: {.programlisting}
 ::: {.codeinput}
     mex FFLAGS='$FFLAGS -fopenmp' LDFLAGS='$LDFLAGS -fopenmp' <file_name>
-
- 
 :::
 :::
 :::
@@ -352,7 +369,9 @@ When using versions of MATLAB more recent than 2021a you may notice the
 following warning.
 
 ::: {.content}
-    glibc_shim: Didn't find correct code to patch
+``` {.SC7580F400}
+glibc_shim: Didn't find correct code to patch
+```
 
 This warning appears whenever MATLAB interfaces with the operating
 system (e.g. `ls` or `system()` or use of the `!` prefix).

@@ -222,6 +222,14 @@ access it using the `--nv` flag:
 
     singularity run --nv my_container.sif
 
+> ### Note {#prerequisites}
+>
+> Make sure that your container contains the CUDA toolkit and additional
+> libraries needed by your application (e.g. cuDNN). The `--nv` option
+> only ensures that the basic CUDA libraries from the host are bound
+> into the container and that the GPU device is accessible in the
+> container.
+
 Network isolation
 -----------------
 

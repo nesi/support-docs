@@ -14,9 +14,8 @@ To fix these problems, you will need to do the following:
     Factor), this is a bug. Entering any text will cause your login
     attempt to fail. The expected procedure is as follows.
 
-```{=html}
 <!-- -->
-```
+
     ssh <user>@lander.nesi.org.nz
     <user>@lander.nesi.org.nz's password: <Press Enter> 
     <user>@lander.nesi.org.nz's password: <Press Enter> 

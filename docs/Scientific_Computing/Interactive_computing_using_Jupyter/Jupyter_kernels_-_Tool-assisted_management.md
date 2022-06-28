@@ -18,7 +18,7 @@ Getting started
 
 First you need to open a terminal. It can be from a session on Jupyter
 on NeSI or from a regular ssh connection on Mahuika login node. If you
-use the ssh option, make sure to load the JupyterLab module ot have
+use the ssh option, make sure to load the JupyterLab module to have
 access to the `nesi-add-kernel` tool:
 
     module load JupyterLab
