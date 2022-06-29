@@ -122,11 +122,10 @@ Not all solvers are compatible with all types of parallelisation.
 | increased communication overhead\ |         cpus=${SLURM_NTASKS} mp_m |
 | .Jobs can be limited to a single  | ode=mpi                           |
 | node by                           |                                   |
-| adding  `--nodes=1`{style="font-s |                                   |
-| ize: 14px;"} however              |                                   |
-| this will increase your time in   |                                   |
-| the queue as contiguous cpu\'s    |                                   |
-| are harder to schedule.           |                                   |
+| adding  `--nodes=1` however this  |                                   |
+| will increase your time in the    |                                   |
+| queue as contiguous cpu\'s are    |                                   |
+| harder to schedule.               |                                   |
 |                                   |                                   |
 | This is the default method if     |                                   |
 | `mp_mode` is left unspecified.    |                                   |

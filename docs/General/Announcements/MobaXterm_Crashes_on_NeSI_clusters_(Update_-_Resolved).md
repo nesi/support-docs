@@ -47,7 +47,7 @@ with the following information.
 -   What seems to trigger the crash (After x minutes, first key press,
     moving files, etc).
 
--   What cluster were you on (mahuika, maui, maui\_ancil).
+-   What cluster were you on (mahuika, Māui, maui\_ancil).
 
 <!-- -->
 

@@ -77,18 +77,16 @@ limitation of requiring shared memory and thus can be used across
 multiple nodes, but has higher communication and memory
 overheads.]{style="font-weight: 400;"}
 
-For MPI jobs you need to set `--ntasks`{.highlighter-rouge} to a value
-larger than 1, or if you want all nodes to run the same number of tasks,
-set `--ntasks-per-node`{.highlighter-rouge} and
-`--nodes`{.highlighter-rouge} instead.
+For MPI jobs you need to set `--ntasks` to a value larger than 1, or if
+you want all nodes to run the same number of tasks, set
+`--ntasks-per-node` and `--nodes` instead.
 
 MPI programs require a launcher to start the *ntasks* processes on
 multiple CPUs, which may belong to different nodes. On Slurm systems
 like ours, the preferred launcher is `srun` rather than `mpi-run`.
 
 Since the distribution of tasks across different nodes may be
-unpredictable, `--mem-per-cpu` should be used instead
-of `--mem`.``{.nohighlight}
+unpredictable, `--mem-per-cpu` should be used instead of `--mem`.``
 
     #!/bin/bash -e
     #SBATCH --job-name=MPIJob       # job name (shows up in the queue)
@@ -119,7 +117,7 @@ executed in any order and don\'t have to run at the same time. This kind
 of work is often described as *embarrassingly parallel*.
 
 A job array will submit the same script repeatedly over a designated
-index using the SBATCH command `#SBATCH --array`{.nohighlight}
+index using the SBATCH command `#SBATCH --array`
 
 For example, the following code:
 
@@ -133,15 +131,14 @@ For example, the following code:
     pwd
     echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
-will submit,  `ArrayJob_1`{."nohighlight} and
-`ArrayJob_2`{.nohighlight}, which will return the results This is result
-1 and This is result 2 respectively.
+will submit,  `ArrayJob_1` and `ArrayJob_2`, which will return the
+results This is result 1 and This is result 2 respectively.
 
 Using SLURM\_ARRAY\_TASK\_ID
 ----------------------------
 
-Use of the environment variable `${SLURM_ARRAY_TASK_ID}`{.nohighlight}
-is the recommended method of variation between the jobs. For example:
+Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
+recommended method of variation between the jobs. For example:
 
 -   As a direct input to a function.\
 
@@ -159,17 +156,13 @@ is the recommended method of variation between the jobs. For example:
 -   As a seed for a pseudo-random number.\
     -   In R
 
-        ``` {dir="ltr"}
-        task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-        set.seed(task_id)
-        ```
+            task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+            set.seed(task_id)
 
     -   In MATLAB
 
-        ``` {dir="ltr"}
-        task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-        rng(task_id)
-        ```
+            task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+            rng(task_id)
 
     *\
     Using a seed is important, otherwise multiple jobs may receive the
@@ -184,8 +177,8 @@ is the recommended method of variation between the jobs. For example:
     in \'inputs\' as the variable input (in alphabetcial order).
 
 Environment variables *will not work* in the Slurm header. In place
-of `${SLURM_ARRAY_TASK_ID}`{.nohighlight}, you can use the token `%a`.
-This can be useful for sorting your output files e.g.
+of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
+useful for sorting your output files e.g.
 
     #SBATCH --output=outputs/run_%a/slurm_output.out
     #SBATCH --output=outputs/run_%a/slurm_error.err

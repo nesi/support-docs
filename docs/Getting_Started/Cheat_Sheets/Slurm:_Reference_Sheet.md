@@ -132,7 +132,7 @@ Path and name of standard output file.
 
 \--mail-user
 
-`#SBATCH --mail-user=bob123@gmail.com`{.nohighlight}
+`#SBATCH --mail-user=bob123@gmail.com`
 
 Address to send mail notifications.
 
@@ -257,12 +257,12 @@ These are predefined variables that can be used in sbatch directives
 such as the log file name.
 
 ::: {.highlight}
-  -------------------- -----------------
-  `%x`{.nohighlight}   Job name
-  `%u`{.nohighlight}   User name.
-  `%j`{.nohighlight}   Job ID 
-  `%a`{.nohighlight}   Job array Index
-  -------------------- -----------------
+  ------ -----------------
+  `%x`   Job name
+  `%u`   User name.
+  `%j`   Job ID 
+  `%a`   Job array Index
+  ------ -----------------
 :::
 
 Environment variables {#where-to-build}
@@ -270,14 +270,14 @@ Environment variables {#where-to-build}
 
 Common examples.
 
-  -------------------------------------------- ----------------------------------------------------
-  `$SLURM_JOB_ID`{.highlighter-rouge}          Useful for naming output files that won\'t clash.
-  `$SLURM_JOB_NAME`{.highlighter-rouge}        Name of the job.
-  `$SLURM_ARRAY_TASK_ID`{.highlighter-rouge}   The current index of your array job. 
-  `$SLURM_CPUS_PER_TASK`{.highlighter-rouge}   Useful as an input for multi-threaded functions.
-  `$SLURM_NTASKS`{.highlighter-rouge}          Useful as an input for MPI functions.
-  `$SLURM_SUBMIT_DIR`{.highlighter-rouge}      Directory where `sbatch`{.nohighlight} was called.
-  -------------------------------------------- ----------------------------------------------------
+  ------------------------ ---------------------------------------------------
+  `$SLURM_JOB_ID`          Useful for naming output files that won\'t clash.
+  `$SLURM_JOB_NAME`        Name of the job.
+  `$SLURM_ARRAY_TASK_ID`   The current index of your array job. 
+  `$SLURM_CPUS_PER_TASK`   Useful as an input for multi-threaded functions.
+  `$SLURM_NTASKS`          Useful as an input for MPI functions.
+  `$SLURM_SUBMIT_DIR`      Directory where `sbatch` was called.
+  ------------------------ ---------------------------------------------------
 
 > ### Tip {#prerequisites}
 >

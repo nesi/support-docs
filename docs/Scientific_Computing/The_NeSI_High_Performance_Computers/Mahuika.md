@@ -81,7 +81,7 @@ Mahuika HPC Cluster (Cray CS400)
 +-----------------------------------+-----------------------------------+
 | **Persistent storage**            | 1,765 TB (IBM Spectrum Scale,     |
 |                                   | version 5.0). Shared between      |
-|                                   | Mahuika and Maui. Total I/O       |
+|                                   | Mahuika and Māui Total I/O        |
 |                                   | bandwidth to disks is \~65 GB/s   |
 |                                   | (i.e. the /home and /nesi/project |
 |                                   | filesystems)                      |

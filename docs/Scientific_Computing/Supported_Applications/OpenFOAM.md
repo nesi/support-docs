@@ -75,20 +75,20 @@ There are a few ways to mitigate this
     The nobackup directory has a significantly higher inode count and no
     disk space limits.
 -   **ControlDict Settings**\
-    -   `WriteInterval`{data-fm-marker="146"}\
+    -   `WriteInterval`\
         Using a high write interval reduce number of output files and
         I/O load.
     -   `deltaT`\
         Consider carefully an appropriate time-step, use adjustTimeStep
         if suitable.
-    -   `purgeWrite`{data-fm-marker="155"}\
+    -   `purgeWrite`\
         Not applicable for many jobs, this keeps only the last n steps,
         e.g. purgeWrite 5 will keep the last 5 time-steps, with the
         directories being constantly overwritten.
-    -   `runTimeModifiable`{data-fm-marker="159"}\
+    -   `runTimeModifiable`\
         When true, dictionaries will be re-read at the start of every
         time step. Setting this to false will decrease I/O load.
-    -   `writeFormat`{data-fm-marker="162"}\
+    -   `writeFormat`\
         Setting this to binary as opposed to ascii will decrease disk
         use and I/O load.
 -   **Monitor Filesystem **\
@@ -227,6 +227,5 @@ and before running the solvers.
 
 > ### Warning {#securitywarning}
 >
-> Make sure to `export` your custom paths
-> before `source $FOAM_BASH`{style="font-size: 15px;"} else they will be
-> reset to default.
+> Make sure to `export` your custom paths before `source $FOAM_BASH`
+> else they will be reset to default.

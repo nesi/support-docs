@@ -1,11 +1,10 @@
 ### Bash Header
 
-We recommend using `#!/bin/bash -e`{.highlighter-rouge} instead of plain
-`#!/bin/bash`{.highlighter-rouge}, so that the failure of any command
-within the script will cause your job to stop immediately rather than
-attempting to continue on with an unexpected environment or erroneous
-intermediate data.  It also ensures that your failed jobs show a status
-of FAILED in *sacct* output.
+We recommend using `#!/bin/bash -e` instead of plain `#!/bin/bash`, so
+that the failure of any command within the script will cause your job to
+stop immediately rather than attempting to continue on with an
+unexpected environment or erroneous intermediate data.  It also ensures
+that your failed jobs show a status of FAILED in *sacct* output.
 
 ### Resources 
 

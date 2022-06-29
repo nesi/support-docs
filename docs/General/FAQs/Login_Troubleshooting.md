@@ -35,18 +35,14 @@ OR
 
 You can test what part of your connection has failed by first running:
 
-``` {.highlight}
-ssh <user>@lander.nesi.org.nz
-```
+    ssh <user>@lander.nesi.org.nz
 
 **If this succeeds**: Run the following:
 
-``` {.highlight}
-ssh login.<mahuika/maui>.nesi.org.nz
-```
+    ssh login.<mahuika/maui>.nesi.org.nz
 
 **If this fails:** Are you logging in to the correct cluster?
-Mahuika/Maui have separate access control, also Maui requires your
+Mahuika/Maui have separate access control, also Māui requires your
 password input in a different format, see
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360001244876-Mahuika-M%C4%81ui-Differences).
 
@@ -116,14 +112,12 @@ input before pressing Enter will cause the login to fail.
 
 The expected processes is as follows:
 
-``` {.highlight}
-ssh <user>@lander.nesi.org.nz 
-<user>@lander.nesi.org.nz's password: <Enter>
-<user>@lander.nesi.org.nz's password: <Enter>
-<user>@lander.nesi.org.nz's password: <Enter>
-Login Password (First Factor): 
-Authenticator Code (Second Factor):
-```
+    ssh <user>@lander.nesi.org.nz 
+    <user>@lander.nesi.org.nz's password: <Enter>
+    <user>@lander.nesi.org.nz's password: <Enter>
+    <user>@lander.nesi.org.nz's password: <Enter>
+    Login Password (First Factor): 
+    Authenticator Code (Second Factor):
 
 *Note: Sometimes MobaXterm will prompt with a dialogue box.*
 

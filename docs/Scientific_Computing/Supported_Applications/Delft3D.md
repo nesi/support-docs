@@ -27,7 +27,7 @@ Example scripts
 | decompositions.]{.wysiwyg-color-b |     #SBATCH --cpus-per-task 4     |
 | lack}                             |                                   |
 |                                   |     #SBATCH --mem           2G    |
-| [Use `cpus-per-task`{.bash} to    |           # Total Memory          |
+| [Use `#!['bash']cpus-per-task` to |           # Total Memory          |
 | allocate                          |     #SBATCH --hint          nomul |
 | resources.]{.wysiwyg-color-black} | tithread  # Hyperthreading disabl |
 |                                   | ed                                |
@@ -45,8 +45,8 @@ Example scripts
 | stripwise partitions. *Can run    |     #SBATCH --ntasks        4     |
 | across multiple nodes.*           |                                   |
 |                                   |     #SBATCH --mem-per-cpu   1G    |
-| Use `ntasks`{.bash} to allocate   |                                   |
-| resources.                        |     #SBATCH --hint          nomul |
+| Use `#!['bash']ntasks` to         |                                   |
+| allocate resources.               |     #SBATCH --hint          nomul |
 |                                   | tithread  # Hyperthreading disabl |
 | **Cannot** be used in conjunction | ed                                |
 | with:                             |                                   |
