@@ -8,14 +8,25 @@ before_script:
   - git config --global user.name "$GITLAB_USER_NAME"
 
 stages:
-  - build
+  - test
+  - deploy
 
-build_pages:
-  stage: build
+test_build:
+  stage: test
+  script:
+  - mkdocs build --strict --verbose --site-dir test
+  artifacts:
+    paths:
+    - test
+  allow_failure: true
+
+
+pages:
+  stage: deploy
   only:
     - main
   script:
-    - mkdocs build --verbose
+  - mkdocs build --verbose
   artifacts:
     paths:
     - public
