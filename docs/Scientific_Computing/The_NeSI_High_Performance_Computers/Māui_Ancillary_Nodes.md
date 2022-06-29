@@ -2,7 +2,7 @@ The Māui Ancillary Nodes provide access to a Virtualised environment
 that supports:
 
 1.  Pre- and post-processing of data for jobs running on the
-    [Maui](https://support.nesi.org.nz/hc/articles/360000163695)
+    [Māui](https://support.nesi.org.nz/hc/articles/360000163695)
     Supercomputer or
     [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575) HPC
     Cluster. Typically, as serial processes on a Slurm partition running
@@ -24,7 +24,7 @@ and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.
 1.  The `/home, /nesi/project`, and `/nesi/nobackup`
     [filesystems](https://support.nesi.org.nz/hc/articles/360000177256)
     are mounted on the Māui Ancillary Nodes.
-2.  The Maui Ancillary nodes have Skylake processors, while the Mahuika
+2.  The Māui Ancillary nodes have Skylake processors, while the Mahuika
     nodes use Broadwell processors.
 
 Ancillary Node Specifications
@@ -66,16 +66,16 @@ Ancillary Node Specifications
 
  
 
-The Māui\_Ancil nodes have different working environment than the Maui
+The Māui\_Ancil nodes have different working environment than the Māui
 (login) nodes. Therefore a CS500 login node is provided, to create and
 submit your jobs on this architecture. To use you need to login from
-maui login nodes to:
+Māui login nodes to:
 
     w-mauivlab01.maui.nesi.org.nz
 
 If you are looking for accessing this node from your local machine you
-could add the following section to `~/.ssh/config`{.nohighlight}
-(extending the [recommended terminal
+could add the following section to `~/.ssh/config` (extending the
+[recommended terminal
 setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup))
 
     Host w-mauivlab01 

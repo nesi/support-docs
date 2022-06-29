@@ -69,44 +69,36 @@ MAP "Express Launch" {#using-the-express-launch}
 ====================
 
 To use MAP we need to load the *forge* module in our batch script and
-add `map --profile`{.highlighter-rouge} in front of the parallel run
-statements. For example:
+add `map --profile` in front of the parallel run statements. For
+example:
 
 ::: {.highlighter-rouge}
 ::: {.highlight}
-``` {.highlight}
-module load forge
-map --profile srun python scatter.py
-```
+    module load forge
+    map --profile srun python scatter.py
 :::
 :::
 
-Upon execution, a `.map`{.highlighter-rouge} file will be generated. The
-results can be viewed, for instance, with
+Upon execution, a `.map` file will be generated. The results can be
+viewed, for instance, with
 
 ::: {.highlighter-rouge}
 ::: {.highlight}
-``` {.highlight}
-map python3_scatter_py_8p_1n_2019-01-14_00-31.map
-```
+    map python3_scatter_py_8p_1n_2019-01-14_00-31.map
 :::
 :::
 
-(the `.map`{.highlighter-rouge} file name will vary with each run.) See
-section [MAP profile](#map-profile) below for how to interpret the
-results.
+(the `.map` file name will vary with each run.) See section [MAP
+profile](#map-profile) below for how to interpret the results.
 
 MAP GUI launch {#h_f78992f8-3f55-4b6f-ac5f-8bc82ff16873}
 ==============
 
-The GUI can be started after loading
-`module load forge`{.highlighter-rouge} and launching
+The GUI can be started after loading `module load forge` and launching
 
 ::: {.highlighter-rouge}
 ::: {.highlight}
-``` {.highlight}
-map
-```
+    map
 :::
 :::
 
@@ -118,14 +110,12 @@ Click on "PROFILE".
 ![MAP\_profile\_python.PNG](https://support.nesi.org.nz/hc/article_attachments/360002074056/MAP_profile_python.PNG)
 
 In the profile menu we need to specify the *executable/application* (in
-this case `python`{.highlighter-rouge}), the arguments (here
-`scatter.py`{.highlighter-rouge} and any additional options and
-arguments if necessary). Select the working directory, number of MPI
-processes, and OpenMP threads. Furthermore, the "submit to queue"
-parameter needs to be checked, for example the
-`--hint=nomultithread`{.highlighter-rouge} can be specified there. In
-the environment Variables block, e.g. modules could be loaded or
-variables defined.
+this case `python`), the arguments (here `scatter.py` and any additional
+options and arguments if necessary). Select the working directory,
+number of MPI processes, and OpenMP threads. Furthermore, the "submit to
+queue" parameter needs to be checked, for example the
+`--hint=nomultithread` can be specified there. In the environment
+Variables block, e.g. modules could be loaded or variables defined.
 
 After *submit*ting, MAP will wait until the job is allocated, connect to
 the processes, run the program, gather all the data and present the

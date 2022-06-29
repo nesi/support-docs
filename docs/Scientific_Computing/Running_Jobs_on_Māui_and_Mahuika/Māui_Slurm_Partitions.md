@@ -69,7 +69,7 @@ limit:
 Most of the time [job
 priority](https://support.nesi.org.nz/hc/en-gb/articles/360000201636) will
 be the most important influence on how long your jobs have to wait - the
-above limits are just backstops to ensure that Maui\'s resources are not
+above limits are just backstops to ensure that Māui\'s resources are not
 all committed too far into the future, so that debug and other
 higher-priority jobs can start reasonably quickly.
 

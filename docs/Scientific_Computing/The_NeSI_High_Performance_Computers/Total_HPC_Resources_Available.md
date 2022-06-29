@@ -6,7 +6,7 @@ include 152 million x86 CPU Core-hours and 112 thousand GPGPU-hours
 between Allocation Classes as specified in Table 1, and Table 2.
 
 [Table 1: NeSI HPC resources (physical core-hours) available per annum.
-Note: (1) One Node-h on Maui is equivalent to 40 Core-hs; (2)
+Note: (1) One Node-h on Māui is equivalent to 40 Core-hs; (2)
 Allocations on Mahuika (cloud) will be available in Q4,
 2018.]{.wysiwyg-font-size-small}
 
