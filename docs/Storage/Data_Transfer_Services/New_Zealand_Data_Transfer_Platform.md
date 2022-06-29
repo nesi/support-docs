@@ -13,7 +13,7 @@ allows data to be accessible to any person who has a Globus account.
 | ington DTN` | Globus      | g           | [conditions | si.org.nz>  |
 | ](https://a | Endpoint,   | files       | ](https://s |             |
 | pp.globus.o | being       | to/from     | upport.nesi |             |
-| rg/file-man | decommissio | maui/mahuik | .org.nz/hc/ |             |
+| rg/file-man | decommissio | Māui/mahuik | .org.nz/hc/ |             |
 | ager?origin | ned         | a,          | en-gb/artic |             |
 | _id=3064bb2 | 2021-12-08  | and         | les/3600005 |             |
 | 8-e940-11e8 |             | file-sharin | 76776-Data- |             |
@@ -25,7 +25,7 @@ allows data to be accessible to any person who has a Globus account.
 | ington DTN  | Endpoint    | g           | [conditions | si.org.nz>  |
 | V5`](https: | Version 5,  | files       | ](https://s |             |
 | //app.globu | located at  | to/from     | upport.nesi |             |
-| s.org/file- | NIWA        | maui/mahuik | .org.nz/hc/ |             |
+| s.org/file- | NIWA        | Māui/mahuik | .org.nz/hc/ |             |
 | manager?ori | Wellington  | a,          | en-gb/artic |             |
 | gin_id=3064 | (Greta      | and         | les/3600005 |             |
 | bb28-e940-1 | Point)      | file-sharin | 76776-Data- |             |
@@ -51,7 +51,7 @@ allows data to be accessible to any person who has a Globus account.
 |  Data DTN ` | UoA         | between UoA | hdata@auckl |             |
 | ](https://a | research    | research    | and.ac.nz)  |             |
 | pp.globus.o | data.       | drives and  |             |             |
-| rg/file-man |             | maui/mahuik |             |             |
+| rg/file-man |             | Māui/mahuik |             |             |
 | ager?origin |             | a           |             |             |
 | _id=e7f6aaa |             |             |             |             |
 | e-fe52-11e8 |             |             |             |             |

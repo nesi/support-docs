@@ -6,8 +6,7 @@ workload concurrently. OpenMP is suited for the Mahuika and Māui HPCs as
 each platform has 36, respectively 40 physical cores per node.  Each
 physical core can handle up to two threads in parallel using
 [Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236).
-Therefore you can run up to 72 threads on Mahuika and 80 threads on
-Maui. 
+Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui
 
 The environment variable that controls the number of threads is
 OMP\_NUM\_THREADS, e.g.,

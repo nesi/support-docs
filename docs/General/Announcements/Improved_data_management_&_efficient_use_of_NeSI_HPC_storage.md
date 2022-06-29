@@ -30,10 +30,9 @@ you are currently storing in any
  ]{#865dfa52-8d33-4a95-86b1-fcfae6f336af .inline-highlight
 data-renderer-mark="true" data-mark-type="annotation"
 data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"}`/nesi/project/`{.code
-.css-9z42f9 data-renderer-mark="true"}[ directories and **delete or
-relocate** any files that are no longer required for ongoing
-computational and/or analytics work on
+data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"}`/nesi/project/`[
+directories and **delete or relocate** any files that are no longer
+required for ongoing computational and/or analytics work on
 NeSI.]{#865dfa52-8d33-4a95-86b1-fcfae6f336af .inline-highlight
 data-renderer-mark="true" data-mark-type="annotation"
 data-mark-annotation-type="inlineComment"
@@ -43,11 +42,10 @@ data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"}
 the same format as our nobackup auto cleaning ([described
 here](https://support.nesi.org.nz/hc/en-gb/articles/360001162856)). See
 the file
-`/nesi/project/<project_code>/.policy.test/scan485/latest.summary.txt`{.code
-.css-9z42f9 data-renderer-mark="true"} for a summary of the number and
-size of files within each project that have not been accessed for more
-than 485 days (this is \~15 months, and is the draft auto cleaning
-timeframe under consideration for the project
+`/nesi/project/<project_code>/.policy.test/scan485/latest.summary.txt`
+for a summary of the number and size of files within each project that
+have not been accessed for more than 485 days (this is \~15 months, and
+is the draft auto cleaning timeframe under consideration for the project
 filesystem).]{#865dfa52-8d33-4a95-86b1-fcfae6f336af .inline-highlight
 data-renderer-mark="true" data-mark-type="annotation"
 data-mark-annotation-type="inlineComment"
@@ -82,10 +80,9 @@ know](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.or
 **[18 October 2021]{.wysiwyg-underline}**
 
 We will begin a limited roll-out of a new feature to automatically
-identify inactive files in  `/nesi/project/`{.code .css-9z42f9
-data-renderer-mark="true"} directories and schedule them for deletion.
-Generally, we will be looking to identify files that are inactive /
-untouched for more than 12 months. 
+identify inactive files in  `/nesi/project/` directories and schedule
+them for deletion. Generally, we will be looking to identify files that
+are inactive / untouched for more than 12 months. 
 
 A selection of active projects will be invited to participate in this
 first phase of the programme. If you would like to volunteer to be an
@@ -124,9 +121,8 @@ Starting in January 2022, we will expand
 the[ ]{#865dfa52-8d33-4a95-86b1-fcfae6f336af .inline-highlight
 data-renderer-mark="true" data-mark-type="annotation"
 data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"}`/nesi/project/`{.code
-.css-9z42f9 data-renderer-mark="true"}[ directory
-]{#865dfa52-8d33-4a95-86b1-fcfae6f336af .inline-highlight
+data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"}`/nesi/project/`[
+directory ]{#865dfa52-8d33-4a95-86b1-fcfae6f336af .inline-highlight
 data-renderer-mark="true" data-mark-type="annotation"
 data-mark-annotation-type="inlineComment"
 data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"} data management
@@ -145,9 +141,8 @@ answer any questions you may have around data lifecycle management. 
 levels, as that impacts their performance and availability for users. We
 also want to ensure our active storage filesystems aren\'t being used to
 store inactive data. This new data management feature
-for `/nesi/project/`{.code .css-9z42f9 data-renderer-mark="true"}
-directories will complement our existing programme of [automatic
-cleaning of the /nobackup file
+for `/nesi/project/` directories will complement our existing programme
+of [automatic cleaning of the /nobackup file
 system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856 "https://support.nesi.org.nz/hc/en-gb/articles/360001162856"){.sc-cHGsZl
 .lirsdj}.
 
@@ -158,7 +153,7 @@ system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856 "https://supp
 You can query your actual usage and disk allocations at any time using
 the following command: 
 
-`$ nn_storage_quota`{.code .css-9z42f9 data-renderer-mark="true"}
+`$ nn_storage_quota`
 
 The values for \'nn\_storage\_quota\' are updated approximately every
 hour and cached between updates.

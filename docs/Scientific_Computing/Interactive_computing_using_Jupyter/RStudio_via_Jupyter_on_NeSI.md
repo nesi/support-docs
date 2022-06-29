@@ -46,11 +46,9 @@ account. Check that the correct version of R has loaded and that the
 correct Library Paths are available. For R/4.1.0 the command
 `.libPaths()` will return the following:
 
-``` {#rstudio_console_output .GAQXDSOBH1B tabindex="0" role="document" aria-label="Console Output"}
-> .libPaths()
-[1] "/home/YOUR_USER_NAME/R/gimkl-2020a/4.1"                            
-[2] "/opt/nesi/CS400_centos7_bdw/R/4.1.0-gimkl-2020a/lib64/R/library"
-```
+    > .libPaths()
+    [1] "/home/YOUR_USER_NAME/R/gimkl-2020a/4.1"                            
+    [2] "/opt/nesi/CS400_centos7_bdw/R/4.1.0-gimkl-2020a/lib64/R/library"
 
 Package Installation
 ====================

@@ -42,15 +42,13 @@ Creating a batch script
 
 Create a new file and open it with nano myjob.sl
 
-``` {.nohighlight}
-#!/bin/bash -e
-#SBATCH --job-name=SerialJob # job name (shows up in the queue)
-#SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
-#SBATCH --mem=512MB          # Memory in MB
+    #!/bin/bash -e
+    #SBATCH --job-name=SerialJob # job name (shows up in the queue)
+    #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
+    #SBATCH --mem=512MB          # Memory in MB
 
 
-pwd # Prints working directory
-```
+    pwd # Prints working directory
 
 Copy in the above text and save and exit the text editor with \'ctrl +
 x\'.
@@ -65,9 +63,7 @@ Submitting
 
 Jobs are submitted to the scheduler using:
 
-``` {.nohighlight}
-sbatch myjob.sl
-```
+    sbatch myjob.sl
 
 You should receive an output
 
@@ -84,9 +80,7 @@ Job Queue
 
 The currently queued jobs can be checked using 
 
-``` {.nohighlight}
-squeue
-```
+    squeue
 
 You can filter to just your jobs by adding the flag
 

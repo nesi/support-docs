@@ -165,7 +165,7 @@ page](https://slurm.schedmd.com/priority_multifactor.html#fairshare)
 How do I check my project\'s Fair Share score?
 ----------------------------------------------
 
--   The command `nn_corehour_usage <project_code>`, on a Mahuika or Maui
+-   The command `nn_corehour_usage <project_code>`, on a Mahuika or Māui
     login node, will show, along with other information, the current
     fair share score and ranking of the specified project.
 -   The `sshare` command, on a Mahuika login node, will show the fair

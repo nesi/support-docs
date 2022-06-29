@@ -35,9 +35,7 @@ following commands to generate the training and testing data sets:
 [The images are saved under directories train/ and test/, respectively.
 An example of image is test/img49.jpg.]{.s1}
 
-``` {.p1}
-display test/img49.jpg
-```
+    display test/img49.jpg
 
 [![img49.jpg](https://support.nesi.org.nz/hc/article_attachments/360002364835/img49.jpg){width="100"
 height="100"}]{.s1}
@@ -53,17 +51,13 @@ The images need to be slightly manipulated. For instance we expect all
 the images to be black and white so we can collapse the red, green and
 blue channel into one. We\'ll need OpenCV to this task:
 
-``` {.p1}
-pip install opencv-python --user
-```
+    pip install opencv-python --user
 
 ### Running the model {#running-the-model .p1}
 
 Our neural network
 
-``` {.p1}
-wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Conv2D/classify.py
-```
+    wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Conv2D/classify.py
 
 is encoded in classify.py. It is made of three convolution layers, each
 followed by max pooling. The convolution and max pooling layers are
@@ -72,44 +66,38 @@ flattened as a 1D array and a dense layer, which returns an estimate of
 the number of dots as a single floating point number, is added. The
 corresponding lines in classify.py look like (Python code):
 
-``` {.p1}
-clf = keras.Sequential()
-clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
-                             padding='same', data_format='channels_last', activation='relu') )
-clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-clf.add( keras.layers.Conv2D(128, kernel_size=(3,3), strides=(1,1),
-                             padding='same', data_format='channels_last', activation='relu') )
-clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-clf.add( keras.layers.Conv2D(256, kernel_size=(3,3), strides=(1,1),
-                             padding='same', data_format='channels_last', activation='relu') )
-clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-clf.add( keras.layers.Flatten() )
-clf.add( keras.layers.Dense(1) )
-```
+    clf = keras.Sequential()
+    clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
+                                 padding='same', data_format='channels_last', activation='relu') )
+    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+    clf.add( keras.layers.Conv2D(128, kernel_size=(3,3), strides=(1,1),
+                                 padding='same', data_format='channels_last', activation='relu') )
+    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+    clf.add( keras.layers.Conv2D(256, kernel_size=(3,3), strides=(1,1),
+                                 padding='same', data_format='channels_last', activation='relu') )
+    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+    clf.add( keras.layers.Flatten() )
+    clf.add( keras.layers.Dense(1) )
 
  
 
 We\'re now ready to train and test our model:
 
-``` {.p1}
-#!/bin/bash -e
-#SBATCH --job-name keras-dots
-#SBATCH --partition gpu
-#SBATCH --gres gpu:1
-#SBATCH --ntasks 1
-#SBATCH --cpus-per-task 1
-#SBATCH --time 00:10:00
-#SBATCH --mem 512MB
-module load TensorFlow/1.10.1-gimkl-2017a-Python-3.6.3
-python classify.py --testDir=test --trainDir=train --save=someResults.png
-```
+    #!/bin/bash -e
+    #SBATCH --job-name keras-dots
+    #SBATCH --partition gpu
+    #SBATCH --gres gpu:1
+    #SBATCH --ntasks 1
+    #SBATCH --cpus-per-task 1
+    #SBATCH --time 00:10:00
+    #SBATCH --mem 512MB
+    module load TensorFlow/1.10.1-gimkl-2017a-Python-3.6.3
+    python classify.py --testDir=test --trainDir=train --save=someResults.png
 
 Copy-paste the above and save in file classify.sl. Submit the Slurm
 script classify.sl
 
-``` {.p1}
-sbatch classify.sl
-```
+    sbatch classify.sl
 
 ### Looking at the output {#looking-at-the-output .p1}
 

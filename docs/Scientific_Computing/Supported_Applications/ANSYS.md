@@ -76,10 +76,10 @@ Below is an example of this from a fluent script.
     fluent -v3ddp -g -i ${JOURNAL_FILE}
     rm ${JOURNAL_FILE}
 
-`JOURNAL_FILE`{.bash} is a variable holding the name of a file, the next
-line `cat` creates the file then writes a block of text into it. The
-block of text written is everything between an arbitrary string (in this
-case `EOF`) and its next occurrence.
+`#!['bash']JOURNAL_FILE` is a variable holding the name of a file, the
+next line `cat` creates the file then writes a block of text into it.
+The block of text written is everything between an arbitrary string (in
+this case `EOF`) and its next occurrence.
 
 In this case (assuming it is the first run of the array and the
 jobid=1234567), the file  `fluent_1234567.in` will be created:
@@ -97,8 +97,9 @@ jobid=1234567), the file  `fluent_1234567.in` will be created:
     exit yes
     ; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).)
 
-then called as an input `fluent -v3ddp -g -i fluent_1234567.in`{.bash},\
-then deleted `rm fluent_1234567.in`{.bash}
+then called as an
+input `#!['bash']fluent -v3ddp -g -i fluent_1234567.in`,\
+then deleted `#!['bash']rm fluent_1234567.in`
 
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
@@ -169,11 +170,11 @@ Must have one of these flags. 
 | increased communication overhead. | es                                |
 | Jobs can be limited to a single   |     #SBATCH --cpus-per-task     1 |
 | node by                           |                  # Double if hype |
-| adding  `--nodes=1`{style="font-s | rthreading enabled                |
-| ize: 14px;"} however              |     #SBATCH --mem-per-cpu       1 |
-| this will increase your time in   | 500              # Fine for small |
-| the queue as contiguous cpu\'s    |  jobs; increase if needed         |
-| are harder to schedule.           |     #SBATCH --hint              n |
+| adding  `--nodes=1` however this  | rthreading enabled                |
+| will increase your time in the    |     #SBATCH --mem-per-cpu       1 |
+| queue as contiguous cpu\'s are    | 500              # Fine for small |
+| harder to schedule.               |  jobs; increase if needed         |
+|                                   |     #SBATCH --hint              n |
 |                                   | omultithread     # Hyperthreading |
 |                                   |  disabled                         |
 |                                   |                                   |
@@ -303,7 +304,7 @@ interpreted version.
 ### Compilation
 
 When running in a new environment for the first time (local machine,
-Mahuika, Maui), the C code will have to first be compiled. The compiled
+Mahuika, Māui), the C code will have to first be compiled. The compiled
 code will be placed in a directory with the name of the library (by
 default this will be `libudf/`.
 
@@ -391,11 +392,11 @@ CFX {#ansys-CFX}
 | increased communication overhead\ | es                                |
 | .Jobs can be limited to a single  |     #SBATCH --cpus-per-task     1 |
 | node by                           |                  # Double if hype |
-| adding  `--nodes=1`{style="font-s | rthreading enabled                |
-| ize: 14px;"} however              |     #SBATCH --mem-per-cpu       5 |
-| this will increase your time in   | 12MB             # Standard for l |
-| the queue as contiguous cpu\'s    | arge partition                    |
-| are harder to schedule.           |     #SBATCH --hint              n |
+| adding  `--nodes=1` however this  | rthreading enabled                |
+| will increase your time in the    |     #SBATCH --mem-per-cpu       5 |
+| queue as contiguous cpu\'s are    | 12MB             # Standard for l |
+| harder to schedule.               | arge partition                    |
+|                                   |     #SBATCH --hint              n |
 |                                   | omultithread     # Hyperthreading |
 |                                   |  disabled                         |
 |                                   |                                   |
@@ -489,14 +490,13 @@ Mechanical APDL {#ansys-MAPDL}
 | increased communication overhead\ | 500                               |
 | .Jobs can be limited to a single  |     #SBATCH --hint              n |
 | node by                           | omultithread     # Hyperthreading |
-| adding  `--nodes=1`{style="font-s |  disabled                         |
-| ize: 14px;"} however              |                                   |
-| this will increase your time in   |     module load ANSYS/2021R2      |
-| the queue as contiguous cpu\'s    |     input=${ANSYS_ROOT}/ansys/dat |
-| are harder to schedule.           | a/verif/vm263.dat                 |
-|                                   |     mapdl -b -dis -np ${SLURM_NTA |
-| **Distributed Memory Parallel is  | SKS} -i "$input"                  |
-| currently not supported on        |                                   |
+| adding  `--nodes=1` however this  |  disabled                         |
+| will increase your time in the    |                                   |
+| queue as contiguous cpu\'s are    |     module load ANSYS/2021R2      |
+| harder to schedule.               |     input=${ANSYS_ROOT}/ansys/dat |
+|                                   | a/verif/vm263.dat                 |
+| **Distributed Memory Parallel is  |     mapdl -b -dis -np ${SLURM_NTA |
+| currently not supported on        | SKS} -i "$input"                  |
 | Māui.**                           |                                   |
 +-----------------------------------+-----------------------------------+
 | Distributed Memory Example        |                                   |
