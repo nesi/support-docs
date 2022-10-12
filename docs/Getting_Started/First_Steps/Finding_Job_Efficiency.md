@@ -5,8 +5,33 @@ On Job Completion
 completion, this way you can improve your job specifications in the
 future.]{style="font-weight: 400;"}
 
-[Once your job has finished check the relevant details
-using;]{style="font-weight: 400;"}
+[Once your job has finished check the relevant details using the tools:
+`nn_seff` or `sacct` For example:\
+]{style="font-weight: 400;"}
+
+**nn\_seff**
+
+    nn_seff 30479534
+
+    Job ID: 1936245
+    Cluster: mahuika
+    User/Group: user/group
+    State: COMPLETED (exit code 0)
+    Cores: 1
+    Tasks: 1
+    Nodes: 1
+    Job Wall-time: 7.67% 00:01:09 of 00:15:00 time limit
+    CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
+    Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
+
+[Notice that the CPU efficiency was high but the memory efficiency was
+very low and consideration should be given to reducing memory requests
+for similar jobs.  If in doubt, please contact <support@nesi.org.nz> for
+guidance.]{style="font-weight: 400;"}
+
+ 
+
+**sacct**
 
     sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 
@@ -60,13 +85,6 @@ It might be worth considering reducing the number of CPUs requested,
 however bear in mind there are other factors that affect CPU efficiency.
 
     #SBATCH --cpus-per-task=10
-
- 
-
-> ### Tip {#prerequisites}
->
-> The command `nn_seff <jobid>` can be used to generate a summary on the
-> efficiency of `jobid`
 
  
 

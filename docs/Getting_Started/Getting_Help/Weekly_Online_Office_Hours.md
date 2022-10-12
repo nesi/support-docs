@@ -7,21 +7,19 @@ sessions are open to anyone - you don\'t need to be an existing NeSI
 user.\
 \
 
-**Office Hours in June 2022**
------------------------------
+**Office Hours in October 2022**
+--------------------------------
 
 Click on the links below to add the date & Zoom link to your calendar.
 
--   [01 June (Wednesday) :
-    3:00pm-4:00pm](https://calendar.google.com/event?action=TEMPLATE&tmeid=ZnFnNGYxcW9tNmc3dmp0Z3JvYXE5b3Q4cGsgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [08 June (Wednesday) :
-    9:00am-10:00am](https://calendar.google.com/event?action=TEMPLATE&tmeid=MXM5dWJ2OHEzaWVhYnJjZGplcXZpaWtvM2IgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [15 June (Wednesday) : 3:00pm-
-    4:00pm](https://calendar.google.com/event?action=TEMPLATE&tmeid=NnBrOTc0cnQ4ajFrODMwdG1vcTZpbTVrNnQgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [22 June (Wednesday) :
-    9:00am-10:00am](https://calendar.google.com/event?action=TEMPLATE&tmeid=NzBoNHRvdjF0MjFiaTFxNWhpNDQ5Z29hZ3IgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [29 June (Wednesday) : 3:00pm-
-    4:00pm](https://calendar.google.com/event?action=TEMPLATE&tmeid=MjlwN2cxMGFqZHIxaHNvMzl0MTNvNXQxaG4gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [05 October - 9:00 - 10:00
+    am](https://calendar.google.com/event?action=TEMPLATE&tmeid=NnI1ZWFqaDMzbzdrNWNidW4xMnBiNDJ2c2UgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [12 October - 3:00 - 4:00
+    pm](https://calendar.google.com/event?action=TEMPLATE&tmeid=MW5iZDBjcHJwb2NjdnFoa3JtbDEyYmhjYWggY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [19 October - 9:00 - 10:00
+    am](https://calendar.google.com/event?action=TEMPLATE&tmeid=NWtmYzhtOWh1ZjU2N2dsdjkwMmU0NHZzMTggY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [26 October - 3:00 - 4:00
+    pm](https://calendar.google.com/event?action=TEMPLATE&tmeid=N2hsaWxrMTg5bjBsOHNjcWxlZHV1bWp1dWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
 If you are unable to add these Office Hours sessions to your calendar
 through these links, please email us at <training@nesi.org.nz> and we

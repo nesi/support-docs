@@ -68,14 +68,15 @@ packages on the `nobackup` folder of your project:
     conda config --add pkgs_dirs /nesi/nobackup/<project_code>/$USER/conda_pkgs
 
 where `<project_code>` should be replace with your project code. This
-setting is saved in your `~/.condarc` configuration file.  **NOTE**: 
-your package cache will be subject to the nobackup autodelete process
-(details about autodelete can be found here: [Nobackup
-autodelete)](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system)
-The package cache folder is for temporary storage so it is safe if files
-within the cache folder are removed.
+setting is saved in your `~/.condarc` configuration file.
 
- 
+> ### Note {#llama-tip}
+>
+> Your package cache will be subject to the nobackup autodelete process
+> (details available in the [Nobackup
+> autodelete](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system)
+> support page). The package cache folder is for temporary storage so it
+> is safe if files within the cache folder are removed.
 
 Next, we recommend using the `-p` or `--prefix` options when creating
 new conda environments, instead of `-n` or `--name` options. Using `-p`
@@ -101,3 +102,24 @@ environment from an `environment.yml` file:
 > following configuration:
 >
 >     conda config --set env_prompt '({name})'
+
+Faster solver (experimental feature)
+====================================
+
+If you are using the module `Miniconda3/4.12.0`, you can accelerate
+conda environments creation and package installation using the new
+*experimental* `libmamba` solver. To use it, append the option
+`--experimental-solver=libmamba` to your command.
+
+For example, to create an environment from an `environment.yml` file,
+use:
+
+    conda env create --experimental-solver=libmamba -f environment.yml -p venv
+
+or to install a package in an activate environment, use:
+
+    conda install --experimental-solver=libmamba CONDA_PACKAGE
+
+where `CONDA_PACKAGE` is the package of interest.
+
+Please note this is an **experimental** feature of Conda version 4.12.

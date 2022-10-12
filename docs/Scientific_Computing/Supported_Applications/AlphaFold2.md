@@ -178,6 +178,7 @@ height="254"}
     --pdb_seqres_database_path=$DATABASE/pdb_seqres/pdb_seqres.txt \
     --template_mmcif_dir=$DATABASE/pdb_mmcif/mmcif_files \
     --obsolete_pdbs_path=$DATABASE/pdb_mmcif/obsolete.dat \
+    --uniprot_database_path=$DATABASE/uniprot/uniprot.fasta \
     --model_preset=multimer \
     --max_template_date=2022-1-1 \
     --db_preset=full_dbs \

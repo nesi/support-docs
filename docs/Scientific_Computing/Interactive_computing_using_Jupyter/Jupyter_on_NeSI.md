@@ -58,6 +58,21 @@ GPUs available at NeSI.
 > reload the browser window and check again, otherwise contact
 > [support\@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
 
+Known issues
+============
+
+-   When using *srun* in a Jupyter terminal you may see messages like
+    those shown below. The \"error\" messages are actually just warnings
+    and can be ignored; the *srun* command should still work.
+    Alternatively, you could run *unset TMPDIR* in the terminal before
+    running *srun* to avoid these warnings.
+
+        $ srun --pty bash
+        srun: job 28560743 queued and waiting for resources
+        srun: job 28560743 has been allocated resources
+        slurmstepd: error: Unable to create TMPDIR [/dev/shm/jobs/28560712]: Permission denied
+        slurmstepd: error: Setting TMPDIR to /tmp
+
 Feedback
 ========
 
@@ -99,11 +114,10 @@ JupyterLab provides a terminal that can be an alternative means of
 gaining command line access to NeSI systems instead of using an SSH
 client. Some things to note are:
 
-![jupyterLauncher.png](https://github.com/nesi/hpc-intro/blob/gh-pages-nesi/img/jupyterLauncher.png?raw=true){width="540"
-height="415"}
+ 
 
 -   when you launch the terminal application some environment modules
-    are already loaded, so you may want to run a *module purge*
+    are already loaded, so you may want to run `module purge` 
 -   processes launched directly in the JupyterLab terminal will probably
     be killed when you Jupyter session times out
 -   you may run into issues trying to submit a job with *sbatch* from

@@ -28,7 +28,8 @@ Both your accounts (NeSI and Globus) must exist before you try to use
 our DTN.
 
 The NeSI Wellington DTN endpoint is protected by a second factor
-authentication (2FA).
+authentication (2FA).  Also note, your NeSI username and password are
+case-sensitive.
 
 [The NeSI Data Transfer Node]{.wysiwyg-color-black}
 ---------------------------------------------------
@@ -164,9 +165,9 @@ In brief:
     <https://transfer.nesi.org.nz/file-manager>
 -   If this is your first time, you will need to create a Globus
     account.
--   Open the two-endpoint
-    panel ![two\_endpoint.png](https://support.nesi.org.nz/hc/article_attachments/360001823596/two_endpoint.png){width="123"
-    height="38"} located on the top-right of the *File Manager* page.
+-   Open the two-endpoint panel
+    ![two\_endpoint.png](https://support.nesi.org.nz/hc/article_attachments/5622407243151){width="109"
+    height="34"}located on the top-right of the *File Manager* page.
 -   Select the Endpoints you wish to move files between (start typing
     \"nesi\#\" to see the list of NeSI DTNs to select from).
     [Authenticate](https://support.nesi.org.nz/hc/en-gb/articles/360000955535)
@@ -178,8 +179,8 @@ In brief:
     appropriate project directory under /nobackup (see [Globus Paths,
     Permissions, Storage
     Allocation](https://support.nesi.org.nz/hc/en-gb/articles/360000812776-Globus-Paths-Permissions-Storage-Allocation)).
--   Transfer the files by clicking the
-    appropriate ![start\_button.png](https://support.nesi.org.nz/hc/article_attachments/360001713755/start_button.png) button
+-   Transfer the files by clicking the appropriate
+    ![start.png](https://support.nesi.org.nz/hc/article_attachments/5622408199183)button
     depending on the direction of the transfer.
 -   Check your email for confirmation about the job completion report.
 
@@ -198,3 +199,24 @@ File sharing
 
 To share files with others outside your filesystem,
 see <https://docs.globus.org/how-to/share-files/>
+
+ 
+
+Using Globus to transfer data to or from the cloud
+--------------------------------------------------
+
+Globus connectors enable a uniform interface for accessing, moving, and
+sharing across a variety of cloud providers. We do not currently have a
+connector subscription (note a subscription is required per cloud
+provider) so we can't use globus to transfer to/from cloud storage. If
+you see this as key for you, please let us know (support\@nesi.org.nz).
+
+[Our current advice for moving data to or from the cloud is to use tools
+such as Rclone 
+(]{style="font-weight: 400;"}[[https://rclone.org/]{style="font-weight: 400;"}](https://rclone.org/)[)
+or the cloud CLI\'s such as aswcli for S3 (https://aws.amazon.com/cli/)
+or gcloud CLI
+(]{style="font-weight: 400;"}[[https://cloud.google.com/sdk/gcloud]{style="font-weight: 400;"}](https://cloud.google.com/sdk/gcloud)[).
+If you have any trouble or would like further advice, please get in
+touch
+(]{style="font-weight: 400;"}[[support\@nesi.org.nz]{style="font-weight: 400;"}](mailto:support@nesi.org.nz)[).]{style="font-weight: 400;"}

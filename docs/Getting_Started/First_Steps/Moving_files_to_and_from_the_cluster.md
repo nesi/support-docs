@@ -98,10 +98,71 @@ Rclone
 ======
 
 Rclone is available for those that need to transfer data from cloud
-storage services like Google drive or OneDrive.\
-You can find more details on its use on the[Rclone
+storage services like Google drive or OneDrive.
+
+The basic command syntax of Rclone:
+
+    rclone subcommand options source:path dest:path
+
+The most frequently used Rclone subcommands:
+
+-   **rclone copy** -- Copy files from the source to the destination,
+    skipping what has already been copied.
+-   **rclone sync** -- Make the source and destination identical,
+    modifying only the destination.
+-   **rclone mov**e -- Move files from the source to the destination.
+-   **rclone delete** -- Remove the contents of a path.
+-   **rclone mkdir** -- Create the path if it does not already exist.
+-   **rclone rmdir** -- Remove the path.
+-   **rclone check** -- Check if the files in the source and destination
+    match.
+-   **rclone ls** -- List all objects in the path, including size and
+    path.
+-   **rclone lsd** -- List all directories/containers/buckets in the
+    path.
+-   **rclone lsl** -- List all objects in the path, including size,
+    modification time and path.
+-   **rclone lsf** -- List the objects using the virtual directory
+    structure based on the object names.
+-   **rclone cat** -- Concatenate files and send them to stdout.
+-   **rclone copyto** -- Copy files from the source to the destination,
+    skipping what has already been copied.
+-   **rclone moveto** -- Move the file or directory from the source to
+    the destination.
+-   **rclone copyurl** -- Copy the URL\'s content to the destination
+    without saving it in the tmp storage.
+
+A more extensive list can be found on the the[Rclone
 documentation](https://rclone.org/docs).
 
- 
+Rsync
+=====
+
+Rsync is an utility that provides fast incremental file transfer and
+efficient file synchronization between a computer and a storage disk.\
+The basic command syntax of:\
+
+    rsync -options source target
+
+If the data source or target location is a remote site, it is defined
+with syntax:\
+
+    userame@server:/path/in/server
+
+The most frequently used Rsync options:
+
+-   **-r**                         Recurse into directories
+-   **-a **                       Use archive mode: copy files and
+    directories recursively and preserve access permissions and time
+    stamps.
+-   **-v**                        Verbose mode.
+-   **-z**                        Compress
+-   **-e ssh**                 Specify the remote shell to use.
+-   **-n**                       Show what files would be transferred.
+-   **\--partial**             Keep partially transferred files.
+-   **\--progress**         Show progress during transfer.
+
+A more extensive list can be found on the the [Rsync
+documentation](https://download.samba.org/pub/rsync/rsync.1).
 
  

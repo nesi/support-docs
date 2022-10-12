@@ -1,3 +1,46 @@
+**[Example for C]{.wysiwyg-font-size-x-large}**
+
+### Initial C Script
+
+    #include <stdio.h>
+    int main(int argc, char** argv){
+    printf("Hello \n");
+    return 0;}
+
+### Revised C Script
+
+    #include <stdio.h>
+    #include <omp.h>
+    int main(int argc, char** argv){
+    #pragma omp parallel
+    printf("Hello from process: %d\n", omp_get_thread_num());
+    return 0;}
+
+-   We include the header file for OpenMP **\#include \<omp.h\>** that
+    will enable OpenMP functionality.
+-   We specify the parallel region using the keyword **\#pragma omp
+    parallel**.\
+    The **\#pragma omp parallel { ... }** directive creates a section of
+    code that will be run in parallel by multiple threads.
+-   We use `omp_get_thread_num()` to obtain the thread id of the
+    process.\
+    This will let us identify each of our threads using that unique id
+    number.
+
+### Compiling and Running OpenMP Program
+
+    $ module load gimkl/2022a
+    $ gcc -fopenmp hello.c
+    $ OMP_NUM_THREADS=2 ./a.out
+    Hello from process: 0
+    Hello from process: 1
+
+-   To compile an OpenMP program with gcc use the flag `-fopenmp`.
+-   We use the environment variable **OMP\_NUM\_THREADS** to set the
+    number of threads.
+
+**[Example for R]{.wysiwyg-font-size-x-large}**
+
 In the examples below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
 these examples are applicable across software applications. You do not

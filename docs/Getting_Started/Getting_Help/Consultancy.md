@@ -1,43 +1,55 @@
 NeSI\'s Consultancy service provides scientific and HPC-focussed
-computational and data science support to research project across a
+computational and data science support to research projects across a
 range of domains.
+
+Need support with your research project?
+----------------------------------------
+
+If you would like to learn more about NeSI\'s Consultancy service and
+how you can work with NeSI\'s Research Software and Data Science
+Engineers on a project, please contact us (<support@nesi.org.nz>) to set
+up an initial meeting. We can discuss your needs and complete a
+Consultancy application form together.
+
+Researchers from NeSI collaborator institutions (University of Auckland,
+NIWA, University of Otago and Manaaki Whenua - Landcare Research) and
+those with Merit projects can usually access consultancy at no cost to
+themselves, based on their institution\'s or MBIE\'s investment into
+NeSI.
 
 What do we do?
 --------------
 
-Examples of outcomes we could assist with (this list is general and
+The NeSI team are available to help with any stage of your research
+software development. We can get involved with designing and developing
+your software from scratch, or assist with improving software you have
+already written.
+
+The service is completely bespoke and tailored to your requirements.
+Some examples of outcomes we could assist with (this list is general and
 non-exhaustive):
 
--   Workflow parallelisation -- allowing more inputs to be processed
-    simultaneously, usually by different instances of the software
-    running side by side
--   Software parallelisation -- use of technologies such as OpenMP or
-    MPI to process one single input more quickly by one instance of the
-    software
--   Code optimisation -- redesign of algorithms to improve overall speed
-    or efficiency of resource (CPU or memory) use
--   Improving I/O performance -- work to speed up reading from or
-    writing to the disk, or to reduce the amount of data that must be
-    read or written
--   Porting to GPU -- accelerate code by offloading computations to a
-    coprocessor
--   Creating/Improving a visualisation workflow -- specialised remote
-    visualisation solutions or developing interactive web-based
-    dashboards
--   Translating Python/R/Matlab code to C/C++/Fortran for faster
-    execution
--   Improving software sustainability -- introducing best practices such
-    as version control and unit testing
--   Conducting an Exploratory Data Analysis -- use visualisations and
-    statistical methods to summarise the main characteristics of a
-    dataset in light of scientific questions
--   Designing and fitting explanatory models -- adapt or create
-    statistical models to estimate latent variables distributions from
-    noisy observations and expert knowledge
--   Designing and fitting predictive models -- train machine learning
-    models to predict variables of interest on unlabeled datasets
--   Cleaning data -- assist with automating the identification and
-    correction of erroneous values in a dataset
+-   Code development
+    -   Design and develop research software from scratch
+    -   Algorithmic improvements
+    -   Translate Python/R/Matlab code to C/C++/Fortran for faster
+        execution
+    -   Accelerate code by offloading computations to a GPU
+    -   Develop visualisation and post-processing tools (GUIs,
+        dashboards, etc)
+-   Performance improvement
+    -   Code optimisation -- profile and improve efficiency (speed and
+        memory), IO performance
+    -   Parallelisation -- software (OpenMP, MPI, etc.) and workflow
+        parallelisation
+-   Improve software sustainability (version control, testing,
+    continuous integration, etc)
+-   Data Science Engineering
+    -   Optimise numerical performance of machine learning pipelines
+    -   Conduct an Exploratory Data Analysis
+    -   Assist with designing and fitting explanatory and predictive
+        models
+-   Anything else you can think of ;-)
 
 What can you expect from us?
 ----------------------------
@@ -73,20 +85,6 @@ input is required on your part. You should be willing to:
 -   Accept full ownership/maintenance of the work after the project
     completes (NeSI\'s involvement in the project is limited to the
     agreed timeline)
-
-How do you get access to NeSI consultancy?
-------------------------------------------
-
-Researchers from collaborator institutions (University of Auckland,
-NIWA, University of Otago and Manaaki Whenua - Landcare Research) and
-those with Merit projects can usually access consultancy at no cost to
-themselves, based on their institution\'s or MBIE\'s investment into
-NeSI.
-
-If you are interested to find out more or apply for a project, please
-contact us ([mailto:support\@nesi.org.nz](mailto:support@nesi.org.nz))
-to set up an initial meeting, where we can complete the consultancy
-application form together.
 
 Previous projects
 -----------------

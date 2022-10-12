@@ -48,14 +48,20 @@ A partition can be specified via the appropriate [sbatch
 option](https://support.nesi.org.nz/hc/en-gb/articles/360000691716/),
 e.g.:
 
-    #SBATCH --partition=long
+    #SBATCH --partition=milan
 
 However on Mahuika there is generally no need to do so, since the
 default behaviour is that your job will be assigned to the most suitable
 partition(s) automatically, based on the resources it requests,
-including particularly its memory/CPU ratio and time limit. If you do
-specify a partition and your job is not a good fit for that partition
-then you may receive a warning, please do not ignore this. E.g.:
+including particularly its memory/CPU ratio and time limit.
+
+The *milan* partition is currently an exception - since it has a
+different operating system version it is currently configured to be
+opt-in only - your job will not land there it unless you request it.
+
+If you do specify a partition and your job is not a good fit for that
+partition then you may receive a warning, please do not ignore this.
+E.g.:
 
     sbatch: "bigmem" is not the most appropriate partition for this job, which would otherwise default to "large". If you believe this is incorrect then please contact support@nesi.org.nz and quote the Job ID number.
 
@@ -82,6 +88,27 @@ then you may receive a warning, please do not ignore this. E.g.:
 |        |        |        |        |        |        |        | partit |
 |        |        |        |        |        |        |        | ion.   |
 +--------+--------+--------+--------+--------+--------+--------+--------+
+| milan  | 7 days | 29\    | 256\   |        | 1850   | 460    | [Curre |
+|        |        |  2     | 256    |        | MB     | GB\    | ntly   |
+|        |        |        |        |        |        | 960 GB | opt    |
+|        |        |        |        |        | 3800   |        | in.    |
+|        |        |        |        |        | MB     |        | Newer  |
+|        |        |        |        |        |        |        | OS and |
+|        |        |        |        |        |        |        | AMD    |
+|        |        |        |        |        |        |        | Milan  |
+|        |        |        |        |        |        |        | CPUs]( |
+|        |        |        |        |        |        |        | https: |
+|        |        |        |        |        |        |        | //supp |
+|        |        |        |        |        |        |        | ort.ne |
+|        |        |        |        |        |        |        | si.org |
+|        |        |        |        |        |        |        | .nz/kn |
+|        |        |        |        |        |        |        | owledg |
+|        |        |        |        |        |        |        | e/arti |
+|        |        |        |        |        |        |        | cles/5 |
+|        |        |        |        |        |        |        | 286956 |
+|        |        |        |        |        |        |        | 022159 |
+|        |        |        |        |        |        |        | ).     |
++--------+--------+--------+--------+--------+--------+--------+--------+
 | bigmem | 7 days | 6      | 72     |        | 6300   | 460 GB | Jobs   |
 | /      |        |        |        |        | MB     |        | requir |
 |        |        | 6      | 54     |        |        | 300 GB | ing    |
@@ -103,14 +130,17 @@ then you may receive a warning, please do not ignore this. E.g.:
 |        |        |        |        |        |        |        | memory |
 |        |        |        |        |        |        |        | .      |
 +--------+--------+--------+--------+--------+--------+--------+--------+
-| gpu    | 3 days | 4      | 18,    | 2      | 6300   | 160    | See    |
+| gpu    | 3 days | 1      | 18,    | 1      | 6300   | 160    | See    |
 |        |        |        | plus   | P100\* | MB     | GB,    | below  |
-|        |        | 2      | 54     |        |        | plus   | for    |
-|        |        |        | shared | 1      |        | 300 GB | more   |
-|        |        | 2      | with   | A100\* |        | shared | info.  |
-|        |        |        | *infil | \*     |        | with   |        |
-|        |        | 1      | l*     |        |        | *infil |        |
-|        |        |        |        | 2      |        | l*     |        |
+|        |        | 4      | 54     |        |        | plus   | for    |
+|        |        |        | shared | 2      |        | 300 GB | more   |
+|        |        | 2      | with   | P100\* |        | shared | info.  |
+|        |        |        | *infil |        |        | with   |        |
+|        |        | 2      | l*     | 1      |        | *infil |        |
+|        |        |        |        | A100\* |        | l*     |        |
+|        |        | 1      |        | \*     |        |        |        |
+|        |        |        |        |        |        |        |        |
+|        |        |        |        | 2      |        |        |        |
 |        |        |        |        | A100\* |        |        |        |
 |        |        |        |        | \*     |        |        |        |
 |        |        |        |        |        |        |        |        |

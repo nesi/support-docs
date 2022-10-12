@@ -222,7 +222,7 @@ using the following methods:
 -   [pip install \--user in your
     `$HOME`](#h_749d9d04-30f7-41fe-8721-87b9205e1df3)
 -   [pip install into your project
-    directory](#h_e39fabff-952d-4fa3-8fa5-b2ff1d2990f7)
+    directory](#h_01GF22DGZ3ZJV5J24PQMMTM15T)
 -   using and virtual environment
 
 ### Install into your `$HOME` {#h_749d9d04-30f7-41fe-8721-87b9205e1df3}
@@ -235,7 +235,7 @@ A packages prodXY can be installed using:
 
     pip install --user prodXY
 
-### Install into project directory
+### Install into project directory {#h_01GF22DGZ3ZJV5J24PQMMTM15T}
 
 This method is slightly more complicated, but provides the advantage
 that you do not fill up your `$HOME`  directory quota and you can easily
@@ -250,59 +250,7 @@ requires:
 In the following we install a python3 package called  *`prodXY`* into
 `/nesi/project/<projectID>/PyPackages` and create a module for it.
 
-#### Using Easybuild
-
-Easybuild is a Package provisioning tool, please read also
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000474535).
-Therefore you need a configuration file, e.g. for PyPI python packages
-(here cutadapt), which could be located in
-`/nesi/project/<projectID>/easybuildinstall/easyconfigs` and the
-following would be named as `cutadapt-2.3-gimkl-2018b-Python-3.7.3.eb`:
-
-    # Easybuild Python package template
-    # Author: Mandes Schoenherr
-    # NeSI - the New Zealand eScience Infrastructure
-
-    easyblock = "PythonPackage"
-
-    name = 'cutadapt' ### specify the name here
-    version = '2.3' ### specify the version
-
-    homepage = 'https://cutadapt.readthedocs.io/' ### add a reference URL and a description below
-    description = """ cutadapt removes adapter sequences
-     from high-throughput sequencing data. """
-
-    toolchain = {'name':'gimkl', 'version':'2018b'}
-    source_urls = [PYPI_SOURCE]
-    sources = [SOURCELOWER_TAR_GZ]
-
-    python = 'Python'
-    pyver = "3.7.3"
-    pyshortver = '.'.join(pyver.split('.')[:2])
-    versionsuffix = "-%s-%s" % (python, pyver)
-    dependencies = [ (python, pyver) ]
-    sanity_check_paths = {
-     'files': ['bin/cutadapt'],
-     'dirs': ['lib/python%s/site-packages/' % pyshortver],
-    }
-
-    moduleclass = 'bio' ### change the type of software
-
-Then we can install this package using:
-
-    export NESI_EASYBUILD_PROJECT_ID=<projectID>
-    module load project
-    eb cutadpt-2.3-gimkl-2018b-Python-3.7.3.eb
-
-### After successful install we should see the module using:
-
-    module --ignore-cache avail cutadapt
-
-And the package can be used by all project members (after specifying the
-projectID) using:
-
-    module load project
-    module load cutadapt
+####  
 
 #### Manual install and provisioning
 

@@ -233,7 +233,7 @@ Create the following script for running the benchmarks, named
     source transenv/bin/activate
 
     # path to transformers benchmark script
-    BENCH_SCRIPT=transformers/examples/benchmarking/run_benchmark.py
+    BENCH_SCRIPT=transformers/examples/pytorch/benchmarking/run_benchmark.py
 
     # run the benchmarks
     python ${BENCH_SCRIPT} --no_multi_process --training --no_memory \

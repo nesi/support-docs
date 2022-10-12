@@ -115,15 +115,20 @@ keep beyond the scheduled expiry date, you have four options:
     space, more inodes, or both, in your persistent project directory
     before you can do this. [Submit a Support
     request](https://support.nesi.org.nz/hc/en-gb/requests/new). We
-    assess such requests on a case-by-case basis.
+    assess such requests on a case-by-case basis.  Note:  You can save
+    space by compressing data.  Standard tools such as \`gzip\`
+    \`bzip2\` etc are available.
 -   Move or copy the file to a storage system outside NeSI, for example
     a research storage device at your institution. We expect most
     projects to do this for finalised output data and appreciate prompt
     egress of data once it is no longer used for processing.
--   Access or modify the file before the deletion date, in which case
-    the file will not be deleted even though it is listed in `.policy`.
-    This must only be done in cases where you expect to begin active use
-    of the data again within the next month.
+-   **Modify** the file before the deletion date, in which case the file
+    will not be deleted even though it is listed in `.policy`. This must
+    only be done in cases where you expect to begin active use of the
+    data again within the next month.
+-   Note: Accessing (Open/Close and Open/Save) or Moving (\`mv\`) does
+    not update the timestamp of the file. Copying (\`cp\`) does create a
+    new timestamped file.\
 
     > ### Warning {#prerequisites}
     >
