@@ -7,7 +7,7 @@ mkdocs-spellcheck
 mkdocs-simple-hooks
 proselint
 linkcheckmd
-
+symspellpy
 
 # Add your custom theme if not inside a theme_dir
 # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
