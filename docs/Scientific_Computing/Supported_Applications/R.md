@@ -120,7 +120,7 @@ Example job submission scripts {#example-job-submission-scripts-for-the-pan-clus
     #SBATCH --output      MySerialRJob.%j.out # Include the job ID in the names of
     #SBATCH --error       MySerialRJob.%j.err # the output and error files
 
-    module load R/4.0.1-gimkl-2020a
+    module load 4.2.1-gimkl-2022a
 
     # Help R to flush errors and show overall job progress by printing
     # "executing" and "finished" statements.

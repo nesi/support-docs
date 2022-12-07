@@ -238,6 +238,8 @@ Further compiler driver options can be found on their man pages:
 :::
 :::
 
+**Compiling and Running MPI code**
+
 The compiler drivers will also automatically build MPI codes correctly,
 there is no need to use special compilers or add additional compiler or
 linker flags.

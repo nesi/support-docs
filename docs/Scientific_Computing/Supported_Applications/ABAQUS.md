@@ -23,6 +23,10 @@ licence tokens are your main limiting factor.
 
 </div>
 
+You can force ABAQUS to use a specific licence type by setting the
+parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
+[environment file](#env_file).
+
 Solver Compatibility {#solvers}
 ====================
 
@@ -93,7 +97,7 @@ Not all solvers are compatible with all types of parallelisation.
 | `user=<name_of_function>`         |     #SBATCH --mem           2G    |
 |                                   |       # total mem                 |
 | Function will be compiled at      |                                   |
-| start of run.                     |     module load gimkl             |
+| start of run.                     |     module load imkl              |
 |                                   |     module load ABAQUS/2019       |
 | *You may need to chance the       |                                   |
 | function suffix if you usually    |     abaqus job="propeller_s4rs_c3 |
@@ -161,7 +165,7 @@ source code.
 
 Extra compiler options can be set in your local `abaqus_v6.env` file.
 
-The default compile commands are for `gimkl`, other compilers can be
+The default compile commands are for `imkl`, other compilers can be
 loaded with `module load`, you may have to change the[compile
 commands](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) in
 your local `.env` file.
@@ -183,6 +187,17 @@ jobs submitted by you.
 
 `<working directory>/abaqus_v6.env` If exists, will used in this job
 only.
+
+You may want to include this short snippet when making changes specific
+to a job.
+
+    # Before starting abaqus
+    echo "parameter=value
+    parameter=value
+    parameter=value" > "abaqus_v6.env"
+
+    # After job is finished.
+    rm "abaqus_v6.env"
 
  
 

@@ -1,4 +1,8 @@
-                                                                                                                                                                      
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline
 
 ::: {.confluence-information-macro-body}
 > ### Service Status {#nearline-service-status}
@@ -21,9 +25,6 @@
 > functionality issues, intuitive or counter-intuitive behaviours,
 > behaviours or features that you like, suggestions for improvements,
 > transfers taking too long, etc.
-
-Long-Term Storage Service
-=========================
 
 NeSI\'s Long-Term Storage aka Nearline service allows you to store your
 data on our hierarchical system, which consists of a staging area (disk)
@@ -232,7 +233,8 @@ treated as a file list** and read line by line, searching for valid file
 names. Single files can only be migrated using a file list containing
 the full path of the file to be transferred.
 
-### Put - directory {#Nearlineearlyaccessuserguide-Put-directory}
+Put - directory {#Nearlineearlyaccessuserguide-Put-directory}
+---------------
 
 > ### Warning {#directories-with-spaces}
 >
@@ -268,7 +270,8 @@ will copy all data within the `Results` directory into
 > `/nesi/nearline/nesi12345/`, files with the same name and path will be
 > skipped.
 
-### Put - file list {#Nearlineearlyaccessuserguide-Put-file-list}
+Put - file list {#Nearlineearlyaccessuserguide-Put-file-list}
+---------------
 
 > ### Warning {#nlput-file-list}
 >
@@ -282,7 +285,8 @@ ignored**.
 
 The target location will again map with the source location, see above.
 
-### Update {#Nearlineearlyaccessuserguide-Update}
+Update {#Nearlineearlyaccessuserguide-Update}
+------
 
 As a good practice:
 

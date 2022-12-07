@@ -1,12 +1,71 @@
 > ### Service Status {#nearline-service-status}
 >
-> Mahuika\'s new nodes are in an **Early Access Programme (EAP) phase**
-> and not fully in production for all NeSI users. Selected researchers
-> have been given access. If you are interested in participating in the
-> EAP phase, please [contact
-> support](https://support.nesi.org.nz/hc/en-gb/requests/new). 
+> Mahuika\'s new CPU nodes are in an **Early Access Programme (EAP)
+> phase** and not fully in production.
 
- 
+Early Access Programme
+======================
+
+*Overview*
+----------
+
+Prior to launching Mahuika\'s newest CPU nodes for general production,
+we are allowing early access to help us identify any issues with:
+
+-   -   accessing the new nodes
+
+    -   codes that don't run or have issues running
+
+    -   documentation
+
+    -   comparing performance to the old nodes
+
+[If you'd like to participate as tester / early access user for the new
+Mahuika CPU nodes you are welcome to try them out. If you want access to
+our temporary testing project to run jobs or benchmarks free of charge,
+refer to the [Temporary Project
+section](https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding#temporary_project)
+below and ]{#9713733c-843a-4b40-8f2b-a0b5b7095aa1
+data-renderer-mark="true" data-mark-type="annotation"
+data-mark-annotation-type="inlineComment"
+data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1"}[[reach out to NeSI
+Support]{#9713733c-843a-4b40-8f2b-a0b5b7095aa1 data-renderer-mark="true"
+data-mark-type="annotation" data-mark-annotation-type="inlineComment"
+data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1"}](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new"){.css-tgpl01}. 
+
+*Important notes*
+-----------------
+
+Before accessing the new nodes, please review these important points. If
+you have any questions, [contact NeSI
+Support](https://support.nesi.org.nz/hc/en-gb/requests/new). 
+
+-   To access the new Milan CPUs for \'free\' through the course of this
+    testing phase, you can request to be added to the temporary test
+    project account `nesi03638`, with the condition that you only use it
+    for testing and benchmarking these new nodes. [See the Benchmarking
+    section](https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding#benchmarking)
+    below for more details.
+-   Jobs are submitted from the same Mahuika login node that you
+    currently use, however you will need to explicitly specify the
+    `milan` partition in your `sbatch` command line. [See the Slurm
+    Configuration
+    section](https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding#slurm_configuration)
+    below for more details.
+-   We\'re currently allowing up to 8 nodes per user, 24 hour maximum
+    walltime. To request more than that, [contact NeSI
+    Support.](https://support.nesi.org.nz/hc/en-gb/requests/new)
+-   We\'re asking early access users to let us know of any issues,
+    challenges, or suggestions for improving your experience getting
+    onto and using the new nodes. We also welcome any testing that
+    compares your job(s) performance on the new nodes against the older
+    nodes. All feedback and insights should be sent to [NeSI
+    Support.](https://support.nesi.org.nz/hc/en-gb/requests/new)
+
+For more details on the new Mahuika Extension technology and what we\'re
+requesting in terms of benchmarking, please read the information below.
+
+------------------------------------------------------------------------
 
 Differences from original Mahuika compute nodes
 ===============================================
@@ -133,10 +192,15 @@ file system as other cluster nodes. 
 
     sbatch -p milan ...
 
+Alternatively, the same effect can be achieved by placing a pragma into
+the job description file:
+
+    #SBATCH --partition=milan
+
 ### Limits
 
-Currently up to 8 nodes per user, 4 hour maximum walltime. If you need
-more then please contact us to discuss your requirements.
+Currently up to 10 nodes per account, 7 days maximum job duration. If
+you need more then please contact us to discuss your requirements.
 
 Benchmarking
 ============
@@ -154,57 +218,23 @@ Timing can be obtained through time command, for example:
 
 or via `sacct`.
 
-Temporary project
------------------
-
-We have created a dedicated project `nesi03638` that has access to the
-new milan partition. You can use this project code when submitting test
-or benchmarking jobs:
-
-    #SBATCH --account=nesi03638
-
-You may use the test project directories `/nesi/nobackup/nesi03638`
-and `/nesi/project/nesi03638` to store data for testing purposes.
-However these are shared directories accessible by all other early
-access testers so do not store any sensitive data there.  We recommend
-just using your existing project directories instead.
-
 Advanced Slurm options for benchmarking
 ---------------------------------------
 
 When running benchmarks (and only then!) we recommend using 
 
-    sbatch --exclusive ...
+    sbatch --exclusive=user ...
 
-(with short jobs please) so that your job has its node(s) to itself and
-will not be affected by any other job running on the same node.  By
-default Slurm will then let your job use the the whole node, so also
-use `srun --exact` to limit the job step to just the number of cores
-that you requested.  And finally for MPI jobs, Slurm will let your tasks
-spread out across the whole node, but you can ask it to pack them
-tighter together with  `srun -m block`, which might more realistically
-match how they will run in the future when the new nodes are busier.
+(with short jobs please) so that you have node(s) to yourself and will
+not be affected by jobs from other users.  
 
-Early access user feedback
-==========================
+### I/O performance
 
-The [purpose of this early access / testing
-phase]{#7d72b2c5-4fa2-4f0e-9d27-e81fcc185169 .inline-highlight
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="7d72b2c5-4fa2-4f0e-9d27-e81fcc185169"} is to help us identify
-any issues you may have with using the new infrastructure, including:
-
--   -   accessing the new nodes
-
-    -   identifying codes that don't run or have issues running
-
-    -   improving documentation
-
-    -   comparing performance to the old nodes
-
-So, as you begin accessing and using the new nodes, please let us know
-of any challenges, issues, or suggestions for improvement.
+There are reports about lower I/O performance when running jobs on Milan
+nodes. This issue is being investigated and will be addressed once the
+partition is fully populated. Please, note that the reduced performance
+does not affect all input/output operations. Please, contact us if you
+have concerns regarding this issue.
 
 Any questions?
 ==============

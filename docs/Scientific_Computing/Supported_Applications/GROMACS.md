@@ -130,15 +130,23 @@ input, altered as appropriate:
                                    # (the number of physical cores per node)
     #SBATCH --hint=nomultithread   # Don't use hyperthreading
 
-On the Māui cluster, there is no reason to specifically request a whole
-node, as all jobs are scheduled to run on one or more entire nodes.
-
 If you opt to use hybrid parallelisation, it is also important to run
 `mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
 be the number of CPUs per task. You can make sure the value is correct
 by using `-ntomp ${SLURM_CPUS_PER_TASK}`. Hybrid parallelisation can be
 more efficient than MPI-only parallelisation, as within the same node
 there is no need for inter-task communication.
+
+ 
+
+**NOTE** on using GROMACS on Māui:
+
+On the Māui cluster, normally there is no reason to specifically request
+a whole node, as all jobs are scheduled to run on one or more entire
+nodes.  However, we have seen issues with slow performance and will
+recommend using the \`\--exclusive\` flag when running GROMACS. It may
+also be advisable to request tasks or CPUs in multiples of 80, since
+that is the number of vCPUs per node.
 
 NVIDIA GPU Container
 ====================

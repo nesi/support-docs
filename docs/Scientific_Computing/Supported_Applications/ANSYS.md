@@ -113,6 +113,9 @@ the use of variables in what might otherwise be a fixed input.
 Fluent {#ansys-fluent}
 ======
 
+[Some great documentation on journal
+files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html)
+
 `fluent -help` for a list of commands.
 
 Must have one of these flags. 

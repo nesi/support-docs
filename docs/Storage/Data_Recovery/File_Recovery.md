@@ -2,7 +2,7 @@ Snapshots
 ---------
 
 Snapshots are read only copies of the file system taken every day at
-1215, and retained for seven days.\
+12:15, and retained for seven days.\
 \
 Files from you project directory can be found
 in `/nesi/project/.snapshots/` followed by the weekday (capitalised) and

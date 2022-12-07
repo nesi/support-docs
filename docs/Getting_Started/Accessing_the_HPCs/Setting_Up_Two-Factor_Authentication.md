@@ -8,15 +8,16 @@
 >     project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
 > -   Have [set up your NeSI account
 >     password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995-Setting-Up-and-Resetting-Your-Password).
-> -   Have with you a smartphone with a working camera.
+> -   Have a device with an authentication app.
 
  Authentication App
 -------------------
 
 In order to generate your second factor, which you will require in order
-to access to any NeSI cluster, you will need a smartphone with a working
-camera, and have either Authy or Google Authenticator installed on your
-smartphone.
+to access to any NeSI cluster, you will need a device with an
+authentication app, such as Authy or Google Authenticator installed on
+your device (generally a smartphone, but there are also authentication
+apps which work through the browser like Authy).
 
 If you some reason you can\'t do this, please contact NeSI support.
 
@@ -37,7 +38,9 @@ Linking a device to your account
     ![](https://support.nesi.org.nz/hc/article_attachments/360001267755/mceclip0.png)
 4.  After clicking on \"Continue\" you will retrieve the QR code.
 5.  Open your Authy or Google Authenticator app and click on the add
-    button and select \"**Scan a barcode**\".
+    button and select \"**Scan a barcode**\". Alternatively, if you are
+    not able to scan the barcode from your device you can manually enter
+    the provided authentication code into your authentication app.
 
 The second-factor token
 -----------------------

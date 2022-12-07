@@ -208,163 +208,95 @@ installed packages.
 
 The provided packages can be listed using
 
-    module load Python
+    module load Python/3.10.5-gimkl-2022a
     python -c "help('modules')"
 
-Adding packages
----------------
-
-Additional packages can be requested via a NeSI support ticket if there
-is wider need for it. If you just need it for your self or want to
-provide additional packages for your project group, you can install it
-using the following methods:
-
--   [pip install \--user in your
-    `$HOME`](#h_749d9d04-30f7-41fe-8721-87b9205e1df3)
--   [pip install into your project
-    directory](#h_e39fabff-952d-4fa3-8fa5-b2ff1d2990f7)
--   using and virtual environment
-
-### Install into your `$HOME` {#h_749d9d04-30f7-41fe-8721-87b9205e1df3}
+Installing packages in your \$HOME
+----------------------------------
 
 This is the simplest way to install additional packages, but you might
 fill your `$HOME` quota and cannot share installations with
 collaborators.
 
-A packages prodXY can be installed using:
-
+    module load Python/3.10.5-gimkl-2022a
     pip install --user prodXY
 
-### Install into project directory
+If you are working on multiple projects, this method will cause issues
+as your projects may require different versions of packages which are
+not compatible.
 
-This method is slightly more complicated, but provides the advantage
-that you do not fill up your `$HOME`  directory quota and you can easily
-share these installed packages with your collaborators. This method
-requires:
+We **strongly** recommend using separate [Python virtual
+environments](https://docs.python.org/3/library/venv.html) to isolate
+dependencies between projects, avoid filling your home space and being
+able to share installation with collaborators
 
--   installing Python package into a \"remote\" location (your project
-    directory
--   define the `$PATH` and `$PYTHONPATH` in your environment (e.g. using
-    a module file)
+Installing packages in a Python virtual environment
+---------------------------------------------------
 
-In the following we install a python3 package called  *`prodXY`* into
-`/nesi/project/<projectID>/PyPackages` and create a module for it.
+A Python virtual environment is lightweight system to create an
+environment which contains specific packages for a project, without
+interfering with the global Python installation. Each virtual
+environment is a different directory.
 
-#### Using Easybuild
+To create a Python virtual environment, use the `venv` module as follows
 
-Easybuild is a Package provisioning tool, please read also
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000474535).
-Therefore you need a configuration file, e.g. for PyPI python packages
-(here cutadapt), which could be located in
-`/nesi/project/<projectID>/easybuildinstall/easyconfigs` and the
-following would be named as `cutadapt-2.3-gimkl-2018b-Python-3.7.3.eb`:
+    module load Python/3.10.5-gimkl-2022a
+    python3 -m venv /nesi/project/PROJECT_ID/my_venv
 
-    # Easybuild Python package template
-    # Author: Mandes Schoenherr
-    # NeSI - the New Zealand eScience Infrastructure
+where `PROJECT_ID` is your NeSI project ID.
 
-    easyblock = "PythonPackage"
+Note that you need to *activate* the virtual environment before using it
+(to run a script or install packages)
 
-    name = 'cutadapt' ### specify the name here
-    version = '2.3' ### specify the version
+    source /nesi/project/PROJECT_ID/my_venv/bin/activate
 
-    homepage = 'https://cutadapt.readthedocs.io/' ### add a reference URL and a description below
-    description = """ cutadapt removes adapter sequences
-     from high-throughput sequencing data. """
+Then you can install any pip-installable package in the virtual
+environment using
 
-    toolchain = {'name':'gimkl', 'version':'2018b'}
-    source_urls = [PYPI_SOURCE]
-    sources = [SOURCELOWER_TAR_GZ]
+    pip install prodXY
 
-    python = 'Python'
-    pyver = "3.7.3"
-    pyshortver = '.'.join(pyver.split('.')[:2])
-    versionsuffix = "-%s-%s" % (python, pyver)
-    dependencies = [ (python, pyver) ]
-    sanity_check_paths = {
-     'files': ['bin/cutadapt'],
-     'dirs': ['lib/python%s/site-packages/' % pyshortver],
-    }
+Then a Slurm job submission script running your Python script would look
+like
 
-    moduleclass = 'bio' ### change the type of software
+    #!/bin/bash -e
+    #SBATCH --job-name    MyPythonJob
+    #SBATCH --time        01:00:00
+    #SBATCH --mem         512MB
 
-Then we can install this package using:
+    module purge
+    module load Python/3.10.5-gimkl-2022a
+    source /nesi/project/PROJECT_ID/my_venv/bin/activate
+    python MyPythonScript.py
 
-    export NESI_EASYBUILD_PROJECT_ID=<projectID>
-    module load project
-    eb cutadpt-2.3-gimkl-2018b-Python-3.7.3.eb
+Python virtual environment isolation
+------------------------------------
 
-### After successful install we should see the module using:
+By default, Python virtual environments are fully isolated from the
+system installation. It means that you will not be able to access
+packages already prepared by NeSI in the corresponding Python
+environment module.
 
-    module --ignore-cache avail cutadapt
+To avoid this, use the option `--system-site-packages` when creating the
+virtual environment
 
-And the package can be used by all project members (after specifying the
-projectID) using:
+    module load Python/3.10.5-gimkl-2022a
+    python3 -m venv --system-site-packages /nesi/project/PROJECT_ID/my_venv
 
-    module load project
-    module load cutadapt
+A downside of this is that now your virtual environment also finds
+packages from your `$HOME` folder. To avoid this behavirour, make sure
+to use `export PYTHONNOUSERSITE=1` before calling pip or running a
+Python script. For example, in a Slurm job submission script
 
-#### Manual install and provisioning
+    #!/bin/bash -e
+    #SBATCH --job-name    MyPythonJob
+    #SBATCH --time        01:00:00
+    #SBATCH --mem         512MB
 
-Depending on the package you can install packages using:
-
--   the Python Package Manager PIP
-
-<!-- -->
-
-    $ pip install --prefix /nesi/project/<projectID>/PyPackages cogent
-
--   use source code
-
-<!-- -->
-
-    $ python setup.py install --prefix /nesi/project/<projectID>/PyPackages
-
- Python will not find the package by default, therefore you need to add
-the location of the package to the `$PYTHONPATH`. Furthermore, some
-packages provide binaries, which are accessible by adding the directory
-to `$PATH `
-
-    $ export PYTHONPATH=/nesi/project/<projectID>/PyPackages/lib/python3.6/site-packages:$PYTHONPATH
-    $ export PATH=/nesi/project/<projectID>/PyPackages/bin:$PATH
-
-NOTE: If you install multiple packages in the same location, e.g.
-`/nesi/project/<projectID>/PyPackages`, you just need to set these
-environment variable once.
-
-#### Creating a modulefile
-
-These environment variables can be handled in a module file. Thus the
-packages (and others if desired) can be accessed by you and the project
-collaborators.
-
-Therefore we create a modulefile let\'s say at
-`/nesi/project/<projectID>/modulefiles/PyXtra` and assume we installed a
-Python package into `/nesi/project/<projectID>/PyPackages`:
-
-    #%Module
-    module load Python/3.7.3-gimkl-2018b
-       # provide a description
-    module-whatis "The packageXY for python."
-    proc ModulesHelp { } {  puts stderr "This module loads the packageXY. It requires python3." }
-
-    set PKG_PREFIX /nesi/project/<projectID>/PyPackages
-       # add the location of binaries to PATH, such they are immediately accessible
-    prepend-path PATH $PKG_PREFIX/bin
-       # add to PYTHONPATH to access python packages
-    prepend-path PYTHONPATH $PKG_PREFIX/lib/python3.7/site-packages/
-
-To use this module (and all other modules you create in that directory)
-you add the following to your `$HOME/.bashrc` (need to `source` it, or
-re-login to activate the changes):
-
-    module use /nesi/project/<projectID>/modulefiles
-
-Then you can simple load the module via:
-
-    module load PyXtra
-
- 
+    module purge
+    module load Python/3.10.5-gimkl-2022a
+    source /nesi/project/PROJECT_ID/my_venv/bin/activate
+    export PYTHONNOUSERSITE=1
+    python MyPythonScript.py
 
 Further notes
 =============

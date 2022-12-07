@@ -1,47 +1,4 @@
-**[Example for C]{.wysiwyg-font-size-x-large}**
-
-### Initial C Script
-
-    #include <stdio.h>
-    int main(int argc, char** argv){
-    printf("Hello \n");
-    return 0;}
-
-### Revised C Script
-
-    #include <stdio.h>
-    #include <omp.h>
-    int main(int argc, char** argv){
-    #pragma omp parallel
-    printf("Hello from process: %d\n", omp_get_thread_num());
-    return 0;}
-
--   We include the header file for OpenMP **\#include \<omp.h\>** that
-    will enable OpenMP functionality.
--   We specify the parallel region using the keyword **\#pragma omp
-    parallel**.\
-    The **\#pragma omp parallel { ... }** directive creates a section of
-    code that will be run in parallel by multiple threads.
--   We use `omp_get_thread_num()` to obtain the thread id of the
-    process.\
-    This will let us identify each of our threads using that unique id
-    number.
-
-### Compiling and Running OpenMP Program
-
-    $ module load gimkl/2022a
-    $ gcc -fopenmp hello.c
-    $ OMP_NUM_THREADS=2 ./a.out
-    Hello from process: 0
-    Hello from process: 1
-
--   To compile an OpenMP program with gcc use the flag `-fopenmp`.
--   We use the environment variable **OMP\_NUM\_THREADS** to set the
-    number of threads.
-
-**[Example for R]{.wysiwyg-font-size-x-large}**
-
-In the examples below we will use R scripts to demonstrate how you might
+In the example below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
 these examples are applicable across software applications. You do not
 need to know anything about R to understand this article; it was merely
@@ -58,15 +15,18 @@ chosen for the purpose of illustration.
        x <- sum(rnorm(z))
       }
 
-The above R script will take the sum of *z* random numbers derived from
-a normal distribution with a mean of 0 and a standard deviation of 1
-(where is *z* is a value from 1,000,000 to 1,060,000). The script will
-take the number of CPUs per task from the environment and and run it in
-parallel with that many threads. We unfortunately do not know how many
-CPUs, how much memory (RAM) or how much time to request for this script
-to complete. This means the first thing we need to do is run a small
-scale test and see how long that runs for. So we will first try with
-5,000 iterations rather than 60,000 iterations.
+You do not need to understand what the above R script is doing, but for
+context, it will take the sum of *z* random numbers derived from a
+normal distribution with a mean of 0 and a standard deviation of 1
+(where is *z* is a value from 1,000,000 to 1,060,000, meaning 60,000
+iterations). The script will take the number of CPUs per task from the
+environment and and run it in parallel with that many threads. We
+unfortunately do not know how many CPUs, how much memory (RAM), or how
+much time to request for this script to complete. This means the first
+thing we need to do is run a small scale test and see how long that runs
+for. So we will first try with 5,000 iterations rather than 60,000
+iterations. So now lets change the number of iterations from 60,000 to
+5,000.
 
 ### Revised R Script
 

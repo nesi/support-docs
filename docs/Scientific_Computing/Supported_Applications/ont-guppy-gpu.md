@@ -53,7 +53,7 @@ Example Slurm script
     #SBATCH --output         slurmout.%j.out
 
     module purge
-    module load ont-guppy-gpu/6.1.2
+    module load ont-guppy-gpu/6.2.1
 
     guppy_basecaller -i /path/to/input/data/directory -s /path/to/save/fastq/files \
     --config /opt/nesi/CS400_centos7_bdw/ont-guppy-gpu/6.1.2/data/nameof.cfg \

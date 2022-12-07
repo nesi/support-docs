@@ -146,6 +146,12 @@ Will send a mail notification at `BEGIN  END  FAIL`
 
 Will send message at *80%* walltime
 
+\--no-requeue
+
+`#SBATCH --no-requeue`
+
+Will stop job being requeued in the case of node failure.
+
 ### Parallel options
 
 +-----------------------+-----------------------+-----------------------+

@@ -40,8 +40,9 @@ Mahuika HPC Cluster (Cray CS400)
 | NeSI Cloud)\                      | (E5-2695v4, 2.1 GHz, dual socket  |
 | **                                | 18 cores per socket) nodes        |
 +-----------------------------------+-----------------------------------+
-| **GPGPUs\                         | 8 NVIDIA Tesla P100 PCIe 12GB     |
-| **                                | cards (4 nodes with 2 GPUs)       |
+| **GPGPUs\                         | 9 NVIDIA Tesla P100 PCIe 12GB     |
+| **                                | cards (1 node with 1 GPU, 4 nodes |
+|                                   | with 2 GPUs)                      |
 |                                   |                                   |
 |                                   | 8 NVIDIA A100 PCIe 40GB cards (4  |
 |                                   | nodes with 1 GPU, 2 nodes with 2  |

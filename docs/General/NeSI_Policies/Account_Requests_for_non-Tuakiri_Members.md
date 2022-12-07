@@ -6,7 +6,7 @@ most central and local government agencies, are not. If you are not
 affiliated with an organisation supported by the
 [Tuakiri](https://www.reannz.co.nz/products-and-services/tuakiri/)
 federation, you can request access via
-[my.nesi.org.nz](https://my.nesi.org.nz/register).
+[my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
 ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360007179015/mceclip0.png)
 
