@@ -11,6 +11,14 @@ stages:
   - test
   - deploy
 
+update_wordlist:
+  stage: test
+  script:
+  - cd includes/glossary
+  - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/Glossary.md
+  - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt
+  - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md
+
 test_build:
   stage: test
   script:
@@ -19,7 +27,6 @@ test_build:
     paths:
     - test
   allow_failure: true
-
 
 pages:
   stage: deploy
