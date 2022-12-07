@@ -1,19 +1,3 @@
-> ### Service Status {#prerequisites}
->
-> Our staged rollout of automatic cleaning is well advanced. The current
-> status is as follows:
->
-> -   Instead of projects being specifically enrolled, projects must now
->     be specifically exempted.
-> -   Projects already in existence as at 1 July 2020 and not yet
->     enrolled were temporarily exempted. These exemptions are being
->     removed, project by project, as individual projects\' allocations
->     come to an end and new allocations are granted.
-> -   Other projects have agreed exemptions. These exemptions are being
->     removed, project by project, when the reason for the exemption no
->     longer applies. We will contact each of these project teams at the
->     time.
-
 []{#criteria}The automatic cleaning feature is a programme of regular
 deletion of selected files from project directories in our nobackup file
 system. We do this to optimise the availability of this file system for

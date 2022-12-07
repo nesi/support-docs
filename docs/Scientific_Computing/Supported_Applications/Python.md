@@ -208,111 +208,95 @@ installed packages.
 
 The provided packages can be listed using
 
-    module load Python
+    module load Python/3.10.5-gimkl-2022a
     python -c "help('modules')"
 
-Adding packages
----------------
-
-Additional packages can be requested via a NeSI support ticket if there
-is wider need for it. If you just need it for your self or want to
-provide additional packages for your project group, you can install it
-using the following methods:
-
--   [pip install \--user in your
-    `$HOME`](#h_749d9d04-30f7-41fe-8721-87b9205e1df3)
--   [pip install into your project
-    directory](#h_01GF22DGZ3ZJV5J24PQMMTM15T)
--   using and virtual environment
-
-### Install into your `$HOME` {#h_749d9d04-30f7-41fe-8721-87b9205e1df3}
+Installing packages in your \$HOME
+----------------------------------
 
 This is the simplest way to install additional packages, but you might
 fill your `$HOME` quota and cannot share installations with
 collaborators.
 
-A packages prodXY can be installed using:
-
+    module load Python/3.10.5-gimkl-2022a
     pip install --user prodXY
 
-### Install into project directory {#h_01GF22DGZ3ZJV5J24PQMMTM15T}
+If you are working on multiple projects, this method will cause issues
+as your projects may require different versions of packages which are
+not compatible.
 
-This method is slightly more complicated, but provides the advantage
-that you do not fill up your `$HOME`  directory quota and you can easily
-share these installed packages with your collaborators. This method
-requires:
+We **strongly** recommend using separate [Python virtual
+environments](https://docs.python.org/3/library/venv.html) to isolate
+dependencies between projects, avoid filling your home space and being
+able to share installation with collaborators
 
--   installing Python package into a \"remote\" location (your project
-    directory
--   define the `$PATH` and `$PYTHONPATH` in your environment (e.g. using
-    a module file)
+Installing packages in a Python virtual environment
+---------------------------------------------------
 
-In the following we install a python3 package called  *`prodXY`* into
-`/nesi/project/<projectID>/PyPackages` and create a module for it.
+A Python virtual environment is lightweight system to create an
+environment which contains specific packages for a project, without
+interfering with the global Python installation. Each virtual
+environment is a different directory.
 
-####  
+To create a Python virtual environment, use the `venv` module as follows
 
-#### Manual install and provisioning
+    module load Python/3.10.5-gimkl-2022a
+    python3 -m venv /nesi/project/PROJECT_ID/my_venv
 
-Depending on the package you can install packages using:
+where `PROJECT_ID` is your NeSI project ID.
 
--   the Python Package Manager PIP
+Note that you need to *activate* the virtual environment before using it
+(to run a script or install packages)
 
-<!-- -->
+    source /nesi/project/PROJECT_ID/my_venv/bin/activate
 
-    $ pip install --prefix /nesi/project/<projectID>/PyPackages cogent
+Then you can install any pip-installable package in the virtual
+environment using
 
--   use source code
+    pip install prodXY
 
-<!-- -->
+Then a Slurm job submission script running your Python script would look
+like
 
-    $ python setup.py install --prefix /nesi/project/<projectID>/PyPackages
+    #!/bin/bash -e
+    #SBATCH --job-name    MyPythonJob
+    #SBATCH --time        01:00:00
+    #SBATCH --mem         512MB
 
- Python will not find the package by default, therefore you need to add
-the location of the package to the `$PYTHONPATH`. Furthermore, some
-packages provide binaries, which are accessible by adding the directory
-to `$PATH `
+    module purge
+    module load Python/3.10.5-gimkl-2022a
+    source /nesi/project/PROJECT_ID/my_venv/bin/activate
+    python MyPythonScript.py
 
-    $ export PYTHONPATH=/nesi/project/<projectID>/PyPackages/lib/python3.6/site-packages:$PYTHONPATH
-    $ export PATH=/nesi/project/<projectID>/PyPackages/bin:$PATH
+Python virtual environment isolation
+------------------------------------
 
-NOTE: If you install multiple packages in the same location, e.g.
-`/nesi/project/<projectID>/PyPackages`, you just need to set these
-environment variable once.
+By default, Python virtual environments are fully isolated from the
+system installation. It means that you will not be able to access
+packages already prepared by NeSI in the corresponding Python
+environment module.
 
-#### Creating a modulefile
+To avoid this, use the option `--system-site-packages` when creating the
+virtual environment
 
-These environment variables can be handled in a module file. Thus the
-packages (and others if desired) can be accessed by you and the project
-collaborators.
+    module load Python/3.10.5-gimkl-2022a
+    python3 -m venv --system-site-packages /nesi/project/PROJECT_ID/my_venv
 
-Therefore we create a modulefile let\'s say at
-`/nesi/project/<projectID>/modulefiles/PyXtra` and assume we installed a
-Python package into `/nesi/project/<projectID>/PyPackages`:
+A downside of this is that now your virtual environment also finds
+packages from your `$HOME` folder. To avoid this behavirour, make sure
+to use `export PYTHONNOUSERSITE=1` before calling pip or running a
+Python script. For example, in a Slurm job submission script
 
-    #%Module
-    module load Python/3.7.3-gimkl-2018b
-       # provide a description
-    module-whatis "The packageXY for python."
-    proc ModulesHelp { } {  puts stderr "This module loads the packageXY. It requires python3." }
+    #!/bin/bash -e
+    #SBATCH --job-name    MyPythonJob
+    #SBATCH --time        01:00:00
+    #SBATCH --mem         512MB
 
-    set PKG_PREFIX /nesi/project/<projectID>/PyPackages
-       # add the location of binaries to PATH, such they are immediately accessible
-    prepend-path PATH $PKG_PREFIX/bin
-       # add to PYTHONPATH to access python packages
-    prepend-path PYTHONPATH $PKG_PREFIX/lib/python3.7/site-packages/
-
-To use this module (and all other modules you create in that directory)
-you add the following to your `$HOME/.bashrc` (need to `source` it, or
-re-login to activate the changes):
-
-    module use /nesi/project/<projectID>/modulefiles
-
-Then you can simple load the module via:
-
-    module load PyXtra
-
- 
+    module purge
+    module load Python/3.10.5-gimkl-2022a
+    source /nesi/project/PROJECT_ID/my_venv/bin/activate
+    export PYTHONNOUSERSITE=1
+    python MyPythonScript.py
 
 Further notes
 =============

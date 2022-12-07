@@ -6,7 +6,7 @@
 > Your feedback is welcome, please don\'t hesitate to contact us at
 > <support@nesi.org.nz> to make suggestions.
 
-Getting started
+Getting started {#01GHF19KZ5P8Z4TZ8XQNNJFE6N}
 ===============
 
 RStudio can be accessed as a web application via [Jupyter on
@@ -24,7 +24,7 @@ Once RStudio is launched, you should briefly see a login screen. It will
 be auto-filled using a pre-generated password, unless you disabled
 javascript in your web browser.
 
-Changing R version
+Changing R version {#01GHF19KZ5RECSM2QSH0ZD9R0B}
 ==================
 
 You can configure a set of [environment
@@ -50,19 +50,35 @@ correct Library Paths are available. For R/4.1.0 the command
     [1] "/home/YOUR_USER_NAME/R/gimkl-2020a/4.1"                            
     [2] "/opt/nesi/CS400_centos7_bdw/R/4.1.0-gimkl-2020a/lib64/R/library"
 
-Package Installation
+Package Installation {#01GHF19KZ5RNM1XGE76EWS5PXM}
 ====================
 
-It is currently recommended, that package installations are still done
-as a terminal session with the same R module loaded. This avoids
-potential read/write issues with a full temp directory. After an
-installation the package will be immediately available in RStudio
-without the need to restart.
+To avoid read/write issues with a small temorary directory filling up,
+in a terminal run the following two lines of code. These will setup a
+larger directory that will allow for packages to be installed to your
+personal library. NOTE: this is not creating a library.
 
-Advanced usage
+<div>
+
+    $ mkdir -p /nesi/nobackup/<projectID>/rstudio_tmp
+    $ echo "TMP=/nesi/nobackup/<projectID>/rstudio_tmp" > .Renviron
+
+</div>
+
+Within RStudio run the command \`tempdir()\` which should return the
+following (below), where \`Rtmpjp2rm8\` is a randomly generated folder
+name, and is emptied with each new session. So will not fill up your
+home directory.
+
+    >tempdir()
+    [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
+
+The alternative is to install packages in a terminal session
+
+Advanced usage {#01GHF19KZ5ZHD0XK9M0QSSKDFX}
 ==============
 
-RStudio run in a [Singularity
+RStudio runs in a [Singularity
 container](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
 prepared by the NeSI team to run on
 [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz). The related code is
@@ -94,7 +110,7 @@ session:
 
     $ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
 
-Troubleshooting
+Troubleshooting {#01GHF19KZ6ZA8ZNDQDNFB8PWWP}
 ===============
 
 If you get an error 500 after clicking on the launcher icon, this could

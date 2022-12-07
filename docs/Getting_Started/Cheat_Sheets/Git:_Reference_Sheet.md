@@ -7,7 +7,73 @@ found [here](https://git-scm.com/docs/git), or using `man git`.
 
 ![Git\_Diagram.svg](https://support.nesi.org.nz/hc/article_attachments/360004194235/Git_Diagram.svg)
 
-### Getting Started
+Authentication
+--------------
+
+In order to pull from a private repo, or push changes to a remote, you
+need to authenticate yourself on the cluster.
+
+> ### Password authentication {#prerequisites}
+>
+> GitHub removed support for password authentication on August 13, 2021.
+> Using a SSH key is now the easiest way to set up authentication.
+
+### SSH Authentication (GitHub)
+
+More information can be found in the [GitHub
+documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+
+-   On the NeSI cluster, run the command 
+
+        ssh-keygen -t ed25519 -C "your_github_account@example.com"
+
+-   When prompted for a file name, press `enter`. When prompted for a
+    passcode, press enter twice more.
+-   Open up the newly created .pub key with the command 
+
+        cat ~/.ssh/id_ed25519.pub
+
+    (or whatever you named the key). It should look something like: 
+
+        ssh-ed25519 ABCDEFGKSAfjksjafkjsaLJfakjJF your_github_account@example.com
+
+    Copy the whole key.
+
+-   Now log in to your github account. In the upper-right corner of any
+    page, click your profile photo click **Settings**.
+
+    [![Settings icon in the user
+    bar](https://docs.github.com/assets/cb-34573/images/help/settings/userbar-account-settings.png)]{.procedural-image-wrapper}
+
+-   In the \"Access\" section of the sidebar, click **SSH and GPG
+    keys**.
+
+-   Click **New SSH key** or **Add SSH key**.
+
+    [![SSH Key
+    button](https://docs.github.com/assets/cb-28257/images/help/settings/ssh-add-ssh-key-with-auth.png)]{.procedural-image-wrapper}
+
+-   In the \"Title\" field, put \"Mahuika\" or \"NeSI\".
+
+-   Paste your key into the \"Key\" field.
+
+    [![The key
+    field](https://docs.github.com/assets/cb-47495/images/help/settings/ssh-key-paste-with-type.png)]{.procedural-image-wrapper}
+
+-   Click **Add SSH key**.
+
+-   Switching back to your terminal on the cluster, you can test your
+    connection with the command 
+
+        ssh -T git@github.com
+
+    You may be promted to authenticate, if so type \'yes\'\
+    If everything is working, you should see the message 
+
+        Hi User! You've successfully authenticated, but GitHub does not provide shell access.
+
+Basics
+------
 
 You can create a repository with either of the following commands.
 
@@ -16,7 +82,7 @@ You can create a repository with either of the following commands.
   init    `git init`                                              Creates a new empty repo in your current directory.
   ------- ------------------------------------------------------- ---------------------------------------------------------
 
-### Basics
+ 
 
 add
 
@@ -71,17 +137,12 @@ Removes all files from staging area. (Opposite of `git add`)
 
 Removes `<filename>` from staging area.
 
-### Remote
+Remote
+------
 
 By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
 ` git branch --set-upstream-to   <origin>`.
-
-> ### Tip {#prerequisites}
->
-> Running the command `git config --global credential.helper store` will
-> store your login details next time they are entered, saving you from
-> having to enter them again.
 
 fetch 
 
@@ -122,7 +183,8 @@ Incorporates changes from local repo into `<repo>` `<branch>`
 > finished, this will save you wasting time resolving unnecessary
 > merges.
 
-### Branches
+Branches
+--------
 
 At an introductory level, it is best to avoid workflows that lead to
 multiple branches, or requires merging.

@@ -84,9 +84,8 @@ Create/edit the following **flow.cylc** file containing
         """
     [runtime] # Define what each task should run
       [[root]] # Default settings inherited by all tasks
-        platform = maui-cs-slurm # Run "cylc conf" to see platforms. 
+        platform = mahuika-slurm # Run "cylc conf" to see platforms. 
         [[[directives]]] # Default SLURM options for the tasks below
-           --partition = nesi_prepost # CHANGE 
            --account = nesi99999 # CHANGE
       [[taskA]]
         script = echo "running task A"
@@ -97,7 +96,15 @@ Create/edit the following **flow.cylc** file containing
       [[taskC]]
         script = echo "running task C"
 
-How to interact with Cylc {#01G9X8TM55MJRN2SPQX792TS6E}
+In the above example, we have three tasks (taskA, taskB and taskC),
+which run under SLURM (hence platform = mahuika-slurm). Type
+
+    cylc config --platform-names
+
+[to see a list of platforms. The SLURM settings for taskA are in the
+\[\[\[directives\]\]\] section.]{.s1}
+
+How to interact with Cylc {#01GFPTSN3XAE8EXPK03B6W99N7}
 -------------------------
 
 Cylc takes command lines. Type 

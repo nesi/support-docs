@@ -7,25 +7,22 @@ sessions are open to anyone - you don\'t need to be an existing NeSI
 user.\
 \
 
-**Office Hours in October 2022**
---------------------------------
+**Office Hours in December 2022**
+---------------------------------
 
 Click on the links below to add the date & Zoom link to your calendar.
 
--   [05 October - 9:00 - 10:00
-    am](https://calendar.google.com/event?action=TEMPLATE&tmeid=NnI1ZWFqaDMzbzdrNWNidW4xMnBiNDJ2c2UgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [12 October - 3:00 - 4:00
-    pm](https://calendar.google.com/event?action=TEMPLATE&tmeid=MW5iZDBjcHJwb2NjdnFoa3JtbDEyYmhjYWggY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [19 October - 9:00 - 10:00
-    am](https://calendar.google.com/event?action=TEMPLATE&tmeid=NWtmYzhtOWh1ZjU2N2dsdjkwMmU0NHZzMTggY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [26 October - 3:00 - 4:00
-    pm](https://calendar.google.com/event?action=TEMPLATE&tmeid=N2hsaWxrMTg5bjBsOHNjcWxlZHV1bWp1dWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [07 December : 9:00-10:00
+    AM ](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjY2NjlpcXBjZnZyMXFubHY2dG5paHJiNXAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [14 December : 3:00-4:00
+    PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NjF0cnN0dHY5MzRkY2kxdmpxcGhrY2hsZWYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [21 December : 9:00-10:00
+    AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjEzazVhbXM0YzA2aWZyOWZqcTRjOTJoZWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
 If you are unable to add these Office Hours sessions to your calendar
 through these links, please email us at <training@nesi.org.nz> and we
-can send a calendar invite directly to you. 
-
- 
+can send a calendar invite directly to you. \
+\
 
 **How Does It Work**
 --------------------

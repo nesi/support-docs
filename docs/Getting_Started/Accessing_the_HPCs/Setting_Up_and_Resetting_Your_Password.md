@@ -35,8 +35,7 @@
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds\
      \
-    ![](https://documents.lucid.app/documents/1eb87b6a-7324-410f-aeb2-7fecdef84390/pages/0_0?a=140&x=466&y=-412&w=803&h=149&store=1&accept=image%2F*&auth=LCA%2031c6caafb6688e6e525addd344696b66aec8f8e4-ts%3D1650531657){width="554"
-    height="103"}
+    ![change\_success.png](https://support.nesi.org.nz/hc/article_attachments/5662974048911)
 5.  Followed by an email confirmation similar to below
 
 ![password\_set\_confirmation.png](https://support.nesi.org.nz/hc/article_attachments/4702120915343/password_set_confirmation.png){width="440"
@@ -74,8 +73,7 @@ height="285"}
 
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds\
-    1.  -   ![](https://documents.lucid.app/documents/1eb87b6a-7324-410f-aeb2-7fecdef84390/pages/0_0?a=140&x=466&y=-412&w=803&h=149&store=1&accept=image%2F*&auth=LCA%2031c6caafb6688e6e525addd344696b66aec8f8e4-ts%3D1650531657){width="554"
-            height="103"}
+    1.  -   ![change\_success.png](https://support.nesi.org.nz/hc/article_attachments/5662974048911)
 
 5.  Followed by an email confirmation similar to below\
      \

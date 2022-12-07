@@ -2,17 +2,19 @@ Globus
 ------
 
 Globus is a third-party service for transferring large amounts of data
-between Globus Data Transfer Nodes (DTNs). With Globus, very high data
-transfer rates are achievable. This service allows data to be accessible
-to any person who has a Globus account. The newest implementation (v5)
-provides extra features and some key differences from the previous setup
-that you can find
+between Globus Data Transfer Nodes (DTNs). For example you can transfer
+data between the NeSI Wellington DTN V5 and your personal workstation
+endpoint, or an endpoint from your institution. With Globus, very high
+data transfer rates are achievable. This service allows data to be
+accessible to any person who has a Globus account. The newest
+implementation (v5) provides extra features and some key differences
+from the previous setup that you can find
 [here](https://docs.globus.org/globus-connect-server/). 
 
 To use Globus on NeSI platforms, you need:
 
 1.  A Globus account (see [Initial Globus Sign-Up and Globus
-    Id](https://support.nesi.org.nz/hc/en-gb/articles/360000817476))
+    ID](https://support.nesi.org.nz/hc/en-gb/articles/360000817476))
 2.  An active NeSI account (see [Creating a NeSI
     Account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715))
 3.  Access privileges on the non-NeSI Globus endpoint/collection you
@@ -96,7 +98,7 @@ NeSI endpoints start with \"nesi\#\":
 
 ![filemanage\_nesi.png](https://support.nesi.org.nz/hc/article_attachments/4940171187343/filemanage_nesi.png)
 
-Select the endpoint \"Nesi Wellington DTN V5\", and you will be asked to
+Select the endpoint \"NeSI Wellington DTN V5\", and you will be asked to
 authenticate your access to the endpoint. Click Continue to the next
 step.
 
@@ -135,7 +137,7 @@ path, then you could change the path to
 
 \(3) project sub-directories of ***/nesi/nobackup/\<project\_code\>***  -
 see [Globus Paths, Permissions,  Storage
-Allocation.](https://support.nesi.org.nz/hc/en-gb/articles/360000812776-Globus-Paths-Permissions-Storage-Allocation)\
+Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation).\
 \
 Navigate to your selected directory. e.g. the *nobackup* filesystem
 */nesi/nobackup/\<project\_code\>* and select the two-endpoint panel for
@@ -170,7 +172,7 @@ In brief:
     height="34"}located on the top-right of the *File Manager* page.
 -   Select the Endpoints you wish to move files between (start typing
     \"nesi\#\" to see the list of NeSI DTNs to select from).
-    [Authenticate](https://support.nesi.org.nz/hc/en-gb/articles/360000955535)
+    [Authenticate](https://support.nesi.org.nz/hc/en-gb/articles/4405630948495)
     at both endpoints.
 -   At Globus.org the** **endpoint **[defaults]{.wysiwyg-underline} to
     \"/home/\<username\>\" path** (represented by \"/\~/\") on Mahuika
@@ -178,7 +180,7 @@ In brief:
     as home directories are very small. Instead, navigate to an
     appropriate project directory under /nobackup (see [Globus Paths,
     Permissions, Storage
-    Allocation](https://support.nesi.org.nz/hc/en-gb/articles/360000812776-Globus-Paths-Permissions-Storage-Allocation)).
+    Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation)).
 -   Transfer the files by clicking the appropriate
     ![start.png](https://support.nesi.org.nz/hc/article_attachments/5622408199183)button
     depending on the direction of the transfer.

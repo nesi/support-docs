@@ -1,9 +1,7 @@
 > ### Service Status {#nearline-service-status}
 >
 > Mahuika\'s new CPU nodes are in an **Early Access Programme (EAP)
-> phase** and not fully in production. 
-
- 
+> phase** and not fully in production.
 
 Early Access Programme
 ======================
@@ -64,14 +62,10 @@ Support](https://support.nesi.org.nz/hc/en-gb/requests/new). 
     nodes. All feedback and insights should be sent to [NeSI
     Support.](https://support.nesi.org.nz/hc/en-gb/requests/new)
 
- 
-
 For more details on the new Mahuika Extension technology and what we\'re
 requesting in terms of benchmarking, please read the information below.
 
-\-\-\-\-\-\-\-\--
-
- 
+------------------------------------------------------------------------
 
 Differences from original Mahuika compute nodes
 ===============================================
@@ -203,8 +197,6 @@ the job description file:
 
     #SBATCH --partition=milan
 
- 
-
 ### Limits
 
 Currently up to 10 nodes per account, 7 days maximum job duration. If
@@ -226,8 +218,6 @@ Timing can be obtained through time command, for example:
 
 or via `sacct`.
 
- 
-
 Advanced Slurm options for benchmarking
 ---------------------------------------
 
@@ -238,8 +228,6 @@ When running benchmarks (and only then!) we recommend using 
 (with short jobs please) so that you have node(s) to yourself and will
 not be affected by jobs from other users.  
 
- 
-
 ### I/O performance
 
 There are reports about lower I/O performance when running jobs on Milan
@@ -247,8 +235,6 @@ nodes. This issue is being investigated and will be addressed once the
 partition is fully populated. Please, note that the reduced performance
 does not affect all input/output operations. Please, contact us if you
 have concerns regarding this issue.
-
- 
 
 Any questions?
 ==============
