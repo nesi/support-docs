@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This package provides an implementation of the inference pipeline of
 AlphaFold v2.0. This is a completely new model that was entered in
@@ -16,15 +15,13 @@ a detailed description of the method.
 
 Home page is at <https://github.com/deepmind/alphafold> 
 
-License and Disclaimer
-======================
+# License and Disclaimer
 
 This is not an officially supported Google product.
 
 Copyright 2021 DeepMind Technologies Limited.
 
-[](https://github.com/deepmind/alphafold#alphafold-code-license){#user-content-alphafold-code-license .anchor}AlphaFold Code License
-------------------------------------------------------------------------------------------------------------------------------------
+## [](https://github.com/deepmind/alphafold#alphafold-code-license){#user-content-alphafold-code-license .anchor}AlphaFold Code License
 
 Licensed under the Apache License, Version 2.0 (the \"License\"); you
 may not use this file except in compliance with the License. You may
@@ -37,16 +34,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[](https://github.com/deepmind/alphafold#model-parameters-license){#user-content-model-parameters-license .anchor}Model Parameters License
-------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://github.com/deepmind/alphafold#model-parameters-license){#user-content-model-parameters-license .anchor}Model Parameters License
 
 The AlphaFold parameters are made available for non-commercial use only,
 under the terms of the Creative Commons Attribution-NonCommercial 4.0
 International (CC BY-NC 4.0) license. You can find details
 at: <https://creativecommons.org/licenses/by-nc/4.0/legalcode>
 
-AlphaFold Databases
--------------------
+## AlphaFold Databases
 
 There are eight reference databases (parameters) where all of them are
 downloaded, verified and stored in NeSI filesystem
@@ -70,19 +65,16 @@ downloaded, verified and stored in NeSI filesystem
 
 -   `pdb_seqres` & `uniprot` are for `multimer`
 
-Singularity container
----------------------
+## Singularity container
 
 We prepared a Singularity container image based on the [official
 Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
 modifications. Image (.*simg*) and the corresponding definition file
 (*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
- 
--
+##  
 
-[](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script){#user-content-example-slurm-script .anchor}Example Slurm scripts
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script){#user-content-example-slurm-script .anchor}Example Slurm scripts
 
  
 
@@ -242,8 +234,7 @@ Input *fasta* used in following example and subsequent benchmarking is
 
 ###  
 
-Troubleshooting
----------------
+## Troubleshooting
 
 -   If you are to encounter the message \"*RuntimeError: Resource
     exhausted: Out of memory*\" , add the following variables to the

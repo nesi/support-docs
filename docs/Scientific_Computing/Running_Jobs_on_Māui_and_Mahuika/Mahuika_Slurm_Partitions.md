@@ -1,5 +1,4 @@
-Definitions
------------
+## Definitions
 
 **CPU:** A logical core, also known as a hardware thread. Referred to as
 a \"CPU\" in the Slurm documentation.  Since
@@ -25,8 +24,7 @@ or more threads. All of a task\'s threads must run within the same node.
 
 **Walltime: **Real world time, as opposed to CPU time (walltime x CPUs).
 
-General Limits
---------------
+## General Limits
 
 -   No individual job can request more than 20,000 CPU hours. This has
     the consequence that a job can request more CPUs if it is shorter
@@ -41,8 +39,7 @@ there is a good reason. For example we will increase the limit on queued
 jobs for those who need to submit large numbers of jobs, provided that
 they undertake to do so with job arrays.
 
-Partitions
-----------
+## Partitions
 
 A partition can be specified via the appropriate [sbatch
 option](https://support.nesi.org.nz/hc/en-gb/articles/360000691716/),
@@ -158,8 +155,7 @@ E.g.:
 slices](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/)
 (5GB each)
 
-Quality of Service
-------------------
+## Quality of Service
 
 Orthogonal to the partitions, each job has a \"Quality of Service\",
 with the default QoS for a job being determined by the allocation class
@@ -178,8 +174,7 @@ Specifying `--qos=interactive` will give the job very high priority, but
 is subject to some limits: up to 4 jobs, 16 hours duration, 4 CPUs, 128
 GB, and 1 GPU.
 
-Requesting GPUs {#req_gpu}
----------------
+## Requesting GPUs {#req_gpu}
 
 Nodes in the `gpu` partition have 2 P100 GPU cards each, so you can
 request 1 or 2 GPUs per node:
@@ -212,8 +207,7 @@ more details about Slurm and CUDA settings.
     GPUs used by jobs of 15 hours or less.
 -   There is a limit of 1 A100-1g.5gb GPU job per user.
 
-Mahuika Infiniband Islands
---------------------------
+## Mahuika Infiniband Islands
 
 Mahuika is divided into "islands" of 26 nodes (or 1,872 CPUs).
 Communication between two nodes on the same island is faster than

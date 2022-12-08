@@ -12,8 +12,7 @@ WSL is enabled by default on later versions of Windows 10.
 > You can test whether WSL is installed by opening \'Windows
 > PowerShell\' and typing `wsl`.
 
-Enabling WSL
-------------
+## Enabling WSL
 
 1.  Open \'Turn Windows features on or off\'\
     ![WSL1.png](https://support.nesi.org.nz/hc/article_attachments/360002491356/WSL1.png)

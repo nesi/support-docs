@@ -10,8 +10,7 @@
 >     password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995-Setting-Up-and-Resetting-Your-Password).
 > -   Have a device with an authentication app.
 
- Authentication App
--------------------
+##  Authentication App
 
 In order to generate your second factor, which you will require in order
 to access to any NeSI cluster, you will need a device with an
@@ -23,8 +22,7 @@ If you some reason you can\'t do this, please contact NeSI support.
 
  
 
-Linking a device to your account
---------------------------------
+## Linking a device to your account
 
 1.  Log in to [My NeSI](https://my.nesi.org.nz) via your browser.
 
@@ -42,8 +40,7 @@ Linking a device to your account
     not able to scan the barcode from your device you can manually enter
     the provided authentication code into your authentication app.
 
-The second-factor token
------------------------
+## The second-factor token
 
 The [6 digit code]{.wysiwyg-underline} displayed on your app can now be
 used as the second factor in the authentication process.\

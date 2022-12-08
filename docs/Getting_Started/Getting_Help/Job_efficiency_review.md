@@ -1,5 +1,4 @@
-Introduction
-------------
+## Introduction
 
 At NeSI we want to help you run your work as efficiently as possible on
 our platforms, so that you obtain your results in a timely manner and so
@@ -13,8 +12,7 @@ what to expect during this process. If you are interested in us looking
 into your job efficiency for potential improvements, please contact us
 at <support@nesi.org.nz>.
 
-Expected outcomes
------------------
+## Expected outcomes
 
 At the end of a job efficiency review you could expect one of the
 following outcomes:
@@ -30,8 +28,7 @@ following outcomes:
         project, where we would work with you on a longer term project
         to implement any agreed changes
 
-What you can expect from us
----------------------------
+## What you can expect from us
 
 During a job efficiency review you can expect that we will:
 
@@ -42,8 +39,7 @@ During a job efficiency review you can expect that we will:
 -   Communicate clearly and pass on any suggestions for improvements
     that we identify
 
-What we expect of you
----------------------
+## What we expect of you
 
 During a job efficiency review, some input will be required from you,
 such as:

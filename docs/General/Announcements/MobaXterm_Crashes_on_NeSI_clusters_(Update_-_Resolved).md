@@ -1,12 +1,10 @@
-Update - 2020/03/13 
---------------------
+## Update - 2020/03/13 
 
 MobaXterm is acting up again, we recommend disabling the SCP browser (as
 shown in the 2019/11/01 update), or using a [different terminal
 application](https://support.nesi.org.nz/hc/en-gb/articles/360001016335-Choosing-and-Configuring-Software-for-Connecting-to-the-Clusters).
 
-Update (Resolved) - 2019-12-18
-------------------------------
+## Update (Resolved) - 2019-12-18
 
 Disabling the \"Remote-monitoring (experimental)\" in the SSH settings
 seems to resolve this issue. If this does not resolve this issue for you
@@ -14,8 +12,7 @@ please let us know.
 
 ![moba3\_update2.png](https://support.nesi.org.nz/hc/article_attachments/360003132056/moba3_update2.png)
 
-Update - 2019/11/01
--------------------
+## Update - 2019/11/01
 
 Disabling the SSH-browser under your session settings will cause the
 crashes to stop, however this will also remove your ability to transfer
@@ -23,8 +20,7 @@ files.
 
 ![no\_scp.png](https://support.nesi.org.nz/hc/article_attachments/360002889276/no_scp.png)
 
-2019/10/14
-----------
+## 2019/10/14
 
 Over the past month we have had multiple reports of MobaXterm crashing
 to desktop without warning when connecting to a NeSI cluster. This bug
@@ -59,8 +55,7 @@ with the following information.
 
 Thanks for your assistance.
 
- 
--
+##  
 
  
 

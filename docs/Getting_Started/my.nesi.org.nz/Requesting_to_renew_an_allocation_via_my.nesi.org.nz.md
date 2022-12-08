@@ -1,5 +1,4 @@
-How to raise a request using my.nesi.org.nz? {#01FZGWBZBC2HRNRMM9RXFH2WR5}
---------------------------------------------
+## How to raise a request using my.nesi.org.nz? {#01FZGWBZBC2HRNRMM9RXFH2WR5}
 
 1.  Login to <https://my.nesi.org.nz/projects/list> and select a project
     from the list.

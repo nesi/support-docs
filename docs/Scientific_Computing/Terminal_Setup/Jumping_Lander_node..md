@@ -27,8 +27,7 @@ your remote will be forwarded to your local.
 
 > -   
 >
-MobaXterm
-=========
+# MobaXterm
 
 > ### Tips {#prerequisites}
 >
@@ -51,8 +50,7 @@ click \'Tools \> MobaSSH Tunnel (port forwarding)\':
 
 ![sshTunnel.PNG](https://support.nesi.org.nz/hc/article_attachments/360002834175/sshTunnel.PNG)
 
-PuTTY
-=====
+# PuTTY
 
 *Coming soon..*
 

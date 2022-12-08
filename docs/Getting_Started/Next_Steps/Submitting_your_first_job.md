@@ -1,12 +1,11 @@
-Environment Modules
--------------------
+## Environment Modules
 
 [Modules are a convenient  way to provide access to applications  on the
 cluster. They prepare the environment you need to run an
 application.]{style="font-weight: 400;"}
 
-[For a full list of module commands run man
-module]{style="font-weight: 400;"}
+[For a full list of module commands run <kbd>man
+module</kbd>]{style="font-weight: 400;"}
 
   ------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   `module spider [ <string> ]`   List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)
@@ -15,18 +14,16 @@ module]{style="font-weight: 400;"}
   `module list [ <string> ]`     List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.
   ------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Slurm
------
+## Slurm
 
 Jobs on Mahuika and Māui are submitted* *in the form of a *[batch
 script ]{style="font-weight: 400;"}*[containing the code you want to run
 and a header of information needed by our job scheduler
 *Slurm.*]{style="font-weight: 400;"}
 
-Creating a batch script
------------------------
+## Creating a batch script
 
-Create a new file and open it with nano myjob.sl
+Create a new file and open it with <kbd>nano myjob.sl</kbd>
 
     #!/bin/bash -e
     #SBATCH --job-name=SerialJob # job name (shows up in the queue)
@@ -44,8 +41,7 @@ Note:`#!/bin/bash`is expected by Slurm
 Note: if you are a member of multiple accounts you should add the line
 `#SBATCH --account=<projectcode>`
 
-Testing
--------
+## Testing
 
 We recommend testing your job using the debug Quality of Service (QOS). 
 The debug QOS can be gained by adding the `sbatch` command line option
@@ -60,8 +56,7 @@ jobs, but is limited to one small job per user at a time: no more than
 > on the login node for long periods of time or using large numbers of
 > CPUs will be terminated.
 
-Submitting
-----------
+## Submitting
 
 Jobs are submitted to the scheduler using:
 
@@ -77,8 +72,7 @@ shell script through SBATCH pragmas
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/sbatch.html)
 
-Job Queue
----------
+## Job Queue
 
 The currently queued jobs can be checked using 
 
@@ -108,32 +102,31 @@ then additional lines for each job step.
 
 > ### Tips {#prerequisites}
 >
-> sacct -X Only show parent processes.
+> <kbd>sacct -X</kbd> Only show parent processes.
 >
-> sacct \--state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
-> state.
+> <kbd>sacct \--state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT</kbd>
+> Filter jobs by state.
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/sacct.html)
 
- Cancelling
------------
+##  Cancelling
 
-scancel \<jobid\> will cancel the job described by \<jobid\>. You can
-obtain the job ID by using sacct or squeue.
+<kbd>scancel \<jobid\></kbd> will cancel the job described by
+<kbd>\<jobid\></kbd>. You can obtain the job ID by using
+<kbd>sacct</kbd> or <kbd>squeue</kbd>.
 
 > ### Tips {#prerequisites}
 >
-> scancel -u \[username\] Kill all jobs submitted by you.
+> <kbd>scancel -u \[username\]</kbd> Kill all jobs submitted by you.
 >
-> scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
-> \[n2\]
+> <kbd>scancel {\[n1\]..\[n2\]}</kbd> Kill all jobs with an id between
+> <kbd>\[n1\]</kbd> and <kbd>\[n2\]</kbd>
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/scancel.html)
 
-Job Output
-----------
+## Job Output
 
 When the job completes, or in some cases earlier, two files will be
 added to the directory in which you were working when you submitted the

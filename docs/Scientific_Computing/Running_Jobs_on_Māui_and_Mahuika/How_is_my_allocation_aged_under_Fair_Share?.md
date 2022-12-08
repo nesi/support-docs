@@ -36,16 +36,14 @@ per annum). For each of the scenarios, we will look at the project\'s
 Fair Share score at midnight starting 21 November 2018, when it has ten
 days left on its allocation.
 
-Scenario 1: Constant usage
---------------------------
+## Scenario 1: Constant usage
 
 In this scenario, the project team has used the cluster at a constant
 rate of 1,700 CPU core hours per day. At the end of 20 November, the
 project has used a total of 294,100 CPU core hours, just under 95% of
 its total allocation. The project\'s Fair Share score is 0.5.
 
-Scenario 2: Alternating quiet and busy months
----------------------------------------------
+## Scenario 2: Alternating quiet and busy months
 
 In this scenario, the project team did not use the cluster at all in the
 months of June, August and October, but used the cluster at a rate of
@@ -54,8 +52,7 @@ end of 20 November, the project has used a total of 275,400 CPU core
 hours, just under 89% of its total allocation. The project\'s Fair Share
 score is approximately 0.38.
 
-Scenario 3: Three quiet months followed by three busy months
-------------------------------------------------------------
+## Scenario 3: Three quiet months followed by three busy months
 
 In this scenario, the project team, despite getting an allocation that
 started in June, did not start using the cluster until September, when
@@ -66,8 +63,7 @@ more concentrated towards the back end of the allocation, the project\'s
 Fair Share score is approximately 0.26. By now, some difficulty in
 getting jobs through the queue would be expected.
 
-Scenario 4: Four quiet months followed by two busy months
----------------------------------------------------------
+## Scenario 4: Four quiet months followed by two busy months
 
 In this scenario, the project team did not start using the cluster until
 October, and then began using at a rate of 5,100 CPU core hours per day.
@@ -76,8 +72,7 @@ core hours, just under 84% of its total allocation. The project\'s Fair
 Share score is less than 0.15. Jobs in the queue are likely to be
 considerably delayed.
 
-Scenario 5: Attempting to use the entire allocation in its last 17 days
------------------------------------------------------------------------
+## Scenario 5: Attempting to use the entire allocation in its last 17 days
 
 In this scenario, the project team started work on 14 November, aiming
 to use through the entire 311,100 CPU core hours in 17 days, and

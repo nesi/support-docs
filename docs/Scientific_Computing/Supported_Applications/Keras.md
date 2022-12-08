@@ -15,8 +15,7 @@ different stimuli will output different signals. With sufficient
 training, we can teach a neural network to acquire the correct weights,
 i.e. adjust the weights until the desired output is produced. 
 
-Counting dots in images
------------------------
+## Counting dots in images
 
 In this example, we will set up a neural network to count the number of
 dots embedded in an image.

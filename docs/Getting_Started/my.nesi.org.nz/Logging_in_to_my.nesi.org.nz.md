@@ -1,5 +1,4 @@
-Login credentials {#01F4GDKWCS77EHT9R115HFJC28}
------------------
+## Login credentials {#01F4GDKWCS77EHT9R115HFJC28}
 
 We allow students, academics, alumni and researchers to securely login
 and create a [NeSI account
@@ -28,8 +27,7 @@ on Tuakiri. 
 See also [Account Requests for non-Tuakiri
 Members](https://support.nesi.org.nz/hc/en-gb/articles/360000216035)
 
-Troubleshooting login issues {#01F4GDN6XE5RWF610MZKG77EAS}
-----------------------------
+## Troubleshooting login issues {#01F4GDN6XE5RWF610MZKG77EAS}
 
 Please use the **[Tuakiri Attribute
 Validator](https://attributes.tuakiri.ac.nz/snapshots/latest) **to

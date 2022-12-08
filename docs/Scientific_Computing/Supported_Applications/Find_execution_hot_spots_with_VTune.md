@@ -1,5 +1,4 @@
-What is VTune?
---------------
+## What is VTune?
 
 VTune is a tool that allows you to quickly identify where most of the
 execution time of a program is spent. This is known as profiling. It is
@@ -9,8 +8,7 @@ them in an intuitive way.  Another tool that provides similar
 information is [ARM
 MAP](https://support.nesi.org.nz/hc/en-gb/articles/360000930396-Profiler-ARM-MAP).
 
-How to use VTune
-----------------
+## How to use VTune
 
 We\'ll show how to profile a C++ code with VTune - feel free to choose
 your own code instead. Start with 
@@ -74,8 +72,7 @@ Time]{.s1}
 method (26s), with significant amounts of time spent allocating (6.5s)
 and deallocating (9.2s) memory. ]{.s1}
 
- Drilling further into the code
--------------------------------
+##  Drilling further into the code
 
 [Often this is enough to give you a feel for where the code can be
 improved. To explore further you can fire up]{.s1} 

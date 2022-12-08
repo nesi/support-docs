@@ -3,11 +3,9 @@
 > Partitions on these systems that may be used for NeSI workloads carry
 > the prefix **nesi\_**.
 
- 
--
+##  
 
-Definitions
------------
+## Definitions
 
 **CPU** - A logical core, also known as a hardware thread. Referred to
 as a \"CPU\" in the Slurm documentation.  Since
@@ -24,11 +22,9 @@ launch with *srun*.
 
 **Walltime: **Real world time, as opposed to CPU time (walltime x CPUs).
 
- 
--
+##  
 
-Māui (XC50) Slurm Partitions
-----------------------------
+## Māui (XC50) Slurm Partitions
 
 Nodes are not shared between jobs on Māui, so the minimum charging unit
 is node-hours, where 1 node-hour is 40 core-hours, or 80 Slurm
@@ -83,11 +79,9 @@ job very high priority, but is subject to strict limits: 15 minutes per
 job, and only 1 job at a time per user. Debug jobs are limited to 2
 nodes.[]{#_Toc514341606}
 
- 
--
+##  
 
-Māui\_Ancil (CS500) Slurm Partitions
-------------------------------------
+## Māui\_Ancil (CS500) Slurm Partitions
 
  
 

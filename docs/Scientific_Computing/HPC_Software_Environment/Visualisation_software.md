@@ -22,11 +22,9 @@ In the following installed packages are listed for:
 
 -   3D Visualisation Software
 
-Scripting Languages with Visualisation Capabilities
-===================================================
+# Scripting Languages with Visualisation Capabilities
 
-Python
-------
+## Python
 
 The Python language comes with packages such as \"matplotlib\" for
 general-purpose 2D visualisation, or \"vtk\" (see VTK section on this
@@ -65,11 +63,9 @@ page) for 3D visualisation.
   Python/3.9.5-gimkl-2020a        ✔                              Python 3 base packages
   ------------------------------- ------------- ---------------- -------------------------------------------
 
- 
--
+##  
 
-R
--
+## R
 
 The R language comes with built-in 2D plotting capabilities that can be
 extended with additional packages.
@@ -93,11 +89,9 @@ extended with additional packages.
   Rstudio/1.1.456                         ✔                Rstudio IDE
   ------------------------- ------------- ---------------- -------------------------------
 
- 
--
+##  
 
-NCL
----
+## NCL
 
 The NCAR Command Language provides visualisation capabilities which are
 mostly used in the weather and climate fields.
@@ -113,8 +107,7 @@ mostly used in the weather and climate fields.
 
  
 
-MATLAB
-------
+## MATLAB
 
 The MATLAB programming language comes with built-in visualisation
 capabilities.
@@ -132,14 +125,11 @@ capabilities.
   MATLAB/2021a      ✔                               
   ----------------- ------------- ---------------- -------------
 
- 
-=
+#  
 
-2D Visualisation Software
-=========================
+# 2D Visualisation Software
 
-IRIS
-----
+## IRIS
 
 IRIS is a Python-based visualisation tool that is mainly used in the
 weather and climate fields.
@@ -155,11 +145,9 @@ weather and climate fields.
   Anaconda3/2020.02-GCC-7.1.0                 ✔                IRIS v2.4.0
   ----------------------------- ------------- ---------------- ------------------
 
- 
--
+##  
 
-Ncview
-------
+## Ncview
 
 Ncview is a visual browser for netCDF files.
 
@@ -171,11 +159,9 @@ Ncview is a visual browser for netCDF files.
   NCVIEW/2.1.8-GCC-7.1.0                    ✔                
   -------------------------- ------------- ---------------- -------------
 
- 
--
+##  
 
-XCONV
------
+## XCONV
 
 XCONV is a visual browser for netCDF and Unified Model format files.
 
@@ -186,14 +172,11 @@ XCONV is a visual browser for netCDF and Unified Model format files.
   XCONV/1.93                       ✔                
   ----------------- ------------- ---------------- -------------
 
- 
-=
+#  
 
-3D Visualisation Software
-=========================
+# 3D Visualisation Software
 
-ParaView
---------
+## ParaView
 
 [ParaView](https://www.paraview.org/) is a high-performance 3D
 visualisation tool. The headless versions only provide ParaView Server,
@@ -264,8 +247,7 @@ setup:
     \"11111\", then click on \"Configure\"
 -   Select the new server and click on \"Connect\"
 
-VisIt
------
+## VisIt
 
 VisIt is a high-performance 3D visualisation tool. At this point, only
 GUI-based interactive sessions on CPUs via NICE DCV are supported, GPU
@@ -278,11 +260,9 @@ support and client-server operation will be added later.
   VisIt/2.13.3-gimpi-2018b-GUI-Mesa                 ✔                GUI version for CPUs
   ----------------------------------- ------------- ---------------- ----------------------
 
- 
--
+##  
 
-VTK
----
+## VTK
 
 The Visualization ToolKit (VTK) can be used for 3D visualisation in
 various programming languages, in particular with the Python scripting

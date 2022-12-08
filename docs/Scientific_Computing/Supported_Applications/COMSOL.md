@@ -16,8 +16,7 @@ Will display a list of COMSOL batch commands.
 
 <div>
 
-Batch Submission
-================
+# Batch Submission
 
 When using COMSOL batch the following flags can be used to control
 distribution. 
@@ -30,39 +29,37 @@ distribution. 
   `-f <path to hostlist>`   Host file. You wont\'t need to set this in most circumstances.
   ------------------------- ----------------------------------------------------------------------------------------------------------------------------------
 
- 
-=
+#  
 
-Example Scripts {#example-script}
-===============
+# Example Scripts {#example-script}
 
 </div>
 
 ------------------------------------------------------------------------
 
 +-----------------------------------+-----------------------------------+
-| Serial Example                    |     #!/bin/bash -e                |
-| --------------                    |                                   |
-|                                   |     #SBATCH --job-name      COMSO |
-| -------------------------------   | L-serial                          |
-|                                   |     #SBATCH --licenses      comso |
-| Single *process* with a single    | l@uoa_foe                         |
-| *thread*                          |     #SBATCH --time          00:05 |
-|                                   | :00          # Walltime           |
-| Usually submitted as part of an   |     #SBATCH --mem           1512  |
-| array, as in the case of          |               # total mem         |
-| parameter sweeps.                 |                                   |
+| ## Serial Example                 |     #!/bin/bash -e                |
+|                                   |                                   |
+| -------------------------------   |     #SBATCH --job-name      COMSO |
+|                                   | L-serial                          |
+| Single *process* with a single    |     #SBATCH --licenses      comso |
+| *thread*                          | l@uoa_foe                         |
+|                                   |     #SBATCH --time          00:05 |
+| Usually submitted as part of an   | :00          # Walltime           |
+| array, as in the case of          |     #SBATCH --mem           1512  |
+| parameter sweeps.                 |               # total mem         |
+|                                   |                                   |
 |                                   |     module load COMSOL/5.5        |
 |                                   |                                   |
 |                                   |     comsol batch -inputfile my_in |
 |                                   | put.mph                           |
 +-----------------------------------+-----------------------------------+
-| Shared Memory Example             |     #!/bin/bash -e                |
-| ---------------------             |                                   |
-|                                   |     #SBATCH --job-name      COMSO |
-| -------------------------------   | L-shared                          |
-|                                   |     #SBATCH --licenses      comso |
-|                                   | l@uoa_foe                         |
+| ## Shared Memory Example          |     #!/bin/bash -e                |
+|                                   |                                   |
+| -------------------------------   |     #SBATCH --job-name      COMSO |
+|                                   | L-shared                          |
+|                                   |     #SBATCH --licenses      comso |
+|                                   | l@uoa_foe                         |
 |                                   |     #SBATCH --time          00:05 |
 |                                   | :00        # Walltime             |
 |                                   |     #SBATCH --cpus-per-task 8     |
@@ -74,12 +71,12 @@ Example Scripts {#example-script}
 |                                   |     comsol batch -mpibootstrap sl |
 |                                   | urm -inputfile my_input.mph       |
 +-----------------------------------+-----------------------------------+
-| Distributed Memory Example        |     #!/bin/bash -e                |
-| --------------------------        |                                   |
-|                                   |     #SBATCH --job-name      COMSO |
-| -------------------------------   | L-distributed                     |
-|                                   |     #SBATCH --licenses      comso |
-|                                   | l@uoa_foe                         |
+| ## Distributed Memory Example     |     #!/bin/bash -e                |
+|                                   |                                   |
+| -------------------------------   |     #SBATCH --job-name      COMSO |
+|                                   | L-distributed                     |
+|                                   |     #SBATCH --licenses      comso |
+|                                   | l@uoa_foe                         |
 |                                   |     #SBATCH --time          00:05 |
 |                                   | :00            # Walltime         |
 |                                   |     #SBATCH --ntasks        8     |
@@ -92,12 +89,12 @@ Example Scripts {#example-script}
 |                                   |     comsolbatch -mpibootstrap slu |
 |                                   | rm -inputfile my_input.mph        |
 +-----------------------------------+-----------------------------------+
-| Hybrid Example                    |     #!/bin/bash -e                |
-| --------------                    |                                   |
-|                                   |     #SBATCH --job-name         CO |
-| -------------------------------   | MSOL-hybrid                       |
-|                                   |     #SBATCH --licenses         co |
-|                                   | msol@uoa_foe                      |
+| ## Hybrid Example                 |     #!/bin/bash -e                |
+|                                   |                                   |
+| -------------------------------   |     #SBATCH --job-name         CO |
+|                                   | MSOL-hybrid                       |
+|                                   |     #SBATCH --licenses         co |
+|                                   | msol@uoa_foe                      |
 |                                   |     #SBATCH --time             00 |
 |                                   | :05:00          # Walltime        |
 |                                   |     #SBATCH --ntasks           4  |
@@ -117,8 +114,7 @@ Example Scripts {#example-script}
 > If no output file is set, using `--output` the input file will be
 > updated instead.
 
-Interactive Use
-===============
+# Interactive Use
 
 Providing you have [set up
 X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975), you
@@ -126,8 +122,31 @@ can open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.
 
-Recommendations
-===============
+# Recommendations
 
 COMSOL is relatively smart with it\'s use of resources, if possible it
 is preferable to use `--cpus-per-task` over `--ntasks`
+
+<!--
+<h1 id="best-practices">Resource requirements</h1>
+<hr>
+<p>
+  COMSOL does not support MPI therefore <code>#SBATCH --ntasks</code> should never
+  be greater than 1.
+</p>
+<p>
+  Memory requirements depend on job type, but will scale up with number of CPUs
+  ≈ linearly.
+</p>
+<p>
+  Hyper-threading can benefit jobs using less than
+  <dfn class="dictionary-of-numbers">8 CPUs</dfn>, but is not recommended on larger
+  jobs.
+</p>
+<p>
+  <em>Performance is highly depended on the model used. The above should only be used as a very rough guide.</em>
+</p>
+<p>
+  <img src="https://support.nesi.org.nz/hc/article_attachments/360002021216/speedup_smoothed.png" alt="speedup_smoothed.png" width="1001" height="576">
+</p>
+-->

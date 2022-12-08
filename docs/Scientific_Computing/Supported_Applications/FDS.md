@@ -27,8 +27,7 @@ and
 
     srun fds ${input}
 
-Recommendations
-===============
+# Recommendations
 
 -   FDS will run in Hybrid Parallel, but will be less efficient that
     full MPI using the same number of CPUs.
@@ -42,13 +41,11 @@ Recommendations
     cores. `--cpus-per-task 4`
 -   Hyper-threading is not recommended. Set `--hint nomultithread`
 
-Scaling with MPI
-----------------
+## Scaling with MPI
 
 ![mceclip1.png](https://support.nesi.org.nz/hc/article_attachments/360002454995/mceclip1.png)
 
-Scaling with oMP
-----------------
+## Scaling with oMP
 
 ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002454975/mceclip0.png)
 

@@ -1,8 +1,7 @@
 *On Thursday 3 September 2020, NeSI updated the way we prioritise jobs
 on the Māui HPC platform.*
 
-Background
-----------
+## Background
 
 Since the start of the year, we have been using Slurm\'s Fair Tree
 algorithm on Māui (*not yet on Mahuika*) to prioritise jobs. This
@@ -30,8 +29,7 @@ hard-coded shares did not reflect ongoing rounds of allocations given to
 projects, and so some researchers were suffering from deprioritised
 jobs. These jobs ended up delayed in the queue, sometimes excessively.
 
-What has changed?
------------------
+## What has changed?
 
 We have now recalculated the shares for each pool to take into account
 the following:
@@ -54,8 +52,7 @@ held up if:
 -   Your institution has approved project allocations totalling more
     time than it is entitled to within its pool\'s share.
 
-What will I notice?
--------------------
+## What will I notice?
 
 If your institution or pool\'s ranking has not changed, nothing much
 will immediately change for you.
@@ -74,8 +71,7 @@ of allocations, your job priorities will alter almost immediately.
 Moving up the rankings will increase your job priorities. Moving down
 the rankings will decrease your job priorities.
 
-What other changes are NeSI planning on making?
------------------------------------------------
+## What other changes are NeSI planning on making?
 
 We are looking at introducing Fair Tree on Mahuika as well, though not
 on Māui ancillary nodes. We will announce this change well ahead of any

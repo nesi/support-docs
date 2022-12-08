@@ -1,15 +1,23 @@
+<header class="site-header">
 ::: {.wrapper}
+<nav class="site-nav">
+
 ::: {.trigger}
  
 :::
+
+</nav>
 :::
 
+</header>
 ::: {.wrapper}
-Building code on Māui - the Cray XC Programming Environment {#building-code-on-māui---the-cray-xc-programming-environment .post-title}
-===========================================================
+<article class="post">
+<header class="post-header">
+# Building code on Māui - the Cray XC Programming Environment {#building-code-on-māui---the-cray-xc-programming-environment .post-title}
 
  
 
+</header>
 ::: {.post-content}
 -   [The Cray programming environment on the XC50
     platform](#the-cray-programming-environment-on-the-xc50-platform)
@@ -34,8 +42,7 @@ Building code on Māui - the Cray XC Programming Environment {#building-code-on-
 
  
 
-The Cray programming environment on the XC50 platform
------------------------------------------------------
+## The Cray programming environment on the XC50 platform
 
 ### Overview
 
@@ -331,8 +338,7 @@ found online:
     v4.9.4](https://gcc.gnu.org/onlinedocs/gcc-4.9.4/gfortran.pdf), [GNU
     Fortran v7.1](https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gfortran.pdf)
 
-Building code that depends on external libraries
-------------------------------------------------
+## Building code that depends on external libraries
 
 While linking external libraries, one need to pay attention to the
 correct compiler and linker setup. This, depends on the correct library
@@ -555,8 +561,7 @@ Note that the linker requires that function names match exactly, so any
 variation in function name in your code will lead to a "missing symbols"
 error (with the exception of character case in Fortran source code).
 
-Building code on the CS500 platform
------------------------------------
+## Building code on the CS500 platform
 
 Building code on the CS500 platform is different from the XC50 platform:
 
@@ -578,4 +583,6 @@ Please refer to section [Building code on
 Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) for
 further instructions.
 :::
+
+</article>
 :::

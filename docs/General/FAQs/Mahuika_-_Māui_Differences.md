@@ -1,8 +1,7 @@
 Aside from differences in software stack there are a few other
 differences between the platforms to be aware of.
 
-Logging in
-==========
+# Logging in
 
 Both Mahuika and Māui require logging in to the Lander node first.
 
@@ -20,8 +19,7 @@ not prove that the system has accepted your
 `Login Password (First Factor)` as correct. If you enter either
 incorrectly, you will be prompted again for both.
 
-Mahuika
--------
+## Mahuika
 
 Mahuika follows the same procedure as the lander node, except that it
 doesn\'t ask for a second factor.
@@ -34,8 +32,7 @@ You will be prompted:
 
 At this prompt, enter only your password (a.k.a. first factor).
 
-Māui
-----
+## Māui
 
 Māui differs slightly in how you are authenticated.
 
@@ -48,14 +45,12 @@ You will be prompted.
 Unlike on Mahuika, `Password` is equal to `First Factor` +
 `Second Factor` e.g. `password123456`
 
-Job Limits
-==========
+# Job Limits
 
 Both Māui and Mahuika have limits on the size and types of jobs you can
 run, but the limits on each machine is different.
 
-Mahuika
--------
+## Mahuika
 
 Mahuika is made up of several [partitions which have different resources
 and different
@@ -69,8 +64,7 @@ Mahuika allows the submission of jobs with variable numbers of CPUs and
 amounts of RAM (memory). The nodes your job is running on will probably
 be shared with other jobs.
 
-Māui
-----
+## Māui
 
 Māui only has a [single partition to which NeSI users are permitted to
 submit

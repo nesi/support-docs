@@ -59,8 +59,7 @@ Until this process is finished no other write or delete operation can be
 performed on the same project and the user will see a status message
 \"**project locked by none**\".
 
-What you can do
-===============
+# What you can do
 
 The client allows you to carry out the following operations:
 
@@ -77,8 +76,7 @@ The client allows you to carry out the following operations:
     along with their status.
 -   View quota: View your Nearline quota and usage.
 
-Getting started
-===============
+# Getting started
 
 Nearline has a common tool for access, with a set of `nl` commands,
 which are accessible by loading the following module:
@@ -96,8 +94,7 @@ which are accessible by loading the following module:
 
  
 
-View files
-==========
+# View files
 
 With the following command, you can print the list of files and
 directories within the specified Nearline directory:
@@ -131,8 +128,7 @@ Status (\"s\" column of the `-s` output) legend:
 -   resident (**r**) - data of a specific Nearline file is only on the
     staging filesystem.
 
-Traverse
-========
+# Traverse
 
 If you want to see all the files within a Nearline directory and its
 subdirectories, you can run `nltraverse`.
@@ -143,8 +139,7 @@ Optionally, you can run `nltraverse` with the `-s` command-line switch,
 which, as with `nlls`, will display the migration status of each file
 found.
 
-Compare
-=======
+# Compare
 
 If you want to compare a local (online storage) directory to a directory
 on Nearline, you can use the `nlcompare` command. The syntax of this
@@ -165,8 +160,7 @@ If the contents of the Nearline directory and the corresponding local
 directory differ, the lists will be kept, and can be compared using any
 text file comparison program, such as `diff` or `vimdiff`.
 
-Put {#Nearlineearlyaccessuserguide-Put}
-===
+# Put {#Nearlineearlyaccessuserguide-Put}
 
 Data can be copied to Nearline using the `nlput` command. The syntax is:
 
@@ -233,8 +227,7 @@ treated as a file list** and read line by line, searching for valid file
 names. Single files can only be migrated using a file list containing
 the full path of the file to be transferred.
 
-Put - directory {#Nearlineearlyaccessuserguide-Put-directory}
----------------
+## Put - directory {#Nearlineearlyaccessuserguide-Put-directory}
 
 > ### Warning {#directories-with-spaces}
 >
@@ -270,8 +263,7 @@ will copy all data within the `Results` directory into
 > `/nesi/nearline/nesi12345/`, files with the same name and path will be
 > skipped.
 
-Put - file list {#Nearlineearlyaccessuserguide-Put-file-list}
----------------
+## Put - file list {#Nearlineearlyaccessuserguide-Put-file-list}
 
 > ### Warning {#nlput-file-list}
 >
@@ -285,8 +277,7 @@ ignored**.
 
 The target location will again map with the source location, see above.
 
-Update {#Nearlineearlyaccessuserguide-Update}
-------
+## Update {#Nearlineearlyaccessuserguide-Update}
 
 As a good practice:
 
@@ -330,8 +321,7 @@ exist on Nearline but are no longer on project or nobackup:
 3.  Follow the instructions above for updating data on Nearline with a
     new version of the data from project or nobackup.
 
-Get {#Nearlineearlyaccessuserguide-Get}
-===
+# Get {#Nearlineearlyaccessuserguide-Get}
 
 Data can be retrieved from Nearline using then `nlget` command. The
 syntax is:
@@ -383,8 +373,7 @@ local, are treated as a file list** and read line by line, searching for
 valid file names. A single Nearline file can only be retrieved using a
 local file list specifying the full path of the file to be retrieved.
 
-Purge {#Nearlineearlyaccessuserguide-Purge}
-=====
+# Purge {#Nearlineearlyaccessuserguide-Purge}
 
 The `nlpurge` command deletes specified data on the Nearline file system
 permanently. The syntax is
@@ -415,8 +404,7 @@ directory.
 >     project\'s Nearline directory, you must purge its contents one by
 >     one (if directories), or by means of a filelist (if files).
 
-View job status {#Nearlineearlyaccessuserguide-Viewjobstatus}
-===============
+# View job status {#Nearlineearlyaccessuserguide-Viewjobstatus}
 
 The tool `nljobstatus` provides current status of submitted (queued,
 running and completed) tasks. The syntax is:
@@ -464,8 +452,7 @@ locked until the task is finished.
 **If a job stays in one state for an unexpectedly long time, please
 [contact NeSI Support](https://support.nesi.org.nz/hc/request/new)**.
 
-View quota {#Nearlineearlyaccessuserguide-Viewquota}
-==========
+# View quota {#Nearlineearlyaccessuserguide-Viewquota}
 
 With the command `nlquotalist`, the usage and limits of a Nearline
 project quota can be listed:
@@ -486,8 +473,7 @@ This quota is different from the project quota on GPFS
 
 []{#directory_mapping}
 
-Data management {#Nearlineearlyaccessuserguide-Datamanagement}
-===============
+# Data management {#Nearlineearlyaccessuserguide-Datamanagement}
 
 In case you have the same directory structure on your project and
 nobackup directories, be careful when archiving data from both. They
@@ -497,8 +483,7 @@ projectID will be retrieved:
 
 ![librarian\_get\_put.jpeg](https://support.nesi.org.nz/hc/article_attachments/360002703556/librarian_get_put.jpeg)
 
-Underlying mechanism {#Nearlineearlyaccessuserguide-Underlyingmechanism}
-====================
+# Underlying mechanism {#Nearlineearlyaccessuserguide-Underlyingmechanism}
 
 The Nearline file system consists of two parts: Disk, mainly for
 buffering data, and the tape library. It consists of a client running on
@@ -520,8 +505,7 @@ wait time will vary dramatically depending on overall usage. We cannot
 guarantee access to your files within any particular timeframe, and
 indeed wait times could be hours or even in some cases more than a day.
 
-Known issues
-============
+# Known issues
 
 > ### Retrievals {#retrieval}
 >
@@ -552,8 +536,7 @@ Known issues
 
  
 
-Support contact {#Nearlineearlyaccessuserguide-Supportcontact}
-===============
+# Support contact {#Nearlineearlyaccessuserguide-Supportcontact}
 
 Please [contact our support
 team](https://support.nesi.org.nz/hc/requests/new) with any queries or

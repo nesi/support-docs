@@ -3,11 +3,9 @@
 > Mahuika\'s new CPU nodes are in an **Early Access Programme (EAP)
 > phase** and not fully in production.
 
-Early Access Programme
-======================
+# Early Access Programme
 
-*Overview*
-----------
+## *Overview*
 
 Prior to launching Mahuika\'s newest CPU nodes for general production,
 we are allowing early access to help us identify any issues with:
@@ -33,8 +31,7 @@ Support]{#9713733c-843a-4b40-8f2b-a0b5b7095aa1 data-renderer-mark="true"
 data-mark-type="annotation" data-mark-annotation-type="inlineComment"
 data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1"}](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new"){.css-tgpl01}. 
 
-*Important notes*
------------------
+## *Important notes*
 
 Before accessing the new nodes, please review these important points. If
 you have any questions, [contact NeSI
@@ -67,11 +64,9 @@ requesting in terms of benchmarking, please read the information below.
 
 ------------------------------------------------------------------------
 
-Differences from original Mahuika compute nodes
-===============================================
+# Differences from original Mahuika compute nodes
 
-Hardware
---------
+## Hardware
 
 Each node has two AMD Milan CPUs, each with 8 \"chiplets\" of 8 cores
 and one level 3 cache, so each node has a total of **128 cores** or 256
@@ -85,8 +80,7 @@ CPU.  ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Hel
 Only 30 nodes are available so far, but that number will eventually
 increase to 64, 8 of which will have double the memory.
 
-Software
---------
+## Software
 
 ### Operating System
 
@@ -167,8 +161,7 @@ For more information on AOCC compiler suite please, visit [AMD
 Optimizing C/C++ and Fortran Compilers
 (AOCC)](https://developer.amd.com/amd-aocc/)
 
-Network
--------
+## Network
 
 Access to the new nodes is currently only possible via the Slurm
 `sbatch` and `srun` commands. There is no ssh access, not even to the
@@ -180,8 +173,7 @@ Dask or PEST, will generally only work if you use the Infiniband address
 of the compute node, eg: *wmc012.ib.hpcf.nesi.org.nz*. Networking
 configuration is expected to be addressed in the future.
 
-Slurm Configuration
--------------------
+## Slurm Configuration
 
 ### Access
 
@@ -202,8 +194,7 @@ the job description file:
 Currently up to 10 nodes per account, 7 days maximum job duration. If
 you need more then please contact us to discuss your requirements.
 
-Benchmarking
-============
+# Benchmarking
 
 We at NeSI would love to know how the new AMD Milan CPUs are performing
 for your code.  In order to compare performance against the older nodes,
@@ -218,8 +209,7 @@ Timing can be obtained through time command, for example:
 
 or via `sacct`.
 
-Advanced Slurm options for benchmarking
----------------------------------------
+## Advanced Slurm options for benchmarking
 
 When running benchmarks (and only then!) we recommend using 
 
@@ -236,8 +226,7 @@ partition is fully populated. Please, note that the reduced performance
 does not affect all input/output operations. Please, contact us if you
 have concerns regarding this issue.
 
-Any questions?
-==============
+# Any questions?
 
 Don\'t hesitate to contact us at <support@nesi.org.nz>. We are available
 for Zoom sessions if you need to talk to us about specific details of

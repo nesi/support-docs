@@ -1,5 +1,4 @@
- 
--
+##  
 
 The [Coupled Model Intercomparison
 Project](https://www.wcrp-climate.org/wgcm-cmip), which began in 1995
@@ -25,8 +24,7 @@ read [this](https://support.nesi.org.nz/hc/en-gb/articles/360001208256-Synda),
 which explains how to install the synda tool. Once installed, you can
 then type similar commands to the ones below to test your configuration.
 
-Setup
------
+## Setup
 
 On mahuika or [w-mauivlab01.maui.nesi.org.nz]{.s1}:
 
@@ -43,8 +41,7 @@ with
 
 Below we demonstrate how synda might be used.
 
-Find some datasets 
--------------------
+## Find some datasets 
 
 CMIP6 datasets are organised by institution\_id, experiment\_id,
 variable etc. A full list can be glanced
@@ -67,8 +64,7 @@ involve
 
  
 
-Find out how big the datasets are
----------------------------------
+## Find out how big the datasets are
 
 Once you know what you want to download, it\'s a good idea to check the
 size of the dataset:
@@ -81,8 +77,7 @@ This prints \"[Total files count: 16, ]{.s1}[New files count:
 see that there are 16 files to download, taking nearly 50GB of disk
 space.]{.s1}
 
-Download/install the dataset 
------------------------------
+## Download/install the dataset 
 
     synda install CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 

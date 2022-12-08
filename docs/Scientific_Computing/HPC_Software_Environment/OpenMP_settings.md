@@ -83,11 +83,9 @@ gimpi/2018b toolchain on Mahuika.
 | 8               | 24s, 27s        | 18s, 17s        | 16s, 16s        |
 +-----------------+-----------------+-----------------+-----------------+
 
- 
--
+##  
 
-Results
--------
+## Results
 
 In the default case, \--hint was not used and the environment variables
 OMP\_PROC\_BIND and OMP\_PLACES were not set. Significant variations of
@@ -99,8 +97,7 @@ The fourth column places 2 threads per physical cores (i.e.
 OMP\_NUM\_THREADS = 2 times the number of physical cores) and this often
 gives the best performance.
 
- Bottom line
-------------
+##  Bottom line
 
 Be explicit by using \--hint and setting OMP\_PROC\_BIND and
 OMP\_PLACES. In many cases we expect one of the following to work best:

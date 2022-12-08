@@ -22,8 +22,7 @@ You can find the slides for the current workshop
 You can find a recording of the workshop
 [here](https://www.youtube.com/playlist?list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw).
 
-Other ways to get \'Introductory\' help
----------------------------------------
+## Other ways to get \'Introductory\' help
 
 If you are unable to join our Introductory Sessions on Wednesdays,
 please [contact

@@ -1,5 +1,4 @@
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved {#ReleaseNotes-NewandImproved}
 
 -   Updated [RStudio-on-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
     to v0.24.0
@@ -13,8 +12,7 @@ New and Improved {#ReleaseNotes-NewandImproved}
     -   Utilising latest version of
         [Singularity](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)\
 
-Fixed {#ReleaseNotes-NewandImproved}
------
+## Fixed {#ReleaseNotes-NewandImproved}
 
 -   RStudio
     -   Addressed issue preventing user installation of rmarkdown when

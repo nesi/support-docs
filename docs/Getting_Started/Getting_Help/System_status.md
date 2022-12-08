@@ -1,5 +1,4 @@
-NeSI system status related notifications {#01FYYXCN11NV2Y60RFSZ25MNYH}
-----------------------------------------
+## NeSI system status related notifications {#01FYYXCN11NV2Y60RFSZ25MNYH}
 
 All new NeSI users will be automatically subscribed to receive system
 notifications for all components listed on
@@ -11,8 +10,7 @@ status.nesi.org.nz).
 
  
 
-How to manage your subscription to notifications {#01FYYWM4KS55KBAF8X3G70KHG4}
-------------------------------------------------
+## How to manage your subscription to notifications {#01FYYWM4KS55KBAF8X3G70KHG4}
 
 In order to manage your subscription to notifications,\
 either log into [my.nesi](https://my.nesi.org.nz/account/preference) or
@@ -25,8 +23,7 @@ preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)
 
 ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/4563357435279/mceclip0.png)
 
-status.nesi.org.nz {#01FYYX6BFN8835Z8NHK0NWPBJ1}
-------------------
+## status.nesi.org.nz {#01FYYX6BFN8835Z8NHK0NWPBJ1}
 
 NeSI does publish service incidents and scheduled maintenance via
 [status.nesi.org.nz](https://status.nesi.org.nz). \

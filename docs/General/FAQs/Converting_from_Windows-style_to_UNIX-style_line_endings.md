@@ -1,3 +1,6 @@
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
 In a plain text file, to tell the computer that a line of text doesn\'t
 continue forever, the end of each line is marked by a sequence of one or
 more invisible characters, called *control characters*. While there are
@@ -25,8 +28,7 @@ return characters as input.
 Therefore, you will need to convert any such file so it has only
 UNIX-style line endings before using it on a NeSI cluster.
 
-The Symptoms
-------------
+## The Symptoms
 
 ### In the Slurm job scheduler
 
@@ -47,8 +49,7 @@ variable, but program behaviours might include the following responses:
     corrupt or that there are problems reading it
 -   Failing in a more serious way such as a segmentation fault
 
-Checking a file\'s line ending format
--------------------------------------
+## Checking a file\'s line ending format
 
 If you have what you think is a text file on the cluster but you don\'t
 know whether its line endings are in the correct format or not, you can
@@ -61,8 +62,7 @@ vary, but if the output has \"CR\" or \"CRLF\" in it, you will need to
 convert `foo.txt` to UNIX format line endings if you want to use it on
 the cluster.
 
-How to Convert
---------------
+## How to Convert
 
 ### Converting using Notepad++
 

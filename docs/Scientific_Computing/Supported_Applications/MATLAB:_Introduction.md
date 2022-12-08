@@ -1,8 +1,7 @@
 More general information can be found on MATLAB
 [here.](https://support.nesi.org.nz/hc/en-gb/articles/212639047-MATLAB)
 
-Setup
-=====
+# Setup
 
 Load MATLAB with the command.
 
@@ -12,8 +11,7 @@ Help can be found with
 
     matlab -nodisplay -help
 
-X11 and -nodisplay
-==================
+# X11 and -nodisplay
 
 By default MATALB will attempt to open a virtual desktop version of
 MATLAB, this will only work if X11 forwarding is enabled `-y`) and you
@@ -40,14 +38,12 @@ Will force MATLAB to open as the command line version.
 
 ------------------------------------------------------------------------
 
-Running MATLAB interactively
-============================
+# Running MATLAB interactively
 
 Using MATLAB interactively can be useful for testing but **should not be
 used for large jobs** (anything with multiple CPU\'s or multiple hours).
 
-CMD MATLAB
-----------
+## CMD MATLAB
 
 To start the command line version of MATLAB run:
 
@@ -56,19 +52,16 @@ To start the command line version of MATLAB run:
 This will function identically to the Command Window in the desktop
 version of MATLAB.
 
-![](https://support.nesi.org.nz/hc/article_attachments/360001327855/mceclip0.png)
----------------------------------------------------------------------------------
+## ![](https://support.nesi.org.nz/hc/article_attachments/360001327855/mceclip0.png)
 
 Enter \'quit\' to leave the MATLAB session or ctrl + z to kill it.
 
-Running MATLAB batch jobs
-=========================
+# Running MATLAB batch jobs
 
 For your job to be submittable as a Slurm script you must be able to
 initiate it from the bash command line. This can be done in 2 ways.
 
-Piping
-------
+## Piping
 
 A .m script can be piped into MATLAB using.
 
@@ -76,8 +69,7 @@ A .m script can be piped into MATLAB using.
 
 This will open MATLAB then run your script. 
 
-Functions
----------
+## Functions
 
 MATLAB also accepts command window inputs using \'-r\'. Note \';\' used
 for line-breaks.
@@ -98,8 +90,7 @@ A script can also be run using this method.
 
     matlab -nodisplay -r "myScript;"
 
-Paths
------
+## Paths
 
 By default only files in the same directory as you called MATLAB from
 will be included in the directory (no sub-directories).\
@@ -109,8 +100,7 @@ A single directory can be added to path with;
 
     addpath(genpath('your_directory'))
 
-Output
-------
+## Output
 
 Output from your job can be obtained multiple ways
 
@@ -138,8 +128,7 @@ e.g.
 
     export MATLAB_LOG_DIR=logs
 
-Slurm
------
+## Slurm
 
 Creating a file job.sl to add everything in the the parent directory
 \'parentDirectory\' to the path and then run the function
@@ -169,8 +158,7 @@ This can then be submitted with
 
  
 
-Other stuff
------------
+## Other stuff
 
 handy for deleting log files in your home directory
 

@@ -1,5 +1,4 @@
-Option 2: PuTTY (+WinSCP)
--------------------------
+## Option 2: PuTTY (+WinSCP)
 
 [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 

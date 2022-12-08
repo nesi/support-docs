@@ -13,8 +13,7 @@ based on the following principles:
 In more detail: Application software will be supported using a
 three-tier model.
 
-Tier 1
-------
+## Tier 1
 
 Includes applications (meaning tools, libraries and science
 applications) which:
@@ -32,8 +31,7 @@ c.  The NeSI Applications and/or Computational Science Team staff often
 d.  Support documentation will be provided, including licensing
     information and scaling data etc.
 
-Tier 2
-------
+## Tier 2
 
 Includes applications (meaning tools, libraries and science
 applications) which:
@@ -48,8 +46,7 @@ c.  NeSI Applications and/or Computational Science Team staff have no
 d.  The support documentation provides basic information on how to use
     the software.
 
-Tier 3
-------
+## Tier 3
 
 Includes applications (meaning tools, libraries and science
 applications) that are required by one user, or have very limited use,
@@ -65,3 +62,5 @@ NeSI will publish the current list of software (including all versions),
 with links to the Support documentation.
 
  
+
+<!--<p>Applications for central installation of new software on the NeSI systems (post initial implementation on the new platforms) will be made via an <a href="#_Application_Installation_Request">Application Installation request form</a>, where sufficient information will need to be provided to enable NeSI to make a decision as to which Tier the software falls in.  Applications for Tier 1 support will require approval by NeSI Management (or as delegated, e.g. to Solutions or HPC Compute and Analytics lead’s).</p>-->

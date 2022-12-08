@@ -11,8 +11,7 @@ Access to data (i.e. files and directories) on NeSI is controlled by
 POSIX permissions, supplemented with Access Control Lists (ACLs).
 Default permissions differ from file system to file system.
 
-Group membership
-----------------
+## Group membership
 
 Each user has a private user group, of which that user is by default the
 only member. Each user is also a member of various other groups, such
@@ -31,8 +30,7 @@ following command on a Mahuika, Māui or Māui ancillary login node:
 
     groups
 
-Files in home directories
--------------------------
+## Files in home directories
 
 Your home directory is owned by you, and its group is usually your
 personal group. (For historical reasons, some NIWA users\' home
@@ -63,8 +61,7 @@ the person doing the creating.
 
 Home directories and their contents do not have any ACLs by default.
 
-Files in project directories
-----------------------------
+## Files in project directories
 
 Every new project almost always gets two directories, namely a
 persistent directory in `/nesi/project` and a scratch directory in
@@ -141,8 +138,7 @@ default (heritable) ACL.
 > ACL change, and if possible make the change early on in the life of
 > the project on NeSI, so that only a few files are affected.
 
-Other directories
------------------
+## Other directories
 
 We may from time to time create and maintain other directories, for
 example for users of a particular piece of software or database. If you

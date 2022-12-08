@@ -10,8 +10,7 @@
 Find more information on the different types of directories
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
 
-Standard Terminal
-=================
+# Standard Terminal
 
 In a local terminal the following commands can be used to:
 
@@ -41,8 +40,7 @@ These commands make use of *multiplexing, *this means that if you
 already have a connection to the cluster you will not be prompted for
 your password.
 
-File Managers 
---------------
+## File Managers 
 
 Most file managers can be used to connect to a remote directory simply
 by typing in the address bar (provided your have an active connection to
@@ -50,7 +48,8 @@ the cluster and your ssh config file is set up as described
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
-to with `sftp://mahuika`. (ctrl + L opens address bar)
+to with `sftp://mahuika`. (<kbd>ctrl</kbd> + <kbd>L</kbd> opens address
+bar)
 
 This does not work for File Explorer (Windows default)
 
@@ -62,8 +61,7 @@ If your default file manager does not support mounting over sftp, see
 our documentation
 on [SSHFS](https://support.nesi.org.nz/hc/en-gb/articles/360000621135).
 
-MobaXterm
-=========
+# MobaXterm
 
 Clicking the \"*Scp*\" tab (located on the left-hand side of the
 MobaXTerm window) opens up a graphical user interface that can be used
@@ -78,24 +76,21 @@ You may also transfer files as described under \'Standard Terminal\'
 [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575) is
 enabled).
 
-WinSCP
-======
+# WinSCP
 
 As WinSCP uses multiple tunnels for file transfer you will be required
 to authenticate again on your first file operation of the session. The
 second prompt for your 2FA can be skipped, just the same as with login
 authentication.
 
-Globus
-======
+# Globus
 
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.\
 You can find more details on its use on our [Globus support
 page](https://support.nesi.org.nz/hc/en-gb/articles/4405623380751-Data-Transfer-using-Globus-V5).
 
-Rclone
-======
+# Rclone
 
 Rclone is available for those that need to transfer data from cloud
 storage services like Google drive or OneDrive.
@@ -135,8 +130,7 @@ The most frequently used Rclone subcommands:
 A more extensive list can be found on the the[Rclone
 documentation](https://rclone.org/docs).
 
-Rsync
-=====
+# Rsync
 
 Rsync is an utility that provides fast incremental file transfer and
 efficient file synchronization between a computer and a storage disk.\

@@ -1,5 +1,4 @@
-Globus
-------
+## Globus
 
 Globus is a third-party service for transferring large amounts of data
 between Globus Data Transfer Nodes (DTNs). For example you can transfer
@@ -33,8 +32,7 @@ The NeSI Wellington DTN endpoint is protected by a second factor
 authentication (2FA).  Also note, your NeSI username and password are
 case-sensitive.
 
-[The NeSI Data Transfer Node]{.wysiwyg-color-black}
----------------------------------------------------
+## [The NeSI Data Transfer Node]{.wysiwyg-color-black}
 
 The NeSI Data Transfer Node (DTN) acts as an interface between our HPC
 facility storage and a worldwide network of Globus endpoints. This is
@@ -45,8 +43,7 @@ as `#!['bash']scp`, Globus provides the most comprehensive, efficient,
 and easy to use service for NeSI users who need to move large data sets
 (more than a few gigabytes at a time).
 
-Types of Globus endpoints or Data Transfer Nodes
-------------------------------------------------
+## Types of Globus endpoints or Data Transfer Nodes
 
 Globus data transfers take place between *endpoints*. An endpoint is
 nothing more than an operating system (Windows, Linux, etc) that has the
@@ -78,8 +75,7 @@ Please be aware that even if you set up a personal endpoint, you may
 still need to consult your IT team in order to make it usable,
 especially if your institution has an aggressive firewall.
 
-Transferring data using a managed endpoint
-------------------------------------------
+## Transferring data using a managed endpoint
 
 As an example, to move files between the NeSI HPC Storage (accessible
 from Māui and Mahuika) and the Otago University high-capacity central
@@ -159,8 +155,7 @@ button:\
 
  
 
-In brief:
----------
+## In brief:
 
 -   Sign in to the NeSI Globus Web App <https://transfer.nesi.org.nz/>.
     You will be taken to the *File Manager* page
@@ -186,8 +181,7 @@ In brief:
     depending on the direction of the transfer.
 -   Check your email for confirmation about the job completion report.
 
-Transferring data using a personal endpoint
--------------------------------------------
+## Transferring data using a personal endpoint
 
 To transfer files into/out of your laptop, desktop computer or any other
 system you control, configure it as a [Globus Personal
@@ -196,16 +190,14 @@ Globus Endpoint
 Configuration](https://support.nesi.org.nz/hc/en-gb/articles/360000217915-Personal-Globus-Endpoint-Configuration) for
 transfers between personal endpoints).
 
-File sharing
-------------
+## File sharing
 
 To share files with others outside your filesystem,
 see <https://docs.globus.org/how-to/share-files/>
 
  
 
-Using Globus to transfer data to or from the cloud
---------------------------------------------------
+## Using Globus to transfer data to or from the cloud
 
 Globus connectors enable a uniform interface for accessing, moving, and
 sharing across a variety of cloud providers. We do not currently have a

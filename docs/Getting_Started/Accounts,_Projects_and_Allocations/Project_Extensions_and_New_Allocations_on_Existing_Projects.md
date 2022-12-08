@@ -9,8 +9,7 @@ We currently offer two sorts of extensions:
     Mahuika or node hours on Māui)
 -   A project extension without a new allocation of computing resources.
 
-Will my project qualify for an extension? {#01FZGW1M7EC0J0DRX58QMKBDR1}
------------------------------------------
+## Will my project qualify for an extension? {#01FZGW1M7EC0J0DRX58QMKBDR1}
 
 Usually, yes. There are a few circumstances in which a project will not
 qualify for an extension:
@@ -37,16 +36,14 @@ qualify for an extension:
     not authorised to access NeSI facilities due to a refusal to accept
     or failure to abide by the NeSI Acceptable Use Policy.
 
-Who may request a project extension? {#01FZGW1M7EKD114NZ6PA7PGRJK}
-------------------------------------
+## Who may request a project extension? {#01FZGW1M7EKD114NZ6PA7PGRJK}
 
 A request for a project extension should come from the project owner. If
 the project owner is a student, we will include the supervisor on the
 extension correspondence. The project supervisor may disallow an
 extension request.
 
-How do I request an extension? {#01FZGW1M7E6DGDZEVECGQFQ71F}
-------------------------------
+## How do I request an extension? {#01FZGW1M7E6DGDZEVECGQFQ71F}
 
 You can submit a request for an extension using <https://my.nesi.org.nz>
 or by [opening a support
@@ -68,8 +65,7 @@ following circumstances:
 -   If your allocation ends before your project is scheduled to end, in
     the lead-up to the end of your project.
 
-Requests for new allocations {#01FZGW1M7EZ2Q9ZXNJPPHYVZG6}
-----------------------------
+## Requests for new allocations {#01FZGW1M7EZ2Q9ZXNJPPHYVZG6}
 
 If you are requesting a new allocation of computing resources, we will
 look at your usage history and come up with an estimated allocation size
@@ -86,8 +82,7 @@ Please be aware that:
 -   An allocation from an institution\'s entitlement is subject to
     approval by that institution.
 
-Requests for project extensions without a new compute allocation {#01FZGW1M7EDQV5CE64DPMFYVHX}
-----------------------------------------------------------------
+## Requests for project extensions without a new compute allocation {#01FZGW1M7EDQV5CE64DPMFYVHX}
 
 In some circumstances, you may wish to extend your project without
 receiving a new allocation of compute units or node hours for the

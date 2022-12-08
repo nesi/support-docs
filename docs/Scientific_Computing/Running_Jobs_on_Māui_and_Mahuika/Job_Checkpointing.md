@@ -8,8 +8,7 @@ How checkpointing can be implemented depends on the application/code
 being used, some will have inbuilt methods whereas others might require
 some scripting.
 
-Queueing 
-=========
+# Queueing 
 
 Checkpointing code has the added advantage that it allows you to split
 your work into smaller jobs, allowing them to move through the queue
@@ -43,11 +42,9 @@ Another example for a job requiring explicit step inputs.
 The use of `--dependency` has the advantage of adding the next job to
 the queue *before* starting, saving queue time in between jobs.
 
-Examples
-========
+# Examples
 
-Matlab
-------
+## Matlab
 
     % If checkpoint file, load from there.
     checkpoint='checkpoint_2020-03-09T0916.mat';

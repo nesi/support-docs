@@ -34,8 +34,7 @@ steps, which are then described in more details:
 -   [Kernels](#h_e7f80560-91c0-420a-bccb-17bbf8c2e916)
 -   [Packages](#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e)
 
-Launch JupyterLab {#h_a0e4107a-358d-4db6-a7a4-c2c3273c74ed}
-=================
+# Launch JupyterLab {#h_a0e4107a-358d-4db6-a7a4-c2c3273c74ed}
 
 Since JupyterLab is a web based application, and at NeSI launched behind
 the firewall, a **port** needs to be forwarded to your local machine,
@@ -49,8 +48,7 @@ This number needs to be used while establishing the port forwarding and
 while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
-Setup SSH port forwarding  {#h_22b17d98-8054-4898-871e-38a42a2e3849}
---------------------------
+## Setup SSH port forwarding  {#h_22b17d98-8054-4898-871e-38a42a2e3849}
 
 > ### Requirements {#prerequisites}
 >
@@ -122,8 +120,7 @@ click \'Tools \> MobaSSH Thunnel (port forwarding)\':
 
 ![sshTunnel.PNG](https://support.nesi.org.nz/hc/article_attachments/360002834175/sshTunnel.PNG)
 
-Launch the JupyterLab server  {#h_a46369a1-5f2c-4ed8-82c2-f06c0c1d58b4}
------------------------------
+## Launch the JupyterLab server  {#h_a46369a1-5f2c-4ed8-82c2-f06c0c1d58b4}
 
 After successfully establishing the port forwarding, we need open
 another terminal and login to the NeSI system in the usual way, e.g.
@@ -201,8 +198,7 @@ libraries, which implement threading align the numbers of threads (often
 called jobs) to the selected number of cores (otherwise the performance
 will be affected).
 
-JupyterLab in your local browser  {#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d}
----------------------------------
+## JupyterLab in your local browser  {#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d}
 
 Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
@@ -210,8 +206,7 @@ initializing Jupyter Lab you should see a page similar to:
 
 ![Jupyter.PNG](https://support.nesi.org.nz/hc/article_attachments/360002463475/Jupyter.PNG)
 
-Kernels {#h_e7f80560-91c0-420a-bccb-17bbf8c2e916}
-=======
+# Kernels {#h_e7f80560-91c0-420a-bccb-17bbf8c2e916}
 
 The following JupyterLab kernel are installed:
 
@@ -219,15 +214,13 @@ The following JupyterLab kernel are installed:
 -   R 
 -   Spark
 
-R
--
+## R
 
 verify that the module IRkernel is loaded
 
     module load IRkernel
 
-Spark {#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e}
-=====
+# Spark {#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e}
 
 pySpark and SparkR is supported in NeSI Jupyter notebooks. Therefore,
 the module Spark needs to be loaded before starting Jupyter. Please run
@@ -235,8 +228,7 @@ Spark workflows on compute nodes.
 
     module load Spark
 
-Packages {#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e}
-========
+# Packages {#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e}
 
 There are a long list of default packages provided by the JupyterLab
 environment module (list all using `!pip list`) and R (list using

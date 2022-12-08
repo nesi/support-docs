@@ -1,5 +1,7 @@
-Description
------------
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
+## Description
 
 The Gaussian series of programs provides state-of-the-art capabilities
 for electronic structure modelling. It is used by chemists, chemical
@@ -14,13 +16,11 @@ structures).
 
 The Gaussian home page is at <http://www.gaussian.com>.
 
-Availablity {#available-versions}
------------
+## Availablity {#available-versions}
 
 Gaussian is installed on the Mahuika cluster.
 
-Licensing requirements
-----------------------
+## Licensing requirements
 
 Gaussian is made available to researchers under closed-source,
 commercial licence agreements with individuals, research groups or
@@ -47,8 +47,7 @@ If you have any questions regarding your eligibility to access Gaussian
 or any particular version or installation of it, please contact [our
 support desk](mailto:support@nesi.org.nz).
 
-Example jobs
-------------
+## Example jobs
 
 ### Example job submission script {#example-script-and-input-for-the-pan-cluster}
 
@@ -145,8 +144,7 @@ memory) and is replaced with a real value when the Slurm job starts.
     O 1 0.95
     H 2 0.95 1 109.0
 
-Further notes
--------------
+## Further notes
 
 ### Setting the memory and number of cores
 

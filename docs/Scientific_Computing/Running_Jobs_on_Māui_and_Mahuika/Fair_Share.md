@@ -4,8 +4,7 @@ factor in determining priority, but not the only one. For more details
 see [Job
 Prioritisation](https://support.nesi.org.nz/hc/en-gb/articles/360000201636/).
 
-Fair Share Score
-----------------
+## Fair Share Score
 
 Your *Fair Share score* is a number between **0** and **1**. Projects
 with a **larger** Fair Share score receive a **higher priority** in the
@@ -53,8 +52,7 @@ heavy user.
 -   Using the cluster **unevenly** will cause your Fair Share score to
     **decrease**.
 
-[What is Fair Share?]{.wysiwyg-color-black}
--------------------------------------------
+## [What is Fair Share?]{.wysiwyg-color-black}
 
 [Fair Share is a mechanism to set job priorities. It is based on a share
 of the cluster, that is, a fraction of the cluster\'s overall computing
@@ -98,24 +96,24 @@ cluster.]{.wysiwyg-color-black}
 
 ### [Fair Share on the Māui ancillary nodes]{.wysiwyg-color-black}
 
-The part of the Māui ancillary nodes that is managed by NeSI and
-scheduled using Slurm forms a very small resource, only four nodes of 40
-CPU cores each. It is intended for pre- and post-processing work related
-to computational jobs carried out on the Māui XC nodes. Therefore, we do
-not make allocations of CPU core hours on these nodes. Instead, each
-project team that has a current allocation on the Māui XC nodes is
-entitled to an equal share of the time on these four Māui ancillary
-nodes.
+<font color="#000000"> The part of the Māui ancillary nodes that is
+managed by NeSI and scheduled using Slurm forms a very small resource,
+only four nodes of 40 CPU cores each. It is intended for pre- and
+post-processing work related to computational jobs carried out on the
+Māui XC nodes. Therefore, we do not make allocations of CPU core hours
+on these nodes. Instead, each project team that has a current allocation
+on the Māui XC nodes is entitled to an equal share of the time on these
+four Māui ancillary nodes. </font>
 
-Because job priority on the Māui ancillary nodes is still heavily
-influenced by Fair Share, project teams that have recently been doing a
-lot of work on the Māui ancillary nodes will find their jobs there
-deprioritised, so that other project teams can access the resource.
-However, even heavy users of the Māui ancillary nodes can still access
-resources there if those CPU cores would otherwise be idle.
+<font color="#000000"> Because job priority on the Māui ancillary nodes
+is still heavily influenced by Fair Share, project teams that have
+recently been doing a lot of work on the Māui ancillary nodes will find
+their jobs there deprioritised, so that other project teams can access
+the resource. However, even heavy users of the Māui ancillary nodes can
+still access resources there if those CPU cores would otherwise be idle.
+</font>
 
-[How does Fair Share work?]{.wysiwyg-color-black}
--------------------------------------------------
+## [How does Fair Share work?]{.wysiwyg-color-black}
 
 [The starting point for a Fair Share calculation is a comparison of the
 project\'s actual share of use to the expected share of use. This share
@@ -162,8 +160,7 @@ For full details on Slurm\'s Fair share mechanism, please see [this
 page](https://slurm.schedmd.com/priority_multifactor.html#fairshare)
 (offsite).
 
-How do I check my project\'s Fair Share score?
-----------------------------------------------
+## How do I check my project\'s Fair Share score?
 
 -   The command `nn_corehour_usage <project_code>`, on a Mahuika or Māui
     login node, will show, along with other information, the current
@@ -175,8 +172,7 @@ How do I check my project\'s Fair Share score?
 In our current configuration, Fair Share scores are attached to
 projects, not to individual users.
 
-My project\'s Fair Share score is too low. How can I improve it?
-----------------------------------------------------------------
+## My project\'s Fair Share score is too low. How can I improve it?
 
 If you have just carried out an unusually large spike of work, your fair
 share score will naturally be lowered for a while, and should come back

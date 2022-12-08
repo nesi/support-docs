@@ -2,8 +2,7 @@ With OpenACC it is possible to offload computations from the CPU to a
 GPU,
 see <http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf>.
 
-Example
-=======
+# Example
 
 In the following we show how to achieve this in the case of a reduction
 operation involving a large loop:
@@ -30,8 +29,7 @@ Note the pragma
 which moves variables `total` and `n` to the GPU and creates teams of
 threads to compute the total sum in parallel. 
 
-Compile
-=======
+# Compile
 
 We\'ll use the PGI C++ compiler to build the executable but first we
 need to load a few modules:
@@ -48,8 +46,7 @@ Note that the PGI compiler can target CPU and GPU devices (-ta option).
 The -Minfo=all option provides information about vectorization and
 offloading.
 
-Run
-===
+# Run
 
 The following commands will submit the runs to the Mahuika queue
 (note `--partition=gpu --gres=gpu:1` in the case of the executable that

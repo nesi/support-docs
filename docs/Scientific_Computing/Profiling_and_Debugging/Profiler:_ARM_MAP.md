@@ -8,8 +8,7 @@
 The ARM (previously known as Allinea) provides a package called *forge*,
 which consists of a debugger, DDT and a profiler, MAP.
 
-Introduction to profiling
-=========================
+# Introduction to profiling
 
 Profiling tools help you understand how much resources are consumed
 during run time. This can be time, memory, or MPI communication. One
@@ -21,8 +20,7 @@ for optimising code, as it enables you to focus your efforts on
 improving the parts of the code that will result in the biggest gains in
 performance.
 
-Profiling test cases {#h_23e5a159-4e9c-4f25-9395-53f03e1187f7}
-====================
+# Profiling test cases {#h_23e5a159-4e9c-4f25-9395-53f03e1187f7}
 
 During a optimisation process profiling will be used regularly to
 monitor the behaviour and change in behaviour of the code. Therefore, it
@@ -33,8 +31,7 @@ code could become more dominant (e.g. initialisation phase).
 Furthermore, due to possible overhead from the profiling tool, the code
 could run slower than normal.
 
-MAP profiler {#h_e444a43e-f0a5-45a5-8ed2-8bd06abae1a9}
-============
+# MAP profiler {#h_e444a43e-f0a5-45a5-8ed2-8bd06abae1a9}
 
 MAP is a commercial product, which can profile parallel, multi-threaded
 and single-threaded C/C++, Fortran, as well as Python code. MAP supports
@@ -65,8 +62,7 @@ from remote (not described in detail here).]{.wysiwyg-color-black}
 remember to start your ssh session using X11 forwarding (e.g. using the
 `ssh -Y` option).]{.wysiwyg-color-black}
 
-MAP "Express Launch" {#using-the-express-launch}
-====================
+# MAP "Express Launch" {#using-the-express-launch}
 
 To use MAP we need to load the *forge* module in our batch script and
 add `map --profile` in front of the parallel run statements. For
@@ -91,8 +87,7 @@ viewed, for instance, with
 (the `.map` file name will vary with each run.) See section [MAP
 profile](#map-profile) below for how to interpret the results.
 
-MAP GUI launch {#h_f78992f8-3f55-4b6f-ac5f-8bc82ff16873}
-==============
+# MAP GUI launch {#h_f78992f8-3f55-4b6f-ac5f-8bc82ff16873}
 
 The GUI can be started after loading `module load forge` and launching
 
@@ -123,8 +118,7 @@ profile information.
 
  
 
-MAP Profile
-===========
+# MAP Profile
 
 By default the profile window is divided into the following three main
 sections (click on picture to enlarge).

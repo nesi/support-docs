@@ -1,5 +1,4 @@
-Globus default directory
-------------------------
+## Globus default directory
 
 If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
@@ -20,8 +19,7 @@ path directory, displayed as \'`/home/<username>`\'.
 For more information about NeSI filesystem, check
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas).
 
-Performing Globus transfers to/from Māui/Mahuika
-------------------------------------------------
+## Performing Globus transfers to/from Māui/Mahuika
 
 -   If transferring files off the cluster, move/copy files onto
     `/nesi/project` or `/nesi/nobackup` first, via your HPC access

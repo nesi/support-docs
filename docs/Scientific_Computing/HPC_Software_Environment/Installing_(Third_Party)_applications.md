@@ -15,16 +15,14 @@ In any case, if you have issues, do not hesitate to [open a
 ticket](https://support.nesi.org.nz/hc/en-gb/requests/new) and ask NeSI
 support for help.
 
-Additional Packages for Python, R, etc.
----------------------------------------
+## Additional Packages for Python, R, etc.
 
 See [Python](https://support.nesi.org.nz/hc/en-gb/articles/207782537-Python) or [R](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R),
 or for other languages check if we have additional documentation for it
 in our [application
 documentation](https://support.nesi.org.nz/hc/en-gb/sections/360000040076-Supported-Applications).
 
-Third party applications
-------------------------
+## Third party applications
 
 Installation instruction vary from application to application. In any
 case we suggest to read the provided installing instructions.
@@ -49,8 +47,7 @@ you usually need to consider:
 -   install the binaries and libraries into the specified directory
     (`make install`)
 
-Create your own modules (Optional) {#create-your-own-modules}
-----------------------------------
+## Create your own modules (Optional) {#create-your-own-modules}
 
 You can create personalised module environments, which can load modules
 and set up environment variables. For example, you could define a

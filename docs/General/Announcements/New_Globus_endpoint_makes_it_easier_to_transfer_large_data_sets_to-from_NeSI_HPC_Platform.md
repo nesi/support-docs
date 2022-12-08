@@ -35,6 +35,8 @@ upgrade include:
 details and a demo of the new endpoint features. The recording is
 embedded below:]{style="font-weight: 400;"}
 
+<iframe title="YouTube video player" src="https://www.youtube.com/embed/0qsfI6qEXBw" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
 [If you would like more information about the endpoint upgrade, you
 can]{style="font-weight: 400;"}[refer to these documentation pages [in
 NeSI

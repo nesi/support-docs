@@ -1,5 +1,4 @@
-Environment Modules
--------------------
+## Environment Modules
 
 NeSI uses environment modules to manage [installed
 software](https://support.nesi.org.nz/hc/articles/360000170355).
@@ -34,8 +33,7 @@ Using the `module` command you can:
     :::
     :::
 
-Lmod on Mahuika
----------------
+## Lmod on Mahuika
 
 As on Pan, Mahuika uses an enhanced version of modules called
 [Lmod](https://lmod.readthedocs.io/en/latest/010_user.html) .
@@ -88,8 +86,7 @@ place of `module`. With Lmod you can:
 Further information can be found in the online [User Guide for
 Lmod](https://lmod.readthedocs.io/en/latest/010_user.html).
 
-Modules on Māui
----------------
+## Modules on Māui
 
 On Māui and Māui\_Ancil we use top level modules to provide the
 different software stacks. Per default the \"NeSI\" module is loaded,

@@ -4,8 +4,7 @@ outlined in these examples are applicable across software applications.
 You do not need to know anything about Python to understand this
 article; it was merely chosen for the purpose of illustration.
 
-First example
-=============
+# First example
 
 ### Initial Python Script
 
@@ -283,8 +282,7 @@ minutes and 41 seconds we can estimate that it will take about 12 times
 longer to run 60,000.\
 ]{.wysiwyg-color-black}
 
-Estimating our Total Resource Requirments
------------------------------------------
+## Estimating our Total Resource Requirments
 
 Now that we know approximately how our job\'s CPU, memory and wall time
 requirem[ents scale, we]{.wysiwyg-color-black} can try and estimate our
@@ -339,8 +337,7 @@ not the time requested by the job.
 
  
 
-Second example: pi computation
-==============================
+# Second example: pi computation
 
 In the examples below we will use a Python script to compute the value
 of pi.

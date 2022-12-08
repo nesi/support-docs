@@ -6,8 +6,7 @@ cProfile is the recommended profiler for most users. Documentation
 > [ARM MAP](https://support.nesi.org.nz/hc/en-gb/articles/360000930396)
 > can also be used to profile Python code.
 
-Running cProfile
-================
+# Running cProfile
 
 Profiling your python code with cProfile is as simple as passing your
 script as an argument to the cProfile module. 
@@ -21,14 +20,12 @@ format. 
 
 The output will be a binary file.
 
-Visualising
-===========
+# Visualising
 
 There are several different packages that can be used to better
 visualise your profile data.
 
-gprof2dot
----------
+## gprof2dot
 
 One of the simplest way to visualise your data is with
 [gprof2dot](https://github.com/jrfonseca/gprof2dot) 
@@ -43,8 +40,7 @@ your code.
 Either download the image, or view it on the cluster using display
 myCode.png (requires X11 setup)
 
-snakevis
---------
+## snakevis
 
 <https://jiffyclub.github.io/snakeviz/>
 

@@ -1,5 +1,4 @@
-Definitions
-===========
+# Definitions
 
 -   Interactive: User can effect program execution in real time.
     -   Visualisation: Graphical Rendering in real time. As used here
@@ -32,7 +31,6 @@ Remote Display: X11, NiceDCV.
 
  
 
-Applications
-============
+# Applications
 
  

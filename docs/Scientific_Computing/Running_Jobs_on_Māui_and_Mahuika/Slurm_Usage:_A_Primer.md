@@ -1,5 +1,4 @@
-Slurm Scripts {#where-to-build}
--------------
+## Slurm Scripts {#where-to-build}
 
 Slurm scripts are text files you will need to create in order to submit
 a job to the scheduler. Slurm scripts start with `#!/bin/bash` (with
@@ -36,13 +35,12 @@ There is a long list of different directives, you can  select your
 requirements from. Please have a look to the manual page: `man sbatch`
 
 There are various ways to specify the requirements, e.g. you could
-request 1GB memory per node using `#SBATCH --mem=1G` or you specify the
-memory per core using `#SBATCH --mem-per-cpu=4096`
+request 1GB memory per node using `#SBATCH --mem=1G`</code> or you
+specify the memory per core using `#SBATCH --mem-per-cpu=4096`
 
 Not all directives need to be specified, just the ones you need.
 
-Commonly Used Slurm Environment variables {#where-to-build}
------------------------------------------
+## Commonly Used Slurm Environment variables {#where-to-build}
 
 These can be useful within Slurm scripts:
 
@@ -54,8 +52,7 @@ These can be useful within Slurm scripts:
 -   `$SLURM_ARRAY_JOB_ID` (job id for the array)
 -   `$SLURM_ARRAY_TASK_ID` (job array index value)
 
-MPI and other distributed jobs {#where-to-build}
-------------------------------
+## MPI and other distributed jobs {#where-to-build}
 
 For MPI jobs you need to set `--ntasks` to a value larger than 1, or if
 you want all nodes to run the same number of tasks, set
@@ -66,8 +63,7 @@ run a parallel program, launching it on multiple CPUs, which can be on
 different nodes. `srun` is required for all MPI programs, and should be
 used in place of any other MPI launcher such as `aprun` or `mpirun`.
 
-OpenMP and other multithreaded jobs {#where-to-build}
------------------------------------
+## OpenMP and other multithreaded jobs {#where-to-build}
 
 [For multithreaded jobs you need to set `--cpus-per-task` to a value
 larger than 1. Our Slurm prolog will then set OMP\_NUM\_THREADS to equal
@@ -75,16 +71,14 @@ that number.  If for any reason you use `srun` with a multi-core but
 non-MPI job then also specify `--ntasks=1` to ensure that it is only
 launched once.]{.wysiwyg-font-size-medium}
 
-Submitting a job
-----------------
+## Submitting a job
 
 Use `sbatch <script>` to submit the job. All Slurm directives can
 alternatively be specified at the command line, e.g.
 `sbatch --account=nesi12345 <script>`. This overwrites directives
 specified in the script.
 
-Try submitting a simple job
----------------------------
+## Try submitting a simple job
 
 Submit job `helloworld.sl`:
 
@@ -106,8 +100,7 @@ specify it.
 
 ``
 
-Submitting a job using GPGPU nodes
-----------------------------------
+## Submitting a job using GPGPU nodes
 
 To submit to the general purpose GPU nodes, you need to add the
 following to your SLURM script:
@@ -115,8 +108,7 @@ following to your SLURM script:
     #SBATCH -p gpu
     #SBATCH --gres=gpu
 
-Submitting a job between Māui and Māui\_Ancil
----------------------------------------------
+## Submitting a job between Māui and Māui\_Ancil
 
 Māui consists of the XC50 and the CS500 (Māui\_Ancil) part. To submit a
 job from the XC50 part (including Māui login nodes) to the CS500 part
@@ -142,8 +134,7 @@ would look like:
 Note: the `--clusters` need to be also specified for the other slurm
 tools to monitor other parts.
 
-Job array
----------
+## Job array
 
 A series of similar jobs can be arranged in a so called job array.
 Therefore, the user tells slurm how many instances should be launched
@@ -164,14 +155,12 @@ sub-directories:
 More and detailed information can be found
 [here](https://slurm.schedmd.com/job_array.html).
 
-Monitor jobs
-------------
+## Monitor jobs
 
 You can use `squeue -u $USER` to monitor your job status. Alternatively
 you can also use `sview`.
 
-Checking completed jobs with sacct
-----------------------------------
+## Checking completed jobs with sacct
 
 Another useful Slurm command is `sacct` which retrieves information
 about completed jobs. For example:

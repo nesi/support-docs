@@ -1,10 +1,8 @@
-Overview {#01FYYXSRFYYXF4YDHV48M88GS2}
---------
+## Overview {#01FYYXSRFYYXF4YDHV48M88GS2}
 
 NeSI aims to keep users informed via various communication channels. 
 
-Checking and setting your preferences {#01FYYXSRFYNB1AQ6EVMY0GRVV5}
--------------------------------------
+## Checking and setting your preferences {#01FYYXSRFYNB1AQ6EVMY0GRVV5}
 
 [Within
 ]{data-slate-node="text"}[my.nesi.org.nz](https://my.nesi.org.nz/account/preference){.guide-markup}

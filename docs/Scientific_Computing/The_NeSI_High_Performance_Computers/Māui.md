@@ -42,8 +42,7 @@ All Māui resources are indicated below, and the the Māui Ancillary Node
 resources
 [here](https://support.nesi.org.nz/knowledge/articles/360000203776/en-gb?brand_id=30406).
 
-Māui Supercomputer (Cray XC50)
-------------------------------
+## Māui Supercomputer (Cray XC50)
 
 +-----------------------------------+-----------------------------------+
 | [**Login nodes** (also known as   | [80 cores in 2 × Skylake (Gold    |
@@ -92,8 +91,7 @@ Māui Supercomputer (Cray XC50)
 | um}                               | UP06]{.wysiwyg-font-size-medium}  |
 +-----------------------------------+-----------------------------------+
 
-Storage (IBM ESS)
------------------
+## Storage (IBM ESS)
 
 +-----------------------------------+-----------------------------------+
 | [**Scratch Capacity** (accessible | [4,412 TB (IBM Spectrum Scale,    |

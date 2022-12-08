@@ -4,8 +4,7 @@ Wellington DTN V5.** (The Shared Collections have been renamed *Guest
 Collections*).  \
 \
 
-Guest Collections
------------------
+## Guest Collections
 
 Instructions on creating and sharing Guest Collections are available
 [here](https://docs.globus.org/how-to/share-files/)
@@ -38,8 +37,7 @@ In summary:
 4.  Users you share with will receive an email notification containing a
     link to the new *Guest Collection*.
 
- Bookmarks
-----------
+##  Bookmarks
 
 1.  Create bookmarks to **NeSI Wellington DTN V5** and new Guest
     Collections\

@@ -11,3 +11,5 @@ always more efficient than any form of parallelisation. 
 ![*Four serial tasks run concurrently will finish faster than for
 parallel 4cpu tasks CPUs one after
 another. *](https://support.nesi.org.nz/hc/article_attachments/360007328695/4tasks.png)
+
+</figure>

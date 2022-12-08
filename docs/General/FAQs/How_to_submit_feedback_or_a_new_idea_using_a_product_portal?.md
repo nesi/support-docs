@@ -1,5 +1,4 @@
-How the portal works
---------------------
+## How the portal works
 
 NeSI is using product portals to share product features, ideas and
 invite feedback from users.

@@ -29,8 +29,7 @@ graphic below).]{style="font-weight: 400;"}
 
 [![Blank\_Diagram\_\_1\_.png](https://support.nesi.org.nz/hc/article_attachments/4406437488271/Blank_Diagram__1_.png)]{style="font-weight: 400;"}
 
-[Existing allocations]{style="font-weight: 400;"}
--------------------------------------------------
+## [Existing allocations]{style="font-weight: 400;"}
 
 [If you have an existing allocation, you will be reminded about the
 upcoming call by email during the second month before your project

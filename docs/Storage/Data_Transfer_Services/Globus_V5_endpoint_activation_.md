@@ -1,7 +1,6 @@
  
 
-Activating an Endpoint
-----------------------
+## Activating an Endpoint
 
 When you select an endpoint to transfer data to/from, you may be asked
 to authenticate with that endpoint:
@@ -27,8 +26,7 @@ the token number.)
 Check the status of your endpoints at
 <https://www.globus.org/app/console/endpoints>[ ](https://www.globus.org/app/console/endpoints)
 
-Managing Endpoint Activation
-----------------------------
+## Managing Endpoint Activation
 
 If a transfer is in progress and will not finish in time before your
 credentials expire, that transfer will pause and you will need to

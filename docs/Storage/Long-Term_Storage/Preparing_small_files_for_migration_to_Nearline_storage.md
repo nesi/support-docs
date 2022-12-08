@@ -13,8 +13,7 @@ large number of them, this article offers instructions for how to
 straightforwardly find all these small files and combine them into a few
 large archive files, perhaps as few as one.
 
-Can\'t I just compress the whole project (or nobackup) directory, or at least all its contents?
------------------------------------------------------------------------------------------------
+## Can\'t I just compress the whole project (or nobackup) directory, or at least all its contents?
 
 Yes, you certainly can do that. This is unlikely to suit you, however:
 
@@ -37,8 +36,7 @@ Yes, you certainly can do that. This is unlikely to suit you, however:
     (interruptions become more likely, and the likely consequences of
     interruptions become more severe).
 
-What is the recommended option, then?
--------------------------------------
+## What is the recommended option, then?
 
 If the directory is too big to be copied as a whole, we recommend that
 you find all the small files within a directory, then group those small

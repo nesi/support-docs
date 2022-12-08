@@ -1,10 +1,8 @@
  
 
-Differences from other Mahuika compute nodes[]{.wysiwyg-font-size-x-large} {#01GAG6XAK1FF5ZNPMT8RF6MCWZ}
-==========================================================================
+# Differences from other Mahuika compute nodes[]{.wysiwyg-font-size-x-large} {#01GAG6XAK1FF5ZNPMT8RF6MCWZ}
 
-**Hardware**
-------------
+## **Hardware**
 
 Each node has two AMD Milan CPU chips, each with 8 chiplets, each of
 which have 8 cores and one level 3 cache, so each node has a total of
@@ -36,8 +34,7 @@ CPU.  ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Hel
 Only 30 nodes are available so far, but that number will eventually
 increase to 64, eight of which will have double the memory.
 
-**[Operating System]{.wysiwyg-font-size-large}** {#01GAG6XAK2WZMMAHZX0WJ98RF6}
-------------------------------------------------
+## **[Operating System]{.wysiwyg-font-size-large}** {#01GAG6XAK2WZMMAHZX0WJ98RF6}
 
 The existing Mahuika compute nodes use Linux Centos 7.4 while Mahuika
 Extension use Rocky 8.5.  These are closely related Linux distributions.
@@ -65,8 +62,7 @@ libraries, but then that would be unlikely to work on the old nodes.
 
 In the longer term all Mahuika nodes will be upgraded to Rocky 8.
 
-**[Older Intel and Cray software]{.wysiwyg-font-size-large}** {#01GAG6XAK2NPSX27CEWEPHD0NJ}
--------------------------------------------------------------
+## **[Older Intel and Cray software]{.wysiwyg-font-size-large}** {#01GAG6XAK2NPSX27CEWEPHD0NJ}
 
 The directories `/cm` and `/opt/cray` contain software which was
 installed on Mahuika when we purchased it rather than installed by the
@@ -78,8 +74,7 @@ This affects our pre-2020 toolchains such as *intel/2018b*, but we
 should have newer versions of such software already installed in most
 cases.
 
-[**Intel MKL performance**]{.wysiwyg-font-size-large} {#01GAG6XAK23RF9SHH94QH011RK}
------------------------------------------------------
+## [**Intel MKL performance**]{.wysiwyg-font-size-large} {#01GAG6XAK23RF9SHH94QH011RK}
 
 In many ways, Intel\'s MKL is the best implementation of the BLAS and
 LAPACK libraries to which we have access, which is why we use it in our
@@ -100,15 +95,13 @@ BLIS. If you try them then please let us know if they work better than
 MKL for your application.  BLIS is expected to perform well as a BLAS
 alternative but not match MKL\'s LAPACK performance.  
 
-[**Do I need to recompile my code?**]{.wysiwyg-font-size-large} {#01GAG6XAK2CBFM66VDVDG2BSDK}
----------------------------------------------------------------
+## [**Do I need to recompile my code?**]{.wysiwyg-font-size-large} {#01GAG6XAK2CBFM66VDVDG2BSDK}
 
 Except for possible missing shared libraries (see above), you should not
 need to recompile your code. Please let us know if you encounter any
 issues not listed above.
 
-[**AOCC (AMD Optimizing C/C++ and Fortran Compilers)**]{.wysiwyg-font-size-large} {#01GAG6XAK2DXD7EH0CWHCYRG22}
----------------------------------------------------------------------------------
+## [**AOCC (AMD Optimizing C/C++ and Fortran Compilers)**]{.wysiwyg-font-size-large} {#01GAG6XAK2DXD7EH0CWHCYRG22}
 
 AMD provides a compiler based on clang (C/C++) and flang (Fortran) which
 might perform better on their hardware.  We have installed it but not
@@ -121,8 +114,7 @@ For more information on AOCC compiler suite please, visit [AMD
 Optimizing C/C++ and Fortran Compilers
 (AOCC)](https://developer.amd.com/amd-aocc/)
 
-[**Network**]{.wysiwyg-font-size-large} {#01GAG6XAK2M6MMYE9057FTW7A4}
----------------------------------------
+## [**Network**]{.wysiwyg-font-size-large} {#01GAG6XAK2M6MMYE9057FTW7A4}
 
 Access to the new nodes is currently only possible via the Slurm
 `sbatch` and `srun` commands. There is no ssh access, not even to the
@@ -166,8 +158,7 @@ Resource allocation limits:   
     if you require additional resources for jobs that are best suited to
     the Mahuika Extension.
 
-**[Notes]{.wysiwyg-font-size-x-large}[ ]{.wysiwyg-font-size-large}** {#01GAG6XAK3WY7N03E9SGCXN90B}
-====================================================================
+# **[Notes]{.wysiwyg-font-size-x-large}[ ]{.wysiwyg-font-size-large}** {#01GAG6XAK3WY7N03E9SGCXN90B}
 
 -   **More node**s will be added in the future.
 -   Mahuika Extension is not a Cray system and the CPE differs from that

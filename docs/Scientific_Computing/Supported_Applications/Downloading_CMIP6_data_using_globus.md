@@ -12,8 +12,7 @@ instructions
 
  
 
-[Initial setup]{style="font-weight: 400;"}
-------------------------------------------
+## [Initial setup]{style="font-weight: 400;"}
 
 [To get started you will need:]{style="font-weight: 400;"}
 
@@ -30,8 +29,7 @@ You\'ll also need to install the globus cli tools. On mahuika:
 
  
 
-Choosing your dataset
----------------------
+## Choosing your dataset
 
 First you will need to select some dataset by visiting the [CMIP6 search
 interface](https://esgf-node.llnl.gov/search/cmip6/). You can keep most
@@ -65,8 +63,7 @@ interest,]{style="font-weight: 400;"}
 [where DATE has the format YYYMMDD and TIME is a number, eg
 134525. ]{style="font-weight: 400;"}
 
-[Downloading the dataset]{style="font-weight: 400;"}
-----------------------------------------------------
+## [Downloading the dataset]{style="font-weight: 400;"}
 
 [This involves several steps]{style="font-weight: 400;"}
 

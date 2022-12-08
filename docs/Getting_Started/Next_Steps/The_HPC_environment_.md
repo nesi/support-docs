@@ -1,12 +1,11 @@
-Environment Modules
--------------------
+## Environment Modules
 
 [Modules are a convenient  way to provide access to applications  on the
 cluster. They prepare the environment you need to run an
 application.]{style="font-weight: 400;"}
 
-[For a full list of module commands run man
-module]{style="font-weight: 400;"} or visit the lmod documentation
+[For a full list of module commands run <kbd>man
+module</kbd>]{style="font-weight: 400;"} or visit the lmod documentation
 [here](https://lmod.readthedocs.io/en/latest/010_user.html).
 
   ------------------------------- ---------------------------------------------------------------
@@ -17,7 +16,6 @@ module]{style="font-weight: 400;"} or visit the lmod documentation
   `module list [module name]`     Lists currently loaded modules.
   ------------------------------- ---------------------------------------------------------------
 
- 
--
+##  
 
 <https://lmod.readthedocs.io/en/latest/010_user.html>

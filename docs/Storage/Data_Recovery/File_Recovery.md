@@ -1,5 +1,4 @@
-Snapshots
----------
+## Snapshots
 
 Snapshots are read only copies of the file system taken every day at
 12:15, and retained for seven days.\
@@ -27,5 +26,5 @@ copying it over, e.g.
 
 > ### Tip {#prerequisites}
 >
-> For copying directories use the flag -ir or just -r if you don\'t want
-> to be prompted before overwriting.
+> For copying directories use the flag <kbd>-ir</kbd> or just
+> <kbd>-r</kbd> if you don\'t want to be prompted before overwriting.

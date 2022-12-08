@@ -18,8 +18,7 @@ configurations also apply to Intel oneMKL. However, the same concepts
 apply to other threading libraries as well, such as the GOMP library
 used by the GCC compiler family.
 
-Nodes, Sockets, and Physical Cores, and Logical Cores
------------------------------------------------------
+## Nodes, Sockets, and Physical Cores, and Logical Cores
 
 To run parallel software effectively, a modern HPC consists of many
 nodes, with multiple processors on each node. The processors are often
@@ -63,8 +62,7 @@ For a thread that runs on a given core, this means:
 -   Data is \"remote\" when it is stored elsewhere and takes extra time
     to access
 
-Thread Placement and Affinity
------------------------------
+## Thread Placement and Affinity
 
 Given the arrangement of node, sockets, and cores, with different access
 to RAM and caches, we need to to make sure that our threads are located
@@ -91,8 +89,7 @@ able to share data in a cache.
 The mechanism that keeps our threads on their cores is called **thread
 affinity**.
 
-Example Program
----------------
+## Example Program
 
 We will use the Intel OpenMP library in the following examples. The same
 configurations can be used for all software that is compiled with the
@@ -123,8 +120,7 @@ Running the program with two threads should return the following output
     Hello World from Thread 0!
     Hello World from Thread 1!
 
-Configuring Slurm
------------------
+## Configuring Slurm
 
 The Slurm scheduler reserves resources on compute nodes according to our
 requests. Unless we ask for a full node, we will get a subset of the
@@ -195,8 +191,7 @@ should result in output similar to this:
     the first and second logical core inside the first physical core,
     while ID 8 is a logical core in the second physical core
 
-Setting up thread placement and affinity
-----------------------------------------
+## Setting up thread placement and affinity
 
 We will now place our threads on cores in a specific order and bind them
 to these cores, so that they can no longer move to another core during
@@ -305,8 +300,7 @@ Please refer to the [Intel
 documentation](https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference-thread-affinity-interface-linux-and-windows)
 for further information on \"KMP\_AFFINITY\".
 
-Tips
-----
+## Tips
 
 Unfortunately, there is no single best choice for setting up thread
 placement and affinity, it depends on the application. Also keep in mind

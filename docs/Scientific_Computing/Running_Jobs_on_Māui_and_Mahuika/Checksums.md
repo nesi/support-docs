@@ -19,8 +19,7 @@ introduced into a dataset. For example:
 While not necessary to do in every case, every time, file integrity
 should be one of the first things you check when troubleshooting.
 
-Example
--------
+## Example
 
 The file \'`corrupt.bin`\' has had 1 byte changed, yet on inspection
 would appear identical. 
@@ -47,8 +46,7 @@ affect the checksum.
 > You will only need to compare a few characters of the string to
 > confirm validity.
 
-Commands
---------
+## Commands
 
 The checksum for file \'*filename.txt*\' can be found with the following
 commands.

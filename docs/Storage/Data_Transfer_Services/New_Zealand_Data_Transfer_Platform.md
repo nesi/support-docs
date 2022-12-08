@@ -95,12 +95,12 @@ allows data to be accessible to any person who has a Globus account.
 | [`MWLR PN-D | Customised  |  Only for   | Contact the | [IToperatio |
 | TN-username | endpoints   | internal    | MWLR person | ns\@landcar |
 | `](https:// | for users   | users       | you are     | eresearch.  |
-| transfer.ne | to transfer |             | wanting to  | co.nz](mail |
-| si.org.nz/f | data        |             | share data  | to:IToperat |
-| ile-manager | between     |             | with.       | ions@landca |
-| /collection | MWLR and    |             |             | reresearch. |
-| s/fc778f2e- | NeSI, or to |             |             | co.nz)      |
-| d02f-40b8-9 | share data  |             |             |             |
+| transfer.ne | to transfer |             | wanting to  | <wbr></wbr> |
+| si.org.nz/f | data        |             | share data  | co.nz](mail |
+| ile-manager | between     |             | with.       | to:IToperat |
+| /collection | MWLR and    |             |             | ions@landca |
+| s/fc778f2e- | NeSI, or to |             |             | reresearch. |
+| d02f-40b8-9 | share data  |             |             | co.nz)      |
 | aea-4700661 | with        |             |             |             |
 | 45f3a/overv | third-party |             |             |             |
 | iew?back=en | collaborato |             |             |             |
@@ -109,11 +109,9 @@ allows data to be accessible to any person who has a Globus account.
 
 :  
 
- 
--
+##  
 
-How to establish a New Zealand node
------------------------------------
+## How to establish a New Zealand node
 
 [NeSI staff](mailto:support@nesi.org.nz) can provide details on how to
 join the national data transfer platform. 

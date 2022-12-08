@@ -24,8 +24,7 @@ ssh to these nodes after logging onto the NeSI lander node.
     entitled: [Compiling software on
     Mahuika.](https://support.nesi.org.nz/hc/en-gb/articles/360000329015)
 
-Mahuika HPC Cluster (Cray CS400)
---------------------------------
+## Mahuika HPC Cluster (Cray CS400)
 
 +-----------------------------------+-----------------------------------+
 | **Login nodes**                   | 72 cores in 2× Broadwell          |
@@ -72,8 +71,7 @@ Mahuika HPC Cluster (Cray CS400)
 
  
 
- Storage (IBM ESS)
-------------------
+##  Storage (IBM ESS)
 
 +-----------------------------------+-----------------------------------+
 | **Scratch storage**               | 4,412 TB (IBM Spectrum Scale,     |

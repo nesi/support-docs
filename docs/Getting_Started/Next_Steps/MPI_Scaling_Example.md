@@ -280,8 +280,7 @@ minutes and 41 seconds we can estimate that it will take about 12 times
 longer to run 60,000.\
 ]{.wysiwyg-color-black}
 
-Estimating our Total Resource Requirments
------------------------------------------
+## Estimating our Total Resource Requirments
 
 Now that we know approximately how our job\'s CPU, memory and wall time
 requirem[ents scale, we]{.wysiwyg-color-black} can try and estimate our

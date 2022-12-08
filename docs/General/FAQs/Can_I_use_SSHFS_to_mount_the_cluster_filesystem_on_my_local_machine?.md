@@ -4,8 +4,7 @@ should follow the \"Recommended logon procedure\" instructions
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000161315-Logging-in-to-the-HPCs)
 to configure SSH first.
 
-Linux {#toc_1}
------
+## Linux {#toc_1}
 
 Use the following commands to mount your home directory from Mahuika on
 your local machine (the same command will work for Māui, just replace
@@ -39,8 +38,7 @@ To mount a project directory, you could run:
 
 </div>
 
-MacOS {#toc_2}
------
+## MacOS {#toc_2}
 
 We recommend using some extra options with MacOS. The following commands
 will mount your home directory, make it show up under devices in Finder

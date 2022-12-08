@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 **ipyrad**, an interactive assembly and analysis toolkit for
 restriction-site associated DNA (RAD-seq) and related data types. Please
@@ -8,19 +7,16 @@ ipyrad.\\
 
 Home page is at https://ipyrad.readthedocs.io/en/latest/index.html
 
-Cite the Manuscript {#cite-the-manuscript dir="auto"}
--------------------
+## Cite the Manuscript {#cite-the-manuscript dir="auto"}
 
 Eaton DAR & Overcast I. \"ipyrad: Interactive assembly and analysis of
 RADseq datasets.\" Bioinformatics (2020).
 
-License {#license dir="auto"}
--------
+## License {#license dir="auto"}
 
 GPLv3
 
-Getting Started {#getting-started dir="auto"}
----------------
+## Getting Started {#getting-started dir="auto"}
 
 Following **example** uses  rad\_example which can be downloaded as per
 instructions on 
@@ -43,8 +39,7 @@ set.
 and edit the paths in parameter file to match the destinations of input
 data, barcode paths,etc. 
 
-[Slurm Script for Using Multiple CPUs a Single Compute Node]{#Job_Script_for_Using_Multiple_Cores_on_a_Single_Compute_Node .mw-headline}
-----------------------------------------------------------------------------------------------------------------------------------------
+## [Slurm Script for Using Multiple CPUs a Single Compute Node]{#Job_Script_for_Using_Multiple_Cores_on_a_Single_Compute_Node .mw-headline}
 
     #!/bin/bash
 

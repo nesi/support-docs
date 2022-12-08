@@ -11,8 +11,7 @@ allocation
 classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176) to
 find out what class you\'re likely eligible for.
 
-HPC Compute & Analytics allocations
-===================================
+# HPC Compute & Analytics allocations
 
 The form of NeSI allocation you may be most familiar with is an
 allocation of computing power. We currently offer three sorts of HPC
@@ -29,8 +28,7 @@ relative \"prices\" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running
 the associated infrastructure and services.
 
-Mahuika allocations
--------------------
+## Mahuika allocations
 
 Allocations on
 [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575-Mahuika)
@@ -72,8 +70,7 @@ details). Therefore:
 
 In reality, every job must request at least some RAM.
 
-Māui allocations
-----------------
+## Māui allocations
 
 The compute capacity of the
 [Māui](https://support.nesi.org.nz/hc/en-gb/articles/360000163695)
@@ -87,8 +84,7 @@ at that time.
 
 One Māui node hour is roughly equivalent to 40 Mahuika compute units.
 
-Online storage allocations
---------------------------
+## Online storage allocations
 
 An online storage allocation, unlike compute allocations, is more like a
 lease than a rate of consumption. It is an amount of disk space and,
@@ -100,11 +96,9 @@ granted to your persistent project directory.
 We do not yet have a ratio of online storage disk space or inodes to
 Mahuika compute units.
 
-Data Storage & Transfer allocations
-===================================
+# Data Storage & Transfer allocations
 
-Nearline storage allocations
-----------------------------
+## Nearline storage allocations
 
 A nearline storage allocation, like online storage allocations but
 unlike compute allocations, is more like a lease than a rate of
@@ -115,11 +109,9 @@ available for your project team to use on our nearline apparatus.
 We do not yet have a ratio of nearline storage tape space or inodes to
 Mahuika compute units.
 
-Consultancy & Training allocations
-==================================
+# Consultancy & Training allocations
 
-Consultancy allocations
------------------------
+## Consultancy allocations
 
 A consultancy allocation is for a number of scientific programmer hours
 between two dates, or is sometimes expressed as a fraction of an FTE
@@ -129,8 +121,7 @@ scientific programming expertise to your project.
 We do not yet have a ratio of consultancy hours to Mahuika compute
 units.
 
-Training courses
-----------------
+## Training courses
 
 NeSI training courses are not subject to a systematic allocation
 mechanism. To enquire about the possibility of NeSI running a course at

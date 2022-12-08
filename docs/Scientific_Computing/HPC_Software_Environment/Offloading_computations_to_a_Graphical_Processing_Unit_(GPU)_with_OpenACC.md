@@ -15,8 +15,7 @@ is that only a few compilers support it. 
 More information about OpenACC can be found
 [here](http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf).
 
-Example
-=======
+# Example
 
 In the following we show how to achieve this in the case of a reduction
 operation involving a large loop in C++ (a similar example can be
@@ -48,8 +47,7 @@ GPU and back to the CPU after completing the loop. (It is also possible
 to initialise this variable on the GPU.) Likewise the number of
 iterations `n` should be copied from the CPU  to the GPU. 
 
-Compile
-=======
+# Compile
 
 We can use the NVIDIA compiler
 
@@ -82,8 +80,7 @@ two executables:
 with executable `total` compiled with `-h noacc`, i.e. OpenACC turned
 off.
 
-Run
-===
+# Run
 
 The following commands will submit the runs to the Mahuika queue (note
 `--gpus-per-node=P100:1` in the case of the executable that offloads to

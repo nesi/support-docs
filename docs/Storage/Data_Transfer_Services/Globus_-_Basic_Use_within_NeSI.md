@@ -3,8 +3,7 @@ endpoints or data-transfer nodes (DTN) which are named in this
 documentation will no longer be in service. Please check back for
 updated information once the new filesystems are in use.
 
-Preliminaries: {#Globus-BasicUse-Registration}
---------------
+## Preliminaries: {#Globus-BasicUse-Registration}
 
 ### 1)  register with Globus for an ID
 
@@ -21,43 +20,113 @@ Transfer Nodes (or endpoints). Associate your cluster filesystem with
 the following Globus DTN names:
 
 ::: {.table-wrap}
+<table class="table table-striped table-bordered">
+<colgroup>
+<col style="width: 284.0px;">
+<col style="width: 537.0px;">
+</colgroup>
+<thead>
+<tr class="tablesorter-headerRow">
+<th class="tablesorter-header sortableHeader tablesorter-headerUnSorted" style="user-select: none;" tabindex="0" scope="col" data-column="0">
 Globus DTN
 :::
 
+</th>
+<th style="user-select: none;" tabindex="0" scope="col" data-column="1">
 NeSI Filesystem
 
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
 nesi\#pan\_auckland
 
+</td>
+<td>
 Pan cluster fileystem
 
+</td>
+</tr>
+<tr>
+<td>
 nesi\#otago-dtn01
 
+</td>
+<td>
 High Capacity Research Storage Cluster, U of Otago
 
+</td>
+</tr>
+<tr>
+<td>
 nesi\#otago-dtn02
 
+</td>
+<td>
 High Capacity Research Storage Cluster, U of Otago
 
+</td>
+</tr>
+<tr>
+<td>
 nesi\#otago-dtn03
 
+</td>
+<td>
 High Capacity Research Storage Cluster, U of Otago
 
+</td>
+</tr>
+<tr>
+<td>
 nesi\#otago-dtn04
 
+</td>
+<td>
 Otago AWS Endpoint
 
+</td>
+</tr>
+<tr>
+<td>
 nesi\#otago-dtn-chc01
 
+</td>
+<td>
 High Capacity Research Storage Cluster, Christchurch Campus
 
+</td>
+</tr>
+<tr>
+<td>
 nesi\#otago-dtn-wlg01
 
+</td>
+<td>
 High Capacity Research Storage Cluster, Wellington Campus
 
+</td>
+</tr>
+<!--tr role="row">
+<td> nesi#fitzroy_niwa</td>
+<td> Data Transfer Node at NIWA serving the Fitzroy cluster</td>
+</tr-->
+
+<tr>
+<td>
 Plant and Food Research iRODS instance
 
+</td>
+<td>
 Plant and Food Research iRODS instance
 
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 ###  
 
 ### 3) Be aware of Globus paths (see [Globus-Paths-Permissions-Storage-Allocation](https://support.nesi.org.nz/hc/en-gb/articles/360000216815-Globus-Paths-Permissions-Storage-Allocation)  if necessary).
@@ -67,19 +136,17 @@ nesi\#otago-dtn01  but in order to access this filesystem, you will need
 to [register for access to
 nesi\#otago-dtn01](https://www.otago.ac.nz/its/forms/otago604826.html)
 
-  {#section-1 .auto-cursor-target}
--
+##   {#section-1 .auto-cursor-target}
 
-Transfer Data between cluster nodes {#Globus-BasicUse-TransferDatabetweenclusternodes .auto-cursor-target}
------------------------------------
+## Transfer Data between cluster nodes {#Globus-BasicUse-TransferDatabetweenclusternodes .auto-cursor-target}
 
 1.  Sign in to
     [https://www.globus.org](https://www.globusid.org/){.external-link}
     with your id. You will be taken to the transfer page
     <https://www.globus.org/app/transfer>
 2.  Select the endpoints you wish to move files between (start typing
-    \"nesi\#\" to see the list of NeSI DTNs to select from). 
-    Authenticate via Tuakiri.    
+    <mark> \"nesi\#\"</mark> to see the list of NeSI DTNs to select
+    from).  Authenticate via Tuakiri.    
 
 3.  *Globus defaults to your home directory (maximum storage 2GB)* .
     Navigate your path to an appropriate directory (see [Globus Paths,
@@ -99,11 +166,9 @@ using Pan.
 </div>
 :::
 
- 
--
+##  
 
-Transfer Data between your personal computer and cluster nodes {#Globus-BasicUse-TransferDatabetweenyourpersonalcomputerandclusternodes}
---------------------------------------------------------------
+## Transfer Data between your personal computer and cluster nodes {#Globus-BasicUse-TransferDatabetweenyourpersonalcomputerandclusternodes}
 
 Install a [personal globus
 DTN](https://nznesi.atlassian.net/wiki/spaces/nesiproj/pages/104955907/Personal+Globus+Endpoint)

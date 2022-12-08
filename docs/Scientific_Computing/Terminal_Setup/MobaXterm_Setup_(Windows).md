@@ -46,16 +46,15 @@ transfer GUI.
 > ### WARNING {#moba-bug}
 >
 > There is a bug which causes some users to be repeatedly prompted
-> \<username\>\@lander.nesi.org.nz\'s password:\
+> <samp>\<username\>\@lander.nesi.org.nz\'s password:</samp>\
 > This can be resolved by clicking \"OK\" each time you are prompted
-> then logging in as normal once you are prompted for your First Factor:
-> or Password:.\
+> then logging in as normal once you are prompted for your <samp>First
+> Factor:</samp> or <samp>Password:</samp>.\
 > See [Login
 > Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
 > for more details
 
-Usage
------
+## Usage
 
 You will see your saved session in the left hand panel under
 \'Sessions\'. Double click to start.

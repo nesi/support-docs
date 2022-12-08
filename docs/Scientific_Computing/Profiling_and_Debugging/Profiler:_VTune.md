@@ -1,8 +1,6 @@
- 
--
+##  
 
- What is VTune?  
-----------------
+##  What is VTune?  
 
 VTune is a **performance** analysis tool.\
 It can be used to identify and **analyse** various aspects in both
@@ -15,19 +13,16 @@ user interface (**GUI**).\
 
  
 
-Where to find more resources on VTune?  
----------------------------------------
+## Where to find more resources on VTune?  
 
 -   Main page is at
     [https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html#gs.bjani9)
 -   Tutorials are available at
     <https://software.intel.com/content/www/us/en/develop/articles/vtune-tutorials.html>
 
- 
--
+##  
 
- How to use VTune?
-------------------
+##  How to use VTune?
 
 \
 VTune is available on Mahuika by loading the VTune **module**.
@@ -45,11 +40,9 @@ To use the VTune amplifier command line tool help run:
 
     amplxe-cl -help
 
- 
--
+##  
 
- How do I profile an application with VTune?  
----------------------------------------------
+##  How do I profile an application with VTune?  
 
 The hotspot analysis is the most commonly used analysis and generally
 the first approach to optimizing an application.

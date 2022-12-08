@@ -6,8 +6,7 @@
 > -   Be a member of an[active
 >     project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
 >
-First time setup {#recLinux}
-----------------
+## First time setup {#recLinux}
 
 Git Bash can be downloaded as part of Git
 [here](https://git-scm.com/download/win).
@@ -48,13 +47,13 @@ The login process can be simplified with a few configurations.
            ControlMaster auto
            ControlPersist 1
 
-    Close and save with ctrl x, y, Enter
+    Close and save with <kbd>ctrl x</kbd>, <kbd>y</kbd>,
+    <kbd>Enter</kbd>
 
 2.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
 
-Usage
------
+## Usage
 
 Assuming you have followed the setup above you will be able to connect
 to the clusters directly using;

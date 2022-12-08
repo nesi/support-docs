@@ -3,8 +3,7 @@
 > -   You must have a [NeSI
 >     account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
 
-How to join an existing project on NeSI
----------------------------------------
+## How to join an existing project on NeSI
 
 1.  Make sure you have been given the project code by the project owner.
 2.  Log in to [my.nesi.org.nz](https://my.nesi.org.nz/).

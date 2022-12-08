@@ -2,8 +2,7 @@ See [Applying for a NeSI
 project](https://support.nesi.org.nz/hc/en-gb/articles/360000174976) for
 how to access the form.
 
-Preparing a request to use NeSI resources
------------------------------------------
+## Preparing a request to use NeSI resources
 
 The procedures for starting a request for a new NeSI project and editing
 an in-progress request (draft) that you previously started are described

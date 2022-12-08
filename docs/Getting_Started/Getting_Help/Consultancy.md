@@ -2,8 +2,7 @@ NeSI\'s Consultancy service provides scientific and HPC-focussed
 computational and data science support to research projects across a
 range of domains.
 
-Need support with your research project?
-----------------------------------------
+## Need support with your research project?
 
 If you would like to learn more about NeSI\'s Consultancy service and
 how you can work with NeSI\'s Research Software and Data Science
@@ -17,8 +16,7 @@ those with Merit projects can usually access consultancy at no cost to
 themselves, based on their institution\'s or MBIE\'s investment into
 NeSI.
 
-What do we do?
---------------
+## What do we do?
 
 The NeSI team are available to help with any stage of your research
 software development. We can get involved with designing and developing
@@ -51,8 +49,7 @@ non-exhaustive):
         models
 -   Anything else you can think of ;-)
 
-What can you expect from us?
-----------------------------
+## What can you expect from us?
 
 During a consultancy project we aim to provide:
 
@@ -66,8 +63,7 @@ During a consultancy project we aim to provide:
 -   A case study published on our website after the project has been
     completed, to showcase the work you are doing on NeSI
 
-What is expected of you?
-------------------------
+## What is expected of you?
 
 Consultancy projects are intended to be a collaboration and thus some
 input is required on your part. You should be willing to:
@@ -86,8 +82,7 @@ input is required on your part. You should be willing to:
     completes (NeSI\'s involvement in the project is limited to the
     agreed timeline)
 
-Previous projects
------------------
+## Previous projects
 
 Listed below are some examples of previous projects we have contributed
 to:

@@ -10,18 +10,38 @@ only available on Mahuika, and blue to components only available on Māui
 XC part.\
 ]{.wysiwyg-font-size-small}
 
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>
 Programming Languages
 
+</th>
+<th>
 Programming Models
 
+</th>
+<th>
 Compilers
 
+</th>
+<th>
 Tools
 
+</th>
+<th>
 Optimised Scientific Libraries
 
+</th>
+<th>
 I/O Libraries
 
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="4">
 Fortran
 
 C
@@ -30,6 +50,8 @@ C++
 
 Chapel
 
+</td>
+<td>
 Distributed Memory:
 
 MPI Support:
@@ -48,12 +70,16 @@ MPI Support:
 
 [· MPI]{.wysiwyg-color-blue80}
 
+</td>
+<td>
 · Cray Compiling Environment (CCE)
 
 · GNU
 
 · Intel
 
+</td>
+<td>
 Performance Analysis:
 
 · CrayPat & Cray Apprentice2
@@ -63,6 +89,8 @@ Performance Analysis:
 · Intel Vtune Amplifier XE, Advisor, [Trace Analyser &
 Collector]{.wysiwyg-color-green120}
 
+</td>
+<td>
 Dense:
 
 · BLAS
@@ -73,16 +101,24 @@ Dense:
 
 · Iterative Refinement Tool
 
+</td>
+<td rowspan="4">
 [NetCDF^2^]{.wysiwyg-color-blue80}
 
 [HDF^2^]{.wysiwyg-color-blue80}
 
+</td>
+</tr>
+<tr>
+<td>
 Shared Memory
 
 · OpenMP 4.0
 
 · OpenACC 2.0
 
+</td>
+<td>
 Environment Setup
 
 · Modules
@@ -91,16 +127,24 @@ Environment Setup
 
  
 
+</td>
+<td>
 Porting Tools:
 
 · Reveal
 
 · CCDB
 
+</td>
+<td>
 FFT:
 
 · FFTW
 
+</td>
+</tr>
+<tr>
+<td>
 PGAS
 
 · UPC
@@ -109,8 +153,12 @@ PGAS
 
 · CoArray C++
 
+</td>
+<td>
  
 
+</td>
+<td>
 Debuggers:
 
 · lgdb
@@ -121,24 +169,40 @@ Debuggers:
 
 [· STAT^2^]{.wysiwyg-color-blue80}
 
+</td>
+<td>
 [Sparse:]{.wysiwyg-color-blue80}
 
 [· Cray PETSc (with CASK)^2^]{.wysiwyg-color-blue80}
 
 [· Cray Trilinos (with CASK)^2^]{.wysiwyg-color-blue80}
 
+</td>
+</tr>
+<tr>
+<td>
  
 
+</td>
+<td>
  
 
+</td>
+<td>
 Data Analytics
 
 [· Urika XC Data Analytics^2^]{.wysiwyg-color-blue80}
 
 [· Cray Graph Engine^2^]{.wysiwyg-color-blue80}
 
+</td>
+<td>
  
 
+</td>
+</tr>
+</tbody>
+</table>
 **Notes:**
 
 1.  [^1^Only available on Mahuika HPC Cluster, Mahuika Ancillary Nodes
@@ -158,8 +222,7 @@ Data Analytics
 5.  Intel Parallel Studio XE Professional Edition for CLE will be
     installed installed on Māui.
 
-Key Similarities  between CPE on XC50 and CS400/500s
-----------------------------------------------------
+## Key Similarities  between CPE on XC50 and CS400/500s
 
 As shown in the table above, Cray provides a list of tools, libraries,
 and compilers for both platforms. The Cray compiler environment comes
@@ -168,8 +231,7 @@ compile and link flags for system architecture and libraries
 (enabled/disabled by loading modules), and the Cray performance analysis
 tools (CrayPAT)
 
-Key Differences between CPE on XC50 and CS400/500s
---------------------------------------------------
+## Key Differences between CPE on XC50 and CS400/500s
 
 There are many similarities between the XC and CS programming
 environments (compilers and many tools and libraries are the same or at

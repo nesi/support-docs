@@ -13,8 +13,7 @@ Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)). 
 > if unused. To avoid unnecessary charges to your project, don\'t forget
 > to exit an interactive session once finished.
 
-Using \'srun \--pty bash\'
---------------------------
+## Using \'srun \--pty bash\'
 
 `srun` will add your resource request to the queue. When the allocation
 starts, a new bash session will start up on **one of the granted
@@ -39,8 +38,7 @@ Note the host name in the prompt has changed to the compute node
 For a full description of `srun` and its options, see
 [here](https://slurm.schedmd.com/srun.html).
 
-Using \'salloc\'
-----------------
+## Using \'salloc\'
 
 `salloc` functions similarly `srun --pty bash` in that it will add your
 resource request to the queue. However the allocation starts, a new bash
@@ -121,8 +119,7 @@ disrupted while you\'re away.
 
  
 
-Setting up a detachable terminal
---------------------------------
+## Setting up a detachable terminal
 
 > ### Warning {#detach-warning}
 >
@@ -135,8 +132,7 @@ Setting up a detachable terminal
 1.  Log in to a Mahuika, Māui or Māui-ancil login node.
 2.  Start up `tmux` or `screen`.
 
-Modifying an existing interactive session
------------------------------------------
+## Modifying an existing interactive session
 
 Whether your interactive session is already running or is still waiting
 in the queue, you can make a range of changes to it using the `scontrol`
@@ -193,8 +189,7 @@ There are many other changes you can make by means of `scontrol`. For
 further information, please see [the `scontrol`
 documentation](https://slurm.schedmd.com/scontrol.html) (off site).
 
-Modifying multiple interactive sessions at once
------------------------------------------------
+## Modifying multiple interactive sessions at once
 
 In the same way, if you have several interactive sessions waiting to
 start on the same cluster, you might want to postpone them all using a
@@ -249,8 +244,7 @@ following:
     have two cron jobs, one that runs on Mondays to Thursdays, and a
     different cron job running on Fridays.
 
-Cancelling an interactive session
----------------------------------
+## Cancelling an interactive session
 
 You can cancel a pending interactive session by attaching the relevant
 session, putting the job in the foreground (if necessary) and pressing

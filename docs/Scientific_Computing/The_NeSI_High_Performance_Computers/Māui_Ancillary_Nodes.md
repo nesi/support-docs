@@ -27,8 +27,7 @@ and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.
 2.  The Māui Ancillary nodes have Skylake processors, while the Mahuika
     nodes use Broadwell processors.
 
-Ancillary Node Specifications
------------------------------
+## Ancillary Node Specifications
 
 +-----------------------------------+-----------------------------------+
 | **Multi-Purpose nodes**           | 1,120 cores in 28 × Skylake (Gold |

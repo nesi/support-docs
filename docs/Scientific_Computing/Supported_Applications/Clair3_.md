@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 [Clair3 homepage](https://github.com/HKU-BAL/Clair3)
 
@@ -19,8 +18,7 @@ A short pre-print describing Clair3\'s algorithms and results is at
 
  
 
-License and Disclaimer {#license_and_disclaimer}
-======================
+# License and Disclaimer {#license_and_disclaimer}
 
 Copyright 2021 The University of Hong Kong, Department of Computer
 Science
@@ -40,8 +38,7 @@ met:
     contributors may be used to endorse or promote products derived from
     this software without specific prior written permission.
 
-Singularity container
-=====================
+# Singularity container
 
 Although we do not provide Clair3 as a module, it is available as a
 Singularity container which is stored in `/opt/nesi/container/Clair3`   
@@ -69,14 +66,11 @@ Singularity container which is stored in `/opt/nesi/container/Clair3`   
       --model_path="/opt/models/${MODEL_NAME}" \
       --output=${OUTPUT_DIR}               ## absolute output path prefix
 
-  {#section .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
--
+##   {#section .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
 
-  {#section-1 .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
--
+##   {#section-1 .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
 
-Example Slurm script {#example-slurm-script .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
---------------------
+## Example Slurm script {#example-slurm-script .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
 
 **Caution**: Absolute path is needed for both `INPUT_DIR` and
 `OUTPUT_DIR`[\

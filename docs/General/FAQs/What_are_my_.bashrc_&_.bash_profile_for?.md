@@ -14,8 +14,7 @@ read and when.
 > apply with modifications, or not at all; please consult the
 > documentation for your shell.
 
-`~/.bashrc`
------------
+## `~/.bashrc`
 
 In a standard configuration, `~/.bashrc` is read when your shell session
 is interactive but not a login session. Because most of your sessions on
@@ -24,8 +23,7 @@ read by default. It will, however, be read if you start an interactive
 shell within a shell, for instance by executing `bash` at the command
 line.
 
-`~/.bash_profile` (and `~/.profile`)
-------------------------------------
+## `~/.bash_profile` (and `~/.profile`)
 
 In a standard configuration, `~/.bash_profile` is read when your shell
 session is a login session. When you log in to the cluster, you will get
@@ -38,14 +36,12 @@ will source `~/.profile` as if it were `~/.bash_profile`. For the rest
 of this article, however, we will assume that you\'re using
 `~/.bash_profile`.
 
-Can I have the same environment variables, aliases, functions, etc. whether my shell is a login shell or not?
--------------------------------------------------------------------------------------------------------------
+## Can I have the same environment variables, aliases, functions, etc. whether my shell is a login shell or not?
 
 Absolutely. You can define them in both `~/.bashrc` and
 `~/.bash_profile`. But this isn\'t the best way.
 
-I thought not. I don\'t want to repeat myself!
-----------------------------------------------
+## I thought not. I don\'t want to repeat myself!
 
 A wise choice. Repeating yourself is extra work, and dangerous in that
 if you later have to make a change, you may forget to do it everywhere
@@ -63,8 +59,7 @@ loaded in all interactive shells (except those launched with special
 options intended to prevent such loading), instead of only in non-login
 shells.
 
-What should go where?
----------------------
+## What should go where?
 
 That\'s largely up to you. However, we have found the following to be
 useful rules of thumb:
@@ -76,8 +71,7 @@ useful rules of thumb:
 These are guidelines only and are subject to your specific working
 practices and how you expect your shells to behave.
 
-Further information
--------------------
+## Further information
 
 You can find further information in the INVOCATION section of the bash
 man page, accessible by typing the command `man bash` at your terminal

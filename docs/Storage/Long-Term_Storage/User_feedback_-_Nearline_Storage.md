@@ -1,5 +1,4 @@
-Nearline Storage service {#nearline_storage_service}
-========================
+# Nearline Storage service {#nearline_storage_service}
 
 NeSI\'s Nearline Storage service allows you to store your data on our
 hierarchical system, which consists of a staging area (disk) connected

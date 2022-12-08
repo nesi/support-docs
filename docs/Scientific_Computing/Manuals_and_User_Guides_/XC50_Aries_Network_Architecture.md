@@ -9,6 +9,7 @@ height="263"}
 
 The performance characteristics are:
 
+<ol>
 1.  Intra-Chassis
     a.  Backplane
     b.  15 links in the backplane
@@ -25,6 +26,7 @@ The performance characteristics are:
     c.  Rank 3 (blue) Network
     d.  12.5 Gbps
 
+</ol>
 The centrepiece of the Aries network is dynamic routing through a large
 variety of different routes from Aries A to Aries B. Therewith the
 effective bandwidth is increased significantly. These dynamic routing on

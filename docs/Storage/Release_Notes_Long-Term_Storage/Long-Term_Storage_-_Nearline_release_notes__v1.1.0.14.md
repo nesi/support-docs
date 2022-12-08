@@ -1,5 +1,4 @@
-Version 1.1.0.14
-================
+# Version 1.1.0.14
 
 *Released 5 November 2020.*
 

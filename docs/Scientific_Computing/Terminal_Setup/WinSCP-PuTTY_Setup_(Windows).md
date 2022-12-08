@@ -22,8 +22,8 @@ Upon startup:
 
 1. Add a *New Site* and set:
 
--   Enter in *Host Name: *login.mahuika.nesi.org.nz or
-    login.maui.nesi.org.nz
+-   Enter in *Host Name: *<kbd>login.mahuika.nesi.org.nz</kbd> or
+    <kbd>login.maui.nesi.org.nz</kbd>
 -   Enter your NeSI account username into *User name:* (Password
     optional)
 
@@ -45,14 +45,13 @@ Upon startup:
 6\. Navigate to *Connection \> Tunnel *and set:
 
 -   Enable \"Connect through SSH tunnel\".
--   Under \"Host name:\" enter lander.nesi.org.nz
+-   Under \"Host name:\" enter <kbd>lander.nesi.org.nz</kbd>
 -   Under \"User name:\" enter your username.
 -   Optionally, enter your password in the \"Password:\" box.
 
 10\. *OK \> Save*
 
-Setup for PuTTY Terminal
-------------------------
+## Setup for PuTTY Terminal
 
 The default WinSCP terminal lacks much functionality. We highly
 recommend you use the PuTTY terminal instead.
@@ -70,8 +69,7 @@ and pass it to PuTTY*
 
  
 
-Setup for Xming (Optional) {#x_ming}
---------------------------
+## Setup for Xming (Optional) {#x_ming}
 
 Xming is an X server for Windows allowing graphical interface with the
 HPC and can be downloaded
@@ -92,8 +90,7 @@ client path.
 > In order for X11 forwarding to work you must have an Xming server
 > running before connecting to the HPC.
 
-Usage
-=====
+# Usage
 
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.

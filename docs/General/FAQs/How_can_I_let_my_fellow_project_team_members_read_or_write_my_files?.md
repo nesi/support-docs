@@ -35,13 +35,11 @@ machine.
 > and will therefore override whichever
 > of `--no-perms` and `--no-group` come before it.
 
-To copy a file (or directory and its contents), updating its group and setting its permissions {#to-copy-a-file-or-directory-and-its-contents-updating-its-group-and-setting-its-permissions dir="auto"}
-----------------------------------------------------------------------------------------------
+## To copy a file (or directory and its contents), updating its group and setting its permissions {#to-copy-a-file-or-directory-and-its-contents-updating-its-group-and-setting-its-permissions dir="auto"}
 
     rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
 
-To move a file (or directory and its contents), updating its group and setting its permissions {#to-move-a-file-or-directory-and-its-contents-updating-its-group-and-setting-its-permissions dir="auto"}
-----------------------------------------------------------------------------------------------
+## To move a file (or directory and its contents), updating its group and setting its permissions {#to-move-a-file-or-directory-and-its-contents-updating-its-group-and-setting-its-permissions dir="auto"}
 
 > ### Warning {#remove-source-warning}
 >
@@ -57,8 +55,7 @@ and aren\'t masked at the destination.\" A lower case `x` on the other
 hand means, \"Make this entity executable, even if it wasn\'t so
 previously, though this may be masked at the destination.\"
 
-To fix the permissions of a file or directory that is already in its intended place {#to-fix-the-permissions-of-a-file-or-directory-that-is-already-in-its-intended-place dir="auto"}
------------------------------------------------------------------------------------
+## To fix the permissions of a file or directory that is already in its intended place {#to-fix-the-permissions-of-a-file-or-directory-that-is-already-in-its-intended-place dir="auto"}
 
 Change to the parent directory, which could be a project or nobackup
 directory, that you want to fix, and find and fix your files. You can do

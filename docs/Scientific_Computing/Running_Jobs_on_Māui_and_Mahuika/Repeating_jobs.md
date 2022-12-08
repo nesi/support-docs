@@ -1,5 +1,4 @@
-Re-submitting a job script from within itself
----------------------------------------------
+## Re-submitting a job script from within itself
 
 Jobs can submit additional jobs. To avoid any risk of a runaway
 explosion of jobs, there should be no more than one such
@@ -13,8 +12,7 @@ self-resubmission.  Doing this reliably can be a bit complicated.
     -   \"\--signal=USR1\@120\"
 -   Using bash traps to execute something on job exit
 
-Cron
-----
+## Cron
 
 Cron is the standard Unix way of performing a task at a fixed time every
 hour, day, or week.  It is possible to use it on most interactive NeSI
@@ -54,8 +52,7 @@ For general instructions see:
 
     man crontab
 
-Scron
------
+## Scron
 
 *scrontab* is Slurm\'s analogue of *crontab*.  Rather than running
 directly on the login node it submits Slurm jobs at the scheduled times.
@@ -82,8 +79,7 @@ For general instructions see:
 
     man scrontab
 
-Cylc {#cylc dir="auto"}
-----
+## Cylc {#cylc dir="auto"}
 
 Cylc is NIWA\'s system for running cylic workflows such as those used in
 weather forecasting. 

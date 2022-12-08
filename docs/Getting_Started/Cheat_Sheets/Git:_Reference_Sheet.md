@@ -7,8 +7,7 @@ found [here](https://git-scm.com/docs/git), or using `man git`.
 
 ![Git\_Diagram.svg](https://support.nesi.org.nz/hc/article_attachments/360004194235/Git_Diagram.svg)
 
-Authentication
---------------
+## Authentication
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
@@ -72,8 +71,7 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
         Hi User! You've successfully authenticated, but GitHub does not provide shell access.
 
-Basics
-------
+## Basics
 
 You can create a repository with either of the following commands.
 
@@ -84,97 +82,216 @@ You can create a repository with either of the following commands.
 
  
 
+<table style="height: 678px; width: 974px;">
+<tbody>
+<tr style="height: 89px;">
+<td style="width: 142px; height: 89px;" rowspan="2">
 add
 
+</td>
+<td style="width: 310px; height: 89px;">
 `git add <file1> <file2>`
 
+</td>
+<td style="width: 513px; height: 89px;">
 Adds `<file1>` and `<file2>` to the staging area.
 
+</td>
+</tr>
+<tr style="height: 89px;">
+<td style="width: 310px; height: 89px;">
 [`git add *.py`]{.c}
 
+</td>
+<td style="width: 513px; height: 89px;">
  Adds all python files in the current directory to the staging area.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 142px; height: 41px;">
 status
 
+</td>
+<td style="width: 310px; height: 41px;">
 [`git status`]{.c}
 
+</td>
+<td style="width: 513px; height: 41px;">
 Lists changes in working directory, and staged files.
 
+</td>
+</tr>
+<tr style="height: 39px;">
+<td style="width: 142px; height: 39px;" rowspan="3">
 commit 
 
+</td>
+<td style="width: 310px; height: 39px;">
 `git commit`
 
+</td>
+<td style="width: 513px; height: 39px;">
 Records everything in the staging area to your repository. The default
 text editor will prompt you for a commit message.
 
+</td>
+</tr>
+<tr style="height: 39px;">
+<td style="width: 310px; height: 39px;">
 [`git commit -m "Commit message"`]{.c}
 
+</td>
+<td style="width: 513px; height: 39px;">
 Records everything in the staging area to your repository with the
 commit message \"Commit message\"
 
+</td>
+</tr>
+<tr style="height: 39px;">
+<td style="width: 310px; height: 39px;">
 [`git commit --amend`]{.c}
 
+</td>
+<td style="width: 513px; height: 39px;">
 Modify last commit instead of creating a new one. Useful for fixing
 small mistakes.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 142px; height: 41px;" rowspan="2">
 log 
 
+</td>
+<td style="width: 310px; height: 41px;">
 `git log`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Prints commit history of repo.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 310px; height: 41px;">
 `git log <filename>`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Prints commit history of `<filename>`.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 142px; height: 41px;" rowspan="2">
 reset 
 
+</td>
+<td style="width: 310px; height: 41px;">
 `git reset`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Removes all files from staging area. (Opposite of `git add`)
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 310px; height: 41px;">
 `git reset <filename>`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Removes `<filename>` from staging area.
 
-Remote
-------
+</td>
+</tr>
+</tbody>
+</table>
+## Remote
 
 By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
 ` git branch --set-upstream-to   <origin>`.
 
+<table style="height: 76px; width: 1050px;">
+<tbody>
+<tr>
+<td style="width: 136px;" rowspan="2">
 fetch 
 
+</td>
+<td style="width: 565.701px;">
 `git fetch`
 
+</td>
+<td style="width: 310.299px;">
 Gets status of \'origin\'. git fetch **does not **change your working
 directory or local repository (see `git pull`). 
 
+</td>
+</tr>
+<tr>
+<td style="width: 565.701px;">
 `git fetch <repo> <branch>`
 
+</td>
+<td style="width: 310.299px;">
 Get status of `<repo>` `<branch>`.
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;" rowspan="2">
 pull 
 
+</td>
+<td style="width: 565.701px;">
 `git pull`
 
+</td>
+<td style="width: 310.299px;">
 Incorporates changes from \'origin\' into local repo. 
 
+</td>
+</tr>
+<tr>
+<td style="width: 565.701px;">
 `git pull <repo> <branch>`
 
+</td>
+<td style="width: 310.299px;">
 Incorporates changes from `<repo>` `<branch>` into local repo.
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;" rowspan="2">
 push 
 
+</td>
+<td style="width: 565.701px;">
 `git push`
 
+</td>
+<td style="width: 310.299px;">
 Incorporates changes from local repo into \'origin\'. 
 
+</td>
+</tr>
+<tr>
+<td style="width: 565.701px;">
 `git push <repo> <branch>`
 
+</td>
+<td style="width: 310.299px;">
 Incorporates changes from local repo into `<repo>` `<branch>`
 
+</td>
+</tr>
+</tbody>
+</table>
 > ### Tip {#prerequisites}
 >
 > If you are working without collaborators, there should be no reason to
@@ -183,34 +300,67 @@ Incorporates changes from local repo into `<repo>` `<branch>`
 > finished, this will save you wasting time resolving unnecessary
 > merges.
 
-Branches
---------
+## Branches
 
 At an introductory level, it is best to avoid workflows that lead to
 multiple branches, or requires merging.
 
+<table style="height: 76px; width: 966px;">
+<tbody>
+<tr>
+<td style="width: 136px;" rowspan="2">
 branch 
 
+</td>
+<td style="width: 303px;">
 `git branch`
 
+</td>
+<td style="width: 489px;">
 List branches.
 
+</td>
+</tr>
+<tr>
+<td style="width: 303px;">
 `git branch <branch-name>`
 
+</td>
+<td style="width: 489px;">
 Create new branch `<branch-name`
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;">
 checkout
 
+</td>
+<td style="width: 303px;">
 `git checkout <branch-name>`
 
+</td>
+<td style="width: 489px;">
 Switch to editing branch `<branch-name>`
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;">
 merge
 
+</td>
+<td style="width: 303px;">
 `git merge <branch-name>`
 
+</td>
+<td style="width: 489px;">
 Merge `<branch-name>` into current branch.
 
+</td>
+</tr>
+</tbody>
+</table>
 > ### Other Resources {#prerequisites}
 >
 > -   <https://ohshitgit.com/>

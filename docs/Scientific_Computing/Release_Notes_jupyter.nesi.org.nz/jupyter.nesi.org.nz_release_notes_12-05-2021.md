@@ -1,8 +1,6 @@
-Release Update - 12. May 2021 {#ReleaseNotes-ReleaseUpdate-11.July2019}
------------------------------
+## Release Update - 12. May 2021 {#ReleaseNotes-ReleaseUpdate-11.July2019}
 
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved {#ReleaseNotes-NewandImproved}
 
 -   JupyterLab upgrade to v3.0.15.\
     Read more on [user-facing

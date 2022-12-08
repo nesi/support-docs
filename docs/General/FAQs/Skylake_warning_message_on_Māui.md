@@ -1,16 +1,13 @@
-I get the following warning message, do I need to worry?
---------------------------------------------------------
+## I get the following warning message, do I need to worry?
 
     craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
 
-Short:
-------
+## Short:
 
 No. This is only a warning message from an interim state. And gets
 resolved immidiately afterwards.
 
-More details:
--------------
+## More details:
 
 Our software stacks are build with easybuild. There are toolchains
 defined, which wraps around the Cray `PrgEnv-???` modules. These

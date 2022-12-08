@@ -201,8 +201,7 @@ the memory usage of all your jobs.
 [Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU
 has a maximum memory requirement of 0.75 GB.]{.wysiwyg-color-black}
 
-Estimating our Total Resource Requirments
------------------------------------------
+## Estimating our Total Resource Requirments
 
 Now that we know approximately how our job\'s CPU, memory and wall
 requirem[ents scale, we]{.wysiwyg-color-black} can try and estimate our

@@ -72,15 +72,13 @@ without further intervention.  You can hold jobs with the command
 `scontrol release <jobid>`.  Jobs can also end up in this state when
 they get requeued after a node failure. 
 
-Other Limits
-------------
+## Other Limits
 
 Cluster and partition-specific limits can sometimes prevent jobs from
 starting regardless of their priority score.  For details see the pages
 on [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000204076) or [Māui.](https://support.nesi.org.nz/hc/en-gb/articles/360000204116)
 
-Backfill
---------
+## Backfill
 
 Backfill is a scheduling strategy that allows small, short jobs to run
 immediately if by doing so they will not delay the expected start time

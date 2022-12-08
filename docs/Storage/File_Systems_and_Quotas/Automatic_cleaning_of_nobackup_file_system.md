@@ -84,8 +84,7 @@ and searched with the `zless` and `zgrep` commands respectively, e.g.,
 > up no disk space apart from a small amount of metadata, but still
 > count towards the project\'s inode (file count) quota.
 
-What should I do with expiring data on the nobackup filesystem?
----------------------------------------------------------------
+## What should I do with expiring data on the nobackup filesystem?
 
 If the data is transient and no longer required for continued processing
 on NeSI then we would appreciate if you deleted it yourself, but you can
@@ -124,8 +123,7 @@ keep beyond the scheduled expiry date, you have four options:
 
 []{#advice}
 
-Where should I put my data?
----------------------------
+## Where should I put my data?
 
 +-----------------------+-----------------------+-----------------------+
 | **How often will my   | **How often will my   | **Recommended         |
@@ -157,8 +155,7 @@ used to build and edit code, provided that the code is under version
 control and changes are regularly checked into upstream revision control
 systems.
 
-If I need a file that was deleted from nobackup, what should I do?
-------------------------------------------------------------------
+## If I need a file that was deleted from nobackup, what should I do?
 
 Please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) as soon as
@@ -167,8 +164,7 @@ this outcome again in future, please [contact us in
 advance](https://support.nesi.org.nz/hc/en-gb/requests/new) so that we
 can discuss your data storage options with you.
 
-I have research data on nobackup that I can\'t store in my project directory or at my institution right now. What should I do?
-------------------------------------------------------------------------------------------------------------------------------
+## I have research data on nobackup that I can\'t store in my project directory or at my institution right now. What should I do?
 
 Please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) without delay
@@ -183,8 +179,7 @@ appropriate combination of:
     and ]{style="font-weight: 400;"}
 -   [institutional storage infrastructure.]{style="font-weight: 400;"}
 
-User Webinars
--------------
+## User Webinars
 
 On 14 and 26 November 2019, we hosted webinars to explain these upcoming
 changes and answer user questions. If you missed these sessions, the
@@ -203,5 +198,4 @@ archived materials are available at the links below:
     26 November 2019
     - <https://drive.google.com/file/d/1OSb71hhZnjnU9xsRALcpYM485va7aUxK/view?usp=sharing>
 
- 
--
+##  

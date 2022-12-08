@@ -9,8 +9,7 @@ high-performing and responsive to your research computing workloads and
 data science workflows.\
 \
 
-Upcoming changes to data management processes for project directories {#Programme-timeline data-renderer-start-pos="2992"}
----------------------------------------------------------------------
+## Upcoming changes to data management processes for project directories {#Programme-timeline data-renderer-start-pos="2992"}
 
 **[[\
 4-15 October 2021]{#a1a537f0-110e-4494-81ec-4a9681856e97
@@ -133,8 +132,7 @@ answer any questions you may have around data lifecycle management. 
 
  
 
-[Frequently asked questions]{#702d765e-b997-426f-99cb-22eb71272264 data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="702d765e-b997-426f-99cb-22eb71272264"} {#Frequently-asked-questions data-renderer-start-pos="4158"}
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## [Frequently asked questions]{#702d765e-b997-426f-99cb-22eb71272264 data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="702d765e-b997-426f-99cb-22eb71272264"} {#Frequently-asked-questions data-renderer-start-pos="4158"}
 
 **1) Why are you introducing these new data management processes?\
 **We want to avoid our online filesystems reaching critically full
@@ -216,8 +214,7 @@ work with you to find the best way to manage your research data.
 
  
 
-More information {#Programme-timeline data-renderer-start-pos="2992"}
-----------------
+## More information {#Programme-timeline data-renderer-start-pos="2992"}
 
 This page will continue to be updated in the coming months with more
 information. If you have questions at any time, don't hesitate to

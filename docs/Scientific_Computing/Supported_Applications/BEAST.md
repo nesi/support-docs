@@ -1,5 +1,7 @@
-Description
-===========
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
+# Description
 
 Bayesian Evolutionary Analysis Sampling Trees is a cross-platform
 program for Bayesian analysis of molecular sequences using MCMC. The
@@ -14,11 +16,9 @@ convert NEXUS files into this format.
 
 The BEAST home page is at <http://beast2.org>.
 
-Available modules
-=================
+# Available modules
 
-Packages with modules
----------------------
+## Packages with modules
 
   Module                              NeSI Cluster
   ----------------------------------- --------------
@@ -28,17 +28,14 @@ Packages with modules
   BEAST/2.2.1                         pan
   BEAST/2.4.3                         pan
 
-License
-=======
+# License
 
 BEAST is released at no cost under the terms of [the GNU Lesser General
 Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html).
 
-Example scripts
-===============
+# Example scripts
 
-Example script for the Pan cluster
-----------------------------------
+## Example script for the Pan cluster
 
     #!/bin/bash -e
 
@@ -57,15 +54,13 @@ Example script for the Pan cluster
 
     srun beast -beagle -beagle_SSE -threads $SLURM_CPUS_PER_TASK input.xml
 
-Memory
-------
+## Memory
 
 Please note the Java options in the above script. BEAST is a Java
 program, and Java will not automatically use all the memory which Slurm
 has allocated for it unless told to do so.
 
-Long BEAST runs
----------------
+## Long BEAST runs
 
 If your Slurm job ends too early you can continue its calculation in a
 second job by way of the `-resume` option of BEAST2. For very long BEAST

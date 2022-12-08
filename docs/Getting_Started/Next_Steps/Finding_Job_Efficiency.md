@@ -1,5 +1,4 @@
-On Job Completion
-=================
+# On Job Completion
 
 [It is good practice to have a look at the resources your job used on
 completion, this way you can improve your job specifications in the
@@ -57,24 +56,21 @@ There may be factors you have not accounted for.*
 
 ------------------------------------------------------------------------
 
-**Walltime**
-------------
+## **Walltime**
 
 From the `Elapsed` field we may want to update our next run to have a
 more appropriate walltime.
 
     #SBATCH --time=00:40:00
 
-**Memory**
-----------
+## **Memory**
 
 The `MaxRSS` field shows the maximum memory used by each of the job
 steps, so in this case 13 GB. For our next run we may want to set:
 
     #SBATCH --mem=15G
 
-**CPU\'s**
-----------
+## **CPU\'s**
 
 `TotalCPU` is the number of computation hours, in the best case scenario
 the computation hours would be equal to `Elapsed` x `AllocCPUS`.
@@ -112,14 +108,12 @@ consumed by shared libraries)\
 not contain the memory occupied by the shared library)\
 `PSS = USS + (RSS/# shared processes)`
 
-During Runtime
-==============
+# During Runtime
 
 In order to check in on a job that is running, you will need to ssh to
 the compute node where it it running.
 
-Finding Job Node
-----------------
+## Finding Job Node
 
 If \'nodelist\' is not one of the fields in the output of your `sacct`
 or `squeue` commands you can find the node a job is running on using the
@@ -130,8 +124,7 @@ like `wbn123` on Mahuika or `nid00123` on Māui
 >
 > If your job is using MPI it may be running on multiple nodes
 
-htop 
------
+## htop 
 
     ssh -t wbn175 htop -u $USER
 
@@ -173,8 +166,7 @@ height="252"}
 > If the job finishes, or is killed you will be kicked off the node. If
 > htop freezes, type `reset` to clear your terminal.
 
-Limitations of using CPU Efficiency
-===================================
+# Limitations of using CPU Efficiency
 
 CPU efficiency, as described here, only represents the *percentage of
 time* the CPUs are in use. This is not enough to get a picture of
@@ -186,8 +178,7 @@ between jobs at different scale. See [Job
 Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360000728016) for
 more details.
 
-Example
--------
+## Example
 
 ![qdyn\_eff.png](https://support.nesi.org.nz/hc/article_attachments/360003953876/qdyn_eff.png)
 

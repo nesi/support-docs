@@ -51,8 +51,7 @@ Cycles](https://www.nesi.org.nz/services/high-performance-computing-and-analytic
 > may be delayed more than usual, or we may notify you and ask you to
 > obtain pre-approval from your institution.
 
-Information you will need to provide
-------------------------------------
+## Information you will need to provide
 
 During the application process, we will ask you for the following
 information:

@@ -1,7 +1,6 @@
 Using Globus to transfer and share files from/to a personal computer
 
-Install Globus Connect Personal on your workstation/laptop
-----------------------------------------------------------
+## Install Globus Connect Personal on your workstation/laptop
 
 See the [Globus howto page](https://docs.globus.org/how-to/) on how to
 install a personal Globus endpoint on your computer (OS-specific
@@ -15,8 +14,7 @@ whether your endpoint shows up as active.
 ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002038695/mceclip0.png){width="754"
 height="320"}
 
-Personal Endpoint file-transfer and sharing
--------------------------------------------
+## Personal Endpoint file-transfer and sharing
 
 If you need to share files from your personal computer or move files
 between two personal computers, you need to be part of a subscription

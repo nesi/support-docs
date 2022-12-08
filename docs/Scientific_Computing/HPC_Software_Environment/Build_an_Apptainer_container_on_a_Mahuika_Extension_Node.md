@@ -13,8 +13,7 @@ nodes, via a Slurm job. You can also build
 [Singularity](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
 container using this technique.
 
-Build Environment Variables {#build_environment_variables}
-===========================
+# Build Environment Variables {#build_environment_variables}
 
 To build containers, you need to ensure that Apptainer has enough
 storage space to create intermediate files. It also requires a cache
@@ -34,8 +33,7 @@ directories.
 
 where `PROJECTID` is your NeSI project ID.
 
-Building container via Slurm
-============================
+# Building container via Slurm
 
 The new Mahuika Extension nodes can be used to build Apptainer
 containers using the [fakeroot
@@ -74,8 +72,7 @@ More information about how to submit a Slurm job is available in the
 job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396) support
 page.
 
-Known limitations
-=================
+# Known limitations
 
 If your container uses RPM to install packages, i.e. is based on CentOS
 or Rocky Linux, you need to disable the `APPTAINER_TMPDIR` environment

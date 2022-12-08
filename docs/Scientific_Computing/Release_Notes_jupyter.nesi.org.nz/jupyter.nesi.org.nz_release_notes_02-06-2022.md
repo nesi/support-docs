@@ -1,8 +1,6 @@
-Release Update - 2. June 2022 {#ReleaseNotes-ReleaseUpdate-11.July2019}
------------------------------
+## Release Update - 2. June 2022 {#ReleaseNotes-ReleaseUpdate-11.July2019}
 
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved {#ReleaseNotes-NewandImproved}
 
 -   Updated JupyterLab version to v3.4.2
 -   Updated
