@@ -3,14 +3,14 @@ endpoints or data-transfer nodes (DTN) which are named in this
 documentation will no longer be in service. Please check back for
 updated information once the new filesystems are in use.
 
-## Preliminaries: {#Globus-BasicUse-Registration}
+## Preliminaries:
 
 ### 1)  register with Globus for an ID
 
 To use Globus from within NeSI, you need a globus ID. If you do not have
 one, sign up at
-[https://www.globusid.org](https://www.globusid.org/){.external-link} ,
-following the instructions at [Register for a Globus
+<a href="https://www.globusid.org/" class="external-link">https://www.globusid.org</a>
+, following the instructions at [Register for a Globus
 ID](#Globus-BasicUse-Registration).
 
 ### 2) Identify NeSI Data Transfer Nodes
@@ -19,7 +19,6 @@ The NeSI cluster machines have been configured to act as Globus Data
 Transfer Nodes (or endpoints). Associate your cluster filesystem with
 the following Globus DTN names:
 
-::: {.table-wrap}
 <table class="table table-striped table-bordered">
 <colgroup>
 <col style="width: 284.0px;">
@@ -29,7 +28,6 @@ the following Globus DTN names:
 <tr class="tablesorter-headerRow">
 <th class="tablesorter-header sortableHeader tablesorter-headerUnSorted" style="user-select: none;" tabindex="0" scope="col" data-column="0">
 Globus DTN
-:::
 
 </th>
 <th style="user-select: none;" tabindex="0" scope="col" data-column="1">
@@ -136,16 +134,16 @@ nesi\#otago-dtn01  but in order to access this filesystem, you will need
 to [register for access to
 nesi\#otago-dtn01](https://www.otago.ac.nz/its/forms/otago604826.html)
 
-##   {#section-1 .auto-cursor-target}
+##  
 
-## Transfer Data between cluster nodes {#Globus-BasicUse-TransferDatabetweenclusternodes .auto-cursor-target}
+## Transfer Data between cluster nodes
 
 1.  Sign in to
-    [https://www.globus.org](https://www.globusid.org/){.external-link}
+    <a href="https://www.globusid.org/" class="external-link">https://www.globus.org</a>
     with your id. You will be taken to the transfer page
     <https://www.globus.org/app/transfer>
 2.  Select the endpoints you wish to move files between (start typing
-    <mark> \"nesi\#\"</mark> to see the list of NeSI DTNs to select
+    <mark> "nesi\#"</mark> to see the list of NeSI DTNs to select
     from).  Authenticate via Tuakiri.    
 
 3.  *Globus defaults to your home directory (maximum storage 2GB)* .
@@ -156,19 +154,14 @@ nesi\#otago-dtn01](https://www.otago.ac.nz/its/forms/otago604826.html)
 4.  Transfer the files.
 5.  Check your email for confirmation the job has succeeded.
 
-::: {data-hasbody="true" data-macro-name="info"}
-<div>
-
 NOTE: Until mid-2018, your cluster may be on an older filesystem: check
-with <support@nesi.org.nz> about when to move more than 0.5TB of data if
-using Pan.
-
-</div>
-:::
+with
+<a href="mailto:support@nesi.org.nz" class="external-link">support@nesi.org.nz</a>
+about when to move more than 0.5TB of data if using Pan.
 
 ##  
 
-## Transfer Data between your personal computer and cluster nodes {#Globus-BasicUse-TransferDatabetweenyourpersonalcomputerandclusternodes}
+## Transfer Data between your personal computer and cluster nodes
 
 Install a [personal globus
 DTN](https://nznesi.atlassian.net/wiki/spaces/nesiproj/pages/104955907/Personal+Globus+Endpoint)

@@ -10,7 +10,7 @@ Here is an example of starting  a *tmux* session:
     $ rsync -av someserver:/projectdata.tgz projectdata.tgz
     CTRL-b d
 
-The **CTRL-b** **d** keyboard shortcut \"detaches\" the screen which
+The **CTRL-b** **d** keyboard shortcut "detaches" the screen which
 allows you to logoff .  When you are ready to reattach to the session
 you login and run the following:
 

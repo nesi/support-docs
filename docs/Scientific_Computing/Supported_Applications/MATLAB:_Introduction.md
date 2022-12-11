@@ -41,7 +41,7 @@ Will force MATLAB to open as the command line version.
 # Running MATLAB interactively
 
 Using MATLAB interactively can be useful for testing but **should not be
-used for large jobs** (anything with multiple CPU\'s or multiple hours).
+used for large jobs** (anything with multiple CPU's or multiple hours).
 
 ## CMD MATLAB
 
@@ -52,9 +52,9 @@ To start the command line version of MATLAB run:
 This will function identically to the Command Window in the desktop
 version of MATLAB.
 
-## ![](https://support.nesi.org.nz/hc/article_attachments/360001327855/mceclip0.png)
+## ![](mkdocs/includes/images/mceclip0.png)
 
-Enter \'quit\' to leave the MATLAB session or ctrl + z to kill it.
+Enter 'quit' to leave the MATLAB session or ctrl + z to kill it.
 
 # Running MATLAB batch jobs
 
@@ -71,14 +71,14 @@ This will open MATLAB then run your script. 
 
 ## Functions
 
-MATLAB also accepts command window inputs using \'-r\'. Note \';\' used
-for line-breaks.
+MATLAB also accepts command window inputs using '-r'. Note ';' used for
+line-breaks.
 
     matlab -nodisplay -r "x=(1:10); y=(1:10); z=x'*y; disp(z);exit;"
 
 Will give the output
 
-![](https://support.nesi.org.nz/hc/article_attachments/360001330035/mceclip0.png)
+![](mkdocs/includes/images/mceclip0.png)
 
 then exit.
 
@@ -93,7 +93,7 @@ A script can also be run using this method.
 ## Paths
 
 By default only files in the same directory as you called MATLAB from
-will be included in the directory (no sub-directories).\
+will be included in the directory (no sub-directories).  
 A single directory can be added to path with;
 
     addpath('your_directory') 
@@ -131,8 +131,7 @@ e.g.
 ## Slurm
 
 Creating a file job.sl to add everything in the the parent directory
-\'parentDirectory\' to the path and then run the function
-\'myFunction()\'
+'parentDirectory' to the path and then run the function 'myFunction()'
 
     #!/bin/bash -e
 

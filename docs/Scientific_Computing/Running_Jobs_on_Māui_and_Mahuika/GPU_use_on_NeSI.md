@@ -1,19 +1,20 @@
-This page provides generic information about how to access NeSI\'s GPU
+This page provides generic information about how to access NeSI's GPU
 cards.
 
-For application specific settings (e.g. OpenMP, Tensorflow on GPU,
-\...), please have a look at the dedicated pages listed at the end of
-this page.
+For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
+please have a look at the dedicated pages listed at the end of this
+page.
 
-> ### Important {#prerequisites}
+> ### Important
 >
 > An overview of available GPU cards is available in the [Available GPUs
 > on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
 > support page.
 >
-> Details about[ ]{.diff-removed-string}GPU cards for each system[
-> ]{.diff-removed-string}and [usage]{.diff-added-string} limits are in
-> the [Mahuika Slurm
+> Details about<span class="diff-removed-string"> </span>GPU cards for
+> each system<span class="diff-removed-string"> </span>and <span
+> class="diff-added-string">usage</span> limits are in the [Mahuika
+> Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
 > and [Māui\_Ancil (CS500) Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
@@ -71,7 +72,7 @@ with the `srun` and `salloc` commands. For example:
 will request and then start a bash session with access to a GPU, for a
 duration of 30 minutes.
 
-> ### Important {#prerequisites}
+> ### Important
 >
 > When you use the `--gpus-per-node`option, Slurm automatically sets the
 > `CUDA_VISIBLE_DEVICES` environment variable inside your job
@@ -84,7 +85,7 @@ duration of 30 minutes.
 >     $ echo $CUDA_VISIBLE_DEVICES
 >     0,1
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > On Māui Ancillary Nodes, you also need to request the *nesi\_gpu*
 > partition to have access to the GPU.
@@ -107,7 +108,7 @@ You can list the available versions using:
 Please contact us at <support@nesi.org.nz> if you need a version not
 available on the platform.
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > On Māui Ancillary Nodes, use `module avail CUDA` to list available
 > versions.
@@ -193,7 +194,7 @@ The content of job output file would look like:
     +-----------------------------------------------------------------------------+
     CUDA_VISIBLE_DEVICES=0
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
 > GPU index 0 on this node. It is not a count of allocated GPUs.
@@ -232,7 +233,7 @@ line tool or the
 [ncu-ui](https://docs.nvidia.com/nsight-compute/NsightCompute/index.html)
 graphical interface.
 
-> ### Important {#prerequisites}
+> ### Important
 >
 > The `nsys-ui` and `ncu-ui` tools require access to a display server,
 > either via

@@ -1,13 +1,15 @@
-::: {.pm-table-container .sc-jKJlTe .loXQau data-layout="default"}
-::: {.pm-table-wrapper}
-  --------------------------------------------------------------- ---------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **How often will my team\'s HPC jobs be accessing the data?**   **How often will my team\'s HPC jobs be modifying the data? **   **Recommended option **
-  Often                                                           Often (at least once every two months)                           Store in your /nobackup/\<projectcode\> directory (but ensure key result data is copied to the persistent project directory).
-  Often                                                           Seldom                                                           Store in your /project/\<projectcode\> directory.
-  Seldom                                                          Seldom                                                           Apply for an allocation to use NeSI's [long-term storage service](https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service "https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service"){.sc-cHGsZl .lirsdj}or store elsewhere (e.g. at your institution).
-  --------------------------------------------------------------- ---------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-:::
-:::
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
  
 

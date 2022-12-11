@@ -3,7 +3,7 @@ numerical computing, with performance comparable to traditional
 statically-typed languages. The Julia home page is
 at <https://julialang.org/>.
 
-# Licensing requirements {#licensing}
+# Licensing requirements
 
 The Julia language is (mostly) licensed under the MIT licence. For more
 details, including the full text of the licence and a list of
@@ -77,9 +77,9 @@ using the command line, but the commands are the same within a script.
     >
     > It is possible for a package to be installed somewhere on
     > `DEPOT_PATH`, but not compiled. If this happens, and the package
-    > is a dependency of what you\'re trying to install, Julia will try
+    > is a dependency of what you're trying to install, Julia will try
     > to compile it in situ. This is a bad thing most of the time,
-    > because you\'re unlikely to have write access to the install
+    > because you're unlikely to have write access to the install
     > location, so the compilation will fail. Hence why clearing the
     > depot path is important.
 
@@ -94,7 +94,7 @@ using the command line, but the commands are the same within a script.
     >
     > While a conventional personal Julia package directory is
     > `/home/joe.bloggs/.julia` or similar, there is no reason for the
-    > directory to be within any particular user\'s home directory, or
+    > directory to be within any particular user's home directory, or
     > for it to be a hidden directory with a name starting with a dot.
     > For shared Julia package directories, a visible directory within a
     > project directory will probably be more useful to you and your
@@ -111,7 +111,7 @@ using the command line, but the commands are the same within a script.
     Julia should chug away for a while, downloading and compiling
     various packages into the chosen directory.
 
-## Making Julia packages available at runtime {#loading-julia-packages}
+## Making Julia packages available at runtime
 
 For some reason, Julia uses the `DEPOT_PATH` variable only to control
 where newly obtained packages are to be installed. The directories where
@@ -141,12 +141,12 @@ certainly the easiest is to do the following in your environment:
 > ### Tip
 >
 > By prepending the directory to `JULIA_LOAD_PATH` instead of appending
-> it, you ensure that your project\'s versions of Julia packages are
-> used by default, in preference to whatever might be managed centrally.
-> This is probably what you want to do. If you want to use the centrally
-> managed versions of Julia packages first and only use your project\'s
-> package if there isn\'t a centrally managed instance, you can append
-> it instead:
+> it, you ensure that your project's versions of Julia packages are used
+> by default, in preference to whatever might be managed centrally. This
+> is probably what you want to do. If you want to use the centrally
+> managed versions of Julia packages first and only use your project's
+> package if there isn't a centrally managed instance, you can append it
+> instead:
 >
 >     $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
 
@@ -163,14 +163,14 @@ In addition to the Julia Profile module (see the [official
 documentation](https://docs.julialang.org/en/v1/manual/profile/)), it is
 also possible to profile Julia code with [external
 profilers](https://docs.julialang.org/en/v1/manual/profile/#External-Profiling-1).
-On Mahuika we have installed \"-VTune\" variants of Julia, which are
-built from source with support for profiling using Intel VTune. VTune is
-a nice tool for profiling parallel code (e.g. code making use of
-threading or MPI.jl).
+On Mahuika we have installed "-VTune" variants of Julia, which are built
+from source with support for profiling using Intel VTune. VTune is a
+nice tool for profiling parallel code (e.g. code making use of threading
+or MPI.jl).
 
 In order to collect profiling data with VTune you should:
 
--   load a \"-VTune\" variant of Julia, for example:
+-   load a "-VTune" variant of Julia, for example:
 
         module load Julia/1.2.0-gimkl-2018b-VTune
 

@@ -6,7 +6,7 @@ present and always comprising the first three lines of the article. -->
 Java is a computer programming language that is concurrent, class-based,
 object-oriented, and specifically designed to have as few implementation
 dependencies as possible. It is intended to let application developers
-\"write once, run anywhere\" (WORA), meaning that code that runs on one
+"write once, run anywhere" (WORA), meaning that code that runs on one
 platform does not need to be recompiled to run on another. Java
 applications are typically compiled to bytecode (class file) that can
 run on any Java virtual machine (JVM) regardless of computer
@@ -24,7 +24,7 @@ found by following the directions in `${JAVA_HOME}/LICENSE`.
 
 # Example scripts
 
-## Example script for Mahuika {#example-script-for-the-pan-cluster}
+## Example script for Mahuika
 
     #!/bin/bash -e
     #SBATCH --job-name      MyMultithreadedJavaJob
@@ -60,7 +60,7 @@ Java us the \`module\` command to find and load for example:
 
     $ module load Java/15.0.2
 
-## Memory management and the -Xmx option {#memory-management-and-the-xmx-option}
+## Memory management and the -Xmx option
 
 It is important to let the Java virtual machine know how much memory it
 is allowed to use.   The main way this is done is via the `-Xmx`
@@ -75,9 +75,9 @@ stack and any other overheads.
 ## Temporary Files
 
 Java programs which use temporary files can (and should) generally be
-persuaded to use \$TMPDIR rather than just the default of `/tmp `by
-being given the option `-Djava.io.tmpdir=$TMPDIR.`  TMPDIR is
-automatically removed at the end of the job.
+persuaded to use $TMPDIR rather than just the default of `/tmp `by being
+given the option `-Djava.io.tmpdir=$TMPDIR.`  TMPDIR is automatically
+removed at the end of the job.
 
 -   If you run your Java program by using the `java` command, that is in
     a form like

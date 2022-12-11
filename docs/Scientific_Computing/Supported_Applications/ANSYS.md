@@ -1,7 +1,6 @@
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-::: {#append_lic}
 ## License Types
 
 The three main ANSYS licenses are;
@@ -9,15 +8,16 @@ The three main ANSYS licenses are;
 -   **ANSYS Teaching License **(aa\_t)
 
     This is the default license type, it can be used on up to 6 CPUs on
-    models with less than [512k nodes]{style="font-style: italic;"}
+    models with less than <span style="font-style: italic;">512k
+    nodes</span>
 
 -   **ANSYS Research license** (aa\_r)
 
     No node restrictions. Can be used on up to 16 CPUs, for every
-    additional CPU over 16 you must request additional \'aa\_r\_hpc\'
+    additional CPU over 16 you must request additional 'aa\_r\_hpc'
     licenses.
 
--   **ANSYS HPC License** (aa\_r\_hpc)**\
+-   **ANSYS HPC License** (aa\_r\_hpc)**  
     **One of these is required for each CPU over 16 when using
     a research license.
 
@@ -27,7 +27,7 @@ Whether to use a teaching or research license **must be set manually**.
 If your job is greater than the node limit, not switching to the
 research license before submitting a job will **cause the job to fail**.
 
-The license order can be changed in workbench under tools \> license
+The license order can be changed in workbench under tools &gt; license
 preferences (provided you have X11 forwarding set up), or by running
 either of the following (ANSYS module must be loaded first using
 `module load ANSYS`).
@@ -36,21 +36,20 @@ either of the following (ANSYS module must be loaded first using
 
     prefer_teaching_license
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > License preferences are individually tracked by *each version of
 > ANSYS.* Make sure you set preferences using the same version as in
 > your script.
-:::
 
 # Journal files
 
-Some ANSYS applications take a \'journal\' text file as input. It is
+Some ANSYS applications take a 'journal' text file as input. It is
 of<dfn class="dictionary-of-numbers">ten useful to create </dfn>this
 journal file in your SLURM script (tidiness, submitting jobs
 programmatically, etc). This can be
 d<dfn class="dictionary-of-numbers">one by using </dfn>`cat` to make a
-file from a \'[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)\'.
+file from a '[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
 
 Below is an example of this from a fluent script.
 
@@ -100,19 +99,19 @@ jobid=1234567), the file  `fluent_1234567.in` will be created:
     ; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).)
 
 then called as an
-input `#!['bash']fluent -v3ddp -g -i fluent_1234567.in`,\
+input `#!['bash']fluent -v3ddp -g -i fluent_1234567.in`,  
 then deleted `#!['bash']rm fluent_1234567.in`
 
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > Comments can be added to journal files using a `;`. For example:
 >
 >     ; This is a comment
 
-# Fluent {#ansys-fluent}
+# Fluent
 
 [Some great documentation on journal
 files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html)
@@ -121,73 +120,33 @@ files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-
 
 Must have <dfn class="dictionary-of-numbers">one of these flags</dfn>. 
 
-  -------- -----------------------------------------------------------------------------
-  `2d`     <dfn class="dictionary-of-numbers">2D solver</dfn>, single point precision.
-  `3d`     <dfn class="dictionary-of-numbers">3D solver</dfn>, single point precision.
-  `2ddp`   <dfn class="dictionary-of-numbers">2D solver</dfn>, double point precision.
-  `3ddp`   <dfn class="dictionary-of-numbers">3D solver</dfn>, double point precision.
-  -------- -----------------------------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
  
 
-+-----------------------------------+-----------------------------------+
-| ## Serial Example                 |     #!/bin/bash -e                |
-|                                   |                                   |
-| -------------------------------   |     #SBATCH --job-name      Fluen |
-|                                   | t-Serial                          |
-| Single *process* with a single    |     #SBATCH --licenses      aa_r@ |
-| *thread*                          | uoa_foe:1 #One research license.  |
-| <dfn class="dictionary-of-numbers |     #SBATCH --time          00:05 |
-| ">(2                              | :00          # Walltime           |
-| threads if hyperthreading         |     #SBATCH --cpus-per-task 1     |
-| </dfn>enabled).                   |              # Double if hyperthr |
-|                                   | eading enabled                    |
-| Usually submitted as part of an   |     #SBATCH --mem           512MB |
-| array, as in the case of          |              # total memory (per  |
-| parameter sweeps.                 | node)                             |
-|                                   |     #SBATCH --hint          nomul |
-|                                   | tithread     # Hyperthreading dis |
-|                                   | abled                             |
-|                                   |                                   |
-|                                   |     module load ANSYS/19.2        |
-|                                   |                                   |
-|                                   |     JOURNAL_FILE=/share/test/ansy |
-|                                   | s/fluent/wing.in                  |
-|                                   |     fluent 3ddp -g -i ${JOURNAL_F |
-|                                   | ILE}                              |
-+-----------------------------------+-----------------------------------+
-| ## Distributed Memory Example     |     #!/bin/bash -e                |
-|                                   |                                   |
-| -------------------------------   |     #SBATCH --job-name          F |
-|                                   | luent-Dis                         |
-| Multiple *processes* each with a  |     #SBATCH --time              0 |
-| single *thread*.                  | 0:05:00          # Walltime       |
-|                                   |     #SBATCH --licenses          a |
-| Not limited to                    | a_r@uoa_foe:1,aa_r_hpc@uoa_foe:20 |
-| <dfn class="dictionary-of-numbers |     ##One research license, (ntas |
-| ">one                             | ks-16) hpc licenses               |
-| node</dfn>.\                      |     #SBATCH --nodes             1 |
-| Model will be segmented into      |                  # Limit to n nod |
-| `-t` pieces which should be equal | es (Optional)                     |
-| to `--ntasks`.                    |     #SBATCH --ntasks            8 |
-|                                   |                  # Number process |
-| Each task could be running on a   | es                                |
-| different node leading to         |     #SBATCH --cpus-per-task     1 |
-| increased communication overhead. |                  # Double if hype |
-| Jobs can be limited to a single   | rthreading enabled                |
-| node by                           |     #SBATCH --mem-per-cpu       1 |
-| adding  `--nodes=1` however this  | 500              # Fine for small |
-| will increase your time in the    |  jobs; increase if needed         |
-| queue as contiguous cpu\'s are    |     #SBATCH --hint              n |
-| harder to schedule.               | omultithread     # Hyperthreading |
-|                                   |  disabled                         |
-|                                   |                                   |
-|                                   |     module load ANSYS/19.2        |
-|                                   |     JOURNAL_FILE=/share/test/ansy |
-|                                   | s/fluent/wing.in                  |
-|                                   |     fluent 3ddp -g -t ${SLURM_NTA |
-|                                   | SKS} -i ${JOURNAL_FILE}           |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 > ### Useful Links
 >
@@ -216,7 +175,7 @@ Will return;
       salloc: Waiting for resource configuration
       salloc: Nodes wbn[053-056] are ready for job
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > Include all the commands you would usually use in your slurm header
 > here.
@@ -229,7 +188,7 @@ You will then be presented with the launcher, make any necessary changes
 then click launch.
 
 If everything has set up correctly you should see a printout of the
-hostnames with the resources requested. Note: \'host\' should be
+hostnames with the resources requested. Note: 'host' should be
 mahuika0\[1-2\].
 
     n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
@@ -242,7 +201,7 @@ mahuika0\[1-2\].
 >
 > Closing the fluent GUI will not end the SLURM interactive session. Use
 > `exit` or `scancel jobid` when finished, else you will continue to
-> \'use\' the requested CPUs.
+> 'use' the requested CPUs.
 
 ## Checkpointing
 
@@ -254,11 +213,7 @@ Where `<n>` is the number of iterations to run before creating a save.
 
 In order to save disk space you may also want to include the line 
 
-::: {.highlight-default .notranslate}
-::: {.highlight}
     /file/auto-save/retain-most-recent-files yes
-:::
-:::
 
 ## Interrupting
 
@@ -280,9 +235,9 @@ ANSYS module.
 ### Case Definition
 
 When setting up the case file on your local machine, make sure you
-select \'Compiled UDF\', and select the \`.c\` source file. You can also
-specify the name of the library, the default being \'libudf\', if
-possible you should stick with the default name.
+select 'Compiled UDF', and select the \`.c\` source file. You can also
+specify the name of the library, the default being 'libudf', if possible
+you should stick with the default name.
 
 Make sure all names follows unix naming conventions (no spaces or
 special characters) and are the same on the cluster as when you defined
@@ -345,70 +300,26 @@ might be using interpreted func
 solution specify as relative path, or unload compiled lib before saving
 .cas file.
 
-# CFX {#ansys-CFX}
+# CFX
 
 `cfx5solve -help` for a list of commands.
 
-+-----------------------------------+-----------------------------------+
-| ## Serial Example                 |     #!/bin/bash -e                |
-|                                   |                                   |
-| -------------------------------   |     #SBATCH --job-name      CFX-s |
-|                                   | erial                             |
-| Single *process* with a single    |     #SBATCH --licenses      aa_r@ |
-| *thread*                          | uoa_foe:1 #One research license.  |
-| <dfn class="dictionary-of-numbers |     #SBATCH --time          00:05 |
-| ">(2                              | :00          # Walltime           |
-| threads if hyperthreading         |     #SBATCH --cpus-per-task 1     |
-| </dfn>enabled).                   |              # Double if hyperthr |
-|                                   | eading enabled                    |
-| Usually submitted as part of an   |     #SBATCH --mem           512MB |
-| array, as in the case of          |              # total mem          |
-| parameter sweeps.                 |     #SBATCH --hint          nomul |
-|                                   | tithread     # Hyperthreading dis |
-|                                   | abled                             |
-|                                   |                                   |
-|                                   |     module load ANSYS/19.2        |
-|                                   |     input=/share/test/ansys/cfx/p |
-|                                   | ump.def                           |
-|                                   |     cfx5solve -batch -def "$input |
-|                                   | "                                 |
-+-----------------------------------+-----------------------------------+
-| ## Distributed Memory Example     |     #!/bin/bash -e                |
-|                                   |                                   |
-| -------------------------------   |     #SBATCH --job-name          A |
-|                                   | NSYS-Dis                          |
-| Multiple *processes* each with a  |     #SBATCH --time              0 |
-| single *thread*.                  | 0:05:00          # Walltime       |
-|                                   |     #SBATCH --licenses          a |
-| Not limited to                    | a_r@uoa_foe:1,aa_r_hpc@uoa_foe:20 |
-| <dfn class="dictionary-of-numbers |     ##One research license, (ntas |
-| ">one                             | ks-16) hpc licenses               |
-| node</dfn>.\                      |     #SBATCH --nodes             1 |
-| Model will be segmented into      |                  # Limit to n nod |
-| `-np` pieces which should be      | es (Optional)                     |
-| equal to `--ntasks`.              |     #SBATCH --ntasks            3 |
-|                                   | 6                # Number process |
-| Each task could be running on a   | es                                |
-| different node leading to         |     #SBATCH --cpus-per-task     1 |
-| increased communication overhead\ |                  # Double if hype |
-| .Jobs can be limited to a single  | rthreading enabled                |
-| node by                           |     #SBATCH --mem-per-cpu       5 |
-| adding  `--nodes=1` however this  | 12MB             # Standard for l |
-| will increase your time in the    | arge partition                    |
-| queue as contiguous cpu\'s are    |     #SBATCH --hint              n |
-| harder to schedule.               | omultithread     # Hyperthreading |
-|                                   |  disabled                         |
-|                                   |                                   |
-|                                   |     module load ANSYS/19.2        |
-|                                   |     input=/share/test/ansys/mecha |
-|                                   | nical/structural.dat              |
-|                                   |     cfx5solve -batch -def "$input |
-|                                   | " -part $SLURM_NTASKS             |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 > ### Tip
 >
-> Initial values path specified in \'.def\' file can be overridden using
+> Initial values path specified in '.def' file can be overridden using
 > the `-ini <initial-file-path>` flag.
 
 ## CFX-Post
@@ -425,108 +336,61 @@ Buffer command.
 
     xvfb-run cfx5post input.cse
 
-# Mechanical APDL {#ansys-MAPDL}
+# Mechanical APDL
 
-+-----------------------------------+-----------------------------------+
-| ## Serial Example                 |     #!/bin/bash -e                |
-|                                   |                                   |
-| -------------------------------   |     #SBATCH --job-name      ANSYS |
-|                                   | -serial                           |
-| Single *process* with a single    |     #SBATCH --licenses aa_r@uoa_f |
-| *thread*                          | oe:1                              |
-| <dfn class="dictionary-of-numbers |     #SBATCH --time          00:05 |
-| ">(2                              | :00          # Walltime           |
-| threads if hyperthreading         |     #SBATCH --mem           1500M |
-| </dfn>enabled).                   |              # total mem          |
-|                                   |     #SBATCH --hint          nomul |
-| Usually submitted as part of an   | tithread     # Hyperthreading dis |
-| array, as in the case of          | abled                             |
-| parameter sweeps.                 |                                   |
-|                                   |     module load ANSYS/2021R2      |
-|                                   |     input=${ANSYS_ROOT}/ansys/dat |
-|                                   | a/verif/vm263.dat                 |
-|                                   |     mapdl -b -i "$input"          |
-+-----------------------------------+-----------------------------------+
-| ## Shared Memory Example          |     #!/bin/bash -e                |
-|                                   |                                   |
-| -------------------------------   |     #SBATCH --job-name      ANSYS |
-|                                   | -Shared                           |
-| Single *process* multiple         |     #SBATCH --licenses aa_r@uoa_f |
-| *threads.*                        | oe:1                              |
-|                                   |     #SBATCH --time          00:05 |
-| All threads must be on the same   | :00          # Walltime           |
-| node, limiting scalability.\      |     #SBATCH --cpus-per-task 8     |
-| Number of threads is set by       |              # Double if hyperthr |
-| `-np` and should be equal         | eading enabled                    |
-| to `--cpus-per-task`.             |     #SBATCH --mem           12G   |
-|                                   |              # 8 threads at 1500  |
-| \                                 | MB per thread                     |
-| Not recommended if using more     |     #SBATCH --hint          nomul |
-| than 8 cores (16 CPUs if          | tithread     # Hyperthreading dis |
-| hyperthreading enabled).          | abled                             |
-|                                   |                                   |
-|                                   |     module load ANSYS/2021R2      |
-|                                   |     input=${ANSYS_ROOT}/ansys/dat |
-|                                   | a/verif/vm263.dat                 |
-|                                   |     mapdl -b -np ${SLURM_CPUS_PER |
-|                                   | _TASK} -i "$input"                |
-+-----------------------------------+-----------------------------------+
-| ## Distributed Memory Example     |     #!/bin/bash -e                |
-|                                   |                                   |
-| -------------------------------   |     #SBATCH --job-name          A |
-|                                   | NSYS-Dis                          |
-| Multiple *processes* each with a  |     #SBATCH --licenses aa_r@uoa_f |
-| single *thread*.                  | oe:1,aa_r_hpc@uoa_foe:4           |
-|                                   |     #SBATCH --time              0 |
-| Not limited to                    | 0:05:00          # Walltime       |
-| <dfn class="dictionary-of-numbers |     #SBATCH --nodes             1 |
-| ">one                             |                  # (OPTIONAL) Lim |
-| node</dfn>.\                      | it to n nodes                     |
-| Model will be segmented into      |     #SBATCH --ntasks            1 |
-| `-np` pieces which should be      | 6                # Number process |
-| equal to `--ntasks`.              | es                                |
-|                                   |     #SBATCH --mem-per-cpu       1 |
-| Each task could be running on a   | 500                               |
-| different node leading to         |     #SBATCH --hint              n |
-| increased communication overhead\ | omultithread     # Hyperthreading |
-| .Jobs can be limited to a single  |  disabled                         |
-| node by                           |                                   |
-| adding  `--nodes=1` however this  |     module load ANSYS/2021R2      |
-| will increase your time in the    |     input=${ANSYS_ROOT}/ansys/dat |
-| queue as contiguous cpu\'s are    | a/verif/vm263.dat                 |
-| harder to schedule.               |     mapdl -b -dis -np ${SLURM_NTA |
-|                                   | SKS} -i "$input"                  |
-| **Distributed Memory Parallel is  |                                   |
-| currently not supported on        |                                   |
-| Māui.**                           |                                   |
-+-----------------------------------+-----------------------------------+
-| ## Distributed Memory Example     |                                   |
-|                                   |                                   |
-| -------------------------------   |                                   |
-|                                   |                                   |
-| Multiple *processes* each with a  |                                   |
-| single *thread*                   |                                   |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 Not all MAPDL solvers work using distributed memory. 
 
-  --------------------------- ---
-  Sparse                      ✔
-  PCG                         ✔
-  ICCG                        ✖
-  JCG                         ✖
-  QMR                         ✖
-  Block Lanczos eigensolver   ✖
-  PCG Lanczos eigensolver     ✔
-  Supernode eigensolver       ✖
-  Subspace eigensolver        ✔
-  Unsymmetric eigensolver     ✔
-  Damped eigensolver          ✔
-  QRDAMP eigensolver          ✖
-  Element formulation         ✔
-  Results calculation         ✔
-  Pre/Postprocessing          ✖
-  --------------------------- ---
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 > ### Useful Links
 >
@@ -539,9 +403,9 @@ Not all MAPDL solvers work using distributed memory. 
 > -   [MAPDL Parallel Processing
 >     Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
 
-# LS-DYNA {#ansys-ls-dyna}
+# LS-DYNA
 
-## Fluid-Structure Example {#ansys-fluid-structure-interaction}
+## Fluid-Structure Example
 
     #!/bin/bash -e
     #SBATCH --job-name      LS-DYNA
@@ -555,7 +419,7 @@ Not all MAPDL solvers work using distributed memory. 
     input=3cars_shell2_150ms.k
     lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
 
-# Multiphysics {#ansys-multiphysics}
+# Multiphysics
 
 ### Example - MAPDL Fluent Interaction
 
@@ -639,7 +503,7 @@ Not all MAPDL solvers work using distributed memory. 
     # Fluent) to complete.
     wait
 
-# FENSAP-ICE {#fensap}
+# FENSAP-ICE
 
 FENSAP-ICE is a fully integrated ice-accretion and aerodynamics
 simulator.
@@ -654,7 +518,7 @@ The following FENSAP solvers are compatible with MPI
 -   C<dfn class="dictionary-of-numbers">3D</dfn>
 -   OptiGrid
 
-## Case setup[ ]{style="font-size: 15px;"}
+## Case setup<span style="font-size: 15px;"> </span>
 
 ## With GUI
 
@@ -662,38 +526,24 @@ If you have set up X<dfn class="dictionary-of-numbers">-11
 forwarding</dfn>, you may launch the FENSAP ice using the command
 `fensapiceGUI` from within your FENSAP project directory. 
 
-+-----------------------------------+-----------------------------------+
-| 1\. Launch the run and select     | ![FENSAP\_GUI1.png](https://suppo |
-| the desired number of             | rt.nesi.org.nz/hc/article_attachm |
-| (physical) CPUs.                  | ents/360002865836/FENSAP_GUI1.png |
-|                                   | )                                 |
-| 2\. Open the \'configure\'        |                                   |
-| panel.                            |                                   |
-+-----------------------------------+-----------------------------------+
-| 3\. Under \'Additional mpirun     | ![FENSAP\_GUI2.png](https://suppo |
-| parameters\' add your inline      | rt.nesi.org.nz/hc/article_attachm |
-| SLURM options. You should         | ents/360002865816/FENSAP_GUI2.png |
-| include at least.                 | )                                 |
-|                                   |                                   |
-|     --job-name my_job             |                                   |
-|     --mem-per-cpu memory          |                                   |
-|     --time time                   |                                   |
-|     --licenses required licences  |                                   |
-|     --hint nomultithread          |                                   |
-|                                   |                                   |
-| Note: All these parameters will   |                                   |
-| be applied to *each individual    |                                   |
-| step*.                            |                                   |
-|                                   |                                   |
-| 4\. Start the job. You can track  |                                   |
-| progress under the \'log\' tab.   |                                   |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
 opening the GUI within the project folder.
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > Submitting your job through the use of the GUI has disadvantages and
 > may not be suitable in all cases.
@@ -704,15 +554,15 @@ opening the GUI within the project folder.
 >     session then send the process to background to avoid this.
 > -   Each individual step will be launched with the same parameters
 >     given in the GUI.
-> -   By default \'restart\' is set to disabled. If you wish to continue
->     a job from a given step/shot you must select so in the dropdown
+> -   By default 'restart' is set to disabled. If you wish to continue a
+>     job from a given step/shot you must select so in the dropdown
 >     menu.
 
-## Using fensap<dfn class="dictionary-of-numbers">2slurm</dfn> {#fensap2slurm}
+## Using fensap<dfn class="dictionary-of-numbers">2slurm</dfn>
 
 Set up your model as you would normally, except rather than starting the
-run just click \'save\'. You *do not* need to set number of CPUs or MPI
-configuration.\
+run just click 'save'. You *do not* need to set number of CPUs or MPI
+configuration.  
 Then in your terminal type `fensap2slurm path/to/project` or run
 `fensap2slurm` from inside the run directory.
 
@@ -726,7 +576,7 @@ requirements for the remainder.
 The workflow can then by running `.solvercmd` e.g `bash .solvercmd`.
 Progress can be tracked through the GUI as usual. 
 
-# ANSYS-Electromagnetic {#ansysEM}
+# ANSYS-Electromagnetic
 
 ANSYS-EM jobs can be submitted through a slurm script or by [interactive
 session](https://support.nesi.org.nz/hc/en-gb/articles/360001316356).
@@ -741,8 +591,6 @@ Please contact NeSI support if the command is not working for you.
 
 ## Example Slurm Script
 
-<div>
-
     #!/bin/bash -e
 
     #SBATCH --time                04:00:00
@@ -756,17 +604,15 @@ Please contact NeSI support if the command is not working for you.
 
     ansysedt -ng -batchsolve -distributed -machinelistfile=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool" $INPUTNAME
 
-</div>
-
 All batch options can be listed using
 
     ansysedt -batchoptionhelp
 
 (Note, this requires a working X-server) 
 
-> ### Note {#prerequisites}
+> ### Note
 >
-> Each batch option must have it\'s own flag, e.g.
+> Each batch option must have it's own flag, e.g.
 >
 >     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
 
@@ -787,11 +633,7 @@ your requested nodes, and set the environment variable `MACHINELIST`.
 
 Then launch ansys edt with the following flags
 
-<div>
-
     ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
-
-</div>
 
 # Best Practices
 
@@ -815,12 +657,12 @@ instead of *sbatch*, for example:
 
 As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
-\--mail-type=BEGIN and \--mail-user= options.
+--mail-type=BEGIN and --mail-user= options.
 
 ## Hyperthreading
 
-Utilising hyperthreading (ie: removing the \"\--hint=nomultithread\"
-sbatch directive and doubling the number of tasks) will give a small
-speedup on most jobs with less than <dfn class="dictionary-of-numbers">8
+Utilising hyperthreading (ie: removing the "--hint=nomultithread" sbatch
+directive and doubling the number of tasks) will give a small speedup on
+most jobs with less than <dfn class="dictionary-of-numbers">8
 cores</dfn>, but also doubles the number of `aa_r_hpc` license tokens
 required.

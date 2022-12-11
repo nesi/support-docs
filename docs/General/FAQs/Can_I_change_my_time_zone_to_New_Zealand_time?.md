@@ -17,8 +17,8 @@ latter but not the former:
 
     test -r ~/.bashrc && . ~/.bashrc
 
-Please see the article, \"[.bashrc or
-.bash\_profile?](https://support.nesi.org.nz/hc/en-gb/articles/360001194536)\"
+Please see the article, "[.bashrc or
+.bash\_profile?](https://support.nesi.org.nz/hc/en-gb/articles/360001194536)"
 for more information.
 
 ## What about cron jobs?

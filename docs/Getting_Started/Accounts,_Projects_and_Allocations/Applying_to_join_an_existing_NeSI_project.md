@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   You must have a [NeSI
 >     account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
@@ -8,12 +8,12 @@
 1.  Make sure you have been given the project code by the project owner.
 2.  Log in to [my.nesi.org.nz](https://my.nesi.org.nz/).
 3.  Under the [Projects](https://my.nesi.org.nz/projects/join) page use
-    the \"**Join Project**\" link to request to be added to the project
-    as a member.
+    the "**Join Project**" link to request to be added to the project as
+    a member.
 
 Once submitted you will receive a ticket confirmation via email.
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   The project owner will be notified, and asked to approve your
 >     request.

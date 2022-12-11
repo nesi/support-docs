@@ -1,29 +1,30 @@
-[[Hyperthreading](https://en.wikipedia.org/wiki/Hyper-threading) is
-enabled on the NeSI machines, so for each physical CPU core, there are
-two logical CPUs. This increases the efficiency of some multithreaded
-jobs, but the fact that Slurm is counting in logical CPUs makes aspects
-of running non-hyperthreaded jobs confusing, even when hyperthreading is
-turned off in the job with
-]{style="font-weight: 400;"}**\--hint=nomultithread.**
+<span
+style="font-weight: 400;">[Hyperthreading](https://en.wikipedia.org/wiki/Hyper-threading)
+is enabled on the NeSI machines, so for each physical CPU core, there
+are two logical CPUs. This increases the efficiency of some
+multithreaded jobs, but the fact that Slurm is counting in logical CPUs
+makes aspects of running non-hyperthreaded jobs confusing, even when
+hyperthreading is turned off in the job with
+</span>**--hint=nomultithread.**
 
--   [Non-hyperthreaded jobs which use
-     ]{style="font-weight: 400;"}**\--mem-per-cpu**[ requests should
-    halve their memory requests as those are based on memory per logical
-    CPU, not per the number of threads or tasks.  For non-MPI jobs, or
-    for MPI jobs that request the same number of tasks on every node, we
-    recommend to specify **\--mem** (i.e. memory per node) instead. See
-    [How to request memory
+-   <span style="font-weight: 400;">Non-hyperthreaded jobs which use
+     </span>**--mem-per-cpu**<span style="font-weight: 400;"> requests
+    should halve their memory requests as those are based on memory per
+    logical CPU, not per the number of threads or tasks.  For non-MPI
+    jobs, or for MPI jobs that request the same number of tasks on every
+    node, we recommend to specify **--mem** (i.e. memory per node)
+    instead. See [How to request memory
     (RAM)](https://support.nesi.org.nz/hc/en-gb/articles/360001108756)
-    for more information.]{style="font-weight: 400;"}
--   [Non-MPI jobs which specify
-    ]{style="font-weight: 400;"}**\--cpus-per-task**[ and use
-    ]{style="font-weight: 400;"}**srun** [should also set
-    ]{style="font-weight: 400;"}**\--ntasks=1**[, otherwise the program
-    will be run twice in parallel, halving the efficiency of the
-    job.]{style="font-weight: 400;"}
+    for more information.</span>
+-   <span style="font-weight: 400;">Non-MPI jobs which specify
+    </span>**--cpus-per-task**<span style="font-weight: 400;"> and use
+    </span>**srun** <span style="font-weight: 400;">should also set
+    </span>**--ntasks=1**<span style="font-weight: 400;">, otherwise the
+    program will be run twice in parallel, halving the efficiency of the
+    job.</span>
 
-[The precise rules about when hyperthreading applies are as
-follows:]{style="font-weight: 400;"}
+<span style="font-weight: 400;">The precise rules about when
+hyperthreading applies are as follows:</span>
 
 <table style="width: 697px;">
 <tbody>
@@ -73,7 +74,7 @@ Threads within the same task
 </td>
 <td class="wysiwyg-text-align-center" style="width: 581px;" colspan="2">
 Share physical cores by default. You can override this behaviour by
-using\
+using  
 `--hint=nomultithread` in your job submission script.
 
 </td>
@@ -114,11 +115,12 @@ CPUs. `--hint=nomultithread` is irrelevant.
 
 </td>
 <td class="wysiwyg-text-align-center" style="width: 232px;">
-The job gets one logical CPU, but is charged for 80.\
+The job gets one logical CPU, but is charged for 80.  
 `--hint=nomultithread` is irrelevant.
 
-[**This configuration is extremely uneconomical on Māui. Consider using
-Mahuika or the Māui ancillary nodes instead.**]{.wysiwyg-color-red}
+<span class="wysiwyg-color-red">**This configuration is extremely
+uneconomical on Māui. Consider using Mahuika or the Māui ancillary nodes
+instead.**</span>
 
 </td>
 </tr>

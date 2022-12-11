@@ -2,29 +2,28 @@ There are 4 dual socket nodes on blade, connected to a single Aries
 (switch) chip, and there are 16 Aries chips in a chassis connected to
 the backplane. On Māui, this implies each chassis contains 64 nodes, or
 2,560 Skylake cores. There are 3 chassis in an XC50 cabinet, and two
-XC50 cabinets are an Electrical \"group\". Māui has 1.5 groups.
+XC50 cabinets are an Electrical "group". Māui has 1.5 groups.
 
-![UPM\_html\_2d91e9cdd34d272d.gif](https://support.nesi.org.nz/hc/article_attachments/360000488576/UPM_html_2d91e9cdd34d272d.gif){width="298"
-height="263"}
+<img src="mkdocs/includes/images/UPM_html_2d91e9cdd34d272d.gif" alt="UPM_html_2d91e9cdd34d272d.gif" width="298" height="263" />
 
 The performance characteristics are:
 
 <ol>
 1.  Intra-Chassis
-    a.  Backplane
-    b.  15 links in the backplane
-    c.  Rank 1 (green) Network
-    d.  14 Gbps
+    1.  Backplane
+    2.  15 links in the backplane
+    3.  Rank 1 (green) Network
+    4.  14 Gbps
 2.  Intra-group
-    a.  Copper cables
-    b.  15 links in 5 connectors
-    c.  Rank 2 (black) Network
-    d.  14 Gbps
+    1.  Copper cables
+    2.  15 links in 5 connectors
+    3.  Rank 2 (black) Network
+    4.  14 Gbps
 3.  Inter-group links
-    a.  Optical
-    b.  10 links in 5 connectors
-    c.  Rank 3 (blue) Network
-    d.  12.5 Gbps
+    1.  Optical
+    2.  10 links in 5 connectors
+    3.  Rank 3 (blue) Network
+    4.  12.5 Gbps
 
 </ol>
 The centrepiece of the Aries network is dynamic routing through a large

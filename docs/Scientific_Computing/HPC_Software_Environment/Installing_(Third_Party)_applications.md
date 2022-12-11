@@ -47,15 +47,13 @@ you usually need to consider:
 -   install the binaries and libraries into the specified directory
     (`make install`)
 
-## Create your own modules (Optional) {#create-your-own-modules}
+## Create your own modules (Optional)
 
 You can create personalised module environments, which can load modules
 and set up environment variables. For example, you could define a
 modules in a project directory
 `/nesi/project/<projectID>/modulefiles/ProdXY` as the following:
 
-::: {.highlighter-rouge}
-::: {.highlight}
     #%module
 
     conflict ProdABC   # conflicts with other versions of itself
@@ -81,8 +79,6 @@ modules in a project directory
     prepend-path PYTHONPATH $PKG_PREFIX/lib/python3.6/site-packages/
     # for example, you can set environment variables for compiling
     setenv CFLAGS "-DNDEBUG"
-:::
-:::
 
 In the first lines, we can set conflicts with other modules (here named
 ProdABC). Then we load some dependency modules and provide some
@@ -106,22 +102,14 @@ To use the module (or all in that directory and sub-directories) we need
 to register that directory to the module environment. This can be done
 by setting the following environment variable:
 
-::: {.highlighter-rouge}
-::: {.highlight}
     module use /nesi/project/<projectID>/modulefiles/ 
-:::
-:::
 
 by adding that line to your `$HOME/.bashrc` you will have the modules
 always available.
 
 The module then can be loaded by:
 
-::: {.highlighter-rouge}
-::: {.highlight}
     module load ProdXY
-:::
-:::
 
 These modules can easily be shared with collaborators. They just need to
 specify the last two steps.

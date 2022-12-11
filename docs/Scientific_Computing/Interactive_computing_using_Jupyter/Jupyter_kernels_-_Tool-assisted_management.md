@@ -26,7 +26,7 @@ follows:
 
     nesi-add-kernel --help
 
-Here is an example to add a TensorFlow kernel, using NeSI's module:
+Here is an example to add a TensorFlow kernel, using NeSI’s module:
 
     nesi-add-kernel tf_kernel TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
 
@@ -57,7 +57,7 @@ otherwise if created using `conda create -n <conda_env_name>`, use:
 
 # Virtual environment
 
-If you want to use a Python virtual environment, don't forget to specify
+If you want to use a Python virtual environment, don’t forget to specify
 which Python module you used to create it.
 
 For example, if we create a virtual environment named `my_test_venv`

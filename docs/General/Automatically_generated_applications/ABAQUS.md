@@ -1,14 +1,19 @@
-  -------------- -------------------------------------------------------
-  Description    Finite Element Analysis software for modeling,
-                 visualization and best-in-class implicit and explicit
-                 dynamics FEA. - Homepage
-
-  Homepage       http://www.simulia.com/products/abaqus\_fea.html
-
-  Machines       mahuika,maui
-
-  Institution    \-
-  -------------- -------------------------------------------------------
+<table style="width:99%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 <style>
 p.fancytext{
@@ -21,18 +26,26 @@ another link to
 homepage[homepage](http://www.simulia.com/products/abaqus_fea.html) Some
 stuff
 
-  Table                     thing
-  ------------------------- ----------------
-  Something                 Something else
-  Most up to date version   ABAQUS/6.14.2
+<table>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 # TEST
 
-# TEST {#test}
+# TEST
 
-## TEST {#test-1}
+## TEST
 
-### TEST {#test-2}
+### TEST
 
 This is some *fancy* text.
 
@@ -43,5 +56,11 @@ TOO FANCY
 <script>
 document.querySelector(".panicbutton").onclick = function () { document.querySelector(".fancytext").style.display = "none"; };
 </script>
-  :exclamation: This is very important never assume jQuery!
-  -----------------------------------------------------------
+<table>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>

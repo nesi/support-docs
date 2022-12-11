@@ -1,4 +1,4 @@
-## What is Cylc {#01G9X8TM54HGX95GWY5CR3E4CS}
+## What is Cylc
 
 [Cylc](https://cylc.github.io/) is a **general purpose workflow engine**
 that can also orchestrate **cycling systems** very efficiently. It is
@@ -19,7 +19,7 @@ See the NeSI  [Snakemake](https://snakemake-on-nesi.sschmeier.com/) page
 for another, possible choice.
 
 In this article, we show how you can create a simple workflow and run it
-on NeSI\'s platform. Consult the [Cylc
+on NeSI's platform. Consult the [Cylc
 documentation](https://cylc.github.io/documentation/) for more elaborate
 examples, including some with a cycling (repeated) graph pattern. One of
 the strengths of Cylc is that simple workflows can be executed simply
@@ -28,7 +28,7 @@ which may be repeated ad infinitum. 
 
  
 
-## How to select the Cylc version {#01G9X8TM55D8QFZK1483S2X5HX}
+## How to select the Cylc version
 
 Cylc has been installed on Māui and Mahuika, there is no need to load
 any module,
@@ -64,10 +64,10 @@ CYLC\_VERSION, for instance,
 
 At the time of writing, the latest version is 8.0.1.
 
-## A simple example of a Cylc workflow {#01G9X8TM552SXXBMFG41TGRKBP}
+## A simple example of a Cylc workflow
 
-To demonstrate Cylc, let\'s start with a workflow, which we call
-\"simple\",
+To demonstrate Cylc, let's start with a workflow, which we call
+"simple",
 
     $ mkdir -p ~/cylc-src/simple
     $ cd ~/cylc-src/simple
@@ -98,10 +98,10 @@ which run under SLURM (hence platform = mahuika-slurm). Type
 
     cylc config --platform-names
 
-[to see a list of platforms. The SLURM settings for taskA are in the
-\[\[\[directives\]\]\] section.]{.s1}
+<span class="s1">to see a list of platforms. The SLURM settings for
+taskA are in the \[\[\[directives\]\]\] section.</span>
 
-## How to interact with Cylc {#01GFPTSN3XAE8EXPK03B6W99N7}
+## How to interact with Cylc
 
 Cylc takes command lines. Type 
 
@@ -111,14 +111,14 @@ to see the available commands. Type 
 
     $ cylc help install # or cylc install --help
 
-to find out how to use a specific command (in this case \"install\").
+to find out how to use a specific command (in this case "install").
 
-## Installing a workflow {#01G9X8TM55ZW1DWYMSEYTRQBYZ}
+## Installing a workflow
 
 Prior to running a workflow, **it must be installed** to a run
 directory. Due to limited disk space in home directories on NeSI, Cylc
 has been configured to symlink the standard run directories to project
-directories, if \$PROJECT is defined. Hence, you need to set
+directories, if $PROJECT is defined. Hence, you need to set
 
     $ export PROJECT=nesi99999 # CHANGE
 
@@ -126,33 +126,33 @@ Then install the workflow with
 
     cylc install simple
 
-## Validating the workflow {#01G9X8TM55X80D5CPV6ATFYJHM}
+## Validating the workflow
 
-It\'s a good idea to check that there are no syntax errors in flow.cylc,
+It's a good idea to check that there are no syntax errors in flow.cylc,
 
     $ cylc validate simple
     Valid for cylc-8.0.1
 
-## Looking at the workflow graph {#01G9X8TM55X4AHY2WEE1ENZF34}
+## Looking at the workflow graph
 
 A useful command is 
 
     $ cylc graph simple
 
 which will generate a png file, generally in the /tmp directory with a
-name like [/tmp/tmpzq3bjktw.PNG. Take note of the name of the png file.
-To visualise the file you can type ]{.s1}
+name like <span class="s1">/tmp/tmpzq3bjktw.PNG. Take note of the name
+of the png file. To visualise the file you can type </span>
 
     $ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
 
-Here, we see that our workflow \"simple\" has a \"taskC\", which waits
-for \"taskA\" and \"taskB\" to complete,
+Here, we see that our workflow "simple" has a "taskC", which waits for
+"taskA" and "taskB" to complete,
 
-![simple.png](https://support.nesi.org.nz/hc/article_attachments/5255042984079/simple.png)
+![simple.png](mkdocs/includes/images/simple.png)
 
-The \"1\" indicates that this workflow graph is executed only once.
+The "1" indicates that this workflow graph is executed only once.
 
-## Different ways to interact with Cylc {#01G9X8TM56VMG4J8KRW0NNZWSZ}
+## Different ways to interact with Cylc
 
 Every Cylc action can be executed via the command line. Alternatively,
 you can invoke each action through a **terminal user interface** (tui), 
@@ -169,53 +169,53 @@ This will start a web server, which will display a URL like
 
 (the token value will be different). 
 
-If you\'re connecting through <https://jupyter.nesi.org.nz> you\'ll need
-to replace anything before the \":\" with
+If you're connecting through <https://jupyter.nesi.org.nz> you'll need
+to replace anything before the ":" with
 <https://jupyter.nesi.org.nz/user/USERNAME/proxy/> to get access to the
 web graphical user interface (where USERNAME is your NeSI user name).
 Hence the URL becomes
 <https://jupyter.nesi.org.nz/user/USERNAME/proxy/>[8888/cylc?token=TOKEN](http://wbn003:8888/cylc?token=30d9e2b3dfe097318539cff02f69a24217f2967e8809f0a9)
 
-## How to execute a workflow {#01G9X8TM56RRFMK8Y0H56RKEMQ}
+## How to execute a workflow
 
 To execute the workflow type
 
     $ cylc play --no-detach simple
 
-The \"\--no-detach\" option makes scheduler run in the foreground so you
+The "--no-detach" option makes scheduler run in the foreground so you
 can see its output in your terminal. Without this option it will
-\"daemonize\" so it can keep running even if you log out.
+"daemonize" so it can keep running even if you log out.
 
 Command
 
     $ cylc scan
 
-will list all running and installed workflows.[]{.s1}
+will list all running and installed workflows.<span class="s1"></span>
 
-## Checking the output {#01G9X8TM5665B7RHWWTQEZBG2E}
+## Checking the output
 
     $ cylc cat-log simple//1/taskA  # note // between workflow and task ID
 
-of the first cycle of taskA. The \"1\" refers to the task iteration, or
+of the first cycle of taskA. The "1" refers to the task iteration, or
 cycle point. Our simple workflow only has one iteration (as dictated by
 the R1 graph above). 
 
-## How to clean or remove a workflow {#01G9X8TM56H3QSGFM28FRGAD83}
+## How to clean or remove a workflow
 
     $ cylc clean simple
 
-will remove the file structure associated with workflow \"simple\".
+will remove the file structure associated with workflow "simple".
 
-## Where jobs, results and log files are stored {#01G9X8TM560YEF30SXD3V2BFBG}
+## Where jobs, results and log files are stored
 
-Cylc will create a directory under \$HOME/cylc-run. On NeSI, the output
+Cylc will create a directory under $HOME/cylc-run. On NeSI, the output
 of the runs will be stored in the project directory, with a symbolic
 link pointing from the user home directory to the project directory
 
     $ ls -l $HOME/cylc-run/simple/run1
     lrwxrwxrwx 1 pletzera pletzera 54 Aug  5 03:19 /home/pletzera/cylc-run/simple/run1 -> /nesi/nobackup/nesi99999/pletzera/cylc-run/simple/run1
 
-## About Cylc {#01G9X8TM56RGGS0RY0F1VJFD1C}
+## About Cylc
 
 More can be found about Cylc
 [here](https://cylc.github.io/cylc-doc/nightly/html/tutorial/index.html),

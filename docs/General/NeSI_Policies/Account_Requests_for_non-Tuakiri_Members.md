@@ -8,9 +8,9 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360007179015/mceclip0.png)
+![mceclip0.png](mkdocs/includes/images/mceclip0.png)
 
-> ### Warning {#email_address}
+> ### Warning
 >
 > The email address you use on your application must be your
 > institutional email address. We do not accept applications using
@@ -23,16 +23,16 @@ an automatically generated email inviting you to activate your account.
 You will need to activate your account before you can log in to
 my.nesi.org.nz.
 
-> ### What if I don\'t get the account activation email? {#no-activation}
+> ### What if I don't get the account activation email?
 >
-> Some organisations\' email servers are known to block Tuakiri\'s
-> account activation emails. If you haven\'t received your Tuakiri
-> account activation email by the end of the next business day after you
-> applied for an account, please check your junk mail and/or quarantine
-> folders. If you still can\'t find the email, [contact our support
+> Some organisations' email servers are known to block Tuakiri's account
+> activation emails. If you haven't received your Tuakiri account
+> activation email by the end of the next business day after you applied
+> for an account, please check your junk mail and/or quarantine folders.
+> If you still can't find the email, [contact our support
 > team](https://support.nesi.org.nz/hc/requests/new).
 
-> ### What next? {#prerequisites}
+> ### What next?
 >
 > -   [Project
 >     Eligibility](https://support.nesi.org.nz/hc/en-gb/articles/360000925176-Project-Eligibility)

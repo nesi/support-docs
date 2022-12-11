@@ -1,6 +1,6 @@
-> ### Service Status {#nearline-service-status}
+> ### Service Status
 >
-> Mahuika\'s new nodes are in an **Early Access Programme (EAP) phase**
+> Mahuika's new nodes are in an **Early Access Programme (EAP) phase**
 > and not fully in production.
 >
 > See [Mahuika Extension
@@ -13,7 +13,7 @@ nodes, via a Slurm job. You can also build
 [Singularity](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
 container using this technique.
 
-# Build Environment Variables {#build_environment_variables}
+# Build Environment Variables
 
 To build containers, you need to ensure that Apptainer has enough
 storage space to create intermediate files. It also requires a cache

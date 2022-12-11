@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have your [connection to the NeSI
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
@@ -26,7 +26,7 @@ described
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > The following examples use aliases as set up in [standard terminal
 > setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
@@ -57,16 +57,16 @@ If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure. 
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > Your local port and remote port do not have to be different numbers.
 > It is generally easier to use the same number for both.
 
 # SSH Config (OpenSSH)
 
-If you are using port forwarding on a regular basis, and don\'t want the
+If you are using port forwarding on a regular basis, and don't want the
 hassle of opening a new tunnel every time, you can include a port
-forwarding line in your ssh config file \~/.ssh/config on your local
+forwarding line in your ssh config file ~/.ssh/config on your local
 machine.
 
 Under the alias for the cluster you want to connect to add the following
@@ -92,12 +92,12 @@ e.g.
           ExitOnForwardFailure yes
 
 In the above example, the local and remote ports are the same. This
-isn\'t a requirement, but it makes things easier to remember.
+isn't a requirement, but it makes things easier to remember.
 
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > -   If you get a error message
 >
@@ -116,12 +116,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360004708596/mceclip0.png)
+![mceclip0.png](mkdocs/includes/images/mceclip0.png)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](https://support.nesi.org.nz/hc/article_attachments/360004708616/mceclip1.png)
+![mceclip1.png](mkdocs/includes/images/mceclip1.png)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -129,14 +129,14 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](https://support.nesi.org.nz/hc/article_attachments/360004580035/mobakey.png)
+![mobakey.png](mkdocs/includes/images/mobakey.png)
 
-[■]{.wysiwyg-color-green110} local port\
-[■]{.wysiwyg-color-orange90} remote port\
-[■]{.wysiwyg-color-red90} must match\
-[■]{.wysiwyg-color-pink80} don\'t matter
+<span class="wysiwyg-color-green110">■</span> local port  
+<span class="wysiwyg-color-orange90">■</span> remote port  
+<span class="wysiwyg-color-red90">■</span> must match  
+<span class="wysiwyg-color-pink80">■</span> don't matter
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   Using
 >     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on

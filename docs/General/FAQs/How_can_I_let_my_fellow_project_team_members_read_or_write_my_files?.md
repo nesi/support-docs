@@ -11,7 +11,7 @@ ownership, group and permissions.
 
 So, supposing Joe Bloggs moves a file from his home directory to the
 project directory `/nesi/project/nesi99999`, his fellow team members
-won\'t be able to write to it:
+won't be able to write to it:
 
     $ ls -l README
     -rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 README
@@ -20,7 +20,7 @@ won\'t be able to write to it:
     -rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 /nesi/project/nesi99999/bloggsj/README
 
 As you can see, the file stays in the group `bloggsj`, that is Joe
-Bloggs\' personal group, even though it is now inside the project
+Bloggs' personal group, even though it is now inside the project
 directory.
 
 There is, however, a solution involving the `rsync` command, a more
@@ -28,20 +28,20 @@ advanced version of `scp`. `rsync` is typically used to copy files
 between two or more machines, but can also be used within the same
 machine.
 
-> ### Warning {#perms-group-warning}
+> ### Warning
 >
 > In both these commands, the `--no-perms` and `--no-group` options must
 > both come after `-a`. `-a` implicitly asserts `--perms` and `--group`,
 > and will therefore override whichever
 > of `--no-perms` and `--no-group` come before it.
 
-## To copy a file (or directory and its contents), updating its group and setting its permissions {#to-copy-a-file-or-directory-and-its-contents-updating-its-group-and-setting-its-permissions dir="auto"}
+## To copy a file (or directory and its contents), updating its group and setting its permissions
 
     rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
 
-## To move a file (or directory and its contents), updating its group and setting its permissions {#to-move-a-file-or-directory-and-its-contents-updating-its-group-and-setting-its-permissions dir="auto"}
+## To move a file (or directory and its contents), updating its group and setting its permissions
 
-> ### Warning {#remove-source-warning}
+> ### Warning
 >
 > The `--remove-source-files` option is safe only if every source file
 > is otherwise left intact during the moving process.
@@ -50,12 +50,12 @@ machine.
 
 If you want to set files to executable in all cases,
 replace `...ugo=rwX...` with `...ugo=rwx...`. The capital `X` means,
-\"Preserve whatever executable permissions existed on the source file
-and aren\'t masked at the destination.\" A lower case `x` on the other
-hand means, \"Make this entity executable, even if it wasn\'t so
-previously, though this may be masked at the destination.\"
+"Preserve whatever executable permissions existed on the source file and
+aren't masked at the destination." A lower case `x` on the other hand
+means, "Make this entity executable, even if it wasn't so previously,
+though this may be masked at the destination."
 
-## To fix the permissions of a file or directory that is already in its intended place {#to-fix-the-permissions-of-a-file-or-directory-that-is-already-in-its-intended-place dir="auto"}
+## To fix the permissions of a file or directory that is already in its intended place
 
 Change to the parent directory, which could be a project or nobackup
 directory, that you want to fix, and find and fix your files. You can do

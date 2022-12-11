@@ -3,8 +3,8 @@
 This is a minor release incorporating bug fixes and improvements.
 
 -   Certain server errors when a bad job is submitted now generate a
-    more informative error message in the client program than,
-    \"Internal Server Error.\"
+    more informative error message in the client program than, "Internal
+    Server Error."
 -   Nearline client programs now log to the `~/.librarian` directory, so
     you no longer need to explicitly decorate the Nearline command with
     complex strings in order to capture basic troubleshooting
@@ -23,7 +23,7 @@ This is a minor release incorporating bug fixes and improvements.
     that is not the project code must be either a directory on Nearline,
     or a local file list.
 -   A bug has been fixed in the Nearline server whereby the server would
-    incorrectly calculate the changes to the project\'s disk space and
+    incorrectly calculate the changes to the project's disk space and
     file count usage if an `nlpurge` command were to fail (or skip some
     files) for any reason after it was accepted by the server.
 -   `nlpurge` can now be used to delete empty directories from Nearline,
@@ -31,11 +31,11 @@ This is a minor release incorporating bug fixes and improvements.
     included in a file list.
 -   `nlpurge` deals gracefully with the situation in which a directory
     to be purged is not a subdirectory somewhere within the specified
-    project\'s Nearline directory, by printing an informative error
+    project's Nearline directory, by printing an informative error
     message.
 -   `nlpurge` will no longer accept a file list argument if any of the
     entries in the file list point to files (on Nearline) that are
-    outside the specified project\'s Nearline directory. Instead, an
+    outside the specified project's Nearline directory. Instead, an
     error message will be displayed, listing all affected lines in the
     file list.
 -   A bug that required users to start `nlpurge` file list entries with

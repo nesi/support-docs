@@ -22,7 +22,7 @@ incorrectly, you will be prompted again for both.
 ## Mahuika
 
 Mahuika follows the same procedure as the lander node, except that it
-doesn\'t ask for a second factor.
+doesn't ask for a second factor.
 
     ssh login.mahuika.nesi.org.nz
 
@@ -77,7 +77,7 @@ in units of nodes, so the smallest possible job takes a whole node, and
 there can never be more than one job on a node at a time.
 
 Additionally, projects with valid allocations on Māui will also have
-access to [Māui\'s ancilliary
+access to [Māui's ancilliary
 nodes,](https://support.nesi.org.nz/hc/en-gb/articles/360000203776)
 where jobs requiring up to 768 GB of memory or jobs that require GPUs
 can be run. When submitting a job to the Māui ancillary nodes you may

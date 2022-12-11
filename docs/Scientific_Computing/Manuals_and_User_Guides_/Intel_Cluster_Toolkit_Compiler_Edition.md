@@ -13,13 +13,24 @@ The Intel Cluster Toolkit Compiler Edition home page is at
 
 ## Packages with modules
 
-  Module             NeSI Cluster
-  ------------------ --------------
-  intel/2017a        pan
-  intel/2015a        pan
-  intel/2015.02      pan
-  intel/ics-2013     pan
-  intel/2011-64bit   pan
+<table>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 # Licensing requirements
 
@@ -50,7 +61,7 @@ not finish within the time limits set on the build nodes.
 
 If you are not compiling a program or library, but are instead running
 previously compiled code, it is normally sufficient for you to load the
-Intel Cluster Toolkit\'s module. If the program or library you are
+Intel Cluster Toolkit's module. If the program or library you are
 running has its own module, it is likely that the Intel module will be
 loaded automatically as a required dependency, and that no further
 action will be required on your part.
@@ -60,8 +71,8 @@ the Intel Compiler module by running
 
     module list
 
-and having a look for loaded modules with names such as \"intel\" and
-\"icc\".
+and having a look for loaded modules with names such as "intel" and
+"icc".
 
 # Example scripts
 

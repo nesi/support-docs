@@ -52,7 +52,7 @@ should give you an impression which steps you usually need to consider:
 1.  Change into your desired source code directory. We suggest you use
     `/nesi/project/<projectID>`, or more typically one of its
     subdirectories. You may instead use `/nesi/nobackup/<projectID>` (or
-    one of its subdirectories) if you don\'t mind the software not being
+    one of its subdirectories) if you don't mind the software not being
     backed up and prone to automatic deletion in certain circumstances.
 2.  Download the source code. This could be done via a repository
     checkout (`git clone <source-url>`) or via downloading a tarball
@@ -84,22 +84,32 @@ Compilers are provided for Fortran, C, and C++. For MPI-parallelised
 code, different compilers typically need to be used. The different
 **compilers** are listed:
 
-  ----------------------------------------------------------------------------
-  Language   Cray                  Intel                 GNU
-  ---------- --------------------- --------------------- ---------------------
-  Fortran    ftn                   ifort                 gfortran
-
-  Fortran +  ftn                   mpiifort              mpif90
-  MPI                                                    
-
-  C          cc                    icc                   gcc
-
-  C + MPI    cc                    mpiicc                mpicc
-
-  C++        CC                    icpc                  g++
-
-  C++ + MPI  CC                    mpiicpc               mpicxx
-  ----------------------------------------------------------------------------
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 **Note**, Cray uses compiler wrappers which are described [later in more
 detail](#cray-programming-environment).
@@ -121,35 +131,33 @@ change them if you decide to switch compilers. The following table
 provides a list of commonly used compiler **options** for the different
 compilers:
 
-  ------------------------------------------------------------------------------------------------------------------------
-  Group           Cray                             Intel                GNU                                Notes
-  --------------- -------------------------------- -------------------- ---------------------------------- ---------------
-  Debugging       `-g` or `-G{0,1,2,fast}`         `-g` or              `-g or -g{0,1,2,3}`                Set level of
-                                                   `-debug [keyword]`                                      debugging
-                                                                                                           information,
-                                                                                                           some levels may
-                                                                                                           disable certain
-                                                                                                           compiler
-                                                                                                           optimisations
-
-  Light compiler  `-O2`                            `-O2`                `-O2`                               
-  optimisation                                                                                             
-
-  Aggressive      `-O3 -hfp3`                      `-O3 -ipo`           `-O3 -ffast-math -funroll-loops`   This may affect
-  compiler                                                                                                 numerical
-  optimisation                                                                                             accuracy
-
-  Architecture    Load this module first:          `-xHost`             `-march=native -mtune=native`      Build and
-  specific        `module load craype-broadwell`                                                           compute nodes
-  optimisation                                                                                             have the same
-                                                                                                           architecture
-                                                                                                           (Broadwell)
-
-  Vectorisation   `-hlist=m`                       `-qopt-report`       `-fopt-info-vec` or                 
-  reports                                                               `-fopt-info-missed`                
-
-  OpenMP          `-homp` (default)                `-qopenmp`           `-fopenmp`                         ``
-  ------------------------------------------------------------------------------------------------------------------------
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 Additional compiler options are documented in the compiler man pages,
 e.g. `man mpicc`, which are available *after* loading the related
@@ -178,7 +186,7 @@ aggressive compiler optimisation (`-O3`):
 
 `mpif90 -Wall -O3 -o simpleMpi simpleMpi.f90`
 
-## Linking {#compiler-options}
+## Linking
 
 Your application may depend on one or more external software packages,
 normally libraries, and if so it will need to link against them when you
@@ -199,14 +207,14 @@ Thus the linker expects to find the include headers in the
 dynamic linking).
 
 Note that you may need to list several libraries to link successfully,
-e.g., `-lA -lB` for linking against libraries \"A\" and \"B\". The order
-in which you list libraries matters, as the linker will go through the
-list in order of appearance. If library \"A\" depends on library \"B\",
-specifying `-lA -lB` will work. If library \"B\" depends on \"A\", use
+e.g., `-lA -lB` for linking against libraries "A" and "B". The order in
+which you list libraries matters, as the linker will go through the list
+in order of appearance. If library "A" depends on library "B",
+specifying `-lA -lB` will work. If library "B" depends on "A", use
 `-lB -lA`. If they depend on each other, use `-lA -lB -lA` (although
 such cases are quite rare).
 
-### [External Libraries]{.wysiwyg-underline}
+### <span class="wysiwyg-underline">External Libraries</span>
 
 There are already many libraries provided on the Mahuika platform. Most
 of them are provided in modules. You can search them using
@@ -249,10 +257,10 @@ used library should be build with the same compiler.
 adding the location to the MPI library. This can be observed calling
 e.g. `mpif90 -showme`
 
-### [Common Linker Problems ]{.wysiwyg-underline}
+### <span class="wysiwyg-underline">Common Linker Problems </span>
 
 Linking can easily go wrong. Most often, you will see linker errors
-about \"missing symbols\" when the linker could not find a function used
+about "missing symbols" when the linker could not find a function used
 in your program or in one of the libraries that you linked against. To
 resolve this problem, have a closer look at the function names that the
 linker reported:
@@ -263,27 +271,27 @@ linker reported:
     has a bug. Try running the linking step manually with all source
     files and debug the build system (which can be a lengthy and
     cumbersome process, unfortunately).
--   Do the missing functions have names that contain \"mp\" or \"omp\"?
-    This could mean that some of your source files or external libraries
-    were built with OpenMP support, which requires you to set an OpenMP
-    flag (`-fopenmp` for GNU compilers, `-qopenmp` for Intel) in your
-    linker command. For the Cray compilers, OpenMP is enabled by default
-    and can be controlled using `-h[no]omp`.
+-   Do the missing functions have names that contain "mp" or "omp"? This
+    could mean that some of your source files or external libraries were
+    built with OpenMP support, which requires you to set an OpenMP flag
+    (`-fopenmp` for GNU compilers, `-qopenmp` for Intel) in your linker
+    command. For the Cray compilers, OpenMP is enabled by default and
+    can be controlled using `-h[no]omp`.
 -   Do you see a very long list of complex-looking function names, and
     does your source code or external library dependency include C++
     code? You may need to explicitly link against the C++ standard
     library (`-lstdc++` for GNU and Cray compilers, `-cxxlib` for Intel
     compilers); this is a particularly common problem for statically
     linked code.
--   Do the function names end with an underscore (\"\_\")? You might be
+-   Do the function names end with an underscore ("\_")? You might be
     missing some Fortran code, either from your own sources or from a
     library that was written in Fortran, or parts of your Fortran code
     were built with flags such as `-assume nounderscore` (Intel) or
     `-fno-underscoring` (GNU), while others were using different flags
     (note that the Cray compiler always uses underscores).
--   Do the function names end with double underscores (\"\_\_\")?
-    Fortran compilers offer an option to add double underscores to
-    Fortran subroutine names for compatibility reasons
+-   Do the function names end with double underscores ("\_\_")? Fortran
+    compilers offer an option to add double underscores to Fortran
+    subroutine names for compatibility reasons
     (`-h [no]second_underscore`, `-assume [no]2underscores`,
     `-f[no-]second-underscore`) which you may have to add or remove.
 -   Compiler not necessarily enable preprocessing, which could result in
@@ -292,11 +300,10 @@ linker reported:
     the `-cpp` option.
 
 Note that the linker requires that function names match exactly, so any
-variation in function name in your code will lead to a \"missing
-symbols\" error (with the exception of character case in Fortran source
-code).
+variation in function name in your code will lead to a "missing symbols"
+error (with the exception of character case in Fortran source code).
 
-## Cray Programming Environment {#compiler-options}
+## Cray Programming Environment
 
 The Cray Programming Environment includes the Cray compiler, various
 libraries and tools. These work nicely together and provide certain

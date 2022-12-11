@@ -8,44 +8,56 @@
 
 ------------------------------------------------------------------------
 
-[Huge text]{.wysiwyg-font-size-x-large}
+<span class="wysiwyg-font-size-x-large">Huge text</span>
 
-[Large Text]{.wysiwyg-font-size-large}
+<span class="wysiwyg-font-size-large">Large Text</span>
 
-[Normal Text]{.wysiwyg-font-size-medium}
+<span class="wysiwyg-font-size-medium">Normal Text</span>
 
-[Small Text]{.wysiwyg-font-size-small}
+<span class="wysiwyg-font-size-small">Small Text</span>
 
 ------------------------------------------------------------------------
 
  Blockquotes
 
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
 
-> ### Warning {#prerequisites}
+> ### Warning
 >
 > AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
-> ### Tips {#prerequisites}
+> ### Tips
 >
 > Some plain text.
 
-> ### Video {#Video}
+> ### Video
 >
 > <iframe src="//www.youtube-nocookie.com/embed/yDYXOntAlIk" width="560" height="315" frameborder="0" allowfullscreen>
 > </iframe>
 
 ------------------------------------------------------------------------
+
+This is a [Link](https://www.w3schools.com/html/html_links.asp) 
+
+------------------------------------------------------------------------
+
+Image
+
+![redirects-and-pipes.png](mkdocs/includes/images/6014468037775.name_me)
+
+------------------------------------------------------------------------
+
+ 
 
 Code Blocks
 
@@ -61,15 +73,15 @@ Code Blocks
 
     salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
-class=\"error\"
+class="error"
 
     salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
-class=\"output\"
+class="output"
 
     salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
-class=\"source\"
+class="source"
 
     salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
@@ -90,11 +102,16 @@ Māui in text
 
 some inline code with `maui` in it
 
-  -------- -------- -------
-  simple   boring   table
-  a        b        c
-  d        e        f
-  -------- -------- -------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
  
 

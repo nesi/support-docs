@@ -1,11 +1,10 @@
-If you\'ve been using Linux for a while, you\'ll have come across
-resource files. These files are typically read when you start a new
-instance of your *shell*, the program that interprets and executes the
-commands that you type in at your command prompt. But they\'re somewhat
-confusing, because there are several, and it\'s not obvious which are
-read and when.
+If you've been using Linux for a while, you'll have come across resource
+files. These files are typically read when you start a new instance of
+your *shell*, the program that interprets and executes the commands that
+you type in at your command prompt. But they're somewhat confusing,
+because there are several, and it's not obvious which are read and when.
 
-> ### Warning {#prerequisites}
+> ### Warning
 >
 > This documentation is specific to the *bash* shell, which is our
 > chosen default shell for all users, and is the default for most Linux
@@ -33,19 +32,19 @@ The equivalent file in the Bourne shell (`sh`) is called `~/.profile`.
 Because the Bash shell is designed to be (mostly) compatible with the
 Bourne shell, if `bash` finds `~/.profile` but not `~/.bash_profile`, it
 will source `~/.profile` as if it were `~/.bash_profile`. For the rest
-of this article, however, we will assume that you\'re using
+of this article, however, we will assume that you're using
 `~/.bash_profile`.
 
 ## Can I have the same environment variables, aliases, functions, etc. whether my shell is a login shell or not?
 
 Absolutely. You can define them in both `~/.bashrc` and
-`~/.bash_profile`. But this isn\'t the best way.
+`~/.bash_profile`. But this isn't the best way.
 
-## I thought not. I don\'t want to repeat myself!
+## I thought not. I don't want to repeat myself!
 
 A wise choice. Repeating yourself is extra work, and dangerous in that
 if you later have to make a change, you may forget to do it everywhere
-it\'s needed.
+it's needed.
 
 Fortunately, instead of repeating yourself, you can source one file from
 another. Most commonly, people source `~/.bashrc`, if it exists and can
@@ -61,7 +60,7 @@ shells.
 
 ## What should go where?
 
-That\'s largely up to you. However, we have found the following to be
+That's largely up to you. However, we have found the following to be
 useful rules of thumb:
 
 -   Functions and aliases go in `~/.bashrc`

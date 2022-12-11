@@ -5,7 +5,7 @@ our platforms, so that you obtain your results in a timely manner and so
 that we can fit in as much work as possible, hopefully reducing queue
 times for all users.
 
-With this aim in mind, we may ask to perform a \"job efficiency review\"
+With this aim in mind, we may ask to perform a "job efficiency review"
 of your work on NeSI, particularly if you have been granted, or are
 requesting, a large compute allocation. See below for more details about
 what to expect during this process. If you are interested in us looking
@@ -20,7 +20,7 @@ following outcomes:
 -   We determine that your workflow/jobs are running efficiently on our
     platform
 -   Some areas for improvement are identified (and agreed with you)
-    -   For \"quick wins\" we may be able to achieve these improvements
+    -   For "quick wins" we may be able to achieve these improvements
         within the scope of the job efficiency review
     -   For larger pieces of work, we would assist you in applying for a
         [NeSI
@@ -49,6 +49,6 @@ such as:
     involve attending some Zoom meetings and/or email communication)
 -   Setting up some test configurations that we can use for profiling
     and benchmarking your jobs; these should be representative of your
-    work but don\'t necessarily need to be complete calculations. For
+    work but don't necessarily need to be complete calculations. For
     example, with a simulation code we could choose to reduce the number
     of time steps but keep the domain size the same.

@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have a [NeSI
 >     account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
@@ -6,7 +6,7 @@
 > -   Be a member of an[active
 >     project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
 >
-## First time setup {#recLinux}
+## First time setup
 
 Git Bash can be downloaded as part of Git
 [here](https://git-scm.com/download/win).

@@ -5,7 +5,7 @@ enable researchers to stay at the top of their fields, NeSI is rolling
 out additional NVIDIA A100 GPU cards in early 2022, specifically 4-way
 configured HGX A100s with 80GB memory each.
 
-These new resources, alongside our platform\'s [specialised software
+These new resources, alongside our platform's [specialised software
 capabilities](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/data-analytics-and-machine-learning), are
 poised support access for a larger set of users, as well as more
 advanced and demanding performance needs.
@@ -13,8 +13,8 @@ advanced and demanding performance needs.
 To help us prepare to launch these new GPU cards, we are seeking
 researchers / research groups interested in assisting us with some early
 testing and use case applications. We will have specific features and
-functionality we\'ll be asking you to help us test, using your
-project\'s code(s).
+functionality we'll be asking you to help us test, using your project's
+code(s).
 
 **The testing phase would run between February - April 2022** (exact
 dates to be confirmed). We are collecting expressions of interest now
@@ -36,8 +36,10 @@ The following tools WILL NOT be available during this testing phase:
 -   Interactive access to the GPU
     via [Jupyter](https://support.nesi.org.nz/hc/en-gb/articles/360001555615-Jupyter-on-NeSI)
 
-[[**Click here to express interest in testing NeSI\'s next tranche of
-GPU cards**](https://www.surveymonkey.com/r/C9V8K8S)]{.underline}
+<span class="underline">[**Click here to express interest in testing
+NeSI's next tranche of GPU
+cards**](https://www.surveymonkey.com/r/C9V8K8S)</span>
 
 If you have questions our would like more information about this Early
-Access Program before applying, contact <support@nesi.org.nz>.
+Access Program before applying,
+contact <a href="mailto:support@nesi.org.nz" class="mailto">support@nesi.org.nz</a>.

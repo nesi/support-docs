@@ -22,7 +22,7 @@ issue.
 You can check the actual situation by inspecting `module list`
 
 There is a way to prevent the message: Assuming you want to load a
-certain toolchain or application. Let\'s say
+certain toolchain or application. Let's say
 {code}VASP/5.4.4-CrayIntel-18.08{code} which is build with build Intel
 18.08, we can first swap into the desired {code}PrgEnv{code}
 

@@ -21,7 +21,7 @@ directory, with the following contents:
     LC_TELEPHONE="en_US.UTF-8"
     LC_TIME="en_US.UTF-8"
 
-If you know what you\'re doing, you can replace each instance of
-\"en\_US.UTF-8\" with a different locale. You can get a list of
-available locales by running `locale -a`. Use a different locale at your
-own risk, however.
+If you know what you're doing, you can replace each instance of
+"en\_US.UTF-8" with a different locale. You can get a list of available
+locales by running `locale -a`. Use a different locale at your own risk,
+however.

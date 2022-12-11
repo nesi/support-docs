@@ -9,7 +9,7 @@ This is a minor release incorporating bug fixes and improvements.
     having special meaning to the shell, has been fixed.
 -   A bug causing `nlls` to return `Internal Server Error` when the
     operator specifies a subdirectory of a project directory that
-    doesn\'t exist on Nearline has been fixed. The error
+    doesn't exist on Nearline has been fixed. The error
     `no such file or directory` is now returned instead.
 -   Some small improvements have been made to server configuration
     parsing and detection of inappropriate or missing configuration

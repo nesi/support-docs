@@ -9,8 +9,8 @@ Priority scores are determined by a number of factors:
 
 ### 1) Quality of Service
 
-The \"debug\" Quality of Service can be gained by adding the `sbatch`
-command line option `--qos=debug`.\
+The "debug" Quality of Service can be gained by adding the `sbatch`
+command line option `--qos=debug`.  
 This adds 5000 to the job priority so raises it above all non-debug
 jobs, but is limited to one small job per user at a time: no more than
 15 minutes and no more than 2 nodes.
@@ -34,7 +34,7 @@ the command nn\_corehour\_usage.
 Job priority slowly rises with time as a pending job gets older - 1
 point per hour for up to 3 weeks.
 
-### 4) Job Size or \"TRES\" (Trackable RESources)
+### 4) Job Size or "TRES" (Trackable RESources)
 
 This slightly favours jobs which request a larger count of CPUs (or
 memory or GPUs) as a means of countering their otherwise inherently
@@ -42,31 +42,39 @@ longer wait times.
 
 ### 5) Project Allocation Class
 
-This depends on which \"allocation class\" entitles your project to use
+This depends on which "allocation class" entitles your project to use
 NeSI.
 
-  ---------------------- ---------------------------
-  **Project class**      **Class Priority Score **
-  Proposal Development   10
-  Postgraduate           20
-  Collaborator           30
-  Merit                  40
-  Commercial             40
-  ---------------------- ---------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 ###  
 
 ### 6) Nice values
 
-It is possible to give a job a \"nice\" value which is subtracted from
-its priority. You can do that with the `--nice` option of `sbatch` or
-the `scontrol update` command.  The command `scontrol top <jobid>`
-adjusts nice values to increase the priority of one of your jobs at the
-expense of any others you have in the same partition.
+It is possible to give a job a "nice" value which is subtracted from its
+priority. You can do that with the `--nice` option of `sbatch` or the
+`scontrol update` command.  The command `scontrol top <jobid>` adjusts
+nice values to increase the priority of one of your jobs at the expense
+of any others you have in the same partition.
 
 ### 7) Holds
 
-Jobs with a priority of 0 are in a \"held\" state and will never start
+Jobs with a priority of 0 are in a "held" state and will never start
 without further intervention.  You can hold jobs with the command
 `scontrol hold <jobid>` and release them with
 `scontrol release <jobid>`.  Jobs can also end up in this state when

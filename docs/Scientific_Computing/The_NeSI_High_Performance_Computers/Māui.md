@@ -10,7 +10,7 @@ example pre- and post-processing work, and to provide virtual lab
 services, we offer a small number [Māui ancillary
 nodes](https://support.nesi.org.nz/hc/articles/360000203776).
 
-> ### Tips {#mahuika}
+> ### Tips
 >
 > The computing capacity of the Māui ancillary nodes is limited. If you
 > think you will need large amounts of computing power for small jobs in
@@ -44,76 +44,51 @@ resources
 
 ## Māui Supercomputer (Cray XC50)
 
-+-----------------------------------+-----------------------------------+
-| [**Login nodes** (also known as   | [80 cores in 2 × Skylake (Gold    |
-| eLogin                            | 6148, 2.4 GHz, dual socket 20     |
-| nodes)]{.wysiwyg-font-size-medium | cores per socket)                 |
-| }                                 | nodes]{.wysiwyg-font-size-medium} |
-+-----------------------------------+-----------------------------------+
-| [**Compute                        | [18,560 cores in 464 × Skylake    |
-| nodes**]{.wysiwyg-font-size-mediu | (Gold 6148, 2.4 GHz, dual socket  |
-| m}                                | 20 cores per socket)              |
-|                                   | nodes;]{.wysiwyg-font-size-medium |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| [**Hyperthreading**]{.wysiwyg-fon | [Enabled (accordingly, SLURM will |
-| t-size-medium}                    | see 37,120                        |
-|                                   | cores)]{.wysiwyg-font-size-medium |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| [**Theoretical Peak               | [1.425                            |
-| Performance**]{.wysiwyg-font-size | PFLOPS]{.wysiwyg-font-size-medium |
-| -medium}                          | }                                 |
-+-----------------------------------+-----------------------------------+
-| [**Memory capacity per compute    | [232 nodes have 96 GB, the        |
-| node**]{.wysiwyg-font-size-medium | remaining 232 have 192 GB         |
-| }                                 | each]{.wysiwyg-font-size-medium}  |
-+-----------------------------------+-----------------------------------+
-| [**Memory capacity per login      | [768                              |
-| (build)                           | GB]{.wysiwyg-font-size-medium}    |
-| node**]{.wysiwyg-font-size-medium |                                   |
-| }                                 |                                   |
-+-----------------------------------+-----------------------------------+
-| [**Total System                   | [66.8                             |
-| memory**]{.wysiwyg-font-size-medi | TB]{.wysiwyg-font-size-medium}    |
-| um}                               |                                   |
-+-----------------------------------+-----------------------------------+
-| [**Interconnect**]{.wysiwyg-font- | [Cray Aries, Dragonfly            |
-| size-medium}                      | topology]{.wysiwyg-font-size-medi |
-|                                   | um}                               |
-+-----------------------------------+-----------------------------------+
-| [**Workload                       | [Slurm                            |
-| Manager**]{.wysiwyg-font-size-med | (Multi-Cluster)]{.wysiwyg-font-si |
-| ium}                              | ze-medium}                        |
-+-----------------------------------+-----------------------------------+
-| [**Operating                      | [Cray Linux Environment (SLES 12  |
-| System**]{.wysiwyg-font-size-medi | SP2), and CLE 6.0                 |
-| um}                               | UP06]{.wysiwyg-font-size-medium}  |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 ## Storage (IBM ESS)
 
-+-----------------------------------+-----------------------------------+
-| [**Scratch Capacity** (accessible | [4,412 TB (IBM Spectrum Scale,    |
-| from all Māui, Mahuika, and       | version 5.0). Total I/O bandwidth |
-| Ancillary                         | to disks is 130                   |
-| nodes).]{.wysiwyg-font-size-mediu | GB/s]{.wysiwyg-font-size-medium}  |
-| m}                                |                                   |
-+-----------------------------------+-----------------------------------+
-| [**Persistent storage**           | [1,765 TB (IBM Spectrum Scale,    |
-| (accessible from all Māui,        | version 5.0) Shared Storage.      |
-| Mahuika, and Ancillary            | Total I/O bandwidth to disks is   |
-| nodes).]{.wysiwyg-font-size-mediu | 65 GB/s (i.e. the /home and       |
-| m}                                | /nesi/project                     |
-|                                   | filesystems)]{.wysiwyg-font-size- |
-|                                   | medium}                           |
-+-----------------------------------+-----------------------------------+
-| [**Offline storage** (accessible  | [Of the order of 100 PB           |
-| from all Māui, Mahuika, and       | (compressed)]{.wysiwyg-font-size- |
-| Ancillary                         | medium}                           |
-| nodes).]{.wysiwyg-font-size-mediu |                                   |
-| m}                                |                                   |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
  
 

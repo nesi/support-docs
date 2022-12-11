@@ -13,7 +13,7 @@ large number of them, this article offers instructions for how to
 straightforwardly find all these small files and combine them into a few
 large archive files, perhaps as few as one.
 
-## Can\'t I just compress the whole project (or nobackup) directory, or at least all its contents?
+## Can't I just compress the whole project (or nobackup) directory, or at least all its contents?
 
 Yes, you certainly can do that. This is unlikely to suit you, however:
 
@@ -48,11 +48,11 @@ You do not have to create one single archive file for all small files in
 in fact you may prefer to create archive files pertaining to particular
 subdirectories. There is no harm in either approach.
 
-> ### Tip {#how-to-run}
+> ### Tip
 >
 > The archive creation process can take quite a long time. So that you
 > can freely log out of the cluster, and to protect the process in case
-> you\'re accidentally disconnected, you should create the archive by
+> you're accidentally disconnected, you should create the archive by
 > means of a Slurm job, or else in a `tmux` or `screen` session.
 
  Archive creation is very simple, and can be achieved through the
@@ -79,8 +79,8 @@ following:
     `find` command, so that the archive stores files as relative paths,
     not absolute paths. This choice will make a big difference when you
     come to extract the archive. In the example above, we go one step
-    further: The && means, \"Only run the next command if this command
-    is successful, i.e. it completes with an exit code of 0.\"
+    further: The && means, "Only run the next command if this command is
+    successful, i.e. it completes with an exit code of 0."
 -   The `-type f` option restricts the search to look for files only.
     Directories, symbolic links and other items will not be found.
     However, files within subdirectories will be found.
@@ -93,7 +93,7 @@ following:
     search results to items satisfying both criteria. (`find` also
     recognises the option `-or`, not relevant here.)
 -   The option `-print0` separates results with the null character, so
-    that spaces and other special characters in file names don\'t get
+    that spaces and other special characters in file names don't get
     misinterpreted as record separators.
 -   Piping to `xargs -0` gracefully handles a long list of arguments
     separated by null characters. `xargs` breaks up long lists of
@@ -109,6 +109,6 @@ following:
 -   `--delete-files` will delete each found file once that file has been
     added to the ever-growing archive.
 -   As given above, the command will submit one, or a series of, Slurm
-    jobs. You can wait until they\'re done.
+    jobs. You can wait until they're done.
 
  

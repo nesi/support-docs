@@ -7,7 +7,5 @@
 <p>
 <script src="https://apis.google.com/js/platform.js"></script>
 </p>
-::: {.g-ytsubscribe data-channelid="UCiEDJKtjWUVv-VSmD-jfWTA" data-layout="default" data-count="hidden"}
-:::
 
  

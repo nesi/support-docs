@@ -26,68 +26,57 @@ ssh to these nodes after logging onto the NeSI lander node.
 
 ## Mahuika HPC Cluster (Cray CS400)
 
-+-----------------------------------+-----------------------------------+
-| **Login nodes**                   | 72 cores in 2× Broadwell          |
-|                                   | (E5-2695v4, 2.1 GHz, dual socket  |
-|                                   | 18 cores per socket) nodes        |
-+-----------------------------------+-----------------------------------+
-| **Compute nodes**                 | 8,136 cores in 226 × Broadwell    |
-|                                   | (E5-2695v4, 2.1 GHz, dual socket  |
-|                                   | 18 cores per socket) nodes;       |
-+-----------------------------------+-----------------------------------+
-| **Compute nodes (reserved for     | 288 cores in 8 × Broadwell        |
-| NeSI Cloud)\                      | (E5-2695v4, 2.1 GHz, dual socket  |
-| **                                | 18 cores per socket) nodes        |
-+-----------------------------------+-----------------------------------+
-| **GPGPUs\                         | 9 NVIDIA Tesla P100 PCIe 12GB     |
-| **                                | cards (1 node with 1 GPU, 4 nodes |
-|                                   | with 2 GPUs)                      |
-|                                   |                                   |
-|                                   | 8 NVIDIA A100 PCIe 40GB cards (4  |
-|                                   | nodes with 1 GPU, 2 nodes with 2  |
-|                                   | GPUs)\                            |
-+-----------------------------------+-----------------------------------+
-| **Hyperthreading**                | Enabled (accordingly, SLURM will  |
-|                                   | see 16,272 cores)                 |
-+-----------------------------------+-----------------------------------+
-| **Theoretical Peak Performance**  | 308.6 TFLOPs                      |
-+-----------------------------------+-----------------------------------+
-| **Memory capacity per compute     | 128 GB                            |
-| node**                            |                                   |
-+-----------------------------------+-----------------------------------+
-| **Memory capacity per login       | 512 GB                            |
-| (build) node**                    |                                   |
-+-----------------------------------+-----------------------------------+
-| **Total System memory**           | 31.0 TB                           |
-+-----------------------------------+-----------------------------------+
-| **Interconnect**                  | FDR (54.5Gb/s) InfiniBand to EDR  |
-|                                   | (100Gb/s) Core fabric. 3.97:1     |
-|                                   | Fat-tree topology                 |
-+-----------------------------------+-----------------------------------+
-| **Workload Manager**              | Slurm (Multi-Cluster)             |
-+-----------------------------------+-----------------------------------+
-| **Operating System**              | CentOS 7.4                        |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
  
 
 ##  Storage (IBM ESS)
 
-+-----------------------------------+-----------------------------------+
-| **Scratch storage**               | 4,412 TB (IBM Spectrum Scale,     |
-|                                   | version 5.0). Total I/O bandwidth |
-|                                   | to disks is \~130 GB/s            |
-+-----------------------------------+-----------------------------------+
-| **Persistent storage**            | 1,765 TB (IBM Spectrum Scale,     |
-|                                   | version 5.0). Shared between      |
-|                                   | Mahuika and Māui Total I/O        |
-|                                   | bandwidth to disks is \~65 GB/s   |
-|                                   | (i.e. the /home and /nesi/project |
-|                                   | filesystems)                      |
-+-----------------------------------+-----------------------------------+
-| **Offline storage**               | Of the order of 100 PB            |
-|                                   | (compressed)                      |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 Scratch and persistent storage are accessible from Mahuika, as well as
 from Māui and the ancillary nodes. Offline storage will in due course be

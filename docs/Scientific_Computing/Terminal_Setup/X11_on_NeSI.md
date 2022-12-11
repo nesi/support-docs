@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have working
 >     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)set
@@ -16,27 +16,32 @@ GUI to be rendered.
 
 Download links for X-servers can be found below.
 
-  --------- ---------------------------------------------------
-  MacOS     [Xquartz](https://www.xquartz.org/)
-  Linux     [Xorg](https://www.x.org/wiki/Releases/Download/)
-  Windows   [Xming](https://sourceforge.net/projects/xming/)
-  --------- ---------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002963236/mceclip0.png) symbol
-in your taskbar 
+this ![mceclip0.png](mkdocs/includes/images/mceclip0.png) symbol in your
+taskbar 
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > MobaXterm has a build in X server, no setup required. By default the
-> server is started alongside MobaXterm. You can check it\'s status in
+> server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](https://support.nesi.org.nz/hc/article_attachments/360002939175/xon.png)=on, ![off.png](https://support.nesi.org.nz/hc/article_attachments/360002939155/off.png)=off). 
+> (![xon.png](mkdocs/includes/images/xon.png)=on, ![off.png](mkdocs/includes/images/off.png)=off). 
 
 # X-Forwarding
 
-Finally your ssh tunnel must be set up to \'forward\' along
+Finally your ssh tunnel must be set up to 'forward' along
 X<dfn class="dictionary-of-numbers">-11 connections</dfn>. 
 
 ## OpenSSH (terminal)
@@ -49,16 +54,14 @@ Make sure the `-Y` or `-X` flag is included
 
 ## MobaXterm
 
- Under \'session settings\' for your connection make sure the
+ Under 'session settings' for your connection make sure the
 X<dfn class="dictionary-of-numbers">-11 forwarding box is </dfn>checked.
 
-![x11moba.png](https://support.nesi.org.nz/hc/article_attachments/360002871175/x11moba.png){width="451"
-height="303"}
+<img src="mkdocs/includes/images/x11moba.png" alt="x11moba.png" width="451" height="303" />
 
-If the
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360005129276/mceclip0.png)
-button in the top right corner of your window is coloured, the X-server
-should be running.
+If the ![mceclip0.png](mkdocs/includes/images/mceclip0.png) button in
+the top right corner of your window is coloured, the X-server should be
+running.
 
 # X-Forwarding with *tmux*
 
@@ -89,7 +92,7 @@ If your application requires X11 in order to run, but does not need to
 be interactive you can use X11 Virtual Frame Buffer. This may be
 required to in order to run visual applications on the compute nodes.
 Prepending any command with `xfvb-run` will provide a dummy X11 server
-for the application to render to.\
+for the application to render to.  
 e.g.
 
     xvfb-run xterm

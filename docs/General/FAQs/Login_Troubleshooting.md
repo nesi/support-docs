@@ -1,11 +1,11 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > Please make sure you have followed the recommended setup. See
 > [Choosing and Configuring Software for Connecting to the
 > Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
 > for more information.
 
-> ### New Command Line Users {#prerequisites}
+> ### New Command Line Users
 >
 > -   Most terminals do not give an indication of how many characters
 >     have been typed when entering a password.
@@ -74,10 +74,10 @@ NZST/NZDT, or is not keeping the correct time, the second factor code
 generated will be invalid. Even an error of a few seconds can be enough
 to invalidate the second factor code.
 
-If your device can\'t keep time properly for whatever reason, please
+If your device can't keep time properly for whatever reason, please
 contact the person or team responsible for supporting it.
 
-### 5. Ensure you\'re not reusing the same 6-digit code from your token.
+### 5. Ensure you're not reusing the same 6-digit code from your token.
 
 Login will fail if the same 6-digit
 code<dfn class="dictionary-of-numbers"> is </dfn>used to access the Māui
@@ -100,17 +100,17 @@ minutes</dfn> will trigger a four-hour lockout. Users experiencing login
 issues can inadvertently trigger the lockout, making diagnosing the
 original issue much more difficult.  
 
-# Connection closed by \.... (MobaXterm) {#mobaPassPassPass}
+# Connection closed by .... (MobaXterm)
 
 ### 1. Skip password prompts.
 
 There is a known MobaXterm bug in which a user who has set a second
 factor and is trying to log in to the lander node will be prompted
-multiple times for \'Password\' before being prompted for \'First
-Factor\'. (On the lander node, you should only be prompted for a
-\'password\' if you have no Second Factor set up.)
+multiple times for 'Password' before being prompted for 'First Factor'.
+(On the lander node, you should only be prompted for a 'password' if you
+have no Second Factor set up.)
 
-These initial prompts can be skipped through by pressing \'Enter\'. Any
+These initial prompts can be skipped through by pressing 'Enter'. Any
 input before pressing Enter will cause the login to fail.
 
 The expected processes is as follows:
@@ -126,12 +126,12 @@ The expected processes is as follows:
 
 ### 2. Update your MobaXTerm client.
 
-Occasionally an outdated client can cause errors.\
-MobaXterm can be updated through: \'help\>check for updates\'
+Occasionally an outdated client can cause errors.  
+MobaXterm can be updated through: 'help&gt;check for updates'
 
 ### 3. Reinstall your MobaXTerm client.
 
-# Asked for \'Password\' instead of \'First Factor\'
+# Asked for 'Password' instead of 'First Factor'
 
 ### 1. Check the status using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
 
@@ -142,7 +142,7 @@ MobaXterm can be updated through: \'help\>check for updates\'
 This occurs when your authentication token is out of sync. You will have
 to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
-# Nothing here has helped? {#contactNesi}
+# Nothing here has helped?
 
 [Contact NeSI support](https://support.nesi.org.nz/hc/requests/new).
 
@@ -165,7 +165,7 @@ Helpful things to include:
     -   Have any of your NeSI projects been granted new allocations, had
         a previously granted new allocation actually start, or had an
         existing allocation modified?
-    -   Have any of your NeSI projects\' existing allocations ended?
+    -   Have any of your NeSI projects' existing allocations ended?
     -   Have any of your NeSI projects had a disk space quota change?
     -   Have you changed your institutional username and password, moved
         to a different institution, or started a new job at an
@@ -174,8 +174,4 @@ Helpful things to include:
 -   What have you tried so far?
 -   Are you on the NIWA network, the NIWA VPN, or neither?
 
-::: {#collapseExample .collapse}
-::: {.card .card-body}
  
-:::
-:::

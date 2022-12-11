@@ -1,10 +1,11 @@
-> ### Note {#prerequisites}
+> ### Note
 >
 > This documentation contains our legacy instructions for running
-> JupyterLab by tunnelling through the lander node.\
-> [[If you are a Mahuika cluster user, we recommend using jupyter via 
-> jupyter.nesi.org.nz. Follow this link for more
-> information](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)]{.wysiwyg-font-size-large}
+> JupyterLab by tunnelling through the lander node.  
+> <span class="wysiwyg-font-size-large">[If you are a Mahuika cluster
+> user, we recommend using jupyter via  jupyter.nesi.org.nz. Follow this
+> link for more
+> information](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)</span>
 
 NeSI provides a service for working on Jupyter Notebooks. As a first
 step JupyterLab can be used on Mahuika nodes. JupyterLab is a
@@ -34,7 +35,7 @@ steps, which are then described in more details:
 -   [Kernels](#h_e7f80560-91c0-420a-bccb-17bbf8c2e916)
 -   [Packages](#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e)
 
-# Launch JupyterLab {#h_a0e4107a-358d-4db6-a7a4-c2c3273c74ed}
+# Launch JupyterLab
 
 Since JupyterLab is a web based application, and at NeSI launched behind
 the firewall, a **port** needs to be forwarded to your local machine,
@@ -48,9 +49,9 @@ This number needs to be used while establishing the port forwarding and
 while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
-## Setup SSH port forwarding  {#h_22b17d98-8054-4898-871e-38a42a2e3849}
+## Setup SSH port forwarding 
 
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   In the following we assume you already configured
 >     your`.ssh/config` to use two hop method as described in the
@@ -64,17 +65,17 @@ the same (here 15051). This can be specified on the[command line in the
 terminal](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) or using the
 [MobaXterm GUI](#h_cc633523-5df0-4f24-a460-391ced9a0316).
 
-### SSH Command Line {#h_892370eb-662a-4480-9ae4-b56fd64eb7d0}
+### SSH Command Line
 
 The ssh command need to be called with following arguments, e.g. for
 Mahuika:
 
     ssh -N -L 15051:localhost:15051 mahuika
 
-Here -N means \"Do not execute a remote command\" and -L means \"Forward
-Local Port\".
+Here -N means "Do not execute a remote command" and -L means "Forward
+Local Port".
 
-> ### Tips {#prerequisites}
+> ### Tips
 >
 > -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
 >     following to your `.ssh/config` to avoid establishing the
@@ -89,12 +90,12 @@ Local Port\".
 >            ServerAliveInterval 300
 >            ServerAliveCountMax 2
 >
->     \<username\> needs to be changed. Hostnames can be adapted for
+>     &lt;username&gt; needs to be changed. Hostnames can be adapted for
 >     other nodes, e.g. `w-clim01`
 >
-### MobaXterm GUI {#h_cc633523-5df0-4f24-a460-391ced9a0316}
+### MobaXterm GUI
 
-> ### Tips {#prerequisites}
+> ### Tips
 >
 > -   MobaXterm has an internal terminal which acts like a linux
 >     terminal and can be configured as described in the [Standard
@@ -107,7 +108,7 @@ Local Port\".
  
 
 MobaXterm has a GUI to setup and launch sessions with port forwarding,
-click \'Tools \> MobaSSH Thunnel (port forwarding)\':
+click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
 
 -   specify the lander.nesi.org.nz as SSH server address (right, lower
     box, first line)
@@ -118,9 +119,9 @@ click \'Tools \> MobaSSH Thunnel (port forwarding)\':
     the remote server (right upper box, second line)
 -   Save
 
-![sshTunnel.PNG](https://support.nesi.org.nz/hc/article_attachments/360002834175/sshTunnel.PNG)
+![sshTunnel.PNG](mkdocs/includes/images/sshTunnel.PNG)
 
-## Launch the JupyterLab server  {#h_a46369a1-5f2c-4ed8-82c2-f06c0c1d58b4}
+## Launch the JupyterLab server 
 
 After successfully establishing the port forwarding, we need open
 another terminal and login to the NeSI system in the usual way, e.g.
@@ -145,7 +146,7 @@ virtual lab) or offloaded to a compute node. Please launch compute or
 memory intensive tasks [on a compute
 node](#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d).
 
-### On login nodes / virtual labs {#h_fca84ce8-3167-4c14-a128-23049417a5dd}
+### On login nodes / virtual labs
 
 For very small (computational cheap and small memory) the JupyterLab can
 be started on the login or virtual lab using: 
@@ -159,7 +160,7 @@ in the [next section](#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d) including
 the URL and a unique key, which needs to be copied in your local
 browser.
 
-### On compute node {#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d}
+### On compute node
 
 Especially notebooks with computational and memory intensive tasks
 should run on compute nodes. Therefore, a script is provided, taking
@@ -198,15 +199,15 @@ libraries, which implement threading align the numbers of threads (often
 called jobs) to the selected number of cores (otherwise the performance
 will be affected).
 
-## JupyterLab in your local browser  {#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d}
+## JupyterLab in your local browser 
 
 Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:
 
-![Jupyter.PNG](https://support.nesi.org.nz/hc/article_attachments/360002463475/Jupyter.PNG)
+![Jupyter.PNG](mkdocs/includes/images/Jupyter.PNG)
 
-# Kernels {#h_e7f80560-91c0-420a-bccb-17bbf8c2e916}
+# Kernels
 
 The following JupyterLab kernel are installed:
 
@@ -220,7 +221,7 @@ verify that the module IRkernel is loaded
 
     module load IRkernel
 
-# Spark {#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e}
+# Spark
 
 pySpark and SparkR is supported in NeSI Jupyter notebooks. Therefore,
 the module Spark needs to be loaded before starting Jupyter. Please run
@@ -228,7 +229,7 @@ Spark workflows on compute nodes.
 
     module load Spark
 
-# Packages {#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e}
+# Packages
 
 There are a long list of default packages provided by the JupyterLab
 environment module (list all using `!pip list`) and R (list using

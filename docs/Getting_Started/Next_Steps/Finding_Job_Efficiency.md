@@ -1,12 +1,12 @@
 # On Job Completion
 
-[It is good practice to have a look at the resources your job used on
-completion, this way you can improve your job specifications in the
-future.]{style="font-weight: 400;"}
+<span style="font-weight: 400;">It is good practice to have a look at
+the resources your job used on completion, this way you can improve your
+job specifications in the future.</span>
 
-[Once your job has finished check the relevant details using the tools:
-`nn_seff` or `sacct` For example:\
-]{style="font-weight: 400;"}
+<span style="font-weight: 400;">Once your job has finished check the
+relevant details using the tools: `nn_seff` or `sacct` For example:  
+</span>
 
 **nn\_seff**
 
@@ -23,10 +23,10 @@ future.]{style="font-weight: 400;"}
     CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
     Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 
-[Notice that the CPU efficiency was high but the memory efficiency was
-very low and consideration should be given to reducing memory requests
-for similar jobs.  If in doubt, please contact <support@nesi.org.nz> for
-guidance.]{style="font-weight: 400;"}
+<span style="font-weight: 400;">Notice that the CPU efficiency was high
+but the memory efficiency was very low and consideration should be given
+to reducing memory requests for similar jobs.  If in doubt, please
+contact <support@nesi.org.nz> for guidance.</span>
 
  
 
@@ -34,7 +34,7 @@ guidance.]{style="font-weight: 400;"}
 
     sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 
-> ### Tip {#prerequisites}
+> ### Tip
 >
 > *If you want to make this your default* `sacct` *setting, run;*
 >
@@ -70,13 +70,13 @@ steps, so in this case 13 GB. For our next run we may want to set:
 
     #SBATCH --mem=15G
 
-## **CPU\'s**
+## **CPU's**
 
 `TotalCPU` is the number of computation hours, in the best case scenario
 the computation hours would be equal to `Elapsed` x `AllocCPUS`.
 
 In this case our ideal `TotalCPU` would be 07:12:00, as our job only
-managed 03:35:55 we can estimate the CPU usage was around 50%\
+managed 03:35:55 we can estimate the CPU usage was around 50%  
 It might be worth considering reducing the number of CPUs requested,
 however bear in mind there are other factors that affect CPU efficiency.
 
@@ -97,15 +97,15 @@ provides a more accurate measure.
 Further technical notes for those interested in commonly used memory
 usage metrics on linux systems:
 
-**VSS** \>= **RSS** \>= **PSS** \>= **USS**\
+**VSS** &gt;= **RSS** &gt;= **PSS** &gt;= **USS**  
 **VSS-Virtual Set Size** - Virtual memory consumption (contains memory
-consumed by shared libraries)\
+consumed by shared libraries)  
 **RSS-Resident Set Size** - Used physical memory (contains memory
-consumed by shared libraries)\
+consumed by shared libraries)  
 **PSS-Proportional Set Size** - Actual physical memory used
-(proportional allocation of memory consumed by shared libraries)\
+(proportional allocation of memory consumed by shared libraries)  
 **USS-Unique Set Size** - Process consumed physical memory alone (does
-not contain the memory occupied by the shared library)\
+not contain the memory occupied by the shared library)  
 `PSS = USS + (RSS/# shared processes)`
 
 # During Runtime
@@ -115,12 +115,12 @@ the compute node where it it running.
 
 ## Finding Job Node
 
-If \'nodelist\' is not one of the fields in the output of your `sacct`
-or `squeue` commands you can find the node a job is running on using the
+If 'nodelist' is not one of the fields in the output of your `sacct` or
+`squeue` commands you can find the node a job is running on using the
 command; `squeue -h -o %N   -j <jobid>` The node will look something
 like `wbn123` on Mahuika or `nid00123` on Māui
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > If your job is using MPI it may be running on multiple nodes
 
@@ -143,10 +143,9 @@ parent process).
 
 Processes in green can be ignored
 
-![how\_to\_read\_htop.png](https://support.nesi.org.nz/hc/article_attachments/360003952836/how_to_read_htop.png){width="929"
-height="252"}
+<img src="mkdocs/includes/images/how_to_read_htop.png" alt="how_to_read_htop.png" width="929" height="252" />
 
-**RES** - Current memory being used (same thing as \'RSS\' from sacct)
+**RES** - Current memory being used (same thing as 'RSS' from sacct)
 
 **S** - State, what the thread is currently doing.
 
@@ -161,7 +160,7 @@ height="252"}
 
  
 
-> ### Warning {#prerequisites}
+> ### Warning
 >
 > If the job finishes, or is killed you will be kicked off the node. If
 > htop freezes, type `reset` to clear your terminal.
@@ -180,12 +179,12 @@ more details.
 
 ## Example
 
-![qdyn\_eff.png](https://support.nesi.org.nz/hc/article_attachments/360003953876/qdyn_eff.png)
+![qdyn\_eff.png](mkdocs/includes/images/qdyn_eff.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
-![qdyn\_walltime.png](https://support.nesi.org.nz/hc/article_attachments/360003804135/qdyn_walltime.png)
+![qdyn\_walltime.png](mkdocs/includes/images/qdyn_walltime.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

@@ -9,12 +9,12 @@ We currently offer two sorts of extensions:
     Mahuika or node hours on Māui)
 -   A project extension without a new allocation of computing resources.
 
-## Will my project qualify for an extension? {#01FZGW1M7EC0J0DRX58QMKBDR1}
+## Will my project qualify for an extension?
 
 Usually, yes. There are a few circumstances in which a project will not
 qualify for an extension:
 
--   If there has been a substantial change to the research programme\'s
+-   If there has been a substantial change to the research programme's
     goals.
 -   If there has been (or is about to be) a substantial change to the
     computational methods the project team plans on using to carry out
@@ -26,24 +26,24 @@ qualify for an extension:
     to purchase computing resources from NeSI (or allocate computing
     resources from its subscription or collaborator share if it has
     one).
--   If the project\'s host institution has changed (or is about to
+-   If the project's host institution has changed (or is about to
     change).
--   If the project\'s owner is no longer employed by or studying at the
-    project\'s host institution, and there is no-one at the host
+-   If the project's owner is no longer employed by or studying at the
+    project's host institution, and there is no-one at the host
     institution who has agreed to take over project ownership
     responsibilities.
--   If the project\'s owner (or supervisor if the project has one) is
-    not authorised to access NeSI facilities due to a refusal to accept
-    or failure to abide by the NeSI Acceptable Use Policy.
+-   If the project's owner (or supervisor if the project has one) is not
+    authorised to access NeSI facilities due to a refusal to accept or
+    failure to abide by the NeSI Acceptable Use Policy.
 
-## Who may request a project extension? {#01FZGW1M7EKD114NZ6PA7PGRJK}
+## Who may request a project extension?
 
 A request for a project extension should come from the project owner. If
 the project owner is a student, we will include the supervisor on the
 extension correspondence. The project supervisor may disallow an
 extension request.
 
-## How do I request an extension? {#01FZGW1M7E6DGDZEVECGQFQ71F}
+## How do I request an extension?
 
 You can submit a request for an extension using <https://my.nesi.org.nz>
 or by [opening a support
@@ -65,7 +65,7 @@ following circumstances:
 -   If your allocation ends before your project is scheduled to end, in
     the lead-up to the end of your project.
 
-## Requests for new allocations {#01FZGW1M7EZ2Q9ZXNJPPHYVZG6}
+## Requests for new allocations
 
 If you are requesting a new allocation of computing resources, we will
 look at your usage history and come up with an estimated allocation size
@@ -79,10 +79,10 @@ Please be aware that:
 -   First and subsequent allocations are subject to the NeSI allocation
     size and duration limits in force at the time they are considered by
     our reviewers.
--   An allocation from an institution\'s entitlement is subject to
+-   An allocation from an institution's entitlement is subject to
     approval by that institution.
 
-## Requests for project extensions without a new compute allocation {#01FZGW1M7EDQV5CE64DPMFYVHX}
+## Requests for project extensions without a new compute allocation
 
 In some circumstances, you may wish to extend your project without
 receiving a new allocation of compute units or node hours for the
@@ -98,6 +98,6 @@ time. If you expect that your project will be suspended for more than
 six months, we encourage you to enquire about our [Long-Term Storage
 Service](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) or
 to move your research data off our facility and make arrangements with
-your project\'s host institution for long-term data storage.
+your project's host institution for long-term data storage.
 
  

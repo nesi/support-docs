@@ -13,7 +13,7 @@ This release includes the following changes:
     brief description of the stage the job is up to, and whether the job
     is at that moment pending (waiting in a queue to start the next
     operation), running, or complete.
--   The `nlls` command\'s `-ls` switch has been replaced with `-s`,
+-   The `nlls` command's `-ls` switch has been replaced with `-s`,
     though `-ls` still works, being interpreted as equivalent to
     `-l -s`. `nlls` also now comes with a `-b` switch, for reporting
     individual sizes in bytes instead of in human-readable sizes.

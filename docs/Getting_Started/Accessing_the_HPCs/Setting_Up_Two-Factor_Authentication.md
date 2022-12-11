@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > You must:
 >
@@ -18,7 +18,7 @@ authentication app, such as Authy or Google Authenticator installed on
 your device (generally a smartphone, but there are also authentication
 apps which work through the browser like Authy).
 
-If you some reason you can\'t do this, please contact NeSI support.
+If you some reason you can't do this, please contact NeSI support.
 
  
 
@@ -29,26 +29,26 @@ If you some reason you can\'t do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    ![authentication\_factor\_setup.png](https://support.nesi.org.nz/hc/article_attachments/4414700806543/authentication_factor_setup.png){width="560"
-    height="210"}
+    <img src="mkdocs/includes/images/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="560" height="210" />
 
-3.  Click the \"**Setup Two-Factor Authentication device**\" link.\
-    ![](https://support.nesi.org.nz/hc/article_attachments/360001267755/mceclip0.png)
-4.  After clicking on \"Continue\" you will retrieve the QR code.
+3.  Click the "**Setup Two-Factor Authentication device**" link.  
+    ![](mkdocs/includes/images/mceclip0.png)
+4.  After clicking on "Continue" you will retrieve the QR code.
 5.  Open your Authy or Google Authenticator app and click on the add
-    button and select \"**Scan a barcode**\". Alternatively, if you are
+    button and select "**Scan a barcode**". Alternatively, if you are
     not able to scan the barcode from your device you can manually enter
     the provided authentication code into your authentication app.
 
 ## The second-factor token
 
-The [6 digit code]{.wysiwyg-underline} displayed on your app can now be
-used as the second factor in the authentication process.\
+The <span class="wysiwyg-underline">6 digit code</span> displayed on
+your app can now be used as the second factor in the
+authentication process.  
 This code rotates every 30 seconds, and it **can only be used once**.
 This means that you can only try logging in to the lander node once
 every 30 seconds.
 
-> ### What next? {#prerequisites}
+> ### What next?
 >
 > -   [Getting access to the
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)

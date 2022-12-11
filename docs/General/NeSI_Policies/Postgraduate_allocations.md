@@ -14,8 +14,8 @@ Even if your application satisfies these criteria, we may not award your
 project an allocation from the Postgraduate class:
 
 -   If your institution is a NeSI Collaborator or Subscriber, your
-    project\'s allocation will most likely be made from your
-    institution\'s entitlement.
+    project's allocation will most likely be made from your
+    institution's entitlement.
 -   If you have not used an HPC previously, we may award your project a
     Proposal Development allocation first. In this case, your project
     may be considered for a Postgraduate allocation after your Proposal

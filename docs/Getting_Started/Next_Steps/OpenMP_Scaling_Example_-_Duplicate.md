@@ -1,4 +1,4 @@
-**[Example for C]{.wysiwyg-font-size-x-large}**
+**<span class="wysiwyg-font-size-x-large">Example for C</span>**
 
 ### Initial C Script
 
@@ -16,14 +16,14 @@
     printf("Hello from process: %d\n", omp_get_thread_num());
     return 0;}
 
--   We include the header file for OpenMP **\#include \<omp.h\>** that
-    will enable OpenMP functionality.
+-   We include the header file for OpenMP **\#include &lt;omp.h&gt;**
+    that will enable OpenMP functionality.
 -   We specify the parallel region using the keyword **\#pragma omp
-    parallel**.\
-    The **\#pragma omp parallel { ... }** directive creates a section of
+    parallel**.  
+    The **\#pragma omp parallel { … }** directive creates a section of
     code that will be run in parallel by multiple threads.
 -   We use `omp_get_thread_num()` to obtain the thread id of the
-    process.\
+    process.  
     This will let us identify each of our threads using that unique id
     number.
 
@@ -39,7 +39,7 @@
 -   We use the environment variable **OMP\_NUM\_THREADS** to set the
     number of threads.
 
-**[Example for R]{.wysiwyg-font-size-x-large}**
+**<span class="wysiwyg-font-size-x-large">Example for R</span>**
 
 In the examples below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
@@ -83,8 +83,8 @@ Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated
-guess.[\
-]{.wysiwyg-color-red}
+guess.<span class="wysiwyg-color-red">  
+</span>
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
@@ -103,7 +103,7 @@ took to get there.
       module load R
       Rscript scaling.R
 
-Let\'s run our Slurm script with sbatch and look at our output from
+Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
              JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
@@ -117,15 +117,15 @@ Our job performed 5,000 iterations using four CPU cores and a maximum
 memory of 406,516KB (0.4 GB). In total, the job ran for 3 minutes and 17
 seconds.
 
-[We will initially assume that our job\'s wall time and memory will
-scale linearly with the number of iterations. However, we don\'t know
-that for certain that this is the case so we will need to understand the
-scaling behaviour of our job\'s resource requirements before we can
-submit our full job and be confident it will
-succeed.]{.wysiwyg-color-black}
+<span class="wysiwyg-color-black">We will initially assume that our
+job's wall time and memory will scale linearly with the number of
+iterations. However, we don't know that for certain that this is the
+case so we will need to understand the scaling behaviour of our job's
+resource requirements before we can submit our full job and be confident
+it will succeed.</span>
 
-[To test this, we will submit three more jobs, using 10,000 15,000 and
-20,000 iterations.]{.wysiwyg-color-black}
+<span class="wysiwyg-color-black">To test this, we will submit three
+more jobs, using 10,000 15,000 and 20,000 iterations.</span>
 
              JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
     -------------- ------------ ----------- ------------ ----- -------- ----------
@@ -147,27 +147,30 @@ succeed.]{.wysiwyg-color-black}
     3106251.0      Rscript         00:12:58    51:34.194     4  408163K COMPLETED
 
 We can see from the `sacct` output that the wall time seems to be
-increasing as we add more iterations, but the maximum memory doesn\'t
-seem to change much. Let\'s try plotting this data to help us better
+increasing as we add more iterations, but the maximum memory doesn't
+seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-  ----------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------
-  ![Plot1](https://support.nesi.org.nz/hc/article_attachments/360002039596/blobid2.png){height="326"}   ![Plot2](https://support.nesi.org.nz/hc/article_attachments/360001933675/blobid3.png){height="328"}
-  ----------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
-[This confirms our assumption of wall-time scaling linearly with number
-of iterations. However, peak memory usage appears
-unchanged.]{.wysiwyg-color-black}
+<span class="wysiwyg-color-black">This confirms our assumption of
+wall-time scaling linearly with number of iterations. However, peak
+memory usage appears unchanged.</span>
 
-[Extrapolating from this data, we can estimate the full 60,000
-iterations will take 12 times longer than 5,000 iterations or about 40
-minutes.]{.wysiwyg-color-black}
+<span class="wysiwyg-color-black">Extrapolating from this data, we can
+estimate the full 60,000 iterations will take 12 times longer than 5,000
+iterations or about 40 minutes.</span>
 
 But suppose we need a result more quickly than that. We are currently
 using 4 CPU cores, but what if we used more? Could we speed up our job
 by that means?
 
-To find out we are going to have to run more tests. Let\'s try running
+To find out we are going to have to run more tests. Let's try running
 our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
      sacct
@@ -208,54 +211,59 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
  
 
-  ------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------
-  ![](https://support.nesi.org.nz/hc/article_attachments/360002039556/blobid0.png){width="650" height="549"}   ![](https://support.nesi.org.nz/hc/article_attachments/360002039576/blobid1.png){width="650" height="548"}
-  ------------------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
-As we can see, increasing the number of CPU cores doesn\'t linearly
-increase the job\'s speed. This non-linear speed-up is called Amdahl\'s
+As we can see, increasing the number of CPU cores doesn't linearly
+increase the job's speed. This non-linear speed-up is called Amdahl's
 Law, and reflects the fact that there is a fixed part of the computation
-that is inherently serial, that is, some operations can\'t be started
+that is inherently serial, that is, some operations can't be started
 until others have already finished.
 
-[Indeed, the difference in speed between 14 and 16 CPU cores is very
-small. We could try running our script with more than 16 CPU cores,
-however, in the case of this script we start to have a pretty
-significant drop in marginal speed-up after eight CPU
-cores.]{.wysiwyg-color-black}
+<span class="wysiwyg-color-black">Indeed, the difference in speed
+between 14 and 16 CPU cores is very small. We could try running our
+script with more than 16 CPU cores, however, in the case of this script
+we start to have a pretty significant drop in marginal speed-up after
+eight CPU cores.</span>
 
-Looking at our jobs\' memory use, we can see that as we increase the
-number of CPUs taken by a job, the job\'s memory requirements increase
-approximately linearly. This behaviour isn\'t necessarily the case for
+Looking at our jobs' memory use, we can see that as we increase the
+number of CPUs taken by a job, the job's memory requirements increase
+approximately linearly. This behaviour isn't necessarily the case for
 all kinds of jobs, and is most likely to be the case for jobs that use
 MPI to run in parallel rather than OpenMP.
 
 One thing to note about our plot of CPUs versus memory is that our
 memory usage seems to drop for 10 CPUs, this can likely be explained by
 the fact that memory usage is not measured continuously, it is instead
-measured every 30 seconds. This means that if your job\'s memory usage
+measured every 30 seconds. This means that if your job's memory usage
 has some spikes, `sacct` will not necessarilly detect the maximum memory
 usage. This is something that you should be aware of when you estimate
 the memory usage of all your jobs.
 
-[Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU
-has a maximum memory requirement of 0.75 GB.]{.wysiwyg-color-black}
+<span class="wysiwyg-color-black">Looking at the memory usage for an 8
+CPU job, it looks like an 8 CPU has a maximum memory requirement of 0.75
+GB.</span>
 
 ## Estimating our Total Resource Requirments
 
-Now that we know approximately how our job\'s CPU, memory and wall
-requirem[ents scale, we]{.wysiwyg-color-black} can try and estimate our
-total resource requirements for our 60,000 iteration job.
+Now that we know approximately how our job's CPU, memory and wall
+requirem<span class="wysiwyg-color-black">ents scale, we</span> can try
+and estimate our total resource requirements for our 60,000 iteration
+job.
 
 From this data we have determined that more than 8 CPUs has very limited
 additional speed and an 8 CPU should use about 0.75 GB of memory at
-mo[st, and that this memory requirement should remain relatively
-consistent, regardless of the number of iterations. Given this
-information we can estimate our full size job\'s resource requirements.
-Sinc]{.wysiwyg-color-black}e our 8-CPU, 5,000 iteration job took 1
-minute and 45 seconds, our full scale job should take 12 times longer
+mo<span class="wysiwyg-color-black">st, and that this memory requirement
+should remain relatively consistent, regardless of the number of
+iterations. Given this information we can estimate our full size job's
+resource requirements. Sinc</span>e our 8-CPU, 5,000 iteration job took
+1 minute and 45 seconds, our full scale job should take 12 times longer
 (21 minutes) and require 0.75 GB of memory. To be on the safe side,
-let\'s request 1 GB of memory and 30 minutes.
+let's request 1 GB of memory and 30 minutes.
 
 ### Revised Slurm Script
 
@@ -285,5 +293,5 @@ memory as we may otherwise have run out.
 **TIP:** Whenever you submit a job it is always a good idea to request
 about 20% more wall time and memory than you think you are going to need
 to minimise the chance of your jobs failing due to a lack of resources.
-Your project\'s fair share score considers the time actually used by the
+Your project's fair share score considers the time actually used by the
 job, not the time requested by the job.

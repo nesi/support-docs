@@ -6,7 +6,7 @@ The NeSI password policy is as follows:
     -   uppercase letters
     -   lowercase letters
     -   numbers
-    -   special characters (excluding \'**&\<\>\\+**\')
+    -   special characters (excluding '**&&lt;&gt;\\+**')
 -   Passwords expire after 2 years (730 days)
 -   When resetting a password ensure that it is not similar to the
     previous password(s) as that will cause the new password to be

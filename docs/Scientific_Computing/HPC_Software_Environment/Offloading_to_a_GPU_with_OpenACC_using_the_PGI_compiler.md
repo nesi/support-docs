@@ -31,8 +31,8 @@ threads to compute the total sum in parallel. 
 
 # Compile
 
-We\'ll use the PGI C++ compiler to build the executable but first we
-need to load a few modules:
+We'll use the PGI C++ compiler to build the executable but first we need
+to load a few modules:
 
 `module load PGI CUDA`
 
@@ -56,12 +56,19 @@ offloads to the GPU):
     OMP_NUM_THREADS=8 && time srun --ntasks=1 --cpus-per-task=$OMP_NUM_THREADS --hint=nomultithread ./totalAccMulticore
     time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalAccGpu
 
-+-----------------------------------+-----------------------------------+
-| executable                        | time \[s\]                        |
-+-----------------------------------+-----------------------------------+
-| totalAccMulticore                 | 121.3                             |
-+-----------------------------------+-----------------------------------+
-| totalAccMulticore 8 threads       | 36.8                              |
-+-----------------------------------+-----------------------------------+
-| totalAccGpu                       | 3.1                               |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>

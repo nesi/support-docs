@@ -20,14 +20,14 @@ other, it is advisable to use the same MPI distribution as the host HPC
 system for reliability. The Mahuika and Māui Ancil clusters use Intel
 MPI.
 
-# Using Dask-MPI on Mahuika {#h_3e6b313b-a712-4e88-8246-5550cac1d77c}
+# Using Dask-MPI on Mahuika
 
 Dask-MPI can be readily used with the more recent Python modules
 available on Mahuika that come with the mpi4py package, e.g.
 
     module load Python/3.9.9-gimkl-2020a
 
-# Installing Dask-MPI with Conda on Mahuika and Māui Ancil {#h_3e6b313b-a712-4e88-8246-5550cac1d77c}
+# Installing Dask-MPI with Conda on Mahuika and Māui Ancil
 
 Load an Anaconda3 or Miniconda3 module and use the following commands to
 install mpi4py with the Intel MPI distribution *before* installing the
@@ -36,7 +36,7 @@ Dask-MPI package:
     conda install -c intel mpi4py
     conda install -c conda-forge dask-mpi
 
-If you use an environment file, add the \"intel\" channel at the end of
+If you use an environment file, add the "intel" channel at the end of
 the list (so that it will not take priority over other channels) and
 request mpi4py with the Intel MPI distribution as follows:
 
@@ -50,19 +50,19 @@ request mpi4py with the Intel MPI distribution as follows:
       - intel::mpi4py
       - dask-mpi
 
-> ### See also {#llama-tip}
+> ### See also
 >
 > See the
 > [Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
 > page for more information on how to create and manage Miniconda
 > environments on NeSI.
 
-# Configuring Slurm {#h_75b008cc-7843-40b2-bdb4-8252ca807fab}
+# Configuring Slurm
 
 At runtime, Slurm will launch a number of Python processes as requested
 in the [Slurm configuration
 script](https://support.nesi.org.nz/hc/en-gb/articles/360000691716).
-Each process is given an ID (or \"rank\") starting at rank 0. Dask-MPI
+Each process is given an ID (or "rank") starting at rank 0. Dask-MPI
 then assigns different roles to the different ranks:
 
 -   Rank 0 becomes the scheduler that coordinates work and communication
@@ -106,11 +106,11 @@ given 1 GB of memory and a single (logical) core.
 
 ## Dask workers have high memory usage and/or parallelisation
 
-This case is more complex to set up and uses Slurm \"job packs\" to
-handle the heterogeneous configuration. In the following example, the
-scheduler and first worker rank will be given 1 GB of memory and a
-single (logical) core each, while the remaining worker ranks will be
-given 4\*3 GB = 12 GB of memory and 4 (logical) cores per rank.
+This case is more complex to set up and uses Slurm "job packs" to handle
+the heterogeneous configuration. In the following example, the scheduler
+and first worker rank will be given 1 GB of memory and a single
+(logical) core each, while the remaining worker ranks will be given 4\*3
+GB = 12 GB of memory and 4 (logical) cores per rank.
 
     #SBATCH --time=01:00:00
     #SBATCH --hint=multithread
@@ -120,8 +120,7 @@ given 4\*3 GB = 12 GB of memory and 4 (logical) cores per rank.
 
     srun --pack-group=0-1 python mydaskprogram.py
 
-The \"\--pack-group\" flag asks \"srun\" to launch both job packs
-together.
+The "--pack-group" flag asks "srun" to launch both job packs together.
 
 # Example
 
@@ -158,9 +157,9 @@ examples](https://examples.dask.org) webpage.
 
 ## Slurm script
 
-Replace \"\<project ID\>\" with your project ID number and use the
-\"sbatch\" command to submit this Slurm script and run the test code on
-3 MPI ranks:
+Replace "&lt;project ID&gt;" with your project ID number and use the
+"sbatch" command to submit this Slurm script and run the test code on 3
+MPI ranks:
 
     #!/bin/bash
     #SBATCH --time=00:01:00
@@ -196,11 +195,11 @@ different MPI distributions.
 While it is impossible to cover every possible scenario, the following
 guidelines should help with configuring the container correctly.
 
-1.  Make sure that the Intel MPI version of the \"mpi4py\" package is
+1.  Make sure that the Intel MPI version of the "mpi4py" package is
     installed with Dask-MPI
 2.  The correct version of Python and the Intel MPI distribution need to
     be loaded at runtime. This can be achieved by, e.g., adding the
-    following command to the \"%runscript\" section in the Singularity
+    following command to the "%runscript" section in the Singularity
     build recipe if a Conda environment is used:
 
 <!-- -->

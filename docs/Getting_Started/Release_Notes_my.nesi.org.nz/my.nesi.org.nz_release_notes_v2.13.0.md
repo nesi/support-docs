@@ -1,10 +1,10 @@
-## Release Update - xx. August 2022 {#ReleaseNotes-ReleaseUpdate-11.July2019}
+## Release Update - xx. August 2022
 
-## New and Improved {#ReleaseNotes-NewandImproved}
+## New and Improved
 
 -    
 -    
 
-## Fixes {#ReleaseNotes-Fixes}
+## Fixes
 
 Fixed: tbd

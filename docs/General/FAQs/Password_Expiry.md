@@ -1,5 +1,5 @@
 NeSI passwords expire after two years.  The prompt you will see when
-that happens is[]{.token .token}
+that happens is<span class="token token"></span>
 
     Password expired. Change your password now.
     First Factor (Current Password): 

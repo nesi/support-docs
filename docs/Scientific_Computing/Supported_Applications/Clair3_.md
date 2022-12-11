@@ -9,16 +9,17 @@ candidates to maximize precision and recall. Clair3 runs fast and has
 superior performance, especially at lower coverage. Clair3 is simple and
 modular for easy deployment and integration.
 
-Clair3 is the 3^rd^ generation of
-[Clair](https://github.com/HKU-BAL/Clair) (the 2^nd^) and
-[Clairvoyante](https://github.com/aquaskyline/Clairvoyante) (the 1^st^).
+Clair3 is the 3<sup>rd</sup> generation of
+[Clair](https://github.com/HKU-BAL/Clair) (the 2<sup>nd</sup>) and
+[Clairvoyante](https://github.com/aquaskyline/Clairvoyante) (the
+1<sup>st</sup>).
 
-A short pre-print describing Clair3\'s algorithms and results is at
+A short pre-print describing Clair3's algorithms and results is at
 [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.12.29.474431v1).
 
  
 
-# License and Disclaimer {#license_and_disclaimer}
+# License and Disclaimer
 
 Copyright 2021 The University of Hong Kong, Department of Computer
 Science
@@ -46,7 +47,7 @@ Singularity container which is stored in `/opt/nesi/container/Clair3`   
     /opt/nesi/containers/Clair3/
     └── clair3_Aug2022.simg
 
-### How to use Clair3 with Singularity {#how-to-use-clair3-with-singularity dir="auto"}
+### How to use Clair3 with Singularity
 
 **Caution**: Absolute path is needed for both `INPUT_DIR` and
 `OUTPUT_DIR`.
@@ -66,17 +67,17 @@ Singularity container which is stored in `/opt/nesi/container/Clair3`   
       --model_path="/opt/models/${MODEL_NAME}" \
       --output=${OUTPUT_DIR}               ## absolute output path prefix
 
-##   {#section .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
+##  
 
-##   {#section-1 .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
+##  
 
-## Example Slurm script {#example-slurm-script .highlight .highlight-source-shell .notranslate .position-relative .overflow-auto}
+## Example Slurm script
 
 **Caution**: Absolute path is needed for both `INPUT_DIR` and
-`OUTPUT_DIR`[\
-\
-\
-]{.pl-c}
+`OUTPUT_DIR`<span class="pl-c">  
+  
+  
+</span>
 
     #!/bin/bash -e
 
@@ -110,10 +111,10 @@ Singularity container which is stored in `/opt/nesi/container/Clair3`   
     --model_path="/opt/models/${MODEL_NAME}" \
     --output=${OUTPUT_DIR} ## absolute output path prefix
 
-[\
-\
-\
-\
-]{.pl-c}
+<span class="pl-c">  
+  
+  
+  
+</span>
 
 ``

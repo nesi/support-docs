@@ -1,16 +1,12 @@
 ##  
 
-<div>
-
 ##  
 
-## Example Script/s {#example-script}
-
-</div>
+## Example Script/s
 
 V important.
 
-## Recommendations {#best-practices}
+## Recommendations
 
 Benchmark/Profiling data here
 

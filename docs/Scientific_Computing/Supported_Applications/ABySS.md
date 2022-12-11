@@ -3,7 +3,7 @@ present and always comprising the first three lines of the article. -->
 
 # Description
 
-ABySS (\"**A**ssembly **By** **S**hort **S**equences\") is a *de novo*,
+ABySS ("**A**ssembly **By** **S**hort **S**equences") is a *de novo*,
 parallel, paired-end sequence assembler.
 
 The ABySS home page is at
@@ -13,10 +13,18 @@ The ABySS home page is at
 
 ## Packages with modules
 
-  Module                    NeSI Cluster
-  ------------------------- --------------
-  ABySS/2.0.2-gimkl-2017a   pan
-  ABySS/2.0.1-foss-2015a    pan
+<table>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 # Licensing requirements
 

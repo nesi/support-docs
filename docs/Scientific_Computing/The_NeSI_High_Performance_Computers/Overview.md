@@ -6,7 +6,7 @@ data-centric and data intensive research computing environment built on
 leading edge high performance computing (HPC) systems.
 
 -   Māui, which in Maori mythology is credited with catching a giant
-    fish using a fishhook taken from his grandmother\'s jaw-bone; the
+    fish using a fishhook taken from his grandmother's jaw-bone; the
     giant fish would become the North Island of New Zealand, provides a
     Capability (i.e. Supercomputer) HPC resource on which researchers
     can run simulations and calculations that require large numbers
@@ -43,7 +43,7 @@ the research community with:
 
 These systems are
 [accessed](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
-via a "lander" node using [two-factor
+via a “lander” node using [two-factor
 authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075).
 
 NeSI researchers have access to all compute nodes on Mahuika, and 316

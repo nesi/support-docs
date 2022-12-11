@@ -1,14 +1,14 @@
 The NeSI access policy, agreed by representatives of the Crown and
-NeSI\'s partner institutions, establishes several allocation classes. In
+NeSI's partner institutions, establishes several allocation classes. In
 general terms, the allocation class granted to your project is used to
-decide who pays for that aspect of your project\'s consumption of NeSI
+decide who pays for that aspect of your project's consumption of NeSI
 services.
 
 <table style="width: 80%;">
 <tbody>
 <tr>
 <td style="width: 34.4%;" rowspan="4">
-### [Proposal Development](https://support.nesi.org.nz/hc/en-gb/articles/360000175675) {#prop}
+### [Proposal Development](https://support.nesi.org.nz/hc/en-gb/articles/360000175675)
 
 A short-term allocation available to researchers from any New Zealand
 research institution. During this allocation you will:
@@ -22,8 +22,8 @@ Once your Proposal Development allocation is well underway (or has
 ended), you are welcome to apply for a further allocation, which will be
 granted from one of our other allocation classes.
 
-*Depending on your institutional affiliation and your project\'s
-satisfaction of eligibility criteria, your project\'s initial allocation
+*Depending on your institutional affiliation and your project's
+satisfaction of eligibility criteria, your project's initial allocation
 may have the same limits as a Proposal Development allocation but be
 from one of our other allocation classes.*
 
@@ -76,15 +76,15 @@ Moderate 
 
 Intended for highly skilled research teams carrying out high quality
 research funded via a peer review process that supports the [New Zealand
-Government\'s Science
+Government's Science
 Goals](http://www.mbie.govt.nz/info-services/science-innovation/funding-info-opportunities/document-image-library/NSSI%20Final%20Document%202015.pdf).
 
 A named investigator on a peer reviewed research grant or contract
 covering the entire allocation period. Students under the supervision of
-a named investigator are eligible at NeSI\'s discretion.
+a named investigator are eligible at NeSI's discretion.
 
-If your institution is a NeSI Collaborator, your project\'s allocation,
-if approved, will be provided out of your institution\'s entitlement.
+If your institution is a NeSI Collaborator, your project's allocation,
+if approved, will be provided out of your institution's entitlement.
 
 Examples likely to qualify:
 
@@ -109,7 +109,7 @@ Allocations Granted:
 
  
 
-*A new project\'s initial allocation may be awarded from this class at
+*A new project's initial allocation may be awarded from this class at
 any time, but subject to the limits of Proposal Development
 allocations.*
 
@@ -151,13 +151,13 @@ Highest
 </tr>
 <tr>
 <td style="width: 34.4%;" rowspan="4">
-### [Postgraduate](https://support.nesi.org.nz/hc/en-gb/articles/360000175695) {#postgrad}
+### [Postgraduate](https://support.nesi.org.nz/hc/en-gb/articles/360000175695)
 
 Standard allocation for anyone enrolled at a New Zealand degree-granting
 institution and working on a postgraduate research programme (e.g. PhD
 or Masters by research) approved by that institution. If your
-institution is a NeSI Collaborator, your project\'s allocation, if
-approved, will be provided out of your institution\'s entitlement.
+institution is a NeSI Collaborator, your project's allocation, if
+approved, will be provided out of your institution's entitlement.
 
 *Applicants in undergraduate programmes (including Honours programmes)
 or graduate programmes based on coursework are not eligible for
@@ -173,7 +173,7 @@ Allocations Granted:
 
  
 
-*A new project\'s initial allocation may be awarded from this class at
+*A new project's initial allocation may be awarded from this class at
 any time, but subject to the limits of Proposal Development
 allocations.*
 
@@ -220,7 +220,7 @@ Low
 Available if you work for or study at one of the institutions that is a
 NeSI collaborator, or has a subscription to the relevant NeSI service.
 
-> ### Warning {#prerequisites}
+> ### Warning
 >
 > If you are employed by and/or study at multiple institutions, it is
 > your responsibility to find out which of those institutions is
@@ -228,8 +228,8 @@ NeSI collaborator, or has a subscription to the relevant NeSI service.
 > is eligible to receive allocations of NeSI resources depends on its
 > host institution.
 
-Allocations from an institution\'s entitlement are subject to approval
-by that institution. Some institutions require pre-approval or recover
+Allocations from an institution's entitlement are subject to approval by
+that institution. Some institutions require pre-approval or recover
 costs for their NeSI usage through internal charging.
 
 If you are applying in your capacity as a staff member or student at a
@@ -246,7 +246,7 @@ Any time
 
  
 
-*A new project\'s initial allocation may be awarded from this class, but
+*A new project's initial allocation may be awarded from this class, but
 subject to the limits of Proposal Development allocations.*
 
 </td>
@@ -289,7 +289,7 @@ If you only qualify for a Proposal Development allocation right now,
 please [get in touch with
 us](https://support.nesi.org.nz/hc/requests/new) before applying for a
 new project. Our Engagement Team is happy to talk to you and
-representatives of your institution about subscription options. It\'s
+representatives of your institution about subscription options. It's
 best to start talking to us early as subscription contracts can take a
 while to set up.
 

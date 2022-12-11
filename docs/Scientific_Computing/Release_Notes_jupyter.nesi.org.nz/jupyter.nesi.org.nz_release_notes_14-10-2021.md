@@ -1,6 +1,6 @@
-## Release Update - 14. October 2021 {#ReleaseNotes-ReleaseUpdate-11.July2019}
+## Release Update - 14. October 2021
 
-## New and Improved {#ReleaseNotes-NewandImproved}
+## New and Improved
 
 -   Changed hub session timeout to 16 hours. Users will be prompted to
     login again after 16 hrs. aligned with max. wall time for JupyterLab

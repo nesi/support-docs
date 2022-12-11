@@ -1,4 +1,4 @@
-To check your project\'s usage of Slurm-managed resources, you can use
+To check your project's usage of Slurm-managed resources, you can use
 the command `nn_corehour_usage`. This command displays usage of cluster
 resources by a specific project, computed from the Slurm program
 `sreport`.
@@ -20,7 +20,7 @@ time.
 `-c`, `--calendar-months`
 
 Break usage down so that the time periods are the first and last days of
-the calendar months, instead\
+the calendar months, instead  
 of working back a month at a time from today.
 
 `-n`, `--number-of-months=NUM`

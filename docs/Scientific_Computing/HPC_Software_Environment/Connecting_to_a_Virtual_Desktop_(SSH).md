@@ -12,12 +12,12 @@ X<dfn class="dictionary-of-numbers">11 on it</dfn>s own (approximately
 
 # Connecting Through SSH
 
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > You must be able to [forward a
 > port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > The Virtual desktops are still in development, please report any
 > issues to NeSI support, or open an issue
@@ -36,11 +36,10 @@ For example:
 
     ssh -L 1234:localhost:1234 mahuika
 
-> ### Tip {#prerequisites}
+> ### Tip
 >
-> Port numbers should be between **1025-49151**. It\'s OK to use the
-> same number for local and remote ports (makes it easier to remember
-> too!)
+> Port numbers should be between **1025-49151**. It's OK to use the same
+> number for local and remote ports (makes it easier to remember too!)
 
 ## Add VDT to path
 
@@ -48,33 +47,38 @@ Run the command.
 
     echo "export PATH="/opt/nesi/vdt/:\$PATH"">>~/.bash_profile;. ~/.bash_profile
 
-to add the VDT command to your path, if you don\'t do this step you can
+to add the VDT command to your path, if you don't do this step you can
 still use the `vdt` command as `/opt/nesi/vdt/vdt`
 
-# Commands {#commands style="display: flex;"}
+# Commands
 
 `vdt -h` for general help or `vdt [command] -h` for help relating to
 that command.
 
-  -------------------- ----------------------------------------- --------------------------------------------------------------------------------------------
-  vdt start \[port\]   `vdt start 4321`                          Starts a desktop session on the login node. It will last until the shell is closed.
-                       `vdt start 4321 &`                        Starts a desktop session on the login node. It will continue running after you disconnect.
-                       `vdt start -r wbg005 4321 &`              Starts a desktop session on another  node. It will continue running after you disconnect.
-                       `salloc [slurm flags] vdt start 4321 &`   Starts a desktop session in a Slurm job. It will continue running after you disconnect.
-  vdt list             `vdt list`                                Lists all your sessions.
-  vdt kill \[name\]    `vdt kill my_desktop`                     Kills desktop \[name\].
-  -------------------- ----------------------------------------- --------------------------------------------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 #  
 
 # Settings
 
-Recommend setting scaling to \'remote\'
+Recommend setting scaling to 'remote'
 
-::: {style="display: flex;"}
-![](https://support.nesi.org.nz/hc/article_attachments/360004678036/fig1.svg){width="426"
-height="362"}![](https://support.nesi.org.nz/hc/article_attachments/360005192376/VirtualScaling.png)
-:::
+<img src="mkdocs/includes/images/fig1.svg" width="426" height="362" />![](mkdocs/includes/images/VirtualScaling.png)
 
 # Examples
 
@@ -82,8 +86,8 @@ The conditions for running a desktop on the login node are similar to
 when using a shell. There are no time limits, but should not be used for
 large or long running jobs. Any serious amount of computation should be
 launched with SLURM, this can be d<dfn class="dictionary-of-numbers">one
-using the terminal </dfn>or GUI. \
-\
+using the terminal </dfn>or GUI.   
+  
 
 In the case where your work needs to be run interactively, and cannot be
 managed from a different node, you can launch the desktop on a compute
@@ -107,9 +111,9 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360004789255/mceclip0.png)
+![mceclip0.png](mkdocs/includes/images/mceclip0.png)
 
-## On a compute node {#compute}
+## On a compute node
 
 <!--
 <h2>On a compute node</h2>

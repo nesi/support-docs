@@ -13,9 +13,16 @@ The ALLPATHS-LG home page is at
 
 ## Packages with modules
 
-  Module                           NeSI Cluster
-  -------------------------------- --------------
-  ALLPATHS-LG/50041-goolf-1.5.14   pan
+<table>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 # Licensing requirements
 

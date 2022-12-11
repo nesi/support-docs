@@ -5,14 +5,14 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](https://support.nesi.org.nz/hc/article_attachments/360004194235/Git_Diagram.svg)
+![Git\_Diagram.svg](mkdocs/includes/images/Git_Diagram.svg)
 
 ## Authentication
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
 
-> ### Password authentication {#prerequisites}
+> ### Password authentication
 >
 > GitHub removed support for password authentication on August 13, 2021.
 > Using a SSH key is now the easiest way to set up authentication.
@@ -41,23 +41,22 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 -   Now log in to your github account. In the upper-right corner of any
     page, click your profile photo click **Settings**.
 
-    [![Settings icon in the user
-    bar](https://docs.github.com/assets/cb-34573/images/help/settings/userbar-account-settings.png)]{.procedural-image-wrapper}
+    <span class="procedural-image-wrapper">![Settings icon in the user
+    bar](mkdocs/includes/images/userbar-account-settings.png)</span>
 
--   In the \"Access\" section of the sidebar, click **SSH and GPG
-    keys**.
+-   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
-    [![SSH Key
-    button](https://docs.github.com/assets/cb-28257/images/help/settings/ssh-add-ssh-key-with-auth.png)]{.procedural-image-wrapper}
+    <span class="procedural-image-wrapper">![SSH Key
+    button](mkdocs/includes/images/ssh-add-ssh-key-with-auth.png)</span>
 
--   In the \"Title\" field, put \"Mahuika\" or \"NeSI\".
+-   In the "Title" field, put "Mahuika" or "NeSI".
 
--   Paste your key into the \"Key\" field.
+-   Paste your key into the "Key" field.
 
-    [![The key
-    field](https://docs.github.com/assets/cb-47495/images/help/settings/ssh-key-paste-with-type.png)]{.procedural-image-wrapper}
+    <span class="procedural-image-wrapper">![The key
+    field](mkdocs/includes/images/ssh-key-paste-with-type.png)</span>
 
 -   Click **Add SSH key**.
 
@@ -66,7 +65,7 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
         ssh -T git@github.com
 
-    You may be promted to authenticate, if so type \'yes\'\
+    You may be promted to authenticate, if so type 'yes'  
     If everything is working, you should see the message 
 
         Hi User! You've successfully authenticated, but GitHub does not provide shell access.
@@ -75,10 +74,14 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 You can create a repository with either of the following commands.
 
-  ------- ------------------------------------------------------- ---------------------------------------------------------
-  clone   `git clone https://github.com/nesi/perf-training.git`   Copies a remote repository into your current directory.
-  init    `git init`                                              Creates a new empty repo in your current directory.
-  ------- ------------------------------------------------------- ---------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
  
 
@@ -100,7 +103,7 @@ Adds `<file1>` and `<file2>` to the staging area.
 </tr>
 <tr style="height: 89px;">
 <td style="width: 310px; height: 89px;">
-[`git add *.py`]{.c}
+<span class="c">`git add *.py`</span>
 
 </td>
 <td style="width: 513px; height: 89px;">
@@ -114,7 +117,7 @@ status
 
 </td>
 <td style="width: 310px; height: 41px;">
-[`git status`]{.c}
+<span class="c">`git status`</span>
 
 </td>
 <td style="width: 513px; height: 41px;">
@@ -139,18 +142,18 @@ text editor will prompt you for a commit message.
 </tr>
 <tr style="height: 39px;">
 <td style="width: 310px; height: 39px;">
-[`git commit -m "Commit message"`]{.c}
+<span class="c">`git commit -m "Commit message"`</span>
 
 </td>
 <td style="width: 513px; height: 39px;">
 Records everything in the staging area to your repository with the
-commit message \"Commit message\"
+commit message "Commit message"
 
 </td>
 </tr>
 <tr style="height: 39px;">
 <td style="width: 310px; height: 39px;">
-[`git commit --amend`]{.c}
+<span class="c">`git commit --amend`</span>
 
 </td>
 <td style="width: 513px; height: 39px;">
@@ -227,7 +230,7 @@ fetch 
 
 </td>
 <td style="width: 310.299px;">
-Gets status of \'origin\'. git fetch **does not **change your working
+Gets status of 'origin'. git fetch **does not **change your working
 directory or local repository (see `git pull`). 
 
 </td>
@@ -252,7 +255,7 @@ pull 
 
 </td>
 <td style="width: 310.299px;">
-Incorporates changes from \'origin\' into local repo. 
+Incorporates changes from 'origin' into local repo. 
 
 </td>
 </tr>
@@ -276,7 +279,7 @@ push 
 
 </td>
 <td style="width: 310.299px;">
-Incorporates changes from local repo into \'origin\'. 
+Incorporates changes from local repo into 'origin'. 
 
 </td>
 </tr>
@@ -292,7 +295,7 @@ Incorporates changes from local repo into `<repo>` `<branch>`
 </tr>
 </tbody>
 </table>
-> ### Tip {#prerequisites}
+> ### Tip
 >
 > If you are working without collaborators, there should be no reason to
 > have a conflict between your local and your remote repo. Make sure you
@@ -361,6 +364,6 @@ Merge `<branch-name>` into current branch.
 </tr>
 </tbody>
 </table>
-> ### Other Resources {#prerequisites}
+> ### Other Resources
 >
 > -   <https://ohshitgit.com/>

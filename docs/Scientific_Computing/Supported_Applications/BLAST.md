@@ -34,8 +34,8 @@ approach first and see if it takes too long.
 ## Single Thread
 
 For jobs which need less than 24 CPU-hours, eg: those that use small
-databases (\< 10 GB) or small amounts of query sequence (\< 1 GB), or
-fast BLAST programs such as *blastn* with its default (megablast)
+databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
+or fast BLAST programs such as *blastn* with its default (megablast)
 settings.  
 
     #!/bin/bash -e
@@ -62,13 +62,13 @@ settings.  
 ## Multiple threads and local database copy
 
 For jobs which need more than 24 CPU-hours, eg: those that use large
-databases (\> 10 GB) or large amounts of query sequence (\> 1 GB), or
-slow BLAST searches such as classic *blastn*
+databases (&gt; 10 GB) or large amounts of query sequence (&gt; 1 GB),
+or slow BLAST searches such as classic *blastn*
 (`#!['bash']blastn -task blastn`).
 
 This script copies the BLAST database into the per-job temporary
-directory \$TMPDIR before starting the search. Since compute nodes do
-not have local disks, this database copy is in memory, and so must be
+directory $TMPDIR before starting the search. Since compute nodes do not
+have local disks, this database copy is in memory, and so must be
 allowed for in the memory requested by the job.  As of mid 2021 that is
 125 GB for the *nt* database, 124 GB for *refseq\_protein. *
 

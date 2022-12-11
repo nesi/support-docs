@@ -1,9 +1,9 @@
-## Release Update - 21. June 2022 {#ReleaseNotes-ReleaseUpdate-11.July2019}
+## Release Update - 21. June 2022
 
-## New and Improved {#ReleaseNotes-NewandImproved}
+## New and Improved
 
 -   Backend security updates
 
-## Fixes {#ReleaseNotes-Fixes}
+## Fixes
 
 Fixed: usage values for allocation request renewal form

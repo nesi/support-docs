@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -11,7 +11,7 @@
 >     with [Ubuntu
 >     terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
 
-## First time setup {#recLinux}
+## First time setup
 
 The login process can be simplified significantly with a few easy
 configurations.
@@ -78,7 +78,7 @@ having to re-enter authentication e.g.
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

@@ -18,17 +18,17 @@ three-tier model.
 Includes applications (meaning tools, libraries and science
 applications) which:
 
-a.  Have a wide user base among users of the NeSI Compute and Analytics
+1.  Have a wide user base among users of the NeSI Compute and Analytics
     Service, either because they are used by many users within one or
     many Projects or are easy to install.
-b.  Are centrally installed, tested (including scaling), optimised,
+2.  Are centrally installed, tested (including scaling), optimised,
     documented and upgraded as new versions become available.
-c.  The NeSI Applications and/or Computational Science Team staff often
+3.  The NeSI Applications and/or Computational Science Team staff often
     (but not always) have in-depth knowledge of the application science
-    -- in which case they can provide specialist support to researchers.
+    – in which case they can provide specialist support to researchers.
     However, if no in-depth knowledge is available in the team(s), this
     does not prevent an application from being in Tier 1.
-d.  Support documentation will be provided, including licensing
+4.  Support documentation will be provided, including licensing
     information and scaling data etc.
 
 ## Tier 2
@@ -36,14 +36,14 @@ d.  Support documentation will be provided, including licensing
 Includes applications (meaning tools, libraries and science
 applications) which:
 
-a.  Have a small but important user base, meaning they are used by
+1.  Have a small but important user base, meaning they are used by
     several users and 1 or several projects.
-b.  Are centrally installed, standard regression tests are applied (if
+2.  Are centrally installed, standard regression tests are applied (if
     provided/available) and will be upgraded upon user request and as
     time permits.
-c.  NeSI Applications and/or Computational Science Team staff have no
-    "in depth" knowledge of the application.
-d.  The support documentation provides basic information on how to use
+3.  NeSI Applications and/or Computational Science Team staff have no
+    “in depth” knowledge of the application.
+4.  The support documentation provides basic information on how to use
     the software.
 
 ## Tier 3
@@ -52,11 +52,11 @@ Includes applications (meaning tools, libraries and science
 applications) that are required by one user, or have very limited use,
 in which case:
 
-a.  NeSI will (if required) provide limited guidance to the user so that
+1.  NeSI will (if required) provide limited guidance to the user so that
     they can install the software in their home directory.
-b.  The user will be responsible for managing this software
-c.  No support documentation will be provided by NeSI
-d.  The software will not be listed in the software catalogue
+2.  The user will be responsible for managing this software
+3.  No support documentation will be provided by NeSI
+4.  The software will not be listed in the software catalogue
 
 NeSI will publish the current list of software (including all versions),
 with links to the Support documentation.

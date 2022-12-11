@@ -59,7 +59,7 @@ the queue *before* starting, saving queue time in between jobs.
 
  
 
-> ### Tip {#prerequisites}
+> ### Tip
 >
 > We ***strongly*** recommend implementing checkpointing on any job
 > running longer than 3 days!

@@ -8,8 +8,8 @@ To fix these problems, you will need to do the following:
     from <https://mobaxterm.mobatek.net>.
 2.  If you have created saved sessions to connect to NeSI HPC
     facilities, open the settings for each such saved session and under
-    the \"Advanced SSH settings\" tab, change the SSH browser type from
-    SFTP to something else, such as \"SCP (enhanced speed)\".
+    the "Advanced SSH settings" tab, change the SSH browser type from
+    SFTP to something else, such as "SCP (enhanced speed)".
 3.  If you are prompted multiple times for password (rather than First
     Factor), this is a bug. Entering any text will cause your login
     attempt to fail. The expected procedure is as follows.

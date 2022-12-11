@@ -20,13 +20,24 @@ The BEAST home page is at <http://beast2.org>.
 
 ## Packages with modules
 
-  Module                              NeSI Cluster
-  ----------------------------------- --------------
-  BEAST/2.4.7                         pan
-  BEAST/1.8.2-goolf-1.5.14            pan
-  BEAST/1.8.4-gimkl-2017a-no-beagle   pan
-  BEAST/2.2.1                         pan
-  BEAST/2.4.3                         pan
+<table>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 # License
 

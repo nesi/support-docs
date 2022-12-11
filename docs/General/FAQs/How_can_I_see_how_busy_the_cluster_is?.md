@@ -21,7 +21,7 @@ command `sinfo`, you will get a printout like the following. 
     bigmem    up    1-infini 7-00:00:00     72 2:18:2       5   allocated  wbl[001,004...
     hugemem   up    1-infini 7-00:00:00    128 4:16:2       1   mixed      wbh001
 
-Each partition has a row for every state it\'s nodes are currently in.
+Each partition has a row for every state it's nodes are currently in.
 
 For example, the `large` partition currently has  **1** `down` node, 
 **133** `mixed` nodes,  **7** `allocated` nodes and  **85** `idle`
@@ -29,14 +29,22 @@ nodes.
 
 The most common node states you are likely to see are:
 
-  ------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
-  `idle`        All CPUs on this node are unallocated and available for use.
-  `allocated`   All CPUs on this node are currently allocated.
-  `mixed`       Some CPUs on this node are unallocated, smaller jobs are likely to land here.
-  `down`        The node is unavailable for use
-  `reserved`    This node has been reserved, and is only available for some users (in the case of the igpu partition, please contact NeSI support if you wish to use it).
-  `draining`    Jobs are currently running on this node, but is not available for new jobs.
-  ------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 A full list of node states can be found
 [here](https://slurm.schedmd.com/sinfo.html#lbAG).

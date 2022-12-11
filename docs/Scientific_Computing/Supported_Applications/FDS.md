@@ -35,19 +35,19 @@ and
     mesh more you should do that before considering multi-threading
     (OpenMP). e.g. `ntasks=2, cpus-per-task=1` is preferable
     to `ntasks=1, cpus-per-task=2`
--   Each mesh should have it\'s own task, assigning more tasks than
-    there are meshes will cause an error.
+-   Each mesh should have it's own task, assigning more tasks than there
+    are meshes will cause an error.
 -   Multi-threading efficiency drops off significantly after 4 physical
     cores. `--cpus-per-task 4`
 -   Hyper-threading is not recommended. Set `--hint nomultithread`
 
 ## Scaling with MPI
 
-![mceclip1.png](https://support.nesi.org.nz/hc/article_attachments/360002454995/mceclip1.png)
+![mceclip1.png](mkdocs/includes/images/mceclip1.png)
 
 ## Scaling with oMP
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002454975/mceclip0.png)
+![mceclip0.png](mkdocs/includes/images/mceclip0.png)
 
  
 

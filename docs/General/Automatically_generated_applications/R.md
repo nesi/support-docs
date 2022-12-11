@@ -1,13 +1,19 @@
-  -------------- -------------------------------------------------------
-  Description    R is a free software environment for statistical
-                 computing and graphics.
-
-  Homepage       http://www.r-project.org/
-
-  Machines       mahuika,maui\_ancil
-
-  Institution    \-
-  -------------- -------------------------------------------------------
+<table style="width:99%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 This is documentation for R.
 

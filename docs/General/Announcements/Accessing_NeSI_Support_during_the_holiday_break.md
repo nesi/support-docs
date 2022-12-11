@@ -1,4 +1,4 @@
-As another busy year draws to a close, NeSI's Support Team will be
+As another busy year draws to a close, NeSI’s Support Team will be
 taking a summer break from **5:00 PM on 22 December, 2022 to 9:00 am on
 04 January, 2023.**
 
@@ -27,7 +27,7 @@ of self-service support:
     Documentation](https://support.nesi.org.nz/hc/en-gb/categories/360000013836 "https://support.nesi.org.nz/hc/en-gb/categories/360000013836") pages
     for instructions and guidelines for using the systems
 
--   [Visit NeSI's YouTube
+-   [Visit NeSI’s YouTube
     channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
     introductory training webinars
 

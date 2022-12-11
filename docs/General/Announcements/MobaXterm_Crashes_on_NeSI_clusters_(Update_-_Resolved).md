@@ -6,11 +6,11 @@ application](https://support.nesi.org.nz/hc/en-gb/articles/360001016335-Choosing
 
 ## Update (Resolved) - 2019-12-18
 
-Disabling the \"Remote-monitoring (experimental)\" in the SSH settings
+Disabling the "Remote-monitoring (experimental)" in the SSH settings
 seems to resolve this issue. If this does not resolve this issue for you
 please let us know.
 
-![moba3\_update2.png](https://support.nesi.org.nz/hc/article_attachments/360003132056/moba3_update2.png)
+![moba3\_update2.png](mkdocs/includes/images/moba3_update2.png)
 
 ## Update - 2019/11/01
 
@@ -18,24 +18,24 @@ Disabling the SSH-browser under your session settings will cause the
 crashes to stop, however this will also remove your ability to transfer
 files.
 
-![no\_scp.png](https://support.nesi.org.nz/hc/article_attachments/360002889276/no_scp.png)
+![no\_scp.png](mkdocs/includes/images/no_scp.png)
 
 ## 2019/10/14
 
 Over the past month we have had multiple reports of MobaXterm crashing
 to desktop without warning when connecting to a NeSI cluster. This bug
 does not appear to have been introduced in a particular patch or update
-of MobaXterm.\
-\
+of MobaXterm.  
+  
 If this issue has affected you, please [contact NeSI
 Support](mailto:support@nesi.org.nz?subject=MobaXterm%20Issues&body=Operating%20System%20Version:%20%0D%0A%0A%0ACrash%20triggered%20when:%20%0D%0A%0A%0AProblem%20started%20occurring:%20%0D%0A%0A%0AOn%20the%20Cluster:%0D%0A%0A%0AIf%20you%20can,%20please%20also%20include%20your%20MobaXterm%20config%20file.%20This%20can%20be%20found%20at%20%60%60C:%5CUsers%5C%3Cusername%3E%5CDocuments%5CMobaXterm%5CMobaXterm.ini%60%60)
 with the following information.
 
  
 
--   Operating System Version (If you open \'cmd\' it will be the first
-    line displayed, e.g. [Microsoft Windows \[Version
-    10.0.17134.1006\]]{.code})
+-   Operating System Version (If you open 'cmd' it will be the first
+    line displayed, e.g. <span class="code">Microsoft Windows \[Version
+    10.0.17134.1006\]</span>)
 
 -   How regularly the crash occurs (always, occasionally, etc), and when
     did it start.
@@ -47,7 +47,7 @@ with the following information.
 
 <!-- -->
 
--   MobaXterm config file, [MobaXterm.ini]{.code},\
+-   MobaXterm config file, <span class="code">MobaXterm.ini</span>,  
     This can be found
     `C:\Users\<username>\Documents\MobaXterm\MobaXterm.ini` for the
     installer edition, or in the same file as the executable for the
