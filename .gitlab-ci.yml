@@ -2,7 +2,7 @@ image: python:3.8-buster
 
 before_script:
   - apt-get update
-  - apt-get -y install curl zip
+  - apt-get -y install curl zip nodejs npm
   - npm install -g markdownlint-cli
   - pip install -r requirements.txt
   - git config --global user.email "$GITLAB_USER_EMAIL"
