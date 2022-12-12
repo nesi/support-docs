@@ -5,7 +5,7 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](mkdocs/includes/images/Git_Diagram.svg)
+![Git\_Diagram.svg](img/Git_Diagram.svg)
 
 ## Authentication
 
@@ -28,6 +28,7 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 -   When prompted for a file name, press `enter`. When prompted for a
     passcode, press enter twice more.
+
 -   Open up the newly created .pub key with the command 
 
         cat ~/.ssh/id_ed25519.pub
@@ -42,21 +43,21 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     page, click your profile photo click **Settings**.
 
     <span class="procedural-image-wrapper">![Settings icon in the user
-    bar](mkdocs/includes/images/userbar-account-settings.png)</span>
+    bar](img/userbar-account-settings.png)</span>
 
 -   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
     <span class="procedural-image-wrapper">![SSH Key
-    button](mkdocs/includes/images/ssh-add-ssh-key-with-auth.png)</span>
+    button](img/ssh-add-ssh-key-with-auth.png)</span>
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
     <span class="procedural-image-wrapper">![The key
-    field](mkdocs/includes/images/ssh-key-paste-with-type.png)</span>
+    field](img/ssh-key-paste-with-type.png)</span>
 
 -   Click **Add SSH key**.
 
@@ -89,52 +90,63 @@ You can create a repository with either of the following commands.
 <tbody>
 <tr style="height: 89px;">
 <td style="width: 142px; height: 89px;" rowspan="2">
+
 add
 
 </td>
 <td style="width: 310px; height: 89px;">
+
 `git add <file1> <file2>`
 
 </td>
 <td style="width: 513px; height: 89px;">
+
 Adds `<file1>` and `<file2>` to the staging area.
 
 </td>
 </tr>
 <tr style="height: 89px;">
 <td style="width: 310px; height: 89px;">
+
 <span class="c">`git add *.py`</span>
 
 </td>
 <td style="width: 513px; height: 89px;">
+
  Adds all python files in the current directory to the staging area.
 
 </td>
 </tr>
 <tr style="height: 41px;">
 <td style="width: 142px; height: 41px;">
+
 status
 
 </td>
 <td style="width: 310px; height: 41px;">
+
 <span class="c">`git status`</span>
 
 </td>
 <td style="width: 513px; height: 41px;">
+
 Lists changes in working directory, and staged files.
 
 </td>
 </tr>
 <tr style="height: 39px;">
 <td style="width: 142px; height: 39px;" rowspan="3">
+
 commit 
 
 </td>
 <td style="width: 310px; height: 39px;">
+
 `git commit`
 
 </td>
 <td style="width: 513px; height: 39px;">
+
 Records everything in the staging area to your repository. The default
 text editor will prompt you for a commit message.
 
@@ -142,10 +154,12 @@ text editor will prompt you for a commit message.
 </tr>
 <tr style="height: 39px;">
 <td style="width: 310px; height: 39px;">
+
 <span class="c">`git commit -m "Commit message"`</span>
 
 </td>
 <td style="width: 513px; height: 39px;">
+
 Records everything in the staging area to your repository with the
 commit message "Commit message"
 
@@ -153,10 +167,12 @@ commit message "Commit message"
 </tr>
 <tr style="height: 39px;">
 <td style="width: 310px; height: 39px;">
+
 <span class="c">`git commit --amend`</span>
 
 </td>
 <td style="width: 513px; height: 39px;">
+
 Modify last commit instead of creating a new one. Useful for fixing
 small mistakes.
 
@@ -164,54 +180,65 @@ small mistakes.
 </tr>
 <tr style="height: 41px;">
 <td style="width: 142px; height: 41px;" rowspan="2">
+
 log 
 
 </td>
 <td style="width: 310px; height: 41px;">
+
 `git log`
 
 </td>
 <td style="width: 513px; height: 41px;">
+
 Prints commit history of repo.
 
 </td>
 </tr>
 <tr style="height: 41px;">
 <td style="width: 310px; height: 41px;">
+
 `git log <filename>`
 
 </td>
 <td style="width: 513px; height: 41px;">
+
 Prints commit history of `<filename>`.
 
 </td>
 </tr>
 <tr style="height: 41px;">
 <td style="width: 142px; height: 41px;" rowspan="2">
+
 reset 
 
 </td>
 <td style="width: 310px; height: 41px;">
+
 `git reset`
 
 </td>
 <td style="width: 513px; height: 41px;">
+
 Removes all files from staging area. (Opposite of `git add`)
 
 </td>
 </tr>
 <tr style="height: 41px;">
 <td style="width: 310px; height: 41px;">
+
 `git reset <filename>`
 
 </td>
 <td style="width: 513px; height: 41px;">
+
 Removes `<filename>` from staging area.
 
 </td>
 </tr>
 </tbody>
 </table>
+
 ## Remote
 
 By default, fetch, pull and push will operate on the origin repo. This
@@ -222,14 +249,17 @@ will be the repo you cloned from, or set manually using
 <tbody>
 <tr>
 <td style="width: 136px;" rowspan="2">
+
 fetch 
 
 </td>
 <td style="width: 565.701px;">
+
 `git fetch`
 
 </td>
 <td style="width: 310.299px;">
+
 Gets status of 'origin'. git fetch **does not **change your working
 directory or local repository (see `git pull`). 
 
@@ -237,64 +267,77 @@ directory or local repository (see `git pull`). 
 </tr>
 <tr>
 <td style="width: 565.701px;">
+
 `git fetch <repo> <branch>`
 
 </td>
 <td style="width: 310.299px;">
+
 Get status of `<repo>` `<branch>`.
 
 </td>
 </tr>
 <tr>
 <td style="width: 136px;" rowspan="2">
+
 pull 
 
 </td>
 <td style="width: 565.701px;">
+
 `git pull`
 
 </td>
 <td style="width: 310.299px;">
+
 Incorporates changes from 'origin' into local repo. 
 
 </td>
 </tr>
 <tr>
 <td style="width: 565.701px;">
+
 `git pull <repo> <branch>`
 
 </td>
 <td style="width: 310.299px;">
+
 Incorporates changes from `<repo>` `<branch>` into local repo.
 
 </td>
 </tr>
 <tr>
 <td style="width: 136px;" rowspan="2">
+
 push 
 
 </td>
 <td style="width: 565.701px;">
+
 `git push`
 
 </td>
 <td style="width: 310.299px;">
+
 Incorporates changes from local repo into 'origin'. 
 
 </td>
 </tr>
 <tr>
 <td style="width: 565.701px;">
+
 `git push <repo> <branch>`
 
 </td>
 <td style="width: 310.299px;">
+
 Incorporates changes from local repo into `<repo>` `<branch>`
 
 </td>
 </tr>
 </tbody>
 </table>
+
 > ### Tip
 >
 > If you are working without collaborators, there should be no reason to
@@ -312,58 +355,70 @@ multiple branches, or requires merging.
 <tbody>
 <tr>
 <td style="width: 136px;" rowspan="2">
+
 branch 
 
 </td>
 <td style="width: 303px;">
+
 `git branch`
 
 </td>
 <td style="width: 489px;">
+
 List branches.
 
 </td>
 </tr>
 <tr>
 <td style="width: 303px;">
+
 `git branch <branch-name>`
 
 </td>
 <td style="width: 489px;">
+
 Create new branch `<branch-name`
 
 </td>
 </tr>
 <tr>
 <td style="width: 136px;">
+
 checkout
 
 </td>
 <td style="width: 303px;">
+
 `git checkout <branch-name>`
 
 </td>
 <td style="width: 489px;">
+
 Switch to editing branch `<branch-name>`
 
 </td>
 </tr>
 <tr>
 <td style="width: 136px;">
+
 merge
 
 </td>
 <td style="width: 303px;">
+
 `git merge <branch-name>`
 
 </td>
 <td style="width: 489px;">
+
 Merge `<branch-name>` into current branch.
 
 </td>
 </tr>
 </tbody>
 </table>
+
 > ### Other Resources
 >
 > -   <https://ohshitgit.com/>

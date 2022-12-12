@@ -11,13 +11,9 @@ distributing output from models performing common sets of experiments.
 
 This document shows how to explore which CMIP6 data are available and
 how to download the data once you have figured out what you need. The
-data will be downloaded asynchronously<span
-style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> -
-no need to st</span><span
-style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">are
-at a screen for hours.  The downloaded data will reside in a shared
-directory and hence will also be accessible to your
-collaborators.</span>
+data will be downloaded asynchronously - no need to stare at a screen
+for hours.  The downloaded data will reside in a shared directory and
+hence will also be accessible to your collaborators.
 
 The instructions are geared towards members of the niwa02916 group -
 send a message to <support@nesi.org.nz> if you are a NIWA employee and

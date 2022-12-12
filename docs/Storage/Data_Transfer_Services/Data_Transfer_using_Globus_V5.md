@@ -32,7 +32,7 @@ The NeSI Wellington DTN endpoint is protected by a second factor
 authentication (2FA).  Also note, your NeSI username and password are
 case-sensitive.
 
-## <span class="wysiwyg-color-black">The NeSI Data Transfer Node</span>
+## The NeSI Data Transfer Node
 
 The NeSI Data Transfer Node (DTN) acts as an interface between our HPC
 facility storage and a worldwide network of Globus endpoints. This is
@@ -90,13 +90,13 @@ Platform.
 
 NeSI endpoints start with "nesi\#":
 
-![filemanage\_nesi.png](mkdocs/includes/images/filemanage_nesi.png)
+![filemanage\_nesi.png](img/filemanage_nesi.png)
 
 Select the endpoint "NeSI Wellington DTN V5", and you will be asked to
 authenticate your access to the endpoint. Click Continue to the next
 step.
 
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+![mceclip0.png](img/mceclip0.png)
 
  
 
@@ -108,7 +108,7 @@ that.
 
  
 
-![mceclip1.png](mkdocs/includes/images/mceclip1.png)
+![mceclip1.png](img/mceclip1.png)
 
 The NeSI Wellington DTN V5 endpoint is protected by a second factor
 authentication (2FA-same as accessing NeSI clusters).  In the
@@ -119,18 +119,17 @@ authentication (2FA-same as accessing NeSI clusters).  In the
 not*** use any additional characters or spaces between your password and
 the token number.)
 
-                           
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+                            ![mceclip0.png](img/mceclip0.png)
 
 After the login, you will navigate to the default root(display as "/")
 path, then you could change the path to
 
-(1) your ***/home/&lt;username&gt;*** directory,
+\(1\) your ***/home/&lt;username&gt;*** directory,
 
-(2) project directory (read-only)
+\(2\) project directory (read-only)
 ***/nesi/project/&lt;project\_code&gt;*** 
 
-(3) project sub-directories of
+\(3\) project sub-directories of
 ***/nesi/nobackup/&lt;project\_code&gt;***  - see [Globus Paths,
 Permissions,  Storage
 Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation).  
@@ -139,19 +138,19 @@ Navigate to your selected directory. e.g. the *nobackup* filesystem
 */nesi/nobackup/&lt;project\_code&gt;* and select the two-endpoint panel
 for transfer.
 
-![mceclip3.png](mkdocs/includes/images/mceclip3.png)
+![mceclip3.png](img/mceclip3.png)
 
 Select the target endpoint and authenticate.
 
 When you have activated endpoints in both transfer windows, you can
 start transferring files between them.
 
-![mceclip4.png](mkdocs/includes/images/mceclip4.png)
+![mceclip4.png](img/mceclip4.png)
 
 Select files you wish to transfer and select the corresponding "Start"
 button:  
   
-![mceclip5.png](mkdocs/includes/images/mceclip5.png)
+![mceclip5.png](img/mceclip5.png)
 
  
 
@@ -163,7 +162,7 @@ button:
 -   If this is your first time, you will need to create a Globus
     account.
 -   Open the two-endpoint panel
-    <embed src="mkdocs/includes/images/5622407243151.name_me" width="109" height="34" />located
+    <img src="img/5622407243151.name_me" width="109" height="34" alt="two_endpoint.png" />located
     on the top-right of the *File Manager* page.
 -   Select the Endpoints you wish to move files between (start typing
     "nesi\#" to see the list of NeSI DTNs to select from).
@@ -178,8 +177,8 @@ button:
     Storage
     Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation)).
 -   Transfer the files by clicking the appropriate
-    ![start.png](mkdocs/includes/images/5622408199183.name_me)button
-    depending on the direction of the transfer.
+    ![start.png](img/5622408199183.name_me)button depending on the
+    direction of the transfer.
 -   Check your email for confirmation about the job completion report.
 
 ## Transferring data using a personal endpoint
@@ -206,13 +205,10 @@ connector subscription (note a subscription is required per cloud
 provider) so we can’t use globus to transfer to/from cloud storage. If
 you see this as key for you, please let us know (support@nesi.org.nz).
 
-<span style="font-weight: 400;">Our current advice for moving data to or
-from the cloud is to use tools such as Rclone  (</span>[<span
-style="font-weight: 400;">https://rclone.org/</span>](https://rclone.org/)<span
-style="font-weight: 400;">) or the cloud CLI's such as aswcli for S3
-(https://aws.amazon.com/cli/) or gcloud CLI (</span>[<span
-style="font-weight: 400;">https://cloud.google.com/sdk/gcloud</span>](https://cloud.google.com/sdk/gcloud)<span
-style="font-weight: 400;">). If you have any trouble or would like
-further advice, please get in touch (</span>[<span
-style="font-weight: 400;">support@nesi.org.nz</span>](mailto:support@nesi.org.nz)<span
-style="font-weight: 400;">).</span>
+Our current advice for moving data to or from the cloud is to use tools
+such as Rclone  ([https://rclone.org/](https://rclone.org/)) or the
+cloud CLI's such as aswcli for S3 (https://aws.amazon.com/cli/) or
+gcloud CLI
+([https://cloud.google.com/sdk/gcloud](https://cloud.google.com/sdk/gcloud)).
+If you have any trouble or would like further advice, please get in
+touch ([support@nesi.org.nz](mailto:support@nesi.org.nz)).

@@ -33,7 +33,7 @@ keep and then press **Next**. If these options are not present then
 first update your Authenticator. On the new device press **Import
 existing accounts** then scan the QR code provided on the old device. 
 
-## How do I get a new Second Factor?<span id="question-how-do-i-get-a-new-second-factor"></span><span class="wysiwyg-font-size-large"> </span>
+## How do I get a new Second Factor?<span class="wysiwyg-font-size-large"> </span>
 
 **Answer:** See article
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token).

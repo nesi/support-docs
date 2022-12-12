@@ -23,30 +23,14 @@ suggestions for improving your experience getting onto and using the new
 nodes. We’d also welcome any testing that compares your job(s)
 performance on the new nodes against the older nodes.
 
-<span id="9713733c-843a-4b40-8f2b-a0b5b7095aa1"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">If you’d like to
-participate as tester / early access user for the new Mahuika CPU nodes,
-</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span id="9713733c-843a-4b40-8f2b-a0b5b7095aa1" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">reach out to NeSI Support</span></a><span
-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1" data-renderer-mark="true"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">. </span>*<span
-id="701957b0-7acf-457e-b186-978c952c2221" data-renderer-mark="true"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="701957b0-7acf-457e-b186-978c952c2221">Reminder</span>:* these
-nodes are still in a ‘pre-production’ state and so their performance may
-be unstable.
+If you’d like to participate as tester / early access user for the new
+Mahuika CPU nodes,
+<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span>reach out to NeSI Support</span></a>.
+*Reminder:* these nodes are still in a ‘pre-production’ state and so
+their performance may be unstable.
 
-<span id="362355bf-f0cd-4f09-9635-3af41a5b7250"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="362355bf-f0cd-4f09-9635-3af41a5b7250">Further details on the
-early access testing can be found
-</span><a href="https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding"><span id="362355bf-f0cd-4f09-9635-3af41a5b7250" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="362355bf-f0cd-4f09-9635-3af41a5b7250">here</span></a><span
-id="362355bf-f0cd-4f09-9635-3af41a5b7250" data-renderer-mark="true"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="362355bf-f0cd-4f09-9635-3af41a5b7250">.</span>
+Further details on the early access testing can be found
+<a href="https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding"><span>here</span></a>.
 
 **Who’s eligible for early access:**
 
@@ -61,23 +45,12 @@ data-id="362355bf-f0cd-4f09-9635-3af41a5b7250">.</span>
 -   ability to run what you want for the early access phase (eg. tackle
     a particularly large or complex run)
 
--   <span id="5cedfc69-d50f-499a-b509-f2073523d878"
-    data-renderer-mark="true" data-mark-type="annotation"
-    data-mark-annotation-type="inlineComment"
-    data-id="5cedfc69-d50f-499a-b509-f2073523d878">option to request
-    some targeted support to get your code up and running efficiently on
-    the new technology</span>
+-   option to request some targeted support to get your code up and
+    running efficiently on the new technology
 
-<span id="9713733c-843a-4b40-8f2b-a0b5b7095aa1"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">If you're interested in
-participating as tester / early access user for temporary free usage of
-the new Mahuika CPU nodes,
-</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span id="9713733c-843a-4b40-8f2b-a0b5b7095aa1" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">reach out to NeSI Support</span></a><span
-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1" data-renderer-mark="true"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">. </span>
+If you're interested in participating as tester / early access user for
+temporary free usage of the new Mahuika CPU nodes,
+<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span>reach out to NeSI Support</span></a>.
 
 Looking ahead, we'll keep you updated on our launch plans for these new
 CPU nodes, as well as our progress with bringing Mahuika’s new GPU

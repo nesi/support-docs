@@ -38,19 +38,19 @@ consistent, additional information can be found in our article [Thread
 Placement and Thread
 Affinity](https://support.nesi.org.nz/hc/en-gb/articles/360000995575).
 
-1. --hint=nomultithread. Set this in conjunction with srun or sbatch to
+1\. --hint=nomultithread. Set this in conjunction with srun or sbatch to
 tell SLURM that you don't want to use hyperthreads. Your program will
 only be presented with physical cores. Inversely, --hint=multithread
 will request two threads per physical core. If --hint is not set, SLURM
 will currently assume --hint=multithread by default.
 
-2. OMP\_PROC\_BIND. Set this to "true" to pin the threads down during
+2\. OMP\_PROC\_BIND. Set this to "true" to pin the threads down during
 program execution. By default, threads may migrate from one core to
 another, depending on the load on the node. In an HPC setting, it is
 generally advisable to pin the threads to avoid delays caused by thread
 migration.
 
-3. OMP\_PLACES. Set this to "cores" if you want to pin the threads to
+3\. OMP\_PLACES. Set this to "cores" if you want to pin the threads to
 physical cores, or to "threads" if you want to use hyperthreading. 
 
 The effect of each setting is illustrated below. In this experiment we

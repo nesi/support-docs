@@ -77,15 +77,14 @@ Our job performed 5,000 iterations using four CPU cores and a maximum
 memory of 406,516KB (0.4 GB). In total, the job ran for 3 minutes and 17
 seconds.
 
-<span class="wysiwyg-color-black">We will initially assume that our
-job's wall time and memory will scale linearly with the number of
-iterations. However, we don't know that for certain that this is the
-case so we will need to understand the scaling behaviour of our job's
-resource requirements before we can submit our full job and be confident
-it will succeed.</span>
+We will initially assume that our job's wall time and memory will scale
+linearly with the number of iterations. However, we don't know that for
+certain that this is the case so we will need to understand the scaling
+behaviour of our job's resource requirements before we can submit our
+full job and be confident it will succeed.
 
-<span class="wysiwyg-color-black">To test this, we will submit three
-more jobs, using 10,000 15,000 and 20,000 iterations.</span>
+To test this, we will submit three more jobs, using 10,000 15,000 and
+20,000 iterations.
 
              JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
     -------------- ------------ ----------- ------------ ----- -------- ----------
@@ -118,13 +117,11 @@ understand what is happening:
 </tbody>
 </table>
 
-<span class="wysiwyg-color-black">This confirms our assumption of
-wall-time scaling linearly with number of iterations. However, peak
-memory usage appears unchanged.</span>
+This confirms our assumption of wall-time scaling linearly with number
+of iterations. However, peak memory usage appears unchanged.
 
-<span class="wysiwyg-color-black">Extrapolating from this data, we can
-estimate the full 60,000 iterations will take 12 times longer than 5,000
-iterations or about 40 minutes.</span>
+Extrapolating from this data, we can estimate the full 60,000 iterations
+will take 12 times longer than 5,000 iterations or about 40 minutes.
 
 But suppose we need a result more quickly than that. We are currently
 using 4 CPU cores, but what if we used more? Could we speed up our job
@@ -184,11 +181,10 @@ Law, and reflects the fact that there is a fixed part of the computation
 that is inherently serial, that is, some operations can't be started
 until others have already finished.
 
-<span class="wysiwyg-color-black">Indeed, the difference in speed
-between 14 and 16 CPU cores is very small. We could try running our
-script with more than 16 CPU cores, however, in the case of this script
-we start to have a pretty significant drop in marginal speed-up after
-eight CPU cores.</span>
+Indeed, the difference in speed between 14 and 16 CPU cores is very
+small. We could try running our script with more than 16 CPU cores,
+however, in the case of this script we start to have a pretty
+significant drop in marginal speed-up after eight CPU cores.
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase
@@ -204,26 +200,24 @@ has some spikes, `sacct` will not necessarilly detect the maximum memory
 usage. This is something that you should be aware of when you estimate
 the memory usage of all your jobs.
 
-<span class="wysiwyg-color-black">Looking at the memory usage for an 8
-CPU job, it looks like an 8 CPU has a maximum memory requirement of 0.75
-GB.</span>
+Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
+a maximum memory requirement of 0.75 GB.
 
 ## Estimating our Total Resource Requirments
 
 Now that we know approximately how our job's CPU, memory and wall
-requirem<span class="wysiwyg-color-black">ents scale, we</span> can try
-and estimate our total resource requirements for our 60,000 iteration
-job.
+requirements scale, we can try and estimate our total resource
+requirements for our 60,000 iteration job.
 
 From this data we have determined that more than 8 CPUs has very limited
 additional speed and an 8 CPU should use about 0.75 GB of memory at
-mo<span class="wysiwyg-color-black">st, and that this memory requirement
-should remain relatively consistent, regardless of the number of
-iterations. Given this information we can estimate our full size job's
-resource requirements. Sinc</span>e our 8-CPU, 5,000 iteration job took
-1 minute and 45 seconds, our full scale job should take 12 times longer
-(21 minutes) and require 0.75 GB of memory. To be on the safe side,
-let's request 1 GB of memory and 30 minutes.
+most, and that this memory requirement should remain relatively
+consistent, regardless of the number of iterations. Given this
+information we can estimate our full size job's resource requirements.
+Since our 8-CPU, 5,000 iteration job took 1 minute and 45 seconds, our
+full scale job should take 12 times longer (21 minutes) and require 0.75
+GB of memory. To be on the safe side, let's request 1 GB of memory and
+30 minutes.
 
 ### Revised Slurm Script
 

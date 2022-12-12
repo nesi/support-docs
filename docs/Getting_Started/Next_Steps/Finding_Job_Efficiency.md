@@ -1,12 +1,11 @@
 # On Job Completion
 
-<span style="font-weight: 400;">It is good practice to have a look at
-the resources your job used on completion, this way you can improve your
-job specifications in the future.</span>
+It is good practice to have a look at the resources your job used on
+completion, this way you can improve your job specifications in the
+future.
 
-<span style="font-weight: 400;">Once your job has finished check the
-relevant details using the tools: `nn_seff` or `sacct` For example:  
-</span>
+Once your job has finished check the relevant details using the tools:
+`nn_seff` or `sacct` For example:  
 
 **nn\_seff**
 
@@ -23,10 +22,10 @@ relevant details using the tools: `nn_seff` or `sacct` For example:
     CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
     Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 
-<span style="font-weight: 400;">Notice that the CPU efficiency was high
-but the memory efficiency was very low and consideration should be given
-to reducing memory requests for similar jobs.  If in doubt, please
-contact <support@nesi.org.nz> for guidance.</span>
+Notice that the CPU efficiency was high but the memory efficiency was
+very low and consideration should be given to reducing memory requests
+for similar jobs.  If in doubt, please contact <support@nesi.org.nz> for
+guidance.
 
  
 
@@ -143,7 +142,7 @@ parent process).
 
 Processes in green can be ignored
 
-<img src="mkdocs/includes/images/how_to_read_htop.png" alt="how_to_read_htop.png" width="929" height="252" />
+<img src="img/how_to_read_htop.png" width="929" height="252" alt="how_to_read_htop.png" />
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
 
@@ -179,12 +178,12 @@ more details.
 
 ## Example
 
-![qdyn\_eff.png](mkdocs/includes/images/qdyn_eff.png)
+![qdyn\_eff.png](img/qdyn_eff.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
-![qdyn\_walltime.png](mkdocs/includes/images/qdyn_walltime.png)
+![qdyn\_walltime.png](img/qdyn_walltime.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

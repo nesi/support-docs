@@ -1,13 +1,12 @@
 > ### Requirements
 >
 > -   Have working
->     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)set
->     up.
+>     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
+>     set up.
 
-X<dfn class="dictionary-of-numbers">-11 is a protocol </dfn>for
-rendering graphical user interfaces (GUIs) that can be sent along an SSH
-tunnel. If you plan on using a GUI on a NeSI cluster you will need to
-have an X-Server and X-Forwarding set up.
+X-11 is a protocol for rendering graphical user interfaces (GUIs) that
+can be sent along an SSH tunnel. If you plan on using a GUI on a NeSI
+cluster you will need to have an X-Server and X-Forwarding set up.
 
 # X-Servers
 
@@ -28,21 +27,20 @@ Download links for X-servers can be found below.
 </table>
 
 Make sure you have launched the server and it is running in the
-background, look for
-this ![mceclip0.png](mkdocs/includes/images/mceclip0.png) symbol in your
-taskbar 
+background, look for this ![mceclip0.png](img/mceclip0.png) symbol in
+your taskbar 
 
 > ### Note
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](mkdocs/includes/images/xon.png)=on, ![off.png](mkdocs/includes/images/off.png)=off). 
+> (![xon.png](img/xon.png)=on, ![off.png](img/off.png)=off). 
 
 # X-Forwarding
 
-Finally your ssh tunnel must be set up to 'forward' along
-X<dfn class="dictionary-of-numbers">-11 connections</dfn>. 
+Finally your ssh tunnel must be set up to 'forward' along X-11
+connections. 
 
 ## OpenSSH (terminal)
 
@@ -54,14 +52,13 @@ Make sure the `-Y` or `-X` flag is included
 
 ## MobaXterm
 
- Under 'session settings' for your connection make sure the
-X<dfn class="dictionary-of-numbers">-11 forwarding box is </dfn>checked.
+ Under 'session settings' for your connection make sure the X-11
+forwarding box is checked.
 
-<img src="mkdocs/includes/images/x11moba.png" alt="x11moba.png" width="451" height="303" />
+<img src="img/x11moba.png" width="451" height="303" alt="x11moba.png" />
 
-If the ![mceclip0.png](mkdocs/includes/images/mceclip0.png) button in
-the top right corner of your window is coloured, the X-server should be
-running.
+If the ![mceclip0.png](img/mceclip0.png) button in the top right corner
+of your window is coloured, the X-server should be running.
 
 # X-Forwarding with *tmux*
 

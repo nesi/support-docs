@@ -4,8 +4,8 @@ NeSI aims to keep users informed via various communication channels. 
 
 ## Checking and setting your preferences
 
-<span data-slate-node="text">Within
-</span><a href="https://my.nesi.org.nz/account/preference" class="guide-markup">my.nesi.org.nz</a>
+Within
+<a href="https://my.nesi.org.nz/account/preference" class="guide-markup">my.nesi.org.nz</a>
 you can find a summary of the current subscriptions under NeSI
 Notification Preferences. 
 
@@ -18,7 +18,7 @@ Use the 'Manage' button provided to open the externally hosted
 preferences or the checkboxes for the NeSI Project-related
 notifications.
 
-![2022-04-12\_16-46-56.png](mkdocs/includes/images/2022-04-12_16-46-56.png)
+![2022-04-12\_16-46-56.png](img/2022-04-12_16-46-56.png)
 
  
 

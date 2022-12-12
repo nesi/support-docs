@@ -90,9 +90,8 @@ directories:
 > ### Note
 >
 > Parpool will throw a warning when started due to a difference in how
-> time z<dfn class="dictionary-of-numbers">one is specified</dfn>. To
-> fix this, add the following line to your SLURM script:
-> `export TZ="Pacific/Auckland'`
+> time zone is specified. To fix this, add the following line to your
+> SLURM script: `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 

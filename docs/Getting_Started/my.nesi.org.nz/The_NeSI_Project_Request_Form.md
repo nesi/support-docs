@@ -12,7 +12,7 @@ below.
     [https://my.nesi.org.nz](https://my.nesi.org.nz/projects/apply) and
     login. Select "Apply for Access" from the sidebar navigation on the
     left.  
-    ![mceclip1.png](mkdocs/includes/images/mceclip1.png)
+    ![mceclip1.png](img/mceclip1.png)
 2.  Choose from the following items:
     -   **If you are returning to continue work on a draft request** you
         started earlier, choose the link based on the date/time or title

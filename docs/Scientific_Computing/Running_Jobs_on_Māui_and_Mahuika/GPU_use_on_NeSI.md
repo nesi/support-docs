@@ -117,15 +117,17 @@ The CUDA module also provides access to additional command line tools:
 
 <ul>
 <ul>
+
 -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
     to directly monitor GPU resource utilisation,
--   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)to
-    compile CUDA programs,
+-   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
+    to compile CUDA programs,
 -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html) to
     debug CUDA applications.
 
 </ul>
 </ul>
+
 In addition, the [cuDNN](https://developer.nvidia.com/cudnn) (NVIDIA
 CUDA® Deep Neural Network library) library is accessible via its
 dedicated module:
@@ -253,6 +255,7 @@ applications:
 
 <ul>
 <ul>
+
 -   [ABAQUS](https://support.nesi.org.nz/hc/en-gb/articles/212457807-ABAQUS#gpus)
 -   [GROMACS](https://support.nesi.org.nz/hc/en-gb/articles/360000792856-GROMACS#nvidia_gpu_container)
 -   [Lambda
@@ -263,9 +266,11 @@ applications:
 
 </ul>
 </ul>
+
 And programming toolkits:
 
 <ul>
+
 -   [Offloading to GPU with
     OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)
 -   [Offloading to GPU with OpenACC using the Cray

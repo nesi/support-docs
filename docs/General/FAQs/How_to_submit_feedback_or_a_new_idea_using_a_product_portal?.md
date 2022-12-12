@@ -14,7 +14,7 @@ provide feedback on. Each idea/feature on the Portal is represented as a
 Select a card, choose the importance and add let us know why this is
 important to you as well as your email address.
 
-![card\_feedback.gif](mkdocs/includes/images/card_feedback.gif)
+![card\_feedback.gif](img/card_feedback.gif)
 
 When users provide feedback on features/ideas in this way, their
 feedback is routed back to our Insights board.
@@ -27,7 +27,7 @@ You can also submit brand new ideas on the Portal. These will be routed
 to our Insights board as well and reviewed by the product management
 team.
 
-![submit\_idea.gif](mkdocs/includes/images/submit_idea.gif)
+![submit\_idea.gif](img/submit_idea.gif)
 
 ### What happens to the feedback?
 

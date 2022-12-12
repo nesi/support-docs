@@ -6,7 +6,7 @@ Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 Once you've created a token, you should see the 'Manage Two-Factor
 token' option.
 
-![image2018-10-26\_15-36-10.png](mkdocs/includes/images/image2018-10-26_15-36-10.png)
+![image2018-10-26\_15-36-10.png](img/image2018-10-26_15-36-10.png)
 
 ## Delete the Two-Factor token
 
@@ -14,15 +14,15 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](mkdocs/includes/images/mceclip0.png)
+![](img/mceclip0.png)
 
 After 'Delete Token' has been selected:
 
-![](mkdocs/includes/images/mceclip1.png)
+![](img/mceclip1.png)
 
 You will also receive an email confirmation:
 
-![](mkdocs/includes/images/mceclip3.png)
+![](img/mceclip3.png)
 
 ## Related content
 

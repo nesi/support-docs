@@ -1,4 +1,4 @@
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+![mceclip0.png](img/mceclip0.png)
 
 ## Main navigation
 

@@ -6,4 +6,4 @@ please email
 and wait for a member of our support team to confirm your account and
 group membership.
 
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+![mceclip0.png](img/mceclip0.png)

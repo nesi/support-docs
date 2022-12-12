@@ -90,10 +90,6 @@ the GPU):
     time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="odd">
 </tr>

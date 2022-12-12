@@ -4,14 +4,14 @@
     from the list.
 2.  From the green (middle) panel click the links menu and select "More
     Resource Details"  
-    <img src="mkdocs/includes/images/mceclip0.png" alt="mceclip0.png" width="416" height="263" />
+    <img src="img/mceclip0.png" width="416" height="263" alt="mceclip0.png" />
 3.  Click the Plus button icon 'action' next to the compute allocation
     line item   
-    <img src="mkdocs/includes/images/mceclip1.png" alt="mceclip1.png" width="528" height="186" />
+    <img src="img/mceclip1.png" width="528" height="186" alt="mceclip1.png" />
 4.  Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'   
-    <img src="mkdocs/includes/images/mceclip2.png" alt="mceclip2.png" width="636" height="505" />
+    <img src="img/mceclip2.png" width="636" height="505" alt="mceclip2.png" />
 
 ### Can I request any allocation size?
 

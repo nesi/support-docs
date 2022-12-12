@@ -4,55 +4,38 @@ expected in the new version. The full list of bugfixes, improvements and
 changes is available on Schemd  website: [Slurm
 news](https://slurm.schedmd.com/news.html)
 
-<span class="c-mrkdwn__br" data-stringify-type="paragraph-break"></span>
+<span class="c-mrkdwn__br"></span>
 
-<span class="c-mrkdwn__br" data-stringify-type="paragraph-break"></span>
+<span class="c-mrkdwn__br"></span>
 
-<span class="c-mrkdwn__br"
-data-stringify-type="paragraph-break"></span>***squeue***
+<span class="c-mrkdwn__br"></span>***squeue***
 
 -   Added `--me` option, equivalent to` --user=$USER`.
 -   Added "pendingtime" as a option for --Format.
 -   Put sorted start times of "N/A" or 0 at the end of the list.
 
-<span class="c-mrkdwn__br"
-data-stringify-type="paragraph-break"></span>***sacct***
+<span class="c-mrkdwn__br"></span>***sacct***
 
 -   Add time specification: "now-" (i.e. subtract from the present)
 -   AllocGres and ReqGres were removed. Alloc/ReqTres should be used
     instead. 
 
-<span class="c-mrkdwn__br"
-data-stringify-type="paragraph-break"></span>***scontrol***
+<span class="c-mrkdwn__br"></span>***scontrol***
 
 -   MAGNETIC flag on reservations. Reservations the user doesn't have to
     even request.
--   The LicensesUsed line has been removed from<span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span>`scontrol show config`<span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span><span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">.
-    Please use updated</span><span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span>`scontrol show licenses`<span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span><span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">command
-    as an alternative.</span>
+-   The LicensesUsed line has been removed from `scontrol show config` .
+    Please use updated `scontrol show licenses` command as an
+    alternative.
 
-<span class="c-mrkdwn__br"
-data-stringify-type="paragraph-break"></span>***sbatch***  
-<span class="c-mrkdwn__br" data-stringify-type="paragraph-break"></span>
+<span class="c-mrkdwn__br"></span>***sbatch***  
+<span class="c-mrkdwn__br"></span>
 
 -    `--threads-per-core` now influences task layout/binding, not just
     allocation.
--   `--gpus-per-node`<span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span><span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">can
-    be used instead of</span><span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span>`--gres=GPU`
--   `--hint=nomultithread`<span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
-    can now be replaced </span><span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">with</span><span
-    style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> </span>`--threads-per-core=1`
+-   `--gpus-per-node` can be used instead of `--gres=GPU`
+-   `--hint=nomultithread` can now be replaced
+    with `--threads-per-core=1`
 -   The inconsistent terminology and environment variable naming for
     Heterogeneous Job ("HetJob") support has been tidied up.
 -   The correct term for these jobs are "HetJobs", references to
@@ -60,16 +43,14 @@ data-stringify-type="paragraph-break"></span>***sbatch***
 -   The correct term for the separate constituent jobs are
     "components",   references to "packs" have been corrected.
 
-<span class="c-mrkdwn__br"
-data-stringify-type="paragraph-break"></span>**salloc**
+<span class="c-mrkdwn__br"></span>**salloc**
 
 -   Added support for an "Interactive Step", designed to be used with
     salloc to launch a terminal on an allocated compute node
     automatically. Enable by setting "use\_interactive\_step" as part of
     LaunchParameters.
 
-<span class="c-mrkdwn__br"
-data-stringify-type="paragraph-break"></span>***srun***
+<span class="c-mrkdwn__br"></span>***srun***
 
 -    By default, a step started with srun will be granted exclusive (or
     non- overlapping) access to the resources assigned to that step. No
@@ -87,8 +68,7 @@ data-stringify-type="paragraph-break"></span>***srun***
     so no other parallel step will have access to those resources unless
     both steps have specified '--overlap'.
 
-<span class="c-mrkdwn__br"
-data-stringify-type="paragraph-break"></span>***scrontab***
+<span class="c-mrkdwn__br"></span>***scrontab***
 
 -   New command which permits crontab-compatible job scripts to be
     defined. These scripts will recur automatically (at most) on the

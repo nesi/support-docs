@@ -1,4 +1,5 @@
 <header class="site-header">
+
 <nav class="site-nav">
 
  
@@ -6,13 +7,16 @@
 </nav>
 
 </header>
+
 <article class="post">
 <header class="post-header">
+
 # Building code on Māui - the Cray XC Programming Environment
 
  
 
 </header>
+
 -   [The Cray programming environment on the XC50
     platform](#the-cray-programming-environment-on-the-xc50-platform)
     -   [Overview](#overview)

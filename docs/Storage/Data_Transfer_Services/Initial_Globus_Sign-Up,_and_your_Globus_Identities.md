@@ -9,9 +9,9 @@ route to setting up your Globus account is:
 
 #### Log in to https://globus.org using your google identity:
 
-<img src="mkdocs/includes/images/google_first_signup.png" alt="google_first_signup.png" width="402" height="302" />
+<img src="img/google_first_signup.png" width="402" height="302" alt="google_first_signup.png" />
 
-2) Link other Globus identities to your primary identity
+2\) Link other Globus identities to your primary identity
 
 From the Globus docs:
 
@@ -26,7 +26,7 @@ If you have other identities in Globus (for example, a globusID), link
 them  to your Google ID account following the instructions at
 <https://docs.globus.org/how-to/link-to-existing/>:
 
- <img src="mkdocs/includes/images/identities.png" alt="identities.png" width="1382" height="322" />
+ <img src="img/identities.png" width="1382" height="322" alt="identities.png" />
 
  
 

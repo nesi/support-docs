@@ -20,7 +20,7 @@ Nearline Nearline Nearline Nearline
 > only copy.
 >
 > Please **send feedback** about your user experience at
-> <a href="https://support.nesi.org.nz/hc/requests/new" class="uri external-link">https://support.nesi.org.nz/hc/requests/new</a>,
+> <a href="https://support.nesi.org.nz/hc/requests/new" class="external-link">https://support.nesi.org.nz/hc/requests/new</a>,
 > which may include functionality issues, intuitive or counter-intuitive
 > behaviours, behaviours or features that you like, suggestions for
 > improvements, transfers taking too long, etc.
@@ -36,13 +36,13 @@ may be delayed, due to tape handling.
 
 Due to the tape storage backend Nearline is intended for use with
 relatively large files and should not be used for a large number of
-small files. <span style="color: #1d1c1d;">Files smaller than 64 MB will
-not be accepted for upload and should be combined into archive files
-using `nn_archive_files`, `tar` or a similar tool. Likewise, Nearline
-write semantics are different from a normal filesystem - overwriting
-existing files (e.g. when the source data has been updated) is not
-supported, these must first be removed (purged from Nearline) before
-being written (put to Nearline) again.</span>
+small files. Files smaller than 64 MB will not be accepted for upload
+and should be combined into archive files using `nn_archive_files`,
+`tar` or a similar tool. Likewise, Nearline write semantics are
+different from a normal filesystem - overwriting existing files (e.g.
+when the source data has been updated) is not supported, these must
+first be removed (purged from Nearline) before being written (put to
+Nearline) again.
 
 > ### Note
 >
@@ -467,8 +467,6 @@ The output looks like:
 This quota is different from the project quota on GPFS
 (`/nesi/project/<projectID>`).
 
-<span id="directory_mapping"></span>
-
 # Data management
 
 In case you have the same directory structure on your project and
@@ -477,7 +475,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](mkdocs/includes/images/librarian_get_put.jpeg)
+![librarian\_get\_put.jpeg](img/librarian_get_put.jpeg)
 
 # Underlying mechanism
 
@@ -488,12 +486,11 @@ is important to know that **even if you cancel a client process, the
 corresponding backend process remains scheduled or running** until
 finished.
 
-<span class="inline-comment-marker"
-data-ref="78239edd-ceab-49eb-a747-0140db19a948">The process of what data
-goes into tape and when is automated</span>, and is not something you
-will have control over. The service is designed to optimise interaction
-with the Nearline filesystem and avoid problem workloads for the benefit
-of all users.
+<span class="inline-comment-marker">The process of what data goes into
+tape and when is automated</span>, and is not something you will have
+control over. The service is designed to optimise interaction with the
+Nearline filesystem and avoid problem workloads for the benefit of all
+users.
 
 If your files are on tape, it will take time to retrieve them. Access to
 tape readers is on a first come first served basis, and the amount of

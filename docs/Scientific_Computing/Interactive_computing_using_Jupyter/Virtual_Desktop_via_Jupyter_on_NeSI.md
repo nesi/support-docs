@@ -4,16 +4,13 @@ NeSI software stack is supported. If you would like to build your own
 desktop containers with the code
 [here](https://github.com/nesi/nesi-singularity-recipes).
 
-Rendering is d<dfn class="dictionary-of-numbers">one cluster-side</dfn>,
-and compressed before being sent to your local machine. This means any
-rendering should be significantly more responsive than when using
-X<dfn class="dictionary-of-numbers">11 on its own </dfn>(approximately
-<dfn class="dictionary-of-numbers">40 times faster)</dfn>.
+Rendering is done cluster-side, and compressed before being sent to your
+local machine. This means any rendering should be significantly more
+responsive than when using X11 on its own (approximately 40 times
+faster).
 
 The quickest and easiest way to get started with a desktop is through
-Jupyter on NeSI,<span style="font-size: 15px;"> </span>[connect
-here](https://jupyter.nesi.org.nz/)<span
-style="font-size: 15px;">.</span>
+Jupyter on NeSI, [connect here](https://jupyter.nesi.org.nz/).
 
 ## Connecting
 
@@ -42,7 +39,7 @@ desktop.
 
 Recommend setting scaling to 'remote'
 
-<img src="mkdocs/includes/images/fig1.svg" width="426" height="362" />![](mkdocs/includes/images/VirtualScaling.png)
+<img src="img/fig1.svg" width="426" height="362" />![](img/VirtualScaling.png)
 
 > ### Restore Defaults
 >

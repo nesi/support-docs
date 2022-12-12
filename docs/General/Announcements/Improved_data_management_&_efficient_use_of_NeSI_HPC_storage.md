@@ -11,39 +11,22 @@ data science workflows.
 
 ## Upcoming changes to data management processes for project directories
 
-**<span class="underline"><span
-id="a1a537f0-110e-4494-81ec-4a9681856e97" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="a1a537f0-110e-4494-81ec-4a9681856e97">  
+**<span class="underline"><span class="inline-highlight">  
 4-15 October 2021</span></span>**
 
-<span id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">The NeSI project
-filesystem is becoming critically full, however it is currently storing
-a large amount of dormant data that has not been accessed for more than
-12 months. We need your help to free up space on the project filesystem
-as soon as possible. </span><span
-id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">Please review the data
+<span class="inline-highlight">The NeSI project filesystem is becoming
+critically full, however it is currently storing a large amount of
+dormant data that has not been accessed for more than 12 months. We need
+your help to free up space on the project filesystem as soon as
+possible. </span><span class="inline-highlight">Please review the data
 you are currently storing in any  </span>`/nesi/project/`<span
-id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"> directories and **delete
-or relocate** any files that are no longer required for ongoing
-computational and/or analytics work on NeSI.</span>
+class="inline-highlight"> directories and **delete or relocate** any
+files that are no longer required for ongoing computational and/or
+analytics work on NeSI.</span>
 
-<span id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">We have started regular
-audits of data stored in project folders, using the same format as our
-nobackup auto cleaning ([described
+<span class="inline-highlight">We have started regular audits of data
+stored in project folders, using the same format as our nobackup auto
+cleaning ([described
 here](https://support.nesi.org.nz/hc/en-gb/articles/360001162856)). See
 the file
 `/nesi/project/<project_code>/.policy.test/scan485/latest.summary.txt`
@@ -52,20 +35,10 @@ have not been accessed for more than 485 days (this is ~15 months, and
 is the draft auto cleaning timeframe under consideration for the project
 filesystem).</span>
 
-<span id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">If you need assistance
-with this,
-</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">contact Support </span></a><span
-id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">and we’d be happy to help
-or answer questions.</span><span class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"></span>
+<span class="inline-highlight">If you need assistance with this,
+</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span class="inline-highlight">contact Support </span></a><span
+class="inline-highlight">and we’d be happy to help or answer
+questions.</span><span class="inline-highlight"></span>
 
 If you have data that may be used again on NeSI later,
 <a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new">let us know</a>
@@ -84,52 +57,34 @@ are inactive / untouched for more than 12 months. 
 
 A selection of active projects will be invited to participate in this
 first phase of the programme. If you would like to volunteer to be an
-early tester / participant, please <span
-id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">
-</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af">contact Support</span></a>.
+early tester / participant, please <span class="inline-highlight">
+</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span class="inline-highlight">contact Support</span></a>.
 Otherwise, we will be in touch with projects directly to onboard them.
 
 Insights from this initial phase will inform the criteria and processes
 of the programme prior to it being released to the broader user
 community.
 
-<span id="3710db4f-8652-4386-845a-7ffe2b4a7960" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="3710db4f-8652-4386-845a-7ffe2b4a7960">Alongside this work, we
-will also adopt a new policy on how long inactive data may be stored on
-NeSI systems, particularly once a research project itself becomes
-inactive.</span>
+<span class="inline-highlight">Alongside this work, we will also adopt a
+new policy on how long inactive data may be stored on NeSI systems,
+particularly once a research project itself becomes inactive.</span>
 
  
 
-**<span class="underline"><span
-id="4fb7b80b-c0d5-4347-8013-9e253da33947" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="4fb7b80b-c0d5-4347-8013-9e253da33947">January
+**<span class="underline"><span class="inline-highlight">January
 2022</span></span>**
 
 Starting in January 2022, we will expand the<span
-id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"> </span>`/nesi/project/`<span
-id="865dfa52-8d33-4a95-86b1-fcfae6f336af" class="inline-highlight"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="865dfa52-8d33-4a95-86b1-fcfae6f336af"> directory </span> data
-management programme to include all active projects on NeSI. Additional
-Support documentation and user information sessions will be hosted prior
-to wider implementation, to provide advance notice of the change and to
-answer any questions you may have around data lifecycle management. 
+class="inline-highlight"> </span>`/nesi/project/`<span
+class="inline-highlight"> directory </span> data management programme to
+include all active projects on NeSI. Additional Support documentation
+and user information sessions will be hosted prior to wider
+implementation, to provide advance notice of the change and to answer
+any questions you may have around data lifecycle management. 
 
  
 
-## <span id="702d765e-b997-426f-99cb-22eb71272264" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="702d765e-b997-426f-99cb-22eb71272264">Frequently asked questions</span>
+## Frequently asked questions
 
 **1) Why are you introducing these new data management processes?  
 **We want to avoid our online filesystems reaching critically full

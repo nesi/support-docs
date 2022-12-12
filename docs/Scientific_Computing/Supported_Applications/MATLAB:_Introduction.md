@@ -52,7 +52,7 @@ To start the command line version of MATLAB run:
 This will function identically to the Command Window in the desktop
 version of MATLAB.
 
-## ![](mkdocs/includes/images/mceclip0.png)
+## ![](img/mceclip0.png)
 
 Enter 'quit' to leave the MATLAB session or ctrl + z to kill it.
 
@@ -78,7 +78,7 @@ line-breaks.
 
 Will give the output
 
-![](mkdocs/includes/images/mceclip0.png)
+![](img/mceclip0.png)
 
 then exit.
 

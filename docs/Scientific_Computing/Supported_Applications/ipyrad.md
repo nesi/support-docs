@@ -39,7 +39,7 @@ set.
 and edit the paths in parameter file to match the destinations of input
 data, barcode paths,etc. 
 
-## <span id="Job_Script_for_Using_Multiple_Cores_on_a_Single_Compute_Node" class="mw-headline">Slurm Script for Using Multiple CPUs a Single Compute Node</span>
+## <span class="mw-headline">Slurm Script for Using Multiple CPUs a Single Compute Node</span>
 
     #!/bin/bash
 

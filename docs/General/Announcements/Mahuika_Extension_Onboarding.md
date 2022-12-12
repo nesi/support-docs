@@ -18,17 +18,13 @@ are allowing early access to help us identify any issues with:
 
     -   comparing performance to the old nodes
 
-<span id="9713733c-843a-4b40-8f2b-a0b5b7095aa1"
-data-renderer-mark="true" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">If you’d like to
-participate as tester / early access user for the new Mahuika CPU nodes
-you are welcome to try them out. If you want access to our temporary
-testing project to run jobs or benchmarks free of charge, refer to the
-[Temporary Project
+If you’d like to participate as tester / early access user for the new
+Mahuika CPU nodes you are welcome to try them out. If you want access to
+our temporary testing project to run jobs or benchmarks free of charge,
+refer to the [Temporary Project
 section](https://support.nesi.org.nz/hc/en-gb/articles/5002335382543-Mahuika-Extension-Onboarding#temporary_project)
 below and
-</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span id="9713733c-843a-4b40-8f2b-a0b5b7095aa1" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="9713733c-843a-4b40-8f2b-a0b5b7095aa1">reach out to NeSI Support</span></a>. 
+<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="css-tgpl01" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span>reach out to NeSI Support</span></a>. 
 
 ## *Important notes*
 
@@ -72,10 +68,8 @@ one level 3 cache, so each node has a total of **128 cores** or 256
 hyperthreaded CPUs.  This represents a significant increase of the
 number CPUs per node compared to the Broadwell nodes (36 cores). 
 
-<span
-style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">The
-memory available to Slurm jobs is 460 GB per node, so approximately 1800
-MB per CPU.  </span>
+The memory available to Slurm jobs is 460 GB per node, so approximately
+1800 MB per CPU.  
 
 Only 30 nodes are available so far, but that number will eventually
 increase to 64, 8 of which will have double the memory.

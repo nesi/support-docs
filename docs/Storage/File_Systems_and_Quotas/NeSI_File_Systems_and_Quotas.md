@@ -12,7 +12,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="mkdocs/includes/images/neSI_filetree.svg" alt="neSI_filetree.svg" width="629" height="578" />
+## <img src="img/neSI_filetree.svg" width="629" height="578" alt="neSI_filetree.svg" />
 
 # File System Specifications
 
@@ -20,45 +20,55 @@ and cached between updates.
 <tbody>
 <tr>
 <td style="width: 84.1875px;">
+
 **Filesystem**
 
 </td>
 <td style="width: 119px;">
+
 **/home**
 
 </td>
 <td style="width: 135px;">
+
 **/nesi/project**
 
 </td>
 <td style="width: 188px;">
+
 **/nesi/nobackup**
 
 </td>
 <td style="width: 116.09375px;">
+
 **/nesi/nearline** (in Early Access phase)
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Default disk space  
 **
 
 </td>
 <td style="width: 119px;">
+
  
 
 </td>
 <td style="width: 135px;">
+
  
 
 </td>
 <td style="width: 188px;">
+
  
 
 </td>
 <td style="width: 116.09375px;" rowspan="3">
+
 No default; allocations are based on eligibility and technical
 requirements  
   
@@ -67,59 +77,72 @@ requirements
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **    - soft quota**
 
 </td>
 <td style="width: 119px;">
+
 20 GB
 
 </td>
 <td style="width: 135px;">
+
 100 GB  
 
 </td>
 <td style="width: 188px;">
+
 10 TB
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **    - hard quota**
 
 </td>
 <td style="width: 119px;">
+
  
 
 </td>
 <td style="width: 135px;">
+
 110 GB
 
 </td>
 <td style="width: 188px;">
+
 12 TB
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Default file count (inode)  
 **
 
 </td>
 <td style="width: 119px;">
+
  
 
 </td>
 <td style="width: 135px;">
+
  
 
 </td>
 <td style="width: 188px;">
+
  
 
 </td>
 <td style="width: 116.09375px;" rowspan="3">
+
 No default; allocations are based on eligibility and technical
 requirements  
   
@@ -128,59 +151,72 @@ requirements
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **    - soft quota**
 
 </td>
 <td style="width: 119px;">
+
 1,000,000 files
 
 </td>
 <td style="width: 135px;">
+
 100,000 files
 
 </td>
 <td style="width: 188px;">
+
 1,000,000 files
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **    - hard quota**
 
 </td>
 <td style="width: 119px;">
+
 1,100,000 files
 
 </td>
 <td style="width: 135px;">
+
 110,000 files
 
 </td>
 <td style="width: 188px;">
+
 1,100,000 files
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Intended use**
 
 </td>
 <td style="width: 119px;">
+
 User-specific files such as configuration files, environment setup,
 source code, etc.
 
 </td>
 <td style="width: 135px;">
+
 Persistent project-related data, project-related software, etc.
 
 </td>
 <td style="width: 188px;">
+
 Data created or used by compute jobs that is intended to be temporary
 
 </td>
 <td style="width: 116.09375px;">
+
 Medium- to long-term storage of research data associated with past,
 present or planned compute projects
 
@@ -188,41 +224,50 @@ present or planned compute projects
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Total capacity**
 
 </td>
 <td style="width: 119px;">
+
 175 TB
 
 </td>
 <td style="width: 135px;">
+
 1,590 TB
 
 </td>
 <td style="width: 188px;">
+
 4,400 TB
 
 </td>
 <td style="width: 116.09375px;">
+
 Will grow as tapes are purchased
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Data retention time**
 
 </td>
 <td style="width: 119px;">
+
 180 days after the user ceases to be a member of any active project
 
 </td>
 <td style="width: 135px;">
+
 90 days after the end of the project's last HPC Compute & Analytics
 allocation
 
 </td>
 <td style="width: 188px;">
+
 With certain exceptions, individual files will be deleted after being
 untouched for 120 days. See [Automatic cleaning of nobackup file
 system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856) for
@@ -232,29 +277,35 @@ deletion.
 
 </td>
 <td style="width: 116.09375px;">
+
 180 days after the end of the project's last nearline storage allocation
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Data backup schedule  
 (Excluding snapsots)**
 
 </td>
 <td style="width: 119px;">
+
 Daily, last 10 versions of any given file retained for up to 90 days.
 
 </td>
 <td style="width: 135px;">
+
 Daily, last 10 versions of any given file retained for up to 90 days.
 
 </td>
 <td style="width: 188px;">
+
 None
 
 </td>
 <td style="width: 116.09375px;">
+
 Replication  between Wellington and Auckland tape libraries (under
 development)
 
@@ -262,77 +313,93 @@ development)
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Snapshots**
 
 </td>
 <td style="width: 119px;">
+
 Daily (retention period 7 days)
 
 </td>
 <td style="width: 135px;">
+
 Daily (retention period 7 days)
 
 </td>
 <td style="width: 188px;">
+
 None
 
 </td>
 <td style="width: 116.09375px;">
+
 None
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Access speed**
 
 </td>
 <td style="width: 119px;">
+
 Moderate
 
 </td>
 <td style="width: 135px;">
+
 Moderate
 
 </td>
 <td style="width: 188px;">
+
 Fast
 
 </td>
 <td style="width: 116.09375px;">
+
 Slow
 
 </td>
 </tr>
 <tr>
 <td style="width: 84.1875px;">
+
 **Access interfaces**
 
 </td>
 <td style="width: 119px;">
+
 -   Native Spectrum Scale mounts
 -   SCP
 -   Globus data transfer
 
 </td>
 <td style="width: 135px;">
+
 -   Native Spectrum Scale mounts
 -   SCP
 
 </td>
 <td style="width: 188px;">
+
 -   Native Spectrum Scale mounts
 -   SCP
 -   Globus data transfer
 
 </td>
 <td style="width: 116.09375px;">
+
 Nearline commands
 
 </td>
 </tr>
 </tbody>
 </table>
+
 ### **Soft versus hard quotas**
 
 We use Spectrum Scale soft and hard quotas for both disk space and
@@ -423,10 +490,9 @@ process](https://support.nesi.org.nz/hc/en-gb/articles/360000202136), or
 [contact our support team](https://support.nesi.org.nz/hc/requests/new)
 at any time.
 
-<span class="wysiwyg-color-black">To ensure this file system remains
-fit-for-purpose, we are rolling out a regular cleaning policy as
-described in [Automatic cleaning of nobackup
-filesystem](https://support.nesi.org.nz/hc/en-gb/articles/360001162856).</span>
+To ensure this file system remains fit-for-purpose, we are rolling out a
+regular cleaning policy as described in [Automatic cleaning of nobackup
+filesystem](https://support.nesi.org.nz/hc/en-gb/articles/360001162856).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive

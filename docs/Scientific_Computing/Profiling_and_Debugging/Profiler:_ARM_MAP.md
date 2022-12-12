@@ -14,11 +14,10 @@ Profiling tools help you understand how much resources are consumed
 during run time. This can be time, memory, or MPI communication. One
 main goal is to understand in which parts of your code most time is
 spent. Depending on the profiler and the applied methods, profiles can
-be gathered on basis of<span class="wysiwyg-color-black"> functions,
-loops within functions, or source code lines. </span>Profiling
-information is important for optimising code, as it enables you to focus
-your efforts on improving the parts of the code that will result in the
-biggest gains in performance.
+be gathered on basis of functions, loops within functions, or source
+code lines. Profiling information is important for optimising code, as
+it enables you to focus your efforts on improving the parts of the code
+that will result in the biggest gains in performance.
 
 # Profiling test cases
 
@@ -42,26 +41,24 @@ MAP can be launched with a graphical user interface (GUI Launch) or
 without GUI (Express Launch). With the GUI the user specifies all the
 parameters including executables, options and parallelisation parameters
 in a guided form, while with the Express Launch a pre-existing script is
-modified. <span class="wysiwyg-color-black">The “Express Launch”, is
-preferable especially for jobs in complex scripts and workflows.</span>
+modified. The “Express Launch”, is preferable especially for jobs in
+complex scripts and workflows.
 
-<span class="wysiwyg-color-black">In either case, the analysis of the
-profiling data will be undertaken in the MAP GUI. This conveniently
-provides access to different metrics and allows</span> <span
-class="wysiwyg-color-black">the user to navigate through different
-levels of details, browsing through the code, and focusing on specific
-functions, loops and source code lines.  See section [MAP
-profile](#map-profile) below.</span>
+In either case, the analysis of the profiling data will be undertaken in
+the MAP GUI. This conveniently provides access to different metrics and
+allows the user to navigate through different levels of details,
+browsing through the code, and focusing on specific functions, loops and
+source code lines.  See section [MAP profile](#map-profile) below.
 
-<span class="wysiwyg-color-black">There is also an [Arm Forge
+There is also an [Arm Forge
 Client](https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge)
 you can download to your local machine. Therewith you can browse through
 your downloaded profiling data or even start your profiling/debug tasks
-from remote (not described in detail here).</span>
+from remote (not described in detail here).
 
-<span class="wysiwyg-color-black">**Note:** If you want to use the GUI
-on the NeSI systems, please remember to start your ssh session using X11
-forwarding (e.g. using the `ssh -Y` option).</span>
+**Note:** If you want to use the GUI on the NeSI systems, please
+remember to start your ssh session using X11 forwarding (e.g. using the
+`ssh -Y` option).
 
 # MAP “Express Launch”
 
@@ -87,11 +84,11 @@ The GUI can be started after loading `module load forge` and launching
     map
 
 [![Arm MAP
-main](mkdocs/includes/images/ARM_MAP_main.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)
+main](img/ARM_MAP_main.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)
 
 Click on “PROFILE”.
 
-![MAP\_profile\_python.PNG](mkdocs/includes/images/MAP_profile_python.PNG)
+![MAP\_profile\_python.PNG](img/MAP_profile_python.PNG)
 
 In the profile menu we need to specify the *executable/application* (in
 this case `python`), the arguments (here `scatter.py` and any additional
@@ -112,7 +109,7 @@ profile information.
 By default the profile window is divided into the following three main
 sections (click on picture to enlarge).
 
-[![example-map-scatter](mkdocs/includes/images/ARM_MAP_scatter_mpi.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)
+[![example-map-scatter](img/ARM_MAP_scatter_mpi.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)
 
 On top, various metrics can be selected in the “Metrics” menu. In the
 middle part, a source code navigator connects line by line source code
@@ -136,7 +133,7 @@ using the *Metrics* Menu*.*
 As an example, “CPU instructions” presents the usage of different
 instruction sets during the program run time.
 
-[![example-map-scatter\_CPU](mkdocs/includes/images/ARM_MAP_scatter_mpi_CPU.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png)
+[![example-map-scatter\_CPU](img/ARM_MAP_scatter_mpi_CPU.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png)
 
 The lower part can also be used to check the *application output* or
 show statistics on basis of *files* or *functions*.

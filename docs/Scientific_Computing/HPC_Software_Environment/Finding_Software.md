@@ -7,13 +7,10 @@ Using the `module` command you can:
 
 -   View loaded modules:
         module list
-
 -   List all available modules
         module avail
-
 -   Load a module:
         module load Python/2.7.14-gimkl-2017a
-
 -   Switch out a loaded module for a different version:
         module switch Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
 
@@ -28,20 +25,15 @@ place of `module`. With Lmod you can:
 
 -   View loaded modules:
         ml
-
 -   List all available modules:
         ml spider
-
 -   Use “spider” to search for modules, e.g. “Python” modules:
         ml spider Python
-
 -   Load a module:
         ml Python/2.7.14-gimkl-2017a
-
 -   Prefix a module with “-“ to unload it, e.g. switch from Python 2 to
     Python 3:
         ml -Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
-
 -   To get a fresh environment, we recommend that you log out and log in
     again. By logging out and logging in again you will revert to not
     only the default set of modules, but also the default set of

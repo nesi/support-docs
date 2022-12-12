@@ -1,13 +1,10 @@
-<span style="font-weight: 400;">Many scientific software applications
-are writ<dfn class="dictionary-of-numbers">ten to take advantage
-</dfn>of multiple CPUs in some way. But
-of<dfn class="dictionary-of-numbers">ten this must be </dfn>specifically
-requested by the user at the time they run the program, rather than
-happening automatically.</span><span style="font-weight: 400;">  
-</span>
+Many scientific software applications are written to take advantage of
+multiple CPUs in some way. But often this must be specifically requested
+by the user at the time they run the program, rather than happening
+automatically.  
 
-The are <dfn class="dictionary-of-numbers">three types of parallel
-</dfn>execution we will cover are [Multi-Threading(oMP)](#t_multi),
+The are three types of parallel execution we will cover
+are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
 
 > ### Note
@@ -16,9 +13,7 @@ The are <dfn class="dictionary-of-numbers">three types of parallel
 > *logical* CPU's = **1** *physical* core).  
 >
 > -   `--cpus-per-task=4` will give you 4 *logical* cores.
-> -   `--mem-per-cpu=512MB` will give
->     <dfn class="dictionary-of-numbers">512 MB of
->     RAM</dfn> per *logical* core.
+> -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
 > -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
 >     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
 >     logical cores.
@@ -29,19 +24,17 @@ for more information.
 
 # Multi-threading
 
-<span style="font-weight: 400;">Multi-threading is a method of
-parallelisation whereby the initial single thread of a process forks
-into a number of parallel threads, generally *via* a library such as
-OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or
-pthread (PO<dfn class="dictionary-of-numbers">SIX threads)</dfn>.</span>
+Multi-threading is a method of parallelisation whereby the initial
+single thread of a process forks into a number of parallel threads,
+generally *via* a library such as OpenMP (Open MultiProcessing), TBB
+(Threading Building Blocks), or pthread (POSIX threads).
 
-<img src="mkdocs/includes/images/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
-*Fig. 1: In a serial operation, tasks complete
-<dfn class="dictionary-of-numbers">one after another</dfn>.*
+<img src="img/serial.png" class="figure-img" alt="Diagram showing serial operations." />  
+*Fig. 1: In a serial operation, tasks complete one after another.*
 
 ####  
 
-<img src="mkdocs/includes/images/par.png" alt="par.png" width="714" height="160" />*  
+<img src="img/par.png" width="714" height="160" alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 
@@ -67,14 +60,12 @@ The expected output being
 
 # MPI
 
-MPI stands for *Message Passing Interface*, and <span
-style="font-weight: 400;">is a communication protocol used to achieve
-distributed parallel computation.</span>
+MPI stands for *Message Passing Interface*, and is a communication
+protocol used to achieve distributed parallel computation.
 
-<span style="font-weight: 400;">Similar in some ways to multi-threading,
-MPI does not have the limitation of requiring shared memory and thus can
-be used across multiple nodes, but has higher communication and memory
-overheads.</span>
+Similar in some ways to multi-threading, MPI does not have the
+limitation of requiring shared memory and thus can be used across
+multiple nodes, but has higher communication and memory overheads.
 
 For MPI jobs you need to set `--ntasks` to a value larger than 1, or if
 you want all nodes to run the same number of tasks, set
@@ -112,8 +103,7 @@ The expected output being
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
 executed in any order and don't have to run at the same time. This kind
-of work is often described as<dfn class="dictionary-of-numbers">
-</dfn>*embarrassingly parallel*.  
+of work is often described as *embarrassingly parallel*.  
 An embarrassingly parallel problem is one that requires no communication
 or dependency between the tasks (unlike distributed computing problems
 that need communication between tasks).
@@ -134,8 +124,7 @@ For example, the following code:
     echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
 will submit,  `ArrayJob_1` and `ArrayJob_2`, which will return the
-results <samp class="nohighlight">This is result 1</samp> and
-<samp class="nohighlight">This is result 2</samp> respectively.
+results `This is result 1` and `This is result 2` respectively.
 
 ## Using SLURM\_ARRAY\_TASK\_ID
 
@@ -144,6 +133,7 @@ recommended method of variation between the jobs. For example:
 
 <ul>
 <ul>
+
 -   As a direct input to a function.  
 
         matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
@@ -168,9 +158,10 @@ recommended method of variation between the jobs. For example:
             task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
             rng(task_id)
 
-    \*  
+    *  
     Using a seed is important, otherwise multiple jobs may receive the
     same pseudo-random numbers.*
+
 -   As an index to an array of filenames. 
 
         files=( inputs/*.dat )
@@ -182,6 +173,7 @@ recommended method of variation between the jobs. For example:
 
 </ul>
 </ul>
+
 Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.

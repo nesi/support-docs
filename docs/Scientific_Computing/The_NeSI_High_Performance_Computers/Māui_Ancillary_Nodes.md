@@ -30,10 +30,6 @@ and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.
 ## Ancillary Node Specifications
 
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="odd">
 </tr>
