@@ -6,15 +6,14 @@ and `salloc`, both of which use most of the same options available to
 `sbatch` (see [our Slurm Reference
 Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)). 
 
-> ### Warning {#salloc-time}
+> ### Warning
 >
 > An interactive session will, once it starts, use the entire requested
 > block of CPU time and other resources unless earlier exited from, even
-> if unused. To avoid unnecessary charges to your project, don\'t forget
+> if unused. To avoid unnecessary charges to your project, don't forget
 > to exit an interactive session once finished.
 
-Using \'srun \--pty bash\'
---------------------------
+## Using 'srun --pty bash'
 
 `srun` will add your resource request to the queue. When the allocation
 starts, a new bash session will start up on **one of the granted
@@ -39,8 +38,7 @@ Note the host name in the prompt has changed to the compute node
 For a full description of `srun` and its options, see
 [here](https://slurm.schedmd.com/srun.html).
 
-Using \'salloc\'
-----------------
+## Using 'salloc'
 
 `salloc` functions similarly `srun --pty bash` in that it will add your
 resource request to the queue. However the allocation starts, a new bash
@@ -76,10 +74,10 @@ not available. You can request a start time using the `--begin` flag.
 
 The `--begin` flag takes either absolute or relative times as values.
 
-> ### Warning {#timezone}
+> ### Warning
 >
 > If you specify absolute dates and/or times, Slurm will interpret those
-> according to your environment\'s current time zone. Ensure that you
+> according to your environment's current time zone. Ensure that you
 > know what time zone your environment is using, for example by running
 > `date` in the same terminal session.
 
@@ -102,41 +100,39 @@ soon as possible.
 
 ### While you wait
 
-It\'s quite common to have to wait for some time before your interactive
+It's quite common to have to wait for some time before your interactive
 session starts, even if you specified, expressly or by implication, that
 the job is to start as soon as possible.
 
-While you\'re waiting, you will not have use of that shell prompt. **Do
+While you're waiting, you will not have use of that shell prompt. **Do
 not use `Ctrl`-`C` to get the prompt back, as doing so will cancel the
 job.** If you need a shell prompt, detach your `tmux` or `screen`
 session, or switch to (or open) another terminal session to the same
-cluster\'s login node.
+cluster's login node.
 
 In the same way, before logging out (for example, if you choose to shut
 down your workstation at the end of the working day), be sure to detach
 the `tmux` or `screen` session. In fact, we recommend detaching whenever
 you leave your workstation unattended for a while, in case your computer
 turns off or goes to sleep or its connection to the internet is
-disrupted while you\'re away.
+disrupted while you're away.
 
  
 
-Setting up a detachable terminal
---------------------------------
+## Setting up a detachable terminal
 
-> ### Warning {#detach-warning}
+> ### Warning
 >
-> If you don\'t request your interactive session from within a
-> detachable terminal, any interruption to the controlling terminal, for
-> example by your computer going to sleep or losing its connection to
-> the internet, will permanently cancel that interactive session and
-> remove it from the queue, whether it has started or not.
+> If you don't request your interactive session from within a detachable
+> terminal, any interruption to the controlling terminal, for example by
+> your computer going to sleep or losing its connection to the internet,
+> will permanently cancel that interactive session and remove it from
+> the queue, whether it has started or not.
 
 1.  Log in to a Mahuika, Māui or Māui-ancil login node.
 2.  Start up `tmux` or `screen`.
 
-Modifying an existing interactive session
------------------------------------------
+## Modifying an existing interactive session
 
 Whether your interactive session is already running or is still waiting
 in the queue, you can make a range of changes to it using the `scontrol`
@@ -146,18 +142,18 @@ the memory request. But many other changes are allowed.
 
 ### Postponing the start of an interactive job
 
-Suppose you submitted an interactive job just after lunch, and it\'s
-already 4 p.m. and you\'re leaving in an hour. You decide that even if
-the job starts now, you won\'t have time to do everything you need to do
+Suppose you submitted an interactive job just after lunch, and it's
+already 4 p.m. and you're leaving in an hour. You decide that even if
+the job starts now, you won't have time to do everything you need to do
 before the office shuts and you have to leave. Even worse, the job might
-start at 11 p.m. after you\'ve gone to bed, and you\'ll get to work at
+start at 11 p.m. after you've gone to bed, and you'll get to work at
 9:00 the next morning and find that it has wasted ten wall-hours of
 time.
 
 Slurm offers an easy solution: Identify the job, and use `scontrol` to
 postpone its start time.
 
-> ### Note {#multicluster-scontrol}
+> ### Note
 >
 > Job IDs are unique to each cluster but not across the whole of NeSI.
 > Therefore, `scontrol` must be run on a node belonging to the cluster
@@ -173,15 +169,15 @@ until (at the earliest) 9:30 a.m. on Monday:
 
     scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
 
-> ### Warning {#tomorrow}
+> ### Warning
 >
-> Don\'t just set `StartTime=tomorrow` with no time specification unless
+> Don't just set `StartTime=tomorrow` with no time specification unless
 > you like the idea of your interactive session starting at midnight or
 > in the wee small hours of the morning.
 
 ### Bringing forward the start of an interactive job
 
-In the same way, you can use scontrol to set a job\'s start time to
+In the same way, you can use scontrol to set a job's start time to
 earlier than its current value. A likely application is to allow a job
 to start immediately even though it stood postponed to a later time:
 
@@ -193,8 +189,7 @@ There are many other changes you can make by means of `scontrol`. For
 further information, please see [the `scontrol`
 documentation](https://slurm.schedmd.com/scontrol.html) (off site).
 
-Modifying multiple interactive sessions at once
------------------------------------------------
+## Modifying multiple interactive sessions at once
 
 In the same way, if you have several interactive sessions waiting to
 start on the same cluster, you might want to postpone them all using a
@@ -202,8 +197,8 @@ single command. To do so, you will first need to identify them, hence
 the earlier suggestion to something specific to interactive jobs in the
 job name.
 
-For example, if all your interactive job names start with the text
-\"IJ\", you could do this:
+For example, if all your interactive job names start with the text "IJ",
+you could do this:
 
     # -u $(whoami) restricts the search to my jobs only.
     # The --states=PD option restricts the search to pending jobs only.
@@ -215,12 +210,12 @@ For example, if all your interactive job names start with the text
     squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ"
 
 The above command will return a list of your jobs whose names *start*
-with the text \"IJ\". In this respect, it\'s more flexible than the `-n`
+with the text "IJ". In this respect, it's more flexible than the `-n`
 option to `squeue`, which requires the entire job name string in order
 to identify a match.
 
 In order to use `scontrol`, we need to throw away all of the line except
-for the job ID, so let\'s use `awk` to do this, and send the output to
+for the job ID, so let's use `awk` to do this, and send the output to
 `scontrol` via `xargs`:
 
     squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
@@ -249,8 +244,7 @@ following:
     have two cron jobs, one that runs on Mondays to Thursdays, and a
     different cron job running on Fridays.
 
-Cancelling an interactive session
----------------------------------
+## Cancelling an interactive session
 
 You can cancel a pending interactive session by attaching the relevant
 session, putting the job in the foreground (if necessary) and pressing

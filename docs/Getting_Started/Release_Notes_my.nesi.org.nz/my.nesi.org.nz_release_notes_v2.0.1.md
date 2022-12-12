@@ -1,8 +1,6 @@
-Release Update - 28. April 2021 {#ReleaseNotes-ReleaseUpdate-11.July2019}
--------------------------------
+## Release Update - 28. April 2021
 
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved
 
 -   An updated web application is introducing a
     [navigation](https://support.nesi.org.nz/hc/en-gb/articles/360003592875)
@@ -17,19 +15,16 @@ New and Improved {#ReleaseNotes-NewandImproved}
 
 -   Replaced backend to support future features
 
-Fixes {#ReleaseNotes-Fixes}
------
+## Fixes
 
-Fixed: Email address validation supports \'modern\' domains when
+Fixed: Email address validation supports 'modern' domains when
 requesting a virtual home account.
 
  
 
-Release Update - 18. May 2021 {#ReleaseNotes-ReleaseUpdate-11.July2019}
------------------------------
+## Release Update - 18. May 2021
 
-Fixes {#ReleaseNotes-Fixes}
------
+## Fixes
 
 Fixed: Email address validation allows uppercase characters to be
 entered by user when requesting a virtual home account.

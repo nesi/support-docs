@@ -1,5 +1,4 @@
-Introduction
-============
+# Introduction
 
 [Lambda
 Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
@@ -27,8 +26,7 @@ In the filenames above, the dates correspond to the date the image was
 built and the file with *-latest* will correspond to the most recent
 version.
 
-Building the Singularity image (optional)
-=========================================
+# Building the Singularity image (optional)
 
 This step is optional; if you choose to use the prebuilt Singularity
 images under */opt/nesi/containers/lambda-stack/* you can skip this
@@ -36,13 +34,13 @@ step.
 
 Note that Singularity images are immutable, so the versions of packages
 in the image are a snapshot of the available versions from when the
-image was built. If you need more recent versions of packages, you
-can\'t just update them within the image, instead you must build a new
+image was built. If you need more recent versions of packages, you can't
+just update them within the image, instead you must build a new
 Singularity image with the required versions.
 
 Official
 [Dockerfiles](https://github.com/lambdal/lambda-stack-dockerfiles/) are
-provided for Lambda Stack but Docker can\'t be used on NeSI for security
+provided for Lambda Stack but Docker can't be used on NeSI for security
 reasons, hence the need to create a Singularity image. Both Docker and
 Singularity require root access to build images (but Singularity does
 not require root to run them), so you will need to build the images
@@ -66,9 +64,9 @@ installed first and then follow the steps below.
     sudo singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
 
 Note that the Docker build will require a lot of disk space during the
-build (\~40GB) and the final image will be \~14GB. The Singularity image
-will be \~5GB and will also require a lot of space during the build. If
-you don\'t have enough space in */tmp* for the Singularity build you
+build (~40GB) and the final image will be ~14GB. The Singularity image
+will be ~5GB and will also require a lot of space during the build. If
+you don't have enough space in */tmp* for the Singularity build you
 could try running the following script (updating paths first) as root
 (e.g. using *sudo*):
 
@@ -79,8 +77,7 @@ could try running the following script (updating paths first) as root
 
  
 
-Lambda Stack via Slurm
-======================
+# Lambda Stack via Slurm
 
 The following Slurm script can be used as a template for running jobs
 using Lambda Stack.
@@ -106,11 +103,10 @@ using Lambda Stack.
     # run a command in the container
     ${SINGULARITY} echo "Hello World"
 
-Lambda Stack via Jupyter
-========================
+# Lambda Stack via Jupyter
 
 The following steps will create a custom Lambda Stack kernel that can be
-accessed via NeSI\'s Jupyter service (based on the instructions
+accessed via NeSI's Jupyter service (based on the instructions
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360001555615-Jupyter-on-NeSI#adding_a_custom_python_kernel)).
 
 First, we need to create a kernel definition and wrapper that will
@@ -162,7 +158,7 @@ Make the wrapper script executable:
 
 Next, edit the *kernel.json* to change the first element of the argv
 list to point to the wrapper script we just created. The file should
-look like this (change \<username\> to your NeSI username):
+look like this (change &lt;username&gt; to your NeSI username):
 
     {
     "argv": [
@@ -177,11 +173,10 @@ look like this (change \<username\> to your NeSI username):
     }
 
 After refreshing the [NeSI JupyterLab](https://jupyter.nesi.org.nz/)
-your Lambda Stack Python kernel should show up as \"Lambda Stack Python
-3\".
+your Lambda Stack Python kernel should show up as "Lambda Stack Python
+3".
 
-Example: running Transformers benchmarks
-========================================
+# Example: running Transformers benchmarks
 
 Here we give an example showing using Lambda Stack to run the
 [Transformers](https://huggingface.co/transformers/) library benchmarks.
@@ -205,8 +200,8 @@ install transformers into it:
     singularity exec -B $PWD $SIF bash
 
 After executing the above command your prompt should have changed to
-*Singularity\>*, the following commands are all executed at this prompt
-(i.e. within the container):
+*Singularity&gt;*, the following commands are all executed at this
+prompt (i.e. within the container):
 
     virtualenv --system-site-packages transenv
     source transenv/bin/activate
@@ -215,7 +210,7 @@ After executing the above command your prompt should have changed to
     # exit the Singularity container bash prompt
     exit
 
-Note we used *\--system-site-packages* so that we can use the Lambda
+Note we used *--system-site-packages* so that we can use the Lambda
 Stack installed TensorFlow, PyTorch, etc., instead of installing them
 separately.
 

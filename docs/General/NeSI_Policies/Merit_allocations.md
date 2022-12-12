@@ -1,7 +1,7 @@
 This is the highest award given for use of NeSI services. A Merit
 allocation is intended for highly skilled research teams carrying out
 high quality research funded via a peer review process that supports the
-[New Zealand Government\'s Science
+[New Zealand Government's Science
 Goals](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/).
 Merit allocations may be made for the HPC Compute & Analytics and
 Consultancy services.
@@ -11,7 +11,7 @@ must meet the following criteria:
 
 -   The underpinning research programme (that requires access to NeSI
     HPC services to achieve the objectives of the research) must support
-    the [Government's Science
+    the [Government’s Science
     Goals](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/).
 -   To demonstrate research quality and alignment with national research
     priorities, the research funding must have come from a

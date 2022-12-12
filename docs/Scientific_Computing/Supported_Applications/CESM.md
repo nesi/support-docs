@@ -1,21 +1,18 @@
-CESM
-====
+# CESM
 
 The Community Earth System Model (CESM) is a coupled climate model for
-simulating Earth's climate system. Composed of separate models
-simultaneously simulating the Earth's atmosphere, ocean, land, river
+simulating Earth’s climate system. Composed of separate models
+simultaneously simulating the Earth’s atmosphere, ocean, land, river
 run-off, land-ice, and sea-ice, plus one central coupler/moderator
 component, CESM allows researchers to conduct fundamental research into
-the Earth's past, present, and future climate states.
+the Earth’s past, present, and future climate states.
 
-Building CESM2 on Māui {#building-cesm2-on-maui}
-======================
+# Building CESM2 on Māui
 
 Here we provide a guide for downloading, building and running a CESM
 test case yourself on Māui This guide is based on CESM 2.1.
 
-Prerequisites
--------------
+## Prerequisites
 
 Git Large File Storage seems to be required to download some of the CESM
 components. Download the Git-LFS archive from
@@ -34,14 +31,13 @@ will achieve this:
     echo export PATH=\$PATH:\$HOME/bin >> ~/.bashrc
     git lfs install
 
-Download CESM
--------------
+## Download CESM
 
 These instructions are based on the [upstream
 documentation](https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html).
 First switch to your project directory (or wherever else you would like
 the CESM source to live) and then run the commands to download CESM
-(replacing *\<your\_project\_code\>* with your project code):
+(replacing *&lt;your\_project\_code&gt;* with your project code):
 
     cd /nesi/project/<your_project_code>
     git clone -b release-cesm2.1.3 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
@@ -53,15 +49,14 @@ documentation linked above for how to check). You may need to rerun the
 command until it is successful, especially if it asks you to accept a
 certificate.
 
-NeSI specific CIME configuration
---------------------------------
+## NeSI specific CIME configuration
 
 Clone the repo containing NeSI specific CIME configuration
 ([CIME](http://esmci.github.io/cime/versions/master/html/what_cime/index.html)
 provides a case control system for configuring, building and executing
-Earth system models) and copy the config files to *\~/.cime*. In the
-following, replace *\<your\_project\_code\>* with your project code
-(this will overwrite any current configuration your have in *\~/.cime*):
+Earth system models) and copy the config files to *~/.cime*. In the
+following, replace *&lt;your\_project\_code&gt;* with your project code
+(this will overwrite any current configuration your have in *~/.cime*):
 
     cd /nesi/project/<your_project_code>
     git clone https://github.com/nesi/nesi-cesm-config.git
@@ -71,12 +66,11 @@ following, replace *\<your\_project\_code\>* with your project code
     cp config_batch.xml ~/.cime/config_batch.xml
 
 Check that you are happy with the paths specified in
-*\~/.cime/config\_machines.xml*, in particular, it is recommended that
+*~/.cime/config\_machines.xml*, in particular, it is recommended that
 CESM users share the same input data locations as the input data can be
 large.
 
-Setting up and running a test case
-----------------------------------
+## Setting up and running a test case
 
 Here we will run the test described in the CESM [quick start
 guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html). The
@@ -89,8 +83,8 @@ First, create the case:
     ./create_newcase --case /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test --compset B1850 --res f19_g17 --machine maui --compiler intel
     cd /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test
 
-The *\--machine Māui \--compiler intel* arguments to *./create\_case*
-tell CESM to use the NeSI specific configuration we added to your home
+The *--machine Māui --compiler intel* arguments to *./create\_case* tell
+CESM to use the NeSI specific configuration we added to your home
 directory in the previous step.
 
 Next, set up the case and preview the run:
@@ -113,11 +107,10 @@ Finally, run the job:
     ./case.submit
 
 A job will be submitted to the Slurm queue, you can view the queue using
-*squeue* or *squeue -u \$USER* for just your own jobs. Check the job
+*squeue* or *squeue -u $USER* for just your own jobs. Check the job
 succeeded as described on the upstream quick start guide.
 
-Performance tuning - optimising processor layout
-================================================
+# Performance tuning - optimising processor layout
 
 With CESM it can be important to tune the processor layout for best
 performance with respect to the different components (atmosphere, land,
@@ -131,8 +124,8 @@ The above link lists some of the common configurations, such as fully
 sequential or fully sequential except the ocean running concurrently.
 
 One approach to load balancing (i.e. optimising processor layout) is
-documented on the above page in the section \"One approach to load
-balancing\"
+documented on the above page in the section "One approach to load
+balancing"
 [here](https://esmci.github.io/cime/versions/maint-5.6/html/users_guide/pes-threads.html).
 It involves performing a number of short model runs to determine which
 components are most expensive and how the individual components scale.

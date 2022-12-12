@@ -4,8 +4,7 @@ Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline
 
-::: {.confluence-information-macro-body}
-> ### Service Status {#nearline-service-status}
+> ### Service Status
 >
 > Before deleting any data from your project or nobackup directory that
 > has been uploaded to Nearline, please consider whether you require
@@ -17,16 +16,16 @@ Nearline Nearline Nearline Nearline
 > **Please note:** Best practice in research data management and data
 > archiving is to use multiple storage technologies. In particular, any
 > data that is irreplaceable and/or has regulatory retention
-> requirements, should not rely solely on NeSI's Nearline service as the
+> requirements, should not rely solely on NeSI’s Nearline service as the
 > only copy.
 >
 > Please **send feedback** about your user experience at
-> <https://support.nesi.org.nz/hc/requests/new>, which may include
-> functionality issues, intuitive or counter-intuitive behaviours,
-> behaviours or features that you like, suggestions for improvements,
-> transfers taking too long, etc.
+> <a href="https://support.nesi.org.nz/hc/requests/new" class="uri external-link">https://support.nesi.org.nz/hc/requests/new</a>,
+> which may include functionality issues, intuitive or counter-intuitive
+> behaviours, behaviours or features that you like, suggestions for
+> improvements, transfers taking too long, etc.
 
-NeSI\'s Long-Term Storage aka Nearline service allows you to store your
+NeSI's Long-Term Storage aka Nearline service allows you to store your
 data on our hierarchical system, which consists of a staging area (disk)
 connected to a tape library. Users of this service gain access to more
 persistent storage space for their research data, in return for slower
@@ -37,15 +36,15 @@ may be delayed, due to tape handling.
 
 Due to the tape storage backend Nearline is intended for use with
 relatively large files and should not be used for a large number of
-small files. [Files smaller than 64 MB will not be accepted for upload
-and should be combined into archive files using `nn_archive_files`,
-`tar` or a similar tool. Likewise, Nearline write semantics are
-different from a normal filesystem - overwriting existing files (e.g.
-when the source data has been updated) is not supported, these must
-first be removed (purged from Nearline) before being written (put to
-Nearline) again.]{style="color: #1d1c1d;"}
+small files. <span style="color: #1d1c1d;">Files smaller than 64 MB will
+not be accepted for upload and should be combined into archive files
+using `nn_archive_files`, `tar` or a similar tool. Likewise, Nearline
+write semantics are different from a normal filesystem - overwriting
+existing files (e.g. when the source data has been updated) is not
+supported, these must first be removed (purged from Nearline) before
+being written (put to Nearline) again.</span>
 
-> ### Note {#directory-mapping}
+> ### Note
 >
 > The existing directory structure starting after
 > `/nesi/project/<projectID>/` or `/nesi/nobackup/<projectID>/` will be
@@ -57,10 +56,9 @@ Nearline) again.]{style="color: #1d1c1d;"}
 A Nearline project gets locked when writing to or deleting from it.
 Until this process is finished no other write or delete operation can be
 performed on the same project and the user will see a status message
-\"**project locked by none**\".
+"**project locked by none**".
 
-What you can do
-===============
+# What you can do
 
 The client allows you to carry out the following operations:
 
@@ -77,27 +75,24 @@ The client allows you to carry out the following operations:
     along with their status.
 -   View quota: View your Nearline quota and usage.
 
-Getting started
-===============
+# Getting started
 
 Nearline has a common tool for access, with a set of `nl` commands,
 which are accessible by loading the following module:
 
     module load nearline
-:::
 
-> ### Note {#module-version}
+> ### Note
 >
 > You may notice that in the above command no specific version of the
 > Nearline software is chosen. This is deliberate, and is designed to
 > ensure that you get the latest and greatest release, since Nearline is
-> under active development. It\'s an exception to our normal practice of
+> under active development. It's an exception to our normal practice of
 > strongly advising you to load a specific version of a software module.
 
  
 
-View files
-==========
+# View files
 
 With the following command, you can print the list of files and
 directories within the specified Nearline directory:
@@ -111,7 +106,7 @@ OR e.g.
 Furthermore, you can use the additional option `-l` to get the detailed
 list including `mode`, `owner`, `group`, `filesize`, and `timestamp`.
 The option `-s`, an alternative to `-l`, will additionally show each
-file\'s migration status. Note that, due to technical limitations, `-s`
+file's migration status. Note that, due to technical limitations, `-s`
 does not work on single files and so `nlls -s` requires a directory as
 its argument.
 
@@ -122,7 +117,7 @@ its argument.
     -rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file2.tar.gz
     -rw-rw----+ r  userName        nesi12345      34.03 MB       Jun 17    file3.tar.gz
 
-Status (\"s\" column of the `-s` output) legend:
+Status ("s" column of the `-s` output) legend:
 
 -   migrated (**m**) - data of a specific Nearline file is on tape (does
     not necessarily mean that the file is replicated across sites)
@@ -131,8 +126,7 @@ Status (\"s\" column of the `-s` output) legend:
 -   resident (**r**) - data of a specific Nearline file is only on the
     staging filesystem.
 
-Traverse
-========
+# Traverse
 
 If you want to see all the files within a Nearline directory and its
 subdirectories, you can run `nltraverse`.
@@ -143,8 +137,7 @@ Optionally, you can run `nltraverse` with the `-s` command-line switch,
 which, as with `nlls`, will display the migration status of each file
 found.
 
-Compare
-=======
+# Compare
 
 If you want to compare a local (online storage) directory to a directory
 on Nearline, you can use the `nlcompare` command. The syntax of this
@@ -165,8 +158,7 @@ If the contents of the Nearline directory and the corresponding local
 directory differ, the lists will be kept, and can be compared using any
 text file comparison program, such as `diff` or `vimdiff`.
 
-Put {#Nearlineearlyaccessuserguide-Put}
-===
+# Put
 
 Data can be copied to Nearline using the `nlput` command. The syntax is:
 
@@ -175,7 +167,7 @@ Data can be copied to Nearline using the `nlput` command. The syntax is:
 The source directory or file list needs to be located under
 `/nesi/project/` or `/nesi/nobackup/`and specified as such. 
 
-> ### Note {#nlput-relative-paths}
+> ### Note
 >
 > The following will not work:
 >
@@ -216,7 +208,7 @@ list, the following additional permission restrictions apply:
 -   The POSIX group of every subdirectory must be the project selected
     for upload.
 
-> ### Warning {#nlput-input}
+> ### Warning
 >
 > Files and directories are checked for existence and only new files are
 > transferred to Nearline. **Files already on Nearline will not be
@@ -233,10 +225,9 @@ treated as a file list** and read line by line, searching for valid file
 names. Single files can only be migrated using a file list containing
 the full path of the file to be transferred.
 
-Put - directory {#Nearlineearlyaccessuserguide-Put-directory}
----------------
+## Put - directory
 
-> ### Warning {#directories-with-spaces}
+> ### Warning
 >
 > If you try to upload to Nearline a path containing spaces, especially
 > multiple consecutive spaces, you will get some very unexpected
@@ -261,7 +252,7 @@ location. As an example:
 will copy all data within the `Results` directory into
 `/nesi/nearline/nesi12345/To/Archive/Results/`.
 
-> ### Warning {#directory-merging}
+> ### Warning
 >
 > If you put `/nesi/project/nesi12345/To/Archive/Results/` on Nearline
 > as well as `/nesi/nobackup/nesi12345/To/Archive/Results/`, the
@@ -270,10 +261,9 @@ will copy all data within the `Results` directory into
 > `/nesi/nearline/nesi12345/`, files with the same name and path will be
 > skipped.
 
-Put - file list {#Nearlineearlyaccessuserguide-Put-file-list}
----------------
+## Put - file list
 
-> ### Warning {#nlput-file-list}
+> ### Warning
 >
 > The file list must be located within `/nesi/project` or
 > `/nesi/nobackup`. Any other location will cause obscure errors and
@@ -285,8 +275,7 @@ ignored**.
 
 The target location will again map with the source location, see above.
 
-Update {#Nearlineearlyaccessuserguide-Update}
-------
+## Update
 
 As a good practice:
 
@@ -313,7 +302,7 @@ version of data from nobackup or project:
     using `nlpurge`.
 3.  Copy the updated files to the Nearline file system using `nlput`.
 
-> ### Warning {#immutable-files}
+> ### Warning
 >
 > For technical reasons, files (data and metadata) and directory
 > structures on Nearline cannot be safely changed once present, even by
@@ -330,8 +319,7 @@ exist on Nearline but are no longer on project or nobackup:
 3.  Follow the instructions above for updating data on Nearline with a
     new version of the data from project or nobackup.
 
-Get {#Nearlineearlyaccessuserguide-Get}
-===
+# Get
 
 Data can be retrieved from Nearline using then `nlget` command. The
 syntax is:
@@ -343,7 +331,7 @@ Similar to `nlput` (see above), nlget accepts a Nearline** directory**
 list** `file_list`, defining the source of the data to be retrieved from
 Nearline.
 
-> ### Warnings {#nlget-file-list}
+> ### Warnings
 >
 > -   The local file list must be located within `/nesi/project` or
 >     `/nesi/nobackup`. Any other location will be rejected.
@@ -353,7 +341,7 @@ Nearline.
 > -   Directories whose names contain spaces, especially multiple
 >     consecutive spaces, cannot be retrieved from Nearline directly
 >     using `nlget`. You must retrieve the contents of such a directory
->     using a filelist, or retrieve one of its ancestors that doesn\'t
+>     using a filelist, or retrieve one of its ancestors that doesn't
 >     have a space in the name or path. That is, instead of retrieving
 >     `/nesi/project/nesi12345/ab/c  d` directly, retrieve
 >     `/nesi/project/nesi12345/ab`. We are aware of the problem and may
@@ -370,7 +358,7 @@ will create the directory structure
 does not already exist, and copy the data within the `Results` directory
 into it.
 
-> ### Warning {#prerequisites}
+> ### Warning
 >
 > Any given file **will not be retrieved** if a file of the same name
 > already exists in the destination directory. If you wish to retrieve a
@@ -383,8 +371,7 @@ local, are treated as a file list** and read line by line, searching for
 valid file names. A single Nearline file can only be retrieved using a
 local file list specifying the full path of the file to be retrieved.
 
-Purge {#Nearlineearlyaccessuserguide-Purge}
-=====
+# Purge
 
 The `nlpurge` command deletes specified data on the Nearline file system
 permanently. The syntax is
@@ -399,10 +386,10 @@ accepted)** or a file list `file_list` needs to be specified (see
 If the thing to be deleted is a directory, the project code is optional.
 If you are instead deleting the entries of a file list, the project code
 is compulsory, and moreover all entries in the file list must denote
-files within (or supposed to be within) the chosen project\'s Nearline
+files within (or supposed to be within) the chosen project's Nearline
 directory.
 
-> ### Warnings {#nlpurge-file-list}
+> ### Warnings
 >
 > -   If a file list is used, it must be located within `/nesi/project`
 >     or `/nesi/nobackup` and referred to by its full path starting with
@@ -412,11 +399,10 @@ directory.
 >     (as a directory) or as entries in a file list.
 > -   Purging the entire Nearline directory for a project, e.g.
 >     `nlpurge /nesi/nearline/nesi12345`, is not permitted. To empty a
->     project\'s Nearline directory, you must purge its contents one by
+>     project's Nearline directory, you must purge its contents one by
 >     one (if directories), or by means of a filelist (if files).
 
-View job status {#Nearlineearlyaccessuserguide-Viewjobstatus}
-===============
+# View job status
 
 The tool `nljobstatus` provides current status of submitted (queued,
 running and completed) tasks. The syntax is:
@@ -464,15 +450,12 @@ locked until the task is finished.
 **If a job stays in one state for an unexpectedly long time, please
 [contact NeSI Support](https://support.nesi.org.nz/hc/request/new)**.
 
-View quota {#Nearlineearlyaccessuserguide-Viewquota}
-==========
+# View quota
 
 With the command `nlquotalist`, the usage and limits of a Nearline
 project quota can be listed:
 
-::: {.confluence-information-macro-body}
     nlquotalist <projectID>
-:::
 
 The output looks like:
 
@@ -484,10 +467,9 @@ The output looks like:
 This quota is different from the project quota on GPFS
 (`/nesi/project/<projectID>`).
 
-[]{#directory_mapping}
+<span id="directory_mapping"></span>
 
-Data management {#Nearlineearlyaccessuserguide-Datamanagement}
-===============
+# Data management
 
 In case you have the same directory structure on your project and
 nobackup directories, be careful when archiving data from both. They
@@ -495,10 +477,9 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](https://support.nesi.org.nz/hc/article_attachments/360002703556/librarian_get_put.jpeg)
+![librarian\_get\_put.jpeg](mkdocs/includes/images/librarian_get_put.jpeg)
 
-Underlying mechanism {#Nearlineearlyaccessuserguide-Underlyingmechanism}
-====================
+# Underlying mechanism
 
 The Nearline file system consists of two parts: Disk, mainly for
 buffering data, and the tape library. It consists of a client running on
@@ -507,12 +488,12 @@ is important to know that **even if you cancel a client process, the
 corresponding backend process remains scheduled or running** until
 finished.
 
-[The process of what data goes into tape and when is
-automated]{.inline-comment-marker
-data-ref="78239edd-ceab-49eb-a747-0140db19a948"}, and is not something
-you will have control over. The service is designed to optimise
-interaction with the Nearline filesystem and avoid problem workloads for
-the benefit of all users.
+<span class="inline-comment-marker"
+data-ref="78239edd-ceab-49eb-a747-0140db19a948">The process of what data
+goes into tape and when is automated</span>, and is not something you
+will have control over. The service is designed to optimise interaction
+with the Nearline filesystem and avoid problem workloads for the benefit
+of all users.
 
 If your files are on tape, it will take time to retrieve them. Access to
 tape readers is on a first come first served basis, and the amount of
@@ -520,10 +501,9 @@ wait time will vary dramatically depending on overall usage. We cannot
 guarantee access to your files within any particular timeframe, and
 indeed wait times could be hours or even in some cases more than a day.
 
-Known issues
-============
+# Known issues
 
-> ### Retrievals {#retrieval}
+> ### Retrievals
 >
 > Some users of Nearline have reported that attempts to retrieve files
 > from tape using `nlget` (see below) will not retrieve all files.
@@ -539,8 +519,8 @@ Known issues
 >
 > Unfortunately, a proper fix requires a fundamental redesign and
 > rebuild of the Nearline server architecture, work that is on hold
-> pending decisions regarding the direction in which we take NeSI\'s
-> data services. We appreciate your patience as we work through these
+> pending decisions regarding the direction in which we take NeSI's data
+> services. We appreciate your patience as we work through these
 > decisions.
 >
 > In the meantime, if you encounter this problem, the recommended
@@ -552,8 +532,7 @@ Known issues
 
  
 
-Support contact {#Nearlineearlyaccessuserguide-Supportcontact}
-===============
+# Support contact
 
 Please [contact our support
 team](https://support.nesi.org.nz/hc/requests/new) with any queries or

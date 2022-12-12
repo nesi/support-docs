@@ -14,7 +14,7 @@ following commands explain how to do this;  when running the commands,
 replace `nesi12345` and `nesi12345r` with your project code and
 read-only project code respectively.
 
-> ### Warning {#tmux-warning}
+> ### Warning
 >
 > If this process is interrupted part-way through, for example due to
 > your computer going to sleep and losing its connection to your NeSI
@@ -36,7 +36,7 @@ read-only project code respectively.
         cat acl_to_add.txt
 
 3.  Carry out the ACL change. You can specify a subdirectory instead if,
-    as may well be the case, you don\'t want to trawl through the
+    as may well be the case, you don't want to trawl through the
     entirety of `/nesi/project/nesi12345` or `/nesi/nobackup/nesi12345`.
 
         nn_add_to_acls_recursively -f acl_to_add.txt /nesi/project/nesi12345

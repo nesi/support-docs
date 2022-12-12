@@ -1,8 +1,6 @@
-Release Update - 12. April 2022 {#ReleaseNotes-ReleaseUpdate-11.July2019}
--------------------------------
+## Release Update - 12. April 2022
 
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved
 
 -   Improved [NeSI Notification
     Preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)

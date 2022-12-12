@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have an [active account and
 >     project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
@@ -16,50 +16,44 @@ to set up such a connection, you will need a suitable Terminal (or
 equivalent application). The correct option for you depends on your
 operating system and level of experience.
 
-Web Browser {#h_c1bbd761-1133-499b-a61a-57b9c4320a1a}
-===========
+# Web Browser
 
--   JupyterHub
-    ----------
+-   ## JupyterHub
 
     JupyterHub is a service providing access to Jupyter Notebooks on
     NeSI. A terminal similar to the other setups describe below can be
-    accessed through the Jupyter Launcher.\
-    \
+    accessed through the Jupyter Launcher.  
+      
 
-    > ### What next? {#prerequisites}
+    > ### What next?
     >
     > -   More info on [Jupyter
     >     Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
     > -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
-Linux or Mac OS {#h_c1bbd761-1133-499b-a61a-57b9c4320a1a}
-===============
+# Linux or Mac OS
 
--   Terminal
-    --------
+-   ## Terminal
 
     On MacOS or Linux you will already have a terminal emulator
-    installed, usually called, \"Terminal.\" To find it, simply search
-    for \"terminal\".\
+    installed, usually called, "Terminal." To find it, simply search for
+    "terminal".  
     Congratulations! You are ready to move to the next step.
 
-    > ### What next? {#prerequisites}
+    > ### What next?
     >
     > -   Setting up your [Default
     >     Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
 
-Windows
-=======
+# Windows
 
-As Windows is not a \"Unix-Like\" operating system, getting access to a
+As Windows is not a "Unix-Like" operating system, getting access to a
 functional terminal requires some additional steps. There are several
 different options, listed in order of preference.
 
--   Ubuntu Terminal (Windows 10)
-    ----------------------------
+-   ## Ubuntu Terminal (Windows 10)
 
-    > ### Note {#wsl-admin-tip}
+    > ### Note
     >
     > The Ubuntu Terminal and Windows Subsystem for Linux require
     > administrative privileges to enable and install them. If your
@@ -71,7 +65,7 @@ different options, listed in order of preference.
     given to Mac/Linux users. It may be necessary to enable Windows
     Subsystem for Linux (WSL) first.
 
-    > ### What next? {#prerequisites}
+    > ### What next?
     >
     > -   Enabling
     >     [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
@@ -80,8 +74,7 @@ different options, listed in order of preference.
     > -   Setting up
     >     [X-Forwarding](https://support.nesi.org.nz/hc/en-gb/articles/4407442866703)
 
--   MobaXterm
-    ---------
+-   ## MobaXterm
 
     In addition to being a terminal emulator, MobaXterm also includes
     several useful features like multiplexing, X11 forwarding and a file
@@ -93,15 +86,14 @@ different options, listed in order of preference.
     administrator privileges, however it introduces several bugs so we
     *highly* recommend using the installer edition if you have
     administrator privileges on your workstation or if your
-    institution\'s IT team supports MobaXTerm.
+    institution's IT team supports MobaXTerm.
 
-    > ### What next? {#prerequisites}
+    > ### What next?
     >
     > -   Setting up
     >     [MobaXterm](https://support.nesi.org.nz/hc/en-gb/articles/360000624696)
 
--   Using a Virtual Machine
-    -----------------------
+-   ## Using a Virtual Machine
 
     In order to avoid the problems of using a Windows environment, it
     may be advisable to install a Linux Virtual machine. This may be
@@ -120,13 +112,12 @@ different options, listed in order of preference.
     instructions as given for
     [Linux/MacOS](#h_c1bbd761-1133-499b-a61a-57b9c4320a1a).
 
-    > ### What next? {#prerequisites}
+    > ### What next?
     >
     > -   Setting up a [Virtual
     >     Machine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
 
--   WinSCP
-    ------
+-   ## WinSCP
 
     WinSCP has some advantages over MobaXterm (customisable, cleaner
     interface, open source), and some disadvantages (no built in
@@ -134,13 +125,12 @@ different options, listed in order of preference.
     more involved than with MobaXterm, therefore we do not recommend it
     for new users.
 
-    > ### What next? {#prerequisites}
+    > ### What next?
     >
     > -   Setting up
     >     [WinSCP](https://support.nesi.org.nz/hc/en-gb/articles/360000584256)
 
--   Git Bash
-    --------
+-   ## Git Bash
 
     If you are using Git for version control you may already have Git
     Bash installed. If not it can be downloaded
@@ -151,8 +141,7 @@ different options, listed in order of preference.
     native Unix-Like terminal. Therefore we do not recommend it as your
     primary terminal.
 
--   Windows PowerShell
-    ------------------
+-   ## Windows PowerShell
 
     All Windows computers have PowerShell installed, however it will
     only be useful to you if Windows Subsystem for Linux (WSL) is also

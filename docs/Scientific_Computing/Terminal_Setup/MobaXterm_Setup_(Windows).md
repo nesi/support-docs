@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -14,53 +14,52 @@ transfer GUI.
 
 1.  Download MobaXTerm
     [here](https://mobaxterm.mobatek.net/download-home-edition.html)
-    -   Use the Portable Edition if you don\'t have administrator rights
+    -   Use the Portable Edition if you don't have administrator rights
         on your machine. This is the recommended way for NIWA
         researchers.
     -   Otherwise, choose freely the Portable or Installer Edition.
-2.  To set up a session, Click \'Session\' in the top left corner:
-3.  In \"SSH\",
+2.  To set up a session, Click 'Session' in the top left corner:
+3.  In "SSH",
     -   Set the remote host to `login.mahuika.nesi.org.nz` for Mahuika
         users or `login.maui.nesi.org.nz` for Māui users.
-    -   Enable the \"Specify username\" option and put your Username in
+    -   Enable the "Specify username" option and put your Username in
         the corresponding box.
-4.  In the \"Advanced SSH settings\"
-    -   Set SSH-browser type to \'**SCP (enhanced speed)**\'.
-    -   Optionally, tick the \'Follow SSH path\' button.
+4.  In the "Advanced SSH settings"
+    -   Set SSH-browser type to '**SCP (enhanced speed)**'.
+    -   Optionally, tick the 'Follow SSH path' button.
 
 <!-- -->
 
-6.  In the "Network settings" tab:
-    -   Select \"SSH gateway (jump host)\" to open a popup window
-    -   In this window enter `lander.nesi.org.nz` in the "Gateway host"
+1.  In the “Network settings” tab:
+    -   Select "SSH gateway (jump host)" to open a popup window
+    -   In this window enter `lander.nesi.org.nz` in the “Gateway host”
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](https://support.nesi.org.nz/hc/article_attachments/4411672582031/mceclip4.png)
+![mceclip4.png](mkdocs/includes/images/mceclip4.png)
 
-![mceclip5.png](https://support.nesi.org.nz/hc/article_attachments/4411672594191/mceclip5.png)
+![mceclip5.png](mkdocs/includes/images/mceclip5.png)
 
-7.  Click \'OK\' on the open window, usually this will start a new
-    session immediately. *See usage below.*
+1.  Click 'OK' on the open window, usually this will start a new session
+    immediately. *See usage below.*
 
-> ### WARNING {#moba-bug}
+> ### WARNING
 >
 > There is a bug which causes some users to be repeatedly prompted
-> \<username\>\@lander.nesi.org.nz\'s password:\
-> This can be resolved by clicking \"OK\" each time you are prompted
-> then logging in as normal once you are prompted for your First Factor:
-> or Password:.\
+> <samp>&lt;username&gt;@lander.nesi.org.nz's password:</samp>  
+> This can be resolved by clicking "OK" each time you are prompted then
+> logging in as normal once you are prompted for your <samp>First
+> Factor:</samp> or <samp>Password:</samp>.  
 > See [Login
 > Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
 > for more details
 
-Usage
------
+## Usage
 
-You will see your saved session in the left hand panel under
-\'Sessions\'. Double click to start.
+You will see your saved session in the left hand panel under 'Sessions'.
+Double click to start.
 
-![mceclip6.png](https://support.nesi.org.nz/hc/article_attachments/4411680807951/mceclip6.png)
+![mceclip6.png](mkdocs/includes/images/mceclip6.png)
 
 You will be prompted by dialogue box.
 
@@ -83,15 +82,15 @@ Māui users will instead be prompted with:
     Password:
 
 Māui users must enter their password combined with their second factor.
-For example, if your password is \"Password\" and your current second
-factor is \"123456\" then you must enter \"Password123456\".
+For example, if your password is "Password" and your current second
+factor is "123456" then you must enter "Password123456".
 
-> ### Tip {#warn}
+> ### Tip
 >
 > If you choose to save your password, the process will be the same
 > minus the prompts for First Factor.
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

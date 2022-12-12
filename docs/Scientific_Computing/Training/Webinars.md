@@ -1,14 +1,12 @@
-[Our webinar playlist covers the following
-topics:]{style="font-size: 22.5px;"}
+<span style="font-size: 22.5px;">Our webinar playlist covers the
+following topics:</span>
 
 -   [Troubleshooting on
     NeSI](https://www.youtube.com/watch?v=H_UXkj9Nmoc&t=7s)
 -   [Make the most of your HPC
     allocation](https://www.youtube.com/watch?v=VVvEX3Q3kq8&t=2s)
--   ::: {#info .style-scope .ytd-video-primary-info-renderer}
-    [How To Get The Most Out Of Your NeSI
+-   [How To Get The Most Out Of Your NeSI
     Allocation](https://www.youtube.com/watch?v=Aun-YS2aYXs)
-    :::
 
 -   [Genomics workflows and how they can streamline your
     research](https://www.youtube.com/watch?v=Pb1M8Yyik4Y&t=3s)
@@ -69,8 +67,8 @@ topics:]{style="font-size: 22.5px;"}
 -   [Building a Convolution Neural Network to Classify Underwater Sounds
     (NeSI/
     NIWA)](https://www.youtube.com/watch?v=ttEW6QvgAHM&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=28&t=35s)
--   [NeSI\'s National Data Transfer Platform --- Sharing Data with
-    Groups Using
+-   [NeSI's National Data Transfer Platform — Sharing Data with Groups
+    Using
     Globus](https://www.youtube.com/watch?v=SmkWHjFDfQY&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=29&t=1808s)
 -   [Job scaling and running tests on
     NeSI](https://www.youtube.com/watch?v=CqATGcNbipo&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=30&t=3s)

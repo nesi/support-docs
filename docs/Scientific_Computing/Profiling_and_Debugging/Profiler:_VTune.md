@@ -1,35 +1,30 @@
- 
--
+##  
 
- What is VTune?  
-----------------
+##  What is VTune?  
 
-VTune is a **performance** analysis tool.\
+VTune is a **performance** analysis tool.  
 It can be used to identify and **analyse** various aspects in both
 serial and parallel programs and can be used for both OpenMP and MPI
-applications.\
+applications.  
 It can be used with a command line interface (**CLI**) or a graphical
-user interface (**GUI**).\
-\
-\
+user interface (**GUI**).  
+  
+  
 
  
 
-Where to find more resources on VTune?  
----------------------------------------
+## Where to find more resources on VTune?  
 
 -   Main page is at
     [https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html#gs.bjani9)
 -   Tutorials are available at
     <https://software.intel.com/content/www/us/en/develop/articles/vtune-tutorials.html>
 
- 
--
+##  
 
- How to use VTune?
-------------------
+##  How to use VTune?
 
-\
+  
 VTune is available on Mahuika by loading the VTune **module**.
 
     $ module spider VTune
@@ -45,16 +40,14 @@ To use the VTune amplifier command line tool help run:
 
     amplxe-cl -help
 
- 
--
+##  
 
- How do I profile an application with VTune?  
----------------------------------------------
+##  How do I profile an application with VTune?  
 
 The hotspot analysis is the most commonly used analysis and generally
 the first approach to optimizing an application.
 
--   Example on Mahuika with the matrix sample.\
+-   Example on Mahuika with the matrix sample.  
     The matrix sample is composed of a pre-built matrix in C++ for
     matrix multiplication.
 
@@ -65,13 +58,13 @@ the first approach to optimizing an application.
     $ cd matrix
     $ amplxe-cl -collect hotspots ./matrix
 
-\
+  
 The **amplxe-cl** command collects hotspots data.
 
-The option **collect** specifies the collection experiment to run.\
+The option **collect** specifies the collection experiment to run.  
 The option **hotspots** is to collect basic hotspots to have a general
-performance overview.\
-\
+performance overview.  
+  
 This is the type of output you are going to get:
 
     $ amplxe-cl -collect hotspots ./matrix
@@ -135,12 +128,12 @@ This is the type of output you are going to get:
 
 The output one receives the overall elapsed and idle times as well as
 the CPU times of the individual functions in descending order (list of
-hotspots).\
+hotspots).  
 The utilization of the CPUs is also analyzed and judged.
 
 ###  
 
-### [Note:]{.wysiwyg-underline}
+### <span class="wysiwyg-underline">Note:</span>
 
 You can run the VTune GUI via Jupyter+VDT to visualise profiling
 results.

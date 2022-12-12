@@ -1,14 +1,13 @@
-Definitions
------------
+## Definitions
 
 **CPU:** A logical core, also known as a hardware thread. Referred to as
-a \"CPU\" in the Slurm documentation.  Since
+a "CPU" in the Slurm documentation.  Since
 [Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236/)
-is enabled, there are two CPUs per physical core, and every task--- and
-therefore every job --- is allocated an even number of CPUs.
+is enabled, there are two CPUs per physical core, and every task— and
+therefore every job — is allocated an even number of CPUs.
 
 **Fairshare Weight:** CPU hours are multiplied by this factor to
-determine usage for the purpose of calculating a project\'s [fair-share
+determine usage for the purpose of calculating a project's [fair-share
 score](https://support.nesi.org.nz/hc/en-gb/articles/360000743536/).
 
 **Job:** A running batch script and any other processes which it might
@@ -19,14 +18,13 @@ launch with *srun*.
 (desktop PC) or laptop.
 
 **Task:** An instance of a running computer program, consisting of one
-or more threads. All of a task\'s threads must run within the same node.
+or more threads. All of a task's threads must run within the same node.
 
 **Thread:** A sequence of instructions executed by a CPU.
 
 **Walltime: **Real world time, as opposed to CPU time (walltime x CPUs).
 
-General Limits
---------------
+## General Limits
 
 -   No individual job can request more than 20,000 CPU hours. This has
     the consequence that a job can request more CPUs if it is shorter
@@ -41,8 +39,7 @@ there is a good reason. For example we will increase the limit on queued
 jobs for those who need to submit large numbers of jobs, provided that
 they undertake to do so with job arrays.
 
-Partitions
-----------
+## Partitions
 
 A partition can be specified via the appropriate [sbatch
 option](https://support.nesi.org.nz/hc/en-gb/articles/360000691716/),
@@ -67,88 +64,34 @@ E.g.:
 
  
 
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| **Name | **Max  | **Node | **CPUs | **GPUs | **Avai | **Avai | **Desc |
-| **     | Wallti | s**    | /Node* | /Node\ | lable  | lable  | riptio |
-|        | me**   |        | *      | **     | Mem/CP | Mem/No | n**    |
-|        |        |        |        |        | U**    | de**   |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| long   | 3      | 69     | 72     |        | 1500   | 105 GB | For    |
-|        | weeks  |        |        |        | MB     |        | jobs   |
-|        |        |        |        |        |        |        | that   |
-|        |        |        |        |        |        |        | need   |
-|        |        |        |        |        |        |        | to run |
-|        |        |        |        |        |        |        | for    |
-|        |        |        |        |        |        |        | longer |
-|        |        |        |        |        |        |        | than 3 |
-|        |        |        |        |        |        |        | days.  |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| large  | 3 days | *long* | 72     |        | 1500   | 105 GB | Defaul |
-|        |        | + 157  |        |        | MB     |        | t      |
-|        |        |        |        |        |        |        | partit |
-|        |        |        |        |        |        |        | ion.   |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| milan  | 7 days | 29\    | 256\   |        | 1850   | 460    | [Curre |
-|        |        |  2     | 256    |        | MB     | GB\    | ntly   |
-|        |        |        |        |        |        | 960 GB | opt    |
-|        |        |        |        |        | 3800   |        | in.    |
-|        |        |        |        |        | MB     |        | Newer  |
-|        |        |        |        |        |        |        | OS and |
-|        |        |        |        |        |        |        | AMD    |
-|        |        |        |        |        |        |        | Milan  |
-|        |        |        |        |        |        |        | CPUs]( |
-|        |        |        |        |        |        |        | https: |
-|        |        |        |        |        |        |        | //supp |
-|        |        |        |        |        |        |        | ort.ne |
-|        |        |        |        |        |        |        | si.org |
-|        |        |        |        |        |        |        | .nz/kn |
-|        |        |        |        |        |        |        | owledg |
-|        |        |        |        |        |        |        | e/arti |
-|        |        |        |        |        |        |        | cles/5 |
-|        |        |        |        |        |        |        | 286956 |
-|        |        |        |        |        |        |        | 022159 |
-|        |        |        |        |        |        |        | ).     |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| bigmem | 7 days | 6      | 72     |        | 6300   | 460 GB | Jobs   |
-| /      |        |        |        |        | MB     |        | requir |
-|        |        | 6      | 54     |        |        | 300 GB | ing    |
-| infill |        |        |        |        | 5500   |        | large  |
-|        |        |        |        |        | MB     |        | amount |
-|        |        |        |        |        |        |        | s      |
-|        |        |        |        |        |        |        | of     |
-|        |        |        |        |        |        |        | memory |
-|        |        |        |        |        |        |        | .      |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| hugeme | 7 days | 4      | 80\    |        | 18 GB\ | 1,500  | Jobs   |
-| m      |        |        | 128\   |        | 30 GB\ | GB\    | requir |
-|        |        |        | 176    |        | 35 GB  | 4,000  | ing    |
-|        |        |        |        |        |        | GB\    | very   |
-|        |        |        |        |        |        | 6,000  | large  |
-|        |        |        |        |        |        | GB     | amount |
-|        |        |        |        |        |        |        | s      |
-|        |        |        |        |        |        |        | of     |
-|        |        |        |        |        |        |        | memory |
-|        |        |        |        |        |        |        | .      |
-+--------+--------+--------+--------+--------+--------+--------+--------+
-| gpu    | 3 days | 1      | 18,    | 1      | 6300   | 160    | See    |
-|        |        |        | plus   | P100\* | MB     | GB,    | below  |
-|        |        | 4      | 54     |        |        | plus   | for    |
-|        |        |        | shared | 2      |        | 300 GB | more   |
-|        |        | 2      | with   | P100\* |        | shared | info.  |
-|        |        |        | *infil |        |        | with   |        |
-|        |        | 2      | l*     | 1      |        | *infil |        |
-|        |        |        |        | A100\* |        | l*     |        |
-|        |        | 1      |        | \*     |        |        |        |
-|        |        |        |        |        |        |        |        |
-|        |        |        |        | 2      |        |        |        |
-|        |        |        |        | A100\* |        |        |        |
-|        |        |        |        | \*     |        |        |        |
-|        |        |        |        |        |        |        |        |
-|        |        |        |        | 7      |        |        |        |
-|        |        |        |        | A100-1 |        |        |        |
-|        |        |        |        | g.5gb\ |        |        |        |
-|        |        |        |        | *\*\*  |        |        |        |
-+--------+--------+--------+--------+--------+--------+--------+--------+
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 \* NVIDIA Tesla P100 PCIe 12GB cards
 
@@ -158,12 +101,11 @@ E.g.:
 slices](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/)
 (5GB each)
 
-Quality of Service
-------------------
+## Quality of Service
 
-Orthogonal to the partitions, each job has a \"Quality of Service\",
-with the default QoS for a job being determined by the allocation class
-of its project.  There are other QoSs which you can select with the
+Orthogonal to the partitions, each job has a "Quality of Service", with
+the default QoS for a job being determined by the allocation class of
+its project.  There are other QoSs which you can select with the
 `--qos`option:
 
 ### Debug
@@ -178,8 +120,7 @@ Specifying `--qos=interactive` will give the job very high priority, but
 is subject to some limits: up to 4 jobs, 16 hours duration, 4 CPUs, 128
 GB, and 1 GPU.
 
-Requesting GPUs {#req_gpu}
----------------
+## Requesting GPUs
 
 Nodes in the `gpu` partition have 2 P100 GPU cards each, so you can
 request 1 or 2 GPUs per node:
@@ -212,10 +153,9 @@ more details about Slurm and CUDA settings.
     GPUs used by jobs of 15 hours or less.
 -   There is a limit of 1 A100-1g.5gb GPU job per user.
 
-Mahuika Infiniband Islands
---------------------------
+## Mahuika Infiniband Islands
 
-Mahuika is divided into "islands" of 26 nodes (or 1,872 CPUs).
+Mahuika is divided into “islands” of 26 nodes (or 1,872 CPUs).
 Communication between two nodes on the same island is faster than
 between two nodes on different islands. MPI jobs placed entirely within
 one island will often perform better than those split among multiple

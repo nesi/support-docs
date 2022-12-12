@@ -20,8 +20,8 @@ This release includes a number of significant changes and new features:
         If there is a mismatch, it may be that the project code has been
         mistyped.
     -   The permissions of every file must be set so that both the
-        file\'s owner and the file\'s group are allowed to read and
-        write the file.
+        file's owner and the file's group are allowed to read and write
+        the file.
     -   Where a directory (as opposed to a filelist) is specified for
         upload, that directory and every subdirectory therein must also
         be readable and executable by the operator, belong to the

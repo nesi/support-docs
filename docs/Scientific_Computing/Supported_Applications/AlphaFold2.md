@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This package provides an implementation of the inference pipeline of
 AlphaFold v2.0. This is a completely new model that was entered in
@@ -16,43 +15,37 @@ a detailed description of the method.
 
 Home page is at <https://github.com/deepmind/alphafold> 
 
-License and Disclaimer
-======================
+# License and Disclaimer
 
 This is not an officially supported Google product.
 
 Copyright 2021 DeepMind Technologies Limited.
 
-[](https://github.com/deepmind/alphafold#alphafold-code-license){#user-content-alphafold-code-license .anchor}AlphaFold Code License
-------------------------------------------------------------------------------------------------------------------------------------
+## <a href="https://github.com/deepmind/alphafold#alphafold-code-license" id="user-content-alphafold-code-license" class="anchor"></a>AlphaFold Code License
 
-Licensed under the Apache License, Version 2.0 (the \"License\"); you
-may not use this file except in compliance with the License. You may
-obtain a copy of the License
-at <https://www.apache.org/licenses/LICENSE-2.0>.
+Licensed under the Apache License, Version 2.0 (the "License"); you may
+not use this file except in compliance with the License. You may obtain
+a copy of the License at <https://www.apache.org/licenses/LICENSE-2.0>.
 
 Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an \"AS IS\" BASIS,
+distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[](https://github.com/deepmind/alphafold#model-parameters-license){#user-content-model-parameters-license .anchor}Model Parameters License
-------------------------------------------------------------------------------------------------------------------------------------------
+## <a href="https://github.com/deepmind/alphafold#model-parameters-license" id="user-content-model-parameters-license" class="anchor"></a>Model Parameters License
 
 The AlphaFold parameters are made available for non-commercial use only,
 under the terms of the Creative Commons Attribution-NonCommercial 4.0
 International (CC BY-NC 4.0) license. You can find details
 at: <https://creativecommons.org/licenses/by-nc/4.0/legalcode>
 
-AlphaFold Databases
--------------------
+## AlphaFold Databases
 
 There are eight reference databases (parameters) where all of them are
 downloaded, verified and stored in NeSI filesystem
  `/opt/nesi/db/alphafold_db` .
 
-::: {.highlight .highlight-source-shell .position-relative}
     $ /opt/nesi/db/alphafold_db/
     ├── bfd
     ├── mgnify
@@ -66,35 +59,30 @@ downloaded, verified and stored in NeSI filesystem
     │   └── uniclust30_2018_08
     ├── uniprot
     └── uniref90
-:::
 
 -   `pdb_seqres` & `uniprot` are for `multimer`
 
-Singularity container
----------------------
+## Singularity container
 
 We prepared a Singularity container image based on the [official
 Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
 modifications. Image (.*simg*) and the corresponding definition file
 (*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
- 
--
+##  
 
-[](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script){#user-content-example-slurm-script .anchor}Example Slurm scripts
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <a href="https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script" id="user-content-example-slurm-script" class="anchor"></a>Example Slurm scripts
 
  
 
 ### AlphaFold2 : v2.2.0 (supports `multimer`)
 
-#### [Monomer]{.wysiwyg-underline}[]{.wysiwyg-underline}
+#### <span class="wysiwyg-underline">Monomer</span><span class="wysiwyg-underline"></span>
 
 Input *fasta* used in following example  is 3RGK
 (<https://www.rcsb.org/structure/3rgk>).
 
-![3rgk\_assembly-1.jpeg](https://support.nesi.org.nz/hc/article_attachments/4687073473679/3rgk_assembly-1.jpeg){width="180"
-height="180"}
+<img src="mkdocs/includes/images/3rgk_assembly-1.jpeg" alt="3rgk_assembly-1.jpeg" width="180" height="180" />
 
     #!/bin/bash -e
 
@@ -134,7 +122,7 @@ height="180"}
 
  
 
-#### [Multimer]{.wysiwyg-underline}
+#### <span class="wysiwyg-underline">Multimer</span>
 
 Input *fasta* used in following example
 
@@ -143,8 +131,7 @@ Input *fasta* used in following example
     >T1084
     MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 
-![protter\_custom\_sequence.png](https://support.nesi.org.nz/hc/article_attachments/4687128946831/protter_custom_sequence.png){width="249"
-height="254"}
+<img src="mkdocs/includes/images/protter_custom_sequence.png" alt="protter_custom_sequence.png" width="249" height="254" />
 
  
 
@@ -187,7 +174,7 @@ height="254"}
 
 ###  
 
-### Explanation of Slurm variables and Singularity flags {#h_01G0ZDA2HNWJ1DV8VJSN2J0GV0}
+### Explanation of Slurm variables and Singularity flags
 
 1.  Values for `--mem` , `--cpus-per-task` and `--time` Slurm variables
     are for *3RGK.fasta*. Adjust them accordingly
@@ -205,7 +192,6 @@ height="254"}
 Input *fasta* used in following example and subsequent benchmarking is
 3RGK (<https://www.rcsb.org/structure/3rgk>).
 
-::: {.highlight .highlight-source-shell .position-relative}
     #!/bin/bash -e
 
     #SBATCH --account           nesi12345
@@ -238,15 +224,13 @@ Input *fasta* used in following example and subsequent benchmarking is
     --pdb70_database_path=/db/pdb70/pdb70 \
     --template_mmcif_dir=/db/pdb_mmcif/mmcif_files \
     --obsolete_pdbs_path=/db/pdb_mmcif/obsolete.dat
-:::
 
 ###  
 
-Troubleshooting
----------------
+## Troubleshooting
 
--   If you are to encounter the message \"*RuntimeError: Resource
-    exhausted: Out of memory*\" , add the following variables to the
+-   If you are to encounter the message "*RuntimeError: Resource
+    exhausted: Out of memory*" , add the following variables to the
     slurm script
 
 <!-- -->

@@ -1,5 +1,7 @@
-Description
-===========
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
+# Description
 
 The Intel Cluster Toolkit Compiler Edition provides Intel C/C++ and
 Fortran compilers, Intel MPI & Intel MKL.
@@ -7,22 +9,30 @@ Fortran compilers, Intel MPI & Intel MKL.
 The Intel Cluster Toolkit Compiler Edition home page is at
 <http://software.intel.com/en-us/intel-cluster-toolkit-compiler>.
 
-Available modules
-=================
+# Available modules
 
-Packages with modules
----------------------
+## Packages with modules
 
-  Module             NeSI Cluster
-  ------------------ --------------
-  intel/2017a        pan
-  intel/2015a        pan
-  intel/2015.02      pan
-  intel/ics-2013     pan
-  intel/2011-64bit   pan
+<table>
+<thead>
+<tr class="header">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
-Licensing requirements
-======================
+# Licensing requirements
 
 The Intel Cluster Toolkit has been made available to all NeSI users
 under the terms of a commercial, closed-source licence agreement. Any
@@ -30,8 +40,7 @@ authorised user of the Pan cluster may use the Intel Cluster Toolkit at
 no cost, subject to the terms of the licence. For more information,
 please get in touch with [our support desk](mailto:support@nesi.org.nz).
 
-Usage
-=====
+# Usage
 
 The Intel Cluster Toolkit contains some executables, but is not a
 conventional software package. Instead, it contains compilers and
@@ -52,7 +61,7 @@ not finish within the time limits set on the build nodes.
 
 If you are not compiling a program or library, but are instead running
 previously compiled code, it is normally sufficient for you to load the
-Intel Cluster Toolkit\'s module. If the program or library you are
+Intel Cluster Toolkit's module. If the program or library you are
 running has its own module, it is likely that the Intel module will be
 loaded automatically as a required dependency, and that no further
 action will be required on your part.
@@ -62,14 +71,12 @@ the Intel Compiler module by running
 
     module list
 
-and having a look for loaded modules with names such as \"intel\" and
-\"icc\".
+and having a look for loaded modules with names such as "intel" and
+"icc".
 
-Example scripts
-===============
+# Example scripts
 
-Example script to compile code on the Pan cluster
--------------------------------------------------
+## Example script to compile code on the Pan cluster
 
     #!/bin/bash -e
 
@@ -89,8 +96,7 @@ Example script to compile code on the Pan cluster
     # Perhaps you are building using a Makefile.
     srun make
 
-Example script to run Intel-compiled code on the Pan cluster
-------------------------------------------------------------
+## Example script to run Intel-compiled code on the Pan cluster
 
     #!/bin/bash -e
 

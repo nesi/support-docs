@@ -5,8 +5,8 @@ service. If you are unsure whether or not your institution has a current
 subscription with NeSI, please ask us via [a support
 request](https://support.nesi.org.nz/hc/en-gb/requests/new).
 
-Allocations from an institution\'s entitlement are subject to approval
-by that institution. Some institutions require pre-approval or recover
+Allocations from an institution's entitlement are subject to approval by
+that institution. Some institutions require pre-approval or recover
 costs for their HPC usage through internal charging. You are welcome to
 begin the application process by [applying for a new project
 online](https://my.nesi.org.nz/html/request_project/). Our team is happy

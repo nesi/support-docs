@@ -1,10 +1,12 @@
-Description
-===========
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
+# Description
 
 Java is a computer programming language that is concurrent, class-based,
 object-oriented, and specifically designed to have as few implementation
 dependencies as possible. It is intended to let application developers
-\"write once, run anywhere\" (WORA), meaning that code that runs on one
+"write once, run anywhere" (WORA), meaning that code that runs on one
 platform does not need to be recompiled to run on another. Java
 applications are typically compiled to bytecode (class file) that can
 run on any Java virtual machine (JVM) regardless of computer
@@ -13,19 +15,16 @@ but it has fewer low-level facilities.
 
 The Java home page is at <http://www.java.com>.
 
-Licensing requirements
-======================
+# Licensing requirements
 
 All versions of Java on NeSI clusters have been made available by their
 respective owners at no cost under a limited, closed-source licence. The
 full licence terms and conditions for any given version of Java can be
 found by following the directions in `${JAVA_HOME}/LICENSE`.
 
-Example scripts
-===============
+# Example scripts
 
-Example script for Mahuika {#example-script-for-the-pan-cluster}
---------------------------
+## Example script for Mahuika
 
     #!/bin/bash -e
     #SBATCH --job-name      MyMultithreadedJavaJob
@@ -39,11 +38,9 @@ Example script for Mahuika {#example-script-for-the-pan-cluster}
     export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}
     java -Xmx3g -Djava.io.tmpdir=${TMPDIR} -jar /path/to/foo.jar
 
-Further notes
-=============
+# Further notes
 
-Java Versions
--------------
+## Java Versions
 
 The default version of Java that is packaged with the operating system
 may not be appropriate for your work.  To use a different version of
@@ -63,8 +60,7 @@ Java us the \`module\` command to find and load for example:
 
     $ module load Java/15.0.2
 
-Memory management and the -Xmx option {#memory-management-and-the-xmx-option}
--------------------------------------
+## Memory management and the -Xmx option
 
 It is important to let the Java virtual machine know how much memory it
 is allowed to use.   The main way this is done is via the `-Xmx`
@@ -76,13 +72,12 @@ of the requested memory. For example, if your job asks the scheduler for
 which will cap its heap usage to 24 GB, leaving at least 6 GB for its
 stack and any other overheads.
 
-Temporary Files
----------------
+## Temporary Files
 
 Java programs which use temporary files can (and should) generally be
-persuaded to use \$TMPDIR rather than just the default of `/tmp `by
-being given the option `-Djava.io.tmpdir=$TMPDIR.`  TMPDIR is
-automatically removed at the end of the job.
+persuaded to use $TMPDIR rather than just the default of `/tmp `by being
+given the option `-Djava.io.tmpdir=$TMPDIR.`  TMPDIR is automatically
+removed at the end of the job.
 
 -   If you run your Java program by using the `java` command, that is in
     a form like

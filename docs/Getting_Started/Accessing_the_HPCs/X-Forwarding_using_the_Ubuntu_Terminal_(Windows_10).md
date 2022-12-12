@@ -1,8 +1,8 @@
 1.  [Download and install Xming from
-    here](https://sourceforge.net/projects/xming/). Don\'t install an
-    SSH client when prompted during the installation, if you are
-    prompted for Firewall permissions after installing Xming close the
-    window without allowing any Firewall permissions.
+    here](https://sourceforge.net/projects/xming/). Don't install an SSH
+    client when prompted during the installation, if you are prompted
+    for Firewall permissions after installing Xming close the window
+    without allowing any Firewall permissions.
 2.  Open your Ubuntu terminal and install x11-apps with the command
     `sudo apt install x11-apps -y`.
 3.  In your Ubuntu terminal run the command

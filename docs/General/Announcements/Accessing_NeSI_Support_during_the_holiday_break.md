@@ -27,7 +27,7 @@ of self-service support:
     Documentation](https://support.nesi.org.nz/hc/en-gb/categories/360000013836 "https://support.nesi.org.nz/hc/en-gb/categories/360000013836") pages
     for instructions and guidelines for using the systems
 
--   [Visit NeSI's YouTube
+-   [Visit NeSI’s YouTube
     channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
     introductory training webinars
 

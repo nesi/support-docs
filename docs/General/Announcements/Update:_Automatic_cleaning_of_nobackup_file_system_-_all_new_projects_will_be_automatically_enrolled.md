@@ -20,5 +20,5 @@ page](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-clean
 
 If you have questions or require assistance with moving your data out of
 your nobackup directory, please [contact
-us](https://support.nesi.org.nz/hc/en-gb/requests/new).\
-\
+us](https://support.nesi.org.nz/hc/en-gb/requests/new).  
+  

@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -11,8 +11,7 @@
 >     with [Ubuntu
 >     terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
 
-First time setup {#recLinux}
-----------------
+## First time setup
 
 The login process can be simplified significantly with a few easy
 configurations.
@@ -54,13 +53,13 @@ configurations.
             ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
             ControlPersist 1
 
-    Close and save with ctrl x, y, Enter
+    Close and save with <kbd>ctrl x</kbd>, <kbd>y</kbd>,
+    <kbd>Enter</kbd>
 
 3.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
 
-Usage
------
+## Usage
 
 Assuming you have followed the setup above you will be able to connect
 to the clusters directly using;
@@ -79,7 +78,7 @@ having to re-enter authentication e.g.
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

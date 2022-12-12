@@ -1,12 +1,12 @@
 Many codes can be accelerated significantly by offloading computations
 to a GPU. Some NeSI [Mahuika nodes have GPUs attached to
 them](https://support.nesi.org.nz/hc/en-gb/articles/360001471955-GPU-use-on-NeSI).
-If you want your code to run faster, if you\'re developing your own code
+If you want your code to run faster, if you're developing your own code
 or if you have access to the source code and you feel comfortable
 editing the code, read on.
 
 Here we show how to tell the compiler which part of your algorithm you
-want to run a GPU. We\'ll use OpenACC, which adds directives to your
+want to run a GPU. We'll use OpenACC, which adds directives to your
 source code. The advantages of OpenACC over other approaches is that the
 source code changes are generally small and your code remains portable,
 i.e. it will run on both CPU and GPU. The main disadvantage of OpenACC
@@ -15,8 +15,7 @@ is that only a few compilers support it. 
 More information about OpenACC can be found
 [here](http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf).
 
-Example
-=======
+# Example
 
 In the following we show how to achieve this in the case of a reduction
 operation involving a large loop in C++ (a similar example can be
@@ -40,16 +39,15 @@ Note the pragma
 
     #pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
 
-We\'re telling the compiler that the loop following this pragma should
-be executed in parallel on the GPU. Since GPUs have hundreds or more
+We're telling the compiler that the loop following this pragma should be
+executed in parallel on the GPU. Since GPUs have hundreds or more
 threads, the speedup can be significant. Also note that `total` is
 initialised on the CPU (above the pragma) and should be copied to the
 GPU and back to the CPU after completing the loop. (It is also possible
 to initialise this variable on the GPU.) Likewise the number of
 iterations `n` should be copied from the CPU  to the GPU. 
 
-Compile
-=======
+# Compile
 
 We can use the NVIDIA compiler
 
@@ -69,9 +67,9 @@ but first we need to load a few modules:
     module load craype-accel-nvidia60 
     module load PrgEnv-cray
 
-(Ignore warning \"[cudatoolkit \>= 8.0 is required\"). Furthermore, you
-may need to load `cuda/fft` or `cuda/blas`\
-]{.s1}
+(Ignore warning "<span class="s1">cudatoolkit &gt;= 8.0 is required").
+Furthermore, you may need to load `cuda/fft` or `cuda/blas`  
+</span>
 
 To compare the execution times between the CPU and GPU version, we build
 two executables:
@@ -82,8 +80,7 @@ two executables:
 with executable `total` compiled with `-h noacc`, i.e. OpenACC turned
 off.
 
-Run
-===
+# Run
 
 The following commands will submit the runs to the Mahuika queue (note
 `--gpus-per-node=P100:1` in the case of the executable that offloads to
@@ -92,13 +89,20 @@ the GPU):
     time srun --ntasks=1 --cpus-per-task=1 ./total
     time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 
-+-----------------------------------+-----------------------------------+
-| executable                        | time \[s\]                        |
-+-----------------------------------+-----------------------------------+
-| total                             | 7.6                               |
-+-----------------------------------+-----------------------------------+
-| totalAccGpu                       | 0.41                              |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
  
 

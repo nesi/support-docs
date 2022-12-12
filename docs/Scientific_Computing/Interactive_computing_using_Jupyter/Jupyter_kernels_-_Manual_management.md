@@ -1,5 +1,4 @@
-Introduction
-============
+# Introduction
 
 Jupyter kernels execute the code that you write. The following Jupyter
 kernels are installed by default and can be selected from the Launcher:
@@ -17,10 +16,9 @@ and these can be extended further as described on the
 [R](https://support.nesi.org.nz/hc/en-gb/articles/209338087) support
 pages.
 
-Adding a custom Python kernel
-=============================
+# Adding a custom Python kernel
 
-> ### See also {#llama-tip}
+> ### See also
 >
 > See the [Jupyter kernels - Tool-assisted
 > management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
@@ -47,7 +45,7 @@ module:
     $ module purge
     $ module load Miniconda3/4.8.2
 
-Now create a conda environment named \"my-conda-env\" using Python 3.6.
+Now create a conda environment named "my-conda-env" using Python 3.6.
 The *ipykernel* Python package is required but you can change the names
 of the environment, version of Python and install other Python packages
 as required.
@@ -65,8 +63,8 @@ Now create a Jupyter kernel based on your new conda environment:
 We must now edit the kernel to load the required NeSI environment
 modules before the kernel is launched. Change to the directory the
 kernelspec was installed to
-(\~/.local/share/jupyter/kernels/my-conda-env,* *assuming you kept
-*\--name my-conda-env* in the above command):
+(~/.local/share/jupyter/kernels/my-conda-env,* *assuming you kept
+*--name my-conda-env* in the above command):
 
     $ cd ~/.local/share/jupyter/kernels/my-conda-env
 
@@ -93,7 +91,7 @@ Make the wrapper script executable:
 
 Next edit the *kernel.json* to change the first element of the argv list
 to point to the wrapper script we just created. The file should look
-like this (change \<username\> to your NeSI username):
+like this (change &lt;username&gt; to your NeSI username):
 
     {
      "argv": [
@@ -108,10 +106,9 @@ like this (change \<username\> to your NeSI username):
     }
 
 After refreshing JupyterLab your new kernel should show up in the
-Launcher as \"My Conda Env\".
+Launcher as "My Conda Env".
 
-Sharing a Python kernel with your project team members
-======================================================
+# Sharing a Python kernel with your project team members
 
 You can also configure a shared Python kernel that others with access to
 the same NeSI project will be able to load. If this kernel is based on a
@@ -161,7 +158,7 @@ Make the wrapper script executable:
 
 Next, edit the *kernel.json* to change the first element of the argv
 list to point to the wrapper script we just created. The file should
-look like this (change \<project\_code\> to your NeSI project code):
+look like this (change &lt;project\_code&gt; to your NeSI project code):
 
     {
      "argv": [
@@ -176,18 +173,16 @@ look like this (change \<project\_code\> to your NeSI project code):
     }
 
 After refreshing JupyterLab your new kernel should show up in the
-Launcher as \"Shared Virtual Env\".
+Launcher as "Shared Virtual Env".
 
-Custom kernel in a Singularity container
-========================================
+# Custom kernel in a Singularity container
 
 An example showing setting up a custom kernel running in a Singularity
 container can be found on our [Lambda
 Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack#lambda_stack_via_jupyter)
 support page.
 
-Adding a custom R kernel
-========================
+# Adding a custom R kernel
 
 You can configure custom R kernels for running your Jupyter notebooks.
 The following example will create a custom kernel based on the
@@ -212,8 +207,8 @@ Now create an R Jupyter kernel based on your new conda environment:
 We must now to edit the kernel to load the required NeSI environment
 modules when the kernel is launched. Change to the directory the
 kernelspec was installed to
-(\~/.local/share/jupyter/kernels/myrwithmpfr,* *assuming you kept
-*\--name myrwithmpfr* in the above command):
+(~/.local/share/jupyter/kernels/myrwithmpfr,* *assuming you kept *--name
+myrwithmpfr* in the above command):
 
     $ cd ~/.local/share/jupyter/kernels/myrwithmpfr
 
@@ -236,7 +231,7 @@ Make the wrapper script executable:
 
 Next edit the *kernel.json* to change the first element of the argv list
 to point to the wrapper script we just created. The file should look
-something like this (change \<username\> to your NeSI username):
+something like this (change &lt;username&gt; to your NeSI username):
 
     {
      "argv": [
@@ -252,10 +247,9 @@ something like this (change \<username\> to your NeSI username):
     }
 
 After refreshing JupyterLab your new R kernel should show up in the
-Launcher as \"R with MPFR\".
+Launcher as "R with MPFR".
 
-Spark
-=====
+# Spark
 
 At the time of writing, the latest stable version of Spark does not
 support Python 3.8. If you wish to use Spark (e.g. PySpark) make sure

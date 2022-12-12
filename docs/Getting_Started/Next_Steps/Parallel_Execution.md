@@ -1,20 +1,24 @@
-[Many scientific software applications are written to take advantage of
-multiple CPUs in some way. But often this must be specifically requested
-by the user at the time they run the program, rather than happening
-automatically.]{style="font-weight: 400;"}[\
-]{style="font-weight: 400;"}
+<span style="font-weight: 400;">Many scientific software applications
+are writ<dfn class="dictionary-of-numbers">ten to take advantage
+</dfn>of multiple CPUs in some way. But
+of<dfn class="dictionary-of-numbers">ten this must be </dfn>specifically
+requested by the user at the time they run the program, rather than
+happening automatically.</span><span style="font-weight: 400;">  
+</span>
 
-The are three types of parallel execution we will cover
-are [Multi-Threading(oMP)](#t_multi),
+The are <dfn class="dictionary-of-numbers">three types of parallel
+</dfn>execution we will cover are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
 
 > ### Note
 >
-> Whenever Slurm mentions CPUs it is referring to *logical* CPU\'s
-> (**2** *logical* CPU\'s = **1** *physical* core).\
+> Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
+> *logical* CPU's = **1** *physical* core).  
 >
 > -   `--cpus-per-task=4` will give you 4 *logical* cores.
-> -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
+> -   `--mem-per-cpu=512MB` will give
+>     <dfn class="dictionary-of-numbers">512 MB of
+>     RAM</dfn> per *logical* core.
 > -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
 >     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
 >     logical cores.
@@ -23,27 +27,23 @@ See [our article on
 hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
 for more information.
 
-Multi-threading {#t_multi}
-===============
+# Multi-threading
 
-[Multi-threading is a method of parallelisation whereby the initial
-single thread of a process forks into a number of parallel threads,
-generally *via* a library such as OpenMP (Open MultiProcessing), TBB
-(Threading Building Blocks), or pthread (POSIX
-threads).]{style="font-weight: 400;"}
+<span style="font-weight: 400;">Multi-threading is a method of
+parallelisation whereby the initial single thread of a process forks
+into a number of parallel threads, generally *via* a library such as
+OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or
+pthread (PO<dfn class="dictionary-of-numbers">SIX threads)</dfn>.</span>
 
-::: {.panel}
-![Diagram showing serial
-operations.](https://support.nesi.org.nz/hc/article_attachments/360001532455/serial.png){.figure-img}\
-*Fig. 1: In a serial operation, tasks complete one after another.*
-:::
+<img src="mkdocs/includes/images/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
+*Fig. 1: In a serial operation, tasks complete
+<dfn class="dictionary-of-numbers">one after another</dfn>.*
 
 ####  
 
-![par.png](https://support.nesi.org.nz/hc/article_attachments/360001532435/par.png){width="714"
-height="160"}*\
+<img src="mkdocs/includes/images/par.png" alt="par.png" width="714" height="160" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
-\'threads\' which can be run across multiple cores.*
+'threads' which can be run across multiple cores.*
 
 Multi-threading is limited in that it requires shared memory, so all
 CPU cores used must be on the same node. However, because all the CPUs
@@ -65,17 +65,16 @@ The expected output being
 
     pid 13538's current affinity list: 7,9,43,45
 
-MPI {#t_mpi}
-===
+# MPI
 
-MPI stands for *Message Passing Interface*, and [is a communication
-protocol used to achieve distributed parallel
-computation.]{style="font-weight: 400;"}
+MPI stands for *Message Passing Interface*, and <span
+style="font-weight: 400;">is a communication protocol used to achieve
+distributed parallel computation.</span>
 
-[Similar in some ways to multi-threading, MPI does not have the
-limitation of requiring shared memory and thus can be used across
-multiple nodes, but has higher communication and memory
-overheads.]{style="font-weight: 400;"}
+<span style="font-weight: 400;">Similar in some ways to multi-threading,
+MPI does not have the limitation of requiring shared memory and thus can
+be used across multiple nodes, but has higher communication and memory
+overheads.</span>
 
 For MPI jobs you need to set `--ntasks` to a value larger than 1, or if
 you want all nodes to run the same number of tasks, set
@@ -102,19 +101,19 @@ The expected output being
     /home/user001/demo
     /home/user001/demo
 
-> ### Warning {#prerequisites}
+> ### Warning
 >
 > For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
 > all. Using `srun` in conjunction with `--cpus-per-task=1` will
 > cause `--ntasks` to default to 2.
 
-Job Arrays {#t_array}
-==========
+# Job Arrays
 
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
-executed in any order and don\'t have to run at the same time. This kind
-of work is often described as *embarrassingly parallel*.\
+executed in any order and don't have to run at the same time. This kind
+of work is often described as<dfn class="dictionary-of-numbers">
+</dfn>*embarrassingly parallel*.  
 An embarrassingly parallel problem is one that requires no communication
 or dependency between the tasks (unlike distributed computing problems
 that need communication between tasks).
@@ -135,28 +134,30 @@ For example, the following code:
     echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
 will submit,  `ArrayJob_1` and `ArrayJob_2`, which will return the
-results This is result 1 and This is result 2 respectively.
+results <samp class="nohighlight">This is result 1</samp> and
+<samp class="nohighlight">This is result 2</samp> respectively.
 
-Using SLURM\_ARRAY\_TASK\_ID
-----------------------------
+## Using SLURM\_ARRAY\_TASK\_ID
 
 Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
 recommended method of variation between the jobs. For example:
 
--   As a direct input to a function.\
+<ul>
+<ul>
+-   As a direct input to a function.  
 
         matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
 
--   As an index to an array.\
+-   As an index to an array.  
 
         inArray=(1 2 4 8 16 32 64 128)
         input=${inArray[$SLURM_ARRAY_TASK_ID]}
 
--   For selecting input files.\
+-   For selecting input files.  
 
         input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
 
--   As a seed for a pseudo-random number.\
+-   As a seed for a pseudo-random number.  
     -   In R
 
             task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
@@ -167,7 +168,7 @@ recommended method of variation between the jobs. For example:
             task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
             rng(task_id)
 
-    *\
+    \*  
     Using a seed is important, otherwise multiple jobs may receive the
     same pseudo-random numbers.*
 -   As an index to an array of filenames. 
@@ -177,8 +178,10 @@ recommended method of variation between the jobs. For example:
         # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
 
     This example will submit a job array with each job using a .dat file
-    in \'inputs\' as the variable input (in alphabetcial order).
+    in 'inputs' as the variable input (in alphabetcial order).
 
+</ul>
+</ul>
 Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.
@@ -204,8 +207,7 @@ useful for sorting your output files e.g.
 
     echo "$n_day $n_time:00"
 
-Avoiding Conflicts
-------------------
+## Avoiding Conflicts
 
 As all the array jobs could theoretically run at the same time, it is
 important that all file references are unique and independent.

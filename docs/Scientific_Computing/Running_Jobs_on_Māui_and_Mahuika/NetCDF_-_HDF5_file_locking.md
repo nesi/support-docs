@@ -3,15 +3,15 @@ and HDF5 formats on both Mahuika and Māui.
 
 On Māui, both libraries are part of the Cray Programming Environment and
 can be accessed using the modules
-\'cray-netcdf\'/\'cray-netcdf-hdf5parallel\', and
-\'cray-hdf5\'/\'cray-hdf5-parallel\'.
+'cray-netcdf'/'cray-netcdf-hdf5parallel', and
+'cray-hdf5'/'cray-hdf5-parallel'.
 
 Recent versions of NetCDF and HDF5 (HDF5 1.10.x and newer) use a file
 locking feature. This prevents data corruption in rare cases of
 single-writer/multiple-reader and multiple writer access patterns. On
 our current XC50 platforms (Māui), file locking is not yet fully
-supported by Cray\'s DVS, which allows accessing the parallel file
-system GPFS on the XC50 compute nodes.
+supported by Cray's DVS, which allows accessing the parallel file system
+GPFS on the XC50 compute nodes.
 
 Due to this missing support, NetCDF (using NetCDF4 format) and HDF5
 applications writing data from Māui compute nodes need to disable file

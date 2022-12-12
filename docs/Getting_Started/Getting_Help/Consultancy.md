@@ -1,24 +1,22 @@
-NeSI\'s Consultancy service provides scientific and HPC-focussed
+NeSI's Consultancy service provides scientific and HPC-focussed
 computational and data science support to research projects across a
 range of domains.
 
-Need support with your research project?
-----------------------------------------
+## Need support with your research project?
 
-If you would like to learn more about NeSI\'s Consultancy service and
-how you can work with NeSI\'s Research Software and Data Science
-Engineers on a project, please contact us (<support@nesi.org.nz>) to set
-up an initial meeting. We can discuss your needs and complete a
+If you would like to learn more about NeSI's Consultancy service and how
+you can work with NeSI's Research Software and Data Science Engineers on
+a project, please contact us
+(<a href="mailto:support@nesi.org.nz" class="mailto">support@nesi.org.nz</a>) to
+set up an initial meeting. We can discuss your needs and complete a
 Consultancy application form together.
 
 Researchers from NeSI collaborator institutions (University of Auckland,
 NIWA, University of Otago and Manaaki Whenua - Landcare Research) and
 those with Merit projects can usually access consultancy at no cost to
-themselves, based on their institution\'s or MBIE\'s investment into
-NeSI.
+themselves, based on their institution's or MBIE's investment into NeSI.
 
-What do we do?
---------------
+## What do we do?
 
 The NeSI team are available to help with any stage of your research
 software development. We can get involved with designing and developing
@@ -38,9 +36,9 @@ non-exhaustive):
     -   Develop visualisation and post-processing tools (GUIs,
         dashboards, etc)
 -   Performance improvement
-    -   Code optimisation -- profile and improve efficiency (speed and
+    -   Code optimisation – profile and improve efficiency (speed and
         memory), IO performance
-    -   Parallelisation -- software (OpenMP, MPI, etc.) and workflow
+    -   Parallelisation – software (OpenMP, MPI, etc.) and workflow
         parallelisation
 -   Improve software sustainability (version control, testing,
     continuous integration, etc)
@@ -51,8 +49,7 @@ non-exhaustive):
         models
 -   Anything else you can think of ;-)
 
-What can you expect from us?
-----------------------------
+## What can you expect from us?
 
 During a consultancy project we aim to provide:
 
@@ -66,8 +63,7 @@ During a consultancy project we aim to provide:
 -   A case study published on our website after the project has been
     completed, to showcase the work you are doing on NeSI
 
-What is expected of you?
-------------------------
+## What is expected of you?
 
 Consultancy projects are intended to be a collaboration and thus some
 input is required on your part. You should be willing to:
@@ -83,11 +79,10 @@ input is required on your part. You should be willing to:
     which could include co-authorship if our contribution is deemed
     worthy
 -   Accept full ownership/maintenance of the work after the project
-    completes (NeSI\'s involvement in the project is limited to the
+    completes (NeSI's involvement in the project is limited to the
     agreed timeline)
 
-Previous projects
------------------
+## Previous projects
 
 Listed below are some examples of previous projects we have contributed
 to:
@@ -96,7 +91,7 @@ to:
     chill](https://www.nesi.org.nz/case-studies/quantum-casino-helps-define-atoms-big-chill)
 -   [Using statistical models to help New Zealand prepare for large
     earthquakes](https://www.nesi.org.nz/case-studies/using-statistical-models-help-new-zealand-prepare-large-earthquakes)
--   [Improving researchers\' ability to access and analyse climate model
+-   [Improving researchers' ability to access and analyse climate model
     data
     sets](https://www.nesi.org.nz/case-studies/improving-researchers-ability-access-and-analyse-climate-model-data-sets)
 -   [Speeding up the post-processing of a climate model data
@@ -105,7 +100,7 @@ to:
     software](https://www.nesi.org.nz/case-studies/overcoming-data-processing-overload-scientific-web-mapping-software)
 -   [Visualising ripple effects in riverbed sediment
     transport](https://www.nesi.org.nz/case-studies/visualising-ripple-effects-riverbed-sediment-transport)
--   [New Zealand\'s first national river flow forecasting system for
+-   [New Zealand's first national river flow forecasting system for
     flooding
     resilience](https://www.nesi.org.nz/case-studies/new-zealand%E2%80%99s-first-national-river-flow-forecasting-system-flooding-resilience)
 -   [A fast model for predicting floods and storm
@@ -146,7 +141,7 @@ to:
     methods](https://www.nesi.org.nz/case-studies/improving-earthquake-forecasting-methods)
 -   [Modernising models to diagnose and treat disease and
     injury](https://www.nesi.org.nz/case-studies/modernising-models-diagnose-and-treat-disease-and-injury)
--   [Cataloguing NZ\'s earthquake
+-   [Cataloguing NZ's earthquake
     activities](https://www.nesi.org.nz/case-studies/cataloguing-nz%E2%80%99s-earthquake-activities)
 -   [Finite element modelling of biological
     cells](https://www.nesi.org.nz/case-studies/finite-element-modelling-biological-cells)

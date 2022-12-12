@@ -1,8 +1,6 @@
-Release Update - 15. March 2022 {#ReleaseNotes-ReleaseUpdate-11.July2019}
--------------------------------
+## Release Update - 15. March 2022
 
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved
 
 -   Notify users mentioned in project applications (if there is no NeSI
     account linked to the users email address).

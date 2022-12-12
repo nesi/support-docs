@@ -1,16 +1,13 @@
-I get the following warning message, do I need to worry?
---------------------------------------------------------
+## I get the following warning message, do I need to worry?
 
     craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
 
-Short:
-------
+## Short:
 
 No. This is only a warning message from an interim state. And gets
 resolved immidiately afterwards.
 
-More details:
--------------
+## More details:
 
 Our software stacks are build with easybuild. There are toolchains
 defined, which wraps around the Cray `PrgEnv-???` modules. These
@@ -25,7 +22,7 @@ issue.
 You can check the actual situation by inspecting `module list`
 
 There is a way to prevent the message: Assuming you want to load a
-certain toolchain or application. Let\'s say
+certain toolchain or application. Let's say
 {code}VASP/5.4.4-CrayIntel-18.08{code} which is build with build Intel
 18.08, we can first swap into the desired {code}PrgEnv{code}
 

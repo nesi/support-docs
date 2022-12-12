@@ -1,5 +1,7 @@
-Description
------------
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
+## Description
 
 The Gaussian series of programs provides state-of-the-art capabilities
 for electronic structure modelling. It is used by chemists, chemical
@@ -7,20 +9,18 @@ engineers, biochemists, physicists and other scientists worldwide.
 Starting from the fundamental laws of quantum mechanics, Gaussian
 predicts the energies, molecular structures, vibrational frequencies and
 molecular properties of molecules and reactions in a wide variety of
-chemical environments. Gaussian\'s models can be applied to both stable
+chemical environments. Gaussian's models can be applied to both stable
 species and compounds which are difficult or impossible to observe
 experimentally (e.g., short-lived intermediates and transition
 structures).
 
 The Gaussian home page is at <http://www.gaussian.com>.
 
-Availablity {#available-versions}
------------
+## Availablity
 
 Gaussian is installed on the Mahuika cluster.
 
-Licensing requirements
-----------------------
+## Licensing requirements
 
 Gaussian is made available to researchers under closed-source,
 commercial licence agreements with individuals, research groups or
@@ -32,13 +32,13 @@ For the sake of compliance with Gaussian licence agreements, we maintain
 a special Gaussian UNIX group. Only members of this group may access and
 use Gaussian. You can ask to join the Gaussian group by emailing our
 support team at
-[support\@nesi.org.nz](mailto:support@nesi.org.nz?subject=Request%20to%20join%20the%20Gaussian%20group).
+[support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Request%20to%20join%20the%20Gaussian%20group).
 
 All University of Auckland staff and students are in the Gaussian group
 automatically. If you are not a staff member or student at the
 University of Auckland, we will add you to the Gaussian group if we are
 satisfied that you require access to Gaussian to carry out your research
-and that your institution\'s Gaussian licence agreement permits you to
+and that your institution's Gaussian licence agreement permits you to
 use Gaussian on a computer that is not owned by or housed at your
 institution. We may at any time remove you from the Gaussian group if we
 believe these conditions are no longer met.
@@ -47,10 +47,9 @@ If you have any questions regarding your eligibility to access Gaussian
 or any particular version or installation of it, please contact [our
 support desk](mailto:support@nesi.org.nz).
 
-Example jobs
-------------
+## Example jobs
 
-### Example job submission script {#example-script-and-input-for-the-pan-cluster}
+### Example job submission script
 
 The following job submission script is intended for use on Mahuika.
 Please note that it has a memory requirement built in: at least 2 GB for
@@ -121,7 +120,7 @@ request of 4 GB (4,096 MB).
 
     srun g09 < "${gjf_working_copy}"
 
-### Example template input file {#example-input-file}
+### Example template input file
 
 Any Gaussian input file must end with a blank line. We also recommend
 specifying a checkpoint file using the %Chk directive, as a saved
@@ -145,8 +144,7 @@ memory) and is replaced with a real value when the Slurm job starts.
     O 1 0.95
     H 2 0.95 1 109.0
 
-Further notes
--------------
+## Further notes
 
 ### Setting the memory and number of cores
 
@@ -163,7 +161,7 @@ The key properties are `%NProcShared` and `%Mem`:
     should be about 2 GB (2,048 MB) less than the value of `--mem` in
     the Slurm job submission script. Note that `--mem` is interpreted as
     being in MB rather than GB unless otherwise specified (i.e., with a
-    \"G\" on the end).
+    "G" on the end).
 
 If you use the example Slurm script and template gjf file provided above
 (with appropriate modifications for your chemical system and desired
@@ -171,7 +169,7 @@ calculation), this should happen automatically.
 
 ### Saving temporary working files (for advanced users)
 
-If you want Gaussian\'s temporary files (`*.inp`, `*.d2e`, `*.int`,
+If you want Gaussian's temporary files (`*.inp`, `*.d2e`, `*.int`,
 `*.rwf` and `*.scr`) to be written to a particular directory, you can
 achieve this by setting the `GAUSS_SCRDIR` environment variable in your
 job submission script, for instance:

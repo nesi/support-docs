@@ -9,183 +9,340 @@ command: 
 
 `$ nn_storage_quota`
 
-The values for \'nn\_storage\_quota\' are updated approximately every
-hour and cached between updates.
+The values for 'nn\_storage\_quota' are updated approximately every hour
+and cached between updates.
 
-![neSI\_filetree.svg](https://support.nesi.org.nz/hc/article_attachments/360003251796/neSI_filetree.svg){width="629" height="578"}
-----------------------------------------------------------------------------------------------------------------------------------
+## <img src="mkdocs/includes/images/neSI_filetree.svg" alt="neSI_filetree.svg" width="629" height="578" />
 
-File System Specifications
-==========================
+# File System Specifications
 
+<table class="table table-bordered" style="tr td: first-child {    white-space:nowrap;">
+<tbody>
+<tr>
+<td style="width: 84.1875px;">
 **Filesystem**
 
+</td>
+<td style="width: 119px;">
 **/home**
 
+</td>
+<td style="width: 135px;">
 **/nesi/project**
 
+</td>
+<td style="width: 188px;">
 **/nesi/nobackup**
 
+</td>
+<td style="width: 116.09375px;">
 **/nesi/nearline** (in Early Access phase)
 
-**Default disk space\
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
+**Default disk space  
 **
 
+</td>
+<td style="width: 119px;">
  
 
+</td>
+<td style="width: 135px;">
  
 
+</td>
+<td style="width: 188px;">
  
 
+</td>
+<td style="width: 116.09375px;" rowspan="3">
 No default; allocations are based on eligibility and technical
-requirements\
+requirements  
   
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **    - soft quota**
 
+</td>
+<td style="width: 119px;">
 20 GB
 
-100 GB\
+</td>
+<td style="width: 135px;">
+100 GB  
 
+</td>
+<td style="width: 188px;">
 10 TB
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **    - hard quota**
 
+</td>
+<td style="width: 119px;">
  
 
+</td>
+<td style="width: 135px;">
 110 GB
 
+</td>
+<td style="width: 188px;">
 12 TB
 
-**Default file count (inode)\
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
+**Default file count (inode)  
 **
 
+</td>
+<td style="width: 119px;">
  
 
+</td>
+<td style="width: 135px;">
  
 
+</td>
+<td style="width: 188px;">
  
 
+</td>
+<td style="width: 116.09375px;" rowspan="3">
 No default; allocations are based on eligibility and technical
-requirements\
+requirements  
   
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **    - soft quota**
 
+</td>
+<td style="width: 119px;">
 1,000,000 files
 
+</td>
+<td style="width: 135px;">
 100,000 files
 
+</td>
+<td style="width: 188px;">
 1,000,000 files
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **    - hard quota**
 
+</td>
+<td style="width: 119px;">
 1,100,000 files
 
+</td>
+<td style="width: 135px;">
 110,000 files
 
+</td>
+<td style="width: 188px;">
 1,100,000 files
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **Intended use**
 
+</td>
+<td style="width: 119px;">
 User-specific files such as configuration files, environment setup,
 source code, etc.
 
+</td>
+<td style="width: 135px;">
 Persistent project-related data, project-related software, etc.
 
+</td>
+<td style="width: 188px;">
 Data created or used by compute jobs that is intended to be temporary
 
+</td>
+<td style="width: 116.09375px;">
 Medium- to long-term storage of research data associated with past,
 present or planned compute projects
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **Total capacity**
 
+</td>
+<td style="width: 119px;">
 175 TB
 
+</td>
+<td style="width: 135px;">
 1,590 TB
 
+</td>
+<td style="width: 188px;">
 4,400 TB
 
+</td>
+<td style="width: 116.09375px;">
 Will grow as tapes are purchased
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **Data retention time**
 
+</td>
+<td style="width: 119px;">
 180 days after the user ceases to be a member of any active project
 
-90 days after the end of the project\'s last HPC Compute & Analytics
+</td>
+<td style="width: 135px;">
+90 days after the end of the project's last HPC Compute & Analytics
 allocation
 
+</td>
+<td style="width: 188px;">
 With certain exceptions, individual files will be deleted after being
 untouched for 120 days. See [Automatic cleaning of nobackup file
 system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856) for
-more information. 90 days after the end of the project\'s last HPC
+more information. 90 days after the end of the project's last HPC
 Compute & Analytics allocation, all remaining data is subject to
 deletion.
 
-180 days after the end of the project\'s last nearline storage
-allocation
+</td>
+<td style="width: 116.09375px;">
+180 days after the end of the project's last nearline storage allocation
 
-**Data backup schedule\
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
+**Data backup schedule  
 (Excluding snapsots)**
 
+</td>
+<td style="width: 119px;">
 Daily, last 10 versions of any given file retained for up to 90 days.
 
+</td>
+<td style="width: 135px;">
 Daily, last 10 versions of any given file retained for up to 90 days.
 
+</td>
+<td style="width: 188px;">
 None
 
+</td>
+<td style="width: 116.09375px;">
 Replication  between Wellington and Auckland tape libraries (under
 development)
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **Snapshots**
 
+</td>
+<td style="width: 119px;">
 Daily (retention period 7 days)
 
+</td>
+<td style="width: 135px;">
 Daily (retention period 7 days)
 
+</td>
+<td style="width: 188px;">
 None
 
+</td>
+<td style="width: 116.09375px;">
 None
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **Access speed**
 
+</td>
+<td style="width: 119px;">
 Moderate
 
+</td>
+<td style="width: 135px;">
 Moderate
 
+</td>
+<td style="width: 188px;">
 Fast
 
+</td>
+<td style="width: 116.09375px;">
 Slow
 
+</td>
+</tr>
+<tr>
+<td style="width: 84.1875px;">
 **Access interfaces**
 
+</td>
+<td style="width: 119px;">
 -   Native Spectrum Scale mounts
 -   SCP
 -   Globus data transfer
 
-<!-- -->
-
+</td>
+<td style="width: 135px;">
 -   Native Spectrum Scale mounts
 -   SCP
 
-<!-- -->
-
+</td>
+<td style="width: 188px;">
 -   Native Spectrum Scale mounts
 -   SCP
 -   Globus data transfer
 
+</td>
+<td style="width: 116.09375px;">
 Nearline commands
 
+</td>
+</tr>
+</tbody>
+</table>
 ### **Soft versus hard quotas**
 
 We use Spectrum Scale soft and hard quotas for both disk space and
 inodes.
 
--   Once you exceed a fileset\'s soft quota, a one-week countdown timer
+-   Once you exceed a fileset's soft quota, a one-week countdown timer
     starts. When that timer runs out, you will no longer be able to
     create new files or write more data in that fileset. You can reset
     the countdown timer by dropping down to under the soft quota limit.
--   You will not be permitted to exceed a fileset\'s hard quota at all.
+-   You will not be permitted to exceed a fileset's hard quota at all.
     Any attempt to try will produce an error; the precise error will
     depend on how your software responds to running out of disk space.
 
@@ -215,8 +372,7 @@ but will prevent creation of new data or files.
     command to prevent the cleaning policy from removing files, because
     this behaviour would deprive the community of a shared resource.
 
-/home
------
+## /home
 
 This file system is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. All home directories
@@ -228,8 +384,7 @@ cleaning policy will be applied to your home directory as long as your
 My NeSI account is active and you are a member of at least one active
 project.
 
-/nesi/project
--------------
+## /nesi/project
 
 This filesystem is accessible from all login, compute and ancillary
 nodes. Contents are backed up daily, via the Spectrum Protect backup
@@ -250,8 +405,7 @@ about in your [application for a new NeSI
 project](https://my.nesi.org.nz/html/request_project), and separately
 covering disk space and number of files.
 
-/nesi/nobackup
---------------
+## /nesi/nobackup
 
 The `/nesi/nobackup` file system has the highest performance of all NeSI
 file systems, with greater than 140 GB/s bandwidth from compute nodes to
@@ -269,10 +423,10 @@ process](https://support.nesi.org.nz/hc/en-gb/articles/360000202136), or
 [contact our support team](https://support.nesi.org.nz/hc/requests/new)
 at any time.
 
-[To ensure this file system remains fit-for-purpose, we are rolling out
-a regular cleaning policy as described in [Automatic cleaning of
-nobackup
-filesystem](https://support.nesi.org.nz/hc/en-gb/articles/360001162856).]{.wysiwyg-color-black}
+<span class="wysiwyg-color-black">To ensure this file system remains
+fit-for-purpose, we are rolling out a regular cleaning policy as
+described in [Automatic cleaning of nobackup
+filesystem](https://support.nesi.org.nz/hc/en-gb/articles/360001162856).</span>
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
@@ -281,10 +435,9 @@ the community of a shared resource.
 The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
-/nesi/nearline
---------------
+## /nesi/nearline
 
-> ### Note {#nearline-not-available}
+> ### Note
 >
 > The nearline service, including its associated file systems, is in an
 > Early Access phase, and allocations are by invitation. We appreciate
@@ -304,8 +457,7 @@ See [this
 page](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) for
 more information about the nearline service.
 
-Snapshots
-=========
+# Snapshots
 
 If you have accidentally deleted data you can recover it from
 a [snapshot](https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406).
@@ -314,20 +466,19 @@ cannot find it in a snapshot, please ask us to recover it for you by
 emailing [NeSI
 Support](mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File).
 
-Contributions of Small Files Towards Quotas
-===========================================
+# Contributions of Small Files Towards Quotas
 
 The Spectrum Scale file system makes use of a feature called
 *data-in-inode*. This feature will ensure that, once all of a
-(non-encrypted) file\'s required metadata has been written to our
-metadata storage, if all the file\'s data is able to fit within the
-file\'s remaining inode space (4 KiB minus metadata), it will be written
+(non-encrypted) file's required metadata has been written to our
+metadata storage, if all the file's data is able to fit within the
+file's remaining inode space (4 KiB minus metadata), it will be written
 there instead of to the data storage.
 
-For files larger than 4 KiB (minus the space needed to store the file\'s
+For files larger than 4 KiB (minus the space needed to store the file's
 metadata), the data written to disk will be stored in one or more
 sub-blocks of 256 KiB each (which are 1/32 of the filesystem Block
-Size), and the \"size\" allocated on disk will be rounded up to the
+Size), and the "size" allocated on disk will be rounded up to the
 nearest 256 KiB. Users or projects requiring many small files may find
 themselves using large amounts of disk space. Use of *data-in-inode*
 mitigates the effect of a large block size on such people and project
@@ -335,8 +486,8 @@ teams.
 
 However, very small files, as well as zero-size entities such as
 directories and symbolic links, still count towards the relevant
-fileset\'s inode quota. If therefore you expect you will need to store
+fileset's inode quota. If therefore you expect you will need to store
 large numbers of very small files in your home directory or in a
-project\'s persistent storage, please [contact our support
+project's persistent storage, please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) to discuss your
 storage needs.

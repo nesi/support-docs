@@ -1,32 +1,35 @@
-Environment Modules
--------------------
+## Environment Modules
 
-[Modules are a convenient  way to provide access to applications  on the
-cluster. They prepare the environment you need to run an
-application.]{style="font-weight: 400;"}
+<span style="font-weight: 400;">Modules are a convenient  way to provide
+access to applications  on the cluster. They prepare the environment you
+need to run an application.</span>
 
-[For a full list of module commands run man
-module]{style="font-weight: 400;"}
+<span style="font-weight: 400;">For a full list of module commands
+run <kbd>man module</kbd></span>
 
-  ------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  `module spider [ <string> ]`   List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)
-  `module show <string>`         Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module.
-  `module load <string>`         Load the module (name and version) given by `<string>`. If no version is given, load the default version.
-  `module list [ <string> ]`     List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.
-  ------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
-Slurm
------
+## Slurm
 
-Jobs on Mahuika and Māui are submitted* *in the form of a *[batch
-script ]{style="font-weight: 400;"}*[containing the code you want to run
-and a header of information needed by our job scheduler
-*Slurm.*]{style="font-weight: 400;"}
+Jobs on Mahuika and Māui are submitted* *in the form of a *<span
+style="font-weight: 400;">batch script </span>*<span
+style="font-weight: 400;">containing the code you want to run and a
+header of information needed by our job scheduler *Slurm.*</span>
 
-Creating a batch script
------------------------
+## Creating a batch script
 
-Create a new file and open it with nano myjob.sl
+Create a new file and open it with <kbd>nano myjob.sl</kbd>
 
     #!/bin/bash -e
     #SBATCH --job-name=SerialJob # job name (shows up in the queue)
@@ -36,20 +39,19 @@ Create a new file and open it with nano myjob.sl
 
     pwd # Prints working directory
 
-Copy in the above text and save and exit the text editor with \'ctrl +
-x\'.
+Copy in the above text and save and exit the text editor with 'ctrl +
+x'.
 
 Note:`#!/bin/bash`is expected by Slurm
 
 Note: if you are a member of multiple accounts you should add the line
 `#SBATCH --account=<projectcode>`
 
-Testing
--------
+## Testing
 
 We recommend testing your job using the debug Quality of Service (QOS). 
 The debug QOS can be gained by adding the `sbatch` command line option
-`--qos=debug`.\
+`--qos=debug`.  
 This adds 5000 to the job priority so raises it above all non-debug
 jobs, but is limited to one small job per user at a time: no more than
 15 minutes and no more than 2 nodes.
@@ -60,8 +62,7 @@ jobs, but is limited to one small job per user at a time: no more than
 > on the login node for long periods of time or using large numbers of
 > CPUs will be terminated.
 
-Submitting
-----------
+## Submitting
 
 Jobs are submitted to the scheduler using:
 
@@ -77,8 +78,7 @@ shell script through SBATCH pragmas
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/sbatch.html)
 
-Job Queue
----------
+## Job Queue
 
 The currently queued jobs can be checked using 
 
@@ -106,34 +106,33 @@ Or since a specified date using:
 Each job will show as multiple lines, one line for the parent job and
 then additional lines for each job step.
 
-> ### Tips {#prerequisites}
+> ### Tips
 >
-> sacct -X Only show parent processes.
+> <kbd>sacct -X</kbd> Only show parent processes.
 >
-> sacct \--state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
-> state.
+> <kbd>sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT</kbd>
+> Filter jobs by state.
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/sacct.html)
 
- Cancelling
------------
+##  Cancelling
 
-scancel \<jobid\> will cancel the job described by \<jobid\>. You can
-obtain the job ID by using sacct or squeue.
+<kbd>scancel &lt;jobid&gt;</kbd> will cancel the job described by
+<kbd>&lt;jobid&gt;</kbd>. You can obtain the job ID by using
+<kbd>sacct</kbd> or <kbd>squeue</kbd>.
 
-> ### Tips {#prerequisites}
+> ### Tips
 >
-> scancel -u \[username\] Kill all jobs submitted by you.
+> <kbd>scancel -u \[username\]</kbd> Kill all jobs submitted by you.
 >
-> scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
-> \[n2\]
+> <kbd>scancel {\[n1\]..\[n2\]}</kbd> Kill all jobs with an id between
+> <kbd>\[n1\]</kbd> and <kbd>\[n2\]</kbd>
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/scancel.html)
 
-Job Output
-----------
+## Job Output
 
 When the job completes, or in some cases earlier, two files will be
 added to the directory in which you were working when you submitted the

@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > -   Have your [connection to the NeSI
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
@@ -26,11 +26,10 @@ described
 your remote will be forwarded to your local.
 
 > -   
->
-MobaXterm
-=========
 
-> ### Tips {#prerequisites}
+# MobaXterm
+
+> ### Tips
 >
 > -   MobaXterm has an internal terminal which acts like a linux
 >     terminal and can be configured as described in the [Standard
@@ -38,7 +37,7 @@ MobaXterm
 >     Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535). 
 
 MobaXterm has a GUI to setup and launch sessions with port forwarding,
-click \'Tools \> MobaSSH Tunnel (port forwarding)\':
+click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 
 -   specify the lander.nesi.org.nz as SSH server address (right, lower
     box, first line)
@@ -49,10 +48,9 @@ click \'Tools \> MobaSSH Tunnel (port forwarding)\':
 -   Specify the local port number on the local side (left)
 -   Save
 
-![sshTunnel.PNG](https://support.nesi.org.nz/hc/article_attachments/360002834175/sshTunnel.PNG)
+![sshTunnel.PNG](img/sshTunnel.PNG)
 
-PuTTY
-=====
+# PuTTY
 
 *Coming soon..*
 
@@ -60,7 +58,7 @@ PuTTY
 
  
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   Using
 >     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on

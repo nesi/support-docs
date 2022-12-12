@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > Either an active login at a Tuakiri member institution, or [a Tuakiri
 > Virtual Home account in respect of your current place of work or
@@ -15,7 +15,7 @@
     the online form to us. We will complete your personal profile for
     our records.
 
-> ### What next? {#prerequisites}
+> ### What next?
 >
 > -   [Apply for
 >     Access](https://support.nesi.org.nz/hc/en-gb/articles/360000174976),

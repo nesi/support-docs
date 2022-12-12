@@ -8,14 +8,13 @@ new projects is as follows:
     may or may not be high-performance computing). We also check whether
     your project team is all assembled and has the skills needed to
     start using our systems (for example, basic familiarity with the
-    Linux command line).\
-    If you are a NIWA researcher, we will also confirm with NIWA\'s
+    Linux command line).  
+    If you are a NIWA researcher, we will also confirm with NIWA's
     institutional point of contact that you have followed the [NIWA
     internal documentation for gaining access to the
     HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services).
     You will only be able to access the NIWA internal documentation if
-    you are currently behind the NIWA VPN or on NIWA\'s internal
-    network.
+    you are currently behind the NIWA VPN or on NIWA's internal network.
 2.  **Software check:** One of our technical experts looks at the
     software you say you want to use and determines whether it can run
     on any of our systems and whether you are likely to be legally
@@ -27,7 +26,7 @@ new projects is as follows:
     support needs. We will consider whether we are able to offer the
     kind and amount of support your team is likely to need to progress
     your research if we approve it. This check is especially important
-    if we think you are likely to want or need to change someone else\'s
+    if we think you are likely to want or need to change someone else's
     code. We may consult with our scientific programmers at this point,
     and find out whether your project is likely to be eligible for our
     consultancy service.
@@ -71,7 +70,7 @@ is simpler:
     a chance to provide feedback if you think our suggested allocation
     would not meet your needs.
 3.  **Choice of Class and Contention:** We will choose from which class
-    to award your allocation, based on your research programme\'s
+    to award your allocation, based on your research programme's
     eligibility for the different classes and whether your proposed
     allocation would exceed [any class-based allocation
     limits](https://support.nesi.org.nz/hc/en-gb/articles/360000925176-Project-Eligibility-Classes).
@@ -79,14 +78,14 @@ is simpler:
     under contention.
 4.  **Approval:** If we decide that your project should be considered
     for an Institutional allocation, the request may need to be approved
-    by a representative of the project\'s host institution, which is the
+    by a representative of the project's host institution, which is the
     institution where the project owner works or studies.
 5.  **Decision and notification:** We will send you an email telling you
     about our decision.
 
 From time to time we may have to decline requests for allocations of
-computing resources. If we can\'t grant your research programme an
-allocation because of contention or because the project\'s host
+computing resources. If we can't grant your research programme an
+allocation because of contention or because the project's host
 institution has disallowed the allocation, this is not to be taken as a
 judgement on the merit of your research topic or the quality of your
-team\'s work.
+team's work.

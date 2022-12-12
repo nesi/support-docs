@@ -1,8 +1,8 @@
-[]{#criteria}The automatic cleaning feature is a programme of regular
-deletion of selected files from project directories in our nobackup file
-system. We do this to optimise the availability of this file system for
-active research computing workloads and to ensure NeSI can reliably
-support large-scale compute and analytics workflows.
+<span id="criteria"></span>The automatic cleaning feature is a programme
+of regular deletion of selected files from project directories in our
+nobackup file system. We do this to optimise the availability of this
+file system for active research computing workloads and to ensure NeSI
+can reliably support large-scale compute and analytics workflows.
 
 Files are deleted if they meet **all** of the following criteria:
 
@@ -10,26 +10,27 @@ Files are deleted if they meet **all** of the following criteria:
     accessed, and neither its data nor its metadata has been modified,
     for at least 120 days.
 -   The file was identified as a candidate for deletion two weeks
-    previously, and as such is listed in a the project\'s
+    previously, and as such is listed in a the project's
     nobackup `.policy` directory.
 
-> ### Tip {#prerequisites}
+> ### Tip
 >
 > You can get a list of files marked for deletion with the command
 > `nn_doomed_list`.
 >
-> Usage: nn\_doomed\_list \[-h\] \[\--project \[PROJECTS\]\]
-> \[\--unlimited\] \[\--limit LENGTHLIMIT\]
+> Usage: nn\_doomed\_list \[-h\] \[--project \[PROJECTS\]\]
+> \[--unlimited\] \[--limit LENGTHLIMIT\]
 >
-> [optional
-> arguments:]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}
+> <span
+> style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">optional
+> arguments:</span>
 >
-> -h, \--help show this help message and exit\
-> \--project \[PROJECTS\], -p \[PROJECTS\]\
+> -h, --help show this help message and exit  
+> --project \[PROJECTS\], -p \[PROJECTS\]  
 > Comma-separated list of projects to process. If not given, process all
-> projects of which the user is a member\
-> \--unlimited, -u Do not limit the length of the output file\
-> \--limit LENGTHLIMIT, -l LENGTHLIMIT\
+> projects of which the user is a member  
+> --unlimited, -u Do not limit the length of the output file  
+> --limit LENGTHLIMIT, -l LENGTHLIMIT  
 > Maximum length of the output file (lines)
 >
 > If no arguments are given, nn\_doomed\_list checks and displays all
@@ -39,17 +40,17 @@ Files are deleted if they meet **all** of the following criteria:
 
 The general process will follow a schedule as follows:
 
--   **Notify**[ (at 106 days), then two weeks later
-    ]{style="font-weight: 400;"}**Delete**[ (at 120
-    days)]{style="font-weight: 400;"}.
--   [Every fortnight on Tuesday morning, we will be reviewing files
-    stored in the nobackup filesystem and identifying candidates for
-    expiry]{style="font-weight: 400;"}.
+-   **Notify**<span style="font-weight: 400;"> (at 106 days), then two
+    weeks later </span>**Delete**<span style="font-weight: 400;"> (at
+    120 days)</span>.
+-   <span style="font-weight: 400;">Every fortnight on Tuesday morning,
+    we will be reviewing files stored in the nobackup filesystem and
+    identifying candidates for expiry</span>.
 -   Project teams will be notified by email if they have file candidates
     for deletion. Emails will be sent two weeks in advance of any
     deletion taking place.
 
-    > ### Warning {#email}
+    > ### Warning
     >
     > Due to the nature of email, we cannot guarantee that any
     > particular email message will be successfully delivered and
@@ -59,15 +60,15 @@ The general process will follow a schedule as follows:
     > deletion candidates, for each of your projects, whether you
     > received an email from us or not.
 
--   [Immediately after deletion is complete, a new set of candidate
-    files will be identified for expiry during the next automated
-    cleanup]{style="font-weight: 400;"}. These candidate files are all
-    files within the project\'s nobackup that have not been created,
+-   <span style="font-weight: 400;">Immediately after deletion is
+    complete, a new set of candidate files will be identified for expiry
+    during the next automated cleanup</span>. These candidate files are
+    all files within the project's nobackup that have not been created,
     accessed or modified within the last 106 days.
 
 A file containing the list of candidates for deletion during the next
 cleanup, along with the date of the next cleanup, will be created in a
-directory called `.policy/to_delete` inside the project\'s nobackup
+directory called `.policy/to_delete` inside the project's nobackup
 directory. For example, the candidates for future deletion from the
 directory `/nesi/nobackup/nesi12345` are recorded in
 `/nesi/nobackup/nesi12345/.policy/to_delete/<date>.filelist.gz`. Project
@@ -76,16 +77,15 @@ or modify those contents). The gzip compressed filelist can be viewed
 and searched with the `zless` and `zgrep` commands respectively, e.g.,
 `zless /nesi/nobackup/nesi12345/.policy/to_delete/<date>.filelist.gz`.
 
-> ### Warning {#prerequisites}
+> ### Warning
 >
 > Objects other than files, such as directories and symbolic links, are
 > not deleted under this policy, even if at deletion time they are
 > empty, broken, or otherwise redundant. These entities typically take
 > up no disk space apart from a small amount of metadata, but still
-> count towards the project\'s inode (file count) quota.
+> count towards the project's inode (file count) quota.
 
-What should I do with expiring data on the nobackup filesystem?
----------------------------------------------------------------
+## What should I do with expiring data on the nobackup filesystem?
 
 If the data is transient and no longer required for continued processing
 on NeSI then we would appreciate if you deleted it yourself, but you can
@@ -112,41 +112,37 @@ keep beyond the scheduled expiry date, you have four options:
     data again within the next month.
 -   Note: Accessing (Open/Close and Open/Save) or Moving (\`mv\`) does
     not update the timestamp of the file. Copying (\`cp\`) does create a
-    new timestamped file.\
+    new timestamped file.  
 
-    > ### Warning {#prerequisites}
+    > ### Warning
     >
     > Doing this for large numbers of files, or for files that together
-    > take up a large amount of disk space, in your project\'s nobackup
-    > directory, without regard for your project\'s computational
-    > activity, constitutes a breach of [NeSI\'s acceptable use
+    > take up a large amount of disk space, in your project's nobackup
+    > directory, without regard for your project's computational
+    > activity, constitutes a breach of [NeSI's acceptable use
     > policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy).
 
-[]{#advice}
+<span id="advice"></span>
 
-Where should I put my data?
----------------------------
+## Where should I put my data?
 
-+-----------------------+-----------------------+-----------------------+
-| **How often will my   | **How often will my   | **Recommended         |
-| team\'s HPC jobs be   | team\'s HPC jobs be   | option **             |
-| accessing the data?** | modifying the         |                       |
-|                       | data? **              |                       |
-+-----------------------+-----------------------+-----------------------+
-| Often                 | Often (at least once  | Leave in the nobackup |
-|                       | every two months)     | directory (but ensure |
-|                       |                       | key result data is    |
-|                       |                       | copied to the         |
-|                       |                       | persistent project    |
-|                       |                       | directory)            |
-+-----------------------+-----------------------+-----------------------+
-| Often                 | Seldom                | Put in the persistent |
-|                       |                       | project directory     |
-+-----------------------+-----------------------+-----------------------+
-| Seldom                | Seldom                | Store the data        |
-|                       |                       | elsewhere (e.g. at    |
-|                       |                       | your institution)     |
-+-----------------------+-----------------------+-----------------------+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 In general, the persistent project directory should be used for
 reference data, tools, and job submission and management scripts. The
@@ -157,8 +153,7 @@ used to build and edit code, provided that the code is under version
 control and changes are regularly checked into upstream revision control
 systems.
 
-If I need a file that was deleted from nobackup, what should I do?
-------------------------------------------------------------------
+## If I need a file that was deleted from nobackup, what should I do?
 
 Please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) as soon as
@@ -167,8 +162,7 @@ this outcome again in future, please [contact us in
 advance](https://support.nesi.org.nz/hc/en-gb/requests/new) so that we
 can discuss your data storage options with you.
 
-I have research data on nobackup that I can\'t store in my project directory or at my institution right now. What should I do?
-------------------------------------------------------------------------------------------------------------------------------
+## I have research data on nobackup that I can't store in my project directory or at my institution right now. What should I do?
 
 Please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) without delay
@@ -176,32 +170,32 @@ so we can discuss your short- and medium-term data storage needs. Our
 intention is to work with you to move your valuable data to an
 appropriate combination of:
 
--   [persistent project storage on NeSI,]{style="font-weight: 400;"}
--   [high performance /nobackup storage (temporary scratch space) on
-    NeSI,]{style="font-weight: 400;"}
--   [slow nearline storage (not released yet, on our roadmap),
-    and ]{style="font-weight: 400;"}
--   [institutional storage infrastructure.]{style="font-weight: 400;"}
+-   <span style="font-weight: 400;">persistent project storage on
+    NeSI,</span>
+-   <span style="font-weight: 400;">high performance /nobackup storage
+    (temporary scratch space) on NeSI,</span>
+-   <span style="font-weight: 400;">slow nearline storage (not released
+    yet, on our roadmap), and </span>
+-   <span style="font-weight: 400;">institutional storage
+    infrastructure.</span>
 
-User Webinars
--------------
+## User Webinars
 
 On 14 and 26 November 2019, we hosted webinars to explain these upcoming
 changes and answer user questions. If you missed these sessions, the
 archived materials are available at the links below:
 
--   ***Video recordings: ***\
-    14 November 2019 - <https://youtu.be/KPNNSwDJU7A> \
+-   ***Video recordings: ***  
+    14 November 2019 - <https://youtu.be/KPNNSwDJU7A>   
     26 November 2019 *(repeat of 14 Nov session)*
     - <https://youtu.be/iVTdlsiBTB4>
--   ***Slides: ***\
-    *(same slides were used for both presentations)*\
+-   ***Slides: ***  
+    *(same slides were used for both presentations)*  
     <https://drive.google.com/file/d/1kLwghsj9es8oMqdWj-VhUvaklW6JkrwO/view?usp=sharing>  
--   ***Q&A transcriptions: ***\
+-   ***Q&A transcriptions: ***  
     14 November 2019
-    - <https://drive.google.com/file/d/1tImzibZ3DcN7QOttZEZoYsR43mEiS5KJ/view?usp=sharing> \
+    - <https://drive.google.com/file/d/1tImzibZ3DcN7QOttZEZoYsR43mEiS5KJ/view?usp=sharing>   
     26 November 2019
     - <https://drive.google.com/file/d/1OSb71hhZnjnU9xsRALcpYM485va7aUxK/view?usp=sharing>
 
- 
--
+##  

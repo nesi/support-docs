@@ -5,15 +5,14 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](https://support.nesi.org.nz/hc/article_attachments/360004194235/Git_Diagram.svg)
+![Git\_Diagram.svg](mkdocs/includes/images/Git_Diagram.svg)
 
-Authentication
---------------
+## Authentication
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
 
-> ### Password authentication {#prerequisites}
+> ### Password authentication
 >
 > GitHub removed support for password authentication on August 13, 2021.
 > Using a SSH key is now the easiest way to set up authentication.
@@ -42,23 +41,22 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 -   Now log in to your github account. In the upper-right corner of any
     page, click your profile photo click **Settings**.
 
-    [![Settings icon in the user
-    bar](https://docs.github.com/assets/cb-34573/images/help/settings/userbar-account-settings.png)]{.procedural-image-wrapper}
+    <span class="procedural-image-wrapper">![Settings icon in the user
+    bar](mkdocs/includes/images/userbar-account-settings.png)</span>
 
--   In the \"Access\" section of the sidebar, click **SSH and GPG
-    keys**.
+-   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
-    [![SSH Key
-    button](https://docs.github.com/assets/cb-28257/images/help/settings/ssh-add-ssh-key-with-auth.png)]{.procedural-image-wrapper}
+    <span class="procedural-image-wrapper">![SSH Key
+    button](mkdocs/includes/images/ssh-add-ssh-key-with-auth.png)</span>
 
--   In the \"Title\" field, put \"Mahuika\" or \"NeSI\".
+-   In the "Title" field, put "Mahuika" or "NeSI".
 
--   Paste your key into the \"Key\" field.
+-   Paste your key into the "Key" field.
 
-    [![The key
-    field](https://docs.github.com/assets/cb-47495/images/help/settings/ssh-key-paste-with-type.png)]{.procedural-image-wrapper}
+    <span class="procedural-image-wrapper">![The key
+    field](mkdocs/includes/images/ssh-key-paste-with-type.png)</span>
 
 -   Click **Add SSH key**.
 
@@ -67,115 +65,237 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
         ssh -T git@github.com
 
-    You may be promted to authenticate, if so type \'yes\'\
+    You may be promted to authenticate, if so type 'yes'  
     If everything is working, you should see the message 
 
         Hi User! You've successfully authenticated, but GitHub does not provide shell access.
 
-Basics
-------
+## Basics
 
 You can create a repository with either of the following commands.
 
-  ------- ------------------------------------------------------- ---------------------------------------------------------
-  clone   `git clone https://github.com/nesi/perf-training.git`   Copies a remote repository into your current directory.
-  init    `git init`                                              Creates a new empty repo in your current directory.
-  ------- ------------------------------------------------------- ---------------------------------------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
  
 
+<table style="height: 678px; width: 974px;">
+<tbody>
+<tr style="height: 89px;">
+<td style="width: 142px; height: 89px;" rowspan="2">
 add
 
+</td>
+<td style="width: 310px; height: 89px;">
 `git add <file1> <file2>`
 
+</td>
+<td style="width: 513px; height: 89px;">
 Adds `<file1>` and `<file2>` to the staging area.
 
-[`git add *.py`]{.c}
+</td>
+</tr>
+<tr style="height: 89px;">
+<td style="width: 310px; height: 89px;">
+<span class="c">`git add *.py`</span>
 
+</td>
+<td style="width: 513px; height: 89px;">
  Adds all python files in the current directory to the staging area.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 142px; height: 41px;">
 status
 
-[`git status`]{.c}
+</td>
+<td style="width: 310px; height: 41px;">
+<span class="c">`git status`</span>
 
+</td>
+<td style="width: 513px; height: 41px;">
 Lists changes in working directory, and staged files.
 
+</td>
+</tr>
+<tr style="height: 39px;">
+<td style="width: 142px; height: 39px;" rowspan="3">
 commit 
 
+</td>
+<td style="width: 310px; height: 39px;">
 `git commit`
 
+</td>
+<td style="width: 513px; height: 39px;">
 Records everything in the staging area to your repository. The default
 text editor will prompt you for a commit message.
 
-[`git commit -m "Commit message"`]{.c}
+</td>
+</tr>
+<tr style="height: 39px;">
+<td style="width: 310px; height: 39px;">
+<span class="c">`git commit -m "Commit message"`</span>
 
+</td>
+<td style="width: 513px; height: 39px;">
 Records everything in the staging area to your repository with the
-commit message \"Commit message\"
+commit message "Commit message"
 
-[`git commit --amend`]{.c}
+</td>
+</tr>
+<tr style="height: 39px;">
+<td style="width: 310px; height: 39px;">
+<span class="c">`git commit --amend`</span>
 
+</td>
+<td style="width: 513px; height: 39px;">
 Modify last commit instead of creating a new one. Useful for fixing
 small mistakes.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 142px; height: 41px;" rowspan="2">
 log 
 
+</td>
+<td style="width: 310px; height: 41px;">
 `git log`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Prints commit history of repo.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 310px; height: 41px;">
 `git log <filename>`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Prints commit history of `<filename>`.
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 142px; height: 41px;" rowspan="2">
 reset 
 
+</td>
+<td style="width: 310px; height: 41px;">
 `git reset`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Removes all files from staging area. (Opposite of `git add`)
 
+</td>
+</tr>
+<tr style="height: 41px;">
+<td style="width: 310px; height: 41px;">
 `git reset <filename>`
 
+</td>
+<td style="width: 513px; height: 41px;">
 Removes `<filename>` from staging area.
 
-Remote
-------
+</td>
+</tr>
+</tbody>
+</table>
+## Remote
 
 By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
 ` git branch --set-upstream-to   <origin>`.
 
+<table style="height: 76px; width: 1050px;">
+<tbody>
+<tr>
+<td style="width: 136px;" rowspan="2">
 fetch 
 
+</td>
+<td style="width: 565.701px;">
 `git fetch`
 
-Gets status of \'origin\'. git fetch **does not **change your working
+</td>
+<td style="width: 310.299px;">
+Gets status of 'origin'. git fetch **does not **change your working
 directory or local repository (see `git pull`). 
 
+</td>
+</tr>
+<tr>
+<td style="width: 565.701px;">
 `git fetch <repo> <branch>`
 
+</td>
+<td style="width: 310.299px;">
 Get status of `<repo>` `<branch>`.
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;" rowspan="2">
 pull 
 
+</td>
+<td style="width: 565.701px;">
 `git pull`
 
-Incorporates changes from \'origin\' into local repo. 
+</td>
+<td style="width: 310.299px;">
+Incorporates changes from 'origin' into local repo. 
 
+</td>
+</tr>
+<tr>
+<td style="width: 565.701px;">
 `git pull <repo> <branch>`
 
+</td>
+<td style="width: 310.299px;">
 Incorporates changes from `<repo>` `<branch>` into local repo.
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;" rowspan="2">
 push 
 
+</td>
+<td style="width: 565.701px;">
 `git push`
 
-Incorporates changes from local repo into \'origin\'. 
+</td>
+<td style="width: 310.299px;">
+Incorporates changes from local repo into 'origin'. 
 
+</td>
+</tr>
+<tr>
+<td style="width: 565.701px;">
 `git push <repo> <branch>`
 
+</td>
+<td style="width: 310.299px;">
 Incorporates changes from local repo into `<repo>` `<branch>`
 
-> ### Tip {#prerequisites}
+</td>
+</tr>
+</tbody>
+</table>
+> ### Tip
 >
 > If you are working without collaborators, there should be no reason to
 > have a conflict between your local and your remote repo. Make sure you
@@ -183,34 +303,67 @@ Incorporates changes from local repo into `<repo>` `<branch>`
 > finished, this will save you wasting time resolving unnecessary
 > merges.
 
-Branches
---------
+## Branches
 
 At an introductory level, it is best to avoid workflows that lead to
 multiple branches, or requires merging.
 
+<table style="height: 76px; width: 966px;">
+<tbody>
+<tr>
+<td style="width: 136px;" rowspan="2">
 branch 
 
+</td>
+<td style="width: 303px;">
 `git branch`
 
+</td>
+<td style="width: 489px;">
 List branches.
 
+</td>
+</tr>
+<tr>
+<td style="width: 303px;">
 `git branch <branch-name>`
 
+</td>
+<td style="width: 489px;">
 Create new branch `<branch-name`
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;">
 checkout
 
+</td>
+<td style="width: 303px;">
 `git checkout <branch-name>`
 
+</td>
+<td style="width: 489px;">
 Switch to editing branch `<branch-name>`
 
+</td>
+</tr>
+<tr>
+<td style="width: 136px;">
 merge
 
+</td>
+<td style="width: 303px;">
 `git merge <branch-name>`
 
+</td>
+<td style="width: 489px;">
 Merge `<branch-name>` into current branch.
 
-> ### Other Resources {#prerequisites}
+</td>
+</tr>
+</tbody>
+</table>
+> ### Other Resources
 >
 > -   <https://ohshitgit.com/>

@@ -1,4 +1,3 @@
-::: {#1append_desc}
 GROMACS (the GROningen MAchine for Chemical Simulations) is a versatile
 package to perform molecular dynamics, i.e. simulate the Newtonian
 equations of motion for systems with hundreds to millions of particles.
@@ -8,19 +7,15 @@ and nucleic acids that have a lot of complicated bonded interactions,
 but since GROMACS is extremely fast at calculating the nonbonded
 interactions (that usually dominate simulations) many groups are also
 using it for research on non-biological systems, e.g. polymers.
-:::
 
-::: {#1append_lic}
 GROMACS is available to anyone at no cost under the terms of [the GNU
 Lesser General Public
 Licence](http://www.gnu.org/licenses/lgpl-2.1.html). Gromacs is a joint
 effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software (see
-:::
 
-Job submission
-==============
+# Job submission
 
 GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
@@ -57,25 +52,22 @@ node at the same time.
     # Note also that the -ntomp option should be used when using hybrid parallelisation
     srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
 
-**Note:** To prevent performance issues we moved the serial \"gmx\" to
-\"gmx\_serial\". The present \"gmx\" prints a note and calls \"gmx\_mpi
-mdrun\" (if called as \"gmx mdrun\") and \"gmx\_serial\" in all other
-cases.
+**Note:** To prevent performance issues we moved the serial "gmx" to
+"gmx\_serial". The present "gmx" prints a note and calls "gmx\_mpi
+mdrun" (if called as "gmx mdrun") and "gmx\_serial" in all other cases.
 
 **Note:** The hybrid version with CUDA can also run on pure CPU
 architectures. Thus you can use gmx\_mpi from the
 GROMACS/???-cuda-???-hybrid module on Mahuika compute nodes as well as
 Mahuika GPU nodes.
 
-Checkpointing and restarting
-----------------------------
+## Checkpointing and restarting
 
 In the examples given above, the `-cpt 30` option instructs Gromacs to
 write a full checkpoint file every 30 minutes. You can restart from a
 checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
 
-Warnings regarding CPU affinity
--------------------------------
+## Warnings regarding CPU affinity
 
 If you run GROMACS on a node that is simultaneously running other jobs
 (even other GROMACS jobs), you may see warnings like this in your
@@ -144,12 +136,11 @@ there is no need for inter-task communication.
 On the Māui cluster, normally there is no reason to specifically request
 a whole node, as all jobs are scheduled to run on one or more entire
 nodes.  However, we have seen issues with slow performance and will
-recommend using the \`\--exclusive\` flag when running GROMACS. It may
+recommend using the \`--exclusive\` flag when running GROMACS. It may
 also be advisable to request tasks or CPUs in multiples of 80, since
 that is the number of vCPUs per node.
 
-NVIDIA GPU Container
-====================
+# NVIDIA GPU Container
 
 NVIDIA has a GPU accelerated version of GROMACS in its NGC container
 registry (more details about NGC
@@ -160,8 +151,7 @@ location (you can also pull your own version if you wish):
 an example submission script that calls the Singularity image here:
 */opt/nesi/containers/nvidia/gromacs-example.sl*.
 
-Further Documentation
-=====================
+# Further Documentation
 
 [GROMACS Homepage](http://www.gromacs.org/)
 

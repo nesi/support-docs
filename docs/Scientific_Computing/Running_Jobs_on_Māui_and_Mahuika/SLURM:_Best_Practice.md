@@ -8,11 +8,11 @@ that your failed jobs show a status of FAILED in *sacct* output.
 
 ### Resources 
 
-Don\'t request more resources (CPUs, memory, GPUs) than you will need.
-In addition to using your core hours faster, resources intensive jobs
-will take longer to queue. Use the information provided at the
-completion of your job (eg: via the *sacct* command) to better define
-resource requirements.
+Don't request more resources (CPUs, memory, GPUs) than you will need. In
+addition to using your core hours faster, resources intensive jobs will
+take longer to queue. Use the information provided at the completion of
+your job (eg: via the *sacct* command) to better define resource
+requirements.
 
 ### Wall-time
 
@@ -35,7 +35,7 @@ etc).
 If you request more memory (RAM) than you need for your job, it [will
 wait longer in the queue and will be more expensive when it
 runs](https://support.nesi.org.nz/hc/en-gb/articles/360000737555). On
-the other hand, if you don\'t request enough memory, the job may be
+the other hand, if you don't request enough memory, the job may be
 killed for attempting to exceed its allocated memory limits.
 
 We recommend that you request a little more RAM, but not much more, than
@@ -50,10 +50,10 @@ more information.
 ### Parallelism
 
 In general only MPI jobs should set *ntasks* greater than 1 or use
-*srun*.  If you don\'t know whether your program supports MPI, it
-probably doesn\'t.
+*srun*.  If you don't know whether your program supports MPI, it
+probably doesn't.
 
-Only multithreaded jobs should set *cpus-per-task*.  If you don\'t know
+Only multithreaded jobs should set *cpus-per-task*.  If you don't know
 whether your program supports multithreading, try benchmarking with 2
 CPUs and with 4 CPUs and see if there is a 2-fold difference in elapsed
 job time.

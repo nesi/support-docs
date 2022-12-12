@@ -1,27 +1,26 @@
-::: {#lic_append}
-> ### No Licence? {#prerequisites}
+<!-- The above lines, specifying the category, section and title, must be
+present and always comprising the first three lines of the article. -->
+
+> ### No Licence?
 >
 > If you want to run MATLAB code on the cluster, but are not a member of
 > an institution without access to floating licences, MATLAB code can
 > still be run on the cluster using MCR.
-:::
 
-Example script {#example-script-for-the-pan-cluster}
-==============
+# Example script
 
 > Note A GPU device-hour costs more than a core-hour, depending on the
 > type of GPU. You can find a comparison table in our What is an
 > allocation? support page.
 >
-> ### Note {#prerequisites}
+> ### Note
 >
 > When developing MATLAB code on your local machine, take measures to
 > ensure it will be platform independent.  Use relative paths when
-> possible and not avoid using \'\\\'s see
+> possible and not avoid using '\\'s see
 > [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
 
-Script Example
---------------
+## Script Example
 
     #!/bin/bash -e
     #SBATCH --job-name   MATLAB_job   # Name to appear in squeue 
@@ -32,8 +31,7 @@ Script Example
     # Run the MATLAB script MATLAB_job.m 
     matlab -nodisplay < MATLAB_job.m 
 
-Function Example
-----------------
+## Function Example
 
     #!/bin/bash -e
     #SBATCH --job-name       MATLAB_job    # Name to appear in squeue
@@ -47,57 +45,54 @@ Function Example
     #Job run 
     matlab -nodisplay -r "addpath(genpath('../parentDirectory'));myFunction(5,20)"
 
-> ### Command Line {#prerequisites}
+> ### Command Line
 >
-> When using matlab on command line, all flag options use a single
-> \'`-`\' e.g. `-nodisplay`, this differs from the GNU convention of
-> using `--` for command line options of more than one character.
+> When using matlab on command line, all flag options use a single '`-`'
+> e.g. `-nodisplay`, this differs from the GNU convention of using `--`
+> for command line options of more than one character.
 
-> ### Bash in MATLAB {#prerequisites}
+> ### Bash in MATLAB
 >
 > Using the prefix `!` will allow you to run bash commands from within
 > MATLAB. e.g. `!squeue -u $USER` will print your currently queued slurm
 > jobs.
 
-Parallelism
-===========
+# Parallelism
 
-MATLAB does not support MPI therefore \#SBATCH \--ntasks should always
-be 1, but if given the necessary resources some MATLAB functions can
-make use of multiple threads (\--cpus-per-task) or GPUs
-(\--gpus-per-node).
+MATLAB does not support MPI therefore \#SBATCH --ntasks should always be
+1, but if given the necessary resources some MATLAB functions can make
+use of multiple threads (--cpus-per-task) or GPUs (--gpus-per-node).
 
-Implicit parallelism.
----------------------
+## Implicit parallelism.
 
 Implicit parallelism requires no changes to be made in your code. By
 default MATLAB will utilise multi-threading for a wide range of
 operations, scalability will vary but generally you will not be able to
 utilise more than a 4-8 CPUs this way.
 
-Explicit parallelism.
----------------------
+## Explicit parallelism.
 
 Explicit parallelism is when you write your code specifically to make
-use of multiple CPU\'s. This can be done using MATLABs *parpool*-based
-language constructs, MATLAB assigns each thread a \'worker\' that can be
+use of multiple CPU's. This can be done using MATLABs *parpool*-based
+language constructs, MATLAB assigns each thread a 'worker' that can be
 assigned sections of code.
 
 MATLAB will make temporary files under your home directory (in
-\~/.matlab/local\_cluster\_jobs) for communication with worker
-processes. To prevent simultaneous parallel MATLAB jobs from interfering
-with each other you should tell them to each use their own job-specific
-local directories:
+~/.matlab/local\_cluster\_jobs) for communication with worker processes.
+To prevent simultaneous parallel MATLAB jobs from interfering with each
+other you should tell them to each use their own job-specific local
+directories:
 
     pc = parcluster('local')
     pc.JobStorageLocation = getenv('TMPDIR')
     parpool(pc, str2num(getenv('SLURM_CPUS_PER_TASK')))
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > Parpool will throw a warning when started due to a difference in how
-> time zone is specified. To fix this, add the following line to your
-> SLURM script: `export TZ="Pacific/Auckland'`
+> time z<dfn class="dictionary-of-numbers">one is specified</dfn>. To
+> fix this, add the following line to your SLURM script:
+> `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 
@@ -140,7 +135,7 @@ it to be run asynchronously. e.g.
 More info
 [here](https://au.mathworks.com/help/parallel-computing/parfeval.html).
 
-> ### Note {#note}
+> ### Note
 >
 > When killed (cancelled, timeout, etc), job steps utilising parpool may
 > show state `OUT_OF_MEMORY`, this is a quirk of how the steps are ended
@@ -153,7 +148,7 @@ Determining which of
 your variables fall under is a good place to start when attempting to
 parallelise your code.
 
-> ### Tip {#prerequisites}
+> ### Tip
 >
 > If your code is parallel at a high level it is preferable to use
 > [SLURM job
@@ -161,8 +156,7 @@ parallelise your code.
 > as there is less computational overhead and the multiple smaller jobs
 > will queue faster.
 
-Using GPUs {#GPU}
-==========
+# Using GPUs
 
 As with standard parallelism, some MATLAB functions will work implicitly
 on GPUs while other require setup. More info on using GPUs with MATLAB
@@ -182,7 +176,7 @@ available GPUs on NeSI, check the [GPU use on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955)
 support page.
 
-> ### Support for A100 GPUs {#octopus-warning}
+> ### Support for A100 GPUs
 >
 > To use MATLAB with a A100 or a A100-1g.5gb GPU, you need to use a
 > version of MATLAB supporting the *Ampere* architecture (see [GPU
@@ -190,15 +184,14 @@ support page.
 > Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)).
 > We recommend that you use R2021a or a more recent version.
 
-> ### Note on GPU cost {#llama-tip}
+> ### Note on GPU cost
 >
 > A GPU device-hour costs more than a core-hour, depending on the type
 > of GPU. You can find a comparison table in our [What is an
 > allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
 > support page.
 
-GPU Example {#gpuexample}
------------
+## GPU Example
 
     #!/bin/bash -e
     #SBATCH --job-name       MATLAB_GPU    # Name to appear in squeue
@@ -213,8 +206,7 @@ GPU Example {#gpuexample}
 
     matlab -nodisplay -r "gpuDevice()"
 
-Adding Support Packages
-=======================
+# Adding Support Packages
 
 If you have X-11 set up you can install additional package through the
 GUI. You can also install manually if you already have the files by
@@ -226,8 +218,7 @@ the path using the MATLAB command
 specify it with
 ` matlabshared.supportpkg.setSupportPackageRoot("<path>")`
 
-mexopencv
----------
+## mexopencv
 
 mexopencv is [mex wrapper MATLAB wrapper for the openCV
 library.](https://github.com/kyamagu/mexopencv)
@@ -240,13 +231,12 @@ to avoid problems cause by this
 
 Please contact support if you have any issues.
 
-Improving performance with mexing {#mexing}
-=================================
+# Improving performance with mexing
 
 Like other scripting languages, MATLAB code will generally run slower
 than compiled code since every MATLAB instruction needs to be parsed and
 interpreted. Instructions inside large MATLAB loops are often
-performance hotspots due to the interpreter\'s overhead, which consumes
+performance hotspots due to the interpreter's overhead, which consumes
 CPU time at every iteration.
 
 Fortunately MATLAB lets programmers extend their scripts with C/C++ or
@@ -256,8 +246,7 @@ Fortran, which is referred to as
 more info about compiling software on NeSI
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000329015-Compiling-software-on-Mahuika).
 
-Writing mex functions
----------------------
+## Writing mex functions
 
   This involves the following steps (using C++ as an example):
 
@@ -314,16 +303,20 @@ functions that have return values).
 Some mex function source code examples can be found in the table
 [here](https://au.mathworks.com/help/matlab/matlab_external/table-of-mex-file-source-code-files.html). 
 
-Compilation
------------
+## Compilation
 
 MATLAB supports the following compilers.
 
-  --------- --------------------------
-  C++       up to GCC 6.3.x
-  C         up to GCC 6.3.x
-  FORTRAN   up to GNU gfortran 6.3.x
-  --------- --------------------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+</tbody>
+</table>
 
 The most up to date compilers supported by MATLAB can be loaded on NeSI
 using `module load gimkl/2017a`
@@ -340,35 +333,33 @@ Default compiler flags can be overwritten with by setting the
 appropriate environment variables. The COMPFLAGS variable is ignored as
 it is Windows specific.
 
-  --------- ------------
-  C++       `CXXFLAGS`
-  C         `CFLAGS`
-  FORTRAN   `FFLAGS`
-  Linker    `LDFLAGS`
-  --------- ------------
+<table>
+<tbody>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+<tr class="odd">
+</tr>
+<tr class="even">
+</tr>
+</tbody>
+</table>
 
 For example, adding OpenMP flags for a fortran compile:
 
-::: {.code_responsive}
-::: {.programlisting}
-::: {.codeinput}
     mex FFLAGS='$FFLAGS -fopenmp' LDFLAGS='$LDFLAGS -fopenmp' <file_name>
-:::
-:::
-:::
 
 > ### Compiler Version Errors
 >
-> Using an \'unsupported\' compiler with versions of MATLAB 2020b onward
-> will result in an Error (previously was a \'Warning\').
+> Using an 'unsupported' compiler with versions of MATLAB 2020b onward
+> will result in an Error (previously was a 'Warning').
 
-Known Bugs
-==========
+# Known Bugs
 
 When using versions of MATLAB more recent than 2021a you may notice the
 following warning.
 
-::: {.content}
     glibc_shim: Didn't find correct code to patch
 
 This warning appears whenever MATLAB interfaces with the operating
@@ -377,4 +368,3 @@ system (e.g. `ls` or `system()` or use of the `!` prefix).
 Most of the time this should not affect your work.
 
 We expect this issue to be fixed by our next operating system upgrade.
-:::

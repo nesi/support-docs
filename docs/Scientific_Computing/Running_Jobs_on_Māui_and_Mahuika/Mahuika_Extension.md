@@ -1,10 +1,8 @@
  
 
-Differences from other Mahuika compute nodes[]{.wysiwyg-font-size-x-large} {#01GAG6XAK1FF5ZNPMT8RF6MCWZ}
-==========================================================================
+# Differences from other Mahuika compute nodes<span class="wysiwyg-font-size-x-large"></span>
 
-**Hardware**
-------------
+## **Hardware**
 
 Each node has two AMD Milan CPU chips, each with 8 chiplets, each of
 which have 8 cores and one level 3 cache, so each node has a total of
@@ -13,31 +11,30 @@ increase of the number CPUs per node compared to the Broadwell nodes (36
 cores). 
 
 It therefore makes sense to use a power of two for the number of cores
-requested by a job.\
-\
+requested by a job.  
+  
 AMD Milan CPU overview, each node has two of these:
 
-![milan.png](https://support.nesi.org.nz/hc/article_attachments/5300908636815/milan.png){width="377"
-height="395"}
+<img src="img/milan.png" width="377" height="395" alt="milan.png" />
 
-[**AMD-EPYC-Milan-architecture** from
-[HPCwire](https://www.hpcwire.com/2021/03/15/amd-launches-epyc-milan-with-19-skus-for-hpc-enterprise-and-hyperscale/#foobox-4/0/AMD-Epyc-Milan-architecture.png)]{.wysiwyg-font-size-small}[]{.wysiwyg-font-size-small}
+<span class="wysiwyg-font-size-small">**AMD-EPYC-Milan-architecture**
+from
+[HPCwire](https://www.hpcwire.com/2021/03/15/amd-launches-epyc-milan-with-19-skus-for-hpc-enterprise-and-hyperscale/#foobox-4/0/AMD-Epyc-Milan-architecture.png)</span><span
+class="wysiwyg-font-size-small"></span>
 
-\
+  
 An overview of the AMD Milan CPUs can be found on the [AMD
 website](https://www.amd.com/en/processors/epyc-7003-series).
 
  
 
-[The memory available to Slurm jobs on these nodes is 460 GB, so
-approximately 1800 MB per
-CPU.  ]{style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"}
+The memory available to Slurm jobs on these nodes is 460 GB, so
+approximately 1800 MB per CPU.  
 
 Only 30 nodes are available so far, but that number will eventually
 increase to 64, eight of which will have double the memory.
 
-**[Operating System]{.wysiwyg-font-size-large}** {#01GAG6XAK2WZMMAHZX0WJ98RF6}
-------------------------------------------------
+## **<span class="wysiwyg-font-size-large">Operating System</span>**
 
 The existing Mahuika compute nodes use Linux Centos 7.4 while Mahuika
 Extension use Rocky 8.5.  These are closely related Linux distributions.
@@ -56,7 +53,7 @@ environment module that provides many of the Centos 7 libraries:
 
     module load LegacySystemLibs/7
 
-Please let us know if that isn\'t sufficient to get your existing
+Please let us know if that isn't sufficient to get your existing
 compiled code running on the new nodes.
 
 Of course you can also recompile code inside a job run in the milan
@@ -65,8 +62,7 @@ libraries, but then that would be unlikely to work on the old nodes.
 
 In the longer term all Mahuika nodes will be upgraded to Rocky 8.
 
-**[Older Intel and Cray software]{.wysiwyg-font-size-large}** {#01GAG6XAK2NPSX27CEWEPHD0NJ}
--------------------------------------------------------------
+## **<span class="wysiwyg-font-size-large">Older Intel and Cray software</span>**
 
 The directories `/cm` and `/opt/cray` contain software which was
 installed on Mahuika when we purchased it rather than installed by the
@@ -78,14 +74,13 @@ This affects our pre-2020 toolchains such as *intel/2018b*, but we
 should have newer versions of such software already installed in most
 cases.
 
-[**Intel MKL performance**]{.wysiwyg-font-size-large} {#01GAG6XAK23RF9SHH94QH011RK}
------------------------------------------------------
+## <span class="wysiwyg-font-size-large">**Intel MKL performance**</span>
 
-In many ways, Intel\'s MKL is the best implementation of the BLAS and
+In many ways, Intel's MKL is the best implementation of the BLAS and
 LAPACK libraries to which we have access, which is why we use it in our
-\"*intel*\" and \"*gimkl*\" toolchains.  Unfortunately, recent versions
-of MKL deliberately choose not to use the accelerated AVX instructions
-when not running on an Intel CPU.  
+"*intel*" and "*gimkl*" toolchains.  Unfortunately, recent versions of
+MKL deliberately choose not to use the accelerated AVX instructions when
+not running on an Intel CPU.  
 
 In order to persuade MKL to use the same fast optimised kernels on the
 new AMD Milan CPUs, you can do
@@ -98,17 +93,15 @@ We have set that as the default for our most recent toolchain
 Two alternative implementations have also been installed: OpenBLAS and
 BLIS. If you try them then please let us know if they work better than
 MKL for your application.  BLIS is expected to perform well as a BLAS
-alternative but not match MKL\'s LAPACK performance.  
+alternative but not match MKL's LAPACK performance.  
 
-[**Do I need to recompile my code?**]{.wysiwyg-font-size-large} {#01GAG6XAK2CBFM66VDVDG2BSDK}
----------------------------------------------------------------
+## <span class="wysiwyg-font-size-large">**Do I need to recompile my code?**</span>
 
 Except for possible missing shared libraries (see above), you should not
 need to recompile your code. Please let us know if you encounter any
 issues not listed above.
 
-[**AOCC (AMD Optimizing C/C++ and Fortran Compilers)**]{.wysiwyg-font-size-large} {#01GAG6XAK2DXD7EH0CWHCYRG22}
----------------------------------------------------------------------------------
+## <span class="wysiwyg-font-size-large">**AOCC (AMD Optimizing C/C++ and Fortran Compilers)**</span>
 
 AMD provides a compiler based on clang (C/C++) and flang (Fortran) which
 might perform better on their hardware.  We have installed it but not
@@ -121,8 +114,7 @@ For more information on AOCC compiler suite please, visit [AMD
 Optimizing C/C++ and Fortran Compilers
 (AOCC)](https://developer.amd.com/amd-aocc/)
 
-[**Network**]{.wysiwyg-font-size-large} {#01GAG6XAK2M6MMYE9057FTW7A4}
----------------------------------------
+## <span class="wysiwyg-font-size-large">**Network**</span>
 
 Access to the new nodes is currently only possible via the Slurm
 `sbatch` and `srun` commands. There is no ssh access, not even to the
@@ -132,12 +124,14 @@ connections to the new compute nodes such as might be used by debuggers,
 HTTP based progress monitoring, and non-MPI distributed programs such as
 Dask or PEST, will generally only work if you use the InfiniBand address
 of the compute node, eg: *wmc012.ib.hpcf.nesi.org.nz*. Networking
-configuration is expected to be addressed in the future.\
-\
-[]{.wysiwyg-font-size-large}
+configuration is expected to be addressed in the future.  
+  
+<span class="wysiwyg-font-size-large"></span>
 
-[]{.wysiwyg-font-size-large}**[Job\
-]{.wysiwyg-font-size-x-large}[]{.wysiwyg-font-size-x-large}**[]{.wysiwyg-font-size-x-large}
+<span class="wysiwyg-font-size-large"></span>**<span
+class="wysiwyg-font-size-x-large">Job  
+</span><span class="wysiwyg-font-size-x-large"></span>**<span
+class="wysiwyg-font-size-x-large"></span>
 
 In order to use the Mahuika Extension nodes, jobs are submitted in the
 same way as currently from the Mahuika login node with the following
@@ -166,8 +160,7 @@ Resource allocation limits:   
     if you require additional resources for jobs that are best suited to
     the Mahuika Extension.
 
-**[Notes]{.wysiwyg-font-size-x-large}[ ]{.wysiwyg-font-size-large}** {#01GAG6XAK3WY7N03E9SGCXN90B}
-====================================================================
+# **<span class="wysiwyg-font-size-x-large">Notes</span><span class="wysiwyg-font-size-large"> </span>**
 
 -   **More node**s will be added in the future.
 -   Mahuika Extension is not a Cray system and the CPE differs from that

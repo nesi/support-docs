@@ -15,16 +15,14 @@ In any case, if you have issues, do not hesitate to [open a
 ticket](https://support.nesi.org.nz/hc/en-gb/requests/new) and ask NeSI
 support for help.
 
-Additional Packages for Python, R, etc.
----------------------------------------
+## Additional Packages for Python, R, etc.
 
 See [Python](https://support.nesi.org.nz/hc/en-gb/articles/207782537-Python) or [R](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R),
 or for other languages check if we have additional documentation for it
 in our [application
 documentation](https://support.nesi.org.nz/hc/en-gb/sections/360000040076-Supported-Applications).
 
-Third party applications
-------------------------
+## Third party applications
 
 Installation instruction vary from application to application. In any
 case we suggest to read the provided installing instructions.
@@ -49,16 +47,13 @@ you usually need to consider:
 -   install the binaries and libraries into the specified directory
     (`make install`)
 
-Create your own modules (Optional) {#create-your-own-modules}
-----------------------------------
+## Create your own modules (Optional)
 
 You can create personalised module environments, which can load modules
 and set up environment variables. For example, you could define a
 modules in a project directory
 `/nesi/project/<projectID>/modulefiles/ProdXY` as the following:
 
-::: {.highlighter-rouge}
-::: {.highlight}
     #%module
 
     conflict ProdABC   # conflicts with other versions of itself
@@ -84,8 +79,6 @@ modules in a project directory
     prepend-path PYTHONPATH $PKG_PREFIX/lib/python3.6/site-packages/
     # for example, you can set environment variables for compiling
     setenv CFLAGS "-DNDEBUG"
-:::
-:::
 
 In the first lines, we can set conflicts with other modules (here named
 ProdABC). Then we load some dependency modules and provide some
@@ -109,22 +102,14 @@ To use the module (or all in that directory and sub-directories) we need
 to register that directory to the module environment. This can be done
 by setting the following environment variable:
 
-::: {.highlighter-rouge}
-::: {.highlight}
     module use /nesi/project/<projectID>/modulefiles/ 
-:::
-:::
 
 by adding that line to your `$HOME/.bashrc` you will have the modules
 always available.
 
 The module then can be loaded by:
 
-::: {.highlighter-rouge}
-::: {.highlight}
     module load ProdXY
-:::
-:::
 
 These modules can easily be shared with collaborators. They just need to
 specify the last two steps.

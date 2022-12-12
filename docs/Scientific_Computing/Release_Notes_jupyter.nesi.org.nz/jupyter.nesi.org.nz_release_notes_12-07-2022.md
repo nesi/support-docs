@@ -1,5 +1,4 @@
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved
 
 -   Added the `pyviz_comms` package to allow fully interactive usage of
     [HoloViz](https://holoviz.org/index.html) tools within notebooks (in

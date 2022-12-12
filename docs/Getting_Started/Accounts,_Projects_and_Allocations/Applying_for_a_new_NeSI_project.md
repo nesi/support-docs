@@ -1,4 +1,4 @@
-> ### Requirements {#prerequisites}
+> ### Requirements
 >
 > Compulsory:
 >
@@ -23,7 +23,7 @@
 >     to express interest.
 > -   Review our [allocation
 >     classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176).
->     If you don\'t think you currently qualify for any class other than
+>     If you don't think you currently qualify for any class other than
 >     Proposal Development, please [contact
 >     us](https://support.nesi.org.nz/hc/requests/new) as soon as
 >     possible to discuss your options. Your institution may be in a
@@ -36,7 +36,7 @@ submitted requests are reviewed on a weekly, quarterly or on-demand
 cycle (see [Allocations, Allocation Classes, Review
 Cycles](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review)).
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > If you are a member of NIWA please also ensure that you have also read
 > and followed the [NIWA internal documentation for gaining access to
@@ -51,8 +51,7 @@ Cycles](https://www.nesi.org.nz/services/high-performance-computing-and-analytic
 > may be delayed more than usual, or we may notify you and ask you to
 > obtain pre-approval from your institution.
 
-Information you will need to provide
-------------------------------------
+## Information you will need to provide
 
 During the application process, we will ask you for the following
 information:
@@ -61,12 +60,12 @@ information:
     study), role at your institution, a contact telephone number, and
     work email address
 -   The title of your proposed NeSI HPC Project, and a brief abstract
-    describing your project\'s goals
+    describing your project's goals
 -   The scientific domain and field of study (i.e. subdomain) your
     project belongs to
 -   The date on which you plan to start your computational work on NeSI
     (not the start date of the research programme as a whole, or of the
-    research programme\'s current or expected funding)
+    research programme's current or expected funding)
 -   Details of how your project is funded (this will help determine
     whether you are eligible for an allocation from our
     [Merit](https://support.nesi.org.nz/hc/articles/360000175635) class)
@@ -80,7 +79,7 @@ information:
 You will also be given an opportunity to tell us anything else you think
 is relevant.
 
-> ### What Next? {#prerequisites}
+> ### What Next?
 >
 > -   Your NeSI Project proposal will be
 >     [reviewed](https://support.nesi.org.nz/hc/en-gb/articles/360000202136),

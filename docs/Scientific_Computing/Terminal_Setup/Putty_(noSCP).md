@@ -1,34 +1,34 @@
-Option 2: PuTTY (+WinSCP)
--------------------------
+## Option 2: PuTTY (+WinSCP)
 
 [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
  
 
-1\. Set the \'Host Name\' to:
+1\. Set the 'Host Name' to:
 
     lander.nesi.org.nz
 
  
 
- ![putty1.png](https://support.nesi.org.nz/hc/article_attachments/360002834555/putty1.png)
+ ![putty1.png](img/putty1.png)
 
-2\. Open Connection \> Data and enter in your username under \'Auto-Login
-username. 
+2\. Open Connection &gt; Data and enter in your username under
+'Auto-Login username. 
 
-![putty2.png](https://support.nesi.org.nz/hc/article_attachments/360001308455/putty2.png)
+![putty2.png](img/putty2.png)
 
  
 
-3\. Open Connection \> SSH and \'Share SSH connections if possible\'.
+3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
 
-![putty4.png](https://support.nesi.org.nz/hc/article_attachments/360001306496/putty4.png)
+![putty4.png](img/putty4.png)
 
 4\. Do this
 
-[SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN\'T]{.wysiwyg-color-red}
+<span class="wysiwyg-color-red">SCRAP THAT, THOUGHT IT WORKED BUT IT
+DIDN'T</span>
 
-![putty5.png](https://support.nesi.org.nz/hc/article_attachments/360001308535/putty5.png)
+![putty5.png](img/putty5.png)
 
  
 
@@ -36,4 +36,4 @@ username. 
 
 Save session
 
-![putty3.png](https://support.nesi.org.nz/hc/article_attachments/360002930136/putty3.png)
+![putty3.png](img/putty3.png)

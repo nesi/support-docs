@@ -5,7 +5,7 @@ the service to verify their data before deleting it from the project
 directory (persistent storage) or nobackup directory (temporary
 storage).
 
-> ### Service Status {#prerequisites}
+> ### Service Status
 >
 > The verification options outlined below are intended to support the
 > Early Access phase of Nearline development. Verification options may
@@ -15,16 +15,15 @@ storage).
 >
 > Your feedback on which verification options you think are necessary
 > will help us decide on future directions for the Nearline service.
-> Please [contact our support
-> team](https://support.nesi.org.nz/hc/requests/new){.external-link} to
-> request verification or to offer suggestions regarding this or any
+> Please
+> <a href="https://support.nesi.org.nz/hc/requests/new" class="external-link">contact our support team</a>
+> to request verification or to offer suggestions regarding this or any
 > other aspect of our Nearline service.
 
 There are several options for verification, depending on the level of
 assurance you require.
 
-Level 1: Transfer status report
-===============================
+# Level 1: Transfer status report
 
 The most basic form of verification is to look at the results
 of `nljobstatus`. If all the Nearline job IDs associated with movement
@@ -32,7 +31,7 @@ of data to Nearline (i.e. `nlput` commands)
 report `job done successfully`, that gives you a basic level of
 confidence that the files were in fact copied over to nearline.
 
-> ### Warning {#verification-level-1}
+> ### Warning
 >
 > The above check is reliable only if *all* `nlput` commands were
 > concerned solely with uploading new files to nearline. Because of the
@@ -40,8 +39,7 @@ confidence that the files were in fact copied over to nearline.
 > existed on nearline will silently skip those files and still report
 > success.
 
-Level 2: File counts and sizes
-==============================
+# Level 2: File counts and sizes
 
 You can get a higher level of assurance by checking the number of files,
 and their sizes and last modified times, in a particular directory on
@@ -67,7 +65,7 @@ will be kept and you will be invited to compare the lists against each
 other, which you can do using a comparison program such as `diff` or
 `vimdiff`.
 
-> ### Warning {#verification-level-2}
+> ### Warning
 >
 > The above check is useful only if the corresponding files in
 > `/nesi/project` and/or `/nesi/nobackup` have not been modified or
@@ -76,8 +74,7 @@ other, which you can do using a comparison program such as `diff` or
 > should do so as soon as possible after you have established that the
 > `nlput` operation completed successfully.
 
-Level 3: Checksums
-==================
+# Level 3: Checksums
 
 For especially important files, you can get a still higher level of
 assurance by retrieving those files individually or in small numbers
@@ -87,7 +84,7 @@ comparing the checksums to the corresponding original files in
 identical, it is virtually certain that the files contain the same data,
 even if their modification dates and times are reported differently.
 
-> ### Warning {#verification-level-3}
+> ### Warning
 >
 > The above check is reliable only if the corresponding file in
 > `/nesi/project` and/or `/nesi/nobackup` has not been modified since it

@@ -1,8 +1,6 @@
-Release Update - 14. December 2021 {#ReleaseNotes-ReleaseUpdate-11.July2019}
-----------------------------------
+## Release Update - 14. December 2021
 
-New and Improved {#ReleaseNotes-NewandImproved}
-----------------
+## New and Improved
 
 -   Introducing NeSI Notification Preferences to create more
     transparency for users

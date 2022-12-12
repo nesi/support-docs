@@ -18,8 +18,7 @@ configurations also apply to Intel oneMKL. However, the same concepts
 apply to other threading libraries as well, such as the GOMP library
 used by the GCC compiler family.
 
-Nodes, Sockets, and Physical Cores, and Logical Cores
------------------------------------------------------
+## Nodes, Sockets, and Physical Cores, and Logical Cores
 
 To run parallel software effectively, a modern HPC consists of many
 nodes, with multiple processors on each node. The processors are often
@@ -43,7 +42,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](https://support.nesi.org.nz/hc/article_attachments/360002169395/NodeSocketCore.png)
+![NodeSocketCore.png](mkdocs/includes/images/NodeSocketCore.png)
 
 It is very important to note the following:
 
@@ -58,13 +57,12 @@ It is very important to note the following:
 
 For a thread that runs on a given core, this means:
 
--   Data is \"local\" when it is stored in RAM or cache close to that
-    core and can be accessed very quickly
--   Data is \"remote\" when it is stored elsewhere and takes extra time
-    to access
+-   Data is "local" when it is stored in RAM or cache close to that core
+    and can be accessed very quickly
+-   Data is "remote" when it is stored elsewhere and takes extra time to
+    access
 
-Thread Placement and Affinity
------------------------------
+## Thread Placement and Affinity
 
 Given the arrangement of node, sockets, and cores, with different access
 to RAM and caches, we need to to make sure that our threads are located
@@ -91,8 +89,7 @@ able to share data in a cache.
 The mechanism that keeps our threads on their cores is called **thread
 affinity**.
 
-Example Program
----------------
+## Example Program
 
 We will use the Intel OpenMP library in the following examples. The same
 configurations can be used for all software that is compiled with the
@@ -100,7 +97,7 @@ Intel compiler, or uses Intel oneMKL. Other OpenMP libraries such as
 GOMP have similar configurations.
 
 Use a text editor to save the following test program in a text file
-called \"hello\_world.c\":
+called "hello\_world.c":
 
     #include <stdio.h>
     #include <omp.h>
@@ -123,8 +120,7 @@ Running the program with two threads should return the following output
     Hello World from Thread 0!
     Hello World from Thread 1!
 
-Configuring Slurm
------------------
+## Configuring Slurm
 
 The Slurm scheduler reserves resources on compute nodes according to our
 requests. Unless we ask for a full node, we will get a subset of the
@@ -144,9 +140,9 @@ process with 3 threads using only physical cores (no hyperthreading):
     srun hello_world.x
 
 Running the script should present you with output similar to this,
-although the number of \"packages\" (sockets) and cores may deviate if
-Slurm allocates cores on more than one socket (note also that
-\"threads\" means what we called logical cores earlier on):
+although the number of "packages" (sockets) and cores may deviate if
+Slurm allocates cores on more than one socket (note also that "threads"
+means what we called logical cores earlier on):
 
     OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
     OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
@@ -163,16 +159,16 @@ Slurm allocates cores on more than one socket (note also that
 
 The runtime library tells us that:
 
--   Slurm provided 3 physical cores with only 1 logical core
-    (\"thread\") per physical core - no hyperthreading
+-   Slurm provided 3 physical cores with only 1 logical core ("thread")
+    per physical core - no hyperthreading
 -   We got the cores with IDs 0, 6, 8 in this particular example - these
     happen to be on the same socket, but that is not guaranteed!
--   All our threads are \"bound\" to all 3 cores at once - this means
-    that no affinity setup has been made, and the threads are free to
-    move from one core to another
+-   All our threads are "bound" to all 3 cores at once - this means that
+    no affinity setup has been made, and the threads are free to move
+    from one core to another
 
-Setting \"\--hint=multithread\" instead to activate hyperthreading
-should result in output similar to this:
+Setting "--hint=multithread" instead to activate hyperthreading should
+result in output similar to this:
 
     OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
     OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
@@ -187,16 +183,15 @@ should result in output similar to this:
     Hello World from Thread 1!
     Hello World from Thread 2!
 
--   Slurm provided 2 physical cores with 2 logical cores (\"threads\")
-    each and 3 logical cores in total (we don\'t get the remaining
+-   Slurm provided 2 physical cores with 2 logical cores ("threads")
+    each and 3 logical cores in total (we don't get the remaining
     logical core on the second physical core, even though that logical
     core will not be given to other jobs)
 -   Notice that we now get logical core IDs 6, 8, 46 - IDs 6 and 46 are
     the first and second logical core inside the first physical core,
     while ID 8 is a logical core in the second physical core
 
-Setting up thread placement and affinity
-----------------------------------------
+## Setting up thread placement and affinity
 
 We will now place our threads on cores in a specific order and bind them
 to these cores, so that they can no longer move to another core during
@@ -209,14 +204,14 @@ optimising threading setup.
 
 Let us start with the following setup:
 
--   Run with \"\--hint=multithread\" so that our program can access all
+-   Run with "--hint=multithread" so that our program can access all
     available logical cores
--   Bind threads to physical cores (\"granularity=core\") - they are
-    still free to move between the two logical cores inside a given
-    physical core
--   Place threads close together (\"compact\") - although this has
-    little significance here as we use all available cores anyway, we
-    still need to specify this to activate thread affinity
+-   Bind threads to physical cores ("granularity=core") - they are still
+    free to move between the two logical cores inside a given physical
+    core
+-   Place threads close together ("compact") - although this has little
+    significance here as we use all available cores anyway, we still
+    need to specify this to activate thread affinity
 -   Bind thread IDs to logical core IDs in simple numerical order by
     setting permute and offset specifiers to 0
 
@@ -260,9 +255,8 @@ You should get this result:
 As requested, pairs of threads are now bound to both logical cores
 inside a given physical core and can move between those two.
 
-Choosing \"granularity=fine\" instead of \"granularity=core\" will bind
-each thread to a single logical core, and threads can no longer move at
-all:
+Choosing "granularity=fine" instead of "granularity=core" will bind each
+thread to a single logical core, and threads can no longer move at all:
 
     [...]
     OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178055 thread 0 bound to OS proc set {2}
@@ -274,8 +268,8 @@ all:
 Note in the output of the last example how threads 0 and 1 fill up the
 first and second logical core (IDs 2 and 42) of the first physical core,
 while threads 3 and 4 are placed on the second physical core (IDs 7 and
-47). We can influence placement by manipulating the \"permute\" and
-\"offset\" values. Choosing \"1,0\" results in:
+47). We can influence placement by manipulating the "permute" and
+"offset" values. Choosing "1,0" results in:
 
     [...]
     OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178741 thread 0 bound to OS proc set {2}
@@ -287,8 +281,8 @@ while threads 3 and 4 are placed on the second physical core (IDs 7 and
 Threads 0 and 1 are now placed on the first logical cores of each
 physical core, threads 2 and 3 on the second logical cores.
 
-We can also choose an offset - setting \"0,1\" shifts placement of
-thread IDs onto logical core IDs by 1:
+We can also choose an offset - setting "0,1" shifts placement of thread
+IDs onto logical core IDs by 1:
 
     [...]
     OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0
@@ -303,10 +297,9 @@ thread IDs onto logical core IDs by 1:
 
 Please refer to the [Intel
 documentation](https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference-thread-affinity-interface-linux-and-windows)
-for further information on \"KMP\_AFFINITY\".
+for further information on "KMP\_AFFINITY".
 
-Tips
-----
+## Tips
 
 Unfortunately, there is no single best choice for setting up thread
 placement and affinity, it depends on the application. Also keep in mind

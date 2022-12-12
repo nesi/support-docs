@@ -1,19 +1,20 @@
-This page provides generic information about how to access NeSI\'s GPU
+This page provides generic information about how to access NeSI's GPU
 cards.
 
-For application specific settings (e.g. OpenMP, Tensorflow on GPU,
-\...), please have a look at the dedicated pages listed at the end of
-this page.
+For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
+please have a look at the dedicated pages listed at the end of this
+page.
 
-> ### Important {#prerequisites}
+> ### Important
 >
 > An overview of available GPU cards is available in the [Available GPUs
 > on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
 > support page.
 >
-> Details about[ ]{.diff-removed-string}GPU cards for each system[
-> ]{.diff-removed-string}and [usage]{.diff-added-string} limits are in
-> the [Mahuika Slurm
+> Details about<span class="diff-removed-string"> </span>GPU cards for
+> each system<span class="diff-removed-string"> </span>and <span
+> class="diff-added-string">usage</span> limits are in the [Mahuika
+> Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
 > and [Māui\_Ancil (CS500) Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
@@ -24,8 +25,7 @@ this page.
 > allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
 > page.
 
-Request GPU resources using Slurm
-=================================
+# Request GPU resources using Slurm
 
 To request a GPU for your [Slurm
 job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job),
@@ -72,7 +72,7 @@ with the `srun` and `salloc` commands. For example:
 will request and then start a bash session with access to a GPU, for a
 duration of 30 minutes.
 
-> ### Important {#prerequisites}
+> ### Important
 >
 > When you use the `--gpus-per-node`option, Slurm automatically sets the
 > `CUDA_VISIBLE_DEVICES` environment variable inside your job
@@ -85,15 +85,14 @@ duration of 30 minutes.
 >     $ echo $CUDA_VISIBLE_DEVICES
 >     0,1
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > On Māui Ancillary Nodes, you also need to request the *nesi\_gpu*
 > partition to have access to the GPU.
 >
 >     #SBATCH --partition=nesi_gpu
 
-Load CUDA and cuDNN modules
-===========================
+# Load CUDA and cuDNN modules
 
 To use an Nvidia GPU card with your application, you need to load the
 driver and the CUDA toolkit via the [environment
@@ -109,13 +108,15 @@ You can list the available versions using:
 Please contact us at <support@nesi.org.nz> if you need a version not
 available on the platform.
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > On Māui Ancillary Nodes, use `module avail CUDA` to list available
 > versions.
 
 The CUDA module also provides access to additional command line tools:
 
+<ul>
+<ul>
 -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
     to directly monitor GPU resource utilisation,
 -   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)to
@@ -123,6 +124,8 @@ The CUDA module also provides access to additional command line tools:
 -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html) to
     debug CUDA applications.
 
+</ul>
+</ul>
 In addition, the [cuDNN](https://developer.nvidia.com/cudnn) (NVIDIA
 CUDA® Deep Neural Network library) library is accessible via its
 dedicated module:
@@ -134,8 +137,7 @@ versions can be listed using:
 
     module spider cuDNN
 
-Example Slurm script
-====================
+# Example Slurm script
 
 The following Slurm script illustrates a minimal example to request a
 GPU card, load the CUDA toolkit and query some information about the
@@ -192,13 +194,12 @@ The content of job output file would look like:
     +-----------------------------------------------------------------------------+
     CUDA_VISIBLE_DEVICES=0
 
-> ### Note {#prerequisites}
+> ### Note
 >
 > CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
 > GPU index 0 on this node. It is not a count of allocated GPUs.
 
-NVIDIA Nsight Systems and Compute profilers
-===========================================
+# NVIDIA Nsight Systems and Compute profilers
 
 [Nsight Systems](https://developer.nvidia.com/nsight-systems) is a
 system-wide analysis tool, particularly good for profiling CPU-GPU
@@ -232,7 +233,7 @@ line tool or the
 [ncu-ui](https://docs.nvidia.com/nsight-compute/NsightCompute/index.html)
 graphical interface.
 
-> ### Important {#prerequisites}
+> ### Important
 >
 > The `nsys-ui` and `ncu-ui` tools require access to a display server,
 > either via
@@ -245,12 +246,13 @@ graphical interface.
 >     module load Nsight-Systems/2020.5.1
 >     nsys-ui  # this will work only if you have a graphical session
 
-Application and toolbox specific support pages
-==============================================
+# Application and toolbox specific support pages
 
 The following pages provide additional information for supported
 applications:
 
+<ul>
+<ul>
 -   [ABAQUS](https://support.nesi.org.nz/hc/en-gb/articles/212457807-ABAQUS#gpus)
 -   [GROMACS](https://support.nesi.org.nz/hc/en-gb/articles/360000792856-GROMACS#nvidia_gpu_container)
 -   [Lambda
@@ -259,11 +261,16 @@ applications:
 -   [TensorFlow on
     GPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow-on-GPUs)
 
+</ul>
+</ul>
 And programming toolkits:
 
+<ul>
 -   [Offloading to GPU with
     OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)
 -   [Offloading to GPU with OpenACC using the Cray
     compiler](https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler)
 -   [NVIDIA GPU
     Containers](https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers)
+
+</ul>
