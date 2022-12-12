@@ -32,6 +32,7 @@ lint_updated_markdown:
       - "**/*.md"
   script:
     - markdownlint $(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)
+  allow_failure: true
 
 lint_all_markdown:
   stage: test
@@ -39,6 +40,7 @@ lint_all_markdown:
     - when: manual
   script:
     - markdownlint "**/*.md" 
+  allow_failure: true
 
 test_build:
   stage: test
