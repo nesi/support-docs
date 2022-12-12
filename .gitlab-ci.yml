@@ -38,7 +38,7 @@ lint_all_markdown:
   rules:
     - when: manual
   script:
-    - markdownlint **/*.md
+    - markdownlint "**/*.md" 
 
 test_build:
   stage: test
