@@ -8,7 +8,7 @@ before_script:
   - ln -s /node-v14.15.4-linux-x64/bin/node /usr/local/bin/node
   - ln -s /node-v14.15.4-linux-x64/bin/npm /usr/local/bin/npm
   - ln -s /node-v14.15.4-linux-x64/bin/npx /usr/local/bin/npx
-
+  - source ~/.bashrc
   - npm install -g markdownlint-cli
   - pip install -r requirements.txt
   - git config --global user.email "$GITLAB_USER_EMAIL"
