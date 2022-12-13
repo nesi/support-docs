@@ -30,7 +30,7 @@ markdown_extensions:
 plugins:
     - search
     - spellcheck:
-        known_words: ../includes/glossary/.dictionary.txt
+        known_words: ../includes/glossary/dictionary.txt
         ignore_code: yes
         min_length: 3
         max_capital: 1
@@ -38,7 +38,7 @@ plugins:
     - mkdocs-simple-hooks:
         hooks: 
             # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
-            on_post_build: "custom_hooks:lint"
+            #on_post_build: "custom_hooks:lint"
 
 
 #extra_javascript:

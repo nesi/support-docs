@@ -1,24 +1,63 @@
-image: python:3.8-buster
+image: nikolaik/python-nodejs
 
 before_script:
   - apt-get update
-  - apt-get -y install curl zip
+  - apt-get -y install curl zip python3-proselint
   - npm install -g markdownlint-cli
   - pip install -r requirements.txt
   - git config --global user.email "$GITLAB_USER_EMAIL"
   - git config --global user.name "$GITLAB_USER_NAME"
 
 stages:
+  - update
   - test
   - deploy
 
 update_wordlist:
-  stage: test
+  stage: update
+  artifacts:
+    untracked: True
+    paths:
+      - includes/glossary/*
   script:
   - cd includes/glossary
   - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/Glossary.md
   - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt
   - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md
+
+lint_updated_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - changes:
+      - "**/*.md"
+  script:
+    - markdownlint $(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)
+
+lint_all_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - when: manual
+  script:
+    - markdownlint "**/*.md" 
+
+proselint_updated_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - when: manual
+  script:
+    - proselint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)" 
+
+proselint_all_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - changes:
+      - "**/*.md"
+  script:
+    - proselint "**/*.md" 
 
 test_build:
   stage: test
