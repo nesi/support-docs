@@ -12,19 +12,7 @@ stages:
   - update
   - test
   - deploy
-
-update_wordlist:
-  stage: update
-  artifacts:
-    untracked: True
-    paths:
-      - includes/glossary/*
-  script:
-  - cd includes/glossary
-  - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/Glossary.md
-  - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt
-  - wget https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md
-
+  
 lint_updated_markdown:
   stage: test
   allow_failure: true
