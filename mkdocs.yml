@@ -26,11 +26,13 @@ markdown_extensions:
     - pymdownx.tabbed:
         alternate_style: true 
     - abbr
-    - pymdownx.snippets
+    - pymdownx.snippets:
+      auto_append:
+        - includes/snippets.md
 plugins:
     - search
     - spellcheck:
-        known_words: ../includes/glossary/dictionary.txt
+        known_words: ../includes/dictionary.txt
         ignore_code: yes
         min_length: 3
         max_capital: 1
