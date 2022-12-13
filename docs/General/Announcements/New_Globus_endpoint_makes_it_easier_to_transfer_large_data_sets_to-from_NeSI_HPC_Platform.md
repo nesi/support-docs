@@ -5,10 +5,9 @@ Wellington DTN V5** and we encourage you to begin using it immediately.
 The old NeSI endpoint, *NeSI Wellington DTN*, will be deactivated on 8
 December 2021.  
   
-
 **What this change means for you:**
 
--   If you've ever created a bookmark or shared a collection to the NeSI
+- If you've ever created a bookmark or shared a collection to the NeSI
     endpoint, you will need to re-create and/or re-share using the new
     endpoint name - **NeSI Wellington DTN V5**. [Instructions are
     available
@@ -19,9 +18,9 @@ December 2021.
 Some of the improvements you'll notice as a result of the endpoint
 upgrade include:
 
--   HTTPS (web) access for easier data downloading and uploading
+- HTTPS (web) access for easier data downloading and uploading
     directly from browsers
--   '*Shared Collections*' are now called '*Guest Collections*'
+- '*Shared Collections*' are now called '*Guest Collections*'
 
 **User Q&A session:**
 
@@ -33,10 +32,9 @@ embedded below:
 
 If you would like more information about the endpoint upgrade, you can
 [refer to these documentation pages in NeSI
-Support](https://support.nesi.org.nz/hc/en-gb/sections/360000040596-Data-Transfer-Services)
-or send questions to <support@nesi.org.nz>. 
+Support](<https://support.nesi.org.nz/hc/en-gb/sections/360000040596-Data-Transfer-Services>)
+or send questions to <support@nesi.org.nz>.
 
-  
 **Learn more about using Globus to transfer research data:**
 
 Do you have large datasets that need to be shared between collaborators
@@ -47,9 +45,9 @@ Globus and REANNZ to provide fast, secure, and reliable data transfer.
 To learn more, the introductory videos below share an overview of the
 Data Transfer Platform and its capabilities:
 
--   [Introduction to NeSI's Data Transfer
+- [Introduction to NeSI's Data Transfer
     Platform](https://www.youtube.com/watch?v=rUPoJUUkmGw)
--   [Sharing data with groups using
+- [Sharing data with groups using
     Globus](https://www.youtube.com/watch?v=SmkWHjFDfQY)
 
 If you have questions about getting started, [email

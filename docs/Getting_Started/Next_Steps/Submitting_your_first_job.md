@@ -3,8 +3,7 @@
 Modules are a convenient  way to provide access to applications  on the
 cluster. They prepare the environment you need to run an application.
 
-For a full list of module commands run <span class="kbd">man
-module</span>
+For a full list of module commands run <kbd>man module</kbd>
 
 <table>
 <tbody>

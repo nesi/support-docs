@@ -40,11 +40,9 @@ The general process will follow a schedule as follows:
 
 -   **Notify** (at 106 days), then two weeks later **Delete** (at 120
     days).
-
 -   Every fortnight on Tuesday morning, we will be reviewing files
     stored in the nobackup filesystem and identifying candidates for
     expiry.
-
 -   Project teams will be notified by email if they have file candidates
     for deletion. Emails will be sent two weeks in advance of any
     deletion taking place.

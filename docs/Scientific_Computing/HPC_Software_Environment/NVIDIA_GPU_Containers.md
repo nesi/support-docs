@@ -22,8 +22,10 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
 1.  Download the APOA1 benchmark data:
     -   wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
             cd apoa1
+
 2.  Load the Singularity module:
     -   module load Singularity
+
 3.  Build the Singularity image. This step differs from the NVIDIA
     instructions because instead of using "build" we "pull" the image
     directly, which does not require root access:
