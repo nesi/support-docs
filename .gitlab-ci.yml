@@ -1,14 +1,8 @@
-image: python:3.8-buster
+image: nikolaik/python-nodejs
 
 before_script:
   - apt-get update
   - apt-get -y install curl zip
-  - curl https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz -O
-  - tar -xf node-v14.15.4-linux-x64.tar.xz
-  - ln -s /node-v14.15.4-linux-x64/bin/node /usr/local/bin/node
-  - ln -s /node-v14.15.4-linux-x64/bin/npm /usr/local/bin/npm
-  - ln -s /node-v14.15.4-linux-x64/bin/npx /usr/local/bin/npx
-  - source ~/.bashrc
   - npm install -g markdownlint-cli
   - pip install -r requirements.txt
   - git config --global user.email "$GITLAB_USER_EMAIL"
