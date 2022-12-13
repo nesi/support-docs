@@ -27,20 +27,37 @@ update_wordlist:
 
 lint_updated_markdown:
   stage: test
+  allow_failure: true
   rules:
     - changes:
       - "**/*.md"
   script:
     - markdownlint $(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)
-  allow_failure: true
 
 lint_all_markdown:
   stage: test
+  allow_failure: true
   rules:
     - when: manual
   script:
     - markdownlint "**/*.md" 
+
+proselint_updated_markdown:
+  stage: test
   allow_failure: true
+  rules:
+    - when: manual
+  script:
+    - proselint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)" 
+
+proselint_all_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - changes:
+      - "**/*.md"
+  script:
+    - proselint "**/*.md" 
 
 test_build:
   stage: test
