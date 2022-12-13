@@ -28,10 +28,8 @@ website](https://www.amd.com/en/processors/epyc-7003-series).
 
  
 
-<span
-style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">The
-memory available to Slurm jobs on these nodes is 460 GB, so
-approximately 1800 MB per CPU.  </span>
+The memory available to Slurm jobs on these nodes is 460 GB, so
+approximately 1800 MB per CPU.  
 
 Only 30 nodes are available so far, but that number will eventually
 increase to 64, eight of which will have double the memory.

@@ -1,10 +1,8 @@
-<span style="font-weight: 400;">Many scientific software applications
-are writ<dfn class="dictionary-of-numbers">ten to take advantage
-</dfn>of multiple CPUs in some way. But
-of<dfn class="dictionary-of-numbers">ten this must be </dfn>specifically
-requested by the user at the time they run the program, rather than
-happening automatically.</span><span style="font-weight: 400;">  
-</span>
+Many scientific software applications are
+writ<dfn class="dictionary-of-numbers">ten to take advantage </dfn>of
+multiple CPUs in some way. But of<dfn class="dictionary-of-numbers">ten
+this must be </dfn>specifically requested by the user at the time they
+run the program, rather than happening automatically.  
 
 The are <dfn class="dictionary-of-numbers">three types of parallel
 </dfn>execution we will cover are [Multi-Threading(oMP)](#t_multi),
@@ -29,11 +27,11 @@ for more information.
 
 # Multi-threading
 
-<span style="font-weight: 400;">Multi-threading is a method of
-parallelisation whereby the initial single thread of a process forks
-into a number of parallel threads, generally *via* a library such as
-OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or
-pthread (PO<dfn class="dictionary-of-numbers">SIX threads)</dfn>.</span>
+Multi-threading is a method of parallelisation whereby the initial
+single thread of a process forks into a number of parallel threads,
+generally *via* a library such as OpenMP (Open MultiProcessing), TBB
+(Threading Building Blocks), or pthread
+(PO<dfn class="dictionary-of-numbers">SIX threads)</dfn>.
 
 <img src="mkdocs/includes/images/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
 *Fig. 1: In a serial operation, tasks complete
@@ -67,14 +65,12 @@ The expected output being
 
 # MPI
 
-MPI stands for *Message Passing Interface*, and <span
-style="font-weight: 400;">is a communication protocol used to achieve
-distributed parallel computation.</span>
+MPI stands for *Message Passing Interface*, and is a communication
+protocol used to achieve distributed parallel computation.
 
-<span style="font-weight: 400;">Similar in some ways to multi-threading,
-MPI does not have the limitation of requiring shared memory and thus can
-be used across multiple nodes, but has higher communication and memory
-overheads.</span>
+Similar in some ways to multi-threading, MPI does not have the
+limitation of requiring shared memory and thus can be used across
+multiple nodes, but has higher communication and memory overheads.
 
 For MPI jobs you need to set `--ntasks` to a value larger than 1, or if
 you want all nodes to run the same number of tasks, set

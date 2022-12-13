@@ -32,7 +32,7 @@ The NeSI Wellington DTN endpoint is protected by a second factor
 authentication (2FA).  Also note, your NeSI username and password are
 case-sensitive.
 
-## <span class="wysiwyg-color-black">The NeSI Data Transfer Node</span>
+## The NeSI Data Transfer Node
 
 The NeSI Data Transfer Node (DTN) acts as an interface between our HPC
 facility storage and a worldwide network of Globus endpoints. This is
@@ -206,13 +206,10 @@ connector subscription (note a subscription is required per cloud
 provider) so we can’t use globus to transfer to/from cloud storage. If
 you see this as key for you, please let us know (support@nesi.org.nz).
 
-<span style="font-weight: 400;">Our current advice for moving data to or
-from the cloud is to use tools such as Rclone  (</span>[<span
-style="font-weight: 400;">https://rclone.org/</span>](https://rclone.org/)<span
-style="font-weight: 400;">) or the cloud CLI's such as aswcli for S3
-(https://aws.amazon.com/cli/) or gcloud CLI (</span>[<span
-style="font-weight: 400;">https://cloud.google.com/sdk/gcloud</span>](https://cloud.google.com/sdk/gcloud)<span
-style="font-weight: 400;">). If you have any trouble or would like
-further advice, please get in touch (</span>[<span
-style="font-weight: 400;">support@nesi.org.nz</span>](mailto:support@nesi.org.nz)<span
-style="font-weight: 400;">).</span>
+Our current advice for moving data to or from the cloud is to use tools
+such as Rclone  ([https://rclone.org/](https://rclone.org/)) or the
+cloud CLI's such as aswcli for S3 (https://aws.amazon.com/cli/) or
+gcloud CLI
+([https://cloud.google.com/sdk/gcloud](https://cloud.google.com/sdk/gcloud)).
+If you have any trouble or would like further advice, please get in
+touch ([support@nesi.org.nz](mailto:support@nesi.org.nz)).

@@ -56,12 +56,9 @@
 3.   You can either enter the Old Password first and then set a new one
     OR feel free to select **<span class="wysiwyg-color-blue">Forgot my
     password </span>**  
-    -   -   <span class="wysiwyg-color-black">We recommend
-            </span>**<span class="wysiwyg-color-blue">Forgot my password
-            </span>**<span class="wysiwyg-color-black">option in
-            general   
+    -   -   We recommend **<span class="wysiwyg-color-blue">Forgot my
+            password </span>**option in general   
               
-            </span>
 
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  

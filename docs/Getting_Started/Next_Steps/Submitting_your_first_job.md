@@ -1,11 +1,9 @@
 ## Environment Modules
 
-<span style="font-weight: 400;">Modules are a convenient  way to provide
-access to applications  on the cluster. They prepare the environment you
-need to run an application.</span>
+Modules are a convenient  way to provide access to applications  on the
+cluster. They prepare the environment you need to run an application.
 
-<span style="font-weight: 400;">For a full list of module commands
-run <kbd>man module</kbd></span>
+For a full list of module commands run <kbd>man module</kbd>
 
 <table>
 <tbody>
@@ -22,10 +20,9 @@ run <kbd>man module</kbd></span>
 
 ## Slurm
 
-Jobs on Mahuika and Māui are submitted* *in the form of a *<span
-style="font-weight: 400;">batch script </span>*<span
-style="font-weight: 400;">containing the code you want to run and a
-header of information needed by our job scheduler *Slurm.*</span>
+Jobs on Mahuika and Māui are submitted* *in the form of a *batch
+script *containing the code you want to run and a header of information
+needed by our job scheduler *Slurm.*
 
 ## Creating a batch script
 

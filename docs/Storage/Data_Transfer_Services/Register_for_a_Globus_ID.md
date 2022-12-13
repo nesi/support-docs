@@ -8,8 +8,8 @@ to create or set preferences associated with your Globus ID.
 
 ![globus\_login.png](mkdocs/includes/images/globus_login.png)
 
-From [ https://www.globusid.org](%C2%A0https://www.globusid.org) , <span
-class="wysiwyg-color-black"> select "Create A Globus ID".</span>
+From [ https://www.globusid.org](%C2%A0https://www.globusid.org) ,
+select "Create A Globus ID".
 
 Enter a username/password of your choice, and the value "NeSI" in the
 Organization field.
@@ -19,8 +19,8 @@ Organization field.
 Your email address will be verified - check your email and copy/paste
 the verification code you receive into the next page and submit.  Upon
 verification, your account will be enabled. Unless you have an
-pre-existing Globus account, * press "<span
-class="wysiwyg-color-blue wysiwyg-color-black"> Continue"</span>*
+pre-existing Globus account, * press "<span class="wysiwyg-color-blue">
+Continue"</span>*
 
 ![end.png](mkdocs/includes/images/end.png)
 

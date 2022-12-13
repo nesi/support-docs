@@ -8,8 +8,7 @@ The three main ANSYS licenses are;
 -   **ANSYS Teaching License **(aa\_t)
 
     This is the default license type, it can be used on up to 6 CPUs on
-    models with less than <span style="font-style: italic;">512k
-    nodes</span>
+    models with less than 512k nodes
 
 -   **ANSYS Research license** (aa\_r)
 
@@ -518,7 +517,7 @@ The following FENSAP solvers are compatible with MPI
 -   C<dfn class="dictionary-of-numbers">3D</dfn>
 -   OptiGrid
 
-## Case setup<span style="font-size: 15px;"> </span>
+## Case setup 
 
 ## With GUI
 

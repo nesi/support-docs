@@ -4,8 +4,8 @@ NeSI aims to keep users informed via various communication channels. 
 
 ## Checking and setting your preferences
 
-<span data-slate-node="text">Within
-</span><a href="https://my.nesi.org.nz/account/preference" class="guide-markup">my.nesi.org.nz</a>
+Within
+<a href="https://my.nesi.org.nz/account/preference" class="guide-markup">my.nesi.org.nz</a>
 you can find a summary of the current subscriptions under NeSI
 Notification Preferences. 
 

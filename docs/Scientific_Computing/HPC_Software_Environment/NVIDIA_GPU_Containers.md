@@ -23,17 +23,15 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
     -   wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
             cd apoa1
 
-2.  <span style="font-weight: 400;">Load the Singularity module:</span>
+2.  Load the Singularity module:
     -   module load Singularity
 
-3.  <span style="font-weight: 400;">Build the Singularity image. This
-    step differs from the NVIDIA instructions because instead of using
-    "build" we "pull" the image directly, which does not require root
-    access:</span>
+3.  Build the Singularity image. This step differs from the NVIDIA
+    instructions because instead of using "build" we "pull" the image
+    directly, which does not require root access:
     -   singularity pull namd_2.13-singlenode.sif docker://nvcr.io/hpc/namd:2.13-singlenode
 
-4.  <span style="font-weight: 400;">Copy the following into a Slurm
-    script named *run.sl*:</span>
+4.  Copy the following into a Slurm script named *run.sl*:
     -   #!/bin/bash
             #SBATCH --job-name=namdgpu
             #SBATCH --time=00:10:00

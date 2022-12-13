@@ -1,8 +1,8 @@
-<span id="criteria"></span>The automatic cleaning feature is a programme
-of regular deletion of selected files from project directories in our
-nobackup file system. We do this to optimise the availability of this
-file system for active research computing workloads and to ensure NeSI
-can reliably support large-scale compute and analytics workflows.
+The automatic cleaning feature is a programme of regular deletion of
+selected files from project directories in our nobackup file system. We
+do this to optimise the availability of this file system for active
+research computing workloads and to ensure NeSI can reliably support
+large-scale compute and analytics workflows.
 
 Files are deleted if they meet **all** of the following criteria:
 
@@ -21,9 +21,7 @@ Files are deleted if they meet **all** of the following criteria:
 > Usage: nn\_doomed\_list \[-h\] \[--project \[PROJECTS\]\]
 > \[--unlimited\] \[--limit LENGTHLIMIT\]
 >
-> <span
-> style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">optional
-> arguments:</span>
+> optional arguments:
 >
 > -h, --help show this help message and exit  
 > --project \[PROJECTS\], -p \[PROJECTS\]  
@@ -40,12 +38,11 @@ Files are deleted if they meet **all** of the following criteria:
 
 The general process will follow a schedule as follows:
 
--   **Notify**<span style="font-weight: 400;"> (at 106 days), then two
-    weeks later </span>**Delete**<span style="font-weight: 400;"> (at
-    120 days)</span>.
--   <span style="font-weight: 400;">Every fortnight on Tuesday morning,
-    we will be reviewing files stored in the nobackup filesystem and
-    identifying candidates for expiry</span>.
+-   **Notify** (at 106 days), then two weeks later **Delete** (at 120
+    days).
+-   Every fortnight on Tuesday morning, we will be reviewing files
+    stored in the nobackup filesystem and identifying candidates for
+    expiry.
 -   Project teams will be notified by email if they have file candidates
     for deletion. Emails will be sent two weeks in advance of any
     deletion taking place.
@@ -60,11 +57,11 @@ The general process will follow a schedule as follows:
     > deletion candidates, for each of your projects, whether you
     > received an email from us or not.
 
--   <span style="font-weight: 400;">Immediately after deletion is
-    complete, a new set of candidate files will be identified for expiry
-    during the next automated cleanup</span>. These candidate files are
-    all files within the project's nobackup that have not been created,
-    accessed or modified within the last 106 days.
+-   Immediately after deletion is complete, a new set of candidate files
+    will be identified for expiry during the next automated cleanup.
+    These candidate files are all files within the project's nobackup
+    that have not been created, accessed or modified within the last 106
+    days.
 
 A file containing the list of candidates for deletion during the next
 cleanup, along with the date of the next cleanup, will be created in a
@@ -122,8 +119,6 @@ keep beyond the scheduled expiry date, you have four options:
     > activity, constitutes a breach of [NeSI's acceptable use
     > policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy).
 
-<span id="advice"></span>
-
 ## Where should I put my data?
 
 <table>
@@ -170,14 +165,11 @@ so we can discuss your short- and medium-term data storage needs. Our
 intention is to work with you to move your valuable data to an
 appropriate combination of:
 
--   <span style="font-weight: 400;">persistent project storage on
-    NeSI,</span>
--   <span style="font-weight: 400;">high performance /nobackup storage
-    (temporary scratch space) on NeSI,</span>
--   <span style="font-weight: 400;">slow nearline storage (not released
-    yet, on our roadmap), and </span>
--   <span style="font-weight: 400;">institutional storage
-    infrastructure.</span>
+-   persistent project storage on NeSI,
+-   high performance /nobackup storage (temporary scratch space) on
+    NeSI,
+-   slow nearline storage (not released yet, on our roadmap), and 
+-   institutional storage infrastructure.
 
 ## User Webinars
 

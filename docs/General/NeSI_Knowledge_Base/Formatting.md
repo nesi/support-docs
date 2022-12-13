@@ -12,7 +12,7 @@
 
 <span class="wysiwyg-font-size-large">Large Text</span>
 
-<span class="wysiwyg-font-size-medium">Normal Text</span>
+Normal Text
 
 <span class="wysiwyg-font-size-small">Small Text</span>
 

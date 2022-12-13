@@ -1,5 +1,4 @@
-<span style="font-size: 22.5px;">Our webinar playlist covers the
-following topics:</span>
+Our webinar playlist covers the following topics:
 
 -   [Troubleshooting on
     NeSI](https://www.youtube.com/watch?v=H_UXkj9Nmoc&t=7s)

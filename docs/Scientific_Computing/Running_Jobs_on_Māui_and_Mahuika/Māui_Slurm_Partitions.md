@@ -89,7 +89,7 @@ class](https://support.nesi.org.nz/hc/en-gb/articles/360000202535-Overview)
 of its project. Specifying `--qos=debug` will override that and give the
 job very high priority, but is subject to strict limits: 15 minutes per
 job, and only 1 job at a time per user. Debug jobs are limited to 2
-nodes.<span id="_Toc514341606"></span>
+nodes.
 
 ##  
 

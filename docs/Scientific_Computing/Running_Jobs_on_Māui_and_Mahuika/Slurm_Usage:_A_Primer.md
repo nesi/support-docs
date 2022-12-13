@@ -61,11 +61,11 @@ used in place of any other MPI launcher such as `aprun` or `mpirun`.
 
 ## OpenMP and other multithreaded jobs
 
-<span class="wysiwyg-font-size-medium">For multithreaded jobs you need
-to set `--cpus-per-task` to a value larger than 1. Our Slurm prolog will
-then set OMP\_NUM\_THREADS to equal that number.  If for any reason you
-use `srun` with a multi-core but non-MPI job then also
-specify `--ntasks=1` to ensure that it is only launched once.</span>
+For multithreaded jobs you need to set `--cpus-per-task` to a value
+larger than 1. Our Slurm prolog will then set OMP\_NUM\_THREADS to equal
+that number.  If for any reason you use `srun` with a multi-core but
+non-MPI job then also specify `--ntasks=1` to ensure that it is only
+launched once.
 
 ## Submitting a job
 

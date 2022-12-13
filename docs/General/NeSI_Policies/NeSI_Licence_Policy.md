@@ -98,7 +98,7 @@ using the software on NeSI.
 > complies with the terms of your licence or is otherwise permitted by
 > law.**
 
-# Slurm Tokens<span style="font-size: 15px;"> </span>
+# Slurm Tokens 
 
 We encourage the use of Slurm licence tokens in your batch scripts, for
 example:

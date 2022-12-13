@@ -158,12 +158,11 @@ Our job performed 5,000 seeds using two physical CPU cores and a maximum
 memory of 166,744KB (0.16 GB). In total, the job ran for 18 minutes and
 51 seconds.
 
-<span class="wysiwyg-color-black">We will initially assume that our
-job's wall time and memory will scale linearly with the number of
-iterations. However, we don't know that for certain that this is the
-case so we will need to understand the scaling behaviour of our job's
-resource requirements before we can submit our full job and be confident
-it will succeed.</span>
+We will initially assume that our job's wall time and memory will scale
+linearly with the number of iterations. However, we don't know that for
+certain that this is the case so we will need to understand the scaling
+behaviour of our job's resource requirements before we can submit our
+full job and be confident it will succeed.
 
 To find out we are going to have to run more tests. Let's try running
 our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
@@ -193,16 +192,15 @@ our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
 
 ![MPIscalingMem.png](mkdocs/includes/images/MPIscalingMem.png)
 
-<span style="font-weight: 400;">First, looking at the plot of memory
-usage per task vs CPUs it would at appears that memory usage per task
-remains constant, regardless of how many CPUs (equivalent to tasks here)
-this job uses, because this is an MPI job each task must have its own
-memory, this is why, if we look back at the script we are using, that we
-request memory per CPU, rather than memory like previously, since MPI
-jobs will by their nature of having to read everything into memory once
-for each task, have their memory scale (at least) linearly. But the
-results of this plot means that we shouldn't have to worry about
-increasing the memory per CPU.</span>
+First, looking at the plot of memory usage per task vs CPUs it would at
+appears that memory usage per task remains constant, regardless of how
+many CPUs (equivalent to tasks here) this job uses, because this is an
+MPI job each task must have its own memory, this is why, if we look back
+at the script we are using, that we request memory per CPU, rather than
+memory like previously, since MPI jobs will by their nature of having to
+read everything into memory once for each task, have their memory scale
+(at least) linearly. But the results of this plot means that we
+shouldn't have to worry about increasing the memory per CPU.
 
 One thing to note about our plot of CPUs versus memory is the fact that
 memory usage is not measured continuously, it is instead measured every
@@ -211,9 +209,8 @@ spikes, `sacct` will not necessarilly detect the maximum memory usage.
 This is something that you should be aware of when you estimate the
 memory usage of all your jobs.
 
-<span class="wysiwyg-color-black">Looking at the memory usage for an 8
-CPU job, it looks like an 8 CPU has a maximum memory requirement of 0.18
-GB.</span>
+Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
+a maximum memory requirement of 0.18 GB.
 
 <table>
 <tbody>
@@ -239,19 +236,17 @@ itself not being computationally free, what this means is that you can
 get to a point where the computational cost of adding additional MPI
 tasks is greater than the speed-up.
 
-<span style="font-weight: 400;">Looking at the plot of CPUs vs time we
-can see the asymptotic speedup and this time the best number of CPUs to
-use for this job looks to be 5 physical CPUs.  
-</span>
+Looking at the plot of CPUs vs time we can see the asymptotic speedup
+and this time the best number of CPUs to use for this job looks to be 5
+physical CPUs.  
 
  
 
  
 
-<span class="wysiwyg-color-black">Now that we have determined that 5
-physical CPUs is the optimal number of CPUs for our jobs we will use
-this as we will submit three more jobs, using 10,000 15,000 and 20,000
-seeds.</span> 
+Now that we have determined that 5 physical CPUs is the optimal number
+of CPUs for our jobs we will use this as we will submit three more jobs,
+using 10,000 15,000 and 20,000 seeds. 
 
              JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
     -------------- ------------ ----------- ------------ ----- -------- ----------
@@ -279,36 +274,29 @@ understand what is happening:
 
 ![MPIseedsvtime.png](mkdocs/includes/images/MPIseedsvtime.png)
 
-<span class="wysiwyg-color-black">This confirms our assumption of
-wall-time scaling linearly with number of iterations. </span><span
-class="wysiwyg-color-black">Since our 5,000 seed job to 7 minutes and 41
-seconds we can estimate that it will take about 12 times longer to run
-60,000.  
-</span>
+This confirms our assumption of wall-time scaling linearly with number
+of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we
+can estimate that it will take about 12 times longer to run 60,000.  
 
 ## Estimating our Total Resource Requirments
 
 Now that we know approximately how our job's CPU, memory and wall time
-requirem<span class="wysiwyg-color-black">ents scale, we</span> can try
-and estimate our total resource requirements for our 60,000 iteration
-job.
+requirements scale, we can try and estimate our total resource
+requirements for our 60,000 iteration job.
 
 From this data we have determined that more than 5 physical CPUs has
 very limited additional speed and 5 CPU should use about 0.17 GB of
-memory per task (CPU) at mo<span class="wysiwyg-color-black">st, and
-that this memory requirement should remain relatively consistent,
-regardless of the number of seeds. Given this information we can
-estimate our full size job's resource requirements. Sinc</span>e our 5
-physical CPU, 5,000 iteration job took 1<span
-class="wysiwyg-color-black">7 minutes and 41 seconds</span>, our full
-scale job should take 12 times longer <span
-class="wysiwyg-color-black">or about 5,532 seconds, 1 hour and 32
-minutes (If you want to be more exact you can take the mean of the
-walltime over the number of seeds, in this case 0.09105, and multiply
-that by the number of seeds, which works out to be 5,463 seconds, which
-is very close to our original estimate), </span>and require 0.17 GB of
-memory per task. To be on the safe side, let's request 1 GB of memory
-and 2 hours.
+memory per task (CPU) at most, and that this memory requirement should
+remain relatively consistent, regardless of the number of seeds. Given
+this information we can estimate our full size job's resource
+requirements. Since our 5 physical CPU, 5,000 iteration job took 17
+minutes and 41 seconds, our full scale job should take 12 times longer
+or about 5,532 seconds, 1 hour and 32 minutes (If you want to be more
+exact you can take the mean of the walltime over the number of seeds, in
+this case 0.09105, and multiply that by the number of seeds, which works
+out to be 5,463 seconds, which is very close to our original estimate),
+and require 0.17 GB of memory per task. To be on the safe side, let's
+request 1 GB of memory and 2 hours.
 
 ### Revised Slurm Script
 

@@ -11,9 +11,7 @@ X<dfn class="dictionary-of-numbers">11 on its own </dfn>(approximately
 <dfn class="dictionary-of-numbers">40 times faster)</dfn>.
 
 The quickest and easiest way to get started with a desktop is through
-Jupyter on NeSI,<span style="font-size: 15px;"> </span>[connect
-here](https://jupyter.nesi.org.nz/)<span
-style="font-size: 15px;">.</span>
+Jupyter on NeSI, [connect here](https://jupyter.nesi.org.nz/).
 
 ## Connecting
 

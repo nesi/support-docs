@@ -13,31 +13,17 @@ last few months we’ve worked directly with a group of beta tester
 researchers to ensure this new capability is fit-for-purpose and tuned
 to communities' specific software and tool requirements. 
 
-<span class="fabric-editor-annotation" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea">These new A100s,
-alongside </span>[<span class="fabric-editor-annotation"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea">software optimised for
+<span class="fabric-editor-annotation">These new A100s, alongside
+</span>[<span class="fabric-editor-annotation">software optimised for
 data
 science</span>](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-)<span
-class="fabric-editor-annotation" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea">, are available to
-researchers using </span>**<span class="fabric-editor-annotation"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea">machine
-learning</span>**<span class="fabric-editor-annotation"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"> approaches. If this is
-you, </span>[<span class="fabric-editor-annotation"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea">contact NeSI
+class="fabric-editor-annotation">, are available to researchers using
+</span>**<span class="fabric-editor-annotation">machine
+learning</span>**<span class="fabric-editor-annotation"> approaches. If
+this is you, </span>[<span class="fabric-editor-annotation">contact NeSI
 Support</span>](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new)<span
-class="fabric-editor-annotation" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="11fb2a95-f615-44ef-94d4-233f43bf06ea"> to discuss how these new
-resources could support your work.</span>
+class="fabric-editor-annotation"> to discuss how these new resources
+could support your work.</span>
 
  
 
@@ -54,14 +40,10 @@ on Mahuika, you can access the P100s right away.
 If you need a larger or new allocation on Mahuika, you can [apply for
 access](https://www.nesi.org.nz/services/applyforaccess) now, but
 requests will likely be considered as part of our next allocation call
-window: [<span class="fabric-editor-annotation"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="002aaecf-7fd3-4a49-846d-50a7a88096a6">31 August - 01
+window: [<span class="fabric-editor-annotation">31 August - 01
 October</span>](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
 
-<span class="fabric-editor-annotation" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="27b58294-6e03-46a6-921a-0652d7a5b841">For more technical
+<span class="fabric-editor-annotation">For more technical
 information</span> about using GPUs on NeSI, [click
 here](https://support.nesi.org.nz/hc/en-gb/articles/360001471955). If
 you have questions about allocations or how to access the P100s,
@@ -96,18 +78,13 @@ acceleration at the same time.
 
 These activities will enable us to expand GPU access to an even broader
 community of users, as well as support more advanced and demanding
-performance needs across domains. <span class="fabric-editor-annotation"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="d92de427-dd8f-4965-a484-8faf3deebc67">If you’re interested in
-using these A100s for something other than machine learning, let us know
-by </span>[<span class="fabric-editor-annotation"
-data-mark-type="annotation" data-mark-annotation-type="inlineComment"
-data-id="d92de427-dd8f-4965-a484-8faf3deebc67">contacting NeSI
+performance needs across domains. <span
+class="fabric-editor-annotation">If you’re interested in using these
+A100s for something other than machine learning, let us know by
+</span>[<span class="fabric-editor-annotation">contacting NeSI
 Support</span>](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new)<span
-class="fabric-editor-annotation" data-mark-type="annotation"
-data-mark-annotation-type="inlineComment"
-data-id="d92de427-dd8f-4965-a484-8faf3deebc67"> - that way we can keep
-you up to date on our plans. </span>
+class="fabric-editor-annotation"> - that way we can keep you up to date
+on our plans. </span>
 
  
 

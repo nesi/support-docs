@@ -1,30 +1,23 @@
-<span
-style="font-weight: 400;">[Hyperthreading](https://en.wikipedia.org/wiki/Hyper-threading)
-is enabled on the NeSI machines, so for each physical CPU core, there
-are two logical CPUs. This increases the efficiency of some
-multithreaded jobs, but the fact that Slurm is counting in logical CPUs
-makes aspects of running non-hyperthreaded jobs confusing, even when
-hyperthreading is turned off in the job with
-</span>**--hint=nomultithread.**
+[Hyperthreading](https://en.wikipedia.org/wiki/Hyper-threading) is
+enabled on the NeSI machines, so for each physical CPU core, there are
+two logical CPUs. This increases the efficiency of some multithreaded
+jobs, but the fact that Slurm is counting in logical CPUs makes aspects
+of running non-hyperthreaded jobs confusing, even when hyperthreading is
+turned off in the job with **--hint=nomultithread.**
 
--   <span style="font-weight: 400;">Non-hyperthreaded jobs which use
-     </span>**--mem-per-cpu**<span style="font-weight: 400;"> requests
-    should halve their memory requests as those are based on memory per
-    logical CPU, not per the number of threads or tasks.  For non-MPI
-    jobs, or for MPI jobs that request the same number of tasks on every
-    node, we recommend to specify **--mem** (i.e. memory per node)
-    instead. See [How to request memory
+-   Non-hyperthreaded jobs which use  **--mem-per-cpu** requests should
+    halve their memory requests as those are based on memory per logical
+    CPU, not per the number of threads or tasks.  For non-MPI jobs, or
+    for MPI jobs that request the same number of tasks on every node, we
+    recommend to specify **--mem** (i.e. memory per node) instead. See
+    [How to request memory
     (RAM)](https://support.nesi.org.nz/hc/en-gb/articles/360001108756)
-    for more information.</span>
--   <span style="font-weight: 400;">Non-MPI jobs which specify
-    </span>**--cpus-per-task**<span style="font-weight: 400;"> and use
-    </span>**srun** <span style="font-weight: 400;">should also set
-    </span>**--ntasks=1**<span style="font-weight: 400;">, otherwise the
-    program will be run twice in parallel, halving the efficiency of the
-    job.</span>
+    for more information.
+-   Non-MPI jobs which specify **--cpus-per-task** and use **srun**
+    should also set **--ntasks=1**, otherwise the program will be run
+    twice in parallel, halving the efficiency of the job.
 
-<span style="font-weight: 400;">The precise rules about when
-hyperthreading applies are as follows:</span>
+The precise rules about when hyperthreading applies are as follows:
 
 <table style="width: 697px;">
 <tbody>
