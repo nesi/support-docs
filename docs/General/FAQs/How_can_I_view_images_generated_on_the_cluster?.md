@@ -1,3 +1,19 @@
+---
+created_at: '2020-05-11T23:29:39Z'
+hidden: false
+label_names:
+- visualisation
+- image
+- x11
+- view
+position: 0
+title: How can I view images generated on the cluster?
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001514795
+zendesk_section_id: 360000039036
+---
+
 If for any reason downloading images is impractical you can view them on
 the cluster using the `display` command. For example,
 

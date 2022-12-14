@@ -1,7 +1,20 @@
-Many scientific software applications are written to take advantage of
-multiple CPUs in some way. But often this must be specifically requested
-by the user at the time they run the program, rather than happening
-automatically.  
+---
+created_at: '2019-01-10T03:02:11Z'
+hidden: false
+label_names: []
+position: 2
+title: Parallel Execution
+vote_count: 5
+vote_sum: 3
+zendesk_article_id: 360000690275
+zendesk_section_id: 360000189716
+---
+
+Many scientific software applications are
+writ<dfn class="dictionary-of-numbers">ten to take advantage </dfn>of
+multiple CPUs in some way. But of<dfn class="dictionary-of-numbers">ten
+this must be </dfn>specifically requested by the user at the time they
+run the program, rather than happening automatically.  
 
 The are three types of parallel execution we will cover
 are [Multi-Threading(oMP)](#t_multi),
@@ -29,12 +42,13 @@ single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread (POSIX threads).
 
-<img src="img/serial.png" class="figure-img" alt="Diagram showing serial operations." />  
-*Fig. 1: In a serial operation, tasks complete one after another.*
+<img src="../includes/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
+*Fig. 1: In a serial operation, tasks complete
+<dfn class="dictionary-of-numbers">one after another</dfn>.*
 
 ####  
 
-<img src="img/par.png" width="714" height="160" alt="par.png" />*  
+<img src="../includes/par.png" alt="par.png" width="714" height="160" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 

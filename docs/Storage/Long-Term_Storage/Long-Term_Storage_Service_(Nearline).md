@@ -1,3 +1,18 @@
+---
+created_at: '2019-09-18T22:28:01Z'
+hidden: false
+label_names:
+- storage
+- nearline
+- tape
+position: 0
+title: Long-Term Storage Service (Nearline)
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360001169956
+zendesk_section_id: 360000042255
+---
+
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
@@ -475,7 +490,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](img/librarian_get_put.jpeg)
+![librarian\_get\_put.jpeg](../includes/librarian_get_put.jpeg)
 
 # Underlying mechanism
 

@@ -1,3 +1,20 @@
+---
+created_at: '2018-05-02T04:06:16Z'
+hidden: false
+label_names:
+- info
+- mahuika
+- storage
+- maui
+- quota
+position: 0
+title: NeSI File Systems and Quotas
+vote_count: 3
+vote_sum: 3
+zendesk_article_id: 360000177256
+zendesk_section_id: 360000033936
+---
+
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) and
 [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575), along
 with all the ancillary nodes, share access to the same Spectrum Scale
@@ -12,7 +29,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="img/neSI_filetree.svg" width="629" height="578" alt="neSI_filetree.svg" />
+## <img src="../includes/neSI_filetree.svg" alt="neSI_filetree.svg" width="629" height="578" />
 
 # File System Specifications
 

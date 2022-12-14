@@ -1,3 +1,15 @@
+---
+created_at: '2018-05-21T21:09:39Z'
+hidden: false
+label_names: []
+position: 1
+title: Manuals
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000205656
+zendesk_section_id: 360000040036
+---
+
 The following links will provide access to reference manuals and other
 guides.
 

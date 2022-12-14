@@ -1,3 +1,15 @@
+---
+created_at: '2018-05-18T02:34:03Z'
+hidden: false
+label_names: []
+position: 5
+title: Project Extensions and New Allocations on Existing Projects
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000202196
+zendesk_section_id: 360000196195
+---
+
 NeSI recognises that research programmes often continue over several
 years before coming to an end. To reduce administrative overhead, we
 allow most project teams to extend their projects rather than applying

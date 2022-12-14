@@ -1,3 +1,15 @@
+---
+created_at: '2021-12-19T21:24:21Z'
+hidden: false
+label_names: []
+position: 1
+title: Interested in helping NeSI test its next tranche of Graphics Processing Units?
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4411983680271
+zendesk_section_id: 200732737
+---
+
 As part of our ongoing focus to support [national data science
 infrastructure
 investments](https://www.nesi.org.nz/news/2021/04/building-new-zealands-data-science-and-ai-capabilities) that

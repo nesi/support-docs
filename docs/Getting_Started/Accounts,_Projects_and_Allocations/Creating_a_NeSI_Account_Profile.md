@@ -1,3 +1,19 @@
+---
+created_at: '2018-04-18T23:56:10Z'
+hidden: false
+label_names:
+- onboarding
+- howto
+- access
+- mynesi
+position: 0
+title: Creating a NeSI Account Profile
+vote_count: 4
+vote_sum: 0
+zendesk_article_id: 360000159715
+zendesk_section_id: 360000196195
+---
+
 > ### Requirements
 >
 > Either an active login at a Tuakiri member institution, or [a Tuakiri

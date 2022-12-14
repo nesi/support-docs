@@ -1,3 +1,16 @@
+---
+created_at: '2020-07-16T23:31:34Z'
+hidden: false
+label_names: []
+position: 10
+title: 'Update: Automatic cleaning of nobackup file system - all new projects will
+  be automatically enrolled'
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001631556
+zendesk_section_id: 200732737
+---
+
 The staged rollout of [automatic cleaning of the nobackup file
 system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system)
 resumed on Tuesday 24 March 2020, and several dozen projects are now

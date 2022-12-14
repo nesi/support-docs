@@ -1,3 +1,18 @@
+---
+created_at: '2018-05-21T01:43:06Z'
+hidden: false
+label_names:
+- maui
+- XC50
+- cs500
+position: 5
+title: "M\u0101ui Ancillary Nodes"
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000203776
+zendesk_section_id: 360000034335
+---
+
 The Māui Ancillary Nodes provide access to a Virtualised environment
 that supports:
 

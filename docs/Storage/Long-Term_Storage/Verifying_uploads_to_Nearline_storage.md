@@ -1,3 +1,15 @@
+---
+created_at: '2020-04-17T09:40:49Z'
+hidden: false
+label_names: []
+position: 3
+title: Verifying uploads to Nearline storage
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001482516
+zendesk_section_id: 360000042255
+---
+
 Our [Long-Term Storage
 Service](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) is
 currently in an Early Access phase, and we encourage researchers using

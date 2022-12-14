@@ -1,3 +1,18 @@
+---
+created_at: '2018-04-26T23:46:16Z'
+hidden: false
+label_names:
+- support
+- info
+- application
+position: 13
+title: NeSI Application Support Model
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000170355
+zendesk_section_id: 360000224835
+---
+
 The NeSI policy for management of scientific application software is
 based on the following principles:
 

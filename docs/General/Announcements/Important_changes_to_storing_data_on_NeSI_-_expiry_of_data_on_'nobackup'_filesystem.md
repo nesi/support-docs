@@ -1,3 +1,17 @@
+---
+created_at: '2019-11-08T01:42:08Z'
+hidden: false
+label_names:
+- storage
+- data
+position: 17
+title: Important changes to storing data on NeSI - expiry of data on 'nobackup' filesystem
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001239435
+zendesk_section_id: 200732737
+---
+
 <span class="wysiwyg-font-size-small">This announcement is an updated
 version of the email we sent to all active users on 8th November
 2019.</span>

@@ -1,3 +1,19 @@
+---
+created_at: '2019-06-25T22:40:46Z'
+hidden: false
+label_names:
+- terminal
+- mobaxterm
+- gitbash
+- login
+position: 2
+title: Choosing and Configuring Software for Connecting to the Clusters
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001016335
+zendesk_section_id: 360000034315
+---
+
 > ### Requirements
 >
 > -   Have an [active account and

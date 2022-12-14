@@ -1,3 +1,15 @@
+---
+created_at: '2022-06-13T04:54:38Z'
+hidden: false
+label_names: []
+position: 6
+title: Available GPUs on NeSI
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4963040656783
+zendesk_section_id: 360000034335
+---
+
 NeSI has a range of Graphical Processing Units (GPUs) to accelerate
 compute-intensive research and support more analysis at scale. Depending
 on the type of GPU, you can access them in different ways, such as via

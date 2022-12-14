@@ -1,3 +1,15 @@
+---
+created_at: '2020-01-15T21:56:01Z'
+hidden: true
+label_names: []
+position: 0
+title: Find execution hot spots with VTune
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001332675
+zendesk_section_id: 360000040076
+---
+
 ## What is VTune?
 
 VTune is a tool that allows you to quickly identify where most of the
@@ -88,6 +100,6 @@ threads.  
   
 </span>
 
-![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](img/Screen_Shot_2020-01-16_at_11.06.53_AM.png.name_me) 
+![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../includes/Screen_Shot_2020-01-16_at_11.06.53_AM.png.name_me) 
 
  

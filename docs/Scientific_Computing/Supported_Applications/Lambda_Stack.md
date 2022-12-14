@@ -1,3 +1,15 @@
+---
+created_at: '2021-01-05T20:28:08Z'
+hidden: false
+label_names: []
+position: 0
+title: Lambda Stack
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360002558216
+zendesk_section_id: 360000040076
+---
+
 # Introduction
 
 [Lambda

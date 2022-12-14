@@ -1,3 +1,15 @@
+---
+created_at: '2021-05-26T00:31:12Z'
+hidden: false
+label_names: []
+position: 5
+title: New capabilities for Machine Learning and GPU pricing updates
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360004491956
+zendesk_section_id: 200732737
+---
+
 We’re excited to announce an addition of new GPU capabilities to our
 platform and some noteworthy changes to resource pricing as a result.
 

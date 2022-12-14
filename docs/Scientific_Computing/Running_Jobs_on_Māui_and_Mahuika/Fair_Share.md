@@ -1,3 +1,15 @@
+---
+created_at: '2019-02-05T03:58:21Z'
+hidden: false
+label_names: []
+position: 6
+title: Fair Share
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360000743536
+zendesk_section_id: 360000030876
+---
+
 The fair-share system is designed to encourage users to balance their
 use of resources over their allocation period. Fair-share is the largest
 factor in determining priority, but not the only one. For more details

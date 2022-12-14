@@ -1,3 +1,16 @@
+---
+created_at: '2022-08-23T02:25:55Z'
+hidden: false
+label_names:
+- releasenote
+position: 0
+title: jupyter.nesi.org.nz release notes 25/08/2022
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5362357660431
+zendesk_section_id: 360001150156
+---
+
 ## New and Improved
 
 -   Updated [RStudio-on-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)

@@ -1,3 +1,16 @@
+---
+created_at: '2022-06-02T05:35:53Z'
+hidden: false
+label_names:
+- releasenote
+position: 0
+title: jupyter.nesi.org.nz release notes 02/06/2022
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 4905985717135
+zendesk_section_id: 360001150156
+---
+
 ## Release Update - 2. June 2022
 
 ## New and Improved

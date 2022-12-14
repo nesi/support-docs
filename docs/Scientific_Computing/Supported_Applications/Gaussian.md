@@ -1,3 +1,19 @@
+---
+created_at: '2015-07-29T23:31:02Z'
+hidden: false
+label_names:
+- mahuika
+- tier1
+- chemistry
+- app
+position: 15
+title: Gaussian
+vote_count: 3
+vote_sum: -1
+zendesk_article_id: 207127857
+zendesk_section_id: 360000040076
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 

@@ -1,3 +1,16 @@
+---
+created_at: '2018-05-21T04:53:52Z'
+hidden: false
+label_names:
+- storage
+position: 3
+title: I/O Performance Considerations
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000205355
+zendesk_section_id: 360000033936
+---
+
 It is important to understand the different I/O performance
 characteristics of nodes that connect to storage using *native Spectrum
 Scale clients*, and those that employ *Cray’s DVS* *solution*.
@@ -30,7 +43,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).
 
- ![cray\_xc50.jpg](img/cray_xc50.jpg)
+ ![cray\_xc50.jpg](../includes/cray_xc50.jpg)
 
 <font size="2">Figure 1: Cray XC50 DVS architecture.</font>
 

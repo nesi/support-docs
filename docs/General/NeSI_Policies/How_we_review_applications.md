@@ -1,3 +1,16 @@
+---
+created_at: '2018-05-18T02:26:58Z'
+hidden: false
+label_names:
+- tqp
+position: 6
+title: How we review applications
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000202136
+zendesk_section_id: 360000224835
+---
+
 When you submit your application through our web site, it will go to our
 technical support team for review. In general, our review process for
 new projects is as follows:

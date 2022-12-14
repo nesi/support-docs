@@ -1,3 +1,22 @@
+---
+created_at: '2015-10-12T00:28:38Z'
+hidden: false
+label_names:
+- mahuika
+- application
+- tier2
+- engineering
+- gpu
+- mpi
+- omp
+position: 7
+title: ABAQUS
+vote_count: 2
+vote_sum: 0
+zendesk_article_id: 212457807
+zendesk_section_id: 360000040076
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
@@ -115,7 +134,7 @@ to a job.
 
  
 
-![ABAQUS\_speedup\_SharedVMPI.png](img/ABAQUS_speedup_SharedVMPI.png)
+![ABAQUS\_speedup\_SharedVMPI.png](../includes/ABAQUS_speedup_SharedVMPI.png)
 
  
 

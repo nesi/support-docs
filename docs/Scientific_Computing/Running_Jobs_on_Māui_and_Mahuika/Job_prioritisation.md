@@ -1,3 +1,15 @@
+---
+created_at: '2018-05-17T23:35:36Z'
+hidden: false
+label_names: []
+position: 7
+title: Job prioritisation
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000201636
+zendesk_section_id: 360000030876
+---
+
 Each queued job has a priority score.  Jobs start when sufficient
 resources (CPUs, GPUs, memory, licenses) are available and not already
 reserved for jobs with a higher priority.

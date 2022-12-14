@@ -1,3 +1,15 @@
+---
+created_at: '2019-01-10T02:22:09Z'
+hidden: false
+label_names: []
+position: 1
+title: 'Slurm: Reference Sheet'
+vote_count: 8
+vote_sum: 8
+zendesk_article_id: 360000691716
+zendesk_section_id: 360000278975
+---
+
 If you are unsure about using our job scheduler Slurm, more details can
 be found
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396).

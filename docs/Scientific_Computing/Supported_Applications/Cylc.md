@@ -1,3 +1,15 @@
+---
+created_at: '2022-08-03T21:35:50Z'
+hidden: false
+label_names: []
+position: 0
+title: Cylc
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5254610390415
+zendesk_section_id: 360000040076
+---
+
 ## What is Cylc
 
 [Cylc](https://cylc.github.io/) is a **general purpose workflow engine**
@@ -148,7 +160,7 @@ of the png file. To visualise the file you can type </span>
 Here, we see that our workflow "simple" has a "taskC", which waits for
 "taskA" and "taskB" to complete,
 
-![simple.png](img/simple.png)
+![simple.png](../includes/simple.png)
 
 The "1" indicates that this workflow graph is executed only once.
 

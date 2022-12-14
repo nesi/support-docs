@@ -1,3 +1,17 @@
+---
+created_at: '2018-08-29T22:30:22Z'
+hidden: true
+label_names:
+- outage
+- announcement
+position: 28
+title: Mahuika SLURM outage (over)
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000412396
+zendesk_section_id: 200732737
+---
+
 **Update as of 11:40 Thurs 30/3**
 
 Regular SLURM services are restored. We apologise for any inconvenience

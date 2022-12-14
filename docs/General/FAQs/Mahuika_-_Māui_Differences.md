@@ -1,3 +1,15 @@
+---
+created_at: '2019-11-11T21:40:21Z'
+hidden: false
+label_names: []
+position: 0
+title: "Mahuika - M\u0101ui Differences"
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001244876
+zendesk_section_id: 360000039036
+---
+
 Aside from differences in software stack there are a few other
 differences between the platforms to be aware of.
 

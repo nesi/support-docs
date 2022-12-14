@@ -1,3 +1,15 @@
+---
+created_at: '2021-01-13T00:20:08Z'
+hidden: false
+label_names: []
+position: 1
+title: Acceptable Use Policy
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360002751455
+zendesk_section_id: 360000224835
+---
+
 See
 <https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy> for
 the current version of the NeSI Acceptable Use Policy.

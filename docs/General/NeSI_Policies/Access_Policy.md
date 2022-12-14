@@ -1,3 +1,15 @@
+---
+created_at: '2021-01-13T00:17:34Z'
+hidden: false
+label_names: []
+position: 2
+title: Access Policy
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360002667556
+zendesk_section_id: 360000224835
+---
+
 See
 <https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/access-policy> for
 the current version of the NeSI Access Policy.

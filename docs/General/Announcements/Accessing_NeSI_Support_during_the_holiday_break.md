@@ -1,3 +1,16 @@
+---
+created_at: '2022-12-05T00:50:41Z'
+hidden: false
+label_names:
+- announcement
+position: 0
+title: Accessing NeSI Support during the holiday break
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5987295689487
+zendesk_section_id: 200732737
+---
+
 As another busy year draws to a close, NeSI’s Support Team will be
 taking a summer break from **5:00 PM on 22 December, 2022 to 9:00 am on
 04 January, 2023.**

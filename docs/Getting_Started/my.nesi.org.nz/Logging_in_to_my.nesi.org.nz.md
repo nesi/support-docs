@@ -1,3 +1,15 @@
+---
+created_at: '2021-03-01T21:23:33Z'
+hidden: false
+label_names: []
+position: 0
+title: Logging in to my.nesi.org.nz
+vote_count: 1
+vote_sum: -1
+zendesk_article_id: 360003584515
+zendesk_section_id: 360001059296
+---
+
 ## Login credentials
 
 We allow students, academics, alumni and researchers to securely login

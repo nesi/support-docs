@@ -1,3 +1,15 @@
+---
+created_at: '2020-12-17T20:12:46Z'
+hidden: false
+label_names: []
+position: 2
+title: Job efficiency review
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360002327275
+zendesk_section_id: 360000164635
+---
+
 ## Introduction
 
 At NeSI we want to help you run your work as efficiently as possible on

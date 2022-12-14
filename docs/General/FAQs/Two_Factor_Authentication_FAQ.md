@@ -1,3 +1,15 @@
+---
+created_at: '2018-05-28T03:40:42Z'
+hidden: false
+label_names: []
+position: 2
+title: Two Factor Authentication FAQ
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000214036
+zendesk_section_id: 360000039036
+---
+
 ## What is a Second Factor?
 
 **Answer:** Two Factor Authentication is a method of confirming a user's

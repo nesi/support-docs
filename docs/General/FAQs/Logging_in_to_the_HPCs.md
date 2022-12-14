@@ -1,3 +1,19 @@
+---
+created_at: '2018-04-20T01:02:54Z'
+hidden: false
+label_names:
+- onboarding
+- ssh
+- howto
+- access
+position: 3
+title: Logging in to the HPCs
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360000161315
+zendesk_section_id: 360000039036
+---
+
 This page has been replaced. Information on how to log in can now be
 found at:
 

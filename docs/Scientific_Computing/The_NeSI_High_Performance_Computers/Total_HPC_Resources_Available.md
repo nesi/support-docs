@@ -1,3 +1,15 @@
+---
+created_at: '2018-05-18T00:02:48Z'
+hidden: false
+label_names: []
+position: 2
+title: Total HPC Resources Available
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000201756
+zendesk_section_id: 360000034335
+---
+
 NeSI resources available for allocation each year combined across both
 [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575) and
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) HPC systems

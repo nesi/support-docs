@@ -1,3 +1,18 @@
+---
+created_at: '2019-01-24T20:30:30Z'
+hidden: false
+label_names:
+- support
+- application
+- visualisation
+position: 12
+title: NICE DCV Setup
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000719156
+zendesk_section_id: 360000040056
+---
+
 NICE DCV is a virtual desktop solution that enables users to run
 graphics-intensive OpenGL applications, such as 3D visualisation,
 remotely on the HPC. You get full access to your data on the
@@ -136,7 +151,7 @@ connections to look like this:
 
 ### To connect to Māui
 
-![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](img/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
+![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../includes/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
 When setting up and using the connections, note the following:
 
 ### To connect to Mahuika

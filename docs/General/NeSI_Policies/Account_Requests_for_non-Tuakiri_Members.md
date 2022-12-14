@@ -1,3 +1,18 @@
+---
+created_at: '2018-05-28T02:55:23Z'
+hidden: false
+label_names:
+- onboarding
+- tuakiri
+- mynesi
+position: 5
+title: Account Requests for non-Tuakiri Members
+vote_count: 4
+vote_sum: -4
+zendesk_article_id: 360000216035
+zendesk_section_id: 360000224835
+---
+
 Most New Zealand universities and Crown Research Institutes are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
@@ -8,7 +23,7 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](img/mceclip0.png)
+![mceclip0.png](../includes/mceclip0.png)
 
 > ### Warning
 >

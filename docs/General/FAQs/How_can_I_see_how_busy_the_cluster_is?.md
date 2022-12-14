@@ -1,3 +1,15 @@
+---
+created_at: '2019-09-22T20:20:07Z'
+hidden: false
+label_names: []
+position: 0
+title: How can I see how busy the cluster is?
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001176756
+zendesk_section_id: 360000039036
+---
+
 You can get the current status of all nodes on a cluster using the
 command `sinfo`, you will get a printout like the following. 
 

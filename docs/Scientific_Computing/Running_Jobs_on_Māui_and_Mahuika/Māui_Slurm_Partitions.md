@@ -1,3 +1,17 @@
+---
+created_at: '2018-05-21T03:32:04Z'
+hidden: false
+label_names:
+- maui
+- slurm
+position: 9
+title: "M\u0101ui Slurm Partitions"
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000204116
+zendesk_section_id: 360000030876
+---
+
 > ### Important
 >
 > Partitions on these systems that may be used for NeSI workloads carry

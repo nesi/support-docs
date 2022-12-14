@@ -1,3 +1,15 @@
+---
+created_at: '2020-03-08T20:06:48Z'
+hidden: false
+label_names: []
+position: 3
+title: Job Checkpointing
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001413096
+zendesk_section_id: 360000030876
+---
+
 Job/[Application
 Checkpointing](https://en.wikipedia.org/wiki/Application_checkpointing) is
 the snapshotting of a programs state, so that it can be restarted from

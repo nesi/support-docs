@@ -1,3 +1,18 @@
+---
+created_at: '2016-03-22T01:33:34Z'
+hidden: true
+label_names:
+- mahuika
+- tier1
+- biology
+position: 8
+title: ABySS
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 217751818
+zendesk_section_id: 360000040076
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 

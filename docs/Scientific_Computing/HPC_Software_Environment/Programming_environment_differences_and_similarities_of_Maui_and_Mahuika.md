@@ -1,3 +1,20 @@
+---
+created_at: '2018-04-23T00:52:59Z'
+hidden: false
+label_names:
+- info
+- software
+- application
+- cs400
+- XC50
+position: 19
+title: Programming environment differences and similarities of Maui and Mahuika
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000164576
+zendesk_section_id: 360000040056
+---
+
 The compile environment of Māui and Mahuika have various similarities,
 but also significant differences. Both systems are configured with the
 Cray Programming Environment (CPE), but these vary in detail. In general

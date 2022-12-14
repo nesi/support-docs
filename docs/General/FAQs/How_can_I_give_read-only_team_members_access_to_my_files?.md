@@ -1,3 +1,15 @@
+---
+created_at: '2021-06-04T00:42:20Z'
+hidden: false
+label_names: []
+position: 0
+title: How can I give read-only team members access to my files?
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4401821809679
+zendesk_section_id: 360000039036
+---
+
 > ### See also
 >
 > [File permissions and

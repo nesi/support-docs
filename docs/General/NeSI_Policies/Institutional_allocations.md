@@ -1,3 +1,17 @@
+---
+created_at: '2018-05-01T23:18:39Z'
+hidden: false
+label_names:
+- info
+- assessment
+position: 8
+title: Institutional allocations
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000176116
+zendesk_section_id: 360000224835
+---
+
 Your project will typically be considered for an Institutional
 allocation if you work for or study at one of the institutions that is a
 NeSI collaborator, or has a subscription to our HPC Compute & Analytics

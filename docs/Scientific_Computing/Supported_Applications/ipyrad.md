@@ -1,3 +1,15 @@
+---
+created_at: '2022-09-26T08:09:35Z'
+hidden: false
+label_names: []
+position: 0
+title: ipyrad
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5565081844623
+zendesk_section_id: 360000040076
+---
+
 # Description
 
 **ipyrad**, an interactive assembly and analysis toolkit for

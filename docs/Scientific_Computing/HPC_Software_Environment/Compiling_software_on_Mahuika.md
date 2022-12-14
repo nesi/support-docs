@@ -1,3 +1,15 @@
+---
+created_at: '2018-07-12T03:48:47Z'
+hidden: false
+label_names: []
+position: 17
+title: Compiling software on Mahuika
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000329015
+zendesk_section_id: 360000040056
+---
+
 ## Where to build
 
 You may compile (build) software on the Mahuika login nodes,

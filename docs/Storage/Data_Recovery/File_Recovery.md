@@ -1,3 +1,15 @@
+---
+created_at: '2018-05-22T01:49:31Z'
+hidden: false
+label_names: []
+position: 0
+title: File Recovery
+vote_count: 7
+vote_sum: 5
+zendesk_article_id: 360000207315
+zendesk_section_id: 360000042215
+---
+
 ## Snapshots
 
 Snapshots are read only copies of the file system taken every day at

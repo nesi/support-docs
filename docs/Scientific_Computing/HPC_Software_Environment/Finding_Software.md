@@ -1,3 +1,15 @@
+---
+created_at: '2018-07-31T10:13:22Z'
+hidden: false
+label_names: []
+position: 15
+title: Finding Software
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000360576
+zendesk_section_id: 360000040056
+---
+
 ## Environment Modules
 
 NeSI uses environment modules to manage [installed

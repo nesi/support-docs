@@ -1,3 +1,15 @@
+---
+created_at: '2020-02-20T01:47:43Z'
+hidden: false
+label_names: []
+position: 0
+title: Formatting
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001384916
+zendesk_section_id: 360000196935
+---
+
 # Header 1
 
 ## Header 2
@@ -53,7 +65,7 @@ This is a [Link](https://www.w3schools.com/html/html_links.asp) 
 
 Image
 
-![redirects-and-pipes.png](img/6014468037775.name_me)
+![redirects-and-pipes.png](../includes/6014468037775.name_me)
 
 ------------------------------------------------------------------------
 

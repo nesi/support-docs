@@ -1,3 +1,16 @@
+---
+created_at: '2019-01-31T01:17:22Z'
+hidden: false
+label_names:
+- scaling
+position: 3
+title: Job Scaling - Ascertaining job dimensions
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000728016
+zendesk_section_id: 360000189716
+---
+
 When you run software in an interactive environment such as your
 ordinary workstation (desktop PC or laptop), the software is able to
 request from the operating system whatever resources it needs from

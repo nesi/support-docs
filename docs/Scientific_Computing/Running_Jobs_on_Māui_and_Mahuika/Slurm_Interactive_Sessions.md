@@ -1,3 +1,15 @@
+---
+created_at: '2020-01-05T21:43:18Z'
+hidden: false
+label_names: []
+position: 4
+title: Slurm Interactive Sessions
+vote_count: 5
+vote_sum: 3
+zendesk_article_id: 360001316356
+zendesk_section_id: 360000030876
+---
+
 A SLURM interactive session reserves resources on compute nodes allowing
 you to use them interactively as you would the login node.
 

@@ -1,3 +1,19 @@
+---
+created_at: '2018-05-18T03:56:37Z'
+hidden: false
+label_names:
+- 2fa
+- access
+- mfa
+- token
+position: 1
+title: Setting Up Two-Factor Authentication
+vote_count: 6
+vote_sum: -6
+zendesk_article_id: 360000203075
+zendesk_section_id: 360000034315
+---
+
 > ### Requirements
 >
 > You must:
@@ -29,11 +45,10 @@ If you some reason you can't do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    <img src="img/authentication_factor_setup.png" width="560" height="210" alt="authentication_factor_setup.png" />
+    <img src="../includes/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="560" height="210" />
 
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
-    ![](img/mceclip0.png)
-
+    ![](../includes/mceclip0.png)
 4.  After clicking on "Continue" you will retrieve the QR code.
 
 5.  Open your Authy or Google Authenticator app and click on the add

@@ -1,3 +1,15 @@
+---
+created_at: '2022-03-24T22:11:13Z'
+hidden: false
+label_names: []
+position: 0
+title: 'tmux: Reference sheet'
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4563511601679
+zendesk_section_id: 360000278975
+---
+
 *tmux* is a terminal multiplexer.  A multiplexer enables the creation
 and control of multiple terminals from a single screen.  It also allows
 the detachment of a screen to run in the background with the ability to

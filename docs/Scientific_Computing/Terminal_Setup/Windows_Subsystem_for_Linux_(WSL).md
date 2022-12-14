@@ -1,3 +1,15 @@
+---
+created_at: '2019-07-30T00:31:40Z'
+hidden: false
+label_names: []
+position: 5
+title: Windows Subsystem for Linux (WSL)
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360001075575
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Windows 10.
@@ -15,9 +27,9 @@ WSL is enabled by default on later versions of Windows 10.
 ## Enabling WSL
 
 1.  Open 'Turn Windows features on or off'  
-    ![WSL1.png](img/WSL1.png)
+    ![WSL1.png](../includes/WSL1.png)
 2.  Scroll down and tick the 'Windows Subsystem for Linux' option.  
-    ![WSL2.png](img/WSL2.png)  
+    ![WSL2.png](../includes/WSL2.png)  
     Click OK
 3.  Wait for the installation to finish then restart your computer.
 

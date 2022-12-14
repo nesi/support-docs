@@ -1,3 +1,15 @@
+---
+created_at: '2016-03-14T01:52:06Z'
+hidden: false
+label_names: []
+position: 0
+title: Converting from Windows-style to UNIX-style line endings
+vote_count: 30
+vote_sum: 6
+zendesk_article_id: 218032857
+zendesk_section_id: 360000039036
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 

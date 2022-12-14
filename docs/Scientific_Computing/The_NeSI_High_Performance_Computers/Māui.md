@@ -1,3 +1,20 @@
+---
+created_at: '2018-04-22T23:01:48Z'
+hidden: false
+label_names:
+- hpc
+- info
+- maui
+- XC50
+- cs500
+position: 4
+title: "M\u0101ui"
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000163695
+zendesk_section_id: 360000034335
+---
+
 Māui is a Cray XC50 supercomputer featuring Skylake Xeon nodes, Aries
 interconnect and IBM ESS Spectrum Scale Storage. NeSI has access to 316
 compute nodes on Māui.

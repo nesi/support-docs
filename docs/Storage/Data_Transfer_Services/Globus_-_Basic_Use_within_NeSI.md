@@ -1,3 +1,17 @@
+---
+created_at: '2018-05-28T22:41:27Z'
+hidden: true
+label_names:
+- globus
+- dtn
+position: 10
+title: Globus - Basic Use within NeSI
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000216695
+zendesk_section_id: 360000040596
+---
+
 Note: after the system upgrade of July 2018, some of the Globus
 endpoints or data-transfer nodes (DTN) which are named in this
 documentation will no longer be in service. Please check back for

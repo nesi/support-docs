@@ -1,3 +1,15 @@
+---
+created_at: '2020-02-25T02:35:13Z'
+hidden: false
+label_names: []
+position: 3
+title: What is an allocation?
+vote_count: 2
+vote_sum: 0
+zendesk_article_id: 360001385735
+zendesk_section_id: 360000196195
+---
+
 Because NeSI's resources are limited, we manage access to our resources
 through allocations. Typically, an allocation is a grant of a certain
 amount of a resource, or of a rate at which a resource can be consumed,

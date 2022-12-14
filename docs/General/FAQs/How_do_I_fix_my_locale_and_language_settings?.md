@@ -1,3 +1,15 @@
+---
+created_at: '2022-02-15T04:10:09Z'
+hidden: false
+label_names: []
+position: 0
+title: How do I fix my locale and language settings?
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4416829135887
+zendesk_section_id: 360000039036
+---
+
 When logging in to NeSI from some systems, such as Windows Subsystem for
 Linux, you might get messages like the following while using NeSI (the
 following message is obtained when running `man`):

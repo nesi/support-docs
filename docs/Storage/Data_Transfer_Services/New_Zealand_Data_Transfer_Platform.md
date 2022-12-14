@@ -1,3 +1,15 @@
+---
+created_at: '2019-05-06T03:31:33Z'
+hidden: false
+label_names: []
+position: 7
+title: New Zealand Data Transfer Platform
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000931775
+zendesk_section_id: 360000040596
+---
+
 Globus is a third-party service for transferring large amounts of data
 between Globus Data Transfer Nodes (DTNs). New Zealand DTNs facilitate
 the transfer of data to and from institutional storage. This service

@@ -1,3 +1,15 @@
+---
+created_at: '2019-09-22T21:07:28Z'
+hidden: false
+label_names: []
+position: 5
+title: MPI Scaling Example
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001173875
+zendesk_section_id: 360000189716
+---
+
 In the example below we will use Python scripts to demonstrate how you
 might perform some basic scaling tests, however, the principles outlined
 in these examples are applicable across software applications. You do
@@ -190,7 +202,7 @@ our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
     6054939.ext+   extern          00:06:57    00:00.006    12      44K  COMPLETED 
     6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 
-![MPIscalingMem.png](img/MPIscalingMem.png)
+![MPIscalingMem.png](../includes/MPIscalingMem.png)
 
 First, looking at the plot of memory usage per task vs CPUs it would at
 appears that memory usage per task remains constant, regardless of how
@@ -272,7 +284,7 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](img/MPIseedsvtime.png)
+![MPIseedsvtime.png](../includes/MPIseedsvtime.png)
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we

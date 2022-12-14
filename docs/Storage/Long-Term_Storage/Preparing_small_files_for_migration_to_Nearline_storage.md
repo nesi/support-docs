@@ -1,3 +1,15 @@
+---
+created_at: '2019-12-16T09:20:39Z'
+hidden: false
+label_names: []
+position: 1
+title: Preparing small files for migration to Nearline storage
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001298595
+zendesk_section_id: 360000042255
+---
+
 Migration of files from your project or nobackup directory to your
 nearline directory is a two-step process. In the first step, the data is
 copied from project or nobackup to a staging file system with a maximum

@@ -1,3 +1,17 @@
+---
+created_at: '2018-11-30T00:34:14Z'
+hidden: false
+label_names:
+- ssh
+- howto
+position: 0
+title: Standard Terminal Setup
+vote_count: 7
+vote_sum: 7
+zendesk_article_id: 360000625535
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Have an [active account and

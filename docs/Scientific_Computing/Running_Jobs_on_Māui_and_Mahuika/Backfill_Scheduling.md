@@ -1,3 +1,16 @@
+---
+created_at: '2017-12-06T04:48:11Z'
+hidden: true
+label_names:
+- mahuika
+position: 13
+title: Backfill Scheduling
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 115001826590
+zendesk_section_id: 360000030876
+---
+
  
 
 Backfill is a scheduling strategy that allows small, short jobs to run

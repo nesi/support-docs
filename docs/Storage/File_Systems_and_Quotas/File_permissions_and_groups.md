@@ -1,3 +1,15 @@
+---
+created_at: '2018-05-21T05:14:00Z'
+hidden: false
+label_names: []
+position: 2
+title: File permissions and groups
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000205435
+zendesk_section_id: 360000033936
+---
+
 > ### See also
 >
 > -   [How can I let my fellow project team members read or write my

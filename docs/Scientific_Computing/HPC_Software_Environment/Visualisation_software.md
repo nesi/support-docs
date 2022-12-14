@@ -1,3 +1,18 @@
+---
+created_at: '2019-01-16T20:51:18Z'
+hidden: false
+label_names:
+- support
+- application
+- visualisation
+position: 13
+title: Visualisation software
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000700295
+zendesk_section_id: 360000040056
+---
+
 NeSI provides a variety of visualisation software solutions via modules.
 Available software and software versions vary between the Mahuika and
 Māui Ancil systems. Additional software can be provided upon request,

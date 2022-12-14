@@ -1,3 +1,17 @@
+---
+created_at: '2018-05-21T03:28:20Z'
+hidden: false
+label_names:
+- mahuika
+- slurm
+position: 8
+title: Mahuika Slurm Partitions
+vote_count: 8
+vote_sum: 6
+zendesk_article_id: 360000204076
+zendesk_section_id: 360000030876
+---
+
 ## Definitions
 
 **CPU:** A logical core, also known as a hardware thread. Referred to as

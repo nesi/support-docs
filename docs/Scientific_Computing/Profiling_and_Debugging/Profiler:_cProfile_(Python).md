@@ -1,3 +1,15 @@
+---
+created_at: '2020-05-11T22:03:36Z'
+hidden: true
+label_names: []
+position: 0
+title: 'Profiler: cProfile (Python)'
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001523256
+zendesk_section_id: 360000278935
+---
+
 cProfile is the recommended profiler for most users. Documentation
 [here](https://docs.python.org/2/library/profile.html#module-profile).
 

@@ -1,3 +1,18 @@
+---
+created_at: '2018-05-01T03:39:22Z'
+hidden: false
+label_names:
+- info
+- project
+- mynesi
+position: 1
+title: Applying for a new NeSI project
+vote_count: 2
+vote_sum: 0
+zendesk_article_id: 360000174976
+zendesk_section_id: 360000196195
+---
+
 > ### Requirements
 >
 > Compulsory:

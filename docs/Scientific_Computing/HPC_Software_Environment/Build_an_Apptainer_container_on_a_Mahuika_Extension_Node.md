@@ -1,3 +1,15 @@
+---
+created_at: '2022-12-08T00:55:40Z'
+hidden: true
+label_names: []
+position: 0
+title: Build an Apptainer container on a Mahuika Extension Node
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 6008779241999
+zendesk_section_id: 360000040056
+---
+
 > ### Service Status
 >
 > Mahuika's new nodes are in an **Early Access Programme (EAP) phase**

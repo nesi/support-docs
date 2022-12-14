@@ -1,3 +1,15 @@
+---
+created_at: '2018-11-27T23:55:26Z'
+hidden: false
+label_names: []
+position: 0
+title: Can I use SSHFS to mount the cluster filesystem on my local machine?
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360000621135
+zendesk_section_id: 360000039036
+---
+
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
 filesystem on your local machine. SSHFS relies on SSH underneath, so you
 should follow the "Recommended logon procedure" instructions

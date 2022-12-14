@@ -1,3 +1,15 @@
+---
+created_at: '2019-09-15T23:36:59Z'
+hidden: false
+label_names: []
+position: 1
+title: Automatic cleaning of nobackup file system
+vote_count: 4
+vote_sum: 2
+zendesk_article_id: 360001162856
+zendesk_section_id: 360000033936
+---
+
 The automatic cleaning feature is a programme of regular deletion of
 selected files from project directories in our nobackup file system. We
 do this to optimise the availability of this file system for active

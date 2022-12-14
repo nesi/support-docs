@@ -1,3 +1,19 @@
+---
+created_at: '2020-05-07T02:51:35Z'
+hidden: false
+label_names:
+- git
+- github
+- version control
+- repository
+position: 2
+title: 'Git: Reference Sheet'
+vote_count: 7
+vote_sum: 7
+zendesk_article_id: 360001508515
+zendesk_section_id: 360000278975
+---
+
 Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub and GitLab for
 developing, managing and distributing code.
@@ -5,7 +21,7 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](img/Git_Diagram.svg)
+![Git\_Diagram.svg](../includes/Git_Diagram.svg)
 
 ## Authentication
 
@@ -43,21 +59,21 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     page, click your profile photo click **Settings**.
 
     <span class="procedural-image-wrapper">![Settings icon in the user
-    bar](img/userbar-account-settings.png)</span>
+    bar](../includes/userbar-account-settings.png)</span>
 
 -   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
     <span class="procedural-image-wrapper">![SSH Key
-    button](img/ssh-add-ssh-key-with-auth.png)</span>
+    button](../includes/ssh-add-ssh-key-with-auth.png)</span>
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
     <span class="procedural-image-wrapper">![The key
-    field](img/ssh-key-paste-with-type.png)</span>
+    field](../includes/ssh-key-paste-with-type.png)</span>
 
 -   Click **Add SSH key**.
 

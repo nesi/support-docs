@@ -1,3 +1,15 @@
+---
+created_at: '2022-06-19T22:48:26Z'
+hidden: false
+label_names: []
+position: 0
+title: Mahuika Extension Onboarding
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 5002335382543
+zendesk_section_id: 200732737
+---
+
 > ### Service Status
 >
 > Mahuika's new CPU nodes are in an **Early Access Programme (EAP)

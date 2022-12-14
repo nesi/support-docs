@@ -1,3 +1,18 @@
+---
+created_at: '2018-05-01T23:10:09Z'
+hidden: false
+label_names:
+- info
+- allocation
+- assessment
+position: 9
+title: Merit allocations
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000175635
+zendesk_section_id: 360000224835
+---
+
 This is the highest award given for use of NeSI services. A Merit
 allocation is intended for highly skilled research teams carrying out
 high quality research funded via a peer review process that supports the
