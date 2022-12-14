@@ -5,6 +5,7 @@ mkdocs-bootstrap4
 mkdocs-material
 mkdocs-spellcheck
 mkdocs-simple-hooks
+mkdocs-macros-plugin
 proselint
 linkcheckmd
 symspellpy
