@@ -1,3 +1,15 @@
+---
+created_at: '2018-11-30T00:32:25Z'
+hidden: false
+label_names: []
+position: 2
+title: MobaXterm Setup (Windows)
+vote_count: 4
+vote_sum: 4
+zendesk_article_id: 360000624696
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Have an [active account and
@@ -36,9 +48,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](mkdocs/includes/images/mceclip4.png)
+![mceclip4.png](mkdocs_repo/includes/images/mceclip4.png)
 
-![mceclip5.png](mkdocs/includes/images/mceclip5.png)
+![mceclip5.png](mkdocs_repo/includes/images/mceclip5.png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -59,7 +71,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](mkdocs/includes/images/mceclip6.png)
+![mceclip6.png](mkdocs_repo/includes/images/mceclip6.png)
 
 You will be prompted by dialogue box.
 

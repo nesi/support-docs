@@ -1,3 +1,17 @@
+---
+created_at: '2021-11-17T03:14:21Z'
+hidden: false
+label_names:
+- general
+position: 2
+title: New Globus endpoint makes it easier to transfer large data sets to/from NeSI
+  HPC Platform
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4409792460815
+zendesk_section_id: 200732737
+---
+
 NeSI has created a new endpoint to improve data transfer capabilities to
 and from NeSI's HPC platform. The new endpoint is called **NeSI
 Wellington DTN V5** and we encourage you to begin using it immediately.

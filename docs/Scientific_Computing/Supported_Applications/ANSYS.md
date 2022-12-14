@@ -1,3 +1,18 @@
+---
+created_at: '2015-10-15T02:15:46Z'
+hidden: false
+label_names:
+- mahuika
+- application
+- engineering
+position: 10
+title: ANSYS
+vote_count: 3
+vote_sum: 3
+zendesk_article_id: 212642617
+zendesk_section_id: 360000040076
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 

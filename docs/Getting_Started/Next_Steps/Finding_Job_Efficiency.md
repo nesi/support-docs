@@ -1,3 +1,16 @@
+---
+created_at: '2019-04-07T23:56:57Z'
+hidden: false
+label_names:
+- slurm
+position: 6
+title: Finding Job Efficiency
+vote_count: 6
+vote_sum: 6
+zendesk_article_id: 360000903776
+zendesk_section_id: 360000189716
+---
+
 # On Job Completion
 
 It is good practice to have a look at the resources your job used on
@@ -142,7 +155,7 @@ parent process).
 
 Processes in green can be ignored
 
-<img src="mkdocs/includes/images/how_to_read_htop.png" alt="how_to_read_htop.png" width="929" height="252" />
+<img src="mkdocs_repo/includes/images/how_to_read_htop.png" alt="how_to_read_htop.png" width="929" height="252" />
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
 
@@ -178,12 +191,12 @@ more details.
 
 ## Example
 
-![qdyn\_eff.png](mkdocs/includes/images/qdyn_eff.png)
+![qdyn\_eff.png](mkdocs_repo/includes/images/qdyn_eff.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
-![qdyn\_walltime.png](mkdocs/includes/images/qdyn_walltime.png)
+![qdyn\_walltime.png](mkdocs_repo/includes/images/qdyn_walltime.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

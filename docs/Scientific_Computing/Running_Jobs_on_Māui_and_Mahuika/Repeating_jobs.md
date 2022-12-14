@@ -1,3 +1,15 @@
+---
+created_at: '2021-09-21T00:16:50Z'
+hidden: true
+label_names: []
+position: 0
+title: Repeating jobs
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4406771973007
+zendesk_section_id: 360000030876
+---
+
 ## Re-submitting a job script from within itself
 
 Jobs can submit additional jobs. To avoid any risk of a runaway

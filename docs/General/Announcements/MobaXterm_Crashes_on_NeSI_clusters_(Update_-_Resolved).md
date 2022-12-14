@@ -1,3 +1,15 @@
+---
+created_at: '2019-10-13T21:21:07Z'
+hidden: false
+label_names: []
+position: 18
+title: MobaXterm Crashes on NeSI clusters (Update - Resolved)
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001206795
+zendesk_section_id: 200732737
+---
+
 ## Update - 2020/03/13 
 
 MobaXterm is acting up again, we recommend disabling the SCP browser (as
@@ -10,7 +22,7 @@ Disabling the "Remote-monitoring (experimental)" in the SSH settings
 seems to resolve this issue. If this does not resolve this issue for you
 please let us know.
 
-![moba3\_update2.png](mkdocs/includes/images/moba3_update2.png)
+![moba3\_update2.png](mkdocs_repo/includes/images/moba3_update2.png)
 
 ## Update - 2019/11/01
 
@@ -18,7 +30,7 @@ Disabling the SSH-browser under your session settings will cause the
 crashes to stop, however this will also remove your ability to transfer
 files.
 
-![no\_scp.png](mkdocs/includes/images/no_scp.png)
+![no\_scp.png](mkdocs_repo/includes/images/no_scp.png)
 
 ## 2019/10/14
 

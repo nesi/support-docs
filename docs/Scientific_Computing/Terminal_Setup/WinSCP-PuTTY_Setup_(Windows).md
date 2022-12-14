@@ -1,3 +1,15 @@
+---
+created_at: '2018-11-26T03:03:23Z'
+hidden: false
+label_names: []
+position: 3
+title: WinSCP/PuTTY Setup (Windows)
+vote_count: 2
+vote_sum: 0
+zendesk_article_id: 360000584256
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Have an [active account and
@@ -17,7 +29,7 @@ WinSCP can be downloaded [here](https://winscp.net/eng/download.php).
 
 Upon startup:
 
-![WinSCP1.png](mkdocs/includes/images/WinSCP1.png)
+![WinSCP1.png](mkdocs_repo/includes/images/WinSCP1.png)
 
 1. Add a *New Site* and set:
 
@@ -35,11 +47,11 @@ Upon startup:
 > you.
 
   
-![WinSCP2.png](mkdocs/includes/images/WinSCP2.png)
+![WinSCP2.png](mkdocs_repo/includes/images/WinSCP2.png)
 
 5. Open Advanced Settings.
 
-![WinSCP3.png](mkdocs/includes/images/WinSCP3.png)
+![WinSCP3.png](mkdocs_repo/includes/images/WinSCP3.png)
 
 6. Navigate to *Connection &gt; Tunnel *and set:
 
@@ -59,12 +71,12 @@ recommend you use the PuTTY terminal instead.
 
 2.In WinSCP open 'Tools &gt; Preferences'
 
-![WinSCP2-5.png](mkdocs/includes/images/WinSCP2-5.png)
+![WinSCP2-5.png](mkdocs_repo/includes/images/WinSCP2-5.png)
 
 3. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-![WinSCP4.png](mkdocs/includes/images/WinSCP4.png)
+![WinSCP4.png](mkdocs_repo/includes/images/WinSCP4.png)
 
  
 
@@ -80,7 +92,7 @@ SSH Client' is selected).
 2. Under *Integration &gt; Applications* and add -X after PuTTY/Terminal
 client path.
 
-*![WinSCP6.png](mkdocs/includes/images/WinSCP6.png)*
+*![WinSCP6.png](mkdocs_repo/includes/images/WinSCP6.png)*
 
 3. Restart your session.
 
@@ -94,24 +106,24 @@ client path.
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.
 
-![WinSCP5.png](mkdocs/includes/images/WinSCP5.png)
+![WinSCP5.png](mkdocs_repo/includes/images/WinSCP5.png)
 
-![putTerm.png](mkdocs/includes/images/putTerm.png) Will open a **PuTTY
-terminal**. Assuming you followed the steps setting up PuTTY, this
-should automatically enter in your details.
+![putTerm.png](mkdocs_repo/includes/images/putTerm.png) Will open a
+**PuTTY terminal**. Assuming you followed the steps setting up PuTTY,
+this should automatically enter in your details.
 
-![winTerm.png](mkdocs/includes/images/winTerm.png) Will open the default
-**WinSCP terminal**. While the functionality is identical to any other
-terminal the interface is slightly abstracted, with a separate window
-for input and command history drop-down.
+![winTerm.png](mkdocs_repo/includes/images/winTerm.png) Will open the
+default **WinSCP terminal**. While the functionality is identical to any
+other terminal the interface is slightly abstracted, with a separate
+window for input and command history drop-down.
 
-![winAdd.png](mkdocs/includes/images/winAdd.png) Type here to **change
-directory**.** **The GUI doesn't follow your current terminal directory
-like MobaXterm so must be changed manually. (Recommend making this
-larger as the default is very hard to type in).
+![winAdd.png](mkdocs_repo/includes/images/winAdd.png) Type here to
+**change directory**.** **The GUI doesn't follow your current terminal
+directory like MobaXterm so must be changed manually. (Recommend making
+this larger as the default is very hard to type in).
 
-![winBook.png](mkdocs/includes/images/winBook.png) **Bookmark** current
-directory.
+![winBook.png](mkdocs_repo/includes/images/winBook.png) **Bookmark**
+current directory.
 
 > ### Important
 >

@@ -1,3 +1,16 @@
+---
+created_at: '2022-03-21T20:49:37Z'
+hidden: false
+label_names:
+- releasenote
+position: 0
+title: my.nesi.org.nz release notes v2.7.0
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4543094513039
+zendesk_section_id: 360001091155
+---
+
 ## Release Update - 15. March 2022
 
 ## New and Improved

@@ -1,3 +1,15 @@
+---
+created_at: '2020-08-26T01:22:12Z'
+hidden: true
+label_names: []
+position: 5
+title: Offloading to a GPU with OpenACC using the PGI compiler
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001815716
+zendesk_section_id: 360000040056
+---
+
 With OpenACC it is possible to offload computations from the CPU to a
 GPU,
 see <http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf>.

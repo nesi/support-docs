@@ -1,3 +1,15 @@
+---
+created_at: '2019-11-11T21:32:46Z'
+hidden: true
+label_names: []
+position: 1
+title: Downloading CMIP6 data using globus
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001244856
+zendesk_section_id: 360000040076
+---
+
 This article targets researchers who need to download Climate Model
 Intercomparison Project Phase 6 (CMIP6) datasets from any of the Earth
 System Grid Federation
@@ -87,19 +99,19 @@ class="s1">https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type
 different for you). </span>
 
 <span
-class="s1">![globus1.png](mkdocs/includes/images/globus1.png)</span>
+class="s1">![globus1.png](mkdocs_repo/includes/images/globus1.png)</span>
 
  
 
 <span class="s1">Select Globus Id and say "Allow". </span>
 
 <span
-class="s1">![globus2.png](mkdocs/includes/images/globus2.png)</span>
+class="s1">![globus2.png](mkdocs_repo/includes/images/globus2.png)</span>
 
 <span class="s1">You will then get a code, </span>
 
 <span
-class="s1">![globus3.png](mkdocs/includes/images/globus3.png)</span>
+class="s1">![globus3.png](mkdocs_repo/includes/images/globus3.png)</span>
 
 <span class="s1">which you can paste into your terminal, eg</span>
 

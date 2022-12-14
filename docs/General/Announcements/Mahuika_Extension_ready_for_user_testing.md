@@ -1,3 +1,16 @@
+---
+created_at: '2022-07-20T21:28:00Z'
+hidden: false
+label_names:
+- announcement
+position: 0
+title: Mahuika Extension ready for user testing
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5177055187983
+zendesk_section_id: 200732737
+---
+
 We’re very close to launching Mahuika’s new capabilities to the research
 community – from additional compute capacity to specialised tools for
 supporting data-intensive research. There’s just a few last steps in our

@@ -1,3 +1,15 @@
+---
+created_at: '2022-08-09T23:13:33Z'
+hidden: true
+label_names: []
+position: 0
+title: Mahuika Extension
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5286956022159
+zendesk_section_id: 360000030876
+---
+
  
 
 # Differences from other Mahuika compute nodes<span class="wysiwyg-font-size-x-large"></span>
@@ -15,7 +27,7 @@ requested by a job.
   
 AMD Milan CPU overview, each node has two of these:
 
-<img src="mkdocs/includes/images/milan.png" alt="milan.png" width="377" height="395" />
+<img src="mkdocs_repo/includes/images/milan.png" alt="milan.png" width="377" height="395" />
 
 <span class="wysiwyg-font-size-small">**AMD-EPYC-Milan-architecture**
 from

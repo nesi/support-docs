@@ -1,3 +1,15 @@
+---
+created_at: '2019-07-22T03:46:24Z'
+hidden: false
+label_names: []
+position: 2
+title: OpenMP settings
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001070496
+zendesk_section_id: 360000040056
+---
+
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application
 programming interface that lets you write parallel programs on shared
 memory platforms. In a parallel section, OpenMP code can create multiple

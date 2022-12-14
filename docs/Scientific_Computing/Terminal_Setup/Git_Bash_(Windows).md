@@ -1,3 +1,15 @@
+---
+created_at: '2019-05-03T04:15:24Z'
+hidden: false
+label_names: []
+position: 6
+title: Git Bash (Windows)
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000929935
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Have a [NeSI

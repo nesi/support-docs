@@ -1,3 +1,15 @@
+---
+created_at: '2020-01-14T22:10:50Z'
+hidden: false
+label_names: []
+position: 16
+title: Checksums
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001330415
+zendesk_section_id: 360000030876
+---
+
 Applying a *checksum function* to a file will return its *checksum*.
 Checksum functions are a type of [hash
 function](https://en.wikipedia.org/wiki/Hash_function), and will always

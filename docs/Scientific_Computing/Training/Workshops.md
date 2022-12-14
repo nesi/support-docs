@@ -1,3 +1,15 @@
+---
+created_at: '2022-07-25T21:33:58Z'
+hidden: false
+label_names: []
+position: 0
+title: Workshops
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5203098823695
+zendesk_section_id: 5203123172239
+---
+
 **Please visit <https://www.genomics-aotearoa.org.nz/training> to know
 more about upcoming training events.**
 

@@ -1,3 +1,15 @@
+---
+created_at: '2018-07-31T02:05:23Z'
+hidden: true
+label_names: []
+position: 11
+title: 'Slurm Usage: A Primer'
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000359576
+zendesk_section_id: 360000030876
+---
+
 ## Slurm Scripts
 
 Slurm scripts are text files you will need to create in order to submit

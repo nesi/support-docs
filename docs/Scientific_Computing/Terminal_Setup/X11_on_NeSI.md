@@ -1,3 +1,15 @@
+---
+created_at: '2019-07-30T01:58:26Z'
+hidden: false
+label_names: []
+position: 4
+title: X11 on NeSI
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360001075975
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Have working
@@ -29,15 +41,15 @@ Download links for X-servers can be found below.
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](mkdocs/includes/images/mceclip0.png) symbol in your
-taskbar 
+this ![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png) symbol in
+your taskbar 
 
 > ### Note
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](mkdocs/includes/images/xon.png)=on, ![off.png](mkdocs/includes/images/off.png)=off). 
+> (![xon.png](mkdocs_repo/includes/images/xon.png)=on, ![off.png](mkdocs_repo/includes/images/off.png)=off). 
 
 # X-Forwarding
 
@@ -57,11 +69,11 @@ Make sure the `-Y` or `-X` flag is included
  Under 'session settings' for your connection make sure the
 X<dfn class="dictionary-of-numbers">-11 forwarding box is </dfn>checked.
 
-<img src="mkdocs/includes/images/x11moba.png" alt="x11moba.png" width="451" height="303" />
+<img src="mkdocs_repo/includes/images/x11moba.png" alt="x11moba.png" width="451" height="303" />
 
-If the ![mceclip0.png](mkdocs/includes/images/mceclip0.png) button in
-the top right corner of your window is coloured, the X-server should be
-running.
+If the ![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png) button
+in the top right corner of your window is coloured, the X-server should
+be running.
 
 # X-Forwarding with *tmux*
 

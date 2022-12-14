@@ -1,3 +1,19 @@
+---
+created_at: '2015-08-18T02:30:33Z'
+hidden: false
+label_names:
+- mahuika
+- tier1
+- general
+- app
+position: 17
+title: Java
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 207765367
+zendesk_section_id: 360000040076
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 

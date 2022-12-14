@@ -1,3 +1,15 @@
+---
+created_at: '2018-11-15T22:10:10Z'
+hidden: false
+label_names: []
+position: 14
+title: Hyperthreading
+vote_count: 4
+vote_sum: -2
+zendesk_article_id: 360000568236
+zendesk_section_id: 360000030876
+---
+
 [Hyperthreading](https://en.wikipedia.org/wiki/Hyper-threading) is
 enabled on the NeSI machines, so for each physical CPU core, there are
 two logical CPUs. This increases the efficiency of some multithreaded

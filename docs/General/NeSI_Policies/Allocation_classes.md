@@ -1,3 +1,15 @@
+---
+created_at: '2019-04-25T22:26:56Z'
+hidden: false
+label_names: []
+position: 7
+title: Allocation classes
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000925176
+zendesk_section_id: 360000224835
+---
+
 The NeSI access policy, agreed by representatives of the Crown and
 NeSI's partner institutions, establishes several allocation classes. In
 general terms, the allocation class granted to your project is used to

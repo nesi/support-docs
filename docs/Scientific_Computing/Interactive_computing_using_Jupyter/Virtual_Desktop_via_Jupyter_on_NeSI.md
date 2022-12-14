@@ -1,3 +1,15 @@
+---
+created_at: '2020-07-08T01:45:40Z'
+hidden: false
+label_names: []
+position: 2
+title: Virtual Desktop via Jupyter on NeSI
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360001600235
+zendesk_section_id: 360001189255
+---
+
 A virtual desktop provides a graphical interface to using the cluster.
 Desktops are hosted within Singularity containers, so not all of the
 NeSI software stack is supported. If you would like to build your own
@@ -40,7 +52,7 @@ desktop.
 
 Recommend setting scaling to 'remote'
 
-<img src="mkdocs/includes/images/fig1.svg" width="426" height="362" />![](mkdocs/includes/images/VirtualScaling.png)
+<img src="mkdocs_repo/includes/images/fig1.svg" width="426" height="362" />![](mkdocs_repo/includes/images/VirtualScaling.png)
 
 > ### Restore Defaults
 >

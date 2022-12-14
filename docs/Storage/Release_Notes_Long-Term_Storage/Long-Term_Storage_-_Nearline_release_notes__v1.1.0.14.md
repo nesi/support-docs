@@ -1,3 +1,16 @@
+---
+created_at: '2020-11-04T04:39:50Z'
+hidden: false
+label_names:
+- releasenote
+position: 0
+title: Long-Term Storage - Nearline release notes  v1.1.0.14
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360002113295
+zendesk_section_id: 360000502675
+---
+
 # Version 1.1.0.14
 
 *Released 5 November 2020.*

@@ -1,3 +1,15 @@
+---
+created_at: '2020-02-24T20:26:39Z'
+hidden: false
+label_names: []
+position: 8
+title: Configuring Dask-MPI jobs
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360001392636
+zendesk_section_id: 360000040056
+---
+
 [Dask](https://dask.org/) is a popular Python package for parallelising
 workflows. It can use a variety of parallelisation backends, including
 Python multiprocessing and multithreading. A separate

@@ -1,3 +1,15 @@
+---
+created_at: '2019-12-05T22:46:53Z'
+hidden: false
+label_names: []
+position: 8
+title: Download and share CMIP6 data (for NIWA researchers)
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001287235
+zendesk_section_id: 360000040596
+---
+
 ##  
 
 The [Coupled Model Intercomparison

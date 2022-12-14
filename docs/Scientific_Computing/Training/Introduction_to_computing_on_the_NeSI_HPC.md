@@ -1,3 +1,15 @@
+---
+created_at: '2022-07-26T21:43:02Z'
+hidden: false
+label_names: []
+position: 0
+title: Introduction to computing on the NeSI HPC
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5209502688655
+zendesk_section_id: 5203123172239
+---
+
 -   [Introduction to computing on the NeSI HPC
     (Part 1)](https://www.youtube.com/watch?v=RrFAb8Atsc0&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw) 
 -   [Introduction to computing on the NeSI HPC platform

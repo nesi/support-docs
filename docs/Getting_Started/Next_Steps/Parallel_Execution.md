@@ -1,3 +1,15 @@
+---
+created_at: '2019-01-10T03:02:11Z'
+hidden: false
+label_names: []
+position: 2
+title: Parallel Execution
+vote_count: 5
+vote_sum: 3
+zendesk_article_id: 360000690275
+zendesk_section_id: 360000189716
+---
+
 Many scientific software applications are
 writ<dfn class="dictionary-of-numbers">ten to take advantage </dfn>of
 multiple CPUs in some way. But of<dfn class="dictionary-of-numbers">ten
@@ -33,13 +45,13 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread
 (PO<dfn class="dictionary-of-numbers">SIX threads)</dfn>.
 
-<img src="mkdocs/includes/images/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
+<img src="mkdocs_repo/includes/images/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
 *Fig. 1: In a serial operation, tasks complete
 <dfn class="dictionary-of-numbers">one after another</dfn>.*
 
 ####  
 
-<img src="mkdocs/includes/images/par.png" alt="par.png" width="714" height="160" />*  
+<img src="mkdocs_repo/includes/images/par.png" alt="par.png" width="714" height="160" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 

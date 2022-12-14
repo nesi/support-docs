@@ -1,3 +1,15 @@
+---
+created_at: '2019-11-14T09:31:59Z'
+hidden: true
+label_names: []
+position: 0
+title: Engineering Applications and Visualisation
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001251856
+zendesk_section_id: 360000034335
+---
+
 # Definitions
 
 -   Interactive: User can effect program execution in real time.

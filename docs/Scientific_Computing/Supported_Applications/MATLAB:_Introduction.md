@@ -1,3 +1,15 @@
+---
+created_at: '2018-11-21T03:32:30Z'
+hidden: true
+label_names: []
+position: 23
+title: 'MATLAB: Introduction'
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000577576
+zendesk_section_id: 360000040076
+---
+
 More general information can be found on MATLAB
 [here.](https://support.nesi.org.nz/hc/en-gb/articles/212639047-MATLAB)
 
@@ -52,7 +64,7 @@ To start the command line version of MATLAB run:
 This will function identically to the Command Window in the desktop
 version of MATLAB.
 
-## ![](mkdocs/includes/images/mceclip0.png)
+## ![](mkdocs_repo/includes/images/mceclip0.png)
 
 Enter 'quit' to leave the MATLAB session or ctrl + z to kill it.
 
@@ -78,7 +90,7 @@ line-breaks.
 
 Will give the output
 
-![](mkdocs/includes/images/mceclip0.png)
+![](mkdocs_repo/includes/images/mceclip0.png)
 
 then exit.
 

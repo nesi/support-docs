@@ -1,3 +1,16 @@
+---
+created_at: '2021-07-02T03:02:30Z'
+hidden: false
+label_names:
+- engineering
+position: 0
+title: ABAQUS
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4403084064655
+zendesk_section_id: 4403082292111
+---
+
 <table style="width:99%;">
 <colgroup>
 <col style="width: 21%" />

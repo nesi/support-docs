@@ -1,3 +1,17 @@
+---
+created_at: '2019-02-14T23:33:05Z'
+hidden: false
+label_names:
+- mahuika
+- engineering
+position: 14
+title: FDS
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000759275
+zendesk_section_id: 360000040076
+---
+
 FDS (Fire Dynamics Simulator) was developed by the National Institute of
 Standards and Technology (NIST) for large-eddy simulation (LES) of
 low-speed flows, with an emphasis on smoke and heat transport from
@@ -43,11 +57,11 @@ and
 
 ## Scaling with MPI
 
-![mceclip1.png](mkdocs/includes/images/mceclip1.png)
+![mceclip1.png](mkdocs_repo/includes/images/mceclip1.png)
 
 ## Scaling with oMP
 
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
 
  
 

@@ -1,3 +1,19 @@
+---
+created_at: '2018-11-05T22:01:15Z'
+hidden: false
+label_names:
+- 2fa
+- access
+- account
+- authentication
+position: 0
+title: I have not scanned the 2FA QR code
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000552035
+zendesk_section_id: 360000039036
+---
+
 The QR code shown during the device registration cannot be regenerated
 or displayed again.  
 If you do not capture the QR code, or lose the device storing the code

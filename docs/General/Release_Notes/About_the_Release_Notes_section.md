@@ -1,3 +1,15 @@
+---
+created_at: '2021-02-23T19:52:34Z'
+hidden: false
+label_names: []
+position: 0
+title: About the Release Notes section
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360003507115
+zendesk_section_id: 360000437436
+---
+
 NeSI publishes release notes for applications, 3rd party applications
 and NeSI services. This section will function as a directory to find all
 published release note articles with the label 'releasenote' . 

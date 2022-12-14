@@ -1,3 +1,15 @@
+---
+created_at: '2019-08-14T05:49:00Z'
+hidden: false
+label_names: []
+position: 6
+title: How do I request memory?
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001108756
+zendesk_section_id: 360000039036
+---
+
 In Slurm, there are two ways to request memory for your job:
 
 -   `--mem`: Memory per node

@@ -1,3 +1,15 @@
+---
+created_at: '2019-09-22T21:07:48Z'
+hidden: false
+label_names: []
+position: 4
+title: Multithreading Scaling Example
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001173895
+zendesk_section_id: 360000189716
+---
+
 In the example below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
 these examples are applicable across software applications. You do not

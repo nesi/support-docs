@@ -1,3 +1,15 @@
+---
+created_at: '2019-07-24T04:30:33Z'
+hidden: false
+label_names: []
+position: 21
+title: Keras
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001075936
+zendesk_section_id: 360000040076
+---
+
 Keras is a modular and extensible API for building neural networks in
 Python. Keras is included with TensorFlow. Note that there are [CPU
 and](https://support.nesi.org.nz/hc/en-gb/articles/360000997675-TensorFlow-on-CPUs) [GPU
@@ -37,7 +49,7 @@ test/, respectively. An example of image is test/img49.jpg.</span>
     display test/img49.jpg
 
 <span
-class="s1"><img src="mkdocs/includes/images/img49.jpg" alt="img49.jpg" width="100" height="100" /></span>
+class="s1"><img src="mkdocs_repo/includes/images/img49.jpg" alt="img49.jpg" width="100" height="100" /></span>
 
 <span class="s1">which shows five, partially overlapping dots. Note that
 along with the images, a comma separated values (csv) file (e.g.
@@ -105,7 +117,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](mkdocs/includes/images/someResults.png)
+![someResults.png](mkdocs_repo/includes/images/someResults.png)
 
 <span class="s1">(The purple images have no dots.) With each image the
 number of dots is displayed as well as the value inferred by the model

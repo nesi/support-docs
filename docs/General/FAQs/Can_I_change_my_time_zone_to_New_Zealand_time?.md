@@ -1,3 +1,15 @@
+---
+created_at: '2018-09-20T23:52:07Z'
+hidden: false
+label_names: []
+position: 0
+title: Can I change my time zone to New Zealand time?
+vote_count: 6
+vote_sum: -4
+zendesk_article_id: 360000473256
+zendesk_section_id: 360000039036
+---
+
 The time displayed in your shell is controlled by a system variable
 called `TZ`. To change to New Zealand time you need to set the variable
 as follows:

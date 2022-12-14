@@ -1,3 +1,16 @@
+---
+created_at: '2020-05-04T01:18:01Z'
+hidden: true
+label_names:
+- feedback
+position: 2
+title: User feedback - Nearline Storage
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001495115
+zendesk_section_id: 360000042255
+---
+
 # Nearline Storage service
 
 NeSI's Nearline Storage service allows you to store your data on our

@@ -1,3 +1,15 @@
+---
+created_at: '2019-07-24T04:44:11Z'
+hidden: false
+label_names: []
+position: 9
+title: Scikit-learn (linear regression)
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001075956
+zendesk_section_id: 360000040056
+---
+
 Scikit-learn is a Python package providing tools for data mining, data
 analysis and machine learning. In this example, we'll show how to count
 the number of dots embedded in an image using the sckit-learn linear
@@ -20,7 +32,7 @@ test/, respectively. An example of image is test/img49.jpg.</span>
     display test/img49.jpg
 
 <span
-class="s1"><img src="mkdocs/includes/images/img49.jpg" alt="img49.jpg" width="100" height="100" /></span>
+class="s1"><img src="mkdocs_repo/includes/images/img49.jpg" alt="img49.jpg" width="100" height="100" /></span>
 
 <span class="s1">which shows five, partially overlapping dots. Note that
 along with the images, a comma separated values (csv) file (e.g.
@@ -76,7 +88,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](mkdocs/includes/images/someResults.png)<span
+![someResults.png](mkdocs_repo/includes/images/someResults.png)<span
 class="s1">(The purple images have no dots.) With each image the number
 of dots is displayed as well as the value inferred by the model in
 parentheses. The inferred values are to be rounded to the nearest

@@ -1,3 +1,15 @@
+---
+created_at: '2019-08-07T03:50:45Z'
+hidden: false
+label_names: []
+position: 12
+title: NeSI Licence Policy
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001097936
+zendesk_section_id: 360000224835
+---
+
 With very few exceptions, NeSI does not hold software licences of its
 own. If you wish to use any of the proprietary software installed on the
 NeSI cluster, you, or more likely your institution or department, will

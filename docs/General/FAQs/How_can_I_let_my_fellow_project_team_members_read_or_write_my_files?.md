@@ -1,3 +1,15 @@
+---
+created_at: '2019-11-07T04:11:03Z'
+hidden: false
+label_names: []
+position: 0
+title: How can I let my fellow project team members read or write my files?
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001237915
+zendesk_section_id: 360000039036
+---
+
 > ### See also
 >
 > [File permissions and

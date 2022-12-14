@@ -1,3 +1,20 @@
+---
+created_at: '2020-06-08T04:21:37Z'
+hidden: false
+label_names:
+- jupyter
+- hub
+- home
+- lab
+- notebook
+position: 0
+title: Jupyter on NeSI
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001555615
+zendesk_section_id: 360001189255
+---
+
 > ### Note
 >
 > This service is available for users with a current allocation on

@@ -1,3 +1,17 @@
+---
+created_at: '2020-06-25T01:10:40Z'
+hidden: false
+label_names:
+- corefile
+- coredump
+position: 0
+title: What is a '.core' file?
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001584875
+zendesk_section_id: 360000039036
+---
+
 .core files are created when a program fails in a way that can't be
 handled by the program's regular error handling. Normally these failures
 are memory-related, such as the program asking for too much memory or

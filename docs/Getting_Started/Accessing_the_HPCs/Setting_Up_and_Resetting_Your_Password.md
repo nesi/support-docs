@@ -1,3 +1,18 @@
+---
+created_at: '2018-07-17T00:54:59Z'
+hidden: false
+label_names:
+- howto
+- authentication
+- mynesi
+position: 0
+title: Setting Up and Resetting Your Password
+vote_count: 3
+vote_sum: 3
+zendesk_article_id: 360000335995
+zendesk_section_id: 360000034315
+---
+
 > ### Requirements
 >
 > -   Have a [NeSI
@@ -21,22 +36,22 @@
     Password** (If you are resetting your password this will read
     **Reset Password**).  
     Note your** Username.  
-    <img src="mkdocs/includes/images/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="442" height="166" />  
+    <img src="mkdocs_repo/includes/images/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="442" height="166" />  
     **
 3.  Enter and verify your new password, making sure it follows the
     [password
     policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).  
       
 
-    #### <img src="mkdocs/includes/images/SetNeSIaccountPassword.png" alt="SetNeSIaccountPassword.png" width="628" height="314" />
+    #### <img src="mkdocs_repo/includes/images/SetNeSIaccountPassword.png" alt="SetNeSIaccountPassword.png" width="628" height="314" />
 
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds  
        
-    ![change\_success.png](mkdocs/includes/images/5662974048911.name_me)
+    ![change\_success.png](mkdocs_repo/includes/images/5662974048911.name_me)
 5.  Followed by an email confirmation similar to below
 
-<img src="mkdocs/includes/images/password_set_confirmation.png" alt="password_set_confirmation.png" width="440" height="285" />
+<img src="mkdocs_repo/includes/images/password_set_confirmation.png" alt="password_set_confirmation.png" width="440" height="285" />
 
  
 
@@ -62,13 +77,13 @@
 
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  
-    1.  -   ![change\_success.png](mkdocs/includes/images/5662974048911.name_me)
+    1.  -   ![change\_success.png](mkdocs_repo/includes/images/5662974048911.name_me)
 
 5.  Followed by an email confirmation similar to below  
        
       
 
-<img src="mkdocs/includes/images/password_set_confirmation.png" alt="password_set_confirmation.png" width="440" height="285" />
+<img src="mkdocs_repo/includes/images/password_set_confirmation.png" alt="password_set_confirmation.png" width="440" height="285" />
 
  
 

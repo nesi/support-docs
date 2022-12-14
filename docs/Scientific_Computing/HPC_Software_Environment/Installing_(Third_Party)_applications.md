@@ -1,3 +1,15 @@
+---
+created_at: '2018-09-24T01:51:32Z'
+hidden: false
+label_names: []
+position: 16
+title: Installing (Third Party) applications
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000474535
+zendesk_section_id: 360000040056
+---
+
 NeSI provides a long list of various applications on its systems.
 Nevertheless, if you need additional applications or libraries (below
 called package), we distinguish:

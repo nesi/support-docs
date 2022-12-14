@@ -1,3 +1,15 @@
+---
+created_at: '2019-06-13T04:08:43Z'
+hidden: false
+label_names: []
+position: 11
+title: Thread Placement and Thread Affinity
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360000995575
+zendesk_section_id: 360000040056
+---
+
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
 article on [Parallel
@@ -42,7 +54,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](mkdocs/includes/images/NodeSocketCore.png)
+![NodeSocketCore.png](mkdocs_repo/includes/images/NodeSocketCore.png)
 
 It is very important to note the following:
 

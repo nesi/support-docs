@@ -1,3 +1,16 @@
+---
+created_at: '2020-04-19T22:59:58Z'
+hidden: false
+label_names:
+- gpu
+position: 1
+title: GPU use on NeSI
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001471955
+zendesk_section_id: 360000030876
+---
+
 This page provides generic information about how to access NeSI's GPU
 cards.
 

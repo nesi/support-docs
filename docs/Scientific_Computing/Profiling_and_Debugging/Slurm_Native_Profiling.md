@@ -1,3 +1,17 @@
+---
+created_at: '2019-02-24T23:26:19Z'
+hidden: false
+label_names:
+- slurm
+- profiling
+position: 0
+title: Slurm Native Profiling
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000810616
+zendesk_section_id: 360000278935
+---
+
 Job resource usage can be determined on job completion by checking the
 following sacct columns;
 

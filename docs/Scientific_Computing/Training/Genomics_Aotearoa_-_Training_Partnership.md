@@ -1,3 +1,15 @@
+---
+created_at: '2022-07-25T21:35:04Z'
+hidden: true
+label_names: []
+position: 0
+title: Genomics Aotearoa - Training Partnership
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 5203099230479
+zendesk_section_id: 5203123172239
+---
+
 -   **RNA-seq
     workshop**[ \[Link\]](https://github.com/GenomicsAotearoa/RNA-seq-workshop)[\[Workshop
     Link\]](https://github.com/gregomics/RNAseqWorkshop2018/)

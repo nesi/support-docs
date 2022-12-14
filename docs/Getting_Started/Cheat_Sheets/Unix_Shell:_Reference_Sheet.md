@@ -1,3 +1,15 @@
+---
+created_at: '2020-02-25T02:45:24Z'
+hidden: false
+label_names: []
+position: 0
+title: 'Unix Shell: Reference Sheet'
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001393596
+zendesk_section_id: 360000278975
+---
+
 Regardless of the operating system of your personal computer you will
 need to know some basic Unix Shell commands since the HPC are Linux
 machines. If you do not have any experiencing using Unix Shell we would
@@ -304,12 +316,12 @@ Bring up the manual of a command (in this case ls).
 > Pressing the 'tab' key once will automatically complete the line if it
 > is the only option. e.g. 
 >
-> ![complete1.gif](mkdocs/includes/images/complete1.gif)
+> ![complete1.gif](mkdocs_repo/includes/images/complete1.gif)
 >
 > If there are more than one possible completions, pressing tab again
 > will show all those options.
 >
-> ![complete2.gif](mkdocs/includes/images/complete2.gif)
+> ![complete2.gif](mkdocs_repo/includes/images/complete2.gif)
 >
 > Use of the tab key can help navigate the filesystem, spellcheck your
 > commands and save you time typing.

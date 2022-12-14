@@ -1,3 +1,16 @@
+---
+created_at: '2022-03-22T02:16:17Z'
+hidden: false
+label_names:
+- general
+position: 0
+title: Slurm upgrade to version 21.8
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4544913401231
+zendesk_section_id: 200732737
+---
+
 Slurm, the scheduler that controls Māui and Mahuika, has been upgraded
 to version 21.8 on machines.  Below are the highlights of the changes
 expected in the new version. The full list of bugfixes, improvements and

@@ -1,3 +1,15 @@
+---
+created_at: '2019-04-12T02:21:25Z'
+hidden: false
+label_names: []
+position: 15
+title: NetCDF / HDF5 file locking
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360000902955
+zendesk_section_id: 360000030876
+---
+
 NeSI provides libraries for creating and accessing files in the NetCDF
 and HDF5 formats on both Mahuika and Māui.
 

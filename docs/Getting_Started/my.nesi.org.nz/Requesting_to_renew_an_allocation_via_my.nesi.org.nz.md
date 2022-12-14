@@ -1,17 +1,30 @@
+---
+created_at: '2022-03-31T20:51:51Z'
+hidden: false
+label_names:
+- mynesi
+position: 0
+title: Requesting to renew an allocation via my.nesi.org.nz
+vote_count: 3
+vote_sum: 3
+zendesk_article_id: 4600222769295
+zendesk_section_id: 360001059296
+---
+
 ## How to raise a request using my.nesi.org.nz?
 
 1.  Login to <https://my.nesi.org.nz/projects/list> and select a project
     from the list.
 2.  From the green (middle) panel click the links menu and select "More
     Resource Details"  
-    <img src="mkdocs/includes/images/mceclip0.png" alt="mceclip0.png" width="416" height="263" />
+    <img src="mkdocs_repo/includes/images/mceclip0.png" alt="mceclip0.png" width="416" height="263" />
 3.  Click the Plus button icon 'action' next to the compute allocation
     line item   
-    <img src="mkdocs/includes/images/mceclip1.png" alt="mceclip1.png" width="528" height="186" />
+    <img src="mkdocs_repo/includes/images/mceclip1.png" alt="mceclip1.png" width="528" height="186" />
 4.  Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'   
-    <img src="mkdocs/includes/images/mceclip2.png" alt="mceclip2.png" width="636" height="505" />
+    <img src="mkdocs_repo/includes/images/mceclip2.png" alt="mceclip2.png" width="636" height="505" />
 
 ### Can I request any allocation size?
 

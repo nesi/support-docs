@@ -1,3 +1,15 @@
+---
+created_at: '2019-07-30T04:11:05Z'
+hidden: true
+label_names: []
+position: 1
+title: Jumping Lander node.
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001076675
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Have your [connection to the NeSI
@@ -48,7 +60,7 @@ click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 -   Specify the local port number on the local side (left)
 -   Save
 
-![sshTunnel.PNG](mkdocs/includes/images/sshTunnel.PNG)
+![sshTunnel.PNG](mkdocs_repo/includes/images/sshTunnel.PNG)
 
 # PuTTY
 

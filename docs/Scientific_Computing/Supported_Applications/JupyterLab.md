@@ -1,3 +1,15 @@
+---
+created_at: '2019-08-09T00:46:44Z'
+hidden: false
+label_names: []
+position: 20
+title: JupyterLab
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001093315
+zendesk_section_id: 360000040076
+---
+
 > ### Note
 >
 > This documentation contains our legacy instructions for running
@@ -119,7 +131,7 @@ click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
     the remote server (right upper box, second line)
 -   Save
 
-![sshTunnel.PNG](mkdocs/includes/images/sshTunnel.PNG)
+![sshTunnel.PNG](mkdocs_repo/includes/images/sshTunnel.PNG)
 
 ## Launch the JupyterLab server 
 
@@ -205,7 +217,7 @@ Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:
 
-![Jupyter.PNG](mkdocs/includes/images/Jupyter.PNG)
+![Jupyter.PNG](mkdocs_repo/includes/images/Jupyter.PNG)
 
 # Kernels
 

@@ -1,3 +1,17 @@
+---
+created_at: '2019-01-07T01:10:28Z'
+hidden: false
+label_names:
+- slurm
+- scheduler
+position: 1
+title: Submitting your first job
+vote_count: 6
+vote_sum: 6
+zendesk_article_id: 360000684396
+zendesk_section_id: 360000189716
+---
+
 ## Environment Modules
 
 Modules are a convenient  way to provide access to applications  on the

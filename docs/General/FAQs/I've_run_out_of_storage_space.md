@@ -1,3 +1,16 @@
+---
+created_at: '2019-08-26T00:02:24Z'
+hidden: false
+label_names:
+- disk quota exceeded
+position: 0
+title: I've run out of storage space
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360001125996
+zendesk_section_id: 360000039036
+---
+
 There are two tracked resources in the NeSI filesystem, *disk space* and
 *inodes (number of files) *.
 

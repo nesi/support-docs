@@ -1,3 +1,17 @@
+---
+created_at: '2019-03-26T00:36:24Z'
+hidden: false
+label_names:
+- engineering
+- COMSOL
+position: 13
+title: COMSOL
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360000871556
+zendesk_section_id: 360000040076
+---
+
     comsol --help
 
 Will display a list of COMSOL batch commands.

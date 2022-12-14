@@ -1,3 +1,15 @@
+---
+created_at: '2019-08-28T01:48:30Z'
+hidden: false
+label_names: []
+position: 4
+title: Offloading computations to a Graphical Processing Unit (GPU) with OpenACC
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001131076
+zendesk_section_id: 360000040056
+---
+
 Many codes can be accelerated significantly by offloading computations
 to a GPU. Some NeSI [Mahuika nodes have GPUs attached to
 them](https://support.nesi.org.nz/hc/en-gb/articles/360001471955-GPU-use-on-NeSI).

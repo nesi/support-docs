@@ -1,3 +1,20 @@
+---
+created_at: '2018-09-10T00:02:43Z'
+hidden: false
+label_names:
+- introduction
+- talk
+- workshop
+- introductory
+- office hours
+position: 5
+title: Weekly Introductory Sessions
+vote_count: 5
+vote_sum: 5
+zendesk_article_id: 360000428676
+zendesk_section_id: 360000164635
+---
+
 NeSI hosts weekly “Introduction to Computing on the NeSI Platforms”
 session for researchers new to NeSI (or existing users who would like a
 refresh), to help you get started on the systems. These sessions are

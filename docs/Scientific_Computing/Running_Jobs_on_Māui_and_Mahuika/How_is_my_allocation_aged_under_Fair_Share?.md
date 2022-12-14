@@ -1,3 +1,15 @@
+---
+created_at: '2019-06-19T10:31:21Z'
+hidden: true
+label_names: []
+position: 5
+title: How is my allocation aged under Fair Share?
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001014876
+zendesk_section_id: 360000030876
+---
+
 Fair Share is an alternative to a conventional ageing model.
 
 Under conventional ageing, your allocation would be split up into

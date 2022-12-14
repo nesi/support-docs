@@ -1,3 +1,15 @@
+---
+created_at: '2019-10-03T04:08:49Z'
+hidden: false
+label_names: []
+position: 0
+title: What are my .bashrc & .bash_profile for?
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 360001194536
+zendesk_section_id: 360000039036
+---
+
 If you've been using Linux for a while, you'll have come across resource
 files. These files are typically read when you start a new instance of
 your *shell*, the program that interprets and executes the commands that

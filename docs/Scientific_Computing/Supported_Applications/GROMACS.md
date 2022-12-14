@@ -1,3 +1,15 @@
+---
+created_at: '2019-02-21T02:46:25Z'
+hidden: false
+label_names: []
+position: 16
+title: GROMACS
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360000792856
+zendesk_section_id: 360000040076
+---
+
 GROMACS (the GROningen MAchine for Chemical Simulations) is a versatile
 package to perform molecular dynamics, i.e. simulate the Newtonian
 equations of motion for systems with hundreds to millions of particles.

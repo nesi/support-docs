@@ -1,3 +1,15 @@
+---
+created_at: '2020-05-12T01:43:30Z'
+hidden: false
+label_names: []
+position: 3
+title: Port Forwarding
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001523916
+zendesk_section_id: 360000034315
+---
+
 > ### Requirements
 >
 > -   Have your [connection to the NeSI
@@ -116,12 +128,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](mkdocs/includes/images/mceclip1.png)
+![mceclip1.png](mkdocs_repo/includes/images/mceclip1.png)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -129,7 +141,7 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](mkdocs/includes/images/mobakey.png)
+![mobakey.png](mkdocs_repo/includes/images/mobakey.png)
 
 <span class="wysiwyg-color-green110">■</span> local port  
 <span class="wysiwyg-color-orange90">■</span> remote port  

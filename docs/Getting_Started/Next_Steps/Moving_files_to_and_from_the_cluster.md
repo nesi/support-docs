@@ -1,3 +1,24 @@
+---
+created_at: '2018-11-20T22:41:32Z'
+hidden: false
+label_names:
+- scp
+- transfer
+- copying
+- download
+- upload
+- mv
+- cp
+- move
+- moving
+position: 0
+title: Moving files to and from the cluster
+vote_count: 9
+vote_sum: 1
+zendesk_article_id: 360000578455
+zendesk_section_id: 360000189716
+---
+
 > ### Requirements
 >
 > -   Have an [active account and
@@ -55,7 +76,7 @@ This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -68,7 +89,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](mkdocs/includes/images/2019-01-07_SCP_in_MobaXTerm.png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](mkdocs_repo/includes/images/2019-01-07_SCP_in_MobaXTerm.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided

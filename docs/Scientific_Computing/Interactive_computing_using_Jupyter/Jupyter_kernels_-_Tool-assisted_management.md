@@ -1,3 +1,15 @@
+---
+created_at: '2022-01-31T21:28:03Z'
+hidden: false
+label_names: []
+position: 3
+title: Jupyter kernels - Tool-assisted management
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 4414958674831
+zendesk_section_id: 360001189255
+---
+
 # Introduction
 
 Jupyter can execute code in different computing environments using

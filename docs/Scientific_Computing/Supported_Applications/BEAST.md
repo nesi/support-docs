@@ -1,3 +1,18 @@
+---
+created_at: '2015-09-02T20:55:32Z'
+hidden: true
+label_names:
+- mahuika
+- tier1
+- biology
+position: 11
+title: BEAST
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 208367078
+zendesk_section_id: 360000040076
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 

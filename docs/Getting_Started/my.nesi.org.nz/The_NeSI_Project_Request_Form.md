@@ -1,3 +1,15 @@
+---
+created_at: '2021-03-11T21:59:07Z'
+hidden: false
+label_names: []
+position: 0
+title: The NeSI Project Request Form
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360003648716
+zendesk_section_id: 360001059296
+---
+
 See [Applying for a NeSI
 project](https://support.nesi.org.nz/hc/en-gb/articles/360000174976) for
 how to access the form.
@@ -12,7 +24,7 @@ below.
     [https://my.nesi.org.nz](https://my.nesi.org.nz/projects/apply) and
     login. Select "Apply for Access" from the sidebar navigation on the
     left.  
-    ![mceclip1.png](mkdocs/includes/images/mceclip1.png)
+    ![mceclip1.png](mkdocs_repo/includes/images/mceclip1.png)
 2.  Choose from the following items:
     -   **If you are returning to continue work on a draft request** you
         started earlier, choose the link based on the date/time or title

@@ -1,3 +1,20 @@
+---
+created_at: '2015-10-14T22:58:53Z'
+hidden: false
+label_names:
+- mahuika
+- tier1
+- engineering
+- general
+- app
+position: 22
+title: MATLAB
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 212639047
+zendesk_section_id: 360000040076
+---
+
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 

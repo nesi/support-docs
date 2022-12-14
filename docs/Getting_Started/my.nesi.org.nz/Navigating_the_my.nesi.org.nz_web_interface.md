@@ -1,4 +1,16 @@
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+---
+created_at: '2021-03-03T21:29:16Z'
+hidden: false
+label_names: []
+position: 0
+title: Navigating the my.nesi.org.nz web interface
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360003592875
+zendesk_section_id: 360001059296
+---
+
+![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
 
 ## Main navigation
 

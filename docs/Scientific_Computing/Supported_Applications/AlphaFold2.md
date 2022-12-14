@@ -1,3 +1,15 @@
+---
+created_at: '2021-08-17T03:13:55Z'
+hidden: false
+label_names: []
+position: 0
+title: AlphaFold2
+vote_count: 1
+vote_sum: 1
+zendesk_article_id: 4405170961039
+zendesk_section_id: 360000040076
+---
+
 # Description
 
 This package provides an implementation of the inference pipeline of
@@ -82,7 +94,7 @@ modifications. Image (.*simg*) and the corresponding definition file
 Input *fasta* used in following example  is 3RGK
 (<https://www.rcsb.org/structure/3rgk>).
 
-<img src="mkdocs/includes/images/3rgk_assembly-1.jpeg" alt="3rgk_assembly-1.jpeg" width="180" height="180" />
+<img src="mkdocs_repo/includes/images/3rgk_assembly-1.jpeg" alt="3rgk_assembly-1.jpeg" width="180" height="180" />
 
     #!/bin/bash -e
 
@@ -131,7 +143,7 @@ Input *fasta* used in following example
     >T1084
     MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 
-<img src="mkdocs/includes/images/protter_custom_sequence.png" alt="protter_custom_sequence.png" width="249" height="254" />
+<img src="mkdocs_repo/includes/images/protter_custom_sequence.png" alt="protter_custom_sequence.png" width="249" height="254" />
 
  
 

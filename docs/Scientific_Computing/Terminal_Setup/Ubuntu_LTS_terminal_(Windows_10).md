@@ -1,3 +1,15 @@
+---
+created_at: '2019-07-15T04:12:01Z'
+hidden: false
+label_names: []
+position: 1
+title: Ubuntu LTS terminal (Windows 10)
+vote_count: 2
+vote_sum: 2
+zendesk_article_id: 360001050575
+zendesk_section_id: 360000189696
+---
+
 > ### Requirements
 >
 > -   Be a [member of an active
@@ -12,7 +24,7 @@ Ubuntu LTS Terminal.
 1.  Open the Microsoft store, search for 'Ubuntu', find and install
     'Ubuntu 18.04 LTS' or  'Ubuntu 20.04 LTS'   
       
-    ![ubuntu5.png](mkdocs/includes/images/ubuntu5.png)![ubuntu6.png](mkdocs/includes/images/ubuntu6.png)  
+    ![ubuntu5.png](mkdocs_repo/includes/images/ubuntu5.png)![ubuntu6.png](mkdocs_repo/includes/images/ubuntu6.png)  
       
       
 2.  Close the “Add your Microsoft account.. dialogue box as you do not
@@ -20,8 +32,8 @@ Ubuntu LTS Terminal.
     for a second time (If the above dialogue box reappears, close as
     before and download/install will begin.  
       
-    ![ubuntu3.png](mkdocs/includes/images/ubuntu3.png)  
-     ![ubuntu4.png](mkdocs/includes/images/ubuntu4.png)  
+    ![ubuntu3.png](mkdocs_repo/includes/images/ubuntu3.png)  
+     ![ubuntu4.png](mkdocs_repo/includes/images/ubuntu4.png)  
       
 3.  Launch “Ubuntu 18.04 LTS” from start menu and wait for the first
     time installation to complete.
@@ -30,13 +42,13 @@ Ubuntu LTS Terminal.
     will be prompted to “Enter new UNIX username” and press
     &lt;Enter&gt;. This username can be anything you want.  
       
-    ![ubuntu1.png](mkdocs/includes/images/ubuntu1.png)  
+    ![ubuntu1.png](mkdocs_repo/includes/images/ubuntu1.png)  
       
 5.  Now, type in a new password for the username you picked and press
     &lt;Enter&gt;. (Again this password is anything you want). Then
     retype the password to confirm and press &lt;Enter&gt;  
       
-    ![ubuntu2.png](mkdocs/includes/images/ubuntu2.png)
+    ![ubuntu2.png](mkdocs_repo/includes/images/ubuntu2.png)
 6.  To create a symbolic link to your Windows filesystems in your home
     directory run the following command replacing c with the name of
     your Windows filesystems found in /mnt/. 

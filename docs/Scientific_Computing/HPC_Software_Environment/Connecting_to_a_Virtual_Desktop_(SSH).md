@@ -1,3 +1,15 @@
+---
+created_at: '2021-03-29T01:57:32Z'
+hidden: true
+label_names: []
+position: 0
+title: Connecting to a Virtual Desktop (SSH)
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360004050315
+zendesk_section_id: 360000040056
+---
+
 A virtual desktop provides a graphical interface to using the cluster.
 Desktops are hosted within Singularity containers, so not all of the
 NeSI software stack is supported. If you would like to build your own
@@ -78,7 +90,7 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-<img src="mkdocs/includes/images/fig1.svg" width="426" height="362" />![](mkdocs/includes/images/VirtualScaling.png)
+<img src="mkdocs_repo/includes/images/fig1.svg" width="426" height="362" />![](mkdocs_repo/includes/images/VirtualScaling.png)
 
 # Examples
 
@@ -111,7 +123,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](mkdocs/includes/images/mceclip0.png)
+![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
 
 ## On a compute node
 

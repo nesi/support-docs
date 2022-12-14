@@ -1,3 +1,15 @@
+---
+created_at: '2021-04-03T22:28:54Z'
+hidden: false
+label_names: []
+position: 7
+title: University of Auckland - ANSYS users
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360003984776
+zendesk_section_id: 200732737
+---
+
 On 01/04/2021 afternoon, there was a change to the University ANSYS
 licences; you may find that your jobs fail with a licence error.
 

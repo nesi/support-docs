@@ -1,3 +1,15 @@
+---
+created_at: '2021-09-30T22:51:02Z'
+hidden: false
+label_names: []
+position: 3
+title: Improved data management & efficient use of NeSI HPC storage
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 4407274387599
+zendesk_section_id: 200732737
+---
+
 A growing number of research projects are storing large amounts of data
 on NeSI systems. To better support this growth, as well as optimise the
 performance and availability of our filesystems, we are introducing new
