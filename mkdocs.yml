@@ -6,6 +6,7 @@ repo_name: GitLab
 site_description: NeSI Support Documentation
 theme:
     name: material
+    custom_dir: overrides
     features:
     #- navigation.indexes    # Allow navigation to secion pages
     - navigation.top        # Adds 'return to top' button
