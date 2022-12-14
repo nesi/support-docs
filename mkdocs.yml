@@ -28,8 +28,8 @@ markdown_extensions:
     - abbr
     - tables
     - pymdownx.snippets:
-      auto_append:
-        - ../includes/snippets.md
+        auto_append:
+            - ../includes/snippets.md
 plugins:
     - search
     - spellcheck:
