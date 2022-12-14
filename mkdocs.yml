@@ -43,7 +43,7 @@ plugins:
         hooks: 
             # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
             #on_post_build: "custom_hooks:lint"
-
+    - macros
 
 #extra_javascript:
 #  - JavaScripts/se-v2.js # js for statuspage thingie
