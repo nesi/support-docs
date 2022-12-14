@@ -57,13 +57,12 @@ plugins:
         max_capital: 1
         allow_unicode: yes
     - tags
-    - mkdocs-simple-hooks:
-        hooks: 
-            # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
-            #on_post_build: "custom_hooks:lint"
     - macros
-
-#extra_javascript:
+hooks: 
+    - custom_hooks.py
+    # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
+    #on_post_build: ":lint"
+# extra_javascript:
 #  - JavaScripts/se-v2.js # js for statuspage thingie
     # - section-index
 
