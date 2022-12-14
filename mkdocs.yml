@@ -9,17 +9,34 @@ theme:
     features:
     #- navigation.indexes    # Allow navigation to secion pages
     - navigation.top        # Adds 'return to top' button
+    logo: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+    favicon: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+    palette: 
 
+        # Palette toggle for light mode
+        - scheme: default
+          primary: white
+          toggle:
+            icon: material/lightbulb
+            name: Switch to dark mode
 
-# theme:
+        # Palette toggle for dark mode
+        - scheme: slate
+          primary: black
+          toggle:
+            icon: material/lightbulb-outline
+            name: Switch to light mode
+
+    # theme:
 #     name: null
 #     custom_dir: nesi_theme/
-
 markdown_extensions:
     - toc:
         permalink: True
         baselevel: 1
         toc_depth: 3
+    - admonition
+    - pymdownx.details
     - pymdownx.superfences
     - pymdownx.highlight        # code blocks
     - pymdownx.inlinehilite     # code blocks  
