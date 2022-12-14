@@ -33,7 +33,7 @@ use the link included at the bottom of the notification email message
 See also our support article [Managing NeSI notification
 preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)
 
-![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
+![mceclip0.png](../includes/mceclip0.png)
 
 ## status.nesi.org.nz
 
@@ -42,4 +42,4 @@ NeSI does publish service incidents and scheduled maintenance via
 Interested parties are invited to subscribe to updates (via SMS or
 email).
 
-<img src="mkdocs_repo/includes/images/mceclip0.png" width="880" height="772" />
+<img src="../includes/mceclip0.png" width="880" height="772" />

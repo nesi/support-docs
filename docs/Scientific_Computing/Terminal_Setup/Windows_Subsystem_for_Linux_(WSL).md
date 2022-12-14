@@ -27,9 +27,9 @@ WSL is enabled by default on later versions of Windows 10.
 ## Enabling WSL
 
 1.  Open 'Turn Windows features on or off'  
-    ![WSL1.png](mkdocs_repo/includes/images/WSL1.png)
+    ![WSL1.png](../includes/WSL1.png)
 2.  Scroll down and tick the 'Windows Subsystem for Linux' option.  
-    ![WSL2.png](mkdocs_repo/includes/images/WSL2.png)  
+    ![WSL2.png](../includes/WSL2.png)  
     Click OK
 3.  Wait for the installation to finish then restart your computer.
 

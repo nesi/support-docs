@@ -65,7 +65,7 @@ This is a [Link](https://www.w3schools.com/html/html_links.asp) 
 
 Image
 
-![redirects-and-pipes.png](mkdocs_repo/includes/images/6014468037775.name_me)
+![redirects-and-pipes.png](../includes/6014468037775.name_me)
 
 ------------------------------------------------------------------------
 

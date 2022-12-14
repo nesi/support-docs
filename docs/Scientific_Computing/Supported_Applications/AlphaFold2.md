@@ -94,7 +94,7 @@ modifications. Image (.*simg*) and the corresponding definition file
 Input *fasta* used in following example  is 3RGK
 (<https://www.rcsb.org/structure/3rgk>).
 
-<img src="mkdocs_repo/includes/images/3rgk_assembly-1.jpeg" alt="3rgk_assembly-1.jpeg" width="180" height="180" />
+<img src="../includes/3rgk_assembly-1.jpeg" alt="3rgk_assembly-1.jpeg" width="180" height="180" />
 
     #!/bin/bash -e
 
@@ -143,7 +143,7 @@ Input *fasta* used in following example
     >T1084
     MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 
-<img src="mkdocs_repo/includes/images/protter_custom_sequence.png" alt="protter_custom_sequence.png" width="249" height="254" />
+<img src="../includes/protter_custom_sequence.png" alt="protter_custom_sequence.png" width="249" height="254" />
 
  
 

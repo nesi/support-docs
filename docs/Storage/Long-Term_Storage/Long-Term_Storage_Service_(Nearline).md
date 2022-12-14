@@ -490,7 +490,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](mkdocs_repo/includes/images/librarian_get_put.jpeg)
+![librarian\_get\_put.jpeg](../includes/librarian_get_put.jpeg)
 
 # Underlying mechanism
 

@@ -48,9 +48,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](mkdocs_repo/includes/images/mceclip4.png)
+![mceclip4.png](../includes/mceclip4.png)
 
-![mceclip5.png](mkdocs_repo/includes/images/mceclip5.png)
+![mceclip5.png](../includes/mceclip5.png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -71,7 +71,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](mkdocs_repo/includes/images/mceclip6.png)
+![mceclip6.png](../includes/mceclip6.png)
 
 You will be prompted by dialogue box.
 

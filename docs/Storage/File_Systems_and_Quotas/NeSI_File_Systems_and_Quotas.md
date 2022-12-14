@@ -29,7 +29,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="mkdocs_repo/includes/images/neSI_filetree.svg" alt="neSI_filetree.svg" width="629" height="578" />
+## <img src="../includes/neSI_filetree.svg" alt="neSI_filetree.svg" width="629" height="578" />
 
 # File System Specifications
 

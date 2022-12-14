@@ -10,7 +10,7 @@ zendesk_article_id: 360003592875
 zendesk_section_id: 360001059296
 ---
 
-![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
+![mceclip0.png](../includes/mceclip0.png)
 
 ## Main navigation
 

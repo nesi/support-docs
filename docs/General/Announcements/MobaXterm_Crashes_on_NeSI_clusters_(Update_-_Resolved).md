@@ -22,7 +22,7 @@ Disabling the "Remote-monitoring (experimental)" in the SSH settings
 seems to resolve this issue. If this does not resolve this issue for you
 please let us know.
 
-![moba3\_update2.png](mkdocs_repo/includes/images/moba3_update2.png)
+![moba3\_update2.png](../includes/moba3_update2.png)
 
 ## Update - 2019/11/01
 
@@ -30,7 +30,7 @@ Disabling the SSH-browser under your session settings will cause the
 crashes to stop, however this will also remove your ability to transfer
 files.
 
-![no\_scp.png](mkdocs_repo/includes/images/no_scp.png)
+![no\_scp.png](../includes/no_scp.png)
 
 ## 2019/10/14
 

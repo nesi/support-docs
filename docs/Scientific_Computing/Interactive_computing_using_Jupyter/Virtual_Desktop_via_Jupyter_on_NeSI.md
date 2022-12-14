@@ -52,7 +52,7 @@ desktop.
 
 Recommend setting scaling to 'remote'
 
-<img src="mkdocs_repo/includes/images/fig1.svg" width="426" height="362" />![](mkdocs_repo/includes/images/VirtualScaling.png)
+<img src="../includes/fig1.svg" width="426" height="362" />![](../includes/VirtualScaling.png)
 
 > ### Restore Defaults
 >

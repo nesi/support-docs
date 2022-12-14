@@ -16,7 +16,7 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
-![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
+![mceclip0.png](../includes/mceclip0.png)
 
 ###  On NeSI's Māui/Mahuika clusters this means:
 

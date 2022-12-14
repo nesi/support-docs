@@ -17,7 +17,7 @@ zendesk_section_id: 360000040596
 When you select an endpoint to transfer data to/from, you may be asked
 to authenticate with that endpoint:
 
-![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)  
+![mceclip0.png](../includes/mceclip0.png)  
 Transfers are only possible once you have supplied credentials that
 authenticate your access to the endpoint. This process is known as
 "activating the endpoint".  The endpoint remains active for 24 hours.  
@@ -31,8 +31,7 @@ authentication (2FA-same as accessing NeSI clusters).  In the
 not*** use any additional characters or spaces between your password and
 the token number.)
 
-                     
- ![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
+                       ![mceclip0.png](../includes/mceclip0.png)
 
 Check the status of your endpoints at
 <https://www.globus.org/app/console/endpoints>[ ](https://www.globus.org/app/console/endpoints)

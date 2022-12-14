@@ -160,7 +160,7 @@ of the png file. To visualise the file you can type </span>
 Here, we see that our workflow "simple" has a "taskC", which waits for
 "taskA" and "taskB" to complete,
 
-![simple.png](mkdocs_repo/includes/images/simple.png)
+![simple.png](../includes/simple.png)
 
 The "1" indicates that this workflow graph is executed only once.
 

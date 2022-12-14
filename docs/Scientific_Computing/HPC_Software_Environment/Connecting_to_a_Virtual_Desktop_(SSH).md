@@ -90,7 +90,7 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-<img src="mkdocs_repo/includes/images/fig1.svg" width="426" height="362" />![](mkdocs_repo/includes/images/VirtualScaling.png)
+<img src="../includes/fig1.svg" width="426" height="362" />![](../includes/VirtualScaling.png)
 
 # Examples
 
@@ -123,7 +123,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](mkdocs_repo/includes/images/mceclip0.png)
+![mceclip0.png](../includes/mceclip0.png)
 
 ## On a compute node
 

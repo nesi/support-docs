@@ -316,12 +316,12 @@ Bring up the manual of a command (in this case ls).
 > Pressing the 'tab' key once will automatically complete the line if it
 > is the only option. e.g. 
 >
-> ![complete1.gif](mkdocs_repo/includes/images/complete1.gif)
+> ![complete1.gif](../includes/complete1.gif)
 >
 > If there are more than one possible completions, pressing tab again
 > will show all those options.
 >
-> ![complete2.gif](mkdocs_repo/includes/images/complete2.gif)
+> ![complete2.gif](../includes/complete2.gif)
 >
 > Use of the tab key can help navigate the filesystem, spellcheck your
 > commands and save you time typing.
