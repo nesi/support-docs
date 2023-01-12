@@ -1,28 +1,14 @@
-#### HPC Service Status
-<!-- {% include 'service_status.md' %} -->
+---
+template: home.html
+hidden: true
+---
 
-#### Scheduled Maintenance
-
-#### Incidents
-
-#### Recent Announcements
----------------------------------------------------------------------
-
-=======================================
+# NeSI Support Documentation
 
 Use the categories and sections to browse the content, or perform a
 search from the top menu.
 
-<div>
-
-User Resource Guide
--------------------
-
-This overview provides some useful links to get you started.
-
-</div>
-
-### How to request an account
+## How to request an account
 
 For information on getting an account and allocation with us, please
 visit
@@ -32,7 +18,7 @@ Account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)\
 [Applying for a NeSI
 project](https://support.nesi.org.nz/hc/en-gb/articles/360000174976)
 
-##### NeSI Account Portal
+## NeSI Account Portal
 
 This is our web portal for managing your account, project, authorized
 users, etc.
@@ -43,7 +29,7 @@ Please use [MyNeSI](https://my.nesi.org.nz/) to update your password,
 manage the 2-factor authentication token, and check/request project
 membership.
 
-### ![](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png){width="42" height="42"} Getting connected
+## ![Getting connected](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png) Getting connected
 
 Logging in to NeSI resources is primarily accomplished via SSH (or
 "secure shell"). This is a method of getting a command-line interface on
@@ -61,7 +47,7 @@ For an introduction to the features of Jupyter on NeSI, check out
 [Jupyter on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
 
-### ![](//theme.zdassets.com/theme_assets/85418/79671a6d774b40afcb09faac902942fed76cfca8.png){width="42" height="42"} Transferring Files
+## ![Transferring Files](//theme.zdassets.com/theme_assets/85418/79671a6d774b40afcb09faac902942fed76cfca8.png) Transferring Files
 
 Small files can be moved to and from NeSI systems inside of Jupyter. SCP
 (Secure CoPy) is another common method. If you have a large amount of
@@ -70,7 +56,7 @@ NeSI.](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)\
 [NESI Globus Web App
 https://transfer.nesi.org.nz/](https://transfer.nesi.org.nz/)
 
-### ![](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png){width="42" height="42"} Submitting Jobs
+## ![Submitting Jobs](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png) Submitting Jobs
 
 Instructions to be executed by the node(s) assigned to you when your
 request for resources can be met by the scheduler -- can get very
@@ -86,9 +72,8 @@ and how to write scripts to accomplish various tasks.
 
 [Running Jobs on Māui and
 Mahuika](https://support.nesi.org.nz/hc/en-gb/sections/360000030876)
-:::
 
-### ![](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png){width="42" height="42"} Usage reporting
+## ![Usage reporting](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png) Usage reporting
 
 [Checking Slurm job
 efficiency](https://support.nesi.org.nz/hc/en-gb/articles/360000903776)\
@@ -97,9 +82,9 @@ Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)\
 [NeSI File Systems and
 Quotas](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
 
-### ![](//theme.zdassets.com/theme_assets/85418/d84f915c1b7b670c39e246a991d877c9ac21d3e2.png){width="42" height="42"} Training
+## ![Training](//theme.zdassets.com/theme_assets/85418/d84f915c1b7b670c39e246a991d877c9ac21d3e2.png) Training
 
-#### Introductory Workshops
+### Introductory Workshops
 
 We offer introductory workshops for new HPC users on most weeks of the
 year. For more information on when we hold these and how to register
@@ -117,15 +102,9 @@ this
 [support.nesi.org.nz](https://support.nesi.org.nz/hc/en-gb/requests/new)
 site.
 
-### ![](//theme.zdassets.com/theme_assets/85418/9a90082aeba086623edb2a7d51d4dc02cfeb391f.png){width="42" height="42"} NeSI Consultancy
+## ![NeSI Consultancy](//theme.zdassets.com/theme_assets/85418/9a90082aeba086623edb2a7d51d4dc02cfeb391f.png) NeSI Consultancy
 
 [NeSI\'s Consultancy service provides scientific and HPC-focussed
 computational and data science support to research project across a
 range of
 domains.](https://support.nesi.org.nz/hc/en-gb/articles/360000751916)
-
-Didn't find what you were looking for?
---------------------------------------
-
-Let us help you!
-

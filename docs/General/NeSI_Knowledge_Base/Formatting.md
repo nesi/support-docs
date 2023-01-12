@@ -34,15 +34,15 @@ Normal Text
 
 > ### Requirements
 >
-> -   Thing one
-> -   Thing two
-> -   Thing three
+> - Thing one
+> - Thing two
+> - Thing three
 
-> ### What Next?
->
-> -   Thing one
-> -   Thing two
-> -   Thing three
+!!! note "What Next?"
+
+    - Thing one
+    - Thing two
+    - Thing three
 
 > ### Warning
 >
@@ -59,7 +59,7 @@ Normal Text
 
 ------------------------------------------------------------------------
 
-This is a [Link](https://www.w3schools.com/html/html_links.asp) 
+This is a [Link](https://www.w3schools.com/html/html_links.asp)
 
 ------------------------------------------------------------------------
 
@@ -68,8 +68,6 @@ Image
 ![redirects-and-pipes.png](../includes/6014468037775.name_me)
 
 ------------------------------------------------------------------------
-
- 
 
 Code Blocks
 
@@ -97,8 +95,6 @@ class="source"
 
     salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
- 
-
     salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
 kjsadk cac wa asd a okada sackjpoe qokwd ,am n ampwe awdo asdm amd
@@ -125,8 +121,6 @@ some inline code with `maui` in it
 </tbody>
 </table>
 
- 
-
 <table style="border-collapse: collapse; width: 100%;" border="1">
 <tbody>
 <tr>
@@ -139,12 +133,12 @@ Table
 <tr>
 <td style="width: 28.5714%;" colspan="2">
 
-Col1 
+Col1
 
 </td>
 <td style="width: 28.5714%;" colspan="2">
 
-Col1 
+Col1
 
 </td>
 <td style="width: 14.2857%;" colspan="2">
@@ -161,27 +155,17 @@ Row1
 </td>
 <td style="width: 14.2857%;">
 
- 
+</td>
+<td style="width: 14.2857%;">
 
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
-
- 
-
-</td>
-<td style="width: 14.2857%;">
-
- 
 
 </td>
 </tr>
@@ -193,27 +177,17 @@ Row2
 </td>
 <td style="width: 14.2857%;">
 
- 
+</td>
+<td style="width: 14.2857%;">
 
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
-
- 
-
-</td>
-<td style="width: 14.2857%;">
-
- 
 
 </td>
 </tr>
@@ -225,27 +199,17 @@ Row3
 </td>
 <td style="width: 14.2857%;">
 
- 
+</td>
+<td style="width: 14.2857%;">
 
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
-
- 
-
-</td>
-<td style="width: 14.2857%;">
-
- 
 
 </td>
 </tr>
@@ -257,34 +221,24 @@ Row4
 </td>
 <td style="width: 14.2857%;">
 
- 
+</td>
+<td style="width: 14.2857%;">
 
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
 
- 
-
 </td>
 <td style="width: 14.2857%;">
-
- 
-
-</td>
-<td style="width: 14.2857%;">
-
- 
 
 </td>
 </tr>
 </tbody>
 </table>
 
--   list1
--   list2
--   list3
--   list4
+- list1
+- list2
+- list3
+- list4
