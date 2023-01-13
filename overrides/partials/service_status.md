@@ -3,7 +3,7 @@
 <script>
     var scheduledColumn = $('#scheduled-column');
     var incidentsColumn = $('#incidents-column');
-    var formatTime = d3.timeFormat("%d/%m/%Y %H%M");
+    var formatTime = d3.time.format("%d/%m/%Y %H%M");
     var sp = new StatusPage.page({ page: 'nbt2wg9kltqd' });
     sp.summary({
         success: function (data) {
