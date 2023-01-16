@@ -1,6 +1,6 @@
 ---
 template: home.html
-hidden: true
+hidden: false
 ---
 
 # NeSI Support Documentation
