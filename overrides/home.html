@@ -33,12 +33,8 @@
     {% endif %}
     {% endblock %}
     {% block styles %}
-    <link rel="stylesheet" href="{{ 'assets/stylesheets/main.975780f9.min.css' | url }}">
     {% if config.theme.palette %}
     {% set palette = config.theme.palette %}
-    <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.2505c338.min.css' | url }}">
-    <!-- <script src="//theme.zdassets.com/theme_assets/85418/905247fc997b0a23dab1e14985b1adaf20ec1dbb.js"></script>
-    <script src="//theme.zdassets.com/theme_assets/85418/d1a25165c0b31b763dcc501d5f255a5a7a3bdc63.js"></script> -->
     {% if palette.primary %}
     {% import "partials/palette.html" as map %}
     {% set primary = map.primary(
