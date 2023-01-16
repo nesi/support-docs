@@ -33,8 +33,10 @@
     {% endif %}
     {% endblock %}
     {% block styles %}
+    <link rel="stylesheet" href="{{ 'assets/stylesheets/main.975780f9.min.css' | url }}">
     {% if config.theme.palette %}
     {% set palette = config.theme.palette %}
+    <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.2505c338.min.css' | url }}">
     {% if palette.primary %}
     {% import "partials/palette.html" as map %}
     {% set primary = map.primary(
@@ -129,6 +131,7 @@
                     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar">
                         <div class="md-sidebar__scrollwrap">
                             <div class="md-sidebar__inner">
+                                {% include 'partials/service_status.html' %}
                                 {% include "partials/announcements.html" %}
                             </div>
                         </div>
@@ -138,7 +141,6 @@
                     {% block container %}
                     <div class="md-content" data-md-component="content">
                         <section>
-                            {% include 'partials/service_status.md' %}
                         </section>
                         <hr>
                         <section>
