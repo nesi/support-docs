@@ -7,7 +7,6 @@ hidden: false
 
 Use the categories and sections to browse the content, or perform a
 search from the top menu.
-<div>
 <span class="material-icons-outlined">
 person_add
 </span>
@@ -20,7 +19,6 @@ visit
 Account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)\
 [Applying for a NeSI
 project](https://support.nesi.org.nz/hc/en-gb/articles/360000174976)
-</div><div>
 <span class="material-icons-outlined">
 manage_accounts
 </span>
@@ -34,7 +32,6 @@ users, etc.
 Please use [MyNeSI](https://my.nesi.org.nz/) to update your password,
 manage the 2-factor authentication token, and check/request project
 membership.
-</div><div>
 <span class="material-icons-outlined">
 cloud_circle
 </span>
@@ -55,7 +52,6 @@ web-browser approach to using NeSI, you can log in to our JupyterHub:
 For an introduction to the features of Jupyter on NeSI, check out
 [Jupyter on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
-</div><div>
 <span class="material-icons-outlined">
 cloud_sync
 </span>
@@ -67,7 +63,6 @@ data to move, you can schedule transfers via [Globus on
 NeSI.](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)\
 [NESI Globus Web App
 https://transfer.nesi.org.nz/](https://transfer.nesi.org.nz/)
-</div><div>
 <span class="material-icons-outlined">
 miscellaneous_services
 </span>
@@ -87,7 +82,6 @@ and how to write scripts to accomplish various tasks.
 
 [Running Jobs on Māui and
 Mahuika](https://support.nesi.org.nz/hc/en-gb/sections/360000030876)
-</div><div>
 <span class="material-icons-outlined">
 analytics
 </span>
@@ -99,7 +93,6 @@ efficiency](https://support.nesi.org.nz/hc/en-gb/articles/360000903776)\
 Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)\
 [NeSI File Systems and
 Quotas](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
-</div><div>
 <span class="material-icons-outlined">
 school
 </span>
@@ -122,7 +115,6 @@ The NeSI help desk can be contacted via email <support@nesi.org.nz> or
 this
 [support.nesi.org.nz](https://support.nesi.org.nz/hc/en-gb/requests/new)
 site.
-</div><div>
 <span class="material-icons-outlined">
 people_alt
 </span>
@@ -132,4 +124,3 @@ people_alt
 computational and data science support to research project across a
 range of
 domains.](https://support.nesi.org.nz/hc/en-gb/articles/360000751916)
-</div>
