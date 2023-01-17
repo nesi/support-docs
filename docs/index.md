@@ -7,7 +7,7 @@ hidden: false
 
 Use the categories and sections to browse the content, or perform a
 search from the top menu.
-
+<span>
 ## How to request an account
 
 For information on getting an account and allocation with us, please
@@ -17,7 +17,7 @@ visit
 Account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)\
 [Applying for a NeSI
 project](https://support.nesi.org.nz/hc/en-gb/articles/360000174976)
-
+</span><span>
 ## NeSI Account Portal
 
 This is our web portal for managing your account, project, authorized
@@ -28,7 +28,7 @@ users, etc.
 Please use [MyNeSI](https://my.nesi.org.nz/) to update your password,
 manage the 2-factor authentication token, and check/request project
 membership.
-
+</span><span>
 ## ![Getting connected](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png) Getting connected
 
 Logging in to NeSI resources is primarily accomplished via SSH (or
@@ -46,7 +46,7 @@ web-browser approach to using NeSI, you can log in to our JupyterHub:
 For an introduction to the features of Jupyter on NeSI, check out
 [Jupyter on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
-
+</span><span>
 ## ![Transferring Files](//theme.zdassets.com/theme_assets/85418/79671a6d774b40afcb09faac902942fed76cfca8.png) Transferring Files
 
 Small files can be moved to and from NeSI systems inside of Jupyter. SCP
@@ -55,7 +55,7 @@ data to move, you can schedule transfers via [Globus on
 NeSI.](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)\
 [NESI Globus Web App
 https://transfer.nesi.org.nz/](https://transfer.nesi.org.nz/)
-
+</span><span>
 ## ![Submitting Jobs](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png) Submitting Jobs
 
 Instructions to be executed by the node(s) assigned to you when your
@@ -72,6 +72,7 @@ and how to write scripts to accomplish various tasks.
 
 [Running Jobs on Māui and
 Mahuika](https://support.nesi.org.nz/hc/en-gb/sections/360000030876)
+</span><span>
 
 ## ![Usage reporting](//theme.zdassets.com/theme_assets/85418/c8f68fb4c794d902683e2abdc7a22e20abf4fa82.png) Usage reporting
 
@@ -81,6 +82,7 @@ efficiency](https://support.nesi.org.nz/hc/en-gb/articles/360000903776)\
 Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)\
 [NeSI File Systems and
 Quotas](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
+</span><span>
 
 ## ![Training](//theme.zdassets.com/theme_assets/85418/d84f915c1b7b670c39e246a991d877c9ac21d3e2.png) Training
 
@@ -101,6 +103,7 @@ The NeSI help desk can be contacted via email <support@nesi.org.nz> or
 this
 [support.nesi.org.nz](https://support.nesi.org.nz/hc/en-gb/requests/new)
 site.
+</span><span>
 
 ## ![NeSI Consultancy](//theme.zdassets.com/theme_assets/85418/9a90082aeba086623edb2a7d51d4dc02cfeb391f.png) NeSI Consultancy
 
@@ -108,3 +111,4 @@ site.
 computational and data science support to research project across a
 range of
 domains.](https://support.nesi.org.nz/hc/en-gb/articles/360000751916)
+</span>
