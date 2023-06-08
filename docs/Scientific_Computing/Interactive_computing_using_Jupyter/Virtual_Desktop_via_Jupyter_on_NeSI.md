@@ -2,7 +2,7 @@
 created_at: '2020-07-08T01:45:40Z'
 hidden: false
 label_names: []
-position: 2
+position: 3
 title: Virtual Desktop via Jupyter on NeSI
 vote_count: 2
 vote_sum: 2
@@ -16,11 +16,10 @@ NeSI software stack is supported. If you would like to build your own
 desktop containers with the code
 [here](https://github.com/nesi/nesi-singularity-recipes).
 
-Rendering is d<dfn class="dictionary-of-numbers">one cluster-side</dfn>,
-and compressed before being sent to your local machine. This means any
-rendering should be significantly more responsive than when using
-X<dfn class="dictionary-of-numbers">11 on its own </dfn>(approximately
-<dfn class="dictionary-of-numbers">40 times faster)</dfn>.
+Rendering is done cluster-side, and compressed before being sent to your
+local machine. This means any rendering should be significantly more
+responsive than when using X11 on its own (approximately 40 times
+faster).
 
 The quickest and easiest way to get started with a desktop is through
 Jupyter on NeSI, [connect here](https://jupyter.nesi.org.nz/).
@@ -29,12 +28,6 @@ Jupyter on NeSI, [connect here](https://jupyter.nesi.org.nz/).
 
 Click the icon labelled 'VirtualDesktop', The desktop instance will last
 as long as your Jupyter session.
-
-## Setup Scripts
-
-Several scripts are available that will help you get started by setting
-up desktop shortcuts and loading module in the base environment. These
-can be found at `$VDT_ROOT/setup_scripts`
 
 # Settings
 
@@ -46,19 +39,27 @@ environment. Modules to be loaded in the desktop can be set by modifying
 the file at `~/.vdt/vdtrc.sh`. This file is sourced before launching the
 desktop.
 
-##  
+## Setup Scripts
 
-## noVNC
+Several scripts are available that will help you get started by setting
+up desktop shortcuts and loading module in the base environment. These
+can be found at `$VDT_ROOT/setup_scripts`
 
-Recommend setting scaling to 'remote'
-
-<img src="../includes/fig1.svg" width="426" height="362" />![](../includes/VirtualScaling.png)
-
-> ### Restore Defaults
->
-> All local settings can be restored by running the command `vdt clean`
-> (or `/opt/nesi/vdt clean`). Note, this will probably break any running
-> desktop sessions.
+<!--
+<h2>noVNC</h2>
+<p>Recommend setting scaling to 'remote'</p>
+<div style="display: flex;">
+  <img src="https://support.nesi.org.nz/hc/article_attachments/360004678036/fig1.svg" width="426" height="362"><img src="https://support.nesi.org.nz/hc/article_attachments/360005192376/VirtualScaling.png">
+</div>
+<blockquote class="blockquote-warning">
+  <h3 id="prerequisites">Restore Defaults</h3>
+  <p>
+    All local settings can be restored by running the command
+    <code>vdt clean</code> (or <code>/opt/nesi/vdt clean</code>). Note, this
+    will probably break any running desktop sessions.
+  </p>
+</blockquote>
+-->
 
 *You can help contribute to this
 project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*

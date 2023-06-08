@@ -2,10 +2,10 @@
 created_at: '2019-01-18T01:56:15Z'
 hidden: false
 label_names: []
-position: 12
+position: 14
 title: 'SLURM: Best Practice'
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 1
 zendesk_article_id: 360000705196
 zendesk_section_id: 360000030876
 ---

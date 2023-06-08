@@ -4,7 +4,7 @@ hidden: false
 label_names:
 - maui
 - slurm
-position: 9
+position: 11
 title: "M\u0101ui Slurm Partitions"
 vote_count: 1
 vote_sum: 1

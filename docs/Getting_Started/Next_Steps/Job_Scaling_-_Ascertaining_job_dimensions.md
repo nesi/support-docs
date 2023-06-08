@@ -3,7 +3,7 @@ created_at: '2019-01-31T01:17:22Z'
 hidden: false
 label_names:
 - scaling
-position: 3
+position: 6
 title: Job Scaling - Ascertaining job dimensions
 vote_count: 1
 vote_sum: 1

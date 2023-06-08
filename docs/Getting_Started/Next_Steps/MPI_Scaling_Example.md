@@ -2,10 +2,10 @@
 created_at: '2019-09-22T21:07:28Z'
 hidden: false
 label_names: []
-position: 5
+position: 8
 title: MPI Scaling Example
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 0
 zendesk_article_id: 360001173875
 zendesk_section_id: 360000189716
 ---

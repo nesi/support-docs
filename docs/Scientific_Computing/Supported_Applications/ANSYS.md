@@ -5,7 +5,7 @@ label_names:
 - mahuika
 - application
 - engineering
-position: 10
+position: 24
 title: ANSYS
 vote_count: 3
 vote_sum: 3

@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 0
 title: File Recovery
-vote_count: 7
-vote_sum: 5
+vote_count: 8
+vote_sum: 6
 zendesk_article_id: 360000207315
 zendesk_section_id: 360000042215
 ---

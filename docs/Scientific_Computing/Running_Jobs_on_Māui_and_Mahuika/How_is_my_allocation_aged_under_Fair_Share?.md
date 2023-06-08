@@ -2,7 +2,7 @@
 created_at: '2019-06-19T10:31:21Z'
 hidden: true
 label_names: []
-position: 5
+position: 6
 title: How is my allocation aged under Fair Share?
 vote_count: 0
 vote_sum: 0

@@ -2,7 +2,7 @@
 created_at: '2019-09-22T21:07:48Z'
 hidden: false
 label_names: []
-position: 4
+position: 7
 title: Multithreading Scaling Example
 vote_count: 0
 vote_sum: 0
@@ -187,6 +187,11 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 </tbody>
 </table>
 
+The two above plots show the number of CPUs vs time and the Log2 of the
+CPUs vs time. The reason we have both is that it can often be easier to
+see the inflection point on the Log2 graph when the speed up from
+increasing the number of CPUs start to level off.
+
 As we can see, increasing the number of CPU cores doesn't linearly
 increase the job's speed. This non-linear speed-up is called Amdahl's
 Law, and reflects the fact that there is a fixed part of the computation
@@ -197,6 +202,10 @@ Indeed, the difference in speed between 14 and 16 CPU cores is very
 small. We could try running our script with more than 16 CPU cores,
 however, in the case of this script we start to have a pretty
 significant drop in marginal speed-up after eight CPU cores.
+
+ 
+
+<img src="../includes/blobid1.png" width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase
@@ -215,7 +224,7 @@ the memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.75 GB.
 
-## Estimating our Total Resource Requirments
+## Estimating our Total Resource Requirements
 
 Now that we know approximately how our job's CPU, memory and wall
 requirements scale, we can try and estimate our total resource

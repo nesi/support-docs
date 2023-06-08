@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 0
 title: 'tmux: Reference sheet'
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 4563511601679
 zendesk_section_id: 360000278975
 ---

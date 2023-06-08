@@ -19,20 +19,25 @@ sessions are open to anyone - you don't need to be an existing NeSI
 user.  
   
 
-## **Office Hours in December 2022**
+## **Office Hours in June 2023**
 
 Click on the links below to add the date & Zoom link to your calendar.
 
--   [07 December : 9:00-10:00
-    AM ](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjY2NjlpcXBjZnZyMXFubHY2dG5paHJiNXAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [14 December : 3:00-4:00
-    PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NjF0cnN0dHY5MzRkY2kxdmpxcGhrY2hsZWYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
--   [21 December : 9:00-10:00
-    AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjEzazVhbXM0YzA2aWZyOWZqcTRjOTJoZWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**07 June (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjA5OHIzZXFtN3I4Mjh0a2JocmY1djM2M3MgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
-If you are unable to add these Office Hours sessions to your calendar
-through these links, please email us
-at <a href="mailto:training@nesi.org.nz" class="mailto">training@nesi.org.nz</a> and
+-   [**14 June (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmQ1aXV1Zml1a2Q0bzdidGdybWNva2RwcTggY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**21 June (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWl0dXYyNDRlYTJqMWx1YWszdXBkNzc5YmMgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**28 June (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NjRtbmhodGVsMDE5czNoZDlmaW9lMmJoN20gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+If you are unable to add this Office Hour session to your calendar
+through these links, please email us at
+<a href="mailto:training@nesi.org.nz" class="mailto">training@nesi.org.nz</a> and
 we can send a calendar invite directly to you.   
   
 
@@ -43,9 +48,10 @@ pop in at any point during the hour and stay for as long or as little as
 you'd like. 
 
 Also, don't worry if you have a question or challenge that can't be
-solved on the spot. We can always use the Office Hours to collect some
-basic information about your issue and then reconnect with you at a
-later time to troubleshoot things further.
+solved on the spot.  
+We can always use the Office Hours to collect some basic information
+about your issue and then reconnect with you at a later time to
+troubleshoot things further.
 
  
 

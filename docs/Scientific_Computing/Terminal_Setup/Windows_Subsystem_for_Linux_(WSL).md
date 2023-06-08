@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 5
 title: Windows Subsystem for Linux (WSL)
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 360001075575
 zendesk_section_id: 360000189696
 ---

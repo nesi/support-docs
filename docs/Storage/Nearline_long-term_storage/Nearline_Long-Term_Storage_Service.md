@@ -6,7 +6,7 @@ label_names:
 - nearline
 - tape
 position: 0
-title: Long-Term Storage Service (Nearline)
+title: Nearline Long-Term Storage Service
 vote_count: 2
 vote_sum: 2
 zendesk_article_id: 360001169956
@@ -19,35 +19,17 @@ Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline
 
-> ### Service Status
->
-> Before deleting any data from your project or nobackup directory that
-> has been uploaded to Nearline, please consider whether you require
-> [verification of the
-> transfer](https://support.nesi.org.nz/hc/en-gb/articles/360001482516).
-> We recommend that you do at least a basic verification of all
-> transfers.
->
-> **Please note:** Best practice in research data management and data
-> archiving is to use multiple storage technologies. In particular, any
-> data that is irreplaceable and/or has regulatory retention
-> requirements, should not rely solely on NeSI’s Nearline service as the
-> only copy.
->
-> Please **send feedback** about your user experience at
-> <a href="https://support.nesi.org.nz/hc/requests/new" class="uri external-link">https://support.nesi.org.nz/hc/requests/new</a>,
-> which may include functionality issues, intuitive or counter-intuitive
-> behaviours, behaviours or features that you like, suggestions for
-> improvements, transfers taking too long, etc.
+ 
 
-NeSI's Long-Term Storage aka Nearline service allows you to store your
-data on our hierarchical system, which consists of a staging area (disk)
-connected to a tape library. Users of this service gain access to more
-persistent storage space for their research data, in return for slower
-access to those files that are stored on tape. We recommend that you use
-this service for larger datasets that you will only need to access
+NeSI's Nearline service allows you to store your data on our
+hierarchical system, which consists of a staging area (disk) connected
+to a tape library. Users of this service gain access to more persistent
+storage space for their research data, in return for slower access to
+those files that are stored on tape. We recommend that you use this
+service for larger datasets that you will only need to access
 occasionally and will not need to change in situ. The retrieval of data
-may be delayed, due to tape handling.
+may be delayed, due to tape handling, queuing of the nearline backend
+service and size of the data to be ingested or retrieved..
 
 Due to the tape storage backend Nearline is intended for use with
 relatively large files and should not be used for a large number of
@@ -59,19 +41,10 @@ when the source data has been updated) is not supported, these must
 first be removed (purged from Nearline) before being written (put to
 Nearline) again.
 
-> ### Note
->
-> The existing directory structure starting after
-> `/nesi/project/<projectID>/` or `/nesi/nobackup/<projectID>/` will be
-> mapped onto `/nesi/nearline/<projectID>/`. While retrieving data, the
-> whole directory structure after `/nesi/nearline/<projectID>` will be
-> mapped into the target directory. See [details](#directory_mapping)
-> below for details.
-
-A Nearline project gets locked when writing to or deleting from it.
-Until this process is finished no other write or delete operation can be
-performed on the same project and the user will see a status message
-"**project locked by none**".
+**IMPORTANT**: A Nearline project gets locked when writing to or
+deleting from it. Until this process is finished no other write or
+delete operation can be performed on the same project and the user will
+see a status message "**project locked by none**".
 
 # What you can do
 
@@ -92,20 +65,24 @@ The client allows you to carry out the following operations:
 
 # Getting started
 
-Nearline has a common tool for access, with a set of `nl` commands,
+Nearline has a common tool for access, with a set of `nl*` commands,
 which are accessible by loading the following module:
 
     module load nearline
 
-> ### Note
->
-> You may notice that in the above command no specific version of the
-> Nearline software is chosen. This is deliberate, and is designed to
-> ensure that you get the latest and greatest release, since Nearline is
-> under active development. It's an exception to our normal practice of
-> strongly advising you to load a specific version of a software module.
-
  
+
+**Please Note**: You may notice that in the above command no specific
+version of the Nearline software is chosen. This is deliberate, and is
+designed to ensure that you get the latest and greatest release, since
+Nearline is under active development. It's an exception to our normal
+practice of strongly advising you to load a specific version of a
+software module.
+
+**Best practice in research data management and data archiving** is to
+use multiple storage technologies. In particular, any data that is
+irreplaceable and/or has regulatory retention requirements, should not
+rely solely on NeSI’s Nearline service as the only copy.
 
 # View files
 
@@ -140,6 +117,10 @@ Status ("s" column of the `-s` output) legend:
     the staging filesystem and the tape.
 -   resident (**r**) - data of a specific Nearline file is only on the
     staging filesystem.
+
+**WARNING:** The `-l` and  `-s`flags may fail if the nearline dorectory
+has a large amount of files.  You will receive a long Python stack trace
+if this occurs.  This is a known bug.
 
 # Traverse
 
@@ -196,9 +177,15 @@ The source directory or file list needs to be located under
 The data will be mapped into the same directory structure under
 `/nesi/nearline/` (see below).
 
+> ### Warning
+>
+> Please ensure your file or directory names do not contain spaces,
+> non-standard characters or symbols. This may cause issues when
+> uploading or downloading files.
+
 The recommended file size to archive is between 1 GB and 1 TB. The
-client will not accept any directory or file list containing any file
-smaller than 64 MB or larger than 1 TB.
+client **will not** accept any directory or file list containing any
+file smaller than 64 MB or larger than 1 TB.
 
 The Nearline client also checks file and directory permissions.
 Specifically, before uploading a directory or the contents of a file
@@ -222,6 +209,10 @@ list, the following additional permission restrictions apply:
     group.
 -   The POSIX group of every subdirectory must be the project selected
     for upload.
+
+The existing directory structure starting after
+`/nesi/project/<projectID>/` or `/nesi/nobackup/<projectID>/` will be
+mapped onto `/nesi/nearline/<projectID>/`
 
 > ### Warning
 >
@@ -299,6 +290,12 @@ As a good practice:
     files.
 -   Do not try to modify a file in the source (nobackup or project)
     directory once there is a copy of it on Nearline.
+-   Before deleting any data from your project or nobackup directory
+    that has been uploaded to Nearline, please consider whether you
+    require [verification of the
+    transfer](https://support.nesi.org.nz/hc/en-gb/articles/360001482516).
+    We recommend that you do at least a basic verification of all
+    transfers.
 
 If you need to update data on the Nearline file system with a newer
 version of data from nobackup or project:
@@ -366,12 +363,13 @@ The destination `dest_dir` needs to be defined. The whole directory
 structure after `/nesi/nearline/` will be created at the destination and
 the specified data written into it. For example,
 
-    nlget nesi00000 /nesi/nearline/nesi00000/dir/to/results/ /nesi/nobackup/
+    nlget nesi00000 /nesi/nearline/nesi00000/dir/to/results/ /nesi/nobackup/nesi00000
 
 will create the directory structure
-`/nesi/nobackup/nesi00000/dir/to/results/` if that directory structure
-does not already exist, and copy the data within the `Results` directory
-into it.
+`/nesi/nobackup/nesi00000/nesi00000/dir/to/results/` if that directory
+structure does not already exist, and copy the data within the `Results`
+directory into it.  Note that the output pathe will include the project
+root in the path.
 
 > ### Warning
 >
@@ -546,7 +544,10 @@ indeed wait times could be hours or even in some cases more than a day.
 
 # Support contact
 
-Please [contact our support
-team](https://support.nesi.org.nz/hc/requests/new) with any queries or
-concerns you may have regarding this service. We welcome feedback from
-our users.
+Please **send feedback** about your user experience at
+<a href="https://support.nesi.org.nz/hc/requests/new" class="uri external-link">https://support.nesi.org.nz/hc/requests/new</a>,
+which may include functionality issues, intuitive or counter-intuitive
+behaviours, behaviours or features that you like, suggestions for
+improvements, transfers taking too long, etc.
+
+We welcome feedback from our users.

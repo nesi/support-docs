@@ -91,4 +91,15 @@ multithreaded programs in which the threads perform buffered I/O. IOBUF
 can be linked into programs that use these I/O styles, but buffering
 should not be enabled on those files.
 
+## Data compression
+
+The file system the NeSI platforms use allow for transparent compression
+of data, meaning you can reduce the storage footprint of your data
+without needing to add any extra steps in your workflow unless you want
+to decompress the data after use. However, testing has shown that there
+can be an impact on job performance due to I/O. You can find out more
+about tests and results with regards to jobs performance of transparent
+data compression on the NeSI platforms on our [Data Compression support
+page](https://support.nesi.org.nz/hc/en-gb/articles/6359601973135).
+
  

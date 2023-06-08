@@ -4,10 +4,10 @@ hidden: false
 label_names:
 - slurm
 - scheduler
-position: 1
+position: 3
 title: Submitting your first job
-vote_count: 6
-vote_sum: 6
+vote_count: 7
+vote_sum: 7
 zendesk_article_id: 360000684396
 zendesk_section_id: 360000189716
 ---

@@ -3,7 +3,7 @@ created_at: '2020-04-19T22:59:58Z'
 hidden: false
 label_names:
 - gpu
-position: 1
+position: 3
 title: GPU use on NeSI
 vote_count: 0
 vote_sum: 0
@@ -46,35 +46,78 @@ add the following option at the beginning of your submission script:
 
     #SBATCH --gpus-per-node=1
 
-You can specify the type of GPU you need, depending on which ones you
-have access to with your allocation. If you wish to use the A100 GPUs
-please [contact our support
-team](https://support.nesi.org.nz/hc/requests/new) to learn more about
-getting access to the A100 GPU cards.
+You can specify the type and number of GPU you need using the following
+syntax
 
-For example, to access a P100 card, use the following option:
+    #SBATCH --gpus-per-node=<gpu_type>:<gpu_number>
 
-    #SBATCH --gpus-per-node=P100:1
+If not specified, the default GPU type is `P100`. For some types of GPU,
+you also need to specify a partition. Here is a summary of typical use
+cases:
 
-On Mahuika, you can request 2 GPUs per node using:
+-   1 P100 GPU on Mahuika
 
-    #SBATCH --gpus-per-node=P100:2
+        #SBATCH --gpus-per-node=P100:1
 
-Conversely, to request A100 GPU devices, do this:
+-   1 P100 GPU on Māui Ancillary Nodes
 
--   To use one A100:
+        #SBATCH --partition=nesi_gpu
+        #SBATCH --gpus-per-node=P100:1
+
+-   2 P100 GPUs per node on Mahuika
+
+        #SBATCH --gpus-per-node=P100:2
+
+    *You cannot ask for more than 2 P100 GPU per node on Mahuika.*
+
+-   1 A100 (40GB) GPU on Mahuika
 
         #SBATCH --gpus-per-node=A100:1
 
--   To use two A100s:
+-   2 A100 (40GB) GPUs on Mahuika
 
         #SBATCH --gpus-per-node=A100:2
 
-To access an A100-1g.5gb GPU, use:
+    *You cannot ask for more than 2 A100 (40GB) GPUs per node on
+    Mahuika.*
 
-    #SBATCH --gpus-per-node=A100-1g.5gb:1
+-   1 A100-1g.5gb GPU on Mahuika
 
-If not specified, the default GPU type is *P100*.
+        #SBATCH --gpus-per-node=A100-1g.5gb:1
+
+    *This type of GPU is limited to 1 job per user and recommended for
+    development and debugging.*
+
+-   1 A100 (80GB) GPU on Mahuika
+
+        #SBATCH --partition=hgx
+        #SBATCH --gpus-per-node=A100:1
+
+    *These GPUs are on Milan nodes, check the [dedicated support
+    page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
+    for more information.*
+
+-   4 A100 (80GB & NVLink) GPU on Mahuika
+
+        #SBATCH --partition=hgx
+        #SBATCH --gpus-per-node=A100:4
+
+    *These GPUs are on Milan nodes, check the [dedicated support
+    page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
+    for more information.*
+
+    *You cannot ask for more than 4 A100 (80GB) GPUs per node on
+    Mahuika.*
+
+-   1 A100 GPU on Mahuika, regardless of the type
+
+        #SBATCH --partition=gpu,hgx
+        #SBATCH --gpus-per-node=A100:1
+
+    *With this configuration, your job will spend less time in the
+    queue, using whichever A100 GPU is available. It may land on a
+    regular Mahuika node (A100 40GB GPU) or on a Milan node (A100 80GB
+    GPU).*
 
 You can also use the `--gpus-per-node`option in [Slurm interactive
 sessions](https://support.nesi.org.nz/hc/en-gb/articles/360001316356),
@@ -97,13 +140,6 @@ duration of 30 minutes.
 >     srun: job 20015016 has been allocated resources
 >     $ echo $CUDA_VISIBLE_DEVICES
 >     0,1
-
-> ### Note
->
-> On Māui Ancillary Nodes, you also need to request the *nesi\_gpu*
-> partition to have access to the GPU.
->
->     #SBATCH --partition=nesi_gpu
 
 # Load CUDA and cuDNN modules
 
@@ -264,8 +300,6 @@ graphical interface.
 The following pages provide additional information for supported
 applications:
 
-<ul>
-<ul>
 -   [ABAQUS](https://support.nesi.org.nz/hc/en-gb/articles/212457807-ABAQUS#gpus)
 -   [GROMACS](https://support.nesi.org.nz/hc/en-gb/articles/360000792856-GROMACS#nvidia_gpu_container)
 -   [Lambda
@@ -274,16 +308,11 @@ applications:
 -   [TensorFlow on
     GPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow-on-GPUs)
 
-</ul>
-</ul>
 And programming toolkits:
 
-<ul>
 -   [Offloading to GPU with
     OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)
 -   [Offloading to GPU with OpenACC using the Cray
     compiler](https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler)
 -   [NVIDIA GPU
     Containers](https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers)
-
-</ul>

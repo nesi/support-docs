@@ -5,8 +5,8 @@ label_names:
 - disk quota exceeded
 position: 0
 title: I've run out of storage space
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 1
 zendesk_article_id: 360001125996
 zendesk_section_id: 360000039036
 ---

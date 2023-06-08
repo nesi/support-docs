@@ -301,9 +301,10 @@ If you only qualify for a Proposal Development allocation right now,
 please [get in touch with
 us](https://support.nesi.org.nz/hc/requests/new) before applying for a
 new project. Our Engagement Team is happy to talk to you and
-representatives of your institution about subscription options. It's
-best to start talking to us early as subscription contracts can take a
-while to set up.
+representatives of your institution about [Subscription
+options](https://www.nesi.org.nz/community/partners-pricing#subscriptions).
+It's best to start talking to us early as Subscription contracts can
+take a while to set up.
 
 Our team is happy to answer any questions you may have throughout the
 application process.

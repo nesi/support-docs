@@ -39,22 +39,25 @@ and workflows and much more.
 > -   See the [RStudio via Jupyter on
 >     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
 >     page for launching an RStudio instance.
+> -   See the [MATLAB via Jupyter on
+>     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4614893064591)
+>     page for launching MATLAB via Jupyter
 > -   See the [Virtual Desktop via Jupyter on
 >     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
 >     page for launching a virtual desktop via Jupyter.
-> -   See the [Jupyter kernels - Manual
->     management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
->     and [Jupyter kernels - Tool-assisted
+> -   See the [Jupyter kernels - Tool-assisted
 >     management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
+>     (recommended) and [Jupyter kernels - Manual
+>     management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
 >     pages for adding kernels.
 
 # Accessing Jupyter on NeSI
 
-*Jupyter at NeSI is powered by [JupyterHub](https://jupyter.org/hub), a
+Jupyter at NeSI is powered by [JupyterHub](https://jupyter.org/hub), a
 multi-user hub that spawns, manages and proxies multiple instances of
-the single-user Jupyter server.*
+the single-user Jupyter server.
 
-Access NeSI's JupyterHub here:
+#### Access NeSI's JupyterHub here:
 
 <https://jupyter.nesi.org.nz>
 
@@ -87,14 +90,6 @@ GPUs available at NeSI.
         slurmstepd: error: Unable to create TMPDIR [/dev/shm/jobs/28560712]: Permission denied
         slurmstepd: error: Setting TMPDIR to /tmp
 
-# Feedback
-
-A dedicated
-[portal](https://portal.productboard.com/2k2ojgehbq7ovnyzmcjp1nxg) is
-available to share feedback and ideas with NeSI.  
-See also [How to submit feedback or a new idea using a product
-portal?](https://support.nesi.org.nz/hc/en-gb/articles/360001504596)
-
 # Jupyter user interface
 
 ## JupyterLab
@@ -123,26 +118,21 @@ JupyterLab provides a terminal that can be an alternative means of
 gaining command line access to NeSI systems instead of using an SSH
 client. Some things to note are:
 
- 
-
 -   when you launch the terminal application some environment modules
     are already loaded, so you may want to run `module purge` 
 -   processes launched directly in the JupyterLab terminal will probably
     be killed when you Jupyter session times out
--   you may run into issues trying to submit a job with *sbatch* from
-    the JupyterLab terminal, to avoid this we recommend not passing the
-    environment through to the Slurm job by setting the following in
-    your batch script:
-    -   #SBATCH --export=NONE
-
-    -   export SLURM_EXPORT_ENV=ALL
 
 # Ending your interactive session and logging out
 
-To end a JupyterLab session, please select "Control Panel" under the
-File menu and then "Stop My Server". If you click Logout without
-stopping your server, the server will continue to run until the Slurm
-job reaches its maximum wall time.
+To end a JupyterLab session, please select "Hub Control Panel" under the
+File menu then "Stop My Server". Finally, click on "Log Out".
+
+<embed src="../includes/6551812176911.name_me" width="208" height="394" />
+<embed src="../includes/6551880407439.name_me" width="408" height="67" />
+
+If you click "Log Out" without stopping your server, the server will
+continue to run until the Slurm job reaches its maximum wall time.
 
 # Installing JupyterLab extensions
 

@@ -7,8 +7,8 @@ label_names:
 - mynesi
 position: 5
 title: Account Requests for non-Tuakiri Members
-vote_count: 4
-vote_sum: -4
+vote_count: 5
+vote_sum: -3
 zendesk_article_id: 360000216035
 zendesk_section_id: 360000224835
 ---

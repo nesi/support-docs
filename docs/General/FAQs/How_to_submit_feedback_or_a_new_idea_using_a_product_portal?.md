@@ -1,6 +1,6 @@
 ---
 created_at: '2020-05-04T01:56:21Z'
-hidden: false
+hidden: true
 label_names: []
 position: 0
 title: How to submit feedback or a new idea using a product portal?

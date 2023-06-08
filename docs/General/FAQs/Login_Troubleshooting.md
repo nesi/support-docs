@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 13
 title: Login Troubleshooting
-vote_count: 3
-vote_sum: -1
+vote_count: 4
+vote_sum: 0
 zendesk_article_id: 360000570215
 zendesk_section_id: 360000039036
 ---

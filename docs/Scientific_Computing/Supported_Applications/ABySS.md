@@ -5,7 +5,7 @@ label_names:
 - mahuika
 - tier1
 - biology
-position: 8
+position: 22
 title: ABySS
 vote_count: 0
 vote_sum: 0

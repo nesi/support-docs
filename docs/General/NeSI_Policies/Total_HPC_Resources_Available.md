@@ -7,7 +7,7 @@ title: Total HPC Resources Available
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360000201756
-zendesk_section_id: 360000034335
+zendesk_section_id: 360000224835
 ---
 
 NeSI resources available for allocation each year combined across both
