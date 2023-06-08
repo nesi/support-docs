@@ -1,6 +1,6 @@
 ---
 created_at: '2022-12-13T21:40:10Z'
-hidden: true
+hidden: false
 label_names:
 - releasenote
 position: 0
@@ -11,7 +11,7 @@ zendesk_article_id: 6042955367439
 zendesk_section_id: 360001091155
 ---
 
-## Release Update - 15. December 2022
+## Release Update - 17. January 2023
 
 ## New and Improved
 

@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 3
 title: WinSCP/PuTTY Setup (Windows)
-vote_count: 2
-vote_sum: 0
+vote_count: 3
+vote_sum: 1
 zendesk_article_id: 360000584256
 zendesk_section_id: 360000189696
 ---

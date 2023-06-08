@@ -2,7 +2,7 @@
 created_at: '2018-07-31T02:05:23Z'
 hidden: true
 label_names: []
-position: 11
+position: 13
 title: 'Slurm Usage: A Primer'
 vote_count: 0
 vote_sum: 0

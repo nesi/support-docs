@@ -5,8 +5,8 @@ label_names:
 - faq
 position: 0
 title: What does "oom-kill" mean?
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 360000532595
 zendesk_section_id: 360000039036
 ---

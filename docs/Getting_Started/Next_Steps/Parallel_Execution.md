@@ -2,10 +2,10 @@
 created_at: '2019-01-10T03:02:11Z'
 hidden: false
 label_names: []
-position: 2
+position: 4
 title: Parallel Execution
-vote_count: 5
-vote_sum: 3
+vote_count: 6
+vote_sum: 4
 zendesk_article_id: 360000690275
 zendesk_section_id: 360000189716
 ---

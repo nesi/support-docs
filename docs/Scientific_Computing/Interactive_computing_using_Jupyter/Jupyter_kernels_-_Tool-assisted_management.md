@@ -2,7 +2,7 @@
 created_at: '2022-01-31T21:28:03Z'
 hidden: false
 label_names: []
-position: 3
+position: 4
 title: Jupyter kernels - Tool-assisted management
 vote_count: 1
 vote_sum: 1
@@ -22,7 +22,7 @@ To register a Jupyter kernel, you can follow the steps highlighted in
 the [Jupyter kernels - Manual
 management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
 or use the `nesi-add-kernel` tool provided on Jupyter on NeSI service.
-This page details the latter option.
+This page details the latter option, which we recommend.
 
 # Getting started
 
@@ -40,11 +40,11 @@ follows:
 
 Here is an example to add a TensorFlow kernel, using NeSI’s module:
 
-    nesi-add-kernel tf_kernel TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
+    nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 
 and to share the kernel with other members of your NeSI project:
 
-    nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
+    nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5 
 
 To list all the installed kernels, use the following command:
 
@@ -73,16 +73,16 @@ If you want to use a Python virtual environment, don’t forget to specify
 which Python module you used to create it.
 
 For example, if we create a virtual environment named `my_test_venv`
-using Python 3.8.2:
+using Python 3.10.5:
 
     module purge
-    module load Python/3.8.2-gimkl-2020a
+    module load Python/3.10.5-gimkl-2022a
     python -m venv my_test_venv
 
 to create the corresponding `my_test_kernel` kernel, we need to use the
 command:
 
-    nesi-add-kernel my_test_kernel Python/3.8.2-gimkl-2020a --venv my_test_venv
+    nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 
 # Singularity container
 

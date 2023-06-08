@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 0
 title: Converting from Windows-style to UNIX-style line endings
-vote_count: 30
-vote_sum: 6
+vote_count: 39
+vote_sum: 7
 zendesk_article_id: 218032857
 zendesk_section_id: 360000039036
 ---

@@ -8,8 +8,8 @@ label_names:
 - view
 position: 0
 title: How can I view images generated on the cluster?
-vote_count: 1
-vote_sum: 1
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 360001514795
 zendesk_section_id: 360000039036
 ---

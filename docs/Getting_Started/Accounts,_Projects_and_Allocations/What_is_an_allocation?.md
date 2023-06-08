@@ -23,16 +23,15 @@ allocation
 classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176) to
 find out what class you're likely eligible for.
 
-# HPC Compute & Analytics allocations
+# HPC Platform allocations
 
 The form of NeSI allocation you may be most familiar with is an
-allocation of computing power. We currently offer three sorts of HPC
-Compute allocations, of which your project needs at least two (online
-storage plus one kind of compute allocation) in order to be valid and
-active.
+allocation of computing power. We currently offer three sorts of compute
+allocations, of which your project needs at least two (online storage
+plus one kind of compute allocation) in order to be valid and active.
 
-HPC Compute allocations are expressed in terms of a number of units, to
-be consumed or reserved between a set start date and time and a set end
+Compute allocations are expressed in terms of a number of units, to be
+consumed or reserved between a set start date and time and a set end
 date and time. For allocations of computing power, we use [Fair
 Share](https://support.nesi.org.nz/hc/en-gb/articles/360000743536) to
 balance work between different projects. NeSI allocations and the
@@ -119,7 +118,7 @@ granted to your persistent project directory.
 We do not yet have a ratio of online storage disk space or inodes to
 Mahuika compute units.
 
-# Data Storage & Transfer allocations
+# Data storage allocations
 
 ## Nearline storage allocations
 
@@ -132,9 +131,7 @@ available for your project team to use on our nearline apparatus.
 We do not yet have a ratio of nearline storage tape space or inodes to
 Mahuika compute units.
 
-# Consultancy & Training allocations
-
-## Consultancy allocations
+# Consultancy allocations
 
 A consultancy allocation is for a number of scientific programmer hours
 between two dates, or is sometimes expressed as a fraction of an FTE
@@ -144,9 +141,4 @@ scientific programming expertise to your project.
 We do not yet have a ratio of consultancy hours to Mahuika compute
 units.
 
-## Training courses
-
-NeSI training courses are not subject to a systematic allocation
-mechanism. To enquire about the possibility of NeSI running a course at
-your institution please [contact our training
-team](mailto:training@nesi.org.nz).
+ 

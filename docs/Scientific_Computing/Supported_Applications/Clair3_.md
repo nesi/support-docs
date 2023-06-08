@@ -2,7 +2,7 @@
 created_at: '2022-08-10T21:31:45Z'
 hidden: false
 label_names: []
-position: 0
+position: 3
 title: 'Clair3 '
 vote_count: 0
 vote_sum: 0
@@ -51,37 +51,9 @@ met:
     contributors may be used to endorse or promote products derived from
     this software without specific prior written permission.
 
-# Singularity container
+<!-- -->
 
-Although we do not provide Clair3 as a module, it is available as a
-Singularity container which is stored in `/opt/nesi/container/Clair3`   
-
-    /opt/nesi/containers/Clair3/
-    └── clair3_Aug2022.simg
-
-### How to use Clair3 with Singularity
-
-**Caution**: Absolute path is needed for both `INPUT_DIR` and
-`OUTPUT_DIR`.
-
-    INPUT_DIR="[YOUR_INPUT_FOLDER]"        # e.g. /nesi/nobackup/nesi12345/input (absolute path needed)
-    OUTPUT_DIR="[YOUR_OUTPUT_FOLDER]"      # e.g. /nesi/nobackup/nesi12345/output (absolute path needed)
-    THREADS="[MAXIMUM_THREADS]"            # e.g. Refer to Slurm script below for more information on this
-    MODEL_NAME="[YOUR_MODEL_NAME]"         # e.g. r941_prom_hac_g360+g422
-
-    # run clair3 like this afterward
-    singularity exec clair3_latest.sif \
-      /opt/bin/run_clair3.sh \
-      --bam_fn=${INPUT_DIR}/input.bam \    ## change your bam file name here
-      --ref_fn=${INPUT_DIR}/ref.fa \       ## change your reference file name here
-      --threads=${THREADS} \               ## maximum threads to be used
-      --platform="ont" \                   ## options: {ont,hifi,ilmn}
-      --model_path="/opt/models/${MODEL_NAME}" \
-      --output=${OUTPUT_DIR}               ## absolute output path prefix
-
-##  
-
-##  
+     
 
 ## Example Slurm script
 
@@ -95,33 +67,30 @@ Singularity container which is stored in `/opt/nesi/container/Clair3`   
 
     #SBATCH --account       nesi12345
     #SBATCH --job-name      cliar3_job
-    #SBATCH --mem           12G #12G is just a place holder. Adjust accordingly
+    #SBATCH --mem           6G #12G is just a place holder. Adjust accordingly
     #SBATCH --cpus-per-task 4 #4 just a place holder. Adjust accordingly
-    #SBATCH --time          10:00:00
+    #SBATCH --time          01:00:00
     #SBATCH --output        slurmout.%j.out
 
 
     #Caution: Absolute path is needed for both INPUT_DIR and OUTPUT_DIR
 
-    INPUT_DIR="[YOUR_INPUT_FOLDER]"       # e.g. /nesi/nobackup/nesi12345/input (absolute path needed)
-    OUTPUT_DIR="[YOUR_OUTPUT_FOLDER]"     # /nesi/nobackup/nesi12345/output (absolute path needed)
-    THREADS=$SLURM_CPUS_PER_TASK          # use the suggested Slurm variable which will read the value from `--cpus-per-task`
-    MODEL_NAME="[YOUR_MODEL_NAME]"        # e.g. r941_prom_hac_g360+g422
+    INPUT_DIR=/path/to/input/data         # e.g. /nesi/nobackup/nesi12345/input (absolute path needed)
+    OUTPUT_DIR=/path/to/save/outputs      # /nesi/nobackup/nesi12345/output (absolute path needed)
+    REF=/path/to/reference/genomes        # use the suggested Slurm variable which will read the value from `--cpus-per-task`
+    MODEL_NAME=/model/name                # e.g. r941_prom_hac_g360+g422
 
 
-    #Load Singularity module. Change the Singularity module version as necessary
     module purge
-    module load Singularity/3.10.0
+    module load Clair3/0.1.12-Miniconda3
 
-    # run clair3 like this afterward
-    singularity exec clair3_latest.sif \
-    /opt/bin/run_clair3.sh \
-    --bam_fn=${INPUT_DIR}/input.bam \ ## change your bam file name here
-    --ref_fn=${INPUT_DIR}/ref.fa \ ## change your reference file name here
-    --threads=${THREADS} \ ## maximum threads to be used
-    --platform="ont" \ ## options: {ont,hifi,ilmn}
-    --model_path="/opt/models/${MODEL_NAME}" \
-    --output=${OUTPUT_DIR} ## absolute output path prefix
+    run_clair3.sh \
+    --bam_fn=${INPUT_DIR} \
+    --ref_fn=${REF} \
+    --threads=$SLURM_CPUS_PER_TASK \
+    --platform=ont \
+    --model_path=${CONDA_PREFIX}/bin/models/${MODEL_NAME} \
+    --output=${OUTPUT_DIR} --enable_phasing
 
 <span class="pl-c">  
   

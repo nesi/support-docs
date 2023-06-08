@@ -6,7 +6,7 @@ label_names:
 - XC50
 - cs500
 position: 5
-title: "M\u0101ui Ancillary Nodes"
+title: "M\u0101ui Ancillary"
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360000203776

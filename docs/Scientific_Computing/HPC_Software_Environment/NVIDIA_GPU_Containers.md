@@ -41,22 +41,28 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
 3.  Build the Singularity image. This step differs from the NVIDIA
     instructions because instead of using "build" we "pull" the image
     directly, which does not require root access:
-    -   singularity pull namd_2.13-singlenode.sif docker://nvcr.io/hpc/namd:2.13-singlenode
+    -   Please do refer  "[Build Environment
+        Variables](https://support.nesi.org.nz/hc/en-gb/articles/360001107916-Singularity#build_environment_variables)"
+        prior to running the following `pull` command
+    -   singularity pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
+
 4.  Copy the following into a Slurm script named *run.sl*:
-    -   #!/bin/bash
+    -   #!/bin/bash -e
+
             #SBATCH --job-name=namdgpu
             #SBATCH --time=00:10:00
             #SBATCH --ntasks=1
             #SBATCH --cpus-per-task=8
-            #SBATCH --gpus-per-task=1
+            #SBATCH --gpus-per-node P100:1
             #SBATCH --mem=1G
 
+            module purge
             module load Singularity
 
             # name of the NAMD input file, tag, etc
             NAMD_INPUT="apoa1_nve_cuda.namd"
-            NAMD_SIF="namd_2.13-singlenode.sif"
-            NAMD_EXE=namd2
+            NAMD_SIF="namd-3.0-alpha9-singlenode.sif"
+            NAMD_EXE=namd3
 
             # singularity command with required arguments
             SINGULARITY="singularity exec --nv -B $(pwd):/host_pwd --pwd /host_pwd ${NAMD_SIF}"

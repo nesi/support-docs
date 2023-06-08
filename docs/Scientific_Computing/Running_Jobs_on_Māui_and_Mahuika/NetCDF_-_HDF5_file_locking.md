@@ -2,7 +2,7 @@
 created_at: '2019-04-12T02:21:25Z'
 hidden: false
 label_names: []
-position: 15
+position: 17
 title: NetCDF / HDF5 file locking
 vote_count: 2
 vote_sum: 2
@@ -20,14 +20,14 @@ can be accessed using the modules
 
 Recent versions of NetCDF and HDF5 (HDF5 1.10.x and newer) use a file
 locking feature. This prevents data corruption in rare cases of
-single-writer/multiple-reader and multiple writer access patterns. On
-our current XC50 platforms (Māui), file locking is not yet fully
-supported by Cray's DVS, which allows accessing the parallel file system
-GPFS on the XC50 compute nodes.
+single-writer/multiple-reader and multiple writer access patterns.
 
-Due to this missing support, NetCDF (using NetCDF4 format) and HDF5
-applications writing data from Māui compute nodes need to disable file
-locking by using the following environment variable:
+On our current XC50 platform (Māui), **file locking is not yet fully
+supported** by Cray's DVS. (DVS allows accessing the parallel file
+system GPFS on the XC50 compute nodes).
+
+Accordingly, NetCDF-4 and HDF5 applications that write data from Māui
+compute nodes need to disable file locking with:
 
     export HDF5_USE_FILE_LOCKING=FALSE
 
@@ -60,10 +60,9 @@ or
     major: File accessibilty
     minor: Bad file ID accessed
 
-**Important:** As file locking has to be disabled on the XC50, you need
-to take care to avoid concurrent reader/writer access in your
-application. Even though most applications should not exhibit such
-access patterns, we cannot guarantee that for your case!
+**Important:** As file locking has to be disabled on the XC50, care
+should be taken to avoid concurrent reader/writer access in your
+application.
 
 For more information see:
 

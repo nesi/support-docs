@@ -34,8 +34,7 @@ sbatch
 
 </td>
 <td style="width: 473.562px; height: 21px;">
-
-Submits the SLURM script *submit.sl*
+Submits the Slurm script *submit.sl*
 
 </td>
 </tr>
@@ -58,13 +57,11 @@ Displays entire queue.
 </tr>
 <tr style="height: 22px;">
 <td style="width: 301.297px; height: 18px;">
-
-`squeue -u usr9999`
+`squeue --me`
 
 </td>
 <td style="width: 473.562px; height: 18px;">
-
-Displays queued jobs submitted by *usr9999*.
+Displays your queued jobs.
 
 </td>
 </tr>
@@ -140,14 +137,11 @@ Cancels job *123456789*
 </tr>
 <tr style="height: 22px;">
 <td style="width: 301.297px; height: 22px;">
-
-`scancel -u usr9999`
+`scancel --me`
 
 </td>
 <td style="width: 473.562px; height: 22px;">
-
-Cancels all your jobs (assuming you are *usr9999*). If you are not
-*usr9999*, you will get an error message.
+Cancels all your jobs.
 
 </td>
 </tr>
@@ -158,13 +152,11 @@ sshare
 
 </td>
 <td style="width: 301.297px; height: 22px;">
-
-`sshare -U usr9999`
+`sshare -U`
 
 </td>
 <td style="width: 473.562px; height: 22px;">
-
-Shows the Fair Share scores for all projects of which *usr9999* is a
+Shows the Fair Share scores for all projects of which *you* are a
 member.
 
 </td>
@@ -181,8 +173,7 @@ sinfo
 
 </td>
 <td style="width: 473.562px; height: 22px;">
-
-Shows the current state of our SLURM partitions.
+Shows the current state of our Slurm partitions.
 
 </td>
 </tr>

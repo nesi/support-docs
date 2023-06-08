@@ -8,7 +8,7 @@ label_names:
 - cs400
 - XC50
 position: 19
-title: Programming environment differences and similarities of Maui and Mahuika
+title: Programming environment differences between Maui and Mahuika
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360000164576

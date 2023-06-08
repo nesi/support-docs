@@ -8,8 +8,8 @@ label_names:
 - cs400
 position: 3
 title: Mahuika
-vote_count: 4
-vote_sum: 2
+vote_count: 5
+vote_sum: 1
 zendesk_article_id: 360000163575
 zendesk_section_id: 360000034335
 ---
@@ -39,6 +39,10 @@ ssh to these nodes after logging onto the NeSI lander node.
 3.  Read about how to compile and link code on Mahuika in section
     entitled: [Compiling software on
     Mahuika.](https://support.nesi.org.nz/hc/en-gb/articles/360000329015)
+4.  An extension to Mahuika with additional, upgraded resources is also
+    available. see [Milan Compute
+    Nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes)
+    for details on access
 
 ## Mahuika HPC Cluster (Cray CS400)
 

@@ -5,8 +5,8 @@ label_names:
 - tqp
 position: 6
 title: How we review applications
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: -1
 zendesk_article_id: 360000202136
 zendesk_section_id: 360000224835
 ---

@@ -11,10 +11,10 @@ label_names:
 - cp
 - move
 - moving
-position: 0
+position: 2
 title: Moving files to and from the cluster
-vote_count: 9
-vote_sum: 1
+vote_count: 11
+vote_sum: 3
 zendesk_article_id: 360000578455
 zendesk_section_id: 360000189716
 ---

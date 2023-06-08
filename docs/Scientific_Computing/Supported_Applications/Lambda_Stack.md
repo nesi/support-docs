@@ -2,10 +2,10 @@
 created_at: '2021-01-05T20:28:08Z'
 hidden: false
 label_names: []
-position: 0
+position: 8
 title: Lambda Stack
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 360002558216
 zendesk_section_id: 360000040076
 ---
@@ -105,8 +105,8 @@ using Lambda Stack.
     SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
     # load environment modules (these are always required)
-    ml purge
-    ml Singularity
+    module purge
+    module load Singularity
 
     # for convenience store the singularity command in an environment variable
     # feel free to add additional binds if you need them 
@@ -126,7 +126,7 @@ launch the Singularity image. Run the following commands on the Mahuika
 login node:
 
     # load the Singularity envioronment module
-    ml Singularity
+    module load Singularity
 
     # path to the singularity image file (optionally replace with your own)
     export SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
@@ -148,8 +148,8 @@ and create a wrapper script for launching the kernel, named wrapper.sh:
     SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
     # load environment modules (these are always required)
-    ml purge
-    ml Singularity
+    module purge
+    module load Singularity
 
     # unfortunately $HOME is not the canonical path to your home directory,
     # we need to bind in canonical home path too so jupyter can find kernel
@@ -199,7 +199,7 @@ not, so the first thing we do is create a virtual environment and
 install transformers into it:
 
     # load the Singularity environment module
-    ml Singularity
+    module load Singularity
 
     # create a directory and change to it
     mkdir /nesi/project/<project_code>/transformers-benchmarks
@@ -266,8 +266,8 @@ Now create a Slurm script that will launch the job, names
     SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
     # load environment modules (these are always required)
-    ml purge
-    ml Singularity
+    module purge
+    module load Singularity
 
     # for convenience store the singularity command in an environment variable
     SINGULARITY="singularity exec --nv -B ${PWD} ${SIF}"

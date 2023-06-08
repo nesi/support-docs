@@ -15,11 +15,22 @@ zendesk_article_id: 360000177256
 zendesk_section_id: 360000033936
 ---
 
+> ### New Feature
+>
+> [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
+> have recently started rolling out compression of inactive data on the
+> NeSI Project filesystem. Please see the [documentation
+> below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
+> works and what data will be compressed.
+
+ 
+
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) and
 [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575), along
-with all the ancillary nodes, share access to the same Spectrum Scale
-file systems. (Spectrum Scale was previously known as GPFS, or General
-Parallel File System.)
+with all the ancillary nodes, share access to the same IBM Storage Scale
+file systems. Storage Scale was previously known as Spectrum Scale, and
+before that as GPFS, or General Parallel File System - we'll generally
+refer to it as "Scale" where the context is clear.
 
 You may query your actual usage and disk allocations using the following
 command: 
@@ -280,7 +291,7 @@ Will grow as tapes are purchased
 <td style="width: 135px;">
 
 90 days after the end of the project's last HPC Compute & Analytics
-allocation
+allocation. See also Transparent File Data Compression.
 
 </td>
 <td style="width: 188px;">
@@ -389,21 +400,18 @@ Slow
 
 </td>
 <td style="width: 119px;">
-
--   Native Spectrum Scale mounts
+-   Native Scale mounts
 -   SCP
 -   Globus data transfer
 
 </td>
 <td style="width: 135px;">
-
--   Native Spectrum Scale mounts
+-   Native Scale mounts
 -   SCP
 
 </td>
 <td style="width: 188px;">
-
--   Native Spectrum Scale mounts
+-   Native Scale mounts
 -   SCP
 -   Globus data transfer
 
@@ -419,8 +427,7 @@ Nearline commands
 
 ### **Soft versus hard quotas**
 
-We use Spectrum Scale soft and hard quotas for both disk space and
-inodes.
+We use Scale soft and hard quotas for both disk space and inodes.
 
 -   Once you exceed a fileset's soft quota, a one-week countdown timer
     starts. When that timer runs out, you will no longer be able to
@@ -437,6 +444,10 @@ but will prevent creation of new data or files.
 
 ### **Notes:**
 
+-   You may request an increase in storage and inode quota if needed by
+    a project. This may in turn be reduced as part of managing overall
+    risk, where large amounts of quota aren't used for a long period (~6
+    Months).
 -   If you need to compile or install a software package that is large
     or is intended for use by a project team, please build it
     in `/nesi/project/<project_code>` rather than `/home/<username>`.
@@ -462,11 +473,10 @@ This file system is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. All home directories
 are backed up daily, both via the Spectrum Protect backup system, which
 retains the last 10 versions of all files for up to 90 days, and via
-[Spectrum Scale
-snapshots](https://support.nesi.org.nz/hc/articles/360000207315). No
-cleaning policy will be applied to your home directory as long as your
-My NeSI account is active and you are a member of at least one active
-project.
+[Scale snapshots](https://support.nesi.org.nz/hc/articles/360000207315).
+No cleaning policy will be applied to your home directory as long as
+your My NeSI account is active and you are a member of at least one
+active project.
 
 ## /nesi/project
 
@@ -551,12 +561,12 @@ Support](mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File).
 
 # Contributions of Small Files Towards Quotas
 
-The Spectrum Scale file system makes use of a feature called
-*data-in-inode*. This feature will ensure that, once all of a
-(non-encrypted) file's required metadata has been written to our
-metadata storage, if all the file's data is able to fit within the
-file's remaining inode space (4 KiB minus metadata), it will be written
-there instead of to the data storage.
+The Scale file system makes use of a feature called *data-in-inode*.
+This feature will ensure that, once all of a (non-encrypted) file's
+required metadata has been written to our metadata storage, if all the
+file's data is able to fit within the file's remaining inode space (4
+KiB minus metadata), it will be written there instead of to the data
+storage.
 
 For files larger than 4 KiB (minus the space needed to store the file's
 metadata), the data written to disk will be stored in one or more
@@ -574,3 +584,36 @@ large numbers of very small files in your home directory or in a
 project's persistent storage, please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) to discuss your
 storage needs.
+
+# Transparent File Data Compression
+
+The Scale file system has the ability to transparently compress file
+data. That is, file contents/data can be compressed behind the scenes,
+taking up less space on disk, while appearing uncompressed to
+applications reading or altering the file. Scale automatically handles
+decompression before passing data to user-space applications. This
+in-line decompression may have a small IO performance/latency impact,
+though this is mitigated by space and bandwidth savings.
+
+Transparent file data compression can be controlled and applied by users
+via file attributes, you can find out more about using this method on
+our [Data Compression support
+page](https://support.nesi.org.nz/hc/en-gb/articles/6359601973135). File
+data compression can also be automatically applied by administrators
+through the Scale policy engine. We leverage this latter feature to
+regularly identify and compress inactive data on the `/nesi/project`
+file system.
+
+## What Project data is automatically compressed?
+
+Our current policy compresses files that have not been accessed (either
+read from or written to) within the last 365 days, i.e., very inactive
+cold data. We may decrease this in future.
+
+Additionally, we only automatically compress files in the range of 4kB -
+10GB in size. Files larger than this can be compressed by user
+interaction - see the instructions for the `mmchattr` command on
+the [Data Compression support
+page](https://support.nesi.org.nz/hc/en-gb/articles/6359601973135). Also
+note that the Scale filesystem will only store compressed blocks when
+the compression space saving is &gt;=10%.

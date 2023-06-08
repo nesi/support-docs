@@ -3,10 +3,8 @@ created_at: '2015-08-27T04:44:00Z'
 hidden: false
 label_names:
 - mahuika
-- tier1
 - biology
-- app
-position: 12
+position: 26
 title: BLAST
 vote_count: 1
 vote_sum: -1
@@ -60,8 +58,8 @@ settings.  
     #SBATCH --time          00:30:00  # ~10 CPU minutes / MB blastn query vs nt
     #SBATCH --mem           30G
 
-    module load BLAST/2.10.0-GCC-9.2.0
-    module load BLASTDB/2021-05
+    module load BLAST/2.13.0-GCC-11.3.0
+    module load BLASTDB/2023-01
 
     # This script takes one argument, the FASTA file of query sequences.
     QUERIES=$1
@@ -85,8 +83,8 @@ or slow BLAST searches such as classic *blastn*
 This script copies the BLAST database into the per-job temporary
 directory $TMPDIR before starting the search. Since compute nodes do not
 have local disks, this database copy is in memory, and so must be
-allowed for in the memory requested by the job.  As of mid 2021 that is
-125 GB for the *nt* database, 124 GB for *refseq\_protein. *
+allowed for in the memory requested by the job.  As of mid 2023 that is
+283 GB for the *nt* database, 157 GB for *refseq\_protein. *
 
     #!/bin/bash -e
 
@@ -96,8 +94,8 @@ allowed for in the memory requested by the job.  As of mid 2021 that is
     #SBATCH --ntasks        1
     #SBATCH --cpus-per-task 36    # half a node
 
-    module load BLAST/2.10.0-GCC-9.2.0
-    module load BLASTDB/2021-05
+    module load BLAST/2.13.0-GCC-11.3.0
+    module load BLASTDB/2023-01
 
     # This script takes one argument, the FASTA file of query sequences.
     QUERIES=$1
@@ -109,7 +107,7 @@ allowed for in the memory requested by the job.  As of mid 2021 that is
     #DB=nr
 
     # Keep the database in RAM
-    cp $BLASTDB/{$DB,taxdb}* $TMPDIR/ 
+    cp $BLASTDB/{$DB,taxdb}.* $TMPDIR/ 
     export BLASTDB=$TMPDIR
 
     $BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt "$FORMAT" \

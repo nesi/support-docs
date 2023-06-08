@@ -8,8 +8,8 @@ label_names:
 - access
 position: 3
 title: Logging in to the HPCs
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 360000161315
 zendesk_section_id: 360000039036
 ---

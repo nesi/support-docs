@@ -39,11 +39,11 @@ certain toolchain or application. Let's say
 18.08, we can first swap into the desired {code}PrgEnv{code}
 
     module switch PrgEnv-cray PrgEnv-intel
-    module load VASP/5.4.4-CrayIntel-18.08
+    module load VASP/5.4.4-CrayIntel-23.02-19
 
 OR
 
     module unload craype-x86-skylake
     module load CrayIntel        # or any other PrgEnv change you intended to  do
     module load craype-x86-skylake
-    module load VASP/5.4.4-CrayIntel-18.08
+    module load VASP/5.4.4-CrayIntel-23.02-19

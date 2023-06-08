@@ -4,10 +4,10 @@ hidden: false
 label_names:
 - mahuika
 - slurm
-position: 8
+position: 9
 title: Mahuika Slurm Partitions
-vote_count: 8
-vote_sum: 6
+vote_count: 11
+vote_sum: 9
 zendesk_article_id: 360000204076
 zendesk_section_id: 360000030876
 ---
@@ -104,6 +104,8 @@ E.g.:
 </tr>
 <tr class="odd">
 </tr>
+<tr class="even">
+</tr>
 </tbody>
 </table>
 
@@ -113,7 +115,10 @@ E.g.:
 
 \*\*\* 1 NVIDIA Tesla A100 PCIe 40GB card divided into [7 MIG GPU
 slices](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/)
-(5GB each)
+(5GB each). 
+
+\*\*\*\* NVIDIA Tesla A100 80GB, on a HGX baseboard with NVLink
+GPU-to-GPU interconnect between the 4 GPUs  
 
 ## Quality of Service
 
@@ -136,36 +141,45 @@ GB, and 1 GPU.
 
 ## Requesting GPUs
 
-Nodes in the `gpu` partition have 2 P100 GPU cards each, so you can
-request 1 or 2 GPUs per node:
+The default GPU type is P100, of which you can request 1 or 2 per node:
 
-    #SBATCH --gpus-per-node=1
+    #SBATCH --gpus-per-node=1     # or equivalently, P100:1
 
-Some nodes in the `bigmem` partition have 1 to 2 A100 GPU cards. **If
-you have been granted access** to these GPUs, you can request them
-explicitly using:
+To request A100 GPUs, use instead:
 
     #SBATCH --gpus-per-node=A100:1
-
-Please contact us at <support@nesi.org.nz> to learn more about getting
-access to the A100 GPU cards.
 
 See [GPU use on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) for
 more details about Slurm and CUDA settings.
 
-### Additional limits for jobs in the `gpu` partition
+### Limits on GPU Jobs
 
--   In addition to GPUs, you can request up to four CPUs and up to 54 GB
-    of RAM.
--   There is a per-project limit of 6 GPUs being used at a time.
--   There is also a per-project limit of 100 GPU-hours being allocated
-    to running jobs. This allows you to use more GPUs if your jobs are
-    shorter, and so guarantees that all users can at least get short
-    debugging jobs on to a GPU in a reasonably timely manner. For
-    example you can have: one 3-day 1-GPU job, one 2-day 2-GPU job, or 6
-    GPUs used by jobs of 15 hours or less.
--   There is a limit of 1 A100-1g.5gb GPU job per user.
+-   There is a per-project limit of 8 GPUs being used at a time.
+-   There is also a per-project limit of 360 GPU-hours being allocated
+    to running jobs. This reduces the number of GPUs available for
+    longer jobs, so for example you can use 8 GPUs at a time if your
+    jobs run for a day, but only two GPUs if your jobs run for a week.
+    The intention is to guarantee that all users can get short debugging
+    jobs on to a GPU in a reasonably timely manner.  
+-   Each GPU job can use no more than 64 CPUs.  This is to ensure that
+    GPUs are not left idle just because their node has no remaining free
+    CPUs.
+-   There is a limit of one A100-1g.5gb GPU job per user.
+
+### Accessing A100 GPUs in the `hgx` partition
+
+The A100 GPUs in the `hgx` partition are designated for workloads
+requiring large memory (up to 80GB) or multi-GPU computing (up to 4 GPUs
+connected via
+[NVLink](https://www.nvidia.com/en-us/data-center/nvlink/)):
+
+-   Explicitly specify the partition to access them, with
+    `--partition=hgx`.
+-   Hosting nodes are Milan nodes. Check the[dedicated support
+    page](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471)
+    for more information about the Milan nodes' differences from
+    Mahuika's Broadwell nodes.
 
 ## Mahuika Infiniband Islands
 

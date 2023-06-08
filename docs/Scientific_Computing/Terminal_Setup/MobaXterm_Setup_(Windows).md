@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 2
 title: MobaXterm Setup (Windows)
-vote_count: 4
-vote_sum: 4
+vote_count: 5
+vote_sum: 5
 zendesk_article_id: 360000624696
 zendesk_section_id: 360000189696
 ---
@@ -101,6 +101,33 @@ factor is "123456" then you must enter "Password123456".
 >
 > If you choose to save your password, the process will be the same
 > minus the prompts for First Factor.
+
+## Credential Manager
+
+If you are using the built in credential manager you will have to make
+sure to delete old entries when changing your password.
+
+## Login Issues
+
+If you are experiencing login issues after resetting your password, it
+is likely due to an issue with MobaXterm saved sessions and Password
+management system for saved session.
+
+Two steps to try:
+
+-   Remove any previously saved sessions either related to `lander` OR
+    `mahuika` from sessions panel on the left
+-   Access MobaXterm password management system as below and remove
+    saved credentials
+    -   Go to **Settings**-&gt;**Configuration** and go to the
+        **General** tab and click on **MobaXterm password management**
+    -   You will see the saved sessions for `lander` (and perhaps
+        `mahuika` as well). I recommend removing all of it and restart
+        MobaXterm before the next login attempt
+
+Then setup a new session [according to the support doc
+instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
+as before.
 
 > ### What Next?
 >

@@ -7,8 +7,8 @@ label_names:
 - mynesi
 position: 1
 title: Applying for a new NeSI project
-vote_count: 2
-vote_sum: 0
+vote_count: 3
+vote_sum: 1
 zendesk_article_id: 360000174976
 zendesk_section_id: 360000196195
 ---

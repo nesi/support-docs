@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 1
 title: RStudio via Jupyter on NeSI
-vote_count: 5
-vote_sum: 1
+vote_count: 7
+vote_sum: 3
 zendesk_article_id: 360004337836
 zendesk_section_id: 360001189255
 ---
@@ -46,9 +46,9 @@ change the version of the R interpreter or use NeSI's *R-Geo* or
 The module needs to be entered in the configuration file
 `~/.config/rstudio_on_nesi/prelude.bash`.
 
-In the following example, we use the module that is built for R/4.1.0
+In the following example, we use the module that is built for R/4.2.1
 
-    $ echo "module load R/4.1.0-gimkl-2020a" > ~/.config/rstudio_on_nesi/prelude.bash
+    $ echo "module load R/4.2.1-gimkl-2022a" > ~/.config/rstudio_on_nesi/prelude.bash
 
 Once your configuration file is ready, make sure to restart your Jupyter
 session and re-launch RStudio for these changes to be taken into
@@ -57,8 +57,8 @@ correct Library Paths are available. For R/4.1.0 the command
 `.libPaths()` will return the following:
 
     > .libPaths()
-    [1] "/home/YOUR_USER_NAME/R/gimkl-2020a/4.1"                            
-    [2] "/opt/nesi/CS400_centos7_bdw/R/4.1.0-gimkl-2020a/lib64/R/library"
+    [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
+    [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 
 # Package Installation
 

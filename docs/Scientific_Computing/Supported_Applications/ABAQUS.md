@@ -3,13 +3,11 @@ created_at: '2015-10-12T00:28:38Z'
 hidden: false
 label_names:
 - mahuika
-- application
-- tier2
 - engineering
 - gpu
 - mpi
 - omp
-position: 7
+position: 21
 title: ABAQUS
 vote_count: 2
 vote_sum: 0

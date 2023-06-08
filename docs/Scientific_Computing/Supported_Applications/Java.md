@@ -3,10 +3,8 @@ created_at: '2015-08-18T02:30:33Z'
 hidden: false
 label_names:
 - mahuika
-- tier1
 - general
-- app
-position: 17
+position: 31
 title: Java
 vote_count: 0
 vote_sum: 0

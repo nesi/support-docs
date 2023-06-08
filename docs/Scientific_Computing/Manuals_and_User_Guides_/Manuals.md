@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 1
 title: Manuals
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 360000205656
 zendesk_section_id: 360000040036
 ---

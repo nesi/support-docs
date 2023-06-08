@@ -2,7 +2,7 @@
 created_at: '2022-11-09T21:00:29Z'
 hidden: true
 label_names: []
-position: 0
+position: 1
 title: OpenMP Scaling Example - Duplicate
 vote_count: 0
 vote_sum: 0

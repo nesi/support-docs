@@ -2,7 +2,7 @@
 created_at: '2022-08-03T21:35:50Z'
 hidden: false
 label_names: []
-position: 0
+position: 4
 title: Cylc
 vote_count: 0
 vote_sum: 0
@@ -175,11 +175,10 @@ Another alternative, is to use the **graphical user interface**
 
     $ cylc gui
 
-This will start a web server, which will display a URL like
+Read below on how access the web interface running on NeSI using your
+local browser.
 
-<http://wbn003:8888/cylc?token=30d9e2b3dfe097318539cff02f69a24217f2967e8809f0a9>
-
-(the token value will be different). 
+### Connecting via Jupyter
 
 If you're connecting through <https://jupyter.nesi.org.nz> you'll need
 to replace anything before the ":" with
@@ -187,6 +186,46 @@ to replace anything before the ":" with
 web graphical user interface (where USERNAME is your NeSI user name).
 Hence the URL becomes
 <https://jupyter.nesi.org.nz/user/USERNAME/proxy/>[8888/cylc?token=TOKEN](http://wbn003:8888/cylc?token=30d9e2b3dfe097318539cff02f69a24217f2967e8809f0a9)
+
+### Connecting via SSH
+
+First open ssh tunnelling, so that a given port on your local machine
+(e.g. your laptop) maps to the Cylc UI Server’s port on the HPC. On your
+local machine, type
+
+    $ ssh -N -L PORT:localhost:PORT HOST
+
+where **PORT** is a valid port number and **HOST** can be Māui or
+mahuika. See the [NeSI
+page](https://support.nesi.org.nz/hc/en-gb/articles/360001523916-Port-Forwarding)
+for the range of allowed ports (currently 1024-49151). Choose any number
+in this range but make sure your port number is fairly unique to avoid
+clashing with other users. Option -N is optional: it opens the
+connection without logging you into the shell.
+
+Then ssh to the host (e.g. mahuika)
+
+    $ ssh HOST
+
+and add the following to **$HOME/.cylc/uiserver/jupyter\_config.py** on
+the **HOST**.
+
+    c.ServerApp.open_browser=False
+    c.ServerApp.port=PORT
+
+where PORT and HOST match the values you selected when opening the ssh
+tunnel.
+
+You're now ready to fire up the web graphical interface
+
+    $ cylc gui
+
+Just copy the URL that looks like
+
+    http://127.0.0.1:PORT/cylc?token=TOKEN
+
+into your web browser. (Again substitute HOST and PORT with the values
+chosen above.)
 
 ## How to execute a workflow
 

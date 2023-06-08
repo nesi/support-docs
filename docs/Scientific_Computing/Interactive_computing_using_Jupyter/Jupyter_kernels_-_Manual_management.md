@@ -2,7 +2,7 @@
 created_at: '2022-01-31T20:45:43Z'
 hidden: false
 label_names: []
-position: 4
+position: 5
 title: Jupyter kernels - Manual management
 vote_count: 0
 vote_sum: 0
@@ -34,8 +34,8 @@ pages.
 >
 > See the [Jupyter kernels - Tool-assisted
 > management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
-> page for an alternative way to register kernels, using the
-> `nesi-add-kernel` command line tool to automate most of the manual
+> page for the **preferred** way to register kernels, which uses the
+> `nesi-add-kernel` command line tool to automate most of these manual
 > steps.
 
 You can configure custom Python kernels for running your Jupyter

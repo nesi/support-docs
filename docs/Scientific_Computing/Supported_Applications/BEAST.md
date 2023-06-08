@@ -5,7 +5,7 @@ label_names:
 - mahuika
 - tier1
 - biology
-position: 11
+position: 25
 title: BEAST
 vote_count: 0
 vote_sum: 0

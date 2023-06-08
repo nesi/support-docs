@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 2
 title: 'Globus V5 endpoint activation '
-vote_count: 1
-vote_sum: -1
+vote_count: 2
+vote_sum: 0
 zendesk_article_id: 4405630948495
 zendesk_section_id: 360000040596
 ---

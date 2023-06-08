@@ -3,10 +3,10 @@ created_at: '2019-04-07T23:56:57Z'
 hidden: false
 label_names:
 - slurm
-position: 6
+position: 5
 title: Finding Job Efficiency
-vote_count: 6
-vote_sum: 6
+vote_count: 8
+vote_sum: 8
 zendesk_article_id: 360000903776
 zendesk_section_id: 360000189716
 ---

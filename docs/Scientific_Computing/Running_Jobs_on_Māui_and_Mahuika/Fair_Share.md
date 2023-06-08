@@ -2,10 +2,10 @@
 created_at: '2019-02-05T03:58:21Z'
 hidden: false
 label_names: []
-position: 6
+position: 7
 title: Fair Share
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 360000743536
 zendesk_section_id: 360000030876
 ---

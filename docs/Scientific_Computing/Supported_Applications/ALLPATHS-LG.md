@@ -5,7 +5,7 @@ label_names:
 - mahuika
 - tier1
 - biology
-position: 9
+position: 23
 title: ALLPATHS-LG
 vote_count: 0
 vote_sum: 0

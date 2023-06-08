@@ -14,48 +14,13 @@ zendesk_section_id: 360000040056
 
 <nav class="site-nav">
 
- 
+# Building on the XC50 Platform
 
 </nav>
 
 </header>
 
 <article class="post">
-<header class="post-header">
-
-# Building code on Māui - the Cray XC Programming Environment
-
- 
-
-</header>
-
--   [The Cray programming environment on the XC50
-    platform](#the-cray-programming-environment-on-the-xc50-platform)
-    -   [Overview](#overview)
-    -   [The build node](#the-build-node)
-    -   [Choosing a programming
-        environment](#choosing-a-programming-environment)
-    -   [Targetting a CPU](#targetting-a-cpu)
-    -   [Using the compiler drivers](#using-the-compiler-drivers)
-    -   [Common compiler options](#common-compiler-options)
--   [Building code that depends on external
-    libraries](#building-code-that-depends-on-external-libraries)
-    -   [Using libraries provided by
-        Cray](#using-libraries-provided-by-cray)
-    -   [Using libraries provided by
-        NeSI/NIWA](#using-libraries-provided-by-nesiniwa)
-    -   [Using your own libraries](#using-your-own-libraries)
-    -   [Static and dynamic linking](#static-and-dynamic-linking)
-    -   [Common linker problems](#common-linker-problems)
--   [Building code on the CS500
-    platform](#building-code-on-the-cs500-platform)
-
- 
-
-## The Cray programming environment on the XC50 platform
-
-### Overview
-
 Building Fortran, C, or C++ code on the XC50 platform requires using the
 Cray programming environment. From a user perspective, the programming
 environment consists of a set of environment modules that select a
@@ -79,7 +44,7 @@ modules may be swapped.
     Māui’s CS500 platform or on Mahuika’s CS400 platform; please rebuild
     your code when you change platform
 
-### The build node
+## The build node
 
 Māui has a dedicated build node, `login.maui.nesi.org.nz`, which should
 be used for building code. Please do not build code on the compute nodes
@@ -99,7 +64,7 @@ resource. Instead of using as many parallel build processes as possible
 (with `make -j`), please limit the amount of processes (`make -j 5` for
 example).
 
-### Choosing a programming environment
+## Choosing a programming environment
 
 The following Programming Environments are provided on Māui, named after
 the underlying compiler suite:
@@ -122,11 +87,11 @@ GNU for example:
 
     > module avail gcc
     -------------------------------------- /opt/modulefiles --------------------------------------
-    gcc/4.9.3          gcc/5.3.0          gcc/6.1.0          gcc/7.1.0          gcc/7.3.0(default)
+    gcc/10.3.0 gcc/11.2.0 gcc/12.1.0(default)
 
 To change GCC version, run for example
 
-    module swap gcc gcc/7.1.0
+    module swap gcc gcc/11.2.0
 
 GCC v6.1.0 or later is required to build code that can make use of the
 Intel Skylake microarchitecture and its advanced capabilities, such as
@@ -136,7 +101,7 @@ Note: There is not **the** best compiler. Depending on your
 application/algorithms, different compilers can optimise the code
 better. Keep in mind trying different compilers.
 
-### Targeting a CPU
+## Targeting a CPU
 
 Compiling a program translates source code into machine instructions. It
 is important to let the compiler know for which CPU (“target”) the
@@ -178,7 +143,7 @@ when you run a compiler:
     No supported cpu target is set, CRAY_CPU_TARGET=x86-64 will be used.
     Load a valid targeting module or set CRAY_CPU_TARGET
 
-### Using the compiler drivers
+## Using the compiler drivers
 
 The programming environment provides compiler drivers for compiling
 Fortran, C, and C++ code. This means that you will need to use the
@@ -207,7 +172,7 @@ Further compiler driver options can be found on their man pages:
     man cc
     man CC
 
-**Compiling and Running MPI code**
+## **Compiling and Running MPI code**
 
 The compiler drivers will also automatically build MPI codes correctly,
 there is no need to use special compilers or add additional compiler or
@@ -230,7 +195,7 @@ that submits your program to a compute node on the fly, e.g.,
 
     SLURM_PARTITION=nesi_research srun -n 6 simpleMPI
 
-### Common compiler options
+## Common compiler options
 
 Although the compiler drivers `ftn`, `cc` and `CC` have a few options of
 their own, such as the `-craype-verbose` flag, they will pass through
@@ -286,25 +251,9 @@ environment:
 </tbody>
 </table>
 
-The man pages are often largely incomplete, further documentation can be
-found online:
+ 
 
--   Cray Compiler Environment: [Cray Fortran
-    v8.7](https://pubs.cray.com/content/S-3901/8.7/cray-fortran-reference-manual/fortran-compiler-introduction),
-    [Cray C and C++
-    v8.7](https://pubs.cray.com/content/S-2179/8.7/cray-c-and-c++-reference-manual/invoke-the-c-and-c++-compilers)
--   Intel compilers: [Intel Fortran Compiler
-    v17.0](https://software.intel.com/sites/default/files/managed/93/88/PDF%20Fortran%20Compiler%20UG%2017.0%3D1%3DSSG%202.0%20PDF%3Den-US.pdf),
-    [Intel C and C++ Compiler
-    v17.0](https://software.intel.com/sites/default/files/managed/08/ac/PDF%20C%2B%2B%20Compiler%20UG%2017.0%3D1%3DSSG%202.0%20PDF%3Den-US.pdf)
--   GNU compilers: [GCC C and C++
-    v4.9.4](https://gcc.gnu.org/onlinedocs/gcc-4.9.4/gcc.pdf), [GCC C
-    and C++ v7.1.0](https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gcc.pdf),
-    [GNU Fortran
-    v4.9.4](https://gcc.gnu.org/onlinedocs/gcc-4.9.4/gfortran.pdf), [GNU
-    Fortran v7.1](https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gfortran.pdf)
-
-## Building code that depends on external libraries
+## Building Code that Depends on External Libraries 
 
 While linking external libraries, one need to pay attention to the
 correct compiler and linker setup. This, depends on the correct library
@@ -322,7 +271,7 @@ and look in the module description using:
 
 Sometimes modules provide multiple libraries, e.g. *cray-libsci*.
 
-### Using libraries provided by Cray
+## Using libraries provided by Cray
 
 If a library has been provided by Cray, the compiler drivers will
 automatically take care of adding search paths for include files and
@@ -343,7 +292,7 @@ GNU builds) will automatically be used after swapping programming
 environment. This is particularly important for libraries that provide
 Fortran 90 modules, due to their compiler-specific format.
 
-### Using libraries provided by NeSI/NIWA
+## Using libraries provided by NeSI/NIWA
 
 The situation is different when you use a library that is provided by
 NeSI/NIWA. They can be recognised by the `CrayCCE`, `CrayIntel`, or
@@ -385,7 +334,7 @@ necessary in case of the GNU and Intel compilers, which will use the
 contents of `CPATH`, `LIRARY_PATH`, and `LD_LIBRARY_PATH` provided by
 the NeSI/NIWA module. This will not work with the Cray compiler.
 
-**Important note:** Make sure that you load the correct variant of a
+**Important note:** Make sure that you load the correct variant ofXC50 a
 library, depending on your choice of compiler. Switching compiler
 environment will *not* switch NeSI/NIWA modules automatically.
 Furthermore, loading a NeSI/NIWA module may switch programming
@@ -402,14 +351,14 @@ that was used to build the software:
 -   `CrayGNU` for libraries and tools built with the GNU compilers
     (`PrgEnv-gnu`)
 
-### Using your own libraries
+## Using your own libraries
 
 Linking against libraries that you built yourself is the same as linking
 against libraries provided by NeSI/NIWA - you will just need to point
 the compiler to the location where the include and library files are
 using the `-I` and `-L` flags.
 
-### Static and dynamic linking
+## Static and dynamic linking
 
 The XC50 compilers drivers default to static linking where possible for
 maximum efficiency, avoiding the need to load shared libraries for
@@ -449,7 +398,7 @@ This simply means that the library must be accessible at runtime despite
 fully static linking and the program is thus not entirely
 self-contained, which is usually not an issue.
 
-### Common linker problems
+## Common linker problems
 
 Linking can easily go wrong. Most often, you will see linker errors
 about “missing symbols” when the linker could not find a function used
@@ -491,7 +440,7 @@ Note that the linker requires that function names match exactly, so any
 variation in function name in your code will lead to a “missing symbols”
 error (with the exception of character case in Fortran source code).
 
-## Building code on the CS500 platform
+# Building code on the CS500 platform
 
 Building code on the CS500 platform is different from the XC50 platform:
 

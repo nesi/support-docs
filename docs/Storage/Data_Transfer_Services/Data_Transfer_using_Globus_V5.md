@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 1
 title: Data Transfer using Globus V5
-vote_count: 2
-vote_sum: 0
+vote_count: 3
+vote_sum: 1
 zendesk_article_id: 4405623380751
 zendesk_section_id: 360000040596
 ---
@@ -108,7 +108,7 @@ Select the endpoint "NeSI Wellington DTN V5", and you will be asked to
 authenticate your access to the endpoint. Click Continue to the next
 step.
 
-![mceclip0.png](../includes/mceclip0.png)
+<img src="../includes/mceclip0.png" alt="mceclip0.png" width="700" height="431" />
 
  
 
@@ -120,7 +120,7 @@ that.
 
  
 
-![mceclip1.png](../includes/mceclip1.png)
+<img src="../includes/mceclip1.png" alt="mceclip1.png" width="700" height="226" />
 
 The NeSI Wellington DTN V5 endpoint is protected by a second factor
 authentication (2FA-same as accessing NeSI clusters).  In the
@@ -131,7 +131,8 @@ authentication (2FA-same as accessing NeSI clusters).  In the
 not*** use any additional characters or spaces between your password and
 the token number.)
 
-                            ![mceclip0.png](../includes/mceclip0.png)
+                           
+<img src="../includes/mceclip0.png" alt="mceclip0.png" width="451" height="561" />
 
 After the login, you will navigate to the default root(display as "/")
 path, then you could change the path to
@@ -150,19 +151,19 @@ Navigate to your selected directory. e.g. the *nobackup* filesystem
 */nesi/nobackup/&lt;project\_code&gt;* and select the two-endpoint panel
 for transfer.
 
-![mceclip3.png](../includes/mceclip3.png)
+<img src="../includes/mceclip3.png" alt="mceclip3.png" width="851" height="298" />
 
 Select the target endpoint and authenticate.
 
 When you have activated endpoints in both transfer windows, you can
 start transferring files between them.
 
-![mceclip4.png](../includes/mceclip4.png)
+<img src="../includes/mceclip4.png" alt="mceclip4.png" width="850" height="249" />
 
 Select files you wish to transfer and select the corresponding "Start"
 button:  
   
-![mceclip5.png](../includes/mceclip5.png)
+<img src="../includes/mceclip5.png" alt="mceclip5.png" width="850" height="250" />
 
  
 

@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 0
 title: "Mahuika - M\u0101ui Differences"
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 360001244876
 zendesk_section_id: 360000039036
 ---
@@ -46,7 +46,7 @@ At this prompt, enter only your password (a.k.a. first factor).
 
 ## Māui
 
-Māui differs slightly in how you are authenticated.
+Māui differs slightly in how you are authenticated the first time.
 
     ssh login.maui.nesi.org.nz
 
@@ -54,8 +54,7 @@ You will be prompted.
 
     Password:
 
-Unlike on Mahuika, `Password` is equal to `First Factor` +
-`Second Factor` e.g. `password123456`
+At this prompt, enter only your password (a.k.a. first factor).
 
 # Job Limits
 

@@ -4,7 +4,7 @@ hidden: true
 label_names:
 - globus
 - dtn
-position: 10
+position: 12
 title: Globus - Basic Use within NeSI
 vote_count: 0
 vote_sum: 0
