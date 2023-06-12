@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - gl-to-ghActions
 permissions:
   contents: write
 jobs:
