@@ -7,8 +7,8 @@ on:
 permissions:
   contents: write
 jobs:
-  test-build:
-    name: Generate output
-    uses: ./.github/workflows/setup.yml
+  deploy:
+    runs-on: ubuntu-latest
     steps:
+      - uses: ./.github/workflows/setup.yml
       - run: mkdocs gh-deploy --force --verbose
