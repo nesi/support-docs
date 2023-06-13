@@ -7,8 +7,9 @@ on:
 permissions:
   contents: write
 jobs:
+  setup:
+    uses: ./.github/workflows/setup.yml
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/setup.yml@gl-to-ghActions
       - run: mkdocs gh-deploy --force --verbose
