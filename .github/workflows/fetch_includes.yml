@@ -1,11 +1,11 @@
-name: Deploy to gh-pages 
+name: Fetch Remote Assets 
 on: workflow_dispatch
 # permissions:
 #  contents: write
 env:
   MODULES_LIST: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
 jobs:
-  deploy:
+  fetch-includes:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
