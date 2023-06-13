@@ -4,10 +4,12 @@ on:
   inputs:
     dry-run:
       type: boolean
-      description: If true, will build but deploy to gh-pages-test.
+      description: Dry run (will build to 'gh-pages-test')
       default: true
 permissions:
   contents: write
+env:
+  INPUTS_DRYRUN: ${{ inputs.dry-run }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,4 +24,4 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: mkdocs gh-deploy $( if ${{ github.event.inputs.dry-run }}; then echo "-b gh-pages-test --verbose";fi ) --force
+      - run: mkdocs gh-deploy $(if ${INPUTS_DRYRUN};then echo "-b gh-pages-test --verbose";fi) --force
