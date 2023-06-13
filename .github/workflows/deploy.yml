@@ -1,5 +1,11 @@
 name: Deploy to gh-pages 
-on: workflow_dispatch
+on: 
+ workflow_dispatch:
+  inputs:
+    dry-run:
+      type: boolean
+      description: If true, will build but deploy to gh-pages-test.
+      default: true
 permissions:
   contents: write
 jobs:
@@ -7,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
       - name: Install dependencies
         run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
@@ -19,4 +22,4 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: mkdocs gh-deploy --force --verbose
+      - run: mkdocs gh-deploy $( if ${{ github.event.inputs.dry-run }}; then echo "-b gh-pages-test --verbose";fi ) --force
