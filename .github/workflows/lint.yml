@@ -1,9 +1,9 @@
-name: Test Build
 on:
   push:
     branches:
       - main
-      - gl-to-ghActions
+    paths:
+      - docs/*.md
 jobs:
   lint:
     runs-on: ubuntu-latest
