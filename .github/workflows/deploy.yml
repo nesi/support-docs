@@ -1,32 +1,10 @@
 name: Deploy to gh-pages 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - gl-to-ghActions
 permissions:
   contents: write
 jobs:
-  test-build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-      - name: Install dependencies
-        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v3
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: mkdocs build --verbose --strict
   deploy:
-    needs: test-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
