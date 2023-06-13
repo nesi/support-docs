@@ -12,6 +12,7 @@ jobs:
       - run: git config --global user.name "${GITHUB_ACTOR}"
       - run: git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - run: wget -P includes $MODULES_LIST
+      - run: git checkout -b $GITHUB_WORKFLOW
       - run: git add --all
       - run: git commit -m "update module list"
-      - run: git push
+      - run: git push origin $GITHUB_WORKFLOW
