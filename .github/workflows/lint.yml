@@ -1,3 +1,4 @@
+name: Lint Changed Files
 on:
   push:
     branches:
@@ -5,14 +6,21 @@ on:
     paths:
       - docs/*.md
 jobs:
-  lint:
+  proselint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-      - name: Install dependencies
-        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - run: pip install proselint
       - run: proselint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)"
-      - run: markdownlint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md"
+  mdlint:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+       - run: npm install markdownlint --save-dev
+       - run: markdownlint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md"
+  dirty:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+       - run: pip install -r requirements.txt
+       - run: mkdocs gh-deploy -b gh-pages-test --force --dirty --verbose 
