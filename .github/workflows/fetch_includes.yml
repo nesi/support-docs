@@ -17,3 +17,6 @@ jobs:
       - run: git commit -m "update module list"
       - run: git checkout -b $GITHUB_RUN_ID
       - run: git push origin $GITHUB_RUN_ID
+      - run: gh pr create -B main -H $GITHUB_RUN_ID --title 'Update remote assets' --body 'Created by Github action'
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
