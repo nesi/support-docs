@@ -15,5 +15,5 @@ jobs:
       - run: git status
       - run: git add --all
       - run: git commit -m "update module list"
-      - run: git checkout -b $GITHUB_WORKFLOW_SHA
-      - run: git push origin $GITHUB_WORKFLOW_SHA
+      - run: git checkout -b $GITHUB_RUN_ID
+      - run: git push origin $GITHUB_RUN_ID
