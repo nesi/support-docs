@@ -4,6 +4,10 @@ on: workflow_dispatch
 #  contents: write
 env:
   MODULES_LIST: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
+  GLOSSARY: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/Glossary.md"
+  DICTIONARY: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
+  SNIPPETS: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
+  BRANCH_NAME: "new-assets"
 jobs:
   fetch-includes:
     runs-on: ubuntu-latest
@@ -15,8 +19,27 @@ jobs:
       - run: git status
       - run: git add --all
       - run: git commit -m "update module list"
-      - run: git checkout -b $GITHUB_RUN_ID
-      - run: git push origin $GITHUB_RUN_ID
-      - run: gh pr create -B main -H $GITHUB_RUN_ID --title 'Update remote assets' --body 'Created by Github action'
+      - run: git checkout -b $BRANCH_NAME
+      - run: git push origin $BRANCH_NAME
+  fetch-dictionary:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v3
+      - run: git config --global user.name "${GITHUB_ACTOR}"
+      - run: git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - run: wget -P docs $GLOSSARY
+      - run: wget -P includes $DICTIONARY
+      - run: wget -P includes $SNIPPETS
+      - run: git status
+      - run: git add --all
+      - run: git commit -m "update module list"
+      - run: git checkout -b $BRANCH_NAME
+      - run: git push origin $BRANCH_NAME
+  open-pr:
+      runs-on: ubuntu-latest
+      steps:
+      - run: git config --global user.name "${GITHUB_ACTOR}"
+      - run: git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      - run: gh pr create -B main -H $BRANCH_NAME --title 'Update remote assets' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
