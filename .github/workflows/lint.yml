@@ -6,6 +6,12 @@ on:
     paths:
       - docs/*.md
 jobs:
+  printdiff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "The following files were changes and will be checked."
+      - run: echo "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)" 
   proselint:
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +23,7 @@ jobs:
      steps:
        - uses: actions/checkout@v3
        - run: npm install markdownlint --save-dev
-       - run: markdownlint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md"
+       - run: markdownlint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)"
   dirty:
      runs-on: ubuntu-latest
      steps:
