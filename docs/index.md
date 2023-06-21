@@ -1,5 +1,5 @@
 ---
-template: home.html
+template: main.html
 hidden: false
 ---
 
