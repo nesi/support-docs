@@ -62,7 +62,7 @@ cases:
 -   1 P100 GPU on Māui Ancillary Nodes
 
         #SBATCH --partition=nesi_gpu
-        #SBATCH --gpus-per-node=P100:1
+        #SBATCH --gpus-per-node=1
 
 -   2 P100 GPUs per node on Mahuika
 

@@ -29,27 +29,27 @@ zendesk_section_id: 360000196195
 > -   Assemble your project team.
 > -   Becoming familiar with the Linux command line. There are many
 >     courses and online materials available, such as [Software
->     Carpentry](https://software-carpentry.org/), to help you and your
->     project team gain the necessary skills.
+>     Carpentry](https://swcarpentry.github.io/shell-novice/), to help
+>     you and your project team gain the necessary skills.
 > -   Become familiar with foundational HPC skills, for example by
->     attending a NeSI introductory workshop, or having one or more of
->     your project team members do so. The person wishing to attend
->     should [contact us](https://support.nesi.org.nz/hc/requests/new)
->     to express interest.
+>     attending a NeSI introductory workshop, one of our [weekly
+>     introductory sessions (or watching the
+>     recording)](https://support.nesi.org.nz/hc/en-gb/articles/360000428676),
+>     or having one or more of your project team members do so.
 > -   Review our [allocation
 >     classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176).
 >     If you don't think you currently qualify for any class other than
 >     Proposal Development, please [contact
->     us](https://support.nesi.org.nz/hc/requests/new) as soon as
+>     us](https://support.nesi.org.nz/hc/requests/new) as soon as
 >     possible to discuss your options. Your institution may be in a
 >     position to buy a subscription from us while your Proposal
->     Development allocation is in effect.
+>     Development allocation is in effect if they do not already possess
+>     one.
 
 Requests to use NeSI resources are [submitted via a web
-form](https://my.nesi.org.nz/). While the form is available at any time,
-submitted requests are reviewed on a weekly, quarterly or on-demand
-cycle (see [Allocations, Allocation Classes, Review
-Cycles](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review)).
+form](https://my.nesi.org.nz/). The NeSI team will endeavour to approve
+your project, or contact you for more information, within 3-5 working
+days of your submitting your project request.
 
 > ### Note
 >

@@ -41,7 +41,7 @@ Download links for X-servers can be found below.
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](../includes/mceclip0.png) symbol in your taskbar 
+this ![mceclip0.png](../includes/mceclip0_8.png) symbol in your taskbar 
 
 > ### Note
 >
@@ -70,8 +70,8 @@ X<dfn class="dictionary-of-numbers">-11 forwarding box is </dfn>checked.
 
 <img src="../includes/x11moba.png" alt="x11moba.png" width="451" height="303" />
 
-If the ![mceclip0.png](../includes/mceclip0.png) button in the top right
-corner of your window is coloured, the X-server should be running.
+If the ![mceclip0.png](../includes/mceclip0_9.png) button in the top
+right corner of your window is coloured, the X-server should be running.
 
 # X-Forwarding with *tmux*
 

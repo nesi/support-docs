@@ -30,8 +30,8 @@ zendesk_section_id: 360000034315
 
 In order to generate your second factor, which you will require in order
 to access to any NeSI cluster, you will need a device with an
-authentication app, such as Authy or Google Authenticator installed on
-your device (generally a smartphone, but there are also authentication
+authentication app, such as Authy or Google Authenticator installed
+(generally the device is a smartphone, but there are also authentication
 apps which work through the browser like Authy).
 
 If you some reason you can't do this, please contact NeSI support.
@@ -45,10 +45,10 @@ If you some reason you can't do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    <img src="../includes/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="560" height="210" />
+    <img src="../includes/4414700806543" alt="authentication_factor_setup.png" width="560" height="210" />
 
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
-    ![](../includes/mceclip0.png)
+    ![](../includes/360001267755)
 4.  After clicking on "Continue" you will retrieve the QR code.
 5.  Open your Authy or Google Authenticator app and click on the add
     button and select "**Scan a barcode**". Alternatively, if you are

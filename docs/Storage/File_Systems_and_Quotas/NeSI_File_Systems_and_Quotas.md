@@ -40,7 +40,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../includes/neSI_filetree.svg" alt="neSI_filetree.svg" width="629" height="578" />
+## <img src="../includes/360003251796" alt="neSI_filetree.svg" width="629" height="578" />
 
 # File System Specifications
 
@@ -64,7 +64,7 @@ and cached between updates.
 
 </td>
 <td style="width: 116.09375px;">
-**/nesi/nearline** (in Early Access phase)
+**/nesi/nearline** 
 
 </td>
 </tr>

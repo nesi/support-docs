@@ -100,6 +100,6 @@ threads.  
   
 </span>
 
-![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../includes/Screen_Shot_2020-01-16_at_11.06.53_AM.png.name_me) 
+![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../includes/Screen_Shot_2020-01-16_at_11.06.53_AM.png) 
 
  

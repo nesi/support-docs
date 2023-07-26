@@ -6,8 +6,8 @@ label_names:
 - scheduler
 position: 3
 title: Submitting your first job
-vote_count: 7
-vote_sum: 7
+vote_count: 8
+vote_sum: 8
 zendesk_article_id: 360000684396
 zendesk_section_id: 360000189716
 ---

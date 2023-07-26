@@ -31,6 +31,7 @@ on NeSI or from a regular ssh connection on Mahuika login node. If you
 use the ssh option, make sure to load the JupyterLab module to have
 access to the `nesi-add-kernel` tool:
 
+    module purge  # remove all previously loaded modules
     module load JupyterLab
 
 Then, to list all available options, use the `-h` or `--help` options as
@@ -82,6 +83,8 @@ using Python 3.10.5:
 to create the corresponding `my_test_kernel` kernel, we need to use the
 command:
 
+    module purge
+    module load JupyterLab
     nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 
 # Singularity container
@@ -104,13 +107,15 @@ Here is an example instantiating a NVIDIA NGC container as a kernel.
 First, we need to pull the container:
 
     module purge
-    module load Singularity/3.8.0
+    module load Singularity/3.11.3
     singularity pull nvidia_tf.sif docker://nvcr.io/nvidia/tensorflow:21.07-tf2-py3
 
 then we can instantiate the kernel, using the `--nv` singularity flag to
 ensure that the GPU will be found at runtime (assuming our Jupyter
 session has access to a GPU):
 
+    module purge
+    module load JupyterLab
     nesi-add-kernel nvidia_tf -c nvidia_tf.sif --container-args "'--nv'"
 
 Note that the double-quoting of `--nv` is needed to properly pass the

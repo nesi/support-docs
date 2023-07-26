@@ -62,7 +62,8 @@ Artistic License
 > ### Obtain GeneMark-ES/ET Academic License 
 >
 > GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
-> individual academic license. This can be obtained as below
+> individual academic license  (this is free). This can be obtained as
+> below
 >
 > -   Download URL
 >     <http://topaz.gatech.edu/genemark/license_download.cgi>
@@ -71,7 +72,7 @@ Artistic License
 >
 >  
 >
-> -   <embed src="../includes/6529551751823.name_me" width="476" height="464" />
+> -   <img src="../includes/6529551751823" alt="genemark_es_license.png" width="476" height="464" />
 > -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
 > -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
 >     home directory as  a **hidden** file under the filename `.gm_key`
@@ -100,7 +101,7 @@ Following example uses the .fa files provided BRAKER developers on
 
 
     module purge
-    module BRAKER/3.0.2-gimkl-2022a-Perl-5.34.1
+    module load BRAKER/3.0.2-gimkl-2022a-Perl-5.34.1
 
     #export the path to augustus config copied above - prerequisites
     export AUGUSTUS_CONFIG_PATH=/path/to/augustus/config

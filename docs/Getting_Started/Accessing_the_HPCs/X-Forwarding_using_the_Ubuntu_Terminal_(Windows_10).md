@@ -7,8 +7,8 @@ label_names:
 - x-forwarding
 position: 0
 title: X-Forwarding using the Ubuntu Terminal (Windows 10)
-vote_count: 6
-vote_sum: -2
+vote_count: 7
+vote_sum: -3
 zendesk_article_id: 4407442866703
 zendesk_section_id: 360000034315
 ---

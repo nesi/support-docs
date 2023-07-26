@@ -6,8 +6,8 @@ label_names:
 - howto
 position: 0
 title: Standard Terminal Setup
-vote_count: 7
-vote_sum: 7
+vote_count: 8
+vote_sum: 6
 zendesk_article_id: 360000625535
 zendesk_section_id: 360000189696
 ---

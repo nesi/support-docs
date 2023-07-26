@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 1
 title: Ubuntu LTS terminal (Windows 10)
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 360001050575
 zendesk_section_id: 360000189696
 ---

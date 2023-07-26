@@ -31,11 +31,11 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](../includes/mceclip0.png)
+![](../includes/mceclip0_13.png)
 
 After 'Delete Token' has been selected:
 
-![](../includes/mceclip1.png)
+![](../includes/mceclip1_2.png)
 
 You will also receive an email confirmation:
 

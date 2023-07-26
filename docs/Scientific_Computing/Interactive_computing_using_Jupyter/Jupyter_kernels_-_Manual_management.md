@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 5
 title: Jupyter kernels - Manual management
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 4414951820559
 zendesk_section_id: 360001189255
 ---

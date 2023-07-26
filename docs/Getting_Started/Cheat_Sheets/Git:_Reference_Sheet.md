@@ -8,8 +8,8 @@ label_names:
 - repository
 position: 2
 title: 'Git: Reference Sheet'
-vote_count: 9
-vote_sum: 9
+vote_count: 10
+vote_sum: 10
 zendesk_article_id: 360001508515
 zendesk_section_id: 360000278975
 ---
