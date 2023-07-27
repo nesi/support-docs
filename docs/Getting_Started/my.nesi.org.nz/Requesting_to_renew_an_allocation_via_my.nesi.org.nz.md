@@ -5,8 +5,8 @@ label_names:
 - mynesi
 position: 0
 title: Requesting to renew an allocation via my.nesi.org.nz
-vote_count: 3
-vote_sum: 3
+vote_count: 5
+vote_sum: 5
 zendesk_article_id: 4600222769295
 zendesk_section_id: 360001059296
 ---
@@ -17,7 +17,7 @@ zendesk_section_id: 360001059296
     from the list.
 2.  From the green (middle) panel click the links menu and select "More
     Resource Details"  
-    <img src="../includes/mceclip0.png" alt="mceclip0.png" width="416" height="263" />
+    <img src="../includes/mceclip0_4.png" alt="mceclip0.png" width="416" height="263" />
 3.  Click the Plus button icon 'action' next to the compute allocation
     line item   
     <img src="../includes/mceclip1.png" alt="mceclip1.png" width="528" height="186" />
