@@ -35,6 +35,7 @@ p.fancytext{
     font-family: Cursive;
 }
 </style>
+
 another link to
 homepage[homepage](http://www.simulia.com/products/abaqus_fea.html) Some
 stuff
@@ -63,12 +64,14 @@ stuff
 This is some *fancy* text.
 
 <button class="panicbutton">
+
 TOO FANCY
 
 </button>
 <script>
 document.querySelector(".panicbutton").onclick = function () { document.querySelector(".fancytext").style.display = "none"; };
 </script>
+
 <table>
 <thead>
 <tr class="header">

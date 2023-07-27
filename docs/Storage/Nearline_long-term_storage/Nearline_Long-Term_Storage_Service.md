@@ -13,13 +13,7 @@ zendesk_article_id: 360001169956
 zendesk_section_id: 360000042255
 ---
 
-Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
-Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
-Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
-Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
-Nearline Nearline Nearline Nearline
 
- 
 
 NeSI's Nearline service allows you to store your data on our
 hierarchical system, which consists of a staging area (disk) connected

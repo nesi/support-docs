@@ -69,8 +69,8 @@ the cluster and your ssh config file is set up as described
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
-to with `sftp://mahuika`. (<kbd>ctrl</kbd> + <kbd>L</kbd> opens address
-bar)
+to with `sftp://mahuika`. (<span class="kbd">ctrl</span> + <span
+class="kbd">L</span> opens address bar)
 
 This does not work for File Explorer (Windows default)
 
@@ -147,7 +147,7 @@ The most frequently used Rclone subcommands:
 -   **rclone copyurl** – Copy the URL's content to the destination
     without saving it in the tmp storage.
 
-A more extensive list can be found on the the[Rclone
+A more extensive list can be found on the the [Rclone
 documentation](https://rclone.org/docs).
 
 # Rsync

@@ -58,10 +58,10 @@ transfer GUI.
 > ### WARNING
 >
 > There is a bug which causes some users to be repeatedly prompted
-> <samp>&lt;username&gt;@lander.nesi.org.nz's password:</samp>  
+> `<username>@lander.nesi.org.nz's password:`  
 > This can be resolved by clicking "OK" each time you are prompted then
-> logging in as normal once you are prompted for your <samp>First
-> Factor:</samp> or <samp>Password:</samp>.  
+> logging in as normal once you are prompted for your `First Factor:` or
+> `Password:`.  
 > See [Login
 > Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
 > for more details

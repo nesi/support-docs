@@ -1,15 +1,52 @@
-image: python:3.8-buster
+image: nikolaik/python-nodejs
 
 before_script:
   - apt-get update
-  - apt-get -y install curl zip
+  - apt-get -y install curl zip python3-proselint
+  - npm install -g markdownlint-cli
   - pip install -r requirements.txt
   - git config --global user.email "$GITLAB_USER_EMAIL"
   - git config --global user.name "$GITLAB_USER_NAME"
 
 stages:
+  - update
   - test
   - deploy
+  
+lint_updated_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - changes:
+      - "**/*.md"
+  script:
+    - markdownlint $(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md
+
+proselint_updated_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - changes:
+      - "**/*.md"
+  script:
+    - proselint "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)" 
+
+proselint_all_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - when: manual
+  script:
+    - proselint "**/*.md" 
+
+
+lint_all_markdown:
+  stage: test
+  allow_failure: true
+  rules:
+    - when: manual
+  script:
+    - markdownlint "**/*.md" 
 
 test_build:
   stage: test
@@ -19,7 +56,6 @@ test_build:
     paths:
     - test
   allow_failure: true
-
 
 pages:
   stage: deploy

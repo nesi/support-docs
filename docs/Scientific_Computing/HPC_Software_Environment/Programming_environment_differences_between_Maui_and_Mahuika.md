@@ -31,26 +31,32 @@ to components only available on Māui XC part.
 <thead>
 <tr>
 <th>
+
 Programming Languages
 
 </th>
 <th>
+
 Programming Models
 
 </th>
 <th>
+
 Compilers
 
 </th>
 <th>
+
 Tools
 
 </th>
 <th>
+
 Optimised Scientific Libraries
 
 </th>
 <th>
+
 I/O Libraries
 
 </th>
@@ -59,6 +65,7 @@ I/O Libraries
 <tbody>
 <tr>
 <td rowspan="4">
+
 Fortran
 
 C
@@ -69,6 +76,7 @@ Chapel
 
 </td>
 <td>
+
 Distributed Memory:
 
 MPI Support:
@@ -90,6 +98,7 @@ class="wysiwyg-color-green120">MVAPICH2<sup>1</sup></span>
 
 </td>
 <td>
+
 · Cray Compiling Environment (CCE)
 
 · GNU
@@ -98,6 +107,7 @@ class="wysiwyg-color-green120">MVAPICH2<sup>1</sup></span>
 
 </td>
 <td>
+
 Performance Analysis:
 
 · CrayPat & Cray Apprentice2
@@ -109,6 +119,7 @@ class="wysiwyg-color-green120">Trace Analyser & Collector</span>
 
 </td>
 <td>
+
 Dense:
 
 · BLAS
@@ -121,6 +132,7 @@ Dense:
 
 </td>
 <td rowspan="4">
+
 <span class="wysiwyg-color-blue80">NetCDF<sup>2</sup></span>
 
 <span class="wysiwyg-color-blue80">HDF<sup>2</sup></span>
@@ -129,6 +141,7 @@ Dense:
 </tr>
 <tr>
 <td>
+
 Shared Memory
 
 · OpenMP 4.0
@@ -137,6 +150,7 @@ Shared Memory
 
 </td>
 <td>
+
 Environment Setup
 
 · Modules
@@ -147,6 +161,7 @@ Environment Setup
 
 </td>
 <td>
+
 Porting Tools:
 
 · Reveal
@@ -155,6 +170,7 @@ Porting Tools:
 
 </td>
 <td>
+
 FFT:
 
 · FFTW
@@ -163,6 +179,7 @@ FFT:
 </tr>
 <tr>
 <td>
+
 PGAS
 
 · UPC
@@ -173,10 +190,12 @@ PGAS
 
 </td>
 <td>
+
  
 
 </td>
 <td>
+
 Debuggers:
 
 · lgdb
@@ -189,6 +208,7 @@ Debuggers:
 
 </td>
 <td>
+
 <span class="wysiwyg-color-blue80">Sparse:</span>
 
 <span class="wysiwyg-color-blue80">· Cray PETSc (with
@@ -201,14 +221,17 @@ CASK)<sup>2</sup></span>
 </tr>
 <tr>
 <td>
+
  
 
 </td>
 <td>
+
  
 
 </td>
 <td>
+
 Data Analytics
 
 <span class="wysiwyg-color-blue80">· Urika XC Data
@@ -219,12 +242,14 @@ Engine<sup>2</sup></span>
 
 </td>
 <td>
+
  
 
 </td>
 </tr>
 </tbody>
 </table>
+
 **Notes:**
 
 1.  <span class="wysiwyg-color-green120"><sup>1</sup>Only available on

@@ -27,6 +27,7 @@ Ubuntu LTS Terminal.
     ![ubuntu5.png](../includes/ubuntu5.png)![ubuntu6.png](../includes/ubuntu6.png)  
       
       
+
 2.  Close the “Add your Microsoft account.. dialogue box as you do not
     need an account for the installation.You may have to click “Install”
     for a second time (If the above dialogue box reappears, close as
@@ -35,8 +36,10 @@ Ubuntu LTS Terminal.
     ![ubuntu3.png](../includes/ubuntu3.png)  
      ![ubuntu4.png](../includes/ubuntu4.png)  
       
+
 3.  Launch “Ubuntu 18.04 LTS” from start menu and wait for the first
     time installation to complete.
+
 4.  As you are running Ubuntu on Windows for the first time, it will
     require to be configured. Once the installation was complete, you
     will be prompted to “Enter new UNIX username” and press
@@ -44,6 +47,7 @@ Ubuntu LTS Terminal.
       
     ![ubuntu1.png](../includes/ubuntu1.png)  
       
+
 5.  Now, type in a new password for the username you picked and press
     &lt;Enter&gt;. (Again this password is anything you want). Then
     retype the password to confirm and press &lt;Enter&gt;  

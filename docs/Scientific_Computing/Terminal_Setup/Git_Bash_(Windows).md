@@ -15,9 +15,9 @@ zendesk_section_id: 360000189696
 > -   Have a [NeSI
 >     account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
 >
-> -   Be a member of an[active
+> -   Be a member of an [active
 >     project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
->
+
 ## First time setup
 
 Git Bash can be downloaded as part of Git
@@ -59,8 +59,8 @@ The login process can be simplified with a few configurations.
            ControlMaster auto
            ControlPersist 1
 
-    Close and save with <kbd>ctrl x</kbd>, <kbd>y</kbd>,
-    <kbd>Enter</kbd>
+    Close and save with <span class="kbd">ctrl x</span>, <span
+    class="kbd">y</span>, <span class="kbd">Enter</span>
 
 2.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.

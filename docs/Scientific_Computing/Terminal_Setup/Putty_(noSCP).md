@@ -16,7 +16,7 @@ zendesk_section_id: 360000189696
 
  
 
-1. Set the 'Host Name' to:
+1\. Set the 'Host Name' to:
 
     lander.nesi.org.nz
 
@@ -24,18 +24,18 @@ zendesk_section_id: 360000189696
 
  ![putty1.png](../includes/putty1.png)
 
-2. Open Connection &gt; Data and enter in your username under
+2\. Open Connection &gt; Data and enter in your username under
 'Auto-Login username. 
 
 ![putty2.png](../includes/putty2.png)
 
  
 
-3. Open Connection &gt; SSH and 'Share SSH connections if possible'.
+3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
 
 ![putty4.png](../includes/putty4.png)
 
-4. Do this
+4\. Do this
 
 <span class="wysiwyg-color-red">SCRAP THAT, THOUGHT IT WORKED BUT IT
 DIDN'T</span>

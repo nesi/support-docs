@@ -22,7 +22,16 @@ than one node, with tasks divided up randomly, in which case
 `--mem-per-cpu` is more appropriate. More detail is in the following
 table, including how you can tell what sort of job you're submitting.
 
-<table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
 <thead>
 <tr class="header">
 </tr>

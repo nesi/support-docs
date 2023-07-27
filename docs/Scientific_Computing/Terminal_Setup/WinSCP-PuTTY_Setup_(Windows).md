@@ -33,8 +33,9 @@ Upon startup:
 
 1. Add a *New Site* and set:
 
--   Enter in *Host Name: *<kbd>login.mahuika.nesi.org.nz</kbd> or
-    <kbd>login.maui.nesi.org.nz</kbd>
+-   Enter in *Host Name: *<span
+    class="kbd">login.mahuika.nesi.org.nz</span> or <span
+    class="kbd">login.maui.nesi.org.nz</span>
 -   Enter your NeSI account username into *User name:* (Password
     optional)
 
@@ -49,31 +50,31 @@ Upon startup:
   
 ![WinSCP2.png](../includes/WinSCP2.png)
 
-5. Open Advanced Settings.
+5\. Open Advanced Settings.
 
 ![WinSCP3.png](../includes/WinSCP3.png)
 
-6. Navigate to *Connection &gt; Tunnel *and set:
+6\. Navigate to *Connection &gt; Tunnel *and set:
 
 -   Enable "Connect through SSH tunnel".
--   Under "Host name:" enter <kbd>lander.nesi.org.nz</kbd>
+-   Under "Host name:" enter <span class="kbd">lander.nesi.org.nz</span>
 -   Under "User name:" enter your username.
 -   Optionally, enter your password in the "Password:" box.
 
-10. *OK &gt; Save*
+10\. *OK &gt; Save*
 
 ## Setup for PuTTY Terminal
 
 The default WinSCP terminal lacks much functionality. We highly
 recommend you use the PuTTY terminal instead.
 
-1. Download PuTTY [here](https://www.putty.org/) and install.
+1\. Download PuTTY [here](https://www.putty.org/) and install.
 
 2.In WinSCP open 'Tools &gt; Preferences'
 
 ![WinSCP2-5.png](../includes/WinSCP2-5.png)
 
-3. Under *Integration &gt; Applications* enable *Remember session
+3\. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
 ![WinSCP4.png](../includes/WinSCP4.png)
@@ -86,15 +87,15 @@ Xming is an X server for Windows allowing graphical interface with the
 HPC and can be downloaded
 [here](https://sourceforge.net/projects/xming/).
 
-1. Install Xming following the prompts. (Make sure 'Normal PuTTY Link
+1\. Install Xming following the prompts. (Make sure 'Normal PuTTY Link
 SSH Client' is selected).
 
-2. Under *Integration &gt; Applications* and add -X after PuTTY/Terminal
-client path.
+2\. Under *Integration &gt; Applications* and add -X after
+PuTTY/Terminal client path.
 
 *![WinSCP6.png](../includes/WinSCP6.png)*
 
-3. Restart your session.
+3\. Restart your session.
 
 > ### Important
 >

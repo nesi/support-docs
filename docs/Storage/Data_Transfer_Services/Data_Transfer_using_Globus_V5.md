@@ -134,12 +134,12 @@ the token number.)
 After the login, you will navigate to the default root(display as "/")
 path, then you could change the path to
 
-(1) your ***/home/&lt;username&gt;*** directory,
+\(1\) your ***/home/&lt;username&gt;*** directory,
 
-(2) project directory (read-only)
+\(2\) project directory (read-only)
 ***/nesi/project/&lt;project\_code&gt;*** 
 
-(3) project sub-directories of
+\(3\) project sub-directories of
 ***/nesi/nobackup/&lt;project\_code&gt;***  - see [Globus Paths,
 Permissions,  Storage
 Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation).  

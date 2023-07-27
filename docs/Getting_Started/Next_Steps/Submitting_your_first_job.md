@@ -40,7 +40,8 @@ needed by our job scheduler *Slurm.*
 
 ## Creating a batch script
 
-Create a new file and open it with <kbd>nano myjob.sl</kbd>
+Create a new file and open it with <span class="kbd">nano
+myjob.sl</span>
 
     #!/bin/bash -e
     #SBATCH --job-name=SerialJob # job name (shows up in the queue)
@@ -119,26 +120,30 @@ then additional lines for each job step.
 
 > ### Tips
 >
-> <kbd>sacct -X</kbd> Only show parent processes.
+> <span class="kbd">sacct -X</span> Only show parent processes.
 >
-> <kbd>sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT</kbd>
-> Filter jobs by state.
+> <span class="kbd">sacct
+> --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT</span> Filter jobs by
+> state.
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/sacct.html)
 
 ##  Cancelling
 
-<kbd>scancel &lt;jobid&gt;</kbd> will cancel the job described by
-<kbd>&lt;jobid&gt;</kbd>. You can obtain the job ID by using
-<kbd>sacct</kbd> or <kbd>squeue</kbd>.
+<span class="kbd">scancel &lt;jobid&gt;</span> will cancel the job
+described by <span class="kbd">&lt;jobid&gt;</span>. You can obtain the
+job ID by using <span class="kbd">sacct</span> or <span
+class="kbd">squeue</span>.
 
 > ### Tips
 >
-> <kbd>scancel -u \[username\]</kbd> Kill all jobs submitted by you.
+> <span class="kbd">scancel -u \[username\]</span> Kill all jobs
+> submitted by you.
 >
-> <kbd>scancel {\[n1\]..\[n2\]}</kbd> Kill all jobs with an id between
-> <kbd>\[n1\]</kbd> and <kbd>\[n2\]</kbd>
+> <span class="kbd">scancel {\[n1\]..\[n2\]}</span> Kill all jobs with
+> an id between <span class="kbd">\[n1\]</span> and <span
+> class="kbd">\[n2\]</span>
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/scancel.html)

@@ -84,10 +84,6 @@ ssh to these nodes after logging onto the NeSI lander node.
 ##  Storage (IBM ESS)
 
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="odd">
 </tr>

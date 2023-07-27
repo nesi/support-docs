@@ -166,15 +166,17 @@ The CUDA module also provides access to additional command line tools:
 
 <ul>
 <ul>
+
 -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
     to directly monitor GPU resource utilisation,
--   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)to
-    compile CUDA programs,
+-   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
+    to compile CUDA programs,
 -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html) to
     debug CUDA applications.
 
 </ul>
 </ul>
+
 In addition, the [cuDNN](https://developer.nvidia.com/cudnn) (NVIDIA
 CUDA® Deep Neural Network library) library is accessible via its
 dedicated module:

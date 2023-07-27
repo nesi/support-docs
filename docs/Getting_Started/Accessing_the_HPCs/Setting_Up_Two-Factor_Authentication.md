@@ -50,6 +50,7 @@ If you some reason you can't do this, please contact NeSI support.
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
     ![](../includes/360001267755)
 4.  After clicking on "Continue" you will retrieve the QR code.
+
 5.  Open your Authy or Google Authenticator app and click on the add
     button and select "**Scan a barcode**". Alternatively, if you are
     not able to scan the barcode from your device you can manually enter

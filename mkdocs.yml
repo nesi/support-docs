@@ -6,42 +6,65 @@ repo_name: GitLab
 site_description: NeSI Support Documentation
 theme:
     name: material
+    language: en 
+    custom_dir: overrides
     features:
-    #- navigation.indexes    # Allow navigation to secion pages
+    - navigation.indexes    # Allow navigation to secion pages
     - navigation.top        # Adds 'return to top' button
+    logo: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+    favicon: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+    palette: 
 
+        # Palette toggle for light mode
+        - scheme: default
+          primary: grey
+          toggle:
+            icon: material/lightbulb
+            name: Switch to dark mode
 
-# theme:
+        # Palette toggle for dark mode
+        - scheme: slate
+          primary: black
+          toggle:
+            icon: material/lightbulb-outline
+            name: Switch to light mode
+
+    # theme:
 #     name: null
 #     custom_dir: nesi_theme/
-
 markdown_extensions:
     - toc:
         permalink: True
         baselevel: 1
         toc_depth: 3
+    - admonition
+    - pymdownx.details
     - pymdownx.superfences
     - pymdownx.highlight        # code blocks
     - pymdownx.inlinehilite     # code blocks  
     - pymdownx.tabbed:
         alternate_style: true 
     - abbr
-    - pymdownx.snippets
+    - tables
+    - pymdownx.snippets:
+        auto_append:
+            - ../includes/snippets.md
 plugins:
     - search
-    - spellcheck:
-        known_words: ../includes/glossary/.dictionary.txt
-        ignore_code: yes
-        min_length: 3
-        max_capital: 1
-        allow_unicode: yes
-    - mkdocs-simple-hooks:
-        hooks: 
-            # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
-            on_post_build: "custom_hooks:lint"
-
-
-#extra_javascript:
+    # - spellcheck:
+    #     known_words: ../includes/dictionary.txt
+    #     ignore_code: yes
+    #     min_length: 3
+    #     max_capital: 1
+    #     allow_unicode: yes
+    - tags
+    - macros:
+        include_dir: includes 
+hooks: 
+    - custom_hooks.py
+    # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
+    #on_post_build: ":lint"
+# extra_javascript:
 #  - JavaScripts/se-v2.js # js for statuspage thingie
     # - section-index
 

@@ -5,9 +5,11 @@ mkdocs-bootstrap4
 mkdocs-material
 mkdocs-spellcheck
 mkdocs-simple-hooks
+mkdocs-macros-plugin
 proselint
 linkcheckmd
-
+symspellpy
+codespell
 
 # Add your custom theme if not inside a theme_dir
 # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)

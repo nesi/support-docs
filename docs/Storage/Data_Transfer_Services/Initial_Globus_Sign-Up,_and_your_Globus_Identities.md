@@ -23,7 +23,7 @@ route to setting up your Globus account is:
 
 <img src="../includes/google_first_signup.png" alt="google_first_signup.png" width="402" height="302" />
 
-2) Link other Globus identities to your primary identity
+2\) Link other Globus identities to your primary identity
 
 From the Globus docs:
 

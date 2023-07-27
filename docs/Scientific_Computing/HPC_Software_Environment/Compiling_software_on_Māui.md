@@ -11,6 +11,7 @@ zendesk_section_id: 360000040056
 ---
 
 <header class="site-header">
+
 <nav class="site-nav">
 
 # Building on the XC50 Platform
@@ -18,6 +19,7 @@ zendesk_section_id: 360000040056
 </nav>
 
 </header>
+
 <article class="post">
 Building Fortran, C, or C++ code on the XC50 platform requires using the
 Cray programming environment. From a user perspective, the programming

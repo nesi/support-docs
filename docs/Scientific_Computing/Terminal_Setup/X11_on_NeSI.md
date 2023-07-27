@@ -13,13 +13,12 @@ zendesk_section_id: 360000189696
 > ### Requirements
 >
 > -   Have working
->     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)set
->     up.
+>     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
+>     set up.
 
-X<dfn class="dictionary-of-numbers">-11 is a protocol </dfn>for
-rendering graphical user interfaces (GUIs) that can be sent along an SSH
-tunnel. If you plan on using a GUI on a NeSI cluster you will need to
-have an X-Server and X-Forwarding set up.
+X-11 is a protocol for rendering graphical user interfaces (GUIs) that
+can be sent along an SSH tunnel. If you plan on using a GUI on a NeSI
+cluster you will need to have an X-Server and X-Forwarding set up.
 
 # X-Servers
 
@@ -52,8 +51,8 @@ this ![mceclip0.png](../includes/mceclip0_8.png) symbol in your taskbar 
 
 # X-Forwarding
 
-Finally your ssh tunnel must be set up to 'forward' along
-X<dfn class="dictionary-of-numbers">-11 connections</dfn>. 
+Finally your ssh tunnel must be set up to 'forward' along X-11
+connections. 
 
 ## OpenSSH (terminal)
 
@@ -65,8 +64,8 @@ Make sure the `-Y` or `-X` flag is included
 
 ## MobaXterm
 
- Under 'session settings' for your connection make sure the
-X<dfn class="dictionary-of-numbers">-11 forwarding box is </dfn>checked.
+ Under 'session settings' for your connection make sure the X-11
+forwarding box is checked.
 
 <img src="../includes/x11moba.png" alt="x11moba.png" width="451" height="303" />
 

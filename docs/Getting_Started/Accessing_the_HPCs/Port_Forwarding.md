@@ -119,7 +119,7 @@ will be forwarded.
 >     try to create the following directory:
 >
 >         mkdir -P ~/.ssh/sockets
->
+
 # MobaXterm
 
 If you have Windows Subsystem for Linux installed, you can use the

@@ -45,6 +45,7 @@ Globus DTN
 
 </th>
 <th style="user-select: none;" tabindex="0" scope="col" data-column="1">
+
 NeSI Filesystem
 
 </th>
@@ -53,74 +54,89 @@ NeSI Filesystem
 <tbody>
 <tr>
 <td>
+
 nesi\#pan\_auckland
 
 </td>
 <td>
+
 Pan cluster fileystem
 
 </td>
 </tr>
 <tr>
 <td>
+
 nesi\#otago-dtn01
 
 </td>
 <td>
+
 High Capacity Research Storage Cluster, U of Otago
 
 </td>
 </tr>
 <tr>
 <td>
+
 nesi\#otago-dtn02
 
 </td>
 <td>
+
 High Capacity Research Storage Cluster, U of Otago
 
 </td>
 </tr>
 <tr>
 <td>
+
 nesi\#otago-dtn03
 
 </td>
 <td>
+
 High Capacity Research Storage Cluster, U of Otago
 
 </td>
 </tr>
 <tr>
 <td>
+
 nesi\#otago-dtn04
 
 </td>
 <td>
+
 Otago AWS Endpoint
 
 </td>
 </tr>
 <tr>
 <td>
+
 nesi\#otago-dtn-chc01
 
 </td>
 <td>
+
 High Capacity Research Storage Cluster, Christchurch Campus
 
 </td>
 </tr>
 <tr>
 <td>
+
 nesi\#otago-dtn-wlg01
 
 </td>
 <td>
+
 High Capacity Research Storage Cluster, Wellington Campus
 
 </td>
 </tr>
+
 <!--tr role="row">
 <td> nesi#fitzroy_niwa</td>
 <td> Data Transfer Node at NIWA serving the Fitzroy cluster</td>
@@ -128,10 +144,12 @@ High Capacity Research Storage Cluster, Wellington Campus
 
 <tr>
 <td>
+
 Plant and Food Research iRODS instance
 
 </td>
 <td>
+
 Plant and Food Research iRODS instance
 
 </td>
@@ -139,6 +157,7 @@ Plant and Food Research iRODS instance
 </tbody>
 </table>
 </div>
+
 ###  
 
 ### 3) Be aware of Globus paths (see [Globus-Paths-Permissions-Storage-Allocation](https://support.nesi.org.nz/hc/en-gb/articles/360000216815-Globus-Paths-Permissions-Storage-Allocation)  if necessary).
@@ -156,16 +175,19 @@ nesi\#otago-dtn01](https://www.otago.ac.nz/its/forms/otago604826.html)
     <a href="https://www.globusid.org/" class="external-link">https://www.globus.org</a>
     with your id. You will be taken to the transfer page
     <https://www.globus.org/app/transfer>
+
 2.  Select the endpoints you wish to move files between (start typing
-    <mark> "nesi\#"</mark> to see the list of NeSI DTNs to select
-    from).  Authenticate via Tuakiri.    
+    <span class="mark"> "nesi\#"</span> to see the list of NeSI DTNs to
+    select from).  Authenticate via Tuakiri.    
 
 3.  *Globus defaults to your home directory (maximum storage 2GB)* .
     Navigate your path to an appropriate directory (see [Globus Paths,
     Permissions, Storage
     Allocation](https://support.nesi.org.nz/hc/en-gb/articles/360000216815)
     ).
+
 4.  Transfer the files.
+
 5.  Check your email for confirmation the job has succeeded.
 
 NOTE: Until mid-2018, your cluster may be on an older filesystem: check
