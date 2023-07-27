@@ -31,5 +31,31 @@ Would be better to run these independently so they can be run by gitlab CI.
 
 `mkdocs serve`
 
+## Files
+
+### docs/
+
+Location of markdown docs.
+File structure determines categories and sections.
+A section or category can be replaced by an `index.md` file, this will replace the default nav with a page.
+
+### includes/
+
+For non-template related files, e.g. images.
+
+### overrides/
+
+Theme overides or extensions.
+
+### custom_hooks.py
+
+Custom hooks.
+    - on_env : Injects application info from 'module-list' into jinja build env.
+    - lint -> moved to CI
+    - link_checker -> moved to CI
+
+domains
+
 ## Theme
+
 https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
