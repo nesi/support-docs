@@ -6,8 +6,8 @@ label_names:
 - video
 position: 0
 title: Troubleshooting on NeSI
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: -1
 zendesk_article_id: 360003686055
 zendesk_section_id: 360000040036
 ---

@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 16
 title: Hyperthreading
-vote_count: 4
-vote_sum: -2
+vote_count: 5
+vote_sum: -3
 zendesk_article_id: 360000568236
 zendesk_section_id: 360000030876
 ---

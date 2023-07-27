@@ -19,21 +19,21 @@ sessions are open to anyone - you don't need to be an existing NeSI
 user.  
   
 
-## **Office Hours in June 2023**
+## **Office Hours in July 2023**
 
 Click on the links below to add the date & Zoom link to your calendar.
 
--   [**07 June (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjA5OHIzZXFtN3I4Mjh0a2JocmY1djM2M3MgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**05 July (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NnRnbmw3dnYyaW4wc2kyc2ltOHNlbmE0YXAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**14 June (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmQ1aXV1Zml1a2Q0bzdidGdybWNva2RwcTggY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**12 July (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzgxNDdrNzhscWtxY3JocTlxNHFuajk4bDYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**21 June (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWl0dXYyNDRlYTJqMWx1YWszdXBkNzc5YmMgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**19 July (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWhwMmpqYTFhNzkzYjhtOTd2bGRmMGJ0NnYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**28 June (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NjRtbmhodGVsMDE5czNoZDlmaW9lMmJoN20gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**26 July (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzFlc3MxM3E3YW1uODY5aXBuamtrMXBiMmYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
 If you are unable to add this Office Hour session to your calendar
 through these links, please email us at

@@ -22,10 +22,10 @@ the user possesses).
 ## What do I need in order to obtain a second factor token?
 
 **Answer:** In order to obtain a second factor token, you will need a
-mobile device with a camera. On that mobile device, you will then need
-to install Google Authenticator (or another QR code reader application
-that implements the Time-based One Time Password algorithm) on your
-mobile device. See also [Setting Up Two-Factor
+mobile device. On that mobile device, you will then need to install
+Google Authenticator (or another QR code reader application that
+implements the Time-based One Time Password algorithm) on your mobile
+device. See also [Setting Up Two-Factor
 Authentication](https://support.nesi.org.nz/hc/articles/360000203075).
 
 ## Can I use an SSH key pair as an alternative second factor?

@@ -66,28 +66,16 @@ which are accessible by loading the following module:
 
  
 
-**Please Note**: You may notice that in the above command no specific
-version of the Nearline software is chosen. This is deliberate, and is
-designed to ensure that you get the latest and greatest release, since
-Nearline is under active development. It's an exception to our normal
-practice of strongly advising you to load a specific version of a
-software module.
-
-**Best practice in research data management and data archiving** is to
-use multiple storage technologies. In particular, any data that is
-irreplaceable and/or has regulatory retention requirements, should not
-rely solely on NeSI’s Nearline service as the only copy.
-
-# View files
+# Viewing files in nearline
 
 With the following command, you can print the list of files and
 directories within the specified Nearline directory:
 
     nlls /nesi/nearline/<projectID>
 
-OR e.g.
+Similar to the shell command `ls` you can list subdirectories as well:
 
-    nlls /nesi/nearline/<projectID>/path/to/results/
+    nlls /nesi/nearline/<projectID>/results/
 
 Furthermore, you can use the additional option `-l` to get the detailed
 list including `mode`, `owner`, `group`, `filesize`, and `timestamp`.
@@ -96,7 +84,7 @@ file's migration status. Note that, due to technical limitations, `-s`
 does not work on single files and so `nlls -s` requires a directory as
 its argument.
 
-    $ nlls -s /nesi/nearline/<projectID>/results/
+    $ nlls -s /nesi/nearline/nesi12345/results/
     mode        s  owner               group      filesize    timestamp    filename
     ___________________________________________________________________________________________________________________________
     -rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file1.tar.gz
@@ -112,11 +100,11 @@ Status ("s" column of the `-s` output) legend:
 -   resident (**r**) - data of a specific Nearline file is only on the
     staging filesystem.
 
-**WARNING:** The `-l` and  `-s`flags may fail if the nearline dorectory
-has a large amount of files.  You will receive a long Python stack trace
-if this occurs.  This is a known bug.
+**BUG WARNING:** The `-l` and  `-s`flags may fail if the nearline
+directory has a large amount of files.  You will receive a long Python
+stack trace if this occurs.
 
-# Traverse
+# Traversing files within nearline
 
 If you want to see all the files within a Nearline directory and its
 subdirectories, you can run `nltraverse`.
@@ -127,7 +115,13 @@ Optionally, you can run `nltraverse` with the `-s` command-line switch,
 which, as with `nlls`, will display the migration status of each file
 found.
 
-# Compare
+ 
+
+**BUG WARNING:** The`-s`flag may fail if a nearline directory has a
+large amount of files.  You will receive a long Python stack trace if
+this occurs.
+
+# Comparing files in nearline to those on disk
 
 If you want to compare a local (online storage) directory to a directory
 on Nearline, you can use the `nlcompare` command. The syntax of this
@@ -148,7 +142,7 @@ If the contents of the Nearline directory and the corresponding local
 directory differ, the lists will be kept, and can be compared using any
 text file comparison program, such as `diff` or `vimdiff`.
 
-# Put
+# Putting/Ingesting files into nearline
 
 Data can be copied to Nearline using the `nlput` command. The syntax is:
 
@@ -195,8 +189,6 @@ file list that does not satisfy all these criteria:
 If you are uploading a directory rather than the contents of a file
 list, the following additional permission restrictions apply:
 
--   Every subdirectory must be readable and executable by you, the
-    operator.
 -   Every subdirectory must be readable, writable and executable by its
     owner.
 -   Every subdirectory must be readable, writable and executable by its
@@ -250,6 +242,7 @@ location. As an example:
     nlput nesi12345 /nesi/nobackup/nesi12345/To/Archive/Results/
 
 will copy all data within the `Results` directory into
+
 `/nesi/nearline/nesi12345/To/Archive/Results/`.
 
 > ### Warning
@@ -325,7 +318,7 @@ exist on Nearline but are no longer on project or nobackup:
 3.  Follow the instructions above for updating data on Nearline with a
     new version of the data from project or nobackup.
 
-# Get
+# Getting/Retrieving files from nearline
 
 Data can be retrieved from Nearline using then `nlget` command. The
 syntax is:
@@ -378,7 +371,7 @@ local, are treated as a file list** and read line by line, searching for
 valid file names. A single Nearline file can only be retrieved using a
 local file list specifying the full path of the file to be retrieved.
 
-# Purge
+# Purging/Removing files from nearline
 
 The `nlpurge` command deletes specified data on the Nearline file system
 permanently. The syntax is
@@ -409,7 +402,7 @@ directory.
 >     project's Nearline directory, you must purge its contents one by
 >     one (if directories), or by means of a filelist (if files).
 
-# View job status
+# View nearline  job status
 
 The tool `nljobstatus` provides current status of submitted (queued,
 running and completed) tasks. The syntax is:
@@ -457,7 +450,7 @@ locked until the task is finished.
 **If a job stays in one state for an unexpectedly long time, please
 [contact NeSI Support](https://support.nesi.org.nz/hc/request/new)**.
 
-# View quota
+# View nearline quota
 
 With the command `nlquotalist`, the usage and limits of a Nearline
 project quota can be listed:
@@ -482,7 +475,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../includes/librarian_get_put.jpeg)
+![librarian\_get\_put.jpeg](../includes/360002703556)
 
 # Underlying mechanism
 
