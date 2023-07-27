@@ -1,70 +1,63 @@
-site_name: NeSI Support Center
-site_url: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
-site_dir: public
-repo_url: https://github.com/example/repository/
-repo_name: GitLab
-site_description: NeSI Support Documentation
-theme:
-    name: material
-    language: en 
-    custom_dir: overrides
-    features:
-    - navigation.indexes    # Allow navigation to secion pages
-    - navigation.top        # Adds 'return to top' button
-    logo: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
-    favicon: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
-    palette: 
-
-        # Palette toggle for light mode
-        - scheme: default
-          primary: grey
-          toggle:
-            icon: material/lightbulb
-            name: Switch to dark mode
-
-        # Palette toggle for dark mode
-        - scheme: slate
-          primary: black
-          toggle:
-            icon: material/lightbulb-outline
-            name: Switch to light mode
-
-    # theme:
-#     name: null
-#     custom_dir: nesi_theme/
+hooks:
+  - custom_hooks.py
 markdown_extensions:
-    - toc:
-        permalink: True
-        baselevel: 1
-        toc_depth: 3
-    - admonition
-    - pymdownx.details
-    - pymdownx.superfences
-    - pymdownx.highlight        # code blocks
-    - pymdownx.inlinehilite     # code blocks  
-    - pymdownx.tabbed:
-        alternate_style: true 
-    - abbr
-    - tables
-    - pymdownx.snippets:
-        auto_append:
-            - ../includes/snippets.md
+  - toc:
+      baselevel: 1
+      permalink: true
+      toc_depth: 3
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - abbr
+  - tables
+  - pymdownx.snippets:
+      auto_append:
+        - ../includes/snippets.md
 plugins:
-    - search
-    # - spellcheck:
+  - search
+      # - spellcheck:
     #     known_words: ../includes/dictionary.txt
     #     ignore_code: yes
     #     min_length: 3
     #     max_capital: 1
     #     allow_unicode: yes
-    - tags
-    - macros:
-        include_dir: includes 
-hooks: 
-    - custom_hooks.py
+  - tags: null
+  - macros:
+      include_dir: includes
+repo_name: GitLab
+repo_url: https://github.com/example/repository/
+site_description: NeSI Support Documentation
+site_dir: public
+site_name: NeSI Support Center
+site_url: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
+theme:
+  custom_dir: overrides
+  extra_css:
+    - ../includes/supportedApplications.css
+  extra_javascript:
+    - https://code.jquery.com/jquery-3.7.0.min.js
+    - ../includes/supportedApplications.js
+  favicon: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+  features:
+    - navigation.indexes
+    - navigation.top
+  language: en
+  logo: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+  name: material
+  palette:
+    - primary: grey
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    - primary: black
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
     # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
     #on_post_build: ":lint"
-# extra_javascript:
-#  - JavaScripts/se-v2.js # js for statuspage thingie
-    # - section-index
-

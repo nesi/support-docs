@@ -4,9 +4,10 @@ This is for customising the material theme, details here https://squidfunk.githu
 
 When possible, it is best to _extend_ a template (using 'super') rather than straight replacing.
 
-## TODO insert instructions here.
+## TODO insert instructions here
 
-Overriding files must mirror the original file structure
+Overriding files must mirror the original file structure if you are replacing an existing file.
+However, you can put your own custom stuff in here.
 
 
 ```

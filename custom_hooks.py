@@ -3,7 +3,14 @@ import proselint as pl
 import glob
 from pathlib import Path
 import json
+import mkdocs.plugins
 
+def on_env(env, config, files, **kwargs): 
+    env.globals["applications"]=json.load(open('includes/module-list.json'))
+    # env.globals["domains"]=json.load(open('../tags/domains.json')).keys() # Needs list of cannon domains to make into
+
+    # for symbol, value in locals().items():
+    #     print(symbol, value)
 
 def check_links(*args, **kwargs):
     print("running link checker")
