@@ -179,14 +179,27 @@ which uses remote SSH host Mahuika to forward all traffic coming to
 
 Ports can also be forwarded from the login node to a compute node.
 
-The best way to do this is by creating a reverse tunnel from your slurm
-job (that way the tunnel doesn't depend on a separate shell, and the
-tunnel will not outlive the job). 
+The best way to do this is by creating a reverse tunnel **from your
+slurm job** (that way the tunnel doesn't depend on a separate shell, and
+the tunnel will not outlive the job). 
 
 The syntax for opening a reverse tunnel is similar the regular tunnel
-command.
+command, `-N` to not execute a command after connecting, `-f` to run the
+connection in the background and `-R` for a reverse tunnel ( as opposed
+to `-L` ).
 
     ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
+
+An example Slurm script:
+
+    #!/bin/bash
+
+    #SBATCH --time 00:15:00
+    #SBATCH --mem  1G
+
+    ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
+
+    <some process using port 6676>
 
 > ### What Next?
 >
