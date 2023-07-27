@@ -128,12 +128,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](../includes/mceclip0.png)
+![mceclip0.png](../includes/360004708596)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](../includes/mceclip1.png)
+![mceclip1.png](../includes/360004708616)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -141,12 +141,65 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](../includes/mobakey.png)
+![mobakey.png](../includes/360004580035)
 
 <span class="wysiwyg-color-green110">■</span> local port  
 <span class="wysiwyg-color-orange90">■</span> remote port  
 <span class="wysiwyg-color-red90">■</span> must match  
-<span class="wysiwyg-color-pink80">■</span> don't matter
+<span class="wysiwyg-color-pink80">■</span> doesn't matter
+
+ 
+
+# sshuttle 
+
+[sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
+proxy implementing VPN like traffic forwarding. It is based on Linux or
+MacOS platforms (unfortunately Windows is not supported). `sshuttle`
+allows users to create a VPN connection from a local machine to any
+remote server that they can connect to via `ssh`.There is no need to
+create a separate tunnel for every port to be forwarded, the package
+routes all traffic, going to the specified subnet, through the tunnel.
+
+The command line for `sshuttle` has the following form:
+
+    sshuttle [-l [ip:]port] -r <host_alias>[:port] <subnets...>
+
+More information about specific keys and modifiers for sshuttle commands
+is available in the online documentation.
+
+As an example, this is how to establish a tunnel through Mahuika login
+node over to a specific virtual machine with IP address `192.168.90.5`:
+
+    sshuttle -r mahuika 192.168.0.0/16
+
+which uses remote SSH host Mahuika to forward all traffic coming to
+`192.16.XXX.XXX` subnet through the port forwarder.
+
+# Forwarding to Compute Nodes
+
+Ports can also be forwarded from the login node to a compute node.
+
+The best way to do this is by creating a reverse tunnel **from your
+slurm job** (that way the tunnel doesn't depend on a separate shell, and
+the tunnel will not outlive the job). 
+
+The syntax for opening a reverse tunnel is similar the regular tunnel
+command, `-N` to not execute a command after connecting, `-f` to run the
+connection in the background and `-R` for a reverse tunnel ( as opposed
+to `-L` ).
+
+    ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
+
+An example Slurm script:
+
+    #!/bin/bash
+
+    #SBATCH --time 00:15:00
+    #SBATCH --mem  1G
+
+    ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
+
+    <some process using port 6676>
 
 > ### What Next?
 >

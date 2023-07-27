@@ -38,7 +38,7 @@ be at increased risk of taking a long time in the queue or failing, and
 your project's [fair share
 score](https://support.nesi.org.nz/hc/en-gb/articles/360000743536) is
 likely to suffer.  Your project's fair share score will be reduced in
-view of CPU time spent regardless of whether you obtain a result or
+view of compute time spent regardless of whether you obtain a result or
 not. 
 
 <table>
@@ -58,6 +58,10 @@ not. 
 </tr>
 </tbody>
 </table>
+
+***See our ["What is an allocation?" support
+page](https://support.nesi.org.nz/hc/en-gb/articles/360001385735) for
+more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale

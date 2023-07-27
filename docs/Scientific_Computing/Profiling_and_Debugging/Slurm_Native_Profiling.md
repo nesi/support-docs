@@ -6,8 +6,8 @@ label_names:
 - profiling
 position: 0
 title: Slurm Native Profiling
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 360000810616
 zendesk_section_id: 360000278935
 ---
