@@ -13,6 +13,9 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://${{ env.URL }}
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
