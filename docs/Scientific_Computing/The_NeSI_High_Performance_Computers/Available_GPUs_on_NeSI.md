@@ -14,8 +14,8 @@ NeSI has a range of Graphical Processing Units (GPUs) to accelerate
 compute-intensive research and support more analysis at scale. Depending
 on the type of GPU, you can access them in different ways, such as via
 batch scheduler (Slurm), interactively (using [Jupyter on
-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)<span
-class="loader-wrapper"></span>), or Virtual Machines (VMs). 
+NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)), or
+Virtual Machines (VMs). 
 
 The table below outlines the different types of GPUs, who can access
 them and how, and whether they are currently available or on the future

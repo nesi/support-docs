@@ -138,8 +138,7 @@ Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated
-guess.<span class="wysiwyg-color-red">  
-</span>
+guess.  
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
@@ -204,7 +203,7 @@ our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
     6054939.ext+   extern          00:06:57    00:00.006    12      44K  COMPLETED 
     6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 
-![MPIscalingMem.png](../includes/MPIscalingMem.png)
+![MPIscalingMem.png](../../includes/images/MPIscalingMem.png)
 
 First, looking at the plot of memory usage per task vs CPUs it would at
 appears that memory usage per task remains constant, regardless of how
@@ -286,7 +285,7 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](../includes/MPIseedsvtime.png)
+![MPIseedsvtime.png](../../includes/images/MPIseedsvtime.png)
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we

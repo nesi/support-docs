@@ -17,14 +17,14 @@ zendesk_section_id: 360001059296
     from the list.
 2.  From the green (middle) panel click the links menu and select "More
     Resource Details"  
-    <img src="../includes/mceclip0_4.png" alt="mceclip0.png" width="416" height="263" />
+    <img src="../../includes/images/mceclip0_4.png" alt="mceclip0.png" width="416" height="263" />
 3.  Click the Plus button icon 'action' next to the compute allocation
     line item   
-    <img src="../includes/mceclip1.png" alt="mceclip1.png" width="528" height="186" />
+    <img src="../../includes/images/mceclip1.png" alt="mceclip1.png" width="528" height="186" />
 4.  Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'   
-    <img src="../includes/mceclip2.png" alt="mceclip2.png" width="636" height="505" />
+    <img src="../../includes/images/mceclip2.png" alt="mceclip2.png" width="636" height="505" />
 
 ### Can I request any allocation size?
 

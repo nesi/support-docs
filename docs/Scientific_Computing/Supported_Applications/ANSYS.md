@@ -58,11 +58,12 @@ either of the following (ANSYS module must be loaded first using
 
 # Journal files
 
-Some ANSYS applications take a 'journal' text file as input. It is often
-useful to create this journal file in your SLURM script (tidiness,
-submitting jobs programmatically, etc). This can be done by using `cat`
-to make a file from a
-'[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
+Some ANSYS applications take a 'journal' text file as input. It is
+of<dfn class="dictionary-of-numbers">ten useful to create </dfn>this
+journal file in your SLURM script (tidiness, submitting jobs
+programmatically, etc). This can be
+d<dfn class="dictionary-of-numbers">one by using </dfn>`cat` to make a
+file from a '[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
 
 Below is an example of this from a fluent script.
 
@@ -91,8 +92,9 @@ Below is an example of this from a fluent script.
 
 `#!['bash']JOURNAL_FILE` is a variable holding the name of a file, the
 next line `cat` creates the file then writes a block of text into it.
-The block of text written is everything between an arbitrary string (in
-this case `EOF`) and its next occurrence.
+The block of text writ<dfn class="dictionary-of-numbers">ten is
+everything between an </dfn>arbitrary string (in this case `EOF`) and
+its next occurrence.
 
 In this case (assuming it is the first run of the array and the
 jobid=1234567), the file  `fluent_1234567.in` will be created:
@@ -130,7 +132,7 @@ files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-
 
 `fluent -help` for a list of commands.
 
-Must have one of these flags. 
+Must have <dfn class="dictionary-of-numbers">one of these flags</dfn>. 
 
 <table>
 <tbody>
@@ -338,8 +340,10 @@ solution specify as relative path, or unload compiled lib before saving
 
 Even when running headless (without a GUI) CFX-Post requires connection
 to a graphical output. For some cases it may be suitable running
-CFX-Post on the login node and using your X-11 display, but for larger
-batch compute jobs you will need to make use of a dummy X-11 server.
+CFX-Post on the login node and using your
+X<dfn class="dictionary-of-numbers">-11 display</dfn>, but for larger
+batch compute jobs you will need to make use of a dummy
+X<dfn class="dictionary-of-numbers">-11 server</dfn>.
 
 This is as simple as prepending your command with the X Virtual Frame
 Buffer command.
@@ -523,17 +527,18 @@ Currently FENSAP-ICE is only available on Mahuika and in ANSYS 19.2.
 The following FENSAP solvers are compatible with MPI
 
 -   FENSAP
--   DROP3D
--   ICE3D
--   C3D
+-   DROP<dfn class="dictionary-of-numbers">3D</dfn>
+-   ICE<dfn class="dictionary-of-numbers">3D</dfn>
+-   C<dfn class="dictionary-of-numbers">3D</dfn>
 -   OptiGrid
 
 ## Case setup 
 
 ## With GUI
 
-If you have set up X-11 forwarding, you may launch the FENSAP ice using
-the command `fensapiceGUI` from within your FENSAP project directory. 
+If you have set up X<dfn class="dictionary-of-numbers">-11
+forwarding</dfn>, you may launch the FENSAP ice using the command
+`fensapiceGUI` from within your FENSAP project directory. 
 
 <table>
 <colgroup>
@@ -567,7 +572,7 @@ opening the GUI within the project folder.
 >     job from a given step/shot you must select so in the dropdown
 >     menu.
 
-## Using fensap2slurm
+## Using fensap<dfn class="dictionary-of-numbers">2slurm</dfn>
 
 Set up your model as you would normally, except rather than starting the
 run just click 'save'. You *do not* need to set number of CPUs or MPI
@@ -593,10 +598,10 @@ session](https://support.nesi.org.nz/hc/en-gb/articles/360001316356).
 ## RSM
 
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
-manager) running on all nodes. The command `startRSM` has been written
-to facilitate this and needs to be run *after* starting the slurm job
-but *before* running edt. Please contact NeSI support if the command is
-not working for you.
+manager) running on all nodes. The command `startRSM` has been
+writ<dfn class="dictionary-of-numbers">ten to facilitate this </dfn>and
+needs to be run *after* starting the slurm job but *before* running edt.
+Please contact NeSI support if the command is not working for you.
 
 ## Example Slurm Script
 
@@ -672,5 +677,6 @@ granted and you can begin, so you might want to use the
 
 Utilising hyperthreading (ie: removing the "--hint=nomultithread" sbatch
 directive and doubling the number of tasks) will give a small speedup on
-most jobs with less than 8 cores, but also doubles the number of
-`aa_r_hpc` license tokens required.
+most jobs with less than <dfn class="dictionary-of-numbers">8
+cores</dfn>, but also doubles the number of `aa_r_hpc` license tokens
+required.

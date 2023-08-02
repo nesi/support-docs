@@ -110,8 +110,8 @@ which run under SLURM (hence platform = mahuika-slurm). Type
 
     cylc config --platform-names
 
-<span class="s1">to see a list of platforms. The SLURM settings for
-taskA are in the \[\[\[directives\]\]\] section.</span>
+to see a list of platforms. The SLURM settings for taskA are in the
+\[\[\[directives\]\]\] section.
 
 ## How to interact with Cylc
 
@@ -152,15 +152,15 @@ A useful command is 
     $ cylc graph simple
 
 which will generate a png file, generally in the /tmp directory with a
-name like <span class="s1">/tmp/tmpzq3bjktw.PNG. Take note of the name
-of the png file. To visualise the file you can type </span>
+name like /tmp/tmpzq3bjktw.PNG. Take note of the name of the png file.
+To visualise the file you can type 
 
     $ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
 
 Here, we see that our workflow "simple" has a "taskC", which waits for
 "taskA" and "taskB" to complete,
 
-![simple.png](../includes/simple.png)
+![simple.png](../../includes/images/simple.png)
 
 The "1" indicates that this workflow graph is executed only once.
 
@@ -241,7 +241,7 @@ Command
 
     $ cylc scan
 
-will list all running and installed workflows.<span class="s1"></span>
+will list all running and installed workflows.
 
 ## Checking the output
 

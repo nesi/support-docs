@@ -55,8 +55,7 @@ Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated
-guess.<span class="wysiwyg-color-red">  
-</span>
+guess.  
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
@@ -205,7 +204,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="../includes/blobid1_0.png" width="469" height="395" />
+<img src="../../includes/images/blobid1_0.png" width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

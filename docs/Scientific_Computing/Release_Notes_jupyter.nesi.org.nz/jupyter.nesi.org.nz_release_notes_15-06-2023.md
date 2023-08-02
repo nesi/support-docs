@@ -13,9 +13,9 @@ zendesk_section_id: 360001150156
 
 ## New and Improved
 
--   If <a href="http://my.nesi.org.nz/" class="c-link">jupyter.nesi.org.nz</a> portal
-    cannot connect to the NeSI server, a descriptive error message will
-    be displayed instead of internal error 500
+-   If [jupyter.nesi.org.nz](http://my.nesi.org.nz/) portal cannot
+    connect to the NeSI server, a descriptive error message will be
+    displayed instead of internal error 500
 
 ## Fixed
 

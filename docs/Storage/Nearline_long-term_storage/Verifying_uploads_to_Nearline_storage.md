@@ -27,10 +27,10 @@ storage).
 >
 > Your feedback on which verification options you think are necessary
 > will help us decide on future directions for the Nearline service.
-> Please
-> <a href="https://support.nesi.org.nz/hc/requests/new" class="external-link">contact our support team</a>
-> to request verification or to offer suggestions regarding this or any
-> other aspect of our Nearline service.
+> Please [contact our support
+> team](https://support.nesi.org.nz/hc/requests/new) to request
+> verification or to offer suggestions regarding this or any other
+> aspect of our Nearline service.
 
 There are several options for verification, depending on the level of
 assurance you require.

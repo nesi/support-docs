@@ -31,10 +31,9 @@ Profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)
 ### Support for users outside the Tuakiri federation
 
 In case your organisation is not part of the Tuakiri federated identity
-management service, a user can
-still <a href="https://my.nesi.org.nz/html/request_nesi_account" class="btn-link">request a NeSI Account profile.</a>
-NeSI will (if approved) provision a so-called "virtual home account" on
-Tuakiri. 
+management service, a user can still [request a NeSI Account
+profile.](https://my.nesi.org.nz/html/request_nesi_account) NeSI will
+(if approved) provision a so-called "virtual home account" on Tuakiri. 
 
 See also [Account Requests for non-Tuakiri
 Members](https://support.nesi.org.nz/hc/en-gb/articles/360000216035)
@@ -64,7 +63,7 @@ department about unless you need a particular Optional Attribute to be
 correctly set for a specific purpose.
 
 To access the Tuakiri Attribute Validator, browse to this page:
-<a href="https://attributes.tuakiri.ac.nz/snapshots/latest" id="01F4GZHYGZG2HPMGKX8DZFBGMB">https://attributes.tuakiri.ac.nz/snapshots/latest﻿</a>
+[https://attributes.tuakiri.ac.nz/snapshots/latest﻿](https://attributes.tuakiri.ac.nz/snapshots/latest)
 
 The primary identifier NeSI consumes is the
 attribute **auEduPersonSharedToken**. This is a so-called, "Tuakiri Core

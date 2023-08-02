@@ -79,9 +79,8 @@ but first we need to load a few modules:
     module load craype-accel-nvidia60 
     module load PrgEnv-cray
 
-(Ignore warning "<span class="s1">cudatoolkit &gt;= 8.0 is required").
-Furthermore, you may need to load `cuda/fft` or `cuda/blas`  
-</span>
+(Ignore warning "cudatoolkit &gt;= 8.0 is required"). Furthermore, you
+may need to load `cuda/fft` or `cuda/blas`  
 
 To compare the execution times between the CPU and GPU version, we build
 two executables:
@@ -102,6 +101,10 @@ the GPU):
     time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <tbody>
 <tr class="odd">
 </tr>

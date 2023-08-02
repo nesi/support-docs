@@ -20,7 +20,6 @@ services.
 <tbody>
 <tr>
 <td style="width: 34.4%;" rowspan="4">
-
 ### [Proposal Development](https://support.nesi.org.nz/hc/en-gb/articles/360000175675)
 
 A short-term allocation available to researchers from any New Zealand
@@ -42,36 +41,30 @@ from one of our other allocation classes.*
 
 </td>
 <td style="width: 498px;">
-
 Allocations Granted:
 
 </td>
 <td style="width: 25.6%;">
-
 Any time
 
 </td>
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Allocation Period:
 
 </td>
 <td style="width: 25.6%;">
-
 Up to 5 months
 
 </td>
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Maximum Allocation:
 
 </td>
 <td style="width: 25.6%;">
-
 -   2,000 Mahuika compute units per month
 -   40 Māui node hours per month
 -   Online storage dependent on availability
@@ -81,19 +74,16 @@ Maximum Allocation:
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Priority: 
 
 </td>
 <td style="width: 25.6%;">
-
 Moderate 
 
 </td>
 </tr>
 <tr>
 <td style="width: 34.4%;" rowspan="4">
-
 ### [Merit](https://support.nesi.org.nz/hc/en-gb/articles/360000175635)
 
 Intended for highly skilled research teams carrying out high quality
@@ -123,12 +113,10 @@ foreign government are unlikely to qualify.*
 
 </td>
 <td style="width: 20.0%;">
-
 Allocations Granted:
 
 </td>
 <td style="width: 25.6%;">
-
 [Quarterly](https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations)
 
  
@@ -141,12 +129,10 @@ allocations.*
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Allocation Period:
 
 </td>
 <td style="width: 25.6%;">
-
 Up to 12 months, renewable indefinitely (subject to continued
 eligibility and approval)
 
@@ -154,12 +140,10 @@ eligibility and approval)
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Maximum Allocation:
 
 </td>
 <td style="width: 25.6%;">
-
 -   1,000,000 Mahuika compute units
 -   25,000 Māui node hours
 -   Online storage dependent on availability
@@ -169,19 +153,16 @@ Maximum Allocation:
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Priority:
 
 </td>
 <td style="width: 25.6%;">
-
 Highest
 
 </td>
 </tr>
 <tr>
 <td style="width: 34.4%;" rowspan="4">
-
 ### [Postgraduate](https://support.nesi.org.nz/hc/en-gb/articles/360000175695)
 
 Standard allocation for anyone enrolled at a New Zealand degree-granting
@@ -196,12 +177,10 @@ Postgraduate allocations.*
 
 </td>
 <td style="width: 20.0%;">
-
 Allocations Granted:
 
 </td>
 <td style="width: 25.6%;">
-
 [Quarterly](https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations)
 
  
@@ -214,12 +193,10 @@ allocations.*
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Allocation Period:
 
 </td>
 <td style="width: 25.6%;">
-
 Up to 12 months, renewable indefinitely (subject to continued
 eligibility and approval)
 
@@ -227,12 +204,10 @@ eligibility and approval)
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Maximum Allocation:
 
 </td>
 <td style="width: 25.6%;">
-
 -   500,000 Mahuika compute units
 -   12,500 Māui node hours
 -   Online storage dependent on availability
@@ -242,19 +217,16 @@ Maximum Allocation:
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
  
 
 </td>
 <td style="width: 25.6%;">
-
 Low
 
 </td>
 </tr>
 <tr>
 <td style="width: 34.4%;" rowspan="4">
-
 ### [Institutional](https://support.nesi.org.nz/hc/en-gb/articles/360000176116)
 
 Available if you work for or study at one of the institutions that is a
@@ -278,12 +250,10 @@ allocation rather than a Merit or Postgraduate allocation.
 
 </td>
 <td style="width: 20.0%;">
-
 Allocations Granted: 
 
 </td>
 <td style="width: 25.6%;">
-
 Any time
 
  
@@ -295,12 +265,10 @@ subject to the limits of Proposal Development allocations.*
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Allocation Period:
 
 </td>
 <td style="width: 25.6%;">
-
 Up to 12 months, renewable indefinitely (subject to continued
 eligibility and approval)
 
@@ -308,12 +276,10 @@ eligibility and approval)
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Maximum Allocation:
 
 </td>
 <td style="width: 25.6%;">
-
 Dependent on availability, institutional entitlements and institutional
 resource allocation decisions
 
@@ -321,19 +287,16 @@ resource allocation decisions
 </tr>
 <tr>
 <td style="width: 20.0%;">
-
 Priority:
 
 </td>
 <td style="width: 25.6%;">
-
 High
 
 </td>
 </tr>
 </tbody>
 </table>
-
 If you only qualify for a Proposal Development allocation right now,
 please [get in touch with
 us](https://support.nesi.org.nz/hc/requests/new) before applying for a

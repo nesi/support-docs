@@ -43,7 +43,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).
 
- ![cray\_xc50.jpg](../includes/cray_xc50.jpg)
+ ![cray\_xc50.jpg](../../includes/images/cray_xc50.jpg)
 
 <font size="2">Figure 1: Cray XC50 DVS architecture.</font>
 
@@ -64,12 +64,11 @@ compute nodes are:
     <font face="Courier New, serif">IOBUF</font> is not used Read and
     Write performance is &lt;1GB/s.
 
-Unless Cray’s <font color="#0000ff"> <span
-class="underline">[IOBUF](#_IOBUF_-_Caution)</span> </font> capability
-is suitable for an application, <span class="underline">users should
-avoid the use of single-stream I/O with small buffers on</span> Māui.
+Unless Cray’s <font color="#0000ff"> [IOBUF](#_IOBUF_-_Caution) </font>
+capability is suitable for an application, users should avoid the use of
+single-stream I/O with small buffers on Māui.
 
-## <span class="wysiwyg-color-red">IOBUF - Caution</span>
+## IOBUF - Caution
 
 Cray’s IOBUF ( <font face="Courier New, serif">man iobuf</font> ) is an
 I/O buffering library that can reduce the I/O wait time for programs
@@ -86,10 +85,10 @@ maintain coherent buffering between processes which open the same file.
 For this reason, do not use IOBUF with shared file I/O, such as MPI-IO
 routines like
 <font face="Courier New, serif">MPI\_File\_write\_all</font> . IOBUF is
-<span class="underline">not thread-safe</span>, so do not use it with
-multithreaded programs in which the threads perform buffered I/O. IOBUF
-can be linked into programs that use these I/O styles, but buffering
-should not be enabled on those files.
+not thread-safe, so do not use it with multithreaded programs in which
+the threads perform buffered I/O. IOBUF can be linked into programs that
+use these I/O styles, but buffering should not be enabled on those
+files.
 
 ## Data compression
 

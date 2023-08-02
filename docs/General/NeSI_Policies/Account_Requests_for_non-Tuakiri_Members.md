@@ -23,7 +23,7 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](../includes/mceclip0_15.png)
+![mceclip0.png](../../includes/images/mceclip0_15.png)
 
 > ### Warning
 >

@@ -33,7 +33,6 @@ configurations.
 1.  In a new local terminal run; `mkdir -p ~/.ssh/sockets` this will
     create a hidden file in your home directory to store socket
     configurations.
-
 2.  Open your ssh config file with  `nano ~/.ssh/config` and add the
     following (replacing **`username`** with your username):
 
@@ -68,8 +67,8 @@ configurations.
             ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
             ControlPersist 1
 
-    Close and save with <span class="kbd">ctrl x</span>, <span
-    class="kbd">y</span>, <span class="kbd">Enter</span>
+    Close and save with <kbd>ctrl x</kbd>, <kbd>y</kbd>,
+    <kbd>Enter</kbd>
 
 3.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.

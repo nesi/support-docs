@@ -65,7 +65,6 @@ read-only project code respectively.
 5.  Repeat steps 3 and 4 for other directories within
     `/nesi/project/nesi12345` and `/nesi/nobackup/nesi12345`, with the
     necessary modifications.
-
 6.  Optionally, remove your ACL file.
 
         rm acl_to_add.txt

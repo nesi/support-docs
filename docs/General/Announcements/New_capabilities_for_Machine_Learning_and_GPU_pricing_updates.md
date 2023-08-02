@@ -25,17 +25,12 @@ last few months we’ve worked directly with a group of beta tester
 researchers to ensure this new capability is fit-for-purpose and tuned
 to communities' specific software and tool requirements. 
 
-<span class="fabric-editor-annotation">These new A100s, alongside
-</span>[<span class="fabric-editor-annotation">software optimised for
-data
-science</span>](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-)<span
-class="fabric-editor-annotation">, are available to researchers using
-</span>**<span class="fabric-editor-annotation">machine
-learning</span>**<span class="fabric-editor-annotation"> approaches. If
-this is you, </span>[<span class="fabric-editor-annotation">contact NeSI
-Support</span>](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new)<span
-class="fabric-editor-annotation"> to discuss how these new resources
-could support your work.</span>
+These new A100s, alongside [software optimised for data
+science](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-),
+are available to researchers using **machine learning** approaches. If
+this is you, [contact NeSI
+Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) to
+discuss how these new resources could support your work.
 
  
 
@@ -52,11 +47,10 @@ on Mahuika, you can access the P100s right away.
 If you need a larger or new allocation on Mahuika, you can [apply for
 access](https://www.nesi.org.nz/services/applyforaccess) now, but
 requests will likely be considered as part of our next allocation call
-window: [<span class="fabric-editor-annotation">31 August - 01
-October</span>](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
+window: [31 August - 01
+October](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
 
-<span class="fabric-editor-annotation">For more technical
-information</span> about using GPUs on NeSI, [click
+For more technical information about using GPUs on NeSI, [click
 here](https://support.nesi.org.nz/hc/en-gb/articles/360001471955). If
 you have questions about allocations or how to access the P100s,
 [contact NeSI
@@ -90,13 +84,11 @@ acceleration at the same time.
 
 These activities will enable us to expand GPU access to an even broader
 community of users, as well as support more advanced and demanding
-performance needs across domains. <span
-class="fabric-editor-annotation">If you’re interested in using these
+performance needs across domains. If you’re interested in using these
 A100s for something other than machine learning, let us know by
-</span>[<span class="fabric-editor-annotation">contacting NeSI
-Support</span>](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new)<span
-class="fabric-editor-annotation"> - that way we can keep you up to date
-on our plans. </span>
+[contacting NeSI
+Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) -
+that way we can keep you up to date on our plans.
 
  
 

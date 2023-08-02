@@ -10,7 +10,7 @@ zendesk_article_id: 5830080251791
 zendesk_section_id: 360000189716
 ---
 
-**<span class="wysiwyg-font-size-x-large">Example for C</span>**
+**Example for C**
 
 ### Initial C Script
 
@@ -51,7 +51,7 @@ zendesk_section_id: 360000189716
 -   We use the environment variable **OMP\_NUM\_THREADS** to set the
     number of threads.
 
-**<span class="wysiwyg-font-size-x-large">Example for R</span>**
+**Example for R**
 
 In the examples below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
@@ -95,8 +95,7 @@ Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated
-guess.<span class="wysiwyg-color-red">  
-</span>
+guess.  
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or

@@ -111,17 +111,14 @@ keep beyond the scheduled expiry date, you have four options:
     assess such requests on a case-by-case basis.  Note:  You can save
     space by compressing data.  Standard tools such as \`gzip\`
     \`bzip2\` etc are available.
-
 -   Move or copy the file to a storage system outside NeSI, for example
     a research storage device at your institution. We expect most
     projects to do this for finalised output data and appreciate prompt
     egress of data once it is no longer used for processing.
-
 -   **Modify** the file before the deletion date, in which case the file
     will not be deleted even though it is listed in `.policy`. This must
     only be done in cases where you expect to begin active use of the
     data again within the next month.
-
 -   Note: Accessing (Open/Close and Open/Save) or Moving (\`mv\`) does
     not update the timestamp of the file. Copying (\`cp\`) does create a
     new timestamped file.  
@@ -137,6 +134,11 @@ keep beyond the scheduled expiry date, you have four options:
 ## Where should I put my data?
 
 <table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <tbody>
 <tr class="odd">
 </tr>

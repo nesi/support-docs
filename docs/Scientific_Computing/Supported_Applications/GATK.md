@@ -29,7 +29,7 @@ need to load a Java module separately.
 
  
 
-<span class="wysiwyg-underline">**Note**</span>  :
+**Note**  :
 
 -   `--time` and `--mem` defined in the following example are just place
     holders.
@@ -64,10 +64,9 @@ need to load a Java module separately.
 
 ## GATK-Picard
 
-<span class="ILfuVd"><span class="hgKElc">GATK versions 4.0 or higher
-all contains a copy of the Picard toolkit, you will not need to
-separately load the Picard module. To run GATK-picard commands, use:  
-</span></span>
+GATK versions 4.0 or higher all contains a copy of the Picard toolkit,
+you will not need to separately load the Picard module. To run
+GATK-picard commands, use:  
 
     gatk <picard function> <options>
 
@@ -83,7 +82,7 @@ GATK flag naming conventions, so it is best to double check them.
 
 # Common Issues
 
-## Out of Memory or Insufficient Space for Shared Memory File<span class="heading-anchor-wrapper"></span>
+## Out of Memory or Insufficient Space for Shared Memory File
 
 This is related to temporary files being created by Java in `/tmp`, and
 then running out of space. If you see the error message

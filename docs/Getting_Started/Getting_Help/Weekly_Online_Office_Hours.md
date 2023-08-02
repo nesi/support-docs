@@ -19,26 +19,28 @@ sessions are open to anyone - you don't need to be an existing NeSI
 user.  
   
 
-## **Office Hours in July 2023**
+## **Office Hours in August 2023**
 
 Click on the links below to add the date & Zoom link to your calendar.
 
--   [**05 July (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NnRnbmw3dnYyaW4wc2kyc2ltOHNlbmE0YXAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**02 August (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MWM3MjU1dmZya3ZicGhvMmlyZmJ2Z285MjMgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**12 July (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzgxNDdrNzhscWtxY3JocTlxNHFuajk4bDYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**09 August (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGdpdXI3bW1pYzBhZTRtYTZtbHJkcWw2YnIgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**19 July (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWhwMmpqYTFhNzkzYjhtOTd2bGRmMGJ0NnYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**16 August (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MXFqZ212dWhoMzk1ZWc5aTJvZ21lZGV2NWkgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**26 July (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzFlc3MxM3E3YW1uODY5aXBuamtrMXBiMmYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**23 August (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmY2NThqZmtwczRwMjBnYmhhbzUyMjRzNm4gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**30 August (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N2UwaTRnYWFrN3Z1Zm1rams5YjJhczY4Y20gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
 If you are unable to add this Office Hour session to your calendar
-through these links, please email us at
-<a href="mailto:training@nesi.org.nz" class="mailto">training@nesi.org.nz</a> and
-we can send a calendar invite directly to you.   
+through these links, please email us at <training@nesi.org.nz> and we
+can send a calendar invite directly to you.   
   
 
 ## **How Does It Work**
@@ -57,11 +59,10 @@ troubleshoot things further.
 
 ## **Other ways to get help**
 
-Remember, you can
-<a href="mailto:support@nesi.org.nz" class="mailto">email Support</a> at
-any time and we have a team of experts ready to answer any questions you
-may have, big or small. You can also find helpful user resources, links
-and documentation elsewhere in our [User Support
+Remember, you can [email Support](mailto:support@nesi.org.nz) at any
+time and we have a team of experts ready to answer any questions you may
+have, big or small. You can also find helpful user resources, links and
+documentation elsewhere in our [User Support
 Centre](https://support.nesi.org.nz/hc/en-gb).
 
  

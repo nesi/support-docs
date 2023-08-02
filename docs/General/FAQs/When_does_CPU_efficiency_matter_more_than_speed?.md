@@ -21,6 +21,7 @@ efficiency rather than speed, and running on a single CPU is almost
 always more efficient than any form of parallelisation. 
 
 ![*Four serial tasks run concurrently will finish faster than for
-parallel 4cpu tasks CPUs one after another. *](../includes/4tasks.png)
+parallel 4cpu tasks CPUs one after
+another. *](../../includes/images/4tasks.png)
 
 </figure>

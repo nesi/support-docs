@@ -43,18 +43,16 @@ following commands to generate the training and testing data sets:
     Rscript DrawDots.R -n 1000 -r 0 -R 5 -s 123 -o train -c train.csv -w 40
     Rscript DrawDots.R -n 100 -r 0 -R 5 -s 234 -o test -c test.csv -w 40
 
-<span class="s1">The images are saved under directories train/ and
-test/, respectively. An example of image is test/img49.jpg.</span>
+The images are saved under directories train/ and test/, respectively.
+An example of image is test/img49.jpg.
 
     display test/img49.jpg
 
-<span
-class="s1"><img src="../includes/img49.jpg" alt="img49.jpg" width="100" height="100" /></span>
+<img src="../../includes/images/img49.jpg" alt="img49.jpg" width="100" height="100" />
 
-<span class="s1">which shows five, partially overlapping dots. Note that
-along with the images, a comma separated values (csv) file (e.g.
-train/train.csv) containing the number of dots (0 to 5) for each image
-is also saved.</span>
+which shows five, partially overlapping dots. Note that along with the
+images, a comma separated values (csv) file (e.g. train/train.csv)
+containing the number of dots (0 to 5) for each image is also saved.
 
 ### Installing image processing software
 
@@ -117,16 +115,15 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../includes/someResults.png)
+![someResults.png](../../includes/images/someResults.png)
 
-<span class="s1">(The purple images have no dots.) With each image the
-number of dots is displayed as well as the value inferred by the model
-in parentheses. The inferred values are to be rounded to the nearest
-integer. Plot titles in red indicate failures. Among the 100 test
-images, the correct number of dots was found in 90 percent of the cases
-(the accuracy will change with each training due to the randomness of
-the process). The predicted number of dots should be off by no more than
-one unit in most cases. </span>
+(The purple images have no dots.) With each image the number of dots is
+displayed as well as the value inferred by the model in parentheses. The
+inferred values are to be rounded to the nearest integer. Plot titles in
+red indicate failures. Among the 100 test images, the correct number of
+dots was found in 90 percent of the cases (the accuracy will change with
+each training due to the randomness of the process). The predicted
+number of dots should be off by no more than one unit in most cases. 
 
  
 

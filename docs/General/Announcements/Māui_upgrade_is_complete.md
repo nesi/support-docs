@@ -19,10 +19,9 @@ performance and stability and enabling new capabilities.
 If you encounter any issues, have any questions about the upgrade, need
 help with getting your software working on the upgraded system, or have
 a suggestion for our documentation, please contact us via email at
-[<span
-class="wysiwyg-underline">support@nesi.org.nz</span>](mailto:support@nesi.org.nz).
-We are committed to providing you with the best computing resources
-possible and will do our best to assist you.
+[support@nesi.org.nz](mailto:support@nesi.org.nz). We are committed to
+providing you with the best computing resources possible and will do our
+best to assist you.
 
 ## Why
 

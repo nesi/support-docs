@@ -16,10 +16,11 @@ NeSI software stack is supported. If you would like to build your own
 desktop containers with the code
 [here](https://github.com/nesi/nesi-singularity-recipes).
 
-Rendering is done cluster-side, and compressed before being sent to your
-local machine. This means any rendering should be significantly more
-responsive than when using X11 on its own (approximately 40 times
-faster).
+Rendering is d<dfn class="dictionary-of-numbers">one cluster-side</dfn>,
+and compressed before being sent to your local machine. This means any
+rendering should be significantly more responsive than when using
+X<dfn class="dictionary-of-numbers">11 on it</dfn>s own (approximately
+<dfn class="dictionary-of-numbers">40 times faster)</dfn>.
 
 # Connecting Through SSH
 
@@ -89,14 +90,15 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-<img src="../includes/fig1.svg" width="426" height="362" />![](../includes/VirtualScaling.png)
+<img src="../../includes/images/fig1.svg" width="426" height="362" />![](../../includes/images/VirtualScaling.png)
 
 # Examples
 
 The conditions for running a desktop on the login node are similar to
 when using a shell. There are no time limits, but should not be used for
 large or long running jobs. Any serious amount of computation should be
-launched with SLURM, this can be done using the terminal or GUI.   
+launched with SLURM, this can be d<dfn class="dictionary-of-numbers">one
+using the terminal </dfn>or GUI.   
   
 
 In the case where your work needs to be run interactively, and cannot be
@@ -121,7 +123,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](../includes/mceclip0_7.png)
+![mceclip0.png](../../includes/images/mceclip0_7.png)
 
 ## On a compute node
 

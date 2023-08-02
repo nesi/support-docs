@@ -58,10 +58,9 @@ met:
 ## Example Slurm script
 
 **Caution**: Absolute path is needed for both `INPUT_DIR` and
-`OUTPUT_DIR`<span class="pl-c">  
+`OUTPUT_DIR`  
   
   
-</span>
 
     #!/bin/bash -e
 
@@ -92,10 +91,9 @@ met:
     --model_path=${CONDA_PREFIX}/bin/models/${MODEL_NAME} \
     --output=${OUTPUT_DIR} --enable_phasing
 
-<span class="pl-c">  
   
   
   
-</span>
+  
 
 ``

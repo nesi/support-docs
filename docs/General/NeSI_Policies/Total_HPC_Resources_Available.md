@@ -17,10 +17,9 @@ include 152 million x86 CPU Core-hours and 112 thousand GPGPU-hours
 (equivalent to 400 million Cuda Core-hours) per annum and are divided
 between Allocation Classes as specified in Table 1, and Table 2.
 
-<span class="wysiwyg-font-size-small">Table 1: NeSI HPC resources
-(physical core-hours) available per annum. Note: (1) One Node-h on Māui
-is equivalent to 40 Core-hs; (2) Allocations on Mahuika (cloud) will be
-available in Q4, 2018.</span>
+Table 1: NeSI HPC resources (physical core-hours) available per annum.
+Note: (1) One Node-h on Māui is equivalent to 40 Core-hs; (2)
+Allocations on Mahuika (cloud) will be available in Q4, 2018.
 
 <table style="width:100%;">
 <colgroup>
@@ -47,11 +46,11 @@ available in Q4, 2018.</span>
 
  
 
-<span class="wysiwyg-font-size-small">Table 2: GPGPU resources available
-for Allocation per annum. Note: these are the maximum resources
-available (assuming all GPGPUs are used for computation). Actual total
-allocations will be lower, as one or more GPGPUs on each HPC may be used
-to provide remotes visualization services.</span>
+Table 2: GPGPU resources available for Allocation per annum. Note: these
+are the maximum resources available (assuming all GPGPUs are used for
+computation). Actual total allocations will be lower, as one or more
+GPGPUs on each HPC may be used to provide remotes visualization
+services.
 
 <table>
 <colgroup>

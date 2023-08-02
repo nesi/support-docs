@@ -17,23 +17,19 @@ expected in the new version. The full list of bugfixes, improvements and
 changes is available on Schemd  website: [Slurm
 news](https://slurm.schedmd.com/news.html)
 
-<span class="c-mrkdwn__br"></span>
-
-<span class="c-mrkdwn__br"></span>
-
-<span class="c-mrkdwn__br"></span>***squeue***
+***squeue***
 
 -   Added `--me` option, equivalent to` --user=$USER`.
 -   Added "pendingtime" as a option for --Format.
 -   Put sorted start times of "N/A" or 0 at the end of the list.
 
-<span class="c-mrkdwn__br"></span>***sacct***
+***sacct***
 
 -   Add time specification: "now-" (i.e. subtract from the present)
 -   AllocGres and ReqGres were removed. Alloc/ReqTres should be used
     instead. 
 
-<span class="c-mrkdwn__br"></span>***scontrol***
+***scontrol***
 
 -   MAGNETIC flag on reservations. Reservations the user doesn't have to
     even request.
@@ -41,8 +37,7 @@ news](https://slurm.schedmd.com/news.html)
     Please use updated `scontrol show licenses` command as an
     alternative.
 
-<span class="c-mrkdwn__br"></span>***sbatch***  
-<span class="c-mrkdwn__br"></span>
+***sbatch***  
 
 -    `--threads-per-core` now influences task layout/binding, not just
     allocation.
@@ -56,14 +51,14 @@ news](https://slurm.schedmd.com/news.html)
 -   The correct term for the separate constituent jobs are
     "components",   references to "packs" have been corrected.
 
-<span class="c-mrkdwn__br"></span>**salloc**
+**salloc**
 
 -   Added support for an "Interactive Step", designed to be used with
     salloc to launch a terminal on an allocated compute node
     automatically. Enable by setting "use\_interactive\_step" as part of
     LaunchParameters.
 
-<span class="c-mrkdwn__br"></span>***srun***
+***srun***
 
 -    By default, a step started with srun will be granted exclusive (or
     non- overlapping) access to the resources assigned to that step. No
@@ -81,7 +76,7 @@ news](https://slurm.schedmd.com/news.html)
     so no other parallel step will have access to those resources unless
     both steps have specified '--overlap'.
 
-<span class="c-mrkdwn__br"></span>***scrontab***
+***scrontab***
 
 -   New command which permits crontab-compatible job scripts to be
     defined. These scripts will recur automatically (at most) on the

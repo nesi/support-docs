@@ -16,12 +16,11 @@ the backplane. On Māui, this implies each chassis contains 64 nodes, or
 2,560 Skylake cores. There are 3 chassis in an XC50 cabinet, and two
 XC50 cabinets are an Electrical "group". Māui has 1.5 groups.
 
-<img src="../includes/UPM_html_2d91e9cdd34d272d.gif" alt="UPM_html_2d91e9cdd34d272d.gif" width="298" height="263" />
+<img src="../../includes/images/UPM_html_2d91e9cdd34d272d.gif" alt="UPM_html_2d91e9cdd34d272d.gif" width="298" height="263" />
 
 The performance characteristics are:
 
 <ol>
-
 1.  Intra-Chassis
     1.  Backplane
     2.  15 links in the backplane
@@ -39,7 +38,6 @@ The performance characteristics are:
     4.  12.5 Gbps
 
 </ol>
-
 The centrepiece of the Aries network is dynamic routing through a large
 variety of different routes from Aries A to Aries B. Therewith the
 effective bandwidth is increased significantly. These dynamic routing on

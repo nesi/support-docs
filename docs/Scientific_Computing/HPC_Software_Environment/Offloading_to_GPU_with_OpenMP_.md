@@ -50,8 +50,7 @@ need to load a few modules:
     module load cray-libsci_acc/18.06.1 craype-accel-nvidia60 \
      PrgEnv-cray/1.0.4 cuda92/blas/9.2.88 cuda92/toolkit/9.2.88
 
-(Ignore warning "<span class="s1">cudatoolkit &gt;= 8.0 is
-required").</span>
+(Ignore warning "cudatoolkit &gt;= 8.0 is required").
 
 To compare the execution times between the CPU and GPU version, we build
 two executables:
@@ -72,6 +71,10 @@ offloads to the GPU):
     time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalOmpGpu
 
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <tbody>
 <tr class="odd">
 </tr>

@@ -145,7 +145,7 @@ The utilization of the CPUs is also analyzed and judged.
 
 ###  
 
-### <span class="wysiwyg-underline">Note:</span>
+### Note:
 
 You can run the VTune GUI via Jupyter+VDT to visualise profiling
 results.

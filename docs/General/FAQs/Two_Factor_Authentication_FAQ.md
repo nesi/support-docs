@@ -34,7 +34,7 @@ Authentication](https://support.nesi.org.nz/hc/articles/360000203075).
 plans to implement SSH key-based authentication. Only time-based codes
 are currently valid.
 
-## I have a new mobile device. How do I transfer my old second factor onto my new device?<span class="wysiwyg-font-size-large">* *</span>
+## I have a new mobile device. How do I transfer my old second factor onto my new device?* *
 
 **Authy:** It should get synchronised automatically.
 
@@ -45,7 +45,7 @@ keep and then press **Next**. If these options are not present then
 first update your Authenticator. On the new device press **Import
 existing accounts** then scan the QR code provided on the old device. 
 
-## How do I get a new Second Factor?<span class="wysiwyg-font-size-large"> </span>
+## How do I get a new Second Factor? 
 
 **Answer:** See article
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token).

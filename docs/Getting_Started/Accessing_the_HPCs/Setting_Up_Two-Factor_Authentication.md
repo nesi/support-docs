@@ -45,12 +45,11 @@ If you some reason you can't do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    <img src="../includes/4414700806543" alt="authentication_factor_setup.png" width="560" height="210" />
+    <img src="../../includes/images/4414700806543" alt="authentication_factor_setup.png" width="560" height="210" />
 
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
-    ![](../includes/360001267755)
+    ![](../../includes/images/360001267755)
 4.  After clicking on "Continue" you will retrieve the QR code.
-
 5.  Open your Authy or Google Authenticator app and click on the add
     button and select "**Scan a barcode**". Alternatively, if you are
     not able to scan the barcode from your device you can manually enter
@@ -58,9 +57,8 @@ If you some reason you can't do this, please contact NeSI support.
 
 ## The second-factor token
 
-The <span class="wysiwyg-underline">6 digit code</span> displayed on
-your app can now be used as the second factor in the
-authentication process.  
+The 6 digit code displayed on your app can now be used as the second
+factor in the authentication process.  
 This code rotates every 30 seconds, and it **can only be used once**.
 This means that you can only try logging in to the lander node once
 every 30 seconds.

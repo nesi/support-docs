@@ -69,14 +69,14 @@ the cluster and your ssh config file is set up as described
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
-to with `sftp://mahuika`. (<span class="kbd">ctrl</span> + <span
-class="kbd">L</span> opens address bar)
+to with `sftp://mahuika`. (<kbd>ctrl</kbd> + <kbd>L</kbd> opens address
+bar)
 
 This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../includes/mceclip0.png)
+![mceclip0.png](../../includes/images/mceclip0.png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -89,7 +89,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../includes/2019-01-07_SCP_in_MobaXTerm.png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](../../includes/images/2019-01-07_SCP_in_MobaXTerm.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided
@@ -147,7 +147,7 @@ The most frequently used Rclone subcommands:
 -   **rclone copyurl** – Copy the URL's content to the destination
     without saving it in the tmp storage.
 
-A more extensive list can be found on the the [Rclone
+A more extensive list can be found on the the[Rclone
 documentation](https://rclone.org/docs).
 
 # Rsync

@@ -29,8 +29,8 @@ scheduling, and optimising your jobs on the system.
 
 These sessions are hosted **online at 1:00 PM on Wednesdays** (except
 public or University holidays). To receive the Zoom video conference
-link for these sessions, please
-<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-hIVACf iidwfL" title="https://support.nesi.org.nz/hc/en-gb/requests/new">contact NeSI Support</a>.
+link for these sessions, please [contact NeSI
+Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new").
 
 You can find the slides for the current workshop
 [here](https://docs.google.com/presentation/d/11TCaJnpZO-s-s4NQ1P0a89flewT7HXmn2PHrW-3EPYg/edit?usp=sharing).
@@ -41,8 +41,8 @@ You can find a recording of the workshop
 ## Other ways to get 'Introductory' help
 
 If you are unable to join our Introductory Sessions on Wednesdays,
-please
-<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-hIVACf iidwfL" title="https://support.nesi.org.nz/hc/en-gb/requests/new">contact Support</a>
+please [contact
+Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new")
 and we can investigate an alternative time for an individual on-boarding
 session.
 

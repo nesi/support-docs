@@ -23,44 +23,40 @@ data science workflows.
 
 ## Upcoming changes to data management processes for project directories
 
-**<span class="underline"><span class="inline-highlight">  
-4-15 October 2021</span></span>**
+**  
+4-15 October 2021**
 
-<span class="inline-highlight">The NeSI project filesystem is becoming
-critically full, however it is currently storing a large amount of
-dormant data that has not been accessed for more than 12 months. We need
-your help to free up space on the project filesystem as soon as
-possible. </span><span class="inline-highlight">Please review the data
-you are currently storing in any  </span>`/nesi/project/`<span
-class="inline-highlight"> directories and **delete or relocate** any
-files that are no longer required for ongoing computational and/or
-analytics work on NeSI.</span>
+The NeSI project filesystem is becoming critically full, however it is
+currently storing a large amount of dormant data that has not been
+accessed for more than 12 months. We need your help to free up space on
+the project filesystem as soon as possible. Please review the data you
+are currently storing in any  `/nesi/project/` directories and **delete
+or relocate** any files that are no longer required for ongoing
+computational and/or analytics work on NeSI.
 
-<span class="inline-highlight">We have started regular audits of data
-stored in project folders, using the same format as our nobackup auto
-cleaning ([described
+We have started regular audits of data stored in project folders, using
+the same format as our nobackup auto cleaning ([described
 here](https://support.nesi.org.nz/hc/en-gb/articles/360001162856)). See
 the file
 `/nesi/project/<project_code>/.policy.test/scan485/latest.summary.txt`
 for a summary of the number and size of files within each project that
 have not been accessed for more than 485 days (this is ~15 months, and
 is the draft auto cleaning timeframe under consideration for the project
-filesystem).</span>
+filesystem).
 
-<span class="inline-highlight">If you need assistance with this,
-</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span class="inline-highlight">contact Support </span></a><span
-class="inline-highlight">and we’d be happy to help or answer
-questions.</span><span class="inline-highlight"></span>
+If you need assistance with this, [contact Support
+](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new")and
+we’d be happy to help or answer questions.
 
-If you have data that may be used again on NeSI later,
-<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new">let us know</a>
+If you have data that may be used again on NeSI later, [let us
+know](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new")
 and we will consider whether a
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service">Nearline</a>
+[Nearline](https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service "https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service")
 storage allocation would be appropriate to manage this.
 
  
 
-**<span class="wysiwyg-underline">18 October 2021</span>**
+**18 October 2021**
 
 We will begin a limited roll-out of a new feature to automatically
 identify inactive files in  `/nesi/project/` directories and schedule
@@ -69,30 +65,28 @@ are inactive / untouched for more than 12 months. 
 
 A selection of active projects will be invited to participate in this
 first phase of the programme. If you would like to volunteer to be an
-early tester / participant, please <span class="inline-highlight">
-</span><a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new"><span class="inline-highlight">contact Support</span></a>.
+early tester / participant, please [contact
+Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new").
 Otherwise, we will be in touch with projects directly to onboard them.
 
 Insights from this initial phase will inform the criteria and processes
 of the programme prior to it being released to the broader user
 community.
 
-<span class="inline-highlight">Alongside this work, we will also adopt a
-new policy on how long inactive data may be stored on NeSI systems,
-particularly once a research project itself becomes inactive.</span>
+Alongside this work, we will also adopt a new policy on how long
+inactive data may be stored on NeSI systems, particularly once a
+research project itself becomes inactive.
 
  
 
-**<span class="underline"><span class="inline-highlight">January
-2022</span></span>**
+**January 2022**
 
-Starting in January 2022, we will expand the<span
-class="inline-highlight"> </span>`/nesi/project/`<span
-class="inline-highlight"> directory </span> data management programme to
-include all active projects on NeSI. Additional Support documentation
-and user information sessions will be hosted prior to wider
-implementation, to provide advance notice of the change and to answer
-any questions you may have around data lifecycle management. 
+Starting in January 2022, we will expand the `/nesi/project/` directory
+data management programme to include all active projects on NeSI.
+Additional Support documentation and user information sessions will be
+hosted prior to wider implementation, to provide advance notice of the
+change and to answer any questions you may have around data lifecycle
+management. 
 
  
 
@@ -104,8 +98,8 @@ levels, as that impacts their performance and availability for users. We
 also want to ensure our active storage filesystems aren't being used to
 store inactive data. This new data management feature
 for `/nesi/project/` directories will complement our existing programme
-of
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360001162856" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/articles/360001162856">automatic cleaning of the /nobackup file system</a>.
+of [automatic cleaning of the /nobackup file
+system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856 "https://support.nesi.org.nz/hc/en-gb/articles/360001162856").
 
  
 
@@ -125,8 +119,9 @@ and cached between updates.
 directory?**
 
 Perhaps. We regularly make read-only copies of the file system and save
-them for up to seven days. For more information,
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery">refer to our File Recovery page</a>.
+them for up to seven days. For more information, [refer to our File
+Recovery
+page](https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery "https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery").
 
  
 
@@ -162,14 +157,15 @@ situ. 
 
 There are two tracked resources in the NeSI filesystem, *disk
 space* and *inodes (number of files)*. If you run into problems with
-either of these,
-<a href="https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space">refer to this Support page for more information</a>.
+either of these, [refer to this Support page for more
+information](https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space "https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space").
 
  
 
 **6) I have questions that aren’t covered here. Who can I talk to?**
 
-<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new">Contact Support</a>.
+[Contact
+Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new").
 No question is too big or small and our intention is always to work with
 you to find the best way to manage your research data.
 
@@ -179,4 +175,5 @@ you to find the best way to manage your research data.
 
 This page will continue to be updated in the coming months with more
 information. If you have questions at any time, don’t hesitate to
-<a href="https://support.nesi.org.nz/hc/en-gb/requests/new" class="sc-cHGsZl lirsdj" title="https://support.nesi.org.nz/hc/en-gb/requests/new">contact Support</a>.
+[contact
+Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new").

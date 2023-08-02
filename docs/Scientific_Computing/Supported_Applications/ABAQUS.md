@@ -91,7 +91,7 @@ source code.
 Extra compiler options can be set in your local `abaqus_v6.env` file.
 
 The default compile commands are for `imkl`, other compilers can be
-loaded with `module load`, you may have to change the [compile
+loaded with `module load`, you may have to change the[compile
 commands](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) in
 your local `.env` file.
 
@@ -132,9 +132,10 @@ to a job.
 
  
 
-![ABAQUS\_speedup\_SharedVMPI.png](../includes/ABAQUS_speedup_SharedVMPI.png)
+![ABAQUS\_speedup\_SharedVMPI.png](../../includes/images/ABAQUS_speedup_SharedVMPI.png)
 
  
 
-*Note: Hyperthreading off, testing done on small mechanical FEA model.
-Results highly model dependant. Do your own tests.*
+*Note: Hyperthreading off, testing
+d<dfn class="dictionary-of-numbers">one on small mechanical </dfn>FEA
+model. Results highly model dependant. Do your own tests.*

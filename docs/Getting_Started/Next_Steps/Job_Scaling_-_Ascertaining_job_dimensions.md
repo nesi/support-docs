@@ -69,18 +69,17 @@ your jobs to help you better estimate your jobs resource needs.
 
 # Job Scaling
 
-Before you start submitting the main bulk of your jobs, it is <span
-class="SDZsVb">advisable to first submit a *test job*. </span>
+Before you start submitting the main bulk of your jobs, it is advisable
+to first submit a *test job*.
 
-<span class="SDZsVb">A test job should be representative of the main
-body of your work, scaled down (e.g. a small subset of your data or a
-low number of job steps). Aim for your test job to run for around 10
-minutes, too much shorter and your job will be spending a high
-proportion of its time on overhead and therefore be less accurate for
-the purposes of scaling.</span>
+A test job should be representative of the main body of your work,
+scaled down (e.g. a small subset of your data or a low number of job
+steps). Aim for your test job to run for around 10 minutes, too much
+shorter and your job will be spending a high proportion of its time on
+overhead and therefore be less accurate for the purposes of scaling.
 
-<span class="SDZsVb">Keeping your test job small ensures a short queue
-time, short run time and that minimal resources are expended.</span>
+Keeping your test job small ensures a short queue time, short run time
+and that minimal resources are expended.
 
 When scaling your jobs, one of the most beneficial things you can do is
 to first scale down your data and calculations to as small as you can.

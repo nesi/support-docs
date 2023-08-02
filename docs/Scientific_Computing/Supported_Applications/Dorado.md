@@ -15,7 +15,7 @@ zendesk_section_id: 360000040076
 Dorado is a high-performance, easy-to-use, open source basecaller for
 Oxford Nanopore reads.
 
-## <a href="https://github.com/nanoporetech/dorado#features" id="user-content-features" class="anchor"></a>Features
+## [](https://github.com/nanoporetech/dorado#features)Features
 
 -   One executable with sensible defaults, automatic hardware detection
     and configuration.
@@ -59,7 +59,7 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
     #SBATCH --output         slurmout.%j.out
 
     module purge
-    module load Dorado/0.3.0
+    module load Dorado/0.3.2
 
     dorado download --model dna_r10.4.1_e8.2_400bps_hac@v4.1.0
 

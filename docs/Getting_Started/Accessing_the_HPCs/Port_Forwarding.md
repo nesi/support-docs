@@ -119,7 +119,7 @@ will be forwarded.
 >     try to create the following directory:
 >
 >         mkdir -P ~/.ssh/sockets
-
+>
 # MobaXterm
 
 If you have Windows Subsystem for Linux installed, you can use the
@@ -128,12 +128,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](../includes/360004708596)
+![mceclip0.png](../../includes/images/360004708596)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](../includes/360004708616)
+![mceclip1.png](../../includes/images/360004708616)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -141,12 +141,12 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](../includes/360004580035)
+![mobakey.png](../../includes/images/360004580035)
 
-<span class="wysiwyg-color-green110">■</span> local port  
-<span class="wysiwyg-color-orange90">■</span> remote port  
-<span class="wysiwyg-color-red90">■</span> must match  
-<span class="wysiwyg-color-pink80">■</span> doesn't matter
+■ local port  
+■ remote port  
+■ must match  
+■ doesn't matter
 
  
 

@@ -13,8 +13,7 @@ zendesk_section_id: 7348891753487
 NeSI has a range of options for research institutions and independent
 researchers to access our services to build your research capabilities.
 
-Subscribing to NeSI's services <span
-class="fabric-editor-annotation">provides you with:</span>
+Subscribing to NeSI's services provides you with:
 
 -   Managed entitlements on NeSI's HPC platform for your research
     projects and programmes. This includes access to:

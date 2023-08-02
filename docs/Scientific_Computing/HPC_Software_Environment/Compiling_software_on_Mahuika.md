@@ -269,7 +269,7 @@ used library should be build with the same compiler.
 adding the location to the MPI library. This can be observed calling
 e.g. `mpif90 -showme`
 
-## Common Linker Problems<span class="wysiwyg-underline"> </span>
+## Common Linker Problems 
 
 Linking can easily go wrong. Most often, you will see linker errors
 about "missing symbols" when the linker could not find a function used

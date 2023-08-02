@@ -21,42 +21,35 @@ Cray Programming Environment (CPE), but these vary in detail. In general
 we distinguish, between the XC50 part of Māui and the CS (Mahuika,
 Mahuika Ancillary Nodes, and Māui Ancillary nodes) systems.
 
-<span class="wysiwyg-font-size-small">Table 1: The Cray Programming
-Environment on Māui and Mahuika. Black text indicates components common
-to both systems, green to components only available on Mahuika, and blue
-to components only available on Māui XC part.  
-</span>
+Table 1: The Cray Programming Environment on Māui and Mahuika. Black
+text indicates components common to both systems, green to components
+only available on Mahuika, and blue to components only available on Māui
+XC part.  
 
 <table class="table table-striped table-bordered">
 <thead>
 <tr>
 <th>
-
 Programming Languages
 
 </th>
 <th>
-
 Programming Models
 
 </th>
 <th>
-
 Compilers
 
 </th>
 <th>
-
 Tools
 
 </th>
 <th>
-
 Optimised Scientific Libraries
 
 </th>
 <th>
-
 I/O Libraries
 
 </th>
@@ -65,7 +58,6 @@ I/O Libraries
 <tbody>
 <tr>
 <td rowspan="4">
-
 Fortran
 
 C
@@ -76,29 +68,26 @@ Chapel
 
 </td>
 <td>
-
 Distributed Memory:
 
 MPI Support:
 
-<span class="wysiwyg-color-green120">· Intel MPI<sup>1</sup></span>
+· Intel MPI<sup>1</sup>
 
-<span class="wysiwyg-color-green120">· </span><span
-class="wysiwyg-color-green120">MVAPICH2<sup>1</sup></span>
+· MVAPICH2<sup>1</sup>
 
-<span class="wysiwyg-color-green120">· OpenMPI<sup>1</sup></span>
+· OpenMPI<sup>1</sup>
 
-<span class="wysiwyg-color-green120">· MPICH<sup>1</sup></span>
+· MPICH<sup>1</sup>
 
-<span class="wysiwyg-color-green120">· Cray-MVAPICH2<sup>1</sup></span> 
+· Cray-MVAPICH2<sup>1</sup> 
 
-<span class="wysiwyg-color-blue80">Cray MPT<sup>2</sup>:</span>
+Cray MPT<sup>2</sup>:
 
-<span class="wysiwyg-color-blue80">· MPI</span>
+· MPI
 
 </td>
 <td>
-
 · Cray Compiling Environment (CCE)
 
 · GNU
@@ -107,19 +96,16 @@ class="wysiwyg-color-green120">MVAPICH2<sup>1</sup></span>
 
 </td>
 <td>
-
 Performance Analysis:
 
 · CrayPat & Cray Apprentice2
 
 · Allinea MAP
 
-· Intel Vtune Amplifier XE, Advisor, <span
-class="wysiwyg-color-green120">Trace Analyser & Collector</span>
+· Intel Vtune Amplifier XE, Advisor, Trace Analyser & Collector
 
 </td>
 <td>
-
 Dense:
 
 · BLAS
@@ -132,16 +118,14 @@ Dense:
 
 </td>
 <td rowspan="4">
+NetCDF<sup>2</sup>
 
-<span class="wysiwyg-color-blue80">NetCDF<sup>2</sup></span>
-
-<span class="wysiwyg-color-blue80">HDF<sup>2</sup></span>
+HDF<sup>2</sup>
 
 </td>
 </tr>
 <tr>
 <td>
-
 Shared Memory
 
 · OpenMP 4.0
@@ -150,18 +134,16 @@ Shared Memory
 
 </td>
 <td>
-
 Environment Setup
 
 · Modules
 
-<span class="wysiwyg-color-green120">· Lmod<sup>1</sup></span>
+· Lmod<sup>1</sup>
 
  
 
 </td>
 <td>
-
 Porting Tools:
 
 · Reveal
@@ -170,7 +152,6 @@ Porting Tools:
 
 </td>
 <td>
-
 FFT:
 
 · FFTW
@@ -179,7 +160,6 @@ FFT:
 </tr>
 <tr>
 <td>
-
 PGAS
 
 · UPC
@@ -190,73 +170,59 @@ PGAS
 
 </td>
 <td>
-
  
 
 </td>
 <td>
-
 Debuggers:
 
 · lgdb
 
 · Allinea DDT
 
-<span class="wysiwyg-color-blue80">· ATP<sup>2</sup></span>
+· ATP<sup>2</sup>
 
-<span class="wysiwyg-color-blue80">· STAT<sup>2</sup></span>
+· STAT<sup>2</sup>
 
 </td>
 <td>
+Sparse:
 
-<span class="wysiwyg-color-blue80">Sparse:</span>
+· Cray PETSc (with CASK)<sup>2</sup>
 
-<span class="wysiwyg-color-blue80">· Cray PETSc (with
-CASK)<sup>2</sup></span>
-
-<span class="wysiwyg-color-blue80">· Cray Trilinos (with
-CASK)<sup>2</sup></span>
+· Cray Trilinos (with CASK)<sup>2</sup>
 
 </td>
 </tr>
 <tr>
 <td>
-
  
 
 </td>
 <td>
-
  
 
 </td>
 <td>
-
 Data Analytics
 
-<span class="wysiwyg-color-blue80">· Urika XC Data
-Analytics<sup>2</sup></span>
+· Urika XC Data Analytics<sup>2</sup>
 
-<span class="wysiwyg-color-blue80">· Cray Graph
-Engine<sup>2</sup></span>
+· Cray Graph Engine<sup>2</sup>
 
 </td>
 <td>
-
  
 
 </td>
 </tr>
 </tbody>
 </table>
-
 **Notes:**
 
-1.  <span class="wysiwyg-color-green120"><sup>1</sup>Only available on
-    Mahuika HPC Cluster, Mahuika Ancillary Nodes and Māui Ancillary
-    nodes</span>
-2.  <span class="wysiwyg-color-blue80"><sup>2</sup>Only available on
-    Māui Supercomputer.</span>
+1.  <sup>1</sup>Only available on Mahuika HPC Cluster, Mahuika Ancillary
+    Nodes and Māui Ancillary nodes
+2.  <sup>2</sup>Only available on Māui Supercomputer.
 3.  On Māui (XC50) the Modules framework is used to simplify access to
     the various compiler suites and libraries. To access a particular
     compiler suite, you simply load (or switch to) the appropriate

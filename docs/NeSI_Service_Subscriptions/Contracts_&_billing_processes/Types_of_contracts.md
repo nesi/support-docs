@@ -11,8 +11,7 @@ zendesk_section_id: 7348936006031
 ---
 
 Typically our Subscription contracts are based on one-year terms and
-invoiced on a <span class="fabric-editor-annotation">quarterly</span>
-basis\*.
+invoiced on a quarterly basis\*.
 
 -   *HPC Platform:  
     *This is an inclusive package that provides access to all NeSI

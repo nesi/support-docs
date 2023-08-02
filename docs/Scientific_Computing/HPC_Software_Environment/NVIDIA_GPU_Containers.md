@@ -69,8 +69,10 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
 
             # run NAMD
             ${SINGULARITY} ${NAMD_EXE} +ppn ${SLURM_CPUS_PER_TASK} +idlepoll ${NAMD_INPUT}
+
 5.  Submit the job:
     -   sbatch run.sl
+
 6.  View the standard output from the simulation in the Slurm .out file.
 
  We expect similar steps to work for other NGC containers.

@@ -51,7 +51,7 @@ set.
 and edit the paths in parameter file to match the destinations of input
 data, barcode paths,etc. 
 
-## <span class="mw-headline">Slurm Script for Using Multiple CPUs a Single Compute Node</span>
+## Slurm Script for Using Multiple CPUs a Single Compute Node
 
     #!/bin/bash
 

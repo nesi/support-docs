@@ -21,4 +21,4 @@ please email
 and wait for a member of our support team to confirm your account and
 group membership.
 
-![mceclip0.png](../includes/mceclip0_14.png)
+![mceclip0.png](../../includes/images/mceclip0_14.png)

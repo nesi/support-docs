@@ -13,7 +13,13 @@ zendesk_article_id: 360001169956
 zendesk_section_id: 360000042255
 ---
 
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline
 
+ 
 
 NeSI's Nearline service allows you to store your data on our
 hierarchical system, which consists of a staging area (disk) connected
@@ -475,7 +481,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../includes/360002703556)
+![librarian\_get\_put.jpeg](../../includes/images/360002703556)
 
 # Underlying mechanism
 
@@ -486,11 +492,10 @@ is important to know that **even if you cancel a client process, the
 corresponding backend process remains scheduled or running** until
 finished.
 
-<span class="inline-comment-marker">The process of what data goes into
-tape and when is automated</span>, and is not something you will have
-control over. The service is designed to optimise interaction with the
-Nearline filesystem and avoid problem workloads for the benefit of all
-users.
+The process of what data goes into tape and when is automated, and is
+not something you will have control over. The service is designed to
+optimise interaction with the Nearline filesystem and avoid problem
+workloads for the benefit of all users.
 
 If your files are on tape, it will take time to retrieve them. Access to
 tape readers is on a first come first served basis, and the amount of
@@ -532,9 +537,9 @@ indeed wait times could be hours or even in some cases more than a day.
 # Support contact
 
 Please **send feedback** about your user experience at
-<a href="https://support.nesi.org.nz/hc/requests/new" class="uri external-link">https://support.nesi.org.nz/hc/requests/new</a>,
-which may include functionality issues, intuitive or counter-intuitive
-behaviours, behaviours or features that you like, suggestions for
-improvements, transfers taking too long, etc.
+<https://support.nesi.org.nz/hc/requests/new>, which may include
+functionality issues, intuitive or counter-intuitive behaviours,
+behaviours or features that you like, suggestions for improvements,
+transfers taking too long, etc.
 
 We welcome feedback from our users.

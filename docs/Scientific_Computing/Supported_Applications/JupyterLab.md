@@ -14,11 +14,9 @@ zendesk_section_id: 360000040076
 >
 > This documentation contains our legacy instructions for running
 > JupyterLab by tunnelling through the lander node.  
-> <span class="wysiwyg-font-size-large">[If you are a Mahuika cluster
-> user, we recommend using jupyter via  jupyter.nesi.org.nz. Follow this
-> link for more
+> [If you are a Mahuika cluster user, we recommend using jupyter via 
+> jupyter.nesi.org.nz. Follow this link for more
 > information](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
-> </span>
 
 NeSI provides a service for working on Jupyter Notebooks. As a first
 step JupyterLab can be used on Mahuika nodes. JupyterLab is a
@@ -74,7 +72,7 @@ while launching JupyterLab. In the following we use the port number
 First, the port forwarding needs to be enabled between your local
 machine and the NeSI system. Therewith a local port will be connected to
 the remote port on the NeSI system. For simplicity, we kept both numbers
-the same (here 15051). This can be specified on the [command line in the
+the same (here 15051). This can be specified on the[command line in the
 terminal](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) or using the
 [MobaXterm GUI](#h_cc633523-5df0-4f24-a460-391ced9a0316).
 
@@ -105,7 +103,7 @@ Local Port".
 >
 >     &lt;username&gt; needs to be changed. Hostnames can be adapted for
 >     other nodes, e.g. `w-clim01`
-
+>
 ### MobaXterm GUI
 
 > ### Tips
@@ -132,7 +130,7 @@ click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
     the remote server (right upper box, second line)
 -   Save
 
-![sshTunnel.PNG](../includes/sshTunnel.PNG)
+![sshTunnel.PNG](../../includes/images/sshTunnel.PNG)
 
 ## Launch the JupyterLab server 
 
@@ -218,7 +216,7 @@ Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:
 
-![Jupyter.PNG](../includes/Jupyter.PNG)
+![Jupyter.PNG](../../includes/images/Jupyter.PNG)
 
 # Kernels
 

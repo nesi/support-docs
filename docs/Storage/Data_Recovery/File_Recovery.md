@@ -38,6 +38,5 @@ copying it over, e.g.
 
 > ### Tip
 >
-> For copying directories use the flag <span class="kbd">-ir</span> or
-> just <span class="kbd">-r</span> if you don't want to be prompted
-> before overwriting.
+> For copying directories use the flag <kbd>-ir</kbd> or just
+> <kbd>-r</kbd> if you don't want to be prompted before overwriting.

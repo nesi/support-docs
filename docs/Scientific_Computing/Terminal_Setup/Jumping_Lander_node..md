@@ -38,7 +38,7 @@ described
 your remote will be forwarded to your local.
 
 > -   
-
+>
 # MobaXterm
 
 > ### Tips
@@ -60,7 +60,7 @@ click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 -   Specify the local port number on the local side (left)
 -   Save
 
-![sshTunnel.PNG](../includes/sshTunnel_0.PNG)
+![sshTunnel.PNG](../../includes/images/sshTunnel_0.PNG)
 
 # PuTTY
 

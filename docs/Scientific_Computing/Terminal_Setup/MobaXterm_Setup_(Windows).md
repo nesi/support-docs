@@ -48,9 +48,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](../includes/mceclip4.png)
+![mceclip4.png](../../includes/images/mceclip4.png)
 
-![mceclip5.png](../includes/mceclip5.png)
+![mceclip5.png](../../includes/images/mceclip5.png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -58,10 +58,10 @@ transfer GUI.
 > ### WARNING
 >
 > There is a bug which causes some users to be repeatedly prompted
-> `<username>@lander.nesi.org.nz's password:`  
+> <samp>&lt;username&gt;@lander.nesi.org.nz's password:</samp>  
 > This can be resolved by clicking "OK" each time you are prompted then
-> logging in as normal once you are prompted for your `First Factor:` or
-> `Password:`.  
+> logging in as normal once you are prompted for your <samp>First
+> Factor:</samp> or <samp>Password:</samp>.  
 > See [Login
 > Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
 > for more details
@@ -71,7 +71,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../includes/mceclip6.png)
+![mceclip6.png](../../includes/images/mceclip6.png)
 
 You will be prompted by dialogue box.
 
