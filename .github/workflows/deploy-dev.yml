@@ -28,3 +28,12 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: mkdocs gh-deploy $(if ${INPUTS_DRYRUN};then echo "-b gh-pages-test --verbose";fi) --force
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: 'docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
