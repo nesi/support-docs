@@ -7,7 +7,12 @@ on:
       description: Dry run (will build to 'gh-pages-test')
       default: true
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 env:
   INPUTS_DRYRUN: ${{ inputs.dry-run }}
 jobs:
