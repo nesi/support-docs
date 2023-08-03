@@ -4,11 +4,18 @@ import glob
 from pathlib import Path
 import json
 import mkdocs.plugins
+import os
 
 def on_env(env, config, files, **kwargs): 
+    # add entire module list to keyword 'applications'
     env.globals["applications"]=json.load(open('includes/module-list.json'))
+
     # env.globals["domains"]=json.load(open('../tags/domains.json')).keys() # Needs list of cannon domains to make into
 
+    # For image paths.
+    env.globals["includes"] = os.path.abspath("includes")
+   
+    # Debugging
     # for symbol, value in locals().items():
     #     print(symbol, value)
 

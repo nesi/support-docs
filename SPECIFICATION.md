@@ -1,17 +1,9 @@
 # Writing Articles
 
-## Templates
-
-Template can be set in article meta.
-
-- `main`                : Used for regular pages (default).
-- `application`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).
-- `supportedApplication`: For supported applications page.
-- `home`                : Homepage.
-
-By default, the `main` theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.
-
 ## Structure
+
+Public facing articles are found in the `docs` folder. Any markdown files inside will be rendered, any directory will be subcategories.
+Pages can be excluded from being shown in the nav by adding them to `mkdocs.yml: not_in_nav`, as in the case of `includes`.
 
 By default, all categories are a group only (e.g. they have nothing rendered, only children),
 However, if the folder contains an `index.md` file, it will be rendered instead.
@@ -28,6 +20,17 @@ Article title is determined in order of preference,
 - A title defined in the 'title' meta-data.
 - A level 1 Markdown header on the first line of the document body.
 - The filename of a document.
+
+## Templates
+
+Template can be set in article meta.
+
+- `main`                : Used for regular pages (default).
+- `application`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).
+- `supportedApplication`: For supported applications page.
+- `home`                : Homepage.
+
+By default, the `main` theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.
 
 ## Meta
 

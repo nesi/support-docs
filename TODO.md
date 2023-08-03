@@ -2,7 +2,11 @@
 
 These could be be migration filters, post build checks, specifications or all.
 
-- [] Remove trash inline css/hmtl (wysiwug/dfn)
+- [X] Remove trash inline css/hmtl (wysiwug/dfn)
+- [] Tidy up `includes` situation.
+  - [] Get includes out of `docs`
+  - [] Allow including of images without all the `../`
+  - [] Clarify difference between `includes` and `overrides`
 - [] Find uncapitalised and unmacroned maui/mahuika (outside of code blocks)
 - [] Unbalanced structure. e.g.
   - [] Excessivly long titles.
@@ -34,8 +38,7 @@ images currently hosted support.nesi need to be copied to `/../../includes/image
 - [] Impliment accesability standards and automatic checking.
   - [nz spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
   - [WCAG spec](https://www.w3.org/TR/WCAG21/)
-
 - [] SLURM lexxer?
 - [] Automate checking all SLURM codeblocks run on the cluster.
 - [] Replace dynamic app blocks with templates.
-- [] `home.html` theme could be made more robust. ../../../ hardpaths to assets.
+- [] `home.html` theme could be made more robust. ../../../ hardpaths to 

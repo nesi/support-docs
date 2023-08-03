@@ -17,6 +17,8 @@ markdown_extensions:
   - pymdownx.snippets:
       auto_append:
         - ../includes/snippets.md
+not_in_nav: |
+    includes
 plugins:
   - search
       # - spellcheck:
