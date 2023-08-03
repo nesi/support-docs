@@ -28,8 +28,8 @@ These could be be migration filters, post build checks, specifications or all.
 - [] Convert links to relative internal links
 e.g "https://support.nesi.org.nz/hc/en-gb/articles/360000624696" needs to be converted to
 "Scientific_Computing/Terminal_Setup/MobaXterm_Setup(Windows).md"
-- [] Image downloading
-images currently hosted support.nesi need to be copied to `/includes/images` and link changed. e.g. `https://support.nesi.org.nz/hc/article_attachments/4411672582031/mceclip4.png` to `includes/images/mceclip4.png`
+- [X] Image downloading
+images currently hosted support.nesi need to be copied to `/../../includes/images/images` and link changed. e.g. `https://support.nesi.org.nz/hc/article_attachments/4411672582031/mceclip4.png` to `../../includes/images/images/mceclip4.png`
 
 - [] Impliment accesability standards and automatic checking.
   - [nz spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
@@ -38,4 +38,4 @@ images currently hosted support.nesi need to be copied to `/includes/images` and
 - [] SLURM lexxer?
 - [] Automate checking all SLURM codeblocks run on the cluster.
 - [] Replace dynamic app blocks with templates.
-- [] `home.html` theme could be made more robust. Includes hardpaths to assets.
+- [] `home.html` theme could be made more robust. ../../../ hardpaths to assets.
