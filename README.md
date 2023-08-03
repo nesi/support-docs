@@ -1,8 +1,4 @@
-# README
-
-Pages hosted [here](nesi.github.io/support-docs-concept/).
-
-*Article contributors look [here](https://github.com/nesi/support-docs-concept/blob/main/SPECIFICATION.md)*
+Pages hosted [here](https://cwal219.pages.hpcf.nesi.org.nz/mkdocs).
 
 ## Migrate
 
@@ -27,6 +23,9 @@ Currently Being run through mkdocs:
     - Dead link checker
 
 Would be better to run these independently so they can be run by gitlab CI.
+
+## Build
+
 
 ## Serve Local
 
@@ -60,3 +59,14 @@ domains
 ## Theme
 
 https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
+
+## mkdocs Installation
+
+Basic installation of mkdocs and modules
+    - Install mkdocs, 
+        - python3 -m pip install mkdocs
+        - on OSX can also do
+            - `brew install mkdocs`
+    - Install python modules
+        - `python3 -m pip install linkcheckmd proselint pymdown-extensions 
+        - `python3 -m pip install mkdocs-material mkdocs-macros-plugin`
