@@ -151,7 +151,7 @@ connections to look like this:
 
 ### To connect to Māui
 
-![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../includes/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
+![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../../includes/images/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
 When setting up and using the connections, note the following:
 
 ### To connect to Mahuika
@@ -213,7 +213,7 @@ successful login with the client or browser. You can then use the
 application launcher to start an application. You can also launch the
 terminal application by right-clicking on the desktop and selecting
 "Konsole". This will give you access to the NeSI software stack that
-includes various [visualisation software
+../../../ various [visualisation software
 solutions](https://support.nesi.org.nz/knowledge/articles/360000700295/en-gb?brand_id=30406&return_to=%2Fhc%2Fen-gb%2Farticles%2F360000700295).
 
 # Disconnecting and Stopping a Session

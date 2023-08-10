@@ -42,7 +42,7 @@ cores, and each physical core is split into two logical cores using a
 technology called
 [Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)).
 
-A processor also includes caches - a
+A processor also ../../../ caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory
 that stores data that will be needed for the next computations, which
 avoids that the processor has to wait for data coming from the much
@@ -54,7 +54,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](../includes/NodeSocketCore.png)
+![NodeSocketCore.png](../../includes/images/NodeSocketCore.png)
 
 It is very important to note the following:
 

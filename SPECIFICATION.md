@@ -65,7 +65,6 @@ Not used for anything currently. Info imported from Zendesk Page.
 - `zendesk_article_id`:
 - `zendesk_section_id`:
 
-
 ## Formatting
 
 Most details about the extra markdown features can be found here.
@@ -73,14 +72,27 @@ Will copy the specifics that apply to this site when I get time.
 
 https://squidfunk.github.io/mkdocs-material/reference/
 
+### Admonation
+
+!!! type
+    Something
+
+Where 'type' is one of these https://squidfunk.github.io/mkdocs-material/reference/admonitions/#type:note
+
+### Content Tabs
+
+Look like this
+
+```
+=== "Tab One"
+    someting in the tab
+=== "Tab two"
+    something else
+```
+
 ## Code Formatting
 
 ### Blocks
-
-    import tensorflow as tf
-    import numpy as numpy
-
-Preferably
 
 ```py
 import tensorflow as tf

@@ -40,7 +40,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../includes/360003251796" alt="neSI_filetree.svg" width="629" height="578" />
+## <img src="../../includes/images/360003251796" alt="neSI_filetree.svg" width="629" height="578" />
 
 # File System Specifications
 

@@ -2,4 +2,5 @@
 from_zendesk/cache/**
 from_zendesk/import_worktree/**
 public/*
+production/*
 **.pyc

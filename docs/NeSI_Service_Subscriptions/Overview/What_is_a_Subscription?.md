@@ -17,7 +17,7 @@ Subscribing to NeSI's services <span
 class="fabric-editor-annotation">provides you with:</span>
 
 -   Managed entitlements on NeSI's HPC platform for your research
-    projects and programmes. This includes access to:
+    projects and programmes. This ../../../ access to:
 
     -   high-capacity CPUs, GPUs and high memory nodes
 

@@ -11,6 +11,9 @@ vote_count: 2
 vote_sum: 2
 zendesk_article_id: 360001169956
 zendesk_section_id: 360000042255
+prereq: |
+    - Thing 1
+    - Thing 2
 ---
 
 
@@ -475,7 +478,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../includes/360002703556)
+![librarian\_get\_put.jpeg](../../includes/images/360002703556)
 
 # Underlying mechanism
 

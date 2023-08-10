@@ -10,6 +10,7 @@ search from the top menu.
 <span class="material-icons-outlined">
 person_add
 </span>
+
 ## How to request an account
 
 For information on getting an account and allocation with us, please

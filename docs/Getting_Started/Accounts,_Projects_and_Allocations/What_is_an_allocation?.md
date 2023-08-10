@@ -100,7 +100,7 @@ supercomputer is allocated by node-hours. Though some Māui nodes have
 more RAM than others, we do not currently distinguish between low-memory
 and high-memory nodes for allocation, billing or Fair Share purposes.
 
-Each allocation on Māui includes an entitlement to use the Māui
+Each allocation on Māui ../../../ an entitlement to use the Māui
 ancillary nodes equally with other NeSI projects having Māui allocations
 at that time.
 

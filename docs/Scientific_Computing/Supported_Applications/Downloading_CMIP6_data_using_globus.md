@@ -98,17 +98,17 @@ class="s1">https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type
 <span class="s1">Point your web browser to the above URL (which will be
 different for you). </span>
 
-<span class="s1">![globus1.png](../includes/globus1.png)</span>
+<span class="s1">![globus1.png](../../includes/images/globus1.png)</span>
 
  
 
 <span class="s1">Select Globus Id and say "Allow". </span>
 
-<span class="s1">![globus2.png](../includes/globus2.png)</span>
+<span class="s1">![globus2.png](../../includes/images/globus2.png)</span>
 
 <span class="s1">You will then get a code, </span>
 
-<span class="s1">![globus3.png](../includes/globus3.png)</span>
+<span class="s1">![globus3.png](../../includes/images/globus3.png)</span>
 
 <span class="s1">which you can paste into your terminal, eg</span>
 
