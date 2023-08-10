@@ -132,7 +132,7 @@ to a job.
 
  
 
-![ABAQUS\_speedup\_SharedVMPI.png](../includes/ABAQUS_speedup_SharedVMPI.png)
+![ABAQUS\_speedup\_SharedVMPI.png](../../includes/images/ABAQUS_speedup_SharedVMPI.png)
 
  
 

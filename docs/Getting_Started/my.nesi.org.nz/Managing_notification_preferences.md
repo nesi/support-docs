@@ -30,7 +30,7 @@ Use the 'Manage' button provided to open the externally hosted
 preferences or the checkboxes for the NeSI Project-related
 notifications.
 
-![2022-04-12\_16-46-56.png](../includes/2022-04-12_16-46-56.png)
+![2022-04-12\_16-46-56.png](../../includes/images/2022-04-12_16-46-56.png)
 
  
 

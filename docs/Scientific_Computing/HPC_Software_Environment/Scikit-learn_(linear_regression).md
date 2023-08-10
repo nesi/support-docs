@@ -32,7 +32,7 @@ test/, respectively. An example of image is test/img49.jpg.</span>
     display test/img49.jpg
 
 <span
-class="s1"><img src="../includes/img49_0.jpg" alt="img49.jpg" width="100" height="100" /></span>
+class="s1"><img src="../../includes/images/img49_0.jpg" alt="img49.jpg" width="100" height="100" /></span>
 
 <span class="s1">which shows five, partially overlapping dots. Note that
 along with the images, a comma separated values (csv) file (e.g.
@@ -88,7 +88,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../includes/someResults_0.png)<span class="s1">(The
+![someResults.png](../../includes/images/someResults_0.png)<span class="s1">(The
 purple images have no dots.) With each image the number of dots is
 displayed as well as the value inferred by the model in parentheses. The
 inferred values are to be rounded to the nearest integer. Plot titles in

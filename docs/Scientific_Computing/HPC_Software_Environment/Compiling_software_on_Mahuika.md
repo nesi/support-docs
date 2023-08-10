@@ -317,7 +317,7 @@ error (with the exception of character case in Fortran source code).
 
 # Cray Programming Environment
 
-The Cray Programming Environment includes the Cray compiler, various
+The Cray Programming Environment ../../../ the Cray compiler, various
 libraries and tools. These work nicely together and provide certain
 user-friendly features by using compiler wrappers. This works very
 similar as the Cray XC environment, provided on Māui, and is described

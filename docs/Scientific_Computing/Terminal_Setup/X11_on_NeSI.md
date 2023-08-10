@@ -40,14 +40,14 @@ Download links for X-servers can be found below.
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](../includes/mceclip0_8.png) symbol in your taskbar 
+this ![mceclip0.png](../../includes/images/mceclip0_8.png) symbol in your taskbar 
 
 > ### Note
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](../includes/xon.png)=on, ![off.png](../includes/off.png)=off). 
+> (![xon.png](../../includes/images/xon.png)=on, ![off.png](../../includes/images/off.png)=off). 
 
 # X-Forwarding
 
@@ -67,9 +67,9 @@ Make sure the `-Y` or `-X` flag is included
  Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
-<img src="../includes/x11moba.png" alt="x11moba.png" width="451" height="303" />
+<img src="../../includes/images/x11moba.png" alt="x11moba.png" width="451" height="303" />
 
-If the ![mceclip0.png](../includes/mceclip0_9.png) button in the top
+If the ![mceclip0.png](../../includes/images/mceclip0_9.png) button in the top
 right corner of your window is coloured, the X-server should be running.
 
 # X-Forwarding with *tmux*

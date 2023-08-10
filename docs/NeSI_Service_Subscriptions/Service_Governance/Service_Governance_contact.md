@@ -12,7 +12,7 @@ zendesk_section_id: 7348925662223
 
 As part of our service agreements, we request you name a Service
 Governance Contact on behalf of your institution. The role of this
-person includes:
+person ../../../:
 
 -   acting as a primary liaison / contact person on behalf of your
     institution for anything related to the service Subscription

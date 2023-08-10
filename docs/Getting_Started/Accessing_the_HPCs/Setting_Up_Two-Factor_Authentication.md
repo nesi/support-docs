@@ -45,10 +45,10 @@ If you some reason you can't do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    <img src="../includes/4414700806543" alt="authentication_factor_setup.png" width="560" height="210" />
+    <img src="../../includes/images/4414700806543" alt="authentication_factor_setup.png" width="560" height="210" />
 
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
-    ![](../includes/360001267755)
+    ![](../../includes/images/360001267755)
 4.  After clicking on "Continue" you will retrieve the QR code.
 
 5.  Open your Authy or Google Authenticator app and click on the add

@@ -42,13 +42,13 @@ single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread (POSIX threads).
 
-<img src="../includes/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
+<img src="../../includes/images/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
 *Fig. 1: In a serial operation, tasks complete
 <dfn class="dictionary-of-numbers">one after another</dfn>.*
 
 ####  
 
-<img src="../includes/par.png" alt="par.png" width="714" height="160" />*  
+<img src="../../includes/images/par.png" alt="par.png" width="714" height="160" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 

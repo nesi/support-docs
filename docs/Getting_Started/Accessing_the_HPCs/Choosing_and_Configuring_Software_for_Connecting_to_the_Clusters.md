@@ -92,7 +92,7 @@ different options, listed in order of preference.
 
 -   ## MobaXterm
 
-    In addition to being a terminal emulator, MobaXterm also includes
+    In addition to being a terminal emulator, MobaXterm also ../../../
     several useful features like multiplexing, X11 forwarding and a file
     transfer GUI.
 

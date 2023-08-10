@@ -36,22 +36,22 @@ zendesk_section_id: 360000034315
     Password** (If you are resetting your password this will read
     **Reset Password**).  
     Note your** Username.  
-    <img src="../includes/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="442" height="166" />  
+    <img src="../../includes/images/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="442" height="166" />  
     **
 3.  Enter and verify your new password, making sure it follows the
     [password
     policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).  
       
 
-    #### <img src="../includes/SetNeSIaccountPassword.png" alt="SetNeSIaccountPassword.png" width="628" height="314" />
+    #### <img src="../../includes/images/SetNeSIaccountPassword.png" alt="SetNeSIaccountPassword.png" width="628" height="314" />
 
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds  
        
-    ![change\_success.png](../includes/5662974048911)
+    ![change\_success.png](../../includes/images/5662974048911)
 5.  Followed by an email confirmation similar to below
 
-<img src="../includes/password_set_confirmation.png" alt="password_set_confirmation.png" width="440" height="285" />
+<img src="../../includes/images/password_set_confirmation.png" alt="password_set_confirmation.png" width="440" height="285" />
 
  
 
@@ -77,13 +77,13 @@ zendesk_section_id: 360000034315
 
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  
-    1.  -   ![change\_success.png](../includes/5662974048911_0.name_me)
+    1.  -   ![change\_success.png](../../includes/images/5662974048911_0.name_me)
 
 5.  Followed by an email confirmation similar to below  
        
       
 
-<img src="../includes/password_set_confirmation_0.png" alt="password_set_confirmation.png" width="440" height="285" />
+<img src="../../includes/images/password_set_confirmation_0.png" alt="password_set_confirmation.png" width="440" height="285" />
 
  
 

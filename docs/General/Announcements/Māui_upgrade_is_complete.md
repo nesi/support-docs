@@ -28,7 +28,7 @@ possible and will do our best to assist you.
 
 This upgrade brings Māui's operating environment up to the latest
 supported release available for Cray's XC50 supercomputing platforms,
-with performance, reliability, and security benefits. This includes more
+with performance, reliability, and security benefits. This ../../../ more
 up-to-date tooling and libraries with associated features and
 performance benefits. This work also enables further upgrades to NeSI's
 shared HPC storage system.

@@ -15,14 +15,14 @@ zendesk_section_id: 360000502675
 
 *Released 5 November 2020.*
 
-This release includes the following changes:
+This release ../../../ the following changes:
 
 -   `nlls`, `nlget`, `nlpurge`, `nlput` and `nljobstatus` now come with
     a debug mode, accessible via the `--debug` command line switch.
 -   Help documentation, as well as the usage message when a nearline
     command is run with incorrect arguments, has been improved.
--   `nljobstatus` now includes more comprehensive job status
-    information. In particular, the job status message now includes a
+-   `nljobstatus` now ../../../ more comprehensive job status
+    information. In particular, the job status message now ../../../ a
     brief description of the stage the job is up to, and whether the job
     is at that moment pending (waiting in a queue to start the next
     operation), running, or complete.

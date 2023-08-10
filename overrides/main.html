@@ -11,6 +11,12 @@
         <a href="https://support.nesi.org.nz/hc/en-gb">offical support documentation.</a>
     </p>
 </div>
-
 {% include "partials/header.html" %}
+{% if page.meta and page.meta.prereq %}
+<ul>
+    {% for pre in page.meta.prereq %}
+        <li>{{pre}}</li>
+    {% endfor %}
+</ul>>
+{% endif %}
 {% endblock %}
