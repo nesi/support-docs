@@ -14,6 +14,8 @@ markdown_extensions:
       alternate_style: true
   - abbr
   - tables
+  - neoteroi.cards
+  - neoteroi.timeline
   - pymdownx.snippets:
       auto_append:
         - ../includes/snippets.md
