@@ -6,7 +6,7 @@ import json
 import mkdocs.plugins
 import os
 
-module_list_path = os.env["MODULE_LIST_PATH"]
+module_list_path = os.environ["MODULE_LIST_PATH"]
 
 def on_env(env, config, files, **kwargs): 
     # add entire module list to keyword 'applications'
