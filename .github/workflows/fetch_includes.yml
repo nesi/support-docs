@@ -20,7 +20,7 @@ jobs:
       - name: Fetch Module List
         run: wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
       - name: Fetch Glossary
-        run: wget -O docs/glossary/Glossary.md ${GLOSSARY_URL}
+        run: wget -O docs/assets/glossary/Glossary.md ${GLOSSARY_URL}
       - name: Fetch Dictionary
         run: wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
       - name: Fetch Snippets
