@@ -12,6 +12,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - abbr
   - tables
   - neoteroi.cards
@@ -41,6 +45,7 @@ site_url: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
 theme:
   custom_dir: overrides
   extra_css:
+    - css/neoteroi-mkdocs.css
     - ../includes/supportedApplications.css
   extra_javascript:
     - https://code.jquery.com/jquery-3.7.0.min.js
