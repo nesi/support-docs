@@ -22,9 +22,9 @@ markdown_extensions:
   - neoteroi.timeline
   - pymdownx.snippets:
       auto_append:
-        - ../includes/snippets.md
+        - assets/glossary/snippets.md
 not_in_nav: |
-    includes
+    assets
 plugins:
   - search
       # - spellcheck:
@@ -35,27 +35,26 @@ plugins:
     #     allow_unicode: yes
   - tags: null
   - macros:
-      include_dir: includes
+      include_dir: assets
 repo_name: GitLab
 repo_url: https://github.com/example/repository/
 site_description: NeSI Support Documentation
 site_dir: public
 site_name: NeSI Support Center
-site_url: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
+site_url: https://github.com/nesi/support-docs-concept
 theme:
   custom_dir: overrides
   extra_css:
-    - ../includes/card.css
-    - ../includes/supportedApplications.css
+    - assets/css/*.css
   extra_javascript:
     - https://code.jquery.com/jquery-3.7.0.min.js
-    - ../includes/supportedApplications.js
-  favicon: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+    - assets/js/*.js
+  favicon: assets/icons/favicon.svg
   features:
     - navigation.indexes
     - navigation.top
   language: en
-  logo: https://theme.zdassets.com/theme_assets/85418/cca0f59420e8fffa5e2ba883243c453ce5747d94.svg
+  logo: assets/icons/favicon.svg
   name: material
   palette:
     - primary: grey
