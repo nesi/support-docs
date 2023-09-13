@@ -39,7 +39,7 @@ Location of markdown docs.
 File structure determines categories and sections.
 A section or category can be replaced by an `index.md` file, this will replace the default nav with a page.
 
-### includes/
+### docs/assets/
 
 For non-template related files, e.g. images.
 

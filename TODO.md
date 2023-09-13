@@ -4,7 +4,7 @@ These could be be migration filters, post build checks, specifications or all.
 
 - [X] Remove trash inline css/hmtl (wysiwug/dfn)
 - [] Tidy up `includes` situation.
-  - [] Get includes out of `docs`
+~~- [] Get includes out of `docs`~~
   - [] Allow including of images without all the `../`
   - [] Clarify difference between `includes` and `overrides`
 - [] Find uncapitalised and unmacroned maui/mahuika (outside of code blocks)

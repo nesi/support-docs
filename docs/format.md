@@ -83,3 +83,7 @@ if formatting:
 ```
 
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
+
+
+
+{{ macros_info() }}

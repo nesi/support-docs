@@ -14,12 +14,12 @@ Research teams can use our Flexible High Performance Cloud (Flexible HPC) servic
 
 ## Quickstart
 
-[cards cols=3 (./docs/cards-quickstart.yaml)]
+[cards cols=3 (cards-quickstart.yaml)]
 
 ## Services
 
-[cards cols=4 (./docs/cards-services.yaml)]
+[cards cols=4 (cards-services.yaml)]
 
 ## Help
 
-[cards cols=3 (./docs/cards-help.yaml)]
+[cards cols=3 (cards-help.yaml)]
