@@ -10,6 +10,7 @@ proselint
 linkcheckmd
 symspellpy
 codespell
+neoteroi-mkdocs
 
 # Add your custom theme if not inside a theme_dir
 # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
