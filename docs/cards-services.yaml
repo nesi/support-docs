@@ -1,0 +1,29 @@
+- title: Creating a NeSI Account
+content: How to get started with NeSI
+link: https://support.nesi.org.nz/hc/en-gb/articles/360000159715
+image: .icons/material/lan-connect.svg
+
+- title: NeSI Account Portal
+content: Managing your account, project, authorized users etc
+link: https://my.nesi.org.nz
+image: .icons/material/lan-connect.svg
+
+- title: Log in
+content: Managing your account, project, authorized users etc
+link: https://my.nesi.org.nz
+image: .icons/material/lan-connect.svg
+
+- title: Connecting to the Clusters
+content: Managing your account, project, authorized users etc
+link: https://my.nesi.org.nz
+image: .icons/material/lan-connect.svg
+
+- title: Transferring Files
+content: Managing your account, project, authorized users etc
+link: https://my.nesi.org.nz
+image: .icons/material/lan-connect.svg
+
+- title: Submitting Jobs
+content: Instructions to be executed by the node(s) assigned to you when your
+request for resources can be met by the scheduler.
+image: .icons/material/lan-connect.svg
