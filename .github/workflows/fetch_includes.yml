@@ -18,13 +18,13 @@ jobs:
       - run: git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - run: git checkout -b ${BRANCH_NAME}
       - name: Fetch Module List
-        run: wget -O includes/module-list.json ${MODULES_LIST_URL}
+        run: wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
       - name: Fetch Glossary
-        run: wget -O docs/Glossary.md ${GLOSSARY_URL}
+        run: wget -O docs/glossary/Glossary.md ${GLOSSARY_URL}
       - name: Fetch Dictionary
-        run: wget -O includes/dictionary.txt ${DICTIONARY_URL}
+        run: wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
       - name: Fetch Snippets
-        run: wget -O includes/snippets.md ${SNIPPETS_URL}
+        run: wget -O docs/assets/snippets/snippets.md ${SNIPPETS_URL}
       - name: Commit to Branch '${BRANCH_NAME}'
         run: git add --all
       - run: git commit -m "update remote assets"
