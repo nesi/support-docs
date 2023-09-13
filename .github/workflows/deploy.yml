@@ -10,6 +10,7 @@ permissions:
   contents: write
 env:
   INPUTS_DRYRUN: ${{ inputs.dry-run }}
+  MODULE_LIST_PATH: docs/assets/module-list.json
 jobs:
   deploy:
     runs-on: ubuntu-latest

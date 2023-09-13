@@ -6,14 +6,17 @@ import json
 import mkdocs.plugins
 import os
 
+module_list_path = os.env["MODULE_LIST_PATH"]
+
 def on_env(env, config, files, **kwargs): 
     # add entire module list to keyword 'applications'
-    env.globals["applications"]=json.load(open('includes/module-list.json'))
+    env.globals["applications"]=json.load(open(module_list_path))
 
     # env.globals["domains"]=json.load(open('../tags/domains.json')).keys() # Needs list of cannon domains to make into
 
     # For image paths.
-    env.globals["includes"] = os.path.abspath("includes")
+    # cant remember what this line does, if anything.
+    # env.globals["includes"] = os.path.abspath("")
    
     # Debugging
     # for symbol, value in locals().items():
