@@ -35,7 +35,7 @@ plugins:
     #     allow_unicode: yes
   - tags: null
   - macros:
-      include_dir: assets
+      include_dir: docs/assets
 repo_name: GitLab
 repo_url: https://github.com/example/repository/
 site_description: NeSI Support Documentation
