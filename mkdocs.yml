@@ -45,7 +45,7 @@ site_url: https://git.hpcf.nesi.org.nz/cwal219/mkdocs
 theme:
   custom_dir: overrides
   extra_css:
-    - css/neoteroi-mkdocs.css
+    - ../includes/card.css
     - ../includes/supportedApplications.css
   extra_javascript:
     - https://code.jquery.com/jquery-3.7.0.min.js
