@@ -1,7 +1,7 @@
 - title: NeSI Account Portal
   content: Managing your account, project, authorized users etc
   link: https://my.nesi.org.nz
-  image: :material-lan-connect:
+  image: .icons/material/lan-connect.svg
 
 - title: Connecting to the Clusters
   content: setting up

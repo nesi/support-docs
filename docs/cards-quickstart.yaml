@@ -6,9 +6,9 @@
 - title: Getting Started
   content: Walk throughs
   link: https://my.nesi.org.nz
-  image: .icons/material/lan-connect.svg
+  image: .icons/material/account-star.svg
 
 - title: SSH Config
   content: Connect now.
   link: https://my.nesi.org.nz
-  image: .icons/material/lan-connect.svg
+  image: .icons/material/cog-transfer-outline.svg
