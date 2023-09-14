@@ -1,20 +1,20 @@
 - title: NeSI Account Portal
   content: Managing your account, project, authorized users etc
   link: https://my.nesi.org.nz
-  image: .icons/material/lan-connect.svg
+  image: ./assets/icons/material/lan-connect.svg
 
 - title: Connecting to the Clusters
   content: setting up
   link: https://my.nesi.org.nz
-  image: .icons/material/lan-connect.svg
+  image: ./assets/icons/material/lan-connect.svg
 
 - title: Transferring Files
   content: Globus, scp, jupyter
   link: https://my.nesi.org.nz
-  image: .icons/material/lan-connect.svg
+  image: ./assets/icons/material/lan-connect.svg
 
 - title: Submitting Jobs
   content: |
     Instructions to be executed by the node(s) assigned to you when your
     request for resources can be met by the scheduler.
-  image: .icons/material/lan-connect.svg
+  image: ./assets/icons/material/lan-connect.svg

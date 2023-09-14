@@ -1,14 +1,14 @@
 - title: Creating a NeSI Account
   content: How to get started with NeSI
   link: https://support.nesi.org.nz/hc/en-gb/articles/360000159715
-  image: docs/assets/icons/material/lan-connect.svg
+  image: ./assets/icons/material/lan-connect.svg
 
 - title: Getting Started
   content: Walk throughs
   link: https://my.nesi.org.nz
-  image: docs/assets/icons/material/account-star.svg
+  image: ./assets/icons/material/account-star.svg
 
 - title: SSH Config
   content: Connect now.
   link: https://my.nesi.org.nz
-  image: docs/assets/icons/material/cog-transfer-outline.svg
+  image: ./assets/icons/material/cog-transfer-outline.svg
