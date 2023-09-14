@@ -5,7 +5,7 @@ These could be be migration filters, post build checks, specifications or all.
 - [X] Remove trash inline css/hmtl (wysiwug/dfn)
 - [] Tidy up `includes` situation.
 ~~- [] Get includes out of `docs`~~
-  - [] Allow including of images without all the `../`
+~~  - [] Allow including of images without all the `../`~~
   - [] Clarify difference between `includes` and `overrides`
 - [] Find uncapitalised and unmacroned maui/mahuika (outside of code blocks)
 - [] Unbalanced structure. e.g.
@@ -16,7 +16,7 @@ These could be be migration filters, post build checks, specifications or all.
 - [] Long unbroken paragraphs.
 - [] Unbalanced headings e.g.
   - [] H1,H2,H3 must be less than x characters.
-  - [] No floating headers (e.g. no H2 without H1).
+  - [X] No floating headers (e.g. no H2 without H1).
   - [] More than 1 child, less than 5.
 - [] Blockquotes in weird places.
 - [] Use of wrong tense
@@ -27,9 +27,9 @@ These could be be migration filters, post build checks, specifications or all.
   - [] Use dictionary from spellcheck
   - [] Create 'abbreviations'.
   - [] Generate glossary page.
-- [] Remove duplicate ids.
+- [X] Remove duplicate ids.
 - [] Convert quote blocks into 'Admonitions'.
-- [] Convert links to relative internal links
+- [X] Convert links to relative internal links
 e.g "https://support.nesi.org.nz/hc/en-gb/articles/360000624696" needs to be converted to
 "Scientific_Computing/Terminal_Setup/MobaXterm_Setup(Windows).md"
 - [X] Image downloading

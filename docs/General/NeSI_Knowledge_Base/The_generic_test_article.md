@@ -1,6 +1,6 @@
 ---
 created_at: '2019-06-04T00:55:05Z'
-hidden: false
+hidden: true
 label_names: []
 position: 0
 title: The generic test article

@@ -1,6 +1,6 @@
 ---
 created_at: '2021-07-02T03:09:38Z'
-hidden: false
+hidden: true
 label_names:
 - visualisation
 - data_analytics
