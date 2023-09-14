@@ -20,6 +20,7 @@ markdown_extensions:
   - tables
   - neoteroi.cards
   - neoteroi.timeline
+  - git-authors
   - pymdownx.snippets:
       auto_append:
         - assets/glossary/snippets.md

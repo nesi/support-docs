@@ -11,6 +11,8 @@ linkcheckmd
 symspellpy
 codespell
 neoteroi-mkdocs
+mkdocs-git-authors-plugin
+
 
 # Add your custom theme if not inside a theme_dir
 # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
