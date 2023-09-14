@@ -46,7 +46,8 @@ site_url: https://github.com/nesi/support-docs-concept
 theme:
   custom_dir: overrides
   extra_css:
-    - assets/css/card.css
+    - assets/css/neoteroi-mkdocs.css
+    - assets/css/footer.css
     - assets/css/supportedApplications.css
   extra_javascript:
     - https://code.jquery.com/jquery-3.7.0.min.js
