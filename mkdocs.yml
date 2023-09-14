@@ -54,6 +54,7 @@ theme:
   features:
     - navigation.indexes
     - navigation.top
+    - content.code.copy
   language: en
   logo: assets/icons/favicon.svg
   name: material

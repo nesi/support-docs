@@ -85,5 +85,11 @@ if formatting:
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 
 
+```md
+Acroynym should be automatically tooltipped e.g. MPI.
+```
+
+Acroynym should be automatically tooltipped e.g. MPI.
+
 
 {{ macros_info() }}
