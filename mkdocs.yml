@@ -52,13 +52,13 @@ extra_javascript:
   - javascripts/supportedApplications.js
 theme:
   custom_dir: overrides
-  favicon: assets/icons/favicon.svg
+  favicon: assets/icons/favicon.ico
   features:
     - navigation.indexes
     - navigation.top
     - content.code.copy
   language: en
-  logo: assets/icons/favicon.svg
+  logo: assets/icons/logo.svg
   name: material
   palette:
     - primary: grey
