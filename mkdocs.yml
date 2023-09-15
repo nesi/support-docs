@@ -46,12 +46,12 @@ site_url: https://github.com/nesi/support-docs-concept
 theme:
   custom_dir: overrides
   extra_css:
-    - assets/css/neoteroi-mkdocs.css
-    - assets/css/footer.css
-    - assets/css/supportedApplications.css
+    - assets/stylesheets/neoteroi-mkdocs.css
+    - assets/stylesheets/footer.css
+    - assets/stylesheets/supportedApplications.css
   extra_javascript:
     - https://code.jquery.com/jquery-3.7.0.min.js
-    - assets/js/supportedApplications.js
+    - assets/javascripts/supportedApplications.js
   favicon: assets/icons/favicon.svg
   features:
     - navigation.indexes
