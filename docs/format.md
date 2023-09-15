@@ -59,10 +59,10 @@ if formatting:
 ```
 
 ```md
-![This is an image]("includes/images/3rgk_assembly-1.jpeg")
+![This is an image]("assets/images/3rgk_assembly-1.jpeg")
 ```
 
-![This is an image]("includes/images/3rgk_assembly-1.jpeg")
+![This is an image]("assets/images/3rgk_assembly-1.jpeg")
 
 ```md
 [External Link]("https://example.com")

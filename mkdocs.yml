@@ -51,7 +51,7 @@ theme:
     - assets/stylesheets/supportedApplications.css
   extra_javascript:
     - https://code.jquery.com/jquery-3.7.0.min.js
-    - assets/javascripts/supportedApplications.js
+    - javascripts/supportedApplications.js
   favicon: assets/icons/favicon.svg
   features:
     - navigation.indexes
