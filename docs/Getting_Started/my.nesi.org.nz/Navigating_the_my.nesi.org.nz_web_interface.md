@@ -17,7 +17,7 @@ zendesk_section_id: 360001059296
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ![mceclip0.png](assets/images/mceclip0_8.png)
+    ![mceclip0.png](assets/images/mceclip0_0_1_2_3_4_5_6_7_8.png)
 
 ## Main navigation
 

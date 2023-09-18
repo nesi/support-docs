@@ -64,11 +64,11 @@ and
 
 ## Scaling with MPI
 
-![mceclip1.png](assets/images/mceclip1_2.png)
+![mceclip1.png](assets/images/mceclip1_0_1_2.png)
 
 ## Scaling with oMP
 
-![mceclip0.png](assets/images/mceclip0_12.png)
+![mceclip0.png](assets/images/mceclip0_0_1_2_3_4_5_6_7_8_9_10_11_12.png)
 
  
 

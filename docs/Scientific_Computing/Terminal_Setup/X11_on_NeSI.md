@@ -57,8 +57,8 @@ href="https://sourceforge.net/projects/xming/">Xming</a></td>
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](assets/images/mceclip0_17.png) symbol in your
-taskbar 
+this ![mceclip0.png](assets/images/mceclip0_0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17.png) symbol
+in your taskbar 
 !!!
 >
 > MobaXterm has a build in X server, no setup required. By default the
@@ -88,8 +88,10 @@ X<span class="dictionary-of-numbers">-11 forwarding box is
 <img src="assets/images/x11moba_0.png" width="451" height="303"
 alt="x11moba.png" />
 
-If the ![mceclip0.png](assets/images/mceclip0_18.png) button in the top
-right corner of your window is coloured, the X-server should be running.
+If the
+![mceclip0.png](assets/images/mceclip0_0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18.png)
+button in the top right corner of your window is coloured, the X-server
+should be running.
 
 # X-Forwarding with *tmux*
 

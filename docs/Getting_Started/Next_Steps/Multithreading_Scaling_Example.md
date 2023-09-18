@@ -131,8 +131,8 @@ understand what is happening:
 <table>
 <tbody>
 <tr class="odd">
-<td><img src="assets/images/blobid2_2.png" alt="Plot1" /></td>
-<td><img src="assets/images/blobid3_2.png" alt="Plot2" /></td>
+<td><img src="assets/images/blobid2_0_1_2.png" alt="Plot1" /></td>
+<td><img src="assets/images/blobid3_0_1_2.png" alt="Plot2" /></td>
 </tr>
 </tbody>
 </table>
@@ -217,7 +217,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="assets/images/blobid1_2.png" width="469" height="395" />
+<img src="assets/images/blobid1_0_1_2.png" width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

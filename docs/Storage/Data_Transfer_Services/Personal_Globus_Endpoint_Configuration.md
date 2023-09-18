@@ -30,8 +30,9 @@ Globus's [Endpoints administered by
 you](https://app.globus.org/endpoints?scope=administered-by-me) to see
 whether your endpoint shows up as active.
 
-<img src="assets/images/mceclip0_24.png" width="754" height="320"
-alt="mceclip0.png" />
+<img
+src="assets/images/mceclip0_0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21_22_23_24.png"
+width="754" height="320" alt="mceclip0.png" />
 
 ## Personal Endpoint file-transfer and sharing
 
