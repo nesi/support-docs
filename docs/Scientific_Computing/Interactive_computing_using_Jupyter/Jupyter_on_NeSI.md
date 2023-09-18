@@ -15,7 +15,14 @@ zendesk_article_id: 360001555615
 zendesk_section_id: 360001189255
 ---
 
-> ### Note
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    !!!
 >
 > This service is available for users with a current allocation on
 > Mahuika only.  
@@ -33,8 +40,7 @@ Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing [Slurm job
 submissions](https://support.nesi.org.nz/hc/en-gb/articles/360000684396)
 and workflows and much more.
-
-> ### See also
+!!!
 >
 > -   See the [RStudio via Jupyter on
 >     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
@@ -69,8 +75,7 @@ will be used to run Jupyter. Typical jobs, not requesting a GPU, should
 be up and running within one to two minutes. Requesting a GPU can
 increase this time significantly as there are only a small number of
 GPUs available at NeSI.
-
-> ### Tip
+!!!
 >
 > If your server appears to not have started within 3 minutes please
 > reload the browser window and check again, otherwise contact
@@ -128,11 +133,21 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-<img src="../../includes/images/6551812176911" width="208" height="394" />
-<img src="../../includes/images/6551880407439" width="408" height="67" />
+<img src="assets/images/6551812176911_0.name_me" width="208"
+height="394" />
+<img src="assets/images/6551880407439_0.name_me" width="408"
+height="67" />
 
 If you click "Log Out" without stopping your server, the server will
 continue to run until the Slurm job reaches its maximum wall time.
+
+This means that if you wish to have a session lasting, say, 4 hours
+(which is not offered in the "Select walltime" drop-down) then you can
+start a 8 hour session and end the job as described above when you are
+finished. Alternatively, you can cancel your Jupyter job by running
+`scancel 'job_id'` from within the Jupyter terminal when you are done.
+Note this will make the page unresponsive as it now has no compute
+powering it.
 
 # Installing JupyterLab extensions
 
@@ -183,8 +198,7 @@ directory in your home directory:
 These changes will only take effect after relaunching your Jupyter
 server and then you should be able to install JupyterLab extensions as
 you please.
-
-> ### Note
+!!!
 >
 > The above commands will put the JupyterLab application directory in
 > your home directory. The application directory often requires at least

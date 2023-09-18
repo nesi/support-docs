@@ -10,7 +10,14 @@ zendesk_article_id: 7349082099343
 zendesk_section_id: 7348925662223
 ---
 
-As part of our service agreements, we request you name a Service
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    As part of our service agreements, we request you name a Service
 Governance Contact on behalf of your institution. The role of this
 person includes:
 

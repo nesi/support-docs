@@ -10,7 +10,14 @@ zendesk_article_id: 360001173895
 zendesk_section_id: 360000189716
 ---
 
-In the example below we will use R scripts to demonstrate how you might
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    In the example below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
 these examples are applicable across software applications. You do not
 need to know anything about R to understand this article; it was merely
@@ -124,6 +131,8 @@ understand what is happening:
 <table>
 <tbody>
 <tr class="odd">
+<td><img src="assets/images/blobid2_2.png" alt="Plot1" /></td>
+<td><img src="assets/images/blobid3_2.png" alt="Plot2" /></td>
 </tr>
 </tbody>
 </table>
@@ -182,6 +191,10 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 <table>
 <tbody>
 <tr class="odd">
+<td><img src="assets/images/6197221642383_0.name_me"
+alt="TvC-MT.png" /></td>
+<td><img src="assets/images/6197207741967_0.name_me"
+alt="TvL2C-MT.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -204,7 +217,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="../../includes/images/blobid1_0.png" width="469" height="395" />
+<img src="assets/images/blobid1_2.png" width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

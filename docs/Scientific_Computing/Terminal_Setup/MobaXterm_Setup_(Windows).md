@@ -10,7 +10,14 @@ zendesk_article_id: 360000624696
 zendesk_section_id: 360000189696
 ---
 
-> ### Requirements
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    !!!
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -48,20 +55,19 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](../../includes/images/mceclip4.png)
+![mceclip4.png](assets/images/mceclip4_0.png)
 
-![mceclip5.png](../../includes/images/mceclip5.png)
+![mceclip5.png](assets/images/mceclip5_0.png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
-
-> ### WARNING
+!!!
 >
 > There is a bug which causes some users to be repeatedly prompted
-> <samp>&lt;username&gt;@lander.nesi.org.nz's password:</samp>  
+> `<username>@lander.nesi.org.nz's password:`  
 > This can be resolved by clicking "OK" each time you are prompted then
-> logging in as normal once you are prompted for your <samp>First
-> Factor:</samp> or <samp>Password:</samp>.  
+> logging in as normal once you are prompted for your `First Factor:` or
+> `Password:`.  
 > See [Login
 > Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
 > for more details
@@ -71,7 +77,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../../includes/images/mceclip6.png)
+![mceclip6.png](assets/images/mceclip6_0.png)
 
 You will be prompted by dialogue box.
 
@@ -96,8 +102,7 @@ Māui users will instead be prompted with:
 Māui users must enter their password combined with their second factor.
 For example, if your password is "Password" and your current second
 factor is "123456" then you must enter "Password123456".
-
-> ### Tip
+!!!
 >
 > If you choose to save your password, the process will be the same
 > minus the prompts for First Factor.
@@ -128,8 +133,7 @@ Two steps to try:
 Then setup a new session [according to the support doc
 instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
 as before.
-
-> ### What Next?
+!!!
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

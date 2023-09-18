@@ -10,7 +10,14 @@ zendesk_article_id: 360001244856
 zendesk_section_id: 360000040076
 ---
 
-This article targets researchers who need to download Climate Model
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    This article targets researchers who need to download Climate Model
 Intercomparison Project Phase 6 (CMIP6) datasets from any of the Earth
 System Grid Federation ([ESGF](http://pcmdi.llnl.gov/)) archives. See
 [synda](https://support.nesi.org.nz/hc/en-gb/articles/360001208256-SYNDA)
@@ -45,17 +52,27 @@ First you will need to select some dataset by visiting the [CMIP6 search
 interface](https://esgf-node.llnl.gov/search/cmip6/). You can keep most
 default values. In this example we select only:
 
-<table>
+<table style="height: 149px;" width="471">
 <tbody>
 <tr class="odd">
+<td style="width: 243px">Experiment ID</td>
+<td style="width: 221px">historical</td>
 </tr>
 <tr class="even">
+<td style="width: 243px">Frequency</td>
+<td style="width: 221px">mon</td>
 </tr>
 <tr class="odd">
+<td style="width: 243px">Realm</td>
+<td style="width: 221px">ocean</td>
 </tr>
 <tr class="even">
+<td style="width: 243px">Variable</td>
+<td style="width: 221px">tos</td>
 </tr>
 <tr class="odd">
+<td style="width: 243px">Data Node</td>
+<td style="width: 221px"><span>aims3.llnl.gov</span></td>
 </tr>
 </tbody>
 </table>
@@ -95,17 +112,17 @@ https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type=offline&st
 Point your web browser to the above URL (which will be different for
 you).
 
-![globus1.png](../../includes/images/globus1.png)
+![globus1.png](assets/images/globus1_0.png)
 
  
 
 Select Globus Id and say "Allow".
 
-![globus2.png](../../includes/images/globus2.png)
+![globus2.png](assets/images/globus2_0.png)
 
 You will then get a code,
 
-![globus3.png](../../includes/images/globus3.png)
+![globus3.png](assets/images/globus3_0.png)
 
 which you can paste into your terminal, eg
 

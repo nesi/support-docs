@@ -6,13 +6,20 @@ label_names:
 - profiling
 position: 0
 title: Slurm Native Profiling
-vote_count: 2
-vote_sum: 2
+vote_count: 4
+vote_sum: 4
 zendesk_article_id: 360000810616
 zendesk_section_id: 360000278935
 ---
 
-Job resource usage can be determined on job completion by checking the
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Job resource usage can be determined on job completion by checking the
 following sacct columns;
 
 -   MaxRSS - Peak memory usage.

@@ -10,26 +10,32 @@ zendesk_article_id: 360004050315
 zendesk_section_id: 360000040056
 ---
 
-A virtual desktop provides a graphical interface to using the cluster.
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    A virtual desktop provides a graphical interface to using the cluster.
 Desktops are hosted within Singularity containers, so not all of the
 NeSI software stack is supported. If you would like to build your own
 desktop containers with the code
 [here](https://github.com/nesi/nesi-singularity-recipes).
 
-Rendering is d<dfn class="dictionary-of-numbers">one cluster-side</dfn>,
-and compressed before being sent to your local machine. This means any
-rendering should be significantly more responsive than when using
-X<dfn class="dictionary-of-numbers">11 on it</dfn>s own (approximately
-<dfn class="dictionary-of-numbers">40 times faster)</dfn>.
+Rendering is d<span class="dictionary-of-numbers">one
+cluster-side</span>, and compressed before being sent to your local
+machine. This means any rendering should be significantly more
+responsive than when using X<span class="dictionary-of-numbers">11 on
+it</span>s own (approximately <span class="dictionary-of-numbers">40
+times faster)</span>.
 
 # Connecting Through SSH
-
-> ### Requirements
+!!!
 >
 > You must be able to [forward a
 > port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
-
-> ### Note
+!!!
 >
 > The Virtual desktops are still in development, please report any
 > issues to NeSI support, or open an issue
@@ -47,8 +53,7 @@ forwarding](https://support.nesi.org.nz/hc/en-gb/articles/360001523916). 
 For example:
 
     ssh -L 1234:localhost:1234 mahuika
-
-> ### Tip
+!!!
 >
 > Port numbers should be between **1025-49151**. It's OK to use the same
 > number for local and remote ports (makes it easier to remember too!)
@@ -67,19 +72,44 @@ still use the `vdt` command as `/opt/nesi/vdt/vdt`
 `vdt -h` for general help or `vdt [command] -h` for help relating to
 that command.
 
-<table>
+<table style="height: 190px; width: 774px;">
 <tbody>
-<tr class="odd">
+<tr class="odd" style="height: 22px;">
+<td style="width: 232px; height: 63px">vdt start [port]</td>
+<td style="width: 248px; height: 63px"><code>vdt start 4321</code></td>
+<td style="width: 260px; height: 63px">Starts a desktop session on the
+login node. It will last until the shell is closed.</td>
 </tr>
 <tr class="even">
+<td style="width: 232px"> </td>
+<td style="width: 248px"><code>vdt start 4321 &amp;</code></td>
+<td style="width: 260px">Starts a desktop session on the login node. It
+will continue running after you disconnect.</td>
 </tr>
 <tr class="odd">
+<td style="width: 232px"> </td>
+<td
+style="width: 248px"><code>vdt start -r wbg005 4321 &amp;</code></td>
+<td style="width: 260px">Starts a desktop session on another  node. It
+will continue running after you disconnect.</td>
 </tr>
 <tr class="even">
+<td style="width: 232px"> </td>
+<td
+style="width: 248px"><code>salloc [slurm flags] vdt start 4321 &amp;</code></td>
+<td style="width: 260px">Starts a desktop session in a Slurm job. It
+will continue running after you disconnect.</td>
 </tr>
-<tr class="odd">
+<tr class="odd" style="height: 22px;">
+<td style="width: 232px; height: 61px">vdt list</td>
+<td style="width: 248px; height: 21px"><code>vdt list</code></td>
+<td style="width: 260px; height: 21px">Lists all your sessions.</td>
 </tr>
-<tr class="even">
+<tr class="even" style="height: 22px;">
+<td style="width: 232px; height: 66px">vdt kill [name]</td>
+<td
+style="width: 248px; height: 22px"><code>vdt kill my_desktop</code></td>
+<td style="width: 260px; height: 22px">Kills desktop [name].</td>
 </tr>
 </tbody>
 </table>
@@ -90,15 +120,16 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-<img src="../../includes/images/fig1.svg" width="426" height="362" />![](../../includes/images/VirtualScaling.png)
+<img src="assets/images/fig1_0.svg" width="426" height="362" />![](assets/images/VirtualScaling_0.png)
 
 # Examples
 
 The conditions for running a desktop on the login node are similar to
 when using a shell. There are no time limits, but should not be used for
 large or long running jobs. Any serious amount of computation should be
-launched with SLURM, this can be d<dfn class="dictionary-of-numbers">one
-using the terminal </dfn>or GUI.   
+launched with SLURM, this can be
+d<span class="dictionary-of-numbers">one using the terminal </span>or
+GUI.   
   
 
 In the case where your work needs to be run interactively, and cannot be
@@ -123,7 +154,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](../../includes/images/mceclip0_7.png)
+![mceclip0.png](assets/images/mceclip0_14.png)
 
 ## On a compute node
 

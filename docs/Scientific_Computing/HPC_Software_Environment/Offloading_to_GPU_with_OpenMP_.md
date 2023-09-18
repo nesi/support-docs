@@ -10,7 +10,14 @@ zendesk_article_id: 360001127856
 zendesk_section_id: 360000040056
 ---
 
-With OpenMP 4.5, it has become possible to offload computations from the
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    With OpenMP 4.5, it has become possible to offload computations from the
 CPU to a GPU,
 see <https://www.openmp.org/wp-content/uploads/SC18-BoothTalks-Jost.pdf>
 
@@ -70,17 +77,19 @@ offloads to the GPU):
     time srun --ntasks=1 --cpus-per-task=1 ./total
     time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalOmpGpu
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+<table style="height: 92px;" width="408">
 <tbody>
 <tr class="odd">
+<td style="width: 197px"><p>executable</p></td>
+<td style="width: 204px">time [s]</td>
 </tr>
 <tr class="even">
+<td style="width: 197px">total</td>
+<td style="width: 204px">10.9</td>
 </tr>
 <tr class="odd">
+<td style="width: 197px">totalOmpGpu</td>
+<td style="width: 204px">0.45</td>
 </tr>
 </tbody>
 </table>

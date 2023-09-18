@@ -4,31 +4,37 @@ hidden: false
 label_names: []
 position: 4
 title: Parallel Execution
-vote_count: 6
-vote_sum: 4
+vote_count: 7
+vote_sum: 5
 zendesk_article_id: 360000690275
 zendesk_section_id: 360000189716
 ---
 
-Many scientific software applications are
-writ<dfn class="dictionary-of-numbers">ten to take advantage </dfn>of
-multiple CPUs in some way. But of<dfn class="dictionary-of-numbers">ten
-this must be </dfn>specifically requested by the user at the time they
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Many scientific software applications are
+written<span class="dictionary-of-numbers"> to take advantage </span>of
+multiple CPUs in some way. But often<span class="dictionary-of-numbers">
+this must be </span>specifically requested by the user at the time they
 run the program, rather than happening automatically.  
 
-The are <dfn class="dictionary-of-numbers">three types of parallel
-</dfn>execution we will cover are [Multi-Threading(oMP)](#t_multi),
+The are <span class="dictionary-of-numbers">three types of parallel
+</span>execution we will cover are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
-
-> ### Note
+!!!
 >
 > Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
 > *logical* CPU's = **1** *physical* core).  
 >
 > -   `--cpus-per-task=4` will give you 4 *logical* cores.
 > -   `--mem-per-cpu=512MB` will give
->     <dfn class="dictionary-of-numbers">512 MB of
->     RAM</dfn> per *logical* core.
+>     <span class="dictionary-of-numbers">512 MB of
+>     RAM</span> per *logical* core.
 > -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
 >     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
 >     logical cores.
@@ -43,15 +49,17 @@ Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread
-(PO<dfn class="dictionary-of-numbers">SIX threads)</dfn>.
+(PO<span class="dictionary-of-numbers">SIX threads)</span>.
 
-<img src="../../includes/images/serial.png" alt="Diagram showing serial operations." class="figure-img" />  
+<img src="assets/images/360001532455_0.name_me" class="figure-img"
+alt="Diagram showing serial operations." />  
 *Fig. 1: In a serial operation, tasks complete
-<dfn class="dictionary-of-numbers">one after another</dfn>.*
+<span class="dictionary-of-numbers">one after another</span>.*
 
 ####  
 
-<img src="../../includes/images/par.png" alt="par.png" width="714" height="160" />*  
+<img src="assets/images/360001532435_0.name_me" width="714" height="160"
+alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 
@@ -93,7 +101,7 @@ multiple CPUs, which may belong to different nodes. On Slurm systems
 like ours, the preferred launcher is `srun` rather than `mpi-run`.
 
 Since the distribution of tasks across different nodes may be
-unpredictable, `--mem-per-cpu` should be used instead of `--mem`.``
+unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
 
     #!/bin/bash -e
     #SBATCH --job-name=MPIJob       # job name (shows up in the queue)
@@ -108,8 +116,7 @@ The expected output being
 
     /home/user001/demo
     /home/user001/demo
-
-> ### Warning
+!!!
 >
 > For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
 > all. Using `srun` in conjunction with `--cpus-per-task=1` will
@@ -120,8 +127,8 @@ The expected output being
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
 executed in any order and don't have to run at the same time. This kind
-of work is often described as<dfn class="dictionary-of-numbers">
-</dfn>*embarrassingly parallel*.  
+of work is often described as<span class="dictionary-of-numbers">
+</span>*embarrassingly parallel*.  
 An embarrassingly parallel problem is one that requires no communication
 or dependency between the tasks (unlike distributed computing problems
 that need communication between tasks).
@@ -142,54 +149,51 @@ For example, the following code:
     echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
 will submit,  `ArrayJob_1` and `ArrayJob_2`, which will return the
-results <samp class="nohighlight">This is result 1</samp> and
-<samp class="nohighlight">This is result 2</samp> respectively.
+results `This is result 1` and `This is result 2` respectively.
 
 ## Using SLURM\_ARRAY\_TASK\_ID
 
 Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
 recommended method of variation between the jobs. For example:
 
-<ul>
-<ul>
--   As a direct input to a function.  
+-   -   -   As a direct input to a function.  
 
-        matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+                matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
 
--   As an index to an array.  
+        -   As an index to an array.  
 
-        inArray=(1 2 4 8 16 32 64 128)
-        input=${inArray[$SLURM_ARRAY_TASK_ID]}
+                inArray=(1 2 4 8 16 32 64 128)
+                input=${inArray[$SLURM_ARRAY_TASK_ID]}
 
--   For selecting input files.  
+        -   For selecting input files.  
 
-        input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+                input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
 
--   As a seed for a pseudo-random number.  
-    -   In R
+        -   As a seed for a pseudo-random number.  
+            -   In R
 
-            task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-            set.seed(task_id)
+                    task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+                    set.seed(task_id)
 
-    -   In MATLAB
+            -   In MATLAB
 
-            task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-            rng(task_id)
+                    task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+                    rng(task_id)
 
-    \*  
-    Using a seed is important, otherwise multiple jobs may receive the
-    same pseudo-random numbers.*
--   As an index to an array of filenames. 
+            *  
+            Using a seed is important, otherwise multiple jobs may
+            receive the same pseudo-random numbers.*
 
-        files=( inputs/*.dat )
-        input=${files[SLURM_ARRAY_TASK_ID]}
-        # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
+        -   As an index to an array of filenames. 
 
-    This example will submit a job array with each job using a .dat file
-    in 'inputs' as the variable input (in alphabetcial order).
+                files=( inputs/*.dat )
+                input=${files[SLURM_ARRAY_TASK_ID]}
+                # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
 
-</ul>
-</ul>
+            This example will submit a job array with each job using a
+            .dat file in 'inputs' as the variable input (in alphabetcial
+            order).
+
 Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.

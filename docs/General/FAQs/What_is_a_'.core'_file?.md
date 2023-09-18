@@ -12,7 +12,14 @@ zendesk_article_id: 360001584875
 zendesk_section_id: 360000039036
 ---
 
-.core files are created when a program fails in a way that can't be
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    .core files are created when a program fails in a way that can't be
 handled by the program's regular error handling. Normally these failures
 are memory-related, such as the program asking for too much memory or
 for memory it can't legally access. The creation of a core file is

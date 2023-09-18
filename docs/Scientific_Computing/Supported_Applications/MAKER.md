@@ -10,7 +10,14 @@ zendesk_article_id: 360001419576
 zendesk_section_id: 360000040076
 ---
 
-# Local Customisations
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    # Local Customisations
 
 Since the MAKER control file *maker\_exe.ctl* is just an annoyance in an
 environment module based system we have patched MAKER to make that

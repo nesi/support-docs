@@ -10,7 +10,14 @@ zendesk_article_id: 4563294188687
 zendesk_section_id: 360001059296
 ---
 
-## Overview
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    ## Overview
 
 NeSI aims to keep users informed via various communication channels. 
 
@@ -29,7 +36,7 @@ Use the 'Manage' button provided to open the externally hosted
 preferences or the checkboxes for the NeSI Project-related
 notifications.
 
-![2022-04-12\_16-46-56.png](../../includes/images/2022-04-12_16-46-56.png)
+![2022-04-12\_16-46-56.png](assets/images/2022-04-12_16-46-56_0.png)
 
  
 

@@ -12,7 +12,14 @@ zendesk_article_id: 360000175675
 zendesk_section_id: 360000224835
 ---
 
-A Proposal Development allocation is a short-term allocation of up to
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    A Proposal Development allocation is a short-term allocation of up to
 2,000 compute units per month (on Mahuika) or 50 node-hours per month
 (on Māui) or both, for up to six months. During your Proposal
 Development allocation you can find out:

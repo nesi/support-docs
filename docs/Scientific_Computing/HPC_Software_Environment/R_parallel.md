@@ -10,7 +10,14 @@ zendesk_article_id: 6906005813519
 zendesk_section_id: 360000040056
 ---
 
-R is a programming language often applied to statistical problems, which
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    R is a programming language often applied to statistical problems, which
 supports parallel execution on a high performance cluster. See
 [here](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R) for
 more information on how to run R code on NeSI platforms. 

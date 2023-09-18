@@ -10,13 +10,20 @@ zendesk_article_id: 360001075975
 zendesk_section_id: 360000189696
 ---
 
-> ### Requirements
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    !!!
 >
 > -   Have working
->     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)set
->     up.
+>     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
+>     set up.
 
-X<dfn class="dictionary-of-numbers">-11 is a protocol </dfn>for
+X<span class="dictionary-of-numbers">-11 is a protocol </span>for
 rendering graphical user interfaces (GUIs) that can be sent along an SSH
 tunnel. If you plan on using a GUI on a NeSI cluster you will need to
 have an X-Server and X-Forwarding set up.
@@ -28,33 +35,41 @@ GUI to be rendered.
 
 Download links for X-servers can be found below.
 
-<table>
+<table style="height: 23px;" width="633">
 <tbody>
 <tr class="odd">
+<td style="width: 313px">MacOS</td>
+<td style="width: 313px"><a
+href="https://www.xquartz.org/">Xquartz</a></td>
 </tr>
 <tr class="even">
+<td style="width: 313px">Linux</td>
+<td style="width: 313px"><a
+href="https://www.x.org/wiki/Releases/Download/">Xorg</a></td>
 </tr>
 <tr class="odd">
+<td style="width: 313px">Windows</td>
+<td style="width: 313px"><a
+href="https://sourceforge.net/projects/xming/">Xming</a></td>
 </tr>
 </tbody>
 </table>
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](../../includes/images/mceclip0_8.png) symbol in
-your taskbar 
-
-> ### Note
+this ![mceclip0.png](assets/images/mceclip0_17.png) symbol in your
+taskbar 
+!!!
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](../../includes/images/xon.png)=on, ![off.png](../../includes/images/off.png)=off). 
+> (![xon.png](assets/images/xon_0.png)=on, ![off.png](assets/images/off_0.png)=off). 
 
 # X-Forwarding
 
 Finally your ssh tunnel must be set up to 'forward' along
-X<dfn class="dictionary-of-numbers">-11 connections</dfn>. 
+X<span class="dictionary-of-numbers">-11 connections</span>. 
 
 ## OpenSSH (terminal)
 
@@ -67,13 +82,14 @@ Make sure the `-Y` or `-X` flag is included
 ## MobaXterm
 
  Under 'session settings' for your connection make sure the
-X<dfn class="dictionary-of-numbers">-11 forwarding box is </dfn>checked.
+X<span class="dictionary-of-numbers">-11 forwarding box is
+</span>checked.
 
-<img src="../../includes/images/x11moba.png" alt="x11moba.png" width="451" height="303" />
+<img src="assets/images/x11moba_0.png" width="451" height="303"
+alt="x11moba.png" />
 
-If the ![mceclip0.png](../../includes/images/mceclip0_9.png) button in
-the top right corner of your window is coloured, the X-server should be
-running.
+If the ![mceclip0.png](assets/images/mceclip0_18.png) button in the top
+right corner of your window is coloured, the X-server should be running.
 
 # X-Forwarding with *tmux*
 

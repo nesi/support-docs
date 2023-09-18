@@ -10,4 +10,11 @@ zendesk_article_id: 360000933335
 zendesk_section_id: 360000189716
 ---
 
-It may be possible to get by on the cluster
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    It may be possible to get by on the cluster

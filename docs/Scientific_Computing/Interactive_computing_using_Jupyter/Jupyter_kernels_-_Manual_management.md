@@ -10,7 +10,14 @@ zendesk_article_id: 4414951820559
 zendesk_section_id: 360001189255
 ---
 
-# Introduction
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    # Introduction
 
 Jupyter kernels execute the code that you write. The following Jupyter
 kernels are installed by default and can be selected from the Launcher:
@@ -29,8 +36,7 @@ and these can be extended further as described on the
 pages.
 
 # Adding a custom Python kernel
-
-> ### See also
+!!!
 >
 > See the [Jupyter kernels - Tool-assisted
 > management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)

@@ -10,7 +10,14 @@ zendesk_article_id: 360003984776
 zendesk_section_id: 200732737
 ---
 
-On 01/04/2021 afternoon, there was a change to the University ANSYS
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    On 01/04/2021 afternoon, there was a change to the University ANSYS
 licences; you may find that your jobs fail with a licence error.
 
 The following command should resolve the issue (where `-revn 202` is

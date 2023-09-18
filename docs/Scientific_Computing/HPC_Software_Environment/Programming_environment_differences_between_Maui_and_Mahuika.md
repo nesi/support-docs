@@ -15,7 +15,14 @@ zendesk_article_id: 360000164576
 zendesk_section_id: 360000040056
 ---
 
-The compile environment of Māui and Mahuika have various similarities,
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    The compile environment of Māui and Mahuika have various similarities,
 but also significant differences. Both systems are configured with the
 Cray Programming Environment (CPE), but these vary in detail. In general
 we distinguish, between the XC50 part of Māui and the CS (Mahuika,
@@ -26,198 +33,96 @@ text indicates components common to both systems, green to components
 only available on Mahuika, and blue to components only available on Māui
 XC part.  
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered" style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
 <thead>
-<tr>
-<th>
-Programming Languages
-
-</th>
-<th>
-Programming Models
-
-</th>
-<th>
-Compilers
-
-</th>
-<th>
-Tools
-
-</th>
-<th>
-Optimised Scientific Libraries
-
-</th>
-<th>
-I/O Libraries
-
-</th>
+<tr class="header">
+<th><p>Programming Languages</p></th>
+<th><p>Programming Models</p></th>
+<th><p>Compilers</p></th>
+<th><p>Tools</p></th>
+<th><p>Optimised Scientific Libraries</p></th>
+<th><p>I/O Libraries</p></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td rowspan="4">
-Fortran
-
-C
-
-C++
-
-Chapel
-
-</td>
-<td>
-Distributed Memory:
-
-MPI Support:
-
-· Intel MPI<sup>1</sup>
-
-· MVAPICH2<sup>1</sup>
-
-· OpenMPI<sup>1</sup>
-
-· MPICH<sup>1</sup>
-
-· Cray-MVAPICH2<sup>1</sup> 
-
-Cray MPT<sup>2</sup>:
-
-· MPI
-
-</td>
-<td>
-· Cray Compiling Environment (CCE)
-
-· GNU
-
-· Intel
-
-</td>
-<td>
-Performance Analysis:
-
-· CrayPat & Cray Apprentice2
-
-· Allinea MAP
-
-· Intel Vtune Amplifier XE, Advisor, Trace Analyser & Collector
-
-</td>
-<td>
-Dense:
-
-· BLAS
-
-· LAPACK
-
-· ScaLAPACK
-
-· Iterative Refinement Tool
-
-</td>
-<td rowspan="4">
-NetCDF<sup>2</sup>
-
-HDF<sup>2</sup>
-
-</td>
+<tr class="odd">
+<td rowspan="4"><p>Fortran</p>
+<p>C</p>
+<p>C++</p>
+<p>Chapel</p></td>
+<td><p>Distributed Memory:</p>
+<p>MPI Support:</p>
+<p><span>· Intel MPI<sup>1</sup></span></p>
+<p><span>· </span><span>MVAPICH2<sup>1</sup></span></p>
+<p><span>· OpenMPI<sup>1</sup></span></p>
+<p><span>· MPICH<sup>1</sup></span></p>
+<p><span>· Cray-MVAPICH2<sup>1</sup></span> </p>
+<p><span>Cray MPT<sup>2</sup>:</span></p>
+<p><span>· MPI</span></p></td>
+<td><p>· Cray Compiling Environment (CCE)</p>
+<p>· GNU</p>
+<p>· Intel</p></td>
+<td><p>Performance Analysis:</p>
+<p>· CrayPat &amp; Cray Apprentice2</p>
+<p>· Allinea MAP</p>
+<p>· Intel Vtune Amplifier XE, Advisor, <span>Trace Analyser &amp;
+Collector</span></p></td>
+<td><p>Dense:</p>
+<p>· BLAS</p>
+<p>· LAPACK</p>
+<p>· ScaLAPACK</p>
+<p>· Iterative Refinement Tool</p></td>
+<td rowspan="4"><p><span>NetCDF<sup>2</sup></span></p>
+<p><span>HDF<sup>2</sup></span></p></td>
 </tr>
-<tr>
-<td>
-Shared Memory
-
-· OpenMP 4.0
-
-· OpenACC 2.0
-
-</td>
-<td>
-Environment Setup
-
-· Modules
-
-· Lmod<sup>1</sup>
-
- 
-
-</td>
-<td>
-Porting Tools:
-
-· Reveal
-
-· CCDB
-
-</td>
-<td>
-FFT:
-
-· FFTW
-
-</td>
+<tr class="even">
+<td><p>Shared Memory</p>
+<p>· OpenMP 4.0</p>
+<p>· OpenACC 2.0</p></td>
+<td><p>Environment Setup</p>
+<p>· Modules</p>
+<p><span>· Lmod<sup>1</sup></span></p>
+<p> </p></td>
+<td><p>Porting Tools:</p>
+<p>· Reveal</p>
+<p>· CCDB</p></td>
+<td><p>FFT:</p>
+<p>· FFTW</p></td>
 </tr>
-<tr>
-<td>
-PGAS
-
-· UPC
-
-· CAF
-
-· CoArray C++
-
-</td>
-<td>
- 
-
-</td>
-<td>
-Debuggers:
-
-· lgdb
-
-· Allinea DDT
-
-· ATP<sup>2</sup>
-
-· STAT<sup>2</sup>
-
-</td>
-<td>
-Sparse:
-
-· Cray PETSc (with CASK)<sup>2</sup>
-
-· Cray Trilinos (with CASK)<sup>2</sup>
-
-</td>
+<tr class="odd">
+<td><p>PGAS</p>
+<p>· UPC</p>
+<p>· CAF</p>
+<p>· CoArray C++</p></td>
+<td><p> </p></td>
+<td><p>Debuggers:</p>
+<p>· lgdb</p>
+<p>· Allinea DDT</p>
+<p><span>· ATP<sup>2</sup></span></p>
+<p><span>· STAT<sup>2</sup></span></p></td>
+<td><p><span>Sparse:</span></p>
+<p><span>· Cray PETSc (with CASK)<sup>2</sup></span></p>
+<p><span>· Cray Trilinos (with CASK)<sup>2</sup></span></p></td>
 </tr>
-<tr>
-<td>
- 
-
-</td>
-<td>
- 
-
-</td>
-<td>
-Data Analytics
-
-· Urika XC Data Analytics<sup>2</sup>
-
-· Cray Graph Engine<sup>2</sup>
-
-</td>
-<td>
- 
-
-</td>
+<tr class="even">
+<td><p> </p></td>
+<td><p> </p></td>
+<td><p>Data Analytics</p>
+<p><span>· Urika XC Data Analytics<sup>2</sup></span></p>
+<p><span>· Cray Graph Engine<sup>2</sup></span></p></td>
+<td><p> </p></td>
 </tr>
 </tbody>
 </table>
+
 **Notes:**
 
 1.  <sup>1</sup>Only available on Mahuika HPC Cluster, Mahuika Ancillary

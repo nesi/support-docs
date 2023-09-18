@@ -10,7 +10,14 @@ zendesk_article_id: 360000817476
 zendesk_section_id: 360000040596
 ---
 
- 
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+     
 
 Globus provides logins for NeSI users via Google and GlobusID.
 
@@ -21,9 +28,10 @@ route to setting up your Globus account is:
 
 #### Log in to https://globus.org using your google identity:
 
-<img src="../../includes/images/google_first_signup.png" alt="google_first_signup.png" width="402" height="302" />
+<img src="assets/images/google_first_signup_0.png" width="402"
+height="302" alt="google_first_signup.png" />
 
-2) Link other Globus identities to your primary identity
+2\) Link other Globus identities to your primary identity
 
 From the Globus docs:
 
@@ -38,7 +46,8 @@ If you have other identities in Globus (for example, a globusID), link
 them  to your Google ID account following the instructions at
 <https://docs.globus.org/how-to/link-to-existing/>:
 
- <img src="../../includes/images/identities.png" alt="identities.png" width="1382" height="322" />
+ <img src="assets/images/identities_0.png" width="1382" height="322"
+alt="identities.png" />
 
  
 

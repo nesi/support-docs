@@ -10,7 +10,14 @@ zendesk_article_id: 360001298595
 zendesk_section_id: 360000042255
 ---
 
-Migration of files from your project or nobackup directory to your
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Migration of files from your project or nobackup directory to your
 nearline directory is a two-step process. In the first step, the data is
 copied from project or nobackup to a staging file system with a maximum
 capacity of 500 TB. In the second step, the data on the staging file
@@ -59,8 +66,7 @@ You do not have to create one single archive file for all small files in
 `/nesi/project/<project_code>` or `/nesi/nobackup/<project_code>`, and
 in fact you may prefer to create archive files pertaining to particular
 subdirectories. There is no harm in either approach.
-
-> ### Tip
+!!!
 >
 > The archive creation process can take quite a long time. So that you
 > can freely log out of the cluster, and to protect the process in case

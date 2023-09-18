@@ -10,7 +10,14 @@ zendesk_article_id: 360000902955
 zendesk_section_id: 360000030876
 ---
 
-NeSI provides libraries for creating and accessing files in the NetCDF
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    NeSI provides libraries for creating and accessing files in the NetCDF
 and HDF5 formats on both Mahuika and Māui.
 
 On Māui, both libraries are part of the Cray Programming Environment and

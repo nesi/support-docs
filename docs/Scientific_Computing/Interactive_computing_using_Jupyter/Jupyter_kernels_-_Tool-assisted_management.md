@@ -10,7 +10,14 @@ zendesk_article_id: 4414958674831
 zendesk_section_id: 360001189255
 ---
 
-# Introduction
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    # Introduction
 
 Jupyter can execute code in different computing environments using
 *kernels*. Some kernels are provided by default (Python, R, etc.) but
@@ -59,6 +66,11 @@ where `<kernel_name>` stands for the name of the kernel to delete.
 
 # Conda environment
 
+First, make sure the `JupyterLab` module is loaded:
+
+    module purge
+    module load JupyterLab
+
 To add a Conda environment created using
 `conda create -p <conda_env_path>`, use:
 
@@ -92,6 +104,8 @@ command:
 To use a Singularity container, use the `-c` or `--container` options as
 follows:
 
+    module purge
+    module load JupyterLab
     nesi-add-kernel my_test_kernel -c <container_image.sif>
 
 where `<container_image.sif>` is a path to your container image.

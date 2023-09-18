@@ -10,7 +10,14 @@ zendesk_article_id: 4406437522703
 zendesk_section_id: 360000196195
 ---
 
-Applications for new allocations on existing projects are accepted and
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Applications for new allocations on existing projects are accepted and
 assessed in quarterly allocation periods. Under this quarterly call
 schedule, applications for new allocations on existing projects are due
 in the following months:
@@ -26,7 +33,7 @@ Allocations will start on the first day of the next month and run for
 one year. The diagram below illustrates how these quarterly call periods
 are scheduled during the year:
 
-![Quarterly\_Allocation\_Periods\_2021\_\_1\_.png](../../includes/images/Quarterly_Allocation_Periods_2021__1_.png)
+![Quarterly\_Allocation\_Periods\_2021\_\_1\_.png](assets/images/Quarterly_Allocation_Periods_2021__1__0.png)
 
 For example, if you apply for a new allocation on your existing project
 in the month of October, we will review your application in October or
@@ -34,7 +41,7 @@ early November, you will be notified of your allocation by the end of
 November, and your allocation will start on 1 December (as shown in the
 graphic below).
 
-![Blank\_Diagram\_\_1\_.png](../../includes/images/Blank_Diagram__1_.png)
+![Blank\_Diagram\_\_1\_.png](assets/images/Blank_Diagram__1__0.png)
 
 ## Existing allocations
 

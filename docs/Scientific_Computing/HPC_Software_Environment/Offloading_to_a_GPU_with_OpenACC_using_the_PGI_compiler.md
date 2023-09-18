@@ -10,7 +10,14 @@ zendesk_article_id: 360001815716
 zendesk_section_id: 360000040056
 ---
 
-With OpenACC it is possible to offload computations from the CPU to a
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    With OpenACC it is possible to offload computations from the CPU to a
 GPU,
 see <http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf>.
 
@@ -46,7 +53,7 @@ threads to compute the total sum in parallel. 
 We'll use the PGI C++ compiler to build the executable but first we need
 to load a few modules:
 
-`module load PGI CUDA`
+`module`` ``load`` PGI CUDA`  
 
 To compare the execution times between the CPU and GPU version, we build
 two executables:
@@ -68,19 +75,23 @@ offloads to the GPU):
     OMP_NUM_THREADS=8 && time srun --ntasks=1 --cpus-per-task=$OMP_NUM_THREADS --hint=nomultithread ./totalAccMulticore
     time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalAccGpu
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+<table style="height: 32px;" width="408">
 <tbody>
 <tr class="odd">
+<td style="width: 227px"><p>executable</p></td>
+<td style="width: 158px">time [s]</td>
 </tr>
 <tr class="even">
+<td style="width: 227px">totalAccMulticore</td>
+<td style="width: 158px"><p>121.3</p></td>
 </tr>
 <tr class="odd">
+<td style="width: 227px">totalAccMulticore 8 threads</td>
+<td style="width: 158px"><p>36.8</p></td>
 </tr>
 <tr class="even">
+<td style="width: 227px">totalAccGpu</td>
+<td style="width: 158px">3.1</td>
 </tr>
 </tbody>
 </table>

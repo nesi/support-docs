@@ -10,7 +10,14 @@ zendesk_article_id: 7352114813455
 zendesk_section_id: 7348936006031
 ---
 
-Charges for Subscription usage are typically invoiced on a quarterly
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Charges for Subscription usage are typically invoiced on a quarterly
 basis.  
   
 If your organisation requires a Purchase Order (PO) Number be used for

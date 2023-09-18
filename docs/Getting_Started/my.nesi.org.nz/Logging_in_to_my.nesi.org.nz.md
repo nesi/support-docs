@@ -10,7 +10,14 @@ zendesk_article_id: 360003584515
 zendesk_section_id: 360001059296
 ---
 
-## Login credentials
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    ## Login credentials
 
 We allow students, academics, alumni and researchers to securely login
 and create a [NeSI account

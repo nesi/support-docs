@@ -10,7 +10,14 @@ zendesk_article_id: 360001332675
 zendesk_section_id: 360000040076
 ---
 
-## What is VTune?
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    ## What is VTune?
 
 VTune is a tool that allows you to quickly identify where most of the
 execution time of a program is spent. This is known as profiling. It is
@@ -86,6 +93,6 @@ into selected functions to get more information. Below we see that 16.5
 out of 26 seconds were spent starting the two OpenMP threads.    
   
 
-![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../../includes/images/Screen_Shot_2020-01-16_at_11.06.53_AM.png) 
+![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](assets/images/Screen_Shot_2020-01-16_at_11.06.53_AM.png_0.name_me) 
 
  

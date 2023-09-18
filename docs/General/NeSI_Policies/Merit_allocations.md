@@ -13,7 +13,14 @@ zendesk_article_id: 360000175635
 zendesk_section_id: 360000224835
 ---
 
-This is the highest award given for use of NeSI services. A Merit
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    This is the highest award given for use of NeSI services. A Merit
 allocation is intended for highly skilled research teams carrying out
 high quality research funded via a peer review process that supports the
 [New Zealand Government's Science

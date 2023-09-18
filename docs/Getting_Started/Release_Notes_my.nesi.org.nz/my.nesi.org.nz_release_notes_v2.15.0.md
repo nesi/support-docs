@@ -11,12 +11,20 @@ zendesk_article_id: 6805105965199
 zendesk_section_id: 360001091155
 ---
 
-## Release Update - 3. May 2023
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    ## Release Update - 3. May 2023
 
 ## New and Improved
 
 -   New Allocation Request page has been improved to add field
     validations
+
 -   Links to information about notifications have been added under
     Account &gt; My Profile, when the Account Profile is edited
 

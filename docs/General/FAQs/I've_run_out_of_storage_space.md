@@ -11,7 +11,14 @@ zendesk_article_id: 360001125996
 zendesk_section_id: 360000039036
 ---
 
-There are two tracked resources in the NeSI filesystem, *disk space* and
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    There are two tracked resources in the NeSI filesystem, *disk space* and
 *inodes (number of files) *.
 
 Trying to write to a filesystem over its inode or disk quota will cause
@@ -23,8 +30,7 @@ Current file-count and disk space can be found using `nn_storage_quota`.
     home_user123             20G    1.957G    9.79%      92160     21052    22.84%
     project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
     nobackup_nesi99999              6.833T            10000000    2691383   26.91%
-
-> ### Note
+!!!
 >
 > There is a delay between making changes to a filesystem and seeing the
 > change in `nn_storage_quota`, immediate file count and disk space can
@@ -36,12 +42,14 @@ There are a few ways to deal with file count problems
     The nobackup directory has a significantly higher inode count and no
     disk space limits. Files here are not backed up, so best used for
     intermediary or replaceable data.
+
 -   **Delete unnecessary files**  
     Some applications will generate a large number of files during
     runtime, using the command `du --inodes -d 1 | sort -hr` (for
     inodes) or `du -h -d 1 | sort -hr` for disk space.  You can then
     drill down into the directories with the largest file count deleting
     files as viable.
+
 -   **SquashFS archive (recommended)**  
     Many files can be compressed into a single SquashFS archive. We have
     written a utility, `nn_archive_files`, to help with this process.

@@ -14,7 +14,14 @@ zendesk_article_id: 360000203075
 zendesk_section_id: 360000034315
 ---
 
-> ### Requirements
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    !!!
 >
 > You must:
 >
@@ -45,11 +52,15 @@ If you some reason you can't do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    <img src="../../includes/images/4414700806543" alt="authentication_factor_setup.png" width="560" height="210" />
+    <img src="assets/images/4414700806543_0.name_me" width="560"
+    height="210" alt="authentication_factor_setup.png" />
 
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
-    ![](../../includes/images/360001267755)
+    <img src="assets/images/360001267755_0.name_me"
+    style="max-width: 480px;" />
+
 4.  After clicking on "Continue" you will retrieve the QR code.
+
 5.  Open your Authy or Google Authenticator app and click on the add
     button and select "**Scan a barcode**". Alternatively, if you are
     not able to scan the barcode from your device you can manually enter
@@ -62,8 +73,7 @@ factor in the authentication process.
 This code rotates every 30 seconds, and it **can only be used once**.
 This means that you can only try logging in to the lander node once
 every 30 seconds.
-
-> ### What next?
+!!!
 >
 > -   [Getting access to the
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)

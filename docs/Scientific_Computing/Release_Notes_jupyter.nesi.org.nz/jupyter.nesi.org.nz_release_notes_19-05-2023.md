@@ -11,7 +11,14 @@ zendesk_article_id: 7010547494287
 zendesk_section_id: 360001150156
 ---
 
-## Fixed
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    ## Fixed
 
 -   Updated some Python packages in the Python 3.10 kernel to fix an
     issue with ipywidgets not working properly in notebooks

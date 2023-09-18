@@ -10,7 +10,14 @@ zendesk_article_id: 360001131076
 zendesk_section_id: 360000040056
 ---
 
-Many codes can be accelerated significantly by offloading computations
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Many codes can be accelerated significantly by offloading computations
 to a GPU. Some NeSI [Mahuika nodes have GPUs attached to
 them](https://support.nesi.org.nz/hc/en-gb/articles/360001471955-GPU-use-on-NeSI).
 If you want your code to run faster, if you're developing your own code
@@ -100,17 +107,19 @@ the GPU):
     time srun --ntasks=1 --cpus-per-task=1 ./total
     time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+<table style="height: 104px;" width="417">
 <tbody>
 <tr class="odd">
+<td style="width: 194.5px"><p>executable</p></td>
+<td style="width: 199.5px">time [s]</td>
 </tr>
 <tr class="even">
+<td style="width: 194.5px">total</td>
+<td style="width: 199.5px">7.6</td>
 </tr>
 <tr class="odd">
+<td style="width: 194.5px">totalAccGpu</td>
+<td style="width: 199.5px">0.41</td>
 </tr>
 </tbody>
 </table>

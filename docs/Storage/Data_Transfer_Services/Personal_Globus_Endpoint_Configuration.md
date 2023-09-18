@@ -10,7 +10,14 @@ zendesk_article_id: 360000217915
 zendesk_section_id: 360000040596
 ---
 
-Using Globus to transfer and share files from/to a personal computer
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Using Globus to transfer and share files from/to a personal computer
 
 ## Install Globus Connect Personal on your workstation/laptop
 
@@ -23,7 +30,8 @@ Globus's [Endpoints administered by
 you](https://app.globus.org/endpoints?scope=administered-by-me) to see
 whether your endpoint shows up as active.
 
-<img src="../../includes/images/mceclip0_12.png" alt="mceclip0.png" width="754" height="320" />
+<img src="assets/images/mceclip0_24.png" width="754" height="320"
+alt="mceclip0.png" />
 
 ## Personal Endpoint file-transfer and sharing
 
@@ -38,7 +46,8 @@ eScience Infrastructure*.
 Check if your account already has this membership by viewing the [Globus
 Plus](https://app.globus.org/account/plus) tab under your Account:
 
-<img src="../../includes/images/mceclip2_0.png" alt="mceclip2.png" width="880" height="267" />
+<img src="assets/images/mceclip2_0.png" width="880" height="267"
+alt="mceclip2.png" />
 
 If you do not see an entry for *New Zealand eScience Infrastructure* on
 this page, then:

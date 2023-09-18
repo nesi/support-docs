@@ -10,7 +10,14 @@ zendesk_article_id: 360000474535
 zendesk_section_id: 360000040056
 ---
 
-NeSI provides a long list of various applications on its systems.
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    NeSI provides a long list of various applications on its systems.
 Nevertheless, if you need additional applications or libraries (below
 called package), we distinguish:
 
@@ -48,7 +55,7 @@ you usually need to consider:
     via downloading a tarball (`wget <URL to the tarball>`). Unpack the
     tarball using `tar xf <tar file name>`. Change into source
     directory.
--   ``load compiler module and modules for additional libraries
+-   load compiler module and modules for additional libraries
     (`module load gimkl FFTW`)
 -   run the configure with appropriate options
     `./configure --prefix=<desired install directory> --use-fftw=$EBROOTFFTW  `(options

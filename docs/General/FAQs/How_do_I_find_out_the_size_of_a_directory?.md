@@ -10,32 +10,70 @@ zendesk_article_id: 4415563282959
 zendesk_section_id: 360000039036
 ---
 
-To simplify this process, we have written a script, `nn_dir_contents`.
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    To simplify this process, we have written a script, `nn_dir_contents`.
 This script can be run in a variety of ways.
 
-<table>
-<thead>
-<tr class="header">
-</tr>
-</thead>
+<table style="border-collapse: collapse; width: 100%;" data-border="1">
 <tbody>
-<tr class="odd">
+<tr class="header">
+<th style="width: 50%">Command</th>
+<th style="width: 50%">Result</th>
+</tr>
+&#10;<tr class="odd">
+<td style="width: 50%"><code>nn_dir_contents</code></td>
+<td style="width: 50%">Shows the size of, and number of directory
+entries in, the current working directory</td>
 </tr>
 <tr class="even">
+<td style="width: 50%"><code>nn_dir_contents -s</code></td>
+<td style="width: 50%">Shows the size of the current working
+directory</td>
 </tr>
 <tr class="odd">
+<td style="width: 50%"><code>nn_dir_contents -n</code></td>
+<td style="width: 50%">Shows the number of directory entries in the
+current working directory</td>
 </tr>
 <tr class="even">
+<td style="width: 50%"><code>nn_dir_contents &lt;DIR&gt;</code></td>
+<td style="width: 50%">Shows the size of, and number of directory
+entries in, the directory <code>DIR</code></td>
 </tr>
 <tr class="odd">
+<td style="width: 50%"><code>nn_dir_contents -s &lt;DIR&gt;</code></td>
+<td style="width: 50%">Shows the size of the directory
+<code>DIR</code></td>
 </tr>
 <tr class="even">
+<td style="width: 50%"><code>nn_dir_contents -n &lt;DIR&gt;</code></td>
+<td style="width: 50%">Shows the number of directory entries in the
+directory <code>DIR</code></td>
 </tr>
 <tr class="odd">
+<td
+style="width: 50%"><code>nn_dir_contents &lt;DIR1&gt; &lt;DIR2&gt; ...</code></td>
+<td style="width: 50%">Shows the size of, and number of directory
+entries in, the directories <code>DIR1</code>, <code>DIR2</code>,
+etc.</td>
 </tr>
 <tr class="even">
+<td
+style="width: 50%"><code>nn_dir_contents -s &lt;DIR1&gt; &lt;DIR2&gt; ...</code></td>
+<td style="width: 50%">Shows the sizes of the directories
+<code>DIR1</code>, <code>DIR2</code>, etc.</td>
 </tr>
 <tr class="odd">
+<td
+style="width: 50%"><code>nn_dir_contents -n &lt;DIR1&gt; &lt;DIR2&gt; ...</code></td>
+<td style="width: 50%">Shows the numbers of directory entries in the
+directories <code>DIR1</code>, <code>DIR2</code>, etc.</td>
 </tr>
 </tbody>
 </table>

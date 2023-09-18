@@ -10,7 +10,14 @@ zendesk_article_id: 360001173875
 zendesk_section_id: 360000189716
 ---
 
-In the example below we will use Python scripts to demonstrate how you
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    In the example below we will use Python scripts to demonstrate how you
 might perform some basic scaling tests, however, the principles outlined
 in these examples are applicable across software applications. You do
 not need to know anything about Python to understand this article; it
@@ -201,7 +208,7 @@ our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
     6054939.ext+   extern          00:06:57    00:00.006    12      44K  COMPLETED 
     6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 
-![MPIscalingMem.png](../../includes/images/MPIscalingMem_0.png)
+![MPIscalingMem.png](assets/images/MPIscalingMem_2.png)
 
 First, looking at the plot of memory usage per task vs CPUs it would at
 appears that memory usage per task remains constant, regardless of how
@@ -223,9 +230,15 @@ memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-<table>
+<table style="width: 684px; height: 336px;">
 <tbody>
 <tr class="odd">
+<td style="width: 343.95px"><img
+src="assets/images/MPIscalingSeeds_2.png"
+alt="MPIscalingSeeds.png" /></td>
+<td style="width: 330.05px"><img
+src="assets/images/MPIscalingSeedsLog_2.png"
+alt="MPIscalingSeedsLog.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -283,7 +296,7 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](../../includes/images/MPIseedsvtime_0.png)
+![MPIseedsvtime.png](assets/images/MPIseedsvtime_2.png)
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we
@@ -323,16 +336,12 @@ request 1 GB of memory and 2 hours.
 
  Checking on our job with `sacct`
 
-``
-
              JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
     -------------- ------------ ----------- ------------ ----- -------- ----------
     6061377        MPIScaling60k   01:28:25     14:35:32    10           COMPLETED 
     6061377.bat+   batch           01:28:25    00:00.555    10    4320K  COMPLETED 
     6061377.ext+   extern          01:28:25     00:00:00    10        0  COMPLETED 
     6061377.0      python          01:28:22     14:35:32     5  169060K  COMPLETED 
-
-``
 
 It looks as though our estimates were accurate in this case, however,
 when you submit a job it is always a good idea to request about 20% more

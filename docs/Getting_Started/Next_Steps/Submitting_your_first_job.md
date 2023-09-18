@@ -12,22 +12,51 @@ zendesk_article_id: 360000684396
 zendesk_section_id: 360000189716
 ---
 
-## Environment Modules
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    ## Environment Modules
 
 Modules are a convenient  way to provide access to applications  on the
 cluster. They prepare the environment you need to run an application.
 
-For a full list of module commands run <kbd>man module</kbd>
+For a full list of module commands run man module
 
-<table>
+<table style="height: 110px; width: 861.4px;">
 <tbody>
 <tr class="odd">
+<td
+style="width: 275px"><code>module spider [ &lt;string&gt; ]</code></td>
+<td style="width: 301.4px">List all modules whose names, including
+version strings, contain <code>&lt;string&gt;</code>. If the
+<code>&lt;string&gt;</code> argument is not supplied, list all available
+modules. (only on Mahuika)</td>
 </tr>
 <tr class="even">
+<td style="width: 275px"><code>module show &lt;string&gt;</code></td>
+<td style="width: 301.4px">Show the contents of the module given
+by <code>&lt;string&gt;</code>. If only the module name (e.g.
+<code>Python</code>) is given, show the default module of that name. If
+both name and version are given, show that particular version
+module.</td>
 </tr>
 <tr class="odd">
+<td style="width: 275px"><code>module load &lt;string&gt;</code></td>
+<td style="width: 301.4px">Load the module (name and version) given
+by <code>&lt;string&gt;</code>. If no version is given, load the default
+version.</td>
 </tr>
 <tr class="even">
+<td
+style="width: 275px"><code>module list [ &lt;string&gt; ]</code></td>
+<td style="width: 301.4px">List all currently loaded modules whose
+names, including version strings, contain <code>&lt;string&gt;</code>.
+If the <code>&lt;string&gt;</code> argument is not supplied, list all
+currently loaded modules.</td>
 </tr>
 </tbody>
 </table>
@@ -40,7 +69,7 @@ needed by our job scheduler *Slurm.*
 
 ## Creating a batch script
 
-Create a new file and open it with <kbd>nano myjob.sl</kbd>
+Create a new file and open it with nano myjob.sl
 
     #!/bin/bash -e
     #SBATCH --job-name=SerialJob # job name (shows up in the queue)
@@ -66,8 +95,7 @@ The debug QOS can be gained by adding the `sbatch` command line option
 This adds 5000 to the job priority so raises it above all non-debug
 jobs, but is limited to one small job per user at a time: no more than
 15 minutes and no more than 2 nodes.
-
-> ### Warning
+!!!
 >
 > Please do not run your code on the login node.  Any processes running
 > on the login node for long periods of time or using large numbers of
@@ -116,29 +144,26 @@ Or since a specified date using:
 
 Each job will show as multiple lines, one line for the parent job and
 then additional lines for each job step.
-
-> ### Tips
+!!!
 >
-> <kbd>sacct -X</kbd> Only show parent processes.
+> sacct -X Only show parent processes.
 >
-> <kbd>sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT</kbd>
-> Filter jobs by state.
+> sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
+> state.
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/sacct.html)
 
 ##  Cancelling
 
-<kbd>scancel &lt;jobid&gt;</kbd> will cancel the job described by
-<kbd>&lt;jobid&gt;</kbd>. You can obtain the job ID by using
-<kbd>sacct</kbd> or <kbd>squeue</kbd>.
-
-> ### Tips
+scancel &lt;jobid&gt; will cancel the job described by &lt;jobid&gt;.
+You can obtain the job ID by using sacct or squeue.
+!!!
 >
-> <kbd>scancel -u \[username\]</kbd> Kill all jobs submitted by you.
+> scancel -u \[username\] Kill all jobs submitted by you.
 >
-> <kbd>scancel {\[n1\]..\[n2\]}</kbd> Kill all jobs with an id between
-> <kbd>\[n1\]</kbd> and <kbd>\[n2\]</kbd>
+> scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
+> \[n2\]
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/scancel.html)

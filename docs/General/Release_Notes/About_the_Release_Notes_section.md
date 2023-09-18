@@ -10,7 +10,14 @@ zendesk_article_id: 360003507115
 zendesk_section_id: 360000437436
 ---
 
-NeSI publishes release notes for applications, 3rd party applications
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    NeSI publishes release notes for applications, 3rd party applications
 and NeSI services. This section will function as a directory to find all
 published release note articles with the label 'releasenote' . 
 

@@ -1,7 +1,8 @@
 ---
 created_at: '2023-06-13T04:45:48Z'
 hidden: false
-label_names: []
+label_names:
+- releasenote
 position: 0
 title: my.nesi.org.nz release notes v2.16.0
 vote_count: 0
@@ -10,7 +11,14 @@ zendesk_article_id: 7187453852815
 zendesk_section_id: 360001091155
 ---
 
-## Release Update - 15. June 2023
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    ## Release Update - 15. June 2023
 
 ## New and Improved
 

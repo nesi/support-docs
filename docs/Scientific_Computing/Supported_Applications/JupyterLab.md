@@ -10,7 +10,14 @@ zendesk_article_id: 360001093315
 zendesk_section_id: 360000040076
 ---
 
-> ### Note
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    !!!
 >
 > This documentation contains our legacy instructions for running
 > JupyterLab by tunnelling through the lander node.  
@@ -61,8 +68,7 @@ while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
 ## Setup SSH port forwarding 
-
-> ### Requirements
+!!!
 >
 > -   In the following we assume you already configured
 >     your`.ssh/config` to use two hop method as described in the
@@ -72,7 +78,7 @@ while launching JupyterLab. In the following we use the port number
 First, the port forwarding needs to be enabled between your local
 machine and the NeSI system. Therewith a local port will be connected to
 the remote port on the NeSI system. For simplicity, we kept both numbers
-the same (here 15051). This can be specified on the[command line in the
+the same (here 15051). This can be specified on the [command line in the
 terminal](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) or using the
 [MobaXterm GUI](#h_cc633523-5df0-4f24-a460-391ced9a0316).
 
@@ -85,8 +91,7 @@ Mahuika:
 
 Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".
-
-> ### Tips
+!!!
 >
 > -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
 >     following to your `.ssh/config` to avoid establishing the
@@ -103,10 +108,9 @@ Local Port".
 >
 >     &lt;username&gt; needs to be changed. Hostnames can be adapted for
 >     other nodes, e.g. `w-clim01`
->
-### MobaXterm GUI
 
-> ### Tips
+### MobaXterm GUI
+!!!
 >
 > -   MobaXterm has an internal terminal which acts like a linux
 >     terminal and can be configured as described in the [Standard
@@ -130,7 +134,7 @@ click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
     the remote server (right upper box, second line)
 -   Save
 
-![sshTunnel.PNG](../../includes/images/sshTunnel.PNG)
+![sshTunnel.PNG](assets/images/sshTunnel_0.PNG)
 
 ## Launch the JupyterLab server 
 
@@ -216,7 +220,7 @@ Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:
 
-![Jupyter.PNG](../../includes/images/Jupyter.PNG)
+![Jupyter.PNG](assets/images/Jupyter_0.PNG)
 
 # Kernels
 

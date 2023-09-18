@@ -14,7 +14,14 @@ zendesk_article_id: 360000552035
 zendesk_section_id: 360000039036
 ---
 
-The QR code shown during the device registration cannot be regenerated
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    The QR code shown during the device registration cannot be regenerated
 or displayed again.  
 If you do not capture the QR code, or lose the device storing the code
 (also called a token), you will be unable to access your account. 

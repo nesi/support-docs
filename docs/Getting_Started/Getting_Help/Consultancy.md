@@ -11,7 +11,14 @@ zendesk_article_id: 360000751916
 zendesk_section_id: 360000164635
 ---
 
-NeSI's Consultancy service provides scientific and HPC-focussed
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    NeSI's Consultancy service provides scientific and HPC-focussed
 computational and data science support to research projects across a
 range of domains.
 

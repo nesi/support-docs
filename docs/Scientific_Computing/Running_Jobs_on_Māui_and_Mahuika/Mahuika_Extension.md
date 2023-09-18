@@ -10,7 +10,14 @@ zendesk_article_id: 5286956022159
 zendesk_section_id: 360000030876
 ---
 
- 
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+     
 
 # Differences from other Mahuika compute nodes
 
@@ -27,7 +34,8 @@ requested by a job.
   
 AMD Milan CPU overview, each node has two of these:
 
-<img src="../../includes/images/milan.png" alt="milan.png" width="377" height="395" />
+<img src="assets/images/milan_0.png" width="377" height="395"
+alt="milan.png" />
 
 **AMD-EPYC-Milan-architecture** from
 [HPCwire](https://www.hpcwire.com/2021/03/15/amd-launches-epyc-milan-with-19-skus-for-hpc-enterprise-and-hyperscale/#foobox-4/0/AMD-Epyc-Milan-architecture.png)

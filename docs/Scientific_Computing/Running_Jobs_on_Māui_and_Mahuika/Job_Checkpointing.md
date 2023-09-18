@@ -10,7 +10,14 @@ zendesk_article_id: 360001413096
 zendesk_section_id: 360000030876
 ---
 
-Job/[Application
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Job/[Application
 Checkpointing](https://en.wikipedia.org/wiki/Application_checkpointing) is
 the snapshotting of a programs state, so that it can be restarted from
 that point in case of failure. This is especially important in long
@@ -68,10 +75,7 @@ the queue *before* starting, saving queue time in between jobs.
         % Save workspace at end of each loop.
         save(['checkpoint_', datestr(now, 'yyyy-mm-ddTHHMM')])
     end
-
- 
-
-> ### Tip
+!!!
 >
 > We ***strongly*** recommend implementing checkpointing on any job
 > running longer than 3 days!

@@ -10,7 +10,14 @@ zendesk_article_id: 360001330415
 zendesk_section_id: 360000030876
 ---
 
-Applying a *checksum function* to a file will return its *checksum*.
+
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
+    !!! Info
+        This page has been automatically migrated and may contain formatting errors.
+    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
+    [//]: <> (REMOVE ME IF PAGE VALIDATED)
+    Applying a *checksum function* to a file will return its *checksum*.
 Checksum functions are a type of [hash
 function](https://en.wikipedia.org/wiki/Hash_function), and will always
 return the same hash for any particular file contents, making them
@@ -49,8 +56,7 @@ diverged from the original, while '`copy.bin`' has not.
 
 Note that filename, path, permissions or any other metadata does not
 affect the checksum.
-
-> ### Note
+!!!
 >
 > Checksum functions are designed so that similar files *will not*
 > produce similar hashes.
@@ -63,15 +69,40 @@ affect the checksum.
 The checksum for file '*filename.txt*' can be found with the following
 commands.
 
-<table>
+<table style="height: 37px;" width="805">
 <tbody>
 <tr class="odd">
+<td style="width: 149px"> </td>
+<td style="width: 150px">Linux</td>
+<td style="width: 150px">Windows(CMD/Powershell)</td>
+<td style="width: 150px">Mac</td>
 </tr>
 <tr class="even">
+<td style="width: 149px">SH1</td>
+<td
+style="width: 150px"><code>sha1sum </code><em><code>filename.txt</code></em></td>
+<td
+style="width: 150px"><code>certUtil -hashfile </code><em><code>filename.txt</code></em></td>
+<td
+style="width: 150px"><code>shasum </code><em><code>filename.txt</code></em></td>
 </tr>
 <tr class="odd">
+<td style="width: 149px">SHA256</td>
+<td
+style="width: 150px"><code>sha256sum </code><em><code>filename.txt</code></em></td>
+<td
+style="width: 150px"><code>certUtil -hashfile </code><em><code>filename.txt</code></em><code> sha256</code></td>
+<td
+style="width: 150px"><code>shasum -a 256 </code><em><code>filename.txt</code></em></td>
 </tr>
 <tr class="even">
+<td style="width: 149px">MD5</td>
+<td
+style="width: 150px"><code>md5sum </code><em><code>filename.txt</code></em></td>
+<td
+style="width: 150px"><code>certUtil -hashfile </code><em><code>filename.txt</code></em><code> md5</code></td>
+<td
+style="width: 150px"><code>md5 </code><em><code>filename.txt</code></em></td>
 </tr>
 </tbody>
 </table>
