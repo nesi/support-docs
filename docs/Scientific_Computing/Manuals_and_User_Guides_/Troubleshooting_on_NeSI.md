@@ -19,14 +19,11 @@ zendesk_section_id: 360000040036
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-     
-
-<iframe src="https://www.youtube.com/embed/videoseries?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-
- 
-
+    <p> </p>
+<p><iframe src="https://www.youtube.com/embed/videoseries?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp" width="560" height="315" frameborder="0" allowfullscreen=""></iframe></p>
+<p> </p>
 <p>
 <script src="https://apis.google.com/js/platform.js"></script>
 </p>
-
- 
+<div class="g-ytsubscribe" data-channelid="UCiEDJKtjWUVv-VSmD-jfWTA" data-layout="default" data-count="hidden"></div>
+<p> </p>

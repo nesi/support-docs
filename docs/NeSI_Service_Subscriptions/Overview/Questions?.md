@@ -17,19 +17,20 @@ zendesk_section_id: 7348891753487
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    If you have any questions about anything related to Subscriptions, don’t
-hesitate to [get in touch](mailto:info@nesi.org.nz).
-
-Visit our Services sections on the NeSI website for more details on the
-ways we're supporting New Zealand research communities through:
-
--   [High Performance Computing &
-    Analytics](https://www.nesi.org.nz/services/high-performance-computing-and-data-analytics)
-
--   [Consultancy](https://www.nesi.org.nz/services/consultancy)
-
--   [Data Services](https://www.nesi.org.nz/services/data-services)
-
--   [Training](https://www.nesi.org.nz/services/training)
-
- 
+    <p>If you have any questions about anything related to Subscriptions, don’t hesitate to<span> </span><a href="mailto:info@nesi.org.nz">get in touch</a>.</p>
+<p>Visit our Services sections on the NeSI website for more details on the ways we're supporting New Zealand research communities through:</p>
+<ul class="ak-ul">
+<li>
+<p><a href="https://www.nesi.org.nz/services/high-performance-computing-and-data-analytics">High Performance Computing &amp; Analytics</a></p>
+</li>
+<li>
+<p><a href="https://www.nesi.org.nz/services/consultancy">Consultancy</a></p>
+</li>
+<li>
+<p><a href="https://www.nesi.org.nz/services/data-services">Data Services</a></p>
+</li>
+<li>
+<p><a href="https://www.nesi.org.nz/services/training">Training</a></p>
+</li>
+</ul>
+<p> </p>

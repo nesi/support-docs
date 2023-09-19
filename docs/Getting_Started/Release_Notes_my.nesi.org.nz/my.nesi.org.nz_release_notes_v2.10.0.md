@@ -18,11 +18,10 @@ zendesk_section_id: 360001091155
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ## Release Update - 14. Jun 2022
-
-## New and Improved
-
--   Updated dependencies
--   Added release notes to the UI - accessible via the 'hamburger' menu
-    on the right
--   Added grant/award details for NeSI project in Project view
+    <h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 14. Jun 2022</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>Updated dependencies</li>
+<li data-sourcepos="2:1-2:58">Added release notes to the UI - accessible via the 'hamburger' menu on the right</li>
+<li data-sourcepos="3:1-3:59">Added grant/award details for NeSI project in Project view</li>
+</ul>

@@ -18,11 +18,9 @@ zendesk_section_id: 360001091155
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ## Release Update - 14. December 2021
-
-## New and Improved
-
--   Introducing NeSI Notification Preferences to create more
-    transparency for users
--   Apply for Access form improvements to make naming project members
-    more consistent
+    <h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 14. December 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li data-stringify-indent="0" data-stringify-border="0">Introducing NeSI Notification Preferences to create more transparency for users</li>
+<li data-stringify-indent="0" data-stringify-border="0">Apply for Access form improvements to make naming project members more consistent</li>
+</ul>

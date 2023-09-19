@@ -17,41 +17,16 @@ zendesk_section_id: 360001189255
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    A virtual desktop provides a graphical interface to using the cluster.
-Desktops are hosted within Singularity containers, so not all of the
-NeSI software stack is supported. If you would like to build your own
-desktop containers with the code
-[here](https://github.com/nesi/nesi-singularity-recipes).
-
-Rendering is done cluster-side, and compressed before being sent to your
-local machine. This means any rendering should be significantly more
-responsive than when using X11 on its own (approximately 40 times
-faster).
-
-The quickest and easiest way to get started with a desktop is through
-Jupyter on NeSI, [connect here](https://jupyter.nesi.org.nz/).
-
-## Connecting
-
-Click the icon labelled 'VirtualDesktop', The desktop instance will last
-as long as your Jupyter session.
-
-# Settings
-
-## Environment
-
-You may manage modules inside a terminal as usual using the `module`
-command, however these changes won't propagate to the desktop
-environment. Modules to be loaded in the desktop can be set by modifying
-the file at `~/.vdt/vdtrc.sh`. This file is sourced before launching the
-desktop.
-
-## Setup Scripts
-
-Several scripts are available that will help you get started by setting
-up desktop shortcuts and loading module in the base environment. These
-can be found at `$VDT_ROOT/setup_scripts`
-
+    <p>A virtual desktop provides a graphical interface to using the cluster. Desktops are hosted within Singularity containers, so not all of the NeSI software stack is supported. If you would like to build your own desktop containers with the code <a href="https://github.com/nesi/nesi-singularity-recipes" target="_self">here</a>.</p>
+<p>Rendering is done cluster-side, and compressed before being sent to your local machine. This means any rendering should be significantly more responsive than when using X11 on its own (approximately 40 times faster).</p>
+<p>The quickest and easiest way to get started with a desktop is through Jupyter on NeSI,<span style="font-size: 15px;"> </span><a href="https://jupyter.nesi.org.nz/" target="_blank" rel="noopener">connect here</a><span style="font-size: 15px;">.</span></p>
+<h2>Connecting</h2>
+<p>Click the icon labelled 'VirtualDesktop', The desktop instance will last as long as your Jupyter session.</p>
+<h1>Settings</h1>
+<h2 id="modules">Environment</h2>
+<p>You may manage modules inside a terminal as usual using the <code>module</code> command, however these changes won't propagate to the desktop environment. Modules to be loaded in the desktop can be set by modifying the file at <code>~/.vdt/vdtrc.sh</code>. This file is sourced before launching the desktop.</p>
+<h2>Setup Scripts</h2>
+<p>Several scripts are available that will help you get started by setting up desktop shortcuts and loading module in the base environment. These can be found at <code>$VDT_ROOT/setup_scripts</code></p>
 <!--
 <h2>noVNC</h2>
 <p>Recommend setting scaling to 'remote'</p>
@@ -67,10 +42,9 @@ can be found at `$VDT_ROOT/setup_scripts`
   </p>
 </blockquote>
 -->
-
-*You can help contribute to this
-project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*
-
+<div style="display: flex;">
+<p><em>You can help contribute to this project <a href="https://github.com/nesi/nesi-virtual-desktops/projects/1" target="_self">here</a>.</em></p>
+</div>
 <!--
 <table style="height:190px;width:722px;display:none">
   <tbody>

@@ -18,19 +18,13 @@ zendesk_section_id: 360001091155
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ## Release Update - 10. June 2021
-
-## New and Improved
-
--   Improved the "Reset NeSI HPC Account Password" form to clear values
-    after submission.
--   Lowered the time until a user can reset the password and adjusted
-    the feedback message to be more meaningful for users, if the change
-    was not successful .
-
-## Fixes
-
-Fixed: details in password and 2FA reset email message (IP address,
-device) are displayed again.
-
- 
+    <h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 10. June 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>Improved the "Reset NeSI HPC Account Password" form to clear values after submission.</li>
+<li>
+<span>Lowered the time until a user can reset the password and adjusted the feedback message to be more meaningful for users, if the change was not </span>successful .</li>
+</ul>
+<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
+<p><span>Fixed: </span>details in password and 2FA reset email message (IP address, device) are displayed again.</p>
+<p> </p>

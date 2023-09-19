@@ -18,12 +18,12 @@ zendesk_section_id: 360001150156
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ## New and Improved
-
--   If [jupyter.nesi.org.nz](http://my.nesi.org.nz/) portal cannot
-    connect to the NeSI server, a descriptive error message will be
-    displayed instead of internal error 500
-
-## Fixed
-
--   Update to ignore the low level variable SRUN\_CPUS\_PER\_TASK
+    <h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li data-stringify-indent="0" data-stringify-border="0">If<span> </span><a class="c-link" href="http://my.nesi.org.nz/" target="_blank" rel="noopener noreferrer" data-stringify-link="http://my.nesi.org.nz" data-sk="tooltip_parent">jupyter.nesi.org.nz</a><span> </span>portal cannot connect to the NeSI server, a descriptive error message will be displayed instead of internal error 500</li>
+</ul>
+<h2>Fixed</h2>
+<ul>
+<li data-stringify-indent="0" data-stringify-border="0">Update to ignore the low level variable <span>SRUN_CPUS_PER_TASK</span>
+</li>
+</ul>

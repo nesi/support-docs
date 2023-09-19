@@ -17,31 +17,13 @@ zendesk_section_id: 360000039036
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    The first thing you will need to do is to convert your `.ipynb`
-(**I**nteractive **PY**thon **N**ote **B**ook) file into a regular `.py`
-python file. There are two ways to do this.
-
-### nbconvert
-
-`nbconvert` is a tool used to convert notebooks to other formats, it is
-accessible through the command line if you are logged in through
-Jupyter.
-
-    jupyter nbconvert --to script my_notebook.ipynb 
-
-will create a new python script called `my_notebook.py`.
-
-### Export Notebook
-
-With your notebook open, select *File* -&gt; *Save and Export Notebook
-As...* -&gt; *Executable Script*
-
-This option might be less convenient as the exporter saves the python
-file to your local computer, meaning you will have to drag it back into
-the file explorer in Jupyter from your downloads folder.
-
- 
-
-This script can then be run as a regular python script as described in
-our [Python](https://support.nesi.org.nz/hc/en-gb/articles/207782537)
-documentation.
+    <p>The first thing you will need to do is to convert your <code>.ipynb</code> (<strong>I</strong>nteractive <strong>PY</strong>thon <strong>N</strong>ote <strong>B</strong>ook) file into a regular <code>.py</code> python file. There are two ways to do this.</p>
+<h3>nbconvert</h3>
+<p><code>nbconvert</code> is a tool used to convert notebooks to other formats, it is accessible through the command line if you are logged in through Jupyter.</p>
+<pre>jupyter nbconvert --to script my_notebook.ipynb </pre>
+<p>will create a new python script called <code>my_notebook.py</code>.</p>
+<h3>Export Notebook</h3>
+<p>With your notebook open, select <em>File</em> -&gt; <em>Save and Export Notebook As...</em> -&gt; <em>Executable Script</em></p>
+<p>This option might be less convenient as the exporter saves the python file to your local computer, meaning you will have to drag it back into the file explorer in Jupyter from your downloads folder.</p>
+<p> </p>
+<p>This script can then be run as a regular python script as described in our <a href="https://support.nesi.org.nz/hc/en-gb/articles/207782537" target="_self">Python</a> documentation.</p>

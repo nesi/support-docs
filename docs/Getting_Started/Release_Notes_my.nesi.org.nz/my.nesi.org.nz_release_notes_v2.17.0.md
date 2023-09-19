@@ -18,19 +18,23 @@ zendesk_section_id: 360001091155
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ## Release Update - 29. August 2023
-
-## New and Improved
-
--   “Provide Feedback” is now redirected to
-    <https://support.nesi.org.nz/hc/en-gb/requests/new>
--   In a project request form, all grants are now visible by default
--   After submitting a new allocation request, the user will be able to
-    see the Zendesk link in case further comments need to be added
--   Addition of Keycloak packages for future need
--   Make the date and citation fields mandatory for new research output
-    entries
-
-## Fixes
-
--   Fix the console errors related to the new project form
+    <h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 29. August 2023</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li class="li1">
+<span class="s1"></span><span class="s2">“Provide Feedback” is now redirected to <a href="https://support.nesi.org.nz/hc/en-gb/requests/new">https://support.nesi.org.nz/hc/en-gb/requests/new</a></span>
+</li>
+<li class="li2">
+<span class="s3"></span>In a project request form, all grants are now visible by default</li>
+<li class="li2">
+<span class="s3"></span>After submitting a new allocation request, the user will be able to see the Zendesk link in case further comments need to be added</li>
+<li class="li2">
+<span class="s3"></span>Addition of Keycloak packages for future need</li>
+<li class="li2">
+<span class="s3"></span>Make the date and citation fields mandatory for new research output entries</li>
+</ul>
+<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
+<ul>
+<li class="li1">
+<span class="s1"></span>Fix the console errors related to the new project form</li>
+</ul>

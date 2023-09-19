@@ -18,16 +18,15 @@ zendesk_section_id: 4403082292111
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <table style="width:99%;">
+    <table>
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 78%" />
+<col style="width: 21%">
+<col style="width: 78%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td>Description</td>
-<td>Finite Element Analysis software for modeling, visualization and
-best-in-class implicit and explicit dynamics FEA. - Homepage</td>
+<td>Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA. - Homepage</td>
 </tr>
 <tr class="even">
 <td>Homepage</td>
@@ -43,7 +42,6 @@ best-in-class implicit and explicit dynamics FEA. - Homepage</td>
 </tr>
 </tbody>
 </table>
-
 <style>
 p.fancytext{
     color:pink;
@@ -51,11 +49,7 @@ p.fancytext{
     font-family: Cursive;
 }
 </style>
-
-another link to
-homepage[homepage](http://www.simulia.com/products/abaqus_fea.html) Some
-stuff
-
+<p>another link to homepage<a href="http://www.simulia.com/products/abaqus_fea.html">homepage</a> Some stuff</p>
 <table>
 <thead>
 <tr class="header">
@@ -74,26 +68,21 @@ stuff
 </tr>
 </tbody>
 </table>
-
-# TEST
-
-# TEST
-
-## TEST
-
-### TEST
-
-This is some *fancy* text.
-
+<h1>
+TEST
+</h1>
+<h1 id="test">TEST</h1>
+<h2 id="test-1">TEST</h2>
+<h3 id="test-2">TEST</h3>
+<p class="fancytext" markdown="1">
+This is some <em>fancy</em> text.
+</p><p></p>
 <button class="panicbutton">
-
 TOO FANCY
-
 </button>
 <script>
 document.querySelector(".panicbutton").onclick = function () { document.querySelector(".fancytext").style.display = "none"; };
 </script>
-
 <table>
 <thead>
 <tr class="header">
