@@ -18,11 +18,13 @@ zendesk_section_id: 360001091155
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - xx. August 2022</h2>
-<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
-<ul>
-<li> </li>
-<li> </li>
-</ul>
-<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
-<p><span>Fixed: tbd</span></p>
+    ## Release Update - xx. August 2022
+
+## New and Improved
+
+-    
+-    
+
+## Fixes
+
+Fixed: tbd

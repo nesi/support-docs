@@ -17,14 +17,36 @@ zendesk_section_id: 360000039036
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <p>The time displayed in your shell is controlled by a system variable called <code style="font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;">TZ</code>. To change to New Zealand time you need to set the variable as follows:</p>
-<pre><code>export TZ="NZ"</code></pre>
-<p>This setting will automatically adjust for daylight saving, since the <code>tzdata</code> package is installed at the system level. Our system engineers will keep the <code>tzdata</code> package up to date.</p>
-<h2>Making the change persistent</h2>
-<p>You can make your time zone setting persistent by adding the above line to your <code style="font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;">~/.bashrc</code>. If you do this, we recommend adding the following line to your <code>~/.bash_profile</code>, or to your <code>~/.profile</code> if you have the latter but not the former:</p>
-<pre><code>test -r ~/.bashrc &amp;&amp; . ~/.bashrc</code></pre>
-<p>Please see the article, "<a href="https://support.nesi.org.nz/hc/en-gb/articles/360001194536" target="_self">.bashrc or .bash_profile?</a>" for more information.</p>
-<h2>What about cron jobs?</h2>
-<p>To have the specifications in your crontab file interpreted as NZ times start it with:</p>
-<pre>CRON_TZ=NZ</pre>
-<p>Also note that cron does not source either <code>~/.bashrc</code> or <code>~/.bash_profile</code>, so most environment variables will not be set, including TZ.</p>
+    The time displayed in your shell is controlled by a system variable
+called `TZ`. To change to New Zealand time you need to set the variable
+as follows:
+
+    export TZ="NZ"
+
+This setting will automatically adjust for daylight saving, since the
+`tzdata` package is installed at the system level. Our system engineers
+will keep the `tzdata` package up to date.
+
+## Making the change persistent
+
+You can make your time zone setting persistent by adding the above line
+to your `~/.bashrc`. If you do this, we recommend adding the following
+line to your `~/.bash_profile`, or to your `~/.profile` if you have the
+latter but not the former:
+
+    test -r ~/.bashrc && . ~/.bashrc
+
+Please see the article, "[.bashrc or
+.bash\_profile?](https://support.nesi.org.nz/hc/en-gb/articles/360001194536)"
+for more information.
+
+## What about cron jobs?
+
+To have the specifications in your crontab file interpreted as NZ times
+start it with:
+
+    CRON_TZ=NZ
+
+Also note that cron does not source either `~/.bashrc` or
+`~/.bash_profile`, so most environment variables will not be set,
+including TZ.

@@ -17,55 +17,187 @@ zendesk_section_id: 360000030876
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <p>The fair-share system is designed to encourage users to balance their use of resources over their allocation period. Fair-share is the largest factor in determining priority, but not the only one. For more details see <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000201636/" target="_self">Job Prioritisation</a>.</p>
-<h2>Fair Share Score</h2>
-<p>Your <em>Fair Share score</em> is a number between <strong>0</strong> and <strong>1</strong>. Projects with a <strong>larger</strong> Fair Share score receive a <strong>higher priority</strong> in the queue.</p>
-<p>A project is given an <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001385735" target="_self"><strong>allocation</strong> of compute units</a> over a given <strong>period</strong>. An institution also has a percentage <strong>Fair Share entitlement</strong> of each machine's deliverable capacity over that same period.</p>
-<blockquote class="blockquote-tip">
-<h3 id="institution">Note</h3>
-<p>Although we use the term "Fair Share entitlement" in this article, it bears only a loose relationship to an institution's contractual entitlement to receive allocations from the NeSI HPC Compute &amp; Analytics service. The Fair Share entitlement is managed separately for each cluster, and is adjusted as needed by NeSI staff so that each institution can receive, as nearly as possible, its contractual entitlement to the service as a whole, as well as a mix of cluster hours that corresponds closely to the needs of that institution's various project teams.</p>
-</blockquote>
-<ul dir="auto" type="disc">
-<li type="disc">
-<strong>Your project's expected rate of use</strong> = (<strong>your institution's Fair Share entitlement</strong> × <strong>your project's allocation</strong>) / (<strong>sum of your institution's allocations</strong> × <strong>period</strong>)</li>
-<li type="disc">
-<strong>Your institution's expected rate of use</strong> = your institution's <strong>Fair Share entitlement</strong> on that machine</li>
-</ul>
-<p>If an entity — an institution or project team — is using the machine more slowly than expected, for Fair Share purposes it is considered a light user. By contrast, one using the machine faster than expected is a heavy user.</p>
-<ul dir="auto" type="disc">
-<li type="disc">Projects at lightly using institutions get a higher Fair Share score than those at heavily using institutions.</li>
-<li type="disc">Within each institution, lightly using projects get a higher Fair Share score than heavily using projects.</li>
-<li type="disc">Using <strong>faster</strong> than your <strong>expected rate of usage</strong> will usually cause your Fair Share score to <strong>decrease</strong>. The more extreme the overuse, the more severe the likely drop.</li>
-<li type="disc">Using <strong>slower</strong> than your <strong>expected rate of usage</strong> will usually cause your Fair Share score to <strong>increase</strong>. The more extreme the underuse, the greater the Fair Share bonus.</li>
-<li type="disc">Using the cluster <strong>unevenly</strong> will cause your Fair Share score to <strong>decrease</strong>.</li>
-</ul>
-<h2><span class="wysiwyg-color-black">What is Fair Share?</span></h2>
-<p><span class="wysiwyg-color-black">Fair Share is a mechanism to set job priorities. It is based on a share of the cluster, that is, a fraction of the cluster's overall computing capacity.</span></p>
-<h3><span class="wysiwyg-color-black">Fair Share on Mahuika and the Māui XC nodes</span></h3>
-<p><span class="wysiwyg-color-black">On Mahuika and the Māui XC nodes, but not on the Māui ancillary nodes, we set a project's expected rate of use based on that project's percentage share of all then-current allocations awarded to that project's institution on that cluster. This percentage share is in turn derived from the sizes (in compute units or nodes) and durations (in days) — and thus the expected rates of use of those same allocations.</span></p>
-<p><span class="wysiwyg-color-black">Therefore:</span></p>
-<ul>
-<li><span class="wysiwyg-color-black">If the size of your allocation increases, your project's share of the cluster will increase. Conversely, if the size of your allocation decreases, your project's share of the cluster will decrease.</span></li>
-<li><span class="wysiwyg-color-black">If the size of another project's allocation increases, your project's share of the cluster will decrease, since, even though your allocation's size has remained the same, the total size of other allocations has increased and thus your allocation's share has decreased. Conversely, if the size of the other project's allocation decreases, your project's share of the cluster will increase.</span></li>
-<li><span class="wysiwyg-color-black">If the cluster gets larger (e.g. we purchase and install more computing capacity), your project's share of the cluster will not change, but that share of the cluster will correspond to a higher rate of core hour usage. This situation will only last until more allocations are issued, or existing allocations are made larger, to take advantage of the increased capacity. The opposite will occur if the cluster shrinks, though cluster shrinkage is not expected to occur.</span></li>
-</ul>
-<p><span class="wysiwyg-color-black">On Mahuika and the Māui XC nodes, Fair Share is not designed to ensure that all project teams get the same share of the cluster.</span></p>
-<h3><span class="wysiwyg-color-black">Fair Share on the Māui ancillary nodes</span></h3>
-<p><font color="#000000"> The part of the Māui ancillary nodes that is managed by NeSI and scheduled using Slurm forms a very small resource, only four nodes of 40 CPU cores each. It is intended for pre- and post-processing work related to computational jobs carried out on the Māui XC nodes. Therefore, we do not make allocations of CPU core hours on these nodes. Instead, each project team that has a current allocation on the Māui XC nodes is entitled to an equal share of the time on these four Māui ancillary nodes. </font></p>
-<p><font color="#000000"> Because job priority on the Māui ancillary nodes is still heavily influenced by Fair Share, project teams that have recently been doing a lot of work on the Māui ancillary nodes will find their jobs there deprioritised, so that other project teams can access the resource. However, even heavy users of the Māui ancillary nodes can still access resources there if those CPU cores would otherwise be idle. </font></p>
-<h2><span class="wysiwyg-color-black">How does Fair Share work?</span></h2>
-<p><span class="wysiwyg-color-black">The starting point for a Fair Share calculation is a comparison of the project's actual share of use to the expected share of use. This share of use is based on what all users of the cluster have actually used during the relevant period of time, not what the cluster was capable of delivering during that same period. Currently, each period is five minutes.</span></p>
-<p><span class="wysiwyg-color-black">Because five minutes is a very short time, Fair Share aggregates the ratio of actual share to expected share since records began on that cluster. But as the time gets further back from the present, each five-minute window has slightly less influence on fair share scores. Our current configuration has it that after two weeks (that is, 4,032 successive five-minute windows), the effect of the ratio for that five-minute slice is worth only half of what it was worth initially; after four weeks, it is worth a quarter; after six weeks, one eighth; and so on. The effect of this decay curve is that overuse or underuse in the recent past has a greater effect on your project's fair share score than the same extent of overuse or underuse long ago.</span></p>
-<p><span class="wysiwyg-color-black">One important implication of Fair Share is that allocations are implicitly aged: you cannot bank core hours by refraining from submitting work. If, for example, you expect to have a lot of computational work to carry out in September, you can't get a significant priority boost in September by refraining from carrying out computational work in March. In fact, you will get the best advantage from Fair Share by submitting work at close to a constant rate.</span></p>
-<p><span class="wysiwyg-color-black">If you expect that your project team will need widely varying rates of computer use during your allocation period and you can predict when your busy and quiet periods will be, please <a href="https://support.nesi.org.nz/hc/en-gb/requests/new">contact our support team</a> to enquire about splitting your project's allocation up into parts. Please be aware that we cannot guarantee this option will be available for any given project, and that we are most likely to be able to accommodate such a request for projects that expect to use the cluster heavily on average, can predict when they will need their heaviest use with a high degree of confidence, and give us plenty of notice.</span></p>
-<p>For full details on Slurm's Fair share mechanism, please see <a href="https://slurm.schedmd.com/priority_multifactor.html#fairshare">this page</a> (offsite).</p>
-<h2>How do I check my project's Fair Share score?</h2>
-<ul>
-<li>The command <code>nn_corehour_usage &lt;project_code&gt;</code>, on a Mahuika or Maui login node, will show, along with other information, the current fair share score and ranking of the specified project.</li>
-<li>The <code>sshare</code> command, on a Mahuika login node, will show the fair share tree. A related command, <code>nn_sshare_sorted</code>, will show projects in order from the highest fair share score to the lowest.</li>
-</ul>
-<p>In our current configuration, Fair Share scores are attached to projects, not to individual users.</p>
-<h2>My project's Fair Share score is too low. How can I improve it?</h2>
-<p>If you have just carried out an unusually large spike of work, your fair share score will naturally be lowered for a while, and should come back to normal after a few days.</p>
-<p>If, on the other hand, you have more work to do than expected, please <a href="https://support.nesi.org.nz/hc/en-gb/requests/new">contact us to apply for a larger allocation</a>. Project teams may request a larger allocation on Mahuika or on the Māui XC cluster, though not on the Māui ancillary nodes.</p>
-<p>If you believe your project's fair share score has become corrupted, or your ability to get work done is affected by a low Fair Share entitlement for your institution on that cluster, please <a href="https://support.nesi.org.nz/hc/en-gb/requests/new">get in touch with our support team</a>.</p>
+    The fair-share system is designed to encourage users to balance their
+use of resources over their allocation period. Fair-share is the largest
+factor in determining priority, but not the only one. For more details
+see [Job
+Prioritisation](https://support.nesi.org.nz/hc/en-gb/articles/360000201636/).
+
+## Fair Share Score
+
+Your *Fair Share score* is a number between **0** and **1**. Projects
+with a **larger** Fair Share score receive a **higher priority** in the
+queue.
+
+A project is given an [**allocation** of compute
+units](https://support.nesi.org.nz/hc/en-gb/articles/360001385735) over
+a given **period**. An institution also has a percentage **Fair
+Share entitlement** of each machine's deliverable capacity over that
+same period.
+!!!
+>
+> Although we use the term "Fair Share entitlement" in this article, it
+> bears only a loose relationship to an institution's contractual
+> entitlement to receive allocations from the NeSI HPC Compute &
+> Analytics service. The Fair Share entitlement is managed separately
+> for each cluster, and is adjusted as needed by NeSI staff so that each
+> institution can receive, as nearly as possible, its contractual
+> entitlement to the service as a whole, as well as a mix of cluster
+> hours that corresponds closely to the needs of that institution's
+> various project teams.
+
+-   **Your project's expected rate of use** = (**your institution's Fair
+    Share entitlement** × **your project's allocation**) / (**sum of
+    your institution's allocations** × **period**)
+-   **Your institution's expected rate of use** = your institution's
+    **Fair Share entitlement** on that machine
+
+If an entity — an institution or project team — is using the machine
+more slowly than expected, for Fair Share purposes it is considered a
+light user. By contrast, one using the machine faster than expected is a
+heavy user.
+
+-   Projects at lightly using institutions get a higher Fair Share score
+    than those at heavily using institutions.
+-   Within each institution, lightly using projects get a higher Fair
+    Share score than heavily using projects.
+-   Using **faster** than your **expected rate of usage** will usually
+    cause your Fair Share score to **decrease**. The more extreme the
+    overuse, the more severe the likely drop.
+-   Using **slower** than your **expected rate of usage** will usually
+    cause your Fair Share score to **increase**. The more extreme the
+    underuse, the greater the Fair Share bonus.
+-   Using the cluster **unevenly** will cause your Fair Share score to
+    **decrease**.
+
+## What is Fair Share?
+
+Fair Share is a mechanism to set job priorities. It is based on a share
+of the cluster, that is, a fraction of the cluster's overall computing
+capacity.
+
+### Fair Share on Mahuika and the Māui XC nodes
+
+On Mahuika and the Māui XC nodes, but not on the Māui ancillary nodes,
+we set a project's expected rate of use based on that project's
+percentage share of all then-current allocations awarded to that
+project's institution on that cluster. This percentage share is in turn
+derived from the sizes (in compute units or nodes) and durations (in
+days) — and thus the expected rates of use of those same allocations.
+
+Therefore:
+
+-   If the size of your allocation increases, your project's share of
+    the cluster will increase. Conversely, if the size of your
+    allocation decreases, your project's share of the cluster will
+    decrease.
+-   If the size of another project's allocation increases, your
+    project's share of the cluster will decrease, since, even though
+    your allocation's size has remained the same, the total size of
+    other allocations has increased and thus your allocation's share has
+    decreased. Conversely, if the size of the other project's allocation
+    decreases, your project's share of the cluster will increase.
+-   If the cluster gets larger (e.g. we purchase and install more
+    computing capacity), your project's share of the cluster will not
+    change, but that share of the cluster will correspond to a higher
+    rate of core hour usage. This situation will only last until more
+    allocations are issued, or existing allocations are made larger, to
+    take advantage of the increased capacity. The opposite will occur if
+    the cluster shrinks, though cluster shrinkage is not expected to
+    occur.
+
+On Mahuika and the Māui XC nodes, Fair Share is not designed to ensure
+that all project teams get the same share of the cluster.
+
+### Fair Share on the Māui ancillary nodes
+
+<font color="#000000"> The part of the Māui ancillary nodes that is
+managed by NeSI and scheduled using Slurm forms a very small resource,
+only four nodes of 40 CPU cores each. It is intended for pre- and
+post-processing work related to computational jobs carried out on the
+Māui XC nodes. Therefore, we do not make allocations of CPU core hours
+on these nodes. Instead, each project team that has a current allocation
+on the Māui XC nodes is entitled to an equal share of the time on these
+four Māui ancillary nodes. </font>
+
+<font color="#000000"> Because job priority on the Māui ancillary nodes
+is still heavily influenced by Fair Share, project teams that have
+recently been doing a lot of work on the Māui ancillary nodes will find
+their jobs there deprioritised, so that other project teams can access
+the resource. However, even heavy users of the Māui ancillary nodes can
+still access resources there if those CPU cores would otherwise be idle.
+</font>
+
+## How does Fair Share work?
+
+The starting point for a Fair Share calculation is a comparison of the
+project's actual share of use to the expected share of use. This share
+of use is based on what all users of the cluster have actually used
+during the relevant period of time, not what the cluster was capable of
+delivering during that same period. Currently, each period is five
+minutes.
+
+Because five minutes is a very short time, Fair Share aggregates the
+ratio of actual share to expected share since records began on that
+cluster. But as the time gets further back from the present, each
+five-minute window has slightly less influence on fair share scores. Our
+current configuration has it that after two weeks (that is, 4,032
+successive five-minute windows), the effect of the ratio for that
+five-minute slice is worth only half of what it was worth initially;
+after four weeks, it is worth a quarter; after six weeks, one eighth;
+and so on. The effect of this decay curve is that overuse or underuse in
+the recent past has a greater effect on your project's fair share score
+than the same extent of overuse or underuse long ago.
+
+One important implication of Fair Share is that allocations are
+implicitly aged: you cannot bank core hours by refraining from
+submitting work. If, for example, you expect to have a lot of
+computational work to carry out in September, you can't get a
+significant priority boost in September by refraining from carrying out
+computational work in March. In fact, you will get the best advantage
+from Fair Share by submitting work at close to a constant rate.
+
+If you expect that your project team will need widely varying rates of
+computer use during your allocation period and you can predict when your
+busy and quiet periods will be, please [contact our support
+team](https://support.nesi.org.nz/hc/en-gb/requests/new) to enquire
+about splitting your project's allocation up into parts. Please be aware
+that we cannot guarantee this option will be available for any given
+project, and that we are most likely to be able to accommodate such a
+request for projects that expect to use the cluster heavily on average,
+can predict when they will need their heaviest use with a high degree of
+confidence, and give us plenty of notice.
+
+For full details on Slurm's Fair share mechanism, please see [this
+page](https://slurm.schedmd.com/priority_multifactor.html#fairshare)
+(offsite).
+
+## How do I check my project's Fair Share score?
+
+-   The command `nn_corehour_usage <project_code>`, on a Mahuika or Māui
+    login node, will show, along with other information, the current
+    fair share score and ranking of the specified project.
+-   The `sshare` command, on a Mahuika login node, will show the fair
+    share tree. A related command, `nn_sshare_sorted`, will show
+    projects in order from the highest fair share score to the lowest.
+
+In our current configuration, Fair Share scores are attached to
+projects, not to individual users.
+
+## My project's Fair Share score is too low. How can I improve it?
+
+If you have just carried out an unusually large spike of work, your fair
+share score will naturally be lowered for a while, and should come back
+to normal after a few days.
+
+If, on the other hand, you have more work to do than expected, please
+[contact us to apply for a larger
+allocation](https://support.nesi.org.nz/hc/en-gb/requests/new). Project
+teams may request a larger allocation on Mahuika or on the Māui XC
+cluster, though not on the Māui ancillary nodes.
+
+If you believe your project's fair share score has become corrupted, or
+your ability to get work done is affected by a low Fair Share
+entitlement for your institution on that cluster, please [get in touch
+with our support
+team](https://support.nesi.org.nz/hc/en-gb/requests/new).

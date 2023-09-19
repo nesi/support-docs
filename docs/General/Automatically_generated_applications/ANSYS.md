@@ -18,59 +18,75 @@ zendesk_section_id: 4403082292111
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Some manual documentation. Injected from the template<br><table border="1">
-<tr>
+    Some manual documentation. Injected from the template  
+
+<table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>default</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>description</th>
-<td>A bundle of computer-aided engineering software including Fluent and CFX - Homepage: http://www.ansys.com
-
-</td>
+<td>A bundle of computer-aided engineering software including Fluent and
+CFX - Homepage: http://www.ansys.com</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>domains</th>
 <td><ul>
 <li>engineering</li>
 <li>visualisation</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="even">
 <th>force_hide</th>
 <td>False</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>force_show</th>
 <td>False</td>
 </tr>
-<tr>
+<tr class="even">
 <th>homepage</th>
 <td>http://www.ansys.com</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>licence_conditions</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>licence_type</th>
 <td>proprietary</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>licences</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>aa_mcad@uoo</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>use_conditions</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>usage_formula</th>
 <td>{cpu} - 16</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>hourly_averages</th>
 <td><ul>
 <li>0.49</li>
@@ -99,40 +115,46 @@ zendesk_section_id: 4403082292111
 <li>0.49</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="even">
 <th>license_type</th>
 <td>aa_mcad</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>institution</th>
 <td>University of Otago</td>
 </tr>
-<tr>
+<tr class="even">
 <th>faculty</th>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>status</th>
 <td>UP</td>
 </tr>
-<tr>
+<tr class="even">
 <th>real_total</th>
 <td>25</td>
 </tr>
+</tbody>
 </table></td>
 </tr>
-<tr>
+<tr class="even">
 <th>aa_r_cfd@uoo</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>use_conditions</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>usage_formula</th>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>hourly_averages</th>
 <td><ul>
 <li>3.5</li>
@@ -161,40 +183,46 @@ zendesk_section_id: 4403082292111
 <li>3.5</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="even">
 <th>license_type</th>
 <td>aa_r_cfd</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>institution</th>
 <td>University of Otago</td>
 </tr>
-<tr>
+<tr class="even">
 <th>faculty</th>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>status</th>
 <td>UP</td>
 </tr>
-<tr>
+<tr class="even">
 <th>real_total</th>
 <td>25</td>
 </tr>
+</tbody>
 </table></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>ansys_r@uoa_foe</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>use_conditions</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>usage_formula</th>
 <td>1*s{cpu}</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>hourly_averages</th>
 <td><ul>
 <li>34.5</li>
@@ -223,40 +251,46 @@ zendesk_section_id: 4403082292111
 <li>34.5</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="even">
 <th>license_type</th>
 <td>aa_r</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>institution</th>
 <td>University of Auckland</td>
 </tr>
-<tr>
+<tr class="even">
 <th>faculty</th>
 <td>Faculty of Engineering</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>status</th>
 <td>DISABLED</td>
 </tr>
-<tr>
+<tr class="even">
 <th>real_total</th>
 <td>125</td>
 </tr>
+</tbody>
 </table></td>
 </tr>
-<tr>
+<tr class="even">
 <th>ansys_hpc@uoa_foe</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>use_conditions</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>usage_formula</th>
 <td>1*s{cpu}</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>hourly_averages</th>
 <td><ul>
 <li>128.5</li>
@@ -285,40 +319,46 @@ zendesk_section_id: 4403082292111
 <li>128.5</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="even">
 <th>license_type</th>
 <td>aa_r_hpc</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>institution</th>
 <td>University of Auckland</td>
 </tr>
-<tr>
+<tr class="even">
 <th>faculty</th>
 <td>Faculty of Engineering</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>status</th>
 <td>DISABLED</td>
 </tr>
-<tr>
+<tr class="even">
 <th>real_total</th>
 <td>1536</td>
 </tr>
+</tbody>
 </table></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>ansys_r@aut_foe</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>use_conditions</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>usage_formula</th>
 <td>1*s{cpu}</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>hourly_averages</th>
 <td><ul>
 <li>7.5</li>
@@ -347,40 +387,46 @@ zendesk_section_id: 4403082292111
 <li>7.5</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="even">
 <th>license_type</th>
 <td>aa_r</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>institution</th>
 <td>Auckland University of Technology</td>
 </tr>
-<tr>
+<tr class="even">
 <th>faculty</th>
 <td>Faculty of Engineering</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>status</th>
 <td>UP</td>
 </tr>
-<tr>
+<tr class="even">
 <th>real_total</th>
 <td>125</td>
 </tr>
+</tbody>
 </table></td>
 </tr>
-<tr>
+<tr class="even">
 <th>ansys_hpc@aut_foe</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>use_conditions</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>usage_formula</th>
 <td>1*s{cpu}</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>hourly_averages</th>
 <td><ul>
 <li>20.49</li>
@@ -409,38 +455,45 @@ zendesk_section_id: 4403082292111
 <li>20.49</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="even">
 <th>license_type</th>
 <td>aa_r_hpc</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>institution</th>
 <td>Auckland University of Technology</td>
 </tr>
-<tr>
+<tr class="even">
 <th>faculty</th>
 <td>Faculty of Engineering</td>
 </tr>
-<tr>
+<tr class="odd">
 <th>status</th>
 <td>UP</td>
 </tr>
-<tr>
+<tr class="even">
 <th>real_total</th>
 <td>1536</td>
 </tr>
+</tbody>
 </table></td>
 </tr>
+</tbody>
 </table></td>
 </tr>
-<tr>
+<tr class="even">
 <th>link_override</th>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>machines</th>
-<td><table border="1">
-<tr>
+<td><table data-border="1">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
 <th>mahuika</th>
 <td><ul>
 <li>ANSYS/18.1</li>
@@ -452,8 +505,8 @@ zendesk_section_id: 4403082292111
 <li>ANSYS/2021R1</li>
 </ul></td>
 </tr>
-<tr>
-<th>maui</th>
+<tr class="even">
+<th>Māui</th>
 <td><ul>
 <li>ANSYS/19.1</li>
 <li>ANSYS/19.2</li>
@@ -461,22 +514,26 @@ zendesk_section_id: 4403082292111
 <li>ANSYS/2021R1</li>
 </ul></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>maui_ancil</th>
-<td><ul><li>ANSYS/19.2</li></ul></td>
+<td><ul>
+<li>ANSYS/19.2</li>
+</ul></td>
 </tr>
+</tbody>
 </table></td>
 </tr>
-<tr>
+<tr class="even">
 <th>module_path</th>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <th>modulefile_text</th>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <th>support</th>
 <td></td>
 </tr>
+</tbody>
 </table>

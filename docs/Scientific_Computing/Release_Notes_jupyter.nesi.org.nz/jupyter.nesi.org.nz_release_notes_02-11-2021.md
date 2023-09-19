@@ -18,9 +18,11 @@ zendesk_section_id: 360001150156
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 02. November 2021</h2>
-<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
-<ul>
-<li><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Enabled jupyter server proxy to forward requests to a different host (compute node).</span></li>
-</ul>
-<p> </p>
+    ## Release Update - 02. November 2021
+
+## New and Improved
+
+-   Enabled jupyter server proxy to forward requests to a different host
+    (compute node).
+
+ 

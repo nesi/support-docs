@@ -18,16 +18,18 @@ zendesk_section_id: 360001091155
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 15. June 2023</h2>
-<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
-<ul>
-<li>Ability to add new affiliation from Account &gt; My Profile menu</li>
-<li>Display of the full organisation with department (if relevant) when creating an new allocation request</li>
-<li>Addition of progress bars</li>
-</ul>
-<p> </p>
-<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
-<ul>
-<li>Reviewed the logout process from my.nesi</li>
-<li>Ability to go straight to an individual project page after login</li>
-</ul>
+    ## Release Update - 15. June 2023
+
+## New and Improved
+
+-   Ability to add new affiliation from Account &gt; My Profile menu
+-   Display of the full organisation with department (if relevant) when
+    creating an new allocation request
+-   Addition of progress bars
+
+ 
+
+## Fixes
+
+-   Reviewed the logout process from my.nesi
+-   Ability to go straight to an individual project page after login

@@ -23,5 +23,10 @@ zendesk_section_id: 200732737
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <p>A Slurm configuration change has been made on Mahuika so that the  maximum size of<span> </span><a class="c-link" href="https://support.nesi.org.nz/hc/en-gb/articles/360001584875-What-is-a-core-file-" target="_blank" rel="noopener noreferrer" data-stringify-link="https://support.nesi.org.nz/hc/en-gb/articles/360001584875-What-is-a-core-file-" data-sk="tooltip_parent">core file</a><span> </span>that can be generated inside a job now defaults to<span> </span><code class="c-mrkdwn__code" data-stringify-type="code">0</code><span> </span>bytes rather than<span> </span><code class="c-mrkdwn__code" data-stringify-type="code">unlimited</code>. </p>
-<p>You can reenable core dumps with<span> </span><code class="c-mrkdwn__code" data-stringify-type="code">ulimit -c unlimited</code><span> </span>.</p>
+    A Slurm configuration change has been made on Mahuika so that the 
+maximum size of [core
+file](https://support.nesi.org.nz/hc/en-gb/articles/360001584875-What-is-a-core-file-) that
+can be generated inside a job now defaults to `0` bytes rather
+than `unlimited`. 
+
+You can reenable core dumps with `ulimit -c unlimited` .

@@ -18,7 +18,7 @@ zendesk_section_id: 360001150156
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <h2>Fixed</h2>
-<ul>
-<li>Updated some Python packages in the Python 3.10 kernel to fix an issue with ipywidgets not working properly in notebooks</li>
-</ul>
+    ## Fixed
+
+-   Updated some Python packages in the Python 3.10 kernel to fix an
+    issue with ipywidgets not working properly in notebooks

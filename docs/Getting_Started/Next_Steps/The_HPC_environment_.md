@@ -17,32 +17,42 @@ zendesk_section_id: 360000189716
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <h2>Environment Modules</h2>
-<p><span style="font-weight: 400;">Modules are a convenient  way to provide access to applications  on the cluster. They prepare the environment you need to run an application.</span></p>
-<p><span style="font-weight: 400;">For a full list of module commands run <kbd>man module</kbd></span> or visit the lmod documentation <a href="https://lmod.readthedocs.io/en/latest/010_user.html" target="_self">here</a>.</p>
+    ## Environment Modules
+
+Modules are a convenient  way to provide access to applications  on the
+cluster. They prepare the environment you need to run an application.
+
+For a full list of module commands run man module or visit the lmod
+documentation
+[here](https://lmod.readthedocs.io/en/latest/010_user.html).
+
 <table style="height: 110px; width: 861.4px;">
 <tbody>
-<tr>
-<td style="width: 275px;"><code>module spider</code></td>
-<td style="width: 301.4px;">Lists all available modules. (only Mahuika)</td>
+<tr class="odd">
+<td style="width: 275px"><code>module spider</code></td>
+<td style="width: 301.4px">Lists all available modules. (only
+Mahuika)</td>
 </tr>
-<tr>
-<td style="width: 275px;"><code>module spider [module name]</code></td>
-<td style="width: 301.4px;">Searches available modules for [module name] (only Mahuika)</td>
+<tr class="even">
+<td style="width: 275px"><code>module spider [module name]</code></td>
+<td style="width: 301.4px">Searches available modules for [module name]
+(only Mahuika)</td>
 </tr>
-<tr>
-<td style="width: 275px;"><code>module show [module name]</code></td>
-<td style="width: 301.4px;">Shows information about [module name]</td>
+<tr class="odd">
+<td style="width: 275px"><code>module show [module name]</code></td>
+<td style="width: 301.4px">Shows information about [module name]</td>
 </tr>
-<tr>
-<td style="width: 275px;"><code>module load [module name]</code></td>
-<td style="width: 301.4px;">Loads [module name]</td>
+<tr class="even">
+<td style="width: 275px"><code>module load [module name]</code></td>
+<td style="width: 301.4px">Loads [module name]</td>
 </tr>
-<tr>
-<td style="width: 275px;"><code>module list [module name]</code></td>
-<td style="width: 301.4px;">Lists currently loaded modules.</td>
+<tr class="odd">
+<td style="width: 275px"><code>module list [module name]</code></td>
+<td style="width: 301.4px">Lists currently loaded modules.</td>
 </tr>
 </tbody>
 </table>
-<h2> </h2>
-<p><a href="https://lmod.readthedocs.io/en/latest/010_user.html">https://lmod.readthedocs.io/en/latest/010_user.html</a></p>
+
+##  
+
+<https://lmod.readthedocs.io/en/latest/010_user.html>

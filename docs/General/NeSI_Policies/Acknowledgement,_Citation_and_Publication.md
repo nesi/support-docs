@@ -17,4 +17,5 @@ zendesk_section_id: 360000224835
         This page has been automatically migrated and may contain formatting errors.
     [//]: <> (^^^^^^^^^^^^^^^^^^^^)
     [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <p>See <a href="https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication" target="_blank" rel="noopener">https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication</a></p>
+    See
+<https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication>
