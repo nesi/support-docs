@@ -160,7 +160,7 @@ parent process).
 
 Processes in green can be ignored
 
-<img src="assets/images/how_to_read_htop_1.png" width="929" height="252"
+<img src="assets/images/how_to_read_htop_0.png" width="929" height="252"
 alt="how_to_read_htop.png" />
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
@@ -194,12 +194,12 @@ more details.
 
 ## Example
 
-![qdyn\_eff.png](assets/images/qdyn_eff_1.png)
+![qdyn\_eff.png](assets/images/qdyn_eff_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
-![qdyn\_walltime.png](assets/images/qdyn_walltime_1.png)
+![qdyn\_walltime.png](assets/images/qdyn_walltime_0.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

@@ -112,8 +112,8 @@ endpoint "NeSI Wellington DTN V5" from the list, and you will be asked
 to authenticate your access to the endpoint. Click Continue to the next
 step.
 
-<img src="assets/images/4405622947215_1.name_me" width="700"
-height="431" alt="mceclip0.png" />
+<img src="assets/images/4405622947216.name_me" width="700" height="431"
+alt="mceclip0.png" />
 
  
 
@@ -125,8 +125,8 @@ that.
 
  
 
-<img src="assets/images/4405622955791_1.name_me" width="700"
-height="226" alt="mceclip1.png" />
+<img src="assets/images/4405622955792.name_me" width="700" height="226"
+alt="mceclip1.png" />
 
 The NeSI Wellington DTN V5 endpoint is protected by a second factor
 authentication (2FA-same as accessing NeSI clusters).  In the
@@ -138,8 +138,8 @@ not*** use any additional characters or spaces between your password and
 the token number.)
 
                            
-<img src="assets/images/4408962414351_1.name_me" width="451"
-height="561" alt="mceclip0.png" />
+<img src="assets/images/4408962414352.name_me" width="451" height="561"
+alt="mceclip0.png" />
 
 After the login, you will navigate to the default root(display as "/")
 path, then you could change the path to
@@ -158,28 +158,28 @@ Navigate to your selected directory. e.g. the *nobackup* filesystem
 */nesi/nobackup/&lt;project\_code&gt;* and select the two-endpoint panel
 for transfer.
 
-<img src="assets/images/4405623113615_1.name_me" width="851"
-height="298" alt="mceclip3.png" />
+<img src="assets/images/4405623113616.name_me" width="851" height="298"
+alt="mceclip3.png" />
 
 Select the target endpoint and authenticate.
 
 When you have activated endpoints in both transfer windows, you can
 start transferring files between them.
 
-<img src="assets/images/4405623130383_1.name_me" width="850"
-height="249" alt="mceclip4.png" />
+<img src="assets/images/4405623130384.name_me" width="850" height="249"
+alt="mceclip4.png" />
 
 Select files you wish to transfer and select the corresponding "Start"
 button:  
   
-<img src="assets/images/4405623291791_1.name_me" width="850"
-height="250" alt="mceclip5.png" />
+<img src="assets/images/4405623291792.name_me" width="850" height="250"
+alt="mceclip5.png" />
 
  
 
 To find other NeSI endpoints, type in "nesi#":
 
-![filemanage\_nesi.png](assets/images/4940171187343_1.name_me)
+![filemanage\_nesi.png](assets/images/4940171187344.name_me)
 
 ## In brief:
 
@@ -189,7 +189,7 @@ To find other NeSI endpoints, type in "nesi#":
 -   If this is your first time, you will need to create a Globus
     account.
 -   Open the two-endpoint panel
-    <img src="assets/images/5622407243151_1.name_me" width="109" height="34"
+    <img src="assets/images/5622407243152.name_me" width="109" height="34"
     alt="two_endpoint.png" />located on the top-right of the *File
     Manager* page.
 -   Select the Endpoints you wish to move files between (start typing
@@ -204,8 +204,8 @@ To find other NeSI endpoints, type in "nesi#":
     Storage
     Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation)).
 -   Transfer the files by clicking the appropriate
-    ![start.png](assets/images/5622408199183_1.name_me)button depending
-    on the direction of the transfer.
+    ![start.png](assets/images/5622408199184.name_me)button depending on
+    the direction of the transfer.
 -   Check your email for confirmation about the job completion report.
 
 ## Transferring data using a personal endpoint

@@ -34,7 +34,7 @@ requested by a job.
   
 AMD Milan CPU overview, each node has two of these:
 
-<img src="assets/images/milan_1.png" width="377" height="395"
+<img src="assets/images/milan_0.png" width="377" height="395"
 alt="milan.png" />
 
 **AMD-EPYC-Milan-architecture** from

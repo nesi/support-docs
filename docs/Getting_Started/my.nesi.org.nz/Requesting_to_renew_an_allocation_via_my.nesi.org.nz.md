@@ -23,16 +23,16 @@ zendesk_section_id: 360001059296
 1.  Login to <https://my.nesi.org.nz/projects/list> and select a project
     from the list.  
     ![Screenshot 2023-08-07 at 15-21-11
-    my.nesi.png](assets/images/7614368934415_1.name_me)
+    my.nesi.png](assets/images/7614368934416.name_me)
 2.  Click the Plus button icon 'action' next to the compute allocation
     line item   
     ![Screenshot 2023-08-07 at 15-21-51
-    my.nesi.png](assets/images/7614368936079_1.name_me)
+    my.nesi.png](assets/images/76143689360710.name_me)
 3.  Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'   
-    <img src="assets/images/4600269021199_1.name_me" width="636"
-    height="505" alt="mceclip2.png" />
+    <img src="assets/images/46002690211910.name_me" width="636" height="505"
+    alt="mceclip2.png" />
 
 ### Can I request any allocation size?
 

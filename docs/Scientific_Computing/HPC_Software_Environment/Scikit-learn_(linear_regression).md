@@ -38,7 +38,7 @@ An example of image is test/img49.jpg.
 
     display test/img49.jpg
 
-<img src="assets/images/img49_1_2_3.jpg" width="100" height="100"
+<img src="assets/images/img412.jpg" width="100" height="100"
 alt="img49.jpg" />
 
 which shows five, partially overlapping dots. Note that along with the
@@ -94,12 +94,12 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](assets/images/someResults_1_2_3.png)(The purple
-images have no dots.) With each image the number of dots is displayed as
-well as the value inferred by the model in parentheses. The inferred
-values are to be rounded to the nearest integer. Plot titles in red
-indicate failures. Among the 100 test images, the correct number of dots
-was found in 77 percent of the cases (the accuracy will change with each
+![someResults.png](assets/images/someResults_2.png)(The purple images
+have no dots.) With each image the number of dots is displayed as well
+as the value inferred by the model in parentheses. The inferred values
+are to be rounded to the nearest integer. Plot titles in red indicate
+failures. Among the 100 test images, the correct number of dots was
+found in 77 percent of the cases (the accuracy will change with each
 training due to the randomness of the process). In many cases, the
 predicted number of dots is off by no more than one unit. 
 

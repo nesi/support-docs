@@ -28,4 +28,4 @@ please email
 and wait for a member of our support team to confirm your account and
 group membership.
 
-![mceclip0.png](assets/images/mceclip0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21_22_23_24_25_26_27_28_29.png)
+![mceclip0.png](assets/images/mceclip11115.png)

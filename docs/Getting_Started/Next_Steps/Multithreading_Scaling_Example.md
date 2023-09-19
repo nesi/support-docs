@@ -131,8 +131,8 @@ understand what is happening:
 <table>
 <tbody>
 <tr class="odd">
-<td><img src="assets/images/blobid2_1_2_3.png" alt="Plot1" /></td>
-<td><img src="assets/images/blobid3_1_2_3.png" alt="Plot2" /></td>
+<td><img src="assets/images/blobid11.png" alt="Plot1" /></td>
+<td><img src="assets/images/blobid12.png" alt="Plot2" /></td>
 </tr>
 </tbody>
 </table>
@@ -191,9 +191,9 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 <table>
 <tbody>
 <tr class="odd">
-<td><img src="assets/images/6197221642383_1.name_me"
+<td><img src="assets/images/6197221642384.name_me"
 alt="TvC-MT.png" /></td>
-<td><img src="assets/images/6197207741967_1.name_me"
+<td><img src="assets/images/6197207741968.name_me"
 alt="TvL2C-MT.png" /></td>
 </tr>
 </tbody>
@@ -217,7 +217,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="assets/images/blobid1_1_2_3.png" width="469" height="395" />
+<img src="assets/images/blobid13.png" width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

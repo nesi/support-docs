@@ -132,12 +132,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](assets/images/360004708596_1.name_me)
+![mceclip0.png](assets/images/360004708597.name_me)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](assets/images/360004708616_1.name_me)
+![mceclip1.png](assets/images/360004708617.name_me)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -145,7 +145,7 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](assets/images/360004580035_1.name_me)
+![mobakey.png](assets/images/360004580036.name_me)
 
 ■ local port  
 ■ remote port  

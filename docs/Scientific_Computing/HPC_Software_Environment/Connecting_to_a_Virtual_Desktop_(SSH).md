@@ -120,7 +120,7 @@ style="width: 248px; height: 22px"><code>vdt kill my_desktop</code></td>
 
 Recommend setting scaling to 'remote'
 
-<img src="assets/images/fig1_1.svg" width="426" height="362" />![](assets/images/VirtualScaling_1.png)
+<img src="assets/images/fig2.svg" width="426" height="362" />![](assets/images/VirtualScaling_0.png)
 
 # Examples
 
@@ -154,7 +154,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](assets/images/mceclip0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.png)
+![mceclip0.png](assets/images/mceclip19.png)
 
 ## On a compute node
 

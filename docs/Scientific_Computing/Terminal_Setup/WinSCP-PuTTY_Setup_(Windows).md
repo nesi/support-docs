@@ -36,7 +36,7 @@ WinSCP can be downloaded [here](https://winscp.net/eng/download.php).
 
 Upon startup:
 
-![WinSCP1.png](assets/images/WinSCP1_1.png)
+![WinSCP1.png](assets/images/WinSCP7.png)
 
 1. Add a *New Site* and set:
 
@@ -53,11 +53,11 @@ Upon startup:
 > you.
 
   
-![WinSCP2.png](assets/images/WinSCP2_1.png)
+![WinSCP2.png](assets/images/WinSCP8.png)
 
 5\. Open Advanced Settings.
 
-![WinSCP3.png](assets/images/WinSCP3_1.png)
+![WinSCP3.png](assets/images/WinSCP9.png)
 
 6\. Navigate to *Connection &gt; Tunnel *and set:
 
@@ -77,12 +77,12 @@ recommend you use the PuTTY terminal instead.
 
 2.In WinSCP open 'Tools &gt; Preferences'
 
-![WinSCP2-5.png](assets/images/WinSCP2-5_1.png)
+![WinSCP2-5.png](assets/images/WinSCP2-6.png)
 
 3\. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-![WinSCP4.png](assets/images/WinSCP4_1.png)
+![WinSCP4.png](assets/images/WinSCP10.png)
 
  
 
@@ -98,7 +98,7 @@ SSH Client' is selected).
 2\. Under *Integration &gt; Applications* and add -X after
 PuTTY/Terminal client path.
 
-*![WinSCP6.png](assets/images/WinSCP6_1.png)*
+*![WinSCP6.png](assets/images/WinSCP11.png)*
 
 3\. Restart your session.
 !!!
@@ -111,23 +111,23 @@ PuTTY/Terminal client path.
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.
 
-![WinSCP5.png](assets/images/WinSCP5_1.png)
+![WinSCP5.png](assets/images/WinSCP12.png)
 
-![putTerm.png](assets/images/putTerm_1.png) Will open a **PuTTY
+![putTerm.png](assets/images/putTerm_0.png) Will open a **PuTTY
 terminal**. Assuming you followed the steps setting up PuTTY, this
 should automatically enter in your details.
 
-![winTerm.png](assets/images/winTerm_1.png) Will open the default
+![winTerm.png](assets/images/winTerm_0.png) Will open the default
 **WinSCP terminal**. While the functionality is identical to any other
 terminal the interface is slightly abstracted, with a separate window
 for input and command history drop-down.
 
-![winAdd.png](assets/images/winAdd_1.png) Type here to **change
+![winAdd.png](assets/images/winAdd_0.png) Type here to **change
 directory**.** **The GUI doesn't follow your current terminal directory
 like MobaXterm so must be changed manually. (Recommend making this
 larger as the default is very hard to type in).
 
-![winBook.png](assets/images/winBook_1.png) **Bookmark** current
+![winBook.png](assets/images/winBook_0.png) **Bookmark** current
 directory.
 !!!
 >

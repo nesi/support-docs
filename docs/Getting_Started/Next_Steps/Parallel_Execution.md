@@ -51,14 +51,14 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread
 (PO<span class="dictionary-of-numbers">SIX threads)</span>.
 
-<img src="assets/images/360001532455_1.name_me" class="figure-img"
+<img src="assets/images/360001532456.name_me" class="figure-img"
 alt="Diagram showing serial operations." />  
 *Fig. 1: In a serial operation, tasks complete
 <span class="dictionary-of-numbers">one after another</span>.*
 
 ####  
 
-<img src="assets/images/360001532435_1.name_me" width="714" height="160"
+<img src="assets/images/360001532436.name_me" width="714" height="160"
 alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
