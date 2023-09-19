@@ -30,7 +30,7 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](assets/images/mceclip0_0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21_22_23_24_25_26_27_28_29_30.png)
+![mceclip0.png](assets/images/mceclip0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21_22_23_24_25_26_27_28_29_30_31.png)
 !!!
 >
 > The email address you use on your application must be your

@@ -29,24 +29,24 @@ zendesk_section_id: 360000189696
 
  
 
- ![putty1.png](assets/images/putty1_0.png)
+ ![putty1.png](assets/images/putty1_1.png)
 
 2\. Open Connection &gt; Data and enter in your username under
 'Auto-Login username. 
 
-![putty2.png](assets/images/putty2_0.png)
+![putty2.png](assets/images/putty2_1.png)
 
  
 
 3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
 
-![putty4.png](assets/images/putty4_0.png)
+![putty4.png](assets/images/putty4_1.png)
 
 4\. Do this
 
 SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
-![putty5.png](assets/images/putty5_0.png)
+![putty5.png](assets/images/putty5_1.png)
 
  
 
@@ -54,4 +54,4 @@ SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
 Save session
 
-![putty3.png](assets/images/putty3_0.png)
+![putty3.png](assets/images/putty3_1.png)

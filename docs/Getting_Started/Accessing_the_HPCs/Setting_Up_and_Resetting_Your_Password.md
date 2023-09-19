@@ -44,7 +44,7 @@ zendesk_section_id: 360000034315
     Password** (If you are resetting your password this will read
     **Reset Password**).  
     Note your** Username.  
-    <img src="assets/images/authentication_factor_setup_0.png" width="442"
+    <img src="assets/images/authentication_factor_setup_1.png" width="442"
     height="166" alt="authentication_factor_setup.png" />  
     **
 
@@ -53,17 +53,17 @@ zendesk_section_id: 360000034315
     policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).  
       
 
-    #### <img src="assets/images/SetNeSIaccountPassword_0.png" width="628"
+    #### <img src="assets/images/SetNeSIaccountPassword_1.png" width="628"
     height="314" alt="SetNeSIaccountPassword.png" />
 
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds  
        
-    ![change\_success.png](assets/images/5662974048911_0_1.name_me)
+    ![change\_success.png](assets/images/5662974048911_1_2.name_me)
 
 5.  Followed by an email confirmation similar to below
 
-<img src="assets/images/password_set_confirmation_0_1.png" width="440"
+<img src="assets/images/password_set_confirmation_1_2.png" width="440"
 height="285" alt="password_set_confirmation.png" />
 
  
@@ -87,12 +87,12 @@ height="285" alt="password_set_confirmation.png" />
               
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  
-    1.  -   ![change\_success.png](assets/images/5662974048911_0_1_2.name_me)
+    1.  -   ![change\_success.png](assets/images/5662974048911_1_2_3.name_me)
 5.  Followed by an email confirmation similar to below  
        
       
 
-<img src="assets/images/password_set_confirmation_0_1_2.png" width="440"
+<img src="assets/images/password_set_confirmation_1_2_3.png" width="440"
 height="285" alt="password_set_confirmation.png" />
 !!!
 >

@@ -70,4 +70,4 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
 
     dorado download --model dna_r10.4.1_e8.2_400bps_hac@v4.1.0
 
-    dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.1.0 pod5s/ > calls.sam --device 'cuda:all'
+    dorado basecaller  --device 'cuda:all' dna_r10.4.1_e8.2_400bps_hac@v4.1.0 pod5s/ > calls.bam

@@ -157,7 +157,7 @@ connections to look like this:
 
 ### To connect to Māui
 
-![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](assets/images/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm_0.png)  
+![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](assets/images/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm_1.png)  
 When setting up and using the connections, note the following:
 
 ### To connect to Mahuika

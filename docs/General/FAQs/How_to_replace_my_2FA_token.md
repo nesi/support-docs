@@ -30,7 +30,7 @@ zendesk_section_id: 360000039036
 Once you've created a token, you should see the 'Manage Two-Factor
 token' option.
 
-![image2018-10-26\_15-36-10.png](assets/images/image2018-10-26_15-36-10_0.png)
+![image2018-10-26\_15-36-10.png](assets/images/image2018-10-26_15-36-10_1.png)
 
 ## Delete the Two-Factor token
 
@@ -38,15 +38,15 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](assets/images/mceclip0_0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21_22_23_24_25_26.png)
+![](assets/images/mceclip0_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_21_22_23_24_25_26_27.png)
 
 After 'Delete Token' has been selected:
 
-![](assets/images/mceclip1_0_1_2_3_4.png)
+![](assets/images/mceclip1_1_2_3_4_5.png)
 
 You will also receive an email confirmation:
 
-![](assets/images/mceclip3_0.png)
+![](assets/images/mceclip3_1.png)
 
 ## Related content
 
