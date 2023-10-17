@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 1
 title: Data Transfer using Globus V5
-vote_count: 4
-vote_sum: 2
+vote_count: 5
+vote_sum: 3
 zendesk_article_id: 4405623380751
 zendesk_section_id: 360000040596
 ---

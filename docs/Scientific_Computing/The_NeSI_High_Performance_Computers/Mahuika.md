@@ -8,8 +8,8 @@ label_names:
 - cs400
 position: 3
 title: Mahuika
-vote_count: 6
-vote_sum: 2
+vote_count: 7
+vote_sum: 3
 zendesk_article_id: 360000163575
 zendesk_section_id: 360000034335
 ---

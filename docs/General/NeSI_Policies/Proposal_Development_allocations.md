@@ -6,8 +6,8 @@ label_names:
 - assessment
 position: 11
 title: Proposal Development allocations
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 360000175675
 zendesk_section_id: 360000224835
 ---

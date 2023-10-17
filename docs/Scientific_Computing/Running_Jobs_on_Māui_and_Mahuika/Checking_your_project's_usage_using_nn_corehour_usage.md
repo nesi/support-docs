@@ -54,7 +54,7 @@ when the cluster commenced operations.
 Display results for the user `USERNAME`. The default user is the current
 user.
 
-`--`
+ 
 
 Treat all subsequent entries on the command line, including those
 starting with a dash (`-`), as arguments instead of as options.

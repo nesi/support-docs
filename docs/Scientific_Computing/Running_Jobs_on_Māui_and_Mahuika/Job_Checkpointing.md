@@ -4,8 +4,8 @@ hidden: false
 label_names: []
 position: 4
 title: Job Checkpointing
-vote_count: 0
-vote_sum: 0
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 360001413096
 zendesk_section_id: 360000030876
 ---

@@ -306,8 +306,8 @@ process](https://support.nesi.org.nz/hc/en-gb/articles/360000202136), or
 [contact our support team](https://support.nesi.org.nz/hc/requests/new)
 at any time.
 
-To ensure this file system remains fit-for-purpose, we are rolling out a
-regular cleaning policy as described in [Automatic cleaning of nobackup
+To ensure this file system remains fit-for-purpose, we have a regular
+cleaning policy as described in [Automatic cleaning of nobackup
 filesystem](https://support.nesi.org.nz/hc/en-gb/articles/360001162856).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning

@@ -55,7 +55,7 @@ container:
 
     # load environment module
     module purge
-    module load Apptainer/1.1.9
+    module load Apptainer/1.2.2
 
     # recent Apptainer modules set APPTAINER_BIND, which typically breaks
     # container builds, so unset it here
@@ -68,12 +68,15 @@ container:
     setfacl -b $APPTAINER_TMPDIR
 
     # build the container
-    apptainer build --fakeroot my_container.sif my_container.def
+    apptainer build --force --fakeroot my_container.sif my_container.def
 
 Note this script will start an Slurm job for 30 minutes using 2 cores
 and 4 GB of memory to build the image. Make sure to set these resources
 correctly, some containers can take hours to build and require tens of
 GB of memory.
+
+Option --force will rebuild my\_container.sif even if it already is in
+the directory.
 
 More information about how to submit a Slurm job is available in the
 [Submitting your first

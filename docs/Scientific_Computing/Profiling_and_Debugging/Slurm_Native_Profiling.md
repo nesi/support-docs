@@ -37,9 +37,17 @@ second by adding `#SBATCH --acctg-freq=1`, and for a week long job the
 rate should be reduced to once every 5
 minutes: `#SBATCH --acctg-freq=300`.  
   
-On completion of your job, collate the data into an HDF5 file using the
-command `sh5util -j <jobid>`, then contact us for help analysing the
-data, or use one of these scripts for plotting the HDF5 data.  
+On completion of your job, collate the data into an HDF5 file using
+`sh5util -j <jobid>`, this will collect the results from the nodes where
+your job ran and write into an HDF5 file named: `job_<jobid>.h5`
 
--   [Python](https://github.com/nesi/slurm_native_h5_plotter_python)
+ 
+
+You can plot the contents of this file with the command
+`nn_profile_plot job_<jobid>.h5`, this will generate a file named
+`job_<jobid>_profile.png`.
+
+Alternatively you could use one of the following scripts. 
+
+-   [Python](https://github.com/nesi/nesi-tools/blob/main/.dev_nn_profile_plot.py)
 -   [MATLAB](https://github.com/CallumWalley/slurm_native_h5_plotter)

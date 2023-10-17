@@ -55,9 +55,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](assets/images/mceclip4_0.png)
+![mceclip4.png](assets/images/4411672582031_0.name_me)
 
-![mceclip5.png](assets/images/mceclip5_0.png)
+![mceclip5.png](assets/images/4411672594191_0.name_me)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -77,7 +77,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](assets/images/mceclip6_0.png)
+![mceclip6.png](assets/images/4411680807951_0.name_me)
 
 You will be prompted by dialogue box.
 
@@ -112,7 +112,9 @@ factor is "123456" then you must enter "Password123456".
 If you are using the built in credential manager you will have to make
 sure to delete old entries when changing your password.
 
-## Login Issues
+## Troubleshooting
+
+### After Changing Password
 
 If you are experiencing login issues after resetting your password, it
 is likely due to an issue with MobaXterm saved sessions and Password
