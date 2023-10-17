@@ -11,13 +11,13 @@ zendesk_section_id: 360000189696
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ## Option 2: PuTTY (+WinSCP)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+## Option 2: PuTTY (+WinSCP)
 
 [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 

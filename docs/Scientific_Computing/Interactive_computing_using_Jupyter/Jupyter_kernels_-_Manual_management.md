@@ -11,13 +11,13 @@ zendesk_section_id: 360001189255
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    # Introduction
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+# Introduction
 
 Jupyter kernels execute the code that you write. The following Jupyter
 kernels are installed by default and can be selected from the Launcher:

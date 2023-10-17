@@ -11,13 +11,13 @@ zendesk_section_id: 360000040596
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ## Globus default directory
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+## Globus default directory
 
 If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root

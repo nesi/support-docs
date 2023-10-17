@@ -11,13 +11,13 @@ zendesk_section_id: 360001059296
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    ![mceclip0.png](assets/images/mceclip0_0_0_0_0_0_0_0_0_0.png)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+![mceclip0.png](assets/images/mceclip0_0_0_0_0_0_0_0_0_0.png)
 
 ## Main navigation
 

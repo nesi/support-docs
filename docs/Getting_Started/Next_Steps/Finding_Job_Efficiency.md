@@ -12,13 +12,13 @@ zendesk_section_id: 360000189716
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    # On Job Completion
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+# On Job Completion
 
 It is good practice to have a look at the resources your job used on
 completion, this way you can improve your job specifications in the

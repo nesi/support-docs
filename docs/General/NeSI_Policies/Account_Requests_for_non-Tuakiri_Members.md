@@ -14,13 +14,13 @@ zendesk_section_id: 360000224835
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Most New Zealand universities and Crown Research Institutes are members
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Most New Zealand universities and Crown Research Institutes are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
 but many other institutions, including private sector organisations and

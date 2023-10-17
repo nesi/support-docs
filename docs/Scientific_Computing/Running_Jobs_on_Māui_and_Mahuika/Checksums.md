@@ -11,13 +11,13 @@ zendesk_section_id: 360000030876
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Applying a *checksum function* to a file will return its *checksum*.
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Applying a *checksum function* to a file will return its *checksum*.
 Checksum functions are a type of [hash
 function](https://en.wikipedia.org/wiki/Hash_function), and will always
 return the same hash for any particular file contents, making them

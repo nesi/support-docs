@@ -11,13 +11,13 @@ zendesk_section_id: 360000040056
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Multithreading with OpenMP and other threading libraries is an important
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
 article on [Parallel
 Execution](https://support.nesi.org.nz/hc/en-gb/articles/360000690275)

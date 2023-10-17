@@ -16,13 +16,13 @@ zendesk_section_id: 360000039036
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 'Manage Two-Factor token' under 'Account'.
 
 ## Manage Two-Factor token

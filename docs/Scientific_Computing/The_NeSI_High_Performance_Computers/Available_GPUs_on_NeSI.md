@@ -11,13 +11,13 @@ zendesk_section_id: 360000034335
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    NeSI has a range of Graphical Processing Units (GPUs) to accelerate
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+NeSI has a range of Graphical Processing Units (GPUs) to accelerate
 compute-intensive research and support more analysis at scale. Depending
 on the type of GPU, you can access them in different ways, such as via
 batch scheduler (Slurm), interactively (using [Jupyter on

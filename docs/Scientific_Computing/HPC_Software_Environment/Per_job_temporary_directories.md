@@ -11,13 +11,13 @@ zendesk_section_id: 360000040056
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <p>Most programs which create temporary files will put those files in the directory specified by the environment variable <code>TMPDIR</code> if that is set, or <code>/tmp</code> otherwise. This is also true in Slurm, such that whenever a job starts, a temporary directory is created for that job and <code>TMPDIR</code> set. When the job ends our Slurm epilog ensures that the directory is deleted.</p>
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+<p>Most programs which create temporary files will put those files in the directory specified by the environment variable <code>TMPDIR</code> if that is set, or <code>/tmp</code> otherwise. This is also true in Slurm, such that whenever a job starts, a temporary directory is created for that job and <code>TMPDIR</code> set. When the job ends our Slurm epilog ensures that the directory is deleted.</p>
 <p>By default, this job-specific temporary directory is placed in <code>/dev/shm</code>, which is a “tmpfs” filesystem and so actually sits in ordinary RAM.  As a consequence, your job’s memory request should include enough to cover the size of any temporary files.</p>
 <p>On the <code>milan</code> and <code>hgx</code> partitions, however, you have the option of specifying <code>#SBATCH --gres=ssd</code> in your job script which will place <code>TMPDIR</code> on a 1.5 TB NVMe SSD attached to the node rather than in RAM. When <code>--gres=ssd</code> is set your job’s memory request <em>does not</em> need to include enough to cover the size of any temporary files (as this is a separate resource). These SSDs give the job a slower but very much larger temporary directory. They are allocated exclusively to jobs, so there can only be one such job per node at a time. This gives the job all the available bandwidth of the SSD device but does limit the number of such jobs.</p>
 <p>Alternatively you can ignore the provided directory and set <code>TMPDIR</code> yourself, typically to a location in <code>/nesi/nobackup</code>.  This will be the slowest option with the largest capacity. Also if set to <code>nobackup</code> the files will remain after the job finishes, so be weary of how much space your jobs temporary files use. An example of how <code>TMPDIR</code> may be set yourself is shown below,</p>

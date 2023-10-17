@@ -11,13 +11,13 @@ zendesk_section_id: 360000040596
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Shared Collections created in the previous NeSI endpoint **NeSI
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Shared Collections created in the previous NeSI endpoint **NeSI
 Wellington DTN ** need to be re-created in the new endpoint **NeSI
 Wellington DTN V5.** (The Shared Collections have been renamed *Guest
 Collections*).    

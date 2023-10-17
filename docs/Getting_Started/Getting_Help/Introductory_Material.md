@@ -16,13 +16,13 @@ zendesk_section_id: 360000164635
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    If you are new to NeSI, short introductory lectures are available on
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+If you are new to NeSI, short introductory lectures are available on
 YouTube
 [here](https://www.youtube.com/playlist?list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw)
 to help get you started on the systems. These videos are open to anyone

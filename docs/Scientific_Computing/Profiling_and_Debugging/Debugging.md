@@ -11,13 +11,13 @@ zendesk_section_id: 360000278935
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    There are many reasons why a program might crash. Some Slurm job states
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+There are many reasons why a program might crash. Some Slurm job states
 such as TIMEOUT or OUT\_OF\_MEMORY can indicate a clear reason, but when
 the job state is simply FAILED and the error message in the job's log
 file simply states "Segmentation Fault" or "Illegal instruction",

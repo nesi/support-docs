@@ -11,13 +11,13 @@ zendesk_section_id: 5203123172239
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    -   [Introduction to computing on the NeSI HPC (Part
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+-   [Introduction to computing on the NeSI HPC (Part
     1)](https://www.youtube.com/watch?v=RrFAb8Atsc0&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw) 
 -   [Introduction to computing on the NeSI HPC platform (Part
     2)](https://www.youtube.com/watch?v=8TNcFZvXSao&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw&index=2) 

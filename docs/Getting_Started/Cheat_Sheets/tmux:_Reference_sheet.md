@@ -11,13 +11,13 @@ zendesk_section_id: 360000278975
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    *tmux* is a terminal multiplexer.  A multiplexer enables the creation
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+*tmux* is a terminal multiplexer.  A multiplexer enables the creation
 and control of multiple terminals from a single screen.  It also allows
 the detachment of a screen to run in the background with the ability to
 re-attach and start where you left off.

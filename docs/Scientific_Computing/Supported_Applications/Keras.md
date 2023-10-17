@@ -11,13 +11,13 @@ zendesk_section_id: 360000040076
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Keras is a modular and extensible API for building neural networks in
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Keras is a modular and extensible API for building neural networks in
 Python. Keras is included with TensorFlow. Note that there are [CPU
 and](https://support.nesi.org.nz/hc/en-gb/articles/360000997675-TensorFlow-on-CPUs) [GPU
 versions](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow) of

@@ -11,13 +11,13 @@ zendesk_section_id: 360000040076
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    This article targets researchers who need to download Climate Model
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+This article targets researchers who need to download Climate Model
 Intercomparison Project Phase 6 (CMIP6) datasets from any of the Earth
 System Grid Federation ([ESGF](http://pcmdi.llnl.gov/)) archives. See
 [synda](https://support.nesi.org.nz/hc/en-gb/articles/360001208256-SYNDA)

@@ -11,13 +11,13 @@ zendesk_section_id: 360000278975
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    Regardless of the operating system of your personal computer you will
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Regardless of the operating system of your personal computer you will
 need to know some basic Unix Shell commands since the HPC are Linux
 machines. If you do not have any experiencing using Unix Shell we would
 advise going at least the first (3 parts) of the [Software Carpentry

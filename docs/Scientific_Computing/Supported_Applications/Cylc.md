@@ -11,13 +11,13 @@ zendesk_section_id: 360000040076
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    <h2 id="01G9X8TM54HGX95GWY5CR3E4CS">What is Cylc</h2>
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+<h2 id="01G9X8TM54HGX95GWY5CR3E4CS">What is Cylc</h2>
 <p><span><a href="https://cylc.github.io/" target="_self">Cylc</a> is a </span><strong>general purpose workflow engine</strong><span> that can also orchestrate </span><strong>cycling systems</strong><span> very efficiently. It is used in production weather, climate, and environmental forecasting on HPC, but is not specialised to those domains.</span><span></span></p>
 <p>Using a workflow engine may enable you to run large parametric or sensitivity studies while ensuring scalability, reproducibility and flexibility. If you have embarrassingly parallel jobs then Cylc might be a good solution for you. The workflow engine will allow for the concurrent execution of parallel jobs, depending on the task graph and available resources on the platform. One advantage of this approach over running a monolithic, parallel executable is that each task will require less resources that the complete problem, it is thus easier for each task to slip into the queue and start running.</p>
 <p>See the NeSI  <a href="https://snakemake-on-nesi.sschmeier.com/" target="_self">Snakemake</a> page for another, possible choice.</p>

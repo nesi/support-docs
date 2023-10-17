@@ -14,13 +14,13 @@ zendesk_section_id: 360000040056
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    NICE DCV is a virtual desktop solution that enables users to run
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+NICE DCV is a virtual desktop solution that enables users to run
 graphics-intensive OpenGL applications, such as 3D visualisation,
 remotely on the HPC. You get full access to your data on the
 high-performance file systems, as well as the advanced CPU and GPU

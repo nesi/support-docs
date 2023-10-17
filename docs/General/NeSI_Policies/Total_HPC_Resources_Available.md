@@ -11,13 +11,13 @@ zendesk_section_id: 360000224835
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    NeSI resources available for allocation each year combined across both
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+NeSI resources available for allocation each year combined across both
 [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575) and
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) HPC systems
 include 152 million x86 CPU Core-hours and 112 thousand GPGPU-hours

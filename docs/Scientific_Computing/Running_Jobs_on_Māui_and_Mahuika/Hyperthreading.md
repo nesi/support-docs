@@ -11,13 +11,13 @@ zendesk_section_id: 360000030876
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    As CPU technology advanced engineers realised that adapting CPU
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+As CPU technology advanced engineers realised that adapting CPU
 architecture to include *logical* *processors* within the physical core
 (conventionally, a CPU) allows some computation to occur simultaneously.
 The name for this technology is *simultaneous multithreading*, and

@@ -13,13 +13,13 @@ zendesk_section_id: 360000034335
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    The NeSI High Performance Computers
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+The NeSI High Performance Computers
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) and
 [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575) provide
 the New Zealand research community with access to a national

@@ -11,13 +11,13 @@ zendesk_section_id: 360000040036
 ---
 
 
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-    !!! Info
-        This page has been automatically migrated and may contain formatting errors.
-    [//]: <> (^^^^^^^^^^^^^^^^^^^^)
-    [//]: <> (REMOVE ME IF PAGE VALIDATED)
-    There are 4 dual socket nodes on blade, connected to a single Aries
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+There are 4 dual socket nodes on blade, connected to a single Aries
 (switch) chip, and there are 16 Aries chips in a chassis connected to
 the backplane. On Māui, this implies each chassis contains 64 nodes, or
 2,560 Skylake cores. There are 3 chassis in an XC50 cabinet, and two
