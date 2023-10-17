@@ -133,9 +133,9 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-<img src="assets/images/6551812176911_0.name_me" width="208"
+<img src="assets/images/6551812176911_0.name_me.png" width="208"
 height="394" />
-<img src="assets/images/6551880407439_0.name_me" width="408"
+<img src="assets/images/6551880407439_0.name_me.png" width="408"
 height="67" />
 
 If you click "Log Out" without stopping your server, the server will

@@ -191,9 +191,9 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 <table>
 <tbody>
 <tr class="odd">
-<td><img src="assets/images/6197221642383_0.name_me"
+<td><img src="assets/images/6197221642383_0.name_me.png"
 alt="TvC-MT.png" /></td>
-<td><img src="assets/images/6197207741967_0.name_me"
+<td><img src="assets/images/6197207741967_0.name_me.png"
 alt="TvL2C-MT.png" /></td>
 </tr>
 </tbody>

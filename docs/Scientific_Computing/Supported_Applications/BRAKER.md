@@ -78,7 +78,7 @@ Artistic License
 >
 >  
 >
-> -   <img src="assets/images/6529551751823_0.name_me" width="476"
+> -   <img src="assets/images/6529551751823_0.name_me.png" width="476"
 >     height="464" alt="genemark_es_license.png" />
 > -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
 > -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
