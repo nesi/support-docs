@@ -19,8 +19,8 @@ prereq: |
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
@@ -167,7 +167,7 @@ Data can be copied to Nearline using the `nlput` command. The syntax is:
 The source directory or file list needs to be located under
 `/nesi/`**`project`**`/` or `/nesi/`**`nobackup`**`/`and specified as
 such. 
-!!!
+!!! info
 >
 > The following will not work:
 >
@@ -180,7 +180,7 @@ such. 
 
 The data will be mapped into the same directory structure under
 `/nesi/`**`nearline`**`/` (see below).
-!!!
+!!! info
 >
 > Please ensure your file or directory names do not contain spaces,
 > non-standard characters or symbols. This may cause issues when
@@ -214,7 +214,7 @@ list, the following additional permission restrictions apply:
 The existing directory structure starting after
 `/nesi/project/<projectID>/` or `/nesi/nobackup/<projectID>/` will be
 mapped onto `/nesi/nearline/<projectID>/`
-!!!
+!!! info
 >
 > Files and directories are checked for existence and only new files are
 > transferred to Nearline. **Files already on Nearline will not be
@@ -232,7 +232,7 @@ names. Single files can only be migrated using a file list containing
 the full path of the file to be transferred.
 
 ## Put - directory
-!!!
+!!! info
 >
 > If you try to upload to Nearline a path containing spaces, especially
 > multiple consecutive spaces, you will get some very unexpected
@@ -257,7 +257,7 @@ location. As an example:
 will copy all data within the `Results` directory into
 
 `/nesi/nearline/nesi12345/`**`To/Archive/Results/`**.
-!!!
+!!! info
 >
 > If you put `/nesi/`**`project`**`/nesi12345/To/Archive/Results/` on
 > Nearline as well as
@@ -268,7 +268,7 @@ will copy all data within the `Results` directory into
 > skipped.
 
 ## Put - file list
-!!!
+!!! info
 >
 > The file list must be located within `/nesi/project` or
 > `/nesi/nobackup`. Any other location will cause obscure errors and
@@ -312,7 +312,7 @@ version of data from nobackup or project:
     Nearline version is out of date), remove the old files on Nearline
     using `nlpurge`.
 3.  Copy the updated files to the Nearline file system using `nlput`.
-!!!
+!!! info
 >
 > For technical reasons, files (data and metadata) and directory
 > structures on Nearline cannot be safely changed once present, even by
@@ -340,7 +340,7 @@ Similar to `nlput` (see above), nlget accepts a Nearline** directory**
 `src_dir` **(no single files on Nearline accepted)** or a **local file
 list** `file_list`, defining the source of the data to be retrieved from
 Nearline.
-!!!
+!!! info
 >
 > -   The local file list must be located within `/nesi/project` or
 >     `/nesi/nobackup`. Any other location will be rejected.
@@ -367,7 +367,7 @@ will create the directory structure
 directory structure does not already exist, and copy the data within the
 `Results` directory into it.  Note that the output pathe will include
 the project root in the path.
-!!!
+!!! info
 >
 > Any given file **will not be retrieved** if a file of the same name
 > already exists in the destination directory. If you wish to retrieve a
@@ -397,7 +397,7 @@ If you are instead deleting the entries of a file list, the project code
 is compulsory, and moreover all entries in the file list must denote
 files within (or supposed to be within) the chosen project's Nearline
 directory.
-!!!
+!!! info
 >
 > -   If a file list is used, it must be located within `/nesi/project`
 >     or `/nesi/nobackup` and referred to by its full path starting with
@@ -506,7 +506,7 @@ guarantee access to your files within any particular timeframe, and
 indeed wait times could be hours or even in some cases more than a day.
 
 # Known issues
-!!!
+!!! info
 >
 > Some users of Nearline have reported that attempts to retrieve files
 > from tape using `nlget` (see below) will not retrieve all files.

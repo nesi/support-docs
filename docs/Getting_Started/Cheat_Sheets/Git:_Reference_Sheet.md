@@ -17,8 +17,8 @@ zendesk_section_id: 360000278975
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 Git is the most universally adopted version control software and is
@@ -34,7 +34,7 @@ found [here](https://git-scm.com/docs/git), or using `man git`.
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
-!!!
+!!! info
 >
 > GitHub removed support for password authentication on August 13, 2021.
 > Using a SSH key is now the easiest way to set up authentication.
@@ -234,7 +234,7 @@ style="width: 565.701px"><code>git push &lt;repo&gt; &lt;branch&gt;</code></td>
 </tr>
 </tbody>
 </table>
-!!!
+!!! info
 >
 > If you are working without collaborators, there should be no reason to
 > have a conflict between your local and your remote repo. Make sure you
@@ -275,6 +275,6 @@ current branch.</td>
 </tr>
 </tbody>
 </table>
-!!!
+!!! info
 >
 > -   <https://ohshitgit.com/>

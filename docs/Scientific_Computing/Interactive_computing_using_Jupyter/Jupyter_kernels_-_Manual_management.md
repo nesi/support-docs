@@ -13,8 +13,8 @@ zendesk_section_id: 360001189255
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 # Introduction
@@ -36,7 +36,7 @@ and these can be extended further as described on the
 pages.
 
 # Adding a custom Python kernel
-!!!
+!!! info
 >
 > See the [Jupyter kernels - Tool-assisted
 > management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)

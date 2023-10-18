@@ -22,11 +22,11 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -49,7 +49,7 @@ Move a file from your local machine to Mahuika.
 Move a file from Mahuika to your local machine.
 
     scp mahuika:<path/filename> <path/filename>
-!!!
+!!! info
 >
 > -   This will only work if you have set up aliases as described in
 >     [Terminal

@@ -13,8 +13,8 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 Applying a *checksum function* to a file will return its *checksum*.
@@ -56,7 +56,7 @@ diverged from the original, while '`copy.bin`' has not.
 
 Note that filename, path, permissions or any other metadata does not
 affect the checksum.
-!!!
+!!! info
 >
 > Checksum functions are designed so that similar files *will not*
 > produce similar hashes.

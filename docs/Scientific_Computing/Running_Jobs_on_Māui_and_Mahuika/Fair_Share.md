@@ -13,8 +13,8 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 The fair-share system is designed to encourage users to balance their
@@ -34,7 +34,7 @@ units](https://support.nesi.org.nz/hc/en-gb/articles/360001385735) over
 a given **period**. An institution also has a percentage **Fair
 Share entitlement** of each machine's deliverable capacity over that
 same period.
-!!!
+!!! info
 >
 > Although we use the term "Fair Share entitlement" in this article, it
 > bears only a loose relationship to an institution's contractual

@@ -13,11 +13,11 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info
 >
 > -   Have working
 >     [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
@@ -59,7 +59,7 @@ Make sure you have launched the server and it is running in the
 background, look for
 this ![mceclip0.png](../../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png) symbol
 in your taskbar 
-!!!
+!!! info
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
