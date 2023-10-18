@@ -41,8 +41,8 @@ up using one of the available options on the page. Please note that the
 organisation is not listed, please sign in (sign up) using any of the
 other methods.
 
-<img src="../../../assets/images/8149105856015_0.name_me.png"
-width="398" height="436" alt="Globus_login.png" />
+<img src="../../assets/images/8149105856015_0.name_me.png" width="398"
+height="436" alt="Globus_login.png" />
 
 For a more detailed instructions please see [Creating a NeSI
 Account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
@@ -73,8 +73,8 @@ bar on the left.
     do not save your password as it will change every time due to the
     2nd factor requirement.
 
-<img src="../../../assets/images/8149067986063_0.name_me.png"
-width="296" height="340" alt="NeSI_Globus_Authenticate.png" />
+<img src="../../assets/images/8149067986063_0.name_me.png" width="296"
+height="340" alt="NeSI_Globus_Authenticate.png" />
 
 You can also set up your own personal endpoint: [Globus personal
 endpoint](https://support.nesi.org.nz/hc/en-gb/articles/360000217915).
@@ -89,7 +89,7 @@ transfer the data, select one of the two directional arrows. In the
 image below, the 'config' folder is being trasnferred from the location
 on the right, to the location on the left.
 
-![Globus\_transfer\_data.png](../../../assets/images/8149738412815_0.name_me.png)
+![Globus\_transfer\_data.png](../../assets/images/8149738412815_0.name_me.png)
 
 To see the progress of the transfer, please click 'Activity' on the left
 hand menu bar.

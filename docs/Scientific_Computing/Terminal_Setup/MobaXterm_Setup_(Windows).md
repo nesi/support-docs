@@ -17,7 +17,7 @@ zendesk_section_id: 360000189696
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!! info
+!!!
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -55,13 +55,13 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](../../../assets/images/4411672582031_0.name_me.png)
+![mceclip4.png](../../assets/images/4411672582031_0.name_me.png)
 
-![mceclip5.png](../../../assets/images/4411672594191_0.name_me.png)
+![mceclip5.png](../../assets/images/4411672594191_0.name_me.png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
-!!! info
+!!!
 >
 > There is a bug which causes some users to be repeatedly prompted
 > `<username>@lander.nesi.org.nz's password:`  
@@ -77,7 +77,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../../../assets/images/4411680807951_0.name_me.png)
+![mceclip6.png](../../assets/images/4411680807951_0.name_me.png)
 
 You will be prompted by dialogue box.
 
@@ -102,7 +102,7 @@ Māui users will instead be prompted with:
 Māui users must enter their password combined with their second factor.
 For example, if your password is "Password" and your current second
 factor is "123456" then you must enter "Password123456".
-!!! info
+!!!
 >
 > If you choose to save your password, the process will be the same
 > minus the prompts for First Factor.
@@ -135,7 +135,7 @@ Two steps to try:
 Then setup a new session [according to the support doc
 instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
 as before.
-!!! info
+!!!
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

@@ -38,7 +38,7 @@ guides.
     Guides](https://software.intel.com/en-us/documentation/view-all?search_api_views_fulltext=&current_page=0&value=78151,83039;20813,80605,79893,20812,20902;20816;20802;20804)
 -   [Allinea
     Forge](http://content.allinea.com/downloads/userguide-forge.pdf)
-    (../../../ DDT and MAP, now called Arm Forge)
+    (includes DDT and MAP, now called Arm Forge)
 -   [Nvidia Documentation](https://docs.nvidia.com/cuda/)
 -   [cuda-gdb](https://docs.nvidia.com/cuda/cuda-gdb/) debugger
 -   [cuda-memcheck](https://docs.nvidia.com/cuda/cuda-memcheck/) memory

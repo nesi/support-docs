@@ -28,7 +28,7 @@ efficiency rather than speed, and running on a single CPU is almost
 always more efficient than any form of parallelisation. 
 
 <figure>
-<img src="../../../assets/images/4tasks_0.png" alt="4tasks.png" />
+<img src="../../assets/images/4tasks_0.png" alt="4tasks.png" />
 <figure>
 
 </figure>

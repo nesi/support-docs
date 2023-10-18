@@ -20,7 +20,7 @@ zendesk_section_id: 360000502675
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 *Released Thursday 4 March 2021.*
 
-This release ../../../ a number of significant changes and new features:
+This release includes a number of significant changes and new features:
 
 -   The `nltraverse` command is now supported by an `nlcompare` command.
     With `nlcompare`, you can compare a directory within `/nesi/project`

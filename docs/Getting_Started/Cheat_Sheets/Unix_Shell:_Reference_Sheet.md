@@ -159,17 +159,17 @@ case ls).</td>
 </tr>
 </tbody>
 </table>
-!!! info
+!!!
 >
 > Pressing the 'tab' key once will automatically complete the line if it
 > is the only option. e.g. 
 >
-> ![complete1.gif](../../../assets/images/complete1_0.gif)
+> ![complete1.gif](../../assets/images/complete1_0.gif)
 >
 > If there are more than one possible completions, pressing tab again
 > will show all those options.
 >
-> ![complete2.gif](../../../assets/images/complete2_0.gif)
+> ![complete2.gif](../../assets/images/complete2_0.gif)
 >
 > Use of the tab key can help navigate the filesystem, spellcheck your
 > commands and save you time typing.

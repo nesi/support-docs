@@ -171,12 +171,10 @@ understand what is happening:
 <table style="height: 332px;" width="769">
 <tbody>
 <tr class="odd">
-<td style="width: 380.3px"><img
-src="../../../assets/images/blobid2_0.png" style="width: 386px;"
-height="326" alt="Plot1" /></td>
-<td style="width: 381.7px"><img
-src="../../../assets/images/blobid3_0.png" style="width: 389px;"
-height="328" alt="Plot2" /></td>
+<td style="width: 380.3px"><img src="../../assets/images/blobid2_0.png"
+style="width: 386px;" height="326" alt="Plot1" /></td>
+<td style="width: 381.7px"><img src="../../assets/images/blobid3_0.png"
+style="width: 389px;" height="328" alt="Plot2" /></td>
 </tr>
 </tbody>
 </table>
@@ -235,12 +233,10 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 <table style="width: 755px;">
 <tbody>
 <tr class="odd">
-<td style="width: 235.6px"><img
-src="../../../assets/images/blobid0_0.png" width="650"
-height="549" /></td>
-<td style="width: 228.4px"><img
-src="../../../assets/images/blobid1_0.png" width="650"
-height="548" /></td>
+<td style="width: 235.6px"><img src="../../assets/images/blobid0_0.png"
+width="650" height="549" /></td>
+<td style="width: 228.4px"><img src="../../assets/images/blobid1_0.png"
+width="650" height="548" /></td>
 </tr>
 </tbody>
 </table>

@@ -112,17 +112,17 @@ https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type=offline&st
 Point your web browser to the above URL (which will be different for
 you).
 
-![globus1.png](../../../assets/images/globus1_0.png)
+![globus1.png](../../assets/images/globus1_0.png)
 
  
 
 Select Globus Id and say "Allow".
 
-![globus2.png](../../../assets/images/globus2_0.png)
+![globus2.png](../../assets/images/globus2_0.png)
 
 You will then get a code,
 
-![globus3.png](../../../assets/images/globus3_0.png)
+![globus3.png](../../assets/images/globus3_0.png)
 
 which you can paste into your terminal, eg
 

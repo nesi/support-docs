@@ -1,6 +1,6 @@
 ---
 created_at: '2020-02-20T01:47:43Z'
-hidden: true
+hidden: false
 label_names: []
 position: 0
 title: Formatting
@@ -38,23 +38,23 @@ Small Text
 ------------------------------------------------------------------------
 
  Blockquotes
-!!! info
+!!!
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
-!!! info
+!!!
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
-!!! info
+!!!
 >
 > AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-!!! info
+!!!
 >
 > Some plain text.
-!!! info
+!!!
 >
 > <iframe src="//www.youtube-nocookie.com/embed/yDYXOntAlIk" width="560" height="315" frameborder="0" allowfullscreen>
 > </iframe>
@@ -67,7 +67,7 @@ This is a [Link](https://www.w3schools.com/html/html_links.asp) 
 
 Image
 
-![redirects-and-pipes.png](../../../assets/images/6014468037775_0.name_me.png)
+![redirects-and-pipes.png](../../assets/images/6014468037775_0.name_me.png)
 
 ------------------------------------------------------------------------
 

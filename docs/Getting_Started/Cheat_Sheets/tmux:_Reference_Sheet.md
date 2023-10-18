@@ -1,12 +1,12 @@
 ---
-created_at: '2022-03-24T22:11:13Z'
-hidden: false
+created_at: '2020-06-11T01:53:05Z'
+hidden: true
 label_names: []
 position: 0
-title: 'tmux: Reference sheet'
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 4563511601679
+title: 'tmux: Reference Sheet'
+vote_count: 0
+vote_sum: 0
+zendesk_article_id: 360001567816
 zendesk_section_id: 360000278975
 ---
 

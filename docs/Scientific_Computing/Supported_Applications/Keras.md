@@ -55,7 +55,7 @@ An example of image is test/img49.jpg.
 
     display test/img49.jpg
 
-<img src="../../../assets/images/img49_0.jpg" width="100" height="100"
+<img src="../../assets/images/img49_0.jpg" width="100" height="100"
 alt="img49.jpg" />
 
 which shows five, partially overlapping dots. Note that along with the
@@ -123,7 +123,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../../../assets/images/someResults_0.png)
+![someResults.png](../../assets/images/someResults_0.png)
 
 (The purple images have no dots.) With each image the number of dots is
 displayed as well as the value inferred by the model in parentheses. The

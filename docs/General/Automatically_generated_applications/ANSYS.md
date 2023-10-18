@@ -1,6 +1,6 @@
 ---
 created_at: '2021-07-02T03:02:31Z'
-hidden: true
+hidden: false
 label_names:
 - mahuika
 position: 0

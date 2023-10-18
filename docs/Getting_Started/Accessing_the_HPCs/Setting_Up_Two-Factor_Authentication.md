@@ -21,7 +21,7 @@ zendesk_section_id: 360000034315
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!! info
+!!!
 >
 > You must:
 >
@@ -52,11 +52,11 @@ If you some reason you can't do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    <img src="../../../assets/images/4414700806543_0.name_me.png"
-    width="560" height="210" alt="authentication_factor_setup.png" />
+    <img src="../../assets/images/4414700806543_0.name_me.png" width="560"
+    height="210" alt="authentication_factor_setup.png" />
 
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
-    <img src="../../../assets/images/360001267755_0.name_me.png"
+    <img src="../../assets/images/360001267755_0.name_me.png"
     style="max-width: 480px;" />
 
 4.  After clicking on "Continue" you will retrieve the QR code.
@@ -73,7 +73,7 @@ factor in the authentication process.
 This code rotates every 30 seconds, and it **can only be used once**.
 This means that you can only try logging in to the lander node once
 every 30 seconds.
-!!! info
+!!!
 >
 > -   [Getting access to the
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)

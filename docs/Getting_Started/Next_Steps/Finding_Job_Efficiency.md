@@ -52,7 +52,7 @@ guidance.
 **sacct**
 
     sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
-!!! info
+!!!
 >
 > *If you want to make this your default* `sacct` *setting, run;*
 >
@@ -137,7 +137,7 @@ If 'nodelist' is not one of the fields in the output of your `sacct` or
 `squeue` commands you can find the node a job is running on using the
 command; `squeue -h -o %N -j <jobid>` The node will look something like
 `wbn123` on Mahuika or `nid00123` on Māui
-!!! info
+!!!
 >
 > If your job is using MPI it may be running on multiple nodes
 
@@ -160,7 +160,7 @@ parent process).
 
 Processes in green can be ignored
 
-<img src="../../../assets/images/how_to_read_htop_0.png" width="929"
+<img src="../../assets/images/how_to_read_htop_0.png" width="929"
 height="252" alt="how_to_read_htop.png" />
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
@@ -175,7 +175,7 @@ height="252" alt="how_to_read_htop.png" />
 **CPU%** - Percentage CPU utilisation.
 
 **MEM% **Percentage Memory utilisation.
-!!! info
+!!!
 >
 > If the job finishes, or is killed you will be kicked off the node. If
 > htop freezes, type `reset` to clear your terminal.
@@ -194,12 +194,12 @@ more details.
 
 ## Example
 
-![qdyn\_eff.png](../../../assets/images/qdyn_eff_0.png)
+![qdyn\_eff.png](../../assets/images/qdyn_eff_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
-![qdyn\_walltime.png](../../../assets/images/qdyn_walltime_0.png)
+![qdyn\_walltime.png](../../assets/images/qdyn_walltime_0.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

@@ -28,13 +28,13 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](../../../assets/images/Git_Diagram_0.svg)
+![Git\_Diagram.svg](../../assets/images/Git_Diagram_0.svg)
 
 ## Authentication
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
-!!! info
+!!!
 >
 > GitHub removed support for password authentication on August 13, 2021.
 > Using a SSH key is now the easiest way to set up authentication.
@@ -65,21 +65,20 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     page, click your profile photo click **Settings**.
 
     ![Settings icon in the user
-    bar](../../../assets/images/userbar-account-settings_0.png)
+    bar](../../assets/images/userbar-account-settings_0.png)
 
 -   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
     ![SSH Key
-    button](../../../assets/images/ssh-add-ssh-key-with-auth_0.png)
+    button](../../assets/images/ssh-add-ssh-key-with-auth_0.png)
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
-    ![The key
-    field](../../../assets/images/ssh-key-paste-with-type_0.png)
+    ![The key field](../../assets/images/ssh-key-paste-with-type_0.png)
 
 -   Click **Add SSH key**.
 
@@ -234,7 +233,7 @@ style="width: 565.701px"><code>git push &lt;repo&gt; &lt;branch&gt;</code></td>
 </tr>
 </tbody>
 </table>
-!!! info
+!!!
 >
 > If you are working without collaborators, there should be no reason to
 > have a conflict between your local and your remote repo. Make sure you
@@ -275,6 +274,6 @@ current branch.</td>
 </tr>
 </tbody>
 </table>
-!!! info
+!!!
 >
 > -   <https://ohshitgit.com/>

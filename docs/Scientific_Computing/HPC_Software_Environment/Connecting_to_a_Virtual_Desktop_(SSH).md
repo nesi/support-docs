@@ -31,11 +31,11 @@ it</span>s own (approximately <span class="dictionary-of-numbers">40
 times faster)</span>.
 
 # Connecting Through SSH
-!!! info
+!!!
 >
 > You must be able to [forward a
 > port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
-!!! info
+!!!
 >
 > The Virtual desktops are still in development, please report any
 > issues to NeSI support, or open an issue
@@ -53,7 +53,7 @@ forwarding](https://support.nesi.org.nz/hc/en-gb/articles/360001523916). 
 For example:
 
     ssh -L 1234:localhost:1234 mahuika
-!!! info
+!!!
 >
 > Port numbers should be between **1025-49151**. It's OK to use the same
 > number for local and remote ports (makes it easier to remember too!)
@@ -120,7 +120,7 @@ style="width: 248px; height: 22px"><code>vdt kill my_desktop</code></td>
 
 Recommend setting scaling to 'remote'
 
-<img src="../../../assets/images/fig1_0.svg" width="426" height="362" />![](../../../assets/images/VirtualScaling_0.png)
+<img src="../../assets/images/fig1_0.svg" width="426" height="362" />![](../../assets/images/VirtualScaling_0.png)
 
 # Examples
 
@@ -154,7 +154,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](../../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
+![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
 
 ## On a compute node
 

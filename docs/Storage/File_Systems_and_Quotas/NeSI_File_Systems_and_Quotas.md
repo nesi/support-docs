@@ -22,7 +22,7 @@ zendesk_section_id: 360000033936
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!! info
+!!!
 >
 > [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
 > have recently started rolling out compression of inactive data on the
@@ -47,7 +47,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../../../assets/images/360003251796_0.name_me.png" width="629"
+## <img src="../../assets/images/360003251796_0.name_me.png" width="629"
 height="578" alt="neSI_filetree.svg" />
 
 # File System Specifications
@@ -318,7 +318,7 @@ The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
 ## /nesi/nearline
-!!! info
+!!!
 >
 > The nearline service, including its associated file systems, is in an
 > Early Access phase, and allocations are by invitation. We appreciate

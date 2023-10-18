@@ -17,7 +17,7 @@ zendesk_section_id: 360000189696
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!! info
+!!!
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -36,7 +36,7 @@ WinSCP can be downloaded [here](https://winscp.net/eng/download.php).
 
 Upon startup:
 
-![WinSCP1.png](../../../assets/images/360001342295_0.name_me.png)
+![WinSCP1.png](../../assets/images/360001342295_0.name_me.png)
 
 1. Add a *New Site* and set:
 
@@ -44,7 +44,7 @@ Upon startup:
     login.maui.nesi.org.nz
 -   Enter your NeSI account username into *User name:* (Password
     optional)
-!!! info
+!!!
 >
 > For "file protocol" (the topmost drop-down menu), either SCP or SFTP
 > is acceptable. If you are trying to move many small files or have a
@@ -53,11 +53,11 @@ Upon startup:
 > you.
 
   
-![WinSCP2.png](../../../assets/images/360001342315_0.name_me.png)
+![WinSCP2.png](../../assets/images/360001342315_0.name_me.png)
 
 5\. Open Advanced Settings.
 
-![WinSCP3.png](../../../assets/images/360002834335_0.name_me.png)
+![WinSCP3.png](../../assets/images/360002834335_0.name_me.png)
 
 6\. Navigate to *Connection &gt; Tunnel *and set:
 
@@ -77,12 +77,12 @@ recommend you use the PuTTY terminal instead.
 
 2.In WinSCP open 'Tools &gt; Preferences'
 
-![WinSCP2-5.png](../../../assets/images/360001342495_0.name_me.png)
+![WinSCP2-5.png](../../assets/images/360001342495_0.name_me.png)
 
 3\. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-![WinSCP4.png](../../../assets/images/360001344315_0.name_me.png)
+![WinSCP4.png](../../assets/images/360001344315_0.name_me.png)
 
  
 
@@ -98,10 +98,10 @@ SSH Client' is selected).
 2\. Under *Integration &gt; Applications* and add -X after
 PuTTY/Terminal client path.
 
-*![WinSCP6.png](../../../assets/images/360001596916_0.name_me.png)*
+*![WinSCP6.png](../../assets/images/360001596916_0.name_me.png)*
 
 3\. Restart your session.
-!!! info
+!!!
 >
 > In order for X11 forwarding to work you must have an Xming server
 > running before connecting to the HPC.
@@ -111,24 +111,24 @@ PuTTY/Terminal client path.
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.
 
-![WinSCP5.png](../../../assets/images/360001494615_0.name_me.png)
+![WinSCP5.png](../../assets/images/360001494615_0.name_me.png)
 
-![putTerm.png](../../../assets/images/360001597336_0.name_me.png) Will
-open a **PuTTY terminal**. Assuming you followed the steps setting up
-PuTTY, this should automatically enter in your details.
+![putTerm.png](../../assets/images/360001597336_0.name_me.png) Will open
+a **PuTTY terminal**. Assuming you followed the steps setting up PuTTY,
+this should automatically enter in your details.
 
-![winTerm.png](../../../assets/images/360001597316_0.name_me.png) Will
-open the default **WinSCP terminal**. While the functionality is
-identical to any other terminal the interface is slightly abstracted,
-with a separate window for input and command history drop-down.
+![winTerm.png](../../assets/images/360001597316_0.name_me.png) Will open
+the default **WinSCP terminal**. While the functionality is identical to
+any other terminal the interface is slightly abstracted, with a separate
+window for input and command history drop-down.
 
-![winAdd.png](../../../assets/images/360001494635_0.name_me.png) Type
-here to **change directory**.** **The GUI doesn't follow your current
+![winAdd.png](../../assets/images/360001494635_0.name_me.png) Type here
+to **change directory**.** **The GUI doesn't follow your current
 terminal directory like MobaXterm so must be changed
 manually. (Recommend making this larger as the default is very hard to
 type in).
 
-![winBook.png](../../../assets/images/360001599556_0.name_me.png) **Bookmark**
+![winBook.png](../../assets/images/360001599556_0.name_me.png) **Bookmark**
 current directory.
 
 ## Troubleshooting
@@ -141,21 +141,21 @@ number of tunnels will reduce the number of times you are prompted. 
 
 1\. Open settings
 
-<img src="../../../assets/images/8026405972111_0.name_me.png"
-width="513" height="93" alt="winscp_settings.png" />
+<img src="../../assets/images/8026405972111_0.name_me.png" width="513"
+height="93" alt="winscp_settings.png" />
 
 2\. Under 'Transfer' -&gt; 'Background', set the 'Maximal number of
 transfers at the same time' to '1' and untick 'Use multiple connections
 for a single transfer'.
 
-![winscp\_Settings2.png](../../../assets/images/8026392031247_0.name_me.png) 
-!!! info
+![winscp\_Settings2.png](../../assets/images/8026392031247_0.name_me.png) 
+!!!
 >
 > As WinSCP uses multiple tunnels for file transfer you will be required
 > to authenticate again on your first file operation of the session. The
 > second prompt for your second-factor token can be skipped, just as
 > with login authentication.
-!!! info
+!!!
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

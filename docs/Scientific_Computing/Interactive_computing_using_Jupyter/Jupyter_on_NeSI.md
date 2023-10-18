@@ -22,7 +22,7 @@ zendesk_section_id: 360001189255
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!! info
+!!!
 >
 > This service is available for users with a current allocation on
 > Mahuika only.  
@@ -40,7 +40,7 @@ Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing [Slurm job
 submissions](https://support.nesi.org.nz/hc/en-gb/articles/360000684396)
 and workflows and much more.
-!!! info
+!!!
 >
 > -   See the [RStudio via Jupyter on
 >     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
@@ -75,7 +75,7 @@ will be used to run Jupyter. Typical jobs, not requesting a GPU, should
 be up and running within one to two minutes. Requesting a GPU can
 increase this time significantly as there are only a small number of
 GPUs available at NeSI.
-!!! info
+!!!
 >
 > If your server appears to not have started within 3 minutes please
 > reload the browser window and check again, otherwise contact
@@ -133,10 +133,10 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-<img src="../../../assets/images/6551812176911_0.name_me.png"
-width="208" height="394" />
-<img src="../../../assets/images/6551880407439_0.name_me.png"
-width="408" height="67" />
+<img src="../../assets/images/6551812176911_0.name_me.png" width="208"
+height="394" />
+<img src="../../assets/images/6551880407439_0.name_me.png" width="408"
+height="67" />
 
 If you click "Log Out" without stopping your server, the server will
 continue to run until the Slurm job reaches its maximum wall time.
@@ -198,7 +198,7 @@ directory in your home directory:
 These changes will only take effect after relaunching your Jupyter
 server and then you should be able to install JupyterLab extensions as
 you please.
-!!! info
+!!!
 >
 > The above commands will put the JupyterLab application directory in
 > your home directory. The application directory often requires at least
