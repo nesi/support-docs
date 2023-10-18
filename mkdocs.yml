@@ -54,7 +54,6 @@ theme:
     - navigation.indexes
     - navigation.top
     - content.code.copy
-    - navigation.tabs
   language: en
   logo: assets/icons/logo.svg
   name: material
