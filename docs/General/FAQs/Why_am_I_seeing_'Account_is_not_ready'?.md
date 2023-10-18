@@ -13,6 +13,13 @@ zendesk_article_id: 360000550416
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 If you don’t see the ‘Set Password’ button, it means your information on
 our database is not ready yet, your user account has not yet been
 created, or you are not a member of an active project. In this case,
@@ -21,4 +28,4 @@ please email
 and wait for a member of our support team to confirm your account and
 group membership.
 
-![mceclip0.png](../../includes/images/mceclip0_14.png)
+![mceclip0.png](assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)

@@ -11,6 +11,13 @@ zendesk_article_id: 360000205355
 zendesk_section_id: 360000033936
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 It is important to understand the different I/O performance
 characteristics of nodes that connect to storage using *native Spectrum
 Scale clients*, and those that employ *Cray’s DVS* *solution*.
@@ -43,7 +50,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).
 
- ![cray\_xc50.jpg](../../includes/images/cray_xc50.jpg)
+ ![cray\_xc50.jpg](assets/images/cray_xc50_0.jpg)
 
 <font size="2">Figure 1: Cray XC50 DVS architecture.</font>
 
@@ -64,12 +71,11 @@ compute nodes are:
     <font face="Courier New, serif">IOBUF</font> is not used Read and
     Write performance is &lt;1GB/s.
 
-Unless Cray’s <font color="#0000ff"> <span
-class="underline">[IOBUF](#_IOBUF_-_Caution)</span> </font> capability
-is suitable for an application, <span class="underline">users should
-avoid the use of single-stream I/O with small buffers on</span> Māui.
+Unless Cray’s <font color="#0000ff"> <u>[IOBUF](#_IOBUF_-_Caution)</u>
+</font> capability is suitable for an application, <u>users should avoid
+the use of single-stream I/O with small buffers on</u> Māui.
 
-## <span class="wysiwyg-color-red">IOBUF - Caution</span>
+## IOBUF - Caution
 
 Cray’s IOBUF ( <font face="Courier New, serif">man iobuf</font> ) is an
 I/O buffering library that can reduce the I/O wait time for programs
@@ -86,10 +92,10 @@ maintain coherent buffering between processes which open the same file.
 For this reason, do not use IOBUF with shared file I/O, such as MPI-IO
 routines like
 <font face="Courier New, serif">MPI\_File\_write\_all</font> . IOBUF is
-<span class="underline">not thread-safe</span>, so do not use it with
-multithreaded programs in which the threads perform buffered I/O. IOBUF
-can be linked into programs that use these I/O styles, but buffering
-should not be enabled on those files.
+<u>not thread-safe</u>, so do not use it with multithreaded programs in
+which the threads perform buffered I/O. IOBUF can be linked into
+programs that use these I/O styles, but buffering should not be enabled
+on those files.
 
 ## Data compression
 

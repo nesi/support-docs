@@ -7,13 +7,20 @@ label_names:
 - mynesi
 position: 1
 title: Applying for a new NeSI project
-vote_count: 3
-vote_sum: 1
+vote_count: 4
+vote_sum: 2
 zendesk_article_id: 360000174976
 zendesk_section_id: 360000196195
 ---
 
-> ### Requirements
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > Compulsory:
 >
@@ -50,8 +57,7 @@ Requests to use NeSI resources are [submitted via a web
 form](https://my.nesi.org.nz/). The NeSI team will endeavour to approve
 your project, or contact you for more information, within 3-5 working
 days of your submitting your project request.
-
-> ### Note
+!!!
 >
 > If you are a member of NIWA please also ensure that you have also read
 > and followed the [NIWA internal documentation for gaining access to
@@ -93,8 +99,7 @@ information:
 
 You will also be given an opportunity to tell us anything else you think
 is relevant.
-
-> ### What Next?
+!!!
 >
 > -   Your NeSI Project proposal will be
 >     [reviewed](https://support.nesi.org.nz/hc/en-gb/articles/360000202136),

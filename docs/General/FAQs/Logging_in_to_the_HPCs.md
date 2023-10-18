@@ -8,12 +8,19 @@ label_names:
 - access
 position: 3
 title: Logging in to the HPCs
-vote_count: 3
-vote_sum: 3
+vote_count: 4
+vote_sum: 2
 zendesk_article_id: 360000161315
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 This page has been replaced. Information on how to log in can now be
 found at:
 

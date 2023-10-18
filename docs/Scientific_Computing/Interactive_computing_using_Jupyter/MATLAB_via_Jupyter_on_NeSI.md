@@ -10,7 +10,14 @@ zendesk_article_id: 4614893064591
 zendesk_section_id: 360001189255
 ---
 
-> ### Note
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > This functionality is experimental and developing, which may introduce
 > breaking changes in the future.
@@ -28,21 +35,21 @@ NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
 In the JupyterLab interface, MATLAB can be started using the
 corresponding entry in the launcher.
 
-# ![matlab\_proxy\_icon.png](../../includes/images/matlab_proxy_icon.png)
+# ![matlab\_proxy\_icon.png](assets/images/matlab_proxy_icon_0.png)
 
 Clicking on this entry will open a separate tab in your web browser,
 where you will see the following status information page.
 
-# <img src="../../includes/images/image__1_.png" alt="image__1_.png" width="497" height="206" />
+# <img src="assets/images/image__1__0.png" width="497" height="206"
+alt="image__1_.png" />
 
 MATLAB may take a few minutes to load, once it does you will be put
 straight into the MATLAB environment. 
 
 You can open the status page at any time by clicking the
-[<img src="../../includes/images/tools_icon.png" width="61" height="33" />](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
+[<img src="assets/images/tools_icon_0.png" width="61" height="33" />](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
 button.
-
-> ### Note
+!!!
 >
 > Your license must be valid for MATLAB 2021b or newer.
 
@@ -55,13 +62,15 @@ the info panel.
 If you do not wish to use a network license you can click the 'Unset
 License Server Address' button.
 
-# <img src="../../includes/images/image__3_.png" alt="image__3_.png" width="517" height="204" />
+# <img src="assets/images/image__3__0.png" width="517" height="204"
+alt="image__3_.png" />
 
 If you have no licence address set you can instead authenticate using a
 MathWorks email address, provided you have a valid license associated to
 your account.
 
-# <img src="../../includes/images/image__4_.png" alt="image__4_.png" width="470" height="379" />
+# <img src="assets/images/image__4__0.png" width="470" height="379"
+alt="image__4_.png" />
 
 # Troubleshooting
 
@@ -70,7 +79,7 @@ warning whenever you run a system command, and some system commands will
 not work as intended.
 
 For more details see
-[MATLAB\#known\_bugs](https://support.nesi.org.nz/hc/en-gb/articles/212639047#known_bugs).
+[MATLAB#known\_bugs](https://support.nesi.org.nz/hc/en-gb/articles/212639047#known_bugs).
 
  
 

@@ -10,6 +10,13 @@ zendesk_article_id: 5565081844623
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 # Description
 
 **ipyrad**, an interactive assembly and analysis toolkit for
@@ -51,7 +58,7 @@ set.
 and edit the paths in parameter file to match the destinations of input
 data, barcode paths,etc. 
 
-## <span class="mw-headline">Slurm Script for Using Multiple CPUs a Single Compute Node</span>
+## Slurm Script for Using Multiple CPUs a Single Compute Node
 
     #!/bin/bash
 

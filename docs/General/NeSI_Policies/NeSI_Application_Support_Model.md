@@ -13,6 +13,13 @@ zendesk_article_id: 360000170355
 zendesk_section_id: 360000224835
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 The NeSI policy for management of scientific application software is
 based on the following principles:
 

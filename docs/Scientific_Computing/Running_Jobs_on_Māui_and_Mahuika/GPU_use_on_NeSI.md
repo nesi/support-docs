@@ -11,23 +11,27 @@ zendesk_article_id: 360001471955
 zendesk_section_id: 360000030876
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 This page provides generic information about how to access NeSI's GPU
 cards.
 
 For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
 please have a look at the dedicated pages listed at the end of this
 page.
-
-> ### Important
+!!!
 >
 > An overview of available GPU cards is available in the [Available GPUs
 > on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
 > support page.
 >
-> Details about<span class="diff-removed-string"> </span>GPU cards for
-> each system<span class="diff-removed-string"> </span>and <span
-> class="diff-added-string">usage</span> limits are in the [Mahuika
-> Slurm
+> Details about GPU cards for each system and usage limits are in the
+> [Mahuika Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
 > and [Māui\_Ancil (CS500) Slurm
 > Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
@@ -127,8 +131,7 @@ with the `srun` and `salloc` commands. For example:
 
 will request and then start a bash session with access to a GPU, for a
 duration of 30 minutes.
-
-> ### Important
+!!!
 >
 > When you use the `--gpus-per-node`option, Slurm automatically sets the
 > `CUDA_VISIBLE_DEVICES` environment variable inside your job
@@ -156,26 +159,19 @@ You can list the available versions using:
 
 Please contact us at <support@nesi.org.nz> if you need a version not
 available on the platform.
-
-> ### Note
+!!!
 >
 > On Māui Ancillary Nodes, use `module avail CUDA` to list available
 > versions.
 
 The CUDA module also provides access to additional command line tools:
 
-<ul>
-<ul>
-
--   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
-    to directly monitor GPU resource utilisation,
--   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
-    to compile CUDA programs,
--   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html) to
-    debug CUDA applications.
-
-</ul>
-</ul>
+-   -   -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
+            to directly monitor GPU resource utilisation,
+        -   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
+            to compile CUDA programs,
+        -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html)
+            to debug CUDA applications.
 
 In addition, the [cuDNN](https://developer.nvidia.com/cudnn) (NVIDIA
 CUDA® Deep Neural Network library) library is accessible via its
@@ -244,8 +240,7 @@ The content of job output file would look like:
     |  No running processes found                                                 |
     +-----------------------------------------------------------------------------+
     CUDA_VISIBLE_DEVICES=0
-
-> ### Note
+!!!
 >
 > CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
 > GPU index 0 on this node. It is not a count of allocated GPUs.
@@ -283,8 +278,7 @@ Then you can use the
 line tool or the
 [ncu-ui](https://docs.nvidia.com/nsight-compute/NsightCompute/index.html)
 graphical interface.
-
-> ### Important
+!!!
 >
 > The `nsys-ui` and `ncu-ui` tools require access to a display server,
 > either via

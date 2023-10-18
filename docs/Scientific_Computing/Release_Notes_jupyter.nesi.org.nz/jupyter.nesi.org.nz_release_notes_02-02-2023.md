@@ -11,6 +11,13 @@ zendesk_article_id: 6325030048655
 zendesk_section_id: 360001150156
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ## New and Improved
 
 -   Updated JupyterHub to v2.3.1

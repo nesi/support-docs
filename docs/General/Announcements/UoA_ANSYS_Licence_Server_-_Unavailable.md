@@ -10,6 +10,13 @@ zendesk_article_id: 360001391616
 zendesk_section_id: 200732737
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 After the UoA ANSYS licence server update on 17th Feb, the NeSI cluster
 lost connection. We are working with ITS to solve the issue.
 

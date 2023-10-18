@@ -7,13 +7,20 @@ label_names:
 - mynesi
 position: 0
 title: Setting Up and Resetting Your Password
-vote_count: 3
-vote_sum: 3
+vote_count: 4
+vote_sum: 4
 zendesk_article_id: 360000335995
 zendesk_section_id: 360000034315
 ---
 
-> ### Requirements
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > -   Have a [NeSI
 >     account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
@@ -32,26 +39,32 @@ zendesk_section_id: 360000034315
 1.  Log into the [my NeSI portal](https://my.nesi.org.nz) via your
     browser.  
       
+
 2.  Click **My HPC Account** on left hand panel and then **Set
     Password** (If you are resetting your password this will read
     **Reset Password**).  
     Note your** Username.  
-    <img src="../../includes/images/authentication_factor_setup.png" alt="authentication_factor_setup.png" width="442" height="166" />  
+    <img src="assets/images/authentication_factor_setup_0.png" width="442"
+    height="166" alt="authentication_factor_setup.png" />  
     **
+
 3.  Enter and verify your new password, making sure it follows the
     [password
     policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).  
       
 
-    #### <img src="../../includes/images/SetNeSIaccountPassword.png" alt="SetNeSIaccountPassword.png" width="628" height="314" />
+    #### <img src="assets/images/SetNeSIaccountPassword_0.png" width="628"
+    height="314" alt="SetNeSIaccountPassword.png" />
 
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds  
        
-    ![change\_success.png](../../includes/images/5662974048911)
+    ![change\_success.png](assets/images/5662974048911_0_0.name_me.png)
+
 5.  Followed by an email confirmation similar to below
 
-<img src="../../includes/images/password_set_confirmation.png" alt="password_set_confirmation.png" width="440" height="285" />
+<img src="assets/images/password_set_confirmation_0_0.png" width="440"
+height="285" alt="password_set_confirmation.png" />
 
  
 
@@ -69,25 +82,19 @@ zendesk_section_id: 360000034315
     **** **  
     **
 3.   You can either enter the Old Password first and then set a new one
-    OR feel free to select **<span class="wysiwyg-color-blue">Forgot my
-    password </span>**  
-    -   -   We recommend **<span class="wysiwyg-color-blue">Forgot my
-            password </span>**option in general   
+    OR feel free to select **Forgot my password **  
+    -   -   We recommend **Forgot my password **option in general   
               
-
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  
-    1.  -   ![change\_success.png](../../includes/images/5662974048911_0.name_me)
-
+    1.  -   ![change\_success.png](assets/images/5662974048911_0_0_0.name_me.png)
 5.  Followed by an email confirmation similar to below  
        
       
 
-<img src="../../includes/images/password_set_confirmation_0.png" alt="password_set_confirmation.png" width="440" height="285" />
-
- 
-
-> ### What next?
+<img src="assets/images/password_set_confirmation_0_0_0.png" width="440"
+height="285" alt="password_set_confirmation.png" />
+!!!
 >
 > -   Set up [Second Factor
 >     Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)

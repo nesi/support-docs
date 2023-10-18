@@ -10,38 +10,33 @@ zendesk_article_id: 4563511601679
 zendesk_section_id: 360000278975
 ---
 
-*tmux* is a terminal multiplexer.  A multiplexer enables the creation
-and control of multiple terminals from a single screen.  It also allows
-the detachment of a screen to run in the background with the ability to
-re-attach and start where you left off.
 
-Here is an example of starting  a *tmux* session:
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+tmux ( terminal multiplexer) is a tool that allows creation of shell
+sessions that are detached from your terminal.
 
-    $ tmux new -s data_transfer
-    $ cd /nesi/nobackup/nesi99999/myproject
-    $ rsync -av someserver:/projectdata.tgz projectdata.tgz
-    CTRL-b d
-
-The **CTRL-b** **d** keyboard shortcut "detaches" the screen which
-allows you to logoff .  When you are ready to reattach to the session
-you login and run the following:
-
-    $ tmux attach -t data_transfer
-
-Once reattached your session will be where you left it.   You can name
-the session whatever is most appropriate, such as the task you are
-performing.  You can run as many sessions as you like and they will
-remain until you terminate the tmux session or the node is rebooted. 
-Also of note, your session will be available even if your laptop/desktop
-crashes or the network goes down.
-
- 
-
-More information can be found on the web, here are some good references:
-
-Shortcut keys and cheat sheet: <https://tmuxcheatsheet.com>
-
-Getting started Guide:
-<https://linuxize.com/post/getting-started-with-tmux/>
+<table style="height: 410px; width: 746px;">
+<tbody>
+<tr class="odd">
+<td style="width: 66px"><strong>Command</strong></td>
+<td style="width: 400.317px"><strong>Examples of use</strong></td>
+<td style="width: 416.683px"><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td rowspan="2" style="width: 66px">tmux</td>
+<td style="width: 400.317px"> </td>
+<td style="width: 416.683px">Starts a new tmux session </td>
+</tr>
+<tr class="odd">
+<td style="width: 400.317px">l</td>
+<td style="width: 416.683px"> </td>
+</tr>
+</tbody>
+</table>
 
  

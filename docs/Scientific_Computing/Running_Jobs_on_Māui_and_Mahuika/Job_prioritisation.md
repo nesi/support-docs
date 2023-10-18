@@ -10,6 +10,13 @@ zendesk_article_id: 360000201636
 zendesk_section_id: 360000030876
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Each queued job has a priority score.  Jobs start when sufficient
 resources (CPUs, GPUs, memory, licenses) are available and not already
 reserved for jobs with a higher priority.
@@ -57,19 +64,31 @@ longer wait times.
 This depends on which "allocation class" entitles your project to use
 NeSI.
 
-<table>
+<table style="margin-left: 0px; margin-right: auto;">
 <tbody>
 <tr class="odd">
+<td><strong>Project class</strong></td>
+<td><strong>Class Priority Score </strong></td>
 </tr>
 <tr class="even">
+<td>Proposal Development</td>
+<td class="wysiwyg-text-align-right">10</td>
 </tr>
 <tr class="odd">
+<td>Postgraduate</td>
+<td class="wysiwyg-text-align-right">20</td>
 </tr>
 <tr class="even">
+<td>Collaborator</td>
+<td class="wysiwyg-text-align-right">30</td>
 </tr>
 <tr class="odd">
+<td>Merit</td>
+<td class="wysiwyg-text-align-right">40</td>
 </tr>
 <tr class="even">
+<td>Commercial</td>
+<td class="wysiwyg-text-align-right">40</td>
 </tr>
 </tbody>
 </table>

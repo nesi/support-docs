@@ -10,6 +10,13 @@ zendesk_article_id: 360001075956
 zendesk_section_id: 360000040056
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Scikit-learn is a Python package providing tools for data mining, data
 analysis and machine learning. In this example, we'll show how to count
 the number of dots embedded in an image using the sckit-learn linear
@@ -26,18 +33,17 @@ following commands:
     Rscript DrawDots.R -n 10000 -r 0 -R 5 -s 123 -o train -c train.csv -w 40
     Rscript DrawDots.R -n 100 -r 0 -R 5 -s 234 -o test -c test.csv -w 40
 
-<span class="s1">The images are saved under directories train/ and
-test/, respectively. An example of image is test/img49.jpg.</span>
+The images are saved under directories train/ and test/, respectively.
+An example of image is test/img49.jpg.
 
     display test/img49.jpg
 
-<span
-class="s1"><img src="../../includes/images/img49_0.jpg" alt="img49.jpg" width="100" height="100" /></span>
+<img src="assets/images/img49_0_0_0.jpg" width="100" height="100"
+alt="img49.jpg" />
 
-<span class="s1">which shows five, partially overlapping dots. Note that
-along with the images, a comma separated values (csv) file (e.g.
-train/train.csv) containing the number of dots (0 to 5) for each image
-is also saved.</span>
+which shows five, partially overlapping dots. Note that along with the
+images, a comma separated values (csv) file (e.g. train/train.csv)
+containing the number of dots (0 to 5) for each image is also saved.
 
 ### Installing image processing software
 
@@ -88,13 +94,13 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../../includes/images/someResults_0.png)<span class="s1">(The
-purple images have no dots.) With each image the number of dots is
-displayed as well as the value inferred by the model in parentheses. The
-inferred values are to be rounded to the nearest integer. Plot titles in
-red indicate failures. Among the 100 test images, the correct number of
-dots was found in 77 percent of the cases (the accuracy will change with
-each training due to the randomness of the process). In many cases, the
-predicted number of dots is off by no more than one unit. </span>
+![someResults.png](assets/images/someResults_0_0_0.png)(The purple
+images have no dots.) With each image the number of dots is displayed as
+well as the value inferred by the model in parentheses. The inferred
+values are to be rounded to the nearest integer. Plot titles in red
+indicate failures. Among the 100 test images, the correct number of dots
+was found in 77 percent of the cases (the accuracy will change with each
+training due to the randomness of the process). In many cases, the
+predicted number of dots is off by no more than one unit. 
 
  

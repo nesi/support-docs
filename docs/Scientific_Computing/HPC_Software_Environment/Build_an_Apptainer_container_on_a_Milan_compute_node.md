@@ -10,6 +10,13 @@ zendesk_article_id: 6008779241999
 zendesk_section_id: 360000040056
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 This article describes a technique to build
 [Apptainer](https://apptainer.org/) containers using [Milan compute
 nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471), via
@@ -48,7 +55,7 @@ container:
 
     # load environment module
     module purge
-    module load Apptainer/1.1.9
+    module load Apptainer/1.2.2
 
     # recent Apptainer modules set APPTAINER_BIND, which typically breaks
     # container builds, so unset it here
@@ -61,19 +68,21 @@ container:
     setfacl -b $APPTAINER_TMPDIR
 
     # build the container
-    apptainer build --fakeroot my_container.sif my_container.def
+    apptainer build --force --fakeroot my_container.sif my_container.def
 
 Note this script will start an Slurm job for 30 minutes using 2 cores
 and 4 GB of memory to build the image. Make sure to set these resources
 correctly, some containers can take hours to build and require tens of
 GB of memory.
 
+Option --force will rebuild my\_container.sif even if it already is in
+the directory.
+
 More information about how to submit a Slurm job is available in the
 [Submitting your first
 job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396) support
 page.
-
-> ### Build environment variables
+!!!
 >
 > To build containers, you need to ensure that Apptainer has enough
 > storage space to create intermediate files. It also requires a cache
@@ -102,8 +111,7 @@ your Apptainer definition file
 
 it is likely due to an upstream issue (e.g. bad image on Dockerhub). In
 this case, try an older image version or a different base image.
-
-> ### Other limitations
+!!!
 >
 > This method, using fakeroot, is known to **not** work for all types of
 > Apptainer/Singularity containers.

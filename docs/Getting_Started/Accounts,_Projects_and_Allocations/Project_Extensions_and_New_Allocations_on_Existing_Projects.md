@@ -10,6 +10,13 @@ zendesk_article_id: 360000202196
 zendesk_section_id: 360000196195
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 NeSI recognises that research programmes often continue over several
 years before coming to an end. To reduce administrative overhead, we
 allow most project teams to extend their projects rather than applying

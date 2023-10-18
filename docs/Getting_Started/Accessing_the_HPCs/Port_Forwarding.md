@@ -10,7 +10,14 @@ zendesk_article_id: 360001523916
 zendesk_section_id: 360000034315
 ---
 
-> ### Requirements
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > -   Have your [connection to the NeSI
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
@@ -37,8 +44,7 @@ described
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
-
-> ### Note
+!!!
 >
 > The following examples use aliases as set up in [standard terminal
 > setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
@@ -68,8 +74,7 @@ However if you close this terminal session the port forwarding will end.
 If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure. 
-
-> ### Note
+!!!
 >
 > Your local port and remote port do not have to be different numbers.
 > It is generally easier to use the same number for both.
@@ -108,8 +113,7 @@ isn't a requirement, but it makes things easier to remember.
 
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
-
-> ### Note
+!!!
 >
 > -   If you get a error message
 >
@@ -128,12 +132,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](../../includes/images/360004708596)
+![mceclip0.png](assets/images/360004708596_0.name_me.png)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](../../includes/images/360004708616)
+![mceclip1.png](assets/images/360004708616_0.name_me.png)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -141,12 +145,12 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](../../includes/images/360004580035)
+![mobakey.png](assets/images/360004580035_0.name_me.png)
 
-<span class="wysiwyg-color-green110">■</span> local port  
-<span class="wysiwyg-color-orange90">■</span> remote port  
-<span class="wysiwyg-color-red90">■</span> must match  
-<span class="wysiwyg-color-pink80">■</span> doesn't matter
+■ local port  
+■ remote port  
+■ must match  
+■ doesn't matter
 
  
 
@@ -200,8 +204,7 @@ An example Slurm script:
     ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
     <some process using port 6676>
-
-> ### What Next?
+!!!
 >
 > -   Using
 >     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on

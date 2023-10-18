@@ -10,14 +10,20 @@ zendesk_article_id: 7348919239695
 zendesk_section_id: 7348891753487
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 NeSI has a range of options for research institutions and independent
 researchers to access our services to build your research capabilities.
 
-Subscribing to NeSI's services <span
-class="fabric-editor-annotation">provides you with:</span>
+Subscribing to NeSI's services provides you with:
 
 -   Managed entitlements on NeSI's HPC platform for your research
-    projects and programmes. This ../../../ access to:
+    projects and programmes. This includes access to:
 
     -   high-capacity CPUs, GPUs and high memory nodes
 

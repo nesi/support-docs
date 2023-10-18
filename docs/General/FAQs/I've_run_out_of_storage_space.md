@@ -11,6 +11,13 @@ zendesk_article_id: 360001125996
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 There are two tracked resources in the NeSI filesystem, *disk space* and
 *inodes (number of files) *.
 
@@ -23,8 +30,7 @@ Current file-count and disk space can be found using `nn_storage_quota`.
     home_user123             20G    1.957G    9.79%      92160     21052    22.84%
     project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
     nobackup_nesi99999              6.833T            10000000    2691383   26.91%
-
-> ### Note
+!!!
 >
 > There is a delay between making changes to a filesystem and seeing the
 > change in `nn_storage_quota`, immediate file count and disk space can

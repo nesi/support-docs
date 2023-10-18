@@ -17,6 +17,19 @@ prereq: |
 ---
 
 
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
+Nearline Nearline Nearline Nearline
+
+ 
 
 NeSI's Nearline service allows you to store your data on our
 hierarchical system, which consists of a staging area (disk) connected
@@ -152,9 +165,9 @@ Data can be copied to Nearline using the `nlput` command. The syntax is:
     nlput [ --nowait ] <projectID> { <src_dir> | <file_list> }
 
 The source directory or file list needs to be located under
-`/nesi/project/` or `/nesi/nobackup/`and specified as such. 
-
-> ### Note
+`/nesi/`**`project`**`/` or `/nesi/`**`nobackup`**`/`and specified as
+such. 
+!!!
 >
 > The following will not work:
 >
@@ -166,9 +179,8 @@ The source directory or file list needs to be located under
 >     nlput nesi12345 /nesi/project/nesi12345/some_directory
 
 The data will be mapped into the same directory structure under
-`/nesi/nearline/` (see below).
-
-> ### Warning
+`/nesi/`**`nearline`**`/` (see below).
+!!!
 >
 > Please ensure your file or directory names do not contain spaces,
 > non-standard characters or symbols. This may cause issues when
@@ -202,8 +214,7 @@ list, the following additional permission restrictions apply:
 The existing directory structure starting after
 `/nesi/project/<projectID>/` or `/nesi/nobackup/<projectID>/` will be
 mapped onto `/nesi/nearline/<projectID>/`
-
-> ### Warning
+!!!
 >
 > Files and directories are checked for existence and only new files are
 > transferred to Nearline. **Files already on Nearline will not be
@@ -221,8 +232,7 @@ names. Single files can only be migrated using a file list containing
 the full path of the file to be transferred.
 
 ## Put - directory
-
-> ### Warning
+!!!
 >
 > If you try to upload to Nearline a path containing spaces, especially
 > multiple consecutive spaces, you will get some very unexpected
@@ -246,20 +256,19 @@ location. As an example:
 
 will copy all data within the `Results` directory into
 
-`/nesi/nearline/nesi12345/To/Archive/Results/`.
-
-> ### Warning
+`/nesi/nearline/nesi12345/`**`To/Archive/Results/`**.
+!!!
 >
-> If you put `/nesi/project/nesi12345/To/Archive/Results/` on Nearline
-> as well as `/nesi/nobackup/nesi12345/To/Archive/Results/`, the
-> contents of both source locations (`project` and `nobackup`) will be
-> merged into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
+> If you put `/nesi/`**`project`**`/nesi12345/To/Archive/Results/` on
+> Nearline as well as
+> `/nesi/`**`nobackup`**`/nesi12345/To/Archive/Results/`, the contents
+> of both source locations (`project` and `nobackup`) will be merged
+> into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
 > `/nesi/nearline/nesi12345/`, files with the same name and path will be
 > skipped.
 
 ## Put - file list
-
-> ### Warning
+!!!
 >
 > The file list must be located within `/nesi/project` or
 > `/nesi/nobackup`. Any other location will cause obscure errors and
@@ -303,8 +312,7 @@ version of data from nobackup or project:
     Nearline version is out of date), remove the old files on Nearline
     using `nlpurge`.
 3.  Copy the updated files to the Nearline file system using `nlput`.
-
-> ### Warning
+!!!
 >
 > For technical reasons, files (data and metadata) and directory
 > structures on Nearline cannot be safely changed once present, even by
@@ -332,8 +340,7 @@ Similar to `nlput` (see above), nlget accepts a Nearline** directory**
 `src_dir` **(no single files on Nearline accepted)** or a **local file
 list** `file_list`, defining the source of the data to be retrieved from
 Nearline.
-
-> ### Warnings
+!!!
 >
 > -   The local file list must be located within `/nesi/project` or
 >     `/nesi/nobackup`. Any other location will be rejected.
@@ -356,12 +363,11 @@ the specified data written into it. For example,
     nlget nesi00000 /nesi/nearline/nesi00000/dir/to/results/ /nesi/nobackup/nesi00000
 
 will create the directory structure
-`/nesi/nobackup/nesi00000/nesi00000/dir/to/results/` if that directory
-structure does not already exist, and copy the data within the `Results`
-directory into it.  Note that the output pathe will include the project
-root in the path.
-
-> ### Warning
+`/nesi/nobackup/nesi00000/nesi00000/`**`dir/to/results/`** if that
+directory structure does not already exist, and copy the data within the
+`Results` directory into it.  Note that the output pathe will include
+the project root in the path.
+!!!
 >
 > Any given file **will not be retrieved** if a file of the same name
 > already exists in the destination directory. If you wish to retrieve a
@@ -391,8 +397,7 @@ If you are instead deleting the entries of a file list, the project code
 is compulsory, and moreover all entries in the file list must denote
 files within (or supposed to be within) the chosen project's Nearline
 directory.
-
-> ### Warnings
+!!!
 >
 > -   If a file list is used, it must be located within `/nesi/project`
 >     or `/nesi/nobackup` and referred to by its full path starting with
@@ -478,7 +483,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../../includes/images/360002703556)
+![librarian\_get\_put.jpeg](assets/images/360002703556_0.name_me.png)
 
 # Underlying mechanism
 
@@ -489,11 +494,10 @@ is important to know that **even if you cancel a client process, the
 corresponding backend process remains scheduled or running** until
 finished.
 
-<span class="inline-comment-marker">The process of what data goes into
-tape and when is automated</span>, and is not something you will have
-control over. The service is designed to optimise interaction with the
-Nearline filesystem and avoid problem workloads for the benefit of all
-users.
+The process of what data goes into tape and when is automated, and is
+not something you will have control over. The service is designed to
+optimise interaction with the Nearline filesystem and avoid problem
+workloads for the benefit of all users.
 
 If your files are on tape, it will take time to retrieve them. Access to
 tape readers is on a first come first served basis, and the amount of
@@ -502,8 +506,7 @@ guarantee access to your files within any particular timeframe, and
 indeed wait times could be hours or even in some cases more than a day.
 
 # Known issues
-
-> ### Retrievals
+!!!
 >
 > Some users of Nearline have reported that attempts to retrieve files
 > from tape using `nlget` (see below) will not retrieve all files.
@@ -535,9 +538,9 @@ indeed wait times could be hours or even in some cases more than a day.
 # Support contact
 
 Please **send feedback** about your user experience at
-<a href="https://support.nesi.org.nz/hc/requests/new" class="uri external-link">https://support.nesi.org.nz/hc/requests/new</a>,
-which may include functionality issues, intuitive or counter-intuitive
-behaviours, behaviours or features that you like, suggestions for
-improvements, transfers taking too long, etc.
+<https://support.nesi.org.nz/hc/requests/new>, which may include
+functionality issues, intuitive or counter-intuitive behaviours,
+behaviours or features that you like, suggestions for improvements,
+transfers taking too long, etc.
 
 We welcome feedback from our users.

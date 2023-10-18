@@ -10,6 +10,13 @@ zendesk_article_id: 360000625515
 zendesk_section_id: 360000189696
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ## Option 2: PuTTY (+WinSCP)
 
 [Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
@@ -22,25 +29,24 @@ zendesk_section_id: 360000189696
 
  
 
- ![putty1.png](../../includes/images/putty1.png)
+ ![putty1.png](assets/images/putty1_0.png)
 
 2\. Open Connection &gt; Data and enter in your username under
 'Auto-Login username. 
 
-![putty2.png](../../includes/images/putty2.png)
+![putty2.png](assets/images/putty2_0.png)
 
  
 
 3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
 
-![putty4.png](../../includes/images/putty4.png)
+![putty4.png](assets/images/putty4_0.png)
 
 4\. Do this
 
-<span class="wysiwyg-color-red">SCRAP THAT, THOUGHT IT WORKED BUT IT
-DIDN'T</span>
+SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
-![putty5.png](../../includes/images/putty5.png)
+![putty5.png](assets/images/putty5_0.png)
 
  
 
@@ -48,4 +54,4 @@ DIDN'T</span>
 
 Save session
 
-![putty3.png](../../includes/images/putty3.png)
+![putty3.png](assets/images/putty3_0.png)

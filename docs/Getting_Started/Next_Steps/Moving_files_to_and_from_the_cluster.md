@@ -19,7 +19,14 @@ zendesk_article_id: 360000578455
 zendesk_section_id: 360000189716
 ---
 
-> ### Requirements
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -42,8 +49,7 @@ Move a file from your local machine to Mahuika.
 Move a file from Mahuika to your local machine.
 
     scp mahuika:<path/filename> <path/filename>
-
-> ### Note
+!!!
 >
 > -   This will only work if you have set up aliases as described in
 >     [Terminal
@@ -69,14 +75,13 @@ the cluster and your ssh config file is set up as described
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
-to with `sftp://mahuika`. (<span class="kbd">ctrl</span> + <span
-class="kbd">L</span> opens address bar)
+to with `sftp://mahuika`. (ctrl + L opens address bar)
 
 This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../../includes/images/mceclip0.png)
+![mceclip0.png](assets/images/mceclip0_0.png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -89,7 +94,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../../includes/images/2019-01-07_SCP_in_MobaXTerm.png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](assets/images/2019-01-07_SCP_in_MobaXTerm_0.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided

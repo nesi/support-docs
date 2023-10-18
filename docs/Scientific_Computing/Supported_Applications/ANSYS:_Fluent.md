@@ -10,4 +10,11 @@ zendesk_article_id: 360000723196
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 https://www.sharcnet.ca/Software/Fluent6/pdf/tuilist/fltui.pdf

@@ -10,9 +10,16 @@ zendesk_article_id: 5286956022159
 zendesk_section_id: 360000030876
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
  
 
-# Differences from other Mahuika compute nodes<span class="wysiwyg-font-size-x-large"></span>
+# Differences from other Mahuika compute nodes
 
 ## **Hardware**
 
@@ -27,12 +34,11 @@ requested by a job.
   
 AMD Milan CPU overview, each node has two of these:
 
-<img src="../../includes/images/milan.png" alt="milan.png" width="377" height="395" />
+<img src="assets/images/milan_0.png" width="377" height="395"
+alt="milan.png" />
 
-<span class="wysiwyg-font-size-small">**AMD-EPYC-Milan-architecture**
-from
-[HPCwire](https://www.hpcwire.com/2021/03/15/amd-launches-epyc-milan-with-19-skus-for-hpc-enterprise-and-hyperscale/#foobox-4/0/AMD-Epyc-Milan-architecture.png)</span><span
-class="wysiwyg-font-size-small"></span>
+**AMD-EPYC-Milan-architecture** from
+[HPCwire](https://www.hpcwire.com/2021/03/15/amd-launches-epyc-milan-with-19-skus-for-hpc-enterprise-and-hyperscale/#foobox-4/0/AMD-Epyc-Milan-architecture.png)
 
   
 An overview of the AMD Milan CPUs can be found on the [AMD
@@ -46,7 +52,7 @@ approximately 1800 MB per CPU.  
 Only 30 nodes are available so far, but that number will eventually
 increase to 64, eight of which will have double the memory.
 
-## **<span class="wysiwyg-font-size-large">Operating System</span>**
+## **Operating System**
 
 The existing Mahuika compute nodes use Linux Centos 7.4 while Mahuika
 Extension use Rocky 8.5.  These are closely related Linux distributions.
@@ -74,7 +80,7 @@ libraries, but then that would be unlikely to work on the old nodes.
 
 In the longer term all Mahuika nodes will be upgraded to Rocky 8.
 
-## **<span class="wysiwyg-font-size-large">Older Intel and Cray software</span>**
+## **Older Intel and Cray software**
 
 The directories `/cm` and `/opt/cray` contain software which was
 installed on Mahuika when we purchased it rather than installed by the
@@ -86,7 +92,7 @@ This affects our pre-2020 toolchains such as *intel/2018b*, but we
 should have newer versions of such software already installed in most
 cases.
 
-## <span class="wysiwyg-font-size-large">**Intel MKL performance**</span>
+## **Intel MKL performance**
 
 In many ways, Intel's MKL is the best implementation of the BLAS and
 LAPACK libraries to which we have access, which is why we use it in our
@@ -107,13 +113,13 @@ BLIS. If you try them then please let us know if they work better than
 MKL for your application.  BLIS is expected to perform well as a BLAS
 alternative but not match MKL's LAPACK performance.  
 
-## <span class="wysiwyg-font-size-large">**Do I need to recompile my code?**</span>
+## **Do I need to recompile my code?**
 
 Except for possible missing shared libraries (see above), you should not
 need to recompile your code. Please let us know if you encounter any
 issues not listed above.
 
-## <span class="wysiwyg-font-size-large">**AOCC (AMD Optimizing C/C++ and Fortran Compilers)**</span>
+## **AOCC (AMD Optimizing C/C++ and Fortran Compilers)**
 
 AMD provides a compiler based on clang (C/C++) and flang (Fortran) which
 might perform better on their hardware.  We have installed it but not
@@ -126,7 +132,7 @@ For more information on AOCC compiler suite please, visit [AMD
 Optimizing C/C++ and Fortran Compilers
 (AOCC)](https://developer.amd.com/amd-aocc/)
 
-## <span class="wysiwyg-font-size-large">**Network**</span>
+## **Network**
 
 Access to the new nodes is currently only possible via the Slurm
 `sbatch` and `srun` commands. There is no ssh access, not even to the
@@ -138,12 +144,9 @@ Dask or PEST, will generally only work if you use the InfiniBand address
 of the compute node, eg: *wmc012.ib.hpcf.nesi.org.nz*. Networking
 configuration is expected to be addressed in the future.  
   
-<span class="wysiwyg-font-size-large"></span>
 
-<span class="wysiwyg-font-size-large"></span>**<span
-class="wysiwyg-font-size-x-large">Job  
-</span><span class="wysiwyg-font-size-x-large"></span>**<span
-class="wysiwyg-font-size-x-large"></span>
+**Job  
+**
 
 In order to use the Mahuika Extension nodes, jobs are submitted in the
 same way as currently from the Mahuika login node with the following
@@ -172,7 +175,7 @@ Resource allocation limits:   
     if you require additional resources for jobs that are best suited to
     the Mahuika Extension.
 
-# **<span class="wysiwyg-font-size-x-large">Notes</span><span class="wysiwyg-font-size-large"> </span>**
+# **Notes **
 
 -   **More node**s will be added in the future.
 -   Mahuika Extension is not a Cray system and the CPE differs from that

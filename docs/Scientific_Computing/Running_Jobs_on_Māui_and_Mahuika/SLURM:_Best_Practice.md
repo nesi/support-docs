@@ -10,6 +10,13 @@ zendesk_article_id: 360000705196
 zendesk_section_id: 360000030876
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ### Bash Header
 
 We recommend using `#!/bin/bash -e` instead of plain `#!/bin/bash`, so
@@ -80,7 +87,7 @@ job array in a single command)
 
 A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000205035).
+[here](https://support.nesi.org.nz/hc/en-gb/articles/360000743536).
 
 ### Cross machine submission
 

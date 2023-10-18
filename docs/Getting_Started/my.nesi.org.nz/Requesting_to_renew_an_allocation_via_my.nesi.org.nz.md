@@ -11,20 +11,28 @@ zendesk_article_id: 4600222769295
 zendesk_section_id: 360001059296
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ## How to raise a request using my.nesi.org.nz?
 
 1.  Login to <https://my.nesi.org.nz/projects/list> and select a project
-    from the list.
-2.  From the green (middle) panel click the links menu and select "More
-    Resource Details"  
-    <img src="../../includes/images/mceclip0_4.png" alt="mceclip0.png" width="416" height="263" />
-3.  Click the Plus button icon 'action' next to the compute allocation
+    from the list.  
+    ![Screenshot 2023-08-07 at 15-21-11
+    my.nesi.png](assets/images/7614368934415_0.name_me.png)
+2.  Click the Plus button icon 'action' next to the compute allocation
     line item   
-    <img src="../../includes/images/mceclip1.png" alt="mceclip1.png" width="528" height="186" />
-4.  Verify the preset values and add a comment in case you update
+    ![Screenshot 2023-08-07 at 15-21-51
+    my.nesi.png](assets/images/7614368936079_0.name_me.png)
+3.  Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'   
-    <img src="../../includes/images/mceclip2.png" alt="mceclip2.png" width="636" height="505" />
+    <img src="assets/images/4600269021199_0.name_me.png" width="636"
+    height="505" alt="mceclip2.png" />
 
 ### Can I request any allocation size?
 

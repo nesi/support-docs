@@ -10,7 +10,14 @@ zendesk_article_id: 360000929935
 zendesk_section_id: 360000189696
 ---
 
-> ### Requirements
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > -   Have a [NeSI
 >     account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
@@ -59,8 +66,7 @@ The login process can be simplified with a few configurations.
            ControlMaster auto
            ControlPersist 1
 
-    Close and save with <span class="kbd">ctrl x</span>, <span
-    class="kbd">y</span>, <span class="kbd">Enter</span>
+    Close and save with ctrl x, y, Enter
 
 2.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.

@@ -12,6 +12,13 @@ zendesk_article_id: 4404255007503
 zendesk_section_id: 360000502675
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 *Released Wednesday 4 August 2021.*
 
 This is a minor release incorporating bug fixes and improvements.

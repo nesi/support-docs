@@ -10,11 +10,16 @@ zendesk_article_id: 360001244856
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 This article targets researchers who need to download Climate Model
 Intercomparison Project Phase 6 (CMIP6) datasets from any of the Earth
-System Grid Federation
-(<a href="http://pcmdi.llnl.gov/" class="reference external">ESGF</a>)
-archives. See
+System Grid Federation ([ESGF](http://pcmdi.llnl.gov/)) archives. See
 [synda](https://support.nesi.org.nz/hc/en-gb/articles/360001208256-SYNDA)
 if you need to search any ESGF archive for a specific dataset. You can
 also download data with "synda"; however, using globus will be many
@@ -47,17 +52,27 @@ First you will need to select some dataset by visiting the [CMIP6 search
 interface](https://esgf-node.llnl.gov/search/cmip6/). You can keep most
 default values. In this example we select only:
 
-<table>
+<table style="height: 149px;" width="471">
 <tbody>
 <tr class="odd">
+<td style="width: 243px">Experiment ID</td>
+<td style="width: 221px">historical</td>
 </tr>
 <tr class="even">
+<td style="width: 243px">Frequency</td>
+<td style="width: 221px">mon</td>
 </tr>
 <tr class="odd">
+<td style="width: 243px">Realm</td>
+<td style="width: 221px">ocean</td>
 </tr>
 <tr class="even">
+<td style="width: 243px">Variable</td>
+<td style="width: 221px">tos</td>
 </tr>
 <tr class="odd">
+<td style="width: 243px">Data Node</td>
+<td style="width: 221px"><span>aims3.llnl.gov</span></td>
 </tr>
 </tbody>
 </table>
@@ -92,28 +107,27 @@ Next, you'll need to login to globus
 
 This will print an URL, something like
 
-<span
-class="s1">https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type=offline&state=\_default&redirect\_uri=https%3A%2F%2Fauth.globus.org%2Fv2%2Fweb%2Fauth-code&response\_type=code&client\_id=aba933b6-848b-4032-8d47-f41d0d2796ce&scope=openid+profile+email+urn%3Aglobus%3Aauth%3Ascope%3Aauth.globus.org%3Aview\_identity\_set+urn%3Aglobus%3Aauth%3Ascope%3Atransfer.api.globus.org%3Aall</span>
+https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type=offline&state=\_default&redirect\_uri=https%3A%2F%2Fauth.globus.org%2Fv2%2Fweb%2Fauth-code&response\_type=code&client\_id=aba933b6-848b-4032-8d47-f41d0d2796ce&scope=openid+profile+email+urn%3Aglobus%3Aauth%3Ascope%3Aauth.globus.org%3Aview\_identity\_set+urn%3Aglobus%3Aauth%3Ascope%3Atransfer.api.globus.org%3Aall
 
-<span class="s1">Point your web browser to the above URL (which will be
-different for you). </span>
+Point your web browser to the above URL (which will be different for
+you).
 
-<span class="s1">![globus1.png](../../includes/images/globus1.png)</span>
+![globus1.png](assets/images/globus1_0.png)
 
  
 
-<span class="s1">Select Globus Id and say "Allow". </span>
+Select Globus Id and say "Allow".
 
-<span class="s1">![globus2.png](../../includes/images/globus2.png)</span>
+![globus2.png](assets/images/globus2_0.png)
 
-<span class="s1">You will then get a code, </span>
+You will then get a code,
 
-<span class="s1">![globus3.png](../../includes/images/globus3.png)</span>
+![globus3.png](assets/images/globus3_0.png)
 
-<span class="s1">which you can paste into your terminal, eg</span>
+which you can paste into your terminal, eg
 
-<span class="s1">Enter the resulting Authorization Code, here:
-4KGskqiZXHW36llJWUvDEUZArfQlNz</span>
+Enter the resulting Authorization Code, here:
+4KGskqiZXHW36llJWUvDEUZArfQlNz
 
 ### 2. Find the endpoint UUID for NeSI
 
@@ -136,10 +150,10 @@ endpoint. If so then go to step 4 and repeat 3.
 
 If successful, you should see something like
 
-<span class="s1">Message: The transfer has been accepted and a task has
-been created and queued for execution</span>
+Message: The transfer has been accepted and a task has been created and
+queued for execution
 
-<span class="s1">Task ID: ed4ce06c-04f6-11ea-be98-02fcc9cdd752</span>
+Task ID: ed4ce06c-04f6-11ea-be98-02fcc9cdd752
 
 You can then check progress of the download by visiting globus.org and
 clicking on "Activity". 
@@ -148,16 +162,16 @@ clicking on "Activity". 
 
  This step is required if you got a message such as:
 
-<span class="s1">The endpoint could not be auto-activated and must be
-activated before it can be used.</span>
+The endpoint could not be auto-activated and must be activated before it
+can be used.
 
-<span class="s1">This endpoint supports the following activation
-methods: web, delegate proxy, myproxy</span>
+This endpoint supports the following activation methods: web, delegate
+proxy, myproxy
 
  
 
-<span class="s1">'globus endpoint activate --myproxy
-415a6320-e49c-11e5-9798-22000b9da45e'</span>
+'globus endpoint activate --myproxy
+415a6320-e49c-11e5-9798-22000b9da45e'
 
  
 

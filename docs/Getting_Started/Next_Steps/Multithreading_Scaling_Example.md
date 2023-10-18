@@ -10,6 +10,13 @@ zendesk_article_id: 360001173895
 zendesk_section_id: 360000189716
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 In the example below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
 these examples are applicable across software applications. You do not
@@ -55,8 +62,7 @@ Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated
-guess.<span class="wysiwyg-color-red">  
-</span>
+guess.  
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
@@ -125,6 +131,8 @@ understand what is happening:
 <table>
 <tbody>
 <tr class="odd">
+<td><img src="assets/images/blobid2_0_0_0.png" alt="Plot1" /></td>
+<td><img src="assets/images/blobid3_0_0_0.png" alt="Plot2" /></td>
 </tr>
 </tbody>
 </table>
@@ -183,6 +191,10 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 <table>
 <tbody>
 <tr class="odd">
+<td><img src="assets/images/6197221642383_0.name_me.png"
+alt="TvC-MT.png" /></td>
+<td><img src="assets/images/6197207741967_0.name_me.png"
+alt="TvL2C-MT.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -205,7 +217,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="../../includes/images/blobid1_0.png" width="469" height="395" />
+<img src="assets/images/blobid1_0_0_0.png" width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

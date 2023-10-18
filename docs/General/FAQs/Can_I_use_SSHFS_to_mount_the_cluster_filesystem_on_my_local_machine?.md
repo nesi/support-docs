@@ -4,12 +4,19 @@ hidden: false
 label_names: []
 position: 0
 title: Can I use SSHFS to mount the cluster filesystem on my local machine?
-vote_count: 4
-vote_sum: 2
+vote_count: 5
+vote_sum: 3
 zendesk_article_id: 360000621135
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+ !!! Info
+     This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
 filesystem on your local machine. SSHFS relies on SSH underneath, so you
 should follow the "Recommended logon procedure" instructions
@@ -53,3 +60,7 @@ and give the volume a sensible name:
 To unmount the directory on MacOS, either eject from Finder or run:
 
     umount ~/mahuika-home
+!!!
+>
+> Newer MacOS does not come with SSHFS pre installed. You will have to
+> install FUSE as SSHFS from [here](https://osxfuse.github.io/).
