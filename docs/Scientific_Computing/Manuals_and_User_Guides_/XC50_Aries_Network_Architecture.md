@@ -23,8 +23,8 @@ the backplane. On Māui, this implies each chassis contains 64 nodes, or
 2,560 Skylake cores. There are 3 chassis in an XC50 cabinet, and two
 XC50 cabinets are an Electrical "group". Māui has 1.5 groups.
 
-<img src="assets/images/UPM_html_2d91e9cdd34d272d_0.gif" width="298"
-height="263" alt="UPM_html_2d91e9cdd34d272d.gif" />
+<img src="UPM_html_2d91e9cdd34d272d_0.gif" width="298" height="263"
+alt="UPM_html_2d91e9cdd34d272d.gif" />
 
 The performance characteristics are:
 

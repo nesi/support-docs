@@ -480,7 +480,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](assets/images/360002703556_0.name_me.png)
+![librarian\_get\_put.jpeg](360002703556_0.name_me.png)
 
 # Underlying mechanism
 

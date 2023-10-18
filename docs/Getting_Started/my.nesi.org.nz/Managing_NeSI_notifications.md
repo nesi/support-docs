@@ -21,4 +21,4 @@ zendesk_section_id: 360001059296
 
  
 
-![mceclip0.png](assets/images/mceclip0_0_0_0_0_0_0_0.png)
+![mceclip0.png](mceclip0_0_0_0_0_0_0_0.png)
