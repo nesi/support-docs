@@ -10,6 +10,13 @@ zendesk_article_id: 360004065335
 zendesk_section_id: 360000224835
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 See <https://www.nesi.org.nz/nesi-privacy-policy> for the current
 version of the NeSI Privacy Policy.  
   

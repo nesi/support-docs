@@ -10,6 +10,13 @@ zendesk_article_id: 360001176756
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 You can get the current status of all nodes on a cluster using the
 command `sinfo`, you will get a printout like the following. 
 
@@ -41,19 +48,37 @@ nodes.
 
 The most common node states you are likely to see are:
 
-<table>
+<table style="height: 193px; width: 691px;">
 <tbody>
 <tr class="odd">
+<td style="width: 148px"><code>idle</code></td>
+<td style="width: 537px">All CPUs on this node are unallocated and
+available for use.</td>
 </tr>
 <tr class="even">
+<td style="width: 148px"><code>allocated</code></td>
+<td style="width: 537px">All CPUs on this node are currently
+allocated.</td>
 </tr>
 <tr class="odd">
+<td style="width: 148px"><code>mixed</code></td>
+<td style="width: 537px">Some CPUs on this node are unallocated, smaller
+jobs are likely to land here.</td>
 </tr>
 <tr class="even">
+<td style="width: 148px"><code>down</code></td>
+<td style="width: 537px">The node is unavailable for use</td>
 </tr>
 <tr class="odd">
+<td style="width: 148px"><code>reserved</code></td>
+<td style="width: 537px">This node has been reserved, and is only
+available for some users (in the case of the igpu partition, please
+contact NeSI support if you wish to use it).</td>
 </tr>
 <tr class="even">
+<td style="width: 148px"><code>draining</code></td>
+<td style="width: 537px">Jobs are currently running on this node, but is
+not available for new jobs.</td>
 </tr>
 </tbody>
 </table>
@@ -63,6 +88,6 @@ A full list of node states can be found
 
 If you are interested in the state of one partition in particular you
 may want to use the command `squeue -p <partition>` to get the current
-queue of the partition `<partition>`
+queue of the partition `<partition> `
 
  

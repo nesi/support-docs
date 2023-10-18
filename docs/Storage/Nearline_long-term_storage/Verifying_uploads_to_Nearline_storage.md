@@ -10,14 +10,20 @@ zendesk_article_id: 360001482516
 zendesk_section_id: 360000042255
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Our [Long-Term Storage
 Service](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) is
 currently in an Early Access phase, and we encourage researchers using
 the service to verify their data before deleting it from the project
 directory (persistent storage) or nobackup directory (temporary
 storage).
-
-> ### Service Status
+!!!
 >
 > The verification options outlined below are intended to support the
 > Early Access phase of Nearline development. Verification options may
@@ -27,10 +33,10 @@ storage).
 >
 > Your feedback on which verification options you think are necessary
 > will help us decide on future directions for the Nearline service.
-> Please
-> <a href="https://support.nesi.org.nz/hc/requests/new" class="external-link">contact our support team</a>
-> to request verification or to offer suggestions regarding this or any
-> other aspect of our Nearline service.
+> Please [contact our support
+> team](https://support.nesi.org.nz/hc/requests/new) to request
+> verification or to offer suggestions regarding this or any other
+> aspect of our Nearline service.
 
 There are several options for verification, depending on the level of
 assurance you require.
@@ -42,8 +48,7 @@ of `nljobstatus`. If all the Nearline job IDs associated with movement
 of data to Nearline (i.e. `nlput` commands)
 report `job done successfully`, that gives you a basic level of
 confidence that the files were in fact copied over to nearline.
-
-> ### Warning
+!!!
 >
 > The above check is reliable only if *all* `nlput` commands were
 > concerned solely with uploading new files to nearline. Because of the
@@ -76,8 +81,7 @@ times, sizes and file paths. If there are any differences, the lists
 will be kept and you will be invited to compare the lists against each
 other, which you can do using a comparison program such as `diff` or
 `vimdiff`.
-
-> ### Warning
+!!!
 >
 > The above check is useful only if the corresponding files in
 > `/nesi/project` and/or `/nesi/nobackup` have not been modified or
@@ -95,8 +99,7 @@ comparing the checksums to the corresponding original files in
 `/nesi/project` or `/nesi/nobackup`. If the checksums come out
 identical, it is virtually certain that the files contain the same data,
 even if their modification dates and times are reported differently.
-
-> ### Warning
+!!!
 >
 > The above check is reliable only if the corresponding file in
 > `/nesi/project` and/or `/nesi/nobackup` has not been modified since it

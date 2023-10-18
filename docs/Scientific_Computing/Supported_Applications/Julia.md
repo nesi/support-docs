@@ -4,12 +4,19 @@ hidden: false
 label_names: []
 position: 32
 title: Julia
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 360001175895
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Julia is a flexible dynamic language, appropriate for scientific and
 numerical computing, with performance comparable to traditional
 statically-typed languages. The Julia home page is
@@ -84,8 +91,7 @@ using the command line, but the commands are the same within a script.
     `DEPOT_PATH`. The depot path is a series of directories that will be
     searched, in order, for the package that you wish to install and its
     dependencies. Clear the depot path.
-
-    > ### Warning
+!!!
     >
     > It is possible for a package to be installed somewhere on
     > `DEPOT_PATH`, but not compiled. If this happens, and the package
@@ -101,8 +107,7 @@ using the command line, but the commands are the same within a script.
     path.
 
         julia> push!(DEPOT_PATH, "/nesi/project/nesi12345/julia")
-
-    > ### Tip
+!!!
     >
     > While a conventional personal Julia package directory is
     > `/home/joe.bloggs/.julia` or similar, there is no reason for the
@@ -149,8 +154,7 @@ There are several ways to add a directory to `LOAD_PATH`, but almost
 certainly the easiest is to do the following in your environment:
 
     $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
-
-> ### Tip
+!!!
 >
 > By prepending the directory to `JULIA_LOAD_PATH` instead of appending
 > it, you ensure that your project's versions of Julia packages are used
@@ -161,8 +165,7 @@ certainly the easiest is to do the following in your environment:
 > instead:
 >
 >     $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
-
-> ### Tip
+!!!
 >
 > To revert to the default load path, just unset `JULIA_LOAD_PATH`:
 >

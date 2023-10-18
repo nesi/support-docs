@@ -10,6 +10,13 @@ zendesk_article_id: 360001014876
 zendesk_section_id: 360000030876
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Fair Share is an alternative to a conventional ageing model.
 
 Under conventional ageing, your allocation would be split up into

@@ -10,6 +10,13 @@ zendesk_article_id: 360001162856
 zendesk_section_id: 360000033936
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 The automatic cleaning feature is a programme of regular deletion of
 selected files from project directories in our nobackup file system. We
 do this to optimise the availability of this file system for active
@@ -24,8 +31,7 @@ Files are deleted if they meet **all** of the following criteria:
 -   The file was identified as a candidate for deletion two weeks
     previously, and as such is listed in a the project's
     nobackup `.policy` directory.
-
-> ### Tip
+!!!
 >
 > You can get a list of files marked for deletion with the command
 > `nn_doomed_list`.
@@ -52,14 +58,15 @@ The general process will follow a schedule as follows:
 
 -   **Notify** (at 106 days), then two weeks later **Delete** (at 120
     days).
+
 -   Every fortnight on Tuesday morning, we will be reviewing files
     stored in the nobackup filesystem and identifying candidates for
     expiry.
+
 -   Project teams will be notified by email if they have file candidates
     for deletion. Emails will be sent two weeks in advance of any
     deletion taking place.
-
-    > ### Warning
+!!!
     >
     > Due to the nature of email, we cannot guarantee that any
     > particular email message will be successfully delivered and
@@ -85,8 +92,7 @@ team members are able to view the contents of `.policy` (but not delete
 or modify those contents). The gzip compressed filelist can be viewed
 and searched with the `zless` and `zgrep` commands respectively, e.g.,
 `zless /nesi/nobackup/nesi12345/.policy/to_delete/<date>.filelist.gz`.
-
-> ### Warning
+!!!
 >
 > Objects other than files, such as directories and symbolic links, are
 > not deleted under this policy, even if at deletion time they are
@@ -125,8 +131,7 @@ keep beyond the scheduled expiry date, you have four options:
 -   Note: Accessing (Open/Close and Open/Save) or Moving (\`mv\`) does
     not update the timestamp of the file. Copying (\`cp\`) does create a
     new timestamped file.  
-
-    > ### Warning
+!!!
     >
     > Doing this for large numbers of files, or for files that together
     > take up a large amount of disk space, in your project's nobackup
@@ -139,12 +144,27 @@ keep beyond the scheduled expiry date, you have four options:
 <table>
 <tbody>
 <tr class="odd">
+<td><strong>How often will my team's HPC jobs be accessing the
+data?</strong></td>
+<td><strong>How often will my team's HPC jobs be modifying the
+data? </strong></td>
+<td><strong>Recommended option </strong></td>
 </tr>
 <tr class="even">
+<td>Often</td>
+<td>Often (at least once every two months)</td>
+<td>Leave in the nobackup directory (but ensure key result data is
+copied to the persistent project directory)</td>
 </tr>
 <tr class="odd">
+<td>Often</td>
+<td>Seldom</td>
+<td>Put in the persistent project directory</td>
 </tr>
 <tr class="even">
+<td>Seldom</td>
+<td>Seldom</td>
+<td><p>Store the data elsewhere (e.g. at your institution)</p></td>
 </tr>
 </tbody>
 </table>

@@ -12,6 +12,13 @@ zendesk_article_id: 360000204076
 zendesk_section_id: 360000030876
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ## Definitions
 
 **CPU:** A logical core, also known as a hardware thread. Referred to as
@@ -78,7 +85,7 @@ E.g.:
 
  
 
-<table>
+<table style="width: 950px; height: 460px;">
 <colgroup>
 <col style="width: 12%" />
 <col style="width: 12%" />
@@ -90,21 +97,128 @@ E.g.:
 <col style="width: 12%" />
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr class="odd" style="height: 44px;">
+<td
+style="width: 88.328125px; height: 44px"><p><strong>Name</strong></p></td>
+<td style="width: 95.34375px; height: 44px"><p><strong>Max
+Walltime</strong></p></td>
+<td
+style="width: 54.203125px; height: 44px"><p><strong>Nodes</strong></p></td>
+<td
+style="width: 96.34375px; height: 44px"><p><strong>CPUs/Node</strong></p></td>
+<td style="width: 138.484375px; height: 44px"><p><strong>GPUs/Node<br />
+</strong></p></td>
+<td style="width: 83.3125px; height: 44px"><p><strong>Available
+Mem/CPU</strong></p></td>
+<td style="width: 114.40625px; height: 44px"><p><strong>Available
+Mem/Node</strong></p></td>
+<td
+style="width: 190.640625px; height: 44px"><p><strong>Description</strong></p></td>
 </tr>
-<tr class="even">
+<tr class="even" style="height: 44px;">
+<td style="width: 88.328125px; height: 44px"><p>long</p></td>
+<td style="width: 95.34375px; height: 44px"><p>3 weeks</p></td>
+<td style="width: 54.203125px; height: 44px"><p>69</p></td>
+<td style="width: 96.34375px; height: 44px"><p>72</p></td>
+<td style="width: 138.484375px; height: 44px"><p> </p></td>
+<td style="width: 83.3125px; height: 44px"><p>1500 MB</p></td>
+<td style="width: 114.40625px; height: 44px"><p>105 GB</p></td>
+<td style="width: 190.640625px; height: 44px"><p>For jobs that need to
+run for longer than 3 days.</p></td>
 </tr>
-<tr class="odd">
+<tr class="odd" style="height: 44px;">
+<td style="width: 88.328125px; height: 44px"><p>large</p></td>
+<td style="width: 95.34375px; height: 44px"><p>3 days</p></td>
+<td style="width: 54.203125px; height: 44px"><p><em>long</em> +
+157</p></td>
+<td style="width: 96.34375px; height: 44px"><p>72</p></td>
+<td style="width: 138.484375px; height: 44px"><p> </p></td>
+<td style="width: 83.3125px; height: 44px"><p>1500 MB</p></td>
+<td style="width: 114.40625px; height: 44px"><p>105 GB</p></td>
+<td style="width: 190.640625px; height: 44px"><p>Default
+partition.</p></td>
 </tr>
-<tr class="even">
+<tr class="even" style="height: 51px;">
+<td style="width: 88.328125px; height: 51px"><p>milan</p></td>
+<td style="width: 95.34375px; height: 51px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 51px"><p>56<br />
+ 8</p></td>
+<td style="width: 96.34375px; height: 51px"><p>256<br />
+256</p></td>
+<td style="width: 138.484375px; height: 51px"><p> </p></td>
+<td style="width: 83.3125px; height: 51px"><p>1850 MB</p>
+<p>3800 MB</p></td>
+<td style="width: 114.40625px; height: 51px"><p>460 GB<br />
+960 GB</p></td>
+<td style="width: 190.640625px; height: 51px"><p><a
+href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">Jobs
+using Milan Nodes</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="odd" style="height: 51px;">
+<td style="width: 88.328125px; height: 51px"><p>bigmem /</p>
+<p>infill</p></td>
+<td style="width: 95.34375px; height: 51px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 51px"><p>6</p>
+<p>6</p></td>
+<td style="width: 96.34375px; height: 51px"><p>72</p>
+<p>54</p></td>
+<td style="width: 138.484375px; height: 51px"><p> </p></td>
+<td style="width: 83.3125px; height: 51px"><p>6300 MB</p>
+<p>5500 MB</p></td>
+<td style="width: 114.40625px; height: 51px"><p>460 GB</p>
+<p>300 GB</p></td>
+<td style="width: 190.640625px; height: 51px"><p>Jobs requiring large
+amounts of memory.</p></td>
 </tr>
-<tr class="even">
+<tr class="even" style="height: 66px;">
+<td style="width: 88.328125px; height: 66px"><p>hugemem</p></td>
+<td style="width: 95.34375px; height: 66px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 66px"><p>4</p></td>
+<td style="width: 96.34375px; height: 66px"><p>80<br />
+128<br />
+176</p></td>
+<td style="width: 138.484375px; height: 66px"><p> </p></td>
+<td style="width: 83.3125px; height: 66px"><p>18 GB<br />
+30 GB<br />
+35 GB</p></td>
+<td style="width: 114.40625px; height: 66px"><p>1,500 GB<br />
+4,000 GB<br />
+6,000 GB</p></td>
+<td style="width: 190.640625px; height: 66px"><p>Jobs requiring very
+large amounts of memory.</p></td>
 </tr>
-<tr class="odd">
+<tr class="odd" style="height: 138px;">
+<td style="width: 88.328125px; height: 138px"><p>gpu</p></td>
+<td style="width: 95.34375px; height: 138px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 138px"><p>1</p>
+<p>4</p>
+<p>2</p>
+<p>2</p>
+<p>1</p></td>
+<td style="width: 96.34375px; height: 138px"><p>18, plus 54 shared with
+<em>infill</em></p></td>
+<td style="width: 138.484375px; height: 138px"><p>1 P100*</p>
+<p>2 P100*</p>
+<p>1 A100**</p>
+<p>2 A100**</p>
+<p>7 A100-1g.5gb***</p></td>
+<td style="width: 83.3125px; height: 138px"><p>6300 MB</p></td>
+<td style="width: 114.40625px; height: 138px"><p>160 GB, plus 300 GB
+shared with <em>infill</em></p></td>
+<td style="width: 190.640625px; height: 138px"><p>Nodes with GPUs. See
+below for more info.</p></td>
 </tr>
-<tr class="even">
+<tr class="even" style="height: 22px;">
+<td style="width: 88.328125px; height: 22px"><p>hgx</p></td>
+<td style="width: 95.34375px; height: 22px"><p>7 days</p></td>
+<td style="width: 54.203125px; height: 22px"><p>4</p></td>
+<td style="width: 96.34375px; height: 22px"><p>128</p></td>
+<td style="width: 138.484375px; height: 22px"><p>4 A100****</p></td>
+<td style="width: 83.3125px; height: 22px"><p>6300 MB</p></td>
+<td style="width: 114.40625px; height: 22px"><p>460 GB</p></td>
+<td style="width: 190.640625px; height: 22px"><p>Part of <a
+href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">Milan
+Nodes</a>. See below for more info.</p></td>
 </tr>
 </tbody>
 </table>
@@ -176,7 +290,7 @@ connected via
 
 -   Explicitly specify the partition to access them, with
     `--partition=hgx`.
--   Hosting nodes are Milan nodes. Check the[dedicated support
+-   Hosting nodes are Milan nodes. Check the [dedicated support
     page](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471)
     for more information about the Milan nodes' differences from
     Mahuika's Broadwell nodes.

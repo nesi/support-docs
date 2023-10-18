@@ -12,6 +12,13 @@ zendesk_article_id: 360000176116
 zendesk_section_id: 360000224835
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Your project will typically be considered for an Institutional
 allocation if you work for or study at one of the institutions that is a
 NeSI collaborator, or has a subscription to our HPC Compute & Analytics

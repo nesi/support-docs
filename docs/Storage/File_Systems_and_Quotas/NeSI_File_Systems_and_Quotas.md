@@ -15,7 +15,14 @@ zendesk_article_id: 360000177256
 zendesk_section_id: 360000033936
 ---
 
-> ### New Feature
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
 > have recently started rolling out compression of inactive data on the
@@ -40,386 +47,169 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../../includes/images/360003251796" alt="neSI_filetree.svg" width="629" height="578" />
+## <img src="../../assets/images/360003251796_0.name_me.png" width="629"
+height="578" alt="neSI_filetree.svg" />
 
 # File System Specifications
 
-<table class="table table-bordered" style="tr td: first-child {    white-space:nowrap;">
+<table class="table table-bordered"
+style="tr td: first-child {    white-space:nowrap;">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
 <tbody>
-<tr>
-<td style="width: 84.1875px;">
-
-**Filesystem**
-
-</td>
-<td style="width: 119px;">
-
-**/home**
-
-</td>
-<td style="width: 135px;">
-
-**/nesi/project**
-
-</td>
-<td style="width: 188px;">
-
-**/nesi/nobackup**
-
-</td>
-<td style="width: 116.09375px;">
-**/nesi/nearline** 
-
-</td>
+<tr class="odd">
+<td
+style="width: 84.1875px"><span><strong>Filesystem</strong></span></td>
+<td style="width: 119px"><span><strong>/home</strong></span></td>
+<td
+style="width: 135px"><span><strong>/nesi/project</strong></span></td>
+<td
+style="width: 188px"><span><strong>/nesi/nobackup</strong></span></td>
+<td
+style="width: 116.09375px"><span><strong>/nesi/nearline</strong> </span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Default disk space  
-**
-
-</td>
-<td style="width: 119px;">
-
- 
-
-</td>
-<td style="width: 135px;">
-
- 
-
-</td>
-<td style="width: 188px;">
-
- 
-
-</td>
-<td style="width: 116.09375px;" rowspan="3">
-
-No default; allocations are based on eligibility and technical
-requirements  
-  
-
-</td>
+<tr class="even">
+<td style="width: 84.1875px"><span><strong>Default disk space<br />
+</strong></span></td>
+<td style="width: 119px"> </td>
+<td style="width: 135px"> </td>
+<td style="width: 188px"> </td>
+<td rowspan="3" style="width: 116.09375px"><span>No default; allocations
+are based on eligibility and technical requirements</span><br />
+<span> </span><span> </span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**    - soft quota**
-
-</td>
-<td style="width: 119px;">
-
-20 GB
-
-</td>
-<td style="width: 135px;">
-
-100 GB  
-
-</td>
-<td style="width: 188px;">
-
-10 TB
-
-</td>
+<tr class="odd">
+<td style="width: 84.1875px"><span><strong>    - soft
+quota</strong></span></td>
+<td style="width: 119px"><span>20 GB</span></td>
+<td style="width: 135px"><span>100 GB<br />
+</span></td>
+<td style="width: 188px">10 TB</td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**    - hard quota**
-
-</td>
-<td style="width: 119px;">
-
- 
-
-</td>
-<td style="width: 135px;">
-
-110 GB
-
-</td>
-<td style="width: 188px;">
-
-12 TB
-
-</td>
+<tr class="even">
+<td style="width: 84.1875px"><span><strong>    - hard
+quota</strong></span></td>
+<td style="width: 119px"> </td>
+<td style="width: 135px"><span>110 GB</span></td>
+<td style="width: 188px">12 TB</td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Default file count (inode)  
-**
-
-</td>
-<td style="width: 119px;">
-
- 
-
-</td>
-<td style="width: 135px;">
-
- 
-
-</td>
-<td style="width: 188px;">
-
- 
-
-</td>
-<td style="width: 116.09375px;" rowspan="3">
-
-No default; allocations are based on eligibility and technical
-requirements  
-  
-
-</td>
+<tr class="odd">
+<td style="width: 84.1875px"><span><strong>Default file count
+(inode)<br />
+</strong></span></td>
+<td style="width: 119px"> </td>
+<td style="width: 135px"> </td>
+<td style="width: 188px"> </td>
+<td rowspan="3" style="width: 116.09375px"><span>No default; allocations
+are based on eligibility and technical requirements</span><br />
+<span> </span><span> </span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**    - soft quota**
-
-</td>
-<td style="width: 119px;">
-
-1,000,000 files
-
-</td>
-<td style="width: 135px;">
-
-100,000 files
-
-</td>
-<td style="width: 188px;">
-
-1,000,000 files
-
-</td>
+<tr class="even">
+<td style="width: 84.1875px"><span><strong>    - soft
+quota</strong></span></td>
+<td style="width: 119px"><span>1,000,000 files</span></td>
+<td style="width: 135px"><span>100,000 files</span></td>
+<td style="width: 188px"><span>1,000,000 files</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**    - hard quota**
-
-</td>
-<td style="width: 119px;">
-
-1,100,000 files
-
-</td>
-<td style="width: 135px;">
-
-110,000 files
-
-</td>
-<td style="width: 188px;">
-
-1,100,000 files
-
-</td>
+<tr class="odd">
+<td style="width: 84.1875px"><span><strong>    - hard
+quota</strong></span></td>
+<td style="width: 119px"><span>1,100,000 files</span></td>
+<td style="width: 135px"><span>110,000 files</span></td>
+<td style="width: 188px"><span>1,100,000 files</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Intended use**
-
-</td>
-<td style="width: 119px;">
-
-User-specific files such as configuration files, environment setup,
-source code, etc.
-
-</td>
-<td style="width: 135px;">
-
-Persistent project-related data, project-related software, etc.
-
-</td>
-<td style="width: 188px;">
-
-Data created or used by compute jobs that is intended to be temporary
-
-</td>
-<td style="width: 116.09375px;">
-
-Medium- to long-term storage of research data associated with past,
-present or planned compute projects
-
-</td>
+<tr class="even">
+<td style="width: 84.1875px"><span><strong>Intended
+use</strong></span></td>
+<td style="width: 119px"><span>User-specific files such as configuration
+files, environment setup, source code, etc.</span></td>
+<td style="width: 135px"><span>Persistent project-related data,
+project-related software, etc.</span></td>
+<td style="width: 188px"><span>Data created or used by compute jobs that
+is intended to be temporary</span></td>
+<td style="width: 116.09375px"><span>Medium- to long-term storage of
+research data associated with past, present or planned compute
+projects</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Total capacity**
-
-</td>
-<td style="width: 119px;">
-
-175 TB
-
-</td>
-<td style="width: 135px;">
-
-1,590 TB
-
-</td>
-<td style="width: 188px;">
-
-4,400 TB
-
-</td>
-<td style="width: 116.09375px;">
-
-Will grow as tapes are purchased
-
-</td>
+<tr class="odd">
+<td style="width: 84.1875px"><span><strong>Total
+capacity</strong></span></td>
+<td style="width: 119px"><span>175 TB</span></td>
+<td style="width: 135px"><span>1,590 TB</span></td>
+<td style="width: 188px"><span>4,400 TB</span></td>
+<td style="width: 116.09375px"><span>Will grow as tapes are
+purchased</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Data retention time**
-
-</td>
-<td style="width: 119px;">
-
-180 days after the user ceases to be a member of any active project
-
-</td>
-<td style="width: 135px;">
-
-90 days after the end of the project's last HPC Compute & Analytics
-allocation. See also Transparent File Data Compression.
-
-</td>
-<td style="width: 188px;">
-
-With certain exceptions, individual files will be deleted after being
-untouched for 120 days. See [Automatic cleaning of nobackup file
-system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856) for
-more information. 90 days after the end of the project's last HPC
-Compute & Analytics allocation, all remaining data is subject to
-deletion.
-
-</td>
-<td style="width: 116.09375px;">
-
-180 days after the end of the project's last nearline storage allocation
-
-</td>
+<tr class="even">
+<td style="width: 84.1875px"><span><strong>Data retention
+time</strong></span></td>
+<td style="width: 119px"><span>180 days after the user ceases to be a
+member of any active project</span></td>
+<td style="width: 135px"><span>90 days after the end of the project's
+last HPC Compute &amp; Analytics allocation. See also Transparent File
+Data Compression.</span></td>
+<td style="width: 188px"><span>With certain exceptions, individual files
+will be deleted after being untouched for 120 days. See <a
+href="https://support.nesi.org.nz/hc/en-gb/articles/360001162856">Automatic
+cleaning of nobackup file system</a> for more information.
+</span><span>90 days after the end of the project's last HPC Compute
+&amp; Analytics allocation, all remaining data is subject to
+deletion.</span></td>
+<td style="width: 116.09375px"><span>180 days after the end of the
+project's last nearline storage allocation</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Data backup schedule  
-(Excluding snapsots)**
-
-</td>
-<td style="width: 119px;">
-
-Daily, last 10 versions of any given file retained for up to 90 days.
-
-</td>
-<td style="width: 135px;">
-
-Daily, last 10 versions of any given file retained for up to 90 days.
-
-</td>
-<td style="width: 188px;">
-
-None
-
-</td>
-<td style="width: 116.09375px;">
-
-Replication  between Wellington and Auckland tape libraries (under
-development)
-
-</td>
+<tr class="odd">
+<td style="width: 84.1875px"><span><strong>Data backup schedule<br />
+(Excluding snapsots)</strong></span></td>
+<td style="width: 119px"><span>Daily, last 10 versions of any given file
+retained for up to 90 days.</span></td>
+<td style="width: 135px"><span>Daily, last 10 versions of any given file
+retained for up to 90 days.</span></td>
+<td style="width: 188px"><span>None</span></td>
+<td style="width: 116.09375px"><span>Replication  between Wellington and
+Auckland tape libraries (under development)</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Snapshots**
-
-</td>
-<td style="width: 119px;">
-
-Daily (retention period 7 days)
-
-</td>
-<td style="width: 135px;">
-
-Daily (retention period 7 days)
-
-</td>
-<td style="width: 188px;">
-
-None
-
-</td>
-<td style="width: 116.09375px;">
-
-None
-
-</td>
+<tr class="even">
+<td
+style="width: 84.1875px"><span><strong>Snapshots</strong></span></td>
+<td style="width: 119px"><span>Daily (retention period 7
+days)</span></td>
+<td style="width: 135px"><span>Daily (retention period 7
+days)</span></td>
+<td style="width: 188px"><span>None</span></td>
+<td style="width: 116.09375px"><span>None</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Access speed**
-
-</td>
-<td style="width: 119px;">
-
-Moderate
-
-</td>
-<td style="width: 135px;">
-
-Moderate
-
-</td>
-<td style="width: 188px;">
-
-Fast
-
-</td>
-<td style="width: 116.09375px;">
-
-Slow
-
-</td>
+<tr class="odd">
+<td style="width: 84.1875px"><span><strong>Access
+speed</strong></span></td>
+<td style="width: 119px"><span>Moderate</span></td>
+<td style="width: 135px"><span>Moderate</span></td>
+<td style="width: 188px"><span>Fast</span></td>
+<td style="width: 116.09375px"><span>Slow</span></td>
 </tr>
-<tr>
-<td style="width: 84.1875px;">
-
-**Access interfaces**
-
-</td>
-<td style="width: 119px;">
--   Native Scale mounts
--   SCP
--   Globus data transfer
-
-</td>
-<td style="width: 135px;">
--   Native Scale mounts
--   SCP
-
-</td>
-<td style="width: 188px;">
--   Native Scale mounts
--   SCP
--   Globus data transfer
-
-</td>
-<td style="width: 116.09375px;">
-
-Nearline commands
-
-</td>
+<tr class="even">
+<td style="width: 84.1875px"><span><strong>Access
+interfaces</strong></span></td>
+<td style="width: 119px"><ul>
+<li><span>Native Scale mounts</span></li>
+<li><span>SCP</span></li>
+<li><span>Globus data transfer</span></li>
+</ul></td>
+<td style="width: 135px"><ul>
+<li><span>Native Scale mounts</span></li>
+<li><span>SCP</span></li>
+</ul></td>
+<td style="width: 188px"><ul>
+<li><span>Native Scale mounts</span></li>
+<li><span>SCP</span></li>
+<li><span>Globus data transfer</span></li>
+</ul></td>
+<td style="width: 116.09375px"><span>Nearline commands</span></td>
 </tr>
 </tbody>
 </table>
@@ -516,8 +306,8 @@ process](https://support.nesi.org.nz/hc/en-gb/articles/360000202136), or
 [contact our support team](https://support.nesi.org.nz/hc/requests/new)
 at any time.
 
-To ensure this file system remains fit-for-purpose, we are rolling out a
-regular cleaning policy as described in [Automatic cleaning of nobackup
+To ensure this file system remains fit-for-purpose, we have a regular
+cleaning policy as described in [Automatic cleaning of nobackup
 filesystem](https://support.nesi.org.nz/hc/en-gb/articles/360001162856).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
@@ -528,8 +318,7 @@ The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
 ## /nesi/nearline
-
-> ### Note
+!!!
 >
 > The nearline service, including its associated file systems, is in an
 > Early Access phase, and allocations are by invitation. We appreciate

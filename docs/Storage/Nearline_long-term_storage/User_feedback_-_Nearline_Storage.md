@@ -11,6 +11,13 @@ zendesk_article_id: 360001495115
 zendesk_section_id: 360000042255
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 # Nearline Storage service
 
 NeSI's Nearline Storage service allows you to store your data on our

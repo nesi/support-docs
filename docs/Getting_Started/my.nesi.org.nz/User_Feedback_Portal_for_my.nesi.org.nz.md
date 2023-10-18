@@ -10,12 +10,20 @@ zendesk_article_id: 360003697455
 zendesk_section_id: 360001059296
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
  
 
 We are excited to hear your feedback on **https://my.nesi.org.nz**.
 
-We invite you
-<a href="https://portal.productboard.com/nesi/11-my-nesi-org-nz/tabs/31-released" class="external-link">to share feedback, ideas, suggestions with us using a product portal</a>.
+We invite you [to share feedback, ideas, suggestions with us using a
+product
+portal](https://portal.productboard.com/nesi/11-my-nesi-org-nz/tabs/31-released).
 🤔  
 See our support article for more details on [how the product portal
 works](https://support.nesi.org.nz/hc/en-gb/articles/360001504596).

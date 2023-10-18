@@ -10,6 +10,13 @@ zendesk_article_id: 360001287235
 zendesk_section_id: 360000040596
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ##  
 
 The [Coupled Model Intercomparison
@@ -36,7 +43,7 @@ then type similar commands to the ones below to test your configuration.
 
 ## Setup
 
-On mahuika or <span class="s1">w-mauivlab01.maui.nesi.org.nz</span>:
+On mahuika or w-mauivlab01.maui.nesi.org.nz:
 
     source /nesi/project/niwa02916/synda_env.sh
 
@@ -60,17 +67,15 @@ involve
 
     synda search institution_id=NCAR experiment_id=1pctCO2 variable=ta
 
-<span class="s1">which returns</span>
+which returns
 
-<span class="s1">new<span class="Apple-converted-space"> 
-</span>CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425</span>
+new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 
-<span class="s1">new<span class="Apple-converted-space"> 
-</span>CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.Amon.ta.gn.v20190425</span>
+new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.Amon.ta.gn.v20190425
 
-<span class="s1">...</span>
+...
 
-<span class="s1">as well as some other datasets. </span>
+as well as some other datasets. 
 
  
 
@@ -81,11 +86,10 @@ size of the dataset:
 
     synda stat CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 
-This prints "<span class="s1">Total files count: 16, </span><span
-class="s1">New files count: 16, </span><span class="s1">Total size: 48.7
-GB, </span><span class="s1">New files size: 48.7 GB". The "New"
-indicates that the files have not yet been downloaded. You can see that
-there are 16 files to download, taking nearly 50GB of disk space.</span>
+This prints "Total files count: 16, New files count: 16, Total size:
+48.7 GB, New files size: 48.7 GB". The "New" indicates that the files
+have not yet been downloaded. You can see that there are 16 files to
+download, taking nearly 50GB of disk space.
 
 ## Download/install the dataset 
 
@@ -100,9 +104,9 @@ This will put your request in a queue. The transfer will take place as a
 background process so you can close your terminal if you want and come
 back later to check progress.
 
-The data will end up under <span
-class="s1">$ST\_HOME/data/CMIP6/CMIP/NCAR/CESM2-WACCM/1pctCO2/r1i1p1f1/day/ta/gn/v20190425
-in this case. </span>
+The data will end up
+under $ST\_HOME/data/CMIP6/CMIP/NCAR/CESM2-WACCM/1pctCO2/r1i1p1f1/day/ta/gn/v20190425
+in this case. 
 
 You can type
 
@@ -114,5 +118,5 @@ Note that if another researcher (or you) decide execute the same synda
 install command then synda will recognise the files to be already
 installed and will print the message
 
-<span class="s1">INFO: Nothing to install (matching files are already
-installed or waiting in the download queue)</span>
+INFO: Nothing to install (matching files are already installed or
+waiting in the download queue)

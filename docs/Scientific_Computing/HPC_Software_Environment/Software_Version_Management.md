@@ -12,6 +12,13 @@ zendesk_article_id: 360001045096
 zendesk_section_id: 360000040056
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Much of the software installed on the NeSI cluster have multiple
 versions available as shown
 [here](https://support.nesi.org.nz/hc/en-gb/sections/360000040076-Supported-Applications)

@@ -13,6 +13,13 @@ zendesk_article_id: 360000170355
 zendesk_section_id: 360000224835
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 The NeSI policy for management of scientific application software is
 based on the following principles:
 
@@ -30,7 +37,7 @@ three-tier model.
 
 ## Tier 1
 
-../../../ applications (meaning tools, libraries and science
+Includes applications (meaning tools, libraries and science
 applications) which:
 
 1.  Have a wide user base among users of the NeSI Compute and Analytics
@@ -48,7 +55,7 @@ applications) which:
 
 ## Tier 2
 
-../../../ applications (meaning tools, libraries and science
+Includes applications (meaning tools, libraries and science
 applications) which:
 
 1.  Have a small but important user base, meaning they are used by
@@ -63,7 +70,7 @@ applications) which:
 
 ## Tier 3
 
-../../../ applications (meaning tools, libraries and science
+Includes applications (meaning tools, libraries and science
 applications) that are required by one user, or have very limited use,
 in which case:
 

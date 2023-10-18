@@ -10,6 +10,13 @@ zendesk_article_id: 360000329015
 zendesk_section_id: 360000040056
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 # Where to build
 
 You may compile (build) software on the Mahuika login nodes,
@@ -76,7 +83,7 @@ should give you an impression which steps you usually need to consider:
     tarbomb, you will need to handle it using special techniques.
 4.  Unpack the tarball using `tar xf <source.tar>`. Change into the
     source directory.
-5.  ``Load the preferred toolchain (or compiler module) and modules for
+5.  Load the preferred toolchain (or compiler module) and modules for
     any additional required libraries (`module load gimkl FFTW`)
 6.  Run the configure script with appropriate options,
     e.g. `./configure --prefix=<desired install directory> --use-fftw=$EBROOTFFTW  `(options
@@ -86,7 +93,7 @@ should give you an impression which steps you usually need to consider:
     (see below)
 8.  Compile the code (`make``)`
 9.  install the binaries and libraries into the specified directory
-    (`make install`)``
+    (`make install`)
 
  
 
@@ -105,20 +112,48 @@ code, different compilers typically need to be used. The different
 </colgroup>
 <thead>
 <tr class="header">
+<th>Language</th>
+<th>Cray</th>
+<th>Intel</th>
+<th>GNU</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>Fortran</td>
+<td>ftn</td>
+<td>ifort</td>
+<td>gfortran</td>
 </tr>
 <tr class="even">
+<td>Fortran + MPI</td>
+<td>ftn</td>
+<td>mpiifort</td>
+<td>mpif90</td>
 </tr>
 <tr class="odd">
+<td>C</td>
+<td>cc</td>
+<td>icc</td>
+<td>gcc</td>
 </tr>
 <tr class="even">
+<td>C + MPI</td>
+<td>cc</td>
+<td>mpiicc</td>
+<td>mpicc</td>
 </tr>
 <tr class="odd">
+<td>C++</td>
+<td>CC</td>
+<td>icpc</td>
+<td>g++</td>
 </tr>
 <tr class="even">
+<td>C++ + MPI</td>
+<td>CC</td>
+<td>mpiicpc</td>
+<td>mpicxx</td>
 </tr>
 </tbody>
 </table>
@@ -153,20 +188,57 @@ compilers:
 </colgroup>
 <thead>
 <tr class="header">
+<th>Group</th>
+<th>Cray</th>
+<th>Intel</th>
+<th>GNU</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>Debugging</td>
+<td><code>-g</code> or <code>-G{0,1,2,fast}</code></td>
+<td><code>-g</code> or <code>-debug [keyword]</code></td>
+<td><code>-g or -g{0,1,2,3}</code></td>
+<td>Set level of debugging information, some levels may disable certain
+compiler optimisations</td>
 </tr>
 <tr class="even">
+<td>Light compiler optimisation</td>
+<td><code>-O2</code></td>
+<td><code>-O2</code></td>
+<td><code>-O2</code></td>
+<td> </td>
 </tr>
 <tr class="odd">
+<td>Aggressive compiler optimisation</td>
+<td><code>-O3 -hfp3</code></td>
+<td><code>-O3 -ipo</code></td>
+<td><code>-O3 -ffast-math -funroll-loops</code></td>
+<td>This may affect numerical accuracy</td>
 </tr>
 <tr class="even">
+<td>Architecture specific optimisation</td>
+<td>Load this module first:
+<code>module load craype-broadwell</code></td>
+<td><code>-xHost</code></td>
+<td><code>-march=native -mtune=native</code></td>
+<td>Build and compute nodes have the same architecture (Broadwell)</td>
 </tr>
 <tr class="odd">
+<td>Vectorisation reports</td>
+<td><code>-hlist=m</code></td>
+<td><code>-qopt-report</code></td>
+<td><code>-fopt-info-vec</code> or <code>-fopt-info-missed</code></td>
+<td> </td>
 </tr>
 <tr class="even">
+<td>OpenMP</td>
+<td><code>-homp</code> (default)</td>
+<td><code>-qopenmp</code></td>
+<td><code>-fopenmp</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -269,7 +341,7 @@ used library should be build with the same compiler.
 adding the location to the MPI library. This can be observed calling
 e.g. `mpif90 -showme`
 
-## Common Linker Problems<span class="wysiwyg-underline"> </span>
+## Common Linker Problems 
 
 Linking can easily go wrong. Most often, you will see linker errors
 about "missing symbols" when the linker could not find a function used
@@ -317,7 +389,7 @@ error (with the exception of character case in Fortran source code).
 
 # Cray Programming Environment
 
-The Cray Programming Environment ../../../ the Cray compiler, various
+The Cray Programming Environment includes the Cray compiler, various
 libraries and tools. These work nicely together and provide certain
 user-friendly features by using compiler wrappers. This works very
 similar as the Cray XC environment, provided on Māui, and is described

@@ -11,6 +11,13 @@ zendesk_article_id: 360000751916
 zendesk_section_id: 360000164635
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 NeSI's Consultancy service provides scientific and HPC-focussed
 computational and data science support to research projects across a
 range of domains.
@@ -19,10 +26,9 @@ range of domains.
 
 If you would like to learn more about NeSI's Consultancy service and how
 you can work with NeSI's Research Software and Data Science Engineers on
-a project, please contact us
-(<a href="mailto:support@nesi.org.nz" class="mailto">support@nesi.org.nz</a>) to
-set up an initial meeting. We can discuss your needs and complete a
-Consultancy application form together.
+a project, please contact us (<support@nesi.org.nz>) to set up an
+initial meeting. We can discuss your needs and complete a Consultancy
+application form together.
 
 Researchers from NeSI collaborator institutions (University of Auckland,
 NIWA, University of Otago and Manaaki Whenua - Landcare Research) and

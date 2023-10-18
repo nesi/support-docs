@@ -10,6 +10,13 @@ zendesk_article_id: 360001500156
 zendesk_section_id: 360000040056
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 NVIDIA provides access to GPU accelerated software through their NGC
 container
 registry: <https://www.nvidia.com/en-us/gpu-cloud/containers/>.
@@ -34,18 +41,16 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
 1.  Download the APOA1 benchmark data:
     -   wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
             cd apoa1
-
 2.  Load the Singularity module:
     -   module load Singularity
-
 3.  Build the Singularity image. This step differs from the NVIDIA
     instructions because instead of using "build" we "pull" the image
     directly, which does not require root access:
     -   Please do refer  "[Build Environment
         Variables](https://support.nesi.org.nz/hc/en-gb/articles/360001107916-Singularity#build_environment_variables)"
         prior to running the following `pull` command
-    -   singularity pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
 
+    -   singularity pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
 4.  Copy the following into a Slurm script named *run.sl*:
     -   #!/bin/bash -e
 

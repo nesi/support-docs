@@ -12,7 +12,14 @@ zendesk_article_id: 360000625535
 zendesk_section_id: 360000189696
 ---
 
-> ### Requirements
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -68,8 +75,7 @@ configurations.
             ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
             ControlPersist 1
 
-    Close and save with <span class="kbd">ctrl x</span>, <span
-    class="kbd">y</span>, <span class="kbd">Enter</span>
+    Close and save with ctrl x, y, Enter
 
 3.  Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
@@ -92,8 +98,7 @@ having to re-enter authentication e.g.
 
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
-
-> ### What Next?
+!!!
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

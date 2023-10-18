@@ -10,7 +10,14 @@ zendesk_article_id: 4405170961039
 zendesk_section_id: 360000040076
 ---
 
-> ### Tips
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > An extended version of AlphaFold2 on NeSI Mahuika cluster which
 > contains additional information such as visualisation of AlphaFold
@@ -40,7 +47,7 @@ This is not an officially supported Google product.
 
 Copyright 2021 DeepMind Technologies Limited.
 
-## <a href="https://github.com/deepmind/alphafold#alphafold-code-license" id="user-content-alphafold-code-license" class="anchor"></a>AlphaFold Code License
+## [](https://github.com/deepmind/alphafold#alphafold-code-license)AlphaFold Code License
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License. You may obtain
@@ -52,7 +59,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-## <a href="https://github.com/deepmind/alphafold#model-parameters-license" id="user-content-model-parameters-license" class="anchor"></a>Model Parameters License
+## [](https://github.com/deepmind/alphafold#model-parameters-license)Model Parameters License
 
 The AlphaFold parameters are made available for non-commercial use only,
 under the terms of the Creative Commons Attribution-NonCommercial 4.0
@@ -184,9 +191,9 @@ Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
 modifications. Image (.*simg*) and the corresponding definition file
 (*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
-## <a href="https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script" id="user-content-example-slurm-script" class="anchor"></a>Example Slurm scripts for Singularity container based AF2 deployment
+## [](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script)Example Slurm scripts for Singularity container based AF2 deployment
 
-### Monomer<span class="wysiwyg-underline"></span>
+### Monomer
 
     #!/bin/bash -e
 

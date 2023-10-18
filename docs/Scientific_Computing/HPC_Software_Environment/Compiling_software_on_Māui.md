@@ -10,17 +10,21 @@ zendesk_article_id: 360000336076
 zendesk_section_id: 360000040056
 ---
 
-<header class="site-header">
 
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 <nav class="site-nav">
 
 # Building on the XC50 Platform
 
 </nav>
 
-</header>
-
 <article class="post">
+
 Building Fortran, C, or C++ code on the XC50 platform requires using the
 Cray programming environment. From a user perspective, the programming
 environment consists of a set of environment modules that select a
@@ -216,18 +220,49 @@ The following table provides a list of commonly used compiler options:
 <table>
 <thead>
 <tr class="header">
+<th>Group</th>
+<th>Cray</th>
+<th>Intel</th>
+<th>GNU</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>Debugging</td>
+<td><code>-g</code> or <code>-G{0,1,2,fast}</code></td>
+<td><code>-g</code> or <code>-debug [keyword]</code></td>
+<td><code>-g or -g{0,1,2,3}</code></td>
+<td>Set level of debugging information, some levels may disable certain
+compiler optimisations</td>
 </tr>
 <tr class="even">
+<td>Light compiler optimisation</td>
+<td><code>-O2</code></td>
+<td><code>-O2</code></td>
+<td><code>-O2</code></td>
+<td> </td>
 </tr>
 <tr class="odd">
+<td>Aggressive compiler optimisation</td>
+<td><code>-O3 -hfp3</code></td>
+<td><code>-O3 -ipo</code></td>
+<td><code>-O3 -ffast-math -funroll-loops</code></td>
+<td>This may affect numerical accuracy</td>
 </tr>
 <tr class="even">
+<td>Vectorisation reports</td>
+<td><code>-hlist=m</code></td>
+<td><code>-qopt-report</code></td>
+<td><code>-fopt-info-vec</code> or <code>-fopt-info-missed</code></td>
+<td> </td>
 </tr>
 <tr class="odd">
+<td>OpenMP</td>
+<td><code>-homp</code> (default)</td>
+<td><code>-openmp</code></td>
+<td><code>-fopenmp</code></td>
+<td> </td>
 </tr>
 </tbody>
 </table>
@@ -239,14 +274,30 @@ environment:
 <table>
 <thead>
 <tr class="header">
+<th>language</th>
+<th>cray</th>
+<th>intel</th>
+<th>gnu</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>Fortran</td>
+<td>man crayftn</td>
+<td>man ifort</td>
+<td>man gfortran</td>
 </tr>
 <tr class="even">
+<td>C</td>
+<td>man craycc</td>
+<td>man icc</td>
+<td>man gcc</td>
 </tr>
 <tr class="odd">
+<td>C++</td>
+<td>man crayCC</td>
+<td>man icpc</td>
+<td>man g++</td>
 </tr>
 </tbody>
 </table>

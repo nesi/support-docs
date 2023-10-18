@@ -10,6 +10,13 @@ zendesk_article_id: 360001385735
 zendesk_section_id: 360000196195
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Because NeSI's resources are limited, we manage access to our resources
 through allocations. Typically, an allocation is a grant of a certain
 amount of a resource, or of a rate at which a resource can be consumed,
@@ -53,20 +60,30 @@ The price of hardware in terms of compute units is shown in the
 following table.
 
 <table>
-<thead>
-<tr class="header">
-</tr>
-</thead>
 <tbody>
-<tr class="odd">
+<tr class="header">
+<th>Hardware type</th>
+<th>Fair Share Price</th>
+</tr>
+&#10;<tr class="odd">
+<td>CPU</td>
+<td>0.35 compute units per logical-CPU-hour</td>
 </tr>
 <tr class="even">
+<td>Memory (RAM)</td>
+<td>0.10 compute units per GB-hour</td>
 </tr>
 <tr class="odd">
+<td>P100 GPU device</td>
+<td>7.0 compute units per device-hour</td>
 </tr>
 <tr class="even">
+<td>A100 GPU device</td>
+<td>18.0 compute units per device-hour</td>
 </tr>
 <tr class="odd">
+<td>A100-1g.5gb GPU device</td>
+<td>3.0 compute units per device-hour</td>
 </tr>
 </tbody>
 </table>
@@ -100,7 +117,7 @@ supercomputer is allocated by node-hours. Though some Māui nodes have
 more RAM than others, we do not currently distinguish between low-memory
 and high-memory nodes for allocation, billing or Fair Share purposes.
 
-Each allocation on Māui ../../../ an entitlement to use the Māui
+Each allocation on Māui includes an entitlement to use the Māui
 ancillary nodes equally with other NeSI projects having Māui allocations
 at that time.
 

@@ -10,6 +10,13 @@ zendesk_article_id: 360001053675
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ## I get the following warning message, do I need to worry?
 
     craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later

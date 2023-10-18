@@ -11,6 +11,13 @@ zendesk_article_id: 360000728016
 zendesk_section_id: 360000189716
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 When you run software in an interactive environment such as your
 ordinary workstation (desktop PC or laptop), the software is able to
 request from the operating system whatever resources it needs from
@@ -41,7 +48,7 @@ likely to suffer.  Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
 not. 
 
-<table>
+<table style="width: 646px;">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -49,12 +56,44 @@ not. 
 </colgroup>
 <tbody>
 <tr class="odd">
+<td class="wysiwyg-text-align-center"
+style="width: 60px"><strong>Resource</strong></td>
+<td class="wysiwyg-text-align-center"
+style="width: 287px"><strong>Asking for too much</strong></td>
+<td class="wysiwyg-text-align-center" style="width: 293px"><strong>Not
+asking for enough</strong></td>
 </tr>
 <tr class="even">
+<td style="width: 60px">Number of CPUs</td>
+<td style="width: 287px"><ul>
+<li>The job may wait in the queue for longer.</li>
+<li>Your fair share score will <span>fall rapidly (your project will be
+charged for CPU cores that it reserved but didn't use)</span></li>
+</ul></td>
+<td style="width: 293px"><ul>
+<li>The job will run more slowly than expected, and so may run out of
+time and get killed for exceeding its time limit.</li>
+</ul></td>
 </tr>
 <tr class="odd">
+<td style="width: 60px">Memory</td>
+<td style="width: 287px"><ul>
+<li>The job may wait in the queue for longer.</li>
+<li>Your fair share score will fall more than necessary.</li>
+</ul></td>
+<td style="width: 293px"><ul>
+<li>Your job will fail, probably with an 'OUT OF MEMORY' error,
+segmentation fault or bus error. This may not happen immediately.</li>
+</ul></td>
 </tr>
 <tr class="even">
+<td style="width: 60px">Wall time</td>
+<td style="width: 287px"><ul>
+<li>The job may wait in the queue for longer than necessary</li>
+</ul></td>
+<td style="width: 293px"><ul>
+<li>The job will run out of time and get killed. </li>
+</ul></td>
 </tr>
 </tbody>
 </table>
@@ -69,18 +108,17 @@ your jobs to help you better estimate your jobs resource needs.
 
 # Job Scaling
 
-Before you start submitting the main bulk of your jobs, it is <span
-class="SDZsVb">advisable to first submit a *test job*. </span>
+Before you start submitting the main bulk of your jobs, it is advisable
+to first submit a *test job*.
 
-<span class="SDZsVb">A test job should be representative of the main
-body of your work, scaled down (e.g. a small subset of your data or a
-low number of job steps). Aim for your test job to run for around 10
-minutes, too much shorter and your job will be spending a high
-proportion of its time on overhead and therefore be less accurate for
-the purposes of scaling.</span>
+A test job should be representative of the main body of your work,
+scaled down (e.g. a small subset of your data or a low number of job
+steps). Aim for your test job to run for around 10 minutes, too much
+shorter and your job will be spending a high proportion of its time on
+overhead and therefore be less accurate for the purposes of scaling.
 
-<span class="SDZsVb">Keeping your test job small ensures a short queue
-time, short run time and that minimal resources are expended.</span>
+Keeping your test job small ensures a short queue time, short run time
+and that minimal resources are expended.
 
 When scaling your jobs, one of the most beneficial things you can do is
 to first scale down your data and calculations to as small as you can.
@@ -91,8 +129,7 @@ they will both queue faster and run for less time. Also, if one of these
 jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
-
-> ### Examples
+!!!
 >
 > [Multithreading
 > Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)

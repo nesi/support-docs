@@ -11,6 +11,13 @@ zendesk_article_id: 360000532595
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 OOM stands for "Out Of Memory", and so an error such as this:
 
     slurmstepd: error: Detected 1 oom-kill event(s) in step 370626.batch cgroup

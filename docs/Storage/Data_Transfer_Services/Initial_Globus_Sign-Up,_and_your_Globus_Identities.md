@@ -10,20 +10,33 @@ zendesk_article_id: 360000817476
 zendesk_section_id: 360000040596
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
  
 
-Globus provides logins for NeSI users via Google and GlobusID.
+Globus provides logins for NeSI users via their organisation, GitHub,
+Google or GlobusID.
 
-If you will generally access Globus through Google, the recommended
-route to setting up your Globus account is:
+To sign up to Globus, please go to <https://transfer.nesi.org.nz/>
 
-#### 1) Sign-Up using Google - this then becomes your primary identity in Globus
+#### 1) Sign-Up to Globus
 
-#### Log in to https://globus.org using your google identity:
+To sign up to globus, you can look for your organisation in the
+drop-down box. If your organisation is not present in the drop-down box,
+you can also use any of the available methods - this then becomes your
+primary identity in Globus.
 
-<img src="../../includes/images/google_first_signup.png" alt="google_first_signup.png" width="402" height="302" />
+####  
 
-2\) Link other Globus identities to your primary identity
+<img src="../../assets/images/8157051408655_0.name_me.png" width="430"
+height="471" alt="Globus_login.png" />
+
+#### 2) Link other Globus identities to your primary identity
 
 From the Globus docs:
 
@@ -38,7 +51,8 @@ If you have other identities in Globus (for example, a globusID), link
 them  to your Google ID account following the instructions at
 <https://docs.globus.org/how-to/link-to-existing/>:
 
- <img src="../../includes/images/identities.png" alt="identities.png" width="1382" height="322" />
+ <img src="../../assets/images/360001715615_0.name_me.png" width="1382"
+height="322" alt="identities.png" />
 
  
 

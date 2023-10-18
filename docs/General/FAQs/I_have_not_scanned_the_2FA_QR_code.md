@@ -14,6 +14,13 @@ zendesk_article_id: 360000552035
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 The QR code shown during the device registration cannot be regenerated
 or displayed again.  
 If you do not capture the QR code, or lose the device storing the code

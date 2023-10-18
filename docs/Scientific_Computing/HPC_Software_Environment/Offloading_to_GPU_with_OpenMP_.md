@@ -10,6 +10,13 @@ zendesk_article_id: 360001127856
 zendesk_section_id: 360000040056
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 With OpenMP 4.5, it has become possible to offload computations from the
 CPU to a GPU,
 see <https://www.openmp.org/wp-content/uploads/SC18-BoothTalks-Jost.pdf>
@@ -50,8 +57,7 @@ need to load a few modules:
     module load cray-libsci_acc/18.06.1 craype-accel-nvidia60 \
      PrgEnv-cray/1.0.4 cuda92/blas/9.2.88 cuda92/toolkit/9.2.88
 
-(Ignore warning "<span class="s1">cudatoolkit &gt;= 8.0 is
-required").</span>
+(Ignore warning "cudatoolkit &gt;= 8.0 is required").
 
 To compare the execution times between the CPU and GPU version, we build
 two executables:
@@ -71,13 +77,19 @@ offloads to the GPU):
     time srun --ntasks=1 --cpus-per-task=1 ./total
     time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalOmpGpu
 
-<table>
+<table style="height: 92px;" width="408">
 <tbody>
 <tr class="odd">
+<td style="width: 197px"><p>executable</p></td>
+<td style="width: 204px">time [s]</td>
 </tr>
 <tr class="even">
+<td style="width: 197px">total</td>
+<td style="width: 204px">10.9</td>
 </tr>
 <tr class="odd">
+<td style="width: 197px">totalOmpGpu</td>
+<td style="width: 204px">0.45</td>
 </tr>
 </tbody>
 </table>

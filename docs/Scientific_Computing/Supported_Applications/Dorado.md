@@ -4,18 +4,25 @@ hidden: false
 label_names: []
 position: 0
 title: Dorado
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 6623692647951
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 # Description
 
 Dorado is a high-performance, easy-to-use, open source basecaller for
 Oxford Nanopore reads.
 
-## <a href="https://github.com/nanoporetech/dorado#features" id="user-content-features" class="anchor"></a>Features
+## [](https://github.com/nanoporetech/dorado#features)Features
 
 -   One executable with sensible defaults, automatic hardware detection
     and configuration.
@@ -30,7 +37,7 @@ Oxford Nanopore reads.
 
 # License and Disclaimer
 
-(c) 2022 Oxford Nanopore Technologies Ltd.
+\(c\) 2022 Oxford Nanopore Technologies Ltd.
 
 Dorado is distributed under the terms of the Oxford Nanopore
 Technologies, Ltd. Public License, v. 1.0. If a copy of the License was
@@ -59,8 +66,8 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
     #SBATCH --output         slurmout.%j.out
 
     module purge
-    module load Dorado/0.3.0
+    module load Dorado/0.4.0
 
     dorado download --model dna_r10.4.1_e8.2_400bps_hac@v4.1.0
 
-    dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.1.0 pod5s/ > calls.sam --device 'cuda:all'
+    dorado basecaller  --device 'cuda:all' dna_r10.4.1_e8.2_400bps_hac@v4.1.0 pod5s/ > calls.bam

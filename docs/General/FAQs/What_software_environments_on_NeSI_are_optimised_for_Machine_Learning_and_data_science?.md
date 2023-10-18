@@ -11,6 +11,13 @@ zendesk_article_id: 360004558895
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 When using NeSI's [HPC
 platform](https://support.nesi.org.nz/hc/en-gb/sections/360000034335),
 you can bring your own code to install or you can access our extensive
@@ -32,12 +39,11 @@ include:
     and/or Conda can be accessed via Jupyter.
 
 -   Commonly used data science environments and libraries such as
-    <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001075936-Keras" class="c-link">Keras</a>,
+    [Keras](https://support.nesi.org.nz/hc/en-gb/articles/360001075936-Keras),
     [LambdaStack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack),
-    <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000990436" class="c-link">Tensorflow</a>
-    and
-    <a href="https://docs.conda.io/en/latest/" class="c-link">Conda</a>
-    are available to create comprehensive workflows.
+    [Tensorflow](https://support.nesi.org.nz/hc/en-gb/articles/360000990436)
+    and [Conda](https://docs.conda.io/en/latest/) are available to
+    create comprehensive workflows.
 
 For more information about available software and applications, you
 can [browse our catalogue
@@ -47,7 +53,7 @@ As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using
 more broad terms such as "machine learning". 
 
-![MachineLearningSoftwareEnvironments-May2021.png](../../includes/images/MachineLearningSoftwareEnvironments-May2021.png)
+![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/MachineLearningSoftwareEnvironments-May2021_0.png)
 
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific

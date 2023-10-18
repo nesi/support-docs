@@ -13,6 +13,13 @@ zendesk_article_id: 360000203776
 zendesk_section_id: 360000034335
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 The Māui Ancillary Nodes provide access to a Virtualised environment
 that supports:
 
@@ -44,27 +51,58 @@ and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.
 
 ## Ancillary Node Specifications
 
-<table>
+<table style="width: 650px;">
 <tbody>
 <tr class="odd">
+<td style="width: 182.767px"><p><strong>Multi-Purpose
+nodes</strong></p></td>
+<td style="width: 444.233px"><p>1,120 cores in 28 × Skylake (Gold 6148,
+2.4 GHz, dual socket 20 cores per socket) nodes, which will appear as
+2,240 logical cores.</p></td>
 </tr>
 <tr class="even">
+<td style="width: 182.767px"><p><strong>Hyperthreading</strong></p></td>
+<td style="width: 444.233px"><p>Enabled</p></td>
 </tr>
 <tr class="odd">
+<td style="width: 182.767px"><p><strong>Local Disk</strong></p></td>
+<td style="width: 444.233px"><p>1.2TB SSD</p></td>
 </tr>
 <tr class="even">
+<td style="width: 182.767px"><p><strong>Operating
+System</strong></p></td>
+<td style="width: 444.233px"><p>CentOS 7.4</p></td>
 </tr>
 <tr class="odd">
+<td style="width: 182.767px"><p><strong>GPGPUs</strong></p></td>
+<td style="width: 444.233px"><p>5 <span>NVIDIA Tesla P100 PCIe
+12GB</span> (5 nodes with 1 GPU)</p></td>
 </tr>
 <tr class="even">
+<td style="width: 182.767px"><p><strong>Remote
+Visualisation</strong></p></td>
+<td style="width: 444.233px"><p><a
+href="https://www.nice-software.com/products/dcv">NICE DCV</a></p></td>
 </tr>
 <tr class="odd">
+<td style="width: 182.767px"><p><strong>Memory capacity per
+Multi-Purpose node</strong></p></td>
+<td style="width: 444.233px"><p>768 GB</p></td>
 </tr>
 <tr class="even">
+<td style="width: 182.767px"><p><strong>Interconnect</strong></p></td>
+<td style="width: 444.233px"><p>EDR (100 Gb/s) InfiniBand</p></td>
 </tr>
 <tr class="odd">
+<td style="width: 182.767px"><p><strong>Workload
+Manager</strong></p></td>
+<td style="width: 444.233px"><p>Slurm (Multi-Cluster)</p></td>
 </tr>
 <tr class="even">
+<td style="width: 182.767px"><p><strong>OpenStack</strong></p></td>
+<td style="width: 444.233px"><p>The Cray CS500 Ancillary nodes will
+normally be presented to users as Virtual Machines, provisioned from the
+physical hardware as required.</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,6 +1,6 @@
 ---
 created_at: '2021-07-02T03:09:38Z'
-hidden: true
+hidden: false
 label_names:
 - visualisation
 - data_analytics
@@ -14,6 +14,13 @@ zendesk_article_id: 4403076712335
 zendesk_section_id: 4403082292111
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 <table style="width:99%;">
 <colgroup>
 <col style="width: 21%" />
@@ -21,12 +28,21 @@ zendesk_section_id: 4403082292111
 </colgroup>
 <tbody>
 <tr class="odd">
+<td>Description</td>
+<td>R is a free software environment for statistical computing and
+graphics.</td>
 </tr>
 <tr class="even">
+<td>Homepage</td>
+<td>http://www.r-project.org/</td>
 </tr>
 <tr class="odd">
+<td>Machines</td>
+<td>mahuika,maui_ancil</td>
 </tr>
 <tr class="even">
+<td>Institution</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>

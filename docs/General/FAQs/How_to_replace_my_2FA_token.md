@@ -15,6 +15,13 @@ zendesk_article_id: 360000684635
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 'Manage Two-Factor token' under 'Account'.
 
@@ -23,7 +30,7 @@ Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 Once you've created a token, you should see the 'Manage Two-Factor
 token' option.
 
-![image2018-10-26\_15-36-10.png](../../includes/images/image2018-10-26_15-36-10.png)
+![image2018-10-26\_15-36-10.png](../../assets/images/image2018-10-26_15-36-10_0.png)
 
 ## Delete the Two-Factor token
 
@@ -31,15 +38,15 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](../../includes/images/mceclip0_13.png)
+![](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
 
 After 'Delete Token' has been selected:
 
-![](../../includes/images/mceclip1_2.png)
+![](../../assets/images/mceclip1_0_0_0_0_0.png)
 
 You will also receive an email confirmation:
 
-![](../../includes/images/mceclip3.png)
+![](../../assets/images/mceclip3_0.png)
 
 ## Related content
 

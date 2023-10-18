@@ -13,6 +13,13 @@ zendesk_article_id: 360000216035
 zendesk_section_id: 360000224835
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Most New Zealand universities and Crown Research Institutes are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
@@ -23,9 +30,8 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](../../includes/images/mceclip0_15.png)
-
-> ### Warning
+![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
+!!!
 >
 > The email address you use on your application must be your
 > institutional email address. We do not accept applications using
@@ -37,8 +43,7 @@ my.nesi.org.nz. Once we have done so, the Tuakiri system will send you
 an automatically generated email inviting you to activate your account.
 You will need to activate your account before you can log in to
 my.nesi.org.nz.
-
-> ### What if I don't get the account activation email?
+!!!
 >
 > Some organisations' email servers are known to block Tuakiri's account
 > activation emails. If you haven't received your Tuakiri account
@@ -46,8 +51,7 @@ my.nesi.org.nz.
 > for an account, please check your junk mail and/or quarantine folders.
 > If you still can't find the email, [contact our support
 > team](https://support.nesi.org.nz/hc/requests/new).
-
-> ### What next?
+!!!
 >
 > -   [Project
 >     Eligibility](https://support.nesi.org.nz/hc/en-gb/articles/360000925176-Project-Eligibility)

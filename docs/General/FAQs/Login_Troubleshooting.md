@@ -10,14 +10,20 @@ zendesk_article_id: 360000570215
 zendesk_section_id: 360000039036
 ---
 
-> ### Requirements
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > Please make sure you have followed the recommended setup. See
 > [Choosing and Configuring Software for Connecting to the
 > Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
 > for more information.
-
-> ### New Command Line Users
+!!!
 >
 > -   Most terminals do not give an indication of how many characters
 >     have been typed when entering a password.
@@ -91,10 +97,11 @@ contact the person or team responsible for supporting it.
 
 ### 5. Ensure you're not reusing the same 6-digit code from your token.
 
-Login will fail if the same 6-digit code is used to access the Māui or
-Mahuika login node after it has been used to access the lander node, or
-for consecutive login attempts to any node. If in doubt, wait <span
-class="dictionary-of-numbers-quantity-30s dictionary-of-numbers-processed">30
+Login will fail if the same 6-digit
+code<span class="dictionary-of-numbers"> is </span>used to access the
+Māui or Mahuika login node after it has been used to access the lander
+node, or for consecutive login attempts to any node. If in doubt, wait
+<span class="dictionary-of-numbers dictionary-of-numbers-processed">30
 seconds</span> for a new token to be generated.
 
 ### 6. Ensure the correct Second Factor token is being used
@@ -102,10 +109,11 @@ seconds</span> for a new token to be generated.
 Two-factor authentication is becoming a common security measure. Many
 people have multiple tokens and occasionally mix them up.
 
-### 7. Wait <span class="dictionary-of-numbers-quantity-14400s dictionary-of-numbers-processed">four hours</span>
+### 7. Wait <span class="dictionary-of-numbers dictionary-of-numbers-processed">four hours</span>
 
-Six failed login attempts within <span
-class="dictionary-of-numbers-quantity-300s dictionary-of-numbers-processed">five
+<span class="dictionary-of-numbers">Six failed login attempts
+</span>within
+<span class="dictionary-of-numbers dictionary-of-numbers-processed">five
 minutes</span> will trigger a four-hour lockout. Users experiencing
 login issues can inadvertently trigger the lockout, making diagnosing
 the original issue much more difficult.  
@@ -162,10 +170,10 @@ Helpful things to include:
     etc.).
 -   The nature of the problem, including the precise text of any error
     message you have been receiving.
-    -   Did you start out having one login problem and are now getting a
-        different one? If so, when did the change happen, and were you
-        doing anything in particular related to logging in at the time
-        things changed?
+    -   Did you start out having <span class="dictionary-of-numbers">one
+        login problem and </span>are now getting a different one? If so,
+        when did the change happen, and were you doing anything in
+        particular related to logging in at the time things changed?
 -   Have you successfully logged in in the past? if so when was the last
     time you successfully logged in, and to what NeSI cluster?
 -   Has anything administrative and relevant to NeSI access changed

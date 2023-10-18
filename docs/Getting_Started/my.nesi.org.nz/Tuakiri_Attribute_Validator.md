@@ -10,6 +10,13 @@ zendesk_article_id: 360004218816
 zendesk_section_id: 360001059296
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 ### Tuakiri Attribute Validator
 
 This Tuakiri service is a health check for your managed identity. It

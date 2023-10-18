@@ -10,6 +10,13 @@ zendesk_article_id: 7349136678543
 zendesk_section_id: 7348925662223
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 As part of NeSI’s service agreements, we provide Subscribers with
 monthly usage reports. They provide a monthly view of chargeable usage
 (as well as any Merit / non-chargeable usage) across all platform

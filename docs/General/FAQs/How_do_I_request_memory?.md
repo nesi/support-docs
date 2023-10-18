@@ -10,6 +10,13 @@ zendesk_article_id: 360001108756
 zendesk_section_id: 360000039036
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 In Slurm, there are two ways to request memory for your job:
 
 -   `--mem`: Memory per node
@@ -32,20 +39,66 @@ table, including how you can tell what sort of job you're submitting.
 <col style="width: 14%" />
 <col style="width: 14%" />
 </colgroup>
-<thead>
-<tr class="header">
-</tr>
-</thead>
 <tbody>
-<tr class="odd">
+<tr class="header">
+<th>Job type</th>
+<th>Requested tasks<br />
+(<code>-n</code>, <code>--ntasks</code>)</th>
+<th>Requested logical CPUs per task<br />
+(<code>--cpus-per-task</code>)</th>
+<th>Requested nodes (<code>-N</code>, <code>--nodes</code>)</th>
+<th>Requested tasks per node<br />
+(<code>--ntasks-per-node</code>)</th>
+<th>Preferred memory format</th>
+<th>Ideal value</th>
+</tr>
+&#10;<tr class="odd">
+<td>Serial</td>
+<td>1 (or unspecified)</td>
+<td>1 (or unspecified)</td>
+<td>(Irrelevant, but should not be specified)<sup>1</sup></td>
+<td>(Irrelevant, but should not be specified)<sup>2</sup></td>
+<td><code>--mem=</code></td>
+<td>Peak memory<sup>3</sup> needed by the program</td>
 </tr>
 <tr class="even">
+<td>Multithreaded (e.g. OpenMP), but not MPI</td>
+<td>1 (or unspecified)</td>
+<td>&gt; 1</td>
+<td>(Irrelevant, but should not be specified)<sup>1</sup></td>
+<td>(Irrelevant, but should not be specified)<sup>2</sup></td>
+<td><code>--mem=</code></td>
+<td>Peak memory<sup>3</sup> needed by the program</td>
 </tr>
 <tr class="odd">
+<td>MPI, evenly split between nodes (recommended method)</td>
+<td>Unspecified<sup>4</sup></td>
+<td>≥ 1 (or unspecified)</td>
+<td>≥ 1<sup>5</sup></td>
+<td>≥ 1<sup>5</sup></td>
+<td><code>--mem=</code></td>
+<td>(Peak memory<sup>3</sup> needed per MPI task) × (number of tasks per
+node)</td>
 </tr>
 <tr class="even">
+<td>MPI, evenly split between nodes (discouraged method)</td>
+<td>&gt; 1</td>
+<td>≥ 1 (or unspecified)</td>
+<td>Either 1 or the number of tasks<sup>6</sup></td>
+<td>(Irrelevant, but should not be specified)<sup>4</sup></td>
+<td><code>--mem=</code></td>
+<td>(Peak memory<sup>3</sup> needed per MPI task) × (number of tasks per
+node) </td>
 </tr>
 <tr class="odd">
+<td>MPI, randomly placed</td>
+<td>&gt; 1</td>
+<td>≥ 1 (or unspecified)</td>
+<td>&gt; 1; &lt; number of tasks<sup>6</sup> (or unspecified)</td>
+<td>(Irrelevant, but should not be specified)<sup>4</sup></td>
+<td><code>--mem-per-cpu=</code></td>
+<td>(Peak memory<sup>3</sup> needed per MPI task) ÷ (number of logical
+CPUs per MPI task)</td>
 </tr>
 </tbody>
 </table>

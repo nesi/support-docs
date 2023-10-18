@@ -10,6 +10,13 @@ zendesk_article_id: 4830713922063
 zendesk_section_id: 360000164635
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 Have questions about NeSI services?   
 Looking for tips on how to optimise your HPC jobs?  
 Or, simply want to meet some of the team behind NeSI Support?
@@ -19,27 +26,48 @@ sessions are open to anyone - you don't need to be an existing NeSI
 user.  
   
 
-## **Office Hours in July 2023**
+## **Office Hours in October 2023**
 
-Click on the links below to add the date & Zoom link to your calendar.
+Click on the links below to add the date & Zoom link to your calendar:
 
--   [**05 July (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NnRnbmw3dnYyaW4wc2kyc2ltOHNlbmE0YXAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**04 October (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MnZlcmJnZW1iZjVsZ20zZHRiaXJtYXRxcW0gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**12 July (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzgxNDdrNzhscWtxY3JocTlxNHFuajk4bDYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**11 October (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjNvcTQyNjBwNnZocWQyaWtoNDkxZzdqc3QgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**19 July (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWhwMmpqYTFhNzkzYjhtOTd2bGRmMGJ0NnYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**18 October (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDF1M2RuZDU2YmUyaHBhcWptbHRuaGw4NzkgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**26 July (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzFlc3MxM3E3YW1uODY5aXBuamtrMXBiMmYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**25 October (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MWs5bXBjdmRuZmhuanBncjJhNmFlcGNhZm8gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
-If you are unable to add this Office Hour session to your calendar
-through these links, please email us at
-<a href="mailto:training@nesi.org.nz" class="mailto">training@nesi.org.nz</a> and
-we can send a calendar invite directly to you.   
-  
+If you are unable to add an Office Hour session to your calendar through
+these links, please email us at <training@nesi.org.nz> and we can send a
+calendar invite directly to you. 
+
+## **Office Hours in November 2023**
+
+Click on the links below to add the date & Zoom link to your calendar:
+
+-   [**01 November (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Nzh1bzhnazNnNGplaTV1YnJjZGlxMTBoNmEgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**08 November (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmVnMGdzb2VtMzYxYnNxaWZicGo3dXQzOHAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**15 November (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmVwanFvaXJuMmtkbzNrbGZkcmIzdHRla3AgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**22 November (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTZlbGplMnFmMGRyMjV2ODluYjhzdGpudDkgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**29 November (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW5tbmZhNmk4YzMzdTFmN3BudmFwdjRqbWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+If you are unable to add an Office Hour session to your calendar through
+these links, please email us at <training@nesi.org.nz> and we can send a
+calendar invite directly to you. 
 
 ## **How Does It Work**
 
@@ -57,11 +85,10 @@ troubleshoot things further.
 
 ## **Other ways to get help**
 
-Remember, you can
-<a href="mailto:support@nesi.org.nz" class="mailto">email Support</a> at
-any time and we have a team of experts ready to answer any questions you
-may have, big or small. You can also find helpful user resources, links
-and documentation elsewhere in our [User Support
+Remember, you can [email Support](mailto:support@nesi.org.nz) at any
+time and we have a team of experts ready to answer any questions you may
+have, big or small. You can also find helpful user resources, links and
+documentation elsewhere in our [User Support
 Centre](https://support.nesi.org.nz/hc/en-gb).
 
  

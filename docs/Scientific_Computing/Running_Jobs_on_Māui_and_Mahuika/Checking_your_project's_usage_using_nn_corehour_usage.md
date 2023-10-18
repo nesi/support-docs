@@ -10,6 +10,13 @@ zendesk_article_id: 4416692988047
 zendesk_section_id: 360000030876
 ---
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 To check your project's usage of Slurm-managed resources, you can use
 the command `nn_corehour_usage`. This command displays usage of cluster
 resources by a specific project, computed from the Slurm program
@@ -47,7 +54,7 @@ when the cluster commenced operations.
 Display results for the user `USERNAME`. The default user is the current
 user.
 
-`--`
+ 
 
 Treat all subsequent entries on the command line, including those
 starting with a dash (`-`), as arguments instead of as options.

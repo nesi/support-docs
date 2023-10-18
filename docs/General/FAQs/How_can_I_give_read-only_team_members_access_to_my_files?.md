@@ -10,7 +10,14 @@ zendesk_article_id: 4401821809679
 zendesk_section_id: 360000039036
 ---
 
-> ### See also
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+!!!
 >
 > [File permissions and
 > groups](https://support.nesi.org.nz/hc/en-gb/articles/360000205435)
@@ -25,8 +32,7 @@ To do this, you can use the script `nn_add_to_acls_recursively`. The
 following commands explain how to do this;  when running the commands,
 replace `nesi12345` and `nesi12345r` with your project code and
 read-only project code respectively.
-
-> ### Warning
+!!!
 >
 > If this process is interrupted part-way through, for example due to
 > your computer going to sleep and losing its connection to your NeSI
