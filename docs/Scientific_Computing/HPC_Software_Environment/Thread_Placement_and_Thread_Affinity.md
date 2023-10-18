@@ -61,7 +61,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](NodeSocketCore_0.png)
+![NodeSocketCore.png](../../../assets/images/NodeSocketCore_0.png)
 
 It is very important to note the following:
 

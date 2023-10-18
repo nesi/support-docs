@@ -66,7 +66,7 @@ click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 -   Specify the local port number on the local side (left)
 -   Save
 
-![sshTunnel.PNG](sshTunnel_0_0_0.PNG)
+![sshTunnel.PNG](../../../assets/images/sshTunnel_0_0_0.PNG)
 
 # PuTTY
 

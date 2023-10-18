@@ -53,7 +53,7 @@ As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using
 more broad terms such as "machine learning". 
 
-![MachineLearningSoftwareEnvironments-May2021.png](MachineLearningSoftwareEnvironments-May2021_0.png)
+![MachineLearningSoftwareEnvironments-May2021.png](../../../assets/images/MachineLearningSoftwareEnvironments-May2021_0.png)
 
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific

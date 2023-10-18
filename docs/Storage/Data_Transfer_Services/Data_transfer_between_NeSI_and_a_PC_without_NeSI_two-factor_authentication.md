@@ -53,8 +53,8 @@ have registered and created an account on Globus.
 -   You should now see your new guest collection at
     <https://app.globus.org/collections?scope=administered-by-me>
 
-<img src="6202960141583_0.name_me.png" style="max-width: 800px;"
-alt="mceclip0.png" />
+<img src="../../../assets/images/6202960141583_0.name_me.png"
+style="max-width: 800px;" alt="mceclip0.png" />
 
 ## Step 2: Download and install Globus Connect Personal
 
@@ -76,8 +76,8 @@ Note: By default your entire home directory will be exposed. It is good
 practice to only share specific directories. You can remove your home
 directory by highlighting it and clicking on the "-" sign.
 
-<img src="6202963231503_0.name_me.png" style="max-width: 800px;"
-alt="mceclip1.png" />
+<img src="../../../assets/images/6202963231503_0.name_me.png"
+style="max-width: 800px;" alt="mceclip1.png" />
 
 ## Step 4: Test a file transfer
 
@@ -89,5 +89,5 @@ alt="mceclip1.png" />
     be seen in the picture below.
 -   Click on the files you want to transfer and press "Start"
 
-<img src="6203141379215_0.name_me.png" style="max-width: 800px;"
-alt="mceclip3.png" />
+<img src="../../../assets/images/6203141379215_0.name_me.png"
+style="max-width: 800px;" alt="mceclip3.png" />

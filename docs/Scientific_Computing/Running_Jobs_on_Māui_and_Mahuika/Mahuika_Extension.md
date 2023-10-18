@@ -34,7 +34,8 @@ requested by a job.
   
 AMD Milan CPU overview, each node has two of these:
 
-<img src="milan_0.png" width="377" height="395" alt="milan.png" />
+<img src="../../../assets/images/milan_0.png" width="377" height="395"
+alt="milan.png" />
 
 **AMD-EPYC-Milan-architecture** from
 [HPCwire](https://www.hpcwire.com/2021/03/15/amd-launches-epyc-milan-with-19-skus-for-hpc-enterprise-and-hyperscale/#foobox-4/0/AMD-Epyc-Milan-architecture.png)
