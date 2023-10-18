@@ -31,7 +31,7 @@ Ubuntu LTS Terminal.
 1.  Open the Microsoft store, search for 'Ubuntu', find and install
     'Ubuntu 18.04 LTS' or  'Ubuntu 20.04 LTS'   
       
-    ![ubuntu5.png](ubuntu5_0.png)![ubuntu6.png](ubuntu6_0.png)  
+    ![ubuntu5.png](../../../assets/images/ubuntu5_0.png)![ubuntu6.png](../../../assets/images/ubuntu6_0.png)  
       
       
 
@@ -40,7 +40,8 @@ Ubuntu LTS Terminal.
     for a second time (If the above dialogue box reappears, close as
     before and download/install will begin.  
       
-    ![ubuntu3.png](ubuntu3_0.png)    ![ubuntu4.png](ubuntu4_0.png)  
+    ![ubuntu3.png](../../../assets/images/ubuntu3_0.png)  
+     ![ubuntu4.png](../../../assets/images/ubuntu4_0.png)  
       
 
 3.  Launch “Ubuntu 18.04 LTS” from start menu and wait for the first
@@ -51,14 +52,14 @@ Ubuntu LTS Terminal.
     will be prompted to “Enter new UNIX username” and press
     &lt;Enter&gt;. This username can be anything you want.  
       
-    ![ubuntu1.png](ubuntu1_0.png)  
+    ![ubuntu1.png](../../../assets/images/ubuntu1_0.png)  
       
 
 5.  Now, type in a new password for the username you picked and press
     &lt;Enter&gt;. (Again this password is anything you want). Then
     retype the password to confirm and press &lt;Enter&gt;  
       
-    ![ubuntu2.png](ubuntu2_0.png)
+    ![ubuntu2.png](../../../assets/images/ubuntu2_0.png)
 
 6.  To create a symbolic link to your Windows filesystems in your home
     directory run the following command replacing c with the name of

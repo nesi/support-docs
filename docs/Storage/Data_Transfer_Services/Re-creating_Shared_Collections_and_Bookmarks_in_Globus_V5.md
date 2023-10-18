@@ -33,25 +33,25 @@ In summary:
 1.  To re-create existing Collections, select *Share* and *Create Guest
     Collection  
       
-    ![globus14.jpg](globus14_0.jpg)  
+    ![globus14.jpg](../../../assets/images/globus14_0.jpg)  
       
     *
 2.  Enter the [file
     path](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791)
     of the directory to be shared.  
       
-    ![globus10.jpg](globus10_0.jpg)  
+    ![globus10.jpg](../../../assets/images/globus10_0.jpg)  
       
     This can also be copied from your existing Shared Collection on
     *NeSI Wellington DTN  
       
-    ![globus07.jpg](globus07_0.jpg)  
+    ![globus07.jpg](../../../assets/images/globus07_0.jpg)  
       
     *
 3.  Add Permissions for an individual or a Group (existing, or create a
     new group)  
       
-    ![globus11.jpg](globus11_0.jpg)  
+    ![globus11.jpg](../../../assets/images/globus11_0.jpg)  
       
 4.  Users you share with will receive an email notification containing a
     link to the new *Guest Collection*.
@@ -61,12 +61,12 @@ In summary:
 1.  Create bookmarks to **NeSI Wellington DTN V5** and new Guest
     Collections  
       
-    ![globus13.jpg](globus13_0.jpg)  
+    ![globus13.jpg](../../../assets/images/globus13_0.jpg)  
       
 2.  Bookmarks to *NeSI Wellington DTN* and Shared Collections on *NeSI
     Wellington DTN* should be deleted.
 
-![globus12.jpg](globus12_0.jpg)  
+![globus12.jpg](../../../assets/images/globus12_0.jpg)  
   
   
 

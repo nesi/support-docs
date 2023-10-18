@@ -208,7 +208,7 @@ our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
     6054939.ext+   extern          00:06:57    00:00.006    12      44K  COMPLETED 
     6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 
-![MPIscalingMem.png](MPIscalingMem_0_0_0.png)
+![MPIscalingMem.png](../../../assets/images/MPIscalingMem_0_0_0.png)
 
 First, looking at the plot of memory usage per task vs CPUs it would at
 appears that memory usage per task remains constant, regardless of how
@@ -233,9 +233,11 @@ a maximum memory requirement of 0.18 GB.
 <table style="width: 684px; height: 336px;">
 <tbody>
 <tr class="odd">
-<td style="width: 343.95px"><img src="MPIscalingSeeds_0_0_0.png"
+<td style="width: 343.95px"><img
+src="../../../assets/images/MPIscalingSeeds_0_0_0.png"
 alt="MPIscalingSeeds.png" /></td>
-<td style="width: 330.05px"><img src="MPIscalingSeedsLog_0_0_0.png"
+<td style="width: 330.05px"><img
+src="../../../assets/images/MPIscalingSeedsLog_0_0_0.png"
 alt="MPIscalingSeedsLog.png" /></td>
 </tr>
 </tbody>
@@ -294,7 +296,7 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](MPIseedsvtime_0_0_0.png)
+![MPIseedsvtime.png](../../../assets/images/MPIseedsvtime_0_0_0.png)
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we

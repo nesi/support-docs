@@ -103,11 +103,11 @@ The GUI can be started after loading `module load forge` and launching
     map
 
 [![Arm MAP
-main](ARM_MAP_main_0.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)
+main](../../../assets/images/ARM_MAP_main_0.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)
 
 Click on “PROFILE”.
 
-![MAP\_profile\_python.PNG](MAP_profile_python_0.PNG)
+![MAP\_profile\_python.PNG](../../../assets/images/MAP_profile_python_0.PNG)
 
 In the profile menu we need to specify the *executable/application* (in
 this case `python`), the arguments (here `scatter.py` and any additional
@@ -128,7 +128,7 @@ profile information.
 By default the profile window is divided into the following three main
 sections (click on picture to enlarge).
 
-[![example-map-scatter](ARM_MAP_scatter_mpi_0.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)
+[![example-map-scatter](../../../assets/images/ARM_MAP_scatter_mpi_0.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)
 
 On top, various metrics can be selected in the “Metrics” menu. In the
 middle part, a source code navigator connects line by line source code
@@ -152,7 +152,7 @@ using the *Metrics* Menu*.*
 As an example, “CPU instructions” presents the usage of different
 instruction sets during the program run time.
 
-[![example-map-scatter\_CPU](ARM_MAP_scatter_mpi_CPU_0.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png)
+[![example-map-scatter\_CPU](../../../assets/images/ARM_MAP_scatter_mpi_CPU_0.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png)
 
 The lower part can also be used to check the *application output* or
 show statistics on basis of *files* or *functions*.
