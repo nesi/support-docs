@@ -13,8 +13,8 @@ zendesk_section_id: 7348891753487
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 We have two categories of pricing for NeSI services through

@@ -13,8 +13,8 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 # Description
@@ -65,7 +65,7 @@ Artistic License
 # Prerequisites
 
 ###  
-!!!
+!!! info
 >
 > GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
 > individual academic license  (this is free). This can be obtained as
@@ -85,7 +85,7 @@ Artistic License
 >     home directory as  a **hidden** file under the filename `.gm_key`
 >      .i.e. `~/.gm_key`
 >
-!!!
+!!! info
 >
 > Make a copy of AUGUSTUS config from
 > ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config***

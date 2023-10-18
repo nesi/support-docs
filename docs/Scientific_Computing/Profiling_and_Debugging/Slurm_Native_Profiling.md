@@ -15,8 +15,8 @@ zendesk_section_id: 360000278935
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 Job resource usage can be determined on job completion by checking the

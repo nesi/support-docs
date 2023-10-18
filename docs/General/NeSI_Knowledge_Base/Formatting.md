@@ -13,8 +13,8 @@ zendesk_section_id: 360000196935
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 # Header 1
@@ -38,23 +38,23 @@ Small Text
 ------------------------------------------------------------------------
 
  Blockquotes
-!!!
+!!! info
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
-!!!
+!!! info
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
-!!!
+!!! info
 >
 > AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-!!!
+!!! info
 >
 > Some plain text.
-!!!
+!!! info
 >
 > <iframe src="//www.youtube-nocookie.com/embed/yDYXOntAlIk" width="560" height="315" frameborder="0" allowfullscreen>
 > </iframe>

@@ -13,8 +13,8 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 This article describes a technique to build
@@ -82,7 +82,7 @@ More information about how to submit a Slurm job is available in the
 [Submitting your first
 job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396) support
 page.
-!!!
+!!! info
 >
 > To build containers, you need to ensure that Apptainer has enough
 > storage space to create intermediate files. It also requires a cache
@@ -111,7 +111,7 @@ your Apptainer definition file
 
 it is likely due to an upstream issue (e.g. bad image on Dockerhub). In
 this case, try an older image version or a different base image.
-!!!
+!!! info
 >
 > This method, using fakeroot, is known to **not** work for all types of
 > Apptainer/Singularity containers.

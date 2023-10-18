@@ -13,8 +13,8 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 <p>Most programs which create temporary files will put those files in the directory specified by the environment variable <code>TMPDIR</code> if that is set, or <code>/tmp</code> otherwise. This is also true in Slurm, such that whenever a job starts, a temporary directory is created for that job and <code>TMPDIR</code> set. When the job ends our Slurm epilog ensures that the directory is deleted.</p>

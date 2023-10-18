@@ -13,11 +13,11 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info
 >
 > -   Be a [member of an active
 >     project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
@@ -66,7 +66,7 @@ Ubuntu LTS Terminal.
     your Windows filesystems found in /mnt/. 
 
         ln -s /mnt/c/Users/YourWindowsUsername/ WinFS
-!!!
+!!! info
 >
 > -   Set up your [SSH config
 >     file](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).

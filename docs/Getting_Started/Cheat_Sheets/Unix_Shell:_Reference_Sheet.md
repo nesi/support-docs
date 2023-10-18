@@ -13,8 +13,8 @@ zendesk_section_id: 360000278975
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 Regardless of the operating system of your personal computer you will
@@ -159,7 +159,7 @@ case ls).</td>
 </tr>
 </tbody>
 </table>
-!!!
+!!! info
 >
 > Pressing the 'tab' key once will automatically complete the line if it
 > is the only option. e.g. 

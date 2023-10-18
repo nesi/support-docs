@@ -13,8 +13,8 @@ zendesk_section_id: 360000042255
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 Migration of files from your project or nobackup directory to your
@@ -66,7 +66,7 @@ You do not have to create one single archive file for all small files in
 `/nesi/project/<project_code>` or `/nesi/nobackup/<project_code>`, and
 in fact you may prefer to create archive files pertaining to particular
 subdirectories. There is no harm in either approach.
-!!!
+!!! info
 >
 > The archive creation process can take quite a long time. So that you
 > can freely log out of the cluster, and to protect the process in case

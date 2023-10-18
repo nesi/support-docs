@@ -13,8 +13,8 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
- !!! Info
-     This page has been automatically migrated and may contain formatting errors.
+!!! info
+    This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 Many scientific software applications are
@@ -26,7 +26,7 @@ run the program, rather than happening automatically.
 The are <span class="dictionary-of-numbers">three types of parallel
 </span>execution we will cover are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
-!!!
+!!! info
 >
 > Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
 > *logical* CPU's = **1** *physical* core).  
@@ -116,7 +116,7 @@ The expected output being
 
     /home/user001/demo
     /home/user001/demo
-!!!
+!!! info
 >
 > For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
 > all. Using `srun` in conjunction with `--cpus-per-task=1` will
