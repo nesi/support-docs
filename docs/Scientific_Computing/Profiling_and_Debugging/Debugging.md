@@ -92,7 +92,7 @@ information are provided into the application stdout and a HTML file is
 created. Thus this could also be a handy alternative for print
 statements without touching the code.
 
-[![DDT-offline-example.PNG](assets/images/DDT-offline-example_0.PNG)](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
+[![DDT-offline-example.PNG](DDT-offline-example_0.PNG)](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
 
 [See full example page
 here.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
@@ -117,7 +117,7 @@ launching an application with DDT (RUN).
 In the RUN menu the different settings for the executable need to be
 specified.
 
-![RUN\_ddt.PNG](assets/images/RUN_ddt_0.PNG)
+![RUN\_ddt.PNG](RUN_ddt_0.PNG)
 
 Beside Application location and name, we need to specify arguments,
 working directory, MPI and OpenMP settings. If we have no interactive
@@ -131,7 +131,7 @@ Variables section you can load necessary modules.
 After submitting the task, DDT launches the application (wait for the
 workload manager if necessary) and opens the following window. 
 
-![DDT\_overview.PNG](assets/images/DDT_overview_0.PNG)
+![DDT\_overview.PNG](DDT_overview_0.PNG)
 
 In the top part the processes and threads can be selected. The
 application is paused at the initialization phase, giving the user the

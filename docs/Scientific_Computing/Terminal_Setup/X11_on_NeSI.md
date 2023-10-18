@@ -57,14 +57,14 @@ href="https://sourceforge.net/projects/xming/">Xming</a></td>
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png) symbol
+this ![mceclip0.png](mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png) symbol
 in your taskbar 
 !!!
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](assets/images/xon_0.png)=on, ![off.png](assets/images/off_0.png)=off). 
+> (![xon.png](xon_0.png)=on, ![off.png](off_0.png)=off). 
 
 # X-Forwarding
 
@@ -85,11 +85,10 @@ Make sure the `-Y` or `-X` flag is included
 X<span class="dictionary-of-numbers">-11 forwarding box is
 </span>checked.
 
-<img src="assets/images/x11moba_0.png" width="451" height="303"
-alt="x11moba.png" />
+<img src="x11moba_0.png" width="451" height="303" alt="x11moba.png" />
 
 If the
-![mceclip0.png](assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
+![mceclip0.png](mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
 button in the top right corner of your window is coloured, the X-server
 should be running.
 
