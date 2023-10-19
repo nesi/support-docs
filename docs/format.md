@@ -1,1 +1,95 @@
-{"payload":{"allShortcutsEnabled":false,"fileTree":{"docs":{"items":[{"name":"General","path":"docs/General","contentType":"directory"},{"name":"Getting_Started","path":"docs/Getting_Started","contentType":"directory"},{"name":"NeSI_Service_Subscriptions","path":"docs/NeSI_Service_Subscriptions","contentType":"directory"},{"name":"Scientific_Computing","path":"docs/Scientific_Computing","contentType":"directory"},{"name":"Storage","path":"docs/Storage","contentType":"directory"},{"name":"assets","path":"docs/assets","contentType":"directory"},{"name":"cards-help.yaml","path":"docs/cards-help.yaml","contentType":"file"},{"name":"cards-quickstart.yaml","path":"docs/cards-quickstart.yaml","contentType":"file"},{"name":"cards-services.yaml","path":"docs/cards-services.yaml","contentType":"file"},{"name":"format.md","path":"docs/format.md","contentType":"file"},{"name":"index.md","path":"docs/index.md","contentType":"file"}],"totalCount":11},"":{"items":[{"name":".github","path":".github","contentType":"directory"},{"name":"docs","path":"docs","contentType":"directory"},{"name":"overrides","path":"overrides","contentType":"directory"},{"name":".gitignore","path":".gitignore","contentType":"file"},{"name":".gitlab-ci.yml","path":".gitlab-ci.yml","contentType":"file"},{"name":"README.md","path":"README.md","contentType":"file"},{"name":"SPECIFICATION.md","path":"SPECIFICATION.md","contentType":"file"},{"name":"TODO.md","path":"TODO.md","contentType":"file"},{"name":"custom_hooks.py","path":"custom_hooks.py","contentType":"file"},{"name":"import.log","path":"import.log","contentType":"file"},{"name":"mkdocs.yml","path":"mkdocs.yml","contentType":"file"},{"name":"requirements.txt","path":"requirements.txt","contentType":"file"}],"totalCount":12}},"fileTreeProcessingTime":15.498247999999998,"foldersToFetch":[],"reducedMotionEnabled":null,"repo":{"id":652840845,"defaultBranch":"main","name":"support-docs-concept","ownerLogin":"nesi","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2023-06-12T22:52:36.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/924805?v=4","public":true,"private":false,"isOrgOwned":true},"symbolsExpanded":false,"treeExpanded":true,"refInfo":{"name":"main","listCacheKey":"v0:1694575477.0","canEdit":false,"refType":"branch","currentOid":"e9f7087c869555dbc649f03a443c4ba7a98c717e"},"path":"docs/format.md","currentUser":null,"blob":{"rawLines":null,"stylingDirectives":null,"csv":null,"csvError":null,"dependabotInfo":{"showConfigurationBanner":false,"configFilePath":null,"networkDependabotPath":"/nesi/support-docs-concept/network/updates","dismissConfigurationNoticePath":"/settings/dismiss-notice/dependabot_configuration_notice","configurationNoticeDismissed":null,"repoAlertsPath":"/nesi/support-docs-concept/security/dependabot","repoSecurityAndAnalysisPath":"/nesi/support-docs-concept/settings/security_analysis","repoOwnerIsOrg":true,"currentUserCanAdminRepo":false},"displayName":"format.md","displayUrl":"https://github.com/nesi/support-docs-concept/blob/main/docs/format.md?raw=true","headerInfo":{"blobSize":"1.2 KB","deleteInfo":{"deleteTooltip":"You must be signed in to make or propose changes"},"editInfo":{"editTooltip":"You must be signed in to make or propose changes"},"ghDesktopPath":"https://desktop.github.com","gitLfsPath":null,"onBranch":true,"shortPath":"53a5c5f","siteNavLoginPath":"/login?return_to=https%3A%2F%2Fgithub.com%2Fnesi%2Fsupport-docs-concept%2Fblob%2Fmain%2Fdocs%2Fformat.md","isCSV":false,"isRichtext":true,"toc":[{"level":1,"text":"Header 1","anchor":"header-1","htmlText":"Header 1"},{"level":2,"text":"Header 2","anchor":"header-2","htmlText":"Header 2"},{"level":3,"text":"Header 3","anchor":"header-3","htmlText":"Header 3"},{"level":4,"text":"Header 4","anchor":"header-4","htmlText":"Header 4"}],"lineInfo":{"truncatedLoc":"95","truncatedSloc":"63"},"mode":"file"},"image":false,"isCodeownersFile":null,"isPlain":false,"isValidLegacyIssueTemplate":false,"issueTemplateHelpUrl":"https://docs.github.com/articles/about-issue-and-pull-request-templates","issueTemplate":null,"discussionTemplate":null,"language":"Markdown","languageID":222,"large":false,"loggedIn":false,"newDiscussionPath":"/nesi/support-docs-concept/discussions/new","newIssuePath":"/nesi/support-docs-concept/issues/new","planSupportInfo":{"repoIsFork":null,"repoOwnedByCurrentUser":null,"requestFullPath":"/nesi/support-docs-concept/blob/main/docs/format.md","showFreeOrgGatedFeatureMessage":null,"showPlanSupportBanner":null,"upgradeDataAttributes":null,"upgradePath":null},"publishBannersInfo":{"dismissActionNoticePath":"/settings/dismiss-notice/publish_action_from_dockerfile","dismissStackNoticePath":"/settings/dismiss-notice/publish_stack_from_file","releasePath":"/nesi/support-docs-concept/releases/new?marketplace=true","showPublishActionBanner":false,"showPublishStackBanner":false},"rawBlobUrl":"https://github.com/nesi/support-docs-concept/raw/main/docs/format.md","renderImageOrRaw":false,"richText":"<article class=\"markdown-body entry-content container-lg\" itemprop=\"text\"><p dir=\"auto\"><code># Header 1</code></p>\n<h1 tabindex=\"-1\" id=\"user-content-header-1\" dir=\"auto\"><a class=\"heading-link\" href=\"#header-1\">Header 1<svg class=\"octicon octicon-link\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z\"></path></svg></a></h1>\n<p dir=\"auto\"><code>## Header 2</code></p>\n<h2 tabindex=\"-1\" id=\"user-content-header-2\" dir=\"auto\"><a class=\"heading-link\" href=\"#header-2\">Header 2<svg class=\"octicon octicon-link\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z\"></path></svg></a></h2>\n<p dir=\"auto\"><code>### Header 3</code></p>\n<h3 tabindex=\"-1\" id=\"user-content-header-3\" dir=\"auto\"><a class=\"heading-link\" href=\"#header-3\">Header 3<svg class=\"octicon octicon-link\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z\"></path></svg></a></h3>\n<p dir=\"auto\"><code>#### Header 4</code></p>\n<h4 tabindex=\"-1\" id=\"user-content-header-4\" dir=\"auto\"><a class=\"heading-link\" href=\"#header-4\">Header 4<svg class=\"octicon octicon-link\" viewBox=\"0 0 16 16\" version=\"1.1\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z\"></path></svg></a></h4>\n<p dir=\"auto\"><code>**bold**</code>\n<strong>bold</strong></p>\n<p dir=\"auto\"><code>_italic</code>\n<em>italic</em></p>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"!!! info\n    This is a test admonation.\"><pre>!!! info\n    This is a test admonation.</pre></div>\n<p dir=\"auto\">!!! info\nThis is a test admonation.</p>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"=== &quot;Tab One&quot;\n    someting in the tab\n=== &quot;Tab two&quot;\n    something else\"><pre>=== \"Tab One\"\n    someting in the tab\n=== \"Tab two\"\n    something else</pre></div>\n<p dir=\"auto\">=== \"Tab One\"\nsometing in the tab\n=== \"Tab two\"\nsomething else</p>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"\\```py\nimport somepackage\n\nformatting = True\nif formatting:\n    Print(formatting) # A comment\n\\```\"><pre><span class=\"pl-c1\">\\`</span>``py\nimport somepackage\n\nformatting = True\nif formatting:\n    Print(formatting) # A comment\n<span class=\"pl-c1\">\\`</span>``</pre></div>\n<div class=\"highlight highlight-source-python notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"import somepackage\n\nformatting = True\nif formatting:\n    Print(formatting) # A comment\"><pre><span class=\"pl-k\">import</span> <span class=\"pl-s1\">somepackage</span>\n\n<span class=\"pl-s1\">formatting</span> <span class=\"pl-c1\">=</span> <span class=\"pl-c1\">True</span>\n<span class=\"pl-k\">if</span> <span class=\"pl-s1\">formatting</span>:\n    <span class=\"pl-v\">Print</span>(<span class=\"pl-s1\">formatting</span>) <span class=\"pl-c\"># A comment</span></pre></div>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"![This is an image](&quot;assets/images/3rgk_assembly-1.jpeg&quot;)\"><pre><span class=\"pl-s\">![</span>This is an image<span class=\"pl-s\">]</span><span class=\"pl-s\">(</span><span class=\"pl-corl\">\"assets/images/3rgk_assembly-1.jpeg\"</span><span class=\"pl-s\">)</span></pre></div>\n<p dir=\"auto\"><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"/nesi/support-docs-concept/blob/main/docs/%22assets/images/3rgk_assembly-1.jpeg%22\"><img src=\"/nesi/support-docs-concept/raw/main/docs/%22assets/images/3rgk_assembly-1.jpeg%22\" alt=\"This is an image\" style=\"max-width: 100%;\"></a></p>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"[External Link](&quot;https://example.com&quot;)\n\"><pre><span class=\"pl-s\">[</span>External Link<span class=\"pl-s\">]</span><span class=\"pl-s\">(</span><span class=\"pl-corl\">\"https://example.com\"</span><span class=\"pl-s\">)</span>\n</pre></div>\n<p dir=\"auto\">External Link</p>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"[Internal Link](&quot;General/Announcements&quot;)\n\"><pre><span class=\"pl-s\">[</span>Internal Link<span class=\"pl-s\">]</span><span class=\"pl-s\">(</span><span class=\"pl-corl\">\"General/Announcements\"</span><span class=\"pl-s\">)</span>\n</pre></div>\n<p dir=\"auto\"><a href=\"/nesi/support-docs-concept/blob/main/docs/%22General/Announcements%22\">Internal Link</a></p>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"[Hover over me](https://example.com &quot;I'm a link with a custom tooltip.&quot;)\"><pre><span class=\"pl-s\">[</span>Hover over me<span class=\"pl-s\">]</span><span class=\"pl-s\">(</span><span class=\"pl-corl\">https://example.com</span> <span class=\"pl-s\">\"</span><span class=\"pl-s\">I'm a link with a custom tooltip.</span><span class=\"pl-s\">\")</span></pre></div>\n<p dir=\"auto\"><a href=\"https://example.com\" title=\"I'm a link with a custom tooltip.\" rel=\"nofollow\">Hover over me</a></p>\n<div class=\"highlight highlight-text-md notranslate position-relative overflow-auto\" dir=\"auto\" data-snippet-clipboard-copy-content=\"Acroynym should be automatically tooltipped e.g. MPI.\"><pre>Acroynym should be automatically tooltipped e.g. MPI.</pre></div>\n<p dir=\"auto\">Acroynym should be automatically tooltipped e.g. MPI.</p>\n<p dir=\"auto\">{{ macros_info() }}</p>\n</article>","renderedFileInfo":null,"shortPath":null,"tabSize":8,"topBannersInfo":{"overridingGlobalFundingFile":false,"globalPreferredFundingPath":null,"repoOwner":"nesi","repoName":"support-docs-concept","showInvalidCitationWarning":false,"citationHelpUrl":"https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files","showDependabotConfigurationBanner":false,"actionsOnboardingTip":null},"truncated":false,"viewable":true,"workflowRedirectUrl":null,"symbols":{"timedOut":false,"notAnalyzed":false,"symbols":[{"name":" Header 1","kind":"section_1","identStart":15,"identEnd":24,"extentStart":14,"extentEnd":1229,"fullyQualifiedName":" Header 1","identUtf16":{"start":{"lineNumber":2,"utf16Col":1},"end":{"lineNumber":2,"utf16Col":10}},"extentUtf16":{"start":{"lineNumber":2,"utf16Col":0},"end":{"lineNumber":95,"utf16Col":0}}},{"name":" Header 2","kind":"section_2","identStart":43,"identEnd":52,"extentStart":41,"extentEnd":1229,"fullyQualifiedName":" Header 2","identUtf16":{"start":{"lineNumber":6,"utf16Col":2},"end":{"lineNumber":6,"utf16Col":11}},"extentUtf16":{"start":{"lineNumber":6,"utf16Col":0},"end":{"lineNumber":95,"utf16Col":0}}},{"name":" Header 3","kind":"section_3","identStart":73,"identEnd":82,"extentStart":70,"extentEnd":1229,"fullyQualifiedName":" Header 3","identUtf16":{"start":{"lineNumber":10,"utf16Col":3},"end":{"lineNumber":10,"utf16Col":12}},"extentUtf16":{"start":{"lineNumber":10,"utf16Col":0},"end":{"lineNumber":95,"utf16Col":0}}},{"name":" Header 4","kind":"section_4","identStart":105,"identEnd":114,"extentStart":101,"extentEnd":1229,"fullyQualifiedName":" Header 4","identUtf16":{"start":{"lineNumber":14,"utf16Col":4},"end":{"lineNumber":14,"utf16Col":13}},"extentUtf16":{"start":{"lineNumber":14,"utf16Col":0},"end":{"lineNumber":95,"utf16Col":0}}}]}},"copilotInfo":null,"csrf_tokens":{"/nesi/support-docs-concept/branches":{"post":"bP1E78-4PHp5tLWMpb4gy-rVVVHlMIl6Oc4x_HOjlfnCDw-_xTlTdz_l3t8GZqUefKgrPfL5hgzcFrbX0Me9cQ"},"/repos/preferences":{"post":"IDb6EJx57ycH3F6X7n_We4QBwnCeS3z_X5lSIioLnUc9O75hEuD_42tLXpNxWnsnO0Mn7lvSMzVsmQC4fB6PgQ"}}},"title":"support-docs-concept/docs/format.md at main · nesi/support-docs-concept"}
+`# Header 1`
+
+# Header 1
+
+`## Header 2`
+
+## Header 2
+
+`### Header 3`
+
+### Header 3
+
+`#### Header 4`
+
+#### Header 4
+
+`**bold**`
+**bold**
+
+`_italic`
+_italic_
+
+```md
+!!! info
+    This is a test admonation.
+```
+
+!!! info
+    This is a test admonation.
+
+```md
+=== "Tab One"
+    someting in the tab
+=== "Tab two"
+    something else
+```
+
+=== "Tab One"
+    someting in the tab
+=== "Tab two"
+    something else
+
+```md
+\```py
+import somepackage
+
+formatting = True
+if formatting:
+    Print(formatting) # A comment
+\```
+``` 
+
+```python
+import somepackage
+
+formatting = True
+if formatting:
+    Print(formatting) # A comment
+```
+
+```md
+![This is an image]("assets/images/3rgk_assembly-1.jpeg")
+```
+
+![This is an image]("assets/images/3rgk_assembly-1.jpeg")
+
+```md
+[External Link]("https://example.com")
+
+```
+
+[External Link]("https://example.com")
+
+```md
+[Internal Link]("General/Announcements")
+
+```
+
+[Internal Link]("General/Announcements")
+
+```md
+[Hover over me](https://example.com "I'm a link with a custom tooltip.")
+```
+
+[Hover over me](https://example.com "I'm a link with a custom tooltip.")
+
+
+```md
+Acroynym should be automatically tooltipped e.g. MPI.
+```
+
+Acroynym should be automatically tooltipped e.g. MPI.
+
+
+{{ macros_info() }}
