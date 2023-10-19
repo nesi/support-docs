@@ -91,5 +91,9 @@ Acroynym should be automatically tooltipped e.g. MPI.
 
 Acroynym should be automatically tooltipped e.g. MPI.
 
+### Accessability standards
+
+- [nz spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
+- [WCAG spec](https://www.w3.org/TR/WCAG21/)
 
 {{ macros_info() }}
