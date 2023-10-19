@@ -52,8 +52,7 @@ guidance.
 **sacct**
 
     sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
-
-> ### Tip
+!!! info Tip
 >
 > *If you want to make this your default* `sacct` *setting, run;*
 >
@@ -138,8 +137,7 @@ If 'nodelist' is not one of the fields in the output of your `sacct` or
 `squeue` commands you can find the node a job is running on using the
 command; `squeue -h -o %N -j <jobid>` The node will look something like
 `wbn123` on Mahuika or `nid00123` on Māui
-
-> ### Note
+!!! info Note
 >
 > If your job is using MPI it may be running on multiple nodes
 
@@ -177,10 +175,7 @@ height="252" alt="how_to_read_htop.png" />
 **CPU%** - Percentage CPU utilisation.
 
 **MEM% **Percentage Memory utilisation.
-
- 
-
-> ### Warning
+!!! info Warning
 >
 > If the job finishes, or is killed you will be kicked off the node. If
 > htop freezes, type `reset` to clear your terminal.

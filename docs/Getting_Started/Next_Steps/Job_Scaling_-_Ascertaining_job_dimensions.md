@@ -129,8 +129,7 @@ they will both queue faster and run for less time. Also, if one of these
 jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
-
-> ### Examples
+!!! info Examples
 >
 > [Multithreading
 > Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)

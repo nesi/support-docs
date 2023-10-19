@@ -17,7 +17,7 @@ zendesk_section_id: 360000034315
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-> ### Requirements
+!!! info Requirements
 >
 > -   Have your [connection to the NeSI
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
@@ -44,8 +44,7 @@ described
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
-
-> ### Note
+!!! info Note
 >
 > The following examples use aliases as set up in [standard terminal
 > setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
@@ -75,8 +74,7 @@ However if you close this terminal session the port forwarding will end.
 If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure. 
-
-> ### Note
+!!! info Note
 >
 > Your local port and remote port do not have to be different numbers.
 > It is generally easier to use the same number for both.
@@ -115,8 +113,7 @@ isn't a requirement, but it makes things easier to remember.
 
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
-
-> ### Note
+!!! info Note
 >
 > -   If you get a error message
 >
@@ -207,8 +204,7 @@ An example Slurm script:
     ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
     <some process using port 6676>
-
-> ### What Next?
+!!! info What Next?
 >
 > -   Using
 >     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on

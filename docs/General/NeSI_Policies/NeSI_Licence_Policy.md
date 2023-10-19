@@ -21,8 +21,7 @@ With very few exceptions, NeSI does not hold software licences of its
 own. If you wish to use any of the proprietary software installed on the
 NeSI cluster, you, or more likely your institution or department, will
 need to have an appropriate licence.
-
-> ### Warning
+!!! info Warning
 >
 > Slurm and many other applications use the American spelling of the
 > noun, "*license*".
@@ -95,8 +94,7 @@ Before adding any particular person to a software group, we may ask to
 see a licence agreement allowing that person to use the software. We may
 also check to see whether the licence agreement forbids the person from
 using the software on NeSI.
-
-> ### Warning
+!!! info Warning
 >
 > Some licence agreements are quite restrictive in terms of where, or on
 > what sort of machine, a licensee may run the program. For example, the
@@ -135,8 +133,7 @@ likely leading to a timeout).
 
 The names of the Slurm licence tokens are included in the
 application-specific documentation.
-
-> ### Note
+!!! info Note
 >
 > Slurm licence reservations work independently of the licence server.
 > Not including a Slurm token will not prevent your job from running,

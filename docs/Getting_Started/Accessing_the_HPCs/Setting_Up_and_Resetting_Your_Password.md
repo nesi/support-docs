@@ -20,7 +20,7 @@ zendesk_section_id: 360000034315
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-> ### Requirements
+!!! info Requirements
 >
 > -   Have a [NeSI
 >     account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
@@ -94,10 +94,7 @@ width="440" height="285" alt="password_set_confirmation.png" />
 
 <img src="../../assets/images/password_set_confirmation_0_0_0.png"
 width="440" height="285" alt="password_set_confirmation.png" />
-
- 
-
-> ### What next?
+!!! info What next?
 >
 > -   Set up [Second Factor
 >     Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)

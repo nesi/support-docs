@@ -17,7 +17,7 @@ zendesk_section_id: 360000189696
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-> ### Requirements
+!!! info Requirements
 >
 > -   Have your [connection to the NeSI
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
@@ -47,8 +47,7 @@ your remote will be forwarded to your local.
 > -   
 
 # MobaXterm
-
-> ### Tips
+!!! info Tips
 >
 > -   MobaXterm has an internal terminal which acts like a linux
 >     terminal and can be configured as described in the [Standard
@@ -72,12 +71,7 @@ click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 # PuTTY
 
 *Coming soon..*
-
- 
-
- 
-
-> ### What Next?
+!!! info What Next?
 >
 > -   Using
 >     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on

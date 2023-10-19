@@ -313,8 +313,7 @@ defined.</td>
 </tr>
 </tbody>
 </table>
-
-> ### Tip
+!!! info Tip
 >
 > Many options have a short and long form e.g.
 > `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
@@ -382,8 +381,7 @@ called.</td>
 </tr>
 </tbody>
 </table>
-
-> ### Tip
+!!! info Tip
 >
 > In order to decrease the chance of a variable being misinterpreted you
 > should use the syntax `${NAME_OF_VARIABLE}` and define in strings if

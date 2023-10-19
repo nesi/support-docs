@@ -31,8 +31,7 @@ Files are deleted if they meet **all** of the following criteria:
 -   The file was identified as a candidate for deletion two weeks
     previously, and as such is listed in a the project's
     nobackup `.policy` directory.
-
-> ### Tip
+!!! info Tip
 >
 > You can get a list of files marked for deletion with the command
 > `nn_doomed_list`.
@@ -67,8 +66,7 @@ The general process will follow a schedule as follows:
 -   Project teams will be notified by email if they have file candidates
     for deletion. Emails will be sent two weeks in advance of any
     deletion taking place.
-
-    > ### Warning
+!!! info Warning
     >
     > Due to the nature of email, we cannot guarantee that any
     > particular email message will be successfully delivered and
@@ -94,8 +92,7 @@ team members are able to view the contents of `.policy` (but not delete
 or modify those contents). The gzip compressed filelist can be viewed
 and searched with the `zless` and `zgrep` commands respectively, e.g.,
 `zless /nesi/nobackup/nesi12345/.policy/to_delete/<date>.filelist.gz`.
-
-> ### Warning
+!!! info Warning
 >
 > Objects other than files, such as directories and symbolic links, are
 > not deleted under this policy, even if at deletion time they are
@@ -134,8 +131,7 @@ keep beyond the scheduled expiry date, you have four options:
 -   Note: Accessing (Open/Close and Open/Save) or Moving (\`mv\`) does
     not update the timestamp of the file. Copying (\`cp\`) does create a
     new timestamped file.  
-
-    > ### Warning
+!!! info Warning
     >
     > Doing this for large numbers of files, or for files that together
     > take up a large amount of disk space, in your project's nobackup

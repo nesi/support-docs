@@ -56,8 +56,7 @@ diverged from the original, while '`copy.bin`' has not.
 
 Note that filename, path, permissions or any other metadata does not
 affect the checksum.
-
-> ### Note
+!!! info Note
 >
 > Checksum functions are designed so that similar files *will not*
 > produce similar hashes.
