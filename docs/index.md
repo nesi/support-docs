@@ -6,9 +6,7 @@ hidden: false
 
 # NeSI Support Documentation
 
-NeSI is building a cloud computing platform for easier and more adaptable collaboration around scientific data.
-
-Research teams can use our Flexible High Performance Cloud (Flexible HPC) services to develop novel solutions that enable science.
+Technical Documentation for our HPC service.
 
 ## Quickstart
 
