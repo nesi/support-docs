@@ -17,16 +17,16 @@ zendesk_section_id: 7348925662223
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<p data-pm-slice="1 3 []">As part of our service agreements, we request you name a Service Governance Contact on behalf of your institution. The role of this person includes:</p>
-<ul class="ak-ul">
-<li>
-<p>acting as a primary liaison / contact person on behalf of your institution for anything related to the service Subscription</p>
-</li>
-<li>
-<p>approving allocation requests for projects from your institution</p>
-</li>
-<li>
-<p>receiving and reviewing the Subscriber Monthly Usage Reports</p>
-</li>
-</ul>
-<p>If you have any questions about the role of a Service Governance contact, <a href="mailto:info@nesi.org.nz" target="_self">get in touch</a>.</p>
+As part of our service agreements, we request you name a Service
+Governance Contact on behalf of your institution. The role of this
+person includes:
+
+-   acting as a primary liaison / contact person on behalf of your
+    institution for anything related to the service Subscription
+
+-   approving allocation requests for projects from your institution
+
+-   receiving and reviewing the Subscriber Monthly Usage Reports
+
+If you have any questions about the role of a Service Governance
+contact, [get in touch](mailto:info@nesi.org.nz).

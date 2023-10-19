@@ -17,5 +17,8 @@ zendesk_section_id: 200732737
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<p>After the UoA ANSYS licence server update on 17th Feb, the NeSI cluster lost connection. We are working with ITS to solve the issue.</p>
-<p>All jobs requiring an ANSYS licence from UoA have been placed on hold for now.</p>
+After the UoA ANSYS licence server update on 17th Feb, the NeSI cluster
+lost connection. We are working with ITS to solve the issue.
+
+All jobs requiring an ANSYS licence from UoA have been placed on hold
+for now.

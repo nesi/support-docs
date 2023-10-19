@@ -17,22 +17,41 @@ zendesk_section_id: 360000189696
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<h2>Option 2: PuTTY (+WinSCP)</h2>
-<p><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Download</a></p>
-<p> </p>
-<p>1. Set the 'Host Name' to:</p>
-<pre>lander.nesi.org.nz</pre>
-<p> </p>
-<p> <img src="https://support.nesi.org.nz/hc/article_attachments/360002834555/putty1.png" alt="putty1.png"></p>
-<p>2. Open Connection &gt; Data and enter in your username under 'Auto-Login username. </p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360001308455/putty2.png" alt="putty2.png"></p>
-<p> </p>
-<p>3. Open Connection &gt; SSH and 'Share SSH connections if possible'.</p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360001306496/putty4.png" alt="putty4.png"></p>
-<p>4. Do this</p>
-<p><span class="wysiwyg-color-red">SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T</span></p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360001308535/putty5.png" alt="putty5.png"></p>
-<p> </p>
-<p> </p>
-<p>Save session</p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360002930136/putty3.png" alt="putty3.png"></p>
+## Option 2: PuTTY (+WinSCP)
+
+[Download](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+
+ 
+
+1\. Set the 'Host Name' to:
+
+    lander.nesi.org.nz
+
+ 
+
+ ![putty1.png](../../assets/images/putty1_0.png)
+
+2\. Open Connection &gt; Data and enter in your username under
+'Auto-Login username. 
+
+![putty2.png](../../assets/images/putty2_0.png)
+
+ 
+
+3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
+
+![putty4.png](../../assets/images/putty4_0.png)
+
+4\. Do this
+
+SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
+
+![putty5.png](../../assets/images/putty5_0.png)
+
+ 
+
+ 
+
+Save session
+
+![putty3.png](../../assets/images/putty3_0.png)

@@ -17,9 +17,20 @@ zendesk_section_id: 360000224835
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<p>See <a href="https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/access-policy">https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/access-policy</a> for the current version of the NeSI Access Policy.</p>
-<p>Our Access Policy provides essential information for researchers accessing the following NeSI services:</p>
-<ul>
-<li>HPC Compute and Analytics – provides access to <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000034335-The-NeSI-High-Performance-Computers" target="_blank" rel="noopener">HPC platforms</a> that host a broad range of high-performance <a href="https://www.nesi.org.nz/services/high-performance-computing/software">software applications and libraries</a>.</li>
-<li>Consultancy and Training – provides access to <a href="https://www.nesi.org.nz/about-us/who-we-are">expert scientific software programmers</a> and <a href="https://www.nesi.org.nz/services/computational-science-team/workshops">training workshops</a> respectively.</li>
-</ul>
+See
+<https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/access-policy> for
+the current version of the NeSI Access Policy.
+
+Our Access Policy provides essential information for researchers
+accessing the following NeSI services:
+
+-   HPC Compute and Analytics – provides access to [HPC
+    platforms](https://support.nesi.org.nz/hc/en-gb/sections/360000034335-The-NeSI-High-Performance-Computers)
+    that host a broad range of high-performance [software applications
+    and
+    libraries](https://www.nesi.org.nz/services/high-performance-computing/software).
+-   Consultancy and Training – provides access to [expert scientific
+    software programmers](https://www.nesi.org.nz/about-us/who-we-are)
+    and [training
+    workshops](https://www.nesi.org.nz/services/computational-science-team/workshops)
+    respectively.

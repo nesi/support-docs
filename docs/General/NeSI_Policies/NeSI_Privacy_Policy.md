@@ -17,4 +17,9 @@ zendesk_section_id: 360000224835
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<p><span>See <a href="https://www.nesi.org.nz/nesi-privacy-policy" target="_self">https://www.nesi.org.nz/nesi-privacy-policy</a></span><span> for the current version of the NeSI Privacy Policy.<br><br>The Policy outlines what personal information NeSI collects. How it is stored and used. How users can request access, correct or delete information, and under what circumstances NeSI will disclose it. </span></p>
+See <https://www.nesi.org.nz/nesi-privacy-policy> for the current
+version of the NeSI Privacy Policy.  
+  
+The Policy outlines what personal information NeSI collects. How it is
+stored and used. How users can request access, correct or delete
+information, and under what circumstances NeSI will disclose it. 

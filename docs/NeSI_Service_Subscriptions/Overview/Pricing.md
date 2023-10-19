@@ -17,15 +17,26 @@ zendesk_section_id: 7348891753487
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<p>We have two categories of pricing for NeSI services through Subscriptions:</p>
-<ul>
-<li>Public sector &amp; not-for-profit</li>
-<li>Commercial</li>
-</ul>
-<p>Prices are reviewed annually and subject to change.</p>
-<p> </p>
-<h2>Current pricing</h2>
-<p>Visit our<span> </span><a href="https://www.nesi.org.nz/community/partners-pricing#subscriptions">Partners &amp; Pricing page</a><span> </span>on the NeSI website for the latest pricing information. The website page will always display the current pricing of a NeSI service.</p>
-<p> </p>
-<p>If you have any questions about anything mentioned on this page, don’t hesitate to<span> </span><a href="mailto:info@nesi.org.nz">get in touch</a>.</p>
-<p> </p>
+We have two categories of pricing for NeSI services through
+Subscriptions:
+
+-   Public sector & not-for-profit
+-   Commercial
+
+Prices are reviewed annually and subject to change.
+
+ 
+
+## Current pricing
+
+Visit our [Partners & Pricing
+page](https://www.nesi.org.nz/community/partners-pricing#subscriptions) on
+the NeSI website for the latest pricing information. The website page
+will always display the current pricing of a NeSI service.
+
+ 
+
+If you have any questions about anything mentioned on this page, don’t
+hesitate to [get in touch](mailto:info@nesi.org.nz).
+
+ 

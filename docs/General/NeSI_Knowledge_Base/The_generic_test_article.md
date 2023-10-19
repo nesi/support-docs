@@ -17,4 +17,4 @@ zendesk_section_id: 360000196935
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<p>This is a test to see the page ordering amongst the subsections</p>
+This is a test to see the page ordering amongst the subsections

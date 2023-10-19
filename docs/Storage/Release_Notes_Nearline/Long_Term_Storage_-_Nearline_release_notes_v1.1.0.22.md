@@ -19,11 +19,27 @@ zendesk_section_id: 360000502675
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<p><em>Released Friday 27 August 2021.</em></p>
-<p>This is a minor release incorporating bug fixes and improvements.</p>
-<ul>
-<li>A bug causing the programs <code>nlls</code>, <code>nltraverse</code> and <code>nlcompare</code> to misbehave when dealing with invisible files and directories (whose names start with <code>.</code>), and other files and directories whose names contain unorthodox characters such as spaces or other characters having special meaning to the shell, has been fixed.</li>
-<li>A bug causing <code>nlls</code> to return <code>Internal Server Error</code> when the operator specifies a subdirectory of a project directory that doesn't exist on Nearline has been fixed. The error <code>no such file or directory</code> is now returned instead.</li>
-<li>Some small improvements have been made to server configuration parsing and detection of inappropriate or missing configuration values.</li>
-</ul>
-<p>During testing of this release, we found that attempts to run <code>nlput</code> or <code>nlget</code> using arguments containing spaces, especially multiple consecutive spaces, fail at the Nearline datamover stage while running <code>rsync</code>. This issue has been recorded and documented. For now, the recommended workaround is to rename such files or directories before uploading them to Nearline, or, alternatively, to store them in an archive that does not contain spaces in its name. </p>
+*Released Friday 27 August 2021.*
+
+This is a minor release incorporating bug fixes and improvements.
+
+-   A bug causing the programs `nlls`, `nltraverse` and `nlcompare` to
+    misbehave when dealing with invisible files and directories (whose
+    names start with `.`), and other files and directories whose names
+    contain unorthodox characters such as spaces or other characters
+    having special meaning to the shell, has been fixed.
+-   A bug causing `nlls` to return `Internal Server Error` when the
+    operator specifies a subdirectory of a project directory that
+    doesn't exist on Nearline has been fixed. The error
+    `no such file or directory` is now returned instead.
+-   Some small improvements have been made to server configuration
+    parsing and detection of inappropriate or missing configuration
+    values.
+
+During testing of this release, we found that attempts to run `nlput` or
+`nlget` using arguments containing spaces, especially multiple
+consecutive spaces, fail at the Nearline datamover stage while running
+`rsync`. This issue has been recorded and documented. For now, the
+recommended workaround is to rename such files or directories before
+uploading them to Nearline, or, alternatively, to store them in an
+archive that does not contain spaces in its name. 
