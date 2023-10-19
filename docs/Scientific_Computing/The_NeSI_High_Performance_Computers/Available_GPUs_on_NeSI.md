@@ -17,26 +17,13 @@ zendesk_section_id: 360000034335
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-NeSI has a range of Graphical Processing Units (GPUs) to accelerate
-compute-intensive research and support more analysis at scale. Depending
-on the type of GPU, you can access them in different ways, such as via
-batch scheduler (Slurm), interactively (using [Jupyter on
-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)), or
-Virtual Machines (VMs). 
-
-The table below outlines the different types of GPUs, who can access
-them and how, and whether they are currently available or on the future
-roadmap.
-
-If you have any questions about GPUs on NeSI or the status of anything
-listed in the table, [contact
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new).
-
- 
-
+<p><span>NeSI has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale. Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm), interactively (using <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615" target="_blank" rel="noopener">Jupyter on NeSI</a><span class="loader-wrapper"></span>), or Virtual Machines (VMs). </span></p>
+<p><span>The table below outlines the different types of GPUs, who can access them and how, and whether they are currently available or on the future roadmap.</span></p>
+<p><span>If you have any questions about GPUs on NeSI or the status of anything listed in the table, <a href="https://support.nesi.org.nz/hc/en-gb/requests/new" target="_blank" rel="noopener">contact Support</a>.</span></p>
+<p> </p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>GPGPU</th>
 <th>Purpose</th>
 <th>Location</th>
@@ -46,70 +33,55 @@ Support](https://support.nesi.org.nz/hc/en-gb/requests/new).
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>9 NVIDIA Tesla P100 PCIe 12GB cards (1 node with 1 GPU, 4 nodes with
-2 GPUs)</td>
+<tr>
+<td>9 NVIDIA Tesla P100 PCIe 12GB cards (1 node with 1 GPU, 4 nodes with 2 GPUs)</td>
 <td> </td>
-<td><a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575">Mahuika</a></td>
-<td>Slurm and <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615">Jupyter</a></td>
+<td><a href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575" target="_blank" rel="noopener">Mahuika</a></td>
+<td>Slurm and <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615" target="_blank" rel="noopener">Jupyter</a>
+</td>
 <td>NeSI users</td>
 <td>Currently available</td>
 </tr>
-<tr class="even">
-<td>7 NVIDIA A100 PCIe 40GB cards (4 nodes with 1 GPU, 2 nodes with 2
-GPUs)</td>
+<tr>
+<td>7 NVIDIA A100 PCIe 40GB cards (4 nodes with 1 GPU, 2 nodes with 2 GPUs)</td>
 <td>Machine Learning (ML) applications</td>
-<td><a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575">Mahuika</a></td>
+<td><a href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575" target="_blank" rel="noopener">Mahuika</a></td>
 <td>Slurm</td>
 <td>NeSI users</td>
 <td>Currently available</td>
 </tr>
-<tr class="odd">
-<td>7 A100-1g.5gb instances (1 NVIDIA A100 PCIe 40GB card divided into
-<a
-href="https://www.nvidia.com/en-us/technologies/multi-instance-gpu/">7
-MIG GPU slices</a> with 5GB memory each)</td>
+<tr>
+<td>7 A100-1g.5gb instances (1 NVIDIA A100 PCIe 40GB card divided into <a href="https://www.nvidia.com/en-us/technologies/multi-instance-gpu/" target="_blank" rel="noopener">7 MIG GPU slices</a> with 5GB memory each)</td>
 <td>Development and debugging</td>
-<td><a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575">Mahuika</a></td>
-<td>Slurm and <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615">Jupyter</a></td>
+<td><a href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575" target="_blank" rel="noopener">Mahuika</a></td>
+<td>Slurm and <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615" target="_blank" rel="noopener">Jupyter</a>
+</td>
 <td>NeSI users</td>
 <td>Currently available</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5 NVIDIA Tesla P100 PCIe 12GB (5 nodes with 1 GPU)</td>
 <td>Post-processing</td>
-<td><a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000203776-M%C4%81ui-Ancillary-Nodes">Māui
-Ancil</a></td>
+<td><a href="https://support.nesi.org.nz/hc/en-gb/articles/360000203776-M%C4%81ui-Ancillary-Nodes" target="_blank" rel="noopener">Māui Ancil</a></td>
 <td>Slurm</td>
 <td>NeSI users</td>
 <td>Currently available</td>
 </tr>
-<tr class="odd">
-<td>4 NVIDIA HGX A100 (4 GPUs per board with 80GB memory each, 16 A100
-GPUs in total)</td>
+<tr>
+<td>4 NVIDIA HGX A100 (4 GPUs per board with 80GB memory each, 16 A100 GPUs in total)</td>
 <td>Large-scale Machine Learning (ML) applications</td>
-<td><a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575">Mahuika</a></td>
+<td><a href="https://support.nesi.org.nz/hc/en-gb/articles/360000163575" target="_blank" rel="noopener">Mahuika</a></td>
 <td>Slurm</td>
 <td>NeSI users</td>
-<td>Available as part of the <a
-href="https://support.nesi.org.nz/knowledge/articles/6367209795471">Milan
-Compute Nodes</a></td>
+<td>Available as part of the <a href="https://support.nesi.org.nz/knowledge/articles/6367209795471" target="_self">Milan Compute Nodes</a>
+</td>
 </tr>
-<tr class="even">
-<td>4 NVIDIA A40 with 48GB memory each (2 nodes with 2 GPUs, but
-capacity for 6 additional GPUs already in place)</td>
+<tr>
+<td>4 NVIDIA A40 with 48GB memory each (2 nodes with 2 GPUs, but capacity for 6 additional GPUs already in place)</td>
 <td>Teaching / training</td>
 <td>Flexible HPC</td>
-<td><a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615">Jupyter</a>,
-VM, or bare metal tenancy possible (flexible)</td>
+<td>
+<a href="https://support.nesi.org.nz/hc/en-gb/articles/360001555615" target="_blank" rel="noopener">Jupyter</a>, VM, or bare metal tenancy possible (flexible)</td>
 <td>Open to conversations with groups who could benefit from these</td>
 <td>In development.</td>
 </tr>

@@ -21,16 +21,15 @@ zendesk_section_id: 4403082292111
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-<table style="width:99%;">
+<table>
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 78%" />
+<col style="width: 21%">
+<col style="width: 78%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td>Description</td>
-<td>R is a free software environment for statistical computing and
-graphics.</td>
+<td>R is a free software environment for statistical computing and graphics.</td>
 </tr>
 <tr class="even">
 <td>Homepage</td>
@@ -46,9 +45,9 @@ graphics.</td>
 </tr>
 </tbody>
 </table>
-
-This is documentation for R.
-
--   item 1
--   item 2
--   item 3
+<p>This is documentation for R.</p>
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+</ul>

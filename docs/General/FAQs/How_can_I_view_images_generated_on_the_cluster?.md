@@ -21,10 +21,6 @@ zendesk_section_id: 360000039036
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-If for any reason downloading images is impractical you can view them on
-the cluster using the `display` command. For example,
-
-    display myImage.png
-
-This requires a [working X-11
-server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975).
+<p>If for any reason downloading images is impractical you can view them on the cluster using the <code>display</code> command. For example,</p>
+<pre><code>display myImage.png</code></pre>
+<p>This requires a <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001075975" target="_self">working X-11 server</a>.</p>

@@ -18,7 +18,4 @@ zendesk_section_id: 360000039036
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-It is common after having a job fail for `.core` fail blah blah, finish
-this some other time. Core files big. Check memory
-https://support.nesi.org.nz/hc/en-gb/articles/360000903776 google it
-https://en.wikipedia.org/wiki/Core\_dump
+<p>It is common after having a job fail for <code>.core</code> fail blah blah, finish this some other time. Core files big. Check memory https://support.nesi.org.nz/hc/en-gb/articles/360000903776 google it https://en.wikipedia.org/wiki/Core_dump</p>

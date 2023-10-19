@@ -18,15 +18,12 @@ zendesk_section_id: 360001091155
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-## Release Update - 13. September 2021
-
-## New and Improved
-
--   UI layout changes for project details view
--   Rendering a basic usage data for compute (and storage if quota
-    information available)
--   Added contextual links for support article references
-
-## Fixes
-
-\-
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 13. September 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>UI layout changes for project details view</li>
+<li>Rendering a basic usage data for compute (and storage if quota information available)</li>
+<li>Added contextual links for support article references</li>
+</ul>
+<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
+<p>-</p>

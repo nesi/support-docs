@@ -18,17 +18,18 @@ zendesk_section_id: 360001091155
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-## Release Update - 19. October 2023
-
-## New and Improved
-
--   Addition to the privacy policy link
--   Updated the authentication process to make it more secure
--   Hardening in order to only present grants that are still existing
-
-## Fixes
-
--   fixed crash when a user wants to join a project on my. nesi and
-    delete the entry
--   libwebp vulnerability fixed in my.nesi environment
--   clarified warning on the allocation request form
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 19. October 2023</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li class="li1">
+<span class="s1"></span>Addition to the privacy policy link</li>
+<li class="li1">Updated the authentication process to make it more secure</li>
+<li class="li1">Hardening in order to only present grants that are still existing</li>
+</ul>
+<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
+<ul>
+<li class="li1"><span class="s1">fixed crash when a user wants to join a project on my. nesi and delete the entry</span></li>
+<li class="li1">
+<span class="s1"></span>libwebp vulnerability fixed in my.nesi environment</li>
+<li class="li1">clarified warning on the allocation request form</li>
+</ul>

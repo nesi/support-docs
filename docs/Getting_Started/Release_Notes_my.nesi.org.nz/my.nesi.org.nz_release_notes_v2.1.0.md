@@ -18,15 +18,12 @@ zendesk_section_id: 360001091155
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-## Release Update - 24. June 2021
-
-## New and Improved
-
--   Added ORCID iD field to user account profile.
--   Upgraded components to improve security (web server).
-
-## Fixes
-
-Fixed: user affiliation not correct after first login to my.nesi.
-
- 
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 24. June 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>Added ORCID iD field to user account profile.</li>
+<li>Upgraded components to improve security (web server).</li>
+</ul>
+<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
+<p><span>Fixed: </span>user affiliation not correct after first login to my.nesi.</p>
+<p> </p>
