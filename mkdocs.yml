@@ -20,8 +20,6 @@ markdown_extensions:
   - pymdownx.snippets:
       auto_append:
         - assets/glossary/snippets.md
-not_in_nav: |
-    assets/.*
 plugins:
   - search
       # - spellcheck:
@@ -30,12 +28,15 @@ plugins:
     #     min_length: 3
     #     max_capital: 1
     #     allow_unicode: yes
+  - literate-nav
   - tags: null
   - git-authors
+  - git-revision-date-localized:
+      enable_creation_date: true
   - macros:
       include_dir: docs/assets
-repo_name: GitLab
-repo_url: https://github.com/example/repository/
+repo_name: GitHub
+repo_url: https://github.com/nesi/support-docs-concept
 site_description: NeSI Support Documentation
 site_dir: public
 site_name: NeSI Support Center
@@ -47,6 +48,12 @@ extra_css:
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.0.min.js
   - javascripts/supportedApplications.js
+nav:
+- "Getting Started": "Getting_Started/" 
+- "General": "General/"
+- "Scientific Computing": "Scientific_Computing/"
+- "Storage": "Storage/"
+- "NeSI Service Subscriptions": "NeSI_Service_Subscriptions/"
 theme:
   custom_dir: overrides
   favicon: assets/icons/favicon.ico
