@@ -159,7 +159,7 @@ case ls).</td>
 </tr>
 </tbody>
 </table>
-!!!
+!!! info Tip
 >
 > Pressing the 'tab' key once will automatically complete the line if it
 > is the only option. e.g. 

@@ -21,7 +21,7 @@ zendesk_section_id: 360000196195
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info Requirements
 >
 > -   You must have a [NeSI
 >     account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
@@ -35,7 +35,7 @@ zendesk_section_id: 360000196195
     a member.
 
 Once submitted you will receive a ticket confirmation via email.
-!!!
+!!! info What Next?
 >
 > -   The project owner will be notified, and asked to approve your
 >     request.

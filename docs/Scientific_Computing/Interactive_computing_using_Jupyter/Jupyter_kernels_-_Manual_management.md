@@ -36,7 +36,7 @@ and these can be extended further as described on the
 pages.
 
 # Adding a custom Python kernel
-!!!
+!!! info See also
 >
 > See the [Jupyter kernels - Tool-assisted
 > management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)

@@ -17,7 +17,7 @@ zendesk_section_id: 360001189255
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info Note
 >
 > This functionality is experimental and developing, which may introduce
 > breaking changes in the future.
@@ -50,7 +50,7 @@ You can open the status page at any time by clicking the
 [<img src="../../assets/images/tools_icon_0.png" width="61"
 height="33" />](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
 button.
-!!!
+!!! info Note
 >
 > Your license must be valid for MATLAB 2021b or newer.
 

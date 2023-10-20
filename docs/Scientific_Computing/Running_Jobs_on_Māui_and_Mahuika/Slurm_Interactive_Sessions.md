@@ -24,7 +24,7 @@ There are two main commands that can be used to make a session, `srun`
 and `salloc`, both of which use most of the same options available to
 `sbatch` (see [our Slurm Reference
 Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)). 
-!!!
+!!! info Warning
 >
 > An interactive session will, once it starts, use the entire requested
 > block of CPU time and other resources unless earlier exited from, even
@@ -91,7 +91,7 @@ time, however the job may still be delayed if requested resources are
 not available. You can request a start time using the `--begin` flag.
 
 The `--begin` flag takes either absolute or relative times as values.
-!!!
+!!! info Warning
 >
 > If you specify absolute dates and/or times, Slurm will interpret those
 > according to your environment's current time zone. Ensure that you
@@ -137,7 +137,7 @@ disrupted while you're away.
  
 
 ## Setting up a detachable terminal
-!!!
+!!! info Warning
 >
 > If you don't request your interactive session from within a detachable
 > terminal, any interruption to the controlling terminal, for example by
@@ -168,7 +168,7 @@ time.
 
 Slurm offers an easy solution: Identify the job, and use `scontrol` to
 postpone its start time.
-!!!
+!!! info Note
 >
 > Job IDs are unique to each cluster but not across the whole of NeSI.
 > Therefore, `scontrol` must be run on a node belonging to the cluster
@@ -183,7 +183,7 @@ This variation, if run on a Friday, will delay the start of the same job
 until (at the earliest) 9:30 a.m. on Monday:
 
     scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
-!!!
+!!! info Warning
 >
 > Don't just set `StartTime=tomorrow` with no time specification unless
 > you like the idea of your interactive session starting at midnight or

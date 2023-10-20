@@ -21,7 +21,7 @@ zendesk_section_id: 360000034315
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info Requirements
 >
 > You must:
 >
@@ -73,7 +73,7 @@ factor in the authentication process.
 This code rotates every 30 seconds, and it **can only be used once**.
 This means that you can only try logging in to the lander node once
 every 30 seconds.
-!!!
+!!! info What next?
 >
 > -   [Getting access to the
 >     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)

@@ -34,7 +34,7 @@ found [here](https://git-scm.com/docs/git), or using `man git`.
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
-!!!
+!!! info Password authentication
 >
 > GitHub removed support for password authentication on August 13, 2021.
 > Using a SSH key is now the easiest way to set up authentication.
@@ -233,7 +233,7 @@ style="width: 565.701px"><code>git push &lt;repo&gt; &lt;branch&gt;</code></td>
 </tr>
 </tbody>
 </table>
-!!!
+!!! info Tip
 >
 > If you are working without collaborators, there should be no reason to
 > have a conflict between your local and your remote repo. Make sure you
@@ -274,6 +274,6 @@ current branch.</td>
 </tr>
 </tbody>
 </table>
-!!!
+!!! info Other Resources
 >
 > -   <https://ohshitgit.com/>

@@ -17,13 +17,13 @@ zendesk_section_id: 360000039036
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info Requirements
 >
 > Please make sure you have followed the recommended setup. See
 > [Choosing and Configuring Software for Connecting to the
 > Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
 > for more information.
-!!!
+!!! info New Command Line Users
 >
 > -   Most terminals do not give an indication of how many characters
 >     have been typed when entering a password.

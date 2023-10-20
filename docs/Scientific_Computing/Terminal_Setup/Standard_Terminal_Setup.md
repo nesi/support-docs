@@ -19,7 +19,7 @@ zendesk_section_id: 360000189696
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info Requirements
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
@@ -98,7 +98,7 @@ having to re-enter authentication e.g.
 
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
-!!!
+!!! info What Next?
 >
 > -   [Moving files to/from a
 >     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

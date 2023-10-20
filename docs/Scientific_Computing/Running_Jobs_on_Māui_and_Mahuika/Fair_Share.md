@@ -34,7 +34,7 @@ units](https://support.nesi.org.nz/hc/en-gb/articles/360001385735) over
 a given **period**. An institution also has a percentage **Fair
 Share entitlement** of each machine's deliverable capacity over that
 same period.
-!!!
+!!! info Note
 >
 > Although we use the term "Fair Share entitlement" in this article, it
 > bears only a loose relationship to an institution's contractual

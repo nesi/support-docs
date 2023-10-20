@@ -85,7 +85,7 @@ and so are not directly accessible from your workstation. Therefore, we
 must create an SSH tunnel through the NeSI lander node.
 
 ## Linux, Mac, or Windows Subsystem for Linux
-!!!
+!!! info Warning
 >
 > If successful, commands to open SSH tunnels will look like they are
 > doing nothing (hanging) but it is important to leave them running.

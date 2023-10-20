@@ -26,7 +26,7 @@ run the program, rather than happening automatically.
 The are <span class="dictionary-of-numbers">three types of parallel
 </span>execution we will cover are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
-!!!
+!!! info Note
 >
 > Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
 > *logical* CPU's = **1** *physical* core).  
@@ -116,7 +116,7 @@ The expected output being
 
     /home/user001/demo
     /home/user001/demo
-!!!
+!!! info Warning
 >
 > For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
 > all. Using `srun` in conjunction with `--cpus-per-task=1` will

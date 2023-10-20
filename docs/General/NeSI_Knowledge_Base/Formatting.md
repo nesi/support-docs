@@ -38,23 +38,23 @@ Small Text
 ------------------------------------------------------------------------
 
  Blockquotes
-!!!
+!!! info Requirements
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
-!!!
+!!! info What Next?
 >
 > -   Thing one
 > -   Thing two
 > -   Thing three
-!!!
+!!! info Warning
 >
 > AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-!!!
+!!! info Tips
 >
 > Some plain text.
-!!!
+!!! info Video
 >
 > <iframe src="//www.youtube-nocookie.com/embed/yDYXOntAlIk" width="560" height="315" frameborder="0" allowfullscreen>
 > </iframe>

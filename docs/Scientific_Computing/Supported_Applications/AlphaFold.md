@@ -17,7 +17,7 @@ zendesk_section_id: 360000040076
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info Tips
 >
 > An extended version of AlphaFold2 on NeSI Mahuika cluster which
 > contains additional information such as visualisation of AlphaFold

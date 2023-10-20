@@ -17,7 +17,7 @@ zendesk_section_id: 360000040056
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
-!!!
+!!! info Start simple
 >
 > The technique explained in this page should be considered **after**
 > trying simpler single node options (e.g.  [Dask Distributed
@@ -81,7 +81,7 @@ request mpi4py with the Intel MPI distribution as follows:
       - anotherpackage
       - intel::mpi4py
       - dask-mpi
-!!!
+!!! info See also
 >
 > See the
 > [Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
@@ -254,7 +254,7 @@ Here is an example of a minimal Singularity container definition file:
 where the `%runscript` section ensures that the Python script passed to
 `singularity run` is executed using the Python interpreter of the base
 Conda environment inside the container.
-!!!
+!!! info Tips
 >
 > You can build this container on NeSI, using the Mahuika Extension
 > nodes, following the instructions from the [dedicated support

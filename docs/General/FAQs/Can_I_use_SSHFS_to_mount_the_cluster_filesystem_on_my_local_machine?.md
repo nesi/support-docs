@@ -60,7 +60,7 @@ and give the volume a sensible name:
 To unmount the directory on MacOS, either eject from Finder or run:
 
     umount ~/mahuika-home
-!!!
+!!! info Note
 >
 > Newer MacOS does not come with SSHFS pre installed. You will have to
 > install FUSE as SSHFS from [here](https://osxfuse.github.io/).
