@@ -26,26 +26,6 @@ sessions are open to anyone - you don't need to be an existing NeSI
 user.  
   
 
-## **Office Hours in October 2023**
-
-Click on the links below to add the date & Zoom link to your calendar:
-
--   [**04 October (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MnZlcmJnZW1iZjVsZ20zZHRiaXJtYXRxcW0gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
--   [**11 October (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjNvcTQyNjBwNnZocWQyaWtoNDkxZzdqc3QgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
--   [**18 October (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDF1M2RuZDU2YmUyaHBhcWptbHRuaGw4NzkgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
--   [**25 October (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MWs5bXBjdmRuZmhuanBncjJhNmFlcGNhZm8gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
-If you are unable to add an Office Hour session to your calendar through
-these links, please email us at <training@nesi.org.nz> and we can send a
-calendar invite directly to you. 
-
 ## **Office Hours in November 2023**
 
 Click on the links below to add the date & Zoom link to your calendar:
@@ -67,7 +47,8 @@ Click on the links below to add the date & Zoom link to your calendar:
 
 If you are unable to add an Office Hour session to your calendar through
 these links, please email us at <training@nesi.org.nz> and we can send a
-calendar invite directly to you. 
+calendar invite directly to you.   
+  
 
 ## **How Does It Work**
 
