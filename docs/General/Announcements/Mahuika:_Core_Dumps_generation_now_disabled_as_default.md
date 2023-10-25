@@ -3,7 +3,6 @@ created_at: '2022-07-11T23:23:04Z'
 hidden: false
 label_names:
 - mahuika
-- announcement
 - .core
 - corefile
 - coredump

@@ -36,27 +36,56 @@ Jupyter on NeSI, [connect here](https://jupyter.nesi.org.nz/).
 Click the icon labelled 'VirtualDesktop', The desktop instance will last
 as long as your Jupyter session.
 
-# Settings
+## Customisation
 
-## Environment
+Most of the customisation of the desktop can be done from within,  
+panels, desktop, software preferences.
 
-You may manage modules inside a terminal as usual using the `module`
-command, however these changes won't propagate to the desktop
-environment. Modules to be loaded in the desktop can be set by modifying
-the file at `~/.vdt/vdtrc.sh`. This file is sourced before launching the
-desktop.
+### `pre.bash`
 
-## Setup Scripts
+Enviroment set in `singularity_wrapper.bash` can be changed by creating
+a file `$XDG_CONFIG_HOME/vdt/pre.bash` Anything you want to run
+\*before\* launching the container put in here.
 
-Several scripts are available that will help you get started by setting
-up desktop shortcuts and loading module in the base environment. These
-can be found at `$VDT_ROOT/setup_scripts`
+    export VDT_BASE_IMAGE="~/my_custom_container.sif" # Use a different image file.
+    export VDT_RUNSCRIPT="~/my_custom_runscript" # Use a different runscript.
+
+    export OVERLAY="TRUE"
+    export BROWSER="chrome" # Desktop session will inherit this.
+
+    module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
+
+### \`post.bash\`
+
+Environment set in `runscript_wrapper.bash` can be changed by creating a
+file `$XDG_CONFIG_HOME/vdt/post.bash`
+
+Things you may wish to set here are:  
+`VDT_WEBSOCKOPTS`, `VDT_VNCOPTS`, any changes to the wm environment, any
+changes to path, this include module files.
+
+    export VDT_VNCOPTS="-depth 16" # This will start a 16bit desktop
+    export BROWSER="chrome" # Desktop session will inherit this.
+
+    module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
+
+## Custom container
+
+You can build your own container bootstrapping off
+`vdt_base.sif`/`rocky8vis.sif` and then overwrite the default by setting
+`VDT_BASE_IMAGE` in `pre.bash`.
 
 <!--
+<h2 id="h_01HDHQPY636ARH8CE6RP0700VX">Setup Scripts</h2>
+<p>
+  Several scripts are available that will help you get started by setting up desktop
+  shortcuts and loading module in the base environment. These can be found at
+  <code>$VDT_ROOT/setup_scripts</code>
+</p>
 <h2>noVNC</h2>
 <p>Recommend setting scaling to 'remote'</p>
 <div style="display: flex;">
-  <img src="https://support.nesi.org.nz/hc/article_attachments/360004678036/fig1.svg" width="426" height="362"><img src="https://support.nesi.org.nz/hc/article_attachments/360005192376/VirtualScaling.png">
+  <img src="https://support.nesi.org.nz/hc/article_attachments/360004678036" width="426" height="362"><img src="https://support.nesi.org.nz/hc/article_attachments/360005192376">
 </div>
 <blockquote class="blockquote-warning">
   <h3 id="prerequisites">Restore Defaults</h3>
@@ -67,6 +96,8 @@ can be found at `$VDT_ROOT/setup_scripts`
   </p>
 </blockquote>
 -->
+
+ 
 
 *You can help contribute to this
 project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*
