@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application
 programming interface that lets you write parallel programs on shared
 memory platforms. In a parallel section, OpenMP code can create multiple

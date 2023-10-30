@@ -12,12 +12,14 @@ zendesk_section_id: 360000033936
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 It is important to understand the different I/O performance
 characteristics of nodes that connect to storage using *native Spectrum
 Scale clients*, and those that employ *Cray’s DVS* *solution*.
@@ -50,7 +52,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).
 
- ![cray\_xc50.jpg](../../assets/images/cray_xc50_0.jpg)
+ ![cray\_xc50.jpg](../../assets/images/cray_xc50.jpg)
 
 <font size="2">Figure 1: Cray XC50 DVS architecture.</font>
 

@@ -11,12 +11,14 @@ zendesk_section_id: 360000196935
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 # Header 1
 
 ## Header 2
@@ -67,7 +69,7 @@ This is a [Link](https://www.w3schools.com/html/html_links.asp) 
 
 Image
 
-![redirects-and-pipes.png](../../assets/images/6014468037775_0.name_me.png)
+![redirects-and-pipes.png](../../assets/images/6014468037775.name_me.png)
 
 ------------------------------------------------------------------------
 
@@ -89,15 +91,21 @@ Code Blocks
 
 class="error"
 
-    salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
+``` error
+salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
+```
 
 class="output"
 
-    salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
+``` output
+salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
+```
 
 class="source"
 
-    salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
+``` source
+salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
+```
 
  
 

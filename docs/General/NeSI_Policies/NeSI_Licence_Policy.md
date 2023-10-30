@@ -11,12 +11,14 @@ zendesk_section_id: 360000224835
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 With very few exceptions, NeSI does not hold software licences of its
 own. If you wish to use any of the proprietary software installed on the
 NeSI cluster, you, or more likely your institution or department, will

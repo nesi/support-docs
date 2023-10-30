@@ -11,12 +11,14 @@ zendesk_section_id: 360000040076
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 # Description
 
 The rapidly growing number of sequenced genomes requires fully automated
@@ -78,7 +80,7 @@ Artistic License
 >
 >  
 >
-> -   <img src="../../assets/images/6529551751823_0.name_me.png" width="476"
+> -   <img src="../../assets/images/6529551751823.name_me.png" width="476"
 >     height="464" alt="genemark_es_license.png" />
 > -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
 > -   Decompress this file with `gunzip gm_key_64.gz`  and move it to

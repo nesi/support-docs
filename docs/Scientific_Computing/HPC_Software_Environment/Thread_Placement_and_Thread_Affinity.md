@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
 article on [Parallel
@@ -61,7 +63,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](../../assets/images/NodeSocketCore_0.png)
+![NodeSocketCore.png](../../assets/images/NodeSocketCore.png)
 
 It is very important to note the following:
 

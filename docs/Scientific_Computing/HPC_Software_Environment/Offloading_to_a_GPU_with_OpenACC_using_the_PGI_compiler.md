@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 With OpenACC it is possible to offload computations from the CPU to a
 GPU,
 see <http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf>.
@@ -43,7 +45,9 @@ Save the above code in file total.cxx.
 
 Note the pragma
 
-    #pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
+``` hljs
+#pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
+```
 
 which moves variables `total` and `n` to the GPU and creates teams of
 threads to compute the total sum in parallel. 
@@ -58,8 +62,10 @@ to load a few modules:
 To compare the execution times between the CPU and GPU version, we build
 two executables:
 
-    pgc++ -fast -acc -ta=multicore -Minfo=accel -o totalAccMulticore total.cxx
-    pgc++ -fast -acc -ta=tesla -Minfo=accel -o totalAccGpu total.cxx
+``` hljs
+pgc++ -fast -acc -ta=multicore -Minfo=accel -o totalAccMulticore total.cxx
+pgc++ -fast -acc -ta=tesla -Minfo=accel -o totalAccGpu total.cxx
+```
 
 Note that the PGI compiler can target CPU and GPU devices (-ta option).
 The -Minfo=all option provides information about vectorization and
@@ -71,9 +77,11 @@ The following commands will submit the runs to the Mahuika queue
 (note `--partition=gpu --gres=gpu:1` in the case of the executable that
 offloads to the GPU):
 
-    time srun --ntasks=1 --cpus-per-task=1 ./totalAccMulticore
-    OMP_NUM_THREADS=8 && time srun --ntasks=1 --cpus-per-task=$OMP_NUM_THREADS --hint=nomultithread ./totalAccMulticore
-    time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalAccGpu
+``` hljs
+time srun --ntasks=1 --cpus-per-task=1 ./totalAccMulticore
+OMP_NUM_THREADS=8 && time srun --ntasks=1 --cpus-per-task=$OMP_NUM_THREADS --hint=nomultithread ./totalAccMulticore
+time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalAccGpu
+```
 
 <table style="height: 32px;" width="408">
 <tbody>

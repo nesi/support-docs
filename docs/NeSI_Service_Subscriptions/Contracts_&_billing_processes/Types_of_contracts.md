@@ -11,12 +11,14 @@ zendesk_section_id: 7348936006031
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Typically our Subscription contracts are based on one-year terms and
 invoiced on a quarterly basis\*.
 

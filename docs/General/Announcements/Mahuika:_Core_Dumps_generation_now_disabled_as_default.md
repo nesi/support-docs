@@ -16,12 +16,14 @@ zendesk_section_id: 200732737
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 A Slurm configuration change has been made on Mahuika so that the 
 maximum size of [core
 file](https://support.nesi.org.nz/hc/en-gb/articles/360001584875-What-is-a-core-file-) that

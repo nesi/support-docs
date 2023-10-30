@@ -11,12 +11,14 @@ zendesk_section_id: 360000040596
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
  
 
 Globus provides logins for NeSI users via their organisation, GitHub,
@@ -33,7 +35,7 @@ primary identity in Globus.
 
 ####  
 
-<img src="../../assets/images/8157051408655_0.name_me.png" width="430"
+<img src="../../assets/images/8157051408655.name_me.png" width="430"
 height="471" alt="Globus_login.png" />
 
 #### 2) Link other Globus identities to your primary identity
@@ -51,7 +53,7 @@ If you have other identities in Globus (for example, a globusID), link
 them  to your Google ID account following the instructions at
 <https://docs.globus.org/how-to/link-to-existing/>:
 
- <img src="../../assets/images/360001715615_0.name_me.png" width="1382"
+ <img src="../../assets/images/360001715615.name_me.png" width="1382"
 height="322" alt="identities.png" />
 
  

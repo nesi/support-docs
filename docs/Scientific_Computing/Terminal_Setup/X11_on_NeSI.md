@@ -11,12 +11,14 @@ zendesk_section_id: 360000189696
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > -   Have working
@@ -57,14 +59,14 @@ href="https://sourceforge.net/projects/xming/">Xming</a></td>
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png) symbol
+this ![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0.png) symbol
 in your taskbar 
 !!! info Note
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](../../assets/images/xon_0.png)=on, ![off.png](../../assets/images/off_0.png)=off). 
+> (![xon.png](../../assets/images/xon.png)=on, ![off.png](../../assets/images/off.png)=off). 
 
 # X-Forwarding
 
@@ -85,11 +87,11 @@ Make sure the `-Y` or `-X` flag is included
 X<span class="dictionary-of-numbers">-11 forwarding box is
 </span>checked.
 
-<img src="../../assets/images/x11moba_0.png" width="451" height="303"
+<img src="../../assets/images/x11moba.png" width="451" height="303"
 alt="x11moba.png" />
 
 If the
-![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
+![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0.png)
 button in the top right corner of your window is coloured, the X-server
 should be running.
 

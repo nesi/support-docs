@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 A virtual desktop provides a graphical interface to using the cluster.
 Desktops are hosted within Singularity containers, so not all of the
 NeSI software stack is supported. If you would like to build your own
@@ -120,7 +122,7 @@ style="width: 248px; height: 22px"><code>vdt kill my_desktop</code></td>
 
 Recommend setting scaling to 'remote'
 
-<img src="../../assets/images/fig1_0.svg" width="426" height="362" />![](../../assets/images/VirtualScaling_0.png)
+<img src="../../assets/images/fig1.svg" width="426" height="362" />![](../../assets/images/VirtualScaling.png)
 
 # Examples
 
@@ -154,7 +156,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
+![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0.png)
 
 ## On a compute node
 

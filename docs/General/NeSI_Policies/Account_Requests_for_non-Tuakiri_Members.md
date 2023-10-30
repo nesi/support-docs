@@ -14,12 +14,14 @@ zendesk_section_id: 360000224835
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Most New Zealand universities and Crown Research Institutes are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
@@ -30,7 +32,7 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
+![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
 !!! info Warning
 >
 > The email address you use on your application must be your

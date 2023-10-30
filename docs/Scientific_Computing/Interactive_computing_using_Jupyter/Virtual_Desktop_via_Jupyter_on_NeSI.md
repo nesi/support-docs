@@ -11,12 +11,14 @@ zendesk_section_id: 360001189255
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 A virtual desktop provides a graphical interface to using the cluster.
 Desktops are hosted within Singularity containers, so not all of the
 NeSI software stack is supported. If you would like to build your own

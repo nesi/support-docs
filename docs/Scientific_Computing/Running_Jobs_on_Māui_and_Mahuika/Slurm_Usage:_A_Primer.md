@@ -11,12 +11,14 @@ zendesk_section_id: 360000030876
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Slurm Scripts
 
 Slurm scripts are text files you will need to create in order to submit
@@ -24,22 +26,24 @@ a job to the scheduler. Slurm scripts start with `#!/bin/bash` (with
 optional flags) and contain a set of directives (which start with
 `#SBATCH`), followed by commands.
 
-    #!/bin/bash -e
+``` highlight
+#!/bin/bash -e
 
-    #SBATCH --job-name=JobName      # job name (shows up in the queue)
-    #SBATCH --account=nesi99999     # Project Account
-    #SBATCH --time=00:10:00         # Walltime (HH:MM:SS)
-    #SBATCH --mem-per-cpu=4096      # memory/cpu (in MB)
-    #SBATCH --ntasks=2              # number of tasks (e.g. MPI)
-    #SBATCH --cpus-per-task=4       # number of cores per task (e.g. OpenMP)
-    #SBATCH --partition=long        # specify a partition
-    #SBATCH --hint=nomultithread    # don't use hyperthreading
-    #SBATCH --output=%x-%j.out      # %x and %j are replaced by job name and ID
-    #SBATCH --error=%x-%j.err
-    #SBATCH --mail-type=ALL         # Optional: Send email notifications
-    #SBATCH --mail-user=jbloggs@example.com     # Use with --mail-type option
+#SBATCH --job-name=JobName      # job name (shows up in the queue)
+#SBATCH --account=nesi99999     # Project Account
+#SBATCH --time=00:10:00         # Walltime (HH:MM:SS)
+#SBATCH --mem-per-cpu=4096      # memory/cpu (in MB)
+#SBATCH --ntasks=2              # number of tasks (e.g. MPI)
+#SBATCH --cpus-per-task=4       # number of cores per task (e.g. OpenMP)
+#SBATCH --partition=long        # specify a partition
+#SBATCH --hint=nomultithread    # don't use hyperthreading
+#SBATCH --output=%x-%j.out      # %x and %j are replaced by job name and ID
+#SBATCH --error=%x-%j.err
+#SBATCH --mail-type=ALL         # Optional: Send email notifications
+#SBATCH --mail-user=jbloggs@example.com     # Use with --mail-type option
 
-    srun [options] <executable> [options]
+srun [options] <executable> [options]
+```
 
 We strongly recommend using `#!/bin/bash -e` instead of plain
 `#!/bin/bash`, so that a command throwing an error will cause your job
@@ -97,11 +101,13 @@ specified in the script.
 
 Submit job `helloworld.sl`:
 
-    #!/bin/bash -e
-    #SBATCH --job-name=hello
-    #SBATCH --time=00:02:00
+``` highlight
+#!/bin/bash -e
+#SBATCH --job-name=hello
+#SBATCH --time=00:02:00
 
-    srun echo "Hello, World!"
+srun echo "Hello, World!"
+```
 
 with `sbatch --account=nesi12345 helloworld.sl` where nesi12345 is your
 NeSI project’s code. If you only have one project then you don’t need to
@@ -112,8 +118,10 @@ specify it.
 To submit to the general purpose GPU nodes, you need to add the
 following to your SLURM script:
 
-    #SBATCH -p gpu
-    #SBATCH --gres=gpu
+``` highlight
+#SBATCH -p gpu
+#SBATCH --gres=gpu
+```
 
 ## Submitting a job between Māui and Māui\_Ancil
 
@@ -172,16 +180,20 @@ you can also use `sview`.
 Another useful Slurm command is `sacct` which retrieves information
 about completed jobs. For example:
 
-    sacct -j 14309
+``` highlight
+sacct -j 14309
+```
 
 where the argument passed to `-j` is the job ID, will show us something
 like:
 
-           JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
-    ------------ ---------- ---------- ---------- ---------- ---------- --------
-    14309        problem.sh       NeSI  nesi99999         80  COMPLETED      0:0
-    14309.batch       batch             nesi99999         80  COMPLETED      0:0
-    14309.0         yourapp             nesi99999         80  COMPLETED      0:0
+``` highlight
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+14309        problem.sh       NeSI  nesi99999         80  COMPLETED      0:0
+14309.batch       batch             nesi99999         80  COMPLETED      0:0
+14309.0         yourapp             nesi99999         80  COMPLETED      0:0
+```
 
 By default `sacct` will list all of your jobs which were (or are)
 running on the current day. Each job will show as more than one line
@@ -193,12 +205,16 @@ executes.
 By changing the displayed columns you can gain information about the CPU
 and memory utilisation of the job, for example
 
-    sacct -j 14309 --format=jobid,jobname,elapsed,avecpu,totalcpu,alloccpus,maxrss,state
+``` highlight
+sacct -j 14309 --format=jobid,jobname,elapsed,avecpu,totalcpu,alloccpus,maxrss,state
+```
 
-          JobID    JobName    Elapsed     AveCPU   TotalCPU  AllocCPUS     MaxRSS      State
-    ------------ ---------- ---------- ---------- ---------- ---------- ---------- ----------
-    14309        problem.sh   00:12:42             00:00.012         80             COMPLETED
-    14309.batch       batch   00:12:42   00:00:00  00:00.012         80      1488K  COMPLETED
-    14309.0         yourapp   00:12:41   00:12:03   16:00:03         80    478356K  COMPLETE
+``` highlight
+      JobID    JobName    Elapsed     AveCPU   TotalCPU  AllocCPUS     MaxRSS      State
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ----------
+14309        problem.sh   00:12:42             00:00.012         80             COMPLETED
+14309.batch       batch   00:12:42   00:00:00  00:00.012         80      1488K  COMPLETED
+14309.0         yourapp   00:12:41   00:12:03   16:00:03         80    478356K  COMPLETE
+```
 
  

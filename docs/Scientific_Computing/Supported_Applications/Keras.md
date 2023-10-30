@@ -11,12 +11,14 @@ zendesk_section_id: 360000040076
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Keras is a modular and extensible API for building neural networks in
 Python. Keras is included with TensorFlow. Note that there are [CPU
 and](https://support.nesi.org.nz/hc/en-gb/articles/360000997675-TensorFlow-on-CPUs) [GPU
@@ -53,9 +55,11 @@ following commands to generate the training and testing data sets:
 The images are saved under directories train/ and test/, respectively.
 An example of image is test/img49.jpg.
 
-    display test/img49.jpg
+``` p1
+display test/img49.jpg
+```
 
-<img src="../../assets/images/img49_0.jpg" width="100" height="100"
+<img src="../../assets/images/img49.jpg" width="100" height="100"
 alt="img49.jpg" />
 
 which shows five, partially overlapping dots. Note that along with the
@@ -68,13 +72,17 @@ The images need to be slightly manipulated. For instance we expect all
 the images to be black and white so we can collapse the red, green and
 blue channel into one. We'll need OpenCV to this task:
 
-    pip install opencv-python --user
+``` p1
+pip install opencv-python --user
+```
 
 ### Running the model
 
 Our neural network
 
-    wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Conv2D/classify.py
+``` p1
+wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Conv2D/classify.py
+```
 
 is encoded in classify.py. It is made of three convolution layers, each
 followed by max pooling. The convolution and max pooling layers are
@@ -83,38 +91,44 @@ flattened as a 1D array and a dense layer, which returns an estimate of
 the number of dots as a single floating point number, is added. The
 corresponding lines in classify.py look like (Python code):
 
-    clf = keras.Sequential()
-    clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
-                                 padding='same', data_format='channels_last', activation='relu') )
-    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-    clf.add( keras.layers.Conv2D(128, kernel_size=(3,3), strides=(1,1),
-                                 padding='same', data_format='channels_last', activation='relu') )
-    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-    clf.add( keras.layers.Conv2D(256, kernel_size=(3,3), strides=(1,1),
-                                 padding='same', data_format='channels_last', activation='relu') )
-    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-    clf.add( keras.layers.Flatten() )
-    clf.add( keras.layers.Dense(1) )
+``` p1
+clf = keras.Sequential()
+clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
+                             padding='same', data_format='channels_last', activation='relu') )
+clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+clf.add( keras.layers.Conv2D(128, kernel_size=(3,3), strides=(1,1),
+                             padding='same', data_format='channels_last', activation='relu') )
+clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+clf.add( keras.layers.Conv2D(256, kernel_size=(3,3), strides=(1,1),
+                             padding='same', data_format='channels_last', activation='relu') )
+clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+clf.add( keras.layers.Flatten() )
+clf.add( keras.layers.Dense(1) )
+```
 
  
 
 We're now ready to train and test our model:
 
-    #!/bin/bash -e
-    #SBATCH --job-name keras-dots
-    #SBATCH --partition gpu
-    #SBATCH --gres gpu:1
-    #SBATCH --ntasks 1
-    #SBATCH --cpus-per-task 1
-    #SBATCH --time 00:10:00
-    #SBATCH --mem 512MB
-    module load TensorFlow/1.10.1-gimkl-2017a-Python-3.6.3
-    python classify.py --testDir=test --trainDir=train --save=someResults.png
+``` p1
+#!/bin/bash -e
+#SBATCH --job-name keras-dots
+#SBATCH --partition gpu
+#SBATCH --gres gpu:1
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 1
+#SBATCH --time 00:10:00
+#SBATCH --mem 512MB
+module load TensorFlow/1.10.1-gimkl-2017a-Python-3.6.3
+python classify.py --testDir=test --trainDir=train --save=someResults.png
+```
 
 Copy-paste the above and save in file classify.sl. Submit the Slurm
 script classify.sl
 
-    sbatch classify.sl
+``` p1
+sbatch classify.sl
+```
 
 ### Looking at the output
 
@@ -123,7 +137,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../../assets/images/someResults_0.png)
+![someResults.png](../../assets/images/someResults.png)
 
 (The purple images have no dots.) With each image the number of dots is
 displayed as well as the value inferred by the model in parentheses. The

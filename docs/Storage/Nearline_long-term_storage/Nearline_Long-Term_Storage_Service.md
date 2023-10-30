@@ -14,12 +14,14 @@ zendesk_section_id: 360000042255
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
 Nearline Nearline Nearline Nearline Nearline Nearline Nearline Nearline
@@ -480,7 +482,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../../assets/images/360002703556_0.name_me.png)
+![librarian\_get\_put.jpeg](../../assets/images/360002703556.name_me.png)
 
 # Underlying mechanism
 

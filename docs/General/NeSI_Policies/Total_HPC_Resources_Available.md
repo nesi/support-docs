@@ -11,12 +11,14 @@ zendesk_section_id: 360000224835
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 NeSI resources available for allocation each year combined across both
 [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575) and
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) HPC systems

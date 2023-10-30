@@ -11,12 +11,14 @@ zendesk_section_id: 360000040596
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Globus
 
 Globus is a third-party service for transferring large amounts of data
@@ -58,9 +60,9 @@ facility storage and a worldwide network of Globus endpoints. This is
 achieved using Globus.org, a web-based service that solves many of the
 challenges encountered moving large volumes of data between systems.
 While NeSI supports use of other data transfer tools and protocols such
-as `#!['bash']scp`, Globus provides the most comprehensive, efficient,
-and easy to use service for NeSI users who need to move large data sets
-(more than a few gigabytes at a time).
+as `scp`, Globus provides the most comprehensive, efficient, and easy to
+use service for NeSI users who need to move large data sets (more than a
+few gigabytes at a time).
 
 ## Types of Globus endpoints or Data Transfer Nodes
 
@@ -112,7 +114,7 @@ endpoint "NeSI Wellington DTN V5" from the list, and you will be asked
 to authenticate your access to the endpoint. Click Continue to the next
 step.
 
-<img src="../../assets/images/4405622947215_0.name_me.png" width="700"
+<img src="../../assets/images/4405622947215.name_me.png" width="700"
 height="431" alt="mceclip0.png" />
 
  
@@ -125,7 +127,7 @@ that.
 
  
 
-<img src="../../assets/images/4405622955791_0.name_me.png" width="700"
+<img src="../../assets/images/4405622955791.name_me.png" width="700"
 height="226" alt="mceclip1.png" />
 
 The NeSI Wellington DTN V5 endpoint is protected by a second factor
@@ -138,7 +140,7 @@ not*** use any additional characters or spaces between your password and
 the token number.)
 
                            
-<img src="../../assets/images/4408962414351_0.name_me.png" width="451"
+<img src="../../assets/images/4408962414351.name_me.png" width="451"
 height="561" alt="mceclip0.png" />
 
 After the login, you will navigate to the default root(display as "/")
@@ -158,7 +160,7 @@ Navigate to your selected directory. e.g. the *nobackup* filesystem
 */nesi/nobackup/&lt;project\_code&gt;* and select the two-endpoint panel
 for transfer.
 
-<img src="../../assets/images/4405623113615_0.name_me.png" width="851"
+<img src="../../assets/images/4405623113615.name_me.png" width="851"
 height="298" alt="mceclip3.png" />
 
 Select the target endpoint and authenticate.
@@ -166,20 +168,20 @@ Select the target endpoint and authenticate.
 When you have activated endpoints in both transfer windows, you can
 start transferring files between them.
 
-<img src="../../assets/images/4405623130383_0.name_me.png" width="850"
+<img src="../../assets/images/4405623130383.name_me.png" width="850"
 height="249" alt="mceclip4.png" />
 
 Select files you wish to transfer and select the corresponding "Start"
 button:  
   
-<img src="../../assets/images/4405623291791_0.name_me.png" width="850"
+<img src="../../assets/images/4405623291791.name_me.png" width="850"
 height="250" alt="mceclip5.png" />
 
  
 
 To find other NeSI endpoints, type in "nesi#":
 
-![filemanage\_nesi.png](../../assets/images/4940171187343_0.name_me.png)
+![filemanage\_nesi.png](../../assets/images/4940171187343.name_me.png)
 
 ## In brief:
 
@@ -189,7 +191,7 @@ To find other NeSI endpoints, type in "nesi#":
 -   If this is your first time, you will need to create a Globus
     account.
 -   Open the two-endpoint panel
-    <img src="../../assets/images/5622407243151_0.name_me.png" width="109"
+    <img src="../../assets/images/5622407243151.name_me.png" width="109"
     height="34" alt="two_endpoint.png" />located on the top-right of the
     *File Manager* page.
 -   Select the Endpoints you wish to move files between (start typing
@@ -204,7 +206,7 @@ To find other NeSI endpoints, type in "nesi#":
     Storage
     Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation)).
 -   Transfer the files by clicking the appropriate
-    ![start.png](../../assets/images/5622408199183_0.name_me.png)button
+    ![start.png](../../assets/images/5622408199183.name_me.png)button
     depending on the direction of the transfer.
 -   Check your email for confirmation about the job completion report.
 

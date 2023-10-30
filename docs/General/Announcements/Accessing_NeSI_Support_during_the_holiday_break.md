@@ -11,12 +11,14 @@ zendesk_section_id: 200732737
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 As another busy year draws to a close, NeSI’s Support Team will be
 taking a summer break from **5:00 PM on 22 December, 2022 to 9:00 am on
 04 January, 2023.**

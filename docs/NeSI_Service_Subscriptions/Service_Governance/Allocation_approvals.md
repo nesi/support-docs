@@ -11,12 +11,14 @@ zendesk_section_id: 7348925662223
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Access to NeSI compute and storage resources is managed through
 allocations. An allocation is a certain amount of a resource, or of a
 rate at which a resource can be consumed, during a defined period of

@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 <nav class="site-nav">
 
 # Building on the XC50 Platform
@@ -80,22 +82,30 @@ the underlying compiler suite:
 The `PrgEnv-cray` environment is the default. If you want to change
 programming environment to use the Intel or GNU compilers, run
 
-    module swap PrgEnv-cray PrgEnv-intel
+``` highlight
+module swap PrgEnv-cray PrgEnv-intel
+```
 
 or
 
-    module swap PrgEnv-cray PrgEnv-gnu
+``` highlight
+module swap PrgEnv-cray PrgEnv-gnu
+```
 
 Note that several compiler versions are currently installed, in case of
 GNU for example:
 
-    > module avail gcc
-    -------------------------------------- /opt/modulefiles --------------------------------------
-    gcc/10.3.0 gcc/11.2.0 gcc/12.1.0(default)
+``` highlight
+> module avail gcc
+-------------------------------------- /opt/modulefiles --------------------------------------
+gcc/10.3.0 gcc/11.2.0 gcc/12.1.0(default)
+```
 
 To change GCC version, run for example
 
-    module swap gcc gcc/11.2.0
+``` highlight
+module swap gcc gcc/11.2.0
+```
 
 GCC v6.1.0 or later is required to build code that can make use of the
 Intel Skylake microarchitecture and its advanced capabilities, such as
@@ -119,22 +129,30 @@ CPU targets can be set by loading a module. By default, module
 problems with the Skylake target at build time or run time, try target
 for “Broadwell” processors instead:
 
-    module swap craype-x86-skylake craype-broadwell
+``` highlight
+module swap craype-x86-skylake craype-broadwell
+```
 
 Choosing the “Broadwell” target is also necessary if you want to build
 code using the older GCC compilers prior to GCC 6.1.0, which were
 released before Skylake became available. If you see the error message
 
-    craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
+``` highlight
+craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
+```
 
 when trying to swap to the `PrgEnv-gnu` environment, or an error message
 of the kind
 
-    f951: error: bad value (skylake-avx512) for -march= switch
+``` highlight
+f951: error: bad value (skylake-avx512) for -march= switch
+```
 
 when you compile a program with a GNU compiler, run
 
-    module swap craype-x86-skylake craype-broadwell
+``` highlight
+module swap craype-x86-skylake craype-broadwell
+```
 
 and try again.
 
@@ -144,8 +162,10 @@ compilers will produce generic code that runs on many processors of the
 capabilities such as AVX-512. You will see the following warning message
 when you run a compiler:
 
-    No supported cpu target is set, CRAY_CPU_TARGET=x86-64 will be used.
-    Load a valid targeting module or set CRAY_CPU_TARGET
+``` highlight
+No supported cpu target is set, CRAY_CPU_TARGET=x86-64 will be used.
+Load a valid targeting module or set CRAY_CPU_TARGET
+```
 
 ## Using the compiler drivers
 
@@ -153,9 +173,11 @@ The programming environment provides compiler drivers for compiling
 Fortran, C, and C++ code. This means that you will need to use the
 following commands instead of the actual compilers:
 
-    ftn -o simpleMpi simpleMpi.f90 # compile Fortran code
-    cc  -o simpleMpi simpleMpi.c    # compile C code
-    CC  -o simpleMpi simpleMpi.cxx  # compile C++ code
+``` highlight
+ftn -o simpleMpi simpleMpi.f90 # compile Fortran code
+cc  -o simpleMpi simpleMpi.c    # compile C code
+CC  -o simpleMpi simpleMpi.cxx  # compile C++ code
+```
 
 The drivers will ensure correct linking of your code with compiler
 runtime libraries, and with Cray-supported libraries (such as Cray’s
@@ -168,13 +190,17 @@ to the compile/link line for the selected hardware and Cray-supported
 libraries. If you are interested in seeing what the compiler driver
 does, add the `-craype-verbose` flag:
 
-    ftn -craype-verbose -o simpleMpi simpleMpi.f90
+``` highlight
+ftn -craype-verbose -o simpleMpi simpleMpi.f90
+```
 
 Further compiler driver options can be found on their man pages:
 
-    man ftn
-    man cc
-    man CC
+``` highlight
+man ftn
+man cc
+man CC
+```
 
 ## **Compiling and Running MPI code**
 
@@ -185,19 +211,25 @@ linker flags.
 Note that running an MPI code on the build node
 (`login.maui.nesi.org.nz`) using
 
-    ./simpleMPI
+``` highlight
+./simpleMPI
+```
 
 will fail with an error message, as there is no MPI runtime environment:
 
-    [Wed Oct 18 02:00:14 2017] [c0-0c0s3n1] Fatal error in MPI_Init: Other MPI error, error stack:
-    MPIR_Init_thread(537):
-    MPID_Init(247).......: channel initialization failed
-    MPID_Init(636).......:  PMI2 init failed: 1
+``` highlight
+[Wed Oct 18 02:00:14 2017] [c0-0c0s3n1] Fatal error in MPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(537):
+MPID_Init(247).......: channel initialization failed
+MPID_Init(636).......:  PMI2 init failed: 1
+```
 
 If you want to run a short test of your build, use SLURM’s srun command
 that submits your program to a compute node on the fly, e.g.,
 
-    SLURM_PARTITION=nesi_research srun -n 6 simpleMPI
+``` highlight
+SLURM_PARTITION=nesi_research srun -n 6 simpleMPI
+```
 
 ## Common compiler options
 
@@ -212,8 +244,10 @@ For example, if you wanted to use the gfortran compiler, activate
 compiler warnings (`-Wall`), and require aggressive compiler
 optimisation (`-O3`), you would use the following commands:
 
-    module swap PrgEnv-cray PrgEnv-gnu
-    ftn -Wall -O3 -o simpleMpi simpleMpi.f90
+``` highlight
+module swap PrgEnv-cray PrgEnv-gnu
+ftn -Wall -O3 -o simpleMpi simpleMpi.f90
+```
 
 The following table provides a list of commonly used compiler options:
 
@@ -230,38 +264,42 @@ The following table provides a list of commonly used compiler options:
 <tbody>
 <tr class="odd">
 <td>Debugging</td>
-<td><code>-g</code> or <code>-G{0,1,2,fast}</code></td>
-<td><code>-g</code> or <code>-debug [keyword]</code></td>
-<td><code>-g or -g{0,1,2,3}</code></td>
+<td><code class="highlighter-rouge">-g</code> or <code
+class="highlighter-rouge">-G{0,1,2,fast}</code></td>
+<td><code class="highlighter-rouge">-g</code> or <code
+class="highlighter-rouge">-debug [keyword]</code></td>
+<td><code class="highlighter-rouge">-g or -g{0,1,2,3}</code></td>
 <td>Set level of debugging information, some levels may disable certain
 compiler optimisations</td>
 </tr>
 <tr class="even">
 <td>Light compiler optimisation</td>
-<td><code>-O2</code></td>
-<td><code>-O2</code></td>
-<td><code>-O2</code></td>
+<td><code class="highlighter-rouge">-O2</code></td>
+<td><code class="highlighter-rouge">-O2</code></td>
+<td><code class="highlighter-rouge">-O2</code></td>
 <td> </td>
 </tr>
 <tr class="odd">
 <td>Aggressive compiler optimisation</td>
-<td><code>-O3 -hfp3</code></td>
-<td><code>-O3 -ipo</code></td>
-<td><code>-O3 -ffast-math -funroll-loops</code></td>
+<td><code class="highlighter-rouge">-O3 -hfp3</code></td>
+<td><code class="highlighter-rouge">-O3 -ipo</code></td>
+<td><code
+class="highlighter-rouge">-O3 -ffast-math -funroll-loops</code></td>
 <td>This may affect numerical accuracy</td>
 </tr>
 <tr class="even">
 <td>Vectorisation reports</td>
-<td><code>-hlist=m</code></td>
-<td><code>-qopt-report</code></td>
-<td><code>-fopt-info-vec</code> or <code>-fopt-info-missed</code></td>
+<td><code class="highlighter-rouge">-hlist=m</code></td>
+<td><code class="highlighter-rouge">-qopt-report</code></td>
+<td><code class="highlighter-rouge">-fopt-info-vec</code> or <code
+class="highlighter-rouge">-fopt-info-missed</code></td>
 <td> </td>
 </tr>
 <tr class="odd">
 <td>OpenMP</td>
-<td><code>-homp</code> (default)</td>
-<td><code>-openmp</code></td>
-<td><code>-fopenmp</code></td>
+<td><code class="highlighter-rouge">-homp</code> (default)</td>
+<td><code class="highlighter-rouge">-openmp</code></td>
+<td><code class="highlighter-rouge">-fopenmp</code></td>
 <td> </td>
 </tr>
 </tbody>
@@ -314,11 +352,15 @@ provided by Cray, by NeSI/NIWA, or if you built them yourself.
 
 Many libraries are provided in modules. You can search them using
 
-    module avail
+``` highlight
+module avail
+```
 
 and look in the module description using:
 
-    module help <module-name>
+``` highlight
+module help <module-name>
+```
 
 Sometimes modules provide multiple libraries, e.g. *cray-libsci*.
 
@@ -330,8 +372,10 @@ libraries, and they will add the library names to the linker line. For
 example, to build a program that uses the netCDF library provided by the
 `cray-netcdf` module, run the commands
 
-    module load cray-netcdf
-    ftn -o simple_xy_wr simple_xy_wr.f90
+``` highlight
+module load cray-netcdf
+ftn -o simple_xy_wr simple_xy_wr.f90
+```
 
 Keep in mind that such automatic treatment of dependencies will **only**
 work if the libraries have been provided by Cray - you can recognise
@@ -366,8 +410,10 @@ other, use `-lA -lB -lA` (although such cases are quite rare).
 
 Consider the following example where the `grib_api` library is used:
 
-    module load grib_api/1.23.1-CrayGNU-18.08
-    cc -I$EBROOTGRIB_API/include -o mygribprogram mygribprogram.c -L$EBROOTGRIB_API/lib -lgrib_api
+``` highlight
+module load grib_api/1.23.1-CrayGNU-18.08
+cc -I$EBROOTGRIB_API/include -o mygribprogram mygribprogram.c -L$EBROOTGRIB_API/lib -lgrib_api
+```
 
 The EasyBuild software management system that NeSI/NIWA use to provide
 modules automatically defines environment variables
@@ -376,7 +422,9 @@ help pointing the compiler and linker to include files and libraries as
 in the example above. If you are unsure which `$EBROOT<...>` variables
 are available, use
 
-    module show grib_api/1.23.1-CrayGNU-18.08
+``` highlight
+module show grib_api/1.23.1-CrayGNU-18.08
+```
 
 to find out.
 
@@ -420,9 +468,11 @@ environment at runtime).
 
 Here is an example that shows how to find out how your code was linked:
 
-    module load GSL/2.4-CrayGNU-2017.06
-    cc -I$EBROOTGRIB_API/include -o mygribprogram mygribprogram.c -L$EBROOTGRIB_API/lib -lgrib_api
-    ldd mygribprogram
+``` highlight
+module load GSL/2.4-CrayGNU-2017.06
+cc -I$EBROOTGRIB_API/include -o mygribprogram mygribprogram.c -L$EBROOTGRIB_API/lib -lgrib_api
+ldd mygribprogram
+```
 
 If you see the message `not a dynamic executable`, your program was
 statically linked. Otherwise you will see a list of shared library
@@ -430,20 +480,26 @@ dependencies that are needed at runtime.
 
 If you have to link your code dynamically, either set
 
-    export CRAYPE_LINK_TYPE=dynamic
+``` highlight
+export CRAYPE_LINK_TYPE=dynamic
+```
 
 in your build environment (useful when using complex build systems), or
 add the `-dynamic` flag to the compiler driver commands, e.g.,
 
-    cc -I$EBROOTGRIB_API/include -o mygribprogram mygribprogram.c -L$EBROOTGRIB_API/lib -lgrib_api -dynamic
+``` highlight
+cc -I$EBROOTGRIB_API/include -o mygribprogram mygribprogram.c -L$EBROOTGRIB_API/lib -lgrib_api -dynamic
+```
 
 Using the `ldd` tool, you should now see a number of libraries that are
 dynamically linked.
 
 You may occassionally see a warning message of the kind:
 
-    /opt/cray/pe/hdf5/1.10.1.1/INTEL/16.0/lib/libhdf5.a(H5PL.o): In function `H5PL_load':
-    H5PL.c:(.text+0x612): warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+``` highlight
+/opt/cray/pe/hdf5/1.10.1.1/INTEL/16.0/lib/libhdf5.a(H5PL.o): In function `H5PL_load':
+H5PL.c:(.text+0x612): warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+```
 
 This simply means that the library must be accessible at runtime despite
 fully static linking and the program is thus not entirely

@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 **Well done!** You successfully read this important alert message.
 
 **Heads up!** This alert needs your attention, but it's not super
@@ -48,5 +50,7 @@ spacing within an alert works with this kind of content.
 Whenever you need to, be su`ls bash "string"`re to use margin utilities 
 to keep things nice and tidy.
 
-    [user@host ~]# ssh -Y @lander.nesi.org.nz
-    New Zealand eScience Infrastructure (NeSI) HPC Lander node.
+``` nohighlight
+[user@host ~]# ssh -Y @lander.nesi.org.nz
+New Zealand eScience Infrastructure (NeSI) HPC Lander node.
+```

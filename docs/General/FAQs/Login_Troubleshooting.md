@@ -11,12 +11,14 @@ zendesk_section_id: 360000039036
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > Please make sure you have followed the recommended setup. See
@@ -52,11 +54,15 @@ OR
 
 You can test what part of your connection has failed by first running:
 
-    ssh <user>@lander.nesi.org.nz
+``` highlight
+ssh <user>@lander.nesi.org.nz
+```
 
 **If this succeeds**: Run the following:
 
-    ssh login.<mahuika/maui>.nesi.org.nz
+``` highlight
+ssh login.<mahuika/maui>.nesi.org.nz
+```
 
 **If this fails:** Are you logging in to the correct cluster?
 Mahuika/Maui have separate access control, also Māui requires your
@@ -133,12 +139,14 @@ input before pressing Enter will cause the login to fail.
 
 The expected processes is as follows:
 
-    ssh <user>@lander.nesi.org.nz 
-    <user>@lander.nesi.org.nz's password: <Enter>
-    <user>@lander.nesi.org.nz's password: <Enter>
-    <user>@lander.nesi.org.nz's password: <Enter>
-    Login Password (First Factor): 
-    Authenticator Code (Second Factor):
+``` highlight
+ssh <user>@lander.nesi.org.nz 
+<user>@lander.nesi.org.nz's password: <Enter>
+<user>@lander.nesi.org.nz's password: <Enter>
+<user>@lander.nesi.org.nz's password: <Enter>
+Login Password (First Factor): 
+Authenticator Code (Second Factor):
+```
 
 *Note: Sometimes MobaXterm will prompt with a dialogue box.*
 

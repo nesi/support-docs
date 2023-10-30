@@ -11,12 +11,14 @@ zendesk_section_id: 360000278975
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 If you are unsure about using our job scheduler Slurm, more details can
 be found
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684396).
@@ -170,8 +172,8 @@ output file.</td>
 </tr>
 <tr class="odd" style="height: 40px;">
 <td style="width: 156.167px; height: 40px">--mail-user</td>
-<td
-style="width: 314.333px; height: 40px"><code>#SBATCH --mail-user=bob123@gmail.com</code></td>
+<td style="width: 314.333px; height: 40px"><code
+class="nohighlight">#SBATCH --mail-user=bob123@gmail.com</code></td>
 <td style="width: 461.5px; height: 40px">Address to send mail
 notifications.</td>
 </tr>
@@ -328,19 +330,23 @@ such as the log file name.
 <table style="height: 92px; width: 600px;">
 <tbody>
 <tr class="odd" style="height: 23px;">
-<td style="width: 209.367px; height: 23px"><code>%x</code></td>
+<td style="width: 209.367px; height: 23px"><code
+class="nohighlight">%x</code></td>
 <td style="width: 367.633px; height: 23px">Job name</td>
 </tr>
 <tr class="even" style="height: 23px;">
-<td style="width: 209.367px; height: 23px"><code>%u</code></td>
+<td style="width: 209.367px; height: 23px"><code
+class="nohighlight">%u</code></td>
 <td style="width: 367.633px; height: 23px">User name.</td>
 </tr>
 <tr class="odd" style="height: 23px;">
-<td style="width: 209.367px; height: 23px"><code>%j</code></td>
+<td style="width: 209.367px; height: 23px"><code
+class="nohighlight">%j</code></td>
 <td style="width: 367.633px; height: 23px">Job ID </td>
 </tr>
 <tr class="even" style="height: 23px;">
-<td style="width: 209.367px; height: 23px"><code>%a</code></td>
+<td style="width: 209.367px; height: 23px"><code
+class="nohighlight">%a</code></td>
 <td style="width: 367.633px; height: 23px">Job array Index</td>
 </tr>
 </tbody>
@@ -353,31 +359,37 @@ Common examples.
 <table style="height: 91px; width: 600px;">
 <tbody>
 <tr class="odd">
-<td style="width: 210.367px"><code>$SLURM_JOB_ID</code></td>
+<td style="width: 210.367px"><code
+class="highlighter-rouge">$SLURM_JOB_ID</code></td>
 <td style="width: 366.633px">Useful for naming output files that won't
 clash.</td>
 </tr>
 <tr class="even">
-<td style="width: 210.367px"><code>$SLURM_JOB_NAME</code></td>
+<td style="width: 210.367px"><code
+class="highlighter-rouge">$SLURM_JOB_NAME</code></td>
 <td style="width: 366.633px">Name of the job.</td>
 </tr>
 <tr class="odd">
-<td style="width: 210.367px"><code>$SLURM_ARRAY_TASK_ID</code></td>
+<td style="width: 210.367px"><code
+class="highlighter-rouge">$SLURM_ARRAY_TASK_ID</code></td>
 <td style="width: 366.633px">The current index of your array job. </td>
 </tr>
 <tr class="even">
-<td style="width: 210.367px"><code>$SLURM_CPUS_PER_TASK</code></td>
+<td style="width: 210.367px"><code
+class="highlighter-rouge">$SLURM_CPUS_PER_TASK</code></td>
 <td style="width: 366.633px">Useful as an input for multi-threaded
 functions.</td>
 </tr>
 <tr class="odd">
-<td style="width: 210.367px"><code>$SLURM_NTASKS</code></td>
+<td style="width: 210.367px"><code
+class="highlighter-rouge">$SLURM_NTASKS</code></td>
 <td style="width: 366.633px">Useful as an input for MPI functions.</td>
 </tr>
 <tr class="even">
-<td style="width: 210.367px"><code>$SLURM_SUBMIT_DIR</code></td>
-<td style="width: 366.633px">Directory where <code>sbatch</code> was
-called.</td>
+<td style="width: 210.367px"><code
+class="highlighter-rouge">$SLURM_SUBMIT_DIR</code></td>
+<td style="width: 366.633px">Directory where <code
+class="nohighlight">sbatch</code> was called.</td>
 </tr>
 </tbody>
 </table>

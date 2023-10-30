@@ -12,12 +12,14 @@ zendesk_section_id: 200732737
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Slurm, the scheduler that controls Māui and Mahuika, has been upgraded
 to version 21.8 on machines.  Below are the highlights of the changes
 expected in the new version. The full list of bugfixes, improvements and

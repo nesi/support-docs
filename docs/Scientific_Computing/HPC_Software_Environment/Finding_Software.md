@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Environment Modules
 
 NeSI uses environment modules to manage [installed
@@ -25,13 +27,21 @@ software](https://support.nesi.org.nz/hc/articles/360000170355).
 Using the `module` command you can:
 
 -   View loaded modules:
-        module list
+    ``` highlight
+    module list
+    ```
 -   List all available modules
-        module avail
+    ``` highlight
+    module avail
+    ```
 -   Load a module:
-        module load Python/2.7.14-gimkl-2017a
+    ``` highlight
+    module load Python/2.7.14-gimkl-2017a
+    ```
 -   Switch out a loaded module for a different version:
-        module switch Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
+    ``` highlight
+    module switch Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
+    ```
 
 ## Lmod on Mahuika
 
@@ -43,16 +53,26 @@ and a more powerful search capability. The `ml` shortcut can be used in
 place of `module`. With Lmod you can:
 
 -   View loaded modules:
-        ml
+    ``` highlight
+    ml
+    ```
 -   List all available modules:
-        ml spider
+    ``` highlight
+    ml spider
+    ```
 -   Use “spider” to search for modules, e.g. “Python” modules:
-        ml spider Python
+    ``` highlight
+    ml spider Python
+    ```
 -   Load a module:
-        ml Python/2.7.14-gimkl-2017a
+    ``` highlight
+    ml Python/2.7.14-gimkl-2017a
+    ```
 -   Prefix a module with “-“ to unload it, e.g. switch from Python 2 to
     Python 3:
-        ml -Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
+    ``` highlight
+    ml -Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
+    ```
 -   To get a fresh environment, we recommend that you log out and log in
     again. By logging out and logging in again you will revert to not
     only the default set of modules, but also the default set of
@@ -71,7 +91,9 @@ On Māui XC nodes an improved version of the modules framework is
 provided. Therewith you can also search for modules using a sub-string
 using the "-S" option, e.g.
 
-    module avail -S netcdf
+``` highlight
+module avail -S netcdf
+```
 
 as a result you will also find modules having the substring "netcdf" in
 name, e.g. cray-netcdf.

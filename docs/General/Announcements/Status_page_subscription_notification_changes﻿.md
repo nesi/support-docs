@@ -12,12 +12,14 @@ zendesk_section_id: 200732737
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 NeSI uses its [System Status page](https://status.nesi.org.nz/) as a
 tool to communicate planned and unplanned maintenance and interruptions
 to service. Our Status page includes a list of components that reflect
@@ -32,11 +34,15 @@ Now, instead of automatically subscribing new users for all
 notifications, we will initially only subscribe you to receive status
 notices about the following key components:
 
--   'Submit new HPC Jobs' - notices regarding job submission to NeSI
-    systems
--   'Jobs running on HPC' - notices regarding job status on NeSI systems
--   'Jupyter on NeSI' - notices regarding our Jupyter Service
--   'HPC Storage' - notices regarding storage resources on NeSI systems
+-   ‘Submit new HPC Jobs’ - notices regarding status of login nodes,
+    Slurm scheduler, or filesystem
+-   ‘Jobs running on HPC’ - notices regarding network issues, or status
+    of Slurm scheduler or filesystem
+-   'Jupyter on NeSI' - notices regarding the status of our [Jupyter
+    Service](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
+    for interactive computing
+-   ‘HPC Storage’ - notices regarding the status of storage resources on
+    NeSI systems
 
 Effective Friday 20 October, we adjusted all existing and non-customised
 Status page subscriptions to match this shorter notification list.

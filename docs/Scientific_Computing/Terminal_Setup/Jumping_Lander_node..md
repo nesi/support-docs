@@ -11,12 +11,14 @@ zendesk_section_id: 360000189696
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > -   Have your [connection to the NeSI
@@ -66,7 +68,7 @@ click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 -   Specify the local port number on the local side (left)
 -   Save
 
-![sshTunnel.PNG](../../assets/images/sshTunnel_0_0_0.PNG)
+![sshTunnel.PNG](../../assets/images/sshTunnel_0.PNG)
 
 # PuTTY
 

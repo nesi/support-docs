@@ -11,12 +11,14 @@ zendesk_section_id: 360000039036
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 The time displayed in your shell is controlled by a system variable
 called `TZ`. To change to New Zealand time you need to set the variable
 as follows:

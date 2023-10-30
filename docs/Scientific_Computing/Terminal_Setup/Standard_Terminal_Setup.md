@@ -13,12 +13,14 @@ zendesk_section_id: 360000189696
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > -   Have an [active account and
@@ -44,36 +46,38 @@ configurations.
 2.  Open your ssh config file with  `nano ~/.ssh/config` and add the
     following (replacing **`username`** with your username):
 
-        Host mahuika
-           User username
-           Hostname login.mahuika.nesi.org.nz
-           ProxyCommand ssh -W %h:%p lander
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    ``` nohighlight
+    Host mahuika
+       User username
+       Hostname login.mahuika.nesi.org.nz
+       ProxyCommand ssh -W %h:%p lander
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
-        Host maui
-           User username
-           Hostname login.maui.nesi.org.nz
-           ProxyCommand ssh -W %h:%p lander
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    Host maui
+       User username
+       Hostname login.maui.nesi.org.nz
+       ProxyCommand ssh -W %h:%p lander
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
-        Host lander
-           User username
-           HostName lander.nesi.org.nz
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    Host lander
+       User username
+       HostName lander.nesi.org.nz
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
-        Host *
-            ControlMaster auto
-            ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-            ControlPersist 1
+    Host *
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+        ControlPersist 1
+    ```
 
     Close and save with ctrl x, y, Enter
 
