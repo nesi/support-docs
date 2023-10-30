@@ -264,12 +264,10 @@ to a job.
 > -   [Command line options for standard
 >     submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
 
- 
 
 ![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS_speedup_SharedVMPI.png)
 
  
-
 *Note: Hyperthreading off, testing
-d<span class="dictionary-of-numbers">one on small mechanical </span>FEA
+done on small mechanical </span>FEA
 model. Results highly model dependant. Do your own tests.*
