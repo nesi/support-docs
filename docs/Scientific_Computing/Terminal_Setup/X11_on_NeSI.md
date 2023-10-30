@@ -59,7 +59,7 @@ href="https://sourceforge.net/projects/xming/">Xming</a></td>
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0.png) symbol
+this ![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0.png) symbol
 in your taskbar 
 !!! info Note
 >
@@ -90,8 +90,7 @@ X<span class="dictionary-of-numbers">-11 forwarding box is
 <img src="../../assets/images/x11moba.png" width="451" height="303"
 alt="x11moba.png" />
 
-If the
-![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0.png)
+If the ![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0.png)
 button in the top right corner of your window is coloured, the X-server
 should be running.
 

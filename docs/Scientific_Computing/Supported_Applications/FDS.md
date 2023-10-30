@@ -70,7 +70,7 @@ and
 
 ## Scaling with oMP
 
-![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0.png)
+![mceclip0.png](../../assets/images/mceclip0_0_0_0_0.png)
 
  
 

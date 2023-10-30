@@ -156,7 +156,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0_0_0.png)
+![mceclip0.png](../../assets/images/mceclip0_0_0_0_0_0.png)
 
 ## On a compute node
 

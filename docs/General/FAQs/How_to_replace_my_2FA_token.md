@@ -40,7 +40,7 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0_0_0.png)
+![](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0.png)
 
 After 'Delete Token' has been selected:
 
