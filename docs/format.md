@@ -161,10 +161,10 @@ if formatting:
 ## Images
 
 ```md
-![This is an image]("assets/images/3rgk_assembly-1.jpeg")
+![This is an image]("assets/images/FENSAP_GUI1.png")
 ```
 
-![This is an image]("assets/images/3rgk_assembly-1.jpeg")
+![This is an image]("assets/images/FENSAP_GUI1.png")
 
 ## Links
 
