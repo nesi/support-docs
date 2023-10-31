@@ -15,13 +15,15 @@ jobs:
      name: Checks markdown formatting.
      runs-on: ubuntu-latest
      steps:
-       - uses: actions/checkout@v3
-       - run: npm install markdownlint --save-dev
-       - run: markdownlint */**.md
+      - uses: actions/checkout@v3
+      - run: npm install markdownlint --save-dev
+      - run: markdownlint */**.md
   dirty:
      name: Attempts to deploy to Pages verbosely
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
        - run: pip install -r requirements.txt
-       - run: mkdocs gh-deploy -b gh-pages-test --force --dirty --verbose 
+       - run: mkdocs gh-deploy -b gh-pages-test --strict --dirty --verbose 
