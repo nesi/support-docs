@@ -17,6 +17,7 @@ jobs:
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git remote add gitlab_origin https://oauth2:$ACCESS_TOKEN@gitlab.com/path-to-project.git
           git checkout -b ${BRANCH_NAME}
           mkdir -pv docs/assets/glossary
       - name: Fetch Module List
@@ -30,9 +31,7 @@ jobs:
       - name: Commit to Branch '${BRANCH_NAME}'
         run: git add --all
       - run: git commit -m "update remote assets"
-      - name: Sync with upstream (if applicable).
-        run: git pull origin ${BRANCH_NAME} || true
-      - name: Open Pull Request
-        run: gh pr create -B main -H ${BRANCH_NAME} --title 'Update remote assets' --body 'Created by Github action'
+      - name: Push
+        run: git push origin ${BRANCH_NAME}
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
