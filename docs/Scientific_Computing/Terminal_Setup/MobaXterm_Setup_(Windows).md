@@ -11,12 +11,14 @@ zendesk_section_id: 360000189696
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > -   Have an [active account and
@@ -55,9 +57,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](../../assets/images/4411672582031_0.name_me.png)
+![mceclip4.png](../../assets/images/4411672582031.name_me.png)
 
-![mceclip5.png](../../assets/images/4411672594191_0.name_me.png)
+![mceclip5.png](../../assets/images/4411672594191.name_me.png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -77,7 +79,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../../assets/images/4411680807951_0.name_me.png)
+![mceclip6.png](../../assets/images/4411680807951.name_me.png)
 
 You will be prompted by dialogue box.
 

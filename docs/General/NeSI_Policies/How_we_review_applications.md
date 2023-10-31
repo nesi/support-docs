@@ -12,12 +12,14 @@ zendesk_section_id: 360000224835
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 When you submit your application through our web site, it will go to our
 technical support team for review. In general, our review process for
 new projects is as follows:

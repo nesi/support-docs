@@ -12,12 +12,14 @@ zendesk_section_id: 360000189716
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 When you run software in an interactive environment such as your
 ordinary workstation (desktop PC or laptop), the software is able to
 request from the operating system whatever resources it needs from

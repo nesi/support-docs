@@ -11,12 +11,14 @@ zendesk_section_id: 360000189696
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > -   Windows 10.
@@ -33,9 +35,9 @@ WSL is enabled by default on later versions of Windows 10.
 ## Enabling WSL
 
 1.  Open 'Turn Windows features on or off'  
-    ![WSL1.png](../../assets/images/WSL1_0.png)
+    ![WSL1.png](../../assets/images/WSL1.png)
 2.  Scroll down and tick the 'Windows Subsystem for Linux' option.  
-    ![WSL2.png](../../assets/images/WSL2_0.png)  
+    ![WSL2.png](../../assets/images/WSL2.png)  
     Click OK
 3.  Wait for the installation to finish then restart your computer.
 !!! info What Next?

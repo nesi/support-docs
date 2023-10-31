@@ -11,12 +11,14 @@ zendesk_section_id: 360000030876
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 A SLURM interactive session reserves resources on compute nodes allowing
 you to use them interactively as you would the login node.
 

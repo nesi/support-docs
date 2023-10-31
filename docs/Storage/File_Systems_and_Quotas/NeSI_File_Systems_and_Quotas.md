@@ -16,12 +16,14 @@ zendesk_section_id: 360000033936
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info New Feature
 >
 > [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
@@ -47,7 +49,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../../assets/images/360003251796_0.name_me.png" width="629"
+## <img src="../../assets/images/360003251796.name_me.png" width="629"
 height="578" alt="neSI_filetree.svg" />
 
 # File System Specifications

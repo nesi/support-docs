@@ -11,16 +11,20 @@ zendesk_section_id: 360001189255
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Note
 >
 > This functionality is experimental and may introduce breaking changes
-> in the future.
+> in the future. These notes should be read in conjunction with NeSI's
+> main [R support
+> page](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R)
 >
 > Your feedback is welcome, please don't hesitate to contact us at
 > <support@nesi.org.nz> to make suggestions.
@@ -33,7 +37,7 @@ NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
 
-![rstudio\_launcher.png](../../assets/images/rstudio_launcher_0.png)
+![rstudio\_launcher.png](../../assets/images/4595373978255.name_me.png)
 
 Clicking on this entry will open a separate tab in your web browser,
 where RStudio will be accessible.
@@ -60,12 +64,14 @@ In the following example, we use the module that is built for R/4.2.1
 Once your configuration file is ready, make sure to restart your Jupyter
 session and re-launch RStudio for these changes to be taken into
 account. Check that the correct version of R has loaded and that the
-correct Library Paths are available. For R/4.1.0 the command
+correct Library Paths are available. For R/4.2.1 the command
 `.libPaths()` will return the following:
 
-    > .libPaths()
-    [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
-    [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
+``` GAQXDSOBH1B
+> .libPaths()
+[1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
+[2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
+```
 
 # Package Installation
 
@@ -82,8 +88,10 @@ following (below), where \`Rtmpjp2rm8\` is a randomly generated folder
 name, and is emptied with each new session. So will not fill up your
 home directory.
 
-    >tempdir()
-    [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
+``` GND-IWGDH3B
+>tempdir()
+[1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
+```
 
 The alternative is to install packages in a terminal session
 
@@ -129,7 +137,7 @@ a failure by JupyterLab. Please try to start RStudio again from the
 launcher. If the problem persists, contact our support team at
 <support@nesi.org.nz>.
 
-![error\_500.PNG](../../assets/images/error_500_0.PNG)
+![error\_500.PNG](../../assets/images/4614666941455.name_me.png)
 
 If you have disabled javascript in your web browser, you will need to
 enter your password manually in the RStudio login screen. To retrieve

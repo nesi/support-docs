@@ -11,12 +11,14 @@ zendesk_section_id: 360000030876
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
  
 
 # Differences from other Mahuika compute nodes
@@ -34,7 +36,7 @@ requested by a job.
   
 AMD Milan CPU overview, each node has two of these:
 
-<img src="../../assets/images/milan_0.png" width="377" height="395"
+<img src="../../assets/images/milan.png" width="377" height="395"
 alt="milan.png" />
 
 **AMD-EPYC-Milan-architecture** from

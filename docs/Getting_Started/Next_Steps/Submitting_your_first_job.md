@@ -13,12 +13,14 @@ zendesk_section_id: 360000189716
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Environment Modules
 
 Modules are a convenient  way to provide access to applications  on the
@@ -71,13 +73,15 @@ needed by our job scheduler *Slurm.*
 
 Create a new file and open it with nano myjob.sl
 
-    #!/bin/bash -e
-    #SBATCH --job-name=SerialJob # job name (shows up in the queue)
-    #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
-    #SBATCH --mem=512MB          # Memory in MB
-    #SBATCH --qos=debug          # debug QOS for high priority job tests
+``` nohighlight
+#!/bin/bash -e
+#SBATCH --job-name=SerialJob # job name (shows up in the queue)
+#SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
+#SBATCH --mem=512MB          # Memory in MB
+#SBATCH --qos=debug          # debug QOS for high priority job tests
 
-    pwd # Prints working directory
+pwd # Prints working directory
+```
 
 Copy in the above text and save and exit the text editor with 'ctrl +
 x'.
@@ -105,7 +109,9 @@ jobs, but is limited to one small job per user at a time: no more than
 
 Jobs are submitted to the scheduler using:
 
-    sbatch myjob.sl
+``` nohighlight
+sbatch myjob.sl
+```
 
 You should receive an output
 
@@ -121,7 +127,9 @@ Documentation](https://slurm.schedmd.com/sbatch.html)
 
 The currently queued jobs can be checked using 
 
-    squeue
+``` nohighlight
+squeue
+```
 
 You can filter to just your jobs by adding the flag
 

@@ -20,12 +20,14 @@ zendesk_section_id: 360000189716
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > -   Have an [active account and
@@ -81,7 +83,7 @@ This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../../assets/images/mceclip0_0.png)
+![mceclip0.png](../../assets/images/mceclip0.png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -94,7 +96,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/2019-01-07_SCP_in_MobaXTerm_0.png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/2019-01-07_SCP_in_MobaXTerm.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided

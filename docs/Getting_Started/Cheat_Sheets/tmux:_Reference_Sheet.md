@@ -11,12 +11,14 @@ zendesk_section_id: 360000278975
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 tmux ( terminal multiplexer) is a tool that allows creation of shell
 sessions that are detached from your terminal.
 

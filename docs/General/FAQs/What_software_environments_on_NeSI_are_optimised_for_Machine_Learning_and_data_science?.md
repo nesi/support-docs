@@ -12,12 +12,14 @@ zendesk_section_id: 360000039036
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 When using NeSI's [HPC
 platform](https://support.nesi.org.nz/hc/en-gb/sections/360000034335),
 you can bring your own code to install or you can access our extensive
@@ -53,7 +55,7 @@ As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using
 more broad terms such as "machine learning". 
 
-![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/MachineLearningSoftwareEnvironments-May2021_0.png)
+![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/MachineLearningSoftwareEnvironments-May2021.png)
 
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific

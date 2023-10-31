@@ -11,12 +11,14 @@ zendesk_section_id: 360000040596
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 This article shows how to transfer potentially large amounts of data
 between NeSI and your personal computer, without requiring 2FA
 (two-factor authentication) each time you initiate the transfer.  This
@@ -53,7 +55,7 @@ have registered and created an account on Globus.
 -   You should now see your new guest collection at
     <https://app.globus.org/collections?scope=administered-by-me>
 
-<img src="../../assets/images/6202960141583_0.name_me.png"
+<img src="../../assets/images/6202960141583.name_me.png"
 style="max-width: 800px;" alt="mceclip0.png" />
 
 ## Step 2: Download and install Globus Connect Personal
@@ -76,7 +78,7 @@ Note: By default your entire home directory will be exposed. It is good
 practice to only share specific directories. You can remove your home
 directory by highlighting it and clicking on the "-" sign.
 
-<img src="../../assets/images/6202963231503_0.name_me.png"
+<img src="../../assets/images/6202963231503.name_me.png"
 style="max-width: 800px;" alt="mceclip1.png" />
 
 ## Step 4: Test a file transfer
@@ -89,5 +91,5 @@ style="max-width: 800px;" alt="mceclip1.png" />
     be seen in the picture below.
 -   Click on the files you want to transfer and press "Start"
 
-<img src="../../assets/images/6203141379215_0.name_me.png"
+<img src="../../assets/images/6203141379215.name_me.png"
 style="max-width: 800px;" alt="mceclip3.png" />

@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 # Where to build
 
 You may compile (build) software on the Mahuika login nodes,
@@ -198,46 +200,70 @@ compilers:
 <tbody>
 <tr class="odd">
 <td>Debugging</td>
-<td><code>-g</code> or <code>-G{0,1,2,fast}</code></td>
-<td><code>-g</code> or <code>-debug [keyword]</code></td>
-<td><code>-g or -g{0,1,2,3}</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g</code>
+or <code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-G{0,1,2,fast}</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g</code>
+or <code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-debug [keyword]</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g or -g{0,1,2,3}</code></td>
 <td>Set level of debugging information, some levels may disable certain
 compiler optimisations</td>
 </tr>
 <tr class="even">
 <td>Light compiler optimisation</td>
-<td><code>-O2</code></td>
-<td><code>-O2</code></td>
-<td><code>-O2</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
 <td> </td>
 </tr>
 <tr class="odd">
 <td>Aggressive compiler optimisation</td>
-<td><code>-O3 -hfp3</code></td>
-<td><code>-O3 -ipo</code></td>
-<td><code>-O3 -ffast-math -funroll-loops</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -hfp3</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -ipo</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -ffast-math -funroll-loops</code></td>
 <td>This may affect numerical accuracy</td>
 </tr>
 <tr class="even">
 <td>Architecture specific optimisation</td>
-<td>Load this module first:
-<code>module load craype-broadwell</code></td>
-<td><code>-xHost</code></td>
-<td><code>-march=native -mtune=native</code></td>
+<td>Load this module first: <code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">module load craype-broadwell</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-xHost</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-march=native -mtune=native</code></td>
 <td>Build and compute nodes have the same architecture (Broadwell)</td>
 </tr>
 <tr class="odd">
 <td>Vectorisation reports</td>
-<td><code>-hlist=m</code></td>
-<td><code>-qopt-report</code></td>
-<td><code>-fopt-info-vec</code> or <code>-fopt-info-missed</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-hlist=m</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-qopt-report</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopt-info-vec</code>
+or <code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopt-info-missed</code></td>
 <td> </td>
 </tr>
 <tr class="even">
 <td>OpenMP</td>
-<td><code>-homp</code> (default)</td>
-<td><code>-qopenmp</code></td>
-<td><code>-fopenmp</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-homp</code>
+(default)</td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-qopenmp</code></td>
+<td><code
+style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopenmp</code></td>
 <td></td>
 </tr>
 </tbody>

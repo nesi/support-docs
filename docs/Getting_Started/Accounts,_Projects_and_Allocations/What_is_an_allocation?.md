@@ -11,12 +11,14 @@ zendesk_section_id: 360000196195
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Because NeSI's resources are limited, we manage access to our resources
 through allocations. Typically, an allocation is a grant of a certain
 amount of a resource, or of a rate at which a resource can be consumed,

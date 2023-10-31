@@ -11,12 +11,14 @@ zendesk_section_id: 360000039036
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## How the portal works
 
 NeSI is using product portals to share product features, ideas and
@@ -33,7 +35,7 @@ provide feedback on. Each idea/feature on the Portal is represented as a
 Select a card, choose the importance and add let us know why this is
 important to you as well as your email address.
 
-![card\_feedback.gif](../../assets/images/card_feedback_0.gif)
+![card\_feedback.gif](../../assets/images/card_feedback.gif)
 
 When users provide feedback on features/ideas in this way, their
 feedback is routed back to our Insights board.
@@ -46,7 +48,7 @@ You can also submit brand new ideas on the Portal. These will be routed
 to our Insights board as well and reviewed by the product management
 team.
 
-![submit\_idea.gif](../../assets/images/submit_idea_0.gif)
+![submit\_idea.gif](../../assets/images/submit_idea.gif)
 
 ### What happens to the feedback?
 

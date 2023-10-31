@@ -11,12 +11,14 @@ zendesk_section_id: 360000040076
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Note
 >
 > This documentation contains our legacy instructions for running
@@ -134,7 +136,7 @@ click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
     the remote server (right upper box, second line)
 -   Save
 
-![sshTunnel.PNG](../../assets/images/sshTunnel_0.PNG)
+![sshTunnel.PNG](../../assets/images/sshTunnel.PNG)
 
 ## Launch the JupyterLab server 
 
@@ -220,7 +222,7 @@ Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:
 
-![Jupyter.PNG](../../assets/images/Jupyter_0.PNG)
+![Jupyter.PNG](../../assets/images/Jupyter.PNG)
 
 # Kernels
 

@@ -11,12 +11,14 @@ zendesk_section_id: 360000040596
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 This is intended to be a quick-start guide, for more detailed
 information, please see our other Globus articles here: [Globus
 documentation](https://support.nesi.org.nz/hc/en-gb/sections/360000040596)
@@ -45,7 +47,7 @@ up using one of the available options on the page. Please note that the
 organisation is not listed, please sign in (sign up) using any of the
 other methods.
 
-<img src="../../assets/images/8149105856015_0.name_me.png" width="398"
+<img src="../../assets/images/8149105856015.name_me.png" width="398"
 height="436" alt="Globus_login.png" />
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
@@ -87,7 +89,7 @@ bar on the left.
     **do not** save your password on "*Browser settings*" as it will
     change every time due to the 2nd factor requirement.
 
-<img src="../../assets/images/8149067986063_0.name_me.png" width="296"
+<img src="../../assets/images/8149067986063.name_me.png" width="296"
 height="340" alt="NeSI_Globus_Authenticate.png" />
 
  
@@ -102,7 +104,7 @@ initiate the transfer, select one of the two directional arrows. In the
 image below, the 'config' folder is being transferred from the location
 on the right, to the location on the left.
 
-![Globus\_transfer\_data.png](../../assets/images/8149738412815_0.name_me.png)
+![Globus\_transfer\_data.png](../../assets/images/8149738412815.name_me.png)
 
 To see the progress of the transfer, please click 'Activity' on the left
 hand menu bar.

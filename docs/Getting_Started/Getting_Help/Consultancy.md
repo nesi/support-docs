@@ -12,12 +12,14 @@ zendesk_section_id: 360000164635
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 NeSI's Consultancy service provides scientific and HPC-focussed
 computational and data science support to research projects across a
 range of domains.

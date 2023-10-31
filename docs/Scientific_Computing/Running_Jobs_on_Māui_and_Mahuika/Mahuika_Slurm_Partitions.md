@@ -13,12 +13,14 @@ zendesk_section_id: 360000030876
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Definitions
 
 **CPU:** A logical core, also known as a hardware thread. Referred to as
@@ -269,7 +271,7 @@ more details about Slurm and CUDA settings.
 
 ### Limits on GPU Jobs
 
--   There is a per-project limit of 8 GPUs being used at a time.
+-   There is a per-project limit of 6 GPUs being used at a time.
 -   There is also a per-project limit of 360 GPU-hours being allocated
     to running jobs. This reduces the number of GPUs available for
     longer jobs, so for example you can use 8 GPUs at a time if your

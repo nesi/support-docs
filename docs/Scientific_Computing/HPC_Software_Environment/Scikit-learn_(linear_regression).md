@@ -11,12 +11,14 @@ zendesk_section_id: 360000040056
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Scikit-learn is a Python package providing tools for data mining, data
 analysis and machine learning. In this example, we'll show how to count
 the number of dots embedded in an image using the sckit-learn linear
@@ -36,9 +38,11 @@ following commands:
 The images are saved under directories train/ and test/, respectively.
 An example of image is test/img49.jpg.
 
-    display test/img49.jpg
+``` p1
+display test/img49.jpg
+```
 
-<img src="../../assets/images/img49_0_0_0.jpg" width="100" height="100"
+<img src="../../assets/images/img49_0.jpg" width="100" height="100"
 alt="img49.jpg" />
 
 which shows five, partially overlapping dots. Note that along with the
@@ -51,20 +55,26 @@ The images need to be slightly manipulated. For instance we expect all
 the images to be black and white so we can collapse the red, green and
 blue channel into one. We'll need OpenCV to this task:
 
-    pip install opencv-python --user
+``` p1
+pip install opencv-python --user
+```
 
 ### Running the model
 
 Our regression model
 
-    wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Regression/classify.py
+``` p1
+wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Regression/classify.py
+```
 
 is encoded in classify.py. The corresponding lines in classify.py are
 (Python code):
 
-    clf = linear_model.LinearRegression()
-    # now train
-    clf.fit(trainingInput.reshape(-1, n0*n1), trainingOutput)
+``` p1
+clf = linear_model.LinearRegression()
+# now train
+clf.fit(trainingInput.reshape(-1, n0*n1), trainingOutput)
+```
 
 Here, trainingInput is the set of training arrays of size n0 (=40) and
 n1 (=40). The arrays are flattened. The training output (trainingOutput)
@@ -72,20 +82,24 @@ is a vector of integer values (0-5).
 
 We're now ready to train and test our model:
 
-    #!/bin/bash -e
-    #SBATCH --job-name regression-dots
-    #SBATCH --ntasks 1
-    #SBATCH --cpus-per-task 1
-    #SBATCH --time 00:10:00
-    #SBATCH --mem 512MB
+``` p1
+#!/bin/bash -e
+#SBATCH --job-name regression-dots
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 1
+#SBATCH --time 00:10:00
+#SBATCH --mem 512MB
 
-    module load Python
-    python classify.py --testDir=test --trainDir=train --save=someResults.png
+module load Python
+python classify.py --testDir=test --trainDir=train --save=someResults.png
+```
 
 Copy-paste the above and save in file classify.sl. Submit the Slurm
 script classify.sl
 
-    sbatch classify.sl
+``` p1
+sbatch classify.sl
+```
 
 ### Looking at the output
 
@@ -94,7 +108,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../../assets/images/someResults_0_0_0.png)(The purple
+![someResults.png](../../assets/images/someResults_0.png)(The purple
 images have no dots.) With each image the number of dots is displayed as
 well as the value inferred by the model in parentheses. The inferred
 values are to be rounded to the nearest integer. Plot titles in red

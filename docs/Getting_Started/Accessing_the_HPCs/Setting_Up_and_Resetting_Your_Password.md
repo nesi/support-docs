@@ -14,12 +14,14 @@ zendesk_section_id: 360000034315
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 !!! info Requirements
 >
 > -   Have a [NeSI
@@ -44,7 +46,7 @@ zendesk_section_id: 360000034315
     Password** (If you are resetting your password this will read
     **Reset Password**).  
     Note your** Username.  
-    <img src="../../assets/images/authentication_factor_setup_0.png"
+    <img src="../../assets/images/authentication_factor_setup.png"
     width="442" height="166" alt="authentication_factor_setup.png" />  
     **
 
@@ -53,18 +55,18 @@ zendesk_section_id: 360000034315
     policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).  
       
 
-    #### <img src="../../assets/images/SetNeSIaccountPassword_0.png" width="628"
+    #### <img src="../../assets/images/SetNeSIaccountPassword.png" width="628"
     height="314" alt="SetNeSIaccountPassword.png" />
 
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds  
        
-    ![change\_success.png](../../assets/images/5662974048911_0_0.name_me.png)
+    ![change\_success.png](../../assets/images/5662974048911.name_me.png)
 
 5.  Followed by an email confirmation similar to below
 
-<img src="../../assets/images/password_set_confirmation_0_0.png"
-width="440" height="285" alt="password_set_confirmation.png" />
+<img src="../../assets/images/password_set_confirmation.png" width="440"
+height="285" alt="password_set_confirmation.png" />
 
  
 
@@ -87,12 +89,12 @@ width="440" height="285" alt="password_set_confirmation.png" />
               
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  
-    1.  -   ![change\_success.png](../../assets/images/5662974048911_0_0_0.name_me.png)
+    1.  -   ![change\_success.png](../../assets/images/5662974048911_0.name_me.png)
 5.  Followed by an email confirmation similar to below  
        
       
 
-<img src="../../assets/images/password_set_confirmation_0_0_0.png"
+<img src="../../assets/images/password_set_confirmation_0.png"
 width="440" height="285" alt="password_set_confirmation.png" />
 !!! info What next?
 >

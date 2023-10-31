@@ -11,12 +11,14 @@ zendesk_section_id: 360000040596
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 The National Data Transfer Platform uses Globus, a third-party service
 for transferring large amounts of data between Globus Data Transfer
 Nodes (DTNs). New Zealand DTNs facilitate the transfer of data to and

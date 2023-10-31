@@ -15,12 +15,14 @@ zendesk_section_id: 360000278975
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub and GitLab for
 developing, managing and distributing code.
@@ -28,7 +30,7 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](../../assets/images/Git_Diagram_0.svg)
+![Git\_Diagram.svg](../../assets/images/Git_Diagram.svg)
 
 ## Authentication
 
@@ -46,7 +48,9 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 -   On the NeSI cluster, run the command 
 
-        ssh-keygen -t ed25519 -C "your_github_account@example.com"
+    ``` hljs
+    ssh-keygen -t ed25519 -C "your_github_account@example.com"
+    ```
 
 -   When prompted for a file name, press `enter`. When prompted for a
     passcode, press enter twice more.
@@ -65,20 +69,19 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     page, click your profile photo click **Settings**.
 
     ![Settings icon in the user
-    bar](../../assets/images/userbar-account-settings_0.png)
+    bar](../../assets/images/userbar-account-settings.png)
 
 -   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
-    ![SSH Key
-    button](../../assets/images/ssh-add-ssh-key-with-auth_0.png)
+    ![SSH Key button](../../assets/images/ssh-add-ssh-key-with-auth.png)
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
-    ![The key field](../../assets/images/ssh-key-paste-with-type_0.png)
+    ![The key field](../../assets/images/ssh-key-paste-with-type.png)
 
 -   Click **Add SSH key**.
 

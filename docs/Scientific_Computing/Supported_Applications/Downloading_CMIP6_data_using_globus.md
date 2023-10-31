@@ -11,12 +11,14 @@ zendesk_section_id: 360000040076
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 This article targets researchers who need to download Climate Model
 Intercomparison Project Phase 6 (CMIP6) datasets from any of the Earth
 System Grid Federation ([ESGF](http://pcmdi.llnl.gov/)) archives. See
@@ -112,17 +114,17 @@ https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type=offline&st
 Point your web browser to the above URL (which will be different for
 you).
 
-![globus1.png](../../assets/images/globus1_0.png)
+![globus1.png](../../assets/images/globus1.png)
 
  
 
 Select Globus Id and say "Allow".
 
-![globus2.png](../../assets/images/globus2_0.png)
+![globus2.png](../../assets/images/globus2.png)
 
 You will then get a code,
 
-![globus3.png](../../assets/images/globus3_0.png)
+![globus3.png](../../assets/images/globus3.png)
 
 which you can paste into your terminal, eg
 
@@ -141,7 +143,9 @@ Wellington DTN" the UUID is:
 
 ### 3. Initiate the download
 
-    python globus_download_20191111_134525.py -e 3064bb28-e940-11e8-8caa-0a1d4c5c824a -u pletzera
+``` p1
+python globus_download_20191111_134525.py -e 3064bb28-e940-11e8-8caa-0a1d4c5c824a -u pletzera
+```
 
 If the above fails then you will likely need to activate the globus
 endpoint. If so then go to step 4 and repeat 3.
@@ -177,12 +181,16 @@ proxy, myproxy
 
 The error message should give you the proxy string. 
 
-    globus endpoint activate --myproxy 415a6320-e49c-11e5-9798-22000b9da45e
+``` p1
+globus endpoint activate --myproxy 415a6320-e49c-11e5-9798-22000b9da45e
+```
 
 Enter your globus username and password:
 
-    Myproxy username: pletzer 
-    Myproxy password: 
+``` p1
+Myproxy username: pletzer 
+Myproxy password: 
+```
 
 ###  
 

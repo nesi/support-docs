@@ -11,12 +11,14 @@ zendesk_section_id: 360000039036
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Often when running an [embarrassingly parallel
 problem](https://support.nesi.org.nz/hc/en-gb/articles/360000690275), or
 just lots of jobs at once, the limiting factor on your throughput (work
@@ -28,7 +30,7 @@ efficiency rather than speed, and running on a single CPU is almost
 always more efficient than any form of parallelisation. 
 
 <figure>
-<img src="../../assets/images/4tasks_0.png" alt="4tasks.png" />
+<img src="../../assets/images/4tasks.png" alt="4tasks.png" />
 <figure>
 
 </figure>

@@ -11,12 +11,14 @@ zendesk_section_id: 360000278975
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Regardless of the operating system of your personal computer you will
 need to know some basic Unix Shell commands since the HPC are Linux
 machines. If you do not have any experiencing using Unix Shell we would
@@ -164,12 +166,12 @@ case ls).</td>
 > Pressing the 'tab' key once will automatically complete the line if it
 > is the only option. e.g. 
 >
-> ![complete1.gif](../../assets/images/complete1_0.gif)
+> ![complete1.gif](../../assets/images/complete1.gif)
 >
 > If there are more than one possible completions, pressing tab again
 > will show all those options.
 >
-> ![complete2.gif](../../assets/images/complete2_0.gif)
+> ![complete2.gif](../../assets/images/complete2.gif)
 >
 > Use of the tab key can help navigate the filesystem, spellcheck your
 > commands and save you time typing.

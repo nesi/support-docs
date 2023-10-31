@@ -11,12 +11,14 @@ zendesk_section_id: 360000189716
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Many scientific software applications are
 written<span class="dictionary-of-numbers"> to take advantage </span>of
 multiple CPUs in some way. But often<span class="dictionary-of-numbers">
@@ -51,14 +53,14 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread
 (PO<span class="dictionary-of-numbers">SIX threads)</span>.
 
-<img src="../../assets/images/360001532455_0.name_me.png"
+<img src="../../assets/images/360001532455.name_me.png"
 class="figure-img" alt="Diagram showing serial operations." />  
 *Fig. 1: In a serial operation, tasks complete
 <span class="dictionary-of-numbers">one after another</span>.*
 
 ####  
 
-<img src="../../assets/images/360001532435_0.name_me.png" width="714"
+<img src="../../assets/images/360001532435.name_me.png" width="714"
 height="160" alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
@@ -158,27 +160,37 @@ recommended method of variation between the jobs. For example:
 
 -   -   -   As a direct input to a function.  
 
-                matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+            ``` code-matlab
+            matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+            ```
 
         -   As an index to an array.  
 
-                inArray=(1 2 4 8 16 32 64 128)
-                input=${inArray[$SLURM_ARRAY_TASK_ID]}
+            ``` code-bash
+            inArray=(1 2 4 8 16 32 64 128)
+            input=${inArray[$SLURM_ARRAY_TASK_ID]}
+            ```
 
         -   For selecting input files.  
 
-                input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+            ``` code-bash
+            input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+            ```
 
         -   As a seed for a pseudo-random number.  
             -   In R
 
-                    task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-                    set.seed(task_id)
+                ```
+                task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+                set.seed(task_id)
+                ```
 
             -   In MATLAB
 
-                    task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-                    rng(task_id)
+                ```
+                task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+                rng(task_id)
+                ```
 
             *  
             Using a seed is important, otherwise multiple jobs may
@@ -198,8 +210,10 @@ Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.
 
-    #SBATCH --output=outputs/run_%a/slurm_output.out
-    #SBATCH --output=outputs/run_%a/slurm_error.err
+``` nohighlight
+#SBATCH --output=outputs/run_%a/slurm_output.out
+#SBATCH --output=outputs/run_%a/slurm_error.err
+```
 
 #### Multidimensional array example
 
@@ -227,19 +241,23 @@ important that all file references are unique and independent.
 If your program makes use of a working directory make sure you set it
 e.g.
 
-    mkdir .tmp/run_${SLURM_ARRAY_TASK_ID}          #Create new directory
-    export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  #Set TMPDIR to point there
+``` nohighlight
+mkdir .tmp/run_${SLURM_ARRAY_TASK_ID}          #Create new directory
+export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  #Set TMPDIR to point there
+```
 
 If you have no control over the name/path of an output used by a
 program, this can be resolved in a similar manner.
 
-    mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
-    cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
-    #
-    bash job.sh
-    #
-    mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
-    rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
+``` nohighlight
+mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
+cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
+#
+bash job.sh
+#
+mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
+rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
+```
 
 The Slurm documentation on job arrays can be
 found [here](https://slurm.schedmd.com/job_array.html).

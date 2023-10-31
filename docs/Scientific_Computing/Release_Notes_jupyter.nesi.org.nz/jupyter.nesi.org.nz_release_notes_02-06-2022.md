@@ -12,12 +12,14 @@ zendesk_section_id: 360001150156
 ---
 
 
+
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! info
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Release Update - 2. June 2022
 
 ## New and Improved
@@ -32,21 +34,23 @@ zendesk_section_id: 360001150156
 -   Updated [NeSI Virtual
     Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
     to v2.4.1
-    -   # Image changes
-             - Update default Firefox version.
-             - Update to use singularity 3.8.5.
-             - Switched to rocky8 image.
-             - Added chrome, strace, sview and xfce-terminal to image.
-             - Added some libraries need for ANSYS
-             - Added missing GLX libraries.
+    -   ``` c-mrkdwn__pre
+        # Image changes
+         - Update default Firefox version.
+         - Update to use singularity 3.8.5.
+         - Switched to rocky8 image.
+         - Added chrome, strace, sview and xfce-terminal to image.
+         - Added some libraries need for ANSYS
+         - Added missing GLX libraries.
 
-            # Bug fixes
-             - Fixed faulty startup messages 
-             - Fixed entrypoint duplication issue.
-             - unset 'SLURM_EXPORT_ENV' before starting desktop.
+        # Bug fixes
+         - Fixed faulty startup messages 
+         - Fixed entrypoint duplication issue.
+         - unset 'SLURM_EXPORT_ENV' before starting desktop.
 
-            # Refactoring
-             - Removed dependency on system vdt repo.
-             - Removed faulty & uneeded bind paths.
-             - Removed debug by default and hardcoded verbose.
-             - replaced VDT_HOME with XDG equiv
+        # Refactoring
+         - Removed dependency on system vdt repo.
+         - Removed faulty & uneeded bind paths.
+         - Removed debug by default and hardcoded verbose.
+         - replaced VDT_HOME with XDG equiv
+        ```
