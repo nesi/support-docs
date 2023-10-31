@@ -67,58 +67,7 @@ Not used for anything currently. Info imported from Zendesk Page.
 
 ## Formatting
 
-Most details about the extra markdown features can be found here.
+Most details about the extra markdown features can be found in the [formatting page](https://nesi.github.io/support-docs-concept/format/).
 Will copy the specifics that apply to this site when I get time.
 
 https://squidfunk.github.io/mkdocs-material/reference/
-
-### Admonation
-
-!!! type
-    Something
-
-Where 'type' is one of these https://squidfunk.github.io/mkdocs-material/reference/admonitions/#type:note
-
-### Content Tabs
-
-Look like this
-
-```
-=== "Tab One"
-    someting in the tab
-=== "Tab two"
-    something else
-```
-
-## Code Formatting
-
-### Blocks
-
-```py
-import tensorflow as tf
-import numpy as np 
-```
-
-Preferablyer
-
-```py title="myScript.py"
-import tensorflow as tf
-import numpy as np 
-```
-
-All available lexers
-https://pygments.org/docs/lexers/
-
-### Inline
-
-The command `ls -latr`
-
-Or preferably
-
-This codeblock '#!bash echo "is inline"
-
-### Snippet from another file.
-
-```md
---8<-- "../../includes/images/glossary/.dictionary.md"
-```
