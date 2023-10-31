@@ -14,9 +14,11 @@ jobs:
     steps:
       - name: "Set Up Env"
         uses: actions/checkout@v3
-      - run: git config --global user.name "${GITHUB_ACTOR}"
-      - run: git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      - run: git checkout -b ${BRANCH_NAME}
+      - run: | 
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git checkout -b ${BRANCH_NAME}
+          mkdir -pv docs/assets/glossary
       - name: Fetch Module List
         run: wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
       - name: Fetch Glossary
