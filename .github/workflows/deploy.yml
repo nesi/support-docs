@@ -1,11 +1,14 @@
 name: Deploy to gh-pages 
 on: 
+ workflow_run:
+    workflows: ["Lint Changed Files"]
+    types: [completed]
  workflow_dispatch:
   inputs:
     dry-run:
       type: boolean
       description: Dry run (will build to 'gh-pages-test')
-      default: true
+      default: false
 permissions:
   contents: write
 env:
@@ -14,6 +17,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if:  ( ${{ github.event_name }} == 'workflow_dispatch' || ${{ github.event.workflow_run.conclusion == 'success' }} )
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
