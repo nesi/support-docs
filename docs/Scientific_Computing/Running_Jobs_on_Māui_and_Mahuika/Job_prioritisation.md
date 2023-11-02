@@ -66,34 +66,14 @@ longer wait times.
 This depends on which "allocation class" entitles your project to use
 NeSI.
 
-<table style="margin-left: 0px; margin-right: auto;">
-<tbody>
-<tr class="odd">
-<td><strong>Project class</strong></td>
-<td><strong>Class Priority Score </strong></td>
-</tr>
-<tr class="even">
-<td>Proposal Development</td>
-<td class="wysiwyg-text-align-right">10</td>
-</tr>
-<tr class="odd">
-<td>Postgraduate</td>
-<td class="wysiwyg-text-align-right">20</td>
-</tr>
-<tr class="even">
-<td>Collaborator</td>
-<td class="wysiwyg-text-align-right">30</td>
-</tr>
-<tr class="odd">
-<td>Merit</td>
-<td class="wysiwyg-text-align-right">40</td>
-</tr>
-<tr class="even">
-<td>Commercial</td>
-<td class="wysiwyg-text-align-right">40</td>
-</tr>
-</tbody>
-</table>
+|                      |                           |
+|----------------------|---------------------------|
+| **Project class**    | **Class Priority Score ** |
+| Proposal Development | 10                        |
+| Postgraduate         | 20                        |
+| Collaborator         | 30                        |
+| Merit                | 40                        |
+| Commercial           | 40                        |
 
 ###  
 

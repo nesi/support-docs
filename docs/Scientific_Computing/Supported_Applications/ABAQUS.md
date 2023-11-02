@@ -50,37 +50,11 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 
 Not all solvers are compatible with all types of parallelisation.
 
-<table style="margin-left: 0px; margin-right: auto;">
-<tbody>
-<tr class="odd">
-<td class="wysiwyg-text-align-right" style="width: 143px"> </td>
-<td class="wysiwyg-text-align-center" style="width: 95px">Element
-operations</td>
-<td class="wysiwyg-text-align-center" style="width: 77px">Iterative
-solver</td>
-<td class="wysiwyg-text-align-center" style="width: 112px">Direct
-solver</td>
-<td class="wysiwyg-text-align-center" style="width: 175px">Lanczos
-solver</td>
-</tr>
-<tr class="even">
-<td class="wysiwyg-text-align-right"
-style="width: 143px"><code>mp_mode=threads</code></td>
-<td class="wysiwyg-text-align-center" style="width: 95px">✖</td>
-<td class="wysiwyg-text-align-center" style="width: 77px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 112px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 175px">✔</td>
-</tr>
-<tr class="odd">
-<td class="wysiwyg-text-align-right"
-style="width: 143px"><code>mp_mode=mpi</code></td>
-<td class="wysiwyg-text-align-center" style="width: 95px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 77px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 112px">✖</td>
-<td class="wysiwyg-text-align-center" style="width: 175px">✖</td>
-</tr>
-</tbody>
-</table>
+|                   |                    |                  |               |                |
+|-------------------|--------------------|------------------|---------------|----------------|
+|                   | Element operations | Iterative solver | Direct solver | Lanczos solver |
+| `mp_mode=threads` | ✖                  | ✔                | ✔             | ✔              |
+| `mp_mode=mpi`     | ✔                  | ✔                | ✖             | ✖              |
 !!! info Note
 >
 > If your input files were created using an older version of ABAQUS you
@@ -101,8 +75,8 @@ style="width: 143px"><code>mp_mode=mpi</code></td>
 <tr class="odd">
 <td style="width: 506px"><h2 id="serial">Serial</h2>
 <hr />
-<p>For when only <span class="dictionary-of-numbers">one CPU is
-required</span>, generally as part of an <a
+<p>For when only <span>one CPU is required</span>, generally as part of
+an <a
 href="https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array">job
 array</a>.</p>
 <p> </p></td>
@@ -168,15 +142,14 @@ id="distributed-memory">Distributed Memory</h2>
 <hr />
 <code>mp_mode=mpi</code>
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
-<p>Not limited to <span class="dictionary-of-numbers">one
-node</span>.<br />
+<p>Not limited to <span>one node</span>.<br />
 Model will be segmented into <code>-np</code> pieces which should be
 equal to <code>--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead<br />
-.Jobs can be limited to a single node by adding  <code
-style="font-size: 14px;">--nodes=1</code> however this will increase
-your time in the queue as contiguous cpu's are harder to schedule.</p>
+.Jobs can be limited to a single node by
+adding  <code>--nodes=1</code> however this will increase your time in
+the queue as contiguous cpu's are harder to schedule.</p>
 <p>This is the default method if <code>mp_mode</code> is left
 unspecified.</p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb4"><pre
@@ -196,11 +169,10 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
 <tr class="odd">
 <td style="width: 506px"><h2 id="gpus">GPUs</h2>
 <hr />
-<p>The GPU nodes are limited to <span class="dictionary-of-numbers">16
-CPUs</span></p>
+<p>The GPU nodes are limited to <span>16 CPUs</span></p>
 <p>In order for the GPUs to be worthwhile, you should see a speedup
-equivalent to <span class="dictionary-of-numbers">56 CPU</span>'s per
-GPU used. GPU modes will generally have less memory/cpus</p></td>
+equivalent to <span>56 CPU</span>'s per GPU used. GPU modes will
+generally have less memory/cpus</p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb5"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -264,10 +236,11 @@ to a job.
 > -   [Command line options for standard
 >     submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
 
+ 
 
 ![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS_speedup_SharedVMPI.png)
 
  
-*Note: Hyperthreading off, testing
-done on small mechanical </span>FEA
-model. Results highly model dependant. Do your own tests.*
+
+*Note: Hyperthreading off, testing done on small mechanical FEA model.
+Results highly model dependant. Do your own tests.*

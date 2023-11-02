@@ -28,40 +28,12 @@ cluster. They prepare the environment you need to run an application.
 
 For a full list of module commands run man module
 
-<table style="height: 110px; width: 861.4px;">
-<tbody>
-<tr class="odd">
-<td
-style="width: 275px"><code>module spider [ &lt;string&gt; ]</code></td>
-<td style="width: 301.4px">List all modules whose names, including
-version strings, contain <code>&lt;string&gt;</code>. If the
-<code>&lt;string&gt;</code> argument is not supplied, list all available
-modules. (only on Mahuika)</td>
-</tr>
-<tr class="even">
-<td style="width: 275px"><code>module show &lt;string&gt;</code></td>
-<td style="width: 301.4px">Show the contents of the module given
-by <code>&lt;string&gt;</code>. If only the module name (e.g.
-<code>Python</code>) is given, show the default module of that name. If
-both name and version are given, show that particular version
-module.</td>
-</tr>
-<tr class="odd">
-<td style="width: 275px"><code>module load &lt;string&gt;</code></td>
-<td style="width: 301.4px">Load the module (name and version) given
-by <code>&lt;string&gt;</code>. If no version is given, load the default
-version.</td>
-</tr>
-<tr class="even">
-<td
-style="width: 275px"><code>module list [ &lt;string&gt; ]</code></td>
-<td style="width: 301.4px">List all currently loaded modules whose
-names, including version strings, contain <code>&lt;string&gt;</code>.
-If the <code>&lt;string&gt;</code> argument is not supplied, list all
-currently loaded modules.</td>
-</tr>
-</tbody>
-</table>
+|                              |                                                                                                                                                                                                                       |
+|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `module spider [ <string> ]` | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)                                                |
+| `module show <string>`       | Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module. |
+| `module load <string>`       | Load the module (name and version) given by `<string>`. If no version is given, load the default version.                                                                                                             |
+| `module list [ <string> ]`   | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.                                          |
 
 ## Slurm
 

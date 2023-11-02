@@ -71,43 +71,12 @@ affect the checksum.
 The checksum for file '*filename.txt*' can be found with the following
 commands.
 
-<table style="height: 37px;" width="805">
-<tbody>
-<tr class="odd">
-<td style="width: 149px"> </td>
-<td style="width: 150px">Linux</td>
-<td style="width: 150px">Windows(CMD/Powershell)</td>
-<td style="width: 150px">Mac</td>
-</tr>
-<tr class="even">
-<td style="width: 149px">SH1</td>
-<td
-style="width: 150px"><code>sha1sum </code><em><code>filename.txt</code></em></td>
-<td
-style="width: 150px"><code>certUtil -hashfile </code><em><code>filename.txt</code></em></td>
-<td
-style="width: 150px"><code>shasum </code><em><code>filename.txt</code></em></td>
-</tr>
-<tr class="odd">
-<td style="width: 149px">SHA256</td>
-<td
-style="width: 150px"><code>sha256sum </code><em><code>filename.txt</code></em></td>
-<td
-style="width: 150px"><code>certUtil -hashfile </code><em><code>filename.txt</code></em><code> sha256</code></td>
-<td
-style="width: 150px"><code>shasum -a 256 </code><em><code>filename.txt</code></em></td>
-</tr>
-<tr class="even">
-<td style="width: 149px">MD5</td>
-<td
-style="width: 150px"><code>md5sum </code><em><code>filename.txt</code></em></td>
-<td
-style="width: 150px"><code>certUtil -hashfile </code><em><code>filename.txt</code></em><code> md5</code></td>
-<td
-style="width: 150px"><code>md5 </code><em><code>filename.txt</code></em></td>
-</tr>
-</tbody>
-</table>
+|        |                              |                                                |                                  |
+|--------|------------------------------|------------------------------------------------|----------------------------------|
+|        | Linux                        | Windows(CMD/Powershell)                        | Mac                              |
+| SH1    | `sha1sum `*`filename.txt`*   | `certUtil -hashfile `*`filename.txt`*          | `shasum `*`filename.txt`*        |
+| SHA256 | `sha256sum `*`filename.txt`* | `certUtil -hashfile `*`filename.txt`*` sha256` | `shasum -a 256 `*`filename.txt`* |
+| MD5    | `md5sum `*`filename.txt`*    | `certUtil -hashfile `*`filename.txt`*` md5`    | `md5 `*`filename.txt`*           |
 
  
 

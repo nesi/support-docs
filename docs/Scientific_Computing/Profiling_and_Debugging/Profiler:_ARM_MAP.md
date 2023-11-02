@@ -87,17 +87,8 @@ To use MAP we need to load the *forge* module in our batch script and
 add `map --profile` in front of the parallel run statements. For
 example:
 
-``` highlight
-module load forge
-map --profile srun python scatter.py
-```
-
 Upon execution, a `.map` file will be generated. The results can be
 viewed, for instance, with
-
-``` highlight
-map python3_scatter_py_8p_1n_2019-01-14_00-31.map
-```
 
 (the `.map` file name will vary with each run.) See section [MAP
 profile](#map-profile) below for how to interpret the results.
@@ -105,10 +96,6 @@ profile](#map-profile) below for how to interpret the results.
 # MAP GUI launch
 
 The GUI can be started after loading `module load forge` and launching
-
-``` highlight
-map
-```
 
 [![Arm MAP
 main](../../assets/images/ARM_MAP_main.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)

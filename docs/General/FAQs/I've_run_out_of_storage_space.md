@@ -28,7 +28,7 @@ an error (and probably kill your job).
 
 Current file-count and disk space can be found using `nn_storage_quota`.
 
-``` hljs
+``` {.hljs .css}
 Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
 home_user123             20G    1.957G    9.79%      92160     21052    22.84%
 project_nesi99999         2T      798G   38.96%     100000     66951    66.95%

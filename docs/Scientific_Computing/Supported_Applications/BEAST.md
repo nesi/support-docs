@@ -44,36 +44,13 @@ The BEAST home page is at <http://beast2.org>.
 
 ## Packages with modules
 
-<table>
-<thead>
-<tr class="header">
-<th>Module</th>
-<th>NeSI Cluster</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>BEAST/2.4.7</td>
-<td>pan</td>
-</tr>
-<tr class="even">
-<td>BEAST/1.8.2-goolf-1.5.14</td>
-<td>pan</td>
-</tr>
-<tr class="odd">
-<td>BEAST/1.8.4-gimkl-2017a-no-beagle</td>
-<td>pan</td>
-</tr>
-<tr class="even">
-<td>BEAST/2.2.1</td>
-<td>pan</td>
-</tr>
-<tr class="odd">
-<td>BEAST/2.4.3</td>
-<td>pan</td>
-</tr>
-</tbody>
-</table>
+| Module                            | NeSI Cluster |
+|-----------------------------------|--------------|
+| BEAST/2.4.7                       | pan          |
+| BEAST/1.8.2-goolf-1.5.14          | pan          |
+| BEAST/1.8.4-gimkl-2017a-no-beagle | pan          |
+| BEAST/2.2.1                       | pan          |
+| BEAST/2.4.3                       | pan          |
 
 # License
 

@@ -34,7 +34,7 @@ zendesk_section_id: 360001150156
 -   Updated [NeSI Virtual
     Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
     to v2.4.1
-    -   ``` c-mrkdwn__pre
+    -   ``` {.c-mrkdwn__pre stringify-type="pre"}
         # Image changes
          - Update default Firefox version.
          - Update to use singularity 3.8.5.

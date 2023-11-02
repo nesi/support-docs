@@ -34,7 +34,7 @@ So, supposing Joe Bloggs moves a file from his home directory to the
 project directory `/nesi/project/nesi99999`, his fellow team members
 won't be able to write to it:
 
-```
+``` {dir="ltr"}
 $ ls -l README
 -rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 README
 $ mv README /nesi/project/nesi99999/bloggsj/README
@@ -59,7 +59,7 @@ machine.
 
 ## To copy a file (or directory and its contents), updating its group and setting its permissions
 
-```
+``` {dir="ltr"}
 rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
 ```
 
@@ -69,7 +69,7 @@ rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/des
 > The `--remove-source-files` option is safe only if every source file
 > is otherwise left intact during the moving process.
 
-```
+``` {dir="ltr"}
 rsync --remove-source-files -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
 ```
 
@@ -86,7 +86,7 @@ Change to the parent directory, which could be a project or nobackup
 directory, that you want to fix, and find and fix your files. You can do
 this by means of the following commands.
 
-```
+``` {dir="ltr"}
 # Replace nesi12345 with your desired project code
 group=nesi12345
 startdir=$(pwd)

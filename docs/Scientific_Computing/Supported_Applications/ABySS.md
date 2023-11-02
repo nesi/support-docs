@@ -37,24 +37,10 @@ The ABySS home page is at
 
 ## Packages with modules
 
-<table>
-<thead>
-<tr class="header">
-<th>Module</th>
-<th>NeSI Cluster</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>ABySS/2.0.2-gimkl-2017a</td>
-<td>pan</td>
-</tr>
-<tr class="even">
-<td>ABySS/2.0.1-foss-2015a</td>
-<td>pan</td>
-</tr>
-</tbody>
-</table>
+| Module                  | NeSI Cluster |
+|-------------------------|--------------|
+| ABySS/2.0.2-gimkl-2017a | pan          |
+| ABySS/2.0.1-foss-2015a  | pan          |
 
 # Licensing requirements
 

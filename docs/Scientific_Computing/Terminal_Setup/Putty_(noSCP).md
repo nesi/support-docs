@@ -31,24 +31,24 @@ zendesk_section_id: 360000189696
 
  
 
- ![putty1.png](../../assets/images/putty1.png)
+ There should be an image here but it couldn't be loaded.
 
 2\. Open Connection &gt; Data and enter in your username under
 'Auto-Login username. 
 
-![putty2.png](../../assets/images/putty2.png)
+There should be an image here but it couldn't be loaded.
 
  
 
 3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
 
-![putty4.png](../../assets/images/putty4.png)
+There should be an image here but it couldn't be loaded.
 
 4\. Do this
 
 SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
-![putty5.png](../../assets/images/putty5.png)
+There should be an image here but it couldn't be loaded.
 
  
 
@@ -56,4 +56,4 @@ SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
 Save session
 
-![putty3.png](../../assets/images/putty3.png)
+There should be an image here but it couldn't be loaded.

@@ -25,51 +25,15 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
-![mceclip0.png](../../assets/images/4408734639887.name_me.png)
+![mceclip0.png](../../assets/images/.4408734639887)
 
 ###  On NeSI's Māui/Mahuika clusters this means:
 
-<table style="height: 160px; width: 728px;">
-<thead>
-<tr class="header" style="height: 44px;">
-<th style="width: 178.783px; height: 44px">Globus path</th>
-<th style="width: 101.033px; height: 44px">Visible to Globus</th>
-<th style="width: 181.817px; height: 44px">HPC Filesystem</th>
-<th style="width: 130.15px; height: 44px">Globus usage</th>
-<th style="width: 120.217px; height: 44px">Permissions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd" style="height: 44px;">
-<td
-style="width: 170.783px; height: 44px"><code>/home/&lt;username&gt;</code></td>
-<td style="width: 93.0333px; height: 44px">yes (default)</td>
-<td
-style="width: 173.817px; height: 44px"><code>/home/&lt;username&gt;</code></td>
-<td style="width: 122.15px; height: 44px">possible, not recommended</td>
-<td style="width: 112.217px; height: 44px">read and write access</td>
-</tr>
-<tr class="even">
-<td
-style="width: 170.783px; height: 36px"><code>/nesi/nobackup/&lt;project_code&gt;</code></td>
-<td style="width: 93.0333px; height: 36px">yes</td>
-<td
-style="width: 173.817px; height: 36px"><code>/nesi/nobackup/&lt;project_code&gt;</code></td>
-<td style="width: 122.15px; height: 36px">yes</td>
-<td style="width: 112.217px; height: 36px">read and write access</td>
-</tr>
-<tr class="odd">
-<td
-style="width: 170.783px; height: 36px"><code>/nesi/project/&lt;project_code&gt;</code></td>
-<td style="width: 93.0333px; height: 36px">yes</td>
-<td
-style="width: 173.817px; height: 36px"><code>/nesi/project/&lt;project_code&gt;</code></td>
-<td style="width: 122.15px; height: 36px">yes</td>
-<td style="width: 112.217px; height: 36px"><strong>read only</strong>
-access</td>
-</tr>
-</tbody>
-</table>
+| Globus path                     | Visible to Globus | HPC Filesystem                  | Globus usage              | Permissions           |
+|---------------------------------|-------------------|---------------------------------|---------------------------|-----------------------|
+| `/home/<username>`              | yes (default)     | `/home/<username>`              | possible, not recommended | read and write access |
+| `/nesi/nobackup/<project_code>` | yes               | `/nesi/nobackup/<project_code>` | yes                       | read and write access |
+| `/nesi/project/<project_code>`  | yes               | `/nesi/project/<project_code>`  | yes                       | **read only** access  |
 
  
 

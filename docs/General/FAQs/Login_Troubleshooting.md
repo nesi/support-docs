@@ -103,26 +103,21 @@ contact the person or team responsible for supporting it.
 
 ### 5. Ensure you're not reusing the same 6-digit code from your token.
 
-Login will fail if the same 6-digit
-code<span class="dictionary-of-numbers"> is </span>used to access the
-Māui or Mahuika login node after it has been used to access the lander
-node, or for consecutive login attempts to any node. If in doubt, wait
-<span class="dictionary-of-numbers dictionary-of-numbers-processed">30
-seconds</span> for a new token to be generated.
+Login will fail if the same 6-digit code is used to access the Māui or
+Mahuika login node after it has been used to access the lander node, or
+for consecutive login attempts to any node. If in doubt, wait 30 seconds
+for a new token to be generated.
 
 ### 6. Ensure the correct Second Factor token is being used
 
 Two-factor authentication is becoming a common security measure. Many
 people have multiple tokens and occasionally mix them up.
 
-### 7. Wait <span class="dictionary-of-numbers dictionary-of-numbers-processed">four hours</span>
+### 7. Wait four hours
 
-<span class="dictionary-of-numbers">Six failed login attempts
-</span>within
-<span class="dictionary-of-numbers dictionary-of-numbers-processed">five
-minutes</span> will trigger a four-hour lockout. Users experiencing
-login issues can inadvertently trigger the lockout, making diagnosing
-the original issue much more difficult.  
+Six failed login attempts within five minutes will trigger a four-hour
+lockout. Users experiencing login issues can inadvertently trigger the
+lockout, making diagnosing the original issue much more difficult.  
 
 # Connection closed by .... (MobaXterm)
 
@@ -178,10 +173,10 @@ Helpful things to include:
     etc.).
 -   The nature of the problem, including the precise text of any error
     message you have been receiving.
-    -   Did you start out having <span class="dictionary-of-numbers">one
-        login problem and </span>are now getting a different one? If so,
-        when did the change happen, and were you doing anything in
-        particular related to logging in at the time things changed?
+    -   Did you start out having one login problem and are now getting a
+        different one? If so, when did the change happen, and were you
+        doing anything in particular related to logging in at the time
+        things changed?
 -   Have you successfully logged in in the past? if so when was the last
     time you successfully logged in, and to what NeSI cluster?
 -   Has anything administrative and relevant to NeSI access changed
@@ -199,5 +194,3 @@ Helpful things to include:
         institution? Might NeSI know about any of these changes?
 -   What have you tried so far?
 -   Are you on the NIWA network, the NIWA VPN, or neither?
-
- 

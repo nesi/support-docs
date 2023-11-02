@@ -30,8 +30,8 @@ zendesk_section_id: 360000040076
 <tr class="odd">
 <td style="width: 506px"><h2 id="serial">Serial</h2>
 <hr />
-<p>For when only <span class="dictionary-of-numbers">one CPU is
-required</span>, generally as part of an <a
+<p>For when only <span>one CPU is required</span>, generally as part of
+an <a
 href="https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array">job
 array</a>.</p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb1"><pre
@@ -50,13 +50,11 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <td style="width: 506px"><h2 id="multi-threaded">Multi-threaded </h2>
 <hr />
 <p><span>For domain based decompositions.</span></p>
-<p><span>Use <code
-class="sourceCode bash"><span class="ex">cpus-per-task</span></code> to
-allocate resources.</span></p>
+<p><span>Use <code>cpus-per-task</code> to allocate
+resources.</span></p>
 <p>Each subdomain runs in a separate<br />
-thread, inside <span class="dictionary-of-numbers">one
-executable</span>. <em>Limited to <span
-class="dictionary-of-numbers">one node</span>.</em></p></td>
+thread, inside <span>one executable</span>. <em>Limited to <span>one
+node</span>.</em></p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -75,9 +73,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <hr />
 <p>Domain is split automatically in stripwise partitions. <em>Can run
 across multiple nodes.</em></p>
-<p>Use <code
-class="sourceCode bash"><span class="ex">ntasks</span></code> to
-allocate resources.</p>
+<p>Use <code>ntasks</code> to allocate resources.</p>
 <p><strong>Cannot</strong> be used in conjunction with:</p>
 <ul>
 <li>DomainDecomposition</li>
@@ -88,7 +84,7 @@ allocate resources.</p>
 <li>Power stations with inlet and outlet in different partitions</li>
 <li>Non-hydrostatic solvers</li>
 <li>Walking discharges</li>
-<li><span class="dictionary-of-numbers">2D skewed weirs</span></li>
+<li><span>2D skewed weirs</span></li>
 <li>max(mmax,nmax)/npart ≤ 4</li>
 <li>Roller model</li>
 <li>Mormerge</li>

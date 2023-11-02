@@ -41,7 +41,7 @@ subscription" or "Unsubscribe" to manage your preferences.
 See also our support article [Managing NeSI notification
 preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)
 
-![mceclip0.png](../../assets/images/4563357435279.name_me.png)
+![mceclip0.png](../../assets/images/.4563357435279)
 
 ## status.nesi.org.nz
 
@@ -50,7 +50,6 @@ NeSI does publish service incidents and scheduled maintenance via
 Interested parties are invited to subscribe to updates (via SMS or
 email).
 
-<img src="../../assets/images/360001620295.name_me.png" width="880"
-height="772" />
+<img src="../../assets/images/.360001620295" width="880" height="772" />
 
 # [NeSI wide area network connectivity](https://support.nesi.org.nz/hc/en-gb/articles/8252164326415)

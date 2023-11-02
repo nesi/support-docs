@@ -23,71 +23,13 @@ words words words
 
  
 
-<table style="width: 183px;">
-<tbody>
-<tr class="odd">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px"> </td>
-</tr>
-<tr class="even">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px"> </td>
-</tr>
-<tr class="odd">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px"> </td>
-</tr>
-<tr class="even">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px"> </td>
-</tr>
-<tr class="odd">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px"> </td>
-</tr>
-<tr class="even">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px"> </td>
-</tr>
-<tr class="odd">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px"> </td>
-</tr>
-<tr class="even">
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 10px"> </td>
-<td style="width: 267px"> </td>
-<td style="width: 119px"> </td>
-<td style="width: 56px">sadsadsadsadsadsasadssssadsa</td>
-</tr>
-</tbody>
-</table>
+|     |     |     |     |     |                              |
+|-----|-----|-----|-----|-----|------------------------------|
+|     |     |     |     |     |                              |
+|     |     |     |     |     |                              |
+|     |     |     |     |     |                              |
+|     |     |     |     |     |                              |
+|     |     |     |     |     |                              |
+|     |     |     |     |     |                              |
+|     |     |     |     |     |                              |
+|     |     |     |     |     | sadsadsadsadsadsasadssssadsa |

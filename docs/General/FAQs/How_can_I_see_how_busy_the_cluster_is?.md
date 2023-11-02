@@ -50,40 +50,14 @@ nodes.
 
 The most common node states you are likely to see are:
 
-<table style="height: 193px; width: 691px;">
-<tbody>
-<tr class="odd">
-<td style="width: 148px"><code>idle</code></td>
-<td style="width: 537px">All CPUs on this node are unallocated and
-available for use.</td>
-</tr>
-<tr class="even">
-<td style="width: 148px"><code>allocated</code></td>
-<td style="width: 537px">All CPUs on this node are currently
-allocated.</td>
-</tr>
-<tr class="odd">
-<td style="width: 148px"><code>mixed</code></td>
-<td style="width: 537px">Some CPUs on this node are unallocated, smaller
-jobs are likely to land here.</td>
-</tr>
-<tr class="even">
-<td style="width: 148px"><code>down</code></td>
-<td style="width: 537px">The node is unavailable for use</td>
-</tr>
-<tr class="odd">
-<td style="width: 148px"><code>reserved</code></td>
-<td style="width: 537px">This node has been reserved, and is only
-available for some users (in the case of the igpu partition, please
-contact NeSI support if you wish to use it).</td>
-</tr>
-<tr class="even">
-<td style="width: 148px"><code>draining</code></td>
-<td style="width: 537px">Jobs are currently running on this node, but is
-not available for new jobs.</td>
-</tr>
-</tbody>
-</table>
+|             |                                                                                                                                                           |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `idle`      | All CPUs on this node are unallocated and available for use.                                                                                              |
+| `allocated` | All CPUs on this node are currently allocated.                                                                                                            |
+| `mixed`     | Some CPUs on this node are unallocated, smaller jobs are likely to land here.                                                                             |
+| `down`      | The node is unavailable for use                                                                                                                           |
+| `reserved`  | This node has been reserved, and is only available for some users (in the case of the igpu partition, please contact NeSI support if you wish to use it). |
+| `draining`  | Jobs are currently running on this node, but is not available for new jobs.                                                                               |
 
 A full list of node states can be found
 [here](https://slurm.schedmd.com/sinfo.html#lbAG).

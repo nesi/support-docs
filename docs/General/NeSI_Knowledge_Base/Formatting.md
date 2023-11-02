@@ -69,7 +69,7 @@ This is a [Link](https://www.w3schools.com/html/html_links.asp) 
 
 Image
 
-![redirects-and-pipes.png](../../assets/images/6014468037775.name_me.png)
+There should be an image here but it couldn't be loaded.
 
 ------------------------------------------------------------------------
 
@@ -124,73 +124,22 @@ Māui in text
 
 some inline code with `maui` in it
 
-<table style="border-collapse: collapse; width: 100%; height: 66px;"
-data-border="1">
-<tbody>
-<tr class="odd" style="height: 22px;">
-<td style="width: 25%; height: 22px">simple</td>
-<td style="width: 25%; height: 22px">boring</td>
-<td style="width: 25%; height: 22px">table</td>
-</tr>
-<tr class="even" style="height: 22px;">
-<td style="width: 25%; height: 22px">a</td>
-<td style="width: 25%; height: 22px">b</td>
-<td style="width: 25%; height: 22px">c</td>
-</tr>
-<tr class="odd" style="height: 22px;">
-<td style="width: 25%; height: 22px">d</td>
-<td style="width: 25%; height: 22px">e</td>
-<td style="width: 25%; height: 22px">f</td>
-</tr>
-</tbody>
-</table>
+|        |        |       |
+|--------|--------|-------|
+| simple | boring | table |
+| a      | b      | c     |
+| d      | e      | f     |
 
  
 
-<table style="border-collapse: collapse; width: 100%;" data-border="1">
-<tbody>
-<tr class="odd">
-<td colspan="6" style="width: 85.7142%">Table</td>
-</tr>
-<tr class="even">
-<td colspan="2" style="width: 28.5714%">Col1 </td>
-<td colspan="2" style="width: 28.5714%">Col1 </td>
-<td colspan="2" style="width: 14.2857%">Col3</td>
-</tr>
-<tr class="odd">
-<td style="width: 14.2857%">Row1</td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-</tr>
-<tr class="even">
-<td style="width: 14.2857%">Row2</td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-</tr>
-<tr class="odd">
-<td style="width: 14.2857%">Row3</td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-</tr>
-<tr class="even">
-<td style="width: 14.2857%">Row4</td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-<td style="width: 14.2857%"> </td>
-</tr>
-</tbody>
-</table>
+|       |     |       |     |      |     |
+|-------|-----|-------|-----|------|-----|
+| Table |     |       |     |      |     |
+| Col1  |     | Col1  |     | Col3 |     |
+| Row1  |     |       |     |      |     |
+| Row2  |     |       |     |      |     |
+| Row3  |     |       |     |      |     |
+| Row4  |     |       |     |      |     |
 
 -   list1
 -   list2

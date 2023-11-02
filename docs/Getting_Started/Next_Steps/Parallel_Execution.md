@@ -19,14 +19,13 @@ zendesk_section_id: 360000189716
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-Many scientific software applications are
-written<span class="dictionary-of-numbers"> to take advantage </span>of
-multiple CPUs in some way. But often<span class="dictionary-of-numbers">
-this must be </span>specifically requested by the user at the time they
-run the program, rather than happening automatically.  
+Many scientific software applications are written to take advantage of
+multiple CPUs in some way. But often this must be specifically requested
+by the user at the time they run the program, rather than happening
+automatically.  
 
-The are <span class="dictionary-of-numbers">three types of parallel
-</span>execution we will cover are [Multi-Threading(oMP)](#t_multi),
+The are three types of parallel execution we will cover
+are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
 !!! info Note
 >
@@ -34,9 +33,7 @@ The are <span class="dictionary-of-numbers">three types of parallel
 > *logical* CPU's = **1** *physical* core).  
 >
 > -   `--cpus-per-task=4` will give you 4 *logical* cores.
-> -   `--mem-per-cpu=512MB` will give
->     <span class="dictionary-of-numbers">512 MB of
->     RAM</span> per *logical* core.
+> -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
 > -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
 >     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
 >     logical cores.
@@ -50,18 +47,12 @@ for more information.
 Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
-(Threading Building Blocks), or pthread
-(PO<span class="dictionary-of-numbers">SIX threads)</span>.
-
-<img src="../../assets/images/360001532455.name_me.png"
-class="figure-img" alt="Diagram showing serial operations." />  
-*Fig. 1: In a serial operation, tasks complete
-<span class="dictionary-of-numbers">one after another</span>.*
+(Threading Building Blocks), or pthread (POSIX threads).
 
 ####  
 
-<img src="../../assets/images/360001532435.name_me.png" width="714"
-height="160" alt="par.png" />*  
+<img src="../../assets/images/.360001532435" width="714" height="160"
+alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 
@@ -129,8 +120,7 @@ The expected output being
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
 executed in any order and don't have to run at the same time. This kind
-of work is often described as<span class="dictionary-of-numbers">
-</span>*embarrassingly parallel*.  
+of work is often described as *embarrassingly parallel*.  
 An embarrassingly parallel problem is one that requires no communication
 or dependency between the tasks (unlike distributed computing problems
 that need communication between tasks).
@@ -180,14 +170,14 @@ recommended method of variation between the jobs. For example:
         -   As a seed for a pseudo-random number.  
             -   In R
 
-                ```
+                ``` {dir="ltr"}
                 task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
                 set.seed(task_id)
                 ```
 
             -   In MATLAB
 
-                ```
+                ``` {dir="ltr"}
                 task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
                 rng(task_id)
                 ```

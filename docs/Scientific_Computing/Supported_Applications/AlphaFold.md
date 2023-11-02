@@ -293,40 +293,6 @@ modifications. Image (.*simg*) and the corresponding definition file
 Input *fasta* used in following example and subsequent benchmarking is
 3RGK (<https://www.rcsb.org/structure/3rgk>).
 
-    #!/bin/bash -e
-
-    #SBATCH --account           nesi12345
-    #SBATCH --job-name          alphafold2
-    #SBATCH --mem               20G
-    #SBATCH --cpus-per-task     8
-    #SBATCH --gpus-per-node     P100:1
-    #SBATCH --time              01:20:00
-    #SBATCH --output            slurmout.%j.out
-
-    module purge
-    module load AlphaFold2DB/2022-06
-    module load cuDNN/8.1.1.33-CUDA-11.2.0 Singularity/3.8.0
-
-    image=/opt/nesi/containers/AlphaFold/2021-10-07
-    database=$AF2DB
-
-    export SINGULARITY_BIND="$PWD:/etc,$image,/path/to/input/data:/var/inputdata,/path/to/outputs:/var/outputdata,$database:/db"
-
-    singularity run --pwd /app/alphafold --nv $image/alphafold_2.0.1.simg python /app/alphafold/run_alphafold.py \
-    --fasta_paths=/var/inputdata/3RGK.fasta \
-    --output_dir=/var/outputdata \
-    --model_names=model_1 \
-    --preset=casp14 \
-    --max_template_date=2020-05-14 \
-    --data_dir=/db \
-    --uniref90_database_path=/db/uniref90/uniref90.fasta \
-    --mgnify_database_path=/db/mgnify/mgy_clusters_2018_12.fa \
-    --uniclust30_database_path=/db/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
-    --bfd_database_path=/db/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-    --pdb70_database_path=/db/pdb70/pdb70 \
-    --template_mmcif_dir=/db/pdb_mmcif/mmcif_files \
-    --obsolete_pdbs_path=/db/pdb_mmcif/obsolete.dat
-
 ###  
 
 # Troubleshooting

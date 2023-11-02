@@ -102,7 +102,7 @@ changed significantly at version 8.
 You can select your Cylc version by setting the environment variable
 CYLC\_VERSION, for instance,
 
-``` bash
+``` {.bash .plain}
 $ export CYLC_VERSION=8.0.1
 $ cylc version
 8.0.1
@@ -198,7 +198,7 @@ To visualise the file you can type 
 Here, we see that our workflow "simple" has a "taskC", which waits for
 "taskA" and "taskB" to complete,
 
-![simple.png](../../assets/images/5255042984079.name_me.png)
+![simple.png](../../assets/images/.5255042984079)
 
 The "1" indicates that this workflow graph is executed only once.
 

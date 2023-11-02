@@ -68,7 +68,7 @@ the database onto the SSD,
 To get Kraken2 to read the DB from the SSDs (and not from `/opt`),
 change the `KRAKEN2_DEFAULT_DB` variable,
 
-``` bash
+``` {.bash .hljs}
 export KRAKEN2_DEFAULT_DB=$TMPDIR
 ```
 

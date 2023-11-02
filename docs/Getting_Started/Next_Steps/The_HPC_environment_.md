@@ -28,32 +28,13 @@ For a full list of module commands run man module or visit the lmod
 documentation
 [here](https://lmod.readthedocs.io/en/latest/010_user.html).
 
-<table style="height: 110px; width: 861.4px;">
-<tbody>
-<tr class="odd">
-<td style="width: 275px"><code>module spider</code></td>
-<td style="width: 301.4px">Lists all available modules. (only
-Mahuika)</td>
-</tr>
-<tr class="even">
-<td style="width: 275px"><code>module spider [module name]</code></td>
-<td style="width: 301.4px">Searches available modules for [module name]
-(only Mahuika)</td>
-</tr>
-<tr class="odd">
-<td style="width: 275px"><code>module show [module name]</code></td>
-<td style="width: 301.4px">Shows information about [module name]</td>
-</tr>
-<tr class="even">
-<td style="width: 275px"><code>module load [module name]</code></td>
-<td style="width: 301.4px">Loads [module name]</td>
-</tr>
-<tr class="odd">
-<td style="width: 275px"><code>module list [module name]</code></td>
-<td style="width: 301.4px">Lists currently loaded modules.</td>
-</tr>
-</tbody>
-</table>
+|                               |                                                               |
+|-------------------------------|---------------------------------------------------------------|
+| `module spider`               | Lists all available modules. (only Mahuika)                   |
+| `module spider [module name]` | Searches available modules for \[module name\] (only Mahuika) |
+| `module show [module name]`   | Shows information about \[module name\]                       |
+| `module load [module name]`   | Loads \[module name\]                                         |
+| `module list [module name]`   | Lists currently loaded modules.                               |
 
 ##  
 

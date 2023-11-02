@@ -48,7 +48,7 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 -   On the NeSI cluster, run the command 
 
-    ``` hljs
+    ``` {.hljs .language-shell}
     ssh-keygen -t ed25519 -C "your_github_account@example.com"
     ```
 
@@ -75,13 +75,13 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 -   Click **New SSH key** or **Add SSH key**.
 
-    ![SSH Key button](../../assets/images/ssh-add-ssh-key-with-auth.png)
+    There should be an image here but it couldn't be loaded.
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
-    ![The key field](../../assets/images/ssh-key-paste-with-type.png)
+    There should be an image here but it couldn't be loaded.
 
 -   Click **Add SSH key**.
 
@@ -99,94 +99,25 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 You can create a repository with either of the following commands.
 
-<table style="height: 153px; width: 972px;">
-<tbody>
-<tr class="odd" style="height: 22px;">
-<td style="width: 184.031px; height: 63px">clone</td>
-<td
-style="width: 442.969px; height: 63px"><code>git clone https://github.com/nesi/perf-training.git</code></td>
-<td style="width: 310px; height: 63px">Copies a remote repository into
-your current directory.</td>
-</tr>
-<tr class="even" style="height: 22px;">
-<td style="width: 184.031px; height: 61.1719px">init</td>
-<td style="width: 442.969px; height: 21px"><code>git init</code></td>
-<td style="width: 310px; height: 21px">Creates a new empty repo in your
-current directory.</td>
-</tr>
-</tbody>
-</table>
+|       |                                                       |                                                         |
+|-------|-------------------------------------------------------|---------------------------------------------------------|
+| clone | `git clone https://github.com/nesi/perf-training.git` | Copies a remote repository into your current directory. |
+| init  | `git init`                                            | Creates a new empty repo in your current directory.     |
 
  
 
-<table style="height: 678px; width: 974px;">
-<tbody>
-<tr class="odd" style="height: 89px;">
-<td rowspan="2" style="width: 142px; height: 89px">add</td>
-<td
-style="width: 310px; height: 89px"><span><code>git add &lt;file1&gt; &lt;file2&gt;</code></span></td>
-<td style="width: 513px; height: 89px">Adds <code>&lt;file1&gt;</code>
-and <code>&lt;file2&gt;</code> to the staging area.</td>
-</tr>
-<tr class="even" style="height: 89px;">
-<td
-style="width: 310px; height: 89px"><span><code>git add *.py</code></span></td>
-<td style="width: 513px; height: 89px"> Adds all python files in the
-current directory to the staging area.</td>
-</tr>
-<tr class="odd" style="height: 41px;">
-<td style="width: 142px; height: 41px">status</td>
-<td
-style="width: 310px; height: 41px"><span><code>git status</code></span></td>
-<td style="width: 513px; height: 41px">Lists changes in working
-directory, and staged files.</td>
-</tr>
-<tr class="even" style="height: 39px;">
-<td rowspan="3" style="width: 142px; height: 39px">commit </td>
-<td
-style="width: 310px; height: 39px"><span><code>git commit</code></span></td>
-<td style="width: 513px; height: 39px">Records everything in the staging
-area to your repository. The default text editor will prompt you for a
-commit message.</td>
-</tr>
-<tr class="odd" style="height: 39px;">
-<td
-style="width: 310px; height: 39px"><span><code>git commit -m "Commit message"</code></span></td>
-<td style="width: 513px; height: 39px">Records everything in the staging
-area to your repository with the commit message "Commit message"</td>
-</tr>
-<tr class="even" style="height: 39px;">
-<td
-style="width: 310px; height: 39px"><span><code>git commit --amend</code></span></td>
-<td style="width: 513px; height: 39px">Modify last commit instead of
-creating a new one. Useful for fixing small mistakes.</td>
-</tr>
-<tr class="odd" style="height: 41px;">
-<td rowspan="2" style="width: 142px; height: 41px">log </td>
-<td style="width: 310px; height: 41px"><code>git log</code></td>
-<td style="width: 513px; height: 41px">Prints commit history of
-repo.</td>
-</tr>
-<tr class="even" style="height: 41px;">
-<td
-style="width: 310px; height: 41px"><code>git log &lt;filename&gt;</code></td>
-<td style="width: 513px; height: 41px">Prints commit history of
-<code>&lt;filename&gt;</code>.</td>
-</tr>
-<tr class="odd" style="height: 41px;">
-<td rowspan="2" style="width: 142px; height: 41px">reset </td>
-<td style="width: 310px; height: 41px"><code>git reset</code></td>
-<td style="width: 513px; height: 41px">Removes all files from staging
-area. (Opposite of <code>git add</code>)</td>
-</tr>
-<tr class="even" style="height: 41px;">
-<td
-style="width: 310px; height: 41px"><code>git reset &lt;filename&gt;</code></td>
-<td style="width: 513px; height: 41px">Removes
-<code>&lt;filename&gt;</code> from staging area.</td>
-</tr>
-</tbody>
-</table>
+|         |                                  |                                                                                                                          |
+|---------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| add     | `git add <file1> <file2>`        | Adds `<file1>` and `<file2>` to the staging area.                                                                        |
+|         | `git add *.py`                   |  Adds all python files in the current directory to the staging area.                                                     |
+| status  | `git status`                     | Lists changes in working directory, and staged files.                                                                    |
+| commit  | `git commit`                     | Records everything in the staging area to your repository. The default text editor will prompt you for a commit message. |
+|         | `git commit -m "Commit message"` | Records everything in the staging area to your repository with the commit message "Commit message"                       |
+|         | `git commit --amend`             | Modify last commit instead of creating a new one. Useful for fixing small mistakes.                                      |
+| log     | `git log`                        | Prints commit history of repo.                                                                                           |
+|         | `git log <filename>`             | Prints commit history of `<filename>`.                                                                                   |
+| reset   | `git reset`                      | Removes all files from staging area. (Opposite of `git add`)                                                             |
+|         | `git reset <filename>`           | Removes `<filename>` from staging area.                                                                                  |
 
 ## Remote
 
@@ -194,48 +125,14 @@ By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
 ` git branch --set-upstream-to <origin>`.
 
-<table style="height: 76px; width: 1050px;">
-<tbody>
-<tr class="odd">
-<td rowspan="2" style="width: 136px">fetch </td>
-<td style="width: 565.701px"><code>git fetch</code></td>
-<td style="width: 310.299px">Gets status of 'origin'. git fetch
-<strong>does not </strong>change your working directory or local
-repository (see <code>git pull</code>). </td>
-</tr>
-<tr class="even">
-<td
-style="width: 565.701px"><code>git fetch &lt;repo&gt; &lt;branch&gt;</code></td>
-<td style="width: 310.299px">Get status of <code>&lt;repo&gt;</code>
-<code>&lt;branch&gt;</code>.</td>
-</tr>
-<tr class="odd">
-<td rowspan="2" style="width: 136px">pull </td>
-<td style="width: 565.701px"><code>git pull</code></td>
-<td style="width: 310.299px">Incorporates changes from 'origin' into
-local repo. </td>
-</tr>
-<tr class="even">
-<td
-style="width: 565.701px"><code>git pull &lt;repo&gt; &lt;branch&gt;</code></td>
-<td style="width: 310.299px">Incorporates changes from
-<code>&lt;repo&gt;</code> <code>&lt;branch&gt;</code> into local
-repo.</td>
-</tr>
-<tr class="odd">
-<td rowspan="2" style="width: 136px">push </td>
-<td style="width: 565.701px"><code>git push</code></td>
-<td style="width: 310.299px">Incorporates changes from local repo into
-'origin'. </td>
-</tr>
-<tr class="even">
-<td
-style="width: 565.701px"><code>git push &lt;repo&gt; &lt;branch&gt;</code></td>
-<td style="width: 310.299px">Incorporates changes from local repo into
-<code>&lt;repo&gt;</code> <code>&lt;branch&gt;</code></td>
-</tr>
-</tbody>
-</table>
+|        |                             |                                                                                                                      |
+|--------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|
+| fetch  | `git fetch`                 | Gets status of 'origin'. git fetch **does not **change your working directory or local repository (see `git pull`).  |
+|        | `git fetch <repo> <branch>` | Get status of `<repo>` `<branch>`.                                                                                   |
+| pull   | `git pull`                  | Incorporates changes from 'origin' into local repo.                                                                  |
+|        | `git pull <repo> <branch>`  | Incorporates changes from `<repo>` `<branch>` into local repo.                                                       |
+| push   | `git push`                  | Incorporates changes from local repo into 'origin'.                                                                  |
+|        | `git push <repo> <branch>`  | Incorporates changes from local repo into `<repo>` `<branch>`                                                        |
 !!! info Tip
 >
 > If you are working without collaborators, there should be no reason to
@@ -249,34 +146,12 @@ style="width: 565.701px"><code>git push &lt;repo&gt; &lt;branch&gt;</code></td>
 At an introductory level, it is best to avoid workflows that lead to
 multiple branches, or requires merging.
 
-<table style="height: 76px; width: 966px;">
-<tbody>
-<tr class="odd">
-<td rowspan="2" style="width: 136px">branch </td>
-<td style="width: 303px"><code>git branch</code></td>
-<td style="width: 489px">List branches.</td>
-</tr>
-<tr class="even">
-<td
-style="width: 303px"><code>git branch &lt;branch-name&gt;</code></td>
-<td style="width: 489px">Create new branch
-<code>&lt;branch-name</code></td>
-</tr>
-<tr class="odd">
-<td style="width: 136px">checkout</td>
-<td
-style="width: 303px"><code>git checkout &lt;branch-name&gt;</code></td>
-<td style="width: 489px">Switch to editing branch
-<code>&lt;branch-name&gt;</code></td>
-</tr>
-<tr class="even">
-<td style="width: 136px">merge</td>
-<td style="width: 303px"><code>git merge &lt;branch-name&gt;</code></td>
-<td style="width: 489px">Merge <code>&lt;branch-name&gt;</code> into
-current branch.</td>
-</tr>
-</tbody>
-</table>
+|          |                              |                                            |
+|----------|------------------------------|--------------------------------------------|
+| branch   | `git branch`                 | List branches.                             |
+|          | `git branch <branch-name>`   | Create new branch `<branch-name`           |
+| checkout | `git checkout <branch-name>` | Switch to editing branch `<branch-name>`   |
+| merge    | `git merge <branch-name>`    | Merge `<branch-name>` into current branch. |
 !!! info Other Resources
 >
 > -   <https://ohshitgit.com/>

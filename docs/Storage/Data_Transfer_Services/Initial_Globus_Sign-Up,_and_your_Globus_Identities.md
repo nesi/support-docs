@@ -35,8 +35,8 @@ primary identity in Globus.
 
 ####  
 
-<img src="../../assets/images/8157051408655.name_me.png" width="430"
-height="471" alt="Globus_login.png" />
+<img src="../../assets/images/.8157051408655" width="430" height="471"
+alt="Globus_login.png" />
 
 #### 2) Link other Globus identities to your primary identity
 
@@ -53,8 +53,8 @@ If you have other identities in Globus (for example, a globusID), link
 them  to your Google ID account following the instructions at
 <https://docs.globus.org/how-to/link-to-existing/>:
 
- <img src="../../assets/images/360001715615.name_me.png" width="1382"
-height="322" alt="identities.png" />
+ <img src="../../assets/images/.360001715615" width="1382" height="322"
+alt="identities.png" />
 
  
 

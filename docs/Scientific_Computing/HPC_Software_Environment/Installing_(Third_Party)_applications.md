@@ -75,34 +75,6 @@ and set up environment variables. For example, you could define a
 modules in a project directory
 `/nesi/project/<projectID>/modulefiles/ProdXY` as the following:
 
-``` highlight
-#%module
-
-conflict ProdABC   # conflicts with other versions of itself
-module load CMake  # load other additional modules
-module load netCDF/4.4.1-gimkl-2017a
-module load Python/3.6.3-gimkl-2017a
-
-
-# provide a description
-whatis "The ProdXY for doing clever things."
-proc ModulesHelp { } {
- puts stderr "This module loads the ProdXY tool. It requires CMake and netCDF."
- puts stderr "\t the executable prodXY is provided."
-}
-
-# set the path to the software product (can be used later in the module)
-set PKG_PREFIX /path/to/software/package/ProdXY
-# add the location of binaries to PATH, such they are immediately accessible
-prepend-path PATH $PKG_PREFIX/bin
-# add to library path for dynamically linked applications
-prepend-path LD_LIBRARY_PATH $PKG_PREFIX/lib
-# add a location for Python packages
-prepend-path PYTHONPATH $PKG_PREFIX/lib/python3.6/site-packages/
-# for example, you can set environment variables for compiling
-setenv CFLAGS "-DNDEBUG"
-```
-
 In the first lines, we can set conflicts with other modules (here named
 ProdABC). Then we load some dependency modules and provide some
 description. The additional lines depend on your requirements for the
@@ -125,18 +97,10 @@ To use the module (or all in that directory and sub-directories) we need
 to register that directory to the module environment. This can be done
 by setting the following environment variable:
 
-``` highlight
-module use /nesi/project/<projectID>/modulefiles/ 
-```
-
 by adding that line to your `$HOME/.bashrc` you will have the modules
 always available.
 
 The module then can be loaded by:
-
-``` highlight
-module load ProdXY
-```
 
 These modules can easily be shared with collaborators. They just need to
 specify the last two steps.

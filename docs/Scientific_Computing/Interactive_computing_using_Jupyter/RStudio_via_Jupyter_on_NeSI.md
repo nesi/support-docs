@@ -37,7 +37,7 @@ NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
 
-![rstudio\_launcher.png](../../assets/images/4595373978255.name_me.png)
+![rstudio\_launcher.png](../../assets/images/.4595373978255)
 
 Clicking on this entry will open a separate tab in your web browser,
 where RStudio will be accessible.
@@ -67,7 +67,7 @@ account. Check that the correct version of R has loaded and that the
 correct Library Paths are available. For R/4.2.1 the command
 `.libPaths()` will return the following:
 
-``` GAQXDSOBH1B
+``` {#rstudio_console_output .GAQXDSOBH1B tabindex="0" aria-label="Console Output"}
 > .libPaths()
 [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
@@ -88,7 +88,7 @@ following (below), where \`Rtmpjp2rm8\` is a randomly generated folder
 name, and is emptied with each new session. So will not fill up your
 home directory.
 
-``` GND-IWGDH3B
+``` {#rstudio_console_output .GND-IWGDH3B tabindex="0" aria-label="Console Output"}
 >tempdir()
 [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
 ```
@@ -137,7 +137,7 @@ a failure by JupyterLab. Please try to start RStudio again from the
 launcher. If the problem persists, contact our support team at
 <support@nesi.org.nz>.
 
-![error\_500.PNG](../../assets/images/4614666941455.name_me.png)
+![error\_500.PNG](../../assets/images/.4614666941455)
 
 If you have disabled javascript in your web browser, you will need to
 enter your password manually in the RStudio login screen. To retrieve

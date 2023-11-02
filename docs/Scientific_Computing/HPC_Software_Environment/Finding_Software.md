@@ -27,21 +27,9 @@ software](https://support.nesi.org.nz/hc/articles/360000170355).
 Using the `module` command you can:
 
 -   View loaded modules:
-    ``` highlight
-    module list
-    ```
 -   List all available modules
-    ``` highlight
-    module avail
-    ```
 -   Load a module:
-    ``` highlight
-    module load Python/2.7.14-gimkl-2017a
-    ```
 -   Switch out a loaded module for a different version:
-    ``` highlight
-    module switch Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
-    ```
 
 ## Lmod on Mahuika
 
@@ -53,26 +41,11 @@ and a more powerful search capability. The `ml` shortcut can be used in
 place of `module`. With Lmod you can:
 
 -   View loaded modules:
-    ``` highlight
-    ml
-    ```
 -   List all available modules:
-    ``` highlight
-    ml spider
-    ```
 -   Use “spider” to search for modules, e.g. “Python” modules:
-    ``` highlight
-    ml spider Python
-    ```
 -   Load a module:
-    ``` highlight
-    ml Python/2.7.14-gimkl-2017a
-    ```
 -   Prefix a module with “-“ to unload it, e.g. switch from Python 2 to
     Python 3:
-    ``` highlight
-    ml -Python/2.7.14-gimkl-2017a Python/3.6.3-gimkl-2017a
-    ```
 -   To get a fresh environment, we recommend that you log out and log in
     again. By logging out and logging in again you will revert to not
     only the default set of modules, but also the default set of
@@ -90,10 +63,6 @@ which provides access to the different NeSI software stacks.
 On Māui XC nodes an improved version of the modules framework is
 provided. Therewith you can also search for modules using a sub-string
 using the "-S" option, e.g.
-
-``` highlight
-module avail -S netcdf
-```
 
 as a result you will also find modules having the substring "netcdf" in
 name, e.g. cray-netcdf.
