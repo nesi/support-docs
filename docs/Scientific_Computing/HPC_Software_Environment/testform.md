@@ -23,7 +23,5 @@ zendesk_section_id: 360000040056
 
  
 
-``` nohighlight
-[user@host ~]# ssh -Y @lander.nesi.org.nz
-New Zealand eScience Infrastructure (NeSI) HPC Lander node.
-```
+    [user@host ~]# ssh -Y @lander.nesi.org.nz
+    New Zealand eScience Infrastructure (NeSI) HPC Lander node.

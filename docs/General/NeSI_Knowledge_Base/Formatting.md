@@ -91,21 +91,15 @@ Code Blocks
 
 class="error"
 
-``` error
-salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
-```
+    salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
 class="output"
 
-``` output
-salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
-```
+    salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
 class="source"
 
-``` source
-salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
-```
+    salloc --job-name flUI --nodes4 --ntasks-per-node 8 --mem-per-cpu 1500
 
  
 

@@ -97,11 +97,9 @@ the files involved.
 Users can process compression/decompression on the tagged files via the
 `mmrestripefile` command (using `-z` flag).
 
-``` {renderer-start-pos="3314"}
-$ mmrestripefile -z FileA.txt
-Scanning FileA.txt
-Scan completed successfully.
-```
+    $ mmrestripefile -z FileA.txt
+    Scanning FileA.txt
+    Scan completed successfully.
 
 # States of a compressed file
 
@@ -109,21 +107,19 @@ Compressed files on Scale filesystems can be in 4 different states
 depending on the extended attributes of the file when manipulated for
 compression. We can check those attributes with the `mmlsattr` command:
 
-``` {renderer-start-pos="3906"}
-$ mmlsattr -L FileA.txt
-file name: FileA.txt
-metadata replication: 1 max 2
-data replication: 1 max 2
-immutable: no
-appendOnly: no
-flags:
-storage pool name: data
-fileset name: home_user001
-snapshot name:
-creation time: Wed Jul 6 00:54:27 2022
-Misc attributes: ARCHIVE
-Encrypted: no
-```
+    $ mmlsattr -L FileA.txt
+    file name: FileA.txt
+    metadata replication: 1 max 2
+    data replication: 1 max 2
+    immutable: no
+    appendOnly: no
+    flags:
+    storage pool name: data
+    fileset name: home_user001
+    snapshot name:
+    creation time: Wed Jul 6 00:54:27 2022
+    Misc attributes: ARCHIVE
+    Encrypted: no
 
 The misc attributes will have or not have a `COMPRESSION` value,
 depending on if the file is or not tagged for compression. In addition,

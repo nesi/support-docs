@@ -102,7 +102,7 @@ changed significantly at version 8.
 You can select your Cylc version by setting the environment variable
 CYLC\_VERSION, for instance,
 
-``` {.bash .plain}
+``` bash
 $ export CYLC_VERSION=8.0.1
 $ cylc version
 8.0.1
@@ -142,9 +142,7 @@ Create/edit the following **flow.cylc** file containing
 In the above example, we have three tasks (taskA, taskB and taskC),
 which run under SLURM (hence platform = mahuika-slurm). Type
 
-``` p1
-cylc config --platform-names
-```
+    cylc config --platform-names
 
 to see a list of platforms. The SLURM settings for taskA are in the
 \[\[\[directives\]\]\] section.
@@ -178,10 +176,8 @@ Then install the workflow with
 
 It's a good idea to check that there are no syntax errors in flow.cylc,
 
-``` p1
-$ cylc validate simple
-Valid for cylc-8.0.1
-```
+    $ cylc validate simple
+    Valid for cylc-8.0.1
 
 ## Looking at the workflow graph
 
@@ -231,9 +227,7 @@ First open ssh tunnelling, so that a given port on your local machine
 (e.g. your laptop) maps to the Cylc UI Server’s port on the HPC. On your
 local machine, type
 
-``` x_MsoNormal
-$ ssh -N -L PORT:localhost:PORT HOST
-```
+    $ ssh -N -L PORT:localhost:PORT HOST
 
 where **PORT** is a valid port number and **HOST** can be Māui or
 mahuika. See the [NeSI
@@ -245,32 +239,24 @@ connection without logging you into the shell.
 
 Then ssh to the host (e.g. mahuika)
 
-``` x_MsoNormal
-$ ssh HOST
-```
+    $ ssh HOST
 
 and add the following to **$HOME/.cylc/uiserver/jupyter\_config.py** on
 the **HOST**.
 
-``` x_MsoNormal
-c.ServerApp.open_browser=False
-c.ServerApp.port=PORT
-```
+    c.ServerApp.open_browser=False
+    c.ServerApp.port=PORT
 
 where PORT and HOST match the values you selected when opening the ssh
 tunnel.
 
 You're now ready to fire up the web graphical interface
 
-``` x_MsoNormal
-$ cylc gui
-```
+    $ cylc gui
 
 Just copy the URL that looks like
 
-``` p1
-http://127.0.0.1:PORT/cylc?token=TOKEN
-```
+    http://127.0.0.1:PORT/cylc?token=TOKEN
 
 into your web browser. (Again substitute HOST and PORT with the values
 chosen above.)
@@ -311,10 +297,8 @@ Cylc will create a directory under $HOME/cylc-run. On NeSI, the output
 of the runs will be stored in the project directory, with a symbolic
 link pointing from the user home directory to the project directory
 
-``` p1
-$ ls -l $HOME/cylc-run/simple/run1
-lrwxrwxrwx 1 pletzera pletzera 54 Aug  5 03:19 /home/pletzera/cylc-run/simple/run1 -> /nesi/nobackup/nesi99999/pletzera/cylc-run/simple/run1
-```
+    $ ls -l $HOME/cylc-run/simple/run1
+    lrwxrwxrwx 1 pletzera pletzera 54 Aug  5 03:19 /home/pletzera/cylc-run/simple/run1 -> /nesi/nobackup/nesi99999/pletzera/cylc-run/simple/run1
 
 ## About Cylc
 

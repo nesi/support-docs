@@ -28,12 +28,10 @@ an error (and probably kill your job).
 
 Current file-count and disk space can be found using `nn_storage_quota`.
 
-``` {.hljs .css}
-Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
-home_user123             20G    1.957G    9.79%      92160     21052    22.84%
-project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
-nobackup_nesi99999              6.833T            10000000    2691383   26.91%
-```
+    Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
+    home_user123             20G    1.957G    9.79%      92160     21052    22.84%
+    project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
+    nobackup_nesi99999              6.833T            10000000    2691383   26.91%
 !!! info Note
 >
 > There is a delay between making changes to a filesystem and seeing the

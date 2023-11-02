@@ -150,37 +150,27 @@ recommended method of variation between the jobs. For example:
 
 -   -   -   As a direct input to a function.  
 
-            ``` code-matlab
-            matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
-            ```
+                matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
 
         -   As an index to an array.  
 
-            ``` code-bash
-            inArray=(1 2 4 8 16 32 64 128)
-            input=${inArray[$SLURM_ARRAY_TASK_ID]}
-            ```
+                inArray=(1 2 4 8 16 32 64 128)
+                input=${inArray[$SLURM_ARRAY_TASK_ID]}
 
         -   For selecting input files.  
 
-            ``` code-bash
-            input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
-            ```
+                input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
 
         -   As a seed for a pseudo-random number.  
             -   In R
 
-                ``` {dir="ltr"}
-                task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-                set.seed(task_id)
-                ```
+                    task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+                    set.seed(task_id)
 
             -   In MATLAB
 
-                ``` {dir="ltr"}
-                task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-                rng(task_id)
-                ```
+                    task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+                    rng(task_id)
 
             *  
             Using a seed is important, otherwise multiple jobs may
@@ -200,10 +190,8 @@ Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.
 
-``` nohighlight
-#SBATCH --output=outputs/run_%a/slurm_output.out
-#SBATCH --output=outputs/run_%a/slurm_error.err
-```
+    #SBATCH --output=outputs/run_%a/slurm_output.out
+    #SBATCH --output=outputs/run_%a/slurm_error.err
 
 #### Multidimensional array example
 
@@ -231,23 +219,19 @@ important that all file references are unique and independent.
 If your program makes use of a working directory make sure you set it
 e.g.
 
-``` nohighlight
-mkdir .tmp/run_${SLURM_ARRAY_TASK_ID}          #Create new directory
-export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  #Set TMPDIR to point there
-```
+    mkdir .tmp/run_${SLURM_ARRAY_TASK_ID}          #Create new directory
+    export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  #Set TMPDIR to point there
 
 If you have no control over the name/path of an output used by a
 program, this can be resolved in a similar manner.
 
-``` nohighlight
-mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
-cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
-#
-bash job.sh
-#
-mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
-rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
-```
+    mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
+    cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
+    #
+    bash job.sh
+    #
+    mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
+    rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
 
 The Slurm documentation on job arrays can be
 found [here](https://slurm.schedmd.com/job_array.html).

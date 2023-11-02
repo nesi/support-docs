@@ -67,11 +67,9 @@ account. Check that the correct version of R has loaded and that the
 correct Library Paths are available. For R/4.2.1 the command
 `.libPaths()` will return the following:
 
-``` {#rstudio_console_output .GAQXDSOBH1B tabindex="0" aria-label="Console Output"}
-> .libPaths()
-[1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
-[2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
-```
+    > .libPaths()
+    [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
+    [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 
 # Package Installation
 
@@ -88,10 +86,8 @@ following (below), where \`Rtmpjp2rm8\` is a randomly generated folder
 name, and is emptied with each new session. So will not fill up your
 home directory.
 
-``` {#rstudio_console_output .GND-IWGDH3B tabindex="0" aria-label="Console Output"}
->tempdir()
-[1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
-```
+    >tempdir()
+    [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
 
 The alternative is to install packages in a terminal session
 

@@ -48,9 +48,7 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 -   On the NeSI cluster, run the command 
 
-    ``` {.hljs .language-shell}
-    ssh-keygen -t ed25519 -C "your_github_account@example.com"
-    ```
+        ssh-keygen -t ed25519 -C "your_github_account@example.com"
 
 -   When prompted for a file name, press `enter`. When prompted for a
     passcode, press enter twice more.

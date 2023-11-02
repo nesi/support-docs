@@ -91,10 +91,8 @@ specify it.
 To submit to the general purpose GPU nodes, you need to add the
 following to your SLURM script:
 
-``` highlight
-#SBATCH -p gpu
-#SBATCH --gres=gpu
-```
+    #SBATCH -p gpu
+    #SBATCH --gres=gpu
 
 ## Submitting a job between Māui and Māui\_Ancil
 

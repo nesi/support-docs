@@ -38,9 +38,7 @@ following commands:
 The images are saved under directories train/ and test/, respectively.
 An example of image is test/img49.jpg.
 
-``` p1
-display test/img49.jpg
-```
+    display test/img49.jpg
 
 <img src="../../assets/images/img50.jpg" width="100" height="100"
 alt="img49.jpg" />
@@ -55,26 +53,20 @@ The images need to be slightly manipulated. For instance we expect all
 the images to be black and white so we can collapse the red, green and
 blue channel into one. We'll need OpenCV to this task:
 
-``` p1
-pip install opencv-python --user
-```
+    pip install opencv-python --user
 
 ### Running the model
 
 Our regression model
 
-``` p1
-wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Regression/classify.py
-```
+    wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Regression/classify.py
 
 is encoded in classify.py. The corresponding lines in classify.py are
 (Python code):
 
-``` p1
-clf = linear_model.LinearRegression()
-# now train
-clf.fit(trainingInput.reshape(-1, n0*n1), trainingOutput)
-```
+    clf = linear_model.LinearRegression()
+    # now train
+    clf.fit(trainingInput.reshape(-1, n0*n1), trainingOutput)
 
 Here, trainingInput is the set of training arrays of size n0 (=40) and
 n1 (=40). The arrays are flattened. The training output (trainingOutput)
@@ -82,24 +74,20 @@ is a vector of integer values (0-5).
 
 We're now ready to train and test our model:
 
-``` p1
-#!/bin/bash -e
-#SBATCH --job-name regression-dots
-#SBATCH --ntasks 1
-#SBATCH --cpus-per-task 1
-#SBATCH --time 00:10:00
-#SBATCH --mem 512MB
+    #!/bin/bash -e
+    #SBATCH --job-name regression-dots
+    #SBATCH --ntasks 1
+    #SBATCH --cpus-per-task 1
+    #SBATCH --time 00:10:00
+    #SBATCH --mem 512MB
 
-module load Python
-python classify.py --testDir=test --trainDir=train --save=someResults.png
-```
+    module load Python
+    python classify.py --testDir=test --trainDir=train --save=someResults.png
 
 Copy-paste the above and save in file classify.sl. Submit the Slurm
 script classify.sl
 
-``` p1
-sbatch classify.sl
-```
+    sbatch classify.sl
 
 ### Looking at the output
 

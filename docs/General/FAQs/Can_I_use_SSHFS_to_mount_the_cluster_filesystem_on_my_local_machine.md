@@ -31,27 +31,21 @@ Use the following commands to mount your home directory from Mahuika on
 your local machine (the same command will work for Māui, just replace
 the names):
 
-``` {.line-numbers .language-none}
-# create a mount point and connect
-mkdir -p ~/mahuika-home
-sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
-```
+    # create a mount point and connect
+    mkdir -p ~/mahuika-home
+    sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
 
 Now you should be able to navigate to "~/mahuika-home" on your local
 machine to access your home directory on Mahuika. To unmount the
 directory run:
 
-``` {.line-numbers .language-none}
-fusermount -u ~/mahuika-home
-```
+    fusermount -u ~/mahuika-home
 
 To mount a project directory, you could run:
 
-``` {.line-numbers .language-none}
-# create a mount point and connect
-mkdir -p ~/mahuika-project
-sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
-```
+    # create a mount point and connect
+    mkdir -p ~/mahuika-project
+    sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
 
 ## MacOS
 
@@ -59,19 +53,15 @@ We recommend using some extra options with MacOS. The following commands
 will mount your home directory, make it show up under devices in Finder
 and give the volume a sensible name:
 
-``` {.line-numbers .language-none}
-# create a mount point and connect
-mkdir -p ~/mahuika-home
-sshfs mahuika: ~/mahuika-home \
-    -oauto_cache,follow_symlinks \
-    -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
-```
+    # create a mount point and connect
+    mkdir -p ~/mahuika-home
+    sshfs mahuika: ~/mahuika-home \
+        -oauto_cache,follow_symlinks \
+        -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
 
 To unmount the directory on MacOS, either eject from Finder or run:
 
-``` {.line-numbers .language-none}
-umount ~/mahuika-home
-```
+    umount ~/mahuika-home
 !!! info Note
 >
 > Newer MacOS does not come with SSHFS pre installed. You will have to
