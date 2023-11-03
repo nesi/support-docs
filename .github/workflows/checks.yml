@@ -20,7 +20,7 @@ jobs:
       - run: pip install proselint
       - run: |
           shopt -s globstar extglob
-          proselint -dj ${{inputs.fileList}} 
+          python3 checks/run_proselint.py ${{inputs.fileList}} 
   mdlint:
      runs-on: ubuntu-latest
      steps:
