@@ -1,4 +1,4 @@
-name: Lint All Files
+name: Check All Files
 on:
   workflow_dispatch
 env:
