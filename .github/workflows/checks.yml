@@ -20,7 +20,7 @@ jobs:
       - run: pip install proselint
       - run: |
           shopt -s globstar extglob
-          proselint ${{inputs.fileList}}
+          proselint -dj ${{inputs.fileList}} 
   mdlint:
      runs-on: ubuntu-latest
      steps:
@@ -28,5 +28,5 @@ jobs:
        - run: npm install -g markdownlint-cli
        - run: |
           shopt -s globstar extglob
-          markdownlint ${{inputs.fileList}}
+          markdownlint -j ${{inputs.fileList}}
 
