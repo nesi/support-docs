@@ -1,8 +1,8 @@
 name: Lint Changed Files
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     paths:
       - docs/*.md
 jobs:
