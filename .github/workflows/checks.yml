@@ -12,14 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: shopt -s globstar extglob
       - run: pip install proselint
-      - run: proselint ${{inputs.fileList}}
+      - run: |
+          shopt -s globstar extglob
+          proselint ${{inputs.fileList}}
   mdlint:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v3
        - run: shopt -s globstar extglob
        - run: npm install markdownlint --save-dev
-       - run: markdownlint ${{inputs.fileList}}
+       - run: |
+          shopt -s globstar extglob
+          markdownlint ${{inputs.fileList}}
 
