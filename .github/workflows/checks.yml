@@ -23,5 +23,5 @@ jobs:
        - run: npm install markdownlint -g
        - run: |
           shopt -s globstar extglob
-          npm-run markdownlint ${{inputs.fileList}}
+          npm run markdownlint ${{inputs.fileList}}
 
