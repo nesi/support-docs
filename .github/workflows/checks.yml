@@ -20,8 +20,9 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v3
-       - run: npm install markdownlint -g
+       - uses: actions/setup-node@v3
+       - run: npm ci markdownlint
        - run: |
           shopt -s globstar extglob
-          npm run markdownlint ${{inputs.fileList}}
+          markdownlint ${{inputs.fileList}}
 
