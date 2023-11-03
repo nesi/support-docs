@@ -16,4 +16,4 @@ jobs:
          with:
           fetch-depth: 0
        - run: pip install -r requirements.txt
-       - run: mkdocs gh-deploy -b gh-pages-test --strict 2>&1 | awk -F " - " '{ print "::", $1, "::", $2 }'
+       - run: mkdocs gh-deploy -b gh-pages-test --strict 2>&1 | awk -F " - " '{gsub(/ /, "", $1); printf("::%s::%s\n",$1,$2) }'
