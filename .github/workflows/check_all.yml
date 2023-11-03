@@ -16,4 +16,4 @@ jobs:
          with:
           fetch-depth: 0
        - run: pip install -r requirements.txt
-       - run: mkdocs gh-deploy -b gh-pages-test --strict --dirty --verbose 
+       - run: mkdocs gh-deploy -b gh-pages-test 2>&1 | sed 's/ - /\n/g' | xargs -I{}  echo "::{} ::{}"
