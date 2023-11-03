@@ -87,7 +87,7 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-<img src="../../assets/images/fig1.svg" width="426" height="362" />![](../../assets/images/VirtualScaling.png)
+There should be an image here but it couldn't be loaded.There should be an image here but it couldn't be loaded.
 
 # Examples
 
@@ -119,7 +119,7 @@ forwarded port (`--help` for more options).
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](../../assets/images/Connecting_to_a_Virtual_Desktop_SSH.png)
+There should be an image here but it couldn't be loaded.
 
 ## On a compute node
 
