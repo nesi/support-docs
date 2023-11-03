@@ -23,6 +23,9 @@ jobs:
        - run: npm install markdownlint -g
        - run: |
           shopt -s globstar extglob
+          source ~/.bash_profile
+          npm get prefix
+          echo $PATH
           which markdownlint
           markdownlint ${{inputs.fileList}}
 
