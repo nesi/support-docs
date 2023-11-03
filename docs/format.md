@@ -3,8 +3,7 @@
 ### Header 3 
 #### Header 4
 
-
-```
+```md
 # Header 1 
 ## Header 2
 ### Header 3
@@ -132,9 +131,24 @@ _Note for future, once decided which of these we will use, remove the others. An
 
 ## Code
 
+Code blocks require a language lexxer in order to do syntax hilighting, e.g. `python` ,`slurm`, `cuda`, `json`, `md`.
+[A full list of lexxers can be found in this list](https://pygments.org/languages/).
+
+For plain code blocks, still good to use a class as descriptor (e.g. `txt`, `stdout`, `stderr`).
+May want to add formatting to this later.
+
+<pre><code><span>```stdout</span>
+<span>some code</span>
+<span>```</span>
+</code></pre>
+
+```stderr
+some code 
+```
+
 ### Block
 
-```python
+```py
 import somepackage
 
 formatting = True
@@ -142,21 +156,32 @@ if formatting:
     Print(formatting) # A comment
 ```
 
-```md
-    ```py 
-        import somepackage
-
-        formatting = True
-        if formatting:
-            Print(formatting) # A comment
-    ```
-```
+<pre><code><span>```py</span>
+<span>import somepackage</span>
+<span></span>
+<span>formatting = True</span>
+<span>if formatting:</span>
+<span>  Print(formatting) # A comment</span>
+<span>```</span>
+</code></pre>
 
 ### Inline
 
 `echo "Hello World"`
 
-``echo "Hello World"``
+<pre><code><span>`echo "Hello World"`</span></code></pre>
+
+### Keyboard
+
+Keyboard keys can be added using the `<kbd>` tag.
+
+Press <kbd>ctrl</kbd>+<kbd>c</kbd> to copy text from terminal.
+
+```md
+Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
+```
+
+Note the additional spacing around the `+` else it will appear cramped.
 
 ## Images
 
