@@ -1,0 +1,10 @@
+name: Check Changed Files
+on:
+  push:
+    paths:
+      - docs/*.md
+jobs:
+  runChecks:
+    uses: ./.github/workflows/checks.yml
+    with:
+      fileList: "$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA **/*.md)" 
