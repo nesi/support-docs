@@ -1,6 +1,11 @@
 name: Checks
 on:
   workflow_dispatch:
+    inputs:
+      fileList:
+          description: 'Files to Lint'
+          required: true
+          type: string
   workflow_call:
     inputs:
       fileList:
@@ -21,7 +26,7 @@ jobs:
      steps:
        - uses: actions/checkout@v3
        - uses: actions/setup-node@v3
-       - run: npm ci markdownlint
+       - run: npm install markdownlint
        - run: |
           shopt -s globstar extglob
           markdownlint ${{inputs.fileList}}
