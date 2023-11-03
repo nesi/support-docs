@@ -57,96 +57,13 @@ Setting `--hint=nomultithread` with srun or sbatch "causes Slurm to
 allocate only one thread from each core to this job". This will allocate
 CPUs according to the following image:
 
-<table style="height: 132px;" data-border="1" width="591"
-data-cellspacing="0" data-cellpadding="3">
-<tbody>
-<tr class="odd" style="height: 22px;">
-<td style="height: 22px; width: 164.389px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>Node
-name</strong></font></p></td>
-<td colspan="16" style="height: 22px; width: 403.878px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>wbn009</strong></font></p></td>
-</tr>
-<tr class="even" style="height: 22px;">
-<td style="height: 22px; width: 164.389px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>Physical Core
-id</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 37.2727px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>0</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 37.2727px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>1</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 37.2727px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>2</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 37.2727px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>3</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 37.2727px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>0</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 47.358px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>1</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 47.358px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>2</strong></font></p></td>
-<td colspan="2" style="height: 22px; width: 46.4347px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>3</strong></font></p></td>
-</tr>
-<tr class="odd" style="height: 22px;">
-<td style="height: 22px; width: 164.389px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>Logical CPU
-id</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>0</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>1</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>2</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>3</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>4</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>5</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>6</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>7</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>8</strong></font></p></td>
-<td style="height: 22px; width: 13.1818px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>9</strong></font></p></td>
-<td style="height: 22px; width: 18.2244px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>10</strong></font></p></td>
-<td style="height: 22px; width: 18.2244px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>11</strong></font></p></td>
-<td style="height: 22px; width: 18.2244px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>12</strong></font></p></td>
-<td style="height: 22px; width: 18.2244px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>13</strong></font></p></td>
-<td style="height: 22px; width: 18.2244px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>14</strong></font></p></td>
-<td style="height: 22px; width: 17.3011px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>15</strong></font></p></td>
-</tr>
-<tr class="even" style="height: 22px;">
-<td style="height: 22px; width: 164.389px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>Number of Allocated
-CPUs</strong></font></p></td>
-<td colspan="8"
-style="height: 22px; width: 181.818px"><p><font size="1">4</font></p></td>
-<td colspan="8"
-style="height: 22px; width: 211.151px"><p><font size="1">4</font></p></td>
-</tr>
-<tr class="odd" style="height: 22px;">
-<td style="height: 22px; width: 164.389px"
-data-bgcolor="#e0e0e0"><p><font size="1"><strong>Allocated CPU
-ids</strong></font></p></td>
-<td colspan="8"
-style="height: 22px; width: 181.818px"><p><font size="1">0 2 4
-6</font></p></td>
-<td colspan="8"
-style="height: 22px; width: 211.151px"><p><font size="1">8 10 12
-14</font></p></td>
-</tr>
-</tbody>
-</table>
+|                                                    |                                  |                             |                             |                             |                             |                             |                             |                             |                                  |                             |                              |                              |                              |                              |                              |                              |
+|----------------------------------------------------|----------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|----------------------------------|-----------------------------|------------------------------|------------------------------|------------------------------|------------------------------|------------------------------|------------------------------|
+| <font size="1">**Node name**</font>                | <font size="1">**wbn009**</font> |                             |                             |                             |                             |                             |                             |                             |                                  |                             |                              |                              |                              |                              |                              |                              |
+| <font size="1">**Physical Core id**</font>         | <font size="1">**0**</font>      |                             | <font size="1">**1**</font> |                             | <font size="1">**2**</font> |                             | <font size="1">**3**</font> |                             | <font size="1">**0**</font>      |                             | <font size="1">**1**</font>  |                              | <font size="1">**2**</font>  |                              | <font size="1">**3**</font>  |                              |
+| <font size="1">**Logical CPU id**</font>           | <font size="1">**0**</font>      | <font size="1">**1**</font> | <font size="1">**2**</font> | <font size="1">**3**</font> | <font size="1">**4**</font> | <font size="1">**5**</font> | <font size="1">**6**</font> | <font size="1">**7**</font> | <font size="1">**8**</font>      | <font size="1">**9**</font> | <font size="1">**10**</font> | <font size="1">**11**</font> | <font size="1">**12**</font> | <font size="1">**13**</font> | <font size="1">**14**</font> | <font size="1">**15**</font> |
+| <font size="1">**Number of Allocated CPUs**</font> | <font size="1">4</font>          |                             |                             |                             |                             |                             |                             |                             | <font size="1">4</font>          |                             |                              |                              |                              |                              |                              |                              |
+| <font size="1">**Allocated CPU ids**</font>        | <font size="1">0 2 4 6</font>    |                             |                             |                             |                             |                             |                             |                             | <font size="1">8 10 12 14</font> |                             |                              |                              |                              |                              |                              |                              |
 
 Image adapted from [Slurm's documentation
 page](https://slurm.schedmd.com/cpu_management.html).
@@ -187,40 +104,28 @@ considered a bonus.
 
 The precise rules about when Hyperthreading applies are as follows:
 
-<table style="width: 697px;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="header">
-<th style="width: 109px"> </th>
-<th class="wysiwyg-text-align-center" style="width: 205px">Mahuika</th>
-<th class="wysiwyg-text-align-center" style="width: 376px">Māui</th>
-</tr>
-&#10;<tr class="odd">
-<td style="width: 109px">Jobs</td>
-<td colspan="2" class="wysiwyg-text-align-center"
-style="width: 581px">Never share physical cores</td>
-</tr>
-<tr class="even">
-<td style="width: 109px">MPI tasks within the same job</td>
-<td class="wysiwyg-text-align-center" style="width: 205px">Never share
-physical cores</td>
-<td class="wysiwyg-text-align-center" style="width: 376px">Share
-physical cores by default. You can override this behaviour by using
-<code>--hint=nomultithread</code> in your job submission script.</td>
-</tr>
-<tr class="odd">
-<td style="width: 109px">Threads within the same task</td>
-<td colspan="2" class="wysiwyg-text-align-center"
-style="width: 581px">Share physical cores by default. You can override
-this behaviour by using<br />
-<code>--hint=nomultithread</code> in your job submission script.</td>
-</tr>
-</tbody>
-</table>
+  ----------------------- ------------------------ ------------------------
+                          Mahuika                  Māui
+
+  Jobs                    Never share physical     
+                          cores                    
+
+  MPI tasks within the    Never share physical     Share physical cores by
+  same job                cores                    default. You can
+                                                   override this behaviour
+                                                   by using
+                                                   `--hint=nomultithread`
+                                                   in your job submission
+                                                   script.
+
+  Threads within the same Share physical cores by  
+  task                    default. You can         
+                          override this behaviour  
+                          by using                 
+                          `--hint=nomultithread`   
+                          in your job submission   
+                          script.                  
+  ----------------------- ------------------------ ------------------------
 
  
 

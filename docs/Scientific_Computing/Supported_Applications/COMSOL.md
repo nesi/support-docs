@@ -39,37 +39,13 @@ Will display a list of COMSOL batch commands.
 When using COMSOL batch the following flags can be used to control
 distribution. 
 
-<table style="width: 635px;">
-<tbody>
-<tr class="odd">
-<td style="width: 185.953px"><code>-mpibootstrap slurm</code></td>
-<td style="width: 256.047px"> Instructs COMSOL to get it's settings from
-SLURM</td>
-</tr>
-<tr class="even">
-<td style="width: 185.953px"><code>-np &lt;cpus&gt;</code></td>
-<td style="width: 256.047px">Number of CPUs to use in each task.
-Equivalent to slurm input <code>--cpus-per-task</code> or environment
-variable <code>${SLURM_CPUS_PER_TASK}</code></td>
-</tr>
-<tr class="odd">
-<td style="width: 185.953px"><code>-nn &lt;tasks&gt;</code></td>
-<td style="width: 256.047px">Number of tasks
-total. <code>--ntasks</code> or <code>${SLURM_NTASKS}</code></td>
-</tr>
-<tr class="even">
-<td style="width: 185.953px"><code>-nnhost &lt;tasks&gt;</code></td>
-<td style="width: 256.047px">Number of tasks per node.
-<code>--ntasks-per-node</code> <code>${SLURM_NTASKS_PER_NODE}</code></td>
-</tr>
-<tr class="odd">
-<td
-style="width: 185.953px"><code>-f &lt;path to hostlist&gt;</code></td>
-<td style="width: 256.047px">Host file. You wont't need to set this in
-most circumstances.</td>
-</tr>
-</tbody>
-</table>
+|                         |                                                                                                                                  |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `-mpibootstrap slurm`   |  Instructs COMSOL to get it's settings from SLURM                                                                                |
+| `-np <cpus>`            | Number of CPUs to use in each task. Equivalent to slurm input `--cpus-per-task` or environment variable `${SLURM_CPUS_PER_TASK}` |
+| `-nn <tasks>`           | Number of tasks total. `--ntasks` or `${SLURM_NTASKS}`                                                                           |
+| `-nnhost <tasks>`       | Number of tasks per node. `--ntasks-per-node` `${SLURM_NTASKS_PER_NODE}`                                                         |
+| `-f <path to hostlist>` | Host file. You wont't need to set this in most circumstances.                                                                    |
 
 #  
 

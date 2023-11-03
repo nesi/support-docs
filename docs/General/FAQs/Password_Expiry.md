@@ -20,7 +20,7 @@ zendesk_section_id: 360000039036
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 NeSI passwords expire after two years.  The prompt you will see when
-that happens is<span class="token"></span>
+that happens is
 
     Password expired. Change your password now.
     First Factor (Current Password): 

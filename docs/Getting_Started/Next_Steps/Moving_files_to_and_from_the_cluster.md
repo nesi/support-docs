@@ -32,15 +32,43 @@ zendesk_section_id: 360000189716
 >
 > -   Have an [active account and
 >     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-> -   Have a [SSH connection to a NeSI
->     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335),
->     and [set up as
->     recommended.](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
 
 Find more information on the different types of directories
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
 
+ 
+
+# Using the Jupyter interface
+
+ 
+
+Many users have found the [Jupyter
+interface](https://support.nesi.org.nz/hc/en-gb/articles/360001555615-Jupyter-on-NeSI)
+very useful for running code on NeSI. The Jupyter interface only
+requires a web browser; the instructions are same whether your are
+connecting from a Windows, Mac or a Linux computer.
+
+To upload a file, click on the 
+
+![](../../assets/images/.7328082899471)
+
+button, near the top left and generally under the Run button.
+
+To download a file, navigate the file browser on the left and
+right-click on the file to see the menu below,
+
+![](../../assets/images/.7328134296079)
+
+The Download button is at the bottom.
+
+ 
+
+ 
+
 # Standard Terminal
+
+**Requirements**: have SSH [configured as
+recommended](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
 
 In a local terminal the following commands can be used to:
 
@@ -83,7 +111,7 @@ This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../../assets/images/mceclip0.png)
+![mceclip0.png](../../assets/images/.360003129656)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -96,7 +124,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/2019-01-07_SCP_in_MobaXTerm.png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/.360001503115)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided

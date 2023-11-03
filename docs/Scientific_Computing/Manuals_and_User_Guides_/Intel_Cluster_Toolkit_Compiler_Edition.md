@@ -34,36 +34,13 @@ The Intel Cluster Toolkit Compiler Edition home page is at
 
 ## Packages with modules
 
-<table>
-<thead>
-<tr class="header">
-<th>Module</th>
-<th>NeSI Cluster</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>intel/2017a</td>
-<td>pan</td>
-</tr>
-<tr class="even">
-<td>intel/2015a</td>
-<td>pan</td>
-</tr>
-<tr class="odd">
-<td>intel/2015.02</td>
-<td>pan</td>
-</tr>
-<tr class="even">
-<td>intel/ics-2013</td>
-<td>pan</td>
-</tr>
-<tr class="odd">
-<td>intel/2011-64bit</td>
-<td>pan</td>
-</tr>
-</tbody>
-</table>
+| Module           | NeSI Cluster |
+|------------------|--------------|
+| intel/2017a      | pan          |
+| intel/2015a      | pan          |
+| intel/2015.02    | pan          |
+| intel/ics-2013   | pan          |
+| intel/2011-64bit | pan          |
 
 # Licensing requirements
 

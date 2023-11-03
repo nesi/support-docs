@@ -145,21 +145,9 @@ gives the best performance.
 Be explicit by using --hint and setting OMP\_PROC\_BIND and OMP\_PLACES.
 In many cases we expect one of the following to work best:
 
-<table style="height: 50px;" width="688">
-<tbody>
-<tr class="odd">
-<td style="width: 168px">1 thread per core</td>
-<td style="width: 169px">--hint=nomultithread</td>
-<td style="width: 169px">OMP_PROC_BIND=true</td>
-<td style="width: 169px">OMP_PLACES=cores</td>
-</tr>
-<tr class="even">
-<td style="width: 168px">2 threads per core</td>
-<td style="width: 169px">--hint=multithread</td>
-<td style="width: 169px">OMP_PROC_BIND=true</td>
-<td style="width: 169px">OMP_PLACES=threads</td>
-</tr>
-</tbody>
-</table>
+|                    |                      |                      |                     |
+|--------------------|----------------------|----------------------|---------------------|
+| 1 thread per core  | --hint=nomultithread | OMP\_PROC\_BIND=true | OMP\_PLACES=cores   |
+| 2 threads per core | --hint=multithread   | OMP\_PROC\_BIND=true | OMP\_PLACES=threads |
 
 Let us know if you find other settings to work better for you.

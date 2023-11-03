@@ -109,22 +109,11 @@ the GPU):
     time srun --ntasks=1 --cpus-per-task=1 ./total
     time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 
-<table style="height: 104px;" width="417">
-<tbody>
-<tr class="odd">
-<td style="width: 194.5px"><p>executable</p></td>
-<td style="width: 199.5px">time [s]</td>
-</tr>
-<tr class="even">
-<td style="width: 194.5px">total</td>
-<td style="width: 199.5px">7.6</td>
-</tr>
-<tr class="odd">
-<td style="width: 194.5px">totalAccGpu</td>
-<td style="width: 199.5px">0.41</td>
-</tr>
-</tbody>
-</table>
+|             |            |
+|-------------|------------|
+| executable  | time \[s\] |
+| total       | 7.6        |
+| totalAccGpu | 0.41       |
 
  
 

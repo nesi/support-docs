@@ -28,40 +28,12 @@ cluster. They prepare the environment you need to run an application.
 
 For a full list of module commands run man module
 
-<table style="height: 110px; width: 861.4px;">
-<tbody>
-<tr class="odd">
-<td
-style="width: 275px"><code>module spider [ &lt;string&gt; ]</code></td>
-<td style="width: 301.4px">List all modules whose names, including
-version strings, contain <code>&lt;string&gt;</code>. If the
-<code>&lt;string&gt;</code> argument is not supplied, list all available
-modules. (only on Mahuika)</td>
-</tr>
-<tr class="even">
-<td style="width: 275px"><code>module show &lt;string&gt;</code></td>
-<td style="width: 301.4px">Show the contents of the module given
-by <code>&lt;string&gt;</code>. If only the module name (e.g.
-<code>Python</code>) is given, show the default module of that name. If
-both name and version are given, show that particular version
-module.</td>
-</tr>
-<tr class="odd">
-<td style="width: 275px"><code>module load &lt;string&gt;</code></td>
-<td style="width: 301.4px">Load the module (name and version) given
-by <code>&lt;string&gt;</code>. If no version is given, load the default
-version.</td>
-</tr>
-<tr class="even">
-<td
-style="width: 275px"><code>module list [ &lt;string&gt; ]</code></td>
-<td style="width: 301.4px">List all currently loaded modules whose
-names, including version strings, contain <code>&lt;string&gt;</code>.
-If the <code>&lt;string&gt;</code> argument is not supplied, list all
-currently loaded modules.</td>
-</tr>
-</tbody>
-</table>
+|                              |                                                                                                                                                                                                                       |
+|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `module spider [ <string> ]` | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)                                                |
+| `module show <string>`       | Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module. |
+| `module load <string>`       | Load the module (name and version) given by `<string>`. If no version is given, load the default version.                                                                                                             |
+| `module list [ <string> ]`   | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.                                          |
 
 ## Slurm
 
@@ -73,15 +45,13 @@ needed by our job scheduler *Slurm.*
 
 Create a new file and open it with nano myjob.sl
 
-``` nohighlight
-#!/bin/bash -e
-#SBATCH --job-name=SerialJob # job name (shows up in the queue)
-#SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
-#SBATCH --mem=512MB          # Memory in MB
-#SBATCH --qos=debug          # debug QOS for high priority job tests
+    #!/bin/bash -e
+    #SBATCH --job-name=SerialJob # job name (shows up in the queue)
+    #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
+    #SBATCH --mem=512MB          # Memory in MB
+    #SBATCH --qos=debug          # debug QOS for high priority job tests
 
-pwd # Prints working directory
-```
+    pwd # Prints working directory
 
 Copy in the above text and save and exit the text editor with 'ctrl +
 x'.
@@ -109,9 +79,7 @@ jobs, but is limited to one small job per user at a time: no more than
 
 Jobs are submitted to the scheduler using:
 
-``` nohighlight
-sbatch myjob.sl
-```
+    sbatch myjob.sl
 
 You should receive an output
 
@@ -127,9 +95,7 @@ Documentation](https://slurm.schedmd.com/sbatch.html)
 
 The currently queued jobs can be checked using 
 
-``` nohighlight
-squeue
-```
+    squeue
 
 You can filter to just your jobs by adding the flag
 

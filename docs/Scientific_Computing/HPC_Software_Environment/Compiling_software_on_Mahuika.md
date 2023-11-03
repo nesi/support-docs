@@ -105,60 +105,22 @@ Compilers are provided for Fortran, C, and C++. For MPI-parallelised
 code, different compilers typically need to be used. The different
 **compilers** are listed:
 
-<table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Language</th>
-<th>Cray</th>
-<th>Intel</th>
-<th>GNU</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fortran</td>
-<td>ftn</td>
-<td>ifort</td>
-<td>gfortran</td>
-</tr>
-<tr class="even">
-<td>Fortran + MPI</td>
-<td>ftn</td>
-<td>mpiifort</td>
-<td>mpif90</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>cc</td>
-<td>icc</td>
-<td>gcc</td>
-</tr>
-<tr class="even">
-<td>C + MPI</td>
-<td>cc</td>
-<td>mpiicc</td>
-<td>mpicc</td>
-</tr>
-<tr class="odd">
-<td>C++</td>
-<td>CC</td>
-<td>icpc</td>
-<td>g++</td>
-</tr>
-<tr class="even">
-<td>C++ + MPI</td>
-<td>CC</td>
-<td>mpiicpc</td>
-<td>mpicxx</td>
-</tr>
-</tbody>
-</table>
+  -----------------------------------------------------------------------------
+  Language    Cray                  Intel                 GNU
+  ----------- --------------------- --------------------- ---------------------
+  Fortran     ftn                   ifort                 gfortran
+
+  Fortran +   ftn                   mpiifort              mpif90
+  MPI                                                     
+
+  C           cc                    icc                   gcc
+
+  C + MPI     cc                    mpiicc                mpicc
+
+  C++         CC                    icpc                  g++
+
+  C++ + MPI   CC                    mpiicpc               mpicxx
+  -----------------------------------------------------------------------------
 
 **Note**, Cray uses compiler wrappers which are described [later in more
 detail](#cray-programming-environment).
@@ -180,94 +142,35 @@ change them if you decide to switch compilers. The following table
 provides a list of commonly used compiler **options** for the different
 compilers:
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Group</th>
-<th>Cray</th>
-<th>Intel</th>
-<th>GNU</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Debugging</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g</code>
-or <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-G{0,1,2,fast}</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g</code>
-or <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-debug [keyword]</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g or -g{0,1,2,3}</code></td>
-<td>Set level of debugging information, some levels may disable certain
-compiler optimisations</td>
-</tr>
-<tr class="even">
-<td>Light compiler optimisation</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
-<td> </td>
-</tr>
-<tr class="odd">
-<td>Aggressive compiler optimisation</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -hfp3</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -ipo</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -ffast-math -funroll-loops</code></td>
-<td>This may affect numerical accuracy</td>
-</tr>
-<tr class="even">
-<td>Architecture specific optimisation</td>
-<td>Load this module first: <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">module load craype-broadwell</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-xHost</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-march=native -mtune=native</code></td>
-<td>Build and compute nodes have the same architecture (Broadwell)</td>
-</tr>
-<tr class="odd">
-<td>Vectorisation reports</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-hlist=m</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-qopt-report</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopt-info-vec</code>
-or <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopt-info-missed</code></td>
-<td> </td>
-</tr>
-<tr class="even">
-<td>OpenMP</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-homp</code>
-(default)</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-qopenmp</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopenmp</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+  ------------------------------------------------------------------------------------------------------------------------
+  Group           Cray                             Intel                GNU                                Notes
+  --------------- -------------------------------- -------------------- ---------------------------------- ---------------
+  Debugging       `-g` or `-G{0,1,2,fast}`         `-g` or              `-g or -g{0,1,2,3}`                Set level of
+                                                   `-debug [keyword]`                                      debugging
+                                                                                                           information,
+                                                                                                           some levels may
+                                                                                                           disable certain
+                                                                                                           compiler
+                                                                                                           optimisations
+
+  Light compiler  `-O2`                            `-O2`                `-O2`                               
+  optimisation                                                                                             
+
+  Aggressive      `-O3 -hfp3`                      `-O3 -ipo`           `-O3 -ffast-math -funroll-loops`   This may affect
+  compiler                                                                                                 numerical
+  optimisation                                                                                             accuracy
+
+  Architecture    Load this module first:          `-xHost`             `-march=native -mtune=native`      Build and
+  specific        `module load craype-broadwell`                                                           compute nodes
+  optimisation                                                                                             have the same
+                                                                                                           architecture
+                                                                                                           (Broadwell)
+
+  Vectorisation   `-hlist=m`                       `-qopt-report`       `-fopt-info-vec` or                 
+  reports                                                               `-fopt-info-missed`                
+
+  OpenMP          `-homp` (default)                `-qopenmp`           `-fopenmp`                         
+  ------------------------------------------------------------------------------------------------------------------------
 
 Additional compiler options are documented in the compiler man pages,
 e.g. `man mpicc`, which are available *after* loading the related

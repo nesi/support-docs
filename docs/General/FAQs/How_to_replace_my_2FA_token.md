@@ -40,15 +40,15 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0.png)
+![](../../assets/images/How_to_replace_my_2FA_token.png)
 
 After 'Delete Token' has been selected:
 
-![](../../assets/images/mceclip1_0_0.png)
+![](../../assets/images/How_to_replace_my_2FA_token_0.png)
 
 You will also receive an email confirmation:
 
-![](../../assets/images/mceclip3.png)
+![](../../assets/images/How_to_replace_my_2FA_token_1.png)
 
 ## Related content
 

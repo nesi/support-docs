@@ -1,0 +1,32 @@
+name: Checks
+on:
+  workflow_dispatch:
+    inputs:
+      fileList:
+          description: 'Files to Lint'
+          required: true
+          type: string
+  workflow_call:
+    inputs:
+      fileList:
+        description: 'Files to Lint'
+        required: true
+        type: string
+jobs:
+  proselint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: pip install proselint
+      - run: |
+          shopt -s globstar extglob
+          proselint -dj ${{inputs.fileList}} 
+  mdlint:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+       - run: npm install -g markdownlint-cli
+       - run: |
+          shopt -s globstar extglob
+          markdownlint -j ${{inputs.fileList}}
+

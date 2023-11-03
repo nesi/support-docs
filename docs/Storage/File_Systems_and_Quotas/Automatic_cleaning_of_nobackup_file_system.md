@@ -143,33 +143,12 @@ keep beyond the scheduled expiry date, you have four options:
 
 ## Where should I put my data?
 
-<table>
-<tbody>
-<tr class="odd">
-<td><strong>How often will my team's HPC jobs be accessing the
-data?</strong></td>
-<td><strong>How often will my team's HPC jobs be modifying the
-data? </strong></td>
-<td><strong>Recommended option </strong></td>
-</tr>
-<tr class="even">
-<td>Often</td>
-<td>Often (at least once every two months)</td>
-<td>Leave in the nobackup directory (but ensure key result data is
-copied to the persistent project directory)</td>
-</tr>
-<tr class="odd">
-<td>Often</td>
-<td>Seldom</td>
-<td>Put in the persistent project directory</td>
-</tr>
-<tr class="even">
-<td>Seldom</td>
-<td>Seldom</td>
-<td><p>Store the data elsewhere (e.g. at your institution)</p></td>
-</tr>
-</tbody>
-</table>
+|                                                              |                                                               |                                                                                                            |
+|--------------------------------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| **How often will my team's HPC jobs be accessing the data?** | **How often will my team's HPC jobs be modifying the data? ** | **Recommended option **                                                                                    |
+| Often                                                        | Often (at least once every two months)                        | Leave in the nobackup directory (but ensure key result data is copied to the persistent project directory) |
+| Often                                                        | Seldom                                                        | Put in the persistent project directory                                                                    |
+| Seldom                                                       | Seldom                                                        | Store the data elsewhere (e.g. at your institution)                                                        |
 
 In general, the persistent project directory should be used for
 reference data, tools, and job submission and management scripts. The
