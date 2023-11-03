@@ -109,50 +109,14 @@ output when you hit it as the reason "*AssocGrpCPURunMinutes"* ) you can
 occupy more nodes simultaneously if your jobs request a shorter time
 limit:
 
-<table style="width: 503.4755859375px;">
-<tbody>
-<tr class="odd" style="height: 43px;">
-<td style="width: 73px; height: 43px"><strong>nodes</strong></td>
-<td style="width: 73px; height: 43px"><strong>hours</strong></td>
-<td style="width: 120px; height: 43px"><strong>node-hours</strong></td>
-<td style="width: 227.4755859375px; height: 43px"><strong>limits
-reached</strong></td>
-</tr>
-<tr class="even" style="height: 14.453857421875px;">
-<td style="width: 73px; height: 14.453857421875px">1</td>
-<td style="width: 73px; height: 14.453857421875px">24</td>
-<td style="width: 120px; height: 14.453857421875px">24</td>
-<td style="width: 227.4755859375px; height: 14.453857421875px">24
-hours</td>
-</tr>
-<tr class="odd" style="height: 21px;">
-<td style="width: 73px; height: 21px">50</td>
-<td style="width: 73px; height: 21px">24</td>
-<td style="width: 120px; height: 21px">1200</td>
-<td style="width: 227.4755859375px; height: 21px">1200 node-hours, 24
-hours</td>
-</tr>
-<tr class="even" style="height: 21px;">
-<td style="width: 73px; height: 21px">100</td>
-<td style="width: 73px; height: 21px">12</td>
-<td style="width: 120px; height: 21px">1200</td>
-<td style="width: 227.4755859375px; height: 21px">1200 node-hours</td>
-</tr>
-<tr class="odd" style="height: 21px;">
-<td style="width: 73px; height: 21px">240</td>
-<td style="width: 73px; height: 21px">5</td>
-<td style="width: 120px; height: 21px">1200</td>
-<td style="width: 227.4755859375px; height: 21px">1200 node-hours, 240
-nodes</td>
-</tr>
-<tr class="even" style="height: 21px;">
-<td style="width: 73px; height: 21px">240</td>
-<td style="width: 73px; height: 21px">1</td>
-<td style="width: 120px; height: 21px">240</td>
-<td style="width: 227.4755859375px; height: 21px">240 nodes </td>
-</tr>
-</tbody>
-</table>
+|           |           |                |                            |
+|-----------|-----------|----------------|----------------------------|
+| **nodes** | **hours** | **node-hours** | **limits reached**         |
+| 1         | 24        | 24             | 24 hours                   |
+| 50        | 24        | 1200           | 1200 node-hours, 24 hours  |
+| 100       | 12        | 1200           | 1200 node-hours            |
+| 240       | 5         | 1200           | 1200 node-hours, 240 nodes |
+| 240       | 1         | 240            | 240 nodes                  |
 
 Most of the time [job
 priority](https://support.nesi.org.nz/hc/en-gb/articles/360000201636) will

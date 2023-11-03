@@ -54,30 +54,13 @@ First you will need to select some dataset by visiting the [CMIP6 search
 interface](https://esgf-node.llnl.gov/search/cmip6/). You can keep most
 default values. In this example we select only:
 
-<table style="height: 149px;" width="471">
-<tbody>
-<tr class="odd">
-<td style="width: 243px">Experiment ID</td>
-<td style="width: 221px">historical</td>
-</tr>
-<tr class="even">
-<td style="width: 243px">Frequency</td>
-<td style="width: 221px">mon</td>
-</tr>
-<tr class="odd">
-<td style="width: 243px">Realm</td>
-<td style="width: 221px">ocean</td>
-</tr>
-<tr class="even">
-<td style="width: 243px">Variable</td>
-<td style="width: 221px">tos</td>
-</tr>
-<tr class="odd">
-<td style="width: 243px">Data Node</td>
-<td style="width: 221px"><span>aims3.llnl.gov</span></td>
-</tr>
-</tbody>
-</table>
+|               |                |
+|---------------|----------------|
+| Experiment ID | historical     |
+| Frequency     | mon            |
+| Realm         | ocean          |
+| Variable      | tos            |
+| Data Node     | aims3.llnl.gov |
 
  
 
@@ -114,17 +97,17 @@ https://auth.globus.org/v2/oauth2/authorize?prompt=login&access\_type=offline&st
 Point your web browser to the above URL (which will be different for
 you).
 
-![globus1.png](../../assets/images/globus1.png)
+There should be an image here but it couldn't be loaded.
 
  
 
 Select Globus Id and say "Allow".
 
-![globus2.png](../../assets/images/globus2.png)
+There should be an image here but it couldn't be loaded.
 
 You will then get a code,
 
-![globus3.png](../../assets/images/globus3.png)
+There should be an image here but it couldn't be loaded.
 
 which you can paste into your terminal, eg
 
@@ -137,63 +120,6 @@ Globus connects different endpoints using a universally unique
 identifier (UUID). This UUID can be retrieved from globus.org. For "NeSI
 Wellington DTN" the UUID is:
 
-3064bb28-e940-11e8-8caa-0a1d4c5c824a
-
- 
-
 ### 3. Initiate the download
-
-``` p1
-python globus_download_20191111_134525.py -e 3064bb28-e940-11e8-8caa-0a1d4c5c824a -u pletzera
-```
-
-If the above fails then you will likely need to activate the globus
-endpoint. If so then go to step 4 and repeat 3.
-
- 
-
-If successful, you should see something like
-
-Message: The transfer has been accepted and a task has been created and
-queued for execution
-
-Task ID: ed4ce06c-04f6-11ea-be98-02fcc9cdd752
-
-You can then check progress of the download by visiting globus.org and
-clicking on "Activity". 
-
-### 4. Activate the globus endpoint (may be required if 3 failed)
-
- This step is required if you got a message such as:
-
-The endpoint could not be auto-activated and must be activated before it
-can be used.
-
-This endpoint supports the following activation methods: web, delegate
-proxy, myproxy
-
- 
-
-'globus endpoint activate --myproxy
-415a6320-e49c-11e5-9798-22000b9da45e'
-
- 
-
-The error message should give you the proxy string. 
-
-``` p1
-globus endpoint activate --myproxy 415a6320-e49c-11e5-9798-22000b9da45e
-```
-
-Enter your globus username and password:
-
-``` p1
-Myproxy username: pletzer 
-Myproxy password: 
-```
-
-###  
-
- 
 
  

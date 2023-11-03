@@ -79,19 +79,8 @@ offloads to the GPU):
     time srun --ntasks=1 --cpus-per-task=1 ./total
     time srun --ntasks=1 --cpus-per-task=1 --partition=gpu --gres=gpu:1 ./totalOmpGpu
 
-<table style="height: 92px;" width="408">
-<tbody>
-<tr class="odd">
-<td style="width: 197px"><p>executable</p></td>
-<td style="width: 204px">time [s]</td>
-</tr>
-<tr class="even">
-<td style="width: 197px">total</td>
-<td style="width: 204px">10.9</td>
-</tr>
-<tr class="odd">
-<td style="width: 197px">totalOmpGpu</td>
-<td style="width: 204px">0.45</td>
-</tr>
-</tbody>
-</table>
+|             |            |
+|-------------|------------|
+| executable  | time \[s\] |
+| total       | 10.9       |
+| totalOmpGpu | 0.45       |

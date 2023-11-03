@@ -41,52 +41,6 @@ The NeSI cluster machines have been configured to act as Globus Data
 Transfer Nodes (or endpoints). Associate your cluster filesystem with
 the following Globus DTN names:
 
-<table class="table table-striped table-bordered">
-<thead>
-<tr class="header tablesorter-headerRow">
-<th class="tablesorter-header sortableHeader tablesorter-headerUnSorted"
-style="user-select: none" tabindex="0" scope="col"
-data-column="0">Globus DTN</th>
-<th style="user-select: none" tabindex="0" scope="col"
-data-column="1">NeSI Filesystem</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>nesi#pan_auckland</td>
-<td>Pan cluster fileystem</td>
-</tr>
-<tr class="even">
-<td>nesi#otago-dtn01</td>
-<td>High Capacity Research Storage Cluster, U of Otago</td>
-</tr>
-<tr class="odd">
-<td>nesi#otago-dtn02</td>
-<td>High Capacity Research Storage Cluster, U of Otago</td>
-</tr>
-<tr class="even">
-<td>nesi#otago-dtn03</td>
-<td>High Capacity Research Storage Cluster, U of Otago</td>
-</tr>
-<tr class="odd">
-<td>nesi#otago-dtn04</td>
-<td>Otago AWS Endpoint</td>
-</tr>
-<tr class="even">
-<td>nesi#otago-dtn-chc01</td>
-<td>High Capacity Research Storage Cluster, Christchurch Campus</td>
-</tr>
-<tr class="odd">
-<td>nesi#otago-dtn-wlg01</td>
-<td>High Capacity Research Storage Cluster, Wellington Campus</td>
-</tr>
-<tr class="even">
-<td>Plant and Food Research iRODS instance</td>
-<td>Plant and Food Research iRODS instance</td>
-</tr>
-</tbody>
-</table>
-
 ###  
 
 ### 3) Be aware of Globus paths (see [Globus-Paths-Permissions-Storage-Allocation](https://support.nesi.org.nz/hc/en-gb/articles/360000216815-Globus-Paths-Permissions-Storage-Allocation)  if necessary).

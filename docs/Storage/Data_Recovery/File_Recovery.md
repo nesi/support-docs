@@ -28,15 +28,11 @@ Files from you project directory can be found
 in `/nesi/project/.snapshots/` followed by the weekday (capitalised) and
 project code, e.g;
 
-``` nohighlight
-/nesi/project/.snapshots/Sunday/nesi99999/
-```
+    /nesi/project/.snapshots/Sunday/nesi99999/
 
  And for home directory;
 
-``` nohighlight
-/home/username/.snapshots/Sunday/
-```
+    /home/username/.snapshots/Sunday/
 !!! info Warning
 >
 > Files in `/nesi/nobackup/` are not snapshotted.
@@ -46,9 +42,7 @@ project code, e.g;
 Recovering a file or a directory from the snapshot is as simple as
 copying it over, e.g.
 
-``` nohighlight
-cp /nesi/project/.snapshots/Sunday/nesi99999/file.txt /nesi/project/nesi99999/file.txt
-```
+    cp /nesi/project/.snapshots/Sunday/nesi99999/file.txt /nesi/project/nesi99999/file.txt
 !!! info Tip
 >
 > For copying directories use the flag -ir or just -r if you don't want

@@ -76,23 +76,6 @@ partially, quota usage will increase. Be aware that if, in the process
 of decompression, the quota will be exceeded, an error message will be
 displayed
 
-    $ du -h FileA.txt
-    41M FileA.txt
-
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
-
-    $ time mmchattr --compression yes FileA.txt
-    real 0m1.343s
-    user 0m0.002s
-    sys 0m0.000s
-
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
-
-    $ du -h FileA.txt
-    8.0M FileA.txt
-
 ##  
 
 ## Deferred
@@ -107,23 +90,6 @@ by using the same command as above with one extra flag (`-I defer`).
 During this process, there is no change in space occupancy for any of
 the files involved.
 
-    $ du -h FileA.txt
-    41M FileA.txt
-
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
-
-    $ time mmchattr -I defer --compression yes FileA.txt
-    real 0m0.002s
-    user 0m0.002s
-    sys 0m0.000s
-
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
-
-    <bash>$ du -h FileA.txt
-    41M FileA.txt
-
 ####  
 
 ### How to process deferred tagged files
@@ -131,11 +97,9 @@ the files involved.
 Users can process compression/decompression on the tagged files via the
 `mmrestripefile` command (using `-z` flag).
 
-```
-$ mmrestripefile -z FileA.txt
-Scanning FileA.txt
-Scan completed successfully.
-```
+    $ mmrestripefile -z FileA.txt
+    Scanning FileA.txt
+    Scan completed successfully.
 
 # States of a compressed file
 
@@ -143,21 +107,19 @@ Compressed files on Scale filesystems can be in 4 different states
 depending on the extended attributes of the file when manipulated for
 compression. We can check those attributes with the `mmlsattr` command:
 
-```
-$ mmlsattr -L FileA.txt
-file name: FileA.txt
-metadata replication: 1 max 2
-data replication: 1 max 2
-immutable: no
-appendOnly: no
-flags:
-storage pool name: data
-fileset name: home_user001
-snapshot name:
-creation time: Wed Jul 6 00:54:27 2022
-Misc attributes: ARCHIVE
-Encrypted: no
-```
+    $ mmlsattr -L FileA.txt
+    file name: FileA.txt
+    metadata replication: 1 max 2
+    data replication: 1 max 2
+    immutable: no
+    appendOnly: no
+    flags:
+    storage pool name: data
+    fileset name: home_user001
+    snapshot name:
+    creation time: Wed Jul 6 00:54:27 2022
+    Misc attributes: ARCHIVE
+    Encrypted: no
 
 The misc attributes will have or not have a `COMPRESSION` value,
 depending on if the file is or not tagged for compression. In addition,
@@ -182,38 +144,10 @@ re-compressed using the `mmchattr --compression yes` command or the
     because it's not fully compressed the `illcompressed` flag will be
     shown.
 
-        $ mmlsattr -L FileA.txt
-        file name: FileA.txt
-        metadata replication: 1 max 2
-        data replication: 1 max 2
-        immutable: no
-        appendOnly: no
-        flags: illcompressed
-        storage pool name: data
-        fileset name: home_user001
-        snapshot name:
-        creation time: Wed Jul 6 00:54:27 2022
-        Misc attributes: ARCHIVE COMPRESSION (library z)
-        Encrypted: no
-
 -   **Fully compressed** and **tagged** for compression - The file is
     fully compressed to its maximum possible state and because the file
     is tagged for compression, only the misc attribute `COMPRESSION`
     will be shown.
-
-        $ mmlsattr -L FileA.txt
-        file name: FileA.txt
-        metadata replication: 1 max 2
-        data replication: 1 max 2
-        immutable: no
-        appendOnly: no
-        flags:
-        storage pool name: data
-        fileset name: home_user001
-        snapshot name:
-        creation time: Wed Jul 6 00:54:27 2022
-        Misc attributes: ARCHIVE COMPRESSION (library z)
-        Encrypted: no
 
 -   **Full or partially compressed** and **untagged** for compression -
     The file might be fully or partially compressed and in this case
@@ -223,20 +157,6 @@ re-compressed using the `mmchattr --compression yes` command or the
     the flag `illcompressed` will be shown. After full decompression is
     complete the file will become uncompressed and untagged for
     compression.
-
-        $ mmlsattr -L FileA.txt
-        file name: FileA.txt
-        metadata replication: 1 max 2
-        data replication: 1 max 2
-        immutable: no
-        appendOnly: no
-        flags: illcompressed
-        storage pool name: data
-        fileset name: home_user001
-        snapshot name:
-        creation time: Wed Jul 6 00:54:27 2022
-        Misc attributes: ARCHIVE
-        Encrypted: no
 
 # Using different compression algorithms
 

@@ -136,42 +136,6 @@ page](https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery "
 
 **4) Where should I store my data on NeSI systems?**
 
-<table data-number-column="false">
-<tbody>
-<tr class="odd">
-<td data-colwidth="226.67"><p><strong>How often will my team's HPC jobs
-be accessing the data?</strong></p></td>
-<td data-colwidth="226.67"><p><strong>How often will my team's HPC jobs
-be modifying the data? </strong></p></td>
-<td data-colwidth="226.67"><p><strong>Recommended
-option </strong></p></td>
-</tr>
-<tr class="even">
-<td data-colwidth="226.67"><p>Often</p></td>
-<td data-colwidth="226.67"><p>Often (at least once every two
-months)</p></td>
-<td data-colwidth="226.67"><p>Store in your
-/nobackup/&lt;projectcode&gt; directory (but ensure key result data is
-copied to the persistent project directory).</p></td>
-</tr>
-<tr class="odd">
-<td data-colwidth="226.67"><p>Often</p></td>
-<td data-colwidth="226.67"><p>Seldom</p></td>
-<td data-colwidth="226.67"><p>Store in your /project/&lt;projectcode&gt;
-directory.</p></td>
-</tr>
-<tr class="even">
-<td data-colwidth="226.67"><p>Seldom</p></td>
-<td data-colwidth="226.67"><p>Seldom</p></td>
-<td data-colwidth="226.67"><p>Apply for an allocation to use NeSI’s <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service"
-title="https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service">long-term
-storage service</a> or store elsewhere (e.g. at your
-institution).</p></td>
-</tr>
-</tbody>
-</table>
-
 In general, the **project directory** should be used for reference data,
 tools, and job submission and management scripts. The **nobackup
 directory** should be used for holding large reference working datasets

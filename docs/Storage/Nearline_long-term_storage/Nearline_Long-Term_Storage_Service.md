@@ -30,57 +30,6 @@ Nearline Nearline Nearline Nearline
 
  
 
-NeSI's Nearline service allows you to store your data on our
-hierarchical system, which consists of a staging area (disk) connected
-to a tape library. Users of this service gain access to more persistent
-storage space for their research data, in return for slower access to
-those files that are stored on tape. We recommend that you use this
-service for larger datasets that you will only need to access
-occasionally and will not need to change in situ. The retrieval of data
-may be delayed, due to tape handling, queuing of the nearline backend
-service and size of the data to be ingested or retrieved..
-
-Due to the tape storage backend Nearline is intended for use with
-relatively large files and should not be used for a large number of
-small files. Files smaller than 64 MB will not be accepted for upload
-and should be combined into archive files using `nn_archive_files`,
-`tar` or a similar tool. Likewise, Nearline write semantics are
-different from a normal filesystem - overwriting existing files (e.g.
-when the source data has been updated) is not supported, these must
-first be removed (purged from Nearline) before being written (put to
-Nearline) again.
-
-**IMPORTANT**: A Nearline project gets locked when writing to or
-deleting from it. Until this process is finished no other write or
-delete operation can be performed on the same project and the user will
-see a status message "**project locked by none**".
-
-# What you can do
-
-The client allows you to carry out the following operations:
-
--   View files: View a list of files stored in a Nearline directory.
--   Traverse a directory: View a list of files stored in a Nearline
-    directory, including files stored in all its subdirectories.
--   Put: Copy files from your project or nobackup folder into Nearline.
--   Get: Retrieve files from Nearline into your project or nobackup
-    folder, without deleting them from Nearline.
--   Compare the contents of a local directory with the contents of a
-    Nearline directory.
--   Purge: Delete files stored in Nearline.
--   View job status: View a list of jobs (put/get/purge) you have run,
-    along with their status.
--   View quota: View your Nearline quota and usage.
-
-# Getting started
-
-Nearline has a common tool for access, with a set of `nl*` commands,
-which are accessible by loading the following module:
-
-    module load nearline
-
- 
-
 # Viewing files in nearline
 
 With the following command, you can print the list of files and
@@ -462,8 +411,6 @@ locked until the task is finished.
 With the command `nlquotalist`, the usage and limits of a Nearline
 project quota can be listed:
 
-    nlquotalist <projectID>
-
 The output looks like:
 
     $ nlquotalist nesi12345
@@ -482,7 +429,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../../assets/images/360002703556.name_me.png)
+![librarian\_get\_put.jpeg](../../assets/images/.360002703556)
 
 # Underlying mechanism
 
