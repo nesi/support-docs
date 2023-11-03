@@ -26,8 +26,9 @@ jobs:
      steps:
        - uses: actions/checkout@v3
        - uses: actions/setup-node@v3
-       - run: npm install markdownlint
+       - run: npm --loglevel verbose install markdownlint  
        - run: |
+          ls /usr/local/bin
           shopt -s globstar extglob
           markdownlint ${{inputs.fileList}}
 
