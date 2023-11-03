@@ -28,7 +28,8 @@ jobs:
        - uses: actions/setup-node@v3
        - run: npm --loglevel verbose install markdownlint  
        - run: |
-          ls /usr/local/bin
+          ls -latr ./node_modules/.bin
+          npm bin
           shopt -s globstar extglob
           markdownlint ${{inputs.fileList}}
 
