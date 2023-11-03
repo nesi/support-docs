@@ -2,7 +2,7 @@ name: Check Changed Files
 on:
   push:
     paths:
-      - docs/*.md
+      - docs/**/*.md
 jobs:
   runChecks:
     uses: ./.github/workflows/checks.yml
