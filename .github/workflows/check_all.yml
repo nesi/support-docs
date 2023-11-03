@@ -1,0 +1,19 @@
+name: Lint All Files
+on:
+  workflow_dispatch
+env:
+  MODULE_LIST_PATH: docs/assets/module-list.json
+jobs:
+  runChecks:
+    uses: ./.github/workflows/checks.yml
+    with:
+      fileList: "**.md"
+  deployStrict:
+     name: Attempts to deploy to Pages verbosely and strict
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
+       - run: pip install -r requirements.txt
+       - run: mkdocs gh-deploy -b gh-pages-test --strict --dirty --verbose 
