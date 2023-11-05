@@ -4,12 +4,16 @@ import sys
 import proselint
 from proselint import config
 
+"""
+Modify proselint outputs into a format recognised by github actions.
+"""
+
 files = sys.argv[1:]
 
 ret_code = 0
 proselint.config.default["checks"]["hyperbole.misc"] = False
 
-for file in files: 
+for file in files:
     with open(file, "r", encoding="utf8") as f:
         for notice in proselint.tools.lint(f.read(), config=config.default):
             if (notice[7] == "error"):
