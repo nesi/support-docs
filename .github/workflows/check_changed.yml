@@ -3,8 +3,20 @@ on:
   push:
     paths:
       - docs/**/*.md
-jobs:
+jobs: 
+  getDiff: # Bit messy to check repo out again. But easier than rethinking this.
+    name: Attempts to deploy to Pages verbosely and strict
+    runs-on: ubuntu-latest
+    outputs:
+      fileList: ${{ steps.diff.outputs.fileList }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2 # To get proper history.
+      - id: diff 
+        run: echo "fileList=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA **/*.md)" >> "$GITHUB_OUTPUT"
   runChecks:
+    needs: getDiff
     uses: ./.github/workflows/checks.yml
     with:
-      fileList: "" # Empty file list will use git diff.
+      fileList: ${{needs.getDiff.outputs.fileList}}
