@@ -1,21 +1,36 @@
-# Header 1 
-## Header 2 
-### Header 3 
+# Specification
+
+## Formatting
+
+### Headers
+
 #### Header 4
 
 ```md
-# Header 1 
-## Header 2
-### Header 3
-#### Header 4
+# Specification (H1)
+
+## Formatting (H2)
+
+### Headers (H3)
+
+#### Sub Header (H4)
 ```
 
-## Text Emphasis
+Headers should have a blank line before and after.
+
+'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
+
+See [Title](#title) for more info.
+
+'H2' (`##`) Should be the top level nav for table of contents.
+
+### Text Emphasis
 
 **bold**: `**bold**`
+
 _italic_: `_italic`
 
-## Tab Containers
+### Tab Containers
 
 === "Tab One"
     someting in the tab
@@ -29,7 +44,7 @@ _italic_: `_italic`
     something else
 ```
 
-## Admonations
+### Admonations
 
 === "Note"
     !!! note
@@ -129,7 +144,7 @@ _italic_: `_italic`
     ```
 _Note for future, once decided which of these we will use, remove the others. And give description of when to use._
 
-## Code
+### Code
 
 Code blocks require a language lexxer in order to do syntax hilighting, e.g. `python` ,`slurm`, `cuda`, `json`, `md`.
 [A full list of lexxers can be found in this list](https://pygments.org/languages/).
@@ -146,7 +161,7 @@ May want to add formatting to this later.
 some code 
 ```
 
-### Block
+#### Block
 
 ```py
 import somepackage
@@ -165,17 +180,17 @@ if formatting:
 <span>```</span>
 </code></pre>
 
-### Inline
+#### Inline
 
-`echo "Hello World"`
+This is some `echo "Inline Code"`.
 
-<pre><code><span>`echo "Hello World"`</span></code></pre>
+<pre><code><span>This is some `echo "Inline Code"`.</span></code></pre>
 
-### Keyboard
+#### Keyboard
 
 Keyboard keys can be added using the `<kbd>` tag.
 
-Press <kbd>ctrl</kbd>+<kbd>c</kbd> to copy text from terminal.
+Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 
 ```md
 Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
@@ -183,7 +198,7 @@ Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 
 Note the additional spacing around the `+` else it will appear cramped.
 
-## Images
+### Images
 
 ```md
 ![This is an image]("assets/images/FENSAP_GUI1.png")
@@ -191,7 +206,7 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 ![This is an image]("assets/images/FENSAP_GUI1.png")
 
-## Links
+### Links
 
 [External Link]("https://example.com")
 
@@ -207,7 +222,14 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 ```
 
-## Tooltips
+[Anchor Link](#links)
+
+```md
+[Anchor Link](#links)
+
+```
+
+### Tooltips
 
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 
@@ -220,12 +242,75 @@ Acroynym should be automatically tooltipped e.g. MPI.
 ```md
 Acroynym should be automatically tooltipped e.g. MPI.
 ```
+
+## Structure
+
+Public facing articles are found in the `docs` folder. Any markdown files inside will be rendered, any directory will be subcategories.
+Pages can be excluded from being shown in the nav by adding them to `mkdocs.yml: not_in_nav`, as in the case of `includes`.
+
+By default, all categories are a group only (e.g. they have nothing rendered, only children),
+However, if the folder contains an `index.md` file, it will be rendered instead.
+
+### Article Name/Location
+
+An articles location is determined by its location in the `docs` directory.
+Article file can be nested up to two folders deep, and use the title name, in snake_case.
+
+### Title
+
+Article title is determined in order of preference,
+
+- A title defined in the 'title' meta-data.
+- A level 1 Markdown header on the first line of the document body.
+- The filename of a document.
+
+### Meta
+
+Article metadata is yaml format at the top of the page between two `---`
+
+#### Mkdocs Parameters
+
+- `template` : which [template](#templates) to use.
+- `title`    : [title](#title).
+
+#### Material Parameters
+
+- `description` : used for site meta.
+- `icon`        : page icon.
+- `status`      : `new`, `deprecated`.
+
+#### Custom Parameters
+
+- `prereq`      : List of prerequisites. Formatted in markdown. Will be rendered inside a admonation.
+- `postreq`     : List of what next. Formatted in markdown. Will be rendered inside a admonation.
+
+#### Zendesk Imported
+
+Not used for anything currently. Info imported from Zendesk Page.
+
+- `created_at`:
+- `hidden`:
+- `label_names`: []
+- `position`:
+- `vote_count`:
+- `vote_sum`:
+- `zendesk_article_id`:
+- `zendesk_section_id`:
+
+## Templates
+
+Template can be set in article meta.
+
+- `main`                : Used for regular pages (default).
+- `application`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).
+- `supportedApplication`: For supported applications page.
+- `home`                : Homepage.
+
+By default, the `main` theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.
 
 ## Accessability standards
 
 - [nz spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
 - [WCAG spec](https://www.w3.org/TR/WCAG21/)
-
-
 
 {{ macros_info() }}
