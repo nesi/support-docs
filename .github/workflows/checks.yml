@@ -18,7 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: pip install proselint
-      - run: echo ${{inputs.fileList}}
       - run: |
           echo "Running ProseLint"
           shopt -s globstar extglob
