@@ -7,4 +7,4 @@ jobs:
   runChecks:
     uses: ./.github/workflows/checks.yml
     with:
-      fileList: "$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA **/*.md)" 
+      fileList: "" # Empty file list will use git diff.
