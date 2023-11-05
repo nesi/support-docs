@@ -264,6 +264,28 @@ Article title is determined in order of preference,
 - A level 1 Markdown header on the first line of the document body.
 - The filename of a document.
 
+### Headers
+
+Unless setting a title, the first 'real' header will be an H2.
+It's fine to have text before the first header if it is relevent to the entire page.
+
+No skipping levels, e.g.
+
+```
+H2
+H3
+H4
+```
+
+never 
+
+```
+H2
+H4
+```
+
+Try to avoid only-child headers (e.g shares a parent with at least one other header)
+
 ### Meta
 
 Article metadata is yaml format at the top of the page between two `---`
