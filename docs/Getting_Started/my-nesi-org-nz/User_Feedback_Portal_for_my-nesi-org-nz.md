@@ -19,21 +19,8 @@ zendesk_section_id: 360001059296
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
- 
-
-We are excited to hear your feedback on **https://my.nesi.org.nz**.
-
-We invite you [to share feedback, ideas, suggestions with us using a
-product
-portal](https://portal.productboard.com/nesi/11-my-nesi-org-nz/tabs/31-released).
-🤔  
-See our support article for more details on [how the product portal
-works](https://support.nesi.org.nz/hc/en-gb/articles/360001504596).
-
-In order for us to better understand why this is important for you, tell
-us a bit about what you are trying to achieve and why you’re looking for
-this?
-
-Most of the improvements we make come from ideas and suggestions like
-yours,  
-so thank you!
+<p> </p>
+<p>We are excited to hear your feedback on <strong>https://my.nesi.org.nz</strong>.</p>
+<p>We invite you <a class="external-link" href="https://portal.productboard.com/nesi/11-my-nesi-org-nz/tabs/31-released" target="_blank" rel="noopener">to share feedback, ideas, suggestions with us using a product portal</a>. 🤔<br>See our support article for more details on <a href="https://support.nesi.org.nz/hc/en-gb/articles/360001504596" target="_blank" rel="noopener">how the product portal works</a>.</p>
+<p>In order for us to better understand why this is important for you, tell us a bit about what you are trying to achieve and why you’re looking for this?</p>
+<p>Most of the improvements we make come from ideas and suggestions like yours,<br>so thank you!</p>

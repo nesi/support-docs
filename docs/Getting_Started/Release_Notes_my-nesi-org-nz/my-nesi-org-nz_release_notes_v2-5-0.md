@@ -20,16 +20,15 @@ zendesk_section_id: 360001091155
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 03. November 2021
-
-## New and Improved
-
--   Introducing allocation renewal requests for project owners to be
-    made from my.nesi.org.nz
--   Apply for Access form changes
--   Allowing password reset regardless of current project membership 
-
-## Fixes
-
--   Improved reliability to manage project members (so changes will be
-    reflected in the HPC system in 30-60 minutes)
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 03. November 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li data-stringify-indent="0" data-stringify-border="0">Introducing allocation renewal requests for project owners to be made from my.nesi.org.nz</li>
+<li data-stringify-indent="0" data-stringify-border="0">Apply for Access form changes</li>
+<li data-stringify-indent="0" data-stringify-border="0">Allowing password reset regardless of current project membership </li>
+</ul>
+<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
+<ul>
+<li>
+<span>Improved reliability to manage project members</span> (so changes will be reflected in the HPC system in 30-60 minutes)</li>
+</ul>

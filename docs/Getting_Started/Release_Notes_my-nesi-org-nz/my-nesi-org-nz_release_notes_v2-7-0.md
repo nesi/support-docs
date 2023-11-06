@@ -20,14 +20,16 @@ zendesk_section_id: 360001091155
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 15. March 2022
-
-## New and Improved
-
--   Notify users mentioned in project applications (if there is no NeSI
-    account linked to the users email address).
-
--   Send email notification to affected users when project membership
-    status is changed (by the project owner).
-
--   Added optional banner for e.g. holiday announcements.
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 15. March 2022</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>
+<p data-renderer-start-pos="601">Notify users mentioned in project applications (if there is no NeSI account linked to the users email address).</p>
+</li>
+<li>
+<p data-renderer-start-pos="723">Send email notification to affected users when project membership status is changed (by the project owner).</p>
+</li>
+<li>
+<p data-renderer-start-pos="822">Added optional banner for e.g. holiday announcements.</p>
+</li>
+</ul>

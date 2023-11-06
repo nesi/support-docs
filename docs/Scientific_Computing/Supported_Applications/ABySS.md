@@ -24,29 +24,12 @@ zendesk_section_id: 360000040076
 
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
-
-ABySS ("**A**ssembly **By** **S**hort **S**equences") is a *de novo*,
-parallel, paired-end sequence assembler.
-
-The ABySS home page is at
-<http://www.bcgsc.ca/platform/bioinfo/software/abyss>.
-
-ABySS is made available at no cost for non-commercial use under the
-terms of [version 3 of the GNU General Public
-Licence](http://www.gnu.org/licenses/gpl-3.0.html) or, at the option of
-the user, any later version of the same licence. Researchers intending
-to use ABySS for commercial purposes should contact [Patrick
-Rebstein](mailto:prebstein@bccancer.bc.ca). For more details, including
-the full text of the licence, please consult the `LICENSE` file located
-in the `share/doc/abyss` subdirectory of the ABySS installation
-directory.
-
-# Example scripts
-
-## Example script for the Pan cluster
-
-``` bash
-#!/bin/bash -e
+<p>ABySS ("<strong>A</strong>ssembly <strong>By</strong> <strong>S</strong>hort <strong>S</strong>equences") is a <em>de novo</em>, parallel, paired-end sequence assembler.</p>
+<p>The ABySS home page is at <a href="http://www.bcgsc.ca/platform/bioinfo/software/abyss">http://www.bcgsc.ca/platform/bioinfo/software/abyss</a>.</p>
+<p>ABySS is made available at no cost for non-commercial use under the terms of <a href="http://www.gnu.org/licenses/gpl-3.0.html">version 3 of the GNU General Public Licence</a> or, at the option of the user, any later version of the same licence. Researchers intending to use ABySS for commercial purposes should contact <a href="mailto:prebstein@bccancer.bc.ca">Patrick Rebstein</a>. For more details, including the full text of the licence, please consult the <code>LICENSE</code> file located in the <code>share/doc/abyss</code> subdirectory of the ABySS installation directory.</p>
+<h1 id="example-scripts">Example scripts</h1>
+<h2 id="example-script-for-the-pan-cluster">Example script for the Pan cluster</h2>
+<pre><code class="bash">#!/bin/bash -e
 
 #SBATCH --job-name        ABySS_job
 #SBATCH --account         nesi99999
@@ -66,4 +49,4 @@ module load ABySS/2.0.1-foss-2015a
 # See https://github.com/bcgsc/abyss#parallel-processing for details.
 
 abyss-pe name=ecoli k=64 in='reads1.fa reads2.fa'
-```
+</code></pre>

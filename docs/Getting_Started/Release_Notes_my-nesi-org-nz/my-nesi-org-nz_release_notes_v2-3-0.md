@@ -20,13 +20,11 @@ zendesk_section_id: 360001091155
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 16. August 2021
-
-## New and Improved
-
--   Added project member list to project details view
--   Added ability to manage project members (add/remove, assign
-    role) for project owners
--   Added feedback link to the 'user name' menu
-
- 
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 16. August 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>Added project member list to project details view</li>
+<li>Added ability to manage project members (add/remove, assign role) for project owners</li>
+<li>Added feedback link to the 'user name' menu</li>
+</ul>
+<p> </p>

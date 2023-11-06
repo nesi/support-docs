@@ -20,12 +20,12 @@ zendesk_section_id: 360001150156
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 31. March 2022
-
-## New and Improved
-
--   Updated JupyterLab version
-    to `JupyterLab/.2022.2.0-gimkl-2020a-3.2.8`
--   Added user guidance on options (when launching a server instance)
--   Updated available GPU options
--   Added links to NeSI documentation
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 31. March 2022</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li data-stringify-indent="0" data-stringify-border="0">Updated JupyterLab version to<span> </span><code class="c-mrkdwn__code" data-stringify-type="code">JupyterLab/.2022.2.0-gimkl-2020a-3.2.8</code>
+</li>
+<li data-stringify-indent="0" data-stringify-border="0">Added user guidance on options (when launching a server instance)</li>
+<li>Updated available GPU options</li>
+<li data-stringify-indent="0" data-stringify-border="0">Added links to NeSI documentation</li>
+</ul>

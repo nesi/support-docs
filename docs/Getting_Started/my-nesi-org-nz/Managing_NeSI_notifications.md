@@ -19,8 +19,6 @@ zendesk_section_id: 360001059296
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<https://my.nesi.org.nz/account/preference>
-
- 
-
-There should be an image here but it couldn't be loaded.
+<p><a href="https://my.nesi.org.nz/account/preference">https://my.nesi.org.nz/account/preference</a></p>
+<p> </p>
+<p><img src="https://support.nesi.org.nz/hc/article_attachments/4415126933903" alt="mceclip0.png"></p>

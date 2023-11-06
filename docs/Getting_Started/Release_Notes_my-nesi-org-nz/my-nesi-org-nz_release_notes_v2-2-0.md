@@ -20,18 +20,13 @@ zendesk_section_id: 360001091155
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 21. July 2021
-
-## New and Improved
-
--   Added NeSI allocations list to project details view
--   Improved feedback for users without active projects
--   Improved validation of phone number formats (incl. international
-    prefix)
--   Improved account profile form to create more clarity about mandatory
-    fields
-
-## Fixes
-
-Fixed: made selection of science domain and study more reliable in the
-'apply for access' form.
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 21. July 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>Added NeSI allocations list to project details view</li>
+<li>Improved feedback for users without active projects</li>
+<li>Improved validation of phone number formats (incl. international prefix)</li>
+<li>Improved account profile form to create more clarity about mandatory fields</li>
+</ul>
+<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
+<p><span>Fixed: </span>made selection of science domain and study more reliable in the 'apply for access' form.</p>

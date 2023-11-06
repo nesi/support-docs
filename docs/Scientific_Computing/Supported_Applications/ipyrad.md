@@ -19,73 +19,19 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
-
-**ipyrad**, an interactive assembly and analysis toolkit for
-restriction-site associated DNA (RAD-seq) and related data types. Please
-explore the documentation to find out more about the features of
-ipyrad.\\
-
-Home page is at https://ipyrad.readthedocs.io/en/latest/index.html
-
-## Cite the Manuscript
-
-Eaton DAR & Overcast I. "ipyrad: Interactive assembly and analysis of
-RADseq datasets." Bioinformatics (2020).
-
-## License
-
-GPLv3
-
-## Getting Started
-
-Following **example** uses  rad\_example which can be downloaded as per
-instructions on 
-<https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html> 
-
-    $ curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz
-    $ tar -xvzf ipsimdata.tar.gz
-
-Start by creating a new Assembly  `data1`  , and then we’ll edit the
-params file to tell it how to find the input data files for this data
-set.
-
-    $ module purge
-    $ module load ipyrad/0.9.85-gimkl-2022a-Python-3.10.5
-    $ ipyrad -n data1
-
-    New file 'params-data1.txt' created in ........
-
-`params-data1.txt` will be created on current working directory. Review
-and edit the paths in parameter file to match the destinations of input
-data, barcode paths,etc. 
-
-## Slurm Script for Using Multiple CPUs a Single Compute Node
-
-    #!/bin/bash
-
-    #SBATCH --account       nesi12345
-    #SBATCH --job-name      ipyrad
-    #SBATCH --cpus-per-task 12
-    #SBATCH --time          00:05:00
-    #SBATCH --mem           10G
-    #SBATCH --output        ipyrad_output_%j.txt
-
-    ## assembly name
-    assembly_name="data1"
-
-    ## load environment and module
-    module purge
-    module load ipyrad/0.9.85-gimkl-2022a-Python-3.10.5
-
-    ## create, prepare and change to a job specific dir
-    jobdir="ipyrad_${SLURM_JOB_ID}"
-    params="params-${assembly_name}.txt"
-
-    mkdir $jobdir
-    sed "s#$(pwd) #$(pwd)/$jobdir#" $params > $jobdir/$params
-    cd $jobdir
-
-
-    ## call ipyrad on your params file and perform 7 steps from the workflow
-    srun ipyrad -p $params -s 12 --force 
+<h1><span>Description</span></h1>
+<p><strong>ipyrad</strong><span>, an interactive assembly and analysis toolkit for restriction-site associated DNA (RAD-seq) and related data types. Please explore the documentation to find out more about the features of ipyrad.\</span></p>
+<p><span>Home page is at https://ipyrad.readthedocs.io/en/latest/index.html</span></p>
+<h2 dir="auto">Cite the Manuscript</h2>
+<p dir="auto">Eaton DAR &amp; Overcast I. "ipyrad: Interactive assembly and analysis of RADseq datasets." Bioinformatics (2020).</p>
+<h2 dir="auto">License</h2>
+<p dir="auto">GPLv3</p>
+<h2 dir="auto">Getting Started</h2>
+<p>Following <strong>example</strong> uses  rad_example which can be downloaded as per instructions on  <a href="https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html">https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html</a> </p>
+<pre>$ curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz
+$ tar -xvzf ipsimdata.tar.gz</pre>
+<p><span>Start by creating a new Assembly  <span></span><code>data1</code>  , and then we’ll edit the params file to tell it how to find the input data files for this data set.</span></p>
+<pre><span>$ module purge<br>$ module load ipyrad/0.9.85-gimkl-2022a-Python-3.10.5<br>$ ipyrad -n data1<br><br>New file 'params-data1.txt' created in ........<br><br></span></pre>
+<p><span><code>params-data1.txt</code> will be created on current working directory. Review and edit the paths in parameter file to match the destinations of input data, barcode paths,etc. </span></p>
+<h2><span id="Job_Script_for_Using_Multiple_Cores_on_a_Single_Compute_Node" class="mw-headline">Slurm Script for Using Multiple CPUs a Single Compute Node</span></h2>
+<pre>#!/bin/bash<br><br>#SBATCH --account       nesi12345<br>#SBATCH --job-name      ipyrad<br>#SBATCH --cpus-per-task 12<br>#SBATCH --time          00:05:00<br>#SBATCH --mem           10G<br>#SBATCH --output        ipyrad_output_%j.txt<br><br>## assembly name<br>assembly_name="data1"<br><br>## load environment and module<br>module purge<br>module load ipyrad/0.9.85-gimkl-2022a-Python-3.10.5<br><br>## create, prepare and change to a job specific dir<br>jobdir="ipyrad_${SLURM_JOB_ID}"<br>params="params-${assembly_name}.txt"<br><br>mkdir $jobdir<br>sed "s#$(pwd) #$(pwd)/$jobdir#" $params &gt; $jobdir/$params<br>cd $jobdir<br><br><br>## call ipyrad on your params file and perform 7 steps from the workflow<br>srun ipyrad -p $params -s 12 --force <br><br><br></pre>

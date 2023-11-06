@@ -19,4 +19,4 @@ zendesk_section_id: 360000189696
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-CHANGE /
+<p>CHANGE /</p>

@@ -19,21 +19,9 @@ zendesk_section_id: 360000039036
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-Often when running an [embarrassingly parallel
-problem](https://support.nesi.org.nz/hc/en-gb/articles/360000690275), or
-just lots of jobs at once, the limiting factor on your throughput (work
-you can get done over a set period of time) will likely be the SLURM
-queue rather than the jobs execution time. 
-
-If this is the case, you will get more work done by optimising for
-efficiency rather than speed, and running on a single CPU is almost
-always more efficient than any form of parallelisation. 
-
-<figure>
-There should be an image here but it couldn't be loaded.
-<figure>
-
-</figure>
-<figcaption><em>Four serial tasks run concurrently will finish faster
-than for parallel 4cpu tasks CPUs one after another. </em></figcaption>
+<p>Often when running an <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000690275" target="_self">embarrassingly parallel problem</a>, or just lots of jobs at once, the limiting factor on your throughput (work you can get done over a set period of time) will likely be the SLURM queue rather than the jobs execution time. </p>
+<p>If this is the case, you will get more work done by optimising for efficiency rather than speed, and running on a single CPU is almost always more efficient than any form of parallelisation. </p>
+<figure><img src="https://support.nesi.org.nz/hc/article_attachments/360007328695" alt="4tasks.png">
+<figcaption><em>Four serial tasks run concurrently will finish faster than for parallel 4cpu tasks CPUs one after another. </em></figcaption>
+<figure></figure>
 </figure>

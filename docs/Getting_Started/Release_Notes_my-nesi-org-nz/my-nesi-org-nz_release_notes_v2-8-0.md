@@ -20,14 +20,11 @@ zendesk_section_id: 360001091155
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 12. April 2022
-
-## New and Improved
-
--   Improved [NeSI Notification
-    Preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)
-    to be project-specific
-
--   Improved [allocation renewal
-    requests](https://support.nesi.org.nz/hc/en-gb/articles/4600222769295)
-    by providing more context
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 12. April 2022</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>
+<p data-renderer-start-pos="601">Improved <a href="https://support.nesi.org.nz/hc/en-gb/articles/4563294188687" target="_blank" rel="noopener"><span>NeSI Notification Preferences</span></a> to be project-specific</p>
+</li>
+<li>Improved <a href="https://support.nesi.org.nz/hc/en-gb/articles/4600222769295" target="_blank" rel="noopener"><span>allocation renewal requests</span></a> by providing more context</li>
+</ul>

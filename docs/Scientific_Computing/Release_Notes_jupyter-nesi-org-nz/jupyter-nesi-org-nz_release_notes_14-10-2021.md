@@ -20,11 +20,9 @@ zendesk_section_id: 360001150156
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 14. October 2021
-
-## New and Improved
-
--   Changed hub session timeout to 16 hours. Users will be prompted to
-    login again after 16 hrs. aligned with max. wall time for JupyterLab
-    instances. 
--   JupyterHub fixed: improvements to avoid 403 errors
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 14. October 2021</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>Changed hub session timeout to 16 hours. Users will be prompted to login again after 16 hrs. aligned with max. wall time for JupyterLab instances. </li>
+<li data-stringify-indent="0" data-stringify-border="0">JupyterHub fixed: improvements to avoid 403 errors</li>
+</ul>

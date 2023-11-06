@@ -20,11 +20,9 @@ zendesk_section_id: 360001091155
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Release Update - 18. May 2022
-
-## New and Improved
-
--   Improved [allocation renewal
-    requests](https://support.nesi.org.nz/hc/en-gb/articles/4600222769295) default
-    organisation selection
--   Added a sub-section to list open allocation requests
+<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 18. May 2022</h2>
+<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
+<ul>
+<li>Improved<span> </span><a href="https://support.nesi.org.nz/hc/en-gb/articles/4600222769295" target="_blank" rel="noopener"><span>allocation renewal requests</span></a><span> </span>default organisation selection</li>
+<li>Added a sub-section to list open allocation requests</li>
+</ul>

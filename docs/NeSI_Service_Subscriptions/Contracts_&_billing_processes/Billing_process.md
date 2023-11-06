@@ -19,14 +19,6 @@ zendesk_section_id: 7348936006031
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-Charges for Subscription usage are typically invoiced on a quarterly
-basis.  
-  
-If your organisation requires a Purchase Order (PO) Number be used for
-invoices, the PO Number must be provided to us upon signing your
-Subscription service agreement.
-
- 
-
-If you have any questions about Subscription billing processes, don’t
-hesitate to [get in touch](mailto:info@nesi.org.nz).
+<p>Charges for Subscription usage are typically invoiced on a quarterly basis. <br><br>If your organisation requires a Purchase Order (PO) Number be used for invoices, the PO Number must be provided to us upon signing your Subscription service agreement.</p>
+<p> </p>
+<p>If you have any questions about Subscription billing processes, don’t hesitate to<span> </span><a href="mailto:info@nesi.org.nz">get in touch</a>.</p>
