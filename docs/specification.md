@@ -271,7 +271,7 @@ It's fine to have text before the first header if it is relevent to the entire p
 
 No skipping levels, e.g.
 
-```
+```md
 H2
 H3
 H4
@@ -279,7 +279,7 @@ H4
 
 never 
 
-```
+```md
 H2
 H4
 ```
