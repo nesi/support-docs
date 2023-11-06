@@ -1,0 +1,78 @@
+<details class="software list-group-item-action list-group-item list-group-item-application 
+    {% for domain in application.domains -%}list-group-item-application-{{ domain }}{% endfor -%}
+    {% for machine in application.machines -%}list-group-item-application-{{ machine }}{% endfor -%}
+    ">
+    <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
+        data-target="#collapse-{{ application | lower }}" aria-expanded="true">
+        <h4 class="app-list-header">{{ application }}</h4>
+        {% for domain in applications[application].domains -%} 
+            <span onclick="addDomainFilter(&quot;{{ domain }}&quot;)" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-{{ domain }}">{{ domain | capitalize }}</span>
+            </span>
+        {% endfor -%}
+        {% for machine in applications[application].machines -%} 
+            <span onclick="addDomainFilter(&quot;{{ machine }}&quot;)" style="float:right;"
+            title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
+            <span class="badge badge-cluster badge-cluster-{{ machine }}">{{ machine | capitalize }}</span>
+            </span>
+        {% endfor -%}
+        {% if applications[application].licence_type -%}
+            <span class="warning badge badge-licence badge-licence-{{ applications[application].licence_type }}" title="{{ applications[application].licence_type | capitalize }} software. Restrictions may apply." data-toggle="tooltip"> 
+            </span>
+        {% endif -%}
+    </summary>
+    <div>
+        <div class="card-body card-app">
+            <p class="cardbody cardbody-description">{{ applications[application].description }}</p>
+            <!-- <div class="cardbody cardbody-info"> -->
+            <div class="grid cards">
+                <table class="version-table">
+                    <tbody>
+                        <tr class="version-table-row">
+                            <th>Available Versions</th>
+                            <th></th>
+                        </tr>
+                        {% for machine in applications[application].machines -%} 
+                        <tr>
+                            <td>{{ machine | capitalize }}</td>
+                            <td>
+                            <!-- mention default value. -->
+                            {% for version in applications[application].machines[machine].versions -%} 
+                                <span class="badger badger-version">{{ version }}</span>
+                                {{ "<br>" if not loop.last }}
+                            {% endfor %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div>
+                    <span class="bold">Links</span>
+                    <ul class="docLinks-list">
+                    {% if applications[application].homepage or applications[application].url -%}
+                    <li class="support"><span class="twemoji">
+{% include ".icons/material/home.svg" %}</span>
+<a href="{{ applications[application].homepage or applications[application].url }}">
+                    {{ application }} Homepage</a></li>
+                    {% endif -%}
+                    {% if applications[application].support -%}
+                    <li class="support">  {% include ".icons/fontawesome/brands/twitter.svg" %} <a href="{{ applications[application].support }}">NeSI Documentation</a></li>
+                    {% endif -%}
+                    </ul>
+                </div>
+            </div>
+        {% if applications[application].licence_type %}
+        <span>
+            <span class="warning badge badge-licence badge-licence-{{ applications[application].licence_type }}" style="margin-left: -2em;float: left;">
+            </span>
+            <span class="bold">Licence</span>
+            <p>{{ application }} is {{ applications[application].licence_type }} software.</p>
+        {% if applications[application].licences %}
+            <p>Access to a valid licence token is required to run {{ application }}, a list of which can be found 
+            <a href="{{ applications[application].support }}#licences">here</a>.</p>
+        {% endif %}
+        </span">
+        {% endif %}
+    </div>
+</div>
+</details>

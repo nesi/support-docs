@@ -14,7 +14,7 @@
 
                 {% if applications|length > 1 %}
                     {% for application in applications %}
-                        {% include "application.html" %}
+                        {% include "partials/applicationCard.html" %}
                     {% endfor %}
                 {% else %}
                     <p>Whoops, something has gone wrong loading the software list. Please contact support.</p>
