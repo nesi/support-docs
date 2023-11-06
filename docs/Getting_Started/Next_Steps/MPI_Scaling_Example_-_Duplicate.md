@@ -212,7 +212,7 @@ our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
     6054939.ext+   extern          00:06:57    00:00.006    12      44K  COMPLETED 
     6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 
-![MPIscalingMem.png](../../assets/images/MPIscalingMem.png)
+There should be an image here but it couldn't be loaded.
 
 First, looking at the plot of memory usage per task vs CPUs it would at
 appears that memory usage per task remains constant, regardless of how
@@ -234,9 +234,9 @@ memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-|                                                                 |                                                                       |
-|-----------------------------------------------------------------|-----------------------------------------------------------------------|
-| ![MPIscalingSeeds.png](../../assets/images/MPIscalingSeeds.png) | ![MPIscalingSeedsLog.png](../../assets/images/MPIscalingSeedsLog.png) |
+|                                                          |                                                          |
+|----------------------------------------------------------|----------------------------------------------------------|
+| There should be an image here but it couldn't be loaded. | There should be an image here but it couldn't be loaded. |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. As we can see, increasing the number of CPU cores doesn't
@@ -291,7 +291,7 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](../../assets/images/MPIseedsvtime.png)
+There should be an image here but it couldn't be loaded.
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we

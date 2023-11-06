@@ -1,6 +1,6 @@
 ---
 created_at: '2020-01-15T21:56:01Z'
-hidden: true
+hidden: false
 label_names: []
 position: 14
 title: Find execution hot spots with VTune

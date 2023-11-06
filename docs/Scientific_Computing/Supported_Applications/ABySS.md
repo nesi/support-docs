@@ -25,24 +25,11 @@ zendesk_section_id: 360000040076
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-# Description
-
 ABySS ("**A**ssembly **By** **S**hort **S**equences") is a *de novo*,
 parallel, paired-end sequence assembler.
 
 The ABySS home page is at
 <http://www.bcgsc.ca/platform/bioinfo/software/abyss>.
-
-# Available modules
-
-## Packages with modules
-
-| Module                  | NeSI Cluster |
-|-------------------------|--------------|
-| ABySS/2.0.2-gimkl-2017a | pan          |
-| ABySS/2.0.1-foss-2015a  | pan          |
-
-# Licensing requirements
 
 ABySS is made available at no cost for non-commercial use under the
 terms of [version 3 of the GNU General Public
