@@ -33,7 +33,7 @@ zendesk_section_id: 360001091155
 <li class="li1"><span class="s1">Fixed a crash that used to occur when a user wanted to join a project on my.nesi and delete an entry within that project.</span></li>
 <li class="li1">
 <span class="s1"></span>Fixed a security vulnerability in the my.nesi environment related to<span> the libwebp library, a code library used to render and display images in the <em>WebP</em> format.</span> </li>
-<li class="li1">Updated the end date message of the allocation request form, restricting allocation requests to no further than one year in the future.<br><br>
-</li>
+<li class="li1">Updated the allocation request form's end date message, restricting allocation requests to no further than one year in the future.</li>
+<li class="li1">Changed which system components from NeSI's System Status page <em>(<a href="https://status.nesi.org.nz/">https://status.nesi.org.nz/</a>)</em> are default notifications emailed to users. Users can customise their system status email notifications at any time. <a href="https://support.nesi.org.nz/hc/en-gb/articles/8202966997775">Read more about that here</a>.</li>
 </ul>
 <p>If you have any questions about any of the improvements or fixes, please <a href="mailto:support@nesi.org.nz">contact NeSI Support</a>.</p>
