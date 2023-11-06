@@ -32,5 +32,5 @@ jobs:
           echo "Running MarkdownLint"
           shopt -s globstar extglob
           echo ${{inputs.fileList}}
-          markdownlint --disable MD033 --json ${{inputs.fileList}} | checks/parse_markdownlint.py
+          markdownlint --disable MD033 --json ${{inputs.fileList}} 2>&1 | checks/parse_markdownlint.py
 
