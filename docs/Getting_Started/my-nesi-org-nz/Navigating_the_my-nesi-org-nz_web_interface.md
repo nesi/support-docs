@@ -19,13 +19,30 @@ zendesk_section_id: 360001059296
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360006634316/mceclip0.png" alt="mceclip0.png"></p>
-<h2>Main navigation</h2>
-<p><span>The main navigation is in the sidebar and links to important functions can be found at the bottom of the sidebar.</span></p>
-<h3><span>Breadcrumb navigation</span></h3>
-<p><span>A breadcrumb navigation is displayed when viewing sections of the site. <br>Example: Home / Projects / List Project</span></p>
-<h2>Collapsible elements</h2>
-<p>The triple bar (or hamburger) icons allow elements to be collapsed or revealed. The left icon does collapse the sidebar and therefore hides the navigation elements contained.<br>The triple bar on the right is used for future functions.</p>
-<p>The <strong>&lt;</strong> arrow icon on the bottom of the sidebar does minimise the sidebar by reducing the visible content to icons only.</p>
-<h2>Closing the session</h2>
-<p>The 'user name menu' on the top right contains the option to logout and close the session.</p>
+![mceclip0.png](../../assets/images/Navigating_the_my-nesi-org-nz_web_interface.png)
+
+## Main navigation
+
+The main navigation is in the sidebar and links to important functions
+can be found at the bottom of the sidebar.
+
+### Breadcrumb navigation
+
+A breadcrumb navigation is displayed when viewing sections of the
+site.  
+Example: Home / Projects / List Project
+
+## Collapsible elements
+
+The triple bar (or hamburger) icons allow elements to be collapsed or
+revealed. The left icon does collapse the sidebar and therefore hides
+the navigation elements contained.  
+The triple bar on the right is used for future functions.
+
+The **&lt;** arrow icon on the bottom of the sidebar does minimise the
+sidebar by reducing the visible content to icons only.
+
+## Closing the session
+
+The 'user name menu' on the top right contains the option to logout and
+close the session.

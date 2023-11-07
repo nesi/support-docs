@@ -20,10 +20,11 @@ zendesk_section_id: 360001150156
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 24. September 2021</h2>
-<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
-<ul>
-<li>Fixed Singularity version for RStudio and VirtualDesktop kernels</li>
-<li>Fixed pywidgets installation</li>
-<li data-stringify-indent="0" data-stringify-border="0">JupyterHub fixed: in case a job takes more than 300 seconds, don't start the job to avoid 'ghost' instances of JupyterLab</li>
-</ul>
+## Release Update - 24. September 2021
+
+## New and Improved
+
+-   Fixed Singularity version for RStudio and VirtualDesktop kernels
+-   Fixed pywidgets installation
+-   JupyterHub fixed: in case a job takes more than 300 seconds, don't
+    start the job to avoid 'ghost' instances of JupyterLab

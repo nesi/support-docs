@@ -24,17 +24,33 @@ zendesk_section_id: 360000039036
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<p>Log in to <a style="background-color: #ffffff;" href="https://my.nesi.org.nz" target="_blank" rel="noopener">my.nesi.org.nz</a> and select the option 'Manage Two-Factor token' under 'Account'.</p>
-<h2>Manage Two-Factor token</h2>
-<p>Once you've created a token, you should see the 'Manage Two-Factor token' option.</p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360001267556/image2018-10-26_15-36-10.png" alt="image2018-10-26_15-36-10.png"></p>
-<h2>Delete the Two-Factor token</h2>
-<p>Select the option 'Manage Two-Factor token' under 'Account'.</p>
-<p>You should see the confirmation of the previous token.</p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360001504795/mceclip0.png"></p>
-<p>After 'Delete Token' has been selected:</p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360001607216/mceclip1.png"></p>
-<p>You will also receive an email confirmation:</p>
-<p><img src="https://support.nesi.org.nz/hc/article_attachments/360001504835/mceclip3.png"></p>
-<h2>Related content</h2>
-<p><a href="https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication">Setting Up Two-Factor Authentication</a></p>
+Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
+'Manage Two-Factor token' under 'Account'.
+
+## Manage Two-Factor token
+
+Once you've created a token, you should see the 'Manage Two-Factor
+token' option.
+
+![image2018-10-26\_15-36-10.png](../../assets/images/image2018-10-26_15-36-10.png)
+
+## Delete the Two-Factor token
+
+Select the option 'Manage Two-Factor token' under 'Account'.
+
+You should see the confirmation of the previous token.
+
+![](../../assets/images/How_to_replace_my_2FA_token.png)
+
+After 'Delete Token' has been selected:
+
+![](../../assets/images/How_to_replace_my_2FA_token_0.png)
+
+You will also receive an email confirmation:
+
+![](../../assets/images/How_to_replace_my_2FA_token_1.png)
+
+## Related content
+
+[Setting Up Two-Factor
+Authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)

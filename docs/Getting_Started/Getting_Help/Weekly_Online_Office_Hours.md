@@ -19,35 +19,67 @@ zendesk_section_id: 360000164635
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<p>Have questions about NeSI services? <br>Looking for tips on how to optimise your HPC jobs? <br>Or, simply want to meet some of the team behind NeSI Support?</p>
-<p>We run regular online Office Hours sessions, hosted via Zoom. These sessions are open to anyone - you don't need to be an existing NeSI user.<br><br></p>
-<h2 id="01HCJN0B2KJDQEZN8WW6KZ8FVT"><strong>Office Hours in November 2023</strong></h2>
-<p>Click on the links below to add the date &amp; Zoom link to your calendar:</p>
-<ul>
-<li>
-<p><a href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=Nzh1bzhnazNnNGplaTV1YnJjZGlxMTBoNmEgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&amp;tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com" target="_blank" rel="noopener"><strong>01 November (Wednesday): 9:00-10:00 AM</strong></a></p>
-</li>
-<li>
-<p><a href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MmVnMGdzb2VtMzYxYnNxaWZicGo3dXQzOHAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&amp;tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com" target="_blank" rel="noopener"><strong>08 November (Wednesday): 3:00-4:00 PM</strong></a></p>
-</li>
-<li>
-<p><a href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NmVwanFvaXJuMmtkbzNrbGZkcmIzdHRla3AgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&amp;tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com" target="_blank" rel="noopener"><strong>15 November (Wednesday): 9:00-10:00 AM</strong></a></p>
-</li>
-<li>
-<p><a href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NTZlbGplMnFmMGRyMjV2ODluYjhzdGpudDkgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&amp;tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com" target="_blank" rel="noopener"><strong>22 November (Wednesday): 3:00-4:00 PM</strong></a></p>
-</li>
-<li>
-<p><a href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MW5tbmZhNmk4YzMzdTFmN3BudmFwdjRqbWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&amp;tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com" target="_blank" rel="noopener"><strong>29 November (Wednesday): 9:00-10:00 AM</strong></a></p>
-</li>
-</ul>
-<p>If you are unable to add an Office Hour session to your calendar through these links, please email us at <a class="mailto" href="mailto:training@nesi.org.nz" data-cke-saved-href="mailto:training@nesi.org.nz">training@nesi.org.nz</a> and we can send a calendar invite directly to you. <br><br></p>
-<h2 id="h_01H96JHP02XHCGY7KYG40KAE05"><strong>How Does It Work</strong></h2>
-<p>Each session follows a casual 'drop-in / drop-out' format, where you can pop in at any point during the hour and stay for as long or as little as you'd like. </p>
-<p>Also, don't worry if you have a question or challenge that can't be solved on the spot. <br>We can always use the Office Hours to collect some basic information about your issue and then reconnect with you at a later time to troubleshoot things further.</p>
-<p> </p>
-<h2 id="h_01H96JHP02W2N1KWGFF2XARD29"><strong>Other ways to get help</strong></h2>
-<p>Remember, you can <a class="mailto" href="mailto:support@nesi.org.nz" data-cke-saved-href="mailto:support@nesi.org.nz">email Support</a> at any time and we have a team of experts ready to answer any questions you may have, big or small. You can also find helpful user resources, links and documentation elsewhere in our <a href="https://support.nesi.org.nz/hc/en-gb" target="_self">User Support Centre</a>.</p>
-<p> </p>
-<h2 id="h_01H96JHP02QZDZ0393BYWZ9KBG"><strong>Feedback</strong></h2>
-<p><span>If you have any suggestions for ways to improve these Office Hours sessions, please fill out this <a href="https://forms.gle/HELw73FpUQaTYBV6A" data-cke-saved-href="https://forms.gle/HELw73FpUQaTYBV6A">feedback form</a>.</span></p>
-<p> </p>
+Have questions about NeSI services?   
+Looking for tips on how to optimise your HPC jobs?  
+Or, simply want to meet some of the team behind NeSI Support?
+
+We run regular online Office Hours sessions, hosted via Zoom. These
+sessions are open to anyone - you don't need to be an existing NeSI
+user.  
+  
+
+## **Office Hours in November 2023**
+
+Click on the links below to add the date & Zoom link to your calendar:
+
+-   [**01 November (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Nzh1bzhnazNnNGplaTV1YnJjZGlxMTBoNmEgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**08 November (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmVnMGdzb2VtMzYxYnNxaWZicGo3dXQzOHAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**15 November (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmVwanFvaXJuMmtkbzNrbGZkcmIzdHRla3AgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**22 November (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTZlbGplMnFmMGRyMjV2ODluYjhzdGpudDkgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+-   [**29 November (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW5tbmZhNmk4YzMzdTFmN3BudmFwdjRqbWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+
+If you are unable to add an Office Hour session to your calendar through
+these links, please email us at <training@nesi.org.nz> and we can send a
+calendar invite directly to you.   
+  
+
+## **How Does It Work**
+
+Each session follows a casual 'drop-in / drop-out' format, where you can
+pop in at any point during the hour and stay for as long or as little as
+you'd like. 
+
+Also, don't worry if you have a question or challenge that can't be
+solved on the spot.  
+We can always use the Office Hours to collect some basic information
+about your issue and then reconnect with you at a later time to
+troubleshoot things further.
+
+ 
+
+## **Other ways to get help**
+
+Remember, you can [email Support](mailto:support@nesi.org.nz) at any
+time and we have a team of experts ready to answer any questions you may
+have, big or small. You can also find helpful user resources, links and
+documentation elsewhere in our [User Support
+Centre](https://support.nesi.org.nz/hc/en-gb).
+
+ 
+
+## **Feedback**
+
+If you have any suggestions for ways to improve these Office Hours
+sessions, please fill out this [feedback
+form](https://forms.gle/HELw73FpUQaTYBV6A).
+
+ 

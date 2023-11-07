@@ -19,6 +19,16 @@ zendesk_section_id: 360000039036
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<p>NeSI passwords expire after two years.  The prompt you will see when that happens is<span class="token token"><span></span></span></p>
-<pre><span class="token token">Password</span><span> </span><span class="token token">expired</span><span class="token token">.</span><span class="token token"> Change</span><span> your password </span><span class="token token">now.<br>First<span> </span>Factor<span> </span>(Current<span> </span>Password):<span> </span><span class="linenumber react-syntax-highlighter-line-number"><br></span><span></span>Second<span> </span>Factor<span> </span>(<span>optional</span>):<span> </span><span class="linenumber react-syntax-highlighter-line-number"><br></span><span></span>Login<span> </span>Password:<span> </span></span></pre>
-<p>however passwords can not be reset this way, instead you should <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000335995" target="_self">reset your password via the My NeSI Portal</a>.</p>
+NeSI passwords expire after two years.  The prompt you will see when
+that happens is
+
+``` sl
+Password expired. Change your password now.
+First Factor (Current Password): 
+Second Factor (optional): 
+Login Password: 
+```
+
+however passwords can not be reset this way, instead you should [reset
+your password via the My NeSI
+Portal](https://support.nesi.org.nz/hc/en-gb/articles/360000335995).

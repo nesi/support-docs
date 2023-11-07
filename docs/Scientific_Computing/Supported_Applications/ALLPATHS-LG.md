@@ -24,11 +24,19 @@ zendesk_section_id: 360000040076
 
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
-<p>ALLPATHS-LG is a short read genome assembler from the Computational Research and Development group at the Broad Institute.</p>
-<p>The ALLPATHS-LG home page is at <a href="http://www.broadinstitute.org/software/allpaths-lg/blog/">http://www.broadinstitute.org/software/allpaths-lg/blog/</a>.</p>
-<h1 id="example-scripts">Example scripts</h1>
-<h2 id="example-script-for-the-pan-cluster">Example script for the Pan cluster</h2>
-<pre><code class="bash">#!/bin/bash -e
+
+ALLPATHS-LG is a short read genome assembler from the Computational
+Research and Development group at the Broad Institute.
+
+The ALLPATHS-LG home page is at
+<http://www.broadinstitute.org/software/allpaths-lg/blog/>.
+
+# Example scripts
+
+## Example script for the Pan cluster
+
+``` bash
+#!/bin/bash -e
 
 #SBATCH --job-name      ALLPATHS-LG_job
 #SBATCH --account       nesi99999
@@ -42,4 +50,4 @@ module load ALLPATHS-LG/50041-goolf-1.5.14
 # Arguments are from the basic example in the ALLPATHS-LG documentation; please
 # modify them as necessary
 srun RunAllPathsLG PRE=/assemblies DATA=datadir RUN=rundir SUBDIR=attempt1
-</code></pre>
+```

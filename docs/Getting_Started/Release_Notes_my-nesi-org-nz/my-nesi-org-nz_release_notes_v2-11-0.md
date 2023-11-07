@@ -20,12 +20,12 @@ zendesk_section_id: 360001091155
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 21. June 2022</h2>
-<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
-<ul>
-<li>
-<p>Backend security updates</p>
-</li>
-</ul>
-<h2 id="ReleaseNotes-Fixes"><span>Fixes</span></h2>
-<p><span>Fixed: usage values for allocation request renewal form</span></p>
+## Release Update - 21. June 2022
+
+## New and Improved
+
+-   Backend security updates
+
+## Fixes
+
+Fixed: usage values for allocation request renewal form

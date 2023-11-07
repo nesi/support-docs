@@ -20,17 +20,27 @@ zendesk_section_id: 360000502675
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<h1>Version 1.1.0.14</h1>
-<p><em>Released 5 November 2020.</em></p>
-<p>This release includes the following changes:</p>
-<ul>
-<li>
-<code>nlls</code>, <code>nlget</code>, <code>nlpurge</code>, <code>nlput</code> and <code>nljobstatus</code> now come with a debug mode, accessible via the <code>--debug</code> command line switch.</li>
-<li>Help documentation, as well as the usage message when a nearline command is run with incorrect arguments, has been improved.</li>
-<li>
-<code>nljobstatus</code> now includes more comprehensive job status information. In particular, the job status message now includes a brief description of the stage the job is up to, and whether the job is at that moment pending (waiting in a queue to start the next operation), running, or complete.</li>
-<li>The <code>nlls</code> command's <code>-ls</code> switch has been replaced with <code>-s</code>, though <code>-ls</code> still works, being interpreted as equivalent to <code>-l -s</code>. <code>nlls</code> also now comes with a <code>-b</code> switch, for reporting individual sizes in bytes instead of in human-readable sizes.</li>
-<li>
-<code>nltraverse</code> has been improved, and now reports file sizes, and sums of file sizes, in bytes, for greater accuracy and ease of comparison with the output of <code>ls</code>.</li>
-<li>There have been numerous other bug fixes to improve performance and reduce the risk of unexpected failures and errors.</li>
-</ul>
+# Version 1.1.0.14
+
+*Released 5 November 2020.*
+
+This release includes the following changes:
+
+-   `nlls`, `nlget`, `nlpurge`, `nlput` and `nljobstatus` now come with
+    a debug mode, accessible via the `--debug` command line switch.
+-   Help documentation, as well as the usage message when a nearline
+    command is run with incorrect arguments, has been improved.
+-   `nljobstatus` now includes more comprehensive job status
+    information. In particular, the job status message now includes a
+    brief description of the stage the job is up to, and whether the job
+    is at that moment pending (waiting in a queue to start the next
+    operation), running, or complete.
+-   The `nlls` command's `-ls` switch has been replaced with `-s`,
+    though `-ls` still works, being interpreted as equivalent to
+    `-l -s`. `nlls` also now comes with a `-b` switch, for reporting
+    individual sizes in bytes instead of in human-readable sizes.
+-   `nltraverse` has been improved, and now reports file sizes, and sums
+    of file sizes, in bytes, for greater accuracy and ease of comparison
+    with the output of `ls`.
+-   There have been numerous other bug fixes to improve performance and
+    reduce the risk of unexpected failures and errors.

@@ -19,16 +19,33 @@ zendesk_section_id: 7348936006031
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<p>Typically our Subscription contracts are based on one-year terms and invoiced on a <span class="fabric-editor-annotation" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="87d9ec52-e102-4bbb-9e10-59da56fc497a">quarterly</span> basis*.</p>
-<ul class="ak-ul">
-<li>
-<p><em>HPC Platform: <br></em>This is an inclusive package that provides access to all NeSI services (compute, storage, support, consultancy, etc.) in one Subscription so that you have the flexibility at any point during the term of the contract to use any service. You are only charged for what you use.</p>
-</li>
-<li>
-<p><em>National Data Transfer Platform - Membership &amp; managed endpoint: <br></em>A National Data Transfer Platform is delivered through a partnership between NeSI, REANNZ, Globus, and research institutions across the country. <a href="https://www.nesi.org.nz/services/data-services">Read more here</a>. As a managed endpoint, your institution can provide secure, reliable, and fast data transfer to/from NeSI’s HPC Platform as well as to/from other Globus endpoints across New Zealand and internationally. </p>
-</li>
-</ul>
-<p>We are also happy to discuss other custom options for things like our Training service.</p>
-<p>If you have any questions or would like to discuss our subscription terms or invoicing schedule in more detail, <a href="mailto:info@nesi.org.nz">get in touch</a>.</p>
-<p> </p>
-<p><em>*National Data Transfer Platform service agreements are invoiced upon contract signing, as the fee is a one-time, annual, up-front fee.</em></p>
+Typically our Subscription contracts are based on one-year terms and
+invoiced on a quarterly basis\*.
+
+-   *HPC Platform:  
+    *This is an inclusive package that provides access to all NeSI
+    services (compute, storage, support, consultancy, etc.) in one
+    Subscription so that you have the flexibility at any point during
+    the term of the contract to use any service. You are only charged
+    for what you use.
+
+-   *National Data Transfer Platform - Membership & managed endpoint:  
+    *A National Data Transfer Platform is delivered through a
+    partnership between NeSI, REANNZ, Globus, and research institutions
+    across the country. [Read more
+    here](https://www.nesi.org.nz/services/data-services). As a managed
+    endpoint, your institution can provide secure, reliable, and fast
+    data transfer to/from NeSI’s HPC Platform as well as to/from other
+    Globus endpoints across New Zealand and internationally. 
+
+We are also happy to discuss other custom options for things like our
+Training service.
+
+If you have any questions or would like to discuss our subscription
+terms or invoicing schedule in more detail, [get in
+touch](mailto:info@nesi.org.nz).
+
+ 
+
+*\*National Data Transfer Platform service agreements are invoiced upon
+contract signing, as the fee is a one-time, annual, up-front fee.*

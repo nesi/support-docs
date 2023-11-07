@@ -20,14 +20,15 @@ zendesk_section_id: 360001150156
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-<h2 id="ReleaseNotes-ReleaseUpdate-11.July2019">Release Update - 28. June 2022</h2>
-<h2 id="ReleaseNotes-NewandImproved">New and Improved</h2>
-<ul>
-<li data-stringify-indent="0" data-stringify-border="0">Updated JupyterLab version to<span> v3.4.3</span><span></span>
-</li>
-</ul>
-<p><span> </span></p>
-<h2 id="ReleaseNotes-NewandImproved">Fixed</h2>
-<ul>
-<li data-stringify-indent="0" data-stringify-border="0">Addressed issue handling the "slurm job id" with some Python modules that depend on MPI</li>
-</ul>
+## Release Update - 28. June 2022
+
+## New and Improved
+
+-   Updated JupyterLab version to v3.4.3
+
+ 
+
+## Fixed
+
+-   Addressed issue handling the "slurm job id" with some Python modules
+    that depend on MPI
