@@ -1,6 +1,6 @@
 ---
 created_at: '2023-10-16T03:51:17Z'
-hidden: true
+hidden: false
 label_names:
 - releasenote
 position: 0
