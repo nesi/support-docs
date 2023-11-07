@@ -197,9 +197,9 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
  
 
-|                                                   |                                                     |
-|---------------------------------------------------|-----------------------------------------------------|
-| ![TvC-MT.png](../../assets/images/.6197221642383) | ![TvL2C-MT.png](../../assets/images/.6197207741967) |
+|                                                       |                                                         |
+|-------------------------------------------------------|---------------------------------------------------------|
+| ![TvC-MT.png](../../assets/images/6197221642383..png) | ![TvL2C-MT.png](../../assets/images/6197207741967..png) |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to

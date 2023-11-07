@@ -61,7 +61,7 @@ zendesk_section_id: 360000034315
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds  
        
-    ![change\_success.png](../../assets/images/.5662974048911)
+    ![change\_success.png](../../assets/images/5662974048911..png)
 
 5.  Followed by an email confirmation similar to below
 
@@ -89,7 +89,7 @@ height="285" alt="password_set_confirmation.png" />
               
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  
-    1.  -   ![change\_success.png](../../assets/images/_0.5662974048911)
+    1.  -   ![change\_success.png](../../assets/images/5662974048912..png)
 5.  Followed by an email confirmation similar to below  
        
       

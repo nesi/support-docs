@@ -51,8 +51,8 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 
 ####  
 
-<img src="../../assets/images/.360001532435" width="714" height="160"
-alt="par.png" />*  
+<img src="../../assets/images/360001532435..png" width="714"
+height="160" alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 
