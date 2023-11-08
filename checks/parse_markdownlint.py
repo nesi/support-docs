@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Parse mardownlint output to a format recognised by github actions.
+"""
+
 import json
 import sys
 
