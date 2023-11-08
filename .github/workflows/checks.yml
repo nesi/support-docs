@@ -20,6 +20,8 @@ jobs:
       uses: actions/checkout@v3
     - name: Run spellchecker.
       uses: rojopolis/spellcheck-github-actions@0.34.0
+      with:
+        source_files: ${{inputs.fileList}}
   proselint:
     runs-on: ubuntu-latest
     steps:
@@ -29,9 +31,7 @@ jobs:
         run: pip install proselint
       - name: Run markdownlint
         run: |
-          echo "Running ProseLint"
           shopt -s globstar extglob
-          echo ${{inputs.fileList}}
           python3 checks/run_proselint.py ${{inputs.fileList}} 
   mdlint:
      runs-on: ubuntu-latest
@@ -42,7 +42,14 @@ jobs:
          run: npm install -g markdownlint-cli
        - name: Run markdownlint
          run: |
-          echo "Running MarkdownLint"
           shopt -s globstar extglob
-          echo ${{inputs.fileList}}
           markdownlint --disable MD033 --json ${{inputs.fileList}} 2>&1 | checks/parse_markdownlint.py
+  metacheck:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Check out repo.
+         uses: actions/checkout@v3
+       - name: Check markdown meta.
+         run: |
+          shopt -s globstar extglob
+          python3 checks/run_meta_checks.py ${{inputs.fileList}}
