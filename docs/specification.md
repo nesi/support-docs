@@ -142,6 +142,9 @@ _italic_: `_italic`
     !!! quote
         This is a test admonation.
     ```
+
+Any admonation can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
+
 _Note for future, once decided which of these we will use, remove the others. And give description of when to use._
 
 ### Code
@@ -208,6 +211,22 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 ### Links
 
+Try to avoid putting links on ambiguous words, e.g.
+
+=== "Bad"
+    View the software homepage [here](www.example.com).
+
+    ```md
+    View the homepage [here](www.example.com).
+    ```
+
+=== "Better"
+    View the [software homepage](www.example.com).
+
+    ```md
+    View the [software homepage](www.example.com).
+    ```
+
 [External Link]("https://example.com")
 
 ```md
@@ -243,6 +262,41 @@ Acroynym should be automatically tooltipped e.g. MPI.
 Acroynym should be automatically tooltipped e.g. MPI.
 ```
 
+### Tables
+
+[Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables), is a handy tool for complex tables/
+
+Tables can be constructed using `|` to seperate colums, and `--` to designate headers.
+
+Number of dashes has no effect, things dont have to be lined up when in markdown, just looks nice.
+Leading and trailing `|` are optional.
+
+ Head  | Head
+-------|-------
+Thing1 | Thing2
+Thing3 | Thing3
+
+```md
+ Head | Head
+ --- | -----------
+ Thing1 | Thing2
+ Thing3 | Thing 3
+```
+
+`:`'s can be used to align tables.
+
+| Left      | Center    | Right     |
+| :---      |    :----: |---:       |
+| Words     | Words     | Words     |
+| Words     | Words     | Words     |
+
+```md
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+```
+
 ## Structure
 
 Public facing articles are found in the `docs` folder. Any markdown files inside will be rendered, any directory will be subcategories.
@@ -258,13 +312,25 @@ Article file can be nested up to two folders deep, and use the title name, in sn
 
 ### Title
 
-Article title is determined in order of preference,
+#### Succession
+
+Article title has the follong succession,
 
 - A title defined in the 'title' meta-data.
 - A level 1 Markdown header on the first line of the document body.
 - The filename of a document.
 
-### Headers
+Our preference is the opposite (filename > H1 > meta).
+
+#### Filename Rendering
+
+When converting a filename for the nav/title the `.md` will be dropped and 'snake_case' and 'kebab-case' will both be rendered with spaces, e.g. 'Snake case' and 'Kebab case' respectively.
+
+The first letter of the filename will be capitalised, but not any subsiquent words.
+
+(Note: Choose only one for naming convention)
+
+### Sub Headers
 
 Unless setting a title, the first 'real' header will be an H2.
 It's fine to have text before the first header if it is relevent to the entire page.
@@ -277,7 +343,7 @@ H3
 H4
 ```
 
-never 
+never
 
 ```md
 H2
@@ -305,6 +371,7 @@ Article metadata is yaml format at the top of the page between two `---`
 
 - `prereq`      : List of prerequisites. Formatted in markdown. Will be rendered inside a admonation.
 - `postreq`     : List of what next. Formatted in markdown. Will be rendered inside a admonation.
+- `suggested`   : Page similar pages to link to. (Not implimented).
 
 #### Zendesk Imported
 
@@ -329,6 +396,52 @@ Template can be set in article meta.
 - `home`                : Homepage.
 
 By default, the `main` theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.
+
+## Macros
+
+Macros allow use of Jinja filter syntax _inside the mardown files_ allowing for much more flexable templating.
+Details [here](https://mkdocs-macros-plugin.readthedocs.io/)
+
+For a bad time, [visit]({{ applications.ANSYS.homepage }}).
+
+```md
+{% raw %}
+For a bad time, [visit]({{ applications.ANSYS.homepage }}).
+{% endraw %}
+```
+
+??? "Fancy Example"
+    Our Python modules come prebuilt with the following packages: 
+    {% set pyexts=applications.Python.extensions.split(', ') %}
+    <table>
+    <tr><th>Package</th></tr>
+    {% for pyext in pyexts %}
+    <tr><td>{{ pyext }}</td></tr>
+    {% endfor %}
+    </table>
+
+    ```md
+    {% raw %}
+    Our Python modules come prebuilt with the following packages: 
+    {% set pyexts=applications.Python.extensions.split(', ') %}
+    <table>
+    <tr><th>Package</th></tr>
+    {% for pyext in pyexts %}
+    <tr><td>{{ pyext }}</td></tr>
+    {% endfor %}
+    {% endraw %}
+    </table>
+    ```
+
+### Includes
+
+The macro plugin also allows the use of 'includes',
+
+```md
+{% raw %}
+{% include 'snippet.md' %}
+{% endraw %}
+```
 
 ## Accessability standards
 

@@ -1,5 +1,5 @@
 hooks:
-  - custom_hooks.py
+  - mkdocs_hooks.py
 markdown_extensions:
   - toc:
       baselevel: 1
@@ -34,6 +34,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - macros:
+      module_name: macro_hooks
       include_dir: docs/assets
 repo_name: GitHub
 repo_url: https://github.com/nesi/support-docs-concept
