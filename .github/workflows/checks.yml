@@ -22,6 +22,7 @@ jobs:
       uses: rojopolis/spellcheck-github-actions@0.34.0
       with:
         source_files: ${{inputs.fileList}}
+        task_name: Markdown
   proselint:
     runs-on: ubuntu-latest
     steps:
@@ -52,4 +53,4 @@ jobs:
        - name: Check markdown meta.
          run: |
           shopt -s globstar extglob
-          python3 checks/run_meta_checks.py ${{inputs.fileList}}
+          python3 checks/run_meta_check.py ${{inputs.fileList}}
