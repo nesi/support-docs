@@ -5,6 +5,7 @@ on:
       fileList:
           description: 'Files to Lint (space delimited)'
           required: true
+          default: "docs/specification.md"
           type: string
   workflow_call:
     inputs:
