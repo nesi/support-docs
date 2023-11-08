@@ -73,18 +73,22 @@ The Māui\_Ancil nodes have different working environment than the Māui
 submit your jobs on this architecture. To use you need to login from
 Māui login nodes to:
 
-    w-mauivlab01.maui.nesi.org.nz
+``` sl
+w-mauivlab01.maui.nesi.org.nz
+```
 
 If you are looking for accessing this node from your local machine you
 could add the following section to `~/.ssh/config` (extending the
 [recommended terminal
 setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup))
 
-    Host w-mauivlab01 
-      User <username> 
-      Hostname w-mauivlab01.maui.nesi.org.nz 
-      ProxyCommand ssh -W %h:%p maui 
-      ForwardX11 yes
-      ForwardX11Trusted yes
-      ServerAliveInterval 300
-      ServerAliveCountMax 2
+``` sl
+Host w-mauivlab01 
+  User <username> 
+  Hostname w-mauivlab01.maui.nesi.org.nz 
+  ProxyCommand ssh -W %h:%p maui 
+  ForwardX11 yes
+  ForwardX11Trusted yes
+  ServerAliveInterval 300
+  ServerAliveCountMax 2
+```

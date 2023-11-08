@@ -42,23 +42,27 @@ In the following we show how to achieve this in the case of a reduction
 operation involving a large loop in C++ (a similar example can be
 written in Fortran):
 
-    #include <iostream>
-    #include <cmath>
-    int main() {
-     double total = 0;
-     int i, n = 1000000000;
-    #pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
-     for (i = 0; i < n; ++i) {
-       total += exp(sin(M_PI * (double) i/12345.6789));
-     }
-     std::cout << "total is " << total << '\n';
-    }
+``` sl
+#include <iostream>
+#include <cmath>
+int main() {
+ double total = 0;
+ int i, n = 1000000000;
+#pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
+ for (i = 0; i < n; ++i) {
+   total += exp(sin(M_PI * (double) i/12345.6789));
+ }
+ std::cout << "total is " << total << '\n';
+}
+```
 
 Save the above code in file total.cxx.
 
 Note the pragma
 
-    #pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
+``` sl
+#pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
+```
 
 We're telling the compiler that the loop following this pragma should be
 executed in parallel on the GPU. Since GPUs have hundreds or more
@@ -83,10 +87,12 @@ to compile the example.
 Alternatively, we can use the Cray C++ compiler to build the executable
 but first we need to load a few modules:
 
-    module load craype-broadwell
-    module load cray-libsci_acc 
-    module load craype-accel-nvidia60 
-    module load PrgEnv-cray
+``` sl
+module load craype-broadwell
+module load cray-libsci_acc 
+module load craype-accel-nvidia60 
+module load PrgEnv-cray
+```
 
 (Ignore warning "cudatoolkit &gt;= 8.0 is required"). Furthermore, you
 may need to load `cuda/fft` or `cuda/blas`  
@@ -94,8 +100,10 @@ may need to load `cuda/fft` or `cuda/blas`
 To compare the execution times between the CPU and GPU version, we build
 two executables:
 
-    CC -h noacc -o total total.cxx
-    CC -o totalAccGpu total.cxx
+``` sl
+CC -h noacc -o total total.cxx
+CC -o totalAccGpu total.cxx
+```
 
 with executable `total` compiled with `-h noacc`, i.e. OpenACC turned
 off.
@@ -106,8 +114,10 @@ The following commands will submit the runs to the Mahuika queue (note
 `--gpus-per-node=P100:1` in the case of the executable that offloads to
 the GPU):
 
-    time srun --ntasks=1 --cpus-per-task=1 ./total
-    time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
+``` sl
+time srun --ntasks=1 --cpus-per-task=1 ./total
+time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
+```
 
 |             |            |
 |-------------|------------|

@@ -57,9 +57,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](../../assets/images/.4411672582031)
+![mceclip4.png](../../assets/images/4411672582031..png)
 
-![mceclip5.png](../../assets/images/.4411672594191)
+![mceclip5.png](../../assets/images/4411672594191..png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -79,27 +79,35 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../../assets/images/.4411680807951)
+![mceclip6.png](../../assets/images/4411680807951..png)
 
 You will be prompted by dialogue box.
 
-    Login Password (First Factor):
+``` sl
+Login Password (First Factor):
+```
 
 Enter your password.
 
-    Authenticator Code (Second Factor):
+``` sl
+Authenticator Code (Second Factor):
+```
 
 Enter your second factor six digit number (no space).
 
 Then Mahuika users may be prompted again:
 
-    Login Password:
+``` sl
+Login Password:
+```
 
 Enter your password again
 
 Māui users will instead be prompted with:
 
-    Password:
+``` sl
+Password:
+```
 
 Māui users must enter their password combined with their second factor.
 For example, if your password is "Password" and your current second

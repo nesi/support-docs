@@ -60,7 +60,9 @@ enabled.*
 
 The command for forwarding a port is
 
-    ssh -L <local_port>:<destination_host>:<remote_port> <ssh_host>
+``` sl
+ssh -L <local_port>:<destination_host>:<remote_port> <ssh_host>
+```
 
 ## Example:
 
@@ -68,7 +70,9 @@ A client program on my local machine uses the port 5555 to communicate.
 I want to connect to a server running on mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:
 
-    ssh -L 5555:localhost:6666 mahuika 
+``` sl
+ssh -L 5555:localhost:6666 mahuika 
+```
 
 Your terminal will now function like a normal connection to mahuika.
 However if you close this terminal session the port forwarding will end.
@@ -91,24 +95,28 @@ machine.
 Under the alias for the cluster you want to connect to add the following
 lines.
 
-    LocalForward <local_port> <host_alias>:<remote_port>
-    ExitOnForwardFailure yes
+``` sl
+LocalForward <local_port> <host_alias>:<remote_port>
+ExitOnForwardFailure yes
+```
 
 ExitOnForwardFailure is optional, but it is useful to kill the session
 if the port fails. 
 
 e.g.
 
-      Host mahuika
-          User cwal219
-          Hostname login.mahuika.nesi.org.nz
-          ProxyCommand ssh -W %h:%p lander
-          ForwardX11 yes
-          ForwardX11Trusted yes
-          ServerAliveInterval 300
-          ServerAliveCountMax 2
-          LocalForward 6676 mahuika:6676
-          ExitOnForwardFailure yes
+``` sl
+  Host mahuika
+      User cwal219
+      Hostname login.mahuika.nesi.org.nz
+      ProxyCommand ssh -W %h:%p lander
+      ForwardX11 yes
+      ForwardX11Trusted yes
+      ServerAliveInterval 300
+      ServerAliveCountMax 2
+      LocalForward 6676 mahuika:6676
+      ExitOnForwardFailure yes
+```
 
 In the above example, the local and remote ports are the same. This
 isn't a requirement, but it makes things easier to remember.
@@ -119,12 +127,16 @@ will be forwarded.
 >
 > -   If you get a error message
 >
->         bind: No such file or directory
->         unix_listener: cannot bind to path: 
+>     ``` sl
+>     bind: No such file or directory
+>     unix_listener: cannot bind to path: 
+>     ```
 >
 >     try to create the following directory:
 >
->         mkdir -P ~/.ssh/sockets
+>     ``` sl
+>     mkdir -P ~/.ssh/sockets
+>     ```
 
 # MobaXterm
 
@@ -134,12 +146,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](../../assets/images/.360004708596)
+![mceclip0.png](../../assets/images/360004708596..png)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](../../assets/images/.360004708616)
+![mceclip1.png](../../assets/images/360004708616..png)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -147,7 +159,7 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](../../assets/images/.360004580035)
+![mobakey.png](../../assets/images/360004580035..png)
 
 ■ local port  
 ■ remote port  
@@ -168,7 +180,9 @@ routes all traffic, going to the specified subnet, through the tunnel.
 
 The command line for `sshuttle` has the following form:
 
-    sshuttle [-l [ip:]port] -r <host_alias>[:port] <subnets...>
+``` sl
+sshuttle [-l [ip:]port] -r <host_alias>[:port] <subnets...>
+```
 
 More information about specific keys and modifiers for sshuttle commands
 is available in the online documentation.
@@ -176,7 +190,9 @@ is available in the online documentation.
 As an example, this is how to establish a tunnel through Mahuika login
 node over to a specific virtual machine with IP address `192.168.90.5`:
 
-    sshuttle -r mahuika 192.168.0.0/16
+``` sl
+sshuttle -r mahuika 192.168.0.0/16
+```
 
 which uses remote SSH host Mahuika to forward all traffic coming to
 `192.16.XXX.XXX` subnet through the port forwarder.
@@ -194,18 +210,22 @@ command, `-N` to not execute a command after connecting, `-f` to run the
 connection in the background and `-R` for a reverse tunnel ( as opposed
 to `-L` ).
 
-    ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
+``` sl
+ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
+```
 
 An example Slurm script:
 
-    #!/bin/bash
+``` sl
+#!/bin/bash
 
-    #SBATCH --time 00:15:00
-    #SBATCH --mem  1G
+#SBATCH --time 00:15:00
+#SBATCH --mem  1G
 
-    ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
+ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
-    <some process using port 6676>
+<some process using port 6676>
+```
 !!! info What Next?
 >
 > -   Using

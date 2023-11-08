@@ -242,8 +242,10 @@ GPU access 7am - 8pm.</p></td>
 Nodes in the `nesi_gpu` partition have 1 P100 GPU card each. You can
 request it using:
 
-    #SBATCH --partition=nesi_gpu
-    #SBATCH --gpus-per-node=1
+``` sl
+#SBATCH --partition=nesi_gpu
+#SBATCH --gpus-per-node=1
+```
 
 Note that you need to specify the name of the partition.  You also need
 to specify a number of CPUs and amount of memory small enough to fit on

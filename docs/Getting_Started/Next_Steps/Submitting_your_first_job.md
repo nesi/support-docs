@@ -45,11 +45,12 @@ needed by our job scheduler *Slurm.*
 
 Create a new file and open it with nano myjob.sl
 
-    #!/bin/bash -e
-    #SBATCH --job-name=SerialJob # job name (shows up in the queue)
-    #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
-    #SBATCH --mem=512MB          # Memory in MB
-    #SBATCH --qos=debug          # debug QOS for high priority job tests
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=SerialJob # job name (shows up in the queue)
+#SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
+#SBATCH --mem=512MB          # Memory in MB
+#SBATCH --qos=debug          # debug QOS for high priority job tests
 
     pwd # Prints working directory
 
@@ -79,7 +80,9 @@ jobs, but is limited to one small job per user at a time: no more than
 
 Jobs are submitted to the scheduler using:
 
-    sbatch myjob.sl
+``` sl
+sbatch myjob.sl
+```
 
 You should receive an output
 
@@ -95,26 +98,36 @@ Documentation](https://slurm.schedmd.com/sbatch.html)
 
 The currently queued jobs can be checked using 
 
-    squeue
+``` sl
+squeue
+```
 
 You can filter to just your jobs by adding the flag
 
-    squeue -u usr9999
+``` sl
+squeue -u usr9999
+```
 
 You can also filter to just your jobs using
 
-    squeue --me
+``` sl
+squeue --me
+```
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/squeue.html)
 
 You can check all jobs submitted by you in the past day using:
 
-    sacct
+``` sl
+sacct
+```
 
 Or since a specified date using:
 
-    sacct -S YYYY-MM-DD
+``` sl
+sacct -S YYYY-MM-DD
+```
 
 Each job will show as multiple lines, one line for the parent job and
 then additional lines for each job step.

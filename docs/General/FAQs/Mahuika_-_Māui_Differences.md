@@ -26,14 +26,20 @@ differences between the platforms to be aware of.
 
 Both Mahuika and Māui require logging in to the Lander node first.
 
-    ssh user123@lander.nesi.org.nz
+``` sl
+ssh user123@lander.nesi.org.nz
+```
 
 As you log in to the Lander node, you can expect to receive the
 following prompts:
 
-    Login Password (First Factor):
+``` sl
+Login Password (First Factor):
+```
 
-    Authenticator Code (Second Factor):
+``` sl
+Authenticator Code (Second Factor):
+```
 
 Note that being prompted for `Authenticator Code (Second Factor)` does
 not prove that the system has accepted your
@@ -45,11 +51,15 @@ incorrectly, you will be prompted again for both.
 Mahuika follows the same procedure as the lander node, except that it
 doesn't ask for a second factor.
 
-    ssh login.mahuika.nesi.org.nz
+``` sl
+ssh login.mahuika.nesi.org.nz
+```
 
 You will be prompted:
 
-    Login Password:
+``` sl
+Login Password:
+```
 
 At this prompt, enter only your password (a.k.a. first factor).
 
@@ -57,11 +67,15 @@ At this prompt, enter only your password (a.k.a. first factor).
 
 Māui differs slightly in how you are authenticated the first time.
 
-    ssh login.maui.nesi.org.nz
+``` sl
+ssh login.maui.nesi.org.nz
+```
 
 You will be prompted.
 
-    Password:
+``` sl
+Password:
+```
 
 At this prompt, enter only your password (a.k.a. first factor).
 

@@ -151,14 +151,14 @@ configuration</th>
 &#10;<tr class="odd">
 <td style="width: 221px"><ul>
 <li>Only one task</li>
-<li><code>--cpus-per-task</code> is not used</li>
+<li><code class="sl">--cpus-per-task</code> is not used</li>
 </ul></td>
 <td class="wysiwyg-text-align-center" style="width: 237px">The job gets,
-and is charged for, two logical CPUs. <code>--hint=nomultithread</code>
-is irrelevant.</td>
+and is charged for, two logical CPUs. <code
+class="sl">--hint=nomultithread</code> is irrelevant.</td>
 <td class="wysiwyg-text-align-center" style="width: 232px"><p>The job
 gets one logical CPU, but is charged for 80.<br />
-<code>--hint=nomultithread</code> is irrelevant.</p>
+<code class="sl">--hint=nomultithread</code> is irrelevant.</p>
 <p><span><strong>This configuration is extremely uneconomical on Māui.
 Consider using Mahuika or the Māui ancillary nodes
 instead.</strong></span></p></td>
@@ -166,8 +166,8 @@ instead.</strong></span></p></td>
 <tr class="even">
 <td style="width: 221px"><ul>
 <li>Only one task</li>
-<li><code>--cpus-per-task=</code><em>N</em></li>
-<li><code>--hint=nomultithread</code> is not used</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is not used</li>
 </ul></td>
 <td class="wysiwyg-text-align-center" style="width: 237px"><p>The job
 gets, and is charged for, <em>N</em> logical CPUs, rounded up to the
@@ -181,8 +181,8 @@ gets <em>N</em> logical CPUs, but is charged for 80.</p>
 <tr class="odd">
 <td style="width: 221px"><ul>
 <li>Only one task</li>
-<li><code>--cpus-per-task=</code><em>N</em></li>
-<li><code>--hint=nomultithread</code> is used</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is used</li>
 </ul></td>
 <td class="wysiwyg-text-align-center" style="width: 237px">The job gets,
 and is charged for, 2<em>N</em> logical CPUs.</td>
@@ -193,13 +193,13 @@ gets 2<em>N</em> logical CPUs, but is charged for 80.</p>
 <tr class="even">
 <td style="width: 221px"><ul>
 <li>More than one task on one or more nodes</li>
-<li><code>--cpus-per-task</code> is not used</li>
-<li><code>--hint=nomultithread</code> is not used</li>
+<li><code class="sl">--cpus-per-task</code> is not used</li>
+<li><code class="sl">--hint=nomultithread</code> is not used</li>
 </ul></td>
 <td rowspan="2" class="wysiwyg-text-align-center"
 style="width: 237px"><p>Each task gets two logical CPUs. The job is
-charged for two logical CPUs per task. <code>--hint=nomultithread</code>
-is irrelevant.</p>
+charged for two logical CPUs per task. <code
+class="sl">--hint=nomultithread</code> is irrelevant.</p>
 <p> </p></td>
 <td class="wysiwyg-text-align-center" style="width: 232px"><p>Each task
 gets one logical CPU. The job is charged for 80 logical CPUs per
@@ -210,8 +210,8 @@ allocated node.</p>
 <tr class="odd">
 <td style="width: 221px"><ul>
 <li>More than one task on one or more nodes</li>
-<li><code>--cpus-per-task</code> is not used</li>
-<li><code>--hint=nomultithread</code> is used</li>
+<li><code class="sl">--cpus-per-task</code> is not used</li>
+<li><code class="sl">--hint=nomultithread</code> is used</li>
 </ul></td>
 <td class="wysiwyg-text-align-center" style="width: 232px"><p>Each task
 gets two logical CPUs. The job is charged for 80 logical CPUs per
@@ -222,8 +222,8 @@ allocated node.</p>
 <tr class="even">
 <td style="width: 221px"><ul>
 <li>More than one task on one or more nodes</li>
-<li><code>--cpus-per-task=</code><em>N</em></li>
-<li><code>--hint=nomultithread</code> is not used</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is not used</li>
 </ul></td>
 <td class="wysiwyg-text-align-center" style="width: 237px"><p>Each task
 gets <em>N</em> logical CPUs, rounded up to the nearest even number. The
@@ -239,8 +239,8 @@ such that <em>N</em> × (tasks per node) = 80.</strong></p></td>
 <tr class="odd">
 <td style="width: 221px"><ul>
 <li>More than one task on one or more nodes</li>
-<li><code>--cpus-per-task=</code><em>N</em></li>
-<li><code>--hint=nomultithread</code> is used</li>
+<li><code class="sl">--cpus-per-task=</code><em>N</em></li>
+<li><code class="sl">--hint=nomultithread</code> is used</li>
 </ul></td>
 <td class="wysiwyg-text-align-center" style="width: 237px">Each task
 gets 2<em>N</em> logical CPUs. The job is charged for 2<em>N</em>

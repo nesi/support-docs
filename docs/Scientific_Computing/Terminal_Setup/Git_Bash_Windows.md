@@ -38,14 +38,15 @@ The login process can be simplified with a few configurations.
     file and add the following (replacing `<username>` with your
     username):
 
-        Host mahuika
-           User <username>
-           Hostname login.mahuika.nesi.org.nz
-           ProxyCommand ssh -W %h:%p lander
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    ``` sl
+    Host mahuika
+       User <username>
+       Hostname login.mahuika.nesi.org.nz
+       ProxyCommand ssh -W %h:%p lander
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
         Host maui
            User <username>
@@ -78,16 +79,22 @@ The login process can be simplified with a few configurations.
 Assuming you have followed the setup above you will be able to connect
 to the clusters directly using;
 
-    ssh mahuika
+``` sl
+ssh mahuika
+```
 
 or
 
-    ssh maui
+``` sl
+ssh maui
+```
 
 As multiplexing is not configured *you will have to enter in your login
 credentials every time you open a new terminal or try to move a file.*
 
-    scp <path/filename> mahuika:~/
+``` sl
+scp <path/filename> mahuika:~/
+```
 
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).

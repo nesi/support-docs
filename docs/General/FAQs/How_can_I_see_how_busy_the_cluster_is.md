@@ -24,23 +24,25 @@ command `sinfo`, you will get a printout like the following. 
 
 *The nodelist column has been truncated for readability.*
 
-    PARTITION AVAIL JOB_SIZE TIMELIMIT    CPUS S:C:T    NODES   STATE    NODELIST
-    large*    up    1-infini 3-00:00:00     72 2:18:2       1   down*      wbn128
-    large*    up    1-infini 3-00:00:00     72 2:18:2     133   mixed      wbn[009-020...
-    large*    up    1-infini 3-00:00:00     72 2:18:2       7   allocated  wbn[031,038
-    large*    up    1-infini 3-00:00:00     72 2:18:2      85   idle       wbn[021,037...
-    long      up    1-infini 21-00:00:0     72 2:18:2      64   mixed      wbn[009-020...
-    long      up    1-infini 21-00:00:0     72 2:18:2       5   allocated  wbn[031,077...
-    gpu       up    1-infini 3-00:00:00      8  8:1:1       1   reserved   vgpuwbg004
-    gpu       up    1-infini 3-00:00:00      8  8:1:1       3   idle       vgpuwbg[001-003]
-    igpu      up    1-infini 3-00:00:00      8  8:1:1       1   reserved   vgpuwbg004
-    prepost   up    1-infini    3:00:00     72 2:18:2       2   down*      wbl[003,005]
-    prepost   up    1-infini    3:00:00     72 2:18:2       2   mixed      wbl[002,010]
-    prepost   up    1-infini    3:00:00     72 2:18:2       5   allocated  wbl[001,004...
-    bigmem    up    1-infini 7-00:00:00     72 2:18:2       1   down*      wbl003
-    bigmem    up    1-infini 7-00:00:00     72 2:18:2       2   mixed      wbl[002,010]
-    bigmem    up    1-infini 7-00:00:00     72 2:18:2       5   allocated  wbl[001,004...
-    hugemem   up    1-infini 7-00:00:00    128 4:16:2       1   mixed      wbh001
+``` sl
+PARTITION AVAIL JOB_SIZE TIMELIMIT    CPUS S:C:T    NODES   STATE    NODELIST
+large*    up    1-infini 3-00:00:00     72 2:18:2       1   down*      wbn128
+large*    up    1-infini 3-00:00:00     72 2:18:2     133   mixed      wbn[009-020...
+large*    up    1-infini 3-00:00:00     72 2:18:2       7   allocated  wbn[031,038
+large*    up    1-infini 3-00:00:00     72 2:18:2      85   idle       wbn[021,037...
+long      up    1-infini 21-00:00:0     72 2:18:2      64   mixed      wbn[009-020...
+long      up    1-infini 21-00:00:0     72 2:18:2       5   allocated  wbn[031,077...
+gpu       up    1-infini 3-00:00:00      8  8:1:1       1   reserved   vgpuwbg004
+gpu       up    1-infini 3-00:00:00      8  8:1:1       3   idle       vgpuwbg[001-003]
+igpu      up    1-infini 3-00:00:00      8  8:1:1       1   reserved   vgpuwbg004
+prepost   up    1-infini    3:00:00     72 2:18:2       2   down*      wbl[003,005]
+prepost   up    1-infini    3:00:00     72 2:18:2       2   mixed      wbl[002,010]
+prepost   up    1-infini    3:00:00     72 2:18:2       5   allocated  wbl[001,004...
+bigmem    up    1-infini 7-00:00:00     72 2:18:2       1   down*      wbl003
+bigmem    up    1-infini 7-00:00:00     72 2:18:2       2   mixed      wbl[002,010]
+bigmem    up    1-infini 7-00:00:00     72 2:18:2       5   allocated  wbl[001,004...
+hugemem   up    1-infini 7-00:00:00    128 4:16:2       1   mixed      wbh001
+```
 
 Each partition has a row for every state it's nodes are currently in.
 

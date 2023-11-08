@@ -104,7 +104,9 @@ suggest to use the environment variable `SBATCH_EXPORT=NONE` (do NOT us
 `--export=none` option) in the submitting shell. Therefore we suggest to
 submit a job, e.g. to Māui using:
 
-    SBATCH_EXPORT=NONE sbatch --cluster=maui job.sl
+``` sl
+SBATCH_EXPORT=NONE sbatch --cluster=maui job.sl
+```
 
 Please note: Above we only discussed the transition from your submitting
 environment to the job environment. The latter is the one your job

@@ -223,8 +223,10 @@ single core by default. Run the following commands *before* launching
 ParaView GUI or ParaView Server if you want to use more cores (depending
 on the number of cores available in your session):
 
-    export KNOB_MAX_WORKER_THREADS=<number of cores>
-    export OSPRAY_THREADS=<number of cores>
+``` sl
+export KNOB_MAX_WORKER_THREADS=<number of cores>
+export OSPRAY_THREADS=<number of cores>
+```
 
 ParaView Server also supports parallel execution using MPI, see "Setting
 up Client-Server Mode" below.
@@ -257,9 +259,9 @@ setup:
 -   Load one of the ParaView Server modules listed above and launch the
     server in your interactive visualisation session on the HPC:
 
-<!-- -->
-
-    mpiexec -np <number of MPI ranks> pvserver
+``` sl
+mpiexec -np <number of MPI ranks> pvserver
+```
 
 -   Create an SSH tunnel for port "11111" from the HPC to your local
     machine using, e.g., the ssh program (Linux and MacOS) or MobaXterm

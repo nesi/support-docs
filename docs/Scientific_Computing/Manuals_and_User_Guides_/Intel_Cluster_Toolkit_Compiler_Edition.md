@@ -22,27 +22,13 @@ zendesk_section_id: 360000040036
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-# Description
-
 The Intel Cluster Toolkit Compiler Edition provides Intel C/C++ and
 Fortran compilers, Intel MPI & Intel MKL.
 
 The Intel Cluster Toolkit Compiler Edition home page is at
 <http://software.intel.com/en-us/intel-cluster-toolkit-compiler>.
 
-# Available modules
-
-## Packages with modules
-
-| Module           | NeSI Cluster |
-|------------------|--------------|
-| intel/2017a      | pan          |
-| intel/2015a      | pan          |
-| intel/2015.02    | pan          |
-| intel/ics-2013   | pan          |
-| intel/2011-64bit | pan          |
-
-# Licensing requirements
+Licensing requirements
 
 The Intel Cluster Toolkit has been made available to all NeSI users
 under the terms of a commercial, closed-source licence agreement. Any

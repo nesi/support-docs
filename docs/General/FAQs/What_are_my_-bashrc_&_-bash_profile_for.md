@@ -70,8 +70,10 @@ Fortunately, instead of repeating yourself, you can source one file from
 another. Most commonly, people source `~/.bashrc`, if it exists and can
 be read, from `~/.bash_profile`:
 
-    # Put this code in your ~/.bash_profile
-    test -r ~/.bashrc && . ~/.bashrc
+``` sl
+# Put this code in your ~/.bash_profile
+test -r ~/.bashrc && . ~/.bashrc
+```
 
 This statement has the effect of ensuring that `~/.bashrc` will be
 loaded in all interactive shells (except those launched with special

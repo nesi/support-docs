@@ -25,7 +25,7 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
-![mceclip0.png](../../assets/images/.4408734639887)
+![mceclip0.png](../../assets/images/4408734639887..png)
 
 ###  On NeSI's Māui/Mahuika clusters this means:
 
@@ -64,11 +64,13 @@ For more information about NeSI filesystem, check
 To create a symbolic link from a first to a second directory and
 vice-versa (using *full* paths for &lt;first&gt; and &lt;second&gt;):
 
-    $ cd <first>
-    $ ln -s <full_path_to_second> <alias_to_second>
-     
-    $ cd <second>
-    $ ln -s <full_path_to_first>  <alias_to_first>
+``` sl
+$ cd <first>
+$ ln -s <full_path_to_second> <alias_to_second>
+ 
+$ cd <second>
+$ ln -s <full_path_to_first>  <alias_to_first>
+```
 
 Alias can be any value which is convenient to you. .i.e. easy to
 identify  

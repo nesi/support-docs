@@ -50,9 +50,11 @@ process. The GNU debugger (gdb) can extract information from them. For
 example, a stack trace could be obtained by running the following
 command for ONE core file:
 
-    gdb -c core.12345 /path/to/bin/exe
-    ...
-    >  bt
+``` sl
+gdb -c core.12345 /path/to/bin/exe
+...
+>  bt
+```
 
 This assumes that the crashing job used the executable
 \`/path/to/bin/exe\`, which should be built with debugging symbols. This
@@ -62,7 +64,9 @@ you can request a stack trace.
 On Mahuika the default maximum core file size is zero, so no core files
 are produced.  To enable them do:
 
-    ulimit -S -c unlimited
+``` sl
+ulimit -S -c unlimited
+```
 
 For more detailed information see the [GDB
 Manual](https://www.gnu.org/software/gdb/documentation/).
@@ -87,7 +91,9 @@ lasting jobs to debug or long queuing times. To use this so called
 srun statement. You can add more arguments for example to print the
 values of variables. 
 
-    ddt --offline --break-at=fail.c:14 --evaluate="k;n" srun -n 4 <application> <arguments>
+``` sl
+ddt --offline --break-at=fail.c:14 --evaluate="k;n" srun -n 4 <application> <arguments>
+```
 
 As a result some basic information, stack traces and more requested
 information are provided into the application stdout and a HTML file is
@@ -106,8 +112,10 @@ manual](https://developer.arm.com/docs/101136/latest/ddt/offline-debugging).
 
 The DDT GUI can be opened using:
 
-    module load forge
-    ddt
+``` sl
+module load forge
+ddt
+```
 
 **Note:** you can also install forge locally and connect to the machine
 remotely.
@@ -160,19 +168,21 @@ processes dump their core.
 
 An example output looks like:
 
-    Application 427046 is crashing. ATP analysis proceeding...
+``` sl
+Application 427046 is crashing. ATP analysis proceeding...
 
-    ATP Stack walkback for Rank 0 starting:
-     _start@start.S:118
-     __libc_start_main@libc-start.c:289
-     main@fail.c:65
-     m_routine@fail.c:38
-     calculation@fail.c:31
-     do_task@fail.c:25
-    ATP Stack walkback for Rank 0 done
-    Process died with signal 8: 'Floating point exception'
-    Forcing core dumps of ranks 0, 1
-    View application merged backtrace tree with: stat-view atpMergedBT.dot
-    You may need to: module load stat
+ATP Stack walkback for Rank 0 starting:
+ _start@start.S:118
+ __libc_start_main@libc-start.c:289
+ main@fail.c:65
+ m_routine@fail.c:38
+ calculation@fail.c:31
+ do_task@fail.c:25
+ATP Stack walkback for Rank 0 done
+Process died with signal 8: 'Floating point exception'
+Forcing core dumps of ranks 0, 1
+View application merged backtrace tree with: stat-view atpMergedBT.dot
+You may need to: module load stat
+```
 
 #  

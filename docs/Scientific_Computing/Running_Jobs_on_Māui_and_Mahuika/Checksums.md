@@ -45,16 +45,20 @@ should be one of the first things you check when troubleshooting.
 The file '`corrupt.bin`' has had 1 byte changed, yet on inspection would
 appear identical. 
 
-    -rw-rw-r--  1  393315  copy.bin
-    -rw-rw-r--  1  393315  corrupt.bin
-    -rw-rw-r--  1  393315  original.bin
+``` sl
+-rw-rw-r--  1  393315  copy.bin
+-rw-rw-r--  1  393315  corrupt.bin
+-rw-rw-r--  1  393315  original.bin
+```
 
 By using a MD5 checksum (`md5sum *`) we can see that '`corrupt.bin`' has
 diverged from the original, while '`copy.bin`' has not.
 
-    002c33835b3921d92d8074f3b392ef65 copy.bin
-    ef749eb4110c2a3b3c747390095d0b76 corrupt.bin
-    002c33835b3921d92d8074f3b392ef65 original.bin
+``` sl
+002c33835b3921d92d8074f3b392ef65 copy.bin
+ef749eb4110c2a3b3c747390095d0b76 corrupt.bin
+002c33835b3921d92d8074f3b392ef65 original.bin
+```
 
 Note that filename, path, permissions or any other metadata does not
 affect the checksum.

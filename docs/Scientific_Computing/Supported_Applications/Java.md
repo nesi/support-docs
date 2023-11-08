@@ -71,19 +71,21 @@ The default version of Java that is packaged with the operating system
 may not be appropriate for your work.  To use a different version of
 Java us the \`module\` command to find and load for example:
 
-    $ module spider Java
-    -----------------------------------------------------------------------
-    -----------------------------------------------------------------------
-    Java Platform, Standard Edition (Java SE) lets you develop and deploy 
-    Java applications on desktops and servers.
+``` sl
+$ module spider Java
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+Java Platform, Standard Edition (Java SE) lets you develop and deploy 
+Java applications on desktops and servers.
 
-    Versions:
-    Java/1.7.0_51
-    Java/1.8.0_144
-    Java/11.0.4
-    Java/15.0.2
+Versions:
+Java/1.7.0_51
+Java/1.8.0_144
+Java/11.0.4
+Java/15.0.2
 
-    $ module load Java/15.0.2
+$ module load Java/15.0.2
+```
 
 ## Memory management and the -Xmx option
 

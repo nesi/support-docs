@@ -35,8 +35,10 @@ It is probably a good idea to provide an output file using the -o flag
 if you don't want the profiling data sent to your stdout in string
 format. 
 
-    module load python
-    python -m cProfile -o myCode.prof myCode.py
+``` sl
+module load python
+python -m cProfile -o myCode.prof myCode.py
+```
 
 The output will be a binary file.
 
@@ -50,9 +52,13 @@ visualise your profile data.
 One of the simplest way to visualise your data is with
 [gprof2dot](https://github.com/jrfonseca/gprof2dot) 
 
-    pip install gprof2dot --user
+``` sl
+pip install gprof2dot --user
+```
 
-    gprof2dot -f pstats myCode.prof | dot -Tpng -o myCode.png
+``` sl
+gprof2dot -f pstats myCode.prof | dot -Tpng -o myCode.png
+```
 
 This will generate a .png file showing a breakdown of functions run by
 your code.

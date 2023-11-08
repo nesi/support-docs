@@ -60,9 +60,9 @@ met:
     contributors may be used to endorse or promote products derived from
     this software without specific prior written permission.
 
-<!-- -->
-
-     
+``` sl
+ 
+```
 
 ## Example Slurm script
 
@@ -71,34 +71,36 @@ met:
   
   
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --account       nesi12345
-    #SBATCH --job-name      cliar3_job
-    #SBATCH --mem           6G #12G is just a place holder. Adjust accordingly
-    #SBATCH --cpus-per-task 4 #4 just a place holder. Adjust accordingly
-    #SBATCH --time          01:00:00
-    #SBATCH --output        slurmout.%j.out
-
-
-    #Caution: Absolute path is needed for both INPUT_DIR and OUTPUT_DIR
-
-    INPUT_DIR=/path/to/input/data         # e.g. /nesi/nobackup/nesi12345/input (absolute path needed)
-    OUTPUT_DIR=/path/to/save/outputs      # /nesi/nobackup/nesi12345/output (absolute path needed)
-    REF=/path/to/reference/genomes        # use the suggested Slurm variable which will read the value from `--cpus-per-task`
-    MODEL_NAME=/model/name                # e.g. r941_prom_hac_g360+g422
+#SBATCH --account       nesi12345
+#SBATCH --job-name      cliar3_job
+#SBATCH --mem           6G #12G is just a place holder. Adjust accordingly
+#SBATCH --cpus-per-task 4 #4 just a place holder. Adjust accordingly
+#SBATCH --time          01:00:00
+#SBATCH --output        slurmout.%j.out
 
 
-    module purge
-    module load Clair3/0.1.12-Miniconda3
+#Caution: Absolute path is needed for both INPUT_DIR and OUTPUT_DIR
 
-    run_clair3.sh \
-    --bam_fn=${INPUT_DIR} \
-    --ref_fn=${REF} \
-    --threads=$SLURM_CPUS_PER_TASK \
-    --platform=ont \
-    --model_path=${CONDA_PREFIX}/bin/models/${MODEL_NAME} \
-    --output=${OUTPUT_DIR} --enable_phasing
+INPUT_DIR=/path/to/input/data         # e.g. /nesi/nobackup/nesi12345/input (absolute path needed)
+OUTPUT_DIR=/path/to/save/outputs      # /nesi/nobackup/nesi12345/output (absolute path needed)
+REF=/path/to/reference/genomes        # use the suggested Slurm variable which will read the value from `--cpus-per-task`
+MODEL_NAME=/model/name                # e.g. r941_prom_hac_g360+g422
+
+
+module purge
+module load Clair3/0.1.12-Miniconda3
+
+run_clair3.sh \
+--bam_fn=${INPUT_DIR} \
+--ref_fn=${REF} \
+--threads=$SLURM_CPUS_PER_TASK \
+--platform=ont \
+--model_path=${CONDA_PREFIX}/bin/models/${MODEL_NAME} \
+--output=${OUTPUT_DIR} --enable_phasing
+```
 
   
   

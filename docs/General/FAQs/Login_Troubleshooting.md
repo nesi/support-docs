@@ -37,28 +37,36 @@ zendesk_section_id: 360000039036
 In addition to using an incorrect First/Second factor there are several
 other issues that will cause a similar looking failure to log in. 
 
-    Login Password:
-    Login Password:
-    Login Password:
+``` sl
+Login Password:
+Login Password:
+Login Password:
+```
 
 OR
 
-    Login Password (First Factor): 
-    Authenticator Code (Second Factor):
-    Login Password (First Factor): 
-    Authenticator Code (Second Factor):
-    Login Password (First Factor): 
-    Authenticator Code (Second Factor):
+``` sl
+Login Password (First Factor): 
+Authenticator Code (Second Factor):
+Login Password (First Factor): 
+Authenticator Code (Second Factor):
+Login Password (First Factor): 
+Authenticator Code (Second Factor):
+```
 
 ### 1. Try logging in to `lander` directly.
 
 You can test what part of your connection has failed by first running:
 
-    ssh <user>@lander.nesi.org.nz
+``` sl
+ssh <user>@lander.nesi.org.nz
+```
 
 **If this succeeds**: Run the following:
 
-    ssh login.<mahuika/maui>.nesi.org.nz
+``` sl
+ssh login.<mahuika/maui>.nesi.org.nz
+```
 
 **If this fails:** Are you logging in to the correct cluster?
 Mahuika/Maui have separate access control, also Māui requires your
@@ -130,12 +138,14 @@ input before pressing Enter will cause the login to fail.
 
 The expected processes is as follows:
 
-    ssh <user>@lander.nesi.org.nz 
-    <user>@lander.nesi.org.nz's password: <Enter>
-    <user>@lander.nesi.org.nz's password: <Enter>
-    <user>@lander.nesi.org.nz's password: <Enter>
-    Login Password (First Factor): 
-    Authenticator Code (Second Factor):
+``` sl
+ssh <user>@lander.nesi.org.nz 
+<user>@lander.nesi.org.nz's password: <Enter>
+<user>@lander.nesi.org.nz's password: <Enter>
+<user>@lander.nesi.org.nz's password: <Enter>
+Login Password (First Factor): 
+Authenticator Code (Second Factor):
+```
 
 *Note: Sometimes MobaXterm will prompt with a dialogue box.*
 

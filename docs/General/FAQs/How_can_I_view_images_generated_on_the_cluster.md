@@ -8,8 +8,8 @@ label_names:
 - view
 position: 0
 title: How can I view images generated on the cluster?
-vote_count: 3
-vote_sum: 3
+vote_count: 4
+vote_sum: 2
 zendesk_article_id: 360001514795
 zendesk_section_id: 360000039036
 ---
@@ -26,7 +26,9 @@ zendesk_section_id: 360000039036
 If for any reason downloading images is impractical you can view them on
 the cluster using the `display` command. For example,
 
-    display myImage.png
+``` sl
+display myImage.png
+```
 
 This requires a [working X-11
 server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975).

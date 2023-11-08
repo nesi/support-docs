@@ -49,7 +49,9 @@ as:
 You can see which groups you are a member of at any time by running the
 following command on a Mahuika, Māui or Māui ancillary login node:
 
-    groups
+``` sl
+groups
+```
 
 ## Files in home directories
 

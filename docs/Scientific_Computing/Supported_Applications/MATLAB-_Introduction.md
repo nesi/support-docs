@@ -26,11 +26,15 @@ More general information can be found on MATLAB
 
 Load MATLAB with the command.
 
-    module load MATLAB
+``` sl
+module load MATLAB
+```
 
 Help can be found with
 
-    matlab -nodisplay -help
+``` sl
+matlab -nodisplay -help
+```
 
 # X11 and -nodisplay
 
@@ -43,7 +47,9 @@ Xorg).
 
 To run the desktop version of MATLAB enter:
 
-    matlab
+``` sl
+matlab
+```
 
 This can be useful as an introduction for those not familiar with the
 command line environment, however this is **not recommended** as your
@@ -53,7 +59,9 @@ commands necessary for submitting batch jobs.
 
 Appending the command with;
 
-    matlab -nodisplay
+``` sl
+matlab -nodisplay
+```
 
 Will force MATLAB to open as the command line version.
 
@@ -68,7 +76,9 @@ used for large jobs** (anything with multiple CPU's or multiple hours).
 
 To start the command line version of MATLAB run:
 
-    matlab -nodisplay
+``` sl
+matlab -nodisplay
+```
 
 This will function identically to the Command Window in the desktop
 version of MATLAB.
@@ -86,7 +96,9 @@ initiate it from the bash command line. This can be done in 2 ways.
 
 A .m script can be piped into MATLAB using.
 
-    matlab -nodisplay < myScript.m
+``` sl
+matlab -nodisplay < myScript.m
+```
 
 This will open MATLAB then run your script. 
 
@@ -95,7 +107,9 @@ This will open MATLAB then run your script. 
 MATLAB also accepts command window inputs using '-r'. Note ';' used for
 line-breaks.
 
-    matlab -nodisplay -r "x=(1:10); y=(1:10); z=x'*y; disp(z);exit;"
+``` sl
+matlab -nodisplay -r "x=(1:10); y=(1:10); z=x'*y; disp(z);exit;"
+```
 
 Will give the output
 
@@ -105,11 +119,15 @@ then exit.
 
 To run a function in the current directory.
 
-    matlab -nodisplay -r "myFunction(15);"
+``` sl
+matlab -nodisplay -r "myFunction(15);"
+```
 
 A script can also be run using this method.
 
-    matlab -nodisplay -r "myScript;"
+``` sl
+matlab -nodisplay -r "myScript;"
+```
 
 ## Paths
 
@@ -117,9 +135,13 @@ By default only files in the same directory as you called MATLAB from
 will be included in the directory (no sub-directories).  
 A single directory can be added to path with;
 
-    addpath('your_directory') 
+``` sl
+addpath('your_directory') 
+```
 
-    addpath(genpath('your_directory'))
+``` sl
+addpath(genpath('your_directory'))
+```
 
 ## Output
 
@@ -129,7 +151,9 @@ Output from your job can be obtained multiple ways
 
 The output of the terminal can be sent to a file using -logfile, e.g:
 
-    matlab -nodisplay -r "myScript; exit;"
+``` sl
+matlab -nodisplay -r "myScript; exit;"
+```
 
 *Note: This is mostly made redundant by Slurm logs.*
 
@@ -147,34 +171,40 @@ this can be changed by editing the environment variable MATLAB\_LOG\_DIR
 
 e.g.
 
-    export MATLAB_LOG_DIR=logs
+``` sl
+export MATLAB_LOG_DIR=logs
+```
 
 ## Slurm
 
 Creating a file job.sl to add everything in the the parent directory
 'parentDirectory' to the path and then run the function 'myFunction()'
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --job-name MATLAB_test        #Name to appear in squeue
-    #SBATCH --time          06:00:00      #Max walltime
-    #SBATCH --mem-per-cpu   1500          #Max memory per logical core
-    #SBATCH --ntasks=1                    #No MPI
-    #SBATCH --output=%x_out.log           #Location of output log
-    #SBATCH --error=%x_error.err          #Location of error log
+#SBATCH --job-name MATLAB_test        #Name to appear in squeue
+#SBATCH --time          06:00:00      #Max walltime
+#SBATCH --mem-per-cpu   1500          #Max memory per logical core
+#SBATCH --ntasks=1                    #No MPI
+#SBATCH --output=%x_out.log           #Location of output log
+#SBATCH --error=%x_error.err          #Location of error log
 
-    module load MATLAB
-    #OR specific version with;
-    #module load MATLAB/2017b
+module load MATLAB
+#OR specific version with;
+#module load MATLAB/2017b
 
-    #Job run
-    matlab -nodisplay -r "addpath(genpath('../parentDirectory'));myFunction(5,20)"
+#Job run
+matlab -nodisplay -r "addpath(genpath('../parentDirectory'));myFunction(5,20)"
+```
 
  
 
 This can then be submitted with
 
-    sbatch job.sl
+``` sl
+sbatch job.sl
+```
 
  
 
@@ -182,4 +212,6 @@ This can then be submitted with
 
 handy for deleting log files in your home directory
 
-    rm java.log*
+``` sl
+rm java.log*
+```

@@ -52,7 +52,9 @@ forwarding](https://support.nesi.org.nz/hc/en-gb/articles/360001523916). 
 
 For example:
 
-    ssh -L 1234:localhost:1234 mahuika
+``` sl
+ssh -L 1234:localhost:1234 mahuika
+```
 !!! info Tip
 >
 > Port numbers should be between **1025-49151**. It's OK to use the same
@@ -62,7 +64,9 @@ For example:
 
 Run the command.
 
-    echo "export PATH="/opt/nesi/vdt/:\$PATH"">>~/.bash_profile;. ~/.bash_profile
+``` sl
+echo "export PATH="/opt/nesi/vdt/:\$PATH"">>~/.bash_profile;. ~/.bash_profile
+```
 
 to add the VDT command to your path, if you don't do this step you can
 still use the `vdt` command as `/opt/nesi/vdt/vdt`
@@ -109,7 +113,9 @@ serious computation there.
 Once on Mahuika, enter in the path to the desktop followed by your
 forwarded port (`--help` for more options).
 
-    vdt start -N my_desktop [port]
+``` sl
+vdt start -N my_desktop [port]
+```
 
 <!--
 <p>
@@ -176,19 +182,25 @@ doing it on a compute node.
 If you already have a Slurm job running, you can start a desktop on that
 node using the `-r [hostname]` e.g.
 
-    vdt start -N my_desktop -r [hostname] [port]
+``` sl
+vdt start -N my_desktop -r [hostname] [port]
+```
 
 If you want to start a new Slurm session, you can do this using salloc ,
 the hostname will be inferred from environment (unless explicitly set).
 
-    salloc --job-name my_desktop --nodes 1 --cpus-per-task 8 --time 01:00:00 vdt start 1234
+``` sl
+salloc --job-name my_desktop --nodes 1 --cpus-per-task 8 --time 01:00:00 vdt start 1234
+```
 
 ## Persistence
 
 If you wish your desktop to stay around after you close your shell, add
 `&` after the command. e.g.
 
-    vdt start [port] &
+``` sl
+vdt start [port] &
+```
 
 # Troubleshooting
 

@@ -35,11 +35,15 @@ Nearline Nearline Nearline Nearline
 With the following command, you can print the list of files and
 directories within the specified Nearline directory:
 
-    nlls /nesi/nearline/<projectID>
+``` sl
+nlls /nesi/nearline/<projectID>
+```
 
 Similar to the shell command `ls` you can list subdirectories as well:
 
-    nlls /nesi/nearline/<projectID>/results/
+``` sl
+nlls /nesi/nearline/<projectID>/results/
+```
 
 Furthermore, you can use the additional option `-l` to get the detailed
 list including `mode`, `owner`, `group`, `filesize`, and `timestamp`.
@@ -48,12 +52,14 @@ file's migration status. Note that, due to technical limitations, `-s`
 does not work on single files and so `nlls -s` requires a directory as
 its argument.
 
-    $ nlls -s /nesi/nearline/nesi12345/results/
-    mode        s  owner               group      filesize    timestamp    filename
-    ___________________________________________________________________________________________________________________________
-    -rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file1.tar.gz
-    -rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file2.tar.gz
-    -rw-rw----+ r  userName        nesi12345      34.03 MB       Jun 17    file3.tar.gz
+``` sl
+$ nlls -s /nesi/nearline/nesi12345/results/
+mode        s  owner               group      filesize    timestamp    filename
+___________________________________________________________________________________________________________________________
+-rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file1.tar.gz
+-rw-rw----+ r  userName        nesi12345      33.93 MB       Jun 17    file2.tar.gz
+-rw-rw----+ r  userName        nesi12345      34.03 MB       Jun 17    file3.tar.gz
+```
 
 Status ("s" column of the `-s` output) legend:
 
@@ -73,7 +79,9 @@ stack trace if this occurs.
 If you want to see all the files within a Nearline directory and its
 subdirectories, you can run `nltraverse`.
 
-    nltraverse /nesi/nearline/<projectID>
+``` sl
+nltraverse /nesi/nearline/<projectID>
+```
 
 Optionally, you can run `nltraverse` with the `-s` command-line switch,
 which, as with `nlls`, will display the migration status of each file
@@ -91,7 +99,9 @@ If you want to compare a local (online storage) directory to a directory
 on Nearline, you can use the `nlcompare` command. The syntax of this
 command is:
 
-    nlcompare <local_directory> <nearline_directory>
+``` sl
+nlcompare <local_directory> <nearline_directory>
+```
 
 This command will print out the lists of files giving their last
 modified times, sizes and file paths.
@@ -110,7 +120,9 @@ text file comparison program, such as `diff` or `vimdiff`.
 
 Data can be copied to Nearline using the `nlput` command. The syntax is:
 
-    nlput [ --nowait ] <projectID> { <src_dir> | <file_list> }
+``` sl
+nlput [ --nowait ] <projectID> { <src_dir> | <file_list> }
+```
 
 The source directory or file list needs to be located under
 `/nesi/`**`project`**`/` or `/nesi/`**`nobackup`**`/`and specified as
@@ -119,12 +131,16 @@ such. 
 >
 > The following will not work:
 >
->     cd /nesi/project/nesi12345
->     nlput nesi12345 some_directory
+> ``` sl
+> cd /nesi/project/nesi12345
+> nlput nesi12345 some_directory
+> ```
 >
 > It is necessary to do this instead:
 >
->     nlput nesi12345 /nesi/project/nesi12345/some_directory
+> ``` sl
+> nlput nesi12345 /nesi/project/nesi12345/some_directory
+> ```
 
 The data will be mapped into the same directory structure under
 `/nesi/`**`nearline`**`/` (see below).
@@ -200,7 +216,9 @@ All files and subdirectories within a specified directory will be
 transferred into Nearline. The target location maps with the source
 location. As an example:
 
-    nlput nesi12345 /nesi/nobackup/nesi12345/To/Archive/Results/
+``` sl
+nlput nesi12345 /nesi/nobackup/nesi12345/To/Archive/Results/
+```
 
 will copy all data within the `Results` directory into
 
@@ -282,7 +300,9 @@ exist on Nearline but are no longer on project or nobackup:
 Data can be retrieved from Nearline using then `nlget` command. The
 syntax is:
 
-    nlget [ --nowait ] <projectID> { <src_dir> | <file_list> } <dest_dir>
+``` sl
+nlget [ --nowait ] <projectID> { <src_dir> | <file_list> } <dest_dir>
+```
 
 Similar to `nlput` (see above), nlget accepts a Nearline** directory**
 `src_dir` **(no single files on Nearline accepted)** or a **local file
@@ -308,7 +328,9 @@ The destination `dest_dir` needs to be defined. The whole directory
 structure after `/nesi/nearline/` will be created at the destination and
 the specified data written into it. For example,
 
-    nlget nesi00000 /nesi/nearline/nesi00000/dir/to/results/ /nesi/nobackup/nesi00000
+``` sl
+nlget nesi00000 /nesi/nearline/nesi00000/dir/to/results/ /nesi/nobackup/nesi00000
+```
 
 will create the directory structure
 `/nesi/nobackup/nesi00000/nesi00000/`**`dir/to/results/`** if that
@@ -333,8 +355,10 @@ local file list specifying the full path of the file to be retrieved.
 The `nlpurge` command deletes specified data on the Nearline file system
 permanently. The syntax is
 
-    nlpurge [--nowait] <src_dir>
-    nlpurge [ --nowait ] <projectID> { <src_dir> | <file_list> }
+``` sl
+nlpurge [--nowait] <src_dir>
+nlpurge [ --nowait ] <projectID> { <src_dir> | <file_list> }
+```
 
 A **directory** `src_dir` already on Nearline **(no single files
 accepted)** or a file list `file_list` needs to be specified (see
@@ -363,42 +387,48 @@ directory.
 The tool `nljobstatus` provides current status of submitted (queued,
 running and completed) tasks. The syntax is:
 
-    nljobstatus [ <jobid> ]
+``` sl
+nljobstatus [ <jobid> ]
+```
 
 If no job ID is specified the full list of your successfully submitted
 and accepted jobs is returned. In this list, each job looks like the
 following:
 
-    $ nljobstatus
-    +----------+------------+----------------------------+-----------+-------------+
-    |  Jobid   | Project ID |         Job Status         | Job Host  |  Job User   |
-    +----------+------------+----------------------------+-----------+-------------+
-    | 4e23f517 |     13     |   job done successfully    | librarian | userName    |
-    | -dfef-40 |            |                            |           |             |
-    | e9-a83c- |            |                            |           |             |
-    | 3da78b06 |            |                            |           |             |
-    |   0310   |            |                            |           |             |
-    +----------+------------+----------------------------+-----------+-------------+
+``` sl
+$ nljobstatus
++----------+------------+----------------------------+-----------+-------------+
+|  Jobid   | Project ID |         Job Status         | Job Host  |  Job User   |
++----------+------------+----------------------------+-----------+-------------+
+| 4e23f517 |     13     |   job done successfully    | librarian | userName    |
+| -dfef-40 |            |                            |           |             |
+| e9-a83c- |            |                            |           |             |
+| 3da78b06 |            |                            |           |             |
+|   0310   |            |                            |           |             |
++----------+------------+----------------------------+-----------+-------------+
+```
 
 With a job identifier `jobid`, information for a specific job can be
 listed:
 
-    $ nljobstatus 4e23f517-dfef-40e9-a83c-3da78b060310
-    +--------------------------------------+
-    |                Jobid                 |
-    +--------------------------------------+
-    | 4e23f517-dfef-40e9-a83c-3da78b060310 |
-    +--------------------------------------+
-    +------------+-----------------------+-----------+-------------+
-    | Project ID |      Job Status       | Job Host  |  Job User   |
-    +------------+-----------------------+-----------+-------------+
-    |     13     | job done successfully | librarian | userName    |
-    +------------+-----------------------+-----------+-------------+
-    +---------------------+---------------------+---------------------+
-    |   Job Start Time    |   Job Update Time   |    Job End Time     |
-    +---------------------+---------------------+---------------------+
-    | 2019-09-13T03:11:22 | 2019-09-13T03:11:44 | 2019-09-13T03:11:45 |
-    +---------------------+---------------------+---------------------+
+``` sl
+$ nljobstatus 4e23f517-dfef-40e9-a83c-3da78b060310
++--------------------------------------+
+|                Jobid                 |
++--------------------------------------+
+| 4e23f517-dfef-40e9-a83c-3da78b060310 |
++--------------------------------------+
++------------+-----------------------+-----------+-------------+
+| Project ID |      Job Status       | Job Host  |  Job User   |
++------------+-----------------------+-----------+-------------+
+|     13     | job done successfully | librarian | userName    |
++------------+-----------------------+-----------+-------------+
++---------------------+---------------------+---------------------+
+|   Job Start Time    |   Job Update Time   |    Job End Time     |
++---------------------+---------------------+---------------------+
+| 2019-09-13T03:11:22 | 2019-09-13T03:11:44 | 2019-09-13T03:11:45 |
++---------------------+---------------------+---------------------+
+```
 
 If an `nlput` or `nlpurge` is running in that project, the project is
 locked until the task is finished.
@@ -413,10 +443,12 @@ project quota can be listed:
 
 The output looks like:
 
-    $ nlquotalist nesi12345
-    Projectname                                       Available           Used                Inodes         IUsed
-    ___________________________________________________________________________________________________________________________
-    nesi12345                                         30.00 TB            27.16 TB            1000000        412
+``` sl
+$ nlquotalist nesi12345
+Projectname                                       Available           Used                Inodes         IUsed
+___________________________________________________________________________________________________________________________
+nesi12345                                         30.00 TB            27.16 TB            1000000        412
+```
 
 This quota is different from the project quota on GPFS
 (`/nesi/project/<projectID>`).
@@ -429,7 +461,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../../assets/images/.360002703556)
+![librarian\_get\_put.jpeg](../../assets/images/360002703556..png)
 
 # Underlying mechanism
 
@@ -459,7 +491,9 @@ indeed wait times could be hours or even in some cases more than a day.
 > Instead, only some files will come back, and the job will finish with
 > the following output:
 >
->     recall failed some syncs might still run (042)
+> ``` sl
+> recall failed some syncs might still run (042)
+> ```
 >
 > We are aware of this problem, which is caused by the Nearline job
 > timing out while waiting for a tape drive to become available. This

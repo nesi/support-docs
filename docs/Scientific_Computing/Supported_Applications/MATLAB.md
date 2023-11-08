@@ -53,18 +53,20 @@ matlab -nodisplay < MATLAB_job.m
 
 ## Function Example
 
-    #!/bin/bash -e
-    #SBATCH --job-name       MATLAB_job    # Name to appear in squeue
-    #SBATCH --time           06:00:00      # Max walltime
-    #SBATCH --mem            2048MB        # Max memory
-    #SBATCH --cpus-per-task  4             # 2 physical cores.
-    #SBATCH --output         %x.log        # Location of output log
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name       MATLAB_job    # Name to appear in squeue
+#SBATCH --time           06:00:00      # Max walltime
+#SBATCH --mem            2048MB        # Max memory
+#SBATCH --cpus-per-task  4             # 2 physical cores.
+#SBATCH --output         %x.log        # Location of output log
 
-    module load MATLAB/2021b
+module load MATLAB/2021b
 
-    #Job run 
-    matlab -batch "addpath(genpath('../parentDirectory'));myFunction(5,20)"
-    # For versions older than 2019a, use '-nodisplay -r' instead of '-batch'
+#Job run 
+matlab -batch "addpath(genpath('../parentDirectory'));myFunction(5,20)"
+# For versions older than 2019a, use '-nodisplay -r' instead of '-batch'
+```
 !!! info Command Line
 >
 > When using matlab on command line, all flag options use a single '`-`'
@@ -78,7 +80,7 @@ matlab -nodisplay < MATLAB_job.m
 
 # Parallelism
 
-MATLAB does not support MPI therefore \#SBATCH --ntasks should always be
+MATLAB does not support MPI therefore #SBATCH --ntasks should always be
 1, but if given the necessary resources some MATLAB functions can make
 use of multiple threads (--cpus-per-task) or GPUs (--gpus-per-node).
 
@@ -102,9 +104,11 @@ To prevent simultaneous parallel MATLAB jobs from interfering with each
 other you should tell them to each use their own job-specific local
 directories:
 
-    pc = parcluster('local')
-    pc.JobStorageLocation = getenv('TMPDIR')
-    parpool(pc, str2num(getenv('SLURM_CPUS_PER_TASK')))
+``` sl
+pc = parcluster('local')
+pc.JobStorageLocation = getenv('TMPDIR')
+parpool(pc, str2num(getenv('SLURM_CPUS_PER_TASK')))
+```
 !!! info Note
 >
 > Parpool will throw a warning when started due to a difference in how
@@ -116,11 +120,13 @@ directories:
 **parfor: **Executes each iteration of a loop on a different worker.
 e.g.
 
-    parfor i=1:100
+``` sl
+parfor i=1:100
 
-       %Your operation here.
+   %Your operation here.
 
-    end
+end
+```
 
 `parfor` operates similarly to a SLURM job array and must be
 embarrassingly parallel. Therefore all variables either need to be
@@ -135,17 +141,19 @@ More info
 `parfeval` is used to assign a particular function to a thread, allowing
 it to be run asynchronously. e.g.
 
-    my_coroutine=parfeval(@my_async_function,2,in1,in2);
+``` sl
+my_coroutine=parfeval(@my_async_function,2,in1,in2);
 
-    % Do something that doesn't require outputs from 'my_async_function'
+% Do something that doesn't require outputs from 'my_async_function'
 
-    [out1, out2]=fetchOutputs(my_coroutine); % If 'my_coroutine' has not finished execution will pause.
+[out1, out2]=fetchOutputs(my_coroutine); % If 'my_coroutine' has not finished execution will pause.
 
-    function [out1,out2]=my_async_function(in1,in2)
+function [out1,out2]=my_async_function(in1,in2)
 
-    %Your operation here.
+%Your operation here.
 
-    end
+end
+```
 
 `fetchOutputs` is used to retrieve the values.
 
@@ -206,18 +214,20 @@ support page.
 
 ## GPU Example
 
-    #!/bin/bash -e
-    #SBATCH --job-name       MATLAB_GPU    # Name to appear in squeue
-    #SBATCH --time           01:00:00      # Max walltime
-    #SBATCH --mem            10G           # 10G per GPU
-    #SBATCH --cpus-per-task  4             # 4 CPUs per GPU
-    #SBATCH --output         %x.%j.log     # Location of output log
-    #SBATCH --gpus-per-node  1             # Number of GPUs to use (max 2)
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name       MATLAB_GPU    # Name to appear in squeue
+#SBATCH --time           01:00:00      # Max walltime
+#SBATCH --mem            10G           # 10G per GPU
+#SBATCH --cpus-per-task  4             # 4 CPUs per GPU
+#SBATCH --output         %x.%j.log     # Location of output log
+#SBATCH --gpus-per-node  1             # Number of GPUs to use (max 2)
 
-    module load MATLAB/2021a
-    module load CUDA/11.0.2  # Drivers for using GPU
+module load MATLAB/2021a
+module load CUDA/11.0.2  # Drivers for using GPU
 
-    matlab -batch "gpuDevice()"
+matlab -batch "gpuDevice()"
+```
 
 # Adding Support Packages
 
@@ -273,13 +283,15 @@ more info about compiling software on NeSI
 
 At the minimum, the C++ extension should contain:
 
-    #include <mex.h>
-    #include <matrix.h>
+``` sl
+#include <mex.h>
+#include <matrix.h>
 
-    void mexFunction(int nlhs, mxArray *plhs[],
-                     int nrhs, const mxArray *prhs[]) {
-        // implementation goes here
-    }
+void mexFunction(int nlhs, mxArray *plhs[],
+                 int nrhs, const mxArray *prhs[]) {
+    // implementation goes here
+}
+```
 
 Note that the above function should always be called `mexFunction` and
 its signature be
@@ -291,20 +303,26 @@ the type of argument, whether it is a number, a matrix or an object, its
 type is `mxArray`. Often you will need to cast the argument into a
 corresponding C++ type, e.g.
 
-    // cast as a double, note the asterisk in front of mxGetPr
-    double x = (double) *mxGetPr(prhs[0]);
+``` sl
+// cast as a double, note the asterisk in front of mxGetPr
+double x = (double) *mxGetPr(prhs[0]);
+```
 
 or
 
-    // cast as an array of doubles
-    double* arr = (double*) mxGetPr(prhs[0]);
+``` sl
+// cast as an array of doubles
+double* arr = (double*) mxGetPr(prhs[0]);
+```
 
 Use `mxCreateDoubleMatrix` and `mxCreateDoubleScalar` to create a matrix
 and a number, respectively. For example:
 
-    // function returns [plhs[0], plhs[1]]
-    plhs[0] = mxCreateDoubleMatrix(3, 2, mxREAL);  // 3 by 2 matrix
-    plhs[1] = mxCreateDoubleScalar(2);  // number
+``` sl
+// function returns [plhs[0], plhs[1]]
+plhs[0] = mxCreateDoubleMatrix(3, 2, mxREAL);  // 3 by 2 matrix
+plhs[1] = mxCreateDoubleScalar(2);  // number
+```
 
 All numbers are doubles. Use flat array indexing `a[i + n*j - 1]` in C++
 to access elements of a MATLAB matrix `a(i, j)` of size `n x m`.

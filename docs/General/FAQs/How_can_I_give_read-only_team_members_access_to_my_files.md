@@ -48,23 +48,31 @@ read-only project code respectively.
     same, up to the second colon, as one of the new lines you ask to
     add.
 
-        echo "mask::rwxc" > acl_to_add.txt
-        echo "group:nesi12345r:r-x-" >> acl_to_add.txt
+    ``` sl
+    echo "mask::rwxc" > acl_to_add.txt
+    echo "group:nesi12345r:r-x-" >> acl_to_add.txt
+    ```
 
 2.  Check that the contents of the file are correct.
 
-        cat acl_to_add.txt
+    ``` sl
+    cat acl_to_add.txt
+    ```
 
 3.  Carry out the ACL change. You can specify a subdirectory instead if,
     as may well be the case, you don't want to trawl through the
     entirety of `/nesi/project/nesi12345` or `/nesi/nobackup/nesi12345`.
 
-        nn_add_to_acls_recursively -f acl_to_add.txt /nesi/project/nesi12345
+    ``` sl
+    nn_add_to_acls_recursively -f acl_to_add.txt /nesi/project/nesi12345
+    ```
 
 4.  Check the resulting ACLs, for example:
 
-        /usr/lpp/mmfs/bin/mmgetacl /nesi/project/nesi12345/some_dir
-        /usr/lpp/mmfs/bin/mmgetacl -d /nesi/project/nesi12345/some_dir
+    ``` sl
+    /usr/lpp/mmfs/bin/mmgetacl /nesi/project/nesi12345/some_dir
+    /usr/lpp/mmfs/bin/mmgetacl -d /nesi/project/nesi12345/some_dir
+    ```
 
     We suggest to check at least one subdirectory, at least one
     executable file (if there is one) and at least one non-executable
@@ -76,7 +84,9 @@ read-only project code respectively.
 
 6.  Optionally, remove your ACL file.
 
-        rm acl_to_add.txt
+    ``` sl
+    rm acl_to_add.txt
+    ```
 
 7.  Optionally, exit the `screen` or `tmux` session when you are
     finished.

@@ -28,10 +28,12 @@ an error (and probably kill your job).
 
 Current file-count and disk space can be found using `nn_storage_quota`.
 
-    Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
-    home_user123             20G    1.957G    9.79%      92160     21052    22.84%
-    project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
-    nobackup_nesi99999              6.833T            10000000    2691383   26.91%
+``` sl
+Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
+home_user123             20G    1.957G    9.79%      92160     21052    22.84%
+project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
+nobackup_nesi99999              6.833T            10000000    2691383   26.91%
+```
 !!! info Note
 >
 > There is a delay between making changes to a filesystem and seeing the
@@ -61,12 +63,16 @@ There are a few ways to deal with file count problems
     same options as `mksquashfs`, including choice of compression
     algorithm; see `man mksquashfs` for more details.  
 
-        nn_archive_files -p <project-code> -n <num-processors> -t <time-limit> --verify -- /path/containing/files /path2/containing/files destination.squash
+    ``` sl
+    nn_archive_files -p <project-code> -n <num-processors> -t <time-limit> --verify -- /path/containing/files /path2/containing/files destination.squash
+    ```
 
     Then when files need to be accessed again they can be extracted
     using,
 
-        /usr/sbin/unsquashfs destination.squash
+    ``` sl
+    /usr/sbin/unsquashfs destination.squash
+    ```
 
     You can do many other things with SquashFS archives, like quickly
     list the files in the archive, extract some but not all of the
@@ -75,12 +81,16 @@ There are a few ways to deal with file count problems
 -   **Tarball (usable, but SquashFS is recommended)**  
     Many files can be compressed into a single 'tarball'   
 
-        tar -czf name.tar /path/containing/files/
+    ``` sl
+    tar -czf name.tar /path/containing/files/
+    ```
 
     Then when files need to be accessed again they can be un-tarred
     using,
 
-        tar -xzf tarname.tar
+    ``` sl
+    tar -xzf tarname.tar
+    ```
 
 -   **Contact Support**  
     If you are following the recommendations here yet are still

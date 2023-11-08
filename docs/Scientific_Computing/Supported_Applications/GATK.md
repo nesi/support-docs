@@ -44,30 +44,30 @@ need to load a Java module separately.
     holders.
 -   Please load the GATK version of your choice
 
-<!-- -->
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=MarkDuplicates
+#SBATCH --output=%x_%j.out     # log file
+#SBATCH --error=%x_%j.err      # error log file
+#SBATCH --account=nesi12345    # your NeSI project code
+#SBATCH --time=2:00:00         # maximum run time hh:mm:ss
+#SBATCH --mem=30G              # maximum memory available to GATK
 
-    #!/bin/bash -e
-    #SBATCH --job-name=MarkDuplicates
-    #SBATCH --output=%x_%j.out     # log file
-    #SBATCH --error=%x_%j.err      # error log file
-    #SBATCH --account=nesi12345    # your NeSI project code
-    #SBATCH --time=2:00:00         # maximum run time hh:mm:ss
-    #SBATCH --mem=30G              # maximum memory available to GATK
+# create temporary directory for Java so it does not fill up /tmp
+TMPDIR=/nesi/nobackup/<project_ID>/GATK_tmp/
+mkdir -p ${TMPDIR}
 
-    # create temporary directory for Java so it does not fill up /tmp
-    TMPDIR=/nesi/nobackup/<project_ID>/GATK_tmp/
-    mkdir -p ${TMPDIR}
+# remove other modules that may be loaded
+# load specific GATK version
+module purge
+module load GATK/4.3.0.0-gimkl-2022a
 
-    # remove other modules that may be loaded
-    # load specific GATK version
-    module purge
-    module load GATK/4.3.0.0-gimkl-2022a
+# tell Java to use ${TMPDIR} as the temporary directory
+export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
 
-    # tell Java to use ${TMPDIR} as the temporary directory
-    export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
-
-    # run GATK command
-    gatk MarkDuplicates I=input.bam O=marked_duplicates.bam M=marked_dup_metrics.txt
+# run GATK command
+gatk MarkDuplicates I=input.bam O=marked_duplicates.bam M=marked_dup_metrics.txt
+```
 
  
 
@@ -77,7 +77,9 @@ GATK versions 4.0 or higher all contains a copy of the Picard toolkit,
 you will not need to separately load the Picard module. To run
 GATK-picard commands, use:  
 
-    gatk <picard function> <options>
+``` sl
+gatk <picard function> <options>
+```
 
 This is different what what is currently written on the GATK
 documentation, you do not need to call "java -jar picard.jar
@@ -103,12 +105,14 @@ in a compute node.
 To work around this, create another directory to use for temporrary
 files.
 
-    # create a new temporary directory
-    TMPDIR="/nesi/nobackup/<project_directory>/GATK_tmp/"
-    mkdir -p ${TMPDIR}
+``` sl
+# create a new temporary directory
+TMPDIR="/nesi/nobackup/<project_directory>/GATK_tmp/"
+mkdir -p ${TMPDIR}
 
-    # put this line in AFTER you load GATK but BEFORE running GATK
-    export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
+# put this line in AFTER you load GATK but BEFORE running GATK
+export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
+```
 
  
 

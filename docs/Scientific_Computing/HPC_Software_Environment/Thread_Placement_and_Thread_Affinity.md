@@ -120,26 +120,32 @@ GOMP have similar configurations.
 Use a text editor to save the following test program in a text file
 called "hello\_world.c":
 
-    #include <stdio.h>
-    #include <omp.h>
-    int main()
-    {
-        #pragma omp parallel
-        printf("Hello World from Thread %i!\n", omp_get_thread_num());
-        return 0;
-    }
+``` sl
+#include <stdio.h>
+#include <omp.h>
+int main()
+{
+    #pragma omp parallel
+    printf("Hello World from Thread %i!\n", omp_get_thread_num());
+    return 0;
+}
+```
 
 On Mahuika or Māui Ancil, compile the program using the commands
 
-    module load intel/2018b
-    icc -o hello_world.x -qopenmp hello_world.c
+``` sl
+module load intel/2018b
+icc -o hello_world.x -qopenmp hello_world.c
+```
 
 Running the program with two threads should return the following output
 (although the order of threads may be different):
 
-    OMP_NUM_THREADS=2 ./hello_world.x
-    Hello World from Thread 0!
-    Hello World from Thread 1!
+``` sl
+OMP_NUM_THREADS=2 ./hello_world.x
+Hello World from Thread 0!
+Hello World from Thread 1!
+```
 
 ## Configuring Slurm
 
@@ -148,35 +154,39 @@ requests. Unless we ask for a full node, we will get a subset of the
 available logical cores. Let us start by asking for 1 node, and 1
 process with 3 threads using only physical cores (no hyperthreading):
 
-    #!/bin/bash -e
-    #SBATCH --job-name=threads
-    #SBATCH --time=00:00:30
-    #SBATCH --nodes=1
-    #SBATCH --ntasks=1               # We will run on a single process
-    #SBATCH --cpus-per-task=3        # ... and with 3 threads
-    #SBATCH --hint=nomultithread     # No hyperthreading
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=threads
+#SBATCH --time=00:00:30
+#SBATCH --nodes=1
+#SBATCH --ntasks=1               # We will run on a single process
+#SBATCH --cpus-per-task=3        # ... and with 3 threads
+#SBATCH --hint=nomultithread     # No hyperthreading
 
-    export KMP_AFFINITY=verbose      # Get detailed output
-    module load intel/2018b
-    srun hello_world.x
+export KMP_AFFINITY=verbose      # Get detailed output
+module load intel/2018b
+srun hello_world.x
+```
 
 Running the script should present you with output similar to this,
 although the number of "packages" (sockets) and cores may deviate if
 Slurm allocates cores on more than one socket (note also that "threads"
 means what we called logical cores earlier on):
 
-    OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
-    OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
-    OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {0,6,8}
-    OMP: Info #156: KMP_AFFINITY: 3 available OS procs
-    OMP: Info #157: KMP_AFFINITY: Uniform topology
-    OMP: Info #179: KMP_AFFINITY: 1 packages x 3 cores/pkg x 1 threads/core (3 total cores)
-    OMP: Info #247: KMP_AFFINITY: pid 156318 tid 156318 thread 0 bound to OS proc set {0,6,8}
-    OMP: Info #247: KMP_AFFINITY: pid 156318 tid 156320 thread 1 bound to OS proc set {0,6,8}
-    OMP: Info #247: KMP_AFFINITY: pid 156318 tid 156321 thread 2 bound to OS proc set {0,6,8}
-    Hello World from Thread 0!
-    Hello World from Thread 1!
-    Hello World from Thread 2!
+``` sl
+OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {0,6,8}
+OMP: Info #156: KMP_AFFINITY: 3 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 1 packages x 3 cores/pkg x 1 threads/core (3 total cores)
+OMP: Info #247: KMP_AFFINITY: pid 156318 tid 156318 thread 0 bound to OS proc set {0,6,8}
+OMP: Info #247: KMP_AFFINITY: pid 156318 tid 156320 thread 1 bound to OS proc set {0,6,8}
+OMP: Info #247: KMP_AFFINITY: pid 156318 tid 156321 thread 2 bound to OS proc set {0,6,8}
+Hello World from Thread 0!
+Hello World from Thread 1!
+Hello World from Thread 2!
+```
 
 The runtime library tells us that:
 
@@ -191,18 +201,20 @@ The runtime library tells us that:
 Setting "--hint=multithread" instead to activate hyperthreading should
 result in output similar to this:
 
-    OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
-    OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
-    OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {6,8,46}
-    OMP: Info #156: KMP_AFFINITY: 3 available OS procs
-    OMP: Info #158: KMP_AFFINITY: Nonuniform topology
-    OMP: Info #179: KMP_AFFINITY: 1 packages x 2 cores/pkg x 2 threads/core (2 total cores)
-    OMP: Info #247: KMP_AFFINITY: pid 158044 tid 158044 thread 0 bound to OS proc set {6,8,46}
-    OMP: Info #247: KMP_AFFINITY: pid 158044 tid 158046 thread 1 bound to OS proc set {6,8,46}
-    OMP: Info #247: KMP_AFFINITY: pid 158044 tid 158047 thread 2 bound to OS proc set {6,8,46}
-    Hello World from Thread 0!
-    Hello World from Thread 1!
-    Hello World from Thread 2!
+``` sl
+OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {6,8,46}
+OMP: Info #156: KMP_AFFINITY: 3 available OS procs
+OMP: Info #158: KMP_AFFINITY: Nonuniform topology
+OMP: Info #179: KMP_AFFINITY: 1 packages x 2 cores/pkg x 2 threads/core (2 total cores)
+OMP: Info #247: KMP_AFFINITY: pid 158044 tid 158044 thread 0 bound to OS proc set {6,8,46}
+OMP: Info #247: KMP_AFFINITY: pid 158044 tid 158046 thread 1 bound to OS proc set {6,8,46}
+OMP: Info #247: KMP_AFFINITY: pid 158044 tid 158047 thread 2 bound to OS proc set {6,8,46}
+Hello World from Thread 0!
+Hello World from Thread 1!
+Hello World from Thread 2!
+```
 
 -   Slurm provided 2 physical cores with 2 logical cores ("threads")
     each and 3 logical cores in total (we don't get the remaining
@@ -236,42 +248,44 @@ Let us start with the following setup:
 -   Bind thread IDs to logical core IDs in simple numerical order by
     setting permute and offset specifiers to 0
 
-<!-- -->
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=thread_placement_affinity
+#SBATCH --time=00:00:30
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --hint=multithread
 
-    #!/bin/bash -e
-    #SBATCH --job-name=thread_placement_affinity
-    #SBATCH --time=00:00:30
-    #SBATCH --nodes=1
-    #SBATCH --ntasks=1
-    #SBATCH --cpus-per-task=4
-    #SBATCH --hint=multithread
-
-    export KMP_AFFINITY=verbose,granularity=core,compact,0,0
-    module load intel/2018b
-    srun hello_world.x
+export KMP_AFFINITY=verbose,granularity=core,compact,0,0
+module load intel/2018b
+srun hello_world.x
+```
 
 You should get this result:
 
-    OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
-    OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
-    OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {2,7,42,47}
-    OMP: Info #156: KMP_AFFINITY: 4 available OS procs
-    OMP: Info #157: KMP_AFFINITY: Uniform topology
-    OMP: Info #179: KMP_AFFINITY: 1 packages x 2 cores/pkg x 2 threads/core (2 total cores)
-    OMP: Info #211: KMP_AFFINITY: OS proc to physical thread map:
-    OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0
-    OMP: Info #171: KMP_AFFINITY: OS proc 42 maps to package 0 core 2 thread 1
-    OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 0 core 10 thread 0
-    OMP: Info #171: KMP_AFFINITY: OS proc 47 maps to package 0 core 10 thread 1
-    OMP: Info #144: KMP_AFFINITY: Threads may migrate across 1 innermost levels of machine
-    OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177638 thread 0 bound to OS proc set {2,42}
-    OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177640 thread 1 bound to OS proc set {2,42}
-    OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177641 thread 2 bound to OS proc set {7,47}
-    OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177642 thread 3 bound to OS proc set {7,47}
-    Hello World from Thread 0!
-    Hello World from Thread 1!
-    Hello World from Thread 2!
-    Hello World from Thread 3!
+``` sl
+OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {2,7,42,47}
+OMP: Info #156: KMP_AFFINITY: 4 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 1 packages x 2 cores/pkg x 2 threads/core (2 total cores)
+OMP: Info #211: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0
+OMP: Info #171: KMP_AFFINITY: OS proc 42 maps to package 0 core 2 thread 1
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 0 core 10 thread 0
+OMP: Info #171: KMP_AFFINITY: OS proc 47 maps to package 0 core 10 thread 1
+OMP: Info #144: KMP_AFFINITY: Threads may migrate across 1 innermost levels of machine
+OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177638 thread 0 bound to OS proc set {2,42}
+OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177640 thread 1 bound to OS proc set {2,42}
+OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177641 thread 2 bound to OS proc set {7,47}
+OMP: Info #247: KMP_AFFINITY: pid 177638 tid 177642 thread 3 bound to OS proc set {7,47}
+Hello World from Thread 0!
+Hello World from Thread 1!
+Hello World from Thread 2!
+Hello World from Thread 3!
+```
 
 As requested, pairs of threads are now bound to both logical cores
 inside a given physical core and can move between those two.
@@ -279,12 +293,14 @@ inside a given physical core and can move between those two.
 Choosing "granularity=fine" instead of "granularity=core" will bind each
 thread to a single logical core, and threads can no longer move at all:
 
-    [...]
-    OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178055 thread 0 bound to OS proc set {2}
-    OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178057 thread 1 bound to OS proc set {42}
-    OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178058 thread 2 bound to OS proc set {7}
-    OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178059 thread 3 bound to OS proc set {47}
-    [...]
+``` sl
+[...]
+OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178055 thread 0 bound to OS proc set {2}
+OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178057 thread 1 bound to OS proc set {42}
+OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178058 thread 2 bound to OS proc set {7}
+OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178059 thread 3 bound to OS proc set {47}
+[...]
+```
 
 Note in the output of the last example how threads 0 and 1 fill up the
 first and second logical core (IDs 2 and 42) of the first physical core,
@@ -292,12 +308,14 @@ while threads 3 and 4 are placed on the second physical core (IDs 7 and
 47). We can influence placement by manipulating the "permute" and
 "offset" values. Choosing "1,0" results in:
 
-    [...]
-    OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178741 thread 0 bound to OS proc set {2}
-    OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178743 thread 1 bound to OS proc set {7}
-    OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178744 thread 2 bound to OS proc set {42}
-    OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178745 thread 3 bound to OS proc set {47}
-    [...]
+``` sl
+[...]
+OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178741 thread 0 bound to OS proc set {2}
+OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178743 thread 1 bound to OS proc set {7}
+OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178744 thread 2 bound to OS proc set {42}
+OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178745 thread 3 bound to OS proc set {47}
+[...]
+```
 
 Threads 0 and 1 are now placed on the first logical cores of each
 physical core, threads 2 and 3 on the second logical cores.
@@ -305,16 +323,18 @@ physical core, threads 2 and 3 on the second logical cores.
 We can also choose an offset - setting "0,1" shifts placement of thread
 IDs onto logical core IDs by 1:
 
-    [...]
-    OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0
-    OMP: Info #171: KMP_AFFINITY: OS proc 42 maps to package 0 core 2 thread 1
-    OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 3 thread 0
-    OMP: Info #171: KMP_AFFINITY: OS proc 43 maps to package 0 core 3 thread 1
-    OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180198 thread 0 bound to OS proc set {42}
-    OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180200 thread 1 bound to OS proc set {3}
-    OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180201 thread 2 bound to OS proc set {43}
-    OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180202 thread 3 bound to OS proc set {2}
-    [...]
+``` sl
+[...]
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0
+OMP: Info #171: KMP_AFFINITY: OS proc 42 maps to package 0 core 2 thread 1
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 3 thread 0
+OMP: Info #171: KMP_AFFINITY: OS proc 43 maps to package 0 core 3 thread 1
+OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180198 thread 0 bound to OS proc set {42}
+OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180200 thread 1 bound to OS proc set {3}
+OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180201 thread 2 bound to OS proc set {43}
+OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180202 thread 3 bound to OS proc set {2}
+[...]
+```
 
 Please refer to the [Intel
 documentation](https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference-thread-affinity-interface-linux-and-windows)
@@ -341,7 +361,9 @@ program.
 It is usually a good idea to start without hyperthreading and activate
 thread affinity by choosing:
 
-    #SBATCH --hint=nomultithread
-    export KMP_AFFINITY=granularity=fine,compact,0,0
+``` sl
+#SBATCH --hint=nomultithread
+export KMP_AFFINITY=granularity=fine,compact,0,0
+```
 
 You can now try out other configurations and compare runtimes.

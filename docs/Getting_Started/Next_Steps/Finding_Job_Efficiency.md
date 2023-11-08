@@ -31,18 +31,22 @@ Once your job has finished check the relevant details using the tools:
 
 **nn\_seff**
 
-    nn_seff 30479534
+``` sl
+nn_seff 30479534
+```
 
-    Job ID: 1936245
-    Cluster: mahuika
-    User/Group: user/group
-    State: COMPLETED (exit code 0)
-    Cores: 1
-    Tasks: 1
-    Nodes: 1
-    Job Wall-time: 7.67% 00:01:09 of 00:15:00 time limit
-    CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
-    Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
+``` sl
+Job ID: 1936245
+Cluster: mahuika
+User/Group: user/group
+State: COMPLETED (exit code 0)
+Cores: 1
+Tasks: 1
+Nodes: 1
+Job Wall-time: 7.67% 00:01:09 of 00:15:00 time limit
+CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
+Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
+```
 
 Notice that the CPU efficiency was high but the memory efficiency was
 very low and consideration should be given to reducing memory requests
@@ -53,23 +57,29 @@ guidance.
 
 **sacct**
 
-    sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
+``` sl
+sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
+```
 !!! info Tip
 >
 > *If you want to make this your default* `sacct` *setting, run;*
 >
->     echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
->     source ~/.bash_profile
+> ``` sl
+> echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
+> source ~/.bash_profile
+> ```
 
 ------------------------------------------------------------------------
 
 Below is an output for reference:
 
-           JobID    JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
-    ------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- ---------- ----------
-    3007056      rfm_ANSYS+   00:27:07                         03:35:55         16                      COMPLETED
-    3007056.bat+      batch   00:27:07   03:35:54   03:35:54   03:35:55         16        1  13658349K  COMPLETED
-    3007056.ext+     extern   00:27:07   00:00:00   00:00:00   00:00:00         16        1        89K  COMPLETED
+``` sl
+       JobID    JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
+------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- ---------- ----------
+3007056      rfm_ANSYS+   00:27:07                         03:35:55         16                      COMPLETED
+3007056.bat+      batch   00:27:07   03:35:54   03:35:54   03:35:55         16        1  13658349K  COMPLETED
+3007056.ext+     extern   00:27:07   00:00:00   00:00:00   00:00:00         16        1        89K  COMPLETED
+```
 
 *All of the adjustments below still allow for a degree of variation.
 There may be factors you have not accounted for.*
@@ -81,14 +91,18 @@ There may be factors you have not accounted for.*
 From the `Elapsed` field we may want to update our next run to have a
 more appropriate walltime.
 
-    #SBATCH --time=00:40:00
+``` sl
+#SBATCH --time=00:40:00
+```
 
 ## **Memory**
 
 The `MaxRSS` field shows the maximum memory used by each of the job
 steps, so in this case 13 GB. For our next run we may want to set:
 
-    #SBATCH --mem=15G
+``` sl
+#SBATCH --mem=15G
+```
 
 ## **CPU's**
 
@@ -100,7 +114,9 @@ managed 03:35:55 we can estimate the CPU usage was around 50%
 It might be worth considering reducing the number of CPUs requested,
 however bear in mind there are other factors that affect CPU efficiency.
 
-    #SBATCH --cpus-per-task=10
+``` sl
+#SBATCH --cpus-per-task=10
+```
 
  
 
@@ -145,13 +161,17 @@ command; `squeue -h -o %N -j <jobid>` The node will look something like
 
 ## htop 
 
-    ssh -t wbn175 htop -u $USER
+``` sl
+ssh -t wbn175 htop -u $USER
+```
 
 If it is your first time connecting to that particular node, you may be
 prompted:
 
-    The authenticity of host can't be established 
-    Are you sure you want to continue connecting (yes/no)?
+``` sl
+The authenticity of host can't be established 
+Are you sure you want to continue connecting (yes/no)?
+```
 
 Reply `yes`. Y alone (upper or lower case) is not sufficient.
 

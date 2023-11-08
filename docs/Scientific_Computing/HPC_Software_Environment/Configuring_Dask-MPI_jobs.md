@@ -59,7 +59,9 @@ MPI.
 Dask-MPI can be readily used with the more recent Python modules
 available on Mahuika that come with the mpi4py package, e.g.
 
-    module load Python/3.9.9-gimkl-2020a
+``` sl
+module load Python/3.9.9-gimkl-2020a
+```
 
 # Installing Dask-MPI with Conda on Mahuika and Māui Ancil
 
@@ -67,22 +69,26 @@ Load an Anaconda3 or Miniconda3 module and use the following commands to
 install mpi4py with the Intel MPI distribution *before* installing the
 Dask-MPI package:
 
-    conda install -c intel mpi4py
-    conda install -c conda-forge dask-mpi
+``` sl
+conda install -c intel mpi4py
+conda install -c conda-forge dask-mpi
+```
 
 If you use an environment file, add the `intel` channel at the end of
 the list (so that it will not take priority over other channels) and
 request mpi4py with the Intel MPI distribution as follows:
 
-    name: myenvironment
-    channels:
-      - myfavouritechannel
-      - intel
-    dependencies:
-      - mypackage
-      - anotherpackage
-      - intel::mpi4py
-      - dask-mpi
+``` sl
+name: myenvironment
+channels:
+  - myfavouritechannel
+  - intel
+dependencies:
+  - mypackage
+  - anotherpackage
+  - intel::mpi4py
+  - dask-mpi
+```
 !!! info See also
 >
 > See the
@@ -129,16 +135,18 @@ This case is straightforward to set up. Use the following example to run
 a workload with 1 scheduler rank and 6 worker ranks. Each rank will be
 given 1 GB of memory and a single (logical) core.
 
-    #!/bin/bash
-    #SBATCH --time=01:00:00
-    #SBATCH --ntasks=6
-    #SBATCH --cpus-per-task=1
-    #SBATCH --mem-per-cpu=1G
+``` sl
+#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --ntasks=6
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=1G
 
-    module purge
-    module load Python/3.9.9-gimkl-2020a
+module purge
+module load Python/3.9.9-gimkl-2020a
 
-    srun python mydaskprogram.py
+srun python mydaskprogram.py
+```
 
 ## Dask workers have high memory usage and/or parallelisation
 
@@ -148,16 +156,18 @@ and first worker rank will be given 1 GB of memory and a single
 (logical) core each, while the remaining worker ranks will be given 4\*3
 GB = 12 GB of memory and 4 (logical) cores per rank.
 
-    #!/bin/bash
-    #SBATCH --time=01:00:00
-    #SBATCH --ntasks=2 --mem-per-cpu=1G --cpus-per-task=1
-    #SBATCH hetjob
-    #SBATCH --ntasks=3 --mem-per-cpu=3G --cpus-per-task=4
+``` sl
+#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --ntasks=2 --mem-per-cpu=1G --cpus-per-task=1
+#SBATCH hetjob
+#SBATCH --ntasks=3 --mem-per-cpu=3G --cpus-per-task=4
 
-    module purge
-    module load Python/3.9.9-gimkl-2020a
+module purge
+module load Python/3.9.9-gimkl-2020a
 
-    srun --het-group=0-1 python mydaskprogram.py
+srun --het-group=0-1 python mydaskprogram.py
+```
 
 The `--het-group` flag asks `srun` to launch both job packs together.
 
@@ -169,30 +179,32 @@ examples](https://examples.dask.org) webpage.
 
 ## Python program
 
-    import os
-    import dask_mpi as dm
-    import dask.distributed as dd
+``` sl
+import os
+import dask_mpi as dm
+import dask.distributed as dd
 
-    # Initialise Dask cluster and store worker files in current work directory
-    dm.initialize(local_directory=os.getcwd())
+# Initialise Dask cluster and store worker files in current work directory
+dm.initialize(local_directory=os.getcwd())
 
-    # Define two simple test functions
-    def inc(x):
-        return x + 1
+# Define two simple test functions
+def inc(x):
+    return x + 1
 
-    def add(x, y):
-        return x + y
+def add(x, y):
+    return x + y
 
-    client = dd.Client()
+client = dd.Client()
 
-    # Submit chain of computations using futures
-    a = client.submit(inc, 1)
-    b = client.submit(inc, 2)
-    c = client.submit(add, a, b)
+# Submit chain of computations using futures
+a = client.submit(inc, 1)
+b = client.submit(inc, 2)
+c = client.submit(add, a, b)
 
-    # Expect the same answer
-    print("Dask result:", c.result())
-    print("Local result:", add(inc(1), inc(2)))
+# Expect the same answer
+print("Dask result:", c.result())
+print("Local result:", add(inc(1), inc(2)))
+```
 
 ## Slurm script
 
@@ -200,23 +212,27 @@ Replace `PROJECTID` with your project ID number and use the `sbatch`
 command to submit this Slurm script and run the test code on 3 MPI
 ranks:
 
-    #!/bin/bash
-    #SBATCH --account=PROJECTID
-    #SBATCH --time=00:01:00
-    #SBATCH --ntasks=3
-    #SBATCH --cpus-per-task=1
-    #SBATCH --mem-per-cpu=512M
+``` sl
+#!/bin/bash
+#SBATCH --account=PROJECTID
+#SBATCH --time=00:01:00
+#SBATCH --ntasks=3
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=512M
 
-    module purge
-    module load Python/3.9.9-gimkl-2020a
+module purge
+module load Python/3.9.9-gimkl-2020a
 
-    srun python dask_example.py
+srun python dask_example.py
+```
 
 The Slurm output file should contain some status information from
 Dask-MPI, along with program output
 
-    Dask result: 5
-    Local result: 5
+``` sl
+Dask result: 5
+Local result: 5
+```
 
 # Running Dask-MPI inside a Singularity container
 
@@ -241,17 +257,19 @@ guidelines should help with configuring the container correctly.
 
 Here is an example of a minimal Singularity container definition file:
 
-    Bootstrap: docker
-    From: continuumio/miniconda3:latest
+``` sl
+Bootstrap: docker
+From: continuumio/miniconda3:latest
 
-    %post
-        conda install -y -n base -c intel mpi4py
-        conda install -y -n base -c conda-forge dask-mpi
+%post
+    conda install -y -n base -c intel mpi4py
+    conda install -y -n base -c conda-forge dask-mpi
 
-    %runscript
-        . $(conda info --base)/etc/profile.d/conda.sh
-        conda activate base
-        python "$@"
+%runscript
+    . $(conda info --base)/etc/profile.d/conda.sh
+    conda activate base
+    python "$@"
+```
 
 where the `%runscript` section ensures that the Python script passed to
 `singularity run` is executed using the Python interpreter of the base
@@ -273,18 +291,22 @@ MPI finds Slurm's PMI-2 library on the host.
 In the first case with low worker memory consumption and no
 parallelisation, use for example
 
-    module load Singularity
-    export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
-    export SINGULARITY_BIND="/opt/slurm/lib64"
-    srun singularity run my_container.sif dask_example.py
+``` sl
+module load Singularity
+export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
+export SINGULARITY_BIND="/opt/slurm/lib64"
+srun singularity run my_container.sif dask_example.py
+```
 
 In the second case with high worker memory consumption and/or
 parallelisation, use for example
 
-    module load Singularity
-    export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
-    export SINGULARITY_BIND="/opt/slurm/lib64"
-    srun --het-group=0-1 singularity run my_container.sif dask_example.py
+``` sl
+module load Singularity
+export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
+export SINGULARITY_BIND="/opt/slurm/lib64"
+srun --het-group=0-1 singularity run my_container.sif dask_example.py
+```
 
 *Note: You may need to append more folders to `SINGULARITY_BIND` to make
 your script accessible in the container, e.g. `$PWD`*

@@ -51,8 +51,8 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 
 ####  
 
-<img src="../../assets/images/.360001532435" width="714" height="160"
-alt="par.png" />*  
+<img src="../../assets/images/360001532435..png" width="714"
+height="160" alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 
@@ -64,17 +64,21 @@ proportionally to the number of CPUs.
 
 Example script;
 
-    #!/bin/bash -e
-    #SBATCH --job-name=MultithreadingTest    # job name (shows up in the queue)
-    #SBATCH --time=00:01:00                  # Walltime (HH:MM:SS)
-    #SBATCH --mem=2048MB                     # memory in MB 
-    #SBATCH --cpus-per-task=4                # 2 physical cores per task.
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=MultithreadingTest    # job name (shows up in the queue)
+#SBATCH --time=00:01:00                  # Walltime (HH:MM:SS)
+#SBATCH --mem=2048MB                     # memory in MB 
+#SBATCH --cpus-per-task=4                # 2 physical cores per task.
 
-    taskset -c -p $$                         #Prints which CPUs it can use
+taskset -c -p $$                         #Prints which CPUs it can use
+```
 
 The expected output being
 
-    pid 13538's current affinity list: 7,9,43,45
+``` sl
+pid 13538's current affinity list: 7,9,43,45
+```
 
 # MPI
 
@@ -96,19 +100,23 @@ like ours, the preferred launcher is `srun` rather than `mpi-run`.
 Since the distribution of tasks across different nodes may be
 unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
 
-    #!/bin/bash -e
-    #SBATCH --job-name=MPIJob       # job name (shows up in the queue)
-    #SBATCH --time=00:01:00         # Walltime (HH:MM:SS)
-    #SBATCH --mem-per-cpu=512MB     # memory/cpu in MB (half the actual required memory)
-    #SBATCH --cpus-per-task=4       # 2 Physical cores per task.
-    #SBATCH --ntasks=2              # number of tasks (e.g. MPI)
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=MPIJob       # job name (shows up in the queue)
+#SBATCH --time=00:01:00         # Walltime (HH:MM:SS)
+#SBATCH --mem-per-cpu=512MB     # memory/cpu in MB (half the actual required memory)
+#SBATCH --cpus-per-task=4       # 2 Physical cores per task.
+#SBATCH --ntasks=2              # number of tasks (e.g. MPI)
 
-    srun pwd                        # Prints  working directory
+srun pwd                        # Prints  working directory
+```
 
 The expected output being
 
-    /home/user001/demo
-    /home/user001/demo
+``` sl
+/home/user001/demo
+/home/user001/demo
+```
 !!! info Warning
 >
 > For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
@@ -130,15 +138,17 @@ index using the SBATCH command `#SBATCH --array`
 
 For example, the following code:
 
-    #!/bin/bash -e
-    #SBATCH --job-name=ArrayJob             # job name (shows up in the queue)
-    #SBATCH --time=00:01:00                 # Walltime (HH:MM:SS)
-    #SBATCH --mem=512MB                     # Memory
-    #SBATCH --array=1-2                     # Array jobs
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=ArrayJob             # job name (shows up in the queue)
+#SBATCH --time=00:01:00                 # Walltime (HH:MM:SS)
+#SBATCH --mem=512MB                     # Memory
+#SBATCH --array=1-2                     # Array jobs
 
 
-    pwd
-    echo "This is result ${SLURM_ARRAY_TASK_ID}"
+pwd
+echo "This is result ${SLURM_ARRAY_TASK_ID}"
+```
 
 will submit,  `ArrayJob_1` and `ArrayJob_2`, which will return the
 results `This is result 1` and `This is result 2` respectively.
@@ -150,27 +160,37 @@ recommended method of variation between the jobs. For example:
 
 -   -   -   As a direct input to a function.  
 
-                matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+            ``` sl
+            matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+            ```
 
         -   As an index to an array.  
 
-                inArray=(1 2 4 8 16 32 64 128)
-                input=${inArray[$SLURM_ARRAY_TASK_ID]}
+            ``` sl
+            inArray=(1 2 4 8 16 32 64 128)
+            input=${inArray[$SLURM_ARRAY_TASK_ID]}
+            ```
 
         -   For selecting input files.  
 
-                input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+            ``` sl
+            input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+            ```
 
         -   As a seed for a pseudo-random number.  
             -   In R
 
-                    task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-                    set.seed(task_id)
+                ``` sl
+                task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+                set.seed(task_id)
+                ```
 
             -   In MATLAB
 
-                    task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-                    rng(task_id)
+                ``` sl
+                task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+                rng(task_id)
+                ```
 
             *  
             Using a seed is important, otherwise multiple jobs may
@@ -178,9 +198,11 @@ recommended method of variation between the jobs. For example:
 
         -   As an index to an array of filenames. 
 
-                files=( inputs/*.dat )
-                input=${files[SLURM_ARRAY_TASK_ID]}
-                # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
+            ``` sl
+            files=( inputs/*.dat )
+            input=${files[SLURM_ARRAY_TASK_ID]}
+            # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
+            ```
 
             This example will submit a job array with each job using a
             .dat file in 'inputs' as the variable input (in alphabetcial
@@ -190,26 +212,30 @@ Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.
 
-    #SBATCH --output=outputs/run_%a/slurm_output.out
-    #SBATCH --output=outputs/run_%a/slurm_error.err
+``` sl
+#SBATCH --output=outputs/run_%a/slurm_output.out
+#SBATCH --output=outputs/run_%a/slurm_error.err
+```
 
 #### Multidimensional array example
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --open-mode append
-    #SBATCH --output week_times.out
-    #SBATCH --array 0-167 #This needs to be equal to combinations (in this case 7*24), and zero based.
+#SBATCH --open-mode append
+#SBATCH --output week_times.out
+#SBATCH --array 0-167 #This needs to be equal to combinations (in this case 7*24), and zero based.
 
-    # Define your dimensions in bash arrays.
-    arr_time=({00..23})
-    arr_day=("Mon" "Tue" "Wed" "Thur" "Fri" "Sat" "Sun") 
+# Define your dimensions in bash arrays.
+arr_time=({00..23})
+arr_day=("Mon" "Tue" "Wed" "Thur" "Fri" "Sat" "Sun") 
 
-    # Index the bash arrays based on the SLURM_ARRAY_TASK)
-    n_time=${arr_time[$(($SLURM_ARRAY_TASK_ID%${#arr_time[@]}))]} # '%' for finding remainder.
-    n_day=${arr_day[$(($SLURM_ARRAY_TASK_ID/${#arr_time[@]}))]}
+# Index the bash arrays based on the SLURM_ARRAY_TASK)
+n_time=${arr_time[$(($SLURM_ARRAY_TASK_ID%${#arr_time[@]}))]} # '%' for finding remainder.
+n_day=${arr_day[$(($SLURM_ARRAY_TASK_ID/${#arr_time[@]}))]}
 
-    echo "$n_day $n_time:00"
+echo "$n_day $n_time:00"
+```
 
 ## Avoiding Conflicts
 
@@ -219,19 +245,23 @@ important that all file references are unique and independent.
 If your program makes use of a working directory make sure you set it
 e.g.
 
-    mkdir .tmp/run_${SLURM_ARRAY_TASK_ID}          #Create new directory
-    export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  #Set TMPDIR to point there
+``` sl
+mkdir .tmp/run_${SLURM_ARRAY_TASK_ID}          #Create new directory
+export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  #Set TMPDIR to point there
+```
 
 If you have no control over the name/path of an output used by a
 program, this can be resolved in a similar manner.
 
-    mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
-    cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
-    #
-    bash job.sh
-    #
-    mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
-    rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
+``` sl
+mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
+cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
+#
+bash job.sh
+#
+mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
+rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
+```
 
 The Slurm documentation on job arrays can be
 found [here](https://slurm.schedmd.com/job_array.html).

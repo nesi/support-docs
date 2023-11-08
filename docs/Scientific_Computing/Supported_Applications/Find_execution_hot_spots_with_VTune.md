@@ -1,6 +1,6 @@
 ---
 created_at: '2020-01-15T21:56:01Z'
-hidden: true
+hidden: false
 label_names: []
 position: 14
 title: Find execution hot spots with VTune
@@ -34,28 +34,36 @@ MAP](https://support.nesi.org.nz/hc/en-gb/articles/360000930396-Profiler-ARM-MAP
 We'll show how to profile a C++ code with VTune - feel free to choose
 your own code instead. Start with 
 
-    git clone https://github.com/pletzer/fidibench
+``` sl
+git clone https://github.com/pletzer/fidibench
+```
 
 and build the code using the "gimkl" tool chain
 
-    cd fidibench
-    mkdir build
-    cd build
-    module load gimkl CMake
-    cmake ..
-    make
+``` sl
+cd fidibench
+mkdir build
+cd build
+module load gimkl CMake
+cmake ..
+make
+```
 
 This will compile a number of executables. Note that VTune does not
 require one to apply a special compiler switch to profile. You can
 profile an existing executable if you like. We choose "upwindCxx" as the
 executable to profile. It is under upwind/cxx, so
 
-    cd upwind/cxx
+``` sl
+cd upwind/cxx
+```
 
 Run the executable with 
 
-    module load VTune
-    srun --ntasks=1 --cpus-per-task=2 --hint=nomultithread amplxe-cl -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
+``` sl
+module load VTune
+srun --ntasks=1 --cpus-per-task=2 --hint=nomultithread amplxe-cl -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
+```
 
 Executable "upwindCxx" takes arguments "-numCells 256" (the number of
 cells in each dimension) and  "-numSteps 10" (the number of time
@@ -86,7 +94,9 @@ and deallocating (9.2s) memory. 
 Often this is enough to give you a feel for where the code can be
 improved. To explore further you can fire up 
 
-    amplxe-gui &
+``` sl
+amplxe-gui &
+```
 
 Go to the bottom and select "Open Result...", choose the directory where
 the profiling results are saved and click on the .amplxe file. The

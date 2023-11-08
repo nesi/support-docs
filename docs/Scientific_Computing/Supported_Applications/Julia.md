@@ -62,32 +62,40 @@ using the command line, but the commands are the same within a script.
     corresponding to the version of Julia you want to use, e.g. Julia
     1.1.0:
 
-        $ module load Julia/1.1.0
+    ``` sl
+    $ module load Julia/1.1.0
+    ```
 
 2.  Launch the Julia executable:
 
-        # Use Julia interactively
-        $ julia
-        # Alternatively, use a Julia script
-        $ julia script.jl
+    ``` sl
+    # Use Julia interactively
+    $ julia
+    # Alternatively, use a Julia script
+    $ julia script.jl
+    ```
 
 3.  If you have opened Julia interactively, you should now see a Julia
     welcome message and prompt, like the following.
 
-                       _
-           _       _ _(_)_     |  Documentation: https://docs.julialang.org
-          (_)     | (_) (_)    |
-           _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
-          | | | | | | |/ _` |  |
-          | | |_| | | | (_| |  |  Version 1.1.0 (2019-01-21)
-         _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
-        |__/                   |
+    ``` sl
+                   _
+       _       _ _(_)_     |  Documentation: https://docs.julialang.org
+      (_)     | (_) (_)    |
+       _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+      | | | | | | |/ _` |  |
+      | | |_| | | | (_| |  |  Version 1.1.0 (2019-01-21)
+     _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+    |__/                   |
 
-        julia>
+    julia>
+    ```
 
 4.  Load the Julia package manager:
 
-        julia> using Pkg
+    ``` sl
+    julia> using Pkg
+    ```
 
 5.  The most important variable for installing packages is called
     `DEPOT_PATH`. The depot path is a series of directories that will be
@@ -103,12 +111,16 @@ using the command line, but the commands are the same within a script.
     > location, so the compilation will fail. Hence why clearing the
     > depot path is important.
 
-        julia> empty!(DEPOT_PATH)
+    ``` sl
+    julia> empty!(DEPOT_PATH)
+    ```
 
 6.  Add your preferred Julia package directory to the newly empty depot
     path.
 
-        julia> push!(DEPOT_PATH, "/nesi/project/nesi12345/julia")
+    ``` sl
+    julia> push!(DEPOT_PATH, "/nesi/project/nesi12345/julia")
+    ```
 !!! info Tip
     >
     > While a conventional personal Julia package directory is
@@ -125,7 +137,9 @@ using the command line, but the commands are the same within a script.
 7.  Install the desired Julia package. In this case, we are showing the
     machine-learning package Flux as an example.
 
-        julia> Pkg.add("Flux")
+    ``` sl
+    julia> Pkg.add("Flux")
+    ```
 
     Julia should chug away for a while, downloading and compiling
     various packages into the chosen directory.
@@ -139,13 +153,15 @@ existing packages are searched for are stored in a different variable,
 
 On NeSI, the default contents of `LOAD_PATH` are as follows:
 
-    julia> LOAD_PATH
-    5-element Array{String,1}:
-     "@"
-     "@v#.#"
-     "@stdlib"
-     "/opt/nesi/mahuika/Julia/1.1.0/local/share/julia/environment/v1.1"
-     "."
+``` sl
+julia> LOAD_PATH
+5-element Array{String,1}:
+ "@"
+ "@v#.#"
+ "@stdlib"
+ "/opt/nesi/mahuika/Julia/1.1.0/local/share/julia/environment/v1.1"
+ "."
+```
 
 The first three elements are special entries, while the fourth element
 is the set of centrally managed Julia packages, and the fifth is the
@@ -155,7 +171,9 @@ not present in `LOAD_PATH` by default.
 There are several ways to add a directory to `LOAD_PATH`, but almost
 certainly the easiest is to do the following in your environment:
 
-    $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
+``` sl
+$ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
+```
 !!! info Tip
 >
 > By prepending the directory to `JULIA_LOAD_PATH` instead of appending
@@ -166,13 +184,17 @@ certainly the easiest is to do the following in your environment:
 > package if there isn't a centrally managed instance, you can append it
 > instead:
 >
->     $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
+> ``` sl
+> $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
+> ```
 !!! info Tip
 >
 > To revert to the default load path, just unset `JULIA_LOAD_PATH`:
 >
->     $ unset JULIA_LOAD_PATH
->     $ export JULIA_LOAD_PATH
+> ``` sl
+> $ unset JULIA_LOAD_PATH
+> $ export JULIA_LOAD_PATH
+> ```
 
 # Profiling Julia code
 
@@ -189,27 +211,37 @@ In order to collect profiling data with VTune you should:
 
 -   load a "-VTune" variant of Julia, for example:
 
-        module load Julia/1.2.0-gimkl-2018b-VTune
+    ``` sl
+    module load Julia/1.2.0-gimkl-2018b-VTune
+    ```
 
 -   load a VTune module:
 
-        module load VTune
+    ``` sl
+    module load VTune
+    ```
 
 -   enable Julia VTune profiling by setting an environment variable:
 
-        export ENABLE_JITPROFILING=1
+    ``` sl
+    export ENABLE_JITPROFILING=1
+    ```
 
 -   prepend the usual command that you use to run your Julia program
     with the desired VTune command, for example to run a hotspots
     analysis:
 
-        srun amplxe-cl -collect hotspots -- julia your_program.jl
+    ``` sl
+    srun amplxe-cl -collect hotspots -- julia your_program.jl
+    ```
 
 VTune will create a result directory which contains the profiling
 information. This result can be loaded using the VTune GUI, assuming you
 have X11 forwarding enabled:
 
-    amplxe-gui --path-to-open <vtune-result-directory>
+``` sl
+amplxe-gui --path-to-open <vtune-result-directory>
+```
 
  Additional information about VTune can be found in the [User
 Guide](https://software.intel.com/en-us/vtune-amplifier-help).

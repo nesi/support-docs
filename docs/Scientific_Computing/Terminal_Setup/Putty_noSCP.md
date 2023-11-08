@@ -27,7 +27,9 @@ zendesk_section_id: 360000189696
 
 1\. Set the 'Host Name' to:
 
-    lander.nesi.org.nz
+``` sl
+lander.nesi.org.nz
+```
 
  
 

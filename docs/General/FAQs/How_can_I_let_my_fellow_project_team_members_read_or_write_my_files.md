@@ -34,11 +34,13 @@ So, supposing Joe Bloggs moves a file from his home directory to the
 project directory `/nesi/project/nesi99999`, his fellow team members
 won't be able to write to it:
 
-    $ ls -l README
-    -rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 README
-    $ mv README /nesi/project/nesi99999/bloggsj/README
-    $ ls -l /nesi/project/nesi99999/bloggsj/README
-    -rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 /nesi/project/nesi99999/bloggsj/README
+``` sl
+$ ls -l README
+-rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 README
+$ mv README /nesi/project/nesi99999/bloggsj/README
+$ ls -l /nesi/project/nesi99999/bloggsj/README
+-rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 /nesi/project/nesi99999/bloggsj/README
+```
 
 As you can see, the file stays in the group `bloggsj`, that is Joe
 Bloggs' personal group, even though it is now inside the project
@@ -57,7 +59,9 @@ machine.
 
 ## To copy a file (or directory and its contents), updating its group and setting its permissions
 
-    rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
+``` sl
+rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
+```
 
 ## To move a file (or directory and its contents), updating its group and setting its permissions
 !!! info Warning
@@ -65,7 +69,9 @@ machine.
 > The `--remove-source-files` option is safe only if every source file
 > is otherwise left intact during the moving process.
 
-    rsync --remove-source-files -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
+``` sl
+rsync --remove-source-files -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/destination
+```
 
 If you want to set files to executable in all cases,
 replace `...ugo=rwX...` with `...ugo=rwx...`. The capital `X` means,
@@ -80,18 +86,20 @@ Change to the parent directory, which could be a project or nobackup
 directory, that you want to fix, and find and fix your files. You can do
 this by means of the following commands.
 
-    # Replace nesi12345 with your desired project code
-    group=nesi12345
-    startdir=$(pwd)
-    # Replace /nesi/project with /nesi/nobackup if needed
-    cd /nesi/project/${group}
-    # Move all files, directories, etc. owned by yourself into the project group
-    # The --no-dereference option updates the group of symbolic links (where permitted)
-    find . -user $(whoami) -print0 | xargs -0 -I {} chgrp --no-dereference ${group} {}
-    # Make all files owned by yourself readable and writable by the group
-    find . -user $(whoami) -and -type f -print0 | xargs -0 -I {} chmod g+rw {}
-    # Make all directories owned by yourself readable, writable and executable by the group,
-    # and set the setgid bit
-    find . -user $(whoami) -and -type d -print0 | xargs -0 -I {} chmod g+rwxs {}
-    # Go back to the starting location
-    cd ${startdir}
+``` sl
+# Replace nesi12345 with your desired project code
+group=nesi12345
+startdir=$(pwd)
+# Replace /nesi/project with /nesi/nobackup if needed
+cd /nesi/project/${group}
+# Move all files, directories, etc. owned by yourself into the project group
+# The --no-dereference option updates the group of symbolic links (where permitted)
+find . -user $(whoami) -print0 | xargs -0 -I {} chgrp --no-dereference ${group} {}
+# Make all files owned by yourself readable and writable by the group
+find . -user $(whoami) -and -type f -print0 | xargs -0 -I {} chmod g+rw {}
+# Make all directories owned by yourself readable, writable and executable by the group,
+# and set the setgid bit
+find . -user $(whoami) -and -type d -print0 | xargs -0 -I {} chmod g+rwxs {}
+# Go back to the starting location
+cd ${startdir}
+```

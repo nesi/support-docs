@@ -35,8 +35,10 @@ one of these databases then you should find out what our most recent
 version is (`module avail BLASTDB`) and then load it in your batch
 script.
 
-    module load BLASTDB
-    ls $BLASTDB
+``` sl
+module load BLASTDB
+ls $BLASTDB
+```
 
 Because we only keep a few recent versions of the databases, you may be
 required from time to time to change the BLASTDB module version if you

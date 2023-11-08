@@ -22,7 +22,9 @@ zendesk_section_id: 360000039036
 
 OOM stands for "Out Of Memory", and so an error such as this:
 
-    slurmstepd: error: Detected 1 oom-kill event(s) in step 370626.batch cgroup
+``` sl
+slurmstepd: error: Detected 1 oom-kill event(s) in step 370626.batch cgroup
+```
 
 indicates that your job attempted to use more memory (RAM) than Slurm
 reserved for it.  
