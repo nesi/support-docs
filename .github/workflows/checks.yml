@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       fileList:
-          description: 'Files to Lint'
+          description: 'Files to Lint (space delimited)'
           required: true
           type: string
   workflow_call:
