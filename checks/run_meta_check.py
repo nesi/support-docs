@@ -16,7 +16,7 @@ expected_parameters = {
     "title":                "",
     "template":             "",
     "description":          "warning",
-    "icon":                 "info",
+    "icon":                 "notice",
     "status":               "",
     "prereq":               "",
     "postreq":              "",
@@ -39,7 +39,7 @@ def main():
     for input_file in input_files:
         with open(input_file, 'r') as f:
             contents = f.read()
-            match = re.match(r"---\n([\s\S]*)---", contents, re.MULTILINE)
+            match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
             if not match:
                 print(f"::error file={input_file},line=0,title=meta.parse::Meta block missing or malformed.")
                 continue
@@ -55,7 +55,7 @@ def check_expected_parameters(path, meta, contents):
     # Check if any unexpected keys.
     for key in meta.keys():
         if key not in expected_parameters.keys():
-            print(f"::info file={path},line=0,title=meta.unexpected::Unexpected parameter '{key}'")
+            print(f"::notice file={path},line=0,title=meta.unexpected::Unexpected parameter '{key}'")
 
     # Yes this is 2 x O().   
 
