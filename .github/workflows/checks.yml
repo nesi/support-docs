@@ -13,12 +13,22 @@ on:
         required: true
         type: string
 jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo.
+      uses: actions/checkout@v3
+    - name: Run spellchecker.
+      uses: rojopolis/spellcheck-github-actions@0.34.0
   proselint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: pip install proselint
-      - run: |
+      - name: Check out repo.
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install proselint
+      - name: Run markdownlint
+        run: |
           echo "Running ProseLint"
           shopt -s globstar extglob
           echo ${{inputs.fileList}}
@@ -26,11 +36,13 @@ jobs:
   mdlint:
      runs-on: ubuntu-latest
      steps:
-       - uses: actions/checkout@v3
-       - run: npm install -g markdownlint-cli
-       - run: |
+       - name: Check out repo.
+         uses: actions/checkout@v3
+       - name: Install dependencies
+         run: npm install -g markdownlint-cli
+       - name: Run markdownlint
+         run: |
           echo "Running MarkdownLint"
           shopt -s globstar extglob
           echo ${{inputs.fileList}}
           markdownlint --disable MD033 --json ${{inputs.fileList}} 2>&1 | checks/parse_markdownlint.py
-
