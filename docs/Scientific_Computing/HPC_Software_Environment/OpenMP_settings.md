@@ -32,15 +32,19 @@ Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui
 The environment variable that controls the number of threads is
 OMP\_NUM\_THREADS, e.g.,
 
-    export OMP_NUM_THREADS=16
+``` sl
+export OMP_NUM_THREADS=16
+```
 
 allows OpenMP code to fork 16 threads. To make sure that resources
 requested from SLURM and used by your program are consistent, is usually
 a good idea to set
 
-    #SBATCH --cpus-per-task=16
-    [...]
-    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+``` sl
+#SBATCH --cpus-per-task=16
+[...]
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+```
 
 in your SLURM script - although this can sometimes be more complicated,
 e.g., with [TensorFlow on

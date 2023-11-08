@@ -34,13 +34,14 @@ zendesk_section_id: 360001150156
 -   Updated [NeSI Virtual
     Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
     to v2.4.1
-    -   # Image changes
-             - Update default Firefox version.
-             - Update to use singularity 3.8.5.
-             - Switched to rocky8 image.
-             - Added chrome, strace, sview and xfce-terminal to image.
-             - Added some libraries need for ANSYS
-             - Added missing GLX libraries.
+    -   ``` sl
+        # Image changes
+         - Update default Firefox version.
+         - Update to use singularity 3.8.5.
+         - Switched to rocky8 image.
+         - Added chrome, strace, sview and xfce-terminal to image.
+         - Added some libraries need for ANSYS
+         - Added missing GLX libraries.
 
             # Bug fixes
              - Fixed faulty startup messages 

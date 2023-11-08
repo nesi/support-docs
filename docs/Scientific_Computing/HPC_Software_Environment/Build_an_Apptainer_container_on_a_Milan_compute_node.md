@@ -37,40 +37,44 @@ their operating system version.
 To illustrate this functionality, create an example container definition
 file `my_container.def` from a shell session on NeSI as follows:
 
-    cat << EOF > my_container.def
-    BootStrap: docker
-    From: ubuntu:20.04
-    %post
-        apt-get -y update
-        apt-get install -y wget
-    EOF
+``` sl
+cat << EOF > my_container.def
+BootStrap: docker
+From: ubuntu:20.04
+%post
+    apt-get -y update
+    apt-get install -y wget
+EOF
+```
 
 Then submit the following Slurm job submission script to build the
 container:
 
-    #!/bin/bash -e
-    #SBATCH --job-name=apptainer_build
-    #SBATCH --partition=milan
-    #SBATCH --time=0-00:30:00
-    #SBATCH --mem=4GB
-    #SBATCH --cpus-per-task=2
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=apptainer_build
+#SBATCH --partition=milan
+#SBATCH --time=0-00:30:00
+#SBATCH --mem=4GB
+#SBATCH --cpus-per-task=2
 
-    # load environment module
-    module purge
-    module load Apptainer/1.2.2
+# load environment module
+module purge
+module load Apptainer/1.2.2
 
-    # recent Apptainer modules set APPTAINER_BIND, which typically breaks
-    # container builds, so unset it here
-    unset APPTAINER_BIND
+# recent Apptainer modules set APPTAINER_BIND, which typically breaks
+# container builds, so unset it here
+unset APPTAINER_BIND
 
-    # create a build and cache directory on nobackup storage
-    export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
-    export APPTAINER_TMPDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_tmpdir"
-    mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
-    setfacl -b $APPTAINER_TMPDIR
+# create a build and cache directory on nobackup storage
+export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
+export APPTAINER_TMPDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_tmpdir"
+mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
+setfacl -b $APPTAINER_TMPDIR
 
-    # build the container
-    apptainer build --force --fakeroot my_container.sif my_container.def
+# build the container
+apptainer build --force --fakeroot my_container.sif my_container.def
+```
 
 Note this script will start an Slurm job for 30 minutes using 2 cores
 and 4 GB of memory to build the image. Make sure to set these resources
@@ -109,7 +113,9 @@ Slurm job. Otherwise, RPM will crash due to an incompatibility with the
 If you encounter the following error when using a base Docker image in
 your Apptainer definition file
 
-    While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
+``` sl
+While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
+```
 
 it is likely due to an upstream issue (e.g. bad image on Dockerhub). In
 this case, try an older image version or a different base image.

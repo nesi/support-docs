@@ -26,16 +26,20 @@ re-attach and start where you left off.
 
 Here is an example of starting  a *tmux* session:
 
-    $ tmux new -s data_transfer
-    $ cd /nesi/nobackup/nesi99999/myproject
-    $ rsync -av someserver:/projectdata.tgz projectdata.tgz
-    CTRL-b d
+``` sl
+$ tmux new -s data_transfer
+$ cd /nesi/nobackup/nesi99999/myproject
+$ rsync -av someserver:/projectdata.tgz projectdata.tgz
+CTRL-b d
+```
 
 The **CTRL-b** **d** keyboard shortcut "detaches" the screen which
 allows you to logoff .  When you are ready to reattach to the session
 you login and run the following:
 
-    $ tmux attach -t data_transfer
+``` sl
+$ tmux attach -t data_transfer
+```
 
 Once reattached your session will be where you left it.   You can name
 the session whatever is most appropriate, such as the task you are

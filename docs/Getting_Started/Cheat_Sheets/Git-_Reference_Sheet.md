@@ -48,18 +48,24 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
 -   On the NeSI cluster, run the command 
 
-        ssh-keygen -t ed25519 -C "your_github_account@example.com"
+    ``` sl
+    ssh-keygen -t ed25519 -C "your_github_account@example.com"
+    ```
 
 -   When prompted for a file name, press `enter`. When prompted for a
     passcode, press enter twice more.
 
 -   Open up the newly created .pub key with the command 
 
-        cat ~/.ssh/id_ed25519.pub
+    ``` sl
+    cat ~/.ssh/id_ed25519.pub
+    ```
 
     (or whatever you named the key). It should look something like: 
 
-        ssh-ed25519 ABCDEFGKSAfjksjafkjsaLJfakjJF your_github_account@example.com
+    ``` sl
+    ssh-ed25519 ABCDEFGKSAfjksjafkjsaLJfakjJF your_github_account@example.com
+    ```
 
     Copy the whole key.
 
@@ -86,12 +92,16 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 -   Switching back to your terminal on the cluster, you can test your
     connection with the command 
 
-        ssh -T git@github.com
+    ``` sl
+    ssh -T git@github.com
+    ```
 
     You may be promted to authenticate, if so type 'yes'  
     If everything is working, you should see the message 
 
-        Hi User! You've successfully authenticated, but GitHub does not provide shell access.
+    ``` sl
+    Hi User! You've successfully authenticated, but GitHub does not provide shell access.
+    ```
 
 ## Basics
 

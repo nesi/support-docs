@@ -80,8 +80,8 @@ Artistic License
 >
 >  
 >
-> -   <img src="../../assets/images/.6529551751823" width="476" height="464"
->     alt="genemark_es_license.png" />
+> -   <img src="../../assets/images/6529551751823..png" width="476"
+>     height="464" alt="genemark_es_license.png" />
 > -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
 > -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
 >     home directory as  a **hidden** file under the filename `.gm_key`
@@ -98,32 +98,36 @@ Artistic License
 Following example uses the .fa files provided BRAKER developers on
 <https://github.com/Gaius-Augustus/BRAKER/tree/master/example>
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --account nesi12345
-    #SBATCH --job-name braker-test
-    #SBATCH --cpus-per-task 4
-    #SBATCH --mem 1G
-    #SBATCH --time 02:00:00
-    #SBATCH --output slurmlogs/%x.%j.out
-    #SBATCH --error slurmlogs/%x.%j.err
+#SBATCH --account nesi12345
+#SBATCH --job-name braker-test
+#SBATCH --cpus-per-task 4
+#SBATCH --mem 1G
+#SBATCH --time 02:00:00
+#SBATCH --output slurmlogs/%x.%j.out
+#SBATCH --error slurmlogs/%x.%j.err
 
 
-    module purge
-    module load BRAKER/3.0.2-gimkl-2022a-Perl-5.34.1
+module purge
+module load BRAKER/3.0.2-gimkl-2022a-Perl-5.34.1
 
-    #export the path to augustus config copied above - prerequisites
-    export AUGUSTUS_CONFIG_PATH=/path/to/augustus/config
+#export the path to augustus config copied above - prerequisites
+export AUGUSTUS_CONFIG_PATH=/path/to/augustus/config
 
-    srun braker.pl --threads=${SLURM_CPUS_PER_TASK} --genome=genome.fa --prot_seq=proteins.fa
+srun braker.pl --threads=${SLURM_CPUS_PER_TASK} --genome=genome.fa --prot_seq=proteins.fa
+```
 
 This will generate the output directory named **braker** in the current
 working directory with content similar to below 
 
-    augustus.hints.aa              braker.gtf   genemark_evidence.gff  prothint.gff
-    augustus.hints.codingseq       braker.log   genemark_hintsfile.gff seed_proteins.faa
-    augustus.hints.gtf             cmd.log      genome_header.map      species/
-    augustus.hints_iter1.aa        errors/      hintsfile.gff          uniqueSeeds.gtf
-    augustus.hints_iter1.codingseq evidence.gff hintsfile_iter1.gff    what-to-cite.txt
-    augustus.hints_iter1.gff       GeneMark-EP/ prevHints.gff 
-    augustus.hints_iter1.gtf       GeneMark-ES/ proteins.fa 
+``` sl
+augustus.hints.aa              braker.gtf   genemark_evidence.gff  prothint.gff
+augustus.hints.codingseq       braker.log   genemark_hintsfile.gff seed_proteins.faa
+augustus.hints.gtf             cmd.log      genome_header.map      species/
+augustus.hints_iter1.aa        errors/      hintsfile.gff          uniqueSeeds.gtf
+augustus.hints_iter1.codingseq evidence.gff hintsfile_iter1.gff    what-to-cite.txt
+augustus.hints_iter1.gff       GeneMark-EP/ prevHints.gff 
+augustus.hints_iter1.gtf       GeneMark-ES/ proteins.fa 
+```

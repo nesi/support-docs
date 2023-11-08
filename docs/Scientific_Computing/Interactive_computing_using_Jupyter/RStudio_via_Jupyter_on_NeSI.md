@@ -37,7 +37,7 @@ NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
 
-![rstudio\_launcher.png](../../assets/images/.4595373978255)
+![rstudio\_launcher.png](../../assets/images/4595373978255..png)
 
 Clicking on this entry will open a separate tab in your web browser,
 where RStudio will be accessible.
@@ -59,7 +59,9 @@ The module needs to be entered in the configuration file
 
 In the following example, we use the module that is built for R/4.2.1
 
-    $ echo "module load R/4.2.1-gimkl-2022a" > ~/.config/rstudio_on_nesi/prelude.bash
+``` sl
+$ echo "module load R/4.2.1-gimkl-2022a" > ~/.config/rstudio_on_nesi/prelude.bash
+```
 
 Once your configuration file is ready, make sure to restart your Jupyter
 session and re-launch RStudio for these changes to be taken into
@@ -67,9 +69,11 @@ account. Check that the correct version of R has loaded and that the
 correct Library Paths are available. For R/4.2.1 the command
 `.libPaths()` will return the following:
 
-    > .libPaths()
-    [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
-    [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
+``` sl
+> .libPaths()
+[1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
+[2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
+```
 
 # Package Installation
 
@@ -78,16 +82,20 @@ in a terminal run the following two lines of code. These will setup a
 larger directory that will allow for packages to be installed to your
 personal library. NOTE: this is not creating a library.
 
-    $ mkdir -p /nesi/nobackup/<projectID>/rstudio_tmp
-    $ echo "TMP=/nesi/nobackup/<projectID>/rstudio_tmp" > .Renviron
+``` sl
+$ mkdir -p /nesi/nobackup/<projectID>/rstudio_tmp
+$ echo "TMP=/nesi/nobackup/<projectID>/rstudio_tmp" > .Renviron
+```
 
 Within RStudio run the command \`tempdir()\` which should return the
 following (below), where \`Rtmpjp2rm8\` is a randomly generated folder
 name, and is emptied with each new session. So will not fill up your
 home directory.
 
-    >tempdir()
-    [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
+``` sl
+>tempdir()
+[1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
+```
 
 The alternative is to install packages in a terminal session
 
@@ -110,7 +118,9 @@ Once your container is ready, upload it on NeSI and use the
 configuration file `~/.config/rstudio_on_nesi/singularity_image_path` to
 indicate the path of your container to the RStudio-on-NeSI plugin:
 
-    $ echo PATH_TO_CONTAINER > ~/.config/rstudio_on_nesi/singularity_image_path
+``` sl
+$ echo PATH_TO_CONTAINER > ~/.config/rstudio_on_nesi/singularity_image_path
+```
 
 Then restart your Jupyter session and launch a new RStudio session to
 make use of your container.
@@ -123,7 +133,9 @@ If this does not work, you will need to investigate the errors. A good
 place to start is looking at the log file from jupyter, for the current
 session:
 
-    $ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
+``` sl
+$ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
+```
 
 # Troubleshooting
 
@@ -133,13 +145,15 @@ a failure by JupyterLab. Please try to start RStudio again from the
 launcher. If the problem persists, contact our support team at
 <support@nesi.org.nz>.
 
-![error\_500.PNG](../../assets/images/.4614666941455)
+![error\_500.PNG](../../assets/images/4614666941455..png)
 
 If you have disabled javascript in your web browser, you will need to
 enter your password manually in the RStudio login screen. To retrieve
 the password, open a terminal in JupyterLab and enter the following to
 print the password:
 
-    $ cat ~/.config/rstudio_on_nesi/server_password
+``` sl
+$ cat ~/.config/rstudio_on_nesi/server_password
+```
 
  

@@ -76,7 +76,9 @@ Note that the `nlcompare` command traverses all subdirectories within
 your chosen directory, and may therefore take some time if you verify a
 directory at the top of a complex directory tree.
 
-    nlcompare <local_directory> <nearline_directory>
+``` sl
+nlcompare <local_directory> <nearline_directory>
+```
 
 This command will generate lists of files giving their last modified
 times, sizes and file paths. If there are any differences, the lists

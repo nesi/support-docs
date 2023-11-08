@@ -63,7 +63,9 @@ of `/opt`. To do this, request the NVMe SSD on `milan` as described
 above. Then, after loading the Kraken2 module in your Slurm script, copy
 the database onto the SSD,
 
-    cp -r /opt/nesi/db/Kraken2/standard-2018-09/* $TMPDIR
+``` sl
+cp -r /opt/nesi/db/Kraken2/standard-2018-09/* $TMPDIR
+```
 
 To get Kraken2 to read the DB from the SSDs (and not from `/opt`),
 change the `KRAKEN2_DEFAULT_DB` variable,

@@ -96,30 +96,30 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 <tbody>
 <tr class="odd" style="height: 23px;">
 <td style="width: 148px; height: 23px">--nodes</td>
-<td
-style="width: 303px; height: 23px"><code>#SBATCH --nodes=2</code></td>
+<td style="width: 303px; height: 23px"><code
+class="sl">#SBATCH --nodes=2</code></td>
 <td style="width: 446px; height: 23px">Will request tasks be run across
 2 nodes.</td>
 </tr>
 <tr class="even" style="height: 23px;">
 <td style="width: 148px; height: 23px">--ntasks</td>
-<td
-style="width: 303px; height: 23px"><code>#SBATCH --ntasks=2</code></td>
+<td style="width: 303px; height: 23px"><code
+class="sl">#SBATCH --ntasks=2</code></td>
 <td style="width: 446px; height: 23px">Will start 2 <a
 href="https://support.nesi.org.nz/knowledge/articles/360000690275/">MPI</a>
 tasks.</td>
 </tr>
 <tr class="odd" style="height: 23px;">
 <td style="width: 148px; height: 23px">--ntasks-per-node</td>
-<td
-style="width: 303px; height: 23px"><code>#SBATCH --ntasks-per-node=1</code></td>
+<td style="width: 303px; height: 23px"><code
+class="sl">#SBATCH --ntasks-per-node=1</code></td>
 <td style="width: 446px; height: 23px">Will start 1 task per requested
 node</td>
 </tr>
 <tr class="even" style="height: 23px;">
 <td style="width: 148px; height: 23px">--cpus-per-task</td>
-<td
-style="width: 303px; height: 23px"><code>#SBATCH --cpus-per-task=10</code></td>
+<td style="width: 303px; height: 23px"><code
+class="sl">#SBATCH --cpus-per-task=10</code></td>
 <td style="width: 446px; height: 23px"><p>Will request 10
 <em>logical</em> CPUs per task.</p>
 <p>See <a
@@ -127,32 +127,36 @@ href="https://support.nesi.org.nz/hc/en-gb/articles/360000568236-Hyperthreading"
 </tr>
 <tr class="odd" style="height: 23px;">
 <td style="width: 148px; height: 23px">--mem-per-cpu</td>
-<td
-style="width: 303px; height: 23px"><code>#SBATCH --mem-per-cpu=512MB</code></td>
+<td style="width: 303px; height: 23px"><code
+class="sl">#SBATCH --mem-per-cpu=512MB</code></td>
 <td style="width: 446px; height: 23px"><p>Memory Per <em>logical</em>
 CPU.</p>
-<p><code>--mem</code> Should be used if shared memory job.</p>
+<p><code class="sl">--mem</code> Should be used if shared memory
+job.</p>
 <p>See <a
 href="https://support.nesi.org.nz/hc/en-gb/articles/360001108756">How do
 I request memory?</a>.</p></td>
 </tr>
 <tr class="even" style="height: 46px;">
 <td style="width: 148px; height: 46px">--array</td>
-<td
-style="width: 303px; height: 46px"><code>#SBATCH --array=1-5</code></td>
+<td style="width: 303px; height: 46px"><code
+class="sl">#SBATCH --array=1-5</code></td>
 <td style="width: 446px; height: 46px">Will submit job 5 times each with
-a different <code>$SLURM_ARRAY_TASK_ID</code> (1,2,3,4,5)</td>
+a different <code class="sl">$SLURM_ARRAY_TASK_ID</code>
+(1,2,3,4,5)</td>
 </tr>
 <tr class="odd" style="height: 44px;">
 <td style="width: 148px; height: 44px"> </td>
-<td
-style="width: 303px; height: 44px"><code>#SBATCH --array=0-20:5</code></td>
+<td style="width: 303px; height: 44px"><code
+class="sl">#SBATCH --array=0-20:5</code></td>
 <td style="width: 446px; height: 44px">Will submit job 5 times each with
-a different <code>$SLURM_ARRAY_TASK_ID</code> (0,5,10,15,20)</td>
+a different <code class="sl">$SLURM_ARRAY_TASK_ID</code>
+(0,5,10,15,20)</td>
 </tr>
 <tr class="even">
 <td style="width: 148px"> </td>
-<td style="width: 303px"><code>#SBATCH --array=1-100%10</code></td>
+<td style="width: 303px"><code
+class="sl">#SBATCH --array=1-100%10</code></td>
 <td style="width: 446px">Will submit 1 though to 100 jobs but no more
 than 10 at once.</td>
 </tr>
@@ -170,13 +174,15 @@ than 10 at once.</td>
 <tbody>
 <tr class="odd">
 <td style="width: 150.433px">--qos</td>
-<td style="width: 320px"><code>#SBATCH --qos=debug</code></td>
+<td style="width: 320px"><code
+class="sl">#SBATCH --qos=debug</code></td>
 <td style="width: 461.567px">Adding this line gives your job a very high
 priority. <em>Limited to one job at a time, max 15 minutes</em>.</td>
 </tr>
 <tr class="even">
 <td style="width: 150.433px">--profile</td>
-<td style="width: 320px"><code>#SBATCH --profile=ALL</code></td>
+<td style="width: 320px"><code
+class="sl">#SBATCH --profile=ALL</code></td>
 <td style="width: 461.567px"><p>Allows generation of a .h5 file
 containing job profile information.</p>
 <p>See <a
@@ -185,14 +191,15 @@ Native Profiling</a>.</p></td>
 </tr>
 <tr class="odd">
 <td style="width: 150.433px">--dependency</td>
-<td
-style="width: 320px"><code>#SBATCH --dependency=afterok:123456789</code></td>
+<td style="width: 320px"><code
+class="sl">#SBATCH --dependency=afterok:123456789</code></td>
 <td style="width: 461.567px">Will only start after the job 123456789 has
 completed.</td>
 </tr>
 <tr class="even">
 <td style="width: 150.433px">--hint</td>
-<td style="width: 320px"><code>#SBATCH --hint=nomultithread</code></td>
+<td style="width: 320px"><code
+class="sl">#SBATCH --hint=nomultithread</code></td>
 <td style="width: 461.567px">Disables <a
 href="https://support.nesi.org.nz/hc/en-gb/articles/360000568236-Hyperthreading">hyperthreading</a>,
 be aware that this will significantly change how your job is
@@ -205,7 +212,9 @@ defined.</td>
 > Many options have a short and long form e.g.
 > `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
 >
->     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+> ``` sl
+> echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+> ```
 
 ## Tokens
 
@@ -230,4 +239,6 @@ Common examples.
 > should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
 > possible. e.g.
 >
->     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+> ``` sl
+> echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+> ```

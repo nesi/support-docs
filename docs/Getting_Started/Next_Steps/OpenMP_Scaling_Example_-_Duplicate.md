@@ -23,25 +23,29 @@ zendesk_section_id: 360000189716
 
 ### Initial C Script
 
-    #include <stdio.h>
-    int main(int argc, char** argv){
-    printf("Hello \n");
-    return 0;}
+``` sl
+#include <stdio.h>
+int main(int argc, char** argv){
+printf("Hello \n");
+return 0;}
+```
 
 ### Revised C Script
 
-    #include <stdio.h>
-    #include <omp.h>
-    int main(int argc, char** argv){
-    #pragma omp parallel
-    printf("Hello from process: %d\n", omp_get_thread_num());
-    return 0;}
+``` sl
+#include <stdio.h>
+#include <omp.h>
+int main(int argc, char** argv){
+#pragma omp parallel
+printf("Hello from process: %d\n", omp_get_thread_num());
+return 0;}
+```
 
--   We include the header file for OpenMP **\#include &lt;omp.h&gt;**
+-   We include the header file for OpenMP **#include &lt;omp.h&gt;**
     that will enable OpenMP functionality.
--   We specify the parallel region using the keyword **\#pragma omp
+-   We specify the parallel region using the keyword **#pragma omp
     parallel**.  
-    The **\#pragma omp parallel { … }** directive creates a section of
+    The **#pragma omp parallel { … }** directive creates a section of
     code that will be run in parallel by multiple threads.
 -   We use `omp_get_thread_num()` to obtain the thread id of the
     process.  
@@ -50,11 +54,13 @@ zendesk_section_id: 360000189716
 
 ### Compiling and Running OpenMP Program
 
-    $ module load gimkl/2022a
-    $ gcc -fopenmp hello.c
-    $ OMP_NUM_THREADS=2 ./a.out
-    Hello from process: 0
-    Hello from process: 1
+``` sl
+$ module load gimkl/2022a
+$ gcc -fopenmp hello.c
+$ OMP_NUM_THREADS=2 ./a.out
+Hello from process: 0
+Hello from process: 1
+```
 
 -   To compile an OpenMP program with gcc use the flag `-fopenmp`.
 -   We use the environment variable **OMP\_NUM\_THREADS** to set the
@@ -70,7 +76,8 @@ chosen for the purpose of illustration.
 
 ### Initial R Script
 
-     library(doParallel)
+``` sl
+ library(doParallel)
 
       registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
@@ -91,7 +98,8 @@ scale test and see how long that runs for. So we will first try with
 
 ### Revised R Script
 
-     library(doParallel)
+``` sl
+ library(doParallel)
 
       registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
@@ -114,11 +122,12 @@ took to get there.
 
 ### Slurm Script
 
-      #!/bin/bash -e
-      #SBATCH --job-name=Scaling5k
-      #SBATCH --time=00:10:00
-      #SBATCH --mem=512MB
-      #SBATCH --cpus-per-task=4
+``` sl
+  #!/bin/bash -e
+  #SBATCH --job-name=Scaling5k
+  #SBATCH --time=00:10:00
+  #SBATCH --mem=512MB
+  #SBATCH --cpus-per-task=4
 
       module load R
       Rscript scaling.R
@@ -126,12 +135,14 @@ took to get there.
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
-    3106248.batch  batch           00:03:17    00:00.614     4    4213K COMPLETED
-    3106248.extern extern          00:03:17     00:00:00     4      86K COMPLETED
-    3106248.0      Rscript         00:03:14    12:50.719     4  406516K COMPLETED
+``` sl
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+-------------- ------------ ----------- ------------ ----- -------- ----------
+3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
+3106248.batch  batch           00:03:17    00:00.614     4    4213K COMPLETED
+3106248.extern extern          00:03:17     00:00:00     4      86K COMPLETED
+3106248.0      Rscript         00:03:14    12:50.719     4  406516K COMPLETED
+```
 
 Our job performed 5,000 iterations using four CPU cores and a maximum
 memory of 406,516KB (0.4 GB). In total, the job ran for 3 minutes and 17
@@ -146,35 +157,35 @@ full job and be confident it will succeed.
 To test this, we will submit three more jobs, using 10,000 15,000 and
 20,000 iterations.
 
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
-    3106248.batch  batch           00:03:17    00:00.614     4    4213K COMPLETED
-    3106248.extern extern          00:03:17     00:00:00     4      86K COMPLETED
-    3106248.0      Rscript         00:03:14    12:50.719     4  406516K COMPLETED
-    3106249        Scaling10k      00:06:27    25:27.556     4          COMPLETED
-    3106249.batch  batch           00:06:27    00:00.553     4    4345K COMPLETED
-    3106249.extern extern          00:06:27     00:00:00     4      86K COMPLETED
-    3106249.0      Rscript         00:06:24    25:27.002     4  412002K COMPLETED
-    3106250        Scaling15k      00:09:37    38:07.395     4          COMPLETED
-    3106250.batch  batch           00:09:37    00:00.626     4    4299K COMPLETED
-    3106250.extern extern          00:09:37     00:00:00     4      99K COMPLETED
-    3106250.0      Rscript         00:09:36    38:06.768     4  421424K COMPLETED
-    3106251        Scaling20k      00:12:59    51:34.981     4          COMPLETED
-    3106251.batch  batch           00:12:59    00:00.785     4    4147K COMPLETED
-    3106251.extern extern          00:12:59     00:00:00     4      89K COMPLETED
-    3106251.0      Rscript         00:12:58    51:34.194     4  408163K COMPLETED
+``` sl
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+-------------- ------------ ----------- ------------ ----- -------- ----------
+3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
+3106248.batch  batch           00:03:17    00:00.614     4    4213K COMPLETED
+3106248.extern extern          00:03:17     00:00:00     4      86K COMPLETED
+3106248.0      Rscript         00:03:14    12:50.719     4  406516K COMPLETED
+3106249        Scaling10k      00:06:27    25:27.556     4          COMPLETED
+3106249.batch  batch           00:06:27    00:00.553     4    4345K COMPLETED
+3106249.extern extern          00:06:27     00:00:00     4      86K COMPLETED
+3106249.0      Rscript         00:06:24    25:27.002     4  412002K COMPLETED
+3106250        Scaling15k      00:09:37    38:07.395     4          COMPLETED
+3106250.batch  batch           00:09:37    00:00.626     4    4299K COMPLETED
+3106250.extern extern          00:09:37     00:00:00     4      99K COMPLETED
+3106250.0      Rscript         00:09:36    38:06.768     4  421424K COMPLETED
+3106251        Scaling20k      00:12:59    51:34.981     4          COMPLETED
+3106251.batch  batch           00:12:59    00:00.785     4    4147K COMPLETED
+3106251.extern extern          00:12:59     00:00:00     4      89K COMPLETED
+3106251.0      Rscript         00:12:58    51:34.194     4  408163K COMPLETED
+```
 
 We can see from the `sacct` output that the wall time seems to be
 increasing as we add more iterations, but the maximum memory doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-|                                                                       |                                                                         |
-|-----------------------------------------------------------------------|-------------------------------------------------------------------------|
-| <img src="../../assets/images/OpenMP_Scaling_Example_-_Duplicate.png" 
- style="width: 386px;" height="326" alt="Plot1" />                      | <img src="../../assets/images/OpenMP_Scaling_Example_-_Duplicate_0.png" 
-                                                                         style="width: 389px;" height="328" alt="Plot2" />                        |
+|                                                          |                                                          |
+|----------------------------------------------------------|----------------------------------------------------------|
+| There should be an image here but it couldn't be loaded. | There should be an image here but it couldn't be loaded. |
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.
@@ -189,49 +200,49 @@ by that means?
 To find out we are going to have to run more tests. Let's try running
 our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
-     sacct
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    3063584        Scaling2        00:06:29    12:49.971     2          COMPLETED
-    3063584.batch  batch           00:06:29    00:00.591     2    4208K COMPLETED
-    3063584.extern extern          00:06:29    00:00.001     2      86K COMPLETED
-    3063584.0      Rscript         00:06:27    12:49.379     2  241718K COMPLETED
-    3063585        Scaling4        00:03:15    12:46.159     4          COMPLETED
-    3063585.batch  batch           00:03:15    00:00.558     4    4203K COMPLETED
-    3063585.extern extern          00:03:15     00:00:00     4      86K COMPLETED
-    3063585.0      Rscript         00:03:13    12:45.600     4  314603K COMPLETED
-    3063587        Scaling6        00:02:11    12:43.195     6          COMPLETED
-    3063587.batch  batch           00:02:11    00:00.569     6    4512K COMPLETED
-    3063587.extern extern          00:02:11     00:00:00     6      92K COMPLETED
-    3063587.0      Rscript         00:02:09    12:42.624     6  560299K COMPLETED
-    3061553        Scaling8        00:01:45    13:10.690     8          COMPLETED
-    3061553.batch  batch           00:01:45    00:00.735     8    4296K COMPLETED
-    3061553.extern extern          00:01:45    00:00.001     8      93K COMPLETED
-    3061553.0      Rscript         00:01:42    13:09.953     8  689376K COMPLETED
-    3107288        Scaling10       00:01:20    12:45.238    10          COMPLETED
-    3107288.batch  batch           00:01:20    00:00.578    10    4397K COMPLETED
-    3107288.extern extern          00:01:20    00:00.001    10      97K COMPLETED
-    3107288.0      Rscript         00:01:19    12:44.658    10  549483K COMPLETED
-    3107322        Scaling12       00:01:07    12:46.339    12          COMPLETED
-    3107322.batch  batch           00:01:07    00:00.525    12    4155K COMPLETED
-    3107322.extern extern          00:01:07     00:00:00    12      86K COMPLETED
-    3107322.0      Rscript         00:01:06    12:45.812    12  844047K COMPLETED
-    3107323        Scaling14       00:01:03    12:32.805    14          COMPLETED
-    3107323.batch  batch           00:01:03    00:00.540    14    4112K COMPLETED
-    3107323.extern extern          00:01:03     00:00:00    14      87K COMPLETED
-    3107323.0      Rscript         00:01:01    12:32.263    14  948918K COMPLETED
-    3106181        Scaling16       00:01:00    12:00.619    16          COMPLETED
-    3106181.batch  batch           00:01:00    00:00.619    16    4121K COMPLETED
-    3106181.extern extern          00:01:00    00:00.001    16      89K COMPLETED
-    3106181.0      Rscript         00:00:59    11:59.998    16 1205991K COMPLETED
+``` sl
+ sacct
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
+-------------- ------------ ----------- ------------ ----- -------- ----------
+3063584        Scaling2        00:06:29    12:49.971     2          COMPLETED
+3063584.batch  batch           00:06:29    00:00.591     2    4208K COMPLETED
+3063584.extern extern          00:06:29    00:00.001     2      86K COMPLETED
+3063584.0      Rscript         00:06:27    12:49.379     2  241718K COMPLETED
+3063585        Scaling4        00:03:15    12:46.159     4          COMPLETED
+3063585.batch  batch           00:03:15    00:00.558     4    4203K COMPLETED
+3063585.extern extern          00:03:15     00:00:00     4      86K COMPLETED
+3063585.0      Rscript         00:03:13    12:45.600     4  314603K COMPLETED
+3063587        Scaling6        00:02:11    12:43.195     6          COMPLETED
+3063587.batch  batch           00:02:11    00:00.569     6    4512K COMPLETED
+3063587.extern extern          00:02:11     00:00:00     6      92K COMPLETED
+3063587.0      Rscript         00:02:09    12:42.624     6  560299K COMPLETED
+3061553        Scaling8        00:01:45    13:10.690     8          COMPLETED
+3061553.batch  batch           00:01:45    00:00.735     8    4296K COMPLETED
+3061553.extern extern          00:01:45    00:00.001     8      93K COMPLETED
+3061553.0      Rscript         00:01:42    13:09.953     8  689376K COMPLETED
+3107288        Scaling10       00:01:20    12:45.238    10          COMPLETED
+3107288.batch  batch           00:01:20    00:00.578    10    4397K COMPLETED
+3107288.extern extern          00:01:20    00:00.001    10      97K COMPLETED
+3107288.0      Rscript         00:01:19    12:44.658    10  549483K COMPLETED
+3107322        Scaling12       00:01:07    12:46.339    12          COMPLETED
+3107322.batch  batch           00:01:07    00:00.525    12    4155K COMPLETED
+3107322.extern extern          00:01:07     00:00:00    12      86K COMPLETED
+3107322.0      Rscript         00:01:06    12:45.812    12  844047K COMPLETED
+3107323        Scaling14       00:01:03    12:32.805    14          COMPLETED
+3107323.batch  batch           00:01:03    00:00.540    14    4112K COMPLETED
+3107323.extern extern          00:01:03     00:00:00    14      87K COMPLETED
+3107323.0      Rscript         00:01:01    12:32.263    14  948918K COMPLETED
+3106181        Scaling16       00:01:00    12:00.619    16          COMPLETED
+3106181.batch  batch           00:01:00    00:00.619    16    4121K COMPLETED
+3106181.extern extern          00:01:00    00:00.001    16      89K COMPLETED
+3106181.0      Rscript         00:00:59    11:59.998    16 1205991K COMPLETED
+```
 
  
 
-|                                                                         |                                                                         |
-|-------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| <img src="../../assets/images/OpenMP_Scaling_Example_-_Duplicate_1.png" 
- width="650" height="549" />                                              | <img src="../../assets/images/OpenMP_Scaling_Example_-_Duplicate_2.png" 
-                                                                           width="650" height="548" />                                              |
+|                                                          |                                                          |
+|----------------------------------------------------------|----------------------------------------------------------|
+| There should be an image here but it couldn't be loaded. | There should be an image here but it couldn't be loaded. |
 
 As we can see, increasing the number of CPU cores doesn't linearly
 increase the job's speed. This non-linear speed-up is called Amdahl's
@@ -279,24 +290,27 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
 
 ### Revised Slurm Script
 
-      #!/bin/bash -e
-      #SBATCH --account=nesi99999
-      #SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
-      #SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
-      #SBATCH --mem=512MB           # Memory per node
-      #SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
+``` sl
+  #!/bin/bash -e
+  #SBATCH --account=nesi99999
+  #SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
+  #SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
+  #SBATCH --mem=512MB           # Memory per node
+  #SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
 
       module load R
       Rscript scaling.R
 
  Checking on our job with `sacct` 
 
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    3119026        Scaling60k      00:20:34     02:41:53     8          COMPLETED
-    3119026.batch  batch           00:20:34    00:01.635     8    4197K COMPLETED
-    3119026.extern extern          00:20:34    00:00.001     8      89K COMPLETED
-    3119026.0      Rscript         00:20:33     02:41:51     8  749083K COMPLETED
+``` sl
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+-------------- ------------ ----------- ------------ ----- -------- ----------
+3119026        Scaling60k      00:20:34     02:41:53     8          COMPLETED
+3119026.batch  batch           00:20:34    00:01.635     8    4197K COMPLETED
+3119026.extern extern          00:20:34    00:00.001     8      89K COMPLETED
+3119026.0      Rscript         00:20:33     02:41:51     8  749083K COMPLETED
+```
 
 It looks as though our estimates were accurate, but looking at our
 maximum memory usage it is a good thing that we requested additional

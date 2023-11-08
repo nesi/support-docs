@@ -55,23 +55,25 @@ per MPI task. If you use multiple MPI tasks per node, you need to set
 CRAY\_CUDA\_MPS=1 to enable the tasks to access the GPU device on each
 node at the same time.
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --job-name      GROMACS_test # Name to appear in squeue
-    #SBATCH --time          00:10:00     # Max walltime
-    #SBATCH --mem-per-cpu   512MB        # Max memory per logical core
-    #SBATCH --ntasks        5            # 5 MPI tasks
-    #SBATCH --cpus-per-task 3            # 3 OpenMP threads per task
+#SBATCH --job-name      GROMACS_test # Name to appear in squeue
+#SBATCH --time          00:10:00     # Max walltime
+#SBATCH --mem-per-cpu   512MB        # Max memory per logical core
+#SBATCH --ntasks        5            # 5 MPI tasks
+#SBATCH --cpus-per-task 3            # 3 OpenMP threads per task
 
-    module load GROMACS/5.1.4-intel-2017a
+module load GROMACS/5.1.4-intel-2017a
 
-    # Prepare the binary input from precursor files 
-    srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
+# Prepare the binary input from precursor files 
+srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
 
-    # Run the simulation
-    # Note that the -deffnm option is an alternative to specifying several input files individually
-    # Note also that the -ntomp option should be used when using hybrid parallelisation
-    srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
+# Run the simulation
+# Note that the -deffnm option is an alternative to specifying several input files individually
+# Note also that the -ntomp option should be used when using hybrid parallelisation
+srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
+```
 
 **Note:** To prevent performance issues we moved the serial "gmx" to
 "gmx\_serial". The present "gmx" prints a note and calls "gmx\_mpi
@@ -94,7 +96,7 @@ If you run GROMACS on a node that is simultaneously running other jobs
 (even other GROMACS jobs), you may see warnings like this in your
 output:
 
-> WARNING: In MPI process \#0: Affinity setting failed. This can cause
+> WARNING: In MPI process #0: Affinity setting failed. This can cause
 > performance degradation! If you think your setting are correct,
 > contact the GROMACS developers.
 

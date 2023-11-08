@@ -67,7 +67,9 @@ Ubuntu LTS Terminal.
     directory run the following command replacing c with the name of
     your Windows filesystems found in /mnt/. 
 
-        ln -s /mnt/c/Users/YourWindowsUsername/ WinFS
+    ``` sl
+    ln -s /mnt/c/Users/YourWindowsUsername/ WinFS
+    ```
 !!! info What Next?
 >
 > -   Set up your [SSH config

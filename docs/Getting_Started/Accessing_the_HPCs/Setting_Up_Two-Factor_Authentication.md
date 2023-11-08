@@ -54,11 +54,11 @@ If you some reason you can't do this, please contact NeSI support.
 2.  Click **My HPC Account** on left hand panel  and then **Setup
     Two-Factor Authentication device**
 
-    <img src="../../assets/images/.4414700806543" width="560" height="210"
-    alt="authentication_factor_setup.png" />
+    <img src="../../assets/images/4414700806543..png" width="560"
+    height="210" alt="authentication_factor_setup.png" />
 
 3.  Click the "**Setup Two-Factor Authentication device**" link.  
-    <img src="../../assets/images/.360001267755"
+    <img src="../../assets/images/360001267755..png"
     style="max-width: 480px;" />
 
 4.  After clicking on "Continue" you will retrieve the QR code.

@@ -62,9 +62,13 @@ connections. 
 
 Make sure the `-Y` or `-X` flag is included
 
-    ssh -Y user@lander.nesi.org.nz
+``` sl
+ssh -Y user@lander.nesi.org.nz
+```
 
-    ssh -Y login.nesi.org.nz
+``` sl
+ssh -Y login.nesi.org.nz
+```
 
 ## MobaXterm
 
@@ -83,7 +87,9 @@ running.
 In order to connect X11 into a tmux session you make the following
 change to your config file.
 
-    tmux show -g | sed 's/DISPLAY //' > ~/.tmux.conf
+``` sl
+tmux show -g | sed 's/DISPLAY //' > ~/.tmux.conf
+```
 
 # Interactive Slurm jobs
 
@@ -93,13 +99,17 @@ In order to make use of X11 in an interactive Slurm job:
 
 Add the flag `--x11`
 
-    srun --ntasks 36 --mem-per-cpu 1500 --time 01:00:00 --x11 --pty bash
+``` sl
+srun --ntasks 36 --mem-per-cpu 1500 --time 01:00:00 --x11 --pty bash
+```
 
 ## salloc
 
 add the flag -Y when sshing to the node.
 
-    ssh -Y wbn001
+``` sl
+ssh -Y wbn001
+```
 
 # XVFB
 
@@ -110,4 +120,6 @@ Prepending any command with `xfvb-run` will provide a dummy X11 server
 for the application to render to.  
 e.g.
 
-    xvfb-run xterm
+``` sl
+xvfb-run xterm
+```

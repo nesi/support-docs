@@ -76,27 +76,31 @@ have prepared modules for each version of the database. Running
 `module spider AlphaFold2DB` will list the available versions based on
 when they were downloaded (Year-Month)
 
-    $ module spider AlphaFold2DB
+``` sl
+$ module spider AlphaFold2DB
 
-    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    AlphaFold2DB: AlphaFold2DB/2022-06
-    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    Description:
-    AlphaFold2 databases
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AlphaFold2DB: AlphaFold2DB/2022-06
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Description:
+AlphaFold2 databases
 
-     Versions:
-             AlphaFold2DB/2022-06
-             AlphaFold2DB/2023-04
+ Versions:
+         AlphaFold2DB/2022-06
+         AlphaFold2DB/2023-04
+```
 
 ##  
 
 Loading a module will set the `$AF2DB` variable which is pointing to
 the  selected version of the database. For an example. 
 
-    $ module load AlphaFold2DB/2023-04
+``` sl
+$ module load AlphaFold2DB/2023-04
 
-    $ echo $AF2DB 
-    /opt/nesi/db/alphafold_db/2023-04
+$ echo $AF2DB 
+/opt/nesi/db/alphafold_db/2023-04
+```
 
 # AlphaFold module ( &gt;= 2.3.2)
 
@@ -108,80 +112,86 @@ the module (previous versoions were done via a Singularity container )
 Input *fasta* used in following example  is 3RGK
 (<https://www.rcsb.org/structure/3rgk>).
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --account       nesi12345
-    #SBATCH --job-name      af-2.3.2-monomer
-    #SBATCH --mem           24G
-    #SBATCH --cpus-per-task 8
-    #SBATCH --gpus-per-node P100:1
-    #SBATCH --time          02:00:00
-    #SBATCH --output        %j.out
+#SBATCH --account       nesi12345
+#SBATCH --job-name      af-2.3.2-monomer
+#SBATCH --mem           24G
+#SBATCH --cpus-per-task 8
+#SBATCH --gpus-per-node P100:1
+#SBATCH --time          02:00:00
+#SBATCH --output        %j.out
 
-    module purge
-    module load AlphaFold2DB/2023-04
-    module load AlphaFold/2.3.2
+module purge
+module load AlphaFold2DB/2023-04
+module load AlphaFold/2.3.2
 
-    INPUT=/nesi/project/nesi12345/alphafold/input_data
-    OUTPUT=/nesi/project/nesi12345/alphafold/results
+INPUT=/nesi/project/nesi12345/alphafold/input_data
+OUTPUT=/nesi/project/nesi12345/alphafold/results
 
-    run_alphafold.py --use_gpu_relax \
-    --data_dir=$AF2DB \
-    --uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
-    --mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2022_05.fa \
-    --bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-    --uniref30_database_path=$AF2DB/uniref30/UniRef30_2021_03 \
-    --pdb70_database_path=$AF2DB/pdb70/pdb70 \
-    --template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
-    --obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
-    --model_preset=monomer \
-    --max_template_date=2022-6-1 \
-    --db_preset=full_dbs \
-    --output_dir=$OUTPUT \
-    --fasta_paths=${INPUT}/rcsb_pdb_3GKI.fasta
+run_alphafold.py --use_gpu_relax \
+--data_dir=$AF2DB \
+--uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
+--mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2022_05.fa \
+--bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+--uniref30_database_path=$AF2DB/uniref30/UniRef30_2021_03 \
+--pdb70_database_path=$AF2DB/pdb70/pdb70 \
+--template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
+--obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
+--model_preset=monomer \
+--max_template_date=2022-6-1 \
+--db_preset=full_dbs \
+--output_dir=$OUTPUT \
+--fasta_paths=${INPUT}/rcsb_pdb_3GKI.fasta
+```
 
 ## Example Slurm script for multimer
 
 Input *fasta* used in following example
 
-    >T1083
-    GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRYKEAAEENRALAKLHHELAIVED
-    >T1084
-    MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
+``` sl
+>T1083
+GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRYKEAAEENRALAKLHHELAIVED
+>T1084
+MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
+```
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --account       nesi12345
-    #SBATCH --job-name      af-2.3.2-multimer
-    #SBATCH --mem           30G
-    #SBATCH --cpus-per-task 4
-    #SBATCH --gpus-per-node P100:1
-    #SBATCH --time          01:45:00
-    #SBATCH --output        slurmout.%j.out
+#SBATCH --account       nesi12345
+#SBATCH --job-name      af-2.3.2-multimer
+#SBATCH --mem           30G
+#SBATCH --cpus-per-task 4
+#SBATCH --gpus-per-node P100:1
+#SBATCH --time          01:45:00
+#SBATCH --output        slurmout.%j.out
 
-    module purge
-    module load AlphaFold2DB/2023-04
-    module load AlphaFold/2.3.2
+module purge
+module load AlphaFold2DB/2023-04
+module load AlphaFold/2.3.2
 
-    INPUT=/nesi/project/nesi12345/input_data
-    OUTPUT=/nesi/project/nesi12345/alphafold/2.3_multimer
+INPUT=/nesi/project/nesi12345/input_data
+OUTPUT=/nesi/project/nesi12345/alphafold/2.3_multimer
 
-    run_alphafold.py \
-    --use_gpu_relax \
-    --data_dir=$AF2DB \
-    --model_preset=multimer \
-    --uniprot_database_path=$AF2DB/uniprot/uniprot.fasta \
-    --uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
-    --mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2022_05.fa \
-    --bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-    --uniref30_database_path=$AF2DB/uniref30/UniRef30_2021_03 \
-    --pdb_seqres_database_path=$AF2DB/pdb_seqres/pdb_seqres.txt \
-    --template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
-    --obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
-    --max_template_date=2022-6-1 \
-    --db_preset=full_dbs \
-    --output_dir=${OUTPUT} \
-    --fasta_paths=${INPUT}/test_multimer.fasta
+run_alphafold.py \
+--use_gpu_relax \
+--data_dir=$AF2DB \
+--model_preset=multimer \
+--uniprot_database_path=$AF2DB/uniprot/uniprot.fasta \
+--uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
+--mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2022_05.fa \
+--bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+--uniref30_database_path=$AF2DB/uniref30/UniRef30_2021_03 \
+--pdb_seqres_database_path=$AF2DB/pdb_seqres/pdb_seqres.txt \
+--template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
+--obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
+--max_template_date=2022-6-1 \
+--db_preset=full_dbs \
+--output_dir=${OUTPUT} \
+--fasta_paths=${INPUT}/test_multimer.fasta
+```
 
 # AlphaFold Singularity container (prior to v2.3.2)
 
@@ -197,81 +207,85 @@ modifications. Image (.*simg*) and the corresponding definition file
 
 ### Monomer
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --account       nesi12345
-    #SBATCH --job-name      alphafold2_monomer_example
-    #SBATCH --mem           30G
-    #SBATCH --cpus-per-task 6
-    #SBATCH --gpus-per-node P100:1 
-    #SBATCH --time          02:00:00
-    #SBATCH --output        slurmout.%j.out
+#SBATCH --account       nesi12345
+#SBATCH --job-name      alphafold2_monomer_example
+#SBATCH --mem           30G
+#SBATCH --cpus-per-task 6
+#SBATCH --gpus-per-node P100:1 
+#SBATCH --time          02:00:00
+#SBATCH --output        slurmout.%j.out
 
-    module purge
-    module load AlphaFold2DB/2022-06
-    module load cuDNN/8.1.1.33-CUDA-11.2.0 Singularity/3.9.8
+module purge
+module load AlphaFold2DB/2022-06
+module load cuDNN/8.1.1.33-CUDA-11.2.0 Singularity/3.9.8
 
-    INPUT=/path/to/input_data
-    OUTPUT=/path/to/results
+INPUT=/path/to/input_data
+OUTPUT=/path/to/results
 
-    export SINGULARITY_BIND="$INPUT,$OUTPUT,$AF2DB"
+export SINGULARITY_BIND="$INPUT,$OUTPUT,$AF2DB"
 
-    singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python /app/alphafold/run_alphafold.py \
-    --use_gpu_relax \
-    --data_dir=$AF2DB \
-    --uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
-    --mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2018_12.fa \
-    --bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-    --uniclust30_database_path=$AF2DB/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
-    --pdb70_database_path=$AF2DB/pdb70/pdb70 \
-    --template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
-    --obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
-    --model_preset=monomer \
-    --max_template_date=2022-1-1 \
-    --db_preset=full_dbs \
-    --output_dir=$OUTPUT \
-    --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python /app/alphafold/run_alphafold.py \
+--use_gpu_relax \
+--data_dir=$AF2DB \
+--uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
+--mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2018_12.fa \
+--bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+--uniclust30_database_path=$AF2DB/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
+--pdb70_database_path=$AF2DB/pdb70/pdb70 \
+--template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
+--obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
+--model_preset=monomer \
+--max_template_date=2022-1-1 \
+--db_preset=full_dbs \
+--output_dir=$OUTPUT \
+--fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+```
 
  
 
 ### Multimer
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --account       nesi12345
-    #SBATCH --job-name      alphafold2_monomer_example
-    #SBATCH --mem           30G
-    #SBATCH --cpus-per-task 6
-    #SBATCH --gpus-per-node P100:1 
-    #SBATCH --time          02:00:00
-    #SBATCH --output        slurmout.%j.out
+#SBATCH --account       nesi12345
+#SBATCH --job-name      alphafold2_monomer_example
+#SBATCH --mem           30G
+#SBATCH --cpus-per-task 6
+#SBATCH --gpus-per-node P100:1 
+#SBATCH --time          02:00:00
+#SBATCH --output        slurmout.%j.out
 
-    module purge
-    module load AlphaFold2DB/2022-06
-    module load cuDNN/8.1.1.33-CUDA-11.2.0 Singularity/3.9.8
+module purge
+module load AlphaFold2DB/2022-06
+module load cuDNN/8.1.1.33-CUDA-11.2.0 Singularity/3.9.8
 
-    INPUT=/path/to/input_data
-    OUTPUT=/path/to/results
+INPUT=/path/to/input_data
+OUTPUT=/path/to/results
 
 
-    export SINGULARITY_BIND="$INPUT,$OUTPUT,$AF2DB"
+export SINGULARITY_BIND="$INPUT,$OUTPUT,$AF2DB"
 
-    singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python /app/alphafold/run_alphafold.py \
-    --use_gpu_relax \
-    --data_dir=$AF2DB \
-    --uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
-    --mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2018_12.fa \
-    --bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-    --uniclust30_database_path=$AF2DB/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
-    --pdb_seqres_database_path=$AF2DB/pdb_seqres/pdb_seqres.txt \
-    --template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
-    --obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
-    --uniprot_database_path=$AF2DB/uniprot/uniprot.fasta \
-    --model_preset=multimer \
-    --max_template_date=2022-1-1 \
-    --db_preset=full_dbs \
-    --output_dir=$OUTPUT \
-    --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python /app/alphafold/run_alphafold.py \
+--use_gpu_relax \
+--data_dir=$AF2DB \
+--uniref90_database_path=$AF2DB/uniref90/uniref90.fasta \
+--mgnify_database_path=$AF2DB/mgnify/mgy_clusters_2018_12.fa \
+--bfd_database_path=$AF2DB/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+--uniclust30_database_path=$AF2DB/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
+--pdb_seqres_database_path=$AF2DB/pdb_seqres/pdb_seqres.txt \
+--template_mmcif_dir=$AF2DB/pdb_mmcif/mmcif_files \
+--obsolete_pdbs_path=$AF2DB/pdb_mmcif/obsolete.dat \
+--uniprot_database_path=$AF2DB/uniprot/uniprot.fasta \
+--model_preset=multimer \
+--max_template_date=2022-1-1 \
+--db_preset=full_dbs \
+--output_dir=$OUTPUT \
+--fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+```
 
 ###  
 
@@ -303,10 +317,14 @@ Input *fasta* used in following example and subsequent benchmarking is
 
 For module based runs 
 
-    export TF_FORCE_UNIFIED_MEMORY=1
-    export XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
+``` sl
+export TF_FORCE_UNIFIED_MEMORY=1
+export XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
+```
 
 For Singularity based runs 
 
-    export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1 
-    export SINGULARITYENV_XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
+``` sl
+export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1 
+export SINGULARITYENV_XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
+```

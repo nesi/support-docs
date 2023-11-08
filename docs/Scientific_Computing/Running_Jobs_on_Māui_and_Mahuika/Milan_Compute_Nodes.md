@@ -28,12 +28,16 @@ To use Mahuika's Milan nodes, you will need to explicitly specify the
 the same Mahuika login node that you currently use, and share the same
 file system as other cluster nodes. 
 
-    sbatch -p milan ...
+``` sl
+sbatch -p milan ...
+```
 
 Alternatively, the same effect can be achieved by placing a pragma into
 the job description file:
 
-    #SBATCH --partition=milan
+``` sl
+#SBATCH --partition=milan
+```
 
 # Hardware
 
@@ -64,7 +68,9 @@ We have repaired several of our existing environment modules that way.
 For programs which you have compiled yourself, we have installed a new
 environment module that provides many of the Centos 7 libraries:
 
-    module load LegacySystemLibs/7
+``` sl
+module load LegacySystemLibs/7
+```
 
 Please [let us know](https://support.nesi.org.nz/hc/en-gb/requests/new)
 if that isn't sufficient to get your existing compiled code running on
@@ -100,7 +106,9 @@ not running on an Intel CPU.  
 In order to persuade MKL to use the same fast optimised kernels on the
 new AMD Milan CPUs, you can do:
 
-    module load AlwaysIntelMKL
+``` sl
+module load AlwaysIntelMKL
+```
 
 We have set that as the default for our most recent toolchain
 *gimkl/2022a*.
@@ -124,7 +132,9 @@ might perform better on their hardware. We have installed it but not
 integrated it into a high-level toolchain with MPI and BLAS. If you wish
 to try it:
 
-    module load AOCC
+``` sl
+module load AOCC
+```
 
 For more information on AOCC compiler suite please, visit [AMD
 Optimizing C/C++ and Fortran Compilers

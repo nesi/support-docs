@@ -47,15 +47,19 @@ Start by generating images of dots.  We'll generate 1000 images for our
 training set and 100 images to test our predictions. On Mahuika type the
 following commands to generate the training and testing data sets:
 
-    wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/ProduceSyntheticData/DrawDots.R
-    ml R/3.6.1-gimkl-2018b
-    Rscript DrawDots.R -n 1000 -r 0 -R 5 -s 123 -o train -c train.csv -w 40
-    Rscript DrawDots.R -n 100 -r 0 -R 5 -s 234 -o test -c test.csv -w 40
+``` sl
+wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/ProduceSyntheticData/DrawDots.R
+ml R/3.6.1-gimkl-2018b
+Rscript DrawDots.R -n 1000 -r 0 -R 5 -s 123 -o train -c train.csv -w 40
+Rscript DrawDots.R -n 100 -r 0 -R 5 -s 234 -o test -c test.csv -w 40
+```
 
 The images are saved under directories train/ and test/, respectively.
 An example of image is test/img49.jpg.
 
-    display test/img49.jpg
+``` sl
+display test/img49.jpg
+```
 
 <img src="../../assets/images/img49.jpg" width="100" height="100"
 alt="img49.jpg" />
@@ -70,13 +74,17 @@ The images need to be slightly manipulated. For instance we expect all
 the images to be black and white so we can collapse the red, green and
 blue channel into one. We'll need OpenCV to this task:
 
-    pip install opencv-python --user
+``` sl
+pip install opencv-python --user
+```
 
 ### Running the model
 
 Our neural network
 
-    wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Conv2D/classify.py
+``` sl
+wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Conv2D/classify.py
+```
 
 is encoded in classify.py. It is made of three convolution layers, each
 followed by max pooling. The convolution and max pooling layers are
@@ -85,38 +93,44 @@ flattened as a 1D array and a dense layer, which returns an estimate of
 the number of dots as a single floating point number, is added. The
 corresponding lines in classify.py look like (Python code):
 
-    clf = keras.Sequential()
-    clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
-                                 padding='same', data_format='channels_last', activation='relu') )
-    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-    clf.add( keras.layers.Conv2D(128, kernel_size=(3,3), strides=(1,1),
-                                 padding='same', data_format='channels_last', activation='relu') )
-    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-    clf.add( keras.layers.Conv2D(256, kernel_size=(3,3), strides=(1,1),
-                                 padding='same', data_format='channels_last', activation='relu') )
-    clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
-    clf.add( keras.layers.Flatten() )
-    clf.add( keras.layers.Dense(1) )
+``` sl
+clf = keras.Sequential()
+clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
+                             padding='same', data_format='channels_last', activation='relu') )
+clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+clf.add( keras.layers.Conv2D(128, kernel_size=(3,3), strides=(1,1),
+                             padding='same', data_format='channels_last', activation='relu') )
+clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+clf.add( keras.layers.Conv2D(256, kernel_size=(3,3), strides=(1,1),
+                             padding='same', data_format='channels_last', activation='relu') )
+clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
+clf.add( keras.layers.Flatten() )
+clf.add( keras.layers.Dense(1) )
+```
 
  
 
 We're now ready to train and test our model:
 
-    #!/bin/bash -e
-    #SBATCH --job-name keras-dots
-    #SBATCH --partition gpu
-    #SBATCH --gres gpu:1
-    #SBATCH --ntasks 1
-    #SBATCH --cpus-per-task 1
-    #SBATCH --time 00:10:00
-    #SBATCH --mem 512MB
-    module load TensorFlow/1.10.1-gimkl-2017a-Python-3.6.3
-    python classify.py --testDir=test --trainDir=train --save=someResults.png
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name keras-dots
+#SBATCH --partition gpu
+#SBATCH --gres gpu:1
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 1
+#SBATCH --time 00:10:00
+#SBATCH --mem 512MB
+module load TensorFlow/1.10.1-gimkl-2017a-Python-3.6.3
+python classify.py --testDir=test --trainDir=train --save=someResults.png
+```
 
 Copy-paste the above and save in file classify.sl. Submit the Slurm
 script classify.sl
 
-    sbatch classify.sl
+``` sl
+sbatch classify.sl
+```
 
 ### Looking at the output
 

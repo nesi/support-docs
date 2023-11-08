@@ -29,7 +29,9 @@ python file. There are two ways to do this.
 accessible through the command line if you are logged in through
 Jupyter.
 
-    jupyter nbconvert --to script my_notebook.ipynb 
+``` sl
+jupyter nbconvert --to script my_notebook.ipynb 
+```
 
 will create a new python script called `my_notebook.py`.
 

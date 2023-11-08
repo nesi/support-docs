@@ -70,7 +70,9 @@ We have repaired several of our existing environment modules that way.
  For programs which you have compiled yourself, we have installed a new
 environment module that provides many of the Centos 7 libraries:
 
-    module load LegacySystemLibs/7
+``` sl
+module load LegacySystemLibs/7
+```
 
 Please let us know if that isn't sufficient to get your existing
 compiled code running on the new nodes.
@@ -104,7 +106,9 @@ not running on an Intel CPU.  
 In order to persuade MKL to use the same fast optimised kernels on the
 new AMD Milan CPUs, you can do
 
-    module load AlwaysIntelMKL
+``` sl
+module load AlwaysIntelMKL
+```
 
 We have set that as the default for our most recent toolchain
 *gimkl/2022a*.
@@ -127,7 +131,9 @@ might perform better on their hardware.  We have installed it but not
 integrated it into a high-level toolchain with MPI and BLAS.  If you
 wish to try it:
 
-    module load AOCC
+``` sl
+module load AOCC
+```
 
 For more information on AOCC compiler suite please, visit [AMD
 Optimizing C/C++ and Fortran Compilers
@@ -160,12 +166,14 @@ Either:
 
 Example of Slurm script:
 
-    #!/bin/bash -e
-    #SBATCH --job-name=MilanJob       #Name of the job
-    #SBATCH --time=00:00:01           #Set a limit of 1 seconde on the total run time of the job allocation
-    #SBATCH --partition=milan         #Request the Milan partition for the resource allocation
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=MilanJob       #Name of the job
+#SBATCH --time=00:00:01           #Set a limit of 1 seconde on the total run time of the job allocation
+#SBATCH --partition=milan         #Request the Milan partition for the resource allocation
 
-    srun pwd                          #Prints the working directory with the srun command
+srun pwd                          #Prints the working directory with the srun command
+```
 
 Resource allocation limits:   
 

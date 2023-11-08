@@ -50,14 +50,14 @@ connecting from a Windows, Mac or a Linux computer.
 
 To upload a file, click on the 
 
-![](../../assets/images/.7328082899471)
+![](../../assets/images/7328082899471..png)
 
 button, near the top left and generally under the Run button.
 
 To download a file, navigate the file browser on the left and
 right-click on the file to see the menu below,
 
-![](../../assets/images/.7328134296079)
+![](../../assets/images/7328134296079..png)
 
 The Download button is at the bottom.
 
@@ -74,11 +74,15 @@ In a local terminal the following commands can be used to:
 
 Move a file from your local machine to Mahuika.
 
-    scp <path/filename> mahuika:<path/filename>
+``` sl
+scp <path/filename> mahuika:<path/filename>
+```
 
 Move a file from Mahuika to your local machine.
 
-    scp mahuika:<path/filename> <path/filename>
+``` sl
+scp mahuika:<path/filename> <path/filename>
+```
 !!! info Note
 >
 > -   This will only work if you have set up aliases as described in
@@ -111,7 +115,7 @@ This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../../assets/images/.360003129656)
+![mceclip0.png](../../assets/images/360003129656..png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -124,7 +128,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/.360001503115)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/360001503115..png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided
@@ -152,7 +156,9 @@ storage services like Google drive or OneDrive.
 
 The basic command syntax of Rclone:
 
-    rclone subcommand options source:path dest:path
+``` sl
+rclone subcommand options source:path dest:path
+```
 
 The most frequently used Rclone subcommands:
 
@@ -191,12 +197,16 @@ Rsync is an utility that provides fast incremental file transfer and
 efficient file synchronization between a computer and a storage disk.  
 The basic command syntax of:  
 
-    rsync -options source target
+``` sl
+rsync -options source target
+```
 
 If the data source or target location is a remote site, it is defined
 with syntax:  
 
-    userame@server:/path/in/server
+``` sl
+userame@server:/path/in/server
+```
 
 The most frequently used Rsync options:
 

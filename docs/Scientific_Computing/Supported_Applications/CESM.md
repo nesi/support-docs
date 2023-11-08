@@ -42,15 +42,17 @@ the *bin* directory in your home, add that directory to *PATH* and run a
 git command to finish the Git-LFS installation. The following commands
 will achieve this:
 
-    mkdir git-lfs
-    cd git-lfs
-    wget https://github.com/git-lfs/git-lfs/releases/download/v2.12.0/git-lfs-linux-amd64-v2.12.0.tar.gz
-    tar xf git-lfs-linux-amd64-v2.12.0.tar.gz
-    mkdir -p ~/bin
-    cp git-lfs ~/bin/
-    export PATH=$PATH:~/bin
-    echo export PATH=\$PATH:\$HOME/bin >> ~/.bashrc
-    git lfs install
+``` sl
+mkdir git-lfs
+cd git-lfs
+wget https://github.com/git-lfs/git-lfs/releases/download/v2.12.0/git-lfs-linux-amd64-v2.12.0.tar.gz
+tar xf git-lfs-linux-amd64-v2.12.0.tar.gz
+mkdir -p ~/bin
+cp git-lfs ~/bin/
+export PATH=$PATH:~/bin
+echo export PATH=\$PATH:\$HOME/bin >> ~/.bashrc
+git lfs install
+```
 
 ## Download CESM
 
@@ -60,10 +62,12 @@ First switch to your project directory (or wherever else you would like
 the CESM source to live) and then run the commands to download CESM
 (replacing *&lt;your\_project\_code&gt;* with your project code):
 
-    cd /nesi/project/<your_project_code>
-    git clone -b release-cesm2.1.3 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
-    cd my_cesm_sandbox
-    ./manage_externals/checkout_externals
+``` sl
+cd /nesi/project/<your_project_code>
+git clone -b release-cesm2.1.3 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
+cd my_cesm_sandbox
+./manage_externals/checkout_externals
+```
 
 Make sure the above command is successful (see the upstream
 documentation linked above for how to check). You may need to rerun the
@@ -79,12 +83,14 @@ Earth system models) and copy the config files to *~/.cime*. In the
 following, replace *&lt;your\_project\_code&gt;* with your project code
 (this will overwrite any current configuration your have in *~/.cime*):
 
-    cd /nesi/project/<your_project_code>
-    git clone https://github.com/nesi/nesi-cesm-config.git
-    cd nesi-cesm-config
-    mkdir -p ~/.cime
-    sed 's/nesi99999/<your_project_code>/g' config_machines.xml > ~/.cime/config_machines.xml
-    cp config_batch.xml ~/.cime/config_batch.xml
+``` sl
+cd /nesi/project/<your_project_code>
+git clone https://github.com/nesi/nesi-cesm-config.git
+cd nesi-cesm-config
+mkdir -p ~/.cime
+sed 's/nesi99999/<your_project_code>/g' config_machines.xml > ~/.cime/config_machines.xml
+cp config_batch.xml ~/.cime/config_batch.xml
+```
 
 Check that you are happy with the paths specified in
 *~/.cime/config\_machines.xml*, in particular, it is recommended that
@@ -100,9 +106,11 @@ above link for more information.
 
 First, create the case:
 
-    cd /nesi/project/<your_project_code>/my_cesm_sandbox/cime/scripts
-    ./create_newcase --case /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test --compset B1850 --res f19_g17 --machine maui --compiler intel
-    cd /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test
+``` sl
+cd /nesi/project/<your_project_code>/my_cesm_sandbox/cime/scripts
+./create_newcase --case /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test --compset B1850 --res f19_g17 --machine maui --compiler intel
+cd /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test
+```
 
 The *--machine Māui --compiler intel* arguments to *./create\_case* tell
 CESM to use the NeSI specific configuration we added to your home
@@ -110,22 +118,30 @@ directory in the previous step.
 
 Next, set up the case and preview the run:
 
-    ./case.setup
-    ./preview_run
+``` sl
+./case.setup
+./preview_run
+```
 
 Check that everything looks correct in the preview and then build the
 case:
 
-    ./case.build
+``` sl
+./case.build
+```
 
 Update any settings if necessary, for example here we turn off short
 term archiving:
 
-    ./xmlchange DOUT_S=FALSE
+``` sl
+./xmlchange DOUT_S=FALSE
+```
 
 Finally, run the job:
 
-    ./case.submit
+``` sl
+./case.submit
+```
 
 A job will be submitted to the Slurm queue, you can view the queue using
 *squeue* or *squeue -u $USER* for just your own jobs. Check the job

@@ -58,27 +58,37 @@ possible.
         [here](https://support.nesi.org.nz/hc/en-gb/sections/360000034315-Accessing-the-HPCs).
         For example:
 
-            ssh lander
+        ``` sl
+        ssh lander
+        ```
 
     2.  Connect from the lander node to one of the NICE DCV server
         nodes:
 
-            ssh w-ndcv01
+        ``` sl
+        ssh w-ndcv01
+        ```
 
     ### On Mahuika
 
     1.  Connect to the Mahuika login node:
 
-            ssh mahuika
+        ``` sl
+        ssh mahuika
+        ```
 
     2.  Connect to the NICE DCV server node (not yet available):
 
-            ssh vgpuwbg005
+        ``` sl
+        ssh vgpuwbg005
+        ```
 
 2.  Create a new NICE DCV session, replacing `<session name>` with a
     session name of your choice:
 
-        dcv create-session <session name>
+    ``` sl
+    dcv create-session <session name>
+    ```
 
 # Establishing an SSH tunnel
 
@@ -102,10 +112,12 @@ must create an SSH tunnel through the NeSI lander node.
 
     ### To connect to Māui
 
-        # The first port number (22222 in this example) can be anything you like > 1024,
-        # so long as it's not in use by another service.
-        # We have picked 22222 because it's easy to remember, the SSH port being 22.
-        ssh -L 22222:w-ndcv01.maui.niwa.co.nz:22 -o ExitOnForwardFailure=yes -N lander
+    ``` sl
+    # The first port number (22222 in this example) can be anything you like > 1024,
+    # so long as it's not in use by another service.
+    # We have picked 22222 because it's easy to remember, the SSH port being 22.
+    ssh -L 22222:w-ndcv01.maui.niwa.co.nz:22 -o ExitOnForwardFailure=yes -N lander
+    ```
 
     If you don't already have another open connection to or through the
     NeSI lander node, you will at this point be prompted for your
@@ -116,10 +128,12 @@ must create an SSH tunnel through the NeSI lander node.
     1.  Open an SSH tunnel through the lander node to the Mahuika login
         node.
 
-            # The tunnel port numbers (10022 in this example) can be anything you like > 1024,
-            # so long as neither of them is in use by another service.
-            # We have picked 10022 because it's easy to remember, the SSH port being 22.
-            ssh -L 10022:login.mahuika.nesi.org.nz:22 -o ExitOnForwardFailure=yes -N lander
+        ``` sl
+        # The tunnel port numbers (10022 in this example) can be anything you like > 1024,
+        # so long as neither of them is in use by another service.
+        # We have picked 10022 because it's easy to remember, the SSH port being 22.
+        ssh -L 10022:login.mahuika.nesi.org.nz:22 -o ExitOnForwardFailure=yes -N lander
+        ```
 
         If you don't already have another open connection to or through
         the NeSI lander node to the Mahuika login node, you will at this
@@ -129,10 +143,12 @@ must create an SSH tunnel through the NeSI lander node.
     2.  In a new terminal, open an SSH tunnel through this existing
         tunnel to Mahuika's NICE DCV node.
 
-            # The tunnel port numbers (22222 in this example) can be anything you like > 1024,
-            # so long as neither of them is in use by another service.
-            # We have picked 22222 because it's easy to remember, the SSH port being 22.
-            ssh -L 22222:vgpuwbg005:22 -o ExitOnForwardFailure=yes -N -p 10022 -l <nesi_linux_username> localhost
+        ``` sl
+        # The tunnel port numbers (22222 in this example) can be anything you like > 1024,
+        # so long as neither of them is in use by another service.
+        # We have picked 22222 because it's easy to remember, the SSH port being 22.
+        ssh -L 22222:vgpuwbg005:22 -o ExitOnForwardFailure=yes -N -p 10022 -l <nesi_linux_username> localhost
+        ```
 
         If prompted for a first factor, enter it in the usual manner.
         The second factor is optional (you can just press Enter), but if
@@ -140,10 +156,12 @@ must create an SSH tunnel through the NeSI lander node.
 
 2.  Open a second terminal session, and run the following command in it.
 
-        # The first port number (28443 in this example) can be anything you like > 1024,
-        # so long as it's not in use by another service.
-        # We have picked 28443 because it's easy to remember, the NICE DCV port being 8443.
-        ssh -L 28443:localhost:8443 -o ExitOnForwardFailure=yes -N -p 22222 -l <nesi_linux_username> localhost
+    ``` sl
+    # The first port number (28443 in this example) can be anything you like > 1024,
+    # so long as it's not in use by another service.
+    # We have picked 28443 because it's easy to remember, the NICE DCV port being 8443.
+    ssh -L 28443:localhost:8443 -o ExitOnForwardFailure=yes -N -p 22222 -l <nesi_linux_username> localhost
+    ```
 
     You will probably be prompted for a first factor and an optional
     second factor.

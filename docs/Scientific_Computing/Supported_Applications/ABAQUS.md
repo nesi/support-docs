@@ -29,7 +29,9 @@ present and always comprising the first three lines of the article. -->
 
 A list of commands can be found with:
 
-    abaqus help
+``` sl
+abaqus help
+```
 
 [Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
 can provide significant speedup to your computations, however
@@ -60,11 +62,15 @@ Not all solvers are compatible with all types of parallelisation.
 > If your input files were created using an older version of ABAQUS you
 > will need to update them using the command,
 >
->     abaqus -upgrade -job new_job_name -odb old.odb
+> ``` sl
+> abaqus -upgrade -job new_job_name -odb old.odb
+> ```
 >
 > or
 >
->     abaqus -upgrade -job new_job_name -inp old.inp
+> ``` sl
+> abaqus -upgrade -job new_job_name -inp old.inp
+> ```
 
 <table>
 <colgroup>
@@ -95,7 +101,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <tr class="even">
 <td style="width: 506px"><h2 id="shared-memory">Shared Memory</h2>
 <hr />
-<code>mp_mode=threads</code>
+<code class="sl">mp_mode=threads</code>
 <p>Uses a nodes shared memory for communication. </p>
 <p>May have a small speedup compared to MPI when using a low number of
 CPUs, scales poorly. Needs significantly less memory than MPI.</p>
@@ -118,7 +124,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <td style="width: 506px"><h2 id="udf">UDF</h2>
 <hr />
 <p>Shared memory run with user defined function (fortran or C). </p>
-<p><code>user=&lt;name_of_function&gt;</code> </p>
+<p><code class="sl">user=&lt;name_of_function&gt;</code> </p>
 <p>Function will be compiled at start of run. </p>
 <p><em>You may need to chance the function suffix if you usually compile
 on windows.</em></p></td>
@@ -140,17 +146,17 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 <td class="wysiwyg-text-align-left" style="width: 506px"><h2
 id="distributed-memory">Distributed Memory</h2>
 <hr />
-<code>mp_mode=mpi</code>
+<code class="sl">mp_mode=mpi</code>
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
 <p>Not limited to <span>one node</span>.<br />
-Model will be segmented into <code>-np</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+Model will be segmented into <code class="sl">-np</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead<br />
-.Jobs can be limited to a single node by
-adding  <code>--nodes=1</code> however this will increase your time in
-the queue as contiguous cpu's are harder to schedule.</p>
-<p>This is the default method if <code>mp_mode</code> is left
+.Jobs can be limited to a single node by adding  <code
+class="sl">--nodes=1</code> however this will increase your time in the
+queue as contiguous cpu's are harder to schedule.</p>
+<p>This is the default method if <code class="sl">mp_mode</code> is left
 unspecified.</p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb4"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
@@ -224,13 +230,15 @@ only.
 You may want to include this short snippet when making changes specific
 to a job.
 
-    # Before starting abaqus
-    echo "parameter=value
-    parameter=value
-    parameter=value" > "abaqus_v6.env"
+``` sl
+# Before starting abaqus
+echo "parameter=value
+parameter=value
+parameter=value" > "abaqus_v6.env"
 
-    # After job is finished.
-    rm "abaqus_v6.env"
+# After job is finished.
+rm "abaqus_v6.env"
+```
 !!! info Useful Links
 >
 > -   [Command line options for standard

@@ -37,10 +37,12 @@ known, and a firewall exception made for NeSI IP addresses (see below).
 
 NeSI's public-facing IP addresses are:
 
-    202.36.29.252
-    202.36.29.253
-    103.229.249.252
-    103.229.249.253
+``` sl
+202.36.29.252
+202.36.29.253
+103.229.249.252
+103.229.249.253
+```
 
 ## Institutional Licences
 
@@ -122,7 +124,9 @@ using the software on NeSI.
 We encourage the use of Slurm licence tokens in your batch scripts, for
 example:
 
-    #SBATCH --licenses ansys_hpc@uoa_foe:60,ansys_r@uoa_foe
+``` sl
+#SBATCH --licenses ansys_hpc@uoa_foe:60,ansys_r@uoa_foe
+```
 
 will request 60 'hpc' licences and 1 'research' licence from the
 University of Auckland Engineering licence server. This will prevent

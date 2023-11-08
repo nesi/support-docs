@@ -51,18 +51,20 @@ nodes, however there are some complications and limitations:
     reboot the node in question, so this example crontab file backs
     itself up every week:
 
-<!-- -->
+``` sl
+CRON_TZ=NZ
+PATH=/usr/bin
 
-    CRON_TZ=NZ
-    PATH=/usr/bin
-
-    # min    hr    dom   month      dow         command
-       30    12    *       *        sun         crontab -l > $HOME/.crontab.backup
+# min    hr    dom   month      dow         command
+   30    12    *       *        sun         crontab -l > $HOME/.crontab.backup
+```
 
 Scripts run via cron should generally start like:
 
-    #!/bin/bash
-    source /etc/profile >/dev/null 2>&1
+``` sl
+#!/bin/bash
+source /etc/profile >/dev/null 2>&1
+```
 
 That sets up the environment as if you had logged in, including the
 *module *command. Except that it doesn't use your *.bash\_profile* or
@@ -71,7 +73,9 @@ you need in them.
 
 For general instructions see:
 
-    man crontab
+``` sl
+man crontab
+```
 
 ## Scron
 
@@ -88,17 +92,21 @@ resources.  But it does also have it's own particular drawbacks:
     if you need more certainty please ask us as we could arrange higher
     priority for *scron* jobs.
 
-Job options which would normally be given as \#SBATCH directives are
-instead given as \#SCRON directives directly in the *scrontab* file, eg:
+Job options which would normally be given as #SBATCH directives are
+instead given as #SCRON directives directly in the *scrontab* file, eg:
 
-    #SCRON -t 10
-    #SCRON -J my_weekly_scron_job
-    # min    hr    dom   month      dow         command
-       30    12    *       *        sun         bash /home/me/weekly_script.sh
+``` sl
+#SCRON -t 10
+#SCRON -J my_weekly_scron_job
+# min    hr    dom   month      dow         command
+   30    12    *       *        sun         bash /home/me/weekly_script.sh
+```
 
 For general instructions see:
 
-    man scrontab
+``` sl
+man scrontab
+```
 
 ## Cylc
 

@@ -32,12 +32,14 @@ between Infiniband libraries and MAKER's use of forking it can't be used
 across multiple nodes. So we recommend running large MAKER jobs with up
 to 36 tasks on one node (ie: one full regular node), eg:
 
-    #SBATCH --nodes=1
-    #SBATCH --ntasks-per-node=36
-    #SBATCH --mem-per-cpu=1500
+``` sl
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --mem-per-cpu=1500
 
-    module load MAKER/2.31.9-gimkl-2020a
-    srun maker -q
+module load MAKER/2.31.9-gimkl-2020a
+srun maker -q
+```
 
 # Resources
 

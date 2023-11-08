@@ -36,11 +36,15 @@ we may install it.
 
 ## Example
 
-    module load ANSYS
+``` sl
+module load ANSYS
+```
 
 Will load the default version of ANSYS, in this case ANSYS/19.2, however
 this may change.
 
-    module load ANSYS/18.1
+``` sl
+module load ANSYS/18.1
+```
 
 Will always load that version specifically.

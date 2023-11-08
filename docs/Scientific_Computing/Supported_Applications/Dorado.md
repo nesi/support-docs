@@ -55,21 +55,21 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
 -   `--device 'cuda:all'` will automatically pick up the GPU over CPU
 -   We are not providing the models as part of the module yet. 
 
-<!-- -->
+``` sl
+#!/bin/bash -e
 
-    #!/bin/bash -e
+#SBATCH --account        nesi12345
+#SBATCH --job-name       dorado
+#SBATCH --gpus-per-node  A100:1
+#SBATCH --mem            6G
+#SBATCH --cpus-per-task  4
+#SBATCH --time           00:10:00
+#SBATCH --output         slurmout.%j.out
 
-    #SBATCH --account        nesi12345
-    #SBATCH --job-name       dorado
-    #SBATCH --gpus-per-node  A100:1
-    #SBATCH --mem            6G
-    #SBATCH --cpus-per-task  4
-    #SBATCH --time           00:10:00
-    #SBATCH --output         slurmout.%j.out
+module purge
+module load Dorado/0.4.0
 
-    module purge
-    module load Dorado/0.4.0
+dorado download --model dna_r10.4.1_e8.2_400bps_hac@v4.1.0
 
-    dorado download --model dna_r10.4.1_e8.2_400bps_hac@v4.1.0
-
-    dorado basecaller  --device 'cuda:all' dna_r10.4.1_e8.2_400bps_hac@v4.1.0 pod5s/ > calls.bam
+dorado basecaller  --device 'cuda:all' dna_r10.4.1_e8.2_400bps_hac@v4.1.0 pod5s/ > calls.bam
+```

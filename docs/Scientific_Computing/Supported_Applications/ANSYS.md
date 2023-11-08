@@ -55,9 +55,13 @@ preferences (provided you have X11 forwarding set up), or by running
 either of the following (ANSYS module must be loaded first using
 `module load ANSYS`).
 
-    prefer_research_license
+``` sl
+prefer_research_license
+```
 
-    prefer_teaching_license
+``` sl
+prefer_teaching_license
+```
 !!! info Note
 >
 > License preferences are individually tracked by *each version of
@@ -131,7 +135,9 @@ the use of variables in what might otherwise be a fixed input.
 >
 > Comments can be added to journal files using a `;`. For example:
 >
->     ; This is a comment
+> ``` sl
+> ; This is a comment
+> ```
 
 # Fluent
 
@@ -185,12 +191,13 @@ id="distributed-memory-example">Distributed Memory Example</h2>
 <hr />
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
 <p>Not limited to <span>one node</span>.<br />
-Model will be segmented into <code>-t</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+Model will be segmented into <code class="sl">-t</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead. Jobs can be limited to a single node by
-adding  <code>--nodes=1</code> however this will increase your time in
-the queue as contiguous cpu's are harder to schedule.</p></td>
+adding  <code class="sl">--nodes=1</code> however this will increase
+your time in the queue as contiguous cpu's are harder to
+schedule.</p></td>
 <td><div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -226,16 +233,20 @@ recommended. 
 
 For example.
 
-    salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time 04:00:00
+``` sl
+salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time 04:00:00
+```
 
 Will return;
 
-      salloc: Pending job allocation 10270935
-      salloc: job 10270935 queued and waiting for resources
-      salloc: job 10270935 has been allocated resources
-      salloc: Granted job allocation 10270935
-      salloc: Waiting for resource configuration
-      salloc: Nodes wbn[053-056] are ready for job
+``` sl
+  salloc: Pending job allocation 10270935
+  salloc: job 10270935 queued and waiting for resources
+  salloc: job 10270935 has been allocated resources
+  salloc: Granted job allocation 10270935
+  salloc: Waiting for resource configuration
+  salloc: Nodes wbn[053-056] are ready for job
+```
 !!! info Note
 >
 > Include all the commands you would usually use in your slurm header
@@ -243,7 +254,9 @@ Will return;
 
 Once you have your allocation, run the command
 
-    fluent
+``` sl
+fluent
+```
 
 You will then be presented with the launcher, make any necessary changes
 then click launch.
@@ -252,11 +265,13 @@ If everything has set up correctly you should see a printout of the
 hostnames with the resources requested. Note: 'host' should be
 mahuika0\[1-2\].
 
-    n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
-     n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
-     n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
-     n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
-     host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
+``` sl
+n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
+ n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
+ n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
+ n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
+ host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
+```
 !!! info Important
 >
 > Closing the fluent GUI will not end the SLURM interactive session. Use
@@ -267,7 +282,9 @@ mahuika0\[1-2\].
 
 It is best practice when running long jobs to enable autosaves.
 
-    /file/autosave/data-frequency <n>
+``` sl
+/file/autosave/data-frequency <n>
+```
 
 Where `<n>` is the number of iterations to run before creating a save.
 
@@ -278,7 +295,9 @@ In order to save disk space you may also want to include the line 
 Including the following code at the top of your journal file will allow
 you to interrupt the job.
 
-    (set! checkpoint/exit-filename "./exit-fluent")
+``` sl
+(set! checkpoint/exit-filename "./exit-fluent")
+```
 
 Creating a file named `exit-fluent` in the run directory will cause the
 job to save the current state and exit (`touch exit-fluent`). This will
@@ -332,26 +351,34 @@ If for some reason the UDF does not compile automatically, you can
 manually build it with the following command in your fluent journal file
 (should go before loading model).
 
-    define/user-defined/compiled-functions compile "<libname>" yes "<source_file_1>" "<source_file_n>" "<header_file_1>" "<header_file_n>" "" ""
+``` sl
+define/user-defined/compiled-functions compile "<libname>" yes "<source_file_1>" "<source_file_n>" "<header_file_1>" "<header_file_n>" "" ""
+```
 
 Note, the command must end with two `""` to indicate there are no more
 files to add. 
 
 As an example 
 
-    define/user-defined/compiled-functions compile "libudf" yes "myUDF.c" "" ""
+``` sl
+define/user-defined/compiled-functions compile "libudf" yes "myUDF.c" "" ""
+```
 
 Will compile the code `myUDF.c` into a library named `libudf`
 
 ### Loading File
 
-    define/user-defined/compiled-functions load libudf
+``` sl
+define/user-defined/compiled-functions load libudf
+```
 
 Will load the library `libudf` to be accessible by ANSYS.
 
 ### UDF errors
 
-    Error: chip-exec: function
+``` sl
+Error: chip-exec: function
+```
 
 might be using interpreted func
 
@@ -395,13 +422,13 @@ id="distributed-memory-example-1">Distributed Memory Example</h2>
 <hr />
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
 <p>Not limited to <span>one node</span>.<br />
-Model will be segmented into <code>-np</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+Model will be segmented into <code class="sl">-np</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead<br />
-.Jobs can be limited to a single node by
-adding  <code>--nodes=1</code> however this will increase your time in
-the queue as contiguous cpu's are harder to schedule.</p></td>
+.Jobs can be limited to a single node by adding  <code
+class="sl">--nodes=1</code> however this will increase your time in the
+queue as contiguous cpu's are harder to schedule.</p></td>
 <td><div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -436,7 +463,9 @@ batch compute jobs you will need to make use of a dummy X-11 server.
 This is as simple as prepending your command with the X Virtual Frame
 Buffer command.
 
-    xvfb-run cfx5post input.cse
+``` sl
+xvfb-run cfx5post input.cse
+```
 
 # Mechanical APDL
 
@@ -471,8 +500,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <hr />
 <p>Single <em>process</em> multiple <em>threads.</em></p>
 <p>All threads must be on the same node, limiting scalability.<br />
-Number of threads is set by <code>-np</code> and should be equal
-to <code>--cpus-per-task</code>.</p>
+Number of threads is set by <code class="sl">-np</code> and should be
+equal to <code class="sl">--cpus-per-task</code>.</p>
 <p><br />
 Not recommended if using more than 8 cores (16 CPUs if hyperthreading
 enabled).</p></td>
@@ -496,13 +525,13 @@ id="distributed-memory-example-2">Distributed Memory Example</h2>
 <hr />
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
 <p>Not limited to <span>one node</span>.<br />
-Model will be segmented into <code>-np</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+Model will be segmented into <code class="sl">-np</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead<br />
-.Jobs can be limited to a single node by
-adding  <code>--nodes=1</code> however this will increase your time in
-the queue as contiguous cpu's are harder to schedule.</p>
+.Jobs can be limited to a single node by adding  <code
+class="sl">--nodes=1</code> however this will increase your time in the
+queue as contiguous cpu's are harder to schedule.</p>
 <p><strong>Distributed Memory Parallel is currently not supported on
 Māui.</strong></p></td>
 <td><div class="sourceCode" id="cb3"><pre
@@ -703,7 +732,7 @@ alt="FENSAP_GUI1.png" /></td>
 <tr class="even">
 <td style="width: 291px"><p>3. Under 'Additional mpirun parameters' add
 your inline SLURM options. You should include at least.</p>
-<pre><code>--job-name my_job
+<pre class="sl"><code>--job-name my_job
 --mem-per-cpu memory
 --time time
 --licenses required licences
@@ -769,48 +798,62 @@ not working for you.
 
 ## Example Slurm Script
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --time                04:00:00
-    #SBATCH --nodes               2
-    #SBATCH --ntasks-per-node     36
-    #SBATCH --mem-per-cpu         1500
+#SBATCH --time                04:00:00
+#SBATCH --nodes               2
+#SBATCH --ntasks-per-node     36
+#SBATCH --mem-per-cpu         1500
 
-    module load ANSYS/19.1
-    INPUTNAME="Sim1.aedt"
-    startRSM
+module load ANSYS/19.1
+INPUTNAME="Sim1.aedt"
+startRSM
 
-    ansysedt -ng -batchsolve -distributed -machinelistfile=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool" $INPUTNAME
+ansysedt -ng -batchsolve -distributed -machinelistfile=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool" $INPUTNAME
+```
 
 All batch options can be listed using
 
-    ansysedt -batchoptionhelp
+``` sl
+ansysedt -batchoptionhelp
+```
 
 (Note, this requires a working X-server) 
 !!! info Note
 >
 > Each batch option must have it's own flag, e.g.
 >
->     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
+> ``` sl
+> -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
+> ```
 
 ## Interactive
 
 First start an interactive slurm session.
 
-    salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1500
+``` sl
+salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1500
+```
 
 Then load your desired version of ANSYS
 
-    module load ANSYS/19.2
+``` sl
+module load ANSYS/19.2
+```
 
 Run the script to start startRSM, this will start ANSYS remote solver on
 your requested nodes, and set the environment variable `MACHINELIST`.
 
-    startRSM
+``` sl
+startRSM
+```
 
 Then launch ansys edt with the following flags
 
-    ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
+``` sl
+ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
+```
 
 # Best Practices
 

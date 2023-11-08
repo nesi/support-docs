@@ -91,11 +91,13 @@ GPUs available at NeSI.
     Alternatively, you could run *unset TMPDIR* in the terminal before
     running *srun* to avoid these warnings.
 
-        $ srun --pty bash
-        srun: job 28560743 queued and waiting for resources
-        srun: job 28560743 has been allocated resources
-        slurmstepd: error: Unable to create TMPDIR [/dev/shm/jobs/28560712]: Permission denied
-        slurmstepd: error: Setting TMPDIR to /tmp
+    ``` sl
+    $ srun --pty bash
+    srun: job 28560743 queued and waiting for resources
+    srun: job 28560743 has been allocated resources
+    slurmstepd: error: Unable to create TMPDIR [/dev/shm/jobs/28560712]: Permission denied
+    slurmstepd: error: Setting TMPDIR to /tmp
+    ```
 
 # Jupyter user interface
 
@@ -135,9 +137,10 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-<img src="../../assets/images/.6551812176911" width="208"
+<img src="../../assets/images/6551812176911..png" width="208"
 height="394" />
-<img src="../../assets/images/.6551880407439" width="408" height="67" />
+<img src="../../assets/images/6551880407439..png" width="408"
+height="67" />
 
 If you click "Log Out" without stopping your server, the server will
 continue to run until the Slurm job reaches its maximum wall time.
@@ -169,13 +172,17 @@ If the extension is packaged as a prebuilt extension (e.g. as a pip
 package), then you can install it from the JupyterLab terminal by
 running:
 
-    $ pip install --user <packagename>
+``` sl
+$ pip install --user <packagename>
+```
 
 For example, the [Dask
 extension](https://github.com/dask/dask-labextension#jupyterlab-30-or-greater)
 can be installed with the following:
 
-    $ pip install --user dask-labextension
+``` sl
+$ pip install --user dask-labextension
+```
 
 ## Installing source extensions
 
@@ -191,10 +198,12 @@ commands to initialise the JupyterLab application directory.
 Running the following commands will create the JupyterLab application
 directory in your home directory:
 
-    $ module load JupyterLab
-    $ echo $HOME/.local/share/jupyter/lab > ~/.jupyterlab3_dir
-    $ export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
-    $ jupyter lab build
+``` sl
+$ module load JupyterLab
+$ echo $HOME/.local/share/jupyter/lab > ~/.jupyterlab3_dir
+$ export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+$ jupyter lab build
+```
 
 These changes will only take effect after relaunching your Jupyter
 server and then you should be able to install JupyterLab extensions as
@@ -213,10 +222,12 @@ You could change the path to point to a location in your project
 directory, especially if multiple people on your project will share the
 same JupyterLab application directory, e.g.:
 
-    $ module load JupyterLab
-    $ echo /nesi/project/<project_code>/$USER/jupyter/lab > ~/.jupyterlab_dir
-    $ export JUPYTERLAB_DIR=/nesi/project/<project_code>/$USER/jupyter/lab
-    $ jupyter lab build
+``` sl
+$ module load JupyterLab
+$ echo /nesi/project/<project_code>/$USER/jupyter/lab > ~/.jupyterlab_dir
+$ export JUPYTERLAB_DIR=/nesi/project/<project_code>/$USER/jupyter/lab
+$ jupyter lab build
+```
 
 # Log files
 

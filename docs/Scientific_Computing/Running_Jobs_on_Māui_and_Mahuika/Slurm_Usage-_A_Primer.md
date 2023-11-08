@@ -91,8 +91,10 @@ specify it.
 To submit to the general purpose GPU nodes, you need to add the
 following to your SLURM script:
 
-    #SBATCH -p gpu
-    #SBATCH --gres=gpu
+``` sl
+#SBATCH -p gpu
+#SBATCH --gres=gpu
+```
 
 ## Submitting a job between Māui and Māui\_Ancil
 
@@ -100,22 +102,26 @@ Māui consists of the XC50 and the CS500 (Māui\_Ancil) part. To submit a
 job from the XC50 part (including Māui login nodes) to the CS500 part
 you need to add:
 
-    #SBATCH --clusters=maui_ancil 
-    #SBATCH -p nesi_prepost # another of its partions
-    #SBATCH --export=NONE
+``` sl
+#SBATCH --clusters=maui_ancil 
+#SBATCH -p nesi_prepost # another of its partions
+#SBATCH --export=NONE
+```
 
 Thus a prepost job submitted to the CS500 nodes from the Māui login node
 would look like:
 
-    #!/bin/bash -e
-    #SBATCH --job-name=hello
-    #SBATCH --time=00:02:00
-    #SBATCH --clusters=maui_ancil 
-    #SBATCH -p nesi_prepost
-    #SBATCH --export=NONE
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=hello
+#SBATCH --time=00:02:00
+#SBATCH --clusters=maui_ancil 
+#SBATCH -p nesi_prepost
+#SBATCH --export=NONE
 
-    module load Anaconda2
-    python work_analysis.py
+module load Anaconda2
+python work_analysis.py
+```
 
 Note: the `--clusters` need to be also specified for the other slurm
 tools to monitor other parts.
@@ -130,13 +136,15 @@ different input files or directories. The following example prints a
 hello world statement and the directory name from within 5
 sub-directories:
 
-    #!/bin/bash -e
-    #SBATCH --job-name=arr_test
-    #SBATCH --time=00:02:00
-    #SBATCH --array=0-5
+``` sl
+#!/bin/bash -e
+#SBATCH --job-name=arr_test
+#SBATCH --time=00:02:00
+#SBATCH --array=0-5
 
-    cd inputDir${SLURM_ARRAY_TASK_ID}
-    srun echo "Hello from ${SLURM_ARRAY_TASK_ID} of ${SLURM_ARRAY_TASK_COUNT} form $PWD"
+cd inputDir${SLURM_ARRAY_TASK_ID}
+srun echo "Hello from ${SLURM_ARRAY_TASK_ID} of ${SLURM_ARRAY_TASK_COUNT} form $PWD"
+```
 
 More and detailed information can be found
 [here](https://slurm.schedmd.com/job_array.html).

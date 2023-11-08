@@ -68,7 +68,9 @@ A partition can be specified via the appropriate [sbatch
 option](https://support.nesi.org.nz/hc/en-gb/articles/360000691716/),
 e.g.:
 
-    #SBATCH --partition=milan
+``` sl
+#SBATCH --partition=milan
+```
 
 However on Mahuika there is generally no need to do so, since the
 default behaviour is that your job will be assigned to the most suitable
@@ -83,7 +85,9 @@ If you do specify a partition and your job is not a good fit for that
 partition then you may receive a warning, please do not ignore this.
 E.g.:
 
-    sbatch: "bigmem" is not the most appropriate partition for this job, which would otherwise default to "large". If you believe this is incorrect then please contact support@nesi.org.nz and quote the Job ID number.
+``` sl
+sbatch: "bigmem" is not the most appropriate partition for this job, which would otherwise default to "large". If you believe this is incorrect then please contact support@nesi.org.nz and quote the Job ID number.
+```
 
  
 
@@ -259,11 +263,15 @@ GB, and 1 GPU.
 
 The default GPU type is P100, of which you can request 1 or 2 per node:
 
-    #SBATCH --gpus-per-node=1     # or equivalently, P100:1
+``` sl
+#SBATCH --gpus-per-node=1     # or equivalently, P100:1
+```
 
 To request A100 GPUs, use instead:
 
-    #SBATCH --gpus-per-node=A100:1
+``` sl
+#SBATCH --gpus-per-node=A100:1
+```
 
 See [GPU use on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) for
@@ -308,11 +316,15 @@ islands.
 You can request that a job runs within a single InfiniBand island by
 adding:
 
-    #SBATCH --switches=1
+``` sl
+#SBATCH --switches=1
+```
 
 Slurm will then run the job within one island provided that this does
 not delay starting the job by more than the maximum switch waiting time,
 currently configured to be 5 minutes. That waiting time limit can be
 reduced by adding `@<time>` after the number of switches e.g:
 
-    #SBATCH --switches=1@00:30:00
+``` sl
+#SBATCH --switches=1@00:30:00
+```

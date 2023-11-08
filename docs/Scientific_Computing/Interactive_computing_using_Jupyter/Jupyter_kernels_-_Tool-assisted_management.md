@@ -40,29 +40,41 @@ on NeSI or from a regular ssh connection on Mahuika login node. If you
 use the ssh option, make sure to load the JupyterLab module to have
 access to the `nesi-add-kernel` tool:
 
-    module purge  # remove all previously loaded modules
-    module load JupyterLab
+``` sl
+module purge  # remove all previously loaded modules
+module load JupyterLab
+```
 
 Then, to list all available options, use the `-h` or `--help` options as
 follows:
 
-    nesi-add-kernel --help
+``` sl
+nesi-add-kernel --help
+```
 
 Here is an example to add a TensorFlow kernel, using NeSI’s module:
 
-    nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
+``` sl
+nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
+```
 
 and to share the kernel with other members of your NeSI project:
 
-    nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5 
+``` sl
+nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5 
+```
 
 To list all the installed kernels, use the following command:
 
-    jupyter-kernelspec list
+``` sl
+jupyter-kernelspec list
+```
 
 and to delete a specific kernel:
 
-    jupyter-kernelspec remove <kernel_name>
+``` sl
+jupyter-kernelspec remove <kernel_name>
+```
 
 where `<kernel_name>` stands for the name of the kernel to delete.
 
@@ -70,17 +82,23 @@ where `<kernel_name>` stands for the name of the kernel to delete.
 
 First, make sure the `JupyterLab` module is loaded:
 
-    module purge
-    module load JupyterLab
+``` sl
+module purge
+module load JupyterLab
+```
 
 To add a Conda environment created using
 `conda create -p <conda_env_path>`, use:
 
-    nesi-add-kernel my_conda_env -p <conda_env_path>
+``` sl
+nesi-add-kernel my_conda_env -p <conda_env_path>
+```
 
 otherwise if created using `conda create -n <conda_env_name>`, use:
 
-    nesi-add-kernel my_conda_env -n <conda_env_name>
+``` sl
+nesi-add-kernel my_conda_env -n <conda_env_name>
+```
 
 # Virtual environment
 
@@ -90,25 +108,31 @@ which Python module you used to create it.
 For example, if we create a virtual environment named `my_test_venv`
 using Python 3.10.5:
 
-    module purge
-    module load Python/3.10.5-gimkl-2022a
-    python -m venv my_test_venv
+``` sl
+module purge
+module load Python/3.10.5-gimkl-2022a
+python -m venv my_test_venv
+```
 
 to create the corresponding `my_test_kernel` kernel, we need to use the
 command:
 
-    module purge
-    module load JupyterLab
-    nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
+``` sl
+module purge
+module load JupyterLab
+nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
+```
 
 # Singularity container
 
 To use a Singularity container, use the `-c` or `--container` options as
 follows:
 
-    module purge
-    module load JupyterLab
-    nesi-add-kernel my_test_kernel -c <container_image.sif>
+``` sl
+module purge
+module load JupyterLab
+nesi-add-kernel my_test_kernel -c <container_image.sif>
+```
 
 where `<container_image.sif>` is a path to your container image.
 
@@ -122,17 +146,21 @@ kernel.
 Here is an example instantiating a NVIDIA NGC container as a kernel.
 First, we need to pull the container:
 
-    module purge
-    module load Singularity/3.11.3
-    singularity pull nvidia_tf.sif docker://nvcr.io/nvidia/tensorflow:21.07-tf2-py3
+``` sl
+module purge
+module load Singularity/3.11.3
+singularity pull nvidia_tf.sif docker://nvcr.io/nvidia/tensorflow:21.07-tf2-py3
+```
 
 then we can instantiate the kernel, using the `--nv` singularity flag to
 ensure that the GPU will be found at runtime (assuming our Jupyter
 session has access to a GPU):
 
-    module purge
-    module load JupyterLab
-    nesi-add-kernel nvidia_tf -c nvidia_tf.sif --container-args "'--nv'"
+``` sl
+module purge
+module load JupyterLab
+nesi-add-kernel nvidia_tf -c nvidia_tf.sif --container-args "'--nv'"
+```
 
 Note that the double-quoting of `--nv` is needed to properly pass the
 options to `singularity exec`.

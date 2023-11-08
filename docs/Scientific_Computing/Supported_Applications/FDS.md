@@ -36,19 +36,21 @@ and
 
 ### Example Script
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --time           02:00:00       #Walltime
-    #SBATCH --ntasks         4              #One task per mesh, NO MORE
-    #SBATCH --cpus-per-task  2              #More than 4 cpus/task not recommended.
-    #SBATCH --output         %x.out     #Name output file according to job name
-    #SBATCH --hint           nomultithread  #Hyperthreading decreases efficiency.
+#SBATCH --time           02:00:00       #Walltime
+#SBATCH --ntasks         4              #One task per mesh, NO MORE
+#SBATCH --cpus-per-task  2              #More than 4 cpus/task not recommended.
+#SBATCH --output         %x.out     #Name output file according to job name
+#SBATCH --hint           nomultithread  #Hyperthreading decreases efficiency.
 
-    module load FDS/6.7.1-intel-2017a
+module load FDS/6.7.1-intel-2017a
 
-    input="/nesi/project/nesi99999/path/to/input.fds"
+input="/nesi/project/nesi99999/path/to/input.fds"
 
-    srun fds ${input}
+srun fds ${input}
+```
 
 # Recommendations
 

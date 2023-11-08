@@ -25,37 +25,7 @@ zendesk_section_id: 360000040076
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-# Description
-
-Bayesian Evolutionary Analysis Sampling Trees is a cross-platform
-program for Bayesian analysis of molecular sequences using MCMC. The
-program is orientated toward (strict and relaxed) molecular clock
-analyses. It can be used as a method of constructing phylogenies, but it
-is also intended for testing evolutionary hypotheses without
-conditioning on a single tree topology. BEAST uses MCMC to average over
-tree space, so that each tree is weighted proportional to its posterior
-probability. It uses an XML input format that allows the user to design
-and run a large range of models. We also include a program that can
-convert NEXUS files into this format.
-
 The BEAST home page is at <http://beast2.org>.
-
-# Available modules
-
-## Packages with modules
-
-| Module                            | NeSI Cluster |
-|-----------------------------------|--------------|
-| BEAST/2.4.7                       | pan          |
-| BEAST/1.8.2-goolf-1.5.14          | pan          |
-| BEAST/1.8.4-gimkl-2017a-no-beagle | pan          |
-| BEAST/2.2.1                       | pan          |
-| BEAST/2.4.3                       | pan          |
-
-# License
-
-BEAST is released at no cost under the terms of [the GNU Lesser General
-Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html).
 
 # Example scripts
 

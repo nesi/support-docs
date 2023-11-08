@@ -44,22 +44,24 @@ guest collection is directory whose content is shared via Globus.
 On NeSI, create a file named `transfer_input.json` with the following
 content:
 
+``` sl
+{
+  "source_endpoint_id": "ENDPOINT1",
+  "destination_endpoint_id": "ENDPOINT2",
+  "transfer_items": [
     {
-      "source_endpoint_id": "ENDPOINT1",
-      "destination_endpoint_id": "ENDPOINT2",
-      "transfer_items": [
-        {
-          "source_path": "SOURCE_FOLDER",
-          "destination_path": "DESTINATION_FOLDER",
-          "recursive": true
-        }
-      ],
-      "sync_level": SYNC_LEVEL, 
-      "notify_on_succeeded": true,
-      "notify_on_failed": true,
-      "notify_on_inactive": true,
-      "verify_checksum": true
+      "source_path": "SOURCE_FOLDER",
+      "destination_path": "DESTINATION_FOLDER",
+      "recursive": true
     }
+  ],
+  "sync_level": SYNC_LEVEL, 
+  "notify_on_succeeded": true,
+  "notify_on_failed": true,
+  "notify_on_inactive": true,
+  "verify_checksum": true
+}
+```
 
 where
 
@@ -88,17 +90,23 @@ where
 
 Load the `globus-automate-client` environment module
 
-    module purge && module load globus-automate-client/0.16.1.post1-gimkl-2022
+``` sl
+module purge && module load globus-automate-client/0.16.1.post1-gimkl-2022
+```
 
 then start the transfer using
 
-    globus-automate action run --action-url https://actions.globus.org/transfer/transfer \
-        --body transfer_input.json
+``` sl
+globus-automate action run --action-url https://actions.globus.org/transfer/transfer \
+    --body transfer_input.json
+```
 
 The first printed line will display the `ACTION_ID`. You can monitor
 progress with
 
-    globus-automate action status --action-url \
-        https://actions.globus.org/transfer/transfer ACTION_ID
+``` sl
+globus-automate action status --action-url \
+    https://actions.globus.org/transfer/transfer ACTION_ID
+```
 
 or on the web at <https://app.globus.org/activity>.

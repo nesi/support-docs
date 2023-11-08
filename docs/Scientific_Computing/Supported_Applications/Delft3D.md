@@ -50,7 +50,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <td style="width: 506px"><h2 id="multi-threaded">Multi-threaded </h2>
 <hr />
 <p><span>For domain based decompositions.</span></p>
-<p><span>Use <code>cpus-per-task</code> to allocate
+<p><span>Use <code class="sl">cpus-per-task</code> to allocate
 resources.</span></p>
 <p>Each subdomain runs in a separate<br />
 thread, inside <span>one executable</span>. <em>Limited to <span>one
@@ -73,7 +73,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <hr />
 <p>Domain is split automatically in stripwise partitions. <em>Can run
 across multiple nodes.</em></p>
-<p>Use <code>ntasks</code> to allocate resources.</p>
+<p>Use <code class="sl">ntasks</code> to allocate resources.</p>
 <p><strong>Cannot</strong> be used in conjunction with:</p>
 <ul>
 <li>DomainDecomposition</li>

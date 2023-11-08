@@ -89,7 +89,9 @@ terminal](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) or using the
 The ssh command need to be called with following arguments, e.g. for
 Mahuika:
 
-    ssh -N -L 15051:localhost:15051 mahuika
+``` sl
+ssh -N -L 15051:localhost:15051 mahuika
+```
 
 Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".
@@ -99,14 +101,16 @@ Local Port".
 >     following to your `.ssh/config` to avoid establishing the
 >     additional hop manually.
 >
->         Host maui_vlab
->            User <username>
->            Hostname w-mauivlab01.maui.niwa.co.nz
->            ProxyCommand ssh -W %h:%p maui
->            ForwardX11 yes
->            ForwardX11Trusted yes
->            ServerAliveInterval 300
->            ServerAliveCountMax 2
+>     ``` sl
+>     Host maui_vlab
+>        User <username>
+>        Hostname w-mauivlab01.maui.niwa.co.nz
+>        ProxyCommand ssh -W %h:%p maui
+>        ForwardX11 yes
+>        ForwardX11Trusted yes
+>        ServerAliveInterval 300
+>        ServerAliveCountMax 2
+>     ```
 >
 >     &lt;username&gt; needs to be changed. Hostnames can be adapted for
 >     other nodes, e.g. `w-clim01`
@@ -144,19 +148,25 @@ After successfully establishing the port forwarding, we need open
 another terminal and login to the NeSI system in the usual way, e.g.
 opening a new terminal and start another ssh session:
 
-    ssh mahuika
+``` sl
+ssh mahuika
+```
 
 On the Mahuika login node, load the environment module which provides
 JupyterLab:
 
-    module load JupyterLab
+``` sl
+module load JupyterLab
+```
 
 Or alternatively, and particularly if you are using a Māui ancillary
 node instead of Mahuika, you can use the Anaconda version of JupyterLab
 instead:
 
-    module load Anaconda3
-    module load IRkernel  # optional
+``` sl
+module load Anaconda3
+module load IRkernel  # optional
+```
 
 The JupyterLab server then can be started on the present node (login or
 virtual lab) or offloaded to a compute node. Please launch compute or
@@ -168,7 +178,9 @@ node](#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d).
 For very small (computational cheap and small memory) the JupyterLab can
 be started on the login or virtual lab using: 
 
-    jupyter lab --port 15051 --no-browser
+``` sl
+jupyter lab --port 15051 --no-browser
+```
 
 Where, `--port 15051` specifies the above selected port number and
 `--no-browser` option prevents JupyterLab from trying to open a browser
@@ -184,30 +196,38 @@ should run on compute nodes. Therefore, a script is provided, taking
 care of port forwarding to the compute node and launching JupyterLab. A
 session with 60 min on 1 core can be launched using:
 
-    srun --ntasks 1 -t 60  jupyter-compute 15051  # please change port number
+``` sl
+srun --ntasks 1 -t 60  jupyter-compute 15051  # please change port number
+```
 
 After general output, JupyterLab prints a URL with a unique key and the
 network port number where the web-server is listening, this should look
 similar to:
 
-    ...
-    [C 14:03:19.911 LabApp]
-      To access the notebook, open this file in a browser:
-          file:///scale_wlg_persistent/filesets/project/nesi99996/.local/share/jupyter/runtime/nbserver-503-open.html
-      Or copy and paste one of these URLs:
-          http://localhost:15051/?token=d122855ebf4d029f2bfabb0da03ae01263972d7d830d79c4
+``` sl
+...
+[C 14:03:19.911 LabApp]
+  To access the notebook, open this file in a browser:
+      file:///scale_wlg_persistent/filesets/project/nesi99996/.local/share/jupyter/runtime/nbserver-503-open.html
+  Or copy and paste one of these URLs:
+      http://localhost:15051/?token=d122855ebf4d029f2bfabb0da03ae01263972d7d830d79c4
+```
 
 The last line will be needed in the browser later.
 
 Therewith the Notebook and its containing tasks are performed on a
 compute node. You can double check e.g. using
 
-    import os
-    os.open('hostname').read()
+``` sl
+import os
+os.open('hostname').read()
+```
 
 More resources can be requested, e.g. by using:
 
-    srun --ntasks 1 -t 60 --cpus-per-task 5 --mem 512MB jupyter-compute 15051 
+``` sl
+srun --ntasks 1 -t 60 --cpus-per-task 5 --mem 512MB jupyter-compute 15051 
+```
 
 Where 5 cores are requested for threading and a total memory of 3GB.
 Please do not use `multiprocessing.cpu_count()` since this is returning
@@ -236,7 +256,9 @@ The following JupyterLab kernel are installed:
 
 verify that the module IRkernel is loaded
 
-    module load IRkernel
+``` sl
+module load IRkernel
+```
 
 # Spark
 
@@ -244,7 +266,9 @@ pySpark and SparkR is supported in NeSI Jupyter notebooks. Therefore,
 the module Spark needs to be loaded before starting Jupyter. Please run
 Spark workflows on compute nodes.
 
-    module load Spark
+``` sl
+module load Spark
+```
 
 # Packages
 

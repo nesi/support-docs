@@ -26,7 +26,9 @@ resources by a specific project, computed from the Slurm program
 
 # Synopsis
 
-    nn_corehour_usage [OPTIONS...] PROJECT_CODE...
+``` sl
+nn_corehour_usage [OPTIONS...] PROJECT_CODE...
+```
 
 # Description
 
@@ -65,8 +67,12 @@ starting with a dash (`-`), as arguments instead of as options.
 
 To print the last year of project nesi12345:
 
-    nn_corehour_usage nesi12345
+``` sl
+nn_corehour_usage nesi12345
+```
 
 To print the last six complete calendar months of project nesi12345:
 
-    nn_corehour_usage -c -n 6 nesi12345
+``` sl
+nn_corehour_usage -c -n 6 nesi12345
+```

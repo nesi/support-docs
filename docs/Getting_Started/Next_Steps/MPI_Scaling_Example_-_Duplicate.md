@@ -29,9 +29,10 @@ article; it was merely chosen for the purpose of illustration.
 
 ### Initial Python Script
 
-    #Imports numpy and mpi4py
-    import numpy as np
-    from mpi4py import MPI
+``` sl
+#Imports numpy and mpi4py
+import numpy as np
+from mpi4py import MPI
 
     #Retrieves MPI environment
     comm = MPI.COMM_WORLD
@@ -93,9 +94,10 @@ for. So we will first try with 5,000 seeds rather than 60,000 seeds.
 
 ### Revised Python Script
 
-    #Imports numpy and mpi4py
-    import numpy as np
-    from mpi4py import MPI
+``` sl
+#Imports numpy and mpi4py
+import numpy as np
+from mpi4py import MPI
 
     #Retrieves MPI environment
     comm = MPI.COMM_WORLD
@@ -157,11 +159,12 @@ took to get there.
 
 ### Slurm Script
 
-      #!/bin/bash -e
-      #SBATCH --job-name=MPIScaling2
-      #SBATCH --ntasks=2
-      #SBATCH --time=00:30:00
-      #SBATCH --mem-per-cpu=512MB
+``` sl
+  #!/bin/bash -e
+  #SBATCH --job-name=MPIScaling2
+  #SBATCH --ntasks=2
+  #SBATCH --time=00:30:00
+  #SBATCH --mem-per-cpu=512MB
 
       module load Python
       srun python MPIscaling.py
@@ -169,12 +172,14 @@ took to get there.
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    6057011        MPIScaling2     00:18:51     01:14:30     4          COMPLETED 
-    6057011.bat+   batch           00:18:51    00:00.607     4    4316K COMPLETED 
-    6057011.ext+   extern          00:18:52    00:00.001     4        0 COMPLETED 
-    6057011.0      python          00:18:46     01:14:30     2  166744K COMPLETED 
+``` sl
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+-------------- ------------ ----------- ------------ ----- -------- ----------
+6057011        MPIScaling2     00:18:51     01:14:30     4          COMPLETED 
+6057011.bat+   batch           00:18:51    00:00.607     4    4316K COMPLETED 
+6057011.ext+   extern          00:18:52    00:00.001     4        0 COMPLETED 
+6057011.0      python          00:18:46     01:14:30     2  166744K COMPLETED 
+```
 
 Our job performed 5,000 seeds using two physical CPU cores and a maximum
 memory of 166,744KB (0.16 GB). In total, the job ran for 18 minutes and
@@ -189,30 +194,32 @@ full job and be confident it will succeed.
 To find out we are going to have to run more tests. Let's try running
 our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
 
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    6057011        MPIScaling2     00:18:51     01:14:30     4           COMPLETED 
-    6057011.bat+   batch           00:18:51    00:00.607     4    4316K  COMPLETED 
-    6057011.ext+   extern          00:18:52    00:00.001     4        0  COMPLETED 
-    6057011.0      python          00:18:46     01:14:30     2  166744K  COMPLETED
-    6054936        MPIScaling3     00:12:29     01:14:10     6           COMPLETED 
-    6054936.bat+   batch           00:12:29    00:00.512     2    4424K  COMPLETED 
-    6054936.ext+   extern          00:12:29    00:00.003     6        0  COMPLETED 
-    6054936.0      python          00:12:29     01:14:09     3  174948K  COMPLETED 
-    6054937        MPIScaling4     00:09:29     01:15:04     8           COMPLETED 
-    6054937.bat+   batch           00:09:29    00:00.658     2    4432K  COMPLETED 
-    6054937.ext+   extern          00:09:29    00:00.003     8        0  COMPLETED 
-    6054937.0      python          00:09:28     01:15:04     4  182064K  COMPLETED 
-    6054938        MPIScaling5     00:07:41     01:15:08    10           COMPLETED 
-    6054938.bat+   batch           00:07:41    00:00.679     2    4548K  COMPLETED 
-    6054938.ext+   extern          00:07:41    00:00.005    10        0  COMPLETED 
-    6054938.0      python          00:07:36     01:15:08     5  173632K  COMPLETED 
-    6054939        MPIScaling6     00:06:57     01:18:38    12           COMPLETED 
-    6054939.bat+   batch           00:06:57    00:00.609     2    4612K  COMPLETED 
-    6054939.ext+   extern          00:06:57    00:00.006    12      44K  COMPLETED 
-    6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
+``` sl
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+-------------- ------------ ----------- ------------ ----- -------- ----------
+6057011        MPIScaling2     00:18:51     01:14:30     4           COMPLETED 
+6057011.bat+   batch           00:18:51    00:00.607     4    4316K  COMPLETED 
+6057011.ext+   extern          00:18:52    00:00.001     4        0  COMPLETED 
+6057011.0      python          00:18:46     01:14:30     2  166744K  COMPLETED
+6054936        MPIScaling3     00:12:29     01:14:10     6           COMPLETED 
+6054936.bat+   batch           00:12:29    00:00.512     2    4424K  COMPLETED 
+6054936.ext+   extern          00:12:29    00:00.003     6        0  COMPLETED 
+6054936.0      python          00:12:29     01:14:09     3  174948K  COMPLETED 
+6054937        MPIScaling4     00:09:29     01:15:04     8           COMPLETED 
+6054937.bat+   batch           00:09:29    00:00.658     2    4432K  COMPLETED 
+6054937.ext+   extern          00:09:29    00:00.003     8        0  COMPLETED 
+6054937.0      python          00:09:28     01:15:04     4  182064K  COMPLETED 
+6054938        MPIScaling5     00:07:41     01:15:08    10           COMPLETED 
+6054938.bat+   batch           00:07:41    00:00.679     2    4548K  COMPLETED 
+6054938.ext+   extern          00:07:41    00:00.005    10        0  COMPLETED 
+6054938.0      python          00:07:36     01:15:08     5  173632K  COMPLETED 
+6054939        MPIScaling6     00:06:57     01:18:38    12           COMPLETED 
+6054939.bat+   batch           00:06:57    00:00.609     2    4612K  COMPLETED 
+6054939.ext+   extern          00:06:57    00:00.006    12      44K  COMPLETED 
+6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
+```
 
-![MPIscalingMem.png](../../assets/images/MPIscalingMem.png)
+There should be an image here but it couldn't be loaded.
 
 First, looking at the plot of memory usage per task vs CPUs it would at
 appears that memory usage per task remains constant, regardless of how
@@ -234,9 +241,9 @@ memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-|                                                                 |                                                                       |
-|-----------------------------------------------------------------|-----------------------------------------------------------------------|
-| ![MPIscalingSeeds.png](../../assets/images/MPIscalingSeeds.png) | ![MPIscalingSeedsLog.png](../../assets/images/MPIscalingSeedsLog.png) |
+|                                                          |                                                          |
+|----------------------------------------------------------|----------------------------------------------------------|
+| There should be an image here but it couldn't be loaded. | There should be an image here but it couldn't be loaded. |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. As we can see, increasing the number of CPU cores doesn't
@@ -267,31 +274,33 @@ Now that we have determined that 5 physical CPUs is the optimal number
 of CPUs for our jobs we will use this as we will submit three more jobs,
 using 10,000 15,000 and 20,000 seeds. 
 
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    6054938        MPIScaling5k    00:07:41     01:15:08    10           COMPLETED 
-    6054938.bat+   batch           00:07:41    00:00.679     2    4548K  COMPLETED 
-    6054938.ext+   extern          00:07:41    00:00.005    10        0  COMPLETED 
-    6054938.0      python          00:07:36     01:15:08     5  173632K  COMPLETED 
-    6059931        MPIScaling10k   00:14:57     02:27:36    10           COMPLETED 
-    6059931.bat+   batch           00:14:57    00:00.624    10    4320K  COMPLETED 
-    6059931.ext+   extern          00:14:57     00:00:00    10        0  COMPLETED 
-    6059931.0      python          00:14:56     02:27:36     5  170748K  COMPLETED 
-    6059939        MPIScaling15k   00:22:39     03:45:13    10           COMPLETED 
-    6059939.bat+   batch           00:22:39    00:00.631    10    4320K  COMPLETED 
-    6059939.ext+   extern          00:22:39     00:00:00    10        0  COMPLETED 
-    6059939.0      python          00:22:38     03:45:13     5  168836K  COMPLETED 
-    6059945        MPIScaling20k   00:30:34     05:02:42    10           COMPLETED 
-    6059945.bat+   batch           00:30:34    00:00.646    10    4320K  COMPLETED 
-    6059945.ext+   extern          00:30:34    00:00.001    10        0  COMPLETED 
-    6059945.0      python          00:30:32     05:02:41     5  172700K  COMPLETED 
+``` sl
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+-------------- ------------ ----------- ------------ ----- -------- ----------
+6054938        MPIScaling5k    00:07:41     01:15:08    10           COMPLETED 
+6054938.bat+   batch           00:07:41    00:00.679     2    4548K  COMPLETED 
+6054938.ext+   extern          00:07:41    00:00.005    10        0  COMPLETED 
+6054938.0      python          00:07:36     01:15:08     5  173632K  COMPLETED 
+6059931        MPIScaling10k   00:14:57     02:27:36    10           COMPLETED 
+6059931.bat+   batch           00:14:57    00:00.624    10    4320K  COMPLETED 
+6059931.ext+   extern          00:14:57     00:00:00    10        0  COMPLETED 
+6059931.0      python          00:14:56     02:27:36     5  170748K  COMPLETED 
+6059939        MPIScaling15k   00:22:39     03:45:13    10           COMPLETED 
+6059939.bat+   batch           00:22:39    00:00.631    10    4320K  COMPLETED 
+6059939.ext+   extern          00:22:39     00:00:00    10        0  COMPLETED 
+6059939.0      python          00:22:38     03:45:13     5  168836K  COMPLETED 
+6059945        MPIScaling20k   00:30:34     05:02:42    10           COMPLETED 
+6059945.bat+   batch           00:30:34    00:00.646    10    4320K  COMPLETED 
+6059945.ext+   extern          00:30:34    00:00.001    10        0  COMPLETED 
+6059945.0      python          00:30:32     05:02:41     5  172700K  COMPLETED 
+```
 
 We can see from the `sacct` output that the wall time seems to be
 increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](../../assets/images/MPIseedsvtime.png)
+There should be an image here but it couldn't be loaded.
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we
@@ -319,24 +328,27 @@ request 1 GB of memory and 2 hours.
 
 ### Revised Slurm Script
 
-      #!/bin/bash -e
-      #SBATCH --account=nesi99999
-      #SBATCH --job-name=MPIScaling60k
-      #SBATCH --time=02:00:00
-      #SBATCH --mem-per-task=512MB
-      #SBATCH --ntasks=5
+``` sl
+  #!/bin/bash -e
+  #SBATCH --account=nesi99999
+  #SBATCH --job-name=MPIScaling60k
+  #SBATCH --time=02:00:00
+  #SBATCH --mem-per-task=512MB
+  #SBATCH --ntasks=5
 
       module load Python
       srun python scaling.R
 
  Checking on our job with `sacct`
 
-             JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
-    -------------- ------------ ----------- ------------ ----- -------- ----------
-    6061377        MPIScaling60k   01:28:25     14:35:32    10           COMPLETED 
-    6061377.bat+   batch           01:28:25    00:00.555    10    4320K  COMPLETED 
-    6061377.ext+   extern          01:28:25     00:00:00    10        0  COMPLETED 
-    6061377.0      python          01:28:22     14:35:32     5  169060K  COMPLETED 
+``` sl
+         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+-------------- ------------ ----------- ------------ ----- -------- ----------
+6061377        MPIScaling60k   01:28:25     14:35:32    10           COMPLETED 
+6061377.bat+   batch           01:28:25    00:00.555    10    4320K  COMPLETED 
+6061377.ext+   extern          01:28:25     00:00:00    10        0  COMPLETED 
+6061377.0      python          01:28:22     14:35:32     5  169060K  COMPLETED 
+```
 
 It looks as though our estimates were accurate in this case, however,
 when you submit a job it is always a good idea to request about 20% more
@@ -354,54 +366,62 @@ of pi.
 
 ### Compute pi - sequential version
 
-    import math
-    def compute_pi(n):
-     h = 1.0 / n
-     s = 0.0
-     for i in range(n):
-      x = h * (i + 0.5)
-      s += 4.0 / (1.0 + x**2)
-     return s * h
-    n = 10
-    pi = compute_pi(n)
-    error = abs(pi - math.pi)
-    print ("pi is approximately %.16f, ""error is %.16f" % (pi, error))
+``` sl
+import math
+def compute_pi(n):
+ h = 1.0 / n
+ s = 0.0
+ for i in range(n):
+  x = h * (i + 0.5)
+  s += 4.0 / (1.0 + x**2)
+ return s * h
+n = 10
+pi = compute_pi(n)
+error = abs(pi - math.pi)
+print ("pi is approximately %.16f, ""error is %.16f" % (pi, error))
+```
 
 Running the python script
 
-    $ python pi_sequential.py
-    pi is approximately 3.1424259850010987, error is 0.0008333314113056
+``` sl
+$ python pi_sequential.py
+pi is approximately 3.1424259850010987, error is 0.0008333314113056
+```
 
 ### Compute pi - parallel version
 
-    import math
-    from mpi4py import MPI
-    import math
-    def compute_pi(n, start=0, step=1):
-     h = 1.0 / n
-     s = 0.0
-     for i in range(start, n, step):
-      x = h * (i + 0.5)
-      s += 4.0 / (1.0 + x**2)
-     return s * h
-    comm = MPI.COMM_WORLD
-    nprocs = comm.Get_size()
-    myrank = comm.Get_rank()
-    if myrank == 0:
-     n = 10
-    else:
-    n = None
-    n = comm.bcast(n, root=0)
-    mypi = compute_pi(n, myrank, nprocs)
-    pi = comm.reduce(mypi, op=MPI.SUM, root=0)
-    if myrank == 0:
-     error = abs(pi - math.pi)
-     print ("pi is approximately %.16f, ""error is %.16f" % (pi, error))
+``` sl
+import math
+from mpi4py import MPI
+import math
+def compute_pi(n, start=0, step=1):
+ h = 1.0 / n
+ s = 0.0
+ for i in range(start, n, step):
+  x = h * (i + 0.5)
+  s += 4.0 / (1.0 + x**2)
+ return s * h
+comm = MPI.COMM_WORLD
+nprocs = comm.Get_size()
+myrank = comm.Get_rank()
+if myrank == 0:
+ n = 10
+else:
+n = None
+n = comm.bcast(n, root=0)
+mypi = compute_pi(n, myrank, nprocs)
+pi = comm.reduce(mypi, op=MPI.SUM, root=0)
+if myrank == 0:
+ error = abs(pi - math.pi)
+ print ("pi is approximately %.16f, ""error is %.16f" % (pi, error))
+```
 
 Running the python script with MPI
 
-    $ mpirun -np 1 python pi_parallel.py
-    pi is approximately 3.1424259850010987, error is 0.0008333314113056
+``` sl
+$ mpirun -np 1 python pi_parallel.py
+pi is approximately 3.1424259850010987, error is 0.0008333314113056
 
-    $ mpirun -np 2 python pi_parallel.py
-    pi is approximately 3.1424259850010983, error is 0.0008333314113051
+$ mpirun -np 2 python pi_parallel.py
+pi is approximately 3.1424259850010983, error is 0.0008333314113051
+```

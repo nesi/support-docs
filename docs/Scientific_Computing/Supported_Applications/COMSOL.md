@@ -21,7 +21,9 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-    comsol --help
+``` sl
+comsol --help
+```
 
 Will display a list of COMSOL batch commands.
 !!! info Useful Links

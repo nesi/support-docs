@@ -56,7 +56,8 @@ data-bgcolor="#8eaadb">Contact </th>
 </tr>
 &#10;<tr class="odd" style="height: 66px;">
 <td style="width: 216.398px; height: 66px"><span><a
-href="https://app.globus.org/file-manager?origin_id=3064bb28-e940-11e8-8caa-0a1d4c5c824a"><code>NeSI Wellington DTN V5</code></a> </span></td>
+href="https://app.globus.org/file-manager?origin_id=3064bb28-e940-11e8-8caa-0a1d4c5c824a"><code
+class="sl">NeSI Wellington DTN V5</code></a> </span></td>
 <td style="width: 239.438px; height: 66px">NeSI Globus Endpoint Version
 5, located at NIWA Wellington (Greta Point)</td>
 <td style="width: 189.352px; height: 66px"><p>Transferring  files
@@ -68,7 +69,8 @@ href="mailto:support@nesi.org.nz">support@nesi.org.nz</a></td>
 </tr>
 <tr class="even" style="height: 91px;">
 <td style="width: 216.398px; height: 91px"><a
-href="https://app.globus.org/file-manager?origin_id=6a878dec-5ab5-11e6-8254-22000b97daec"><code>nesi#otago-dtn02</code></a></td>
+href="https://app.globus.org/file-manager?origin_id=6a878dec-5ab5-11e6-8254-22000b97daec"><code
+class="sl">nesi#otago-dtn02</code></a></td>
 <td style="height: 91px; width: 239.438px">Endpoint 02 for the High
 Capacity Research Storage Cluster, Dunedin Campus, University of
 Otago</td>
@@ -83,7 +85,9 @@ href="mailto:its.sst.systems.nesi@otago.ac.nz">its.sst.systems.nesi@otago.ac.nz<
 </tr>
 <tr class="odd" style="height: 91px;">
 <td style="width: 216.398px; height: 91px"><a
-href="https://app.globus.org/file-manager?origin_id=e7f6aaae-fe52-11e8-9345-0e3d676669f4"><span><code>University of Auckland Research Data DTN</code></span><code> </code></a></td>
+href="https://app.globus.org/file-manager?origin_id=e7f6aaae-fe52-11e8-9345-0e3d676669f4"><span><code
+class="sl">University of Auckland Research Data DTN</code></span><code
+class="sl"> </code></a></td>
 <td style="height: 91px; width: 239.438px">Endpoint provides access to
 UoA research data. </td>
 <td style="height: 91px; width: 189.352px"
@@ -96,7 +100,8 @@ href="mailto:researchdata@auckland.ac.nz">researchdata@auckland.ac.nz</a></td>
 </tr>
 <tr class="even" style="height: 91px;">
 <td style="width: 216.398px; height: 132px"><a
-href="https://app.globus.org/file-manager?origin_id=455b2930-a0df-11e8-96e4-0a6d4e044368"><span><code>AgResearch DTN01</code></span></a></td>
+href="https://app.globus.org/file-manager?origin_id=455b2930-a0df-11e8-96e4-0a6d4e044368"><span><code
+class="sl">AgResearch DTN01</code></span></a></td>
 <td style="height: 132px; width: 239.438px">A Globus endpoint attached
 to AgResearch’s institutional Linux storage platform</td>
 <td style="height: 132px; width: 189.352px" data-valign="top">Sharing
@@ -109,7 +114,8 @@ href="mailto:servicedesk@agresearch.co.nz">servicedesk@agresearch.co.nz</a></td>
 </tr>
 <tr class="odd" style="height: 66px;">
 <td style="width: 216.398px; height: 66px"><a
-href="https://app.globus.org/file-manager/collections/8861482e-b5a1-4ac8-ac52-2a5a5db5455d/overview?back=endpoints"><span><code>PFR Globus Connect Server</code></span></a></td>
+href="https://app.globus.org/file-manager/collections/8861482e-b5a1-4ac8-ac52-2a5a5db5455d/overview?back=endpoints"><span><code
+class="sl">PFR Globus Connect Server</code></span></a></td>
 <td style="width: 239.438px; height: 66px">Endpoint provides access to
 Plant &amp; Food Research data </td>
 <td style="width: 189.352px; height: 66px"><span>Generally for internal
@@ -121,7 +127,8 @@ Food person you are wanting to share data with.</span></td>
 </tr>
 <tr class="even" style="height: 22px;">
 <td style="width: 216.398px; height: 22px"><p><a
-href="https://transfer.nesi.org.nz/file-manager/collections/fc778f2e-d02f-40b8-9aea-470066145f3a/overview?back=endpoints"><span><code>MWLR PN-DTN-username</code></span></a></p></td>
+href="https://transfer.nesi.org.nz/file-manager/collections/fc778f2e-d02f-40b8-9aea-470066145f3a/overview?back=endpoints"><span><code
+class="sl">MWLR PN-DTN-username</code></span></a></p></td>
 <td style="width: 239.438px; height: 22px"><span>Customised endpoints
 for users to transfer data between MWLR and NeSI, or to share data with
 third-party collaborators</span></td>
@@ -134,7 +141,8 @@ href="mailto:IToperations@landcareresearch.co.nz">IToperations@landcareresearch.
 </tr>
 <tr class="odd">
 <td style="width: 216.398px"><p><span><a
-href="https://transfer.nesi.org.nz/file-manager/collections/a256195f-cebe-4483-8e29-599d1d2388ed/overview?back=endpoints"><code>Scion Data</code></a></span></p>
+href="https://transfer.nesi.org.nz/file-manager/collections/a256195f-cebe-4483-8e29-599d1d2388ed/overview?back=endpoints"><code
+class="sl">Scion Data</code></a></span></p>
 <p> </p></td>
 <td style="width: 239.438px"><span>Endpoint provides access to Scion
 research data</span></td>
@@ -147,7 +155,8 @@ wanting to share data with.</span></td>
 </tr>
 <tr class="even" style="height: 51.5333px;">
 <td style="width: 216.398px; height: 66px"><span><a
-href="https://app.globus.org/file-manager?origin_id=3064bb28-e940-11e8-8caa-0a1d4c5c824a"><code>NeSI Wellington DTN</code></a></span></td>
+href="https://app.globus.org/file-manager?origin_id=3064bb28-e940-11e8-8caa-0a1d4c5c824a"><code
+class="sl">NeSI Wellington DTN</code></a></span></td>
 <td style="height: 66px; width: 239.438px">Old NeSI Globus Endpoint,
 being decommissioned 2021-12-08</td>
 <td style="height: 66px; width: 189.352px"

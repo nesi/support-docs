@@ -41,16 +41,22 @@ nodes.**
 
 For example;
 
-    srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
+``` sl
+srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
+```
 
  You will receive a message.
 
-    srun: job 10256812 queued and waiting for resources
+``` sl
+srun: job 10256812 queued and waiting for resources
+```
 
 And when the job starts:
 
-    srun: job 10256812 has been allocated resources
-    [wbn079 ~ SUCCESS ]$
+``` sl
+srun: job 10256812 has been allocated resources
+[wbn079 ~ SUCCESS ]$
+```
 
 Note the host name in the prompt has changed to the compute node
 `wbn079`.
@@ -67,18 +73,24 @@ a GUI on the login node, but your processes on the compute nodes.
 
 For example:
 
-    salloc --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00
+``` sl
+salloc --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00
+```
 
  You will receive a message.
 
-    salloc: Pending job allocation 10256925
-    salloc: job 10256925 queued and waiting for resources
+``` sl
+salloc: Pending job allocation 10256925
+salloc: job 10256925 queued and waiting for resources
+```
 
 And when the job starts;
 
-    salloc: job 10256925 has been allocated resources
-    salloc: Granted job allocation 10256925 
-    [mahuika01~ SUCCESS ]$
+``` sl
+salloc: job 10256925 has been allocated resources
+salloc: Granted job allocation 10256925 
+[mahuika01~ SUCCESS ]$
+```
 
 Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
@@ -179,12 +191,16 @@ postpone its start time.
 The following command will delay the start of the job with numeric ID
 12345678 until (at the earliest) 9:30 a.m. the next day:
 
-    scontrol update jobid=12345678 StartTime=tomorrowT09:30:00
+``` sl
+scontrol update jobid=12345678 StartTime=tomorrowT09:30:00
+```
 
 This variation, if run on a Friday, will delay the start of the same job
 until (at the earliest) 9:30 a.m. on Monday:
 
-    scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
+``` sl
+scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
+```
 !!! info Warning
 >
 > Don't just set `StartTime=tomorrow` with no time specification unless
@@ -197,7 +213,9 @@ In the same way, you can use scontrol to set a job's start time to
 earlier than its current value. A likely application is to allow a job
 to start immediately even though it stood postponed to a later time:
 
-    scontrol update jobid=12345678 StartTime=now
+``` sl
+scontrol update jobid=12345678 StartTime=now
+```
 
 ### Other changes using `scontrol`
 
@@ -216,14 +234,16 @@ job name.
 For example, if all your interactive job names start with the text "IJ",
 you could do this:
 
-    # -u $(whoami) restricts the search to my jobs only.
-    # The --states=PD option restricts the search to pending jobs only.
-    #
-    # Each <tab> string should be replaced with a literal tab character. If you
-    # can't insert one by pressing the tab key on your keyboard, you should be
-    # able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
-    #
-    squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ"
+``` sl
+# -u $(whoami) restricts the search to my jobs only.
+# The --states=PD option restricts the search to pending jobs only.
+#
+# Each <tab> string should be replaced with a literal tab character. If you
+# can't insert one by pressing the tab key on your keyboard, you should be
+# able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
+#
+squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ"
+```
 
 The above command will return a list of your jobs whose names *start*
 with the text "IJ". In this respect, it's more flexible than the `-n`
@@ -234,9 +254,11 @@ In order to use `scontrol`, we need to throw away all of the line except
 for the job ID, so let's use `awk` to do this, and send the output to
 `scontrol` via `xargs`:
 
-    squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
-    awk '{print $1}' | \
-    xargs -I {} scontrol update jobid={} StartTime=tomorrowT09:30:00
+``` sl
+squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
+awk '{print $1}' | \
+xargs -I {} scontrol update jobid={} StartTime=tomorrowT09:30:00
+```
 
 If you want to do this automatically every working day and you have a
 consistent element that you use in the name of all your interactive
@@ -269,9 +291,11 @@ session, putting the job in the foreground (if necessary) and pressing
 To cancel all your queued interactive sessions on a cluster in one fell
 swoop, a command like the following should do the trick:
 
-    squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
-    awk '{print $1}' | \
-    xargs -I {} scancel {}
+``` sl
+squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
+awk '{print $1}' | \
+xargs -I {} scancel {}
+```
 
 If you frequently use interactive jobs, we recommend doing this before
 you go away on leave or fieldwork or other lengthy absence.

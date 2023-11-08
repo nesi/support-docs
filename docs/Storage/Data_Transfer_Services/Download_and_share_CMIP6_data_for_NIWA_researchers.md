@@ -47,7 +47,9 @@ then type similar commands to the ones below to test your configuration.
 
 On mahuika or w-mauivlab01.maui.nesi.org.nz:
 
-    source /nesi/project/niwa02916/synda_env.sh
+``` sl
+source /nesi/project/niwa02916/synda_env.sh
+```
 
 This will load the Anaconda3 environment and set the ST\_HOME variable.
 You should also now be able to invoke
@@ -56,7 +58,9 @@ commands, a tool that can be used to synchronise CMIP data with Earth
 System Grid Federation archives. A full list of options can be obtained
 with
 
-    synda -h
+``` sl
+synda -h
+```
 
 Below we demonstrate how synda might be used.
 
@@ -67,7 +71,9 @@ variable etc. A full list can be glanced
 from <https://esgf-node.llnl.gov/search/cmip6/>. A possible search might
 involve
 
-    synda search institution_id=NCAR experiment_id=1pctCO2 variable=ta
+``` sl
+synda search institution_id=NCAR experiment_id=1pctCO2 variable=ta
+```
 
 which returns
 
@@ -86,7 +92,9 @@ as well as some other datasets. 
 Once you know what you want to download, it's a good idea to check the
 size of the dataset:
 
-    synda stat CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
+``` sl
+synda stat CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
+```
 
 This prints "Total files count: 16, New files count: 16, Total size:
 48.7 GB, New files size: 48.7 GB". The "New" indicates that the files
@@ -95,12 +103,16 @@ download, taking nearly 50GB of disk space.
 
 ## Download/install the dataset 
 
-    synda install CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
+``` sl
+synda install CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
+```
 
 The first time you may get a message requesting you to start a daemon,
 if so do
 
-    synda daemon start
+``` sl
+synda daemon start
+```
 
 This will put your request in a queue. The transfer will take place as a
 background process so you can close your terminal if you want and come
@@ -112,7 +124,9 @@ in this case. 
 
 You can type
 
-    synda queue
+``` sl
+synda queue
+```
 
 to see progress.
 
