@@ -1,0 +1,14 @@
+name: Get Unverified
+on:
+  workflow_dispatch
+jobs:
+  getUnverified:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
+       - run: |
+          shopt -s globstar extglob
+          print("The following files have not been verified:")
+          python3 checks/get_unverified.py docs/**/*.md
