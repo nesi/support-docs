@@ -363,9 +363,10 @@ Article metadata is yaml format at the top of the page between two `---`
 
 #### Material Parameters
 
-- `description` : used for site meta.
-- `icon`        : page icon.
-- `status`      : `new`, `deprecated`.
+- `description` : used for site meta.           : `string`
+- `icon`        : page icon.                    : `path`
+- `status`      : Will dsiplay a symbol on nav  : `new`, `deprecated`.
+- `hide`        : Used to turn off features.    : `tags`
 
 #### Custom Parameters
 
