@@ -1,11 +1,11 @@
 ---
 created_at: '2015-09-02T20:55:32Z'
 hidden: true
-label_names:
+position: 25
+tags:
 - mahuika
 - tier1
 - biology
-position: 25
 title: BEAST
 vote_count: 0
 vote_sum: 0

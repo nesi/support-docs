@@ -1,7 +1,8 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
 hidden: false
-label_names:
+position: 2
+tags:
 - scp
 - transfer
 - copying
@@ -11,7 +12,6 @@ label_names:
 - cp
 - move
 - moving
-position: 2
 title: Moving files to and from the cluster
 vote_count: 11
 vote_sum: 3
@@ -29,9 +29,8 @@ zendesk_section_id: 360000189716
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have an [active account and
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
 Find more information on the different types of directories
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
@@ -50,14 +49,14 @@ connecting from a Windows, Mac or a Linux computer.
 
 To upload a file, click on the 
 
-![](../../assets/images/7328082899471..png)
+![](../../assets/images/Moving_files_to_and_from_the_cluster.png)
 
 button, near the top left and generally under the Run button.
 
 To download a file, navigate the file browser on the left and
 right-click on the file to see the menu below,
 
-![](../../assets/images/7328134296079..png)
+![](../../assets/images/Moving_files_to_and_from_the_cluster_0.png)
 
 The Download button is at the bottom.
 
@@ -84,15 +83,14 @@ Move a file from Mahuika to your local machine.
 scp mahuika:<path/filename> <path/filename>
 ```
 !!! info Note
->
-> -   This will only work if you have set up aliases as described in
->     [Terminal
->     Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
-> -   As the terms 'maui' and 'mahuika' are defined locally, the above
->     commands *only works when using a local terminal* (i.e. not on
->     Mahuika).
-> -   If you are using Windows subsystem, the root paths are different
->     as shown by Windows. e.g. `C:` is located at `/mnt/c/`
+     -   This will only work if you have set up aliases as described in
+         [Terminal
+         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
+     -   As the terms 'maui' and 'mahuika' are defined locally, the above
+         commands *only works when using a local terminal* (i.e. not on
+         Mahuika).
+     -   If you are using Windows subsystem, the root paths are different
+         as shown by Windows. e.g. `C:` is located at `/mnt/c/`
 
 `scp` stands for Secure CoPy and operates in a similar way to regular cp
 with the source file as the left term and destination on the right.
@@ -115,7 +113,7 @@ This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../../assets/images/360003129656..png)
+![mceclip0.png](../../assets/images/Moving_files_to_and_from_the_cluster_1.png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -128,7 +126,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/360001503115..png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/Moving_files_to_and_from_the_cluster_2.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided

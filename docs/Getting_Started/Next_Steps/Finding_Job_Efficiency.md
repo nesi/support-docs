@@ -1,9 +1,9 @@
 ---
 created_at: '2019-04-07T23:56:57Z'
 hidden: false
-label_names:
-- slurm
 position: 5
+tags:
+- slurm
 title: Finding Job Efficiency
 vote_count: 8
 vote_sum: 8
@@ -61,13 +61,11 @@ guidance.
 sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 ```
 !!! info Tip
->
-> *If you want to make this your default* `sacct` *setting, run;*
->
-> ``` sl
-> echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
-> source ~/.bash_profile
-> ```
+     *If you want to make this your default* `sacct` *setting, run;*
+     ``` sl
+     echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
+     source ~/.bash_profile
+     ```
 
 ------------------------------------------------------------------------
 
@@ -156,8 +154,7 @@ If 'nodelist' is not one of the fields in the output of your `sacct` or
 command; `squeue -h -o %N -j <jobid>` The node will look something like
 `wbn123` on Mahuika or `nid00123` on Māui
 !!! info Note
->
-> If your job is using MPI it may be running on multiple nodes
+     If your job is using MPI it may be running on multiple nodes
 
 ## htop 
 
@@ -182,7 +179,7 @@ parent process).
 
 Processes in green can be ignored
 
-<img src="../../assets/images/how_to_read_htop.png" width="929"
+<img src="../../assets/images/Finding_Job_Efficiency.png" width="929"
 height="252" alt="how_to_read_htop.png" />
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
@@ -198,9 +195,8 @@ height="252" alt="how_to_read_htop.png" />
 
 **MEM% **Percentage Memory utilisation.
 !!! info Warning
->
-> If the job finishes, or is killed you will be kicked off the node. If
-> htop freezes, type `reset` to clear your terminal.
+     If the job finishes, or is killed you will be kicked off the node. If
+     htop freezes, type `reset` to clear your terminal.
 
 # Limitations of using CPU Efficiency
 
@@ -216,12 +212,12 @@ more details.
 
 ## Example
 
-![qdyn\_eff.png](../../assets/images/qdyn_eff.png)
+![qdyn\_eff.png](../../assets/images/Finding_Job_Efficiency_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
-![qdyn\_walltime.png](../../assets/images/qdyn_walltime.png)
+![qdyn\_walltime.png](../../assets/images/Finding_Job_Efficiency_1.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

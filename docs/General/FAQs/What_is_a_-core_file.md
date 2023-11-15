@@ -1,10 +1,10 @@
 ---
 created_at: '2020-06-25T01:10:40Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - corefile
 - coredump
-position: 0
 title: What is a '.core' file?
 vote_count: 0
 vote_sum: 0

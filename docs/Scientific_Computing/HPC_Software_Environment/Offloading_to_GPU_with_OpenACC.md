@@ -1,8 +1,8 @@
 ---
 created_at: '2019-08-28T01:48:30Z'
 hidden: false
-label_names: []
 position: 4
+tags: []
 title: Offloading to GPU with OpenACC
 vote_count: 0
 vote_sum: 0

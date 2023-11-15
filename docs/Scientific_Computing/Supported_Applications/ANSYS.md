@@ -1,11 +1,11 @@
 ---
 created_at: '2015-10-15T02:15:46Z'
 hidden: false
-label_names:
+position: 24
+tags:
 - mahuika
 - application
 - engineering
-position: 24
 title: ANSYS
 vote_count: 3
 vote_sum: 3
@@ -63,10 +63,9 @@ prefer_research_license
 prefer_teaching_license
 ```
 !!! info Note
->
-> License preferences are individually tracked by *each version of
-> ANSYS.* Make sure you set preferences using the same version as in
-> your script.
+     License preferences are individually tracked by *each version of
+     ANSYS.* Make sure you set preferences using the same version as in
+     your script.
 
 # Journal files
 
@@ -132,12 +131,10 @@ then deleted `rm fluent_1234567.in`
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
 !!! info Note
->
-> Comments can be added to journal files using a `;`. For example:
->
-> ``` sl
-> ; This is a comment
-> ```
+     Comments can be added to journal files using a `;`. For example:
+     ``` sl
+     ; This is a comment
+     ```
 
 # Fluent
 
@@ -218,9 +215,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tbody>
 </table>
 !!! info Useful Links
->
-> -   [All command line
->     options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_gs/flu_ug_sec_startup_option.html)
+     -   [All command line
+         options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_gs/flu_ug_sec_startup_option.html)
 
 ## Interactive
 
@@ -248,9 +244,8 @@ Will return;
   salloc: Nodes wbn[053-056] are ready for job
 ```
 !!! info Note
->
-> Include all the commands you would usually use in your slurm header
-> here.
+     Include all the commands you would usually use in your slurm header
+     here.
 
 Once you have your allocation, run the command
 
@@ -273,10 +268,9 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
  host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
 ```
 !!! info Important
->
-> Closing the fluent GUI will not end the SLURM interactive session. Use
-> `exit` or `scancel `*`jobid`* when finished, else you will continue to
-> 'use' the requested CPUs.
+     Closing the fluent GUI will not end the SLURM interactive session. Use
+     `exit` or `scancel `*`jobid`* when finished, else you will continue to
+     'use' the requested CPUs.
 
 ## Checkpointing
 
@@ -449,9 +443,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tbody>
 </table>
 !!! info Tip
->
-> Initial values path specified in '.def' file can be overridden using
-> the `-ini <initial-file-path>` flag.
+     Initial values path specified in '.def' file can be overridden using
+     the `-ini <initial-file-path>` flag.
 
 ## CFX-Post
 
@@ -580,15 +573,14 @@ Not all MAPDL solvers work using distributed memory. 
 | Results calculation       | ✔   |
 | Pre/Postprocessing        | ✖   |
 !!! info Useful Links
->
-> -   [All command line
->     options.](https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/ans_ope/Hlp_G_OPE3_1.html)
-> -   [All MAPDL
->     commands.](https://www.sharcnet.ca/Software/Fluent14/help/ans_cmd/Hlp_C_CmdTOC.html)
-> -   [Debug
->     options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_prog/S7K4r190lcd.html)
-> -   [MAPDL Parallel Processing
->     Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
+     -   [All command line
+         options.](https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/ans_ope/Hlp_G_OPE3_1.html)
+     -   [All MAPDL
+         commands.](https://www.sharcnet.ca/Software/Fluent14/help/ans_cmd/Hlp_C_CmdTOC.html)
+     -   [Debug
+         options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_prog/S7K4r190lcd.html)
+     -   [MAPDL Parallel Processing
+         Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
 
 # LS-DYNA
 
@@ -726,7 +718,7 @@ the command `fensapiceGUI` from within your FENSAP project directory. 
 <td style="width: 291px"><p>1. Launch the run and select the desired
 number of (physical) CPUs.</p>
 <p>2. Open the 'configure' panel.</p></td>
-<td style="width: 292px"><img src="../../assets/images/FENSAP_GUI1.png"
+<td style="width: 292px"><img src="../../assets/images/ANSYS.png"
 alt="FENSAP_GUI1.png" /></td>
 </tr>
 <tr class="even">
@@ -741,7 +733,7 @@ your inline SLURM options. You should include at least.</p>
 step</em>.</p>
 <p>4. Start the job. You can track progress under the 'log'
 tab.</p></td>
-<td style="width: 292px"><img src="../../assets/images/FENSAP_GUI2.png"
+<td style="width: 292px"><img src="../../assets/images/ANSYS_0.png"
 alt="FENSAP_GUI2.png" /></td>
 </tr>
 </tbody>
@@ -751,19 +743,17 @@ You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
 opening the GUI within the project folder.
 !!! info Note
->
-> Submitting your job through the use of the GUI has disadvantages and
-> may not be suitable in all cases.
->
-> -   Closing the session or losing connection will prevent the next
->     stage of the job starting (currently executing step will continue
->     to run).  It is a good idea to launch the GUI inside a tmux/screen
->     session then send the process to background to avoid this.
-> -   Each individual step will be launched with the same parameters
->     given in the GUI.
-> -   By default 'restart' is set to disabled. If you wish to continue a
->     job from a given step/shot you must select so in the dropdown
->     menu.
+     Submitting your job through the use of the GUI has disadvantages and
+     may not be suitable in all cases.
+     -   Closing the session or losing connection will prevent the next
+         stage of the job starting (currently executing step will continue
+         to run).  It is a good idea to launch the GUI inside a tmux/screen
+         session then send the process to background to avoid this.
+     -   Each individual step will be launched with the same parameters
+         given in the GUI.
+     -   By default 'restart' is set to disabled. If you wish to continue a
+         job from a given step/shot you must select so in the dropdown
+         menu.
 
 ## Using fensap2slurm
 
@@ -821,12 +811,10 @@ ansysedt -batchoptionhelp
 
 (Note, this requires a working X-server) 
 !!! info Note
->
-> Each batch option must have it's own flag, e.g.
->
-> ``` sl
-> -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
-> ```
+     Each batch option must have it's own flag, e.g.
+     ``` sl
+     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
+     ```
 
 ## Interactive
 

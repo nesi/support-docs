@@ -1,8 +1,8 @@
 ---
 created_at: '2020-01-15T21:56:01Z'
 hidden: false
-label_names: []
 position: 14
+tags: []
 title: Find execution hot spots with VTune
 vote_count: 0
 vote_sum: 0
@@ -105,6 +105,6 @@ into selected functions to get more information. Below we see that 16.5
 out of 26 seconds were spent starting the two OpenMP threads.    
   
 
-There should be an image here but it couldn't be loaded. 
+![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../../assets/images/Find_execution_hot_spots_with_VTune.png) 
 
  

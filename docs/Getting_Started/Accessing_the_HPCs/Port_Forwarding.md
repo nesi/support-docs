@@ -1,8 +1,8 @@
 ---
 created_at: '2020-05-12T01:43:30Z'
 hidden: false
-label_names: []
 position: 3
+tags: []
 title: Port Forwarding
 vote_count: 0
 vote_sum: 0
@@ -20,10 +20,9 @@ zendesk_section_id: 360000034315
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have your [connection to the NeSI
->     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
->     configured.
+     -   Have your [connection to the NeSI
+         cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
+         configured.
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
@@ -47,11 +46,10 @@ described
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
 !!! info Note
->
-> The following examples use aliases as set up in [standard terminal
-> setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
-> This allows the forwarding from your local machine to the NeSI
-> cluster, without having to re-tunnel through the lander node.
+     The following examples use aliases as set up in [standard terminal
+     setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+     This allows the forwarding from your local machine to the NeSI
+     cluster, without having to re-tunnel through the lander node.
 
 # Command line (OpenSSH)
 
@@ -81,9 +79,8 @@ If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure. 
 !!! info Note
->
-> Your local port and remote port do not have to be different numbers.
-> It is generally easier to use the same number for both.
+     Your local port and remote port do not have to be different numbers.
+     It is generally easier to use the same number for both.
 
 # SSH Config (OpenSSH)
 
@@ -124,19 +121,15 @@ isn't a requirement, but it makes things easier to remember.
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
 !!! info Note
->
-> -   If you get a error message
->
->     ``` sl
->     bind: No such file or directory
->     unix_listener: cannot bind to path: 
->     ```
->
->     try to create the following directory:
->
->     ``` sl
->     mkdir -P ~/.ssh/sockets
->     ```
+     -   If you get a error message
+         ``` sl
+         bind: No such file or directory
+         unix_listener: cannot bind to path: 
+         ```
+         try to create the following directory:
+         ``` sl
+         mkdir -P ~/.ssh/sockets
+         ```
 
 # MobaXterm
 
@@ -146,12 +139,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](../../assets/images/360004708596..png)
+![mceclip0.png](../../assets/images/Port_Forwarding.png)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](../../assets/images/360004708616..png)
+![mceclip1.png](../../assets/images/Port_Forwarding_0.png)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -159,7 +152,7 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](../../assets/images/360004580035..png)
+![mobakey.png](../../assets/images/Port_Forwarding_1.png)
 
 ■ local port  
 ■ remote port  
@@ -227,9 +220,8 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 <some process using port 6676>
 ```
 !!! info What Next?
->
-> -   Using
->     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
->     the cluster.
-> -   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
-> -   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)
+     -   Using
+         [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
+         the cluster.
+     -   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
+     -   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)

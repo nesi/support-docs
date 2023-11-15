@@ -1,11 +1,11 @@
 ---
 created_at: '2019-01-24T20:30:30Z'
 hidden: false
-label_names:
+position: 12
+tags:
 - support
 - application
 - visualisation
-position: 12
 title: NICE DCV Setup
 vote_count: 0
 vote_sum: 0
@@ -98,11 +98,10 @@ must create an SSH tunnel through the NeSI lander node.
 
 ## Linux, Mac, or Windows Subsystem for Linux
 !!! info Warning
->
-> If successful, commands to open SSH tunnels will look like they are
-> doing nothing (hanging) but it is important to leave them running.
-> Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
-> will no longer be able to connect to your NICE DCV session.
+     If successful, commands to open SSH tunnels will look like they are
+     doing nothing (hanging) but it is important to leave them running.
+     Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
+     will no longer be able to connect to your NICE DCV session.
 
 1.  On your machine run the following command in your Linux terminal
     emulator (assuming you added the
@@ -177,7 +176,7 @@ connections to look like this:
 
 ### To connect to Māui
 
-![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../../assets/images/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
+![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../../assets/images/NICE_DCV_Setup.png)  
 When setting up and using the connections, note the following:
 
 ### To connect to Mahuika

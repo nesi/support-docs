@@ -1,8 +1,8 @@
 ---
 created_at: '2019-09-23T11:11:16Z'
 hidden: false
-label_names: []
 position: 32
+tags: []
 title: Julia
 vote_count: 3
 vote_sum: 3
@@ -102,14 +102,13 @@ using the command line, but the commands are the same within a script.
     searched, in order, for the package that you wish to install and its
     dependencies. Clear the depot path.
 !!! info Warning
-    >
-    > It is possible for a package to be installed somewhere on
-    > `DEPOT_PATH`, but not compiled. If this happens, and the package
-    > is a dependency of what you're trying to install, Julia will try
-    > to compile it in situ. This is a bad thing most of the time,
-    > because you're unlikely to have write access to the install
-    > location, so the compilation will fail. Hence why clearing the
-    > depot path is important.
+     It is possible for a package to be installed somewhere on
+     `DEPOT_PATH`, but not compiled. If this happens, and the package
+     is a dependency of what you're trying to install, Julia will try
+     to compile it in situ. This is a bad thing most of the time,
+     because you're unlikely to have write access to the install
+     location, so the compilation will fail. Hence why clearing the
+     depot path is important.
 
     ``` sl
     julia> empty!(DEPOT_PATH)
@@ -122,17 +121,15 @@ using the command line, but the commands are the same within a script.
     julia> push!(DEPOT_PATH, "/nesi/project/nesi12345/julia")
     ```
 !!! info Tip
-    >
-    > While a conventional personal Julia package directory is
-    > `/home/joe.bloggs/.julia` or similar, there is no reason for the
-    > directory to be within any particular user's home directory, or
-    > for it to be a hidden directory with a name starting with a dot.
-    > For shared Julia package directories, a visible directory within a
-    > project directory will probably be more useful to you and your
-    > colleagues.
-    >
-    > In any case, for obvious reasons, you should choose a directory to
-    > which you have write access.
+     While a conventional personal Julia package directory is
+     `/home/joe.bloggs/.julia` or similar, there is no reason for the
+     directory to be within any particular user's home directory, or
+     for it to be a hidden directory with a name starting with a dot.
+     For shared Julia package directories, a visible directory within a
+     project directory will probably be more useful to you and your
+     colleagues.
+     In any case, for obvious reasons, you should choose a directory to
+     which you have write access.
 
 7.  Install the desired Julia package. In this case, we are showing the
     machine-learning package Flux as an example.
@@ -175,26 +172,22 @@ certainly the easiest is to do the following in your environment:
 $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
 ```
 !!! info Tip
->
-> By prepending the directory to `JULIA_LOAD_PATH` instead of appending
-> it, you ensure that your project's versions of Julia packages are used
-> by default, in preference to whatever might be managed centrally. This
-> is probably what you want to do. If you want to use the centrally
-> managed versions of Julia packages first and only use your project's
-> package if there isn't a centrally managed instance, you can append it
-> instead:
->
-> ``` sl
-> $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
-> ```
+     By prepending the directory to `JULIA_LOAD_PATH` instead of appending
+     it, you ensure that your project's versions of Julia packages are used
+     by default, in preference to whatever might be managed centrally. This
+     is probably what you want to do. If you want to use the centrally
+     managed versions of Julia packages first and only use your project's
+     package if there isn't a centrally managed instance, you can append it
+     instead:
+     ``` sl
+     $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
+     ```
 !!! info Tip
->
-> To revert to the default load path, just unset `JULIA_LOAD_PATH`:
->
-> ``` sl
-> $ unset JULIA_LOAD_PATH
-> $ export JULIA_LOAD_PATH
-> ```
+     To revert to the default load path, just unset `JULIA_LOAD_PATH`:
+     ``` sl
+     $ unset JULIA_LOAD_PATH
+     $ export JULIA_LOAD_PATH
+     ```
 
 # Profiling Julia code
 

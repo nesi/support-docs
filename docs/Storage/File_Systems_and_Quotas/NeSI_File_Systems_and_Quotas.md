@@ -1,16 +1,16 @@
 ---
 created_at: '2018-05-02T04:06:16Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - info
 - mahuika
 - storage
 - maui
 - quota
-position: 0
 title: NeSI File Systems and Quotas
-vote_count: 3
-vote_sum: 3
+vote_count: 4
+vote_sum: 4
 zendesk_article_id: 360000177256
 zendesk_section_id: 360000033936
 ---
@@ -25,12 +25,11 @@ zendesk_section_id: 360000033936
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info New Feature
->
-> [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
-> have recently started rolling out compression of inactive data on the
-> NeSI Project filesystem. Please see the [documentation
-> below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
-> works and what data will be compressed.
+     [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
+     have recently started rolling out compression of inactive data on the
+     NeSI Project filesystem. Please see the [documentation
+     below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
+     works and what data will be compressed.
 
  
 
@@ -49,8 +48,8 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../../assets/images/360003251796..png" width="629"
-height="578" alt="neSI_filetree.svg" />
+## <img src="../../assets/images/NeSI_File_Systems_and_Quotas.png"
+width="629" height="578" alt="neSI_filetree.svg" />
 
 # File System Specifications
 
@@ -321,13 +320,12 @@ analyse datasets up to 1 PB in size.
 
 ## /nesi/nearline
 !!! info Note
->
-> The nearline service, including its associated file systems, is in an
-> Early Access phase, and allocations are by invitation. We appreciate
-> your patience as we develop, test and deploy this service. If you
-> would like to participate in the Early Access Programme, please
-> [contact our support
-> team](https://support.nesi.org.nz/hc/requests/new).
+     The nearline service, including its associated file systems, is in an
+     Early Access phase, and allocations are by invitation. We appreciate
+     your patience as we develop, test and deploy this service. If you
+     would like to participate in the Early Access Programme, please
+     [contact our support
+     team](https://support.nesi.org.nz/hc/requests/new).
 
 The `/nesi/nearline` filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of

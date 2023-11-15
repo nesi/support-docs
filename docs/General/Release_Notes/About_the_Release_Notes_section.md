@@ -1,8 +1,8 @@
 ---
 created_at: '2021-02-23T19:52:34Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: About the Release Notes section
 vote_count: 0
 vote_sum: 0

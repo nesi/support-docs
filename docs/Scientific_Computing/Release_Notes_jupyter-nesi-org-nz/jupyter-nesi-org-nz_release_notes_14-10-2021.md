@@ -1,9 +1,9 @@
 ---
 created_at: '2021-10-14T18:20:24Z'
 hidden: false
-label_names:
-- releasenote
 position: 0
+tags:
+- releasenote
 title: jupyter.nesi.org.nz release notes 14/10/2021
 vote_count: 0
 vote_sum: 0

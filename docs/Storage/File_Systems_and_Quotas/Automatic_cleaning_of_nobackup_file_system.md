@@ -1,8 +1,8 @@
 ---
 created_at: '2019-09-15T23:36:59Z'
 hidden: false
-label_names: []
 position: 1
+tags: []
 title: Automatic cleaning of nobackup file system
 vote_count: 4
 vote_sum: 2
@@ -34,27 +34,21 @@ Files are deleted if they meet **all** of the following criteria:
     previously, and as such is listed in a the project's
     nobackup `.policy` directory.
 !!! info Tip
->
-> You can get a list of files marked for deletion with the command
-> `nn_doomed_list`.
->
-> Usage: nn\_doomed\_list \[-h\] \[--project \[PROJECTS\]\]
-> \[--unlimited\] \[--limit LENGTHLIMIT\]
->
-> optional arguments:
->
-> -h, --help show this help message and exit  
-> --project \[PROJECTS\], -p \[PROJECTS\]  
-> Comma-separated list of projects to process. If not given, process all
-> projects of which the user is a member  
-> --unlimited, -u Do not limit the length of the output file  
-> --limit LENGTHLIMIT, -l LENGTHLIMIT  
-> Maximum length of the output file (lines)
->
-> If no arguments are given, nn\_doomed\_list checks and displays all
-> project directories the user is a member of. 
->
-> Default limit of the output file is 40 lines. 
+     You can get a list of files marked for deletion with the command
+     `nn_doomed_list`.
+     Usage: nn\_doomed\_list \[-h\] \[--project \[PROJECTS\]\]
+     \[--unlimited\] \[--limit LENGTHLIMIT\]
+     optional arguments:
+     -h, --help show this help message and exit  
+     --project \[PROJECTS\], -p \[PROJECTS\]  
+     Comma-separated list of projects to process. If not given, process all
+     projects of which the user is a member  
+     --unlimited, -u Do not limit the length of the output file  
+     --limit LENGTHLIMIT, -l LENGTHLIMIT  
+     Maximum length of the output file (lines)
+     If no arguments are given, nn\_doomed\_list checks and displays all
+     project directories the user is a member of. 
+     Default limit of the output file is 40 lines. 
 
 The general process will follow a schedule as follows:
 
@@ -69,14 +63,13 @@ The general process will follow a schedule as follows:
     for deletion. Emails will be sent two weeks in advance of any
     deletion taking place.
 !!! info Warning
-    >
-    > Due to the nature of email, we cannot guarantee that any
-    > particular email message will be successfully delivered and
-    > received, for instance our emails could be blocked by your mail
-    > server or your inbox could be too full. We suggest that you check
-    > `/nesi/nobackup/<project_code>/.policy` (see below) for a list of
-    > deletion candidates, for each of your projects, whether you
-    > received an email from us or not.
+     Due to the nature of email, we cannot guarantee that any
+     particular email message will be successfully delivered and
+     received, for instance our emails could be blocked by your mail
+     server or your inbox could be too full. We suggest that you check
+     `/nesi/nobackup/<project_code>/.policy` (see below) for a list of
+     deletion candidates, for each of your projects, whether you
+     received an email from us or not.
 
 -   Immediately after deletion is complete, a new set of candidate files
     will be identified for expiry during the next automated cleanup.
@@ -95,12 +88,11 @@ or modify those contents). The gzip compressed filelist can be viewed
 and searched with the `zless` and `zgrep` commands respectively, e.g.,
 `zless /nesi/nobackup/nesi12345/.policy/to_delete/<date>.filelist.gz`.
 !!! info Warning
->
-> Objects other than files, such as directories and symbolic links, are
-> not deleted under this policy, even if at deletion time they are
-> empty, broken, or otherwise redundant. These entities typically take
-> up no disk space apart from a small amount of metadata, but still
-> count towards the project's inode (file count) quota.
+     Objects other than files, such as directories and symbolic links, are
+     not deleted under this policy, even if at deletion time they are
+     empty, broken, or otherwise redundant. These entities typically take
+     up no disk space apart from a small amount of metadata, but still
+     count towards the project's inode (file count) quota.
 
 ## What should I do with expiring data on the nobackup filesystem?
 
@@ -134,12 +126,11 @@ keep beyond the scheduled expiry date, you have four options:
     not update the timestamp of the file. Copying (\`cp\`) does create a
     new timestamped file.  
 !!! info Warning
-    >
-    > Doing this for large numbers of files, or for files that together
-    > take up a large amount of disk space, in your project's nobackup
-    > directory, without regard for your project's computational
-    > activity, constitutes a breach of [NeSI's acceptable use
-    > policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy).
+     Doing this for large numbers of files, or for files that together
+     take up a large amount of disk space, in your project's nobackup
+     directory, without regard for your project's computational
+     activity, constitutes a breach of [NeSI's acceptable use
+     policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy).
 
 ## Where should I put my data?
 

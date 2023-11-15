@@ -1,8 +1,8 @@
 ---
 created_at: '2021-03-29T01:57:32Z'
 hidden: true
-label_names: []
 position: 0
+tags: []
 title: Connecting to a Virtual Desktop (SSH)
 vote_count: 0
 vote_sum: 0
@@ -32,14 +32,12 @@ faster).
 
 # Connecting Through SSH
 !!! info Requirements
->
-> You must be able to [forward a
-> port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
+     You must be able to [forward a
+     port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
 !!! info Note
->
-> The Virtual desktops are still in development, please report any
-> issues to NeSI support, or open an issue
-> [here](https://github.com/nesi/nesi-virtual-desktops/issues).
+     The Virtual desktops are still in development, please report any
+     issues to NeSI support, or open an issue
+     [here](https://github.com/nesi/nesi-virtual-desktops/issues).
 
 # Setup
 
@@ -56,9 +54,8 @@ For example:
 ssh -L 1234:localhost:1234 mahuika
 ```
 !!! info Tip
->
-> Port numbers should be between **1025-49151**. It's OK to use the same
-> number for local and remote ports (makes it easier to remember too!)
+     Port numbers should be between **1025-49151**. It's OK to use the same
+     number for local and remote ports (makes it easier to remember too!)
 
 ## Add VDT to path
 
@@ -91,7 +88,8 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-There should be an image here but it couldn't be loaded.There should be an image here but it couldn't be loaded.
+<img src="../../assets/images/Connecting_to_a_Virtual_Desktop_SSH.png"
+width="426" height="362" />![](../../assets/images/Connecting_to_a_Virtual_Desktop_SSH_0.png)
 
 # Examples
 
@@ -125,7 +123,7 @@ vdt start -N my_desktop [port]
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-There should be an image here but it couldn't be loaded.
+![mceclip0.png](../../assets/images/Connecting_to_a_Virtual_Desktop_SSH_1.png)
 
 ## On a compute node
 

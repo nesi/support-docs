@@ -1,8 +1,8 @@
 ---
 created_at: '2023-07-05T23:47:26Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: Service Governance contact
 vote_count: 0
 vote_sum: 0

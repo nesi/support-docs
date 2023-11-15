@@ -1,10 +1,10 @@
 ---
 created_at: '2018-11-30T00:34:14Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - ssh
 - howto
-position: 0
 title: Standard Terminal Setup
 vote_count: 8
 vote_sum: 6
@@ -22,17 +22,16 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have an [active account and
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-> -   Set up your [Linux
->     Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
-> -   Set up Second [Factor
->     Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
-> -   Using standard Linux/Mac terminal *or* [Windows Subsystem for
->     Linux](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
->     with [Ubuntu
->     terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Set up your [Linux
+         Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
+     -   Set up Second [Factor
+         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
+     -   Using standard Linux/Mac terminal *or* [Windows Subsystem for
+         Linux](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
+         with [Ubuntu
+         terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
 
 ## First time setup
 
@@ -56,27 +55,28 @@ configurations.
        ServerAliveInterval 300
        ServerAliveCountMax 2
 
-        Host maui
-           User username
-           Hostname login.maui.nesi.org.nz
-           ProxyCommand ssh -W %h:%p lander
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    Host maui
+       User username
+       Hostname login.maui.nesi.org.nz
+       ProxyCommand ssh -W %h:%p lander
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
-        Host lander
-           User username
-           HostName lander.nesi.org.nz
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    Host lander
+       User username
+       HostName lander.nesi.org.nz
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
-        Host *
-            ControlMaster auto
-            ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-            ControlPersist 1
+    Host *
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+        ControlPersist 1
+    ```
 
     Close and save with ctrl x, y, Enter
 
@@ -108,8 +108,7 @@ scp <path/filename> mahuika:~/
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
 !!! info What Next?
->
-> -   [Moving files to/from a
->     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
-> -   Setting up a
->     [X-Server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975) (optional).
+     -   [Moving files to/from a
+         cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+     -   Setting up a
+         [X-Server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975) (optional).

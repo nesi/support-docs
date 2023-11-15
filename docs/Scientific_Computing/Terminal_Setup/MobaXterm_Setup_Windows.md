@@ -1,8 +1,8 @@
 ---
 created_at: '2018-11-30T00:32:25Z'
 hidden: false
-label_names: []
 position: 2
+tags: []
 title: MobaXterm Setup (Windows)
 vote_count: 5
 vote_sum: 5
@@ -20,14 +20,13 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have an [active account and
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-> -   Set up your [Linux
->     Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
-> -   Set up Second [Factor
->     Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
-> -   Windows operating system.
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Set up your [Linux
+         Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
+     -   Set up Second [Factor
+         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
+     -   Windows operating system.
 
 Setting up MobaXterm as shown below will allow you to connect to the
 Cluster with less keyboard inputs as well as allow use of the file
@@ -57,29 +56,28 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](../../assets/images/4411672582031..png)
+![mceclip4.png](../../assets/images/MobaXterm_Setup_Windows.png)
 
-![mceclip5.png](../../assets/images/4411672594191..png)
+![mceclip5.png](../../assets/images/MobaXterm_Setup_Windows_0.png)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
 !!! info WARNING
->
-> There is a bug which causes some users to be repeatedly prompted
-> `<username>@lander.nesi.org.nz's password:`  
-> This can be resolved by clicking "OK" each time you are prompted then
-> logging in as normal once you are prompted for your `First Factor:` or
-> `Password:`.  
-> See [Login
-> Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
-> for more details
+     There is a bug which causes some users to be repeatedly prompted
+     `<username>@lander.nesi.org.nz's password:`  
+     This can be resolved by clicking "OK" each time you are prompted then
+     logging in as normal once you are prompted for your `First Factor:` or
+     `Password:`.  
+     See [Login
+     Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
+     for more details
 
 ## Usage
 
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../../assets/images/4411680807951..png)
+![mceclip6.png](../../assets/images/MobaXterm_Setup_Windows_1.png)
 
 You will be prompted by dialogue box.
 
@@ -113,9 +111,8 @@ Māui users must enter their password combined with their second factor.
 For example, if your password is "Password" and your current second
 factor is "123456" then you must enter "Password123456".
 !!! info Tip
->
-> If you choose to save your password, the process will be the same
-> minus the prompts for First Factor.
+     If you choose to save your password, the process will be the same
+     minus the prompts for First Factor.
 
 ## Credential Manager
 
@@ -146,6 +143,5 @@ Then setup a new session [according to the support doc
 instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
 as before.
 !!! info What Next?
->
-> -   [Moving files to/from a
->     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+     -   [Moving files to/from a
+         cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

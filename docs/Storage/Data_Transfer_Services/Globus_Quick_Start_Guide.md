@@ -1,8 +1,8 @@
 ---
 created_at: '2023-10-13T00:14:22Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: Globus Quick Start Guide
 vote_count: 0
 vote_sum: 0
@@ -47,7 +47,7 @@ up using one of the available options on the page. Please note that the
 organisation is not listed, please sign in (sign up) using any of the
 other methods.
 
-<img src="../../assets/images/8149105856015..png" width="398"
+<img src="../../assets/images/Globus_Quick_Start_Guide.png" width="398"
 height="436" alt="Globus_login.png" />
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
@@ -89,8 +89,8 @@ bar on the left.
     **do not** save your password on "*Browser settings*" as it will
     change every time due to the 2nd factor requirement.
 
-<img src="../../assets/images/8149067986063..png" width="296"
-height="340" alt="NeSI_Globus_Authenticate.png" />
+<img src="../../assets/images/Globus_Quick_Start_Guide_0.png"
+width="296" height="340" alt="NeSI_Globus_Authenticate.png" />
 
  
 
@@ -104,7 +104,7 @@ initiate the transfer, select one of the two directional arrows. In the
 image below, the 'config' folder is being transferred from the location
 on the right, to the location on the left.
 
-![Globus\_transfer\_data.png](../../assets/images/8149738412815..png)
+![Globus\_transfer\_data.png](../../assets/images/Globus_Quick_Start_Guide_1.png)
 
 To see the progress of the transfer, please click 'Activity' on the left
 hand menu bar.

@@ -1,8 +1,8 @@
 ---
 created_at: '2019-01-10T03:02:11Z'
 hidden: false
-label_names: []
 position: 4
+tags: []
 title: Parallel Execution
 vote_count: 7
 vote_sum: 5
@@ -28,15 +28,13 @@ The are three types of parallel execution we will cover
 are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
 !!! info Note
->
-> Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
-> *logical* CPU's = **1** *physical* core).  
->
-> -   `--cpus-per-task=4` will give you 4 *logical* cores.
-> -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
-> -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
->     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
->     logical cores.
+     Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
+     *logical* CPU's = **1** *physical* core).  
+     -   `--cpus-per-task=4` will give you 4 *logical* cores.
+     -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
+     -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
+         refer to physical cores, but `--mem-per-cpu=512MB` still refers to
+         logical cores.
 
 See [our article on
 hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
@@ -51,7 +49,7 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 
 ####  
 
-<img src="../../assets/images/360001532435..png" width="714"
+<img src="../../assets/images/Parallel_Execution.png" width="714"
 height="160" alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
@@ -118,10 +116,9 @@ The expected output being
 /home/user001/demo
 ```
 !!! info Warning
->
-> For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
-> all. Using `srun` in conjunction with `--cpus-per-task=1` will
-> cause `--ntasks` to default to 2.
+     For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
+     all. Using `srun` in conjunction with `--cpus-per-task=1` will
+     cause `--ntasks` to default to 2.
 
 # Job Arrays
 

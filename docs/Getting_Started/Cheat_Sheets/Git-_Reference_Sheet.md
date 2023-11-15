@@ -1,12 +1,12 @@
 ---
 created_at: '2020-05-07T02:51:35Z'
 hidden: false
-label_names:
+position: 2
+tags:
 - git
 - github
 - version control
 - repository
-position: 2
 title: 'Git: Reference Sheet'
 vote_count: 11
 vote_sum: 11
@@ -30,16 +30,15 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](../../assets/images/Git_Diagram.svg)
+![Git\_Diagram.svg](../../assets/images/Git-_Reference_Sheet.svg)
 
 ## Authentication
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
 !!! info Password authentication
->
-> GitHub removed support for password authentication on August 13, 2021.
-> Using a SSH key is now the easiest way to set up authentication.
+     GitHub removed support for password authentication on August 13, 2021.
+     Using a SSH key is now the easiest way to set up authentication.
 
 ### SSH Authentication (GitHub)
 
@@ -73,19 +72,19 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     page, click your profile photo click **Settings**.
 
     ![Settings icon in the user
-    bar](../../assets/images/userbar-account-settings.png)
+    bar](../../assets/images/Git-_Reference_Sheet.png)
 
 -   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
-    There should be an image here but it couldn't be loaded.
+    ![SSH Key button](../../assets/images/Git-_Reference_Sheet_0.png)
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
-    There should be an image here but it couldn't be loaded.
+    ![The key field](../../assets/images/Git-_Reference_Sheet_1.png)
 
 -   Click **Add SSH key**.
 
@@ -142,12 +141,11 @@ will be the repo you cloned from, or set manually using
 | push   | `git push`                  | Incorporates changes from local repo into 'origin'.                                                                  |
 |        | `git push <repo> <branch>`  | Incorporates changes from local repo into `<repo>` `<branch>`                                                        |
 !!! info Tip
->
-> If you are working without collaborators, there should be no reason to
-> have a conflict between your local and your remote repo. Make sure you
-> always git pull when starting work on your local and git push when
-> finished, this will save you wasting time resolving unnecessary
-> merges.
+     If you are working without collaborators, there should be no reason to
+     have a conflict between your local and your remote repo. Make sure you
+     always git pull when starting work on your local and git push when
+     finished, this will save you wasting time resolving unnecessary
+     merges.
 
 ## Branches
 
@@ -161,5 +159,4 @@ multiple branches, or requires merging.
 | checkout | `git checkout <branch-name>` | Switch to editing branch `<branch-name>`   |
 | merge    | `git merge <branch-name>`    | Merge `<branch-name>` into current branch. |
 !!! info Other Resources
->
-> -   <https://ohshitgit.com/>
+     -   <https://ohshitgit.com/>

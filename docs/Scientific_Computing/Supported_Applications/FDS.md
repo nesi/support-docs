@@ -1,10 +1,10 @@
 ---
 created_at: '2019-02-14T23:33:05Z'
 hidden: false
-label_names:
+position: 28
+tags:
 - mahuika
 - engineering
-position: 28
 title: FDS
 vote_count: 0
 vote_sum: 0

@@ -1,8 +1,8 @@
 ---
 created_at: '2023-09-17T23:51:43Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: How do I run my Python Notebook through SLURM?
 vote_count: 0
 vote_sum: 0

@@ -1,8 +1,8 @@
 ---
 created_at: '2021-08-27T03:30:10Z'
 hidden: false
-label_names: []
 position: 3
+tags: []
 title: Globus V5 Paths, Permissions, Storage Allocation
 vote_count: 0
 vote_sum: 0
@@ -25,7 +25,7 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
-![mceclip0.png](../../assets/images/4408734639887..png)
+![mceclip0.png](../../assets/images/Globus_V5_Paths_Permissions_Storage_Allocation.png)
 
 ###  On NeSI's Māui/Mahuika clusters this means:
 

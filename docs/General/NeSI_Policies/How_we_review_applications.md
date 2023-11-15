@@ -1,9 +1,9 @@
 ---
 created_at: '2018-05-18T02:26:58Z'
 hidden: false
-label_names:
-- tqp
 position: 6
+tags:
+- tqp
 title: How we review applications
 vote_count: 2
 vote_sum: 0

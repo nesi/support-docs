@@ -1,8 +1,8 @@
 ---
 created_at: '2021-05-13T01:00:08Z'
 hidden: false
-label_names: []
 position: 1
+tags: []
 title: RStudio via Jupyter on NeSI
 vote_count: 7
 vote_sum: 3
@@ -20,14 +20,12 @@ zendesk_section_id: 360001189255
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Note
->
-> This functionality is experimental and may introduce breaking changes
-> in the future. These notes should be read in conjunction with NeSI's
-> main [R support
-> page](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R)
->
-> Your feedback is welcome, please don't hesitate to contact us at
-> <support@nesi.org.nz> to make suggestions.
+     This functionality is experimental and may introduce breaking changes
+     in the future. These notes should be read in conjunction with NeSI's
+     main [R support
+     page](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R)
+     Your feedback is welcome, please don't hesitate to contact us at
+     <support@nesi.org.nz> to make suggestions.
 
 # Getting started
 
@@ -37,7 +35,7 @@ NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
 
-![rstudio\_launcher.png](../../assets/images/4595373978255..png)
+![rstudio\_launcher.png](../../assets/images/RStudio_via_Jupyter_on_NeSI.png)
 
 Clicking on this entry will open a separate tab in your web browser,
 where RStudio will be accessible.
@@ -70,7 +68,7 @@ correct Library Paths are available. For R/4.2.1 the command
 `.libPaths()` will return the following:
 
 ``` sl
-> .libPaths()
+     .libPaths()
 [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 ```
@@ -93,7 +91,7 @@ name, and is emptied with each new session. So will not fill up your
 home directory.
 
 ``` sl
->tempdir()
+    tempdir()
 [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
 ```
 
@@ -145,7 +143,7 @@ a failure by JupyterLab. Please try to start RStudio again from the
 launcher. If the problem persists, contact our support team at
 <support@nesi.org.nz>.
 
-![error\_500.PNG](../../assets/images/4614666941455..png)
+![error\_500.PNG](../../assets/images/RStudio_via_Jupyter_on_NeSI_0.png)
 
 If you have disabled javascript in your web browser, you will need to
 enter your password manually in the RStudio login screen. To retrieve

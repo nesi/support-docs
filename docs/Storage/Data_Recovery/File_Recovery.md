@@ -1,8 +1,8 @@
 ---
 created_at: '2018-05-22T01:49:31Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: File Recovery
 vote_count: 8
 vote_sum: 6
@@ -38,8 +38,7 @@ project code, e.g;
 /home/username/.snapshots/Sunday/
 ```
 !!! info Warning
->
-> Files in `/nesi/nobackup/` are not snapshotted.
+     Files in `/nesi/nobackup/` are not snapshotted.
 
  
 
@@ -50,6 +49,5 @@ copying it over, e.g.
 cp /nesi/project/.snapshots/Sunday/nesi99999/file.txt /nesi/project/nesi99999/file.txt
 ```
 !!! info Tip
->
-> For copying directories use the flag -ir or just -r if you don't want
-> to be prompted before overwriting.
+     For copying directories use the flag -ir or just -r if you don't want
+     to be prompted before overwriting.
