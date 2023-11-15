@@ -23,7 +23,7 @@ markdown_extensions:
 plugins:
   - search
   - redirects:
-      map_file: redirect_map.yml
+      map_file: docs/redirect_map.yml
   - literate-nav
   - git-authors
   - tags
@@ -58,6 +58,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - content.code.copy
+    - content.action.edit
   language: en
   logo: assets/icons/logo.svg
   name: material
