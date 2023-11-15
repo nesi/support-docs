@@ -1,8 +1,8 @@
 ---
 created_at: '2022-02-02T22:52:30Z'
 hidden: true
-label_names: []
 position: 0
+tags: []
 title: Managing NeSI notifications
 vote_count: 0
 vote_sum: 0
@@ -23,4 +23,4 @@ zendesk_section_id: 360001059296
 
  
 
-There should be an image here but it couldn't be loaded.
+![mceclip0.png](../../assets/images/Managing_NeSI_notifications.png)

@@ -1,9 +1,9 @@
 ---
 created_at: '2019-09-16T09:20:18Z'
 hidden: true
-label_names:
-- .core
 position: 0
+tags:
+- .core
 title: Core Dumps
 vote_count: 0
 vote_sum: 0

@@ -1,9 +1,9 @@
 ---
 created_at: '2022-03-31T20:51:51Z'
 hidden: false
-label_names:
-- mynesi
 position: 0
+tags:
+- mynesi
 title: Requesting to renew an allocation via my.nesi.org.nz
 vote_count: 5
 vote_sum: 5
@@ -25,16 +25,17 @@ zendesk_section_id: 360001059296
 1.  Login to <https://my.nesi.org.nz/projects/list> and select a project
     from the list.  
     ![Screenshot 2023-08-07 at 15-21-11
-    my.nesi.png](../../assets/images/7614368934415..png)
+    my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.png)
 2.  Click the Plus button icon 'action' next to the compute allocation
     line item   
     ![Screenshot 2023-08-07 at 15-21-51
-    my.nesi.png](../../assets/images/7614368936079..png)
+    my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_0.png)
 3.  Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'   
-    <img src="../../assets/images/4600269021199..png" width="636"
-    height="505" alt="mceclip2.png" />
+    <img
+    src="../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png"
+    width="636" height="505" alt="mceclip2.png" />
 
 ### Can I request any allocation size?
 

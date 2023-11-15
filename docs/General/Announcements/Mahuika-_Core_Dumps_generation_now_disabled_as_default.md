@@ -1,13 +1,13 @@
 ---
 created_at: '2022-07-11T23:23:04Z'
 hidden: false
-label_names:
+position: 0
+status: new
+tags:
 - mahuika
 - .core
 - corefile
 - coredump
-position: 0
-status: new
 title: 'Mahuika: Core Dumps generation now disabled as default'
 vote_count: 0
 vote_sum: 0

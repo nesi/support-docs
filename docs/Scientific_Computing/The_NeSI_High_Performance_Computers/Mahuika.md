@@ -1,12 +1,12 @@
 ---
 created_at: '2018-04-22T21:09:28Z'
 hidden: false
-label_names:
+position: 3
+tags:
 - hpc
 - info
 - mahuika
 - cs400
-position: 3
 title: Mahuika
 vote_count: 7
 vote_sum: 3

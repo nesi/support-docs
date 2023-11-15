@@ -1,9 +1,9 @@
 ---
 created_at: '2019-04-07T23:56:57Z'
 hidden: false
-label_names:
-- slurm
 position: 5
+tags:
+- slurm
 title: Finding Job Efficiency
 vote_count: 8
 vote_sum: 8
@@ -182,7 +182,7 @@ parent process).
 
 Processes in green can be ignored
 
-<img src="../../assets/images/how_to_read_htop.png" width="929"
+<img src="../../assets/images/Finding_Job_Efficiency.png" width="929"
 height="252" alt="how_to_read_htop.png" />
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
@@ -216,12 +216,12 @@ more details.
 
 ## Example
 
-![qdyn\_eff.png](../../assets/images/qdyn_eff.png)
+![qdyn\_eff.png](../../assets/images/Finding_Job_Efficiency_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
-![qdyn\_walltime.png](../../assets/images/qdyn_walltime.png)
+![qdyn\_walltime.png](../../assets/images/Finding_Job_Efficiency_1.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

@@ -1,11 +1,11 @@
 ---
 created_at: '2018-11-05T21:24:29Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - access
 - account
 - mynesi
-position: 0
 title: Why am I seeing 'Account is not ready'?
 vote_count: 0
 vote_sum: 0

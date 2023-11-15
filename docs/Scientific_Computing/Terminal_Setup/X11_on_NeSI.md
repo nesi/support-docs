@@ -1,8 +1,8 @@
 ---
 created_at: '2019-07-30T01:58:26Z'
 hidden: false
-label_names: []
 position: 4
+tags: []
 title: X11 on NeSI
 vote_count: 2
 vote_sum: 2
@@ -51,7 +51,7 @@ taskbar 
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](../../assets/images/xon.png)=on, ![off.png](../../assets/images/off.png)=off). 
+> (![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off). 
 
 # X-Forwarding
 
@@ -75,10 +75,10 @@ ssh -Y login.nesi.org.nz
  Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
-<img src="../../assets/images/x11moba.png" width="451" height="303"
-alt="x11moba.png" />
+<img src="../../assets/images/X11_on_NeSI_2.png" width="451"
+height="303" alt="x11moba.png" />
 
-If the ![mceclip0.png](../../assets/images/X11_on_NeSI_0.png) button in
+If the ![mceclip0.png](../../assets/images/X11_on_NeSI_3.png) button in
 the top right corner of your window is coloured, the X-server should be
 running.
 

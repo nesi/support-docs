@@ -1,10 +1,10 @@
 ---
 created_at: '2018-05-01T23:18:39Z'
 hidden: false
-label_names:
+position: 8
+tags:
 - info
 - assessment
-position: 8
 title: Institutional allocations
 vote_count: 0
 vote_sum: 0

@@ -1,11 +1,11 @@
 ---
 created_at: '2019-01-10T02:22:09Z'
 hidden: false
-label_names: []
 position: 1
+tags: []
 title: 'Slurm: Reference Sheet'
-vote_count: 9
-vote_sum: 9
+vote_count: 10
+vote_sum: 10
 zendesk_article_id: 360000691716
 zendesk_section_id: 360000278975
 ---

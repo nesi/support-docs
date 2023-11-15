@@ -1,8 +1,8 @@
 ---
 created_at: '2021-05-13T01:00:08Z'
 hidden: false
-label_names: []
 position: 1
+tags: []
 title: RStudio via Jupyter on NeSI
 vote_count: 7
 vote_sum: 3
@@ -37,7 +37,7 @@ NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
 
-![rstudio\_launcher.png](../../assets/images/4595373978255..png)
+![rstudio\_launcher.png](../../assets/images/RStudio_via_Jupyter_on_NeSI.png)
 
 Clicking on this entry will open a separate tab in your web browser,
 where RStudio will be accessible.
@@ -145,7 +145,7 @@ a failure by JupyterLab. Please try to start RStudio again from the
 launcher. If the problem persists, contact our support team at
 <support@nesi.org.nz>.
 
-![error\_500.PNG](../../assets/images/4614666941455..png)
+![error\_500.PNG](../../assets/images/RStudio_via_Jupyter_on_NeSI_0.png)
 
 If you have disabled javascript in your web browser, you will need to
 enter your password manually in the RStudio login screen. To retrieve

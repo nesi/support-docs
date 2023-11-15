@@ -1,8 +1,8 @@
 ---
 created_at: '2018-05-29T04:01:33Z'
 hidden: false
-label_names: []
 position: 6
+tags: []
 title: Personal Globus Endpoint Configuration
 vote_count: 0
 vote_sum: 0

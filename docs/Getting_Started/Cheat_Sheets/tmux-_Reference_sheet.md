@@ -1,8 +1,8 @@
 ---
 created_at: '2022-03-24T22:11:13Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: 'tmux: Reference sheet'
 vote_count: 1
 vote_sum: 1

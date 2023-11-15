@@ -1,8 +1,8 @@
 ---
 created_at: '2021-05-25T02:15:36Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: What software environments on NeSI are optimised for Machine Learning and data
   science?
 vote_count: 0
@@ -55,7 +55,7 @@ As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using
 more broad terms such as "machine learning". 
 
-![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/MachineLearningSoftwareEnvironments-May2021.png)
+![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
 
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific

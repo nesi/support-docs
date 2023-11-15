@@ -1,7 +1,8 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
 hidden: false
-label_names:
+position: 2
+tags:
 - scp
 - transfer
 - copying
@@ -11,7 +12,6 @@ label_names:
 - cp
 - move
 - moving
-position: 2
 title: Moving files to and from the cluster
 vote_count: 11
 vote_sum: 3
@@ -50,14 +50,14 @@ connecting from a Windows, Mac or a Linux computer.
 
 To upload a file, click on the 
 
-![](../../assets/images/7328082899471..png)
+![](../../assets/images/Moving_files_to_and_from_the_cluster.png)
 
 button, near the top left and generally under the Run button.
 
 To download a file, navigate the file browser on the left and
 right-click on the file to see the menu below,
 
-![](../../assets/images/7328134296079..png)
+![](../../assets/images/Moving_files_to_and_from_the_cluster_0.png)
 
 The Download button is at the bottom.
 
@@ -115,7 +115,7 @@ This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../../assets/images/360003129656..png)
+![mceclip0.png](../../assets/images/Moving_files_to_and_from_the_cluster_1.png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
@@ -128,7 +128,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/360001503115..png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/Moving_files_to_and_from_the_cluster_2.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided

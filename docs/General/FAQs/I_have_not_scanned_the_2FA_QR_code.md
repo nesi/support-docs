@@ -1,12 +1,12 @@
 ---
 created_at: '2018-11-05T22:01:15Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - 2fa
 - access
 - account
 - authentication
-position: 0
 title: I have not scanned the 2FA QR code
 vote_count: 0
 vote_sum: 0

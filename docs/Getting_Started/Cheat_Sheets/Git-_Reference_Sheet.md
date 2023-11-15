@@ -1,12 +1,12 @@
 ---
 created_at: '2020-05-07T02:51:35Z'
 hidden: false
-label_names:
+position: 2
+tags:
 - git
 - github
 - version control
 - repository
-position: 2
 title: 'Git: Reference Sheet'
 vote_count: 11
 vote_sum: 11
@@ -30,7 +30,7 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](../../assets/images/Git_Diagram.svg)
+![Git\_Diagram.svg](../../assets/images/Git-_Reference_Sheet.svg)
 
 ## Authentication
 
@@ -73,19 +73,19 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     page, click your profile photo click **Settings**.
 
     ![Settings icon in the user
-    bar](../../assets/images/userbar-account-settings.png)
+    bar](../../assets/images/Git-_Reference_Sheet.png)
 
 -   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
-    There should be an image here but it couldn't be loaded.
+    ![SSH Key button](../../assets/images/Git-_Reference_Sheet_0.png)
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
-    There should be an image here but it couldn't be loaded.
+    ![The key field](../../assets/images/Git-_Reference_Sheet_1.png)
 
 -   Click **Add SSH key**.
 

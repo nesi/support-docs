@@ -1,8 +1,8 @@
 ---
 created_at: '2022-08-03T21:35:50Z'
 hidden: false
-label_names: []
 position: 4
+tags: []
 title: Cylc
 vote_count: 0
 vote_sum: 0
@@ -220,7 +220,7 @@ $ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
 Here, we see that our workflow "simple" has a "taskC", which waits for
 "taskA" and "taskB" to complete,
 
-![simple.png](../../assets/images/5255042984079..png)
+![simple.png](../../assets/images/Cylc.png)
 
 The "1" indicates that this workflow graph is executed only once.
 

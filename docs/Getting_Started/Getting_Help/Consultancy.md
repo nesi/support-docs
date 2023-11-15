@@ -1,9 +1,9 @@
 ---
 created_at: '2019-02-07T21:55:45Z'
 hidden: false
-label_names:
-- help
 position: 1
+tags:
+- help
 title: Consultancy
 vote_count: 1
 vote_sum: 1

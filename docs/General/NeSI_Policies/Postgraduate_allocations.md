@@ -1,10 +1,10 @@
 ---
 created_at: '2018-05-01T23:17:10Z'
 hidden: false
-label_names:
+position: 10
+tags:
 - info
 - assessment
-position: 10
 title: Postgraduate allocations
 vote_count: 0
 vote_sum: 0

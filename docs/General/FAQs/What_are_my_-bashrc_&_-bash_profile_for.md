@@ -1,8 +1,8 @@
 ---
 created_at: '2019-10-03T04:08:49Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: What are my .bashrc & .bash_profile for?
 vote_count: 1
 vote_sum: 1

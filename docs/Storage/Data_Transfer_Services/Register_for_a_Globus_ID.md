@@ -1,9 +1,9 @@
 ---
 created_at: '2018-05-28T04:43:58Z'
 hidden: true
-label_names:
-- globus
 position: 11
+tags:
+- globus
 title: Register for a Globus ID
 vote_count: 0
 vote_sum: 0

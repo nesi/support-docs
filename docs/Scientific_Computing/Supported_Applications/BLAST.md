@@ -1,10 +1,10 @@
 ---
 created_at: '2015-08-27T04:44:00Z'
 hidden: false
-label_names:
+position: 26
+tags:
 - mahuika
 - biology
-position: 26
 title: BLAST
 vote_count: 1
 vote_sum: -1

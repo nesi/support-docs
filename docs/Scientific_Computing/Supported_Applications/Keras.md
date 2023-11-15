@@ -1,8 +1,8 @@
 ---
 created_at: '2019-07-24T04:30:33Z'
 hidden: false
-label_names: []
 position: 34
+tags: []
 title: Keras
 vote_count: 0
 vote_sum: 0
@@ -61,7 +61,7 @@ An example of image is test/img49.jpg.
 display test/img49.jpg
 ```
 
-<img src="../../assets/images/img49.jpg" width="100" height="100"
+<img src="../../assets/images/Keras.jpg" width="100" height="100"
 alt="img49.jpg" />
 
 which shows five, partially overlapping dots. Note that along with the
@@ -139,7 +139,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../../assets/images/someResults.png)
+![someResults.png](../../assets/images/Keras.png)
 
 (The purple images have no dots.) With each image the number of dots is
 displayed as well as the value inferred by the model in parentheses. The

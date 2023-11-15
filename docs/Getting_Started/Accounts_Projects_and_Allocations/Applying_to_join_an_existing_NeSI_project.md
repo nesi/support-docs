@@ -1,12 +1,12 @@
 ---
 created_at: '2019-01-11T01:11:34Z'
 hidden: false
-label_names:
+position: 2
+tags:
 - info
 - project
 - request_membership
 - mynesi
-position: 2
 title: Applying to join an existing NeSI project
 vote_count: 0
 vote_sum: 0

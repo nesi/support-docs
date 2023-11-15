@@ -1,8 +1,8 @@
 ---
 created_at: '2023-03-06T19:04:56Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: BRAKER
 vote_count: 0
 vote_sum: 0
@@ -80,8 +80,8 @@ Artistic License
 >
 >  
 >
-> -   <img src="../../assets/images/6529551751823..png" width="476"
->     height="464" alt="genemark_es_license.png" />
+> -   <img src="../../assets/images/BRAKER.png" width="476" height="464"
+>     alt="genemark_es_license.png" />
 > -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
 > -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
 >     home directory as  a **hidden** file under the filename `.gm_key`

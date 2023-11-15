@@ -1,8 +1,8 @@
 ---
 created_at: '2020-03-13T03:23:18Z'
 hidden: false
-label_names: []
 position: 13
+tags: []
 title: MAKER
 vote_count: 0
 vote_sum: 0

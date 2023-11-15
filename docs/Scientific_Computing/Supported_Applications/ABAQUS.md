@@ -1,13 +1,13 @@
 ---
 created_at: '2015-10-12T00:28:38Z'
 hidden: false
-label_names:
+position: 21
+tags:
 - mahuika
 - engineering
 - gpu
 - mpi
 - omp
-position: 21
 title: ABAQUS
 vote_count: 2
 vote_sum: 0
@@ -246,7 +246,7 @@ rm "abaqus_v6.env"
 
  
 
-![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS_speedup_SharedVMPI.png)
+![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
 
  
 

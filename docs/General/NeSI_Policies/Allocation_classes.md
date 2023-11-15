@@ -1,8 +1,8 @@
 ---
 created_at: '2019-04-25T22:26:56Z'
 hidden: false
-label_names: []
 position: 7
+tags: []
 title: Allocation classes
 vote_count: 1
 vote_sum: 1
