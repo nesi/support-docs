@@ -53,7 +53,7 @@ command for ONE core file:
 ``` sl
 gdb -c core.12345 /path/to/bin/exe
 ...
->  bt
+      bt
 ```
 
 This assumes that the crashing job used the executable

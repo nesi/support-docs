@@ -20,14 +20,12 @@ zendesk_section_id: 360001189255
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Note
->
-> This functionality is experimental and may introduce breaking changes
-> in the future. These notes should be read in conjunction with NeSI's
-> main [R support
-> page](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R)
->
-> Your feedback is welcome, please don't hesitate to contact us at
-> <support@nesi.org.nz> to make suggestions.
+     This functionality is experimental and may introduce breaking changes
+     in the future. These notes should be read in conjunction with NeSI's
+     main [R support
+     page](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R)
+     Your feedback is welcome, please don't hesitate to contact us at
+     <support@nesi.org.nz> to make suggestions.
 
 # Getting started
 
@@ -70,7 +68,7 @@ correct Library Paths are available. For R/4.2.1 the command
 `.libPaths()` will return the following:
 
 ``` sl
-> .libPaths()
+     .libPaths()
 [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 ```
@@ -93,7 +91,7 @@ name, and is emptied with each new session. So will not fill up your
 home directory.
 
 ``` sl
->tempdir()
+    tempdir()
 [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
 ```
 

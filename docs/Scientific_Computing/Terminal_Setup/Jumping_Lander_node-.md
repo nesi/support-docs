@@ -20,10 +20,9 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have your [connection to the NeSI
->     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
->     configured.
+     -   Have your [connection to the NeSI
+         cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
+         configured.
 
 For the purposes of connecting to the cluster as specified in
 (connecting to cluster) this is **included in the setup**. This page is
@@ -45,17 +44,15 @@ described
 
 **Remote Port:** Any process connecting to `127.0. 0.1:<remote port>` on
 your remote will be forwarded to your local.
-
-> -   ``` sl
->     ```
+     -   ``` sl
+         ```
 
 # MobaXterm
 !!! info Tips
->
-> -   MobaXterm has an internal terminal which acts like a linux
->     terminal and can be configured as described in the [Standard
->     Terminal
->     Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535). 
+     -   MobaXterm has an internal terminal which acts like a linux
+         terminal and can be configured as described in the [Standard
+         Terminal
+         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535). 
 
 MobaXterm has a GUI to setup and launch sessions with port forwarding,
 click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
@@ -75,9 +72,8 @@ click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 
 *Coming soon..*
 !!! info What Next?
->
-> -   Using
->     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
->     the cluster.
-> -   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
-> -   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)
+     -   Using
+         [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
+         the cluster.
+     -   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
+     -   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)

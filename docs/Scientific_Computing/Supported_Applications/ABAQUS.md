@@ -39,10 +39,9 @@ hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
 !!! info Tips
->
-> Required ABAQUS licences can be determined by this simple and
-> intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
-> of CPUs.
+     Required ABAQUS licences can be determined by this simple and
+     intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
+     of CPUs.
 
 You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
@@ -58,19 +57,15 @@ Not all solvers are compatible with all types of parallelisation.
 | `mp_mode=threads` | ✖                  | ✔                | ✔             | ✔              |
 | `mp_mode=mpi`     | ✔                  | ✔                | ✖             | ✖              |
 !!! info Note
->
-> If your input files were created using an older version of ABAQUS you
-> will need to update them using the command,
->
-> ``` sl
-> abaqus -upgrade -job new_job_name -odb old.odb
-> ```
->
-> or
->
-> ``` sl
-> abaqus -upgrade -job new_job_name -inp old.inp
-> ```
+     If your input files were created using an older version of ABAQUS you
+     will need to update them using the command,
+     ``` sl
+     abaqus -upgrade -job new_job_name -odb old.odb
+     ```
+     or
+     ``` sl
+     abaqus -upgrade -job new_job_name -inp old.inp
+     ```
 
 <table>
 <colgroup>
@@ -240,9 +235,8 @@ parameter=value" > "abaqus_v6.env"
 rm "abaqus_v6.env"
 ```
 !!! info Useful Links
->
-> -   [Command line options for standard
->     submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
+     -   [Command line options for standard
+         submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
 
  
 

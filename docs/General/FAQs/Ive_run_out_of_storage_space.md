@@ -35,10 +35,9 @@ project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
 nobackup_nesi99999              6.833T            10000000    2691383   26.91%
 ```
 !!! info Note
->
-> There is a delay between making changes to a filesystem and seeing the
-> change in `nn_storage_quota`, immediate file count and disk space can
-> be found using the commands `du --inodes` and `du -h` respectively.
+     There is a delay between making changes to a filesystem and seeing the
+     change in `nn_storage_quota`, immediate file count and disk space can
+     be found using the commands `du --inodes` and `du -h` respectively.
 
 There are a few ways to deal with file count problems
 

@@ -9,11 +9,11 @@ jobs:
     with:
       fileList: docs/**/*.md
   testBuild:
-     name: Attempts to build site.
+     name: Test builds the documentation.
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v3
          with:
           fetch-depth: 0
        - run: pip install -r requirements.txt
-       - run: mkdocs build 2>&1 |  awk -F " - " '{gsub(/ /, "", $1);gsub(/INFO/, "notice", $1); printf("::%s::%s\n",$1,$2) }'
+       - run: mkdocs -v build  2>&1 | awk -F " - " '{gsub(/ /, "", $1);gsub(/INFO/, "notice", $1); printf("::%s::%s\n",$1,$2) }'

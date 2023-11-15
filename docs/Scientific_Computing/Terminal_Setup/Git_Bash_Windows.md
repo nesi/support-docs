@@ -20,12 +20,10 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have a [NeSI
->     account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
->
-> -   Be a member of an [active
->     project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
+     -   Have a [NeSI
+         account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
+     -   Be a member of an [active
+         project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
 
 ## First time setup
 

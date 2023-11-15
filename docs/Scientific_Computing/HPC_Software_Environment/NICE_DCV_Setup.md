@@ -98,11 +98,10 @@ must create an SSH tunnel through the NeSI lander node.
 
 ## Linux, Mac, or Windows Subsystem for Linux
 !!! info Warning
->
-> If successful, commands to open SSH tunnels will look like they are
-> doing nothing (hanging) but it is important to leave them running.
-> Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
-> will no longer be able to connect to your NICE DCV session.
+     If successful, commands to open SSH tunnels will look like they are
+     doing nothing (hanging) but it is important to leave them running.
+     Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
+     will no longer be able to connect to your NICE DCV session.
 
 1.  On your machine run the following command in your Linux terminal
     emulator (assuming you added the

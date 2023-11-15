@@ -25,11 +25,10 @@ zendesk_section_id: 360001189255
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Note
->
-> This service is available for users with a current allocation on
-> Mahuika only.  
-> [Please contact us to request a suitable
-> allocation.](https://support.nesi.org.nz/hc/en-gb/requests/new)
+     This service is available for users with a current allocation on
+     Mahuika only.  
+     [Please contact us to request a suitable
+     allocation.](https://support.nesi.org.nz/hc/en-gb/requests/new)
 
 # Introduction
 
@@ -43,21 +42,20 @@ learning, numerical simulation, managing [Slurm job
 submissions](https://support.nesi.org.nz/hc/en-gb/articles/360000684396)
 and workflows and much more.
 !!! info See also
->
-> -   See the [RStudio via Jupyter on
->     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
->     page for launching an RStudio instance.
-> -   See the [MATLAB via Jupyter on
->     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4614893064591)
->     page for launching MATLAB via Jupyter
-> -   See the [Virtual Desktop via Jupyter on
->     NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
->     page for launching a virtual desktop via Jupyter.
-> -   See the [Jupyter kernels - Tool-assisted
->     management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
->     (recommended) and [Jupyter kernels - Manual
->     management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
->     pages for adding kernels.
+     -   See the [RStudio via Jupyter on
+         NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
+         page for launching an RStudio instance.
+     -   See the [MATLAB via Jupyter on
+         NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4614893064591)
+         page for launching MATLAB via Jupyter
+     -   See the [Virtual Desktop via Jupyter on
+         NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
+         page for launching a virtual desktop via Jupyter.
+     -   See the [Jupyter kernels - Tool-assisted
+         management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
+         (recommended) and [Jupyter kernels - Manual
+         management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
+         pages for adding kernels.
 
 # Accessing Jupyter on NeSI
 
@@ -78,10 +76,9 @@ be up and running within one to two minutes. Requesting a GPU can
 increase this time significantly as there are only a small number of
 GPUs available at NeSI.
 !!! info Tip
->
-> If your server appears to not have started within 3 minutes please
-> reload the browser window and check again, otherwise contact
-> [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
+     If your server appears to not have started within 3 minutes please
+     reload the browser window and check again, otherwise contact
+     [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
 
 # Known issues
 
@@ -209,14 +206,13 @@ These changes will only take effect after relaunching your Jupyter
 server and then you should be able to install JupyterLab extensions as
 you please.
 !!! info Note
->
-> The above commands will put the JupyterLab application directory in
-> your home directory. The application directory often requires at least
-> 1-2GB of disk space and 30,000 inodes (file count), so make sure you
-> have space available in your home directory first (see [NeSI File
-> Systems and
-> Quotas](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas))
-> or request a larger quota.
+     The above commands will put the JupyterLab application directory in
+     your home directory. The application directory often requires at least
+     1-2GB of disk space and 30,000 inodes (file count), so make sure you
+     have space available in your home directory first (see [NeSI File
+     Systems and
+     Quotas](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas))
+     or request a larger quota.
 
 You could change the path to point to a location in your project
 directory, especially if multiple people on your project will share the

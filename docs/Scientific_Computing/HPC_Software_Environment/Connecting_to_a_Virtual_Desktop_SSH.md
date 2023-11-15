@@ -32,14 +32,12 @@ faster).
 
 # Connecting Through SSH
 !!! info Requirements
->
-> You must be able to [forward a
-> port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
+     You must be able to [forward a
+     port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
 !!! info Note
->
-> The Virtual desktops are still in development, please report any
-> issues to NeSI support, or open an issue
-> [here](https://github.com/nesi/nesi-virtual-desktops/issues).
+     The Virtual desktops are still in development, please report any
+     issues to NeSI support, or open an issue
+     [here](https://github.com/nesi/nesi-virtual-desktops/issues).
 
 # Setup
 
@@ -56,9 +54,8 @@ For example:
 ssh -L 1234:localhost:1234 mahuika
 ```
 !!! info Tip
->
-> Port numbers should be between **1025-49151**. It's OK to use the same
-> number for local and remote ports (makes it easier to remember too!)
+     Port numbers should be between **1025-49151**. It's OK to use the same
+     number for local and remote ports (makes it easier to remember too!)
 
 ## Add VDT to path
 

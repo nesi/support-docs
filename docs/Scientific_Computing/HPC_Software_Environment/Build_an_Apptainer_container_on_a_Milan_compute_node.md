@@ -89,18 +89,16 @@ More information about how to submit a Slurm job is available in the
 job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396) support
 page.
 !!! info Build environment variables
->
-> To build containers, you need to ensure that Apptainer has enough
-> storage space to create intermediate files. It also requires a cache
-> folder to save images pulled from a different location (e.g.
-> DockerHub). By default both of these locations are set to `/tmp` which
-> has limited space, large builds may exceed this limitation causing the
-> builder to crash. The environment variables `APPTAINER_TMPDIR` and
-> `APPTAINER_CACHEDIR` are used to overwrite the default location of
-> these directories.
->
-> In this example, the Slurm job submission script creates these folders
-> using your project `nobackup` folder.
+     To build containers, you need to ensure that Apptainer has enough
+     storage space to create intermediate files. It also requires a cache
+     folder to save images pulled from a different location (e.g.
+     DockerHub). By default both of these locations are set to `/tmp` which
+     has limited space, large builds may exceed this limitation causing the
+     builder to crash. The environment variables `APPTAINER_TMPDIR` and
+     `APPTAINER_CACHEDIR` are used to overwrite the default location of
+     these directories.
+     In this example, the Slurm job submission script creates these folders
+     using your project `nobackup` folder.
 
 # Known limitations
 
@@ -120,8 +118,6 @@ While making image from oci registry: error fetching image to cache: while build
 it is likely due to an upstream issue (e.g. bad image on Dockerhub). In
 this case, try an older image version or a different base image.
 !!! info Other limitations
->
-> This method, using fakeroot, is known to **not** work for all types of
-> Apptainer/Singularity containers.
->
-> If you encounter an issue, please contact us at <support@nesi.org.nz>.
+     This method, using fakeroot, is known to **not** work for all types of
+     Apptainer/Singularity containers.
+     If you encounter an issue, please contact us at <support@nesi.org.nz>.

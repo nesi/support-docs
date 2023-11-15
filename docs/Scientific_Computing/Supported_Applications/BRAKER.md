@@ -88,10 +88,9 @@ Artistic License
 >      .i.e. `~/.gm_key`
 >
 !!! info Copy AUGUSTUS config to a path with read/write permissions
->
-> Make a copy of AUGUSTUS config from
-> ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config***
->  to path with read/write permissions .i.e. project, nobackup,home 
+     Make a copy of AUGUSTUS config from
+     ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config***
+      to path with read/write permissions .i.e. project, nobackup,home 
 
 ## Example Slurm scripts
 
