@@ -68,30 +68,24 @@ Artistic License
 
 ###  
 !!! info Obtain GeneMark-ES/ET Academic License 
->
-> GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
-> individual academic license  (this is free). This can be obtained as
-> below
->
-> -   Download URL
->     <http://topaz.gatech.edu/genemark/license_download.cgi>
->
->  
->
->  
->
-> -   <img src="../../assets/images/BRAKER.png" width="476" height="464"
->     alt="genemark_es_license.png" />
-> -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
-> -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
->     home directory as  a **hidden** file under the filename `.gm_key`
->      .i.e. `~/.gm_key`
->
+     GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
+     individual academic license  (this is free). This can be obtained as
+     below
+     -   Download URL
+         <http://topaz.gatech.edu/genemark/license_download.cgi>
+      
+      
+     -   <img src="../../assets/images/BRAKER.png" width="476" height="464"
+         alt="genemark_es_license.png" />
+     -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
+     -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
+         home directory as  a **hidden** file under the filename `.gm_key`
+          .i.e. `~/.gm_key`
+    
 !!! info Copy AUGUSTUS config to a path with read/write permissions
->
-> Make a copy of AUGUSTUS config from
-> ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config***
->  to path with read/write permissions .i.e. project, nobackup,home 
+     Make a copy of AUGUSTUS config from
+     ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config***
+      to path with read/write permissions .i.e. project, nobackup,home 
 
 ## Example Slurm scripts
 

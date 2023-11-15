@@ -208,13 +208,11 @@ defined.</td>
 </tbody>
 </table>
 !!! info Tip
->
-> Many options have a short and long form e.g.
-> `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
->
-> ``` sl
-> echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
-> ```
+     Many options have a short and long form e.g.
+     `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
+     ``` sl
+     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+     ```
 
 ## Tokens
 
@@ -234,11 +232,9 @@ Common examples.
 | `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
 | `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.             |
 !!! info Tip
->
-> In order to decrease the chance of a variable being misinterpreted you
-> should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
-> possible. e.g.
->
-> ``` sl
-> echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
-> ```
+     In order to decrease the chance of a variable being misinterpreted you
+     should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
+     possible. e.g.
+     ``` sl
+     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+     ```

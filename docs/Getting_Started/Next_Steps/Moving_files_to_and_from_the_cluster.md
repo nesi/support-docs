@@ -29,9 +29,8 @@ zendesk_section_id: 360000189716
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have an [active account and
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
 Find more information on the different types of directories
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
@@ -84,15 +83,14 @@ Move a file from Mahuika to your local machine.
 scp mahuika:<path/filename> <path/filename>
 ```
 !!! info Note
->
-> -   This will only work if you have set up aliases as described in
->     [Terminal
->     Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
-> -   As the terms 'maui' and 'mahuika' are defined locally, the above
->     commands *only works when using a local terminal* (i.e. not on
->     Mahuika).
-> -   If you are using Windows subsystem, the root paths are different
->     as shown by Windows. e.g. `C:` is located at `/mnt/c/`
+     -   This will only work if you have set up aliases as described in
+         [Terminal
+         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
+     -   As the terms 'maui' and 'mahuika' are defined locally, the above
+         commands *only works when using a local terminal* (i.e. not on
+         Mahuika).
+     -   If you are using Windows subsystem, the root paths are different
+         as shown by Windows. e.g. `C:` is located at `/mnt/c/`
 
 `scp` stands for Secure CoPy and operates in a similar way to regular cp
 with the source file as the left term and destination on the right.

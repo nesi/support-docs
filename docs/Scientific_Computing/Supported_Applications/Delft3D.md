@@ -106,6 +106,5 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 </tbody>
 </table>
 !!! info Note
->
-> Trying to use more tasks than there are partitions in your model will
-> cause failure.
+     Trying to use more tasks than there are partitions in your model will
+     cause failure.

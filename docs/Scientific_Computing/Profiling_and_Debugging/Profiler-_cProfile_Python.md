@@ -22,9 +22,8 @@ zendesk_section_id: 360000278935
 cProfile is the recommended profiler for most users. Documentation
 [here](https://docs.python.org/2/library/profile.html#module-profile).
 !!! info Tip
->
-> [ARM MAP](https://support.nesi.org.nz/hc/en-gb/articles/360000930396)
-> can also be used to profile Python code.
+     [ARM MAP](https://support.nesi.org.nz/hc/en-gb/articles/360000930396)
+     can also be used to profile Python code.
 
 # Running cProfile
 

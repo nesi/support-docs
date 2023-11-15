@@ -27,11 +27,10 @@ and `salloc`, both of which use most of the same options available to
 `sbatch` (see [our Slurm Reference
 Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)). 
 !!! info Warning
->
-> An interactive session will, once it starts, use the entire requested
-> block of CPU time and other resources unless earlier exited from, even
-> if unused. To avoid unnecessary charges to your project, don't forget
-> to exit an interactive session once finished.
+     An interactive session will, once it starts, use the entire requested
+     block of CPU time and other resources unless earlier exited from, even
+     if unused. To avoid unnecessary charges to your project, don't forget
+     to exit an interactive session once finished.
 
 ## Using 'srun --pty bash'
 
@@ -106,11 +105,10 @@ not available. You can request a start time using the `--begin` flag.
 
 The `--begin` flag takes either absolute or relative times as values.
 !!! info Warning
->
-> If you specify absolute dates and/or times, Slurm will interpret those
-> according to your environment's current time zone. Ensure that you
-> know what time zone your environment is using, for example by running
-> `date` in the same terminal session.
+     If you specify absolute dates and/or times, Slurm will interpret those
+     according to your environment's current time zone. Ensure that you
+     know what time zone your environment is using, for example by running
+     `date` in the same terminal session.
 
 -   `--begin=16:00` means start the job no earlier than 4 p.m. today.
     (Seconds are optional, but the time must be given in 24-hour
@@ -152,12 +150,11 @@ disrupted while you're away.
 
 ## Setting up a detachable terminal
 !!! info Warning
->
-> If you don't request your interactive session from within a detachable
-> terminal, any interruption to the controlling terminal, for example by
-> your computer going to sleep or losing its connection to the internet,
-> will permanently cancel that interactive session and remove it from
-> the queue, whether it has started or not.
+     If you don't request your interactive session from within a detachable
+     terminal, any interruption to the controlling terminal, for example by
+     your computer going to sleep or losing its connection to the internet,
+     will permanently cancel that interactive session and remove it from
+     the queue, whether it has started or not.
 
 1.  Log in to a Mahuika, Māui or Māui-ancil login node.
 2.  Start up `tmux` or `screen`.
@@ -183,10 +180,9 @@ time.
 Slurm offers an easy solution: Identify the job, and use `scontrol` to
 postpone its start time.
 !!! info Note
->
-> Job IDs are unique to each cluster but not across the whole of NeSI.
-> Therefore, `scontrol` must be run on a node belonging to the cluster
-> where the job is queued.
+     Job IDs are unique to each cluster but not across the whole of NeSI.
+     Therefore, `scontrol` must be run on a node belonging to the cluster
+     where the job is queued.
 
 The following command will delay the start of the job with numeric ID
 12345678 until (at the earliest) 9:30 a.m. the next day:
@@ -202,10 +198,9 @@ until (at the earliest) 9:30 a.m. on Monday:
 scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
 ```
 !!! info Warning
->
-> Don't just set `StartTime=tomorrow` with no time specification unless
-> you like the idea of your interactive session starting at midnight or
-> in the wee small hours of the morning.
+     Don't just set `StartTime=tomorrow` with no time specification unless
+     you like the idea of your interactive session starting at midnight or
+     in the wee small hours of the morning.
 
 ### Bringing forward the start of an interactive job
 

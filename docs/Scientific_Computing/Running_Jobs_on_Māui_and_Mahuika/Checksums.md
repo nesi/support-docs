@@ -63,12 +63,10 @@ ef749eb4110c2a3b3c747390095d0b76 corrupt.bin
 Note that filename, path, permissions or any other metadata does not
 affect the checksum.
 !!! info Note
->
-> Checksum functions are designed so that similar files *will not*
-> produce similar hashes.
->
-> You will only need to compare a few characters of the string to
-> confirm validity.
+     Checksum functions are designed so that similar files *will not*
+     produce similar hashes.
+     You will only need to compare a few characters of the string to
+     confirm validity.
 
 ## Commands
 

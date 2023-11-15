@@ -27,22 +27,19 @@ For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
 please have a look at the dedicated pages listed at the end of this
 page.
 !!! info Important
->
-> An overview of available GPU cards is available in the [Available GPUs
-> on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
-> support page.
->
-> Details about GPU cards for each system and usage limits are in the
-> [Mahuika Slurm
-> Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
-> and [Māui\_Ancil (CS500) Slurm
-> Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
-> support pages.
->
-> Details about pricing in terms of compute units can be found in the
-> [What is an
-> allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
-> page.
+     An overview of available GPU cards is available in the [Available GPUs
+     on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
+     support page.
+     Details about GPU cards for each system and usage limits are in the
+     [Mahuika Slurm
+     Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
+     and [Māui\_Ancil (CS500) Slurm
+     Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
+     support pages.
+     Details about pricing in terms of compute units can be found in the
+     [What is an
+     allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
+     page.
 
 # Request GPU resources using Slurm
 
@@ -158,19 +155,17 @@ srun --job-name "InteractiveGPU" --gpus-per-node 1 --cpus-per-task 8 --mem 2GB -
 will request and then start a bash session with access to a GPU, for a
 duration of 30 minutes.
 !!! info Important
->
-> When you use the `--gpus-per-node`option, Slurm automatically sets the
-> `CUDA_VISIBLE_DEVICES` environment variable inside your job
-> environment to list the index/es of the allocated GPU card/s on each
-> node.
->
-> ``` sl
-> $ srun --job-name "GPUTest" --gpus-per-node=P100:2 --time 00:05:00 --pty bash
-> srun: job 20015016 queued and waiting for resources
-> srun: job 20015016 has been allocated resources
-> $ echo $CUDA_VISIBLE_DEVICES
-> 0,1
-> ```
+     When you use the `--gpus-per-node`option, Slurm automatically sets the
+     `CUDA_VISIBLE_DEVICES` environment variable inside your job
+     environment to list the index/es of the allocated GPU card/s on each
+     node.
+     ``` sl
+     $ srun --job-name "GPUTest" --gpus-per-node=P100:2 --time 00:05:00 --pty bash
+     srun: job 20015016 queued and waiting for resources
+     srun: job 20015016 has been allocated resources
+     $ echo $CUDA_VISIBLE_DEVICES
+     0,1
+     ```
 
 # Load CUDA and cuDNN modules
 
@@ -192,9 +187,8 @@ module spider CUDA
 Please contact us at <support@nesi.org.nz> if you need a version not
 available on the platform.
 !!! info Note
->
-> On Māui Ancillary Nodes, use `module avail CUDA` to list available
-> versions.
+     On Māui Ancillary Nodes, use `module avail CUDA` to list available
+     versions.
 
 The CUDA module also provides access to additional command line tools:
 
@@ -283,9 +277,8 @@ Wed May 12 12:08:27 2021
 CUDA_VISIBLE_DEVICES=0
 ```
 !!! info Note
->
-> CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
-> GPU index 0 on this node. It is not a count of allocated GPUs.
+     CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
+     GPU index 0 on this node. It is not a count of allocated GPUs.
 
 # NVIDIA Nsight Systems and Compute profilers
 
@@ -325,19 +318,17 @@ line tool or the
 [ncu-ui](https://docs.nvidia.com/nsight-compute/NsightCompute/index.html)
 graphical interface.
 !!! info Important
->
-> The `nsys-ui` and `ncu-ui` tools require access to a display server,
-> either via
-> [X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975-X11-on-NeSI)
-> or a [Virtual
-> Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI).
-> You also need to load the `PyQt` module beforehand:
->
-> ``` sl
-> module load PyQt/5.12.1-gimkl-2020a-Python-3.8.2
-> module load Nsight-Systems/2020.5.1
-> nsys-ui  # this will work only if you have a graphical session
-> ```
+     The `nsys-ui` and `ncu-ui` tools require access to a display server,
+     either via
+     [X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975-X11-on-NeSI)
+     or a [Virtual
+     Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI).
+     You also need to load the `PyQt` module beforehand:
+     ``` sl
+     module load PyQt/5.12.1-gimkl-2020a-Python-3.8.2
+     module load Nsight-Systems/2020.5.1
+     nsys-ui  # this will work only if you have a graphical session
+     ```
 
 # Application and toolbox specific support pages
 

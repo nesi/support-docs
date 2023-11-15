@@ -23,56 +23,50 @@ zendesk_section_id: 360000196195
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> Compulsory:
->
-> -   Have a [NeSI Account
->     profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
-> -   NIWA researchers only: read and follow the [NIWA internal
->     documentation for gaining access to the
->     HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services) (this
->     link is only valid from within the NIWA network or VPN).
->
-> Preferred:
->
-> -   Assemble your project team.
-> -   Becoming familiar with the Linux command line. There are many
->     courses and online materials available, such as [Software
->     Carpentry](https://swcarpentry.github.io/shell-novice/), to help
->     you and your project team gain the necessary skills.
-> -   Become familiar with foundational HPC skills, for example by
->     attending a NeSI introductory workshop, one of our [weekly
->     introductory sessions (or watching the
->     recording)](https://support.nesi.org.nz/hc/en-gb/articles/360000428676),
->     or having one or more of your project team members do so.
-> -   Review our [allocation
->     classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176).
->     If you don't think you currently qualify for any class other than
->     Proposal Development, please [contact
->     us](https://support.nesi.org.nz/hc/requests/new) as soon as
->     possible to discuss your options. Your institution may be in a
->     position to buy a subscription from us while your Proposal
->     Development allocation is in effect if they do not already possess
->     one.
+     Compulsory:
+     -   Have a [NeSI Account
+         profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
+     -   NIWA researchers only: read and follow the [NIWA internal
+         documentation for gaining access to the
+         HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services) (this
+         link is only valid from within the NIWA network or VPN).
+     Preferred:
+     -   Assemble your project team.
+     -   Becoming familiar with the Linux command line. There are many
+         courses and online materials available, such as [Software
+         Carpentry](https://swcarpentry.github.io/shell-novice/), to help
+         you and your project team gain the necessary skills.
+     -   Become familiar with foundational HPC skills, for example by
+         attending a NeSI introductory workshop, one of our [weekly
+         introductory sessions (or watching the
+         recording)](https://support.nesi.org.nz/hc/en-gb/articles/360000428676),
+         or having one or more of your project team members do so.
+     -   Review our [allocation
+         classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176).
+         If you don't think you currently qualify for any class other than
+         Proposal Development, please [contact
+         us](https://support.nesi.org.nz/hc/requests/new) as soon as
+         possible to discuss your options. Your institution may be in a
+         position to buy a subscription from us while your Proposal
+         Development allocation is in effect if they do not already possess
+         one.
 
 Requests to use NeSI resources are [submitted via a web
 form](https://my.nesi.org.nz/). The NeSI team will endeavour to approve
 your project, or contact you for more information, within 3-5 working
 days of your submitting your project request.
 !!! info Note
->
-> If you are a member of NIWA please also ensure that you have also read
-> and followed the [NIWA internal documentation for gaining access to
-> the
-> HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services)
-> before applying for your NeSI project. *You will only be able to
-> access the link from behind the NIWA VPN.*
->
-> Other institutions may also put in place, or vary, pre-approval
-> processes from time to time. If you apply for a new project without
-> having completed any necessary pre-approval steps, your application
-> may be delayed more than usual, or we may notify you and ask you to
-> obtain pre-approval from your institution.
+     If you are a member of NIWA please also ensure that you have also read
+     and followed the [NIWA internal documentation for gaining access to
+     the
+     HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services)
+     before applying for your NeSI project. *You will only be able to
+     access the link from behind the NIWA VPN.*
+     Other institutions may also put in place, or vary, pre-approval
+     processes from time to time. If you apply for a new project without
+     having completed any necessary pre-approval steps, your application
+     may be delayed more than usual, or we may notify you and ask you to
+     obtain pre-approval from your institution.
 
 ## Information you will need to provide
 
@@ -102,10 +96,9 @@ information:
 You will also be given an opportunity to tell us anything else you think
 is relevant.
 !!! info What Next?
->
-> -   Your NeSI Project proposal will be
->     [reviewed](https://support.nesi.org.nz/hc/en-gb/articles/360000202136),
->     after which you will be informed of the outcome.
-> -   We may contact you if further details are required.
-> -   When your project is approved you will be able to [set your Linux
->     Password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995).
+     -   Your NeSI Project proposal will be
+         [reviewed](https://support.nesi.org.nz/hc/en-gb/articles/360000202136),
+         after which you will be informed of the outcome.
+     -   We may contact you if further details are required.
+     -   When your project is approved you will be able to [set your Linux
+         Password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995).

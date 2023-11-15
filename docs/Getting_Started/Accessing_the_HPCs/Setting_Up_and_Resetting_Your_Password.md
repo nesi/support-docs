@@ -23,11 +23,10 @@ zendesk_section_id: 360000034315
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have a [NeSI
->     account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
-> -   Be a member of an [active
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Have a [NeSI
+         account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
+     -   Be a member of an [active
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
 -   -   [Setting NeSI Password via my NeSI
         portal](#h_d7de94ee-b517-41dd-b70e-6fca380b38a6)
@@ -101,8 +100,7 @@ width="440" height="285" alt="password_set_confirmation.png" />
 src="../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png"
 width="440" height="285" alt="password_set_confirmation.png" />
 !!! info What next?
->
-> -   Set up [Second Factor
->     Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)
+     -   Set up [Second Factor
+         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)
 
  

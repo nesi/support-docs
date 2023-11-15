@@ -22,17 +22,16 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have an [active account and
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-> -   Set up your [Linux
->     Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
-> -   Set up Second [Factor
->     Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
-> -   Using standard Linux/Mac terminal *or* [Windows Subsystem for
->     Linux](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
->     with [Ubuntu
->     terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Set up your [Linux
+         Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
+     -   Set up Second [Factor
+         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
+     -   Using standard Linux/Mac terminal *or* [Windows Subsystem for
+         Linux](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
+         with [Ubuntu
+         terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
 
 ## First time setup
 
@@ -109,8 +108,7 @@ scp <path/filename> mahuika:~/
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
 !!! info What Next?
->
-> -   [Moving files to/from a
->     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
-> -   Setting up a
->     [X-Server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975) (optional).
+     -   [Moving files to/from a
+         cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+     -   Setting up a
+         [X-Server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975) (optional).

@@ -20,17 +20,15 @@ zendesk_section_id: 360000039036
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> Please make sure you have followed the recommended setup. See
-> [Choosing and Configuring Software for Connecting to the
-> Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
-> for more information.
+     Please make sure you have followed the recommended setup. See
+     [Choosing and Configuring Software for Connecting to the
+     Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
+     for more information.
 !!! info New Command Line Users
->
-> -   Most terminals do not give an indication of how many characters
->     have been typed when entering a password.
-> -   Paste is not usually bound to `ctrl` + `V` and will vary based on
->     your method of access.
+     -   Most terminals do not give an indication of how many characters
+         have been typed when entering a password.
+     -   Paste is not usually bound to `ctrl` + `V` and will vary based on
+         your method of access.
 
 # Repeatedly asking for First and Second Factor.
 

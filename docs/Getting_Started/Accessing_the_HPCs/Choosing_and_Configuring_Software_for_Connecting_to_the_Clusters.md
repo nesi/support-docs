@@ -24,13 +24,12 @@ zendesk_section_id: 360000034315
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info Requirements
->
-> -   Have an [active account and
->     project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
-> -   Set up your [NeSI Account
->     Password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995).
-> -   Set up [Two-Factor
->     Authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075).
+     -   Have an [active account and
+         project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
+     -   Set up your [NeSI Account
+         Password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995).
+     -   Set up [Two-Factor
+         Authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075).
 
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.
@@ -49,10 +48,9 @@ operating system and level of experience.
     NeSI. A terminal similar to the other setups describe below can be
     accessed through the Jupyter Launcher.  
 !!! info What next?
-    >
-    > -   More info on [Jupyter
-    >     Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
-    > -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
+     -   More info on [Jupyter
+         Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
+     -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
 # Linux or Mac OS
 
@@ -63,9 +61,8 @@ operating system and level of experience.
     "terminal".  
     Congratulations! You are ready to move to the next step.
 !!! info What next?
-    >
-    > -   Setting up your [Default
-    >     Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
+     -   Setting up your [Default
+         Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
 
 # Windows
 
@@ -75,24 +72,22 @@ different options, listed in order of preference.
 
 -   ## Ubuntu Terminal (Windows 10)
 !!! info Note
-    >
-    > The Ubuntu Terminal and Windows Subsystem for Linux require
-    > administrative privileges to enable and install them. If your
-    > institution has not given you such privileges, consider using
-    > another option such as MobaXTerm Portable Edition (see below).
+     The Ubuntu Terminal and Windows Subsystem for Linux require
+     administrative privileges to enable and install them. If your
+     institution has not given you such privileges, consider using
+     another option such as MobaXTerm Portable Edition (see below).
 
     This is the most functional replication of a Unix terminal available
     on Windows, and allows users to follow the same set of instructions
     given to Mac/Linux users. It may be necessary to enable Windows
     Subsystem for Linux (WSL) first.
 !!! info What next?
-    >
-    > -   Enabling
-    >     [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
-    > -   Setting up the [Ubuntu
-    >     Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575)
-    > -   Setting up
-    >     [X-Forwarding](https://support.nesi.org.nz/hc/en-gb/articles/4407442866703)
+     -   Enabling
+         [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
+     -   Setting up the [Ubuntu
+         Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575)
+     -   Setting up
+         [X-Forwarding](https://support.nesi.org.nz/hc/en-gb/articles/4407442866703)
 
 -   ## MobaXterm
 
@@ -108,9 +103,8 @@ different options, listed in order of preference.
     administrator privileges on your workstation or if your
     institution's IT team supports MobaXTerm.
 !!! info What next?
-    >
-    > -   Setting up
-    >     [MobaXterm](https://support.nesi.org.nz/hc/en-gb/articles/360000624696)
+     -   Setting up
+         [MobaXterm](https://support.nesi.org.nz/hc/en-gb/articles/360000624696)
 
 -   ## Using a Virtual Machine
 
@@ -131,9 +125,8 @@ different options, listed in order of preference.
     instructions as given for
     [Linux/MacOS](#h_c1bbd761-1133-499b-a61a-57b9c4320a1a).
 !!! info What next?
-    >
-    > -   Setting up a [Virtual
-    >     Machine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
+     -   Setting up a [Virtual
+         Machine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
 
 -   ## WinSCP
 
@@ -143,9 +136,8 @@ different options, listed in order of preference.
     more involved than with MobaXterm, therefore we do not recommend it
     for new users.
 !!! info What next?
-    >
-    > -   Setting up
-    >     [WinSCP](https://support.nesi.org.nz/hc/en-gb/articles/360000584256)
+     -   Setting up
+         [WinSCP](https://support.nesi.org.nz/hc/en-gb/articles/360000584256)
 
 -   ## Git Bash
 

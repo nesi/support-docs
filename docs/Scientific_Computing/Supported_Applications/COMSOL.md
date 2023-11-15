@@ -27,14 +27,13 @@ comsol --help
 
 Will display a list of COMSOL batch commands.
 !!! info Useful Links
->
-> -   [Running COMSOL in parallel on
->     clusters.](https://www.comsol.com/support/knowledgebase/1001/)
-> -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
->     the command
->     line.](https://www.comsol.com/support/knowledgebase/1250/)
-> -   [COMSOL and
->     Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
+     -   [Running COMSOL in parallel on
+         clusters.](https://www.comsol.com/support/knowledgebase/1001/)
+     -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
+         the command
+         line.](https://www.comsol.com/support/knowledgebase/1250/)
+     -   [COMSOL and
+         Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
 
 # Batch Submission
 
@@ -137,9 +136,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
 </tbody>
 </table>
 !!! info Important
->
-> If no output file is set, using `--output` the input file will be
-> updated instead.
+     If no output file is set, using `--output` the input file will be
+     updated instead.
 
 # Interactive Use
 
