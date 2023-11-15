@@ -1,10 +1,10 @@
 ---
 created_at: '2019-03-26T00:36:24Z'
 hidden: false
-label_names:
+position: 27
+tags:
 - engineering
 - COMSOL
-position: 27
 title: COMSOL
 vote_count: 1
 vote_sum: 1

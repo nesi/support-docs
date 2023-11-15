@@ -1,10 +1,10 @@
 ---
 created_at: '2019-01-07T01:10:28Z'
 hidden: false
-label_names:
+position: 3
+tags:
 - slurm
 - scheduler
-position: 3
 title: Submitting your first job
 vote_count: 8
 vote_sum: 8
@@ -52,7 +52,8 @@ Create a new file and open it with nano myjob.sl
 #SBATCH --mem=512MB          # Memory in MB
 #SBATCH --qos=debug          # debug QOS for high priority job tests
 
-    pwd # Prints working directory
+pwd # Prints working directory
+```
 
 Copy in the above text and save and exit the text editor with 'ctrl +
 x'.

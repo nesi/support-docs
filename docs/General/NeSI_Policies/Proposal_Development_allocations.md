@@ -1,10 +1,10 @@
 ---
 created_at: '2018-05-01T23:16:09Z'
 hidden: false
-label_names:
+position: 11
+tags:
 - info
 - assessment
-position: 11
 title: Proposal Development allocations
 vote_count: 1
 vote_sum: 1

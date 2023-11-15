@@ -1,9 +1,9 @@
 ---
 created_at: '2019-08-26T00:02:24Z'
 hidden: false
-label_names:
-- disk quota exceeded
 position: 0
+tags:
+- disk quota exceeded
 title: I've run out of storage space
 vote_count: 3
 vote_sum: 1

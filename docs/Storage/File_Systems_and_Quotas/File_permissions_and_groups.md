@@ -1,8 +1,8 @@
 ---
 created_at: '2018-05-21T05:14:00Z'
 hidden: false
-label_names: []
 position: 2
+tags: []
 title: File permissions and groups
 vote_count: 1
 vote_sum: 1

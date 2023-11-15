@@ -1,11 +1,11 @@
 ---
 created_at: '2018-05-01T23:10:09Z'
 hidden: false
-label_names:
+position: 9
+tags:
 - info
 - allocation
 - assessment
-position: 9
 title: Merit allocations
 vote_count: 1
 vote_sum: 1

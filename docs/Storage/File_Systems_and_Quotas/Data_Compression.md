@@ -1,7 +1,8 @@
 ---
 created_at: '2023-02-08T00:21:51Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - compression
 - data_compression
 - lz4
@@ -9,7 +10,6 @@ label_names:
 - zlib
 - z library
 - z-library
-position: 0
 title: Data Compression
 vote_count: 0
 vote_sum: 0

@@ -1,8 +1,8 @@
 ---
 created_at: '2021-08-17T03:13:55Z'
 hidden: false
-label_names: []
 position: 6
+tags: []
 title: AlphaFold
 vote_count: 2
 vote_sum: 2

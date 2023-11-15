@@ -1,8 +1,8 @@
 ---
 created_at: '2020-02-25T02:45:24Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: 'Unix Shell: Reference Sheet'
 vote_count: 1
 vote_sum: 1
@@ -57,12 +57,12 @@ Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
 > Pressing the 'tab' key once will automatically complete the line if it
 > is the only option. e.g. 
 >
-> ![complete1.gif](../../assets/images/complete1.gif)
+> ![complete1.gif](../../assets/images/Unix_Shell-_Reference_Sheet.gif)
 >
 > If there are more than one possible completions, pressing tab again
 > will show all those options.
 >
-> ![complete2.gif](../../assets/images/complete2.gif)
+> ![complete2.gif](../../assets/images/Unix_Shell-_Reference_Sheet_0.gif)
 >
 > Use of the tab key can help navigate the filesystem, spellcheck your
 > commands and save you time typing.

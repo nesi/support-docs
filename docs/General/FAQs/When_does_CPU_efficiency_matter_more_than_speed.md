@@ -1,8 +1,8 @@
 ---
 created_at: '2021-05-03T00:36:34Z'
 hidden: true
-label_names: []
 position: 0
+tags: []
 title: When does CPU efficiency matter more than speed?
 vote_count: 0
 vote_sum: 0
@@ -30,7 +30,9 @@ efficiency rather than speed, and running on a single CPU is almost
 always more efficient than any form of parallelisation. 
 
 <figure>
-There should be an image here but it couldn't be loaded.
+<img
+src="../../assets/images/When_does_CPU_efficiency_matter_more_than_speed.png"
+alt="4tasks.png" />
 <figure>
 
 </figure>

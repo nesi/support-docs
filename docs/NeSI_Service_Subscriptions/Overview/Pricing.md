@@ -1,8 +1,8 @@
 ---
 created_at: '2023-07-05T23:56:56Z'
 hidden: false
-label_names: []
 position: 1
+tags: []
 title: Pricing
 vote_count: 0
 vote_sum: 0

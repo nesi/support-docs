@@ -1,8 +1,8 @@
 ---
 created_at: '2019-05-15T23:29:41Z'
 hidden: true
-label_names: []
 position: 0
+tags: []
 title: Can I have more disk space?
 vote_count: 0
 vote_sum: 0

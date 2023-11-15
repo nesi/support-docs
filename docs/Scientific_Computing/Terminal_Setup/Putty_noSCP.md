@@ -1,8 +1,8 @@
 ---
 created_at: '2018-11-30T00:32:38Z'
 hidden: true
-label_names: []
 position: 6
+tags: []
 title: Putty (noSCP)
 vote_count: 0
 vote_sum: 0
@@ -33,24 +33,24 @@ lander.nesi.org.nz
 
  
 
- There should be an image here but it couldn't be loaded.
+ ![putty1.png](../../assets/images/Putty_noSCP.png)
 
 2\. Open Connection &gt; Data and enter in your username under
 'Auto-Login username. 
 
-There should be an image here but it couldn't be loaded.
+![putty2.png](../../assets/images/Putty_noSCP_0.png)
 
  
 
 3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
 
-There should be an image here but it couldn't be loaded.
+![putty4.png](../../assets/images/Putty_noSCP_1.png)
 
 4\. Do this
 
 SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
-There should be an image here but it couldn't be loaded.
+![putty5.png](../../assets/images/Putty_noSCP_2.png)
 
  
 
@@ -58,4 +58,4 @@ There should be an image here but it couldn't be loaded.
 
 Save session
 
-There should be an image here but it couldn't be loaded.
+![putty3.png](../../assets/images/Putty_noSCP_3.png)

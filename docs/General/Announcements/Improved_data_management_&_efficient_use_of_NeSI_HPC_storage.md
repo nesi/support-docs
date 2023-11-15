@@ -1,8 +1,8 @@
 ---
 created_at: '2021-09-30T22:51:02Z'
 hidden: false
-label_names: []
 position: 3
+tags: []
 title: Improved data management & efficient use of NeSI HPC storage
 vote_count: 0
 vote_sum: 0

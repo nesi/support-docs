@@ -1,8 +1,8 @@
 ---
 created_at: '2020-02-25T02:35:13Z'
 hidden: false
-label_names: []
 position: 3
+tags: []
 title: What is an allocation?
 vote_count: 2
 vote_sum: 0

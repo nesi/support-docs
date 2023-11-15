@@ -1,8 +1,8 @@
 ---
 created_at: '2019-08-14T05:49:00Z'
 hidden: false
-label_names: []
 position: 6
+tags: []
 title: How do I request memory?
 vote_count: 1
 vote_sum: 1

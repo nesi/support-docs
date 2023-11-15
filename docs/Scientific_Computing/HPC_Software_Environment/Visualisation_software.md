@@ -1,11 +1,11 @@
 ---
 created_at: '2019-01-16T20:51:18Z'
 hidden: false
-label_names:
+position: 13
+tags:
 - support
 - application
 - visualisation
-position: 13
 title: Visualisation software
 vote_count: 1
 vote_sum: 1

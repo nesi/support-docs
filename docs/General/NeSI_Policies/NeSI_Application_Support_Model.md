@@ -1,11 +1,11 @@
 ---
 created_at: '2018-04-26T23:46:16Z'
 hidden: false
-label_names:
+position: 13
+tags:
 - support
 - info
 - application
-position: 13
 title: NeSI Application Support Model
 vote_count: 0
 vote_sum: 0

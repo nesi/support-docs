@@ -1,8 +1,8 @@
 ---
 created_at: '2020-04-30T01:28:34Z'
 hidden: false
-label_names: []
 position: 7
+tags: []
 title: NVIDIA GPU Containers
 vote_count: 2
 vote_sum: 2

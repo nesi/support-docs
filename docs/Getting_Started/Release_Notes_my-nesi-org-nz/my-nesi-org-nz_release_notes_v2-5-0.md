@@ -1,9 +1,9 @@
 ---
 created_at: '2021-11-03T04:42:33Z'
 hidden: false
-label_names:
-- releasenote
 position: 0
+tags:
+- releasenote
 title: my.nesi.org.nz release notes v2.5.0
 vote_count: 0
 vote_sum: 0

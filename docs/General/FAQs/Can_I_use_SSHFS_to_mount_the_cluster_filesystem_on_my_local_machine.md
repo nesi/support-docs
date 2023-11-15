@@ -1,8 +1,8 @@
 ---
 created_at: '2018-11-27T23:55:26Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: Can I use SSHFS to mount the cluster filesystem on my local machine?
 vote_count: 5
 vote_sum: 3

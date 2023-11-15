@@ -1,10 +1,10 @@
 ---
 created_at: '2018-11-30T00:34:14Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - ssh
 - howto
-position: 0
 title: Standard Terminal Setup
 vote_count: 8
 vote_sum: 6
@@ -56,27 +56,28 @@ configurations.
        ServerAliveInterval 300
        ServerAliveCountMax 2
 
-        Host maui
-           User username
-           Hostname login.maui.nesi.org.nz
-           ProxyCommand ssh -W %h:%p lander
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    Host maui
+       User username
+       Hostname login.maui.nesi.org.nz
+       ProxyCommand ssh -W %h:%p lander
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
-        Host lander
-           User username
-           HostName lander.nesi.org.nz
-           ForwardX11 yes
-           ForwardX11Trusted yes
-           ServerAliveInterval 300
-           ServerAliveCountMax 2
+    Host lander
+       User username
+       HostName lander.nesi.org.nz
+       ForwardX11 yes
+       ForwardX11Trusted yes
+       ServerAliveInterval 300
+       ServerAliveCountMax 2
 
-        Host *
-            ControlMaster auto
-            ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-            ControlPersist 1
+    Host *
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+        ControlPersist 1
+    ```
 
     Close and save with ctrl x, y, Enter
 
