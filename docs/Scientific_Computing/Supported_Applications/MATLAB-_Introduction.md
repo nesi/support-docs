@@ -83,7 +83,7 @@ matlab -nodisplay
 This will function identically to the Command Window in the desktop
 version of MATLAB.
 
-## ![](https://support.nesi.org.nz/hc/article_attachments/360001327855)
+## ![](../../assets/images/MATLAB-_Introduction.png)
 
 Enter 'quit' to leave the MATLAB session or ctrl + z to kill it.
 
@@ -113,7 +113,7 @@ matlab -nodisplay -r "x=(1:10); y=(1:10); z=x'*y; disp(z);exit;"
 
 Will give the output
 
-![](https://support.nesi.org.nz/hc/article_attachments/360001330035)
+![](../../assets/images/MATLAB-_Introduction_0.png)
 
 then exit.
 

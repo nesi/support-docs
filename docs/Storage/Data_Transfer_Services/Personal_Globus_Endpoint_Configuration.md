@@ -33,7 +33,7 @@ you](https://app.globus.org/endpoints?scope=administered-by-me) to see
 whether your endpoint shows up as active.
 
 <img
-src="https://support.nesi.org.nz/hc/article_attachments/360002038695/mceclip0.png"
+src="../../assets/images/Personal_Globus_Endpoint_Configuration.png"
 width="754" height="320" alt="mceclip0.png" />
 
 ## Personal Endpoint file-transfer and sharing
@@ -50,7 +50,7 @@ Check if your account already has this membership by viewing the [Globus
 Plus](https://app.globus.org/account/plus) tab under your Account:
 
 <img
-src="https://support.nesi.org.nz/hc/article_attachments/360002147236/mceclip2.png"
+src="../../assets/images/Personal_Globus_Endpoint_Configuration_0.png"
 width="880" height="267" alt="mceclip2.png" />
 
 If you do not see an entry for *New Zealand eScience Infrastructure* on

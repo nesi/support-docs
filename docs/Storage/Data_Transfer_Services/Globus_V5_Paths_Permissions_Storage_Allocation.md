@@ -25,7 +25,7 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/4408734639887)
+![mceclip0.png](../../assets/images/Globus_V5_Paths_Permissions_Storage_Allocation.png)
 
 ###  On NeSI's Māui/Mahuika clusters this means:
 

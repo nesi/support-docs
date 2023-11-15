@@ -55,7 +55,7 @@ As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using
 more broad terms such as "machine learning". 
 
-![MachineLearningSoftwareEnvironments-May2021.png](https://support.nesi.org.nz/hc/article_attachments/360007479935/MachineLearningSoftwareEnvironments-May2021.png)
+![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
 
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific

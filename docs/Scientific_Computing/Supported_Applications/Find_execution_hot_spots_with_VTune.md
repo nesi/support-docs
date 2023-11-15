@@ -105,6 +105,6 @@ into selected functions to get more information. Below we see that 16.5
 out of 26 seconds were spent starting the two OpenMP threads.    
   
 
-![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](https://support.nesi.org.nz/hc/article_attachments/360003239635) 
+![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../../assets/images/Find_execution_hot_spots_with_VTune.png) 
 
  

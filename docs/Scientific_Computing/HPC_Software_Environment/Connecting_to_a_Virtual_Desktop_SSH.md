@@ -91,9 +91,8 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-<img
-src="https://support.nesi.org.nz/hc/article_attachments/8279624032015"
-width="426" height="362" />![](https://support.nesi.org.nz/hc/article_attachments/8279534876303)
+<img src="../../assets/images/Connecting_to_a_Virtual_Desktop_SSH.png"
+width="426" height="362" />![](../../assets/images/Connecting_to_a_Virtual_Desktop_SSH_0.png)
 
 # Examples
 
@@ -127,7 +126,7 @@ vdt start -N my_desktop [port]
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/8279624033039)
+![mceclip0.png](../../assets/images/Connecting_to_a_Virtual_Desktop_SSH_1.png)
 
 ## On a compute node
 

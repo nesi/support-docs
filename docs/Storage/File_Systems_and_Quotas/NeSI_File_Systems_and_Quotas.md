@@ -49,8 +49,7 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img
-src="https://support.nesi.org.nz/hc/article_attachments/360003251796"
+## <img src="../../assets/images/NeSI_File_Systems_and_Quotas.png"
 width="629" height="578" alt="neSI_filetree.svg" />
 
 # File System Specifications

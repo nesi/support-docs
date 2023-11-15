@@ -35,7 +35,7 @@ provide feedback on. Each idea/feature on the Portal is represented as a
 Select a card, choose the importance and add let us know why this is
 important to you as well as your email address.
 
-![card\_feedback.gif](https://support.nesi.org.nz/hc/article_attachments/360004620616)
+![card\_feedback.gif](../../assets/images/How_to_submit_feedback_or_a_new_idea_using_a_product_portal.png)
 
 ### Submit new idea
 
@@ -43,7 +43,7 @@ You can also submit brand new ideas on the Portal. These will be routed
 to our Insights board as well and reviewed by the product management
 team.
 
-![submit\_idea.gif](https://support.nesi.org.nz/hc/article_attachments/360004259436)
+![submit\_idea.gif](../../assets/images/How_to_submit_feedback_or_a_new_idea_using_a_product_portal_0.png)
 
 ### What happens to the feedback?
 

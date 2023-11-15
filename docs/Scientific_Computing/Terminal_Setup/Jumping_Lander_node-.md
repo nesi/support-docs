@@ -69,7 +69,7 @@ click 'Tools &gt; MobaSSH Tunnel (port forwarding)':
 -   Specify the local port number on the local side (left)
 -   Save
 
-![sshTunnel.PNG](https://support.nesi.org.nz/hc/article_attachments/8295479596175)
+![sshTunnel.PNG](../../assets/images/Jumping_Lander_node-.png)
 
 # PuTTY
 

@@ -177,7 +177,7 @@ connections to look like this:
 
 ### To connect to Māui
 
-![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](https://support.nesi.org.nz/hc/article_attachments/360003569596/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
+![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../../assets/images/NICE_DCV_Setup.png)  
 When setting up and using the connections, note the following:
 
 ### To connect to Mahuika

@@ -227,7 +227,7 @@ results:
 6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 ```
 
-![MPIscalingMem.png](https://support.nesi.org.nz/hc/article_attachments/8322438734095)
+![MPIscalingMem.png](../../assets/images/MPI_Scaling_Example.png)
 
 First, looking at the plot (we used R here, but feel free to use excel
 or whatever your preferred plotting software) of memory usage per task
@@ -251,9 +251,9 @@ memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-|                                                                                          |                                                                                             |
-|------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| ![MPIscalingSeeds.png](https://support.nesi.org.nz/hc/article_attachments/8322438734607) | ![MPIscalingSeedsLog.png](https://support.nesi.org.nz/hc/article_attachments/8322438736783) |
+|                                                                       |                                                                          |
+|-----------------------------------------------------------------------|--------------------------------------------------------------------------|
+| ![MPIscalingSeeds.png](../../assets/images/MPI_Scaling_Example_0.png) | ![MPIscalingSeedsLog.png](../../assets/images/MPI_Scaling_Example_1.png) |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time.
@@ -313,7 +313,7 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](https://support.nesi.org.nz/hc/article_attachments/8322422837903)
+![MPIseedsvtime.png](../../assets/images/MPI_Scaling_Example_2.png)
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we

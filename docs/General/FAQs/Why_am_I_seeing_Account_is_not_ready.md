@@ -30,4 +30,4 @@ please email
 and wait for a member of our support team to confirm your account and
 group membership.
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360007179555/mceclip0.png)
+![mceclip0.png](../../assets/images/Why_am_I_seeing_Account_is_not_ready.png)

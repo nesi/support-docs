@@ -30,7 +30,7 @@ developing, managing and distributing code.
 Full Git documentation can be
 found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](https://support.nesi.org.nz/hc/article_attachments/360004194235/Git_Diagram.svg)
+![Git\_Diagram.svg](../../assets/images/Git-_Reference_Sheet.svg)
 
 ## Authentication
 
@@ -73,21 +73,19 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     page, click your profile photo click **Settings**.
 
     ![Settings icon in the user
-    bar](https://docs.github.com/assets/cb-34573/images/help/settings/userbar-account-settings.png)
+    bar](../../assets/images/Git-_Reference_Sheet.png)
 
 -   In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 -   Click **New SSH key** or **Add SSH key**.
 
-    ![SSH Key
-    button](https://docs.github.com/assets/cb-28257/images/help/settings/ssh-add-ssh-key-with-auth.png)
+    ![SSH Key button](../../assets/images/Git-_Reference_Sheet_0.png)
 
 -   In the "Title" field, put "Mahuika" or "NeSI".
 
 -   Paste your key into the "Key" field.
 
-    ![The key
-    field](https://docs.github.com/assets/cb-47495/images/help/settings/ssh-key-paste-with-type.png)
+    ![The key field](../../assets/images/Git-_Reference_Sheet_1.png)
 
 -   Click **Add SSH key**.
 

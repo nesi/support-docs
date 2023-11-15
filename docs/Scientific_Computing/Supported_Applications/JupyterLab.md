@@ -140,7 +140,7 @@ click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
     the remote server (right upper box, second line)
 -   Save
 
-![sshTunnel.PNG](https://support.nesi.org.nz/hc/article_attachments/360002834175/sshTunnel.PNG)
+![sshTunnel.PNG](../../assets/images/JupyterLab.PNG)
 
 ## Launch the JupyterLab server 
 
@@ -242,7 +242,7 @@ Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:
 
-![Jupyter.PNG](https://support.nesi.org.nz/hc/article_attachments/360002463475/Jupyter.PNG)
+![Jupyter.PNG](../../assets/images/JupyterLab_0.PNG)
 
 # Kernels
 

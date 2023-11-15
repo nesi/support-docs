@@ -31,7 +31,7 @@ always more efficient than any form of parallelisation. 
 
 <figure>
 <img
-src="https://support.nesi.org.nz/hc/article_attachments/360007328695"
+src="../../assets/images/When_does_CPU_efficiency_matter_more_than_speed.png"
 alt="4tasks.png" />
 <figure>
 

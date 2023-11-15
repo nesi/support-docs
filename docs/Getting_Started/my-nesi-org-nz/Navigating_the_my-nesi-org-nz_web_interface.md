@@ -19,7 +19,7 @@ zendesk_section_id: 360001059296
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360006634316/mceclip0.png)
+![mceclip0.png](../../assets/images/Navigating_the_my-nesi-org-nz_web_interface.png)
 
 ## Main navigation
 

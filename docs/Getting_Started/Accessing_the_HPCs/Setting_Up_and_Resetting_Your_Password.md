@@ -47,7 +47,7 @@ zendesk_section_id: 360000034315
     **Reset Password**).  
     Note your** Username.  
     <img
-    src="https://support.nesi.org.nz/hc/article_attachments/4414700833935/authentication_factor_setup.png"
+    src="../../assets/images/Setting_Up_and_Resetting_Your_Password.png"
     width="442" height="166" alt="authentication_factor_setup.png" />  
     **
 
@@ -57,18 +57,18 @@ zendesk_section_id: 360000034315
       
 
     #### <img
-    src="https://support.nesi.org.nz/hc/article_attachments/360004939796/SetNeSIaccountPassword.png"
+    src="../../assets/images/Setting_Up_and_Resetting_Your_Password_0.png"
     width="628" height="314" alt="SetNeSIaccountPassword.png" />
 
 4.  If the password set was successful, following confirmation label
     will appear on the same page within few seconds  
        
-    ![change\_success.png](https://support.nesi.org.nz/hc/article_attachments/5662974048911)
+    ![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_1.png)
 
 5.  Followed by an email confirmation similar to below
 
 <img
-src="https://support.nesi.org.nz/hc/article_attachments/4702120915343/password_set_confirmation.png"
+src="../../assets/images/Setting_Up_and_Resetting_Your_Password_2.png"
 width="440" height="285" alt="password_set_confirmation.png" />
 
  
@@ -92,13 +92,13 @@ width="440" height="285" alt="password_set_confirmation.png" />
               
 4.  If the password **reset** was successful, following confirmation
     label will appear on the same page within few seconds  
-    1.  -   ![change\_success.png](https://support.nesi.org.nz/hc/article_attachments/5662974048911)
+    1.  -   ![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_3.png)
 5.  Followed by an email confirmation similar to below  
        
       
 
 <img
-src="https://support.nesi.org.nz/hc/article_attachments/4702120915343/password_set_confirmation.png"
+src="../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png"
 width="440" height="285" alt="password_set_confirmation.png" />
 !!! info What next?
 >

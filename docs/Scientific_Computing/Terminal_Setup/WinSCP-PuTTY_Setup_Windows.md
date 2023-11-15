@@ -38,7 +38,7 @@ WinSCP can be downloaded [here](https://winscp.net/eng/download.php).
 
 Upon startup:
 
-![WinSCP1.png](https://support.nesi.org.nz/hc/article_attachments/360001342295)
+![WinSCP1.png](../../assets/images/WinSCP-PuTTY_Setup_Windows.png)
 
 1. Add a *New Site* and set:
 
@@ -55,11 +55,11 @@ Upon startup:
 > you.
 
   
-![WinSCP2.png](https://support.nesi.org.nz/hc/article_attachments/360001342315)
+![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
 5\. Open Advanced Settings.
 
-![WinSCP3.png](https://support.nesi.org.nz/hc/article_attachments/360002834335)
+![WinSCP3.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
 
 6\. Navigate to *Connection &gt; Tunnel *and set:
 
@@ -79,12 +79,12 @@ recommend you use the PuTTY terminal instead.
 
 2.In WinSCP open 'Tools &gt; Preferences'
 
-![WinSCP2-5.png](https://support.nesi.org.nz/hc/article_attachments/360001342495)
+![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
 
 3\. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-![WinSCP4.png](https://support.nesi.org.nz/hc/article_attachments/360001344315)
+![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
 
  
 
@@ -100,7 +100,7 @@ SSH Client' is selected).
 2\. Under *Integration &gt; Applications* and add -X after
 PuTTY/Terminal client path.
 
-*![WinSCP6.png](https://support.nesi.org.nz/hc/article_attachments/360001596916)*
+*![WinSCP6.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_4.png)*
 
 3\. Restart your session.
 !!! info Important
@@ -113,24 +113,24 @@ PuTTY/Terminal client path.
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.
 
-![WinSCP5.png](https://support.nesi.org.nz/hc/article_attachments/360001494615)
+![WinSCP5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_5.png)
 
-![putTerm.png](https://support.nesi.org.nz/hc/article_attachments/360001597336) Will
+![putTerm.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_6.png) Will
 open a **PuTTY terminal**. Assuming you followed the steps setting up
 PuTTY, this should automatically enter in your details.
 
-![winTerm.png](https://support.nesi.org.nz/hc/article_attachments/360001597316) Will
+![winTerm.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_7.png) Will
 open the default **WinSCP terminal**. While the functionality is
 identical to any other terminal the interface is slightly abstracted,
 with a separate window for input and command history drop-down.
 
-![winAdd.png](https://support.nesi.org.nz/hc/article_attachments/360001494635) Type
+![winAdd.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_8.png) Type
 here to **change directory**.** **The GUI doesn't follow your current
 terminal directory like MobaXterm so must be changed
 manually. (Recommend making this larger as the default is very hard to
 type in).
 
-![winBook.png](https://support.nesi.org.nz/hc/article_attachments/360001599556) **Bookmark**
+![winBook.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
 current directory.
 
 ## Troubleshooting
@@ -143,15 +143,14 @@ number of tunnels will reduce the number of times you are prompted. 
 
 1\. Open settings
 
-<img
-src="https://support.nesi.org.nz/hc/article_attachments/8026405972111"
+<img src="../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png"
 width="513" height="93" alt="winscp_settings.png" />
 
 2\. Under 'Transfer' -&gt; 'Background', set the 'Maximal number of
 transfers at the same time' to '1' and untick 'Use multiple connections
 for a single transfer'.
 
-![winscp\_Settings2.png](https://support.nesi.org.nz/hc/article_attachments/8026392031247) 
+![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png) 
 !!! info Important
 >
 > As WinSCP uses multiple tunnels for file transfer you will be required

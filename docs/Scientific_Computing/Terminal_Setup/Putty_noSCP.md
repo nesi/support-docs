@@ -33,24 +33,24 @@ lander.nesi.org.nz
 
  
 
- ![putty1.png](https://support.nesi.org.nz/hc/article_attachments/360002834555/putty1.png)
+ ![putty1.png](../../assets/images/Putty_noSCP.png)
 
 2\. Open Connection &gt; Data and enter in your username under
 'Auto-Login username. 
 
-![putty2.png](https://support.nesi.org.nz/hc/article_attachments/8279573288079)
+![putty2.png](../../assets/images/Putty_noSCP_0.png)
 
  
 
 3\. Open Connection &gt; SSH and 'Share SSH connections if possible'.
 
-![putty4.png](https://support.nesi.org.nz/hc/article_attachments/8279521732111)
+![putty4.png](../../assets/images/Putty_noSCP_1.png)
 
 4\. Do this
 
 SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
-![putty5.png](https://support.nesi.org.nz/hc/article_attachments/8279573289999)
+![putty5.png](../../assets/images/Putty_noSCP_2.png)
 
  
 
@@ -58,4 +58,4 @@ SCRAP THAT, THOUGHT IT WORKED BUT IT DIDN'T
 
 Save session
 
-![putty3.png](https://support.nesi.org.nz/hc/article_attachments/360002930136/putty3.png)
+![putty3.png](../../assets/images/Putty_noSCP_3.png)

@@ -246,7 +246,7 @@ rm "abaqus_v6.env"
 
  
 
-![ABAQUS\_speedup\_SharedVMPI.png](https://support.nesi.org.nz/hc/article_attachments/360002123695/ABAQUS_speedup_SharedVMPI.png)
+![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
 
  
 

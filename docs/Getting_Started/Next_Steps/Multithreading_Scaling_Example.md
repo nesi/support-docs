@@ -142,9 +142,9 @@ seem to change much. Let's try plotting this data (we used R here, but
 feel free to use excel or whatever your preferred plotting software) to
 help us better understand what is happening:
 
-|                                                                            |                                                                            |
-|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| ![Plot1](https://support.nesi.org.nz/hc/article_attachments/8322418257295) | ![Plot2](https://support.nesi.org.nz/hc/article_attachments/8322403165583) |
+|                                                                  |                                                                    |
+|------------------------------------------------------------------|--------------------------------------------------------------------|
+| ![Plot1](../../assets/images/Multithreading_Scaling_Example.png) | ![Plot2](../../assets/images/Multithreading_Scaling_Example_0.png) |
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.
@@ -199,9 +199,9 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
  
 
-|                                                                                 |                                                                                   |
-|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| ![TvC-MT.png](https://support.nesi.org.nz/hc/article_attachments/6197221642383) | ![TvL2C-MT.png](https://support.nesi.org.nz/hc/article_attachments/6197207741967) |
+|                                                                         |                                                                           |
+|-------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| ![TvC-MT.png](../../assets/images/Multithreading_Scaling_Example_1.png) | ![TvL2C-MT.png](../../assets/images/Multithreading_Scaling_Example_2.png) |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
@@ -225,8 +225,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img
-src="https://support.nesi.org.nz/hc/article_attachments/8322403166351"
+<img src="../../assets/images/Multithreading_Scaling_Example_3.png"
 width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the

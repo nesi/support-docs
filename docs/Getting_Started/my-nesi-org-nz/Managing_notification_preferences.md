@@ -38,7 +38,7 @@ Use the 'Manage' button provided to open the externally hosted
 preferences or the checkboxes for the NeSI Project-related
 notifications.
 
-![2022-04-12\_16-46-56.png](https://support.nesi.org.nz/hc/article_attachments/4657584659343/2022-04-12_16-46-56.png)
+![2022-04-12\_16-46-56.png](../../assets/images/Managing_notification_preferences.png)
 
  
 

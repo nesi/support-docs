@@ -52,7 +52,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).
 
- ![cray\_xc50.jpg](https://support.nesi.org.nz/hc/article_attachments/360000486995/cray_xc50.jpg)
+ ![cray\_xc50.jpg](../../assets/images/I-O_Performance_Considerations.jpg)
 
 <font size="2">Figure 1: Cray XC50 DVS architecture.</font>
 

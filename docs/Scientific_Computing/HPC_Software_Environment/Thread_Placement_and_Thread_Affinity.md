@@ -63,7 +63,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](https://support.nesi.org.nz/hc/article_attachments/360002169395/NodeSocketCore.png)
+![NodeSocketCore.png](../../assets/images/Thread_Placement_and_Thread_Affinity.png)
 
 It is very important to note the following:
 

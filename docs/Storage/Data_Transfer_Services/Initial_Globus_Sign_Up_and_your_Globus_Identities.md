@@ -36,7 +36,7 @@ primary identity in Globus.
 ####  
 
 <img
-src="https://support.nesi.org.nz/hc/article_attachments/8157051408655"
+src="../../assets/images/Initial_Globus_Sign_Up_and_your_Globus_Identities.png"
 width="430" height="471" alt="Globus_login.png" />
 
 #### 2) Link other Globus identities to your primary identity
@@ -55,7 +55,7 @@ them  to your Google ID account following the instructions at
 <https://docs.globus.org/how-to/link-to-existing/>:
 
  <img
-src="https://support.nesi.org.nz/hc/article_attachments/360001715615"
+src="../../assets/images/Initial_Globus_Sign_Up_and_your_Globus_Identities_0.png"
 width="1382" height="322" alt="identities.png" />
 
  

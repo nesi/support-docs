@@ -68,11 +68,11 @@ srun fds ${input}
 
 ## Scaling with MPI
 
-![mceclip1.png](https://support.nesi.org.nz/hc/article_attachments/360002454995/mceclip1.png)
+![mceclip1.png](../../assets/images/FDS.png)
 
 ## Scaling with oMP
 
-![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002454975/mceclip0.png)
+![mceclip0.png](../../assets/images/FDS_0.png)
 
  
 

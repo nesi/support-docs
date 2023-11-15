@@ -186,13 +186,11 @@ increasing as we add more iterations, but the maximum memory doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-|                                                                        |                                                                        |
-|------------------------------------------------------------------------|------------------------------------------------------------------------|
-| <img                                                                   
- src="https://support.nesi.org.nz/hc/article_attachments/8295448105871"  
- style="width: 386px;" height="326" alt="Plot1" />                       | <img                                                                   
-                                                                          src="https://support.nesi.org.nz/hc/article_attachments/8295448106511"  
-                                                                          style="width: 389px;" height="328" alt="Plot2" />                       |
+|                                                                     |                                                                       |
+|---------------------------------------------------------------------|-----------------------------------------------------------------------|
+| <img src="../../assets/images/OpenMP_Scaling_Example_Duplicate.png" 
+ style="width: 386px;" height="326" alt="Plot1" />                    | <img src="../../assets/images/OpenMP_Scaling_Example_Duplicate_0.png" 
+                                                                       style="width: 389px;" height="328" alt="Plot2" />                      |
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.
@@ -247,13 +245,11 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
  
 
-|                                                                        |                                                                        |
-|------------------------------------------------------------------------|------------------------------------------------------------------------|
-| <img                                                                   
- src="https://support.nesi.org.nz/hc/article_attachments/8295459960847"  
- width="650" height="549" />                                             | <img                                                                   
-                                                                          src="https://support.nesi.org.nz/hc/article_attachments/8295448107791"  
-                                                                          width="650" height="548" />                                             |
+|                                                                       |                                                                       |
+|-----------------------------------------------------------------------|-----------------------------------------------------------------------|
+| <img src="../../assets/images/OpenMP_Scaling_Example_Duplicate_1.png" 
+ width="650" height="549" />                                            | <img src="../../assets/images/OpenMP_Scaling_Example_Duplicate_2.png" 
+                                                                         width="650" height="548" />                                            |
 
 As we can see, increasing the number of CPU cores doesn't linearly
 increase the job's speed. This non-linear speed-up is called Amdahl's
