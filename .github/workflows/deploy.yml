@@ -20,6 +20,8 @@ jobs:
     if:  ( ${{ github.event_name }} == 'workflow_dispatch' || ${{ github.event.workflow_run.conclusion == 'success' }} )
     steps:
       - uses: actions/checkout@v3
+        with:
+         fetch-depth: 0 
       - name: Install dependencies
         run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
