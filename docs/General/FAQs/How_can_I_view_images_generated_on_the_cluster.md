@@ -1,12 +1,12 @@
 ---
 created_at: '2020-05-11T23:29:39Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - visualisation
 - image
 - x11
 - view
-position: 0
 title: How can I view images generated on the cluster?
 vote_count: 4
 vote_sum: 2

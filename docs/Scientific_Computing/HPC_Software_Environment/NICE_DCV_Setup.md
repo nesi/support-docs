@@ -1,11 +1,11 @@
 ---
 created_at: '2019-01-24T20:30:30Z'
 hidden: false
-label_names:
+position: 12
+tags:
 - support
 - application
 - visualisation
-position: 12
 title: NICE DCV Setup
 vote_count: 0
 vote_sum: 0
@@ -177,7 +177,7 @@ connections to look like this:
 
 ### To connect to Māui
 
-![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../../assets/images/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
+![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](https://support.nesi.org.nz/hc/article_attachments/360003569596/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
 When setting up and using the connections, note the following:
 
 ### To connect to Mahuika

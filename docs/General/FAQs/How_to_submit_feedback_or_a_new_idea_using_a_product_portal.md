@@ -1,8 +1,8 @@
 ---
 created_at: '2020-05-04T01:56:21Z'
 hidden: true
-label_names: []
 position: 0
+tags: []
 title: How to submit feedback or a new idea using a product portal?
 vote_count: 0
 vote_sum: 0
@@ -35,7 +35,7 @@ provide feedback on. Each idea/feature on the Portal is represented as a
 Select a card, choose the importance and add let us know why this is
 important to you as well as your email address.
 
-There should be an image here but it couldn't be loaded.
+![card\_feedback.gif](https://support.nesi.org.nz/hc/article_attachments/360004620616)
 
 ### Submit new idea
 
@@ -43,7 +43,7 @@ You can also submit brand new ideas on the Portal. These will be routed
 to our Insights board as well and reviewed by the product management
 team.
 
-There should be an image here but it couldn't be loaded.
+![submit\_idea.gif](https://support.nesi.org.nz/hc/article_attachments/360004259436)
 
 ### What happens to the feedback?
 

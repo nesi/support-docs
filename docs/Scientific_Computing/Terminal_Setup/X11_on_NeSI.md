@@ -1,8 +1,8 @@
 ---
 created_at: '2019-07-30T01:58:26Z'
 hidden: false
-label_names: []
 position: 4
+tags: []
 title: X11 on NeSI
 vote_count: 2
 vote_sum: 2
@@ -44,14 +44,14 @@ Download links for X-servers can be found below.
 
 Make sure you have launched the server and it is running in the
 background, look for
-this ![mceclip0.png](../../assets/images/X11_on_NeSI.png) symbol in your
-taskbar 
+this ![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002963236/mceclip0.png) symbol
+in your taskbar 
 !!! info Note
 >
 > MobaXterm has a build in X server, no setup required. By default the
 > server is started alongside MobaXterm. You can check it's status in
 > the top left hand corner
-> (![xon.png](../../assets/images/xon.png)=on, ![off.png](../../assets/images/off.png)=off). 
+> (![xon.png](https://support.nesi.org.nz/hc/article_attachments/360002939175/xon.png)=on, ![off.png](https://support.nesi.org.nz/hc/article_attachments/360002939155/off.png)=off). 
 
 # X-Forwarding
 
@@ -75,12 +75,14 @@ ssh -Y login.nesi.org.nz
  Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
-<img src="../../assets/images/x11moba.png" width="451" height="303"
-alt="x11moba.png" />
+<img
+src="https://support.nesi.org.nz/hc/article_attachments/360002871175/x11moba.png"
+width="451" height="303" alt="x11moba.png" />
 
-If the ![mceclip0.png](../../assets/images/X11_on_NeSI_0.png) button in
-the top right corner of your window is coloured, the X-server should be
-running.
+If the
+![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360005129276/mceclip0.png)
+button in the top right corner of your window is coloured, the X-server
+should be running.
 
 # X-Forwarding with *tmux*
 

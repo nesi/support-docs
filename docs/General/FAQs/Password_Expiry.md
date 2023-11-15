@@ -1,8 +1,8 @@
 ---
 created_at: '2021-05-25T02:32:08Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: Password Expiry
 vote_count: 0
 vote_sum: 0

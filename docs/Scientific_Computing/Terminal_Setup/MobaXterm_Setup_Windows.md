@@ -1,8 +1,8 @@
 ---
 created_at: '2018-11-30T00:32:25Z'
 hidden: false
-label_names: []
 position: 2
+tags: []
 title: MobaXterm Setup (Windows)
 vote_count: 5
 vote_sum: 5
@@ -57,9 +57,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-![mceclip4.png](../../assets/images/4411672582031..png)
+![mceclip4.png](https://support.nesi.org.nz/hc/article_attachments/4411672582031)
 
-![mceclip5.png](../../assets/images/4411672594191..png)
+![mceclip5.png](https://support.nesi.org.nz/hc/article_attachments/4411672594191)
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -79,7 +79,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../../assets/images/4411680807951..png)
+![mceclip6.png](https://support.nesi.org.nz/hc/article_attachments/4411680807951)
 
 You will be prompted by dialogue box.
 

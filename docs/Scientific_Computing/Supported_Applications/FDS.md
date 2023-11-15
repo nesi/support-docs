@@ -1,10 +1,10 @@
 ---
 created_at: '2019-02-14T23:33:05Z'
 hidden: false
-label_names:
+position: 28
+tags:
 - mahuika
 - engineering
-position: 28
 title: FDS
 vote_count: 0
 vote_sum: 0
@@ -68,11 +68,11 @@ srun fds ${input}
 
 ## Scaling with MPI
 
-![mceclip1.png](../../assets/images/FDS.png)
+![mceclip1.png](https://support.nesi.org.nz/hc/article_attachments/360002454995/mceclip1.png)
 
 ## Scaling with oMP
 
-![mceclip0.png](../../assets/images/FDS_0.png)
+![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360002454975/mceclip0.png)
 
  
 

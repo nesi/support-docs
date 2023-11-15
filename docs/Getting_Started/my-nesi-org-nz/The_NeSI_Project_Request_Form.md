@@ -1,8 +1,8 @@
 ---
 created_at: '2021-03-11T21:59:07Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: The NeSI Project Request Form
 vote_count: 0
 vote_sum: 0
@@ -33,7 +33,7 @@ below.
     [https://my.nesi.org.nz](https://my.nesi.org.nz/projects/apply) and
     login. Select "Apply for Access" from the sidebar navigation on the
     left.  
-    ![mceclip1.png](../../assets/images/The_NeSI_Project_Request_Form.png)
+    ![mceclip1.png](https://support.nesi.org.nz/hc/article_attachments/360006751675/mceclip1.png)
 2.  Choose from the following items:
     -   **If you are returning to continue work on a draft request** you
         started earlier, choose the link based on the date/time or title

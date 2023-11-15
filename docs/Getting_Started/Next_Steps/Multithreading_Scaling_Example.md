@@ -1,8 +1,8 @@
 ---
 created_at: '2019-09-22T21:07:48Z'
 hidden: false
-label_names: []
 position: 7
+tags: []
 title: Multithreading Scaling Example
 vote_count: 0
 vote_sum: 0
@@ -30,12 +30,13 @@ chosen for the purpose of illustration.
 ``` sl
  library(doParallel)
 
-      registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
+  registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
-      # 60,000 calculations to be done:
-      foreach(z=1000000:1060000) %dopar% {
-       x <- sum(rnorm(z))
-      }
+  # 60,000 calculations to be done:
+  foreach(z=1000000:1060000) %dopar% {
+   x <- sum(rnorm(z))
+  }
+```
 
 You do not need to understand what the above R script is doing, but for
 context, it will take the sum of *z* random numbers derived from a
@@ -55,18 +56,20 @@ iterations. So now lets change the number of iterations from 60,000 to
 ``` sl
  library(doParallel)
 
-      registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
+  registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
-      # 5,000 calculations to be done:
-      foreach(z=1000000:1005000) %dopar% {
-       x <- sum(rnorm(z))
-      }
+  # 5,000 calculations to be done:
+  foreach(z=1000000:1005000) %dopar% {
+   x <- sum(rnorm(z))
+  }
+```
 
 Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
-local workstation, but if that is not possible, make an educated
-guess.  
+local workstation, but if that is not possible, make an educated guess,
+and if the job fails increase the resources requested until is
+completes.
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
@@ -83,8 +86,9 @@ took to get there.
   #SBATCH --mem=512MB
   #SBATCH --cpus-per-task=4
 
-      module load R
-      Rscript scaling.R
+  module load R
+  Rscript scaling.R
+```
 
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
@@ -98,9 +102,9 @@ Let's run our Slurm script with sbatch and look at our output from
 3106248.0      Rscript         00:03:14    12:50.719     4  406516K COMPLETED
 ```
 
-Our job performed 5,000 iterations using four CPU cores and a maximum
-memory of 406,516KB (0.4 GB). In total, the job ran for 3 minutes and 17
-seconds.
+Our job performed 5,000 iterations using four logical CPU cores and a
+maximum memory of 406,516KB (0.4 GB). In total, the job ran for 3
+minutes and 17 seconds.
 
 We will initially assume that our job's wall time and memory will scale
 linearly with the number of iterations. However, we don't know that for
@@ -134,12 +138,13 @@ To test this, we will submit three more jobs, using 10,000 15,000 and
 
 We can see from the `sacct` output that the wall time seems to be
 increasing as we add more iterations, but the maximum memory doesn't
-seem to change much. Let's try plotting this data to help us better
-understand what is happening:
+seem to change much. Let's try plotting this data (we used R here, but
+feel free to use excel or whatever your preferred plotting software) to
+help us better understand what is happening:
 
-|                                                                  |                                                                    |
-|------------------------------------------------------------------|--------------------------------------------------------------------|
-| ![Plot1](../../assets/images/Multithreading_Scaling_Example.png) | ![Plot2](../../assets/images/Multithreading_Scaling_Example_0.png) |
+|                                                                            |                                                                            |
+|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| ![Plot1](https://support.nesi.org.nz/hc/article_attachments/8322418257295) | ![Plot2](https://support.nesi.org.nz/hc/article_attachments/8322403165583) |
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.
@@ -194,14 +199,18 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
  
 
-|                                                       |                                                         |
-|-------------------------------------------------------|---------------------------------------------------------|
-| ![TvC-MT.png](../../assets/images/6197221642383..png) | ![TvL2C-MT.png](../../assets/images/6197207741967..png) |
+|                                                                                 |                                                                                   |
+|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| ![TvC-MT.png](https://support.nesi.org.nz/hc/article_attachments/6197221642383) | ![TvL2C-MT.png](https://support.nesi.org.nz/hc/article_attachments/6197207741967) |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
 see the inflection point on the Log2 graph when the speed up from
-increasing the number of CPUs start to level off.
+increasing the number of CPUs start to level off, as in the Log2 graph
+if the jobs scaled perfectly linearly (e.g. doubling the CPU's halves
+the runtime) the line would be straight. The curving of the line in the
+Log2 graph represents a loss in efficiency from increasing the number of
+CPUs.
 
 As we can see, increasing the number of CPU cores doesn't linearly
 increase the job's speed. This non-linear speed-up is called Amdahl's
@@ -216,7 +225,8 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="../../assets/images/Multithreading_Scaling_Example_1.png"
+<img
+src="https://support.nesi.org.nz/hc/article_attachments/8322403166351"
 width="469" height="395" />
 
 Looking at our jobs' memory use, we can see that as we increase the
@@ -229,7 +239,7 @@ One thing to note about our plot of CPUs versus memory is that our
 memory usage seems to drop for 10 CPUs, this can likely be explained by
 the fact that memory usage is not measured continuously, it is instead
 measured every 30 seconds. This means that if your job's memory usage
-has some spikes, `sacct` will not necessarilly detect the maximum memory
+has some spikes, `sacct` will not necessarily detect the maximum memory
 usage. This is something that you should be aware of when you estimate
 the memory usage of all your jobs.
 
@@ -243,7 +253,7 @@ requirements scale, we can try and estimate our total resource
 requirements for our 60,000 iteration job.
 
 From this data we have determined that more than 8 CPUs has very limited
-additional speed and an 8 CPU should use about 0.75 GB of memory at
+additional speed and an 8 CPU job should use about 0.75 GB of memory at
 most, and that this memory requirement should remain relatively
 consistent, regardless of the number of iterations. Given this
 information we can estimate our full size job's resource requirements.
@@ -262,8 +272,9 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
   #SBATCH --mem=512MB           # Memory per node
   #SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
 
-      module load R
-      Rscript scaling.R
+  module load R
+  Rscript scaling.R
+```
 
  Checking on our job with `sacct` 
 

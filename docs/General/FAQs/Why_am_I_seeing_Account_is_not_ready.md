@@ -1,11 +1,11 @@
 ---
 created_at: '2018-11-05T21:24:29Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - access
 - account
 - mynesi
-position: 0
 title: Why am I seeing 'Account is not ready'?
 vote_count: 0
 vote_sum: 0
@@ -30,4 +30,4 @@ please email
 and wait for a member of our support team to confirm your account and
 group membership.
 
-![mceclip0.png](../../assets/images/Why_am_I_seeing_Account_is_not_ready.png)
+![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/360007179555/mceclip0.png)

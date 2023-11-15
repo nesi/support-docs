@@ -1,8 +1,8 @@
 ---
 created_at: '2019-06-16T21:30:28Z'
 hidden: false
-label_names: []
 position: 2
+tags: []
 title: Debugging
 vote_count: 1
 vote_sum: 1
@@ -100,7 +100,7 @@ information are provided into the application stdout and a HTML file is
 created. Thus this could also be a handy alternative for print
 statements without touching the code.
 
-[![DDT-offline-example.PNG](../../assets/images/DDT-offline-example.PNG)](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
+[![DDT-offline-example.PNG](https://support.nesi.org.nz/hc/article_attachments/360002303456/DDT-offline-example.PNG)](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
 
 [See full example page
 here.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
@@ -127,7 +127,7 @@ launching an application with DDT (RUN).
 In the RUN menu the different settings for the executable need to be
 specified.
 
-![RUN\_ddt.PNG](../../assets/images/RUN_ddt.PNG)
+![RUN\_ddt.PNG](https://support.nesi.org.nz/hc/article_attachments/360002299296/RUN_ddt.PNG)
 
 Beside Application location and name, we need to specify arguments,
 working directory, MPI and OpenMP settings. If we have no interactive
@@ -141,7 +141,7 @@ Variables section you can load necessary modules.
 After submitting the task, DDT launches the application (wait for the
 workload manager if necessary) and opens the following window. 
 
-![DDT\_overview.PNG](../../assets/images/DDT_overview.PNG)
+![DDT\_overview.PNG](https://support.nesi.org.nz/hc/article_attachments/360002299256/DDT_overview.PNG)
 
 In the top part the processes and threads can be selected. The
 application is paused at the initialization phase, giving the user the

@@ -1,10 +1,10 @@
 ---
 created_at: '2019-02-24T23:26:19Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - slurm
 - profiling
-position: 0
 title: Slurm Native Profiling
 vote_count: 4
 vote_sum: 4

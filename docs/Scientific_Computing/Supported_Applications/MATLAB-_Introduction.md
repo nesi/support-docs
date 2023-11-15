@@ -1,8 +1,8 @@
 ---
 created_at: '2018-11-21T03:32:30Z'
 hidden: true
-label_names: []
 position: 36
+tags: []
 title: 'MATLAB: Introduction'
 vote_count: 0
 vote_sum: 0
@@ -83,7 +83,7 @@ matlab -nodisplay
 This will function identically to the Command Window in the desktop
 version of MATLAB.
 
-## There should be an image here but it couldn't be loaded.
+## ![](https://support.nesi.org.nz/hc/article_attachments/360001327855)
 
 Enter 'quit' to leave the MATLAB session or ctrl + z to kill it.
 
@@ -113,7 +113,7 @@ matlab -nodisplay -r "x=(1:10); y=(1:10); z=x'*y; disp(z);exit;"
 
 Will give the output
 
-There should be an image here but it couldn't be loaded.
+![](https://support.nesi.org.nz/hc/article_attachments/360001330035)
 
 then exit.
 

@@ -1,8 +1,8 @@
 ---
 created_at: '2021-03-29T01:57:32Z'
 hidden: true
-label_names: []
 position: 0
+tags: []
 title: Connecting to a Virtual Desktop (SSH)
 vote_count: 0
 vote_sum: 0
@@ -91,7 +91,9 @@ that command.
 
 Recommend setting scaling to 'remote'
 
-There should be an image here but it couldn't be loaded.There should be an image here but it couldn't be loaded.
+<img
+src="https://support.nesi.org.nz/hc/article_attachments/8279624032015"
+width="426" height="362" />![](https://support.nesi.org.nz/hc/article_attachments/8279534876303)
 
 # Examples
 
@@ -125,7 +127,7 @@ vdt start -N my_desktop [port]
 
 Then in a web browser navigate to your forwarded address. e.g.
 
-There should be an image here but it couldn't be loaded.
+![mceclip0.png](https://support.nesi.org.nz/hc/article_attachments/8279624033039)
 
 ## On a compute node
 

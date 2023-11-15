@@ -1,13 +1,13 @@
 ---
 created_at: '2018-09-10T00:02:43Z'
 hidden: false
-label_names:
+position: 5
+tags:
 - introduction
 - talk
 - workshop
 - introductory
 - office hours
-position: 5
 title: Introductory Material
 vote_count: 5
 vote_sum: 5

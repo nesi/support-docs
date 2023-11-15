@@ -1,16 +1,16 @@
 ---
 created_at: '2018-05-02T04:06:16Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - info
 - mahuika
 - storage
 - maui
 - quota
-position: 0
 title: NeSI File Systems and Quotas
-vote_count: 3
-vote_sum: 3
+vote_count: 4
+vote_sum: 4
 zendesk_article_id: 360000177256
 zendesk_section_id: 360000033936
 ---
@@ -49,8 +49,9 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../../assets/images/360003251796..png" width="629"
-height="578" alt="neSI_filetree.svg" />
+## <img
+src="https://support.nesi.org.nz/hc/article_attachments/360003251796"
+width="629" height="578" alt="neSI_filetree.svg" />
 
 # File System Specifications
 

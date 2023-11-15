@@ -1,8 +1,8 @@
 ---
 created_at: '2021-09-14T03:20:56Z'
 hidden: false
-label_names: []
 position: 4
+tags: []
 title: Quarterly allocation periods
 vote_count: 0
 vote_sum: 0
@@ -35,7 +35,7 @@ Allocations will start on the first day of the next month and run for
 one year. The diagram below illustrates how these quarterly call periods
 are scheduled during the year:
 
-![Quarterly\_Allocation\_Periods\_2021\_\_1\_.png](../../assets/images/Quarterly_Allocation_Periods_2021__1_.png)
+![Quarterly\_Allocation\_Periods\_2021\_\_1\_.png](https://support.nesi.org.nz/hc/article_attachments/4406552589967/Quarterly_Allocation_Periods_2021__1_.png)
 
 For example, if you apply for a new allocation on your existing project
 in the month of October, we will review your application in October or
@@ -43,7 +43,7 @@ early November, you will be notified of your allocation by the end of
 November, and your allocation will start on 1 December (as shown in the
 graphic below).
 
-![Blank\_Diagram\_\_1\_.png](../../assets/images/Blank_Diagram__1_.png)
+![Blank\_Diagram\_\_1\_.png](https://support.nesi.org.nz/hc/article_attachments/4406437488271/Blank_Diagram__1_.png)
 
 ## Existing allocations
 

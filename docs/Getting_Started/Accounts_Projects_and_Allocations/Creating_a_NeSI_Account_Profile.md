@@ -1,12 +1,12 @@
 ---
 created_at: '2018-04-18T23:56:10Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - onboarding
 - howto
 - access
 - mynesi
-position: 0
 title: Creating a NeSI Account Profile
 vote_count: 4
 vote_sum: 0

@@ -1,8 +1,8 @@
 ---
 created_at: '2019-01-10T03:02:11Z'
 hidden: false
-label_names: []
 position: 4
+tags: []
 title: Parallel Execution
 vote_count: 7
 vote_sum: 5
@@ -51,8 +51,9 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 
 ####  
 
-<img src="../../assets/images/360001532435..png" width="714"
-height="160" alt="par.png" />*  
+<img
+src="https://support.nesi.org.nz/hc/article_attachments/360001532435"
+width="714" height="160" alt="par.png" />*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 

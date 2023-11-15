@@ -1,11 +1,11 @@
 ---
 created_at: '2015-10-15T02:15:46Z'
 hidden: false
-label_names:
+position: 24
+tags:
 - mahuika
 - application
 - engineering
-position: 24
 title: ANSYS
 vote_count: 3
 vote_sum: 3
@@ -726,7 +726,8 @@ the command `fensapiceGUI` from within your FENSAP project directory. 
 <td style="width: 291px"><p>1. Launch the run and select the desired
 number of (physical) CPUs.</p>
 <p>2. Open the 'configure' panel.</p></td>
-<td style="width: 292px"><img src="../../assets/images/FENSAP_GUI1.png"
+<td style="width: 292px"><img
+src="https://support.nesi.org.nz/hc/article_attachments/360002865836/FENSAP_GUI1.png"
 alt="FENSAP_GUI1.png" /></td>
 </tr>
 <tr class="even">
@@ -741,7 +742,8 @@ your inline SLURM options. You should include at least.</p>
 step</em>.</p>
 <p>4. Start the job. You can track progress under the 'log'
 tab.</p></td>
-<td style="width: 292px"><img src="../../assets/images/FENSAP_GUI2.png"
+<td style="width: 292px"><img
+src="https://support.nesi.org.nz/hc/article_attachments/360002865816/FENSAP_GUI2.png"
 alt="FENSAP_GUI2.png" /></td>
 </tr>
 </tbody>

@@ -1,8 +1,8 @@
 ---
 created_at: '2019-04-30T00:21:48Z'
 hidden: false
-label_names: []
 position: 1
+tags: []
 title: 'Profiler: ARM MAP'
 vote_count: 0
 vote_sum: 0
@@ -98,11 +98,11 @@ profile](#map-profile) below for how to interpret the results.
 The GUI can be started after loading `module load forge` and launching
 
 [![Arm MAP
-main](../../assets/images/ARM_MAP_main.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)
+main](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)
 
 Click on “PROFILE”.
 
-![MAP\_profile\_python.PNG](../../assets/images/MAP_profile_python.PNG)
+![MAP\_profile\_python.PNG](https://support.nesi.org.nz/hc/article_attachments/360002074056/MAP_profile_python.PNG)
 
 In the profile menu we need to specify the *executable/application* (in
 this case `python`), the arguments (here `scatter.py` and any additional
@@ -123,7 +123,7 @@ profile information.
 By default the profile window is divided into the following three main
 sections (click on picture to enlarge).
 
-[![example-map-scatter](../../assets/images/ARM_MAP_scatter_mpi.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)
+[![example-map-scatter](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)
 
 On top, various metrics can be selected in the “Metrics” menu. In the
 middle part, a source code navigator connects line by line source code
@@ -147,7 +147,7 @@ using the *Metrics* Menu*.*
 As an example, “CPU instructions” presents the usage of different
 instruction sets during the program run time.
 
-[![example-map-scatter\_CPU](../../assets/images/ARM_MAP_scatter_mpi_CPU.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png)
+[![example-map-scatter\_CPU](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi_CPU.png)
 
 The lower part can also be used to check the *application output* or
 show statistics on basis of *files* or *functions*.

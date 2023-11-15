@@ -1,9 +1,9 @@
 ---
 created_at: '2022-06-02T05:35:53Z'
 hidden: false
-label_names:
-- releasenote
 position: 0
+tags:
+- releasenote
 title: jupyter.nesi.org.nz release notes 02/06/2022
 vote_count: 1
 vote_sum: 1
@@ -43,13 +43,14 @@ zendesk_section_id: 360001150156
          - Added some libraries need for ANSYS
          - Added missing GLX libraries.
 
-            # Bug fixes
-             - Fixed faulty startup messages 
-             - Fixed entrypoint duplication issue.
-             - unset 'SLURM_EXPORT_ENV' before starting desktop.
+        # Bug fixes
+         - Fixed faulty startup messages 
+         - Fixed entrypoint duplication issue.
+         - unset 'SLURM_EXPORT_ENV' before starting desktop.
 
-            # Refactoring
-             - Removed dependency on system vdt repo.
-             - Removed faulty & uneeded bind paths.
-             - Removed debug by default and hardcoded verbose.
-             - replaced VDT_HOME with XDG equiv
+        # Refactoring
+         - Removed dependency on system vdt repo.
+         - Removed faulty & uneeded bind paths.
+         - Removed debug by default and hardcoded verbose.
+         - replaced VDT_HOME with XDG equiv
+        ```

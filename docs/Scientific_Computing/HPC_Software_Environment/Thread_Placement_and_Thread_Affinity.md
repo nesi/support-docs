@@ -1,8 +1,8 @@
 ---
 created_at: '2019-06-13T04:08:43Z'
 hidden: false
-label_names: []
 position: 11
+tags: []
 title: Thread Placement and Thread Affinity
 vote_count: 0
 vote_sum: 0
@@ -63,7 +63,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](../../assets/images/NodeSocketCore.png)
+![NodeSocketCore.png](https://support.nesi.org.nz/hc/article_attachments/360002169395/NodeSocketCore.png)
 
 It is very important to note the following:
 

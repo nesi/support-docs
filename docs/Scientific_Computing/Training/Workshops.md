@@ -1,8 +1,8 @@
 ---
 created_at: '2022-07-25T21:33:58Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: Workshops
 vote_count: 0
 vote_sum: 0

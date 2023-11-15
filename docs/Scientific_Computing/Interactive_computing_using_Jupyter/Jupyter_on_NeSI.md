@@ -1,13 +1,13 @@
 ---
 created_at: '2020-06-08T04:21:37Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - jupyter
 - hub
 - home
 - lab
 - notebook
-position: 0
 title: Jupyter on NeSI
 vote_count: 0
 vote_sum: 0
@@ -137,10 +137,11 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-<img src="../../assets/images/6551812176911..png" width="208"
-height="394" />
-<img src="../../assets/images/6551880407439..png" width="408"
-height="67" />
+<img
+src="https://support.nesi.org.nz/hc/article_attachments/6551812176911"
+width="208" height="394" /> <img
+src="https://support.nesi.org.nz/hc/article_attachments/6551880407439"
+width="408" height="67" />
 
 If you click "Log Out" without stopping your server, the server will
 continue to run until the Slurm job reaches its maximum wall time.

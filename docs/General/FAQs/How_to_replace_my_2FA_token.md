@@ -1,13 +1,13 @@
 ---
 created_at: '2019-01-07T20:34:07Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - 2fa
 - access
 - mfa
 - account
 - authentication
-position: 0
 title: How to replace my 2FA token
 vote_count: 0
 vote_sum: 0
@@ -32,7 +32,7 @@ Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 Once you've created a token, you should see the 'Manage Two-Factor
 token' option.
 
-![image2018-10-26\_15-36-10.png](../../assets/images/image2018-10-26_15-36-10.png)
+![image2018-10-26\_15-36-10.png](https://support.nesi.org.nz/hc/article_attachments/360001267556/image2018-10-26_15-36-10.png)
 
 ## Delete the Two-Factor token
 
@@ -40,15 +40,15 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](../../assets/images/How_to_replace_my_2FA_token.png)
+![](https://support.nesi.org.nz/hc/article_attachments/360001504795/mceclip0.png)
 
 After 'Delete Token' has been selected:
 
-![](../../assets/images/How_to_replace_my_2FA_token_0.png)
+![](https://support.nesi.org.nz/hc/article_attachments/360001607216/mceclip1.png)
 
 You will also receive an email confirmation:
 
-![](../../assets/images/How_to_replace_my_2FA_token_1.png)
+![](https://support.nesi.org.nz/hc/article_attachments/360001504835/mceclip3.png)
 
 ## Related content
 
