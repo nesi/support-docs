@@ -132,7 +132,9 @@ jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
 !!! info Examples
-     [Multithreading
-     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
-     [MPI
-     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)
+>
+> [Multithreading
+> Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
+>
+> [MPI
+> Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)

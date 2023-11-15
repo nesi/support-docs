@@ -6,10 +6,10 @@ import json
 import mkdocs.plugins
 import os
 
-module_list_path = os.environ["MODULE_LIST_PATH"]
+module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 
-def on_env(env, config, files, **kwargs): 
-    # add entire module list to keyword 'applications'
+def on_env(env, config, files, **kwargs):
+    # add entire module list to keyword 'applications
     env.globals["applications"] = json.load(open(module_list_path))
 
     # env.globals["domains"]=json.load(open('../tags/domains.json')).keys() # Needs list of cannon domains to make into

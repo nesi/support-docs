@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
+"""
+Modify proselint outputs into a format recognised by github actions.
+"""
+
 import sys
 import proselint
 from proselint import config
 
-"""
-Modify proselint outputs into a format recognised by github actions.
-"""
+
 
 files = sys.argv[1:]
 

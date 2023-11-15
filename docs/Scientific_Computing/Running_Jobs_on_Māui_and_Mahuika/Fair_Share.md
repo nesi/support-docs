@@ -37,15 +37,16 @@ a given **period**. An institution also has a percentage **Fair
 Share entitlement** of each machine's deliverable capacity over that
 same period.
 !!! info Note
-     Although we use the term "Fair Share entitlement" in this article, it
-     bears only a loose relationship to an institution's contractual
-     entitlement to receive allocations from the NeSI HPC Compute &
-     Analytics service. The Fair Share entitlement is managed separately
-     for each cluster, and is adjusted as needed by NeSI staff so that each
-     institution can receive, as nearly as possible, its contractual
-     entitlement to the service as a whole, as well as a mix of cluster
-     hours that corresponds closely to the needs of that institution's
-     various project teams.
+>
+> Although we use the term "Fair Share entitlement" in this article, it
+> bears only a loose relationship to an institution's contractual
+> entitlement to receive allocations from the NeSI HPC Compute &
+> Analytics service. The Fair Share entitlement is managed separately
+> for each cluster, and is adjusted as needed by NeSI staff so that each
+> institution can receive, as nearly as possible, its contractual
+> entitlement to the service as a whole, as well as a mix of cluster
+> hours that corresponds closely to the needs of that institution's
+> various project teams.
 
 -   **Your project's expected rate of use** = (**your institution's Fair
     Share entitlement** × **your project's allocation**) / (**sum of

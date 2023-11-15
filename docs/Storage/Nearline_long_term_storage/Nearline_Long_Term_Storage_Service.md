@@ -128,22 +128,27 @@ The source directory or file list needs to be located under
 `/nesi/`**`project`**`/` or `/nesi/`**`nobackup`**`/`and specified as
 such. 
 !!! info Note
-     The following will not work:
-     ``` sl
-     cd /nesi/project/nesi12345
-     nlput nesi12345 some_directory
-     ```
-     It is necessary to do this instead:
-     ``` sl
-     nlput nesi12345 /nesi/project/nesi12345/some_directory
-     ```
+>
+> The following will not work:
+>
+> ``` sl
+> cd /nesi/project/nesi12345
+> nlput nesi12345 some_directory
+> ```
+>
+> It is necessary to do this instead:
+>
+> ``` sl
+> nlput nesi12345 /nesi/project/nesi12345/some_directory
+> ```
 
 The data will be mapped into the same directory structure under
 `/nesi/`**`nearline`**`/` (see below).
 !!! info Warning
-     Please ensure your file or directory names do not contain spaces,
-     non-standard characters or symbols. This may cause issues when
-     uploading or downloading files.
+>
+> Please ensure your file or directory names do not contain spaces,
+> non-standard characters or symbols. This may cause issues when
+> uploading or downloading files.
 
 The recommended file size to archive is between 1 GB and 1 TB. The
 client **will not** accept any directory or file list containing any
@@ -174,14 +179,16 @@ The existing directory structure starting after
 `/nesi/project/<projectID>/` or `/nesi/nobackup/<projectID>/` will be
 mapped onto `/nesi/nearline/<projectID>/`
 !!! info Warning
-     Files and directories are checked for existence and only new files are
-     transferred to Nearline. **Files already on Nearline will not be
-     updated to reflect newer source files**. Thus, files that already
-     exist on Nearline (either tape or staging disk) will be skipped in the
-     migration process, though you should receive a notification of this
-     If you wish to replace an existing file at a specific file path
-     (instead of creating a copy at a different file path) then the
-     original copy on Nearline must be purged.
+>
+> Files and directories are checked for existence and only new files are
+> transferred to Nearline. **Files already on Nearline will not be
+> updated to reflect newer source files**. Thus, files that already
+> exist on Nearline (either tape or staging disk) will be skipped in the
+> migration process, though you should receive a notification of this
+>
+> If you wish to replace an existing file at a specific file path
+> (instead of creating a copy at a different file path) then the
+> original copy on Nearline must be purged.
 
 `nlput` takes only a directory or a file list. **A single file is
 treated as a file list** and read line by line, searching for valid file
@@ -190,18 +197,20 @@ the full path of the file to be transferred.
 
 ## Put - directory
 !!! info Warning
-     If you try to upload to Nearline a path containing spaces, especially
-     multiple consecutive spaces, you will get some very unexpected
-     results, such as the job being dropped. We are aware of the issue and
-     may introduce a fix in a future release. In the meantime, we suggest
-     avoiding supplying such arguments to `nlput`. You can work around it
-     by renaming the directory and all its ancestors to avoid spaces, or by
-     putting the directory (or its ancestor whose name contains a space)
-     into an archive file.
-     This problem does not affect when your directory to upload happens to
-     have contents (files or directories) with spaces in their names, i.e.
-     to cause a problem the space must be in the name of the directory to
-     be uploaded or one of its ancestor directories.
+>
+> If you try to upload to Nearline a path containing spaces, especially
+> multiple consecutive spaces, you will get some very unexpected
+> results, such as the job being dropped. We are aware of the issue and
+> may introduce a fix in a future release. In the meantime, we suggest
+> avoiding supplying such arguments to `nlput`. You can work around it
+> by renaming the directory and all its ancestors to avoid spaces, or by
+> putting the directory (or its ancestor whose name contains a space)
+> into an archive file.
+>
+> This problem does not affect when your directory to upload happens to
+> have contents (files or directories) with spaces in their names, i.e.
+> to cause a problem the space must be in the name of the directory to
+> be uploaded or one of its ancestor directories.
 
 All files and subdirectories within a specified directory will be
 transferred into Nearline. The target location maps with the source
@@ -215,19 +224,21 @@ will copy all data within the `Results` directory into
 
 `/nesi/nearline/nesi12345/`**`To/Archive/Results/`**.
 !!! info Warning
-     If you put `/nesi/`**`project`**`/nesi12345/To/Archive/Results/` on
-     Nearline as well as
-     `/nesi/`**`nobackup`**`/nesi12345/To/Archive/Results/`, the contents
-     of both source locations (`project` and `nobackup`) will be merged
-     into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
-     `/nesi/nearline/nesi12345/`, files with the same name and path will be
-     skipped.
+>
+> If you put `/nesi/`**`project`**`/nesi12345/To/Archive/Results/` on
+> Nearline as well as
+> `/nesi/`**`nobackup`**`/nesi12345/To/Archive/Results/`, the contents
+> of both source locations (`project` and `nobackup`) will be merged
+> into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
+> `/nesi/nearline/nesi12345/`, files with the same name and path will be
+> skipped.
 
 ## Put - file list
 !!! info Warning
-     The file list must be located within `/nesi/project` or
-     `/nesi/nobackup`. Any other location will cause obscure errors and
-     failures.
+>
+> The file list must be located within `/nesi/project` or
+> `/nesi/nobackup`. Any other location will cause obscure errors and
+> failures.
 
 The `file_list` is a file containing a list of files to be transferred.
 It can specify **only one file per line** and **directories are
@@ -268,11 +279,12 @@ version of data from nobackup or project:
     using `nlpurge`.
 3.  Copy the updated files to the Nearline file system using `nlput`.
 !!! info Warning
-     For technical reasons, files (data and metadata) and directory
-     structures on Nearline cannot be safely changed once present, even by
-     the system administrators, except by deletion and recreation. If you
-     wish to rename your files or restructure your directories, you must
-     follow the process below.
+>
+> For technical reasons, files (data and metadata) and directory
+> structures on Nearline cannot be safely changed once present, even by
+> the system administrators, except by deletion and recreation. If you
+> wish to rename your files or restructure your directories, you must
+> follow the process below.
 
 If you need to edit data, rename files, or restructure directories that
 exist on Nearline but are no longer on project or nobackup:
@@ -297,19 +309,20 @@ Similar to `nlput` (see above), nlget accepts a Nearline** directory**
 list** `file_list`, defining the source of the data to be retrieved from
 Nearline.
 !!! info Warnings
-     -   The local file list must be located within `/nesi/project` or
-         `/nesi/nobackup`. Any other location will be rejected.
-     -   Paths to files or directories to be retrieved must be absolute and
-         start with `/nesi/nearline`, whether supplied on the command line
-         (as a directory) or as entries in a file list.
-     -   Directories whose names contain spaces, especially multiple
-         consecutive spaces, cannot be retrieved from Nearline directly
-         using `nlget`. You must retrieve the contents of such a directory
-         using a filelist, or retrieve one of its ancestors that doesn't
-         have a space in the name or path. That is, instead of retrieving
-         `/nesi/project/nesi12345/ab/c  d` directly, retrieve
-         `/nesi/project/nesi12345/ab`. We are aware of the problem and may
-         address it in a later Nearline release.
+>
+> -   The local file list must be located within `/nesi/project` or
+>     `/nesi/nobackup`. Any other location will be rejected.
+> -   Paths to files or directories to be retrieved must be absolute and
+>     start with `/nesi/nearline`, whether supplied on the command line
+>     (as a directory) or as entries in a file list.
+> -   Directories whose names contain spaces, especially multiple
+>     consecutive spaces, cannot be retrieved from Nearline directly
+>     using `nlget`. You must retrieve the contents of such a directory
+>     using a filelist, or retrieve one of its ancestors that doesn't
+>     have a space in the name or path. That is, instead of retrieving
+>     `/nesi/project/nesi12345/ab/c  d` directly, retrieve
+>     `/nesi/project/nesi12345/ab`. We are aware of the problem and may
+>     address it in a later Nearline release.
 
 The destination `dest_dir` needs to be defined. The whole directory
 structure after `/nesi/nearline/` will be created at the destination and
@@ -325,11 +338,12 @@ directory structure does not already exist, and copy the data within the
 `Results` directory into it.  Note that the output pathe will include
 the project root in the path.
 !!! info Warning
-     Any given file **will not be retrieved** if a file of the same name
-     already exists in the destination directory. If you wish to retrieve a
-     new copy of a file that already exists at the destination directory
-     then you must either change the destination directory, or delete the
-     existing copy of the file in the that directory.
+>
+> Any given file **will not be retrieved** if a file of the same name
+> already exists in the destination directory. If you wish to retrieve a
+> new copy of a file that already exists at the destination directory
+> then you must either change the destination directory, or delete the
+> existing copy of the file in the that directory.
 
 `nlget` takes only one directory or one file list. **Single files, if
 local, are treated as a file list** and read line by line, searching for
@@ -356,16 +370,17 @@ is compulsory, and moreover all entries in the file list must denote
 files within (or supposed to be within) the chosen project's Nearline
 directory.
 !!! info Warnings
-     -   If a file list is used, it must be located within `/nesi/project`
-         or `/nesi/nobackup` and referred to by its full path starting with
-         one of those places (symlinks in the path are OK).
-     -   Paths to files or directories to be purged must be absolute and
-         start with `/nesi/nearline`, whether supplied on the command line
-         (as a directory) or as entries in a file list.
-     -   Purging the entire Nearline directory for a project, e.g.
-         `nlpurge /nesi/nearline/nesi12345`, is not permitted. To empty a
-         project's Nearline directory, you must purge its contents one by
-         one (if directories), or by means of a filelist (if files).
+>
+> -   If a file list is used, it must be located within `/nesi/project`
+>     or `/nesi/nobackup` and referred to by its full path starting with
+>     one of those places (symlinks in the path are OK).
+> -   Paths to files or directories to be purged must be absolute and
+>     start with `/nesi/nearline`, whether supplied on the command line
+>     (as a directory) or as entries in a file list.
+> -   Purging the entire Nearline directory for a project, e.g.
+>     `nlpurge /nesi/nearline/nesi12345`, is not permitted. To empty a
+>     project's Nearline directory, you must purge its contents one by
+>     one (if directories), or by means of a filelist (if files).
 
 # View nearline  job status
 
@@ -470,28 +485,33 @@ indeed wait times could be hours or even in some cases more than a day.
 
 # Known issues
 !!! info Retrievals
-     Some users of Nearline have reported that attempts to retrieve files
-     from tape using `nlget` (see below) will not retrieve all files.
-     Instead, only some files will come back, and the job will finish with
-     the following output:
-     ``` sl
-     recall failed some syncs might still run (042)
-     ```
-     We are aware of this problem, which is caused by the Nearline job
-     timing out while waiting for a tape drive to become available. This
-     problem may also occur if you attempt to retrieve multiple files,
-     together adding to a large amount of data, from Nearline.
-     Unfortunately, a proper fix requires a fundamental redesign and
-     rebuild of the Nearline server architecture, work that is on hold
-     pending decisions regarding the direction in which we take NeSI's data
-     services. We appreciate your patience as we work through these
-     decisions.
-     In the meantime, if you encounter this problem, the recommended
-     workaround is to wait a couple of hours (or overnight, if at the end
-     of a day) and try again once a tape drive is more likely to be free.
-     You may have to try several times, waiting between each attempt. We
-     apologise for any inconvenience caused to you by tape drive
-     contention.
+>
+> Some users of Nearline have reported that attempts to retrieve files
+> from tape using `nlget` (see below) will not retrieve all files.
+> Instead, only some files will come back, and the job will finish with
+> the following output:
+>
+> ``` sl
+> recall failed some syncs might still run (042)
+> ```
+>
+> We are aware of this problem, which is caused by the Nearline job
+> timing out while waiting for a tape drive to become available. This
+> problem may also occur if you attempt to retrieve multiple files,
+> together adding to a large amount of data, from Nearline.
+>
+> Unfortunately, a proper fix requires a fundamental redesign and
+> rebuild of the Nearline server architecture, work that is on hold
+> pending decisions regarding the direction in which we take NeSI's data
+> services. We appreciate your patience as we work through these
+> decisions.
+>
+> In the meantime, if you encounter this problem, the recommended
+> workaround is to wait a couple of hours (or overnight, if at the end
+> of a day) and try again once a tape drive is more likely to be free.
+> You may have to try several times, waiting between each attempt. We
+> apologise for any inconvenience caused to you by tape drive
+> contention.
 
  
 

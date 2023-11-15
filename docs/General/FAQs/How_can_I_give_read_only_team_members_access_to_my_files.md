@@ -20,8 +20,9 @@ zendesk_section_id: 360000039036
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! info See also
-     [File permissions and
-     groups](https://support.nesi.org.nz/hc/en-gb/articles/360000205435)
+>
+> [File permissions and
+> groups](https://support.nesi.org.nz/hc/en-gb/articles/360000205435)
 
 Not all projects have read-only groups created by default. If your
 project has a read-only group created after the project itself was
@@ -34,11 +35,12 @@ following commands explain how to do this;  when running the commands,
 replace `nesi12345` and `nesi12345r` with your project code and
 read-only project code respectively.
 !!! info Warning
-     If this process is interrupted part-way through, for example due to
-     your computer going to sleep and losing its connection to your NeSI
-     terminal session, your files can end up in a bad way. For this reason
-     please **run all the following commands in a `screen` or `tmux`
-     session.**
+>
+> If this process is interrupted part-way through, for example due to
+> your computer going to sleep and losing its connection to your NeSI
+> terminal session, your files can end up in a bad way. For this reason
+> please **run all the following commands in a `screen` or `tmux`
+> session.**
 
 1.  Prepare a file containing the ACL to add. Ensure you include the
     `mask` line. Note that the script will not remove any of the

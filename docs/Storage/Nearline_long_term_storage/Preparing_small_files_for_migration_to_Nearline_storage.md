@@ -69,10 +69,11 @@ You do not have to create one single archive file for all small files in
 in fact you may prefer to create archive files pertaining to particular
 subdirectories. There is no harm in either approach.
 !!! info Tip
-     The archive creation process can take quite a long time. So that you
-     can freely log out of the cluster, and to protect the process in case
-     you're accidentally disconnected, you should create the archive by
-     means of a Slurm job, or else in a `tmux` or `screen` session.
+>
+> The archive creation process can take quite a long time. So that you
+> can freely log out of the cluster, and to protect the process in case
+> you're accidentally disconnected, you should create the archive by
+> means of a Slurm job, or else in a `tmux` or `screen` session.
 
  Archive creation is very simple, and can be achieved through the
 following:

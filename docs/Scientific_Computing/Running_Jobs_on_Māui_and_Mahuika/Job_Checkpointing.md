@@ -84,5 +84,6 @@ for i = startindex:100
 end
 ```
 !!! info Tip
-     We ***strongly*** recommend implementing checkpointing on any job
-     running longer than 3 days!
+>
+> We ***strongly*** recommend implementing checkpointing on any job
+> running longer than 3 days!

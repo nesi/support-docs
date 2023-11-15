@@ -39,11 +39,12 @@ pages.
 
 # Adding a custom Python kernel
 !!! info See also
-     See the [Jupyter kernels - Tool-assisted
-     management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
-     page for the **preferred** way to register kernels, which uses the
-     `nesi-add-kernel` command line tool to automate most of these manual
-     steps.
+>
+> See the [Jupyter kernels - Tool-assisted
+> management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
+> page for the **preferred** way to register kernels, which uses the
+> `nesi-add-kernel` command line tool to automate most of these manual
+> steps.
 
 You can configure custom Python kernels for running your Jupyter
 notebooks. This could be necessary and/or recommended in some

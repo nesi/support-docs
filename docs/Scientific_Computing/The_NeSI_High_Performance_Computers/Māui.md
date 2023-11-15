@@ -36,13 +36,14 @@ example pre- and post-processing work, and to provide virtual lab
 services, we offer a small number [Māui ancillary
 nodes](https://support.nesi.org.nz/hc/articles/360000203776).
 !!! info Tips
-     The computing capacity of the Māui ancillary nodes is limited. If you
-     think you will need large amounts of computing power for small jobs in
-     addition to large jobs that can run on Māui, please [contact
-     us](https://support.nesi.org.nz/hc/requests/new) about getting an
-     allocation on
-     [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575),
-     our high-throughput computing cluster.
+>
+> The computing capacity of the Māui ancillary nodes is limited. If you
+> think you will need large amounts of computing power for small jobs in
+> addition to large jobs that can run on Māui, please [contact
+> us](https://support.nesi.org.nz/hc/requests/new) about getting an
+> allocation on
+> [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575),
+> our high-throughput computing cluster.
 
 The login or build nodes maui01 and maui02 provide access to the full
 Cray Programming Environment (e.g. editors, compilers, linkers, debug
