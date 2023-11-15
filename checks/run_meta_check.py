@@ -99,7 +99,7 @@ def title_from_h1(contents):
 
 
 def check_title(path):
-    if (path) > 28:
+    if len(path) > 28:
         f"::warning file={path},line=0,title=title.long::Title '{path}' is too long"
 
     # path, file = os.path.split()
