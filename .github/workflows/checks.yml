@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: pip install proselint
-      - name: Run markdownlint
+      - name: Run proselint
         run: |
           shopt -s globstar extglob
           python3 checks/run_proselint.py ${{inputs.fileList}} 

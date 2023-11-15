@@ -5,7 +5,7 @@ Serves a similar function to 'mkdocs_hooks' except for at render rather than tem
 import os
 import json
 
-module_list_path = os.environ["MODULE_LIST_PATH"]
+module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 
 def define_env(env):
     """
