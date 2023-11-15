@@ -10,8 +10,8 @@
 .md-typeset details.software {
   margin: 0 0 -1px 0;
   border-radius: 0;
-  background-color: #fff;
-  border: 1px solid rgb(199, 199, 199);
+  background-color: var(--md-primary-bg-color);
+  border: 1px solid var(--md-default-fg-color);
   /* Nesting here to increase prio */
   &.hide_cluster {
     display: none;
@@ -22,7 +22,7 @@
 }
 .md-typeset .software > .admonition-title,
 .md-typeset .software > summary {
-    background-color: #fff;
+    background-color: var(--md-default-bg-color);
 }
 .md-typeset .software > .admonition-title::before,
 .md-typeset .software > summary::before {
@@ -54,11 +54,11 @@
     border-color: #972220;
 }
 .active.btn-cluster-maui {
-    color: #ffffff;
+    color:  var(--md-primary-bg-color);
   	background-color: #3c816e;
 }
 .active.btn-cluster-mahuika {
-    color: #ffffff;
+    color:  var(--md-primary-bg-color);
     background-color: #972220;
 }
 .app-list-header {
