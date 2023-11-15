@@ -1,11 +1,11 @@
 ---
 created_at: '2016-05-05T04:11:49Z'
 hidden: true
-label_names:
+position: 23
+tags:
 - mahuika
 - tier1
 - biology
-position: 23
 title: ALLPATHS-LG
 vote_count: 0
 vote_sum: 0
