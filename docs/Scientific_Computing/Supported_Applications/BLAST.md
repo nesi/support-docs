@@ -26,7 +26,7 @@ present and always comprising the first three lines of the article. -->
 
  
 
-# BLAST Databases
+## BLAST Databases
 
 We download the standard NCBI databases quarterly, and create a
 corresponding environment module named like `BLASTDB/<yyyy-mm>` which
@@ -44,7 +44,7 @@ Because we only keep a few recent versions of the databases, you may be
 required from time to time to change the BLASTDB module version if you
 use old job submission scripts as templates for new ones.
 
-# Example scripts
+## Example scripts
 
 When given a large amount of query sequence to get through the BLAST
 search programs will take batches of it, running through the database
@@ -74,7 +74,7 @@ settings.  
 module load BLAST/2.13.0-GCC-11.3.0
 module load BLASTDB/2023-01
 
-# This script takes one argument, the FASTA file of query sequences.
+## This script takes one argument, the FASTA file of query sequences.
 QUERIES=$1
 FORMAT="6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore"
 BLASTOPTS="-evalue 0.05 -max_target_seqs 10"
@@ -111,7 +111,7 @@ allowed for in the memory requested by the job.  As of mid 2023 that is
 module load BLAST/2.13.0-GCC-11.3.0
 module load BLASTDB/2023-01
 
-# This script takes one argument, the FASTA file of query sequences.
+## This script takes one argument, the FASTA file of query sequences.
 QUERIES=$1
 FORMAT="6 qseqid qstart qend qseq sseqid sgi sacc sstart send staxids sscinames stitle length evalue bitscore"
 BLASTOPTS="-task blastn"
@@ -120,7 +120,7 @@ DB=nt
 #BLASTAPP=blastx
 #DB=nr
 
-# Keep the database in RAM
+## Keep the database in RAM
 cp $BLASTDB/{$DB,taxdb}.* $TMPDIR/ 
 export BLASTDB=$TMPDIR
 

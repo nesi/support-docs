@@ -30,7 +30,7 @@ zendesk_section_id: 360000039036
      -   Paste is not usually bound to `ctrl` + `V` and will vary based on
          your method of access.
 
-# Repeatedly asking for First and Second Factor.
+## Repeatedly asking for First and Second Factor.
 
 In addition to using an incorrect First/Second factor there are several
 other issues that will cause a similar looking failure to log in. 
@@ -121,7 +121,7 @@ Six failed login attempts within five minutes will trigger a four-hour
 lockout. Users experiencing login issues can inadvertently trigger the
 lockout, making diagnosing the original issue much more difficult.  
 
-# Connection closed by .... (MobaXterm)
+## Connection closed by .... (MobaXterm)
 
 ### 1. Skip password prompts.
 
@@ -154,18 +154,18 @@ MobaXterm can be updated through: 'help&gt;check for updates'
 
 ### 3. Reinstall your MobaXTerm client.
 
-# Asked for 'Password' instead of 'First Factor'
+## Asked for 'Password' instead of 'First Factor'
 
 ### 1. Check the status using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
 
 ### 2. See [above](#mobaPassPassPass).
 
-# Authentication token manipulation error
+## Authentication token manipulation error
 
 This occurs when your authentication token is out of sync. You will have
 to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
-# Nothing here has helped?
+## Nothing here has helped?
 
 [Contact NeSI support](https://support.nesi.org.nz/hc/requests/new).
 

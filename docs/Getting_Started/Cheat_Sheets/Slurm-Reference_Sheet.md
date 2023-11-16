@@ -78,7 +78,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 
   --mail-user             `#SBATCH --mail-user=bob123@gmail.com`   Address to send mail notifications.
 
-  --mail-type             `#SBATCH --mail-type=ALL`                Will send a mail notification at `BEGIN  END  FAIL`
+  --mail-type             `#SBATCH --mail-type=ALL`                Will send a mail notification at `BEGIN END FAIL`
 
                           `#SBATCH --mail-type=TIME_LIMIT_80`      Will send message at *80%* walltime
 

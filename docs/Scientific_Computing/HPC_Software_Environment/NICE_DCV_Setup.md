@@ -36,7 +36,7 @@ to check how your job is coming along.
 
 Follow the instructions below to set up a new session and connect to it.
 
-# Internet Connection
+## Internet Connection
 
 NICE DCV uses image compression mechanisms to reduce the amount of data
 that needs to be transmitted from the HPC to your laptop or desktop
@@ -48,7 +48,7 @@ While NICE DCV works reasonably well over a WiFi connection, for best
 performance we suggest you use a wired (Ethernet) connection if
 possible.
 
-# Creating a new NICE DCV server session
+## Creating a new NICE DCV server session
 
 1.  Log in to the appropriate host.
 
@@ -90,7 +90,7 @@ possible.
     dcv create-session <session name>
     ```
 
-# Establishing an SSH tunnel
+## Establishing an SSH tunnel
 
 For security reasons, the NICE DCV nodes are not on the public internet
 and so are not directly accessible from your workstation. Therefore, we
@@ -195,7 +195,7 @@ A picture is still to come.
 -   The destination server for the tunnel through the lander node must
     be the NeSI login node where your NICE DCV server is running.
 
-# Connecting to a session
+## Connecting to a session
 
 NICE DCV comes with a client for Windows and Linux systems, which can be
 downloaded from the [NICE web
@@ -231,7 +231,7 @@ To connect with a browser:
 4.  Enter your HPC account credentials (first factor)
 5.  Click on "Login"
 
-# Using the Desktop Environment
+## Using the Desktop Environment
 
 You should be presented with a Linux desktop environment after
 successful login with the client or browser. You can then use the
@@ -241,7 +241,7 @@ terminal application by right-clicking on the desktop and selecting
 includes various [visualisation software
 solutions](https://support.nesi.org.nz/knowledge/articles/360000700295/en-gb?brand_id=30406&return_to=%2Fhc%2Fen-gb%2Farticles%2F360000700295).
 
-# Disconnecting and Stopping a Session
+## Disconnecting and Stopping a Session
 
 Sessions can persist on the HPC for as long as the SLURM resource
 allocation is valid. You can disconnect and reconnect to the session as

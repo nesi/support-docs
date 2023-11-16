@@ -73,12 +73,12 @@ affect the checksum.
 The checksum for file '*filename.txt*' can be found with the following
 commands.
 
-|        |                          |                                          |                              |
-|--------|--------------------------|------------------------------------------|------------------------------|
-|        | Linux                    | Windows(CMD/Powershell)                  | Mac                          |
-| SH1    | `sha1sum filename.txt`   | `certUtil -hashfile filename.txt`        | `shasum filename.txt`        |
-| SHA256 | `sha256sum filename.txt` | `certUtil -hashfile filename.txt sha256` | `shasum -a 256 filename.txt` |
-| MD5    | `md5sum filename.txt`    | `certUtil -hashfile filename.txt md5`    | `md5 filename.txt`           |
+|        |                              |                                                |                                  |
+|--------|------------------------------|------------------------------------------------|----------------------------------|
+|        | Linux                        | Windows(CMD/Powershell)                        | Mac                              |
+| SH1    | `sha1sum `*`filename.txt`*   | `certUtil -hashfile `*`filename.txt`*          | `shasum `*`filename.txt`*        |
+| SHA256 | `sha256sum `*`filename.txt`* | `certUtil -hashfile `*`filename.txt`*` sha256` | `shasum -a 256 `*`filename.txt`* |
+| MD5    | `md5sum `*`filename.txt`*    | `certUtil -hashfile `*`filename.txt`*` md5`    | `md5 `*`filename.txt`*           |
 
  
 

@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
+## Description
 
 [Clair3 homepage](https://github.com/HKU-BAL/Clair3)
 
@@ -40,7 +40,7 @@ A short pre-print describing Clair3's algorithms and results is at
 
  
 
-# License and Disclaimer
+## License and Disclaimer
 
 Copyright 2021 The University of Hong Kong, Department of Computer
 Science
@@ -106,5 +106,3 @@ run_clair3.sh \
   
   
   
-
-``

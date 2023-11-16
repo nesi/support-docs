@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
+## Description
 
 The rapidly growing number of sequenced genomes requires fully automated
 methods for accurate gene structure annotation. With this goal in mind,
@@ -58,13 +58,13 @@ evidence.
 
 Home page : <https://github.com/Gaius-Augustus/BRAKER>
 
-# License and Disclaimer
+## License and Disclaimer
 
 All source code, i.e. `scripts/*.pl` or `scripts/*.py` are under the
 Artistic License
 (see <http://www.opensource.org/licenses/artistic-license.php>).
 
-# Prerequisites
+## Prerequisites
 
 ###  
 !!! prerequisite Obtain GeneMark-ES/ET Academic License 

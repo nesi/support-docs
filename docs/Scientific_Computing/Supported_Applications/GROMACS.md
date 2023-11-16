@@ -36,7 +36,7 @@ effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software (see
 
-# Job submission
+## Job submission
 
 GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
@@ -66,12 +66,12 @@ node at the same time.
 
 module load GROMACS/5.1.4-intel-2017a
 
-# Prepare the binary input from precursor files 
+## Prepare the binary input from precursor files 
 srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
 
-# Run the simulation
-# Note that the -deffnm option is an alternative to specifying several input files individually
-# Note also that the -ntomp option should be used when using hybrid parallelisation
+## Run the simulation
+## Note that the -deffnm option is an alternative to specifying several input files individually
+## Note also that the -ntomp option should be used when using hybrid parallelisation
 srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
 ```
 
@@ -162,7 +162,7 @@ recommend using the \`--exclusive\` flag when running GROMACS. It may
 also be advisable to request tasks or CPUs in multiples of 80, since
 that is the number of vCPUs per node.
 
-# NVIDIA GPU Container
+## NVIDIA GPU Container
 
 NVIDIA has a GPU accelerated version of GROMACS in its NGC container
 registry (more details about NGC
@@ -173,7 +173,7 @@ location (you can also pull your own version if you wish):
 an example submission script that calls the Singularity image here:
 */opt/nesi/containers/nvidia/gromacs-example.sl*.
 
-# Further Documentation
+## Further Documentation
 
 [GROMACS Homepage](http://www.gromacs.org/)
 

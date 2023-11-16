@@ -130,7 +130,7 @@ You can create a repository with either of the following commands.
 
 By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
-` git branch --set-upstream-to   <origin>`.
+` git branch --set-upstream-to <origin>`.
 
 |        |                             |                                                                                                                      |
 |--------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|

@@ -20,7 +20,7 @@ zendesk_section_id: 360000189716
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# On Job Completion
+## On Job Completion
 
 It is good practice to have a look at the resources your job used on
 completion, this way you can improve your job specifications in the
@@ -142,7 +142,7 @@ consumed by shared libraries)
 not contain the memory occupied by the shared library)  
 `PSS = USS + (RSS/# shared processes)`
 
-# During Runtime
+## During Runtime
 
 In order to check in on a job that is running, you will need to ssh to
 the compute node where it it running.
@@ -151,8 +151,8 @@ the compute node where it it running.
 
 If 'nodelist' is not one of the fields in the output of your `sacct` or
 `squeue` commands you can find the node a job is running on using the
-command; `squeue -h -o %N   -j <jobid>` The node will look something
-like `wbn123` on Mahuika or `nid00123` on Māui
+command; `squeue -h -o %N -j <jobid>` The node will look something like
+`wbn123` on Mahuika or `nid00123` on Māui
 !!! prerequisite Note
      If your job is using MPI it may be running on multiple nodes
 
@@ -198,7 +198,7 @@ height="252" alt="how_to_read_htop.png" />
      If the job finishes, or is killed you will be kicked off the node. If
      htop freezes, type `reset` to clear your terminal.
 
-# Limitations of using CPU Efficiency
+## Limitations of using CPU Efficiency
 
 CPU efficiency, as described here, only represents the *percentage of
 time* the CPUs are in use. This is not enough to get a picture of

@@ -38,7 +38,7 @@ packages and no curation by the NeSI team.
      which provides a default environment pre-installed with a set of
      numerical libraries (numpy, scipy, matplotlib, etc.).
 
-# Module loading and conda environments isolation
+## Module loading and conda environments isolation
 
 When using the Miniconda3 module, we recommend using the following
 snippet to ensure that your conda environments can be activated and are
@@ -77,7 +77,7 @@ Here are the explanations for each line of this snippet:
      export PYTHONNOUSERSITE=1
      ```
 
-# Prevent conda from using /home storage
+## Prevent conda from using /home storage
 
 Conda environments and the conda packages cache can take a lot of
 storage space. By default, Conda use [/home
@@ -131,12 +131,12 @@ conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
      conda config --set env_prompt '({name})'
      ```
 
-# Faster solver `mamba` (experimental feature)
+## Faster solver `mamba` (experimental feature)
 
-If you are using the module `Miniconda3/22.11.1-1`, you can accelerate
-conda environments creation and package installation using the new
-`libmamba` solver. To use it, append the option `--solver=libmamba` to
-your command.
+If you are using the module `Miniconda3/`*`22.11.1-1`*, you can
+accelerate conda environments creation and package installation using
+the new `libmamba` solver. To use it, append the option
+`--solver=libmamba` to your command.
 
 For example, to create an environment from an `environment.yml` file,
 use:

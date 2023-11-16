@@ -40,7 +40,7 @@ See [our article on
 hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
 for more information.
 
-# Multi-threading
+## Multi-threading
 
 Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
@@ -78,7 +78,7 @@ The expected output being
 pid 13538's current affinity list: 7,9,43,45
 ```
 
-# MPI
+## MPI
 
 MPI stands for *Message Passing Interface*, and is a communication
 protocol used to achieve distributed parallel computation.
@@ -96,7 +96,7 @@ multiple CPUs, which may belong to different nodes. On Slurm systems
 like ours, the preferred launcher is `srun` rather than `mpi-run`.
 
 Since the distribution of tasks across different nodes may be
-unpredictable, `--mem-per-cpu` should be used instead of `--mem`.``
+unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
 
 ``` sl
 #!/bin/bash -e
@@ -120,7 +120,7 @@ The expected output being
      all. Using `srun` in conjunction with `--cpus-per-task=1` will
      cause `--ntasks` to default to 2.
 
-# Job Arrays
+## Job Arrays
 
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
@@ -155,60 +155,55 @@ results `This is result 1` and `This is result 2` respectively.
 Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
 recommended method of variation between the jobs. For example:
 
-<ul>
-<ul>
+-   -   -   As a direct input to a function.  
 
--   As a direct input to a function.  
+            ``` sl
+            matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+            ```
 
-    ``` sl
-    matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
-    ```
+        -   As an index to an array.  
 
--   As an index to an array.  
+            ``` sl
+            inArray=(1 2 4 8 16 32 64 128)
+            input=${inArray[$SLURM_ARRAY_TASK_ID]}
+            ```
 
-    ``` sl
-    inArray=(1 2 4 8 16 32 64 128)
-    input=${inArray[$SLURM_ARRAY_TASK_ID]}
-    ```
+        -   For selecting input files.  
 
--   For selecting input files.  
+            ``` sl
+            input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+            ```
 
-    ``` sl
-    input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
-    ```
+        -   As a seed for a pseudo-random number.  
+            -   In R
 
--   As a seed for a pseudo-random number.  
-    -   In R
+                ``` sl
+                task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+                set.seed(task_id)
+                ```
 
-        ``` sl
-        task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-        set.seed(task_id)
-        ```
+            -   In MATLAB
 
-    -   In MATLAB
+                ``` sl
+                task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+                rng(task_id)
+                ```
 
-        ``` sl
-        task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-        rng(task_id)
-        ```
+            *  
+            Using a seed is important, otherwise multiple jobs may
+            receive the same pseudo-random numbers.*
 
-    *  
-    Using a seed is important, otherwise multiple jobs may receive the
-    same pseudo-random numbers.*
+        -   As an index to an array of filenames. 
 
--   As an index to an array of filenames. 
+            ``` sl
+            files=( inputs/*.dat )
+            input=${files[SLURM_ARRAY_TASK_ID]}
+            # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
+            ```
 
-    ``` sl
-    files=( inputs/*.dat )
-    input=${files[SLURM_ARRAY_TASK_ID]}
-    # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
-    ```
-
-    This example will submit a job array with each job using a .dat file
-    in 'inputs' as the variable input (in alphabetcial order).
-
-</ul>
-</ul>
+            This example will submit a job array with each job using a
+            .dat file in 'inputs' as the variable input (in alphabetcial
+            order).
 
 Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
@@ -228,11 +223,11 @@ useful for sorting your output files e.g.
 #SBATCH --output week_times.out
 #SBATCH --array 0-167 #This needs to be equal to combinations (in this case 7*24), and zero based.
 
-# Define your dimensions in bash arrays.
+## Define your dimensions in bash arrays.
 arr_time=({00..23})
 arr_day=("Mon" "Tue" "Wed" "Thur" "Fri" "Sat" "Sun") 
 
-# Index the bash arrays based on the SLURM_ARRAY_TASK)
+## Index the bash arrays based on the SLURM_ARRAY_TASK)
 n_time=${arr_time[$(($SLURM_ARRAY_TASK_ID%${#arr_time[@]}))]} # '%' for finding remainder.
 n_day=${arr_day[$(($SLURM_ARRAY_TASK_ID/${#arr_time[@]}))]}
 
@@ -258,10 +253,8 @@ program, this can be resolved in a similar manner.
 ``` sl
 mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
 cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
-#
-bash job.sh
-#
-mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
+## bash job.sh
+## mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
 rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
 ```
 

@@ -24,7 +24,7 @@ zendesk_section_id: 360000040076
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-# Description
+## Description
 
 Java is a computer programming language that is concurrent, class-based,
 object-oriented, and specifically designed to have as few implementation
@@ -38,14 +38,14 @@ but it has fewer low-level facilities.
 
 The Java home page is at <http://www.java.com>.
 
-# Licensing requirements
+## Licensing requirements
 
 All versions of Java on NeSI clusters have been made available by their
 respective owners at no cost under a limited, closed-source licence. The
 full licence terms and conditions for any given version of Java can be
 found by following the directions in `${JAVA_HOME}/LICENSE`.
 
-# Example scripts
+## Example scripts
 
 ## Example script for Mahuika
 
@@ -57,13 +57,13 @@ found by following the directions in `${JAVA_HOME}/LICENSE`.
 #SBATCH --mem           4096MB           # 4 GB of memory
 
 module load Java/1.8.0_144
-# The following line is needed in case your Java application
-# is called indirectly
+## The following line is needed in case your Java application
+## is called indirectly
 export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}
 java -Xmx3g -Djava.io.tmpdir=${TMPDIR} -jar /path/to/foo.jar
 ```
 
-# Further notes
+## Further notes
 
 ## Java Versions
 

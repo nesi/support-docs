@@ -29,7 +29,7 @@ zendesk_section_id: 360000278935
 The ARM (previously known as Allinea) provides a package called *forge*,
 which consists of a debugger, DDT and a profiler, MAP.
 
-# Introduction to profiling
+## Introduction to profiling
 
 Profiling tools help you understand how much resources are consumed
 during run time. This can be time, memory, or MPI communication. One
@@ -40,7 +40,7 @@ code lines. Profiling information is important for optimising code, as
 it enables you to focus your efforts on improving the parts of the code
 that will result in the biggest gains in performance.
 
-# Profiling test cases
+## Profiling test cases
 
 During a optimisation process profiling will be used regularly to
 monitor the behaviour and change in behaviour of the code. Therefore, it
@@ -51,7 +51,7 @@ code could become more dominant (e.g. initialisation phase).
 Furthermore, due to possible overhead from the profiling tool, the code
 could run slower than normal.
 
-# MAP profiler
+## MAP profiler
 
 MAP is a commercial product, which can profile parallel, multi-threaded
 and single-threaded C/C++, Fortran, as well as Python code. MAP supports
@@ -81,7 +81,7 @@ from remote (not described in detail here).
 remember to start your ssh session using X11 forwarding (e.g. using the
 `ssh -Y` option).
 
-# MAP “Express Launch”
+## MAP “Express Launch”
 
 To use MAP we need to load the *forge* module in our batch script and
 add `map --profile` in front of the parallel run statements. For
@@ -93,7 +93,7 @@ viewed, for instance, with
 (the `.map` file name will vary with each run.) See section [MAP
 profile](#map-profile) below for how to interpret the results.
 
-# MAP GUI launch
+## MAP GUI launch
 
 The GUI can be started after loading `module load forge` and launching
 
@@ -118,7 +118,7 @@ profile information.
 
  
 
-# MAP Profile
+## MAP Profile
 
 By default the profile window is divided into the following three main
 sections (click on picture to enlarge).
