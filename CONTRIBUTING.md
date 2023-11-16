@@ -46,6 +46,19 @@ The `main` branch is protected, changes can be made via a pull request.
 
 Make a pull request for your development branch into `main`.
 
+If you are using a local development environment,
+
+```
+git checkout -b <branchname>
+```
+When you are done with your changes
+```
+git push origin <branchname>
+```
+CI checks will run on your branch, you can check them under 'Actions'
+
+Might be worth having a quick look at these before making a pull request.
+
 ## Raise an issue
 
 
