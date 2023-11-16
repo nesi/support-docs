@@ -14,7 +14,11 @@ jobs:
         with:
           fetch-depth: 2 # To get proper history.
       - id: diff 
-        run: echo "fileList=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA **/*.md)" >> "$GITHUB_OUTPUT"
+        run: |
+          shopt -s globstar extglob
+          fileList=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA **/*.md)
+          echo "Changed $fileList"
+          echo "fileList=$fileList" >> "$GITHUB_OUTPUT"
   runChecks:
     needs: getDiff
     uses: ./.github/workflows/checks.yml
