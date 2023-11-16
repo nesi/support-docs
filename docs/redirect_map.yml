@@ -105,8 +105,6 @@ hc/en-gb/articles/360001287235-Download-and-share-CMIP6-data-for-NIWA-researcher
 hc/en-gb/articles/360001298595-Preparing-small-files-for-migration-to-Nearline-storage.md: Storage/Nearline_long_term_storage/Preparing_small_files_for_migration_to_Nearline_storage.md
 hc/en-gb/articles/360001316356-Slurm-Interactive-Sessions.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md
 hc/en-gb/articles/360001330415-Checksums.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checksums.md
-hc/en-gb/articles/360001332675-Find-execution-hot-spots-with-VTune.md: Scientific_Computing/Supported_Applications/Find
-  execution hot spots with VTune.md
 hc/en-gb/articles/360001385735-What-is-an-allocation-.md: Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md
 hc/en-gb/articles/360001392636-Configuring-Dask-MPI-jobs.md: Scientific_Computing/HPC_Software_Environment/Configuring_Dask_MPI_jobs.md
 hc/en-gb/articles/360001393596-Unix-Shell-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Unix_Shell-Reference_Sheet.md
