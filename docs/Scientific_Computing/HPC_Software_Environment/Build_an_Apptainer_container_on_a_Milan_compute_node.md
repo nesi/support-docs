@@ -11,14 +11,6 @@ zendesk_section_id: 360000040056
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 This article describes a technique to build
 [Apptainer](https://apptainer.org/) containers using [Milan compute
 nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471), via
