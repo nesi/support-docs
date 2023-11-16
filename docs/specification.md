@@ -156,17 +156,17 @@ The macro plugin also allows the use of 'includes',
 Try to avoid putting links on ambiguous words, e.g.
 
 === "Bad"
-    View the software homepage [here](www.example.com).
+    View the software homepage [here](https://www.example.com).
 
     ```md
-    View the homepage [here](www.example.com).
+    View the homepage [here](https://www.example.com).
     ```
 
 === "Better"
-    View the [software homepage](www.example.com).
+    View the [software homepage](https://www.example.com).
 
     ```md
-    View the [software homepage](www.example.com).
+    View the [software homepage](https://www.example.com).
     ```
 
 ## Accessability standards

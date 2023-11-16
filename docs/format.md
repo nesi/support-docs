@@ -191,28 +191,13 @@ Note the additional spacing around the `+` else it will appear cramped.
 ### Images
 
 ```md
-![This is an image](assets/images/FENSAP_GUI1.png)
+![This is an image](./assets/images/ANSYS_0.png)
 ```
 
-![This is an image](assets/images/FENSAP_GUI1.png)
+![This is an image](./assets/images/ANSYS_0.png)
 
 ### Links
 
-Try to avoid putting links on ambiguous words, e.g.
-
-=== "Bad"
-    View the software homepage [here](www.example.com).
-
-    ```md
-    View the homepage [here](www.example.com).
-    ```
-
-=== "Better"
-    View the [software homepage](www.example.com).
-
-    ```md
-    View the [software homepage](www.example.com).
-    ```
 
 [External Link]("https://example.com")
 
