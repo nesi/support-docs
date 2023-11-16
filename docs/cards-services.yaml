@@ -4,7 +4,7 @@
   image: ./assets/icons/material/account-star.svg
 
 - title: Connecting to the Clusters
-  content: Setting up your connection to the cluser.
+  content: Setting up your connection to the cluster.
   url: https://my.nesi.org.nz
   image: ./assets/icons/material/lan-connect.svg
 
