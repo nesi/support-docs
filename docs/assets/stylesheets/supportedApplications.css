@@ -120,7 +120,7 @@ div#tier2 {
 li {
     list-style: none;
 }
-.warning:before {
+.sd-warning:before {
     content: " \f071";
     font-family: "FontAwesome";
     color: red;
