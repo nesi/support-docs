@@ -14,12 +14,12 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
+!!! prerequisite Requirements
      -   Be a [member of an active
          project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
      -   Windows 10 with [WSL
@@ -70,6 +70,6 @@ Ubuntu LTS Terminal.
     ``` sl
     ln -s /mnt/c/Users/YourWindowsUsername/ WinFS
     ```
-!!! info What Next?
+!!! prerequisite What Next?
      -   Set up your [SSH config
          file](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).

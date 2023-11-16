@@ -19,12 +19,12 @@ zendesk_section_id: 360000033936
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info New Feature
+!!! prerequisite New Feature
      [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
      have recently started rolling out compression of inactive data on the
      NeSI Project filesystem. Please see the [documentation
@@ -319,7 +319,7 @@ The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
 ## /nesi/nearline
-!!! info Note
+!!! prerequisite Note
      The nearline service, including its associated file systems, is in an
      Early Access phase, and allocations are by invitation. We appreciate
      your patience as we develop, test and deploy this service. If you

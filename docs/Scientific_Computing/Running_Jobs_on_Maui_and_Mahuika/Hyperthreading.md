@@ -14,7 +14,7 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -148,7 +148,8 @@ configuration</th>
 <th class="wysiwyg-text-align-center" style="width: 237px">Mahuika</th>
 <th class="wysiwyg-text-align-center" style="width: 232px">Māui</th>
 </tr>
-&#10;<tr class="odd">
+
+<tr class="odd">
 <td style="width: 221px"><ul>
 <li>Only one task</li>
 <li><code class="sl">--cpus-per-task</code> is not used</li>

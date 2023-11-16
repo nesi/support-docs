@@ -19,12 +19,12 @@ zendesk_section_id: 360001189255
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Note
+!!! prerequisite Note
      This service is available for users with a current allocation on
      Mahuika only.  
      [Please contact us to request a suitable
@@ -41,7 +41,7 @@ Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing [Slurm job
 submissions](https://support.nesi.org.nz/hc/en-gb/articles/360000684396)
 and workflows and much more.
-!!! info See also
+!!! prerequisite See also
      -   See the [RStudio via Jupyter on
          NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
          page for launching an RStudio instance.
@@ -75,7 +75,7 @@ will be used to run Jupyter. Typical jobs, not requesting a GPU, should
 be up and running within one to two minutes. Requesting a GPU can
 increase this time significantly as there are only a small number of
 GPUs available at NeSI.
-!!! info Tip
+!!! prerequisite Tip
      If your server appears to not have started within 3 minutes please
      reload the browser window and check again, otherwise contact
      [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
@@ -205,7 +205,7 @@ $ jupyter lab build
 These changes will only take effect after relaunching your Jupyter
 server and then you should be able to install JupyterLab extensions as
 you please.
-!!! info Note
+!!! prerequisite Note
      The above commands will put the JupyterLab application directory in
      your home directory. The application directory often requires at least
      1-2GB of disk space and 30,000 inodes (file count), so make sure you

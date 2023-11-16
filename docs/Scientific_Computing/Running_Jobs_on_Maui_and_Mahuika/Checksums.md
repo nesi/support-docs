@@ -14,7 +14,7 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -62,7 +62,7 @@ ef749eb4110c2a3b3c747390095d0b76 corrupt.bin
 
 Note that filename, path, permissions or any other metadata does not
 affect the checksum.
-!!! info Note
+!!! prerequisite Note
      Checksum functions are designed so that similar files *will not*
      produce similar hashes.
      You will only need to compare a few characters of the string to
@@ -73,12 +73,12 @@ affect the checksum.
 The checksum for file '*filename.txt*' can be found with the following
 commands.
 
-|        |                              |                                                |                                  |
-|--------|------------------------------|------------------------------------------------|----------------------------------|
-|        | Linux                        | Windows(CMD/Powershell)                        | Mac                              |
-| SH1    | `sha1sum `*`filename.txt`*   | `certUtil -hashfile `*`filename.txt`*          | `shasum `*`filename.txt`*        |
-| SHA256 | `sha256sum `*`filename.txt`* | `certUtil -hashfile `*`filename.txt`*` sha256` | `shasum -a 256 `*`filename.txt`* |
-| MD5    | `md5sum `*`filename.txt`*    | `certUtil -hashfile `*`filename.txt`*` md5`    | `md5 `*`filename.txt`*           |
+|        |                          |                                          |                              |
+|--------|--------------------------|------------------------------------------|------------------------------|
+|        | Linux                    | Windows(CMD/Powershell)                  | Mac                          |
+| SH1    | `sha1sum filename.txt`   | `certUtil -hashfile filename.txt`        | `shasum filename.txt`        |
+| SHA256 | `sha256sum filename.txt` | `certUtil -hashfile filename.txt sha256` | `shasum -a 256 filename.txt` |
+| MD5    | `md5sum filename.txt`    | `certUtil -hashfile filename.txt md5`    | `md5 filename.txt`           |
 
  
 

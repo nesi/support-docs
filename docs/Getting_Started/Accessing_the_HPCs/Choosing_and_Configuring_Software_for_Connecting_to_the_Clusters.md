@@ -18,12 +18,12 @@ zendesk_section_id: 360000034315
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
+!!! prerequisite Requirements
      -   Have an [active account and
          project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
      -   Set up your [NeSI Account
@@ -47,7 +47,7 @@ operating system and level of experience.
     JupyterHub is a service providing access to Jupyter Notebooks on
     NeSI. A terminal similar to the other setups describe below can be
     accessed through the Jupyter Launcher.  
-!!! info What next?
+!!! prerequisite What next?
      -   More info on [Jupyter
          Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
      -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
@@ -60,7 +60,7 @@ operating system and level of experience.
     installed, usually called, "Terminal." To find it, simply search for
     "terminal".  
     Congratulations! You are ready to move to the next step.
-!!! info What next?
+!!! prerequisite What next?
      -   Setting up your [Default
          Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
 
@@ -71,7 +71,7 @@ functional terminal requires some additional steps. There are several
 different options, listed in order of preference.
 
 -   ## Ubuntu Terminal (Windows 10)
-!!! info Note
+!!! prerequisite Note
      The Ubuntu Terminal and Windows Subsystem for Linux require
      administrative privileges to enable and install them. If your
      institution has not given you such privileges, consider using
@@ -81,7 +81,7 @@ different options, listed in order of preference.
     on Windows, and allows users to follow the same set of instructions
     given to Mac/Linux users. It may be necessary to enable Windows
     Subsystem for Linux (WSL) first.
-!!! info What next?
+!!! prerequisite What next?
      -   Enabling
          [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
      -   Setting up the [Ubuntu
@@ -102,7 +102,7 @@ different options, listed in order of preference.
     *highly* recommend using the installer edition if you have
     administrator privileges on your workstation or if your
     institution's IT team supports MobaXTerm.
-!!! info What next?
+!!! prerequisite What next?
      -   Setting up
          [MobaXterm](https://support.nesi.org.nz/hc/en-gb/articles/360000624696)
 
@@ -124,7 +124,7 @@ different options, listed in order of preference.
     Once you have a working VM you may continue following the
     instructions as given for
     [Linux/MacOS](#h_c1bbd761-1133-499b-a61a-57b9c4320a1a).
-!!! info What next?
+!!! prerequisite What next?
      -   Setting up a [Virtual
          Machine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
 
@@ -135,7 +135,7 @@ different options, listed in order of preference.
     X-server, additional authentication step). However, WinSCP setup is
     more involved than with MobaXterm, therefore we do not recommend it
     for new users.
-!!! info What next?
+!!! prerequisite What next?
      -   Setting up
          [WinSCP](https://support.nesi.org.nz/hc/en-gb/articles/360000584256)
 

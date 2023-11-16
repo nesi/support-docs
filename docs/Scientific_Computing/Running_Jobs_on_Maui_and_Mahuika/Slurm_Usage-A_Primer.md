@@ -14,7 +14,7 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -35,8 +35,8 @@ There is a long list of different directives, you can  select your
 requirements from. Please have a look to the manual page: `man sbatch`
 
 There are various ways to specify the requirements, e.g. you could
-request 1GB memory per node using `#``SBATCH --mem=1G` or you specify
-the memory per core using `#SBATCH --mem-per-cpu=4096`
+request 1GB memory per node using `#SBATCH --mem=1G`</code> or you
+specify the memory per core using `#SBATCH --mem-per-cpu=4096`
 
 Not all directives need to be specified, just the ones you need.
 
@@ -85,6 +85,10 @@ Submit job `helloworld.sl`:
 with `sbatch --account=nesi12345 helloworld.sl` where nesi12345 is your
 NeSI project’s code. If you only have one project then you don’t need to
 specify it.
+
+````
+
+``
 
 ## Submitting a job using GPGPU nodes
 

@@ -14,12 +14,12 @@ zendesk_section_id: 360000039036
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info See also
+!!! prerequisite See also
      [File permissions and
      groups](https://support.nesi.org.nz/hc/en-gb/articles/360000205435)
 
@@ -49,7 +49,7 @@ There is, however, a solution involving the `rsync` command, a more
 advanced version of `scp`. `rsync` is typically used to copy files
 between two or more machines, but can also be used within the same
 machine.
-!!! info Warning
+!!! prerequisite Warning
      In both these commands, the `--no-perms` and `--no-group` options must
      both come after `-a`. `-a` implicitly asserts `--perms` and `--group`,
      and will therefore override whichever
@@ -62,7 +62,7 @@ rsync -a --no-perms --no-group --chmod=ugo=rwX,Dg+s /path/to/source /path/to/des
 ```
 
 ## To move a file (or directory and its contents), updating its group and setting its permissions
-!!! info Warning
+!!! prerequisite Warning
      The `--remove-source-files` option is safe only if every source file
      is otherwise left intact during the moving process.
 

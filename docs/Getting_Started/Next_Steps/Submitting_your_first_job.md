@@ -16,7 +16,7 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -71,7 +71,7 @@ The debug QOS can be gained by adding the `sbatch` command line option
 This adds 5000 to the job priority so raises it above all non-debug
 jobs, but is limited to one small job per user at a time: no more than
 15 minutes and no more than 2 nodes.
-!!! info Warning
+!!! prerequisite Warning
      Please do not run your code on the login node.  Any processes running
      on the login node for long periods of time or using large numbers of
      CPUs will be terminated.
@@ -131,7 +131,7 @@ sacct -S YYYY-MM-DD
 
 Each job will show as multiple lines, one line for the parent job and
 then additional lines for each job step.
-!!! info Tips
+!!! prerequisite Tips
      sacct -X Only show parent processes.
      sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
      state.
@@ -143,7 +143,7 @@ Documentation](https://slurm.schedmd.com/sacct.html)
 
 scancel &lt;jobid&gt; will cancel the job described by &lt;jobid&gt;.
 You can obtain the job ID by using sacct or squeue.
-!!! info Tips
+!!! prerequisite Tips
      scancel -u \[username\] Kill all jobs submitted by you.
      scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
      \[n2\]

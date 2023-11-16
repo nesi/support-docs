@@ -17,7 +17,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -62,7 +62,7 @@ prefer_research_license
 ``` sl
 prefer_teaching_license
 ```
-!!! info Note
+!!! prerequisite Note
      License preferences are individually tracked by *each version of
      ANSYS.* Make sure you set preferences using the same version as in
      your script.
@@ -130,7 +130,7 @@ then deleted `rm fluent_1234567.in`
 
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
-!!! info Note
+!!! prerequisite Note
      Comments can be added to journal files using a `;`. For example:
      ``` sl
      ; This is a comment
@@ -214,7 +214,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tr>
 </tbody>
 </table>
-!!! info Useful Links
+!!! prerequisite Useful Links
      -   [All command line
          options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_gs/flu_ug_sec_startup_option.html)
 
@@ -243,7 +243,7 @@ Will return;
   salloc: Waiting for resource configuration
   salloc: Nodes wbn[053-056] are ready for job
 ```
-!!! info Note
+!!! prerequisite Note
      Include all the commands you would usually use in your slurm header
      here.
 
@@ -267,9 +267,9 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
  n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
  host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
 ```
-!!! info Important
+!!! prerequisite Important
      Closing the fluent GUI will not end the SLURM interactive session. Use
-     `exit` or `scancel `*`jobid`* when finished, else you will continue to
+     `exit` or `scancel jobid` when finished, else you will continue to
      'use' the requested CPUs.
 
 ## Checkpointing
@@ -442,7 +442,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tr>
 </tbody>
 </table>
-!!! info Tip
+!!! prerequisite Tip
      Initial values path specified in '.def' file can be overridden using
      the `-ini <initial-file-path>` flag.
 
@@ -572,7 +572,7 @@ Not all MAPDL solvers work using distributed memory. 
 | Element formulation       | ✔   |
 | Results calculation       | ✔   |
 | Pre/Postprocessing        | ✖   |
-!!! info Useful Links
+!!! prerequisite Useful Links
      -   [All command line
          options.](https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/ans_ope/Hlp_G_OPE3_1.html)
      -   [All MAPDL
@@ -742,7 +742,7 @@ alt="FENSAP_GUI2.png" /></td>
 You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
 opening the GUI within the project folder.
-!!! info Note
+!!! prerequisite Note
      Submitting your job through the use of the GUI has disadvantages and
      may not be suitable in all cases.
      -   Closing the session or losing connection will prevent the next
@@ -810,7 +810,7 @@ ansysedt -batchoptionhelp
 ```
 
 (Note, this requires a working X-server) 
-!!! info Note
+!!! prerequisite Note
      Each batch option must have it's own flag, e.g.
      ``` sl
      -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"

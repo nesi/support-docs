@@ -14,12 +14,12 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Note
+!!! prerequisite Note
      This documentation contains our legacy instructions for running
      JupyterLab by tunnelling through the lander node.  
      [If you are a Mahuika cluster user, we recommend using jupyter via 
@@ -69,7 +69,7 @@ while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
 ## Setup SSH port forwarding 
-!!! info Requirements
+!!! prerequisite Requirements
      -   In the following we assume you already configured
          your`.ssh/config` to use two hop method as described in the
          [Standard Terminal
@@ -93,7 +93,7 @@ ssh -N -L 15051:localhost:15051 mahuika
 
 Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".
-!!! info Tips
+!!! prerequisite Tips
      -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
          following to your `.ssh/config` to avoid establishing the
          additional hop manually.
@@ -111,7 +111,7 @@ Local Port".
          other nodes, e.g. `w-clim01`
 
 ### MobaXterm GUI
-!!! info Tips
+!!! prerequisite Tips
      -   MobaXterm has an internal terminal which acts like a linux
          terminal and can be configured as described in the [Standard
          Terminal

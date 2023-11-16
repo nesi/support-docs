@@ -14,7 +14,7 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -85,7 +85,7 @@ should give you an impression which steps you usually need to consider:
     tarbomb, you will need to handle it using special techniques.
 4.  Unpack the tarball using `tar xf <source.tar>`. Change into the
     source directory.
-5.  Load the preferred toolchain (or compiler module) and modules for
+5.  ``Load the preferred toolchain (or compiler module) and modules for
     any additional required libraries (`module load gimkl FFTW`)
 6.  Run the configure script with appropriate options,
     e.g. `./configure --prefix=<desired install directory> --use-fftw=$EBROOTFFTW  `(options
@@ -95,7 +95,7 @@ should give you an impression which steps you usually need to consider:
     (see below)
 8.  Compile the code (`make``)`
 9.  install the binaries and libraries into the specified directory
-    (`make install`)
+    (`make install`)``
 
  
 
@@ -169,7 +169,7 @@ compilers:
   Vectorisation   `-hlist=m`                       `-qopt-report`       `-fopt-info-vec` or                 
   reports                                                               `-fopt-info-missed`                
 
-  OpenMP          `-homp` (default)                `-qopenmp`           `-fopenmp`                         
+  OpenMP          `-homp` (default)                `-qopenmp`           `-fopenmp`                         ``
   ------------------------------------------------------------------------------------------------------------------------
 
 Additional compiler options are documented in the compiler man pages,

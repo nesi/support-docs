@@ -14,7 +14,7 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -31,10 +31,10 @@ responsive than when using X11 on its own (approximately 40 times
 faster).
 
 # Connecting Through SSH
-!!! info Requirements
+!!! prerequisite Requirements
      You must be able to [forward a
      port](https://support.nesi.org.nz/hc/en-gb/articles/360001523916).
-!!! info Note
+!!! prerequisite Note
      The Virtual desktops are still in development, please report any
      issues to NeSI support, or open an issue
      [here](https://github.com/nesi/nesi-virtual-desktops/issues).
@@ -53,7 +53,7 @@ For example:
 ``` sl
 ssh -L 1234:localhost:1234 mahuika
 ```
-!!! info Tip
+!!! prerequisite Tip
      Port numbers should be between **1025-49151**. It's OK to use the same
      number for local and remote ports (makes it easier to remember too!)
 

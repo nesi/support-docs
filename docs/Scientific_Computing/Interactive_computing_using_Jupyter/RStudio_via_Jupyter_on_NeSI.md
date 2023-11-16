@@ -14,12 +14,12 @@ zendesk_section_id: 360001189255
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Note
+!!! prerequisite Note
      This functionality is experimental and may introduce breaking changes
      in the future. These notes should be read in conjunction with NeSI's
      main [R support

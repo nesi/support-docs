@@ -14,12 +14,12 @@ zendesk_section_id: 360000033936
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info See also
+!!! prerequisite See also
      -   [How can I let my fellow project team members read or write my
          files?](https://support.nesi.org.nz/hc/en-gb/articles/360001237915)
      -   [How can I give read-only team members access to my
@@ -62,7 +62,7 @@ directory, or copied to your home directory from another network or file
 system, inherit this ownership scheme. You can override these defaults
 depending on how you use the `cp`, `scp`, `rsync`, etc. commands. Please
 consult the documentation for your copying program.
-!!! info Warning
+!!! prerequisite Warning
      If you choose to preserve the original owner and group, but that owner
      and group (name or numeric ID) don't both exist at the destination,
      your files may end up with odd permissions that you can't fix, for
@@ -95,7 +95,7 @@ process, the user in whose name the process ran.
 Your project directory and nobackup directory should both have the
 "setgid" bit set, so that files created in either directory inherit the
 project group.
-!!! info Warning
+!!! prerequisite Warning
      The setgid bit only applies the directory's group to files that are
      newly created in that directory, or copied to the directory over the
      internet. If a file or directory is moved or copied from elsewhere on
@@ -129,7 +129,7 @@ Each directory has two ACLs: One is for the directory itself, and the
 other is for files and directories that are created in future within
 that directory. We have set up both of these ACLs to be the same as each
 other for the two top level project directories.
-!!! info Tip
+!!! prerequisite Tip
      Some project teams, especially those with broader memberships, benefit
      from read-only groups. A read-only group gets added to a project's ACL
      once, and then individual members can be added to or removed from that
@@ -141,7 +141,7 @@ other for the two top level project directories.
 The owner of a file or directory may create, edit or revoke that file or
 directory's ACL and, in the case of a directory, also the directory's
 default (heritable) ACL.
-!!! info Warning
+!!! prerequisite Warning
      Every time you edit an ACL of a file in the home or persistent project
      directory, the file's metadata changes and triggers a backup of that
      file. Doing so recursively on a large number of files and directories,

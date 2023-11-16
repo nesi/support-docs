@@ -14,12 +14,12 @@ zendesk_section_id: 360000034315
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
+!!! prerequisite Requirements
      -   Have your [connection to the NeSI
          cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
          configured.
@@ -45,7 +45,7 @@ described
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
-!!! info Note
+!!! prerequisite Note
      The following examples use aliases as set up in [standard terminal
      setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
      This allows the forwarding from your local machine to the NeSI
@@ -78,7 +78,7 @@ However if you close this terminal session the port forwarding will end.
 If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure. 
-!!! info Note
+!!! prerequisite Note
      Your local port and remote port do not have to be different numbers.
      It is generally easier to use the same number for both.
 
@@ -120,7 +120,7 @@ isn't a requirement, but it makes things easier to remember.
 
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
-!!! info Note
+!!! prerequisite Note
      -   If you get a error message
          ``` sl
          bind: No such file or directory
@@ -219,7 +219,7 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
 <some process using port 6676>
 ```
-!!! info What Next?
+!!! prerequisite What Next?
      -   Using
          [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
          the cluster.

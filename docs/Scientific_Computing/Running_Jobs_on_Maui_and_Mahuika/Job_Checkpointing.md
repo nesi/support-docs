@@ -14,7 +14,7 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -83,6 +83,6 @@ for i = startindex:100
     save(['checkpoint_', datestr(now, 'yyyy-mm-ddTHHMM')])
 end
 ```
-!!! info Tip
+!!! prerequisite Tip
      We ***strongly*** recommend implementing checkpointing on any job
      running longer than 3 days!

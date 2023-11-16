@@ -14,7 +14,7 @@ zendesk_section_id: 360000039036
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -72,6 +72,6 @@ To unmount the directory on MacOS, either eject from Finder or run:
 ``` sl
 umount ~/mahuika-home
 ```
-!!! info Note
+!!! prerequisite Note
      Newer MacOS does not come with SSHFS pre installed. You will have to
      install FUSE as SSHFS from [here](https://osxfuse.github.io/).

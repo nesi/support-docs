@@ -16,12 +16,12 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Important
+!!! prerequisite Important
      Partitions on these systems that may be used for NeSI workloads carry
      the prefix **nesi\_**.
 

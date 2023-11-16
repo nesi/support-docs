@@ -14,12 +14,12 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
+!!! prerequisite Requirements
      -   Have working
          [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
          set up.
@@ -45,12 +45,11 @@ Make sure you have launched the server and it is running in the
 background, look for
 this ![mceclip0.png](../../assets/images/X11_on_NeSI.png) symbol in your
 taskbar 
-!!! info Note
->
-> MobaXterm has a build in X server, no setup required. By default the
-> server is started alongside MobaXterm. You can check it's status in
-> the top left hand corner
-> (![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off). 
+!!! prerequisite Note
+     MobaXterm has a build in X server, no setup required. By default the
+     server is started alongside MobaXterm. You can check it's status in
+     the top left hand corner
+     (![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off). 
 
 # X-Forwarding
 

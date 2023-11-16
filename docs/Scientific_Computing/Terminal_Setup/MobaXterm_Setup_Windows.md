@@ -14,12 +14,12 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
+!!! prerequisite Requirements
      -   Have an [active account and
          project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
      -   Set up your [Linux
@@ -62,7 +62,7 @@ transfer GUI.
 
 1.  Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
-!!! info WARNING
+!!! prerequisite WARNING
      There is a bug which causes some users to be repeatedly prompted
      `<username>@lander.nesi.org.nz's password:`  
      This can be resolved by clicking "OK" each time you are prompted then
@@ -110,7 +110,7 @@ Password:
 Māui users must enter their password combined with their second factor.
 For example, if your password is "Password" and your current second
 factor is "123456" then you must enter "Password123456".
-!!! info Tip
+!!! prerequisite Tip
      If you choose to save your password, the process will be the same
      minus the prompts for First Factor.
 
@@ -142,6 +142,6 @@ Two steps to try:
 Then setup a new session [according to the support doc
 instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
 as before.
-!!! info What Next?
+!!! prerequisite What Next?
      -   [Moving files to/from a
          cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)

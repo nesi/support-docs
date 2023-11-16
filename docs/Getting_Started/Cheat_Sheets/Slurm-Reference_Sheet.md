@@ -14,7 +14,7 @@ zendesk_section_id: 360000278975
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -78,7 +78,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 
   --mail-user             `#SBATCH --mail-user=bob123@gmail.com`   Address to send mail notifications.
 
-  --mail-type             `#SBATCH --mail-type=ALL`                Will send a mail notification at `BEGIN END FAIL`
+  --mail-type             `#SBATCH --mail-type=ALL`                Will send a mail notification at `BEGIN  END  FAIL`
 
                           `#SBATCH --mail-type=TIME_LIMIT_80`      Will send message at *80%* walltime
 
@@ -207,7 +207,7 @@ defined.</td>
 </tr>
 </tbody>
 </table>
-!!! info Tip
+!!! prerequisite Tip
      Many options have a short and long form e.g.
      `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
      ``` sl
@@ -231,7 +231,7 @@ Common examples.
 | `$SLURM_CPUS_PER_TASK` | Useful as an input for multi-threaded functions. |
 | `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
 | `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.             |
-!!! info Tip
+!!! prerequisite Tip
      In order to decrease the chance of a variable being misinterpreted you
      should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
      possible. e.g.

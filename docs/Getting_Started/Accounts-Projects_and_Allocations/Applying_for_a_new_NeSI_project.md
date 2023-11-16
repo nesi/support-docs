@@ -17,12 +17,12 @@ zendesk_section_id: 360000196195
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
+!!! prerequisite Requirements
      Compulsory:
      -   Have a [NeSI Account
          profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
@@ -55,7 +55,7 @@ Requests to use NeSI resources are [submitted via a web
 form](https://my.nesi.org.nz/). The NeSI team will endeavour to approve
 your project, or contact you for more information, within 3-5 working
 days of your submitting your project request.
-!!! info Note
+!!! prerequisite Note
      If you are a member of NIWA please also ensure that you have also read
      and followed the [NIWA internal documentation for gaining access to
      the
@@ -95,7 +95,7 @@ information:
 
 You will also be given an opportunity to tell us anything else you think
 is relevant.
-!!! info What Next?
+!!! prerequisite What Next?
      -   Your NeSI Project proposal will be
          [reviewed](https://support.nesi.org.nz/hc/en-gb/articles/360000202136),
          after which you will be informed of the outcome.

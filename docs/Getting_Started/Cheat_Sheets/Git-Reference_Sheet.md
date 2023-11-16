@@ -18,7 +18,7 @@ zendesk_section_id: 360000278975
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -36,7 +36,7 @@ found [here](https://git-scm.com/docs/git), or using `man git`.
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
-!!! info Password authentication
+!!! prerequisite Password authentication
      GitHub removed support for password authentication on August 13, 2021.
      Using a SSH key is now the easiest way to set up authentication.
 
@@ -130,7 +130,7 @@ You can create a repository with either of the following commands.
 
 By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
-` git branch --set-upstream-to <origin>`.
+` git branch --set-upstream-to   <origin>`.
 
 |        |                             |                                                                                                                      |
 |--------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -140,7 +140,7 @@ will be the repo you cloned from, or set manually using
 |        | `git pull <repo> <branch>`  | Incorporates changes from `<repo>` `<branch>` into local repo.                                                       |
 | push   | `git push`                  | Incorporates changes from local repo into 'origin'.                                                                  |
 |        | `git push <repo> <branch>`  | Incorporates changes from local repo into `<repo>` `<branch>`                                                        |
-!!! info Tip
+!!! prerequisite Tip
      If you are working without collaborators, there should be no reason to
      have a conflict between your local and your remote repo. Make sure you
      always git pull when starting work on your local and git push when
@@ -158,5 +158,5 @@ multiple branches, or requires merging.
 |          | `git branch <branch-name>`   | Create new branch `<branch-name`           |
 | checkout | `git checkout <branch-name>` | Switch to editing branch `<branch-name>`   |
 | merge    | `git merge <branch-name>`    | Merge `<branch-name>` into current branch. |
-!!! info Other Resources
+!!! prerequisite Other Resources
      -   <https://ohshitgit.com/>

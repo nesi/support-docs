@@ -19,7 +19,7 @@ zendesk_section_id: 360000034335
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -35,7 +35,7 @@ analysis. To support workflows that are primarily single core jobs, for
 example pre- and post-processing work, and to provide virtual lab
 services, we offer a small number [Māui ancillary
 nodes](https://support.nesi.org.nz/hc/articles/360000203776).
-!!! info Tips
+!!! prerequisite Tips
      The computing capacity of the Māui ancillary nodes is limited. If you
      think you will need large amounts of computing power for small jobs in
      addition to large jobs that can run on Māui, please [contact

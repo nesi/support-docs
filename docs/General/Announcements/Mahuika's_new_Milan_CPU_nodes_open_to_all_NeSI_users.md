@@ -2,7 +2,8 @@
 created_at: '2023-03-30T02:23:48Z'
 hidden: false
 position: 0
-tags: []
+tags:
+- announcement
 title: "Mahuika\u2019s new Milan CPU nodes open to all NeSI users"
 vote_count: 0
 vote_sum: 0
@@ -14,7 +15,7 @@ zendesk_section_id: 200732737
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

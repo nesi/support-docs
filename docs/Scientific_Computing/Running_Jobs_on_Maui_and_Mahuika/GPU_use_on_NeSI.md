@@ -15,7 +15,7 @@ zendesk_section_id: 360000030876
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -26,7 +26,7 @@ cards.
 For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
 please have a look at the dedicated pages listed at the end of this
 page.
-!!! info Important
+!!! prerequisite Important
      An overview of available GPU cards is available in the [Available GPUs
      on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
      support page.
@@ -154,7 +154,7 @@ srun --job-name "InteractiveGPU" --gpus-per-node 1 --cpus-per-task 8 --mem 2GB -
 
 will request and then start a bash session with access to a GPU, for a
 duration of 30 minutes.
-!!! info Important
+!!! prerequisite Important
      When you use the `--gpus-per-node`option, Slurm automatically sets the
      `CUDA_VISIBLE_DEVICES` environment variable inside your job
      environment to list the index/es of the allocated GPU card/s on each
@@ -186,18 +186,24 @@ module spider CUDA
 
 Please contact us at <support@nesi.org.nz> if you need a version not
 available on the platform.
-!!! info Note
+!!! prerequisite Note
      On Māui Ancillary Nodes, use `module avail CUDA` to list available
      versions.
 
 The CUDA module also provides access to additional command line tools:
 
--   -   -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
-            to directly monitor GPU resource utilisation,
-        -   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
-            to compile CUDA programs,
-        -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html)
-            to debug CUDA applications.
+<ul>
+<ul>
+
+-   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
+    to directly monitor GPU resource utilisation,
+-   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
+    to compile CUDA programs,
+-   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html) to
+    debug CUDA applications.
+
+</ul>
+</ul>
 
 In addition, the [cuDNN](https://developer.nvidia.com/cudnn) (NVIDIA
 CUDA® Deep Neural Network library) library is accessible via its
@@ -276,7 +282,7 @@ Wed May 12 12:08:27 2021
 +-----------------------------------------------------------------------------+
 CUDA_VISIBLE_DEVICES=0
 ```
-!!! info Note
+!!! prerequisite Note
      CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
      GPU index 0 on this node. It is not a count of allocated GPUs.
 
@@ -317,7 +323,7 @@ Then you can use the
 line tool or the
 [ncu-ui](https://docs.nvidia.com/nsight-compute/NsightCompute/index.html)
 graphical interface.
-!!! info Important
+!!! prerequisite Important
      The `nsys-ui` and `ncu-ui` tools require access to a display server,
      either via
      [X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975-X11-on-NeSI)

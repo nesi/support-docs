@@ -14,23 +14,20 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Start simple
->
-> The technique explained in this page should be considered **after**
-> trying simpler single node options (e.g.  [Dask Distributed
-> LocalCluster](https://docs.dask.org/en/stable/deploying-python.html)),
-> if
->
-> -   you need more cores than what is available on a single node,
-> -   or your queuing time is too long.
->
-> Note that using MPI to distribute computations on multiple nodes can
-> have an impact on performances, compared to a single node setting.
+!!! prerequisite Start simple
+     The technique explained in this page should be considered **after**
+     trying simpler single node options (e.g.  [Dask Distributed
+     LocalCluster](https://docs.dask.org/en/stable/deploying-python.html)),
+     if
+     -   you need more cores than what is available on a single node,
+     -   or your queuing time is too long.
+     Note that using MPI to distribute computations on multiple nodes can
+     have an impact on performances, compared to a single node setting.
 
 [Dask](https://dask.org/) is a popular Python package for parallelising
 workflows. It can use a variety of parallelisation backends, including
@@ -89,12 +86,11 @@ dependencies:
   - intel::mpi4py
   - dask-mpi
 ```
-!!! info See also
->
-> See the
-> [Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
-> page for more information on how to create and manage Miniconda
-> environments on NeSI.
+!!! prerequisite See also
+     See the
+     [Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
+     page for more information on how to create and manage Miniconda
+     environments on NeSI.
 
 # Configuring Slurm
 
@@ -274,11 +270,10 @@ From: continuumio/miniconda3:latest
 where the `%runscript` section ensures that the Python script passed to
 `singularity run` is executed using the Python interpreter of the base
 Conda environment inside the container.
-!!! info Tips
->
-> You can build this container on NeSI, using the Mahuika Extension
-> nodes, following the instructions from the [dedicated support
-> page](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
+!!! prerequisite Tips
+     You can build this container on NeSI, using the Mahuika Extension
+     nodes, following the instructions from the [dedicated support
+     page](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
 
 ## Slurm configuration
 

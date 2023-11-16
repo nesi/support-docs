@@ -14,7 +14,7 @@ zendesk_section_id: 360000039036
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -29,13 +29,8 @@ If this is the case, you will get more work done by optimising for
 efficiency rather than speed, and running on a single CPU is almost
 always more efficient than any form of parallelisation. 
 
-<figure>
-<img
-src="../../assets/images/When_does_CPU_efficiency_matter_more_than_speed.png"
-alt="4tasks.png" />
-<figure>
+![*Four serial tasks run concurrently will finish faster than for
+parallel 4cpu tasks CPUs one after
+another. *](../../assets/images/When_does_CPU_efficiency_matter_more_than_speed.png)
 
-</figure>
-<figcaption><em>Four serial tasks run concurrently will finish faster
-than for parallel 4cpu tasks CPUs one after another. </em></figcaption>
 </figure>

@@ -14,7 +14,7 @@ zendesk_section_id: 360000278975
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -52,7 +52,7 @@ Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
 |             | rm -r directory/                             | Recursively delete the files and directories of the specified directory.                                                                                                     |
 | mkdir       | mkdir directory                              | Create a directory of the specified name.                                                                                                                                    |
 | man         | man ls                                       | Bring up the manual of a command (in this case ls).                                                                                                                          |
-!!! info Tip
+!!! prerequisite Tip
      Pressing the 'tab' key once will automatically complete the line if it
      is the only option. e.g. 
      ![complete1.gif](../../assets/images/Unix_Shell-Reference_Sheet.gif)

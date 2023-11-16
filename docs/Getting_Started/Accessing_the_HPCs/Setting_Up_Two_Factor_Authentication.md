@@ -18,22 +18,20 @@ zendesk_section_id: 360000034315
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
->
-> You must:
->
-> -   Have a [NeSI
->     account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
-> -   Be a member of an [active
->     project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
-> -   Have [set up your NeSI account
->     password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995-Setting-Up-and-Resetting-Your-Password).
-> -   Have a device with an authentication app.
+!!! prerequisite Requirements
+     You must:
+     -   Have a [NeSI
+         account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
+     -   Be a member of an [active
+         project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
+     -   Have [set up your NeSI account
+         password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995-Setting-Up-and-Resetting-Your-Password).
+     -   Have a device with an authentication app.
 
 ##  Authentication App
 
@@ -76,7 +74,6 @@ factor in the authentication process.
 This code rotates every 30 seconds, and it **can only be used once**.
 This means that you can only try logging in to the lander node once
 every 30 seconds.
-!!! info What next?
->
-> -   [Getting access to the
->     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
+!!! prerequisite What next?
+     -   [Getting access to the
+         cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)

@@ -14,7 +14,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -101,7 +101,7 @@ using the command line, but the commands are the same within a script.
     `DEPOT_PATH`. The depot path is a series of directories that will be
     searched, in order, for the package that you wish to install and its
     dependencies. Clear the depot path.
-!!! info Warning
+!!! prerequisite Warning
      It is possible for a package to be installed somewhere on
      `DEPOT_PATH`, but not compiled. If this happens, and the package
      is a dependency of what you're trying to install, Julia will try
@@ -120,7 +120,7 @@ using the command line, but the commands are the same within a script.
     ``` sl
     julia> push!(DEPOT_PATH, "/nesi/project/nesi12345/julia")
     ```
-!!! info Tip
+!!! prerequisite Tip
      While a conventional personal Julia package directory is
      `/home/joe.bloggs/.julia` or similar, there is no reason for the
      directory to be within any particular user's home directory, or
@@ -171,7 +171,7 @@ certainly the easiest is to do the following in your environment:
 ``` sl
 $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
 ```
-!!! info Tip
+!!! prerequisite Tip
      By prepending the directory to `JULIA_LOAD_PATH` instead of appending
      it, you ensure that your project's versions of Julia packages are used
      by default, in preference to whatever might be managed centrally. This
@@ -182,7 +182,7 @@ $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
      ``` sl
      $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
      ```
-!!! info Tip
+!!! prerequisite Tip
      To revert to the default load path, just unset `JULIA_LOAD_PATH`:
      ``` sl
      $ unset JULIA_LOAD_PATH

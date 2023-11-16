@@ -14,12 +14,12 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
+!!! prerequisite Requirements
      -   Have an [active account and
          project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
      -   Set up your [NeSI account
@@ -45,7 +45,7 @@ Upon startup:
     login.maui.nesi.org.nz
 -   Enter your NeSI account username into *User name:* (Password
     optional)
-!!! info Tip
+!!! prerequisite Tip
      For "file protocol" (the topmost drop-down menu), either SCP or SFTP
      is acceptable. If you are trying to move many small files or have a
      slow or flaky Internet connection, you may find that SFTP performs
@@ -101,7 +101,7 @@ PuTTY/Terminal client path.
 *![WinSCP6.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_4.png)*
 
 3\. Restart your session.
-!!! info Important
+!!! prerequisite Important
      In order for X11 forwarding to work you must have an Xming server
      running before connecting to the HPC.
 
@@ -148,12 +148,12 @@ transfers at the same time' to '1' and untick 'Use multiple connections
 for a single transfer'.
 
 ![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png) 
-!!! info Important
+!!! prerequisite Important
      As WinSCP uses multiple tunnels for file transfer you will be required
      to authenticate again on your first file operation of the session. The
      second prompt for your second-factor token can be skipped, just as
      with login authentication.
-!!! info What Next?
+!!! prerequisite What Next?
      -   [Moving files to/from a
          cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
      -   Setting up
