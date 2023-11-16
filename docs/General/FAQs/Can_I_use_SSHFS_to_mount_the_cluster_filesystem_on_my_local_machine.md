@@ -32,7 +32,7 @@ your local machine (the same command will work for Māui, just replace
 the names):
 
 ``` sl
-# create a mount point and connect
+## create a mount point and connect
 mkdir -p ~/mahuika-home
 sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
 ```
@@ -48,7 +48,7 @@ fusermount -u ~/mahuika-home
 To mount a project directory, you could run:
 
 ``` sl
-# create a mount point and connect
+## create a mount point and connect
 mkdir -p ~/mahuika-project
 sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
 ```
@@ -60,7 +60,7 @@ will mount your home directory, make it show up under devices in Finder
 and give the volume a sensible name:
 
 ``` sl
-# create a mount point and connect
+## create a mount point and connect
 mkdir -p ~/mahuika-home
 sshfs mahuika: ~/mahuika-home \
     -oauto_cache,follow_symlinks \

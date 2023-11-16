@@ -40,13 +40,14 @@ be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
 !!! prerequisite Tips
      Required ABAQUS licences can be determined by this simple and
-     intuitive formula `⌊ 5 x N0.422 ⌋` where `N` is number of CPUs.
+     intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
+     of CPUs.
 
 You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 [environment file](#env_file).
 
-# Solver Compatibility
+## Solver Compatibility
 
 Not all solvers are compatible with all types of parallelisation.
 
@@ -191,7 +192,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="
 </tbody>
 </table>
 
-# User Defined Functions 
+## User Defined Functions 
 
 User defined functions (UDFs) can be included on the command line with
 the argument `user=<filename>` where `<filename>` is the C or fortran
@@ -204,7 +205,7 @@ loaded with `module load`, you may have to change the [compile
 commands](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) in
 your local `.env` file.
 
-# Environment file
+## Environment file
 
 The [ABAQUS environment
 file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
@@ -225,12 +226,12 @@ You may want to include this short snippet when making changes specific
 to a job.
 
 ``` sl
-# Before starting abaqus
+## Before starting abaqus
 echo "parameter=value
 parameter=value
 parameter=value" > "abaqus_v6.env"
 
-# After job is finished.
+## After job is finished.
 rm "abaqus_v6.env"
 ```
 !!! prerequisite Useful Links

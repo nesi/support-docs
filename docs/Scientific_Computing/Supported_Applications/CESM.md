@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# CESM
+## CESM
 
 The Community Earth System Model (CESM) is a coupled climate model for
 simulating Earth’s climate system. Composed of separate models
@@ -28,7 +28,7 @@ run-off, land-ice, and sea-ice, plus one central coupler/moderator
 component, CESM allows researchers to conduct fundamental research into
 the Earth’s past, present, and future climate states.
 
-# Building CESM2 on Māui
+## Building CESM2 on Māui
 
 Here we provide a guide for downloading, building and running a CESM
 test case yourself on Māui This guide is based on CESM 2.1.
@@ -147,7 +147,7 @@ A job will be submitted to the Slurm queue, you can view the queue using
 *squeue* or *squeue -u $USER* for just your own jobs. Check the job
 succeeded as described on the upstream quick start guide.
 
-# Performance tuning - optimising processor layout
+## Performance tuning - optimising processor layout
 
 With CESM it can be important to tune the processor layout for best
 performance with respect to the different components (atmosphere, land,

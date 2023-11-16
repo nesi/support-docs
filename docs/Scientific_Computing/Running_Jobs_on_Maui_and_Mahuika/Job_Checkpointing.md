@@ -29,7 +29,7 @@ How checkpointing can be implemented depends on the application/code
 being used, some will have inbuilt methods whereas others might require
 some scripting.
 
-# Queueing 
+## Queueing 
 
 Checkpointing code has the added advantage that it allows you to split
 your work into smaller jobs, allowing them to move through the queue
@@ -39,12 +39,12 @@ Below is an example of submitting the same job again, if previous has
 run successfully.
 
 ``` sl
-# Slurm header '#SBATCH etc etc
+## Slurm header '#SBATCH etc etc
 
 sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" 
-# "$0" is equal to the name of this script.
+## "$0" is equal to the name of this script.
 
-# Code that implements checkpointing
+## Code that implements checkpointing
 ```
 
 This job will resubmit itself forever until stopped.
@@ -52,13 +52,13 @@ This job will resubmit itself forever until stopped.
 Another example for a job requiring explicit step inputs.
 
 ``` sl
-# Slurm header '#SBATCH etc etc
+## Slurm header '#SBATCH etc etc
 
 n_steps=1000
 starting_step=${1:-0} # Will be equal to first argument, or '0' if unset.
 ending_step=$(( starting_step + n_steps )) 
 
-# Submit next step with starting step equal to ending step of this job.
+## Submit next step with starting step equal to ending step of this job.
 sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" ${ending_step}
 
 my-program --nfirst ${starting_step} --nlast ${ending_step}
@@ -67,7 +67,7 @@ my-program --nfirst ${starting_step} --nlast ${ending_step}
 The use of `--dependency` has the advantage of adding the next job to
 the queue *before* starting, saving queue time in between jobs.
 
-# Examples
+## Examples
 
 ## Matlab
 

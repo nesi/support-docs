@@ -29,11 +29,11 @@ present and always comprising the first three lines of the article. -->
      an institution without access to floating licences, MATLAB code can
      still be run on the cluster using MCR.
 
-# Example script
+## Example script
 !!! prerequisite Note
      When developing MATLAB code on your local machine, take measures to
      ensure it will be platform independent.  Use relative paths when
-     possible and not avoid using '\\'s see
+     possible and not avoid using '\\s see
      [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
 
 ## Script Example
@@ -45,7 +45,7 @@ present and always comprising the first three lines of the article. -->
 #SBATCH --mem        512MB        # Max memory
 
 module load MATLAB/2021b
-# Run the MATLAB script MATLAB_job.m 
+## Run the MATLAB script MATLAB_job.m 
 matlab -nodisplay < MATLAB_job.m 
 ```
 
@@ -63,7 +63,7 @@ module load MATLAB/2021b
 
 #Job run 
 matlab -batch "addpath(genpath('../parentDirectory'));myFunction(5,20)"
-# For versions older than 2019a, use '-nodisplay -r' instead of '-batch'
+## For versions older than 2019a, use '-nodisplay -r' instead of '-batch'
 ```
 !!! prerequisite Command Line
      When using matlab on command line, all flag options use a single '`-`'
@@ -74,7 +74,7 @@ matlab -batch "addpath(genpath('../parentDirectory'));myFunction(5,20)"
      MATLAB. e.g. `!squeue -u $USER` will print your currently queued slurm
      jobs.
 
-# Parallelism
+## Parallelism
 
 MATLAB does not support MPI therefore #SBATCH --ntasks should always be
 1, but if given the necessary resources some MATLAB functions can make
@@ -172,7 +172,7 @@ parallelise your code.
      as there is less computational overhead and the multiple smaller jobs
      will queue faster.
 
-# Using GPUs
+## Using GPUs
 
 As with standard parallelism, some MATLAB functions will work implicitly
 on GPUs while other require setup. More info on using GPUs with MATLAB
@@ -220,7 +220,7 @@ module load CUDA/11.0.2  # Drivers for using GPU
 matlab -batch "gpuDevice()"
 ```
 
-# Adding Support Packages
+## Adding Support Packages
 
 If you have X-11 set up you can install additional package through the
 GUI. You can also install manually if you already have the files by
@@ -245,7 +245,7 @@ to avoid problems cause by this
 
 Please contact support if you have any issues.
 
-# Improving performance with mexing
+## Improving performance with mexing
 
 Like other scripting languages, MATLAB code will generally run slower
 than compiled code since every MATLAB instruction needs to be parsed and
@@ -362,7 +362,7 @@ For example, adding OpenMP flags for a fortran compile:
      Using an 'unsupported' compiler with versions of MATLAB 2020b onward
      will result in an Error (previously was a 'Warning').
 
-# Known Bugs
+## Known Bugs
 
 When using versions of MATLAB more recent than 2021a you may notice the
 following warning.

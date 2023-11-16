@@ -230,14 +230,12 @@ For example, if all your interactive job names start with the text "IJ",
 you could do this:
 
 ``` sl
-# -u $(whoami) restricts the search to my jobs only.
-# The --states=PD option restricts the search to pending jobs only.
-#
-# Each <tab> string should be replaced with a literal tab character. If you
-# can't insert one by pressing the tab key on your keyboard, you should be
-# able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
-#
-squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ"
+## -u $(whoami) restricts the search to my jobs only.
+## The --states=PD option restricts the search to pending jobs only.
+## ## Each <tab> string should be replaced with a literal tab character. If you
+## can't insert one by pressing the tab key on your keyboard, you should be
+## able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
+## squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ"
 ```
 
 The above command will return a list of your jobs whose names *start*

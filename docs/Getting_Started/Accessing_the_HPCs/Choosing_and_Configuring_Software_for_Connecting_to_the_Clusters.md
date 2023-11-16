@@ -40,7 +40,7 @@ to set up such a connection, you will need a suitable Terminal (or
 equivalent application). The correct option for you depends on your
 operating system and level of experience.
 
-# Web Browser
+## Web Browser
 
 -   ## JupyterHub
 
@@ -52,7 +52,7 @@ operating system and level of experience.
          Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
      -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
-# Linux or Mac OS
+## Linux or Mac OS
 
 -   ## Terminal
 
@@ -64,7 +64,7 @@ operating system and level of experience.
      -   Setting up your [Default
          Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
 
-# Windows
+## Windows
 
 As Windows is not a "Unix-Like" operating system, getting access to a
 functional terminal requires some additional steps. There are several

@@ -30,7 +30,7 @@ zendesk_section_id: 360001189255
      [Please contact us to request a suitable
      allocation.](https://support.nesi.org.nz/hc/en-gb/requests/new)
 
-# Introduction
+## Introduction
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
 [interactive
@@ -57,7 +57,7 @@ and workflows and much more.
          management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
          pages for adding kernels.
 
-# Accessing Jupyter on NeSI
+## Accessing Jupyter on NeSI
 
 Jupyter at NeSI is powered by [JupyterHub](https://jupyter.org/hub), a
 multi-user hub that spawns, manages and proxies multiple instances of
@@ -80,7 +80,7 @@ GPUs available at NeSI.
      reload the browser window and check again, otherwise contact
      [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
 
-# Known issues
+## Known issues
 
 -   When using *srun* in a Jupyter terminal you may see messages like
     those shown below. The "error" messages are actually just warnings
@@ -96,7 +96,7 @@ GPUs available at NeSI.
     slurmstepd: error: Setting TMPDIR to /tmp
     ```
 
-# Jupyter user interface
+## Jupyter user interface
 
 ## JupyterLab
 
@@ -129,7 +129,7 @@ client. Some things to note are:
 -   processes launched directly in the JupyterLab terminal will probably
     be killed when you Jupyter session times out
 
-# Ending your interactive session and logging out
+## Ending your interactive session and logging out
 
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
@@ -150,7 +150,7 @@ finished. Alternatively, you can cancel your Jupyter job by running
 Note this will make the page unresponsive as it now has no compute
 powering it.
 
-# Installing JupyterLab extensions
+## Installing JupyterLab extensions
 
 JupyterLab supports many extensions that enhance its functionality. At
 NeSI we package some extensions into the default JupyterLab environment.
@@ -225,7 +225,7 @@ $ export JUPYTERLAB_DIR=/nesi/project/<project_code>/$USER/jupyter/lab
 $ jupyter lab build
 ```
 
-# Log files
+## Log files
 
 The log file of a Jupyter server session is saved either in the project
 directory of the project you selected on the "Server Options" JupyterHub
@@ -235,7 +235,7 @@ the log file is hidden). If you encounter problems with your Jupyter
 session, the contents of this file can be a good first clue to debug the
 issue.
 
-# External documentation
+## External documentation
 
 -   [Jupyter](https://jupyter.readthedocs.io/en/latest/)
 -   [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/)

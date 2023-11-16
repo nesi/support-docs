@@ -100,14 +100,14 @@ echo ""
 
 module load Gaussian/09-D.01
 
-# System name
+## System name
 system="H2O"
 
-# Get the current directory
+## Get the current directory
 start_dir=$(pwd)
 gjf_template="${system}.gjf.template"
 
-# Prepare a job-specific nobackup directory and set GAUSS_SCRDIR accordingly
+## Prepare a job-specific nobackup directory and set GAUSS_SCRDIR accordingly
 if [[ -n "${SLURM_ARRAY_TASK_COUNT}" && "${SLURM_ARRAY_TASK_COUNT}" -gt 1 ]]
 then
         job_code="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
@@ -117,7 +117,7 @@ fi
 export GAUSS_SCRDIR="/nesi/nobackup/${SLURM_JOB_ACCOUNT}/mahuika_job_${job_code}"
 /usr/bin/mkdir -p "${GAUSS_SCRDIR}"
 
-# Calculate the number of CPUs to use within Gaussian
+## Calculate the number of CPUs to use within Gaussian
 if [[ -n "${SLURM_CPUS_PER_TASK}" ]]
 then
         gaussian_ncpus="${SLURM_CPUS_PER_TASK}"
@@ -125,8 +125,8 @@ else
         gaussian_ncpus=1
 fi
 
-# Calculate the amount of memory to use within Gaussian
-# That is, amount of memory requested of Slurm minus 2 GB
+## Calculate the amount of memory to use within Gaussian
+## That is, amount of memory requested of Slurm minus 2 GB
 if [[ -n "${SLURM_MEM_PER_NODE}" && "${SLURM_MEM_PER_NODE}" -ge 4096 ]]
 then
         gaussian_memory=$((${SLURM_MEM_PER_NODE} - 2048))

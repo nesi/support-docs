@@ -107,7 +107,7 @@ box (a box containing Ln, Col and Sel entries) and the text encoding box
 (which will contain UTF-8, ANSI, or some other technical string) will be
 a box containing the current line ending format.
 
--   In most cases, this box will contain the text "DOS\\Windows".
+-   In most cases, this box will contain the text "DOS\Windows".
 -   In a few cases, such as the file having been prepared on a UNIX or
     Linux machine or a Mac, it will contain the text "UNIX".
 -   It is possible, though highly unlikely by now, that the file may

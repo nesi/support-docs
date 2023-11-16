@@ -105,7 +105,7 @@ PuTTY/Terminal client path.
      In order for X11 forwarding to work you must have an Xming server
      running before connecting to the HPC.
 
-# Usage
+## Usage
 
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.

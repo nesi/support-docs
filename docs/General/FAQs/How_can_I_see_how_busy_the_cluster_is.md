@@ -66,6 +66,6 @@ A full list of node states can be found
 
 If you are interested in the state of one partition in particular you
 may want to use the command `squeue -p <partition>` to get the current
-queue of the partition `<partition>`
+queue of the partition `<partition> `
 
  

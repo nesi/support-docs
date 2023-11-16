@@ -30,7 +30,7 @@ Nearline Nearline Nearline Nearline
 
  
 
-# Viewing files in nearline
+## Viewing files in nearline
 
 With the following command, you can print the list of files and
 directories within the specified Nearline directory:
@@ -74,7 +74,7 @@ Status ("s" column of the `-s` output) legend:
 directory has a large amount of files.  You will receive a long Python
 stack trace if this occurs.
 
-# Traversing files within nearline
+## Traversing files within nearline
 
 If you want to see all the files within a Nearline directory and its
 subdirectories, you can run `nltraverse`.
@@ -93,7 +93,7 @@ found.
 large amount of files.  You will receive a long Python stack trace if
 this occurs.
 
-# Comparing files in nearline to those on disk
+## Comparing files in nearline to those on disk
 
 If you want to compare a local (online storage) directory to a directory
 on Nearline, you can use the `nlcompare` command. The syntax of this
@@ -116,7 +116,7 @@ If the contents of the Nearline directory and the corresponding local
 directory differ, the lists will be kept, and can be compared using any
 text file comparison program, such as `diff` or `vimdiff`.
 
-# Putting/Ingesting files into nearline
+## Putting/Ingesting files into nearline
 
 Data can be copied to Nearline using the `nlput` command. The syntax is:
 
@@ -125,7 +125,8 @@ nlput [ --nowait ] <projectID> { <src_dir> | <file_list> }
 ```
 
 The source directory or file list needs to be located under
-`/nesi/project/` or `/nesi/nobackup/`and specified as such. 
+`/nesi/`**`project`**`/` or `/nesi/`**`nobackup`**`/`and specified as
+such. 
 !!! prerequisite Note
      The following will not work:
      ``` sl
@@ -138,7 +139,7 @@ The source directory or file list needs to be located under
      ```
 
 The data will be mapped into the same directory structure under
-`/nesi/nearline/` (see below).
+`/nesi/`**`nearline`**`/` (see below).
 !!! prerequisite Warning
      Please ensure your file or directory names do not contain spaces,
      non-standard characters or symbols. This may cause issues when
@@ -212,12 +213,13 @@ nlput nesi12345 /nesi/nobackup/nesi12345/To/Archive/Results/
 
 will copy all data within the `Results` directory into
 
-`/nesi/nearline/nesi12345/To/Archive/Results/`.
+`/nesi/nearline/nesi12345/`**`To/Archive/Results/`**.
 !!! prerequisite Warning
-     If you put `/nesi/project/nesi12345/To/Archive/Results/` on Nearline
-     as well as `/nesi/nobackup/nesi12345/To/Archive/Results/`, the
-     contents of both source locations (`project` and `nobackup`) will be
-     merged into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
+     If you put `/nesi/`**`project`**`/nesi12345/To/Archive/Results/` on
+     Nearline as well as
+     `/nesi/`**`nobackup`**`/nesi12345/To/Archive/Results/`, the contents
+     of both source locations (`project` and `nobackup`) will be merged
+     into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
      `/nesi/nearline/nesi12345/`, files with the same name and path will be
      skipped.
 
@@ -281,7 +283,7 @@ exist on Nearline but are no longer on project or nobackup:
 3.  Follow the instructions above for updating data on Nearline with a
     new version of the data from project or nobackup.
 
-# Getting/Retrieving files from nearline
+## Getting/Retrieving files from nearline
 
 Data can be retrieved from Nearline using then `nlget` command. The
 syntax is:
@@ -318,10 +320,10 @@ nlget nesi00000 /nesi/nearline/nesi00000/dir/to/results/ /nesi/nobackup/nesi0000
 ```
 
 will create the directory structure
-`/nesi/nobackup/nesi00000/nesi00000/dir/to/results/` if that directory
-structure does not already exist, and copy the data within the `Results`
-directory into it.  Note that the output pathe will include the project
-root in the path.
+`/nesi/nobackup/nesi00000/nesi00000/`**`dir/to/results/`** if that
+directory structure does not already exist, and copy the data within the
+`Results` directory into it.  Note that the output pathe will include
+the project root in the path.
 !!! prerequisite Warning
      Any given file **will not be retrieved** if a file of the same name
      already exists in the destination directory. If you wish to retrieve a
@@ -334,7 +336,7 @@ local, are treated as a file list** and read line by line, searching for
 valid file names. A single Nearline file can only be retrieved using a
 local file list specifying the full path of the file to be retrieved.
 
-# Purging/Removing files from nearline
+## Purging/Removing files from nearline
 
 The `nlpurge` command deletes specified data on the Nearline file system
 permanently. The syntax is
@@ -365,7 +367,7 @@ directory.
          project's Nearline directory, you must purge its contents one by
          one (if directories), or by means of a filelist (if files).
 
-# View nearline  job status
+## View nearline  job status
 
 The tool `nljobstatus` provides current status of submitted (queued,
 running and completed) tasks. The syntax is:
@@ -419,7 +421,7 @@ locked until the task is finished.
 **If a job stays in one state for an unexpectedly long time, please
 [contact NeSI Support](https://support.nesi.org.nz/hc/request/new)**.
 
-# View nearline quota
+## View nearline quota
 
 With the command `nlquotalist`, the usage and limits of a Nearline
 project quota can be listed:
@@ -436,7 +438,7 @@ nesi12345                                         30.00 TB            27.16 TB  
 This quota is different from the project quota on GPFS
 (`/nesi/project/<projectID>`).
 
-# Data management
+## Data management
 
 In case you have the same directory structure on your project and
 nobackup directories, be careful when archiving data from both. They
@@ -446,7 +448,7 @@ projectID will be retrieved:
 
 ![librarian\_get\_put.jpeg](../../assets/images/Nearline_Long_Term_Storage_Service.png)
 
-# Underlying mechanism
+## Underlying mechanism
 
 The Nearline file system consists of two parts: Disk, mainly for
 buffering data, and the tape library. It consists of a client running on
@@ -466,7 +468,7 @@ wait time will vary dramatically depending on overall usage. We cannot
 guarantee access to your files within any particular timeframe, and
 indeed wait times could be hours or even in some cases more than a day.
 
-# Known issues
+## Known issues
 !!! prerequisite Retrievals
      Some users of Nearline have reported that attempts to retrieve files
      from tape using `nlget` (see below) will not retrieve all files.
@@ -493,7 +495,7 @@ indeed wait times could be hours or even in some cases more than a day.
 
  
 
-# Support contact
+## Support contact
 
 Please **send feedback** about your user experience at
 <https://support.nesi.org.nz/hc/requests/new>, which may include

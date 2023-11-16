@@ -28,7 +28,7 @@ X-11 is a protocol for rendering graphical user interfaces (GUIs) that
 can be sent along an SSH tunnel. If you plan on using a GUI on a NeSI
 cluster you will need to have an X-Server and X-Forwarding set up.
 
-# X-Servers
+## X-Servers
 
 You must have a X-server running on your local machine in order for a
 GUI to be rendered.
@@ -51,7 +51,7 @@ taskbar 
      the top left hand corner
      (![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off). 
 
-# X-Forwarding
+## X-Forwarding
 
 Finally your ssh tunnel must be set up to 'forward' along X-11
 connections. 
@@ -80,7 +80,7 @@ If the ![mceclip0.png](../../assets/images/X11_on_NeSI_3.png) button in
 the top right corner of your window is coloured, the X-server should be
 running.
 
-# X-Forwarding with *tmux*
+## X-Forwarding with *tmux*
 
 In order to connect X11 into a tmux session you make the following
 change to your config file.
@@ -89,7 +89,7 @@ change to your config file.
 tmux show -g | sed 's/DISPLAY //' > ~/.tmux.conf
 ```
 
-# Interactive Slurm jobs
+## Interactive Slurm jobs
 
 In order to make use of X11 in an interactive Slurm job:
 
@@ -109,7 +109,7 @@ add the flag -Y when sshing to the node.
 ssh -Y wbn001
 ```
 
-# XVFB
+## XVFB
 
 If your application requires X11 in order to run, but does not need to
 be interactive you can use X11 Virtual Frame Buffer. This may be
