@@ -20,6 +20,11 @@ source .venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
+### Make Development Branch
+```bash
+github checkout -b my_development_branch
+```
+
 ### Build and deploy
 
 ```bash
@@ -33,10 +38,14 @@ A link to the deployment will be printed once served.
 
 ### IDE
 
-[Reccomended VSCode Plugins](./code_extensions.json)
+You can use any IDE you want, if you are using VSCode there are [Reccomended VSCode Plugins](./code_extensions.json).
+
+## Merge Request
+
+The `main` branch is protected, changes can be made via a pull request.
+
+Make a pull request for your development branch into `main`.
 
 ## Raise an issue
 
-If you find an issues that needs to be resolved, please have a look through the list of existing issues to see whether your issues hasn't already been reported. If it has, or a closely related issues exists, please add your comments to the existing issue.
 
-If your issue isn't already listed, then create a New Issue. Provide details of your suggestion and include the user guide and url to which your suggestion applies. One of our team members will review your suggestion and resolve it if they can. They may contact you if they need some more clarification.
