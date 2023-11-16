@@ -39,9 +39,7 @@ NeSI. A terminal similar to the other setups describe below can be
 accessed through the Jupyter Launcher.
 
 !!! tip "What next?"
-     -   More info on [Jupyter
-         Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
-     -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
+    More info on [Jupyter Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term) Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
 ## Linux or Mac OS
 
@@ -53,8 +51,7 @@ accessed through the Jupyter Launcher.
     Congratulations! You are ready to move to the next step.
 
 !!! tip "What next?"
-     -   Setting up your [Default
-         Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
+    - Setting up your [Default Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
 
 ## Windows
 
@@ -64,24 +61,20 @@ different options, listed in order of preference.
 
 ### Ubuntu Terminal (Windows 10)
 
-!!! info "My title"
-     The Ubuntu Terminal and Windows Subsystem for Linux require
-     administrative privileges to enable and install them. If your
-     institution has not given you such privileges, consider using
-     another option such as MobaXTerm Portable Edition (see below).
+The Ubuntu Terminal and Windows Subsystem for Linux require
+administrative privileges to enable and install them. If your
+institution has not given you such privileges, consider using
+another option such as MobaXTerm Portable Edition (see below).
 
-    This is the most functional replication of a Unix terminal available
-    on Windows, and allows users to follow the same set of instructions
-    given to Mac/Linux users. It may be necessary to enable Windows
-    Subsystem for Linux (WSL) first.
+This is the most functional replication of a Unix terminal available
+on Windows, and allows users to follow the same set of instructions
+given to Mac/Linux users. It may be necessary to enable Windows
+Subsystem for Linux (WSL) first.
 
-!!! "What next?"
-     -   Enabling
-         [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
-     -   Setting up the [Ubuntu
-         Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575)
-     -   Setting up
-         [X-Forwarding](https://support.nesi.org.nz/hc/en-gb/articles/4407442866703)
+!!! tip "What next?"
+    - Enabling [WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575).
+    - Setting up the [UbuntuTerminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
+    - Setting up [X-Forwarding](https://support.nesi.org.nz/hc/en-gb/articles/4407442866703).
 
 ### MobaXterm
 
@@ -97,11 +90,10 @@ different options, listed in order of preference.
     administrator privileges on your workstation or if your
     institution's IT team supports MobaXTerm.
 
-!!! prerequisite What next?
-     -   Setting up
-         [MobaXterm](https://support.nesi.org.nz/hc/en-gb/articles/360000624696)
+!!! tips "What next?"
+    Setting up [MobaXterm](https://support.nesi.org.nz/hc/en-gb/articles/360000624696)
 
--   ## Using a Virtual Machine
+### Using a Virtual Machine
 
     In order to avoid the problems of using a Windows environment, it
     may be advisable to install a Linux Virtual machine. This may be
@@ -119,23 +111,22 @@ different options, listed in order of preference.
     Once you have a working VM you may continue following the
     instructions as given for
     [Linux/MacOS](#h_c1bbd761-1133-499b-a61a-57b9c4320a1a).
-    
-!!! prerequisite What next?
-     -   Setting up a [Virtual
-         Machine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
 
--   ## WinSCP
+!!! tips "What next?"
+    Setting up a [VirtualMachine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
+
+### WinSCP
 
     WinSCP has some advantages over MobaXterm (customisable, cleaner
     interface, open source), and some disadvantages (no built in
     X-server, additional authentication step). However, WinSCP setup is
     more involved than with MobaXterm, therefore we do not recommend it
     for new users.
-!!! prerequisite What next?
-     -   Setting up
-         [WinSCP](https://support.nesi.org.nz/hc/en-gb/articles/360000584256)
 
--   ## Git Bash
+!!! tips "What next?"
+    Setting up [WinSCP](https://support.nesi.org.nz/hc/en-gb/articles/360000584256)
+
+### Git Bash
 
     If you are using Git for version control you may already have Git
     Bash installed. If not it can be downloaded
@@ -146,7 +137,7 @@ different options, listed in order of preference.
     native Unix-Like terminal. Therefore we do not recommend it as your
     primary terminal.
 
--   ## Windows PowerShell
+### Windows PowerShell
 
     All Windows computers have PowerShell installed, however it will
     only be useful to you if Windows Subsystem for Linux (WSL) is also
