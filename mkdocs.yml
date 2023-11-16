@@ -42,10 +42,10 @@ extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
   - assets/stylesheets/custom_admonations.css
-  - assets/stylesheets/supportedApplications.css
+  # - assets/stylesheets/supportedApplications.css
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.0.min.js
-  - assets/javascripts/supportedApplications.js
+  # - assets/javascripts/supportedApplications.js
 nav:
   - "Getting Started": "Getting_Started/"
   - "General": "General/"
@@ -58,6 +58,7 @@ theme:
   features:
     - navigation.indexes
     - navigation.top
+    - navigation.prune
     - content.code.copy
     - content.action.edit
   language: en
