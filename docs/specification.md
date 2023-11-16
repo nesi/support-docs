@@ -108,11 +108,11 @@ By default, the `main` theme will be used. template of a theme to render Markdow
 Macros allow use of Jinja filter syntax _inside the mardown files_ allowing for much more flexable templating.
 Details [here](https://mkdocs-macros-plugin.readthedocs.io/)
 
-`module load ANSYS/{{ applications.ANSYS.mahuika.versions | last }}`
+`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
 
 ```md
 {% raw %}
-`module load ANSYS/{{ applications.ANSYS.mahuika.versions | last }}`
+`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
 {% endraw %}
 ```
 

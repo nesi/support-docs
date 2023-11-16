@@ -272,26 +272,30 @@ Acroynym should be automatically tooltipped e.g. MPI.
 #### Ordered List
 
 1. item1
-2. item2
-3. a
+2. a
    multiline
    item
-4. nested
-  a. nested item 1
-  b. nested item 2
-    i. even nesteder
+   with multiple
+   lines
+3. nested
+    1. nested item 1
+    2. nested item 2
+        1. even nesteder
 
 ```md
 1. item1
-2. item2
-3. a
+2. a
    multiline
    item
-4. nested
-  a. nested item 1
-  b. nested item 2
-    i. even nesteder
+   with multiple
+   lines
+3. nested
+    1. nested item 1
+    2. nested item 2
+        1. even nesteder
 ```
+
+*Note, nested list items use numbers, but will be rendered as whatever the indent is.*
 
 ### Tables
 
