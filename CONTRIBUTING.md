@@ -1,8 +1,14 @@
 # Contributing
 
+Any changes made should be merged via a pull request.
+
+## Minor edits through github
+
+Press `.`, will open up VSCode in browser.
+
 ## Local Development Environment
 
-A local development environment is not required to make doc edits.
+A local development environment is not required to make doc edits, but if you are making lots of changes, the realtime rendering can be quite helpful. 
 
 ### First time setup
 
@@ -28,10 +34,6 @@ A link to the deployment will be printed once served.
 ### IDE
 
 [Reccomended VSCode Plugins](./code_extensions.json)
-
-## Minor edits through github
-
-Press `.`, will open up VSCode in browser.
 
 ## Raise an issue
 
