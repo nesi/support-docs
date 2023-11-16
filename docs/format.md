@@ -113,11 +113,20 @@ _italic_: `_italic`
 !!! example
     This is a test admonation.
 ```
+
 !!! quote
     This is a test admonation.
 
 ```md
 !!! quote
+    This is a test admonation.
+```
+
+!!! prerequisite
+    This is a test admonation.
+
+```md
+!!! prerequisite
     This is a test admonation.
 ```
 
@@ -182,10 +191,10 @@ Note the additional spacing around the `+` else it will appear cramped.
 ### Images
 
 ```md
-![This is an image]("assets/images/FENSAP_GUI1.png")
+![This is an image](assets/images/FENSAP_GUI1.png)
 ```
 
-![This is an image]("assets/images/FENSAP_GUI1.png")
+![This is an image](assets/images/FENSAP_GUI1.png)
 
 ### Links
 
@@ -238,6 +247,50 @@ Acroynym should be automatically tooltipped e.g. MPI.
 
 ```md
 Acroynym should be automatically tooltipped e.g. MPI.
+```
+
+### Lists
+
+#### Unordered List
+
+- item1
+- item2
+- a
+- item
+
+```md
+- item1
+- item2
+- a
+  multiline
+- item
+- nested
+  - items
+    - nesteder
+```
+
+#### Ordered List
+
+1. item1
+2. item2
+3. a
+   multiline
+   item
+4. nested
+  a. nested item 1
+  b. nested item 2
+    i. even nesteder
+
+```md
+1. item1
+2. item2
+3. a
+   multiline
+   item
+4. nested
+  a. nested item 1
+  b. nested item 2
+    i. even nesteder
 ```
 
 ### Tables
