@@ -5,7 +5,7 @@ on:
       - docs/**/*.md
 jobs: 
   getDiff: # Bit messy to check repo out again. But easier than rethinking this.
-    name: Attempts to deploy to Pages verbosely and strict
+    name: Names of changed markdown
     runs-on: ubuntu-latest
     outputs:
       fileList: ${{ steps.diff.outputs.fileList }}
