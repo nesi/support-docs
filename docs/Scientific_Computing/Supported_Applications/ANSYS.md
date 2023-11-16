@@ -67,7 +67,7 @@ prefer_teaching_license
      ANSYS.* Make sure you set preferences using the same version as in
      your script.
 
-## Journal files
+# Journal files
 
 Some ANSYS applications take a 'journal' text file as input. It is often
 useful to create this journal file in your SLURM script (tidiness,
@@ -97,7 +97,7 @@ cat <<EOF > ${JOURNAL_FILE}
 /exit yes
 EOF
 
-## Use one of the -v options 2d, 2ddp, 3d, or 3ddp
+# Use one of the -v options 2d, 2ddp, 3d, or 3ddp
 fluent -v3ddp -g -i ${JOURNAL_FILE}
 rm ${JOURNAL_FILE}
 ```
@@ -136,7 +136,7 @@ the use of variables in what might otherwise be a fixed input.
      ; This is a comment
      ```
 
-## Fluent
+# Fluent
 
 [Some great documentation on journal
 files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html)
@@ -379,7 +379,7 @@ might be using interpreted func
 solution specify as relative path, or unload compiled lib before saving
 .cas file.
 
-## CFX
+# CFX
 
 `cfx5solve -help` for a list of commands.
 
@@ -460,7 +460,7 @@ Buffer command.
 xvfb-run cfx5post input.cse
 ```
 
-## Mechanical APDL
+# Mechanical APDL
 
 <table>
 <colgroup>
@@ -582,7 +582,7 @@ Not all MAPDL solvers work using distributed memory. 
      -   [MAPDL Parallel Processing
          Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
 
-## LS-DYNA
+# LS-DYNA
 
 ## Fluid-Structure Example
 
@@ -600,7 +600,7 @@ input=3cars_shell2_150ms.k
 lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
 ```
 
-## Multiphysics
+# Multiphysics
 
 ### Example - MAPDL Fluent Interaction
 
@@ -625,7 +625,7 @@ echo "STARTING SYSTEM COUPLER"
 
 cd Coupling
 
-## Run the system coupler in the background.
+# Run the system coupler in the background.
 srun -N1 -n1 $WORKBENCH_CMD \
     ansys.services.systemcoupling.exe \
     -inputFile coupling.sci || scancel $SLURM_JOBID &
@@ -664,7 +664,7 @@ echo "STARTING ANSYS"
 
 cd Structural
 
-## Run ANSYS in the background, alongside the system coupler and Fluent.
+# Run ANSYS in the background, alongside the system coupler and Fluent.
 mapdl -b -dis -mpi intel -np $MECHANICAL_CPUS \
     -scport $port -schost $node -scname "$mechsolname" \
     -i "structural.dat" > struct.out || scancel $SLURM_JOBID &
@@ -675,18 +675,18 @@ echo "STARTING FLUENT"
 
 cd FluidFlow
 
-## Run Fluent in the background, alongside the system coupler and ANSYS.
+# Run Fluent in the background, alongside the system coupler and ANSYS.
 fluent 3ddp -g -t$FLUID_CPUS \
     -scport=$port -schost=$node -scname="$fluentsolname" \
     -i "fluidFlow.jou" > fluent.out || scancel $SLURM_JOBID &
 cd ..
 
-## Before exiting, wait for all background tasks (the system coupler, ANSYS and
-## Fluent) to complete.
+# Before exiting, wait for all background tasks (the system coupler, ANSYS and
+# Fluent) to complete.
 wait
 ```
 
-## FENSAP-ICE
+# FENSAP-ICE
 
 FENSAP-ICE is a fully integrated ice-accretion and aerodynamics
 simulator.
@@ -773,7 +773,7 @@ requirements for the remainder.
 The workflow can then by running `.solvercmd` e.g `bash .solvercmd`.
 Progress can be tracked through the GUI as usual. 
 
-## ANSYS-Electromagnetic
+# ANSYS-Electromagnetic
 
 ANSYS-EM jobs can be submitted through a slurm script or by [interactive
 session](https://support.nesi.org.nz/hc/en-gb/articles/360001316356).
@@ -843,7 +843,7 @@ Then launch ansys edt with the following flags
 ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
 ```
 
-## Best Practices
+# Best Practices
 
 ## GPU acceleration support
 

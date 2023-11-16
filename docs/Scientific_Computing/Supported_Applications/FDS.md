@@ -52,7 +52,7 @@ input="/nesi/project/nesi99999/path/to/input.fds"
 srun fds ${input}
 ```
 
-## Recommendations
+# Recommendations
 
 -   FDS will run in Hybrid Parallel, but will be less efficient that
     full MPI using the same number of CPUs.

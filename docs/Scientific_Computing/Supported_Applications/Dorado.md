@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Description
+# Description
 
 Dorado is a high-performance, easy-to-use, open source basecaller for
 Oxford Nanopore reads.
@@ -37,7 +37,7 @@ Oxford Nanopore reads.
 -   Multiple custom optimisations in CUDA and Metal for maximising
     inference performance.
 
-## License and Disclaimer
+# License and Disclaimer
 
 \(c\) 2022 Oxford Nanopore Technologies Ltd.
 

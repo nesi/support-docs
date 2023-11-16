@@ -19,7 +19,7 @@ zendesk_section_id: 360000040056
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Where to build
+# Where to build
 
 You may compile (build) software on the Mahuika login nodes,
 `login.mahuika.nesi.org.nz`. Please be aware that these login nodes are
@@ -30,7 +30,7 @@ request these resources through a batch job submitted to Slurm, where
 you can also ask for a larger amount of compute resources to build your
 code.
 
-## Compilers and Toolchains
+# Compilers and Toolchains
 
 Compilers produced by three different vendors are provided on Mahuika:
 Cray, GNU and Intel.
@@ -63,7 +63,7 @@ Cray compilers are loaded with:
 
 `module load PrgEnv-cray`
 
-## Third party applications
+# Third party applications
 
 Installation instructions vary from application to application, and we
 suggest that you carefully read the instructions provided by the
@@ -99,7 +99,7 @@ should give you an impression which steps you usually need to consider:
 
  
 
-## Compilers
+# Compilers
 
 Compilers are provided for Fortran, C, and C++. For MPI-parallelised
 code, different compilers typically need to be used. The different
@@ -133,7 +133,7 @@ e.g.
 
 `ftn -O3 hello.f90`
 
-##  Compiler options
+#  Compiler options
 
 Compilers are controlled using different options to control
 optimizations, output, source and library handling. There options vary
@@ -199,7 +199,7 @@ aggressive compiler optimisation (`-O3`):
 
 `mpif90 -Wall -O3 -o simpleMpi simpleMpi.f90`
 
-## Linking
+# Linking
 
 Your application may depend on one or more external software packages,
 normally libraries, and if so it will need to link against them when you
@@ -316,7 +316,7 @@ Note that the linker requires that function names match exactly, so any
 variation in function name in your code will lead to a "missing symbols"
 error (with the exception of character case in Fortran source code).
 
-## Cray Programming Environment
+# Cray Programming Environment
 
 The Cray Programming Environment includes the Cray compiler, various
 libraries and tools. These work nicely together and provide certain

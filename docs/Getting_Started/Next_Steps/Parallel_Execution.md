@@ -40,7 +40,7 @@ See [our article on
 hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
 for more information.
 
-## Multi-threading
+# Multi-threading
 
 Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
@@ -78,7 +78,7 @@ The expected output being
 pid 13538's current affinity list: 7,9,43,45
 ```
 
-## MPI
+# MPI
 
 MPI stands for *Message Passing Interface*, and is a communication
 protocol used to achieve distributed parallel computation.
@@ -120,7 +120,7 @@ The expected output being
      all. Using `srun` in conjunction with `--cpus-per-task=1` will
      cause `--ntasks` to default to 2.
 
-## Job Arrays
+# Job Arrays
 
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
@@ -223,11 +223,11 @@ useful for sorting your output files e.g.
 #SBATCH --output week_times.out
 #SBATCH --array 0-167 #This needs to be equal to combinations (in this case 7*24), and zero based.
 
-## Define your dimensions in bash arrays.
+# Define your dimensions in bash arrays.
 arr_time=({00..23})
 arr_day=("Mon" "Tue" "Wed" "Thur" "Fri" "Sat" "Sun") 
 
-## Index the bash arrays based on the SLURM_ARRAY_TASK)
+# Index the bash arrays based on the SLURM_ARRAY_TASK)
 n_time=${arr_time[$(($SLURM_ARRAY_TASK_ID%${#arr_time[@]}))]} # '%' for finding remainder.
 n_day=${arr_day[$(($SLURM_ARRAY_TASK_ID/${#arr_time[@]}))]}
 
@@ -253,8 +253,10 @@ program, this can be resolved in a similar manner.
 ``` sl
 mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
 cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
-## bash job.sh
-## mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
+#
+bash job.sh
+#
+mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
 rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
 ```
 

@@ -46,7 +46,7 @@ In the following installed packages are listed for:
 
 -   3D Visualisation Software
 
-## Scripting Languages with Visualisation Capabilities
+# Scripting Languages with Visualisation Capabilities
 
 ## Python
 
@@ -149,9 +149,9 @@ capabilities.
 | MATLAB/2020b    | ✔           |                |             |
 | MATLAB/2021a    | ✔           |                |             |
 
-##  
+#  
 
-## 2D Visualisation Software
+# 2D Visualisation Software
 
 ## IRIS
 
@@ -196,9 +196,9 @@ XCONV is a visual browser for netCDF and Unified Model format files.
 | **Module Name** | **Mahuika** | **Māui Ancil** | **Comment** |
 | XCONV/1.93      |             |  ✔             |             |
 
-##  
+#  
 
-## 3D Visualisation Software
+# 3D Visualisation Software
 
 ## ParaView
 

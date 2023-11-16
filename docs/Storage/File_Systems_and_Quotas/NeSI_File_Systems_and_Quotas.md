@@ -51,7 +51,7 @@ and cached between updates.
 ## <img src="../../assets/images/NeSI_File_Systems_and_Quotas.png"
 width="629" height="578" alt="neSI_filetree.svg" />
 
-## File System Specifications
+# File System Specifications
 
 <table class="table table-bordered"
 style="tr td: first-child {    white-space:nowrap;">
@@ -338,7 +338,7 @@ See [this
 page](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) for
 more information about the nearline service.
 
-## Snapshots
+# Snapshots
 
 If you have accidentally deleted data you can recover it from
 a [snapshot](https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406).
@@ -347,7 +347,7 @@ cannot find it in a snapshot, please ask us to recover it for you by
 emailing [NeSI
 Support](mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File).
 
-## Contributions of Small Files Towards Quotas
+# Contributions of Small Files Towards Quotas
 
 The Scale file system makes use of a feature called *data-in-inode*.
 This feature will ensure that, once all of a (non-encrypted) file's
@@ -373,7 +373,7 @@ project's persistent storage, please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) to discuss your
 storage needs.
 
-## Transparent File Data Compression
+# Transparent File Data Compression
 
 The Scale file system has the ability to transparently compress file
 data. That is, file contents/data can be compressed behind the scenes,

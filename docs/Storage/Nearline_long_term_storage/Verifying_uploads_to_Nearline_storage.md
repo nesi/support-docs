@@ -41,7 +41,7 @@ storage).
 There are several options for verification, depending on the level of
 assurance you require.
 
-## Level 1: Transfer status report
+# Level 1: Transfer status report
 
 The most basic form of verification is to look at the results
 of `nljobstatus`. If all the Nearline job IDs associated with movement
@@ -55,7 +55,7 @@ confidence that the files were in fact copied over to nearline.
      existed on nearline will silently skip those files and still report
      success.
 
-## Level 2: File counts and sizes
+# Level 2: File counts and sizes
 
 You can get a higher level of assurance by checking the number of files,
 and their sizes and last modified times, in a particular directory on
@@ -90,7 +90,7 @@ other, which you can do using a comparison program such as `diff` or
      should do so as soon as possible after you have established that the
      `nlput` operation completed successfully.
 
-## Level 3: Checksums
+# Level 3: Checksums
 
 For especially important files, you can get a still higher level of
 assurance by retrieving those files individually or in small numbers

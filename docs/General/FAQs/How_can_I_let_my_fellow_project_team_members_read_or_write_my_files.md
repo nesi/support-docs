@@ -84,19 +84,19 @@ directory, that you want to fix, and find and fix your files. You can do
 this by means of the following commands.
 
 ``` sl
-## Replace nesi12345 with your desired project code
+# Replace nesi12345 with your desired project code
 group=nesi12345
 startdir=$(pwd)
-## Replace /nesi/project with /nesi/nobackup if needed
+# Replace /nesi/project with /nesi/nobackup if needed
 cd /nesi/project/${group}
-## Move all files, directories, etc. owned by yourself into the project group
-## The --no-dereference option updates the group of symbolic links (where permitted)
+# Move all files, directories, etc. owned by yourself into the project group
+# The --no-dereference option updates the group of symbolic links (where permitted)
 find . -user $(whoami) -print0 | xargs -0 -I {} chgrp --no-dereference ${group} {}
-## Make all files owned by yourself readable and writable by the group
+# Make all files owned by yourself readable and writable by the group
 find . -user $(whoami) -and -type f -print0 | xargs -0 -I {} chmod g+rw {}
-## Make all directories owned by yourself readable, writable and executable by the group,
-## and set the setgid bit
+# Make all directories owned by yourself readable, writable and executable by the group,
+# and set the setgid bit
 find . -user $(whoami) -and -type d -print0 | xargs -0 -I {} chmod g+rwxs {}
-## Go back to the starting location
+# Go back to the starting location
 cd ${startdir}
 ```

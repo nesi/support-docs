@@ -82,7 +82,7 @@ startdir=$(pwd -P) && \
 archive_file="archive.squash" && \
 cd /nesi/project/nesi12345/my_directory && \
 find . -type f -and -size -100M -print0 | xargs -0 -I {} nn_archive_files -p nesi12345 -t <time-limit> -n <num-processors> --verify --append --delete-files -- {} "${archive_file}"
-## Return to where you started
+# Return to where you started
 cd "${startdir}"
 ```
 

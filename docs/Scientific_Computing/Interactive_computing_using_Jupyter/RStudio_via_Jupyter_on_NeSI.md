@@ -27,7 +27,7 @@ zendesk_section_id: 360001189255
      Your feedback is welcome, please don't hesitate to contact us at
      <support@nesi.org.nz> to make suggestions.
 
-## Getting started
+# Getting started
 
 RStudio can be accessed as a web application via [Jupyter on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
@@ -44,7 +44,7 @@ Once RStudio is launched, you should briefly see a login screen. It will
 be auto-filled using a pre-generated password, unless you disabled
 javascript in your web browser.
 
-## Changing R version
+# Changing R version
 
 You can configure a set of [environment
 modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
@@ -73,7 +73,7 @@ correct Library Paths are available. For R/4.2.1 the command
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 ```
 
-## Package Installation
+# Package Installation
 
 To avoid read/write issues with a small temorary directory filling up,
 in a terminal run the following two lines of code. These will setup a
@@ -97,7 +97,7 @@ home directory.
 
 The alternative is to install packages in a terminal session
 
-## Advanced usage
+# Advanced usage
 
 RStudio runs in a [Singularity
 container](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
@@ -135,7 +135,7 @@ session:
 $ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
 ```
 
-## Troubleshooting
+# Troubleshooting
 
 If you get an error 500 after clicking on the launcher icon, this could
 be due to RStudio taking too much time to start, which is interpreted as

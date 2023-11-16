@@ -24,14 +24,14 @@ numerical computing, with performance comparable to traditional
 statically-typed languages. The Julia home page is
 at <https://julialang.org/>.
 
-## Licensing requirements
+# Licensing requirements
 
 The Julia language is (mostly) licensed under the MIT licence. For more
 details, including the full text of the licence and a list of
 exceptions,
 see <https://github.com/JuliaLang/julia/blob/master/LICENSE.md>.
 
-## Julia packages
+# Julia packages
 
 Besides the core Julia language and interpreter, a great deal of
 functionality is provided by Julia packages contributed by the Julia
@@ -189,7 +189,7 @@ $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
      $ export JULIA_LOAD_PATH
      ```
 
-## Profiling Julia code
+# Profiling Julia code
 
 In addition to the Julia Profile module (see the [official
 documentation](https://docs.julialang.org/en/v1/manual/profile/)), it is

@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Description
+# Description
 
 **ipyrad**, an interactive assembly and analysis toolkit for
 restriction-site associated DNA (RAD-seq) and related data types. Please

@@ -35,7 +35,7 @@ Will display a list of COMSOL batch commands.
      -   [COMSOL and
          Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
 
-## Batch Submission
+# Batch Submission
 
 When using COMSOL batch the following flags can be used to control
 distribution. 
@@ -48,9 +48,9 @@ distribution. 
 | `-nnhost <tasks>`       | Number of tasks per node. `--ntasks-per-node` `${SLURM_NTASKS_PER_NODE}`                                                         |
 | `-f <path to hostlist>` | Host file. You wont't need to set this in most circumstances.                                                                    |
 
-##  
+#  
 
-## Example Scripts
+# Example Scripts
 
 ------------------------------------------------------------------------
 
@@ -139,7 +139,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
      If no output file is set, using `--output` the input file will be
      updated instead.
 
-## Interactive Use
+# Interactive Use
 
 Providing you have [set up
 X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975), you
@@ -147,7 +147,7 @@ can open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.
 
-## Recommendations
+# Recommendations
 
 COMSOL is relatively smart with it's use of resources, if possible it is
 preferable to use `--cpus-per-task` over `--ntasks`

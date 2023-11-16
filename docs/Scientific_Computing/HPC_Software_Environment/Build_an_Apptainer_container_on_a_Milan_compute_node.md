@@ -26,7 +26,7 @@ a Slurm job. You can also build
 [Singularity](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
 container using this technique.
 
-## Building container via Slurm
+# Building container via Slurm
 
 The new Milan compute nodes can be used to build Apptainer containers
 using the [fakeroot
@@ -58,21 +58,21 @@ container:
 #SBATCH --mem=4GB
 #SBATCH --cpus-per-task=2
 
-## load environment module
+# load environment module
 module purge
 module load Apptainer/1.2.2
 
-## recent Apptainer modules set APPTAINER_BIND, which typically breaks
-## container builds, so unset it here
+# recent Apptainer modules set APPTAINER_BIND, which typically breaks
+# container builds, so unset it here
 unset APPTAINER_BIND
 
-## create a build and cache directory on nobackup storage
+# create a build and cache directory on nobackup storage
 export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
 export APPTAINER_TMPDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_tmpdir"
 mkdir -p $APPTAINER_CACHEDIR $APPTAINER_TMPDIR
 setfacl -b $APPTAINER_TMPDIR
 
-## build the container
+# build the container
 apptainer build --force --fakeroot my_container.sif my_container.def
 ```
 
@@ -100,7 +100,7 @@ page.
      In this example, the Slurm job submission script creates these folders
      using your project `nobackup` folder.
 
-## Known limitations
+# Known limitations
 
 If your container uses RPM to install packages, i.e. is based on CentOS
 or Rocky Linux, you need to disable the `APPTAINER_TMPDIR` environment

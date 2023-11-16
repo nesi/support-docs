@@ -51,7 +51,7 @@ this case the NeSI cluster)
      This allows the forwarding from your local machine to the NeSI
      cluster, without having to re-tunnel through the lander node.
 
-## Command line (OpenSSH)
+# Command line (OpenSSH)
 
 *Works for any Linux terminal, Mac terminal, or Windows with WSL
 enabled.*
@@ -82,7 +82,7 @@ procedure. 
      Your local port and remote port do not have to be different numbers.
      It is generally easier to use the same number for both.
 
-## SSH Config (OpenSSH)
+# SSH Config (OpenSSH)
 
 If you are using port forwarding on a regular basis, and don't want the
 hassle of opening a new tunnel every time, you can include a port
@@ -131,7 +131,7 @@ will be forwarded.
          mkdir -P ~/.ssh/sockets
          ```
 
-## MobaXterm
+# MobaXterm
 
 If you have Windows Subsystem for Linux installed, you can use the
 method described above. This is the recommended method.
@@ -161,7 +161,7 @@ The two tunnels should look like this.
 
  
 
-## sshuttle 
+# sshuttle 
 
 [sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
@@ -190,7 +190,7 @@ sshuttle -r mahuika 192.168.0.0/16
 which uses remote SSH host Mahuika to forward all traffic coming to
 `192.16.XXX.XXX` subnet through the port forwarder.
 
-## Forwarding to Compute Nodes
+# Forwarding to Compute Nodes
 
 Ports can also be forwarded from the login node to a compute node.
 

@@ -19,7 +19,7 @@ zendesk_section_id: 360001189255
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Introduction
+# Introduction
 
 Jupyter can execute code in different computing environments using
 *kernels*. Some kernels are provided by default (Python, R, etc.) but
@@ -33,7 +33,7 @@ management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
 or use the `nesi-add-kernel` tool provided on Jupyter on NeSI service.
 This page details the latter option, which we recommend.
 
-## Getting started
+# Getting started
 
 First you need to open a terminal. It can be from a session on Jupyter
 on NeSI or from a regular ssh connection on Mahuika login node. If you
@@ -78,7 +78,7 @@ jupyter-kernelspec remove <kernel_name>
 
 where `<kernel_name>` stands for the name of the kernel to delete.
 
-## Conda environment
+# Conda environment
 
 First, make sure the `JupyterLab` module is loaded:
 
@@ -100,7 +100,7 @@ otherwise if created using `conda create -n <conda_env_name>`, use:
 nesi-add-kernel my_conda_env -n <conda_env_name>
 ```
 
-## Virtual environment
+# Virtual environment
 
 If you want to use a Python virtual environment, don’t forget to specify
 which Python module you used to create it.
@@ -123,7 +123,7 @@ module load JupyterLab
 nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 ```
 
-## Singularity container
+# Singularity container
 
 To use a Singularity container, use the `-c` or `--container` options as
 follows:

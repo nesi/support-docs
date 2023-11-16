@@ -24,13 +24,13 @@ the command `nn_corehour_usage`. This command displays usage of cluster
 resources by a specific project, computed from the Slurm program
 `sreport`.
 
-## Synopsis
+# Synopsis
 
 ``` sl
 nn_corehour_usage [OPTIONS...] PROJECT_CODE...
 ```
 
-## Description
+# Description
 
 `nn_corehour_usage` shows a month-by-month breakdown of how the
 specified project or projects have used Slurm resources. Some resources,
@@ -38,7 +38,7 @@ like disk space, are not managed by Slurm and so are excluded. Included
 resources are CPU time, RAM time (also known as memory time) and GPU
 time.
 
-## Options
+# Options
 
 `-c`, `--calendar-months`
 
@@ -63,7 +63,7 @@ user.
 Treat all subsequent entries on the command line, including those
 starting with a dash (`-`), as arguments instead of as options.
 
-## Examples
+# Examples
 
 To print the last year of project nesi12345:
 

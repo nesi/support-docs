@@ -22,7 +22,7 @@ zendesk_section_id: 360000039036
 Aside from differences in software stack there are a few other
 differences between the platforms to be aware of.
 
-## Logging in
+# Logging in
 
 Both Mahuika and Māui require logging in to the Lander node first.
 
@@ -79,7 +79,7 @@ Password:
 
 At this prompt, enter only your password (a.k.a. first factor).
 
-## Job Limits
+# Job Limits
 
 Both Māui and Mahuika have limits on the size and types of jobs you can
 run, but the limits on each machine is different.

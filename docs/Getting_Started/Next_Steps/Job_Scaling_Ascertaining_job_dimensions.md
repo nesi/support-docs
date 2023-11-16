@@ -38,7 +38,7 @@ needs to request are:
 
 Some jobs will also need to request GPUs.
 
-## What happens if I ask for the wrong resources?
+# What happens if I ask for the wrong resources?
 
 When you are initially trying to set up your jobs it can be difficult to
 ascertain how much of each of these resources you will need. Asking for
@@ -108,7 +108,7 @@ It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale
 your jobs to help you better estimate your jobs resource needs.
 
-## Job Scaling
+# Job Scaling
 
 Before you start submitting the main bulk of your jobs, it is advisable
 to first submit a *test job*.

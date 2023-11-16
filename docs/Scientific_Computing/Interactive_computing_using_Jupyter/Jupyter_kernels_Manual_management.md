@@ -19,7 +19,7 @@ zendesk_section_id: 360001189255
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Introduction
+# Introduction
 
 Jupyter kernels execute the code that you write. The following Jupyter
 kernels are installed by default and can be selected from the Launcher:
@@ -37,7 +37,7 @@ and these can be extended further as described on the
 [R](https://support.nesi.org.nz/hc/en-gb/articles/209338087) support
 pages.
 
-## Adding a custom Python kernel
+# Adding a custom Python kernel
 !!! prerequisite See also
      See the [Jupyter kernels - Tool-assisted
      management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
@@ -101,16 +101,16 @@ contents:
 ``` sl
 #!/usr/bin/env bash
 
-## load required modules here
+# load required modules here
 module purge
 module load Miniconda3/4.8.2
 
-## activate conda environment
+# activate conda environment
 source $(conda info --base)/etc/profile.d/conda.sh 
 conda deactivate  # workaround for https://github.com/conda/conda/issues/9392
 conda activate my-conda-env
 
-## run the kernel
+# run the kernel
 exec python $@
 ```
 
@@ -141,7 +141,7 @@ like this (change &lt;username&gt; to your NeSI username):
 After refreshing JupyterLab your new kernel should show up in the
 Launcher as "My Conda Env".
 
-## Sharing a Python kernel with your project team members
+# Sharing a Python kernel with your project team members
 
 You can also configure a shared Python kernel that others with access to
 the same NeSI project will be able to load. If this kernel is based on a
@@ -181,12 +181,12 @@ Create a wrapper script, *wrapper.sh*, with the following contents:
 ``` sl
 #!/usr/bin/env bash
 
-## load necessary modules here
+# load necessary modules here
 module purge
 module load Python/3.8.2-gimkl-2020a
 module load ETE/3.1.1-gimkl-2020a-Python-3.8.2
 
-## run the kernel
+# run the kernel
 exec python $@
 ```
 
@@ -220,14 +220,14 @@ look like this (change &lt;project\_code&gt; to your NeSI project code):
 After refreshing JupyterLab your new kernel should show up in the
 Launcher as "Shared Virtual Env".
 
-## Custom kernel in a Singularity container
+# Custom kernel in a Singularity container
 
 An example showing setting up a custom kernel running in a Singularity
 container can be found on our [Lambda
 Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack#lambda_stack_via_jupyter)
 support page.
 
-## Adding a custom R kernel
+# Adding a custom R kernel
 
 You can configure custom R kernels for running your Jupyter notebooks.
 The following example will create a custom kernel based on the
@@ -269,12 +269,12 @@ the following contents:
 ``` sl
 #!/usr/bin/env bash
 
-## load required modules here
+# load required modules here
 module purge
 module load MPFR/4.0.2-GCCcore-9.2.0
 module load IRkernel/1.1.1-gimkl-2020a-R-3.6.2
 
-## run the kernel
+# run the kernel
 exec R $@
 ```
 
@@ -306,7 +306,7 @@ something like this (change &lt;username&gt; to your NeSI username):
 After refreshing JupyterLab your new R kernel should show up in the
 Launcher as "R with MPFR".
 
-## Spark
+# Spark
 
 At the time of writing, the latest stable version of Spark does not
 support Python 3.8. If you wish to use Spark (e.g. PySpark) make sure

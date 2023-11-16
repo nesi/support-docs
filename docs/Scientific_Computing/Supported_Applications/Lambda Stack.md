@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## Introduction
+# Introduction
 
 [Lambda
 Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
@@ -49,7 +49,7 @@ In the filenames above, the dates correspond to the date the image was
 built and the file with *-latest* will correspond to the most recent
 version.
 
-## Building the Singularity image (optional)
+# Building the Singularity image (optional)
 
 This step is optional; if you choose to use the prebuilt Singularity
 images under */opt/nesi/containers/lambda-stack/* you can skip this
@@ -77,14 +77,14 @@ Make sure you have [Docker](https://docs.docker.com/get-docker/) and
 installed first and then follow the steps below.
 
 ``` sl
-## clone the lambda stack Dockerfiles repo
+# clone the lambda stack Dockerfiles repo
 git clone https://github.com/lambdal/lambda-stack-dockerfiles.git
 cd lambda-stack-dockerfiles
 
-## build the Docker image
+# build the Docker image
 sudo docker build -t lambda-stack:20.04 -f Dockerfile.focal .
 
-## build the Singularity image from the Docker image
+# build the Singularity image from the Docker image
 sudo singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
 ```
 
@@ -104,7 +104,7 @@ singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-st
 
  
 
-## Lambda Stack via Slurm
+# Lambda Stack via Slurm
 
 The following Slurm script can be used as a template for running jobs
 using Lambda Stack.
@@ -117,22 +117,22 @@ using Lambda Stack.
 #SBATCH --cpus-per-task=1   # number of threads per MPI task
 #SBATCH --gpus-per-task=1   # optional, only if a GPU is required
 
-## path to the singularity image file (optionally replace with your own)
+# path to the singularity image file (optionally replace with your own)
 SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-## load environment modules (these are always required)
+# load environment modules (these are always required)
 module purge
 module load Singularity
 
-## for convenience store the singularity command in an environment variable
-## feel free to add additional binds if you need them 
+# for convenience store the singularity command in an environment variable
+# feel free to add additional binds if you need them 
 SINGULARITY="singularity exec --nv -B ${PWD} ${SIF}"
 
-## run a command in the container
+# run a command in the container
 ${SINGULARITY} echo "Hello World"
 ```
 
-## Lambda Stack via Jupyter
+# Lambda Stack via Jupyter
 
 The following steps will create a custom Lambda Stack kernel that can be
 accessed via NeSI's Jupyter service (based on the instructions
@@ -143,13 +143,13 @@ launch the Singularity image. Run the following commands on the Mahuika
 login node:
 
 ``` sl
-## load the Singularity envioronment module
+# load the Singularity envioronment module
 module load Singularity
 
-## path to the singularity image file (optionally replace with your own)
+# path to the singularity image file (optionally replace with your own)
 export SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-## create a jupyter kernel using the Python within the Singularity image
+# create a jupyter kernel using the Python within the Singularity image
 singularity exec -B $HOME $SIF python -m ipykernel install --user \
         --name lambdastack --display-name="Lambda Stack Python 3"
 ```
@@ -166,23 +166,23 @@ and create a wrapper script for launching the kernel, named wrapper.sh:
 ``` sl
 #!/usr/bin/env bash
 
-## path to the singularity image file (optionally replace with your own)
+# path to the singularity image file (optionally replace with your own)
 SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-## load environment modules (these are always required)
+# load environment modules (these are always required)
 module purge
 module load Singularity
 
-## unfortunately $HOME is not the canonical path to your home directory,
-## we need to bind in canonical home path too so jupyter can find kernel
-## connection file
+# unfortunately $HOME is not the canonical path to your home directory,
+# we need to bind in canonical home path too so jupyter can find kernel
+# connection file
 homefull=$(readlink -e $HOME)
 
-## for convenience store the singularity command in an environment variable
-## feel free to add additional binds if you need them 
+# for convenience store the singularity command in an environment variable
+# feel free to add additional binds if you need them 
 SINGULARITY="singularity exec --nv -B ${HOME},${homefull},${PWD} ${SIF}"
 
-## run a command in the container
+# run a command in the container
 echo ${SINGULARITY} python3 $@
 ${SINGULARITY} python3 $@
 ```
@@ -215,7 +215,7 @@ After refreshing the [NeSI JupyterLab](https://jupyter.nesi.org.nz/)
 your Lambda Stack Python kernel should show up as "Lambda Stack Python
 3".
 
-## Example: running Transformers benchmarks
+# Example: running Transformers benchmarks
 
 Here we give an example showing using Lambda Stack to run the
 [Transformers](https://huggingface.co/transformers/) library benchmarks.
@@ -226,17 +226,17 @@ not, so the first thing we do is create a virtual environment and
 install transformers into it:
 
 ``` sl
-## load the Singularity environment module
+# load the Singularity environment module
 module load Singularity
 
-## create a directory and change to it
+# create a directory and change to it
 mkdir /nesi/project/<project_code>/transformers-benchmarks
 cd /nesi/project/<project_code>/transformers-benchmarks
 
-## path to the singularity image file (optionally replace with your own)
+# path to the singularity image file (optionally replace with your own)
 export SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-## launch a bash shell in the Singularity image
+# launch a bash shell in the Singularity image
 singularity exec -B $PWD $SIF bash
 ```
 
@@ -249,7 +249,7 @@ virtualenv --system-site-packages transenv
 source transenv/bin/activate
 pip install transformers psutil py3nvml
 
-## exit the Singularity container bash prompt
+# exit the Singularity container bash prompt
 exit
 ```
 
@@ -270,13 +270,13 @@ Create the following script for running the benchmarks, named
 ``` sl
 #!/bin/bash -e
 
-## load the virtual environment with transformers installed
+# load the virtual environment with transformers installed
 source transenv/bin/activate
 
-## path to transformers benchmark script
+# path to transformers benchmark script
 BENCH_SCRIPT=transformers/examples/pytorch/benchmarking/run_benchmark.py
 
-## run the benchmarks
+# run the benchmarks
 python ${BENCH_SCRIPT} --no_multi_process --training --no_memory \
                        --save_to_csv --env_print \
                        --models bert-base-cased bert-large-cased \
@@ -298,21 +298,21 @@ Now create a Slurm script that will launch the job, names
 #SBATCH --gpus-per-task=1
 #SBATCH --mem=12G
 
-## path to the singularity image file (optionally replace with your own)
+# path to the singularity image file (optionally replace with your own)
 SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
-## load environment modules (these are always required)
+# load environment modules (these are always required)
 module purge
 module load Singularity
 
-## for convenience store the singularity command in an environment variable
+# for convenience store the singularity command in an environment variable
 SINGULARITY="singularity exec --nv -B ${PWD} ${SIF}"
 
-## print PyTorch version and number of GPUs detected
+# print PyTorch version and number of GPUs detected
 ${SINGULARITY} python3 -c "import torch; print('torch version', torch.__version__)"
 ${SINGULARITY} python3 -c "import torch; print('num devices', torch.cuda.device_count())"
 
-## run the benchmark script we created
+# run the benchmark script we created
 ${SINGULARITY} bash ./run-benchmark-torch.sh
 ```
 
