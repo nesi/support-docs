@@ -14,7 +14,7 @@ zendesk_section_id: 360000042215
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -37,9 +37,8 @@ project code, e.g;
 ``` sl
 /home/username/.snapshots/Sunday/
 ```
-!!! info Warning
->
-> Files in `/nesi/nobackup/` are not snapshotted.
+!!! prerequisite Warning
+     Files in `/nesi/nobackup/` are not snapshotted.
 
  
 
@@ -49,7 +48,6 @@ copying it over, e.g.
 ``` sl
 cp /nesi/project/.snapshots/Sunday/nesi99999/file.txt /nesi/project/nesi99999/file.txt
 ```
-!!! info Tip
->
-> For copying directories use the flag -ir or just -r if you don't want
-> to be prompted before overwriting.
+!!! prerequisite Tip
+     For copying directories use the flag -ir or just -r if you don't want
+     to be prompted before overwriting.

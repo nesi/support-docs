@@ -14,7 +14,7 @@ zendesk_section_id: 360000040596
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -54,7 +54,8 @@ data-bgcolor="#8eaadb">Apply for Use</th>
 style="background: none 0% 0% repeat scroll #8eaadb; height: 49px; width: 258.609px"
 data-bgcolor="#8eaadb">Contact </th>
 </tr>
-&#10;<tr class="odd" style="height: 66px;">
+
+<tr class="odd" style="height: 66px;">
 <td style="width: 216.398px; height: 66px"><span><a
 href="https://app.globus.org/file-manager?origin_id=3064bb28-e940-11e8-8caa-0a1d4c5c824a"><code
 class="sl">NeSI Wellington DTN V5</code></a> </span></td>
@@ -85,9 +86,8 @@ href="mailto:its.sst.systems.nesi@otago.ac.nz">its.sst.systems.nesi@otago.ac.nz<
 </tr>
 <tr class="odd" style="height: 91px;">
 <td style="width: 216.398px; height: 91px"><a
-href="https://app.globus.org/file-manager?origin_id=e7f6aaae-fe52-11e8-9345-0e3d676669f4"><span><code
-class="sl">University of Auckland Research Data DTN</code></span><code
-class="sl"> </code></a></td>
+href="https://app.globus.org/file-manager?origin_id=e7f6aaae-fe52-11e8-9345-0e3d676669f4"><code
+class="sl">University of Auckland Research Data DTN </code></a></td>
 <td style="height: 91px; width: 239.438px">Endpoint provides access to
 UoA research data. </td>
 <td style="height: 91px; width: 189.352px"
@@ -100,8 +100,8 @@ href="mailto:researchdata@auckland.ac.nz">researchdata@auckland.ac.nz</a></td>
 </tr>
 <tr class="even" style="height: 91px;">
 <td style="width: 216.398px; height: 132px"><a
-href="https://app.globus.org/file-manager?origin_id=455b2930-a0df-11e8-96e4-0a6d4e044368"><span><code
-class="sl">AgResearch DTN01</code></span></a></td>
+href="https://app.globus.org/file-manager?origin_id=455b2930-a0df-11e8-96e4-0a6d4e044368"><code
+class="sl">AgResearch DTN01</code></a></td>
 <td style="height: 132px; width: 239.438px">A Globus endpoint attached
 to AgResearch’s institutional Linux storage platform</td>
 <td style="height: 132px; width: 189.352px" data-valign="top">Sharing
@@ -114,8 +114,8 @@ href="mailto:servicedesk@agresearch.co.nz">servicedesk@agresearch.co.nz</a></td>
 </tr>
 <tr class="odd" style="height: 66px;">
 <td style="width: 216.398px; height: 66px"><a
-href="https://app.globus.org/file-manager/collections/8861482e-b5a1-4ac8-ac52-2a5a5db5455d/overview?back=endpoints"><span><code
-class="sl">PFR Globus Connect Server</code></span></a></td>
+href="https://app.globus.org/file-manager/collections/8861482e-b5a1-4ac8-ac52-2a5a5db5455d/overview?back=endpoints"><code
+class="sl">PFR Globus Connect Server</code></a></td>
 <td style="width: 239.438px; height: 66px">Endpoint provides access to
 Plant &amp; Food Research data </td>
 <td style="width: 189.352px; height: 66px"><span>Generally for internal
@@ -127,8 +127,8 @@ Food person you are wanting to share data with.</span></td>
 </tr>
 <tr class="even" style="height: 22px;">
 <td style="width: 216.398px; height: 22px"><p><a
-href="https://transfer.nesi.org.nz/file-manager/collections/fc778f2e-d02f-40b8-9aea-470066145f3a/overview?back=endpoints"><span><code
-class="sl">MWLR PN-DTN-username</code></span></a></p></td>
+href="https://transfer.nesi.org.nz/file-manager/collections/fc778f2e-d02f-40b8-9aea-470066145f3a/overview?back=endpoints"><code
+class="sl">MWLR PN-DTN-username</code></a></p></td>
 <td style="width: 239.438px; height: 22px"><span>Customised endpoints
 for users to transfer data between MWLR and NeSI, or to share data with
 third-party collaborators</span></td>
@@ -140,9 +140,8 @@ you are wanting to share data with.</span></td>
 href="mailto:IToperations@landcareresearch.co.nz">IToperations@landcareresearch.co.nz</a></td>
 </tr>
 <tr class="odd">
-<td style="width: 216.398px"><p><span><a
-href="https://transfer.nesi.org.nz/file-manager/collections/a256195f-cebe-4483-8e29-599d1d2388ed/overview?back=endpoints"><code
-class="sl">Scion Data</code></a></span></p>
+<td style="width: 216.398px"><p><span><code
+class="sl">Scion Data</code></span></p>
 <p> </p></td>
 <td style="width: 239.438px"><span>Endpoint provides access to Scion
 research data</span></td>

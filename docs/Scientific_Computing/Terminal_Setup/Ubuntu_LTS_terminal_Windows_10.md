@@ -14,17 +14,16 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
->
-> -   Be a [member of an active
->     project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
-> -   Windows 10 with [WSL
->     enabled.](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
+!!! prerequisite Requirements
+     -   Be a [member of an active
+         project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
+     -   Windows 10 with [WSL
+         enabled.](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
 
 Currently the native Windows command prompt (even with WSL enabled) does
 not support certain features, until this is fixed we recommend using the
@@ -71,7 +70,6 @@ Ubuntu LTS Terminal.
     ``` sl
     ln -s /mnt/c/Users/YourWindowsUsername/ WinFS
     ```
-!!! info What Next?
->
-> -   Set up your [SSH config
->     file](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+!!! prerequisite What Next?
+     -   Set up your [SSH config
+         file](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).

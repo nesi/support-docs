@@ -14,7 +14,7 @@ zendesk_section_id: 360000039036
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -66,6 +66,6 @@ A full list of node states can be found
 
 If you are interested in the state of one partition in particular you
 may want to use the command `squeue -p <partition>` to get the current
-queue of the partition `<partition> `
+queue of the partition `<partition>`
 
  

@@ -15,7 +15,7 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -131,10 +131,8 @@ they will both queue faster and run for less time. Also, if one of these
 jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
-!!! info Examples
->
-> [Multithreading
-> Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
->
-> [MPI
-> Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)
+!!! prerequisite Examples
+     [Multithreading
+     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
+     [MPI
+     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)

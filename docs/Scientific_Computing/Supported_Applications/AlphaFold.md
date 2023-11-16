@@ -14,17 +14,16 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Tips
->
-> An extended version of AlphaFold2 on NeSI Mahuika cluster which
-> contains additional information such as visualisation of AlphaFold
-> outputs, etc [can be found
-> here](https://nesi.github.io/alphafold2-on-mahuika/)
+!!! prerequisite Tips
+     An extended version of AlphaFold2 on NeSI Mahuika cluster which
+     contains additional information such as visualisation of AlphaFold
+     outputs, etc [can be found
+     here](https://nesi.github.io/alphafold2-on-mahuika/)
 
 # Description
 
@@ -151,9 +150,9 @@ run_alphafold.py --use_gpu_relax \
 Input *fasta* used in following example
 
 ``` sl
->T1083
+    T1083
 GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRYKEAAEENRALAKLHHELAIVED
->T1084
+    T1084
 MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 ```
 

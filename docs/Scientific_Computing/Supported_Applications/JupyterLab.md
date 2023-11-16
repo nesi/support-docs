@@ -14,18 +14,17 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Note
->
-> This documentation contains our legacy instructions for running
-> JupyterLab by tunnelling through the lander node.  
-> [If you are a Mahuika cluster user, we recommend using jupyter via 
-> jupyter.nesi.org.nz. Follow this link for more
-> information](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
+!!! prerequisite Note
+     This documentation contains our legacy instructions for running
+     JupyterLab by tunnelling through the lander node.  
+     [If you are a Mahuika cluster user, we recommend using jupyter via 
+     jupyter.nesi.org.nz. Follow this link for more
+     information](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
 
 NeSI provides a service for working on Jupyter Notebooks. As a first
 step JupyterLab can be used on Mahuika nodes. JupyterLab is a
@@ -70,12 +69,11 @@ while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
 ## Setup SSH port forwarding 
-!!! info Requirements
->
-> -   In the following we assume you already configured
->     your`.ssh/config` to use two hop method as described in the
->     [Standard Terminal
->     Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+!!! prerequisite Requirements
+     -   In the following we assume you already configured
+         your`.ssh/config` to use two hop method as described in the
+         [Standard Terminal
+         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
 
 First, the port forwarding needs to be enabled between your local
 machine and the NeSI system. Therewith a local port will be connected to
@@ -95,36 +93,32 @@ ssh -N -L 15051:localhost:15051 mahuika
 
 Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".
-!!! info Tips
->
-> -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
->     following to your `.ssh/config` to avoid establishing the
->     additional hop manually.
->
->     ``` sl
->     Host maui_vlab
->        User <username>
->        Hostname w-mauivlab01.maui.niwa.co.nz
->        ProxyCommand ssh -W %h:%p maui
->        ForwardX11 yes
->        ForwardX11Trusted yes
->        ServerAliveInterval 300
->        ServerAliveCountMax 2
->     ```
->
->     &lt;username&gt; needs to be changed. Hostnames can be adapted for
->     other nodes, e.g. `w-clim01`
+!!! prerequisite Tips
+     -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
+         following to your `.ssh/config` to avoid establishing the
+         additional hop manually.
+         ``` sl
+         Host maui_vlab
+            User <username>
+            Hostname w-mauivlab01.maui.niwa.co.nz
+            ProxyCommand ssh -W %h:%p maui
+            ForwardX11 yes
+            ForwardX11Trusted yes
+            ServerAliveInterval 300
+            ServerAliveCountMax 2
+         ```
+         &lt;username&gt; needs to be changed. Hostnames can be adapted for
+         other nodes, e.g. `w-clim01`
 
 ### MobaXterm GUI
-!!! info Tips
->
-> -   MobaXterm has an internal terminal which acts like a linux
->     terminal and can be configured as described in the [Standard
->     Terminal
->     Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
->     Therewith the [SSH command
->     line](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) approach above can
->     be used.
+!!! prerequisite Tips
+     -   MobaXterm has an internal terminal which acts like a linux
+         terminal and can be configured as described in the [Standard
+         Terminal
+         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+         Therewith the [SSH command
+         line](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) approach above can
+         be used.
 
  
 

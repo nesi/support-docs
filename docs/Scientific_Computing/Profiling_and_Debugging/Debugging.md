@@ -14,7 +14,7 @@ zendesk_section_id: 360000278935
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -53,7 +53,7 @@ command for ONE core file:
 ``` sl
 gdb -c core.12345 /path/to/bin/exe
 ...
->  bt
+      bt
 ```
 
 This assumes that the crashing job used the executable

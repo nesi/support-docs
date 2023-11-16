@@ -14,7 +14,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -95,10 +95,9 @@ checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
 If you run GROMACS on a node that is simultaneously running other jobs
 (even other GROMACS jobs), you may see warnings like this in your
 output:
-
-> WARNING: In MPI process #0: Affinity setting failed. This can cause
-> performance degradation! If you think your setting are correct,
-> contact the GROMACS developers.
+     WARNING: In MPI process #0: Affinity setting failed. This can cause
+     performance degradation! If you think your setting are correct,
+     contact the GROMACS developers.
 
 One way to prevent these warnings, which is also useful for reducing the
 risk of inefficient CPU usage, is to request entire nodes. On the

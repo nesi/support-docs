@@ -17,26 +17,24 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
-!!! info No Licence?
->
-> If you want to run MATLAB code on the cluster, but are not a member of
-> an institution without access to floating licences, MATLAB code can
-> still be run on the cluster using MCR.
+!!! prerequisite No Licence?
+     If you want to run MATLAB code on the cluster, but are not a member of
+     an institution without access to floating licences, MATLAB code can
+     still be run on the cluster using MCR.
 
 # Example script
-!!! info Note
->
-> When developing MATLAB code on your local machine, take measures to
-> ensure it will be platform independent.  Use relative paths when
-> possible and not avoid using '\\s see
-> [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
+!!! prerequisite Note
+     When developing MATLAB code on your local machine, take measures to
+     ensure it will be platform independent.  Use relative paths when
+     possible and not avoid using '\\'s see
+     [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
 
 ## Script Example
 
@@ -67,16 +65,14 @@ module load MATLAB/2021b
 matlab -batch "addpath(genpath('../parentDirectory'));myFunction(5,20)"
 # For versions older than 2019a, use '-nodisplay -r' instead of '-batch'
 ```
-!!! info Command Line
->
-> When using matlab on command line, all flag options use a single '`-`'
-> e.g. `-nodisplay`, this differs from the GNU convention of using `--`
-> for command line options of more than one character.
-!!! info Bash in MATLAB
->
-> Using the prefix `!` will allow you to run bash commands from within
-> MATLAB. e.g. `!squeue -u $USER` will print your currently queued slurm
-> jobs.
+!!! prerequisite Command Line
+     When using matlab on command line, all flag options use a single '`-`'
+     e.g. `-nodisplay`, this differs from the GNU convention of using `--`
+     for command line options of more than one character.
+!!! prerequisite Bash in MATLAB
+     Using the prefix `!` will allow you to run bash commands from within
+     MATLAB. e.g. `!squeue -u $USER` will print your currently queued slurm
+     jobs.
 
 # Parallelism
 
@@ -109,11 +105,10 @@ pc = parcluster('local')
 pc.JobStorageLocation = getenv('TMPDIR')
 parpool(pc, str2num(getenv('SLURM_CPUS_PER_TASK')))
 ```
-!!! info Note
->
-> Parpool will throw a warning when started due to a difference in how
-> time zone is specified. To fix this, add the following line to your
-> SLURM script: `export TZ="Pacific/Auckland'`
+!!! prerequisite Note
+     Parpool will throw a warning when started due to a difference in how
+     time zone is specified. To fix this, add the following line to your
+     SLURM script: `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 
@@ -159,11 +154,10 @@ end
 
 More info
 [here](https://au.mathworks.com/help/parallel-computing/parfeval.html).
-!!! info Note
->
-> When killed (cancelled, timeout, etc), job steps utilising parpool may
-> show state `OUT_OF_MEMORY`, this is a quirk of how the steps are ended
-> and not necessarily cause to raise total memory requested.
+!!! prerequisite Note
+     When killed (cancelled, timeout, etc), job steps utilising parpool may
+     show state `OUT_OF_MEMORY`, this is a quirk of how the steps are ended
+     and not necessarily cause to raise total memory requested.
 
 ------------------------------------------------------------------------
 
@@ -171,13 +165,12 @@ Determining which of
 [these](https://au.mathworks.com/help/parallel-computing/troubleshoot-variables-in-parfor-loops.html) categories
 your variables fall under is a good place to start when attempting to
 parallelise your code.
-!!! info Tip
->
-> If your code is parallel at a high level it is preferable to use
-> [SLURM job
-> arrays](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
-> as there is less computational overhead and the multiple smaller jobs
-> will queue faster.
+!!! prerequisite Tip
+     If your code is parallel at a high level it is preferable to use
+     [SLURM job
+     arrays](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
+     as there is less computational overhead and the multiple smaller jobs
+     will queue faster.
 
 # Using GPUs
 
@@ -198,19 +191,17 @@ If you want to know more about how to access the different type of
 available GPUs on NeSI, check the [GPU use on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955)
 support page.
-!!! info Support for A100 GPUs
->
-> To use MATLAB with a A100 or a A100-1g.5gb GPU, you need to use a
-> version of MATLAB supporting the *Ampere* architecture (see [GPU
-> Support by
-> Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)).
-> We recommend that you use R2021a or a more recent version.
-!!! info Note on GPU cost
->
-> A GPU device-hour costs more than a core-hour, depending on the type
-> of GPU. You can find a comparison table in our [What is an
-> allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
-> support page.
+!!! prerequisite Support for A100 GPUs
+     To use MATLAB with a A100 or a A100-1g.5gb GPU, you need to use a
+     version of MATLAB supporting the *Ampere* architecture (see [GPU
+     Support by
+     Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)).
+     We recommend that you use R2021a or a more recent version.
+!!! prerequisite Note on GPU cost
+     A GPU device-hour costs more than a core-hour, depending on the type
+     of GPU. You can find a comparison table in our [What is an
+     allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
+     support page.
 
 ## GPU Example
 
@@ -367,10 +358,9 @@ it is Windows specific.
 | Linker  | `LDFLAGS`  |
 
 For example, adding OpenMP flags for a fortran compile:
-!!! info Compiler Version Errors
->
-> Using an 'unsupported' compiler with versions of MATLAB 2020b onward
-> will result in an Error (previously was a 'Warning').
+!!! prerequisite Compiler Version Errors
+     Using an 'unsupported' compiler with versions of MATLAB 2020b onward
+     will result in an Error (previously was a 'Warning').
 
 # Known Bugs
 

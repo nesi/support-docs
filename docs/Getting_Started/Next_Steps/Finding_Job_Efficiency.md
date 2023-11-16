@@ -15,7 +15,7 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -60,14 +60,12 @@ guidance.
 ``` sl
 sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 ```
-!!! info Tip
->
-> *If you want to make this your default* `sacct` *setting, run;*
->
-> ``` sl
-> echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
-> source ~/.bash_profile
-> ```
+!!! prerequisite Tip
+     *If you want to make this your default* `sacct` *setting, run;*
+     ``` sl
+     echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
+     source ~/.bash_profile
+     ```
 
 ------------------------------------------------------------------------
 
@@ -153,11 +151,10 @@ the compute node where it it running.
 
 If 'nodelist' is not one of the fields in the output of your `sacct` or
 `squeue` commands you can find the node a job is running on using the
-command; `squeue -h -o %N -j <jobid>` The node will look something like
-`wbn123` on Mahuika or `nid00123` on Māui
-!!! info Note
->
-> If your job is using MPI it may be running on multiple nodes
+command; `squeue -h -o %N   -j <jobid>` The node will look something
+like `wbn123` on Mahuika or `nid00123` on Māui
+!!! prerequisite Note
+     If your job is using MPI it may be running on multiple nodes
 
 ## htop 
 
@@ -197,10 +194,9 @@ height="252" alt="how_to_read_htop.png" />
 **CPU%** - Percentage CPU utilisation.
 
 **MEM% **Percentage Memory utilisation.
-!!! info Warning
->
-> If the job finishes, or is killed you will be kicked off the node. If
-> htop freezes, type `reset` to clear your terminal.
+!!! prerequisite Warning
+     If the job finishes, or is killed you will be kicked off the node. If
+     htop freezes, type `reset` to clear your terminal.
 
 # Limitations of using CPU Efficiency
 

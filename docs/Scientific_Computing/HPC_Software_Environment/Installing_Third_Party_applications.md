@@ -14,7 +14,7 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -57,7 +57,7 @@ you usually need to consider:
     via downloading a tarball (`wget <URL to the tarball>`). Unpack the
     tarball using `tar xf <tar file name>`. Change into source
     directory.
--   load compiler module and modules for additional libraries
+-   ``load compiler module and modules for additional libraries
     (`module load gimkl FFTW`)
 -   run the configure with appropriate options
     `./configure --prefix=<desired install directory> --use-fftw=$EBROOTFFTW  `(options

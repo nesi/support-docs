@@ -14,7 +14,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -25,20 +25,18 @@ environment manager. Conda lets you install packages and their
 dependencies in dedicated environment, giving you more freedom to
 install software yourself at the expense of possibly less optimized
 packages and no curation by the NeSI team.
-!!! info Alternatives
->
-> -   If you want a more reproducible and isolated environment, we
->     recommend using the [Singularity
->     containers](https://support.nesi.org.nz/hc/en-gb/articles/360001107916-Singularity).
-> -   If you only need access to Python and standard numerical libraries
->     (numpy, scipy, matplotlib, etc.), you can use the [Python
->     environment
->     module](https://support.nesi.org.nz/hc/en-gb/articles/207782537-Python).
-!!! info Māui Ancillary Nodes
->
-> On Māui Ancillary Nodes, you can also use the `Anaconda3` module,
-> which provides a default environment pre-installed with a set of
-> numerical libraries (numpy, scipy, matplotlib, etc.).
+!!! prerequisite Alternatives
+     -   If you want a more reproducible and isolated environment, we
+         recommend using the [Singularity
+         containers](https://support.nesi.org.nz/hc/en-gb/articles/360001107916-Singularity).
+     -   If you only need access to Python and standard numerical libraries
+         (numpy, scipy, matplotlib, etc.), you can use the [Python
+         environment
+         module](https://support.nesi.org.nz/hc/en-gb/articles/207782537-Python).
+!!! prerequisite Māui Ancillary Nodes
+     On Māui Ancillary Nodes, you can also use the `Anaconda3` module,
+     which provides a default environment pre-installed with a set of
+     numerical libraries (numpy, scipy, matplotlib, etc.).
 
 # Module loading and conda environments isolation
 
@@ -66,21 +64,18 @@ Here are the explanations for each line of this snippet:
     in your home folder `~/.local/lib/pythonX.Y/site-packages/` (where
     `X.Y` is the Python version, e.g. 3.8) by `pip install --user` are
     excluded from your conda environments.
-!!! info Do not use `conda init`
->
-> We **strongly** recommend against using `conda init`. It inserts a
-> snippet in your `~/.bashrc` file that will freeze the version of conda
-> used, bypassing the environment module system.
-!!! info Māui Ancillary Nodes
->
-> On Māui Ancillary Nodes, you need to (re)load the `NeSI` module after
-> using `module purge`:
->
-> ``` sl
-> module purge && module load NeSI Miniconda3
-> source $(conda info --base)/etc/profile.d/conda.sh
-> export PYTHONNOUSERSITE=1
-> ```
+!!! prerequisite Do not use `conda init`
+     We **strongly** recommend against using `conda init`. It inserts a
+     snippet in your `~/.bashrc` file that will freeze the version of conda
+     used, bypassing the environment module system.
+!!! prerequisite Māui Ancillary Nodes
+     On Māui Ancillary Nodes, you need to (re)load the `NeSI` module after
+     using `module purge`:
+     ``` sl
+     module purge && module load NeSI Miniconda3
+     source $(conda info --base)/etc/profile.d/conda.sh
+     export PYTHONNOUSERSITE=1
+     ```
 
 # Prevent conda from using /home storage
 
@@ -99,13 +94,12 @@ conda config --add pkgs_dirs /nesi/nobackup/<project_code>/$USER/conda_pkgs
 
 where `<project_code>` should be replace with your project code. This
 setting is saved in your `~/.condarc` configuration file.
-!!! info Note
->
-> Your package cache will be subject to the nobackup autodelete process
-> (details available in the [Nobackup
-> autodelete](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system)
-> support page). The package cache folder is for temporary storage so it
-> is safe if files within the cache folder are removed.
+!!! prerequisite Note
+     Your package cache will be subject to the nobackup autodelete process
+     (details available in the [Nobackup
+     autodelete](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system)
+     support page). The package cache folder is for temporary storage so it
+     is safe if files within the cache folder are removed.
 
 Next, we recommend using the `-p` or `--prefix` options when creating
 new conda environments, instead of `-n` or `--name` options. Using `-p`
@@ -128,23 +122,21 @@ environment from an `environment.yml` file:
 ``` sl
 conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
 ```
-!!! info Reduce prompt prefix
->
-> By default, when activating a conda environment created with `-p` or
-> `--prefix`, the entire path of the environment is be added to the
-> prompt. To remove this long prefix in your shell prompt, use the
-> following configuration:
->
-> ``` sl
-> conda config --set env_prompt '({name})'
-> ```
+!!! prerequisite Reduce prompt prefix
+     By default, when activating a conda environment created with `-p` or
+     `--prefix`, the entire path of the environment is be added to the
+     prompt. To remove this long prefix in your shell prompt, use the
+     following configuration:
+     ``` sl
+     conda config --set env_prompt '({name})'
+     ```
 
 # Faster solver `mamba` (experimental feature)
 
-If you are using the module `Miniconda3/`*`22.11.1-1`*, you can
-accelerate conda environments creation and package installation using
-the new `libmamba` solver. To use it, append the option
-`--solver=libmamba` to your command.
+If you are using the module `Miniconda3/22.11.1-1`, you can accelerate
+conda environments creation and package installation using the new
+`libmamba` solver. To use it, append the option `--solver=libmamba` to
+your command.
 
 For example, to create an environment from an `environment.yml` file,
 use:

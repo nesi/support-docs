@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -38,11 +38,9 @@ can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
-!!! info Tips
->
-> Required ABAQUS licences can be determined by this simple and
-> intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
-> of CPUs.
+!!! prerequisite Tips
+     Required ABAQUS licences can be determined by this simple and
+     intuitive formula `⌊ 5 x N0.422 ⌋` where `N` is number of CPUs.
 
 You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
@@ -57,20 +55,16 @@ Not all solvers are compatible with all types of parallelisation.
 |                   | Element operations | Iterative solver | Direct solver | Lanczos solver |
 | `mp_mode=threads` | ✖                  | ✔                | ✔             | ✔              |
 | `mp_mode=mpi`     | ✔                  | ✔                | ✖             | ✖              |
-!!! info Note
->
-> If your input files were created using an older version of ABAQUS you
-> will need to update them using the command,
->
-> ``` sl
-> abaqus -upgrade -job new_job_name -odb old.odb
-> ```
->
-> or
->
-> ``` sl
-> abaqus -upgrade -job new_job_name -inp old.inp
-> ```
+!!! prerequisite Note
+     If your input files were created using an older version of ABAQUS you
+     will need to update them using the command,
+     ``` sl
+     abaqus -upgrade -job new_job_name -odb old.odb
+     ```
+     or
+     ``` sl
+     abaqus -upgrade -job new_job_name -inp old.inp
+     ```
 
 <table>
 <colgroup>
@@ -239,10 +233,9 @@ parameter=value" > "abaqus_v6.env"
 # After job is finished.
 rm "abaqus_v6.env"
 ```
-!!! info Useful Links
->
-> -   [Command line options for standard
->     submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
+!!! prerequisite Useful Links
+     -   [Command line options for standard
+         submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
 
  
 

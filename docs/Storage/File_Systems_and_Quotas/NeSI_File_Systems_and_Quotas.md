@@ -19,18 +19,17 @@ zendesk_section_id: 360000033936
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info New Feature
->
-> [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
-> have recently started rolling out compression of inactive data on the
-> NeSI Project filesystem. Please see the [documentation
-> below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
-> works and what data will be compressed.
+!!! prerequisite New Feature
+     [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
+     have recently started rolling out compression of inactive data on the
+     NeSI Project filesystem. Please see the [documentation
+     below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
+     works and what data will be compressed.
 
  
 
@@ -320,14 +319,13 @@ The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
 ## /nesi/nearline
-!!! info Note
->
-> The nearline service, including its associated file systems, is in an
-> Early Access phase, and allocations are by invitation. We appreciate
-> your patience as we develop, test and deploy this service. If you
-> would like to participate in the Early Access Programme, please
-> [contact our support
-> team](https://support.nesi.org.nz/hc/requests/new).
+!!! prerequisite Note
+     The nearline service, including its associated file systems, is in an
+     Early Access phase, and allocations are by invitation. We appreciate
+     your patience as we develop, test and deploy this service. If you
+     would like to participate in the Early Access Programme, please
+     [contact our support
+     team](https://support.nesi.org.nz/hc/requests/new).
 
 The `/nesi/nearline` filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of

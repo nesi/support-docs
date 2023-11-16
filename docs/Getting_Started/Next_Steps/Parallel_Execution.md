@@ -14,7 +14,7 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -27,16 +27,14 @@ automatically.
 The are three types of parallel execution we will cover
 are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
-!!! info Note
->
-> Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
-> *logical* CPU's = **1** *physical* core).  
->
-> -   `--cpus-per-task=4` will give you 4 *logical* cores.
-> -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
-> -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
->     refer to physical cores, but `--mem-per-cpu=512MB` still refers to
->     logical cores.
+!!! prerequisite Note
+     Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
+     *logical* CPU's = **1** *physical* core).  
+     -   `--cpus-per-task=4` will give you 4 *logical* cores.
+     -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
+     -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
+         refer to physical cores, but `--mem-per-cpu=512MB` still refers to
+         logical cores.
 
 See [our article on
 hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
@@ -98,7 +96,7 @@ multiple CPUs, which may belong to different nodes. On Slurm systems
 like ours, the preferred launcher is `srun` rather than `mpi-run`.
 
 Since the distribution of tasks across different nodes may be
-unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
+unpredictable, `--mem-per-cpu` should be used instead of `--mem`.``
 
 ``` sl
 #!/bin/bash -e
@@ -117,11 +115,10 @@ The expected output being
 /home/user001/demo
 /home/user001/demo
 ```
-!!! info Warning
->
-> For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
-> all. Using `srun` in conjunction with `--cpus-per-task=1` will
-> cause `--ntasks` to default to 2.
+!!! prerequisite Warning
+     For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
+     all. Using `srun` in conjunction with `--cpus-per-task=1` will
+     cause `--ntasks` to default to 2.
 
 # Job Arrays
 
@@ -158,55 +155,60 @@ results `This is result 1` and `This is result 2` respectively.
 Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
 recommended method of variation between the jobs. For example:
 
--   -   -   As a direct input to a function.  
+<ul>
+<ul>
 
-            ``` sl
-            matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
-            ```
+-   As a direct input to a function.  
 
-        -   As an index to an array.  
+    ``` sl
+    matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+    ```
 
-            ``` sl
-            inArray=(1 2 4 8 16 32 64 128)
-            input=${inArray[$SLURM_ARRAY_TASK_ID]}
-            ```
+-   As an index to an array.  
 
-        -   For selecting input files.  
+    ``` sl
+    inArray=(1 2 4 8 16 32 64 128)
+    input=${inArray[$SLURM_ARRAY_TASK_ID]}
+    ```
 
-            ``` sl
-            input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
-            ```
+-   For selecting input files.  
 
-        -   As a seed for a pseudo-random number.  
-            -   In R
+    ``` sl
+    input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+    ```
 
-                ``` sl
-                task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-                set.seed(task_id)
-                ```
+-   As a seed for a pseudo-random number.  
+    -   In R
 
-            -   In MATLAB
+        ``` sl
+        task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+        set.seed(task_id)
+        ```
 
-                ``` sl
-                task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-                rng(task_id)
-                ```
+    -   In MATLAB
 
-            *  
-            Using a seed is important, otherwise multiple jobs may
-            receive the same pseudo-random numbers.*
+        ``` sl
+        task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+        rng(task_id)
+        ```
 
-        -   As an index to an array of filenames. 
+    *  
+    Using a seed is important, otherwise multiple jobs may receive the
+    same pseudo-random numbers.*
 
-            ``` sl
-            files=( inputs/*.dat )
-            input=${files[SLURM_ARRAY_TASK_ID]}
-            # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
-            ```
+-   As an index to an array of filenames. 
 
-            This example will submit a job array with each job using a
-            .dat file in 'inputs' as the variable input (in alphabetcial
-            order).
+    ``` sl
+    files=( inputs/*.dat )
+    input=${files[SLURM_ARRAY_TASK_ID]}
+    # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
+    ```
+
+    This example will submit a job array with each job using a .dat file
+    in 'inputs' as the variable input (in alphabetcial order).
+
+</ul>
+</ul>
 
 Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be

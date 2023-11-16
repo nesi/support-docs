@@ -16,7 +16,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -26,15 +26,14 @@ comsol --help
 ```
 
 Will display a list of COMSOL batch commands.
-!!! info Useful Links
->
-> -   [Running COMSOL in parallel on
->     clusters.](https://www.comsol.com/support/knowledgebase/1001/)
-> -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
->     the command
->     line.](https://www.comsol.com/support/knowledgebase/1250/)
-> -   [COMSOL and
->     Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
+!!! prerequisite Useful Links
+     -   [Running COMSOL in parallel on
+         clusters.](https://www.comsol.com/support/knowledgebase/1001/)
+     -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
+         the command
+         line.](https://www.comsol.com/support/knowledgebase/1250/)
+     -   [COMSOL and
+         Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
 
 # Batch Submission
 
@@ -136,10 +135,9 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
 </tr>
 </tbody>
 </table>
-!!! info Important
->
-> If no output file is set, using `--output` the input file will be
-> updated instead.
+!!! prerequisite Important
+     If no output file is set, using `--output` the input file will be
+     updated instead.
 
 # Interactive Use
 
