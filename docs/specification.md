@@ -1,30 +1,4 @@
 # Specification
-
-
-Headers should have a blank line before and after.
-
-'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
-
-See [Title](#title) for more info.
-
-
-### Links
-
-Try to avoid putting links on ambiguous words, e.g.
-
-=== "Bad"
-    View the software homepage [here](www.example.com).
-
-    ```md
-    View the homepage [here](www.example.com).
-    ```
-
-=== "Better"
-    View the [software homepage](www.example.com).
-
-    ```md
-    View the [software homepage](www.example.com).
-    ```
     
 ## Structure
 
@@ -40,6 +14,8 @@ An articles location is determined by its location in the `docs` directory.
 Article file can be nested up to two folders deep, and use the title name, in snake_case.
 
 ### Title
+
+Headers should have a blank line before and after.
 
 #### Succession
 
@@ -81,29 +57,29 @@ H4
 
 Try to avoid only-child headers (e.g shares a parent with at least one other header)
 
-### Meta
+## Meta
 
 Article metadata is yaml format at the top of the page between two `---`
 
-#### Mkdocs Parameters
+### Mkdocs Parameters
 
 - `template` : which [template](#templates) to use.
 - `title`    : [title](#title).
 
-#### Material Parameters
+### Material Parameters
 
 - `description` : used for site meta.           : `string`
 - `icon`        : page icon.                    : `path`
 - `status`      : Will dsiplay a symbol on nav  : `new`, `deprecated`.
 - `hide`        : Used to turn off features.    : `tags`
 
-#### Custom Parameters
+### Custom Parameters
 
 - `prereq`      : List of prerequisites. Formatted in markdown. Will be rendered inside a admonation.
 - `postreq`     : List of what next. Formatted in markdown. Will be rendered inside a admonation.
 - `suggested`   : Page similar pages to link to. (Not implimented).
 
-#### Zendesk Imported
+### Zendesk Imported
 
 Not used for anything currently. Info imported from Zendesk Page.
 
@@ -120,10 +96,10 @@ Not used for anything currently. Info imported from Zendesk Page.
 
 Template can be set in article meta.
 
-- `main`                : Used for regular pages (default).
-- `application`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).
-- `supportedApplication`: For supported applications page.
-- `home`                : Homepage.
+- `main.html`                : Used for regular pages (default).
+- `application.html`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).
+- `supportedApplication.html`: For supported applications page.
+- `home.html`                : Homepage.
 
 By default, the `main` theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.
 
@@ -132,11 +108,11 @@ By default, the `main` theme will be used. template of a theme to render Markdow
 Macros allow use of Jinja filter syntax _inside the mardown files_ allowing for much more flexable templating.
 Details [here](https://mkdocs-macros-plugin.readthedocs.io/)
 
-For a bad time, [visit]({{ applications.ANSYS.homepage }}).
+`module load ANSYS/{{ applications.ANSYS.mahuika.versions | last }}`
 
 ```md
 {% raw %}
-For a bad time, [visit]({{ applications.ANSYS.homepage }}).
+`module load ANSYS/{{ applications.ANSYS.mahuika.versions | last }}`
 {% endraw %}
 ```
 
@@ -172,6 +148,26 @@ The macro plugin also allows the use of 'includes',
 {% include 'snippet.md' %}
 {% endraw %}
 ```
+
+## Style Guide
+
+### Links
+
+Try to avoid putting links on ambiguous words, e.g.
+
+=== "Bad"
+    View the software homepage [here](www.example.com).
+
+    ```md
+    View the homepage [here](www.example.com).
+    ```
+
+=== "Better"
+    View the [software homepage](www.example.com).
+
+    ```md
+    View the [software homepage](www.example.com).
+    ```
 
 ## Accessability standards
 
