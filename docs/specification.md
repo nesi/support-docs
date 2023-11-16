@@ -120,10 +120,10 @@ Not used for anything currently. Info imported from Zendesk Page.
 
 Template can be set in article meta.
 
-- `main`                : Used for regular pages (default).
-- `application`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).
-- `supportedApplication`: For supported applications page.
-- `home`                : Homepage.
+- `main.html`                : Used for regular pages (default).
+- `application.html`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).
+- `supportedApplication.html`: For supported applications page.
+- `home.html`                : Homepage.
 
 By default, the `main` theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.
 
