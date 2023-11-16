@@ -42,6 +42,7 @@ extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
   - assets/stylesheets/custom_admonations.css
+  - assets/stylesheets/theme.css
   # - assets/stylesheets/supportedApplications.css
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.0.min.js
