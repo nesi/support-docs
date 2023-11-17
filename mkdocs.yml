@@ -66,13 +66,12 @@ theme:
   logo: assets/icons/logo.svg
   name: material
   palette:
-    - primary: grey
+    - primary: custom
       scheme: default
       toggle:
         icon: material/lightbulb
         name: Switch to dark mode
-    - primary: black
-      scheme: slate
+    - primary: custom
       toggle:
         icon: material/lightbulb-outline
         name: Switch to light mode
