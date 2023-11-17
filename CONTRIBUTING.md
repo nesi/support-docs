@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
 
 ### Make Development Branch
 ```bash
-github checkout -b my_development_branch
+git checkout -b my_development_branch
 ```
 
 ### Build and deploy
