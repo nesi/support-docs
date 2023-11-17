@@ -72,6 +72,7 @@ theme:
         icon: material/lightbulb
         name: Switch to dark mode
     - primary: custom
+      scheme: slate
       toggle:
         icon: material/lightbulb-outline
         name: Switch to light mode
