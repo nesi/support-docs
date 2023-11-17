@@ -1,3 +1,5 @@
+[![Deploy to gh-pages](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment_status)](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml)
+
 Pages hosted [here](https://cwal219.pages.hpcf.nesi.org.nz/mkdocs).
 
 ## Migrate
@@ -30,4 +32,3 @@ For non-template related files, e.g. images.
 
 Theme overides or extensions.
 
-[![Deploy to gh-pages](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment)](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml)
