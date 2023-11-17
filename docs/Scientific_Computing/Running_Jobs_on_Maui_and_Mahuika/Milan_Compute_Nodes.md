@@ -21,7 +21,7 @@ zendesk_section_id: 360000030876
 
  
 
-## How to access
+# How to access
 
 To use Mahuika's Milan nodes, you will need to explicitly specify the
 `milan` partition in your `sbatch` command line. Jobs are submitted from
@@ -39,7 +39,7 @@ the job description file:
 #SBATCH --partition=milan
 ```
 
-## Hardware
+# Hardware
 
 Each node has two AMD Milan CPUs, each with 8 "chiplets" of 8 cores and
 one level 3 cache, so each node has a total of **128 cores** or 256
@@ -50,7 +50,7 @@ The memory available to Slurm jobs is 512GB per node, so approximately
 2GB per CPU. There are 64 nodes available, 8 of which will have double
 the memory (1T).
 
-## Software
+# Software
 
 ## Operating System
 
@@ -140,7 +140,7 @@ For more information on AOCC compiler suite please, visit [AMD
 Optimizing C/C++ and Fortran Compilers
 (AOCC)](https://developer.amd.com/amd-aocc/)
 
-## Network
+# Network
 
 Access to Mahuika's Milan nodes is currently only possible via the Slurm
 `sbatch` and `srun` commands. There is no ssh access, not even to the
@@ -152,7 +152,7 @@ Dask or PEST, will generally only work if you use the Infiniband address
 of the compute node, eg: *wmc012.ib.hpcf.nesi.org.nz*. This networking
 configuration is expected to be addressed in the future.
 
-## Any questions?
+# Any questions?
 
 Don't hesitate to contact us at <support@nesi.org.nz>. No question is
 too big or small. We are available for Zoom sessions or [Weekly Online

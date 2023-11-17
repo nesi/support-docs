@@ -25,7 +25,7 @@ zendesk_section_id: 360000040076
      outputs, etc [can be found
      here](https://nesi.github.io/alphafold2-on-mahuika/)
 
-## Description
+# Description
 
 This package provides an implementation of the inference pipeline of
 AlphaFold v2.0. This is a completely new model that was entered in
@@ -42,7 +42,7 @@ a detailed description of the method.
 
 Home page is at <https://github.com/deepmind/alphafold> 
 
-## License and Disclaimer
+# License and Disclaimer
 
 This is not an officially supported Google product.
 
@@ -67,7 +67,7 @@ under the terms of the Creative Commons Attribution-NonCommercial 4.0
 International (CC BY-NC 4.0) license. You can find details
 at: <https://creativecommons.org/licenses/by-nc/4.0/legalcode>
 
-## AlphaFold Databases
+# AlphaFold Databases
 
 AlphaFold databases are stored in `/opt/nesi/db/alphafold_db/`  parent
 directory. In order to make the database calling more convenient, we
@@ -101,7 +101,7 @@ $ echo $AF2DB
 /opt/nesi/db/alphafold_db/2023-04
 ```
 
-## AlphaFold module ( &gt;= 2.3.2)
+# AlphaFold module ( &gt;= 2.3.2)
 
 As of version 2.3.2 of AlphaFold, we recommend deploying AlphaFold via
 the module (previous versoions were done via a Singularity container )
@@ -192,7 +192,7 @@ run_alphafold.py \
 --fasta_paths=${INPUT}/test_multimer.fasta
 ```
 
-## AlphaFold Singularity container (prior to v2.3.2)
+# AlphaFold Singularity container (prior to v2.3.2)
 
 If you would like to use a version prior to 2.3.2, It can be done via
 the Singularity containers. 
@@ -308,7 +308,7 @@ Input *fasta* used in following example and subsequent benchmarking is
 
 ###  
 
-## Troubleshooting
+# Troubleshooting
 
 -   If you are to encounter the message "*RuntimeError: Resource
     exhausted: Out of memory*" , add the following variables to the

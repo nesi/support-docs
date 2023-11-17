@@ -51,7 +51,7 @@ other, it is advisable to use the same MPI distribution as the host HPC
 system for reliability. The Mahuika and Māui Ancil clusters use Intel
 MPI.
 
-## Using Dask-MPI on Mahuika
+# Using Dask-MPI on Mahuika
 
 Dask-MPI can be readily used with the more recent Python modules
 available on Mahuika that come with the mpi4py package, e.g.
@@ -60,7 +60,7 @@ available on Mahuika that come with the mpi4py package, e.g.
 module load Python/3.9.9-gimkl-2020a
 ```
 
-## Installing Dask-MPI with Conda on Mahuika and Māui Ancil
+# Installing Dask-MPI with Conda on Mahuika and Māui Ancil
 
 Load an Anaconda3 or Miniconda3 module and use the following commands to
 install mpi4py with the Intel MPI distribution *before* installing the
@@ -92,7 +92,7 @@ dependencies:
      page for more information on how to create and manage Miniconda
      environments on NeSI.
 
-## Configuring Slurm
+# Configuring Slurm
 
 At runtime, Slurm will launch a number of Python processes as requested
 in the [Slurm configuration
@@ -167,7 +167,7 @@ srun --het-group=0-1 python mydaskprogram.py
 
 The `--het-group` flag asks `srun` to launch both job packs together.
 
-## Example
+# Example
 
 The following example illustrates how to run Dask-MPI on the HPC. It is
 based on the Dask Futures tutorial on the [Dask
@@ -180,10 +180,10 @@ import os
 import dask_mpi as dm
 import dask.distributed as dd
 
-## Initialise Dask cluster and store worker files in current work directory
+# Initialise Dask cluster and store worker files in current work directory
 dm.initialize(local_directory=os.getcwd())
 
-## Define two simple test functions
+# Define two simple test functions
 def inc(x):
     return x + 1
 
@@ -192,12 +192,12 @@ def add(x, y):
 
 client = dd.Client()
 
-## Submit chain of computations using futures
+# Submit chain of computations using futures
 a = client.submit(inc, 1)
 b = client.submit(inc, 2)
 c = client.submit(add, a, b)
 
-## Expect the same answer
+# Expect the same answer
 print("Dask result:", c.result())
 print("Local result:", add(inc(1), inc(2)))
 ```
@@ -230,7 +230,7 @@ Dask result: 5
 Local result: 5
 ```
 
-## Running Dask-MPI inside a Singularity container
+# Running Dask-MPI inside a Singularity container
 
 It is straightforward to run a Dask-MPI workload inside a Singularity
 container on the HPC. For reliable and efficient execution it is best to

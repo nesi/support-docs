@@ -54,7 +54,7 @@ steps, which are then described in more details:
 -   [Kernels](#h_e7f80560-91c0-420a-bccb-17bbf8c2e916)
 -   [Packages](#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e)
 
-## Launch JupyterLab
+# Launch JupyterLab
 
 Since JupyterLab is a web based application, and at NeSI launched behind
 the firewall, a **port** needs to be forwarded to your local machine,
@@ -238,7 +238,7 @@ initializing Jupyter Lab you should see a page similar to:
 
 ![Jupyter.PNG](../../assets/images/JupyterLab_0.PNG)
 
-## Kernels
+# Kernels
 
 The following JupyterLab kernel are installed:
 
@@ -254,7 +254,7 @@ verify that the module IRkernel is loaded
 module load IRkernel
 ```
 
-## Spark
+# Spark
 
 pySpark and SparkR is supported in NeSI Jupyter notebooks. Therefore,
 the module Spark needs to be loaded before starting Jupyter. Please run
@@ -264,7 +264,7 @@ Spark workflows on compute nodes.
 module load Spark
 ```
 
-## Packages
+# Packages
 
 There are a long list of default packages provided by the JupyterLab
 environment module (list all using `!pip list`) and R (list using

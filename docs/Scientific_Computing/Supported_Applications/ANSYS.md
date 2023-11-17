@@ -640,7 +640,7 @@ echo "STARTING SYSTEM COUPLER"
 
 cd Coupling
 
-## Run the system coupler in the background.
+# Run the system coupler in the background.
 srun -N1 -n1 $WORKBENCH_CMD \
     ansys.services.systemcoupling.exe \
     -inputFile coupling.sci || scancel $SLURM_JOBID &
@@ -679,7 +679,7 @@ echo "STARTING ANSYS"
 
 cd Structural
 
-## Run ANSYS in the background, alongside the system coupler and Fluent.
+# Run ANSYS in the background, alongside the system coupler and Fluent.
 mapdl -b -dis -mpi intel -np $MECHANICAL_CPUS \
     -scport $port -schost $node -scname "$mechsolname" \
     -i "structural.dat" > struct.out || scancel $SLURM_JOBID &
@@ -690,14 +690,14 @@ echo "STARTING FLUENT"
 
 cd FluidFlow
 
-## Run Fluent in the background, alongside the system coupler and ANSYS.
+# Run Fluent in the background, alongside the system coupler and ANSYS.
 fluent 3ddp -g -t$FLUID_CPUS \
     -scport=$port -schost=$node -scname="$fluentsolname" \
     -i "fluidFlow.jou" > fluent.out || scancel $SLURM_JOBID &
 cd ..
 
-## Before exiting, wait for all background tasks (the system coupler, ANSYS and
-## Fluent) to complete.
+# Before exiting, wait for all background tasks (the system coupler, ANSYS and
+# Fluent) to complete.
 wait
 ```
 

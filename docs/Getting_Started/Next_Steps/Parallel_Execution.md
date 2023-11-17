@@ -39,7 +39,7 @@ See [our article on
 hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
 for more information.
 
-## Multi-threading
+# Multi-threading
 
 Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
@@ -76,7 +76,7 @@ The expected output being
 pid 13538's current affinity list: 7,9,43,45
 ```
 
-## MPI
+# MPI
 
 MPI stands for *Message Passing Interface*, and is a communication
 protocol used to achieve distributed parallel computation.
@@ -119,7 +119,7 @@ The expected output being
      all. Using `srun` in conjunction with `--cpus-per-task=1` will
      cause `--ntasks` to default to 2.
 
-## Job Arrays
+# Job Arrays
 
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
@@ -251,8 +251,10 @@ program, this can be resolved in a similar manner.
 ``` sl
 mkdir run_${SLURM_ARRAY_TASK_ID}                             #Create new directory
 cd run_${SLURM_ARRAY_TASK_ID}                                #CD to new directory
-## bash job.sh
-## mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
+#
+bash job.sh
+#
+mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   #Move and rename output
 rm -r ../run_${SLURM_ARRAY_TASK_ID}                          #Clear directory
 ```
 

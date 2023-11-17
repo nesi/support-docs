@@ -70,7 +70,7 @@ another. Most commonly, people source `~/.bashrc`, if it exists and can
 be read, from `~/.bash_profile`:
 
 ``` sl
-## Put this code in your ~/.bash_profile
+# Put this code in your ~/.bash_profile
 test -r ~/.bashrc && . ~/.bashrc
 ```
 
