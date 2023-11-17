@@ -1,8 +1,9 @@
 name: Deploy to gh-pages 
 on: 
  workflow_run:
-    workflows: ["Lint Changed Files"]
+    workflows: ["Check Changed Files"]
     types: [completed]
+    branches: [main]
  workflow_dispatch:
   inputs:
     dry-run:
