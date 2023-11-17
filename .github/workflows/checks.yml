@@ -45,7 +45,7 @@ jobs:
        - name: Run markdownlint
          run: |
           shopt -s globstar extglob
-          markdownlint --disable MD033 --json ${{inputs.fileList}} 2>&1 | checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json ${{inputs.fileList}} 2>&1 | checks/parse_markdownlint.py
   metacheck:
      runs-on: ubuntu-latest
      steps:
