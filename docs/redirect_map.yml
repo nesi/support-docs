@@ -1,9 +1,14 @@
+hc/en-gb/articles/115001854444-RAxML.md: Scientific_Computing/Supported_Applications/RAxML.md
 hc/en-gb/articles/207127857-Gaussian.md: Scientific_Computing/Supported_Applications/Gaussian.md
 hc/en-gb/articles/207765367-Java.md: Scientific_Computing/Supported_Applications/Java.md
+hc/en-gb/articles/207782537-Python.md: Scientific_Computing/Supported_Applications/Python.md
 hc/en-gb/articles/208619807-BLAST.md: Scientific_Computing/Supported_Applications/BLAST.md
+hc/en-gb/articles/209338087-R.md: Scientific_Computing/Supported_Applications/R.md
+hc/en-gb/articles/209379527-VASP.md: Scientific_Computing/Supported_Applications/VASP.md
 hc/en-gb/articles/212457807-ABAQUS.md: Scientific_Computing/Supported_Applications/ABAQUS.md
 hc/en-gb/articles/212639047-MATLAB.md: Scientific_Computing/Supported_Applications/MATLAB.md
 hc/en-gb/articles/212642617-ANSYS.md: Scientific_Computing/Supported_Applications/ANSYS.md
+hc/en-gb/articles/213718027-ORCA.md: Scientific_Computing/Supported_Applications/ORCA.md
 hc/en-gb/articles/218032857-Converting-from-Windows-style-to-UNIX-style-line-endings.md: General/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md
 hc/en-gb/articles/360000159715-Creating-a-NeSI-Account-Profile.md: Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md
 hc/en-gb/articles/360000161315-Logging-in-to-the-HPCs.md: General/FAQs/Logging_in_to_the_HPCs.md
@@ -39,7 +44,10 @@ hc/en-gb/articles/360000335995-Setting-Up-and-Resetting-Your-Password.md: Gettin
 hc/en-gb/articles/360000336015-NeSI-Password-Policy.md: General/NeSI_Policies/NeSI_Password_Policy.md
 hc/en-gb/articles/360000336076-Compiling-software-on-M%C4%81ui.md: Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui.md
 hc/en-gb/articles/360000360576-Finding-Software.md: Scientific_Computing/HPC_Software_Environment/Finding_Software.md
+hc/en-gb/articles/360000361675-Software-Installation-Request.md: Scientific_Computing/Supported_Applications/Software
+  Installation Request.md
 hc/en-gb/articles/360000428676-Introductory-Material.md: Getting_Started/Getting_Help/Introductory_Material.md
+hc/en-gb/articles/360000470655-Why-can-t-I-log-in-using-MobaXTerm-.md: General/FAQs/Why_cant_I_log_in_using_MobaXTerm.md
 hc/en-gb/articles/360000473256-Can-I-change-my-time-zone-to-New-Zealand-time-.md: General/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md
 hc/en-gb/articles/360000474535-Installing-Third-Party-applications.md: Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md
 hc/en-gb/articles/360000532595-What-does-oom-kill-mean-.md: General/FAQs/What_does_oom_kill_mean.md
@@ -59,13 +67,16 @@ hc/en-gb/articles/360000691716-Slurm-Reference-Sheet.md: Getting_Started/Cheat_S
 hc/en-gb/articles/360000693896-Applying-to-join-an-existing-NeSI-project.md: Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md
 hc/en-gb/articles/360000700295-Visualisation-software.md: Scientific_Computing/HPC_Software_Environment/Visualisation_software.md
 hc/en-gb/articles/360000705196-SLURM-Best-Practice.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice.md
+hc/en-gb/articles/360000718515-Supernova.md: Scientific_Computing/Supported_Applications/Supernova.md
 hc/en-gb/articles/360000719156-NICE-DCV-Setup.md: Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup.md
 hc/en-gb/articles/360000728016-Job-Scaling-Ascertaining-job-dimensions.md: Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md
+hc/en-gb/articles/360000737555-Why-is-my-job-taking-a-long-time-to-start-.md: General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
 hc/en-gb/articles/360000743536-Fair-Share.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md
 hc/en-gb/articles/360000751636-System-status.md: Getting_Started/Getting_Help/System_status.md
 hc/en-gb/articles/360000751916-Consultancy.md: Getting_Started/Getting_Help/Consultancy.md
 hc/en-gb/articles/360000759275-FDS.md: Scientific_Computing/Supported_Applications/FDS.md
 hc/en-gb/articles/360000792856-GROMACS.md: Scientific_Computing/Supported_Applications/GROMACS.md
+hc/en-gb/articles/360000810556-OpenFOAM.md: Scientific_Computing/Supported_Applications/OpenFOAM.md
 hc/en-gb/articles/360000810616-Slurm-Native-Profiling.md: Scientific_Computing/Profiling_and_Debugging/Slurm_Native_Profiling.md
 hc/en-gb/articles/360000817476-Initial-Globus-Sign-Up-and-your-Globus-Identities.md: Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md
 hc/en-gb/articles/360000871556-COMSOL.md: Scientific_Computing/Supported_Applications/COMSOL.md
@@ -74,8 +85,15 @@ hc/en-gb/articles/360000903776-Finding-Job-Efficiency.md: Getting_Started/Next_S
 hc/en-gb/articles/360000925176-Allocation-classes.md: General/NeSI_Policies/Allocation_classes.md
 hc/en-gb/articles/360000929935-Git-Bash-Windows-.md: Scientific_Computing/Terminal_Setup/Git_Bash_Windows.md
 hc/en-gb/articles/360000930396-Profiler-ARM-MAP.md: Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md
+hc/en-gb/articles/360000930655-Why-does-my-program-crash-.md: General/FAQs/Why_does_my_program_crash.md
 hc/en-gb/articles/360000931775-National-Data-Transfer-Platform.md: Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md
+hc/en-gb/articles/360000980375-Trinity.md: Scientific_Computing/Supported_Applications/Trinity.md
+hc/en-gb/articles/360000990436-TensorFlow-on-GPUs.md: Scientific_Computing/Supported_Applications/TensorFlow
+  on GPUs.md
 hc/en-gb/articles/360000995575-Thread-Placement-and-Thread-Affinity.md: Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md
+hc/en-gb/articles/360000997675-TensorFlow-on-CPUs.md: Scientific_Computing/Supported_Applications/TensorFlow
+  on CPUs.md
+hc/en-gb/articles/360001002956-ParaView.md: Scientific_Computing/Supported_Applications/ParaView.md
 hc/en-gb/articles/360001008136-Debugging.md: Scientific_Computing/Profiling_and_Debugging/Debugging.md
 hc/en-gb/articles/360001016335-Choosing-and-Configuring-Software-for-Connecting-to-the-Clusters.md: Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md
 hc/en-gb/articles/360001045096-Software-Version-Management.md: Scientific_Computing/HPC_Software_Environment/Software_Version_Management.md
@@ -87,7 +105,9 @@ hc/en-gb/articles/360001075936-Keras.md: Scientific_Computing/Supported_Applicat
 hc/en-gb/articles/360001075975-X11-on-NeSI.md: Scientific_Computing/Terminal_Setup/X11_on_NeSI.md
 hc/en-gb/articles/360001093315-JupyterLab.md: Scientific_Computing/Supported_Applications/JupyterLab.md
 hc/en-gb/articles/360001097936-NeSI-Licence-Policy.md: General/NeSI_Policies/NeSI_Licence_Policy.md
+hc/en-gb/articles/360001107916-Singularity.md: Scientific_Computing/Supported_Applications/Singularity.md
 hc/en-gb/articles/360001108756-How-do-I-request-memory-.md: General/FAQs/How_do_I_request_memory.md
+hc/en-gb/articles/360001111156-OpenSees.md: Scientific_Computing/Supported_Applications/OpenSees.md
 hc/en-gb/articles/360001113076-The-HPC-environment-.md: Getting_Started/Next_Steps/The_HPC_environment.md
 hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space.md: General/FAQs/Ive_run_out_of_storage_space.md
 hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-.md: Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md
@@ -96,9 +116,11 @@ hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system.md: St
 hc/en-gb/articles/360001169956-Nearline-Long-Term-Storage-Service.md: Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md
 hc/en-gb/articles/360001173875-MPI-Scaling-Example.md: Getting_Started/Next_Steps/MPI_Scaling_Example.md
 hc/en-gb/articles/360001173895-Multithreading-Scaling-Example.md: Getting_Started/Next_Steps/Multithreading_Scaling_Example.md
+hc/en-gb/articles/360001174055-Relion.md: Scientific_Computing/Supported_Applications/Relion.md
 hc/en-gb/articles/360001175895-Julia.md: Scientific_Computing/Supported_Applications/Julia.md
 hc/en-gb/articles/360001176756-How-can-I-see-how-busy-the-cluster-is-.md: General/FAQs/How_can_I_see_how_busy_the_cluster_is.md
 hc/en-gb/articles/360001194536-What-are-my-bashrc-bash-profile-for-.md: General/FAQs/What_are_my-bashrc_and-bash_profile_for.md
+hc/en-gb/articles/360001208256-Synda.md: Scientific_Computing/Supported_Applications/Synda.md
 hc/en-gb/articles/360001237915-How-can-I-let-my-fellow-project-team-members-read-or-write-my-files-.md: General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md
 hc/en-gb/articles/360001244876-Mahuika-M%C4%81ui-Differences.md: General/FAQs/Mahuika_Maui_Differences.md
 hc/en-gb/articles/360001287235-Download-and-share-CMIP6-data-for-NIWA-researchers-.md: Storage/Data_Transfer_Services/Download_and_share_CMIP6_data_for_NIWA_researchers.md
@@ -107,6 +129,7 @@ hc/en-gb/articles/360001316356-Slurm-Interactive-Sessions.md: Scientific_Computi
 hc/en-gb/articles/360001330415-Checksums.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checksums.md
 hc/en-gb/articles/360001332675-Find-execution-hot-spots-with-VTune.md: Scientific_Computing/Supported_Applications/Find
   execution hot spots with VTune.md
+hc/en-gb/articles/360001343015-TurboVNC.md: Scientific_Computing/Supported_Applications/TurboVNC.md
 hc/en-gb/articles/360001385735-What-is-an-allocation-.md: Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md
 hc/en-gb/articles/360001392636-Configuring-Dask-MPI-jobs.md: Scientific_Computing/HPC_Software_Environment/Configuring_Dask_MPI_jobs.md
 hc/en-gb/articles/360001393596-Unix-Shell-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Unix_Shell-Reference_Sheet.md
@@ -125,6 +148,7 @@ hc/en-gb/articles/360001593096-Delft3D.md: Scientific_Computing/Supported_Applic
 hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI.md: Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md
 hc/en-gb/articles/360001829555-Improvements-to-Fair-Share-job-prioritisation-on-M%C4%81ui.md: General/Announcements/Improvements_to_Fair_Share_job_prioritisation_on_Maui.md
 hc/en-gb/articles/360002105076-CESM.md: Scientific_Computing/Supported_Applications/CESM.md
+hc/en-gb/articles/360002109696-WRF.md: Scientific_Computing/Supported_Applications/WRF.md
 hc/en-gb/articles/360002113295-Long-Term-Storage-Nearline-release-notes-v1-1-0-14.md: Storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-14.md
 hc/en-gb/articles/360002327275-Job-efficiency-review.md: Getting_Started/Getting_Help/Job_efficiency_review.md
 hc/en-gb/articles/360002558216-Lambda-Stack.md: Scientific_Computing/Supported_Applications/Lambda
@@ -133,6 +157,7 @@ hc/en-gb/articles/360002655596-Long-term-Storage-Nearline-release-notes-v1-1-0-1
 hc/en-gb/articles/360002667556-Access-Policy.md: General/NeSI_Policies/Access_Policy.md
 hc/en-gb/articles/360002667676-Acknowledgement-Citation-and-Publication.md: General/NeSI_Policies/Acknowledgement-Citation_and_Publication.md
 hc/en-gb/articles/360002751455-Acceptable-Use-Policy.md: General/NeSI_Policies/Acceptable_Use_Policy.md
+hc/en-gb/articles/360003472036-VirSorter.md: Scientific_Computing/Supported_Applications/VirSorter.md
 hc/en-gb/articles/360003507115-About-the-Release-Notes-section.md: General/Release_Notes/About_the_Release_Notes_section.md
 hc/en-gb/articles/360003550396-my-nesi-org-nz-release-notes-v2-0-1.md: Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-1.md
 hc/en-gb/articles/360003551116-Long-term-Storage-Nearline-release-notes-v1-1-0-19.md: Storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-19.md
@@ -179,6 +204,7 @@ hc/en-gb/articles/4416692988047-Checking-your-project-s-usage-using-nn-corehour-
 hc/en-gb/articles/4416829135887-How-do-I-fix-my-locale-and-language-settings-.md: General/FAQs/How_do_I_fix_my_locale_and_language_settings.md
 hc/en-gb/articles/4543094513039-my-nesi-org-nz-release-notes-v2-7-0.md: Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-7-0.md
 hc/en-gb/articles/4544913401231-Slurm-upgrade-to-version-21-8.md: General/Announcements/Slurm_upgrade_to_version_21-8.md
+hc/en-gb/articles/4546820344079-ont-guppy-gpu.md: Scientific_Computing/Supported_Applications/ont-guppy-gpu.md
 hc/en-gb/articles/4563294188687-Managing-notification-preferences.md: Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md
 hc/en-gb/articles/4563511601679-tmux-Reference-sheet.md: Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md
 hc/en-gb/articles/4589733874191-jupyter-nesi-org-nz-release-notes-31-03-2022.md: Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_31-03-2022.md
@@ -231,6 +257,7 @@ hc/en-gb/articles/7349136678543-Subscriber-Monthly-Usage-Reports.md: NeSI_Servic
 hc/en-gb/articles/7349177261455-Pricing.md: NeSI_Service_Subscriptions/Overview/Pricing.md
 hc/en-gb/articles/7349178188943-Questions-.md: NeSI_Service_Subscriptions/Overview/Questions.md
 hc/en-gb/articles/7352114813455-Billing-process.md: NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process.md
+hc/en-gb/articles/7403361932431-snpEff.md: Scientific_Computing/Supported_Applications/snpEff.md
 hc/en-gb/articles/7463891150863-Per-job-temporary-directories.md: Scientific_Computing/HPC_Software_Environment/Per_job_temporary_directories.md
 hc/en-gb/articles/7755261198223-my-nesi-org-nz-release-notes-v2-17-0.md: Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-17-0.md
 hc/en-gb/articles/7918332923023-How-do-I-run-my-Python-Notebook-through-SLURM-.md: General/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md
