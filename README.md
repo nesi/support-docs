@@ -29,3 +29,5 @@ For non-template related files, e.g. images.
 ### overrides/
 
 Theme overides or extensions.
+
+[![Deploy to gh-pages](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment)](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml)
