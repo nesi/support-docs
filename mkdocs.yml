@@ -34,6 +34,7 @@ plugins:
       include_dir: docs/assets
 repo_name: GitHub
 repo_url: https://github.com/nesi/support-docs-concept
+edit_uri: edit/main/docs/
 site_description: NeSI Support Documentation
 site_dir: public
 site_name: NeSI Support Center
