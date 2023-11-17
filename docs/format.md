@@ -26,8 +26,6 @@ Headers should have a blank line before and after.
 
 'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
 
-See [Title](./#title) for more info.
-
 ### Text Emphasis
 
 **bold**: `**bold**`
@@ -49,6 +47,30 @@ _italic_: `_italic`
 ```
 
 ### Admonations
+
+!!! warning
+    A warning.
+
+```md
+!!! warning
+    A warning.
+```
+
+!!! info "Optional title"
+    Admonation with optional title.
+
+```md
+!!! info "Optional title"
+    Admonation with optional title.
+```
+
+Any admonation can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
+
+_Note for future, once decided which of these we will use, remove the others. And give description of when to use._
+
+There are lots of different flavors.
+
+---
 
 !!! note
     This is a test admonation.
@@ -76,6 +98,7 @@ _italic_: `_italic`
 
 !!! example
     This is a test admonation.
+
 !!! quote
     This is a test admonation.
 
@@ -192,28 +215,6 @@ _italic_: `_italic`
 
 !!! file-export
     this is a test admonation.
-
----
-
-!!! warning
-    A warning.
-
-```md
-!!! warning
-    A warning.
-```
-
-!!! info "Optional title"
-    Admonation with optional title.
-
-```md
-!!! info "Optional title"
-    Admonation with optional title.
-```
-
-Any admonation can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
-
-_Note for future, once decided which of these we will use, remove the others. And give description of when to use._
 
 ### Code
 
