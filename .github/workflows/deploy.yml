@@ -10,9 +10,6 @@ on:
       type: boolean
       description: Dry run (will build to 'gh-pages-test')
       default: false
- push:
-  branches:
-   'main'
 permissions:
   contents: write
 env:
