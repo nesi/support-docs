@@ -14,3 +14,7 @@
     --md-accent-bg-color:                rgb(210,227,235);
     --md-accent-bg-color--light:         rgb(210,227,235,0.5);
   }
+  .md-header__button.md-logo img, .md-header__button.md-logo svg {
+    height: 4rem;
+    margin: -2rem;
+}
