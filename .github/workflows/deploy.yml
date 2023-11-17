@@ -1,17 +1,15 @@
 name: Deploy to gh-pages 
 on: 
  workflow_run:
-    workflows: ["Lint Changed Files"]
+    workflows: ["Check Changed Files"]
     types: [completed]
+    branches: [main]
  workflow_dispatch:
   inputs:
     dry-run:
       type: boolean
       description: Dry run (will build to 'gh-pages-test')
       default: false
- push:
-  branches:
-   'main'
 permissions:
   contents: write
 env:
