@@ -1,9 +1,7 @@
 name: Deploy to gh-pages 
 on: 
- workflow_run:
-    workflows: ["Check Changed Files"]
-    types: [completed]
-    branches: [main]
+ push:
+    branches: main
  workflow_dispatch:
   inputs:
     dry-run:
@@ -16,9 +14,14 @@ env:
   INPUTS_DRYRUN: ${{ inputs.dry-run }}
   MODULE_LIST_PATH: docs/assets/module-list.json
 jobs:
+  dont_deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion != 'success' }}
+    steps:
+      - run: exit 1
   deploy:
     runs-on: ubuntu-latest
-    if:  ( ${{ github.event_name }} == 'workflow_dispatch' || ${{ github.event.workflow_run.conclusion == 'success' }} )
+    # if:  ( ${{ github.event_name }} == 'workflow_dispatch' || ${{ github.event.workflow_run.conclusion == 'success' }} )
     steps:
       - uses: actions/checkout@v3
         with:
@@ -32,4 +35,4 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: mkdocs gh-deploy $(if ${INPUTS_DRYRUN};then echo "-b gh-pages-test --verbose";fi) --force
+      - run: mkdocs gh-deploy --verbose --force
