@@ -50,7 +50,6 @@ NeSI does publish service incidents and scheduled maintenance via
 Interested parties are invited to subscribe to updates (via SMS or
 email).
 
-<img src="../../assets/images/System_status_0.png" width="880"
-height="772" />
+![](../../assets/images/System_status_0.png)
 
 # [NeSI wide area network connectivity](https://support.nesi.org.nz/hc/en-gb/articles/8252164326415)
