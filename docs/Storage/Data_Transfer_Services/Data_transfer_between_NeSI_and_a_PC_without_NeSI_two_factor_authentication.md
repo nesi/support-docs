@@ -55,9 +55,7 @@ have registered and created an account on Globus.
 -   You should now see your new guest collection at
     <https://app.globus.org/collections?scope=administered-by-me>
 
-<img
-src="../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.png"
-style="max-width: 800px;" alt="mceclip0.png" />
+![mceclip0.png](../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.png)
 
 ## Step 2: Download and install Globus Connect Personal
 
@@ -79,9 +77,7 @@ Note: By default your entire home directory will be exposed. It is good
 practice to only share specific directories. You can remove your home
 directory by highlighting it and clicking on the "-" sign.
 
-<img
-src="../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication_0.png"
-style="max-width: 800px;" alt="mceclip1.png" />
+![mceclip1.png](../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication_0.png)
 
 ## Step 4: Test a file transfer
 
@@ -93,6 +89,4 @@ style="max-width: 800px;" alt="mceclip1.png" />
     be seen in the picture below.
 -   Click on the files you want to transfer and press "Start"
 
-<img
-src="../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication_1.png"
-style="max-width: 800px;" alt="mceclip3.png" />
+![mceclip3.png](../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication_1.png)

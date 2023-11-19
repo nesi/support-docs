@@ -73,8 +73,7 @@ ssh -Y login.nesi.org.nz
  Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
-<img src="../../assets/images/X11_on_NeSI_2.png" width="451"
-height="303" alt="x11moba.png" />
+![x11moba.png](../../assets/images/X11_on_NeSI_2.png)
 
 If the ![mceclip0.png](../../assets/images/X11_on_NeSI_3.png) button in
 the top right corner of your window is coloured, the X-server should be

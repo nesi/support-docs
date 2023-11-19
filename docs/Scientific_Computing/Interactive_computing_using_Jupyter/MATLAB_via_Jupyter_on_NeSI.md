@@ -40,15 +40,13 @@ corresponding entry in the launcher.
 Clicking on this entry will open a separate tab in your web browser,
 where you will see the following status information page.
 
-# <img src="../../assets/images/MATLAB_via_Jupyter_on_NeSI_0.png"
-width="497" height="206" alt="image__1_.png" />
+# ![image\_\_1\_.png](../../assets/images/MATLAB_via_Jupyter_on_NeSI_0.png)
 
 MATLAB may take a few minutes to load, once it does you will be put
 straight into the MATLAB environment. 
 
 You can open the status page at any time by clicking the
-[<img src="../../assets/images/MATLAB_via_Jupyter_on_NeSI_1.png"
-width="61" height="33" />](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
+[![](../../assets/images/MATLAB_via_Jupyter_on_NeSI_1.png)](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
 button.
 !!! prerequisite Note
      Your license must be valid for MATLAB 2021b or newer.
@@ -62,15 +60,13 @@ the info panel.
 If you do not wish to use a network license you can click the 'Unset
 License Server Address' button.
 
-# <img src="../../assets/images/MATLAB_via_Jupyter_on_NeSI_2.png"
-width="517" height="204" alt="image__3_.png" />
+# ![image\_\_3\_.png](../../assets/images/MATLAB_via_Jupyter_on_NeSI_2.png)
 
 If you have no licence address set you can instead authenticate using a
 MathWorks email address, provided you have a valid license associated to
 your account.
 
-# <img src="../../assets/images/MATLAB_via_Jupyter_on_NeSI_3.png"
-width="470" height="379" alt="image__4_.png" />
+# ![image\_\_4\_.png](../../assets/images/MATLAB_via_Jupyter_on_NeSI_3.png)
 
 # Troubleshooting
 

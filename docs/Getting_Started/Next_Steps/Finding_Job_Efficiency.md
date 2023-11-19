@@ -179,8 +179,7 @@ parent process).
 
 Processes in green can be ignored
 
-<img src="../../assets/images/Finding_Job_Efficiency.png" width="929"
-height="252" alt="how_to_read_htop.png" />
+![how\_to\_read\_htop.png](../../assets/images/Finding_Job_Efficiency.png)
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
 

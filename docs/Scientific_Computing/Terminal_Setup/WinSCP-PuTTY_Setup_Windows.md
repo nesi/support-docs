@@ -140,8 +140,7 @@ number of tunnels will reduce the number of times you are prompted. 
 
 1\. Open settings
 
-<img src="../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png"
-width="513" height="93" alt="winscp_settings.png" />
+![winscp\_settings.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png)
 
 2\. Under 'Transfer' -&gt; 'Background', set the 'Maximal number of
 transfers at the same time' to '1' and untick 'Use multiple connections
