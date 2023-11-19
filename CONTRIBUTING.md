@@ -56,8 +56,12 @@ When you are done with your changes
 git push origin <branchname>
 ```
 CI checks will run on your branch, you can check them under 'Actions'
-
 Might be worth having a quick look at these before making a pull request.
+
+Make a pull [request](https://github.com/nesi/support-docs-concept/pulls)
+
+Pull will merge automatically if all checks passed. (add timer too maybe?)
+
 
 ## Raise an issue
 
