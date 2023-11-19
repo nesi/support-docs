@@ -225,8 +225,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="../../assets/images/Multithreading_Scaling_Example_3.png"
-width="469" height="395" />
+![](../../assets/images/Multithreading_Scaling_Example_3.png)
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

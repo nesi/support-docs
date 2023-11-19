@@ -33,9 +33,7 @@ zendesk_section_id: 360001059296
 3.  Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'   
-    <img
-    src="../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png"
-    width="636" height="505" alt="mceclip2.png" />
+    ![mceclip2.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
 
 ### Can I request any allocation size?
 

@@ -47,8 +47,7 @@ up using one of the available options on the page. Please note that the
 organisation is not listed, please sign in (sign up) using any of the
 other methods.
 
-<img src="../../assets/images/Globus_Quick_Start_Guide.png" width="398"
-height="436" alt="Globus_login.png" />
+![Globus\_login.png](../../assets/images/Globus_Quick_Start_Guide.png)
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
 your Globus
@@ -89,8 +88,7 @@ bar on the left.
     **do not** save your password on "*Browser settings*" as it will
     change every time due to the 2nd factor requirement.
 
-<img src="../../assets/images/Globus_Quick_Start_Guide_0.png"
-width="296" height="340" alt="NeSI_Globus_Authenticate.png" />
+![NeSI\_Globus\_Authenticate.png](../../assets/images/Globus_Quick_Start_Guide_0.png)
 
  
 

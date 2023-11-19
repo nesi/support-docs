@@ -61,8 +61,7 @@ An example of image is test/img49.jpg.
 display test/img49.jpg
 ```
 
-<img src="../../assets/images/Keras.jpg" width="100" height="100"
-alt="img49.jpg" />
+![img49.jpg](../../assets/images/Keras.jpg)
 
 which shows five, partially overlapping dots. Note that along with the
 images, a comma separated values (csv) file (e.g. train/train.csv)

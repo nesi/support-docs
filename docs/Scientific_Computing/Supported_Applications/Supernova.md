@@ -158,8 +158,7 @@ take &lt;d&gt; and &lt;auth&gt; from the code snippet above..
 http://localhost:9999/?auth=Bx2ccMZmJxaIfRNBOZ_XO_mQd1njNGL3rZry_eNI1yU
 ```
 
-<img src="../../assets/images/Supernova.png" width="997" height="773"
-alt="Screen_Shot_2019-01-28_at_2.17.29_PM.png" />
+![Screen\_Shot\_2019-01-28\_at\_2.17.29\_PM.png](../../assets/images/Supernova.png)
 
  
 

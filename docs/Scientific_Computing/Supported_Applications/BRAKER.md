@@ -75,8 +75,7 @@ Artistic License
          <http://topaz.gatech.edu/genemark/license_download.cgi>
       
       
-     -   <img src="../../assets/images/BRAKER.png" width="476" height="464"
-         alt="genemark_es_license.png" />
+     -   ![genemark\_es\_license.png](../../assets/images/BRAKER.png)
      -   Downloaded filename will be in the format of **gm\_key\_64.gz. **
      -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
          home directory as  a **hidden** file under the filename `.gm_key`

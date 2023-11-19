@@ -46,9 +46,7 @@ single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread (POSIX threads).
 
-<img src="../../assets/images/Parallel_Execution.png" width="714"
-height="160" alt="par.png" />
-
+![par.png](../../assets/images/Parallel_Execution.png)*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 
