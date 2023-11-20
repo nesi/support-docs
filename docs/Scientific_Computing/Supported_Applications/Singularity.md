@@ -66,7 +66,7 @@ completely up-to-date with the latest available features, however we
 will endeavour to ensure it accurately reflects NeSI's currently
 supported Singularity version.
 
-# Building a new container
+## Building a new container
 
 For more general information on building containers please see the
 [Singularity
@@ -87,7 +87,7 @@ node](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
 Please note **this may fail** to build some containers and encourage you
 to contact us at <support@nesi.org.nz> if you encounter an issue.
 
-## Remote Build Service
+### Remote Build Service
 
 Running the command `singularity remote login` will provide you with a
 link to [syslabs.io](https://cloud.sylabs.io/), once you have logged in
@@ -102,7 +102,7 @@ to the build command.
 singularity build --remote myContainer.sif myContainer.def
 ```
 
-## Build Environment Variables
+### Build Environment Variables
 
 The environment variables `SINGULARITY_TMPDIR` and
 `SINGULARITY_CACHEDIR` environment can be used to overwrite the default
@@ -124,7 +124,7 @@ export SINGULARITY_CACHEDIR=/nesi/nobackup/nesi99999/.s_cachedir
 
 Please Sir, may I have a build node?
 
-# Moving a container to NeSI
+## Moving a container to NeSI
 
 A container in Singularity's SIF format can be easily moved to the HPC
 filesystem by:
@@ -148,7 +148,7 @@ singularity pull library://sylabsed/linux/alpine
 Please refer to the [Singularity documentation](https://sylabs.io/docs/)
 for further details.
 
-# Using a Docker container
+## Using a Docker container
 
 Singularity can transparently use Docker containers, without the need to
 be root or to have Docker installed.
@@ -178,7 +178,7 @@ From: ubuntu:latest
     # intallation instructions go here
 ```
 
-# Running a container on Mahuika or Māui Ancil
+## Running a container on Mahuika or Māui Ancil
 
 Singularity is not currently available on the Māui XC50 supercomputer.
 
@@ -223,7 +223,7 @@ Singularity> exit
 
 which will bring you back to the host system.
 
-## Accessing directories outside the container
+### Accessing directories outside the container
 
 Singularity containers are immutable by default to support
 reproducibility of science results. Singularity will automatically bind
@@ -260,7 +260,7 @@ export SINGULARITY_BIND="/nesi/project/<your project ID>/inputdata:/var/inputdat
 /nesi/nobackup/<your project ID>/outputdata:/var/outputdata"
 ```
 
-## Accessing a GPU
+### Accessing a GPU
 
 If your Slurm job has requested access to an NVIDIA GPU (see [GPU use on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) to
@@ -277,7 +277,7 @@ singularity run --nv my_container.sif
      into the container and that the GPU device is accessible in the
      container.
 
-## Network isolation
+### Network isolation
 
 Singularity bridges the host network into the container by default. If
 you want to isolate the network, add flags `--net --network=none` when
@@ -287,7 +287,7 @@ you run the container, e.g.,
 singularity run --net --network=none my_container.sif
 ```
 
-## Slurm example
+### Slurm example
 
 It is easy to run Singularity containers inside Slurm jobs. Here is an
 example setup to run a container that uses 4 CPUs:
@@ -318,7 +318,7 @@ Slurm jobs. Please refer to our [SLURM: Reference
 Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716) for
 further details on using Slurm.
 
-# Tips & Tricks
+## Tips & Tricks
 
 -   Make sure that your container runs before uploading it - you will
     not be able to rebuild it from a new definition file directly on the

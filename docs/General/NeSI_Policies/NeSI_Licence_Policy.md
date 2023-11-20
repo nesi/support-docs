@@ -27,7 +27,7 @@ need to have an appropriate licence.
      Slurm and many other applications use the American spelling of the
      noun, "*license*".
 
-# Licence Servers
+## Licence Servers
 
 The most common method of licence control is using 'floating' network
 licences hosted on an external server. In order for a user on a NeSI
@@ -43,7 +43,7 @@ NeSI's public-facing IP addresses are:
 103.229.249.253
 ```
 
-## Institutional Licences
+### Institutional Licences
 
 A list of already established licence server connections can be found in
 the NeSI support documentation for the relevant software. Provided you
@@ -54,7 +54,7 @@ If you believe you should have access to a licence but do not, or would
 like to organise remote use of your institution's licence, please [email
 NeSI Support](mailto:support@nesi.org.nz) and cc: your own IT services.
 
-## Personal or Research Group Licences
+### Personal or Research Group Licences
 
 You are welcome to make your own licence arrangements, if your
 institution doesn't have a licence or you need to access extra features
@@ -66,7 +66,7 @@ internet. Setting up your computer in this way and securing it is beyond
 the scope of this article, but will involve talking to your
 institution's IT department or to your internet service provider (ISP).
 
-# Licence Files
+## Licence Files
 
 An alternative to licence servers, used by some programs, is a licence
 file that contains a code issued to that user or group during the
@@ -81,7 +81,7 @@ It is important for us to know who is eligible to use any particular
 licence file, so that we don't accidentally allow unauthorised persons
 to use a given piece of software.
 
-# Software without built-in licence management
+## Software without built-in licence management
 
 Some software packages do not provide their own licence management
 systems (servers, files, etc.). The owners of these packages rely on us
@@ -115,7 +115,7 @@ using the software on NeSI.
      complies with the terms of your licence or is otherwise permitted by
      law.**
 
-# Slurm Tokens 
+## Slurm Tokens 
 
 We encourage the use of Slurm licence tokens in your batch scripts, for
 example:

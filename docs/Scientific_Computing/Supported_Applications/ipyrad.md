@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
+## Description
 
 **ipyrad**, an interactive assembly and analysis toolkit for
 restriction-site associated DNA (RAD-seq) and related data types. Please
@@ -28,16 +28,16 @@ ipyrad.\\
 
 Home page is at https://ipyrad.readthedocs.io/en/latest/index.html
 
-## Cite the Manuscript
+### Cite the Manuscript
 
 Eaton DAR & Overcast I. "ipyrad: Interactive assembly and analysis of
 RADseq datasets." Bioinformatics (2020).
 
-## License
+### License
 
 GPLv3
 
-## Getting Started
+### Getting Started
 
 Following **example** uses  rad\_example which can be downloaded as per
 instructions on 
@@ -64,7 +64,7 @@ New file 'params-data1.txt' created in ........
 and edit the paths in parameter file to match the destinations of input
 data, barcode paths,etc. 
 
-## Slurm Script for Using Multiple CPUs a Single Compute Node
+### Slurm Script for Using Multiple CPUs a Single Compute Node
 
 ``` sl
 #!/bin/bash

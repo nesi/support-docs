@@ -37,7 +37,7 @@ made up of two logical cores.
 Hyperthreading is enabled by default on NeSI machines, meaning, by
 default, Slurm will allocate two threads to each physical core. 
 
-# Hyperthreading with slurm
+## Hyperthreading with slurm
 
 When Slurm request a CPU, it is **requesting logical cores,** which, as
 mentioned above, there are two of per physical core. If you use
@@ -68,7 +68,7 @@ CPUs according to the following image:
 Image adapted from [Slurm's documentation
 page](https://slurm.schedmd.com/cpu_management.html).
 
-# When to use Hyperthreading
+## When to use Hyperthreading
 
 Hyperthreading increases the efficiency of some jobs, but the fact that
 Slurm is counting in logical CPUs makes aspects of running
@@ -88,7 +88,7 @@ code Hyperthreaded. 200% CPU efficiency would be the maximally efficient
 job, however, this is rarely observed and anything over 100% should be
 considered a bonus.
 
-# How to use Hyperthreading
+## How to use Hyperthreading
 
 -   Non-hyperthreaded jobs which use  `--mem-per-cpu` requests should
     halve their memory requests as those are based on memory per logical
@@ -129,7 +129,7 @@ The precise rules about when Hyperthreading applies are as follows:
 
  
 
-## How many logical CPUs will my job use or be charged for?
+### How many logical CPUs will my job use or be charged for?
 
 The possible job configurations and their results are shown in the
 following table. We have also included some recommendations to help you

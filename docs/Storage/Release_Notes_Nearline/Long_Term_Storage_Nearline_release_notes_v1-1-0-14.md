@@ -20,7 +20,7 @@ zendesk_section_id: 360000502675
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Version 1.1.0.14
+## Version 1.1.0.14
 
 *Released 5 November 2020.*
 

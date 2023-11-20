@@ -19,7 +19,7 @@ zendesk_section_id: 360000278935
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-##  
+
 
 ##  What is VTune?  
 
@@ -41,7 +41,7 @@ user interface (**GUI**).
 -   Tutorials are available at
     <https://software.intel.com/content/www/us/en/develop/articles/vtune-tutorials.html>
 
-##  
+
 
 ##  How to use VTune?
 
@@ -67,7 +67,7 @@ To use the VTune amplifier command line tool help run:
 amplxe-cl -help
 ```
 
-##  
+
 
 ##  How do I profile an application with VTune?  
 
@@ -160,7 +160,7 @@ the CPU times of the individual functions in descending order (list of
 hotspots).  
 The utilization of the CPUs is also analyzed and judged.
 
-###  
+
 
 ### Note:
 

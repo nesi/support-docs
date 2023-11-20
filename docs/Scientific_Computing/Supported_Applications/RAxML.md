@@ -24,7 +24,7 @@ zendesk_section_id: 360000040076
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-# Description
+## Description
 
 RAxML search algorithm for maximum likelihood based inference of
 phylogenetic trees. The RAxML home page is at
@@ -32,16 +32,16 @@ phylogenetic trees. The RAxML home page is at
 
  
 
-# Licensing requirements
+## Licensing requirements
 
 RAxML is licensed under the terms of the GNU General Public License
 ("the GPL"), version 2 or (at your option) any later version. A copy of
 version 3 of the GPL as included with the RAxML software is available
 [here](https://github.com/stamatak/standard-RAxML/blob/master/gpl-3.0.txt).
 
-# Example scripts
+## Example scripts
 
-## Example script for the Mahuika cluster
+### Example script for the Mahuika cluster
 
 ``` bash
 #!/bin/bash -e
@@ -57,12 +57,12 @@ module load RAxML/8.2.12-gimkl-2020a
 srun raxmlHPC-PTHREADS-AVX -T $SLURM_CPUS_PER_TASK -m GTRCAT -s aln.fasta -n tree.out
 ```
 
-# Documentation
+## Documentation
 
 `raxmlHPC-AVX -help` and the [RAxML
 manual](https://github.com/stamatak/standard-RAxML/tree/master/manual).
 
-# Parallel Versions
+## Parallel Versions
 
 Each of our RAxML environment modules contains multiple RAxML
 executables:

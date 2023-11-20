@@ -38,7 +38,7 @@ access to GNU, Intel and Cray programming environments, including
 editors, compilers, linkers, and debugging tools. Typically, users will
 ssh to these nodes after logging onto the NeSI lander node.
 
-### Notes
+## Notes
 
 1.  The Cray Programming Environment on Mahuika, differs from that on
     Māui.

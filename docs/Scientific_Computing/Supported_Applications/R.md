@@ -24,7 +24,7 @@ zendesk_section_id: 360000040076
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-# Description
+## Description
 
 R is a language and environment for statistical computing and graphics.
 It is a GNU project which is similar to the S language and environment,
@@ -42,13 +42,13 @@ to participation in that activity.
 
 The R home page is at <http://www.r-project.org>.
 
-# Licence
+## Licence
 
 R is made available at no cost under the terms of version 2 of the GNU
 General Public Licence. The full text of the R licence is available at
 <https://www.r-project.org/COPYING>.
 
-# NeSI Customisations
+## NeSI Customisations
 
 -   We patch the *snow* package so that there is no need to use RMPISNOW
     when using it over MPI.
@@ -57,7 +57,7 @@ General Public Licence. The full text of the R licence is available at
     example *~/R/gimkl-2022a/4.2* rather than the usual default
     of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
 
-# Related environment modules
+## Related environment modules
 
 We also have some environment modules which extend the base R ones with
 extra packages:
@@ -73,11 +73,11 @@ extra packages:
         $ module load R-bundle-Bioconductor/3.15-gimkl-2022a-R-4.2.1
         ```
 
-# Examples
+## Examples
 
-## R scripts
+### R scripts
 
-### Serial R script
+#### Serial R script
 
 ``` sl
 png(filename="plot.png")  # This line redirects plots from screen to plot.png file.
@@ -89,14 +89,14 @@ cars <- c(1, 3, 6, 4, 9)
 plot(cars)
 ```
 
-### Array R script
+#### Array R script
 
 ``` sl
 jobid <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
 jobid
 ```
 
-### Parallel script using *doParallel*
+#### Parallel script using *doParallel*
 
 The following example sums 50 normally distributed random value vectors
 of sizes 1 million to 1000050. Set the number of workers in your
@@ -117,7 +117,7 @@ x <- foreach(z = 1000000:1000050, .combine = 'c') %dopar% {
 print(x)
 ```
 
-### Parallel script using *doMPI*
+#### Parallel script using *doMPI*
 
 This example is similar to the above except that workers can run across
 multiple nodes. Note that we don't need to specify the number of workers
@@ -140,7 +140,7 @@ print(x)
 mpi.quit()
 ```
 
-### Parallel script using *snow*
+#### Parallel script using *snow*
 
 ``` sl
 library(snow)
@@ -159,9 +159,9 @@ x <- clusterApply(cl, 1000000:1000050, function(z) sum(rnorm(z)))
 stopCluster(cl)
 ```
 
-## Job submission scripts
+### Job submission scripts
 
-### Submission script for a serial R job
+#### Submission script for a serial R job
 
 ``` bash
 #!/bin/bash -e
@@ -181,7 +181,7 @@ srun Rscript MySerialRJob.R
 echo "R finished."
 ```
 
-### Submission script for an array R job
+#### Submission script for an array R job
 
 ``` bash
 #!/bin/bash -e
@@ -202,7 +202,7 @@ srun Rscript MyArrayRJob.R
 echo "R finished."
 ```
 
-### Submission script for an MPI R job
+#### Submission script for an MPI R job
 
 ``` bash
 #!/bin/bash -e
@@ -228,9 +228,9 @@ srun Rscript doMPI
 echo "R finished."
 ```
 
-# Further notes
+## Further notes
 
-## Generating images and plots
+### Generating images and plots
 
 Normally when plotting or generating other sorts of images, R expects a
 graphical user interface to be available so it can render and display
@@ -248,14 +248,14 @@ PNG file named `plot.png`, until a different device driver is selected.
 For more information about graphical device drivers, please see [the R
 documentation](https://cran.r-project.org/doc/manuals/R-intro.html#Device-drivers).
 
-## Dealing with packages
+### Dealing with packages
 
 Much R functionality is not supplied with the base installation, but is
 instead added by means of packages written by the R developers or by
 third parties.  We include a large number of such R packages in our R
 environment modules
 
-### Getting a list of installed packages
+#### Getting a list of installed packages
 
 It is best to view the list of available R packages interactively. To do
 so, call up the package library:
@@ -278,7 +278,7 @@ cluster, may contain different collections of packages. Furthermore, if
 you have your own packages in a directory that R can automatically
 detect, these will also be shown in a separate section.
 
-### Getting a list of available libraries
+#### Getting a list of available libraries
 
 You can print a list of the library directories in which R will look for
 packages by running the following command in an R session:
@@ -309,9 +309,9 @@ ggrepel NA NA NA "yes" "4.2.1"
 etc...
 ```
 
-###  
 
-### Specifying custom library directories
+
+#### Specifying custom library directories
 
 You can add your own custom library directories by putting a list of
 extra directories in the `.Renviron` file in your home directory. This
@@ -334,7 +334,7 @@ dir.create("/nesi/project/<projectID>/Rpackages", showWarnings = FALSE, recursiv
 
  
 
-### Downloading and installing a new package
+#### Downloading and installing a new package
 
 To install a package into R, use the install.packages command.
 
@@ -373,7 +373,7 @@ correctly, an error message will typically be returned:
 Error in library("foo") : there is no package called ‘foo’
 ```
 
-### Compiling a C library for use with R
+#### Compiling a C library for use with R
 
 You can compile custom C libraries for use with R using the R shared
 library compiler:
@@ -392,7 +392,7 @@ $ R
      dyn.load("~/R/lib64/mylib.so")
 ```
 
-## Quitting an interactive R session
+### Quitting an interactive R session
 
 At the R command prompt, when you want to quit R, type the following:
 
@@ -404,9 +404,9 @@ You will be asked "Save workspace image? \[y/n/c\]". Type n.
 
  
 
-# Troubleshooting  
+## Troubleshooting  
 
-## Missing *devtools*
+### Missing *devtools*
 
 Package installation will occasionally fail due to missing system
 libraries (eg *HarfBuzz, FriBidi or devtools)*, this is resolved by
@@ -419,7 +419,7 @@ $ module load R/4.2.1-gimkl-2022a
 
  
 
-## Can't install *sf, rgdal* etc 
+### Can't install *sf, rgdal* etc 
 
 Use the R-Geo module
 
@@ -429,7 +429,7 @@ $ module load R-Geo/4.2.1-gimkl-2022a
 
  
 
-## Cluster/Parallel environment variable not accessed
+### Cluster/Parallel environment variable not accessed
 
 Depending on the working environment, registering of a cluster and
 accessing the `SLURM_CPUS_PER_TASK` environment variable may not return

@@ -39,7 +39,7 @@ running TensorFlow with GPU support.
          for tips on how to configure TensorFlow and Slurm for optimal
          performance.
 
-# Use NeSI modules
+## Use NeSI modules
 
 TensorFlow is available on Mahuika as an [environment
 module:](https://support.nesi.org.nz/hc/en-gb/articles/360001113076)
@@ -110,7 +110,7 @@ source <path_to_virtual_environment>/bin/activate
      environment is isolated from packages installed in your home folder
      `~/.local/lib/python3.8/site-packages/`.
 
-# Conda environments
+## Conda environments
 
 As an alternative, you can also create *conda* environments to install a
 specific version of Python, TensorFlow and any additional packages
@@ -187,7 +187,7 @@ take into consideration the following:
      conda ...  # any conda commands (create, activate, install...)
      ```
 
-# Singularity containers
+## Singularity containers
 
 You can use containers to run your application on the NeSI platform. We
 provide support for
@@ -203,7 +203,7 @@ available on the [NVIDIA GPU
 Containers](https://support.nesi.org.nz/hc/en-gb/articles/360001500156)
 support page.
 
-# Specific versions for A100
+## Specific versions for A100
 
 Here are the recommended options to run TensorFlow on the A100 GPUs:
 
@@ -216,7 +216,7 @@ Here are the recommended options to run TensorFlow on the A100 GPUs:
 -   If you use TensorFlow 2, any version from 2.4 and above will provide
     support for the A100 GPUs.
 
-# Example Slurm script
+## Example Slurm script
 
 In the following example, we will use the
 [make\_image\_classifier](https://github.com/tensorflow/hub/blob/r0.12/tensorflow_hub/tools/make_image_classifier/make_image_classifier.py)

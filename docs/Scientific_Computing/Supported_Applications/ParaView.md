@@ -46,7 +46,7 @@ which can operate in batch mode, as well as in client-server operation.
      The ParaView server loaded must be the same version as the client you
      have installed locally.
 
-###  
+
 
 ### Setting up Client-Server Mode
 

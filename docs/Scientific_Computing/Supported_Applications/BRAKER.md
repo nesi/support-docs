@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
+## Description
 
 The rapidly growing number of sequenced genomes requires fully automated
 methods for accurate gene structure annotation. With this goal in mind,
@@ -58,15 +58,15 @@ evidence.
 
 Home page : <https://github.com/Gaius-Augustus/BRAKER>
 
-# License and Disclaimer
+## License and Disclaimer
 
 All source code, i.e. `scripts/*.pl` or `scripts/*.py` are under the
 Artistic License
 (see <http://www.opensource.org/licenses/artistic-license.php>).
 
-# Prerequisites
+## Prerequisites
 
-###  
+
 !!! prerequisite Obtain GeneMark-ES/ET Academic License 
      GeneMark-ES/ET which is one of the dependencies for BRAKER requires an
      individual academic license  (this is free). This can be obtained as
@@ -86,7 +86,7 @@ Artistic License
      ***/opt/nesi/CS400\_centos7\_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config***
       to path with read/write permissions .i.e. project, nobackup,home 
 
-## Example Slurm scripts
+### Example Slurm scripts
 
 Following example uses the .fa files provided BRAKER developers on
 <https://github.com/Gaius-Augustus/BRAKER/tree/master/example>

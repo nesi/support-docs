@@ -21,7 +21,7 @@ zendesk_section_id: 360000040076
 
  
 
-# Setup
+## Setup
 
 ### 0. Ubuntu only
 
@@ -31,7 +31,7 @@ You will also need java runtime
 sudo apt install -y openjdk-11-jre 
 ```
 
-### 1. Download
+#### 1. Download
 
 Download TurboVNC here.
 
@@ -46,9 +46,9 @@ sudo apt install vnc-java 
 Do not use gvncviewer, as it doesn't allow to connect to a VNC server
 available over a nonstandard port.
 
-# Usage
+## Usage
 
-## Setting a TurboVNC password
+### Setting a TurboVNC password
 
 You can (and should) configure a TurboVNC password using the following
 commands:
@@ -67,7 +67,7 @@ The `vncpasswd` utility can also be used to set one-time use passwords,
 as well as view-only passwords that you can set up to give people access
 to your VNC session without allowing them to do things in your name.
 
-## Setting up the server on the cluster
+### Setting up the server on the cluster
 
 Mahuika and Māui each have two login nodes. Therefore, if you logged in
 to `login.mahuika.nesi.org.nz` (`mahuika`) or `login.maui.nesi.org.nz`
@@ -98,9 +98,9 @@ number, which is 5900 + the display number. That is, if the display
 number is 1, the port will be 5901; if the display number is 2, the port
 will be 5902; and so on.
 
-## Connecting to the TurboVNC server from your workstation
+### Connecting to the TurboVNC server from your workstation
 
-### Within the NIWA network (or NIWA VPN)
+#### Within the NIWA network (or NIWA VPN)
 
 1.  Open the TurboVNC viewer:
 
@@ -113,7 +113,7 @@ will be 5902; and so on.
     host and port number: `mahuika01.mahuika.nesi.org.nz::5901` (note
     the two colons between hostname and port number).
 
-### Outside the NIWA network, and not on the NIWA VPN
+#### Outside the NIWA network, and not on the NIWA VPN
 
 1.  Open an SSH tunnel through the lander node to the SSH port (22) on
     the desired login node:
@@ -212,13 +212,13 @@ will be 5902; and so on.
 4.  If prompted for a password, click the button to enter an empty
     password
 
-## Putting your TurboVNC client in fullscreen mode
+### Putting your TurboVNC client in fullscreen mode
 
 ``` sl
 Ctrl + Alt + Shift + F
 ```
 
-## Stopping the client
+### Stopping the client
 
 Make sure you have closed your VNC Viewer session before stopping either
 SSH tunnel.
@@ -226,7 +226,7 @@ SSH tunnel.
 Make sure the second SSH tunnel (the one to "localhost") is stopped
 before you close the first tunnel.
 
-## Stopping the server
+### Stopping the server
 
 1.  Go to your tmux session on the server, or (alternatively) go to or
     open some other session on that server. If you use a different
@@ -242,7 +242,7 @@ before you close the first tunnel.
     vncserver -kill :<display_number>
     ```
 
-## Finding open TurboVNC servers
+### Finding open TurboVNC servers
 
 If you've opened several TurboVNC servers, you may have lost track of
 some of them. The following command will help you find your TurboVNC

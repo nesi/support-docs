@@ -21,7 +21,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
+## Description
 
 Supernova is a software package for *de novo* assembly from Chromium
 Linked-Reads that are made from a single whole-genome library from an
@@ -50,12 +50,12 @@ Download latest release from 10xGenomics.
 
 <https://support.10xgenomics.com/de-novo-assembly/software/downloads/latest>
 
-# Availability
+## Availability
 
 `Supernova/2.1.1` is installed as a module and can be loaded via
 `module load Supernova`
 
-# License
+## License
 
 The developer grants a Limited License to all users. If you intend to
 use Supernova on NeSI operated infrastructure please read the developers
@@ -63,7 +63,7 @@ own licensing agreement.
 
 <https://support.10xgenomics.com/de-novo-assembly/software/downloads/latest>
 
-# Example script
+## Example script
 
 ``` sl
 #SBATCH -J mySupernovajob
@@ -79,7 +79,7 @@ module load Supernova/2.1.1
 supernova run --id=.....................
 ```
 
-# Getting Supernova to run successfully
+## Getting Supernova to run successfully
 
 We suggest users initially read the developers notes, at
 <https://support.10xgenomics.com/de-novo-assembly/guidance/doc/achieving-success-with-de-novo-assembly>
@@ -95,7 +95,7 @@ Further to that we also suggest,
 -   Pass `${SLURM_CPUS_PER_TASK}` to supernova with the `--localcores`
     argument.
 
-# Tracking job progress via browser
+## Tracking job progress via browser
 
 Find the beginning of the `_log ` file, located in the directory where
 the call to supernova was run, or the path specified in the Slurm batch
@@ -162,7 +162,7 @@ http://localhost:9999/?auth=Bx2ccMZmJxaIfRNBOZ_XO_mQd1njNGL3rZry_eNI1yU
 
  
 
-# Things to watch out for
+## Things to watch out for
 
 -   Supernova will create checkpoints after completing stages in the
     pipeline. In order to run from a previously created checkpoint you

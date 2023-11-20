@@ -24,7 +24,7 @@ zendesk_section_id: 360000040076
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-# Description
+## Description
 
 The Vienna Ab initio Simulation Package (VASP) is a programme for atomic
 scale materials modelling.
@@ -49,11 +49,11 @@ VASP can (among many other things) perform
 For more information, please visit the VASP home page at
 <http://www.vasp.at>.
 
-# Availability
+## Availability
 
 VASP is currently available on the Mahuika and Māui clusters.
 
-# Licensing requirements
+## Licensing requirements
 
 VASP is made available to researchers under commercial licence
 agreements with individuals, research groups or institutions. Whether
@@ -69,9 +69,9 @@ team](mailto:support@nesi.org.nz) to gain access to the VASP
 executables. You may be asked to provide proof of your license if you
 are not from a known group or if the license is new.
 
-# Best practices for VASP calculations
+## Best practices for VASP calculations
 
-## Example script
+### Example script
 
 ``` bash
 #!/bin/bash -e
@@ -92,7 +92,7 @@ module load VASP/6.4.1-intel-2022a
 srun -K vasp_std
 ```
 
-## Don't use hyperthreading!
+### Don't use hyperthreading!
 
 We and several researchers have found that VASP doesn't behave well with
 hyperthreading, and will run at a third to a half of its expected speed.
@@ -112,7 +112,7 @@ as shown in our example script above.
 
  
 
-## How many cores should I request?
+### How many cores should I request?
 
 Unsurprisingly, the number of cores used in a VASP calculation has
 significant influence on how long the calculation takes to finish. The
@@ -145,7 +145,7 @@ electronic loops. The calculation will finish quickly, and you can then
 pull the value of [`NBANDS`](https://www.vasp.at/wiki/index.php/NBANDS)
 from the `OUTCAR`.
 
-## Fill a node before working across nodes
+### Fill a node before working across nodes
 
 You may find that packing your entire job onto a single node will make
 it run faster. Distributing a job across multiple nodes may also put the
@@ -155,7 +155,7 @@ VASP calculations. If you would like help making a large job more
 efficient, please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new).
 
-## VASP runs faster on Milan nodes
+### VASP runs faster on Milan nodes
 
 [Milan compute
 nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes)
@@ -164,7 +164,7 @@ queues! These nodes are still opt-in at the moment, meaning you need to
 specify `--partition=milan` in your Slurm script, which we strongly
 encourage everyone to do!
 
-## MPI and OpenMP with VASP
+### MPI and OpenMP with VASP
 
 VASP6 can now parallelise work using the message passing interface (MPI)
 *and* OpenMP at the same time. Where MPI parallelises on a per-orbital
@@ -190,7 +190,7 @@ parallisation](https://www.vasp.at/wiki/index.php/Category:Parallelization)
 [Optimising the
 parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
 
-## Our VASP5 modules do not support OpenMP
+### Our VASP5 modules do not support OpenMP
 
 Our VASP5 modules do not support OpenMP and therefore cannot use OpenMP
 threading. VASP5 can perform an analogous form of parrellisation using
@@ -199,7 +199,7 @@ the [`NPAR`](https://www.vasp.at/wiki/index.php/NPAR) tag in the
 [`NPAR`](https://www.vasp.at/wiki/index.php/NPAR) see VASP’s
 documentation page.
 
-## Visualisation with Atomic Simulation Environment's GUI
+### Visualisation with Atomic Simulation Environment's GUI
 
 It is often helpful, or necessary, to visualise your `POSCAR`,
 `CONTCAR`, or other files that contain structural information. One easy
@@ -213,7 +213,7 @@ Then, call the GUI with `ase-gui` (for a new structure), or
 information on how to use ASE see their main page
 [here](https://wiki.fysik.dtu.dk/ase/index.html).
 
-# Which VASP environment module should I use?
+## Which VASP environment module should I use?
 
 In general, unless you require otherwise for the sake of consistency
 with earlier work or you rely on a removed feature, we recommend the
@@ -235,7 +235,7 @@ also CUDA versions of the VASP executables.
 Our testing suggests that OpenMP is not working in our VASP 5 builds,
 and so it doesn't pay to set `--cpus-per-task` greater than one.
 
-### VASP 6
+#### VASP 6
 
 For most purposes we recommend *VASP/6.3.2-intel-2022a* on Mahuika,
 which includes the BEEF, VTST, VASP-Sol, DFT-D4, LIBXC, and HDF5
@@ -248,31 +248,31 @@ version of VASP, we have *VASP/6.3.2-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2*.
 On Māui our only VASP 6 environment module is
 *VASP/6.3.2-CrayIntel-23.02-19*.
 
-## Extensions
+### Extensions
 
 There are a number of 3rd party extensions to VASP which we include.
 None of them affect VASP unless specified in your `INCAR` file.
 
-### VTST
+#### VTST
 
 The [VASP Transition State
 Tools](http://theory.cm.utexas.edu/vtsttools/), a third-party package
 for finding transition states and computing rate constants.
 
-### BEEF
+#### BEEF
 
 Our recent non-CUDA VASP executables all include BEEF ([Bayesian Error
 Estimation
 Functionals](http://suncat.stanford.edu/#/theory/facility/software/functional/)).
 
-### VASP-Sol
+#### VASP-Sol
 
 [VASPsol](https://github.com/henniggroup/VASPsol) is an implicit
 solvation model that describes the effect of electrostatics, cavitation,
 aa dispersion on the interaction between a solute and solvent into the
 plane-wave DFT
 
-### DFT-D4
+#### DFT-D4
 
 Building on the very popular D3 model, DFT-D4 is the newest update to
 the dispersion-corrected Dnsity Functional Theory (DFT-D4 Van der Waals
@@ -280,7 +280,7 @@ functional. This method is available for VASP6 only and is applied by
 setting IVDW=13 in the INCAR. If dispersion forces are important in your
 calculation, DFT-D4 offers a good way of describing these.
 
-### LIBXC
+#### LIBXC
 
 LIBXC is a library which contains over 400 functionals from all rungs on
 Jacob's ladder. Each functional is assigned an integer number ID which
@@ -307,7 +307,7 @@ documentation](https://www.vasp.at/wiki/index.php/LIBXC1) on this.
 
  
 
-## Which VASP executable should I use?
+### Which VASP executable should I use?
 
 VASP is unusual among scientific software packages in that some of its
 execution options are controlled neither by the nature of the input
@@ -327,7 +327,7 @@ The different VASP executables are as follows:
 | `vasp_gpu`     | Like `vasp_std`, but with GPU support included. Only in VASP 5, because in VASP 6 the GPU build is a separate environment module. |
 | `vasp_gpu_ncl` | Like `vasp_ncl`, but with GPU support included. Only in VASP 5, because in VASP 6 the GPU build is a separate environment module. |
 
-## OpenACC GPU version of VASP6
+### OpenACC GPU version of VASP6
 
 There is now an official OpenACC GPU version of VASP, replacing the
 older CUDA GPU version. See the official VASP documentation about the

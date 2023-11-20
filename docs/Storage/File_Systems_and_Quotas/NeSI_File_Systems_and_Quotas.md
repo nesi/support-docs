@@ -50,7 +50,7 @@ and cached between updates.
 
 ## ![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.png)
 
-# File System Specifications
+## File System Specifications
 
 <table class="table table-bordered"
 style="tr td: first-child {    white-space:nowrap;">
@@ -231,7 +231,7 @@ possible to end up with more data or files in the fileset than the quota
 allows for. This outcome does not trigger deletion of any existing data,
 but will prevent creation of new data or files.
 
-### **Notes:**
+#### **Notes:**
 
 -   You may request an increase in storage and inode quota if needed by
     a project. This may in turn be reduced as part of managing overall
@@ -256,7 +256,7 @@ but will prevent creation of new data or files.
     command to prevent the cleaning policy from removing files, because
     this behaviour would deprive the community of a shared resource.
 
-## /home
+### /home
 
 This file system is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. All home directories
@@ -267,7 +267,7 @@ No cleaning policy will be applied to your home directory as long as
 your My NeSI account is active and you are a member of at least one
 active project.
 
-## /nesi/project
+### /nesi/project
 
 This filesystem is accessible from all login, compute and ancillary
 nodes. Contents are backed up daily, via the Spectrum Protect backup
@@ -288,7 +288,7 @@ about in your [application for a new NeSI
 project](https://my.nesi.org.nz/html/request_project), and separately
 covering disk space and number of files.
 
-## /nesi/nobackup
+### /nesi/nobackup
 
 The `/nesi/nobackup` file system has the highest performance of all NeSI
 file systems, with greater than 140 GB/s bandwidth from compute nodes to
@@ -317,7 +317,7 @@ the community of a shared resource.
 The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
-## /nesi/nearline
+### /nesi/nearline
 !!! prerequisite Note
      The nearline service, including its associated file systems, is in an
      Early Access phase, and allocations are by invitation. We appreciate
@@ -337,7 +337,7 @@ See [this
 page](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) for
 more information about the nearline service.
 
-# Snapshots
+## Snapshots
 
 If you have accidentally deleted data you can recover it from
 a [snapshot](https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406).
@@ -346,7 +346,7 @@ cannot find it in a snapshot, please ask us to recover it for you by
 emailing [NeSI
 Support](mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File).
 
-# Contributions of Small Files Towards Quotas
+## Contributions of Small Files Towards Quotas
 
 The Scale file system makes use of a feature called *data-in-inode*.
 This feature will ensure that, once all of a (non-encrypted) file's
@@ -372,7 +372,7 @@ project's persistent storage, please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) to discuss your
 storage needs.
 
-# Transparent File Data Compression
+## Transparent File Data Compression
 
 The Scale file system has the ability to transparently compress file
 data. That is, file contents/data can be compressed behind the scenes,
@@ -391,7 +391,7 @@ through the Scale policy engine. We leverage this latter feature to
 regularly identify and compress inactive data on the `/nesi/project`
 file system.
 
-## What Project data is automatically compressed?
+### What Project data is automatically compressed?
 
 Our current policy compresses files that have not been accessed (either
 read from or written to) within the last 365 days, i.e., very inactive

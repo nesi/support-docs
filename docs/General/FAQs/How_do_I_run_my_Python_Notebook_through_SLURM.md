@@ -23,7 +23,7 @@ The first thing you will need to do is to convert your `.ipynb`
 (**I**nteractive **PY**thon **N**ote **B**ook) file into a regular `.py`
 python file. There are two ways to do this.
 
-### nbconvert
+## nbconvert
 
 `nbconvert` is a tool used to convert notebooks to other formats, it is
 accessible through the command line if you are logged in through

@@ -43,7 +43,7 @@ that supports:
 Scientific Workflows may access resources across the Māui Supercomputer
 and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.
 
-### Notes:
+## Notes:
 
 1.  The `/home, /nesi/project`, and `/nesi/nobackup`
     [filesystems](https://support.nesi.org.nz/hc/articles/360000177256)

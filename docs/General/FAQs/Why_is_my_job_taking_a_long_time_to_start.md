@@ -35,7 +35,7 @@ there are several possible causes.
         satisfy](#difficult-job)
     -   [Some other problem](#other-problem)
 
-# Scheduled maintenance
+## Scheduled maintenance
 
 First, check our [status page](https://status.nesi.org.nz/) to look for
 scheduled maintenance periods. If your job would otherwise run on a
@@ -43,7 +43,7 @@ cluster during maintenance work affecting that cluster, your job may be
 delayed until after the maintenance work is completed and the cluster
 returns to service, depending on the nature of the work to be done.
 
-# Delays in the queue
+## Delays in the queue
 
 If your job is not supposed to be affected by a maintenance period, you
 can get more information by running this command:
@@ -85,7 +85,7 @@ importance of reasons. For example, one job could say Priority and
 another could say Resources, when in fact both are waiting due to
 Priority and Resources at the same time.
 
-## Your job is being beaten by other high-priority jobs
+### Your job is being beaten by other high-priority jobs
 
 You can check the job's priority relative to other waiting jobs by means
 of the following command on a
@@ -122,7 +122,7 @@ The output should look something like this:
 The important aspect of this list is not your job's numeric priority
 score, but rather its priority ranking compared to other jobs.
 
-### Your project has a low Fair Share score
+#### Your project has a low Fair Share score
 
 If, compared to other jobs in the queue, your job's priority (third
 column) and fair share score (fifth column) are both low, this usually
@@ -132,7 +132,7 @@ page](https://support.nesi.org.nz/hc/articles/360000743536) for more
 information on Fair Share, how you can check your project's fair share
 score, and what you can do about a low project fair share score.
 
-### Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects
+#### Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects
 
 In the unlikely scenario that your job's position in the list is low but
 your job's fair share score is high (i.e. nearly 1,000), you will just
@@ -144,7 +144,7 @@ when researchers submit a lot of work at about the same time. Because it
 is triggered by aggregate researcher behaviour, there isn't much we can
 do about it.
 
-## Your job's resource demands are hard to satisfy
+### Your job's resource demands are hard to satisfy
 
 If your job's priority is high compared to other jobs but the job still
 won't start, make sure that your resource requests (in your Slurm
@@ -183,7 +183,7 @@ you should cancel your queued job using the `scancel` command and then
 resubmit it. If your project's fair share score is high, your newly
 submitted job should progress quickly through the queue.
 
-## Some other problem
+### Some other problem
 
 If your job priority is high, your resource requests are low and your
 job still won't start, please [send a request to our support

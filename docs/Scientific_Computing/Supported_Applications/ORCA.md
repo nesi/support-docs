@@ -34,7 +34,7 @@ environmental and relativistic effects.
 The ORCA home page is
 at [https://orcaforum.kofo.mpg.de](https://orcaforum.kofo.mpg.de)
 
-# Licensing requirements
+## Licensing requirements
 
 ORCA is released as precompiled binaries at no cost, pursuant to a
 closed-source licence.  Users are advised that the terms of [the ORCA
@@ -45,7 +45,7 @@ have any questions regarding your eligibility to access ORCA or any
 particular version of it, please contact [our support
 desk](mailto:support@nesi.org.nz).
 
-# Example script
+## Example script
 
 ``` bash
 #!/bin/bash -e
@@ -63,9 +63,9 @@ orca_exe=$(which orca)
 ${orca_exe} MyInput.inp
 ```
 
-# Further notes
+## Further notes
 
-## Requesting a parallel run
+### Requesting a parallel run
 
 ORCA requires a parallel run to be requested in its input as well as
 from the batch scheduler. To request a parallel run, you need to add a
@@ -78,7 +78,7 @@ line to the input file like the following:
 where `<np>` represents the total number of processors (cores) you have
 requested from the scheduler.
 
-## Checkpointing and restarting
+### Checkpointing and restarting
 
 ORCA provides for saving of checkpoint data, especially molecular
 orbital information, in a file with extension ".gbw" (short for

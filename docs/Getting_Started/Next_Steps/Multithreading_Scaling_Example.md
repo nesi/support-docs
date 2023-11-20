@@ -25,7 +25,7 @@ these examples are applicable across software applications. You do not
 need to know anything about R to understand this article; it was merely
 chosen for the purpose of illustration.
 
-### Initial R Script
+## Initial R Script
 
 ``` sl
  library(doParallel)

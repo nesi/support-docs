@@ -49,7 +49,7 @@ Cray Programming Environment (e.g. editors, compilers, linkers, debug
 tools). Typically, users will access these nodes via SSH from the NeSI
 lander node. Jobs can be submitted to the HPC from these nodes.
 
-### Important Notes
+## Important Notes
 
 1.  The Cray Programming Environment on the XC50 (supercomputer) differs
     from that on Mahuika and the Māui Ancillary nodes.

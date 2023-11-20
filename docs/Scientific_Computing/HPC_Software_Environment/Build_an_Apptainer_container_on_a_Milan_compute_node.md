@@ -18,7 +18,7 @@ a Slurm job. You can also build
 [Singularity](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
 container using this technique.
 
-# Building container via Slurm
+## Building container via Slurm
 
 The new Milan compute nodes can be used to build Apptainer containers
 using the [fakeroot
@@ -92,7 +92,7 @@ page.
      In this example, the Slurm job submission script creates these folders
      using your project `nobackup` folder.
 
-# Known limitations
+## Known limitations
 
 If your container uses RPM to install packages, i.e. is based on CentOS
 or Rocky Linux, you need to disable the `APPTAINER_TMPDIR` environment

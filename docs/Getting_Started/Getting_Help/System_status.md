@@ -52,4 +52,4 @@ email).
 
 ![](../../assets/images/System_status_0.png)
 
-# [NeSI wide area network connectivity](https://support.nesi.org.nz/hc/en-gb/articles/8252164326415)
+## [NeSI wide area network connectivity](https://support.nesi.org.nz/hc/en-gb/articles/8252164326415)

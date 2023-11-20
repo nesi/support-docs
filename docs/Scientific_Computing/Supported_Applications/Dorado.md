@@ -19,12 +19,12 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
+## Description
 
 Dorado is a high-performance, easy-to-use, open source basecaller for
 Oxford Nanopore reads.
 
-## [](https://github.com/nanoporetech/dorado#features)Features
+### [](https://github.com/nanoporetech/dorado#features)Features
 
 -   One executable with sensible defaults, automatic hardware detection
     and configuration.
@@ -37,7 +37,7 @@ Oxford Nanopore reads.
 -   Multiple custom optimisations in CUDA and Metal for maximising
     inference performance.
 
-# License and Disclaimer
+## License and Disclaimer
 
 \(c\) 2022 Oxford Nanopore Technologies Ltd.
 
@@ -48,7 +48,7 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
 
 .
 
-## Example Slurm script
+### Example Slurm script
 
 -   The following Slurm script is a template to run Basecalling on the
     NVIDIA A100 GPUs. We do not recommend running Dorado jobs on CPUs.

@@ -26,18 +26,18 @@ Google or GlobusID.
 
 To sign up to Globus, please go to <https://transfer.nesi.org.nz/>
 
-#### 1) Sign-Up to Globus
+## 1) Sign-Up to Globus
 
 To sign up to globus, you can look for your organisation in the
 drop-down box. If your organisation is not present in the drop-down box,
 you can also use any of the available methods - this then becomes your
 primary identity in Globus.
 
-####  
+
 
 ![Globus\_login.png](../../assets/images/Initial_Globus_Sign_Up-and_your_Globus_Identities.png)
 
-#### 2) Link other Globus identities to your primary identity
+### 2) Link other Globus identities to your primary identity
 
 From the Globus docs:
 

@@ -39,7 +39,7 @@ module load OpenFOAM
 source $FOAM_BASH
 ```
 
-# Example Script
+## Example Script
 
 ``` sl
 #!/bin/bash -e
@@ -70,7 +70,7 @@ srun simpleFoam -parallel
 reconstructPar -latestTime     #Collect 
 ```
 
-# Filesystem Limitations
+## Filesystem Limitations
 
 OpenFOAM generates a large number of files during run-time. In addition
 to the I/O load there is also the danger of using up available
@@ -120,7 +120,7 @@ There are a few ways to mitigate this
     concerned about indoes, open a support ticket and we can raise the
     limit for you.
 
-# Environment Variables
+## Environment Variables
 
 You may find it useful to use environment variables in your dictionaries
 e.g.
@@ -144,18 +144,18 @@ NSUBDOMAINS=10
 sed -i "s/\(numberOfSubdomains \)[[:digit:]]*\(;\)/\1 $NSUBDOMAINS\2/g" system/controlDict
 ```
 
-# Recommended Resources   
+## Recommended Resources   
 
 Generally, using 16 or less tasks will keep your job reasonably
 efficient. However this is *highly* dependant on the type of simulation
 and how the model was decomposed.
 
-# Adding custom solvers
+## Adding custom solvers
 
 Rather than installing custom solvers centrally, we encourage users to
 install under their user or project.
 
-## Downloading
+### Downloading
 
 Generally your custom solver will be stored in a git repo. Make sure you
 have the same version as the OpenFOAM you plan to use, this may require
@@ -163,7 +163,7 @@ changing branch.
 
 ![git\_releases.png](../../assets/images/OpenFOAM.png)
 
-### If releases are available
+#### If releases are available
 
 Open the 'releases' tab, right click on the '.tar' or '.zip' of the
 version you want and select 'copy link address', then paste that link
@@ -175,7 +175,7 @@ wget https://github.com/vincentcasseau/hyStrath/archive/Concordia.tar.gz
 
  wget can also be used to fetch files from other sources.
 
-### If repo only
+#### If repo only
 
 Use the command `git clone <path to repo>.git` For example:
 
@@ -183,7 +183,7 @@ Use the command `git clone <path to repo>.git` For example:
 git clone https://github.com/vincentcasseau/hyStrath.git
 ```
 
-## Decompress 
+### Decompress 
 
 If your source is a .zip file use the command `unzip <filename>` if it
 is a .tar.gz use the command `tar -xvzf <filename>`
@@ -191,7 +191,7 @@ is a .tar.gz use the command `tar -xvzf <filename>`
 From here steps will vary, it is best to check the README of the package
 you are installing.
 
-## wmake
+### wmake
 
 `wmake` is an OpenFOAM tool used to compile code, based on `make`.
 
@@ -219,7 +219,7 @@ objects in `$FOAM_APPBIN`, this will cause the build to fail as you will
 not have permission to write there. Make sure the `Make/options` file
 specifies variables `$FOAM_USER_LIBBIN` or `$FOAM_USER_APPBIN` instead.
 
-## Location
+### Location
 
 User compiled libraries are kept in `$FOAM_USER_LIBBIN`, by default this
 is set

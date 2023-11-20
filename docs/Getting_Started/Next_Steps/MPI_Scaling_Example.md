@@ -25,7 +25,7 @@ in these examples are applicable across software applications. You do
 not need to know anything about Python to understand this article; it
 was merely chosen for the purpose of illustration.
 
-### Initial Python Script
+## Initial Python Script
 
 ``` sl
 #Imports numpy and mpi4py

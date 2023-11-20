@@ -29,14 +29,14 @@ present and always comprising the first three lines of the article. -->
      an institution without access to floating licences, MATLAB code can
      still be run on the cluster using MCR.
 
-# Example script
+## Example script
 !!! prerequisite Note
      When developing MATLAB code on your local machine, take measures to
      ensure it will be platform independent.  Use relative paths when
      possible and not avoid using '\\s see
      [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
 
-## Script Example
+### Script Example
 
 ``` bash
 #!/bin/bash -e
@@ -49,7 +49,7 @@ module load MATLAB/2021b
 matlab -nodisplay < MATLAB_job.m 
 ```
 
-## Function Example
+### Function Example
 
 ``` sl
 #!/bin/bash -e
@@ -74,20 +74,20 @@ matlab -batch "addpath(genpath('../parentDirectory'));myFunction(5,20)"
      MATLAB. e.g. `!squeue -u $USER` will print your currently queued slurm
      jobs.
 
-# Parallelism
+## Parallelism
 
 MATLAB does not support MPI therefore #SBATCH --ntasks should always be
 1, but if given the necessary resources some MATLAB functions can make
 use of multiple threads (--cpus-per-task) or GPUs (--gpus-per-node).
 
-## Implicit parallelism.
+### Implicit parallelism.
 
 Implicit parallelism requires no changes to be made in your code. By
 default MATLAB will utilise multi-threading for a wide range of
 operations, scalability will vary but generally you will not be able to
 utilise more than a 4-8 CPUs this way.
 
-## Explicit parallelism.
+### Explicit parallelism.
 
 Explicit parallelism is when you write your code specifically to make
 use of multiple CPU's. This can be done using MATLABs *parpool*-based
@@ -172,7 +172,7 @@ parallelise your code.
      as there is less computational overhead and the multiple smaller jobs
      will queue faster.
 
-# Using GPUs
+## Using GPUs
 
 As with standard parallelism, some MATLAB functions will work implicitly
 on GPUs while other require setup. More info on using GPUs with MATLAB
@@ -203,7 +203,7 @@ support page.
      allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
      support page.
 
-## GPU Example
+### GPU Example
 
 ``` sl
 #!/bin/bash -e
@@ -220,7 +220,7 @@ module load CUDA/11.0.2  # Drivers for using GPU
 matlab -batch "gpuDevice()"
 ```
 
-# Adding Support Packages
+## Adding Support Packages
 
 If you have X-11 set up you can install additional package through the
 GUI. You can also install manually if you already have the files by
@@ -232,7 +232,7 @@ the path using the MATLAB command
 specify it with
 ` matlabshared.supportpkg.setSupportPackageRoot("<path>")`
 
-## mexopencv
+### mexopencv
 
 mexopencv is [mex wrapper MATLAB wrapper for the openCV
 library.](https://github.com/kyamagu/mexopencv)
@@ -245,7 +245,7 @@ to avoid problems cause by this
 
 Please contact support if you have any issues.
 
-# Improving performance with mexing
+## Improving performance with mexing
 
 Like other scripting languages, MATLAB code will generally run slower
 than compiled code since every MATLAB instruction needs to be parsed and
@@ -260,7 +260,7 @@ Fortran, which is referred to as
 more info about compiling software on NeSI
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000329015-Compiling-software-on-Mahuika).
 
-## Writing mex functions
+### Writing mex functions
 
   This involves the following steps (using C++ as an example):
 
@@ -325,7 +325,7 @@ functions that have return values).
 Some mex function source code examples can be found in the table
 [here](https://au.mathworks.com/help/matlab/matlab_external/table-of-mex-file-source-code-files.html). 
 
-## Compilation
+### Compilation
 
 MATLAB supports the following compilers.
 
@@ -362,7 +362,7 @@ For example, adding OpenMP flags for a fortran compile:
      Using an 'unsupported' compiler with versions of MATLAB 2020b onward
      will result in an Error (previously was a 'Warning').
 
-# Known Bugs
+## Known Bugs
 
 When using versions of MATLAB more recent than 2021a you may notice the
 following warning.

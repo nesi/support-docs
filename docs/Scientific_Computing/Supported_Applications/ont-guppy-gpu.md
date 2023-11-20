@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Description
+## Description
 
 Guppy,  is a data processing toolkit that contains Oxford Nanopore’s
 (<https://nanoporetech.com/>) basecalling algorithms, and several
@@ -29,7 +29,7 @@ toolkit also performs modified basecalling (5mC, 6mA and CpG) from the
 raw signal data, producing an additional FAST5 file of modified base
 probabilities.
 
-# License and Disclaimer
+## License and Disclaimer
 
 “Base Caller Software” shall mean Oxford’s proprietary software,
 including all functional specifications associated therewith made
@@ -42,7 +42,7 @@ Oxford, whether free of charge or for a fee.
 Guppy is available to ONT customers via their community website
 https://community.nanoporetech.com/
 
-## Example Slurm script
+### Example Slurm script
 
 -   Following Slurm script is a template to run Basecalling on NVIDIA
     P100 GPUs.( We do not recommend running Guppy jobs on CPUs )

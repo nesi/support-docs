@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Introduction
+## Introduction
 
 [Lambda
 Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
@@ -49,7 +49,7 @@ In the filenames above, the dates correspond to the date the image was
 built and the file with *-latest* will correspond to the most recent
 version.
 
-# Building the Singularity image (optional)
+## Building the Singularity image (optional)
 
 This step is optional; if you choose to use the prebuilt Singularity
 images under */opt/nesi/containers/lambda-stack/* you can skip this
@@ -104,7 +104,7 @@ singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-st
 
  
 
-# Lambda Stack via Slurm
+## Lambda Stack via Slurm
 
 The following Slurm script can be used as a template for running jobs
 using Lambda Stack.
@@ -132,7 +132,7 @@ SINGULARITY="singularity exec --nv -B ${PWD} ${SIF}"
 ${SINGULARITY} echo "Hello World"
 ```
 
-# Lambda Stack via Jupyter
+## Lambda Stack via Jupyter
 
 The following steps will create a custom Lambda Stack kernel that can be
 accessed via NeSI's Jupyter service (based on the instructions
@@ -215,7 +215,7 @@ After refreshing the [NeSI JupyterLab](https://jupyter.nesi.org.nz/)
 your Lambda Stack Python kernel should show up as "Lambda Stack Python
 3".
 
-# Example: running Transformers benchmarks
+## Example: running Transformers benchmarks
 
 Here we give an example showing using Lambda Stack to run the
 [Transformers](https://huggingface.co/transformers/) library benchmarks.

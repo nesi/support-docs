@@ -19,7 +19,7 @@ zendesk_section_id: 360000030876
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-### Bash Header
+## Bash Header
 
 We recommend using `#!/bin/bash -e` instead of plain `#!/bin/bash`, so
 that the failure of any command within the script will cause your job to

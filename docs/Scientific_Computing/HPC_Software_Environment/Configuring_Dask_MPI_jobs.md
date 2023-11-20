@@ -51,7 +51,7 @@ other, it is advisable to use the same MPI distribution as the host HPC
 system for reliability. The Mahuika and Māui Ancil clusters use Intel
 MPI.
 
-# Using Dask-MPI on Mahuika
+## Using Dask-MPI on Mahuika
 
 Dask-MPI can be readily used with the more recent Python modules
 available on Mahuika that come with the mpi4py package, e.g.
@@ -60,7 +60,7 @@ available on Mahuika that come with the mpi4py package, e.g.
 module load Python/3.9.9-gimkl-2020a
 ```
 
-# Installing Dask-MPI with Conda on Mahuika and Māui Ancil
+## Installing Dask-MPI with Conda on Mahuika and Māui Ancil
 
 Load an Anaconda3 or Miniconda3 module and use the following commands to
 install mpi4py with the Intel MPI distribution *before* installing the
@@ -92,7 +92,7 @@ dependencies:
      page for more information on how to create and manage Miniconda
      environments on NeSI.
 
-# Configuring Slurm
+## Configuring Slurm
 
 At runtime, Slurm will launch a number of Python processes as requested
 in the [Slurm configuration
@@ -125,7 +125,7 @@ Slurm can use gaps in node utilisation, and this should not affect
 performance, unless individual work items are very small (e.g., if a
 given work item only takes a few seconds or less to run).
 
-## Dask workers have low memory usage and no parallelisation
+### Dask workers have low memory usage and no parallelisation
 
 This case is straightforward to set up. Use the following example to run
 a workload with 1 scheduler rank and 6 worker ranks. Each rank will be
@@ -144,7 +144,7 @@ module load Python/3.9.9-gimkl-2020a
 srun python mydaskprogram.py
 ```
 
-## Dask workers have high memory usage and/or parallelisation
+### Dask workers have high memory usage and/or parallelisation
 
 This case is more complex to set up and uses Slurm "job packs" to handle
 the heterogeneous configuration. In the following example, the scheduler
@@ -167,13 +167,13 @@ srun --het-group=0-1 python mydaskprogram.py
 
 The `--het-group` flag asks `srun` to launch both job packs together.
 
-# Example
+## Example
 
 The following example illustrates how to run Dask-MPI on the HPC. It is
 based on the Dask Futures tutorial on the [Dask
 examples](https://examples.dask.org) webpage.
 
-## Python program
+### Python program
 
 ``` sl
 import os
@@ -202,7 +202,7 @@ print("Dask result:", c.result())
 print("Local result:", add(inc(1), inc(2)))
 ```
 
-## Slurm script
+### Slurm script
 
 Replace `PROJECTID` with your project ID number and use the `sbatch`
 command to submit this Slurm script and run the test code on 3 MPI
@@ -230,7 +230,7 @@ Dask result: 5
 Local result: 5
 ```
 
-# Running Dask-MPI inside a Singularity container
+## Running Dask-MPI inside a Singularity container
 
 It is straightforward to run a Dask-MPI workload inside a Singularity
 container on the HPC. For reliable and efficient execution it is best to
@@ -241,7 +241,7 @@ Conda](#h_3e6b313b-a712-4e88-8246-5550cac1d77c) above for instructions.
 It will also reduce container portability between platforms that use
 different MPI distributions.
 
-## Container configuration
+### Container configuration
 
 While it is impossible to cover every possible scenario, the following
 guidelines should help with configuring the container correctly.
@@ -275,7 +275,7 @@ Conda environment inside the container.
      nodes, following the instructions from the [dedicated support
      page](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
 
-## Slurm configuration
+### Slurm configuration
 
 Slurm configuration is identical to the case without Singularity, see
 section [Configuring Slurm](#h_75b008cc-7843-40b2-bdb4-8252ca807fab)

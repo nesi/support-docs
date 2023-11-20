@@ -23,14 +23,14 @@ zendesk_section_id: 360000040076
 -   [Configuration File](#h_01HA8M29QKYGBY6EA8Q6C5YS57)
 -   [Example Script](#h_01HA8M29QKGQ7JFP2E0YV2Q849)
 
-# Description
+## Description
 
 snpEff is a genetic variant annotation, and functional effect prediction
 tool.
 
  
 
-# Configuration File
+## Configuration File
 
 snpEff requires a one-off configuration of the `.config` file. The
 following instructions are a one-off set up of the configuration file
@@ -61,7 +61,7 @@ required for snpEff.
 
  
 
-# Example Script
+## Example Script
 
 You will need to set up your configuration file before you run snpEff.
 

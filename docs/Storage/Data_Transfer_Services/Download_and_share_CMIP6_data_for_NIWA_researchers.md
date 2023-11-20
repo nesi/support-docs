@@ -19,7 +19,7 @@ zendesk_section_id: 360000040596
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-##  
+
 
 The [Coupled Model Intercomparison
 Project](https://www.wcrp-climate.org/wgcm-cmip), which began in 1995

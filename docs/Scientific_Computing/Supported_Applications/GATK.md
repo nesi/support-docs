@@ -30,7 +30,7 @@ General documentation for running GATK can be found at their website
 
  
 
-# Running GATK
+## Running GATK
 
 GATK uses requires the Java Runtime Environment. The appropriate version
 of Java is already included as part of the GATK module, you will not
@@ -71,7 +71,7 @@ gatk MarkDuplicates I=input.bam O=marked_duplicates.bam M=marked_dup_metrics.txt
 
  
 
-## GATK-Picard
+### GATK-Picard
 
 GATK versions 4.0 or higher all contains a copy of the Picard toolkit,
 you will not need to separately load the Picard module. To run
@@ -91,9 +91,9 @@ GATK flag naming conventions, so it is best to double check them.
 
  
 
-# Common Issues
+## Common Issues
 
-## Out of Memory or Insufficient Space for Shared Memory File
+### Out of Memory or Insufficient Space for Shared Memory File
 
 This is related to temporary files being created by Java in `/tmp`, and
 then running out of space. If you see the error message
@@ -116,7 +116,7 @@ export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}
 
  
 
-## File is not a supported reference file type
+### File is not a supported reference file type
 
 The error message "File is not a supported reference file type" comes in
 one of the log files. It appears that sometimes GATK requires the file

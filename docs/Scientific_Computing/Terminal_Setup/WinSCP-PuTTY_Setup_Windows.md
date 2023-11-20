@@ -105,7 +105,7 @@ PuTTY/Terminal client path.
      In order for X11 forwarding to work you must have an Xming server
      running before connecting to the HPC.
 
-# Usage
+## Usage
 
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.
@@ -130,9 +130,9 @@ type in).
 ![winBook.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
 current directory.
 
-## Troubleshooting
+### Troubleshooting
 
-### Repeated Authentication Prompts
+#### Repeated Authentication Prompts
 
 By default, WinSCP will create multiple tunnels for file transfers.
 Occasionally this can lead to an excessive number of prompts. Limiting

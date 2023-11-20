@@ -54,7 +54,7 @@ steps, which are then described in more details:
 -   [Kernels](#h_e7f80560-91c0-420a-bccb-17bbf8c2e916)
 -   [Packages](#h_04f2f4e2-8e7a-486d-aea5-e020eb9df66e)
 
-# Launch JupyterLab
+## Launch JupyterLab
 
 Since JupyterLab is a web based application, and at NeSI launched behind
 the firewall, a **port** needs to be forwarded to your local machine,
@@ -68,7 +68,7 @@ This number needs to be used while establishing the port forwarding and
 while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
-## Setup SSH port forwarding 
+### Setup SSH port forwarding 
 !!! prerequisite Requirements
      -   In the following we assume you already configured
          your`.ssh/config` to use two hop method as described in the
@@ -82,7 +82,7 @@ the same (here 15051). This can be specified on the [command line in the
 terminal](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) or using the
 [MobaXterm GUI](#h_cc633523-5df0-4f24-a460-391ced9a0316).
 
-### SSH Command Line
+#### SSH Command Line
 
 The ssh command need to be called with following arguments, e.g. for
 Mahuika:
@@ -110,7 +110,7 @@ Local Port".
          &lt;username&gt; needs to be changed. Hostnames can be adapted for
          other nodes, e.g. `w-clim01`
 
-### MobaXterm GUI
+#### MobaXterm GUI
 !!! prerequisite Tips
      -   MobaXterm has an internal terminal which acts like a linux
          terminal and can be configured as described in the [Standard
@@ -136,7 +136,7 @@ click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
 
 ![sshTunnel.PNG](../../assets/images/JupyterLab.PNG)
 
-## Launch the JupyterLab server 
+### Launch the JupyterLab server 
 
 After successfully establishing the port forwarding, we need open
 another terminal and login to the NeSI system in the usual way, e.g.
@@ -167,7 +167,7 @@ virtual lab) or offloaded to a compute node. Please launch compute or
 memory intensive tasks [on a compute
 node](#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d).
 
-### On login nodes / virtual labs
+#### On login nodes / virtual labs
 
 For very small (computational cheap and small memory) the JupyterLab can
 be started on the login or virtual lab using: 
@@ -183,7 +183,7 @@ in the [next section](#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d) including
 the URL and a unique key, which needs to be copied in your local
 browser.
 
-### On compute node
+#### On compute node
 
 Especially notebooks with computational and memory intensive tasks
 should run on compute nodes. Therefore, a script is provided, taking
@@ -230,7 +230,7 @@ libraries, which implement threading align the numbers of threads (often
 called jobs) to the selected number of cores (otherwise the performance
 will be affected).
 
-## JupyterLab in your local browser 
+### JupyterLab in your local browser 
 
 Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
@@ -238,7 +238,7 @@ initializing Jupyter Lab you should see a page similar to:
 
 ![Jupyter.PNG](../../assets/images/JupyterLab_0.PNG)
 
-# Kernels
+## Kernels
 
 The following JupyterLab kernel are installed:
 
@@ -246,7 +246,7 @@ The following JupyterLab kernel are installed:
 -   R 
 -   Spark
 
-## R
+### R
 
 verify that the module IRkernel is loaded
 
@@ -254,7 +254,7 @@ verify that the module IRkernel is loaded
 module load IRkernel
 ```
 
-# Spark
+## Spark
 
 pySpark and SparkR is supported in NeSI Jupyter notebooks. Therefore,
 the module Spark needs to be loaded before starting Jupyter. Please run
@@ -264,7 +264,7 @@ Spark workflows on compute nodes.
 module load Spark
 ```
 
-# Packages
+## Packages
 
 There are a long list of default packages provided by the JupyterLab
 environment module (list all using `!pip list`) and R (list using

@@ -47,7 +47,7 @@ You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 [environment file](#env_file).
 
-# Solver Compatibility
+## Solver Compatibility
 
 Not all solvers are compatible with all types of parallelisation.
 
@@ -192,7 +192,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="
 </tbody>
 </table>
 
-# User Defined Functions 
+## User Defined Functions 
 
 User defined functions (UDFs) can be included on the command line with
 the argument `user=<filename>` where `<filename>` is the C or fortran
@@ -205,7 +205,7 @@ loaded with `module load`, you may have to change the [compile
 commands](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) in
 your local `.env` file.
 
-# Environment file
+## Environment file
 
 The [ABAQUS environment
 file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains

@@ -19,7 +19,7 @@ zendesk_section_id: 360001189255
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Introduction
+## Introduction
 
 Jupyter kernels execute the code that you write. The following Jupyter
 kernels are installed by default and can be selected from the Launcher:
@@ -37,7 +37,7 @@ and these can be extended further as described on the
 [R](https://support.nesi.org.nz/hc/en-gb/articles/209338087) support
 pages.
 
-# Adding a custom Python kernel
+## Adding a custom Python kernel
 !!! prerequisite See also
      See the [Jupyter kernels - Tool-assisted
      management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
@@ -141,7 +141,7 @@ like this (change &lt;username&gt; to your NeSI username):
 After refreshing JupyterLab your new kernel should show up in the
 Launcher as "My Conda Env".
 
-# Sharing a Python kernel with your project team members
+## Sharing a Python kernel with your project team members
 
 You can also configure a shared Python kernel that others with access to
 the same NeSI project will be able to load. If this kernel is based on a
@@ -220,14 +220,14 @@ look like this (change &lt;project\_code&gt; to your NeSI project code):
 After refreshing JupyterLab your new kernel should show up in the
 Launcher as "Shared Virtual Env".
 
-# Custom kernel in a Singularity container
+## Custom kernel in a Singularity container
 
 An example showing setting up a custom kernel running in a Singularity
 container can be found on our [Lambda
 Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack#lambda_stack_via_jupyter)
 support page.
 
-# Adding a custom R kernel
+## Adding a custom R kernel
 
 You can configure custom R kernels for running your Jupyter notebooks.
 The following example will create a custom kernel based on the
@@ -306,7 +306,7 @@ something like this (change &lt;username&gt; to your NeSI username):
 After refreshing JupyterLab your new R kernel should show up in the
 Launcher as "R with MPFR".
 
-# Spark
+## Spark
 
 At the time of writing, the latest stable version of Spark does not
 support Python 3.8. If you wish to use Spark (e.g. PySpark) make sure

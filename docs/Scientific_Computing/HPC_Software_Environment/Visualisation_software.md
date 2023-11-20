@@ -46,15 +46,15 @@ In the following installed packages are listed for:
 
 -   3D Visualisation Software
 
-# Scripting Languages with Visualisation Capabilities
+## Scripting Languages with Visualisation Capabilities
 
-## Python
+### Python
 
 The Python language comes with packages such as "matplotlib" for
 general-purpose 2D visualisation, or "vtk" (see VTK section on this
 page) for 3D visualisation.
 
-### Available Modules
+#### Available Modules
 
 |                               |             |                |                                           |
 |-------------------------------|-------------|----------------|-------------------------------------------|
@@ -87,14 +87,14 @@ page) for 3D visualisation.
 | Python/3.8.2-gimkl-2020a      | ✔           |                | Python 3 base packages                    |
 | Python/3.9.5-gimkl-2020a      | ✔           |                | Python 3 base packages                    |
 
-##  
 
-## R
+
+### R
 
 The R language comes with built-in 2D plotting capabilities that can be
 extended with additional packages.
 
-### Available Modules
+#### Available Modules
 
 |                         |             |                |                               |
 |-------------------------|-------------|----------------|-------------------------------|
@@ -113,14 +113,14 @@ extended with additional packages.
 | R-Geo/4.0.1-gimkl-2020a | ✔           |                | R for geospatial applications |
 | Rstudio/1.1.456         |             | ✔              | Rstudio IDE                   |
 
-##  
 
-## NCL
+
+### NCL
 
 The NCAR Command Language provides visualisation capabilities which are
 mostly used in the weather and climate fields.
 
-### Available Modules
+#### Available Modules
 
 |                       |             |                |                  |
 |-----------------------|-------------|----------------|------------------|
@@ -131,12 +131,12 @@ mostly used in the weather and climate fields.
 
  
 
-## MATLAB
+### MATLAB
 
 The MATLAB programming language comes with built-in visualisation
 capabilities.
 
-### Available Modules
+#### Available Modules
 
 |                 |             |                |             |
 |-----------------|-------------|----------------|-------------|
@@ -149,16 +149,16 @@ capabilities.
 | MATLAB/2020b    | ✔           |                |             |
 | MATLAB/2021a    | ✔           |                |             |
 
-#  
 
-# 2D Visualisation Software
 
-## IRIS
+## 2D Visualisation Software
+
+### IRIS
 
 IRIS is a Python-based visualisation tool that is mainly used in the
 weather and climate fields.
 
-### Available Modules
+#### Available Modules
 
 |                             |             |                |                  |
 |-----------------------------|-------------|----------------|------------------|
@@ -169,13 +169,13 @@ weather and climate fields.
 | Anaconda3/2019.03           |             | ✔              | IRIS v1.13.0     |
 | Anaconda3/2020.02-GCC-7.1.0 |             | ✔              | IRIS v2.4.0      |
 
-##  
 
-## Ncview
+
+### Ncview
 
 Ncview is a visual browser for netCDF files.
 
-### Available Modules
+#### Available Modules
 
 |                          |             |                |             |
 |--------------------------|-------------|----------------|-------------|
@@ -183,24 +183,24 @@ Ncview is a visual browser for netCDF files.
 | ncview/2.1.7-gimkl-2018b | ✔           |                |             |
 | NCVIEW/2.1.8-GCC-7.1.0   |             |  ✔             |             |
 
-##  
 
-## XCONV
+
+### XCONV
 
 XCONV is a visual browser for netCDF and Unified Model format files.
 
-### Available Modules
+#### Available Modules
 
 |                 |             |                |             |
 |-----------------|-------------|----------------|-------------|
 | **Module Name** | **Mahuika** | **Māui Ancil** | **Comment** |
 | XCONV/1.93      |             |  ✔             |             |
 
-#  
 
-# 3D Visualisation Software
 
-## ParaView
+## 3D Visualisation Software
+
+### ParaView
 
 [ParaView](https://www.paraview.org/) is a high-performance 3D
 visualisation tool. The headless versions only provide ParaView Server,
@@ -214,7 +214,7 @@ much more network bandwidth than [NICE
 DCV](https://support.nesi.org.nz/hc/en-gb/articles/360000719156) and
 thus may be slower.
 
-### Parallelisation
+#### Parallelisation
 
 The CPU based versions of ParaView use the OpenSWR rasteriser as well as
 the OSPRay ray tracer for rendering graphics. These support parallel
@@ -231,7 +231,7 @@ export OSPRAY_THREADS=<number of cores>
 ParaView Server also supports parallel execution using MPI, see "Setting
 up Client-Server Mode" below.
 
-### Available Modules
+#### Available Modules
 
 |                                          |             |                |                                             |
 |------------------------------------------|-------------|----------------|---------------------------------------------|
@@ -249,9 +249,9 @@ up Client-Server Mode" below.
 | ParaView/5.6.0-gimkl-2018b-Python-3.7.3  | ✔           |                |                                             |
 | ParaView/5.9.0-gimkl-2020a-Python-3.8.2  | ✔           |                |                                             |
 
-###  
 
-### Setting up Client-Server Mode
+
+#### Setting up Client-Server Mode
 
 If you want to use ParaView in client-server mode, use the following
 setup:
@@ -273,28 +273,28 @@ mpiexec -np <number of MPI ranks> pvserver
     then click on "Configure"
 -   Select the new server and click on "Connect"
 
-## VisIt
+### VisIt
 
 VisIt is a high-performance 3D visualisation tool. At this point, only
 GUI-based interactive sessions on CPUs via NICE DCV are supported, GPU
 support and client-server operation will be added later.
 
-### Available Modules
+#### Available Modules
 
 |                                   |             |                |                      |
 |-----------------------------------|-------------|----------------|----------------------|
 | **Module Name**                   | **Mahuika** | **Māui Ancil** | **Comment**          |
 | VisIt/2.13.3-gimpi-2018b-GUI-Mesa |             | ✔              | GUI version for CPUs |
 
-##  
 
-## VTK
+
+### VTK
 
 The Visualization ToolKit (VTK) can be used for 3D visualisation in
 various programming languages, in particular with the Python scripting
 language.
 
-### Available Modules
+#### Available Modules
 
 |                                     |             |                |                           |
 |-------------------------------------|-------------|----------------|---------------------------|

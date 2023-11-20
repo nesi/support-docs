@@ -35,7 +35,7 @@ General documentation for running Trinity can be found on their GitHub
 page
 [here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity).
 
-# Running Trinity on NeSI
+## Running Trinity on NeSI
 
 The recommended approach for running Trinity on NeSI is to split the run
 into two separate job submissions. The first submission will run Trinity
@@ -45,7 +45,7 @@ and reduced core hour usage when applying this approach to benchmark
 data, compared to running both phases in one multithreaded job (see the
 [Benchmarks](#benchmarks) section below).
 
-## File system considerations
+### File system considerations
 
 You should run Trinity within your [nobackup project
 directory](https://support.nesi.org.nz/hc/en-gb/articles/360000177256),
@@ -55,12 +55,12 @@ Trinity creates a large number of files, particularly in the
 us](mailto:support@nesi.org.nz) before running Trinity on NeSI, as we
 may need to increase your default file count quota.
 
-## Quality Control
+### Quality Control
 
 We must stress the importance of read QC prior to running the assembly
 otherwise it is likely to fail or take a very long time to complete.
 
-## Running Trinity Phase 1
+### Running Trinity Phase 1
 
 Trinity Phase 1 can be broken into three main components:
 
@@ -116,7 +116,7 @@ The extra Trinity arguments are:
 -   `[your_other_trinity_options]` should be replaced with the other
     trinity options you would usually use, e.g. `--seqType fq`, etc.
 
-## Running Trinity Phase 2
+### Running Trinity Phase 2
 
 Upstream documentation for running Trinity Phase 2 in parallel can be
 found
@@ -228,7 +228,7 @@ srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
     "grid mode" but are still required to be set (i.e. it shouldn't
     matter what you set them to)
 
-# Benchmarks
+## Benchmarks
 
 Here we provide details of a number of Trinity assemblies that have been
 carried out on NeSI, in order to give a rough idea of how Trinity can
@@ -239,7 +239,7 @@ assembling the same sample again, would be expected to vary
 significantly depending on various factors, such as the load on the
 system and project fair share scores and priorities.
 
-## Test sample
+### Test sample
 
 We ran a small test job of 8 million paired reads. Although much smaller
 than usual this allowed us to quickly see the effect of making changes
@@ -268,7 +268,7 @@ This shows that performance is much better with Trinity's "grid mode".
 Not only are the run times significantly lower but the total number of
 core hours used is also much lower.
 
-## Marine sediment sample 1
+### Marine sediment sample 1
 
 This benchmark concerns the assembly of a marine sediment sample,
 containing two distinct microbial populations, from two distinct
@@ -287,7 +287,7 @@ wall time each. The number of commands (mini-assemblies) that needed to
 be run during this phase was 2,020,460. Phase 2 took approximately 19
 hours to complete (elapsed time) and cost around 1,800 core hours.
 
-## Marine sediment sample 2
+### Marine sediment sample 2
 
 This sediment sample, containing 303 million reads, was all from the
 same location and was taken from a treatment experiment. The assembly

@@ -41,7 +41,7 @@ page.
      allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
      page.
 
-# Request GPU resources using Slurm
+## Request GPU resources using Slurm
 
 To request a GPU for your [Slurm
 job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job),
@@ -167,7 +167,7 @@ duration of 30 minutes.
      0,1
      ```
 
-# Load CUDA and cuDNN modules
+## Load CUDA and cuDNN modules
 
 To use an Nvidia GPU card with your application, you need to load the
 driver and the CUDA toolkit via the [environment
@@ -214,7 +214,7 @@ versions can be listed using:
 module spider cuDNN
 ```
 
-# Example Slurm script
+## Example Slurm script
 
 The following Slurm script illustrates a minimal example to request a
 GPU card, load the CUDA toolkit and query some information about the
@@ -280,7 +280,7 @@ CUDA_VISIBLE_DEVICES=0
      CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
      GPU index 0 on this node. It is not a count of allocated GPUs.
 
-# NVIDIA Nsight Systems and Compute profilers
+## NVIDIA Nsight Systems and Compute profilers
 
 [Nsight Systems](https://developer.nvidia.com/nsight-systems) is a
 system-wide analysis tool, particularly good for profiling CPU-GPU
@@ -330,7 +330,7 @@ graphical interface.
      nsys-ui  # this will work only if you have a graphical session
      ```
 
-# Application and toolbox specific support pages
+## Application and toolbox specific support pages
 
 The following pages provide additional information for supported
 applications:

@@ -42,7 +42,7 @@ training events that would be of interest to your research community.
 
  
 
-### How to read your Subscriber Usage Report
+## How to read your Subscriber Usage Report
 
 A new tab is added to the report for each month, making it easy to view,
 reference, and compare recent and past usage.

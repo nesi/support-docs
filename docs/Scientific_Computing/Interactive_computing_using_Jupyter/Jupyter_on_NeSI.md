@@ -30,7 +30,7 @@ zendesk_section_id: 360001189255
      [Please contact us to request a suitable
      allocation.](https://support.nesi.org.nz/hc/en-gb/requests/new)
 
-# Introduction
+## Introduction
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
 [interactive
@@ -57,13 +57,13 @@ and workflows and much more.
          management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
          pages for adding kernels.
 
-# Accessing Jupyter on NeSI
+## Accessing Jupyter on NeSI
 
 Jupyter at NeSI is powered by [JupyterHub](https://jupyter.org/hub), a
 multi-user hub that spawns, manages and proxies multiple instances of
 the single-user Jupyter server.
 
-#### Access NeSI's JupyterHub here:
+### Access NeSI's JupyterHub here:
 
 <https://jupyter.nesi.org.nz>
 
@@ -80,7 +80,7 @@ GPUs available at NeSI.
      reload the browser window and check again, otherwise contact
      [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
 
-# Known issues
+## Known issues
 
 -   When using *srun* in a Jupyter terminal you may see messages like
     those shown below. The "error" messages are actually just warnings
@@ -96,9 +96,9 @@ GPUs available at NeSI.
     slurmstepd: error: Setting TMPDIR to /tmp
     ```
 
-# Jupyter user interface
+## Jupyter user interface
 
-## JupyterLab
+### JupyterLab
 
 Once your server has started you will be redirected to
 [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/). JupyterLab
@@ -108,7 +108,7 @@ If you would prefer to use the classic Notebook interface, then select
 "Launch Classic Notebook" from the JupyterLab Help menu, or change the
 URL from */lab* to */tree* once the server is running.
 
-## File systems
+### File systems
 
 Your Jupyter server will start in a new directory created within your
 home directory for that specific Jupyter job. Within that directory, you
@@ -118,7 +118,7 @@ you store files in this initial directory because next time you launch
 Jupyter you will be starting in a different directory, instead switch to
 one of your home, project or nobackup directories first.
 
-## Jupyter terminal
+### Jupyter terminal
 
 JupyterLab provides a terminal that can be an alternative means of
 gaining command line access to NeSI systems instead of using an SSH
@@ -129,7 +129,7 @@ client. Some things to note are:
 -   processes launched directly in the JupyterLab terminal will probably
     be killed when you Jupyter session times out
 
-# Ending your interactive session and logging out
+## Ending your interactive session and logging out
 
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
@@ -148,7 +148,7 @@ finished. Alternatively, you can cancel your Jupyter job by running
 Note this will make the page unresponsive as it now has no compute
 powering it.
 
-# Installing JupyterLab extensions
+## Installing JupyterLab extensions
 
 JupyterLab supports many extensions that enhance its functionality. At
 NeSI we package some extensions into the default JupyterLab environment.
@@ -161,7 +161,7 @@ about JupyterLab extensions can be found
 Check the extension's documentation to find out the supported
 installation method for that particular extension.
 
-## Installing prebuilt extensions 
+### Installing prebuilt extensions 
 
 If the extension is packaged as a prebuilt extension (e.g. as a pip
 package), then you can install it from the JupyterLab terminal by
@@ -179,7 +179,7 @@ can be installed with the following:
 $ pip install --user dask-labextension
 ```
 
-## Installing source extensions
+### Installing source extensions
 
 Installing source extensions requires a rebuild of the JupyterLab web
 application. Since this requires write permissions, you will need to set
@@ -223,7 +223,7 @@ $ export JUPYTERLAB_DIR=/nesi/project/<project_code>/$USER/jupyter/lab
 $ jupyter lab build
 ```
 
-# Log files
+## Log files
 
 The log file of a Jupyter server session is saved either in the project
 directory of the project you selected on the "Server Options" JupyterHub
@@ -233,7 +233,7 @@ the log file is hidden). If you encounter problems with your Jupyter
 session, the contents of this file can be a good first clue to debug the
 issue.
 
-# External documentation
+## External documentation
 
 -   [Jupyter](https://jupyter.readthedocs.io/en/latest/)
 -   [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/)

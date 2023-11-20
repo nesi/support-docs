@@ -28,7 +28,7 @@ command `sprio -u $USER`.
 
 Priority scores are determined by a number of factors:
 
-### 1) Quality of Service
+## 1) Quality of Service
 
 The "debug" Quality of Service can be gained by adding the `sbatch`
 command line option `--qos=debug`.  
@@ -75,7 +75,7 @@ NeSI.
 | Merit                | 40                        |
 | Commercial           | 40                        |
 
-###  
+
 
 ### 6) Nice values
 

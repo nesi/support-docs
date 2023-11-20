@@ -29,7 +29,7 @@ licensed by the Python Software Foundation. Each version is released
 under a specific open-source licence. The licences are available on [the
 Python documentation server](https://docs.python.org).
 
-# System Python vs Environment Modules
+## System Python vs Environment Modules
 
 Our operating systems include Python but not an up to date version, so
 we strongly recommend that you load one of our Python environment
@@ -37,7 +37,7 @@ modules instead.  They include optimised builds of the most popular
 Python packages for computational work such as *numpy*, *scipy*,
 *matplotlib*, and many more.
 
-## NeSI Customisations
+### NeSI Customisations
 
 Our most recent Python environment modules have:
 
@@ -49,7 +49,7 @@ Our most recent Python environment modules have:
     incompatible builds of the same version of Python don't attempt to
     share user-installed libraries.
 
-# Example scripts
+## Example scripts
 
 ``` bash
 #!/bin/bash -e
@@ -106,7 +106,7 @@ numbers it has, those numbers will then be gathered back to task 0,
 where the numbers will be summed and both the sum of, and the unsummed
 data is printed.
 
-### Multiprocessing Example
+#### Multiprocessing Example
 
 ``` sl
   #!/bin/bash -e
@@ -163,7 +163,7 @@ tutorial
 series](https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&index=1)
 helpful
 
-### Job Arrays
+#### Job Arrays
 
 Job arrays can be handled using the Slurm environment variable
 `SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
@@ -237,7 +237,7 @@ ARGS = get_args()
 print("hello world from ID {}".format(ARGS.my_id))
 ```
 
-# Python Packages
+## Python Packages
 
 Programmers around the world have written and released many packages for
 Python, which are not included with the core Python distribution and
@@ -252,7 +252,7 @@ module load Python/3.10.5-gimkl-2022a
 python -c "help('modules')"
 ```
 
-## Installing packages in your $HOME
+### Installing packages in your $HOME
 
 This is the simplest way to install additional packages, but you might
 fill your `$HOME` quota and cannot share installations with
@@ -272,7 +272,7 @@ environments](https://docs.python.org/3/library/venv.html) to isolate
 dependencies between projects, avoid filling your home space and being
 able to share installation with collaborators
 
-## Installing packages in a Python virtual environment
+### Installing packages in a Python virtual environment
 
 A Python virtual environment is lightweight system to create an
 environment which contains specific packages for a project, without
@@ -317,7 +317,7 @@ source /nesi/project/PROJECT_ID/my_venv/bin/activate
 python MyPythonScript.py
 ```
 
-## Python virtual environment isolation
+### Python virtual environment isolation
 
 By default, Python virtual environments are fully isolated from the
 system installation. It means that you will not be able to access
@@ -350,14 +350,14 @@ export PYTHONNOUSERSITE=1
 python MyPythonScript.py
 ```
 
-# Further notes
+## Further notes
 
-## iPython
+### iPython
 
 iPython (*i*nteractive *Python*) is an enhanced tool for accessing a
 Python command line. It is available in many NeSI Python modules.
 
-### Starting iPython
+#### Starting iPython
 
 To open an iPython console, simply run the `ipython` command:
 
@@ -366,7 +366,7 @@ To open an iPython console, simply run the `ipython` command:
 [jblo123@build-wm ~]$ ipython
 ```
 
-### Listing available functions
+#### Listing available functions
 
 You can use iPython to list the functions available that start with a
 given string. Please note that if the string denotes a module (i.e., it
@@ -396,7 +396,7 @@ os<TAB>
 and expect to see the methods and values provided by the os module - you
 have to put the full stop after the "os" if you want to do that.
 
-### Getting information about an object
+#### Getting information about an object
 
 In iPython, you can query any object by typing the object name followed
 by a question mark (?), then hitting Enter. For instance:
@@ -428,6 +428,6 @@ modules (`os.path?`). If you try to do it on something that isn't
 defined yet, Python will tell you that the object in question couldn't
 be found.
 
-### Quitting iPython
+#### Quitting iPython
 
 Just enter the `quit` command at the iPython prompt.

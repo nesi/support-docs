@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# WRF
+## WRF
 
 The Weather Research and Forecasting (WRF) Model is a next-generation
 mesoscale numerical weather prediction system designed for both
@@ -50,11 +50,11 @@ recommend to download these packages and build them by hand
 
  
 
-# WRF on Mahuika
+## WRF on Mahuika
 
  
 
-## Environment on Mahuika
+### Environment on Mahuika
 
 We'll use the Intel compiler and Intel MPI library. 
 
@@ -69,7 +69,7 @@ root directory. Hence we build those by hand.
 
  
 
-## Building WRF dependencies on Mahuika
+### Building WRF dependencies on Mahuika
 
 Copy-paste the commands below to build WRF on Mahuika:
 
@@ -153,7 +153,7 @@ that the compilation was successful. 
 
  
 
-## Running WRF on Mahuika
+### Running WRF on Mahuika
 
  
 
@@ -180,13 +180,13 @@ srun --output=real.log ./real.exe
 srun --output=wrf.log ./wrf.exe
 ```
 
-###  
+
 
  
 
-# WRF on Māui
+## WRF on Māui
 
-## Building WRF
+### Building WRF
 
 Load environment modules and set up the build environment (here we will
 build with the Intel compiler):
@@ -236,7 +236,7 @@ message saying compilation was successful. You could also check the
 timestamps of the executables in the *main* subdirectory
 (*main/wrf.exe*, *main/real.exe*, etc).
 
-## Running WRF
+### Running WRF
 
 An example Slurm script for running WRF on Māui, which can be submitted
 with *sbatch name\_of\_script.sl*:
@@ -261,7 +261,7 @@ srun --output=real.log ./real.exe
 srun --output=wrf.log ./wrf.exe
 ```
 
-### Parallel netCDF
+#### Parallel netCDF
 
 For some model configurations enabling parallel IO can be beneficial. By
 default WRF uses serial netCDF IO, which can be verified by looking in
@@ -272,7 +272,7 @@ to 11 will use parallel netCDF instead. It is also recommended (possibly
 required) to set *nocolons = .true.* in the *time\_control* section of
 the namelist when using parallel IO.
 
-## Building WPS
+### Building WPS
 
 Download WPS:
 
@@ -325,7 +325,7 @@ Now compile WPS:
 Check that the executables were successfully created: *geogrid.exe*,
 *ungrib.exe* and *metgrid.exe*.
 
-## Running WPS
+### Running WPS
 
 Both *geogrid* and *metgrid* are parallel applications and can be run on
 Māui compute nodes. However, *ungrib* is serial and should not be run on

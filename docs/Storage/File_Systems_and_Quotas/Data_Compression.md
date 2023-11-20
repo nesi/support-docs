@@ -26,7 +26,7 @@ zendesk_section_id: 360000033936
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Background
+## Background
 
 Spectrum Scale filesystems (previously GPFS) allow users to compress
 data (but not metadata) transparently on demand without the need to
@@ -51,12 +51,12 @@ ones might be added. It is possible to change algorithms at any time for
 any file (we will cover that further ahead) when the compression is
 requested.
 
-# Compression Methods
+## Compression Methods
 
 There are two methods for compressing and decompressing data:
 **on-demand** and **deferred**:
 
-## On-Demand (synchronous)
+### On-Demand (synchronous)
 
 **note:** *as at 2 May 2023, the \`mm\` commands are not available by
 default, contact <support@nesi.org.nz> for assistance*
@@ -76,9 +76,9 @@ partially, quota usage will increase. Be aware that if, in the process
 of decompression, the quota will be exceeded, an error message will be
 displayed
 
-##  
 
-## Deferred
+
+### Deferred
 
 This method (also using the `mmchattr` command) does not decompress or
 compress data immediately but, instead marks them for
@@ -90,9 +90,9 @@ by using the same command as above with one extra flag (`-I defer`).
 During this process, there is no change in space occupancy for any of
 the files involved.
 
-####  
 
-### How to process deferred tagged files
+
+#### How to process deferred tagged files
 
 Users can process compression/decompression on the tagged files via the
 `mmrestripefile` command (using `-z` flag).
@@ -103,7 +103,7 @@ Scanning FileA.txt
 Scan completed successfully.
 ```
 
-# States of a compressed file
+## States of a compressed file
 
 Compressed files on Scale filesystems can be in 4 different states
 depending on the extended attributes of the file when manipulated for
@@ -136,7 +136,7 @@ data to, becomes automatically `illcompressed` and either needs to be
 re-compressed using the `mmchattr --compression yes` command or the
 `mmrestripefile -z` one (because it's already tagged for compression).
 
-#### The different states
+### The different states
 
 -   **Uncompressed** and **untagged** for compression (default) - as
     shown for the file `FileA.txt` above.
@@ -162,7 +162,7 @@ re-compressed using the `mmchattr --compression yes` command or the
     complete the file will become uncompressed and untagged for
     compression.
 
-# Using different compression algorithms
+## Using different compression algorithms
 
 The default algorithm is the Zlib and will be shown on the misc
 attributes of a tagged file as “library z”. Depending on the Scale
@@ -175,7 +175,7 @@ Currently supported compression libraries are:
 -   lz4 Active, non-specific data. Favours access speed over compression
     efficiency.
 
-# Performance impacts
+## Performance impacts
 
 Experiments showed that I/O performance was definitely affected if a
 file was in a compressed state. The extent of the effect, however,

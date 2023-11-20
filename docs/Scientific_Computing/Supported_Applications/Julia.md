@@ -24,14 +24,14 @@ numerical computing, with performance comparable to traditional
 statically-typed languages. The Julia home page is
 at <https://julialang.org/>.
 
-# Licensing requirements
+## Licensing requirements
 
 The Julia language is (mostly) licensed under the MIT licence. For more
 details, including the full text of the licence and a list of
 exceptions,
 see <https://github.com/JuliaLang/julia/blob/master/LICENSE.md>.
 
-# Julia packages
+## Julia packages
 
 Besides the core Julia language and interpreter, a great deal of
 functionality is provided by Julia packages contributed by the Julia
@@ -39,7 +39,7 @@ developers and by third parties, or you can write your own packages.
 These packages are licensed separately from the main Julia software, so
 different terms and conditions may apply.
 
-## Installing Julia packages
+### Installing Julia packages
 
 Julia extensions, i.e. pieces of code that add functionality, are called
 *modules*, and for installation and management purposes modules are
@@ -141,7 +141,7 @@ using the command line, but the commands are the same within a script.
     Julia should chug away for a while, downloading and compiling
     various packages into the chosen directory.
 
-## Making Julia packages available at runtime
+### Making Julia packages available at runtime
 
 For some reason, Julia uses the `DEPOT_PATH` variable only to control
 where newly obtained packages are to be installed. The directories where
@@ -189,7 +189,7 @@ $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
      $ export JULIA_LOAD_PATH
      ```
 
-# Profiling Julia code
+## Profiling Julia code
 
 In addition to the Julia Profile module (see the [official
 documentation](https://docs.julialang.org/en/v1/manual/profile/)), it is
