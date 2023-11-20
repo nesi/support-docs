@@ -31,7 +31,7 @@ want to run a GPU. We'll use OpenACC, which adds directives to your
 source code. The advantages of OpenACC over other approaches is that the
 source code changes are generally small and your code remains portable,
 i.e. it will run on both CPU and GPU. The main disadvantage of OpenACC
-is that only a few compilers support it.
+is that only a few compilers support it. 
 
 More information about OpenACC can be found
 [here](http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf).
@@ -46,13 +46,13 @@ written in Fortran):
 #include <iostream>
 #include <cmath>
 int main() {
-double total = 0;
-int i, n = 1000000000;
+ double total = 0;
+ int i, n = 1000000000;
 #pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
-for (i = 0; i < n; ++i) {
-total += exp(sin(M_PI * (double) i/12345.6789));
-}
-std::cout << "total is " << total << '\n';
+ for (i = 0; i < n; ++i) {
+   total += exp(sin(M_PI * (double) i/12345.6789));
+ }
+ std::cout << "total is " << total << '\n';
 }
 ```
 
@@ -70,7 +70,7 @@ threads, the speedup can be significant. Also note that `total` is
 initialised on the CPU (above the pragma) and should be copied to the
 GPU and back to the CPU after completing the loop. (It is also possible
 to initialise this variable on the GPU.) Likewise the number of
-iterations `n` should be copied from the CPU  to the GPU.
+iterations `n` should be copied from the CPU  to the GPU. 
 
 ## Compile
 
@@ -89,13 +89,13 @@ but first we need to load a few modules:
 
 ``` sl
 module load craype-broadwell
-module load cray-libsci_acc
-module load craype-accel-nvidia60
+module load cray-libsci_acc 
+module load craype-accel-nvidia60 
 module load PrgEnv-cray
 ```
 
 (Ignore warning "cudatoolkit &gt;= 8.0 is required"). Furthermore, you
-may need to load `cuda/fft` or `cuda/blas`
+may need to load `cuda/fft` or `cuda/blas`  
 
 To compare the execution times between the CPU and GPU version, we build
 two executables:
@@ -125,7 +125,7 @@ time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 | total       | 7.6        |
 | totalAccGpu | 0.41       |
 
-
+ 
 
 Check out [this
 page](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)

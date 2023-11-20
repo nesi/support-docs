@@ -29,17 +29,17 @@ zendesk_section_id: 360000189716
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Requirements
--   Have an [active account and
-project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
 Find more information on the different types of directories
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
 
-
+ 
 
 ## Using the Jupyter interface
 
-
+ 
 
 Many users have found the [Jupyter
 interface](https://support.nesi.org.nz/hc/en-gb/articles/360001555615-Jupyter-on-NeSI)
@@ -47,7 +47,7 @@ very useful for running code on NeSI. The Jupyter interface only
 requires a web browser; the instructions are same whether your are
 connecting from a Windows, Mac or a Linux computer.
 
-To upload a file, click on the
+To upload a file, click on the 
 
 ![](../../assets/images/Moving_files_to_and_from_the_cluster.png)
 
@@ -60,9 +60,9 @@ right-click on the file to see the menu below,
 
 The Download button is at the bottom.
 
+ 
 
-
-
+ 
 
 ## Standard Terminal
 
@@ -83,14 +83,14 @@ Move a file from Mahuika to your local machine.
 scp mahuika:<path/filename> <path/filename>
 ```
 !!! prerequisite Note
--   This will only work if you have set up aliases as described in
-[Terminal
-Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
--   As the terms 'maui' and 'mahuika' are defined locally, the above
-commands *only works when using a local terminal* (i.e. not on
-Mahuika).
--   If you are using Windows subsystem, the root paths are different
-as shown by Windows. e.g. `C:` is located at `/mnt/c/`
+     -   This will only work if you have set up aliases as described in
+         [Terminal
+         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
+     -   As the terms 'maui' and 'mahuika' are defined locally, the above
+         commands *only works when using a local terminal* (i.e. not on
+         Mahuika).
+     -   If you are using Windows subsystem, the root paths are different
+         as shown by Windows. e.g. `C:` is located at `/mnt/c/`
 
 `scp` stands for Secure CoPy and operates in a similar way to regular cp
 with the source file as the left term and destination on the right.
@@ -99,7 +99,7 @@ These commands make use of *multiplexing, *this means that if you
 already have a connection to the cluster you will not be prompted for
 your password.
 
-### File Managers
+### File Managers 
 
 Most file managers can be used to connect to a remote directory simply
 by typing in the address bar (provided your have an active connection to
@@ -143,7 +143,7 @@ authentication.
 ## Globus
 
 Globus is available for those with large amounts of data, security
-concerns, or connection consistency issues.
+concerns, or connection consistency issues.  
 You can find more details on its use on our [Globus support
 page](https://support.nesi.org.nz/hc/en-gb/articles/4405623380751-Data-Transfer-using-Globus-V5).
 
@@ -161,30 +161,30 @@ rclone subcommand options source:path dest:path
 The most frequently used Rclone subcommands:
 
 -   **rclone copy** – Copy files from the source to the destination,
-skipping what has already been copied.
+    skipping what has already been copied.
 -   **rclone sync** – Make the source and destination identical,
-modifying only the destination.
+    modifying only the destination.
 -   **rclone mov**e – Move files from the source to the destination.
 -   **rclone delete** – Remove the contents of a path.
 -   **rclone mkdir** – Create the path if it does not already exist.
 -   **rclone rmdir** – Remove the path.
 -   **rclone check** – Check if the files in the source and destination
-match.
+    match.
 -   **rclone ls** – List all objects in the path, including size and
-path.
+    path.
 -   **rclone lsd** – List all directories/containers/buckets in the
-path.
+    path.
 -   **rclone lsl** – List all objects in the path, including size,
-modification time and path.
+    modification time and path.
 -   **rclone lsf** – List the objects using the virtual directory
-structure based on the object names.
+    structure based on the object names.
 -   **rclone cat** – Concatenate files and send them to stdout.
 -   **rclone copyto** – Copy files from the source to the destination,
-skipping what has already been copied.
+    skipping what has already been copied.
 -   **rclone moveto** – Move the file or directory from the source to
-the destination.
+    the destination.
 -   **rclone copyurl** – Copy the URL's content to the destination
-without saving it in the tmp storage.
+    without saving it in the tmp storage.
 
 A more extensive list can be found on the the [Rclone
 documentation](https://rclone.org/docs).
@@ -192,15 +192,15 @@ documentation](https://rclone.org/docs).
 ## Rsync
 
 Rsync is an utility that provides fast incremental file transfer and
-efficient file synchronization between a computer and a storage disk.
-The basic command syntax of:
+efficient file synchronization between a computer and a storage disk.  
+The basic command syntax of:  
 
 ``` sl
 rsync -options source target
 ```
 
 If the data source or target location is a remote site, it is defined
-with syntax:
+with syntax:  
 
 ``` sl
 userame@server:/path/in/server
@@ -210,8 +210,8 @@ The most frequently used Rsync options:
 
 -   **-r**                         Recurse into directories
 -   **-a **                       Use archive mode: copy files and
-directories recursively and preserve access permissions and time
-stamps.
+    directories recursively and preserve access permissions and time
+    stamps.
 -   **-v**                        Verbose mode.
 -   **-z**                        Compress
 -   **-e ssh**                 Specify the remote shell to use.
@@ -222,3 +222,4 @@ stamps.
 A more extensive list can be found on the the [Rsync
 documentation](https://download.samba.org/pub/rsync/rsync.1).
 
+ 

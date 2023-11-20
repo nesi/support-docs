@@ -110,9 +110,9 @@ gjf_template="${system}.gjf.template"
 # Prepare a job-specific nobackup directory and set GAUSS_SCRDIR accordingly
 if [[ -n "${SLURM_ARRAY_TASK_COUNT}" && "${SLURM_ARRAY_TASK_COUNT}" -gt 1 ]]
 then
-job_code="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
+        job_code="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
 else
-job_code="${SLURM_JOB_ID}"
+        job_code="${SLURM_JOB_ID}"
 fi
 export GAUSS_SCRDIR="/nesi/nobackup/${SLURM_JOB_ACCOUNT}/mahuika_job_${job_code}"
 /usr/bin/mkdir -p "${GAUSS_SCRDIR}"
@@ -120,27 +120,27 @@ export GAUSS_SCRDIR="/nesi/nobackup/${SLURM_JOB_ACCOUNT}/mahuika_job_${job_code}
 # Calculate the number of CPUs to use within Gaussian
 if [[ -n "${SLURM_CPUS_PER_TASK}" ]]
 then
-gaussian_ncpus="${SLURM_CPUS_PER_TASK}"
+        gaussian_ncpus="${SLURM_CPUS_PER_TASK}"
 else
-gaussian_ncpus=1
+        gaussian_ncpus=1
 fi
 
 # Calculate the amount of memory to use within Gaussian
 # That is, amount of memory requested of Slurm minus 2 GB
 if [[ -n "${SLURM_MEM_PER_NODE}" && "${SLURM_MEM_PER_NODE}" -ge 4096 ]]
 then
-gaussian_memory=$((${SLURM_MEM_PER_NODE} - 2048))
+        gaussian_memory=$((${SLURM_MEM_PER_NODE} - 2048))
 else
-/usr/bin/echo "Error: Not enough RAM requested (${SLURM_MEM_PER_NODE})." >&2
-/usr/bin/echo "       Please set \"#SBATCH --mem\" to at least 4096 MB." >&2
-exit 2
+        /usr/bin/echo "Error: Not enough RAM requested (${SLURM_MEM_PER_NODE})." >&2
+        /usr/bin/echo "       Please set \"#SBATCH --mem\" to at least 4096 MB." >&2
+        exit 2
 fi
 
 gjf_working_copy="${GAUSS_SCRDIR}/${system}.gjf"
 gaussian_checkpoint="${GAUSS_SCRDIR}/${system}.chk"
 /usr/bin/sed -e "s/<<NUMBER_OF_CORES>>/${gaussian_ncpus}/" "${gjf_template}" | \
-/usr/bin/sed -e "s/<<MEMORY>>/${gaussian_memory}/" | \
-/usr/bin/sed -e "s:<<CHECKPOINT_FILE>>:${gaussian_checkpoint}:" > "${gjf_working_copy}"
+        /usr/bin/sed -e "s/<<MEMORY>>/${gaussian_memory}/" | \
+        /usr/bin/sed -e "s:<<CHECKPOINT_FILE>>:${gaussian_checkpoint}:" > "${gjf_working_copy}"
 
 srun g09 < "${gjf_working_copy}"
 ```
@@ -182,13 +182,13 @@ submission script.
 The key properties are `%NProcShared` and `%Mem`:
 
 -   `%NProcShared` should be set to the number of CPU cores you intend
-to use, matching the value of the `-c` or `--cpus-per-task`
-directive in the Slurm job file.
+    to use, matching the value of the `-c` or `--cpus-per-task`
+    directive in the Slurm job file.
 -   `%Mem` should be set to the amount of memory you intend to use. It
-should be about 2 GB (2,048 MB) less than the value of `--mem` in
-the Slurm job submission script. Note that `--mem` is interpreted as
-being in MB rather than GB unless otherwise specified (i.e., with a
-"G" on the end).
+    should be about 2 GB (2,048 MB) less than the value of `--mem` in
+    the Slurm job submission script. Note that `--mem` is interpreted as
+    being in MB rather than GB unless otherwise specified (i.e., with a
+    "G" on the end).
 
 If you use the example Slurm script and template gjf file provided above
 (with appropriate modifications for your chemical system and desired

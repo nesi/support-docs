@@ -66,7 +66,7 @@ node at the same time.
 
 module load GROMACS/5.1.4-intel-2017a
 
-# Prepare the binary input from precursor files
+# Prepare the binary input from precursor files 
 srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
 
 # Run the simulation
@@ -95,9 +95,9 @@ checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
 If you run GROMACS on a node that is simultaneously running other jobs
 (even other GROMACS jobs), you may see warnings like this in your
 output:
-WARNING: In MPI process #0: Affinity setting failed. This can cause
-performance degradation! If you think your setting are correct,
-contact the GROMACS developers.
+     WARNING: In MPI process #0: Affinity setting failed. This can cause
+     performance degradation! If you think your setting are correct,
+     contact the GROMACS developers.
 
 One way to prevent these warnings, which is also useful for reducing the
 risk of inefficient CPU usage, is to request entire nodes. On the
@@ -105,22 +105,22 @@ Mahuika cluster, this can be done using the following lines in your
 input, altered as appropriate:
 
 -   Using MPI parallelisation and hyperthreading, but no OpenMP
-parallelisation:
+    parallelisation:
 
 ``` bash
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 72   # Must be 72
-# (the number of logical cores per node)
+                               # (the number of logical cores per node)
 #SBATCH --cpus-per-task   1    # Must be 1
 ```
 
 -   Using MPI parallelisation with neither hyperthreading nor OpenMP
-parallelisation:
+    parallelisation:
 
 ``` bash
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 36   # Must be 36
-# (the number of physical cores per node)
+                               # (the number of physical cores per node)
 #SBATCH --cpus-per-task   1    # Must be 1
 #SBATCH --hint=nomultithread   # Don't use hyperthreading
 ```
@@ -131,7 +131,7 @@ parallelisation:
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 1    # Must be 1
 #SBATCH --cpus-per-task   72   # Must be 72
-# (the number of logical cores per node)
+                               # (the number of logical cores per node)
 ```
 
 -   Using hybrid (OpenMP + MPI) parallelisation but not hyperthreading:
@@ -140,7 +140,7 @@ parallelisation:
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 1    # Must be 1
 #SBATCH --cpus-per-task   36   # Must be 36
-# (the number of physical cores per node)
+                               # (the number of physical cores per node)
 #SBATCH --hint=nomultithread   # Don't use hyperthreading
 ```
 
@@ -151,7 +151,7 @@ by using `-ntomp ${SLURM_CPUS_PER_TASK}`. Hybrid parallelisation can be
 more efficient than MPI-only parallelisation, as within the same node
 there is no need for inter-task communication.
 
-
+ 
 
 **NOTE** on using GROMACS on Māui:
 

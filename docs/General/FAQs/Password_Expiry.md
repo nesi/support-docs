@@ -24,9 +24,9 @@ that happens is
 
 ``` sl
 Password expired. Change your password now.
-First Factor (Current Password):
-Second Factor (optional):
-Login Password:
+First Factor (Current Password): 
+Second Factor (optional): 
+Login Password: 
 ```
 
 however passwords can not be reset this way, instead you should [reset

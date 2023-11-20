@@ -102,7 +102,7 @@ export SINGULARITY_CACHEDIR=/path/to/somewhere/else/with/lots/of/space
 singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
 ```
 
-
+ 
 
 ## Lambda Stack via Slurm
 
@@ -125,7 +125,7 @@ module purge
 module load Singularity
 
 # for convenience store the singularity command in an environment variable
-# feel free to add additional binds if you need them
+# feel free to add additional binds if you need them 
 SINGULARITY="singularity exec --nv -B ${PWD} ${SIF}"
 
 # run a command in the container
@@ -151,7 +151,7 @@ export SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
 # create a jupyter kernel using the Python within the Singularity image
 singularity exec -B $HOME $SIF python -m ipykernel install --user \
---name lambdastack --display-name="Lambda Stack Python 3"
+        --name lambdastack --display-name="Lambda Stack Python 3"
 ```
 
 If successful this should report that a kernelspec has been installed.
@@ -179,7 +179,7 @@ module load Singularity
 homefull=$(readlink -e $HOME)
 
 # for convenience store the singularity command in an environment variable
-# feel free to add additional binds if you need them
+# feel free to add additional binds if you need them 
 SINGULARITY="singularity exec --nv -B ${HOME},${homefull},${PWD} ${SIF}"
 
 # run a command in the container
@@ -278,12 +278,12 @@ BENCH_SCRIPT=transformers/examples/pytorch/benchmarking/run_benchmark.py
 
 # run the benchmarks
 python ${BENCH_SCRIPT} --no_multi_process --training --no_memory \
---save_to_csv --env_print \
---models bert-base-cased bert-large-cased \
-bert-large-uncased gpt2 \
-gpt2-large gpt2-xl \
---batch_sizes 8 \
---sequence_lengths 8 32 128 512
+                       --save_to_csv --env_print \
+                       --models bert-base-cased bert-large-cased \
+                                bert-large-uncased gpt2 \
+                                gpt2-large gpt2-xl \
+                       --batch_sizes 8 \
+                       --sequence_lengths 8 32 128 512
 ```
 
 Now create a Slurm script that will launch the job, names
@@ -322,7 +322,8 @@ Submit this job to Slurm and then wait for the benchmarks to run:
 sbatch run-benchmark-torch.sl
 ```
 
+ 
 
+ 
 
-
-
+ 

@@ -22,8 +22,8 @@ zendesk_section_id: 360000030876
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Important
-Partitions on these systems that may be used for NeSI workloads carry
-the prefix **nesi\_**.
+     Partitions on these systems that may be used for NeSI workloads carry
+     the prefix **nesi\_**.
 
 
 
@@ -138,7 +138,7 @@ nodes.
 
 ## Māui\_Ancil (CS500) Slurm Partitions
 
-
+ 
 
 <table style="height: 242px; width: 850px;">
 <colgroup>
@@ -254,3 +254,4 @@ See [GPU use on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) for
 more details about Slurm and CUDA settings.
 
+ 

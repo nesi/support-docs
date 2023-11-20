@@ -116,7 +116,7 @@ After *submit*ting, MAP will wait until the job is allocated, connect to
 the processes, run the program, gather all the data and present the
 profile information.
 
-
+ 
 
 ## MAP Profile
 

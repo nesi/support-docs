@@ -50,11 +50,11 @@ or more threads. All of a task's threads must run within the same node.
 ## General Limits
 
 -   No individual job can request more than 20,000 CPU hours. This has
-the consequence that a job can request more CPUs if it is shorter
-(short-and-wide vs long-and-skinny).
+    the consequence that a job can request more CPUs if it is shorter
+    (short-and-wide vs long-and-skinny).
 -   No individual job can request more than 576 CPUs (8 full nodes),
-since larger MPI jobs are scheduled less efficiently and are
-probably suitable for running on Māui.
+    since larger MPI jobs are scheduled less efficiently and are
+    probably suitable for running on Māui.
 -   No user can have more than 1,000 jobs in the queue at a time.
 
 These limits are defaults and can be altered on a per-account basis if
@@ -89,7 +89,7 @@ E.g.:
 sbatch: "bigmem" is not the most appropriate partition for this job, which would otherwise default to "large". If you believe this is incorrect then please contact support@nesi.org.nz and quote the Job ID number.
 ```
 
-
+ 
 
 <table style="width: 950px; height: 460px;">
 <colgroup>
@@ -148,7 +148,7 @@ partition.</p></td>
 <td style="width: 88.328125px; height: 51px"><p>milan</p></td>
 <td style="width: 95.34375px; height: 51px"><p>7 days</p></td>
 <td style="width: 54.203125px; height: 51px"><p>56<br />
-8</p></td>
+ 8</p></td>
 <td style="width: 96.34375px; height: 51px"><p>256<br />
 256</p></td>
 <td style="width: 138.484375px; height: 51px"><p> </p></td>
@@ -235,10 +235,10 @@ Nodes</a>. See below for more info.</p></td>
 
 \*\*\* 1 NVIDIA Tesla A100 PCIe 40GB card divided into [7 MIG GPU
 slices](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/)
-(5GB each).
+(5GB each). 
 
 \*\*\*\* NVIDIA Tesla A100 80GB, on a HGX baseboard with NVLink
-GPU-to-GPU interconnect between the 4 GPUs
+GPU-to-GPU interconnect between the 4 GPUs  
 
 ## Quality of Service
 
@@ -281,14 +281,14 @@ more details about Slurm and CUDA settings.
 
 -   There is a per-project limit of 6 GPUs being used at a time.
 -   There is also a per-project limit of 360 GPU-hours being allocated
-to running jobs. This reduces the number of GPUs available for
-longer jobs, so for example you can use 8 GPUs at a time if your
-jobs run for a day, but only two GPUs if your jobs run for a week.
-The intention is to guarantee that all users can get short debugging
-jobs on to a GPU in a reasonably timely manner.
+    to running jobs. This reduces the number of GPUs available for
+    longer jobs, so for example you can use 8 GPUs at a time if your
+    jobs run for a day, but only two GPUs if your jobs run for a week.
+    The intention is to guarantee that all users can get short debugging
+    jobs on to a GPU in a reasonably timely manner.  
 -   Each GPU job can use no more than 64 CPUs.  This is to ensure that
-GPUs are not left idle just because their node has no remaining free
-CPUs.
+    GPUs are not left idle just because their node has no remaining free
+    CPUs.
 -   There is a limit of one A100-1g.5gb GPU job per user.
 
 ### Accessing A100 GPUs in the `hgx` partition
@@ -299,11 +299,11 @@ connected via
 [NVLink](https://www.nvidia.com/en-us/data-center/nvlink/)):
 
 -   Explicitly specify the partition to access them, with
-`--partition=hgx`.
+    `--partition=hgx`.
 -   Hosting nodes are Milan nodes. Check the [dedicated support
-page](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471)
-for more information about the Milan nodes' differences from
-Mahuika's Broadwell nodes.
+    page](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471)
+    for more information about the Milan nodes' differences from
+    Mahuika's Broadwell nodes.
 
 ## Mahuika Infiniband Islands
 

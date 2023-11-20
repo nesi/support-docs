@@ -32,7 +32,7 @@ Most New Zealand universities and Crown Research Institutes are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
 but many other institutions, including private sector organisations and
-most central and local government agencies, are not.
+most central and local government agencies, are not. 
 
 See also [Creating a NeSI Account
 Profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)
@@ -42,7 +42,7 @@ Profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)
 In case your organisation is not part of the Tuakiri federated identity
 management service, a user can still [request a NeSI Account
 profile.](https://my.nesi.org.nz/html/request_nesi_account) NeSI will
-(if approved) provision a so-called "virtual home account" on Tuakiri.
+(if approved) provision a so-called "virtual home account" on Tuakiri. 
 
 See also [Account Requests for non-Tuakiri
 Members](https://support.nesi.org.nz/hc/en-gb/articles/360000216035)
@@ -84,7 +84,7 @@ value of your auEduPersonSharedToken as proffered by your institution's
 identity provision service and its value as recorded in the NeSI
 database (more common), you will not be able to log in to My NeSI. If
 you cannot log in, please raise a support ticket with your institutions
-IT support.
+IT support.  
 For troubleshooting the support team may ask you for a PDF of your
 Tuakiri attributes. Tuakiri does not include your password in the
 attribute printout and there is no security risk involved in providing a

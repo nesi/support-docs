@@ -63,8 +63,8 @@ and give the volume a sensible name:
 # create a mount point and connect
 mkdir -p ~/mahuika-home
 sshfs mahuika: ~/mahuika-home \
--oauto_cache,follow_symlinks \
--ovolname=MahuikaHome,defer_permissions,noappledouble,local
+    -oauto_cache,follow_symlinks \
+    -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
 ```
 
 To unmount the directory on MacOS, either eject from Finder or run:
@@ -73,5 +73,5 @@ To unmount the directory on MacOS, either eject from Finder or run:
 umount ~/mahuika-home
 ```
 !!! prerequisite Note
-Newer MacOS does not come with SSHFS pre installed. You will have to
-install FUSE as SSHFS from [here](https://osxfuse.github.io/).
+     Newer MacOS does not come with SSHFS pre installed. You will have to
+     install FUSE as SSHFS from [here](https://osxfuse.github.io/).

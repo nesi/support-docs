@@ -48,7 +48,7 @@ your project's [fair share
 score](https://support.nesi.org.nz/hc/en-gb/articles/360000743536) is
 likely to suffer.  Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
-not.
+not. 
 
 <table style="width: 646px;">
 <colgroup>
@@ -132,7 +132,7 @@ jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
 !!! prerequisite Examples
-[Multithreading
-Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
-[MPI
-Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)
+     [Multithreading
+     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
+     [MPI
+     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)

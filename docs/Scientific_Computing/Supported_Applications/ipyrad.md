@@ -40,8 +40,8 @@ GPLv3
 ### Getting Started
 
 Following **example** uses  rad\_example which can be downloaded as per
-instructions on
-<https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html>
+instructions on 
+<https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html> 
 
 ``` sl
 $ curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz
@@ -62,7 +62,7 @@ New file 'params-data1.txt' created in ........
 
 `params-data1.txt` will be created on current working directory. Review
 and edit the paths in parameter file to match the destinations of input
-data, barcode paths,etc.
+data, barcode paths,etc. 
 
 ### Slurm Script for Using Multiple CPUs a Single Compute Node
 
@@ -93,6 +93,6 @@ cd $jobdir
 
 
 ## call ipyrad on your params file and perform 7 steps from the workflow
-srun ipyrad -p $params -s 12 --force
+srun ipyrad -p $params -s 12 --force 
 
 ```

@@ -41,17 +41,17 @@ ssh to these nodes after logging onto the NeSI lander node.
 ## Notes
 
 1.  The Cray Programming Environment on Mahuika, differs from that on
-Māui.
+    Māui.
 2.  The `/home, /nesi/project`, and `/nesi/nobackup`
-[filesystems](https://support.nesi.org.nz/hc/en-gb/articles/360000177256)
-are mounted on Mahuika.
+    [filesystems](https://support.nesi.org.nz/hc/en-gb/articles/360000177256)
+    are mounted on Mahuika.
 3.  Read about how to compile and link code on Mahuika in section
-entitled: [Compiling software on
-Mahuika.](https://support.nesi.org.nz/hc/en-gb/articles/360000329015)
+    entitled: [Compiling software on
+    Mahuika.](https://support.nesi.org.nz/hc/en-gb/articles/360000329015)
 4.  An extension to Mahuika with additional, upgraded resources is also
-available. see [Milan Compute
-Nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes)
-for details on access
+    available. see [Milan Compute
+    Nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes)
+    for details on access
 
 ## Mahuika HPC Cluster (Cray CS400)
 
@@ -149,7 +149,7 @@ Rocky 8.5 on Milan</span></p></td>
 </tbody>
 </table>
 
-
+ 
 
 ##  Storage (IBM ESS)
 
@@ -163,5 +163,6 @@ Scratch and persistent storage are accessible from Mahuika, as well as
 from Māui and the ancillary nodes. Offline storage will in due course be
 accessible indirectly, via a dedicated service.
 
+ 
 
-
+ 

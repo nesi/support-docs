@@ -29,7 +29,7 @@ opt-out). The [support.nesi.org.nz](https://support.nesi.org.nz)
 homepage shows current incidents and upcoming scheduled events (based on
 status.nesi.org.nz).
 
-
+ 
 
 ## How to manage your subscription to notifications
 
@@ -46,7 +46,7 @@ preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)
 ## status.nesi.org.nz
 
 NeSI does publish service incidents and scheduled maintenance via
-[status.nesi.org.nz](https://status.nesi.org.nz).
+[status.nesi.org.nz](https://status.nesi.org.nz).   
 Interested parties are invited to subscribe to updates (via SMS or
 email).
 

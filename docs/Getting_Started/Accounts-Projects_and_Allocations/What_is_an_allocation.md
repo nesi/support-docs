@@ -83,11 +83,11 @@ is two
 details). Therefore:
 
 -   the lowest possible price for a CPU-only job is 0.70 compute units
-per hour, plus memory (RAM).
+    per hour, plus memory (RAM).
 -   the lowest possible price for a CPU + P100 GPU job is 7.70 compute
-units per hour, plus memory (RAM).
+    units per hour, plus memory (RAM).
 -   the lowest possible price for a CPU + A100 GPU job is 18.70 compute
-units per hour, plus memory (RAM).
+    units per hour, plus memory (RAM).
 
 In reality, every job must request at least some RAM.
 
@@ -140,3 +140,4 @@ scientific programming expertise to your project.
 We do not yet have a ratio of consultancy hours to Mahuika compute
 units.
 
+ 

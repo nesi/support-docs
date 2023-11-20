@@ -52,7 +52,7 @@ ncdump: /path/to/file.nc: NetCDF: HDF error
 or
 
 ``` sl
-Error in EM_FOPEN: NetCDF: HDF error - /path/to/file.nc
+Error in EM_FOPEN: NetCDF: HDF error - /path/to/file.nc 
 ```
 
 or
@@ -86,6 +86,6 @@ application.
 For more information see:
 
 -   [Design -File Locking under SWMR in
-HDF5](https://support.hdfgroup.org/HDF5/docNewFeatures/SWMR/Design-HDF5-FileLocking.pdf)
+    HDF5](https://support.hdfgroup.org/HDF5/docNewFeatures/SWMR/Design-HDF5-FileLocking.pdf)
 -   [release notes, where mechanism for disabling file locking was
-introduced](https://support.hdfgroup.org/ftp/HDF5/releases/ReleaseFiles/hdf5-1.10.1-RELEASE.txt)
+    introduced](https://support.hdfgroup.org/ftp/HDF5/releases/ReleaseFiles/hdf5-1.10.1-RELEASE.txt)

@@ -30,7 +30,7 @@ accessible through the command line if you are logged in through
 Jupyter.
 
 ``` sl
-jupyter nbconvert --to script my_notebook.ipynb
+jupyter nbconvert --to script my_notebook.ipynb 
 ```
 
 will create a new python script called `my_notebook.py`.
@@ -44,7 +44,7 @@ This option might be less convenient as the exporter saves the python
 file to your local computer, meaning you will have to drag it back into
 the file explorer in Jupyter from your downloads folder.
 
-
+ 
 
 This script can then be run as a regular python script as described in
 our [Python](https://support.nesi.org.nz/hc/en-gb/articles/207782537)

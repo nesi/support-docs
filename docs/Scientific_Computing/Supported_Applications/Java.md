@@ -75,7 +75,7 @@ Java us the \`module\` command to find and load for example:
 $ module spider Java
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
-Java Platform, Standard Edition (Java SE) lets you develop and deploy
+Java Platform, Standard Edition (Java SE) lets you develop and deploy 
 Java applications on desktops and servers.
 
 Versions:
@@ -107,12 +107,13 @@ given the option `-Djava.io.tmpdir=$TMPDIR.`  TMPDIR is automatically
 removed at the end of the job.
 
 -   If you run your Java program by using the `java` command, that is in
-a form like
-`java <java_options> java.program <specific_program_options>`, you
-can specify the tmpdir as follows:
-`java -Djava.io.tmpdir=$TMPDIR <other_java_options> java.program <specific_program_options>`.
+    a form like
+    `java <java_options> java.program <specific_program_options>`, you
+    can specify the tmpdir as follows:
+    `java -Djava.io.tmpdir=$TMPDIR <other_java_options> java.program <specific_program_options>`.
 -   If your Java program is called indirectly, or is pre-wrapped, you
-will need to put the following line in your job submission script
-before calling the Java program:
-`export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}`.
+    will need to put the following line in your job submission script
+    before calling the Java program:
+    `export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}`.
 
+ 

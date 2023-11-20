@@ -23,7 +23,7 @@ NeSI's national platform facilities are connected to the
 [REANNZ](https://www.reannz.co.nz/) network, Aotearoa's high-performance
 national digital network (or NREN). This national network supports
 collaboration and contributions to data-intensive and complex science
-and research initiatives in New Zealand and across the globe.
+and research initiatives in New Zealand and across the globe. 
 
 ## How to verify the status of external (wide area network - WAN) connectivity for NeSI
 
@@ -47,5 +47,6 @@ view of specific addresses, e.g.:
 
 <https://weathermap.reannz.co.nz/index.php?src=red07>
 
+ 
 
-
+ 

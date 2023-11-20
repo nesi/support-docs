@@ -20,14 +20,14 @@ zendesk_section_id: 360000040056
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Start simple
-The technique explained in this page should be considered **after**
-trying simpler single node options (e.g.  [Dask Distributed
-LocalCluster](https://docs.dask.org/en/stable/deploying-python.html)),
-if
--   you need more cores than what is available on a single node,
--   or your queuing time is too long.
-Note that using MPI to distribute computations on multiple nodes can
-have an impact on performances, compared to a single node setting.
+     The technique explained in this page should be considered **after**
+     trying simpler single node options (e.g.  [Dask Distributed
+     LocalCluster](https://docs.dask.org/en/stable/deploying-python.html)),
+     if
+     -   you need more cores than what is available on a single node,
+     -   or your queuing time is too long.
+     Note that using MPI to distribute computations on multiple nodes can
+     have an impact on performances, compared to a single node setting.
 
 [Dask](https://dask.org/) is a popular Python package for parallelising
 workflows. It can use a variety of parallelisation backends, including
@@ -78,19 +78,19 @@ request mpi4py with the Intel MPI distribution as follows:
 ``` sl
 name: myenvironment
 channels:
-- myfavouritechannel
-- intel
+  - myfavouritechannel
+  - intel
 dependencies:
-- mypackage
-- anotherpackage
-- intel::mpi4py
-- dask-mpi
+  - mypackage
+  - anotherpackage
+  - intel::mpi4py
+  - dask-mpi
 ```
 !!! prerequisite See also
-See the
-[Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
-page for more information on how to create and manage Miniconda
-environments on NeSI.
+     See the
+     [Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
+     page for more information on how to create and manage Miniconda
+     environments on NeSI.
 
 ## Configuring Slurm
 
@@ -102,7 +102,7 @@ then assigns different roles to the different ranks:
 
 -   Rank 0 becomes the scheduler that coordinates work and communication
 -   Rank 1 becomes the worker that executes the main Python program and
-hands out workloads
+    hands out workloads
 -   Ranks 2 and above become additional workers that run workloads
 
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
@@ -116,7 +116,7 @@ a short test workload with and without hyperthreading.
 In the following, two cases will be discussed:
 
 1.  The worker ranks use little memory and they do not use
-parallelisation themselves
+    parallelisation themselves
 2.  The worker ranks use a lot of memory and/or parallelisation
 
 Note that Slurm will place different MPI ranks on different nodes on the
@@ -185,10 +185,10 @@ dm.initialize(local_directory=os.getcwd())
 
 # Define two simple test functions
 def inc(x):
-return x + 1
+    return x + 1
 
 def add(x, y):
-return x + y
+    return x + y
 
 client = dd.Client()
 
@@ -247,9 +247,9 @@ While it is impossible to cover every possible scenario, the following
 guidelines should help with configuring the container correctly.
 
 1.  Make sure that the Intel MPI version of the "mpi4py" package is
-installed with Dask-MPI
+    installed with Dask-MPI
 2.  The correct version of Python and the Intel MPI distribution need to
-be loaded at runtime.
+    be loaded at runtime.
 
 Here is an example of a minimal Singularity container definition file:
 
@@ -258,22 +258,22 @@ Bootstrap: docker
 From: continuumio/miniconda3:latest
 
 %post
-conda install -y -n base -c intel mpi4py
-conda install -y -n base -c conda-forge dask-mpi
+    conda install -y -n base -c intel mpi4py
+    conda install -y -n base -c conda-forge dask-mpi
 
 %runscript
-. $(conda info --base)/etc/profile.d/conda.sh
-conda activate base
-python "$@"
+    . $(conda info --base)/etc/profile.d/conda.sh
+    conda activate base
+    python "$@"
 ```
 
 where the `%runscript` section ensures that the Python script passed to
 `singularity run` is executed using the Python interpreter of the base
 Conda environment inside the container.
 !!! prerequisite Tips
-You can build this container on NeSI, using the Mahuika Extension
-nodes, following the instructions from the [dedicated support
-page](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
+     You can build this container on NeSI, using the Mahuika Extension
+     nodes, following the instructions from the [dedicated support
+     page](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
 
 ### Slurm configuration
 

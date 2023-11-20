@@ -45,9 +45,9 @@ documentation](https://cylc.github.io/documentation/) for more elaborate
 examples, including some with a cycling (repeated) graph pattern. One of
 the strengths of Cylc is that simple workflows can be executed simply
 while allowing for very complex workflows, with thousands of tasks,
-which may be repeated ad infinitum.
+which may be repeated ad infinitum. 
 
-
+ 
 
 ## SSH configuration
 
@@ -58,16 +58,16 @@ cluster without prompting for a passphrase (all HPC nodes see the same
 filesystem, so this is easy):
 
 -   run **`ssh-keygen`** to generate a public/private key pair with **no
-passphrase** (when it asks for a passphrase, just hit enter)
+    passphrase** (when it asks for a passphrase, just hit enter)
 -   add your own public key to your authorized keys
-file: **`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`**
+    file: **`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`** 
 -   check that your **keys, authorized\_keys file, ssh
-directory, **and** home directory** all have sufficiently secure
-file permissions. If not, `ssh` will silently revert to requiring
-password entry. See for
-example <https://www.frankindev.com/2020/11/26/permissions-for-.ssh-folder-and-key-files/>
+    directory, **and** home directory** all have sufficiently secure
+    file permissions. If not, `ssh` will silently revert to requiring
+    password entry. See for
+    example <https://www.frankindev.com/2020/11/26/permissions-for-.ssh-folder-and-key-files/>
 -   make sure your **home directory** has a maximum
-of **750** permissions
+    of **750** permissions
 
 Now you should be able to run **`ssh mahuika02`**(for example) without
 being asked for a passphrase.
@@ -99,9 +99,9 @@ changed significantly at version 8.
 ``` sl
 $ cylc list-versions
 
-7.9.1
+7.9.1 
 ...
-8.0.1
+8.0.1 
 cylc -> 7.9.1
 ```
 
@@ -130,23 +130,23 @@ Create/edit the following **flow.cylc** file containing
 
 ``` sl
 [scheduling] # Define the tasks and when they should run
-[[graph]]
-R1 = """ # R1 means run this graph once
-taskA & taskB => taskC # Defines the task graph
-"""
+  [[graph]]
+    R1 = """ # R1 means run this graph once
+      taskA & taskB => taskC # Defines the task graph
+    """
 [runtime] # Define what each task should run
-[[root]] # Default settings inherited by all tasks
-platform = mahuika-slurm # Run "cylc conf" to see platforms.
-[[[directives]]] # Default SLURM options for the tasks below
---account = nesi99999 # CHANGE
-[[taskA]]
-script = echo "running task A"
-[[[directives]]] # specific SLURM option for this task
---ntasks = 2
-[[taskB]]
-script = echo "running task B"
-[[taskC]]
-script = echo "running task C"
+  [[root]] # Default settings inherited by all tasks
+    platform = mahuika-slurm # Run "cylc conf" to see platforms. 
+    [[[directives]]] # Default SLURM options for the tasks below
+       --account = nesi99999 # CHANGE
+  [[taskA]]
+    script = echo "running task A"
+      [[[directives]]] # specific SLURM option for this task
+        --ntasks = 2
+  [[taskB]]
+    script = echo "running task B"
+  [[taskC]]
+    script = echo "running task C"
 ```
 
 In the above example, we have three tasks (taskA, taskB and taskC),
@@ -161,13 +161,13 @@ to see a list of platforms. The SLURM settings for taskA are in the
 
 ## How to interact with Cylc
 
-Cylc takes command lines. Type
+Cylc takes command lines. Type 
 
 ``` sl
 $ cylc help all
 ```
 
-to see the available commands. Type
+to see the available commands. Type 
 
 ``` sl
 $ cylc help install # or cylc install --help
@@ -203,7 +203,7 @@ Valid for cylc-8.0.1
 
 ## Looking at the workflow graph
 
-A useful command is
+A useful command is 
 
 ``` sl
 $ cylc graph simple
@@ -211,7 +211,7 @@ $ cylc graph simple
 
 which will generate a png file, generally in the /tmp directory with a
 name like /tmp/tmpzq3bjktw.PNG. Take note of the name of the png file.
-To visualise the file you can type
+To visualise the file you can type 
 
 ``` sl
 $ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
@@ -227,7 +227,7 @@ The "1" indicates that this workflow graph is executed only once.
 ## Different ways to interact with Cylc
 
 Every Cylc action can be executed via the command line. Alternatively,
-you can invoke each action through a **terminal user interface** (tui),
+you can invoke each action through a **terminal user interface** (tui), 
 
 ``` sl
 $ cylc tui simple
@@ -329,7 +329,7 @@ $ cylc cat-log simple//1/taskA  # note // between workflow and task ID
 
 of the first cycle of taskA. The "1" refers to the task iteration, or
 cycle point. Our simple workflow only has one iteration (as dictated by
-the R1 graph above).
+the R1 graph above). 
 
 ## How to clean or remove a workflow
 

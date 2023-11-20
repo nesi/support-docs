@@ -23,7 +23,7 @@ In Slurm, there are two ways to request memory for your job:
 
 -   `--mem`: Memory per node
 -   `--mem-per-cpu`: Memory per [logical
-CPU](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
+    CPU](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
 
 In most circumstances, you should request memory using `--mem`. The
 exception is if you are running an MPI job that could be placed on more
@@ -31,40 +31,40 @@ than one node, with tasks divided up randomly, in which case
 `--mem-per-cpu` is more appropriate. More detail is in the following
 table, including how you can tell what sort of job you're submitting.
 
---------------- ------------------------- --------------------- ------------------------ ------------------------ ------------------ --------------------
-Job type        Requested tasks           Requested logical     Requested nodes (`-N`,   Requested tasks per      Preferred memory   Ideal value
-(`-n`, `--ntasks`)        CPUs per task         `--nodes`)               node                     format
-(`--cpus-per-task`)                            (`--ntasks-per-node`)
+  --------------- ------------------------- --------------------- ------------------------ ------------------------ ------------------ --------------------
+  Job type        Requested tasks           Requested logical     Requested nodes (`-N`,   Requested tasks per      Preferred memory   Ideal value
+                  (`-n`, `--ntasks`)        CPUs per task         `--nodes`)               node                     format             
+                                            (`--cpus-per-task`)                            (`--ntasks-per-node`)                       
 
-Serial          1 (or unspecified)        1 (or unspecified)    (Irrelevant, but should  (Irrelevant, but should  `--mem=`           Peak
-not be                   not be                                      memory<sup>3</sup>
-specified)<sup>1</sup>   specified)<sup>2</sup>                      needed by the
-program
+  Serial          1 (or unspecified)        1 (or unspecified)    (Irrelevant, but should  (Irrelevant, but should  `--mem=`           Peak
+                                                                  not be                   not be                                      memory<sup>3</sup>
+                                                                  specified)<sup>1</sup>   specified)<sup>2</sup>                      needed by the
+                                                                                                                                       program
 
-Multithreaded   1 (or unspecified)        &gt; 1                (Irrelevant, but should  (Irrelevant, but should  `--mem=`           Peak
-(e.g. OpenMP),                                                  not be                   not be                                      memory<sup>3</sup>
-but not MPI                                                     specified)<sup>1</sup>   specified)<sup>2</sup>                      needed by the
-program
+  Multithreaded   1 (or unspecified)        &gt; 1                (Irrelevant, but should  (Irrelevant, but should  `--mem=`           Peak
+  (e.g. OpenMP),                                                  not be                   not be                                      memory<sup>3</sup>
+  but not MPI                                                     specified)<sup>1</sup>   specified)<sup>2</sup>                      needed by the
+                                                                                                                                       program
 
-MPI, evenly     Unspecified<sup>4</sup>   ≥ 1 (or unspecified)  ≥ 1<sup>5</sup>          ≥ 1<sup>5</sup>          `--mem=`           (Peak
-split between                                                                                                                        memory<sup>3</sup>
-nodes                                                                                                                                needed per MPI
-(recommended                                                                                                                         task) × (number of
-method)                                                                                                                              tasks per node)
+  MPI, evenly     Unspecified<sup>4</sup>   ≥ 1 (or unspecified)  ≥ 1<sup>5</sup>          ≥ 1<sup>5</sup>          `--mem=`           (Peak
+  split between                                                                                                                        memory<sup>3</sup>
+  nodes                                                                                                                                needed per MPI
+  (recommended                                                                                                                         task) × (number of
+  method)                                                                                                                              tasks per node)
 
-MPI, evenly     &gt; 1                    ≥ 1 (or unspecified)  Either 1 or the number   (Irrelevant, but should  `--mem=`           (Peak
-split between                                                   of tasks<sup>6</sup>     not be                                      memory<sup>3</sup>
-nodes                                                                                    specified)<sup>4</sup>                      needed per MPI
-(discouraged                                                                                                                         task) × (number of
-method)                                                                                                                              tasks per node)
+  MPI, evenly     &gt; 1                    ≥ 1 (or unspecified)  Either 1 or the number   (Irrelevant, but should  `--mem=`           (Peak
+  split between                                                   of tasks<sup>6</sup>     not be                                      memory<sup>3</sup>
+  nodes                                                                                    specified)<sup>4</sup>                      needed per MPI
+  (discouraged                                                                                                                         task) × (number of
+  method)                                                                                                                              tasks per node) 
 
-MPI, randomly   &gt; 1                    ≥ 1 (or unspecified)  &gt; 1; &lt; number of   (Irrelevant, but should  `--mem-per-cpu=`   (Peak
-placed                                                          tasks<sup>6</sup> (or    not be                                      memory<sup>3</sup>
-unspecified)             specified)<sup>4</sup>                      needed per MPI
-task) ÷ (number of
-logical CPUs per MPI
-task)
---------------- ------------------------- --------------------- ------------------------ ------------------------ ------------------ --------------------
+  MPI, randomly   &gt; 1                    ≥ 1 (or unspecified)  &gt; 1; &lt; number of   (Irrelevant, but should  `--mem-per-cpu=`   (Peak
+  placed                                                          tasks<sup>6</sup> (or    not be                                      memory<sup>3</sup>
+                                                                  unspecified)             specified)<sup>4</sup>                      needed per MPI
+                                                                                                                                       task) ÷ (number of
+                                                                                                                                       logical CPUs per MPI
+                                                                                                                                       task)
+  --------------- ------------------------- --------------------- ------------------------ ------------------------ ------------------ --------------------
 
 <sup>1</sup> If your job consists of only one task there's no reason to
 request a specific number of nodes, and requesting more than one node

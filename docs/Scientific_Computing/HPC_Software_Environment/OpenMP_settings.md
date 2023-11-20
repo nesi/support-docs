@@ -76,7 +76,7 @@ generally advisable to pin the threads to avoid delays caused by thread
 migration.
 
 3\. OMP\_PLACES. Set this to "cores" if you want to pin the threads to
-physical cores, or to "threads" if you want to use hyperthreading.
+physical cores, or to "threads" if you want to use hyperthreading. 
 
 The effect of each setting is illustrated below. In this experiment we
 measured the execution time twice of the finite difference
@@ -137,7 +137,7 @@ unset</td>
 In the default case, --hint was not used and the environment variables
 OMP\_PROC\_BIND and OMP\_PLACES were not set. Significant variations of
 execution times are sometimes observed due to the random placement of
-threads, which may or may not share a physical core.
+threads, which may or may not share a physical core. 
 
 The third column shows the settings for the case with no multithreading.
 The fourth column places 2 threads per physical cores (i.e.

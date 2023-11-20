@@ -22,7 +22,7 @@ zendesk_section_id: 200732737
 We’re excited to announce an addition of new GPU capabilities to our
 platform and some noteworthy changes to resource pricing as a result.
 
-
+ 
 
 **New Graphics Processing Units (GPUs)**
 
@@ -32,7 +32,7 @@ providing a significant boost in computing performance and an
 environment particularly suited to machine learning workloads. Over the
 last few months we’ve worked directly with a group of beta tester
 researchers to ensure this new capability is fit-for-purpose and tuned
-to communities' specific software and tool requirements.
+to communities' specific software and tool requirements. 
 
 These new A100s, alongside [software optimised for data
 science](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-),
@@ -41,7 +41,7 @@ this is you, [contact NeSI
 Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) to
 discuss how these new resources could support your work.
 
-
+ 
 
 **Reduced pricing for P100s**
 
@@ -65,7 +65,7 @@ you have questions about allocations or how to access the P100s,
 [contact NeSI
 Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new).
 
-
+ 
 
 **Sharing our learning along the way**
 
@@ -81,7 +81,7 @@ conducted in the spaces of deep learning and molecular dynamics codes,
 as well as take a closer look at which codes are suitable to run on GPUs
 and whether your research project is a fit.
 
-
+ 
 
 **Future GPU investments**
 
@@ -99,13 +99,13 @@ A100s for something other than machine learning, let us know by
 Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) -
 that way we can keep you up to date on our plans.
 
-
+ 
 
 If you have questions or comments on anything mentioned above,
 please [get in
 touch](https://support.nesi.org.nz/hc/en-gb/requests/new).
 
-
+ 
 
 Thank you,
 

@@ -51,11 +51,11 @@ General Public Licence. The full text of the R licence is available at
 ## NeSI Customisations
 
 -   We patch the *snow* package so that there is no need to use RMPISNOW
-when using it over MPI.
+    when using it over MPI.
 -   Our most recent R environment modules set R\_LIBS\_USER to a path
-which includes the compiler toolchain, so for
-example *~/R/gimkl-2022a/4.2* rather than the usual default
-of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
+    which includes the compiler toolchain, so for
+    example *~/R/gimkl-2022a/4.2* rather than the usual default
+    of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
 
 ## Related environment modules
 
@@ -63,15 +63,15 @@ We also have some environment modules which extend the base R ones with
 extra packages:
 
 -    *R-Geo* with rgeos, rgdal and other geometric and geospatial
-packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
--   ``` sl
-$ module load R-Geo/4.2.1-gimkl-2022a
-```
+    packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
+    -   ``` sl
+        $ module load R-Geo/4.2.1-gimkl-2022a
+        ```
 -   *R-bundle-Bioconductor* with many of the BioConductor suite of
-packages.
--   ``` sl
-$ module load R-bundle-Bioconductor/3.15-gimkl-2022a-R-4.2.1
-```
+    packages.
+    -   ``` sl
+        $ module load R-bundle-Bioconductor/3.15-gimkl-2022a-R-4.2.1
+        ```
 
 ## Examples
 
@@ -103,7 +103,7 @@ of sizes 1 million to 1000050. Set the number of workers in your
 submission script with --cpus-per-task=... Note that all workers run on
 the same node. Hence, the number of workers is limited to the number of
 cores (physical if --hint=nomultithread or logical if using
---hint=multithread).
+--hint=multithread). 
 
 ``` sl
 library(doParallel)
@@ -111,7 +111,7 @@ registerDoParallel(strtoi(Sys.getenv("SLURM_CPUS_PER_TASK")))
 
 # 50 calculations, store the result in 'x'
 x <- foreach(z = 1000000:1000050, .combine = 'c') %dopar% {
-sum(rnorm(z))
+  sum(rnorm(z))
 }
 
 print(x)
@@ -123,7 +123,7 @@ This example is similar to the above except that workers can run across
 multiple nodes. Note that we don't need to specify the number of workers
 when starting the cluster -- it will be derived by the mpiexec command,
 which slurm will invoke. You will need to load the gimkl module to
-expose the MPI library.
+expose the MPI library. 
 
 ``` sl
 library(doMPI, quiet=TRUE)
@@ -132,7 +132,7 @@ registerDoMPI(cl)
 
 # 50 calculations, store the result in 'x'
 x <- foreach(z = 1000000:1000050, .combine = 'c') %dopar% {
-sum(rnorm(z))
+  sum(rnorm(z))
 }
 
 closeCluster(cl)
@@ -148,9 +148,9 @@ library(snow)
 
 # Select MPI-based or fork-based parallelism depending on ntasks
 if(strtoi(Sys.getenv("SLURM_NTASKS")) > 1) {
-cl <- makeMPIcluster()
+    cl <- makeMPIcluster()
 } else {
-cl <- makeSOCKcluster(max(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')), 1))
+    cl <- makeSOCKcluster(max(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')), 1))
 }
 
 # 50 calculations to be done:
@@ -264,7 +264,7 @@ so, call up the package library:
 $ module R/4.2.1-gimkl-2022a
 $ R
 ...
-library()
+     library()
 ```
 
 or just use the module command:
@@ -284,14 +284,14 @@ You can print a list of the library directories in which R will look for
 packages by running the following command in an R session:
 
 ``` sl
-.libPaths()
+     .libPaths()
 ```
 
 For R/4.2.1 the command `.libPaths()` will return the following:
 
 ``` sl
-.libPaths()
-[1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"
+     .libPaths()
+[1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 ```
 
@@ -302,7 +302,7 @@ provided by NeSI. This can be used in conjuction with
 eg:
 
 ``` sl
-installed.packages("/home/YOUR_USER_NAME/R/gimkl-2022a/4.2")
+     installed.packages("/home/YOUR_USER_NAME/R/gimkl-2022a/4.2")
 ...
 ggplot2 NA NA NA "no" "4.2.1"
 ggrepel NA NA NA "yes" "4.2.1"
@@ -332,7 +332,7 @@ dir.create("/nesi/project/<projectID>/Rpackages", showWarnings = FALSE, recursiv
 .libPaths(new="/nesi/project/<projectID>/Rpackages")
 ```
 
-
+ 
 
 #### Downloading and installing a new package
 
@@ -344,7 +344,7 @@ For example, to install the sampling package:
 $ module load R/4.2.1-gimkl-2022a
 $ R
 ...
-install.packages("sampling")
+     install.packages("sampling")
 ```
 
 You will most likely be asked if you want to use a personal library and,
@@ -361,7 +361,7 @@ You can confirm the package has been installed by using the library()
 command:
 
 ``` sl
-library("foo")
+     library("foo")
 ```
 
 If the package has been correctly installed, you will get no response.
@@ -369,7 +369,7 @@ On the other hand, if the package is missing or was not installed
 correctly, an error message will typically be returned:
 
 ``` sl
-library("foo")
+     library("foo")
 Error in library("foo") : there is no package called ‘foo’
 ```
 
@@ -389,7 +389,7 @@ library in your R script:
 ``` sl
 $ R
 ...
-dyn.load("~/R/lib64/mylib.so")
+     dyn.load("~/R/lib64/mylib.so")
 ```
 
 ### Quitting an interactive R session
@@ -397,14 +397,14 @@ dyn.load("~/R/lib64/mylib.so")
 At the R command prompt, when you want to quit R, type the following:
 
 ``` sl
-quit()
+     quit()
 ```
 
 You will be asked "Save workspace image? \[y/n/c\]". Type n.
 
+ 
 
-
-## Troubleshooting
+## Troubleshooting  
 
 ### Missing *devtools*
 
@@ -417,9 +417,9 @@ $ module load devtools
 $ module load R/4.2.1-gimkl-2022a
 ```
 
+ 
 
-
-### Can't install *sf, rgdal* etc
+### Can't install *sf, rgdal* etc 
 
 Use the R-Geo module
 
@@ -427,7 +427,7 @@ Use the R-Geo module
 $ module load R-Geo/4.2.1-gimkl-2022a
 ```
 
-
+ 
 
 ### Cluster/Parallel environment variable not accessed
 

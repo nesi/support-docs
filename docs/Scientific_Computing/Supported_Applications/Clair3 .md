@@ -38,7 +38,7 @@ Clair3 is the 3<sup>rd</sup> generation of
 A short pre-print describing Clair3's algorithms and results is at
 [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.12.29.474431v1).
 
-
+ 
 
 ## License and Disclaimer
 
@@ -50,26 +50,26 @@ modification, are permitted provided that the following conditions are
 met:
 
 1.  Re-distributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
+    notice, this list of conditions and the following disclaimer.
 
 2.  Re-distributions in binary form must reproduce the above copyright
-notice, this list of conditions and the following disclaimer in the
-documentation and/or other materials provided with the distribution.
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
 
 3.  Neither the name of the copyright holder nor the names of its
-contributors may be used to endorse or promote products derived from
-this software without specific prior written permission.
+    contributors may be used to endorse or promote products derived from
+    this software without specific prior written permission.
 
 ``` sl
-
+ 
 ```
 
 ### Example Slurm script
 
 **Caution**: Absolute path is needed for both `INPUT_DIR` and
-`OUTPUT_DIR`
-
-
+`OUTPUT_DIR`  
+  
+  
 
 ``` sl
 #!/bin/bash -e
@@ -102,6 +102,7 @@ run_clair3.sh \
 --output=${OUTPUT_DIR} --enable_phasing
 ```
 
-
-
-
+  
+  
+  
+  

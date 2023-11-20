@@ -27,7 +27,7 @@ completion, this way you can improve your job specifications in the
 future.
 
 Once your job has finished check the relevant details using the tools:
-`nn_seff` or `sacct` For example:
+`nn_seff` or `sacct` For example:  
 
 **nn\_seff**
 
@@ -53,7 +53,7 @@ very low and consideration should be given to reducing memory requests
 for similar jobs.  If in doubt, please contact <support@nesi.org.nz> for
 guidance.
 
-
+ 
 
 **sacct**
 
@@ -61,18 +61,18 @@ guidance.
 sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 ```
 !!! prerequisite Tip
-*If you want to make this your default* `sacct` *setting, run;*
-``` sl
-echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
-source ~/.bash_profile
-```
+     *If you want to make this your default* `sacct` *setting, run;*
+     ``` sl
+     echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
+     source ~/.bash_profile
+     ```
 
 ------------------------------------------------------------------------
 
 Below is an output for reference:
 
 ``` sl
-JobID    JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
+       JobID    JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
 ------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- ---------- ----------
 3007056      rfm_ANSYS+   00:27:07                         03:35:55         16                      COMPLETED
 3007056.bat+      batch   00:27:07   03:35:54   03:35:54   03:35:55         16        1  13658349K  COMPLETED
@@ -108,7 +108,7 @@ steps, so in this case 13 GB. For our next run we may want to set:
 the computation hours would be equal to `Elapsed` x `AllocCPUS`.
 
 In this case our ideal `TotalCPU` would be 07:12:00, as our job only
-managed 03:35:55 we can estimate the CPU usage was around 50%
+managed 03:35:55 we can estimate the CPU usage was around 50%  
 It might be worth considering reducing the number of CPUs requested,
 however bear in mind there are other factors that affect CPU efficiency.
 
@@ -116,7 +116,7 @@ however bear in mind there are other factors that affect CPU efficiency.
 #SBATCH --cpus-per-task=10
 ```
 
-
+ 
 
 Note: When using sacct to determine the amount of memory your job used -
 in order to reduce memory wastage - please keep in mind that Slurm
@@ -131,15 +131,15 @@ provides a more accurate measure.
 Further technical notes for those interested in commonly used memory
 usage metrics on linux systems:
 
-**VSS** &gt;= **RSS** &gt;= **PSS** &gt;= **USS**
+**VSS** &gt;= **RSS** &gt;= **PSS** &gt;= **USS**  
 **VSS-Virtual Set Size** - Virtual memory consumption (contains memory
-consumed by shared libraries)
+consumed by shared libraries)  
 **RSS-Resident Set Size** - Used physical memory (contains memory
-consumed by shared libraries)
+consumed by shared libraries)  
 **PSS-Proportional Set Size** - Actual physical memory used
-(proportional allocation of memory consumed by shared libraries)
+(proportional allocation of memory consumed by shared libraries)  
 **USS-Unique Set Size** - Process consumed physical memory alone (does
-not contain the memory occupied by the shared library)
+not contain the memory occupied by the shared library)  
 `PSS = USS + (RSS/# shared processes)`
 
 ## During Runtime
@@ -154,9 +154,9 @@ If 'nodelist' is not one of the fields in the output of your `sacct` or
 command; `squeue -h -o %N -j <jobid>` The node will look something like
 `wbn123` on Mahuika or `nid00123` on Māui
 !!! prerequisite Note
-If your job is using MPI it may be running on multiple nodes
+     If your job is using MPI it may be running on multiple nodes
 
-### htop
+### htop 
 
 ``` sl
 ssh -t wbn175 htop -u $USER
@@ -166,7 +166,7 @@ If it is your first time connecting to that particular node, you may be
 prompted:
 
 ``` sl
-The authenticity of host can't be established
+The authenticity of host can't be established 
 Are you sure you want to continue connecting (yes/no)?
 ```
 
@@ -194,8 +194,8 @@ Processes in green can be ignored
 
 **MEM% **Percentage Memory utilisation.
 !!! prerequisite Warning
-If the job finishes, or is killed you will be kicked off the node. If
-htop freezes, type `reset` to clear your terminal.
+     If the job finishes, or is killed you will be kicked off the node. If
+     htop freezes, type `reset` to clear your terminal.
 
 ## Limitations of using CPU Efficiency
 
@@ -214,7 +214,7 @@ more details.
 ![qdyn\_eff.png](../../assets/images/Finding_Job_Efficiency_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
-of CPU efficiency is acceptable and scale your job up to 18 CPU cores .
+of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
 ![qdyn\_walltime.png](../../assets/images/Finding_Job_Efficiency_1.png)
 

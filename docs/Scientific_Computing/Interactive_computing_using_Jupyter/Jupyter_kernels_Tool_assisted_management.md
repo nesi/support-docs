@@ -61,7 +61,7 @@ nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 and to share the kernel with other members of your NeSI project:
 
 ``` sl
-nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
+nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5 
 ```
 
 To list all the installed kernels, use the following command:

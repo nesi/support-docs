@@ -24,16 +24,16 @@ there are several possible causes.
 
 -   [Scheduled maintenance](#scheduled-maintenance)
 -   [Delays in the queue](#delays-in-the-queue)
--   [Your job is being beaten by other high-priority
-jobs](#other-high-priority-jobs)
--   [Your project has a low Fair Share
-score](#low-fair-share-score)
--   [Your project has a high Fair Share score, but there are
-lots of other jobs from similarly high-priority
-projects](#queue-congestion)
--   [Your job's resource demands are hard to
-satisfy](#difficult-job)
--   [Some other problem](#other-problem)
+    -   [Your job is being beaten by other high-priority
+        jobs](#other-high-priority-jobs)
+        -   [Your project has a low Fair Share
+            score](#low-fair-share-score)
+        -   [Your project has a high Fair Share score, but there are
+            lots of other jobs from similarly high-priority
+            projects](#queue-congestion)
+    -   [Your job's resource demands are hard to
+        satisfy](#difficult-job)
+    -   [Some other problem](#other-problem)
 
 ## Scheduled maintenance
 
@@ -56,7 +56,7 @@ This command will, for each of your queued jobs, produce an output
 looking something like this:
 
 ``` sl
-$ nn_my_queued_jobs
+$ nn_my_queued_jobs 
 ACCOUNT                JOBID NAME                 SUBMIT_TIME         QOS    NODE CPUS MIN_MEMORY PRIORITY START_TIME          REASON
 nesi99999           12345678 SomeRandomJob        2019-01-01T12:00:00 collab    1    8         2G     1553        N/A          QOSMaxCpuPerJobLimit
 ```
@@ -67,15 +67,15 @@ delayed. Common answers include "Priority", "Resources", "Dependency",
 "ReqNodeNotAvail", and others.
 
 -   **Priority** means that the job just isn't in the front of the queue
-yet.
+    yet.
 -   **Resources** means that there are not currently enough free
-resources to run the job.
+    resources to run the job.
 -   **Dependency** means the job is in some way dependent on another,
-and the other job (the dependency) has not yet reached the required
-state.
+    and the other job (the dependency) has not yet reached the required
+    state.
 -   **ReqNodeNotAvail** means that the job has requested some specific
-node that is busy working on other jobs, is out of service, or does
-not exist.
+    node that is busy working on other jobs, is out of service, or does
+    not exist.
 
 A more comprehensive list of job reason codes is available
 [here](https://slurm.schedmd.com/squeue.html#lbAF) (offsite). As noted
@@ -105,17 +105,17 @@ to lowest.
 The output should look something like this:
 
 ``` sl
-JOBID PARTITION   PRIORITY        AGE   FAIRSHARE    JOBSIZE        QOS
-793492 gpu             1553        504        1000         20         30
-2008465 long            1107        336         723         18         30
-2039471 long            1083        312         723         18         30
-2039456 long            1083        312         723         18         30
-2039452 long            1083        312         723         18         30
-2039435 long            1083        312         723         18         30
-2039399 long            1083        312         723         18         30
-2039391 long            1083        312         723         18         30
-2039376 long            1083        312         723         18         30
-2039371 long            1083        312         723         18         30
+          JOBID PARTITION   PRIORITY        AGE   FAIRSHARE    JOBSIZE        QOS
+         793492 gpu             1553        504        1000         20         30
+        2008465 long            1107        336         723         18         30
+        2039471 long            1083        312         723         18         30
+        2039456 long            1083        312         723         18         30
+        2039452 long            1083        312         723         18         30
+        2039435 long            1083        312         723         18         30
+        2039399 long            1083        312         723         18         30
+        2039391 long            1083        312         723         18         30
+        2039376 long            1083        312         723         18         30
+        2039371 long            1083        312         723         18         30
 ...
 ```
 
@@ -168,7 +168,7 @@ it has succeeded, so you can check its effect using `scontrol show`:
 
 ``` sl
 $ scontrol show job 12345678 | grep TimeLimit
-RunTime=00:00:00 TimeLimit=00:01:00 TimeMin=N/A
+   RunTime=00:00:00 TimeLimit=00:01:00 TimeMin=N/A
 ```
 
 Note that you can not yourself use `scontrol` to increase a job's

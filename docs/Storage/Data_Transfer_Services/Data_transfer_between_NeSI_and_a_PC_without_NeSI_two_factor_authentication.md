@@ -44,16 +44,16 @@ have registered and created an account on Globus.
 
 -   Go to <https://app.globus.org/file-manager>
 -   In the "Collection" search box type **NeSI Wellington DTN V5** and
-select this collection
+    select this collection
 -   *You may then need to log onto NeSI DTN to see the files*
 -   Find the root folder of your guest collection, the directory you
-would like to share, and
--   click on the “Share” button,
--   click on “Add Guest Collection”
--   provide a "Display Name"
--   press on "Create Collection"
+    would like to share, and
+    -   click on the “Share” button,
+    -   click on “Add Guest Collection”
+    -   provide a "Display Name"
+    -   press on "Create Collection"
 -   You should now see your new guest collection at
-<https://app.globus.org/collections?scope=administered-by-me>
+    <https://app.globus.org/collections?scope=administered-by-me>
 
 ![mceclip0.png](../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.png)
 
@@ -67,11 +67,11 @@ Configuration](https://support.nesi.org.nz/hc/en-gb/articles/360000217915).
 
 ## Step 3: Share a directory on your personal computer
 
--   Launch "Globus Connect Personal" and go to "Preferences".
+-   Launch "Globus Connect Personal" and go to "Preferences". 
 -   Select "Access"
--   click on the "+" sign to share a new directory
--   navigate your directory and press "Open"
--   make the directory writable
+    -   click on the "+" sign to share a new directory
+    -   navigate your directory and press "Open"
+    -   make the directory writable
 
 Note: By default your entire home directory will be exposed. It is good
 practice to only share specific directories. You can remove your home
@@ -84,9 +84,9 @@ directory by highlighting it and clicking on the "-" sign.
 -   Go to [https://app.globus.org](https://app.globus.org/collections)
 -   Log in
 -   In the "FILE MANAGER" tab, type the source and destination
-collections. The source path should be relative to the guest
-collection root. However, the destination path is absolute, as can
-be seen in the picture below.
+    collections. The source path should be relative to the guest
+    collection root. However, the destination path is absolute, as can
+    be seen in the picture below.
 -   Click on the files you want to transfer and press "Start"
 
 ![mceclip3.png](../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication_1.png)

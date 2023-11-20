@@ -30,10 +30,10 @@ compile option), otherwise only nameless memory address will be
 provided.
 
 -   [Analysing core files with
-gdb](#h_cf410d73-e14d-4abf-897a-374c965aa9dc)
+    gdb](#h_cf410d73-e14d-4abf-897a-374c965aa9dc)
 -   [ARM DDT](#h_c3a74e40-cb68-4f35-b81e-ebf496c587eb)
 -   [Abnormal Termination Processing
-(Māui)](#h_214a9eb8-a227-421d-a4c2-57f0309a61ec)
+    (Māui)](#h_214a9eb8-a227-421d-a4c2-57f0309a61ec) 
 
 ## Tracing job scripts
 
@@ -53,7 +53,7 @@ command for ONE core file:
 ``` sl
 gdb -c core.12345 /path/to/bin/exe
 ...
-bt
+      bt
 ```
 
 This assumes that the crashing job used the executable
@@ -80,7 +80,7 @@ work properly DDT needs to have debug symbols provided by the
 application binary (compiled with e.g. \`-g\`  option). DDT can be used
 using the module \`forge\`. There are basically 2 ways to use the
 debugger, interactive using the GUI and on the command line (bash
-script) using the so called "offline" mode.
+script) using the so called "offline" mode. 
 
 ### DDT offline mode
 
@@ -89,7 +89,7 @@ scripts without a GUI. Which is useful especially if you have long
 lasting jobs to debug or long queuing times. To use this so called
 "offline mode" you just need to add \`ddt --offline\` in front of the
 srun statement. You can add more arguments for example to print the
-values of variables.
+values of variables. 
 
 ``` sl
 ddt --offline --break-at=fail.c:14 --evaluate="k;n" srun -n 4 <application> <arguments>
@@ -139,7 +139,7 @@ there, e.g. hyperthreading options, accounts and qos. In the Environment
 Variables section you can load necessary modules.
 
 After submitting the task, DDT launches the application (wait for the
-workload manager if necessary) and opens the following window.
+workload manager if necessary) and opens the following window. 
 
 ![DDT\_overview.PNG](../../assets/images/Debugging_1.PNG)
 
@@ -150,7 +150,7 @@ opportunity to set break/watch points, and define the type execution
 detailed information see the [DDT
 manual](https://developer.arm.com/docs/101136/latest/ddt)
 
-
+ 
 
 ## ATP (Cray Abnormal Termination Processing)
 
@@ -159,7 +159,7 @@ manual](https://developer.arm.com/docs/101136/latest/ddt)
 Abnormal Termination Processing (ATP) is a system that monitors Cray XC
 System (Maui) user applications, and should an application take a system
 trap, ATP preforms analysis on the dying application. All of the stack
-backtraces of the application processes are gathered into a merged
+backtraces of the application processes are gathered into a merged  
 stack backtrace tree and written to disk as the file "atpMergedBT.dot".
 The stack backtrace for the first process to die is sent to stderr as is
 the number of the signal that caused the death. If the core file size
@@ -172,12 +172,12 @@ An example output looks like:
 Application 427046 is crashing. ATP analysis proceeding...
 
 ATP Stack walkback for Rank 0 starting:
-_start@start.S:118
-__libc_start_main@libc-start.c:289
-main@fail.c:65
-m_routine@fail.c:38
-calculation@fail.c:31
-do_task@fail.c:25
+ _start@start.S:118
+ __libc_start_main@libc-start.c:289
+ main@fail.c:65
+ m_routine@fail.c:38
+ calculation@fail.c:31
+ do_task@fail.c:25
 ATP Stack walkback for Rank 0 done
 Process died with signal 8: 'Floating point exception'
 Forcing core dumps of ranks 0, 1

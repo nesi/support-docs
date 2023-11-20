@@ -29,7 +29,7 @@ architecture supporting parallel computation and system extensibility.
 The model serves a wide range of meteorological applications across
 scales from tens of meters to thousands of kilometres.
 
-
+ 
 
 Download WRF:
 
@@ -48,15 +48,15 @@ installed. On Māui, these are available as modules. On Mahuika, we
 recommend to download these packages and build them by hand
 (instructions are provided below).
 
-
+ 
 
 ## WRF on Mahuika
 
-
+ 
 
 ### Environment on Mahuika
 
-We'll use the Intel compiler and Intel MPI library.
+We'll use the Intel compiler and Intel MPI library. 
 
 ``` sl
 module purge
@@ -67,7 +67,7 @@ Although NeSI has NetCDF modules installed, WRF wants the C and Fortran
 NetCDF libraries, include files and modules all installed under the same
 root directory. Hence we build those by hand.
 
-
+ 
 
 ### Building WRF dependencies on Mahuika
 
@@ -126,7 +126,7 @@ cd ..
 cd ..
 ```
 
-
+ 
 
 Then proceed to configure WRF by setting
 
@@ -149,13 +149,13 @@ and build the code with
 ```
 
 This may take several hours to compile. Check the log file to ensure
-that the compilation was successful.
+that the compilation was successful. 
 
-
+ 
 
 ### Running WRF on Mahuika
 
-
+ 
 
 An example Slurm script for running WRF on Mahuika extension, which can
 be submitted with *sbatch name\_of\_script.sl*:
@@ -182,7 +182,7 @@ srun --output=wrf.log ./wrf.exe
 
 
 
-
+ 
 
 ## WRF on Māui
 
@@ -332,7 +332,7 @@ Māui compute nodes. However, *ungrib* is serial and should not be run on
 a compute node unless it is very quick to finish. Alternatively you
 could run *ungrib* on an interactive/login node if it will not take up
 many resources, or you could compile WRF and WPS on a Māui Ancillary
-node and run it there.
+node and run it there. 
 
 Note that WPS does a lot of file IO and therefore probably won't scale
 up to as many processes as WRF.

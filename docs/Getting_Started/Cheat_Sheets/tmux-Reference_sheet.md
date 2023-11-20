@@ -44,11 +44,11 @@ $ tmux attach -t data_transfer
 Once reattached your session will be where you left it.   You can name
 the session whatever is most appropriate, such as the task you are
 performing.  You can run as many sessions as you like and they will
-remain until you terminate the tmux session or the node is rebooted.
+remain until you terminate the tmux session or the node is rebooted. 
 Also of note, your session will be available even if your laptop/desktop
 crashes or the network goes down.
 
-
+ 
 
 More information can be found on the web, here are some good references:
 
@@ -57,3 +57,4 @@ Shortcut keys and cheat sheet: <https://tmuxcheatsheet.com>
 Getting started Guide:
 <https://linuxize.com/post/getting-started-with-tmux/>
 
+ 

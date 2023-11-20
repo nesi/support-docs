@@ -129,7 +129,7 @@ mostly used in the weather and climate fields.
 | NCL/6.4.0-GCC-7.1.0   |             |  ✔             | NCL base package |
 | NCL/6.6.2-intel-2018b |  ✔          |                | NCL base package |
 
-
+ 
 
 ### MATLAB
 
@@ -257,20 +257,20 @@ If you want to use ParaView in client-server mode, use the following
 setup:
 
 -   Load one of the ParaView Server modules listed above and launch the
-server in your interactive visualisation session on the HPC:
+    server in your interactive visualisation session on the HPC:
 
 ``` sl
 mpiexec -np <number of MPI ranks> pvserver
 ```
 
 -   Create an SSH tunnel for port "11111" from the HPC to your local
-machine using, e.g., the ssh program (Linux and MacOS) or MobaXterm
-(Windows)
+    machine using, e.g., the ssh program (Linux and MacOS) or MobaXterm
+    (Windows)
 -   Launch the ParaView GUI on your local machine and go to "File &gt;
-Connect"
+    Connect"
 -   Click on "Add Server", choose server type "Client / Server", host
-"localhost" (as we will be using the SSH tunnel), and port "11111",
-then click on "Configure"
+    "localhost" (as we will be using the SSH tunnel), and port "11111",
+    then click on "Configure"
 -   Select the new server and click on "Connect"
 
 ### VisIt
@@ -303,3 +303,4 @@ language.
 | VTK/7.1.1-gimkl-2018b-Python-2.7.16 | ✔           |                | VTK7 with Python bindings |
 | VTK/8.1.1-GCC-7.1.0-Anaconda2-5.2.0 |             | ✔              | VTK8 with Python bindings |
 
+ 

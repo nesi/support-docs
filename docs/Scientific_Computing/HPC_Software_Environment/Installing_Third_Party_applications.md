@@ -24,13 +24,13 @@ Nevertheless, if you need additional applications or libraries (below
 called package), we distinguish:
 
 -   you need a **newer version** of an already installed package: [ask
-NeSI support](https://support.nesi.org.nz/hc/en-gb/requests/new) for
-an update
+    NeSI support](https://support.nesi.org.nz/hc/en-gb/requests/new) for
+    an update
 -   you need an **older version** of an installed package: please use
-the Easybuild installation procedure (below) to install it into your
-working space
+    the Easybuild installation procedure (below) to install it into your
+    working space
 -   you want to test a **new (not installed)** package: below we
-collected some hints, how you can install it in your user space.
+    collected some hints, how you can install it in your user space.
 
 In any case, if you have issues, do not hesitate to [open a
 ticket](https://support.nesi.org.nz/hc/en-gb/requests/new) and ask NeSI
@@ -51,22 +51,22 @@ Nevertheless, the following should give you an impression which steps
 you usually need to consider:
 
 -   Change into a desired source code directory. We suggest to use
-`/nesi/nobackup/<projectID>` or `/nesi/project/<projectID>`
+    `/nesi/nobackup/<projectID>` or `/nesi/project/<projectID>`
 -   download the source code. This could be done via a repository
-checkout (`git clone <URL to the application source repository>`) or
-via downloading a tarball (`wget <URL to the tarball>`). Unpack the
-tarball using `tar xf <tar file name>`. Change into source
-directory.
+    checkout (`git clone <URL to the application source repository>`) or
+    via downloading a tarball (`wget <URL to the tarball>`). Unpack the
+    tarball using `tar xf <tar file name>`. Change into source
+    directory.
 -   load compiler module and modules for additional libraries
-(`module load gimkl FFTW`)
+    (`module load gimkl FFTW`)
 -   run the configure with appropriate options
-`./configure --prefix=<desired install directory> --use-fftw=$EBROOTFFTW  `(options
-can be listed using `./configure --help`)
+    `./configure --prefix=<desired install directory> --use-fftw=$EBROOTFFTW  `(options
+    can be listed using `./configure --help`)
 -   In other applications you need to adjust the provided `Makefile` to
-reflect compiler, and library options (see below)
+    reflect compiler, and library options (see below)
 -   compile code (`make``)`
 -   install the binaries and libraries into the specified directory
-(`make install`)
+    (`make install`)
 
 ## Create your own modules (Optional)
 
@@ -105,7 +105,8 @@ The module then can be loaded by:
 These modules can easily be shared with collaborators. They just need to
 specify the last two steps.
 
+ 
 
+ 
 
-
-
+ 

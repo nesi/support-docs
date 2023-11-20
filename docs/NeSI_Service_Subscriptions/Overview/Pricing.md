@@ -27,7 +27,7 @@ Subscriptions:
 
 Prices are reviewed annually and subject to change.
 
-
+ 
 
 ## Current pricing
 
@@ -36,8 +36,9 @@ page](https://www.nesi.org.nz/community/partners-pricing#subscriptions) on
 the NeSI website for the latest pricing information. The website page
 will always display the current pricing of a NeSI service.
 
-
+ 
 
 If you have any questions about anything mentioned on this page, don’t
 hesitate to [get in touch](mailto:info@nesi.org.nz).
 
+ 

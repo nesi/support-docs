@@ -25,29 +25,29 @@ zendesk_section_id: 360001091155
 ## New and Improved
 
 -   A link to [NeSI's privacy
-policy](https://www.nesi.org.nz/about-us/security-privacy/privacy-policy)
-has been added to the bottom of all pages of my.nesi environment
+    policy](https://www.nesi.org.nz/about-us/security-privacy/privacy-policy)
+    has been added to the bottom of all pages of my.nesi environment
 -   We've shifted from using Tuakiri's RapidConnect service to Tuakiri's
-OpenID Connect bridge to improve overall security of my.nesi's user
-authentication process.
+    OpenID Connect bridge to improve overall security of my.nesi's user
+    authentication process.
 -   We've updated the display features of the table showing Merit grants
-available to researchers in order to improve our ability to make
-changes and future updates to the table's information.
+    available to researchers in order to improve our ability to make
+    changes and future updates to the table's information.
 
 ## Fixes
 
 -   Fixed a crash that used to occur when a user wanted to join a
-project on my.nesi and delete an entry within that project.
+    project on my.nesi and delete an entry within that project.
 -   Fixed a security vulnerability in the my.nesi environment related to
-the libwebp library, a code library used to render and display
-images in the *WebP* format.
+    the libwebp library, a code library used to render and display
+    images in the *WebP* format. 
 -   Updated the allocation request form's end date message, restricting
-allocation requests to no further than one year in the future.
+    allocation requests to no further than one year in the future.
 -   Changed which system components from NeSI's System Status page
-*(<https://status.nesi.org.nz/>)* are default notifications emailed
-to users. Users can customise their system status email
-notifications at any time. [Read more about that
-here](https://support.nesi.org.nz/hc/en-gb/articles/8202966997775).
+    *(<https://status.nesi.org.nz/>)* are default notifications emailed
+    to users. Users can customise their system status email
+    notifications at any time. [Read more about that
+    here](https://support.nesi.org.nz/hc/en-gb/articles/8202966997775).
 
 If you have any questions about any of the improvements or fixes, please
 [contact NeSI Support](mailto:support@nesi.org.nz).

@@ -25,8 +25,8 @@ zendesk_section_id: 360000040076
 OpenFOAM (Open Field Operation And Manipulation) is a open-source C++
 toolbox maintained by the OpenFOAM foundation and ESI Group. Although
 primarily used for CFD (Computational Fluid Dynamics) OpenFOAM can be
-used in a wide range of fields from solid mechanics to chemistry.
-
+used in a wide range of fields from solid mechanics to chemistry.  
+  
 The lack of licence limitations and native parallelisation makes
 OpenFOAM well suited for a HPC environment. OpenFOAM is an incredibly
 powerful tool, but does require a moderate degree of computer literacy
@@ -66,8 +66,8 @@ module load OpenFOAM/v1712-gimkl-2017a
 source ${FOAM_BASH}
 
 decomposePar                   #Break domain into pieces for parallel execution.
-srun simpleFoam -parallel
-reconstructPar -latestTime     #Collect
+srun simpleFoam -parallel       
+reconstructPar -latestTime     #Collect 
 ```
 
 ## Filesystem Limitations
@@ -81,44 +81,44 @@ write there to crash.**
 
 There are a few ways to mitigate this
 
--   **Use** `/nesi/nobackup`
-The nobackup directory has a significantly higher inode count and no
-disk space limits.
+-   **Use** `/nesi/nobackup`  
+    The nobackup directory has a significantly higher inode count and no
+    disk space limits.
 
--   **ControlDict Settings**
--   `WriteInterval`
-Using a high write interval reduce number of output files and
-I/O load.
--   `deltaT`
-Consider carefully an appropriate time-step, use adjustTimeStep
-if suitable.
--   `purgeWrite`
-Not applicable for many jobs, this keeps only the last n steps,
-e.g. purgeWrite 5 will keep the last 5 time-steps, with the
-directories being constantly overwritten.
--   `runTimeModifiable`
-When true, dictionaries will be re-read at the start of every
-time step. Setting this to false will decrease I/O load.
--   `writeFormat`
-Setting this to binary as opposed to ascii will decrease disk
-use and I/O load.
+-   **ControlDict Settings**  
+    -   `WriteInterval`  
+        Using a high write interval reduce number of output files and
+        I/O load.
+    -   `deltaT`  
+        Consider carefully an appropriate time-step, use adjustTimeStep
+        if suitable.
+    -   `purgeWrite`  
+        Not applicable for many jobs, this keeps only the last n steps,
+        e.g. purgeWrite 5 will keep the last 5 time-steps, with the
+        directories being constantly overwritten.
+    -   `runTimeModifiable`  
+        When true, dictionaries will be re-read at the start of every
+        time step. Setting this to false will decrease I/O load.
+    -   `writeFormat`  
+        Setting this to binary as opposed to ascii will decrease disk
+        use and I/O load.
 
--   **Monitor Filesystem **
-The command `nn_storage_quota` should be used to track filesystem
-usage. There is a delay between making changes to a filesystem and
-seeing it on `nn_storage_quota`.
+-   **Monitor Filesystem **  
+    The command `nn_storage_quota` should be used to track filesystem
+    usage. There is a delay between making changes to a filesystem and
+    seeing it on `nn_storage_quota`.
 
-``` sl
-Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
-home_cwal219             20G    1.957G    9.79%      92160     21052    22.84%
-project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
-nobackup_nesi99999              6.833T            10000000    2691383   26.91%
-```
+    ``` sl
+    Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
+    home_cwal219             20G    1.957G    9.79%      92160     21052    22.84%
+    project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
+    nobackup_nesi99999              6.833T            10000000    2691383   26.91%
+    ```
 
--   **Contact Support**
-If you are following the recommendations here yet are still
-concerned about indoes, open a support ticket and we can raise the
-limit for you.
+-   **Contact Support**  
+    If you are following the recommendations here yet are still
+    concerned about indoes, open a support ticket and we can raise the
+    limit for you.
 
 ## Environment Variables
 
@@ -135,7 +135,7 @@ Or create your variables to be set in your Slurm script.
 startFrom ${START_TIME};
 ```
 
-This is essential when running parameter sweeps.
+ This is essential when running parameter sweeps.
 
 You can also directly edit your dictionaries with `sed`, e.g.
 
@@ -144,7 +144,7 @@ NSUBDOMAINS=10
 sed -i "s/\(numberOfSubdomains \)[[:digit:]]*\(;\)/\1 $NSUBDOMAINS\2/g" system/controlDict
 ```
 
-## Recommended Resources
+## Recommended Resources   
 
 Generally, using 16 or less tasks will keep your job reasonably
 efficient. However this is *highly* dependant on the type of simulation
@@ -173,7 +173,7 @@ into your terminal after `wget`. For example:
 wget https://github.com/vincentcasseau/hyStrath/archive/Concordia.tar.gz
 ```
 
-wget can also be used to fetch files from other sources.
+ wget can also be used to fetch files from other sources.
 
 #### If repo only
 
@@ -183,7 +183,7 @@ Use the command `git clone <path to repo>.git` For example:
 git clone https://github.com/vincentcasseau/hyStrath.git
 ```
 
-### Decompress
+### Decompress 
 
 If your source is a .zip file use the command `unzip <filename>` if it
 is a .tar.gz use the command `tar -xvzf <filename>`
@@ -202,7 +202,7 @@ A library/application named 'newApp' would have the structure.
 
 ![](../../assets/images/OpenFOAM_0.png)
 
-To build \`newApp\` one would run:
+ To build \`newApp\` one would run:
 
 ``` sl
 module load OpenFOAM
@@ -223,7 +223,7 @@ specifies variables `$FOAM_USER_LIBBIN` or `$FOAM_USER_APPBIN` instead.
 
 User compiled libraries are kept in `$FOAM_USER_LIBBIN`, by default this
 is set
-to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib`
+to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib` 
 
 User compiled objects are kept in `$FOAM_USER_APPBIN`, by default this
 is set
@@ -236,9 +236,9 @@ For example
 
 ``` sl
 module load OpenFOAM
-
+  
 source $FOAM_BASH
-
+  
 export FOAM_USER_LIBBIN=/nesi/project/nesi99999/custom_OF/lib
 export FOAM_USER_APPBIN=/nesi/project/nesi99999/custom_OF/bin
 ```
@@ -246,5 +246,5 @@ export FOAM_USER_APPBIN=/nesi/project/nesi99999/custom_OF/bin
 These variables need to be set to the same chosen paths before compiling
 and before running the solvers.
 !!! prerequisite Warning
-Make sure to `export` your custom paths before `source $FOAM_BASH`
-else they will be reset to default.
+     Make sure to `export` your custom paths before `source $FOAM_BASH`
+     else they will be reset to default.

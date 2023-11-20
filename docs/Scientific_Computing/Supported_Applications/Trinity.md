@@ -78,11 +78,11 @@ The following Slurm script is a template for running Trinity Phase 1
 **Note**  :
 
 -   `--cpus-per-task` and `--mem` defined in the following example are
-just place holders.
+    just place holders. 
 -   Use a subset of your sample, run a test first to find the
-suitable/required amount of CPUs and memory for your dataset
+    suitable/required amount of CPUs and memory for your dataset
 
-
+ 
 
 ``` sl
 #!/bin/bash -e
@@ -99,22 +99,22 @@ module load Trinity/2.14.0-gimkl-2022a
 
 # run trinity, stop before phase 2
 srun Trinity --no_distributed_trinity_exec \
---CPU ${SLURM_CPUS_PER_TASK} --max_memory 200G \
-[your_other_trinity_options]
+  --CPU ${SLURM_CPUS_PER_TASK} --max_memory 200G \
+  [your_other_trinity_options]
 ```
 
 The extra Trinity arguments are:
 
 -   `--no_distributed_trinity_exec` tells Trinity to stop before running
-Phase 2
+    Phase 2
 -   `--CPU ${SLURM_CPUS_PER_TASK}` tells Trinity to use the number of
-CPUs specified by the sbatch option `--cpus-per-task` (i.e. you only
-need to update it in one place if you change it)
+    CPUs specified by the sbatch option `--cpus-per-task` (i.e. you only
+    need to update it in one place if you change it)
 -   `--max_memory` should be the same (or maybe slightly lower, so you
-have a small buffer) than the value specified with the sbatch option
-`--mem`
+    have a small buffer) than the value specified with the sbatch option
+    `--mem`
 -   `[your_other_trinity_options]` should be replaced with the other
-trinity options you would usually use, e.g. `--seqType fq`, etc.
+    trinity options you would usually use, e.g. `--seqType fq`, etc.
 
 ### Running Trinity Phase 2
 
@@ -161,7 +161,7 @@ gridtype=SLURM
 
 # template for a grid submission
 # make sure:
-#     --partition is chosen appropriately for the resource requirements
+#     --partition is chosen appropriately for the resource requirements 
 #       (here we choose either large or bigmem, whichever is available first)
 #     --ntasks and --cpus-per-task should always be 1
 #     --mem may need to be adjusted
@@ -184,18 +184,18 @@ max_nodes=100
 cmds_per_node=100
 ```
 
-The important details are:
+ The important details are:
 
 -   `cmds_per_node` is the size of each batch of commands, i.e. here
-each Slurm sub-job runs 100 commands and then exits
+    each Slurm sub-job runs 100 commands and then exits
 -   `max_nodes` is the number of sub-jobs that can be in the queue at
-any given time (each sub-job is single threaded, i.e. it uses just
-one core)
+    any given time (each sub-job is single threaded, i.e. it uses just
+    one core)
 -   name this file SLURM.conf in the directory you will submit the job
-from
+    from
 -   memory usage may be low enough that the sub-jobs can be run on
-either the large or bigmem partitions, which should improve
-throughput compared to bigmem alone
+    either the large or bigmem partitions, which should improve
+    throughput compared to bigmem alone
 
 A template Slurm submission script for Trinity Phase 2 is shown below:
 
@@ -217,16 +217,16 @@ module load HpcGridRunner/20210803
 # run Trinity - this will be the master HPC GridRunner process that handles
 #   submitting sub-jobs (batches of commands) to the Slurm queue
 srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
---grid_exec "hpc_cmds_GridRunner.pl --grid_conf ${SLURM_SUBMIT_DIR}/SLURM.conf -c" \
-[your_other_trinity_options]
+  --grid_exec "hpc_cmds_GridRunner.pl --grid_conf ${SLURM_SUBMIT_DIR}/SLURM.conf -c" \
+  [your_other_trinity_options]
 ```
 
 -   This assumes that you named the HPC GridRunner configuration script
-SLURM.conf and placed it in the same directory that you submit this
-job from
+    SLURM.conf and placed it in the same directory that you submit this
+    job from
 -   The options `--CPU` and `--max_memory` aren't used by Trinity in
-"grid mode" but are still required to be set (i.e. it shouldn't
-matter what you set them to)
+    "grid mode" but are still required to be set (i.e. it shouldn't
+    matter what you set them to)
 
 ## Benchmarks
 

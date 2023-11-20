@@ -24,7 +24,7 @@ zendesk_section_id: 360000040076
 <!-- The above lines, specifying the category, section and title, must be
 present and always comprising the first three lines of the article. -->
 
-
+ 
 
 ## BLAST Databases
 
@@ -61,7 +61,7 @@ approach first and see if it takes too long.
 For jobs which need less than 24 CPU-hours, eg: those that use small
 databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
 or fast BLAST programs such as *blastn* with its default (megablast)
-settings.
+settings.  
 
 ``` bash
 #!/bin/bash -e
@@ -84,7 +84,7 @@ DB=nt
 #DB=nr
 
 $BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt "$FORMAT" \
--out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
+    -out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
 ```
 
 ### Multiple threads and local database copy
@@ -121,10 +121,11 @@ DB=nt
 #DB=nr
 
 # Keep the database in RAM
-cp $BLASTDB/{$DB,taxdb}.* $TMPDIR/
+cp $BLASTDB/{$DB,taxdb}.* $TMPDIR/ 
 export BLASTDB=$TMPDIR
 
 $BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt "$FORMAT" \
--out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
+    -out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
 ```
 
+ 

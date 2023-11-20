@@ -31,37 +31,38 @@ research needs.
 **What’s new**
 
 -   faster, more powerful computing, enabled by AMD 3rd Gen EPYC Milan
-architecture
+    architecture
 
 -   specialised high-memory capabilities, allowing rapid simultaneous
-processing
+    processing
 
 -   improved energy efficiency - these nodes are 2.5 times more power
-efficient than Mahuika’s original Broadwell nodes
+    efficient than Mahuika’s original Broadwell nodes
 
 **How to access**
 
 -   Visit our Support portal for [instructions to get
-started](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes "https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes")
-and details of how the Milan nodes differ from Mahuika’s original
-Broadwell nodes
+    started](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes "https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes")
+    and details of how the Milan nodes differ from Mahuika’s original
+    Broadwell nodes
 
 **Learn more**
 
 -   [Watch this webinar](https://youtu.be/IWRZLl__uhg) sharing a quick
-overview of the new resources and some tips for making the most of
-the nodes.
+    overview of the new resources and some tips for making the most of
+    the nodes.
 
 -   Bring questions to our [weekly Online Office
-Hours](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
+    Hours](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
 
 -   [Email NeSI
-Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")
-any time
+    Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")
+    any time
 
-
+ 
 
 If you have feedback on the new nodes or suggestions for improving your
 experience getting started with or using any of our systems, please [get
 in touch](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
 
+ 

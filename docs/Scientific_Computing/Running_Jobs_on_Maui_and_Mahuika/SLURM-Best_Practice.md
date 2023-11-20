@@ -27,7 +27,7 @@ stop immediately rather than attempting to continue on with an
 unexpected environment or erroneous intermediate data.  It also ensures
 that your failed jobs show a status of FAILED in *sacct* output.
 
-### Resources
+### Resources 
 
 Don't request more resources (CPUs, memory, GPUs) than you will need. In
 addition to using your core hours faster, resources intensive jobs will

@@ -22,19 +22,19 @@ zendesk_section_id: 360000189716
 Many scientific software applications are written to take advantage of
 multiple CPUs in some way. But often this must be specifically requested
 by the user at the time they run the program, rather than happening
-automatically.
+automatically.  
 
 The are three types of parallel execution we will cover
 are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
 !!! prerequisite Note
-Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
-*logical* CPU's = **1** *physical* core).
--   `--cpus-per-task=4` will give you 4 *logical* cores.
--   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
--   If `--hint=nomultithread` is used then `--cpus-per-task` will now
-refer to physical cores, but `--mem-per-cpu=512MB` still refers to
-logical cores.
+     Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
+     *logical* CPU's = **1** *physical* core).  
+     -   `--cpus-per-task=4` will give you 4 *logical* cores.
+     -   `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
+     -   If `--hint=nomultithread` is used then `--cpus-per-task` will now
+         refer to physical cores, but `--mem-per-cpu=512MB` still refers to
+         logical cores.
 
 See [our article on
 hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
@@ -49,7 +49,7 @@ generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 
 
 
-![par.png](../../assets/images/Parallel_Execution.png)*
+![par.png](../../assets/images/Parallel_Execution.png)*  
 Fig. 2: Multi-threading involves dividing the process into multiple
 'threads' which can be run across multiple cores.*
 
@@ -65,7 +65,7 @@ Example script;
 #!/bin/bash -e
 #SBATCH --job-name=MultithreadingTest    # job name (shows up in the queue)
 #SBATCH --time=00:01:00                  # Walltime (HH:MM:SS)
-#SBATCH --mem=2048MB                     # memory in MB
+#SBATCH --mem=2048MB                     # memory in MB 
 #SBATCH --cpus-per-task=4                # 2 physical cores per task.
 
 taskset -c -p $$                         #Prints which CPUs it can use
@@ -115,16 +115,16 @@ The expected output being
 /home/user001/demo
 ```
 !!! prerequisite Warning
-For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
-all. Using `srun` in conjunction with `--cpus-per-task=1` will
-cause `--ntasks` to default to 2.
+     For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
+     all. Using `srun` in conjunction with `--cpus-per-task=1` will
+     cause `--ntasks` to default to 2.
 
 ## Job Arrays
 
 Job arrays are best used for tasks that are completely independent, such
 as parameter sweeps, permutation analysis or simulation, that could be
 executed in any order and don't have to run at the same time. This kind
-of work is often described as *embarrassingly parallel*.
+of work is often described as *embarrassingly parallel*.  
 An embarrassingly parallel problem is one that requires no communication
 or dependency between the tasks (unlike distributed computing problems
 that need communication between tasks).
@@ -154,55 +154,55 @@ results `This is result 1` and `This is result 2` respectively.
 Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
 recommended method of variation between the jobs. For example:
 
--   -   -   As a direct input to a function.
+-   -   -   As a direct input to a function.  
 
-``` sl
-matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
-```
+            ``` sl
+            matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+            ```
 
--   As an index to an array.
+        -   As an index to an array.  
 
-``` sl
-inArray=(1 2 4 8 16 32 64 128)
-input=${inArray[$SLURM_ARRAY_TASK_ID]}
-```
+            ``` sl
+            inArray=(1 2 4 8 16 32 64 128)
+            input=${inArray[$SLURM_ARRAY_TASK_ID]}
+            ```
 
--   For selecting input files.
+        -   For selecting input files.  
 
-``` sl
-input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
-```
+            ``` sl
+            input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+            ```
 
--   As a seed for a pseudo-random number.
--   In R
+        -   As a seed for a pseudo-random number.  
+            -   In R
 
-``` sl
-task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-set.seed(task_id)
-```
+                ``` sl
+                task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+                set.seed(task_id)
+                ```
 
--   In MATLAB
+            -   In MATLAB
 
-``` sl
-task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
-rng(task_id)
-```
+                ``` sl
+                task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+                rng(task_id)
+                ```
 
-*
-Using a seed is important, otherwise multiple jobs may
-receive the same pseudo-random numbers.*
+            *  
+            Using a seed is important, otherwise multiple jobs may
+            receive the same pseudo-random numbers.*
 
--   As an index to an array of filenames.
+        -   As an index to an array of filenames. 
 
-``` sl
-files=( inputs/*.dat )
-input=${files[SLURM_ARRAY_TASK_ID]}
-# If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4'
-```
+            ``` sl
+            files=( inputs/*.dat )
+            input=${files[SLURM_ARRAY_TASK_ID]}
+            # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
+            ```
 
-This example will submit a job array with each job using a
-.dat file in 'inputs' as the variable input (in alphabetcial
-order).
+            This example will submit a job array with each job using a
+            .dat file in 'inputs' as the variable input (in alphabetcial
+            order).
 
 Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
@@ -224,7 +224,7 @@ useful for sorting your output files e.g.
 
 # Define your dimensions in bash arrays.
 arr_time=({00..23})
-arr_day=("Mon" "Tue" "Wed" "Thur" "Fri" "Sat" "Sun")
+arr_day=("Mon" "Tue" "Wed" "Thur" "Fri" "Sat" "Sun") 
 
 # Index the bash arrays based on the SLURM_ARRAY_TASK)
 n_time=${arr_time[$(($SLURM_ARRAY_TASK_ID%${#arr_time[@]}))]} # '%' for finding remainder.
@@ -262,3 +262,4 @@ rm -r ../run_${SLURM_ARRAY_TASK_ID}                     �
 The Slurm documentation on job arrays can be
 found [here](https://slurm.schedmd.com/job_array.html).
 
+ 

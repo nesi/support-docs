@@ -20,9 +20,9 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Requirements
--   Have working
-[terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
-set up.
+     -   Have working
+         [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
+         set up.
 
 X-11 is a protocol for rendering graphical user interfaces (GUIs) that
 can be sent along an SSH tunnel. If you plan on using a GUI on a NeSI
@@ -44,17 +44,17 @@ Download links for X-servers can be found below.
 Make sure you have launched the server and it is running in the
 background, look for
 this ![mceclip0.png](../../assets/images/X11_on_NeSI.png) symbol in your
-taskbar
+taskbar 
 !!! prerequisite Note
-MobaXterm has a build in X server, no setup required. By default the
-server is started alongside MobaXterm. You can check it's status in
-the top left hand corner
-(![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off).
+     MobaXterm has a build in X server, no setup required. By default the
+     server is started alongside MobaXterm. You can check it's status in
+     the top left hand corner
+     (![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off). 
 
 ## X-Forwarding
 
 Finally your ssh tunnel must be set up to 'forward' along X-11
-connections.
+connections. 
 
 ### OpenSSH (terminal)
 
@@ -70,7 +70,7 @@ ssh -Y login.nesi.org.nz
 
 ### MobaXterm
 
-Under 'session settings' for your connection make sure the X-11
+ Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
 ![x11moba.png](../../assets/images/X11_on_NeSI_2.png)
@@ -114,7 +114,7 @@ If your application requires X11 in order to run, but does not need to
 be interactive you can use X11 Virtual Frame Buffer. This may be
 required to in order to run visual applications on the compute nodes.
 Prepending any command with `xfvb-run` will provide a dummy X11 server
-for the application to render to.
+for the application to render to.  
 e.g.
 
 ``` sl

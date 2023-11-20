@@ -25,6 +25,6 @@ zendesk_section_id: 360001150156
 ## New and Improved
 
 -   Changed hub session timeout to 16 hours. Users will be prompted to
-login again after 16 hrs. aligned with max. wall time for JupyterLab
-instances.
+    login again after 16 hrs. aligned with max. wall time for JupyterLab
+    instances. 
 -   JupyterHub fixed: improvements to avoid 403 errors

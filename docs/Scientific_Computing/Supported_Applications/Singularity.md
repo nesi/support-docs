@@ -70,7 +70,7 @@ supported Singularity version.
 
 For more general information on building containers please see the
 [Singularity
-Documentation](https://sylabs.io/guides/3.0/user-guide/build_a_container.html).
+Documentation](https://sylabs.io/guides/3.0/user-guide/build_a_container.html). 
 
 As building a container requires root privileges in general, this cannot
 be done directly on any NeSI nodes. You will need to copy a [Singularity
@@ -130,12 +130,12 @@ A container in Singularity's SIF format can be easily moved to the HPC
 filesystem by:
 
 -   Copying the image file from your local computer with basic file
-transfer tools - please refer to our documentation on [Moving files
-to/from the
-cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
-and [Data Transfer using
-Globus](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)
-(if you have a very large container) for details
+    transfer tools - please refer to our documentation on [Moving files
+    to/from the
+    cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+    and [Data Transfer using
+    Globus](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)
+    (if you have a very large container) for details
 -   Downloading the container from an online repository
 
 To download a container, use commands such as
@@ -175,7 +175,7 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %post
-# intallation instructions go here
+    # intallation instructions go here
 ```
 
 ## Running a container on Mahuika or Māui Ancil
@@ -271,11 +271,11 @@ access it using the `--nv` flag:
 singularity run --nv my_container.sif
 ```
 !!! prerequisite Note
-Make sure that your container contains the CUDA toolkit and additional
-libraries needed by your application (e.g. cuDNN). The `--nv` option
-only ensures that the basic CUDA libraries from the host are bound
-into the container and that the GPU device is accessible in the
-container.
+     Make sure that your container contains the CUDA toolkit and additional
+     libraries needed by your application (e.g. cuDNN). The `--nv` option
+     only ensures that the basic CUDA libraries from the host are bound
+     into the container and that the GPU device is accessible in the
+     container.
 
 ### Network isolation
 
@@ -321,20 +321,20 @@ further details on using Slurm.
 ## Tips & Tricks
 
 -   Make sure that your container runs before uploading it - you will
-not be able to rebuild it from a new definition file directly on the
-HPC
+    not be able to rebuild it from a new definition file directly on the
+    HPC
 -   Try to configure all software to run in user space without requiring
-privilege escalation via "sudo" or other privileged capabilities
-such as reserved network ports - although Singularity supports some
-of these features inside a container on some systems, they may not
-always be available on the HPC or other platforms, therefore relying
-on features such as Linux user namespaces could limit the
-portability of your container
+    privilege escalation via "sudo" or other privileged capabilities
+    such as reserved network ports - although Singularity supports some
+    of these features inside a container on some systems, they may not
+    always be available on the HPC or other platforms, therefore relying
+    on features such as Linux user namespaces could limit the
+    portability of your container
 -   If your container runs an MPI application, make sure that the MPI
-distribution that is installed inside the container is compatible
-with Intel MPI
+    distribution that is installed inside the container is compatible
+    with Intel MPI
 -   Write output data and log files to the HPC file system using a
-directory that is bound into the container - this helps
-reproducibility of results by keeping the container image immutable,
-it makes sure that you have all logs available for debugging if a
-job crashes, and it avoids inflating the container image file
+    directory that is bound into the container - this helps
+    reproducibility of results by keeping the container image immutable,
+    it makes sure that you have all logs available for debugging if a
+    job crashes, and it avoids inflating the container image file

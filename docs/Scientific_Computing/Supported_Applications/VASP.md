@@ -110,7 +110,7 @@ or, equivalently,
 
 as shown in our example script above.
 
-
+ 
 
 ### How many cores should I request?
 
@@ -305,7 +305,7 @@ corresponds to only exchange and not to exchange and correlation." For
 more information on correct usage of LIBXC please see[VASP's
 documentation](https://www.vasp.at/wiki/index.php/LIBXC1) on this.
 
-
+ 
 
 ### Which VASP executable should I use?
 
@@ -356,54 +356,54 @@ details about the available GPUs on NeSI
 Here are some additional notes specific to running VASP on GPUs on NeSI:
 
 -   -   The command that you use to run VASP does not change - unlike
-the previous CUDA version, which had a `vasp_gpu` executable,
-with the OpenACC version the usual VASP executables (`vasp_std`,
-`vasp_gam`, `vasp_ncl`) are all built with OpenACC GPU support
-in the *\*-NVHPC-\** modules, so just use those as usual
--   Always select one MPI process (Slurm task) per GPU, for example:
--   Running on 1 P100 GPU
+        the previous CUDA version, which had a `vasp_gpu` executable,
+        with the OpenACC version the usual VASP executables (`vasp_std`,
+        `vasp_gam`, `vasp_ncl`) are all built with OpenACC GPU support
+        in the *\*-NVHPC-\** modules, so just use those as usual
+    -   Always select one MPI process (Slurm task) per GPU, for example:
+        -   Running on 1 P100 GPU  
 
-``` sl
-# snippet of Slurm script
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1  # 1 task per node as we set 1 GPU per node below
-#SBATCH --cpus-per-task=1
-#SBATCH --gpus-per-node=P100:1
-# end snippet
-```
+            ``` sl
+            # snippet of Slurm script
+            #SBATCH --nodes=1
+            #SBATCH --ntasks-per-node=1  # 1 task per node as we set 1 GPU per node below
+            #SBATCH --cpus-per-task=1
+            #SBATCH --gpus-per-node=P100:1
+            # end snippet
+            ```
 
--   Running on 4 HGX A100 GPUs on a single node
+        -   Running on 4 HGX A100 GPUs on a single node  
 
-``` sl
-# snippet of Slurm script
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4  # 4 tasks per node as we set 4 GPUs per node below
-#SBATCH --cpus-per-task=1
-#SBATCH --gpus-per-node=A100:4
-#SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
-# end snippet
-```
--   Multiple threads per MPI process (--cpus-per-task) might be
-beneficial for performance but you should start by setting this
-to 1 to get a baseline
--   VASP will scale better across multiple GPUs when they are all on
-the same node compared to across multiple nodes
--   if you see memory errors like
-`call to cuMemAlloc returned error 2: Out of memory` you
-probably ran out of GPU memory. You could try requesting more
-GPUs (so the total amount of available memory is higher) and/or
-moving to GPUs with more memory (note: GPU memory is distinct
-from the usual memory you have to request for your job via
-`#SBATCH --mem` or similar; when you are allocated a GPU you get
-access to all the GPU memory on that device)
--   P100 GPUs have 12 GB GPU memory and you can have a maximum
-of 2 per node
--   PCI A100 GPUs have 40 GB GPU memory and you can have a
-maximum of 2 per node
--   HGX A100 GPUs have 80 GB GPU memory and you can have a
-maximum of 4 per node
--   the HGX GPUs have a faster interconnect between the GPUs within
-a single node; if using multiple GPUs you may get better
-performance with the HGX A100s than with the PCI A100s
--   A100 GPUs have more compute power than P100s so will perform
-better if your simulation can take advantage of the extra power
+            ``` sl
+            # snippet of Slurm script
+            #SBATCH --nodes=1
+            #SBATCH --ntasks-per-node=4  # 4 tasks per node as we set 4 GPUs per node below
+            #SBATCH --cpus-per-task=1
+            #SBATCH --gpus-per-node=A100:4
+            #SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
+            # end snippet
+            ```
+    -   Multiple threads per MPI process (--cpus-per-task) might be
+        beneficial for performance but you should start by setting this
+        to 1 to get a baseline
+    -   VASP will scale better across multiple GPUs when they are all on
+        the same node compared to across multiple nodes
+    -   if you see memory errors like
+        `call to cuMemAlloc returned error 2: Out of memory` you
+        probably ran out of GPU memory. You could try requesting more
+        GPUs (so the total amount of available memory is higher) and/or
+        moving to GPUs with more memory (note: GPU memory is distinct
+        from the usual memory you have to request for your job via
+        `#SBATCH --mem` or similar; when you are allocated a GPU you get
+        access to all the GPU memory on that device)
+        -   P100 GPUs have 12 GB GPU memory and you can have a maximum
+            of 2 per node
+        -   PCI A100 GPUs have 40 GB GPU memory and you can have a
+            maximum of 2 per node
+        -   HGX A100 GPUs have 80 GB GPU memory and you can have a
+            maximum of 4 per node
+    -   the HGX GPUs have a faster interconnect between the GPUs within
+        a single node; if using multiple GPUs you may get better
+        performance with the HGX A100s than with the PCI A100s
+    -   A100 GPUs have more compute power than P100s so will perform
+        better if your simulation can take advantage of the extra power

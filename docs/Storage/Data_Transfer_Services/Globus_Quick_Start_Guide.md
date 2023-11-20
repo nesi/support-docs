@@ -29,11 +29,11 @@ data to or from NeSI, you need:
 
 1.  A NeSI account
 2.  A Globus account
-3.  Access to Globus DTNs or endpoint
--   Access to a DTN (e.g., at your home institution)
--   Personal endpoint if no DTN is available
+3.  Access to Globus DTNs or endpoint  
+    -   Access to a DTN (e.g., at your home institution)
+    -   Personal endpoint if no DTN is available
 
-
+ 
 
 ## Globus Account
 
@@ -53,12 +53,12 @@ For more detailed instructions please see [Initial Globus Sign-Up, and
 your Globus
 Identities](https://support.nesi.org.nz/hc/en-gb/articles/360000817476).
 
-
+ 
 
 ## Globus Endpoint Activation
 
 A NeSI account is required in addition to a Globus account to transfer
-data to or from NeSI facilities. *
+data to or from NeSI facilities. *  
 *
 
 To transfer data, between two sites, you need to have access to a DTN or
@@ -80,19 +80,19 @@ To activate the NeSI endpoint click go to
 bar on the left.
 
 1.  Next to "Collection", search for "NeSI Wellington DTN V5", select
-it, then click "Continue".
+    it, then click "Continue".
 2.  In the 'Username**'** field, enter your NeSI HPC username. In the
-'Password**'** field, the password is
-`Login Password (First Factor)` +
-`Authenticator Code (Second Factor)` e.g. `password123456`. Please
-**do not** save your password on "*Browser settings*" as it will
-change every time due to the 2nd factor requirement.
+    'Password**'** field, the password is
+    `Login Password (First Factor)` +
+    `Authenticator Code (Second Factor)` e.g. `password123456`. Please
+    **do not** save your password on "*Browser settings*" as it will
+    change every time due to the 2nd factor requirement.
 
 ![NeSI\_Globus\_Authenticate.png](../../assets/images/Globus_Quick_Start_Guide_0.png)
 
+ 
 
-
-
+ 
 
 ## Transferring Data
 
@@ -107,12 +107,13 @@ on the right, to the location on the left.
 To see the progress of the transfer, please click 'Activity' on the left
 hand menu bar.
 
-
+ 
 
 If you have any questions or issues using Globus to transfer data to or
 from NeSI, email [support@nesi.org.nz](https://support@nesi.org.nz).
 
+ 
 
+ 
 
-
-
+ 

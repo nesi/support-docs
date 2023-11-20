@@ -40,7 +40,7 @@ follow up on system-related requests.
 The monthly emails also include any timely updates on other NeSI news or
 training events that would be of interest to your research community.
 
-
+ 
 
 ## How to read your Subscriber Usage Report
 
@@ -49,31 +49,31 @@ reference, and compare recent and past usage.
 
 -   at the top of each tab is a summary of the contract, indicating the:
 
--   term of agreement (contract start and end dates)
+    -   term of agreement (contract start and end dates)
 
--   maximum contracted value
+    -   maximum contracted value
 
--   value of services utilised to date
+    -   value of services utilised to date
 
 -   usage for each service is shown in the corresponding sections below
 
 -   in cases where a service has differently priced resources (eg.
-Compute pricing varies across our CPU and GPU resources), we will
-also indicate additional information (eg. “Type of CPU” and “Type of
-GPU”) so you have a breakdown of what usage contributes to the total
-chargeable costs that month. See the Pricing section above for more
-information on our service pricing.
+    Compute pricing varies across our CPU and GPU resources), we will
+    also indicate additional information (eg. “Type of CPU” and “Type of
+    GPU”) so you have a breakdown of what usage contributes to the total
+    chargeable costs that month. See the Pricing section above for more
+    information on our service pricing.
 
 -   to showcase full value delivered through NeSI services, our reports
-will also show usage that is not chargeable (eg. Merit usage). This
-is shown simply for information purposes and is not included or
-reflected on invoices.
+    will also show usage that is not chargeable (eg. Merit usage). This
+    is shown simply for information purposes and is not included or
+    reflected on invoices.
 
 Usage reports generally ready to view by the middle of the following
 month. So, for example, January usage will appear as a new tab by mid-
 to late February.
 
-
+ 
 
 If you have any questions about anything mentioned on this page, don’t
 hesitate to [get in touch](mailto:info@nesi.org.nz).

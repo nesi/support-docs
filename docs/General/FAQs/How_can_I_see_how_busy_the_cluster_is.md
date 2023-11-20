@@ -20,7 +20,7 @@ zendesk_section_id: 360000039036
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 You can get the current status of all nodes on a cluster using the
-command `sinfo`, you will get a printout like the following.
+command `sinfo`, you will get a printout like the following. 
 
 *The nodelist column has been truncated for readability.*
 
@@ -46,7 +46,7 @@ hugemem   up    1-infini 7-00:00:00    128 4:16:2       1   mixed      wbh001
 
 Each partition has a row for every state it's nodes are currently in.
 
-For example, the `large` partition currently has  **1** `down` node,
+For example, the `large` partition currently has  **1** `down` node, 
 **133** `mixed` nodes,  **7** `allocated` nodes and  **85** `idle`
 nodes.
 
@@ -68,3 +68,4 @@ If you are interested in the state of one partition in particular you
 may want to use the command `squeue -p <partition>` to get the current
 queue of the partition `<partition> `
 
+ 

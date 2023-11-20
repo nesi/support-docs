@@ -20,12 +20,12 @@ zendesk_section_id: 360001189255
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Note
-This functionality is experimental and developing, which may introduce
-breaking changes in the future.
-If you would like to report a bug or propose a change see the GitHub
-repo
-[https://github.com/nesi/jupyter-matlab-proxy](https://github.com/nesi/jupyter-matlab-proxy?organization=nesi&organization=nesi)
-or contact NeSI support at <support@nesi.org.nz>.
+     This functionality is experimental and developing, which may introduce
+     breaking changes in the future.
+     If you would like to report a bug or propose a change see the GitHub
+     repo
+     [https://github.com/nesi/jupyter-matlab-proxy](https://github.com/nesi/jupyter-matlab-proxy?organization=nesi&organization=nesi)
+     or contact NeSI support at <support@nesi.org.nz>.
 
 ## Getting started
 
@@ -43,13 +43,13 @@ where you will see the following status information page.
 ## ![image\_\_1\_.png](../../assets/images/MATLAB_via_Jupyter_on_NeSI_0.png)
 
 MATLAB may take a few minutes to load, once it does you will be put
-straight into the MATLAB environment.
+straight into the MATLAB environment. 
 
 You can open the status page at any time by clicking the
 [![](../../assets/images/MATLAB_via_Jupyter_on_NeSI_1.png)](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
 button.
 !!! prerequisite Note
-Your license must be valid for MATLAB 2021b or newer.
+     Your license must be valid for MATLAB 2021b or newer.
 
 ## Licensing
 
@@ -77,5 +77,6 @@ not work as intended.
 For more details see
 [MATLAB#known\_bugs](https://support.nesi.org.nz/hc/en-gb/articles/212639047#known_bugs).
 
+ 
 
-
+ 

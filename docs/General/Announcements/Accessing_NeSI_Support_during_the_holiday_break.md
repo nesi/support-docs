@@ -37,21 +37,21 @@ A quick reminder of our main support channels as well as other sources
 of self-service support:
 
 -   [Submit a ticket to
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new") (Note:
-non-emergency requests will be addressed on or after 03 January
-2024)
+    Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new") (Note:
+    non-emergency requests will be addressed on or after 03 January
+    2024)
 
 -   [Sign up for NeSI system status
-updates](https://support.nesi.org.nz/hc/en-gb/articles/360000751636 "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
-advance warning of any system updates or unplanned outages.
+    updates](https://support.nesi.org.nz/hc/en-gb/articles/360000751636 "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
+    advance warning of any system updates or unplanned outages. 
 
 -   [Consult our User
-Documentation](https://support.nesi.org.nz/hc/en-gb/categories/360000013836 "https://support.nesi.org.nz/hc/en-gb/categories/360000013836") pages
-for instructions and guidelines for using the systems
+    Documentation](https://support.nesi.org.nz/hc/en-gb/categories/360000013836 "https://support.nesi.org.nz/hc/en-gb/categories/360000013836") pages
+    for instructions and guidelines for using the systems
 
 -   [Visit NeSI’s YouTube
-channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
-introductory training webinars
+    channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
+    introductory training webinars
 
 On behalf of the entire NeSI team, we wish you a safe and relaxing
-holiday.
+holiday. 

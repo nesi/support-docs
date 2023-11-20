@@ -42,12 +42,12 @@ Python packages for computational work such as *numpy*, *scipy*,
 Our most recent Python environment modules have:
 
 -   *multiprocessing.cpu\_count()* patched to return only the number of
-CPUs available to the process, which in a Slurm job can be fewer
-than the number of CPUs on the node.
+    CPUs available to the process, which in a Slurm job can be fewer
+    than the number of CPUs on the node.
 
 -   PYTHONUSERBASE set to a path which includes the toolchain, so that
-incompatible builds of the same version of Python don't attempt to
-share user-installed libraries.
+    incompatible builds of the same version of Python don't attempt to
+    share user-installed libraries.
 
 ## Example scripts
 
@@ -66,14 +66,14 @@ python MyPythonScript.py
 ### MPI Example
 
 ``` sl
-#!/bin/bash -e
-#SBATCH --job-name=PythonMPI
-#SBATCH --ntasks=2          # Number of MPI tasks
-#SBATCH --time=00:30:00
-#SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+  #!/bin/bash -e
+  #SBATCH --job-name=PythonMPI
+  #SBATCH --ntasks=2          # Number of MPI tasks
+  #SBATCH --time=00:30:00
+  #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
 
-module load Python
-srun python PythonMPI.py   # Executes ntasks copies of the script
+  module load Python
+  srun python PythonMPI.py   # Executes ntasks copies of the script
 ```
 
 ``` sl
@@ -93,11 +93,11 @@ rank_data += 1
 # gather the data back to rank 0
 data_gather = comm.gather(rank_data, root = 0)
 
-# on rank 0 sum the gathered data and print both the sum of,
+# on rank 0 sum the gathered data and print both the sum of, 
 # and the unsummed data
 if rank == 0:
-print('Gathered data:', data_gather)
-print('Sum:', sum(data_gather))
+    print('Gathered data:', data_gather)
+    print('Sum:', sum(data_gather))
 ```
 
 The above Python script will create a list of numbers (0-9) split
@@ -109,47 +109,47 @@ data is printed.
 #### Multiprocessing Example
 
 ``` sl
-#!/bin/bash -e
-#SBATCH --job-name=PytonMultiprocessing
-#SBATCH --cpus-per-task=2   # Number of logical CPUs
-#SBATCH --time=00:10:00
-#SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+  #!/bin/bash -e
+  #SBATCH --job-name=PytonMultiprocessing
+  #SBATCH --cpus-per-task=2   # Number of logical CPUs
+  #SBATCH --time=00:10:00
+  #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
 
-module load Python
-python PythonMultiprocessing.py
+  module load Python
+  python PythonMultiprocessing.py
 ```
 
 ``` sl
 import multiprocessing
 
 def calc_square(numbers, result1):
-for idx, n in enumerate(numbers):
-result1[idx] = n*n
+    for idx, n in enumerate(numbers):
+        result1[idx] = n*n
 
 def calc_cube(numbers, result2):
-for idx, n in enumerate(numbers):
-result2[idx] = n*n*n
+    for idx, n in enumerate(numbers):
+        result2[idx] = n*n*n
 
 if __name__ == "__main__":
-numbers = [2,3,4]
-# Sets up the shared memory variables, allowing the variables to be
-# accessed globally across processes
-result1 = multiprocessing.Array('i',3)
-result2 = multiprocessing.Array('i',3)
-# set up the processes
-p1 = multiprocessing.Process(target=calc_square, args=(numbers,result1,))
-p2 = multiprocessing.Process(target=calc_cube, args=(numbers,result2,))
+    numbers = [2,3,4]
+    # Sets up the shared memory variables, allowing the variables to be
+    # accessed globally across processes
+    result1 = multiprocessing.Array('i',3)
+    result2 = multiprocessing.Array('i',3)
+    # set up the processes
+    p1 = multiprocessing.Process(target=calc_square, args=(numbers,result1,))
+    p2 = multiprocessing.Process(target=calc_cube, args=(numbers,result2,))
 
-# start the processes
-p1.start()
-p2.start()
+    # start the processes
+    p1.start()
+    p2.start()
 
-# end the processes
-p1.join()
-p2.join()
+    # end the processes
+    p1.join()
+    p2.join()
 
-print(result1[:])
-print(result2[:])
+    print(result1[:])
+    print(result2[:])
 ```
 
 The above Python script will calculated the square and cube of an array
@@ -215,22 +215,22 @@ import argparse
 
 # get tests from file
 class LoadFromFile(argparse.Action):
-"""
-class for reading arguments from file
-"""
-def __call__(self, parser, namespace, values, option_string=None):
-with values as F:
-vals = F.read().split()
-setattr(namespace, self.dest, vals)
+    """
+    class for reading arguments from file
+    """
+    def __call__(self, parser, namespace, values, option_string=None):
+        with values as F:
+            vals = F.read().split()
+        setattr(namespace, self.dest, vals)
 
 def get_args():
-"""
-Definition of the input arguments
-"""
-parser = argparse.ArgumentParser(description='Hello World')
-parser.add_argument('-ID', type=int, action='store', dest='my_id',
-help='Slurm ID')
-return parser.parse_args()
+    """
+    Definition of the input arguments
+    """
+    parser = argparse.ArgumentParser(description='Hello World')
+    parser.add_argument('-ID', type=int, action='store', dest='my_id',
+                        help='Slurm ID')
+    return parser.parse_args()
 
 
 ARGS = get_args()
@@ -419,7 +419,7 @@ Unicode object representing an integer literal in the given base.  The
 literal can be preceded by '+' or '-' and be surrounded by whitespace.
 The base defaults to 10.  Valid bases are 0 and 2-36.  Base 0 means to
 interpret the base from the string as an integer literal.
->> int('0b100', base=0)
+    >> int('0b100', base=0)
 4
 ```
 

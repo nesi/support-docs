@@ -32,9 +32,9 @@ Unfortunately, the programmers of different operating systems have
 represented line endings using different sequences:
 
 -   All versions of Microsoft Windows represent line endings as CR
-followed by LF.
+    followed by LF.
 -   UNIX and UNIX-like operating systems (including Mac OS X) represent
-line endings as LF alone.
+    line endings as LF alone.
 
 Therefore, a text file prepared in a Windows environment will, when
 copied to a UNIX-like environment such as a NeSI cluster, have an
@@ -57,7 +57,7 @@ If you submit (using `sbatch`) a Slurm submission script with
 Windows-style line endings, you will likely receive the following error:
 
 ``` bash
-sbatch: error: Batch script contains DOS line breaks (\r\n)
+sbatch: error: Batch script contains DOS line breaks (\r\n) 
 sbatch: error: instead of expected UNIX line breaks (\n).
 ```
 
@@ -69,7 +69,7 @@ variable, but program behaviours might include the following responses:
 
 -   Explicitly stating the problem with line endings
 -   Complaining more vaguely that the input data is incomplete or
-corrupt or that there are problems reading it
+    corrupt or that there are problems reading it
 -   Failing in a more serious way such as a segmentation fault
 
 ## Checking a file's line ending format
@@ -109,10 +109,10 @@ a box containing the current line ending format.
 
 -   In most cases, this box will contain the text "DOS\Windows".
 -   In a few cases, such as the file having been prepared on a UNIX or
-Linux machine or a Mac, it will contain the text "UNIX".
+    Linux machine or a Mac, it will contain the text "UNIX".
 -   It is possible, though highly unlikely by now, that the file may
-have old-style (pre-OSX) Mac line endings, in which case the box
-will contain the text "Macintosh".
+    have old-style (pre-OSX) Mac line endings, in which case the box
+    will contain the text "Macintosh".
 
 Please note that if you change a file's line ending style, you must save
 your changes before copying the file anywhere, including to a cluster.

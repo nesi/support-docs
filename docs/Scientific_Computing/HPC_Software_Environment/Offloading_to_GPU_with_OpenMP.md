@@ -32,14 +32,14 @@ operation involving a large loop:
 #include <iostream>
 #include <cmath>
 int main() {
-int n = 1000000000;
-double total = 0;
+ int n = 1000000000;
+ double total = 0;
 #pragma omp target teams distribute \
 parallel for map(tofrom: total) map(to: n) reduction(+:total)
-for (int i = 0; i < n; ++i) {
-total += exp(sin(M_PI * (double) i/12345.6789));
-}
-std::cout << "total is " << total << '\n';
+ for (int i = 0; i < n; ++i) {
+ total += exp(sin(M_PI * (double) i/12345.6789));
+ }
+ std::cout << "total is " << total << '\n';
 }
 ```
 
@@ -53,7 +53,7 @@ map(to: n) reduction(+:total)
 ```
 
 which moves variables `total` and `n` to the GPU and creates teams of
-threads to perform the sum operation in parallel.
+threads to perform the sum operation in parallel. 
 
 ## Compile
 
@@ -62,7 +62,7 @@ need to load a few modules:
 
 ``` sl
 module load cray-libsci_acc/18.06.1 craype-accel-nvidia60 \
-PrgEnv-cray/1.0.4 cuda92/blas/9.2.88 cuda92/toolkit/9.2.88
+ PrgEnv-cray/1.0.4 cuda92/blas/9.2.88 cuda92/toolkit/9.2.88
 ```
 
 (Ignore warning "cudatoolkit &gt;= 8.0 is required").

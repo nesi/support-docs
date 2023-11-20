@@ -90,12 +90,12 @@ directory from which the ORCA executable is invoked.
 To restart from an existing GBW file, you should do the following:
 
 1.  Ensure that the GBW file you want to start from is renamed so that
-it does not have the same base name as your intended input file.
-Otherwise, it will be overwritten and destroyed as soon as ORCA
-starts running.
+    it does not have the same base name as your intended input file.
+    Otherwise, it will be overwritten and destroyed as soon as ORCA
+    starts running.
 2.  In your input file, specify the following lines, replacing
-"checkpoint.gbw" with the name of the GBW file you intend to read
-from:
+    "checkpoint.gbw" with the name of the GBW file you intend to read
+    from:
 
 ``` sl
 ! moread

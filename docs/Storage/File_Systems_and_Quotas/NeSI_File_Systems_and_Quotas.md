@@ -25,13 +25,13 @@ zendesk_section_id: 360000033936
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite New Feature
-[Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
-have recently started rolling out compression of inactive data on the
-NeSI Project filesystem. Please see the [documentation
-below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
-works and what data will be compressed.
+     [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
+     have recently started rolling out compression of inactive data on the
+     NeSI Project filesystem. Please see the [documentation
+     below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
+     works and what data will be compressed.
 
-
+ 
 
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) and
 [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575), along
@@ -41,7 +41,7 @@ before that as GPFS, or General Parallel File System - we'll generally
 refer to it as "Scale" where the context is clear.
 
 You may query your actual usage and disk allocations using the following
-command:
+command: 
 
 `$ nn_storage_quota`
 
@@ -219,12 +219,12 @@ interfaces</strong></span></td>
 We use Scale soft and hard quotas for both disk space and inodes.
 
 -   Once you exceed a fileset's soft quota, a one-week countdown timer
-starts. When that timer runs out, you will no longer be able to
-create new files or write more data in that fileset. You can reset
-the countdown timer by dropping down to under the soft quota limit.
+    starts. When that timer runs out, you will no longer be able to
+    create new files or write more data in that fileset. You can reset
+    the countdown timer by dropping down to under the soft quota limit.
 -   You will not be permitted to exceed a fileset's hard quota at all.
-Any attempt to try will produce an error; the precise error will
-depend on how your software responds to running out of disk space.
+    Any attempt to try will produce an error; the precise error will
+    depend on how your software responds to running out of disk space.
 
 When quotas are first applied to a fileset, or are reduced, it is
 possible to end up with more data or files in the fileset than the quota
@@ -234,27 +234,27 @@ but will prevent creation of new data or files.
 #### **Notes:**
 
 -   You may request an increase in storage and inode quota if needed by
-a project. This may in turn be reduced as part of managing overall
-risk, where large amounts of quota aren't used for a long period (~6
-Months).
+    a project. This may in turn be reduced as part of managing overall
+    risk, where large amounts of quota aren't used for a long period (~6
+    Months).
 -   If you need to compile or install a software package that is large
-or is intended for use by a project team, please build it
-in `/nesi/project/<project_code>` rather than `/home/<username>`.
+    or is intended for use by a project team, please build it
+    in `/nesi/project/<project_code>` rather than `/home/<username>`.
 -   As the `/nesi/nobackup` file system provides the highest
-performance, input files should be moved or copied to this file
-system before starting any job that makes use of them. Likewise, job
-scripts should be written so as to write output files to the
-`/nesi/nobackup` file system. If you wish to keep your data for the
-long term, you can include as a final part of your job script an
-operation to copy or move the output data to the `/nesi/project`
-file system.
+    performance, input files should be moved or copied to this file
+    system before starting any job that makes use of them. Likewise, job
+    scripts should be written so as to write output files to the
+    `/nesi/nobackup` file system. If you wish to keep your data for the
+    long term, you can include as a final part of your job script an
+    operation to copy or move the output data to the `/nesi/project`
+    file system.
 -   Keep in mind that data on `/nesi/nobackup` is not backed up,
-therefore users are advised to move valuable data
-to `/nesi/project/<project_code>`, or, if the data is seldom used,
-to other storage such as an institutional storage facility, as soon
-as batch jobs are completed. Please do **not** use the `touch`
-command to prevent the cleaning policy from removing files, because
-this behaviour would deprive the community of a shared resource.
+    therefore users are advised to move valuable data
+    to `/nesi/project/<project_code>`, or, if the data is seldom used,
+    to other storage such as an institutional storage facility, as soon
+    as batch jobs are completed. Please do **not** use the `touch`
+    command to prevent the cleaning policy from removing files, because
+    this behaviour would deprive the community of a shared resource.
 
 ### /home
 
@@ -319,12 +319,12 @@ analyse datasets up to 1 PB in size.
 
 ### /nesi/nearline
 !!! prerequisite Note
-The nearline service, including its associated file systems, is in an
-Early Access phase, and allocations are by invitation. We appreciate
-your patience as we develop, test and deploy this service. If you
-would like to participate in the Early Access Programme, please
-[contact our support
-team](https://support.nesi.org.nz/hc/requests/new).
+     The nearline service, including its associated file systems, is in an
+     Early Access phase, and allocations are by invitation. We appreciate
+     your patience as we develop, test and deploy this service. If you
+     would like to participate in the Early Access Programme, please
+     [contact our support
+     team](https://support.nesi.org.nz/hc/requests/new).
 
 The `/nesi/nearline` filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of

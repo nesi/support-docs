@@ -39,20 +39,20 @@ pages.
 
 ## Adding a custom Python kernel
 !!! prerequisite See also
-See the [Jupyter kernels - Tool-assisted
-management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
-page for the **preferred** way to register kernels, which uses the
-`nesi-add-kernel` command line tool to automate most of these manual
-steps.
+     See the [Jupyter kernels - Tool-assisted
+     management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
+     page for the **preferred** way to register kernels, which uses the
+     `nesi-add-kernel` command line tool to automate most of these manual
+     steps.
 
 You can configure custom Python kernels for running your Jupyter
 notebooks. This could be necessary and/or recommended in some
 situations, including:
 
 -   if you wish to load a different combination of environment modules
-than those we load in our default kernels
+    than those we load in our default kernels
 -   if you would like to activate a virtual environment or conda
-environment before launching the kernel
+    environment before launching the kernel
 
 The following example will create a custom kernel based on the
 Miniconda3 environment module (but applies to other environment modules
@@ -106,7 +106,7 @@ module purge
 module load Miniconda3/4.8.2
 
 # activate conda environment
-source $(conda info --base)/etc/profile.d/conda.sh
+source $(conda info --base)/etc/profile.d/conda.sh 
 conda deactivate  # workaround for https://github.com/conda/conda/issues/9392
 conda activate my-conda-env
 
@@ -126,15 +126,15 @@ like this (change &lt;username&gt; to your NeSI username):
 
 ``` sl
 {
-"argv": [
-"/home/<username>/.local/share/jupyter/kernels/my-conda-env/wrapper.sh",
-"-m",
-"ipykernel_launcher",
-"-f",
-"{connection_file}"
-],
-"display_name": "My Conda Env",
-"language": "python"
+ "argv": [
+ "/home/<username>/.local/share/jupyter/kernels/my-conda-env/wrapper.sh",
+ "-m",
+ "ipykernel_launcher",
+ "-f",
+ "{connection_file}"
+ ],
+ "display_name": "My Conda Env",
+ "language": "python"
 }
 ```
 
@@ -205,15 +205,15 @@ look like this (change &lt;project\_code&gt; to your NeSI project code):
 
 ``` sl
 {
-"argv": [
-"/nesi/project/<project_code>/.jupyter/share/jupyter/kernels/shared-ete-env/wrapper.sh",
-"-m",
-"ipykernel_launcher",
-"-f",
-"{connection_file}"
-],
-"display_name": "Shared Conda Env",
-"language": "python"
+ "argv": [
+ "/nesi/project/<project_code>/.jupyter/share/jupyter/kernels/shared-ete-env/wrapper.sh",
+ "-m",
+ "ipykernel_launcher",
+ "-f",
+ "{connection_file}"
+ ],
+ "display_name": "Shared Conda Env",
+ "language": "python"
 }
 ```
 
@@ -290,16 +290,16 @@ something like this (change &lt;username&gt; to your NeSI username):
 
 ``` sl
 {
-"argv": [
-"/home/<username>/.local/share/jupyter/kernels/myrwithmpfr/wrapper.sh",
-"--slave",
-"-e",
-"IRkernel::main()",
-"--args",
-"{connection_file}"
-],
-"display_name": "R with MPFR",
-"language": "R"
+ "argv": [
+ "/home/<username>/.local/share/jupyter/kernels/myrwithmpfr/wrapper.sh",
+ "--slave",
+ "-e",
+ "IRkernel::main()",
+ "--args",
+ "{connection_file}"
+ ],
+ "display_name": "R with MPFR",
+ "language": "R"
 }
 ```
 

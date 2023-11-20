@@ -20,9 +20,9 @@ zendesk_section_id: 360000034315
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Requirements
--   Have your [connection to the NeSI
-cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
-configured.
+     -   Have your [connection to the NeSI
+         cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
+         configured.
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
@@ -36,7 +36,7 @@ Three values must be known, the *local port*, the *host alias*, and the
 **Localhost: **The self address of a host (computer), equivalent
 to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 
-**Local Port:** The port number you will use on your local machine.
+**Local Port:** The port number you will use on your local machine. 
 
 **Host Alias:** An alias for the socket of your main connection to the
 cluster, `mahuika` or `maui` if you have set up your ssh config file as
@@ -46,10 +46,10 @@ described
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
 !!! prerequisite Note
-The following examples use aliases as set up in [standard terminal
-setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
-This allows the forwarding from your local machine to the NeSI
-cluster, without having to re-tunnel through the lander node.
+     The following examples use aliases as set up in [standard terminal
+     setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+     This allows the forwarding from your local machine to the NeSI
+     cluster, without having to re-tunnel through the lander node.
 
 ## Command line (OpenSSH)
 
@@ -69,7 +69,7 @@ I want to connect to a server running on mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:
 
 ``` sl
-ssh -L 5555:localhost:6666 mahuika
+ssh -L 5555:localhost:6666 mahuika 
 ```
 
 Your terminal will now function like a normal connection to mahuika.
@@ -77,10 +77,10 @@ However if you close this terminal session the port forwarding will end.
 
 If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
-procedure.
+procedure. 
 !!! prerequisite Note
-Your local port and remote port do not have to be different numbers.
-It is generally easier to use the same number for both.
+     Your local port and remote port do not have to be different numbers.
+     It is generally easier to use the same number for both.
 
 ## SSH Config (OpenSSH)
 
@@ -98,21 +98,21 @@ ExitOnForwardFailure yes
 ```
 
 ExitOnForwardFailure is optional, but it is useful to kill the session
-if the port fails.
+if the port fails. 
 
 e.g.
 
 ``` sl
-Host mahuika
-User cwal219
-Hostname login.mahuika.nesi.org.nz
-ProxyCommand ssh -W %h:%p lander
-ForwardX11 yes
-ForwardX11Trusted yes
-ServerAliveInterval 300
-ServerAliveCountMax 2
-LocalForward 6676 mahuika:6676
-ExitOnForwardFailure yes
+  Host mahuika
+      User cwal219
+      Hostname login.mahuika.nesi.org.nz
+      ProxyCommand ssh -W %h:%p lander
+      ForwardX11 yes
+      ForwardX11Trusted yes
+      ServerAliveInterval 300
+      ServerAliveCountMax 2
+      LocalForward 6676 mahuika:6676
+      ExitOnForwardFailure yes
 ```
 
 In the above example, the local and remote ports are the same. This
@@ -121,15 +121,15 @@ isn't a requirement, but it makes things easier to remember.
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
 !!! prerequisite Note
--   If you get a error message
-``` sl
-bind: No such file or directory
-unix_listener: cannot bind to path:
-```
-try to create the following directory:
-``` sl
-mkdir -P ~/.ssh/sockets
-```
+     -   If you get a error message
+         ``` sl
+         bind: No such file or directory
+         unix_listener: cannot bind to path: 
+         ```
+         try to create the following directory:
+         ``` sl
+         mkdir -P ~/.ssh/sockets
+         ```
 
 ## MobaXterm
 
@@ -137,7 +137,7 @@ If you have Windows Subsystem for Linux installed, you can use the
 method described above. This is the recommended method.
 
 You can tell if MobaXterm is using WSL as it will appear in the banner
-when starting a new terminal session.
+when starting a new terminal session. 
 
 ![mceclip0.png](../../assets/images/Port_Forwarding.png)
 
@@ -154,14 +154,14 @@ The two tunnels should look like this.
 
 ![mobakey.png](../../assets/images/Port_Forwarding_1.png)
 
-■ local port
-■ remote port
-■ must match
+■ local port  
+■ remote port  
+■ must match  
 ■ doesn't matter
 
+ 
 
-
-## sshuttle
+## sshuttle 
 
 [sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
@@ -196,7 +196,7 @@ Ports can also be forwarded from the login node to a compute node.
 
 The best way to do this is by creating a reverse tunnel **from your
 slurm job** (that way the tunnel doesn't depend on a separate shell, and
-the tunnel will not outlive the job).
+the tunnel will not outlive the job). 
 
 The syntax for opening a reverse tunnel is similar the regular tunnel
 command, `-N` to not execute a command after connecting, `-f` to run the
@@ -220,8 +220,8 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 <some process using port 6676>
 ```
 !!! prerequisite What Next?
--   Using
-[JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
-the cluster.
--   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
--   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)
+     -   Using
+         [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
+         the cluster.
+     -   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
+     -   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)

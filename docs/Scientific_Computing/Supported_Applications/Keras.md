@@ -24,7 +24,7 @@ Python. Keras is included with TensorFlow. Note that there are [CPU
 and](https://support.nesi.org.nz/hc/en-gb/articles/360000997675-TensorFlow-on-CPUs) [GPU
 versions](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow) of
 TensorFlow, here we'll use TensorFlow 1.10 for GPUs, which is available
-as an environment module.
+as an environment module. 
 
 Keras can be used to solve a wide set of problems using artificial
 neural networks, including pattern recognition. Ultimately, a neural
@@ -34,7 +34,7 @@ neurons, which are modelled after biological neurons. The connections
 between neurons have different "weights", which when submitted to
 different stimuli will output different signals. With sufficient
 training, we can teach a neural network to acquire the correct weights,
-i.e. adjust the weights until the desired output is produced.
+i.e. adjust the weights until the desired output is produced. 
 
 ## Counting dots in images
 
@@ -95,19 +95,19 @@ corresponding lines in classify.py look like (Python code):
 ``` sl
 clf = keras.Sequential()
 clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
-padding='same', data_format='channels_last', activation='relu') )
+                             padding='same', data_format='channels_last', activation='relu') )
 clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
 clf.add( keras.layers.Conv2D(128, kernel_size=(3,3), strides=(1,1),
-padding='same', data_format='channels_last', activation='relu') )
+                             padding='same', data_format='channels_last', activation='relu') )
 clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
 clf.add( keras.layers.Conv2D(256, kernel_size=(3,3), strides=(1,1),
-padding='same', data_format='channels_last', activation='relu') )
+                             padding='same', data_format='channels_last', activation='relu') )
 clf.add( keras.layers.MaxPooling2D(pool_size=(2, 2)) )
 clf.add( keras.layers.Flatten() )
 clf.add( keras.layers.Dense(1) )
 ```
 
-
+ 
 
 We're now ready to train and test our model:
 
@@ -136,7 +136,7 @@ sbatch classify.sl
 Upon completion of the run, expect to find file someResults.png in the
 same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
-result will look like:
+result will look like: 
 
 ![someResults.png](../../assets/images/Keras.png)
 
@@ -146,11 +146,12 @@ inferred values are to be rounded to the nearest integer. Plot titles in
 red indicate failures. Among the 100 test images, the correct number of
 dots was found in 90 percent of the cases (the accuracy will change with
 each training due to the randomness of the process). The predicted
-number of dots should be off by no more than one unit in most cases.
+number of dots should be off by no more than one unit in most cases. 
 
+ 
 
+ 
 
+ 
 
-
-
-
+ 

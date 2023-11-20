@@ -30,11 +30,11 @@ Checksums can be used to check for minor errors that may have been
 introduced into a dataset. For example:
 
 -   After downloading a file (compare your generated checksum with the
-checksum provided by the vendor).
+    checksum provided by the vendor).
 -   When copying a file onto the cluster (generate a checksum on your
-local machine and another on the cluster).
+    local machine and another on the cluster).
 -   Verifying your results/workflow. (making a checksum of a results
-file can be a quick way to confirm nothing has changed).
+    file can be a quick way to confirm nothing has changed).
 -   Corroborate files when working in a team.
 
 While not necessary to do in every case, every time, file integrity
@@ -43,7 +43,7 @@ should be one of the first things you check when troubleshooting.
 ## Example
 
 The file '`corrupt.bin`' has had 1 byte changed, yet on inspection would
-appear identical.
+appear identical. 
 
 ``` sl
 -rw-rw-r--  1  393315  copy.bin
@@ -63,10 +63,10 @@ ef749eb4110c2a3b3c747390095d0b76 corrupt.bin
 Note that filename, path, permissions or any other metadata does not
 affect the checksum.
 !!! prerequisite Note
-Checksum functions are designed so that similar files *will not*
-produce similar hashes.
-You will only need to compare a few characters of the string to
-confirm validity.
+     Checksum functions are designed so that similar files *will not*
+     produce similar hashes.
+     You will only need to compare a few characters of the string to
+     confirm validity.
 
 ## Commands
 
@@ -80,5 +80,6 @@ commands.
 | SHA256 | `sha256sum `*`filename.txt`* | `certUtil -hashfile `*`filename.txt`*` sha256` | `shasum -a 256 `*`filename.txt`* |
 | MD5    | `md5sum `*`filename.txt`*    | `certUtil -hashfile `*`filename.txt`*` md5`    | `md5 `*`filename.txt`*           |
 
+ 
 
-
+ 

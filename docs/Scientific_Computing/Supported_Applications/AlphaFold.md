@@ -20,10 +20,10 @@ zendesk_section_id: 360000040076
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Tips
-An extended version of AlphaFold2 on NeSI Mahuika cluster which
-contains additional information such as visualisation of AlphaFold
-outputs, etc [can be found
-here](https://nesi.github.io/alphafold2-on-mahuika/)
+     An extended version of AlphaFold2 on NeSI Mahuika cluster which
+     contains additional information such as visualisation of AlphaFold
+     outputs, etc [can be found
+     here](https://nesi.github.io/alphafold2-on-mahuika/)
 
 ## Description
 
@@ -40,7 +40,7 @@ the [Supplementary
 Information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) for
 a detailed description of the method.
 
-Home page is at <https://github.com/deepmind/alphafold>
+Home page is at <https://github.com/deepmind/alphafold> 
 
 ## License and Disclaimer
 
@@ -84,20 +84,20 @@ AlphaFold2DB: AlphaFold2DB/2022-06
 Description:
 AlphaFold2 databases
 
-Versions:
-AlphaFold2DB/2022-06
-AlphaFold2DB/2023-04
+ Versions:
+         AlphaFold2DB/2022-06
+         AlphaFold2DB/2023-04
 ```
 
 
 
 Loading a module will set the `$AF2DB` variable which is pointing to
-the  selected version of the database. For an example.
+the  selected version of the database. For an example. 
 
 ``` sl
 $ module load AlphaFold2DB/2023-04
 
-$ echo $AF2DB
+$ echo $AF2DB 
 /opt/nesi/db/alphafold_db/2023-04
 ```
 
@@ -150,9 +150,9 @@ run_alphafold.py --use_gpu_relax \
 Input *fasta* used in following example
 
 ``` sl
-T1083
+    T1083
 GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRYKEAAEENRALAKLHHELAIVED
-T1084
+    T1084
 MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 ```
 
@@ -195,7 +195,7 @@ run_alphafold.py \
 ## AlphaFold Singularity container (prior to v2.3.2)
 
 If you would like to use a version prior to 2.3.2, It can be done via
-the Singularity containers.
+the Singularity containers. 
 
 We prepared a Singularity container image based on the [official
 Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
@@ -213,7 +213,7 @@ modifications. Image (.*simg*) and the corresponding definition file
 #SBATCH --job-name      alphafold2_monomer_example
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 6
-#SBATCH --gpus-per-node P100:1
+#SBATCH --gpus-per-node P100:1 
 #SBATCH --time          02:00:00
 #SBATCH --output        slurmout.%j.out
 
@@ -243,7 +243,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
 ```
 
-
+ 
 
 #### Multimer
 
@@ -254,7 +254,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 #SBATCH --job-name      alphafold2_monomer_example
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 6
-#SBATCH --gpus-per-node P100:1
+#SBATCH --gpus-per-node P100:1 
 #SBATCH --time          02:00:00
 #SBATCH --output        slurmout.%j.out
 
@@ -291,13 +291,13 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 #### Explanation of Slurm variables and Singularity flags
 
 1.  Values for `--mem` , `--cpus-per-task` and `--time` Slurm variables
-are for *3RGK.fasta*. Adjust them accordingly
+    are for *3RGK.fasta*. Adjust them accordingly
 2.  We have tested this on both P100 and A100 GPUs where the runtimes
-were identical. Therefore, the above example was set to former
-via `P100:1`
+    were identical. Therefore, the above example was set to former
+    via `P100:1`
 3.  The `--nv` flag enables GPU support.
 4.  `--pwd /app/alphafold` is to workaround this [existing
-issue](https://github.com/deepmind/alphafold/issues/32)
+    issue](https://github.com/deepmind/alphafold/issues/32)
 
 
 
@@ -311,19 +311,19 @@ Input *fasta* used in following example and subsequent benchmarking is
 ## Troubleshooting
 
 -   If you are to encounter the message "*RuntimeError: Resource
-exhausted: Out of memory*" , add the following variables to the
-slurm script
+    exhausted: Out of memory*" , add the following variables to the
+    slurm script
 
-For module based runs
+For module based runs 
 
 ``` sl
 export TF_FORCE_UNIFIED_MEMORY=1
 export XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
 ```
 
-For Singularity based runs
+For Singularity based runs 
 
 ``` sl
-export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1
+export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1 
 export SINGULARITYENV_XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
 ```

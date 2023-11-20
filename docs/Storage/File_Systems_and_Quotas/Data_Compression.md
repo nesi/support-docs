@@ -139,28 +139,28 @@ re-compressed using the `mmchattr --compression yes` command or the
 ### The different states
 
 -   **Uncompressed** and **untagged** for compression (default) - as
-shown for the file `FileA.txt` above.
+    shown for the file `FileA.txt` above.
 
 -   **Partially compressed** and **tagged** for compression - When file
-is partially compressed (either because it was decompressed for
-access or the full compression didn’t finish). It is still marked
-for compression as the `COMPRESSION` misc attribute suggests, but
-because it's not fully compressed the `illcompressed` flag will be
-shown.
+    is partially compressed (either because it was decompressed for
+    access or the full compression didn’t finish). It is still marked
+    for compression as the `COMPRESSION` misc attribute suggests, but
+    because it's not fully compressed the `illcompressed` flag will be
+    shown.
 
 -   **Fully compressed** and **tagged** for compression - The file is
-fully compressed to its maximum possible state and because the file
-is tagged for compression, only the misc attribute `COMPRESSION`
-will be shown.
+    fully compressed to its maximum possible state and because the file
+    is tagged for compression, only the misc attribute `COMPRESSION`
+    will be shown.
 
 -   **Full or partially compressed** and **untagged** for compression -
-The file might be fully or partially compressed and in this case
-because the misc attribute `COMPRESSION` is not shown, it means the
-file is untagged for being compressed (meaning it's tagged to be in
-the uncompressed state). When a fully compressed file is untagged,
-the flag `illcompressed` will be shown. After full decompression is
-complete the file will become uncompressed and untagged for
-compression.
+    The file might be fully or partially compressed and in this case
+    because the misc attribute `COMPRESSION` is not shown, it means the
+    file is untagged for being compressed (meaning it's tagged to be in
+    the uncompressed state). When a fully compressed file is untagged,
+    the flag `illcompressed` will be shown. After full decompression is
+    complete the file will become uncompressed and untagged for
+    compression.
 
 ## Using different compression algorithms
 
@@ -173,15 +173,15 @@ Currently supported compression libraries are:
 -   z Cold data. Favours compression efficiency over access speed.
 
 -   lz4 Active, non-specific data. Favours access speed over compression
-efficiency.
+    efficiency.
 
 ## Performance impacts
 
 Experiments showed that I/O performance was definitely affected if a
 file was in a compressed state. The extent of the effect, however,
 depends on the magnitude of I/O operations on the affected files.  I/O
-intensive workloads may experience a significant performance drop.
-
+intensive workloads may experience a significant performance drop.  
+  
 If compression has a significant impact on your software performance,
 please confirm it first by running a test job with and without
 compression and then contact us at <support@nesi.org.nz>. We will help

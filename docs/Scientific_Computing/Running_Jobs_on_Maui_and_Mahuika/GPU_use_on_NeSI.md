@@ -27,19 +27,19 @@ For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
 please have a look at the dedicated pages listed at the end of this
 page.
 !!! prerequisite Important
-An overview of available GPU cards is available in the [Available GPUs
-on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
-support page.
-Details about GPU cards for each system and usage limits are in the
-[Mahuika Slurm
-Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
-and [Māui\_Ancil (CS500) Slurm
-Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
-support pages.
-Details about pricing in terms of compute units can be found in the
-[What is an
-allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
-page.
+     An overview of available GPU cards is available in the [Available GPUs
+     on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
+     support page.
+     Details about GPU cards for each system and usage limits are in the
+     [Mahuika Slurm
+     Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
+     and [Māui\_Ancil (CS500) Slurm
+     Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
+     support pages.
+     Details about pricing in terms of compute units can be found in the
+     [What is an
+     allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
+     page.
 
 ## Request GPU resources using Slurm
 
@@ -64,85 +64,85 @@ cases:
 
 -   1 P100 GPU on Mahuika
 
-``` sl
-#SBATCH --gpus-per-node=P100:1
-```
+    ``` sl
+    #SBATCH --gpus-per-node=P100:1
+    ```
 
 -   1 P100 GPU on Māui Ancillary Nodes
 
-``` sl
-#SBATCH --partition=nesi_gpu
-#SBATCH --gpus-per-node=1
-```
+    ``` sl
+    #SBATCH --partition=nesi_gpu
+    #SBATCH --gpus-per-node=1
+    ```
 
 -   2 P100 GPUs per node on Mahuika
 
-``` sl
-#SBATCH --gpus-per-node=P100:2
-```
+    ``` sl
+    #SBATCH --gpus-per-node=P100:2
+    ```
 
-*You cannot ask for more than 2 P100 GPU per node on Mahuika.*
+    *You cannot ask for more than 2 P100 GPU per node on Mahuika.*
 
 -   1 A100 (40GB) GPU on Mahuika
 
-``` sl
-#SBATCH --gpus-per-node=A100:1
-```
+    ``` sl
+    #SBATCH --gpus-per-node=A100:1
+    ```
 
 -   2 A100 (40GB) GPUs on Mahuika
 
-``` sl
-#SBATCH --gpus-per-node=A100:2
-```
+    ``` sl
+    #SBATCH --gpus-per-node=A100:2
+    ```
 
-*You cannot ask for more than 2 A100 (40GB) GPUs per node on
-Mahuika.*
+    *You cannot ask for more than 2 A100 (40GB) GPUs per node on
+    Mahuika.*
 
 -   1 A100-1g.5gb GPU on Mahuika
 
-``` sl
-#SBATCH --gpus-per-node=A100-1g.5gb:1
-```
+    ``` sl
+    #SBATCH --gpus-per-node=A100-1g.5gb:1
+    ```
 
-*This type of GPU is limited to 1 job per user and recommended for
-development and debugging.*
+    *This type of GPU is limited to 1 job per user and recommended for
+    development and debugging.*
 
 -   1 A100 (80GB) GPU on Mahuika
 
-``` sl
-#SBATCH --partition=hgx
-#SBATCH --gpus-per-node=A100:1
-```
+    ``` sl
+    #SBATCH --partition=hgx
+    #SBATCH --gpus-per-node=A100:1
+    ```
 
-*These GPUs are on Milan nodes, check the [dedicated support
-page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
-for more information.*
+    *These GPUs are on Milan nodes, check the [dedicated support
+    page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
+    for more information.*
 
 -   4 A100 (80GB & NVLink) GPU on Mahuika
 
-``` sl
-#SBATCH --partition=hgx
-#SBATCH --gpus-per-node=A100:4
-```
+    ``` sl
+    #SBATCH --partition=hgx
+    #SBATCH --gpus-per-node=A100:4
+    ```
 
-*These GPUs are on Milan nodes, check the [dedicated support
-page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
-for more information.*
+    *These GPUs are on Milan nodes, check the [dedicated support
+    page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
+    for more information.*
 
-*You cannot ask for more than 4 A100 (80GB) GPUs per node on
-Mahuika.*
+    *You cannot ask for more than 4 A100 (80GB) GPUs per node on
+    Mahuika.*
 
 -   1 A100 GPU on Mahuika, regardless of the type
 
-``` sl
-#SBATCH --partition=gpu,hgx
-#SBATCH --gpus-per-node=A100:1
-```
+    ``` sl
+    #SBATCH --partition=gpu,hgx
+    #SBATCH --gpus-per-node=A100:1
+    ```
 
-*With this configuration, your job will spend less time in the
-queue, using whichever A100 GPU is available. It may land on a
-regular Mahuika node (A100 40GB GPU) or on a Milan node (A100 80GB
-GPU).*
+    *With this configuration, your job will spend less time in the
+    queue, using whichever A100 GPU is available. It may land on a
+    regular Mahuika node (A100 40GB GPU) or on a Milan node (A100 80GB
+    GPU).*
 
 You can also use the `--gpus-per-node`option in [Slurm interactive
 sessions](https://support.nesi.org.nz/hc/en-gb/articles/360001316356),
@@ -155,17 +155,17 @@ srun --job-name "InteractiveGPU" --gpus-per-node 1 --cpus-per-task 8 --mem 2GB -
 will request and then start a bash session with access to a GPU, for a
 duration of 30 minutes.
 !!! prerequisite Important
-When you use the `--gpus-per-node`option, Slurm automatically sets the
-`CUDA_VISIBLE_DEVICES` environment variable inside your job
-environment to list the index/es of the allocated GPU card/s on each
-node.
-``` sl
-$ srun --job-name "GPUTest" --gpus-per-node=P100:2 --time 00:05:00 --pty bash
-srun: job 20015016 queued and waiting for resources
-srun: job 20015016 has been allocated resources
-$ echo $CUDA_VISIBLE_DEVICES
-0,1
-```
+     When you use the `--gpus-per-node`option, Slurm automatically sets the
+     `CUDA_VISIBLE_DEVICES` environment variable inside your job
+     environment to list the index/es of the allocated GPU card/s on each
+     node.
+     ``` sl
+     $ srun --job-name "GPUTest" --gpus-per-node=P100:2 --time 00:05:00 --pty bash
+     srun: job 20015016 queued and waiting for resources
+     srun: job 20015016 has been allocated resources
+     $ echo $CUDA_VISIBLE_DEVICES
+     0,1
+     ```
 
 ## Load CUDA and cuDNN modules
 
@@ -187,17 +187,17 @@ module spider CUDA
 Please contact us at <support@nesi.org.nz> if you need a version not
 available on the platform.
 !!! prerequisite Note
-On Māui Ancillary Nodes, use `module avail CUDA` to list available
-versions.
+     On Māui Ancillary Nodes, use `module avail CUDA` to list available
+     versions.
 
 The CUDA module also provides access to additional command line tools:
 
 -   -   -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
-to directly monitor GPU resource utilisation,
--   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
-to compile CUDA programs,
--   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html)
-to debug CUDA applications.
+            to directly monitor GPU resource utilisation,
+        -   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
+            to compile CUDA programs,
+        -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html)
+            to debug CUDA applications.
 
 In addition, the [cuDNN](https://developer.nvidia.com/cudnn) (NVIDIA
 CUDA® Deep Neural Network library) library is accessible via its
@@ -251,9 +251,9 @@ The content of job output file would look like:
 $ cat slurm-20016124.out
 
 The following modules were not unloaded:
-(Use "module --force purge" to unload all):
+   (Use "module --force purge" to unload all):
 
-1) slurm   2) NeSI
+  1) slurm   2) NeSI
 Wed May 12 12:08:27 2021
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
@@ -277,8 +277,8 @@ Wed May 12 12:08:27 2021
 CUDA_VISIBLE_DEVICES=0
 ```
 !!! prerequisite Note
-CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
-GPU index 0 on this node. It is not a count of allocated GPUs.
+     CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
+     GPU index 0 on this node. It is not a count of allocated GPUs.
 
 ## NVIDIA Nsight Systems and Compute profilers
 
@@ -318,17 +318,17 @@ line tool or the
 [ncu-ui](https://docs.nvidia.com/nsight-compute/NsightCompute/index.html)
 graphical interface.
 !!! prerequisite Important
-The `nsys-ui` and `ncu-ui` tools require access to a display server,
-either via
-[X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975-X11-on-NeSI)
-or a [Virtual
-Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI).
-You also need to load the `PyQt` module beforehand:
-``` sl
-module load PyQt/5.12.1-gimkl-2020a-Python-3.8.2
-module load Nsight-Systems/2020.5.1
-nsys-ui  # this will work only if you have a graphical session
-```
+     The `nsys-ui` and `ncu-ui` tools require access to a display server,
+     either via
+     [X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975-X11-on-NeSI)
+     or a [Virtual
+     Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI).
+     You also need to load the `PyQt` module beforehand:
+     ``` sl
+     module load PyQt/5.12.1-gimkl-2020a-Python-3.8.2
+     module load Nsight-Systems/2020.5.1
+     nsys-ui  # this will work only if you have a graphical session
+     ```
 
 ## Application and toolbox specific support pages
 
@@ -338,16 +338,16 @@ applications:
 -   [ABAQUS](https://support.nesi.org.nz/hc/en-gb/articles/212457807-ABAQUS#gpus)
 -   [GROMACS](https://support.nesi.org.nz/hc/en-gb/articles/360000792856-GROMACS#nvidia_gpu_container)
 -   [Lambda
-Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack)
+    Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack)
 -   [Matlab](https://support.nesi.org.nz/hc/en-gb/articles/212639047-MATLAB#GPU)
 -   [TensorFlow on
-GPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow-on-GPUs)
+    GPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow-on-GPUs)
 
 And programming toolkits:
 
 -   [Offloading to GPU with
-OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)
+    OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)
 -   [Offloading to GPU with OpenACC using the Cray
-compiler](https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler)
+    compiler](https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler)
 -   [NVIDIA GPU
-Containers](https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers)
+    Containers](https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers)

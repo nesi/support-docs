@@ -25,25 +25,25 @@ zendesk_section_id: 360001091155
 ## New and Improved
 
 -   New Allocation Request page has been improved to add field
-validations
+    validations
 
 -   Links to information about notifications have been added under
-Account &gt; My Profile, when the Account Profile is edited
+    Account &gt; My Profile, when the Account Profile is edited
 
 -   If my.nesi.org.nz portal cannot connect to NeSI server, a
-descriptive error message will be displayed
+    descriptive error message will be displayed
 
-
+ 
 
 ## Fixes
 
 -   New allocation request start date rules updated when the project
-does not have a current allocation, today date will be used as the
-default value
+    does not have a current allocation, today date will be used as the
+    default value
 -   New allocation request interval between the start date and end date
-should be around one year but with the quarter splits, it has been
-increased to 15 months
+    should be around one year but with the quarter splits, it has been
+    increased to 15 months
 -   Inactive users won't receive email notifications when a new
-allocation request is created
+    allocation request is created
 -   Double clicks have been displayed on submit buttons to avoid
-duplicate items being created
+    duplicate items being created

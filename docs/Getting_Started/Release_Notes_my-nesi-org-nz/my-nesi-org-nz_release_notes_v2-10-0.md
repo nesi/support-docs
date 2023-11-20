@@ -26,5 +26,5 @@ zendesk_section_id: 360001091155
 
 -   Updated dependencies
 -   Added release notes to the UI - accessible via the 'hamburger' menu
-on the right
+    on the right
 -   Added grant/award details for NeSI project in Project view

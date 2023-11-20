@@ -26,10 +26,10 @@ zendesk_section_id: 360001091155
 
 -   Ability to add new affiliation from Account &gt; My Profile menu
 -   Display of the full organisation with department (if relevant) when
-creating an new allocation request
+    creating an new allocation request
 -   Addition of progress bars
 
-
+ 
 
 ## Fixes
 

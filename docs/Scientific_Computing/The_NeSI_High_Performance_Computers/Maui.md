@@ -36,13 +36,13 @@ example pre- and post-processing work, and to provide virtual lab
 services, we offer a small number [Māui ancillary
 nodes](https://support.nesi.org.nz/hc/articles/360000203776).
 !!! prerequisite Tips
-The computing capacity of the Māui ancillary nodes is limited. If you
-think you will need large amounts of computing power for small jobs in
-addition to large jobs that can run on Māui, please [contact
-us](https://support.nesi.org.nz/hc/requests/new) about getting an
-allocation on
-[Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575),
-our high-throughput computing cluster.
+     The computing capacity of the Māui ancillary nodes is limited. If you
+     think you will need large amounts of computing power for small jobs in
+     addition to large jobs that can run on Māui, please [contact
+     us](https://support.nesi.org.nz/hc/requests/new) about getting an
+     allocation on
+     [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575),
+     our high-throughput computing cluster.
 
 The login or build nodes maui01 and maui02 provide access to the full
 Cray Programming Environment (e.g. editors, compilers, linkers, debug
@@ -52,15 +52,15 @@ lander node. Jobs can be submitted to the HPC from these nodes.
 ## Important Notes
 
 1.  The Cray Programming Environment on the XC50 (supercomputer) differs
-from that on Mahuika and the Māui Ancillary nodes.
+    from that on Mahuika and the Māui Ancillary nodes.
 2.  The `/home, /nesi/project`, and `/nesi/nobackup` [file
-systems](https://support.nesi.org.nz/hc/articles/360000177256) are
-mounted on Māui.
+    systems](https://support.nesi.org.nz/hc/articles/360000177256) are
+    mounted on Māui.
 3.  The I/O subsystem on the XC50 can provide high bandwidth to disk
-(large amounts of data), but not many separate reading or writing
-operations.** **If your code performs a lot of disk read or write
-operations, it should be run on either the [Māui ancillary
-nodes](https://support.nesi.org.nz/hc/en-gb/articles/360000203776) or [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575).
+    (large amounts of data), but not many separate reading or writing
+    operations.** **If your code performs a lot of disk read or write
+    operations, it should be run on either the [Māui ancillary
+    nodes](https://support.nesi.org.nz/hc/en-gb/articles/360000203776) or [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575).
 
 All Māui resources are indicated below, and the the Māui Ancillary Node
 resources
@@ -138,5 +138,6 @@ SUSE Linux Enterprise Server 15 SP3<br />
 | **Persistent storage** (accessible from all Māui, Mahuika, and Ancillary nodes). | 1,765 TB (IBM Spectrum Scale, version 5.0) Shared Storage. Total I/O bandwidth to disks is 65 GB/s (i.e. the /home and /nesi/project filesystems) |
 | **Offline storage** (accessible from all Māui, Mahuika, and Ancillary nodes).    | Of the order of 100 PB (compressed)                                                                                                               |
 
+ 
 
-
+ 

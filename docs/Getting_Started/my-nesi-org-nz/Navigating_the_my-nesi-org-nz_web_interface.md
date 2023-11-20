@@ -29,14 +29,14 @@ can be found at the bottom of the sidebar.
 ### Breadcrumb navigation
 
 A breadcrumb navigation is displayed when viewing sections of the
-site.
+site.  
 Example: Home / Projects / List Project
 
 ## Collapsible elements
 
 The triple bar (or hamburger) icons allow elements to be collapsed or
 revealed. The left icon does collapse the sidebar and therefore hides
-the navigation elements contained.
+the navigation elements contained.  
 The triple bar on the right is used for future functions.
 
 The **&lt;** arrow icon on the bottom of the sidebar does minimise the

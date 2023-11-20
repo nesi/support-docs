@@ -45,11 +45,11 @@ place of `module`. With Lmod you can:
 -   Use “spider” to search for modules, e.g. “Python” modules:
 -   Load a module:
 -   Prefix a module with “-“ to unload it, e.g. switch from Python 2 to
-Python 3:
+    Python 3:
 -   To get a fresh environment, we recommend that you log out and log in
-again. By logging out and logging in again you will revert to not
-only the default set of modules, but also the default set of
-environment variables.
+    again. By logging out and logging in again you will revert to not
+    only the default set of modules, but also the default set of
+    environment variables.
 
 Further information can be found in the online [User Guide for
 Lmod](https://lmod.readthedocs.io/en/latest/010_user.html).
@@ -71,7 +71,7 @@ NOTE: The substring search will be soon implemented by default, then you
 do not need to specify the -S anymore. Furthermore, this improvement
 should be also ported to the Māui\_Ancil part.
 
-
+ 
 
 NOTE: you can create your own modules. This is described
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000474535-Installing-Third-Party-applications).

@@ -32,7 +32,7 @@ MAP](https://support.nesi.org.nz/hc/en-gb/articles/360000930396-Profiler-ARM-MAP
 ## How to use VTune
 
 We'll show how to profile a C++ code with VTune - feel free to choose
-your own code instead. Start with
+your own code instead. Start with 
 
 ``` sl
 git clone https://github.com/pletzer/fidibench
@@ -58,7 +58,7 @@ executable to profile. It is under upwind/cxx, so
 cd upwind/cxx
 ```
 
-Run the executable with
+Run the executable with 
 
 ``` sl
 module load VTune
@@ -76,7 +76,7 @@ Function                                    Module        
 
 ------------------------------------------  --------------  --------
 
-Upwind&lt;(unsigned long)3&gt;::advect.\_omp\_fn.1  upwindCxx
+Upwind&lt;(unsigned long)3&gt;::advect.\_omp\_fn.1  upwindCxx       
 25.979s
 
 \_int\_free                                   libc.so.6         9.170s
@@ -87,12 +87,12 @@ free                                        libmpi.so.12  �
 
 indicating that the vast majority of time is spent in the "advect"
 method (26s), with significant amounts of time spent allocating (6.5s)
-and deallocating (9.2s) memory.
+and deallocating (9.2s) memory. 
 
 ##  Drilling further into the code
 
 Often this is enough to give you a feel for where the code can be
-improved. To explore further you can fire up
+improved. To explore further you can fire up 
 
 ``` sl
 amplxe-gui &
@@ -102,8 +102,9 @@ Go to the bottom and select "Open Result...", choose the directory where
 the profiling results are saved and click on the .amplxe file. The
 summary will look similar to the above table. However, you can now dive
 into selected functions to get more information. Below we see that 16.5
-out of 26 seconds were spent starting the two OpenMP threads.
+out of 26 seconds were spent starting the two OpenMP threads.    
+  
 
+![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../../assets/images/Find execution hot spots with VTune.png) 
 
-![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../../assets/images/Find execution hot spots with VTune.png)
-
+ 

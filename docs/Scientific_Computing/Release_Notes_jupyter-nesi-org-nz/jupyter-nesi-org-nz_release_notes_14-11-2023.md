@@ -26,9 +26,9 @@ zendesk_section_id: 360001150156
 ## Fixed
 
 -   We are now closing user session when the corresponding Jupyter
-server is stopped, to avoid idle sessions to linger on the host
+    server is stopped, to avoid idle sessions to linger on the host
 
-
+ 
 
 If you have any questions about any of the improvements or fixes, please
 [contact NeSI

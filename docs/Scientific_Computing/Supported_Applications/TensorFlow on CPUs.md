@@ -28,11 +28,11 @@ shorter compared to multicore CPUs. However, running TensorFlow on CPUs
 can nonetheless be attractive for projects where:
 
 -   Runtime is dominated by IO, so that computational performance of
-GPUs does not provide much advantage with respect to overall runtime
-and core-hour charges
+    GPUs does not provide much advantage with respect to overall runtime
+    and core-hour charges
 -   The workflow can benefit from parallel execution on many nodes with
-large aggregated IO bandwidth (e.g., running an inference task on a
-very large dataset, or training a large ensemble of models)
+    large aggregated IO bandwidth (e.g., running an inference task on a
+    very large dataset, or training a large ensemble of models)
 
 Tests with a machine learning application based on the Inception v3
 network for image classification  using a Nvidia P100 GPU and 18 Intel
@@ -179,3 +179,4 @@ It depends on your application how beneficial each operator
 parallelisation strategy is, so it is worth testing different
 configurations.
 
+ 

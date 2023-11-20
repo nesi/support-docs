@@ -29,11 +29,11 @@ How checkpointing can be implemented depends on the application/code
 being used, some will have inbuilt methods whereas others might require
 some scripting.
 
-## Queueing
+## Queueing 
 
 Checkpointing code has the added advantage that it allows you to split
 your work into smaller jobs, allowing them to move through the queue
-faster.
+faster. 
 
 Below is an example of submitting the same job again, if previous has
 run successfully.
@@ -41,7 +41,7 @@ run successfully.
 ``` sl
 # Slurm header '#SBATCH etc etc
 
-sbatch --dependency=afterok:${SLURM_JOB_ID} "$0"
+sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" 
 # "$0" is equal to the name of this script.
 
 # Code that implements checkpointing
@@ -56,7 +56,7 @@ Another example for a job requiring explicit step inputs.
 
 n_steps=1000
 starting_step=${1:-0} # Will be equal to first argument, or '0' if unset.
-ending_step=$(( starting_step + n_steps ))
+ending_step=$(( starting_step + n_steps )) 
 
 # Submit next step with starting step equal to ending step of this job.
 sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" ${ending_step}
@@ -77,12 +77,12 @@ checkpoint='checkpoint_2020-03-09T0916.mat';
 if exist(checkpoint,'file')==2, load(checkpoint);startindex=i;else startindex=1;end
 
 for i = startindex:100
-% Long running process
+    % Long running process
 
-% Save workspace at end of each loop.
-save(['checkpoint_', datestr(now, 'yyyy-mm-ddTHHMM')])
+    % Save workspace at end of each loop.
+    save(['checkpoint_', datestr(now, 'yyyy-mm-ddTHHMM')])
 end
 ```
 !!! prerequisite Tip
-We ***strongly*** recommend implementing checkpointing on any job
-running longer than 3 days!
+     We ***strongly*** recommend implementing checkpointing on any job
+     running longer than 3 days!

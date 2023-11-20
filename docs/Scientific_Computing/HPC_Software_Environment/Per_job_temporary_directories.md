@@ -51,7 +51,7 @@ yourself is shown below,
 
 `export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID`
 
-
+ 
 
 ## Example of copying data into the per job temporary directories for use mid-job
 

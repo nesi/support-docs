@@ -40,7 +40,7 @@ as long as your Jupyter session.
 
 ## Customisation
 
-Most of the customisation of the desktop can be done from within,
+Most of the customisation of the desktop can be done from within,  
 panels, desktop, software preferences.
 
 ### `pre.bash`
@@ -64,7 +64,7 @@ module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go
 Environment set in `runscript_wrapper.bash` can be changed by creating a
 file `$XDG_CONFIG_HOME/vdt/post.bash`
 
-Things you may wish to set here are:
+Things you may wish to set here are:  
 `VDT_WEBSOCKOPTS`, `VDT_VNCOPTS`, any changes to the wm environment, any
 changes to path, this include module files.
 
@@ -84,67 +84,67 @@ You can build your own container bootstrapping off
 <!--
 <h2 id="h_01HDHQPY636ARH8CE6RP0700VX">Setup Scripts</h2>
 <p>
-Several scripts are available that will help you get started by setting up desktop
-shortcuts and loading module in the base environment. These can be found at
-<code>$VDT_ROOT/setup_scripts</code>
+  Several scripts are available that will help you get started by setting up desktop
+  shortcuts and loading module in the base environment. These can be found at
+  <code>$VDT_ROOT/setup_scripts</code>
 </p>
 <h2>noVNC</h2>
 <p>Recommend setting scaling to 'remote'</p>
 <div style="display: flex;">
-<img src="https://support.nesi.org.nz/hc/article_attachments/360004678036" width="426" height="362"><img src="https://support.nesi.org.nz/hc/article_attachments/360005192376">
+  <img src="https://support.nesi.org.nz/hc/article_attachments/360004678036" width="426" height="362"><img src="https://support.nesi.org.nz/hc/article_attachments/360005192376">
 </div>
 <blockquote class="blockquote-warning">
-<h3 id="prerequisites">Restore Defaults</h3>
-<p>
-All local settings can be restored by running the command
-<code>vdt clean</code> (or <code>/opt/nesi/vdt clean</code>). Note, this
-will probably break any running desktop sessions.
-</p>
+  <h3 id="prerequisites">Restore Defaults</h3>
+  <p>
+    All local settings can be restored by running the command
+    <code>vdt clean</code> (or <code>/opt/nesi/vdt clean</code>). Note, this
+    will probably break any running desktop sessions.
+  </p>
 </blockquote>
 -->
 
-
+ 
 
 *You can help contribute to this
 project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*
 
 <!--
 <table style="height:190px;width:722px;display:none">
-<tbody>
-<tr>
-<td style="width:47px">&nbsp;Desktop</td>
-<td style="width:272.122px">&nbsp;command</td>
-<td style="width:143.878px">Working</td>
-<td style="width:138px">OS</td>
-<td style="width:62px">Desktop</td>
-</tr>
-<tr>
-<td style="width:47px">eng_dev</td>
-<td style="width:272.122px">
-<code>/opt/nesi/vdt/run&nbsp;eng_dev &lt;port&gt;</code>
-</td>
-<td style="width:143.878px">
-<p>
-ABAQUS<br>
-ANSYS<br>
-MATLAB<br>
-COMSOL
-</p>
-</td>
-<td style="width:138px">Centos7</td>
-<td style="width:62px">xfce</td>
-</tr>
-<tr>
-<td style="width:47px">default</td>
-<td style="width:272.122px">
-<code>/opt/nesi/vdt/run&nbsp;default &lt;port&gt;</code>
-</td>
-<td style="width:143.878px">
-<p>&nbsp;</p>
-</td>
-<td style="width:138px">Centos7</td>
-<td style="width:62px">xfce</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr>
+      <td style="width:47px">&nbsp;Desktop</td>
+      <td style="width:272.122px">&nbsp;command</td>
+      <td style="width:143.878px">Working</td>
+      <td style="width:138px">OS</td>
+      <td style="width:62px">Desktop</td>
+    </tr>
+    <tr>
+      <td style="width:47px">eng_dev</td>
+      <td style="width:272.122px">
+        <code>/opt/nesi/vdt/run&nbsp;eng_dev &lt;port&gt;</code>
+      </td>
+      <td style="width:143.878px">
+        <p>
+          ABAQUS<br>
+          ANSYS<br>
+          MATLAB<br>
+          COMSOL
+        </p>
+      </td>
+      <td style="width:138px">Centos7</td>
+      <td style="width:62px">xfce</td>
+    </tr>
+    <tr>
+      <td style="width:47px">default</td>
+      <td style="width:272.122px">
+        <code>/opt/nesi/vdt/run&nbsp;default &lt;port&gt;</code>
+      </td>
+      <td style="width:143.878px">
+        <p>&nbsp;</p>
+      </td>
+      <td style="width:138px">Centos7</td>
+      <td style="width:62px">xfce</td>
+    </tr>
+  </tbody>
 </table>
 -->

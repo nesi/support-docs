@@ -23,75 +23,76 @@ zendesk_section_id: 360000034315
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Requirements
--   Have a [NeSI
-account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
--   Be a member of an [active
-project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Have a [NeSI
+         account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
+     -   Be a member of an [active
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
 -   -   [Setting NeSI Password via my NeSI
-portal](#h_d7de94ee-b517-41dd-b70e-6fca380b38a6)
--   [Resetting NeSI Password via my NeSI
-portal](#h_01G15PT2EM836JXJK202V52QZP)
+        portal](#h_d7de94ee-b517-41dd-b70e-6fca380b38a6)
+    -   [Resetting NeSI Password via my NeSI
+        portal](#h_01G15PT2EM836JXJK202V52QZP)
 
 ##  **Setting NeSI Password**
 
-
+ 
 
 1.  Log into the [my NeSI portal](https://my.nesi.org.nz) via your
-browser.
-
+    browser.  
+      
 
 2.  Click **My HPC Account** on left hand panel and then **Set
-Password** (If you are resetting your password this will read
-**Reset Password**).
-Note your** Username.
-![authentication\_factor\_setup.png](../../assets/images/Setting_Up_and_Resetting_Your_Password.png)
-**
+    Password** (If you are resetting your password this will read
+    **Reset Password**).  
+    Note your** Username.  
+    ![authentication\_factor\_setup.png](../../assets/images/Setting_Up_and_Resetting_Your_Password.png)  
+    **
 
 3.  Enter and verify your new password, making sure it follows the
-[password
-policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).
+    [password
+    policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).  
+      
 
-
-### ![SetNeSIaccountPassword.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_0.png)
+    #### ![SetNeSIaccountPassword.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_0.png)
 
 4.  If the password set was successful, following confirmation label
-will appear on the same page within few seconds
-
-![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_1.png)
+    will appear on the same page within few seconds  
+       
+    ![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_1.png)
 
 5.  Followed by an email confirmation similar to below
 
 ![password\_set\_confirmation.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_2.png)
 
+ 
 
-
-
+ 
 
 ## **Resetting NeSI Password via my NeSI portal**
 
 1.  Log into the [my NeSI portal](https://my.nesi.org.nz) via your
-browser.
-
+    browser.  
+      
 2.  Click **My HPC Account** on left hand panel and then **Reset
-Password**
-Note your**** Username.
-
-**** **
-**
+    Password**  
+    Note your**** Username.  
+      
+    **** **  
+    **
 3.   You can either enter the Old Password first and then set a new one
-OR feel free to select **Forgot my password **
--   -   We recommend **Forgot my password **option in general
-
+    OR feel free to select **Forgot my password **  
+    -   -   We recommend **Forgot my password **option in general   
+              
 4.  If the password **reset** was successful, following confirmation
-label will appear on the same page within few seconds
-1.  -   ![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_3.png)
-5.  Followed by an email confirmation similar to below
-
-
+    label will appear on the same page within few seconds  
+    1.  -   ![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_3.png)
+5.  Followed by an email confirmation similar to below  
+       
+      
 
 ![password\_set\_confirmation.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png)
 !!! prerequisite What next?
--   Set up [Second Factor
-Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)
+     -   Set up [Second Factor
+         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)
 
+ 

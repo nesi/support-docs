@@ -19,14 +19,14 @@ zendesk_section_id: 360000030876
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-
+ 
 
 ## How to access
 
 To use Mahuika's Milan nodes, you will need to explicitly specify the
 `milan` partition in your `sbatch` command line. Jobs are submitted from
 the same Mahuika login node that you currently use, and share the same
-file system as other cluster nodes.
+file system as other cluster nodes. 
 
 ``` sl
 sbatch -p milan ...
@@ -44,7 +44,7 @@ the job description file:
 Each node has two AMD Milan CPUs, each with 8 "chiplets" of 8 cores and
 one level 3 cache, so each node has a total of **128 cores** or 256
 hyperthreaded CPUs. This represents a significant increase of the number
-CPUs per node compared to the Broadwell nodes (36 cores).
+CPUs per node compared to the Broadwell nodes (36 cores). 
 
 The memory available to Slurm jobs is 512GB per node, so approximately
 2GB per CPU. There are 64 nodes available, 8 of which will have double
@@ -61,8 +61,8 @@ move from 7 to 8 is more significant than the move from Centos to Rocky.
 Many system libraries have changed version numbers between versions 7
 and 8, so **some software compiled on Centos 7 will not run as-is on
 Rocky 8**. This can result in the runtime error
-`error while loading shared libraries:... cannot open shared object file`,
-which can be fixed by providing a copy of the old system library.
+`error while loading shared libraries:... cannot open shared object file`, 
+which can be fixed by providing a copy of the old system library.  
 
 We have repaired several of our existing environment modules that way.
 For programs which you have compiled yourself, we have installed a new
@@ -101,7 +101,7 @@ In many ways, Intel's MKL is the best implementation of the BLAS and
 LAPACK libraries to which we have access, which is why we use it in our
 "*intel*" and "*gimkl*" toolchains.  Unfortunately, recent versions of
 MKL deliberately choose not to use the accelerated AVX instructions when
-not running on an Intel CPU.
+not running on an Intel CPU.  
 
 In order to persuade MKL to use the same fast optimised kernels on the
 new AMD Milan CPUs, you can do:
@@ -116,7 +116,7 @@ We have set that as the default for our most recent toolchain
 Two alternative implementations have also been installed: OpenBLAS and
 BLIS. If you try them then please let us know if they work better than
 MKL for your application. BLIS is expected to perform well as a BLAS
-alternative but not match MKL's LAPACK performance.
+alternative but not match MKL's LAPACK performance.  
 
 ### Do I need to recompile my code?
 
