@@ -35,9 +35,9 @@ and share some hardware with nearby logical cores. Physical cores are
 made up of two logical cores.
 
 Hyperthreading is enabled by default on NeSI machines, meaning, by
-default, Slurm will allocate two threads to each physical core. 
+default, Slurm will allocate two threads to each physical core.
 
-# Hyperthreading with slurm
+## Hyperthreading with slurm
 
 When Slurm request a CPU, it is **requesting logical cores,** which, as
 mentioned above, there are two of per physical core. If you use
@@ -51,7 +51,7 @@ of running Hyperthreaded (for example using
 [OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360001070496)) if
 `--cpus-per-task > 1`.
 
- 
+
 
 Setting `--hint=nomultithread` with srun or sbatch "causes Slurm to
 allocate only one thread from each core to this job". This will allocate
@@ -68,7 +68,7 @@ CPUs according to the following image:
 Image adapted from [Slurm's documentation
 page](https://slurm.schedmd.com/cpu_management.html).
 
-# When to use Hyperthreading
+## When to use Hyperthreading
 
 Hyperthreading increases the efficiency of some jobs, but the fact that
 Slurm is counting in logical CPUs makes aspects of running
@@ -88,48 +88,48 @@ code Hyperthreaded. 200% CPU efficiency would be the maximally efficient
 job, however, this is rarely observed and anything over 100% should be
 considered a bonus.
 
-# How to use Hyperthreading
+## How to use Hyperthreading
 
 -   Non-hyperthreaded jobs which use  `--mem-per-cpu` requests should
-    halve their memory requests as those are based on memory per logical
-    CPU, not per the number of threads or tasks.  For non-MPI jobs, or
-    for MPI jobs that request the same number of tasks on every node, we
-    recommend to specify `--mem` (i.e. memory per node) instead. See
-    [How to request memory
-    (RAM)](https://support.nesi.org.nz/hc/en-gb/articles/360001108756)
-    for more information.
+halve their memory requests as those are based on memory per logical
+CPU, not per the number of threads or tasks.  For non-MPI jobs, or
+for MPI jobs that request the same number of tasks on every node, we
+recommend to specify `--mem` (i.e. memory per node) instead. See
+[How to request memory
+(RAM)](https://support.nesi.org.nz/hc/en-gb/articles/360001108756)
+for more information.
 -   Non-MPI jobs which specify `--cpus-per-task` and use **srun** should
-    also set `--ntasks=1`, otherwise the program will be run twice in
-    parallel, halving the efficiency of the job.
+also set `--ntasks=1`, otherwise the program will be run twice in
+parallel, halving the efficiency of the job.
 
 The precise rules about when Hyperthreading applies are as follows:
 
-  ----------------------- ------------------------ ------------------------
-                          Mahuika                  Māui
+----------------------- ------------------------ ------------------------
+Mahuika                  Māui
 
-  Jobs                    Never share physical     
-                          cores                    
+Jobs                    Never share physical
+cores
 
-  MPI tasks within the    Never share physical     Share physical cores by
-  same job                cores                    default. You can
-                                                   override this behaviour
-                                                   by using
-                                                   `--hint=nomultithread`
-                                                   in your job submission
-                                                   script.
+MPI tasks within the    Never share physical     Share physical cores by
+same job                cores                    default. You can
+override this behaviour
+by using
+`--hint=nomultithread`
+in your job submission
+script.
 
-  Threads within the same Share physical cores by  
-  task                    default. You can         
-                          override this behaviour  
-                          by using                 
-                          `--hint=nomultithread`   
-                          in your job submission   
-                          script.                  
-  ----------------------- ------------------------ ------------------------
+Threads within the same Share physical cores by
+task                    default. You can
+override this behaviour
+by using
+`--hint=nomultithread`
+in your job submission
+script.
+----------------------- ------------------------ ------------------------
 
- 
 
-## How many logical CPUs will my job use or be charged for?
+
+### How many logical CPUs will my job use or be charged for?
 
 The possible job configurations and their results are shown in the
 following table. We have also included some recommendations to help you
@@ -254,4 +254,3 @@ such that <em>N</em> × (tasks per node) = 40.</strong></p></td>
 </tbody>
 </table>
 
- 

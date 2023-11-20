@@ -54,7 +54,7 @@ this page, then:
 
 1.  Click the "Add Globus Plus Sponsor" link.
 2.  Select "New Zealand eScience Infrastructure" from the list of
-    potential sponsors.
+potential sponsors.
 3.  Follow the on-screen instructions.
 
 Once you have completed the process, your request to join the group will

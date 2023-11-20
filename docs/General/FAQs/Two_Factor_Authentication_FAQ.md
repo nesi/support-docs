@@ -52,9 +52,9 @@ original device tap the three-dot menu icon followed by **Transfer
 accounts**, then **Export accounts**, select the accounts you want to
 keep and then press **Next**. If these options are not present then
 first update your Authenticator. On the new device press **Import
-existing accounts** then scan the QR code provided on the old device. 
+existing accounts** then scan the QR code provided on the old device.
 
-## How do I get a new Second Factor? 
+## How do I get a new Second Factor?
 
 **Answer:** See article
 [here](https://support.nesi.org.nz/hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token).

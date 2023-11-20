@@ -28,20 +28,20 @@ germline DNA and RNAseq data.
 General documentation for running GATK can be found at their website
 [here.](https://gatk.broadinstitute.org/hc/en-us)
 
- 
 
-# Running GATK
+
+## Running GATK
 
 GATK uses requires the Java Runtime Environment. The appropriate version
 of Java is already included as part of the GATK module, you will not
 need to load a Java module separately.
 
- 
+
 
 **Note**  :
 
 -   `--time` and `--mem` defined in the following example are just place
-    holders.
+holders.
 -   Please load the GATK version of your choice
 
 ``` sl
@@ -63,19 +63,19 @@ module purge
 module load GATK/4.3.0.0-gimkl-2022a
 
 # tell Java to use ${TMPDIR} as the temporary directory
-export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
+export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}
 
 # run GATK command
 gatk MarkDuplicates I=input.bam O=marked_duplicates.bam M=marked_dup_metrics.txt
 ```
 
- 
 
-## GATK-Picard
+
+### GATK-Picard
 
 GATK versions 4.0 or higher all contains a copy of the Picard toolkit,
 you will not need to separately load the Picard module. To run
-GATK-picard commands, use:  
+GATK-picard commands, use:
 
 ``` sl
 gatk <picard function> <options>
@@ -89,11 +89,11 @@ the function of interest.
 Please also note that there are some inconsistencies between Picard and
 GATK flag naming conventions, so it is best to double check them.
 
- 
 
-# Common Issues
 
-## Out of Memory or Insufficient Space for Shared Memory File
+## Common Issues
+
+### Out of Memory or Insufficient Space for Shared Memory File
 
 This is related to temporary files being created by Java in `/tmp`, and
 then running out of space. If you see the error message
@@ -111,20 +111,19 @@ TMPDIR="/nesi/nobackup/<project_directory>/GATK_tmp/"
 mkdir -p ${TMPDIR}
 
 # put this line in AFTER you load GATK but BEFORE running GATK
-export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR} 
+export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}
 ```
 
- 
 
-## File is not a supported reference file type
+
+### File is not a supported reference file type
 
 The error message "File is not a supported reference file type" comes in
 one of the log files. It appears that sometimes GATK requires the file
 extension of "fasta" or "fa", for fasta files. Please make sure your
 file extensions correctly reflect the file type.
 
- 
 
- 
 
- 
+
+

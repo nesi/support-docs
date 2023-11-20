@@ -118,7 +118,7 @@ new  CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gn.v20190726
 new  CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726
 ```
 
-Choose one of the datasets. To find out how big the dataset is, type: 
+Choose one of the datasets. To find out how big the dataset is, type:
 
 ``` sl
 synda stat CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726

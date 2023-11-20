@@ -23,17 +23,17 @@ zendesk_section_id: 360001059296
 ## How to raise a request using my.nesi.org.nz?
 
 1.  Login to <https://my.nesi.org.nz/projects/list> and select a project
-    from the list.  
-    ![Screenshot 2023-08-07 at 15-21-11
-    my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.png)
+from the list.
+![Screenshot 2023-08-07 at 15-21-11
+my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.png)
 2.  Click the Plus button icon 'action' next to the compute allocation
-    line item   
-    ![Screenshot 2023-08-07 at 15-21-51
-    my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_0.png)
+line item
+![Screenshot 2023-08-07 at 15-21-51
+my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_0.png)
 3.  Verify the preset values and add a comment in case you update
-    some.  
-    Finally, click 'Submit'   
-    ![mceclip2.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
+some.
+Finally, click 'Submit'
+![mceclip2.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
 
 ### Can I request any allocation size?
 
@@ -47,13 +47,12 @@ differ from our forecast.
 Please be aware that:
 
 -   First and subsequent allocations are subject to the NeSI allocation
-    size and duration limits in force at the time they are considered by
-    our reviewers.
+size and duration limits in force at the time they are considered by
+our reviewers.
 -   An allocation from an institution's entitlement is subject to
-    approval by that institution.
+approval by that institution.
 
 See [Project Extensions and New Allocations on Existing
 Projects](https://support.nesi.org.nz/hc/en-gb/articles/360000202196) for
 more details.
 
- 

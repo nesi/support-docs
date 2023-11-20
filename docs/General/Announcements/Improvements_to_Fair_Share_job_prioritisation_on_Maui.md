@@ -55,11 +55,11 @@ We have now recalculated the shares for each pool to take into account
 the following:
 
 -   The investments into HPC platforms by the various collaborating
-    institutions and by MBIE;
+institutions and by MBIE;
 -   The capacity of each HPC platform;
 -   The split of requested time (allocations) by project teams between
-    the Māui and Mahuika HPC platforms, both overall and within each
-    institution's pool.
+the Māui and Mahuika HPC platforms, both overall and within each
+institution's pool.
 
 Under this scheme, any job's priority is affected by the behaviour of
 other workload within the same project team, but also other project
@@ -68,9 +68,9 @@ has been under-using compared to your allocation, your jobs may still be
 held up if:
 
 -   Other project teams at your institution (within your pool) have been
-    over-using compared to their allocations, or
+over-using compared to their allocations, or
 -   Your institution has approved project allocations totalling more
-    time than it is entitled to within its pool's share.
+time than it is entitled to within its pool's share.
 
 ## What will I notice?
 

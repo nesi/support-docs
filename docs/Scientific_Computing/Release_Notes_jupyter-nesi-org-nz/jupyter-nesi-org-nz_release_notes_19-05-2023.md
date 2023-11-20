@@ -23,4 +23,4 @@ zendesk_section_id: 360001150156
 ## Fixed
 
 -   Updated some Python packages in the Python 3.10 kernel to fix an
-    issue with ipywidgets not working properly in notebooks
+issue with ipywidgets not working properly in notebooks

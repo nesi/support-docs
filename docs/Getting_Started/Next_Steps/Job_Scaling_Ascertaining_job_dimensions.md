@@ -38,7 +38,7 @@ needs to request are:
 
 Some jobs will also need to request GPUs.
 
-# What happens if I ask for the wrong resources?
+## What happens if I ask for the wrong resources?
 
 When you are initially trying to set up your jobs it can be difficult to
 ascertain how much of each of these resources you will need. Asking for
@@ -48,7 +48,7 @@ your project's [fair share
 score](https://support.nesi.org.nz/hc/en-gb/articles/360000743536) is
 likely to suffer.  Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
-not. 
+not.
 
 <table style="width: 646px;">
 <colgroup>
@@ -108,7 +108,7 @@ It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale
 your jobs to help you better estimate your jobs resource needs.
 
-# Job Scaling
+## Job Scaling
 
 Before you start submitting the main bulk of your jobs, it is advisable
 to first submit a *test job*.
@@ -132,7 +132,7 @@ jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
 !!! prerequisite Examples
-     [Multithreading
-     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
-     [MPI
-     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)
+[Multithreading
+Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
+[MPI
+Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)

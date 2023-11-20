@@ -25,12 +25,12 @@ zendesk_section_id: 360001091155
 ## New and Improved
 
 -   New option to opt-out of CC'ing all project members when requesting
-    a renewed allocation.
+a renewed allocation.
 
 -   Only sending one notification message of end of allocation per
-    project covering both Mahuika and Māui allocations
+project covering both Mahuika and Māui allocations
 
- 
+
 
 ## Fixes
 

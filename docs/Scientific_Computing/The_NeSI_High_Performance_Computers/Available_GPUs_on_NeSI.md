@@ -24,7 +24,7 @@ compute-intensive research and support more analysis at scale. Depending
 on the type of GPU, you can access them in different ways, such as via
 batch scheduler (Slurm), interactively (using [Jupyter on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)), or
-Virtual Machines (VMs). 
+Virtual Machines (VMs).
 
 The table below outlines the different types of GPUs, who can access
 them and how, and whether they are currently available or on the future
@@ -34,7 +34,7 @@ If you have any questions about GPUs on NeSI or the status of anything
 listed in the table, [contact
 Support](https://support.nesi.org.nz/hc/en-gb/requests/new).
 
- 
+
 
 | GPGPU                                                                                                                                                                      | Purpose                                        | Location                                                                                           | Access mode                                                                                                          | Who can access                                                 | Status                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|

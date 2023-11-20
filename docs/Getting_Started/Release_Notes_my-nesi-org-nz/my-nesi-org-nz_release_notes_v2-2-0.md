@@ -27,9 +27,9 @@ zendesk_section_id: 360001091155
 -   Added NeSI allocations list to project details view
 -   Improved feedback for users without active projects
 -   Improved validation of phone number formats (incl. international
-    prefix)
+prefix)
 -   Improved account profile form to create more clarity about mandatory
-    fields
+fields
 
 ## Fixes
 

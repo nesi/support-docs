@@ -25,12 +25,12 @@ you to use them interactively as you would the login node.
 There are two main commands that can be used to make a session, `srun`
 and `salloc`, both of which use most of the same options available to
 `sbatch` (see [our Slurm Reference
-Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)). 
+Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716)).
 !!! prerequisite Warning
-     An interactive session will, once it starts, use the entire requested
-     block of CPU time and other resources unless earlier exited from, even
-     if unused. To avoid unnecessary charges to your project, don't forget
-     to exit an interactive session once finished.
+An interactive session will, once it starts, use the entire requested
+block of CPU time and other resources unless earlier exited from, even
+if unused. To avoid unnecessary charges to your project, don't forget
+to exit an interactive session once finished.
 
 ## Using 'srun --pty bash'
 
@@ -44,7 +44,7 @@ For example;
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
 ```
 
- You will receive a message.
+You will receive a message.
 
 ``` sl
 srun: job 10256812 queued and waiting for resources
@@ -76,7 +76,7 @@ For example:
 salloc --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00
 ```
 
- You will receive a message.
+You will receive a message.
 
 ``` sl
 salloc: Pending job allocation 10256925
@@ -87,7 +87,7 @@ And when the job starts;
 
 ``` sl
 salloc: job 10256925 has been allocated resources
-salloc: Granted job allocation 10256925 
+salloc: Granted job allocation 10256925
 [mahuika01~ SUCCESS ]$
 ```
 
@@ -105,24 +105,24 @@ not available. You can request a start time using the `--begin` flag.
 
 The `--begin` flag takes either absolute or relative times as values.
 !!! prerequisite Warning
-     If you specify absolute dates and/or times, Slurm will interpret those
-     according to your environment's current time zone. Ensure that you
-     know what time zone your environment is using, for example by running
-     `date` in the same terminal session.
+If you specify absolute dates and/or times, Slurm will interpret those
+according to your environment's current time zone. Ensure that you
+know what time zone your environment is using, for example by running
+`date` in the same terminal session.
 
 -   `--begin=16:00` means start the job no earlier than 4 p.m. today.
-    (Seconds are optional, but the time must be given in 24-hour
-    format.)
+(Seconds are optional, but the time must be given in 24-hour
+format.)
 -   `--begin=11/05/20` means start the job on (or after) 5
-    November 2020. Note that Slurm uses American date formats.
-    `--begin=2020-11-05` is another Slurm-acceptable way of saying the
-    same thing, and possibly easier for a New Zealander.
+November 2020. Note that Slurm uses American date formats.
+`--begin=2020-11-05` is another Slurm-acceptable way of saying the
+same thing, and possibly easier for a New Zealander.
 -   `--begin=2020-11-05T16:00:00` means start the job on (or after) 4
-    p.m. on 5 November 2020.
+p.m. on 5 November 2020.
 -   `--begin=now+1hour` means wait at least one hour before starting the
-    job.
+job.
 -   `--begin=now+60` means wait at least one minute before starting the
-    job.
+job.
 
 If no `--begin` argument is given, the default behaviour is to start as
 soon as possible.
@@ -146,15 +146,15 @@ you leave your workstation unattended for a while, in case your computer
 turns off or goes to sleep or its connection to the internet is
 disrupted while you're away.
 
- 
+
 
 ## Setting up a detachable terminal
 !!! prerequisite Warning
-     If you don't request your interactive session from within a detachable
-     terminal, any interruption to the controlling terminal, for example by
-     your computer going to sleep or losing its connection to the internet,
-     will permanently cancel that interactive session and remove it from
-     the queue, whether it has started or not.
+If you don't request your interactive session from within a detachable
+terminal, any interruption to the controlling terminal, for example by
+your computer going to sleep or losing its connection to the internet,
+will permanently cancel that interactive session and remove it from
+the queue, whether it has started or not.
 
 1.  Log in to a Mahuika, Māui or Māui-ancil login node.
 2.  Start up `tmux` or `screen`.
@@ -180,9 +180,9 @@ time.
 Slurm offers an easy solution: Identify the job, and use `scontrol` to
 postpone its start time.
 !!! prerequisite Note
-     Job IDs are unique to each cluster but not across the whole of NeSI.
-     Therefore, `scontrol` must be run on a node belonging to the cluster
-     where the job is queued.
+Job IDs are unique to each cluster but not across the whole of NeSI.
+Therefore, `scontrol` must be run on a node belonging to the cluster
+where the job is queued.
 
 The following command will delay the start of the job with numeric ID
 12345678 until (at the earliest) 9:30 a.m. the next day:
@@ -198,9 +198,9 @@ until (at the earliest) 9:30 a.m. on Monday:
 scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
 ```
 !!! prerequisite Warning
-     Don't just set `StartTime=tomorrow` with no time specification unless
-     you like the idea of your interactive session starting at midnight or
-     in the wee small hours of the morning.
+Don't just set `StartTime=tomorrow` with no time specification unless
+you like the idea of your interactive session starting at midnight or
+in the wee small hours of the morning.
 
 ### Bringing forward the start of an interactive job
 
@@ -262,20 +262,20 @@ nodes. This is left as an exercise for the reader, having regard to the
 following:
 
 -   **Time zone:** Even if your environment is set up to use a different
-    time zone (commonly New Zealand time, which adjusts for daylight
-    saving as needed), time schedules in the crontab itself are
-    interpreted in UTC. So if you want something to run at 4:30 p.m. New
-    Zealand time regardless of the time of year, the cron job will need
-    to run at 4:30 a.m. UTC (during winter) or 3:30 a.m. UTC (during
-    summer), and you will need to edit the crontab every six months or
-    so.
+time zone (commonly New Zealand time, which adjusts for daylight
+saving as needed), time schedules in the crontab itself are
+interpreted in UTC. So if you want something to run at 4:30 p.m. New
+Zealand time regardless of the time of year, the cron job will need
+to run at 4:30 a.m. UTC (during winter) or 3:30 a.m. UTC (during
+summer), and you will need to edit the crontab every six months or
+so.
 -   **Weekends:** If you just have a single cron job that postpones
-    pending interactive jobs until the next day, interactive jobs
-    pending on a Friday afternoon will be postponed until Saturday
-    morning, which is probably not what you want. Either your cron job
-    detects the fact of a Friday and postpones jobs until Monday, or you
-    have two cron jobs, one that runs on Mondays to Thursdays, and a
-    different cron job running on Fridays.
+pending interactive jobs until the next day, interactive jobs
+pending on a Friday afternoon will be postponed until Saturday
+morning, which is probably not what you want. Either your cron job
+detects the fact of a Friday and postpones jobs until Monday, or you
+have two cron jobs, one that runs on Mondays to Thursdays, and a
+different cron job running on Fridays.
 
 ## Cancelling an interactive session
 

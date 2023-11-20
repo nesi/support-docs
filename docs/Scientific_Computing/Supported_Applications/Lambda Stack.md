@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Introduction
+## Introduction
 
 [Lambda
 Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
@@ -49,7 +49,7 @@ In the filenames above, the dates correspond to the date the image was
 built and the file with *-latest* will correspond to the most recent
 version.
 
-# Building the Singularity image (optional)
+## Building the Singularity image (optional)
 
 This step is optional; if you choose to use the prebuilt Singularity
 images under */opt/nesi/containers/lambda-stack/* you can skip this
@@ -102,9 +102,9 @@ export SINGULARITY_CACHEDIR=/path/to/somewhere/else/with/lots/of/space
 singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
 ```
 
- 
 
-# Lambda Stack via Slurm
+
+## Lambda Stack via Slurm
 
 The following Slurm script can be used as a template for running jobs
 using Lambda Stack.
@@ -125,14 +125,14 @@ module purge
 module load Singularity
 
 # for convenience store the singularity command in an environment variable
-# feel free to add additional binds if you need them 
+# feel free to add additional binds if you need them
 SINGULARITY="singularity exec --nv -B ${PWD} ${SIF}"
 
 # run a command in the container
 ${SINGULARITY} echo "Hello World"
 ```
 
-# Lambda Stack via Jupyter
+## Lambda Stack via Jupyter
 
 The following steps will create a custom Lambda Stack kernel that can be
 accessed via NeSI's Jupyter service (based on the instructions
@@ -151,7 +151,7 @@ export SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
 
 # create a jupyter kernel using the Python within the Singularity image
 singularity exec -B $HOME $SIF python -m ipykernel install --user \
-        --name lambdastack --display-name="Lambda Stack Python 3"
+--name lambdastack --display-name="Lambda Stack Python 3"
 ```
 
 If successful this should report that a kernelspec has been installed.
@@ -179,7 +179,7 @@ module load Singularity
 homefull=$(readlink -e $HOME)
 
 # for convenience store the singularity command in an environment variable
-# feel free to add additional binds if you need them 
+# feel free to add additional binds if you need them
 SINGULARITY="singularity exec --nv -B ${HOME},${homefull},${PWD} ${SIF}"
 
 # run a command in the container
@@ -215,7 +215,7 @@ After refreshing the [NeSI JupyterLab](https://jupyter.nesi.org.nz/)
 your Lambda Stack Python kernel should show up as "Lambda Stack Python
 3".
 
-# Example: running Transformers benchmarks
+## Example: running Transformers benchmarks
 
 Here we give an example showing using Lambda Stack to run the
 [Transformers](https://huggingface.co/transformers/) library benchmarks.
@@ -278,12 +278,12 @@ BENCH_SCRIPT=transformers/examples/pytorch/benchmarking/run_benchmark.py
 
 # run the benchmarks
 python ${BENCH_SCRIPT} --no_multi_process --training --no_memory \
-                       --save_to_csv --env_print \
-                       --models bert-base-cased bert-large-cased \
-                                bert-large-uncased gpt2 \
-                                gpt2-large gpt2-xl \
-                       --batch_sizes 8 \
-                       --sequence_lengths 8 32 128 512
+--save_to_csv --env_print \
+--models bert-base-cased bert-large-cased \
+bert-large-uncased gpt2 \
+gpt2-large gpt2-xl \
+--batch_sizes 8 \
+--sequence_lengths 8 32 128 512
 ```
 
 Now create a Slurm script that will launch the job, names
@@ -322,8 +322,7 @@ Submit this job to Slurm and then wait for the benchmarks to run:
 sbatch run-benchmark-torch.sl
 ```
 
- 
 
- 
 
- 
+
+

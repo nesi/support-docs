@@ -25,34 +25,34 @@ researchers to access our services to build your research capabilities.
 Subscribing to NeSI's services provides you with:
 
 -   Managed entitlements on NeSI's HPC platform for your research
-    projects and programmes. This includes access to:
+projects and programmes. This includes access to:
 
-    -   high-capacity CPUs, GPUs and high memory nodes
+-   high-capacity CPUs, GPUs and high memory nodes
 
-    -   interactive computing via Jupyter Notebooks, containers, and
-        virtual lab environments
+-   interactive computing via Jupyter Notebooks, containers, and
+virtual lab environments
 
-    -   an extensive pre-built software library
+-   an extensive pre-built software library
 
-    -   data storage for compute, from the highest performance storage
-        on NeSI's HPC platform or via NeSI's long-term storage Nearline
-        Service
+-   data storage for compute, from the highest performance storage
+on NeSI's HPC platform or via NeSI's long-term storage Nearline
+Service
 
 -   Personalised support to assist your researchers across the breadth
-    of their NeSI experience, from applying for projects/allocations, to
-    getting their projects running on the platform, to general
-    troubleshooting or experimenting with new tools or techniques
+of their NeSI experience, from applying for projects/allocations, to
+getting their projects running on the platform, to general
+troubleshooting or experimenting with new tools or techniques
 
 -   Secure, reliable, and fast data transfer to/from NeSI’s HPC Platform
-    as well as to/from other Globus endpoints across New Zealand and
-    internationally 
+as well as to/from other Globus endpoints across New Zealand and
+internationally
 
 -   Dedicated scientific and HPC-focused computational and data science
-    support
+support
 
 -   Advice and partnership on capability-building initiatives for
-    research communities or collaboration on advanced research computing
-    strategies
+research communities or collaboration on advanced research computing
+strategies
 
 If you have any questions about anything mentioned on this page, don’t
 hesitate to [get in touch](mailto:info@nesi.org.nz).

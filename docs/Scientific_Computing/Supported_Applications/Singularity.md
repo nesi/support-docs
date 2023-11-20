@@ -66,11 +66,11 @@ completely up-to-date with the latest available features, however we
 will endeavour to ensure it accurately reflects NeSI's currently
 supported Singularity version.
 
-# Building a new container
+## Building a new container
 
 For more general information on building containers please see the
 [Singularity
-Documentation](https://sylabs.io/guides/3.0/user-guide/build_a_container.html). 
+Documentation](https://sylabs.io/guides/3.0/user-guide/build_a_container.html).
 
 As building a container requires root privileges in general, this cannot
 be done directly on any NeSI nodes. You will need to copy a [Singularity
@@ -87,7 +87,7 @@ node](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
 Please note **this may fail** to build some containers and encourage you
 to contact us at <support@nesi.org.nz> if you encounter an issue.
 
-## Remote Build Service
+### Remote Build Service
 
 Running the command `singularity remote login` will provide you with a
 link to [syslabs.io](https://cloud.sylabs.io/), once you have logged in
@@ -102,7 +102,7 @@ to the build command.
 singularity build --remote myContainer.sif myContainer.def
 ```
 
-## Build Environment Variables
+### Build Environment Variables
 
 The environment variables `SINGULARITY_TMPDIR` and
 `SINGULARITY_CACHEDIR` environment can be used to overwrite the default
@@ -124,18 +124,18 @@ export SINGULARITY_CACHEDIR=/nesi/nobackup/nesi99999/.s_cachedir
 
 Please Sir, may I have a build node?
 
-# Moving a container to NeSI
+## Moving a container to NeSI
 
 A container in Singularity's SIF format can be easily moved to the HPC
 filesystem by:
 
 -   Copying the image file from your local computer with basic file
-    transfer tools - please refer to our documentation on [Moving files
-    to/from the
-    cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
-    and [Data Transfer using
-    Globus](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)
-    (if you have a very large container) for details
+transfer tools - please refer to our documentation on [Moving files
+to/from the
+cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+and [Data Transfer using
+Globus](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)
+(if you have a very large container) for details
 -   Downloading the container from an online repository
 
 To download a container, use commands such as
@@ -148,7 +148,7 @@ singularity pull library://sylabsed/linux/alpine
 Please refer to the [Singularity documentation](https://sylabs.io/docs/)
 for further details.
 
-# Using a Docker container
+## Using a Docker container
 
 Singularity can transparently use Docker containers, without the need to
 be root or to have Docker installed.
@@ -175,10 +175,10 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %post
-    # intallation instructions go here
+# intallation instructions go here
 ```
 
-# Running a container on Mahuika or Māui Ancil
+## Running a container on Mahuika or Māui Ancil
 
 Singularity is not currently available on the Māui XC50 supercomputer.
 
@@ -223,7 +223,7 @@ Singularity> exit
 
 which will bring you back to the host system.
 
-## Accessing directories outside the container
+### Accessing directories outside the container
 
 Singularity containers are immutable by default to support
 reproducibility of science results. Singularity will automatically bind
@@ -260,7 +260,7 @@ export SINGULARITY_BIND="/nesi/project/<your project ID>/inputdata:/var/inputdat
 /nesi/nobackup/<your project ID>/outputdata:/var/outputdata"
 ```
 
-## Accessing a GPU
+### Accessing a GPU
 
 If your Slurm job has requested access to an NVIDIA GPU (see [GPU use on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) to
@@ -271,13 +271,13 @@ access it using the `--nv` flag:
 singularity run --nv my_container.sif
 ```
 !!! prerequisite Note
-     Make sure that your container contains the CUDA toolkit and additional
-     libraries needed by your application (e.g. cuDNN). The `--nv` option
-     only ensures that the basic CUDA libraries from the host are bound
-     into the container and that the GPU device is accessible in the
-     container.
+Make sure that your container contains the CUDA toolkit and additional
+libraries needed by your application (e.g. cuDNN). The `--nv` option
+only ensures that the basic CUDA libraries from the host are bound
+into the container and that the GPU device is accessible in the
+container.
 
-## Network isolation
+### Network isolation
 
 Singularity bridges the host network into the container by default. If
 you want to isolate the network, add flags `--net --network=none` when
@@ -287,7 +287,7 @@ you run the container, e.g.,
 singularity run --net --network=none my_container.sif
 ```
 
-## Slurm example
+### Slurm example
 
 It is easy to run Singularity containers inside Slurm jobs. Here is an
 example setup to run a container that uses 4 CPUs:
@@ -318,23 +318,23 @@ Slurm jobs. Please refer to our [SLURM: Reference
 Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716) for
 further details on using Slurm.
 
-# Tips & Tricks
+## Tips & Tricks
 
 -   Make sure that your container runs before uploading it - you will
-    not be able to rebuild it from a new definition file directly on the
-    HPC
+not be able to rebuild it from a new definition file directly on the
+HPC
 -   Try to configure all software to run in user space without requiring
-    privilege escalation via "sudo" or other privileged capabilities
-    such as reserved network ports - although Singularity supports some
-    of these features inside a container on some systems, they may not
-    always be available on the HPC or other platforms, therefore relying
-    on features such as Linux user namespaces could limit the
-    portability of your container
+privilege escalation via "sudo" or other privileged capabilities
+such as reserved network ports - although Singularity supports some
+of these features inside a container on some systems, they may not
+always be available on the HPC or other platforms, therefore relying
+on features such as Linux user namespaces could limit the
+portability of your container
 -   If your container runs an MPI application, make sure that the MPI
-    distribution that is installed inside the container is compatible
-    with Intel MPI
+distribution that is installed inside the container is compatible
+with Intel MPI
 -   Write output data and log files to the HPC file system using a
-    directory that is bound into the container - this helps
-    reproducibility of results by keeping the container image immutable,
-    it makes sure that you have all logs available for debugging if a
-    job crashes, and it avoids inflating the container image file
+directory that is bound into the container - this helps
+reproducibility of results by keeping the container image immutable,
+it makes sure that you have all logs available for debugging if a
+job crashes, and it avoids inflating the container image file

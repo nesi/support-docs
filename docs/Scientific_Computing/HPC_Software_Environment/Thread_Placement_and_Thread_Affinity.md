@@ -68,20 +68,20 @@ before).
 It is very important to note the following:
 
 -   Each socket only has access to its own RAM - it will need to ask the
-    processor in the other socket if it wants to access that RAM space,
-    and that takes longer (this is called a
-    [NUMA](https://en.wikipedia.org/wiki/Non-uniform_memory_access)
-    architecture)
+processor in the other socket if it wants to access that RAM space,
+and that takes longer (this is called a
+[NUMA](https://en.wikipedia.org/wiki/Non-uniform_memory_access)
+architecture)
 -   Each socket has a fast cache that is shared between all cores in
-    that socket
+that socket
 -   Each core has its own private fast cache as well
 
 For a thread that runs on a given core, this means:
 
 -   Data is "local" when it is stored in RAM or cache close to that core
-    and can be accessed very quickly
+and can be accessed very quickly
 -   Data is "remote" when it is stored elsewhere and takes extra time to
-    access
+access
 
 ## Thread Placement and Affinity
 
@@ -125,9 +125,9 @@ called "hello\_world.c":
 #include <omp.h>
 int main()
 {
-    #pragma omp parallel
-    printf("Hello World from Thread %i!\n", omp_get_thread_num());
-    return 0;
+#pragma omp parallel
+printf("Hello World from Thread %i!\n", omp_get_thread_num());
+return 0;
 }
 ```
 
@@ -191,12 +191,12 @@ Hello World from Thread 2!
 The runtime library tells us that:
 
 -   Slurm provided 3 physical cores with only 1 logical core ("thread")
-    per physical core - no hyperthreading
+per physical core - no hyperthreading
 -   We got the cores with IDs 0, 6, 8 in this particular example - these
-    happen to be on the same socket, but that is not guaranteed!
+happen to be on the same socket, but that is not guaranteed!
 -   All our threads are "bound" to all 3 cores at once - this means that
-    no affinity setup has been made, and the threads are free to move
-    from one core to another
+no affinity setup has been made, and the threads are free to move
+from one core to another
 
 Setting "--hint=multithread" instead to activate hyperthreading should
 result in output similar to this:
@@ -217,12 +217,12 @@ Hello World from Thread 2!
 ```
 
 -   Slurm provided 2 physical cores with 2 logical cores ("threads")
-    each and 3 logical cores in total (we don't get the remaining
-    logical core on the second physical core, even though that logical
-    core will not be given to other jobs)
+each and 3 logical cores in total (we don't get the remaining
+logical core on the second physical core, even though that logical
+core will not be given to other jobs)
 -   Notice that we now get logical core IDs 6, 8, 46 - IDs 6 and 46 are
-    the first and second logical core inside the first physical core,
-    while ID 8 is a logical core in the second physical core
+the first and second logical core inside the first physical core,
+while ID 8 is a logical core in the second physical core
 
 ## Setting up thread placement and affinity
 
@@ -238,15 +238,15 @@ optimising threading setup.
 Let us start with the following setup:
 
 -   Run with "--hint=multithread" so that our program can access all
-    available logical cores
+available logical cores
 -   Bind threads to physical cores ("granularity=core") - they are still
-    free to move between the two logical cores inside a given physical
-    core
+free to move between the two logical cores inside a given physical
+core
 -   Place threads close together ("compact") - although this has little
-    significance here as we use all available cores anyway, we still
-    need to specify this to activate thread affinity
+significance here as we use all available cores anyway, we still
+need to specify this to activate thread affinity
 -   Bind thread IDs to logical core IDs in simple numerical order by
-    setting permute and offset specifiers to 0
+setting permute and offset specifiers to 0
 
 ``` sl
 #!/bin/bash -e
@@ -347,10 +347,10 @@ placement and affinity, it depends on the application. Also keep in mind
 that:
 
 -   Job runtimes can be affected by other jobs that are running on the
-    same node and share network access, memory bus, and some caches on
-    the same socket
+same node and share network access, memory bus, and some caches on
+the same socket
 -   The operating system on a node will also still need to run its own
-    processes and threads
+processes and threads
 
 This can lead to a trade-off between restricting thread movement for
 better performance while allowing some flexibility for threads that are

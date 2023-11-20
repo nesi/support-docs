@@ -27,12 +27,12 @@ data management policies and best practices for our HPC facilities.
 By adopting these measures to regularly audit, clean and manage the
 amount of data on our filesystems, we’ll ensure they remain
 high-performing and responsive to your research computing workloads and
-data science workflows.  
-  
+data science workflows.
+
 
 ## Upcoming changes to data management processes for project directories
 
-**<u>  
+**<u>
 4-15 October 2021</u>**
 
 The NeSI project filesystem is becoming critically full, however it is
@@ -63,14 +63,14 @@ and we will consider whether a
 [Nearline](https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service "https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service")
 storage allocation would be appropriate to manage this.
 
- 
+
 
 **18 October 2021**
 
 We will begin a limited roll-out of a new feature to automatically
 identify inactive files in  `/nesi/project/` directories and schedule
 them for deletion. Generally, we will be looking to identify files that
-are inactive / untouched for more than 12 months. 
+are inactive / untouched for more than 12 months.
 
 A selection of active projects will be invited to participate in this
 first phase of the programme. If you would like to volunteer to be an
@@ -86,7 +86,7 @@ Alongside this work, we will also adopt a new policy on how long
 inactive data may be stored on NeSI systems, particularly once a
 research project itself becomes inactive.
 
- 
+
 
 **<u>January 2022</u>**
 
@@ -95,13 +95,13 @@ data management programme to include all active projects on NeSI.
 Additional Support documentation and user information sessions will be
 hosted prior to wider implementation, to provide advance notice of the
 change and to answer any questions you may have around data lifecycle
-management. 
+management.
 
- 
+
 
 ## Frequently asked questions
 
-**1) Why are you introducing these new data management processes?  
+**1) Why are you introducing these new data management processes?
 **We want to avoid our online filesystems reaching critically full
 levels, as that impacts their performance and availability for users. We
 also want to ensure our active storage filesystems aren't being used to
@@ -110,19 +110,19 @@ for `/nesi/project/` directories will complement our existing programme
 of [automatic cleaning of the /nobackup file
 system](https://support.nesi.org.nz/hc/en-gb/articles/360001162856 "https://support.nesi.org.nz/hc/en-gb/articles/360001162856").
 
- 
+
 
 **2) Can I check how much storage I’m currently using on NeSI systems?**
 
 You can query your actual usage and disk allocations at any time using
-the following command: 
+the following command:
 
 `$ nn_storage_quota`
 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
- 
+
 
 **3) Can I recover data that I accidentally delete from my /project
 directory?**
@@ -132,7 +132,7 @@ them for up to seven days. For more information, [refer to our File
 Recovery
 page](https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery "https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery").
 
- 
+
 
 **4) Where should I store my data on NeSI systems?**
 
@@ -145,9 +145,9 @@ used to build and edit code, provided that the code is under version
 control and changes are regularly checked into upstream revision control
 systems. The **long-term storage service** should be used for larger
 datasets that you only access occasionally and do not need to change in
-situ. 
+situ.
 
- 
+
 
 **5) What should I do if I run out of storage space?**
 
@@ -156,7 +156,7 @@ space* and *inodes (number of files)*. If you run into problems with
 either of these, [refer to this Support page for more
 information](https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space "https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space").
 
- 
+
 
 **6) I have questions that aren’t covered here. Who can I talk to?**
 
@@ -165,7 +165,7 @@ Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi
 No question is too big or small and our intention is always to work with
 you to find the best way to manage your research data.
 
- 
+
 
 ## More information
 

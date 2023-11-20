@@ -20,15 +20,15 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Requirements
-     -   Have an [active account and
-         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-     -   Set up your [NeSI account
-         password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
-     -   Set up Second [Factor
-         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
-     -   Be using the Windows operating system.
+-   Have an [active account and
+project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+-   Set up your [NeSI account
+password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
+-   Set up Second [Factor
+Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
+-   Be using the Windows operating system.
 
- 
+
 
 WinSCP is an SCP client for windows implementing the SSH protocol from
 PuTTY.
@@ -42,17 +42,17 @@ Upon startup:
 1. Add a *New Site* and set:
 
 -   Enter in *Host Name: *login.mahuika.nesi.org.nz or
-    login.maui.nesi.org.nz
+login.maui.nesi.org.nz
 -   Enter your NeSI account username into *User name:* (Password
-    optional)
+optional)
 !!! prerequisite Tip
-     For "file protocol" (the topmost drop-down menu), either SCP or SFTP
-     is acceptable. If you are trying to move many small files or have a
-     slow or flaky Internet connection, you may find that SFTP performs
-     better than SCP. Feel free to try both and see which works best for
-     you.
+For "file protocol" (the topmost drop-down menu), either SCP or SFTP
+is acceptable. If you are trying to move many small files or have a
+slow or flaky Internet connection, you may find that SFTP performs
+better than SCP. Feel free to try both and see which works best for
+you.
 
-  
+
 ![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
 5\. Open Advanced Settings.
@@ -84,7 +84,7 @@ password and pass it to PuTTY*
 
 ![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
 
- 
+
 
 ## Setup for Xming (Optional)
 
@@ -102,10 +102,10 @@ PuTTY/Terminal client path.
 
 3\. Restart your session.
 !!! prerequisite Important
-     In order for X11 forwarding to work you must have an Xming server
-     running before connecting to the HPC.
+In order for X11 forwarding to work you must have an Xming server
+running before connecting to the HPC.
 
-# Usage
+## Usage
 
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.
@@ -130,13 +130,13 @@ type in).
 ![winBook.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
 current directory.
 
-## Troubleshooting
+### Troubleshooting
 
-### Repeated Authentication Prompts
+#### Repeated Authentication Prompts
 
 By default, WinSCP will create multiple tunnels for file transfers.
 Occasionally this can lead to an excessive number of prompts. Limiting
-number of tunnels will reduce the number of times you are prompted. 
+number of tunnels will reduce the number of times you are prompted.
 
 1\. Open settings
 
@@ -146,15 +146,15 @@ number of tunnels will reduce the number of times you are prompted. 
 transfers at the same time' to '1' and untick 'Use multiple connections
 for a single transfer'.
 
-![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png) 
+![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png)
 !!! prerequisite Important
-     As WinSCP uses multiple tunnels for file transfer you will be required
-     to authenticate again on your first file operation of the session. The
-     second prompt for your second-factor token can be skipped, just as
-     with login authentication.
+As WinSCP uses multiple tunnels for file transfer you will be required
+to authenticate again on your first file operation of the session. The
+second prompt for your second-factor token can be skipped, just as
+with login authentication.
 !!! prerequisite What Next?
-     -   [Moving files to/from a
-         cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
-     -   Setting up
-         an [X-Server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975)
-         (optional).
+-   [Moving files to/from a
+cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+-   Setting up
+an [X-Server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975)
+(optional).

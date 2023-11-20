@@ -30,20 +30,20 @@ XC50 cabinets are an Electrical "group". Māui has 1.5 groups.
 The performance characteristics are:
 
 1.  1.  Intra-Chassis
-        1.  Backplane
-        2.  15 links in the backplane
-        3.  Rank 1 (green) Network
-        4.  14 Gbps
-    2.  Intra-group
-        1.  Copper cables
-        2.  15 links in 5 connectors
-        3.  Rank 2 (black) Network
-        4.  14 Gbps
-    3.  Inter-group links
-        1.  Optical
-        2.  10 links in 5 connectors
-        3.  Rank 3 (blue) Network
-        4.  12.5 Gbps
+1.  Backplane
+2.  15 links in the backplane
+3.  Rank 1 (green) Network
+4.  14 Gbps
+2.  Intra-group
+1.  Copper cables
+2.  15 links in 5 connectors
+3.  Rank 2 (black) Network
+4.  14 Gbps
+3.  Inter-group links
+1.  Optical
+2.  10 links in 5 connectors
+3.  Rank 3 (blue) Network
+4.  12.5 Gbps
 
 The centrepiece of the Aries network is dynamic routing through a large
 variety of different routes from Aries A to Aries B. Therewith the

@@ -19,7 +19,7 @@ zendesk_section_id: 360000030876
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-### Bash Header
+## Bash Header
 
 We recommend using `#!/bin/bash -e` instead of plain `#!/bin/bash`, so
 that the failure of any command within the script will cause your job to
@@ -27,7 +27,7 @@ stop immediately rather than attempting to continue on with an
 unexpected environment or erroneous intermediate data.  It also ensures
 that your failed jobs show a status of FAILED in *sacct* output.
 
-### Resources 
+### Resources
 
 Don't request more resources (CPUs, memory, GPUs) than you will need. In
 addition to using your core hours faster, resources intensive jobs will

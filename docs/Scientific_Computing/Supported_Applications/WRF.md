@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# WRF
+## WRF
 
 The Weather Research and Forecasting (WRF) Model is a next-generation
 mesoscale numerical weather prediction system designed for both
@@ -29,7 +29,7 @@ architecture supporting parallel computation and system extensibility.
 The model serves a wide range of meteorological applications across
 scales from tens of meters to thousands of kilometres.
 
- 
+
 
 Download WRF:
 
@@ -48,15 +48,15 @@ installed. On Māui, these are available as modules. On Mahuika, we
 recommend to download these packages and build them by hand
 (instructions are provided below).
 
- 
 
-# WRF on Mahuika
 
- 
+## WRF on Mahuika
 
-## Environment on Mahuika
 
-We'll use the Intel compiler and Intel MPI library. 
+
+### Environment on Mahuika
+
+We'll use the Intel compiler and Intel MPI library.
 
 ``` sl
 module purge
@@ -67,9 +67,9 @@ Although NeSI has NetCDF modules installed, WRF wants the C and Fortran
 NetCDF libraries, include files and modules all installed under the same
 root directory. Hence we build those by hand.
 
- 
 
-## Building WRF dependencies on Mahuika
+
+### Building WRF dependencies on Mahuika
 
 Copy-paste the commands below to build WRF on Mahuika:
 
@@ -126,7 +126,7 @@ cd ..
 cd ..
 ```
 
- 
+
 
 Then proceed to configure WRF by setting
 
@@ -149,13 +149,13 @@ and build the code with
 ```
 
 This may take several hours to compile. Check the log file to ensure
-that the compilation was successful. 
+that the compilation was successful.
 
- 
 
-## Running WRF on Mahuika
 
- 
+### Running WRF on Mahuika
+
+
 
 An example Slurm script for running WRF on Mahuika extension, which can
 be submitted with *sbatch name\_of\_script.sl*:
@@ -180,13 +180,13 @@ srun --output=real.log ./real.exe
 srun --output=wrf.log ./wrf.exe
 ```
 
-###  
 
- 
 
-# WRF on Māui
 
-## Building WRF
+
+## WRF on Māui
+
+### Building WRF
 
 Load environment modules and set up the build environment (here we will
 build with the Intel compiler):
@@ -236,7 +236,7 @@ message saying compilation was successful. You could also check the
 timestamps of the executables in the *main* subdirectory
 (*main/wrf.exe*, *main/real.exe*, etc).
 
-## Running WRF
+### Running WRF
 
 An example Slurm script for running WRF on Māui, which can be submitted
 with *sbatch name\_of\_script.sl*:
@@ -261,7 +261,7 @@ srun --output=real.log ./real.exe
 srun --output=wrf.log ./wrf.exe
 ```
 
-### Parallel netCDF
+#### Parallel netCDF
 
 For some model configurations enabling parallel IO can be beneficial. By
 default WRF uses serial netCDF IO, which can be verified by looking in
@@ -272,7 +272,7 @@ to 11 will use parallel netCDF instead. It is also recommended (possibly
 required) to set *nocolons = .true.* in the *time\_control* section of
 the namelist when using parallel IO.
 
-## Building WPS
+### Building WPS
 
 Download WPS:
 
@@ -325,14 +325,14 @@ Now compile WPS:
 Check that the executables were successfully created: *geogrid.exe*,
 *ungrib.exe* and *metgrid.exe*.
 
-## Running WPS
+### Running WPS
 
 Both *geogrid* and *metgrid* are parallel applications and can be run on
 Māui compute nodes. However, *ungrib* is serial and should not be run on
 a compute node unless it is very quick to finish. Alternatively you
 could run *ungrib* on an interactive/login node if it will not take up
 many resources, or you could compile WRF and WPS on a Māui Ancillary
-node and run it there. 
+node and run it there.
 
 Note that WPS does a lot of file IO and therefore probably won't scale
 up to as many processes as WRF.

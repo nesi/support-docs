@@ -25,7 +25,7 @@ There are three commands with which a OpenSees job can be launched.
 -   OpenSeesSP - Intended for the single analysis of very large models.
 -   OpenSeesMP - For advanced parametric studies.
 
- 
+
 
 More info can be found about running OpenSees in parallel
 [here](http://opensees.berkeley.edu/OpenSees/parallel/TNParallelProcessing.pdf).
@@ -59,7 +59,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 </tbody>
 </table>
 
-##  
+
 
 ## Input from Shell
 
@@ -78,6 +78,5 @@ Retrieved in Tcl script:
 puts $::env(MY_VARIABLE)
 ```
 
- 
 
- 
+

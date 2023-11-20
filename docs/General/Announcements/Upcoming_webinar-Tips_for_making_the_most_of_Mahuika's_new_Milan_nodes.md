@@ -26,13 +26,13 @@ within their research teams.
 Join us on Thursday 30 March for a short webinar sharing some practical
 tips and tricks for making the most of these new resources:
 
-**Making the most of Mahuika's new Milan nodes  
-Thursday 30 March**  
-**11:30 am - 12:00 pm**  
+**Making the most of Mahuika's new Milan nodes
+Thursday 30 March**
+**11:30 am - 12:00 pm**
 **[Click here to
 RSVP](https://www.eventbrite.co.nz/e/webinar-making-the-most-of-mahuikas-new-milan-nodes-registration-557428302057)**
 
-*Background:*  
+*Background:*
 Following a successful early access programme, Mahuika’s newest CPU
 nodes are now available for use by any projects that have a Mahuika
 allocation on NeSI's HPC Platform. The production launch of these new
@@ -43,13 +43,13 @@ design of our platforms to meet your research needs.
 *What’s new*
 
 -   faster, more powerful computing, enabled by AMD 3rd Gen EPYC Milan
-    architecture
+architecture
 
 -   specialised high-memory capabilities, allowing rapid simultaneous
-    processing
+processing
 
 -   improved energy efficiency - these nodes are 2.5 times more power
-    efficient than Mahuika’s original Broadwell nodes
+efficient than Mahuika’s original Broadwell nodes
 
 Come along to [this
 webinar](https://www.eventbrite.co.nz/e/webinar-making-the-most-of-mahuikas-new-milan-nodes-registration-557428302057)
@@ -67,4 +67,4 @@ If you're unable to join us for this session but have questions about
 the Milan nodes or would like more information, come along to one of our
 [weekly Online Office
 Hours](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063) or
-email <support@nesi.org.nz> anytime. 
+email <support@nesi.org.nz> anytime.

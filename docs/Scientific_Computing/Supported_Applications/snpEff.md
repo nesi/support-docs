@@ -23,14 +23,14 @@ zendesk_section_id: 360000040076
 -   [Configuration File](#h_01HA8M29QKYGBY6EA8Q6C5YS57)
 -   [Example Script](#h_01HA8M29QKGQ7JFP2E0YV2Q849)
 
-# Description
+## Description
 
 snpEff is a genetic variant annotation, and functional effect prediction
 tool.
 
- 
 
-# Configuration File
+
+## Configuration File
 
 snpEff requires a one-off configuration of the `.config` file. The
 following instructions are a one-off set up of the configuration file
@@ -39,29 +39,29 @@ required for snpEff.
 1.  Load the latest version of the `snpEff` module.
 
 2.  Make a copy of the snpEff config file, replacing
-    &lt;project\_id&gt;, with your project ID.
+&lt;project\_id&gt;, with your project ID.
 
-    ``` sl
-    cp $EBROOTSNPEFF/snpEff.config /nesi/project/<project_id>/my_snpEff.config
-    ```
+``` sl
+cp $EBROOTSNPEFF/snpEff.config /nesi/project/<project_id>/my_snpEff.config
+```
 
 3.  Open the`my_snpEff.config` file, and edit **line 17** from the top
-    to point to a preferred path within your project directory or home
-    directory, e.g., edit line 17 `data.dir = ./data/` to something
-    like:`data.dir =/nesi/project/<project_id>`  
-    Please note that you must have read and write permissions to this
-    directory.
+to point to a preferred path within your project directory or home
+directory, e.g., edit line 17 `data.dir = ./data/` to something
+like:`data.dir =/nesi/project/<project_id>`
+Please note that you must have read and write permissions to this
+directory.
 
 4.  Run `snpEff.jar` using the `-c` flag to point to your new config
-    file, e.g., `-c path/to/snpEff/my_snpEff.config` For example:
+file, e.g., `-c path/to/snpEff/my_snpEff.config` For example:
 
-    ``` sl
-    java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/<project_id>/my_snpEff.config
-    ```
+``` sl
+java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/<project_id>/my_snpEff.config
+```
 
- 
 
-# Example Script
+
+## Example Script
 
 You will need to set up your configuration file before you run snpEff.
 
@@ -87,4 +87,3 @@ java -jar $EBROOTSNPEFF/snpEff.jar -h
 java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/<project_id>/my_snpEff.config <other flags>
 ```
 
- 

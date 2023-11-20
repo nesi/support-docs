@@ -41,53 +41,53 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
 here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
 
 1.  Download the APOA1 benchmark data:
-    -   ``` sl
-        wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
-        cd apoa1
-        ```
+-   ``` sl
+wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
+cd apoa1
+```
 2.  Load the Singularity module:
-    -   ``` sl
-        module load Singularity
-        ```
+-   ``` sl
+module load Singularity
+```
 3.  Build the Singularity image. This step differs from the NVIDIA
-    instructions because instead of using "build" we "pull" the image
-    directly, which does not require root access:
-    -   Please do refer  "[Build Environment
-        Variables](https://support.nesi.org.nz/hc/en-gb/articles/360001107916-Singularity#build_environment_variables)"
-        prior to running the following `pull` command
+instructions because instead of using "build" we "pull" the image
+directly, which does not require root access:
+-   Please do refer  "[Build Environment
+Variables](https://support.nesi.org.nz/hc/en-gb/articles/360001107916-Singularity#build_environment_variables)"
+prior to running the following `pull` command
 
-    -   ``` sl
-        singularity pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
-        ```
+-   ``` sl
+singularity pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
+```
 4.  Copy the following into a Slurm script named *run.sl*:
-    -   ``` sl
-        #!/bin/bash -e
+-   ``` sl
+#!/bin/bash -e
 
-        #SBATCH --job-name=namdgpu
-        #SBATCH --time=00:10:00
-        #SBATCH --ntasks=1
-        #SBATCH --cpus-per-task=8
-        #SBATCH --gpus-per-node P100:1
-        #SBATCH --mem=1G
+#SBATCH --job-name=namdgpu
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --gpus-per-node P100:1
+#SBATCH --mem=1G
 
-        module purge
-        module load Singularity
+module purge
+module load Singularity
 
-        # name of the NAMD input file, tag, etc
-        NAMD_INPUT="apoa1_nve_cuda.namd"
-        NAMD_SIF="namd-3.0-alpha9-singlenode.sif"
-        NAMD_EXE=namd3
+# name of the NAMD input file, tag, etc
+NAMD_INPUT="apoa1_nve_cuda.namd"
+NAMD_SIF="namd-3.0-alpha9-singlenode.sif"
+NAMD_EXE=namd3
 
-        # singularity command with required arguments
-        SINGULARITY="singularity exec --nv -B $(pwd):/host_pwd --pwd /host_pwd ${NAMD_SIF}"
+# singularity command with required arguments
+SINGULARITY="singularity exec --nv -B $(pwd):/host_pwd --pwd /host_pwd ${NAMD_SIF}"
 
-        # run NAMD
-        ${SINGULARITY} ${NAMD_EXE} +ppn ${SLURM_CPUS_PER_TASK} +idlepoll ${NAMD_INPUT}
-        ```
+# run NAMD
+${SINGULARITY} ${NAMD_EXE} +ppn ${SLURM_CPUS_PER_TASK} +idlepoll ${NAMD_INPUT}
+```
 5.  Submit the job:
-    -   ``` sl
-        sbatch run.sl
-        ```
+-   ``` sl
+sbatch run.sl
+```
 6.  View the standard output from the simulation in the Slurm .out file.
 
- We expect similar steps to work for other NGC containers.
+We expect similar steps to work for other NGC containers.

@@ -129,7 +129,7 @@ width="98"><p><strong>5,610,240</strong></p></td>
 </tbody>
 </table>
 
- 
+
 
 Table 2: GPGPU resources available for Allocation per annum. Note: these
 are the maximum resources available (assuming all GPGPUs are used for
@@ -201,4 +201,3 @@ Cuda Core-hours per annum</p></td>
 </tbody>
 </table>
 
- 

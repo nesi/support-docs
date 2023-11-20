@@ -42,11 +42,10 @@ provided to Slurm jobs would be:
 ``` sl
 module load VirSorter/2.1-gimkl-2020a-Python-3.8.2
 virsorter run \
-    --seqfile test.fasta \
-    --jobs ${SLURM_CPUS_PER_TASK:-2} \
-    --rm-tmpdir \
-    all \
-    --config LOCAL_SCRATCH=${TMPDIR:-/tmp}
+--seqfile test.fasta \
+--jobs ${SLURM_CPUS_PER_TASK:-2} \
+--rm-tmpdir \
+all \
+--config LOCAL_SCRATCH=${TMPDIR:-/tmp}
 ```
 
- 

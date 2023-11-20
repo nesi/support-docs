@@ -45,14 +45,14 @@ to fail. The expected procedure is as follows.
 
 ``` sl
 ssh <user>@lander.nesi.org.nz
-<user>@lander.nesi.org.nz's password: <Press Enter> 
-<user>@lander.nesi.org.nz's password: <Press Enter> 
+<user>@lander.nesi.org.nz's password: <Press Enter>
+<user>@lander.nesi.org.nz's password: <Press Enter>
 <user>@lander.nesi.org.nz's password: <Press Enter>
 Login Password (First Factor):
 Authenticator Code (Second Factor):
 ```
 
- 
+
 
 ## Delete Saved Credentials
 
@@ -60,14 +60,14 @@ It's possible that, even with a fresh install of mobaXterm it is still
 trying to use your old password from credential manager.
 
 1.  Go to Settings-&gt;Configuration and go to the General tab and click
-    on MobaXterm password management
+on MobaXterm password management
 2.  You should see the credentials for NeSI hosts (`lander`, `mahuika`,
-    `maui`)
+`maui`)
 3.  Remove all entries.
 4.  Restart MobaXterm
 5.  Try logging in again
 
- 
+
 
 For more information about how to log in to our HPC facilities, please
 see [this

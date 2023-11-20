@@ -36,7 +36,7 @@ effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software (see
 
-# Job submission
+## Job submission
 
 GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
@@ -66,7 +66,7 @@ node at the same time.
 
 module load GROMACS/5.1.4-intel-2017a
 
-# Prepare the binary input from precursor files 
+# Prepare the binary input from precursor files
 srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
 
 # Run the simulation
@@ -84,20 +84,20 @@ architectures. Thus you can use gmx\_mpi from the
 GROMACS/???-cuda-???-hybrid module on Mahuika compute nodes as well as
 Mahuika GPU nodes.
 
-## Checkpointing and restarting
+### Checkpointing and restarting
 
 In the examples given above, the `-cpt 30` option instructs Gromacs to
 write a full checkpoint file every 30 minutes. You can restart from a
 checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
 
-## Warnings regarding CPU affinity
+### Warnings regarding CPU affinity
 
 If you run GROMACS on a node that is simultaneously running other jobs
 (even other GROMACS jobs), you may see warnings like this in your
 output:
-     WARNING: In MPI process #0: Affinity setting failed. This can cause
-     performance degradation! If you think your setting are correct,
-     contact the GROMACS developers.
+WARNING: In MPI process #0: Affinity setting failed. This can cause
+performance degradation! If you think your setting are correct,
+contact the GROMACS developers.
 
 One way to prevent these warnings, which is also useful for reducing the
 risk of inefficient CPU usage, is to request entire nodes. On the
@@ -105,22 +105,22 @@ Mahuika cluster, this can be done using the following lines in your
 input, altered as appropriate:
 
 -   Using MPI parallelisation and hyperthreading, but no OpenMP
-    parallelisation:
+parallelisation:
 
 ``` bash
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 72   # Must be 72
-                               # (the number of logical cores per node)
+# (the number of logical cores per node)
 #SBATCH --cpus-per-task   1    # Must be 1
 ```
 
 -   Using MPI parallelisation with neither hyperthreading nor OpenMP
-    parallelisation:
+parallelisation:
 
 ``` bash
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 36   # Must be 36
-                               # (the number of physical cores per node)
+# (the number of physical cores per node)
 #SBATCH --cpus-per-task   1    # Must be 1
 #SBATCH --hint=nomultithread   # Don't use hyperthreading
 ```
@@ -131,7 +131,7 @@ input, altered as appropriate:
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 1    # Must be 1
 #SBATCH --cpus-per-task   72   # Must be 72
-                               # (the number of logical cores per node)
+# (the number of logical cores per node)
 ```
 
 -   Using hybrid (OpenMP + MPI) parallelisation but not hyperthreading:
@@ -140,7 +140,7 @@ input, altered as appropriate:
 #SBATCH --nodes           4    # May vary
 #SBATCH --ntasks-per-node 1    # Must be 1
 #SBATCH --cpus-per-task   36   # Must be 36
-                               # (the number of physical cores per node)
+# (the number of physical cores per node)
 #SBATCH --hint=nomultithread   # Don't use hyperthreading
 ```
 
@@ -151,7 +151,7 @@ by using `-ntomp ${SLURM_CPUS_PER_TASK}`. Hybrid parallelisation can be
 more efficient than MPI-only parallelisation, as within the same node
 there is no need for inter-task communication.
 
- 
+
 
 **NOTE** on using GROMACS on Māui:
 
@@ -162,7 +162,7 @@ recommend using the \`--exclusive\` flag when running GROMACS. It may
 also be advisable to request tasks or CPUs in multiples of 80, since
 that is the number of vCPUs per node.
 
-# NVIDIA GPU Container
+## NVIDIA GPU Container
 
 NVIDIA has a GPU accelerated version of GROMACS in its NGC container
 registry (more details about NGC
@@ -173,7 +173,7 @@ location (you can also pull your own version if you wish):
 an example submission script that calls the Singularity image here:
 */opt/nesi/containers/nvidia/gromacs-example.sl*.
 
-# Further Documentation
+## Further Documentation
 
 [GROMACS Homepage](http://www.gromacs.org/)
 

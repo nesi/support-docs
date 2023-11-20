@@ -24,7 +24,7 @@ Governance Contact on behalf of your institution. The role of this
 person includes:
 
 -   acting as a primary liaison / contact person on behalf of your
-    institution for anything related to the service Subscription
+institution for anything related to the service Subscription
 
 -   approving allocation requests for projects from your institution
 

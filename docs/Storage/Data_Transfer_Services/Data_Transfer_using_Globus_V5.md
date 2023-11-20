@@ -29,22 +29,22 @@ data transfer rates are achievable. This service allows data to be
 accessible to any person who has a Globus account. The newest
 implementation (v5) provides extra features and some key differences
 from the previous setup that you can find
-[here](https://docs.globus.org/globus-connect-server/). 
+[here](https://docs.globus.org/globus-connect-server/).
 
 To use Globus on NeSI platforms, you need:
 
 1.  A Globus account (see [Initial Globus Sign-Up and Globus
-    ID](https://support.nesi.org.nz/hc/en-gb/articles/360000817476))
+ID](https://support.nesi.org.nz/hc/en-gb/articles/360000817476))
 2.  An active NeSI account (see [Creating a NeSI
-    Account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715))
+Account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715))
 3.  Access privileges on the non-NeSI Globus endpoint/collection you
-    plan on transferring data from or to. This other endpoint/collection
-    could be a personal one on your workstation, or it could be managed
-    by your institution or a third party.
+plan on transferring data from or to. This other endpoint/collection
+could be a personal one on your workstation, or it could be managed
+by your institution or a third party.
 
 -   *Note that a NeSI user account does not create a Globus account, and
-    similarly a Globus account does not create a NeSI user account. Nor
-    can you, as the end user, link the two through any website.*
+similarly a Globus account does not create a NeSI user account. Nor
+can you, as the end user, link the two through any website.*
 
 Both your accounts (NeSI and Globus) must exist before you try to use
 our DTN.
@@ -109,7 +109,7 @@ step.
 
 ![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V5.png)
 
- 
+
 
 You can choose either of **&lt;username&gt;@wlg-dtn-oidc.nesi.org.nz**
 or NeSI Wellington OIDC Server (wlg-dtn-oidc.nesi.org.nz), they are all
@@ -117,7 +117,7 @@ linked to the same website. If this is your first time login, you may
 ask to *bind* your primary identity to the OIDC login, you need to allow
 that.
 
- 
+
 
 ![mceclip1.png](../../assets/images/Data_Transfer_using_Globus_V6.png)
 
@@ -130,7 +130,7 @@ authentication (2FA-same as accessing NeSI clusters).  In the
 not*** use any additional characters or spaces between your password and
 the token number.)
 
-                           
+
 ![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V7.png)
 
 After the login, you will navigate to the default root(display as "/")
@@ -139,13 +139,13 @@ path, then you could change the path to
 \(1\) your ***/home/&lt;username&gt;*** directory,
 
 \(2\) project directory (read-only)
-***/nesi/project/&lt;project\_code&gt;*** 
+***/nesi/project/&lt;project\_code&gt;***
 
 \(3\) project sub-directories of
 ***/nesi/nobackup/&lt;project\_code&gt;***  - see [Globus Paths,
 Permissions,  Storage
-Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation).  
-  
+Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation).
+
 Navigate to your selected directory. e.g. the *nobackup* filesystem
 */nesi/nobackup/&lt;project\_code&gt;* and select the two-endpoint panel
 for transfer.
@@ -160,11 +160,11 @@ start transferring files between them.
 ![mceclip4.png](../../assets/images/Data_Transfer_using_Globus_V9.png)
 
 Select files you wish to transfer and select the corresponding "Start"
-button:  
-  
+button:
+
 ![mceclip5.png](../../assets/images/Data_Transfer_using_Globus_V10.png)
 
- 
+
 
 To find other NeSI endpoints, type in "nesi#":
 
@@ -173,27 +173,27 @@ To find other NeSI endpoints, type in "nesi#":
 ## In brief:
 
 -   Sign in to the NeSI Globus Web App <https://transfer.nesi.org.nz/>.
-    You will be taken to the *File Manager* page
-    <https://transfer.nesi.org.nz/file-manager>
+You will be taken to the *File Manager* page
+<https://transfer.nesi.org.nz/file-manager>
 -   If this is your first time, you will need to create a Globus
-    account.
+account.
 -   Open the two-endpoint panel
-    ![two\_endpoint.png](../../assets/images/Data_Transfer_using_Globus_V12.png)located
-    on the top-right of the *File Manager* page.
+![two\_endpoint.png](../../assets/images/Data_Transfer_using_Globus_V12.png)located
+on the top-right of the *File Manager* page.
 -   Select the Endpoints you wish to move files between (start typing
-    "nesi#" to see the list of NeSI DTNs to select from).
-    [Authenticate](https://support.nesi.org.nz/hc/en-gb/articles/4405630948495)
-    at both endpoints.
+"nesi#" to see the list of NeSI DTNs to select from).
+[Authenticate](https://support.nesi.org.nz/hc/en-gb/articles/4405630948495)
+at both endpoints.
 -   At Globus.org the** **endpoint **defaults to
-    "/home/&lt;username&gt;" path** (represented by "/~/") on Mahuika or
-    Māui. We do not recommend uploading data to your home directory, as
-    home directories are very small. Instead, navigate to an appropriate
-    project directory under /nobackup (see [Globus Paths, Permissions,
-    Storage
-    Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation)).
+"/home/&lt;username&gt;" path** (represented by "/~/") on Mahuika or
+Māui. We do not recommend uploading data to your home directory, as
+home directories are very small. Instead, navigate to an appropriate
+project directory under /nobackup (see [Globus Paths, Permissions,
+Storage
+Allocation](https://support.nesi.org.nz/hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation)).
 -   Transfer the files by clicking the appropriate
-    ![start.png](../../assets/images/Data_Transfer_using_Globus_V13.png)button
-    depending on the direction of the transfer.
+![start.png](../../assets/images/Data_Transfer_using_Globus_V13.png)button
+depending on the direction of the transfer.
 -   Check your email for confirmation about the job completion report.
 
 ## Transferring data using a personal endpoint
@@ -210,7 +210,7 @@ transfers between personal endpoints).
 To share files with others outside your filesystem,
 see <https://docs.globus.org/how-to/share-files/>
 
- 
+
 
 ## Using Globus to transfer data to or from the cloud
 

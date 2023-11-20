@@ -120,7 +120,7 @@ class="sl">PFR Globus Connect Server</code></span></a></td>
 Plant &amp; Food Research data </td>
 <td style="width: 189.352px; height: 66px"><span>Generally for internal
 users, but also for sharing large datasets with collaborators<br />
-   </span></td>
+</span></td>
 <td style="width: 154.289px; height: 66px"><span>Contact the Plant and
 Food person you are wanting to share data with.</span></td>
 <td style="width: 262.594px; height: 66px"> </td>
@@ -170,7 +170,7 @@ href="mailto:support@nesi.org.nz">support@nesi.org.nz</a></td>
 </tbody>
 </table>
 
- 
+
 
 ## How to establish a New Zealand node
 

@@ -19,13 +19,13 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Local Customisations
+## Local Customisations
 
 Since the MAKER control file *maker\_exe.ctl* is just an annoyance in an
 environment module based system we have patched MAKER to make that
-optional. If it is absent then the defaults will be used directly. 
+optional. If it is absent then the defaults will be used directly.
 
-# Parallelism
+## Parallelism
 
 MAKER can be used with MPI, though due to a complicated interaction
 between Infiniband libraries and MAKER's use of forking it can't be used
@@ -41,13 +41,12 @@ module load MAKER/2.31.9-gimkl-2020a
 srun maker -q
 ```
 
-# Resources
+## Resources
 
 MAKER creates many files in its output, sometimes hundreds of thousands.
- There is a risk that you exhaust your quota of inodes, so:
+There is a risk that you exhaust your quota of inodes, so:
 
 -   Don't run too many MAKER jobs simultaneously.
 -   Delete unneeded output files promptly after MAKER finishes.  You can
-    of course use `nn_archive_files` or `tar` to archive them first.
+of course use `nn_archive_files` or `tar` to archive them first.
 
- 

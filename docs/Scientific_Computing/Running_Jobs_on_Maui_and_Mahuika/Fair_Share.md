@@ -37,21 +37,21 @@ a given **period**. An institution also has a percentage **Fair
 Share entitlement** of each machine's deliverable capacity over that
 same period.
 !!! prerequisite Note
-     Although we use the term "Fair Share entitlement" in this article, it
-     bears only a loose relationship to an institution's contractual
-     entitlement to receive allocations from the NeSI HPC Compute &
-     Analytics service. The Fair Share entitlement is managed separately
-     for each cluster, and is adjusted as needed by NeSI staff so that each
-     institution can receive, as nearly as possible, its contractual
-     entitlement to the service as a whole, as well as a mix of cluster
-     hours that corresponds closely to the needs of that institution's
-     various project teams.
+Although we use the term "Fair Share entitlement" in this article, it
+bears only a loose relationship to an institution's contractual
+entitlement to receive allocations from the NeSI HPC Compute &
+Analytics service. The Fair Share entitlement is managed separately
+for each cluster, and is adjusted as needed by NeSI staff so that each
+institution can receive, as nearly as possible, its contractual
+entitlement to the service as a whole, as well as a mix of cluster
+hours that corresponds closely to the needs of that institution's
+various project teams.
 
 -   **Your project's expected rate of use** = (**your institution's Fair
-    Share entitlement** × **your project's allocation**) / (**sum of
-    your institution's allocations** × **period**)
+Share entitlement** × **your project's allocation**) / (**sum of
+your institution's allocations** × **period**)
 -   **Your institution's expected rate of use** = your institution's
-    **Fair Share entitlement** on that machine
+**Fair Share entitlement** on that machine
 
 If an entity — an institution or project team — is using the machine
 more slowly than expected, for Fair Share purposes it is considered a
@@ -59,17 +59,17 @@ light user. By contrast, one using the machine faster than expected is a
 heavy user.
 
 -   Projects at lightly using institutions get a higher Fair Share score
-    than those at heavily using institutions.
+than those at heavily using institutions.
 -   Within each institution, lightly using projects get a higher Fair
-    Share score than heavily using projects.
+Share score than heavily using projects.
 -   Using **faster** than your **expected rate of usage** will usually
-    cause your Fair Share score to **decrease**. The more extreme the
-    overuse, the more severe the likely drop.
+cause your Fair Share score to **decrease**. The more extreme the
+overuse, the more severe the likely drop.
 -   Using **slower** than your **expected rate of usage** will usually
-    cause your Fair Share score to **increase**. The more extreme the
-    underuse, the greater the Fair Share bonus.
+cause your Fair Share score to **increase**. The more extreme the
+underuse, the greater the Fair Share bonus.
 -   Using the cluster **unevenly** will cause your Fair Share score to
-    **decrease**.
+**decrease**.
 
 ## What is Fair Share?
 
@@ -89,23 +89,23 @@ days) — and thus the expected rates of use of those same allocations.
 Therefore:
 
 -   If the size of your allocation increases, your project's share of
-    the cluster will increase. Conversely, if the size of your
-    allocation decreases, your project's share of the cluster will
-    decrease.
+the cluster will increase. Conversely, if the size of your
+allocation decreases, your project's share of the cluster will
+decrease.
 -   If the size of another project's allocation increases, your
-    project's share of the cluster will decrease, since, even though
-    your allocation's size has remained the same, the total size of
-    other allocations has increased and thus your allocation's share has
-    decreased. Conversely, if the size of the other project's allocation
-    decreases, your project's share of the cluster will increase.
+project's share of the cluster will decrease, since, even though
+your allocation's size has remained the same, the total size of
+other allocations has increased and thus your allocation's share has
+decreased. Conversely, if the size of the other project's allocation
+decreases, your project's share of the cluster will increase.
 -   If the cluster gets larger (e.g. we purchase and install more
-    computing capacity), your project's share of the cluster will not
-    change, but that share of the cluster will correspond to a higher
-    rate of core hour usage. This situation will only last until more
-    allocations are issued, or existing allocations are made larger, to
-    take advantage of the increased capacity. The opposite will occur if
-    the cluster shrinks, though cluster shrinkage is not expected to
-    occur.
+computing capacity), your project's share of the cluster will not
+change, but that share of the cluster will correspond to a higher
+rate of core hour usage. This situation will only last until more
+allocations are issued, or existing allocations are made larger, to
+take advantage of the increased capacity. The opposite will occur if
+the cluster shrinks, though cluster shrinkage is not expected to
+occur.
 
 On Mahuika and the Māui XC nodes, Fair Share is not designed to ensure
 that all project teams get the same share of the cluster.
@@ -176,11 +176,11 @@ page](https://slurm.schedmd.com/priority_multifactor.html#fairshare)
 ## How do I check my project's Fair Share score?
 
 -   The command `nn_corehour_usage <project_code>`, on a Mahuika or Māui
-    login node, will show, along with other information, the current
-    fair share score and ranking of the specified project.
+login node, will show, along with other information, the current
+fair share score and ranking of the specified project.
 -   The `sshare` command, on a Mahuika login node, will show the fair
-    share tree. A related command, `nn_sshare_sorted`, will show
-    projects in order from the highest fair share score to the lowest.
+share tree. A related command, `nn_sshare_sorted`, will show
+projects in order from the highest fair share score to the lowest.
 
 In our current configuration, Fair Share scores are attached to
 projects, not to individual users.

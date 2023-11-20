@@ -27,19 +27,19 @@ A Proposal Development allocation is a short-term allocation of up to
 Development allocation you can find out:
 
 -   whether your software can run on a [NeSI
-    HPC](https://support.nesi.org.nz/hc/articles/360000175735),
+HPC](https://support.nesi.org.nz/hc/articles/360000175735),
 -   how your software scales to multiple cores or across compute nodes,
 -   approximately how many compute units or node hours your research
-    project is likely to need.
+project is likely to need.
 
 If:
 
 -   you are new to NeSI or have not run this particular programme of
-    research on a NeSI system before, and
+research on a NeSI system before, and
 -   you work at a New Zealand institution that is not a NeSI
-    collaborating institution, and
+collaborating institution, and
 -   we decide that your workflow is likely to be a good technical fit
-    for our facilities,
+for our facilities,
 
 it is likely that we will initially award your research programme a
 Proposal Development allocation.
@@ -57,4 +57,3 @@ To learn more about NeSI Projects, and to apply please review the
 content of the section entitled [Applying for a NeSI
 Project](https://support.nesi.org.nz/hc/articles/360000174976).
 
- 

@@ -20,14 +20,14 @@ zendesk_section_id: 360001189255
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Note
-     This functionality is experimental and may introduce breaking changes
-     in the future. These notes should be read in conjunction with NeSI's
-     main [R support
-     page](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R)
-     Your feedback is welcome, please don't hesitate to contact us at
-     <support@nesi.org.nz> to make suggestions.
+This functionality is experimental and may introduce breaking changes
+in the future. These notes should be read in conjunction with NeSI's
+main [R support
+page](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R)
+Your feedback is welcome, please don't hesitate to contact us at
+<support@nesi.org.nz> to make suggestions.
 
-# Getting started
+## Getting started
 
 RStudio can be accessed as a web application via [Jupyter on
 NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001555615).
@@ -44,7 +44,7 @@ Once RStudio is launched, you should briefly see a login screen. It will
 be auto-filled using a pre-generated password, unless you disabled
 javascript in your web browser.
 
-# Changing R version
+## Changing R version
 
 You can configure a set of [environment
 modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
@@ -68,12 +68,12 @@ correct Library Paths are available. For R/4.2.1 the command
 `.libPaths()` will return the following:
 
 ``` sl
-     .libPaths()
-[1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
+.libPaths()
+[1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 ```
 
-# Package Installation
+## Package Installation
 
 To avoid read/write issues with a small temorary directory filling up,
 in a terminal run the following two lines of code. These will setup a
@@ -91,13 +91,13 @@ name, and is emptied with each new session. So will not fill up your
 home directory.
 
 ``` sl
-    tempdir()
+tempdir()
 [1] "/nesi/nobackup/<projectID>/rstudio_tmp/Rtmpjp2rm8"
 ```
 
 The alternative is to install packages in a terminal session
 
-# Advanced usage
+## Advanced usage
 
 RStudio runs in a [Singularity
 container](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
@@ -135,7 +135,7 @@ session:
 $ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 If you get an error 500 after clicking on the launcher icon, this could
 be due to RStudio taking too much time to start, which is interpreted as
@@ -154,4 +154,3 @@ print the password:
 $ cat ~/.config/rstudio_on_nesi/server_password
 ```
 
- 

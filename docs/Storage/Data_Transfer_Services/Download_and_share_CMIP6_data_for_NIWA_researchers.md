@@ -19,7 +19,7 @@ zendesk_section_id: 360000040596
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-##  
+
 
 The [Coupled Model Intercomparison
 Project](https://www.wcrp-climate.org/wgcm-cmip), which began in 1995
@@ -64,7 +64,7 @@ synda -h
 
 Below we demonstrate how synda might be used.
 
-## Find some datasets 
+## Find some datasets
 
 CMIP6 datasets are organised by institution\_id, experiment\_id,
 variable etc. A full list can be glanced
@@ -83,9 +83,9 @@ new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.Amon.ta.gn.v20190425
 
 ...
 
-as well as some other datasets. 
+as well as some other datasets.
 
- 
+
 
 ## Find out how big the datasets are
 
@@ -101,7 +101,7 @@ This prints "Total files count: 16, New files count: 16, Total size:
 have not yet been downloaded. You can see that there are 16 files to
 download, taking nearly 50GB of disk space.
 
-## Download/install the dataset 
+## Download/install the dataset
 
 ``` sl
 synda install CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
@@ -120,7 +120,7 @@ back later to check progress.
 
 The data will end up
 under $ST\_HOME/data/CMIP6/CMIP/NCAR/CESM2-WACCM/1pctCO2/r1i1p1f1/day/ta/gn/v20190425
-in this case. 
+in this case.
 
 You can type
 

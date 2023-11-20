@@ -39,15 +39,15 @@ hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
 !!! prerequisite Tips
-     Required ABAQUS licences can be determined by this simple and
-     intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
-     of CPUs.
+Required ABAQUS licences can be determined by this simple and
+intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
+of CPUs.
 
 You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 [environment file](#env_file).
 
-# Solver Compatibility
+## Solver Compatibility
 
 Not all solvers are compatible with all types of parallelisation.
 
@@ -57,15 +57,15 @@ Not all solvers are compatible with all types of parallelisation.
 | `mp_mode=threads` | ✖                  | ✔                | ✔             | ✔              |
 | `mp_mode=mpi`     | ✔                  | ✔                | ✖             | ✖              |
 !!! prerequisite Note
-     If your input files were created using an older version of ABAQUS you
-     will need to update them using the command,
-     ``` sl
-     abaqus -upgrade -job new_job_name -odb old.odb
-     ```
-     or
-     ``` sl
-     abaqus -upgrade -job new_job_name -inp old.inp
-     ```
+If your input files were created using an older version of ABAQUS you
+will need to update them using the command,
+``` sl
+abaqus -upgrade -job new_job_name -odb old.odb
+```
+or
+``` sl
+abaqus -upgrade -job new_job_name -inp old.inp
+```
 
 <table>
 <colgroup>
@@ -192,7 +192,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="
 </tbody>
 </table>
 
-# User Defined Functions 
+## User Defined Functions
 
 User defined functions (UDFs) can be included on the command line with
 the argument `user=<filename>` where `<filename>` is the C or fortran
@@ -205,14 +205,14 @@ loaded with `module load`, you may have to change the [compile
 commands](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) in
 your local `.env` file.
 
-# Environment file
+## Environment file
 
 The [ABAQUS environment
 file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
 a number of parameters that define how the your job will run, some of
 these you may with to change.
 
-These parameters are read, 
+These parameters are read,
 
 `../ABAQUS/SMA/site/abaqus_v6.env` Set by NeSI and cannot be changed.
 
@@ -235,14 +235,14 @@ parameter=value" > "abaqus_v6.env"
 rm "abaqus_v6.env"
 ```
 !!! prerequisite Useful Links
-     -   [Command line options for standard
-         submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
+-   [Command line options for standard
+submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
 
- 
+
 
 ![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
 
- 
+
 
 *Note: Hyperthreading off, testing done on small mechanical FEA model.
 Results highly model dependant. Do your own tests.*

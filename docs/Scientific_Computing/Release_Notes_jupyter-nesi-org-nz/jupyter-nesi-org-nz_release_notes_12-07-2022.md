@@ -23,7 +23,6 @@ zendesk_section_id: 360001150156
 ## New and Improved
 
 -   Added the `pyviz_comms` package to allow fully interactive usage of
-    [HoloViz](https://holoviz.org/index.html) tools within notebooks (in
-    particular Panel and HoloViews).
+[HoloViz](https://holoviz.org/index.html) tools within notebooks (in
+particular Panel and HoloViews).
 
- 

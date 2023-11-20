@@ -26,9 +26,9 @@ zendesk_section_id: 360001150156
 
 -   Updated JupyterLab version to v3.4.3
 
- 
+
 
 ## Fixed
 
 -   Addressed issue handling the "slurm job id" with some Python modules
-    that depend on MPI
+that depend on MPI

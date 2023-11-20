@@ -29,7 +29,7 @@ licensed by the Python Software Foundation. Each version is released
 under a specific open-source licence. The licences are available on [the
 Python documentation server](https://docs.python.org).
 
-# System Python vs Environment Modules
+## System Python vs Environment Modules
 
 Our operating systems include Python but not an up to date version, so
 we strongly recommend that you load one of our Python environment
@@ -37,19 +37,19 @@ modules instead.  They include optimised builds of the most popular
 Python packages for computational work such as *numpy*, *scipy*,
 *matplotlib*, and many more.
 
-## NeSI Customisations
+### NeSI Customisations
 
 Our most recent Python environment modules have:
 
 -   *multiprocessing.cpu\_count()* patched to return only the number of
-    CPUs available to the process, which in a Slurm job can be fewer
-    than the number of CPUs on the node.
+CPUs available to the process, which in a Slurm job can be fewer
+than the number of CPUs on the node.
 
 -   PYTHONUSERBASE set to a path which includes the toolchain, so that
-    incompatible builds of the same version of Python don't attempt to
-    share user-installed libraries.
+incompatible builds of the same version of Python don't attempt to
+share user-installed libraries.
 
-# Example scripts
+## Example scripts
 
 ``` bash
 #!/bin/bash -e
@@ -66,14 +66,14 @@ python MyPythonScript.py
 ### MPI Example
 
 ``` sl
-  #!/bin/bash -e
-  #SBATCH --job-name=PythonMPI
-  #SBATCH --ntasks=2          # Number of MPI tasks
-  #SBATCH --time=00:30:00
-  #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+#!/bin/bash -e
+#SBATCH --job-name=PythonMPI
+#SBATCH --ntasks=2          # Number of MPI tasks
+#SBATCH --time=00:30:00
+#SBATCH --mem-per-cpu=512MB # Memory per logical CPU
 
-  module load Python
-  srun python PythonMPI.py   # Executes ntasks copies of the script
+module load Python
+srun python PythonMPI.py   # Executes ntasks copies of the script
 ```
 
 ``` sl
@@ -93,11 +93,11 @@ rank_data += 1
 # gather the data back to rank 0
 data_gather = comm.gather(rank_data, root = 0)
 
-# on rank 0 sum the gathered data and print both the sum of, 
+# on rank 0 sum the gathered data and print both the sum of,
 # and the unsummed data
 if rank == 0:
-    print('Gathered data:', data_gather)
-    print('Sum:', sum(data_gather))
+print('Gathered data:', data_gather)
+print('Sum:', sum(data_gather))
 ```
 
 The above Python script will create a list of numbers (0-9) split
@@ -106,50 +106,50 @@ numbers it has, those numbers will then be gathered back to task 0,
 where the numbers will be summed and both the sum of, and the unsummed
 data is printed.
 
-### Multiprocessing Example
+#### Multiprocessing Example
 
 ``` sl
-  #!/bin/bash -e
-  #SBATCH --job-name=PytonMultiprocessing
-  #SBATCH --cpus-per-task=2   # Number of logical CPUs
-  #SBATCH --time=00:10:00
-  #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+#!/bin/bash -e
+#SBATCH --job-name=PytonMultiprocessing
+#SBATCH --cpus-per-task=2   # Number of logical CPUs
+#SBATCH --time=00:10:00
+#SBATCH --mem-per-cpu=512MB # Memory per logical CPU
 
-  module load Python
-  python PythonMultiprocessing.py
+module load Python
+python PythonMultiprocessing.py
 ```
 
 ``` sl
 import multiprocessing
 
 def calc_square(numbers, result1):
-    for idx, n in enumerate(numbers):
-        result1[idx] = n*n
+for idx, n in enumerate(numbers):
+result1[idx] = n*n
 
 def calc_cube(numbers, result2):
-    for idx, n in enumerate(numbers):
-        result2[idx] = n*n*n
+for idx, n in enumerate(numbers):
+result2[idx] = n*n*n
 
 if __name__ == "__main__":
-    numbers = [2,3,4]
-    # Sets up the shared memory variables, allowing the variables to be
-    # accessed globally across processes
-    result1 = multiprocessing.Array('i',3)
-    result2 = multiprocessing.Array('i',3)
-    # set up the processes
-    p1 = multiprocessing.Process(target=calc_square, args=(numbers,result1,))
-    p2 = multiprocessing.Process(target=calc_cube, args=(numbers,result2,))
+numbers = [2,3,4]
+# Sets up the shared memory variables, allowing the variables to be
+# accessed globally across processes
+result1 = multiprocessing.Array('i',3)
+result2 = multiprocessing.Array('i',3)
+# set up the processes
+p1 = multiprocessing.Process(target=calc_square, args=(numbers,result1,))
+p2 = multiprocessing.Process(target=calc_cube, args=(numbers,result2,))
 
-    # start the processes
-    p1.start()
-    p2.start()
+# start the processes
+p1.start()
+p2.start()
 
-    # end the processes
-    p1.join()
-    p2.join()
+# end the processes
+p1.join()
+p2.join()
 
-    print(result1[:])
-    print(result2[:])
+print(result1[:])
+print(result2[:])
 ```
 
 The above Python script will calculated the square and cube of an array
@@ -163,7 +163,7 @@ tutorial
 series](https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&index=1)
 helpful
 
-### Job Arrays
+#### Job Arrays
 
 Job arrays can be handled using the Slurm environment variable
 `SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
@@ -215,29 +215,29 @@ import argparse
 
 # get tests from file
 class LoadFromFile(argparse.Action):
-    """
-    class for reading arguments from file
-    """
-    def __call__(self, parser, namespace, values, option_string=None):
-        with values as F:
-            vals = F.read().split()
-        setattr(namespace, self.dest, vals)
+"""
+class for reading arguments from file
+"""
+def __call__(self, parser, namespace, values, option_string=None):
+with values as F:
+vals = F.read().split()
+setattr(namespace, self.dest, vals)
 
 def get_args():
-    """
-    Definition of the input arguments
-    """
-    parser = argparse.ArgumentParser(description='Hello World')
-    parser.add_argument('-ID', type=int, action='store', dest='my_id',
-                        help='Slurm ID')
-    return parser.parse_args()
+"""
+Definition of the input arguments
+"""
+parser = argparse.ArgumentParser(description='Hello World')
+parser.add_argument('-ID', type=int, action='store', dest='my_id',
+help='Slurm ID')
+return parser.parse_args()
 
 
 ARGS = get_args()
 print("hello world from ID {}".format(ARGS.my_id))
 ```
 
-# Python Packages
+## Python Packages
 
 Programmers around the world have written and released many packages for
 Python, which are not included with the core Python distribution and
@@ -252,7 +252,7 @@ module load Python/3.10.5-gimkl-2022a
 python -c "help('modules')"
 ```
 
-## Installing packages in your $HOME
+### Installing packages in your $HOME
 
 This is the simplest way to install additional packages, but you might
 fill your `$HOME` quota and cannot share installations with
@@ -272,7 +272,7 @@ environments](https://docs.python.org/3/library/venv.html) to isolate
 dependencies between projects, avoid filling your home space and being
 able to share installation with collaborators
 
-## Installing packages in a Python virtual environment
+### Installing packages in a Python virtual environment
 
 A Python virtual environment is lightweight system to create an
 environment which contains specific packages for a project, without
@@ -317,7 +317,7 @@ source /nesi/project/PROJECT_ID/my_venv/bin/activate
 python MyPythonScript.py
 ```
 
-## Python virtual environment isolation
+### Python virtual environment isolation
 
 By default, Python virtual environments are fully isolated from the
 system installation. It means that you will not be able to access
@@ -350,14 +350,14 @@ export PYTHONNOUSERSITE=1
 python MyPythonScript.py
 ```
 
-# Further notes
+## Further notes
 
-## iPython
+### iPython
 
 iPython (*i*nteractive *Python*) is an enhanced tool for accessing a
 Python command line. It is available in many NeSI Python modules.
 
-### Starting iPython
+#### Starting iPython
 
 To open an iPython console, simply run the `ipython` command:
 
@@ -366,7 +366,7 @@ To open an iPython console, simply run the `ipython` command:
 [jblo123@build-wm ~]$ ipython
 ```
 
-### Listing available functions
+#### Listing available functions
 
 You can use iPython to list the functions available that start with a
 given string. Please note that if the string denotes a module (i.e., it
@@ -396,7 +396,7 @@ os<TAB>
 and expect to see the methods and values provided by the os module - you
 have to put the full stop after the "os" if you want to do that.
 
-### Getting information about an object
+#### Getting information about an object
 
 In iPython, you can query any object by typing the object name followed
 by a question mark (?), then hitting Enter. For instance:
@@ -419,7 +419,7 @@ Unicode object representing an integer literal in the given base.  The
 literal can be preceded by '+' or '-' and be surrounded by whitespace.
 The base defaults to 10.  Valid bases are 0 and 2-36.  Base 0 means to
 interpret the base from the string as an integer literal.
-    >> int('0b100', base=0)
+>> int('0b100', base=0)
 4
 ```
 
@@ -428,6 +428,6 @@ modules (`os.path?`). If you try to do it on something that isn't
 defined yet, Python will tell you that the object in question couldn't
 be found.
 
-### Quitting iPython
+#### Quitting iPython
 
 Just enter the `quit` command at the iPython prompt.

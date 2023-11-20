@@ -21,13 +21,13 @@ zendesk_section_id: 360001059296
 
 ## Overview
 
-NeSI aims to keep users informed via various communication channels. 
+NeSI aims to keep users informed via various communication channels.
 
 ## Checking and setting your preferences
 
 Within [my.nesi.org.nz](https://my.nesi.org.nz/account/preference) you
 can find a summary of the current subscriptions under NeSI Notification
-Preferences. 
+Preferences.
 
 In order to manage your subscription to notifications, either log into
 [my.nesi](https://my.nesi.org.nz/account/preference) or use the link
@@ -40,9 +40,9 @@ notifications.
 
 ![2022-04-12\_16-46-56.png](../../assets/images/Managing_notification_preferences.png)
 
- 
 
- 
+
+
 
 ### See also
 

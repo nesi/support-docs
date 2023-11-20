@@ -39,11 +39,11 @@ Māui login (aka build) nodes have native Spectrum Scale clients
 installed and provide high performance access to storage:
 
 -   Metadata operations of the order of 190,000 file creates /second to
-    a unique directory can be expected;
+a unique directory can be expected;
 -   For 8MB transfer size, single stream I/O is ~3.3GB/s Write and
-    ~5GB/s Read;
+~5GB/s Read;
 -   For 4KB transfer size, single stream I/O is ~1.3GB/s Write and
-    ~2GB/s Read.
+~2GB/s Read.
 
 ## Nodes which access storage via DVS
 
@@ -52,7 +52,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).
 
- ![cray\_xc50.jpg](../../assets/images/I-O_Performance_Considerations.jpg)
+![cray\_xc50.jpg](../../assets/images/I-O_Performance_Considerations.jpg)
 
 <font size="2">Figure 1: Cray XC50 DVS architecture.</font>
 
@@ -63,15 +63,15 @@ Accordingly, the equivalent performance numbers for DVS connected
 compute nodes are:
 
 -   Metadata operations of the order of 36,000 file creates /second to a
-    unique directory can be expected, i.e. approximately 23% of that
-    achievable on a node that has a Spectrum Scale client.
+unique directory can be expected, i.e. approximately 23% of that
+achievable on a node that has a Spectrum Scale client.
 -   For 8MB transfer size, single stream I/O, is ~3.2GB/s for Write and
-    ~3.2 GB/s for Read;
+~3.2 GB/s for Read;
 -   For 4KB transfer size, single stream I/O, is ~2.3GB/s for Write and
-    ~2.5GB/s for Read (when using <font face="Courier New, serif">IOBUF
-    </font> – see Caution below). When
-    <font face="Courier New, serif">IOBUF</font> is not used Read and
-    Write performance is &lt;1GB/s.
+~2.5GB/s for Read (when using <font face="Courier New, serif">IOBUF
+</font> – see Caution below). When
+<font face="Courier New, serif">IOBUF</font> is not used Read and
+Write performance is &lt;1GB/s.
 
 Unless Cray’s <font color="#0000ff"> <u>[IOBUF](#_IOBUF_-_Caution)</u>
 </font> capability is suitable for an application, <u>users should avoid
@@ -110,4 +110,3 @@ about tests and results with regards to jobs performance of transparent
 data compression on the NeSI platforms on our [Data Compression support
 page](https://support.nesi.org.nz/hc/en-gb/articles/6359601973135).
 
- 

@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Example scripts
+## Example scripts
 
 <table>
 <colgroup>
@@ -106,5 +106,5 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 </tbody>
 </table>
 !!! prerequisite Note
-     Trying to use more tasks than there are partitions in your model will
-     cause failure.
+Trying to use more tasks than there are partitions in your model will
+cause failure.

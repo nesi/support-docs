@@ -25,13 +25,13 @@ zendesk_section_id: 360000033936
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite New Feature
-     [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
-     have recently started rolling out compression of inactive data on the
-     NeSI Project filesystem. Please see the [documentation
-     below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
-     works and what data will be compressed.
+[Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
+have recently started rolling out compression of inactive data on the
+NeSI Project filesystem. Please see the [documentation
+below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
+works and what data will be compressed.
 
- 
+
 
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695) and
 [Mahuika](https://support.nesi.org.nz/hc/articles/360000163575), along
@@ -41,7 +41,7 @@ before that as GPFS, or General Parallel File System - we'll generally
 refer to it as "Scale" where the context is clear.
 
 You may query your actual usage and disk allocations using the following
-command: 
+command:
 
 `$ nn_storage_quota`
 
@@ -50,7 +50,7 @@ and cached between updates.
 
 ## ![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.png)
 
-# File System Specifications
+## File System Specifications
 
 <table class="table table-bordered"
 style="tr td: first-child {    white-space:nowrap;">
@@ -219,44 +219,44 @@ interfaces</strong></span></td>
 We use Scale soft and hard quotas for both disk space and inodes.
 
 -   Once you exceed a fileset's soft quota, a one-week countdown timer
-    starts. When that timer runs out, you will no longer be able to
-    create new files or write more data in that fileset. You can reset
-    the countdown timer by dropping down to under the soft quota limit.
+starts. When that timer runs out, you will no longer be able to
+create new files or write more data in that fileset. You can reset
+the countdown timer by dropping down to under the soft quota limit.
 -   You will not be permitted to exceed a fileset's hard quota at all.
-    Any attempt to try will produce an error; the precise error will
-    depend on how your software responds to running out of disk space.
+Any attempt to try will produce an error; the precise error will
+depend on how your software responds to running out of disk space.
 
 When quotas are first applied to a fileset, or are reduced, it is
 possible to end up with more data or files in the fileset than the quota
 allows for. This outcome does not trigger deletion of any existing data,
 but will prevent creation of new data or files.
 
-### **Notes:**
+#### **Notes:**
 
 -   You may request an increase in storage and inode quota if needed by
-    a project. This may in turn be reduced as part of managing overall
-    risk, where large amounts of quota aren't used for a long period (~6
-    Months).
+a project. This may in turn be reduced as part of managing overall
+risk, where large amounts of quota aren't used for a long period (~6
+Months).
 -   If you need to compile or install a software package that is large
-    or is intended for use by a project team, please build it
-    in `/nesi/project/<project_code>` rather than `/home/<username>`.
+or is intended for use by a project team, please build it
+in `/nesi/project/<project_code>` rather than `/home/<username>`.
 -   As the `/nesi/nobackup` file system provides the highest
-    performance, input files should be moved or copied to this file
-    system before starting any job that makes use of them. Likewise, job
-    scripts should be written so as to write output files to the
-    `/nesi/nobackup` file system. If you wish to keep your data for the
-    long term, you can include as a final part of your job script an
-    operation to copy or move the output data to the `/nesi/project`
-    file system.
+performance, input files should be moved or copied to this file
+system before starting any job that makes use of them. Likewise, job
+scripts should be written so as to write output files to the
+`/nesi/nobackup` file system. If you wish to keep your data for the
+long term, you can include as a final part of your job script an
+operation to copy or move the output data to the `/nesi/project`
+file system.
 -   Keep in mind that data on `/nesi/nobackup` is not backed up,
-    therefore users are advised to move valuable data
-    to `/nesi/project/<project_code>`, or, if the data is seldom used,
-    to other storage such as an institutional storage facility, as soon
-    as batch jobs are completed. Please do **not** use the `touch`
-    command to prevent the cleaning policy from removing files, because
-    this behaviour would deprive the community of a shared resource.
+therefore users are advised to move valuable data
+to `/nesi/project/<project_code>`, or, if the data is seldom used,
+to other storage such as an institutional storage facility, as soon
+as batch jobs are completed. Please do **not** use the `touch`
+command to prevent the cleaning policy from removing files, because
+this behaviour would deprive the community of a shared resource.
 
-## /home
+### /home
 
 This file system is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. All home directories
@@ -267,7 +267,7 @@ No cleaning policy will be applied to your home directory as long as
 your My NeSI account is active and you are a member of at least one
 active project.
 
-## /nesi/project
+### /nesi/project
 
 This filesystem is accessible from all login, compute and ancillary
 nodes. Contents are backed up daily, via the Spectrum Protect backup
@@ -288,7 +288,7 @@ about in your [application for a new NeSI
 project](https://my.nesi.org.nz/html/request_project), and separately
 covering disk space and number of files.
 
-## /nesi/nobackup
+### /nesi/nobackup
 
 The `/nesi/nobackup` file system has the highest performance of all NeSI
 file systems, with greater than 140 GB/s bandwidth from compute nodes to
@@ -317,14 +317,14 @@ the community of a shared resource.
 The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
-## /nesi/nearline
+### /nesi/nearline
 !!! prerequisite Note
-     The nearline service, including its associated file systems, is in an
-     Early Access phase, and allocations are by invitation. We appreciate
-     your patience as we develop, test and deploy this service. If you
-     would like to participate in the Early Access Programme, please
-     [contact our support
-     team](https://support.nesi.org.nz/hc/requests/new).
+The nearline service, including its associated file systems, is in an
+Early Access phase, and allocations are by invitation. We appreciate
+your patience as we develop, test and deploy this service. If you
+would like to participate in the Early Access Programme, please
+[contact our support
+team](https://support.nesi.org.nz/hc/requests/new).
 
 The `/nesi/nearline` filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
@@ -337,7 +337,7 @@ See [this
 page](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) for
 more information about the nearline service.
 
-# Snapshots
+## Snapshots
 
 If you have accidentally deleted data you can recover it from
 a [snapshot](https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406).
@@ -346,7 +346,7 @@ cannot find it in a snapshot, please ask us to recover it for you by
 emailing [NeSI
 Support](mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File).
 
-# Contributions of Small Files Towards Quotas
+## Contributions of Small Files Towards Quotas
 
 The Scale file system makes use of a feature called *data-in-inode*.
 This feature will ensure that, once all of a (non-encrypted) file's
@@ -372,7 +372,7 @@ project's persistent storage, please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) to discuss your
 storage needs.
 
-# Transparent File Data Compression
+## Transparent File Data Compression
 
 The Scale file system has the ability to transparently compress file
 data. That is, file contents/data can be compressed behind the scenes,
@@ -391,7 +391,7 @@ through the Scale policy engine. We leverage this latter feature to
 regularly identify and compress inactive data on the `/nesi/project`
 file system.
 
-## What Project data is automatically compressed?
+### What Project data is automatically compressed?
 
 Our current policy compresses files that have not been accessed (either
 read from or written to) within the last 365 days, i.e., very inactive

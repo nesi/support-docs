@@ -20,10 +20,10 @@ zendesk_section_id: 360000189696
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Requirements
-     -   Have a [NeSI
-         account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
-     -   Be a member of an [active
-         project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
+-   Have a [NeSI
+account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
+-   Be a member of an [active
+project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
 
 ## First time setup
 
@@ -33,45 +33,45 @@ Git Bash can be downloaded as part of Git
 The login process can be simplified with a few configurations.
 
 1.  Open Git Bash and run `nano ~/.ssh/config` to open your ssh config
-    file and add the following (replacing `<username>` with your
-    username):
+file and add the following (replacing `<username>` with your
+username):
 
-    ``` sl
-    Host mahuika
-       User <username>
-       Hostname login.mahuika.nesi.org.nz
-       ProxyCommand ssh -W %h:%p lander
-       ForwardX11 yes
-       ForwardX11Trusted yes
-       ServerAliveInterval 300
-       ServerAliveCountMax 2
+``` sl
+Host mahuika
+User <username>
+Hostname login.mahuika.nesi.org.nz
+ProxyCommand ssh -W %h:%p lander
+ForwardX11 yes
+ForwardX11Trusted yes
+ServerAliveInterval 300
+ServerAliveCountMax 2
 
-    Host maui
-       User <username>
-       Hostname login.maui.nesi.org.nz
-       ProxyCommand ssh -W %h:%p lander
-       ForwardX11 yes
-       ForwardX11Trusted yes
-       ServerAliveInterval 300
-       ServerAliveCountMax 2
+Host maui
+User <username>
+Hostname login.maui.nesi.org.nz
+ProxyCommand ssh -W %h:%p lander
+ForwardX11 yes
+ForwardX11Trusted yes
+ServerAliveInterval 300
+ServerAliveCountMax 2
 
-    Host lander
-       User <username>
-       HostName lander.nesi.org.nz
-       ForwardX11 yes
-       ForwardX11Trusted yes
-       ServerAliveInterval 300
-       ServerAliveCountMax 2
+Host lander
+User <username>
+HostName lander.nesi.org.nz
+ForwardX11 yes
+ForwardX11Trusted yes
+ServerAliveInterval 300
+ServerAliveCountMax 2
 
-    Host *
-       ControlMaster auto
-       ControlPersist 1
-    ```
+Host *
+ControlMaster auto
+ControlPersist 1
+```
 
-    Close and save with ctrl x, y, Enter
+Close and save with ctrl x, y, Enter
 
 2.  Ensure the permissions are correct by
-    running `chmod 600 ~/.ssh/config`.
+running `chmod 600 ~/.ssh/config`.
 
 ## Usage
 

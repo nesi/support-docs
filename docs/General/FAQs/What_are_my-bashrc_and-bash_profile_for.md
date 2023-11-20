@@ -25,12 +25,12 @@ your *shell*, the program that interprets and executes the commands that
 you type in at your command prompt. But they're somewhat confusing,
 because there are several, and it's not obvious which are read and when.
 !!! prerequisite Warning
-     This documentation is specific to the *bash* shell, which is our
-     chosen default shell for all users, and is the default for most Linux
-     machines. If you have chosen a different default shell, or have
-     started another shell manually on the command line, these notes will
-     apply with modifications, or not at all; please consult the
-     documentation for your shell.
+This documentation is specific to the *bash* shell, which is our
+chosen default shell for all users, and is the default for most Linux
+machines. If you have chosen a different default shell, or have
+started another shell manually on the command line, these notes will
+apply with modifications, or not at all; please consult the
+documentation for your shell.
 
 ## `~/.bashrc`
 
@@ -86,7 +86,7 @@ useful rules of thumb:
 
 -   Functions and aliases go in `~/.bashrc`
 -   Modifications to `PATH` and `LD_LIBRARY_PATH` go in
-    `~/.bash_profile`
+`~/.bash_profile`
 
 These are guidelines only and are subject to your specific working
 practices and how you expect your shells to behave.

@@ -26,7 +26,7 @@ zendesk_section_id: 360001091155
 
 -   UI layout changes for project details view
 -   Rendering a basic usage data for compute (and storage if quota
-    information available)
+information available)
 -   Added contextual links for support article references
 
 ## Fixes

@@ -20,12 +20,12 @@ zendesk_section_id: 360000040076
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 !!! prerequisite Tips
-     An extended version of AlphaFold2 on NeSI Mahuika cluster which
-     contains additional information such as visualisation of AlphaFold
-     outputs, etc [can be found
-     here](https://nesi.github.io/alphafold2-on-mahuika/)
+An extended version of AlphaFold2 on NeSI Mahuika cluster which
+contains additional information such as visualisation of AlphaFold
+outputs, etc [can be found
+here](https://nesi.github.io/alphafold2-on-mahuika/)
 
-# Description
+## Description
 
 This package provides an implementation of the inference pipeline of
 AlphaFold v2.0. This is a completely new model that was entered in
@@ -40,15 +40,15 @@ the [Supplementary
 Information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) for
 a detailed description of the method.
 
-Home page is at <https://github.com/deepmind/alphafold> 
+Home page is at <https://github.com/deepmind/alphafold>
 
-# License and Disclaimer
+## License and Disclaimer
 
 This is not an officially supported Google product.
 
 Copyright 2021 DeepMind Technologies Limited.
 
-## [](https://github.com/deepmind/alphafold#alphafold-code-license)AlphaFold Code License
+### [](https://github.com/deepmind/alphafold#alphafold-code-license)AlphaFold Code License
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License. You may obtain
@@ -60,14 +60,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-## [](https://github.com/deepmind/alphafold#model-parameters-license)Model Parameters License
+### [](https://github.com/deepmind/alphafold#model-parameters-license)Model Parameters License
 
 The AlphaFold parameters are made available for non-commercial use only,
 under the terms of the Creative Commons Attribution-NonCommercial 4.0
 International (CC BY-NC 4.0) license. You can find details
 at: <https://creativecommons.org/licenses/by-nc/4.0/legalcode>
 
-# AlphaFold Databases
+## AlphaFold Databases
 
 AlphaFold databases are stored in `/opt/nesi/db/alphafold_db/`  parent
 directory. In order to make the database calling more convenient, we
@@ -84,29 +84,29 @@ AlphaFold2DB: AlphaFold2DB/2022-06
 Description:
 AlphaFold2 databases
 
- Versions:
-         AlphaFold2DB/2022-06
-         AlphaFold2DB/2023-04
+Versions:
+AlphaFold2DB/2022-06
+AlphaFold2DB/2023-04
 ```
 
-##  
+
 
 Loading a module will set the `$AF2DB` variable which is pointing to
-the  selected version of the database. For an example. 
+the  selected version of the database. For an example.
 
 ``` sl
 $ module load AlphaFold2DB/2023-04
 
-$ echo $AF2DB 
+$ echo $AF2DB
 /opt/nesi/db/alphafold_db/2023-04
 ```
 
-# AlphaFold module ( &gt;= 2.3.2)
+## AlphaFold module ( &gt;= 2.3.2)
 
 As of version 2.3.2 of AlphaFold, we recommend deploying AlphaFold via
 the module (previous versoions were done via a Singularity container )
 
-## Example Slurm script for monomer
+### Example Slurm script for monomer
 
 Input *fasta* used in following example  is 3RGK
 (<https://www.rcsb.org/structure/3rgk>).
@@ -145,14 +145,14 @@ run_alphafold.py --use_gpu_relax \
 --fasta_paths=${INPUT}/rcsb_pdb_3GKI.fasta
 ```
 
-## Example Slurm script for multimer
+### Example Slurm script for multimer
 
 Input *fasta* used in following example
 
 ``` sl
-    T1083
+T1083
 GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRYKEAAEENRALAKLHHELAIVED
-    T1084
+T1084
 MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 ```
 
@@ -192,19 +192,19 @@ run_alphafold.py \
 --fasta_paths=${INPUT}/test_multimer.fasta
 ```
 
-# AlphaFold Singularity container (prior to v2.3.2)
+## AlphaFold Singularity container (prior to v2.3.2)
 
 If you would like to use a version prior to 2.3.2, It can be done via
-the Singularity containers. 
+the Singularity containers.
 
 We prepared a Singularity container image based on the [official
 Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
 modifications. Image (.*simg*) and the corresponding definition file
 (*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
-## [](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script)Example Slurm scripts for Singularity container based AF2 deployment
+### [](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script)Example Slurm scripts for Singularity container based AF2 deployment
 
-### Monomer
+#### Monomer
 
 ``` sl
 #!/bin/bash -e
@@ -213,7 +213,7 @@ modifications. Image (.*simg*) and the corresponding definition file
 #SBATCH --job-name      alphafold2_monomer_example
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 6
-#SBATCH --gpus-per-node P100:1 
+#SBATCH --gpus-per-node P100:1
 #SBATCH --time          02:00:00
 #SBATCH --output        slurmout.%j.out
 
@@ -243,9 +243,9 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
 ```
 
- 
 
-### Multimer
+
+#### Multimer
 
 ``` sl
 #!/bin/bash -e
@@ -254,7 +254,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 #SBATCH --job-name      alphafold2_monomer_example
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 6
-#SBATCH --gpus-per-node P100:1 
+#SBATCH --gpus-per-node P100:1
 #SBATCH --time          02:00:00
 #SBATCH --output        slurmout.%j.out
 
@@ -286,44 +286,44 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
 ```
 
-###  
 
-### Explanation of Slurm variables and Singularity flags
+
+#### Explanation of Slurm variables and Singularity flags
 
 1.  Values for `--mem` , `--cpus-per-task` and `--time` Slurm variables
-    are for *3RGK.fasta*. Adjust them accordingly
+are for *3RGK.fasta*. Adjust them accordingly
 2.  We have tested this on both P100 and A100 GPUs where the runtimes
-    were identical. Therefore, the above example was set to former
-    via `P100:1`
+were identical. Therefore, the above example was set to former
+via `P100:1`
 3.  The `--nv` flag enables GPU support.
 4.  `--pwd /app/alphafold` is to workaround this [existing
-    issue](https://github.com/deepmind/alphafold/issues/32)
+issue](https://github.com/deepmind/alphafold/issues/32)
 
-###  
 
-## AlphaFold2 : Initial Release ( this version does not support `multimer`)
+
+### AlphaFold2 : Initial Release ( this version does not support `multimer`)
 
 Input *fasta* used in following example and subsequent benchmarking is
 3RGK (<https://www.rcsb.org/structure/3rgk>).
 
-###  
 
-# Troubleshooting
+
+## Troubleshooting
 
 -   If you are to encounter the message "*RuntimeError: Resource
-    exhausted: Out of memory*" , add the following variables to the
-    slurm script
+exhausted: Out of memory*" , add the following variables to the
+slurm script
 
-For module based runs 
+For module based runs
 
 ``` sl
 export TF_FORCE_UNIFIED_MEMORY=1
 export XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
 ```
 
-For Singularity based runs 
+For Singularity based runs
 
 ``` sl
-export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1 
+export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1
 export SINGULARITYENV_XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
 ```

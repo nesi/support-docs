@@ -25,6 +25,5 @@ zendesk_section_id: 360001150156
 ## New and Improved
 
 -   Enabled jupyter server proxy to forward requests to a different host
-    (compute node).
+(compute node).
 
- 

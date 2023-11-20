@@ -44,11 +44,11 @@ slurm into a terminal
 | sinfo   | `sinfo`               | Shows the current state of our Slurm partitions.                          |
 |         |                       |                                                                           |
 
- 
+
 
 ------------------------------------------------------------------------
 
- 
+
 
 ## *sbatch* options
 
@@ -62,28 +62,28 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 
 ### General options
 
-  ----------------------- ---------------------------------------- ---------------------------------------------------------------------------------------------------
-  --job-name              `#SBATCH --job-name=MyJob`               The name that will appear when using squeue or sacct
+----------------------- ---------------------------------------- ---------------------------------------------------------------------------------------------------
+--job-name              `#SBATCH --job-name=MyJob`               The name that will appear when using squeue or sacct
 
-  --account               `#SBATCH --account=nesi99999`            The account your core hours will be 'charged' to.
+--account               `#SBATCH --account=nesi99999`            The account your core hours will be 'charged' to.
 
-  --time                  `#SBATCH --time=DD-HH:MM:SS`             Job max walltime  
+--time                  `#SBATCH --time=DD-HH:MM:SS`             Job max walltime
 
-  --mem                   `#SBATCH --mem=512MB`                    Memory required per node.
+--mem                   `#SBATCH --mem=512MB`                    Memory required per node.
 
-  --partition             `#SBATCH --partition=long`               Specified job
-                                                                   [partition](https://support.nesi.org.nz/hc/en-gb/articles/360000204076-Mahuika-Slurm-Partitions).
+--partition             `#SBATCH --partition=long`               Specified job
+[partition](https://support.nesi.org.nz/hc/en-gb/articles/360000204076-Mahuika-Slurm-Partitions).
 
-  --output                `#SBATCH --output=%j_output.out`         Path and name of standard output file.
+--output                `#SBATCH --output=%j_output.out`         Path and name of standard output file.
 
-  --mail-user             `#SBATCH --mail-user=bob123@gmail.com`   Address to send mail notifications.
+--mail-user             `#SBATCH --mail-user=bob123@gmail.com`   Address to send mail notifications.
 
-  --mail-type             `#SBATCH --mail-type=ALL`                Will send a mail notification at `BEGIN END FAIL`
+--mail-type             `#SBATCH --mail-type=ALL`                Will send a mail notification at `BEGIN END FAIL`
 
-                          `#SBATCH --mail-type=TIME_LIMIT_80`      Will send message at *80%* walltime
+`#SBATCH --mail-type=TIME_LIMIT_80`      Will send message at *80%* walltime
 
-  --no-requeue            `#SBATCH --no-requeue`                   Will stop job being requeued in the case of node failure.
-  ----------------------- ---------------------------------------- ---------------------------------------------------------------------------------------------------
+--no-requeue            `#SBATCH --no-requeue`                   Will stop job being requeued in the case of node failure.
+----------------------- ---------------------------------------- ---------------------------------------------------------------------------------------------------
 
 ### Parallel options
 
@@ -208,11 +208,11 @@ defined.</td>
 </tbody>
 </table>
 !!! prerequisite Tip
-     Many options have a short and long form e.g.
-     `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
-     ``` sl
-     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
-     ```
+Many options have a short and long form e.g.
+`#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
+``` sl
+echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+```
 
 ## Tokens
 
@@ -232,9 +232,9 @@ Common examples.
 | `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
 | `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.             |
 !!! prerequisite Tip
-     In order to decrease the chance of a variable being misinterpreted you
-     should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
-     possible. e.g.
-     ``` sl
-     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
-     ```
+In order to decrease the chance of a variable being misinterpreted you
+should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
+possible. e.g.
+``` sl
+echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+```

@@ -31,18 +31,18 @@ The three main ANSYS licenses are;
 
 -   **ANSYS Teaching License **(aa\_t)
 
-    This is the default license type, it can be used on up to 6 CPUs on
-    models with less than 512k nodes
+This is the default license type, it can be used on up to 6 CPUs on
+models with less than 512k nodes
 
 -   **ANSYS Research license** (aa\_r)
 
-    No node restrictions. Can be used on up to 16 CPUs, for every
-    additional CPU over 16 you must request additional 'aa\_r\_hpc'
-    licenses.
+No node restrictions. Can be used on up to 16 CPUs, for every
+additional CPU over 16 you must request additional 'aa\_r\_hpc'
+licenses.
 
--   **ANSYS HPC License** (aa\_r\_hpc)**  
-    **One of these is required for each CPU over 16 when using
-    a research license.
+-   **ANSYS HPC License** (aa\_r\_hpc)**
+**One of these is required for each CPU over 16 when using
+a research license.
 
 ## License Order
 
@@ -63,11 +63,11 @@ prefer_research_license
 prefer_teaching_license
 ```
 !!! prerequisite Note
-     License preferences are individually tracked by *each version of
-     ANSYS.* Make sure you set preferences using the same version as in
-     your script.
+License preferences are individually tracked by *each version of
+ANSYS.* Make sure you set preferences using the same version as in
+your script.
 
-# Journal files
+## Journal files
 
 Some ANSYS applications take a 'journal' text file as input. It is often
 useful to create this journal file in your SLURM script (tidiness,
@@ -84,7 +84,7 @@ Below is an example of this from a fluent script.
 #SBATCH --time          01:00:00          # Wall time
 #SBATCH --mem           512MB             # Memory per node
 #SBATCH --licenses      aa_r:1       # One license token per CPU, less 16
-#SBATCH --array         1-100 
+#SBATCH --array         1-100
 #SBATCH --hint          nomultithread     # No hyperthreading
 
 module load ANSYS/19.2
@@ -119,31 +119,31 @@ jobid=1234567), the file  `fluent_1234567.in` will be created:
 ; Solve 10 time steps
 
 /file/write-case-data testCase1 ok
-; Since our output name is the same as our input, we have to provide conformation to overwrite, 'ok' 
+; Since our output name is the same as our input, we have to provide conformation to overwrite, 'ok'
 
 exit yes
 ; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).)
 ```
 
-then called as an input `fluent -v3ddp -g -i fluent_1234567.in`,  
+then called as an input `fluent -v3ddp -g -i fluent_1234567.in`,
 then deleted `rm fluent_1234567.in`
 
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
 !!! prerequisite Note
-     Comments can be added to journal files using a `;`. For example:
-     ``` sl
-     ; This is a comment
-     ```
+Comments can be added to journal files using a `;`. For example:
+``` sl
+; This is a comment
+```
 
-# Fluent
+## Fluent
 
 [Some great documentation on journal
 files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html)
 
 `fluent -help` for a list of commands.
 
-Must have one of these flags. 
+Must have one of these flags.
 
 |        |                                    |
 |--------|------------------------------------|
@@ -152,7 +152,7 @@ Must have one of these flags. 
 | `2ddp` | 2D solver, double point precision. |
 | `3ddp` | 3D solver, double point precision. |
 
- 
+
 
 <table>
 <colgroup>
@@ -215,17 +215,17 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tbody>
 </table>
 !!! prerequisite Useful Links
-     -   [All command line
-         options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_gs/flu_ug_sec_startup_option.html)
+-   [All command line
+options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_gs/flu_ug_sec_startup_option.html)
 
-## Interactive
+### Interactive
 
 While it will always be more time and resource efficient using a slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
 the login node, otherwise use of an [slurm interactive
 session](https://support.nesi.org.nz/hc/en-gb/articles/360001316356) is
-recommended. 
+recommended.
 
 For example.
 
@@ -236,16 +236,16 @@ salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time�
 Will return;
 
 ``` sl
-  salloc: Pending job allocation 10270935
-  salloc: job 10270935 queued and waiting for resources
-  salloc: job 10270935 has been allocated resources
-  salloc: Granted job allocation 10270935
-  salloc: Waiting for resource configuration
-  salloc: Nodes wbn[053-056] are ready for job
+salloc: Pending job allocation 10270935
+salloc: job 10270935 queued and waiting for resources
+salloc: job 10270935 has been allocated resources
+salloc: Granted job allocation 10270935
+salloc: Waiting for resource configuration
+salloc: Nodes wbn[053-056] are ready for job
 ```
 !!! prerequisite Note
-     Include all the commands you would usually use in your slurm header
-     here.
+Include all the commands you would usually use in your slurm header
+here.
 
 Once you have your allocation, run the command
 
@@ -262,17 +262,17 @@ mahuika0\[1-2\].
 
 ``` sl
 n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
- n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
- n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
- n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
- host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
+n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
+n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
+n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
+host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
 ```
 !!! prerequisite Important
-     Closing the fluent GUI will not end the SLURM interactive session. Use
-     `exit` or `scancel `*`jobid`* when finished, else you will continue to
-     'use' the requested CPUs.
+Closing the fluent GUI will not end the SLURM interactive session. Use
+`exit` or `scancel `*`jobid`* when finished, else you will continue to
+'use' the requested CPUs.
 
-## Checkpointing
+### Checkpointing
 
 It is best practice when running long jobs to enable autosaves.
 
@@ -282,9 +282,9 @@ It is best practice when running long jobs to enable autosaves.
 
 Where `<n>` is the number of iterations to run before creating a save.
 
-In order to save disk space you may also want to include the line 
+In order to save disk space you may also want to include the line
 
-## Interrupting
+### Interrupting
 
 Including the following code at the top of your journal file will allow
 you to interrupt the job.
@@ -298,12 +298,12 @@ job to save the current state and exit (`touch exit-fluent`). This will
 also write a new journal file called `restart.inp` that restarts the
 simulation at that point.
 
-## User Defined Functions
+### User Defined Functions
 
 When compiling code, make sure to `module load gimkl` in addition to the
 ANSYS module.
 
-### Case Definition
+#### Case Definition
 
 When setting up the case file on your local machine, make sure you
 select 'Compiled UDF', and select the \`.c\` source file. You can also
@@ -327,7 +327,7 @@ interpreted version.
 
 \`udf funcName::libudf\` is funcName as compiled in library \`libudf\`
 
-### Compilation
+#### Compilation
 
 When running in a new environment for the first time (local machine,
 Mahuika, Māui), the C code will have to first be compiled. The compiled
@@ -350,9 +350,9 @@ define/user-defined/compiled-functions compile "<libname>" yes "<source_file_1>"
 ```
 
 Note, the command must end with two `""` to indicate there are no more
-files to add. 
+files to add.
 
-As an example 
+As an example
 
 ``` sl
 define/user-defined/compiled-functions compile "libudf" yes "myUDF.c" "" ""
@@ -360,7 +360,7 @@ define/user-defined/compiled-functions compile "libudf" yes "myUDF.c" "" ""
 
 Will compile the code `myUDF.c` into a library named `libudf`
 
-### Loading File
+#### Loading File
 
 ``` sl
 define/user-defined/compiled-functions load libudf
@@ -368,7 +368,7 @@ define/user-defined/compiled-functions load libudf
 
 Will load the library `libudf` to be accessible by ANSYS.
 
-### UDF errors
+#### UDF errors
 
 ``` sl
 Error: chip-exec: function
@@ -379,7 +379,7 @@ might be using interpreted func
 solution specify as relative path, or unload compiled lib before saving
 .cas file.
 
-# CFX
+## CFX
 
 `cfx5solve -help` for a list of commands.
 
@@ -443,10 +443,10 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tbody>
 </table>
 !!! prerequisite Tip
-     Initial values path specified in '.def' file can be overridden using
-     the `-ini <initial-file-path>` flag.
+Initial values path specified in '.def' file can be overridden using
+the `-ini <initial-file-path>` flag.
 
-## CFX-Post
+### CFX-Post
 
 Even when running headless (without a GUI) CFX-Post requires connection
 to a graphical output. For some cases it may be suitable running
@@ -460,7 +460,7 @@ Buffer command.
 xvfb-run cfx5post input.cse
 ```
 
-# Mechanical APDL
+## Mechanical APDL
 
 <table>
 <colgroup>
@@ -553,7 +553,7 @@ single <em>thread</em></p></td>
 </tbody>
 </table>
 
-Not all MAPDL solvers work using distributed memory. 
+Not all MAPDL solvers work using distributed memory.
 
 |                           |     |
 |---------------------------|-----|
@@ -573,18 +573,18 @@ Not all MAPDL solvers work using distributed memory. 
 | Results calculation       | ✔   |
 | Pre/Postprocessing        | ✖   |
 !!! prerequisite Useful Links
-     -   [All command line
-         options.](https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/ans_ope/Hlp_G_OPE3_1.html)
-     -   [All MAPDL
-         commands.](https://www.sharcnet.ca/Software/Fluent14/help/ans_cmd/Hlp_C_CmdTOC.html)
-     -   [Debug
-         options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_prog/S7K4r190lcd.html)
-     -   [MAPDL Parallel Processing
-         Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
+-   [All command line
+options.](https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/ans_ope/Hlp_G_OPE3_1.html)
+-   [All MAPDL
+commands.](https://www.sharcnet.ca/Software/Fluent14/help/ans_cmd/Hlp_C_CmdTOC.html)
+-   [Debug
+options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_prog/S7K4r190lcd.html)
+-   [MAPDL Parallel Processing
+Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
 
-# LS-DYNA
+## LS-DYNA
 
-## Fluid-Structure Example
+### Fluid-Structure Example
 
 ``` bash
 #!/bin/bash -e
@@ -600,7 +600,7 @@ input=3cars_shell2_150ms.k
 lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
 ```
 
-# Multiphysics
+## Multiphysics
 
 ### Example - MAPDL Fluent Interaction
 
@@ -627,32 +627,32 @@ cd Coupling
 
 # Run the system coupler in the background.
 srun -N1 -n1 $WORKBENCH_CMD \
-    ansys.services.systemcoupling.exe \
-    -inputFile coupling.sci || scancel $SLURM_JOBID &
+ansys.services.systemcoupling.exe \
+-inputFile coupling.sci || scancel $SLURM_JOBID &
 cd ..
 serverfile="$PWD/Coupling/scServer.scs"
 
 while [[ ! -f "$serverfile" ]] ; do
-    sleep 1 # waiting for SC to start
+sleep 1 # waiting for SC to start
 done
 sleep 1
 
 echo "PARSING SYSTEM COUPLER CONFIG"
 
 {
-    read hostport
-    port=${hostport%@*}
-    node=${hostport#*@}
-    read count
-    for solver in $(seq $count)
-    do
-        read solname
-        read soltype
-        case $soltype in 
-            Fluid) fluentsolname=$solname;;
-            Structural) mechsolname=$solname;;
-        esac
-    done
+read hostport
+port=${hostport%@*}
+node=${hostport#*@}
+read count
+for solver in $(seq $count)
+do
+read solname
+read soltype
+case $soltype in
+Fluid) fluentsolname=$solname;;
+Structural) mechsolname=$solname;;
+esac
+done
 } < "$serverfile"
 
 echo " Port number: $port"
@@ -666,8 +666,8 @@ cd Structural
 
 # Run ANSYS in the background, alongside the system coupler and Fluent.
 mapdl -b -dis -mpi intel -np $MECHANICAL_CPUS \
-    -scport $port -schost $node -scname "$mechsolname" \
-    -i "structural.dat" > struct.out || scancel $SLURM_JOBID &
+-scport $port -schost $node -scname "$mechsolname" \
+-i "structural.dat" > struct.out || scancel $SLURM_JOBID &
 cd ..
 
 sleep 2
@@ -677,8 +677,8 @@ cd FluidFlow
 
 # Run Fluent in the background, alongside the system coupler and ANSYS.
 fluent 3ddp -g -t$FLUID_CPUS \
-    -scport=$port -schost=$node -scname="$fluentsolname" \
-    -i "fluidFlow.jou" > fluent.out || scancel $SLURM_JOBID &
+-scport=$port -schost=$node -scname="$fluentsolname" \
+-i "fluidFlow.jou" > fluent.out || scancel $SLURM_JOBID &
 cd ..
 
 # Before exiting, wait for all background tasks (the system coupler, ANSYS and
@@ -686,7 +686,7 @@ cd ..
 wait
 ```
 
-# FENSAP-ICE
+## FENSAP-ICE
 
 FENSAP-ICE is a fully integrated ice-accretion and aerodynamics
 simulator.
@@ -701,12 +701,12 @@ The following FENSAP solvers are compatible with MPI
 -   C3D
 -   OptiGrid
 
-## Case setup 
+### Case setup
 
-## With GUI
+### With GUI
 
 If you have set up X-11 forwarding, you may launch the FENSAP ice using
-the command `fensapiceGUI` from within your FENSAP project directory. 
+the command `fensapiceGUI` from within your FENSAP project directory.
 
 <table style="height: 44px;" width="590">
 <colgroup>
@@ -743,23 +743,23 @@ You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
 opening the GUI within the project folder.
 !!! prerequisite Note
-     Submitting your job through the use of the GUI has disadvantages and
-     may not be suitable in all cases.
-     -   Closing the session or losing connection will prevent the next
-         stage of the job starting (currently executing step will continue
-         to run).  It is a good idea to launch the GUI inside a tmux/screen
-         session then send the process to background to avoid this.
-     -   Each individual step will be launched with the same parameters
-         given in the GUI.
-     -   By default 'restart' is set to disabled. If you wish to continue a
-         job from a given step/shot you must select so in the dropdown
-         menu.
+Submitting your job through the use of the GUI has disadvantages and
+may not be suitable in all cases.
+-   Closing the session or losing connection will prevent the next
+stage of the job starting (currently executing step will continue
+to run).  It is a good idea to launch the GUI inside a tmux/screen
+session then send the process to background to avoid this.
+-   Each individual step will be launched with the same parameters
+given in the GUI.
+-   By default 'restart' is set to disabled. If you wish to continue a
+job from a given step/shot you must select so in the dropdown
+menu.
 
-## Using fensap2slurm
+### Using fensap2slurm
 
 Set up your model as you would normally, except rather than starting the
 run just click 'save'. You *do not* need to set number of CPUs or MPI
-configuration.  
+configuration.
 Then in your terminal type `fensap2slurm path/to/project` or run
 `fensap2slurm` from inside the run directory.
 
@@ -771,14 +771,14 @@ last stage of the shot, that way you can set more accurate resource
 requirements for the remainder.
 
 The workflow can then by running `.solvercmd` e.g `bash .solvercmd`.
-Progress can be tracked through the GUI as usual. 
+Progress can be tracked through the GUI as usual.
 
-# ANSYS-Electromagnetic
+## ANSYS-Electromagnetic
 
 ANSYS-EM jobs can be submitted through a slurm script or by [interactive
 session](https://support.nesi.org.nz/hc/en-gb/articles/360001316356).
 
-## RSM
+### RSM
 
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
 manager) running on all nodes. The command `startRSM` has been written
@@ -786,7 +786,7 @@ to facilitate this and needs to be run *after* starting the slurm job
 but *before* running edt. Please contact NeSI support if the command is
 not working for you.
 
-## Example Slurm Script
+### Example Slurm Script
 
 ``` sl
 #!/bin/bash -e
@@ -809,14 +809,14 @@ All batch options can be listed using
 ansysedt -batchoptionhelp
 ```
 
-(Note, this requires a working X-server) 
+(Note, this requires a working X-server)
 !!! prerequisite Note
-     Each batch option must have it's own flag, e.g.
-     ``` sl
-     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
-     ```
+Each batch option must have it's own flag, e.g.
+``` sl
+-batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
+```
 
-## Interactive
+### Interactive
 
 First start an interactive slurm session.
 
@@ -843,15 +843,15 @@ Then launch ansys edt with the following flags
 ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
 ```
 
-# Best Practices
+## Best Practices
 
-## GPU acceleration support
+### GPU acceleration support
 
 GPUs can be slow for smaller jobs because it takes time to transfer data
 from the main memory to the GPU memory. We therefore suggest that you
 only use them for larger jobs, unless benchmarking reveals otherwise.
 
-## Interactive use
+### Interactive use
 
 It is best to use journal files *etc* to automate ANSYS so that you can
 submit batch jobs, but when interactivity is really needed alongside
@@ -862,14 +862,14 @@ tasks it launches run on a compute node. This requires using *salloc*
 instead of *sbatch*, for example:
 
 ``` bash
-salloc -A nesi99999 -t 30 -n 16 -C avx --mem-per-cpu=512MB bash -c 'module load ANSYS; fluent -v3ddp -t$SLURM_NTASKS' 
+salloc -A nesi99999 -t 30 -n 16 -C avx --mem-per-cpu=512MB bash -c 'module load ANSYS; fluent -v3ddp -t$SLURM_NTASKS'
 ```
 
 As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
 --mail-type=BEGIN and --mail-user= options.
 
-## Hyperthreading
+### Hyperthreading
 
 Utilising hyperthreading (ie: removing the "--hint=nomultithread" sbatch
 directive and doubling the number of tasks) will give a small speedup on

@@ -24,7 +24,7 @@ zendesk_section_id: 360000040076
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 Getting started with Relion is most easily done via its X11 GUI, which
-is launched with the command "relion".  
+is launched with the command "relion".
 
 ``` sl
 $ module load Relion
@@ -63,7 +63,7 @@ srun relion_run_ctffind_mpi ...
 
 We have made some effort to integrate the Relion GUI directly with Slurm
 so that it can submit Slurm jobs directly, however this might not
-entirely work yet. 
+entirely work yet.
 
 Some of the Relion tools benefit tremendously from using a GPU.
 
@@ -71,6 +71,5 @@ For licensing reasons we ask that you install the GPU
 accelerated *MotionCorr2* yourself if you find Relion's own CPU-only
 version of the same algorithm insufficient.
 
- 
 
- 
+

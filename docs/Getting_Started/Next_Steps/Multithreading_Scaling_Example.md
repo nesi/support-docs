@@ -25,17 +25,17 @@ these examples are applicable across software applications. You do not
 need to know anything about R to understand this article; it was merely
 chosen for the purpose of illustration.
 
-### Initial R Script
+## Initial R Script
 
 ``` sl
- library(doParallel)
+library(doParallel)
 
-  registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
+registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
-  # 60,000 calculations to be done:
-  foreach(z=1000000:1060000) %dopar% {
-   x <- sum(rnorm(z))
-  }
+# 60,000 calculations to be done:
+foreach(z=1000000:1060000) %dopar% {
+x <- sum(rnorm(z))
+}
 ```
 
 You do not need to understand what the above R script is doing, but for
@@ -54,14 +54,14 @@ iterations. So now lets change the number of iterations from 60,000 to
 ### Revised R Script
 
 ``` sl
- library(doParallel)
+library(doParallel)
 
-  registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
+registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
-  # 5,000 calculations to be done:
-  foreach(z=1000000:1005000) %dopar% {
-   x <- sum(rnorm(z))
-  }
+# 5,000 calculations to be done:
+foreach(z=1000000:1005000) %dopar% {
+x <- sum(rnorm(z))
+}
 ```
 
 Now we need to write a Slurm script to run this job. The wall time,
@@ -80,21 +80,21 @@ took to get there.
 ### Slurm Script
 
 ``` sl
-  #!/bin/bash -e
-  #SBATCH --job-name=Scaling5k
-  #SBATCH --time=00:10:00
-  #SBATCH --mem=512MB
-  #SBATCH --cpus-per-task=4
+#!/bin/bash -e
+#SBATCH --job-name=Scaling5k
+#SBATCH --time=00:10:00
+#SBATCH --mem=512MB
+#SBATCH --cpus-per-task=4
 
-  module load R
-  Rscript scaling.R
+module load R
+Rscript scaling.R
 ```
 
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
 ``` sl
-         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
 3106248.batch  batch           00:03:17    00:00.614     4    4213K COMPLETED
@@ -116,7 +116,7 @@ To test this, we will submit three more jobs, using 10,000 15,000 and
 20,000 iterations.
 
 ``` sl
-         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
 3106248.batch  batch           00:03:17    00:00.614     4    4213K COMPLETED
@@ -160,8 +160,8 @@ To find out we are going to have to run more tests. Let's try running
 our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
 ``` sl
- sacct
-         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
+sacct
+JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3063584        Scaling2        00:06:29    12:49.971     2          COMPLETED
 3063584.batch  batch           00:06:29    00:00.591     2    4208K COMPLETED
@@ -197,7 +197,7 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 3106181.0      Rscript         00:00:59    11:59.998    16 1205991K COMPLETED
 ```
 
- 
+
 
 |                                                                         |                                                                           |
 |-------------------------------------------------------------------------|---------------------------------------------------------------------------|
@@ -223,7 +223,7 @@ small. We could try running our script with more than 16 CPU cores,
 however, in the case of this script we start to have a pretty
 significant drop in marginal speed-up after eight CPU cores.
 
- 
+
 
 ![](../../assets/images/Multithreading_Scaling_Example_3.png)
 
@@ -263,21 +263,21 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
 ### Revised Slurm Script
 
 ``` sl
-  #!/bin/bash -e
-  #SBATCH --account=nesi99999
-  #SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
-  #SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
-  #SBATCH --mem=512MB           # Memory per node
-  #SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
+#!/bin/bash -e
+#SBATCH --account=nesi99999
+#SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
+#SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
+#SBATCH --mem=512MB           # Memory per node
+#SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
 
-  module load R
-  Rscript scaling.R
+module load R
+Rscript scaling.R
 ```
 
- Checking on our job with `sacct` 
+Checking on our job with `sacct`
 
 ``` sl
-         JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
+JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3119026        Scaling60k      00:20:34     02:41:53     8          COMPLETED
 3119026.batch  batch           00:20:34    00:01.635     8    4197K COMPLETED

@@ -53,33 +53,33 @@ rebuilt and/or updated versions of these applications (though this will
 be an ongoing effort post-upgrade).
 
 The following information will help your transition from the pre-upgrade
-Māui environment to the post-upgrade one: 
+Māui environment to the post-upgrade one:
 
 -   The three main toolchains (CrayCCE, CrayGNU and CrayIntel) have all
-    been updated to release 23.02 (CrayCCE and CrayGNU) and 23.02-19
-    (CrayIntel). **The previously installed versions are no longer
-    available**.
+been updated to release 23.02 (CrayCCE and CrayGNU) and 23.02-19
+(CrayIntel). **The previously installed versions are no longer
+available**.
 -   Consequently, nearly all of the previously provided **environment
-    modules have been replaced by new versions**. You can use the
-    *module avail* command to see what versions of those software
-    packages are now available. If your batch scripts load exact module
-    versions, they will need updating.
+modules have been replaced by new versions**. You can use the
+*module avail* command to see what versions of those software
+packages are now available. If your batch scripts load exact module
+versions, they will need updating.
 -   The few jobs in the Slurm queue at the start of the upgrade process
-    have been placed in a “user hold” state. You have the choice of
-    cancelling them with *scancel &lt;jobid&gt;* or releasing them with
-    *scontrol release &lt;jobid&gt;*.
+have been placed in a “user hold” state. You have the choice of
+cancelling them with *scancel &lt;jobid&gt;* or releasing them with
+*scontrol release &lt;jobid&gt;*.
 -   Be aware that if you have jobs submitted that rely on any software
-    built before the upgrade, there is a good chance that this software
-    will not run. **We recommend rebuilding any binaries you maintain**
-    before running jobs that utilise those binaries.
+built before the upgrade, there is a good chance that this software
+will not run. **We recommend rebuilding any binaries you maintain**
+before running jobs that utilise those binaries.
 -   Note that Māui login does not require adding a second factor to the
-    password when authenticating on the Māui login node after the first
-    successful login attempt. That is, if you have successfully logged
-    in using &lt;first factor&gt;&lt;second factor&gt; format, no second
-    factor part will be required later on.
+password when authenticating on the Māui login node after the first
+successful login attempt. That is, if you have successfully logged
+in using &lt;first factor&gt;&lt;second factor&gt; format, no second
+factor part will be required later on.
 
 We have also updated our support documentation for Māui to reflect the
-changes, so please review it before starting any new projects. 
+changes, so please review it before starting any new projects.
 
 ## Software Changes
 
