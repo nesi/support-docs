@@ -90,10 +90,9 @@ abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive
         cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads 
 
 === "UDF"
-Shared memory run with user defined function (fortran or C). </p>
-<p><code class="sl">user=&lt;name_of_function&gt;</code> </p>
-<p>Function will be compiled at start of run. </p>
-<p><em>You may need to chance the function suffix if you usually compile
+    Shared memory run with user defined function (fortran or C).
+    Function will be compiled at start of run.
+    You may need to chance the function suffix if you usually compile
 on windows.
 
 
@@ -107,57 +106,44 @@ on windows.
 
     module load imkl</span>
     module</span> load ABAQUS/{{{{applications.ABAQUS.machines.mahuika.versions | last}}
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">abaqus</span> job=<span class="st">&quot;propeller_s4rs_c3d8r&quot;</span> user=my_udf.f90 verbose=2 interactive <span class="dt">\</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    cpus=<span class="va">${SLURM_CPUS_PER_TASK}</span> mp_mode=threads</span></code></pre></div></td>
-</tr>
-<tr class="even">
-<td class="wysiwyg-text-align-left" style="width: 506px"><h2
-id="distributed-memory">Distributed Memory</h2>
-<hr />
-<code class="sl">mp_mode=mpi</code>
-<p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
-<p>Not limited to <span>one node</span>.<br />
-Model will be segmented into <code class="sl">-np</code> pieces which
-should be equal to <code class="sl">--ntasks</code>.</p>
-<p>Each task could be running on a different node leading to increased
-communication overhead<br />
-.Jobs can be limited to a single node by adding  <code
-class="sl">--nodes=1</code> however this will increase your time in the
-queue as contiguous cpu's are harder to schedule.</p>
-<p>This is the default method if <code class="sl">mp_mode</code> is left
-unspecified.</p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      ABAQUS-Distributed </span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00       # Walltime</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks        8              </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu   1500          # Each CPU needs it&#39;s own.</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes         1</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load ABAQUS/2019</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">abaqus</span> job=<span class="st">&quot;propeller_s4rs_c3d8r&quot;</span> verbose=2 interactive <span class="dt">\</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    cpus=<span class="va">${SLURM_NTASKS}</span> mp_mode=mpi</span></code></pre></div></td>
-</tr>
-<tr class="odd">
-<td style="width: 506px"><h2 id="gpus">GPUs</h2>
-<hr />
-<p>The GPU nodes are limited to <span>16 CPUs</span></p>
-<p>In order for the GPUs to be worthwhile, you should see a speedup
-equivalent to <span>56 CPU</span>'s per GPU used. GPU modes will
-generally have less memory/cpus</p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      ABAQUS-gpu</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00       # Walltime</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 4              </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           4G         # total mem</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --gpus-per-node 1</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load ABAQUS/2019 </span>
+    abaqus job="propeller_s4rs_c3d8r" user=my_udf.f90 \
+        verbose=2 interactive cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads
+=== "Distributed Memory"
+`mp_mode=mpi`
+Multiple processes each with a single *thread*. Not limited to one node.
+Model will be segmented into `-np` pieces which
+should be equal to `--ntasks`
+Each task could be running on a different node leading to increased
+communication overhead. Jobs can be limited to a single node by adding --nodes=1` however this will increase your time in the
+queue as contiguous cpu's are harder to schedule.
+This is the default method if `mp_mode` is left
+unspecified.
+    ```
+    #!/bin/bash -e
+    #SBATCH --job-name      ABAQUS-Distributed 
+    #SBATCH --time          00:05:00       # Walltime</span></span>
+    #SBATCH --ntasks        8
+    #SBATCH --mem-per-cpu   1500          # Each CPU needs it&#39;s own.
+    #SBATCH --nodes         1
+    
+    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+   abaqus job "propeller_s4rs_c3d8r" verbose=2 interactive cpus=${SLURM_NTASKS} mp_mode=mpi
+
+=== "GPUs"
+    The GPU nodes are limited to 16 CPUs
+    In order for the GPUs to be worthwhile, you should see a speedup
+    equivalent to 56 CPU's per GPU used. GPU modes will
+    generally have less memory/cpus.
+
+    ```
+    #!/bin/bash -e
+    
+    #SBATCH --job-name      ABAQUS-gpu
+    #SBATCH --time          00:05:00       # Walltime</span></span>
+    #SBATCH --cpus-per-task 4
+    #SBATCH --mem           4G         # total mem</span></span>
+    #SBATCH --gpus-per-node
+module</span> load ABAQUS/2019 </span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load CUDA</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ex">abaqus</span> job=<span class="st">&quot;propeller_s4rs_c3d8r&quot;</span> verbose=2 interactive <span class="dt">\</span></span>
