@@ -8,6 +8,7 @@ tags:
 - gpu
 - mpi
 - omp
+- fea
 title: ABAQUS
 vote_count: 2
 vote_sum: 0
@@ -15,21 +16,9 @@ zendesk_article_id: 212457807
 zendesk_section_id: 360000040076
 ---
 
+A list of ABAQUS commands can be found with:
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
-
-A list of commands can be found with:
-
-``` sl
+``` sh
 abaqus help
 ```
 
@@ -38,7 +27,8 @@ can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
-!!! prerequisite Tips
+
+!!! note
      Required ABAQUS licences can be determined by this simple and
      intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
      of CPUs.
@@ -51,88 +41,72 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 
 Not all solvers are compatible with all types of parallelisation.
 
-|                   |                    |                  |               |                |
-|-------------------|--------------------|------------------|---------------|----------------|
-|                   | Element operations | Iterative solver | Direct solver | Lanczos solver |
-| `mp_mode=threads` | ✖                  | ✔                | ✔             | ✔              |
-| `mp_mode=mpi`     | ✔                  | ✔                | ✖             | ✖              |
-!!! prerequisite Note
+|                   |                    |           |        |         |
+|-------------------|--------------------|-----------|--------|---------|
+|                   | Element operations | Iterative | Direct | Lanczos |
+| `mp_mode=threads` | ✖                  | ✔        | ✔     | ✔       |
+| `mp_mode=mpi`     | ✔                  | ✔        | ✖     | ✖       |
+
+!!! warning
      If your input files were created using an older version of ABAQUS you
      will need to update them using the command,
-     ``` sl
+     ``` sh
      abaqus -upgrade -job new_job_name -odb old.odb
      ```
      or
-     ``` sl
+     ``` sh
      abaqus -upgrade -job new_job_name -inp old.inp
      ```
+     
+## Examples
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="width: 506px"><h2 id="serial">Serial</h2>
-<hr />
-<p>For when only <span>one CPU is required</span>, generally as part of
-an <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array">job
-array</a>.</p>
-<p> </p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      ABAQUS-Shared</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00       # Walltime</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 1              </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           1500          # total mem</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load ABAQUS/2019</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">abaqus</span> job=<span class="st">&quot;propeller_s4rs_c3d8r&quot;</span> verbose=2 interactive </span></code></pre></div></td>
-</tr>
-<tr class="even">
-<td style="width: 506px"><h2 id="shared-memory">Shared Memory</h2>
-<hr />
-<code class="sl">mp_mode=threads</code>
-<p>Uses a nodes shared memory for communication. </p>
-<p>May have a small speedup compared to MPI when using a low number of
-CPUs, scales poorly. Needs significantly less memory than MPI.</p>
-<em>Hyperthreading may be enabled if using shared memory but it is not
-recommended.</em></td>
-<td style="width: 163px"><div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      ABAQUS-Shared</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00       # Walltime</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 4              </span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           2G        # total mem</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load ABAQUS/2019</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">abaqus</span> job=<span class="st">&quot;propeller_s4rs_c3d8r&quot;</span> verbose=2 interactive <span class="dt">\</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    cpus=<span class="va">${SLURM_CPUS_PER_TASK}</span> mp_mode=threads</span></code></pre></div></td>
-</tr>
-<tr class="odd">
-<td style="width: 506px"><h2 id="udf">UDF</h2>
-<hr />
-<p>Shared memory run with user defined function (fortran or C). </p>
+=== Serial
+    For when only one CPU is required, generally as part of
+a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
+    ```
+    #!/bin/bash -e
+    #SBATCH --job-name      ABAQUS-serial
+    #SBATCH --time          00:05:00 # Walltime
+    #SBATCH --cpus-per-task 1 
+    #SBATCH --mem           1500          # total mem
+    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive
+=== "Shared Memory"
+    `mp_mode=threads`
+    Uses a nodes shared memory for communication.
+    May have a small speedup compared to MPI when using a low number of
+    CPUs, scales poorly. Needs significantly less memory than MPI.
+    Hyperthreading may be enabled if using shared memory but it is not
+    recommended.
+    
+    ```sl
+    #!/bin/bash -e
+    #SBATCH --job-name      ABAQUS-Shared
+    #SBATCH --time          00:05:00       # Walltime
+    #SBATCH --cpus-per-task 4
+    #SBATCH --mem           2G        # total mem
+    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions}}
+    abaqus job="propeller_s4rs_c3d8r verbose=2 interactive \
+        cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads 
+
+=== "UDF"
+Shared memory run with user defined function (fortran or C). </p>
 <p><code class="sl">user=&lt;name_of_function&gt;</code> </p>
 <p>Function will be compiled at start of run. </p>
 <p><em>You may need to chance the function suffix if you usually compile
-on windows.</em></p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      ABAQUS-SharedUDF</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00       # Walltime</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 4              </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           2G         # total mem</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load imkl</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load ABAQUS/2019</span>
+on windows.
+
+
+    ```
+    #!/bin/bash -e
+    
+    #SBATCH --job-name      ABAQUS-SharedUDF
+    #SBATCH --time          00:05:00       # Walltime
+    #SBATCH --cpus-per-task 4
+    #SBATCH --mem           2G         # total mem
+
+    module load imkl</span>
+    module</span> load ABAQUS/{{{{applications.ABAQUS.machines.mahuika.versions | last}}
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">abaqus</span> job=<span class="st">&quot;propeller_s4rs_c3d8r&quot;</span> user=my_udf.f90 verbose=2 interactive <span class="dt">\</span></span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    cpus=<span class="va">${SLURM_CPUS_PER_TASK}</span> mp_mode=threads</span></code></pre></div></td>
