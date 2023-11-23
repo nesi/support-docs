@@ -25,7 +25,7 @@ plugins:
   - redirects:
       map_file: docs/redirect_map.yml
   - literate-nav
-  - git-authors
+ # - git-authors
   - tags
   - git-revision-date-localized:
       enable_creation_date: true
