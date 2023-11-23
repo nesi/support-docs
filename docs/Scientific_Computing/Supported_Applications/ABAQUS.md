@@ -22,6 +22,8 @@ A list of ABAQUS commands can be found with:
 abaqus help
 ```
 
+## Licences
+
 [Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
 can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
@@ -62,7 +64,7 @@ Not all solvers are compatible with all types of parallelisation.
 
 === Serial
     For when only one CPU is required, generally as part of
-a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
+    a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
     ```
     #!/bin/bash -e
     #SBATCH --job-name      ABAQUS-serial
@@ -70,7 +72,8 @@ a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Paralle
     #SBATCH --cpus-per-task 1 
     #SBATCH --mem           1500          # total mem
     module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
-abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive
+    abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive
+    ```
 === "Shared Memory"
     `mp_mode=threads`
     Uses a nodes shared memory for communication.
@@ -109,16 +112,17 @@ on windows.
     abaqus job="propeller_s4rs_c3d8r" user=my_udf.f90 \
         verbose=2 interactive cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads
 === "Distributed Memory"
-`mp_mode=mpi`
-Multiple processes each with a single *thread*. Not limited to one node.
-Model will be segmented into `-np` pieces which
-should be equal to `--ntasks`
-Each task could be running on a different node leading to increased
-communication overhead. Jobs can be limited to a single node by adding --nodes=1` however this will increase your time in the
-queue as contiguous cpu's are harder to schedule.
-This is the default method if `mp_mode` is left
-unspecified.
-    ```
+    `mp_mode=mpi`
+    Multiple processes each with a single *thread*. Not limited to one node.
+    Model will be segmented into `-np` pieces which
+    should be equal to `--ntasks`
+    Each task could be running on a different node leading to increased
+    communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the
+    queue as contiguous cpu's are harder to schedule.
+    This is the default method if `mp_mode` is left
+    unspecified.
+    
+    ```sl
     #!/bin/bash -e
     #SBATCH --job-name      ABAQUS-Distributed 
     #SBATCH --time          00:05:00       # Walltime</span></span>
@@ -127,7 +131,8 @@ unspecified.
     #SBATCH --nodes         1
     
     module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
-   abaqus job "propeller_s4rs_c3d8r" verbose=2 interactive cpus=${SLURM_NTASKS} mp_mode=mpi
+    abaqus job "propeller_s4rs_c3d8r" verbose=2 interactive cpus=${SLURM_NTASKS} mp_mode=mpi
+    ```
 
 === "GPUs"
     The GPU nodes are limited to 16 CPUs
@@ -143,14 +148,11 @@ unspecified.
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           4G         # total mem</span></span>
     #SBATCH --gpus-per-node
-module</span> load ABAQUS/2019 </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load CUDA</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ex">abaqus</span> job=<span class="st">&quot;propeller_s4rs_c3d8r&quot;</span> verbose=2 interactive <span class="dt">\</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    cpus=<span class="va">${SLURM_CPUS_PER_TASK}</span> gpus=<span class="va">${SLURM_GPUS_PER_NODE}</span> mp_mode=threads</span></code></pre></div></td>
-</tr>
-</tbody>
-</table>
+    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module load CUDA
+    abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive \
+    cpus=${SLURM_CPUS_PER_TASK} gpus=${SLURM_GPUS_PER_NODE} mp_mode=threads
+    ```
 
 ## User Defined Functions 
 
@@ -158,7 +160,7 @@ User defined functions (UDFs) can be included on the command line with
 the argument `user=<filename>` where `<filename>` is the C or fortran
 source code.
 
-Extra compiler options can be set in your local `abaqus_v6.env` file.
+Extra compiler options can be set in your local `abaqus_v6.env` [file](#environment_file).
 
 The default compile commands are for `imkl`, other compilers can be
 loaded with `module load`, you may have to change the [compile
@@ -172,7 +174,7 @@ file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensin
 a number of parameters that define how the your job will run, some of
 these you may with to change.
 
-These parameters are read, 
+These parameters are read in the following order of preference, 
 
 `../ABAQUS/SMA/site/abaqus_v6.env` Set by NeSI and cannot be changed.
 
@@ -194,15 +196,8 @@ parameter=value" > "abaqus_v6.env"
 # After job is finished.
 rm "abaqus_v6.env"
 ```
-!!! prerequisite Useful Links
-     -   [Command line options for standard
-         submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
-
- 
 
 ![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
-
- 
 
 *Note: Hyperthreading off, testing done on small mechanical FEA model.
 Results highly model dependant. Do your own tests.*
