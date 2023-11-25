@@ -5,6 +5,10 @@ position: 27
 tags:
 - engineering
 - COMSOL
+- cae
+- multiphysics
+- cfd
+- fea
 title: COMSOL
 vote_count: 1
 vote_sum: 1
@@ -12,21 +16,13 @@ zendesk_article_id: 360000871556
 zendesk_section_id: 360000040076
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ``` sl
 comsol --help
 ```
 
 Will display a list of COMSOL batch commands.
-!!! prerequisite Useful Links
+
+!!! tip "Useful Links"
      -   [Running COMSOL in parallel on
          clusters.](https://www.comsol.com/support/knowledgebase/1001/)
      -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
@@ -52,34 +48,24 @@ distribution. 
 
 ## Example Scripts
 
-------------------------------------------------------------------------
+=== "Serial Job"
+    Single *process* with a single *thread*
+    Usually submitted as part of an array, as in the case of parameter
+sweeps.
+    
+    ```
+    #!/bin/bash -e
+    
+    #SBATCH --job-name      COMSOL-serial</span></span>
+    #SBATCH --licenses      comsol@uoa_foe
+    #SBATCH --time          00:05:00          # Walltime</span></span>
+    #SBATCH --mem           1512               # total mem</span></span>
 
-<table style="height: 481px; width: 811px;">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="width: 506px"><h2 id="serial-example">Serial Example</h2>
-<hr />
-<p>Single <em>process</em> with a single <em>thread</em></p>
-<p>Usually submitted as part of an array, as in the case of parameter
-sweeps.</p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      COMSOL-serial</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses      comsol@uoa_foe </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00          # Walltime</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           1512               # total mem</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">comsol</span> batch <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-<tr class="even">
-<td style="width: 506px"><h2 id="shared-memory-example">Shared Memory
+    module load COMSOL/{{applications.COMSOL.machines.mahuika.versions | last}}
+    comsol batch -inputfile my_input.mph
+    ```
+
+Shared Memory
 Example</h2>
 <hr />
 <p> </p></td>
