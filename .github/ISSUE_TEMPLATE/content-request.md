@@ -2,7 +2,7 @@
 name: Content Request
 about: 'Request documentation on a specific subject '
 title: ''
-labels: ''
+labels: content request
 assignees: ''
 
 ---

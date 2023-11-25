@@ -2,7 +2,7 @@
 name: Errata
 about: Incorrect or out of date information in the content of the documentation.
 title: ''
-labels: ''
+labels: errata
 assignees: ''
 
 ---
