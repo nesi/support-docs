@@ -44,8 +44,6 @@ distribution. 
 | `-nnhost <tasks>`       | Number of tasks per node. `--ntasks-per-node` `${SLURM_NTASKS_PER_NODE}`                                                         |
 | `-f <path to hostlist>` | Host file. You wont't need to set this in most circumstances.                                                                    |
 
-
-
 ## Example Scripts
 
 === "Serial Job"
@@ -65,63 +63,50 @@ sweeps.
     comsol batch -inputfile my_input.mph
     ```
 
-Shared Memory
-Example</h2>
-<hr />
-<p> </p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      COMSOL-shared</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses      comsol@uoa_foe </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00        # Walltime</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 8</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem           4G              # total mem</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">comsol</span> batch <span class="at">-mpibootstrap</span> slurm <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-<tr class="odd">
-<td style="width: 506px"><h2 id="distributed-memory-example">Distributed
-Memory Example</h2>
-<hr />
-<p> </p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name      COMSOL-distributed </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses      comsol@uoa_foe </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time          00:05:00            # Walltime</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks        8           </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu   1500                # mem per cpu</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">comsolbatch</span> <span class="at">-mpibootstrap</span> slurm <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-<tr class="even">
-<td class="wysiwyg-text-align-left" style="width: 506px"><h2
-id="hybrid-example">Hybrid Example</h2>
-<hr />
-<p> </p></td>
-<td style="width: 163px"><div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name         COMSOL-hybrid </span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --licenses         comsol@uoa_foe</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time             00:05:00          # Walltime</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks           4                 # total mem</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task    16</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem-per-cpu      1500B             # total mem</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load COMSOL/5.5</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">comsol</span> batch <span class="at">-mpibootstrap</span> slurm <span class="at">-inputfile</span> my_input.mph</span></code></pre></div></td>
-</tr>
-</tbody>
-</table>
-!!! prerequisite Important
+=== "Shared Memory Job"
+
+    ```
+    #!/bin/bash -e
+    #SBATCH --job-name      COMSOL-shared
+    #SBATCH --licenses      comsol@uoa_foe
+    #SBATCH --time          00:05:00        # Walltime
+    #SBATCH --cpus-per-task 8
+    #SBATCH --mem           4G              # total mem
+    module load COMSOL/{{applications.COMSOL.machines.mahuika.versions | last}}
+    comsol batch -mpibootstrap slurm -inputfile my_input.mph 
+    ```
+    
+=== Distributed Memory Job
+    
+    ```
+    #!/bin/bash -e
+    
+    #SBATCH --job-name      COMSOL-distributed
+    #SBATCH --licenses      comsol@uoa_foe
+    #SBATCH --time          00:05:00            # Walltime</span></span>
+    #SBATCH --ntasks        8         
+    #SBATCH --mem-per-cpu   1500                # mem per cpu
+    
+    module load COMSOL/{{applications.COMSOL.machines.mahuika.versions | last}}
+    comsolbatcH -mpibootstrap slurm -inputfile my_input.mph
+    ```
+    
+=== "Hybrid Job"
+
+    ```
+    #!/bin/bash -e</span></span>
+    #SBATCH --job-name         COMSOL-hybrid
+    #SBATCH --licenses         comsol@uoa_foe
+    #SBATCH --time             00:05:00          # Walltime
+    #SBATCH --ntasks           4                 # total mem</span></span>
+    #SBATCH --cpus-per-task    16
+    #SBATCH --mem-per-cpu      1500B             # total mem</span></span>
+ 
+    module load COMSOL/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    comsol batch -mpibootstrap slurm -inputfile my_input.mph
+    ```
+    
+!!! warning
      If no output file is set, using `--output` the input file will be
      updated instead.
 
@@ -133,31 +118,19 @@ can open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.
 
-## Recommendations
+## Best Practice
 
 COMSOL is relatively smart with it's use of resources, if possible it is
 preferable to use `--cpus-per-task` over `--ntasks`
 
-<!--
-<h1 id="best-practices">Resource requirements</h1>
-<hr>
-<p>
-  COMSOL does not support MPI therefore <code>#SBATCH --ntasks</code> should never
-  be greater than 1.
-</p>
-<p>
-  Memory requirements depend on job type, but will scale up with number of CPUs
+Memory requirements depend on job type, but will scale up with number of CPUs
   ≈ linearly.
-</p>
-<p>
-  Hyper-threading can benefit jobs using less than
-  <dfn class="dictionary-of-numbers">8 CPUs</dfn>, but is not recommended on larger
+
+  Multithreading will benefit jobs using less than
+  8 CPUs, but is not recommended on larger
   jobs.
-</p>
-<p>
-  <em>Performance is highly depended on the model used. The above should only be used as a very rough guide.</em>
-</p>
-<p>
-  <img src="https://support.nesi.org.nz/hc/article_attachments/360002021216/speedup_smoothed.png" alt="speedup_smoothed.png" width="1001" height="576">
-</p>
--->
+
+*Performance is highly depended on the model used. The above should only be used as a very rough guide.*
+
+
+  <img src="https://support.nesi.org.nz/hc/article_attachments/360002021216/speedup_smoothed.png" alt="speedup_smoothed.png">
