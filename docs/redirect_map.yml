@@ -97,7 +97,7 @@ hc/en-gb/articles/360001002956-ParaView.md: Scientific_Computing/Supported_Appli
 hc/en-gb/articles/360001008136-Debugging.md: Scientific_Computing/Profiling_and_Debugging/Debugging.md
 hc/en-gb/articles/360001016335-Choosing-and-Configuring-Software-for-Connecting-to-the-Clusters.md: Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md
 hc/en-gb/articles/360001045096-Software-Version-Management.md: Scientific_Computing/HPC_Software_Environment/Software_Version_Management.md
-hc/en-gb/articles/360001050575-Ubuntu-LTS-terminal-Windows-10-.md: Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows_10.md
+hc/en-gb/articles/360001050575-Ubuntu-LTS-terminal-Windows-.md: Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md
 hc/en-gb/articles/360001053675-Skylake-warning-message-on-M%C4%81ui.md: General/FAQs/Skylake_warning_message_on_Maui.md
 hc/en-gb/articles/360001070496-OpenMP-settings.md: Scientific_Computing/HPC_Software_Environment/OpenMP_settings.md
 hc/en-gb/articles/360001075575-Windows-Subsystem-for-Linux-WSL-.md: Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md
@@ -263,3 +263,5 @@ hc/en-gb/articles/8137408794511-my-nesi-org-nz-release-notes-v2-18-0.md: Getting
 hc/en-gb/articles/8202966997775-Status-page-subscription-notification-changes-.md: General/Announcements/Status_page_subscription_notification_changes.md
 hc/en-gb/articles/8252164326415-NeSI-wide-area-network-connectivity.md: Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md
 hc/en-gb/articles/8358981393551-jupyter-nesi-org-nz-release-notes-14-11-2023.md: Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_14-11-2023.md
+hc/en-gb/articles/8404976000399-my-nesi-org-nz-release-notes-v2-19-0.md: Getting_Started/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-19-0.md
+hc/en-gb/articles/8422683604367-jupyter-nesi-org-nz-release-notes-22-11-2023.md: Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_22-11-2023.md
