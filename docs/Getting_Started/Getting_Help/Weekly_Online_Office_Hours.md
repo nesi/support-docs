@@ -28,29 +28,21 @@ sessions are open to anyone - you don't need to be an existing NeSI
 user.  
   
 
-## **Office Hours in November 2023**
+## **Office Hours in December 2023**
 
 Click on the links below to add the date & Zoom link to your calendar:
 
--   [**01 November (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Nzh1bzhnazNnNGplaTV1YnJjZGlxMTBoNmEgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**13 December (Wednesday): 9:00-10:00
+    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGUxbXN0ZjJjMW1tMTBpMTEzaWN2Zm5nYXUgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
--   [**08 November (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmVnMGdzb2VtMzYxYnNxaWZicGo3dXQzOHAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
--   [**15 November (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmVwanFvaXJuMmtkbzNrbGZkcmIzdHRla3AgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
--   [**22 November (Wednesday): 3:00-4:00
-    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTZlbGplMnFmMGRyMjV2ODluYjhzdGpudDkgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
--   [**29 November (Wednesday): 9:00-10:00
-    AM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MW5tbmZhNmk4YzMzdTFmN3BudmFwdjRqbWcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+-   [**20 December (Wednesday): 3:00-4:00
+    PM**](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3EzdDcxNnNrbWoxNmlxcjc2ZnU2bjY5czcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
 If you are unable to add an Office Hour session to your calendar through
 these links, please email us at <training@nesi.org.nz> and we can send a
-calendar invite directly to you.   
-  
+calendar invite directly to you. 
+
+ 
 
 ## **How Does It Work**
 
