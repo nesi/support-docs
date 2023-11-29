@@ -153,55 +153,56 @@ series](https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY
 helpful
 
 === "Job Arrays"
+    
+    Job arrays can be handled using the Slurm environment variable
+    `SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
+    from within the script or using a command line argument. In the
+    following both options are presented:
+    
+    The job scripts calling both examples:
 
-Job arrays can be handled using the Slurm environment variable
-`SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
-from within the script or using a command line argument. In the
-following both options are presented:
+    ``` sl
+    #!/bin/bash -e
+    
+    #SBATCH -J test
+    #SBATCH --time=00:01:00
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=1
+    #SBATCH --array=1-2 # Array jobs
+    
+    module load Anaconda3
 
-The job scripts calling both examples:
+    echo "SLURM_ARRAY_TASK_ID.$SLURM_ARRAY_TASK_ID of $SLURM_ARRAY_TASK_COUNT"
+    
+    #env variable in python
+    python hello_world.py
+    
+    #as command line argument
+    python hello_world_args.py -ID $SLURM_ARRAY_TASK_ID
+    ```
 
-``` sl
-#!/bin/bash -e
-#SBATCH -J test
-#SBATCH --time=00:01:00
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --array=1-2 # Array jobs
+    the version getting the env variable in the python script
+    `hello_world.py`
+    
+    ```py
+    #!/usr/bin/env python3
 
-module load Anaconda3
-
-echo "SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_ID of $SLURM_ARRAY_TASK_COUNT"
-
-#env variable in python
-python hello_world.py
-
-#as command line argument
-python hello_world_args.py -ID $SLURM_ARRAY_TASK_ID
-```
-
-the version getting the env variable in the python script
-"hello\_world.py"
-
-``` sl
-#!/usr/bin/env python3
-
-import os
-my_id = os.environ['SLURM_ARRAY_TASK_ID']
-print("hello world with ID {}".format(my_id))
-```
-
-the version getting the env variable as argument in the python script
-"hello\_world\_args.py"
-
-``` sl
-#!/usr/bin/env python3
-"""
-Module for handling input arguments
-"""
-
-import argparse
-
+    import os
+    my_id = os.environ['SLURM_ARRAY_TASK_ID']
+    print("hello world with ID {}".format(my_id))
+   ```
+    
+    the version getting the env variable as argument in the python script
+`hello_world_args.py`
+    
+    ``` sl
+    #!/usr/bin/env python3
+    """
+    Module for handling inpu arguments
+    """
+    
+    import argparse
+    
 # get tests from file
 class LoadFromFile(argparse.Action):
     """
@@ -222,9 +223,9 @@ def get_args():
     return parser.parse_args()
 
 
-ARGS = get_args()
-print("hello world from ID {}".format(ARGS.my_id))
-```
+    ARGS = get_args()
+    print("hello world from ID {}".format(ARGS.my_id))
+    ```
 
 ## Python Packages
 
