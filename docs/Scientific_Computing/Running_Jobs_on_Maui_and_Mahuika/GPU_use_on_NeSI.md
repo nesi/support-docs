@@ -335,11 +335,11 @@ graphical interface.
 The following pages provide additional information for supported
 applications:
 
--   [ABAQUS](https://support.nesi.org.nz/hc/en-gb/articles/212457807-ABAQUS#gpus)
--   [GROMACS](https://support.nesi.org.nz/hc/en-gb/articles/360000792856-GROMACS#nvidia_gpu_container)
+-   [ABAQUS](../../../Scientific_Computing/Supported_Applications/ABAQUS)
+-   [GROMACS](../../../Scientific_Computing/Supported_Applications/GROMACS)
 -   [Lambda
     Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack)
--   [Matlab](https://support.nesi.org.nz/hc/en-gb/articles/212639047-MATLAB#GPU)
+-   [Matlab](../../../Scientific_Computing/Supported_Applications/MATLAB)
 -   [TensorFlow on
     GPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow-on-GPUs)
 

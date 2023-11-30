@@ -224,7 +224,7 @@ Launcher as "Shared Virtual Env".
 
 An example showing setting up a custom kernel running in a Singularity
 container can be found on our [Lambda
-Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack#lambda_stack_via_jupyter)
+Stack](../../../Scientific_Computing/Supported_Applications/Lambda Stack)
 support page.
 
 ## Adding a custom R kernel
