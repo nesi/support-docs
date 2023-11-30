@@ -39,7 +39,7 @@ NeSI. A terminal similar to the other setups describe below can be
 accessed through the Jupyter Launcher.
 
 !!! tip "What next?"
-    More info on [Jupyter Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term) Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
+    More info on [Jupyter Terminal](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI#jupyter-term) Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
 ## Linux or Mac OS
 

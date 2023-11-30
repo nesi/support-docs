@@ -75,7 +75,7 @@ warning whenever you run a system command, and some system commands will
 not work as intended.
 
 For more details see
-[MATLAB#known\_bugs](https://support.nesi.org.nz/hc/en-gb/articles/212639047#known_bugs).
+[MATLAB#known\_bugs](../../../Scientific_Computing/Supported_Applications/MATLAB#known_bugs).
 
  
 

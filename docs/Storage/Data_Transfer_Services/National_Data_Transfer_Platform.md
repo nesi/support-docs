@@ -83,10 +83,10 @@ Christchurch Campus, University of Otago</td>
 endpoint for Otago Dunedin;  uses local service accounts or globus
 sharing.</td>
 <td style="height: 91px; width: 144.109px" data-valign="top">Complete <a
-href="https://www.otago.ac.nz/its/forms/otago604826.html">this
+href="https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form">this
 form </a></td>
 <td style="height: 91px; width: 263.391px" data-valign="top"><a
-href="mailto:its.sst.systems.nesi@otago.ac.nz">its.sst.systems.nesi@otago.ac.nz</a></td>
+href="mailto:university@otago.ac.nz">university@otago.ac.nz</a></td>
 </tr>
 <tr class="odd" style="height: 91px;">
 <td style="width: 254.188px; height: 91px"><a
