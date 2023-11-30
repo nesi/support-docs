@@ -53,7 +53,7 @@ here: <https://ngc.nvidia.com/catalog/containers/hpc:namd>.
     instructions because instead of using "build" we "pull" the image
     directly, which does not require root access:
     -   Please do refer  "[Build Environment
-        Variables](../../../Scientific_Computing/Supported_Applications/Singularity)"
+        Variables](../../../Scientific_Computing/Supported_Applications/Singularity#build_environment_variables)"
         prior to running the following `pull` command
 
     -   ``` sl

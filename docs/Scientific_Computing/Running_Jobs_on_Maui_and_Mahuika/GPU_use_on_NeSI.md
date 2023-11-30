@@ -34,7 +34,7 @@ page.
      [Mahuika Slurm
      Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
      and [Māui\_Ancil (CS500) Slurm
-     Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204116#_Toc514341606)
+     Partitions](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions#_Toc514341606)
      support pages.
      Details about pricing in terms of compute units can be found in the
      [What is an
@@ -335,11 +335,11 @@ graphical interface.
 The following pages provide additional information for supported
 applications:
 
--   [ABAQUS](../../../Scientific_Computing/Supported_Applications/ABAQUS)
--   [GROMACS](../../../Scientific_Computing/Supported_Applications/GROMACS)
+-   [ABAQUS](../../../Scientific_Computing/Supported_Applications/ABAQUS#gpus)
+-   [GROMACS](../../../Scientific_Computing/Supported_Applications/GROMACS#nvidia_gpu_container)
 -   [Lambda
     Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack)
--   [Matlab](../../../Scientific_Computing/Supported_Applications/MATLAB)
+-   [Matlab](../../../Scientific_Computing/Supported_Applications/MATLAB#GPU)
 -   [TensorFlow on
     GPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow-on-GPUs)
 

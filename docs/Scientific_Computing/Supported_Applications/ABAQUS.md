@@ -77,7 +77,8 @@ Not all solvers are compatible with all types of parallelisation.
 <td style="width: 506px"><h2 id="serial">Serial</h2>
 <hr />
 <p>For when only <span>one CPU is required</span>, generally as part of
-an <a href="../../../Getting_Started/Next_Steps/Parallel_Execution">job
+an <a
+href="../../../Getting_Started/Next_Steps/Parallel_Execution#t_array">job
 array</a>.</p>
 <p> </p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb1"><pre

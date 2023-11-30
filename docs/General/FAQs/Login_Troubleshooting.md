@@ -73,11 +73,11 @@ password input in a different format, see
 
 **If this succeeds**: If you are using a bash terminal, confirm your
 .ssh config is [set up
-correctly](https://support.nesi.org.nz/hc/en-gb/articles/360000161315#recLinux).
+correctly](../../../General/FAQs/Logging_in_to_the_HPCs#recLinux).
 
 If you are using a ssh client like *MobaXterm* or *WinSCP* make sure
 your session is [set up
-correctly](https://support.nesi.org.nz/hc/en-gb/articles/360000161315#recMoba).
+correctly](../../../General/FAQs/Logging_in_to_the_HPCs#recMoba).
 
 #### 2. Check you are a member of an active project
 

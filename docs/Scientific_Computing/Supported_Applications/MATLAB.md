@@ -168,8 +168,8 @@ parallelise your code.
 !!! prerequisite Tip
      If your code is parallel at a high level it is preferable to use
      [SLURM job
-     arrays](../../../Getting_Started/Next_Steps/Parallel_Execution) as
-     there is less computational overhead and the multiple smaller jobs
+     arrays](../../../Getting_Started/Next_Steps/Parallel_Execution#t_array)
+     as there is less computational overhead and the multiple smaller jobs
      will queue faster.
 
 ## Using GPUs

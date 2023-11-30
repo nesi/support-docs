@@ -49,7 +49,7 @@ operating system and level of experience.
     accessed through the Jupyter Launcher.  
 !!! prerequisite What next?
      -   More info on [Jupyter
-         Terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001555615#jupyter-term)
+         Terminal](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI#jupyter-term)
      -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
 ## Linux or Mac OS
