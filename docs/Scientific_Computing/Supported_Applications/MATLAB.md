@@ -16,7 +16,8 @@ zendesk_section_id: 360000040076
      If you want to run MATLAB code on the cluster, but are not a member of an institution without access to floating licences, MATLAB code can still be run on the cluster using MCR.
 
 ## Example scripts
-!!! prerequisite Note
+
+!!! info
      When developing MATLAB code on your local machine, take measures to ensure it will be platform independent.  Use relative paths when possible and not avoid using '\\s see [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
 
 === "Script"
@@ -32,10 +33,10 @@ zendesk_section_id: 360000040076
     # Run the MATLAB script MATLAB_job.m 
     matlab -nodisplay < MATLAB_job.m 
     ```
-    
+
 === "Function"
 
-``` sl
+    ``` sl
     #!/bin/bash -e
      
     #SBATCH --job-name       MATLAB_job    # Name to appear in squeue
@@ -46,7 +47,6 @@ zendesk_section_id: 360000040076
     
     module load MATLAB/{{applications.MATLAB.machines.mahuika.versions | last}} 
     
-    #Job run 
     matlab -batch "addpath(genpath('.'));myFunction(5,20)"
     # For versions older than 2019a, use '-nodisplay -r' instead of '-batch'
     ```
@@ -55,7 +55,6 @@ zendesk_section_id: 360000040076
      When using matlab on command line, all flag options use a single '`-`'
      e.g. `-nodisplay`, this differs from the GNU convention of using `--`
      for command line options of more than one character.
-
 
 !!! tip
      Using the prefix `!` will allow you to run bash commands from within
@@ -68,19 +67,18 @@ MATLAB does not support MPI therefore `#SBATCH --ntasks` should always be
 1, but if given the necessary resources some MATLAB functions can make
 use of multiple threads (`--cpus-per-task`) or GPUs (`--gpus-per-node`).
 
-### Implicit parallelism.
+### Implicit parallelism
 
 Implicit parallelism requires no changes to be made in your code. By
 default MATLAB will utilise multi-threading for a wide range of
 operations, scalability will vary but generally you will not be able to
 utilise more than a 4-8 CPUs this way.
 
-### Explicit parallelism.
+### Explicit parallelism
 
 !!! tip
      If your code is explicitly parallel at a high level it is preferable to use
-     [SLURM job
-     arrays](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
+     [SLURM job arrays](../../../Getting_Started/Next_Steps/Parallel_Execution)
      as there is less computational overhead and the multiple smaller jobs
      will queue faster and therefore improve your throughput.
 
@@ -153,7 +151,6 @@ end
 More info
 [here](https://au.mathworks.com/help/parallel-computing/parfeval.html).
 
-
 !!! tip
      When killed (cancelled, timeout, etc), job steps utilising parpool may
      show state `OUT_OF_MEMORY`, this is a quirk of how the steps are ended
@@ -190,7 +187,7 @@ support page.
      Support by
      Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)).
      We recommend that you use R2021a or a more recent version.
-     
+
 !!! tip "GPU cost"
      A GPU device-hour costs more than a core-hour, depending on the type
      of GPU. You can find a comparison table in our [What is an
@@ -317,7 +314,7 @@ should feel free to create objects inside C++ code (required for
 functions that have return values).
 
 Some mex function source code examples can be found in the table
-[here](https://au.mathworks.com/help/matlab/matlab_external/table-of-mex-file-source-code-files.html). 
+[here](https://au.mathworks.com/help/matlab/matlab_external/table-of-mex-file-source-code-files.html).
 
 ### Compilation
 
@@ -338,7 +335,7 @@ compilers will be used.
 Further configuration can be done within MATLAB using the command
 `mex -setup`
 
-`mex <file_name>`  will then compile the mex function. 
+`mex <file_name>`  will then compile the mex function.
 
 Default compiler flags can be overwritten with by setting the
 appropriate environment variables. The COMPFLAGS variable is ignored as
@@ -353,7 +350,6 @@ it is Windows specific.
 
 For example, adding OpenMP flags for a fortran compile:
 
-
 !!! warning "Compiler Version"
      Using an 'unsupported' compiler with versions of MATLAB 2020b onward
      will result in an Error (previously was a 'Warning').
@@ -366,7 +362,8 @@ following warning.
 ```matlab
 ldd
 ```
-This is due to our operating system being too old. 
+
+This is due to our operating system being too old.
 
 With the exception of a few commands that directly make requests of the OS, your code should run fine.
 
