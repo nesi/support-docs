@@ -17,8 +17,6 @@ jobs:
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git remote add gitlab_origin https://oauth2:$ACCESS_TOKEN@gitlab.com/path-to-project.git
-          git pull origin main
           git checkout -b ${BRANCH_NAME}
           mkdir -pv docs/assets/glossary
       - name: Fetch Module List
