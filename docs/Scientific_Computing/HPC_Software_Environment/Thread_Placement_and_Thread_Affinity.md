@@ -22,9 +22,9 @@ zendesk_section_id: 360000040056
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
 article on [Parallel
-Execution](../../../Getting_Started/Next_Steps/Parallel_Execution) for
-an introduction). Care needs to be taken when running multiple threads
-on the HPC to achieve best performance - getting it wrong can easily
+Execution](../../Getting_Started/Next_Steps/Parallel_Execution) for an
+introduction). Care needs to be taken when running multiple threads on
+the HPC to achieve best performance - getting it wrong can easily
 increase compute times by tens of percents, sometimes even more. This is
 particularly important for programs that can use a large number of
 threads, such as TensorFlow and other software that uses Intel oneMKL.
@@ -48,7 +48,7 @@ performance, as a socket connects the processor to its RAM and other
 processors. A processor in each socket consists of multiple physical
 cores, and each physical core is split into two logical cores using a
 technology called
-[Hyperthreading](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading)).
+[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading)).
 
 A processor also includes caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory

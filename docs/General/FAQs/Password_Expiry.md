@@ -31,4 +31,4 @@ Login Password:
 
 however passwords can not be reset this way, instead you should [reset
 your password via the My NeSI
-Portal](../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password).
+Portal](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password).

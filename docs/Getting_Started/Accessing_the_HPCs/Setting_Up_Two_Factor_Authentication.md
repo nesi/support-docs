@@ -26,11 +26,11 @@ zendesk_section_id: 360000034315
 !!! prerequisite Requirements
      You must:
      -   Have a [NeSI
-         account](../../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile).
+         account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile).
      -   Be a member of an [active
          project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
      -   Have [set up your NeSI account
-         password](../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password).
+         password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password).
      -   Have a device with an authentication app.
 
 ##  Authentication App
@@ -73,4 +73,4 @@ This means that you can only try logging in to the lander node once
 every 30 seconds.
 !!! prerequisite What next?
      -   [Getting access to the
-         cluster](../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters)
+         cluster](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters)

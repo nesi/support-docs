@@ -168,7 +168,7 @@ parallelise your code.
 !!! prerequisite Tip
      If your code is parallel at a high level it is preferable to use
      [SLURM job
-     arrays](../../../Getting_Started/Next_Steps/Parallel_Execution#t_array)
+     arrays](../../Getting_Started/Next_Steps/Parallel_Execution#t_array)
      as there is less computational overhead and the multiple smaller jobs
      will queue faster.
 
@@ -189,7 +189,7 @@ R2021a, use `module load CUDA/11.0.2` before launching MATLAB.
 
 If you want to know more about how to access the different type of
 available GPUs on NeSI, check the [GPU use on
-NeSI](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI)
+NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI)
 support page.
 !!! prerequisite Support for A100 GPUs
      To use MATLAB with a A100 or a A100-1g.5gb GPU, you need to use a
@@ -200,7 +200,7 @@ support page.
 !!! prerequisite Note on GPU cost
      A GPU device-hour costs more than a core-hour, depending on the type
      of GPU. You can find a comparison table in our [What is an
-     allocation?](../../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
+     allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
      support page.
 
 ### GPU Example
@@ -258,7 +258,7 @@ Fortran, which is referred to as
 [mexing](https://au.mathworks.com/help/matlab/ref/mex.html).
 
 more info about compiling software on NeSI
-[here](../../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika).
+[here](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika).
 
 ### Writing mex functions
 

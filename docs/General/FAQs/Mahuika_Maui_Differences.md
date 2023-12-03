@@ -88,7 +88,7 @@ run, but the limits on each machine is different.
 
 Mahuika is made up of several [partitions which have different resources
 and different
-limits](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions).
+limits](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions).
 A job can request up to 20,000 CPU core hours, running up to 3 weeks
 with up to 576 CPU cores (equivalent to eight full nodes). Furthermore,
 there are special nodes available with high memory (up to 6 TB) or GPUs.
@@ -102,7 +102,7 @@ be shared with other jobs.
 
 Māui only has a [single partition to which NeSI users are permitted to
 submit
-work](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions).
+work](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions).
 For your job, you can request a maximum of 24 hours or a maximum of 240
 nodes, however no job may request more than 1,200 Māui node-hours in
 total. (This means that if you request more than 50 nodes, your maximum
@@ -112,7 +112,7 @@ there can never be more than one job on a node at a time.
 
 Additionally, projects with valid allocations on Māui will also have
 access to [Māui's ancilliary
-nodes,](../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary)
+nodes,](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary)
 where jobs requiring up to 768 GB of memory or jobs that require GPUs
 can be run. When submitting a job to the Māui ancillary nodes you may
 also request parts of nodes, rather than needing to use the entire node.

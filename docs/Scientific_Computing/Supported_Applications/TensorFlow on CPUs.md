@@ -21,7 +21,7 @@ zendesk_section_id: 360000040076
 
 TensorFlow is a popular software library for machine learning
 applications, see our
-[TensorFlow](../../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs)
+[TensorFlow](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs)
 article for further information. It is often used with GPUs, as runtimes
 of the computationally demanding training and inference steps are often
 shorter compared to multicore CPUs. However, running TensorFlow on CPUs
@@ -119,7 +119,7 @@ srun python my_tensorflow_program.py
 
 If you are unsure about setting up the memory and runtime parameters,
 have a look at our article [Ascertaining job
-dimensions](../../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions).
+dimensions](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions).
 Please also read the section on operator parallelisation below before
 you choose a number of CPUs.
 
@@ -128,7 +128,7 @@ threading behaviour of the Intel oneDNN library. While these settings
 should work well for a lot of applications, it is worth trying out
 different setups (e.g., longer blocktimes) and compare runtimes. Please
 see our article on [Thread Placement and Thread
-Affinity](../../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity)
+Affinity](../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity)
 as well as this [Intel
 article](https://software.intel.com/en-us/articles/tensorflow-optimizations-on-modern-intel-architecture)
 for further information and tips for improving peformance on CPUs.

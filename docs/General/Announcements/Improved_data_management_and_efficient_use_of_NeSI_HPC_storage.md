@@ -45,7 +45,7 @@ computational and/or analytics work on NeSI.
 
 We have started regular audits of data stored in project folders, using
 the same format as our nobackup auto cleaning ([described
-here](../../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system)).
+here](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system)).
 See the file
 `/nesi/project/<project_code>/.policy.test/scan485/latest.summary.txt`
 for a summary of the number and size of files within each project that
@@ -108,7 +108,7 @@ also want to ensure our active storage filesystems aren't being used to
 store inactive data. This new data management feature
 for `/nesi/project/` directories will complement our existing programme
 of [automatic cleaning of the /nobackup file
-system](../../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system "https://support.nesi.org.nz/hc/en-gb/articles/360001162856").
+system](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system "https://support.nesi.org.nz/hc/en-gb/articles/360001162856").
 
  
 
@@ -130,7 +130,7 @@ directory?**
 Perhaps. We regularly make read-only copies of the file system and save
 them for up to seven days. For more information, [refer to our File
 Recovery
-page](../../../Storage/Data_Recovery/File_Recovery "https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery").
+page](../../Storage/Data_Recovery/File_Recovery "https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery").
 
  
 
@@ -154,7 +154,7 @@ situ. 
 There are two tracked resources in the NeSI filesystem, *disk
 space* and *inodes (number of files)*. If you run into problems with
 either of these, [refer to this Support page for more
-information](../../../General/FAQs/Ive_run_out_of_storage_space "https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space").
+information](../../General/FAQs/Ive_run_out_of_storage_space "https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space").
 
  
 

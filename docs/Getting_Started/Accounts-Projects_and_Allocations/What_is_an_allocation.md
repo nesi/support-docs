@@ -28,8 +28,8 @@ different allocation criteria.
 An allocation will come from one of our allocation classes. We will
 decide what class of allocation is most suitable for you and your
 research programme, however you're welcome to review [our article on
-allocation classes](../../../General/NeSI_Policies/Allocation_classes)
-to find out what class you're likely eligible for.
+allocation classes](../../General/NeSI_Policies/Allocation_classes) to
+find out what class you're likely eligible for.
 
 ## HPC Platform allocations
 
@@ -41,7 +41,7 @@ plus one kind of compute allocation) in order to be valid and active.
 Compute allocations are expressed in terms of a number of units, to be
 consumed or reserved between a set start date and time and a set end
 date and time. For allocations of computing power, we use [Fair
-Share](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share)
+Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share)
 to balance work between different projects. NeSI allocations and the
 relative "prices" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running
@@ -50,7 +50,7 @@ the associated infrastructure and services.
 ### Mahuika allocations
 
 Allocations on
-[Mahuika](../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika)
+[Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika)
 are measured in Mahuika compute units. A job uses one Mahuika compute
 unit if it runs for one hour on one physical Mahuika CPU core (two
 logical CPUs), using 3 GB of RAM and no GPU devices. This means a single
@@ -78,7 +78,7 @@ depend on your contractual arrangements with the NeSI host.
 
 Note that the minimum number of logical cores a job can take on Mahuika
 is two
-(see [Hyperthreading](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading) for
+(see [Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading) for
 details). Therefore:
 
 -   the lowest possible price for a CPU-only job is 0.70 compute units
@@ -93,7 +93,7 @@ In reality, every job must request at least some RAM.
 ### Māui allocations
 
 The compute capacity of the
-[Māui](../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui)
+[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui)
 supercomputer is allocated by node-hours. Though some Māui nodes have
 more RAM than others, we do not currently distinguish between low-memory
 and high-memory nodes for allocation, billing or Fair Share purposes.

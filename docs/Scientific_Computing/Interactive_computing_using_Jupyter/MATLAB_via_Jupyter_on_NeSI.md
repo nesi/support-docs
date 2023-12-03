@@ -30,7 +30,7 @@ zendesk_section_id: 360001189255
 ## Getting started
 
 MATLAB can be accessed as a web application via [Jupyter on
-NeSI](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI).
+NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI).
 
 In the JupyterLab interface, MATLAB can be started using the
 corresponding entry in the launcher.
@@ -75,7 +75,7 @@ warning whenever you run a system command, and some system commands will
 not work as intended.
 
 For more details see
-[MATLAB#known\_bugs](../../../Scientific_Computing/Supported_Applications/MATLAB#known_bugs).
+[MATLAB#known\_bugs](../../Scientific_Computing/Supported_Applications/MATLAB#known_bugs).
 
  
 

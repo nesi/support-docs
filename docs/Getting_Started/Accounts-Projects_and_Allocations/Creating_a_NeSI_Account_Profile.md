@@ -26,7 +26,7 @@ zendesk_section_id: 360000196195
 !!! prerequisite Requirements
      Either an active login at a Tuakiri member institution, or [a Tuakiri
      Virtual Home account in respect of your current place of work or
-     study](../../../General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members).
+     study](../../General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members).
 
 1.  Access [my.nesi.org.nz](https://my.nesi.org.nz) via your browser and
     log in with either your institutional credentials, or your Tuakiri
@@ -40,7 +40,7 @@ zendesk_section_id: 360000196195
     our records.
 !!! prerequisite What next?
      -   [Apply for
-         Access](../../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project),
+         Access](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project),
          either submit an application for a new project or [join an
          existing
-         project](../../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project).
+         project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project).

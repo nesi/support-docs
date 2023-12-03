@@ -29,7 +29,7 @@ module in your kernel or use a Conda environment.
 
 To register a Jupyter kernel, you can follow the steps highlighted in
 the [Jupyter kernels - Manual
-management](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management)
+management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management)
 or use the `nesi-add-kernel` tool provided on Jupyter on NeSI service.
 This page details the latter option, which we recommend.
 

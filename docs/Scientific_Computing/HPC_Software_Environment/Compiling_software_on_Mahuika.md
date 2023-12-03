@@ -323,7 +323,7 @@ libraries and tools. These work nicely together and provide certain
 user-friendly features by using compiler wrappers. This works very
 similar as the Cray XC environment, provided on Māui, and is described
 in detail on the page [Building Code on
-Māui](../../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui).
+Māui](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui).
 
 **Note:** on Māui the three compilers (Cray, Gnu and Intel) are provided
 in this special environment, which provides support for both dynamic and

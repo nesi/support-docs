@@ -39,7 +39,7 @@ In summary:
       
     *
 2.  Enter the [file
-    path](../../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation)
+    path](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation)
     of the directory to be shared.  
       
     ![globus10.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V6.jpg)  

@@ -22,7 +22,7 @@ zendesk_section_id: 360000039036
 !!! prerequisite Requirements
      Please make sure you have followed the recommended setup. See
      [Choosing and Configuring Software for Connecting to the
-     Clusters](../../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters)
+     Clusters](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters)
      for more information.
 !!! prerequisite New Command Line Users
      -   Most terminals do not give an indication of how many characters
@@ -69,15 +69,15 @@ ssh login.<mahuika/maui>.nesi.org.nz
 **If this fails:** Are you logging in to the correct cluster?
 Mahuika/Maui have separate access control, also Māui requires your
 password input in a different format, see
-[here](../../../General/FAQs/Mahuika_Maui_Differences).
+[here](../../General/FAQs/Mahuika_Maui_Differences).
 
 **If this succeeds**: If you are using a bash terminal, confirm your
 .ssh config is [set up
-correctly](../../../General/FAQs/Logging_in_to_the_HPCs#recLinux).
+correctly](../../General/FAQs/Logging_in_to_the_HPCs#recLinux).
 
 If you are using a ssh client like *MobaXterm* or *WinSCP* make sure
 your session is [set up
-correctly](../../../General/FAQs/Logging_in_to_the_HPCs#recMoba).
+correctly](../../General/FAQs/Logging_in_to_the_HPCs#recMoba).
 
 #### 2. Check you are a member of an active project
 

@@ -21,7 +21,7 @@ zendesk_section_id: 360000039036
 
 !!! prerequisite See also
      [File permissions and
-     groups](../../../Storage/File_Systems_and_Quotas/File_permissions_and_groups)
+     groups](../../Storage/File_Systems_and_Quotas/File_permissions_and_groups)
 
 Not all projects have read-only groups created by default. If your
 project has a read-only group created after the project itself was

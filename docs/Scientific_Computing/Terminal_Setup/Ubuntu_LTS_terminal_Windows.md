@@ -23,7 +23,7 @@ zendesk_section_id: 360000189696
      -   Be a [member of an active
          project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
      -   Windows with [WSL
-         enabled.](../../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL)
+         enabled.](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL)
 
 Currently the native Windows command prompt (even with WSL enabled) does
 not support certain features, until this is fixed we recommend using the
@@ -73,4 +73,4 @@ Ubuntu LTS Terminal.
     ```
 !!! prerequisite What Next?
      -   Set up your [SSH config
-         file](../../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup).
+         file](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup).

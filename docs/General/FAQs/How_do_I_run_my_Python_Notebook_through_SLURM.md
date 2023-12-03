@@ -47,6 +47,5 @@ the file explorer in Jupyter from your downloads folder.
  
 
 This script can then be run as a regular python script as described in
-our
-[Python](../../../Scientific_Computing/Supported_Applications/Python)
+our [Python](../../Scientific_Computing/Supported_Applications/Python)
 documentation.

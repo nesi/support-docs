@@ -27,7 +27,7 @@ platform and some noteworthy changes to resource pricing as a result.
 **New Graphics Processing Units (GPUs)**
 
 We’ve installed eight NVIDIA A100 GPU cards into the [Mahuika HPC
-system](../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika),
+system](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika),
 providing a significant boost in computing performance and an
 environment particularly suited to machine learning workloads. Over the
 last few months we’ve worked directly with a group of beta tester
@@ -46,7 +46,7 @@ discuss how these new resources could support your work.
 **Reduced pricing for P100s**
 
 We’ve recently reviewed our
-[pricing](../../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
+[pricing](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
 and reduced the price of our existing
 [P100](https://www.nvidia.com/en-us/data-center/tesla-p100/) GPUs to 7.0
 compute units per device-hour. The P100 GPUs are available to any
@@ -60,7 +60,7 @@ window: [31 August - 01
 October](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
 
 For more technical information about using GPUs on NeSI, [click
-here](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI).
+here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI).
 If you have questions about allocations or how to access the P100s,
 [contact NeSI
 Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new).

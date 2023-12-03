@@ -39,7 +39,7 @@ hence will also be accessible to your collaborators.
 The instructions are geared towards members of the niwa02916 group -
 send a message to <support@nesi.org.nz> if you are a NIWA employee and
 want to become part of this group. Other NeSI users may want to
-read [this](../../../Scientific_Computing/Supported_Applications/Synda),
+read [this](../../Scientific_Computing/Supported_Applications/Synda),
 which explains how to install the synda tool. Once installed, you can
 then type similar commands to the ones below to test your configuration.
 
@@ -53,7 +53,7 @@ source /nesi/project/niwa02916/synda_env.sh
 
 This will load the Anaconda3 environment and set the ST\_HOME variable.
 You should also now be able to invoke
-[synda](../../../Scientific_Computing/Supported_Applications/Synda)
+[synda](../../Scientific_Computing/Supported_Applications/Synda)
 commands, a tool that can be used to synchronise CMIP data with Earth
 System Grid Federation archives. A full list of options can be obtained
 with

@@ -74,4 +74,4 @@ should be also ported to the Māui\_Ancil part.
  
 
 NOTE: you can create your own modules. This is described
-[here](../../../Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications).
+[here](../../Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications).

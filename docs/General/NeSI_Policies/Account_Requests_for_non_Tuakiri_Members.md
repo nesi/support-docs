@@ -57,4 +57,4 @@ my.nesi.org.nz.
      -   [Applying for a new
          project.](https://support.nesi.org.nz/hc/en-gb/articles/360000174976-Applying-for-a-NeSI-project)
      -   [Applying to join an existing
-         project](../../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project).
+         project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project).

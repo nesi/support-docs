@@ -155,7 +155,7 @@ last HPC Compute &amp; Analytics allocation. See also Transparent File
 Data Compression.</span></td>
 <td style="width: 188px"><span>With certain exceptions, individual files
 will be deleted after being untouched for 120 days. See <a
-href="../../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system">Automatic
+href="../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system">Automatic
 cleaning of nobackup file system</a> for more information.
 </span><span>90 days after the end of the project's last HPC Compute
 &amp; Analytics allocation, all remaining data is subject to
@@ -302,13 +302,13 @@ file system. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
 requirements with us during [the project application
-process](../../../General/NeSI_Policies/How_we_review_applications), or
+process](../../General/NeSI_Policies/How_we_review_applications), or
 [contact our support team](https://support.nesi.org.nz/hc/requests/new)
 at any time.
 
 To ensure this file system remains fit-for-purpose, we have a regular
 cleaning policy as described in [Automatic cleaning of nobackup
-filesystem](../../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system).
+filesystem](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
@@ -334,7 +334,7 @@ temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
 See [this
-page](../../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service)
+page](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service)
 for more information about the nearline service.
 
 ## Snapshots
@@ -385,11 +385,10 @@ though this is mitigated by space and bandwidth savings.
 Transparent file data compression can be controlled and applied by users
 via file attributes, you can find out more about using this method on
 our [Data Compression support
-page](../../../Storage/File_Systems_and_Quotas/Data_Compression). File
-data compression can also be automatically applied by administrators
-through the Scale policy engine. We leverage this latter feature to
-regularly identify and compress inactive data on the `/nesi/project`
-file system.
+page](../../Storage/File_Systems_and_Quotas/Data_Compression). File data
+compression can also be automatically applied by administrators through
+the Scale policy engine. We leverage this latter feature to regularly
+identify and compress inactive data on the `/nesi/project` file system.
 
 ### What Project data is automatically compressed?
 
@@ -401,6 +400,6 @@ Additionally, we only automatically compress files in the range of 4kB -
 10GB in size. Files larger than this can be compressed by user
 interaction - see the instructions for the `mmchattr` command on
 the [Data Compression support
-page](../../../Storage/File_Systems_and_Quotas/Data_Compression). Also
-note that the Scale filesystem will only store compressed blocks when
-the compression space saving is &gt;=10%.
+page](../../Storage/File_Systems_and_Quotas/Data_Compression). Also note
+that the Scale filesystem will only store compressed blocks when the
+compression space saving is &gt;=10%.
