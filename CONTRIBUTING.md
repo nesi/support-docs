@@ -8,9 +8,13 @@ Press `.`, will open up VSCode in browser.
 
 ## Local Development Environment
 
-A local development environment is not required to make doc edits, but if you are making lots of changes, the realtime rendering can be quite helpful. 
+A local development environment is not required to make doc edits, but if you are making lots of changes, the realtime rendering can be quite helpful.
 
 ### First time setup
+
+You will need to have Python 3 installed on your computer.
+
+Clone this repository and create a Python virtual environment using:
 
 ```bash
 git clone https://github.com/nesi/support-docs-concept.git
@@ -21,6 +25,7 @@ pip3 install -r requirements.txt
 ```
 
 ### Make Development Branch
+
 ```bash
 git checkout -b my_development_branch
 ```
@@ -62,7 +67,6 @@ Make a pull [request](https://github.com/nesi/support-docs-concept/pulls)
 
 Pull will merge automatically if all checks passed. (add timer too maybe?)
 
-
 ## Raise an issue
 
-
+*Not documented at the moment (TODO)*

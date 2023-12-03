@@ -4,3 +4,4 @@ public/*
 production/*
 **.pyc
 .venv/**
+.ipynb_checkpoints
