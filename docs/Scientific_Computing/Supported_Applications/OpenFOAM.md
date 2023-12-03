@@ -63,15 +63,15 @@ write there to crash.**
 
 There are a few ways to mitigate this
 
-- **Use** `/nesi/nobackup` 
+- **Use** `/nesi/nobackup`
     The nobackup directory has a significantly higher inode count and no
     disk space limits.
 
 - **ControlDict Settings**  
-    - `WriteInterval`  
+  - `WriteInterval`  
         Using a high write interval reduce number of output files and
         I/O load.
-    - `deltaT`  
+  - `deltaT`  
         Consider carefully an appropriate time-step, use adjustTimeStep
         if suitable.
     - `purgeWrite`  
@@ -126,7 +126,7 @@ NSUBDOMAINS=10
 sed -i "s/\(numberOfSubdomains \)[[:digit:]]*\(;\)/\1 $NSUBDOMAINS\2/g" system/controlDict
 ```
 
-## Recommended Resources   
+## Recommended Resources
 
 Generally, using 16 or less tasks will keep your job reasonably
 efficient. However this is *highly* dependant on the type of simulation
@@ -165,7 +165,7 @@ Use the command `git clone <path to repo>.git` For example:
 git clone https://github.com/vincentcasseau/hyStrath.git
 ```
 
-### Decompress 
+### Decompress
 
 If your source is a .zip file use the command `unzip <filename>` if it
 is a .tar.gz use the command `tar -xvzf <filename>`
@@ -205,7 +205,7 @@ specifies variables `$FOAM_USER_LIBBIN` or `$FOAM_USER_APPBIN` instead.
 
 User compiled libraries are kept in `$FOAM_USER_LIBBIN`, by default this
 is set
-to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib` 
+to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib`
 
 User compiled objects are kept in `$FOAM_USER_APPBIN`, by default this
 is set

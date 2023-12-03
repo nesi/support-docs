@@ -37,7 +37,7 @@ licence tokens are your main limiting factor.
 
 You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
-[environment file](#env_file).
+[environment file](#environment-file).
 
 ## Solver Compatibility
 
@@ -59,21 +59,23 @@ Not all solvers are compatible with all types of parallelisation.
      ``` sh
      abaqus -upgrade -job new_job_name -inp old.inp
      ```
-     
+
 ## Examples
 
 === Serial
     For when only one CPU is required, generally as part of
     a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
-    ```
+
+    ```sl
     #!/bin/bash -e
     #SBATCH --job-name      ABAQUS-serial
     #SBATCH --time          00:05:00 # Walltime
-    #SBATCH --cpus-per-task 1 
+    #SBATCH --cpus-per-task 1
     #SBATCH --mem           1500          # total mem
     module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
     abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive
     ```
+
 === "Shared Memory"
     `mp_mode=threads`
     Uses a nodes shared memory for communication.
@@ -81,7 +83,7 @@ Not all solvers are compatible with all types of parallelisation.
     CPUs, scales poorly. Needs significantly less memory than MPI.
     Hyperthreading may be enabled if using shared memory but it is not
     recommended.
-    
+
     ```sl
     #!/bin/bash -e
     #SBATCH --job-name      ABAQUS-Shared
@@ -91,6 +93,7 @@ Not all solvers are compatible with all types of parallelisation.
     module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions}}
     abaqus job="propeller_s4rs_c3d8r verbose=2 interactive \
         cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads 
+    ```
 
 === "UDF"
     Shared memory run with user defined function (fortran or C).
@@ -98,8 +101,7 @@ Not all solvers are compatible with all types of parallelisation.
     You may need to chance the function suffix if you usually compile
 on windows.
 
-
-    ```
+    ```sl
     #!/bin/bash -e
     
     #SBATCH --job-name      ABAQUS-SharedUDF
@@ -108,9 +110,11 @@ on windows.
     #SBATCH --mem           2G         # total mem
 
     module load imkl</span>
-    module</span> load ABAQUS/{{{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module</span> load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
     abaqus job="propeller_s4rs_c3d8r" user=my_udf.f90 \
         verbose=2 interactive cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads
+    ```
+
 === "Distributed Memory"
     `mp_mode=mpi`
     Multiple processes each with a single *thread*. Not limited to one node.
@@ -121,7 +125,7 @@ on windows.
     queue as contiguous cpu's are harder to schedule.
     This is the default method if `mp_mode` is left
     unspecified.
-    
+
     ```sl
     #!/bin/bash -e
     #SBATCH --job-name      ABAQUS-Distributed 
@@ -140,7 +144,7 @@ on windows.
     equivalent to 56 CPU's per GPU used. GPU modes will
     generally have less memory/cpus.
 
-    ```
+    ```sl
     #!/bin/bash -e
     
     #SBATCH --job-name      ABAQUS-gpu
@@ -154,13 +158,13 @@ on windows.
     cpus=${SLURM_CPUS_PER_TASK} gpus=${SLURM_GPUS_PER_NODE} mp_mode=threads
     ```
 
-## User Defined Functions 
+## User Defined Functions
 
 User defined functions (UDFs) can be included on the command line with
 the argument `user=<filename>` where `<filename>` is the C or fortran
 source code.
 
-Extra compiler options can be set in your local `abaqus_v6.env` [file](#environment_file).
+Extra compiler options can be set in your local `abaqus_v6.env` [file](#environment-file).
 
 The default compile commands are for `imkl`, other compilers can be
 loaded with `module load`, you may have to change the [compile
@@ -174,7 +178,7 @@ file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensin
 a number of parameters that define how the your job will run, some of
 these you may with to change.
 
-These parameters are read in the following order of preference, 
+These parameters are read in the following order of preference,
 
 `../ABAQUS/SMA/site/abaqus_v6.env` Set by NeSI and cannot be changed.
 
@@ -187,7 +191,7 @@ only.
 You may want to include this short snippet when making changes specific
 to a job.
 
-``` sl
+``` sh
 # Before starting abaqus
 echo "parameter=value
 parameter=value

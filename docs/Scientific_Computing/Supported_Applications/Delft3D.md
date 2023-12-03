@@ -19,7 +19,7 @@ For when only one CPU is required, generally as part of
 a [job
 array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array).
 
-    ```
+    ```sl
     #!/bin/bash -e
 
     #SBATCH --job-name      Delft3D
@@ -28,6 +28,8 @@ array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execu
     #SBATCH --hint          nomultithread  # Hyperthreading disabled
     module load Delft3D/{{applications.ABAQUS.machines.mahuika.versions | last}}
     d_hydro test_input.xml
+    ```
+
 === "Shared Memory Job"
 For domain based decompositions. Use `--cpus-per-task` to allocate
 resources.
@@ -53,22 +55,21 @@ thread, inside one executable. Limited to one node.
     Domain is split automatically in stripwise partitions. Can run
 across multiple nodes. Use `--ntasks` to allocate resources.
     Cannot be used in conjunction with:
-<ul>
-<li>DomainDecomposition</li>
-<li>Fluid mud</li>
-<li>Coup online</li>
-<li>Drogues and moving observation points</li>
-<li>Culverts</li>
-<li>Power stations with inlet and outlet in different partitions</li>
-<li>Non-hydrostatic solvers</li>
-<li>Walking discharges</li>
-<li><span>2D skewed weirs</span></li>
-<li>max(mmax,nmax)/npart ≤ 4</li>
-<li>Roller model</li>
-<li>Mormerge</li>
-<li>Mass balance polygons</li>
+    * DomainDecomposition
+    * Fluid mud
+    * Coup online
+    * Drogues and moving observation points
+    * Culverts
+    * Power stations with inlet and outlet in different partitions
+    * Non-hydrostatic solvers
+    * Walking discharges
+    * 2D skewed weirs
+    * max(mmax,nmax)/npart ≤ 4
+    * Roller model
+    * Mormerge
+    * Mass balance polygons
 
-    ```
+    ```sl
     #!/bin/bash -e
     #SBATCH --job-name      Delft3D_distributed
     #SBATCH --time          00:05:00       # Walltime

@@ -83,7 +83,7 @@ Must have one of these flags.
     Usually submitted as part of an array, as in the case of parameter
     sweeps.
 
-    ```slurm
+    ```sl
     #!/bin/bash -e
 
     #SBATCH --job-name      Fluent-Serial
@@ -143,13 +143,13 @@ recommended.
 
 For example.
 
-``` sl
+``` sh
 salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time 04:00:00
 ```
 
 Will return;
 
-``` sl
+``` sh
   salloc: Pending job allocation 10270935
   salloc: job 10270935 queued and waiting for resources
   salloc: job 10270935 has been allocated resources
@@ -173,9 +173,9 @@ then click launch.
 
 If everything has set up correctly you should see a printout of the
 hostnames with the resources requested. Note: 'host' should be
-mahuika0\[1-2\].
+mahuika0[1-2].
 
-``` sl
+``` sh
 n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
  n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
  n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
@@ -192,20 +192,20 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 
 It is best practice when running long jobs to enable autosaves.
 
-``` sl
+``` sh
 /file/autosave/data-frequency <n>
 ```
 
 Where `<n>` is the number of iterations to run before creating a save.
 
-In order to save disk space you may also want to include the line 
+In order to save disk space you may also want to include the line
 
 ### Interrupting
 
 Including the following code at the top of your journal file will allow
 you to interrupt the job.
 
-``` sl
+``` sh
 (set! checkpoint/exit-filename "./exit-fluent")
 ```
 
@@ -483,7 +483,7 @@ The following FENSAP solvers are compatible with MPI
 #### With GUI
 
 If you have set up X-11 forwarding, you may launch the FENSAP ice using
-the command `fensapiceGUI` from within your FENSAP project directory. 
+the command `fensapiceGUI` from within your FENSAP project directory.
 
 1. Launch the run and select the desired
 number of (physical) CPUs.
@@ -507,7 +507,6 @@ number of (physical) CPUs.
 tab.
 
 ![FENSAP GUI](../../assets/images/ANSYS_0.png)
-
 
 You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
@@ -542,7 +541,7 @@ last stage of the shot, that way you can set more accurate resource
 requirements for the remainder.
 
 The workflow can then by running `.solvercmd` e.g `bash .solvercmd`.
-Progress can be tracked through the GUI as usual. 
+Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
