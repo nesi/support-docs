@@ -40,4 +40,4 @@ WSL is enabled by default on later versions of Windows 10.
 3.  Wait for the installation to finish then restart your computer.
 !!! prerequisite What Next?
      -   Set up your [SSH config
-         file](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+         file](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup).

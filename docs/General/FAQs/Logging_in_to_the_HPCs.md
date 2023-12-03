@@ -27,15 +27,14 @@ This page has been replaced. Information on how to log in can now be
 found at:
 
 -   [Setting Up and Resetting Your
-    Password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
+    Password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password)
 -   [Setting Up Two-Factor
-    Authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
+    Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication)
 -   [Choosing and Configuring Software for Connecting to the
-    Clusters](https://support.nesi.org.nz/hc/en-gb/articles/360001016335)
+    Clusters](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters)
 -   [Standard Terminal
-    Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)
--   [Login
-    Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
+    Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup)
+-   [Login Troubleshooting](../../General/FAQs/Login_Troubleshooting)
 
 Please update your links and bookmarks accordingly. If you have a
 specific question that is not answered on the pages above or elsewhere

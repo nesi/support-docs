@@ -42,7 +42,7 @@ research needs.
 **How to access**
 
 -   Visit our Support portal for [instructions to get
-    started](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes "https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes")
+    started](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes "https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes")
     and details of how the Milan nodes differ from Mahuika’s original
     Broadwell nodes
 
@@ -53,7 +53,7 @@ research needs.
     the nodes.
 
 -   Bring questions to our [weekly Online Office
-    Hours](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
+    Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
 
 -   [Email NeSI
     Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")

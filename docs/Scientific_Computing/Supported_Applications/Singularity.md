@@ -46,7 +46,7 @@ into the container to achieve integration, for example, Singularity
 makes it simple to expose GPUs to the container and to access
 input/output files & directories mounted on the host (such as those on
 [shared
-filesystems](https://support.nesi.org.nz/hc/en-gb/articles/360000177256)).
+filesystems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas)).
 
 Contrary to other containerisation tools such as Docker, Singularity
 removes the need for elevated privileges ("root access", e.g., via the
@@ -83,7 +83,7 @@ However, it is possible to build *some* containers directly on NeSI,
 using the Milan compute nodes and [Apptainer](https://apptainer.org/).
 Specific instructions are provided in a dedicated support page [Build an
 Apptainer container on a Milan compute
-node](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
+node](../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node).
 Please note **this may fail** to build some containers and encourage you
 to contact us at <support@nesi.org.nz> if you encounter an issue.
 
@@ -132,7 +132,7 @@ filesystem by:
 -   Copying the image file from your local computer with basic file
     transfer tools - please refer to our documentation on [Moving files
     to/from the
-    cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+    cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster)
     and [Data Transfer using
     Globus](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)
     (if you have a very large container) for details
@@ -263,9 +263,9 @@ export SINGULARITY_BIND="/nesi/project/<your project ID>/inputdata:/var/inputdat
 ### Accessing a GPU
 
 If your Slurm job has requested access to an NVIDIA GPU (see [GPU use on
-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) to
-learn how to request a GPU), a singularity container can transparently
-access it using the `--nv` flag:
+NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI)
+to learn how to request a GPU), a singularity container can
+transparently access it using the `--nv` flag:
 
 ``` bash
 singularity run --nv my_container.sif
@@ -315,7 +315,7 @@ automatically suffixed with the Slurm job ID in the above example, but
 it is always available under the same path "/var/outputdata" from within
 the container. This makes it easy to run multiple containers in separate
 Slurm jobs. Please refer to our [SLURM: Reference
-Sheet](https://support.nesi.org.nz/hc/en-gb/articles/360000691716) for
+Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet) for
 further details on using Slurm.
 
 ## Tips & Tricks

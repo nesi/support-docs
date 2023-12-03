@@ -26,13 +26,13 @@ zendesk_section_id: 360001150156
 
 -   Updated JupyterLab version to v3.4.2
 -   Updated
-    [RStudio-on-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
+    [RStudio-on-NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI)
     (v0.22.5): fix library path when using NeSI R package in RStudio
     (e.g. R-bundle-Bioconductor)
 -   Plotly extension re-added (missing in the previous release)
 -   Added [papermill](https://pypi.org/project/papermill/) extension
 -   Updated [NeSI Virtual
-    Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
+    Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI)
     to v2.4.1
     -   ``` sl
         # Image changes

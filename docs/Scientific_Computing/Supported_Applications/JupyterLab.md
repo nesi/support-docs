@@ -24,7 +24,7 @@ zendesk_section_id: 360000040076
      JupyterLab by tunnelling through the lander node.  
      [If you are a Mahuika cluster user, we recommend using jupyter via 
      jupyter.nesi.org.nz. Follow this link for more
-     information](https://support.nesi.org.nz/hc/en-gb/articles/360001555615)
+     information](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI)
 
 NeSI provides a service for working on Jupyter Notebooks. As a first
 step JupyterLab can be used on Mahuika nodes. JupyterLab is a
@@ -73,7 +73,7 @@ while launching JupyterLab. In the following we use the port number
      -   In the following we assume you already configured
          your`.ssh/config` to use two hop method as described in the
          [Standard Terminal
-         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+         Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup).
 
 First, the port forwarding needs to be enabled between your local
 machine and the NeSI system. Therewith a local port will be connected to
@@ -115,7 +115,7 @@ Local Port".
      -   MobaXterm has an internal terminal which acts like a linux
          terminal and can be configured as described in the [Standard
          Terminal
-         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+         Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup).
          Therewith the [SSH command
          line](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) approach above can
          be used.
@@ -271,6 +271,5 @@ environment module (list all using `!pip list`) and R (list using
 `installed.packages(.Library)`, note the list is shortened). 
 
 Furthermore, you can install additional packages as described on the
-[Python](https://support.nesi.org.nz/hc/en-gb/articles/207782537) and
-[R](https://support.nesi.org.nz/hc/en-gb/articles/209338087) support
-page.
+[Python](../../Scientific_Computing/Supported_Applications/Python) and
+[R](../../Scientific_Computing/Supported_Applications/R) support page.

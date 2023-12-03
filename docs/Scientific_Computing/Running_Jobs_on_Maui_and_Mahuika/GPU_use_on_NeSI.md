@@ -28,24 +28,25 @@ please have a look at the dedicated pages listed at the end of this
 page.
 !!! prerequisite Important
      An overview of available GPU cards is available in the [Available GPUs
-     on NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4963040656783)
+     on
+     NeSI](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI)
      support page.
      Details about GPU cards for each system and usage limits are in the
      [Mahuika Slurm
-     Partitions](https://support.nesi.org.nz/hc/en-gb/articles/360000204076)
+     Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions)
      and [Māui\_Ancil (CS500) Slurm
-     Partitions](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions#_Toc514341606)
+     Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions#_Toc514341606)
      support pages.
      Details about pricing in terms of compute units can be found in the
      [What is an
-     allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
+     allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
      page.
 
 ## Request GPU resources using Slurm
 
 To request a GPU for your [Slurm
-job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396-Submitting-your-first-job),
-add the following option at the beginning of your submission script:
+job](../../Getting_Started/Next_Steps/Submitting_your_first_job), add
+the following option at the beginning of your submission script:
 
 ``` sl
 #SBATCH --gpus-per-node=1
@@ -145,7 +146,7 @@ cases:
     GPU).*
 
 You can also use the `--gpus-per-node`option in [Slurm interactive
-sessions](https://support.nesi.org.nz/hc/en-gb/articles/360001316356),
+sessions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions),
 with the `srun` and `salloc` commands. For example:
 
 ``` sl
@@ -171,7 +172,7 @@ duration of 30 minutes.
 
 To use an Nvidia GPU card with your application, you need to load the
 driver and the CUDA toolkit via the [environment
-modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
+modules](../../Getting_Started/Next_Steps/The_HPC_environment)
 mechanism:
 
 ``` sl
@@ -320,9 +321,9 @@ graphical interface.
 !!! prerequisite Important
      The `nsys-ui` and `ncu-ui` tools require access to a display server,
      either via
-     [X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975-X11-on-NeSI)
-     or a [Virtual
-     Desktop](https://support.nesi.org.nz/hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI).
+     [X11](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI) or a
+     [Virtual
+     Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI).
      You also need to load the `PyQt` module beforehand:
      ``` sl
      module load PyQt/5.12.1-gimkl-2020a-Python-3.8.2
@@ -335,19 +336,19 @@ graphical interface.
 The following pages provide additional information for supported
 applications:
 
--   [ABAQUS](../../../Scientific_Computing/Supported_Applications/ABAQUS#gpus)
--   [GROMACS](../../../Scientific_Computing/Supported_Applications/GROMACS#nvidia_gpu_container)
+-   [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS#gpus)
+-   [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS#nvidia_gpu_container)
 -   [Lambda
-    Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack)
--   [Matlab](../../../Scientific_Computing/Supported_Applications/MATLAB#GPU)
+    Stack](../../Scientific_Computing/Supported_Applications/Lambda Stack)
+-   [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB#GPU)
 -   [TensorFlow on
-    GPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow-on-GPUs)
+    GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs)
 
 And programming toolkits:
 
 -   [Offloading to GPU with
-    OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360001127856-Offloading-to-GPU-with-OpenMP-)
+    OpenMP](../../Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP)
 -   [Offloading to GPU with OpenACC using the Cray
     compiler](https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler)
 -   [NVIDIA GPU
-    Containers](https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers)
+    Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers)

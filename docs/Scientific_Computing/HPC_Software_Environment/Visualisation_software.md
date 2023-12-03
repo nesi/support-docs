@@ -211,8 +211,8 @@ the NICE DCV cloud visualisation software for best performance.
 Client-server mode, where a ParaView GUI runs on a local machine and
 connects to a ParaView server on the HPC, is also an option but requires
 much more network bandwidth than [NICE
-DCV](https://support.nesi.org.nz/hc/en-gb/articles/360000719156) and
-thus may be slower.
+DCV](../../Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup)
+and thus may be slower.
 
 #### Parallelisation
 

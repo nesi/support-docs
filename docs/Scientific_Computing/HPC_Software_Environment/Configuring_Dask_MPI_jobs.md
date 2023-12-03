@@ -88,7 +88,7 @@ dependencies:
 ```
 !!! prerequisite See also
      See the
-     [Miniconda3](https://support.nesi.org.nz/hc/en-gb/articles/360001580415)
+     [Miniconda3](../../Scientific_Computing/Supported_Applications/Miniconda3)
      page for more information on how to create and manage Miniconda
      environments on NeSI.
 
@@ -96,9 +96,9 @@ dependencies:
 
 At runtime, Slurm will launch a number of Python processes as requested
 in the [Slurm configuration
-script](https://support.nesi.org.nz/hc/en-gb/articles/360000691716).
-Each process is given an ID (or "rank") starting at rank 0. Dask-MPI
-then assigns different roles to the different ranks:
+script](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet). Each
+process is given an ID (or "rank") starting at rank 0. Dask-MPI then
+assigns different roles to the different ranks:
 
 -   Rank 0 becomes the scheduler that coordinates work and communication
 -   Rank 1 becomes the worker that executes the main Python program and
@@ -108,7 +108,7 @@ then assigns different roles to the different ranks:
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
 ranks!** Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-[Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
+[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading)
 to place these two ranks onto a single physical core. Ensure that
 activating hyperthreading does not slow down the worker ranks by running
 a short test workload with and without hyperthreading.
@@ -273,7 +273,7 @@ Conda environment inside the container.
 !!! prerequisite Tips
      You can build this container on NeSI, using the Mahuika Extension
      nodes, following the instructions from the [dedicated support
-     page](https://support.nesi.org.nz/hc/en-gb/articles/6008779241999).
+     page](../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node).
 
 ### Slurm configuration
 

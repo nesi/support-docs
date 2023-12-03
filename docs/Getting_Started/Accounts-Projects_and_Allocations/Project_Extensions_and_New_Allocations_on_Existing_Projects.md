@@ -71,7 +71,7 @@ or by [opening a support
 ticket](https://support.nesi.org.nz/hc/requests/new).
 
 Please see [Requesting to renew an allocation via
-my.nesi.org.nz](https://support.nesi.org.nz/hc/en-gb/articles/4600222769295)
+my.nesi.org.nz](../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz)
 for more details.
 
 You will receive a series of automated emails inviting you to apply for
@@ -117,7 +117,7 @@ project extension. Please note that we are unlikely to let a project
 continue without a compute allocation for more than six months at a
 time. If you expect that your project will be suspended for more than
 six months, we encourage you to enquire about our [Long-Term Storage
-Service](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) or
+Service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service) or
 to move your research data off our facility and make arrangements with
 your project's host institution for long-term data storage.
 

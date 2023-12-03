@@ -73,4 +73,4 @@ For more information about how to log in to our HPC facilities, please
 see [this
 article](https://support.nesi.org.nz/hc/articles/360000161315-Logging-in-to-the-HPCs),
 and for more login troubleshooting
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000570215-Login-Troubleshooting).
+[here](../../General/FAQs/Login_Troubleshooting).

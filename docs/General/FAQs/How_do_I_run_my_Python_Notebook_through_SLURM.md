@@ -47,5 +47,5 @@ the file explorer in Jupyter from your downloads folder.
  
 
 This script can then be run as a regular python script as described in
-our [Python](https://support.nesi.org.nz/hc/en-gb/articles/207782537)
+our [Python](../../Scientific_Computing/Supported_Applications/Python)
 documentation.

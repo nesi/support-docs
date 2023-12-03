@@ -51,7 +51,7 @@ other methods.
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
 your Globus
-Identities](https://support.nesi.org.nz/hc/en-gb/articles/360000817476).
+Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities).
 
  
 
@@ -69,11 +69,11 @@ copying to and from. Please note that the NeSI `project` directory is
 read only, and `nobackup` is read and write.
 
 A list of some Institutional endpoints can be found here:
-[National-Data-Transfer-Platform](https://support.nesi.org.nz/hc/en-gb/articles/360000931775-National-Data-Transfer-Platform).
+[National-Data-Transfer-Platform](../../Storage/Data_Transfer_Services/National_Data_Transfer_Platform).
 You can also set up your own [personal
-endpoint](https://support.nesi.org.nz/hc/en-gb/articles/360000217915) to
-transfer data to or from your personal computer, however, administrative
-access to your computer is required
+endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration)
+to transfer data to or from your personal computer, however,
+administrative access to your computer is required
 
 To activate the NeSI endpoint click go to
 <https://transfer.nesi.org.nz/>  and click "file manager" on the menu

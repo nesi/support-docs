@@ -25,7 +25,7 @@ zendesk_section_id: 360000196195
 !!! prerequisite Requirements
      Compulsory:
      -   Have a [NeSI Account
-         profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
+         profile](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile).
      -   NIWA researchers only: read and follow the [NIWA internal
          documentation for gaining access to the
          HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services) (this
@@ -39,11 +39,11 @@ zendesk_section_id: 360000196195
      -   Become familiar with foundational HPC skills, for example by
          attending a NeSI introductory workshop, one of our [weekly
          introductory sessions (or watching the
-         recording)](https://support.nesi.org.nz/hc/en-gb/articles/360000428676),
+         recording)](../../Getting_Started/Getting_Help/Introductory_Material),
          or having one or more of your project team members do so.
      -   Review our [allocation
-         classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176).
-         If you don't think you currently qualify for any class other than
+         classes](../../General/NeSI_Policies/Allocation_classes). If you
+         don't think you currently qualify for any class other than
          Proposal Development, please [contact
          us](https://support.nesi.org.nz/hc/requests/new) as soon as
          possible to discuss your options. Your institution may be in a
@@ -97,8 +97,8 @@ You will also be given an opportunity to tell us anything else you think
 is relevant.
 !!! prerequisite What Next?
      -   Your NeSI Project proposal will be
-         [reviewed](https://support.nesi.org.nz/hc/en-gb/articles/360000202136),
+         [reviewed](../../General/NeSI_Policies/How_we_review_applications),
          after which you will be informed of the outcome.
      -   We may contact you if further details are required.
      -   When your project is approved you will be able to [set your Linux
-         Password](https://support.nesi.org.nz/hc/en-gb/articles/360000335995).
+         Password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password).

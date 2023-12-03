@@ -31,18 +31,18 @@ running TensorFlow with GPU support.
 !!! prerequisite See also
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
          see the [GPU use on
-         NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955)
+         NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI)
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
          [TensorFlow on
-         CPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000997675)
+         CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs)
          for tips on how to configure TensorFlow and Slurm for optimal
          performance.
 
 ## Use NeSI modules
 
 TensorFlow is available on Mahuika as an [environment
-module:](https://support.nesi.org.nz/hc/en-gb/articles/360001113076)
+module:](../../Getting_Started/Next_Steps/The_HPC_environment)
 
 ``` sl
 module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
@@ -191,7 +191,7 @@ take into consideration the following:
 
 You can use containers to run your application on the NeSI platform. We
 provide support for
-[Singularity](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
+[Singularity](../../Scientific_Computing/Supported_Applications/Singularity)
 containers, that can be run by users without requiring additional
 privileges. Note that Docker containers can be converted into
 Singularity containers.
@@ -200,7 +200,7 @@ For TensorFlow, we recommend using the [official container provided by
 NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow).
 More information about using Singularity with GPU enabled containers is
 available on the [NVIDIA GPU
-Containers](https://support.nesi.org.nz/hc/en-gb/articles/360001500156)
+Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers)
 support page.
 
 ## Specific versions for A100

@@ -157,5 +157,5 @@ configuration is expected to be addressed in the future.
 Don't hesitate to contact us at <support@nesi.org.nz>. No question is
 too big or small. We are available for Zoom sessions or [Weekly Online
 Office
-Hours](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063) if
+Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours) if
 it's easier to discuss your question in a call rather than via email.

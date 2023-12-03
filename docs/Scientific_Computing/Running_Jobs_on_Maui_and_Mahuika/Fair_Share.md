@@ -32,8 +32,8 @@ with a **larger** Fair Share score receive a **higher priority** in the
 queue.
 
 A project is given an [**allocation** of compute
-units](https://support.nesi.org.nz/hc/en-gb/articles/360001385735) over
-a given **period**. An institution also has a percentage **Fair
+units](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
+over a given **period**. An institution also has a percentage **Fair
 Share entitlement** of each machine's deliverable capacity over that
 same period.
 !!! prerequisite Note

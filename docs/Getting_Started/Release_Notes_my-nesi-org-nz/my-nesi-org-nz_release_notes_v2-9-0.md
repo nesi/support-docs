@@ -25,6 +25,6 @@ zendesk_section_id: 360001091155
 ## New and Improved
 
 -   Improved [allocation renewal
-    requests](https://support.nesi.org.nz/hc/en-gb/articles/4600222769295) default
+    requests](../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz) default
     organisation selection
 -   Added a sub-section to list open allocation requests

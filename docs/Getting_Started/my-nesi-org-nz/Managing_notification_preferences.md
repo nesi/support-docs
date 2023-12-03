@@ -47,4 +47,4 @@ notifications.
 ### See also
 
 Our support article on the NeSI [System
-status.](https://support.nesi.org.nz/hc/en-gb/articles/360000751636)
+status.](../../Getting_Started/Getting_Help/System_status)

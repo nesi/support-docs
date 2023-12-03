@@ -21,7 +21,7 @@ zendesk_section_id: 360000034315
 
 !!! prerequisite Requirements
      -   Have your [connection to the NeSI
-         cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
+         cluster](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup)
          configured.
 
 Some applications only accept connections from internal ports (i.e a
@@ -41,13 +41,13 @@ to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 **Host Alias:** An alias for the socket of your main connection to the
 cluster, `mahuika` or `maui` if you have set up your ssh config file as
 described
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+[here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup).
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
 !!! prerequisite Note
      The following examples use aliases as set up in [standard terminal
-     setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+     setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup).
      This allows the forwarding from your local machine to the NeSI
      cluster, without having to re-tunnel through the lander node.
 
@@ -221,7 +221,7 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 ```
 !!! prerequisite What Next?
      -   Using
-         [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
+         [JupyterLab ](../../Scientific_Computing/Supported_Applications/JupyterLab)on
          the cluster.
-     -   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
-     -   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)
+     -   [NiceDCV ](../../Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup)
+     -   [Paraview](../../Scientific_Computing/Supported_Applications/ParaView)

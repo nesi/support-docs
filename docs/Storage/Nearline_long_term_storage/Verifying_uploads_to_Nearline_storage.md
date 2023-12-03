@@ -20,10 +20,10 @@ zendesk_section_id: 360000042255
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 Our [Long-Term Storage
-Service](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) is
-currently in an Early Access phase, and we encourage researchers using
-the service to verify their data before deleting it from the project
-directory (persistent storage) or nobackup directory (temporary
+Service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service)
+is currently in an Early Access phase, and we encourage researchers
+using the service to verify their data before deleting it from the
+project directory (persistent storage) or nobackup directory (temporary
 storage).
 !!! prerequisite Service Status
      The verification options outlined below are intended to support the

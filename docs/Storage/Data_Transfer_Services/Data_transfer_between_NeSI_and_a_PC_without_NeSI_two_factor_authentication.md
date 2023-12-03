@@ -23,10 +23,10 @@ This article shows how to transfer potentially large amounts of data
 between NeSI and your personal computer, without requiring 2FA
 (two-factor authentication) each time you initiate the transfer.  This
 is particularly useful in the context of automated, or [scripted data
-transfers](https://support.nesi.org.nz/hc/en-gb/articles/6202743496591).
+transfers](../../Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate).
 
 The approach is based on using
-[Globus](https://support.nesi.org.nz/hc/en-gb/articles/4405623380751-Data-Transfer-using-Globus-V5)
+[Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5)
 and a guest collection on the source side. **Globus** allows you to copy
 and synchronise files between NeSI's platforms and other computers,
 including your personal computer.
@@ -36,8 +36,8 @@ A ***collection*** is a directory whose content can be shared. A
 in your credentials each time your transfer files.
 
 See this [support
-page](https://support.nesi.org.nz/hc/en-gb/articles/4405623380751) on
-how to set up Globus. Here, we assume you have an account on NeSI and
+page](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5)
+on how to set up Globus. Here, we assume you have an account on NeSI and
 have registered and created an account on Globus.
 
 ## Step 1: Create a guest collection on NeSI
@@ -63,7 +63,7 @@ On your personal computer, download "Globus Connect Personal" from
 <https://app.globus.org/file-manager/gcp>. Versions exist for Mac,
 Windows and Linux. Follow the instructions to install and set up the
 software. Also see our support page about [Personal Globus Endpoint
-Configuration](https://support.nesi.org.nz/hc/en-gb/articles/360000217915).
+Configuration](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration).
 
 ## Step 3: Share a directory on your personal computer
 

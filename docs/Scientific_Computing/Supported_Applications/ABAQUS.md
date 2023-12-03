@@ -33,7 +33,7 @@ A list of commands can be found with:
 abaqus help
 ```
 
-[Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
+[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading)
 can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
@@ -78,7 +78,7 @@ Not all solvers are compatible with all types of parallelisation.
 <hr />
 <p>For when only <span>one CPU is required</span>, generally as part of
 an <a
-href="../../../Getting_Started/Next_Steps/Parallel_Execution#t_array">job
+href="../../Getting_Started/Next_Steps/Parallel_Execution#t_array">job
 array</a>.</p>
 <p> </p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb1"><pre
@@ -202,8 +202,8 @@ Extra compiler options can be set in your local `abaqus_v6.env` file.
 
 The default compile commands are for `imkl`, other compilers can be
 loaded with `module load`, you may have to change the [compile
-commands](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) in
-your local `.env` file.
+commands](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika)
+in your local `.env` file.
 
 ## Environment file
 

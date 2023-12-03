@@ -48,6 +48,6 @@ guides.
 -   [GCC Manuals](https://gcc.gnu.org/onlinedocs/)
 
 See also [NeSI Application
-Support](https://support.nesi.org.nz/hc/en-gb/articles/360000170355)
+Support](../../General/NeSI_Policies/NeSI_Application_Support_Model)
 
  
