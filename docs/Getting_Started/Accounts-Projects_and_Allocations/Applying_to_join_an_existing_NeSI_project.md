@@ -25,7 +25,7 @@ zendesk_section_id: 360000196195
 
 !!! prerequisite Requirements
      -   You must have a [NeSI
-         account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile).
+         account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
 
 ## How to join an existing project on NeSI
 
@@ -41,4 +41,4 @@ Once submitted you will receive a ticket confirmation via email.
          request.
      -   Once your request has been approved by the project owner and
          processed by us, you will be able to [set your NeSI account
-         password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password).
+         password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).

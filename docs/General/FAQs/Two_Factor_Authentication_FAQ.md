@@ -57,7 +57,7 @@ existing accounts** then scan the QR code provided on the old device. 
 ## How do I get a new Second Factor? 
 
 **Answer:** See article
-[here](../../General/FAQs/How_to_replace_my_2FA_token).
+[here](../../General/FAQs/How_to_replace_my_2FA_token.md).
 
 ## Can I use the same Second Factor again?
 

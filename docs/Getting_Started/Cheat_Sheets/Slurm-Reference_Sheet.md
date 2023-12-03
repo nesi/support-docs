@@ -21,7 +21,7 @@ zendesk_section_id: 360000278975
 
 If you are unsure about using our job scheduler Slurm, more details can
 be found
-[here](../../Getting_Started/Next_Steps/Submitting_your_first_job).
+[here](../../Getting_Started/Next_Steps/Submitting_your_first_job.md).
 
 ## Slurm Commands
 
@@ -62,7 +62,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 
 ### General options
 
-  ----------------------- ---------------------------------------- ----------------------------------------------------------------------------------------------------
+  ----------------------- ---------------------------------------- -------------------------------------------------------------------------------------------------------
   --job-name              `#SBATCH --job-name=MyJob`               The name that will appear when using squeue or sacct
 
   --account               `#SBATCH --account=nesi99999`            The account your core hours will be 'charged' to.
@@ -72,7 +72,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
   --mem                   `#SBATCH --mem=512MB`                    Memory required per node.
 
   --partition             `#SBATCH --partition=long`               Specified job
-                                                                   [partition](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions).
+                                                                   [partition](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md).
 
   --output                `#SBATCH --output=%j_output.out`         Path and name of standard output file.
 
@@ -83,7 +83,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
                           `#SBATCH --mail-type=TIME_LIMIT_80`      Will send message at *80%* walltime
 
   --no-requeue            `#SBATCH --no-requeue`                   Will stop job being requeued in the case of node failure.
-  ----------------------- ---------------------------------------- ----------------------------------------------------------------------------------------------------
+  ----------------------- ---------------------------------------- -------------------------------------------------------------------------------------------------------
 
 ### Parallel options
 
@@ -123,7 +123,7 @@ class="sl">#SBATCH --cpus-per-task=10</code></td>
 <td style="width: 446px; height: 23px"><p>Will request 10
 <em>logical</em> CPUs per task.</p>
 <p>See <a
-href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading">Hyperthreading</a>.</p></td>
+href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md">Hyperthreading</a>.</p></td>
 </tr>
 <tr class="odd" style="height: 23px;">
 <td style="width: 148px; height: 23px">--mem-per-cpu</td>
@@ -133,7 +133,7 @@ class="sl">#SBATCH --mem-per-cpu=512MB</code></td>
 CPU.</p>
 <p><code class="sl">--mem</code> Should be used if shared memory
 job.</p>
-<p>See <a href="../../General/FAQs/How_do_I_request_memory">How do I
+<p>See <a href="../../General/FAQs/How_do_I_request_memory.md">How do I
 request memory?</a>.</p></td>
 </tr>
 <tr class="even" style="height: 46px;">
@@ -200,7 +200,7 @@ completed.</td>
 <td style="width: 320px"><code
 class="sl">#SBATCH --hint=nomultithread</code></td>
 <td style="width: 461.567px">Disables <a
-href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading">hyperthreading</a>,
+href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md">hyperthreading</a>,
 be aware that this will significantly change how your job is
 defined.</td>
 </tr>

@@ -21,9 +21,9 @@ zendesk_section_id: 360000040056
 
 This article describes a technique to build
 [Apptainer](https://apptainer.org/) containers using [Milan compute
-nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes),
+nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md),
 via a Slurm job. You can also build
-[Singularity](../../Scientific_Computing/Supported_Applications/Singularity)
+[Singularity](../../Scientific_Computing/Supported_Applications/Singularity.md)
 container using this technique.
 
 ## Building container via Slurm
@@ -86,8 +86,8 @@ the directory.
 
 More information about how to submit a Slurm job is available in the
 [Submitting your first
-job](../../Getting_Started/Next_Steps/Submitting_your_first_job) support
-page.
+job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
+support page.
 !!! prerequisite Build environment variables
      To build containers, you need to ensure that Apptainer has enough
      storage space to create intermediate files. It also requires a cache

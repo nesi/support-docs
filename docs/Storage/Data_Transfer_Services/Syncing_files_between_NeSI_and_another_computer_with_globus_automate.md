@@ -36,7 +36,7 @@ We'll assume that you have a NeSI account, you have registered at
 <https://globus.org>, and have created a guest collections on NeSI and
 and a private mapped collection on the destination computer (follow the
 instructions [our corresponding support
-page](../../Storage/Data_Transfer_Services/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication)).
+page](../../Storage/Data_Transfer_Services/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.md)).
 A guest collection is directory whose content is shared via Globus.
 
 ## Step 1: Write a JSON file describing the transfer

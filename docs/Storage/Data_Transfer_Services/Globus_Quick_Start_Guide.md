@@ -51,7 +51,7 @@ other methods.
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
 your Globus
-Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities).
+Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
 
  
 
@@ -69,9 +69,9 @@ copying to and from. Please note that the NeSI `project` directory is
 read only, and `nobackup` is read and write.
 
 A list of some Institutional endpoints can be found here:
-[National-Data-Transfer-Platform](../../Storage/Data_Transfer_Services/National_Data_Transfer_Platform).
+[National-Data-Transfer-Platform](../../Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md).
 You can also set up your own [personal
-endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration)
+endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
 to transfer data to or from your personal computer, however,
 administrative access to your computer is required
 

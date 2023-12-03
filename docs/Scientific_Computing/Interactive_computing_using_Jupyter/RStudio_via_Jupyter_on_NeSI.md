@@ -23,14 +23,14 @@ zendesk_section_id: 360001189255
      This functionality is experimental and may introduce breaking changes
      in the future. These notes should be read in conjunction with NeSI's
      main [R support
-     page](../../Scientific_Computing/Supported_Applications/R)
+     page](../../Scientific_Computing/Supported_Applications/R.md)
      Your feedback is welcome, please don't hesitate to contact us at
      <support@nesi.org.nz> to make suggestions.
 
 ## Getting started
 
 RStudio can be accessed as a web application via [Jupyter on
-NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI).
+NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md).
 
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
@@ -47,7 +47,7 @@ javascript in your web browser.
 ## Changing R version
 
 You can configure a set of [environment
-modules](../../Getting_Started/Next_Steps/The_HPC_environment) to
+modules](../../Getting_Started/Next_Steps/The_HPC_environment.md) to
 preload before starting RStudio. This can be useful if you want to
 change the version of the R interpreter or use NeSI's *R-Geo* or
 *R-bundle-Bioconductor* modules.
@@ -100,7 +100,7 @@ The alternative is to install packages in a terminal session
 ## Advanced usage
 
 RStudio runs in a [Singularity
-container](../../Scientific_Computing/Supported_Applications/Singularity)
+container](../../Scientific_Computing/Supported_Applications/Singularity.md)
 prepared by the NeSI team to run on
 [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz). The related code is
 hosted on GitHub, in the

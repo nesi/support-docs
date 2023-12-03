@@ -31,4 +31,4 @@ display myImage.png
 ```
 
 This requires a [working X-11
-server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI).
+server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md).

@@ -118,7 +118,7 @@ limit:
 | 240       | 1         | 240            | 240 nodes                  |
 
 Most of the time [job
-priority](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation) will
+priority](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md) will
 be the most important influence on how long your jobs have to wait - the
 above limits are just backstops to ensure that Māui's resources are not
 all committed too far into the future, so that debug and other
@@ -251,7 +251,7 @@ to specify a number of CPUs and amount of memory small enough to fit on
 these nodes.
 
 See [GPU use on
-NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI)
+NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
 for more details about Slurm and CUDA settings.
 
  
