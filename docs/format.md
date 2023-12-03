@@ -26,8 +26,6 @@ Headers should have a blank line before and after.
 
 'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
 
-See [Title](#title) for more info.
-
 ### Text Emphasis
 
 **bold**: `**bold**`
@@ -50,80 +48,173 @@ _italic_: `_italic`
 
 ### Admonations
 
-!!! note
-    This is a test admonation.
-
-```md
-!!! note
-    This is a test admonation.
-```
-!!! tip
-    This is a test admonation.
-
-```md
-!!! tip
-    This is a test admonation.
-```
-!!! info
-    This is a test admonation.
-
-```md
-!!! info
-    This is a test admonation.
-```
-!!! question
-    This is a test admonation.
-
-```md
-!!! question
-    This is a test admonation.
-```
 !!! warning
-    This is a test admonation.
+    A warning.
 
 ```md
 !!! warning
-    This is a test admonation.
+    A warning.
 ```
-!!! failure
-    This is a test admonation.
+
+!!! info "Optional title"
+    Admonation with optional title.
 
 ```md
-!!! failure
-    This is a test admonation.
-```
-!!! danger
-    This is a test admonation.
-
-```md
-!!! danger
-    This is a test admonation.
-```
-!!! bug
-    This is a test admonation.
-
-```md
-!!! bug
-    This is a test admonation.
-```
-!!! example
-    This is a test admonation.
-
-```md
-!!! example
-    This is a test admonation.
-```
-!!! quote
-    This is a test admonation.
-
-```md
-!!! quote
-    This is a test admonation.
+!!! info "Optional title"
+    Admonation with optional title.
 ```
 
 Any admonation can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
 
 _Note for future, once decided which of these we will use, remove the others. And give description of when to use._
+
+There are lots of different flavors.
+
+---
+
+!!! note
+    This is a test admonation.
+
+!!! tip
+    This is a test admonation.
+
+!!! info
+    This is a test admonation.
+
+!!! question
+    This is a test admonation.
+
+!!! warning
+    This is a test admonation.
+
+!!! failure
+    This is a test admonation.
+
+!!! danger
+    This is a test admonation.
+
+!!! bug
+    This is a test admonation.
+
+!!! example
+    This is a test admonation.
+
+!!! quote
+    This is a test admonation.
+
+!!! prerequisite
+    This is a test admonation.
+
+!!! pied-piper
+    this is a test admonation.
+
+!!! desktop-download-24
+    this is a test admonation.
+
+!!! magnifying-glass
+    this is a test admonation.
+
+!!! microscope
+    this is a test admonation.
+
+!!! vial-virus
+    this is a test admonation.
+
+!!! database
+    this is a test admonation.
+
+!!! folder-open
+    this is a test admonation.
+
+!!! backward
+    this is a test admonation.
+
+!!! jupyter
+    this is a test admonation.
+
+!!! terminal
+    this is a test admonation.
+
+!!! r-project
+    this is a test admonation.
+
+!!! calendar-days
+    this is a test admonation.
+
+!!! bell
+    this is a test admonation.
+
+!!! comment-dots
+    this is a test admonation.
+
+!!! check-to-slot
+    this is a test admonation.
+
+!!! square-xmark
+    this is a test admonation.
+
+!!! rectangle-list
+    this is a test admonation.
+
+!!! screwdriver-wrench
+    this is a test admonation.
+
+!!! linux
+    this is a test admonation.
+
+!!! code-compare
+    this is a test admonation.
+
+!!! heading
+    this is a test admonation.
+
+!!! space-awesome
+    this is a test admonation.
+
+!!! stethoscope
+    this is a test admonation.
+
+!!! key
+    this is a test admonation.
+
+!!! users-line
+    this is a test admonation.
+
+!!! file-code
+    this is a test admonation.
+
+!!! hand-holding-dollar
+    this is a test admonation.
+
+!!! circle-question
+    this is a test admonation.
+
+!!! microphone
+    this is a test admonation.
+
+!!! tower-observation
+    this is a test admonation.
+
+!!! circle-info
+    this is a test admonation.
+
+!!! icon--python
+    this is a test admonation.
+
+!!! quote-right
+    this is a test admonation.
+
+!!! image
+    this is a test admonation.
+
+!!! table
+    this is a test admonation.
+
+!!! glass-chart
+    this is a test admonation.
+
+!!! file-export
+    this is a test admonation.
 
 ### Code
 
@@ -171,7 +262,7 @@ This is some `echo "Inline Code"`.
 
 Keyboard keys can be added using the `<kbd>` tag.
 
-Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
+Press `<kbd>`ctrl`</kbd>` + `<kbd>`c`</kbd>` to copy text from terminal.
 
 ```md
 Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
@@ -182,29 +273,13 @@ Note the additional spacing around the `+` else it will appear cramped.
 ### Images
 
 ```md
-![This is an image]("assets/images/FENSAP_GUI1.png")
+![This is an image](./assets/images/ANSYS_0.png)
 ```
 
-![This is an image]("assets/images/FENSAP_GUI1.png")
+![This is an image](./assets/images/ANSYS_0.png)
 
 ### Links
 
-Try to avoid putting links on ambiguous words, e.g.
-
-=== "Bad"
-    View the software homepage [here](www.example.com).
-
-    ```md
-    View the homepage [here](www.example.com).
-    ```
-
-=== "Better"
-    View the [software homepage](www.example.com).
-
-    ```md
-    View the [software homepage](www.example.com).
-    ```
-
 [External Link]("https://example.com")
 
 ```md
@@ -212,19 +287,22 @@ Try to avoid putting links on ambiguous words, e.g.
 
 ```
 
-[Internal Link]("General/Announcements")
+[Internal Link]("General/FAQs/Password_Expiry")
 
 ```md
-[Internal Link]("General/Announcements")
-
+[Internal Link]("General/FAQs/Password_Expiry")
 ```
+
+!!! warning
+    Link paths are relative to current file!!!
 
 [Anchor Link](#links)
 
 ```md
 [Anchor Link](#links)
-
 ```
+
+snake-case anchors are automatically generated for all headers.
 
 ### Tooltips
 
@@ -240,6 +318,54 @@ Acroynym should be automatically tooltipped e.g. MPI.
 Acroynym should be automatically tooltipped e.g. MPI.
 ```
 
+### Lists
+
+#### Unordered List
+
+- item1
+- item2
+- a
+- item
+
+```md
+- item1
+- item2
+- a
+  multiline
+- item
+- nested
+  - items
+    - nesteder
+```
+
+#### Ordered List
+
+1. item1
+2. a
+   multiline
+   item
+   with multiple
+   lines
+3. nested
+   1. nested item 1
+   2. nested item 2
+      1. even nesteder
+
+```md
+1. item1
+2. a
+   multiline
+   item
+   with multiple
+   lines
+3. nested
+    1. nested item 1
+    2. nested item 2
+        1. even nesteder
+```
+
+*Note, nested list items use numbers, but will be rendered as whatever the indent is.*
+
 ### Tables
 
 [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables), is a handy tool for complex tables/
@@ -249,10 +375,10 @@ Tables can be constructed using `|` to seperate colums, and `--` to designate he
 Number of dashes has no effect, things dont have to be lined up when in markdown, just looks nice.
 Leading and trailing `|` are optional.
 
- Head  | Head
--------|-------
-Thing1 | Thing2
-Thing3 | Thing3
+| Head   | Head   |
+| ------ | ------ |
+| Thing1 | Thing2 |
+| Thing3 | Thing3 |
 
 ```md
  Head | Head
@@ -263,10 +389,10 @@ Thing3 | Thing3
 
 `:`'s can be used to align tables.
 
-| Left      | Center    | Right     |
-| :---      |    :----: |---:       |
-| Words     | Words     | Words     |
-| Words     | Words     | Words     |
+| Left  | Center | Right |
+| :---- | :----: | ----: |
+| Words | Words | Words |
+| Words | Words | Words |
 
 ```md
 | Syntax      | Description | Test Text     |

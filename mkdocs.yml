@@ -25,7 +25,7 @@ plugins:
   - redirects:
       map_file: docs/redirect_map.yml
   - literate-nav
-  - git-authors
+ # - git-authors
   - tags
   - git-revision-date-localized:
       enable_creation_date: true
@@ -34,6 +34,7 @@ plugins:
       include_dir: docs/assets
 repo_name: GitHub
 repo_url: https://github.com/nesi/support-docs-concept
+edit_uri: edit/main/docs/
 site_description: NeSI Support Documentation
 site_dir: public
 site_name: NeSI Support Center
@@ -41,10 +42,12 @@ site_url: https://github.com/nesi/support-docs-concept
 extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
-  - assets/stylesheets/supportedApplications.css
+  - assets/stylesheets/custom_admonations.css
+  - assets/stylesheets/theme.css
+  # - assets/stylesheets/supportedApplications.css
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.0.min.js
-  - javascripts/supportedApplications.js
+  # - assets/javascripts/supportedApplications.js
 nav:
   - "Getting Started": "Getting_Started/"
   - "General": "General/"
@@ -57,18 +60,19 @@ theme:
   features:
     - navigation.indexes
     - navigation.top
+    - navigation.prune
     - content.code.copy
     - content.action.edit
   language: en
   logo: assets/icons/logo.svg
   name: material
   palette:
-    - primary: grey
+    - primary: custom
       scheme: default
       toggle:
         icon: material/lightbulb
         name: Switch to dark mode
-    - primary: black
+    - primary: custom
       scheme: slate
       toggle:
         icon: material/lightbulb-outline

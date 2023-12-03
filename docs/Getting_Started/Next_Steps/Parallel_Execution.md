@@ -10,8 +10,6 @@ zendesk_article_id: 360000690275
 zendesk_section_id: 360000189716
 ---
 
-
-
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! warning
@@ -27,7 +25,8 @@ automatically.
 The are three types of parallel execution we will cover
 are [Multi-Threading(oMP)](#t_multi),
 [Distributed(MPI)](#t_mpi) and [Job Arrays](#t_array).
-!!! prerequisite Note
+
+!!! info
      Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2**
      *logical* CPU's = **1** *physical* core).  
      -   `--cpus-per-task=4` will give you 4 *logical* cores.
@@ -46,8 +45,6 @@ Multi-threading is a method of parallelisation whereby the initial
 single thread of a process forks into a number of parallel threads,
 generally *via* a library such as OpenMP (Open MultiProcessing), TBB
 (Threading Building Blocks), or pthread (POSIX threads).
-
-
 
 ![par.png](../../assets/images/Parallel_Execution.png)*  
 Fig. 2: Multi-threading involves dividing the process into multiple
@@ -110,11 +107,12 @@ srun pwd                        # Prints  working directory
 
 The expected output being
 
-``` sl
+``` sh
 /home/user001/demo
 /home/user001/demo
 ```
-!!! prerequisite Warning
+
+!!! warning
      For non-MPI programs, either set `--ntasks=1` or do not use `srun` at
      all. Using `srun` in conjunction with `--cpus-per-task=1` will
      cause `--ntasks` to default to 2.
@@ -149,27 +147,24 @@ echo "This is result ${SLURM_ARRAY_TASK_ID}"
 will submit,  `ArrayJob_1` and `ArrayJob_2`, which will return the
 results `This is result 1` and `This is result 2` respectively.
 
-### Using SLURM\_ARRAY\_TASK\_ID
+## Using SLURM_ARRAY_TASK_ID
 
 Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the
 recommended method of variation between the jobs. For example:
 
--   -   -   As a direct input to a function.  
+-   As a direct input to a function.  
+    ``` sl
+    matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+    ```
 
-            ``` sl
-            matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
-            ```
+-   As an index to an array.  
+    ``` sl
+    inArray=(1 2 4 8 16 32 64 128)
+    input=${inArray[$SLURM_ARRAY_TASK_ID]}
+    ```
 
-        -   As an index to an array.  
-
-            ``` sl
-            inArray=(1 2 4 8 16 32 64 128)
-            input=${inArray[$SLURM_ARRAY_TASK_ID]}
-            ```
-
-        -   For selecting input files.  
-
-            ``` sl
+-   For selecting input files.  
+    ``` sl
             input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
             ```
 
@@ -213,9 +208,9 @@ useful for sorting your output files e.g.
 #SBATCH --output=outputs/run_%a/slurm_error.err
 ```
 
-#### Multidimensional array example
+### Multidimensional array example
 
-``` sl
+```sl
 #!/bin/bash -e
 
 #SBATCH --open-mode append
@@ -226,9 +221,11 @@ useful for sorting your output files e.g.
 arr_time=({00..23})
 arr_day=("Mon" "Tue" "Wed" "Thur" "Fri" "Sat" "Sun") 
 
-# Index the bash arrays based on the SLURM_ARRAY_TASK)
-n_time=${arr_time[$(($SLURM_ARRAY_TASK_ID%${#arr_time[@]}))]} # '%' for finding remainder.
-n_day=${arr_day[$(($SLURM_ARRAY_TASK_ID/${#arr_time[@]}))]}
+# Index the bash arrays based on the SLURM_ARRAY_TASK
+i_time=$( ${SLURM_ARRAY_TASK_ID}\%${ #arr_time[@]} )
+i_day=$( ${SLURM_ARRAY_TASK_ID}/${ #arr_time[@]} )
+n_time=${arr_time[$i_time]} # '%' for finding remainder.
+n_day=${arr_day[i_day]}
 
 echo "$n_day $n_time:00"
 ```
@@ -261,5 +258,3 @@ rm -r ../run_${SLURM_ARRAY_TASK_ID}                     �
 
 The Slurm documentation on job arrays can be
 found [here](https://slurm.schedmd.com/job_array.html).
-
- 

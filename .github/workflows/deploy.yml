@@ -1,8 +1,7 @@
 name: Deploy to gh-pages 
 on: 
- workflow_run:
-    workflows: ["Lint Changed Files"]
-    types: [completed]
+ push:
+    branches: main
  workflow_dispatch:
   inputs:
     dry-run:
@@ -17,7 +16,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if:  ( ${{ github.event_name }} == 'workflow_dispatch' || ${{ github.event.workflow_run.conclusion == 'success' }} )
+    # if:  ( ${{ github.event_name }} == 'workflow_dispatch' || ${{ github.event.workflow_run.conclusion == 'success' }} )
     steps:
       - uses: actions/checkout@v3
         with:
@@ -31,4 +30,4 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: mkdocs gh-deploy $(if ${INPUTS_DRYRUN};then echo "-b gh-pages-test --verbose";fi) --force
+      - run: mkdocs gh-deploy --verbose --force

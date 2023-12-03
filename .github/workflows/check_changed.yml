@@ -5,7 +5,7 @@ on:
       - docs/**/*.md
 jobs: 
   getDiff: # Bit messy to check repo out again. But easier than rethinking this.
-    name: Attempts to deploy to Pages verbosely and strict
+    name: Names of changed markdown
     runs-on: ubuntu-latest
     outputs:
       fileList: ${{ steps.diff.outputs.fileList }}
@@ -14,7 +14,11 @@ jobs:
         with:
           fetch-depth: 2 # To get proper history.
       - id: diff 
-        run: echo "fileList=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA **/*.md)" >> "$GITHUB_OUTPUT"
+        run: |
+          shopt -s globstar extglob
+          fileList=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA **/*.md)
+          echo "Changed $fileList"
+          echo "fileList=$fileList" >> "$GITHUB_OUTPUT"
   runChecks:
     needs: getDiff
     uses: ./.github/workflows/checks.yml
