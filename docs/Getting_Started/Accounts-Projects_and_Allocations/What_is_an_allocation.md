@@ -4,8 +4,8 @@ hidden: false
 position: 3
 tags: []
 title: What is an allocation?
-vote_count: 2
-vote_sum: 0
+vote_count: 3
+vote_sum: -1
 zendesk_article_id: 360001385735
 zendesk_section_id: 360000196195
 ---

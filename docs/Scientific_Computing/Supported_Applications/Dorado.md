@@ -67,7 +67,7 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
 #SBATCH --output         slurmout.%j.out
 
 module purge
-module load Dorado/0.4.0
+module load Dorado/0.4.3
 
 dorado download --model dna_r10.4.1_e8.2_400bps_hac@v4.1.0
 
