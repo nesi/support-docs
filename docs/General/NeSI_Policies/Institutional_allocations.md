@@ -39,12 +39,12 @@ from your institution.
 
 If you are a postgraduate student at a NeSI collaborator, your project
 will likely be considered for an Institutional allocation rather than a
-[Merit](../../General/NeSI_Policies/Merit_allocations) or
-[Postgraduate](../../General/NeSI_Policies/Postgraduate_allocations)
+[Merit](../../General/NeSI_Policies/Merit_allocations.md) or
+[Postgraduate](../../General/NeSI_Policies/Postgraduate_allocations.md)
 allocation.
 
 Read more about [how we review
-applications](../../General/NeSI_Policies/How_we_review_applications).
+applications](../../General/NeSI_Policies/How_we_review_applications.md).
 
 To learn more about NeSI Projects or to apply for a new project, please
 read our article [Applying for a NeSI

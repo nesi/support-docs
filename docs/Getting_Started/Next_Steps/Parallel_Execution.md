@@ -37,7 +37,7 @@ are [Multi-Threading(oMP)](#t_multi),
          logical cores.
 
 See [our article on
-hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading)
+hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
 for more information.
 
 ## Multi-threading

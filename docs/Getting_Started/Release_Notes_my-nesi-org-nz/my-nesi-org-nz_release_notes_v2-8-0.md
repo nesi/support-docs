@@ -25,9 +25,9 @@ zendesk_section_id: 360001091155
 ## New and Improved
 
 -   Improved [NeSI Notification
-    Preferences](../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences)
+    Preferences](../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md)
     to be project-specific
 
 -   Improved [allocation renewal
-    requests](../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz)
+    requests](../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)
     by providing more context

@@ -21,7 +21,7 @@ zendesk_section_id: 360000039036
 
 !!! prerequisite See also
      [File permissions and
-     groups](../../Storage/File_Systems_and_Quotas/File_permissions_and_groups)
+     groups](../../Storage/File_Systems_and_Quotas/File_permissions_and_groups.md)
 
 If you move or copy a file or directory from one project directory to
 another, or from somewhere within your home directory to somewhere

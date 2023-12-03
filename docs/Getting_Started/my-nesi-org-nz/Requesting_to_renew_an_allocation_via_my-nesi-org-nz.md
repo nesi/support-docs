@@ -53,7 +53,7 @@ Please be aware that:
     approval by that institution.
 
 See [Project Extensions and New Allocations on Existing
-Projects](../../Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects) for
+Projects](../../Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md) for
 more details.
 
  

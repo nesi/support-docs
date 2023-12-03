@@ -32,7 +32,7 @@ with a **larger** Fair Share score receive a **higher priority** in the
 queue.
 
 A project is given an [**allocation** of compute
-units](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
+units](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
 over a given **period**. An institution also has a percentage **Fair
 Share entitlement** of each machine's deliverable capacity over that
 same period.

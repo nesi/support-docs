@@ -26,7 +26,7 @@ threads that run on separate cores, executing their shares of the total
 workload concurrently. OpenMP is suited for the Mahuika and Māui HPCs as
 each platform has 36 and 40 physical cores per node respectively.  Each
 physical core can handle up to two threads in parallel using
-[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading).
+[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md).
 Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui
 
 The environment variable that controls the number of threads is
@@ -48,7 +48,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 in your SLURM script - although this can sometimes be more complicated,
 e.g., with [TensorFlow on
-CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs).
+CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs.md).
 
 On Mahuika, you will be charged for the number of physical cores that
 you requested - the second logical core on a physical core is free,
@@ -61,7 +61,7 @@ nodes are shared between different SLURM jobs. Following are some
 settings that can help improve scaling and/or make your timings more
 consistent, additional information can be found in our article [Thread
 Placement and Thread
-Affinity](../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity).
+Affinity](../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md).
 
 1\. --hint=nomultithread. Set this in conjunction with srun or sbatch to
 tell SLURM that you don't want to use hyperthreads. Your program will

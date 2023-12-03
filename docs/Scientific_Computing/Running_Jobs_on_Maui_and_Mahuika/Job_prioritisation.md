@@ -40,7 +40,7 @@ jobs, but is limited to one small job per user at a time: no more than
 
 Job priority decreases whenever the project uses more core-hours than
 expected, across all partitions. This [Fair
-Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share)
+Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
 policy means that projects that have consumed many CPU core hours in the
 recent past compared to their expected rate of use (either by submitting
 and running many jobs, or by submitting and running large jobs) will
@@ -97,7 +97,7 @@ they get requeued after a node failure. 
 
 Cluster and partition-specific limits can sometimes prevent jobs from
 starting regardless of their priority score.  For details see the pages
-on [Mahuika](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions) or [Māui.](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions)
+on [Mahuika](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md) or [Māui.](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md)
 
 ## Backfill
 

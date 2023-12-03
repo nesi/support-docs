@@ -22,17 +22,17 @@ zendesk_section_id: 360001150156
 
 ## New and Improved
 
--   Updated [RStudio-on-NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI)
+-   Updated [RStudio-on-NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md)
     to v0.24.0
     -   RStudio server v2022.07.1
     -   Allow usage of NeSI environment modules in RStudio terminal
         (beta)
     -   Allow usage of Slurm commands in RStudio terminal (beta)
 -   Updated [NeSI Virtual
-    Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI)
+    Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md)
     to v2.4.3  
     -   Utilising latest version of
-        [Singularity](../../Scientific_Computing/Supported_Applications/Singularity)  
+        [Singularity](../../Scientific_Computing/Supported_Applications/Singularity.md)  
 
 ## Fixed
 

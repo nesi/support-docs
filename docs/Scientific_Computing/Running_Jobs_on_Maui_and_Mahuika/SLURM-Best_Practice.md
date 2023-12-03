@@ -55,8 +55,8 @@ etc).
 
 If you request more memory (RAM) than you need for your job, it [will
 wait longer in the queue and will be more expensive when it
-runs](../../General/FAQs/Why_is_my_job_taking_a_long_time_to_start). On
-the other hand, if you don't request enough memory, the job may be
+runs](../../General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md).
+On the other hand, if you don't request enough memory, the job may be
 killed for attempting to exceed its allocated memory limits.
 
 We recommend that you request a little more RAM, but not much more, than
@@ -65,7 +65,7 @@ your program will need at peak memory usage.
 We also recommend using `--mem` instead of `--mem-per-cpu` in most
 cases. There are a few kinds of jobs for which `--mem-per-cpu` is more
 suitable. See [our article on how to request
-memory](../../General/FAQs/How_do_I_request_memory) for more
+memory](../../General/FAQs/How_do_I_request_memory.md) for more
 information.
 
 ### Parallelism
@@ -89,7 +89,7 @@ job array in a single command)
 
 A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation
-[here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share).
+[here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md).
 
 ### Cross machine submission
 

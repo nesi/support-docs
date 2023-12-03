@@ -27,9 +27,9 @@ zendesk_section_id: 360000034315
      -   Have an [active account and
          project](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects).
      -   Set up your [NeSI Account
-         Password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password).
+         Password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
      -   Set up [Two-Factor
-         Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication).
+         Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
 
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.
@@ -49,7 +49,7 @@ operating system and level of experience.
     accessed through the Jupyter Launcher.  
 !!! prerequisite What next?
      -   More info on [Jupyter
-         Terminal](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI#jupyter-term)
+         Terminal](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md#jupyter-term)
      -   Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
 ## Linux or Mac OS
@@ -62,7 +62,7 @@ operating system and level of experience.
     Congratulations! You are ready to move to the next step.
 !!! prerequisite What next?
      -   Setting up your [Default
-         Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup)
+         Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 ## Windows
 
@@ -83,11 +83,11 @@ different options, listed in order of preference.
     Subsystem for Linux (WSL) first.
 !!! prerequisite What next?
      -   Enabling
-         [WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL)
+         [WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
      -   Setting up the [Ubuntu
-         Terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows)
+         Terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md)
      -   Setting up
-         [X-Forwarding](../../Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows)
+         [X-Forwarding](../../Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
 
 -   ## MobaXterm
 
@@ -104,7 +104,7 @@ different options, listed in order of preference.
     institution's IT team supports MobaXTerm.
 !!! prerequisite What next?
      -   Setting up
-         [MobaXterm](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows)
+         [MobaXterm](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
 
 -   ## Using a Virtual Machine
 
@@ -137,7 +137,7 @@ different options, listed in order of preference.
     for new users.
 !!! prerequisite What next?
      -   Setting up
-         [WinSCP](../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows)
+         [WinSCP](../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
 
 -   ## Git Bash
 
@@ -155,7 +155,7 @@ different options, listed in order of preference.
     All Windows computers have PowerShell installed, however it will
     only be useful to you if Windows Subsystem for Linux (WSL) is also
     enabled, instructions
-    [here](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL).
+    [here](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md).
 
     Like Git Bash, PowerShell is perfectly adequate for testing your
     login or setting up your password, but lacks many of the features of

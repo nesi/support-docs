@@ -32,7 +32,7 @@ zendesk_section_id: 360000040076
 <hr />
 <p>For when only <span>one CPU is required</span>, generally as part of
 an <a
-href="../../Getting_Started/Next_Steps/Parallel_Execution#t_array">job
+href="../../Getting_Started/Next_Steps/Parallel_Execution.md#t_array">job
 array</a>.</p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>

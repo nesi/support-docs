@@ -206,7 +206,7 @@ CPU*s.
 
 The only way to get the full context, is to compare walltime performance
 between jobs at different scale. See [Job
-Scaling](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions)
+Scaling](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md)
 for more details.
 
 ### Example

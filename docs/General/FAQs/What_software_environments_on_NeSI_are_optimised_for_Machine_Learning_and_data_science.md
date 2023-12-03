@@ -29,21 +29,21 @@ use. 
 Examples of software environments on NeSI optimised for data science
 include:
 
--   [R](../../Scientific_Computing/Supported_Applications/R) and [Python](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs) users
+-   [R](../../Scientific_Computing/Supported_Applications/R.md) and [Python](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md) users
     can get right into using and exploring the several built-in packages
     or create custom code.
 
 -   [Jupyter on NeSI
-    ](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI)is
+    ](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)is
     particularly well suited to artificial intelligence and machine
     learning workloads. [R
-    Studio](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI)
+    Studio](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md)
     and/or Conda can be accessed via Jupyter.
 
 -   Commonly used data science environments and libraries such as
-    [Keras](../../Scientific_Computing/Supported_Applications/Keras),
-    [LambdaStack](../../Scientific_Computing/Supported_Applications/Lambda Stack),
-    [Tensorflow](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs)
+    [Keras](../../Scientific_Computing/Supported_Applications/Keras.md),
+    [LambdaStack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md),
+    [Tensorflow](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
     and [Conda](https://docs.conda.io/en/latest/) are available to
     create comprehensive workflows.
 
@@ -60,7 +60,7 @@ more broad terms such as "machine learning". 
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific
 application
-software](../../General/NeSI_Policies/NeSI_Application_Support_Model). 
+software](../../General/NeSI_Policies/NeSI_Application_Support_Model.md). 
 
 If you need help installing your software or would like to discuss your
 software needs with us, [contact NeSI
