@@ -1,8 +1,8 @@
 ---
 created_at: '2022-07-26T21:43:02Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: Introduction to computing on the NeSI HPC
 vote_count: 0
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 5203123172239
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

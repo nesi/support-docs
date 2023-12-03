@@ -1,8 +1,8 @@
 ---
 created_at: '2023-07-05T23:50:46Z'
 hidden: false
-label_names: []
 position: 2
+tags: []
 title: Subscriber Monthly Usage Reports
 vote_count: 0
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 7348925662223
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -42,7 +42,7 @@ training events that would be of interest to your research community.
 
  
 
-### How to read your Subscriber Usage Report
+## How to read your Subscriber Usage Report
 
 A new tab is added to the report for each month, making it easy to view,
 reference, and compare recent and past usage.

@@ -1,11 +1,11 @@
 ---
 created_at: '2015-10-15T02:15:46Z'
 hidden: false
-label_names:
+position: 24
+tags:
 - mahuika
 - application
 - engineering
-position: 24
 title: ANSYS
 vote_count: 3
 vote_sum: 3
@@ -17,7 +17,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -55,23 +55,25 @@ preferences (provided you have X11 forwarding set up), or by running
 either of the following (ANSYS module must be loaded first using
 `module load ANSYS`).
 
-    prefer_research_license
+``` sl
+prefer_research_license
+```
 
-    prefer_teaching_license
-!!! info Note
->
-> License preferences are individually tracked by *each version of
-> ANSYS.* Make sure you set preferences using the same version as in
-> your script.
+``` sl
+prefer_teaching_license
+```
+!!! prerequisite Note
+     License preferences are individually tracked by *each version of
+     ANSYS.* Make sure you set preferences using the same version as in
+     your script.
 
-# Journal files
+## Journal files
 
-Some ANSYS applications take a 'journal' text file as input. It is
-of<span class="dictionary-of-numbers">ten useful to create </span>this
-journal file in your SLURM script (tidiness, submitting jobs
-programmatically, etc). This can be
-d<span class="dictionary-of-numbers">one by using </span>`cat` to make a
-file from a '[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
+Some ANSYS applications take a 'journal' text file as input. It is often
+useful to create this journal file in your SLURM script (tidiness,
+submitting jobs programmatically, etc). This can be done by using `cat`
+to make a file from a
+'[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
 
 Below is an example of this from a fluent script.
 
@@ -102,8 +104,8 @@ rm ${JOURNAL_FILE}
 
 `JOURNAL_FILE` is a variable holding the name of a file, the next line
 `cat` creates the file then writes a block of text into it. The block of
-text writ<span class="dictionary-of-numbers">ten is everything between
-an </span>arbitrary string (in this case `EOF`) and its next occurrence.
+text written is everything between an arbitrary string (in this case
+`EOF`) and its next occurrence.
 
 In this case (assuming it is the first run of the array and the
 jobid=1234567), the file  `fluent_1234567.in` will be created:
@@ -128,46 +130,27 @@ then deleted `rm fluent_1234567.in`
 
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
-!!! info Note
->
-> Comments can be added to journal files using a `;`. For example:
->
->     ; This is a comment
+!!! prerequisite Note
+     Comments can be added to journal files using a `;`. For example:
+     ``` sl
+     ; This is a comment
+     ```
 
-# Fluent
+## Fluent
 
 [Some great documentation on journal
 files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html)
 
 `fluent -help` for a list of commands.
 
-Must have <span class="dictionary-of-numbers">one of these
-flags</span>. 
+Must have one of these flags. 
 
-<table>
-<tbody>
-<tr class="odd">
-<td style="width: 105px"><code>2d</code></td>
-<td style="width: 271px"><span class="dictionary-of-numbers">2D
-solver</span>, single point precision.</td>
-</tr>
-<tr class="even">
-<td style="width: 105px"><code>3d</code></td>
-<td style="width: 271px"><span class="dictionary-of-numbers">3D
-solver</span>, single point precision.</td>
-</tr>
-<tr class="odd">
-<td style="width: 105px"><code>2ddp</code></td>
-<td style="width: 271px"><span class="dictionary-of-numbers">2D
-solver</span>, double point precision.</td>
-</tr>
-<tr class="even">
-<td style="width: 105px"><code>3ddp</code></td>
-<td style="width: 271px"><span class="dictionary-of-numbers">3D
-solver</span>, double point precision.</td>
-</tr>
-</tbody>
-</table>
+|        |                                    |
+|--------|------------------------------------|
+| `2d`   | 2D solver, single point precision. |
+| `3d`   | 3D solver, single point precision. |
+| `2ddp` | 2D solver, double point precision. |
+| `3ddp` | 3D solver, double point precision. |
 
  
 
@@ -180,9 +163,8 @@ solver</span>, double point precision.</td>
 <tr class="odd">
 <td><h2 id="serial-example">Serial Example</h2>
 <hr />
-<p>Single <em>process</em> with a single <em>thread</em> <span
-class="dictionary-of-numbers">(2 threads if hyperthreading
-</span>enabled).</p>
+<p>Single <em>process</em> with a single <em>thread</em> <span>(2
+threads if hyperthreading </span>enabled).</p>
 <p>Usually submitted as part of an array, as in the case of parameter
 sweeps.</p></td>
 <td><div class="sourceCode" id="cb1"><pre
@@ -205,14 +187,13 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 id="distributed-memory-example">Distributed Memory Example</h2>
 <hr />
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
-<p>Not limited to <span class="dictionary-of-numbers">one
-node</span>.<br />
-Model will be segmented into <code>-t</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+<p>Not limited to <span>one node</span>.<br />
+Model will be segmented into <code class="sl">-t</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead. Jobs can be limited to a single node by
-adding  <code style="font-size: 14px;">--nodes=1</code> however this
-will increase your time in the queue as contiguous cpu's are harder to
+adding  <code class="sl">--nodes=1</code> however this will increase
+your time in the queue as contiguous cpu's are harder to
 schedule.</p></td>
 <td><div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
@@ -233,40 +214,44 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tr>
 </tbody>
 </table>
-!!! info Useful Links
->
-> -   [All command line
->     options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_gs/flu_ug_sec_startup_option.html)
+!!! prerequisite Useful Links
+     -   [All command line
+         options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_gs/flu_ug_sec_startup_option.html)
 
-## Interactive
+### Interactive
 
 While it will always be more time and resource efficient using a slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
 the login node, otherwise use of an [slurm interactive
-session](https://support.nesi.org.nz/hc/en-gb/articles/360001316356) is
-recommended. 
+session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md)
+is recommended. 
 
 For example.
 
-    salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time 04:00:00
+``` sl
+salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time 04:00:00
+```
 
 Will return;
 
-      salloc: Pending job allocation 10270935
-      salloc: job 10270935 queued and waiting for resources
-      salloc: job 10270935 has been allocated resources
-      salloc: Granted job allocation 10270935
-      salloc: Waiting for resource configuration
-      salloc: Nodes wbn[053-056] are ready for job
-!!! info Note
->
-> Include all the commands you would usually use in your slurm header
-> here.
+``` sl
+  salloc: Pending job allocation 10270935
+  salloc: job 10270935 queued and waiting for resources
+  salloc: job 10270935 has been allocated resources
+  salloc: Granted job allocation 10270935
+  salloc: Waiting for resource configuration
+  salloc: Nodes wbn[053-056] are ready for job
+```
+!!! prerequisite Note
+     Include all the commands you would usually use in your slurm header
+     here.
 
 Once you have your allocation, run the command
 
-    fluent
+``` sl
+fluent
+```
 
 You will then be presented with the launcher, make any necessary changes
 then click launch.
@@ -275,47 +260,50 @@ If everything has set up correctly you should see a printout of the
 hostnames with the resources requested. Note: 'host' should be
 mahuika0\[1-2\].
 
-    n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
-     n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
-     n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
-     n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
-     host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
-!!! info Important
->
-> Closing the fluent GUI will not end the SLURM interactive session. Use
-> `exit` or `scancel `*`jobid`* when finished, else you will continue to
-> 'use' the requested CPUs.
+``` sl
+n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
+ n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
+ n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
+ n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
+ host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
+```
+!!! prerequisite Important
+     Closing the fluent GUI will not end the SLURM interactive session. Use
+     `exit` or `scancel `*`jobid`* when finished, else you will continue to
+     'use' the requested CPUs.
 
-## Checkpointing
+### Checkpointing
 
 It is best practice when running long jobs to enable autosaves.
 
-    /file/autosave/data-frequency <n>
+``` sl
+/file/autosave/data-frequency <n>
+```
 
 Where `<n>` is the number of iterations to run before creating a save.
 
 In order to save disk space you may also want to include the line 
 
-    /file/auto-save/retain-most-recent-files yes
-
-## Interrupting
+### Interrupting
 
 Including the following code at the top of your journal file will allow
 you to interrupt the job.
 
-    (set! checkpoint/exit-filename "./exit-fluent")
+``` sl
+(set! checkpoint/exit-filename "./exit-fluent")
+```
 
 Creating a file named `exit-fluent` in the run directory will cause the
 job to save the current state and exit (`touch exit-fluent`). This will
 also write a new journal file called `restart.inp` that restarts the
 simulation at that point.
 
-## User Defined Functions
+### User Defined Functions
 
 When compiling code, make sure to `module load gimkl` in addition to the
 ANSYS module.
 
-### Case Definition
+#### Case Definition
 
 When setting up the case file on your local machine, make sure you
 select 'Compiled UDF', and select the \`.c\` source file. You can also
@@ -339,7 +327,7 @@ interpreted version.
 
 \`udf funcName::libudf\` is funcName as compiled in library \`libudf\`
 
-### Compilation
+#### Compilation
 
 When running in a new environment for the first time (local machine,
 Mahuika, Māui), the C code will have to first be compiled. The compiled
@@ -357,33 +345,41 @@ If for some reason the UDF does not compile automatically, you can
 manually build it with the following command in your fluent journal file
 (should go before loading model).
 
-    define/user-defined/compiled-functions compile "<libname>" yes "<source_file_1>" "<source_file_n>" "<header_file_1>" "<header_file_n>" "" ""
+``` sl
+define/user-defined/compiled-functions compile "<libname>" yes "<source_file_1>" "<source_file_n>" "<header_file_1>" "<header_file_n>" "" ""
+```
 
 Note, the command must end with two `""` to indicate there are no more
 files to add. 
 
 As an example 
 
-    define/user-defined/compiled-functions compile "libudf" yes "myUDF.c" "" ""
+``` sl
+define/user-defined/compiled-functions compile "libudf" yes "myUDF.c" "" ""
+```
 
 Will compile the code `myUDF.c` into a library named `libudf`
 
-### Loading File
+#### Loading File
 
-    define/user-defined/compiled-functions load libudf
+``` sl
+define/user-defined/compiled-functions load libudf
+```
 
 Will load the library `libudf` to be accessible by ANSYS.
 
-### UDF errors
+#### UDF errors
 
-    Error: chip-exec: function
+``` sl
+Error: chip-exec: function
+```
 
 might be using interpreted func
 
 solution specify as relative path, or unload compiled lib before saving
 .cas file.
 
-# CFX
+## CFX
 
 `cfx5solve -help` for a list of commands.
 
@@ -396,9 +392,8 @@ solution specify as relative path, or unload compiled lib before saving
 <tr class="odd">
 <td><h2 id="serial-example-1">Serial Example</h2>
 <hr />
-<p>Single <em>process</em> with a single <em>thread</em> <span
-class="dictionary-of-numbers">(2 threads if hyperthreading
-</span>enabled).</p>
+<p>Single <em>process</em> with a single <em>thread</em> <span>(2
+threads if hyperthreading </span>enabled).</p>
 <p>Usually submitted as part of an array, as in the case of parameter
 sweeps.</p></td>
 <td><div class="sourceCode" id="cb1"><pre
@@ -420,16 +415,14 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 id="distributed-memory-example-1">Distributed Memory Example</h2>
 <hr />
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
-<p>Not limited to <span class="dictionary-of-numbers">one
-node</span>.<br />
-Model will be segmented into <code>-np</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+<p>Not limited to <span>one node</span>.<br />
+Model will be segmented into <code class="sl">-np</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead<br />
 .Jobs can be limited to a single node by adding  <code
-style="font-size: 14px;">--nodes=1</code> however this will increase
-your time in the queue as contiguous cpu's are harder to
-schedule.</p></td>
+class="sl">--nodes=1</code> however this will increase your time in the
+queue as contiguous cpu's are harder to schedule.</p></td>
 <td><div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -449,26 +442,25 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 </tr>
 </tbody>
 </table>
-!!! info Tip
->
-> Initial values path specified in '.def' file can be overridden using
-> the `-ini <initial-file-path>` flag.
+!!! prerequisite Tip
+     Initial values path specified in '.def' file can be overridden using
+     the `-ini <initial-file-path>` flag.
 
-## CFX-Post
+### CFX-Post
 
 Even when running headless (without a GUI) CFX-Post requires connection
 to a graphical output. For some cases it may be suitable running
-CFX-Post on the login node and using your
-X<span class="dictionary-of-numbers">-11 display</span>, but for larger
-batch compute jobs you will need to make use of a dummy
-X<span class="dictionary-of-numbers">-11 server</span>.
+CFX-Post on the login node and using your X-11 display, but for larger
+batch compute jobs you will need to make use of a dummy X-11 server.
 
 This is as simple as prepending your command with the X Virtual Frame
 Buffer command.
 
-    xvfb-run cfx5post input.cse
+``` sl
+xvfb-run cfx5post input.cse
+```
 
-# Mechanical APDL
+## Mechanical APDL
 
 <table>
 <colgroup>
@@ -479,9 +471,8 @@ Buffer command.
 <tr class="odd">
 <td><h2 id="serial-example-2">Serial Example</h2>
 <hr />
-<p>Single <em>process</em> with a single <em>thread</em> <span
-class="dictionary-of-numbers">(2 threads if hyperthreading
-</span>enabled).</p>
+<p>Single <em>process</em> with a single <em>thread</em> <span>(2
+threads if hyperthreading </span>enabled).</p>
 <p>Usually submitted as part of an array, as in the case of parameter
 sweeps.</p></td>
 <td><div class="sourceCode" id="cb1"><pre
@@ -502,8 +493,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <hr />
 <p>Single <em>process</em> multiple <em>threads.</em></p>
 <p>All threads must be on the same node, limiting scalability.<br />
-Number of threads is set by <code>-np</code> and should be equal
-to <code>--cpus-per-task</code>.</p>
+Number of threads is set by <code class="sl">-np</code> and should be
+equal to <code class="sl">--cpus-per-task</code>.</p>
 <p><br />
 Not recommended if using more than 8 cores (16 CPUs if hyperthreading
 enabled).</p></td>
@@ -526,15 +517,14 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 id="distributed-memory-example-2">Distributed Memory Example</h2>
 <hr />
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
-<p>Not limited to <span class="dictionary-of-numbers">one
-node</span>.<br />
-Model will be segmented into <code>-np</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+<p>Not limited to <span>one node</span>.<br />
+Model will be segmented into <code class="sl">-np</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead<br />
 .Jobs can be limited to a single node by adding  <code
-style="font-size: 14px;">--nodes=1</code> however this will increase
-your time in the queue as contiguous cpu's are harder to schedule.</p>
+class="sl">--nodes=1</code> however this will increase your time in the
+queue as contiguous cpu's are harder to schedule.</p>
 <p><strong>Distributed Memory Parallel is currently not supported on
 Māui.</strong></p></td>
 <td><div class="sourceCode" id="cb3"><pre
@@ -565,84 +555,36 @@ single <em>thread</em></p></td>
 
 Not all MAPDL solvers work using distributed memory. 
 
-<table style="height: 214px;" width="758">
-<tbody>
-<tr class="odd">
-<td style="width: 249.132px">Sparse</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="even">
-<td style="width: 249.132px">PCG</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="odd">
-<td style="width: 249.132px">ICCG</td>
-<td style="width: 249.132px">✖</td>
-</tr>
-<tr class="even">
-<td style="width: 249.132px">JCG</td>
-<td style="width: 249.132px">✖</td>
-</tr>
-<tr class="odd">
-<td style="width: 249.132px">QMR</td>
-<td style="width: 249.132px">✖</td>
-</tr>
-<tr class="even">
-<td style="width: 249.132px">Block Lanczos eigensolver</td>
-<td style="width: 249.132px">✖</td>
-</tr>
-<tr class="odd">
-<td style="width: 249.132px">PCG Lanczos eigensolver</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="even">
-<td style="width: 249.132px">Supernode eigensolver</td>
-<td style="width: 249.132px">✖</td>
-</tr>
-<tr class="odd">
-<td style="width: 249.132px">Subspace eigensolver</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="even">
-<td style="width: 249.132px">Unsymmetric eigensolver</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="odd">
-<td style="width: 249.132px">Damped eigensolver</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="even">
-<td style="width: 249.132px">QRDAMP eigensolver</td>
-<td style="width: 249.132px">✖</td>
-</tr>
-<tr class="odd">
-<td style="width: 249.132px">Element formulation</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="even">
-<td style="width: 249.132px">Results calculation</td>
-<td style="width: 249.132px">✔</td>
-</tr>
-<tr class="odd">
-<td style="width: 249.132px">Pre/Postprocessing</td>
-<td style="width: 249.132px">✖</td>
-</tr>
-</tbody>
-</table>
-!!! info Useful Links
->
-> -   [All command line
->     options.](https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/ans_ope/Hlp_G_OPE3_1.html)
-> -   [All MAPDL
->     commands.](https://www.sharcnet.ca/Software/Fluent14/help/ans_cmd/Hlp_C_CmdTOC.html)
-> -   [Debug
->     options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_prog/S7K4r190lcd.html)
-> -   [MAPDL Parallel Processing
->     Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
+|                           |     |
+|---------------------------|-----|
+| Sparse                    | ✔   |
+| PCG                       | ✔   |
+| ICCG                      | ✖   |
+| JCG                       | ✖   |
+| QMR                       | ✖   |
+| Block Lanczos eigensolver | ✖   |
+| PCG Lanczos eigensolver   | ✔   |
+| Supernode eigensolver     | ✖   |
+| Subspace eigensolver      | ✔   |
+| Unsymmetric eigensolver   | ✔   |
+| Damped eigensolver        | ✔   |
+| QRDAMP eigensolver        | ✖   |
+| Element formulation       | ✔   |
+| Results calculation       | ✔   |
+| Pre/Postprocessing        | ✖   |
+!!! prerequisite Useful Links
+     -   [All command line
+         options.](https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/ans_ope/Hlp_G_OPE3_1.html)
+     -   [All MAPDL
+         commands.](https://www.sharcnet.ca/Software/Fluent14/help/ans_cmd/Hlp_C_CmdTOC.html)
+     -   [Debug
+         options.](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_prog/S7K4r190lcd.html)
+     -   [MAPDL Parallel Processing
+         Guide](https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/ans_dan/dantoc.html)
 
-# LS-DYNA
+## LS-DYNA
 
-## Fluid-Structure Example
+### Fluid-Structure Example
 
 ``` bash
 #!/bin/bash -e
@@ -658,7 +600,7 @@ input=3cars_shell2_150ms.k
 lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
 ```
 
-# Multiphysics
+## Multiphysics
 
 ### Example - MAPDL Fluent Interaction
 
@@ -744,7 +686,7 @@ cd ..
 wait
 ```
 
-# FENSAP-ICE
+## FENSAP-ICE
 
 FENSAP-ICE is a fully integrated ice-accretion and aerodynamics
 simulator.
@@ -754,18 +696,17 @@ Currently FENSAP-ICE is only available on Mahuika and in ANSYS 19.2.
 The following FENSAP solvers are compatible with MPI
 
 -   FENSAP
--   DROP<span class="dictionary-of-numbers">3D</span>
--   ICE<span class="dictionary-of-numbers">3D</span>
--   C<span class="dictionary-of-numbers">3D</span>
+-   DROP3D
+-   ICE3D
+-   C3D
 -   OptiGrid
 
-## Case setup 
+### Case setup 
 
-## With GUI
+### With GUI
 
-If you have set up X<span class="dictionary-of-numbers">-11
-forwarding</span>, you may launch the FENSAP ice using the command
-`fensapiceGUI` from within your FENSAP project directory. 
+If you have set up X-11 forwarding, you may launch the FENSAP ice using
+the command `fensapiceGUI` from within your FENSAP project directory. 
 
 <table style="height: 44px;" width="590">
 <colgroup>
@@ -777,13 +718,13 @@ forwarding</span>, you may launch the FENSAP ice using the command
 <td style="width: 291px"><p>1. Launch the run and select the desired
 number of (physical) CPUs.</p>
 <p>2. Open the 'configure' panel.</p></td>
-<td style="width: 292px"><img src="../../assets/images/FENSAP_GUI1.png"
+<td style="width: 292px"><img src="../../assets/images/ANSYS.png"
 alt="FENSAP_GUI1.png" /></td>
 </tr>
 <tr class="even">
 <td style="width: 291px"><p>3. Under 'Additional mpirun parameters' add
 your inline SLURM options. You should include at least.</p>
-<pre><code>--job-name my_job
+<pre class="sl"><code>--job-name my_job
 --mem-per-cpu memory
 --time time
 --licenses required licences
@@ -792,7 +733,7 @@ your inline SLURM options. You should include at least.</p>
 step</em>.</p>
 <p>4. Start the job. You can track progress under the 'log'
 tab.</p></td>
-<td style="width: 292px"><img src="../../assets/images/FENSAP_GUI2.png"
+<td style="width: 292px"><img src="../../assets/images/ANSYS_0.png"
 alt="FENSAP_GUI2.png" /></td>
 </tr>
 </tbody>
@@ -801,22 +742,20 @@ alt="FENSAP_GUI2.png" /></td>
 You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
 opening the GUI within the project folder.
-!!! info Note
->
-> Submitting your job through the use of the GUI has disadvantages and
-> may not be suitable in all cases.
->
-> -   Closing the session or losing connection will prevent the next
->     stage of the job starting (currently executing step will continue
->     to run).  It is a good idea to launch the GUI inside a tmux/screen
->     session then send the process to background to avoid this.
-> -   Each individual step will be launched with the same parameters
->     given in the GUI.
-> -   By default 'restart' is set to disabled. If you wish to continue a
->     job from a given step/shot you must select so in the dropdown
->     menu.
+!!! prerequisite Note
+     Submitting your job through the use of the GUI has disadvantages and
+     may not be suitable in all cases.
+     -   Closing the session or losing connection will prevent the next
+         stage of the job starting (currently executing step will continue
+         to run).  It is a good idea to launch the GUI inside a tmux/screen
+         session then send the process to background to avoid this.
+     -   Each individual step will be launched with the same parameters
+         given in the GUI.
+     -   By default 'restart' is set to disabled. If you wish to continue a
+         job from a given step/shot you must select so in the dropdown
+         menu.
 
-## Using fensap<span class="dictionary-of-numbers">2slurm</span>
+### Using fensap2slurm
 
 Set up your model as you would normally, except rather than starting the
 run just click 'save'. You *do not* need to set number of CPUs or MPI
@@ -834,74 +773,85 @@ requirements for the remainder.
 The workflow can then by running `.solvercmd` e.g `bash .solvercmd`.
 Progress can be tracked through the GUI as usual. 
 
-# ANSYS-Electromagnetic
+## ANSYS-Electromagnetic
 
 ANSYS-EM jobs can be submitted through a slurm script or by [interactive
-session](https://support.nesi.org.nz/hc/en-gb/articles/360001316356).
+session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
 
-## RSM
+### RSM
 
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
-manager) running on all nodes. The command `startRSM` has been
-writ<span class="dictionary-of-numbers">ten to facilitate this
-</span>and needs to be run *after* starting the slurm job but *before*
-running edt. Please contact NeSI support if the command is not working
-for you.
+manager) running on all nodes. The command `startRSM` has been written
+to facilitate this and needs to be run *after* starting the slurm job
+but *before* running edt. Please contact NeSI support if the command is
+not working for you.
 
-## Example Slurm Script
+### Example Slurm Script
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --time                04:00:00
-    #SBATCH --nodes               2
-    #SBATCH --ntasks-per-node     36
-    #SBATCH --mem-per-cpu         1500
+#SBATCH --time                04:00:00
+#SBATCH --nodes               2
+#SBATCH --ntasks-per-node     36
+#SBATCH --mem-per-cpu         1500
 
-    module load ANSYS/19.1
-    INPUTNAME="Sim1.aedt"
-    startRSM
+module load ANSYS/19.1
+INPUTNAME="Sim1.aedt"
+startRSM
 
-    ansysedt -ng -batchsolve -distributed -machinelistfile=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool" $INPUTNAME
+ansysedt -ng -batchsolve -distributed -machinelistfile=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool" $INPUTNAME
+```
 
 All batch options can be listed using
 
-    ansysedt -batchoptionhelp
+``` sl
+ansysedt -batchoptionhelp
+```
 
 (Note, this requires a working X-server) 
-!!! info Note
->
-> Each batch option must have it's own flag, e.g.
->
->     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
+!!! prerequisite Note
+     Each batch option must have it's own flag, e.g.
+     ``` sl
+     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
+     ```
 
-## Interactive
+### Interactive
 
 First start an interactive slurm session.
 
-    salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1500
+``` sl
+salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1500
+```
 
 Then load your desired version of ANSYS
 
-    module load ANSYS/19.2
+``` sl
+module load ANSYS/19.2
+```
 
 Run the script to start startRSM, this will start ANSYS remote solver on
 your requested nodes, and set the environment variable `MACHINELIST`.
 
-    startRSM
+``` sl
+startRSM
+```
 
 Then launch ansys edt with the following flags
 
-    ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
+``` sl
+ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
+```
 
-# Best Practices
+## Best Practices
 
-## GPU acceleration support
+### GPU acceleration support
 
 GPUs can be slow for smaller jobs because it takes time to transfer data
 from the main memory to the GPU memory. We therefore suggest that you
 only use them for larger jobs, unless benchmarking reveals otherwise.
 
-## Interactive use
+### Interactive use
 
 It is best to use journal files *etc* to automate ANSYS so that you can
 submit batch jobs, but when interactivity is really needed alongside
@@ -919,10 +869,9 @@ As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
 --mail-type=BEGIN and --mail-user= options.
 
-## Hyperthreading
+### Hyperthreading
 
 Utilising hyperthreading (ie: removing the "--hint=nomultithread" sbatch
 directive and doubling the number of tasks) will give a small speedup on
-most jobs with less than <span class="dictionary-of-numbers">8
-cores</span>, but also doubles the number of `aa_r_hpc` license tokens
-required.
+most jobs with less than 8 cores, but also doubles the number of
+`aa_r_hpc` license tokens required.

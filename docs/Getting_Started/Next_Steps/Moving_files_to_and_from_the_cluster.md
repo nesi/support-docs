@@ -1,7 +1,8 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
 hidden: false
-label_names:
+position: 2
+tags:
 - scp
 - transfer
 - copying
@@ -11,7 +12,6 @@ label_names:
 - cp
 - move
 - moving
-position: 2
 title: Moving files to and from the cluster
 vote_count: 11
 vote_sum: 3
@@ -23,44 +23,74 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
->
-> -   Have an [active account and
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-> -   Have a [SSH connection to a NeSI
->     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360001016335),
->     and [set up as
->     recommended.](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
+!!! prerequisite Requirements
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
 Find more information on the different types of directories
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
+[here](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
-# Standard Terminal
+ 
+
+## Using the Jupyter interface
+
+ 
+
+Many users have found the [Jupyter
+interface](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)
+very useful for running code on NeSI. The Jupyter interface only
+requires a web browser; the instructions are same whether your are
+connecting from a Windows, Mac or a Linux computer.
+
+To upload a file, click on the 
+
+![](../../assets/images/Moving_files_to_and_from_the_cluster.png)
+
+button, near the top left and generally under the Run button.
+
+To download a file, navigate the file browser on the left and
+right-click on the file to see the menu below,
+
+![](../../assets/images/Moving_files_to_and_from_the_cluster_0.png)
+
+The Download button is at the bottom.
+
+ 
+
+ 
+
+## Standard Terminal
+
+**Requirements**: have SSH [configured as
+recommended](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
 
 In a local terminal the following commands can be used to:
 
 Move a file from your local machine to Mahuika.
 
-    scp <path/filename> mahuika:<path/filename>
+``` sl
+scp <path/filename> mahuika:<path/filename>
+```
 
 Move a file from Mahuika to your local machine.
 
-    scp mahuika:<path/filename> <path/filename>
-!!! info Note
->
-> -   This will only work if you have set up aliases as described in
->     [Terminal
->     Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
-> -   As the terms 'maui' and 'mahuika' are defined locally, the above
->     commands *only works when using a local terminal* (i.e. not on
->     Mahuika).
-> -   If you are using Windows subsystem, the root paths are different
->     as shown by Windows. e.g. `C:` is located at `/mnt/c/`
+``` sl
+scp mahuika:<path/filename> <path/filename>
+```
+!!! prerequisite Note
+     -   This will only work if you have set up aliases as described in
+         [Terminal
+         Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
+     -   As the terms 'maui' and 'mahuika' are defined locally, the above
+         commands *only works when using a local terminal* (i.e. not on
+         Mahuika).
+     -   If you are using Windows subsystem, the root paths are different
+         as shown by Windows. e.g. `C:` is located at `/mnt/c/`
 
 `scp` stands for Secure CoPy and operates in a similar way to regular cp
 with the source file as the left term and destination on the right.
@@ -69,12 +99,12 @@ These commands make use of *multiplexing, *this means that if you
 already have a connection to the cluster you will not be prompted for
 your password.
 
-## File Managers 
+### File Managers 
 
 Most file managers can be used to connect to a remote directory simply
 by typing in the address bar (provided your have an active connection to
 the cluster and your ssh config file is set up as described
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
+[here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
 to with `sftp://mahuika`. (ctrl + L opens address bar)
@@ -83,48 +113,50 @@ This does not work for File Explorer (Windows default)
 
 This does not work for Finder (Mac default)
 
-![mceclip0.png](../../assets/images/mceclip0.png)
+![mceclip0.png](../../assets/images/Moving_files_to_and_from_the_cluster_1.png)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
-on [SSHFS](https://support.nesi.org.nz/hc/en-gb/articles/360000621135).
+on [SSHFS](../../General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md).
 
-# MobaXterm
+## MobaXterm
 
 Clicking the "*Scp*" tab (located on the left-hand side of the MobaXTerm
 window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/2019-01-07_SCP_in_MobaXTerm.png)
+![2019-01-07\_SCP\_in\_MobaXTerm.png](../../assets/images/Moving_files_to_and_from_the_cluster_2.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided
-[WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575) is
-enabled).
+[WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
+is enabled).
 
-# WinSCP
+## WinSCP
 
 As WinSCP uses multiple tunnels for file transfer you will be required
 to authenticate again on your first file operation of the session. The
 second prompt for your 2FA can be skipped, just the same as with login
 authentication.
 
-# Globus
+## Globus
 
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.  
 You can find more details on its use on our [Globus support
-page](https://support.nesi.org.nz/hc/en-gb/articles/4405623380751-Data-Transfer-using-Globus-V5).
+page](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md).
 
-# Rclone
+## Rclone
 
 Rclone is available for those that need to transfer data from cloud
 storage services like Google drive or OneDrive.
 
 The basic command syntax of Rclone:
 
-    rclone subcommand options source:path dest:path
+``` sl
+rclone subcommand options source:path dest:path
+```
 
 The most frequently used Rclone subcommands:
 
@@ -157,18 +189,22 @@ The most frequently used Rclone subcommands:
 A more extensive list can be found on the the [Rclone
 documentation](https://rclone.org/docs).
 
-# Rsync
+## Rsync
 
 Rsync is an utility that provides fast incremental file transfer and
 efficient file synchronization between a computer and a storage disk.  
 The basic command syntax of:  
 
-    rsync -options source target
+``` sl
+rsync -options source target
+```
 
 If the data source or target location is a remote site, it is defined
 with syntax:  
 
-    userame@server:/path/in/server
+``` sl
+userame@server:/path/in/server
+```
 
 The most frequently used Rsync options:
 

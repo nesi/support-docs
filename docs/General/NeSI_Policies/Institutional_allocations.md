@@ -1,10 +1,10 @@
 ---
 created_at: '2018-05-01T23:18:39Z'
 hidden: false
-label_names:
+position: 8
+tags:
 - info
 - assessment
-position: 8
 title: Institutional allocations
 vote_count: 0
 vote_sum: 0
@@ -16,7 +16,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -39,12 +39,12 @@ from your institution.
 
 If you are a postgraduate student at a NeSI collaborator, your project
 will likely be considered for an Institutional allocation rather than a
-[Merit](https://support.nesi.org.nz/hc/en-gb/articles/360000175635) or
-[Postgraduate](https://support.nesi.org.nz/hc/en-gb/articles/360000175695)
+[Merit](../../General/NeSI_Policies/Merit_allocations.md) or
+[Postgraduate](../../General/NeSI_Policies/Postgraduate_allocations.md)
 allocation.
 
 Read more about [how we review
-applications](https://support.nesi.org.nz/hc/en-gb/articles/360000202136).
+applications](../../General/NeSI_Policies/How_we_review_applications.md).
 
 To learn more about NeSI Projects or to apply for a new project, please
 read our article [Applying for a NeSI

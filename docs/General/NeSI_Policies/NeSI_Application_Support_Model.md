@@ -1,14 +1,14 @@
 ---
 created_at: '2018-04-26T23:46:16Z'
 hidden: false
-label_names:
+position: 13
+tags:
 - support
 - info
 - application
-position: 13
 title: NeSI Application Support Model
-vote_count: 0
-vote_sum: 0
+vote_count: 2
+vote_sum: -2
 zendesk_article_id: 360000170355
 zendesk_section_id: 360000224835
 ---
@@ -17,7 +17,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

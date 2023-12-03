@@ -1,13 +1,13 @@
 ---
 created_at: '2018-09-10T00:02:43Z'
 hidden: false
-label_names:
+position: 5
+tags:
 - introduction
 - talk
 - workshop
 - introductory
 - office hours
-position: 5
 title: Introductory Material
 vote_count: 5
 vote_sum: 5
@@ -19,7 +19,7 @@ zendesk_section_id: 360000164635
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -46,7 +46,7 @@ In addition to the material mentioned above, you can also seek help at
 our weekly "Office Hours" or by attending a Workshop. Office hours are
 drop-in sessions hosted by the NeSI Support Team where any and all
 questions are welcome. **Our Office Hours schedule** can be found
-[here](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063).
+[here](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md).
 
 NeSI also participates in and organises
 [Workshops](https://www.nesi.org.nz/services/training) covering a range

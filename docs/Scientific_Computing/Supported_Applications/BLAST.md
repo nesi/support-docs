@@ -1,10 +1,10 @@
 ---
 created_at: '2015-08-27T04:44:00Z'
 hidden: false
-label_names:
+position: 26
+tags:
 - mahuika
 - biology
-position: 26
 title: BLAST
 vote_count: 1
 vote_sum: -1
@@ -16,7 +16,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -26,7 +26,7 @@ present and always comprising the first three lines of the article. -->
 
  
 
-# BLAST Databases
+## BLAST Databases
 
 We download the standard NCBI databases quarterly, and create a
 corresponding environment module named like `BLASTDB/<yyyy-mm>` which
@@ -35,14 +35,16 @@ one of these databases then you should find out what our most recent
 version is (`module avail BLASTDB`) and then load it in your batch
 script.
 
-    module load BLASTDB
-    ls $BLASTDB
+``` sl
+module load BLASTDB
+ls $BLASTDB
+```
 
 Because we only keep a few recent versions of the databases, you may be
 required from time to time to change the BLASTDB module version if you
 use old job submission scripts as templates for new ones.
 
-# Example scripts
+## Example scripts
 
 When given a large amount of query sequence to get through the BLAST
 search programs will take batches of it, running through the database
@@ -54,7 +56,7 @@ single threaded for small jobs, or multithreaded with a local copy of
 the database for large jobs.  If in doubt try the simpler single-thread
 approach first and see if it takes too long.
 
-## Single Thread
+### Single Thread
 
 For jobs which need less than 24 CPU-hours, eg: those that use small
 databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
@@ -85,7 +87,7 @@ $BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt "$FORMAT" \
     -out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
 ```
 
-## Multiple threads and local database copy
+### Multiple threads and local database copy
 
 For jobs which need more than 24 CPU-hours, eg: those that use large
 databases (&gt; 10 GB) or large amounts of query sequence (&gt; 1 GB),

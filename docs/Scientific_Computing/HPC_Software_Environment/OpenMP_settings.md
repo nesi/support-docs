@@ -1,8 +1,8 @@
 ---
 created_at: '2019-07-22T03:46:24Z'
 hidden: false
-label_names: []
 position: 2
+tags: []
 title: OpenMP settings
 vote_count: 0
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -26,25 +26,29 @@ threads that run on separate cores, executing their shares of the total
 workload concurrently. OpenMP is suited for the Mahuika and Māui HPCs as
 each platform has 36 and 40 physical cores per node respectively.  Each
 physical core can handle up to two threads in parallel using
-[Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236).
+[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md).
 Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui
 
 The environment variable that controls the number of threads is
 OMP\_NUM\_THREADS, e.g.,
 
-    export OMP_NUM_THREADS=16
+``` sl
+export OMP_NUM_THREADS=16
+```
 
 allows OpenMP code to fork 16 threads. To make sure that resources
 requested from SLURM and used by your program are consistent, is usually
 a good idea to set
 
-    #SBATCH --cpus-per-task=16
-    [...]
-    export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+``` sl
+#SBATCH --cpus-per-task=16
+[...]
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+```
 
 in your SLURM script - although this can sometimes be more complicated,
 e.g., with [TensorFlow on
-CPUs](https://support.nesi.org.nz/hc/en-gb/articles/360000997675).
+CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs.md).
 
 On Mahuika, you will be charged for the number of physical cores that
 you requested - the second logical core on a physical core is free,
@@ -57,7 +61,7 @@ nodes are shared between different SLURM jobs. Following are some
 settings that can help improve scaling and/or make your timings more
 consistent, additional information can be found in our article [Thread
 Placement and Thread
-Affinity](https://support.nesi.org.nz/hc/en-gb/articles/360000995575).
+Affinity](../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md).
 
 1\. --hint=nomultithread. Set this in conjunction with srun or sbatch to
 tell SLURM that you don't want to use hyperthreads. Your program will
@@ -126,7 +130,7 @@ unset</td>
 </tbody>
 </table>
 
-##  
+
 
 ## Results
 
@@ -145,21 +149,9 @@ gives the best performance.
 Be explicit by using --hint and setting OMP\_PROC\_BIND and OMP\_PLACES.
 In many cases we expect one of the following to work best:
 
-<table style="height: 50px;" width="688">
-<tbody>
-<tr class="odd">
-<td style="width: 168px">1 thread per core</td>
-<td style="width: 169px">--hint=nomultithread</td>
-<td style="width: 169px">OMP_PROC_BIND=true</td>
-<td style="width: 169px">OMP_PLACES=cores</td>
-</tr>
-<tr class="even">
-<td style="width: 168px">2 threads per core</td>
-<td style="width: 169px">--hint=multithread</td>
-<td style="width: 169px">OMP_PROC_BIND=true</td>
-<td style="width: 169px">OMP_PLACES=threads</td>
-</tr>
-</tbody>
-</table>
+|                    |                      |                      |                     |
+|--------------------|----------------------|----------------------|---------------------|
+| 1 thread per core  | --hint=nomultithread | OMP\_PROC\_BIND=true | OMP\_PLACES=cores   |
+| 2 threads per core | --hint=multithread   | OMP\_PROC\_BIND=true | OMP\_PLACES=threads |
 
 Let us know if you find other settings to work better for you.

@@ -1,10 +1,10 @@
 ---
 created_at: '2018-11-30T00:34:14Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - ssh
 - howto
-position: 0
 title: Standard Terminal Setup
 vote_count: 8
 vote_sum: 6
@@ -16,23 +16,22 @@ zendesk_section_id: 360000189696
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
->
-> -   Have an [active account and
->     project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-> -   Set up your [Linux
->     Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
-> -   Set up Second [Factor
->     Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
-> -   Using standard Linux/Mac terminal *or* [Windows Subsystem for
->     Linux](https://support.nesi.org.nz/hc/en-gb/articles/360001075575)
->     with [Ubuntu
->     terminal](https://support.nesi.org.nz/hc/en-gb/articles/360001050575).
+!!! prerequisite Requirements
+     -   Have an [active account and
+         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Set up your [Linux
+         Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
+     -   Set up Second [Factor
+         Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+     -   Using standard Linux/Mac terminal *or* [Windows Subsystem for
+         Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
+         with [Ubuntu
+         terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md).
 
 ## First time setup
 
@@ -46,7 +45,7 @@ configurations.
 2.  Open your ssh config file with  `nano ~/.ssh/config` and add the
     following (replacing **`username`** with your username):
 
-    ``` nohighlight
+    ``` sl
     Host mahuika
        User username
        Hostname login.mahuika.nesi.org.nz
@@ -89,22 +88,27 @@ configurations.
 Assuming you have followed the setup above you will be able to connect
 to the clusters directly using;
 
-    ssh mahuika
+``` sl
+ssh mahuika
+```
 
 or
 
-    ssh maui
+``` sl
+ssh maui
+```
 
 Subsequent local terminals opened will be able to scp files without
 having to re-enter authentication e.g.
 
-    scp <path/filename> mahuika:~/
+``` sl
+scp <path/filename> mahuika:~/
+```
 
 (For more info visit [data
 transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
-!!! info What Next?
->
-> -   [Moving files to/from a
->     cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
-> -   Setting up a
->     [X-Server](https://support.nesi.org.nz/hc/en-gb/articles/360001075975) (optional).
+!!! prerequisite What Next?
+     -   [Moving files to/from a
+         cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+     -   Setting up a
+         [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md) (optional).

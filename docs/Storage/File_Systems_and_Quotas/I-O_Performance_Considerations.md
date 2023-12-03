@@ -1,9 +1,9 @@
 ---
 created_at: '2018-05-21T04:53:52Z'
 hidden: false
-label_names:
-- storage
 position: 3
+tags:
+- storage
 title: I/O Performance Considerations
 vote_count: 1
 vote_sum: 1
@@ -15,7 +15,7 @@ zendesk_section_id: 360000033936
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -52,7 +52,7 @@ as DVS (Data Virtualisation Service), to expose the Spectrum Scale file
 systems to XC compute nodes. DVS adds an additional layer of hardware
 and software between the XC compute nodes and storage (see Figure).
 
- ![cray\_xc50.jpg](../../assets/images/cray_xc50.jpg)
+ ![cray\_xc50.jpg](../../assets/images/I-O_Performance_Considerations.jpg)
 
 <font size="2">Figure 1: Cray XC50 DVS architecture.</font>
 
@@ -108,6 +108,6 @@ to decompress the data after use. However, testing has shown that there
 can be an impact on job performance due to I/O. You can find out more
 about tests and results with regards to jobs performance of transparent
 data compression on the NeSI platforms on our [Data Compression support
-page](https://support.nesi.org.nz/hc/en-gb/articles/6359601973135).
+page](../../Storage/File_Systems_and_Quotas/Data_Compression.md).
 
  

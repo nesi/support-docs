@@ -1,13 +1,13 @@
 ---
 created_at: '2015-10-12T00:28:38Z'
 hidden: false
-label_names:
+position: 21
+tags:
 - mahuika
 - engineering
 - gpu
 - mpi
 - omp
-position: 21
 title: ABAQUS
 vote_count: 2
 vote_sum: 0
@@ -19,7 +19,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -29,68 +29,43 @@ present and always comprising the first three lines of the article. -->
 
 A list of commands can be found with:
 
-    abaqus help
+``` sl
+abaqus help
+```
 
-[Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
+[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
 can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
-!!! info Tips
->
-> Required ABAQUS licences can be determined by this simple and
-> intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
-> of CPUs.
+!!! prerequisite Tips
+     Required ABAQUS licences can be determined by this simple and
+     intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
+     of CPUs.
 
 You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 [environment file](#env_file).
 
-# Solver Compatibility
+## Solver Compatibility
 
 Not all solvers are compatible with all types of parallelisation.
 
-<table style="margin-left: 0px; margin-right: auto;">
-<tbody>
-<tr class="odd">
-<td class="wysiwyg-text-align-right" style="width: 143px"> </td>
-<td class="wysiwyg-text-align-center" style="width: 95px">Element
-operations</td>
-<td class="wysiwyg-text-align-center" style="width: 77px">Iterative
-solver</td>
-<td class="wysiwyg-text-align-center" style="width: 112px">Direct
-solver</td>
-<td class="wysiwyg-text-align-center" style="width: 175px">Lanczos
-solver</td>
-</tr>
-<tr class="even">
-<td class="wysiwyg-text-align-right"
-style="width: 143px"><code>mp_mode=threads</code></td>
-<td class="wysiwyg-text-align-center" style="width: 95px">✖</td>
-<td class="wysiwyg-text-align-center" style="width: 77px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 112px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 175px">✔</td>
-</tr>
-<tr class="odd">
-<td class="wysiwyg-text-align-right"
-style="width: 143px"><code>mp_mode=mpi</code></td>
-<td class="wysiwyg-text-align-center" style="width: 95px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 77px">✔</td>
-<td class="wysiwyg-text-align-center" style="width: 112px">✖</td>
-<td class="wysiwyg-text-align-center" style="width: 175px">✖</td>
-</tr>
-</tbody>
-</table>
-!!! info Note
->
-> If your input files were created using an older version of ABAQUS you
-> will need to update them using the command,
->
->     abaqus -upgrade -job new_job_name -odb old.odb
->
-> or
->
->     abaqus -upgrade -job new_job_name -inp old.inp
+|                   |                    |                  |               |                |
+|-------------------|--------------------|------------------|---------------|----------------|
+|                   | Element operations | Iterative solver | Direct solver | Lanczos solver |
+| `mp_mode=threads` | ✖                  | ✔                | ✔             | ✔              |
+| `mp_mode=mpi`     | ✔                  | ✔                | ✖             | ✖              |
+!!! prerequisite Note
+     If your input files were created using an older version of ABAQUS you
+     will need to update them using the command,
+     ``` sl
+     abaqus -upgrade -job new_job_name -odb old.odb
+     ```
+     or
+     ``` sl
+     abaqus -upgrade -job new_job_name -inp old.inp
+     ```
 
 <table>
 <colgroup>
@@ -101,9 +76,9 @@ style="width: 143px"><code>mp_mode=mpi</code></td>
 <tr class="odd">
 <td style="width: 506px"><h2 id="serial">Serial</h2>
 <hr />
-<p>For when only <span class="dictionary-of-numbers">one CPU is
-required</span>, generally as part of an <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array">job
+<p>For when only <span>one CPU is required</span>, generally as part of
+an <a
+href="../../Getting_Started/Next_Steps/Parallel_Execution.md#t_array">job
 array</a>.</p>
 <p> </p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb1"><pre
@@ -121,7 +96,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <tr class="even">
 <td style="width: 506px"><h2 id="shared-memory">Shared Memory</h2>
 <hr />
-<code>mp_mode=threads</code>
+<code class="sl">mp_mode=threads</code>
 <p>Uses a nodes shared memory for communication. </p>
 <p>May have a small speedup compared to MPI when using a low number of
 CPUs, scales poorly. Needs significantly less memory than MPI.</p>
@@ -144,7 +119,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <td style="width: 506px"><h2 id="udf">UDF</h2>
 <hr />
 <p>Shared memory run with user defined function (fortran or C). </p>
-<p><code>user=&lt;name_of_function&gt;</code> </p>
+<p><code class="sl">user=&lt;name_of_function&gt;</code> </p>
 <p>Function will be compiled at start of run. </p>
 <p><em>You may need to chance the function suffix if you usually compile
 on windows.</em></p></td>
@@ -166,18 +141,17 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 <td class="wysiwyg-text-align-left" style="width: 506px"><h2
 id="distributed-memory">Distributed Memory</h2>
 <hr />
-<code>mp_mode=mpi</code>
+<code class="sl">mp_mode=mpi</code>
 <p>Multiple <em>processes</em> each with a single <em>thread</em>.</p>
-<p>Not limited to <span class="dictionary-of-numbers">one
-node</span>.<br />
-Model will be segmented into <code>-np</code> pieces which should be
-equal to <code>--ntasks</code>.</p>
+<p>Not limited to <span>one node</span>.<br />
+Model will be segmented into <code class="sl">-np</code> pieces which
+should be equal to <code class="sl">--ntasks</code>.</p>
 <p>Each task could be running on a different node leading to increased
 communication overhead<br />
 .Jobs can be limited to a single node by adding  <code
-style="font-size: 14px;">--nodes=1</code> however this will increase
-your time in the queue as contiguous cpu's are harder to schedule.</p>
-<p>This is the default method if <code>mp_mode</code> is left
+class="sl">--nodes=1</code> however this will increase your time in the
+queue as contiguous cpu's are harder to schedule.</p>
+<p>This is the default method if <code class="sl">mp_mode</code> is left
 unspecified.</p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb4"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
@@ -196,11 +170,10 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
 <tr class="odd">
 <td style="width: 506px"><h2 id="gpus">GPUs</h2>
 <hr />
-<p>The GPU nodes are limited to <span class="dictionary-of-numbers">16
-CPUs</span></p>
+<p>The GPU nodes are limited to <span>16 CPUs</span></p>
 <p>In order for the GPUs to be worthwhile, you should see a speedup
-equivalent to <span class="dictionary-of-numbers">56 CPU</span>'s per
-GPU used. GPU modes will generally have less memory/cpus</p></td>
+equivalent to <span>56 CPU</span>'s per GPU used. GPU modes will
+generally have less memory/cpus</p></td>
 <td style="width: 163px"><div class="sourceCode" id="cb5"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash -e</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -219,7 +192,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="
 </tbody>
 </table>
 
-# User Defined Functions 
+## User Defined Functions 
 
 User defined functions (UDFs) can be included on the command line with
 the argument `user=<filename>` where `<filename>` is the C or fortran
@@ -229,10 +202,10 @@ Extra compiler options can be set in your local `abaqus_v6.env` file.
 
 The default compile commands are for `imkl`, other compilers can be
 loaded with `module load`, you may have to change the [compile
-commands](https://support.nesi.org.nz/hc/en-gb/articles/360000329015) in
-your local `.env` file.
+commands](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md)
+in your local `.env` file.
 
-# Environment file
+## Environment file
 
 The [ABAQUS environment
 file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
@@ -252,22 +225,24 @@ only.
 You may want to include this short snippet when making changes specific
 to a job.
 
-    # Before starting abaqus
-    echo "parameter=value
-    parameter=value
-    parameter=value" > "abaqus_v6.env"
+``` sl
+# Before starting abaqus
+echo "parameter=value
+parameter=value
+parameter=value" > "abaqus_v6.env"
 
-    # After job is finished.
-    rm "abaqus_v6.env"
-!!! info Useful Links
->
-> -   [Command line options for standard
->     submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
-
-
-![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS_speedup_SharedVMPI.png)
+# After job is finished.
+rm "abaqus_v6.env"
+```
+!!! prerequisite Useful Links
+     -   [Command line options for standard
+         submission.](https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s02abx02.html)
 
  
-*Note: Hyperthreading off, testing
-done on small mechanical </span>FEA
-model. Results highly model dependant. Do your own tests.*
+
+![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
+
+ 
+
+*Note: Hyperthreading off, testing done on small mechanical FEA model.
+Results highly model dependant. Do your own tests.*

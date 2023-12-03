@@ -1,8 +1,8 @@
 ---
 created_at: '2018-05-29T04:01:33Z'
 hidden: false
-label_names: []
 position: 6
+tags: []
 title: Personal Globus Endpoint Configuration
 vote_count: 0
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 360000040596
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -32,8 +32,7 @@ Globus's [Endpoints administered by
 you](https://app.globus.org/endpoints?scope=administered-by-me) to see
 whether your endpoint shows up as active.
 
-<img src="../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0.png"
-width="754" height="320" alt="mceclip0.png" />
+![mceclip0.png](../../assets/images/Personal_Globus_Endpoint_Configuration.png)
 
 ## Personal Endpoint file-transfer and sharing
 
@@ -48,8 +47,7 @@ eScience Infrastructure*.
 Check if your account already has this membership by viewing the [Globus
 Plus](https://app.globus.org/account/plus) tab under your Account:
 
-<img src="../../assets/images/mceclip2.png" width="880" height="267"
-alt="mceclip2.png" />
+![mceclip2.png](../../assets/images/Personal_Globus_Endpoint_Configuration_0.png)
 
 If you do not see an entry for *New Zealand eScience Infrastructure* on
 this page, then:

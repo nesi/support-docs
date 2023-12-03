@@ -1,13 +1,13 @@
 ---
 created_at: '2019-01-07T20:34:07Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - 2fa
 - access
 - mfa
 - account
 - authentication
-position: 0
 title: How to replace my 2FA token
 vote_count: 0
 vote_sum: 0
@@ -19,7 +19,7 @@ zendesk_section_id: 360000039036
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -32,7 +32,7 @@ Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 Once you've created a token, you should see the 'Manage Two-Factor
 token' option.
 
-![image2018-10-26\_15-36-10.png](../../assets/images/image2018-10-26_15-36-10.png)
+![image2018-10-26\_15-36-10.png](../../assets/images/How_to_replace_my_2FA_token.png)
 
 ## Delete the Two-Factor token
 
@@ -40,17 +40,17 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![](../../assets/images/mceclip0_0_0_0_0_0_0_0_0_0_0_0.png)
+![](../../assets/images/How_to_replace_my_2FA_token_0.png)
 
 After 'Delete Token' has been selected:
 
-![](../../assets/images/mceclip1_0_0.png)
+![](../../assets/images/How_to_replace_my_2FA_token_1.png)
 
 You will also receive an email confirmation:
 
-![](../../assets/images/mceclip3.png)
+![](../../assets/images/How_to_replace_my_2FA_token_2.png)
 
 ## Related content
 
 [Setting Up Two-Factor
-Authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)
+Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)

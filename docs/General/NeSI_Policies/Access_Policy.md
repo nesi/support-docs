@@ -1,8 +1,8 @@
 ---
 created_at: '2021-01-13T00:17:34Z'
 hidden: false
-label_names: []
 position: 2
+tags: []
 title: Access Policy
 vote_count: 1
 vote_sum: 1
@@ -14,7 +14,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

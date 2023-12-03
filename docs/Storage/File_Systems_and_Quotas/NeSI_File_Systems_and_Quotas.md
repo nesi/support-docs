@@ -1,16 +1,16 @@
 ---
 created_at: '2018-05-02T04:06:16Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - info
 - mahuika
 - storage
 - maui
 - quota
-position: 0
 title: NeSI File Systems and Quotas
-vote_count: 3
-vote_sum: 3
+vote_count: 4
+vote_sum: 4
 zendesk_article_id: 360000177256
 zendesk_section_id: 360000033936
 ---
@@ -19,18 +19,17 @@ zendesk_section_id: 360000033936
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info New Feature
->
-> [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
-> have recently started rolling out compression of inactive data on the
-> NeSI Project filesystem. Please see the [documentation
-> below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
-> works and what data will be compressed.
+!!! prerequisite New Feature
+     [Transparent File Compression](#h_01GZ2Q7PG53YQEKFDDWTWHHDVT) - we
+     have recently started rolling out compression of inactive data on the
+     NeSI Project filesystem. Please see the [documentation
+     below](#h_01GZ2Q22EAZYMA7E9XG9F5FC1Z) to learn more about how this
+     works and what data will be compressed.
 
  
 
@@ -49,10 +48,9 @@ command: 
 The values for 'nn\_storage\_quota' are updated approximately every hour
 and cached between updates.
 
-## <img src="../../assets/images/360003251796.name_me.png" width="629"
-height="578" alt="neSI_filetree.svg" />
+## ![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.png)
 
-# File System Specifications
+## File System Specifications
 
 <table class="table table-bordered"
 style="tr td: first-child {    white-space:nowrap;">
@@ -157,7 +155,7 @@ last HPC Compute &amp; Analytics allocation. See also Transparent File
 Data Compression.</span></td>
 <td style="width: 188px"><span>With certain exceptions, individual files
 will be deleted after being untouched for 120 days. See <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360001162856">Automatic
+href="../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md">Automatic
 cleaning of nobackup file system</a> for more information.
 </span><span>90 days after the end of the project's last HPC Compute
 &amp; Analytics allocation, all remaining data is subject to
@@ -233,7 +231,7 @@ possible to end up with more data or files in the fileset than the quota
 allows for. This outcome does not trigger deletion of any existing data,
 but will prevent creation of new data or files.
 
-### **Notes:**
+#### **Notes:**
 
 -   You may request an increase in storage and inode quota if needed by
     a project. This may in turn be reduced as part of managing overall
@@ -258,7 +256,7 @@ but will prevent creation of new data or files.
     command to prevent the cleaning policy from removing files, because
     this behaviour would deprive the community of a shared resource.
 
-## /home
+### /home
 
 This file system is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. All home directories
@@ -269,7 +267,7 @@ No cleaning policy will be applied to your home directory as long as
 your My NeSI account is active and you are a member of at least one
 active project.
 
-## /nesi/project
+### /nesi/project
 
 This filesystem is accessible from all login, compute and ancillary
 nodes. Contents are backed up daily, via the Spectrum Protect backup
@@ -290,7 +288,7 @@ about in your [application for a new NeSI
 project](https://my.nesi.org.nz/html/request_project), and separately
 covering disk space and number of files.
 
-## /nesi/nobackup
+### /nesi/nobackup
 
 The `/nesi/nobackup` file system has the highest performance of all NeSI
 file systems, with greater than 140 GB/s bandwidth from compute nodes to
@@ -304,13 +302,13 @@ file system. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
 requirements with us during [the project application
-process](https://support.nesi.org.nz/hc/en-gb/articles/360000202136), or
+process](../../General/NeSI_Policies/How_we_review_applications.md), or
 [contact our support team](https://support.nesi.org.nz/hc/requests/new)
 at any time.
 
 To ensure this file system remains fit-for-purpose, we have a regular
 cleaning policy as described in [Automatic cleaning of nobackup
-filesystem](https://support.nesi.org.nz/hc/en-gb/articles/360001162856).
+filesystem](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
@@ -319,15 +317,14 @@ the community of a shared resource.
 The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
-## /nesi/nearline
-!!! info Note
->
-> The nearline service, including its associated file systems, is in an
-> Early Access phase, and allocations are by invitation. We appreciate
-> your patience as we develop, test and deploy this service. If you
-> would like to participate in the Early Access Programme, please
-> [contact our support
-> team](https://support.nesi.org.nz/hc/requests/new).
+### /nesi/nearline
+!!! prerequisite Note
+     The nearline service, including its associated file systems, is in an
+     Early Access phase, and allocations are by invitation. We appreciate
+     your patience as we develop, test and deploy this service. If you
+     would like to participate in the Early Access Programme, please
+     [contact our support
+     team](https://support.nesi.org.nz/hc/requests/new).
 
 The `/nesi/nearline` filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
@@ -337,10 +334,10 @@ temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
 See [this
-page](https://support.nesi.org.nz/hc/en-gb/articles/360001169956) for
-more information about the nearline service.
+page](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
+for more information about the nearline service.
 
-# Snapshots
+## Snapshots
 
 If you have accidentally deleted data you can recover it from
 a [snapshot](https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406).
@@ -349,7 +346,7 @@ cannot find it in a snapshot, please ask us to recover it for you by
 emailing [NeSI
 Support](mailto:support@nesi.org.nz?subject=Please%20Recover%20a%20File).
 
-# Contributions of Small Files Towards Quotas
+## Contributions of Small Files Towards Quotas
 
 The Scale file system makes use of a feature called *data-in-inode*.
 This feature will ensure that, once all of a (non-encrypted) file's
@@ -375,7 +372,7 @@ project's persistent storage, please [contact our support
 team](https://support.nesi.org.nz/hc/en-gb/requests/new) to discuss your
 storage needs.
 
-# Transparent File Data Compression
+## Transparent File Data Compression
 
 The Scale file system has the ability to transparently compress file
 data. That is, file contents/data can be compressed behind the scenes,
@@ -388,13 +385,13 @@ though this is mitigated by space and bandwidth savings.
 Transparent file data compression can be controlled and applied by users
 via file attributes, you can find out more about using this method on
 our [Data Compression support
-page](https://support.nesi.org.nz/hc/en-gb/articles/6359601973135). File
+page](../../Storage/File_Systems_and_Quotas/Data_Compression.md). File
 data compression can also be automatically applied by administrators
 through the Scale policy engine. We leverage this latter feature to
 regularly identify and compress inactive data on the `/nesi/project`
 file system.
 
-## What Project data is automatically compressed?
+### What Project data is automatically compressed?
 
 Our current policy compresses files that have not been accessed (either
 read from or written to) within the last 365 days, i.e., very inactive
@@ -404,6 +401,6 @@ Additionally, we only automatically compress files in the range of 4kB -
 10GB in size. Files larger than this can be compressed by user
 interaction - see the instructions for the `mmchattr` command on
 the [Data Compression support
-page](https://support.nesi.org.nz/hc/en-gb/articles/6359601973135). Also
+page](../../Storage/File_Systems_and_Quotas/Data_Compression.md). Also
 note that the Scale filesystem will only store compressed blocks when
 the compression space saving is &gt;=10%.

@@ -1,10 +1,10 @@
 ---
 created_at: '2019-07-04T20:48:57Z'
 hidden: false
-label_names:
+position: 10
+tags:
 - software
 - versions
-position: 10
 title: Software Version Management
 vote_count: 0
 vote_sum: 0
@@ -16,7 +16,7 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -36,11 +36,15 @@ we may install it.
 
 ## Example
 
-    module load ANSYS
+``` sl
+module load ANSYS
+```
 
 Will load the default version of ANSYS, in this case ANSYS/19.2, however
 this may change.
 
-    module load ANSYS/18.1
+``` sl
+module load ANSYS/18.1
+```
 
 Will always load that version specifically.

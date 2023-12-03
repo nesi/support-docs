@@ -1,7 +1,8 @@
 ---
 created_at: '2023-02-08T00:21:51Z'
 hidden: false
-label_names:
+position: 0
+tags:
 - compression
 - data_compression
 - lz4
@@ -9,7 +10,6 @@ label_names:
 - zlib
 - z library
 - z-library
-position: 0
 title: Data Compression
 vote_count: 0
 vote_sum: 0
@@ -21,12 +21,12 @@ zendesk_section_id: 360000033936
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Background
+## Background
 
 Spectrum Scale filesystems (previously GPFS) allow users to compress
 data (but not metadata) transparently on demand without the need to
@@ -51,12 +51,12 @@ ones might be added. It is possible to change algorithms at any time for
 any file (we will cover that further ahead) when the compression is
 requested.
 
-# Compression Methods
+## Compression Methods
 
 There are two methods for compressing and decompressing data:
 **on-demand** and **deferred**:
 
-## On-Demand (synchronous)
+### On-Demand (synchronous)
 
 **note:** *as at 2 May 2023, the \`mm\` commands are not available by
 default, contact <support@nesi.org.nz> for assistance*
@@ -76,26 +76,9 @@ partially, quota usage will increase. Be aware that if, in the process
 of decompression, the quota will be exceeded, an error message will be
 displayed
 
-    $ du -h FileA.txt
-    41M FileA.txt
 
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
 
-    $ time mmchattr --compression yes FileA.txt
-    real 0m1.343s
-    user 0m0.002s
-    sys 0m0.000s
-
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
-
-    $ du -h FileA.txt
-    8.0M FileA.txt
-
-##  
-
-## Deferred
+### Deferred
 
 This method (also using the `mmchattr` command) does not decompress or
 compress data immediately but, instead marks them for
@@ -107,43 +90,26 @@ by using the same command as above with one extra flag (`-I defer`).
 During this process, there is no change in space occupancy for any of
 the files involved.
 
-    $ du -h FileA.txt
-    41M FileA.txt
 
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
 
-    $ time mmchattr -I defer --compression yes FileA.txt
-    real 0m0.002s
-    user 0m0.002s
-    sys 0m0.000s
-
-    $ ls -lh FileA.txt
-    -rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
-
-    <bash>$ du -h FileA.txt
-    41M FileA.txt
-
-####  
-
-### How to process deferred tagged files
+#### How to process deferred tagged files
 
 Users can process compression/decompression on the tagged files via the
 `mmrestripefile` command (using `-z` flag).
 
-```
+``` sl
 $ mmrestripefile -z FileA.txt
 Scanning FileA.txt
 Scan completed successfully.
 ```
 
-# States of a compressed file
+## States of a compressed file
 
 Compressed files on Scale filesystems can be in 4 different states
 depending on the extended attributes of the file when manipulated for
 compression. We can check those attributes with the `mmlsattr` command:
 
-```
+``` sl
 $ mmlsattr -L FileA.txt
 file name: FileA.txt
 metadata replication: 1 max 2
@@ -170,7 +136,7 @@ data to, becomes automatically `illcompressed` and either needs to be
 re-compressed using the `mmchattr --compression yes` command or the
 `mmrestripefile -z` one (because it's already tagged for compression).
 
-#### The different states
+### The different states
 
 -   **Uncompressed** and **untagged** for compression (default) - as
     shown for the file `FileA.txt` above.
@@ -182,38 +148,10 @@ re-compressed using the `mmchattr --compression yes` command or the
     because it's not fully compressed the `illcompressed` flag will be
     shown.
 
-        $ mmlsattr -L FileA.txt
-        file name: FileA.txt
-        metadata replication: 1 max 2
-        data replication: 1 max 2
-        immutable: no
-        appendOnly: no
-        flags: illcompressed
-        storage pool name: data
-        fileset name: home_user001
-        snapshot name:
-        creation time: Wed Jul 6 00:54:27 2022
-        Misc attributes: ARCHIVE COMPRESSION (library z)
-        Encrypted: no
-
 -   **Fully compressed** and **tagged** for compression - The file is
     fully compressed to its maximum possible state and because the file
     is tagged for compression, only the misc attribute `COMPRESSION`
     will be shown.
-
-        $ mmlsattr -L FileA.txt
-        file name: FileA.txt
-        metadata replication: 1 max 2
-        data replication: 1 max 2
-        immutable: no
-        appendOnly: no
-        flags:
-        storage pool name: data
-        fileset name: home_user001
-        snapshot name:
-        creation time: Wed Jul 6 00:54:27 2022
-        Misc attributes: ARCHIVE COMPRESSION (library z)
-        Encrypted: no
 
 -   **Full or partially compressed** and **untagged** for compression -
     The file might be fully or partially compressed and in this case
@@ -224,21 +162,7 @@ re-compressed using the `mmchattr --compression yes` command or the
     complete the file will become uncompressed and untagged for
     compression.
 
-        $ mmlsattr -L FileA.txt
-        file name: FileA.txt
-        metadata replication: 1 max 2
-        data replication: 1 max 2
-        immutable: no
-        appendOnly: no
-        flags: illcompressed
-        storage pool name: data
-        fileset name: home_user001
-        snapshot name:
-        creation time: Wed Jul 6 00:54:27 2022
-        Misc attributes: ARCHIVE
-        Encrypted: no
-
-# Using different compression algorithms
+## Using different compression algorithms
 
 The default algorithm is the Zlib and will be shown on the misc
 attributes of a tagged file as “library z”. Depending on the Scale
@@ -251,7 +175,7 @@ Currently supported compression libraries are:
 -   lz4 Active, non-specific data. Favours access speed over compression
     efficiency.
 
-# Performance impacts
+## Performance impacts
 
 Experiments showed that I/O performance was definitely affected if a
 file was in a compressed state. The extent of the effect, however,

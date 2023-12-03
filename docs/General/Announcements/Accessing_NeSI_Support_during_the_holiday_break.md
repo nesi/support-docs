@@ -1,8 +1,9 @@
 ---
 created_at: '2022-12-05T00:50:41Z'
 hidden: false
-label_names: []
 position: 0
+tags:
+- announcement
 title: Accessing NeSI Support during the holiday break
 vote_count: 0
 vote_sum: 0
@@ -14,18 +15,18 @@ zendesk_section_id: 200732737
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 As another busy year draws to a close, NeSI’s Support Team will be
-taking a summer break from **5:00 PM on 22 December, 2022 to 9:00 am on
-04 January, 2023.**
+taking a summer break from **5:00 PM on 21 December 2023 to 9:00 am on
+03 January 2024**
 
 During this time, [NeSI platform services](https://status.nesi.org.nz/)
 will be online and available, but non-critical support requests will be
-responded to when the team is back on 04 January.
+responded to when the team is back on 03 January.
 
 Urgent / critical requests will be addressed on a best effort basis. Any
 changes to system status will be reported via our [System Status
@@ -37,11 +38,11 @@ of self-service support:
 
 -   [Submit a ticket to
     Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new") (Note:
-    non-emergency requests will be addressed on or after 04 January
-    2023)
+    non-emergency requests will be addressed on or after 03 January
+    2024)
 
 -   [Sign up for NeSI system status
-    updates](https://support.nesi.org.nz/hc/en-gb/articles/360000751636 "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
+    updates](../../Getting_Started/Getting_Help/System_status.md "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
     advance warning of any system updates or unplanned outages. 
 
 -   [Consult our User
@@ -53,4 +54,4 @@ of self-service support:
     introductory training webinars
 
 On behalf of the entire NeSI team, we wish you a safe and relaxing
-holiday. See you in 2023!
+holiday. 

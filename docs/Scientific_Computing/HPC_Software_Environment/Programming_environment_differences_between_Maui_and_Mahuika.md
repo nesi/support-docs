@@ -1,13 +1,13 @@
 ---
 created_at: '2018-04-23T00:52:59Z'
 hidden: false
-label_names:
+position: 19
+tags:
 - info
 - software
 - application
 - cs400
 - XC50
-position: 19
 title: Programming environment differences between Maui and Mahuika
 vote_count: 0
 vote_sum: 0
@@ -19,7 +19,7 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

@@ -1,8 +1,8 @@
 ---
 created_at: '2019-08-07T03:50:45Z'
 hidden: false
-label_names: []
 position: 12
+tags: []
 title: NeSI Licence Policy
 vote_count: 0
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -23,12 +23,11 @@ With very few exceptions, NeSI does not hold software licences of its
 own. If you wish to use any of the proprietary software installed on the
 NeSI cluster, you, or more likely your institution or department, will
 need to have an appropriate licence.
-!!! info Warning
->
-> Slurm and many other applications use the American spelling of the
-> noun, "*license*".
+!!! prerequisite Warning
+     Slurm and many other applications use the American spelling of the
+     noun, "*license*".
 
-# Licence Servers
+## Licence Servers
 
 The most common method of licence control is using 'floating' network
 licences hosted on an external server. In order for a user on a NeSI
@@ -37,12 +36,14 @@ known, and a firewall exception made for NeSI IP addresses (see below).
 
 NeSI's public-facing IP addresses are:
 
-    202.36.29.252
-    202.36.29.253
-    103.229.249.252
-    103.229.249.253
+``` sl
+202.36.29.252
+202.36.29.253
+103.229.249.252
+103.229.249.253
+```
 
-## Institutional Licences
+### Institutional Licences
 
 A list of already established licence server connections can be found in
 the NeSI support documentation for the relevant software. Provided you
@@ -53,7 +54,7 @@ If you believe you should have access to a licence but do not, or would
 like to organise remote use of your institution's licence, please [email
 NeSI Support](mailto:support@nesi.org.nz) and cc: your own IT services.
 
-## Personal or Research Group Licences
+### Personal or Research Group Licences
 
 You are welcome to make your own licence arrangements, if your
 institution doesn't have a licence or you need to access extra features
@@ -65,7 +66,7 @@ internet. Setting up your computer in this way and securing it is beyond
 the scope of this article, but will involve talking to your
 institution's IT department or to your internet service provider (ISP).
 
-# Licence Files
+## Licence Files
 
 An alternative to licence servers, used by some programs, is a licence
 file that contains a code issued to that user or group during the
@@ -80,7 +81,7 @@ It is important for us to know who is eligible to use any particular
 licence file, so that we don't accidentally allow unauthorised persons
 to use a given piece of software.
 
-# Software without built-in licence management
+## Software without built-in licence management
 
 Some software packages do not provide their own licence management
 systems (servers, files, etc.). The owners of these packages rely on us
@@ -96,33 +97,32 @@ Before adding any particular person to a software group, we may ask to
 see a licence agreement allowing that person to use the software. We may
 also check to see whether the licence agreement forbids the person from
 using the software on NeSI.
-!!! info Warning
->
-> Some licence agreements are quite restrictive in terms of where, or on
-> what sort of machine, a licensee may run the program. For example, the
-> licence may require one or more of the following:
->
-> -   The software may only be run on one computer (node) at a time.
-> -   Any computer on which the software is run must be owned by the
->     user's employing institution, operated by employees of that
->     institution, or both.
-> -   There may be other restrictions, like a limit to the number of
->     simultaneous tasks or threads you are permitted to run.
->
-> We may not have seen your licence agreement, and even if we have,
-> we're not intellectual property lawyers. Just because we grant you
-> access to a piece of software it doesn't necessarily mean you're
-> authorised to use it in the way you intend. **It is your
-> responsibility to ensure that your use of the software on NeSI
-> complies with the terms of your licence or is otherwise permitted by
-> law.**
+!!! prerequisite Warning
+     Some licence agreements are quite restrictive in terms of where, or on
+     what sort of machine, a licensee may run the program. For example, the
+     licence may require one or more of the following:
+     -   The software may only be run on one computer (node) at a time.
+     -   Any computer on which the software is run must be owned by the
+         user's employing institution, operated by employees of that
+         institution, or both.
+     -   There may be other restrictions, like a limit to the number of
+         simultaneous tasks or threads you are permitted to run.
+     We may not have seen your licence agreement, and even if we have,
+     we're not intellectual property lawyers. Just because we grant you
+     access to a piece of software it doesn't necessarily mean you're
+     authorised to use it in the way you intend. **It is your
+     responsibility to ensure that your use of the software on NeSI
+     complies with the terms of your licence or is otherwise permitted by
+     law.**
 
-# Slurm Tokens 
+## Slurm Tokens 
 
 We encourage the use of Slurm licence tokens in your batch scripts, for
 example:
 
-    #SBATCH --licenses ansys_hpc@uoa_foe:60,ansys_r@uoa_foe
+``` sl
+#SBATCH --licenses ansys_hpc@uoa_foe:60,ansys_r@uoa_foe
+```
 
 will request 60 'hpc' licences and 1 'research' licence from the
 University of Auckland Engineering licence server. This will prevent
@@ -135,8 +135,7 @@ likely leading to a timeout).
 
 The names of the Slurm licence tokens are included in the
 application-specific documentation.
-!!! info Note
->
-> Slurm licence reservations work independently of the licence server.
-> Not including a Slurm token will not prevent your job from running,
-> not will including one modify how your job runs (only *when* it runs).
+!!! prerequisite Note
+     Slurm licence reservations work independently of the licence server.
+     Not including a Slurm token will not prevent your job from running,
+     not will including one modify how your job runs (only *when* it runs).

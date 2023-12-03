@@ -1,8 +1,8 @@
 ---
 created_at: '2018-05-22T01:49:31Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: File Recovery
 vote_count: 8
 vote_sum: 6
@@ -14,7 +14,7 @@ zendesk_section_id: 360000042215
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -28,28 +28,26 @@ Files from you project directory can be found
 in `/nesi/project/.snapshots/` followed by the weekday (capitalised) and
 project code, e.g;
 
-``` nohighlight
+``` sl
 /nesi/project/.snapshots/Sunday/nesi99999/
 ```
 
  And for home directory;
 
-``` nohighlight
+``` sl
 /home/username/.snapshots/Sunday/
 ```
-!!! info Warning
->
-> Files in `/nesi/nobackup/` are not snapshotted.
+!!! prerequisite Warning
+     Files in `/nesi/nobackup/` are not snapshotted.
 
  
 
 Recovering a file or a directory from the snapshot is as simple as
 copying it over, e.g.
 
-``` nohighlight
+``` sl
 cp /nesi/project/.snapshots/Sunday/nesi99999/file.txt /nesi/project/nesi99999/file.txt
 ```
-!!! info Tip
->
-> For copying directories use the flag -ir or just -r if you don't want
-> to be prompted before overwriting.
+!!! prerequisite Tip
+     For copying directories use the flag -ir or just -r if you don't want
+     to be prompted before overwriting.

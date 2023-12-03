@@ -1,8 +1,8 @@
 ---
 created_at: '2019-09-22T21:07:28Z'
 hidden: false
-label_names: []
 position: 8
+tags: []
 title: MPI Scaling Example
 vote_count: 2
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -25,9 +25,9 @@ in these examples are applicable across software applications. You do
 not need to know anything about Python to understand this article; it
 was merely chosen for the purpose of illustration.
 
-### Initial Python Script
+## Initial Python Script
 
-``` nohighlight
+``` sl
 #Imports numpy and mpi4py
 import numpy as np
 from mpi4py import MPI
@@ -79,7 +79,8 @@ if rank == 0:
         print('Sum:', data_sum)
 ```
 
-The above Python script will create a list of numbers and split them
+You do not need to understand what the above Pythong script is doing,
+but for context, the script will create a list of numbers and split them
 between the available MPI tasks (ranks) then uses those numbers as seeds
 to create arrays of random numbers. The dot product of each array is
 then calculated and those numbers are summed together and sent back to
@@ -93,7 +94,7 @@ for. So we will first try with 5,000 seeds rather than 60,000 seeds.
 
 ### Revised Python Script
 
-``` nohighlight
+``` sl
 #Imports numpy and mpi4py
 import numpy as np
 from mpi4py import MPI
@@ -148,8 +149,9 @@ if rank == 0:
 Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
-local workstation, but if that is not possible, make an educated
-guess.  
+local workstation, but if that is not possible, make an educated guess,
+and if the job fails increase the resources requested until is
+completes.
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
@@ -159,7 +161,7 @@ took to get there.
 
 ### Slurm Script
 
-``` nohighlight
+``` sl
   #!/bin/bash -e
   #SBATCH --job-name=MPIScaling2
   #SBATCH --ntasks=2
@@ -173,7 +175,7 @@ took to get there.
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
-``` nohighlight
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6057011        MPIScaling2     00:18:51     01:14:30     4          COMPLETED 
@@ -182,9 +184,13 @@ Let's run our Slurm script with sbatch and look at our output from
 6057011.0      python          00:18:46     01:14:30     2  166744K COMPLETED 
 ```
 
-Our job performed 5,000 seeds using two physical CPU cores and a maximum
-memory of 166,744KB (0.16 GB). In total, the job ran for 18 minutes and
-51 seconds.
+Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
+will always receive 2 logical CPUs which is equal to 1 physical CPUs.
+For a more in depth explanation about logical and physical CPU cores see
+our [Hyperthreading
+article](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md))
+and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
+18 minutes and 51 seconds.
 
 We will initially assume that our job's wall time and memory will scale
 linearly with the number of iterations. However, we don't know that for
@@ -193,9 +199,10 @@ behaviour of our job's resource requirements before we can submit our
 full job and be confident it will succeed.
 
 To find out we are going to have to run more tests. Let's try running
-our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
+our script with 2, 3, 4, 5 and 6 MPI tasks/physical CPUs and plot the
+results:
 
-``` nohighlight
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6057011        MPIScaling2     00:18:51     01:14:30     4           COMPLETED 
@@ -220,48 +227,46 @@ our script with 2, 3, 4, 5 and 6 physical CPUs and plot the results:
 6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 ```
 
-![MPIscalingMem.png](../../assets/images/MPIscalingMem_0.png)
+![MPIscalingMem.png](../../assets/images/MPI_Scaling_Example.png)
 
-First, looking at the plot of memory usage per task vs CPUs it would at
-appears that memory usage per task remains constant, regardless of how
-many CPUs (equivalent to tasks here) this job uses, because this is an
-MPI job each task must have its own memory, this is why, if we look back
-at the script we are using, that we request memory per CPU, rather than
-memory like previously, since MPI jobs will by their nature of having to
-read everything into memory once for each task, have their memory scale
-(at least) linearly. But the results of this plot means that we
-shouldn't have to worry about increasing the memory per CPU.
+First, looking at the plot (we used R here, but feel free to use excel
+or whatever your preferred plotting software) of memory usage per task
+vs CPUs it would at appears that memory usage per task remains constant,
+regardless of how many CPUs (equivalent to MPI tasks here) this job
+uses, because this is an MPI job each task must have its own memory,
+this is why, if we look back at the script we are using, that we request
+memory per CPU, rather than just memory with `--mem`, since MPI jobs
+will by their nature of having to read everything into memory once for
+each task, have their memory scale (at least) linearly. But the results
+of this plot means that we shouldn't have to worry about increasing the
+memory per CPU.
 
 One thing to note about our plot of CPUs versus memory is the fact that
 memory usage is not measured continuously, it is instead measured every
 30 seconds. This means that if your job's memory usage has some
-spikes, `sacct` will not necessarilly detect the maximum memory usage.
+spikes, `sacct` will not necessarily detect the maximum memory usage.
 This is something that you should be aware of when you estimate the
 memory usage of all your jobs.
 
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-<table style="width: 684px; height: 336px;">
-<tbody>
-<tr class="odd">
-<td style="width: 343.95px"><img
-src="../../assets/images/MPIscalingSeeds_0.png"
-alt="MPIscalingSeeds.png" /></td>
-<td style="width: 330.05px"><img
-src="../../assets/images/MPIscalingSeedsLog_0.png"
-alt="MPIscalingSeedsLog.png" /></td>
-</tr>
-</tbody>
-</table>
+|                                                                       |                                                                          |
+|-----------------------------------------------------------------------|--------------------------------------------------------------------------|
+| ![MPIscalingSeeds.png](../../assets/images/MPI_Scaling_Example_0.png) | ![MPIscalingSeedsLog.png](../../assets/images/MPI_Scaling_Example_1.png) |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
-CPUs vs time. As we can see, increasing the number of CPU cores doesn't
-linearly increase the job's speed.
+CPUs vs time.
 
 The reason we have both is that it can often be easier to see the
 inflection point on the Log2 graph when the speed up from increasing the
-number of CPUs start to level off.
+number of CPUs start to level off, as in the Log2 graph if the jobs
+scaled perfectly linearly (e.g. doubling the CPU's halves the runtime)
+the line would be straight. The curving of the line in the Log2 graph
+represents a loss in efficiency from increasing the number of CPUs.
+
+As we can see, increasing the number of CPU cores doesn't linearly
+increase the job's speed.
 
 This non-linear speed-up is mostly caused by Amdahl's Law, which
 reflects the fact that there is a fixed part of the computation that is
@@ -274,9 +279,7 @@ tasks is greater than the speed-up.
 
 Looking at the plot of CPUs vs time we can see the asymptotic speedup
 and this time the best number of CPUs to use for this job looks to be 5
-physical CPUs.  
-
- 
+physical CPUs.
 
  
 
@@ -284,7 +287,7 @@ Now that we have determined that 5 physical CPUs is the optimal number
 of CPUs for our jobs we will use this as we will submit three more jobs,
 using 10,000 15,000 and 20,000 seeds. 
 
-``` nohighlight
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6054938        MPIScaling5k    00:07:41     01:15:08    10           COMPLETED 
@@ -310,11 +313,11 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](../../assets/images/MPIseedsvtime_0.png)
+![MPIseedsvtime.png](../../assets/images/MPI_Scaling_Example_2.png)
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we
-can estimate that it will take about 12 times longer to run 60,000.  
+can estimate that it will take about 12 times longer to run 60,000.
 
 ## Estimating our Total Resource Requirments
 
@@ -323,7 +326,7 @@ requirements scale, we can try and estimate our total resource
 requirements for our 60,000 iteration job.
 
 From this data we have determined that more than 5 physical CPUs has
-very limited additional speed and 5 CPU should use about 0.17 GB of
+very limited additional speed up, and 5 CPU should use about 0.17 GB of
 memory per task (CPU) at most, and that this memory requirement should
 remain relatively consistent, regardless of the number of seeds. Given
 this information we can estimate our full size job's resource
@@ -338,7 +341,7 @@ request 1 GB of memory and 2 hours.
 
 ### Revised Slurm Script
 
-``` nohighlight
+``` sl
   #!/bin/bash -e
   #SBATCH --account=nesi99999
   #SBATCH --job-name=MPIScaling60k
@@ -352,7 +355,7 @@ request 1 GB of memory and 2 hours.
 
  Checking on our job with `sacct`
 
-``` nohighlight
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6061377        MPIScaling60k   01:28:25     14:35:32    10           COMPLETED 

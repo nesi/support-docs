@@ -1,10 +1,10 @@
 ---
 created_at: '2018-05-01T23:17:10Z'
 hidden: false
-label_names:
+position: 10
+tags:
 - info
 - assessment
-position: 10
 title: Postgraduate allocations
 vote_count: 0
 vote_sum: 0
@@ -16,7 +16,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -48,7 +48,7 @@ project an allocation from the Postgraduate class:
     available to meet demand.
 
 Read more about [how we review
-applications](https://support.nesi.org.nz/hc/en-gb/articles/360000202136).
+applications](../../General/NeSI_Policies/How_we_review_applications.md).
 
 To learn more about NeSI Projects, and to apply please review the
 content of the section entitled [Applying for a NeSI

@@ -1,8 +1,8 @@
 ---
 created_at: '2020-05-12T01:43:30Z'
 hidden: false
-label_names: []
-position: 3
+position: 4
+tags: []
 title: Port Forwarding
 vote_count: 0
 vote_sum: 0
@@ -14,16 +14,15 @@ zendesk_section_id: 360000034315
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-!!! info Requirements
->
-> -   Have your [connection to the NeSI
->     cluster](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Standard-Terminal-Setup)
->     configured.
+!!! prerequisite Requirements
+     -   Have your [connection to the NeSI
+         cluster](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+         configured.
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
@@ -42,33 +41,36 @@ to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 **Host Alias:** An alias for the socket of your main connection to the
 cluster, `mahuika` or `maui` if you have set up your ssh config file as
 described
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
+[here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
-!!! info Note
->
-> The following examples use aliases as set up in [standard terminal
-> setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535).
-> This allows the forwarding from your local machine to the NeSI
-> cluster, without having to re-tunnel through the lander node.
+!!! prerequisite Note
+     The following examples use aliases as set up in [standard terminal
+     setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+     This allows the forwarding from your local machine to the NeSI
+     cluster, without having to re-tunnel through the lander node.
 
-# Command line (OpenSSH)
+## Command line (OpenSSH)
 
 *Works for any Linux terminal, Mac terminal, or Windows with WSL
 enabled.*
 
 The command for forwarding a port is
 
-    ssh -L <local_port>:<destination_host>:<remote_port> <ssh_host>
+``` sl
+ssh -L <local_port>:<destination_host>:<remote_port> <ssh_host>
+```
 
-## Example:
+### Example:
 
 A client program on my local machine uses the port 5555 to communicate.
 I want to connect to a server running on mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:
 
-    ssh -L 5555:localhost:6666 mahuika 
+``` sl
+ssh -L 5555:localhost:6666 mahuika 
+```
 
 Your terminal will now function like a normal connection to mahuika.
 However if you close this terminal session the port forwarding will end.
@@ -76,12 +78,11 @@ However if you close this terminal session the port forwarding will end.
 If there is no existing session on mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure. 
-!!! info Note
->
-> Your local port and remote port do not have to be different numbers.
-> It is generally easier to use the same number for both.
+!!! prerequisite Note
+     Your local port and remote port do not have to be different numbers.
+     It is generally easier to use the same number for both.
 
-# SSH Config (OpenSSH)
+## SSH Config (OpenSSH)
 
 If you are using port forwarding on a regular basis, and don't want the
 hassle of opening a new tunnel every time, you can include a port
@@ -91,42 +92,46 @@ machine.
 Under the alias for the cluster you want to connect to add the following
 lines.
 
-    LocalForward <local_port> <host_alias>:<remote_port>
-    ExitOnForwardFailure yes
+``` sl
+LocalForward <local_port> <host_alias>:<remote_port>
+ExitOnForwardFailure yes
+```
 
 ExitOnForwardFailure is optional, but it is useful to kill the session
 if the port fails. 
 
 e.g.
 
-      Host mahuika
-          User cwal219
-          Hostname login.mahuika.nesi.org.nz
-          ProxyCommand ssh -W %h:%p lander
-          ForwardX11 yes
-          ForwardX11Trusted yes
-          ServerAliveInterval 300
-          ServerAliveCountMax 2
-          LocalForward 6676 mahuika:6676
-          ExitOnForwardFailure yes
+``` sl
+  Host mahuika
+      User cwal219
+      Hostname login.mahuika.nesi.org.nz
+      ProxyCommand ssh -W %h:%p lander
+      ForwardX11 yes
+      ForwardX11Trusted yes
+      ServerAliveInterval 300
+      ServerAliveCountMax 2
+      LocalForward 6676 mahuika:6676
+      ExitOnForwardFailure yes
+```
 
 In the above example, the local and remote ports are the same. This
 isn't a requirement, but it makes things easier to remember.
 
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
-!!! info Note
->
-> -   If you get a error message
->
->         bind: No such file or directory
->         unix_listener: cannot bind to path: 
->
->     try to create the following directory:
->
->         mkdir -P ~/.ssh/sockets
+!!! prerequisite Note
+     -   If you get a error message
+         ``` sl
+         bind: No such file or directory
+         unix_listener: cannot bind to path: 
+         ```
+         try to create the following directory:
+         ``` sl
+         mkdir -P ~/.ssh/sockets
+         ```
 
-# MobaXterm
+## MobaXterm
 
 If you have Windows Subsystem for Linux installed, you can use the
 method described above. This is the recommended method.
@@ -134,12 +139,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session. 
 
-![mceclip0.png](../../assets/images/360004708596.name_me.png)
+![mceclip0.png](../../assets/images/Port_Forwarding.png)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](../../assets/images/360004708616.name_me.png)
+![mceclip1.png](../../assets/images/Port_Forwarding_0.png)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -147,7 +152,7 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](../../assets/images/360004580035.name_me.png)
+![mobakey.png](../../assets/images/Port_Forwarding_1.png)
 
 ■ local port  
 ■ remote port  
@@ -156,7 +161,7 @@ The two tunnels should look like this.
 
  
 
-# sshuttle 
+## sshuttle 
 
 [sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
@@ -168,7 +173,9 @@ routes all traffic, going to the specified subnet, through the tunnel.
 
 The command line for `sshuttle` has the following form:
 
-    sshuttle [-l [ip:]port] -r <host_alias>[:port] <subnets...>
+``` sl
+sshuttle [-l [ip:]port] -r <host_alias>[:port] <subnets...>
+```
 
 More information about specific keys and modifiers for sshuttle commands
 is available in the online documentation.
@@ -176,12 +183,14 @@ is available in the online documentation.
 As an example, this is how to establish a tunnel through Mahuika login
 node over to a specific virtual machine with IP address `192.168.90.5`:
 
-    sshuttle -r mahuika 192.168.0.0/16
+``` sl
+sshuttle -r mahuika 192.168.0.0/16
+```
 
 which uses remote SSH host Mahuika to forward all traffic coming to
 `192.16.XXX.XXX` subnet through the port forwarder.
 
-# Forwarding to Compute Nodes
+## Forwarding to Compute Nodes
 
 Ports can also be forwarded from the login node to a compute node.
 
@@ -194,22 +203,25 @@ command, `-N` to not execute a command after connecting, `-f` to run the
 connection in the background and `-R` for a reverse tunnel ( as opposed
 to `-L` ).
 
-    ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
+``` sl
+ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
+```
 
 An example Slurm script:
 
-    #!/bin/bash
+``` sl
+#!/bin/bash
 
-    #SBATCH --time 00:15:00
-    #SBATCH --mem  1G
+#SBATCH --time 00:15:00
+#SBATCH --mem  1G
 
-    ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
+ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
-    <some process using port 6676>
-!!! info What Next?
->
-> -   Using
->     [JupyterLab ](https://support.nesi.org.nz/hc/en-gb/articles/360001093315)on
->     the cluster.
-> -   [NiceDCV ](https://support.nesi.org.nz/hc/en-gb/articles/360000719156)
-> -   [Paraview](https://support.nesi.org.nz/hc/en-gb/articles/360001002956-ParaView)
+<some process using port 6676>
+```
+!!! prerequisite What Next?
+     -   Using
+         [JupyterLab ](../../Scientific_Computing/Supported_Applications/JupyterLab.md)on
+         the cluster.
+     -   [NiceDCV ](../../Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup.md)
+     -   [Paraview](../../Scientific_Computing/Supported_Applications/ParaView.md)

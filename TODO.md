@@ -2,12 +2,13 @@
 
 These could be be migration filters, post build checks, specifications or all.
 
+- [] Look into [Awesome pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin)
 - [X] Remove trash inline css/hmtl (wysiwug/dfn)
 - [] Tidy up `includes` situation.
 ~~- [] Get includes out of `docs`~~
 ~~  - [] Allow including of images without all the `../`~~
   - [] Clarify difference between `includes` and `overrides`
-- [] Find uncapitalised and unmacroned maui/mahuika (outside of code blocks)
+- [X] Find uncapitalised and unmacroned maui/mahuika (outside of code blocks)
 - [] Unbalanced structure. e.g.
   - [] Excessivly long titles.
   - [] More than two children, less than 10.
@@ -28,7 +29,7 @@ These could be be migration filters, post build checks, specifications or all.
   - [] Create 'abbreviations'.
   - [] Generate glossary page.
 - [X] Remove duplicate ids.
-- [] Convert quote blocks into 'Admonitions'.
+- [X] Convert quote blocks into 'Admonitions'.
 - [X] Convert links to relative internal links
 e.g "https://support.nesi.org.nz/hc/en-gb/articles/360000624696" needs to be converted to
 "Scientific_Computing/Terminal_Setup/MobaXterm_Setup(Windows).md"

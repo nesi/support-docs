@@ -1,5 +1,5 @@
 hooks:
-  - custom_hooks.py
+  - mkdocs_hooks.py
 markdown_extensions:
   - toc:
       baselevel: 1
@@ -22,21 +22,19 @@ markdown_extensions:
         - assets/glossary/snippets.md
 plugins:
   - search
-      # - spellcheck:
-    #     known_words: ../includes/dictionary.txt
-    #     ignore_code: yes
-    #     min_length: 3
-    #     max_capital: 1
-    #     allow_unicode: yes
+  - redirects:
+      map_file: docs/redirect_map.yml
   - literate-nav
-  - tags: null
-  - git-authors
+ # - git-authors
+  - tags
   - git-revision-date-localized:
       enable_creation_date: true
   - macros:
+      module_name: macro_hooks
       include_dir: docs/assets
 repo_name: GitHub
 repo_url: https://github.com/nesi/support-docs-concept
+edit_uri: edit/main/docs/
 site_description: NeSI Support Documentation
 site_dir: public
 site_name: NeSI Support Center
@@ -44,33 +42,37 @@ site_url: https://github.com/nesi/support-docs-concept
 extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
-  - assets/stylesheets/supportedApplications.css
+  - assets/stylesheets/custom_admonations.css
+  - assets/stylesheets/theme.css
+  # - assets/stylesheets/supportedApplications.css
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.0.min.js
-  - javascripts/supportedApplications.js
+  # - assets/javascripts/supportedApplications.js
 nav:
-- "Getting Started": "Getting_Started/" 
-- "General": "General/"
-- "Scientific Computing": "Scientific_Computing/"
-- "Storage": "Storage/"
-- "NeSI Service Subscriptions": "NeSI_Service_Subscriptions/"
+  - "Getting Started": "Getting_Started/"
+  - "General": "General/"
+  - "Scientific Computing": "Scientific_Computing/"
+  - "Storage": "Storage/"
+  - "NeSI Service Subscriptions": "NeSI_Service_Subscriptions/"
 theme:
   custom_dir: overrides
   favicon: assets/icons/favicon.ico
   features:
     - navigation.indexes
     - navigation.top
+    - navigation.prune
     - content.code.copy
+    - content.action.edit
   language: en
   logo: assets/icons/logo.svg
   name: material
   palette:
-    - primary: grey
+    - primary: custom
       scheme: default
       toggle:
         icon: material/lightbulb
         name: Switch to dark mode
-    - primary: black
+    - primary: custom
       scheme: slate
       toggle:
         icon: material/lightbulb-outline

@@ -1,8 +1,8 @@
 ---
 created_at: '2020-07-08T01:45:40Z'
 hidden: false
-label_names: []
 position: 3
+tags: []
 title: Virtual Desktop via Jupyter on NeSI
 vote_count: 2
 vote_sum: 2
@@ -14,7 +14,7 @@ zendesk_section_id: 360001189255
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -49,13 +49,15 @@ Enviroment set in `singularity_wrapper.bash` can be changed by creating
 a file `$XDG_CONFIG_HOME/vdt/pre.bash` Anything you want to run
 \*before\* launching the container put in here.
 
-    export VDT_BASE_IMAGE="~/my_custom_container.sif" # Use a different image file.
-    export VDT_RUNSCRIPT="~/my_custom_runscript" # Use a different runscript.
+``` sl
+export VDT_BASE_IMAGE="~/my_custom_container.sif" # Use a different image file.
+export VDT_RUNSCRIPT="~/my_custom_runscript" # Use a different runscript.
 
-    export OVERLAY="TRUE"
-    export BROWSER="chrome" # Desktop session will inherit this.
+export OVERLAY="TRUE"
+export BROWSER="chrome" # Desktop session will inherit this.
 
-    module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
+module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
+```
 
 ### \`post.bash\`
 
@@ -66,10 +68,12 @@ Things you may wish to set here are:
 `VDT_WEBSOCKOPTS`, `VDT_VNCOPTS`, any changes to the wm environment, any
 changes to path, this include module files.
 
-    export VDT_VNCOPTS="-depth 16" # This will start a 16bit desktop
-    export BROWSER="chrome" # Desktop session will inherit this.
+``` sl
+export VDT_VNCOPTS="-depth 16" # This will start a 16bit desktop
+export BROWSER="chrome" # Desktop session will inherit this.
 
-    module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
+module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
+```
 
 ## Custom container
 

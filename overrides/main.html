@@ -1,21 +1,6 @@
 {% extends "base.html" %}
-
-{% block outdated %}
-<p>This is a proof of concept. The content is the same as the
-    <a href="https://support.nesi.org.nz/hc/en-gb">offical support documentation.</a>
-</p>
-{% endblock %}
 {% block header %}
-<!-- <div id="banner" style="
-    font-size: larger;
-    text-align: center;
-    background: lightgoldenrodyellow;
-    color: black;
-">
-    <p>This is a proof of concept. The content is the same as the
-        <a href="https://support.nesi.org.nz/hc/en-gb">offical support documentation.</a>
-    </p>
-</div> -->
+{% include "partials/concept_banner.html" %}
 {{ super() }}
 {% if page.meta and page.meta.prereq %}
 <ul>

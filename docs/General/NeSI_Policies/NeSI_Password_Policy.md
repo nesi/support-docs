@@ -1,8 +1,8 @@
 ---
 created_at: '2018-07-17T00:55:01Z'
 hidden: false
-label_names: []
 position: 3
+tags: []
 title: NeSI Password Policy
 vote_count: 2
 vote_sum: 2
@@ -14,7 +14,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

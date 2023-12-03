@@ -1,0 +1,20 @@
+:root {
+    --md-default-fg-color:               #C9445B;
+    --md-default-fg-color--light:        #1a0206;
+    --md-default-fg-color--lighter:      rgb(11,33,57,0.5);
+    --md-default-fg-color--lightest:     rgb(11,33,57,0.1);
+
+    --md-primary-fg-color:               #C9445B;
+    --md-primary-fg-color--light:        rgb(35,171,227);
+    --md-primary-fg-color--dark:         rgb(11,33,57);
+    
+    --md-accent-fg-color:                rgb(248,150,29);
+    --md-accent-fg-color--transparent:   rgb(248,150,29,0.25);
+  
+    --md-accent-bg-color:                rgb(210,227,235);
+    --md-accent-bg-color--light:         rgb(210,227,235,0.5);
+  }
+  .md-header__button.md-logo img, .md-header__button.md-logo svg {
+    height: 4rem;
+    margin: -2rem;
+}

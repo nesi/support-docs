@@ -1,8 +1,8 @@
 ---
 created_at: '2023-10-13T00:14:22Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: Globus Quick Start Guide
 vote_count: 0
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 360000040596
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -47,12 +47,11 @@ up using one of the available options on the page. Please note that the
 organisation is not listed, please sign in (sign up) using any of the
 other methods.
 
-<img src="../../assets/images/8149105856015.name_me.png" width="398"
-height="436" alt="Globus_login.png" />
+![Globus\_login.png](../../assets/images/Globus_Quick_Start_Guide.png)
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
 your Globus
-Identities](https://support.nesi.org.nz/hc/en-gb/articles/360000817476).
+Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
 
  
 
@@ -70,11 +69,11 @@ copying to and from. Please note that the NeSI `project` directory is
 read only, and `nobackup` is read and write.
 
 A list of some Institutional endpoints can be found here:
-[National-Data-Transfer-Platform](https://support.nesi.org.nz/hc/en-gb/articles/360000931775-National-Data-Transfer-Platform).
+[National-Data-Transfer-Platform](../../Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md).
 You can also set up your own [personal
-endpoint](https://support.nesi.org.nz/hc/en-gb/articles/360000217915) to
-transfer data to or from your personal computer, however, administrative
-access to your computer is required
+endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
+to transfer data to or from your personal computer, however,
+administrative access to your computer is required
 
 To activate the NeSI endpoint click go to
 <https://transfer.nesi.org.nz/>  and click "file manager" on the menu
@@ -89,8 +88,7 @@ bar on the left.
     **do not** save your password on "*Browser settings*" as it will
     change every time due to the 2nd factor requirement.
 
-<img src="../../assets/images/8149067986063.name_me.png" width="296"
-height="340" alt="NeSI_Globus_Authenticate.png" />
+![NeSI\_Globus\_Authenticate.png](../../assets/images/Globus_Quick_Start_Guide_0.png)
 
  
 
@@ -104,7 +102,7 @@ initiate the transfer, select one of the two directional arrows. In the
 image below, the 'config' folder is being transferred from the location
 on the right, to the location on the left.
 
-![Globus\_transfer\_data.png](../../assets/images/8149738412815.name_me.png)
+![Globus\_transfer\_data.png](../../assets/images/Globus_Quick_Start_Guide_1.png)
 
 To see the progress of the transfer, please click 'Activity' on the left
 hand menu bar.

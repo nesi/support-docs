@@ -1,12 +1,12 @@
 ---
 created_at: '2018-04-22T21:09:28Z'
 hidden: false
-label_names:
+position: 3
+tags:
 - hpc
 - info
 - mahuika
 - cs400
-position: 3
 title: Mahuika
 vote_count: 7
 vote_sum: 3
@@ -18,7 +18,7 @@ zendesk_section_id: 360000034335
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -38,19 +38,19 @@ access to GNU, Intel and Cray programming environments, including
 editors, compilers, linkers, and debugging tools. Typically, users will
 ssh to these nodes after logging onto the NeSI lander node.
 
-### Notes
+## Notes
 
 1.  The Cray Programming Environment on Mahuika, differs from that on
     Māui.
 2.  The `/home, /nesi/project`, and `/nesi/nobackup`
-    [filesystems](https://support.nesi.org.nz/hc/en-gb/articles/360000177256)
+    [filesystems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
     are mounted on Mahuika.
 3.  Read about how to compile and link code on Mahuika in section
     entitled: [Compiling software on
-    Mahuika.](https://support.nesi.org.nz/hc/en-gb/articles/360000329015)
+    Mahuika.](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md)
 4.  An extension to Mahuika with additional, upgraded resources is also
     available. see [Milan Compute
-    Nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes)
+    Nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
     for details on access
 
 ## Mahuika HPC Cluster (Cray CS400)
@@ -153,29 +153,11 @@ Rocky 8.5 on Milan</span></p></td>
 
 ##  Storage (IBM ESS)
 
-<table style="width: 700px;">
-<tbody>
-<tr class="odd">
-<td width="186"><p><span><strong>Scratch
-storage</strong></span></p></td>
-<td width="418"><p><span>4,412 TB (IBM Spectrum Scale, version 5.0).
-Total I/O bandwidth to disks is ~130 GB/s</span></p></td>
-</tr>
-<tr class="even">
-<td width="186"><p><span><strong>Persistent
-storage</strong></span></p></td>
-<td width="418"><p><span>1,765 TB (IBM Spectrum Scale, version 5.0).
-Shared between Mahuika and Māui Total I/O bandwidth to disks is ~65 GB/s
-(i.e. the /home and /nesi/project filesystems)</span></p></td>
-</tr>
-<tr class="odd">
-<td width="186"><p><span><strong>Offline
-storage</strong></span></p></td>
-<td width="418"><p><span>Of the order of 100 PB
-(compressed)</span></p></td>
-</tr>
-</tbody>
-</table>
+|                        |                                                                                                                                                                     |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Scratch storage**    | 4,412 TB (IBM Spectrum Scale, version 5.0). Total I/O bandwidth to disks is ~130 GB/s                                                                               |
+| **Persistent storage** | 1,765 TB (IBM Spectrum Scale, version 5.0). Shared between Mahuika and Māui Total I/O bandwidth to disks is ~65 GB/s (i.e. the /home and /nesi/project filesystems) |
+| **Offline storage**    | Of the order of 100 PB (compressed)                                                                                                                                 |
 
 Scratch and persistent storage are accessible from Mahuika, as well as
 from Māui and the ancillary nodes. Offline storage will in due course be

@@ -1,9 +1,9 @@
 ---
 created_at: '2019-02-07T20:31:36Z'
 hidden: false
-label_names:
-- help
 position: 3
+tags:
+- help
 title: System status
 vote_count: 0
 vote_sum: 0
@@ -15,7 +15,7 @@ zendesk_section_id: 360000164635
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -39,9 +39,9 @@ included at the bottom of the notification email message "Manage your
 subscription" or "Unsubscribe" to manage your preferences.
 
 See also our support article [Managing NeSI notification
-preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)
+preferences](../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md)
 
-![mceclip0.png](../../assets/images/4563357435279.name_me.png)
+![mceclip0.png](../../assets/images/System_status.png)
 
 ## status.nesi.org.nz
 
@@ -50,7 +50,6 @@ NeSI does publish service incidents and scheduled maintenance via
 Interested parties are invited to subscribe to updates (via SMS or
 email).
 
-<img src="../../assets/images/360001620295.name_me.png" width="880"
-height="772" />
+![](../../assets/images/System_status_0.png)
 
-# [NeSI wide area network connectivity](https://support.nesi.org.nz/hc/en-gb/articles/8252164326415)
+## [NeSI wide area network connectivity](../../Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md)

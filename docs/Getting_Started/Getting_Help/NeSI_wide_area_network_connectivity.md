@@ -1,8 +1,8 @@
 ---
 created_at: '2023-10-30T22:11:19Z'
 hidden: false
-label_names: []
 position: 0
+tags: []
 title: NeSI wide area network connectivity
 vote_count: 0
 vote_sum: 0
@@ -14,33 +14,38 @@ zendesk_section_id: 360000164635
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-## <span class="ed bdr bdt bdv bdx bdz beb bed bef beh bej bel ben bep ber bet bev bex">How to verify the status of external (wide area network - WAN) connectivity for NeSI?</span>
+NeSI's national platform facilities are connected to the
+[REANNZ](https://www.reannz.co.nz/) network, Aotearoa's high-performance
+national digital network (or NREN). This national network supports
+collaboration and contributions to data-intensive and complex science
+and research initiatives in New Zealand and across the globe. 
 
-<span class="ed bdr bdt bdv bdx bdz beb bed bef beh bej bel ben bep ber bet bev bex">NeSI
-is partnering with [REANNZ](https://www.reannz.co.nz/) </span>
+## How to verify the status of external (wide area network - WAN) connectivity for NeSI
 
-<span class="ed bdr bdt bdv bdx bdz beb bed bef beh bej bel ben bep ber bet bev bex">network
-to share their work with collaborators around the country and the world,
-and to access data from international research libraries eg. researchers
-working in climate change, earthquake research, genomics, and
-engineering.</span>
+A real-time network status page is available on the REANNZ website as a
+'weather map', which shows all traffic across its national network:
 
-## <span class="ed bdr bdt bdv bdx bdz beb bed bef beh bej bel ben bep ber bet bev bex">Network status page</span>
+<https://weathermap.reannz.co.nz>
 
-<span class="ed bdr bdt bdv bdx bdz beb bed bef beh bej bel ben bep ber bet bev bex">REANNZ
-publishes a so called weather map showing all traffic in
-real-time:</span>
+From that main 'weather map' view, you can drill down to a more detailed
+view of specific addresses, e.g.:
 
-<span class="ed bdr bdt bdv bdx bdz beb bed bef beh bej bel ben bep ber bet bev bex"><https://weathermap.reannz.co.nz></span>
+**Wellington (WLG) for Niwa**
 
-One can then drill down to e.g. **Mayoral Drive, Auckland (MDR)**
+<https://weathermap.reannz.co.nz/index.php?src=and39>
+
+**Mayoral Drive, Auckland (MDR)**
 
 <https://weathermap.reannz.co.nz/index.php?src=and15>
+
+**UoA Tamaki Data Centre (TDC)**
+
+<https://weathermap.reannz.co.nz/index.php?src=red07>
 
  
 

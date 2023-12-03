@@ -1,10 +1,10 @@
 ---
 created_at: '2019-02-14T23:33:05Z'
 hidden: false
-label_names:
+position: 28
+tags:
 - mahuika
 - engineering
-position: 28
 title: FDS
 vote_count: 0
 vote_sum: 0
@@ -16,7 +16,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -34,23 +34,25 @@ FDS can utilise both
 and
 [OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-SLURM-Parallel-Execution#t_multi)
 
-### Example Script
+## Example Script
 
-    #!/bin/bash -e
+``` sl
+#!/bin/bash -e
 
-    #SBATCH --time           02:00:00       #Walltime
-    #SBATCH --ntasks         4              #One task per mesh, NO MORE
-    #SBATCH --cpus-per-task  2              #More than 4 cpus/task not recommended.
-    #SBATCH --output         %x.out     #Name output file according to job name
-    #SBATCH --hint           nomultithread  #Hyperthreading decreases efficiency.
+#SBATCH --time           02:00:00       #Walltime
+#SBATCH --ntasks         4              #One task per mesh, NO MORE
+#SBATCH --cpus-per-task  2              #More than 4 cpus/task not recommended.
+#SBATCH --output         %x.out     #Name output file according to job name
+#SBATCH --hint           nomultithread  #Hyperthreading decreases efficiency.
 
-    module load FDS/6.7.1-intel-2017a
+module load FDS/6.7.1-intel-2017a
 
-    input="/nesi/project/nesi99999/path/to/input.fds"
+input="/nesi/project/nesi99999/path/to/input.fds"
 
-    srun fds ${input}
+srun fds ${input}
+```
 
-# Recommendations
+## Recommendations
 
 -   FDS will run in Hybrid Parallel, but will be less efficient that
     full MPI using the same number of CPUs.
@@ -64,13 +66,13 @@ and
     cores. `--cpus-per-task 4`
 -   Hyper-threading is not recommended. Set `--hint nomultithread`
 
-## Scaling with MPI
+### Scaling with MPI
 
-![mceclip1.png](../../assets/images/mceclip1_0.png)
+![mceclip1.png](../../assets/images/FDS.png)
 
-## Scaling with oMP
+### Scaling with oMP
 
-![mceclip0.png](../../assets/images/mceclip0_0_0_0_0.png)
+![mceclip0.png](../../assets/images/FDS_0.png)
 
  
 

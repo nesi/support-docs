@@ -1,12 +1,12 @@
 ---
 created_at: '2018-05-18T02:26:58Z'
 hidden: false
-label_names:
-- tqp
 position: 6
+tags:
+- tqp
 title: How we review applications
-vote_count: 1
-vote_sum: -1
+vote_count: 2
+vote_sum: 0
 zendesk_article_id: 360000202136
 zendesk_section_id: 360000224835
 ---
@@ -15,7 +15,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -66,11 +66,10 @@ new projects is as follows:
     for your project, we will typically award the project an [allocation
     of Mahuika compute units, Māui node hours, or both, and also an
     online storage
-    allocation](https://support.nesi.org.nz/hc/en-gb/articles/360001385735),
+    allocation](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md),
     from one of [our allocation
-    classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176).
-    In any case, we will send you an email telling you about our
-    decision.
+    classes](../../General/NeSI_Policies/Allocation_classes.md). In any
+    case, we will send you an email telling you about our decision.
 
 Our review process for requests for new allocations on existing projects
 is simpler:

@@ -1,8 +1,8 @@
 ---
 created_at: '2019-07-24T04:30:33Z'
 hidden: false
-label_names: []
 position: 34
+tags: []
 title: Keras
 vote_count: 0
 vote_sum: 0
@@ -14,14 +14,14 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 Keras is a modular and extensible API for building neural networks in
 Python. Keras is included with TensorFlow. Note that there are [CPU
-and](https://support.nesi.org.nz/hc/en-gb/articles/360000997675-TensorFlow-on-CPUs) [GPU
+and](../../Scientific_Computing/Supported_Applications/TensorFlow on CPUs.md) [GPU
 versions](https://support.nesi.org.nz/hc/en-gb/articles/360000990436-TensorFlow) of
 TensorFlow, here we'll use TensorFlow 1.10 for GPUs, which is available
 as an environment module. 
@@ -47,20 +47,21 @@ Start by generating images of dots.  We'll generate 1000 images for our
 training set and 100 images to test our predictions. On Mahuika type the
 following commands to generate the training and testing data sets:
 
-    wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/ProduceSyntheticData/DrawDots.R
-    ml R/3.6.1-gimkl-2018b
-    Rscript DrawDots.R -n 1000 -r 0 -R 5 -s 123 -o train -c train.csv -w 40
-    Rscript DrawDots.R -n 100 -r 0 -R 5 -s 234 -o test -c test.csv -w 40
+``` sl
+wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/ProduceSyntheticData/DrawDots.R
+ml R/3.6.1-gimkl-2018b
+Rscript DrawDots.R -n 1000 -r 0 -R 5 -s 123 -o train -c train.csv -w 40
+Rscript DrawDots.R -n 100 -r 0 -R 5 -s 234 -o test -c test.csv -w 40
+```
 
 The images are saved under directories train/ and test/, respectively.
 An example of image is test/img49.jpg.
 
-``` p1
+``` sl
 display test/img49.jpg
 ```
 
-<img src="../../assets/images/img49.jpg" width="100" height="100"
-alt="img49.jpg" />
+![img49.jpg](../../assets/images/Keras.jpg)
 
 which shows five, partially overlapping dots. Note that along with the
 images, a comma separated values (csv) file (e.g. train/train.csv)
@@ -72,7 +73,7 @@ The images need to be slightly manipulated. For instance we expect all
 the images to be black and white so we can collapse the red, green and
 blue channel into one. We'll need OpenCV to this task:
 
-``` p1
+``` sl
 pip install opencv-python --user
 ```
 
@@ -80,7 +81,7 @@ pip install opencv-python --user
 
 Our neural network
 
-``` p1
+``` sl
 wget https://raw.githubusercontent.com/mkienzle/MachineLearning/master/Scripts/Conv2D/classify.py
 ```
 
@@ -91,7 +92,7 @@ flattened as a 1D array and a dense layer, which returns an estimate of
 the number of dots as a single floating point number, is added. The
 corresponding lines in classify.py look like (Python code):
 
-``` p1
+``` sl
 clf = keras.Sequential()
 clf.add( keras.layers.Conv2D(32, kernel_size=(3,3), strides=(1,1),
                              padding='same', data_format='channels_last', activation='relu') )
@@ -110,7 +111,7 @@ clf.add( keras.layers.Dense(1) )
 
 We're now ready to train and test our model:
 
-``` p1
+``` sl
 #!/bin/bash -e
 #SBATCH --job-name keras-dots
 #SBATCH --partition gpu
@@ -126,7 +127,7 @@ python classify.py --testDir=test --trainDir=train --save=someResults.png
 Copy-paste the above and save in file classify.sl. Submit the Slurm
 script classify.sl
 
-``` p1
+``` sl
 sbatch classify.sl
 ```
 
@@ -137,7 +138,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like: 
 
-![someResults.png](../../assets/images/someResults.png)
+![someResults.png](../../assets/images/Keras.png)
 
 (The purple images have no dots.) With each image the number of dots is
 displayed as well as the value inferred by the model in parentheses. The

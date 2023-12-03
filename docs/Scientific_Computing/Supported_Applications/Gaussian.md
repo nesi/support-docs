@@ -1,10 +1,10 @@
 ---
 created_at: '2015-07-29T23:31:02Z'
 hidden: false
-label_names:
+position: 29
+tags:
 - mahuika
 - chemistry
-position: 29
 title: Gaussian
 vote_count: 5
 vote_sum: 1
@@ -16,7 +16,7 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -154,20 +154,22 @@ fails or is killed by the scheduler. In this case, the value of the
 checkpoint file is a placeholder (as are the number of cores and the
 memory) and is replaced with a real value when the Slurm job starts.
 
-    $RunGauss$
+``` sl
+$RunGauss$
 
-    %NProcShared=<<NUMBER_OF_CORES>>
-    %Mem=<<MEMORY>>MB
-    %Chk=<<CHECKPOINT_FILE>>
+%NProcShared=<<NUMBER_OF_CORES>>
+%Mem=<<MEMORY>>MB
+%Chk=<<CHECKPOINT_FILE>>
 
-    #P HF/STO-3G SP
+#P HF/STO-3G SP
 
-    Single-point energy calculation on water
+Single-point energy calculation on water
 
-    0 1
-    H
-    O 1 0.95
-    H 2 0.95 1 109.0
+0 1
+H
+O 1 0.95
+H 2 0.95 1 109.0
+```
 
 ## Further notes
 

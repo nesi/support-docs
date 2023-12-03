@@ -1,10 +1,10 @@
 ---
 created_at: '2019-01-07T01:10:28Z'
 hidden: false
-label_names:
+position: 3
+tags:
 - slurm
 - scheduler
-position: 3
 title: Submitting your first job
 vote_count: 8
 vote_sum: 8
@@ -16,7 +16,7 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -28,40 +28,12 @@ cluster. They prepare the environment you need to run an application.
 
 For a full list of module commands run man module
 
-<table style="height: 110px; width: 861.4px;">
-<tbody>
-<tr class="odd">
-<td
-style="width: 275px"><code>module spider [ &lt;string&gt; ]</code></td>
-<td style="width: 301.4px">List all modules whose names, including
-version strings, contain <code>&lt;string&gt;</code>. If the
-<code>&lt;string&gt;</code> argument is not supplied, list all available
-modules. (only on Mahuika)</td>
-</tr>
-<tr class="even">
-<td style="width: 275px"><code>module show &lt;string&gt;</code></td>
-<td style="width: 301.4px">Show the contents of the module given
-by <code>&lt;string&gt;</code>. If only the module name (e.g.
-<code>Python</code>) is given, show the default module of that name. If
-both name and version are given, show that particular version
-module.</td>
-</tr>
-<tr class="odd">
-<td style="width: 275px"><code>module load &lt;string&gt;</code></td>
-<td style="width: 301.4px">Load the module (name and version) given
-by <code>&lt;string&gt;</code>. If no version is given, load the default
-version.</td>
-</tr>
-<tr class="even">
-<td
-style="width: 275px"><code>module list [ &lt;string&gt; ]</code></td>
-<td style="width: 301.4px">List all currently loaded modules whose
-names, including version strings, contain <code>&lt;string&gt;</code>.
-If the <code>&lt;string&gt;</code> argument is not supplied, list all
-currently loaded modules.</td>
-</tr>
-</tbody>
-</table>
+|                              |                                                                                                                                                                                                                       |
+|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `module spider [ <string> ]` | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)                                                |
+| `module show <string>`       | Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module. |
+| `module load <string>`       | Load the module (name and version) given by `<string>`. If no version is given, load the default version.                                                                                                             |
+| `module list [ <string> ]`   | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.                                          |
 
 ## Slurm
 
@@ -73,7 +45,7 @@ needed by our job scheduler *Slurm.*
 
 Create a new file and open it with nano myjob.sl
 
-``` nohighlight
+``` sl
 #!/bin/bash -e
 #SBATCH --job-name=SerialJob # job name (shows up in the queue)
 #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
@@ -99,17 +71,16 @@ The debug QOS can be gained by adding the `sbatch` command line option
 This adds 5000 to the job priority so raises it above all non-debug
 jobs, but is limited to one small job per user at a time: no more than
 15 minutes and no more than 2 nodes.
-!!! info Warning
->
-> Please do not run your code on the login node.  Any processes running
-> on the login node for long periods of time or using large numbers of
-> CPUs will be terminated.
+!!! prerequisite Warning
+     Please do not run your code on the login node.  Any processes running
+     on the login node for long periods of time or using large numbers of
+     CPUs will be terminated.
 
 ## Submitting
 
 Jobs are submitted to the scheduler using:
 
-``` nohighlight
+``` sl
 sbatch myjob.sl
 ```
 
@@ -127,37 +98,43 @@ Documentation](https://slurm.schedmd.com/sbatch.html)
 
 The currently queued jobs can be checked using 
 
-``` nohighlight
+``` sl
 squeue
 ```
 
 You can filter to just your jobs by adding the flag
 
-    squeue -u usr9999
+``` sl
+squeue -u usr9999
+```
 
 You can also filter to just your jobs using
 
-    squeue --me
+``` sl
+squeue --me
+```
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/squeue.html)
 
 You can check all jobs submitted by you in the past day using:
 
-    sacct
+``` sl
+sacct
+```
 
 Or since a specified date using:
 
-    sacct -S YYYY-MM-DD
+``` sl
+sacct -S YYYY-MM-DD
+```
 
 Each job will show as multiple lines, one line for the parent job and
 then additional lines for each job step.
-!!! info Tips
->
-> sacct -X Only show parent processes.
->
-> sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
-> state.
+!!! prerequisite Tips
+     sacct -X Only show parent processes.
+     sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT Filter jobs by
+     state.
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/sacct.html)
@@ -166,12 +143,10 @@ Documentation](https://slurm.schedmd.com/sacct.html)
 
 scancel &lt;jobid&gt; will cancel the job described by &lt;jobid&gt;.
 You can obtain the job ID by using sacct or squeue.
-!!! info Tips
->
-> scancel -u \[username\] Kill all jobs submitted by you.
->
-> scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
-> \[n2\]
+!!! prerequisite Tips
+     scancel -u \[username\] Kill all jobs submitted by you.
+     scancel {\[n1\]..\[n2\]} Kill all jobs with an id between \[n1\] and
+     \[n2\]
 
 You can find more details on its use on the [Slurm
 Documentation](https://slurm.schedmd.com/scancel.html)

@@ -1,8 +1,8 @@
 ---
 created_at: '2019-09-22T21:07:48Z'
 hidden: false
-label_names: []
 position: 7
+tags: []
 title: Multithreading Scaling Example
 vote_count: 0
 vote_sum: 0
@@ -14,7 +14,7 @@ zendesk_section_id: 360000189716
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -25,9 +25,9 @@ these examples are applicable across software applications. You do not
 need to know anything about R to understand this article; it was merely
 chosen for the purpose of illustration.
 
-### Initial R Script
+## Initial R Script
 
-``` nohighlight
+``` sl
  library(doParallel)
 
   registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
@@ -53,7 +53,7 @@ iterations. So now lets change the number of iterations from 60,000 to
 
 ### Revised R Script
 
-``` nohighlight
+``` sl
  library(doParallel)
 
   registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
@@ -67,8 +67,9 @@ iterations. So now lets change the number of iterations from 60,000 to
 Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
-local workstation, but if that is not possible, make an educated
-guess.  
+local workstation, but if that is not possible, make an educated guess,
+and if the job fails increase the resources requested until is
+completes.
 
 **TIP:** If you can, write your program so that it prints results and
 timing information out relatively frequently, for example every 100 or
@@ -78,7 +79,7 @@ took to get there.
 
 ### Slurm Script
 
-``` nohighlight
+``` sl
   #!/bin/bash -e
   #SBATCH --job-name=Scaling5k
   #SBATCH --time=00:10:00
@@ -92,7 +93,7 @@ took to get there.
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
-``` nohighlight
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
@@ -101,9 +102,9 @@ Let's run our Slurm script with sbatch and look at our output from
 3106248.0      Rscript         00:03:14    12:50.719     4  406516K COMPLETED
 ```
 
-Our job performed 5,000 iterations using four CPU cores and a maximum
-memory of 406,516KB (0.4 GB). In total, the job ran for 3 minutes and 17
-seconds.
+Our job performed 5,000 iterations using four logical CPU cores and a
+maximum memory of 406,516KB (0.4 GB). In total, the job ran for 3
+minutes and 17 seconds.
 
 We will initially assume that our job's wall time and memory will scale
 linearly with the number of iterations. However, we don't know that for
@@ -114,7 +115,7 @@ full job and be confident it will succeed.
 To test this, we will submit three more jobs, using 10,000 15,000 and
 20,000 iterations.
 
-``` nohighlight
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
@@ -137,17 +138,13 @@ To test this, we will submit three more jobs, using 10,000 15,000 and
 
 We can see from the `sacct` output that the wall time seems to be
 increasing as we add more iterations, but the maximum memory doesn't
-seem to change much. Let's try plotting this data to help us better
-understand what is happening:
+seem to change much. Let's try plotting this data (we used R here, but
+feel free to use excel or whatever your preferred plotting software) to
+help us better understand what is happening:
 
-<table>
-<tbody>
-<tr class="odd">
-<td><img src="../../assets/images/blobid2_0.png" alt="Plot1" /></td>
-<td><img src="../../assets/images/blobid3_0.png" alt="Plot2" /></td>
-</tr>
-</tbody>
-</table>
+|                                                                  |                                                                    |
+|------------------------------------------------------------------|--------------------------------------------------------------------|
+| ![Plot1](../../assets/images/Multithreading_Scaling_Example.png) | ![Plot2](../../assets/images/Multithreading_Scaling_Example_0.png) |
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.
@@ -162,7 +159,7 @@ by that means?
 To find out we are going to have to run more tests. Let's try running
 our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
-``` nohighlight
+``` sl
  sacct
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
 -------------- ------------ ----------- ------------ ----- -------- ----------
@@ -202,21 +199,18 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
  
 
-<table>
-<tbody>
-<tr class="odd">
-<td><img src="../../assets/images/6197221642383.name_me.png"
-alt="TvC-MT.png" /></td>
-<td><img src="../../assets/images/6197207741967.name_me.png"
-alt="TvL2C-MT.png" /></td>
-</tr>
-</tbody>
-</table>
+|                                                                         |                                                                           |
+|-------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| ![TvC-MT.png](../../assets/images/Multithreading_Scaling_Example_1.png) | ![TvL2C-MT.png](../../assets/images/Multithreading_Scaling_Example_2.png) |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
 see the inflection point on the Log2 graph when the speed up from
-increasing the number of CPUs start to level off.
+increasing the number of CPUs start to level off, as in the Log2 graph
+if the jobs scaled perfectly linearly (e.g. doubling the CPU's halves
+the runtime) the line would be straight. The curving of the line in the
+Log2 graph represents a loss in efficiency from increasing the number of
+CPUs.
 
 As we can see, increasing the number of CPU cores doesn't linearly
 increase the job's speed. This non-linear speed-up is called Amdahl's
@@ -231,7 +225,7 @@ significant drop in marginal speed-up after eight CPU cores.
 
  
 
-<img src="../../assets/images/blobid1_0.png" width="469" height="395" />
+![](../../assets/images/Multithreading_Scaling_Example_3.png)
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase
@@ -243,7 +237,7 @@ One thing to note about our plot of CPUs versus memory is that our
 memory usage seems to drop for 10 CPUs, this can likely be explained by
 the fact that memory usage is not measured continuously, it is instead
 measured every 30 seconds. This means that if your job's memory usage
-has some spikes, `sacct` will not necessarilly detect the maximum memory
+has some spikes, `sacct` will not necessarily detect the maximum memory
 usage. This is something that you should be aware of when you estimate
 the memory usage of all your jobs.
 
@@ -257,7 +251,7 @@ requirements scale, we can try and estimate our total resource
 requirements for our 60,000 iteration job.
 
 From this data we have determined that more than 8 CPUs has very limited
-additional speed and an 8 CPU should use about 0.75 GB of memory at
+additional speed and an 8 CPU job should use about 0.75 GB of memory at
 most, and that this memory requirement should remain relatively
 consistent, regardless of the number of iterations. Given this
 information we can estimate our full size job's resource requirements.
@@ -268,7 +262,7 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
 
 ### Revised Slurm Script
 
-``` nohighlight
+``` sl
   #!/bin/bash -e
   #SBATCH --account=nesi99999
   #SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
@@ -282,7 +276,7 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
 
  Checking on our job with `sacct` 
 
-``` nohighlight
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3119026        Scaling60k      00:20:34     02:41:53     8          COMPLETED

@@ -1,11 +1,11 @@
 ---
 created_at: '2018-05-01T23:10:09Z'
 hidden: false
-label_names:
+position: 9
+tags:
 - info
 - allocation
 - assessment
-position: 9
 title: Merit allocations
 vote_count: 1
 vote_sum: 1
@@ -17,7 +17,7 @@ zendesk_section_id: 360000224835
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -64,7 +64,7 @@ must meet the following criteria:
     supervisor is a named investigator.
 
 Read more about [how we review
-applications](https://support.nesi.org.nz/hc/en-gb/articles/360000202136).
+applications](../../General/NeSI_Policies/How_we_review_applications.md).
 
 To learn more about NeSI Projects or to apply for a new project, please
 read our article [Applying for a NeSI

@@ -1,72 +1,36 @@
-Pages hosted [here](https://cwal219.pages.hpcf.nesi.org.nz/mkdocs).
+# NesI support documentation
 
-## Migrate
+[![Deploy to gh-pages](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment_status)](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml)
 
-Migration pipeline hosted [here](https://git.hpcf.nesi.org.nz/cwal219/migratedocs)
+This repository contains the sources files for the NeSI support documentation.
 
-Any one off filters (e.g. don't need to be checked every time, just when converting from ZD) should go there.
+Rendered pages are visible at https://nesi.github.io/support-docs-concept/.
 
-## Build
+> **Warning**
+This is a beta version and should **not** be considered as the official documentation.
+The official documentation is accessible at https://support.nesi.org.nz.
 
-`mkdocs build --strict -t material`
+## Structure
 
-### Build filters
+The repository is organised using the following folders:
 
-These are filters that should be run whenever a page is edited.
+- `checks` : scripts intended to be run by CI,
+- `docs`: markdown files, structure determines categories and sections[^1],
+- `docs/assets`: non-template related files, e.g. images,
+- `overrides`: theme overides or extensions.
 
-Currently triggered in CI
-    - proselint
-    - mdspellcheck
-
-Currently Being run through mkdocs:
-    - Spellcheck
-    - Dead link checker
-
-Would be better to run these independently so they can be run by gitlab CI.
-
-## Build
-
-
-## Serve Local
-
-`mkdocs serve`
-
-## Files
-
-### docs/
-
-Location of markdown docs.
-File structure determines categories and sections.
-A section or category can be replaced by an `index.md` file, this will replace the default nav with a page.
-
-### docs/assets/
-
-For non-template related files, e.g. images.
-
-### overrides/
-
-Theme overides or extensions.
-
-### custom_hooks.py
-
-Custom hooks.
-    - on_env : Injects application info from 'module-list' into jinja build env.
-    - lint -> moved to CI
-    - link_checker -> moved to CI
-
-domains
+[^1]: A section or category can be replaced by an `index.md` file, this will replace the default nav with a page.
 
 ## Theme
 
-https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
+We are using the [mkdocs material theme](https://squidfunk.github.io/mkdocs-material/).
 
-## mkdocs Installation
+## Migration
 
-Basic installation of mkdocs and modules
-    - Install mkdocs, 
-        - python3 -m pip install mkdocs
-        - on OSX can also do
-            - `brew install mkdocs`
-    - Install python modules
-        - `python3 -m pip install linkcheckmd proselint pymdown-extensions 
-        - `python3 -m pip install mkdocs-material mkdocs-macros-plugin`
+Migration of the Zendesk documentation is done using our [migration pipeline (NeSI internal GitLab](https://git.hpcf.nesi.org.nz/cwal219/migratedocs).
+
+Any one off filters (e.g. don't need to be checked every time, just when converting from ZD) should go there.
+
+## Contributing
+
+See the [dedicated documentation](CONTRIBUTING.md).

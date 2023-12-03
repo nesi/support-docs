@@ -1,8 +1,8 @@
 ---
 created_at: '2018-07-12T03:48:47Z'
 hidden: false
-label_names: []
 position: 17
+tags: []
 title: Compiling software on Mahuika
 vote_count: 1
 vote_sum: 1
@@ -14,12 +14,12 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-# Where to build
+## Where to build
 
 You may compile (build) software on the Mahuika login nodes,
 `login.mahuika.nesi.org.nz`. Please be aware that these login nodes are
@@ -30,7 +30,7 @@ request these resources through a batch job submitted to Slurm, where
 you can also ask for a larger amount of compute resources to build your
 code.
 
-# Compilers and Toolchains
+## Compilers and Toolchains
 
 Compilers produced by three different vendors are provided on Mahuika:
 Cray, GNU and Intel.
@@ -63,7 +63,7 @@ Cray compilers are loaded with:
 
 `module load PrgEnv-cray`
 
-# Third party applications
+## Third party applications
 
 Installation instructions vary from application to application, and we
 suggest that you carefully read the instructions provided by the
@@ -99,66 +99,28 @@ should give you an impression which steps you usually need to consider:
 
  
 
-# Compilers
+## Compilers
 
 Compilers are provided for Fortran, C, and C++. For MPI-parallelised
 code, different compilers typically need to be used. The different
 **compilers** are listed:
 
-<table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Language</th>
-<th>Cray</th>
-<th>Intel</th>
-<th>GNU</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fortran</td>
-<td>ftn</td>
-<td>ifort</td>
-<td>gfortran</td>
-</tr>
-<tr class="even">
-<td>Fortran + MPI</td>
-<td>ftn</td>
-<td>mpiifort</td>
-<td>mpif90</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>cc</td>
-<td>icc</td>
-<td>gcc</td>
-</tr>
-<tr class="even">
-<td>C + MPI</td>
-<td>cc</td>
-<td>mpiicc</td>
-<td>mpicc</td>
-</tr>
-<tr class="odd">
-<td>C++</td>
-<td>CC</td>
-<td>icpc</td>
-<td>g++</td>
-</tr>
-<tr class="even">
-<td>C++ + MPI</td>
-<td>CC</td>
-<td>mpiicpc</td>
-<td>mpicxx</td>
-</tr>
-</tbody>
-</table>
+  -----------------------------------------------------------------------------
+  Language    Cray                  Intel                 GNU
+  ----------- --------------------- --------------------- ---------------------
+  Fortran     ftn                   ifort                 gfortran
+
+  Fortran +   ftn                   mpiifort              mpif90
+  MPI                                                     
+
+  C           cc                    icc                   gcc
+
+  C + MPI     cc                    mpiicc                mpicc
+
+  C++         CC                    icpc                  g++
+
+  C++ + MPI   CC                    mpiicpc               mpicxx
+  -----------------------------------------------------------------------------
 
 **Note**, Cray uses compiler wrappers which are described [later in more
 detail](#cray-programming-environment).
@@ -171,7 +133,7 @@ e.g.
 
 `ftn -O3 hello.f90`
 
-#  Compiler options
+##  Compiler options
 
 Compilers are controlled using different options to control
 optimizations, output, source and library handling. There options vary
@@ -180,94 +142,35 @@ change them if you decide to switch compilers. The following table
 provides a list of commonly used compiler **options** for the different
 compilers:
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Group</th>
-<th>Cray</th>
-<th>Intel</th>
-<th>GNU</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Debugging</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g</code>
-or <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-G{0,1,2,fast}</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g</code>
-or <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-debug [keyword]</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-g or -g{0,1,2,3}</code></td>
-<td>Set level of debugging information, some levels may disable certain
-compiler optimisations</td>
-</tr>
-<tr class="even">
-<td>Light compiler optimisation</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O2</code></td>
-<td> </td>
-</tr>
-<tr class="odd">
-<td>Aggressive compiler optimisation</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -hfp3</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -ipo</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-O3 -ffast-math -funroll-loops</code></td>
-<td>This may affect numerical accuracy</td>
-</tr>
-<tr class="even">
-<td>Architecture specific optimisation</td>
-<td>Load this module first: <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">module load craype-broadwell</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-xHost</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-march=native -mtune=native</code></td>
-<td>Build and compute nodes have the same architecture (Broadwell)</td>
-</tr>
-<tr class="odd">
-<td>Vectorisation reports</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-hlist=m</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-qopt-report</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopt-info-vec</code>
-or <code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopt-info-missed</code></td>
-<td> </td>
-</tr>
-<tr class="even">
-<td>OpenMP</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-homp</code>
-(default)</td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-qopenmp</code></td>
-<td><code
-style="font-family: Menlo, Consolas, &#39;DejaVu Sans Mono&#39;, monospace;">-fopenmp</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+  ------------------------------------------------------------------------------------------------------------------------
+  Group           Cray                             Intel                GNU                                Notes
+  --------------- -------------------------------- -------------------- ---------------------------------- ---------------
+  Debugging       `-g` or `-G{0,1,2,fast}`         `-g` or              `-g or -g{0,1,2,3}`                Set level of
+                                                   `-debug [keyword]`                                      debugging
+                                                                                                           information,
+                                                                                                           some levels may
+                                                                                                           disable certain
+                                                                                                           compiler
+                                                                                                           optimisations
+
+  Light compiler  `-O2`                            `-O2`                `-O2`                               
+  optimisation                                                                                             
+
+  Aggressive      `-O3 -hfp3`                      `-O3 -ipo`           `-O3 -ffast-math -funroll-loops`   This may affect
+  compiler                                                                                                 numerical
+  optimisation                                                                                             accuracy
+
+  Architecture    Load this module first:          `-xHost`             `-march=native -mtune=native`      Build and
+  specific        `module load craype-broadwell`                                                           compute nodes
+  optimisation                                                                                             have the same
+                                                                                                           architecture
+                                                                                                           (Broadwell)
+
+  Vectorisation   `-hlist=m`                       `-qopt-report`       `-fopt-info-vec` or                 
+  reports                                                               `-fopt-info-missed`                
+
+  OpenMP          `-homp` (default)                `-qopenmp`           `-fopenmp`                         
+  ------------------------------------------------------------------------------------------------------------------------
 
 Additional compiler options are documented in the compiler man pages,
 e.g. `man mpicc`, which are available *after* loading the related
@@ -296,7 +199,7 @@ aggressive compiler optimisation (`-O3`):
 
 `mpif90 -Wall -O3 -o simpleMpi simpleMpi.f90`
 
-# Linking
+## Linking
 
 Your application may depend on one or more external software packages,
 normally libraries, and if so it will need to link against them when you
@@ -324,7 +227,7 @@ specifying `-lA -lB` will work. If library "B" depends on "A", use
 `-lB -lA`. If they depend on each other, use `-lA -lB -lA` (although
 such cases are quite rare).
 
-## External Libraries
+### External Libraries
 
 There are already many libraries provided on the Mahuika platform. Most
 of them are provided in modules. You can search them using
@@ -367,7 +270,7 @@ used library should be build with the same compiler.
 adding the location to the MPI library. This can be observed calling
 e.g. `mpif90 -showme`
 
-## Common Linker Problems 
+### Common Linker Problems 
 
 Linking can easily go wrong. Most often, you will see linker errors
 about "missing symbols" when the linker could not find a function used
@@ -413,14 +316,14 @@ Note that the linker requires that function names match exactly, so any
 variation in function name in your code will lead to a "missing symbols"
 error (with the exception of character case in Fortran source code).
 
-# Cray Programming Environment
+## Cray Programming Environment
 
 The Cray Programming Environment includes the Cray compiler, various
 libraries and tools. These work nicely together and provide certain
 user-friendly features by using compiler wrappers. This works very
 similar as the Cray XC environment, provided on Māui, and is described
 in detail on the page [Building Code on
-Māui](https://support.nesi.org.nz/hc/en-gb/articles/360000336076).
+Māui](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui.md).
 
 **Note:** on Māui the three compilers (Cray, Gnu and Intel) are provided
 in this special environment, which provides support for both dynamic and

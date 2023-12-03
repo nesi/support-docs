@@ -1,9 +1,9 @@
 ---
 created_at: '2019-02-07T21:55:45Z'
 hidden: false
-label_names:
-- help
 position: 1
+tags:
+- help
 title: Consultancy
 vote_count: 1
 vote_sum: 1
@@ -15,7 +15,7 @@ zendesk_section_id: 360000164635
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

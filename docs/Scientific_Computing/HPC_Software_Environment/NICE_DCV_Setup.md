@@ -1,11 +1,11 @@
 ---
 created_at: '2019-01-24T20:30:30Z'
 hidden: false
-label_names:
+position: 12
+tags:
 - support
 - application
 - visualisation
-position: 12
 title: NICE DCV Setup
 vote_count: 0
 vote_sum: 0
@@ -17,7 +17,7 @@ zendesk_section_id: 360000040056
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
@@ -36,7 +36,7 @@ to check how your job is coming along.
 
 Follow the instructions below to set up a new session and connect to it.
 
-# Internet Connection
+## Internet Connection
 
 NICE DCV uses image compression mechanisms to reduce the amount of data
 that needs to be transmitted from the HPC to your laptop or desktop
@@ -48,7 +48,7 @@ While NICE DCV works reasonably well over a WiFi connection, for best
 performance we suggest you use a wired (Ethernet) connection if
 possible.
 
-# Creating a new NICE DCV server session
+## Creating a new NICE DCV server session
 
 1.  Log in to the appropriate host.
 
@@ -58,41 +58,50 @@ possible.
         [here](https://support.nesi.org.nz/hc/en-gb/sections/360000034315-Accessing-the-HPCs).
         For example:
 
-            ssh lander
+        ``` sl
+        ssh lander
+        ```
 
     2.  Connect from the lander node to one of the NICE DCV server
         nodes:
 
-            ssh w-ndcv01
+        ``` sl
+        ssh w-ndcv01
+        ```
 
     ### On Mahuika
 
     1.  Connect to the Mahuika login node:
 
-            ssh mahuika
+        ``` sl
+        ssh mahuika
+        ```
 
     2.  Connect to the NICE DCV server node (not yet available):
 
-            ssh vgpuwbg005
+        ``` sl
+        ssh vgpuwbg005
+        ```
 
 2.  Create a new NICE DCV session, replacing `<session name>` with a
     session name of your choice:
 
-        dcv create-session <session name>
+    ``` sl
+    dcv create-session <session name>
+    ```
 
-# Establishing an SSH tunnel
+## Establishing an SSH tunnel
 
 For security reasons, the NICE DCV nodes are not on the public internet
 and so are not directly accessible from your workstation. Therefore, we
 must create an SSH tunnel through the NeSI lander node.
 
-## Linux, Mac, or Windows Subsystem for Linux
-!!! info Warning
->
-> If successful, commands to open SSH tunnels will look like they are
-> doing nothing (hanging) but it is important to leave them running.
-> Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
-> will no longer be able to connect to your NICE DCV session.
+### Linux, Mac, or Windows Subsystem for Linux
+!!! prerequisite Warning
+     If successful, commands to open SSH tunnels will look like they are
+     doing nothing (hanging) but it is important to leave them running.
+     Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
+     will no longer be able to connect to your NICE DCV session.
 
 1.  On your machine run the following command in your Linux terminal
     emulator (assuming you added the
@@ -102,10 +111,12 @@ must create an SSH tunnel through the NeSI lander node.
 
     ### To connect to Māui
 
-        # The first port number (22222 in this example) can be anything you like > 1024,
-        # so long as it's not in use by another service.
-        # We have picked 22222 because it's easy to remember, the SSH port being 22.
-        ssh -L 22222:w-ndcv01.maui.niwa.co.nz:22 -o ExitOnForwardFailure=yes -N lander
+    ``` sl
+    # The first port number (22222 in this example) can be anything you like > 1024,
+    # so long as it's not in use by another service.
+    # We have picked 22222 because it's easy to remember, the SSH port being 22.
+    ssh -L 22222:w-ndcv01.maui.niwa.co.nz:22 -o ExitOnForwardFailure=yes -N lander
+    ```
 
     If you don't already have another open connection to or through the
     NeSI lander node, you will at this point be prompted for your
@@ -116,10 +127,12 @@ must create an SSH tunnel through the NeSI lander node.
     1.  Open an SSH tunnel through the lander node to the Mahuika login
         node.
 
-            # The tunnel port numbers (10022 in this example) can be anything you like > 1024,
-            # so long as neither of them is in use by another service.
-            # We have picked 10022 because it's easy to remember, the SSH port being 22.
-            ssh -L 10022:login.mahuika.nesi.org.nz:22 -o ExitOnForwardFailure=yes -N lander
+        ``` sl
+        # The tunnel port numbers (10022 in this example) can be anything you like > 1024,
+        # so long as neither of them is in use by another service.
+        # We have picked 10022 because it's easy to remember, the SSH port being 22.
+        ssh -L 10022:login.mahuika.nesi.org.nz:22 -o ExitOnForwardFailure=yes -N lander
+        ```
 
         If you don't already have another open connection to or through
         the NeSI lander node to the Mahuika login node, you will at this
@@ -129,10 +142,12 @@ must create an SSH tunnel through the NeSI lander node.
     2.  In a new terminal, open an SSH tunnel through this existing
         tunnel to Mahuika's NICE DCV node.
 
-            # The tunnel port numbers (22222 in this example) can be anything you like > 1024,
-            # so long as neither of them is in use by another service.
-            # We have picked 22222 because it's easy to remember, the SSH port being 22.
-            ssh -L 22222:vgpuwbg005:22 -o ExitOnForwardFailure=yes -N -p 10022 -l <nesi_linux_username> localhost
+        ``` sl
+        # The tunnel port numbers (22222 in this example) can be anything you like > 1024,
+        # so long as neither of them is in use by another service.
+        # We have picked 22222 because it's easy to remember, the SSH port being 22.
+        ssh -L 22222:vgpuwbg005:22 -o ExitOnForwardFailure=yes -N -p 10022 -l <nesi_linux_username> localhost
+        ```
 
         If prompted for a first factor, enter it in the usual manner.
         The second factor is optional (you can just press Enter), but if
@@ -140,10 +155,12 @@ must create an SSH tunnel through the NeSI lander node.
 
 2.  Open a second terminal session, and run the following command in it.
 
-        # The first port number (28443 in this example) can be anything you like > 1024,
-        # so long as it's not in use by another service.
-        # We have picked 28443 because it's easy to remember, the NICE DCV port being 8443.
-        ssh -L 28443:localhost:8443 -o ExitOnForwardFailure=yes -N -p 22222 -l <nesi_linux_username> localhost
+    ``` sl
+    # The first port number (28443 in this example) can be anything you like > 1024,
+    # so long as it's not in use by another service.
+    # We have picked 28443 because it's easy to remember, the NICE DCV port being 8443.
+    ssh -L 28443:localhost:8443 -o ExitOnForwardFailure=yes -N -p 22222 -l <nesi_linux_username> localhost
+    ```
 
     You will probably be prompted for a first factor and an optional
     second factor.
@@ -152,17 +169,17 @@ must create an SSH tunnel through the NeSI lander node.
     successful. Do not interrupt it as it is necessary to hold the port
     open for the server.
 
-## MobaXTerm on Windows
+### MobaXTerm on Windows
 
 If using MobaXTerm on Windows, set up and then start port forwarding
 connections to look like this:
 
-### To connect to Māui
+#### To connect to Māui
 
-![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../../assets/images/2020-02-11_NICE_DCV_tunnels_in_MobaXTerm.png)  
+![2020-02-11\_NICE\_DCV\_tunnels\_in\_MobaXTerm.png](../../assets/images/NICE_DCV_Setup.png)  
 When setting up and using the connections, note the following:
 
-### To connect to Mahuika
+#### To connect to Mahuika
 
 A picture is still to come.
 
@@ -178,7 +195,7 @@ A picture is still to come.
 -   The destination server for the tunnel through the lander node must
     be the NeSI login node where your NICE DCV server is running.
 
-# Connecting to a session
+## Connecting to a session
 
 NICE DCV comes with a client for Windows and Linux systems, which can be
 downloaded from the [NICE web
@@ -189,7 +206,7 @@ NICE DCV session with a modern browser.
 Before you proceed, make sure that you have a valid SLURM allocation on
 the HPC and that a session has been created.
 
-## Connecting with a Client
+### Connecting with a Client
 
 To connect with the NICE DCV client software:
 
@@ -201,7 +218,7 @@ To connect with the NICE DCV client software:
 4.  Enter your NeSI Linux username and password.
 5.  Click on "Login".
 
-## Connecting with a Browser
+### Connecting with a Browser
 
 To connect with a browser:
 
@@ -214,7 +231,7 @@ To connect with a browser:
 4.  Enter your HPC account credentials (first factor)
 5.  Click on "Login"
 
-# Using the Desktop Environment
+## Using the Desktop Environment
 
 You should be presented with a Linux desktop environment after
 successful login with the client or browser. You can then use the
@@ -224,20 +241,20 @@ terminal application by right-clicking on the desktop and selecting
 includes various [visualisation software
 solutions](https://support.nesi.org.nz/knowledge/articles/360000700295/en-gb?brand_id=30406&return_to=%2Fhc%2Fen-gb%2Farticles%2F360000700295).
 
-# Disconnecting and Stopping a Session
+## Disconnecting and Stopping a Session
 
 Sessions can persist on the HPC for as long as the SLURM resource
 allocation is valid. You can disconnect and reconnect to the session as
 often as you like.
 
-## Disconnecting from a session without stopping it
+### Disconnecting from a session without stopping it
 
 1.  Click on the machine URL in the top-right corner of the NICE DCV
     window
 2.  Select "Disconnect"
 3.  Close the NICE DCV client or browser window
 
-## Disconnecting and stopping a session
+### Disconnecting and stopping a session
 
 1.  Click on the application launcher icon in the top-left corner of the
     virtual desktop

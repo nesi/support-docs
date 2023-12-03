@@ -1,10 +1,10 @@
 ---
 created_at: '2019-03-26T00:36:24Z'
 hidden: false
-label_names:
+position: 27
+tags:
 - engineering
 - COMSOL
-position: 27
 title: COMSOL
 vote_count: 1
 vote_sum: 1
@@ -16,64 +16,41 @@ zendesk_section_id: 360000040076
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! info
+!!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
-    comsol --help
+``` sl
+comsol --help
+```
 
 Will display a list of COMSOL batch commands.
-!!! info Useful Links
->
-> -   [Running COMSOL in parallel on
->     clusters.](https://www.comsol.com/support/knowledgebase/1001/)
-> -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
->     the command
->     line.](https://www.comsol.com/support/knowledgebase/1250/)
-> -   [COMSOL and
->     Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
+!!! prerequisite Useful Links
+     -   [Running COMSOL in parallel on
+         clusters.](https://www.comsol.com/support/knowledgebase/1001/)
+     -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
+         the command
+         line.](https://www.comsol.com/support/knowledgebase/1250/)
+     -   [COMSOL and
+         Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
 
-# Batch Submission
+## Batch Submission
 
 When using COMSOL batch the following flags can be used to control
 distribution. 
 
-<table style="width: 635px;">
-<tbody>
-<tr class="odd">
-<td style="width: 185.953px"><code>-mpibootstrap slurm</code></td>
-<td style="width: 256.047px"> Instructs COMSOL to get it's settings from
-SLURM</td>
-</tr>
-<tr class="even">
-<td style="width: 185.953px"><code>-np &lt;cpus&gt;</code></td>
-<td style="width: 256.047px">Number of CPUs to use in each task.
-Equivalent to slurm input <code>--cpus-per-task</code> or environment
-variable <code>${SLURM_CPUS_PER_TASK}</code></td>
-</tr>
-<tr class="odd">
-<td style="width: 185.953px"><code>-nn &lt;tasks&gt;</code></td>
-<td style="width: 256.047px">Number of tasks
-total. <code>--ntasks</code> or <code>${SLURM_NTASKS}</code></td>
-</tr>
-<tr class="even">
-<td style="width: 185.953px"><code>-nnhost &lt;tasks&gt;</code></td>
-<td style="width: 256.047px">Number of tasks per node.
-<code>--ntasks-per-node</code> <code>${SLURM_NTASKS_PER_NODE}</code></td>
-</tr>
-<tr class="odd">
-<td
-style="width: 185.953px"><code>-f &lt;path to hostlist&gt;</code></td>
-<td style="width: 256.047px">Host file. You wont't need to set this in
-most circumstances.</td>
-</tr>
-</tbody>
-</table>
+|                         |                                                                                                                                  |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `-mpibootstrap slurm`   |  Instructs COMSOL to get it's settings from SLURM                                                                                |
+| `-np <cpus>`            | Number of CPUs to use in each task. Equivalent to slurm input `--cpus-per-task` or environment variable `${SLURM_CPUS_PER_TASK}` |
+| `-nn <tasks>`           | Number of tasks total. `--ntasks` or `${SLURM_NTASKS}`                                                                           |
+| `-nnhost <tasks>`       | Number of tasks per node. `--ntasks-per-node` `${SLURM_NTASKS_PER_NODE}`                                                         |
+| `-f <path to hostlist>` | Host file. You wont't need to set this in most circumstances.                                                                    |
 
-#  
 
-# Example Scripts
+
+## Example Scripts
 
 ------------------------------------------------------------------------
 
@@ -158,20 +135,19 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="
 </tr>
 </tbody>
 </table>
-!!! info Important
->
-> If no output file is set, using `--output` the input file will be
-> updated instead.
+!!! prerequisite Important
+     If no output file is set, using `--output` the input file will be
+     updated instead.
 
-# Interactive Use
+## Interactive Use
 
 Providing you have [set up
-X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975), you
-can open the COMSOL GUI by running the command `comsol`.
+X11](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md), you can
+open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.
 
-# Recommendations
+## Recommendations
 
 COMSOL is relatively smart with it's use of resources, if possible it is
 preferable to use `--cpus-per-task` over `--ntasks`

@@ -1,0 +1,19 @@
+name: Check All Files
+on:
+  workflow_dispatch
+env:
+  MODULE_LIST_PATH: docs/assets/module-list.json
+jobs:
+  runChecks:
+    uses: ./.github/workflows/checks.yml
+    with:
+      fileList: docs/**/*.md
+  testBuild:
+     name: Test builds the documentation.
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
+       - run: pip install -r requirements.txt
+       - run: mkdocs -v build  2>&1 | awk -F " - " '{gsub(/ /, "", $1);gsub(/INFO/, "notice", $1); printf("::%s::%s\n",$1,$2) }'
