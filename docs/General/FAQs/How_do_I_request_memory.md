@@ -23,7 +23,7 @@ In Slurm, there are two ways to request memory for your job:
 
 -   `--mem`: Memory per node
 -   `--mem-per-cpu`: Memory per [logical
-    CPU](https://support.nesi.org.nz/hc/en-gb/articles/360000568236)
+    CPU](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading)
 
 In most circumstances, you should request memory using `--mem`. The
 exception is if you are running an MPI job that could be placed on more

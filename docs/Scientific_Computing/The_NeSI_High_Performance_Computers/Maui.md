@@ -41,7 +41,7 @@ nodes](https://support.nesi.org.nz/hc/articles/360000203776).
      addition to large jobs that can run on Māui, please [contact
      us](https://support.nesi.org.nz/hc/requests/new) about getting an
      allocation on
-     [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575),
+     [Mahuika](../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika),
      our high-throughput computing cluster.
 
 The login or build nodes maui01 and maui02 provide access to the full
@@ -60,7 +60,7 @@ lander node. Jobs can be submitted to the HPC from these nodes.
     (large amounts of data), but not many separate reading or writing
     operations.** **If your code performs a lot of disk read or write
     operations, it should be run on either the [Māui ancillary
-    nodes](https://support.nesi.org.nz/hc/en-gb/articles/360000203776) or [Mahuika](https://support.nesi.org.nz/hc/en-gb/articles/360000163575).
+    nodes](../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary) or [Mahuika](../../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika).
 
 All Māui resources are indicated below, and the the Māui Ancillary Node
 resources

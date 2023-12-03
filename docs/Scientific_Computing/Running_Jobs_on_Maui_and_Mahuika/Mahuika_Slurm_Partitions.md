@@ -157,7 +157,7 @@ partition.</p></td>
 <td style="width: 114.40625px; height: 51px"><p>460 GB<br />
 960 GB</p></td>
 <td style="width: 190.640625px; height: 51px"><p><a
-href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">Jobs
+href="../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes">Jobs
 using Milan Nodes</a></p></td>
 </tr>
 <tr class="odd" style="height: 51px;">
@@ -223,7 +223,7 @@ below for more info.</p></td>
 <td style="width: 83.3125px; height: 22px"><p>6300 MB</p></td>
 <td style="width: 114.40625px; height: 22px"><p>460 GB</p></td>
 <td style="width: 190.640625px; height: 22px"><p>Part of <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/6367209795471">Milan
+href="../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes">Milan
 Nodes</a>. See below for more info.</p></td>
 </tr>
 </tbody>
@@ -274,8 +274,8 @@ To request A100 GPUs, use instead:
 ```
 
 See [GPU use on
-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955) for
-more details about Slurm and CUDA settings.
+NeSI](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI)
+for more details about Slurm and CUDA settings.
 
 ### Limits on GPU Jobs
 
@@ -301,7 +301,7 @@ connected via
 -   Explicitly specify the partition to access them, with
     `--partition=hgx`.
 -   Hosting nodes are Milan nodes. Check the [dedicated support
-    page](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471)
+    page](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes)
     for more information about the Milan nodes' differences from
     Mahuika's Broadwell nodes.
 

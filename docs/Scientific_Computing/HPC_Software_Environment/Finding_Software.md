@@ -74,4 +74,4 @@ should be also ported to the Māui\_Ancil part.
  
 
 NOTE: you can create your own modules. This is described
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000474535-Installing-Third-Party-applications).
+[here](../../../Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications).

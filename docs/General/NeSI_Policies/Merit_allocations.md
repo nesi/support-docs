@@ -64,7 +64,7 @@ must meet the following criteria:
     supervisor is a named investigator.
 
 Read more about [how we review
-applications](https://support.nesi.org.nz/hc/en-gb/articles/360000202136).
+applications](../../../General/NeSI_Policies/How_we_review_applications).
 
 To learn more about NeSI Projects or to apply for a new project, please
 read our article [Applying for a NeSI

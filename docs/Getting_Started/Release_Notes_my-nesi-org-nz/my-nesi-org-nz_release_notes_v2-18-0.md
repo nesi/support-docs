@@ -47,7 +47,7 @@ zendesk_section_id: 360001091155
     *(<https://status.nesi.org.nz/>)* are default notifications emailed
     to users. Users can customise their system status email
     notifications at any time. [Read more about that
-    here](https://support.nesi.org.nz/hc/en-gb/articles/8202966997775).
+    here](../../../General/Announcements/Status_page_subscription_notification_changes).
 
 If you have any questions about any of the improvements or fixes, please
 [contact NeSI Support](mailto:support@nesi.org.nz).

@@ -45,8 +45,8 @@ ascertain how much of each of these resources you will need. Asking for
 too little or too much, however, can both cause problems: your jobs will
 be at increased risk of taking a long time in the queue or failing, and
 your project's [fair share
-score](https://support.nesi.org.nz/hc/en-gb/articles/360000743536) is
-likely to suffer.  Your project's fair share score will be reduced in
+score](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share)
+is likely to suffer.  Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
 not. 
 
@@ -101,8 +101,8 @@ segmentation fault or bus error. This may not happen immediately.</li>
 </table>
 
 ***See our ["What is an allocation?" support
-page](https://support.nesi.org.nz/hc/en-gb/articles/360001385735) for
-more details on how each resource effects your compute usage.***
+page](../../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation)
+for more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale
@@ -133,6 +133,5 @@ will (hopefully) not have waited for hours or days in the queue
 beforehand.
 !!! prerequisite Examples
      [Multithreading
-     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173895)
-     [MPI
-     Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360001173875)
+     Scaling](../../../Getting_Started/Next_Steps/Multithreading_Scaling_Example)
+     [MPI Scaling](../../../Getting_Started/Next_Steps/MPI_Scaling_Example)

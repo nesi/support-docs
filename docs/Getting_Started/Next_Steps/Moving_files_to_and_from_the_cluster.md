@@ -33,7 +33,7 @@ zendesk_section_id: 360000189716
          project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
 Find more information on the different types of directories
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256).
+[here](../../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas).
 
  
 
@@ -42,7 +42,7 @@ Find more information on the different types of directories
  
 
 Many users have found the [Jupyter
-interface](https://support.nesi.org.nz/hc/en-gb/articles/360001555615-Jupyter-on-NeSI)
+interface](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI)
 very useful for running code on NeSI. The Jupyter interface only
 requires a web browser; the instructions are same whether your are
 connecting from a Windows, Mac or a Linux computer.
@@ -104,7 +104,7 @@ your password.
 Most file managers can be used to connect to a remote directory simply
 by typing in the address bar (provided your have an active connection to
 the cluster and your ssh config file is set up as described
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
+[here](../../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup)).
 
 For Nautilus (Ubuntu default) just prepend the path you want to connect
 to with `sftp://mahuika`. (ctrl + L opens address bar)
@@ -117,7 +117,7 @@ This does not work for Finder (Mac default)
 
 If your default file manager does not support mounting over sftp, see
 our documentation
-on [SSHFS](https://support.nesi.org.nz/hc/en-gb/articles/360000621135).
+on [SSHFS](../../../General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine).
 
 ## MobaXterm
 
@@ -130,8 +130,8 @@ the up and down arrows on the toolbar to upload and download files.
 
 You may also transfer files as described under 'Standard Terminal'
 (provided
-[WSL](https://support.nesi.org.nz/hc/en-gb/articles/360001075575) is
-enabled).
+[WSL](../../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL)
+is enabled).
 
 ## WinSCP
 
@@ -145,7 +145,7 @@ authentication.
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.  
 You can find more details on its use on our [Globus support
-page](https://support.nesi.org.nz/hc/en-gb/articles/4405623380751-Data-Transfer-using-Globus-V5).
+page](../../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5).
 
 ## Rclone
 

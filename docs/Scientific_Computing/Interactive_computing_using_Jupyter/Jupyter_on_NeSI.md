@@ -34,27 +34,27 @@ zendesk_section_id: 360001189255
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
 [interactive
-computing](https://support.nesi.org.nz/hc/en-gb/articles/360001316356).
+computing](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions).
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing [Slurm job
-submissions](https://support.nesi.org.nz/hc/en-gb/articles/360000684396)
+submissions](../../../Getting_Started/Next_Steps/Submitting_your_first_job)
 and workflows and much more.
 !!! prerequisite See also
      -   See the [RStudio via Jupyter on
-         NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
+         NeSI](../../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI)
          page for launching an RStudio instance.
      -   See the [MATLAB via Jupyter on
-         NeSI](https://support.nesi.org.nz/hc/en-gb/articles/4614893064591)
+         NeSI](../../../Scientific_Computing/Interactive_computing_using_Jupyter/MATLAB_via_Jupyter_on_NeSI)
          page for launching MATLAB via Jupyter
      -   See the [Virtual Desktop via Jupyter on
-         NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001600235)
+         NeSI](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI)
          page for launching a virtual desktop via Jupyter.
      -   See the [Jupyter kernels - Tool-assisted
-         management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
+         management](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Tool_assisted_management)
          (recommended) and [Jupyter kernels - Manual
-         management](https://support.nesi.org.nz/hc/en-gb/articles/4414951820559)
+         management](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management)
          pages for adding kernels.
 
 ## Accessing Jupyter on NeSI
@@ -68,7 +68,7 @@ the single-user Jupyter server.
 <https://jupyter.nesi.org.nz>
 
 When you log in with your [NeSI
-credentials](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
+credentials](../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password)
 you will be taken to the "Server Options" page, where typical job
 configuration options can be selected to allocate the resources that
 will be used to run Jupyter. Typical jobs, not requesting a GPU, should
@@ -209,7 +209,7 @@ you please.
      1-2GB of disk space and 30,000 inodes (file count), so make sure you
      have space available in your home directory first (see [NeSI File
      Systems and
-     Quotas](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas))
+     Quotas](../../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas))
      or request a larger quota.
 
 You could change the path to point to a location in your project

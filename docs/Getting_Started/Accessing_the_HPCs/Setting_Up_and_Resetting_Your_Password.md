@@ -24,7 +24,7 @@ zendesk_section_id: 360000034315
 
 !!! prerequisite Requirements
      -   Have a [NeSI
-         account](https://support.nesi.org.nz/hc/en-gb/articles/360000159715).
+         account](../../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile).
      -   Be a member of an [active
          project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
 
@@ -50,7 +50,7 @@ zendesk_section_id: 360000034315
 
 3.  Enter and verify your new password, making sure it follows the
     [password
-    policy](https://support.nesi.org.nz/hc/en-gb/articles/360000336015).  
+    policy](../../../General/NeSI_Policies/NeSI_Password_Policy).  
       
 
     #### ![SetNeSIaccountPassword.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_0.png)
@@ -93,6 +93,6 @@ zendesk_section_id: 360000034315
 ![password\_set\_confirmation.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png)
 !!! prerequisite What next?
      -   Set up [Second Factor
-         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)
+         Authentication.](../../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication)
 
  

@@ -33,4 +33,4 @@ zendesk_section_id: 360000034315
     icon after installing it). You should now be able to X-Forward
     displays from the HPC when you log in (assuming you have completed
     the [terminal setup instructions found
-    here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
+    here](../../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup)).

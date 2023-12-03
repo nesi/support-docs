@@ -37,6 +37,6 @@ the option 'Manage Two-Factor token' under 'Account'.
 ## Related content
 
 [How to replace my 2FA
-token](https://support.nesi.org.nz/hc/en-gb/articles/360000684635)
+token](../../../General/FAQs/How_to_replace_my_2FA_token)
 
  

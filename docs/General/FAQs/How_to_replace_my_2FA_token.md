@@ -53,4 +53,4 @@ You will also receive an email confirmation:
 ## Related content
 
 [Setting Up Two-Factor
-Authentication](https://support.nesi.org.nz/hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication)
+Authentication](../../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication)

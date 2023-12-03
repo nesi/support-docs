@@ -46,7 +46,7 @@ In addition to the material mentioned above, you can also seek help at
 our weekly "Office Hours" or by attending a Workshop. Office hours are
 drop-in sessions hosted by the NeSI Support Team where any and all
 questions are welcome. **Our Office Hours schedule** can be found
-[here](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063).
+[here](../../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours).
 
 NeSI also participates in and organises
 [Workshops](https://www.nesi.org.nz/services/training) covering a range

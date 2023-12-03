@@ -206,8 +206,8 @@ CPU*s.
 
 The only way to get the full context, is to compare walltime performance
 between jobs at different scale. See [Job
-Scaling](https://support.nesi.org.nz/hc/en-gb/articles/360000728016) for
-more details.
+Scaling](../../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions)
+for more details.
 
 ### Example
 

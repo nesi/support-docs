@@ -48,7 +48,7 @@ project an allocation from the Postgraduate class:
     available to meet demand.
 
 Read more about [how we review
-applications](https://support.nesi.org.nz/hc/en-gb/articles/360000202136).
+applications](../../../General/NeSI_Policies/How_we_review_applications).
 
 To learn more about NeSI Projects, and to apply please review the
 content of the section entitled [Applying for a NeSI

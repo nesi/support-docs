@@ -20,7 +20,7 @@ zendesk_section_id: 360001059296
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 See [Applying for a NeSI
-project](https://support.nesi.org.nz/hc/en-gb/articles/360000174976) for
+project](../../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project) for
 how to access the form.
 
 ## Preparing a request to use NeSI resources
