@@ -9,6 +9,8 @@ zendesk_article_id: 360001173875
 zendesk_section_id: 360000189716
 ---
 
+<!-- TODO review the scripts, it looks like there is a missing word after $ -->
+
 In the example below we will use Python scripts to demonstrate how you
 might perform some basic scaling tests, however, the principles outlined
 in these examples are applicable across software applications. You do
