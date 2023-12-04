@@ -19,7 +19,7 @@ future.
 Once your job has finished check the relevant details using the tools:
 `nn_seff` or `sacct` For example:  
 
-**nn\_seff**
+### Using `nn_seff`
 
 ```bash
 nn_seff 30479534
@@ -38,12 +38,10 @@ CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
 Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 ```
 
-Notice that the CPU efficiency was high but the memory efficiency was
-very low and consideration should be given to reducing memory requests
-for similar jobs.  If in doubt, please contact <support@nesi.org.nz> for
-guidance.
+Notice that the CPU efficiency was high but the memory efficiency was low and consideration should be given to reducing memory requests
+for similar jobs.  If in doubt, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz) for guidance.
 
-**sacct**
+### Using `sacct`
 
 ```bash
 sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
@@ -55,8 +53,6 @@ sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,
      echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
      source ~/.bash_profile
      ```
-
-------------------------------------------------------------------------
 
 Below is an output for reference:
 
@@ -71,9 +67,7 @@ Below is an output for reference:
 *All of the adjustments below still allow for a degree of variation.
 There may be factors you have not accounted for.*
 
-------------------------------------------------------------------------
-
-### Walltime
+#### Walltime
 
 From the `Elapsed` field we may want to update our next run to have a
 more appropriate walltime.
@@ -82,7 +76,7 @@ more appropriate walltime.
 #SBATCH --time=00:40:00
 ```
 
-### Memory
+#### Memory
 
 The `MaxRSS` field shows the maximum memory used by each of the job
 steps, so in this case 13 GB. For our next run we may want to set:
@@ -91,7 +85,7 @@ steps, so in this case 13 GB. For our next run we may want to set:
 #SBATCH --mem=15G
 ```
 
-### CPU's
+#### CPUs
 
 `TotalCPU` is the number of computation hours, in the best case scenario
 the computation hours would be equal to `Elapsed` x `AllocCPUS`.
@@ -144,7 +138,7 @@ command; `squeue -h -o %N -j <jobid>` The node will look something like
 !!! note
      If your job is using MPI it may be running on multiple nodes
 
-### htop 
+### Using `htop`
 
 ```bash
 ssh -t wbn175 htop -u $USER
@@ -173,10 +167,10 @@ Processes in green can be ignored
 
 **S** - State, what the thread is currently doing.
 
--   R - Running
--   S - Sleeping, waiting on another thread to finish.
--   D - Sleeping
--   Any other letter - Something has gone wrong!
+- R - Running
+- S - Sleeping, waiting on another thread to finish.
+- D - Sleeping
+- Any other letter - Something has gone wrong!
 
 **CPU%** - Percentage CPU utilisation.
 
@@ -200,7 +194,7 @@ The only way to get the full context, is to compare walltime performance between
 ![qdyn\_eff.png](../../assets/images/Finding_Job_Efficiency_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
-of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
+of CPU efficiency is acceptable and scale your job up to 18 CPU cores .
 
 ![qdyn\_walltime.png](../../assets/images/Finding_Job_Efficiency_1.png)
 
