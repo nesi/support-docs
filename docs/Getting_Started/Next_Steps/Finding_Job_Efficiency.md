@@ -4,21 +4,11 @@ hidden: false
 position: 5
 tags:
 - slurm
-title: Finding Job Efficiency
 vote_count: 8
 vote_sum: 8
 zendesk_article_id: 360000903776
 zendesk_section_id: 360000189716
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## On Job Completion
 
@@ -53,14 +43,13 @@ very low and consideration should be given to reducing memory requests
 for similar jobs.  If in doubt, please contact <support@nesi.org.nz> for
 guidance.
 
- 
-
 **sacct**
 
 ``` sl
 sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 ```
-!!! prerequisite Tip
+
+!!! tip
      *If you want to make this your default* `sacct` *setting, run;*
      ``` sl
      echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
@@ -84,7 +73,7 @@ There may be factors you have not accounted for.*
 
 ------------------------------------------------------------------------
 
-### **Walltime**
+### Walltime
 
 From the `Elapsed` field we may want to update our next run to have a
 more appropriate walltime.
@@ -93,7 +82,7 @@ more appropriate walltime.
 #SBATCH --time=00:40:00
 ```
 
-### **Memory**
+### Memory
 
 The `MaxRSS` field shows the maximum memory used by each of the job
 steps, so in this case 13 GB. For our next run we may want to set:
@@ -102,7 +91,7 @@ steps, so in this case 13 GB. For our next run we may want to set:
 #SBATCH --mem=15G
 ```
 
-### **CPU's**
+### CPU's
 
 `TotalCPU` is the number of computation hours, in the best case scenario
 the computation hours would be equal to `Elapsed` x `AllocCPUS`.
@@ -115,8 +104,6 @@ however bear in mind there are other factors that affect CPU efficiency.
 ``` sl
 #SBATCH --cpus-per-task=10
 ```
-
- 
 
 Note: When using sacct to determine the amount of memory your job used -
 in order to reduce memory wastage - please keep in mind that Slurm
@@ -153,7 +140,8 @@ If 'nodelist' is not one of the fields in the output of your `sacct` or
 `squeue` commands you can find the node a job is running on using the
 command; `squeue -h -o %N -j <jobid>` The node will look something like
 `wbn123` on Mahuika or `nid00123` on Māui
-!!! prerequisite Note
+
+!!! note
      If your job is using MPI it may be running on multiple nodes
 
 ### htop 
@@ -192,8 +180,9 @@ Processes in green can be ignored
 
 **CPU%** - Percentage CPU utilisation.
 
-**MEM% **Percentage Memory utilisation.
-!!! prerequisite Warning
+**MEM%** - Percentage Memory utilisation.
+
+!!! warning
      If the job finishes, or is killed you will be kicked off the node. If
      htop freezes, type `reset` to clear your terminal.
 
@@ -204,10 +193,7 @@ time* the CPUs are in use. This is not enough to get a picture of
 overall job efficiency, as required CPU time *may vary by number of
 CPU*s.
 
-The only way to get the full context, is to compare walltime performance
-between jobs at different scale. See [Job
-Scaling](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md)
-for more details.
+The only way to get the full context, is to compare walltime performance between jobs at different scale. See [Job Scaling](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md) for more details.
 
 ### Example
 
