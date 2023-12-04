@@ -23,9 +23,9 @@ others to use at the same time.
 The three resources that every single job submitted on the platforms
 needs to request are:
 
--   CPUs (i.e. logical CPU cores), and
--   Memory (RAM), and
--   Time.
+- CPUs (i.e. logical CPU cores), and
+- Memory (RAM), and
+- Time.
 
 Some jobs will also need to request GPUs.
 
