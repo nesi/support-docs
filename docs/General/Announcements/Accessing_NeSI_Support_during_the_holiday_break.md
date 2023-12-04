@@ -42,7 +42,7 @@ of self-service support:
     2024)
 
 -   [Sign up for NeSI system status
-    updates](https://support.nesi.org.nz/hc/en-gb/articles/360000751636 "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
+    updates](../../Getting_Started/Getting_Help/System_status.md "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
     advance warning of any system updates or unplanned outages. 
 
 -   [Consult our User

@@ -25,11 +25,11 @@ zendesk_section_id: 360001091155
 ## New and Improved
 
 -   An updated web application is introducing a
-    [navigation](https://support.nesi.org.nz/hc/en-gb/articles/360003592875)
+    [navigation](../../Getting_Started/my-nesi-org-nz/Navigating_the_my-nesi-org-nz_web_interface.md)
     in the sidebar and links to important functions
 
 -   Improved [project application
-    form](https://support.nesi.org.nz/hc/en-gb/articles/360003648716)
+    form](../../Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md)
     with automatic draft state so you can continue the application at a
     later stage without the need to re-enter details
 

@@ -113,8 +113,8 @@ sweeps.
 ## Interactive Use
 
 Providing you have [set up
-X11](https://support.nesi.org.nz/hc/en-gb/articles/360001075975), you
-can open the COMSOL GUI by running the command `comsol`.
+X11](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md), you can
+open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.
 

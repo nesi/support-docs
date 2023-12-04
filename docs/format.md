@@ -287,19 +287,22 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 ```
 
-[Internal Link]("https://example.com")
+[Internal Link]("General/FAQs/Password_Expiry")
 
 ```md
-[Internal Link]("General/Announcements")
-
+[Internal Link]("General/FAQs/Password_Expiry")
 ```
+
+!!! warning
+    Link paths are relative to current file!!!
 
 [Anchor Link](#links)
 
 ```md
 [Anchor Link](#links)
-
 ```
+
+snake-case anchors are automatically generated for all headers.
 
 ### Tooltips
 

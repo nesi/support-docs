@@ -178,7 +178,7 @@ R2021a, use `module load CUDA/11.0.2` before launching MATLAB.
 
 If you want to know more about how to access the different type of
 available GPUs on NeSI, check the [GPU use on
-NeSI](https://support.nesi.org.nz/hc/en-gb/articles/360001471955)
+NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
 support page.
 
 !!! tip "Support for A100 GPUs"
@@ -191,7 +191,7 @@ support page.
 !!! tip "GPU cost"
      A GPU device-hour costs more than a core-hour, depending on the type
      of GPU. You can find a comparison table in our [What is an
-     allocation?](https://support.nesi.org.nz/hc/en-gb/articles/360001385735)
+     allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
      support page.
 
 ### GPU Example
@@ -249,7 +249,7 @@ Fortran, which is referred to as
 [mexing](https://au.mathworks.com/help/matlab/ref/mex.html).
 
 more info about compiling software on NeSI
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000329015-Compiling-software-on-Mahuika).
+[here](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md).
 
 ### Writing mex functions
 

@@ -28,11 +28,11 @@ packages and no curation by the NeSI team.
 !!! prerequisite Alternatives
      -   If you want a more reproducible and isolated environment, we
          recommend using the [Singularity
-         containers](https://support.nesi.org.nz/hc/en-gb/articles/360001107916-Singularity).
+         containers](../../Scientific_Computing/Supported_Applications/Singularity.md).
      -   If you only need access to Python and standard numerical libraries
          (numpy, scipy, matplotlib, etc.), you can use the [Python
          environment
-         module](https://support.nesi.org.nz/hc/en-gb/articles/207782537-Python).
+         module](../../Scientific_Computing/Supported_Applications/Python.md).
 !!! prerequisite Māui Ancillary Nodes
      On Māui Ancillary Nodes, you can also use the `Anaconda3` module,
      which provides a default environment pre-installed with a set of
@@ -81,7 +81,7 @@ Here are the explanations for each line of this snippet:
 
 Conda environments and the conda packages cache can take a lot of
 storage space. By default, Conda use [/home
-storage](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas),
+storage](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),
 which is restricted to 20GB on NeSI. Here are some techniques to avoid
 running out of space when using Conda.
 
@@ -97,7 +97,7 @@ setting is saved in your `~/.condarc` configuration file.
 !!! prerequisite Note
      Your package cache will be subject to the nobackup autodelete process
      (details available in the [Nobackup
-     autodelete](https://support.nesi.org.nz/hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system)
+     autodelete](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md)
      support page). The package cache folder is for temporary storage so it
      is safe if files within the cache folder are removed.
 

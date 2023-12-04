@@ -33,14 +33,14 @@ kernels are installed by default and can be selected from the Launcher:
 
 Many packages are preinstalled in our default Python and R environments
 and these can be extended further as described on the
-[Python](https://support.nesi.org.nz/hc/en-gb/articles/207782537) and
-[R](https://support.nesi.org.nz/hc/en-gb/articles/209338087) support
+[Python](../../Scientific_Computing/Supported_Applications/Python.md) and
+[R](../../Scientific_Computing/Supported_Applications/R.md) support
 pages.
 
 ## Adding a custom Python kernel
 !!! prerequisite See also
      See the [Jupyter kernels - Tool-assisted
-     management](https://support.nesi.org.nz/hc/en-gb/articles/4414958674831)
+     management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Tool_assisted_management.md)
      page for the **preferred** way to register kernels, which uses the
      `nesi-add-kernel` command line tool to automate most of these manual
      steps.
@@ -224,7 +224,7 @@ Launcher as "Shared Virtual Env".
 
 An example showing setting up a custom kernel running in a Singularity
 container can be found on our [Lambda
-Stack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack#lambda_stack_via_jupyter)
+Stack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md#lambda_stack_via_jupyter)
 support page.
 
 ## Adding a custom R kernel

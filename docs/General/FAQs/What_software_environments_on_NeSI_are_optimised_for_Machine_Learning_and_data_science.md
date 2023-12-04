@@ -29,21 +29,21 @@ use. 
 Examples of software environments on NeSI optimised for data science
 include:
 
--   [R](https://support.nesi.org.nz/hc/en-gb/articles/209338087-R) and [Python](https://support.nesi.org.nz/hc/en-gb/articles/360000990436) users
+-   [R](../../Scientific_Computing/Supported_Applications/R.md) and [Python](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md) users
     can get right into using and exploring the several built-in packages
     or create custom code.
 
 -   [Jupyter on NeSI
-    ](https://support.nesi.org.nz/hc/en-gb/articles/360001555615-Jupyter-on-NeSI)is
+    ](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)is
     particularly well suited to artificial intelligence and machine
     learning workloads. [R
-    Studio](https://support.nesi.org.nz/hc/en-gb/articles/360004337836)
+    Studio](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md)
     and/or Conda can be accessed via Jupyter.
 
 -   Commonly used data science environments and libraries such as
-    [Keras](https://support.nesi.org.nz/hc/en-gb/articles/360001075936-Keras),
-    [LambdaStack](https://support.nesi.org.nz/hc/en-gb/articles/360002558216-Lambda-Stack),
-    [Tensorflow](https://support.nesi.org.nz/hc/en-gb/articles/360000990436)
+    [Keras](../../Scientific_Computing/Supported_Applications/Keras.md),
+    [LambdaStack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md),
+    [Tensorflow](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
     and [Conda](https://docs.conda.io/en/latest/) are available to
     create comprehensive workflows.
 
@@ -60,7 +60,7 @@ more broad terms such as "machine learning". 
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific
 application
-software](https://support.nesi.org.nz/hc/en-gb/articles/360000170355). 
+software](../../General/NeSI_Policies/NeSI_Application_Support_Model.md). 
 
 If you need help installing your software or would like to discuss your
 software needs with us, [contact NeSI

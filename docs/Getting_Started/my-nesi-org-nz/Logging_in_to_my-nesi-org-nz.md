@@ -23,7 +23,7 @@ zendesk_section_id: 360001059296
 
 We allow students, academics, alumni and researchers to securely login
 and create a [NeSI account
-profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)
+profile](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
 using the credentials granted by their home organisation via Tuakiri.
 
 ### Tuakiri - federated identity and access management
@@ -35,7 +35,7 @@ but many other institutions, including private sector organisations and
 most central and local government agencies, are not. 
 
 See also [Creating a NeSI Account
-Profile](https://support.nesi.org.nz/hc/en-gb/articles/360000159715)
+Profile](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
 
 ### Support for users outside the Tuakiri federation
 
@@ -45,7 +45,7 @@ profile.](https://my.nesi.org.nz/html/request_nesi_account) NeSI will
 (if approved) provision a so-called "virtual home account" on Tuakiri. 
 
 See also [Account Requests for non-Tuakiri
-Members](https://support.nesi.org.nz/hc/en-gb/articles/360000216035)
+Members](../../General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members.md)
 
 ## Troubleshooting login issues
 

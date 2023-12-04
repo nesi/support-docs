@@ -39,7 +39,7 @@ included at the bottom of the notification email message "Manage your
 subscription" or "Unsubscribe" to manage your preferences.
 
 See also our support article [Managing NeSI notification
-preferences](https://support.nesi.org.nz/hc/en-gb/articles/4563294188687)
+preferences](../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md)
 
 ![mceclip0.png](../../assets/images/System_status.png)
 
@@ -52,4 +52,4 @@ email).
 
 ![](../../assets/images/System_status_0.png)
 
-## [NeSI wide area network connectivity](https://support.nesi.org.nz/hc/en-gb/articles/8252164326415)
+## [NeSI wide area network connectivity](../../Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md)

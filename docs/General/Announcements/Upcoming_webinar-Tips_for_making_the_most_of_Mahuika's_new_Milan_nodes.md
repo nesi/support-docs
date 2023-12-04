@@ -66,5 +66,5 @@ NIWA. Alex helps researchers run better and faster on NeSI platforms.
 If you're unable to join us for this session but have questions about
 the Milan nodes or would like more information, come along to one of our
 [weekly Online Office
-Hours](https://support.nesi.org.nz/hc/en-gb/articles/4830713922063) or
-email <support@nesi.org.nz> anytime. 
+Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md)
+or email <support@nesi.org.nz> anytime. 

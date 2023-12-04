@@ -11,11 +11,19 @@ zendesk_section_id: 360000040056
 ---
 
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 This article describes a technique to build
 [Apptainer](https://apptainer.org/) containers using [Milan compute
-nodes](https://support.nesi.org.nz/hc/en-gb/articles/6367209795471), via
-a Slurm job. You can also build
-[Singularity](https://support.nesi.org.nz/hc/en-gb/articles/360001107916)
+nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md),
+via a Slurm job. You can also build
+[Singularity](../../Scientific_Computing/Supported_Applications/Singularity.md)
 container using this technique.
 
 ## Building container via Slurm
@@ -78,8 +86,8 @@ the directory.
 
 More information about how to submit a Slurm job is available in the
 [Submitting your first
-job](https://support.nesi.org.nz/hc/en-gb/articles/360000684396) support
-page.
+job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
+support page.
 !!! prerequisite Build environment variables
      To build containers, you need to ensure that Apptainer has enough
      storage space to create intermediate files. It also requires a cache

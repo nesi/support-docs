@@ -38,7 +38,7 @@ path directory, displayed as '`/home/<username>`'.
  
 
 For more information about NeSI filesystem, check
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas).
+[here](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
 ## Performing Globus transfers to/from Māui/Mahuika
 

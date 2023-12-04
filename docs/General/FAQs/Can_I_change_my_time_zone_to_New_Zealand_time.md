@@ -43,7 +43,7 @@ test -r ~/.bashrc && . ~/.bashrc
 ```
 
 Please see the article, "[.bashrc or
-.bash\_profile?](https://support.nesi.org.nz/hc/en-gb/articles/360001194536)"
+.bash\_profile?](../../General/FAQs/What_are_my-bashrc_and-bash_profile_for.md)"
 for more information.
 
 ## What about cron jobs?

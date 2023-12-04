@@ -23,9 +23,9 @@ zendesk_section_id: 360000189696
      -   Have an [active account and
          project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
      -   Set up your [Linux
-         Password.](https://support.nesi.org.nz/hc/en-gb/articles/360000335995)
+         Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
      -   Set up Second [Factor
-         Authentication.](https://support.nesi.org.nz/hc/en-gb/articles/360000203075)
+         Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
      -   Windows operating system.
 
 Setting up MobaXterm as shown below will allow you to connect to the
@@ -69,8 +69,8 @@ transfer GUI.
      logging in as normal once you are prompted for your `First Factor:` or
      `Password:`.  
      See [Login
-     Troubleshooting](https://support.nesi.org.nz/hc/en-gb/articles/360000570215)
-     for more details
+     Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
+     details
 
 ## Usage
 
@@ -140,8 +140,8 @@ Two steps to try:
         MobaXterm before the next login attempt
 
 Then setup a new session [according to the support doc
-instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
+instructions](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
 as before.
 !!! prerequisite What Next?
      -   [Moving files to/from a
-         cluster.](https://support.nesi.org.nz/hc/en-gb/articles/360000578455)
+         cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)

@@ -21,11 +21,11 @@ zendesk_section_id: 360000033936
 
 !!! prerequisite See also
      -   [How can I let my fellow project team members read or write my
-         files?](https://support.nesi.org.nz/hc/en-gb/articles/360001237915)
+         files?](../../General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
      -   [How can I give read-only team members access to my
-         files?](https://support.nesi.org.nz/hc/en-gb/articles/4401821809679)
+         files?](../../General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md)
      -   [NeSI file systems and
-         quotas](https://support.nesi.org.nz/hc/en-gb/articles/360000177256)
+         quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
 
 Access to data (i.e. files and directories) on NeSI is controlled by
 POSIX permissions, supplemented with Access Control Lists (ACLs).
@@ -107,7 +107,7 @@ project group.
      You probably don't want this to happen. For instructions on how to
      prevent it, please see our article: [How can I let my fellow project
      team members read or write my
-     files?](https://support.nesi.org.nz/hc/en-gb/articles/360001237915)
+     files?](../../General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
 
 By default, the world, i.e. people not in the project team, have no
 privileges in respect of a project directory, with certain exceptions.

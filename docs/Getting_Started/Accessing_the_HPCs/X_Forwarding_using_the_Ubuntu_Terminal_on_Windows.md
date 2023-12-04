@@ -1,14 +1,14 @@
 ---
 created_at: '2021-10-04T19:55:45Z'
 hidden: false
-position: 0
+position: 3
 tags:
 - x11
 - x forwarding
 - x-forwarding
 title: X-Forwarding using the Ubuntu Terminal on Windows
-vote_count: 9
-vote_sum: -5
+vote_count: 10
+vote_sum: -6
 zendesk_article_id: 4407442866703
 zendesk_section_id: 360000034315
 ---
@@ -33,4 +33,4 @@ zendesk_section_id: 360000034315
     icon after installing it). You should now be able to X-Forward
     displays from the HPC when you log in (assuming you have completed
     the [terminal setup instructions found
-    here](https://support.nesi.org.nz/hc/en-gb/articles/360000625535)).
+    here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)).

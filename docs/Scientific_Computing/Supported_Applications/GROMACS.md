@@ -166,7 +166,7 @@ that is the number of vCPUs per node.
 
 NVIDIA has a GPU accelerated version of GROMACS in its NGC container
 registry (more details about NGC
-[here](https://support.nesi.org.nz/hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers)).
+[here](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)).
 We have pulled a version of their container and stored it at this
 location (you can also pull your own version if you wish):
 */opt/nesi/containers/nvidia/gromacs-2020\_2.sif*. We have also provided

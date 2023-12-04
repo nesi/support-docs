@@ -47,7 +47,7 @@ Proposal Development allocation.
 Once you have completed your Proposal Development allocation, you are
 welcome to apply for a further allocation. If you are successful, the
 project's next allocation will be from another of the [allocation
-classes](https://support.nesi.org.nz/hc/en-gb/articles/360000925176).
+classes](../../General/NeSI_Policies/Allocation_classes.md).
 
 The [How Applications are
 Reviewed](https://support.nesi.org.nz/hc/articles/360000202136) section
