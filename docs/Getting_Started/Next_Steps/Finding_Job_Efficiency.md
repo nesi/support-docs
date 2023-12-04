@@ -21,11 +21,11 @@ Once your job has finished check the relevant details using the tools:
 
 **nn\_seff**
 
-``` sl
+```bash
 nn_seff 30479534
 ```
 
-``` sl
+```txt
 Job ID: 1936245
 Cluster: mahuika
 User/Group: user/group
@@ -45,13 +45,13 @@ guidance.
 
 **sacct**
 
-``` sl
+```bash
 sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 ```
 
 !!! tip
      *If you want to make this your default* `sacct` *setting, run;*
-     ``` sl
+     ```bash
      echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
      source ~/.bash_profile
      ```
@@ -60,7 +60,7 @@ sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,
 
 Below is an output for reference:
 
-``` sl
+```txt
        JobID    JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
 ------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- ---------- ----------
 3007056      rfm_ANSYS+   00:27:07                         03:35:55         16                      COMPLETED
@@ -146,14 +146,14 @@ command; `squeue -h -o %N -j <jobid>` The node will look something like
 
 ### htop 
 
-``` sl
+```bash
 ssh -t wbn175 htop -u $USER
 ```
 
 If it is your first time connecting to that particular node, you may be
 prompted:
 
-``` sl
+```txt
 The authenticity of host can't be established 
 Are you sure you want to continue connecting (yes/no)?
 ```
