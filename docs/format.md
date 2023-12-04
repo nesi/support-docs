@@ -304,6 +304,8 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 snake-case anchors are automatically generated for all headers.
 
+For example a header `## This is my Header` can be linked to with the anchor `[Anchor Link](#this-is-my-header)`
+
 ### Tooltips
 
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
