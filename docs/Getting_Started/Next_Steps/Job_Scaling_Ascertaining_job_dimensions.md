@@ -11,15 +11,6 @@ zendesk_article_id: 360000728016
 zendesk_section_id: 360000189716
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 When you run software in an interactive environment such as your
 ordinary workstation (desktop PC or laptop), the software is able to
 request from the operating system whatever resources it needs from
@@ -44,9 +35,8 @@ When you are initially trying to set up your jobs it can be difficult to
 ascertain how much of each of these resources you will need. Asking for
 too little or too much, however, can both cause problems: your jobs will
 be at increased risk of taking a long time in the queue or failing, and
-your project's [fair share
-score](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
-is likely to suffer.  Your project's fair share score will be reduced in
+your project's [fair share score](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
+is likely to suffer. Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
 not. 
 
@@ -100,9 +90,7 @@ segmentation fault or bus error. This may not happen immediately.</li>
 </tbody>
 </table>
 
-***See our ["What is an allocation?" support
-page](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
-for more details on how each resource effects your compute usage.***
+***See our ["What is an allocation?" support page](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale
@@ -131,7 +119,8 @@ they will both queue faster and run for less time. Also, if one of these
 jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
-!!! prerequisite Examples
-     [Multithreading
-     Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
+
+!!! example "Examples"
+     [Multithreading Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
+
      [MPI Scaling](../../Getting_Started/Next_Steps/MPI_Scaling_Example.md)
