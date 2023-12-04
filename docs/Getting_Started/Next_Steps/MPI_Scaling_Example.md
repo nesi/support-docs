@@ -69,7 +69,7 @@ if rank == 0:
     print('Sum:', data_sum)
 ```
 
-You do not need to understand what the above Pythong script is doing,
+You do not need to understand what the above Python script is doing,
 but for context, the script will create a list of numbers and split them
 between the available MPI tasks (ranks) then uses those numbers as seeds
 to create arrays of random numbers. The dot product of each array is
