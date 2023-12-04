@@ -32,8 +32,7 @@ We are also happy to discuss other custom options for things like our
 Training service.
 
 If you have any questions or would like to discuss our subscription
-terms or invoicing schedule in more detail, [get in
-touch](mailto:info@nesi.org.nz).
+terms or invoicing schedule in more detail, [get in touch](mailto:info@nesi.org.nz).
 
 !!! note
     \*National Data Transfer Platform service agreements are invoiced upon
