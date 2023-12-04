@@ -7,7 +7,14 @@ matrix:
     - docs/assets/glossary/dictionary.txt
     encoding: utf-8
   pipeline:
+  - pyspelling.filters.url:
   - pyspelling.filters.markdown:
+      markdown_extensions:
+      - markdown.extensions.toc
+      - markdown.extensions.admonition
+      - markdown.extensions.attr_list
+      - markdown.extensions.abbr
+      - markdown.extensions.tables  
   - pyspelling.filters.html:
       comments: false
       ignores:
