@@ -13,30 +13,27 @@ zendesk_section_id: 360000040076
 
 ## Example scripts
 
-=== "Serial Job"
+=== "Serial"
 
-For when only one CPU is required, generally as part of
-a [job
-array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array).
+    For when only one CPU is required, generally as part of a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array).
 
     ```sl
     #!/bin/bash -e
 
     #SBATCH --job-name      Delft3D
-    #SBATCH --time          00:05:00       # Walltime</span></span>
-    #SBATCH --mem           512M           # Total Memory</span></span>
+    #SBATCH --time          00:05:00       # Walltime
+    #SBATCH --mem           512M           # Total Memory
     #SBATCH --hint          nomultithread  # Hyperthreading disabled
     module load Delft3D/{{applications.ABAQUS.machines.mahuika.versions | last}}
     d_hydro test_input.xml
     ```
 
-=== "Shared Memory Job"
-For domain based decompositions. Use `--cpus-per-task` to allocate
-resources.
-Each subdomain runs in a separate
-thread, inside one executable. Limited to one node.
+=== "Shared Memory"
 
-   ```sl
+    For domain based decompositions. Use `--cpus-per-task` to allocate resources.
+    Each subdomain runs in a separate thread, inside one executable. Limited to one node.
+
+    ```sl
     #!/bin/bash -e
     
     #SBATCH --job-name      Delft3D
@@ -49,35 +46,36 @@ thread, inside one executable. Limited to one node.
     
     srun d_hyrdo test_input.xml
     ```
- 
- === "Distributed Memory Job"
 
-    Domain is split automatically in stripwise partitions. Can run
-across multiple nodes. Use `--ntasks` to allocate resources.
+=== "Distributed Memory"
+    Domain is split automatically in stripwise partitions.
+    Can run across multiple nodes. Use `--ntasks` to allocate resources.
+
     Cannot be used in conjunction with:
-    * DomainDecomposition
-    * Fluid mud
-    * Coup online
-    * Drogues and moving observation points
-    * Culverts
-    * Power stations with inlet and outlet in different partitions
-    * Non-hydrostatic solvers
-    * Walking discharges
-    * 2D skewed weirs
-    * max(mmax,nmax)/npart ≤ 4
-    * Roller model
-    * Mormerge
-    * Mass balance polygons
+    - DomainDecomposition
+    - Fluid mud
+    - Coup online
+    - Drogues and moving observation points
+    - Culverts
+    - Power stations with inlet and outlet in different partitions
+    - Non-hydrostatic solvers
+    - Walking discharges
+    - 2D skewed weirs
+    - max(mmax,nmax)/npart ≤ 4
+    - Roller model
+    - Mormerge
+    - Mass balance polygons
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name      Delft3D_distributed
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem-per-cpu   1G             #SBATCH --hint          nomultithread  # Hyperthreading disabled
+
     module load Delft3D/{{applications.Delft3D.machines.mahuika.versions | last}}
     srun d_hyrdo test_input.xml
     ```
 
-!!!  warning 
-     Trying to use more tasks than there are partitions in your model will
-     cause failure.
+!!! warning
+    Trying to use more tasks than there are partitions in your model will cause failure.

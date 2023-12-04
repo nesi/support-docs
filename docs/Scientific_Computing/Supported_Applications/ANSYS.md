@@ -359,12 +359,9 @@ solution specify as relative path, or unload compiled lib before saving
 
 `cfx5solve -help` for a list of commands.
 
-=== "Serial Job"
-
-    Single *process* with a single *thread* (2
-threads if hyperthreading enabled).
-    Usually submitted as part of an array, as in the case of parameter
-sweeps.
+=== "Serial"
+    Single *process* with a single *thread* (2 threads if hyperthreading enabled).
+    Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sh
     #!/bin/bash -e
@@ -426,10 +423,10 @@ xvfb-run cfx5post input.cse
 
 ### Examples
 
-=== "Serial Example"
+=== "Serial"
 
-Single *process* with a single *thread (2 threads if hyperthreading enabled).
-Usually submitted as part of an array, as in the case of parameter sweeps.
+    Single *process* with a single *thread (2 threads if hyperthreading enabled).
+    Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
     #!/bin/bash -e
@@ -443,15 +440,15 @@ Usually submitted as part of an array, as in the case of parameter sweeps.
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -i "${input}
+    ```
 
-=== Shared Memory Example
+=== "Shared Memory"
 
     Single *process* multiple *threads.
     All threads must be on the same node, limiting scalability.
 
     Number of threads is set by `-np` and should be equal to`--cpus-per-task`.
-    Not recommended if using more than 8 cores (16 CPUs if hyperthreading
-enabled).
+    Not recommended if using more than 8 cores (16 CPUs if hyperthreading enabled).
 
     ```sl
     #!/bin/bash -e
@@ -467,7 +464,7 @@ enabled).
     mapdl -b -np ${SLURM_CPUS_PER_TASK} -i ${input}
     ```
 
-=== "Distributed Memory Example"
+=== "Distributed Memory"
 
     Multiple processes each with a single thread.
     Not limited to one node.
@@ -547,7 +544,7 @@ The following FENSAP solvers are compatible with MPI
 
 ### Case setup
 
-### With GUI
+#### With GUI
 
 If you have set up X-11 forwarding, you may launch the FENSAP ice using
 the command `fensapiceGUI` from within your FENSAP project directory.
@@ -610,7 +607,7 @@ Progress can be tracked through the GUI as usual.
 ## ANSYS-Electromagnetic
 
 ANSYS-EM jobs can be submitted through a slurm script or by [interactive
-session](../../Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
+session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
 
 ### RSM
 
@@ -684,6 +681,7 @@ ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=P
 
 ```sl
 #!/bin/bash -e
+
 #SBATCH --job-name      ANSYS_FSI
 #SBATCH --account       nesi99999         # Project Account
 #SBATCH --time          01:00:00          # Walltime

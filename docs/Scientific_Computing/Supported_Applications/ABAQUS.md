@@ -22,20 +22,22 @@ A list of ABAQUS commands can be found with:
 abaqus help
 ```
 
+## Licences
+
+You can force ABAQUS to use a specific licence type by setting the
+parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
+[environment file](#environment-file).
+
+!!! tip
+     Required ABAQUS licences can be determined by this simple and
+     intuitive formula <code>⌊ 5 x N<sup>0.422</sup> ⌋</code> where `N` is number
+     of CPUs.
+
 [Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
 can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
-
-!!! note
-     Required ABAQUS licences can be determined by this simple and
-     intuitive formula `⌊ 5 x N`<sup>`0.422`</sup>` ⌋` where `N` is number
-     of CPUs.
-
-You can force ABAQUS to use a specific licence type by setting the
-parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
-[environment file](#environment-file).
 
 ## Solver Compatibility
 
@@ -60,12 +62,13 @@ Not all solvers are compatible with all types of parallelisation.
 
 ## Examples
 
-=== Serial
+=== "Serial"
     For when only one CPU is required, generally as part of
     a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array)
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name      ABAQUS-serial
     #SBATCH --time          00:05:00 # Walltime
     #SBATCH --cpus-per-task 1
@@ -84,10 +87,11 @@ Not all solvers are compatible with all types of parallelisation.
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name      ABAQUS-Shared
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --cpus-per-task 4
-    #SBATCH --mem           2G        # total mem
+    #SBATCH --mem           2G             # total mem
     module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions}}
     abaqus job="propeller_s4rs_c3d8r verbose=2 interactive \
         cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads 
@@ -96,8 +100,7 @@ Not all solvers are compatible with all types of parallelisation.
 === "UDF"
     Shared memory run with user defined function (fortran or C).
     Function will be compiled at start of run.
-    You may need to chance the function suffix if you usually compile
-on windows.
+    You may need to chance the function suffix if you usually compile on windows.
 
     ```sl
     #!/bin/bash -e
@@ -107,8 +110,8 @@ on windows.
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           2G         # total mem
 
-    module load imkl</span>
-    module</span> load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module load imkl
+    module  load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
     abaqus job="propeller_s4rs_c3d8r" user=my_udf.f90 \
         verbose=2 interactive cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads
     ```
@@ -126,6 +129,7 @@ on windows.
 
     ```sl
     #!/bin/bash -e
+    
     #SBATCH --job-name      ABAQUS-Distributed 
     #SBATCH --time          00:05:00       # Walltime</span></span>
     #SBATCH --ntasks        8

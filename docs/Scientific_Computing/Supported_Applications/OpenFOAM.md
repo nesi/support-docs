@@ -182,8 +182,6 @@ found [here](https://cfd.direct/openfoam/user-guide/v6-compiling-applications/)
 
 A library/application named 'newApp' would have the structure.
 
-![OpenFOAM app](../../assets/images/OpenFOAM_0.png)
-
  To build \`newApp\` one would run:
 
 ```sh
