@@ -3,21 +3,11 @@ created_at: '2023-03-06T19:04:56Z'
 hidden: false
 position: 0
 tags: []
-title: BRAKER
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 6529511928207
 zendesk_section_id: 360000040076
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Description
 
@@ -67,7 +57,7 @@ Artistic License
 ## Prerequisites
 
 
-!!! info "prerequisite Obtain GeneMark-ES/ET Academic License"
+!!! prerequisite "Obtain GeneMark-ES/ET Academic License"
  
     GeneMark-ES/ET which is one of the dependencies for BRAKER requires an individual academic license  (this is free). This can be obtained as below
      -   Download URL <http://topaz.gatech.edu/genemark/license_download.cgi>
@@ -82,8 +72,7 @@ Artistic License
 
 ### Example Slurm scripts
 
-Following example uses the .fa files provided BRAKER developers on
-<https://github.com/Gaius-Augustus/BRAKER/tree/master/example>
+Following example uses the [.fa files provided BRAKER developers](https://github.com/Gaius-Augustus/BRAKER/tree/master/example)
 
 ``` sl
 #!/bin/bash -e
