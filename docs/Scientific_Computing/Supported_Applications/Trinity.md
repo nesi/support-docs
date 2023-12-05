@@ -10,18 +10,9 @@ zendesk_article_id: 360000980375
 zendesk_section_id: 360000040076
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Trinity, developed at the [Broad
 Institute](http://www.broadinstitute.org/) and the [Hebrew University of
-Jerusalem](http://www.cs.huji.ac.il/), performs de novo reconstruction
+Jerusalem](http://www.cs.huji.ac.il/), performs _de&nbsp;novo_ reconstruction
 of transcriptomes from RNA-seq data. It combines three independent
 software modules: Inchworm, Chrysalis, and Butterfly, applied
 sequentially to process large volumes of RNA-seq reads. Trinity
@@ -77,10 +68,10 @@ The following Slurm script is a template for running Trinity Phase 1
 
 **Note**  :
 
--   `--cpus-per-task` and `--mem` defined in the following example are
-    just place holders. 
--   Use a subset of your sample, run a test first to find the
-    suitable/required amount of CPUs and memory for your dataset
+- `--cpus-per-task` and `--mem` defined in the following example are
+  just place holders. 
+- Use a subset of your sample, run a test first to find the
+  suitable/required amount of CPUs and memory for your dataset
 
  
 
@@ -105,16 +96,16 @@ srun Trinity --no_distributed_trinity_exec \
 
 The extra Trinity arguments are:
 
--   `--no_distributed_trinity_exec` tells Trinity to stop before running
-    Phase 2
--   `--CPU ${SLURM_CPUS_PER_TASK}` tells Trinity to use the number of
-    CPUs specified by the sbatch option `--cpus-per-task` (i.e. you only
-    need to update it in one place if you change it)
--   `--max_memory` should be the same (or maybe slightly lower, so you
-    have a small buffer) than the value specified with the sbatch option
-    `--mem`
--   `[your_other_trinity_options]` should be replaced with the other
-    trinity options you would usually use, e.g. `--seqType fq`, etc.
+- `--no_distributed_trinity_exec` tells Trinity to stop before running
+  Phase 2
+- `--CPU ${SLURM_CPUS_PER_TASK}` tells Trinity to use the number of
+  CPUs specified by the sbatch option `--cpus-per-task` (i.e. you only
+  need to update it in one place if you change it)
+- `--max_memory` should be the same (or maybe slightly lower, so you
+  have a small buffer) than the value specified with the sbatch option
+  `--mem`
+- `[your_other_trinity_options]` should be replaced with the other
+  trinity options you would usually use, e.g. `--seqType fq`, etc.
 
 ### Running Trinity Phase 2
 
@@ -186,16 +177,16 @@ cmds_per_node=100
 
  The important details are:
 
--   `cmds_per_node` is the size of each batch of commands, i.e. here
-    each Slurm sub-job runs 100 commands and then exits
--   `max_nodes` is the number of sub-jobs that can be in the queue at
-    any given time (each sub-job is single threaded, i.e. it uses just
-    one core)
--   name this file SLURM.conf in the directory you will submit the job
-    from
--   memory usage may be low enough that the sub-jobs can be run on
-    either the large or bigmem partitions, which should improve
-    throughput compared to bigmem alone
+- `cmds_per_node` is the size of each batch of commands, i.e. here
+  each Slurm sub-job runs 100 commands and then exits
+- `max_nodes` is the number of sub-jobs that can be in the queue at
+  any given time (each sub-job is single threaded, i.e. it uses just
+  one core)
+- name this file `SLURM.conf` in the directory you will submit the job
+  from
+- memory usage may be low enough that the sub-jobs can be run on
+  either the large or bigmem partitions, which should improve
+  throughput compared to bigmem alone
 
 A template Slurm submission script for Trinity Phase 2 is shown below:
 
@@ -221,12 +212,12 @@ srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
   [your_other_trinity_options]
 ```
 
--   This assumes that you named the HPC GridRunner configuration script
-    SLURM.conf and placed it in the same directory that you submit this
-    job from
--   The options `--CPU` and `--max_memory` aren't used by Trinity in
-    "grid mode" but are still required to be set (i.e. it shouldn't
-    matter what you set them to)
+- This assumes that you named the HPC GridRunner configuration script
+  SLURM.conf and placed it in the same directory that you submit this
+  job from
+- The options `--CPU` and `--max_memory` aren't used by Trinity in
+  "grid mode" but are still required to be set (i.e. it shouldn't
+  matter what you set them to)
 
 ## Benchmarks
 
@@ -255,9 +246,8 @@ mini-assemblies to run in Phase 2.
 The table below summarises the timings for Phase 2, comparing the
 default, single node way to run Phase 2, to using Trinity's "grid mode".
 
-|                       |                                          |                              |                                |
+| Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Approximate core hour cost     |
 |-----------------------|------------------------------------------|------------------------------|--------------------------------|
-| **Type of run**       | **Number of cores / grid specification** | **Run time (hrs:mins:secs)** | **Approximate core hour cost** |
 | Single node (default) | 16 cores                                 | 24:09:36                     | 387                            |
 | Grid                  | max\_nodes=20; cmds\_per\_node=500       | 07:59:58                     | 168                            |
 | Grid                  | max\_nodes=40; cmds\_per\_node=500       | 04:10:45                     | 171                            |
