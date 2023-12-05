@@ -3,26 +3,14 @@ created_at: '2015-08-18T05:16:01Z'
 hidden: false
 position: 44
 tags:
-- mahuika
-- app
+- ml
+- language
 title: Python
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 207782537
 zendesk_section_id: 360000040076
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
 
 All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released
@@ -41,178 +29,180 @@ Python packages for computational work such as *numpy*, *scipy*,
 
 Our most recent Python environment modules have:
 
--   *multiprocessing.cpu\_count()* patched to return only the number of
+- `multiprocessing.cpu_count()` patched to return only the number of
     CPUs available to the process, which in a Slurm job can be fewer
     than the number of CPUs on the node.
 
--   PYTHONUSERBASE set to a path which includes the toolchain, so that
+- `PYTHONUSERBASE` set to a path which includes the toolchain, so that
     incompatible builds of the same version of Python don't attempt to
     share user-installed libraries.
 
 ## Example scripts
 
-``` bash
-#!/bin/bash -e
+=== "Serial Job"
 
-#SBATCH --job-name    MyPythonJob
-#SBATCH --time        01:00:00
-#SBATCH --mem         512MB
+    ```sl
+    #!/bin/bash -e
+    
+    #SBATCH --job-name    Python_Serial
+    #SBATCH --time        01:00:00
+    #SBATCH --mem         512MB
+    
+    module load Python/{{applications.Python.machines.mahuika.versions | last}}
+    
+    python MyPythonScript.py
+    ```
 
-module load Python/3.7.3-gimkl-2018b
+=== "Distributed Memory Job"
 
-python MyPythonScript.py
-```
+    ```sl
+    #!/bin/bash -e
+    #SBATCH --job-name=PythonMPI
+    #SBATCH --ntasks=2          # Number of MPI tasks
+    #SBATCH --time=00:30:00
+    #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+    
+    module load Python
+    srun python PythonMPI.py   # Executes ntasks copies of the script
+    ```
 
-### MPI Example
+    ```py
+    import numpy as np
+    from mpi4py import MPI
+    
+    comm = MPI.COMM_WORLD
+    size = comm.Get_size() # Total number of MPI tasks
+    rank = comm.Get_rank() # Rank of this MPI task
 
-``` sl
-  #!/bin/bash -e
-  #SBATCH --job-name=PythonMPI
-  #SBATCH --ntasks=2          # Number of MPI tasks
-  #SBATCH --time=00:30:00
-  #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+    # Calculate the data (numbers 0-9) on the MPI ranks
+    rank_data = np.arange(rank, 10, size)
 
-  module load Python
-  srun python PythonMPI.py   # Executes ntasks copies of the script
-```
+    # perform some operation on the ranks data
+    rank_data += 1
+    
+    # gather the data back to rank 0
+    data_gather = comm.gather(rank_data, root = 0)
+    
+    # on rank 0 sum the gathered data and print both the sum of, 
+    # and the unsummed data
+    if rank == 0:
+        print('Gathered data:', data_gather)
+        print('Sum:', sum(data_gather))
+    ```
 
-``` sl
-import numpy as np
-from mpi4py import MPI
+    The above Python script will create a list of numbers (0-9) split
+    between the MPI tasks (ranks). Each task will then add one to the
+    numbers it has, those numbers will then be gathered back to task 0,
+    where the numbers will be summed and both the sum of, and the unsummed
+    data is printed.
 
-comm = MPI.COMM_WORLD
-size = comm.Get_size() # Total number of MPI tasks
-rank = comm.Get_rank() # Rank of this MPI task
+=== "Shared Memory Example"
 
-# Calculate the data (numbers 0-9) on the MPI ranks
-rank_data = np.arange(rank, 10, size)
+    ``` sl
+      #!/bin/bash -e
+      #SBATCH --job-name=PytonMultiprocessing
+      #SBATCH --cpus-per-task=2   # Number of logical CPUs
+      #SBATCH --time=00:10:00
+      #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
 
-# perform some operation on the ranks data
-rank_data += 1
+      module load Python
+      python PythonMultiprocessing.py
+    ```
 
-# gather the data back to rank 0
-data_gather = comm.gather(rank_data, root = 0)
+    ```py
+    import multiprocessing
+    
+    def calc_square(numbers, result1):
+         for idx, n in enumerate(numbers):
+            result1[idx] = n*n
 
-# on rank 0 sum the gathered data and print both the sum of, 
-# and the unsummed data
-if rank == 0:
-    print('Gathered data:', data_gather)
-    print('Sum:', sum(data_gather))
-```
+    def calc_cube(numbers, result2):
+        for idx, n in enumerate(numbers):
+            result2[idx] = n*n*n
 
-The above Python script will create a list of numbers (0-9) split
-between the MPI tasks (ranks). Each task will then add one to the
-numbers it has, those numbers will then be gathered back to task 0,
-where the numbers will be summed and both the sum of, and the unsummed
-data is printed.
+    if __name__ == "__main__":
+        numbers = [2,3,4]
+        # Sets up the shared memory variables, allowing the variables to be
+        # accessed globally across processes
+        result1 = multiprocessing.Array('i',3)
+        result2 = multiprocessing.Array('i',3)
+        # set up the processes
+        p1 = multiprocessing.Process(target=calc_square, args=(numbers,result1,))
+        p2 = multiprocessing.Process(target=calc_cube, args=(numbers,result2,))
 
-#### Multiprocessing Example
+        # start the processes
+        p1.start()
+        p2.start()
 
-``` sl
-  #!/bin/bash -e
-  #SBATCH --job-name=PytonMultiprocessing
-  #SBATCH --cpus-per-task=2   # Number of logical CPUs
-  #SBATCH --time=00:10:00
-  #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+        # end the processes
+        p1.join()
+        p2.join()
+    
+        print(result1[:])
+        print(result2[:])
+    ```
 
-  module load Python
-  python PythonMultiprocessing.py
-```
+    The above Python script will calculated the square and cube of an array
+    of numbers using multiprocessing and print the results from outside of
+    those processes, safely circumventing Python's [global interpreter lock](https://wiki.python.org/moin/GlobalInterpreterLock).
 
-``` sl
-import multiprocessing
-
-def calc_square(numbers, result1):
-    for idx, n in enumerate(numbers):
-        result1[idx] = n*n
-
-def calc_cube(numbers, result2):
-    for idx, n in enumerate(numbers):
-        result2[idx] = n*n*n
-
-if __name__ == "__main__":
-    numbers = [2,3,4]
-    # Sets up the shared memory variables, allowing the variables to be
-    # accessed globally across processes
-    result1 = multiprocessing.Array('i',3)
-    result2 = multiprocessing.Array('i',3)
-    # set up the processes
-    p1 = multiprocessing.Process(target=calc_square, args=(numbers,result1,))
-    p2 = multiprocessing.Process(target=calc_cube, args=(numbers,result2,))
-
-    # start the processes
-    p1.start()
-    p2.start()
-
-    # end the processes
-    p1.join()
-    p2.join()
-
-    print(result1[:])
-    print(result2[:])
-```
-
-The above Python script will calculated the square and cube of an array
-of numbers using multiprocessing and print the results from outside of
-those processes, safely circumventing Python's [global interpreter
-lock](https://wiki.python.org/moin/GlobalInterpreterLock).
-
-For more in depth examples of and descriptions of Multiprocessing in
-Python you may find [this Multithreading/Multiprocessing Youtube
+    For more in depth examples of and descriptions of Multiprocessing in
+    Python you may find [this Multithreading/Multiprocessing Youtube
 tutorial
 series](https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&index=1)
 helpful
 
-#### Job Arrays
+=== "Job Arrays"
+    
+    Job arrays can be handled using the Slurm environment variable
+    `SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
+    from within the script or using a command line argument. In the
+    following both options are presented:
+    
+    The job scripts calling both examples:
 
-Job arrays can be handled using the Slurm environment variable
-`SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
-from within the script or using a command line argument. In the
-following both options are presented:
+    ``` sl
+    #!/bin/bash -e
+    
+    #SBATCH -J test
+    #SBATCH --time=00:01:00
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=1
+    #SBATCH --array=1-2 # Array jobs
+    
+    module load Anaconda3
 
-The job scripts calling both examples:
+    echo "SLURM_ARRAY_TASK_ID.$SLURM_ARRAY_TASK_ID of $SLURM_ARRAY_TASK_COUNT"
+    
+    #env variable in python
+    python hello_world.py
+    
+    #as command line argument
+    python hello_world_args.py -ID $SLURM_ARRAY_TASK_ID
+    ```
 
-``` sl
-#!/bin/bash -e
-#SBATCH -J test
-#SBATCH --time=00:01:00
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --array=1-2 # Array jobs
+    the version getting the env variable in the python script
+    `hello_world.py`
+    
+    ```py
+    #!/usr/bin/env python3
 
-module load Anaconda3
-
-echo "SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_ID of $SLURM_ARRAY_TASK_COUNT"
-
-#env variable in python
-python hello_world.py
-
-#as command line argument
-python hello_world_args.py -ID $SLURM_ARRAY_TASK_ID
-```
-
-the version getting the env variable in the python script
-"hello\_world.py"
-
-``` sl
-#!/usr/bin/env python3
-
-import os
-my_id = os.environ['SLURM_ARRAY_TASK_ID']
-print("hello world with ID {}".format(my_id))
-```
-
-the version getting the env variable as argument in the python script
-"hello\_world\_args.py"
-
-``` sl
-#!/usr/bin/env python3
-"""
-Module for handling input arguments
-"""
-
-import argparse
-
+    import os
+    my_id = os.environ['SLURM_ARRAY_TASK_ID']
+    print("hello world with ID {}".format(my_id))
+   ```
+    
+    the version getting the env variable as argument in the python script
+`hello_world_args.py`
+    
+    ``` sl
+    #!/usr/bin/env python3
+    """
+    Module for handling inpu arguments
+    """
+    
+    import argparse
+    
 # get tests from file
 class LoadFromFile(argparse.Action):
     """
@@ -233,9 +223,9 @@ def get_args():
     return parser.parse_args()
 
 
-ARGS = get_args()
-print("hello world from ID {}".format(ARGS.my_id))
-```
+    ARGS = get_args()
+    print("hello world from ID {}".format(ARGS.my_id))
+    ```
 
 ## Python Packages
 
