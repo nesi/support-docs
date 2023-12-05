@@ -68,7 +68,7 @@ extension request.
 
 You can submit a request for an extension using <https://my.nesi.org.nz>
 or by [opening a support
-ticket](https://support.nesi.org.nz/hc/requests/new).
+ticket](mailto:support@nesi.org.nz).
 
 Please see [Requesting to renew an allocation via
 my.nesi.org.nz](../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)

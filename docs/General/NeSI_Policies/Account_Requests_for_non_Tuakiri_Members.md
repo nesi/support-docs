@@ -50,7 +50,7 @@ my.nesi.org.nz.
      activation email by the end of the next business day after you applied
      for an account, please check your junk mail and/or quarantine folders.
      If you still can't find the email, [contact our support
-     team](https://support.nesi.org.nz/hc/requests/new).
+     team](mailto:support@nesi.org.nz).
 !!! prerequisite What next?
      -   [Project
          Eligibility](https://support.nesi.org.nz/hc/en-gb/articles/360000925176-Project-Eligibility)

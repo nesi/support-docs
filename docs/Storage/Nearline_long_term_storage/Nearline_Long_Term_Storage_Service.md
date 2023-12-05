@@ -262,7 +262,7 @@ version of data from nobackup or project:
     thorough verification (e.g. checksums), read [this
     article](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md)
     or [contact our support
-    team](https://support.nesi.org.nz/hc/requests/new).
+    team](mailto:support@nesi.org.nz).
 2.  Once you know which files you need to update (i.e. only files whose
     Nearline version is out of date), remove the old files on Nearline
     using `nlpurge`.
@@ -498,7 +498,7 @@ indeed wait times could be hours or even in some cases more than a day.
 ## Support contact
 
 Please **send feedback** about your user experience at
-<https://support.nesi.org.nz/hc/requests/new>, which may include
+<mailto:support@nesi.org.nz>, which may include
 functionality issues, intuitive or counter-intuitive behaviours,
 behaviours or features that you like, suggestions for improvements,
 transfers taking too long, etc.

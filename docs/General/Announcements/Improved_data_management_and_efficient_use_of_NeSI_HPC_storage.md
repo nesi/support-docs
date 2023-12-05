@@ -54,11 +54,11 @@ is the draft auto cleaning timeframe under consideration for the project
 filesystem).
 
 If you need assistance with this, [contact Support
-](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new")and
+](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")and
 we’d be happy to help or answer questions.
 
 If you have data that may be used again on NeSI later, [let us
-know](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new")
+know](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")
 and we will consider whether a
 [Nearline](https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service "https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service")
 storage allocation would be appropriate to manage this.
@@ -75,7 +75,7 @@ are inactive / untouched for more than 12 months. 
 A selection of active projects will be invited to participate in this
 first phase of the programme. If you would like to volunteer to be an
 early tester / participant, please [contact
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new").
+Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
 Otherwise, we will be in touch with projects directly to onboard them.
 
 Insights from this initial phase will inform the criteria and processes
@@ -161,7 +161,7 @@ information](../../General/FAQs/Ive_run_out_of_storage_space.md "https://support
 **6) I have questions that aren’t covered here. Who can I talk to?**
 
 [Contact
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new").
+Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
 No question is too big or small and our intention is always to work with
 you to find the best way to manage your research data.
 
@@ -172,4 +172,4 @@ you to find the best way to manage your research data.
 This page will continue to be updated in the coming months with more
 information. If you have questions at any time, don’t hesitate to
 [contact
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new").
+Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").

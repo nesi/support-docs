@@ -28,7 +28,7 @@ zendesk_section_id: 360001189255
      This service is available for users with a current allocation on
      Mahuika only.  
      [Please contact us to request a suitable
-     allocation.](https://support.nesi.org.nz/hc/en-gb/requests/new)
+     allocation.](mailto:support@nesi.org.nz)
 
 ## Introduction
 

@@ -34,7 +34,7 @@ storage).
      Your feedback on which verification options you think are necessary
      will help us decide on future directions for the Nearline service.
      Please [contact our support
-     team](https://support.nesi.org.nz/hc/requests/new) to request
+     team](mailto:support@nesi.org.nz) to request
      verification or to offer suggestions regarding this or any other
      aspect of our Nearline service.
 
@@ -65,7 +65,7 @@ also enable comparisons of file permissions if requested, though
 differences in permissions or even modification times do not necessarily
 suggest a problem as long as the names and sizes are the same. If you
 are interested in verifying file permissions, please [contact our
-support team](https://support.nesi.org.nz/hc/requests/new).
+support team](mailto:support@nesi.org.nz).
 
 To get a list of file names, sizes and dates in a particular directory
 on nearline, run the following command with the necessary modifications.

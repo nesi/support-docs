@@ -210,7 +210,7 @@ entitlements and institutional resource allocation decisions</td>
 
 If you only qualify for a Proposal Development allocation right now,
 please [get in touch with
-us](https://support.nesi.org.nz/hc/requests/new) before applying for a
+us](mailto:support@nesi.org.nz) before applying for a
 new project. Our Engagement Team is happy to talk to you and
 representatives of your institution about [Subscription
 options](https://www.nesi.org.nz/community/partners-pricing#subscriptions).

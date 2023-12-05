@@ -37,7 +37,7 @@ A quick reminder of our main support channels as well as other sources
 of self-service support:
 
 -   [Submit a ticket to
-    Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new") (Note:
+    Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz") (Note:
     non-emergency requests will be addressed on or after 03 January
     2024)
 

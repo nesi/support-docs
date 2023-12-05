@@ -56,5 +56,5 @@ HPC using NeSI", are designed for new users.
 Finally, If you wish to schedule a live zoom introductory session
 covering introductory material (perhaps useful for research groups),
 please [contact
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new")
+Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")
 and we can advise you on our availability.

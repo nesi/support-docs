@@ -87,7 +87,7 @@ Software built on Māui may not work without recompilation after the
 upgrade. See the tables below for more detail regarding version changes.
 If you have any particular concerns about the impact on your work,
 please contact [NeSI
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new).
+Support](mailto:support@nesi.org.nz).
 
 The table below outlines the known and expected Cray component changes:
 

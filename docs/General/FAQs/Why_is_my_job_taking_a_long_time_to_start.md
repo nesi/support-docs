@@ -187,5 +187,5 @@ submitted job should progress quickly through the queue.
 
 If your job priority is high, your resource requests are low and your
 job still won't start, please [send a request to our support
-team](https://support.nesi.org.nz/hc/requests/new) and we will look into
+team](mailto:support@nesi.org.nz) and we will look into
 the problem.

@@ -38,7 +38,7 @@ These new A100s, alongside [software optimised for data
 science](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-),
 are available to researchers using **machine learning** approaches. If
 this is you, [contact NeSI
-Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) to
+Support](mailto:support@nesi.org.nz) to
 discuss how these new resources could support your work.
 
  
@@ -63,7 +63,7 @@ For more technical information about using GPUs on NeSI, [click
 here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
 If you have questions about allocations or how to access the P100s,
 [contact NeSI
-Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new).
+Support](mailto:support@nesi.org.nz).
 
  
 
@@ -96,14 +96,14 @@ community of users, as well as support more advanced and demanding
 performance needs across domains. If you’re interested in using these
 A100s for something other than machine learning, let us know by
 [contacting NeSI
-Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) -
+Support](mailto:support@nesi.org.nz) -
 that way we can keep you up to date on our plans.
 
  
 
 If you have questions or comments on anything mentioned above,
 please [get in
-touch](https://support.nesi.org.nz/hc/en-gb/requests/new).
+touch](mailto:support@nesi.org.nz).
 
  
 

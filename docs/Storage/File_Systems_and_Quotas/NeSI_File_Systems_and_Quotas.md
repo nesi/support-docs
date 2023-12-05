@@ -303,7 +303,7 @@ above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
 requirements with us during [the project application
 process](../../General/NeSI_Policies/How_we_review_applications.md), or
-[contact our support team](https://support.nesi.org.nz/hc/requests/new)
+[contact our support team](mailto:support@nesi.org.nz)
 at any time.
 
 To ensure this file system remains fit-for-purpose, we have a regular
@@ -324,7 +324,7 @@ analyse datasets up to 1 PB in size.
      your patience as we develop, test and deploy this service. If you
      would like to participate in the Early Access Programme, please
      [contact our support
-     team](https://support.nesi.org.nz/hc/requests/new).
+     team](mailto:support@nesi.org.nz).
 
 The `/nesi/nearline` filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
@@ -369,7 +369,7 @@ directories and symbolic links, still count towards the relevant
 fileset's inode quota. If therefore you expect you will need to store
 large numbers of very small files in your home directory or in a
 project's persistent storage, please [contact our support
-team](https://support.nesi.org.nz/hc/en-gb/requests/new) to discuss your
+team](mailto:support@nesi.org.nz) to discuss your
 storage needs.
 
 ## Transparent File Data Compression

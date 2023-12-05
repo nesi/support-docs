@@ -153,7 +153,7 @@ job at greater risk of node failure. You can request a single node with
 `--nodes=1`for jobs of up to `--ntasks=128`, which is enough for most
 VASP calculations. If you would like help making a large job more
 efficient, please [contact our support
-team](https://support.nesi.org.nz/hc/en-gb/requests/new).
+team](mailto:support@nesi.org.nz).
 
 ### VASP runs faster on Milan nodes
 
