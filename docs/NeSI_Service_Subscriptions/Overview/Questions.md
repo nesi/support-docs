@@ -16,12 +16,10 @@ hesitate to [get in touch](mailto:info@nesi.org.nz).
 Visit our Services sections on the NeSI website for more details on the
 ways we're supporting New Zealand research communities through:
 
--   [High Performance Computing & Analytics](https://www.nesi.org.nz/services/high-performance-computing-and-data-analytics)
+- [High Performance Computing & Analytics](https://www.nesi.org.nz/services/high-performance-computing-and-data-analytics)
 
--   [Consultancy](https://www.nesi.org.nz/services/consultancy)
+- [Consultancy](https://www.nesi.org.nz/services/consultancy)
 
--   [Data Services](https://www.nesi.org.nz/services/data-services)
+- [Data Services](https://www.nesi.org.nz/services/data-services)
 
--   [Training](https://www.nesi.org.nz/services/training)
-
- 
+- [Training](https://www.nesi.org.nz/services/training)
