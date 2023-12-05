@@ -3,24 +3,16 @@ created_at: '2019-02-24T22:16:04Z'
 hidden: false
 position: 40
 tags:
-- mahuika
 - engineering
 - cfd
+- cae
+- fea
 title: OpenFOAM
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360000810556
 zendesk_section_id: 360000040076
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 OpenFOAM (Open Field Operation And Manipulation) is a open-source C++
 toolbox maintained by the OpenFOAM foundation and ESI Group. Although
@@ -41,28 +33,18 @@ source $FOAM_BASH
 
 ## Example Script
 
-``` sl
+```sh
 #!/bin/bash -e
-#=================================================#
-#title          OpenFoamTest.sl
-#description    Run simpleFoam in paralell.
-#author         NeSI
-#=================================================#
+
 #SBATCH --time              04:00:00
 #SBATCH --job-name          OF_16CORES
 #SBATCH --output            %x.output   #set output to job name
 #SBATCH --ntasks            16
 #SBATCH --mem-per-cpu               512MB
-#=================================================#
 
 #Working directory always needs to contain 'system', 'constant', and '0'
-DIR_WORKING="/nesi/nobackup/nesi99999/OpenFOAM/testRun"
 
-#Add this script to start of output
-cat ${0}
-
-cd ${DIR_WORKING}
-module load OpenFOAM/v1712-gimkl-2017a
+module load OpenFOAM/{{applications.OpenFOAM.machines.mahuika.versions | last}}
 source ${FOAM_BASH}
 
 decomposePar                   #Break domain into pieces for parallel execution.
@@ -81,41 +63,41 @@ write there to crash.**
 
 There are a few ways to mitigate this
 
--   **Use** `/nesi/nobackup`  
+- **Use** `/nesi/nobackup`
     The nobackup directory has a significantly higher inode count and no
     disk space limits.
 
--   **ControlDict Settings**  
-    -   `WriteInterval`  
+- **ControlDict Settings**  
+  - `WriteInterval`  
         Using a high write interval reduce number of output files and
         I/O load.
-    -   `deltaT`  
+  - `deltaT`  
         Consider carefully an appropriate time-step, use adjustTimeStep
         if suitable.
-    -   `purgeWrite`  
+    - `purgeWrite`  
         Not applicable for many jobs, this keeps only the last n steps,
         e.g. purgeWrite 5 will keep the last 5 time-steps, with the
         directories being constantly overwritten.
-    -   `runTimeModifiable`  
+    - `runTimeModifiable`  
         When true, dictionaries will be re-read at the start of every
         time step. Setting this to false will decrease I/O load.
-    -   `writeFormat`  
+    - `writeFormat`  
         Setting this to binary as opposed to ascii will decrease disk
         use and I/O load.
 
--   **Monitor Filesystem **  
+- **Monitor Filesystem**  
     The command `nn_storage_quota` should be used to track filesystem
     usage. There is a delay between making changes to a filesystem and
     seeing it on `nn_storage_quota`.
 
-    ``` sl
+    ```sh
     Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
     home_cwal219             20G    1.957G    9.79%      92160     21052    22.84%
     project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
     nobackup_nesi99999              6.833T            10000000    2691383   26.91%
     ```
 
--   **Contact Support**  
+- **Contact Support**  
     If you are following the recommendations here yet are still
     concerned about indoes, open a support ticket and we can raise the
     limit for you.
@@ -125,26 +107,26 @@ There are a few ways to mitigate this
 You may find it useful to use environment variables in your dictionaries
 e.g.
 
-``` sl
+```sh
 numberOfSubdomains ${SLURM_NTASKS};
 ```
 
 Or create your variables to be set in your Slurm script.
 
-``` sl
+```sh
 startFrom ${START_TIME};
 ```
 
  This is essential when running parameter sweeps.
 
-You can also directly edit your dictionaries with `sed`, e.g.
+You can also directly edit your dictionaries with `sed`,Concordia.ah
 
-``` sl
+```sh
 NSUBDOMAINS=10
 sed -i "s/\(numberOfSubdomains \)[[:digit:]]*\(;\)/\1 $NSUBDOMAINS\2/g" system/controlDict
 ```
 
-## Recommended Resources   
+## Recommended Resources
 
 Generally, using 16 or less tasks will keep your job reasonably
 efficient. However this is *highly* dependant on the type of simulation
@@ -169,21 +151,21 @@ Open the 'releases' tab, right click on the '.tar' or '.zip' of the
 version you want and select 'copy link address', then paste that link
 into your terminal after `wget`. For example:
 
-``` sl
+```sh
 wget https://github.com/vincentcasseau/hyStrath/archive/Concordia.tar.gz
 ```
 
- wget can also be used to fetch files from other sources.
+`wget` can also be used to fetch files from other sources.
 
 #### If repo only
 
 Use the command `git clone <path to repo>.git` For example:
 
-``` sl
+```sh
 git clone https://github.com/vincentcasseau/hyStrath.git
 ```
 
-### Decompress 
+### Decompress
 
 If your source is a .zip file use the command `unzip <filename>` if it
 is a .tar.gz use the command `tar -xvzf <filename>`
@@ -200,11 +182,9 @@ found [here](https://cfd.direct/openfoam/user-guide/v6-compiling-applications/)
 
 A library/application named 'newApp' would have the structure.
 
-![](../../assets/images/OpenFOAM_0.png)
-
  To build \`newApp\` one would run:
 
-``` sl
+```sh
 module load OpenFOAM
 source $FOAM_BASH
 wmake
@@ -223,7 +203,7 @@ specifies variables `$FOAM_USER_LIBBIN` or `$FOAM_USER_APPBIN` instead.
 
 User compiled libraries are kept in `$FOAM_USER_LIBBIN`, by default this
 is set
-to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib` 
+to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib`
 
 User compiled objects are kept in `$FOAM_USER_APPBIN`, by default this
 is set
@@ -234,7 +214,7 @@ project members to have access.
 
 For example
 
-``` sl
+```sh
 module load OpenFOAM
   
 source $FOAM_BASH
@@ -245,6 +225,7 @@ export FOAM_USER_APPBIN=/nesi/project/nesi99999/custom_OF/bin
 
 These variables need to be set to the same chosen paths before compiling
 and before running the solvers.
-!!! prerequisite Warning
+
+!!! warning
      Make sure to `export` your custom paths before `source $FOAM_BASH`
      else they will be reset to default.
