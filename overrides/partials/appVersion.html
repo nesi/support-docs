@@ -1,0 +1,25 @@
+<div class="tabbed-set tabbed-alternate" data-tabs="1:{{ app.machines | length }}" style="--md-indicator-x: 0px; --md-indicator-width: 79px;">
+    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
+    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+    <div class="tabbed-labels">
+        {% for machine in app.machines -%} 
+        <label for="__tabbed_1_{{ loop.index }}">{{ machine | capitalize }}</label>
+        {% endfor %}
+    </div>
+<div class="tabbed-content">
+{% for machine in app.machines -%} 
+<div class="tabbed-block">
+    <p>
+        {% for version in app.machines[machine].versions -%} 
+        <div class="highlight">
+            <pre>
+                <span></span>
+                <code>module load {{app_name}}/{{ version }}</code>
+            </pre>
+        </div>
+        {% endfor %}
+    </p>
+        <!-- data-clipboard-target="#__code_{{ app_name | e }}_{{ version | e }} > code" -->
+</div>
+{% endfor %}
+<div class="tabbed-control tabbed-control--prev" hidden=""><button class="tabbed-button" tabindex="-1" aria-hidden="true"></button></div><div class="tabbed-control tabbed-control--next" hidden=""><button class="tabbed-button" tabindex="-1" aria-hidden="true"></button></div></div>
