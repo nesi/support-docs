@@ -67,6 +67,12 @@ Make a pull [request](https://github.com/nesi/support-docs-concept/pulls)
 
 Pull will merge automatically if all checks passed. (add timer too maybe?)
 
+
+## Adding Words to Dictionary
+
+If the CI is failing the spellcheck phase, and you beleive the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used by updating the [NeSI Wordlist](https://github.com/nesi/nesi-wordlist).
+
+
 ## Raise an issue
 
 *Not documented at the moment (TODO)*
