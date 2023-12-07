@@ -7,6 +7,7 @@ tags:
 - biology
 title: BLAST
 vote_count: 1
+template: app.html
 vote_sum: -1
 zendesk_article_id: 208619807
 zendesk_section_id: 360000040076

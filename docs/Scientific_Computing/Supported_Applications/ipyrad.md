@@ -5,6 +5,7 @@ position: 2
 tags: []
 title: ipyrad
 vote_count: 0
+template: app.html
 vote_sum: 0
 zendesk_article_id: 5565081844623
 zendesk_section_id: 360000040076

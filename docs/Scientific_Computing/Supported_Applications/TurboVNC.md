@@ -5,6 +5,7 @@ position: 56
 tags: []
 title: TurboVNC
 vote_count: 0
+template: app.html
 vote_sum: 0
 zendesk_article_id: 360001343015
 zendesk_section_id: 360000040076

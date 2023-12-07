@@ -7,6 +7,7 @@ tags:
 - chemistry
 title: ORCA
 vote_count: 3
+template: app.html
 vote_sum: 3
 zendesk_article_id: 213718027
 zendesk_section_id: 360000040076

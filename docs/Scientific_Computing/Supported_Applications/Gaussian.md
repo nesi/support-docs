@@ -7,6 +7,7 @@ tags:
 - chemistry
 title: Gaussian
 vote_count: 5
+template: app.html
 vote_sum: 1
 zendesk_article_id: 207127857
 zendesk_section_id: 360000040076

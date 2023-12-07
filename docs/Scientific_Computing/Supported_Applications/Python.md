@@ -7,6 +7,7 @@ tags:
 - language
 title: Python
 vote_count: 0
+template: app.html
 vote_sum: 0
 zendesk_article_id: 207782537
 zendesk_section_id: 360000040076
@@ -48,7 +49,7 @@ Our most recent Python environment modules have:
     #SBATCH --time        01:00:00
     #SBATCH --mem         512MB
     
-    module load Python/{{applications.Python.machines.mahuika.versions | last}}
+    module load Python/{{app.machines.mahuika.versions | last}}
     
     python MyPythonScript.py
     ```

@@ -5,6 +5,7 @@ position: 54
 tags: []
 title: TensorFlow on CPUs
 vote_count: 2
+# template: app.html
 vote_sum: 2
 zendesk_article_id: 360000997675
 zendesk_section_id: 360000040076
@@ -27,10 +28,10 @@ of the computationally demanding training and inference steps are often
 shorter compared to multicore CPUs. However, running TensorFlow on CPUs
 can nonetheless be attractive for projects where:
 
--   Runtime is dominated by IO, so that computational performance of
+- Runtime is dominated by IO, so that computational performance of
     GPUs does not provide much advantage with respect to overall runtime
     and core-hour charges
--   The workflow can benefit from parallel execution on many nodes with
+- The workflow can benefit from parallel execution on many nodes with
     large aggregated IO bandwidth (e.g., running an inference task on a
     very large dataset, or training a large ensemble of models)
 
@@ -39,8 +40,8 @@ network for image classification  using a Nvidia P100 GPU and 18 Intel
 Broadwell cores on Mahuika (1/2 node) resulted in the following
 GPU-vs-CPU speedups (based on full task runtimes including IO):
 
--   4x for training
--   2.6x for inference
+- 4x for training
+- 2.6x for inference
 
 Keep in mind that these numbers will depend strongly on the
 application - they are only intended as an example.
@@ -59,7 +60,7 @@ you include oneDNN.
 All TensorFlow modules on Mahuika are GPU-optimised releases. To install
 a CPU-optimised TensorFlow release on Mahuika, run
 
-``` sl
+``` sh
 module load Miniconda3
 conda create -p /nesi/project/<project ID>/conda_envs/tf_cpu tensorflow-mkl
 source activate /nesi/project/<project ID>/conda_envs/tf_cpu
@@ -67,7 +68,7 @@ source activate /nesi/project/<project ID>/conda_envs/tf_cpu
 
 To install TensorFlow on Māui Ancil, run
 
-``` sl
+``` sh
 module load Anaconda3
 conda create -p /nesi/project/<project ID>/conda_envs/tf_cpu tensorflow-mkl
 source activate /nesi/project/<project ID>/conda_envs/tf_cpu
@@ -79,7 +80,7 @@ as well using the syntax "tensorflow-mkl==x.y.z".
 
 When the installation is complete, import TensorFlow in Python as usual,
 
-``` sl
+``` sh
 python -c "import tensorflow"
 ```
 
@@ -144,7 +145,7 @@ these instructions are only valid for TensorFlow 1.x.
 
 Insert the following code at the beginning of your program:
 
-``` sl
+``` py
 import os
 
 # Get number of threads from Slurm
@@ -178,5 +179,3 @@ tf.Session(config=config)
 It depends on your application how beneficial each operator
 parallelisation strategy is, so it is worth testing different
 configurations.
-
- 

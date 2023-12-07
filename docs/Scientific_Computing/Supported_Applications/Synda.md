@@ -5,6 +5,7 @@ position: 52
 tags: []
 title: Synda
 vote_count: 1
+# template: app.html
 vote_sum: 1
 zendesk_article_id: 360001208256
 zendesk_section_id: 360000040076

@@ -5,6 +5,7 @@ position: 5
 tags: []
 title: ont-guppy-gpu
 vote_count: 4
+template: app.html
 vote_sum: 2
 zendesk_article_id: 4546820344079
 zendesk_section_id: 360000040076

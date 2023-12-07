@@ -6,19 +6,11 @@ tags:
 - gpu
 title: TensorFlow on GPUs
 vote_count: 2
+# template: app.html
 vote_sum: 2
 zendesk_article_id: 360000990436
 zendesk_section_id: 360000040076
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 TensorFlow is an open source library for machine learning. TensorFlow
 can train and run deep neural networks. It can also serve as a backend
@@ -28,7 +20,8 @@ acceleration.
 TensorFlow is callable from Python with the numerically intensive parts
 of the algorithms implemented in C++ for efficiency. This page focus on
 running TensorFlow with GPU support.
-!!! prerequisite See also
+
+!!! tip "See also"
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
          see the [GPU use on
          NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
@@ -42,9 +35,9 @@ running TensorFlow with GPU support.
 ## Use NeSI modules
 
 TensorFlow is available on Mahuika as an [environment
-module:](../../Getting_Started/Next_Steps/The_HPC_environment.md)
+module](../../Getting_Started/Next_Steps/The_HPC_environment.md)
 
-``` sl
+``` sh
 module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
 ```
 
@@ -53,14 +46,14 @@ modules needed to run TensorFlow on GPUs.
 
 You can list the available versions of the module using:
 
-``` sl
+``` sh
 module spider TensorFlow
 ```
 
 To install additional Python packages for your project, you can either:
 
-1.  install packages in your home folder,
-2.  install packages in a dedicated Python virtual environment for your
+1. install packages in your home folder,
+2. install packages in a dedicated Python virtual environment for your
     project.
 
 The first option is easy but will consume space in your home folder and
@@ -68,7 +61,7 @@ can create conflicts if you have multiple projects with different
 versions requirements. To install packages this way, you need to
 use`pip install --user`. For example, to install the SciKeras package:
 
-``` sl
+``` sh
 pip install --user scikeras
 ```
 
@@ -78,7 +71,7 @@ virtual environments in the project or nobackup folder. The following
 example illustrates how to create a virtual environment, activate it and
 install the SciKeras package in it with `pip`:
 
-``` sl
+``` sh
 $ export PYTHONNOUSERSITE=1
 $ python3 -m venv --system-site-packages my_venv
 $ source my_venv/bin/activate
@@ -91,7 +84,7 @@ The `--system-site-packages` option allows the virtual environment to
 access the TensorFlow package provided by the environment module
 previously loaded:
 
-``` sl
+``` sh
 $ module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
 $ source my_venv/bin/activate
 (my_venv) $ python -c "import tensorflow as tf; print(tf.__version__)"
@@ -102,10 +95,11 @@ $ source my_venv/bin/activate
 Don't forget to activate the virtual environment *before* calling your
 Python scripts in a Slurm submission script, using:
 
-``` sl
+``` sh
 source <path_to_virtual_environment>/bin/activate
 ```
-!!! prerequisite Virtual environment isolation
+
+!!! warning "Virtual environment isolation"
      Use `export PYTHONNOUSERSITE=1` to ensure that your virtual
      environment is isolated from packages installed in your home folder
      `~/.local/lib/python3.8/site-packages/`.
@@ -116,7 +110,7 @@ As an alternative, you can also create *conda* environments to install a
 specific version of Python, TensorFlow and any additional packages
 required for your project. On Mahuika, use the Miniconda3 module:
 
-``` sl
+``` sh
 export PYTHONNOUSERSITE=1
 module load Miniconda3/4.9.2
 conda create -p my_conda_venv python=3.8
@@ -129,7 +123,7 @@ nobackup folder to save space in your home folder.
 Then activate the conda environment and install TensorFlow using
 `conda install` or `pip install`, depending on your preferences:
 
-``` sl
+``` sh
 source $(conda info --base)/etc/profile.d/conda.sh  # if you didn't use "conda init" to set your .bashrc
 conda activate ./my_conda_venv
 pip install tensorflow==2.5.0
@@ -141,20 +135,21 @@ configurations](https://www.tensorflow.org/install/source#gpu) for
 compatibilities. For example, Tensorflow 2.5.0 requires you to load the
 `cuDNN/8.1.1.33-CUDA-11.2.0` module:
 
-``` sl
+``` sh
 module load cuDNN/8.1.1.33-CUDA-11.2.0  # for Tensorflow 2.5
 ```
 
 You can list the available versions of cuDNN (and associated CUDA
 module) using:
 
-``` sl
+``` sh
 module spider cuDNN
 ```
 
-Please contact us at <support@nesi.org.nz> if you need a version not
+Please contact us at [support@nesi.org.nz](mailto:support@nesi.org.nz) if you need a version not
 available on the platform.
-!!! prerequisite Note about Māui Ancillary Nodes
+
+!!! note "Māui Ancillary Nodes"
      -   Load the Anaconda3 module instead of Miniconda3 to manipulate
          conda environments:  
          ``` sl
@@ -168,24 +163,26 @@ available on the platform.
 Additionnally, depending your version of TensorFlow, you may need to
 take into consideration the following:
 
--   install the `tensorflow-gpu` Python package if your are using
+- install the `tensorflow-gpu` Python package if your are using
     TensorFlow 1,
--   make sure to use a supported version of Python when creating the
+- make sure to use a supported version of Python when creating the
     conda environment (e.g. TensorFlow 1.14.0 requires Python 3.3 to
     3.7),
--   use `conda install` (not `pip install`) if your version of
+- use `conda install` (not `pip install`) if your version of
     TensorFlow relies on GCC 4.8 (TensorFlow &lt; 1.15).
-!!! prerequisite Conda tip
+
+!!! tip
      Make sure to use `module purge` before loading Miniconda3, to ensure
      that no other Python module is loaded and could interfere with your
      conda environment.
-     ``` sl
-     module purge
-     module load Miniconda3/4.9.2
-     export PYTHONNOUSERSITE=1
-     source $(conda info --base)/etc/profile.d/conda.sh  # if you didn't use "conda init" to set your .bashrc
-     conda ...  # any conda commands (create, activate, install...)
-     ```
+
+    ``` sh
+    module purge
+    module load Miniconda3/4.9.2
+    export PYTHONNOUSERSITE=1
+    source $(conda info --base)/etc/profile.d/conda.sh  # if you didn't use "conda init" to set your .bashrc
+    conda ...  # any conda commands (create, activate, install...)
+    ```
 
 ## Singularity containers
 
@@ -207,13 +204,13 @@ support page.
 
 Here are the recommended options to run TensorFlow on the A100 GPUs:
 
--   If you use TensorFlow 1, use the TF1 [container provided by
+- If you use TensorFlow 1, use the TF1 [container provided by
     NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow),
     which comes with a version of TensorFlow 1.15 compiled specifically
     to support the A100 GPUs (Ampere architecture). Other official
     Python packages won't support the A100, triggering various crashes
     and slowdowns.
--   If you use TensorFlow 2, any version from 2.4 and above will provide
+- If you use TensorFlow 2, any version from 2.4 and above will provide
     support for the A100 GPUs.
 
 ## Example Slurm script
@@ -226,10 +223,10 @@ the last layers of an already trained deep neural network in order to
 make it classify pictures of flowers. This type of task is known as
 "transfer learning".
 
-1.  Create a virtual environment to install the
+1. Create a virtual environment to install the
     `tensorflow-hub[make_image_classifier]` package:
 
-    ``` sl
+    ``` sh
     module purge  # start from a clean environment
     module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
     export PYTHONNOUSERSITE=1
@@ -238,7 +235,7 @@ make it classify pictures of flowers. This type of task is known as
     pip install tensorflow-hub[make_image_classifier]~=0.12
     ```
 
-2.  Download and uncompress the example dataset containing labelled
+2. Download and uncompress the example dataset containing labelled
     photos of flowers (daisies, dandelions, roses, sunflowers and
     tulips):
 
@@ -246,7 +243,7 @@ make it classify pictures of flowers. This type of task is known as
     wget http://download.tensorflow.org/example_images/flower_photos.tgz -O - | tar -xz
     ```
 
-3.  Copy the following code in a job submission script named
+3. Copy the following code in a job submission script named
     `flowers.sl`:
 
     ``` sl
@@ -274,9 +271,9 @@ make it classify pictures of flowers. This type of task is known as
       --saved_model_dir "model-${SLURM_JOBID}"
     ```
 
-4.  Submit the job:
+4. Submit the job:
 
-    ``` sl
+    ``` sh
     sbatch flowers.sl
     ```
 
@@ -286,7 +283,8 @@ Once the job has finished, the trained model will be saved in a
 All messages printed by TensorFlow during the training, including
 training and validation accuracies, are captured in the Slurm output
 file, named `slurm-JOBID.out` by default.
-!!! prerequisite Tips
+
+!!! tip
      While your job is running, you can monitor the progress of model
      training using `tail -f` on the Slurm output file:
      ``` sl

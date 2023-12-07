@@ -5,6 +5,7 @@ position: 55
 tags: []
 title: Trinity
 vote_count: 1
+template: app.html
 vote_sum: 1
 zendesk_article_id: 360000980375
 zendesk_section_id: 360000040076

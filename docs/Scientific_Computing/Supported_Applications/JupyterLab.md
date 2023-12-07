@@ -5,6 +5,7 @@ position: 33
 tags: []
 title: JupyterLab
 vote_count: 0
+template: app.html
 vote_sum: 0
 zendesk_article_id: 360001093315
 zendesk_section_id: 360000040076

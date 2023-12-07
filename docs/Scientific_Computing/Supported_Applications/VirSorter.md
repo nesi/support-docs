@@ -5,6 +5,7 @@ position: 7
 tags: []
 title: VirSorter
 vote_count: 1
+template: app.html
 vote_sum: -1
 zendesk_article_id: 360003472036
 zendesk_section_id: 360000040076

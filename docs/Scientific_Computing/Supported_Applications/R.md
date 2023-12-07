@@ -7,6 +7,7 @@ tags:
 - general
 title: R
 vote_count: 7
+template: app.html
 vote_sum: 3
 zendesk_article_id: 209338087
 zendesk_section_id: 360000040076

@@ -8,6 +8,7 @@ tags:
 - docker
 title: Singularity
 vote_count: 5
+template: app.html
 vote_sum: 5
 zendesk_article_id: 360001107916
 zendesk_section_id: 360000040076

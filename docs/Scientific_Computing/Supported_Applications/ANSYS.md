@@ -8,6 +8,7 @@ tags:
 - engineering
 title: ANSYS
 vote_count: 3
+template: app.html
 vote_sum: 3
 zendesk_article_id: 212642617
 zendesk_section_id: 360000040076
@@ -76,7 +77,7 @@ Below is an example of this from a fluent script.
 #SBATCH --array         1-100 
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/{{applications.ANSYS.machines.mahuika.versions | last}} 
+module load ANSYS/{{app.machines.mahuika.versions | last}} 
 
 JOURNAL_FILE=fluent_${SLURM_JOB_ID}.in
 cat  ${JOURNAL_FILE}

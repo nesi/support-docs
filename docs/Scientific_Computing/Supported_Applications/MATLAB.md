@@ -7,6 +7,7 @@ tags:
 - ml
 title: MATLAB
 vote_count: 1
+template: app.html
 vote_sum: 1
 zendesk_article_id: 212639047
 zendesk_section_id: 360000040076
@@ -28,7 +29,7 @@ zendesk_section_id: 360000040076
     #SBATCH --time       01:00:00       # Max walltime 
     #SBATCH --mem        512MB          # Max memory
     
-    module load MATLAB/{{applications.MATLAB.machines.mahuika.versions | last}}
+    module load MATLAB/{{app.machines.mahuika.versions | last}}
       
     # Run the MATLAB script MATLAB_job.m 
     matlab -nodisplay < MATLAB_job.m 
@@ -45,7 +46,7 @@ zendesk_section_id: 360000040076
     #SBATCH --cpus-per-task  4             # 2 physical cores.
     #SBATCH --output         %x.log        # Location of output log
     
-    module load MATLAB/{{applications.MATLAB.machines.mahuika.versions | last}} 
+    module load MATLAB/{{app.machines.mahuika.versions | last}} 
     
     matlab -batch "addpath(genpath('.'));myFunction(5,20)"
     # For versions older than 2019a, use '-nodisplay -r' instead of '-batch'

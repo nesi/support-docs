@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Runs checks on article meta block and outputs in github action readable format. 
+Runs checks on article meta block and outputs in github action readable format
 """
 
 __author__ = "cal w"
@@ -130,6 +130,9 @@ def check_expected_parameters(path, meta, contents):
 
 def check_article_titles(path, meta, contents):
     check_title(page_title(path, meta, contents))
+
+
+def supported(path, meta, contents):
 
 
 all_checks = [check_expected_parameters, check_article_titles]

@@ -3,21 +3,13 @@ created_at: '2020-01-15T21:56:01Z'
 hidden: false
 position: 14
 tags: []
-title: Find execution hot spots with VTune
+title: VTune
 vote_count: 0
+template: app.html
 vote_sum: 0
 zendesk_article_id: 360001332675
 zendesk_section_id: 360000040076
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## What is VTune?
 
@@ -34,13 +26,13 @@ MAP](../../Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md).
 We'll show how to profile a C++ code with VTune - feel free to choose
 your own code instead. Start with 
 
-``` sl
+``` sh
 git clone https://github.com/pletzer/fidibench
 ```
 
 and build the code using the "gimkl" tool chain
 
-``` sl
+``` sh
 cd fidibench
 mkdir build
 cd build
@@ -54,13 +46,13 @@ require one to apply a special compiler switch to profile. You can
 profile an existing executable if you like. We choose "upwindCxx" as the
 executable to profile. It is under upwind/cxx, so
 
-``` sl
+``` sh
 cd upwind/cxx
 ```
 
-Run the executable with 
+Run the executable with
 
-``` sl
+``` sh
 module load VTune
 srun --ntasks=1 --cpus-per-task=2 --hint=nomultithread amplxe-cl -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
 ```
@@ -87,12 +79,12 @@ free                                        libmpi.so.12  �
 
 indicating that the vast majority of time is spent in the "advect"
 method (26s), with significant amounts of time spent allocating (6.5s)
-and deallocating (9.2s) memory. 
+and deallocating (9.2s) memory.
 
 ##  Drilling further into the code
 
 Often this is enough to give you a feel for where the code can be
-improved. To explore further you can fire up 
+improved. To explore further you can fire up
 
 ``` sl
 amplxe-gui &
@@ -102,9 +94,4 @@ Go to the bottom and select "Open Result...", choose the directory where
 the profiling results are saved and click on the .amplxe file. The
 summary will look similar to the above table. However, you can now dive
 into selected functions to get more information. Below we see that 16.5
-out of 26 seconds were spent starting the two OpenMP threads.    
-  
-
-![Screen\_Shot\_2020-01-16\_at\_11.06.53\_AM.png](../../assets/images/Find execution hot spots with VTune.png) 
-
- 
+out of 26 seconds were spent starting the two OpenMP threads.
