@@ -70,7 +70,11 @@ Pull will merge automatically if all checks passed. (add timer too maybe?)
 
 ## Adding Words to Dictionary
 
-If the CI is failing the spellcheck phase, and you beleive the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used by updating the [NeSI Wordlist](https://github.com/nesi/nesi-wordlist).
+If the CI is failing the spellcheck phase, and you beleive the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
+
+1. Visit the [NeSI Wordlist](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
+2. Once changes to the wordlist have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
+3. A branch `new-assets` will be created, which can be merged into main (you should see your new words are added).
 
 
 ## Raise an issue
