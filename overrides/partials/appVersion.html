@@ -7,19 +7,15 @@
         {% endfor %}
     </div>
 <div class="tabbed-content">
-{% for machine in app.machines -%} 
+{% for machine_name, machine in app.machines.items() %}
 <div class="tabbed-block">
     <p>
-        {% for version in app.machines[machine].versions -%} 
-        <div class="highlight">
-            <pre>
-                <span></span>
-                <code>module load {{app_name}}/{{ version }}</code>
-            </pre>
-        </div>
-        {% endfor %}
+    <nav class="md-tags">
+        {% for version in machine.versions -%} 
+        <span {% if (version == machine.default or (machine.default == 'latest' and loop.last)) -%} class="md-tag-latest md-tag" title="Default Version" {% else -%} class="md-tag" {% endif -%}>{{ version }}</span>
+        {% endfor %}       
+    </nav>
     </p>
-        <!-- data-clipboard-target="#__code_{{ app_name | e }}_{{ version | e }} > code" -->
 </div>
-{% endfor %}
+{% endfor -%}
 <div class="tabbed-control tabbed-control--prev" hidden=""><button class="tabbed-button" tabindex="-1" aria-hidden="true"></button></div><div class="tabbed-control tabbed-control--next" hidden=""><button class="tabbed-button" tabindex="-1" aria-hidden="true"></button></div></div>
