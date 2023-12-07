@@ -1,8 +1,9 @@
 {
 	"recommendations": [
-		"sissel.shopify-liquid",
+		"samuelcolvin.jinjahtml",
 		"DavidAnson.vscode-markdownlint",
 		"arsprogramma.compliment",
+		"TakumiI.markdowntable",
 		"redhat.vscode-yaml"
 	],
 	"unwantedRecommendations": [
