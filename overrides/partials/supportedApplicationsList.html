@@ -15,7 +15,7 @@
                 {% if applications|length > 1 %}
                     {% for app_name in applications %}
                         {% set app = applications[app_name] %}
-                        {% include "partials/applicationCard.html" %}
+                        {% include "partials/appCard.html" %}
                     {% endfor %}
                 {% else %}
                     <p>Whoops, something has gone wrong loading the software list. Please contact support.</p>
