@@ -13,7 +13,8 @@
                 <div id="mainList" class="label_data data-labelsection">
 
                 {% if applications|length > 1 %}
-                    {% for application in applications %}
+                    {% for app_name in applications %}
+                        {% set app = applications[app_name] %}
                         {% include "partials/applicationCard.html" %}
                     {% endfor %}
                 {% else %}
