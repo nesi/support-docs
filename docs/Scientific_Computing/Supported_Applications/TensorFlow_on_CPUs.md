@@ -11,24 +11,13 @@ zendesk_article_id: 360000997675
 zendesk_section_id: 360000040076
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
+{% set app_name = "TensorFlow" %}
 {% set app = applications[app_name] %}
 {% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 TensorFlow is a popular software library for machine learning
 applications, see our
-[TensorFlow](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
+[TensorFlow](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
 article for further information. It is often used with GPUs, as runtimes
 of the computationally demanding training and inference steps are often
 shorter compared to multicore CPUs. However, running TensorFlow on CPUs
