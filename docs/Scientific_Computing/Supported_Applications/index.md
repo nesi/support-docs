@@ -1,13 +1,8 @@
 ---
 title: Supported Applications
+template: supportedApplications.html
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 === "Mahuika"
 
     On Mahuika, and Ancillary nodes (both Mahuika and Māui) software packages are provided using 'lmod' an implementation of Environment Modules with [additional features](https://lmod.readthedocs.io/en/latest/010_user.html).
