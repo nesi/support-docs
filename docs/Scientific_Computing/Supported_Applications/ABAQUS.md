@@ -11,31 +11,18 @@ tags:
 - fea
 title: ABAQUS
 vote_count: 2
-# template: app.html
 vote_sum: 0
 zendesk_article_id: 212457807
 zendesk_section_id: 360000040076
 ---
 
-{% set app_name = page.app or page.title | trim %}
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
-{{ app.description }}
-
-{% if app.homepage or app.url -%}
-[{{ app_name }} Homepage]({{ app.homepage or app.url }})
-{% endif -%}
-
-{% if app.licence_type == "proprietary" -%}
-!!! warning
-    {{ app_name }} is proprietary software. Make sure you meet the requirements for it's usage.
-{% endif -%}
-
-## Available Modules
-
-{% include "partials/appVersion.html" -%}
-
-``` sh
+```sh
 abaqus help
 ```
 

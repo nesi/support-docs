@@ -7,12 +7,17 @@ tags:
 - language
 title: Python
 vote_count: 0
-template: app.html
 vote_sum: 0
 zendesk_article_id: 207782537
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released
 under a specific open-source licence. The licences are available on [the

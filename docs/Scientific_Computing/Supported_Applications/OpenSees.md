@@ -7,12 +7,17 @@ tags:
 - earthquake
 title: OpenSees
 vote_count: 0
-template: app.html
 vote_sum: 0
 zendesk_article_id: 360001111156
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 There are three commands with which a OpenSees job can be launched.
 
 - `OpenSees`: For running a job in serial (single CPU).

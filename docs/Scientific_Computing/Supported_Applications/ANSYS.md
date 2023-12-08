@@ -8,12 +8,17 @@ tags:
 - engineering
 title: ANSYS
 vote_count: 3
-template: app.html
 vote_sum: 3
 zendesk_article_id: 212642617
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 ## License Types
 
 The three main ANSYS licenses are;

@@ -5,12 +5,17 @@ position: 14
 tags: []
 title: VTune
 vote_count: 0
-template: app.html
 vote_sum: 0
 zendesk_article_id: 360001332675
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 ## What is VTune?
 
 VTune is a tool that allows you to quickly identify where most of the

@@ -5,12 +5,17 @@ position: 33
 tags: []
 title: JupyterLab
 vote_count: 0
-template: app.html
 vote_sum: 0
 zendesk_article_id: 360001093315
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

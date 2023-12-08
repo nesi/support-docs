@@ -5,12 +5,17 @@ position: 30
 tags: []
 title: GROMACS
 vote_count: 2
-template: app.html
 vote_sum: 2
 zendesk_article_id: 360000792856
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)

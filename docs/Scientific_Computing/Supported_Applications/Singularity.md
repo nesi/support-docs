@@ -8,12 +8,17 @@ tags:
 - docker
 title: Singularity
 vote_count: 5
-template: app.html
 vote_sum: 5
 zendesk_article_id: 360001107916
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
