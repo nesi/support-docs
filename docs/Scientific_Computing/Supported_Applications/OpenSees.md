@@ -12,6 +12,12 @@ zendesk_article_id: 360001111156
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 There are three commands with which a OpenSees job can be launched.
 
 - `OpenSees`: For running a job in serial (single CPU).
@@ -37,7 +43,7 @@ sweeps.
     #SBATCH --mem           512MB             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
     
-    module load OpenSees/{{applications.OpenSees.machines.mahuika.versions | last}}
+    module load OpenSees/{{app.machines.mahuika.versions | last}}
     OpenSees "frame.tcl"
 
 ## Input from Shell

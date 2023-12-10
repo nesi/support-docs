@@ -31,7 +31,7 @@ plugins:
       enable_creation_date: true
   - macros:
       module_name: macro_hooks
-      include_dir: docs/assets
+      include_dir: overrides
 repo_name: GitHub
 repo_url: https://github.com/nesi/support-docs-concept
 edit_uri: edit/main/docs/

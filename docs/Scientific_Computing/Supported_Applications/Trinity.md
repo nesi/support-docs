@@ -10,6 +10,12 @@ zendesk_article_id: 360000980375
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 Trinity, developed at the [Broad
 Institute](http://www.broadinstitute.org/) and the [Hebrew University of
 Jerusalem](http://www.cs.huji.ac.il/), performs _de&nbsp;novo_ reconstruction
