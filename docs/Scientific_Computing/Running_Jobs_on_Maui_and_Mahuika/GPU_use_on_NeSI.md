@@ -342,7 +342,7 @@ applications:
     Stack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md)
 -   [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#GPU)
 -   [TensorFlow on
-    GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
+    GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
 
 And programming toolkits:
 

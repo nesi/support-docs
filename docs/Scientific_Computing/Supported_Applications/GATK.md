@@ -10,6 +10,13 @@ zendesk_article_id: 6443618773519
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
+
 The Genome Analysis Toolkit (GATK), developed at the [Broad
 Institute](http://www.broadinstitute.org/), provides a wide variety of
 tools focusing primarily on variant discovery and genotyping. It is
@@ -26,10 +33,9 @@ of Java is already included as part of the GATK module, you will not
 need to load a Java module separately.
 
 !!! note
-
-- `--time` and `--mem` defined in the following example are just place
-    holders.
-- Please load the GATK version of your choice
+    - `--time` and `--mem` defined in the following example are just place
+        holders.
+    - Please load the GATK version of your choice
 
 ``` sl
 #!/bin/bash -e

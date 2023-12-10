@@ -26,8 +26,8 @@
             <p class="cardbody cardbody-description">{{ app.description }}</p>
             <!-- <div class="cardbody cardbody-info"> -->
             <div class="grid cards">
-                {% include "partials/appVerison.html" %}
-                <div>
+            {% include "partials/appVersion.html" -%}
+                    <div>
                     <span class="bold">Links</span>
                     <ul class="docLinks-list">
                     {% if app.homepage or app.url -%}
