@@ -44,8 +44,7 @@ zendesk_section_id: 360000196195
      -   Review our [allocation
          classes](../../General/NeSI_Policies/Allocation_classes.md). If
          you don't think you currently qualify for any class other than
-         Proposal Development, please [contact
-         us](https://support.nesi.org.nz/hc/requests/new) as soon as
+         Proposal Development, please {% include "partials/support_request.html" %} as soon as
          possible to discuss your options. Your institution may be in a
          position to buy a subscription from us while your Proposal
          Development allocation is in effect if they do not already possess

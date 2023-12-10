@@ -61,5 +61,4 @@ Once you have completed the process, your request to join the group will
 be sent to us for approval. You'll get confirmation when your
 application has been accepted. If you haven't received a confirmation
 within five business days after you asked to add NeSI as a sponsor,
-please [contact our support
-team](https://support.nesi.org.nz/hc/requests/new).
+please {% include "partials/support_request.html" %}.
