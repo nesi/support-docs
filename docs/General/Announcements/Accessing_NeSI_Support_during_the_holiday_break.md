@@ -12,14 +12,6 @@ zendesk_section_id: 200732737
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 As another busy year draws to a close, NeSI’s Support Team will be
 taking a summer break from **5:00 PM on 21 December 2023 to 9:00 am on
 03 January 2024**
@@ -36,22 +28,20 @@ alerts.
 A quick reminder of our main support channels as well as other sources
 of self-service support:
 
--   [Submit a ticket to
-    Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new") (Note:
-    non-emergency requests will be addressed on or after 03 January
-    2024)
+- {% include "partials/support_request.html" %}
+    Note: non-emergency requests will be addressed on or after 03 January 2024.
 
--   [Sign up for NeSI system status
+- [Sign up for NeSI system status
     updates](../../Getting_Started/Getting_Help/System_status.md "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
-    advance warning of any system updates or unplanned outages. 
+    advance warning of any system updates or unplanned outages.
 
--   [Consult our User
+- [Consult our User
     Documentation](https://support.nesi.org.nz/hc/en-gb/categories/360000013836 "https://support.nesi.org.nz/hc/en-gb/categories/360000013836") pages
     for instructions and guidelines for using the systems
 
--   [Visit NeSI’s YouTube
+- [Visit NeSI’s YouTube
     channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
     introductory training webinars
 
 On behalf of the entire NeSI team, we wish you a safe and relaxing
-holiday. 
+holiday.

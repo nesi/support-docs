@@ -43,4 +43,4 @@ zendesk_section_id: 360001091155
     now been fixed. 
 
 If you have any questions about any of the improvements or fixes,
-please [contact NeSI Support](mailto:support@nesi.org.nz).
+please  {% include "partials/support_request.html" %}.

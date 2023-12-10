@@ -1,0 +1,32 @@
+<div class="tabbed-set tabbed-alternate" data-tabs="1:{{ app.machines | length }}">
+    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
+    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+    <div class="tabbed-labels">
+        {% for machine in app.machines -%} 
+        <label for="__tabbed_1_{{ loop.index }}">{{ machine | capitalize }}</label>
+        {% endfor %}
+    </div>
+    <div class="tabbed-content" checked="checked">
+    {% for machine_name, machine in app.machines.items() -%}
+        {% if machine.default != 'latest' -%}
+            {% set latest = machine.default -%}
+        {% else -%}
+            {% set latest = machine.versions | last -%}
+        {% endif -%}
+        <div class="tabbed-block">
+            <p><nav class="md-tags">
+                    {% for version in machine.versions -%} 
+                    <span {% if version == latest -%} class="md-tag-latest md-tag" title="Default Version" {% else -%} class="md-tag" {% endif -%}>{{ version }}</span>
+                    {% endfor %}       
+            </nav></p>
+            <pre><code>module load {{app_name}}/<span id="mod__ver">{{latest}}</span></code></pre>
+        </div>
+    {% endfor -%}
+    </div>
+    <div class="tabbed-control tabbed-control--prev" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+    <div class="tabbed-control tabbed-control--next" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+</div>

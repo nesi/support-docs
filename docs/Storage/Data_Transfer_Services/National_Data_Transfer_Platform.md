@@ -193,5 +193,5 @@ href="mailto:support@nesi.org.nz">support@nesi.org.nz</a></td>
 
 ## How to establish a New Zealand node
 
-[NeSI staff](mailto:support@nesi.org.nz) can provide details on how to
+ {% include "partials/support_request.html" %} can provide details on how to
 join the national data transfer platform.

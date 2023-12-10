@@ -167,7 +167,7 @@ to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 ## Nothing here has helped?
 
-[Contact NeSI support](https://support.nesi.org.nz/hc/requests/new).
+ {% include "partials/support_request.html" %}.
 
 Helpful things to include:
 

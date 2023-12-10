@@ -49,8 +49,7 @@ my.nesi.org.nz.
      activation emails. If you haven't received your Tuakiri account
      activation email by the end of the next business day after you applied
      for an account, please check your junk mail and/or quarantine folders.
-     If you still can't find the email, [contact our support
-     team](https://support.nesi.org.nz/hc/requests/new).
+     If you still can't find the email, {% include "partials/support_request.html" %}.
 !!! prerequisite What next?
      -   [Project
          Eligibility](https://support.nesi.org.nz/hc/en-gb/articles/360000925176-Project-Eligibility)

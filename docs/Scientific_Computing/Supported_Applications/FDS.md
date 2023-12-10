@@ -13,14 +13,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 FDS (Fire Dynamics Simulator) was developed by the National Institute of
 Standards and Technology (NIST) for large-eddy simulation (LES) of
 low-speed flows, with an emphasis on smoke and heat transport from
@@ -54,28 +51,22 @@ srun fds ${input}
 
 ## Recommendations
 
--   FDS will run in Hybrid Parallel, but will be less efficient that
+- FDS will run in Hybrid Parallel, but will be less efficient that
     full MPI using the same number of CPUs.
--   MPI if the preferable method of scaling, if you can partition your
+- MPI if the preferable method of scaling, if you can partition your
     mesh more you should do that before considering multi-threading
     (OpenMP). e.g. `ntasks=2, cpus-per-task=1` is preferable
     to `ntasks=1, cpus-per-task=2`
--   Each mesh should have it's own task, assigning more tasks than there
+- Each mesh should have it's own task, assigning more tasks than there
     are meshes will cause an error.
--   Multi-threading efficiency drops off significantly after 4 physical
+- Multi-threading efficiency drops off significantly after 4 physical
     cores. `--cpus-per-task 4`
--   Hyper-threading is not recommended. Set `--hint nomultithread`
+- Hyper-threading is not recommended. Set `--hint nomultithread`
 
 ### Scaling with MPI
 
-![mceclip1.png](../../assets/images/FDS.png)
+![FDS scaling distrubuted mem](../../assets/images/FDS.png)
 
 ### Scaling with oMP
 
-![mceclip0.png](../../assets/images/FDS_0.png)
-
- 
-
- 
-
- 
+![FDS scaling shared mem](../../assets/images/FDS_0.png)

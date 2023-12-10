@@ -25,8 +25,7 @@ Your project will typically be considered for an Institutional
 allocation if you work for or study at one of the institutions that is a
 NeSI collaborator, or has a subscription to our HPC Compute & Analytics
 service. If you are unsure whether or not your institution has a current
-subscription with NeSI, please ask us via [a support
-request](https://support.nesi.org.nz/hc/en-gb/requests/new).
+subscription with NeSI, please ask us via {% include "partials/support_request.html" %}.
 
 Allocations from an institution's entitlement are subject to approval by
 that institution. Some institutions require pre-approval or recover

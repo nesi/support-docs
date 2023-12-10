@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Runs checks on article meta block and outputs in github action readable format. 
+Runs checks on article meta block and outputs in github action readable format
 """
 
 __author__ = "cal w"
@@ -61,41 +61,43 @@ def page_title(input_file, meta, contents):
     Delete this before anyone sees.
     """
 
+    def _title_from_filename(filename):
+        """
+        I think this is the same as what mkdocs does.
+        """
+        name = " ".join(filename[0:-3].split("_"))
+        return name[0].upper() + name[1:]
+
+    def _title_from_h1(contents):
+        m = re.match(r"^ #(\S*)$", contents)
+        return m.group(1) if m else ""
+
+    def _compare(type1, title1, type2, title2):
+
+        if title1 and title2:
+            if title1 == title2:
+                print(
+                    f"::notice file={input_file},line=0,title=title.redundant::Title set in {type1} is redundant, already set in {type2}."
+                )
+            else:
+                print(
+                    f"::notice file={input_file},line=0,title=title.redundant::Title set in {type1} ({title1}) does not match title set in {type2} ({title2})."
+                )
+
     if input_file == "index.md":
         return
 
-    def _compare(c1, c2):
-        if (c1[0] == c2[0]) or not (c1[1] and c2[1]):
-            return c1[1]
-        if c1[1] == c2[1]:
-            print(
-                f"::notice file={input_file},line=0,title=title.redundant::Title set in {c1[0]} is redundant."
-            )
-        else:
-            print(f"::notice file={input_file},line=0,title=title.mismatch::Title in {c1[0]}('{c1[1]}') \
-doesn't match that set in {c2[0]} ('{c2[1]}')")
-        return c2[1]
+    t = [
+        ["meta", meta["title"] if "title" in meta else ""],
+        ["header", _title_from_h1(contents)],
+        ["filename", _title_from_filename(input_file.split("/")[-1])]
+    ]
 
-    t = {
-        "filename": title_from_filename(input_file.split("/")[-1]),
-        "header": title_from_h1(contents),
-        "meta": meta["title"] if "title" in meta else ""
-    }
-    return [x for x in reversed([_compare(i, j) for i in t.items() for j in t.items()]) if x][-1]
+    _compare(*t[0], *t[1])
+    _compare(*t[0], *t[2])
+    _compare(*t[1], *t[2])
 
-
-def title_from_filename(filename):
-    """
-    I think this is the same as what mkdocs does.
-    """
-    name_parts = filename[0:-3].split("_")
-    name_parts[0] = name_parts[0].capitalize()
-    return " ".join(name_parts)
-
-
-def title_from_h1(contents):
-    m = re.match(r"^ #(\S*)$", contents)
-    return m.group(1) if m else ""
+    return t[0][1] or t[1][1] or t[2][1]
 
 
 def check_title(path):
@@ -104,6 +106,7 @@ def check_title(path):
 
     # path, file = os.path.split()
     # This would be where you check title correctness.
+
 
 def check_expected_parameters(path, meta, contents):
     """

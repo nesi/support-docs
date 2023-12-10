@@ -10,15 +10,6 @@ zendesk_article_id: 4405623380751
 zendesk_section_id: 360000040596
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Globus
 
 Globus is a third-party service for transferring large amounts of data
@@ -28,26 +19,24 @@ endpoint, or an endpoint from your institution. With Globus, very high
 data transfer rates are achievable. This service allows data to be
 accessible to any person who has a Globus account. The newest
 implementation (v5) provides extra features and some key differences
-from the previous setup that you can find
-[here](https://docs.globus.org/globus-connect-server/). 
+from the previous setup that you can find [here](https://docs.globus.org/globus-connect-server/).
 
 To use Globus on NeSI platforms, you need:
 
-1.  A Globus account (see [Initial Globus Sign-Up and Globus
-    ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
-2.  An active NeSI account (see [Creating a NeSI
-    Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
-3.  Access privileges on the non-NeSI Globus endpoint/collection you
-    plan on transferring data from or to. This other endpoint/collection
-    could be a personal one on your workstation, or it could be managed
-    by your institution or a third party.
+1. A Globus account (see [Initial Globus Sign-Up and Globus
+   ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
+2. An active NeSI account (see [Creating a NeSI
+   Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
+3. Access privileges on the non-NeSI Globus endpoint/collection you
+   plan on transferring data from or to. This other endpoint/collection
+   could be a personal one on your workstation, or it could be managed
+   by your institution or a third party.
 
--   *Note that a NeSI user account does not create a Globus account, and
-    similarly a Globus account does not create a NeSI user account. Nor
-    can you, as the end user, link the two through any website.*
+    - *Note that a NeSI user account does not create a Globus account, and
+        similarly a Globus account does not create a NeSI user account. Nor
+        can you, as the end user, link the two through any website.*
 
-Both your accounts (NeSI and Globus) must exist before you try to use
-our DTN.
+Both your accounts (NeSI and Globus) must exist before you try to use our DTN.
 
 The NeSI Wellington DTN endpoint is protected by a second factor
 authentication (2FA).  Also note, your NeSI username and password are
@@ -102,6 +91,10 @@ As an example, to move files between the NeSI HPC Storage (accessible
 from Māui and Mahuika) and the Otago University high-capacity central
 file storage (another managed server endpoint):
 
+!!! info
+    Log in to the [NeSI File Manager](https://transfer.nesi.org.nz/file-manager) where you are able to search for DTNs in the Collection field.
+    [Here](https://support.nesi.org.nz/hc/en-gb/articles/360000931775) is a listing of available endpoints on the New Zealand Data Transfer Platform.
+
 Find the NeSI endpoint by typing in "NeSI Wellington DTN V5". Select the
 endpoint "NeSI Wellington DTN V5" from the list, and you will be asked
 to authenticate your access to the endpoint. Click Continue to the next
@@ -109,15 +102,11 @@ step.
 
 ![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V5.png)
 
- 
-
 You can choose either of **&lt;username&gt;@wlg-dtn-oidc.nesi.org.nz**
 or NeSI Wellington OIDC Server (wlg-dtn-oidc.nesi.org.nz), they are all
 linked to the same website. If this is your first time login, you may
 ask to *bind* your primary identity to the OIDC login, you need to allow
 that.
-
- 
 
 ![mceclip1.png](../../assets/images/Data_Transfer_using_Globus_V6.png)
 
@@ -130,7 +119,6 @@ authentication (2FA-same as accessing NeSI clusters).  In the
 not*** use any additional characters or spaces between your password and
 the token number.)
 
-                           
 ![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V7.png)
 
 After the login, you will navigate to the default root(display as "/")
@@ -139,7 +127,7 @@ path, then you could change the path to
 \(1\) your ***/home/&lt;username&gt;*** directory,
 
 \(2\) project directory (read-only)
-***/nesi/project/&lt;project\_code&gt;*** 
+***/nesi/project/&lt;project\_code&gt;***
 
 \(3\) project sub-directories of
 ***/nesi/nobackup/&lt;project\_code&gt;***  - see [Globus Paths,
@@ -164,37 +152,35 @@ button:
   
 ![mceclip5.png](../../assets/images/Data_Transfer_using_Globus_V10.png)
 
- 
-
 To find other NeSI endpoints, type in "nesi#":
 
 ![filemanage\_nesi.png](../../assets/images/Data_Transfer_using_Globus_V11.png)
 
 ## In brief:
 
--   Sign in to the NeSI Globus Web App <https://transfer.nesi.org.nz/>.
-    You will be taken to the *File Manager* page
-    <https://transfer.nesi.org.nz/file-manager>
--   If this is your first time, you will need to create a Globus
-    account.
--   Open the two-endpoint panel
-    ![two\_endpoint.png](../../assets/images/Data_Transfer_using_Globus_V12.png)located
-    on the top-right of the *File Manager* page.
--   Select the Endpoints you wish to move files between (start typing
-    "nesi#" to see the list of NeSI DTNs to select from).
-    [Authenticate](../../Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md)
-    at both endpoints.
--   At Globus.org the** **endpoint **defaults to
-    "/home/&lt;username&gt;" path** (represented by "/~/") on Mahuika or
-    Māui. We do not recommend uploading data to your home directory, as
-    home directories are very small. Instead, navigate to an appropriate
-    project directory under /nobackup (see [Globus Paths, Permissions,
-    Storage
-    Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)).
--   Transfer the files by clicking the appropriate
-    ![start.png](../../assets/images/Data_Transfer_using_Globus_V13.png)button
-    depending on the direction of the transfer.
--   Check your email for confirmation about the job completion report.
+- Sign in to the NeSI Globus Web App <https://transfer.nesi.org.nz/>.
+  You will be taken to the *File Manager* page
+  <https://transfer.nesi.org.nz/file-manager>
+- If this is your first time, you will need to create a Globus
+  account.
+- Open the two-endpoint panel
+  ![two\_endpoint.png](../../assets/images/Data_Transfer_using_Globus_V12.png){: style="height:2em;"} located
+  on the top-right of the *File Manager* page.
+- Select the Endpoints you wish to move files between (start typing
+  "nesi#" to see the list of NeSI DTNs to select from).
+  [Authenticate](../../Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md)
+  at both endpoints.
+- At Globus.org the endpoint **defaults to
+  "/home/&lt;username&gt;" path** (represented by "/~/") on Mahuika or
+  Māui. We do not recommend uploading data to your home directory, as
+  home directories are very small. Instead, navigate to an appropriate
+  project directory under /nobackup (see [Globus Paths, Permissions,
+  Storage
+  Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)).
+- Transfer the files by clicking the appropriate
+  ![start.png](../../assets/images/Data_Transfer_using_Globus_V13.png){: style="height:1em;"} button
+  depending on the direction of the transfer.
+- Check your email for confirmation about the job completion report.
 
 ## Transferring data using a personal endpoint
 
@@ -225,5 +211,4 @@ such as Rclone  ([https://rclone.org/](https://rclone.org/)) or the
 cloud CLI's such as aswcli for S3 (https://aws.amazon.com/cli/) or
 gcloud CLI
 ([https://cloud.google.com/sdk/gcloud](https://cloud.google.com/sdk/gcloud)).
-If you have any trouble or would like further advice, please get in
-touch ([support@nesi.org.nz](mailto:support@nesi.org.nz)).
+If you have any trouble or would like further advice, please {% include "partials/support_request.html" %}.

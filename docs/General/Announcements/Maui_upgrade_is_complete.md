@@ -26,8 +26,7 @@ performance and stability and enabling new capabilities.
 
 If you encounter any issues, have any questions about the upgrade, need
 help with getting your software working on the upgraded system, or have
-a suggestion for our documentation, please contact us via email at
-[support@nesi.org.nz](mailto:support@nesi.org.nz). We are committed to
+a suggestion for our documentation, please {% include "partials/support_request.html" %}. We are committed to
 providing you with the best computing resources possible and will do our
 best to assist you.
 
@@ -87,7 +86,7 @@ Software built on Māui may not work without recompilation after the
 upgrade. See the tables below for more detail regarding version changes.
 If you have any particular concerns about the impact on your work,
 please contact [NeSI
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new).
+Support {% include "partials/support_request.html" %}.
 
 The table below outlines the known and expected Cray component changes:
 

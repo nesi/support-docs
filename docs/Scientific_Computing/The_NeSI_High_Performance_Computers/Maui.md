@@ -16,14 +16,6 @@ zendesk_section_id: 360000034335
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Māui is a Cray XC50 supercomputer featuring Skylake Xeon nodes, Aries
 interconnect and IBM ESS Spectrum Scale Storage. NeSI has access to 316
 compute nodes on Māui.
@@ -35,13 +27,13 @@ analysis. To support workflows that are primarily single core jobs, for
 example pre- and post-processing work, and to provide virtual lab
 services, we offer a small number [Māui ancillary
 nodes](https://support.nesi.org.nz/hc/articles/360000203776).
-!!! prerequisite Tips
+
+!!! tips
      The computing capacity of the Māui ancillary nodes is limited. If you
      think you will need large amounts of computing power for small jobs in
-     addition to large jobs that can run on Māui, please [contact
-     us](https://support.nesi.org.nz/hc/requests/new) about getting an
+     addition to large jobs that can run on Māui, please {% include "partials/support_request.html" %} about getting an
      allocation on
-     [Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md),
+     [Mahuika](Mahuika.md),
      our high-throughput computing cluster.
 
 The login or build nodes maui01 and maui02 provide access to the full

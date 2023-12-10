@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% block content %}
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appContent.html" %}
+
+{% if git_page_authors %}
+<div class="md-source-date">
+    <small>
+        Authors: {{ git_page_authors | default('enable mkdocs-git-authors-plugin') }}
+    </small>
+</div>
+{% endif %}
+{% endblock %}

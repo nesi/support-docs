@@ -55,14 +55,13 @@ research needs.
 -   Bring questions to our [weekly Online Office
     Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
 
--   [Email NeSI
-    Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")
+-    {% include "partials/support_request.html" %}
     any time
 
  
 
 If you have feedback on the new nodes or suggestions for improving your
 experience getting started with or using any of our systems, please [get
-in touch](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+in touch {% include "partials/support_request.html" %}.
 
  
