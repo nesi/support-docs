@@ -21,8 +21,7 @@ zendesk_section_id: 360000040076
 
 To request that we install a scientific application (either a new
 application, or a new version of an already installed application),
-please [email our support
-team](mailto:support@nesi.org.nz?subject=New%20software%20request). In
+please {% include "partials/support_request.html" %}. In
 your message, please provide the following information:
 
 -   What is the name and version number of the software you would like

@@ -55,7 +55,7 @@ For the sake of compliance with Gaussian licence agreements, we maintain
 a special Gaussian UNIX group. Only members of this group may access and
 use Gaussian. You can ask to join the Gaussian group by emailing our
 support team at
-[support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Request%20to%20join%20the%20Gaussian%20group).
+ {% include "partials/support_request.html" %}.
 
 All University of Auckland staff and students are in the Gaussian group
 automatically. If you are not a staff member or student at the
@@ -68,7 +68,7 @@ believe these conditions are no longer met.
 
 If you have any questions regarding your eligibility to access Gaussian
 or any particular version or installation of it, please contact [our
-support desk](mailto:support@nesi.org.nz).
+support desk {% include "partials/support_request.html" %}.
 
 ## Example jobs
 

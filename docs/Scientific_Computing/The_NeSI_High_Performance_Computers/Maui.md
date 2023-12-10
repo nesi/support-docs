@@ -31,8 +31,7 @@ nodes](https://support.nesi.org.nz/hc/articles/360000203776).
 !!! tips
      The computing capacity of the Māui ancillary nodes is limited. If you
      think you will need large amounts of computing power for small jobs in
-     addition to large jobs that can run on Māui, please [contact
-     us](mailto:support@nesi.org.nz) about getting an
+     addition to large jobs that can run on Māui, please {% include "partials/support_request.html" %} about getting an
      allocation on
      [Mahuika](Mahuika.md),
      our high-throughput computing cluster.

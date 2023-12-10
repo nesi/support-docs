@@ -136,7 +136,7 @@ other for the two top level project directories.
      group as required. This approach involves much less editing of file
      metadata than adding and removing individuals from the ACLs directly.
      If you would like a read-only group created for your project, please
-     [contact us](mailto:support@nesi.org.nz).
+      {% include "partials/support_request.html" %}.
 
 The owner of a file or directory may create, edit or revoke that file or
 directory's ACL and, in the case of a directory, also the directory's
@@ -156,6 +156,6 @@ We may from time to time create and maintain other directories, for
 example for users of a particular piece of software or database. If you
 believe you have data storage requirements that don't neatly fit within
 the home and project scheme described above, please [contact our support
-team](mailto:support@nesi.org.nz). If we agree to set
+team {% include "partials/support_request.html" %}. If we agree to set
 up a special-purpose directory for you, we will discuss and agree upon a
 suitable permissions model.

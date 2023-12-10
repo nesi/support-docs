@@ -186,6 +186,5 @@ submitted job should progress quickly through the queue.
 ### Some other problem
 
 If your job priority is high, your resource requests are low and your
-job still won't start, please [send a request to our support
-team](mailto:support@nesi.org.nz) and we will look into
+job still won't start, please  {% include "partials/support_request.html" %} and we will look into
 the problem.

@@ -50,4 +50,4 @@ zendesk_section_id: 360001091155
     here](../../General/Announcements/Status_page_subscription_notification_changes.md).
 
 If you have any questions about any of the improvements or fixes, please
-[contact NeSI Support](mailto:support@nesi.org.nz).
+ {% include "partials/support_request.html" %}.

@@ -72,7 +72,7 @@ environment module that provides many of the Centos 7 libraries:
 module load LegacySystemLibs/7
 ```
 
-Please [let us know](mailto:support@nesi.org.nz)
+Please  {% include "partials/support_request.html" %}
 if that isn't sufficient to get your existing compiled code running on
 the new nodes.
 
@@ -122,7 +122,7 @@ alternative but not match MKL's LAPACK performance.  
 
 Except for possible missing shared libraries (see above), you should not
 need to recompile your code. Please [let us
-know](mailto:support@nesi.org.nz) if you
+know {% include "partials/support_request.html" %} if you
 encounter any issues not listed above.
 
 ### AOCC compiler suite

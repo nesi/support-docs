@@ -60,7 +60,7 @@ troubleshoot things further.
 
 ## **Other ways to get help**
 
-Remember, you can [email Support](mailto:support@nesi.org.nz) at any
+Remember, you can  {% include "partials/support_request.html" %} at any
 time and we have a team of experts ready to answer any questions you may
 have, big or small. You can also find helpful user resources, links and
 documentation elsewhere in our [User Support

@@ -261,8 +261,7 @@ version of data from nobackup or project:
     large number of files across a range of directories, or for more
     thorough verification (e.g. checksums), read [this
     article](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md)
-    or [contact our support
-    team](mailto:support@nesi.org.nz).
+    or {% include "partials/support_request.html" %}.
 2.  Once you know which files you need to update (i.e. only files whose
     Nearline version is out of date), remove the old files on Nearline
     using `nlpurge`.
