@@ -16,6 +16,12 @@ zendesk_article_id: 360000871556
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 ``` sl
 comsol --help
 ```
@@ -59,7 +65,7 @@ sweeps.
     #SBATCH --time          00:05:00          # Walltime</span></span>
     #SBATCH --mem           1512               # total mem</span></span>
 
-    module load COMSOL/{{applications.COMSOL.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.machines.mahuika.versions | last}}
     comsol batch -inputfile my_input.mph
     ```
 
@@ -72,7 +78,7 @@ sweeps.
     #SBATCH --time          00:05:00        # Walltime
     #SBATCH --cpus-per-task 8
     #SBATCH --mem           4G              # total mem
-    module load COMSOL/{{applications.COMSOL.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.machines.mahuika.versions | last}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph 
     ```
     
@@ -87,7 +93,7 @@ sweeps.
     #SBATCH --ntasks        8         
     #SBATCH --mem-per-cpu   1500                # mem per cpu
     
-    module load COMSOL/{{applications.COMSOL.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.machines.mahuika.versions | last}}
     comsolbatcH -mpibootstrap slurm -inputfile my_input.mph
     ```
     
@@ -102,7 +108,7 @@ sweeps.
     #SBATCH --cpus-per-task    16
     #SBATCH --mem-per-cpu      1500B             # total mem</span></span>
  
-    module load COMSOL/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.machines.mahuika.versions | last}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph
     ```
     

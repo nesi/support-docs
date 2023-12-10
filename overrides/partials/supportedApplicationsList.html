@@ -13,8 +13,9 @@
                 <div id="mainList" class="label_data data-labelsection">
 
                 {% if applications|length > 1 %}
-                    {% for application in applications %}
-                        {% include "partials/applicationCard.html" %}
+                    {% for app_name in applications %}
+                        {% set app = applications[app_name] %}
+                        {% include "partials/appCard.html" %}
                     {% endfor %}
                 {% else %}
                     <p>Whoops, something has gone wrong loading the software list. Please contact support.</p>

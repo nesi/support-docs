@@ -11,6 +11,12 @@ zendesk_article_id: 360001593096
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 ## Example scripts
 
 === "Serial"
@@ -24,7 +30,7 @@ zendesk_section_id: 360000040076
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem           512M           # Total Memory
     #SBATCH --hint          nomultithread  # Hyperthreading disabled
-    module load Delft3D/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.machines.mahuika.versions | last}}
     d_hydro test_input.xml
     ```
 
@@ -42,7 +48,7 @@ zendesk_section_id: 360000040076
     #SBATCH --mem           2G             # Total Memory
     #SBATCH --hint         nomultithread  # Hyperthreading disabled
     
-    module load Delft3D/{{applications.Delft3D.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.machines.mahuika.versions | last}}
     
     srun d_hyrdo test_input.xml
     ```
@@ -73,7 +79,7 @@ zendesk_section_id: 360000040076
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem-per-cpu   1G             #SBATCH --hint          nomultithread  # Hyperthreading disabled
 
-    module load Delft3D/{{applications.Delft3D.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.machines.mahuika.versions | last}}
     srun d_hyrdo test_input.xml
     ```
 

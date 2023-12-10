@@ -5,19 +5,11 @@ position: 8
 tags: []
 title: Lambda Stack
 vote_count: 1
+# template: app.html
 vote_sum: 1
 zendesk_article_id: 360002558216
 zendesk_section_id: 360000040076
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Introduction
 
@@ -36,7 +28,7 @@ Lambda Stack in a Slurm job or interactively via
 
 You can list the available Lambda Stack version on NeSI by running:
 
-``` sl
+``` sh
 $ ls /opt/nesi/containers/lambda-stack
 lambda-stack-focal-20201130.sif
 lambda-stack-focal-20201221.sif
@@ -52,7 +44,7 @@ version.
 ## Building the Singularity image (optional)
 
 This step is optional; if you choose to use the prebuilt Singularity
-images under */opt/nesi/containers/lambda-stack/* you can skip this
+images under `/opt/nesi/containers/lambda-stack/` you can skip this
 step.
 
 Note that Singularity images are immutable, so the versions of packages
@@ -76,7 +68,7 @@ Make sure you have [Docker](https://docs.docker.com/get-docker/) and
 [Singularity](https://sylabs.io/guides/3.7/user-guide/quick_start.html#quick-installation-steps)
 installed first and then follow the steps below.
 
-``` sl
+``` sh
 # clone the lambda stack Dockerfiles repo
 git clone https://github.com/lambdal/lambda-stack-dockerfiles.git
 cd lambda-stack-dockerfiles
@@ -95,14 +87,12 @@ you don't have enough space in */tmp* for the Singularity build you
 could try running the following script (updating paths first) as root
 (e.g. using *sudo*):
 
-``` sl
+``` sh
 #!/bin/bash
 export SINGULARITY_TMPDIR=/path/to/somewhere/with/lots/of/space
 export SINGULARITY_CACHEDIR=/path/to/somewhere/else/with/lots/of/space
 singularity build lambda-stack-focal-$(date +%Y%m%d).sif docker-daemon:lambda-stack:20.04
 ```
-
- 
 
 ## Lambda Stack via Slurm
 
@@ -142,7 +132,7 @@ First, we need to create a kernel definition and wrapper that will
 launch the Singularity image. Run the following commands on the Mahuika
 login node:
 
-``` sl
+``` sh
 # load the Singularity envioronment module
 module load Singularity
 
@@ -157,13 +147,13 @@ singularity exec -B $HOME $SIF python -m ipykernel install --user \
 If successful this should report that a kernelspec has been installed.
 Change to the kernelspec directory:
 
-``` sl
+``` sh
 cd $HOME/.local/share/jupyter/kernels/lambdastack
 ```
 
 and create a wrapper script for launching the kernel, named wrapper.sh:
 
-``` sl
+``` sh
 #!/usr/bin/env bash
 
 # path to the singularity image file (optionally replace with your own)
@@ -189,7 +179,7 @@ ${SINGULARITY} python3 $@
 
 Make the wrapper script executable:
 
-``` sl
+``` sh
 chmod +x wrapper.sh
 ```
 
@@ -197,7 +187,7 @@ Next, edit the *kernel.json* to change the first element of the argv
 list to point to the wrapper script we just created. The file should
 look like this (change &lt;username&gt; to your NeSI username):
 
-``` sl
+``` json
 {
 "argv": [
 "/home/<username>/.local/share/jupyter/kernels/lambdastack/wrapper.sh",
@@ -225,7 +215,7 @@ included in the Lambda Stack distribution, the Transformers library is
 not, so the first thing we do is create a virtual environment and
 install transformers into it:
 
-``` sl
+``` sh
 # load the Singularity environment module
 module load Singularity
 
@@ -244,7 +234,7 @@ After executing the above command your prompt should have changed to
 *Singularity&gt;*, the following commands are all executed at this
 prompt (i.e. within the container):
 
-``` sl
+``` sh
 virtualenv --system-site-packages transenv
 source transenv/bin/activate
 pip install transformers psutil py3nvml
@@ -253,21 +243,21 @@ pip install transformers psutil py3nvml
 exit
 ```
 
-Note we used *--system-site-packages* so that we can use the Lambda
+Note we used `--system-site-packages`` so that we can use the Lambda
 Stack installed TensorFlow, PyTorch, etc., instead of installing them
 separately.
 
 Now clone the transformers git repo so we can run the benchmark script
 (these commands run outside the container):
 
-``` sl
+``` sh
 git clone https://github.com/huggingface/transformers.git
 ```
 
 Create the following script for running the benchmarks, named
 *run-benchmark-torch.sh*:
 
-``` sl
+``` sh
 #!/bin/bash -e
 
 # load the virtual environment with transformers installed
@@ -318,12 +308,6 @@ ${SINGULARITY} bash ./run-benchmark-torch.sh
 
 Submit this job to Slurm and then wait for the benchmarks to run:
 
-``` sl
+``` sh
 sbatch run-benchmark-torch.sl
 ```
-
- 
-
- 
-
- 

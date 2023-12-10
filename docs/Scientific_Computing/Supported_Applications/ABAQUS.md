@@ -16,9 +16,13 @@ zendesk_article_id: 212457807
 zendesk_section_id: 360000040076
 ---
 
-A list of ABAQUS commands can be found with:
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
-``` sh
+```sh
 abaqus help
 ```
 
@@ -73,7 +77,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --time          00:05:00 # Walltime
     #SBATCH --cpus-per-task 1
     #SBATCH --mem           1500          # total mem
-    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module load ABAQUS/{{app.machines.mahuika.versions | last}}
     abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive
     ```
 
@@ -92,7 +96,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           2G             # total mem
-    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions}}
+    module load ABAQUS/{{app.machines.mahuika.versions}}
     abaqus job="propeller_s4rs_c3d8r verbose=2 interactive \
         cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads 
     ```
@@ -111,7 +115,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --mem           2G         # total mem
 
     module load imkl
-    module  load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module  load ABAQUS/{{app.machines.mahuika.versions | last}}
     abaqus job="propeller_s4rs_c3d8r" user=my_udf.f90 \
         verbose=2 interactive cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads
     ```
@@ -136,7 +140,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --mem-per-cpu   1500          # Each CPU needs it&#39;s own.
     #SBATCH --nodes         1
     
-    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module load ABAQUS/{{app.machines.mahuika.versions | last}}
     abaqus job "propeller_s4rs_c3d8r" verbose=2 interactive cpus=${SLURM_NTASKS} mp_mode=mpi
     ```
 
@@ -154,7 +158,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           4G         # total mem</span></span>
     #SBATCH --gpus-per-node
-    module load ABAQUS/{{applications.ABAQUS.machines.mahuika.versions | last}}
+    module load ABAQUS/{{app.machines.mahuika.versions | last}}
     module load CUDA
     abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive \
     cpus=${SLURM_CPUS_PER_TASK} gpus=${SLURM_GPUS_PER_NODE} mp_mode=threads

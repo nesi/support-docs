@@ -11,24 +11,13 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
--   [Description](#h_01HA8MKM9Z3D2QHTDCW5R6V2S5)
--   [Configuration File](#h_01HA8M29QKYGBY6EA8Q6C5YS57)
--   [Example Script](#h_01HA8M29QKGQ7JFP2E0YV2Q849)
-
-## Description
-
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 snpEff is a genetic variant annotation, and functional effect prediction
 tool.
-
- 
 
 ## Configuration File
 
@@ -36,30 +25,28 @@ snpEff requires a one-off configuration of the `.config` file. The
 following instructions are a one-off set up of the configuration file
 required for snpEff.
 
-1.  Load the latest version of the `snpEff` module.
+1. Load the latest version of the `snpEff` module.
 
-2.  Make a copy of the snpEff config file, replacing
-    &lt;project\_id&gt;, with your project ID.
+2. Make a copy of the snpEff config file, replacing
+   &lt;project\_id&gt;, with your project ID.
 
     ``` sl
     cp $EBROOTSNPEFF/snpEff.config /nesi/project/<project_id>/my_snpEff.config
     ```
 
-3.  Open the`my_snpEff.config` file, and edit **line 17** from the top
-    to point to a preferred path within your project directory or home
-    directory, e.g., edit line 17 `data.dir = ./data/` to something
-    like:`data.dir =/nesi/project/<project_id>`  
-    Please note that you must have read and write permissions to this
-    directory.
+3. Open the`my_snpEff.config` file, and edit **line 17** from the top
+   to point to a preferred path within your project directory or home
+   directory, e.g., edit line 17 `data.dir = ./data/` to something
+   like:`data.dir =/nesi/project/<project_id>`  
+   Please note that you must have read and write permissions to this
+   directory.
 
-4.  Run `snpEff.jar` using the `-c` flag to point to your new config
-    file, e.g., `-c path/to/snpEff/my_snpEff.config` For example:
+4. Run `snpEff.jar` using the `-c` flag to point to your new config
+   file, e.g., `-c path/to/snpEff/my_snpEff.config` For example:
 
     ``` sl
     java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/<project_id>/my_snpEff.config
     ```
-
- 
 
 ## Example Script
 
@@ -86,5 +73,3 @@ java -jar $EBROOTSNPEFF/snpEff.jar -h
 # run snpEff
 java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/<project_id>/my_snpEff.config <other flags>
 ```
-
- 
