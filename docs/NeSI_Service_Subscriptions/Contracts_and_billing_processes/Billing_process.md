@@ -10,6 +10,8 @@ zendesk_article_id: 7352114813455
 zendesk_section_id: 7348936006031
 ---
 
+
+
 Charges for Subscription usage are typically invoiced on a quarterly
 basis.  
   

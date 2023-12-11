@@ -22,7 +22,6 @@
 #### H4
 ```
 
-
 Headers should have a blank line before and after.
 
 'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
