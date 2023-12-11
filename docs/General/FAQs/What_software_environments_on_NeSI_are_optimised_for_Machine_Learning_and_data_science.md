@@ -54,5 +54,4 @@ application
 software](../../General/NeSI_Policies/NeSI_Application_Support_Model.md).
 
 If you need help installing your software or would like to discuss your
-software needs with us, [contact NeSI
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new).
+software needs with us, {% include "partials/support_request.html" %}.

@@ -16,7 +16,7 @@ jobs:
       - id: diff 
         run: |
           shopt -s globstar extglob
-          fileList=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA **/*.md)
+          fileList=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA docs/**/*.md)
           echo "Changed $fileList"
           echo "fileList=$fileList" >> "$GITHUB_OUTPUT"
   runChecks:

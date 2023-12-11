@@ -23,8 +23,7 @@ NeSI provides a long list of various applications on its systems.
 Nevertheless, if you need additional applications or libraries (below
 called package), we distinguish:
 
--   you need a **newer version** of an already installed package: [ask
-    NeSI support](https://support.nesi.org.nz/hc/en-gb/requests/new) for
+-   you need a **newer version** of an already installed package:  {% include "partials/support_request.html" %} for
     an update
 -   you need an **older version** of an installed package: please use
     the Easybuild installation procedure (below) to install it into your
@@ -33,7 +32,7 @@ called package), we distinguish:
     collected some hints, how you can install it in your user space.
 
 In any case, if you have issues, do not hesitate to [open a
-ticket](https://support.nesi.org.nz/hc/en-gb/requests/new) and ask NeSI
+ticket {% include "partials/support_request.html" %} and ask NeSI
 support for help.
 
 ## Additional Packages for Python, R, etc.

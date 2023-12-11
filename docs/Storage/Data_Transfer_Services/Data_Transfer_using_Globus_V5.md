@@ -211,5 +211,4 @@ such as Rclone  ([https://rclone.org/](https://rclone.org/)) or the
 cloud CLI's such as aswcli for S3 (https://aws.amazon.com/cli/) or
 gcloud CLI
 ([https://cloud.google.com/sdk/gcloud](https://cloud.google.com/sdk/gcloud)).
-If you have any trouble or would like further advice, please get in
-touch ([support@nesi.org.nz](mailto:support@nesi.org.nz)).
+If you have any trouble or would like further advice, please {% include "partials/support_request.html" %}.
