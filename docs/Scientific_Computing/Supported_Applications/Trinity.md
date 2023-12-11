@@ -10,6 +10,12 @@ zendesk_article_id: 360000980375
 zendesk_section_id: 360000040076
 ---
 
+
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/appHeader.md" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 Trinity, developed at the [Broad
 Institute](http://www.broadinstitute.org/) and the [Hebrew University of
 Jerusalem](http://www.cs.huji.ac.il/), performs _de&nbsp;novo_ reconstruction
@@ -42,8 +48,7 @@ You should run Trinity within your [nobackup project
 directory](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),
 which has no limit on disk space usage but does have a file count quota.
 Trinity creates a large number of files, particularly in the
-"read\_partitions" directory, thus it is important that you [contact
-us](mailto:support@nesi.org.nz) before running Trinity on NeSI, as we
+"read\_partitions" directory, thus it is important that you {% include "partials/support_request.html" %} before running Trinity on NeSI, as we
 may need to increase your default file count quota.
 
 ### Quality Control

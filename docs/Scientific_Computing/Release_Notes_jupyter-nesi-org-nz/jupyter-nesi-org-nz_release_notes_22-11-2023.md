@@ -29,5 +29,4 @@ zendesk_section_id: 360001150156
  
 
 If you have any questions about any of the improvements or fixes,
-please [contact NeSI
-Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+please {% include "partials/support_request.html" %}.

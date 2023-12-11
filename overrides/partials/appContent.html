@@ -5,9 +5,19 @@
 {% if "\x3ch1" not in page.content %}
   <h1>{{ page.title | d(config.site_name, true)}}</h1>
 {% endif %}
-{% set app_name = page.title %}
-{% set app = applications[app_name] %}
-{% include "partials/appCardBig.html" %}
+<p>{{ app.description }}</p>
+{% if app.homepage or app.url -%}
+<p><span class="twemoji">{% include ".icons/material/home.svg" %}</span>
+<a href="{{ app.homepage or app.url }}">{{ application }} Homepage</a></p>
+{% endif -%}
+{% if app.licence_type == "proprietary" -%}<!-- <h2 id="licence">Licence</h2> -->
+<div class="admonition warning">
+    <p class="admonition-title">Licence</p>
+<p>{{ application }} is proprietary software. Make sure you meet the requirements for it's usage.</p>
+</div>
+{% endif -%}
+<h2 id="modules">Modules Available</h2>
+{% include "partials/appVersion.html" -%}
 {{ page.content }}
 {% if page.meta and (
   page.meta.git_revision_date_localized or
