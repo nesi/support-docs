@@ -1,0 +1,19 @@
+name: Test
+on:
+  push:
+    paths:
+      - docs/**/*.md
+  workflow_dispatch:
+    inputs:
+      fileList:
+          description: 'Files to Lint (space delimited)'
+          required: true
+          default: "docs/specification.md"
+          type: string
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+    - name: What files to check
+      if: inputs.fileList == ''
+      run: inputs.fileList == "test"

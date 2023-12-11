@@ -1,5 +1,10 @@
 name: Checks
+env:
+  MODULE_LIST_PATH: docs/assets/module-list.json
 on:
+  push:
+    paths:
+      - docs/**/*.md
   workflow_dispatch:
     inputs:
       fileList:
@@ -7,26 +12,23 @@ on:
           required: true
           default: "docs/specification.md"
           type: string
-  workflow_call:
-    inputs:
-      fileList:
-        description: 'Files to Lint'
-        required: true
-        type: string
 jobs:
   spellcheck:
     runs-on: ubuntu-latest
     steps:
+    - name: What files to check
+      if: inputs.fileList == ''
+      run: |
+        shopt -s globstar extglob
+        FILELIST=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA docs/**/*.md)
+        echo "Changed files: $FILELIST"
+        echo "fileList=$FILELIST" >> "$GITHUB_OUTPUT
     - name: Check out repo.
       uses: actions/checkout@v3
-    # Most of these dependencies arn't needed, 
-    # Spellchecker needs to be able to render markdown extensions.
-    # - name: Install dependencies
-    #   run: pip install -r requirements.txt
     - name: Run spellchecker.
       uses: rojopolis/spellcheck-github-actions@0.34.0
       with:
-        source_files: ${{inputs.fileList}}
+        source_files: "${{inputs.fileList || env.fileList}}"
         task_name: Markdown
   proselint:
     runs-on: ubuntu-latest
@@ -38,7 +40,7 @@ jobs:
       - name: Run proselint
         run: |
           shopt -s globstar extglob
-          python3 checks/run_proselint.py ${{inputs.fileList}} 
+          python3 checks/run_proselint.py "${{inputs.fileList || env.fileList}}"
   mdlint:
      runs-on: ubuntu-latest
      steps:
@@ -49,7 +51,7 @@ jobs:
        - name: Run markdownlint
          run: |
           shopt -s globstar extglob
-          markdownlint --config .markdownlint.json --json ${{inputs.fileList}} 2>&1 | checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json "${{inputs.fileList || env.fileList}}" 2>&1 | checks/parse_markdownlint.py
   metacheck:
      runs-on: ubuntu-latest
      steps:
@@ -58,4 +60,13 @@ jobs:
        - name: Check markdown meta.
          run: |
           shopt -s globstar extglob
-          python3 checks/run_meta_check.py ${{inputs.fileList}}
+          python3 checks/run_meta_check.py "${{inputs.fileList || env.fileList}}"
+  testBuild:
+     name: Test builds the documentation.
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
+       - run: pip install -r requirements.txt
+       - run: mkdocs -v build  2>&1 | awk -F " - " '{gsub(/ /, "", $1);gsub(/INFO/, "notice", $1); printf("::%s::%s\n",$1,$2) }'
