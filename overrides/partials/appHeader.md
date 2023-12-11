@@ -14,3 +14,11 @@
 ## Available Modules
 
 {% include "partials/appVersion.html" -%}
+
+{% if app.network_licences.length > 0 -%}
+
+## Licences
+
+{% include "partials/appNetworkLicence.html" -%}
+
+{% endif -%}
