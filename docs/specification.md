@@ -2,6 +2,7 @@
     
 ## Structure
 
+
 Public facing articles are found in the `docs` folder. Any markdown files inside will be rendered, any directory will be subcategories.
 Pages can be excluded from being shown in the nav by adding them to `mkdocs.yml: not_in_nav`, as in the case of `includes`.
 
