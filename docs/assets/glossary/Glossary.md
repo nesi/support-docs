@@ -1566,6 +1566,10 @@ PLINK is a free, open-source whole genome association analysis toolset,
 
 PLUMED is an open source library for free energy calculations in molecular systems which
 
+**POSIX:**
+
+A set of standard operating system interfaces based on the Unix operating system
+
 **PRANK:**
 
 Probabilistic multiple alignment program for DNA, codon and amino-acid sequences. .
@@ -2985,6 +2989,10 @@ Visual browser for netCDF format files.
 **ne:**
 
 ne is a free (GPL'd) text editor based on the POSIX standard
+
+**nearline:**
+
+NeSI nearline client provides 'End User' access to NeSI's archive filesystem Nearline which is connected to a Tape library.
 
 **netCDF:**
 
