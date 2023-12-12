@@ -10,8 +10,6 @@ zendesk_article_id: 7348950467343
 zendesk_section_id: 7348936006031
 ---
 
-
-
 Typically our Subscription contracts are based on one-year terms and
 invoiced on a quarterly basis.
 
