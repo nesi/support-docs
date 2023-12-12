@@ -1,35 +1,27 @@
 <table>
+    <thead>
     <tr>
-    {% for lic in app.network_licences -%} 
-        {{ lic.institution_long else lic.institution_long }}
-    <input {% if loop.first -%} checked="checked" {% endif -%} id="__tabbed_0_{{ loop.index }}" name="__tabbed_0" type="radio">
-    {% endfor %}
-    <div class="tabbed-labels">
-        {% for machine in app.machines -%} 
-        <label for="__tabbed_0_{{ loop.index }}">{{ machine | capitalize }}</label>
-        {% endfor %}
-    </div>
-    <div class="tabbed-content">
-    {% for machine_name, machine in app.machines.items() -%}
-        {% if machine.default != 'latest' -%}
-            {% set latest = machine.default -%}
-        {% else -%}
-            {% set latest = machine.versions | last -%}
-        {% endif -%}
-        <div class="tabbed-block">
-            <p><nav class="md-tags">
-                    {% for version in machine.versions -%} 
-                    <span {% if version == latest -%} class="md-tag-latest md-tag" title="Default Version" {% else -%} class="md-tag" {% endif -%}>{{ version }}</span>
-                    {% endfor %}       
-            </nav></p>
-            <pre><code>module load {{app_name}}/<span id="mod__ver">{{latest}}</span></code></pre>
-        </div>
+    <th>Institution</th>
+    <th>Faculty</th>
+    <!-- <th>Feature</th>
+    <th>Total</th> 
+    <th>Conditions</th>-->
+    <th>Token</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for lic in app.network_licences -%}
+    <tr>
+        {% set vis = lic.features | selectattr("visible_on_docs") | list %}
+        {% set rowspan= [(vis|length),  1] | max %}
+        <td rowspan={{rowspan}}>{{ lic.institution_long or lic.institution_short }}</td>
+        <td rowspan={{rowspan}}>{{ lic.faculty_long or lic.faculty_short }}</td>
+        {% if rowspan < 2 -%}<td><p><em>Not Required</em></p></td></tr>{% endif -%}
+        {% for f in vis -%}
+        <!-- <td>{{ f.feature_name }}</td><td>{{ f.total }}</td><td>{{ f.use_conditions }}</td> -->
+        <td>{% if f.slurm_track and f.slurm_token_name -%}<pre><code>{{ f.slurm_token_name }}:{{ f.usage_formula }}</code></pre>{% else %}<p><em>Not Required</em></p>{% endif -%}</td></tr>
+        {% if loop.last %} {% else %}<tr>{% endif %}
+        {% endfor -%}
     {% endfor -%}
-    </div>
-    <div class="tabbed-control tabbed-control--prev" hidden="">
-        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
-    </div>
-    <div class="tabbed-control tabbed-control--next" hidden="">
-        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
-    </div>
-</div>
+    </tbody>
+</table>

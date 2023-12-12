@@ -15,7 +15,7 @@
 
 {% include "partials/appVersion.html" -%}
 
-{% if app.network_licences.length > 0 -%}
+{% if app.network_licences -%}
 
 ## Licences
 
