@@ -200,14 +200,14 @@ As all the array jobs could theoretically run at the same time, it is important 
 
 If your program makes use of a working directory make sure you set it e.g.
 
-``` bash
+```bash
 mkdir .tmp/run_${SLURM_ARRAY_TASK_ID}          # Create new directory
 export TMPDIR=.tmp/run_${SLURM_ARRAY_TASK_ID}  # Set TMPDIR to point there
 ```
 
 If you have no control over the name/path of an output used by a program, this can be resolved in a similar manner.
 
-``` bash
+```bash
 mkdir run_${SLURM_ARRAY_TASK_ID}                             # Create new directory
 cd run_${SLURM_ARRAY_TASK_ID}                                # CD to new directory
 
