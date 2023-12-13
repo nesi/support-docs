@@ -17,7 +17,7 @@
         <div class="tabbed-block">
             <p><nav class="md-tags">
                     {% for version in machine.versions -%} 
-                    <a id="mod__ver__{{version|e}}" onclick="changeVersion('{{version}}')" {% if version == latest -%} class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" {% endif -%}  class="md-tag-ver md-tag">{{ version }}</a>
+                    <a id="mod__ver__{{version}}" onclick="changeVersion('{{version}}')" {% if version == latest -%} class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" {% endif -%}  class="md-tag-ver md-tag">{{ version }}</a>
                     {% endfor %}       
             </nav></p>
             <pre><code>module load {{app_name}}/<span id="mod__ver">{{latest}}</span></code></pre>
