@@ -11,22 +11,11 @@ zendesk_article_id: 8422683604367
 zendesk_section_id: 360001150156
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Fixed
 
--   We are now closing user sessions when the corresponding Jupyter
+- We are now closing user sessions when the corresponding Jupyter
     server is stopped, to avoid idle sessions to linger on the host. We
     missed one case during the last release.
-
- 
 
 If you have any questions about any of the improvements or fixes,
 please {% include "partials/support_request.html" %}.

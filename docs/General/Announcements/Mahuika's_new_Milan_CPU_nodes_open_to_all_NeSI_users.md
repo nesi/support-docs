@@ -10,15 +10,6 @@ zendesk_article_id: 6686934564239
 zendesk_section_id: 200732737
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Following a successful early access programme, Mahuika’s newest CPU
 nodes are now available for use by any projects that have a Mahuika
 allocation on NeSI's HPC Platform.
