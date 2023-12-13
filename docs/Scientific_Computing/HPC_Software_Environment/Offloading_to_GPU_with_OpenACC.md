@@ -47,7 +47,7 @@ int main() {
 }
 ```
 
-Save the above code in file total.cxx.
+Save the above code in file *total.cxx*.
 
 Note the pragma
 
