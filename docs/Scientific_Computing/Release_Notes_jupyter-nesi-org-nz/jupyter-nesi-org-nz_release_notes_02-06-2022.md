@@ -33,6 +33,6 @@ zendesk_section_id: 360001150156
         - unset `SLURM_EXPORT_ENV` before starting desktop.
     - Refactoring
         - Removed dependency on system vdt repo.
-        - Removed faulty & uneeded bind paths.
+        - Removed faulty & unneeded bind paths.
         - Removed debug by default and hardcoded verbose.
         - replaced `VDT_HOME` with XDG equiv
