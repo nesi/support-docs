@@ -43,7 +43,7 @@ A link to the deployment will be printed once served.
 
 ### IDE
 
-You can use any IDE you want, if you are using VSCode there are [Reccomended VSCode Plugins](.vscode/.extensions.json).
+You can use any IDE you want, if you are using VSCode there are [Reccomended VSCode Plugins](.vscode/extensions.json).
 
 ## Making a Merge Request
 
