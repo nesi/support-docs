@@ -4,21 +4,11 @@ hidden: false
 position: 1
 tags:
 - help
-title: Consultancy
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360000751916
 zendesk_section_id: 360000164635
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 NeSI's Consultancy service provides scientific and HPC-focussed
 computational and data science support to research projects across a

@@ -3,21 +3,11 @@ created_at: '2020-12-17T20:12:46Z'
 hidden: false
 position: 2
 tags: []
-title: Job efficiency review
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360002327275
 zendesk_section_id: 360000164635
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Introduction
 
@@ -44,8 +34,7 @@ following outcomes:
     -   For "quick wins" we may be able to achieve these improvements
         within the scope of the job efficiency review
     -   For larger pieces of work, we would assist you in applying for a
-        [NeSI
-        Consultancy](../../Getting_Started/Getting_Help/Consultancy.md)
+        [NeSI Consultancy](../../Getting_Started/Getting_Help/Consultancy.md)
         project, where we would work with you on a longer term project
         to implement any agreed changes
 
@@ -67,7 +56,7 @@ such as:
 
 -   Investing time to answer questions, provide code and input data as
     necessary and make changes to your workflow if needed (this may
-    involve attending some Zoom meetings and/or email communication)
+    involve attending some Zoom meetings and/or email communication).
 -   Setting up some test configurations that we can use for profiling
     and benchmarking your jobs; these should be representative of your
     work but don't necessarily need to be complete calculations. For
