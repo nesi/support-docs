@@ -1,6 +1,7 @@
 function changeVersion(version){
+    // Sets the module load example to use the selected version
     document.getElementById('mod__ver').innerHTML=version
-    console.log(document.querySelectorAll(".md-tag-ver-shown")[0])
-    document.querySelectorAll(".md-tag-ver-shown")[0].classList.remove("md-tag-ver-shown")
-    document.getElementById("mod__ver__" + version ).classList.add("md-tag-ver-shown")
+    document.querySelectorAll(".md-tag-ver-shown").forEach((e) => e.classList.remove("md-tag-ver-shown"))
+    document.querySelectorAll("#mod__ver__" + version ).forEach((e) => e.classList.add("md-tag-ver-shown"))
+    // ew. so gross
 }
