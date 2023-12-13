@@ -102,7 +102,7 @@ in units of nodes, so the smallest possible job takes a whole node, and
 there can never be more than one job on a node at a time.
 
 Additionally, projects with valid allocations on Māui will also have
-access to [Māui's ancilliary
+access to [Māui's ancillary
 nodes,](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md)
 where jobs requiring up to 768 GB of memory or jobs that require GPUs
 can be run. When submitting a job to the Māui ancillary nodes you may

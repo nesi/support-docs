@@ -133,12 +133,12 @@ Authenticator Code (Second Factor):
 
 *Note: Sometimes MobaXterm will prompt with a dialogue box.*
 
-### Update your MobaXTerm client
+### Update your MobaXterm client
 
 Occasionally an outdated client can cause errors.  
 MobaXterm can be updated through: 'help&gt;check for updates'
 
-### Reinstall your MobaXTerm client
+### Reinstall your MobaXterm client
 
 ## Asked for 'Password' instead of 'First Factor'
 
