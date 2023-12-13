@@ -46,7 +46,7 @@ extra_css:
   - assets/stylesheets/theme.css
   # - assets/stylesheets/supportedApplications.css
 extra_javascript:
-  - https://code.jquery.com/jquery-3.7.0.min.js
+    - assets/javascripts/general.js
   # - assets/javascripts/supportedApplications.js
 nav:
   - "Getting Started": "Getting_Started/"
@@ -66,6 +66,7 @@ theme:
   language: en
   logo: assets/icons/logo.svg
   name: material
+
   palette:
     - primary: custom
       scheme: default
