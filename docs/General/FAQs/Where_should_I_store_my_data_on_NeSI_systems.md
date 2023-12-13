@@ -10,17 +10,6 @@ zendesk_article_id: 4975669783951
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
- 
-
 In general, the **project directory** should be used for reference data,
 tools, and job submission and management scripts. The **nobackup
 directory** should be used for holding large reference working datasets
@@ -30,6 +19,4 @@ used to build and edit code, provided that the code is under version
 control and changes are regularly checked into upstream revision control
 systems. The **long-term storage service** should be used for larger
 datasets that you only access occasionally and do not need to change in
-situ. 
-
- 
+situ.
