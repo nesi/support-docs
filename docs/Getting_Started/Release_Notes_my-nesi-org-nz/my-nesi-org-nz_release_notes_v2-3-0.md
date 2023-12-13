@@ -11,15 +11,6 @@ zendesk_article_id: 4405263435535
 zendesk_section_id: 360001091155
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Release Update - 16. August 2021
 
 ## New and Improved

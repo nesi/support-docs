@@ -63,6 +63,8 @@ theme:
     - navigation.prune
     - content.code.copy
     - content.action.edit
+    - navigation.path
+
   language: en
   logo: assets/icons/logo.svg
   name: material
