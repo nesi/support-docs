@@ -1,3 +1,5 @@
+<p>The following network licence servers can be accessed from the NeSI cluster.</p>
+<p>If you do not have access, or want a server connected {% include "partials/support_request.html" %}.</p>
 <table>
     <thead>
     <tr>
@@ -16,10 +18,10 @@
         {% set rowspan= [(vis|length),  1] | max %}
         <td rowspan={{rowspan}}>{{ lic.institution_long or lic.institution_short }}</td>
         <td rowspan={{rowspan}}>{{ lic.faculty_long or lic.faculty_short }}</td>
-        {% if rowspan < 2 -%}<td><p><em>Not Required</em></p></td></tr>{% endif -%}
+        {% if rowspan < 2 -%}<td><span title="Specifying licence tokens is not required for this software"><p><em>Not Required</em></p></span></td></tr>{% endif -%}
         {% for f in vis -%}
         <!-- <td>{{ f.feature_name }}</td><td>{{ f.total }}</td><td>{{ f.use_conditions }}</td> -->
-        <td>{% if f.slurm_track and f.slurm_token_name -%}<pre><code>{{ f.slurm_token_name }}:{{ f.usage_formula }}</code></pre>{% else %}<p><em>Not Required</em></p>{% endif -%}</td></tr>
+        <td>{% if f.slurm_track and f.slurm_token_name -%}<pre><code>{{ f.slurm_token_name }}:{{ f.usage_formula }}</code></pre>{% else %}<span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span>{% endif -%}</td></tr>
         {% if loop.last %} {% else %}<tr>{% endif %}
         {% endfor -%}
     {% endfor -%}
