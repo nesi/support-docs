@@ -10,15 +10,6 @@ zendesk_article_id: 360001131076
 zendesk_section_id: 360000040056
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Many codes can be accelerated significantly by offloading computations
 to a GPU. Some NeSI [Mahuika nodes have GPUs attached to
 them](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
@@ -42,17 +33,17 @@ In the following we show how to achieve this in the case of a reduction
 operation involving a large loop in C++ (a similar example can be
 written in Fortran):
 
-``` sl
+```cpp
 #include <iostream>
 #include <cmath>
 int main() {
- double total = 0;
- int i, n = 1000000000;
-#pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
- for (i = 0; i < n; ++i) {
-   total += exp(sin(M_PI * (double) i/12345.6789));
- }
- std::cout << "total is " << total << '\n';
+  double total = 0;
+  int i, n = 1000000000;
+  #pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
+  for (i = 0; i < n; ++i) {
+    total += exp(sin(M_PI * (double) i/12345.6789));
+  }
+  std::cout << "total is " << total << '\n';
 }
 ```
 
@@ -60,7 +51,7 @@ Save the above code in file total.cxx.
 
 Note the pragma
 
-``` sl
+```cpp
 #pragma acc parallel loop copy(total) copyin(n) reduction(+:total)
 ```
 
@@ -76,18 +67,22 @@ iterations `n` should be copied from the CPU  to the GPU. 
 
 We can use the NVIDIA compiler
 
-`module load NVHPC`
+```sh
+module load NVHPC
+```
 
 and type
 
-`nvc++ -Minfo=all -acc -o totalAccNv total.cxx`
+```sh
+nvc++ -Minfo=all -acc -o totalAccNv total.cxx
+```
 
 to compile the example.
 
 Alternatively, we can use the Cray C++ compiler to build the executable
 but first we need to load a few modules:
 
-``` sl
+```sh
 module load craype-broadwell
 module load cray-libsci_acc 
 module load craype-accel-nvidia60 
@@ -100,7 +95,7 @@ may need to load `cuda/fft` or `cuda/blas`
 To compare the execution times between the CPU and GPU version, we build
 two executables:
 
-``` sl
+```sh
 CC -h noacc -o total total.cxx
 CC -o totalAccGpu total.cxx
 ```
@@ -114,14 +109,13 @@ The following commands will submit the runs to the Mahuika queue (note
 `--gpus-per-node=P100:1` in the case of the executable that offloads to
 the GPU):
 
-``` sl
+```sh
 time srun --ntasks=1 --cpus-per-task=1 ./total
 time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 ```
 
-|             |            |
-|-------------|------------|
 | executable  | time \[s\] |
+|-------------|------------|
 | total       | 7.6        |
 | totalAccGpu | 0.41       |
 
