@@ -14,7 +14,7 @@ zendesk_section_id: 360000189716
 Modules are a convenient  way to provide access to applications  on the cluster.
 They prepare the environment you need to run an application.
 
-For a full list of module commands run `man module` or visit the lmod documentation [here](https://lmod.readthedocs.io/en/latest/010_user.html).
+For a full list of module commands run `man module` or visit the [lmod documentation](https://lmod.readthedocs.io/en/latest/010_user.html).
 
 |  Command                      | Description                                                   |
 |-------------------------------|---------------------------------------------------------------|
@@ -23,5 +23,3 @@ For a full list of module commands run `man module` or visit the lmod documenta
 | `module show [module name]`   | Shows information about \[module name\]                       |
 | `module load [module name]`   | Loads \[module name\]                                         |
 | `module list [module name]`   | Lists currently loaded modules.                               |
-
-<https://lmod.readthedocs.io/en/latest/010_user.html>

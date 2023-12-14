@@ -3,7 +3,6 @@ created_at: '2019-01-10T03:02:11Z'
 hidden: false
 position: 4
 tags: []
-title: Parallel Execution
 vote_count: 7
 vote_sum: 5
 zendesk_article_id: 360000690275
@@ -26,10 +25,10 @@ See [our article on hyperthreading](../../Scientific_Computing/Running_Jobs_on_M
 
 Multi-threading is a method of parallelisation whereby the initial single thread of a process forks into a number of parallel threads, generally *via* a library such as OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or pthread (POSIX threads).
 
-<!-- TODO missing image 1 -->
+![serial](../../assets/images/parallel_execution_serial.png)  
 
-![par.png](../../assets/images/Parallel_Execution.png)*  
-Fig. 2: Multi-threading involves dividing the process into multiple 'threads' which can be run across multiple cores.*
+![parallel](../../assets/images/Parallel_Execution.png)  
+Multi-threading involves dividing the process into multiple 'threads' which can be run across multiple cores.
 
 Multi-threading is limited in that it requires shared memory, so all CPU cores used must be on the same node. However, because all the CPUs share the same memory environment things only need to be loaded into memory once, meaning that memory requirements will usually not increase proportionally to the number of CPUs.
 
@@ -124,26 +123,26 @@ Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the recommended met
     #SBATCH --output=outputs/run_%a/slurm_error.err
     ```
 
-#### As a direct input to a function.
+#### As a direct input to a function
 
 ``` bash
 matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
 ```
 
-#### As an index to an array.
+#### As an index to an array
 
 ``` bash
 inArray=(1 2 4 8 16 32 64 128)
 input=${inArray[$SLURM_ARRAY_TASK_ID]}
 ```
 
-#### For selecting input files.  
+#### For selecting input files
 
 ``` bash
 input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
 ```
 
-#### As a seed for a pseudo-random number.
+#### As a seed for a pseudo-random number
 
 In R
 
@@ -161,7 +160,7 @@ rng(task_id)
 
 *Using a seed is important, otherwise multiple jobs may receive the same pseudo-random numbers.*
 
-#### As an index to an array of filenames. 
+#### As an index to an array of filenames
 
 ``` bash
 files=( inputs/*.dat )

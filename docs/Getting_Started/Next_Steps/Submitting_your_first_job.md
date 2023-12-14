@@ -32,7 +32,7 @@ For a full list of module commands run `man module`.
 
 ## Slurm
 
-Jobs on Mahuika and Māui are submitted* *in the form of a *batch script *containing the code you want to run and a header of information needed by our job scheduler *Slurm.*
+Jobs on Mahuika and Māui are submitted in the form of a *batch script* containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
 
 ## Creating a batch script
 
@@ -60,7 +60,7 @@ Note: if you are a member of multiple accounts you should add the line
 
 ## Testing
 
-We recommend testing your job using the debug Quality of Service (QOS). 
+We recommend testing your job using the debug Quality of Service (QOS).
 The debug QOS can be gained by adding the `sbatch` command line option `--qos=debug`.  
 This adds 5000 to the job priority so raises it above all non-debug jobs, but is limited to one small job per user at a time: no more than 15 minutes and no more than 2 nodes.
 
@@ -86,7 +86,7 @@ You can find more details on its use on the [Slurm Documentation](https://slurm.
 
 ## Job Queue
 
-The currently queued jobs can be checked using 
+The currently queued jobs can be checked using
 
 ```bash
 squeue
@@ -126,7 +126,7 @@ Each job will show as multiple lines, one line for the parent job and then addi
 
 You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/sacct.html).
 
-##  Cancelling
+## Cancelling
 
 `scancel <jobid>` will cancel the job described by `<jobid>`.
 You can obtain the job ID by using `sacct` or `squeue`.
