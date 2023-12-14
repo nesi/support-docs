@@ -1,12 +1,14 @@
-<div class="tabbed-set tabbed-alternate" data-tabs="1:{{ app.machines | length }}">
-    <input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio">
-    <input id="__tabbed_1_2" name="__tabbed_1" type="radio">
+{% if not app -%}{% set app = applications[app_name] -%}{% endif -%}
+<div class="tabbed-set tabbed-alternate" data-tabs="0:{{ app.machines | length }}">
+    {% for machine in app.machines -%} 
+    <input {% if loop.first -%} checked="checked" {% endif -%} id="__tabbed__{{app_name | lower}}_{{ loop.index }}" name="__tabbed__{{app_name | lower}}_0" type="radio">
+    {% endfor %}
     <div class="tabbed-labels">
         {% for machine in app.machines -%} 
-        <label for="__tabbed_1_{{ loop.index }}">{{ machine | capitalize }}</label>
+        <label for="__tabbed__{{app_name | lower}}_{{ loop.index }}">{{ machine | capitalize }}</label>
         {% endfor %}
     </div>
-    <div class="tabbed-content" checked="checked">
+    <div class="tabbed-content">
     {% for machine_name, machine in app.machines.items() -%}
         {% if machine.default != 'latest' -%}
             {% set latest = machine.default -%}
@@ -14,12 +16,12 @@
             {% set latest = machine.versions | last -%}
         {% endif -%}
         <div class="tabbed-block">
-            <p><nav class="md-tags">
+            <p><nav class="md-tags md-tags-ver-{{app_name | lower}}-{{machine_name | lower}}">
                     {% for version in machine.versions -%} 
-                    <span {% if version == latest -%} class="md-tag-latest md-tag" title="Default Version" {% else -%} class="md-tag" {% endif -%}>{{ version }}</span>
+                    <a id="mod_{{app_name | lower}}_{{machine_name | lower}}_{{version}}" onclick="changeVersion('{{ app_name | lower }}', '{{ machine_name | lower }}','{{version}}')" {% if version == latest -%} class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" {% endif -%}  class="md-tag-ver md-tag">{{ version }}</a>
                     {% endfor %}       
             </nav></p>
-            <pre><code>module load {{app_name}}/<span id="mod__ver">{{latest}}</span></code></pre>
+            <pre><code>module load {{app_name}}/<span id="mod_{{app_name | lower}}_{{machine_name | lower}}">{{latest}}</span></code></pre>
         </div>
     {% endfor -%}
     </div>

@@ -30,6 +30,8 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - macros:
+      on_error_fail: !ENV [TEST_ENV, false]
+      verbose: !ENV [TEST_ENV, false]
       module_name: macro_hooks
       include_dir: overrides
 repo_name: GitHub
@@ -46,7 +48,7 @@ extra_css:
   - assets/stylesheets/theme.css
   # - assets/stylesheets/supportedApplications.css
 extra_javascript:
-  - https://code.jquery.com/jquery-3.7.0.min.js
+    - assets/javascripts/general.js
   # - assets/javascripts/supportedApplications.js
 nav:
   - "Getting Started": "Getting_Started/"
@@ -63,9 +65,12 @@ theme:
     - navigation.prune
     - content.code.copy
     - content.action.edit
+    - navigation.path
+
   language: en
   logo: assets/icons/logo.svg
   name: material
+
   palette:
     - primary: custom
       scheme: default

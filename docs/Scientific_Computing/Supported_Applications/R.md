@@ -5,30 +5,11 @@ position: 45
 tags:
 - mahuika
 - general
-title: R
 vote_count: 7
 vote_sum: 3
 zendesk_article_id: 209338087
 zendesk_section_id: 360000040076
 ---
-
-
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
 
 ## Description
 
@@ -46,38 +27,44 @@ is highly extensible. The S language is often the vehicle of choice for
 research in statistical methodology, and R provides an Open Source route
 to participation in that activity.
 
-The R home page is at <http://www.r-project.org>.
-
 ## Licence
 
 R is made available at no cost under the terms of version 2 of the GNU
 General Public Licence. The full text of the R licence is available at
-<https://www.r-project.org/COPYING>.
+[https://www.r-project.org/COPYING](https://www.r-project.org/COPYING).
 
 ## NeSI Customisations
 
--   We patch the *snow* package so that there is no need to use RMPISNOW
-    when using it over MPI.
--   Our most recent R environment modules set R\_LIBS\_USER to a path
-    which includes the compiler toolchain, so for
-    example *~/R/gimkl-2022a/4.2* rather than the usual default
-    of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
+- We patch the *snow* package so that there is no need to use RMPISNOW
+  when using it over MPI.
+- Our most recent R environment modules set R\_LIBS\_USER to a path
+  which includes the compiler toolchain, so for
+  example *~/R/gimkl-2022a/4.2* rather than the usual default
+  of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
 
-## Related environment modules
+## Available Modules
+
+{% set app_name = "R" -%}
+{% include "partials/appVersion.html" -%}
 
 We also have some environment modules which extend the base R ones with
 extra packages:
 
--    *R-Geo* with rgeos, rgdal and other geometric and geospatial
-    packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
-    -   ``` sl
-        $ module load R-Geo/4.2.1-gimkl-2022a
-        ```
--   *R-bundle-Bioconductor* with many of the BioConductor suite of
-    packages.
-    -   ``` sl
-        $ module load R-bundle-Bioconductor/3.15-gimkl-2022a-R-4.2.1
-        ```
+### R-Geo
+
+Includes rgeos, rgdal and other geometric and geospatial
+packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
+
+{% set app_name = "R-Geo" -%}
+{% include "partials/appVersion.html" -%}
+
+### R-bundle-Bioconductor
+
+Includes many of the BioConductor suite of
+packages.
+
+{% set app_name = "R-bundle-Bioconductor" -%}
+{% include "partials/appVersion.html" -%}
 
 ## Examples
 
@@ -85,7 +72,7 @@ extra packages:
 
 #### Serial R script
 
-``` sl
+``` R
 png(filename="plot.png")  # This line redirects plots from screen to plot.png file.
 
 # Define the cars vector with 5 values
@@ -97,7 +84,7 @@ plot(cars)
 
 #### Array R script
 
-``` sl
+``` R
 jobid <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
 jobid
 ```
@@ -109,9 +96,9 @@ of sizes 1 million to 1000050. Set the number of workers in your
 submission script with --cpus-per-task=... Note that all workers run on
 the same node. Hence, the number of workers is limited to the number of
 cores (physical if --hint=nomultithread or logical if using
---hint=multithread). 
+--hint=multithread).
 
-``` sl
+``` R
 library(doParallel)
 registerDoParallel(strtoi(Sys.getenv("SLURM_CPUS_PER_TASK")))
 
@@ -129,9 +116,9 @@ This example is similar to the above except that workers can run across
 multiple nodes. Note that we don't need to specify the number of workers
 when starting the cluster -- it will be derived by the mpiexec command,
 which slurm will invoke. You will need to load the gimkl module to
-expose the MPI library. 
+expose the MPI library.
 
-``` sl
+``` R
 library(doMPI, quiet=TRUE)
 cl <- startMPIcluster()
 registerDoMPI(cl)
@@ -148,7 +135,7 @@ mpi.quit()
 
 #### Parallel script using *snow*
 
-``` sl
+``` R
 library(snow)
 # If there are multiple tasks only one reaches here, others become slaves.
 
@@ -169,7 +156,7 @@ stopCluster(cl)
 
 #### Submission script for a serial R job
 
-``` bash
+``` sl
 #!/bin/bash -e
 
 #SBATCH --job-name    MySerialRJob
@@ -189,7 +176,7 @@ echo "R finished."
 
 #### Submission script for an array R job
 
-``` bash
+``` sl
 #!/bin/bash -e
 
 #SBATCH --job-name    MyArrayRJob
@@ -210,7 +197,7 @@ echo "R finished."
 
 #### Submission script for an MPI R job
 
-``` bash
+``` sl
 #!/bin/bash -e
 
 #SBATCH --job-name      MyMPIRJob
@@ -244,7 +231,7 @@ the image on the fly. However, it is possible to instruct R to export
 the image directly to a file instead of displaying it on the screen,
 using code like the following:
 
-``` sl
+``` R
 png(filename="plot.png")
 ```
 
@@ -259,24 +246,26 @@ documentation](https://cran.r-project.org/doc/manuals/R-intro.html#Device-driver
 Much R functionality is not supplied with the base installation, but is
 instead added by means of packages written by the R developers or by
 third parties.  We include a large number of such R packages in our R
-environment modules
+environment modules.
 
 #### Getting a list of installed packages
 
 It is best to view the list of available R packages interactively. To do
 so, call up the package library:
 
-``` sl
-$ module R/4.2.1-gimkl-2022a
-$ R
-...
-     library()
+``` sh
+module R/4.2.1-gimkl-2022a
+R
+```
+
+```r
+library()
 ```
 
 or just use the module command:
 
-``` sl
-$ module show R/4.2.1-gimkl-2022a
+``` sh
+module show R/4.2.1-gimkl-2022a
 ```
 
 Please note that different installations of R, even on the same NeSI
@@ -289,14 +278,17 @@ detect, these will also be shown in a separate section.
 You can print a list of the library directories in which R will look for
 packages by running the following command in an R session:
 
-``` sl
-     .libPaths()
+``` R
+.libPaths()
 ```
 
 For R/4.2.1 the command `.libPaths()` will return the following:
 
-``` sl
-     .libPaths()
+``` R
+.libPaths()
+```
+
+```stdout
 [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 ```
@@ -307,15 +299,13 @@ provided by NeSI. This can be used in conjuction with
 `installed.packages()` to see what is available in a specific library.
 eg:
 
-``` sl
-     installed.packages("/home/YOUR_USER_NAME/R/gimkl-2022a/4.2")
+``` R
+installed.packages("/home/YOUR_USER_NAME/R/gimkl-2022a/4.2")
 ...
 ggplot2 NA NA NA "no" "4.2.1"
 ggrepel NA NA NA "yes" "4.2.1"
 etc...
 ```
-
-
 
 #### Specifying custom library directories
 
@@ -323,7 +313,7 @@ You can add your own custom library directories by putting a list of
 extra directories in the `.Renviron` file in your home directory. This
 list should look like the following:
 
-``` sl
+```sh
 export R_LIBS=/home/jblo123/R/foo:/home/jblo123/R/bar
 ```
 
@@ -333,12 +323,10 @@ directories that actually exist will show up in the output of
 
 Alternatively, you can specify in your R script:
 
-``` sl
+``` R
 dir.create("/nesi/project/<projectID>/Rpackages", showWarnings = FALSE, recursive = TRUE)
 .libPaths(new="/nesi/project/<projectID>/Rpackages")
 ```
-
- 
 
 #### Downloading and installing a new package
 
@@ -346,11 +334,11 @@ To install a package into R, use the install.packages command.
 
 For example, to install the sampling package:
 
-``` sl
-$ module load R/4.2.1-gimkl-2022a
-$ R
+``` sh
+module load R/4.2.1-gimkl-2022a
+R
 ...
-     install.packages("sampling")
+install.packages("sampling")
 ```
 
 You will most likely be asked if you want to use a personal library and,
@@ -363,19 +351,22 @@ is more often out of date.
 
 R will then download, compile and install the new package for you.
 
-You can confirm the package has been installed by using the library()
+You can confirm the package has been installed by using the `library()`
 command:
 
-``` sl
-     library("foo")
+``` R
+library("foo")
 ```
 
 If the package has been correctly installed, you will get no response.
 On the other hand, if the package is missing or was not installed
 correctly, an error message will typically be returned:
 
-``` sl
-     library("foo")
+``` R
+library("foo")
+```
+
+```stderr
 Error in library("foo") : there is no package called ‘foo’
 ```
 
@@ -384,33 +375,31 @@ Error in library("foo") : there is no package called ‘foo’
 You can compile custom C libraries for use with R using the R shared
 library compiler:
 
-``` sl
-$ module load R/4.2.1-gimkl-2022a
-$ R CMD SHLIB mylib.c
+``` sh
+module load R/4.2.1-gimkl-2022a
+R CMD SHLIB mylib.c
 ```
 
 This will create the shared object mylib.so. You can then reference the
 library in your R script:
 
-``` sl
-$ R
+``` sh
+R
 ...
-     dyn.load("~/R/lib64/mylib.so")
+dyn.load("~/R/lib64/mylib.so")
 ```
 
 ### Quitting an interactive R session
 
 At the R command prompt, when you want to quit R, type the following:
 
-``` sl
-     quit()
+```r
+quit()
 ```
 
 You will be asked "Save workspace image? \[y/n/c\]". Type n.
 
- 
-
-## Troubleshooting  
+## Troubleshooting
 
 ### Missing *devtools*
 
@@ -418,22 +407,18 @@ Package installation will occasionally fail due to missing system
 libraries (eg *HarfBuzz, FriBidi or devtools)*, this is resolved by
 loading the *devtools* module prior to the version of R you require.
 
-``` sl
-$ module load devtools
-$ module load R/4.2.1-gimkl-2022a
+``` sh
+module load devtools
+module load R/4.2.1-gimkl-2022a
 ```
 
- 
-
-### Can't install *sf, rgdal* etc 
+### Can't install *sf, rgdal* etc
 
 Use the R-Geo module
 
-``` sl
-$ module load R-Geo/4.2.1-gimkl-2022a
+``` sh
+module load R-Geo/4.2.1-gimkl-2022a
 ```
-
- 
 
 ### Cluster/Parallel environment variable not accessed
 
@@ -444,5 +429,5 @@ doesn't work correctly. Instead use `as.numeric`
 
 Options:
 
--   `strtoi(Sys.getenv("SLURM_CPUS_PER_TASK"))`
--   `as.numeric(Sys.getenv("SLURM_CPUS_PER_TASK"))`
+- `strtoi(Sys.getenv("SLURM_CPUS_PER_TASK"))`
+- `as.numeric(Sys.getenv("SLURM_CPUS_PER_TASK"))`

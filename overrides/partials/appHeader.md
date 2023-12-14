@@ -14,3 +14,13 @@
 ## Available Modules
 
 {% include "partials/appVersion.html" -%}
+<!-- Uncomment this if we make a good page on modues -->
+<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
+
+{% if app.network_licences -%}
+
+## Licences
+
+{% include "partials/appNetworkLicence.html" -%}
+
+{% endif -%}

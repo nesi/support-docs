@@ -11,15 +11,6 @@ zendesk_article_id: 5129022601487
 zendesk_section_id: 360001150156
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## New and Improved
 
 -   Added the `pyviz_comms` package to allow fully interactive usage of
