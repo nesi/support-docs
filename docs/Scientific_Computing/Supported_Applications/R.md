@@ -12,8 +12,6 @@ zendesk_article_id: 209338087
 zendesk_section_id: 360000040076
 ---
 
-{% set app_name = page.title | trim %}
-
 ## Description
 
 R is a language and environment for statistical computing and graphics.
@@ -47,6 +45,7 @@ General Public Licence. The full text of the R licence is available at
 
 ## Available Modules
 
+{% set app_name = "R" -%}
 {% include "partials/appVersion.html" -%}
 
 We also have some environment modules which extend the base R ones with
@@ -57,7 +56,7 @@ extra packages:
 Includes rgeos, rgdal and other geometric and geospatial
 packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
 
-{% set app_name = "R-Geo" %}
+{% set app_name = "R-Geo" -%}
 {% include "partials/appVersion.html" -%}
 
 ### R-bundle-Bioconductor
@@ -65,7 +64,7 @@ packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
 Includes many of the BioConductor suite of
 packages.
 
-{% set app_name = "R-bundle-Bioconductor" %}
+{% set app_name = "R-bundle-Bioconductor" -%}
 {% include "partials/appVersion.html" -%}
 
 ## Examples
@@ -256,16 +255,17 @@ It is best to view the list of available R packages interactively. To do
 so, call up the package library:
 
 ``` sh
-$ module R/4.2.1-gimkl-2022a
-$ R
-...
-> library()
+module R/4.2.1-gimkl-2022a
+R
+```
+```
+library()
 ```
 
 or just use the module command:
 
 ``` sh
-$ module show R/4.2.1-gimkl-2022a
+module show R/4.2.1-gimkl-2022a
 ```
 
 Please note that different installations of R, even on the same NeSI
@@ -279,13 +279,16 @@ You can print a list of the library directories in which R will look for
 packages by running the following command in an R session:
 
 ``` R
-> .libPaths()
+.libPaths()
 ```
 
 For R/4.2.1 the command `.libPaths()` will return the following:
 
 ``` R
-> .libPaths()
+.libPaths()
+```
+
+```stdout
 [1] "/home/YOUR_USER_NAME/R/gimkl-2022a/4.2"                            
 [2] "/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/lib64/R/library"
 ```
@@ -297,7 +300,7 @@ provided by NeSI. This can be used in conjuction with
 eg:
 
 ``` R
-> installed.packages("/home/YOUR_USER_NAME/R/gimkl-2022a/4.2")
+installed.packages("/home/YOUR_USER_NAME/R/gimkl-2022a/4.2")
 ...
 ggplot2 NA NA NA "no" "4.2.1"
 ggrepel NA NA NA "yes" "4.2.1"
@@ -310,7 +313,7 @@ You can add your own custom library directories by putting a list of
 extra directories in the `.Renviron` file in your home directory. This
 list should look like the following:
 
-``` txt
+```sh
 export R_LIBS=/home/jblo123/R/foo:/home/jblo123/R/bar
 ```
 
@@ -332,10 +335,10 @@ To install a package into R, use the install.packages command.
 For example, to install the sampling package:
 
 ``` sh
-$ module load R/4.2.1-gimkl-2022a
-$ R
+module load R/4.2.1-gimkl-2022a
+R
 ...
-> install.packages("sampling")
+install.packages("sampling")
 ```
 
 You will most likely be asked if you want to use a personal library and,
@@ -352,7 +355,7 @@ You can confirm the package has been installed by using the `library()`
 command:
 
 ``` R
-> library("foo")
+library("foo")
 ```
 
 If the package has been correctly installed, you will get no response.
@@ -360,7 +363,10 @@ On the other hand, if the package is missing or was not installed
 correctly, an error message will typically be returned:
 
 ``` R
-> library("foo")
+library("foo")
+```
+
+```stderr
 Error in library("foo") : there is no package called ‘foo’
 ```
 
@@ -370,25 +376,25 @@ You can compile custom C libraries for use with R using the R shared
 library compiler:
 
 ``` sh
-$ module load R/4.2.1-gimkl-2022a
-$ R CMD SHLIB mylib.c
+module load R/4.2.1-gimkl-2022a
+R CMD SHLIB mylib.c
 ```
 
 This will create the shared object mylib.so. You can then reference the
 library in your R script:
 
 ``` sh
-$ R
+R
 ...
-> dyn.load("~/R/lib64/mylib.so")
+dyn.load("~/R/lib64/mylib.so")
 ```
 
 ### Quitting an interactive R session
 
 At the R command prompt, when you want to quit R, type the following:
 
-``` sh
-> quit()
+```r
+quit()
 ```
 
 You will be asked "Save workspace image? \[y/n/c\]". Type n.
@@ -402,8 +408,8 @@ libraries (eg *HarfBuzz, FriBidi or devtools)*, this is resolved by
 loading the *devtools* module prior to the version of R you require.
 
 ``` sh
-$ module load devtools
-$ module load R/4.2.1-gimkl-2022a
+module load devtools
+module load R/4.2.1-gimkl-2022a
 ```
 
 ### Can't install *sf, rgdal* etc
@@ -411,7 +417,7 @@ $ module load R/4.2.1-gimkl-2022a
 Use the R-Geo module
 
 ``` sh
-$ module load R-Geo/4.2.1-gimkl-2022a
+module load R-Geo/4.2.1-gimkl-2022a
 ```
 
 ### Cluster/Parallel environment variable not accessed
