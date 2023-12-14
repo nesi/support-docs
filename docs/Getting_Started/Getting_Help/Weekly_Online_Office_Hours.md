@@ -27,13 +27,13 @@ Click on the links below to add the date & Zoom link to your calendar:
 
 If you are unable to add an Office Hour session to your calendar through
 these links, please email us at <training@nesi.org.nz> and we can send a
-calendar invite directly to you. 
+calendar invite directly to you.
 
 ## How Does It Work
 
 Each session follows a casual 'drop-in / drop-out' format, where you can
 pop in at any point during the hour and stay for as long or as little as
-you'd like. 
+you'd like.
 
 Also, don't worry if you have a question or challenge that can't be
 solved on the spot.  

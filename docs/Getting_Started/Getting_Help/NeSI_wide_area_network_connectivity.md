@@ -10,7 +10,7 @@ zendesk_section_id: 360000164635
 ---
 
 NeSI's national platform facilities are connected to the [REANNZ](https://www.reannz.co.nz/) network, Aotearoa's high-performance national digital network (or NREN).
-This national network supports collaboration and contributions to data-intensive and complex science and research initiatives in New Zealand and across the globe. 
+This national network supports collaboration and contributions to data-intensive and complex science and research initiatives in New Zealand and across the globe.
 
 ## How to verify the status of external (wide area network - WAN) connectivity for NeSI
 
@@ -31,4 +31,3 @@ From that main "weather map" view, you can drill down to a more detailed view of
 ### UoA Tamaki Data Centre (TDC)
 
 <https://weathermap.reannz.co.nz/index.php?src=red07>
- 

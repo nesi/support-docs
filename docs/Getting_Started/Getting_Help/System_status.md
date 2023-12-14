@@ -29,7 +29,7 @@ See also our support article [Managing NeSI notification preferences](../../Gett
 
 ## status.nesi.org.nz
 
-NeSI does publish service incidents and scheduled maintenance via [status.nesi.org.nz](https://status.nesi.org.nz).   
+NeSI does publish service incidents and scheduled maintenance via [status.nesi.org.nz](https://status.nesi.org.nz).
 Interested parties are invited to subscribe to updates (via SMS or email).
 
-![](../../assets/images/System_status_0.png){ width="80%" }
+![system status](../../assets/images/System_status_0.png){ width="80%" }
