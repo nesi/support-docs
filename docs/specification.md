@@ -161,6 +161,10 @@ There are a few includes you may want to use.
 
 ## Style Guide
 
+### Code blocks
+
+Don't include prompt or 
+
 ### Links
 
 Try to avoid putting links on ambiguous words, e.g.
