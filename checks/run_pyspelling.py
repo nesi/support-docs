@@ -5,7 +5,7 @@ Modify proselint outputs into a format recognised by github actions.
 """
 
 import sys
-from pyspelling import util 
+from pyspelling import util
 
 
 files = sys.argv[1:]
