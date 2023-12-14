@@ -4,7 +4,7 @@ hidden: false
 position: 45
 tags:
 - mahuika
-- general
+- R
 vote_count: 7
 vote_sum: 3
 zendesk_article_id: 209338087
@@ -29,9 +29,8 @@ to participation in that activity.
 
 ## Licence
 
-R is made available at no cost under the terms of version 2 of the GNU
-General Public Licence. The full text of the R licence is available at
-[https://www.r-project.org/COPYING](https://www.r-project.org/COPYING).
+R is made available at no cost under the terms of version 2 of the [GNU
+General Public Licence](https://www.r-project.org/COPYING).
 
 ## NeSI Customisations
 
@@ -43,6 +42,8 @@ General Public Licence. The full text of the R licence is available at
   of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
 
 ## Available Modules
+
+### R Base
 
 {% set app_name = "R" -%}
 {% include "partials/appVersion.html" -%}
@@ -66,164 +67,160 @@ packages.
 {% set app_name = "R-bundle-Bioconductor" -%}
 {% include "partials/appVersion.html" -%}
 
-## Examples
+## Example R scripts
 
-### R scripts
+=== "Serial"
 
-#### Serial R script
+    ``` R
+    png(filename="plot.png")  # This line redirects plots from screen to plot.png file.
 
-``` R
-png(filename="plot.png")  # This line redirects plots from screen to plot.png file.
+    # Define the cars vector with 5 values
+    cars <- c(1, 3, 6, 4, 9)
 
-# Define the cars vector with 5 values
-cars <- c(1, 3, 6, 4, 9)
+    # Graph the cars vector with all defaults
+    plot(cars)
+    ```
 
-# Graph the cars vector with all defaults
-plot(cars)
-```
+=== "Array"
 
-#### Array R script
+    ``` R
+    jobid <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+    jobid
+    ```
 
-``` R
-jobid <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
-jobid
-```
+=== "Parallel with 'doParallel'"
 
-#### Parallel script using *doParallel*
+    The following example sums 50 normally distributed random value vectors
+    of sizes 1 million to 1000050. Set the number of workers in your
+    submission script with `--cpus-per-task=`... Note that all workers run on
+    the same node. Hence, the number of workers is limited to the number of
+    cores (physical if --hint=nomultithread or logical if using
+    `--hint=multithread`).
 
-The following example sums 50 normally distributed random value vectors
-of sizes 1 million to 1000050. Set the number of workers in your
-submission script with --cpus-per-task=... Note that all workers run on
-the same node. Hence, the number of workers is limited to the number of
-cores (physical if --hint=nomultithread or logical if using
---hint=multithread).
+    ``` R
+    library(doParallel)
+    registerDoParallel(strtoi(Sys.getenv("SLURM_CPUS_PER_TASK")))
 
-``` R
-library(doParallel)
-registerDoParallel(strtoi(Sys.getenv("SLURM_CPUS_PER_TASK")))
+    # 50 calculations, store the result in 'x'
+    x <- foreach(z = 1000000:1000050, .combine = 'c') %dopar% {
+      sum(rnorm(z))
+    }
 
-# 50 calculations, store the result in 'x'
-x <- foreach(z = 1000000:1000050, .combine = 'c') %dopar% {
-  sum(rnorm(z))
-}
+    print(x)
+    ```
 
-print(x)
-```
+=== "Parallel with 'doMPI'"
 
-#### Parallel script using *doMPI*
+    This example is similar to the above except that workers can run across
+    multiple nodes. Note that we don't need to specify the number of workers
+    when starting the cluster -- it will be derived by the mpiexec command,
+    which slurm will invoke. You will need to load the gimkl module to
+    expose the MPI library.
 
-This example is similar to the above except that workers can run across
-multiple nodes. Note that we don't need to specify the number of workers
-when starting the cluster -- it will be derived by the mpiexec command,
-which slurm will invoke. You will need to load the gimkl module to
-expose the MPI library.
+    ``` R
+    library(doMPI, quiet=TRUE)
+    cl <- startMPIcluster()
+    registerDoMPI(cl)
 
-``` R
-library(doMPI, quiet=TRUE)
-cl <- startMPIcluster()
-registerDoMPI(cl)
+    # 50 calculations, store the result in 'x'
+    x <- foreach(z = 1000000:1000050, .combine = 'c') %dopar% {
+      sum(rnorm(z))
+    }
 
-# 50 calculations, store the result in 'x'
-x <- foreach(z = 1000000:1000050, .combine = 'c') %dopar% {
-  sum(rnorm(z))
-}
+    closeCluster(cl)
+    print(x)
+    mpi.quit()
+    ```
 
-closeCluster(cl)
-print(x)
-mpi.quit()
-```
+=== "Parallel with 'snow'"
 
-#### Parallel script using *snow*
+    ``` R
+    library(snow)
+    # If there are multiple tasks only one reaches here, others become slaves.
 
-``` R
-library(snow)
-# If there are multiple tasks only one reaches here, others become slaves.
+    # Select MPI-based or fork-based parallelism depending on ntasks
+    if(strtoi(Sys.getenv("SLURM_NTASKS")) > 1) {
+        cl <- makeMPIcluster()
+    } else {
+        cl <- makeSOCKcluster(max(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')), 1))
+    }
 
-# Select MPI-based or fork-based parallelism depending on ntasks
-if(strtoi(Sys.getenv("SLURM_NTASKS")) > 1) {
-    cl <- makeMPIcluster()
-} else {
-    cl <- makeSOCKcluster(max(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')), 1))
-}
+    # 50 calculations to be done:
+    x <- clusterApply(cl, 1000000:1000050, function(z) sum(rnorm(z)))
 
-# 50 calculations to be done:
-x <- clusterApply(cl, 1000000:1000050, function(z) sum(rnorm(z)))
+    stopCluster(cl)
+    ```
 
-stopCluster(cl)
-```
+## Example Slurm Scripts
 
-### Job submission scripts
+=== "Serial"
 
-#### Submission script for a serial R job
+    ``` sl
+    #!/bin/bash -e
 
-``` sl
-#!/bin/bash -e
+    #SBATCH --job-name    MySerialRJob
+    #SBATCH --time        01:00:00
+    #SBATCH --mem         512MB
+    #SBATCH --output      MySerialRJob.%j.out # Include the job ID in the names of
+    #SBATCH --error       MySerialRJob.%j.err # the output and error files
 
-#SBATCH --job-name    MySerialRJob
-#SBATCH --time        01:00:00
-#SBATCH --mem         512MB
-#SBATCH --output      MySerialRJob.%j.out # Include the job ID in the names of
-#SBATCH --error       MySerialRJob.%j.err # the output and error files
+    module load 4.2.1-gimkl-2022a
 
-module load 4.2.1-gimkl-2022a
+    # Help R to flush errors and show overall job progress by printing
+    # "executing" and "finished" statements.
+    echo "Executing R ..."
+    srun Rscript MySerialRJob.R
+    echo "R finished."
+    ```
 
-# Help R to flush errors and show overall job progress by printing
-# "executing" and "finished" statements.
-echo "Executing R ..."
-srun Rscript MySerialRJob.R
-echo "R finished."
-```
+=== "Array"
 
-#### Submission script for an array R job
+    ``` sl
+    #!/bin/bash -e
 
-``` sl
-#!/bin/bash -e
+    #SBATCH --job-name    MyArrayRJob
+    #SBATCH --time        01:00:00
+    #SBATCH --array       1-10
+    #SBATCH --mem         512MB
+    #SBATCH --output      MyArrayRJob.%j.out # Include the job ID in the names of
+    #SBATCH --error       MyArrayRJob.%j.err # the output and error files
 
-#SBATCH --job-name    MyArrayRJob
-#SBATCH --time        01:00:00
-#SBATCH --array       1-10
-#SBATCH --mem         512MB
-#SBATCH --output      MyArrayRJob.%j.out # Include the job ID in the names of
-#SBATCH --error       MyArrayRJob.%j.err # the output and error files
+    module load R/4.2.1-gimkl-2022a
 
-module load R/4.2.1-gimkl-2022a
+    # Help R to flush errors and show overall job progress by printing
+    # "executing" and "finished" statements.
+    echo "Executing R ..."
+    srun Rscript MyArrayRJob.R
+    echo "R finished."
+    ```
 
-# Help R to flush errors and show overall job progress by printing
-# "executing" and "finished" statements.
-echo "Executing R ..."
-srun Rscript MyArrayRJob.R
-echo "R finished."
-```
+=== "Parallel with MPI"
 
-#### Submission script for an MPI R job
+    ``` sl
+    #!/bin/bash -e
 
-``` sl
-#!/bin/bash -e
+    #SBATCH --job-name      MyMPIRJob
+    #SBATCH --time          01:00:00
+    #SBATCH --ntasks        12
+    #SBATCH --cpus-per-task 1
+    #SBATCH --mem-per-cpu   512MB
+    #SBATCH --output        MyMPIRJob.%j.out # Include the job ID in the names of
+    #SBATCH --error         MyMPIRJob.%j.err # the output and error files
 
-#SBATCH --job-name      MyMPIRJob
-#SBATCH --time          01:00:00
-#SBATCH --ntasks        12
-#SBATCH --cpus-per-task 1
-#SBATCH --mem-per-cpu   512MB
-#SBATCH --output        MyMPIRJob.%j.out # Include the job ID in the names of
-#SBATCH --error         MyMPIRJob.%j.err # the output and error files
+    module load R/4.2.1-gimkl-2022a
+    # need MPI
+    module load gimkl/2022a
 
-module load R/4.2.1-gimkl-2022a
-# need MPI
-module load gimkl/2022a
+    # Help R to flush errors and show overall job progress by printing
+    # "executing" and "finished" statements.
+    echo "Executing R ..."
+    # Our R has a patched copy of the snow library so that there is no need to use
+    # RMPISNOW.
+    srun Rscript doMPI
+    echo "R finished."
+    ```
 
-# Help R to flush errors and show overall job progress by printing
-# "executing" and "finished" statements.
-echo "Executing R ..."
-# Our R has a patched copy of the snow library so that there is no need to use
-# RMPISNOW.
-srun Rscript doMPI
-echo "R finished."
-```
-
-## Further notes
-
-### Generating images and plots
+## Generating images and plots
 
 Normally when plotting or generating other sorts of images, R expects a
 graphical user interface to be available so it can render and display
@@ -241,14 +238,14 @@ PNG file named `plot.png`, until a different device driver is selected.
 For more information about graphical device drivers, please see [the R
 documentation](https://cran.r-project.org/doc/manuals/R-intro.html#Device-drivers).
 
-### Dealing with packages
+## Dealing with packages
 
 Much R functionality is not supplied with the base installation, but is
 instead added by means of packages written by the R developers or by
 third parties.  We include a large number of such R packages in our R
 environment modules.
 
-#### Getting a list of installed packages
+### Getting a list of installed packages
 
 It is best to view the list of available R packages interactively. To do
 so, call up the package library:
@@ -273,7 +270,7 @@ cluster, may contain different collections of packages. Furthermore, if
 you have your own packages in a directory that R can automatically
 detect, these will also be shown in a separate section.
 
-#### Getting a list of available libraries
+### Getting a list of available libraries
 
 You can print a list of the library directories in which R will look for
 packages by running the following command in an R session:
@@ -307,7 +304,7 @@ ggrepel NA NA NA "yes" "4.2.1"
 etc...
 ```
 
-#### Specifying custom library directories
+### Specifying custom library directories
 
 You can add your own custom library directories by putting a list of
 extra directories in the `.Renviron` file in your home directory. This
@@ -328,7 +325,7 @@ dir.create("/nesi/project/<projectID>/Rpackages", showWarnings = FALSE, recursiv
 .libPaths(new="/nesi/project/<projectID>/Rpackages")
 ```
 
-#### Downloading and installing a new package
+### Downloading and installing a new package
 
 To install a package into R, use the install.packages command.
 
@@ -337,7 +334,9 @@ For example, to install the sampling package:
 ``` sh
 module load R/4.2.1-gimkl-2022a
 R
-...
+```
+
+```R
 install.packages("sampling")
 ```
 
@@ -370,7 +369,7 @@ library("foo")
 Error in library("foo") : there is no package called ‘foo’
 ```
 
-#### Compiling a C library for use with R
+### Compiling a C library for use with R
 
 You can compile custom C libraries for use with R using the R shared
 library compiler:
@@ -385,11 +384,13 @@ library in your R script:
 
 ``` sh
 R
-...
+```
+
+```R
 dyn.load("~/R/lib64/mylib.so")
 ```
 
-### Quitting an interactive R session
+## Quitting an interactive R session
 
 At the R command prompt, when you want to quit R, type the following:
 
