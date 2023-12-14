@@ -12,16 +12,7 @@ zendesk_article_id: 209338087
 zendesk_section_id: 360000040076
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
 
 ## Description
 
@@ -39,13 +30,11 @@ is highly extensible. The S language is often the vehicle of choice for
 research in statistical methodology, and R provides an Open Source route
 to participation in that activity.
 
-The R home page is at <http://www.r-project.org>.
-
 ## Licence
 
 R is made available at no cost under the terms of version 2 of the GNU
 General Public Licence. The full text of the R licence is available at
-<https://www.r-project.org/COPYING>.
+[https://www.r-project.org/COPYING](https://www.r-project.org/COPYING).
 
 ## NeSI Customisations
 
@@ -56,17 +45,28 @@ General Public Licence. The full text of the R licence is available at
   example *~/R/gimkl-2022a/4.2* rather than the usual default
   of *~/R/x86\_64-pc-linux-gnu-library/4.2*.
 
-## Related environment modules
+## Available Modules
+
+{% include "partials/appVersion.html" -%}
 
 We also have some environment modules which extend the base R ones with
 extra packages:
 
-- *R-Geo* with rgeos, rgdal and other geometric and geospatial
-  packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
-    - `$ module load R-Geo/4.2.1-gimkl-2022a `
-- *R-bundle-Bioconductor* with many of the BioConductor suite of
-  packages.
-    - `$ module load R-bundle-Bioconductor/3.15-gimkl-2022a-R-4.2.1`
+### R-Geo
+
+Includes rgeos, rgdal and other geometric and geospatial
+packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
+
+{% set app_name = "R-Geo" %}
+{% include "partials/appVersion.html" -%}
+
+### R-bundle-Bioconductor
+
+Includes many of the BioConductor suite of
+packages.
+
+{% set app_name = "R-bundle-Bioconductor" %}
+{% include "partials/appVersion.html" -%}
 
 ## Examples
 
