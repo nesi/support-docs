@@ -30,6 +30,8 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - macros:
+      on_error_fail: !ENV [TEST_ENV, false]
+      verbose: !ENV [TEST_ENV, false]
       module_name: macro_hooks
       include_dir: overrides
 repo_name: GitHub
