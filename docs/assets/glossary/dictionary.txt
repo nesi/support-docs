@@ -30,6 +30,7 @@ ANTs's
 ANTs
 AOCC's
 AOCC
+AOCL
 AOCL-BLIS's
 AOCL-BLIS
 AOCL-FFTW's
@@ -64,6 +65,8 @@ Anaconda2's
 Anaconda2
 Anaconda3's
 Anaconda3
+Aotearoa's
+Aotearoa
 Apptainer's
 Apptainer
 Armadillo's
@@ -138,6 +141,7 @@ BioConductor's
 BioConductor
 BioPP's
 BioPP
+Bioconductor
 Bismark's
 Bismark
 Bison's
@@ -158,16 +162,19 @@ BreakDancer's
 BreakDancer
 BreakSeq2's
 BreakSeq2
+Broadwell
 CCL's
 CCL
 CD-HIT's
 CD-HIT
 CDO's
 CDO
+CESM
 CFITSIO's
 CFITSIO
 CGAL's
 CGAL
+CMIP
 CMake's
 CMake
 CNVnator's
@@ -199,6 +206,7 @@ Catch2's
 Catch2
 CellRanger's
 CellRanger
+CentOS
 Centrifuge's
 Centrifuge
 Cereal's
@@ -221,6 +229,7 @@ Clustal-Omega's
 Clustal-Omega
 ClustalW2's
 ClustalW2
+Conda
 Corset's
 Corset
 CoverM's
@@ -241,6 +250,7 @@ CubeWriter's
 CubeWriter
 Cufflinks's
 Cufflinks
+Cylc
 Cytoscape's
 Cytoscape
 D-Genies's
@@ -253,14 +263,17 @@ DBG2OLC's
 DBG2OLC
 DBus's
 DBus
+DCV
 DIAMOND's
 DIAMOND
 DISCOVARdenovo's
 DISCOVARdenovo
 DRAM's
 DRAM
+DTN
 DaliLite's
 DaliLite
+Dask
 DeconSeq's
 DeconSeq
 DeepLabCut's
@@ -321,12 +334,15 @@ Extrae's
 Extrae
 FALCON's
 FALCON
+FASTA
+FASTQ
 FASTX-Toolkit's
 FASTX-Toolkit
 FCM's
 FCM
 FDS's
 FDS
+FENSAP
 FFTW's
 FFTW
 FFmpeg's
@@ -357,6 +373,7 @@ Flye's
 Flye
 FoX's
 FoX
+Fortran
 FragGeneScan's
 FragGeneScan
 FreeBayes's
@@ -417,6 +434,7 @@ GStreamer's
 GStreamer
 GTDB-Tk's
 GTDB-Tk
+GTK
 GTK+'s
 GTK+
 GTS's
@@ -427,6 +445,7 @@ Gaussian's
 Gaussian
 Gdk-Pixbuf's
 Gdk-Pixbuf
+GeneMark
 GeneMark-ES's
 GeneMark-ES
 GenomeThreader's
@@ -506,12 +525,14 @@ ImageMagick's
 ImageMagick
 Infernal's
 Infernal
+InfiniBand
 Inspector's
 Inspector
 InterProScan's
 InterProScan
 JAGS's
 JAGS
+JSON
 JUnit's
 JUnit
 JasPer's
@@ -536,12 +557,14 @@ KEALib's
 KEALib
 KMC's
 KMC
+KNP
 Kaiju's
 Kaiju
 Kent_tools's
 Kent_tools
 KorfSNAP's
 KorfSNAP
+Kraken
 Kraken2's
 Kraken2
 KronaTools's
@@ -552,6 +575,7 @@ LAME's
 LAME
 LAMMPS's
 LAMMPS
+LAPACK
 LAST's
 LAST
 LASTZ's
@@ -612,6 +636,7 @@ METABOLIC's
 METABOLIC
 METIS's
 METIS
+MKL
 MMseqs2's
 MMseqs2
 MOB-suite's
@@ -633,13 +658,16 @@ MUST's
 MUST
 MaSuRCA's
 MaSuRCA
+MacOS
 Magma's
 Magma
+Mahuika's
 Mahuika
 MarkerMiner's
 MarkerMiner
 Mash's
 Mash
+MathWorks
 Maven's
 Maven
 MaxBin's
@@ -668,12 +696,14 @@ Metashape's
 Metashape
 Metaxa2's
 Metaxa2
+Miniconda
 Miniconda3's
 Miniconda3
 Minimac3's
 Minimac3
 MitoZ's
 MitoZ
+MobaXterm
 Molcas's
 Molcas
 Molpro's
@@ -692,6 +722,7 @@ Mule's
 Mule
 MultiQC's
 MultiQC
+Māui's
 Māui
 NAMD's
 NAMD
@@ -733,6 +764,7 @@ NanoPlot's
 NanoPlot
 NanoStat's
 NanoStat
+Nanopore
 NeSI's
 NeSI
 Newton-X's
@@ -743,6 +775,7 @@ Nextflow's
 Nextflow
 Ninja's
 Ninja
+Nsight
 Nsight-Compute's
 Nsight-Compute
 Nsight-Systems's
@@ -771,6 +804,7 @@ Octave's
 Octave
 Octopus's
 Octopus
+OpenACC
 OpenBLAS's
 OpenBLAS
 OpenBabel's
@@ -783,6 +817,7 @@ OpenFAST's
 OpenFAST
 OpenFOAM's
 OpenFOAM
+OpenGL
 OpenJPEG's
 OpenJPEG
 OpenMP's
@@ -813,6 +848,7 @@ PAPI's
 PAPI
 PBJelly's
 PBJelly
+PCIe
 PCRE's
 PCRE
 PCRE2's
@@ -835,6 +871,7 @@ PLINK's
 PLINK
 PLUMED's
 PLUMED
+POSIX
 PRANK's
 PRANK
 PROJ's
@@ -873,6 +910,7 @@ ProtHint's
 ProtHint
 Proteinortho's
 Proteinortho
+PuTTY
 PyOpenGL's
 PyOpenGL
 PyQt's
@@ -911,6 +949,7 @@ RAxML-NG's
 RAxML-NG
 RDP-Classifier's
 RDP-Classifier
+REANNZ
 RECON's
 RECON
 RMBlast's
@@ -925,6 +964,7 @@ RSEM's
 RSEM
 RSGISLib's
 RSGISLib
+RStudio
 Racon's
 Racon
 Ragout's
@@ -1000,6 +1040,7 @@ SQLplus
 SSAHA2's
 SSAHA2
 SSH
+SSHFS
 STAR's
 STAR
 STAR-Fusion's
@@ -1109,6 +1150,8 @@ Trinotate's
 Trinotate
 Trycycler's
 Trycycler
+Tuakiri's
+Tuakiri
 TuiView's
 TuiView
 TurboVNC's
@@ -1136,6 +1179,7 @@ VIBRANT's
 VIBRANT
 VMD's
 VMD
+VNC
 VPN
 VSEARCH's
 VSEARCH
@@ -1165,11 +1209,14 @@ VisIt's
 VisIt
 WAAFLE's
 WAAFLE
+WRF
 WSL
 WhatsHap's
 WhatsHap
+WinSCP
 Wise2's
 Wise2
+XC
 XCONV's
 XCONV
 XGKS's
@@ -1186,6 +1233,7 @@ XZ's
 XZ
 Xerces-C++'s
 Xerces-C++
+Xming
 YAML
 YAXT's
 YAXT
@@ -1199,6 +1247,7 @@ Zip's
 Zip
 Zonation's
 Zonation
+admonition
 analytics
 angsd's
 angsd
@@ -1231,10 +1280,14 @@ bcl2fastq2's
 bcl2fastq2
 beagle-lib's
 beagle-lib
+benchmark
+benchmarking
 binutils's
 binutils
 bioawk's
 bioawk
+biomolecules
+biomolecule
 blasr_libcpp's
 blasr_libcpp
 breseq's
@@ -1260,8 +1313,11 @@ chewBBACA's
 chewBBACA
 chopper's
 chopper
+config
 cromwell's
 cromwell
+cron
+crontab
 ctags's
 ctags
 ctffind's
@@ -1278,6 +1334,8 @@ cyvcf2's
 cyvcf2
 dammit's
 dammit
+datasets
+dataset
 deepTools's
 deepTools
 deprioritised
@@ -1310,6 +1368,10 @@ ensmallen's
 ensmallen
 entrez-direct's
 entrez-direct
+exes
+exe
+executables
+executable
 exonerate's
 exonerate
 expat's
@@ -1324,7 +1386,10 @@ fcGENE's
 fcGENE
 fgbio's
 fgbio
+filesets
 fileset
+filesystems
+filesystem
 fineRADstructure's
 fineRADstructure
 flatbuffers's
@@ -1357,6 +1422,11 @@ geany's
 geany
 genometools's
 genometools
+genomics
+genomic
+genotypes
+genotype
+genotyping
 gettext's
 gettext
 gffread's
@@ -1401,6 +1471,7 @@ hunspell's
 hunspell
 hwloc's
 hwloc
+hyperthreading
 hypothesis's
 hypothesis
 icc's
@@ -1526,6 +1597,7 @@ lighttpd's
 lighttpd
 likwid's
 likwid
+localhost
 lockdown
 lp_solve's
 lp_solve
@@ -1549,6 +1621,8 @@ megalodon's
 megalodon
 metaWRAP's
 metaWRAP
+metagenomics
+metagenomic
 miRDeep2's
 miRDeep2
 midl's
@@ -1576,6 +1650,8 @@ mpifileutils's
 mpifileutils
 muParser's
 muParser
+multithread
+multithreaded
 namespaces
 namespace
 nano's
@@ -1600,6 +1676,7 @@ ncview's
 ncview
 ne's
 ne
+nearline's
 nearline
 netCDF's
 netCDF
@@ -1641,6 +1718,7 @@ pandoc
 parallel-fastq-dump's
 parallel-fastq-dump
 parallelisation
+parallelise
 parasail's
 parasail
 patchelf's
@@ -1649,6 +1727,8 @@ pauvre's
 pauvre
 pfunit's
 pfunit
+phylogenetics
+phylogenetic
 phyx's
 phyx
 picard's
@@ -1672,6 +1752,8 @@ profilers's
 profilers
 profiler's
 profiler
+programmes
+programme
 prokka's
 prokka
 proovread's
@@ -1714,6 +1796,9 @@ rclone's
 rclone
 re2c's
 re2c
+repos
+repo
+reproducibility
 rkcommon's
 rkcommon
 rnaQUAST's
@@ -1730,6 +1815,7 @@ samclip's
 samclip
 sbt's
 sbt
+scalable
 seqmagick's
 seqmagick
 seqtk's
@@ -1774,6 +1860,8 @@ srun-wrapper
 stderr
 stdin
 stdout
+subdirectorys
+subdirectory
 sublime's
 sublime
 sudo
@@ -1801,6 +1889,8 @@ tmux
 toolchains
 toolchain
 tooltip
+transcriptomes
+transcriptome
 trf's
 trf
 trimAl's
@@ -1813,6 +1903,7 @@ unrar's
 unrar
 util-linux's
 util-linux
+validator
 vcflib's
 vcflib
 vg's

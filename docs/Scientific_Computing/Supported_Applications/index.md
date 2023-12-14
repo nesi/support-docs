@@ -1,7 +1,9 @@
 ---
 title: Supported Applications
-template: supportedApplications.html
 ---
+
+<!-- template: supportedApplications.html -->
+
 
 === "Mahuika"
 

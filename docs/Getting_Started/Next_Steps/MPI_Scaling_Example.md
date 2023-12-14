@@ -3,21 +3,13 @@ created_at: '2019-09-22T21:07:28Z'
 hidden: false
 position: 8
 tags: []
-title: MPI Scaling Example
 vote_count: 2
 vote_sum: 0
 zendesk_article_id: 360001173875
 zendesk_section_id: 360000189716
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+<!-- TODO review the scripts, it looks like there is a missing word after $ -->
 
 In the example below we will use Python scripts to demonstrate how you
 might perform some basic scaling tests, however, the principles outlined
@@ -27,59 +19,57 @@ was merely chosen for the purpose of illustration.
 
 ## Initial Python Script
 
-``` sl
-#Imports numpy and mpi4py
+```python
+# Imports numpy and mpi4py
 import numpy as np
 from mpi4py import MPI
 
-#Retrieves MPI environment
+# Retrieves MPI environment
 comm = MPI.COMM_WORLD
-#Sets size as the total number of MPI tasks
+# Sets size as the total number of MPI tasks
 size = comm.Get_size()
-#Sets rank as the specific MPI rank on all MPI tasks
+# Sets rank as the specific MPI rank on all MPI tasks
 rank = comm.Get_rank()
-#sets x and y dimensions which will be used for the generated matrix
+# sets x and y dimensions which will be used for the generated matrix
 matrix = 1000
 seeds = 60000
 
-#If the rank is 0 (master) then create a list of numbers from 0-4999
-#and then split those seeds number equally amoung size groups,
-#other set seeds and split_seeds to $
+# If the rank is 0 (master) then create a list of numbers from 0-4999 and then
+# split those seeds number equally amoung size groups, other set seeds and
+# split_seeds to $
 if rank == 0:
     seeds = np.arange(seeds)
-        split_seeds = np.array_split(seeds, size, axis = 0)
+    split_seeds = np.array_split(seeds, size, axis = 0)
 else:
-        seeds = None
-        split_seeds = None
+    seeds = None
+    split_seeds = None
 
-#Scatter the seeds among each MPI task
+# Scatter the seeds among each MPI task
 rank_seeds = comm.scatter(split_seeds, root = 0)
-#Create a array of zeros of the lenght of the MPI tasks seeds
+# Create a array of zeros of the lenght of the MPI tasks seeds
 rank_data = np.zeros(len(rank_seeds))
 
-#For each number from 0 to the number of the MPI tasks,
-#list of seeds and use one of those seeds to set the random seed
-#(ensuring each random seed is different)
-#Then create an array of random numbers with x and y equal to the
-#matrix variable
-#The calculate the dot product of the array with itself
+# For each number from 0 to the number of the MPI tasks, list of seeds and use
+# one of those seeds to set the random seed (ensuring each random seed is
+# different). Then create an array of random numbers with x and y equal to the
+# matrix variable. Then calculate the dot product of the array with itself.
 for i in np.arange(len(rank_seeds)):
-        seed = rank_seeds[i]
-        np.random.seed(seed)
-        data = np.random.rand(matrix,matrix)
-        data_mm = np.dot(data, data)
-        rank_data[i] = sum(sum(data_mm))
+    seed = rank_seeds[i]
+    np.random.seed(seed)
+    data = np.random.rand(matrix,matrix)
+    data_mm = np.dot(data, data)
+    rank_data[i] = sum(sum(data_mm))
 rank_sum = sum(rank_data)
 
 data_gather = comm.gather(rank_sum, root = 0)
 
 if rank == 0:
     data_sum = sum(data_gather)
-        print('Gathered data:', data_gather)
-        print('Sum:', data_sum)
+    print('Gathered data:', data_gather)
+    print('Sum:', data_sum)
 ```
 
-You do not need to understand what the above Pythong script is doing,
+You do not need to understand what the above Python script is doing,
 but for context, the script will create a list of numbers and split them
 between the available MPI tasks (ranks) then uses those numbers as seeds
 to create arrays of random numbers. The dot product of each array is
@@ -94,56 +84,54 @@ for. So we will first try with 5,000 seeds rather than 60,000 seeds.
 
 ### Revised Python Script
 
-``` sl
-#Imports numpy and mpi4py
+```python
+# Imports numpy and mpi4py
 import numpy as np
 from mpi4py import MPI
 
-#Retrieves MPI environment
+# Retrieves MPI environment
 comm = MPI.COMM_WORLD
-#Sets size as the total number of MPI tasks
+# Sets size as the total number of MPI tasks
 size = comm.Get_size()
-#Sets rank as the specific MPI rank on all MPI tasks
+# Sets rank as the specific MPI rank on all MPI tasks
 rank = comm.Get_rank()
-#sets x and y dimensions which will be used for the generated matrix
+# sets x and y dimensions which will be used for the generated matrix
 matrix = 1000
 seeds = 5000
 
-#If the rank is 0 (master) then create a list of numbers from 0-4999
-#and then split those seeds number equally amoung size groups,
-#other set seeds and split_seeds to $
+# If the rank is 0 (master) then create a list of numbers from 0-4999 and then
+# split those seeds number equally amoung size groups, other set seeds and
+# split_seeds to $
 if rank == 0:
     seeds = np.arange(seeds)
-        split_seeds = np.array_split(seeds, size, axis = 0)
+    split_seeds = np.array_split(seeds, size, axis = 0)
 else:
-        seeds = None
-        split_seeds = None
+    seeds = None
+    split_seeds = None
 
-#Scatter the seeds among each MPI task
+# Scatter the seeds among each MPI task
 rank_seeds = comm.scatter(split_seeds, root = 0)
-#Create a array of zeros of the lenght of the MPI tasks seeds
+# Create a array of zeros of the lenght of the MPI tasks seeds
 rank_data = np.zeros(len(rank_seeds))
 
-#For each number from 0 to the number of the MPI tasks,
-#list of seeds and use one of those seeds to set the random seed
-#(ensuring each random seed is different)
-#Then create an array of random numbers with x and y equal to the
-#matrix variable
-#The calculate the dot product of the array with itself
+# For each number from 0 to the number of the MPI tasks, list of seeds and use
+# one of those seeds to set the random seed (ensuring each random seed is
+# different). Then create an array of random numbers with x and y equal to the
+# matrix variable then calculate the dot product of the array with itself.
 for i in np.arange(len(rank_seeds)):
-        seed = rank_seeds[i]
-        np.random.seed(seed)
-        data = np.random.rand(matrix,matrix)
-        data_mm = np.dot(data, data)
-        rank_data[i] = sum(sum(data_mm))
+    seed = rank_seeds[i]
+    np.random.seed(seed)
+    data = np.random.rand(matrix,matrix)
+    data_mm = np.dot(data, data)
+    rank_data[i] = sum(sum(data_mm))
 rank_sum = sum(rank_data)
 
 data_gather = comm.gather(rank_sum, root = 0)
 
 if rank == 0:
     data_sum = sum(data_gather)
-        print('Gathered data:', data_gather)
-        print('Sum:', data_sum)
+    print('Gathered data:', data_gather)
+    print('Sum:', data_sum)
 ```
 
 Now we need to write a Slurm script to run this job. The wall time,
@@ -153,29 +141,30 @@ local workstation, but if that is not possible, make an educated guess,
 and if the job fails increase the resources requested until is
 completes.
 
-**TIP:** If you can, write your program so that it prints results and
-timing information out relatively frequently, for example every 100 or
-1,000 iterations. That way, even if your job runs out of time or memory
-and gets killed, you will be able to see how far it got and how long it
-took to get there.
+!!! tip
+    If you can, write your program so that it prints results and
+    timing information out relatively frequently, for example every 100 or
+    1,000 iterations. That way, even if your job runs out of time or memory
+    and gets killed, you will be able to see how far it got and how long it
+    took to get there.
 
 ### Slurm Script
 
 ``` sl
-  #!/bin/bash -e
-  #SBATCH --job-name=MPIScaling2
-  #SBATCH --ntasks=2
-  #SBATCH --time=00:30:00
-  #SBATCH --mem-per-cpu=512MB
+#!/bin/bash -e
+#SBATCH --job-name=MPIScaling2
+#SBATCH --ntasks=2
+#SBATCH --time=00:30:00
+#SBATCH --mem-per-cpu=512MB
 
-  module load Python
-  srun python MPIscaling.py
+module load Python
+srun python MPIscaling.py
 ```
 
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
-``` sl
+```txt
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6057011        MPIScaling2     00:18:51     01:14:30     4          COMPLETED 
@@ -187,8 +176,7 @@ Let's run our Slurm script with sbatch and look at our output from
 Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
 will always receive 2 logical CPUs which is equal to 1 physical CPUs.
 For a more in depth explanation about logical and physical CPU cores see
-our [Hyperthreading
-article](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md))
+our [Hyperthreading article](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md))
 and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
 18 minutes and 51 seconds.
 
@@ -202,7 +190,7 @@ To find out we are going to have to run more tests. Let's try running
 our script with 2, 3, 4, 5 and 6 MPI tasks/physical CPUs and plot the
 results:
 
-``` sl
+```txt
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6057011        MPIScaling2     00:18:51     01:14:30     4           COMPLETED 
@@ -251,9 +239,7 @@ memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-|                                                                       |                                                                          |
-|-----------------------------------------------------------------------|--------------------------------------------------------------------------|
-| ![MPIscalingSeeds.png](../../assets/images/MPI_Scaling_Example_0.png) | ![MPIscalingSeedsLog.png](../../assets/images/MPI_Scaling_Example_1.png) |
+![MPIscalingSeeds.png](../../assets/images/MPI_Scaling_Example_0.png){ width=47% } ![MPIscalingSeedsLog.png](../../assets/images/MPI_Scaling_Example_1.png){ width=47% }
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time.
@@ -281,13 +267,11 @@ Looking at the plot of CPUs vs time we can see the asymptotic speedup
 and this time the best number of CPUs to use for this job looks to be 5
 physical CPUs.
 
- 
-
 Now that we have determined that 5 physical CPUs is the optimal number
 of CPUs for our jobs we will use this as we will submit three more jobs,
 using 10,000 15,000 and 20,000 seeds. 
 
-``` sl
+```txt
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6054938        MPIScaling5k    00:07:41     01:15:08    10           COMPLETED 
@@ -341,21 +325,21 @@ request 1 GB of memory and 2 hours.
 
 ### Revised Slurm Script
 
-``` sl
-  #!/bin/bash -e
-  #SBATCH --account=nesi99999
-  #SBATCH --job-name=MPIScaling60k
-  #SBATCH --time=02:00:00
-  #SBATCH --mem-per-task=512MB
-  #SBATCH --ntasks=5
+```sl
+#!/bin/bash -e
+#SBATCH --account=nesi99999
+#SBATCH --job-name=MPIScaling60k
+#SBATCH --time=02:00:00
+#SBATCH --mem-per-task=512MB
+#SBATCH --ntasks=5
 
-  module load Python
-  srun python scaling.R
+module load Python
+srun python scaling.R
 ```
 
- Checking on our job with `sacct`
+Checking on our job with `sacct`
 
-``` sl
+```txt
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 6061377        MPIScaling60k   01:28:25     14:35:32    10           COMPLETED 

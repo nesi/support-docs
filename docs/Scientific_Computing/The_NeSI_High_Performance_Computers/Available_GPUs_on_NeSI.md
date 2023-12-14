@@ -20,8 +20,7 @@ or Virtual Machines (VMs).
 The table below outlines the different types of GPUs,
 who can access them and how, and whether they are currently available or on the future roadmap.
 
-If you have any questions about GPUs on NeSI or the status of anything listed in the table, [contact
-Support](mailto:support@nesi.org.nz).
+If you have any questions about GPUs on NeSI or the status of anything listed in the table,  {% include "partials/support_request.html" %}.
 
 | GPGPU                                                                                                                                                                      | Purpose                                        | Location                                                                                           | Access mode                                                                                                                                 | Who can access                                                 | Status                                                                                                       |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|

@@ -12,14 +12,6 @@ zendesk_section_id: 360001091155
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Release Update - 23 November 2023
 
 ## New and Improved
@@ -43,4 +35,4 @@ zendesk_section_id: 360001091155
     now been fixed. 
 
 If you have any questions about any of the improvements or fixes,
-please [contact NeSI Support](mailto:support@nesi.org.nz).
+please {% include "partials/support_request.html" %}.

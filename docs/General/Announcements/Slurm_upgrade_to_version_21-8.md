@@ -11,15 +11,6 @@ zendesk_article_id: 4544913401231
 zendesk_section_id: 200732737
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 -   Added `--me` option, equivalent to` --user=$USER`.
 -   Added "pendingtime" as a option for --Format.
 -   Put sorted start times of "N/A" or 0 at the end of the list.

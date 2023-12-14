@@ -43,9 +43,9 @@ A link to the deployment will be printed once served.
 
 ### IDE
 
-You can use any IDE you want, if you are using VSCode there are [Reccomended VSCode Plugins](./code_extensions.json).
+You can use any IDE you want, if you are using VSCode there are [Reccomended VSCode Plugins](.vscode/extensions.json).
 
-## Merge Request
+## Making a Merge Request
 
 The `main` branch is protected, changes can be made via a pull request.
 
@@ -65,8 +65,19 @@ Might be worth having a quick look at these before making a pull request.
 
 Make a pull [request](https://github.com/nesi/support-docs-concept/pulls)
 
+Assign a reviewer if you wish.
+
 Pull will merge automatically if all checks passed. (add timer too maybe?)
 
+## Reviewing A Merge Request
+
+Under the 'pull requests' tab, open one of the pending requests.
+
+Clicking on the 'Files Changed' tab, will give a convenient diff of the changes, as well as inline errors identified by the CI checks.
+
+If some of the CI checks failed (make sure they are not important ones), you will have to click the  `Merge without waiting for requirements to be met (bypass branch protections)` button before proceeding with the merge. 
+
+Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
 ## Adding Words to Dictionary
 
@@ -78,5 +89,7 @@ If the CI is failing the spellcheck phase, and you beleive the identified words 
 
 
 ## Raise an issue
+
+
 
 *Not documented at the moment (TODO)*

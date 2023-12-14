@@ -38,5 +38,4 @@ found at:
 
 Please update your links and bookmarks accordingly. If you have a
 specific question that is not answered on the pages above or elsewhere
-in our Help Centre, please [raise a new support
-ticket](https://support.nesi.org.nz/hc/requests/new).
+in our Help Centre, please {% include "partials/support_request.html" %}.

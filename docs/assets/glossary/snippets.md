@@ -782,6 +782,7 @@
 *[PLINK]: PLINK is a free, open-source whole genome association analysis toolset,
 *[PLUMED's]: PLUMED is an open source library for free energy calculations in molecular systems which
 *[PLUMED]: PLUMED is an open source library for free energy calculations in molecular systems which
+*[POSIX]: A set of standard operating system interfaces based on the Unix operating system
 *[PRANK's]: Probabilistic multiple alignment program for DNA, codon and amino-acid sequences. .
 *[PRANK]: Probabilistic multiple alignment program for DNA, codon and amino-acid sequences. .
 *[PROJ's]: Program proj is a standard Unix filter function which converts  geographic longitude and latitude coordinates into cartesian coordinates
@@ -1489,6 +1490,8 @@
 *[ncview]: Visual browser for netCDF format files.
 *[ne's]: ne is a free (GPL'd) text editor based on the POSIX standard
 *[ne]: ne is a free (GPL'd) text editor based on the POSIX standard
+*[nearline's]: NeSI nearline client provides 'End User' access to NeSI's archive filesystem Nearline which is connected to a Tape library.
+*[nearline]: NeSI nearline client provides 'End User' access to NeSI's archive filesystem Nearline which is connected to a Tape library.
 *[netCDF's]: NetCDF (network Common Data Form) is a set of software libraries
 *[netCDF]: NetCDF (network Common Data Form) is a set of software libraries
 *[netCDF-C++'s]: NetCDF (network Common Data Form) is a set of software libraries

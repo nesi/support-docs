@@ -16,8 +16,6 @@ ret_code = 0
 # Load defaults from config.
 config_custom = tools.load_options(config_file_path=".proselint.json", conf_default=config.default)
 
-print(config_custom)
-
 for file in files:
     with open(file, "r", encoding="utf8") as f:
         for notice in proselint.tools.lint(f.read(), config=config_custom):

@@ -1,5 +1,10 @@
 name: Checks
+env:
+  MODULE_LIST_PATH: docs/assets/module-list.json
 on:
+  push:
+    paths:
+      - docs/**/*.md
   workflow_dispatch:
     inputs:
       fileList:
@@ -7,29 +12,40 @@ on:
           required: true
           default: "docs/specification.md"
           type: string
-  workflow_call:
-    inputs:
-      fileList:
-        description: 'Files to Lint'
-        required: true
-        type: string
 jobs:
-  spellcheck:
+  get:
+    name: Determine what files to check
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+       fetch-depth: 0
+    - name: Get Changed files.
+      if: inputs.fileList == ''
+      id: input
+      run: |
+        shopt -s globstar extglob
+        FILELIST=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA docs/**/*.md | tr '\n' ' ')
+        echo "Changed files: $FILELIST"
+        echo "filelist=$FILELIST" >> $GITHUB_OUTPUT 
+    outputs:
+      filelist: ${{steps.input.outputs.filelist || inputs.fileList}}
+  spellcheck:
+    name: Check Spelling
+    runs-on: ubuntu-latest
+    needs: get
     steps:
     - name: Check out repo.
       uses: actions/checkout@v3
-    # Most of these dependencies arn't needed, 
-    # Spellchecker needs to be able to render markdown extensions.
-    # - name: Install dependencies
-    #   run: pip install -r requirements.txt
     - name: Run spellchecker.
       uses: rojopolis/spellcheck-github-actions@0.34.0
       with:
-        source_files: ${{inputs.fileList}}
+        source_files: ${{needs.get.outputs.filelist}}
         task_name: Markdown
   proselint:
+    name: Check prose
     runs-on: ubuntu-latest
+    needs: get
     steps:
       - name: Check out repo.
         uses: actions/checkout@v3
@@ -38,9 +54,11 @@ jobs:
       - name: Run proselint
         run: |
           shopt -s globstar extglob
-          python3 checks/run_proselint.py ${{inputs.fileList}} 
+          python3 checks/run_proselint.py ${{needs.get.outputs.filelist}}
   mdlint:
+     name: Check Markdown
      runs-on: ubuntu-latest
+     needs: get
      steps:
        - name: Check out repo.
          uses: actions/checkout@v3
@@ -49,13 +67,26 @@ jobs:
        - name: Run markdownlint
          run: |
           shopt -s globstar extglob
-          markdownlint --config .markdownlint.json --json ${{inputs.fileList}} 2>&1 | checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | checks/parse_markdownlint.py
   metacheck:
+     name: Check page meta
      runs-on: ubuntu-latest
+     needs: get
      steps:
        - name: Check out repo.
          uses: actions/checkout@v3
        - name: Check markdown meta.
          run: |
           shopt -s globstar extglob
-          python3 checks/run_meta_check.py ${{inputs.fileList}}
+          python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
+  testBuild:
+     name: Test build
+     runs-on: ubuntu-latest
+     needs: get
+     steps:
+       - uses: actions/checkout@v3
+         with:
+          fetch-depth: 0
+       - run: pip install -r requirements.txt
+       - run: mkdocs -v build
+         # 2>&1 | awk -F " - " '{gsub(/ /, "", $1);gsub(/INFO/, "notice", $1); printf("::%s::%s\n",$1,$2) }'
