@@ -41,7 +41,7 @@ EOF
 Then submit the following Slurm job submission script to build the
 container:
 
-```bash
+```sl
 #!/bin/bash -e
 #SBATCH --job-name=apptainer_build
 #SBATCH --partition=milan
@@ -103,7 +103,7 @@ Slurm job. Otherwise, RPM will crash due to an incompatibility with the
 If you encounter the following error when using a base Docker image in
 your Apptainer definition file
 
-```
+```stderr
 While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
 ```
 
@@ -113,4 +113,4 @@ this case, try an older image version or a different base image.
 !!! warning "Other limitations"
      This method, using fakeroot, is known to **not** work for all types of
      Apptainer/Singularity containers.
-     If you encounter an issue, please contact us at <support@nesi.org.nz>.
+     If you encounter an issue, please {% include "partials/support_request.html" %}

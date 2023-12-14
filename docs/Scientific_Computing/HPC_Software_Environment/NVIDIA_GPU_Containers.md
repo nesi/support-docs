@@ -13,7 +13,7 @@ zendesk_section_id: 360000040056
 NVIDIA provides access to GPU accelerated software through their
 [NGC container registry](https://catalog.ngc.nvidia.com/containers).
 
-> NGC offers a comprehensive catalog of GPU-accelerated software for deep
+NGC offers a comprehensive catalog of GPU-accelerated software for deep
 learning, machine learning, and HPC. NGC containers deliver powerful and
 easy-to-deploy software proven to deliver the fastest results. By taking
 care of the plumbing, NGC enables users to focus on building lean
@@ -30,29 +30,34 @@ instructions on NeSI. As an example, here we show the steps required for
 running the NAMD image on NeSI, based on the NVIDIA instructions
 [here](https://ngc.nvidia.com/catalog/containers/hpc:namd).
 
-1.  Download the APOA1 benchmark data:
+1. Download the APOA1 benchmark data:
+
     ```sh
     wget -O - https://gitlab.com/NVHPC/ngc-examples/raw/master/namd/3.0/get_apoa1.sh | bash
     cd apoa1
     ```
-2.  Load the Apptainer module:
+
+2. Load the Apptainer module:
+
     ```sh
     module load Apptainer
     ```
-3.  Build the Apptainer image. This step differs from the NVIDIA
-    instructions because instead of using "build" we "pull" the image
-    directly, which does not require root access:
+
+3. Build the Apptainer image. This step differs from the NVIDIA
+   instructions because instead of using "build" we "pull" the image
+   directly, which does not require root access:
 
     !!! note
-        Please do refer  "[Build Environment
-        Variables](../../Scientific_Computing/Supported_Applications/Singularity.md#build-environment-variables)"
-        prior to running the following `pull` command
+        Please do refer [Build Environment
+        Variables](../../Scientific_Computing/Supported_Applications/Singularity.md#build-environment-variables)
+        prior to running the following `pull` command.
 
     ```sh
     apptainer pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
     ```
 
-4.  Copy the following into a Slurm script named *run.sl*:
+4. Copy the following into a Slurm script named *run.sl*:
+
     ```sl
     #!/bin/bash -e
     #SBATCH --job-name=namdgpu
@@ -76,10 +81,13 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
     # run NAMD
     ${APPTAINER} ${NAMD_EXE} +ppn ${SLURM_CPUS_PER_TASK} +idlepoll ${NAMD_INPUT}
     ```
-5.  Submit the job:
+
+5. Submit the job:
+
     ```sh
     sbatch run.sl
     ```
-6.  View the standard output from the simulation in the Slurm .out file.
+
+6. View the standard output from the simulation in the Slurm .out file.
 
 We expect similar steps to work for other NGC containers.
