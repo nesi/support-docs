@@ -5,7 +5,6 @@ position: 45
 tags:
 - mahuika
 - general
-title: R
 vote_count: 7
 vote_sum: 3
 zendesk_article_id: 209338087
@@ -258,7 +257,8 @@ so, call up the package library:
 module R/4.2.1-gimkl-2022a
 R
 ```
-```
+
+```r
 library()
 ```
 
