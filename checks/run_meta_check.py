@@ -135,9 +135,6 @@ def check_article_titles(path, meta, contents):
     check_title(page_title(path, meta, contents))
 
 
-def supported(path, meta, contents):
-
-
 all_checks = [check_expected_parameters, check_article_titles]
 
 
