@@ -10,15 +10,6 @@ zendesk_article_id: 6008779241999
 zendesk_section_id: 360000040056
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 This article describes a technique to build
 [Apptainer](https://apptainer.org/) containers using [Milan compute
 nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md),
@@ -37,7 +28,7 @@ their operating system version.
 To illustrate this functionality, create an example container definition
 file `my_container.def` from a shell session on NeSI as follows:
 
-``` sl
+```sh
 cat << EOF > my_container.def
 BootStrap: docker
 From: ubuntu:20.04
@@ -50,7 +41,7 @@ EOF
 Then submit the following Slurm job submission script to build the
 container:
 
-``` sl
+```sl
 #!/bin/bash -e
 #SBATCH --job-name=apptainer_build
 #SBATCH --partition=milan
@@ -81,14 +72,15 @@ and 4 GB of memory to build the image. Make sure to set these resources
 correctly, some containers can take hours to build and require tens of
 GB of memory.
 
-Option --force will rebuild my\_container.sif even if it already is in
+Option `--force` will rebuild *my_container.sif* even if it already is in
 the directory.
 
 More information about how to submit a Slurm job is available in the
 [Submitting your first
 job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
 support page.
-!!! prerequisite Build environment variables
+
+!!! info "Build environment variables"
      To build containers, you need to ensure that Apptainer has enough
      storage space to create intermediate files. It also requires a cache
      folder to save images pulled from a different location (e.g.
@@ -111,13 +103,14 @@ Slurm job. Otherwise, RPM will crash due to an incompatibility with the
 If you encounter the following error when using a base Docker image in
 your Apptainer definition file
 
-``` sl
+```stderr
 While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
 ```
 
 it is likely due to an upstream issue (e.g. bad image on Dockerhub). In
 this case, try an older image version or a different base image.
-!!! prerequisite Other limitations
+
+!!! warning "Other limitations"
      This method, using fakeroot, is known to **not** work for all types of
      Apptainer/Singularity containers.
-     If you encounter an issue, please contact us at <support@nesi.org.nz>.
+     If you encounter an issue, please {% include "partials/support_request.html" %}
