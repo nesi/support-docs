@@ -12,7 +12,7 @@ zendesk_section_id: 360000039036
 
 **I get the following warning message, do I need to worry?**
 
-```sl
+```txt
 craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
 ```
 

@@ -43,7 +43,7 @@ nodes.
 
 The most common node states you are likely to see are:
 
-|             |                                                                                                                                                           |
+|  State      | Description                                                                                                                                               |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `idle`      | All CPUs on this node are unallocated and available for use.                                                                                              |
 | `allocated` | All CPUs on this node are currently allocated.                                                                                                            |

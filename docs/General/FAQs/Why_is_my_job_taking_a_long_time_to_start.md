@@ -15,11 +15,11 @@ there are several possible causes.
 
 - [Scheduled maintenance](#scheduled-maintenance)
 - [Delays in the queue](#delays-in-the-queue)
-  - [Your job is being beaten by other high-priority jobs](#other-high-priority-jobs)
-  - [Your project has a low Fair Share score](#low-fair-share-score)
-  - [Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects](#queue-congestion)
-  - [Your job's resource demands are hard to satisfy](#difficult-job)
-  - [Some other problem](#other-problem)
+    - [Your job is being beaten by other high-priority jobs](#other-high-priority-jobs)
+        - [Your project has a low Fair Share score](#low-fair-share-score)
+        - [Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects](#queue-congestion)
+    - [Your job's resource demands are hard to satisfy](#difficult-job)
+    - [Some other problem](#other-problem)
 
 ## Scheduled maintenance
 
