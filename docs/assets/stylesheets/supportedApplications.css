@@ -61,6 +61,19 @@
     color:  var(--md-primary-bg-color);
     background-color: #972220;
 }
+
+.grid.flex-card-parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.flex-card {
+    flex-grow: 1;
+}
 .app-list-header {
       display: inline;
       }
@@ -247,4 +260,8 @@ div#updated {
 }    
 #srchbar{
     border-right:0;
+}
+.md-source-file{
+    display: none; 
+    /* This is lazy */
 }

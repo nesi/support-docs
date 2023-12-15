@@ -25,15 +25,18 @@
         <div class="card-body card-app">
             <p class="cardbody cardbody-description">{{ app.description }}</p>
             <!-- <div class="cardbody cardbody-info"> -->
-            <div class="grid cards">
-            {% include "partials/appVersion.html" -%}
-                    <div>
-                    <span class="bold">Links</span>
+            <div class="grid flex-card-parent">
+                <div class="flex-card">
+                    <h5>Available Modules</h5>
+                    {% include "partials/appVersion.html" -%}
+                </div>
+                <div class="flex-card">
+                    <h5>Links</h5>
                     <ul class="docLinks-list">
                     {% if app.homepage or app.url -%}
                     <li class="support"><span class="twemoji">
-{% include ".icons/material/home.svg" %}</span>
-<a href="{{ app.homepage or app.url }}">
+                    {% include ".icons/material/home.svg" %}</span>
+                    <a href="{{ app.homepage or app.url }}">
                     {{ app_name }} Homepage</a></li>
                     {% endif -%}
                     {% if app.support -%}
@@ -41,18 +44,18 @@
                     {% endif -%}
                     </ul>
                 </div>
-            </div>
-        {% if app.licence_type %}
-        <span>
-            <span class="warning badge badge-licence badge-licence-{{ app.licence_type }}" style="margin-left: -2em;float: left;">
-            </span>
-            <p>Licence {{ app_name }} is {{ app.licence_type }} software.</p>
-        {% if app.licences %}
-            <p>Access to a valid licence token is required to run {{ app_name }}, a list of which can be found 
-            <a href="{{ app.support }}#licences">here</a>.</p>
-        {% endif %}
-        </span">
-        {% endif %}
+            {% if app.licence_type %}
+                <div class="flex-card">
+                <h5>Licence</h5>
+                <span class="warning badge badge-licence badge-licence-{{ app.licence_type }}" style="margin-left: -2em;float: left;"></span>
+                <p>Licence {{ app_name }} is {{ app.licence_type }} software.</p>
+                {% if app.network_licences %}
+                    <p>Access to a valid licence token is required to run {{ app_name }}.
+                    {% include "partials/appNetworkLicence.html" -%}
+                {% endif %}
+                </div>
+            {% endif %}
+        </div>
     </div>
 </div>
 </details>
