@@ -4,8 +4,8 @@ hidden: false
 position: 9
 tags: []
 title: WRF
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 360002109696
 zendesk_section_id: 360000040076
 ---

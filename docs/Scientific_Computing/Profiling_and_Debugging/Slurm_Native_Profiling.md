@@ -49,7 +49,7 @@ You can plot the contents of this file with the command
 
 Alternatively you could use one of the following scripts. 
 
--   [Python](https://github.com/nesi/nesi-tools/blob/main/.dev_nn_profile_plot.py)
+-   [Python](https://github.com/nesi/nesi-tools/blob/main/.nn_profile_plot.py)
 -   [MATLAB](https://github.com/CallumWalley/slurm_native_h5_plotter)
 
 Any GPU usage will also be recorded in the profile, so long as the

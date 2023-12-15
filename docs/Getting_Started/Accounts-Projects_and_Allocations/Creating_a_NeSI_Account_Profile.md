@@ -8,8 +8,8 @@ tags:
 - access
 - mynesi
 title: Creating a NeSI Account Profile
-vote_count: 4
-vote_sum: 0
+vote_count: 6
+vote_sum: 2
 zendesk_article_id: 360000159715
 zendesk_section_id: 360000196195
 ---
