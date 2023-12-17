@@ -48,7 +48,7 @@ ssh <user>@lander.nesi.org.nz
 
 **If this succeeds**: Run the following:
 
-``` sl
+```sh
 ssh login.<mahuika/maui>.nesi.org.nz
 ```
 
@@ -57,13 +57,10 @@ Mahuika/Maui have separate access control, also Māui requires your
 password input in a different format, see
 [here](../../General/FAQs/Mahuika_Maui_Differences.md).
 
-**If this succeeds**: If you are using a bash terminal, confirm your
-.ssh config is [set up
-correctly](../../General/FAQs/Logging_in_to_the_HPCs.md#recLinux).
+**If this succeeds**:
 
-If you are using a ssh client like *MobaXterm* or *WinSCP* make sure
-your session is [set up
-correctly](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
+- If you are using a bash terminal, confirm your .ssh config is [set up correctly](../../General/FAQs/Logging_in_to_the_HPCs.md#recLinux).
+- If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
 
 ### Check you are a member of an active project
 
@@ -135,7 +132,7 @@ Authenticator Code (Second Factor):
 
 ### Update your MobaXterm client
 
-Occasionally an outdated client can cause errors.  
+Occasionally an outdated client can cause errors.
 MobaXterm can be updated through: 'help&gt;check for updates'
 
 ### Reinstall your MobaXterm client

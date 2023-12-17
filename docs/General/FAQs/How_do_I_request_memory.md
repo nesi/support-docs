@@ -19,6 +19,13 @@ than one node, with tasks divided up randomly, in which case
 `--mem-per-cpu` is more appropriate. More detail is in the following
 table, including how you can tell what sort of job you're submitting.
 
+<!-- increase column width to make the table readable -->
+<style>
+.md-typeset table:not([class]) th {
+  min-width: 8rem;
+}
+</style>
+
 <table>
 <tbody>
 <tr>

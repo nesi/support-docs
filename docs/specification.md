@@ -1,5 +1,5 @@
 # Specification
-    
+
 ## Structure
 
 Public facing articles are found in the `docs` folder. Any markdown files inside will be rendered, any directory will be subcategories.
@@ -158,8 +158,11 @@ There are a few includes you may want to use.
 | ```{% raw %}{% include "partials/appNetworkLicence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
 | ```{% raw %}{% include "partials/appVersion.html" %}{% endraw %}``` | List of versions and a 'module load' codeblock. | When dynamic version info is required |
 
-
 ## Style Guide
+
+### Code blocks
+
+Don't include prompt or 
 
 ### Links
 
@@ -183,3 +186,13 @@ Try to avoid putting links on ambiguous words, e.g.
 
 - [nz spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
 - [WCAG spec](https://www.w3.org/TR/WCAG21/)
+
+## mkdocs.yml
+
+When setting a parameter in the YAML, you can use the following syntax.
+
+```
+some-param : !ENV [TEST_ENV, false]
+```
+
+This will use the value of the env variable `TEST_ENV`, or if unset, false.

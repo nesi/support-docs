@@ -31,7 +31,7 @@ Authentication](https://support.nesi.org.nz/hc/articles/360000203075).
 
 ## Can I use an SSH key pair as an alternative second factor?
 
-**Answer:** We do not support SSH keys as a second factor and we have no
+We do not support SSH keys as a second factor and we have no
 plans to implement SSH key-based authentication. Only time-based codes
 are currently valid.
 
@@ -39,7 +39,7 @@ are currently valid.
 
 ### Authy
 
- It should get synchronised automatically.
+It should get synchronised automatically.
 
 ### Google Authenticator
 
@@ -52,11 +52,10 @@ existing accounts** then scan the QR code provided on the old device.
 
 ## How do I get a new Second Factor?
 
-**Answer:** See article
-[here](../../General/FAQs/How_to_replace_my_2FA_token.md).
+See article [here](../../General/FAQs/How_to_replace_my_2FA_token.md).
 
 ## Can I use the same Second Factor again?
 
-**Answer:** No. You can only use each Second Factor code once and must
+No. You can only use each Second Factor code once and must
 then wait for a new Second Factor to cycle. Attempting to use the same
 Second Factor will cause your Authentication to fail.
