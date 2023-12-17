@@ -10,6 +10,12 @@ zendesk_article_id: 4975669783951
 zendesk_section_id: 360000039036
 ---
 
+| Frequency of data being read | Frequency of data being written        | Recommended option                                                                                                            |
+| ---------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Often                        | Often (at least once every two months) | Store in your `/nobackup/<projectcode>` directory (but ensure key result data is copied to the persistent project directory). |
+| Often                        | Seldom                                 | Store in your `/project/<projectcode>` directory.                                                                             |
+| Seldom                       | Seldom                                 | Apply for an allocation to use NeSI’s long-term storage service or store elsewhere (e.g. at your institution).                |
+
 In general, the **project directory** should be used for reference data,
 tools, and job submission and management scripts. The **nobackup
 directory** should be used for holding large reference working datasets
