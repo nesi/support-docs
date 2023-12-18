@@ -16,4 +16,4 @@ jobs:
           unverified="$(cat unverified.txt | wc -l)"
           percent="$(echo "(100-(100*$unverified/$total))" | bc)"
           verified=$((total - unverified))
-          printf "%s / %s verified. ( %s%% )\n" $verified $total $percent
+          printf "::notice::%s / %s verified. ( %s%% )\n" $verified $total $percent
