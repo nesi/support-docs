@@ -9,4 +9,4 @@ import sys
 for input_file in sys.argv[1:]:
     with open(input_file, "r") as f:
         if re.findall(r"^\[\/\/\]: <> \(REMOVE ME IF PAGE VALIDATED\)$", f.read(), re.MULTILINE):
-            print(input_file)
+            print(f"::notice file={input_file}::")
