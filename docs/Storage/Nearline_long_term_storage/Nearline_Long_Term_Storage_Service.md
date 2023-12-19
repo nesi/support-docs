@@ -17,7 +17,7 @@ NeSI's Nearline service allows you to store your data on our hierarchical system
 
 Due to the tape storage backend Nearline is intended for use with relatively large files and should not be used for a large number of small files. Files smaller than 64 MB will not be accepted for upload and should be combined into archive files using `nn_archive_files`, `tar` or a similar tool. Likewise, Nearline write semantics are different from a normal filesystem - overwriting existing files (e.g. when the source data has been updated) is not supported, these must first be removed (purged from Nearline) before being written (put to Nearline) again.
 
-!!! warning "Important"
+!!! warning
     A Nearline project gets locked when writing to or deleting from it. Until this process is finished no other write or delete operation can be performed on the same project and the user will see a status message "**project locked by none**".
 
 ## What you can do
@@ -202,7 +202,7 @@ the full path of the file to be transferred.
 
 ### Put - directory
 
-!!! warning "Warning"
+!!! warning
     If you try to upload to Nearline a path containing spaces, especially
     multiple consecutive spaces, you will get some very unexpected
     results, such as the job being dropped. We are aware of the issue and
@@ -227,7 +227,8 @@ nlput nesi12345 /nesi/nobackup/nesi12345/To/Archive/Results/
 will copy all data within the `Results` directory into
 
 `/nesi/nearline/nesi12345/To/Archive/Results/`.
-!!! warning "Warning"
+
+!!! warning
     If you put `/nesi/`**`project`**`/nesi12345/To/Archive/Results/` on
     Nearline as well as
     `/nesi/`**`nobackup`**`/nesi12345/To/Archive/Results/`, the contents
@@ -238,7 +239,7 @@ will copy all data within the `Results` directory into
 
 ### Put - file list
 
-!!! warning "Warning"
+!!! warning
     The file list must be located within `/nesi/project` or
     `/nesi/nobackup`. Any other location will cause obscure errors and
     failures.
@@ -281,7 +282,7 @@ version of data from nobackup or project:
    using `nlpurge`.
 3. Copy the updated files to the Nearline file system using `nlput`.
 
-!!! warning "Warning"
+!!! warning
     For technical reasons, files (data and metadata) and directory
     structures on Nearline cannot be safely changed once present, even by
     the system administrators, except by deletion and recreation. If you
@@ -311,7 +312,7 @@ Similar to `nlput` (see above), nlget accepts a Nearline **directory**
 list** `file_list`, defining the source of the data to be retrieved from
 Nearline.
 
-!!! warning "Warnings"
+!!! warning
     - The local file list must be located within `/nesi/project` or
       `/nesi/nobackup`. Any other location will be rejected.
     - Paths to files or directories to be retrieved must be absolute and
@@ -340,7 +341,7 @@ directory structure does not already exist, and copy the data within the
 `Results` directory into it.  Note that the output path will include
 the project root in the path.
 
-!!! warning "Warning"
+!!! warning
     Any given file **will not be retrieved** if a file of the same name
     already exists in the destination directory. If you wish to retrieve a
     new copy of a file that already exists at the destination directory
@@ -372,7 +373,7 @@ is compulsory, and moreover all entries in the file list must denote
 files within (or supposed to be within) the chosen project's Nearline
 directory.
 
-!!! warning "Warnings"
+!!! warning
     - If a file list is used, it must be located within `/nesi/project`
       or `/nesi/nobackup` and referred to by its full path starting with
       one of those places (symlinks in the path are OK).
@@ -513,8 +514,7 @@ indeed wait times could be hours or even in some cases more than a day.
 
 ## Support contact
 
-Please **send feedback** about your user experience at
-<mailto:support@nesi.org.nz>, which may include
+Please {% include "partials/support_request.html" } about your user experience which may include
 functionality issues, intuitive or counter-intuitive behaviours,
 behaviours or features that you like, suggestions for improvements,
 transfers taking too long, etc.
