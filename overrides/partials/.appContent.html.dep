@@ -17,7 +17,7 @@
 </div>
 {% endif -%}
 <h2 id="modules">Modules Available</h2>
-{% include "partials/appVersion.html" -%}
+{% include "partials/app/app_version.html" -%}
 {{ page.content }}
 {% if page.meta and (
   page.meta.git_revision_date_localized or

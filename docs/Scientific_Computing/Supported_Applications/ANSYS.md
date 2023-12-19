@@ -14,12 +14,8 @@ zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-## License Types
+
+### License Types
 
 The three main ANSYS licenses are;
 
@@ -38,7 +34,7 @@ The three main ANSYS licenses are;
     **One of these is required for each CPU over 16 when using
     a research license.
 
-## License Order
+### License Order
 
 Whether to use a teaching or research license **must be set manually**.
 If your job is greater than the node limit, not switching to the

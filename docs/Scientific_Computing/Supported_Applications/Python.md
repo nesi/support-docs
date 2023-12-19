@@ -16,7 +16,7 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released

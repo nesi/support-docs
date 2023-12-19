@@ -21,20 +21,8 @@ zendesk_section_id: 360000040076
 
 {{ app.description }}
 
-{% if app.homepage or app.url -%}
-[{{ app_name }} Homepage]({{ app.homepage or app.url }})
-{% endif -%}
-
-{% if app.licence_type == "proprietary" -%}
-
-!!! warning
-    {{ app_name }} is proprietary software. Make sure you meet the [requirements for it's usage](#licences).
-
-{% endif -%}
-
-## Available Modules
-
-{% include "partials/appVersion.html" -%}
+{% include "partials/app/app_homepage.html" -%}
+{% include "partials/app/app_warnings.html" -%}
 
 !!! tip
     For a list of ABAQUS commands type:
@@ -43,11 +31,15 @@ zendesk_section_id: 360000040076
     abaqus help
     ```
 
+## Available Modules
+
+{% include "partials/app/app_version.html" -%}
+
 ## Licences
 
 The following network licence servers can be accessed from the NeSI cluster.
 
-{% include "partials/appNetworkLicence.html" -%}
+{% include "partials/app/app_network_licence.html" -%}
 
 If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
 

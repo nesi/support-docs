@@ -46,7 +46,7 @@ General Public Licence](https://www.r-project.org/COPYING).
 ### R Base
 
 {% set app_name = "R" -%}
-{% include "partials/appVersion.html" -%}
+{% include "partials/app/app_version.html" -%}
 
 We also have some environment modules which extend the base R ones with
 extra packages:
@@ -57,7 +57,7 @@ Includes rgeos, rgdal and other geometric and geospatial
 packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
 
 {% set app_name = "R-Geo" -%}
-{% include "partials/appVersion.html" -%}
+{% include "partials/app/app_version.html" -%}
 
 ### R-bundle-Bioconductor
 
@@ -65,7 +65,7 @@ Includes many of the BioConductor suite of
 packages.
 
 {% set app_name = "R-bundle-Bioconductor" -%}
-{% include "partials/appVersion.html" -%}
+{% include "partials/app/app_version.html" -%}
 
 ## Example R scripts
 
