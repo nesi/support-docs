@@ -10,15 +10,6 @@ zendesk_article_id: 360000925176
 zendesk_section_id: 360000224835
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 The NeSI access policy, agreed by representatives of the Crown and
 NeSI's partner institutions, establishes several allocation classes. In
 general terms, the allocation class granted to your project is used to
