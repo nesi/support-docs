@@ -10,16 +10,11 @@ zendesk_article_id: 4975669783951
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
- 
+| Frequency of data being read | Frequency of data being written        | Recommended option                                                                                                            |
+| ---------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Often                        | Often (at least once every two months) | Store in your `/nobackup/<projectcode>` directory (but ensure key result data is copied to the persistent project directory). |
+| Often                        | Seldom                                 | Store in your `/project/<projectcode>` directory.                                                                             |
+| Seldom                       | Seldom                                 | Apply for an allocation to use NeSI’s long-term storage service or store elsewhere (e.g. at your institution).                |
 
 In general, the **project directory** should be used for reference data,
 tools, and job submission and management scripts. The **nobackup
@@ -30,6 +25,4 @@ used to build and edit code, provided that the code is under version
 control and changes are regularly checked into upstream revision control
 systems. The **long-term storage service** should be used for larger
 datasets that you only access occasionally and do not need to change in
-situ. 
-
- 
+situ.

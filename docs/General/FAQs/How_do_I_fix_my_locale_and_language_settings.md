@@ -10,27 +10,18 @@ zendesk_article_id: 4416829135887
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 When logging in to NeSI from some systems, such as Windows Subsystem for
 Linux, you might get messages like the following while using NeSI (the
 following message is obtained when running `man`):
 
-``` sl
+```sh
 man: can't set the locale; make sure $LC_* and $LANG are correct
 ```
 
 To get rid of this message, save a text file called `.i18n` in your home
 directory, with the following contents:
 
-``` sl
+```sh
 LC_ALL="en_US.UTF-8"
 LC_ADDRESS="en_US.UTF-8"
 LC_COLLATE="en_US.UTF-8"

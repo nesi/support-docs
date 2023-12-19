@@ -10,20 +10,11 @@ zendesk_article_id: 360000473256
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 The time displayed in your shell is controlled by a system variable
 called `TZ`. To change to New Zealand time you need to set the variable
 as follows:
 
-``` sl
+```sh
 export TZ="NZ"
 ```
 
@@ -38,7 +29,7 @@ to your `~/.bashrc`. If you do this, we recommend adding the following
 line to your `~/.bash_profile`, or to your `~/.profile` if you have the
 latter but not the former:
 
-``` sl
+```sh
 test -r ~/.bashrc && . ~/.bashrc
 ```
 
@@ -51,7 +42,7 @@ for more information.
 To have the specifications in your crontab file interpreted as NZ times
 start it with:
 
-``` sl
+```sh
 CRON_TZ=NZ
 ```
 
