@@ -25,12 +25,12 @@ function addTag(tag, type){
     $(`#srchbar-badge-party-${type}s`).append(() => {
         return `<span class="badge badge-closeable badge-${type} badge-${type}-${tag}">${tag.charAt(0).toUpperCase() + tag.replace('_', ' ').slice(1)}<button type="button" onclick="${type}ToggleFilter(\'${tag}\')" data-dismiss="alert" aria-label="Close"></button></span>`;
     })
-    params.set(type, params.get(type).split(",").append(tag).toString())
+    params.set(type, (params.get(type) ?? "").split(",").append(tag).toString())
 }
 
 function removeTag(tag, type){
     $(`#srchbar-badge-party-${type}s > .badge-${type}-${tag}`).remove()
-    params.set(type, params.get(type).split(",").filter(e => e !== tag).toString())
+    params.set(type, (params.get(type) ?? "").split(",").filter(e => e !== tag).toString())
 }
 
 function domainToggleFilter(domain) {
