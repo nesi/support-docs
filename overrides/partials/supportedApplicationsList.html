@@ -1,32 +1,41 @@
 <div class="article__body markdown" itemprop="articleBody">
-  <div class="layoutrow">
-        <!-- <script src="{{ base_url }}/js/somelib.js"></script> -->
-
-        <!-- <div id="updated" style="display: flex;">Updated:&nbsp;<div id="updated_timestamp">time</div></div> -->
-        <div class="input-group mb-3">
-            <div class="md-search__icon md-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-            </div>
-            <input type="text" id="srchbar" onkeyup="srchFunc(event)" class="form-control" placeholder="Search for Applications" aria-label="Application">
-            <div id="srchbar-badge-party"><span id="srchbar-badge-party-domains"></span><span id="srchbar-badge-party-clusters"></span></div>
+    <div class="md-search-aux">
+        <div class="md-search-aux__inner" role="search">
+            <form class="md-search-aux__form md-search__form">
+                <input id="__search-aux" name="search" onkeyup="srchFunc(event)" type="text"
+                    class="md-search__input md-search-aux__input" aria-label="Search for Applications"
+                    placeholder="Search for Applications">
+                <label class="md-search-aux__icon md-search__icon md-icon" for="__search-aux">
+                    {% set icon = config.theme.icon.search or "material/magnify" %}
+                    {% include ".icons/" ~ icon ~ ".svg" %}
+                </label>
+                <nav class="md-search__options" id="srchbar-badge-party">
+                    <span id="srchbar-badge-party-domains"></span>
+                    <span id="srchbar-badge-party-clusters"></span>
+                </div>
+            </form>
         </div>
         <div class="layoutrow">
             <div class="article-div">
                 <div id="mainList" class="label_data data-labelsection">
-
-                {% if applications|length > 1 %}
+                    {% if applications|length > 1 %}
                     {% for app_name in applications %}
-                        {% set app = applications[app_name] %}
-                        {% include "partials/appCard.html" %}
+                    {% set app = applications[app_name] %}
+                    {% include "partials/appCard.html" %}
                     {% endfor %}
-                {% else %}
+                    {% else %}
                     <p>Whoops, something has gone wrong loading the software list. Please contact support.</p>
-                {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>
         <br>
     </div>
-    <p>If the application you are looking for is not here you can make <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000361675-Software-Installation-Request">software installation</a> request or try <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000040056-HPC-Software-Environment"> compiling it yourself.</a></p>
-    <em>You can help contribute to this list by tagging software <a href="https://github.com/nesi/modlist/blob/master/tags_domains.json">here</a>.</em>
+    <p>If the application you are looking for is not here you can make <a
+            href="https://support.nesi.org.nz/hc/en-gb/articles/360000361675-Software-Installation-Request">software
+            installation</a> request or try <a
+            href="https://support.nesi.org.nz/hc/en-gb/sections/360000040056-HPC-Software-Environment"> compiling it
+            yourself.</a></p>
+    <em>You can help contribute to this list by tagging software <a
+            href="https://github.com/nesi/modlist/blob/master/tags_domains.json">here</a>.</em>
 </div>
