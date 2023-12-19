@@ -26,6 +26,7 @@ jobs:
       run: |
         shopt -s globstar extglob
         FILELIST=$(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA docs/**/*.md | tr '\n' ' ')
+        [ -z "$FILELIST" ] && ( echo "Error, no files changed" && exit 1 )
         echo "Changed files: $FILELIST"
         echo "filelist=$FILELIST" >> $GITHUB_OUTPUT 
     outputs:

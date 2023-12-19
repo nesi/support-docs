@@ -10,15 +10,6 @@ zendesk_article_id: 7918332923023
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 The first thing you will need to do is to convert your `.ipynb`
 (**I**nteractive **PY**thon **N**ote **B**ook) file into a regular `.py`
 python file. There are two ways to do this.
@@ -29,7 +20,7 @@ python file. There are two ways to do this.
 accessible through the command line if you are logged in through
 Jupyter.
 
-``` sl
+```sh
 jupyter nbconvert --to script my_notebook.ipynb 
 ```
 
@@ -37,14 +28,12 @@ will create a new python script called `my_notebook.py`.
 
 ### Export Notebook
 
-With your notebook open, select *File* -&gt; *Save and Export Notebook
-As...* -&gt; *Executable Script*
+With your notebook open, select *File* -> *Save and Export Notebook
+As...* -> *Executable Script*
 
 This option might be less convenient as the exporter saves the python
 file to your local computer, meaning you will have to drag it back into
 the file explorer in Jupyter from your downloads folder.
-
- 
 
 This script can then be run as a regular python script as described in
 our

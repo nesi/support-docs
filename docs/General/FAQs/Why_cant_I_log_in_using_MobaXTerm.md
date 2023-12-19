@@ -10,15 +10,6 @@ zendesk_article_id: 360000470655
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Recent changes to our authentication system have caused some problems
 for people who log in to NeSI HPC systems using MobaXTerm on Windows.
 
@@ -43,7 +34,7 @@ If you are prompted multiple times for password (rather than First
 Factor), this is a bug. Entering any text will cause your login attempt
 to fail. The expected procedure is as follows.
 
-``` sl
+```sh
 ssh <user>@lander.nesi.org.nz
 <user>@lander.nesi.org.nz's password: <Press Enter> 
 <user>@lander.nesi.org.nz's password: <Press Enter> 
@@ -52,22 +43,18 @@ Login Password (First Factor):
 Authenticator Code (Second Factor):
 ```
 
- 
-
 ## Delete Saved Credentials
 
 It's possible that, even with a fresh install of mobaXterm it is still
 trying to use your old password from credential manager.
 
-1.  Go to Settings-&gt;Configuration and go to the General tab and click
+1. Go to Settings-&gt;Configuration and go to the General tab and click
     on MobaXterm password management
-2.  You should see the credentials for NeSI hosts (`lander`, `mahuika`,
+2. You should see the credentials for NeSI hosts (`lander`, `mahuika`,
     `maui`)
-3.  Remove all entries.
-4.  Restart MobaXterm
-5.  Try logging in again
-
- 
+3. Remove all entries.
+4. Restart MobaXterm
+5. Try logging in again
 
 For more information about how to log in to our HPC facilities, please
 see [this
