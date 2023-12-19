@@ -10,21 +10,11 @@ zendesk_article_id: 4415563282959
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 To simplify this process, we have written a script, `nn_dir_contents`.
 This script can be run in a variety of ways.
 
-|                                        |                                                                                             |
-|----------------------------------------|---------------------------------------------------------------------------------------------|
-| Command                                | Result                                                                                      |
+|  Command                               | Result                                                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `nn_dir_contents`                      | Shows the size of, and number of directory entries in, the current working directory        |
 | `nn_dir_contents -s`                   | Shows the size of the current working directory                                             |
 | `nn_dir_contents -n`                   | Shows the number of directory entries in the current working directory                      |

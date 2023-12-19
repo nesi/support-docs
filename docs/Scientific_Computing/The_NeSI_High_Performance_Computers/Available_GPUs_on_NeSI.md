@@ -5,8 +5,8 @@ position: 6
 tags: |
     gpu
 title: Available GPUs on NeSI
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 4963040656783
 zendesk_section_id: 360000034335
 ---

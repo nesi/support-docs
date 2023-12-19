@@ -21,6 +21,8 @@
 
 ## Licences
 
+<p>The following network licence servers can be accessed from the NeSI cluster.</p>
 {% include "partials/appNetworkLicence.html" -%}
+<p>If you do not have access, or want a server connected {% include "partials/support_request.html" %}.</p>
 
 {% endif -%}

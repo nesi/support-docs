@@ -10,21 +10,13 @@ zendesk_article_id: 360001194536
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 If you've been using Linux for a while, you'll have come across resource
 files. These files are typically read when you start a new instance of
 your *shell*, the program that interprets and executes the commands that
 you type in at your command prompt. But they're somewhat confusing,
 because there are several, and it's not obvious which are read and when.
-!!! prerequisite Warning
+
+!!! warning
      This documentation is specific to the *bash* shell, which is our
      chosen default shell for all users, and is the default for most Linux
      machines. If you have chosen a different default shell, or have
@@ -84,8 +76,8 @@ shells.
 That's largely up to you. However, we have found the following to be
 useful rules of thumb:
 
--   Functions and aliases go in `~/.bashrc`
--   Modifications to `PATH` and `LD_LIBRARY_PATH` go in
+- Functions and aliases go in `~/.bashrc`
+- Modifications to `PATH` and `LD_LIBRARY_PATH` go in
     `~/.bash_profile`
 
 These are guidelines only and are subject to your specific working
