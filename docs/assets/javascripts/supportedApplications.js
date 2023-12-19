@@ -55,12 +55,11 @@ function srchFunc(event) {
     // Consider replacing with Fuse, if fuzzy or faster search needed.
     // Check if search string matches canon domain.
     search_string = $('#__search-aux')[0].value;
-    if (search_string){
-        params.set("search", search_string);
-        // Rather that add to url, edit history.
-        history.pushState(null, '', window.location.pathname + '?' + params.toString());
-        filterSearch()
-    }
+    params.set("search", search_string);
+    // Rather that add to url, edit history.
+    history.pushState(null, '', window.location.pathname + '?' + params.toString());
+    filterSearch()
+    
 }
 
 //Goes through each app and shows/hides accordingly.
