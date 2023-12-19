@@ -16,17 +16,40 @@ zendesk_article_id: 212457807
 zendesk_section_id: 360000040076
 ---
 
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
-```sh
-abaqus help
-```
+{{ app.description }}
+
+{% if app.homepage or app.url -%}
+[{{ app_name }} Homepage]({{ app.homepage or app.url }})
+{% endif -%}
+
+{% if app.licence_type == "proprietary" -%}
+
+!!! warning
+    {{ app_name }} is proprietary software. Make sure you meet the [requirements for it's usage](#licences).
+
+{% endif -%}
+
+## Available Modules
+
+{% include "partials/appVersion.html" -%}
+
+!!! tip
+    For a list of ABAQUS commands type:
+
+    ```sh
+    abaqus help
+    ```
 
 ## Licences
+
+The following network licence servers can be accessed from the NeSI cluster.
+
+{% include "partials/appNetworkLicence.html" -%}
+
+If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
 
 You can force ABAQUS to use a specific licence type by setting the
 parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
