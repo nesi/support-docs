@@ -177,12 +177,16 @@ hc/en-gb/articles/360000931775-National-Data-Transfer-Platform.md: Storage/Data_
 hc/en-gb/articles/360000931775.md: Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md
 hc/en-gb/articles/360000980375-Trinity.md: Scientific_Computing/Supported_Applications/Trinity.md
 hc/en-gb/articles/360000980375.md: Scientific_Computing/Supported_Applications/Trinity.md
-hc/en-gb/articles/360000990436-TensorFlow-on-GPUs.md: Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md
-hc/en-gb/articles/360000990436.md: Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md
+hc/en-gb/articles/360000990436-TensorFlow-on-GPUs.md: Scientific_Computing/Supported_Applications/TensorFlow
+  on GPUs.md
+hc/en-gb/articles/360000990436.md: Scientific_Computing/Supported_Applications/TensorFlow
+  on GPUs.md
 hc/en-gb/articles/360000995575-Thread-Placement-and-Thread-Affinity.md: Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md
 hc/en-gb/articles/360000995575.md: Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md
-hc/en-gb/articles/360000997675-TensorFlow-on-CPUs.md: Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md
-hc/en-gb/articles/360000997675.md: Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md
+hc/en-gb/articles/360000997675-TensorFlow-on-CPUs.md: Scientific_Computing/Supported_Applications/TensorFlow
+  on CPUs.md
+hc/en-gb/articles/360000997675.md: Scientific_Computing/Supported_Applications/TensorFlow
+  on CPUs.md
 hc/en-gb/articles/360001002956-ParaView.md: Scientific_Computing/Supported_Applications/ParaView.md
 hc/en-gb/articles/360001002956.md: Scientific_Computing/Supported_Applications/ParaView.md
 hc/en-gb/articles/360001008136-Debugging.md: Scientific_Computing/Profiling_and_Debugging/Debugging.md
@@ -251,8 +255,10 @@ hc/en-gb/articles/360001316356-Slurm-Interactive-Sessions.md: Scientific_Computi
 hc/en-gb/articles/360001316356.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md
 hc/en-gb/articles/360001330415-Checksums.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checksums.md
 hc/en-gb/articles/360001330415.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checksums.md
-hc/en-gb/articles/360001332675-Find-execution-hot-spots-with-VTune.md: Scientific_Computing/Supported_Applications/VTune.md
-hc/en-gb/articles/360001332675.md: Scientific_Computing/Supported_Applications/VTune.md
+hc/en-gb/articles/360001332675-Find-execution-hot-spots-with-VTune.md: Scientific_Computing/Supported_Applications/Find
+  execution hot spots with VTune.md
+hc/en-gb/articles/360001332675.md: Scientific_Computing/Supported_Applications/Find
+  execution hot spots with VTune.md
 hc/en-gb/articles/360001343015-TurboVNC.md: Scientific_Computing/Supported_Applications/TurboVNC.md
 hc/en-gb/articles/360001343015.md: Scientific_Computing/Supported_Applications/TurboVNC.md
 hc/en-gb/articles/360001385735-What-is-an-allocation-.md: Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md

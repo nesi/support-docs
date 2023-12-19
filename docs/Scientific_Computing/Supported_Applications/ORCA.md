@@ -13,12 +13,6 @@ zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
@@ -48,7 +42,8 @@ licence](https://orcaforum.kofo.mpg.de/app.php/dlext/?view=detail&df_id=41)
 allow its use in the course of academic research only, and that each
 research group is expected to register with the ORCA developers. If you
 have any questions regarding your eligibility to access ORCA or any
-particular version of it, please  {% include "partials/support_request.html" %}.
+particular version of it, please contact [our support
+desk](mailto:support@nesi.org.nz).
 
 ## Example script
 

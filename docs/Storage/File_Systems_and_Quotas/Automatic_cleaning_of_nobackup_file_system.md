@@ -106,7 +106,8 @@ keep beyond the scheduled expiry date, you have four options:
 -   Move the file to your persistent project directory,
     e.g., `/nesi/project/nesi12345`. You may need to request more disk
     space, more inodes, or both, in your persistent project directory
-    before you can do this. {% include "partials/support_request.html" %}. We
+    before you can do this. [Submit a Support
+    request](https://support.nesi.org.nz/hc/en-gb/requests/new). We
     assess such requests on a case-by-case basis.  Note:  You can save
     space by compressing data.  Standard tools such as \`gzip\`
     \`bzip2\` etc are available.
@@ -152,16 +153,16 @@ systems.
 ## If I need a file that was deleted from nobackup, what should I do?
 
 Please [contact our support
-team {% include "partials/support_request.html" %} as soon as
+team](https://support.nesi.org.nz/hc/en-gb/requests/new) as soon as
 possible after you find that the file is missing. To reduce the risk of
 this outcome again in future, please [contact us in
-advance {% include "partials/support_request.html" %} so that we
+advance](https://support.nesi.org.nz/hc/en-gb/requests/new) so that we
 can discuss your data storage options with you.
 
 ## I have research data on nobackup that I can't store in my project directory or at my institution right now. What should I do?
 
 Please [contact our support
-team {% include "partials/support_request.html" %} without delay
+team](https://support.nesi.org.nz/hc/en-gb/requests/new) without delay
 so we can discuss your short- and medium-term data storage needs. Our
 intention is to work with you to move your valuable data to an
 appropriate combination of:

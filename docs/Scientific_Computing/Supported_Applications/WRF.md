@@ -10,6 +10,17 @@ zendesk_article_id: 360002109696
 zendesk_section_id: 360000040076
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
+## WRF
+
 The Weather Research and Forecasting (WRF) Model is a next-generation
 mesoscale numerical weather prediction system designed for both
 atmospheric research and operational forecasting applications. It
@@ -18,9 +29,11 @@ architecture supporting parallel computation and system extensibility.
 The model serves a wide range of meteorological applications across
 scales from tens of meters to thousands of kilometres.
 
+ 
+
 Download WRF:
 
-``` sh
+``` sl
 cd /nesi/project/<your_project_code>
 wget https://github.com/wrf-model/WRF/archive/v4.1.1.tar.gz
 tar xf v4.1.1.tar.gz
@@ -35,13 +48,17 @@ installed. On Māui, these are available as modules. On Mahuika, we
 recommend to download these packages and build them by hand
 (instructions are provided below).
 
+ 
+
 ## WRF on Mahuika
+
+ 
 
 ### Environment on Mahuika
 
-We'll use the Intel compiler and Intel MPI library.
+We'll use the Intel compiler and Intel MPI library. 
 
-``` sh
+``` sl
 module purge
 module load HDF5/1.12.2-iimpi-2022a
 ```
@@ -50,11 +67,13 @@ Although NeSI has NetCDF modules installed, WRF wants the C and Fortran
 NetCDF libraries, include files and modules all installed under the same
 root directory. Hence we build those by hand.
 
+ 
+
 ### Building WRF dependencies on Mahuika
 
 Copy-paste the commands below to build WRF on Mahuika:
 
-``` sh
+``` sl
 # create build directory for WRF's dependencies
 export WRF_DEPS_DIR=$PWD/wrf-deps
 mkdir $WRF_DEPS_DIR
@@ -107,15 +126,17 @@ cd ..
 cd ..
 ```
 
+ 
+
 Then proceed to configure WRF by setting
 
-``` sh
+``` sl
 export NETCDF=$WRF_DEPS_DIR
 export HDF5=$WRF_DEPS_DIR
 export PNETCDF=$WRF_DEPS_DIR
 ```
 
-``` sh
+``` sl
 cd WRF-4.1.1
 ./configure
 [select 15]
@@ -123,14 +144,18 @@ cd WRF-4.1.1
 
 and build the code with
 
-``` sh
+``` sl
 ./compile em_real >& log.compile
 ```
 
 This may take several hours to compile. Check the log file to ensure
-that the compilation was successful.
+that the compilation was successful. 
+
+ 
 
 ### Running WRF on Mahuika
+
+ 
 
 An example Slurm script for running WRF on Mahuika extension, which can
 be submitted with *sbatch name\_of\_script.sl*:
@@ -154,6 +179,10 @@ srun --output=real.log ./real.exe
 # run wrf
 srun --output=wrf.log ./wrf.exe
 ```
+
+
+
+ 
 
 ## WRF on Māui
 
@@ -180,7 +209,7 @@ export PNETCDF=$PNETCDF_DIR
 
 Apply patches for Polar WRF if required and then configure WRF:
 
-``` sh
+``` sl
 ./configure
 # choose option 50 - INTEL (ftn/icc) Cray XC (dmpar)
 # choose an appropriate nesting option or leave it at the default
@@ -197,7 +226,7 @@ variable.
 
 Next compile WRF:
 
-``` sh
+``` sl
 ./compile em_real >& log.compile
 ```
 
@@ -247,7 +276,7 @@ the namelist when using parallel IO.
 
 Download WPS:
 
-``` sh
+``` sl
 wget https://github.com/wrf-model/WPS/archive/v4.2.tar.gz
 tar xf v4.2.tar.gz
 cd WPS-4.2
@@ -279,7 +308,7 @@ export CRAYPE_LINK_TYPE=dynamic
 
 Configure WPS:
 
-``` sh
+``` sl
 ./configure
 # choose option 39 - Cray XC Intel parallel build
 ```
@@ -289,7 +318,7 @@ way to *configure.wrf* above, if desired.
 
 Now compile WPS:
 
-``` sh
+``` sl
 ./compile >& log.compile
 ```
 
@@ -303,7 +332,7 @@ Māui compute nodes. However, *ungrib* is serial and should not be run on
 a compute node unless it is very quick to finish. Alternatively you
 could run *ungrib* on an interactive/login node if it will not take up
 many resources, or you could compile WRF and WPS on a Māui Ancillary
-node and run it there.
+node and run it there. 
 
 Note that WPS does a lot of file IO and therefore probably won't scale
 up to as many processes as WRF.

@@ -93,5 +93,6 @@ There are a few ways to deal with file count problems
 
 -   **Contact Support**  
     If you are following the recommendations here yet are still
-    concerned about inodes or disk space, open a  {% include "partials/support_request.html" %} and we
+    concerned about inodes or disk space, open a [support
+    ticket](https://support.nesi.org.nz/hc/en-gb/requests/new) and we
     can raise the limit for you.

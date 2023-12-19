@@ -11,6 +11,15 @@ zendesk_article_id: 360000728016
 zendesk_section_id: 360000189716
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 When you run software in an interactive environment such as your
 ordinary workstation (desktop PC or laptop), the software is able to
 request from the operating system whatever resources it needs from
@@ -23,9 +32,9 @@ others to use at the same time.
 The three resources that every single job submitted on the platforms
 needs to request are:
 
-- CPUs (i.e. logical CPU cores), and
-- Memory (RAM), and
-- Time.
+-   CPUs (i.e. logical CPU cores), and
+-   Memory (RAM), and
+-   Time.
 
 Some jobs will also need to request GPUs.
 
@@ -35,18 +44,65 @@ When you are initially trying to set up your jobs it can be difficult to
 ascertain how much of each of these resources you will need. Asking for
 too little or too much, however, can both cause problems: your jobs will
 be at increased risk of taking a long time in the queue or failing, and
-your project's [fair share score](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
-is likely to suffer. Your project's fair share score will be reduced in
+your project's [fair share
+score](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
+is likely to suffer.  Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
-not.
+not. 
 
-| Resource | Asking for too much | Not asking for enough |
-|---|---|---|
-| CPUs | The job may wait in the queue for longer. Your fair share score will fall rapidly (your project will be charged for CPU cores that it reserved but didn't use) | The job will run more slowly than expected, and so may run out of time and get killed for exceeding its time limit. |
-| Memory | The job may wait in the queue for longer. Your fair share score will fall more than necessary. | Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error. This may not happen immediately. |
-| Wall time | The job may wait in the queue for longer than necessary | The job will run out of time and get killed. |
+<table style="width: 646px;">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td class="wysiwyg-text-align-center"
+style="width: 60px"><strong>Resource</strong></td>
+<td class="wysiwyg-text-align-center"
+style="width: 287px"><strong>Asking for too much</strong></td>
+<td class="wysiwyg-text-align-center" style="width: 293px"><strong>Not
+asking for enough</strong></td>
+</tr>
+<tr class="even">
+<td style="width: 60px">Number of CPUs</td>
+<td style="width: 287px"><ul>
+<li>The job may wait in the queue for longer.</li>
+<li>Your fair share score will <span>fall rapidly (your project will be
+charged for CPU cores that it reserved but didn't use)</span></li>
+</ul></td>
+<td style="width: 293px"><ul>
+<li>The job will run more slowly than expected, and so may run out of
+time and get killed for exceeding its time limit.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="width: 60px">Memory</td>
+<td style="width: 287px"><ul>
+<li>The job may wait in the queue for longer.</li>
+<li>Your fair share score will fall more than necessary.</li>
+</ul></td>
+<td style="width: 293px"><ul>
+<li>Your job will fail, probably with an 'OUT OF MEMORY' error,
+segmentation fault or bus error. This may not happen immediately.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="width: 60px">Wall time</td>
+<td style="width: 287px"><ul>
+<li>The job may wait in the queue for longer than necessary</li>
+</ul></td>
+<td style="width: 293px"><ul>
+<li>The job will run out of time and get killed. </li>
+</ul></td>
+</tr>
+</tbody>
+</table>
 
-***See our ["What is an allocation?" support page](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
+***See our ["What is an allocation?" support
+page](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+for more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale
@@ -75,7 +131,7 @@ they will both queue faster and run for less time. Also, if one of these
 jobs fails due to not asking for enough resources, a small scale job
 will (hopefully) not have waited for hours or days in the queue
 beforehand.
-
-!!! example
-     - [Multithreading Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
-     - [MPI Scaling](../../Getting_Started/Next_Steps/MPI_Scaling_Example.md)
+!!! prerequisite Examples
+     [Multithreading
+     Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
+     [MPI Scaling](../../Getting_Started/Next_Steps/MPI_Scaling_Example.md)

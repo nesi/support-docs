@@ -5,11 +5,19 @@ position: 4
 tags: []
 title: Cylc
 vote_count: 0
-# template: app.html
 vote_sum: 0
 zendesk_article_id: 5254610390415
 zendesk_section_id: 360000040076
 ---
+
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## What is Cylc
 
@@ -37,7 +45,9 @@ documentation](https://cylc.github.io/documentation/) for more elaborate
 examples, including some with a cycling (repeated) graph pattern. One of
 the strengths of Cylc is that simple workflows can be executed simply
 while allowing for very complex workflows, with thousands of tasks,
-which may be repeated ad infinitum.
+which may be repeated ad infinitum. 
+
+ 
 
 ## SSH configuration
 
@@ -47,16 +57,16 @@ done so you need to allow ssh to connect to other hosts on the HPC
 cluster without prompting for a passphrase (all HPC nodes see the same
 filesystem, so this is easy):
 
-- run **`ssh-keygen`** to generate a public/private key pair with **no
+-   run **`ssh-keygen`** to generate a public/private key pair with **no
     passphrase** (when it asks for a passphrase, just hit enter)
-- add your own public key to your authorized keys
+-   add your own public key to your authorized keys
     file: **`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`** 
-- check that your **keys, authorized\_keys file, ssh
+-   check that your **keys, authorized\_keys file, ssh
     directory, **and** home directory** all have sufficiently secure
     file permissions. If not, `ssh` will silently revert to requiring
     password entry. See for
     example <https://www.frankindev.com/2020/11/26/permissions-for-.ssh-folder-and-key-files/>
-- make sure your **home directory** has a maximum
+-   make sure your **home directory** has a maximum
     of **750** permissions
 
 Now you should be able to run **`ssh mahuika02`**(for example) without
@@ -67,7 +77,7 @@ being asked for a passphrase.
 Cylc has been installed on Māui and Mahuika, there is no need to load
 any module,
 
-``` sh
+``` sl
 $ which cylc
 /opt/nesi/share/bin/cylc
 ```
@@ -76,7 +86,7 @@ $ which cylc
 
 Be aware that the default version
 
-``` sh
+``` sl
 $ cylc version
 7.9.1
 ```
@@ -86,7 +96,7 @@ changed significantly at version 8.
 
 **New Cylc users should use version 8 or later**,
 
-``` sh
+``` sl
 $ cylc list-versions
 
 7.9.1 
@@ -111,14 +121,14 @@ At the time of writing, the latest version is 8.0.1.
 To demonstrate Cylc, let's start with a workflow, which we call
 "simple",
 
-``` sh
+``` sl
 $ mkdir -p ~/cylc-src/simple
 $ cd ~/cylc-src/simple
 ```
 
 Create/edit the following **flow.cylc** file containing
 
-``` sh
+``` sl
 [scheduling] # Define the tasks and when they should run
   [[graph]]
     R1 = """ # R1 means run this graph once
@@ -142,7 +152,7 @@ Create/edit the following **flow.cylc** file containing
 In the above example, we have three tasks (taskA, taskB and taskC),
 which run under SLURM (hence platform = mahuika-slurm). Type
 
-``` sh
+``` sl
 cylc config --platform-names
 ```
 
@@ -153,13 +163,13 @@ to see a list of platforms. The SLURM settings for taskA are in the
 
 Cylc takes command lines. Type 
 
-``` sh
+``` sl
 $ cylc help all
 ```
 
 to see the available commands. Type 
 
-``` sh
+``` sl
 $ cylc help install # or cylc install --help
 ```
 
@@ -172,13 +182,13 @@ directory. Due to limited disk space in home directories on NeSI, Cylc
 has been configured to symlink the standard run directories to project
 directories, if $PROJECT is defined. Hence, you need to set
 
-``` sh
+``` sl
 $ export PROJECT=nesi99999 # CHANGE
 ```
 
 Then install the workflow with
 
-``` sh
+``` sl
 cylc install simple
 ```
 
@@ -186,24 +196,24 @@ cylc install simple
 
 It's a good idea to check that there are no syntax errors in flow.cylc,
 
-``` sh
+``` sl
 $ cylc validate simple
 Valid for cylc-8.0.1
 ```
 
 ## Looking at the workflow graph
 
-A useful command is
+A useful command is 
 
-``` sh
+``` sl
 $ cylc graph simple
 ```
 
 which will generate a png file, generally in the /tmp directory with a
 name like /tmp/tmpzq3bjktw.PNG. Take note of the name of the png file.
-To visualise the file you can type
+To visualise the file you can type 
 
-``` sh
+``` sl
 $ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
 ```
 
@@ -219,13 +229,13 @@ The "1" indicates that this workflow graph is executed only once.
 Every Cylc action can be executed via the command line. Alternatively,
 you can invoke each action through a **terminal user interface** (tui), 
 
-``` sh
+``` sl
 $ cylc tui simple
 ```
 
 Another alternative, is to use the **graphical user interface**
 
-``` sh
+``` sl
 $ cylc gui
 ```
 
@@ -247,7 +257,7 @@ First open ssh tunnelling, so that a given port on your local machine
 (e.g. your laptop) maps to the Cylc UI Server’s port on the HPC. On your
 local machine, type
 
-``` sh
+``` sl
 $ ssh -N -L PORT:localhost:PORT HOST
 ```
 
@@ -261,14 +271,14 @@ connection without logging you into the shell.
 
 Then ssh to the host (e.g. mahuika)
 
-``` sh
+``` sl
 $ ssh HOST
 ```
 
 and add the following to **$HOME/.cylc/uiserver/jupyter\_config.py** on
 the **HOST**.
 
-``` sh
+``` sl
 c.ServerApp.open_browser=False
 c.ServerApp.port=PORT
 ```
@@ -278,13 +288,13 @@ tunnel.
 
 You're now ready to fire up the web graphical interface
 
-``` sh
+``` sl
 $ cylc gui
 ```
 
 Just copy the URL that looks like
 
-``` sh
+``` sl
 http://127.0.0.1:PORT/cylc?token=TOKEN
 ```
 
@@ -295,7 +305,7 @@ chosen above.)
 
 To execute the workflow type
 
-``` sh
+``` sl
 $ cylc play --no-detach simple
 ```
 
@@ -305,7 +315,7 @@ can see its output in your terminal. Without this option it will
 
 Command
 
-``` sh
+``` sl
 $ cylc scan
 ```
 
@@ -313,17 +323,17 @@ will list all running and installed workflows.
 
 ## Checking the output
 
-``` sh
+``` sl
 $ cylc cat-log simple//1/taskA  # note // between workflow and task ID
 ```
 
 of the first cycle of taskA. The "1" refers to the task iteration, or
 cycle point. Our simple workflow only has one iteration (as dictated by
-the R1 graph above).
+the R1 graph above). 
 
 ## How to clean or remove a workflow
 
-``` sh
+``` sl
 $ cylc clean simple
 ```
 
@@ -335,7 +345,7 @@ Cylc will create a directory under $HOME/cylc-run. On NeSI, the output
 of the runs will be stored in the project directory, with a symbolic
 link pointing from the user home directory to the project directory
 
-``` sh
+``` sl
 $ ls -l $HOME/cylc-run/simple/run1
 lrwxrwxrwx 1 pletzera pletzera 54 Aug  5 03:19 /home/pletzera/cylc-run/simple/run1 -> /nesi/nobackup/nesi99999/pletzera/cylc-run/simple/run1
 ```

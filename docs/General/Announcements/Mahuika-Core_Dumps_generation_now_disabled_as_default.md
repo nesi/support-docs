@@ -15,6 +15,15 @@ zendesk_article_id: 5126681349903
 zendesk_section_id: 200732737
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 A Slurm configuration change has been made on Mahuika so that the 
 maximum size of [core
 file](../../General/FAQs/What_is_a_-core_file.md) that can be generated

@@ -11,6 +11,15 @@ zendesk_article_id: 6805305911311
 zendesk_section_id: 360001150156
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## New and Improved
 
 -   If [jupyter.nesi.org.nz](http://my.nesi.org.nz/) portal cannot

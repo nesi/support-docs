@@ -10,6 +10,15 @@ zendesk_article_id: 6686934564239
 zendesk_section_id: 200732737
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Following a successful early access programme, Mahuika’s newest CPU
 nodes are now available for use by any projects that have a Mahuika
 allocation on NeSI's HPC Platform.
@@ -46,13 +55,14 @@ research needs.
 -   Bring questions to our [weekly Online Office
     Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
 
--    {% include "partials/support_request.html" %}
+-   [Email NeSI
+    Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz")
     any time
 
  
 
 If you have feedback on the new nodes or suggestions for improving your
 experience getting started with or using any of our systems, please [get
-in touch {% include "partials/support_request.html" %}.
+in touch](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
 
  

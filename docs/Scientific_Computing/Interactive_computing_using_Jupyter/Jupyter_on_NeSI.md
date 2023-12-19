@@ -27,8 +27,8 @@ zendesk_section_id: 360001189255
 !!! prerequisite Note
      This service is available for users with a current allocation on
      Mahuika only.  
-     Please {% include "partials/support_request.html" %} to request a suitable
-     allocation.
+     [Please contact us to request a suitable
+     allocation.](https://support.nesi.org.nz/hc/en-gb/requests/new)
 
 ## Introduction
 
@@ -78,7 +78,7 @@ GPUs available at NeSI.
 !!! prerequisite Tip
      If your server appears to not have started within 3 minutes please
      reload the browser window and check again, otherwise contact
-      {% include "partials/support_request.html" %}.
+     [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
 
 ## Known issues
 

@@ -160,7 +160,8 @@ from Fair Share by submitting work at close to a constant rate.
 
 If you expect that your project team will need widely varying rates of
 computer use during your allocation period and you can predict when your
-busy and quiet periods will be, please {% include "partials/support_request.html" %} to enquire
+busy and quiet periods will be, please [contact our support
+team](https://support.nesi.org.nz/hc/en-gb/requests/new) to enquire
 about splitting your project's allocation up into parts. Please be aware
 that we cannot guarantee this option will be available for any given
 project, and that we are most likely to be able to accommodate such a
@@ -192,7 +193,7 @@ to normal after a few days.
 
 If, on the other hand, you have more work to do than expected, please
 [contact us to apply for a larger
-allocation {% include "partials/support_request.html" %}. Project
+allocation](https://support.nesi.org.nz/hc/en-gb/requests/new). Project
 teams may request a larger allocation on Mahuika or on the Māui XC
 cluster, though not on the Māui ancillary nodes.
 
@@ -200,4 +201,4 @@ If you believe your project's fair share score has become corrupted, or
 your ability to get work done is affected by a low Fair Share
 entitlement for your institution on that cluster, please [get in touch
 with our support
-team {% include "partials/support_request.html" %}.
+team](https://support.nesi.org.nz/hc/en-gb/requests/new).

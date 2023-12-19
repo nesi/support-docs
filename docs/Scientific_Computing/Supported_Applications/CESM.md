@@ -5,11 +5,21 @@ position: 10
 tags: []
 title: CESM
 vote_count: 0
-# template: app.html
 vote_sum: 0
 zendesk_article_id: 360002105076
 zendesk_section_id: 360000040076
 ---
+
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
+## CESM
 
 The Community Earth System Model (CESM) is a coupled climate model for
 simulating Earth’s climate system. Composed of separate models
@@ -32,7 +42,7 @@ the *bin* directory in your home, add that directory to *PATH* and run a
 git command to finish the Git-LFS installation. The following commands
 will achieve this:
 
-```sh
+``` sl
 mkdir git-lfs
 cd git-lfs
 wget https://github.com/git-lfs/git-lfs/releases/download/v2.12.0/git-lfs-linux-amd64-v2.12.0.tar.gz
@@ -52,7 +62,7 @@ First switch to your project directory (or wherever else you would like
 the CESM source to live) and then run the commands to download CESM
 (replacing *&lt;your\_project\_code&gt;* with your project code):
 
-``` sh
+``` sl
 cd /nesi/project/<your_project_code>
 git clone -b release-cesm2.1.3 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
 cd my_cesm_sandbox
@@ -73,7 +83,7 @@ Earth system models) and copy the config files to *~/.cime*. In the
 following, replace *&lt;your\_project\_code&gt;* with your project code
 (this will overwrite any current configuration your have in *~/.cime*):
 
-``` sh
+``` sl
 cd /nesi/project/<your_project_code>
 git clone https://github.com/nesi/nesi-cesm-config.git
 cd nesi-cesm-config
@@ -96,7 +106,7 @@ above link for more information.
 
 First, create the case:
 
-``` sh
+``` sl
 cd /nesi/project/<your_project_code>/my_cesm_sandbox/cime/scripts
 ./create_newcase --case /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test --compset B1850 --res f19_g17 --machine maui --compiler intel
 cd /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test
@@ -108,7 +118,7 @@ directory in the previous step.
 
 Next, set up the case and preview the run:
 
-``` sh
+``` sl
 ./case.setup
 ./preview_run
 ```
@@ -116,20 +126,20 @@ Next, set up the case and preview the run:
 Check that everything looks correct in the preview and then build the
 case:
 
-``` sh
+``` sl
 ./case.build
 ```
 
 Update any settings if necessary, for example here we turn off short
 term archiving:
 
-``` sh
+``` sl
 ./xmlchange DOUT_S=FALSE
 ```
 
 Finally, run the job:
 
-``` sh
+``` sl
 ./case.submit
 ```
 
@@ -157,3 +167,5 @@ balancing"
 It involves performing a number of short model runs to determine which
 components are most expensive and how the individual components scale.
 That information can then be used to determine an optimal load balance.
+
+ 

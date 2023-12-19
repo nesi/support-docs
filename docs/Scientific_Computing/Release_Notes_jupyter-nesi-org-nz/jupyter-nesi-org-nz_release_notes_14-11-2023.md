@@ -10,6 +10,15 @@ zendesk_article_id: 8358981393551
 zendesk_section_id: 360001150156
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## New and Improved
 
 -   Adding extra logging when the Jupyter Health Check fails
@@ -22,4 +31,5 @@ zendesk_section_id: 360001150156
  
 
 If you have any questions about any of the improvements or fixes, please
- {% include "partials/support_request.html" %}.
+[contact NeSI
+Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").

@@ -3,11 +3,21 @@ created_at: '2019-09-22T21:07:48Z'
 hidden: false
 position: 7
 tags: []
+title: Multithreading Scaling Example
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360001173895
 zendesk_section_id: 360000189716
 ---
+
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 In the example below we will use R scripts to demonstrate how you might
 perform some basic scaling tests, however, the principles outlined in
@@ -17,15 +27,15 @@ chosen for the purpose of illustration.
 
 ## Initial R Script
 
-```R
-library(doParallel)
+``` sl
+ library(doParallel)
 
-registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
+  registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
-# 60,000 calculations to be done:
-foreach(z=1000000:1060000) %dopar% {
-    x <- sum(rnorm(z))
-}
+  # 60,000 calculations to be done:
+  foreach(z=1000000:1060000) %dopar% {
+   x <- sum(rnorm(z))
+  }
 ```
 
 You do not need to understand what the above R script is doing, but for
@@ -43,15 +53,15 @@ iterations. So now lets change the number of iterations from 60,000 to
 
 ### Revised R Script
 
-```R
-library(doParallel)
+``` sl
+ library(doParallel)
 
-registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
+  registerDoParallel(strtoi(Sys.getenv('SLURM_CPUS_PER_TASK')))
 
-# 5,000 calculations to be done:
-foreach(z=1000000:1005000) %dopar% {
-    x <- sum(rnorm(z))
-}
+  # 5,000 calculations to be done:
+  foreach(z=1000000:1005000) %dopar% {
+   x <- sum(rnorm(z))
+  }
 ```
 
 Now we need to write a Slurm script to run this job. The wall time,
@@ -61,30 +71,29 @@ local workstation, but if that is not possible, make an educated guess,
 and if the job fails increase the resources requested until is
 completes.
 
-!!! tip
-    If you can, write your program so that it prints results and
-    timing information out relatively frequently, for example every 100 or
-    1,000 iterations. That way, even if your job runs out of time or memory
-    and gets killed, you will be able to see how far it got and how long it
-    took to get there.
+**TIP:** If you can, write your program so that it prints results and
+timing information out relatively frequently, for example every 100 or
+1,000 iterations. That way, even if your job runs out of time or memory
+and gets killed, you will be able to see how far it got and how long it
+took to get there.
 
 ### Slurm Script
 
 ``` sl
-#!/bin/bash -e
-#SBATCH --job-name=Scaling5k
-#SBATCH --time=00:10:00
-#SBATCH --mem=512MB
-#SBATCH --cpus-per-task=4
+  #!/bin/bash -e
+  #SBATCH --job-name=Scaling5k
+  #SBATCH --time=00:10:00
+  #SBATCH --mem=512MB
+  #SBATCH --cpus-per-task=4
 
-module load R
-Rscript scaling.R
+  module load R
+  Rscript scaling.R
 ```
 
 Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
-```txt
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
@@ -106,7 +115,7 @@ full job and be confident it will succeed.
 To test this, we will submit three more jobs, using 10,000 15,000 and
 20,000 iterations.
 
-```txt
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3106248        Scaling5k       00:03:17    12:51.334     4          COMPLETED
@@ -133,7 +142,9 @@ seem to change much. Let's try plotting this data (we used R here, but
 feel free to use excel or whatever your preferred plotting software) to
 help us better understand what is happening:
 
-![Plot1](../../assets/images/Multithreading_Scaling_Example.png){ width=47% } ![Plot2](../../assets/images/Multithreading_Scaling_Example_0.png){ width=47% }
+|                                                                  |                                                                    |
+|------------------------------------------------------------------|--------------------------------------------------------------------|
+| ![Plot1](../../assets/images/Multithreading_Scaling_Example.png) | ![Plot2](../../assets/images/Multithreading_Scaling_Example_0.png) |
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.
@@ -146,9 +157,10 @@ using 4 CPU cores, but what if we used more? Could we speed up our job
 by that means?
 
 To find out we are going to have to run more tests. Let's try running
-our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results using `sacct`:
+our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results:
 
-```txt
+``` sl
+ sacct
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3063584        Scaling2        00:06:29    12:49.971     2          COMPLETED
@@ -185,7 +197,11 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results using `s
 3106181.0      Rscript         00:00:59    11:59.998    16 1205991K COMPLETED
 ```
 
-![TvC-MT.png](../../assets/images/Multithreading_Scaling_Example_1.png){ width=47% } ![TvL2C-MT.png](../../assets/images/Multithreading_Scaling_Example_2.png){ width=47% }
+ 
+
+|                                                                         |                                                                           |
+|-------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| ![TvC-MT.png](../../assets/images/Multithreading_Scaling_Example_1.png) | ![TvL2C-MT.png](../../assets/images/Multithreading_Scaling_Example_2.png) |
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
@@ -206,6 +222,8 @@ Indeed, the difference in speed between 14 and 16 CPU cores is very
 small. We could try running our script with more than 16 CPU cores,
 however, in the case of this script we start to have a pretty
 significant drop in marginal speed-up after eight CPU cores.
+
+ 
 
 ![](../../assets/images/Multithreading_Scaling_Example_3.png)
 
@@ -245,20 +263,20 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
 ### Revised Slurm Script
 
 ``` sl
-#!/bin/bash -e
-#SBATCH --account=nesi99999
-#SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
-#SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
-#SBATCH --mem=512MB           # Memory per node
-#SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
+  #!/bin/bash -e
+  #SBATCH --account=nesi99999
+  #SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
+  #SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
+  #SBATCH --mem=512MB           # Memory per node
+  #SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
 
-module load R
-Rscript scaling.R
+  module load R
+  Rscript scaling.R
 ```
 
-Checking on our job with `sacct` 
+ Checking on our job with `sacct` 
 
-```txt
+``` sl
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
 -------------- ------------ ----------- ------------ ----- -------- ----------
 3119026        Scaling60k      00:20:34     02:41:53     8          COMPLETED
@@ -271,9 +289,8 @@ It looks as though our estimates were accurate, but looking at our
 maximum memory usage it is a good thing that we requested additional
 memory as we may otherwise have run out.
 
-!!! tip
-    Whenever you submit a job it is always a good idea to request
-    about 20% more wall time and memory than you think you are going to need
-    to minimise the chance of your jobs failing due to a lack of resources.
-    Your project's fair share score considers the time actually used by the
-    job, not the time requested by the job.
+**TIP:** Whenever you submit a job it is always a good idea to request
+about 20% more wall time and memory than you think you are going to need
+to minimise the chance of your jobs failing due to a lack of resources.
+Your project's fair share score considers the time actually used by the
+job, not the time requested by the job.

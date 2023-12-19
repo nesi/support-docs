@@ -10,6 +10,15 @@ zendesk_article_id: 360000207315
 zendesk_section_id: 360000042215
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Snapshots
 
 Snapshots are read only copies of the file system taken every day at
@@ -28,9 +37,10 @@ project code, e.g;
 ``` sl
 /home/username/.snapshots/Sunday/
 ```
-
-!!! Warning
+!!! prerequisite Warning
      Files in `/nesi/nobackup/` are not snapshotted.
+
+ 
 
 Recovering a file or a directory from the snapshot is as simple as
 copying it over, e.g.
@@ -38,6 +48,6 @@ copying it over, e.g.
 ``` sl
 cp /nesi/project/.snapshots/Sunday/nesi99999/file.txt /nesi/project/nesi99999/file.txt
 ```
-
-!!! Tip
-     For copying directories use the flag -ir or just -r if you don't want to be prompted before overwriting
+!!! prerequisite Tip
+     For copying directories use the flag -ir or just -r if you don't want
+     to be prompted before overwriting.

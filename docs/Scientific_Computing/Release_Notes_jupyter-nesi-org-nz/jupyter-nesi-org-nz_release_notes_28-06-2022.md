@@ -11,12 +11,24 @@ zendesk_article_id: 5042124170127
 zendesk_section_id: 360001150156
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Release Update - 28. June 2022
 
 ## New and Improved
 
-- Updated JupyterLab version to v3.4.3
+-   Updated JupyterLab version to v3.4.3
+
+ 
 
 ## Fixed
 
-- Addressed issue handling the "slurm job id" with some Python modules that depend on MPI
+-   Addressed issue handling the "slurm job id" with some Python modules
+    that depend on MPI

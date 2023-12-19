@@ -10,6 +10,15 @@ zendesk_article_id: 7463891150863
 zendesk_section_id: 360000040056
 ---
 
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 Most programs which create temporary files will put those files in the
 directory specified by the environment variable `TMPDIR` if that is set,
 or `/tmp` otherwise. This is also true in Slurm, such that whenever a
@@ -25,7 +34,7 @@ include enough to cover the size of any temporary files.
 On the `milan` and `hgx` partitions, however, you have the option of
 specifying `#SBATCH --gres=ssd` in your job script which will place
 `TMPDIR` on a 1.5 TB NVMe SSD attached to the node rather than in RAM.
-When `--gres=ssd` is set your job’s memory request **does not** need to
+When `--gres=ssd` is set your job’s memory request *does not* need to
 include enough to cover the size of any temporary files (as this is a
 separate resource). These SSDs give the job a slower but very much
 larger temporary directory. They are allocated exclusively to jobs, so
@@ -40,9 +49,9 @@ files will remain after the job finishes, so be weary of how much space
 your jobs temporary files use. An example of how `TMPDIR` may be set
 yourself is shown below,
 
-```sh
-export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID
-```
+`export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID`
+
+ 
 
 ## Example of copying data into the per job temporary directories for use mid-job
 
@@ -54,14 +63,14 @@ of `/opt`. To do this, request the NVMe SSD on `milan` as described
 above. Then, after loading the Kraken2 module in your Slurm script, copy
 the database onto the SSD,
 
-```sh
+``` sl
 cp -r /opt/nesi/db/Kraken2/standard-2018-09/* $TMPDIR
 ```
 
 To get Kraken2 to read the DB from the SSDs (and not from `/opt`),
 change the `KRAKEN2_DEFAULT_DB` variable,
 
-```bash
+``` bash
 export KRAKEN2_DEFAULT_DB=$TMPDIR
 ```
 

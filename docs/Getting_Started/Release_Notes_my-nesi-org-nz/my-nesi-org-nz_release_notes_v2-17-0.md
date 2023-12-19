@@ -12,12 +12,20 @@ zendesk_section_id: 360001091155
 ---
 
 
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+
 ## Release Update - 29. August 2023
 
 ## New and Improved
 
 -   “Provide Feedback” is now redirected to
-    <mailto:support@nesi.org.nz>
+    <https://support.nesi.org.nz/hc/en-gb/requests/new>
 -   In a project request form, all grants are now visible by default
 -   After submitting a new allocation request, the user will be able to
     see the Zendesk link in case further comments need to be added

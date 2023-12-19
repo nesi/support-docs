@@ -51,7 +51,8 @@ are a member of the listed institution or faculty you should be able to
 use the software without any set-up.
 
 If you believe you should have access to a licence but do not, or would
-like to organise remote use of your institution's licence, please {% include "partials/support_request.html" %} and cc: your own IT services.
+like to organise remote use of your institution's licence, please [email
+NeSI Support](mailto:support@nesi.org.nz) and cc: your own IT services.
 
 ### Personal or Research Group Licences
 

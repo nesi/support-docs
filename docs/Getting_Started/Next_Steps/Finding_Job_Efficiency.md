@@ -4,11 +4,21 @@ hidden: false
 position: 5
 tags:
 - slurm
+title: Finding Job Efficiency
 vote_count: 8
 vote_sum: 8
 zendesk_article_id: 360000903776
 zendesk_section_id: 360000189716
 ---
+
+
+
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (vvvvvvvvvvvvvvvvvvvv)
+!!! warning
+    This page has been automatically migrated and may contain formatting errors.
+[//]: <> (^^^^^^^^^^^^^^^^^^^^)
+[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## On Job Completion
 
@@ -19,13 +29,13 @@ future.
 Once your job has finished check the relevant details using the tools:
 `nn_seff` or `sacct` For example:  
 
-### Using `nn_seff`
+**nn\_seff**
 
-```bash
+``` sl
 nn_seff 30479534
 ```
 
-```txt
+``` sl
 Job ID: 1936245
 Cluster: mahuika
 User/Group: user/group
@@ -38,25 +48,30 @@ CPU Efficiency: 98.55% 00:01:08 of 00:01:09 core-walltime
 Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 ```
 
-Notice that the CPU efficiency was high but the memory efficiency was low and consideration should be given to reducing memory requests
-for similar jobs.  If in doubt, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz) for guidance.
+Notice that the CPU efficiency was high but the memory efficiency was
+very low and consideration should be given to reducing memory requests
+for similar jobs.  If in doubt, please contact <support@nesi.org.nz> for
+guidance.
 
-### Using `sacct`
+ 
 
-```bash
+**sacct**
+
+``` sl
 sacct --format="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc,NTask,MaxRSS,State" -j <jobid>
 ```
-
-!!! tip
+!!! prerequisite Tip
      *If you want to make this your default* `sacct` *setting, run;*
-     ```bash
+     ``` sl
      echo 'export SACCT_FORMAT="JobID,JobName,Elapsed,AveCPU,MinCPU,TotalCPU,Alloc%2,NTask%2,MaxRSS,State"' >> ~/.bash_profile
      source ~/.bash_profile
      ```
 
+------------------------------------------------------------------------
+
 Below is an output for reference:
 
-```txt
+``` sl
        JobID    JobName    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS   NTasks     MaxRSS      State
 ------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- ---------- ----------
 3007056      rfm_ANSYS+   00:27:07                         03:35:55         16                      COMPLETED
@@ -67,7 +82,9 @@ Below is an output for reference:
 *All of the adjustments below still allow for a degree of variation.
 There may be factors you have not accounted for.*
 
-#### Walltime
+------------------------------------------------------------------------
+
+### **Walltime**
 
 From the `Elapsed` field we may want to update our next run to have a
 more appropriate walltime.
@@ -76,7 +93,7 @@ more appropriate walltime.
 #SBATCH --time=00:40:00
 ```
 
-#### Memory
+### **Memory**
 
 The `MaxRSS` field shows the maximum memory used by each of the job
 steps, so in this case 13 GB. For our next run we may want to set:
@@ -85,7 +102,7 @@ steps, so in this case 13 GB. For our next run we may want to set:
 #SBATCH --mem=15G
 ```
 
-#### CPUs
+### **CPU's**
 
 `TotalCPU` is the number of computation hours, in the best case scenario
 the computation hours would be equal to `Elapsed` x `AllocCPUS`.
@@ -98,6 +115,8 @@ however bear in mind there are other factors that affect CPU efficiency.
 ``` sl
 #SBATCH --cpus-per-task=10
 ```
+
+ 
 
 Note: When using sacct to determine the amount of memory your job used -
 in order to reduce memory wastage - please keep in mind that Slurm
@@ -134,20 +153,19 @@ If 'nodelist' is not one of the fields in the output of your `sacct` or
 `squeue` commands you can find the node a job is running on using the
 command; `squeue -h -o %N -j <jobid>` The node will look something like
 `wbn123` on Mahuika or `nid00123` on Māui
-
-!!! note
+!!! prerequisite Note
      If your job is using MPI it may be running on multiple nodes
 
-### Using `htop`
+### htop 
 
-```bash
+``` sl
 ssh -t wbn175 htop -u $USER
 ```
 
 If it is your first time connecting to that particular node, you may be
 prompted:
 
-```txt
+``` sl
 The authenticity of host can't be established 
 Are you sure you want to continue connecting (yes/no)?
 ```
@@ -167,16 +185,15 @@ Processes in green can be ignored
 
 **S** - State, what the thread is currently doing.
 
-- R - Running
-- S - Sleeping, waiting on another thread to finish.
-- D - Sleeping
-- Any other letter - Something has gone wrong!
+-   R - Running
+-   S - Sleeping, waiting on another thread to finish.
+-   D - Sleeping
+-   Any other letter - Something has gone wrong!
 
 **CPU%** - Percentage CPU utilisation.
 
-**MEM%** - Percentage Memory utilisation.
-
-!!! warning
+**MEM% **Percentage Memory utilisation.
+!!! prerequisite Warning
      If the job finishes, or is killed you will be kicked off the node. If
      htop freezes, type `reset` to clear your terminal.
 
@@ -187,14 +204,17 @@ time* the CPUs are in use. This is not enough to get a picture of
 overall job efficiency, as required CPU time *may vary by number of
 CPU*s.
 
-The only way to get the full context, is to compare walltime performance between jobs at different scale. See [Job Scaling](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md) for more details.
+The only way to get the full context, is to compare walltime performance
+between jobs at different scale. See [Job
+Scaling](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md)
+for more details.
 
 ### Example
 
 ![qdyn\_eff.png](../../assets/images/Finding_Job_Efficiency_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
-of CPU efficiency is acceptable and scale your job up to 18 CPU cores .
+of CPU efficiency is acceptable and scale your job up to 18 CPU cores . 
 
 ![qdyn\_walltime.png](../../assets/images/Finding_Job_Efficiency_1.png)
 

@@ -13,12 +13,6 @@ zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-
 
 [//]: <> (REMOVE ME IF PAGE VALIDATED)
 [//]: <> (vvvvvvvvvvvvvvvvvvvv)
@@ -70,7 +64,8 @@ any NeSI cluster if you have a valid licence to use that version of VASP
 with your research group, employer, or institution, and if the terms of
 your licence permit cluster use.
 
-If you do have a valid license, please {% include "partials/support_request.html" %} to gain access to the VASP
+If you do have a valid license, please contact [our support
+team](mailto:support@nesi.org.nz) to gain access to the VASP
 executables. You may be asked to provide proof of your license if you
 are not from a known group or if the license is new.
 
@@ -158,7 +153,7 @@ job at greater risk of node failure. You can request a single node with
 `--nodes=1`for jobs of up to `--ntasks=128`, which is enough for most
 VASP calculations. If you would like help making a large job more
 efficient, please [contact our support
-team {% include "partials/support_request.html" %}.
+team](https://support.nesi.org.nz/hc/en-gb/requests/new).
 
 ### VASP runs faster on Milan nodes
 
