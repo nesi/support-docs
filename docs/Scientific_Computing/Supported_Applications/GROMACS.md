@@ -14,16 +14,8 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 GROMACS (the GROningen MAchine for Chemical Simulations) is a versatile
 package to perform molecular dynamics, i.e. simulate the Newtonian
@@ -40,7 +32,7 @@ Lesser General Public
 Licence](http://www.gnu.org/licenses/lgpl-2.1.html). Gromacs is a joint
 effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
-obtained with the Software (see
+obtained with the Software.
 
 ## Job submission
 
@@ -110,45 +102,49 @@ risk of inefficient CPU usage, is to request entire nodes. On the
 Mahuika cluster, this can be done using the following lines in your
 input, altered as appropriate:
 
--   Using MPI parallelisation and hyperthreading, but no OpenMP
-    parallelisation:
+=== "MPI + SMP"
+    Using MPI parallelisation and hyperthreading, but no OpenMP
+    parallelisation.
 
-``` bash
-#SBATCH --nodes           4    # May vary
-#SBATCH --ntasks-per-node 72   # Must be 72
-                               # (the number of logical cores per node)
-#SBATCH --cpus-per-task   1    # Must be 1
-```
+    ``` sl
+    #SBATCH --nodes           4    # May vary
+    #SBATCH --ntasks-per-node 72   # Must be 72
+                                # (the number of logical cores per node)
+    #SBATCH --cpus-per-task   1    # Must be 1
+    ```
 
--   Using MPI parallelisation with neither hyperthreading nor OpenMP
-    parallelisation:
+=== "MPI"
+    Using MPI parallelisation with neither hyperthreading nor OpenMP
+    parallelisation.
 
-``` bash
-#SBATCH --nodes           4    # May vary
-#SBATCH --ntasks-per-node 36   # Must be 36
-                               # (the number of physical cores per node)
-#SBATCH --cpus-per-task   1    # Must be 1
-#SBATCH --hint=nomultithread   # Don't use hyperthreading
-```
+    ``` sl
+    #SBATCH --nodes           4    # May vary
+    #SBATCH --ntasks-per-node 36   # Must be 36
+                                # (the number of physical cores per node)
+    #SBATCH --cpus-per-task   1    # Must be 1
+    #SBATCH --hint=nomultithread   # Don't use hyperthreading
+    ```
 
--   Using hybrid (OpenMP + MPI) parallelisation and hyperthreading:
+=== "OpenMP + MPI + SMP"
+    Using hybrid parallelisation and hyperthreading:
 
-``` bash
-#SBATCH --nodes           4    # May vary
-#SBATCH --ntasks-per-node 1    # Must be 1
-#SBATCH --cpus-per-task   72   # Must be 72
-                               # (the number of logical cores per node)
-```
+    ``` sl
+    #SBATCH --nodes           4    # May vary
+    #SBATCH --ntasks-per-node 1    # Must be 1
+    #SBATCH --cpus-per-task   72   # Must be 72
+                                # (the number of logical cores per node)
+    ```
 
--   Using hybrid (OpenMP + MPI) parallelisation but not hyperthreading:
+=== "OpenMP + MPI"
+    Using hybrid parallelisation but not hyperthreading:
 
-``` bash
-#SBATCH --nodes           4    # May vary
-#SBATCH --ntasks-per-node 1    # Must be 1
-#SBATCH --cpus-per-task   36   # Must be 36
-                               # (the number of physical cores per node)
-#SBATCH --hint=nomultithread   # Don't use hyperthreading
-```
+    ``` sl
+    #SBATCH --nodes           4    # May vary
+    #SBATCH --ntasks-per-node 1    # Must be 1
+    #SBATCH --cpus-per-task   36   # Must be 36
+                                # (the number of physical cores per node)
+    #SBATCH --hint=nomultithread   # Don't use hyperthreading
+    ```
 
 If you opt to use hybrid parallelisation, it is also important to run
 `mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
@@ -156,8 +152,6 @@ be the number of CPUs per task. You can make sure the value is correct
 by using `-ntomp ${SLURM_CPUS_PER_TASK}`. Hybrid parallelisation can be
 more efficient than MPI-only parallelisation, as within the same node
 there is no need for inter-task communication.
-
- 
 
 **NOTE** on using GROMACS on Māui:
 

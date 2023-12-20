@@ -17,16 +17,8 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 [Singularity](https://sylabs.io/singularity/) is a science-focused
 application containerisation solution that is specifically tailored for
@@ -104,7 +96,7 @@ current host.
 Specify you want to use the remote builder by adding the `--remote` flag
 to the build command.
 
-``` sl
+``` sh
 singularity build --remote myContainer.sif myContainer.def
 ```
 
@@ -119,12 +111,12 @@ limitation causing the builder to crash.
 You may wish to change these values to somewhere in your project or
 nobackup directory.
 
-``` sl
+``` sh
 export SINGULARITY_TMPDIR=/nesi/nobackup/nesi99999/.s_tmpdir
 setfacl -b "$SINGULARITY_TMPDIR"  # avoid Singularity issues due to ACLs set on this folder
 ```
 
-``` sl
+``` sh
 export SINGULARITY_CACHEDIR=/nesi/nobackup/nesi99999/.s_cachedir
 ```
 
@@ -135,14 +127,14 @@ Please Sir, may I have a build node?
 A container in Singularity's SIF format can be easily moved to the HPC
 filesystem by:
 
--   Copying the image file from your local computer with basic file
+- Copying the image file from your local computer with basic file
     transfer tools - please refer to our documentation on [Moving files
     to/from the
     cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
     and [Data Transfer using
     Globus](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)
     (if you have a very large container) for details
--   Downloading the container from an online repository
+- Downloading the container from an online repository
 
 To download a container, use commands such as
 
@@ -164,7 +156,7 @@ the `pull` command with a `docker://` prefix. The following example
 downloads the latest version of the Ubuntu docker container and save it
 in the `ubuntu.sif` Singularity image file:
 
-``` sl
+``` sh
 singularity pull ubuntu.sif docker://ubuntu
 ```
 
@@ -176,7 +168,7 @@ If you are building your own containers, you can also use Docker
 containers as basis for a Singularity image, by specifying it in the
 definition file as follows:
 
-``` sl
+```def
 Bootstrap: docker
 From: ubuntu:latest
 
@@ -241,7 +233,7 @@ your home directory (e.g., in the "nobackup" or "project" file spaces)
 and you need to access its contents, you will need to bind this
 directory using, e.g., the command
 
-``` sl
+``` sh
 singularity run --bind $PWD my_container.sif
 ```
 
@@ -251,7 +243,7 @@ automatically.
 You can easily bind extra directories and optionally change their
 locations to a new path inside the container using, e.g.,
 
-``` sl
+``` sh
 singularity run --bind "/nesi/project/<your project ID>/inputdata:/var/inputdata,\
 /nesi/nobackup/<your project ID>/outputdata:/var/outputdata" my_container.sif
 ```
@@ -276,7 +268,8 @@ transparently access it using the `--nv` flag:
 ``` bash
 singularity run --nv my_container.sif
 ```
-!!! prerequisite Note
+
+!!! note
      Make sure that your container contains the CUDA toolkit and additional
      libraries needed by your application (e.g. cuDNN). The `--nv` option
      only ensures that the basic CUDA libraries from the host are bound
@@ -326,20 +319,20 @@ further details on using Slurm.
 
 ## Tips & Tricks
 
--   Make sure that your container runs before uploading it - you will
+- Make sure that your container runs before uploading it - you will
     not be able to rebuild it from a new definition file directly on the
     HPC
--   Try to configure all software to run in user space without requiring
+- Try to configure all software to run in user space without requiring
     privilege escalation via "sudo" or other privileged capabilities
     such as reserved network ports - although Singularity supports some
     of these features inside a container on some systems, they may not
     always be available on the HPC or other platforms, therefore relying
     on features such as Linux user namespaces could limit the
     portability of your container
--   If your container runs an MPI application, make sure that the MPI
+- If your container runs an MPI application, make sure that the MPI
     distribution that is installed inside the container is compatible
     with Intel MPI
--   Write output data and log files to the HPC file system using a
+- Write output data and log files to the HPC file system using a
     directory that is bound into the container - this helps
     reproducibility of results by keeping the container image immutable,
     it makes sure that you have all logs available for debugging if a

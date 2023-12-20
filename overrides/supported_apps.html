@@ -1,0 +1,58 @@
+{% extends "base.html" -%}
+{% block head -%}
+{% endblock -%}
+{% block libs %}
+    {{ super() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ base_url }}/assets/javascripts/supportedApplications.js"></script>
+    <!-- Would be good if we could remove dependency on jq -->
+{% endblock -%}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/supportedApplications.css">
+{% endblock -%}
+
+{% block content -%}
+    {{ super() }}
+    <div class="article__body markdown" itemprop="articleBody">
+        <div class="md-search-aux">
+            <div class="md-search-aux__inner" role="search">
+                <form class="md-search-aux__form md-search__form">
+                    <input id="__search-aux" name="search" onkeyup="srchFunc(event)" type="text"
+                        class="md-search__input md-search-aux__input" aria-label="Search for Applications"
+                        placeholder="Search for Applications">
+                    <label class="md-search-aux__icon md-search__icon md-icon" for="__search-aux">
+                        {% set icon = config.theme.icon.search or "material/magnify" %}
+                        {% include ".icons/" ~ icon ~ ".svg" %}
+                    </label>
+                    <nav class="md-search__options" id="srchbar-badge-party">
+                        <span id="srchbar-badge-party-domains"></span>
+                        <span id="srchbar-badge-party-clusters"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="layoutrow">
+                <div class="article-div">
+                    <div id="mainList" class="label_data data-labelsection">
+                        {% if applications|length > 1 %}
+                        {% for app_name in applications %}
+                        {% set app = applications[app_name] %}
+                        {% include "partials/app/app_card.html" %}
+                        {% endfor %}
+                        {% else %}
+                        <p>Whoops, something has gone wrong loading the software list. Please contact support.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <p>If the application you are looking for is not here you can make <a
+                href="https://support.nesi.org.nz/hc/en-gb/articles/360000361675-Software-Installation-Request">software
+                installation</a> request or try <a
+                href="https://support.nesi.org.nz/hc/en-gb/sections/360000040056-HPC-Software-Environment"> compiling it
+                yourself.</a></p>
+        <em>You can help contribute to this list by tagging software <a
+                href="https://github.com/nesi/modlist/blob/master/tags_domains.json">here</a>.</em>
+    </div>
+{% endblock %}

@@ -14,16 +14,8 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Description
 
@@ -32,15 +24,15 @@ Oxford Nanopore reads.
 
 ### [](https://github.com/nanoporetech/dorado#features)Features
 
--   One executable with sensible defaults, automatic hardware detection
+- One executable with sensible defaults, automatic hardware detection
     and configuration.
--   Nvidia GPUs including multi-GPU with linear scaling.
--   Modified basecalling (Remora models).
--   Duplex basecalling.
--   [POD5](https://github.com/nanoporetech/pod5-file-format) support for
+- Nvidia GPUs including multi-GPU with linear scaling.
+- Modified basecalling (Remora models).
+- Duplex basecalling.
+- [POD5](https://github.com/nanoporetech/pod5-file-format) support for
     highest basecalling performance.
--   Based on libtorch, the C++ API for pytorch.
--   Multiple custom optimisations in CUDA and Metal for maximising
+- Based on libtorch, the C++ API for pytorch.
+- Multiple custom optimisations in CUDA and Metal for maximising
     inference performance.
 
 ## License and Disclaimer
@@ -56,10 +48,10 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
 
 ### Example Slurm script
 
--   The following Slurm script is a template to run Basecalling on the
+- The following Slurm script is a template to run Basecalling on the
     NVIDIA A100 GPUs. We do not recommend running Dorado jobs on CPUs.
--   `--device 'cuda:all'` will automatically pick up the GPU over CPU
--   We are not providing the models as part of the module yet. 
+- `--device 'cuda:all'` will automatically pick up the GPU over CPU
+- We are not providing the models as part of the module yet. 
 
 ``` sl
 #!/bin/bash -e

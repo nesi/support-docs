@@ -16,21 +16,8 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
-
- 
 
 ## BLAST Databases
 
@@ -41,7 +28,7 @@ one of these databases then you should find out what our most recent
 version is (`module avail BLASTDB`) and then load it in your batch
 script.
 
-``` sl
+``` sh
 module load BLASTDB
 ls $BLASTDB
 ```
@@ -69,7 +56,7 @@ databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
 or fast BLAST programs such as *blastn* with its default (megablast)
 settings.  
 
-``` bash
+``` sl
 #!/bin/bash -e
 
 #SBATCH --job-name      BLAST
@@ -103,9 +90,9 @@ This script copies the BLAST database into the per-job temporary
 directory $TMPDIR before starting the search. Since compute nodes do not
 have local disks, this database copy is in memory, and so must be
 allowed for in the memory requested by the job.  As of mid 2023 that is
-283 GB for the *nt* database, 157 GB for *refseq\_protein. *
+283 GB for the *nt* database, 157 GB for *refseq\_protein.*
 
-``` bash
+``` sl
 #!/bin/bash -e
 
 #SBATCH --job-name      BLAST
@@ -133,5 +120,3 @@ export BLASTDB=$TMPDIR
 $BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt "$FORMAT" \
     -out $QUERIES.$DB.$BLASTAPP -num_threads $SLURM_CPUS_PER_TASK
 ```
-
- 

@@ -14,16 +14,8 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Local Customisations
 
@@ -52,8 +44,6 @@ srun maker -q
 MAKER creates many files in its output, sometimes hundreds of thousands.
  There is a risk that you exhaust your quota of inodes, so:
 
--   Don't run too many MAKER jobs simultaneously.
--   Delete unneeded output files promptly after MAKER finishes.  You can
-    of course use `nn_archive_files` or `tar` to archive them first.
-
- 
+- Don't run too many MAKER jobs simultaneously.
+- Delete unneeded output files promptly after MAKER finishes.  You can
+    use `nn_archive_files` or `tar` to archive them first.

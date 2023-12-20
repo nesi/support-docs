@@ -16,8 +16,9 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
+
 FDS (Fire Dynamics Simulator) was developed by the National Institute of
 Standards and Technology (NIST) for large-eddy simulation (LES) of
 low-speed flows, with an emphasis on smoke and heat transport from

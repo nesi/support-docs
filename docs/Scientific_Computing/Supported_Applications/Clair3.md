@@ -3,7 +3,7 @@ created_at: '2022-08-10T21:31:45Z'
 hidden: false
 position: 3
 tags: []
-title: 'Clair3 '
+title: Clair3
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 5292628239375
@@ -14,16 +14,8 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Description
 
@@ -44,8 +36,6 @@ Clair3 is the 3<sup>rd</sup> generation of
 A short pre-print describing Clair3's algorithms and results is at
 [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.12.29.474431v1).
 
- 
-
 ## License and Disclaimer
 
 Copyright 2021 The University of Hong Kong, Department of Computer
@@ -55,28 +45,22 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
 
-1.  Re-distributions of source code must retain the above copyright
+1. Re-distributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
 
-2.  Re-distributions in binary form must reproduce the above copyright
+2. Re-distributions in binary form must reproduce the above copyright
     notice, this list of conditions and the following disclaimer in the
     documentation and/or other materials provided with the distribution.
 
-3.  Neither the name of the copyright holder nor the names of its
+3. Neither the name of the copyright holder nor the names of its
     contributors may be used to endorse or promote products derived from
     this software without specific prior written permission.
 
-``` sl
- 
-```
+## Example Slurm script
 
-### Example Slurm script
-
-**Caution**: Absolute path is needed for both `INPUT_DIR` and
-`OUTPUT_DIR`  
+!!! warning
+    Absolute path is needed for both `INPUT_DIR` and `OUTPUT_DIR`  
   
-  
-
 ``` sl
 #!/bin/bash -e
 
@@ -107,8 +91,3 @@ run_clair3.sh \
 --model_path=${CONDA_PREFIX}/bin/models/${MODEL_NAME} \
 --output=${OUTPUT_DIR} --enable_phasing
 ```
-
-  
-  
-  
-  

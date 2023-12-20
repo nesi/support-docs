@@ -14,21 +14,13 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 We have customised VirSorter slightly for the cluster environment:
 
--   The number of jobs must be specified
--   We default to `--skip-deps-install`and `--use-conda-off`
+- The number of jobs must be specified
+- We default to `--skip-deps-install`and `--use-conda-off`
 
 We don't provide the VirSorter databases, so you will have to run
 `virsorter setup` first
@@ -54,5 +46,3 @@ virsorter run \
     all \
     --config LOCAL_SCRATCH=${TMPDIR:-/tmp}
 ```
-
- 
