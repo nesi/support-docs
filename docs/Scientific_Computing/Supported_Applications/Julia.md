@@ -17,14 +17,6 @@ zendesk_section_id: 360000040076
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Julia is a flexible dynamic language, appropriate for scientific and
 numerical computing, with performance comparable to traditional
 statically-typed languages. The Julia home page is
@@ -64,27 +56,27 @@ installation. You can use the Pkg module within a Julia script, or on
 the Julia command line. In this documentation, we will assume you are
 using the command line, but the commands are the same within a script.
 
-1.  Load the environment module (not the same as a Julia module)
+1. Load the environment module (not the same as a Julia module)
     corresponding to the version of Julia you want to use, e.g. Julia
     1.1.0:
 
-    ``` sl
-    $ module load Julia/1.1.0
+    ``` sh
+    module load Julia/1.1.0
     ```
 
-2.  Launch the Julia executable:
+2. Launch the Julia executable:
 
-    ``` sl
+    ``` sh
     # Use Julia interactively
-    $ julia
+    julia
     # Alternatively, use a Julia script
-    $ julia script.jl
+    julia script.jl
     ```
 
-3.  If you have opened Julia interactively, you should now see a Julia
+3. If you have opened Julia interactively, you should now see a Julia
     welcome message and prompt, like the following.
 
-    ``` sl
+    ``` sh
                    _
        _       _ _(_)_     |  Documentation: https://docs.julialang.org
       (_)     | (_) (_)    |
@@ -97,51 +89,53 @@ using the command line, but the commands are the same within a script.
     julia>
     ```
 
-4.  Load the Julia package manager:
+4. Load the Julia package manager:
 
-    ``` sl
-    julia> using Pkg
+    ```julia
+    using Pkg
     ```
 
-5.  The most important variable for installing packages is called
+5. Most important variable for installing packages is called
     `DEPOT_PATH`. The depot path is a series of directories that will be
     searched, in order, for the package that you wish to install and its
     dependencies. Clear the depot path.
-!!! prerequisite Warning
-     It is possible for a package to be installed somewhere on
-     `DEPOT_PATH`, but not compiled. If this happens, and the package
-     is a dependency of what you're trying to install, Julia will try
-     to compile it in situ. This is a bad thing most of the time,
-     because you're unlikely to have write access to the install
-     location, so the compilation will fail. Hence why clearing the
-     depot path is important.
 
-    ``` sl
-    julia> empty!(DEPOT_PATH)
-    ```
+    !!! Warning
+        It is possible for a package to be installed somewhere on
+        `DEPOT_PATH`, but not compiled. If this happens, and the package
+        is a dependency of what you're trying to install, Julia will try
+        to compile it in situ. This is a bad thing most of the time,
+        because you're unlikely to have write access to the install
+        location, so the compilation will fail. Hence why clearing the
+        depot path is important.
 
-6.  Add your preferred Julia package directory to the newly empty depot
+        ``` julia
+        empty!(DEPOT_PATH)
+        ```
+
+6. Add your preferred Julia package directory to the newly empty depot
     path.
 
-    ``` sl
-    julia> push!(DEPOT_PATH, "/nesi/project/nesi12345/julia")
+    ```julia
+    push!(DEPOT_PATH, "/nesi/project/nesi12345/julia")
     ```
-!!! prerequisite Tip
-     While a conventional personal Julia package directory is
-     `/home/joe.bloggs/.julia` or similar, there is no reason for the
-     directory to be within any particular user's home directory, or
-     for it to be a hidden directory with a name starting with a dot.
-     For shared Julia package directories, a visible directory within a
-     project directory will probably be more useful to you and your
-     colleagues.
-     In any case, for obvious reasons, you should choose a directory to
-     which you have write access.
 
-7.  Install the desired Julia package. In this case, we are showing the
+    !!! Tip
+        While a conventional personal Julia package directory is
+        `/home/joe.bloggs/.julia` or similar, there is no reason for the
+        directory to be within any particular user's home directory, or
+        for it to be a hidden directory with a name starting with a dot.
+        For shared Julia package directories, a visible directory within a
+        project directory will probably be more useful to you and your
+        colleagues.
+        In any case, for obvious reasons, you should choose a directory to
+        which you have write access.
+
+7. Install the desired Julia package. In this case, we are showing the
     machine-learning package Flux as an example.
 
-    ``` sl
-    julia> Pkg.add("Flux")
+    ```julia
+    Pkg.add("Flux")
     ```
 
     Julia should chug away for a while, downloading and compiling
@@ -156,8 +150,8 @@ existing packages are searched for are stored in a different variable,
 
 On NeSI, the default contents of `LOAD_PATH` are as follows:
 
-``` sl
-julia> LOAD_PATH
+``` julia
+LOAD_PATH
 5-element Array{String,1}:
  "@"
  "@v#.#"
@@ -174,10 +168,11 @@ not present in `LOAD_PATH` by default.
 There are several ways to add a directory to `LOAD_PATH`, but almost
 certainly the easiest is to do the following in your environment:
 
-``` sl
+``` sh
 $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
 ```
-!!! prerequisite Tip
+
+!!! tip
      By prepending the directory to `JULIA_LOAD_PATH` instead of appending
      it, you ensure that your project's versions of Julia packages are used
      by default, in preference to whatever might be managed centrally. This
@@ -185,10 +180,11 @@ $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
      managed versions of Julia packages first and only use your project's
      package if there isn't a centrally managed instance, you can append it
      instead:
-     ``` sl
+
+     ``` sh
      $ export JULIA_LOAD_PATH=${JULIA_LOAD_PATH}:/nesi/project/nesi12345/julia"
      ```
-!!! prerequisite Tip
+!!! tip
      To revert to the default load path, just unset `JULIA_LOAD_PATH`:
      ``` sl
      $ unset JULIA_LOAD_PATH
@@ -208,29 +204,29 @@ or MPI.jl).
 
 In order to collect profiling data with VTune you should:
 
--   load a "-VTune" variant of Julia, for example:
+- load a "-VTune" variant of Julia, for example:
 
-    ``` sl
+    ``` sh
     module load Julia/1.2.0-gimkl-2018b-VTune
     ```
 
--   load a VTune module:
+- load a VTune module:
 
-    ``` sl
+    ``` sh
     module load VTune
     ```
 
--   enable Julia VTune profiling by setting an environment variable:
+- enable Julia VTune profiling by setting an environment variable:
 
-    ``` sl
+    ``` sh
     export ENABLE_JITPROFILING=1
     ```
 
--   prepend the usual command that you use to run your Julia program
+- prepend the usual command that you use to run your Julia program
     with the desired VTune command, for example to run a hotspots
     analysis:
 
-    ``` sl
+    ``` sh
     srun amplxe-cl -collect hotspots -- julia your_program.jl
     ```
 
@@ -238,7 +234,7 @@ VTune will create a result directory which contains the profiling
 information. This result can be loaded using the VTune GUI, assuming you
 have X11 forwarding enabled:
 
-``` sl
+``` sh
 amplxe-gui --path-to-open <vtune-result-directory>
 ```
 

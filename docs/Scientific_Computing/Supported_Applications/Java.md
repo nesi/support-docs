@@ -19,17 +19,6 @@ zendesk_section_id: 360000040076
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
-
 ## Description
 
 Java is a computer programming language that is concurrent, class-based,
@@ -55,7 +44,7 @@ found by following the directions in `${JAVA_HOME}/LICENSE`.
 
 ### Example script for Mahuika
 
-``` bash
+``` sl
 #!/bin/bash -e
 #SBATCH --job-name      MyMultithreadedJavaJob
 #SBATCH --time          1:00:00          # 1 hour walltime limit
@@ -77,7 +66,7 @@ The default version of Java that is packaged with the operating system
 may not be appropriate for your work.  To use a different version of
 Java us the \`module\` command to find and load for example:
 
-``` sl
+``` sh
 $ module spider Java
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
@@ -112,14 +101,12 @@ persuaded to use $TMPDIR rather than just the default of `/tmp `by being
 given the option `-Djava.io.tmpdir=$TMPDIR.`  TMPDIR is automatically
 removed at the end of the job.
 
--   If you run your Java program by using the `java` command, that is in
+- If you run your Java program by using the `java` command, that is in
     a form like
     `java <java_options> java.program <specific_program_options>`, you
     can specify the tmpdir as follows:
     `java -Djava.io.tmpdir=$TMPDIR <other_java_options> java.program <specific_program_options>`.
--   If your Java program is called indirectly, or is pre-wrapped, you
+- If your Java program is called indirectly, or is pre-wrapped, you
     will need to put the following line in your job submission script
     before calling the Java program:
     `export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}`.
-
- 

@@ -12,20 +12,11 @@ zendesk_article_id: 360000718515
 zendesk_section_id: 360000040076
 ---
 
-
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Description
 
@@ -38,17 +29,17 @@ distances.
 The Supernova software package includes two processing pipelines and one
 for post-processing:
 
--   **`supernova mkfastq`** wraps Illumina's bcl2fastq to correctly
+- `supernova mkfastq` wraps Illumina's bcl2fastq to correctly
     demultiplex Chromium-prepared sequencing samples and to convert
     barcode and read data to FASTQ files.
--   **`supernova run`** takes FASTQ files containing barcoded reads from
+- `supernova run` takes FASTQ files containing barcoded reads from
     `supernova mkfastq` and builds a graph-based assembly. The approach
     is to first build an assembly using read kmers (K = 48), then
     resolve this assembly using read pairs (to K = 200), then use
     barcodes to effectively resolve this assembly to K ≈ 100,000. The
     final step pulls apart homologous chromosomes into phase blocks,
     which are often several megabases in length.
--   **`supernova mkoutput`** takes Supernova's graph-based assemblies
+-   `supernova mkoutput` takes Supernova's graph-based assemblies
     and produces several styles of FASTA suitable for downstream
     processing and analysis.
 
@@ -92,13 +83,12 @@ We suggest users initially read the developers notes, at
 
 Further to that we also suggest,
 
--   check --maxreads, to be passed to supernova, is correctly set.
+- check --maxreads, to be passed to supernova, is correctly set.
     Recommended
-    reading..[https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/#  
-     ](https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/#)<http://qb.cshl.edu/genomescope/>
--   When passing `--localmem` to supernova, ensure this number is less
+    reading..[https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/](https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/#)<http://qb.cshl.edu/genomescope/>
+- When passing `--localmem` to supernova, ensure this number is less
     than the total memory passed to Slurm. 
--   Pass `${SLURM_CPUS_PER_TASK}` to supernova with the `--localcores`
+- Pass `${SLURM_CPUS_PER_TASK}` to supernova with the `--localcores`
     argument.
 
 ## Tracking job progress via browser
@@ -131,9 +121,9 @@ The link assumes the form..
 
 **http:// &lt;node&gt;: &lt;port&gt;?&lt;auth&gt;**
 
--   &lt;node&gt; Taken from above code snippet is wbh001
--   &lt;port&gt; Taken from above code snippet is 37982
--   &lt;auth&gt; Taken from above code snippet is
+- &lt;node&gt; Taken from above code snippet is wbh001
+- &lt;port&gt; Taken from above code snippet is 37982
+- &lt;auth&gt; Taken from above code snippet is
     Bx2ccMZmJxaIfRNBOZ\_XO\_mQd1njNGL3rZry\_eNI1yU 
 
 In a new local terminal window open an ssh tunnel to the node. This
@@ -141,8 +131,8 @@ takes the following general form
 
 **`ssh -L <d>:<node>:<port> -N <server>`**
 
--   &lt;d&gt; An integer
--   &lt;server&gt; see: [  
+- &lt;d&gt; An integer
+- &lt;server&gt; see: [  
     https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup)
 
 When details are added to the general form from the specifics in the
@@ -166,11 +156,9 @@ http://localhost:9999/?auth=Bx2ccMZmJxaIfRNBOZ_XO_mQd1njNGL3rZry_eNI1yU
 
 ![Screen\_Shot\_2019-01-28\_at\_2.17.29\_PM.png](../../assets/images/Supernova.png)
 
- 
-
 ## Things to watch out for
 
--   Supernova will create checkpoints after completing stages in the
+- Supernova will create checkpoints after completing stages in the
     pipeline. In order to run from a previously created checkpoint you
     will first need to delete the \_lock file located in the main output
     directory (the directory named by `ID=${SLURM_JOB_NAME}` where the

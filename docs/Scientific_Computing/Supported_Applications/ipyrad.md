@@ -17,14 +17,6 @@ zendesk_section_id: 360000040076
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Description
 
 **ipyrad**, an interactive assembly and analysis toolkit for
@@ -43,32 +35,32 @@ RADseq datasets." Bioinformatics (2020).
 
 GPLv3
 
-### Getting Started
+## Getting Started
 
 Following **example** uses  rad\_example which can be downloaded as per
 instructions on 
 <https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html> 
 
-``` sl
-$ curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz
-$ tar -xvzf ipsimdata.tar.gz
+``` sh
+curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz
+tar -xvzf ipsimdata.tar.gz
 ```
 
 Start by creating a new Assembly  `data1`  , and then we’ll edit the
 params file to tell it how to find the input data files for this data
 set.
 
-``` sl
-$ module purge
-$ module load ipyrad/0.9.85-gimkl-2022a-Python-3.10.5
-$ ipyrad -n data1
+``` sh
+module purge
+module load ipyrad/0.9.85-gimkl-2022a-Python-3.10.5
+ipyrad -n data1
 
 New file 'params-data1.txt' created in ........
 ```
 
 `params-data1.txt` will be created on current working directory. Review
 and edit the paths in parameter file to match the destinations of input
-data, barcode paths,etc. 
+data, barcode paths,etc.
 
 ### Slurm Script for Using Multiple CPUs a Single Compute Node
 

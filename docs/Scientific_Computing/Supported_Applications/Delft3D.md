@@ -17,6 +17,7 @@ zendesk_section_id: 360000040076
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
+
 ## Example scripts
 
 === "Serial"

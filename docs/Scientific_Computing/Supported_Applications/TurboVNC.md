@@ -1,6 +1,7 @@
 ---
 created_at: '2020-01-22T22:48:09Z'
 hidden: false
+status: deprecated
 position: 56
 tags: []
 title: TurboVNC
@@ -16,16 +17,6 @@ zendesk_section_id: 360000040076
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
- 
 
 ## Setup
 
@@ -86,7 +77,8 @@ Having done that, run the following commands:
 module load TurboVNC
 vncserver
 ```
-!!! prerequisite Warning
+
+!!! warning
      Do not use `-securitytypes none` as an argument to `vncserver`! If you
      do so, anyone who has a cluster login and knows how to find a VNC
      server in the list of processes can connect to your VNC server and
@@ -108,23 +100,23 @@ will be 5902; and so on.
 
 #### Within the NIWA network (or NIWA VPN)
 
-1.  Open the TurboVNC viewer:
+1. Open the TurboVNC viewer:
 
-    ``` sl
+    ``` sh
     vncviewer
     ```
 
-2.  Within the TurboVNC viewer, connect to the host and display number,
+2. Within the TurboVNC viewer, connect to the host and display number,
     e.g. to `mahuika01.mahuika.nesi.org.nz:1`. Alternatively, use the
     host and port number: `mahuika01.mahuika.nesi.org.nz::5901` (note
     the two colons between hostname and port number).
 
 #### Outside the NIWA network, and not on the NIWA VPN
 
-1.  Open an SSH tunnel through the lander node to the SSH port (22) on
+1. Open an SSH tunnel through the lander node to the SSH port (22) on
     the desired login node:
 
-    ``` sl
+    ``` sh
     # This command sets up local SSH port forwarding.
     # The command is of the form:
     # ssh -L <local_port>:<destination_host>:<destination_port> <gateway_host>
@@ -153,7 +145,7 @@ will be 5902; and so on.
     ssh -L 10022:mahuika01.mahuika.nesi.org.nz:22 -N lander
     ```
 
-2.  In a new terminal open an SSH tunnel from the already open tunnel to
+2. In a new terminal open an SSH tunnel from the already open tunnel to
     the desired TurboVNC port:
 
     ``` sl
@@ -198,24 +190,24 @@ will be 5902; and so on.
     this:  
     ![2020-02-10\_TurboVNC\_MobaXTerm\_ssh\_tunnel\_setup.png](../../assets/images/TurboVNC.png)  
 
-    -   The tunnel through the lander node must be started before the
+    - The tunnel through the lander node must be started before the
         tunnel through localhost can be started.
-    -   The destination server for the tunnel through the lander node
+    - The destination server for the tunnel through the lander node
         must be the NeSI login node where your TurboVNC server is
         running.
-    -   The destination port for the second tunnel must be the port
+    - The destination port for the second tunnel must be the port
         corresponding to your display number: `5901` for display
         1, `5902` for display 2, and so forth.
 
-3.  Open the VNC viewer:
-    -   From the Ubuntu command line:
+3. Open the VNC viewer:
+    - From the Ubuntu command line:
         `vncviewer localhost::<local_port>` (e.g.
         `vncviewer localhost::15901`)
-    -   On Windows: Select TurboVNC Viewer from the Start menu (or use
+    - On Windows: Select TurboVNC Viewer from the Start menu (or use
         an equivalent option), and enter `localhost::<local_port>` (e.g.
         `vncviewer localhost::15901`) at the dialog
 
-4.  If prompted for a password, click the button to enter an empty
+4. If prompted for a password, click the button to enter an empty
     password
 
 ### Putting your TurboVNC client in fullscreen mode
@@ -234,16 +226,16 @@ before you close the first tunnel.
 
 ### Stopping the server
 
-1.  Go to your tmux session on the server, or (alternatively) go to or
+1. Go to your tmux session on the server, or (alternatively) go to or
     open some other session on that server. If you use a different
     session, you will have to load the TurboVNC module if it's not
     already loaded.
 
-2.  Remind yourself of your TurboVNC display number.
+2. Remind yourself of your TurboVNC display number.
 
-3.  Run the following command:
+3. Run the following command:
 
-    ``` sl
+    ``` sh
     # Example: vncserver -kill :1
     vncserver -kill :<display_number>
     ```
