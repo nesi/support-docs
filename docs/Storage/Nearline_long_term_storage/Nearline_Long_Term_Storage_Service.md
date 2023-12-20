@@ -514,7 +514,7 @@ indeed wait times could be hours or even in some cases more than a day.
 
 ## Support contact
 
-Please {% include "partials/support_request.html" } about your user experience which may include
+Please {% include "partials/support_request.html" %} about your user experience which may include
 functionality issues, intuitive or counter-intuitive behaviours,
 behaviours or features that you like, suggestions for improvements,
 transfers taking too long, etc.
