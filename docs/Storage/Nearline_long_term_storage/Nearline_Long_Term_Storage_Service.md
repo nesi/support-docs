@@ -83,7 +83,7 @@ Status ("s" column of the `-s` output) legend:
 - resident (**r**) - data of a specific Nearline file is only on the
   staging filesystem.
 
-!!! bug "BUG WARNING"
+!!! bug
     The `-l` and `-s` flags may fail if the nearline directory has a large amount of files.
     You will receive a long Python stack trace if this occurs.
 
@@ -100,7 +100,7 @@ Optionally, you can run `nltraverse` with the `-s` command-line switch,
 which, as with `nlls`, will display the migration status of each file
 found.
 
-!!! bug "BUG WARNING"
+!!! bug
     The `-s`flag may fail if a nearline directory has a large amount of files.  
     You will receive a long Python stack trace if this occurs.
 
@@ -138,7 +138,8 @@ nlput [ --nowait ] <projectID> { <src_dir> | <file_list> }
 The source directory or file list needs to be located under
 `/nesi/`**`project`**`/` or `/nesi/`**`nobackup`**`/`and specified as
 such.
-!!! note Note
+
+!!! note
      The following will not work:
      ``` sh
      cd /nesi/project/nesi12345
@@ -185,7 +186,8 @@ list, the following additional permission restrictions apply:
 The existing directory structure starting after
 `/nesi/project/<projectID>/` or `/nesi/nobackup/<projectID>/` will be
 mapped onto `/nesi/nearline/<projectID>/`
-!!! warning "Warning"
+
+!!! warning
     Files and directories are checked for existence and only new files are
     transferred to Nearline. **Files already on Nearline will not be
     updated to reflect newer source files**. Thus, files that already
