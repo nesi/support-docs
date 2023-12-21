@@ -17,6 +17,7 @@ is currently in an Early Access phase, and we encourage researchers
 using the service to verify their data before deleting it from the
 project directory (persistent storage) or nobackup directory (temporary
 storage).
+
 !!! warning "Service Status"
     The verification options outlined below are intended to support the
     Early Access phase of Nearline development. Verification options may
@@ -39,7 +40,8 @@ of `nljobstatus`. If all the Nearline job IDs associated with movement
 of data to Nearline (i.e. `nlput` commands)
 report `job done successfully`, that gives you a basic level of
 confidence that the files were in fact copied over to nearline.
-!!! warning Warning
+
+!!! warning
     The above check is reliable only if *all* `nlput` commands were
     concerned solely with uploading new files to nearline. Because of the
     way `nlput` is designed, a command trying to update files that already
@@ -73,7 +75,8 @@ times, sizes and file paths. If there are any differences, the lists
 will be kept and you will be invited to compare the lists against each
 other, which you can do using a comparison program such as `diff` or
 `vimdiff`.
-!!! warning Warning
+
+!!! warning
      The above check is useful only if the corresponding files in
      `/nesi/project` and/or `/nesi/nobackup` have not been modified or
      deleted, nor any new files added, since they were copied to nearline.
@@ -90,7 +93,8 @@ comparing the checksums to the corresponding original files in
 `/nesi/project` or `/nesi/nobackup`. If the checksums come out
 identical, it is virtually certain that the files contain the same data,
 even if their modification dates and times are reported differently.
-!!! warning Warning
+
+!!! warning
     The above check is reliable only if the corresponding file in
     `/nesi/project` and/or `/nesi/nobackup` has not been modified since it
     was copied to nearline. For this reason, if you want to carry out this

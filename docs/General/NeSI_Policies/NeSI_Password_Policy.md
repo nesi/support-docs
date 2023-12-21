@@ -10,15 +10,6 @@ zendesk_article_id: 360000336015
 zendesk_section_id: 360000224835
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 The NeSI password policy is as follows:
 
 -   Your password must be at least 12 characters long
@@ -32,5 +23,3 @@ The NeSI password policy is as follows:
 -   When resetting a password ensure that it is not similar to the
     previous password(s) as that will cause the new password to be
     rejected.
-
- 

@@ -10,14 +10,4 @@ zendesk_article_id: 360002667676
 zendesk_section_id: 360000224835
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-See
-<https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication>
+See [Acknowledgement And Publication](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication).

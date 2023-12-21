@@ -60,7 +60,8 @@ You do not have to create one single archive file for all small files in
 `/nesi/project/<project_code>` or `/nesi/nobackup/<project_code>`, and
 in fact you may prefer to create archive files pertaining to particular
 subdirectories. There is no harm in either approach.
-!!! tip "Tip"
+
+!!! tip
     The archive creation process can take quite a long time. So that you
     can freely log out of the cluster, and to protect the process in case
     you're accidentally disconnected, you should create the archive by
