@@ -26,7 +26,6 @@ plugins:
       map_file: docs/redirect_map.yml
   - literate-nav
   - mkdocs-nav-weight
-
  # - git-authors
   - tags
   - git-revision-date-localized:
@@ -63,11 +62,12 @@ theme:
   favicon: assets/icons/favicon.ico
   features:
     - navigation.indexes
+    # - navigation.sections
     - navigation.top
     - navigation.prune
     - content.code.copy
-    - content.action.edit
-    - navigation.path
+    - content.action.edit 
+    - navigation.path # Insiders only
 
   language: en
   logo: assets/icons/logo.svg

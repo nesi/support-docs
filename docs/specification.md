@@ -13,6 +13,15 @@ However, if the folder contains an `index.md` file, it will be rendered instead.
 An articles location is determined by its location in the `docs` directory.
 Article file can be nested up to two folders deep, and use the title name, in snake_case.
 
+### Article Order
+
+By default articles will be ordered alphabetically.
+Article order can be m set using the `weight` property in the articles front matter, or by using the `nav` property of `mkdocs.yml`.
+Lower weight values will be first in the nav.
+
+As `weight` was inherited from Zendesk, all articles have a weight value post migration.
+If ordering is not required remove the `weight` property from the front matter to allow default alphabetical ordering.
+
 ### Title
 
 Headers should have a blank line before and after.
@@ -59,12 +68,15 @@ Try to avoid only-child headers (e.g shares a parent with at least one other hea
 
 ## Meta
 
-Article metadata is yaml format at the top of the page between two `---`
+Article metadata (or 'front-matter') is yaml format at the top of the page between two `---`.
+Content is not rendered.
 
 ### Mkdocs Parameters
 
 - `template` : which [template](#templates) to use.
 - `title`    : [title](#title).
+- `weight`   : Used to set page order. Lower comes first. Migrated from Zendesk `position`.
+               See [page order](#page-order)
 
 ### Material Parameters
 
@@ -86,7 +98,6 @@ Not used for anything currently. Info imported from Zendesk Page.
 - `created_at`:
 - `hidden`:
 - `label_names`: []
-- `position`:
 - `vote_count`:
 - `vote_sum`:
 - `zendesk_article_id`:
