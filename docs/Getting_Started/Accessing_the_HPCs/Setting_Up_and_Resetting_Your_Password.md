@@ -62,6 +62,6 @@ zendesk_section_id: 360000034315
 5. Followed by an email confirmation similar to below  
 ![password\_set\_confirmation.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png)
 
-!!! tip "What next?"
+!!! prerequisite "What next?"
     -  Set up [Second Factor
        Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
