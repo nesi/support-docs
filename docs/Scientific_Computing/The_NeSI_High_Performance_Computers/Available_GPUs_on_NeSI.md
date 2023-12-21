@@ -1,8 +1,9 @@
 ---
 created_at: '2022-06-13T04:54:38Z'
 hidden: false
-position: 6
-tags: []
+weight: 6
+tags: |
+    gpu
 title: Available GPUs on NeSI
 vote_count: 3
 vote_sum: 3

@@ -1,7 +1,7 @@
 ---
 created_at: '2018-04-23T00:52:59Z'
 hidden: false
-position: 19
+weight: 19
 tags:
 - info
 - software

@@ -1,7 +1,7 @@
 ---
 created_at: '2021-05-25T02:15:36Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: What software environments on NeSI are optimised for Machine Learning and data
   science?

@@ -1,7 +1,7 @@
 ---
 created_at: '2022-07-26T21:43:02Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Introduction to computing on the NeSI HPC
 vote_count: 0

@@ -1,7 +1,7 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
 hidden: false
-position: 2
+weight: 2
 tags: []
 title: Two Factor Authentication FAQ
 vote_count: 0
@@ -11,17 +11,9 @@ zendesk_section_id: 360000039036
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## What is a Second Factor?
 
-**Answer:** Two Factor Authentication is a method of confirming a user's
+Two Factor Authentication is a method of confirming a user's
 identity by requiring the user to present two pieces of evidence
 ("factors") to an authentication mechanism. In our system, the first
 factor is a password (something the user knows), while the second factor
@@ -30,7 +22,7 @@ the user possesses).
 
 ## What do I need in order to obtain a second factor token?
 
-**Answer:** In order to obtain a second factor token, you will need a
+In order to obtain a second factor token, you will need a
 mobile device. On that mobile device, you will then need to install
 Google Authenticator (or another QR code reader application that
 implements the Time-based One Time Password algorithm) on your mobile
@@ -39,28 +31,31 @@ Authentication](https://support.nesi.org.nz/hc/articles/360000203075).
 
 ## Can I use an SSH key pair as an alternative second factor?
 
-**Answer:** We do not support SSH keys as a second factor and we have no
+We do not support SSH keys as a second factor and we have no
 plans to implement SSH key-based authentication. Only time-based codes
 are currently valid.
 
-## I have a new mobile device. How do I transfer my old second factor onto my new device?* *
+## How do I transfer my old second factor onto my new device?
 
-**Authy:** It should get synchronised automatically.
+### Authy
 
-**Google Authenticator:** Open Authenticator on both devices. On the
+It should get synchronised automatically.
+
+### Google Authenticator
+
+Open Authenticator on both devices. On the
 original device tap the three-dot menu icon followed by **Transfer
 accounts**, then **Export accounts**, select the accounts you want to
 keep and then press **Next**. If these options are not present then
 first update your Authenticator. On the new device press **Import
-existing accounts** then scan the QR code provided on the old device. 
+existing accounts** then scan the QR code provided on the old device.
 
-## How do I get a new Second Factor? 
+## How do I get a new Second Factor?
 
-**Answer:** See article
-[here](../../General/FAQs/How_to_replace_my_2FA_token.md).
+See article [here](../../General/FAQs/How_to_replace_my_2FA_token.md).
 
 ## Can I use the same Second Factor again?
 
-**Answer:** No. You can only use each Second Factor code once and must
+No. You can only use each Second Factor code once and must
 then wait for a new Second Factor to cycle. Attempting to use the same
 Second Factor will cause your Authentication to fail.

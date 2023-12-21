@@ -1,7 +1,7 @@
 ---
 created_at: '2019-01-10T02:22:09Z'
 hidden: false
-position: 1
+weight: 1
 tags: []
 title: 'Slurm: Reference Sheet'
 vote_count: 10

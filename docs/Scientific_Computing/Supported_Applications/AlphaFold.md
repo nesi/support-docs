@@ -1,7 +1,7 @@
 ---
 created_at: '2021-08-17T03:13:55Z'
 hidden: false
-position: 6
+weight: 6
 tags: []
 title: AlphaFold
 vote_count: 2
@@ -11,13 +11,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 !!! prerequisite Tips
      An extended version of AlphaFold2 on NeSI Mahuika cluster which
@@ -40,7 +38,7 @@ the [Supplementary
 Information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) for
 a detailed description of the method.
 
-Home page is at <https://github.com/deepmind/alphafold> 
+Home page is at <https://github.com/deepmind/alphafold>
 
 ## License and Disclaimer
 
@@ -75,7 +73,7 @@ have prepared modules for each version of the database. Running
 `module spider AlphaFold2DB` will list the available versions based on
 when they were downloaded (Year-Month)
 
-``` sl
+``` sh
 $ module spider AlphaFold2DB
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,12 +87,10 @@ AlphaFold2 databases
          AlphaFold2DB/2023-04
 ```
 
-
-
 Loading a module will set the `$AF2DB` variable which is pointing to
 the  selected version of the database. For an example. 
 
-``` sl
+``` sh
 $ module load AlphaFold2DB/2023-04
 
 $ echo $AF2DB 
@@ -149,7 +145,7 @@ run_alphafold.py --use_gpu_relax \
 
 Input *fasta* used in following example
 
-``` sl
+``` sh
     T1083
 GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRYKEAAEENRALAKLHHELAIVED
     T1084
@@ -195,7 +191,7 @@ run_alphafold.py \
 ## AlphaFold Singularity container (prior to v2.3.2)
 
 If you would like to use a version prior to 2.3.2, It can be done via
-the Singularity containers. 
+the Singularity containers.
 
 We prepared a Singularity container image based on the [official
 Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
@@ -243,8 +239,6 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
 ```
 
- 
-
 #### Multimer
 
 ``` sl
@@ -286,42 +280,36 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 --fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
 ```
 
-
-
 #### Explanation of Slurm variables and Singularity flags
 
-1.  Values for `--mem` , `--cpus-per-task` and `--time` Slurm variables
+1. Values for `--mem` , `--cpus-per-task` and `--time` Slurm variables
     are for *3RGK.fasta*. Adjust them accordingly
-2.  We have tested this on both P100 and A100 GPUs where the runtimes
+2. We have tested this on both P100 and A100 GPUs where the runtimes
     were identical. Therefore, the above example was set to former
     via `P100:1`
-3.  The `--nv` flag enables GPU support.
-4.  `--pwd /app/alphafold` is to workaround this [existing
+3. The `--nv` flag enables GPU support.
+4. `--pwd /app/alphafold` is to workaround this [existing
     issue](https://github.com/deepmind/alphafold/issues/32)
-
-
 
 ### AlphaFold2 : Initial Release ( this version does not support `multimer`)
 
 Input *fasta* used in following example and subsequent benchmarking is
 3RGK (<https://www.rcsb.org/structure/3rgk>).
 
-
-
 ## Troubleshooting
 
--   If you are to encounter the message "*RuntimeError: Resource
+- If you are to encounter the message "*RuntimeError: Resource
     exhausted: Out of memory*" , add the following variables to the
     slurm script
 
-For module based runs 
+For module based runs
 
-``` sl
+``` sh
 export TF_FORCE_UNIFIED_MEMORY=1
 export XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
 ```
 
-For Singularity based runs 
+For Singularity based runs
 
 ``` sl
 export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1 

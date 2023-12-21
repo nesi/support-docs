@@ -1,8 +1,9 @@
 ---
 created_at: '2019-06-12T03:00:10Z'
 hidden: false
-position: 43
-tags: []
+weight: 43
+tags:
+- visualisation
 title: ParaView
 vote_count: 0
 vote_sum: 0
@@ -11,9 +12,12 @@ zendesk_section_id: 360000040076
 ---
 
 
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! warning
     This page has been automatically migrated and may contain formatting errors.
 [//]: <> (^^^^^^^^^^^^^^^^^^^^)
@@ -62,9 +66,7 @@ setup:
 
 <!-- -->
 
--   To start the ParaView server run;  
-
-    ``` sl
+    ```sh
     pvserver
     ```
 
@@ -76,9 +78,7 @@ setup:
     Accepting connection(s): mahuika02:11111
     ```
 
-<!-- -->
-
--   Create an SSH tunnel for port "11111" from your local machine to the
+- Create an SSH tunnel for port "11111" from your local machine to the
     cluster. e.g.
 
     ``` sl
@@ -90,13 +90,13 @@ setup:
 
 -   Launch the ParaView GUI on your local machine and go to "File &gt;
     Connect" or click
-    the ![mceclip0.png](../../assets/images/ParaView.png) button.
+    the ![paraview.png](../../assets/images/ParaView.png) button.
 
 -   Click on "Add Server", choose server type "Client / Server", host
     "localhost" (as we will be using the SSH tunnel), and port "11111",
     then click on "Configure" .
 
--   ![mceclip1.png](../../assets/images/ParaView_0.png)
+- ![paraview.png](../../assets/images/ParaView_0.png)
 
 -   Select the new server and click on "Connect"
 

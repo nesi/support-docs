@@ -1,7 +1,7 @@
 ---
 created_at: '2019-09-15T23:36:59Z'
 hidden: false
-position: 1
+weight: 1
 tags: []
 title: Automatic cleaning of nobackup file system
 vote_count: 4

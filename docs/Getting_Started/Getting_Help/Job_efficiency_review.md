@@ -1,7 +1,7 @@
 ---
 created_at: '2020-12-17T20:12:46Z'
 hidden: false
-position: 2
+weight: 2
 tags: []
 title: Job efficiency review
 vote_count: 0

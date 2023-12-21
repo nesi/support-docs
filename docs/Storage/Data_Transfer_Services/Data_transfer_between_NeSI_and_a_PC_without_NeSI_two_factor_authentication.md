@@ -1,7 +1,7 @@
 ---
 created_at: '2023-01-12T02:42:17Z'
 hidden: false
-position: 9
+weight: 9
 tags: []
 title: Data transfer between NeSI and a PC without NeSI two-factor authentication
 vote_count: 0

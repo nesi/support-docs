@@ -1,7 +1,7 @@
 ---
 created_at: '2019-09-22T21:07:48Z'
 hidden: false
-position: 7
+weight: 7
 tags: []
 title: Multithreading Scaling Example
 vote_count: 0

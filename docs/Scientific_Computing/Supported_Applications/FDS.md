@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-14T23:33:05Z'
 hidden: false
-position: 28
+weight: 28
 tags:
 - mahuika
 - engineering
@@ -13,13 +13,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 FDS (Fire Dynamics Simulator) was developed by the National Institute of
 Standards and Technology (NIST) for large-eddy simulation (LES) of

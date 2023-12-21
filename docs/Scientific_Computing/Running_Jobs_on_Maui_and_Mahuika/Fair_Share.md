@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-05T03:58:21Z'
 hidden: false
-position: 7
+weight: 7
 tags: []
 title: Fair Share
 vote_count: 3

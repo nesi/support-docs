@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-05T21:24:29Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - access
 - account
@@ -12,15 +12,6 @@ vote_sum: 0
 zendesk_article_id: 360000550416
 zendesk_section_id: 360000039036
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 If you don’t see the ‘Set Password’ button, it means your information on
 our database is not ready yet, your user account has not yet been

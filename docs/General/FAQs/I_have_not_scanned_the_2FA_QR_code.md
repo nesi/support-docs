@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-05T22:01:15Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - 2fa
 - access
@@ -14,29 +14,16 @@ zendesk_article_id: 360000552035
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 The QR code shown during the device registration cannot be regenerated
 or displayed again.  
 If you do not capture the QR code, or lose the device storing the code
-(also called a token), you will be unable to access your account. 
+(also called a token), you will be unable to access your account.
 
 To have your existing token deleted so another can be generated for your
 account, log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select
 the option 'Manage Two-Factor token' under 'Account'.
 
- 
-
 ## Related content
 
 [How to replace my 2FA
 token](../../General/FAQs/How_to_replace_my_2FA_token.md)
-
- 

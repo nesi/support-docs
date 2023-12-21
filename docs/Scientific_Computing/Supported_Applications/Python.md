@@ -1,7 +1,7 @@
 ---
 created_at: '2015-08-18T05:16:01Z'
 hidden: false
-position: 44
+weight: 44
 tags:
 - mahuika
 - app
@@ -13,16 +13,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released
@@ -163,7 +158,13 @@ tutorial
 series](https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&index=1)
 helpful
 
-#### Job Arrays
+=== "Job Arrays"
+    Job arrays can be handled using the Slurm environment variable
+    `SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
+    from within the script or using a command line argument. In the
+    following both options are presented:
+
+    The job scripts calling both examples:
 
 Job arrays can be handled using the Slurm environment variable
 `SLURM_ARRAY_TASK_ID` as array index. This index can be called directly
@@ -213,29 +214,44 @@ Module for handling input arguments
 
 import argparse
 
-# get tests from file
-class LoadFromFile(argparse.Action):
+    import os
+    my_id = os.environ['SLURM_ARRAY_TASK_ID']
+    print("hello world with ID {}".format(my_id))
+    ```
+    
+    the version getting the env variable as argument in the python script `hello_world_args.py`
+    
+    ```py
+    #!/usr/bin/env python3
     """
-    class for reading arguments from file
+    Module for handling inpu arguments
     """
-    def __call__(self, parser, namespace, values, option_string=None):
-        with values as F:
-            vals = F.read().split()
-        setattr(namespace, self.dest, vals)
+    
+    import argparse
+    
+    # get tests from file
+    class LoadFromFile(argparse.Action):
+        """
+        class for reading arguments from file
+        """
+        def __call__(self, parser, namespace, values, option_string=None):
+            with values as F:
+                vals = F.read().split()
+            setattr(namespace, self.dest, vals)
 
-def get_args():
-    """
-    Definition of the input arguments
-    """
-    parser = argparse.ArgumentParser(description='Hello World')
-    parser.add_argument('-ID', type=int, action='store', dest='my_id',
-                        help='Slurm ID')
-    return parser.parse_args()
+    def get_args():
+        """
+        Definition of the input arguments
+        """
+        parser = argparse.ArgumentParser(description='Hello World')
+        parser.add_argument('-ID', type=int, action='store', dest='my_id',
+                            help='Slurm ID')
+        return parser.parse_args()
 
 
-ARGS = get_args()
-print("hello world from ID {}".format(ARGS.my_id))
-```
+        ARGS = get_args()
+        print("hello world from ID {}".format(ARGS.my_id))
+    ```
 
 ## Python Packages
 
@@ -281,7 +297,7 @@ environment is a different directory.
 
 To create a Python virtual environment, use the `venv` module as follows
 
-``` sl
+``` sh
 module load Python/3.10.5-gimkl-2022a
 python3 -m venv /nesi/project/PROJECT_ID/my_venv
 ```
@@ -291,14 +307,14 @@ where `PROJECT_ID` is your NeSI project ID.
 Note that you need to *activate* the virtual environment before using it
 (to run a script or install packages)
 
-``` sl
+``` sh
 source /nesi/project/PROJECT_ID/my_venv/bin/activate
 ```
 
 Then you can install any pip-installable package in the virtual
 environment using
 
-``` sl
+``` sh
 pip install prodXY
 ```
 
@@ -327,7 +343,7 @@ environment module.
 To avoid this, use the option `--system-site-packages` when creating the
 virtual environment
 
-``` sl
+``` sh
 module load Python/3.10.5-gimkl-2022a
 python3 -m venv --system-site-packages /nesi/project/PROJECT_ID/my_venv
 ```
@@ -374,7 +390,7 @@ has a full stop somewhere in it), that module (or the function you want
 from it) must first be imported, using either an "import X" statement or
 a "from X import Y" statement.
 
-``` sl
+``` sh
 import os
 os.<TAB>   # List all functions in the os module
 os.O_<TAB> # List functions starting with "O_" from the os module
@@ -383,13 +399,13 @@ len<TAB>   # List functions starting with "len"
 
 Here,
 
-``` sl
+``` sh
 o<TAB>
 ```
 
 or even
 
-``` sl
+``` sh
 os<TAB>
 ```
 
@@ -401,7 +417,7 @@ have to put the full stop after the "os" if you want to do that.
 In iPython, you can query any object by typing the object name followed
 by a question mark (?), then hitting Enter. For instance:
 
-``` sl
+``` sh
 In [1]: x = 5
 In [2]: x?
 Type:        int

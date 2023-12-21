@@ -1,7 +1,7 @@
 ---
 created_at: '2015-10-12T00:28:38Z'
 hidden: false
-position: 21
+weight: 21
 tags:
 - mahuika
 - engineering
@@ -15,23 +15,41 @@ zendesk_article_id: 212457807
 zendesk_section_id: 360000040076
 ---
 
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
 
+{{ app.description }}
 
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+{% include "partials/app/app_homepage.html" -%}
+{% include "partials/app/app_warnings.html" -%}
 
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
+!!! tip
+    For a list of ABAQUS commands type:
 
-A list of commands can be found with:
+    ```sh
+    abaqus help
+    ```
 
-``` sl
-abaqus help
-```
+## Available Modules
+
+{% include "partials/app/app_version.html" -%}
+
+## Licences
+
+The following network licence servers can be accessed from the NeSI cluster.
+
+{% include "partials/app/app_network_licence.html" -%}
+
+If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
+
+You can force ABAQUS to use a specific licence type by setting the
+parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
+[environment file](#environment-file).
+
+!!! tip
+     Required ABAQUS licences can be determined by this simple and
+     intuitive formula <code>⌊ 5 x N<sup>0.422</sup> ⌋</code> where `N` is number
+     of CPUs.
 
 [Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
 can provide significant speedup to your computations, however

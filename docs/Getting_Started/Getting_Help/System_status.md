@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-07T20:31:36Z'
 hidden: false
-position: 3
+weight: 3
 tags:
 - help
 title: System status

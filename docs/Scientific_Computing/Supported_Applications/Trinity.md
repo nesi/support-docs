@@ -1,7 +1,7 @@
 ---
 created_at: '2019-06-03T23:23:13Z'
 hidden: false
-position: 55
+weight: 55
 tags: []
 title: Trinity
 vote_count: 1
@@ -11,13 +11,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 Trinity, developed at the [Broad
 Institute](http://www.broadinstitute.org/) and the [Hebrew University of
@@ -64,9 +62,9 @@ otherwise it is likely to fail or take a very long time to complete.
 
 Trinity Phase 1 can be broken into three main components:
 
--   Initial in silico normalisation step and kmer counting
--   Inchworm
--   Chrysalis
+- Initial in silico normalisation step and kmer counting
+- Inchworm
+- Chrysalis
 
 So far we have found no reason to run each component individually since
 they have been observed to require similar resources. This phase
@@ -81,8 +79,6 @@ The following Slurm script is a template for running Trinity Phase 1
     just place holders. 
 -   Use a subset of your sample, run a test first to find the
     suitable/required amount of CPUs and memory for your dataset
-
- 
 
 ``` sl
 #!/bin/bash -e
@@ -154,7 +150,7 @@ Trinity documentation suggested each command will need a maximum of 1 GB
 memory, however we observed some commands spiking above 4 GB. This could
 vary depending on your inputs.
 
-``` sl
+``` sh
 [GRID]
 # grid type:
 gridtype=SLURM

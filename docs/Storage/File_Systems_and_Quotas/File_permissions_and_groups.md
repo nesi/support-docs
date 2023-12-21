@@ -1,7 +1,7 @@
 ---
 created_at: '2018-05-21T05:14:00Z'
 hidden: false
-position: 2
+weight: 2
 tags: []
 title: File permissions and groups
 vote_count: 1

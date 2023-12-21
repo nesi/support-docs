@@ -1,7 +1,7 @@
 ---
 created_at: '2023-02-21T21:21:50Z'
 hidden: false
-position: 1
+weight: 1
 tags: []
 title: GATK
 vote_count: 0
@@ -11,13 +11,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 The Genome Analysis Toolkit (GATK), developed at the [Broad
 Institute](http://www.broadinstitute.org/), provides a wide variety of

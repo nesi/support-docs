@@ -1,7 +1,7 @@
 ---
 created_at: '2023-07-13T01:04:38Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: snpEff
 vote_count: 0
@@ -11,19 +11,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
--   [Description](#h_01HA8MKM9Z3D2QHTDCW5R6V2S5)
--   [Configuration File](#h_01HA8M29QKYGBY6EA8Q6C5YS57)
--   [Example Script](#h_01HA8M29QKGQ7JFP2E0YV2Q849)
-
-## Description
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 snpEff is a genetic variant annotation, and functional effect prediction
 tool.
@@ -41,7 +33,7 @@ required for snpEff.
 2.  Make a copy of the snpEff config file, replacing
     &lt;project\_id&gt;, with your project ID.
 
-    ``` sl
+    ``` sh
     cp $EBROOTSNPEFF/snpEff.config /nesi/project/<project_id>/my_snpEff.config
     ```
 
@@ -55,7 +47,7 @@ required for snpEff.
 4.  Run `snpEff.jar` using the `-c` flag to point to your new config
     file, e.g., `-c path/to/snpEff/my_snpEff.config` For example:
 
-    ``` sl
+    ``` sh
     java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/<project_id>/my_snpEff.config
     ```
 

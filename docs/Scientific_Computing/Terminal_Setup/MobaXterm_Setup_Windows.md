@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-30T00:32:25Z'
 hidden: false
-position: 2
+weight: 2
 tags: []
 title: MobaXterm Setup (Windows)
 vote_count: 5

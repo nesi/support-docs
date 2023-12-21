@@ -1,7 +1,7 @@
 ---
 created_at: '2018-04-18T23:56:10Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - onboarding
 - howto

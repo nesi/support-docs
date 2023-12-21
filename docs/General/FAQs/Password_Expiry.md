@@ -1,7 +1,7 @@
 ---
 created_at: '2021-05-25T02:32:08Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Password Expiry
 vote_count: 0
@@ -10,19 +10,10 @@ zendesk_article_id: 360004559095
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 NeSI passwords expire after two years.  The prompt you will see when
 that happens is
 
-``` sl
+```sl
 Password expired. Change your password now.
 First Factor (Current Password): 
 Second Factor (optional): 

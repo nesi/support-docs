@@ -1,9 +1,0 @@
-{% extends "base.html" -%}
-{% block head -%}
-{% endblock -%}
-{% block content -%}
-    {{ super() }}
-    {% include "partials/supportedApplicationsList.html" %}
-<p>If the application you are looking for is not here you can make <a href="https://support.nesi.org.nz/hc/en-gb/articles/360000361675-Software-Installation-Request">software installation</a> request or try <a href="https://support.nesi.org.nz/hc/en-gb/sections/360000040056-HPC-Software-Environment"> compiling it yourself.</a></p>
-<em>You can help contribute to this list by tagging software <a href="https://github.com/nesi/modlist/blob/master/tags_domains.json">here</a>.</em>
-{% endblock %}

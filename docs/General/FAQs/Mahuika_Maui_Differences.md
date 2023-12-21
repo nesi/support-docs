@@ -1,7 +1,7 @@
 ---
 created_at: '2019-11-11T21:40:21Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: "Mahuika - M\u0101ui Differences"
 vote_count: 1
@@ -10,15 +10,6 @@ zendesk_article_id: 360001244876
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Aside from differences in software stack there are a few other
 differences between the platforms to be aware of.
 
@@ -26,18 +17,18 @@ differences between the platforms to be aware of.
 
 Both Mahuika and Māui require logging in to the Lander node first.
 
-``` sl
+```sh
 ssh user123@lander.nesi.org.nz
 ```
 
 As you log in to the Lander node, you can expect to receive the
 following prompts:
 
-``` sl
+```sh
 Login Password (First Factor):
 ```
 
-``` sl
+```sh
 Authenticator Code (Second Factor):
 ```
 
@@ -51,13 +42,13 @@ incorrectly, you will be prompted again for both.
 Mahuika follows the same procedure as the lander node, except that it
 doesn't ask for a second factor.
 
-``` sl
+```sh
 ssh login.mahuika.nesi.org.nz
 ```
 
 You will be prompted:
 
-``` sl
+```sh
 Login Password:
 ```
 
@@ -67,13 +58,13 @@ At this prompt, enter only your password (a.k.a. first factor).
 
 Māui differs slightly in how you are authenticated the first time.
 
-``` sl
+```sh
 ssh login.maui.nesi.org.nz
 ```
 
 You will be prompted.
 
-``` sl
+```sh
 Password:
 ```
 
@@ -111,7 +102,7 @@ in units of nodes, so the smallest possible job takes a whole node, and
 there can never be more than one job on a node at a time.
 
 Additionally, projects with valid allocations on Māui will also have
-access to [Māui's ancilliary
+access to [Māui's ancillary
 nodes,](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md)
 where jobs requiring up to 768 GB of memory or jobs that require GPUs
 can be run. When submitting a job to the Māui ancillary nodes you may

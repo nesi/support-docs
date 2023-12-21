@@ -1,7 +1,7 @@
 ---
 created_at: '2020-06-25T01:10:40Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - corefile
 - coredump
@@ -11,15 +11,6 @@ vote_sum: 0
 zendesk_article_id: 360001584875
 zendesk_section_id: 360000039036
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 .core files are created when a program fails in a way that can't be
 handled by the program's regular error handling. Normally these failures

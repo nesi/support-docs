@@ -1,7 +1,7 @@
 ---
 created_at: '2019-06-14T05:35:45Z'
 hidden: false
-position: 54
+weight: 54
 tags: []
 title: TensorFlow on CPUs
 vote_count: 2
@@ -13,7 +13,7 @@ zendesk_section_id: 360000040076
 
 {% set app_name = "TensorFlow" %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 
 TensorFlow is a popular software library for machine learning
 applications, see our

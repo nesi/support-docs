@@ -1,7 +1,7 @@
 ---
 created_at: '2022-04-04T03:32:24Z'
 hidden: false
-position: 2
+weight: 2
 tags: []
 title: MATLAB via Jupyter on NeSI
 vote_count: 0

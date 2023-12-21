@@ -1,7 +1,7 @@
 ---
 created_at: '2017-12-11T07:58:07Z'
 hidden: false
-position: 46
+weight: 46
 tags:
 - mahuika
 - biology
@@ -13,24 +13,17 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 ## Description
 
 RAxML search algorithm for maximum likelihood based inference of
 phylogenetic trees. The RAxML home page is at
 <https://github.com/stamatak/standard-RAxML>.
-
- 
 
 ## Licensing requirements
 
@@ -67,23 +60,23 @@ manual](https://github.com/stamatak/standard-RAxML/tree/master/manual).
 Each of our RAxML environment modules contains multiple RAxML
 executables:
 
--   `raxmlHPC-AVX`
--   `raxmlHPC-SSE3`
--   `raxmlHPC-PTHREADS-AVX`
--   `raxmlHPC-PTHREADS-SSE3`
--   `raxmlHPC-MPI-AVX`
--   `raxmlHPC-MPI-SSE3`
--   `raxmlHPC-HYBRID-AVX`
--   `raxmlHPC-HYBRID-SSE3`
+- `raxmlHPC-AVX`
+- `raxmlHPC-SSE3`
+- `raxmlHPC-PTHREADS-AVX`
+- `raxmlHPC-PTHREADS-SSE3`
+- `raxmlHPC-MPI-AVX`
+- `raxmlHPC-MPI-SSE3`
+- `raxmlHPC-HYBRID-AVX`
+- `raxmlHPC-HYBRID-SSE3`
 
 The combinations of Slurm settings and RAxML types which make sense are:
 
--   `raxmlHPC-AVX` or `raxmlHPC-SSE3` with one task on only one CPU.
--   `raxmlHPC-PTHREADS-AVX` or `raxmlHPC-PTHREADS-SSE3` with one task
+- `raxmlHPC-AVX` or `raxmlHPC-SSE3` with one task on only one CPU.
+- `raxmlHPC-PTHREADS-AVX` or `raxmlHPC-PTHREADS-SSE3` with one task
     running on multiple CPUs.
--   `raxmlHPC-MPI-AVX` or `raxmlHPC-MPI-SSE3` with multiple tasks, each
+- `raxmlHPC-MPI-AVX` or `raxmlHPC-MPI-SSE3` with multiple tasks, each
     running on one CPU.
--   `raxmlHPC-HYBRID-AVX` or `raxmlHPC-HYBRID-SSE3` with multiple tasks,
+- `raxmlHPC-HYBRID-AVX` or `raxmlHPC-HYBRID-SSE3` with multiple tasks,
     each of which runs on multiple CPUs.
 
 MPI and HYBRID are only useful for bootstrapped trees.

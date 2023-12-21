@@ -1,7 +1,7 @@
 ---
 created_at: '2016-03-14T01:52:06Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Converting from Windows-style to UNIX-style line endings
 vote_count: 44
@@ -9,18 +9,6 @@ vote_sum: 10
 zendesk_article_id: 218032857
 zendesk_section_id: 360000039036
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
 
 In a plain text file, to tell the computer that a line of text doesn't
 continue forever, the end of each line is marked by a sequence of one or
@@ -31,9 +19,9 @@ line endings are the carriage return (CR) and line feed (LF) characters.
 Unfortunately, the programmers of different operating systems have
 represented line endings using different sequences:
 
--   All versions of Microsoft Windows represent line endings as CR
+- All versions of Microsoft Windows represent line endings as CR
     followed by LF.
--   UNIX and UNIX-like operating systems (including Mac OS X) represent
+- UNIX and UNIX-like operating systems (including Mac OS X) represent
     line endings as LF alone.
 
 Therefore, a text file prepared in a Windows environment will, when
@@ -56,7 +44,7 @@ UNIX-style line endings before using it on a NeSI cluster.
 If you submit (using `sbatch`) a Slurm submission script with
 Windows-style line endings, you will likely receive the following error:
 
-``` bash
+```bash
 sbatch: error: Batch script contains DOS line breaks (\r\n) 
 sbatch: error: instead of expected UNIX line breaks (\n).
 ```
@@ -67,10 +55,9 @@ Some UNIX or Linux programs are tolerant to Windows-style line endings,
 while others give errors. The text of the error is almost infinitely
 variable, but program behaviours might include the following responses:
 
--   Explicitly stating the problem with line endings
--   Complaining more vaguely that the input data is incomplete or
-    corrupt or that there are problems reading it
--   Failing in a more serious way such as a segmentation fault
+- Explicitly stating the problem with line endings
+- Complaining more vaguely that the input data is incomplete or corrupt or that there are problems reading it
+- Failing in a more serious way such as a segmentation fault
 
 ## Checking a file's line ending format
 
@@ -107,10 +94,10 @@ box (a box containing Ln, Col and Sel entries) and the text encoding box
 (which will contain UTF-8, ANSI, or some other technical string) will be
 a box containing the current line ending format.
 
--   In most cases, this box will contain the text "DOS\Windows".
--   In a few cases, such as the file having been prepared on a UNIX or
+- In most cases, this box will contain the text "DOS\Windows".
+- In a few cases, such as the file having been prepared on a UNIX or
     Linux machine or a Mac, it will contain the text "UNIX".
--   It is possible, though highly unlikely by now, that the file may
+- It is possible, though highly unlikely by now, that the file may
     have old-style (pre-OSX) Mac line endings, in which case the box
     will contain the text "Macintosh".
 
