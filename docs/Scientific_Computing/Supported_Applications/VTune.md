@@ -14,8 +14,9 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
+
 ## What is VTune?
 
 VTune is a tool that allows you to quickly identify where most of the
@@ -91,7 +92,7 @@ and deallocating (9.2s) memory.
 Often this is enough to give you a feel for where the code can be
 improved. To explore further you can fire up
 
-``` sl
+``` sh
 amplxe-gui &
 ```
 

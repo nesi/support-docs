@@ -14,8 +14,9 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
+
 snpEff is a genetic variant annotation, and functional effect prediction
 tool.
 
@@ -30,7 +31,7 @@ required for snpEff.
 2. Make a copy of the snpEff config file, replacing
    &lt;project\_id&gt;, with your project ID.
 
-    ``` sl
+    ``` sh
     cp $EBROOTSNPEFF/snpEff.config /nesi/project/<project_id>/my_snpEff.config
     ```
 
@@ -44,7 +45,7 @@ required for snpEff.
 4. Run `snpEff.jar` using the `-c` flag to point to your new config
    file, e.g., `-c path/to/snpEff/my_snpEff.config` For example:
 
-    ``` sl
+    ``` sh
     java -jar $EBROOTSNPEFF/snpEff.jar -c /nesi/project/<project_id>/my_snpEff.config
     ```
 

@@ -14,7 +14,7 @@ zendesk_section_id: 360000040076
 
 {% set app_name = "TensorFlow" %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 
 TensorFlow is an open source library for machine learning. TensorFlow
 can train and run deep neural networks. It can also serve as a backend

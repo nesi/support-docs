@@ -443,10 +443,8 @@ hc/en-gb/articles/5209502688655-Introduction-to-computing-on-the-NeSI-HPC.md: Sc
 hc/en-gb/articles/5209502688655.md: Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC.md
 hc/en-gb/articles/5254610390415-Cylc.md: Scientific_Computing/Supported_Applications/Cylc.md
 hc/en-gb/articles/5254610390415.md: Scientific_Computing/Supported_Applications/Cylc.md
-hc/en-gb/articles/5292628239375-Clair3-.md: Scientific_Computing/Supported_Applications/Clair3
-  .md
-hc/en-gb/articles/5292628239375.md: Scientific_Computing/Supported_Applications/Clair3
-  .md
+hc/en-gb/articles/5292628239375-Clair3-.md: Scientific_Computing/Supported_Applications/Clair3.md
+hc/en-gb/articles/5292628239375.md: Scientific_Computing/Supported_Applications/Clair3.md
 hc/en-gb/articles/5362357660431-jupyter-nesi-org-nz-release-notes-25-08-2022.md: Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_25-08-2022.md
 hc/en-gb/articles/5362357660431.md: Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_25-08-2022.md
 hc/en-gb/articles/5565081844623-ipyrad.md: Scientific_Computing/Supported_Applications/ipyrad.md

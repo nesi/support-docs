@@ -13,7 +13,7 @@ zendesk_section_id: 360000040076
 
 {% set app_name = "TensorFlow" %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 
 TensorFlow is a popular software library for machine learning
 applications, see our

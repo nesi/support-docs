@@ -13,17 +13,31 @@ zendesk_article_id: 212642617
 zendesk_section_id: 360000040076
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-## License Types
+
+{{ app.description }}
+
+{% include "partials/app/app_homepage.html" -%}
+{% include "partials/app/app_warnings.html" -%}
+
+## Available Modules
+
+{% include "partials/app/app_version.html" -%}
+
+## Licences
+
+The following network licence servers can be accessed from the NeSI cluster.
+
+{% include "partials/app/app_network_licence.html" -%}
+
+If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
+
+### License Types
 
 The three main ANSYS licenses are;
 
-- **ANSYS Teaching License **(aa\_t)
+- **ANSYS Teaching License** (aa\_t)
 
     This is the default license type, it can be used on up to 6 CPUs on
     models with less than 512k nodes
@@ -38,7 +52,7 @@ The three main ANSYS licenses are;
     **One of these is required for each CPU over 16 when using
     a research license.
 
-## License Order
+### License Order
 
 Whether to use a teaching or research license **must be set manually**.
 If your job is greater than the node limit, not switching to the

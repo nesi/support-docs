@@ -16,14 +16,14 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
-{% include "partials/appHeader.md" %}
+{% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
+
 There are three commands with which a OpenSees job can be launched.
 
 - `OpenSees`: For running a job in serial (single CPU).
 - `OpenSeesSP`: Intended for the single analysis of very large models.
 - `OpenSeesMP`: For advanced parametric studies.
-
 
 More info can be found about running OpenSees in parallel
 [here](http://opensees.berkeley.edu/OpenSees/parallel/TNParallelProcessing.pdf).
