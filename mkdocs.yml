@@ -25,6 +25,8 @@ plugins:
   - redirects:
       map_file: docs/redirect_map.yml
   - literate-nav
+  - mkdocs-nav-weight
+
  # - git-authors
   - tags
   - git-revision-date-localized:
