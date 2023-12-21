@@ -26,7 +26,7 @@ jobs:
       with:
           files: |
              **.md
-    - name: Get Changed files.
+    - name: Push Changed files to output
       if: inputs.fileList == ''
       id: output
       run: |

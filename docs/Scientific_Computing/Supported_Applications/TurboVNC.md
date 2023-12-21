@@ -1,8 +1,8 @@
 ---
 created_at: '2020-01-22T22:48:09Z'
 hidden: false
+weight: 56
 status: deprecated
-position: 56
 tags: []
 title: TurboVNC
 vote_count: 0

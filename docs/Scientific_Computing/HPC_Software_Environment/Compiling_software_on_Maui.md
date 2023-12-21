@@ -1,7 +1,7 @@
 ---
 created_at: '2018-07-16T23:39:19Z'
 hidden: false
-position: 18
+weight: 18
 tags: []
 title: "Compiling software on M\u0101ui"
 vote_count: 1

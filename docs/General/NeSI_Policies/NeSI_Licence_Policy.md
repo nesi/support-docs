@@ -1,7 +1,7 @@
 ---
 created_at: '2019-08-07T03:50:45Z'
 hidden: false
-position: 12
+weight: 12
 tags: []
 title: NeSI Licence Policy
 vote_count: 0

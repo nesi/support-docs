@@ -1,7 +1,7 @@
 ---
 created_at: '2019-07-30T00:31:40Z'
 hidden: false
-position: 5
+weight: 5
 tags: []
 title: Windows Subsystem for Linux (WSL)
 vote_count: 4

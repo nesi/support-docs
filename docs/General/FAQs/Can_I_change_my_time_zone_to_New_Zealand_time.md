@@ -1,7 +1,7 @@
 ---
 created_at: '2018-09-20T23:52:07Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Can I change my time zone to New Zealand time?
 vote_count: 6

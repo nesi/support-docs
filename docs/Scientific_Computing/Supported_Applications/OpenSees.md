@@ -1,7 +1,7 @@
 ---
 created_at: '2019-08-15T05:48:41Z'
 hidden: false
-position: 42
+weight: 42
 tags:
 - geo
 - earthquake

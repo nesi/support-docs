@@ -1,7 +1,7 @@
 ---
 created_at: '2019-01-24T20:30:30Z'
 hidden: false
-position: 12
+weight: 12
 tags:
 - support
 - application

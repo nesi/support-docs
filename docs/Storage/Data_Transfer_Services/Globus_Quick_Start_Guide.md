@@ -1,7 +1,7 @@
 ---
 created_at: '2023-10-13T00:14:22Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Globus Quick Start Guide
 vote_count: 0

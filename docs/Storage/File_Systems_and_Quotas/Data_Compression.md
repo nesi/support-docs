@@ -1,7 +1,7 @@
 ---
 created_at: '2023-02-08T00:21:51Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - compression
 - data_compression

@@ -1,7 +1,7 @@
 ---
 created_at: '2021-08-17T03:13:55Z'
 hidden: false
-position: 6
+weight: 6
 tags: []
 title: AlphaFold
 vote_count: 2

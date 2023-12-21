@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-24T22:16:04Z'
 hidden: false
-position: 40
+weight: 40
 tags:
 - engineering
 - cfd

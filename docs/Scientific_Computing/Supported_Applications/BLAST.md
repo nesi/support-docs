@@ -1,7 +1,7 @@
 ---
 created_at: '2015-08-27T04:44:00Z'
 hidden: false
-position: 26
+weight: 26
 tags:
 - mahuika
 - biology

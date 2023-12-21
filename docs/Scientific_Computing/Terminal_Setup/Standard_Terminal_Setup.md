@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-30T00:34:14Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - ssh
 - howto

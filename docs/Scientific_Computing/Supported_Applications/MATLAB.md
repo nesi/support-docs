@@ -1,7 +1,7 @@
 ---
 created_at: '2015-10-14T22:58:53Z'
 hidden: false
-position: 35
+weight: 35
 tags:
 - engineering
 - ml
