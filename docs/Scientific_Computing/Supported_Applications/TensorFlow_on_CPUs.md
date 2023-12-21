@@ -1,7 +1,7 @@
 ---
 created_at: '2019-06-14T05:35:45Z'
 hidden: false
-position: 54
+weight: 54
 tags: []
 title: TensorFlow on CPUs
 vote_count: 2

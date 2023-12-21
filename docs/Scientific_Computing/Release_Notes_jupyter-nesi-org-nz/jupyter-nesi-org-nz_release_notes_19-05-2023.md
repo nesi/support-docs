@@ -1,7 +1,7 @@
 ---
 created_at: '2023-05-18T20:48:30Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - releasenote
 title: jupyter.nesi.org.nz release notes 19/05/2023

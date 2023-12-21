@@ -1,7 +1,7 @@
 ---
 created_at: '2018-07-17T00:55:01Z'
 hidden: false
-position: 3
+weight: 3
 tags: []
 title: NeSI Password Policy
 vote_count: 2

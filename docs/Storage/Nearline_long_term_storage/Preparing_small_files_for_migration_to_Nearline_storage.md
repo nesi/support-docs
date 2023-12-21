@@ -1,7 +1,7 @@
 ---
 created_at: '2019-12-16T09:20:39Z'
 hidden: false
-position: 1
+weight: 1
 tags: []
 title: Preparing small files for migration to Nearline storage
 vote_count: 0

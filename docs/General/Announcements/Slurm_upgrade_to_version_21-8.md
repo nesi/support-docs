@@ -1,7 +1,7 @@
 ---
 created_at: '2022-03-22T02:16:17Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - general
 title: Slurm upgrade to version 21.8

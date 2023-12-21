@@ -1,7 +1,7 @@
 ---
 created_at: '2023-03-06T19:04:56Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 vote_count: 0
 vote_sum: 0

@@ -1,7 +1,7 @@
 ---
 created_at: '2023-02-21T21:21:50Z'
 hidden: false
-position: 1
+weight: 1
 tags: []
 title: GATK
 vote_count: 0

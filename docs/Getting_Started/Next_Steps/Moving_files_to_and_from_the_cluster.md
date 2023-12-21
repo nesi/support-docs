@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
 hidden: false
-position: 2
+weight: 2
 tags:
 - scp
 - transfer

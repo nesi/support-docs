@@ -1,7 +1,7 @@
 ---
 created_at: '2022-03-31T20:51:51Z'
 hidden: false
-position: 0
+weight: 0
 tags:
 - mynesi
 title: Requesting to renew an allocation via my.nesi.org.nz

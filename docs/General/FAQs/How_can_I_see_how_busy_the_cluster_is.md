@@ -1,7 +1,7 @@
 ---
 created_at: '2019-09-22T20:20:07Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: How can I see how busy the cluster is?
 vote_count: 0

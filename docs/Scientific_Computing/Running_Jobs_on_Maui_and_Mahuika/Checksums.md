@@ -1,7 +1,7 @@
 ---
 created_at: '2020-01-14T22:10:50Z'
 hidden: false
-position: 18
+weight: 18
 tags: []
 title: Checksums
 vote_count: 1

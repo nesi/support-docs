@@ -1,7 +1,7 @@
 ---
 created_at: '2019-09-23T11:11:16Z'
 hidden: false
-position: 32
+weight: 32
 tags: []
 title: Julia
 vote_count: 3

@@ -1,7 +1,7 @@
 ---
 created_at: '2018-05-28T02:55:23Z'
 hidden: false
-position: 5
+weight: 5
 tags:
 - onboarding
 - tuakiri

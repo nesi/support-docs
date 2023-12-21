@@ -1,7 +1,7 @@
 ---
 created_at: '2023-07-05T23:23:28Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Types of contracts
 vote_count: 0

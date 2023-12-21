@@ -1,7 +1,7 @@
 ---
 created_at: '2019-03-26T00:36:24Z'
 hidden: false
-position: 27
+weight: 27
 tags:
 - engineering
 - COMSOL

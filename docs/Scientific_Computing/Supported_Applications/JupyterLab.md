@@ -1,7 +1,7 @@
 ---
 created_at: '2019-08-09T00:46:44Z'
 hidden: false
-position: 33
+weight: 33
 tags: []
 title: JupyterLab
 vote_count: 0

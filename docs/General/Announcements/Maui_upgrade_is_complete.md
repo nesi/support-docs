@@ -1,7 +1,7 @@
 ---
 created_at: '2023-03-09T02:46:57Z'
 hidden: false
-position: 0
+weight: 0
 status: new
 tags: []
 title: "M\u0101ui upgrade is complete"
