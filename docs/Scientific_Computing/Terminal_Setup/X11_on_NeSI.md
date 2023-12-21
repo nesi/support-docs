@@ -1,7 +1,7 @@
 ---
 created_at: '2019-07-30T01:58:26Z'
 hidden: false
-position: 4
+weight: 4
 tags: []
 title: X11 on NeSI
 vote_count: 2

@@ -1,7 +1,7 @@
 ---
 created_at: '2018-07-31T10:13:22Z'
 hidden: false
-position: 15
+weight: 15
 tags: []
 title: Finding Software
 vote_count: 1

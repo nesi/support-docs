@@ -1,7 +1,7 @@
 ---
 created_at: '2021-03-03T21:29:16Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Navigating the my.nesi.org.nz web interface
 vote_count: 0

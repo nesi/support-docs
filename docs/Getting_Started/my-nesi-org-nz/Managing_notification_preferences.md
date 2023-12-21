@@ -1,7 +1,7 @@
 ---
 created_at: '2022-03-24T20:50:10Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Managing notification preferences
 vote_count: 0

@@ -1,7 +1,7 @@
 ---
 created_at: '2019-06-16T21:30:28Z'
 hidden: false
-position: 2
+weight: 2
 tags: []
 title: Debugging
 vote_count: 1

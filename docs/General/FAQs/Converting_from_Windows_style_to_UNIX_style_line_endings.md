@@ -1,7 +1,7 @@
 ---
 created_at: '2016-03-14T01:52:06Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Converting from Windows-style to UNIX-style line endings
 vote_count: 43

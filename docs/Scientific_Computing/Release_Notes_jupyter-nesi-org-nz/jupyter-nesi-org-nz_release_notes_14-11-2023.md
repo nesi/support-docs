@@ -1,7 +1,7 @@
 ---
 created_at: '2023-11-14T03:13:56Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: jupyter.nesi.org.nz release notes 14/11/2023
 vote_count: 0

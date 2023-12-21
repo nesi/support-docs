@@ -1,7 +1,7 @@
 ---
 created_at: '2021-09-14T03:20:56Z'
 hidden: false
-position: 4
+weight: 4
 tags: []
 title: Quarterly allocation periods
 vote_count: 0

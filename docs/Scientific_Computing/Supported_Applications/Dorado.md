@@ -1,7 +1,7 @@
 ---
 created_at: '2023-03-21T09:33:04Z'
 hidden: false
-position: 0
+weight: 0
 tags: []
 title: Dorado
 vote_count: 2

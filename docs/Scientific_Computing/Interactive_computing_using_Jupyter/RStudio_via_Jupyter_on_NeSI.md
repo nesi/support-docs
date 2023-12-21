@@ -1,7 +1,7 @@
 ---
 created_at: '2021-05-13T01:00:08Z'
 hidden: false
-position: 1
+weight: 1
 tags: []
 title: RStudio via Jupyter on NeSI
 vote_count: 7
