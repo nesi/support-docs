@@ -14,15 +14,6 @@ zendesk_article_id: 360001508515
 zendesk_section_id: 360000278975
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub and GitLab for
 developing, managing and distributing code.
@@ -36,7 +27,8 @@ found [here](https://git-scm.com/docs/git), or using `man git`.
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
-!!! prerequisite Password authentication
+
+!!! warning "Password authentication"
      GitHub removed support for password authentication on August 13, 2021.
      Using a SSH key is now the easiest way to set up authentication.
 
@@ -45,60 +37,59 @@ need to authenticate yourself on the cluster.
 More information can be found in the [GitHub
 documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
--   On the NeSI cluster, run the command 
+- On the NeSI cluster, run the command 
 
-    ``` sl
+    ```sh
     ssh-keygen -t ed25519 -C "your_github_account@example.com"
     ```
 
--   When prompted for a file name, press `enter`. When prompted for a
+- When prompted for a file name, press `enter`. When prompted for a
     passcode, press enter twice more.
 
--   Open up the newly created .pub key with the command 
+- Open up the newly created .pub key with the command 
 
-    ``` sl
+    ```sh
     cat ~/.ssh/id_ed25519.pub
     ```
 
     (or whatever you named the key). It should look something like: 
 
-    ``` sl
+    ```sh
     ssh-ed25519 ABCDEFGKSAfjksjafkjsaLJfakjJF your_github_account@example.com
     ```
 
     Copy the whole key.
 
--   Now log in to your github account. In the upper-right corner of any
+- Now log in to your github account. In the upper-right corner of any
     page, click your profile photo click **Settings**.
 
-    ![Settings icon in the user
-    bar](../../assets/images/Git-Reference_Sheet.png)
+    ![Settings icon in the user bar](../../assets/images/Git-Reference_Sheet.png)
 
--   In the "Access" section of the sidebar, click **SSH and GPG keys**.
+- In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
--   Click **New SSH key** or **Add SSH key**.
+- Click **New SSH key** or **Add SSH key**.
 
     ![SSH Key button](../../assets/images/Git-Reference_Sheet_0.png)
 
--   In the "Title" field, put "Mahuika" or "NeSI".
+- In the "Title" field, put "Mahuika" or "NeSI".
 
--   Paste your key into the "Key" field.
+- Paste your key into the "Key" field.
 
     ![The key field](../../assets/images/Git-Reference_Sheet_1.png)
 
--   Click **Add SSH key**.
+- Click **Add SSH key**.
 
--   Switching back to your terminal on the cluster, you can test your
-    connection with the command 
+- Switching back to your terminal on the cluster, you can test your
+    connection with the command
 
-    ``` sl
+    ``` sh
     ssh -T git@github.com
     ```
 
     You may be promted to authenticate, if so type 'yes'  
-    If everything is working, you should see the message 
+    If everything is working, you should see the message
 
-    ``` sl
+    ```out
     Hi User! You've successfully authenticated, but GitHub does not provide shell access.
     ```
 
@@ -110,8 +101,6 @@ You can create a repository with either of the following commands.
 |-------|-------------------------------------------------------|---------------------------------------------------------|
 | clone | `git clone https://github.com/nesi/perf-training.git` | Copies a remote repository into your current directory. |
 | init  | `git init`                                            | Creates a new empty repo in your current directory.     |
-
- 
 
 |         |                                  |                                                                                                                          |
 |---------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -134,13 +123,14 @@ will be the repo you cloned from, or set manually using
 
 |        |                             |                                                                                                                      |
 |--------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|
-| fetch  | `git fetch`                 | Gets status of 'origin'. git fetch **does not **change your working directory or local repository (see `git pull`).  |
+| fetch  | `git fetch`                 | Gets status of 'origin'. git fetch **does not** change your working directory or local repository (see `git pull`).  |
 |        | `git fetch <repo> <branch>` | Get status of `<repo>` `<branch>`.                                                                                   |
 | pull   | `git pull`                  | Incorporates changes from 'origin' into local repo.                                                                  |
 |        | `git pull <repo> <branch>`  | Incorporates changes from `<repo>` `<branch>` into local repo.                                                       |
 | push   | `git push`                  | Incorporates changes from local repo into 'origin'.                                                                  |
 |        | `git push <repo> <branch>`  | Incorporates changes from local repo into `<repo>` `<branch>`                                                        |
-!!! prerequisite Tip
+
+!!! tip
      If you are working without collaborators, there should be no reason to
      have a conflict between your local and your remote repo. Make sure you
      always git pull when starting work on your local and git push when
@@ -158,5 +148,6 @@ multiple branches, or requires merging.
 |          | `git branch <branch-name>`   | Create new branch `<branch-name`           |
 | checkout | `git checkout <branch-name>` | Switch to editing branch `<branch-name>`   |
 | merge    | `git merge <branch-name>`    | Merge `<branch-name>` into current branch. |
-!!! prerequisite Other Resources
-     -   <https://ohshitgit.com/>
+
+!!! prerequisite "Other Resources"
+     -  [oshitgit.com](https://ohshitgit.com/)
