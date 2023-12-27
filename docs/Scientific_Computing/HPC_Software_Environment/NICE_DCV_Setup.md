@@ -2,6 +2,7 @@
 created_at: '2019-01-24T20:30:30Z'
 hidden: false
 weight: 12
+status: deprecated
 tags:
 - support
 - application
@@ -12,15 +13,6 @@ vote_sum: 0
 zendesk_article_id: 360000719156
 zendesk_section_id: 360000040056
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 NICE DCV is a virtual desktop solution that enables users to run
 graphics-intensive OpenGL applications, such as 3D visualisation,
@@ -50,11 +42,11 @@ possible.
 
 ## Creating a new NICE DCV server session
 
-1.  Log in to the appropriate host.
+### Logging in
 
-    ### On Māui
+#### On Māui
 
-    1.  Connect to the lander node following the instructions
+    1. Connect to the lander node following the instructions
         [here](https://support.nesi.org.nz/hc/en-gb/sections/360000034315-Accessing-the-HPCs).
         For example:
 
@@ -62,28 +54,30 @@ possible.
         ssh lander
         ```
 
-    2.  Connect from the lander node to one of the NICE DCV server
+    2. Connect from the lander node to one of the NICE DCV server
         nodes:
 
         ``` sl
         ssh w-ndcv01
         ```
 
-    ### On Mahuika
+#### On Mahuika
 
-    1.  Connect to the Mahuika login node:
+    1. Connect to the Mahuika login node:
 
         ``` sl
         ssh mahuika
         ```
 
-    2.  Connect to the NICE DCV server node (not yet available):
+    2. Connect to the NICE DCV server node (not yet available):
 
         ``` sl
         ssh vgpuwbg005
         ```
 
-2.  Create a new NICE DCV session, replacing `<session name>` with a
+### Create a new NICE DCV session
+
+Replace `<session name>` with a
     session name of your choice:
 
     ``` sl
@@ -97,7 +91,8 @@ and so are not directly accessible from your workstation. Therefore, we
 must create an SSH tunnel through the NeSI lander node.
 
 ### Linux, Mac, or Windows Subsystem for Linux
-!!! prerequisite Warning
+
+!!! warning
      If successful, commands to open SSH tunnels will look like they are
      doing nothing (hanging) but it is important to leave them running.
      Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
@@ -109,7 +104,7 @@ must create an SSH tunnel through the NeSI lander node.
     sections to your `~/.ssh/config` file). This command opens an SSH
     tunnel through the NeSI lander node to the SSH port on w-ndcv01.
 
-    ### To connect to Māui
+### To connect to Māui
 
     ``` sl
     # The first port number (22222 in this example) can be anything you like > 1024,
@@ -122,7 +117,7 @@ must create an SSH tunnel through the NeSI lander node.
     NeSI lander node, you will at this point be prompted for your
     password and your second factor. Enter them in the usual manner.
 
-    ### To connect to Mahuika
+### To connect to Mahuika
 
     1.  Open an SSH tunnel through the lander node to the Mahuika login
         node.
