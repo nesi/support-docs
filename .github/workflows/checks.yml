@@ -28,7 +28,7 @@ jobs:
              **.md
     - name: Push Changed files to output
       if: inputs.fileList == ''
-      id: output
+      id: diff
       run: |
         [ -z "${{steps.get-changed-files.outputs.all_changed_files}}" ] && ( echo "Error, no files changed" && exit 1 )
         echo "Changed files: ${{steps.get-changed-files.outputs.all_changed_files}}"
@@ -38,7 +38,7 @@ jobs:
       #   FILELIST=$(git diff-tree --no-commit-id --name-only -r HEAD docs/**/*.md | tr '\n' ' ')
 
     outputs:
-      filelist: ${{steps.input.outputs.filelist || inputs.fileList}}
+      filelist: ${{steps.diff.outputs.filelist || inputs.fileList}}
   spellcheck:
     name: Check Spelling
     runs-on: ubuntu-latest
