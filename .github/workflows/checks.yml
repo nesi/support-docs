@@ -30,10 +30,9 @@ jobs:
       if: inputs.fileList == ''
       id: output
       run: |
-        FILELIST=""
-        [ -z "${{ steps.get-changed-files.outputs.all_changed_files }}" ] && ( echo "Error, no files changed" && exit 1 )
-        echo "Changed files: ${{ steps.get-changed-files.outputs.all_changed_files }}"
-        echo "filelist=${{ steps.get-changed-files.outputs.all_changed_files }}" >> $GITHUB_OUTPUT 
+        [ -z "${{steps.get-changed-files.outputs.all_changed_files}}" ] && ( echo "Error, no files changed" && exit 1 )
+        echo "Changed files: ${{steps.get-changed-files.outputs.all_changed_files}}"
+        echo "filelist=${{steps.get-changed-files.outputs.all_changed_files}}" >> $GITHUB_OUTPUT 
       # run: |
       #   shopt -s globstar extglob
       #   FILELIST=$(git diff-tree --no-commit-id --name-only -r HEAD docs/**/*.md | tr '\n' ' ')
