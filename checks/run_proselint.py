@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 Modify proselint outputs into a format recognised by github actions.
@@ -21,6 +21,6 @@ for file in files:
         for notice in proselint.tools.lint(f.read(), config=config_custom):
             if (notice[7] == "error"):
                 ret_code = 1
-            print(f"::{notice[7]} file={file},line={notice[2]},col={notice[3]},endLine={notice[2]+notice[6]},title={notice[0]}::'{notice[1]}'")
+            print(f"::{notice[7]} file={file},line={notice[2]+1},col={notice[3]+2},endColumn={notice[2]+notice[6]+1},title={notice[0]}::'{notice[1]}'")
 
 sys.exit(ret_code)

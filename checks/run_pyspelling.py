@@ -1,19 +1,32 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
-Modify proselint outputs into a format recognised by github actions.
+I should just use base aspell. Spyspelling is trasssssh
 """
 
 import sys
-from pyspelling import util
-
-
-files = sys.argv[1:]
+import re
+from pyspelling import util, spellcheck
 
 ret_code = 0
-util.read_config(".spellcheck.yml")
+for source in sys.argv[1:]:
+    with open(source) as f:
+        source_md = f.readlines()
+    results = spellcheck(".spellcheck.yml", names=["Markdown"], sources=[source], verbose=0, debug=True)
+    for r in results:
+        if not r.words:
+            continue
+        line_no = 0
+        for line in source_md:
+            line_no += 1
+            for word in r.words:
+                matches = re.finditer(r"[^a-zA-Z`._/[\\-]+(" + word + r")[^a-zA-Z`_/\\-]+", line)
+                for m in matches:
+                    print(r)
+                    print(f"::warning file={source},line={line_no},col={m.span()[0]+2},endColumn={m.span()[1]-1},title=spelling::Word '{word}' is mispeled.")
+# util.read_config(".spellcheck.yml")
 
-util.call(input_file=None, input_text=None, encoding=None)
+# util.call(input_file=None, input_text=None, encoding=None)
 
 # call_spellchecker(cmd, input_text=None, encoding=None)
 
