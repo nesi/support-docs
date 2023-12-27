@@ -44,13 +44,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: get
     steps:
-    - name: Check out repo.
-      uses: actions/checkout@v3
-    - name: Run spellchecker.
-      uses: rojopolis/spellcheck-github-actions@0.34.0
-      with:
-        source_files: ${{needs.get.outputs.filelist}}
-        task_name: Markdown
+      - name: Check out repo.
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install pyspelling
+      - name: Run pyspelling
+        run: |
+          shopt -s globstar extglob
+          python3 checks/run_pyspelling.py ${{needs.get.outputs.filelist}}
   proselint:
     name: Check prose
     runs-on: ubuntu-latest
