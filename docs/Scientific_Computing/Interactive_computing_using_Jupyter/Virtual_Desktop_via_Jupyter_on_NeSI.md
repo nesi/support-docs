@@ -10,15 +10,6 @@ zendesk_article_id: 360001600235
 zendesk_section_id: 360001189255
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 A virtual desktop provides a graphical interface to using the cluster.
 Desktops are hosted within Singularity containers, so not all of the
 NeSI software stack is supported. If you would like to build your own
@@ -54,7 +45,7 @@ export VDT_BASE_IMAGE="~/my_custom_container.sif" # Use a different image file.
 export VDT_RUNSCRIPT="~/my_custom_runscript" # Use a different runscript.
 
 export OVERLAY="TRUE"
-export BROWSER="chrome" # Desktop session will inherit this.
+export BROWSER="chrome" # Desktop session will inherit this
 
 module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
 ```
@@ -102,8 +93,6 @@ You can build your own container bootstrapping off
   </p>
 </blockquote>
 -->
-
- 
 
 *You can help contribute to this
 project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*

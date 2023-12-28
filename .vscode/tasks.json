@@ -1,0 +1,96 @@
+{
+    "version":"2.0.0",
+    "tasks": [
+        {
+            "label": "meta-checks",
+            "args": [
+                "${file}"
+            ],
+            "type": "process",
+            "presentation": {
+                "echo": false,
+                "reveal":"never",
+                "panel": "shared",
+                "close": true,
+                "focus": false,
+                "showReuseMessage": false
+            },
+            "command": "./checks/run_meta_check.py",
+            "problemMatcher": {
+                "severity": "info",
+                "pattern": {
+                    "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),title=(.*?)::(.*)$",
+                    "severity": 1,
+                    "file": 2,
+                    "line": 3,
+                    "message": 5
+                },
+                "owner": "meta-check",
+                "fileLocation": "autoDetect",
+            },
+            
+        },
+        {
+            "label": "proselint-checks",
+            "args": [
+                "${file}"
+            ],
+            "type": "process",
+            "presentation": {
+                "echo": false,
+                "reveal":"never",
+                "panel": "shared",
+                "close": true,
+                "focus": false,
+                "showReuseMessage": false
+            },
+            "command": "./checks/run_proselint.py",
+            "problemMatcher": {
+                "severity": "info",
+                "pattern": {
+                    "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),col=([0-9]*),endColumn=([0-9]*),title=(.*?)::(.*)$",
+                    "severity": 1,
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "endLine": 5,
+                    "message": 7
+                },
+                "owner": "proselint",
+                "fileLocation": "autoDetect",
+            },
+            
+        },
+        {
+            "label": "spelling-checks",
+            "args": [
+                "${file}"
+            ],
+            "type": "process",
+            "presentation": {
+                "echo": false,
+                "reveal":"never",
+                "panel": "shared",
+                "close": true,
+                "focus": false,
+                "showReuseMessage": false
+            },
+            "command": "./checks/run_pyspelling.py",
+            "isBackground": true,
+            "problemMatcher": {
+                "severity": "info",
+                "pattern": {
+                    "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),col=([0-9]*),endColumn=([0-9]*),title=(.*?)::(.*)$",
+                    "severity": 1,
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "endLine": 5,
+                    "message": 7
+                },
+                "owner": "spelling",
+                "fileLocation": "autoDetect",
+            },
+        }
+    ]
+}
