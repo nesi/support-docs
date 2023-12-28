@@ -11,10 +11,11 @@
                 "echo": false,
                 "reveal":"never",
                 "panel": "shared",
-                "close": true,
+                "close": false,
                 "focus": false,
                 "showReuseMessage": false
             },
+            "runOptions": {"runOn": "default"},
             "command": "./checks/run_meta_check.py",
             "problemMatcher": {
                 "severity": "info",
@@ -40,7 +41,7 @@
                 "echo": false,
                 "reveal":"never",
                 "panel": "shared",
-                "close": true,
+                "close": false,
                 "focus": false,
                 "showReuseMessage": false
             },
@@ -71,12 +72,11 @@
                 "echo": false,
                 "reveal":"never",
                 "panel": "shared",
-                "close": true,
+                "close": false,
                 "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_pyspelling.py",
-            "isBackground": true,
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {

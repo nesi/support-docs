@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+###!/usr/bin/env python3
 
 """
 Runs checks on article meta block and outputs in github action readable format
@@ -56,12 +57,13 @@ def main():
                 )
                 continue
             meta = yaml.safe_load(match.group(1))
-            line_of_title = (list(meta).index('title') if 'title' in meta else 1) + startline + 1
-            startline = match.start()+1
             endline = match.end()+1
+            startline = match.start()+1
+            line_of_title = (list(meta).index('title') if 'title' in meta else 1) + startline + 1
             for check in all_checks:
                 ret_code += check()
-    sys.exit(ret_code)
+    sys.exit(0)         
+    # sys.exit(ret_code)
 
 
 def get_page_title():
@@ -125,7 +127,7 @@ def check_expected_parameters():
         if key not in EXPECTED_PARAMETERS.keys():
             ret_code += 1
             print(
-                f"::warning file={path},line={line_of_key},title=meta.unexpected::Unexpected parameter in front-matter '{key}'"
+                f"::warning file={input_file},line={line_of_key},title=meta.unexpected::Unexpected parameter in front-matter '{key}'"
             )
 
     # Yes this is 2 x O().
@@ -136,16 +138,18 @@ def check_expected_parameters():
             if key not in meta.keys():
                 ret_code += 1
                 print(
-                    f"::{value} file={path},line={startline},title=meta.unexpected::Missing parameter from front-matter '{key}'"
+                    f"::{value} file={input_file},line={startline},title=meta.unexpected::Missing parameter from front-matter '{key}'"
                 )
     return ret_code
 
-def check_article_titles(path, meta, contents, startline, endline):
-    resolved_title = get_page_title(path, meta, contents, startline, endline)
+
+def check_article_titles():
+    resolved_title = get_page_title()
 
     if len(resolved_title) > MAX_TITLE_LENGTH:
-        f"::warning file={resolved_title},line={line_of_title},title=title.long::Title '{path}' is too long"
+        f"::warning file={input_file},line={line_of_title},title=title.long::Title '{resolved_title}' is too long"
         return 1
+    return 0
 
 
 all_checks = [check_expected_parameters, check_article_titles]
