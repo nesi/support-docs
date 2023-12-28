@@ -10,15 +10,6 @@ zendesk_article_id: 360000995575
 zendesk_section_id: 360000040056
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
 article on [Parallel
@@ -66,20 +57,20 @@ before).
 
 It is very important to note the following:
 
--   Each socket only has access to its own RAM - it will need to ask the
+- Each socket only has access to its own RAM - it will need to ask the
     processor in the other socket if it wants to access that RAM space,
     and that takes longer (this is called a
     [NUMA](https://en.wikipedia.org/wiki/Non-uniform_memory_access)
     architecture)
--   Each socket has a fast cache that is shared between all cores in
+- Each socket has a fast cache that is shared between all cores in
     that socket
--   Each core has its own private fast cache as well
+- Each core has its own private fast cache as well
 
 For a thread that runs on a given core, this means:
 
--   Data is "local" when it is stored in RAM or cache close to that core
+- Data is "local" when it is stored in RAM or cache close to that core
     and can be accessed very quickly
--   Data is "remote" when it is stored elsewhere and takes extra time to
+- Data is "remote" when it is stored elsewhere and takes extra time to
     access
 
 ## Thread Placement and Affinity
@@ -119,7 +110,7 @@ GOMP have similar configurations.
 Use a text editor to save the following test program in a text file
 called "hello\_world.c":
 
-``` sl
+```c
 #include <stdio.h>
 #include <omp.h>
 int main()
@@ -132,7 +123,7 @@ int main()
 
 On Mahuika or Māui Ancil, compile the program using the commands
 
-``` sl
+``` sh
 module load intel/2018b
 icc -o hello_world.x -qopenmp hello_world.c
 ```
@@ -140,8 +131,11 @@ icc -o hello_world.x -qopenmp hello_world.c
 Running the program with two threads should return the following output
 (although the order of threads may be different):
 
-``` sl
+``` sh
 OMP_NUM_THREADS=2 ./hello_world.x
+```
+
+```out
 Hello World from Thread 0!
 Hello World from Thread 1!
 ```
@@ -172,7 +166,7 @@ although the number of "packages" (sockets) and cores may deviate if
 Slurm allocates cores on more than one socket (note also that "threads"
 means what we called logical cores earlier on):
 
-``` sl
+``` out
 OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
 OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
 OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {0,6,8}
@@ -189,18 +183,18 @@ Hello World from Thread 2!
 
 The runtime library tells us that:
 
--   Slurm provided 3 physical cores with only 1 logical core ("thread")
+- Slurm provided 3 physical cores with only 1 logical core ("thread")
     per physical core - no hyperthreading
--   We got the cores with IDs 0, 6, 8 in this particular example - these
+- We got the cores with IDs 0, 6, 8 in this particular example - these
     happen to be on the same socket, but that is not guaranteed!
--   All our threads are "bound" to all 3 cores at once - this means that
+- All our threads are "bound" to all 3 cores at once - this means that
     no affinity setup has been made, and the threads are free to move
     from one core to another
 
 Setting "--hint=multithread" instead to activate hyperthreading should
 result in output similar to this:
 
-``` sl
+```out
 OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
 OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
 OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {6,8,46}
@@ -215,11 +209,11 @@ Hello World from Thread 1!
 Hello World from Thread 2!
 ```
 
--   Slurm provided 2 physical cores with 2 logical cores ("threads")
+- Slurm provided 2 physical cores with 2 logical cores ("threads")
     each and 3 logical cores in total (we don't get the remaining
     logical core on the second physical core, even though that logical
     core will not be given to other jobs)
--   Notice that we now get logical core IDs 6, 8, 46 - IDs 6 and 46 are
+- Notice that we now get logical core IDs 6, 8, 46 - IDs 6 and 46 are
     the first and second logical core inside the first physical core,
     while ID 8 is a logical core in the second physical core
 
@@ -229,22 +223,23 @@ We will now place our threads on cores in a specific order and bind them
 to these cores, so that they can no longer move to another core during
 execution.
 
-**Important:** As mentioned above, Slurm does NOT guarantee that all
-threads will be placed on the same socket even if our job would fit
-entirely within one socket. This needs to be taken into account when
-optimising threading setup.
+!!! warning
+    Slurm does NOT guarantee that all
+    threads will be placed on the same socket even if our job would fit
+    entirely within one socket. This needs to be taken into account when
+    optimising threading setup.
 
 Let us start with the following setup:
 
--   Run with "--hint=multithread" so that our program can access all
+- Run with "--hint=multithread" so that our program can access all
     available logical cores
--   Bind threads to physical cores ("granularity=core") - they are still
+- Bind threads to physical cores ("granularity=core") - they are still
     free to move between the two logical cores inside a given physical
     core
--   Place threads close together ("compact") - although this has little
+- Place threads close together ("compact") - although this has little
     significance here as we use all available cores anyway, we still
     need to specify this to activate thread affinity
--   Bind thread IDs to logical core IDs in simple numerical order by
+- Bind thread IDs to logical core IDs in simple numerical order by
     setting permute and offset specifiers to 0
 
 ``` sl
@@ -263,7 +258,7 @@ srun hello_world.x
 
 You should get this result:
 
-``` sl
+```out
 OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
 OMP: Info #207: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
 OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: {2,7,42,47}
@@ -292,7 +287,7 @@ inside a given physical core and can move between those two.
 Choosing "granularity=fine" instead of "granularity=core" will bind each
 thread to a single logical core, and threads can no longer move at all:
 
-``` sl
+```out
 [...]
 OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178055 thread 0 bound to OS proc set {2}
 OMP: Info #247: KMP_AFFINITY: pid 178055 tid 178057 thread 1 bound to OS proc set {42}
@@ -307,7 +302,7 @@ while threads 3 and 4 are placed on the second physical core (IDs 7 and
 47). We can influence placement by manipulating the "permute" and
 "offset" values. Choosing "1,0" results in:
 
-``` sl
+```out
 [...]
 OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178741 thread 0 bound to OS proc set {2}
 OMP: Info #247: KMP_AFFINITY: pid 178741 tid 178743 thread 1 bound to OS proc set {7}
@@ -322,7 +317,7 @@ physical core, threads 2 and 3 on the second logical cores.
 We can also choose an offset - setting "0,1" shifts placement of thread
 IDs onto logical core IDs by 1:
 
-``` sl
+``` out
 [...]
 OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0
 OMP: Info #171: KMP_AFFINITY: OS proc 42 maps to package 0 core 2 thread 1
@@ -345,10 +340,10 @@ Unfortunately, there is no single best choice for setting up thread
 placement and affinity, it depends on the application. Also keep in mind
 that:
 
--   Job runtimes can be affected by other jobs that are running on the
+- Job runtimes can be affected by other jobs that are running on the
     same node and share network access, memory bus, and some caches on
     the same socket
--   The operating system on a node will also still need to run its own
+- The operating system on a node will also still need to run its own
     processes and threads
 
 This can lead to a trade-off between restricting thread movement for

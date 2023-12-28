@@ -37,8 +37,11 @@ EXPECTED_PARAMETERS = {
 
 def main():
     """Main entry point of the app"""
-  
+
+    ret_code = 0
+
     input_files = sys.argv[1:]
+    global line_of_title, input_file, meta, contents, startline, endline
 
     for input_file in input_files:
         if any(re.match(pattern, input_file) for pattern in EXCLUDED_FROM_CHECKS):
@@ -47,16 +50,21 @@ def main():
             contents = f.read()
             match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
             if not match:
+                ret_code +=1
                 print(
                     f"::warning file={input_file},title=meta.parse::Meta block missing or malformed."
                 )
                 continue
             meta = yaml.safe_load(match.group(1))
+            line_of_title = (list(meta).index('title') if 'title' in meta else 1) + startline + 1
+            startline = match.start()+1
+            endline = match.end()+1
             for check in all_checks:
-                check(input_file, meta, contents, match.start()+1, match.end()+1)
+                ret_code += check()
+    sys.exit(ret_code)
 
 
-def get_page_title(input_file, meta, contents, startline, endline):
+def get_page_title():
     """
     This is silly codegolf.
     Delete this before anyone sees.
@@ -88,8 +96,6 @@ def get_page_title(input_file, meta, contents, startline, endline):
     if input_file == "index.md":
         return
 
-    # lineumber of title
-
     t = [
         ["meta", meta["title"] if "title" in meta else ""],
         ["header", _title_from_h1(contents)],
@@ -106,15 +112,18 @@ def get_page_title(input_file, meta, contents, startline, endline):
     # This would be where you check title correctness.
 
 
-def check_expected_parameters(path, meta, contents, startline, endline):
+def check_expected_parameters():
     """
     Check for unexpected keys, and confirm existance of required.
     """
+    ret_code = 0
+
     # Check if any unexpected keys.
     line_of_key = startline
     for key in meta.keys():
         line_of_key += 1
         if key not in EXPECTED_PARAMETERS.keys():
+            ret_code += 1
             print(
                 f"::warning file={path},line={line_of_key},title=meta.unexpected::Unexpected parameter in front-matter '{key}'"
             )
@@ -125,19 +134,18 @@ def check_expected_parameters(path, meta, contents, startline, endline):
     for key, value in EXPECTED_PARAMETERS.items():
         if value:
             if key not in meta.keys():
+                ret_code += 1
                 print(
                     f"::{value} file={path},line={startline},title=meta.unexpected::Missing parameter from front-matter '{key}'"
                 )
-
+    return ret_code
 
 def check_article_titles(path, meta, contents, startline, endline):
-
-    global line_of_title 
-    line_of_title = (list(meta).index('title') if 'title' in meta else 1) + startline + 1
     resolved_title = get_page_title(path, meta, contents, startline, endline)
 
     if len(resolved_title) > MAX_TITLE_LENGTH:
         f"::warning file={resolved_title},line={line_of_title},title=title.long::Title '{path}' is too long"
+        return 1
 
 
 all_checks = [check_expected_parameters, check_article_titles]
