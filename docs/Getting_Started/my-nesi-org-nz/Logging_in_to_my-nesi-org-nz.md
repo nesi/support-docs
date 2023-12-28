@@ -10,15 +10,6 @@ zendesk_article_id: 360003584515
 zendesk_section_id: 360001059296
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Login credentials
 
 We allow students, academics, alumni and researchers to securely login
@@ -32,7 +23,7 @@ Most New Zealand universities and Crown Research Institutes are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
 but many other institutions, including private sector organisations and
-most central and local government agencies, are not. 
+most central and local government agencies, are not.
 
 See also [Creating a NeSI Account
 Profile](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
@@ -42,15 +33,14 @@ Profile](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI
 In case your organisation is not part of the Tuakiri federated identity
 management service, a user can still [request a NeSI Account
 profile.](https://my.nesi.org.nz/html/request_nesi_account) NeSI will
-(if approved) provision a so-called "virtual home account" on Tuakiri. 
+(if approved) provision a so-called "virtual home account" on Tuakiri.
 
 See also [Account Requests for non-Tuakiri
 Members](../../General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members.md)
 
 ## Troubleshooting login issues
 
-Please use the **[Tuakiri Attribute
-Validator](https://attributes.tuakiri.ac.nz/snapshots/latest) **to
+Please use the [Tuakiri Attribute Validator](https://attributes.tuakiri.ac.nz/snapshots/latest) to
 verify the details of your account. Contact your identity provider (e.g.
 institution, university) in case there are details missing or wrong.
 

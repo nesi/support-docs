@@ -10,15 +10,6 @@ zendesk_article_id: 360003592875
 zendesk_section_id: 360001059296
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ![mceclip0.png](../../assets/images/Navigating_the_my-nesi-org-nz_web_interface.png)
 
 ## Main navigation

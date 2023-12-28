@@ -10,15 +10,6 @@ zendesk_article_id: 360000360576
 zendesk_section_id: 360000040056
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Environment Modules
 
 NeSI uses environment modules to manage [installed
@@ -26,10 +17,10 @@ software](https://support.nesi.org.nz/hc/articles/360000170355).
 
 Using the `module` command you can:
 
--   View loaded modules:
--   List all available modules
--   Load a module:
--   Switch out a loaded module for a different version:
+- View loaded modules:
+- List all available modules
+- Load a module:
+- Switch out a loaded module for a different version:
 
 ## Lmod on Mahuika
 
@@ -40,13 +31,13 @@ Lmod extends the basic environment modules by adding simple shortcuts
 and a more powerful search capability. The `ml` shortcut can be used in
 place of `module`. With Lmod you can:
 
--   View loaded modules:
--   List all available modules:
--   Use “spider” to search for modules, e.g. “Python” modules:
--   Load a module:
--   Prefix a module with “-“ to unload it, e.g. switch from Python 2 to
-    Python 3:
--   To get a fresh environment, we recommend that you log out and log in
+- View loaded modules:
+- List all available modules:
+- Use “spider” to search for modules, e.g. “Python” modules:
+- Load a module:
+- Prefix a module with “-“ to unload it, e.g. switch from Python 2 to
+  Python 3:
+- To get a fresh environment, we recommend that you log out and log in
     again. By logging out and logging in again you will revert to not
     only the default set of modules, but also the default set of
     environment variables.
@@ -71,7 +62,6 @@ NOTE: The substring search will be soon implemented by default, then you
 do not need to specify the -S anymore. Furthermore, this improvement
 should be also ported to the Māui\_Ancil part.
 
- 
-
-NOTE: you can create your own modules. This is described
-[here](../../Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md).
+!!! tip
+    You can create your own modules. This is described
+    [here](../../Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md).

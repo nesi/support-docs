@@ -10,15 +10,6 @@ zendesk_article_id: 360000691716
 zendesk_section_id: 360000278975
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 If you are unsure about using our job scheduler Slurm, more details can
 be found
 [here](../../Getting_Started/Next_Steps/Submitting_your_first_job.md).
@@ -44,13 +35,7 @@ slurm into a terminal
 | sinfo   | `sinfo`               | Shows the current state of our Slurm partitions.                          |
 |         |                       |                                                                           |
 
- 
-
-------------------------------------------------------------------------
-
- 
-
-## *sbatch* options
+## `sbatch`` options
 
 A complete list of *sbatch* options can be found
 [here](https://slurm.schedmd.com/sbatch.html), or by running man sbatch
@@ -206,10 +191,11 @@ defined.</td>
 </tr>
 </tbody>
 </table>
-!!! prerequisite Tip
+!!! tip
      Many options have a short and long form e.g.
      `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
-     ``` sl
+
+     ``` sh
      echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
      ```
 
@@ -230,10 +216,12 @@ Common examples.
 | `$SLURM_CPUS_PER_TASK` | Useful as an input for multi-threaded functions. |
 | `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
 | `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.             |
-!!! prerequisite Tip
+
+!!! tip
      In order to decrease the chance of a variable being misinterpreted you
      should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
      possible. e.g.
-     ``` sl
+
+     ``` sh
      echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
      ```

@@ -10,15 +10,6 @@ zendesk_article_id: 360000202196
 zendesk_section_id: 360000196195
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 NeSI recognises that research programmes often continue over several
 years before coming to an end. To reduce administrative overhead, we
 allow most project teams to extend their projects rather than applying
@@ -26,34 +17,34 @@ for a new project to carry on the same work.
 
 We currently offer two sorts of extensions:
 
--   A new allocation of computing resources (usually compute units on
+- A new allocation of computing resources (usually compute units on
     Mahuika or node hours on Māui)
--   A project extension without a new allocation of computing resources.
+- A project extension without a new allocation of computing resources.
 
 ## Will my project qualify for an extension?
 
 Usually, yes. There are a few circumstances in which a project will not
 qualify for an extension:
 
--   If there has been a substantial change to the research programme's
+- If there has been a substantial change to the research programme's
     goals.
--   If there has been (or is about to be) a substantial change to the
+- If there has been (or is about to be) a substantial change to the
     computational methods the project team plans on using to carry out
     the project work, such that we decide a new technical assessment is
     warranted.
--   If the project team is no longer eligible to receive computing
+- If the project team is no longer eligible to receive computing
     resources from NeSI. For example, the grant funding the research
     programme has come to an end and the host institution does not wish
     to purchase computing resources from NeSI (or allocate computing
     resources from its subscription or collaborator share if it has
     one).
--   If the project's host institution has changed (or is about to
+- If the project's host institution has changed (or is about to
     change).
--   If the project's owner is no longer employed by or studying at the
+- If the project's owner is no longer employed by or studying at the
     project's host institution, and there is no-one at the host
     institution who has agreed to take over project ownership
     responsibilities.
--   If the project's owner (or supervisor if the project has one) is not
+- If the project's owner (or supervisor if the project has one) is not
     authorised to access NeSI facilities due to a refusal to accept or
     failure to abide by the NeSI Acceptable Use Policy.
 
@@ -77,12 +68,12 @@ You will receive a series of automated emails inviting you to apply for
 a new allocation (or, alternatively, clean up your project data) in the
 following circumstances:
 
--   In the lead-up to the end of the [call
+- In the lead-up to the end of the [call
     window](https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations)
     immediately before your currently active allocation is scheduled to
     end.
--   In the lead-up to the end of your allocation.
--   If your allocation ends before your project is scheduled to end, in
+- In the lead-up to the end of your allocation.
+- If your allocation ends before your project is scheduled to end, in
     the lead-up to the end of your project.
 
 ## Requests for new allocations
@@ -96,10 +87,10 @@ differ from our forecast.
 
 Please be aware that:
 
--   First and subsequent allocations are subject to the NeSI allocation
+- First and subsequent allocations are subject to the NeSI allocation
     size and duration limits in force at the time they are considered by
     our reviewers.
--   An allocation from an institution's entitlement is subject to
+- An allocation from an institution's entitlement is subject to
     approval by that institution.
 
 ## Requests for project extensions without a new compute allocation
@@ -119,5 +110,3 @@ six months, we encourage you to enquire about our [Long-Term Storage
 Service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md) or
 to move your research data off our facility and make arrangements with
 your project's host institution for long-term data storage.
-
- 

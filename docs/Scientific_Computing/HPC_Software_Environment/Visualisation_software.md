@@ -2,6 +2,7 @@
 created_at: '2019-01-16T20:51:18Z'
 hidden: false
 weight: 13
+status: deprecated
 tags:
 - support
 - application
@@ -13,14 +14,6 @@ zendesk_article_id: 360000700295
 zendesk_section_id: 360000040056
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 NeSI provides a variety of visualisation software solutions via modules.
 Available software and software versions vary between the Mahuika and
@@ -40,11 +33,11 @@ large visualisation jobs to the HPC.
 
 In the following installed packages are listed for:
 
--   Scripting Languages with Visualisation Capabilities
+- Scripting Languages with Visualisation Capabilities
 
--   2D Visualisation Software
+- 2D Visualisation Software
 
--   3D Visualisation Software
+- 3D Visualisation Software
 
 ## Scripting Languages with Visualisation Capabilities
 
@@ -256,22 +249,22 @@ up Client-Server Mode" below.
 If you want to use ParaView in client-server mode, use the following
 setup:
 
--   Load one of the ParaView Server modules listed above and launch the
+- Load one of the ParaView Server modules listed above and launch the
     server in your interactive visualisation session on the HPC:
 
 ``` sl
 mpiexec -np <number of MPI ranks> pvserver
 ```
 
--   Create an SSH tunnel for port "11111" from the HPC to your local
+- Create an SSH tunnel for port "11111" from the HPC to your local
     machine using, e.g., the ssh program (Linux and MacOS) or MobaXterm
     (Windows)
--   Launch the ParaView GUI on your local machine and go to "File &gt;
+- Launch the ParaView GUI on your local machine and go to "File &gt;
     Connect"
--   Click on "Add Server", choose server type "Client / Server", host
+- Click on "Add Server", choose server type "Client / Server", host
     "localhost" (as we will be using the SSH tunnel), and port "11111",
     then click on "Configure"
--   Select the new server and click on "Connect"
+- Select the new server and click on "Connect"
 
 ### VisIt
 
@@ -281,9 +274,8 @@ support and client-server operation will be added later.
 
 #### Available Modules
 
-|                                   |             |                |                      |
-|-----------------------------------|-------------|----------------|----------------------|
 | **Module Name**                   | **Mahuika** | **Māui Ancil** | **Comment**          |
+|-----------------------------------|-------------|----------------|----------------------|
 | VisIt/2.13.3-gimpi-2018b-GUI-Mesa |             | ✔              | GUI version for CPUs |
 
 
@@ -296,9 +288,8 @@ language.
 
 #### Available Modules
 
-|                                     |             |                |                           |
-|-------------------------------------|-------------|----------------|---------------------------|
 | **Module Name**                     | **Mahuika** | **Māui Ancil** | **Comment**               |
+|-------------------------------------|-------------|----------------|---------------------------|
 | VTK/6.3.0-gimkl-2017a-Python-2.7.14 | ✔           |                | VTK6 with Python bindings |
 | VTK/7.1.1-gimkl-2018b-Python-2.7.16 | ✔           |                | VTK7 with Python bindings |
 | VTK/8.1.1-GCC-7.1.0-Anaconda2-5.2.0 |             | ✔              | VTK8 with Python bindings |
