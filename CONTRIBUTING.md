@@ -43,7 +43,23 @@ A link to the deployment will be printed once served.
 
 ### IDE
 
-You can use any IDE you want, if you are using VSCode there are [Reccomended VSCode Plugins](.vscode/extensions.json).
+You can use any IDE you want, but various tools have been configured for use with VSCode.
+
+#### Reccomended Extensions
+
+When opening the workspace for the first time, you should be prompted to install the [Reccomended VSCode Plugins](.vscode/extensions.json).
+
+#### Snippets
+
+`ctrl` + `space` can be used to aid by autocompleting.
+
+e.g. starting to type an image include `![my image](` then pressing `ctrl` + `space` will show all the valid paths.
+
+Custom snippets can be added in `.vscode/includes.code-snippets`
+
+#### Tasks
+
+Tasks allow continuous checks to be run in the background, these can be defined in `.vscode/tasks.json`, also include in `.vscode/settings.json` in order to trigger on save.
 
 ## Making a Merge Request
 
@@ -53,13 +69,16 @@ Make a pull request for your development branch into `main`.
 
 If you are using a local development environment,
 
-```
+```sh
 git checkout -b <branchname>
 ```
+
 When you are done with your changes
-```
+
+```sh
 git push origin <branchname>
 ```
+
 CI checks will run on your branch, you can check them under 'Actions'
 Might be worth having a quick look at these before making a pull request.
 
