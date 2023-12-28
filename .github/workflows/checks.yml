@@ -28,17 +28,13 @@ jobs:
              **.md
     - name: Push Changed files to output
       if: inputs.fileList == ''
-      id: output
+      id: diff
       run: |
         [ -z "${{steps.get-changed-files.outputs.all_changed_files}}" ] && ( echo "Error, no files changed" && exit 1 )
         echo "Changed files: ${{steps.get-changed-files.outputs.all_changed_files}}"
-        echo "filelist=${{steps.get-changed-files.outputs.all_changed_files}}" >> $GITHUB_OUTPUT 
-      # run: |
-      #   shopt -s globstar extglob
-      #   FILELIST=$(git diff-tree --no-commit-id --name-only -r HEAD docs/**/*.md | tr '\n' ' ')
-
+        echo "filelist=${{steps.get-changed-files.outputs.all_changed_files}}" >> $GITHUB_OUTPUT
     outputs:
-      filelist: ${{steps.input.outputs.filelist || inputs.fileList}}
+      filelist: ${{steps.diff.outputs.filelist || inputs.fileList}}
   spellcheck:
     name: Check Spelling
     runs-on: ubuntu-latest
@@ -47,7 +43,9 @@ jobs:
       - name: Check out repo.
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: pip install pyspelling
+        run: |
+          sudo apt install -y aspell
+          pip install pyspelling
       - name: Run pyspelling
         run: |
           shopt -s globstar extglob
@@ -98,4 +96,4 @@ jobs:
          with:
           fetch-depth: 0
        - run: pip install -r requirements.txt
-       - run: mkdocs build 2>&1 | awk -F " - " '{gsub(/ /, "", $1);gsub(/INFO/, "notice", $1); printf("::%s::%s\n",$1,$2) }'
+       - run: mkdocs build --strict 2>&1 | awk -F " - " '{gsub(/ /, "", $1);gsub(/INFO/, "notice", $1); printf("::%s::%s\n",$1,$2) }'
