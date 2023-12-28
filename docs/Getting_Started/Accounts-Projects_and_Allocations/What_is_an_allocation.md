@@ -10,15 +10,6 @@ zendesk_article_id: 360001385735
 zendesk_section_id: 360000196195
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Because NeSI's resources are limited, we manage access to our resources
 through allocations. Typically, an allocation is a grant of a certain
 amount of a resource, or of a rate at which a resource can be consumed,
@@ -60,9 +51,8 @@ Share adjusted core-hour" on Mahuika's standard compute nodes.
 The price of hardware in terms of compute units is shown in the
 following table.
 
-|                        |                                         |
+|  Hardware type         |    Fair Share Price                     |
 |------------------------|-----------------------------------------|
-| Hardware type          | Fair Share Price                        |
 | CPU                    | 0.35 compute units per logical-CPU-hour |
 | Memory (RAM)           | 0.10 compute units per GB-hour          |
 | P100 GPU device        | 7.0 compute units per device-hour       |
@@ -81,11 +71,11 @@ is two
 (see [Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md) for
 details). Therefore:
 
--   the lowest possible price for a CPU-only job is 0.70 compute units
+- the lowest possible price for a CPU-only job is 0.70 compute units
     per hour, plus memory (RAM).
--   the lowest possible price for a CPU + P100 GPU job is 7.70 compute
+- the lowest possible price for a CPU + P100 GPU job is 7.70 compute
     units per hour, plus memory (RAM).
--   the lowest possible price for a CPU + A100 GPU job is 18.70 compute
+- the lowest possible price for a CPU + A100 GPU job is 18.70 compute
     units per hour, plus memory (RAM).
 
 In reality, every job must request at least some RAM.
@@ -138,5 +128,3 @@ scientific programming expertise to your project.
 
 We do not yet have a ratio of consultancy hours to Mahuika compute
 units.
-
- 

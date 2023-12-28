@@ -14,29 +14,21 @@ zendesk_article_id: 360000693896
 zendesk_section_id: 360000196195
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Requirements
+!!! prerequisite
      -   You must have a [NeSI
          account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
 
 ## How to join an existing project on NeSI
 
-1.  Make sure you have been given the project code by the project owner.
-2.  Log in to [my.nesi.org.nz](https://my.nesi.org.nz/).
-3.  Under the [Projects](https://my.nesi.org.nz/projects/join) page use
+1. Make sure you have been given the project code by the project owner.
+2. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/).
+3. Under the [Projects](https://my.nesi.org.nz/projects/join) page use
     the "**Join Project**" link to request to be added to the project as
     a member.
 
 Once submitted you will receive a ticket confirmation via email.
-!!! prerequisite What Next?
+
+!!! prerequisite "What Next?"
      -   The project owner will be notified, and asked to approve your
          request.
      -   Once your request has been approved by the project owner and
