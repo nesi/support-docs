@@ -26,8 +26,8 @@ EXPECTED_PARAMETERS = {
     "suggested": "",  # Add info here when implimented.
     "created_at": "",
     "hidden": "",
-    "label_names": "",  # Add info here when implimented.
-    "position": "",
+    "tags": "",  # Add info here when implimented.
+    "weight": "",
     "vote_count": "",
     "vote_sum": "",
     "zendesk_article_id": "",
@@ -37,6 +37,7 @@ EXPECTED_PARAMETERS = {
 
 def main():
     """Main entry point of the app"""
+  
     input_files = sys.argv[1:]
 
     for input_file in input_files:
@@ -47,15 +48,15 @@ def main():
             match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
             if not match:
                 print(
-                    f"::warning file={input_file},line=0,title=meta.parse::Meta block missing or malformed."
+                    f"::warning file={input_file},title=meta.parse::Meta block missing or malformed."
                 )
                 continue
             meta = yaml.safe_load(match.group(1))
             for check in all_checks:
-                check(input_file, meta, contents)
+                check(input_file, meta, contents, match.start()+1, match.end()+1)
 
 
-def page_title(input_file, meta, contents):
+def get_page_title(input_file, meta, contents, startline, endline):
     """
     This is silly codegolf.
     Delete this before anyone sees.
@@ -77,15 +78,17 @@ def page_title(input_file, meta, contents):
         if title1 and title2:
             if title1 == title2:
                 print(
-                    f"::notice file={input_file},line=0,title=title.redundant::Title set in {type1} is redundant, already set in {type2}."
+                    f"::notice file={input_file},line={line_of_title},title=title.redundant::Title set in {type1} is redundant, already set in {type2}."
                 )
             else:
                 print(
-                    f"::notice file={input_file},line=0,title=title.redundant::Title set in {type1} ({title1}) does not match title set in {type2} ({title2})."
+                    f"::notice file={input_file},line={line_of_title},title=title.redundant::Title set in {type1} ({title1}) does not match title set in {type2} ({title2})."
                 )
 
     if input_file == "index.md":
         return
+
+    # lineumber of title
 
     t = [
         ["meta", meta["title"] if "title" in meta else ""],
@@ -99,25 +102,21 @@ def page_title(input_file, meta, contents):
 
     return t[0][1] or t[1][1] or t[2][1]
 
-
-def check_title(path):
-    if len(path) > 28:
-        f"::warning file={path},line=0,title=title.long::Title '{path}' is too long"
-
     # path, file = os.path.split()
     # This would be where you check title correctness.
 
 
-def check_expected_parameters(path, meta, contents):
+def check_expected_parameters(path, meta, contents, startline, endline):
     """
     Check for unexpected keys, and confirm existance of required.
     """
-    return
     # Check if any unexpected keys.
+    line_of_key = startline
     for key in meta.keys():
+        line_of_key += 1
         if key not in EXPECTED_PARAMETERS.keys():
             print(
-                f"::notice file={path},line=0,title=meta.unexpected::Unexpected parameter '{key}'"
+                f"::warning file={path},line={line_of_key},title=meta.unexpected::Unexpected parameter in front-matter '{key}'"
             )
 
     # Yes this is 2 x O().
@@ -127,12 +126,18 @@ def check_expected_parameters(path, meta, contents):
         if value:
             if key not in meta.keys():
                 print(
-                    f"::{value} file={path},line=0,title=meta.unexpected::Missing parameter '{key}'"
+                    f"::{value} file={path},line={startline},title=meta.unexpected::Missing parameter from front-matter '{key}'"
                 )
 
 
-def check_article_titles(path, meta, contents):
-    check_title(page_title(path, meta, contents))
+def check_article_titles(path, meta, contents, startline, endline):
+
+    global line_of_title 
+    line_of_title = (list(meta).index('title') if 'title' in meta else 1) + startline + 1
+    resolved_title = get_page_title(path, meta, contents, startline, endline)
+
+    if len(resolved_title) > MAX_TITLE_LENGTH:
+        f"::warning file={resolved_title},line={line_of_title},title=title.long::Title '{path}' is too long"
 
 
 all_checks = [check_expected_parameters, check_article_titles]

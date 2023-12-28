@@ -1,3 +1,14 @@
 {
-    "editor.indentSize": "tabSize"
+    "editor.indentSize": "tabSize",
+    "triggerTaskOnSave.tasks": {
+        "meta-checks": [
+            "docs/**/*.md"
+        ],
+        "proselint-checks": [
+            "docs/**/*.md"
+        ],
+        "spelling-checks": [
+            "docs/**/*.md"
+        ]
+    },
 }

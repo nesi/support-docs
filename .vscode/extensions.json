@@ -4,7 +4,10 @@
 		"DavidAnson.vscode-markdownlint",
 		"arsprogramma.compliment",
 		"TakumiI.markdowntable",
-		"redhat.vscode-yaml"
+		"redhat.vscode-yaml",
+		"ms-python.black-formatter",
+		"GitHub.vscode-github-actions",
+		"GitHub.vscode-pull-request-github"
 	],
 	"unwantedRecommendations": [
 		
