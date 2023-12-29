@@ -8,6 +8,26 @@ matrix:
     encoding: utf-8
   pipeline:
   - pyspelling.filters.url:
+  - pyspelling.filters.context:
+      context_visible_first: true
+      escapes: '\\[\\`~]'
+      delimiters:
+      # Ignore multiline content between fences
+      # ```md
+      # content
+      # ```
+      - open: '(?s)^(?P<open> *`{3}\s?[a-zA-Z]*)$'
+        close: '^(?P=open)$'
+      # Ignore the content in meta
+      # ---
+      # content
+      # ---
+      - open: '(?s)^(?P<open> *-{3})$'
+        close: '^(?P=open)$'    
+      # Ignore content between inline back ticks
+      #  `content`
+      - open: '(?P<open>`+)'
+        close: '(?P=open)'
   - pyspelling.filters.markdown:
       markdown_extensions:
       - markdown.extensions.toc

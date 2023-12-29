@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-###!/usr/bin/env python3
+#!/usr/bin/env python3
 
 """
 Runs checks on article meta block and outputs in github action readable format

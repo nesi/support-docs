@@ -37,22 +37,21 @@ need to authenticate yourself on the cluster.
 More information can be found in the [GitHub
 documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
-- On the NeSI cluster, run the command 
+- On the NeSI cluster, run the command
 
     ```sh
     ssh-keygen -t ed25519 -C "your_github_account@example.com"
     ```
 
-- When prompted for a file name, press `enter`. When prompted for a
-    passcode, press enter twice more.
+- When prompted for a file name, press `enter`. When prompted for a password, press enter twice more.
 
-- Open up the newly created .pub key with the command 
+- Open up the newly created .pub key with the command
 
     ```sh
     cat ~/.ssh/id_ed25519.pub
     ```
 
-    (or whatever you named the key). It should look something like: 
+    (or whatever you named the key). It should look something like:
 
     ```sh
     ssh-ed25519 ABCDEFGKSAfjksjafkjsaLJfakjJF your_github_account@example.com
@@ -60,7 +59,7 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 
     Copy the whole key.
 
-- Now log in to your github account. In the upper-right corner of any
+- Now log in to your GitHub account. In the upper-right corner of any
     page, click your profile photo click **Settings**.
 
     ![Settings icon in the user bar](../../assets/images/Git-Reference_Sheet.png)
@@ -86,7 +85,7 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
     ssh -T git@github.com
     ```
 
-    You may be promted to authenticate, if so type 'yes'  
+    You may be prompted to authenticate, if so type 'yes'  
     If everything is working, you should see the message
 
     ```out
@@ -99,20 +98,20 @@ You can create a repository with either of the following commands.
 
 |       |                                                       |                                                         |
 |-------|-------------------------------------------------------|---------------------------------------------------------|
-| clone | `git clone https://github.com/nesi/perf-training.git` | Copies a remote repository into your current directory. |
-| init  | `git init`                                            | Creates a new empty repo in your current directory.     |
+| `clone` | `git clone https://github.com/nesi/perf-training.git` | Copies a remote repository into your current directory. |
+| `init`  | `git init`                                            | Creates a new empty repo in your current directory.     |
 
 |         |                                  |                                                                                                                          |
 |---------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| add     | `git add <file1> <file2>`        | Adds `<file1>` and `<file2>` to the staging area.                                                                        |
+| `add`     | `git add <file1> <file2>`        | Adds `<file1>` and `<file2>` to the staging area.                                                                        |
 |         | `git add *.py`                   |  Adds all python files in the current directory to the staging area.                                                     |
-| status  | `git status`                     | Lists changes in working directory, and staged files.                                                                    |
-| commit  | `git commit`                     | Records everything in the staging area to your repository. The default text editor will prompt you for a commit message. |
+| `status`  | `git status`                     | Lists changes in working directory, and staged files.                                                                    |
+| `commit` | `git commit`                     | Records everything in the staging area to your repository. The default text editor will prompt you for a commit message. |
 |         | `git commit -m "Commit message"` | Records everything in the staging area to your repository with the commit message "Commit message"                       |
 |         | `git commit --amend`             | Modify last commit instead of creating a new one. Useful for fixing small mistakes.                                      |
-| log     | `git log`                        | Prints commit history of repo.                                                                                           |
+| `log`    | `git log`                        | Prints commit history of repo.                                                                                           |
 |         | `git log <filename>`             | Prints commit history of `<filename>`.                                                                                   |
-| reset   | `git reset`                      | Removes all files from staging area. (Opposite of `git add`)                                                             |
+| `reset`  | `git reset`                      | Removes all files from staging area. (Opposite of `git add`)                                                             |
 |         | `git reset <filename>`           | Removes `<filename>` from staging area.                                                                                  |
 
 ## Remote
