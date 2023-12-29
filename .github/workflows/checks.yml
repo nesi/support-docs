@@ -8,10 +8,30 @@ on:
   workflow_dispatch:
     inputs:
       fileList:
-          description: 'Files to Lint (space delimited)'
+          description: Files to Lint (space delimited)
           required: true
           default: "docs/specification.md"
           type: string
+      checkSpelling:
+        description: Check Spelling
+        default: true
+        type: boolean
+      checkProse:
+        description: Check Prose
+        default: true
+        type: boolean
+      checkMarkdown:
+        description: Check Markdown
+        default: true
+        type: boolean
+      checkMeta:
+        description: Check Meta
+        default: true
+        type: boolean
+      testBuild:
+        description: Test Build
+        default: true
+        type: boolean
 jobs:
   get:
     name: Determine what files to check
@@ -37,6 +57,7 @@ jobs:
       filelist: ${{steps.diff.outputs.filelist || inputs.fileList}}
   spellcheck:
     name: Check Spelling
+    if: ${{github.event.push || inputs.checkSpelling}}
     runs-on: ubuntu-latest
     needs: get
     steps:
@@ -51,7 +72,8 @@ jobs:
           shopt -s globstar extglob
           python3 checks/run_pyspelling.py ${{needs.get.outputs.filelist}}
   proselint:
-    name: Check prose
+    name: Check Prose
+    if: ${{github.event.push || inputs.checkProse}}
     runs-on: ubuntu-latest
     needs: get
     steps:
@@ -65,6 +87,7 @@ jobs:
           python3 checks/run_proselint.py ${{needs.get.outputs.filelist}}
   mdlint:
      name: Check Markdown
+     if: ${{github.event.push || inputs.checkMarkdown}}
      runs-on: ubuntu-latest
      needs: get
      steps:
@@ -75,9 +98,10 @@ jobs:
        - name: Run markdownlint
          run: |
           shopt -s globstar extglob
-          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json "${{needs.get.outputs.filelist}}" 2>&1 | checks/parse_markdownlint.py
   metacheck:
      name: Check page meta
+     if: ${{github.event.push || inputs.checkMeta}}
      runs-on: ubuntu-latest
      needs: get
      steps:
@@ -89,6 +113,7 @@ jobs:
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
   testBuild:
      name: Test build
+     if: ${{github.event.push || inputs.testBuild}}
      runs-on: ubuntu-latest
      needs: get
      steps:
