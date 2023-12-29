@@ -32,5 +32,5 @@ guides.
 - [Nvidia Documentation](https://docs.nvidia.com/cuda/)
 - [cuda-gdb](https://docs.nvidia.com/cuda/cuda-gdb/) debugger
 - [cuda-memcheck](https://docs.nvidia.com/cuda/cuda-memcheck/) memory
-    checker 
+    checker.
 - [GCC Manuals](https://gcc.gnu.org/onlinedocs/)
