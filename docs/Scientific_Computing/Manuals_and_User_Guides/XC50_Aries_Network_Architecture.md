@@ -2,7 +2,7 @@
 created_at: '2018-05-23T03:17:56Z'
 hidden: false
 weight: 4
-tags: []
+tags: [ asadasdad ]
 title: XC50 Aries Network Architecture
 status: deprecated
 vote_count: 0
