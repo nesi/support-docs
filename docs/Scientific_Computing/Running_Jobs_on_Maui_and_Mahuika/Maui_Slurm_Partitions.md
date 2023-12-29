@@ -12,22 +12,11 @@ zendesk_article_id: 360000204116
 zendesk_section_id: 360000030876
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Important
+!!! tip
      Partitions on these systems that may be used for NeSI workloads carry
-     the prefix **nesi\_**.
+     the prefix `nesi_`.
 
-
-
-## Definitions
+<!-- ## Definitions
 
 **CPU** - A logical core, also known as a hardware thread. Referred to
 as a "CPU" in the Slurm documentation.  Since
@@ -43,9 +32,7 @@ launch with *srun*.
 (desktop PC) or laptop.
 
 **Walltime: **Real world time, as opposed to CPU time (walltime x CPUs).
-
-
-
+ -->
 ## Māui (XC50) Slurm Partitions
 
 Nodes are not shared between jobs on Māui, so the minimum charging unit
@@ -54,48 +41,48 @@ CPU-hours.
 
 There is only one partition available to NeSI jobs:
 
-<table style="height: 135px; width: 850px;">
+<table >
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
 </colgroup>
 <tbody>
-<tr class="odd" style="height: 46px;">
+<tr >
 <td
-style="width: 148.15px; height: 46px"><p><strong> Name </strong></p></td>
+> Name </td>
 <td
-style="width: 79.7833px; height: 46px"><p><strong>Nodes</strong></p></td>
-<td style="width: 115.8px; height: 46px"><p><strong>Max
-Walltime</strong></p></td>
-<td style="width: 131.333px; height: 46px"><p><strong>Avail /
-Node</strong></p></td>
-<td style="width: 131.333px; height: 46px"><p><strong>Max /
-Account</strong></p></td>
+>Nodes</td>
+<td >Max
+Walltime</td>
+<td >Avail /
+Node</td>
+<td >Max /
+Account</td>
 <td
-style="width: 226.6px; height: 46px"><p><strong>Description</strong></p></td>
+>Description</td>
 </tr>
-<tr class="even" style="height: 89px;">
+<tr >
 <td
-style="width: 148.15px; vertical-align: top; height: 89px"><p>nesi_research</p></td>
+>nesi_research</td>
 <td
-style="width: 79.7833px; vertical-align: top; height: 89px"><p>316</p></td>
-<td style="width: 115.8px; vertical-align: top; height: 89px"><p>24
-hours</p></td>
-<td style="width: 131.333px; vertical-align: top; height: 89px"><p>80
-CPUs</p>
-<p>90 or 180 GB RAM</p></td>
-<td style="width: 131.333px; vertical-align: top; height: 89px"><p>240
-nodes</p>
-<p>1200 node-hours running</p></td>
+>316</td>
+<td >24
+hours</td>
+<td >80
+CPUs
+90 or 180 GB RAM</td>
+<td >240
+nodes
+1200 node-hours running</td>
 <td
-style="width: 226.6px; vertical-align: top; height: 89px"><p>Standard
+>Standard
 partition for all NeSI jobs.<br />
 <br />
-</p></td>
+</td>
 </tr>
 </tbody>
 </table>
@@ -108,14 +95,13 @@ output when you hit it as the reason "*AssocGrpCPURunMinutes"* ) you can
 occupy more nodes simultaneously if your jobs request a shorter time
 limit:
 
-|           |           |                |                            |
-|-----------|-----------|----------------|----------------------------|
-| **nodes** | **hours** | **node-hours** | **limits reached**         |
-| 1         | 24        | 24             | 24 hours                   |
-| 50        | 24        | 1200           | 1200 node-hours, 24 hours  |
-| 100       | 12        | 1200           | 1200 node-hours            |
-| 240       | 5         | 1200           | 1200 node-hours, 240 nodes |
-| 240       | 1         | 240            | 240 nodes                  |
+| nodes | hours | node-hours | limits reached             |
+| ----- | ----- | ---------- | -------------------------- |
+| 1     | 24    | 24         | 24 hours                   |
+| 50    | 24    | 1200       | 1200 node-hours, 24 hours  |
+| 100   | 12    | 1200       | 1200 node-hours            |
+| 240   | 5     | 1200       | 1200 node-hours, 240 nodes |
+| 240   | 1     | 240        | 240 nodes                  |
 
 Most of the time [job
 priority](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md) will
@@ -130,106 +116,102 @@ Each job has a "QoS", with the default QoS for a job being determined by
 the [allocation
 class](https://support.nesi.org.nz/hc/en-gb/articles/360000202535-Overview)
 of its project. Specifying `--qos=debug` will override that and give the
-job very high priority, but is subject to strict limits: 15 minutes per
+job high priority, but is subject to strict limits: 15 minutes per
 job, and only 1 job at a time per user. Debug jobs are limited to 2
 nodes.
 
-
-
 ## Māui\_Ancil (CS500) Slurm Partitions
 
- 
-
-<table style="height: 242px; width: 850px;">
+<table >
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
+<col />
 </colgroup>
 <tbody>
-<tr class="odd" style="height: 46px;">
+<tr >
 <td
-style="height: 49px; width: 104.55px"><p><strong>Name</strong></p></td>
+>Name</td>
 <td
-style="height: 49px; width: 64.35px"><p><strong>Nodes</strong></p></td>
-<td style="height: 49px; width: 110.567px"><p><strong>Max
-Walltime</strong></p></td>
-<td style="height: 49px; width: 110.567px"><p><strong>Avail /
-Node</strong></p></td>
-<td style="height: 49px; width: 111.583px"><p><strong>Max /
-Job</strong></p></td>
-<td style="height: 49px; width: 110.583px"><p><strong>Max /
-User</strong></p></td>
+>Nodes</td>
+<td >Max
+Walltime</td>
+<td >Avail /
+Node</td>
+<td >Max /
+Job</td>
+<td >Max /
+User</td>
 <td
-style="height: 49px; width: 159.8px"><p><strong>Description</strong></p></td>
+>Description</td>
 </tr>
-<tr class="even" style="height: 91px;">
+<tr >
 <td
-style="height: 36px; width: 104.55px; vertical-align: top"><p>nesi_prepost</p></td>
+>nesi_prepost</td>
 <td
-style="height: 36px; width: 64.35px; vertical-align: top"><p>4</p></td>
-<td style="height: 36px; width: 110.567px; vertical-align: top"><p>24
-hours</p></td>
-<td style="height: 36px; width: 110.567px; vertical-align: top"><p>80
-CPUs</p>
-<p>720 GB RAM</p></td>
-<td style="height: 36px; width: 111.583px; vertical-align: top"><p>20
-CPUs</p>
-<p>700 GB RAM</p></td>
-<td style="height: 36px; width: 110.583px; vertical-align: top"><p>80
-CPUs</p>
-<p>700 GB RAM</p></td>
-<td style="height: 36px; width: 159.8px; vertical-align: top"><p>Pre and
-post processing tasks.</p></td>
+>4</td>
+<td >24
+hours</td>
+<td >80
+CPUs
+720 GB RAM</td>
+<td >20
+CPUs
+700 GB RAM</td>
+<td >80
+CPUs
+700 GB RAM</td>
+<td >Pre and
+post processing tasks.</td>
 </tr>
-<tr class="odd" style="height: 103.2337646484375px;">
+<tr >
 <td
-style="height: 87px; width: 104.55px; vertical-align: top"><p>nesi_gpu</p></td>
-<td style="height: 87px; width: 64.35px; vertical-align: top"><p>4 to
-5</p></td>
-<td style="height: 87px; width: 110.567px; vertical-align: top"><p>72
-hours</p></td>
-<td style="height: 87px; width: 110.567px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU*</p></td>
-<td style="height: 87px; width: 111.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
-<td style="height: 87px; width: 110.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
-<td style="height: 87px; width: 159.8px; vertical-align: top"><p>GPU
-jobs and visualisation. </p></td>
+>nesi_gpu</td>
+<td >4 to
+5</td>
+<td >72
+hours</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU*</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
+<td >GPU
+jobs and visualisation. </td>
 </tr>
-<tr class="even" style="height: 70px;">
+<tr >
 <td
-style="height: 70px; width: 104.55px; vertical-align: top"><p>nesi_igpu</p></td>
-<td style="height: 70px; width: 64.35px; vertical-align: top"><p>0 to
-1</p></td>
-<td style="height: 70px; width: 110.567px; vertical-align: top"><p>2
-hours</p></td>
-<td style="height: 70px; width: 110.567px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU*</p></td>
-<td style="height: 70px; width: 111.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
-<td style="height: 70px; width: 110.583px; vertical-align: top"><p>4
-CPUs</p>
-<p>12 GB RAM</p>
-<p>1 P100 GPU</p></td>
+>nesi_igpu</td>
+<td >0 to
+1</td>
+<td >2
+hours</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU*</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
+<td >4
+CPUs
+12 GB RAM
+1 P100 GPU</td>
 <td
-style="height: 70px; width: 159.8px; vertical-align: top"><p>Interactive
-GPU access 7am - 8pm.</p></td>
+>Interactive
+GPU access 7am - 8pm.</td>
 </tr>
 </tbody>
 </table>
@@ -250,8 +232,5 @@ Note that you need to specify the name of the partition.  You also need
 to specify a number of CPUs and amount of memory small enough to fit on
 these nodes.
 
-See [GPU use on
-NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
+See [GPU use on NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
 for more details about Slurm and CUDA settings.
-
- 
