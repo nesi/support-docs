@@ -1,7 +1,6 @@
 ---
 created_at: '2019-04-30T00:21:48Z'
 hidden: false
-weight: 1
 tags: []
 title: 'Profiler: ARM MAP'
 vote_count: 0
@@ -9,22 +8,6 @@ vote_sum: 0
 zendesk_article_id: 360000930396
 zendesk_section_id: 360000278935
 ---
-
-  
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
--   [Introduction to profiling](#introduction-to-profiling)
--   [Profiling test cases](#h_23e5a159-4e9c-4f25-9395-53f03e1187f7)
--   [MAP profiler](#h_e444a43e-f0a5-45a5-8ed2-8bd06abae1a9)
--   [MAP “Express Launch”](#using-the-express-launch)
--   [MAP GUI launch](#h_f78992f8-3f55-4b6f-ac5f-8bc82ff16873)
--   [MAP Profile](#map-profile)
 
 The ARM (previously known as Allinea) provides a package called *forge*,
 which consists of a debugger, DDT and a profiler, MAP.
@@ -71,15 +54,14 @@ allows the user to navigate through different levels of details,
 browsing through the code, and focusing on specific functions, loops and
 source code lines.  See section [MAP profile](#map-profile) below.
 
-There is also an [Arm Forge
-Client](https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge)
+There is also an [Arm Forge Client](https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge)
 you can download to your local machine. Therewith you can browse through
 your downloaded profiling data or even start your profiling/debug tasks
 from remote (not described in detail here).
 
-**Note:** If you want to use the GUI on the NeSI systems, please
-remember to start your ssh session using X11 forwarding (e.g. using the
-`ssh -Y` option).
+!!! note
+    If you want to use the GUI on the NeSI systems, please
+    remember to start your ssh session using X11 forwarding (e.g. using the `ssh -Y` option).
 
 ## MAP “Express Launch”
 
@@ -90,15 +72,13 @@ example:
 Upon execution, a `.map` file will be generated. The results can be
 viewed, for instance, with
 
-(the `.map` file name will vary with each run.) See section [MAP
-profile](#map-profile) below for how to interpret the results.
+(the `.map` file name will vary with each run.) See section [MAP profile](#map-profile) below for how to interpret the results.
 
 ## MAP GUI launch
 
 The GUI can be started after loading `module load forge` and launching
 
-[![Arm MAP
-main](../../assets/images/Profiler-ARM_MAP.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_main.png)
+![Arm MAP main](../../assets/images/Profiler-ARM_MAP.png)
 
 Click on “PROFILE”.
 
@@ -116,14 +96,12 @@ After *submit*ting, MAP will wait until the job is allocated, connect to
 the processes, run the program, gather all the data and present the
 profile information.
 
- 
-
 ## MAP Profile
 
 By default the profile window is divided into the following three main
 sections (click on picture to enlarge).
 
-[![example-map-scatter](../../assets/images/Profiler-ARM_MAP_0.png)](https://nesi.github.io/perf-training/python-scatter/images/ARM_MAP_scatter_mpi.png)
+![example-map-scatter](../../assets/images/Profiler-ARM_MAP_0.png)
 
 On top, various metrics can be selected in the “Metrics” menu. In the
 middle part, a source code navigator connects line by line source code
@@ -135,12 +113,12 @@ There are various options to get even more information.
 
 In the top part the metrics graphs can be changed to:
 
--   Activity timeline
--   CPU instructions
--   CPU Time
--   IO
--   Memory
--   MPI
+- Activity timeline
+- CPU instructions
+- CPU Time
+- IO
+- Memory
+- MPI
 
 using the *Metrics* Menu*.*
 
@@ -152,5 +130,6 @@ instruction sets during the program run time.
 The lower part can also be used to check the *application output* or
 show statistics on basis of *files* or *functions*.
 
-**Note:** often you can get additional information while hovering with
-your mouse over a certain item.
+!!! note
+    Often you can get additional information while hovering with
+    your mouse over a certain item.

@@ -10,7 +10,7 @@ matrix:
   - pyspelling.filters.url:
   - pyspelling.filters.context:
       context_visible_first: true
-      # escapes: '\\[\\`~]'
+      escapes: '\\[\\`~]'
       delimiters:
       # Ignore multiline content between fences
       # ```md
