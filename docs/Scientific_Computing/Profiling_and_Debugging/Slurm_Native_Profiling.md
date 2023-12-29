@@ -1,7 +1,6 @@
 ---
 created_at: '2019-02-24T23:26:19Z'
 hidden: false
-weight: 0
 tags:
 - slurm
 - profiling
@@ -11,15 +10,6 @@ vote_sum: 4
 zendesk_article_id: 360000810616
 zendesk_section_id: 360000278935
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 Job resource usage can be determined on job completion by checking the
 following sacct columns;
