@@ -12,16 +12,7 @@ zendesk_article_id: 360000204076
 zendesk_section_id: 360000030876
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-## Definitions
+<!-- ## Definitions
 
 **CPU:** A logical core, also known as a hardware thread. Referred to as
 a "CPU" in the Slurm documentation.  Since
@@ -45,17 +36,17 @@ or more threads. All of a task's threads must run within the same node.
 
 **Thread:** A sequence of instructions executed by a CPU.
 
-**Walltime: **Real world time, as opposed to CPU time (walltime x CPUs).
+**Walltime: **Real world time, as opposed to CPU time (walltime x CPUs). -->
 
 ## General Limits
 
--   No individual job can request more than 20,000 CPU hours. This has
+- No individual job can request more than 20,000 CPU hours. This has
     the consequence that a job can request more CPUs if it is shorter
     (short-and-wide vs long-and-skinny).
--   No individual job can request more than 576 CPUs (8 full nodes),
+- No individual job can request more than 576 CPUs (8 full nodes),
     since larger MPI jobs are scheduled less efficiently and are
     probably suitable for running on Māui.
--   No user can have more than 1,000 jobs in the queue at a time.
+- No user can have more than 1,000 jobs in the queue at a time.
 
 These limits are defaults and can be altered on a per-account basis if
 there is a good reason. For example we will increase the limit on queued
@@ -64,8 +55,7 @@ they undertake to do so with job arrays.
 
 ## Partitions
 
-A partition can be specified via the appropriate [sbatch
-option](https://support.nesi.org.nz/hc/en-gb/articles/360000691716/),
+A partition can be specified via the appropriate [sbatch option](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md),
 e.g.:
 
 ``` sl
@@ -85,148 +75,149 @@ If you do specify a partition and your job is not a good fit for that
 partition then you may receive a warning, please do not ignore this.
 E.g.:
 
-``` sl
+```out
 sbatch: "bigmem" is not the most appropriate partition for this job, which would otherwise default to "large". If you believe this is incorrect then please contact support@nesi.org.nz and quote the Job ID number.
 ```
 
- 
-
-<table style="width: 950px; height: 460px;">
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-</colgroup>
+<table>
 <tbody>
-<tr class="odd" style="height: 44px;">
-<td
-style="width: 88.328125px; height: 44px"><p><strong>Name</strong></p></td>
-<td style="width: 95.34375px; height: 44px"><p><strong>Max
-Walltime</strong></p></td>
-<td
-style="width: 54.203125px; height: 44px"><p><strong>Nodes</strong></p></td>
-<td
-style="width: 96.34375px; height: 44px"><p><strong>CPUs/Node</strong></p></td>
-<td style="width: 138.484375px; height: 44px"><p><strong>GPUs/Node<br />
-</strong></p></td>
-<td style="width: 83.3125px; height: 44px"><p><strong>Available
-Mem/CPU</strong></p></td>
-<td style="width: 114.40625px; height: 44px"><p><strong>Available
-Mem/Node</strong></p></td>
-<td
-style="width: 190.640625px; height: 44px"><p><strong>Description</strong></p></td>
-</tr>
-<tr class="even" style="height: 44px;">
-<td style="width: 88.328125px; height: 44px"><p>long</p></td>
-<td style="width: 95.34375px; height: 44px"><p>3 weeks</p></td>
-<td style="width: 54.203125px; height: 44px"><p>69</p></td>
-<td style="width: 96.34375px; height: 44px"><p>72</p></td>
-<td style="width: 138.484375px; height: 44px"><p> </p></td>
-<td style="width: 83.3125px; height: 44px"><p>1500 MB</p></td>
-<td style="width: 114.40625px; height: 44px"><p>105 GB</p></td>
-<td style="width: 190.640625px; height: 44px"><p>For jobs that need to
-run for longer than 3 days.</p></td>
-</tr>
-<tr class="odd" style="height: 44px;">
-<td style="width: 88.328125px; height: 44px"><p>large</p></td>
-<td style="width: 95.34375px; height: 44px"><p>3 days</p></td>
-<td style="width: 54.203125px; height: 44px"><p><em>long</em> +
-157</p></td>
-<td style="width: 96.34375px; height: 44px"><p>72</p></td>
-<td style="width: 138.484375px; height: 44px"><p> </p></td>
-<td style="width: 83.3125px; height: 44px"><p>1500 MB</p></td>
-<td style="width: 114.40625px; height: 44px"><p>105 GB</p></td>
-<td style="width: 190.640625px; height: 44px"><p>Default
-partition.</p></td>
-</tr>
-<tr class="even" style="height: 51px;">
-<td style="width: 88.328125px; height: 51px"><p>milan</p></td>
-<td style="width: 95.34375px; height: 51px"><p>7 days</p></td>
-<td style="width: 54.203125px; height: 51px"><p>56<br />
- 8</p></td>
-<td style="width: 96.34375px; height: 51px"><p>256<br />
-256</p></td>
-<td style="width: 138.484375px; height: 51px"><p> </p></td>
-<td style="width: 83.3125px; height: 51px"><p>1850 MB</p>
-<p>3800 MB</p></td>
-<td style="width: 114.40625px; height: 51px"><p>460 GB<br />
-960 GB</p></td>
-<td style="width: 190.640625px; height: 51px"><p><a
-href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md">Jobs
-using Milan Nodes</a></p></td>
-</tr>
-<tr class="odd" style="height: 51px;">
-<td style="width: 88.328125px; height: 51px"><p>bigmem /</p>
-<p>infill</p></td>
-<td style="width: 95.34375px; height: 51px"><p>7 days</p></td>
-<td style="width: 54.203125px; height: 51px"><p>6</p>
-<p>6</p></td>
-<td style="width: 96.34375px; height: 51px"><p>72</p>
-<p>54</p></td>
-<td style="width: 138.484375px; height: 51px"><p> </p></td>
-<td style="width: 83.3125px; height: 51px"><p>6300 MB</p>
-<p>5500 MB</p></td>
-<td style="width: 114.40625px; height: 51px"><p>460 GB</p>
-<p>300 GB</p></td>
-<td style="width: 190.640625px; height: 51px"><p>Jobs requiring large
-amounts of memory.</p></td>
-</tr>
-<tr class="even" style="height: 66px;">
-<td style="width: 88.328125px; height: 66px"><p>hugemem</p></td>
-<td style="width: 95.34375px; height: 66px"><p>7 days</p></td>
-<td style="width: 54.203125px; height: 66px"><p>4</p></td>
-<td style="width: 96.34375px; height: 66px"><p>80<br />
-128<br />
-176</p></td>
-<td style="width: 138.484375px; height: 66px"><p> </p></td>
-<td style="width: 83.3125px; height: 66px"><p>18 GB<br />
-30 GB<br />
-35 GB</p></td>
-<td style="width: 114.40625px; height: 66px"><p>1,500 GB<br />
-4,000 GB<br />
-6,000 GB</p></td>
-<td style="width: 190.640625px; height: 66px"><p>Jobs requiring very
-large amounts of memory.</p></td>
-</tr>
-<tr class="odd" style="height: 138px;">
-<td style="width: 88.328125px; height: 138px"><p>gpu</p></td>
-<td style="width: 95.34375px; height: 138px"><p>7 days</p></td>
-<td style="width: 54.203125px; height: 138px"><p>1</p>
-<p>4</p>
-<p>2</p>
-<p>2</p>
-<p>1</p></td>
-<td style="width: 96.34375px; height: 138px"><p>18, plus 54 shared with
-<em>infill</em></p></td>
-<td style="width: 138.484375px; height: 138px"><p>1 P100*</p>
-<p>2 P100*</p>
-<p>1 A100**</p>
-<p>2 A100**</p>
-<p>7 A100-1g.5gb***</p></td>
-<td style="width: 83.3125px; height: 138px"><p>6300 MB</p></td>
-<td style="width: 114.40625px; height: 138px"><p>160 GB, plus 300 GB
-shared with <em>infill</em></p></td>
-<td style="width: 190.640625px; height: 138px"><p>Nodes with GPUs. See
-below for more info.</p></td>
-</tr>
-<tr class="even" style="height: 22px;">
-<td style="width: 88.328125px; height: 22px"><p>hgx</p></td>
-<td style="width: 95.34375px; height: 22px"><p>7 days</p></td>
-<td style="width: 54.203125px; height: 22px"><p>4</p></td>
-<td style="width: 96.34375px; height: 22px"><p>128</p></td>
-<td style="width: 138.484375px; height: 22px"><p>4 A100****</p></td>
-<td style="width: 83.3125px; height: 22px"><p>6300 MB</p></td>
-<td style="width: 114.40625px; height: 22px"><p>460 GB</p></td>
-<td style="width: 190.640625px; height: 22px"><p>Part of <a
-href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md">Milan
-Nodes</a>. See below for more info.</p></td>
-</tr>
-</tbody>
+    <tr>
+        <th>Name</th>
+        <th>Max Walltime</th>
+        <th>Nodes</th>
+        <th>CPUs/Node</th>
+        <th>GPUs/Node</th>
+        <th>Available Mem/CPU</th>
+        <th>Available Mem/Node</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>long</td>
+        <td>3 weeks</td>
+        <td>69</td>
+        <td>72</td>
+        <td> </td>
+        <td>1500 MB</td>
+        <td>105 GB</td>
+        <td>For jobs that need to run for longer than 3 days.</td>
+    </tr>
+    <tr>
+        <td>large</td>
+        <td>3 days</td>
+        <td>long + 157</td>
+        <td>72</td>
+        <td> </td>
+        <td>1500 MB</td>
+        <td>105 GB</td>
+        <td>Default partition.</td>
+    </tr>
+    <tr>
+        <td rowspan="2">milan</td>
+        <td rowspan="2">7 days</td>
+        <td>56</td>
+        <td>256</td>
+        <td> </td>
+        <td>1850 MB</td>
+        <td>460 GB </td>
+        <td rowspan="2">Jobs using Milan Nodes</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>256</td>
+        <td></td>
+        <td>3800 MB</td>
+        <td>960 GB</td>
+    </tr>
+    <tr>
+        <td rowspan="2">bigmem/infill</td>
+        <td rowspan="2">7 days</td>
+        <td>6</td>
+        <td>72</td>
+        <td> </td>
+        <td>6300 MB</td>
+        <td>460 GB </td>
+        <td rowspan="2">Jobs requiring large amounts of memory.</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>54</td>
+        <td></td>
+        <td>5500 MB</td>
+        <td>300 GB</td>
+    </tr>
+    <tr>
+        <td rowspan="3">hugemem</td>
+        <td rowspan="3">7 days</td>
+        <td>4</td>
+        <td>80</td>
+        <td> </td>
+        <td>18 GB</td>
+        <td>1,500 GB </td>
+        <td rowspan="3">Jobs requiring huge amounts of memory.</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>128</td>
+        <td></td>
+        <td>30 GB</td>
+        <td>4,000 GB</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>176</td>
+        <td></td>
+        <td>35 GB</td>
+        <td>6,000 GB</td>
+    </tr>
+    <tr>
+        <td rowspan="5">gpu</td>
+        <td rowspan="5">7 days</td>
+        <td>1</td>
+        <td>18, plus 54 shared with infill</td>
+        <td>1 × P100*</td>
+        <td>6300 MB</td>
+        <td>160 GB, plus 300 GB shared with infill</td>
+        <td rowspan="5">Nodes with GPUs. See below for more info.</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td></td>
+        <td><a >2 × P100*</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td></td>
+        <td>1 × A100**</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td></td>
+        <td>2 × A100**</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td></td>
+        <td>7 × A100-1g.5gb***</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>hgx</td>
+        <td>7 days</td>
+        <td>4</td>
+        <td>128</td>
+        <td>4 × A100</td>
+        <td>6300 MB</td>
+        <td>460 GB</td>
+        <td >Part of <a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md">Milan Nodes</a>. See below for more info.</td>
+    </tr>  
+    </tbody>
 </table>
 
 \* NVIDIA Tesla P100 PCIe 12GB cards
@@ -235,7 +226,7 @@ Nodes</a>. See below for more info.</p></td>
 
 \*\*\* 1 NVIDIA Tesla A100 PCIe 40GB card divided into [7 MIG GPU
 slices](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/)
-(5GB each). 
+(5GB each).
 
 \*\*\*\* NVIDIA Tesla A100 80GB, on a HGX baseboard with NVLink
 GPU-to-GPU interconnect between the 4 GPUs  
@@ -279,17 +270,17 @@ for more details about Slurm and CUDA settings.
 
 ### Limits on GPU Jobs
 
--   There is a per-project limit of 6 GPUs being used at a time.
--   There is also a per-project limit of 360 GPU-hours being allocated
+- There is a per-project limit of 6 GPUs being used at a time.
+- There is also a per-project limit of 360 GPU-hours being allocated
     to running jobs. This reduces the number of GPUs available for
     longer jobs, so for example you can use 8 GPUs at a time if your
     jobs run for a day, but only two GPUs if your jobs run for a week.
     The intention is to guarantee that all users can get short debugging
     jobs on to a GPU in a reasonably timely manner.  
--   Each GPU job can use no more than 64 CPUs.  This is to ensure that
+- Each GPU job can use no more than 64 CPUs.  This is to ensure that
     GPUs are not left idle just because their node has no remaining free
     CPUs.
--   There is a limit of one A100-1g.5gb GPU job per user.
+- There is a limit of one A100-1g.5gb GPU job per user.
 
 ### Accessing A100 GPUs in the `hgx` partition
 
@@ -298,10 +289,9 @@ requiring large memory (up to 80GB) or multi-GPU computing (up to 4 GPUs
 connected via
 [NVLink](https://www.nvidia.com/en-us/data-center/nvlink/)):
 
--   Explicitly specify the partition to access them, with
+- Explicitly specify the partition to access them, with
     `--partition=hgx`.
--   Hosting nodes are Milan nodes. Check the [dedicated support
-    page](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
+- Hosting nodes are Milan nodes. Check the [dedicated support page](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
     for more information about the Milan nodes' differences from
     Mahuika's Broadwell nodes.
 

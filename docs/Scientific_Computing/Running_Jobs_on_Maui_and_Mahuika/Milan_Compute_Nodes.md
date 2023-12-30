@@ -9,42 +9,32 @@ vote_sum: 0
 zendesk_article_id: 6367209795471
 zendesk_section_id: 360000030876
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
  
-
 ## How to access
 
 To use Mahuika's Milan nodes, you will need to explicitly specify the
 `milan` partition in your `sbatch` command line. Jobs are submitted from
 the same Mahuika login node that you currently use, and share the same
-file system as other cluster nodes. 
+file system as other cluster nodes.
 
-``` sl
+``` sh
 sbatch -p milan ...
 ```
 
-Alternatively, the same effect can be achieved by placing a pragma into
-the job description file:
+  milan  
+Alternatively, the same effect can be achieved by specifying in a Slurm script:
 
-``` sl
+```sl
 #SBATCH --partition=milan
 ```
+
 
 ## Hardware
 
 Each node has two AMD Milan CPUs, each with 8 "chiplets" of 8 cores and
 one level 3 cache, so each node has a total of **128 cores** or 256
 hyperthreaded CPUs. This represents a significant increase of the number
-CPUs per node compared to the Broadwell nodes (36 cores). 
+CPUs per node compared to the Broadwell nodes (36 cores).
 
 The memory available to Slurm jobs is 512GB per node, so approximately
 2GB per CPU. There are 64 nodes available, 8 of which will have double
@@ -61,14 +51,14 @@ move from 7 to 8 is more significant than the move from Centos to Rocky.
 Many system libraries have changed version numbers between versions 7
 and 8, so **some software compiled on Centos 7 will not run as-is on
 Rocky 8**. This can result in the runtime error
-`error while loading shared libraries:... cannot open shared object file`, 
+`error while loading shared libraries:... cannot open shared object file`,
 which can be fixed by providing a copy of the old system library.  
 
 We have repaired several of our existing environment modules that way.
 For programs which you have compiled yourself, we have installed a new
 environment module that provides many of the Centos 7 libraries:
 
-``` sl
+``` sh
 module load LegacySystemLibs/7
 ```
 
@@ -106,7 +96,7 @@ not running on an Intel CPU.  
 In order to persuade MKL to use the same fast optimised kernels on the
 new AMD Milan CPUs, you can do:
 
-``` sl
+``` sh
 module load AlwaysIntelMKL
 ```
 
@@ -121,8 +111,7 @@ alternative but not match MKL's LAPACK performance.  
 ### Do I need to recompile my code?
 
 Except for possible missing shared libraries (see above), you should not
-need to recompile your code. Please [let us
-know {% include "partials/support_request.html" %} if you
+need to recompile your code. Please {% include "partials/support_request.html" %} if you
 encounter any issues not listed above.
 
 ### AOCC compiler suite
@@ -132,7 +121,7 @@ might perform better on their hardware. We have installed it but not
 integrated it into a high-level toolchain with MPI and BLAS. If you wish
 to try it:
 
-``` sl
+``` sh
 module load AOCC
 ```
 
@@ -154,8 +143,7 @@ configuration is expected to be addressed in the future.
 
 ## Any questions?
 
-Don't hesitate to contact us at <support@nesi.org.nz>. No question is
-too big or small. We are available for Zoom sessions or [Weekly Online
-Office
-Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md)
+Don't hesitate to {% include "partials/support_request.html" %}. No question is
+too big or small. We are available for Zoom sessions or
+[Weekly Online Office Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md)
 if it's easier to discuss your question in a call rather than via email.
