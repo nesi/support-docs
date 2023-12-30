@@ -98,7 +98,7 @@ jobs:
        - name: Run markdownlint
          run: |
           shopt -s globstar extglob
-          markdownlint --config .markdownlint.json --json "${{needs.get.outputs.filelist}}" 2>&1 | checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | checks/parse_markdownlint.py
   metacheck:
      name: Check page meta
      if: ${{github.event_name != 'workflow_dispatch' || inputs.checkMeta}}
