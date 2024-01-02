@@ -38,7 +38,7 @@ panels, desktop, software preferences.
 
 Enviroment set in `singularity_wrapper.bash` can be changed by creating
 a file `$XDG_CONFIG_HOME/vdt/pre.bash` Anything you want to run
-\*before\* launching the container put in here.
+*before* launching the container put in here.
 
 ``` sl
 export VDT_BASE_IMAGE="~/my_custom_container.sif" # Use a different image file.
@@ -50,7 +50,7 @@ export BROWSER="chrome" # Desktop session will inherit this
 module load ANSYS/2021R2 # Any modules you want to be loaded in main instance go here.
 ```
 
-### \`post.bash\`
+### `post.bash`
 
 Environment set in `runscript_wrapper.bash` can be changed by creating a
 file `$XDG_CONFIG_HOME/vdt/post.bash`
@@ -94,8 +94,7 @@ You can build your own container bootstrapping off
 </blockquote>
 -->
 
-*You can help contribute to this
-project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*
+*You can help contribute to this project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*
 
 <!--
 <table style="height:190px;width:722px;display:none">
