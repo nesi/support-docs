@@ -11,17 +11,8 @@ zendesk_section_id: 360000189696
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Requirements
-     -   Have a [NeSI
-         account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
+!!! prerequisite
+     -   Have a [NeSI account.](https://support.nesi.org.nz/hc/en-gb/articles/360000159715-Creating-a-NeSI-Account)
      -   Be a member of an [active
          project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
 
@@ -32,11 +23,11 @@ Git Bash can be downloaded as part of Git
 
 The login process can be simplified with a few configurations.
 
-1.  Open Git Bash and run `nano ~/.ssh/config` to open your ssh config
+1. Open Git Bash and run `nano ~/.ssh/config` to open your ssh config
     file and add the following (replacing `<username>` with your
     username):
 
-    ``` sl
+    ```ssh
     Host mahuika
        User <username>
        Hostname login.mahuika.nesi.org.nz
@@ -68,9 +59,9 @@ The login process can be simplified with a few configurations.
        ControlPersist 1
     ```
 
-    Close and save with ctrl x, y, Enter
+    Close and save with ctrl <kbd>x</kbd>, <kbd>y</kbd>, <kbd>enter</kbd>
 
-2.  Ensure the permissions are correct by
+2. Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
 
 ## Usage
@@ -88,12 +79,11 @@ or
 ssh maui
 ```
 
-As multiplexing is not configured *you will have to enter in your login
+As multiplexing is not configured *you will have to enter your login
 credentials every time you open a new terminal or try to move a file.*
 
 ``` sl
 scp <path/filename> mahuika:~/
 ```
 
-(For more info visit [data
-transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
+(For more info visit [data transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
