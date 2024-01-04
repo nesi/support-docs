@@ -15,15 +15,15 @@
                 "focus": false,
                 "showReuseMessage": false
             },
-            "runOptions": {"runOn": "default"},
             "command": "./checks/run_meta_check.py",
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {
-                    "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),title=(.*?)::(.*)$",
+                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),line=([0-9]*)::(.*)$",
                     "severity": 1,
                     "file": 2,
-                    "line": 3,
+                    "code": 3,
+                    "line": 4,
                     "message": 5
                 },
                 "owner": "meta-check",

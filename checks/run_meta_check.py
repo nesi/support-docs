@@ -11,37 +11,36 @@ import sys
 import yaml
 
 # Ignore files if they match this regex
-EXCLUDED_FROM_CHECKS = [r"docs/assets/.*"]
-MAX_TITLE_LENGTH = 28
+EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r"index.html"]
+
+# Constants for use in checks.
+MAX_TITLE_LENGTH = 24
+MIN_TAGS = 2
 
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
-    "title": "",
-    "template": "",
-    "description": "warning",
-    "icon": "notice",
-    "status": "",
-    "prereq": "",
-    "postreq": "",
-    "suggested": "",  # Add info here when implimented.
-    "created_at": "",
-    "hidden": "",
-    "tags": "",  # Add info here when implimented.
-    "weight": "",
-    "vote_count": "",
-    "vote_sum": "",
-    "zendesk_article_id": "",
-    "zendesk_section_id": "",
+    "title",
+    "template",
+    "description",
+    "icon",
+    "status",
+    "prereq",
+    "postreq",
+    "suggested",    # Add info here when implimented.
+    "created_at",
+    "hidden",
+    "tags",         # Add info here when implimented.
+    "weight",
+    "vote_count",
+    "vote_sum",
+    "zendesk_article_id",
+    "zendesk_section_id",
 }
 
 
 def main():
-    """Main entry point of the app"""
-
-    ret_code = 0
-
     input_files = sys.argv[1:]
-    global line_of_title, input_file, meta, contents, startline, endline
+    global title, title_from_h1, title_from_filename, input_file, meta, contents, title
 
     for input_file in input_files:
         if any(re.match(pattern, input_file) for pattern in EXCLUDED_FROM_CHECKS):
@@ -50,108 +49,93 @@ def main():
             contents = f.read()
             match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
             if not match:
-                ret_code +=1
                 print(
                     f"::warning file={input_file},title=meta.parse::Meta block missing or malformed."
                 )
-                continue
-            meta = yaml.safe_load(match.group(1))
-            endline = match.end()+1
-            startline = match.start()+1
-            line_of_title = (list(meta).index('title') if 'title' in meta else 1) + startline + 1
-            for check in all_checks:
-                ret_code += check()
-    sys.exit(0)         
-    # sys.exit(ret_code)
-
-
-def get_page_title():
-    """
-    This is silly codegolf.
-    Delete this before anyone sees.
-    """
-
-    def _title_from_filename(filename):
-        """
-        I think this is the same as what mkdocs does.
-        """
-        name = " ".join(filename[0:-3].split("_"))
-        return name[0].upper() + name[1:]
-
-    def _title_from_h1(contents):
-        m = re.match(r"^ #(\S*)$", contents)
-        return m.group(1) if m else ""
-
-    def _compare(type1, title1, type2, title2):
-
-        if title1 and title2:
-            if title1 == title2:
-                print(
-                    f"::notice file={input_file},line={line_of_title},title=title.redundant::Title set in {type1} is redundant, already set in {type2}."
-                )
+                meta = {}
             else:
-                print(
-                    f"::notice file={input_file},line={line_of_title},title=title.redundant::Title set in {type1} ({title1}) does not match title set in {type2} ({title2})."
-                )
+                meta = yaml.safe_load(match.group(1))
 
-    if input_file == "index.md":
-        return
+            title_from_filename = _title_from_filename()
+            title_from_h1 = _title_from_h1()
+            title = meta["title"] if "title" in meta else "" or title_from_h1 or title_from_filename
 
-    t = [
-        ["meta", meta["title"] if "title" in meta else ""],
-        ["header", _title_from_h1(contents)],
-        ["filename", _title_from_filename(input_file.split("/")[-1])]
-    ]
-
-    _compare(*t[0], *t[1])
-    _compare(*t[0], *t[2])
-    _compare(*t[1], *t[2])
-
-    return t[0][1] or t[1][1] or t[2][1]
-
-    # path, file = os.path.split()
-    # This would be where you check title correctness.
+            for check in ERROR:
+                _run_check(check, "error")
+            for check in WARNING:
+                _run_check(check, "warning")
+            for check in NOTICE:
+                _run_check(check, "notice")
 
 
-def check_expected_parameters():
+def _run_check(f, level):
+    for r in f():
+        message = r.pop('message')
+        print(f"::{level} file={input_file},title={f.__name__},{','.join(f'{k}={v}' for k,v in r.items())}::{message}")
+
+
+def _title_from_filename():
     """
-    Check for unexpected keys, and confirm existance of required.
+    I think this is the same as what mkdocs does.
     """
-    ret_code = 0
-
-    # Check if any unexpected keys.
-    line_of_key = startline
-    for key in meta.keys():
-        line_of_key += 1
-        if key not in EXPECTED_PARAMETERS.keys():
-            ret_code += 1
-            print(
-                f"::warning file={input_file},line={line_of_key},title=meta.unexpected::Unexpected parameter in front-matter '{key}'"
-            )
-
-    # Yes this is 2 x O().
-
-    # Check that all required keys are present.
-    for key, value in EXPECTED_PARAMETERS.items():
-        if value:
-            if key not in meta.keys():
-                ret_code += 1
-                print(
-                    f"::{value} file={input_file},line={startline},title=meta.unexpected::Missing parameter from front-matter '{key}'"
-                )
-    return ret_code
+    name = " ".join(input_file.split("/")[-1][0:-3].split("_"))
+    return name[0].upper() + name[1:]
 
 
-def check_article_titles():
-    resolved_title = get_page_title()
+def _title_from_h1():
+    m = re.search(r"^ #(\S*)$", contents, flags=re.MULTILINE)
+    return m.group(1) if m else ""
 
-    if len(resolved_title) > MAX_TITLE_LENGTH:
-        f"::warning file={input_file},line={line_of_title},title=title.long::Title '{resolved_title}' is too long"
-        return 1
+
+def _get_lineno(pattern):
+    i = 1
+    for line in contents.split("\n"):
+        m = re.match(pattern, line)
+        if m:
+            return i
+        i += 1
     return 0
 
 
-all_checks = [check_expected_parameters, check_article_titles]
+def title_redundant():
+    lineno = _get_lineno(r"^title:.*$")
+    if "title" in meta.keys() and title_from_filename == meta["title"]:
+        yield {"line": lineno, "message": "Title set in meta is redundant as it is already set in filename."}
+    if "title" in meta.keys() and title_from_h1 == meta["title"]:
+        yield {"line": lineno, "message": "Title set in h1 is redundant as it is already set in filename."}
+    if title_from_filename == title_from_h1:
+        yield {"line": lineno, "message": "Title set in meta is redundant as it is already set in h1."}
+
+
+def meta_unexpected_key():
+    """
+    Check for unexpected keys.
+    """
+    for key in meta.keys():
+        if key not in EXPECTED_PARAMETERS:
+            yield {"line": _get_lineno(r"^" + key + r":.*$"), "message": f"Unexpected parameter in front-matter '{key}'"}
+
+
+def meta_missing_description():
+    if "description" not in meta.keys() or len(meta["description"]) < 1:
+        yield {"line":0, "message": "Missing 'description' from front matter."}
+
+
+def title_length():
+    if len(title) > MAX_TITLE_LENGTH:
+        yield {"line": _get_lineno(r"^title:.*$"), "message": f"Title '{title}' is too long."}
+
+
+def minimum_tags():
+    if "tags" not in meta or not isinstance(meta["tags"], list):
+        yield {"line": 0, "message": "'tags' property in meta is missing or malformed."}
+    elif len(meta["tags"]) < MIN_TAGS:
+        yield {"line": _get_lineno(r"^tags:.*$"), "message": "Try to include at least 2 'tags' (helps with search optimisation)."}
+
+
+ERROR = []
+WARNING = [title_length, meta_missing_description, meta_unexpected_key, minimum_tags]
+NOTICE = [title_redundant]
 
 
 if __name__ == "__main__":
