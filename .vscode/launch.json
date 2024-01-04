@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "args": ["--config", ".spellcheck.yml", "--name", "Markdown", "--source", "docs/format.md" ],
+            "args": ["docs/Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md" ],
             "console": "integratedTerminal",
             "justMyCode": false
         }
