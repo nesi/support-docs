@@ -2,8 +2,11 @@
 created_at: '2018-11-30T00:32:25Z'
 hidden: false
 weight: 2
-tags: []
+tags: 
+    - ssh
+    - windows
 title: MobaXterm Setup (Windows)
+description: How to set up cluster access using MobaXterm
 vote_count: 5
 vote_sum: 5
 zendesk_article_id: 360000624696
@@ -11,7 +14,6 @@ zendesk_section_id: 360000189696
 ---
 
 !!! prerequisite
-
      -   Have an [active account and project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
      -   Set up your [Linux Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
      -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)

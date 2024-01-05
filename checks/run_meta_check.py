@@ -29,7 +29,7 @@ EXPECTED_PARAMETERS = {
     "suggested",    # Add info here when implimented.
     "created_at",
     "hidden",
-    "tags",         # Add info here when implimented.
+    "tags",
     "weight",
     "vote_count",
     "vote_sum",

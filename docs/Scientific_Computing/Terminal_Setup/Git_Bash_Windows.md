@@ -2,12 +2,17 @@
 created_at: '2019-05-03T04:15:24Z'
 hidden: false
 weight: 6
-tags: []
+description: How to set up cluster access using 'git bash'
+tags:
+   - git
+   - bash
+   - ssh
 title: Git Bash (Windows)
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360000929935
 zendesk_section_id: 360000189696
+
 ---
 
 !!! prerequisite
@@ -16,8 +21,7 @@ zendesk_section_id: 360000189696
 
 ## First time setup
 
-1. Git Bash can be downloaded as part of Git
-   [here](https://git-scm.com/download/win).
+1. [Download Git Bash](https://git-scm.com/download/win) as part of Git.
 
    The login process can be simplified with a few configurations.
 
