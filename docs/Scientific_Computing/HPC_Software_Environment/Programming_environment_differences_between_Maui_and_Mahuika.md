@@ -15,13 +15,6 @@ zendesk_article_id: 360000164576
 zendesk_section_id: 360000040056
 ---
 
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 The compile environment of Māui and Mahuika have various similarities,
 but also significant differences. Both systems are configured with the
 Cray Programming Environment (CPE), but these vary in detail. In general

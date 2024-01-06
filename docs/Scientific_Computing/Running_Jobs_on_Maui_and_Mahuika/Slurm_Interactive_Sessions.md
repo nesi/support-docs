@@ -28,7 +28,7 @@ and `salloc`, both of which use most of the same options available to
 Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)). 
 !!! prerequisite Warning
      An interactive session will, once it starts, use the entire requested
-     block of CPU time and other resources unless earlier exited from, even
+     block of CPU time and other resources unless earlier exited, even
      if unused. To avoid unnecessary charges to your project, don't forget
      to exit an interactive session once finished.
 
@@ -63,7 +63,7 @@ Note the host name in the prompt has changed to the compute node
 For a full description of `srun` and its options, see
 [here](https://slurm.schedmd.com/srun.html).
 
-## Using 'salloc'
+## Using `salloc`
 
 `salloc` functions similarly `srun --pty bash` in that it will add your
 resource request to the queue. However the allocation starts, a new bash
@@ -110,18 +110,18 @@ The `--begin` flag takes either absolute or relative times as values.
      know what time zone your environment is using, for example by running
      `date` in the same terminal session.
 
--   `--begin=16:00` means start the job no earlier than 4 p.m. today.
+- `--begin=16:00` means start the job no earlier than 4 p.m. today.
     (Seconds are optional, but the time must be given in 24-hour
     format.)
--   `--begin=11/05/20` means start the job on (or after) 5
+- `--begin=11/05/20` means start the job on (or after) 5
     November 2020. Note that Slurm uses American date formats.
     `--begin=2020-11-05` is another Slurm-acceptable way of saying the
     same thing, and possibly easier for a New Zealander.
--   `--begin=2020-11-05T16:00:00` means start the job on (or after) 4
+- `--begin=2020-11-05T16:00:00` means start the job on (or after) 4
     p.m. on 5 November 2020.
--   `--begin=now+1hour` means wait at least one hour before starting the
+- `--begin=now+1hour` means wait at least one hour before starting the
     job.
--   `--begin=now+60` means wait at least one minute before starting the
+- `--begin=now+60` means wait at least one minute before starting the
     job.
 
 If no `--begin` argument is given, the default behaviour is to start as
@@ -146,18 +146,17 @@ you leave your workstation unattended for a while, in case your computer
 turns off or goes to sleep or its connection to the internet is
 disrupted while you're away.
 
- 
-
 ## Setting up a detachable terminal
-!!! prerequisite Warning
+
+!!! warning
      If you don't request your interactive session from within a detachable
      terminal, any interruption to the controlling terminal, for example by
      your computer going to sleep or losing its connection to the internet,
      will permanently cancel that interactive session and remove it from
      the queue, whether it has started or not.
 
-1.  Log in to a Mahuika, Māui or Māui-ancil login node.
-2.  Start up `tmux` or `screen`.
+1. Log in to a Mahuika, Māui or Māui-ancil login node.
+2. Start up `tmux` or `screen`.
 
 ## Modifying an existing interactive session
 

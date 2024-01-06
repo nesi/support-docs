@@ -38,7 +38,7 @@ Our webinar playlist covers the following topics:
 - [Researcher Reflections Panel - tips for navigating your supercomputing journey](https://www.youtube.com/watch?v=kp4OfRSUSl4&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=19&t=28s)
 - [Reproducible research workflows with containers](https://www.youtube.com/watch?v=SzYx2t67w84&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=20)
 - [Git Basics for researchers](https://www.youtube.com/watch?v=l0GD7ZxBhJ4&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=21&t=316s)
-- [Using Rmarkdown to create clear, reproducible analyses](https://www.youtube.com/watch?v=uPwvVKhMfdA&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=22&t=1627s)
+- [Using R Markdown to create clear, reproducible analyses](https://www.youtube.com/watch?v=uPwvVKhMfdA&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=22&t=1627s)
 - [Genomics workflows and how they can streamline your research](https://www.youtube.com/watch?v=Pb1M8Yyik4Y&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=23&t=3s)
 - [Make the most of your HPC allocation](https://www.youtube.com/watch?v=VVvEX3Q3kq8&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=24&t=2s)
 - [Scripting at the speed of compiled code - Vectorisation](https://www.youtube.com/watch?v=yDYXOntAlIk&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=26)
