@@ -4,27 +4,16 @@ hidden: false
 weight: 0
 tags:
 - compression
-- data_compression
 - lz4
 - data compression
 - zlib
 - z library
-- z-library
-title: Data Compression
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 6359601973135
 zendesk_section_id: 360000033936
+status: deprecated
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Background
 
@@ -58,13 +47,13 @@ There are two methods for compressing and decompressing data:
 
 ### On-Demand (synchronous)
 
-**note:** *as at 2 May 2023, the \`mm\` commands are not available by
-default, contact <support@nesi.org.nz> for assistance*
+**note:** *as at 2 May 2023, the `mm` commands are not available by
+default, {% include "partials/support_request.html" %} for assistance.
 
 This method (using the `mmchattr` command) acts similar to
 `gzip`/`gunzip` commands where the file being targeted is compressed or
 decompressed on command invocation. If the command fails halfway through
-the file or is cancelled, the file will be marked as "illcompressed" .
+the file or is cancelled, the file will be marked as `illcompressed`.
 This state means that the file is only partially compressed.
 
 `ls` command will show files with their original sizes. However,  `du`
@@ -75,8 +64,6 @@ will decrease. And vice versa, if files are decompressed, fully or
 partially, quota usage will increase. Be aware that if, in the process
 of decompression, the quota will be exceeded, an error message will be
 displayed
-
-
 
 ### Deferred
 
@@ -89,8 +76,6 @@ compression/decompression. This tagging process is quick and can be done
 by using the same command as above with one extra flag (`-I defer`).
 During this process, there is no change in space occupancy for any of
 the files involved.
-
-
 
 #### How to process deferred tagged files
 
@@ -109,8 +94,11 @@ Compressed files on Scale filesystems can be in 4 different states
 depending on the extended attributes of the file when manipulated for
 compression. We can check those attributes with the `mmlsattr` command:
 
-``` sl
-$ mmlsattr -L FileA.txt
+``` sh
+mmlsattr -L FileA.txt
+```
+
+```out
 file name: FileA.txt
 metadata replication: 1 max 2
 data replication: 1 max 2
@@ -138,28 +126,28 @@ re-compressed using the `mmchattr --compression yes` command or the
 
 ### The different states
 
--   **Uncompressed** and **untagged** for compression (default) - as
+- `Uncompressed` and `untagged` for compression (default) - as
     shown for the file `FileA.txt` above.
 
--   **Partially compressed** and **tagged** for compression - When file
+- `Partially compressed` and `tagged` for compression - When file
     is partially compressed (either because it was decompressed for
     access or the full compression didn’t finish). It is still marked
     for compression as the `COMPRESSION` misc attribute suggests, but
     because it's not fully compressed the `illcompressed` flag will be
     shown.
 
--   **Fully compressed** and **tagged** for compression - The file is
+- `Fully compressed` and `tagged` for compression - The file is
     fully compressed to its maximum possible state and because the file
     is tagged for compression, only the misc attribute `COMPRESSION`
     will be shown.
 
--   **Full or partially compressed** and **untagged** for compression -
+- `Full or partially compressed` and `untagged` for compression -
     The file might be fully or partially compressed and in this case
     because the misc attribute `COMPRESSION` is not shown, it means the
-    file is untagged for being compressed (meaning it's tagged to be in
-    the uncompressed state). When a fully compressed file is untagged,
+    file is `untagged` for being compressed (meaning it's tagged to be in
+    the uncompressed state). When a fully compressed file is `untagged`,
     the flag `illcompressed` will be shown. After full decompression is
-    complete the file will become uncompressed and untagged for
+    complete the file will become uncompressed and `untagged` for
     compression.
 
 ## Using different compression algorithms
@@ -170,9 +158,9 @@ version installed, files can be tagged with different algorithms.
 
 Currently supported compression libraries are:
 
--   z Cold data. Favours compression efficiency over access speed.
+- z Cold data. Favours compression efficiency over access speed.
 
--   lz4 Active, non-specific data. Favours access speed over compression
+- lz4 Active, non-specific data. Favours access speed over compression
     efficiency.
 
 ## Performance impacts
@@ -184,10 +172,9 @@ intensive workloads may experience a significant performance drop.
   
 If compression has a significant impact on your software performance,
 please confirm it first by running a test job with and without
-compression and then contact us at <support@nesi.org.nz>. We will help
+compression and then {% include "partials/support_request.html" %}. We will help
 you minimise the impact of compression on your workflow or find other
 ways to help you manage your project storage.
 
 If you are interested in learning more about this type of data
-compression [you can find further details on the IBM
-website](https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression).
+compression [you can find further details on the IBM website](https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression).
