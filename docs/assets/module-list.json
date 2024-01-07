@@ -821,31 +821,6 @@
         "network_licences": [],
         "support": ""
     },
-    "ARCSI": {
-        "default": "",
-        "description": "The Atmospheric and Radiometric Correction of Satellite Imagery (ARCSI) software provides a command line tool for the atmospheric correction of Earth Observation imagery. The aim of ARCSI is to provide as automatic as possible method of retrieving the atmospheric correction parameters and using them to parameterise 6S.Universal Command Line Environment for AWS.",
-        "domains": [
-            "earth_science"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://bitbucket.org/petebunting/arcsi",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "0.15.0-gimkl-2017a-Python-3.6.3"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "ARIBA": {
         "default": "",
         "description": "Antimicrobial Resistance Identification By Assembly",
@@ -1309,6 +1284,30 @@
         "support": "",
         "url": "http://vina.scripps.edu/index.html"
     },
+    "Autoconf-archive": {
+        "default": "",
+        "description": "A collection of more than 500 macros for GNU Autoconf",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://www.gnu.org/software/autoconf-archive",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "2023.02.20"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://www.gnu.org/software/autoconf-archive"
+    },
     "BBMap": {
         "default": "",
         "description": "BBMap short read aligner, and other bioinformatic tools.",
@@ -1362,7 +1361,8 @@
                     "1.12-GCC-9.2.0",
                     "1.13-GCC-9.2.0",
                     "1.15.1-GCC-11.3.0",
-                    "1.16-GCC-11.3.0"
+                    "1.16-GCC-11.3.0",
+                    "1.19-GCC-11.3.0"
                 ]
             }
         },
@@ -1414,7 +1414,6 @@
                 "default": "latest",
                 "versions": [
                     "1.10.4-gimkl-2017a-no-beagle",
-                    "2.4.7",
                     "2.5.2",
                     "2.6.3",
                     "2.6.6",
@@ -1472,7 +1471,6 @@
                 "default": "latest",
                 "versions": [
                     "2.25.0-GCC-7.4.0",
-                    "2.26.0-gimkl-2017a",
                     "2.28.0-gimkl-2018b",
                     "2.29.2-GCC-9.2.0",
                     "2.30.0-GCC-11.3.0"
@@ -1520,31 +1518,6 @@
         "network_licences": [],
         "support": "",
         "url": "http://suncat.stanford.edu/facility/software/functional"
-    },
-    "BLASR": {
-        "default": "",
-        "description": "BLASR (Basic Local Alignment with Successive Refinement) rapidly maps",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://github.com/PacificBiosciences/blasr",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "2.2-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "BLAST": {
         "default": "",
@@ -1622,7 +1595,6 @@
                 "versions": [
                     "3.5-GCC-9.2.0",
                     "3.5-GCC-11.3.0",
-                    "3.5-gimkl-2017a",
                     "3.5-gimkl-2018b"
                 ]
             }
@@ -1787,7 +1759,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.4.1-gimkl-2017a",
                     "2.5.1-gimkl-2018b",
                     "2.5.1-gimkl-2020a",
                     "2.5.2-GCC-11.3.0"
@@ -1983,31 +1954,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://faculty.washington.edu/browning/beagle/beagle.html"
-    },
-    "BerkeleyGW": {
-        "default": "",
-        "description": "The BerkeleyGW Package is a set of computer codes that calculates the quasiparticle",
-        "domains": [
-            "physics"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://www.berkeleygw.org",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.2.0-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "BiG-SCAPE": {
         "default": "",
@@ -2230,7 +2176,6 @@
                 "versions": [
                     "1.55.0-gimkl-2018b",
                     "1.61.0-GCCcore-7.4.0",
-                    "1.61.0-gimkl-2017a-Python-2.7.14",
                     "1.61.0-gimkl-2017a",
                     "1.61.0-gimkl-2018b",
                     "1.61.0-intel-2018b",
@@ -2380,31 +2325,6 @@
         "support": "",
         "url": "https://ccb.jhu.edu/software/bracken/"
     },
-    "BreakDancer": {
-        "default": "",
-        "description": "Genome-wide detection of structural variants from next generation paired-end sequencing reads.",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://gmt.genome.wustl.edu/packages/breakdancer/index.html",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.4.5-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "BreakSeq2": {
         "default": "",
         "description": "Nucleotide-resolution analysis of structural variants",
@@ -2553,7 +2473,6 @@
                 "default": "latest",
                 "versions": [
                     "4.9.1-GCCcore-7.4.0",
-                    "4.9.1-gimkl-2017a-Python-2.7.14",
                     "4.9.1-gimkl-2017a",
                     "4.13-GCCcore-7.4.0",
                     "4.14.3-GCCcore-9.2.0",
@@ -2630,7 +2549,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.3.3-gimkl-2017a",
                     "0.4-GCC-7.4.0"
                 ]
             }
@@ -2644,7 +2562,7 @@
         "default": "",
         "description": "Python package and command line tool for CNV/CNA analysis from depth-of-coverage by mapped read",
         "domains": [],
-        "extensions": "CNVpytor-1.0, gnureadline-8.0.0, XlsxWriter-3.0.1",
+        "extensions": "CNVpytor-1.3.1, gnureadline-8.1.2, XlsxWriter-3.1.9",
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/abyzovlab/CNVpytor",
@@ -2654,7 +2572,8 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.0-gimkl-2020a-Python-3.8.2"
+                    "1.0-gimkl-2020a-Python-3.8.2",
+                    "1.3.1-gimkl-2022a-Python-3.11.3"
                 ]
             }
         },
@@ -2974,8 +2893,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "6.1-gimkl-2017a-cuda-10.0.130",
-                    "6.1-gimkl-2017a",
                     "8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2",
                     "8.2-intel-2022a-PLUMED-2.7.2"
                 ]
@@ -3841,31 +3758,6 @@
         "network_licences": [],
         "support": ""
     },
-    "DBG2OLC": {
-        "default": "",
-        "description": "DBG2OLC:Efficient Assembly of Large Genomes Using Long Erroneous Reads of the Third Generation",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://github.com/yechengxi/DBG2OLC",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "20170208-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "DBus": {
         "default": "",
         "description": "",
@@ -3932,8 +3824,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.8.38-gimkl-2017a",
-                    "0.9.24-gimkl-2017a",
                     "0.9.25-gimkl-2018b",
                     "0.9.32-GCC-9.2.0",
                     "2.0.6-GCC-9.2.0",
@@ -4216,7 +4106,8 @@
                     "0.4.0",
                     "0.4.1",
                     "0.4.2",
-                    "0.4.3"
+                    "0.4.3",
+                    "0.5.0"
                 ]
             }
         },
@@ -4422,32 +4313,6 @@
         "support": "",
         "url": "http://emboss.sourceforge.net/"
     },
-    "EMIRGE": {
-        "default": "",
-        "description": "Reconstructs full length ribosomal genes from short read",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://github.com/csmiller/EMIRGE",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "0.61.1-gimkl-2017a-Python-2.7.14"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": "",
-        "url": "http://github.com/csmiller/EMIRGE"
-    },
     "ENMTML": {
         "default": "",
         "description": "R package for integrated construction of Ecological Niche Models.",
@@ -4610,31 +4475,6 @@
         "support": "",
         "url": "http://eigen.tuxfamily.org/index.php?title=Main_Page"
     },
-    "Elmer": {
-        "default": "",
-        "description": "Elmer is an open source multiphysical simulation software mainly developed by",
-        "domains": [
-            "engineering"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://www.csc.fi/web/elmer/elmer",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "8.2-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "Embree": {
         "default": "",
         "description": "Embree is a collection of high-performance ray tracing kernels, developed at Intel. The target users of Embree are graphics application engineers who want to improve the performance of their photo-realistic rendering application by leveraging Embree's performance-optimized ray tracing kernels.",
@@ -4649,7 +4489,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.3.0-GCC-5.4.0",
                     "3.5.1-GCCcore-7.4.0",
                     "3.12.2-GCCcore-9.2.0"
                 ]
@@ -4682,32 +4521,6 @@
                 "default": "latest",
                 "versions": [
                     "9.1.0-gimkl-2018b-Python-3.7.3"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
-    "ErlangOTP": {
-        "default": "",
-        "description": "Erlang is a programming language used to build massively scalable",
-        "domains": [
-            "language",
-            "social_science"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://www.erlang.org/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "20.2-gimkl-2017a"
                 ]
             }
         },
@@ -4917,7 +4730,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "6.7.1-intel-2017a",
                     "6.7.1-intel-2018b",
                     "6.7.5-intel-2020a",
                     "6.7.5-1526-intel-2020a",
@@ -5068,7 +4880,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.3.4-gimkl-2017a",
                     "1.3.5-GCCcore-9.2.0"
                 ]
             }
@@ -5538,11 +5349,8 @@
                 "versions": [
                     "3.5-Java-1.8.0_144",
                     "3.5-Java-15.0.2",
-                    "3.7",
                     "3.8-1",
-                    "4.0.1.2-gimkl-2017a",
                     "4.0.11.0-gimkl-2018b",
-                    "4.1.0.0-gimkl-2017a",
                     "4.1.4.1-gimkl-2018b",
                     "4.1.8.1-gimkl-2020a",
                     "4.2.5.0-gimkl-2020a",
@@ -5751,7 +5559,6 @@
                 "default": "latest",
                 "versions": [
                     "3.5.1-gimkl-2017a",
-                    "3.6.1-gimkl-2017a",
                     "3.7.1-gimkl-2018b",
                     "3.8.0-GCCcore-9.2.0",
                     "3.10.3-GCCcore-11.3.0",
@@ -6030,8 +5837,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "7.2.0-gimkl-2017a-Python-2.7.14",
-                    "7.6.0-gimkl-2017a-Python-2.7.14",
                     "7.6.1-gimkl-2018b-Python-2.7.16",
                     "8.2.1-gimkl-2022a"
                 ]
@@ -6126,7 +5931,6 @@
                 "versions": [
                     "1.6-GCCcore-9.2.0",
                     "2.3-gimkl-2017a",
-                    "2.3-intel-2017a",
                     "2.4-GCC-7.4.0",
                     "2.4-GCCcore-7.4.0",
                     "2.4-GCCcore-9.2.0",
@@ -6273,7 +6077,6 @@
                 "versions": [
                     "0.7.6-GCC-11.3.0",
                     "0.7.6-GCCcore-9.2.0",
-                    "0.7.6-gimkl-2017a",
                     "121130-GCCcore-7.4.0"
                 ]
             },
@@ -6600,14 +6403,16 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.3.1-gimkl-2017a"
+                    "2.3.1-gimkl-2017a",
+                    "3.2.2-gimkl-2022a-Python-3.10.5"
                 ]
             }
         },
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "",
+        "url": "https://sanger-pathogens.github.io/gubbins/"
     },
     "Guile": {
         "default": "",
@@ -6775,7 +6580,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.0.5-gimkl-2017a",
                     "2.1.0-gimkl-2018b",
                     "2.2.0-gimkl-2020a",
                     "2.2.1-gimkl-2020a",
@@ -6921,7 +6725,8 @@
                     "1.13-GCCcore-9.2.0",
                     "1.15.1-GCC-11.3.0",
                     "1.16-GCC-11.3.0",
-                    "1.18-GCC-11.3.0"
+                    "1.18-GCC-11.3.0",
+                    "1.19-GCC-11.3.0"
                 ]
             }
         },
@@ -7088,31 +6893,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://icu-project.org/"
-    },
-    "IDBA": {
-        "default": "",
-        "description": "Iterative de Bruijn graph assembler for second-generation sequencing reads.",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://github.com/loneknightpy/idba",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.1.3-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "IDBA-UD": {
         "default": "",
@@ -7456,7 +7236,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "4.2.0-gimkl-2017a",
                     "4.3.0-gimkl-2018b-mt",
                     "4.3.0-gimkl-2018b",
                     "4.3.0-gimkl-2020a-mt",
@@ -8349,7 +8128,6 @@
                     "4.0.7-gimkl-2017a",
                     "4.0.10-GCCcore-7.4.0",
                     "4.0.10-GCCcore-9.2.0",
-                    "4.0.10-gimkl-2017a",
                     "4.4.0-GCCcore-11.3.0",
                     "4.4.0-GCCcore-12.3.0",
                     "4.5.1-GCCcore-12.3.0"
@@ -8374,29 +8152,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://libtiff.gitlab.io/libtiff/"
-    },
-    "Libav": {
-        "default": "",
-        "description": "Libraries for dealing with multimedia formats of all sorts.  Forked from FFmpeg",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://libav.org",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "11.12-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "Libint": {
         "default": "",
@@ -8479,29 +8234,6 @@
         "network_licences": [],
         "support": "",
         "url": "http://www.littlecms.com/"
-    },
-    "Loki": {
-        "default": "",
-        "description": "Loki is a C++ library of designs, containing flexible implementations of common design patterns and",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://loki-lib.sourceforge.net/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "0.1.7-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "LongStitch": {
         "default": "",
@@ -9180,7 +8912,6 @@
                     "4.10.0-gimkl-2017a-metis-4.0.3",
                     "4.10.0-gimkl-2020a-metis-4.0.3",
                     "4.10.0-gimkl-2020a",
-                    "5.0.2-gimkl-2017a-parmetis",
                     "5.3.1-gimkl-2020a-METIS-5.1.0",
                     "5.5.0-gimkl-2022a"
                 ]
@@ -9209,7 +8940,6 @@
                 "default": "latest",
                 "versions": [
                     "3.23-GCC-9.2.0",
-                    "3.23-gimkl-2017a",
                     "3.23-gimkl-2018b",
                     "4.0.0rc1-GCCcore-9.2.0",
                     "4.0.0rc1-GCCcore-11.3.0"
@@ -9289,7 +9019,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.2.8-gimkl-2017a",
                     "3.3.1-gimkl-2018b",
                     "3.3.4-gimkl-2018b",
                     "3.4.1-gimkl-2020a",
@@ -9391,7 +9120,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.1-gimkl-2017a",
                     "2.1-gimkl-2018b",
                     "2.2-GCC-9.2.0",
                     "2.3-GCC-9.2.0",
@@ -9476,29 +9204,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://downloads.jbei.org/data/microbial_communities/MaxBin/MaxBin.html"
-    },
-    "Meraculous": {
-        "default": "",
-        "description": "Eukaryotic genome assembler for Illumina sequence data.",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://jgi.doe.gov/data-and-tools/meraculous/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "2.2.6-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "Merqury": {
         "default": "",
@@ -9731,31 +9436,6 @@
         "support": "",
         "url": "http://bioinform.github.io/metasv/"
     },
-    "MetaVelvet": {
-        "default": "",
-        "description": "A short read assember for metagenomics",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://metavelvet.dna.bio.keio.ac.jp/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.2.01-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "Metashape": {
         "default": "",
         "description": "",
@@ -9796,7 +9476,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.1.3-gimkl-2017a",
                     "2.2-gimkl-2020a",
                     "2.2.2-gimkl-2020a",
                     "2.2.3-gimkl-2022a"
@@ -9995,8 +9674,7 @@
                 "default": "latest",
                 "versions": [
                     "mpp-2015.1.25.linux_x86_64_openmp",
-                    "mpp-2019.2.2.linux_x86_64_openmp",
-                    "2012.1.27-intel-2017a"
+                    "mpp-2019.2.2.linux_x86_64_openmp"
                 ]
             }
         },
@@ -10069,33 +9747,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.39.5-gimkl-2017a",
                     "1.41.0-gimkl-2018b-Python-2.7.16"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
-    "MotionCorr": {
-        "default": "",
-        "description": "Motion Correction for Dose-Fractionation Stack, by Dr. Xueming Li of the Cheng Laboratory at UCSF. The actual executable is named dosefgpu_driftcorr",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://cryoem.ucsf.edu/software/software.html",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "2.1-gimkl-2017a"
                 ]
             }
         },
@@ -10120,7 +9772,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.2.6-gimkl-2017a",
                     "3.2.7-gimpi-2022a"
                 ]
             }
@@ -10206,7 +9857,6 @@
                 "default": "latest",
                 "versions": [
                     "2.12-gimkl-2017a-cuda",
-                    "2.12-gimkl-2017a-mpi-smp",
                     "2.12-gimkl-2017a-mpi",
                     "2.14-gimkl-2022a-mpi"
                 ]
@@ -10258,31 +9908,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://www.nasm.us/"
-    },
-    "NCARG": {
-        "default": "",
-        "description": "NCAR Graphics is a Fortran and C based software package for",
-        "domains": [
-            "visualisation"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://ngwww.ucar.edu/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "6.4.0-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "NCCL": {
         "default": "",
@@ -10615,7 +10240,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "6.8.revision47-gimkl-2017a-2017-12-14-Python-2.7.14",
                     "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16"
                 ]
             }
@@ -11100,7 +10724,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.6.1-GCC-5.4.0",
                     "1.8.2-GCCcore-7.4.0"
                 ]
             },
@@ -11198,31 +10821,6 @@
         "support": "",
         "url": "http://www.gnu.org/software/octave/"
     },
-    "Octopus": {
-        "default": "",
-        "description": "Octopus is a scientific program aimed at the ab initio virtual experimentation",
-        "domains": [
-            "chemistry"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://www.tddft.org/programs/octopus/wiki/index.php/Main_Page",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "7.3-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "OpenBLAS": {
         "default": "",
         "description": "OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.",
@@ -11316,7 +10914,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.4.0-gimkl-2017a-Python-2.7.14",
                     "3.4.1-GCC-7.4.0",
                     "3.4.1-gimkl-2020a",
                     "3.4.7-gimkl-2020a"
@@ -11735,31 +11332,6 @@
         "support": "",
         "url": "http://icl.cs.utk.edu/projects/papi/"
     },
-    "PBJelly": {
-        "default": "",
-        "description": "PBJelly is a highly automated pipeline that aligns long sequencing reads (such as PacBio RS reads or",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://sourceforge.net/p/pb-jelly/wiki/Home/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "15.8.24-gimkl-2017a-Python-2.7.14"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "PCRE": {
         "default": "",
         "description": "The PCRE library is a set of functions that implement regular expression pattern matching using",
@@ -11921,29 +11493,6 @@
         "network_licences": [],
         "support": "",
         "url": "http://www.mcs.anl.gov/petsc"
-    },
-    "PFFT": {
-        "default": "",
-        "description": "PFFT is a software library for computing massively parallel, fast Fourier",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://www-user.tu-chemnitz.de/~mpip/software.php?lang=en",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.0.8-alpha-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "PHASIUS": {
         "default": "",
@@ -12356,7 +11905,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.3.20180214-gimkl-2017a",
                     "3.3.20211231-gimpi-2022a"
                 ]
             }
@@ -12617,7 +12165,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "4.12-gimkl-2017a-Python-3.6.3",
                     "4.12.3-gimkl-2018b-Python-3.7.3",
                     "5.10.1-gimkl-2018b-Python-3.7.3",
                     "5.12.1-gimkl-2018b-Python-2.7.16",
@@ -12709,31 +12256,6 @@
         "support": "",
         "url": "http://python.org/"
     },
-    "Python-GPU": {
-        "default": "",
-        "description": "The python packages which depend on CUDA: pycuda, pygpu, and scikit-cuda.",
-        "domains": [
-            "mathematics"
-        ],
-        "extensions": "pycuda-2017.1.1, pygpu-0.7.4, scikit-cuda-0.5.1",
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://python.org/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "3.6.3-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "Python-Geo": {
         "default": "",
         "description": "Python packages for geospatial data I/O, mostly based on the OSGEO libraries GDAL and OGR",
@@ -12750,9 +12272,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.7.14-gimkl-2017a",
                     "2.7.16-gimkl-2018b",
-                    "3.6.3-gimkl-2017a",
                     "3.7.3-gimkl-2018b",
                     "3.8.2-gimkl-2020a",
                     "3.9.5-gimkl-2020a",
@@ -12849,7 +12369,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "5.0.2-gimkl-2017a",
                     "5.0.2-gimkl-2018b",
                     "5.2.0-gimkl-2022a"
                 ]
@@ -12875,7 +12394,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "5.9.3-gimkl-2017a",
                     "5.10.1-GCCcore-7.4.0",
                     "5.11.2-GCCcore-7.4.0",
                     "5.12.3-GCCcore-7.4.0",
@@ -12912,8 +12430,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "5.2.0-intel-2017a-hybrid",
-                    "5.2.0-intel-2017a",
                     "6.8-intel-2020a",
                     "7.2-intel-2022a"
                 ]
@@ -12970,7 +12486,6 @@
                 "default": "latest",
                 "versions": [
                     "3.4.2-gimkl-2017a",
-                    "3.5.0-gimkl-2017a",
                     "3.5.1-gimkl-2017a",
                     "3.5.3-gimkl-2018b",
                     "3.6.1-gimkl-2018b",
@@ -13378,7 +12893,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.3.1-gimkl-2017a",
                     "1.3.3-gimkl-2020a",
                     "1.3.3-gimkl-2022a"
                 ]
@@ -13406,7 +12920,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.3.16-gimkl-2017a-Python-3.6.3",
                     "3.6.14-gimkl-2018b-Python-3.7.3",
                     "5.0.10-gimkl-2020a-Python-3.9.9",
                     "5.0.10-gimkl-2022a-Python-3.10.5"
@@ -13559,8 +13072,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.0.3-gimkl-2017a",
-                    "2.1-gimkl-2017a",
                     "3.0beta-gimkl-2017a-GPU",
                     "3.0beta-gimkl-2017a",
                     "4.0.1-gimkl-2020a"
@@ -13644,15 +13155,15 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.0.5-GCC-9.2.0-Perl-5.30.1-mt",
-                    "1.0.5-gimkl-2017a"
+                    "1.0.5-GCC-9.2.0-Perl-5.30.1-mt"
                 ]
             }
         },
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "",
+        "url": "http://bix.ucsd.edu/repeatscout/"
     },
     "Riskscape": {
         "default": "",
@@ -13773,7 +13284,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.5.1-gimkl-2017a",
                     "2.6.1-gimkl-2018b",
                     "3.0.1-GCC-11.3.0"
                 ]
@@ -14091,7 +13601,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "4.19.2-gimkl-2017a-Python-3.6.3",
                     "4.19.8-gimkl-2018b-Python-3.7.3",
                     "4.19.8-gimkl-2020a-Python-3.8.2",
                     "4.19.15-gimkl-2018b-Python-3.7.3",
@@ -14177,31 +13686,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://github.com/vahidAK/"
-    },
-    "SOAPdenovo2": {
-        "default": "",
-        "description": "Short Oligonucleotide Analysis Package - novel short-read assembly",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://soap.genomics.org.cn/index.html",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "r240-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "SOCI": {
         "default": "",
@@ -14552,7 +14036,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.8.2-gimkl-2017a",
                     "0.11.3-gimkl-2017a",
                     "0.13.1-gimkl-2018b",
                     "0.14.0-gimkl-2018b",
@@ -14745,29 +14228,6 @@
         "support": "",
         "url": "https://bioinf.shenwei.me/seqkit/"
     },
-    "SeqMonk": {
-        "default": "",
-        "description": "A tool to visualise and analyse high throughput mapped sequence data.",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://www.bioinformatics.babraham.ac.uk/projects/seqmonk/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.44.0-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "SiBELia": {
         "default": "",
         "description": "A comparative genomics tool for analysing genomic variations that correlate with pathogens, or",
@@ -14819,29 +14279,6 @@
         "network_licences": [],
         "support": "",
         "url": "http://departments.icmab.es/leem/siesta"
-    },
-    "Siesta-Optical": {
-        "default": "",
-        "description": "",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.0.0-intel-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "SignalP": {
         "default": "",
@@ -15086,7 +14523,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.46-gimkl-2017a",
                     "2.4-gimkl-2018b",
                     "2.41-gimkl-2018b",
                     "2.52-gimkl-2020a",
@@ -15170,7 +14606,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.5.3-gimkl-2017a",
                     "2.0.0-GCC-9.2.0",
                     "2.0.3-GCC-11.3.0"
                 ]
@@ -15629,31 +15064,6 @@
         "support": "",
         "url": "http://www.tcl.tk/"
     },
-    "TopHat": {
-        "default": "",
-        "description": "TopHat is a fast splice junction mapper for RNA-Seq reads.",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://tophat.cbcb.umd.edu/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "2.1.1-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "TransDecoder": {
         "default": "",
         "description": "TransDecoder identifies candidate coding regions within transcript sequences.",
@@ -15818,7 +15228,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.8.4-gimkl-2017a",
                     "2.8.4-gimkl-2018b",
                     "2.8.5-gimkl-2018b",
                     "2.8.6-gimkl-2020a",
@@ -16198,7 +15607,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "90.3",
                     "103.1-GCC-9.2.0-Perl-5.30.1",
                     "104.3-GCC-9.2.0-Perl-5.30.1",
                     "107.0-GCC-11.3.0-Perl-5.34.1"
@@ -16328,7 +15736,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "6.3.0-gimkl-2017a-Python-2.7.14",
                     "7.1.1-gimkl-2018b-Python-2.7.16"
                 ]
             },
@@ -16728,15 +16135,15 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.4.1-GCC-11.3.0",
-                    "2.4.1-gimkl-2017a"
+                    "2.4.1-GCC-11.3.0"
                 ]
             }
         },
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "",
+        "url": "http://www.ebi.ac.uk/~birney/wise2/"
     },
     "XCONV": {
         "default": "",
@@ -16755,29 +16162,6 @@
                 "default": "latest",
                 "versions": [
                     "1.93"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
-    "XGKS": {
-        "default": "",
-        "description": "XGKS is a level 2C implementation of the ANSI Graphical Kernel System",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://sourceforge.net/projects/xgks/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "2.6.1-gimkl-2017a-uw"
                 ]
             }
         },
@@ -16941,7 +16325,6 @@
                 "default": "latest",
                 "versions": [
                     "3.1.1-GCCcore-9.2.0",
-                    "3.1.4-gimkl-2017a",
                     "3.2.2-GCCcore-7.4.0",
                     "3.2.3-GCCcore-9.2.0"
                 ]
@@ -16983,30 +16366,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://www.dkrz.de/redmine/projects/yaxt"
-    },
-    "Yade": {
-        "default": "",
-        "description": "Yade is an extensible open-source framework for discrete numerical models,",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://yade-dem.org/doc/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.20.0-gimkl-2017a-Python-2.7.14",
-                    "2018.02b-gimkl-2017a-Python-2.7.14"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "Yasm": {
         "default": "",
@@ -17258,7 +16617,6 @@
                 "default": "latest",
                 "versions": [
                     "2.13-GCC-11.3.0",
-                    "2.13-gimkl-2017a",
                     "2.13-gimkl-2020a"
                 ]
             }
@@ -17608,31 +16966,6 @@
         "network_licences": [],
         "support": ""
     },
-    "blasr_libcpp": {
-        "default": "",
-        "description": "Blasr_libcpp is a library used by blasr and other executables such as samtoh5, loadPulses for",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://github.com/PacificBiosciences/blasr_libcpp",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "5.3.1-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "breseq": {
         "default": "",
         "description": "breseq is a computational pipeline for the analysis of short-read re-sequencing data",
@@ -17699,7 +17032,6 @@
                 "versions": [
                     "1.0.6-GCCcore-7.4.0",
                     "1.0.6-gimkl-2017a",
-                    "1.0.6-intel-2017a",
                     "1.0.6-intel-2018b",
                     "1.0.8-GCCcore-9.2.0",
                     "1.0.8-GCCcore-11.3.0",
@@ -18069,7 +17401,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.16-gimkl-2017a-Python-3.6.3",
                     "1.16-gimkl-2018b-Python-3.7.3",
                     "2.3-gimkl-2018b-Python-3.7.3",
                     "2.10-gimkl-2020a-Python-3.8.2",
@@ -18317,7 +17648,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.3.2-gimkl-2017a-Python-3.6.3",
                     "2.3.2-gimkl-2018b-Python-3.7.3",
                     "3.4.2-gimkl-2022a-Python-3.10.5"
                 ]
@@ -18650,7 +17980,6 @@
                 "versions": [
                     "2.2.0-GCC-7.4.0",
                     "2.2.0-GCC-9.2.0",
-                    "2.2.0-gimkl-2017a",
                     "2.4.0-GCC-9.2.0",
                     "2.4.0-GCC-11.3.0"
                 ]
@@ -18719,7 +18048,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.0-gimkl-2017a-Python-2.7.14",
                     "1.0-gimkl-2020a-Python-2.7.18"
                 ]
             }
@@ -19628,7 +18956,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.0.3-gimkl-2017a",
                     "2.0.3-gimkl-2018b",
                     "2.0.3",
                     "2.0.4"
@@ -19655,7 +18982,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.8.0-gimkl-2017a",
                     "1.10.0-GCCcore-9.2.0"
                 ]
             }
@@ -20501,7 +19827,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.43.1-gimkl-2017a",
                     "0.46.2-gimkl-2020a"
                 ]
             }
@@ -20601,7 +19926,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "9.0.0-GCC-5.4.0",
                     "9.0.0-GCCcore-7.4.0",
                     "9.0.1-GCCcore-9.2.0"
                 ]
@@ -20715,29 +20039,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://github.com/hpc/libcircle/"
-    },
-    "libconfig": {
-        "default": "",
-        "description": "A Library for processing structured configuration files",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://www.hyperrealm.com/libconfig",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.5-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "libdeflate": {
         "default": "",
@@ -21080,7 +20381,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.7.4-gimkl-2017a-CUDA-8.0.61",
                     "0.7.6-GCCcore-9.2.0-CUDA-8.0.61"
                 ]
             }
@@ -21482,7 +20782,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.2.3-gimkl-2017a",
                     "4.2.3-gimkl-2017a",
                     "5.1.5-intel-2020a",
                     "5.1.5-intel-2022a",
@@ -21591,7 +20890,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.6.4-gimkl-2017a",
                     "1.8.3-gimkl-2017a",
                     "1.16.2-gimkl-2020a",
                     "1.16.2-intel-2022a"
@@ -21695,7 +20993,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "5.5.2.5-gimkl-2017a",
                     "5.5.2.5-gimkl-2018b",
                     "5.5.2.5-gimkl-2020a",
                     "5.5.2.11-GCC-9.2.0",
@@ -22080,29 +21377,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://github.com/lh3/minimap2"
-    },
-    "minieigen": {
-        "default": "",
-        "description": "A small wrapper for core parts of Eigen, c++ library for linear algebra.",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://launchpad.net/minieigen/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "0.5.4-gimkl-2017a-Python-2.7.14"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "minimap2": {
         "default": "",
@@ -22744,7 +22018,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "4.2-intel-2017a",
                     "4.2-intel-2020a"
                 ]
             }
@@ -22829,29 +22102,6 @@
         "network_licences": [],
         "support": "",
         "url": "http://www.unidata.ucar.edu/software/netcdf/"
-    },
-    "nettle": {
-        "default": "",
-        "description": "Nettle is a cryptographic library that is designed to fit easily",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://www.lysator.liu.se/~nisse/nettle/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "3.3-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "nodejs": {
         "default": "",
@@ -23009,7 +22259,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.4.4",
                     "3.6.0",
                     "4.2.2",
                     "4.5.3",
@@ -23406,7 +22655,7 @@
         "default": "",
         "description": "File format for storing nanopore dna data in an easily accessible way.",
         "domains": [],
-        "extensions": "iso8601-2.0.0, lib-pod5-0.2.4, more-itertools-10.1.0, pod5-0.3.2, polars-0.17.15, vbz_h5py_plugin-1.0.1",
+        "extensions": "iso8601-2.1.0, lib-pod5-0.3.2, more-itertools-10.1.0, pod5-0.3.2, polars-0.17.15, pyarrow-14.0.1, vbz_h5py_plugin-1.0.1",
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/nanoporetech/pod5-file-format",
@@ -23551,31 +22800,6 @@
         "support": "",
         "url": "http://www.vicbioinformatics.com/software.prokka.shtml"
     },
-    "proovread": {
-        "default": "",
-        "description": "PacBio hybrid error correction through iterative short read consensus",
-        "domains": [
-            "biology"
-        ],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://github.com/BioInf-Wuerzburg/proovread",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "2.14.1-gimkl-2017a-mt"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "protobuf": {
         "default": "",
         "description": "Google Protocol Buffers.",
@@ -23605,29 +22829,6 @@
         "network_licences": [],
         "support": "",
         "url": "https://github.com/protocolbuffers/protobuf"
-    },
-    "protobuf-python": {
-        "default": "",
-        "description": "Python Protocol Buffers runtime library.",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "https://github.com/google/protobuf/",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "3.6.0-gimkl-2017a-Python-3.6.3"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "psmc": {
         "default": "",
@@ -24187,7 +23388,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.1.24-gimkl-2017a",
                     "0.1.26-GCC-9.2.0"
                 ]
             }
@@ -24334,7 +23534,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.7.0-gimkl-2017a-Python-3.6.3",
                     "0.7.0-gimkl-2018b-Python-3.7.3",
                     "0.8.4-gimkl-2020a-Python-3.8.2"
                 ]
@@ -24362,7 +23561,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.2-gimkl-2017a",
                     "1.3-GCC-11.3.0",
                     "1.3-gimkl-2018b",
                     "1.4-GCC-11.3.0"
@@ -24961,7 +24159,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.1.9-gimkl-2017a",
                     "2.2.2-GCC-9.2.0"
                 ]
             }
@@ -25414,7 +24611,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.31.1-gimkl-2017a-Python-3.6.3",
                     "0.31.1-gimkl-2018b-Python-2.7.16",
                     "0.31.1-gimkl-2020a-Python-2.7.18"
                 ]
@@ -25526,29 +24722,6 @@
         "network_licences": [],
         "support": "",
         "url": "http://x265.org/"
-    },
-    "xbitmaps": {
-        "default": "",
-        "description": "provides bitmaps for x",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://www.freedesktop.org/wiki/Software/xlibs",
-        "licence_type": "",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.1.1-gimkl-2017a"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
     },
     "xkbcommon": {
         "default": "",
