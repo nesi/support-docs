@@ -47,12 +47,15 @@ ARIBA's
 ARIBA
 ATK's
 ATK
+ATL
 AUGUSTUS's
 AUGUSTUS
 AdapterRemoval's
 AdapterRemoval
 Advisor's
 Advisor
+Allinea's
+Allinea
 AlphaFold's
 AlphaFold
 AlphaFold2DB's
@@ -150,6 +153,7 @@ BlenderPy's
 BlenderPy
 Boost's
 Boost
+Bourne
 Bowtie's
 Bowtie
 Bowtie2's
@@ -174,6 +178,7 @@ CFITSIO's
 CFITSIO
 CGAL's
 CGAL
+CLI
 CMIP
 CMake's
 CMake
@@ -193,11 +198,14 @@ CPU's
 CPU
 CRAMINO's
 CRAMINO
+CRLF
 CTPL's
 CTPL
+CUDA's
 CUDA
 CUnit's
 CUnit
+CWL
 Canu's
 Canu
 CapnProto's
@@ -271,6 +279,7 @@ DISCOVARdenovo
 DRAM's
 DRAM
 DTN
+DVS
 DaliLite's
 DaliLite
 Dask
@@ -308,6 +317,7 @@ EMIRGE's
 EMIRGE
 ENMTML's
 ENMTML
+EOL
 ESMF's
 ESMF
 ETE's
@@ -394,6 +404,8 @@ GD's
 GD
 GDAL's
 GDAL
+GDB
+GDC
 GEMMA's
 GEMMA
 GEOS's
@@ -410,10 +422,14 @@ GMP's
 GMP
 GMT's
 GMT
+GNU
 GOLD's
 GOLD
 GObject-Introspection's
 GObject-Introspection
+GPFS's
+GPFS
+GPG
 GPGPUs
 GPGPU
 GPUs
@@ -439,10 +455,13 @@ GTK+'s
 GTK+
 GTS's
 GTS
+GUIs
+GUI
 GUSHR's
 GUSHR
 Gaussian's
 Gaussian
+Gbps
 Gdk-Pixbuf's
 Gdk-Pixbuf
 GeneMark
@@ -456,6 +475,8 @@ GetOrganelle's
 GetOrganelle
 GitHub's
 GitHub
+GitLab's
+GitLab
 Glib
 GlimmerHMM's
 GlimmerHMM
@@ -469,6 +490,7 @@ Gubbins's
 Gubbins
 Guile's
 Guile
+HDF's
 HDF
 HDF-EOS's
 HDF-EOS
@@ -476,6 +498,7 @@ HDF-EOS5's
 HDF-EOS5
 HDF5's
 HDF5
+HGX
 HISAT2's
 HISAT2
 HMMER's
@@ -501,6 +524,7 @@ HybPiper's
 HybPiper
 Hypre's
 Hypre
+IBM
 ICU's
 ICU
 IDBA's
@@ -584,6 +608,7 @@ LDC's
 LDC
 LEfSe's
 LEfSe
+LF
 LINKS's
 LINKS
 LLVM's
@@ -594,6 +619,7 @@ LSD2's
 LSD2
 LTR_retriever's
 LTR_retriever
+LTS
 LUMPY's
 LUMPY
 LZO's
@@ -630,6 +656,7 @@ MCL's
 MCL
 MCR's
 MCR
+MD5
 MEGAHIT's
 MEGAHIT
 METABOLIC's
@@ -755,6 +782,8 @@ NVHPC
 NWChem's
 NWChem
 NZ
+NZDT
+NZST
 Nano
 NanoComp's
 NanoComp
@@ -767,6 +796,8 @@ NanoStat
 Nanopore
 NeSI's
 NeSI
+New Zealanders
+New Zealander
 Newton-X's
 Newton-X
 NextGenMap's
@@ -790,6 +821,7 @@ OMA's
 OMA
 OMP's
 OMP
+OOM
 OPARI2's
 OPARI2
 ORCA's
@@ -798,6 +830,7 @@ OSPRay's
 OSPRay
 OSU-Micro-Benchmarks's
 OSU-Micro-Benchmarks
+OSX
 OTF2's
 OTF2
 Octave's
@@ -824,6 +857,7 @@ OpenMP's
 OpenMP
 OpenMPI's
 OpenMPI
+OpenSSH
 OpenSSL's
 OpenSSL
 OpenSees's
@@ -904,6 +938,7 @@ Porechop's
 Porechop
 PostgreSQL's
 PostgreSQL
+PowerShell
 Prodigal's
 Prodigal
 ProtHint's
@@ -929,6 +964,7 @@ QIIME2's
 QIIME2
 QUAST's
 QUAST
+QoS
 Qt5's
 Qt5
 QuantumESPRESSO's
@@ -1010,6 +1046,9 @@ SDL2's
 SDL2
 SEPP's
 SEPP
+SFTP
+SHA-1
+SHA-256
 SHAPEIT4's
 SHAPEIT4
 SIF
@@ -1092,6 +1131,9 @@ Spack's
 Spack
 Spark's
 Spark
+Spectrum Scale's
+Spectrum Scale
+SquashFS
 SqueezeMeta's
 SqueezeMeta
 Stacks's
@@ -1114,12 +1156,14 @@ Szip's
 Szip
 TMHMM's
 TMHMM
+TRES
 TSEBRA's
 TSEBRA
 TURBOMOLE's
 TURBOMOLE
 TWL-NINJA's
 TWL-NINJA
+TZ
 Tcl's
 Tcl
 TensorFlow's
@@ -1163,6 +1207,7 @@ UDUNITS's
 UDUNITS
 USEARCH's
 USEARCH
+UTF
 Unicycler's
 Unicycler
 VASP's
@@ -1229,6 +1274,7 @@ XMDS2's
 XMDS2
 XSD's
 XSD
+XVFB
 XZ's
 XZ
 Xerces-C++'s
@@ -1269,8 +1315,13 @@ at-spi2-core's
 at-spi2-core
 attr's
 attr
+authenticators's
+authenticators
+authenticator's
+authenticator
 azul-zulu's
 azul-zulu
+backplane
 bamUtil's
 bamUtil
 barrnap's
@@ -1311,6 +1362,7 @@ checksums
 checksum
 chewBBACA's
 chewBBACA
+chiplets
 chopper's
 chopper
 config
@@ -1339,6 +1391,7 @@ dataset
 deepTools's
 deepTools
 deprioritised
+dereference
 devtools's
 devtools
 double-conversion's
@@ -1376,6 +1429,7 @@ exonerate's
 exonerate
 expat's
 expat
+fairshare
 fastStructure's
 fastStructure
 fastp's
@@ -1439,6 +1493,8 @@ gimpi's
 gimpi
 git's
 git
+glob
+globbing
 globus-automate-client's
 globus-automate-client
 globus-compute-endpoint's
@@ -1471,6 +1527,7 @@ hunspell's
 hunspell
 hwloc's
 hwloc
+hyperthreaded
 hyperthreading
 hypothesis's
 hypothesis
@@ -1652,6 +1709,7 @@ muParser's
 muParser
 multithread
 multithreaded
+multithreading
 namespaces
 namespace
 nano's
@@ -1676,7 +1734,6 @@ ncview's
 ncview
 ne's
 ne
-nearline's
 nearline
 netCDF's
 netCDF
@@ -1873,6 +1930,7 @@ swarm's
 swarm
 swissknife's
 swissknife
+symlink
 tRNAscan-SE's
 tRNAscan-SE
 tabix's
@@ -1884,6 +1942,7 @@ tbb
 tbl2asn's
 tbl2asn
 templating
+tmpfs
 tmux's
 tmux
 toolchains
@@ -1906,6 +1965,7 @@ util-linux
 validator
 vcflib's
 vcflib
+vectorisation
 vg's
 vg
 walltimes

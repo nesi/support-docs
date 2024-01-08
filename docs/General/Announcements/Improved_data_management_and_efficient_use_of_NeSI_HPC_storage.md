@@ -44,10 +44,9 @@ filesystem).
 If you need assistance with this, {% include "partials/support_request.html" %} and
 we’d be happy to help or answer questions.
 
-If you have data that may be used again on NeSI later, [let us
-know {% include "partials/support_request.html" %}
+If you have data that may be used again on NeSI later, {% include "partials/support_request.html" %}
 and we will consider whether a
-[Nearline](https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service "https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service")
+[Nearline](https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service)
 storage allocation would be appropriate to manage this.
 
 ### 18 October 2021
@@ -83,32 +82,30 @@ management.
 
 ### Why are you introducing these new data management processes?
 
-**We want to avoid our online filesystems reaching critically full
+We want to avoid our online filesystems reaching critically full
 levels, as that impacts their performance and availability for users. We
 also want to ensure our active storage filesystems aren't being used to
 store inactive data. This new data management feature
 for `/nesi/project/` directories will complement our existing programme
-of [automatic cleaning of the /nobackup file
-system](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md "https://support.nesi.org.nz/hc/en-gb/articles/360001162856").
+of [automatic cleaning of the /nobackup file system](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
 
-### Can I check how much storage I’m currently using on NeSI systems?**
+### Can I check how much storage I’m currently using on NeSI systems?
 
 You can query your actual usage and disk allocations at any time using
 the following command:
 
-`$ nn_storage_quota`
+`nn_storage_quota`
 
-The values for 'nn\_storage\_quota' are updated approximately every hour
+The values for `nn_storage_quota` are updated approximately every hour
 and cached between updates.
 
-### Can I recover data that I accidentally delete from my /project directory?
+### Can I recover data that I accidentally delete from my `/project` directory?
 
 Perhaps. We regularly make read-only copies of the file system and save
-them for up to seven days. For more information, [refer to our File
-Recovery
-page](../../Storage/Data_Recovery/File_Recovery.md "https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery").
+them for up to seven days. For more information, 
+[refer to our File Recovery page](../../Storage/Data_Recovery/File_Recovery.md "https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery").
 
-### Where should I store my data on NeSI systems?**
+### Where should I store my data on NeSI systems?
 
 In general, the **project directory** should be used for reference data,
 tools, and job submission and management scripts. The **nobackup
@@ -121,14 +118,14 @@ systems. The **long-term storage service** should be used for larger
 datasets that you only access occasionally and do not need to change in
 situ.
 
-### What should I do if I run out of storage space?**
+### What should I do if I run out of storage space?
 
 There are two tracked resources in the NeSI filesystem, *disk
 space* and *inodes (number of files)*. If you run into problems with
 either of these, [refer to this Support page for more
 information](../../General/FAQs/Ive_run_out_of_storage_space.md "https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space").
 
-### I have questions that aren’t covered here. Who can I talk to?**
+### I have questions that aren’t covered here. Who can I talk to?
 
 {% include "partials/support_request.html" %}.
 No question is too big or small and our intention is always to work with
