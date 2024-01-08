@@ -8,10 +8,38 @@
 	// Example:
 	"support request": {
 		"scope": "markdown",
-		"prefix": "{% include",
+		"prefix": ["contact support", "{% include \"partials/support_request.html\" %}" ],
 		"body": [
-			"{% include \"partials/support_request.html\" %};",
+			"{% include \"partials/support_request.html\" %}${0}",
 		],
 		"description": "Insert 'support request' snippet."
+	},
+	"meta status": {
+		"scope": "yaml",
+		"prefix": ["status:"],
+		"body": [
+			"status: ${1|deprecated,new|}",
+		]
+	},
+	"admonition": {
+		"scope": "markdown",
+		"description" : "Insert Admonation",
+		"prefix": ["Admonation", "!!!", "???", "???+"],
+		"body": [
+			// "!!! ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|} \"${2}\"\n\t", // Admonition with title
+			"!!! ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|}",
+			"    ${TM_SELECTED_TEXT}${0}"
+		]
+	},
+	"tab_container": {
+		"scope": "markdown",
+		"description": "Insert Tab Container",
+		"prefix": ["tab container", "==="],
+		"body": [
+			// "!!! ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|} \"${2}\"\n\t", // Admonition with title
+			"=== \"${1:tab name}\"",
+			"    ${2:tab content}",
+			"===${0}"
+		]
 	}
 }
