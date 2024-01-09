@@ -2,6 +2,7 @@
 created_at: '2023-02-08T00:21:51Z'
 hidden: false
 weight: 0
+description: NeSI automatically compresses data to free storage capacity.
 tags:
 - compression
 - lz4
@@ -12,10 +13,7 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 6359601973135
 zendesk_section_id: 360000033936
-status: deprecated
 ---
-
-## Background
 
 Spectrum Scale filesystems (previously GPFS) allow users to compress
 data (but not metadata) transparently on demand without the need to
@@ -47,8 +45,9 @@ There are two methods for compressing and decompressing data:
 
 ### On-Demand (synchronous)
 
-**note:** *as at 2 May 2023, the `mm` commands are not available by
-default, {% include "partials/support_request.html" %} for assistance.
+!!! warning
+    As at 2 May 2023, the `mm` commands are not available by
+    default, {% include "partials/support_request.html" %} for assistance.
 
 This method (using the `mmchattr` command) acts similar to
 `gzip`/`gunzip` commands where the file being targeted is compressed or
@@ -56,7 +55,7 @@ decompressed on command invocation. If the command fails halfway through
 the file or is cancelled, the file will be marked as `illcompressed`.
 This state means that the file is only partially compressed.
 
-`ls` command will show files with their original sizes. However,  `du`
+`ls` command will show files with their original sizes. However, `du`  
 commands will calculate the approximate usage of the file system as
 opposed to the uncompressed usage. This will be the total counting
 against quotas as well. Therefore, if files are compressed, quota usage
@@ -64,6 +63,57 @@ will decrease. And vice versa, if files are decompressed, fully or
 partially, quota usage will increase. Be aware that if, in the process
 of decompression, the quota will be exceeded, an error message will be
 displayed
+
+```sh
+du -h FileA.txt
+```
+
+```out
+41M FileA.txt
+```
+
+---
+
+```sh
+ls -lh FileA.txt
+```
+
+```out
+-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+```
+
+---
+
+
+```sh
+time mmchattr --compression yes FileA.txt
+```
+
+```out
+real 0m1.343s
+user 0m0.002s
+sys 0m0.000s
+```
+
+---
+
+```sh
+ls -lh FileA.txt
+```
+
+```out
+-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+```
+
+---
+
+```sh
+du -h FileA.txt
+```
+
+```out
+8.0M FileA.txt
+```
 
 ### Deferred
 
@@ -77,13 +127,66 @@ by using the same command as above with one extra flag (`-I defer`).
 During this process, there is no change in space occupancy for any of
 the files involved.
 
+```sh
+du -h FileA.txt
+```
+
+```out
+41M FileA.txt
+```
+
+---
+
+```sh
+ls -lh FileA.txt
+```
+
+```out
+-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+```
+
+---
+
+```sh
+time mmchattr -I defer --compression yes FileA.txt
+```
+
+```out
+real 0m0.002s
+user 0m0.002s
+sys 0m0.000s
+```
+
+---
+
+```sh
+ls -lh FileA.txt
+```
+
+```out
+-rw-r--r-- 1 user001 user001 41M Jul 6 01:03 FileA.txt
+```
+
+---
+
+```sh
+du -h FileA.txt
+```
+
+```out
+41M FileA.txt
+```
+
 #### How to process deferred tagged files
 
 Users can process compression/decompression on the tagged files via the
 `mmrestripefile` command (using `-z` flag).
 
-``` sl
-$ mmrestripefile -z FileA.txt
+```sh
+mmrestripefile -z FileA.txt
+```
+
+```out
 Scanning FileA.txt
 Scan completed successfully.
 ```
@@ -136,10 +239,48 @@ re-compressed using the `mmchattr --compression yes` command or the
     because it's not fully compressed the `illcompressed` flag will be
     shown.
 
+    ```sh
+    mmlsattr -L FileA.txt
+    ```
+
+    ```out
+    file name: FileA.txt
+    metadata replication: 1 max 2
+    data replication: 1 max 2
+    immutable: no
+    appendOnly: no
+    flags: illcompressed
+    storage pool name: data
+    fileset name: home_user001
+    snapshot name:
+    creation time: Wed Jul 6 00:54:27 2022
+    Misc attributes: ARCHIVE COMPRESSION (library z)
+    Encrypted: no
+    ```
+
 - `Fully compressed` and `tagged` for compression - The file is
     fully compressed to its maximum possible state and because the file
     is tagged for compression, only the misc attribute `COMPRESSION`
     will be shown.
+
+    ```sh
+    mmlsattr -L FileA.txt
+    ```
+
+    ```out
+    file name: FileA.txt
+    metadata replication: 1 max 2
+    data replication: 1 max 2
+    immutable: no
+    appendOnly: no
+    flags:
+    storage pool name: data
+    fileset name: home_user001
+    snapshot name:
+    creation time: Wed Jul 6 00:54:27 2022
+    Misc attributes: ARCHIVE COMPRESSION (library z)
+    Encrypted: no
+    ```
 
 - `Full or partially compressed` and `untagged` for compression -
     The file might be fully or partially compressed and in this case
@@ -149,6 +290,25 @@ re-compressed using the `mmchattr --compression yes` command or the
     the flag `illcompressed` will be shown. After full decompression is
     complete the file will become uncompressed and `untagged` for
     compression.
+
+    ```sh
+    mmlsattr -L FileA.txt
+    ```
+
+    ```out
+    file name: FileA.txt
+    metadata replication: 1 max 2
+    data replication: 1 max 2
+    immutable: no
+    appendOnly: no
+    flags: illcompressed
+    storage pool name: data
+    fileset name: home_user001
+    snapshot name:
+    creation time: Wed Jul 6 00:54:27 2022
+    Misc attributes: ARCHIVE
+    Encrypted: no
+    ```
 
 ## Using different compression algorithms
 
@@ -176,5 +336,5 @@ compression and then {% include "partials/support_request.html" %}. We will help
 you minimise the impact of compression on your workflow or find other
 ways to help you manage your project storage.
 
-If you are interested in learning more about this type of data
-compression [you can find further details on the IBM website](https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression).
+If you are interested in learning more about this type of data compression 
+[you can find further details on the IBM website](https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression).

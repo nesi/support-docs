@@ -13,7 +13,6 @@ vote_count: 4
 vote_sum: 4
 zendesk_article_id: 360000177256
 zendesk_section_id: 360000033936
-status: deprecated
 ---
 
 !!! tip "Transparent File Compression"
@@ -37,170 +36,21 @@ command:
 The values for `nn_storage_quota` are updated approximately every hour
 and cached between updates.
 
-![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.png)
+![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.svg)
 
 ## File System Specifications
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<tbody>
-<tr >
-<td
-><span><strong>Filesystem</strong></span></td>
-<td ><span><strong>/home</strong></span></td>
-<td
-><span><strong>/nesi/project</strong></span></td>
-<td
-><span><strong>/nesi/nobackup</strong></span></td>
-<td
-><span><strong>/nesi/nearline</strong> </span></td>
-</tr>
-<tr >
-<td ><span><strong>Default disk space<br />
-</strong></span></td>
-<td > </td>
-<td > </td>
-<td > </td>
-<td rowspan="3" ><span>No default; allocations
-are based on eligibility and technical requirements</span><br />
-<span> </span><span> </span></td>
-</tr>
-<tr >
-<td ><span><strong>    - soft
-quota</strong></span></td>
-<td ><span>20 GB</span></td>
-<td ><span>100 GB<br />
-</span></td>
-<td >10 TB</td>
-</tr>
-<tr >
-<td ><span><strong>    - hard
-quota</strong></span></td>
-<td > </td>
-<td ><span>110 GB</span></td>
-<td >12 TB</td>
-</tr>
-<tr >
-<td ><span><strong>Default file count
-(inode)<br />
-</strong></span></td>
-<td > </td>
-<td > </td>
-<td > </td>
-<td rowspan="3" ><span>No default; allocations
-are based on eligibility and technical requirements</span><br />
-<span> </span><span> </span></td>
-</tr>
-<tr >
-<td ><span><strong>    - soft
-quota</strong></span></td>
-<td ><span>1,000,000 files</span></td>
-<td ><span>100,000 files</span></td>
-<td ><span>1,000,000 files</span></td>
-</tr>
-<tr >
-<td ><span><strong>    - hard
-quota</strong></span></td>
-<td ><span>1,100,000 files</span></td>
-<td ><span>110,000 files</span></td>
-<td ><span>1,100,000 files</span></td>
-</tr>
-<tr >
-<td ><span><strong>Intended
-use</strong></span></td>
-<td ><span>User-specific files such as configuration
-files, environment setup, source code, etc.</span></td>
-<td ><span>Persistent project-related data,
-project-related software, etc.</span></td>
-<td ><span>Data created or used by compute jobs that
-is intended to be temporary</span></td>
-<td ><span>Medium- to long-term storage of
-research data associated with past, present or planned compute
-projects</span></td>
-</tr>
-<tr >
-<td ><span><strong>Total
-capacity</strong></span></td>
-<td ><span>175 TB</span></td>
-<td ><span>1,590 TB</span></td>
-<td ><span>4,400 TB</span></td>
-<td ><span>Will grow as tapes are
-purchased</span></td>
-</tr>
-<tr >
-<td ><span><strong>Data retention
-time</strong></span></td>
-<td ><span>180 days after the user ceases to be a
-member of any active project</span></td>
-<td ><span>90 days after the end of the project's
-last HPC Compute &amp; Analytics allocation. See also Transparent File
-Data Compression.</span></td>
-<td ><span>With certain exceptions, individual files
-will be deleted after being untouched for 120 days.
-See <a href="../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md">Automatic
-cleaning of nobackup file system</a> for more information.
-</span><span>90 days after the end of the project's last HPC Compute
-&amp; Analytics allocation, all remaining data is subject to
-deletion.</span></td>
-<td ><span>180 days after the end of the
-project's last nearline storage allocation</span></td>
-</tr>
-<tr >
-<td ><span><strong>Data backup schedule<br />
-(Excluding snapshots)</strong></span></td>
-<td ><span>Daily, last 10 versions of any given file
-retained for up to 90 days.</span></td>
-<td ><span>Daily, last 10 versions of any given file
-retained for up to 90 days.</span></td>
-<td ><span>None</span></td>
-<td ><span>Replication  between Wellington and
-Auckland tape libraries (under development)</span></td>
-</tr>
-<tr >
-<td
-><span><strong>Snapshots</strong></span></td>
-<td ><span>Daily (retention period 7
-days)</span></td>
-<td ><span>Daily (retention period 7
-days)</span></td>
-<td ><span>None</span></td>
-<td ><span>None</span></td>
-</tr>
-<tr >
-<td ><span><strong>Access
-speed</strong></span></td>
-<td ><span>Moderate</span></td>
-<td ><span>Moderate</span></td>
-<td ><span>Fast</span></td>
-<td ><span>Slow</span></td>
-</tr>
-<tr >
-<td ><span><strong>Access
-interfaces</strong></span></td>
-<td ><ul>
-<li><span>Native Scale mounts</span></li>
-<li><span>SCP</span></li>
-<li><span>Globus data transfer</span></li>
-</ul></td>
-<td ><ul>
-<li><span>Native Scale mounts</span></li>
-<li><span>SCP</span></li>
-</ul></td>
-<td ><ul>
-<li><span>Native Scale mounts</span></li>
-<li><span>SCP</span></li>
-<li><span>Globus data transfer</span></li>
-</ul></td>
-<td ><span>Nearline commands</span></td>
-</tr>
-</tbody>
-</table>
+| Filesystem     | `/home`                                                                                | `/nesi/project`                                                                                                  | `/nesi/nobackup` | `/nesi/nearline` |
+| -------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Disk Quota     | 20 GB                                                                                 | 100 [110] GB                                                                                                    | 10 [12] TB | -                                                                                                       |
+| File Quota     | 1 [1.1] M files                                                                       | 100 [110] K files                                                                                               | 1 [1.1] M files | -                                                                                                       |
+| Usage  | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc. | Data created or used by compute jobs that is intended to be temporary | Medium- to long-term storage of research data, (past, present or planned projects) |
+| Capacity | 175 TB                                                                                | 1,590 TB                                                                                                        | 4,400 TB | - |
+| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 120 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup file system for more information. | 180 days after the end of the project's last nearline storage allocation |
+| Data backup    | Daily<br>last 10 versions<br>up to 90 days.                     | Daily<br>Last 10 versions<br>up to 90 days.                                             | - | under development |
+| Snapshots      | Daily<br>7 days                                                               | Daily<br>7 days                                                                                        | - | - |
+| Speed          | Moderate | Moderate | Fast | Slow |
+| Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul> | <ul><li>Native mounts</li><li>SCP</li></ul> | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li> |<ul><li>Nearline commands</li></ul> |
 
 ### **Soft versus hard quotas**
 

@@ -2,13 +2,15 @@
 created_at: '2018-05-21T05:14:00Z'
 hidden: false
 weight: 2
-tags: []
-title: File permissions and groups
+tags:
+- nobackup
+- project
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360000205435
 zendesk_section_id: 360000033936
 ---
+
 
 Access to data (i.e. files and directories) on NeSI is controlled by
 POSIX permissions, supplemented with Access Control Lists (ACLs).
@@ -46,7 +48,7 @@ system, inherit this ownership scheme. You can override these defaults
 depending on how you use the `cp`, `scp`, `rsync`, etc. commands. Please
 consult the documentation for your copying program.
 
-!!! arning
+!!! warning
      If you choose to preserve the original owner and group, but that owner
      and group (name or numeric ID) don't both exist at the destination,
      your files may end up with odd permissions that you can't fix, for

@@ -2,13 +2,14 @@
 created_at: '2019-09-15T23:36:59Z'
 hidden: false
 weight: 1
-tags: []
-title: Automatic cleaning of nobackup file system
+description: Description of NeSI's automatic deletion of old data.
+tags:
+- nobackup
+- cleaning
 vote_count: 4
 vote_sum: 2
 zendesk_article_id: 360001162856
 zendesk_section_id: 360000033936
-status: deprecated 
 ---
 
 The automatic cleaning feature is a programme of regular deletion of
@@ -108,16 +109,16 @@ keep beyond the scheduled expiry date, you have four options:
     only be done in cases where you expect to begin active use of the
     data again within the next month.
 
-- Note: Accessing (Open/Close and Open/Save) or Moving (\`mv\`) does
-    not update the timestamp of the file. Copying (\`cp\`) does create a
+- Note: Accessing (Open/Close and Open/Save) or Moving (`mv`) does
+    not update the timestamp of the file. Copying (`cp`) does create a
     new timestamped file.
 
 !!! warning
      Doing this for large numbers of files, or for files that together
      take up a large amount of disk space, in your project's nobackup
      directory, without regard for your project's computational
-     activity, constitutes a breach of [NeSI's acceptable use
-     policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy).
+     activity, constitutes a breach of
+     [NeSI's acceptable use policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy).
 
 ## Where should I put my data?
 
@@ -141,7 +142,7 @@ systems.
 Please {% include "partials/support_request.html" %} as soon as
 possible after you find that the file is missing.
 To reduce the risk of this outcome again in future,
-please advance {% include "partials/support_request.html" %} so that we
+please {% include "partials/support_request.html" %} so that we
 can discuss your data storage options with you.
 
 ## I have research data on nobackup that I can't store in my project directory or at my institution right now. What should I do?

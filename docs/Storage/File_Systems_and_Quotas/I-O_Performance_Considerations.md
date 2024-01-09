@@ -4,12 +4,13 @@ hidden: false
 weight: 3
 tags:
 - storage
+- nobackup
+- project
 title: I/O Performance Considerations
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360000205355
 zendesk_section_id: 360000033936
-status: deprecated
 ---
 
 It is important to understand the different I/O performance
@@ -59,18 +60,16 @@ compute nodes are:
 - For 8MB transfer size, single stream I/O, is ~3.2GB/s for Write and
     ~3.2 GB/s for Read;
 - For 4KB transfer size, single stream I/O, is ~2.3GB/s for Write and
-    ~2.5GB/s for Read (when using IOBUF
-     – see Caution below). When
-    IOBUF is not used Read and
-    Write performance is &lt;1GB/s.
+    ~2.5GB/s for Read (when using IOBUF see Caution below).
+    When IOBUF is not used Read and Write performance is &lt;1GB/s.
 
-Unless Cray’s  [IOBUF]()
+Unless Cray’s  [IOBUF](#iobuf)
  capability is suitable for an application, users should avoid
 the use of single-stream I/O with small buffers on Māui.
 
-## IOBUF - Caution
+## IOBUF
 
-Cray’s IOBUF ( man iobuf ) is an
+Cray’s IOBUF ( `man iobuf` ) is an
 I/O buffering library that can reduce the I/O wait time for programs
 that read or write large (or small) files sequentially. IOBUF intercepts
 standard I/O calls such as read and open and replaces the
@@ -80,15 +79,15 @@ with an additional layer of buffering, thus improving program
 performance by enabling asynchronous prefetching and caching of file
 data.
 
-**Caution**: IOBUF is not suitable for all I/O styles. IOBUF does not
-maintain coherent buffering between processes which open the same file.
-For this reason, do not use IOBUF with shared file I/O, such as MPI-IO
-routines like
-MPI\_File\_write\_all . IOBUF is
-<u>not thread-safe</u>, so do not use it with multithreaded programs in
-which the threads perform buffered I/O. IOBUF can be linked into
-programs that use these I/O styles, but buffering should not be enabled
-on those files.
+!!! danger
+    IOBUF is not suitable for all I/O styles. IOBUF does not
+    maintain coherent buffering between processes which open the same file.
+    For this reason, do not use IOBUF with shared file I/O, such as MPI-IO
+    routines like MPI_File_write_all .
+    IOBUF is *not thread-safe*, so do not use it with multithreaded programs in
+    which the threads perform buffered I/O. IOBUF can be linked into
+    programs that use these I/O styles, but buffering should not be enabled
+    on those files.
 
 ## Data compression
 
@@ -97,6 +96,6 @@ of data, meaning you can reduce the storage footprint of your data
 without needing to add any extra steps in your workflow unless you want
 to decompress the data after use. However, testing has shown that there
 can be an impact on job performance due to I/O. You can find out more
-about tests and results with regard to jobs performance of transparent
+about tests and results regarding performance of transparent
 data compression on the NeSI platforms on our
 [Data Compression support page](../../Storage/File_Systems_and_Quotas/Data_Compression.md).
