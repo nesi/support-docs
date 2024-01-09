@@ -62,6 +62,8 @@ _italic_: `_italic`
     A warning.
 ```
 
+#### Admonation Titles
+
 !!! info "Optional title"
     Admonation with optional title.
 
@@ -70,176 +72,182 @@ _italic_: `_italic`
     Admonation with optional title.
 ```
 
+Adding titles helps users find key information, however if you can't be bothered thinking of a good title,
+refrain from using something unnecessary or non descriptive (e.g. `!!! info "More Information"`), better to leave titleless.
+
+Don't use a title if another admonation already exists for that purpose (e.g. `!!! info "Watch out!"`).
+
+#### Collapsable Admonations
+
 Any admonation can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
 
-_Note for future, once decided which of these we will use, remove the others. And give description of when to use._
+Consider making a admonation collapsable-open (`???+`) if it is particularly long.
+An admonation **shouldn't be made collapsable-closed** (`???`) unless it has been given an **optional title explaining it's contents**. 
 
-There are lots of different flavors.
+#### Admonation Flavours
 
----
-
-!!! note
-    This is a test admonation.
-
-!!! tip
-    This is a test admonation.
-
-!!! info
-    This is a test admonation.
-
-!!! question
-    This is a test admonation.
-
-!!! warning
-    This is a test admonation.
-
-!!! failure
-    This is a test admonation.
-
-!!! danger
-    This is a test admonation.
-
-!!! bug
-    This is a test admonation.
-
-!!! example
-    This is a test admonation.
-
-!!! quote
-    This is a test admonation.
+There are various flavors.
 
 !!! prerequisite
-    This is a test admonation.
+    - [link to page a user should read in order to follow](format.md)
+    - some thing other requirement user must have to follow this page
+    - usually you will want this to be a list format.
+    - Should be right at the top of the page.
+    
+!!! tip
+    For tangential actionable advice.  
+    *`x` other command may be useful here.*
 
-!!! pied-piper
-    this is a test admonation.
+!!! info
+    Use this to provide (optional) additional context or make an in depth explaination.
+    *A little bit of info that isn't required for understanding the next paragraph.*
 
-!!! desktop-download-24
-    this is a test admonation.
+!!! warning
+    Use this to draw readers attention to possible rare or edge case failures they may encounter.
+    *If your filesystem is full you might get an error message.*
 
-!!! magnifying-glass
-    this is a test admonation.
+!!! danger
+    Use this to draw attention to information that may lead to serious harm if ignored.
+    *If your filesystem is full your job might be killed.*
 
-!!! microscope
-    this is a test admonation.
+!!! bug
+    Mention possible bugs users may encounter (and tell them what to do if they encounter it).
+    *Nearline doesn't work*
 
-!!! vial-virus
-    this is a test admonation.
-
-!!! database
-    this is a test admonation.
-
-!!! folder-open
-    this is a test admonation.
-
-!!! backward
-    this is a test admonation.
-
-!!! jupyter
-    this is a test admonation.
-
-!!! terminal
-    this is a test admonation.
-
-!!! r-project
-    this is a test admonation.
-
-!!! calendar-days
-    this is a test admonation.
-
-!!! bell
-    this is a test admonation.
-
-!!! comment-dots
-    this is a test admonation.
-
-!!! check-to-slot
-    this is a test admonation.
-
-!!! square-xmark
-    this is a test admonation.
-
-!!! rectangle-list
-    this is a test admonation.
-
-!!! screwdriver-wrench
-    this is a test admonation.
-
-!!! linux
-    this is a test admonation.
-
-!!! code-compare
-    this is a test admonation.
-
-!!! heading
-    this is a test admonation.
-
-!!! space-awesome
-    this is a test admonation.
-
-!!! stethoscope
-    this is a test admonation.
-
-!!! key
-    this is a test admonation.
-
-!!! users-line
-    this is a test admonation.
-
-!!! file-code
-    this is a test admonation.
-
-!!! hand-holding-dollar
-    this is a test admonation.
-
-!!! circle-question
-    this is a test admonation.
-
-!!! microphone
-    this is a test admonation.
-
-!!! tower-observation
-    this is a test admonation.
-
-!!! circle-info
-    this is a test admonation.
-
-!!! icon--python
-    this is a test admonation.
-
-!!! quote-right
-    this is a test admonation.
-
-!!! image
-    this is a test admonation.
-
-!!! table
-    this is a test admonation.
-
-!!! glass-chart
-    this is a test admonation.
-
-!!! file-export
-    this is a test admonation.
+??? warning "Extra Admonations you probably won't need"
+    !!! note
+        Use `info` instead of this.
+    
+    !!! question
+        Havn't seen a reason to use this yet.
+    
+    !!! failure
+        Havn't seen a reason to use this yet.
+    
+    !!! example
+        Havn't seen a reason to use this yet.
+    
+    !!! quote
+        Havn't seen a reason to use this yet.
+    
+    !!! pied-piper
+        don't use this (unless Dini).
+    
+    !!! desktop-download-24
+        don't use this (unless Dini).
+    
+    !!! magnifying-glass
+        don't use this (unless Dini).
+    
+    !!! microscope
+        don't use this (unless Dini).
+    
+    !!! vial-virus
+        don't use this (unless Dini).
+    
+    !!! database
+        don't use this (unless Dini).
+    
+    !!! folder-open
+        don't use this (unless Dini).
+    
+    !!! backward
+        don't use this (unless Dini).
+    
+    !!! jupyter
+        don't use this (unless Dini).
+    
+    !!! terminal
+        don't use this (unless Dini).
+    
+    !!! r-project
+        don't use this (unless Dini).
+    
+    !!! calendar-days
+        don't use this (unless Dini).
+    
+    !!! bell
+        don't use this (unless Dini).
+    
+    !!! comment-dots
+        don't use this (unless Dini).
+    
+    !!! check-to-slot
+        don't use this (unless Dini).
+    
+    !!! square-xmark
+        don't use this (unless Dini).
+    
+    !!! rectangle-list
+        don't use this (unless Dini).
+    
+    !!! screwdriver-wrench
+        don't use this (unless Dini).
+    
+    !!! linux
+        don't use this (unless Dini).
+    
+    !!! code-compare
+        don't use this (unless Dini).
+    
+    !!! heading
+        don't use this (unless Dini).
+    
+    !!! space-awesome
+        don't use this (unless Dini).
+    
+    !!! stethoscope
+        don't use this (unless Dini).
+    
+    !!! key
+        don't use this (unless Dini).
+    
+    !!! users-line
+        don't use this (unless Dini).
+    
+    !!! file-code
+        don't use this (unless Dini).
+    
+    !!! hand-holding-dollar
+        don't use this (unless Dini).
+    
+    !!! circle-question
+        don't use this (unless Dini).
+    
+    !!! microphone
+        don't use this (unless Dini).
+    
+    !!! tower-observation
+        don't use this (unless Dini).
+    
+    !!! circle-info
+        don't use this (unless Dini).
+    
+    !!! icon--python
+        don't use this (unless Dini).
+    
+    !!! quote-right
+        don't use this (unless Dini).
+    
+    !!! image
+        don't use this (unless Dini).
+    
+    !!! table
+        don't use this (unless Dini).
+    
+    !!! glass-chart
+        don't use this (unless Dini).
+    
+    !!! file-export
+        don't use this (unless Dini).
 
 ### Code
 
-Code blocks require a language lexxer in order to do syntax hilighting, e.g. `python` ,`slurm`, `cuda`, `json`, `md`.
-[A full list of lexxers can be found in this list](https://pygments.org/languages/).
-
-For plain code blocks, still good to use a class as descriptor (e.g. `txt`, `stdout`, `stderr`).
-May want to add formatting to this later.
-
-<pre><code><span>```stdout</span>
-<span>some code</span>
-<span>```</span>
-</code></pre>
-
-```stderr
-some code 
-```
-
 #### Block
+
+Code blocks require a language lexxer in order to do syntax hilighting, e.g. `python` ,`slurm`, `cuda`, `json`, `markdown`, `bash`
+(most of these have short codes too, `py`,`sl`,`cd`,`md`,`sh`).
+[A full list of lexxers can be found in this list](https://pygments.org/languages/).
 
 ```py
 import somepackage
@@ -258,11 +266,28 @@ if formatting:
 <span>```</span>
 </code></pre>
 
+For plain text code blocks, still good to use a class as descriptor (e.g. `txt`, `stdout`, `stderr`).
+May want to add formatting to this later.
+
+<pre><code><span>```stdout</span>
+<span>some code</span>
+<span>```</span>
+</code></pre>
+
+```stderr
+some code 
+```
+
+DON'T prefix a command with `$` (e.g. `$ ls` if this is something we want it should be added through formatting, not text.
+
 #### Inline
 
 This is some `echo "Inline Code"`.
 
 <pre><code><span>This is some `echo "Inline Code"`.</span></code></pre>
+
+Inline code does not have syntax highlighting.
+Code should be used for any text that you want the user to copy exactly.
 
 #### Keyboard
 
@@ -290,7 +315,6 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 ```md
 [External Link]("https://example.com")
-
 ```
 
 [Internal Link]("General/FAQs/Password_Expiry")
