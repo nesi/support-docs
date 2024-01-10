@@ -84,7 +84,6 @@ ls -lh FileA.txt
 
 ---
 
-
 ```sh
 time mmchattr --compression yes FileA.txt
 ```
@@ -336,5 +335,5 @@ compression and then {% include "partials/support_request.html" %}. We will help
 you minimise the impact of compression on your workflow or find other
 ways to help you manage your project storage.
 
-If you are interested in learning more about this type of data compression 
+If you are interested in learning more about this type of data compression
 [you can find further details on the IBM website](https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression).

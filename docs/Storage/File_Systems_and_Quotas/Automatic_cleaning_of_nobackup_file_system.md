@@ -67,7 +67,7 @@ The general process will follow a schedule as follows:
 A file containing the list of candidates for deletion during the next
 cleanup, along with the date of the next cleanup, will be created in a
 directory called `.policy/to_delete` inside the project's nobackup
-directory. For example, the candidates for future deletion from the
+directory. For example, the candidates for future deletion  from the
 directory `/nesi/nobackup/nesi12345` are recorded in
 `/nesi/nobackup/nesi12345/.policy/to_delete/<date>.filelist.gz`. Project
 team members are able to view the contents of `.policy` (but not delete

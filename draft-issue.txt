@@ -1,0 +1,23 @@
+`index.md` Front-matter not working as expected.
+
+
+Plugin works great when setting `weight` in articles, but not for section indices.
+It could be I am misinterpreting the intended purpose.
+
+## `weight`
+
+**Expected Behavior**: Categories in the nav will be ordered according to the `weight` parameter in the corresponding `index.md` file.
+
+**Actual Behavior**: Weight has no effect on ordering.
+
+## `empty` 
+
+**Expected Behavior**: If set to `True`, corresponding category will be displayed in the nav the same way as if no `index.md` had been provided (i.e. a grouping rather than a rendered page).
+
+**Actual Behavior**: Category has a page rendered (including the front matter).
+
+## `retitled`
+
+**Expected Behavior**: If set to `True`, corresponding category entry in nav will use the name set in `Title`
+
+**Actual Behavior**: Category has a page rendered (including the front matter).
