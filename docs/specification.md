@@ -78,7 +78,7 @@ Content is not rendered.
 - `template` : which [template](#templates) to use.
 - `title`    : [title](#title).
 - `weight`   : Used to set page order. Lower comes first. Migrated from Zendesk `position`.
-               See [page order](#page-order)
+               See [page order](#article-order)
 
 ### Material Parameters
 
@@ -130,7 +130,7 @@ Details [here](https://mkdocs-macros-plugin.readthedocs.io/)
 ```
 
 ??? "Fancy Example"
-    Our Python modules come prebuilt with the following packages: 
+    Our Python modules come prebuilt with the following packages:
     {% set pyexts=applications.Python.extensions.split(', ') %}
     <table>
     <tr><th>Package</th></tr>
@@ -175,7 +175,7 @@ There are a few includes you may want to use.
 
 ### Code blocks
 
-Don't include prompt or 
+Don't include prompt or
 
 ### Links
 
@@ -204,7 +204,7 @@ Try to avoid putting links on ambiguous words, e.g.
 
 When setting a parameter in the YAML, you can use the following syntax.
 
-```
+```yaml
 some-param : !ENV [TEST_ENV, false]
 ```
 

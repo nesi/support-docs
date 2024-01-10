@@ -29,7 +29,7 @@ Headers should have a blank line before and after.
 'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
 
 !!! warning
-    Put 2 spaces at the end of a line to force a line break. 
+    Put 2 spaces at the end of a line to force a line break.
     If you simply hit enter and don't use 2 spaces it will be considered one line.
 
 ### Text Emphasis
@@ -52,7 +52,7 @@ _italic_: `_italic`
     something else
 ```
 
-### Admonations
+### Admonitions
 
 !!! warning
     A warning.
@@ -62,29 +62,29 @@ _italic_: `_italic`
     A warning.
 ```
 
-#### Admonation Titles
+#### Admonition Titles
 
 !!! info "Optional title"
-    Admonation with optional title.
+    Admonition with optional title.
 
 ```md
 !!! info "Optional title"
-    Admonation with optional title.
+    Admonition with optional title.
 ```
 
 Adding titles helps users find key information, however if you can't be bothered thinking of a good title,
 refrain from using something unnecessary or non descriptive (e.g. `!!! info "More Information"`), better to leave titleless.
 
-Don't use a title if another admonation already exists for that purpose (e.g. `!!! info "Watch out!"`).
+Don't use a title if another Admonition already exists for that purpose (e.g. `!!! info "Watch out!"`).
 
-#### Collapsable Admonations
+#### Collapsable Admonitions
 
-Any admonation can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
+Any Admonition can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
 
-Consider making a admonation collapsable-open (`???+`) if it is particularly long.
-An admonation **shouldn't be made collapsable-closed** (`???`) unless it has been given an **optional title explaining it's contents**. 
+Consider making a Admonition collapsable-open (`???+`) if it is particularly long.
+An Admonition **shouldn't be made collapsable-closed** (`???`) unless it has been given an **optional title explaining it's contents**.
 
-#### Admonation Flavours
+#### Admonition Flavours
 
 There are various flavors.
 
@@ -93,7 +93,7 @@ There are various flavors.
     - some thing other requirement user must have to follow this page
     - usually you will want this to be a list format.
     - Should be right at the top of the page.
-    
+
 !!! tip
     For tangential actionable advice.  
     *`x` other command may be useful here.*
@@ -114,10 +114,10 @@ There are various flavors.
     Mention possible bugs users may encounter (and tell them what to do if they encounter it).
     *Nearline doesn't work*
 
-??? warning "Extra Admonations you probably won't need"
+??? warning "Extra Admonitions you probably won't need"
     !!! note
         Use `info` instead of this.
-    
+
     !!! question
         Havn't seen a reason to use this yet.
     
@@ -363,7 +363,7 @@ Acroynym should be automatically tooltipped e.g. MPI.
 - item1
 - item2
 - a
-  multiline
+  multi-line
 - item
 - nested
   - items
@@ -374,7 +374,7 @@ Acroynym should be automatically tooltipped e.g. MPI.
 
 1. item1
 2. a
-   multiline
+   multi-line
    item
    with multiple
    lines
@@ -402,7 +402,7 @@ Acroynym should be automatically tooltipped e.g. MPI.
 
 [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables), is a handy tool for complex tables/
 
-Tables can be constructed using `|` to seperate colums, and `--` to designate headers.
+Tables can be constructed using `|` to seperate columns, and `--` to designate headers.
 
 Number of dashes has no effect, things dont have to be lined up when in markdown, just looks nice.
 Leading and trailing `|` are optional.
