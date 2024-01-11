@@ -28,9 +28,15 @@ Headers should have a blank line before and after.
 
 'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
 
-!!! warning
-    Put 2 spaces at the end of a line to force a line break.
-    If you simply hit enter and don't use 2 spaces it will be considered one line.
+### Line breaks
+
+Put 2 spaces at the end of a line to force a line break.  
+If you simply hit enter and don't use 2 spaces it will be considered one line.
+
+```
+Put 2 spaces at the end of a line to force a line break.  
+If you simply hit enter and don't use 2 spaces it will be considered one line.
+```
 
 ### Text Emphasis
 
