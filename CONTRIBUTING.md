@@ -47,7 +47,7 @@ You can use any IDE you want, but various tools have been configured for use wit
 
 #### Reccomended Extensions
 
-When opening the workspace for the first time, you should be prompted to install the [Reccomended VSCode Plugins](.vscode/extensions.json).
+When opening the workspace for the first time, you should be prompted to install the [Recommended VSCode Plugins](.vscode/extensions.json).
 
 #### Snippets
 
