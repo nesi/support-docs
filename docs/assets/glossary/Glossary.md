@@ -362,6 +362,10 @@ A tool for quick quality assessment of cram and bam files, intended for long rea
 
 C++ Thread Pool Library
 
+**CUDA:**
+
+CUDA (formerly Compute Unified Device Architecture) is a parallel  computing platform and programming model created by NVIDIA and implemented by the  graphics processing units (GPUs) that they produce. CUDA gives developers access  to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs.
+
 **CUnit:**
 
 Automated testing framework for C.
@@ -766,6 +770,10 @@ A genetic algorithm for docking flexible ligands into protein binding sites
 
 GObject introspection is a middleware layer between C libraries
 
+**GPFS:**
+
+High-performance clustered file system software developed by IBM.
+
 **GRADS:**
 
 The Grid Analysis and Display System (GrADS) is an interactive desktop tool that is used for easy access, manipulation, and visualization of earth science data.
@@ -806,6 +814,10 @@ GTK+ is the primary library used to construct user interfaces in GNOME.
 
 GTS stands for the GNU Triangulated Surface Library.  It is an Open Source Free Software Library intended to provide a set of useful  functions to deal with 3D surfaces meshed with interconnected triangles.
 
+**GUI:**
+
+A digital interface in which a user interacts with graphical components such as icons, buttons, and menus.
+
 **GeneMark-ES:**
 
 Eukaryotic gene prediction suite with automatic training
@@ -844,7 +856,7 @@ Guile is the GNU Ubiquitous Intelligent Language for Extensions,
 
 **HDF:**
 
-A set of file formats designed to store and organize large amounts of data.
+HDF (also known as HDF4) is a library and multi-object file format for  storing and managing data between machines.
 
 **HDF-EOS:**
 
@@ -1982,6 +1994,10 @@ Spack is a package manager for supercomputers, Linux, and macOS. It makes instal
 
 Spark is Hadoop MapReduce done in memory
 
+**Spectrum Scale:**
+
+High-performance clustered file system software developed by IBM.
+
 **SqueezeMeta:**
 
 fully automated metagenomics pipeline, from reads to bins.
@@ -2233,6 +2249,12 @@ Fast integrator of stochastic partial differential equations.
 **XSD:**
 
 CodeSynthesis XSD is an open-source, cross-platform W3C XML Schema to C++ data binding compiler.
+
+**XVFB:**
+
+A display server implementing the X11 display server protocol, XVFB performs all graphical operations in virtual memory without showing any screen output.
+This allows applications that 'require' a GUI to run in a command line environment. Can be invoked with `xvfb-run`.
+
 
 **XZ:**
 
@@ -2989,10 +3011,6 @@ Visual browser for netCDF format files.
 **ne:**
 
 ne is a free (GPL'd) text editor based on the POSIX standard
-
-**nearline:**
-
-NeSI nearline client provides 'End User' access to NeSI's archive filesystem Nearline which is connected to a Tape library.
 
 **netCDF:**
 

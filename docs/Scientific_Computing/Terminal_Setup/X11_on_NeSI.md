@@ -3,26 +3,16 @@ created_at: '2019-07-30T01:58:26Z'
 hidden: false
 weight: 4
 tags: []
-title: X11 on NeSI
 vote_count: 2
 vote_sum: 2
 zendesk_article_id: 360001075975
 zendesk_section_id: 360000189696
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Requirements
-     -   Have working
-         [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
-         set up.
+!!! prerequisite
+    -   Have working
+    [terminal](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
+    set up.
 
 X-11 is a protocol for rendering graphical user interfaces (GUIs) that
 can be sent along an SSH tunnel. If you plan on using a GUI on a NeSI
@@ -35,36 +25,35 @@ GUI to be rendered.
 
 Download links for X-servers can be found below.
 
-|         |                                                   |
-|---------|---------------------------------------------------|
-| MacOS   | [Xquartz](https://www.xquartz.org/)               |
-| Linux   | [Xorg](https://www.x.org/wiki/Releases/Download/) |
-| Windows | [Xming](https://sourceforge.net/projects/xming/)  |
+| Operating System | Download                                          |
+| ---------------- | ------------------------------------------------- |
+| MacOS            | [Xquartz](https://www.xquartz.org/)               |
+| Linux            | [Xorg](https://www.x.org/wiki/Releases/Download/) |
+| Windows          | [Xming](https://sourceforge.net/projects/xming/)  |
 
 Make sure you have launched the server and it is running in the
-background, look for
-this ![mceclip0.png](../../assets/images/X11_on_NeSI.png) symbol in your
-taskbar 
-!!! prerequisite Note
+background, look for this ![mceclip0.png](../../assets/images/X11_on_NeSI.png) symbol in your taskbar.
+
+!!! note
      MobaXterm has a build in X server, no setup required. By default the
      server is started alongside MobaXterm. You can check it's status in
      the top left hand corner
-     (![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off). 
+     (![xon.png](../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../assets/images/X11_on_NeSI_1.png)=off).
 
 ## X-Forwarding
 
 Finally your ssh tunnel must be set up to 'forward' along X-11
-connections. 
+connections.
 
 ### OpenSSH (terminal)
 
 Make sure the `-Y` or `-X` flag is included
 
-``` sl
+``` sh
 ssh -Y user@lander.nesi.org.nz
 ```
 
-``` sl
+``` sh
 ssh -Y login.nesi.org.nz
 ```
 
@@ -79,12 +68,12 @@ If the ![mceclip0.png](../../assets/images/X11_on_NeSI_3.png) button in
 the top right corner of your window is coloured, the X-server should be
 running.
 
-## X-Forwarding with *tmux*
+## X-Forwarding with `tmux`
 
 In order to connect X11 into a tmux session you make the following
 change to your config file.
 
-``` sl
+``` sh
 tmux show -g | sed 's/DISPLAY //' > ~/.tmux.conf
 ```
 
@@ -92,17 +81,17 @@ tmux show -g | sed 's/DISPLAY //' > ~/.tmux.conf
 
 In order to make use of X11 in an interactive Slurm job:
 
-### srun
+### `srun`
 
 Add the flag `--x11`
 
-``` sl
+``` sh
 srun --ntasks 36 --mem-per-cpu 1500 --time 01:00:00 --x11 --pty bash
 ```
 
-### salloc
+### `salloc`
 
-add the flag -Y when sshing to the node.
+add the flag -Y when `ssh`-ing to the node.
 
 ``` sl
 ssh -Y wbn001
@@ -117,6 +106,6 @@ Prepending any command with `xfvb-run` will provide a dummy X11 server
 for the application to render to.  
 e.g.
 
-``` sl
+``` sh
 xvfb-run xterm
 ```
