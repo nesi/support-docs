@@ -12,7 +12,7 @@ A local development environment is not required to make doc edits, but if you ar
 
 ### First time setup
 
-You will need to have Python 3 installed on your computer.
+You will need to have Python **3.10** or later installed on your computer.
 
 Clone this repository and create a Python virtual environment using:
 
