@@ -13,7 +13,7 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.snippets:
-    auto_append:
+    # auto_append:
     # - docs/assets/glossary/snippets.md  # Causes massive slowdown. Also, bad.
   - attr_list
   - abbr
