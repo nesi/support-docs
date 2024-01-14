@@ -21,6 +21,8 @@ jobs:
           mkdir -pv docs/assets/glossary
       - name: Fetch Module List
         run: wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
+      - name: Link apps pages
+        run: python3 .github/workflows/link_apps_pages.py
       - name: Fetch Glossary
         run: wget -O docs/assets/glossary/Glossary.md ${GLOSSARY_URL}
       - name: Fetch Dictionary
