@@ -20,30 +20,35 @@ While an Apptainer environment encapsulates the dependencies of an application, 
  Note that for this to work, the MPI version inside the container must be compatible with that on the host. We'll illustrate this approach 
  with an example.
 
- ## Build the containerised executable
+## Build the containerised executable
 
- On Mahuika, do
- ```sh
+ This will need to take place on a Milan node. Hence, we need to submit a SLURM script that calls `apptainer build`:  
+```sh
 git clone git@github.com:pletzer/fidibench.git
 cd fidibench
-module load Apptainer/1.2.2
-apptainer build --force --fakeroot fidibench_intel.sif fidibench_intel.def
- ```
-
- ## Run the containerised executable
-
-
-You can check that the executable was built successfully by
+sbatch fidibench_apptainer_build_intel.sl
 ```
-apptainer exec fidibench_intel.sif mpiexec -n 4 /software/bin/upwindMpiCxx 
+When the job finishes (after 1+ hour), you will have a `fidibench_intel.sif` file in your directory.
+
+
+## Run the containerised executable
+
+
+You can check that the executable was built successfully by running a quick test, using the internal MPI
+```sh
+apptainer exec fidibench_intel.sif mpiexec -n 4 /software/fidibench/bin/upwindMpiCxx -numCells 128 -numSteps 10
+Number of procs: 4
+...
+ times min/max/avg: 3.33281/3.34092/3.3355 [seconds]
+Check sum: 1
 ```
 
-To submit the job via SLURM, write following job script `fidibench_intel_apptainer.sl`:
-```
-!#/usr/bin/bash -e
-#SBATCH --ntasks = 40
-#SBATCH --partition = milan
-#SBATCH --job-name = apptainer_exec
+To submit the job via SLURM, write the following job script `fidibench_intel_apptainer.sl`:
+```sh
+#!/bin/bash -e
+#SBATCH --ntasks=64
+#SBATCH --partition=milan
+#SBATCH --job-name=fidibench_app
 
 module load Apptainer
 module load intel        # load the Intel MPI
@@ -52,5 +57,11 @@ export I_MPI_FABRICS=ofi # turn off shm to allow the code to run on multiple nod
 # -B /opt/slurm/lib64/ binds this directory to the image when running on mahuika, 
 # it is required  for the image's MPI to find the libpmi2.so library. This path
 # may be different on a different host.
-srun apptainer exec -B /opt/slurm/lib64/ fidibench_intel.sif /software/bin/upwindMpiCxx
+srun apptainer exec -B /opt/slurm/lib64/ fidibench_intel.sif /software/fidibench/bin/upwindMpiCxx -numCells 512 -numSteps 10
 ```
+and submit it
+```sh
+sbatch fidibench_intel_apptainer.sl
+```
+The above job can run on multiple nodes. Note that the host MPI is loaded with the `intel` module. 
+
