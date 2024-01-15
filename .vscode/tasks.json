@@ -13,19 +13,30 @@
                 "panel": "shared",
                 "close": false,
                 "focus": false,
-                "showReuseMessage": false
             },
             "command": "./checks/run_meta_check.py",
             "problemMatcher": {
                 "severity": "info",
-                "pattern": {
-                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),line=([0-9]*)::(.*)$",
-                    "severity": 1,
-                    "file": 2,
-                    "code": 3,
-                    "line": 4,
-                    "message": 5
-                },
+                "pattern": [
+                    {
+                        "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),line=([0-9]*),col=([0-9]*),endColumn=([0-9]*)::(.*)$",
+                        "severity": 1,
+                        "file": 2,
+                        "code": 3,
+                        "line": 4,
+                        "column": 5,
+                        "endColumn": 6,
+                        "message": 7
+                    },
+                    {
+                        "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),line=([0-9]*)::(.*)$",
+                        "severity": 1,
+                        "file": 2,
+                        "code": 3,
+                        "line": 4,
+                        "message": 5
+                    }
+                ],
                 "owner": "meta-check",
                 "fileLocation": "autoDetect",
             },
@@ -79,7 +90,7 @@
             "command": "./checks/run_pyspelling.py",
             "problemMatcher": {
                 "severity": "info",
-                "pattern": {
+                "pattern": [{
                     "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),col=([0-9]*),endColumn=([0-9]*),title=(.*?)::(.*)$",
                     "severity": 1,
                     "file": 2,
@@ -87,7 +98,7 @@
                     "column": 4,
                     "endLine": 5,
                     "message": 7
-                },
+                }],
                 "owner": "spelling",
                 "fileLocation": "autoDetect",
             },

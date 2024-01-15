@@ -12,14 +12,15 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.snippets:
+    # auto_append:
+    # - docs/assets/glossary/snippets.md  # Causes massive slowdown. Also, bad.
   - attr_list
   - abbr
   - tables
   - neoteroi.cards
   - neoteroi.timeline
-  - pymdownx.snippets:
-      auto_append:
-        - assets/glossary/snippets.md
+  - footnotes
 plugins:
   - search
   - redirects:
