@@ -34,8 +34,9 @@ jobs:
           git pull origin main
           git add --all
       - run: git commit -m "update remote assets"
-      - name: Push
+      - name: Push, and make PR
         run: |
           git push origin ${BRANCH_NAME}
+          gh pr create -B main -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

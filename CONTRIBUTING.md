@@ -45,7 +45,7 @@ A link to the deployment will be printed once served.
 
 You can use any IDE you want, but various tools have been configured for use with VSCode.
 
-#### Reccomended Extensions
+#### Recomended Extensions
 
 When opening the workspace for the first time, you should be prompted to install the [Recommended VSCode Plugins](.vscode/extensions.json).
 
@@ -100,7 +100,7 @@ Feel free to raise an issue, make a proposal or [add words to the dictionary](#a
 
 ## Adding Words to Dictionary
 
-If the CI is failing the spellcheck phase, and you beleive the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
+If the CI is failing the spellcheck phase, and you believe the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
 
 1. Visit the [NeSI Wordlist](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
 2. Once changes to the wordlist have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
