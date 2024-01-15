@@ -33,7 +33,7 @@ Headers should have a blank line before and after.
 Put 2 spaces at the end of a line to force a line break.  
 If you simply hit enter and don't use 2 spaces it will be considered one line.
 
-```
+```md
 Put 2 spaces at the end of a line to force a line break.  
 If you simply hit enter and don't use 2 spaces it will be considered one line.
 ```
