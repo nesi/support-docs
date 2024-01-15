@@ -3,7 +3,12 @@
         "default": "",
         "description": "Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.",
         "domains": [
-            "engineering"
+            "engineering",
+            "mahuika",
+            "gpu",
+            "mpi",
+            "omp",
+            "fea"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -55,7 +60,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": true,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "gpgpu@uoa_foe",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "1",
@@ -69,7 +74,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": true,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "parallel_teaching@uoa_foe",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "1",
@@ -83,7 +88,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": true,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "abaqus@uoa_foe",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "({cpu}**0.422)*5",
@@ -115,7 +120,7 @@
                 "server_version": ""
             }
         ],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ABAQUS",
         "url": "https://www.continuum.io/anaconda-overview"
     },
     "ABRicate": {
@@ -341,7 +346,9 @@
         "description": "",
         "domains": [
             "engineering",
-            "visualisation"
+            "visualisation",
+            "mahuika",
+            "application"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -418,7 +425,22 @@
                 ],
                 "faculty_long": "",
                 "faculty_short": "",
-                "features": [],
+                "features": [
+                    {
+                        "buffer_constant": 1,
+                        "buffer_constant_other": 0,
+                        "feature_name": "cfd_solve_level2",
+                        "hourly_average": [],
+                        "slurm_block": false,
+                        "slurm_soak": false,
+                        "slurm_token_name": "",
+                        "slurm_track": true,
+                        "total": 0,
+                        "usage_formula": "{node}",
+                        "use_conditions": "",
+                        "visible_on_docs": true
+                    }
+                ],
                 "institution_long": "Orbis Diagnostics",
                 "institution_short": "",
                 "licence_contact": "",
@@ -434,36 +456,7 @@
                 ],
                 "faculty_long": "Faculty of Engineering",
                 "faculty_short": "",
-                "features": [
-                    {
-                        "buffer_constant": 1,
-                        "buffer_constant_other": 0,
-                        "feature_name": "cfd_base",
-                        "hourly_average": [],
-                        "slurm_block": false,
-                        "slurm_soak": false,
-                        "slurm_token_name": "",
-                        "slurm_track": false,
-                        "total": 0,
-                        "usage_formula": "{node}",
-                        "use_conditions": "",
-                        "visible_on_docs": true
-                    },
-                    {
-                        "buffer_constant": 1,
-                        "buffer_constant_other": 0,
-                        "feature_name": "anshpc",
-                        "hourly_average": [],
-                        "slurm_block": false,
-                        "slurm_soak": false,
-                        "slurm_token_name": "",
-                        "slurm_track": false,
-                        "total": 0,
-                        "usage_formula": "{cpu} - 16",
-                        "use_conditions": "",
-                        "visible_on_docs": true
-                    }
-                ],
+                "features": [],
                 "institution_long": "Auckland University of Technology",
                 "institution_short": "",
                 "licence_contact": "",
@@ -479,36 +472,7 @@
                 ],
                 "faculty_long": "",
                 "faculty_short": "",
-                "features": [
-                    {
-                        "buffer_constant": 1,
-                        "buffer_constant_other": 0,
-                        "feature_name": "cfd_base",
-                        "hourly_average": [],
-                        "slurm_block": false,
-                        "slurm_soak": false,
-                        "slurm_token_name": "",
-                        "slurm_track": false,
-                        "total": 0,
-                        "usage_formula": "{node}",
-                        "use_conditions": "",
-                        "visible_on_docs": true
-                    },
-                    {
-                        "buffer_constant": 1,
-                        "buffer_constant_other": 0,
-                        "feature_name": "anshpc",
-                        "hourly_average": [],
-                        "slurm_block": false,
-                        "slurm_soak": false,
-                        "slurm_token_name": "",
-                        "slurm_track": false,
-                        "total": 0,
-                        "usage_formula": "{cpu} - 16",
-                        "use_conditions": "",
-                        "visible_on_docs": true
-                    }
-                ],
+                "features": [],
                 "institution_long": "University of Waikato",
                 "institution_short": "",
                 "licence_contact": "",
@@ -548,7 +512,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "aa_mcad@uoo",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{cpu} - 16",
@@ -562,7 +526,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "aa_mcad@uoo",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -595,7 +559,7 @@
                 "server_version": ""
             }
         ],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ANSYS",
         "url": "https://www.ansys.com"
     },
     "ANTLR": {
@@ -994,7 +958,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/AlphaFold",
         "url": "https://github.com/deepmind/alphafold"
     },
     "AlphaFold2DB": {
@@ -1523,7 +1487,8 @@
         "default": "",
         "description": "Basic Local Alignment Search Tool, or BLAST, is an algorithm",
         "domains": [
-            "biology"
+            "biology",
+            "mahuika"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -1548,7 +1513,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/BLAST",
         "url": "http://blast.ncbi.nlm.nih.gov/"
     },
     "BLASTDB": {
@@ -1568,7 +1533,8 @@
                     "2023-01",
                     "2023-04",
                     "2023-07",
-                    "2023-10"
+                    "2023-10",
+                    "2024-01"
                 ]
             }
         },
@@ -1678,7 +1644,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/BRAKER",
         "url": "https://github.com/Gaius-Augustus/BRAKER"
     },
     "BUSCO": {
@@ -2589,7 +2555,12 @@
         "domains": [
             "chemistry",
             "engineering",
-            "physics"
+            "physics",
+            "COMSOL",
+            "cae",
+            "multiphysics",
+            "cfd",
+            "fea"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -2629,7 +2600,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": true,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsol@uoa_physics",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -2639,8 +2610,7 @@
                 ],
                 "institution_long": "University of Auckland",
                 "institution_short": "",
-                "licence_contact": "",
-                "owner": "Neil Broderick",
+                "licence_contact": "Neil Broderick",
                 "server_polling": true,
                 "server_type": "FLEXlm",
                 "server_version": "11.16.2"
@@ -2661,7 +2631,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsol@uoa_idg",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -2692,7 +2662,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsol@uoa_foe",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -2723,7 +2693,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsol@uoa_foes",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -2733,8 +2703,7 @@
                 ],
                 "institution_long": "University of Auckland",
                 "institution_short": "",
-                "licence_contact": "",
-                "owner": "Professor Rosalind Archer",
+                "licence_contact": "Professor Rosalind Archer",
                 "server_polling": true,
                 "server_type": "FLEXlm",
                 "server_version": "11.15.1"
@@ -2755,7 +2724,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": true,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsol@uoa_foe_des_rc",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "1",
@@ -2769,7 +2738,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": true,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsoluser@uoa_foe_des_rc",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "1",
@@ -2779,8 +2748,7 @@
                 ],
                 "institution_long": "University of Auckland",
                 "institution_short": "",
-                "licence_contact": "",
-                "owner": "Dr Richard Clarke",
+                "licence_contact": "Dr Richard Clarke",
                 "server_polling": true,
                 "server_type": "FLEXlm",
                 "server_version": "11.15.1"
@@ -2801,7 +2769,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsol@uoo",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -2811,8 +2779,7 @@
                 ],
                 "institution_long": "University of Otago",
                 "institution_short": "",
-                "licence_contact": "",
-                "owner": "Richard Blaikie",
+                "licence_contact": "Richard Blaikie",
                 "server_polling": true,
                 "server_type": "FLEXlm",
                 "server_version": ""
@@ -2833,7 +2800,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -2843,14 +2810,13 @@
                 ],
                 "institution_long": "University of Canterbury",
                 "institution_short": "",
-                "licence_contact": "",
-                "owner": "Mathieu Sellier",
+                "licence_contact": "Mathieu Sellier",
                 "server_polling": true,
                 "server_type": "FLEXlm",
                 "server_version": ""
             }
         ],
-        "support": ""
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/COMSOL"
     },
     "CONCOCT": {
         "default": "",
@@ -3359,7 +3325,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Clair3",
         "url": "https://github.com/HKU-BAL/Clair3"
     },
     "Clustal-Omega": {
@@ -4010,7 +3976,9 @@
     "Delft3D": {
         "default": "",
         "description": "Integrated simulation of sediment transport and morphology, waves, water quality and ecology.",
-        "domains": [],
+        "domains": [
+            "hydrodynamics"
+        ],
         "extensions": [],
         "force_hide": "False",
         "force_show": "False",
@@ -4029,7 +3997,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Delft3D",
         "url": "http://oss.deltares.nl/web/delft3d"
     },
     "Delft3D_FM": {
@@ -4114,7 +4082,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Dorado",
         "url": "https://nanoporetech.com/products/minit"
     },
     "Doxygen": {
@@ -4718,7 +4686,8 @@
         "description": "Fire Dynamics Simulator (FDS) is a large-eddy simulation (LES) code for low-speed flows,  with an emphasis on smoke and heat transport from fires.",
         "domains": [
             "engineering",
-            "physics"
+            "physics",
+            "mahuika"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -4747,7 +4716,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/FDS",
         "url": "https://pages.nist.gov/fds-smv/"
     },
     "FFTW": {
@@ -5363,7 +5332,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/GATK",
         "url": "http://www.broadinstitute.org/gatk/"
     },
     "GCC": {
@@ -5910,7 +5879,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/GROMACS",
         "url": "http://www.gromacs.org"
     },
     "GSL": {
@@ -6128,7 +6097,8 @@
         "default": "",
         "description": "",
         "domains": [
-            "chemistry"
+            "chemistry",
+            "mahuika"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -6149,7 +6119,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Gaussian"
     },
     "Gdk-Pixbuf": {
         "default": "",
@@ -7309,7 +7279,9 @@
         "default": "",
         "description": "Java Platform, Standard Edition (Java SE) lets you develop and deploy  Java applications on desktops and servers.",
         "domains": [
-            "language"
+            "language",
+            "mahuika",
+            "general"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -7339,7 +7311,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Java",
         "url": "http://java.com/"
     },
     "Jellyfish": {
@@ -7436,7 +7408,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Julia",
         "url": "https://julialang.org/"
     },
     "JupyterLab": {
@@ -7471,7 +7443,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/JupyterLab",
         "url": "https://pypi.org/project/jupyterlab/"
     },
     "KAT": {
@@ -8359,7 +8331,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/MAKER",
         "url": "http://www.yandell-lab.org/software/maker.html"
     },
     "MATIO": {
@@ -8393,7 +8365,8 @@
         "domains": [
             "engineering",
             "mathematics",
-            "visualisation"
+            "visualisation",
+            "ml"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -8485,7 +8458,7 @@
                         "hourly_average": [],
                         "slurm_block": false,
                         "slurm_soak": false,
-                        "slurm_token_name": "",
+                        "slurm_token_name": "matlab@gns",
                         "slurm_track": true,
                         "total": 0,
                         "usage_formula": "{node}",
@@ -8613,7 +8586,7 @@
                 "server_version": ""
             }
         ],
-        "support": ""
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/MATLAB"
     },
     "MCL": {
         "default": "",
@@ -9532,7 +9505,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Miniconda3",
         "url": "https://www.continuum.io/anaconda-overview"
     },
     "Minimac3": {
@@ -10682,7 +10655,8 @@
         "default": "",
         "description": "ORCA is a flexible, efficient and easy-to-use general purpose tool for quantum chemistry",
         "domains": [
-            "chemistry"
+            "chemistry",
+            "mahuika"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -10705,7 +10679,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ORCA",
         "url": "https://orcaforum.kofo.mpg.de"
     },
     "OSPRay": {
@@ -10957,7 +10931,10 @@
         "description": "OpenFOAM is a free, open source CFD software package.",
         "domains": [
             "chemistry",
-            "engineering"
+            "engineering",
+            "cfd",
+            "cae",
+            "fea"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -10988,7 +10965,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/OpenFOAM",
         "url": "https://www.openfoam.org/"
     },
     "OpenJPEG": {
@@ -11088,7 +11065,9 @@
         "description": "OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes.",
         "domains": [
             "earth_science",
-            "engineering"
+            "engineering",
+            "geo",
+            "earthquake"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -11110,7 +11089,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/OpenSees",
         "url": "http://opensees.berkeley.edu"
     },
     "OpenSeesPy": {
@@ -11741,7 +11720,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ParaView",
         "url": "http://www.paraview.org"
     },
     "Parallel": {
@@ -12209,7 +12188,8 @@
             "data_analytics",
             "language",
             "machine_learning",
-            "visualisation"
+            "visualisation",
+            "ml"
         ],
         "extensions": "altair-4.1.0, ase-3.19.0, biom-format-2.1.7, biopython-1.76, Bottleneck-1.3.1, CacheControl-0.12.6, click-7.0, click-plugins-1.1.1, Cython-0.29.15, dask-2.10.1, dask-jobqueue-0.7.1, datashader-0.10.0, deap-1.3.0, decorator-4.4.1, DendroPy-4.4.0, docopt-0.6.2, emcee-3.0.2, future-0.18.2, h5py-2.10.0, holoviews-1.12.7, HTSeq-0.11.2, ipython-7.12.0, ipywidgets-7.5.1, jdcal-1.4.1, Jinja2-2.11.1, joblib-0.14.1, liac-arff-2.4.0, line_profiler-3.0.2, lockfile-0.12.2, lxml-4.5.0, Mako-1.1.0, matplotlib-3.1.3, mpi4py-3.0.3, mpmath-1.1.0, natsort-7.0.1, netCDF4-1.5.3, networkx-2.4, nose-1.3.7, notebook-6.0.3, numba-0.48.0, numexpr-2.7.1, numpy-1.18.1, obspy-1.2.0, openpyxl-3.0.3, pandas-1.0.1, param-1.9.2, patsy-0.5.1, paycheck-1.0.2, Pillow-7.0.0, pip-20.0.2, plotly-4.10.0, PrettyTable-0.7.2, psycopg2-2.8.4, pudb-2019.2, Py6S-1.7.2, pybedtools-0.8.1, pybind11-2.4.3, pyct-0.4.6, pyparsing-2.4.6, pysam-0.15.4, Pysolar-0.8, pystan-2.19.1.1, pytest-5.3.5, python-dateutil-2.8.1, pytz-2019.3, PyYAML-5.3, qutip-4.5.0, reportlab-3.5.32, requests-2.22.0, scikit-build-0.10.0, scikit-image-0.16.2, scikit-umfpack-0.3.2, scipy-1.4.1, seaborn-0.11.0, setuptools-45.2.0, six-1.14.0, SQLAlchemy-1.3.13, statsmodels-0.11.0, sympy-1.5.1, tabulate-0.8.6, toolz-0.10.0, tzlocal-2.0.0, ujson-1.35, xlrd-1.2.0",
         "force_hide": "False",
@@ -12253,7 +12233,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Python",
         "url": "http://python.org/"
     },
     "Python-Geo": {
@@ -12473,7 +12453,9 @@
             "data_analytics",
             "language",
             "machine_learning",
-            "visualisation"
+            "visualisation",
+            "mahuika",
+            "R"
         ],
         "extensions": "abind-1.4-5, acepack-1.4.1, akima-0.6-2, ape-5.3, askpass-1.1, assertthat-0.2.1, assertthat-0.2.1, b-a, backports-1.1.4, base64-2.0, base64enc-0.1-3, BB-2014.10-1, BBmisc-1.11, beanplot-1.2, BH-1.69.0-1, BiasedUrn-1.07, bibtex-0.4.2, bindr-0.1.1, bindrcpp-0.2.2, bit-1.1-14, bit64-0.9-7, bitops-1.0-6, blob-1.2.0, boot-1.3-23, boot-1.3-23, brew-1.0-6, brglm-0.6.2, broom-0.5.2, c-o, callr-3.3.0, car-3.0-3, carData-3.0-2, caTools-1.17.1.2, cellranger-1.1.0, checkmate-1.9.4, chron-2.3-53, class-7.3-15, classInt-0.3-3, cli-1.1.0, clipr-0.6.0, cluster-2.1.0, coda-0.19-3, codetools-0.2-16, colorspace-1.4-1, corpcor-1.6.9, crayon-1.3.4, crayon-1.3.4, crosstalk-1.0.0, crs-0.15-31, cubature-2.0.3, curl-3.3, d-a, data.table-1.12.2, DBI-1.0.0, deldir-0.1-22, DEoptimR-1.0-8, desc-1.2.0, deSolve-1.24, dichromat-2.0-0, digest-0.6.20, dismo-1.1-4, doMPI-0.2.2, doParallel-1.0.14, doRNG-1.7.1, dotCall64-1.0-0, dplyr-0.8.3, e1071-1.7-2, ellipse-0.4.1, ellipsis-0.2.0.1, ellipsis-0.2.0.1, evaluate-0.14, expm-0.999-4, fail-1.3, fansi-0.4.0, fastcluster-1.1.25, fastICA-1.2-2, fastmatch-1.1-0, ff-2.2-14, float-0.2-3, FNN-1.1.3, forcats-0.4.0, foreach-1.4.4, foreign-0.8-71, formatR-1.7, Formula-1.2-3, futile.logger-1.4.3, futile.options-1.0.1, g-r, g-r, g-r, gam-1.16.1, gamlss.data-5.1-4, gamlss.dist-5.1-4, gbm-2.1.5, gdata-2.18.0, generics-0.0.2, getopt-1.20.3, ggplot2-3.2.0, glmmML-1.1.0, glmnet-2.0-18, glue-1.3.1, glue-1.3.1, gmodels-2.18.1, goftest-1.1-1, gplots-3.0.1.1, gridBase-0.4-7, gridExtra-2.3, gsalib-2.1, gtable-0.3.0, gtools-3.8.1, haven-2.1.1, highr-0.8, Hmisc-4.2-0, hms-0.5.0, htmlTable-1.13.1, htmltools-0.3.6, htmlwidgets-1.3, httpuv-1.5.1, httr-1.4.0, hwriter-1.3.2, igraph-1.2.4.1, inline-0.3.15, intervals-0.15.1, irace-3.3, irlba-2.3.3, iterators-1.0.10, jomo-2.6-8, jsonlite-1.6, KernSmooth-2.23-15, knitr-1.23, labeling-0.3, lambda.r-1.2.3, later-0.8.0, lattice-0.20-38, latticeExtra-0.6-28, lazyeval-0.2.2, LearnBayes-2.15.1, lme4-1.1-21, lmtest-0.9-37, locfit-1.5-9.1, logistf-1.23, logspline-2.1.13, loo-2.1.0, lpSolve-5.6.13.1, m-e, magrittr-1.5, manipulateWidget-0.10.0, maptools-0.9-5, markdown-1.0, MASS-7.3-51.4, Matrix-1.2-17, MatrixModels-0.4-1, matrixStats-0.54.0, mclust-5.4.5, memoise-1.1.0, mgcv-1.8-28, mice-3.6.0, mime-0.7, miniUI-0.1.1.1, minqa-1.2.4, mitml-0.3-7, mitools-2.4, mnormt-1.5-5, munsell-0.5.0, mvtnorm-1.0-11, neuRosim-0.2-12, nleqslv-3.3.2, nlme-3.1-140, nloptr-1.2.1, NMF-0.21.0, nnet-7.3-12, nnls-1.4, nor1mix-1.3-0, np-0.60-9, numDeriv-2016.8-1.1, openssl-1.4, openxlsx-4.1.0.1, optparse-1.6.2, ordinal-2019.4-25, p-a, pan-1.6, pbdMPI-0.3-9, pbkrtest-0.4-7, penalized-0.9-51, perm-1.0-0.0, permute-0.9-5, phangorn-2.5.5, pillar-1.4.2, pkgbuild-1.0.3, pkgconfig-2.0.2, pkgmaker-0.27, plogr-0.2.0, plyr-1.8.4, png-0.1-7, polyclip-1.10-0, prettyunits-1.0.2, processx-3.4.0, profileModel-0.6.0, profvis-0.3.6, progress-1.2.2, promises-1.0.1, proto-1.0.0, ps-1.3.0, pscl-1.5.2, purrr-0.3.2, quadprog-1.5-7, quantreg-5.42, R.methodsS3-1.7.1, R.oo-1.22.0, R2OpenBUGS-3.2-3.2, R6-2.4.0, R6-2.4.0, RandomFields-3.3.6, RandomFieldsUtils-0.5.3, randomForest-4.6-14, rARPACK-0.11-0, raster-2.9-23, RColorBrewer-1.1-2, Rcpp-1.0.1, RcppArmadillo-0.9.600.4.0, RcppEigen-0.3.3.5.0, RCurl-1.95-4.12, readr-1.3.1, readxl-1.3.1, registry-0.5-1, rematch-1.0.1, reshape-0.8.8, reshape2-1.4.3, rgl-0.100.26, rio-0.5.16, rJava-0.9-11, rlang-0.4.0, rlecuyer-0.3-4, Rmpi-0.6-6, rngtools-1.4, robustbase-0.93-5, rpart-4.1-15, rprojroot-1.3-2, RSpectra-0.15-0, RSQLite-2.1.1, rstan-2.19.2, rstudioapi-0.10, s-p, s-t, s-t, sandwich-2.5-1, scales-1.0.0, sendmailR-1.2-1, sfsmisc-1.1-4, shiny-1.3.2, snow-0.3-13, snowfall-1.84-6.1, sourcetools-0.1.7, sp-1.3-1, spam-2.2-2, SparseM-1.77, spatial-7.3-11, spatstat-1.58-2, spatstat.data-1.4-0, spatstat.utils-1.13-0, spData-0.3.0, spgrass6-0.8-9, splancs-2.01-40, StanHeaders-2.18.1-10, stringi-1.3.1, stringr-1.4.0, survey-3.36, survival-2.43-3, sys-3.2, t-o, tensor-1.5, tibble-2.1.3, tidyr-0.8.3, tidyselect-0.2.5, tseriesChaos-0.1-13.1, u-t, ucminf-1.1-4, utf8-1.1.4, vcd-1.4-4, vctrs-0.2.0, vegan-2.5-5, VGAM-1.1-1, viridis-0.5.1, viridisLite-0.3.0, waveslim-1.7.5.1, webshot-0.5.1, withr-2.1.2, xfun-0.8, XML-3.98-1.20, xtable-1.8-4, xts-0.11-2, yaml-2.2.0, zeallot-0.1.0, zip-2.0.3, zoo-1.8-6",
         "force_hide": "False",
@@ -12510,7 +12492,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/R",
         "url": "http://www.r-project.org/"
     },
     "R-Geo": {
@@ -12603,7 +12585,8 @@
         "default": "",
         "description": "RAxML search algorithm for maximum likelihood based inference of phylogenetic trees.",
         "domains": [
-            "biology"
+            "biology",
+            "mahuika"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -12624,7 +12607,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/RAxML",
         "url": "https://github.com/stamatak/standard-RAxML"
     },
     "RAxML-NG": {
@@ -13060,7 +13043,11 @@
         "default": "",
         "description": "RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on)",
         "domains": [
-            "biology"
+            "biology",
+            "no_toc",
+            "no_lic",
+            "no_desc",
+            "no_ver"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -13081,7 +13068,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Relion",
         "url": "http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page"
     },
     "RepeatMasker": {
@@ -14308,7 +14295,11 @@
     "Singularity": {
         "default": "",
         "description": "",
-        "domains": [],
+        "domains": [
+            "containers",
+            "singularity",
+            "docker"
+        ],
         "extensions": [],
         "force_hide": "False",
         "force_show": "False",
@@ -14348,7 +14339,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Singularity",
         "url": "https://www.sylabs.io/docs/"
     },
     "Sniffles": {
@@ -14709,7 +14700,8 @@
         "default": "",
         "description": "Supernova is a software package for de novo assembly from Chromium Linked-Reads",
         "domains": [
-            "biology"
+            "biology",
+            "mahuika"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -14728,7 +14720,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Supernova"
     },
     "Szip": {
         "default": "",
@@ -15240,7 +15232,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Trinity",
         "url": "http://trinityrnaseq.github.io"
     },
     "Trinotate": {
@@ -15345,7 +15337,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/TurboVNC",
         "url": "https://www.turbovnc.org"
     },
     "UCC": {
@@ -15497,7 +15489,8 @@
         "default": "",
         "description": "The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles.",
         "domains": [
-            "chemistry"
+            "chemistry",
+            "mahuika"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -15537,7 +15530,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VASP",
         "url": "http://www.vasp.at"
     },
     "VCF-kit": {
@@ -15780,7 +15773,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VTune",
         "url": "https://software.intel.com/en-us/vtune"
     },
     "Valgrind": {
@@ -15993,7 +15986,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VirSorter",
         "url": "https://github.com/jiarong/VirSorter2"
     },
     "VirtualGL": {
@@ -17248,7 +17241,8 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.2.2-gimkl-2022a"
+                    "0.2.2-gimkl-2022a",
+                    "0.2.5-gimkl-2022a"
                 ]
             }
         },
@@ -19601,7 +19595,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ipyrad",
         "url": "https://ipyrad.readthedocs.io"
     },
     "ispc": {
@@ -22276,7 +22270,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ont-guppy-gpu",
         "url": "https://nanoporetech.com/products/minit"
     },
     "padloc": {
@@ -22655,7 +22649,7 @@
         "default": "",
         "description": "File format for storing nanopore dna data in an easily accessible way.",
         "domains": [],
-        "extensions": "iso8601-2.1.0, lib-pod5-0.3.2, more-itertools-10.1.0, pod5-0.3.2, polars-0.17.15, pyarrow-14.0.1, vbz_h5py_plugin-1.0.1",
+        "extensions": "iso8601-2.1.0, lib-pod5-0.3.2, more_itertools-10.1.0, pod5-0.3.2, polars-0.19.19, pyarrow-14.0.2, vbz_h5py_plugin-1.0.1",
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/nanoporetech/pod5-file-format",
@@ -23761,7 +23755,7 @@
         "domains": [
             "workflow_management"
         ],
-        "extensions": "appdirs-1.4.3, ConfigArgParse-0.13.0, datrie-0.8.2, docutils-0.20.1, dpath-2.1.6, filelock-3.2.0, gitdb2-2.0.4, GitPython-2.1.11, humanfriendly-10.0, jsonschema-2.6.0, plac-1.3.5, PuLP-2.5.0, reretry-0.11.8, retry-0.9.2, smart_open-5.2.1, smmap2-2.0.4, snakedeploy-0.8.6, snakemake-7.32.3, throttler-1.2.2, throttler-1.2.2, toposort-1.6, wrapt-1.15.0, yte-1.5.1",
+        "extensions": "appdirs-1.4.3, ConfigArgParse-0.13.0, datrie-0.8.2, docutils-0.20.1, dpath-2.1.6, filelock-3.2.0, gitdb2-2.0.4, GitPython-2.1.11, humanfriendly-10.0, immutables-0.20, jsonschema-2.6.0, plac-1.3.5, PuLP-2.5.0, reretry-0.11.8, retry-0.9.2, smart_open-5.2.1, smmap2-2.0.4, snakedeploy-0.8.6, snakemake-8.1.0, snakemake_executor_plugin_slurm_jobstep-0.1.8, snakemake_interface_common-1.15.0, snakemake_interface_executor_plugins-8.1.3, snakemake_interface_storage_plugins-3.0.0, throttler-1.2.2, throttler-1.2.2, toposort-1.6, wrapt-1.15.0, yte-1.5.1",
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://snakemake.readthedocs.io",
@@ -23784,7 +23778,8 @@
                     "7.30.1-gimkl-2022a-Python-3.11.3",
                     "7.32.0-gimkl-2022a-Python-3.11.3",
                     "7.32.3-foss-2023a-Python-3.11.6",
-                    "7.32.3-gimkl-2022a-Python-3.11.3"
+                    "7.32.3-gimkl-2022a-Python-3.11.3",
+                    "8.1.0-gimkl-2022a-Python-3.11.3"
                 ]
             }
         },
@@ -23900,7 +23895,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/snpEff",
         "url": "https://pcingola.github.io/SnpEff/"
     },
     "somalier": {

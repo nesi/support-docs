@@ -537,6 +537,7 @@ IGV's
 IGV
 IMPUTE's
 IMPUTE
+IOBUF
 IQ-TREE's
 IQ-TREE
 IQmol's
@@ -1660,7 +1661,6 @@ lp_solve's
 lp_solve
 lwgrp's
 lwgrp
-lz4's
 lz4
 magma's
 magma
@@ -1877,6 +1877,7 @@ seqmagick's
 seqmagick
 seqtk's
 seqtk
+setgid
 shumlib's
 shumlib
 sismonr's
