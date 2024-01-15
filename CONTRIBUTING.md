@@ -45,7 +45,7 @@ A link to the deployment will be printed once served.
 
 You can use any IDE you want, but various tools have been configured for use with VSCode.
 
-#### Reccomended Extensions
+#### Recomended Extensions
 
 When opening the workspace for the first time, you should be prompted to install the [Recommended VSCode Plugins](.vscode/extensions.json).
 
