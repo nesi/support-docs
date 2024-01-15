@@ -25,7 +25,6 @@ if __name__ == "__main__":
                 for word in r.words:
                     matches = re.finditer(r"[^a-zA-Z`._/[\\-]+(" + word + r")[^a-zA-Z`_/\\-]+", line)
                     for m in matches:
-                        ret_code += 1
-                        print(f"::warning file={source},line={line_no},col={m.span()[0]+2},endColumn={m.span()[1]-1},title=spelling::Word '{word}' is mispeled.")
+                        print(f"::warning file={source},line={line_no},col={m.start()+3},endColumn={m.end()},\
+title=spelling::Word '{word}' is mispeled.")
     sys.exit(0)
-    # sys.exit(ret_code)
