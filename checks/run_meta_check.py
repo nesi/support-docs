@@ -14,7 +14,8 @@ import yaml
 EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r"index.html"]
 
 # Constants for use in checks.
-MAX_TITLE_LENGTH = 24
+MAX_TITLE_LENGTH = 24   # As font isn't monospace, this is only approx
+MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 2
 
 # Warning level for missing parameters.
@@ -39,8 +40,15 @@ EXPECTED_PARAMETERS = {
 
 
 def main():
+    # Per file variables
+    global input_file, title_from_h1, title_from_filename, title, meta, contents
+
+    # Walk variables
+    global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
+
+    global toc, toc_parents, header
+
     input_files = sys.argv[1:]
-    global title, title_from_h1, title_from_filename, input_file, meta, contents, title, line, lineno
 
     for input_file in input_files:
         if any(re.match(pattern, input_file) for pattern in EXCLUDED_FROM_CHECKS):
@@ -59,10 +67,19 @@ def main():
             title_from_filename = _title_from_filename()
             title_from_h1 = _title_from_h1()
             title = meta["title"] if "title" in meta else "" or title_from_h1 or title_from_filename
+            # global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
+
+            header = ""
             lineno = 0
+            in_code_block = False
+            toc_parents = [title]
+            toc = {title: {"level": 1, "lineno": 0, "children": {}}}
+
             for line in contents.split("\n"):
                 lineno += 1
                 for check in WALKCHECKS:
+                    in_code_block = not in_code_block if re.match(r"^\s*```\s?\w*$", line) else in_code_block
+                    _get_nav_tree()
                     _run_check(check)
             for check in ENDCHECKS:
                 _run_check(check)
@@ -94,6 +111,37 @@ def _get_lineno(pattern):
             return i
         i += 1
     return 0
+
+
+def _get_nav_tree():
+    """Makes a nice dictionary of header tree"""
+    global toc, toc_parents
+
+    def _unpack(toc, a):
+        if len(a) < 2:
+            return toc[a[0]]
+        return _unpack(toc[a[0]]["children"], a[1:])
+
+    if in_code_block:
+        return
+
+    header_match = re.match(r"^(#+)\s*(.*)$", line)
+
+    if not header_match:
+        return
+
+    header_level = len(header_match.group(1))
+    header_name = header_match.group(2)
+
+    if header_level == 1:
+        toc = {header_name: {"lineno": lineno, "children": {}}}
+        toc_parents = [header_name]
+
+    while header_level < len(toc_parents)+1:
+        toc_parents.pop(-1)
+
+    _unpack(toc, toc_parents)["children"][header_name] = {"level": header_level, "lineno": lineno, "children": {}}
+    toc_parents += [header_name]
 
 
 def title_redundant():
@@ -143,6 +191,9 @@ def click_here():
     """
     Click [here](for more details)
     """
+    if in_code_block:
+        return
+
     m1 = re.search(r"\[.*\s?here\s?.*\]\(.*\)", line, re.IGNORECASE)
     if m1:
         yield {"line": lineno, "col": m1.start()+1, "endColumn": m1.end()-1, "message": "Don't use 'here' for link text, impedes accessability."}
@@ -151,52 +202,29 @@ def click_here():
     # m2 = re.search(r"\[here\]\(.*\)", line)
 
 
-def fix_headers():
-    """Pretty poor attempt, but better than nothing"""
-    last_header_level = 1
-    bump_header = False
-    in_code_block = False
+def walk_nav():
+    def _count_children(d):
+        only_child = (len(d["children"]) == 1)
+        for title, c in d["children"].items():
+            if only_child:
+                yield {"line": c['lineno'], "message": f"Header '{title}' is a useless only-child. Give it siblings or remove it."}
+            # As header gets deeper nested, it will have less horizontal room in toc.
+            if len(title) > (MAX_HEADER_LENGTH - (2*c["level"])):
+                yield {"line": c['lineno'], "message": f"Header '{title}' is too long. \
+ Try to keep it under {MAX_HEADER_LENGTH} characters to avoid word wrapping in the toc."}
+            for y in _count_children(c):
+                yield y
+    for d in toc.values():
+        for y in _count_children(d):
+            yield y
 
-    lines = x.splitlines()
-
-    def parse_line(line):
-        nonlocal last_header_level
-        nonlocal bump_header
-        nonlocal in_code_block
-        # If match start of code block
-        if re.match(r"^```", line):
-            in_code_block = not in_code_block
-        if in_code_block:
-            return line
-        header_match = re.match(r"^(#+)\s*(.*)$", line)
-        if not header_match:
-            return line
-        if not header_match.group(2):
-            log.info("Deleting empty header. '%s'", line)
-            return ""
-        header_level = len(header_match.group(1))
-        # If H1, turn on bump
-        if header_level < 2:
-            bump_header = True
-        if bump_header:
-            log.info("Bumping H%s to H%s. '%s'", header_level, header_level+1, line)
-            header_level += 1
-
-        # If more than 1 step down. Change by 1
-        while last_header_level < header_level-1:
-            log.info("Debumping H%s to H%s. '%s'", header_level, header_level-1, line)
-            header_level -= 1
-
-        last_header_level = header_level
-        return re.sub(r"^(#+)", header_level * "#", line)
-
-    return "\n".join([parse_line(line) for line in lines])
 
 # For checks to run on page as a whole
-ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags, click_here]
+ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags,
+             walk_nav]
 
 # Checks to be run on each line
-WALKCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags, click_here]
+WALKCHECKS = [click_here]
 
 
 if __name__ == "__main__":
