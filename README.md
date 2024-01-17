@@ -6,14 +6,17 @@ This repository contains the sources files for the NeSI support documentation.
 
 Rendered pages are visible at [https://nesi.github.io/support-docs-concept/](https://nesi.github.io/support-docs-concept/).
 
-Other help related pages are rendered
-    - See [contributing](https://nesi.github.io/support-docs-concept/CONTRIBUTING.md), to learn how to you can contribute.
-    - See [formatting](https://nesi.github.io/support-docs-concept/FORMAT.md), for examples of markdown.
-    - See [guidelines](https://nesi.github.io/support-docs-concept/GUIDE.md), for style guide.
-
 **Warning**
     This is a beta version and should **not** be considered as the official documentation.
     The official documentation is accessible at [https://support.nesi.org.nz](https://support.nesi.org.nz).
+
+## Writing documentation
+
+Following pages contain information to help contribution and maintenance of the documentation:
+
+- See [contributing](https://nesi.github.io/support-docs-concept/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
+- See [formatting](https://nesi.github.io/support-docs-concept/FORMAT), for examples of markdown syntax.
+- See [guidelines](https://nesi.github.io/support-docs-concept/GUIDE), for general principles to consider when writing pages.
 
 ## Contents
 
