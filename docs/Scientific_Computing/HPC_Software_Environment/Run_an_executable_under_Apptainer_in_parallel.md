@@ -14,37 +14,41 @@ This article describes how to run an [MPI](https://en.wikipedia.org/wiki/Message
 
 While an Apptainer environment encapsulates the dependencies of an application, including MPI, it is often beneficial, to delegate MPI calls within the container to the host. The advantages are:
 
- * You can let SLURM manage the resources for you
- * You can leverage the MPI library on the host, which has been configured for maximum performance
+- You can let SLURM manage the resources for you
+- You can leverage the MPI library on the host, which has been configured for maximum performance
 
  Note that for this to work, the MPI version inside the container must be compatible with that on the host. We'll illustrate this approach 
  with an example.
 
 ## Build the containerised executable
 
- This will need to take place on a Milan node. Hence, we need to submit a SLURM script that calls `apptainer build`:  
+ This will need to take place on a Milan node. Hence, we need to submit a SLURM script that calls `apptainer build`:
+
 ```sh
 git clone git@github.com:pletzer/fidibench.git
 cd fidibench
 sbatch fidibench_apptainer_build_intel.sl
 ```
-When the job finishes (after 1+ hour), you will have a `fidibench_intel.sif` file in your directory.
 
+When the job finishes (after 1+ hour), you will have a `fidibench_intel.sif` file in your directory.
 
 ## Run the containerised executable
 
-
 You can check that the executable was built successfully by running a quick test, using the internal MPI
+
 ```sh
 apptainer exec fidibench_intel.sif mpiexec -n 4 /software/fidibench/bin/upwindMpiCxx -numCells 128 -numSteps 10
 Number of procs: 4
-...
- times min/max/avg: 3.33281/3.34092/3.3355 [seconds]
+```
+
+```out
+times min/max/avg: 3.33281/3.34092/3.3355 [seconds]
 Check sum: 1
 ```
 
 To submit the job via SLURM, write the following job script `fidibench_intel_apptainer.sl`:
-```sh
+
+```sl
 #!/bin/bash -e
 #SBATCH --ntasks=64
 #SBATCH --partition=milan
@@ -59,12 +63,14 @@ export I_MPI_FABRICS=ofi # turn off shm to allow the code to run on multiple nod
 # may be different on a different host.
 srun apptainer exec -B /opt/slurm/lib64/ fidibench_intel.sif /software/fidibench/bin/upwindMpiCxx -numCells 512 -numSteps 10
 ```
+
 and submit it
+
 ```sh
 sbatch fidibench_intel_apptainer.sl
 ```
-The above job can run on multiple nodes. 
+
+The above job can run on multiple nodes.
 
 Note that the host MPI is loaded with the `intel` module. The MPI libraries on the host and in the 
 container need to be compatible. At the time of writing, the host MPI is `2021.5` and the MPI in the container is `2021.8`.
-
