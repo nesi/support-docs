@@ -24,7 +24,7 @@
 	"Insert Admonation": {
 		"scope": "markdown",
 		"description" : "Insert Admonation",
-		"prefix": ["Admonation", "!!!"],
+		"prefix": ["!!! "],
 		"body": [
 			"!!! ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|}",
 			"    ${TM_SELECTED_TEXT}${0}"
@@ -32,7 +32,7 @@
 	},
 	"Insert Admonation (with custom title)": {
 		"scope": "markdown",
-		"prefix": ["!!!"],
+		"prefix": ["!!! "],
 		"body": [
 			"!!! ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|} \"${2}\"\n\t", 
 			"    ${TM_SELECTED_TEXT}${0}"
@@ -48,7 +48,7 @@
 	},
 	"Insert Tab Container": {
 		"scope": "markdown",
-		"prefix": ["tab", "==="],
+		"prefix": ["=== \""],
 		"body": [
 			"=== \"${1:tab name}\"",
 			"    ${2:tab content}",
