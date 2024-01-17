@@ -2,7 +2,6 @@
 
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](https://nesi.github.io/support-docs-concept/CONTRIBUTING.md).
-    <!-- - For examples of markdown use, [see FORMAT](https://nesi.github.io/support-docs-concept/FORMAT.md). -->
     - For style guide, [see GUIDE](https://nesi.github.io/support-docs-concept/GUIDE.md).
 
 ## Headers
@@ -48,13 +47,13 @@ _italic_: `_italic`
 ## Tab Containers
 
 === "Tab One"
-    someting in the tab
+    something in the tab
 === "Tab two"
     something else
 
 ```md
 === "Tab One"
-    someting in the tab
+    something in the tab
 === "Tab two"
     something else
 ```
@@ -252,9 +251,9 @@ There are various flavors.
 
 ### Block
 
-Code blocks require a language lexxer in order to do syntax hilighting, e.g. `python` ,`slurm`, `cuda`, `json`, `markdown`, `bash`
+Code blocks require a language lexer in order to do syntax highlighting, e.g. `python` ,`slurm`, `cuda`, `json`, `markdown`, `bash`
 (most of these have short codes too, `py`,`sl`,`cd`,`md`,`sh`).
-[A full list of lexxers can be found in this list](https://pygments.org/languages/).
+[A full list of lexers can be found in this list](https://pygments.org/languages/).
 
 ```py
 import somepackage
@@ -351,10 +350,10 @@ For example a header `## This is my Header` can be linked to with the anchor `[A
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 ```
 
-Acroynym should be automatically tooltipped e.g. MPI.
+Acroynym should be automatically made tooltips e.g. MPI.
 
 ```md
-Acroynym should be automatically tooltipped e.g. MPI.
+Acroynym should be automatically made tooltips e.g. MPI.
 ```
 
 ## Lists
@@ -374,7 +373,7 @@ Acroynym should be automatically tooltipped e.g. MPI.
 - item
 - nested
   - items
-    - nesteder
+    - nested-er
 ```
 
 ### Ordered List
@@ -400,7 +399,7 @@ Acroynym should be automatically tooltipped e.g. MPI.
 3. nested
     1. nested item 1
     2. nested item 2
-        1. even nesteder
+        1. even nested-er
 ```
 
 *Note, nested list items use numbers, but will be rendered as whatever the indent is.*
@@ -409,9 +408,9 @@ Acroynym should be automatically tooltipped e.g. MPI.
 
 [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables), is a handy tool for complex tables/
 
-Tables can be constructed using `|` to seperate columns, and `--` to designate headers.
+Tables can be constructed using `|` to separate columns, and `--` to designate headers.
 
-Number of dashes has no effect, things dont have to be lined up when in markdown, just looks nice.
+Number of dashes has no effect, things don't have to be lined up when in markdown, just looks nice.
 Leading and trailing `|` are optional.
 
 | Head   | Head   |

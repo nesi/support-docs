@@ -44,14 +44,14 @@ Our preference is the opposite (filename > H1 > meta).
 
 When converting a filename for the nav/title the `.md` will be dropped and 'snake_case' and 'kebab-case' will both be rendered with spaces, e.g. 'Snake case' and 'Kebab case' respectively.
 
-The first letter of the filename will be capitalised, but not any subsiquent words.
+The first letter of the filename will be capitalised, but not any subsequent words.
 
 (Note: Choose only one for naming convention)
 
 ### Sub Headers
 
 Unless setting a title, the first 'real' header will be an H2.
-It's fine to have text before the first header if it is relevent to the entire page.
+It's fine to have text before the first header if it is relevant to the entire page.
 
 No skipping levels, e.g.
 
@@ -121,7 +121,9 @@ By default, the `main` theme will be used. template of a theme to render Markdow
 ## Macros
 
 Macros allow use of Jinja filter syntax _inside the mardown files_ allowing for much more flexible templating.
-Details [here](https://mkdocs-macros-plugin.readthedocs.io/)
+More details can be found on the [mkdocs-macros-plugin page](https://mkdocs-macros-plugin.readthedocs.io/)
+
+### Filters
 
 `module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
 

@@ -4,9 +4,9 @@
 
 Any changes made should be merged via a pull request.
 
-## Minor edits through github
+## Minor edits through GitHub
 
-Press `.`, will open up VSCode in browser.
+Press `.`, will open up Visual Studio Code in browser.
 
 ## Local Development Environment
 
@@ -53,11 +53,11 @@ When opening the workspace for the first time, you should be prompted to install
 
 #### Snippets
 
-`ctrl` + `space` can be used to aid by autocompleting.
+`ctrl` + `space` can be used to aid by auto-completing.
 
 e.g. starting to type an image include `![my image](` then pressing `ctrl` + `space` will show all the valid paths.
 
-Custom snippets can be added in `../.vscode/includes.code-snippets`
+Custom snippets can be added in [`../.vscode/includes.code-snippets`](../.vscode/includes.code-snippets)
 
 #### Tasks
 
@@ -65,9 +65,7 @@ Some of the same checks run during the GitHub CI, can also be run in VS Code.
 
 This is shown with word underlining.
 
-
-
-Tasks allow continuous checks to be run in the background, these can be defined in `../.vscode/tasks.json`, also include in `../.vscode/settings.json` in order to trigger on save.
+Tasks allow continuous checks to be run in the background, these can be defined in [`../.vscode/tasks.json`](../.vscode/tasks.json), also include in [`../.vscode/settings.json`](../.vscode/settings.json) in order to trigger on save.
 
 ## Making a Merge Request
 
@@ -110,13 +108,10 @@ Feel free to raise an issue, make a proposal or [add words to the dictionary](#a
 
 If the CI is failing the spellcheck phase, and you beleive the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
 
-1. Visit the [NeSI Wordlist](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
-2. Once changes to the wordlist have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
+1. Visit the [NeSI Word List](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
+2. Once changes to the word list have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
 3. A branch `new-assets` will be created, which can be merged into main (you should see your new words are added).
 
-
 ## Raise an issue
-
-
 
 *Not documented at the moment (TODO)*
