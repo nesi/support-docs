@@ -1438,8 +1438,6 @@ This allows applications that 'require' a GUI to run in a command line environme
 *[lp_solve]: Mixed Integer Linear Programming (MILP) solver
 *[lwgrp's]: The light-weight group library defines data structures and collective operations to
 *[lwgrp]: The light-weight group library defines data structures and collective operations to
-*[lz4's]: LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.  It features an extremely fast decoder, with speed in multiple GB/s per core.
-*[lz4]: LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.  It features an extremely fast decoder, with speed in multiple GB/s per core.
 *[magma's]: The MAGMA project aims to develop a dense linear algebra library similar to
 *[magma]: The MAGMA project aims to develop a dense linear algebra library similar to
 *[makedepend's]: The makedepend package contains a C-preprocessor like utility to determine build-time dependencies.
