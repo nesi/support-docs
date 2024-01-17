@@ -10,14 +10,6 @@ Rendered pages are visible at [https://nesi.github.io/support-docs-concept/](htt
     This is a beta version and should **not** be considered as the official documentation.
     The official documentation is accessible at [https://support.nesi.org.nz](https://support.nesi.org.nz).
 
-## Writing documentation
-
-Following pages contain information to help contribution and maintenance of the documentation:
-
-- See [contributing](https://nesi.github.io/support-docs-concept/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
-- See [formatting](https://nesi.github.io/support-docs-concept/FORMAT), for examples of markdown syntax.
-- See [guidelines](https://nesi.github.io/support-docs-concept/GUIDE), for general principles to consider when writing pages.
-
 ## Contents
 
 The repository is organised using the following folders:
@@ -29,6 +21,14 @@ The repository is organised using the following folders:
 - `overrides/partials`: Overrides and extensions for sub components.
 
 [^1]: A section or category can be replaced by an `index.md` file, this will replace the default nav with a page.
+
+## Developer Documentation
+
+Following pages contain information to help maintain the documentation:
+
+- See [contributing](https://nesi.github.io/support-docs-concept/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
+- See [formatting](https://nesi.github.io/support-docs-concept/FORMAT), for examples of markdown syntax.
+- See [guidelines](https://nesi.github.io/support-docs-concept/GUIDE), for general principles to consider when writing pages.
 
 ## Theme
 
