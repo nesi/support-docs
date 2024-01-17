@@ -17,7 +17,7 @@ While an Apptainer environment encapsulates the dependencies of an application, 
 - You can let SLURM manage the resources for you
 - You can leverage the MPI library on the host, which has been configured for maximum performance
 
- Note that for this to work, the MPI version inside the container must be compatible with that on the host. We'll illustrate this approach 
+ Note that for this to work, the MPI version inside the container must be compatible with that on the host. We'll illustrate this approach
  with an example.
 
 ## Build the containerised executable
@@ -72,5 +72,5 @@ sbatch fidibench_intel_apptainer.sl
 
 The above job can run on multiple nodes.
 
-Note that the host MPI is loaded with the `intel` module. The MPI libraries on the host and in the 
+Note that the host MPI is loaded with the `intel` module. The MPI libraries on the host and in the
 container need to be compatible. At the time of writing, the host MPI is `2021.5` and the MPI in the container is `2021.8`.
