@@ -106,9 +106,6 @@ If the CI is failing the spellcheck phase, and you believe the identified words 
 2. Once changes to the wordlist have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
 3. A branch `new-assets` will be created, which can be merged into main (you should see your new words are added).
 
-
 ## Raise an issue
-
-
 
 *Not documented at the moment (TODO)*
