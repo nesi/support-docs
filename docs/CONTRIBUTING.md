@@ -1,6 +1,6 @@
 !!! prerequisite "See also"
-    - For examples of markdown use, [see FORMAT](https://nesi.github.io/support-docs-concept/FORMAT.md).
-    - For style guide, [see GUIDE](https://nesi.github.io/support-docs-concept/GUIDE.md).
+    - For examples of markdown use, [see FORMAT](FORMAT.md).
+    - For style guide, [see GUIDE](GUIDE.md).
 
 Any changes made should be merged via a pull request.
 

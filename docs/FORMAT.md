@@ -1,8 +1,8 @@
 **[CLICK HERE TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/format/)**{ .hidden }
 
 !!! prerequisite "See also"
-    - To learn how you can contribute, [see CONTRIBUTING](https://nesi.github.io/support-docs-concept/CONTRIBUTING.md).
-    - For style guide, [see GUIDE](https://nesi.github.io/support-docs-concept/GUIDE.md).
+    - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
+    - For style guide, [see GUIDE](GUIDE.md).
 
 ## Headers
 

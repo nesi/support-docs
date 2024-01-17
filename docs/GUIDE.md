@@ -1,8 +1,8 @@
 **[CLICK HERE TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/format/)**{ .hidden }
 
 !!! prerequisite "See also"
-    - To learn how you can contribute, [see CONTRIBUTING](https://nesi.github.io/support-docs-concept/CONTRIBUTING.md).
-    - For examples of markdown use, [see FORMAT](https://nesi.github.io/support-docs-concept/FORMAT.md).
+    - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
+    - For examples of markdown use, [see FORMAT](FORMAT.md).
 
 ## Structure
 
