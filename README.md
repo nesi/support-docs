@@ -29,6 +29,7 @@ Following pages contain information to help maintain the documentation:
 - See [contributing](https://nesi.github.io/support-docs-concept/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
 - See [formatting](https://nesi.github.io/support-docs-concept/FORMAT), for examples of markdown syntax.
 - See [guidelines](https://nesi.github.io/support-docs-concept/GUIDE), for general principles to consider when writing pages.
+- See [macros](https://nesi.github.io/support-docs-concept/MACROS), for `mkdocs-macros-plugin` environment.
 
 ## Theme
 
