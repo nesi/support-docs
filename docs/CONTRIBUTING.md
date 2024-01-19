@@ -2,7 +2,7 @@
 
 !!! prerequisite "See also"
     - For examples of markdown use, [see FORMAT](FORMAT.md).
-    - For style guide, [see GUIDE](GUIDE.md).
+    - For information about page creation, [see NEWPAGE](NEWPAGE.md).
 
 Any changes made should be merged via a pull request.
 

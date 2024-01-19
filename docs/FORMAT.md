@@ -2,7 +2,7 @@
 
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
-    - For style guide, [see GUIDE](GUIDE.md).
+    - For information about page creation, [see NEWPAGE](NEWPAGE.md).
 
 This page is an overview of the Markdown syntax supported in this documentation.
 
