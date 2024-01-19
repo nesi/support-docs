@@ -1,3 +1,5 @@
+**[CLICK HERE TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/contributing/)**{ .hidden }
+
 !!! prerequisite "See also"
     - For examples of markdown use, [see FORMAT](FORMAT.md).
     - For style guide, [see GUIDE](GUIDE.md).
