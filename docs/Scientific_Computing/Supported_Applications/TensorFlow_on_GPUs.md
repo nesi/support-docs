@@ -1,6 +1,5 @@
 ---
 created_at: '2019-06-03T23:54:50Z'
-hidden: false
 tags:
 - gpu
 title: TensorFlow on GPUs

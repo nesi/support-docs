@@ -1,6 +1,5 @@
 ---
 created_at: '2020-06-08T04:21:37Z'
-hidden: false
 tags:
 - jupyter
 - hub

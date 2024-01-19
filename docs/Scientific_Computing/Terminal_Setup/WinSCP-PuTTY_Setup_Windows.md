@@ -1,6 +1,5 @@
 ---
 created_at: '2018-11-26T03:03:23Z'
-hidden: false
 tags: []
 title: WinSCP/PuTTY Setup (Windows)
 vote_count: 4

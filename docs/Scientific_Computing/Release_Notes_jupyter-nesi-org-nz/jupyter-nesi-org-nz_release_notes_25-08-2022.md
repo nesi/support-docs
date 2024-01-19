@@ -1,6 +1,5 @@
 ---
 created_at: '2022-08-23T02:25:55Z'
-hidden: false
 tags:
 - releasenote
 title: jupyter.nesi.org.nz release notes 25/08/2022

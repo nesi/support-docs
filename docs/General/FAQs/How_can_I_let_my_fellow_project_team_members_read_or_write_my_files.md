@@ -1,6 +1,5 @@
 ---
 created_at: '2019-11-07T04:11:03Z'
-hidden: false
 tags: []
 title: How can I let my fellow project team members read or write my files?
 vote_count: 0

@@ -1,6 +1,5 @@
 ---
 created_at: '2021-08-19T02:16:06Z'
-hidden: false
 tags:
 - releasenote
 title: my.nesi.org.nz release notes v2.3.0

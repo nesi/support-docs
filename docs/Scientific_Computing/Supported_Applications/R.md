@@ -1,6 +1,5 @@
 ---
 created_at: '2015-09-07T00:34:30Z'
-hidden: false
 tags:
 - mahuika
 - R

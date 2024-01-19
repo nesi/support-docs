@@ -1,6 +1,5 @@
 ---
 created_at: '2019-06-12T03:00:10Z'
-hidden: false
 tags:
 - visualisation
 title: ParaView

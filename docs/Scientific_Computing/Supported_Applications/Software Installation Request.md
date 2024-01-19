@@ -1,6 +1,5 @@
 ---
 created_at: '2018-07-31T10:59:09Z'
-hidden: false
 tags: []
 title: Software Installation Request
 vote_count: 0

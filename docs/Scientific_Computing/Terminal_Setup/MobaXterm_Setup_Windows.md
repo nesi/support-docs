@@ -1,6 +1,5 @@
 ---
 created_at: '2018-11-30T00:32:25Z'
-hidden: false
 tags: 
     - ssh
     - windows

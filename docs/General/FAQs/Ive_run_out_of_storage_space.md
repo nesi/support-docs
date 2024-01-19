@@ -1,6 +1,5 @@
 ---
 created_at: '2019-08-26T00:02:24Z'
-hidden: false
 tags:
 - disk quota exceeded
 title: I've run out of storage space

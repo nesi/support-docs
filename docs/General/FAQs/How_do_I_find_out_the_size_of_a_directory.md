@@ -1,6 +1,5 @@
 ---
 created_at: '2022-02-09T01:40:51Z'
-hidden: false
 tags: []
 title: How do I find out the size of a directory?
 vote_count: 0

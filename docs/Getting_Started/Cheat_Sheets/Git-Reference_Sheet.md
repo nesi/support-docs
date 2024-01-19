@@ -1,6 +1,5 @@
 ---
 created_at: '2020-05-07T02:51:35Z'
-hidden: false
 tags:
 - git
 - github

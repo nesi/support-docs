@@ -1,6 +1,5 @@
 ---
 created_at: '2023-07-21T04:10:04Z'
-hidden: false
 tags: []
 title: Per job temporary directories
 vote_count: 0

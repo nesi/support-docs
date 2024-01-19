@@ -1,6 +1,5 @@
 ---
 created_at: '2018-05-01T23:18:39Z'
-hidden: false
 tags:
 - info
 - assessment

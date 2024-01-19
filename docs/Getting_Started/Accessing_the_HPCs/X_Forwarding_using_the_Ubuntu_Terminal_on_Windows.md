@@ -1,6 +1,5 @@
 ---
 created_at: '2021-10-04T19:55:45Z'
-hidden: false
 tags:
 - x11
 - x forwarding

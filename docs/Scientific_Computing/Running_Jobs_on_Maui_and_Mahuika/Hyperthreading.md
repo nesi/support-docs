@@ -1,6 +1,5 @@
 ---
 created_at: '2018-11-15T22:10:10Z'
-hidden: false
 tags: []
 title: Hyperthreading
 vote_count: 6

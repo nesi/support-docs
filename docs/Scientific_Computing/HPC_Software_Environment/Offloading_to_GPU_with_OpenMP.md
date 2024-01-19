@@ -1,6 +1,5 @@
 ---
 created_at: '2019-08-26T23:41:11Z'
-hidden: false
 tags: []
 title: 'Offloading to GPU with OpenMP '
 vote_count: 1

@@ -1,6 +1,5 @@
 ---
 created_at: '2021-03-11T21:59:07Z'
-hidden: false
 tags: []
 title: The NeSI Project Request Form
 vote_count: 0

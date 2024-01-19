@@ -1,6 +1,5 @@
 ---
 created_at: '2019-07-15T04:12:01Z'
-hidden: false
 tags: []
 title: Ubuntu LTS terminal (Windows)
 vote_count: 3

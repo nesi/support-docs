@@ -1,6 +1,5 @@
 ---
 created_at: '2020-06-25T01:10:40Z'
-hidden: false
 tags:
 - corefile
 - coredump

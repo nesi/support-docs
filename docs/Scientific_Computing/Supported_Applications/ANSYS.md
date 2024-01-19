@@ -1,6 +1,5 @@
 ---
 created_at: '2015-10-15T02:15:46Z'
-hidden: false
 tags:
 - mahuika
 - application

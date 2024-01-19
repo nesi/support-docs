@@ -1,6 +1,5 @@
 ---
 created_at: '2022-01-31T21:28:03Z'
-hidden: false
 tags: []
 title: Jupyter kernels - Tool-assisted management
 vote_count: 1

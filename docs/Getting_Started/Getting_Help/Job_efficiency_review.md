@@ -1,6 +1,5 @@
 ---
 created_at: '2020-12-17T20:12:46Z'
-hidden: false
 tags: []
 vote_count: 0
 vote_sum: 0

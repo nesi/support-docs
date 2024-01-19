@@ -1,6 +1,5 @@
 ---
 created_at: '2019-05-03T04:15:24Z'
-hidden: false
 description: How to set up cluster access using 'git bash'
 tags:
    - git

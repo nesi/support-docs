@@ -1,6 +1,5 @@
 ---
 created_at: '2019-06-03T23:23:13Z'
-hidden: false
 tags: []
 title: Trinity
 vote_count: 1

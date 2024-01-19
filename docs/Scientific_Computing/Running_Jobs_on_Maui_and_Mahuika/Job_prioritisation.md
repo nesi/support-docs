@@ -1,6 +1,5 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
-hidden: false
 tags: []
 title: Job prioritisation
 vote_count: 1

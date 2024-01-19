@@ -1,6 +1,5 @@
 ---
 created_at: '2020-05-11T23:29:39Z'
-hidden: false
 tags:
 - visualisation
 - image

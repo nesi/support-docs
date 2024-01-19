@@ -1,6 +1,5 @@
 ---
 created_at: '2018-05-18T02:26:58Z'
-hidden: false
 tags:
 - tqp
 title: How we review applications

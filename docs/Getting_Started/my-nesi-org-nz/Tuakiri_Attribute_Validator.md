@@ -1,6 +1,5 @@
 ---
 created_at: '2021-04-30T03:29:54Z'
-hidden: false
 tags: []
 title: Tuakiri Attribute Validator
 vote_count: 0

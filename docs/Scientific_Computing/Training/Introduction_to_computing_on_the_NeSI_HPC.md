@@ -1,6 +1,5 @@
 ---
 created_at: '2022-07-26T21:43:02Z'
-hidden: false
 status: deprecated
 tags: []
 title: Introduction to computing on the NeSI HPC

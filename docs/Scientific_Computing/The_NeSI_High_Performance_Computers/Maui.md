@@ -1,6 +1,5 @@
 ---
 created_at: '2018-04-22T23:01:48Z'
-hidden: false
 tags:
 - hpc
 - info

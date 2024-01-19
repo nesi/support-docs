@@ -1,6 +1,5 @@
 ---
 created_at: '2019-04-12T02:21:25Z'
-hidden: false
 tags: []
 title: NetCDF / HDF5 file locking
 vote_count: 2

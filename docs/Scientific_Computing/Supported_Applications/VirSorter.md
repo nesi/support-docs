@@ -1,6 +1,5 @@
 ---
 created_at: '2021-02-23T02:54:11Z'
-hidden: false
 tags: []
 title: VirSorter
 vote_count: 1

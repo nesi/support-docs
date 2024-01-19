@@ -1,6 +1,5 @@
 ---
 created_at: '2019-11-11T21:40:21Z'
-hidden: false
 tags: []
 title: "Mahuika - M\u0101ui Differences"
 vote_count: 1

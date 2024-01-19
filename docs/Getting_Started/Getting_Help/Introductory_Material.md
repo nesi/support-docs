@@ -1,6 +1,5 @@
 ---
 created_at: '2018-09-10T00:02:43Z'
-hidden: false
 tags:
 - introduction
 - talk

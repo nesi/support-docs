@@ -1,6 +1,5 @@
 ---
 created_at: '2020-01-05T21:43:18Z'
-hidden: false
 tags: []
 title: Slurm Interactive Sessions
 vote_count: 7

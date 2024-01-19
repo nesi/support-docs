@@ -1,6 +1,5 @@
 ---
 created_at: '2020-03-08T20:06:48Z'
-hidden: false
 tags: []
 title: Job Checkpointing
 vote_count: 2

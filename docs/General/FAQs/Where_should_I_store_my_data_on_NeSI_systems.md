@@ -1,6 +1,5 @@
 ---
 created_at: '2022-06-15T00:53:58Z'
-hidden: false
 tags: []
 title: Where should I store my data on NeSI systems?
 vote_count: 0

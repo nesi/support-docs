@@ -1,6 +1,5 @@
 ---
 created_at: '2019-01-24T20:30:30Z'
-hidden: false
 status: deprecated
 tags:
 - support

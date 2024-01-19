@@ -1,6 +1,5 @@
 ---
 created_at: '2020-04-19T22:59:58Z'
-hidden: false
 tags:
 - gpu
 title: GPU use on NeSI

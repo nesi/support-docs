@@ -1,6 +1,5 @@
 ---
 created_at: '2019-09-18T22:28:01Z'
-hidden: false
 tags:
 - storage
 - nearline

@@ -1,6 +1,5 @@
 ---
 created_at: '2019-02-24T23:26:19Z'
-hidden: false
 tags:
 - slurm
 - profiling

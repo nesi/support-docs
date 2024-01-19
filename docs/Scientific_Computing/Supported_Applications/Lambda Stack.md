@@ -1,6 +1,5 @@
 ---
 created_at: '2021-01-05T20:28:08Z'
-hidden: false
 tags: []
 title: Lambda Stack
 vote_count: 1

@@ -1,6 +1,5 @@
 ---
 created_at: '2018-09-24T01:51:32Z'
-hidden: false
 tags: []
 title: Installing (Third Party) applications
 vote_count: 3

@@ -1,6 +1,5 @@
 ---
 created_at: '2018-05-18T03:56:37Z'
-hidden: false
 tags:
 - 2fa
 - access

@@ -1,6 +1,5 @@
 ---
 created_at: '2023-03-28T22:23:54Z'
-hidden: false
 tags: []
 title: "Upcoming webinar: Tips for making the most of Mahuika\u2019s new Milan nodes"
 vote_count: 0

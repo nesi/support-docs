@@ -1,6 +1,5 @@
 ---
 created_at: '2022-07-11T23:23:04Z'
-hidden: false
 status: new
 tags:
 - mahuika

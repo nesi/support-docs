@@ -1,6 +1,5 @@
 ---
 created_at: '2018-05-02T04:06:16Z'
-hidden: false
 tags:
 - info
 - mahuika

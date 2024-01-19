@@ -1,6 +1,5 @@
 ---
 created_at: '2023-07-13T01:04:38Z'
-hidden: false
 tags: []
 title: snpEff
 vote_count: 0

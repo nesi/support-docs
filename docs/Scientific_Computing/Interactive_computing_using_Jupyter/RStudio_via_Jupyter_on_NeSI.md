@@ -1,6 +1,5 @@
 ---
 created_at: '2021-05-13T01:00:08Z'
-hidden: false
 tags: []
 vote_count: 7
 vote_sum: 3

@@ -1,6 +1,5 @@
 ---
 created_at: '2023-02-09T01:30:43Z'
-hidden: false
 tags: []
 title: Milan Compute Nodes
 vote_count: 0

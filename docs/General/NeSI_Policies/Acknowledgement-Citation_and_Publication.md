@@ -1,6 +1,5 @@
 ---
 created_at: '2021-01-13T00:24:35Z'
-hidden: false
 tags: []
 title: Acknowledgement, Citation and Publication
 vote_count: 0

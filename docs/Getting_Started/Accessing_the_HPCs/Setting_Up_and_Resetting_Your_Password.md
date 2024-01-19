@@ -1,6 +1,5 @@
 ---
 created_at: '2018-07-17T00:54:59Z'
-hidden: false
 tags:
 - howto
 - authentication

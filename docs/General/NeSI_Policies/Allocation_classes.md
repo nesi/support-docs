@@ -1,6 +1,5 @@
 ---
 created_at: '2019-04-25T22:26:56Z'
-hidden: false
 tags: []
 title: Allocation classes
 vote_count: 1

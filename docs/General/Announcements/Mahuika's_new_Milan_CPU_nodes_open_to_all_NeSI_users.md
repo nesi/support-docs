@@ -1,6 +1,5 @@
 ---
 created_at: '2023-03-30T02:23:48Z'
-hidden: false
 tags: []
 title: "Mahuika\u2019s new Milan CPU nodes open to all NeSI users"
 vote_count: 0

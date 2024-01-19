@@ -1,6 +1,5 @@
 ---
 created_at: '2021-03-09T22:46:00Z'
-hidden: false
 status: deprecated
 tags:
 - webinar

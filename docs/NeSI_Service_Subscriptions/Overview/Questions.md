@@ -1,6 +1,5 @@
 ---
 created_at: '2023-07-05T23:57:42Z'
-hidden: false
 tags: []
 title: Questions?
 vote_count: 0

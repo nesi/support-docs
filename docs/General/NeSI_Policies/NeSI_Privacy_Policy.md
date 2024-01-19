@@ -1,6 +1,5 @@
 ---
 created_at: '2021-03-31T04:19:38Z'
-hidden: false
 tags: []
 title: NeSI Privacy Policy
 vote_count: 0
