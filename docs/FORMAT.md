@@ -462,7 +462,7 @@ Leading and trailing `|` are optional.
 ## Macros
 
 Macros allow use of [Jinja filter syntax](https://jinja.palletsprojects.com/en/3.1.x/templates/) _inside the mardown files_ allowing for much more flexible templating.
-More details can be found on the [mkdocs-macros-plugin page](https://mkdocs-macros-plugin.readthedocs.io/)
+More details can be found on the [mkdocs-macros-plugin page](https://mkdocs-macros-plugin.readthedocs.io/).
 
 ### Includes
 
