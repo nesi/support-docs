@@ -1,7 +1,6 @@
 ---
 created_at: '2023-07-05T23:18:57Z'
 hidden: false
-weight: 0
 tags: []
 title: What is a Subscription?
 vote_count: 0

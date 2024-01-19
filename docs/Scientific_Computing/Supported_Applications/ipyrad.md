@@ -1,7 +1,6 @@
 ---
 created_at: '2022-09-26T08:09:35Z'
 hidden: false
-weight: 2
 tags: []
 title: ipyrad
 vote_count: 0

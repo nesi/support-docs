@@ -1,7 +1,6 @@
 ---
 created_at: '2022-12-05T00:50:41Z'
 hidden: false
-weight: 0
 tags:
 - announcement
 title: Accessing NeSI Support during the holiday break

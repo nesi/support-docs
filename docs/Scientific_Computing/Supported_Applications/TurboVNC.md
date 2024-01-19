@@ -1,7 +1,6 @@
 ---
 created_at: '2020-01-22T22:48:09Z'
 hidden: false
-weight: 56
 status: deprecated
 tags: []
 title: TurboVNC

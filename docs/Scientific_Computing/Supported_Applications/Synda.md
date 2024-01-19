@@ -1,7 +1,6 @@
 ---
 created_at: '2019-10-14T21:25:00Z'
 hidden: false
-weight: 52
 tags: []
 title: Synda
 vote_count: 1

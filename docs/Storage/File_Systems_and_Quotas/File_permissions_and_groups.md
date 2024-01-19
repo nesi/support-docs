@@ -1,7 +1,6 @@
 ---
 created_at: '2018-05-21T05:14:00Z'
 hidden: false
-weight: 2
 tags:
 - nobackup
 - project

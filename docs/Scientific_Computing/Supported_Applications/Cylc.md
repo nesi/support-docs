@@ -1,7 +1,6 @@
 ---
 created_at: '2022-08-03T21:35:50Z'
 hidden: false
-weight: 4
 tags: []
 title: Cylc
 vote_count: 0

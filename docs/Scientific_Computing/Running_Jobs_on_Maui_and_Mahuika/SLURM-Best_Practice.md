@@ -1,7 +1,6 @@
 ---
 created_at: '2019-01-18T01:56:15Z'
 hidden: false
-weight: 14
 tags: []
 title: 'SLURM: Best Practice'
 vote_count: 3

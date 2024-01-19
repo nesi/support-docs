@@ -1,7 +1,6 @@
 ---
 created_at: '2019-08-13T23:53:13Z'
 hidden: false
-weight: 49
 tags:
 - containers
 - singularity

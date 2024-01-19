@@ -1,7 +1,6 @@
 ---
 created_at: '2015-11-09T21:20:24Z'
 hidden: false
-weight: 41
 tags:
 - mahuika
 - chemistry

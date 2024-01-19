@@ -1,7 +1,6 @@
 ---
 created_at: '2018-05-21T21:09:39Z'
 hidden: false
-weight: 1
 tags: []
 status: deprecated
 vote_count: 1

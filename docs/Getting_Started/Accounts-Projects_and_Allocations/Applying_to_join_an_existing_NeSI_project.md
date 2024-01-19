@@ -1,7 +1,6 @@
 ---
 created_at: '2019-01-11T01:11:34Z'
 hidden: false
-weight: 2
 tags:
 - info
 - project

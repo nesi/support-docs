@@ -1,7 +1,6 @@
 ---
 created_at: '2018-07-12T03:48:47Z'
 hidden: false
-weight: 17
 tags: []
 title: Compiling software on Mahuika
 vote_count: 1

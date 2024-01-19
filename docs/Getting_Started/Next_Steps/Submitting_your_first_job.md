@@ -1,7 +1,6 @@
 ---
 created_at: '2019-01-07T01:10:28Z'
 hidden: false
-weight: 3
 tags:
 - slurm
 - scheduler

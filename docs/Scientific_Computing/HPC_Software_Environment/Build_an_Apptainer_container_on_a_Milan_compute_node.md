@@ -1,7 +1,6 @@
 ---
 created_at: '2022-12-08T00:55:40Z'
 hidden: false
-weight: 0
 tags: []
 title: Build an Apptainer container on a Milan compute node
 vote_count: 0

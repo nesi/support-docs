@@ -1,7 +1,6 @@
 ---
 created_at: '2019-02-27T21:04:11Z'
 hidden: false
-weight: 4
 tags: []
 title: Initial Globus Sign-Up, and your Globus Identities
 vote_count: 1

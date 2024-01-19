@@ -1,7 +1,6 @@
 ---
 created_at: '2021-11-16T21:30:55Z'
 hidden: false
-weight: 5
 tags: []
 title: Re-creating Shared Collections and Bookmarks in Globus V5
 vote_count: 0

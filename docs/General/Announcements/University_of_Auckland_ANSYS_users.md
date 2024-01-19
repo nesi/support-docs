@@ -1,7 +1,6 @@
 ---
 created_at: '2021-04-03T22:28:54Z'
 hidden: false
-weight: 7
 tags: []
 title: University of Auckland - ANSYS users
 vote_count: 0

@@ -1,7 +1,6 @@
 ---
 created_at: '2018-05-21T03:32:04Z'
 hidden: false
-weight: 11
 tags:
 - maui
 - slurm

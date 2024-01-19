@@ -1,7 +1,6 @@
 ---
 created_at: '2015-08-18T02:30:33Z'
 hidden: false
-weight: 31
 tags:
 - mahuika
 - general

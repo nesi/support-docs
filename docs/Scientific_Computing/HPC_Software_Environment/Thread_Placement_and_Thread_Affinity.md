@@ -1,7 +1,6 @@
 ---
 created_at: '2019-06-13T04:08:43Z'
 hidden: false
-weight: 11
 tags: []
 title: Thread Placement and Thread Affinity
 vote_count: 0

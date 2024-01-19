@@ -1,7 +1,6 @@
 ---
 created_at: '2019-05-06T03:31:33Z'
 hidden: false
-weight: 7
 tags: []
 title: National Data Transfer Platform
 vote_count: 0

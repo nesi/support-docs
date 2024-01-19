@@ -1,7 +1,6 @@
 ---
 created_at: '2024-01-15T13:20:00Z'
 hidden: false
-weight: 0
 tags: []
 title: Run an executable under Apptainer in parallel
 vote_count: 0

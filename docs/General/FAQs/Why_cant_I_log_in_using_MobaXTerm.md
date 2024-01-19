@@ -1,7 +1,6 @@
 ---
 created_at: '2018-09-20T23:07:16Z'
 hidden: false
-weight: 0
 tags: []
 title: Why can't I log in using MobaXTerm?
 vote_count: 15

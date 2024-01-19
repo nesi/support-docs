@@ -1,7 +1,6 @@
 ---
 created_at: '2018-05-18T00:02:48Z'
 hidden: false
-weight: 2
 tags: []
 title: Total HPC Resources Available
 vote_count: 0

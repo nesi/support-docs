@@ -1,7 +1,6 @@
 ---
 created_at: '2021-01-13T00:20:08Z'
 hidden: false
-weight: 1
 tags: []
 title: Acceptable Use Policy
 vote_count: 0

@@ -1,7 +1,6 @@
 ---
 created_at: '2019-02-06T22:27:04Z'
 hidden: false
-weight: 0
 tags: []
 title: Why is my job taking a long time to start?
 vote_count: 1

@@ -1,7 +1,6 @@
 ---
 created_at: '2020-01-15T21:56:01Z'
 hidden: false
-weight: 14
 tags: []
 title: VTune
 vote_count: 0

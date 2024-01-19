@@ -1,7 +1,6 @@
 ---
 created_at: '2019-07-22T03:46:24Z'
 hidden: false
-weight: 2
 tags: []
 title: OpenMP settings
 vote_count: 0

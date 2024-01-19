@@ -1,7 +1,6 @@
 ---
 created_at: '2021-05-12T01:15:39Z'
 hidden: false
-weight: 0
 tags:
 - releasenote
 title: jupyter.nesi.org.nz release notes 12/05/2021

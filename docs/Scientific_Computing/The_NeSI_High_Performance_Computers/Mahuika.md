@@ -1,7 +1,6 @@
 ---
 created_at: '2018-04-22T21:09:28Z'
 hidden: false
-weight: 3
 tags:
 - hpc
 - mahuika

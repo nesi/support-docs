@@ -1,7 +1,6 @@
 ---
 created_at: '2020-02-24T20:26:39Z'
 hidden: false
-weight: 8
 tags: []
 title: Configuring Dask-MPI jobs
 vote_count: 2

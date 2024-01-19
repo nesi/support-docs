@@ -1,7 +1,6 @@
 ---
 created_at: '2022-07-25T21:32:47Z'
 hidden: false
-weight: 0
 tags: []
 title: Webinars
 vote_count: 0
