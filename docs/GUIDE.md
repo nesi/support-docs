@@ -77,139 +77,32 @@ Content is not rendered.
 
 ### Mkdocs Parameters
 
-- `template` : which [template](#templates) to use.
 - `title`    : [title](#title).
 - `weight`   : Used to set page order. Lower comes first. Migrated from Zendesk `position`.
                See [page order](#article-order)
 
 ### Material Parameters
 
-- `description` : used for site meta.           : `string`
-- `icon`        : page icon.                    : `path`
-- `status`      : Will dsiplay a symbol on nav  : `new`, `deprecated`.
-- `hide`        : Used to turn off features.    : `tags`
-
-### Custom Parameters
-
-- `prereq`      : List of prerequisites. Formatted in markdown. Will be rendered inside a admonation.
-- `postreq`     : List of what next. Formatted in markdown. Will be rendered inside a admonation.
-- `suggested`   : Page similar pages to link to. (Not implimented).
+- `description` : Used for site meta.           : `string`
+- `icon`        : Page icon.                    : `path`
+- `status`      : Will display a symbol on nav  : only `new` or `deprecated` are supported
+- `hide`        : Used to turn off features (e.g. table of content)    : `tags`
 
 ### Zendesk Imported
 
-Not used for anything currently. Info imported from Zendesk Page.
+Info imported from Zendesk Page:
 
-- `created_at`:
-- `hidden`:
-- `label_names`: []
-- `vote_count`:
-- `vote_sum`:
-- `zendesk_article_id`:
-- `zendesk_section_id`:
+- `created_at`
+- `hidden`
+- `vote_count`
+- `vote_sum`
+- `zendesk_article_id`
+- `zendesk_section_id`
 
-## Templates
+Not used for anything currently.
 
-Template can be set in article meta.
 
-- `main.html`                : Used for regular pages (default).
-- ~~`application.html`         : Used for 'application' pages, will include software details header (and be linked in supported apps page).~~
-- `supportedApplication.html`: For supported applications page.
-- `home.html`                : Homepage.
-
-By default, the `main` theme will be used. template of a theme to render Markdown pages. You can use the template meta-data key to define a different template file for that specific page. The template file must be available on the path(s) defined in the theme's environment.
-
-## Macros
-
-Macros allow use of Jinja filter syntax _inside the mardown files_ allowing for much more flexible templating.
-More details can be found on the [mkdocs-macros-plugin page](https://mkdocs-macros-plugin.readthedocs.io/)
-
-### Filters
-
-`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
-
-```md
-{% raw %}
-`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
-{% endraw %}
-```
-
-??? "Fancy Example"
-    Our Python modules come prebuilt with the following packages:
-    {% set pyexts=applications.Python.extensions.split(', ') %}
-    <table>
-    <tr><th>Package</th></tr>
-    {% for pyext in pyexts %}
-    <tr><td>{{ pyext }}</td></tr>
-    {% endfor %}
-    </table>
-
-    ```md
-    {% raw %}
-    Our Python modules come prebuilt with the following packages: 
-    {% set pyexts=applications.Python.extensions.split(', ') %}
-    <table>
-    <tr><th>Package</th></tr>
-    {% for pyext in pyexts %}
-    <tr><td>{{ pyext }}</td></tr>
-    {% endfor %}
-    {% endraw %}
-    </table>
-    ```
-
-### Includes
-
-The macro plugin also allows the use of 'includes',
-
-```md
-{% raw %}
-{% include 'snippet.md' %}
-{% endraw %}
-```
-
-There are a few includes you may want to use.
-
-| Path | content | usage |
-| ---- | ------- | ----- |
-| ```{% raw %}{% include "partials/support_request.html" %}{% endraw %}``` | ```<a href="mailto:support@nesi.org.nz">Contact our Support Team</a>``` | Anywhere the user is told to contact support. |
-| ```{% raw %}{% include "partials/appHeader.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
-| ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
-| ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' codeblock. | When dynamic version info is required |
-
-## Style Guide
-
-### Code blocks
-
-Don't include prompt or
-
-### Links
-
-Try to avoid putting links on ambiguous words, e.g.
-
-=== "Bad"
-    View the software homepage [here](https://www.example.com).
-
-    ```md
-    View the homepage [here](https://www.example.com).
-    ```
-
-=== "Better"
-    View the [software homepage](https://www.example.com).
-
-    ```md
-    View the [software homepage](https://www.example.com).
-    ```
-
-## Accessability standards
+### Accessability standards
 
 - [nz spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
 - [WCAG spec](https://www.w3.org/TR/WCAG21/)
-
-## mkdocs.yml
-
-When setting a parameter in the YAML, you can use the following syntax.
-
-```yaml
-some-param : !ENV [TEST_ENV, false]
-```
-
-This will use the value of the env variable `TEST_ENV`, or if unset, false.

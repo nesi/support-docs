@@ -4,6 +4,8 @@
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
     - For style guide, [see GUIDE](GUIDE.md).
 
+This page is an overview of the Markdown syntax supported in this documentation.
+
 ## Headers
 
 <h2>H2</h2>
@@ -342,6 +344,24 @@ snake-case anchors are automatically generated for all headers.
 
 For example a header `## This is my Header` can be linked to with the anchor `[Anchor Link](#this-is-my-header)`
 
+??? tip "Ambiguous links"
+
+    Try to avoid putting links on ambiguous words, e.g.
+
+    === "Bad"
+        View the software homepage [here](https://www.example.com).
+
+        ```md
+        View the homepage [here](https://www.example.com).
+        ```
+
+    === "Better"
+        View the [software homepage](https://www.example.com).
+
+        ```md
+        View the [software homepage](https://www.example.com).
+        ```
+
 ## Tooltips
 
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
@@ -438,3 +458,66 @@ Leading and trailing `|` are optional.
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 ```
+
+## Macros
+
+Macros allow use of [Jinja filter syntax](https://jinja.palletsprojects.com/en/3.1.x/templates/) _inside the mardown files_ allowing for much more flexible templating.
+More details can be found on the [mkdocs-macros-plugin page](https://mkdocs-macros-plugin.readthedocs.io/)
+
+### Includes
+
+The macro plugin allows the use of 'includes', here is an example.
+
+```md
+{% raw %}
+{% include 'snippet.md' %}
+{% endraw %}
+```
+
+There are a few includes you may want to use.
+
+| Path | content | usage |
+| ---- | ------- | ----- |
+| ```{% raw %}{% include "partials/support_request.html" %}{% endraw %}``` | ```<a href="mailto:support@nesi.org.nz">Contact our Support Team</a>``` | Anywhere the user is told to contact support. |
+| ```{% raw %}{% include "partials/appHeader.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
+| ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
+| ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' codeblock. | When dynamic version info is required |
+
+### Variables injection
+
+Here is an example using dynamically using the module version information.
+
+`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+
+```md
+{% raw %}
+`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+{% endraw %}
+```
+
+### Advanced Macros
+
+And here is another example showing all Python packages installed in Python modules.
+
+??? "Fancy Example"
+    Our Python modules come prebuilt with the following packages:
+    {% set pyexts=applications.Python.extensions.split(', ') %}
+    <table>
+    <tr><th>Package</th></tr>
+    {% for pyext in pyexts %}
+    <tr><td>{{ pyext }}</td></tr>
+    {% endfor %}
+    </table>
+
+    ```md
+    {% raw %}
+    Our Python modules come prebuilt with the following packages: 
+    {% set pyexts=applications.Python.extensions.split(', ') %}
+    <table>
+    <tr><th>Package</th></tr>
+    {% for pyext in pyexts %}
+    <tr><td>{{ pyext }}</td></tr>
+    {% endfor %}
+    {% endraw %}
+    </table>
+    ```
