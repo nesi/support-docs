@@ -52,12 +52,6 @@ extra_css:
 extra_javascript:
     - assets/javascripts/general.js
   # - assets/javascripts/supportedApplications.js
-# nav:
-#   - "Getting Started": "Getting_Started/"
-#   - "General": "General/"
-#   - "Scientific Computing": "Scientific_Computing/"
-#   - "Storage": "Storage/"
-#   - "NeSI Service Subscriptions": "NeSI_Service_Subscriptions/"
 theme:
   custom_dir: overrides
   favicon: assets/icons/favicon.ico
