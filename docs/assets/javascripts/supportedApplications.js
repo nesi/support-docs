@@ -88,8 +88,6 @@ function filterSearch() {
         element = $(this)
         comptxt = (element.text() ?? "").toLowerCase(); // Flatten content
         $(element).removeClass('hide_search'); //Show all element    
-        console.log(matchClasses(element, domain_tags) && matchClasses(element, cluster_tags) && matchSearch(comptxt))
-
         // If element matches all contitions, leave visible and skip to next element
         if (matchClasses(element, domain_tags) && matchClasses(element, cluster_tags) && matchSearch(comptxt)) {
             return true
