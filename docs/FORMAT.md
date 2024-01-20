@@ -1,24 +1,26 @@
 **[CLICK HERE TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/format/)**{ .hidden }
 
-# Title (H1)
+!!! prerequisite "See also"
+    - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
+    - For information about page creation, [see NEWPAGE](NEWPAGE.md).
+
+This page is an overview of the Markdown syntax supported in this documentation.
+
+## Headers
+
+<h2>H2</h2>
 
 ```md
-# Title (H1)
-```
-
 ## H2
-
-```md
-## H2
 ```
 
-### H3
+<h3>H3</h3>
 
 ```md
 ### H3
 ```
 
-#### H4
+<h4>H4</h4>
 
 ```md
 #### H4
@@ -26,9 +28,9 @@
 
 Headers should have a blank line before and after.
 
-'H1' (`#`) is for the page title. Setting a title here will change it in the nav also.
+Don't use `H1` (`#`) this is reserved for the page title. Setting a title here will change it in the nav also.
 
-### Line breaks
+## Line breaks
 
 Put 2 spaces at the end of a line to force a line break.  
 If you simply hit enter and don't use 2 spaces it will be considered one line.
@@ -38,27 +40,27 @@ Put 2 spaces at the end of a line to force a line break.
 If you simply hit enter and don't use 2 spaces it will be considered one line.
 ```
 
-### Text Emphasis
+## Text Emphasis
 
 **bold**: `**bold**`
 
 _italic_: `_italic`
 
-### Tab Containers
+## Tab Containers
 
 === "Tab One"
-    someting in the tab
+    something in the tab
 === "Tab two"
     something else
 
 ```md
 === "Tab One"
-    someting in the tab
+    something in the tab
 === "Tab two"
     something else
 ```
 
-### Admonitions
+## Admonitions
 
 !!! warning
     A warning.
@@ -68,7 +70,7 @@ _italic_: `_italic`
     A warning.
 ```
 
-#### Admonition Titles
+### Admonition Titles
 
 !!! info "Optional title"
     Admonition with optional title.
@@ -83,14 +85,14 @@ refrain from using something unnecessary or non descriptive (e.g. `!!! info "Mor
 
 Don't use a title if another Admonition already exists for that purpose (e.g. `!!! info "Watch out!"`).
 
-#### Collapsable Admonitions
+### Collapsable Admonitions
 
 Any Admonition can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
 
 Consider making a Admonition collapsable-open (`???+`) if it is particularly long.
 An Admonition **shouldn't be made collapsable-closed** (`???`) unless it has been given an **optional title explaining it's contents**.
 
-#### Admonition Flavours
+### Admonition Flavours
 
 There are various flavors.
 
@@ -247,13 +249,13 @@ There are various flavors.
     !!! file-export
         don't use this (unless Dini).
 
-### Code
+## Code
 
-#### Block
+### Block
 
-Code blocks require a language lexxer in order to do syntax hilighting, e.g. `python` ,`slurm`, `cuda`, `json`, `markdown`, `bash`
+Code blocks require a language lexer in order to do syntax highlighting, e.g. `python` ,`slurm`, `cuda`, `json`, `markdown`, `bash`
 (most of these have short codes too, `py`,`sl`,`cd`,`md`,`sh`).
-[A full list of lexxers can be found in this list](https://pygments.org/languages/).
+[A full list of lexers can be found in this list](https://pygments.org/languages/).
 
 ```py
 import somepackage
@@ -286,7 +288,7 @@ some code
 
 DON'T prefix a command with `$` (e.g. `$ ls` if this is something we want it should be added through formatting, not text.
 
-#### Inline
+### Inline
 
 This is some `echo "Inline Code"`.
 
@@ -295,7 +297,7 @@ This is some `echo "Inline Code"`.
 Inline code does not have syntax highlighting.
 Code should be used for any text that you want the user to copy exactly.
 
-#### Keyboard
+### Keyboard
 
 Keyboard keys can be added using the `<kbd>` tag.
 
@@ -307,7 +309,7 @@ Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 
 Note the additional spacing around the `+` else it will appear cramped.
 
-### Images
+## Images
 
 ```md
 ![This is an image](./assets/images/ANSYS_0.png)
@@ -315,7 +317,7 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 ![This is an image](./assets/images/ANSYS_0.png)
 
-### Links
+## Links
 
 [External Link]("https://example.com")
 
@@ -342,7 +344,25 @@ snake-case anchors are automatically generated for all headers.
 
 For example a header `## This is my Header` can be linked to with the anchor `[Anchor Link](#this-is-my-header)`
 
-### Tooltips
+??? tip "Ambiguous links"
+
+    Try to avoid putting links on ambiguous words, e.g.
+
+    === "Bad"
+        View the software homepage [here](https://www.example.com).
+
+        ```md
+        View the homepage [here](https://www.example.com).
+        ```
+
+    === "Better"
+        View the [software homepage](https://www.example.com).
+
+        ```md
+        View the [software homepage](https://www.example.com).
+        ```
+
+## Tooltips
 
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 
@@ -350,15 +370,15 @@ For example a header `## This is my Header` can be linked to with the anchor `[A
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 ```
 
-Acroynym should be automatically tooltipped e.g. MPI.
+Acroynym should be automatically made tooltips e.g. MPI.
 
 ```md
-Acroynym should be automatically tooltipped e.g. MPI.
+Acroynym should be automatically made tooltips e.g. MPI.
 ```
 
-### Lists
+## Lists
 
-#### Unordered List
+### Unordered List
 
 - item1
 - item2
@@ -373,10 +393,10 @@ Acroynym should be automatically tooltipped e.g. MPI.
 - item
 - nested
   - items
-    - nesteder
+    - nested-er
 ```
 
-#### Ordered List
+### Ordered List
 
 1. item1
 2. a
@@ -399,18 +419,18 @@ Acroynym should be automatically tooltipped e.g. MPI.
 3. nested
     1. nested item 1
     2. nested item 2
-        1. even nesteder
+        1. even nested-er
 ```
 
 *Note, nested list items use numbers, but will be rendered as whatever the indent is.*
 
-### Tables
+## Tables
 
 [Markdown Table Generator](https://www.tablesgenerator.com/markdown_tables), is a handy tool for complex tables/
 
-Tables can be constructed using `|` to seperate columns, and `--` to designate headers.
+Tables can be constructed using `|` to separate columns, and `--` to designate headers.
 
-Number of dashes has no effect, things dont have to be lined up when in markdown, just looks nice.
+Number of dashes has no effect, things don't have to be lined up when in markdown, just looks nice.
 Leading and trailing `|` are optional.
 
 | Head   | Head   |
@@ -438,3 +458,66 @@ Leading and trailing `|` are optional.
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 ```
+
+## Macros
+
+Macros allow use of [Jinja filter syntax](https://jinja.palletsprojects.com/en/3.1.x/templates/) _inside the mardown files_ allowing for much more flexible templating.
+More details can be found on the [mkdocs-macros-plugin page](https://mkdocs-macros-plugin.readthedocs.io/).
+
+### Includes
+
+The macro plugin allows the use of 'includes', here is an example.
+
+```md
+{% raw %}
+{% include 'snippet.md' %}
+{% endraw %}
+```
+
+There are a few includes you may want to use.
+
+| Path | content | usage |
+| ---- | ------- | ----- |
+| ```{% raw %}{% include "partials/support_request.html" %}{% endraw %}``` | ```<a href="mailto:support@nesi.org.nz">Contact our Support Team</a>``` | Anywhere the user is told to contact support. |
+| ```{% raw %}{% include "partials/appHeader.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
+| ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
+| ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' codeblock. | When dynamic version info is required |
+
+### Variables injection
+
+Here is an example using dynamically using the module version information.
+
+`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+
+```md
+{% raw %}
+`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+{% endraw %}
+```
+
+### Advanced Macros
+
+And here is another example showing all Python packages installed in Python modules.
+
+??? "Fancy Example"
+    Our Python modules come prebuilt with the following packages:
+    {% set pyexts=applications.Python.extensions.split(', ') %}
+    <table>
+    <tr><th>Package</th></tr>
+    {% for pyext in pyexts %}
+    <tr><td>{{ pyext }}</td></tr>
+    {% endfor %}
+    </table>
+
+    ```md
+    {% raw %}
+    Our Python modules come prebuilt with the following packages: 
+    {% set pyexts=applications.Python.extensions.split(', ') %}
+    <table>
+    <tr><th>Package</th></tr>
+    {% for pyext in pyexts %}
+    <tr><td>{{ pyext }}</td></tr>
+    {% endfor %}
+    {% endraw %}
+    </table>
+    ```
