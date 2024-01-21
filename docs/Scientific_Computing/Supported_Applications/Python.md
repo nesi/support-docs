@@ -1,7 +1,5 @@
 ---
 created_at: '2015-08-18T05:16:01Z'
-hidden: false
-weight: 44
 tags:
 - ml
 - language

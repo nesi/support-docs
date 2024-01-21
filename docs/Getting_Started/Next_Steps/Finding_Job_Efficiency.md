@@ -1,7 +1,5 @@
 ---
 created_at: '2019-04-07T23:56:57Z'
-hidden: false
-weight: 5
 tags:
 - slurm
 vote_count: 8

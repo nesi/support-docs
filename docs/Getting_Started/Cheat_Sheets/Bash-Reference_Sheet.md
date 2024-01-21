@@ -1,7 +1,5 @@
 ---
 created_at: '2020-02-25T02:45:24Z'
-hidden: false
-weight: 0
 tags: []
 title: 'Bash: Reference Sheet'
 vote_count: 2

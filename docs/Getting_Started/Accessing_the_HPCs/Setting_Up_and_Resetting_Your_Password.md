@@ -1,7 +1,5 @@
 ---
 created_at: '2018-07-17T00:54:59Z'
-hidden: false
-weight: 0
 tags:
 - howto
 - authentication

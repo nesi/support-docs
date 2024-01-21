@@ -1,7 +1,5 @@
 ---
 created_at: '2018-05-21T01:43:06Z'
-hidden: false
-weight: 5
 tags:
 - maui
 - XC50

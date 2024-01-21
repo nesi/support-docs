@@ -1,7 +1,5 @@
 ---
 created_at: '2022-08-10T21:31:45Z'
-hidden: false
-weight: 3
 tags: []
 title: Clair3
 vote_count: 0

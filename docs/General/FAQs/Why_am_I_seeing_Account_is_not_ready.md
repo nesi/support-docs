@@ -1,7 +1,5 @@
 ---
 created_at: '2018-11-05T21:24:29Z'
-hidden: false
-weight: 0
 tags:
 - access
 - account

@@ -1,7 +1,5 @@
 ---
 created_at: '2022-03-24T22:11:13Z'
-hidden: false
-weight: 0
 tags: []
 title: 'tmux: Reference sheet'
 vote_count: 1

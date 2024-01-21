@@ -1,7 +1,5 @@
 ---
 created_at: '2018-05-21T03:28:20Z'
-hidden: false
-weight: 9
 tags:
 - mahuika
 - slurm

@@ -1,6 +1,5 @@
 ---
 created_at: '2021-08-25T02:05:42Z'
-hidden: false
 tags: []
 title: 'Profiler: VTune'
 vote_count: 1

@@ -1,7 +1,5 @@
 ---
 created_at: '2021-08-27T03:30:10Z'
-hidden: false
-weight: 3
 tags: []
 title: Globus V5 Paths, Permissions, Storage Allocation
 vote_count: 0

@@ -1,7 +1,5 @@
 ---
 created_at: '2021-05-26T00:31:12Z'
-hidden: false
-weight: 5
 tags: []
 title: New capabilities for Machine Learning and GPU pricing updates
 vote_count: 0

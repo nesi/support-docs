@@ -7,10 +7,9 @@ mkdocs-spellcheck
 mkdocs-simple-hooks
 mkdocs-macros-plugin
 mkdocs-git-authors-plugin
-mkdocs-literate-nav
 mkdocs-git-revision-date-localized-plugin
 mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_file
-mkdocs-nav-weight
+mkdocs-awesome-pages-plugin
 
 neoteroi-mkdocs
 codespell

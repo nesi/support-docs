@@ -1,6 +1,5 @@
 ---
 created_at: '2019-06-16T21:30:28Z'
-hidden: false
 tags: []
 vote_count: 1
 vote_sum: 1

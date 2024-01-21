@@ -1,7 +1,5 @@
 ---
 created_at: '2019-09-15T23:36:59Z'
-hidden: false
-weight: 1
 description: Description of NeSI's automatic deletion of old data.
 tags:
 - nobackup

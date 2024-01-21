@@ -1,7 +1,5 @@
 ---
 created_at: '2022-07-25T21:33:58Z'
-hidden: false
-weight: 0
 tags: []
 title: Workshops
 status: deprecated

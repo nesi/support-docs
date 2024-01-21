@@ -1,13 +1,7 @@
 ---
 created_at: '2024-01-15T13:20:00Z'
-hidden: false
-weight: 0
 tags: []
 title: Run an executable under Apptainer in parallel
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 
-zendesk_section_id:
 ---
 
 This article describes how to run an [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface) program that was compiled in an [Apptainer](https://apptainer.org/) environment in parallel, using the host MPI library.
