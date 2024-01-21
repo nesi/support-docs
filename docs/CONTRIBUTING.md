@@ -1,4 +1,8 @@
-**[CLICK HERE TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/contributing/)**{ .hidden }
+---
+title: Contributing
+---
+
+**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/contributing/)**{ .hidden }
 
 !!! prerequisite "See also"
     - For examples of markdown use, [see FORMAT](FORMAT.md).
@@ -12,15 +16,15 @@ Press `.`, will open up Visual Studio Code in browser.
 
 ## Local Development Environment
 
-A local development environment is not required to make doc edits, but if you are making lots of changes, the realtime rendering can be quite helpful.
+A local development environment is not required to make doc edits, but if you are making lots of changes, the real time rendering can be quite helpful.
 
-### First time setup
+### First Time Setup
 
 You will need to have Python **3.10** or later installed on your computer.
 
 Clone this repository and create a Python virtual environment using:
 
-```bash
+```sh
 git clone https://github.com/nesi/support-docs-concept.git
 cd support-docs-concept
 python -m venv .venv
@@ -30,13 +34,13 @@ pip3 install -r requirements.txt
 
 ### Make Development Branch
 
-```bash
+```sh
 git checkout -b my_development_branch
 ```
 
 ### Build and deploy
 
-```bash
+```sh
 source .venv/bin/activate
 mkdocs serve -c
 ```
@@ -65,7 +69,7 @@ Custom snippets can be added in [`../.vscode/includes.code-snippets`](../.vscode
 
 Some of the same checks run during the GitHub CI, can also be run in VS Code.
 
-This is shown with word underlining.
+This is shown with word underlining, and in the 'PROBLEMS' tab in the terminal.
 
 Tasks allow continuous checks to be run in the background, these can be defined in [`../.vscode/tasks.json`](../.vscode/tasks.json), also include in [`../.vscode/settings.json`](../.vscode/settings.json) in order to trigger on save.
 
@@ -102,13 +106,13 @@ Under the 'pull requests' tab, open one of the pending requests.
 
 Clicking on the 'Files Changed' tab, will give a convenient diff of the changes, as well as inline errors identified by the CI checks.
 
-If some of the CI checks failed (make sure they are not important ones), you will have to click the  `Merge without waiting for requirements to be met (bypass branch protections)` button before proceeding with the merge. 
+If some of the CI checks failed (make sure they are not important ones), you will have to click the  `Merge without waiting for requirements to be met (bypass branch protections)` button before proceeding with the merge.
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
 ## Adding Words to Dictionary
 
-If the CI is failing the spellcheck phase, and you beleive the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
+If the CI is failing the spellcheck phase, and you believe the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
 
 1. Visit the [NeSI Word List](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
 2. Once changes to the word list have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
@@ -117,3 +121,6 @@ If the CI is failing the spellcheck phase, and you beleive the identified words 
 ## Raise an issue
 
 *Not documented at the moment (TODO)*
+
+
+

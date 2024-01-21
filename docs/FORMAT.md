@@ -1,4 +1,8 @@
-**[CLICK HERE TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/format/)**{ .hidden }
+---
+title: Formatting
+---
+
+**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/format/)**{ .hidden }
 
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
@@ -29,6 +33,11 @@ This page is an overview of the Markdown syntax supported in this documentation.
 Headers should have a blank line before and after.
 
 Don't use `H1` (`#`) this is reserved for the page title. Setting a title here will change it in the nav also.
+
+h2 and h3 elements will be used to generate a table of contents (toc).
+
+Try to keep headers short enough that they do not 'wrap' (become more than one line) in the toc,
+this usually happens around 32-ish characters however this will vary depending on the letters being used.
 
 ## Line breaks
 
@@ -107,7 +116,7 @@ There are various flavors.
     *`x` other command may be useful here.*
 
 !!! info
-    Use this to provide (optional) additional context or make an in depth explaination.
+    Use this to provide (optional) additional context or make an in depth explanation.
     *A little bit of info that isn't required for understanding the next paragraph.*
 
 !!! warning
@@ -340,9 +349,10 @@ Note the additional spacing around the `+` else it will appear cramped.
 [Anchor Link](#links)
 ```
 
-snake-case anchors are automatically generated for all headers.
+`snake-case` anchors are automatically generated for all headers.
 
-For example a header `## This is my Header` can be linked to with the anchor `[Anchor Link](#this-is-my-header)`
+The anchor will be the same as the header text with all non-alphanumeric characters removed, converted to lower case, and space characters replaced with `-`.
+For example a header `## This is my (nasty-Header)` can be linked to with the anchor `[Anchor Link](#this-is-my-nastyheader)`
 
 ??? tip "Ambiguous links"
 
@@ -370,10 +380,10 @@ For example a header `## This is my Header` can be linked to with the anchor `[A
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 ```
 
-Acroynym should be automatically made tooltips e.g. MPI.
+Acroynym should be automatically made tool-tips e.g. MPI.
 
 ```md
-Acroynym should be automatically made tooltips e.g. MPI.
+Acroynym should be automatically made tool-tips e.g. MPI.
 ```
 
 ## Lists
@@ -407,7 +417,7 @@ Acroynym should be automatically made tooltips e.g. MPI.
 3. nested
    1. nested item 1
    2. nested item 2
-      1. even nesteder
+      1. even nested-er
 
 ```md
 1. item1
@@ -461,7 +471,7 @@ Leading and trailing `|` are optional.
 
 ## Macros
 
-Macros allow use of [Jinja filter syntax](https://jinja.palletsprojects.com/en/3.1.x/templates/) _inside the mardown files_ allowing for much more flexible templating.
+Macros allow use of [Jinja filter syntax](https://jinja.palletsprojects.com/en/3.1.x/templates/) _inside the markdown files_ allowing for much more flexible templating.
 More details can be found on the [mkdocs-macros-plugin page](https://mkdocs-macros-plugin.readthedocs.io/).
 
 ### Includes
@@ -481,7 +491,7 @@ There are a few includes you may want to use.
 | ```{% raw %}{% include "partials/support_request.html" %}{% endraw %}``` | ```<a href="mailto:support@nesi.org.nz">Contact our Support Team</a>``` | Anywhere the user is told to contact support. |
 | ```{% raw %}{% include "partials/appHeader.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
 | ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
-| ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' codeblock. | When dynamic version info is required |
+| ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' code-block. | When dynamic version info is required |
 
 ### Variables injection
 
@@ -500,7 +510,7 @@ Here is an example using dynamically using the module version information.
 And here is another example showing all Python packages installed in Python modules.
 
 ??? "Fancy Example"
-    Our Python modules come prebuilt with the following packages:
+    Our Python modules come pre-built with the following packages:
     {% set pyexts=applications.Python.extensions.split(', ') %}
     <table>
     <tr><th>Package</th></tr>
