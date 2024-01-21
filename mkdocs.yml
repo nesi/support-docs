@@ -63,11 +63,9 @@ theme:
     - content.code.copy
     - content.action.edit 
     - navigation.path # Insiders only
-
   language: en
   logo: assets/icons/logo.svg
   name: material
-
   palette:
     - primary: custom
       scheme: default

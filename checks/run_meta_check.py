@@ -14,7 +14,8 @@ import yaml
 EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r"index.html"]
 
 # Constants for use in checks.
-MAX_TITLE_LENGTH = 24
+MAX_TITLE_LENGTH = 24   # As font isn't monospace, this is only approx
+MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 2
 
 # Warning level for missing parameters.
@@ -37,8 +38,15 @@ EXPECTED_PARAMETERS = {
 
 
 def main():
+    # Per file variables
+    global input_file, title_from_h1, title_from_filename, title, meta, contents
+
+    # Walk variables
+    global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
+
+    global toc, toc_parents, header
+
     input_files = sys.argv[1:]
-    global title, title_from_h1, title_from_filename, input_file, meta, contents, title
 
     for input_file in input_files:
         if any(re.match(pattern, input_file) for pattern in EXCLUDED_FROM_CHECKS):
@@ -57,17 +65,27 @@ def main():
             title_from_filename = _title_from_filename()
             title_from_h1 = _title_from_h1()
             title = meta["title"] if "title" in meta else "" or title_from_h1 or title_from_filename
+            # global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
 
-            for check in CHECKS:
+            header = ""
+            lineno = 0
+            in_code_block = False
+            toc_parents = [title]
+            toc = {title: {"level": 1, "lineno": 0, "children": {}}}
+
+            for line in contents.split("\n"):
+                lineno += 1
+                for check in WALKCHECKS:
+                    in_code_block = not in_code_block if re.match(r"^\s*```\s?\w*$", line) else in_code_block
+                    _get_nav_tree()
+                    _run_check(check)
+            for check in ENDCHECKS:
                 _run_check(check)
 
 
 def _run_check(f):
     for r in f():
-        message = r.pop('message', 'something wrong')
-        level = r.pop('level', 'warning')  # Defult is warning.
-
-        print(f"::{level} file={input_file},title={f.__name__},{','.join(f'{k}={v}' for k,v in r.items())}::{message}")
+        print(f"::{r.get('level', 'warning')} file={input_file},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
 
 
 def _title_from_filename():
@@ -91,6 +109,37 @@ def _get_lineno(pattern):
             return i
         i += 1
     return 0
+
+
+def _get_nav_tree():
+    """Makes a nice dictionary of header tree"""
+    global toc, toc_parents
+
+    def _unpack(toc, a):
+        if len(a) < 2:
+            return toc[a[0]]
+        return _unpack(toc[a[0]]["children"], a[1:])
+
+    if in_code_block:
+        return
+
+    header_match = re.match(r"^(#+)\s*(.*)$", line)
+
+    if not header_match:
+        return
+
+    header_level = len(header_match.group(1))
+    header_name = header_match.group(2)
+
+    if header_level == 1:
+        toc = {header_name: {"lineno": lineno, "children": {}}}
+        toc_parents = [header_name]
+
+    while header_level < len(toc_parents)+1:
+        toc_parents.pop(-1)
+
+    _unpack(toc, toc_parents)["children"][header_name] = {"level": header_level, "lineno": lineno, "children": {}}
+    toc_parents += [header_name]
 
 
 def title_redundant():
@@ -118,7 +167,7 @@ def meta_unexpected_key():
 
 def meta_missing_description():
     if "description" not in meta.keys() or len(meta["description"]) < 1:
-        yield {"line": 0, "message": "Missing 'description' from front matter."}
+        yield {"message": "Missing 'description' from front matter."}
 
 
 def title_length():
@@ -130,7 +179,7 @@ Try to keep it under {MAX_TITLE_LENGTH} characters to avoid word wrapping in the
 
 def minimum_tags():
     if "tags" not in meta or not isinstance(meta["tags"], list):
-        yield {"line": 0, "message": "'tags' property in meta is missing or malformed."}
+        yield {"message": "'tags' property in meta is missing or malformed."}
     elif len(meta["tags"]) < MIN_TAGS:
         yield {"line": _get_lineno(r"^tags:.*$"), "message": "Try to include at least 2 'tags'\
 (helps with search optimisation)."}
@@ -138,18 +187,42 @@ def minimum_tags():
 
 def click_here():
     """
-    not currenlty identified by vscode for some reaon.
+    Click [here](for more details)
     """
-    i = 0
-    for line in contents.split("\n"):
-        i += 1
-        m = re.search(r"\[here\]\(.*\)", line)
-        if m:
-            yield {"line": i, "col": m.start()+1, "endColumn": m.end()-1, "message":
-                   "Don't use 'here' for link text, impedes accessability."}
+    if in_code_block:
+        return
+
+    m1 = re.search(r"\[.*\s?here\s?.*\]\(.*\)", line, re.IGNORECASE)
+    if m1:
+        yield {"line": lineno, "col": m1.start()+1, "endColumn": m1.end()-1, "message": "Don't use 'here' for link text, impedes accessability."}
+
+    # Impliment check for html links when I can be fd.
+    # m2 = re.search(r"\[here\]\(.*\)", line)
 
 
-CHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags, click_here]
+def walk_nav():
+    def _count_children(d):
+        only_child = (len(d["children"]) == 1)
+        for title, c in d["children"].items():
+            if only_child:
+                yield {"line": c['lineno'], "message": f"Header '{title}' is a useless only-child. Give it siblings or remove it."}
+            # As header gets deeper nested, it will have less horizontal room in toc.
+            if len(title) > (MAX_HEADER_LENGTH - (2*c["level"])):
+                yield {"line": c['lineno'], "message": f"Header '{title}' is too long. \
+ Try to keep it under {MAX_HEADER_LENGTH} characters to avoid word wrapping in the toc."}
+            for y in _count_children(c):
+                yield y
+    for d in toc.values():
+        for y in _count_children(d):
+            yield y
+
+
+# For checks to run on page as a whole
+ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags,
+             walk_nav]
+
+# Checks to be run on each line
+WALKCHECKS = [click_here]
 
 
 if __name__ == "__main__":
