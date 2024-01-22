@@ -74,6 +74,9 @@
 .flex-card {
     flex-grow: 1;
 }
+.flex-card-full {
+    flex-basis:100%
+}
 .app-list-header {
       display: inline;
       }
@@ -84,9 +87,10 @@
     display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
+    transition: all .5s ease-in-out;
 }
 .version-table{
-    width: auto;
+    width: max-content;
     flex-grow: 0.9;
 }
 tr.version-table-row>th {
@@ -133,16 +137,6 @@ div#tier2 {
 li {
     list-style: none;
 }
-.sd-warning:before {
-    content: " \f071";
-    font-family: "FontAwesome";
-    color: red;
-    top: -10px;
-    display: unset;
-    border-box: unset;
-    margin-right: 10px;
-    padding-bottom: -20px;
-}
 /*badges*/
 .badge{
     margin: 0 0.5em 0 0.5em;
@@ -156,7 +150,6 @@ li {
 .badge-closeable > button {
     background-color: transparent;
     border: 0;
-    -webkit-appearance: none;
     float: right;
     cursor: pointer;
     padding: 0.4em 0.3em 0.3em 0.6em;
@@ -228,7 +221,8 @@ li {
     display:none;
 }
 .badge-licence{
-    margin:4px -0.5em 0 0em;
+    padding: 0;
+    color: red;
     cursor: default;
 }
 .badge-largeinator{

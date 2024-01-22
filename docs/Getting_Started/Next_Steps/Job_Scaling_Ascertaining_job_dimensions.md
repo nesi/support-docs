@@ -1,7 +1,5 @@
 ---
 created_at: '2019-01-31T01:17:22Z'
-hidden: false
-weight: 6
 tags:
 - scaling
 title: Job Scaling - Ascertaining job dimensions

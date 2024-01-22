@@ -29,9 +29,7 @@ EXPECTED_PARAMETERS = {
     "postreq": "",
     "suggested": "",    # Add info here when implimented.
     "created_at": "",
-    "hidden": [True, False],
     "tags": "",         # Add info here when implimented.
-    "weight": "",
     "vote_count": "",
     "vote_sum": "",
     "zendesk_article_id": "",

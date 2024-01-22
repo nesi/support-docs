@@ -1,7 +1,5 @@
 ---
 created_at: '2019-08-09T00:46:44Z'
-hidden: false
-weight: 33
 status: deprecated
 tags: []
 title: JupyterLab

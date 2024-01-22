@@ -1,7 +1,5 @@
 ---
 created_at: '2023-07-05T23:49:27Z'
-hidden: false
-weight: 1
 tags: []
 title: Allocation approvals
 vote_count: 0

@@ -1,7 +1,5 @@
 ---
 created_at: '2015-10-12T00:28:38Z'
-hidden: false
-weight: 21
 tags:
 - mahuika
 - engineering
@@ -112,8 +110,8 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           2G             # total mem
     module load ABAQUS/{{app.machines.mahuika.versions}}
-    abaqus job="propeller_s4rs_c3d8r verbose=2 interactive \
-        cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads 
+    abaqus job="propeller_s4rs_c3d8r cpus=${SLURM_CPUS_PER_TASK} \
+        mp_mode=threads verbose=2 interactive
     ```
 
 === "UDF"
@@ -132,7 +130,7 @@ Not all solvers are compatible with all types of parallelisation.
     module load imkl
     module  load ABAQUS/{{app.machines.mahuika.versions | last}}
     abaqus job="propeller_s4rs_c3d8r" user=my_udf.f90 \
-        verbose=2 interactive cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads
+        cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads verbose=2 interactive
     ```
 
 === "Distributed Memory"
@@ -156,7 +154,8 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --nodes         1
     
     module load ABAQUS/{{app.machines.mahuika.versions | last}}
-    abaqus job "propeller_s4rs_c3d8r" verbose=2 interactive cpus=${SLURM_NTASKS} mp_mode=mpi
+    abaqus job="propeller_s4rs_c3d8r" cpus=${SLURM_NTASKS} mp_mode=mpi \
+        verbose=2 interactive
     ```
 
 === "GPUs"
@@ -175,8 +174,9 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --gpus-per-node
     module load ABAQUS/{{app.machines.mahuika.versions | last}}
     module load CUDA
-    abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive \
-    cpus=${SLURM_CPUS_PER_TASK} gpus=${SLURM_GPUS_PER_NODE} mp_mode=threads
+    abaqus job="propeller_s4rs_c3d8r" cpus=${SLURM_CPUS_PER_TASK} \
+    gpus=${SLURM_GPUS_PER_NODE} mp_mode=threads \
+    verbose=2 interactive
     ```
 
 ## User Defined Functions
@@ -222,7 +222,26 @@ parameter=value" > "abaqus_v6.env"
 rm "abaqus_v6.env"
 ```
 
+## Performance
+
 ![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
 
 *Note: Hyperthreading off, testing done on small mechanical FEA model.
 Results highly model dependant. Do your own tests.*
+
+## Common Issues
+
+### Unable to create temporary directory
+
+This may be caused by using a path for the `job` parameter. e.g.
+
+```sh
+abaqus job="/nesi/project/nesi99999/my_input.inp"
+```
+
+ABAQUS cannot create subdirectories, leading to the error message about permissions.
+This can be fixed by using the `input` parameter, e.g.
+
+```sh
+abaqus input="/nesi/project/nesi99999/my_input.inp" job="my_input"
+```

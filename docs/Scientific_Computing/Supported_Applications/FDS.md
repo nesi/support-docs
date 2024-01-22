@@ -1,7 +1,5 @@
 ---
 created_at: '2019-02-14T23:33:05Z'
-hidden: false
-weight: 28
 tags:
 - mahuika
 - engineering

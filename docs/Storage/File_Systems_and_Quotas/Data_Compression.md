@@ -1,7 +1,5 @@
 ---
 created_at: '2023-02-08T00:21:51Z'
-hidden: false
-weight: 0
 description: NeSI automatically compresses data to free storage capacity.
 tags:
 - compression

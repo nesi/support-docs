@@ -1,7 +1,5 @@
 ---
 created_at: '2021-03-02T03:32:48Z'
-hidden: false
-weight: 0
 tags:
 - releasenote
 title: Long-term Storage - Nearline release notes v1.1.0.19

@@ -55,7 +55,7 @@
 			"===${0}"
 		]
 	},
-	"Example Slurm Script": {
+	"Insert Example Slurm Script": {
 		"scope": "markdown",
 		"prefix": ["```sl"],
 		"body": [
@@ -69,6 +69,25 @@
 			"",
 			"${0}"
 			"```"
+		]
+	},
+	"Insert Image": {
+		"scope": "markdown",
+		"prefix": ["!["],
+		"body": "![${1:Image Caption}](assets/images${0})"
+	},
+	"Insert Front Matter": {
+		"scope": "markdown",
+		"prefix": ["---"],
+		"body": [
+			"---"
+			"created_at: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			// "title: ${1:${TM_FILENAME/_/ /g}}}",
+			"description: ${1}",
+			"tags: [${2}]",
+			"---",
+			"",
+			"${0}"
 		]
 	}
 }

@@ -1,7 +1,5 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
-hidden: false
-weight: 2
 tags: []
 title: Two Factor Authentication FAQ
 vote_count: 0

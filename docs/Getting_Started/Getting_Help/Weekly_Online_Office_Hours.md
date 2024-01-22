@@ -1,7 +1,5 @@
 ---
 created_at: '2022-05-18T03:38:21Z'
-hidden: false
-weight: 0
 tags: []
 vote_count: 0
 vote_sum: 0

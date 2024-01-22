@@ -1,7 +1,5 @@
 ---
 created_at: '2018-05-21T04:53:52Z'
-hidden: false
-weight: 3
 tags:
 - storage
 - nobackup

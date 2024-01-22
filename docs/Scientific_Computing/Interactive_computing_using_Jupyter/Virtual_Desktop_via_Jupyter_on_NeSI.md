@@ -1,7 +1,5 @@
 ---
 created_at: '2020-07-08T01:45:40Z'
-hidden: false
-weight: 3
 tags: []
 title: Virtual Desktop via Jupyter on NeSI
 vote_count: 2

@@ -1,7 +1,5 @@
 ---
 created_at: '2022-01-31T20:45:43Z'
-hidden: false
-weight: 5
 tags: []
 title: Jupyter kernels - Manual management
 vote_count: 1

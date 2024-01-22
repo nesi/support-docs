@@ -1,6 +1,5 @@
 ---
 created_at: '2019-04-30T00:21:48Z'
-hidden: false
 tags: []
 title: 'Profiler: ARM MAP'
 vote_count: 0
@@ -9,28 +8,27 @@ zendesk_article_id: 360000930396
 zendesk_section_id: 360000278935
 ---
 
-The ARM (previously known as Allinea) provides a package called *forge*,
+ARM (previously known as Allinea) provides a module called *forge*,
 which consists of a debugger, DDT and a profiler, MAP.
 
 ## Introduction to profiling
 
 Profiling tools help you understand how much resources are consumed
 during run time. This can be time, memory, or MPI communication. One
-main goal is to understand in which parts of your code most time is
-spent. Depending on the profiler and the applied methods, profiles can
-be gathered on basis of functions, loops within functions, or source
-code lines. Profiling information is important for optimising code, as
-it enables you to focus your efforts on improving the parts of the code
-that will result in the biggest gains in performance.
+main goal is to understand in which parts of your code most of the time is
+being spent. Depending on the profiler and the applied methods, data can
+be gathered for functions, loops within functions, or source
+code lines. 
+
+Profiling is important as it allows you to focus your efforts on improving 
+the parts of the code that can return the biggest performance gains.
 
 ## Profiling test cases
 
-During a optimisation process profiling will be used regularly to
-monitor the behaviour and change in behaviour of the code. Therefore, it
-is advisable to have a representative but reasonable short test case. It
+It is advisable to start with a representative but reasonable short test case. The test
 should trigger all the desired features of the code. But keep in mind
 that with a reduced run time (e.g. fewer iterations) other parts of the
-code could become more dominant (e.g. initialisation phase).
+code could become more dominant (e.g. initialisation).
 Furthermore, due to possible overhead from the profiling tool, the code
 could run slower than normal.
 
@@ -39,12 +37,11 @@ could run slower than normal.
 MAP is a commercial product, which can profile parallel, multi-threaded
 and single-threaded C/C++, Fortran, as well as Python code. MAP supports
 codes with OpenMP threads and/or MPI communication and can be used
-without code modification.
+without code modification and without the need to recompile the code.
 
 MAP can be launched with a graphical user interface (GUI Launch) or
-without GUI (Express Launch). With the GUI the user specifies all the
-parameters including executables, options and parallelisation parameters
-in a guided form, while with the Express Launch a pre-existing script is
+without (Express Launch). With the GUI, the user specifies all the
+parameters (resources, executable and its options), while with the Express Launch a pre-existing script is
 modified. The “Express Launch”, is preferable especially for jobs in
 complex scripts and workflows.
 
@@ -52,7 +49,7 @@ In either case, the analysis of the profiling data will be undertaken in
 the MAP GUI. This conveniently provides access to different metrics and
 allows the user to navigate through different levels of details,
 browsing through the code, and focusing on specific functions, loops and
-source code lines.  See section [MAP profile](#map-profile) below.
+source lines.  See section [MAP profile](#map-profile) below.
 
 There is also an [Arm Forge Client](https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge)
 you can download to your local machine. Therewith you can browse through
@@ -78,11 +75,12 @@ viewed, for instance, with
 
 The GUI can be started after loading `module load forge` and launching
 
-![Arm MAP main](../../assets/images/Profiler-ARM_MAP.png)
+```sh
+map
+```
+Then click on “PROFILE”.
 
-Click on “PROFILE”.
-
-![MAP\_profile\_python.PNG](../../assets/images/Profiler-ARM_MAP.PNG)
+![MAP\_profile\_python.PNG](../../assets/images/Profiler-ARM_MAP.png)
 
 In the profile menu we need to specify the *executable/application* (in
 this case `python`), the arguments (here `scatter.py` and any additional

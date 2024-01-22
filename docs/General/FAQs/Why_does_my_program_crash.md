@@ -1,7 +1,5 @@
 ---
 created_at: '2019-05-05T23:39:05Z'
-hidden: false
-weight: 0
 tags: []
 title: Why does my program crash?
 vote_count: 0

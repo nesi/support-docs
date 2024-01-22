@@ -1,7 +1,5 @@
 ---
 created_at: '2023-07-06T05:48:34Z'
-hidden: false
-weight: 1
 tags: []
 title: Billing process
 vote_count: 0

@@ -1,7 +1,5 @@
 ---
 created_at: '2021-01-13T00:17:34Z'
-hidden: false
-weight: 2
 tags: []
 title: Access Policy
 vote_count: 1

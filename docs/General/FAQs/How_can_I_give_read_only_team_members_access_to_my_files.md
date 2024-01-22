@@ -1,7 +1,5 @@
 ---
 created_at: '2021-06-04T00:42:20Z'
-hidden: false
-weight: 0
 tags: []
 title: How can I give read-only team members access to my files?
 vote_count: 0

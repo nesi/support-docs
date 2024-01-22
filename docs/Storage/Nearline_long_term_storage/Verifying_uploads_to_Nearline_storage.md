@@ -1,7 +1,5 @@
 ---
 created_at: '2020-04-17T09:40:49Z'
-hidden: false
-weight: 3
 tags: []
 title: Verifying uploads to Nearline storage
 vote_count: 0

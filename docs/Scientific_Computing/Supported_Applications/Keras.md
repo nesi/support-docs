@@ -1,7 +1,5 @@
 ---
 created_at: '2019-07-24T04:30:33Z'
-hidden: false
-weight: 34
 tags: []
 title: Keras
 vote_count: 0

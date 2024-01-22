@@ -1,7 +1,5 @@
 ---
 created_at: '2018-05-18T02:34:03Z'
-hidden: false
-weight: 5
 tags: []
 title: Project Extensions and New Allocations on Existing Projects
 vote_count: 0

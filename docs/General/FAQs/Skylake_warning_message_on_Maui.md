@@ -1,7 +1,5 @@
 ---
 created_at: '2019-07-17T00:10:27Z'
-hidden: false
-weight: 0
 tags: []
 title: "Skylake warning message on M\u0101ui"
 vote_count: 0

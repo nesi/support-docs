@@ -1,7 +1,5 @@
 ---
 created_at: '2020-06-23T23:10:13Z'
-hidden: false
-weight: 12
 tags: []
 title: Miniconda3
 vote_count: 4

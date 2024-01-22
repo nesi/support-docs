@@ -1,6 +1,5 @@
 ---
 template: main.html
-hidden: false
 ---
 
 

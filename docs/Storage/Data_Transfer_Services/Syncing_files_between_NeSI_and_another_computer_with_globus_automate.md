@@ -1,7 +1,5 @@
 ---
 created_at: '2023-01-12T20:45:15Z'
-hidden: false
-weight: 10
 tags: []
 title: Sync'ing files between NeSI and another computer with globus-automate
 vote_count: 0

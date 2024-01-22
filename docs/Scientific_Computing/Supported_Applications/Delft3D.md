@@ -1,7 +1,5 @@
 ---
 created_at: '2020-06-26T06:09:34Z'
-hidden: false
-weight: 11
 tags:
  - hydrodynamics
 title: Delft3D
