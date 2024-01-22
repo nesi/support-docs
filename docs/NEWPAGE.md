@@ -65,7 +65,6 @@ Don't use this method to set the names of articles or category-articles (use the
 nav:
 - Getting_Started
 - Māui-Mahuika (Differences) : Maui_Mahuika_Differences
-- ZA̡͊͠͝LGΌ H̸̡̪̯ͨ͊̽̅̾̎Ȩ̬̩̾͛ͪ̈́̀́͘ ̶̧̨̱̹̭̯ͧ̾ͬC̷̙̲̝͖ͭ̏ͥͮ͟Oͮ͏̮̪̝͍M̲̖͊̒ͪͩͬ̚̚͜Ȇ̴̟̟͙̞ͩ͌͝S̨̥̫͎̭ͯ̿̔̀ͅ : Using_regex_to_parse_html
 - ...
 
 ```
