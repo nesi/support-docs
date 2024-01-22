@@ -46,7 +46,7 @@ By default articles will be ordered alphabetically.
 
 Order can be set manually with the use of a `.page.yml` file, this file determines the ordering of all of it's sibling articles and categories.
 
-The `.page.yml` might looks like this:c
+The `.page.yml` might looks like this:
 
 ```yml
 ---
@@ -105,7 +105,7 @@ The following sections detail the most usual entries.
 
 ### Material Theme Parameters
 
-- `description` : This will appear when Googling, or using the internal search.  : `string`
+- `description` : This will appear when Googling, or using the internal search. : `string`
 - `icon`        : Page icon.                                                    : `path`
 - `status`      : Will display a symbol on nav                                  : only `new` or `deprecated` are supported
 - `hide`        : Used to turn off features (e.g. table of content)             : `tags`
