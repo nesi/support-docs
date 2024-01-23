@@ -8,23 +8,12 @@ zendesk_article_id: 360000817476
 zendesk_section_id: 360000040596
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
- 
-
 Globus provides logins for NeSI users via their organisation, GitHub,
 Google or GlobusID.
 
 To sign up to Globus, please go to <https://transfer.nesi.org.nz/>
 
-## 1) Sign-Up to Globus
+### 1) Sign-Up to Globus
 
 To sign up to globus, you can look for your organisation in the
 drop-down box. If your organisation is not present in the drop-down box,

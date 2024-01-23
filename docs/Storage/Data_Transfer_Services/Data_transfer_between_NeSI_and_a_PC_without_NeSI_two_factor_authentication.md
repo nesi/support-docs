@@ -8,15 +8,6 @@ zendesk_article_id: 6198499650703
 zendesk_section_id: 360000040596
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 This article shows how to transfer potentially large amounts of data
 between NeSI and your personal computer, without requiring 2FA
 (two-factor authentication) each time you initiate the transfer.  This
