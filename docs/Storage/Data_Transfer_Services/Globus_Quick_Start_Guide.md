@@ -10,15 +10,6 @@ zendesk_article_id: 8117557125391
 zendesk_section_id: 360000040596
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 This is intended to be a quick-start guide, for more detailed
 information, please see our other Globus articles here: [Globus
 documentation](https://support.nesi.org.nz/hc/en-gb/sections/360000040596)

@@ -10,17 +10,6 @@ zendesk_article_id: 4405630948495
 zendesk_section_id: 360000040596
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
- 
-
 ## Activating an Endpoint
 
 When you select an endpoint to transfer data to/from, you may be asked

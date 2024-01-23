@@ -10,15 +10,6 @@ zendesk_article_id: 4405623499791
 zendesk_section_id: 360000040596
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Globus default directory
 
 If you point Globus File Manager to an endpoint collection where you
