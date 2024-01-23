@@ -7,7 +7,7 @@ Parse piped in mardownlint output to a format recognised by github actions.
 import json
 import sys
 
-if sys.stdin:
+if sys.stdin.isatty():
     j = json.load(sys.stdin)
     for m in j:
         error_range = ""
