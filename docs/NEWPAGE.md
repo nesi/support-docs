@@ -29,13 +29,9 @@ Try to keep your title short enough that it does not 'wrap' (become more than on
 this usually happens around 24-ish characters however this will vary depending on the letters being used.
 
 !!! tip "File Name hygiene"
-  Regular 'snake_case' naming conventions should be used for articles/categories.
-
-  i.e. No non-alphanumeric characters (except `_` and `-`).
+    Regular 'snake_case' naming conventions should be used for articles/categories, i.e. no non-alphanumeric characters (except `_` and `-`).
   
-  When converting from filename, to title, spaces will replace `_` and the first letter of the first word will be capitalised (if it wasn't already).
-
-  e.g. `My_Nice_and_Tidy_Filename.md` -> `My Nice and Tidy Filename`
+When converting from filename, to title, spaces will replace `_` and the first letter of the first word will be capitalised (if it wasn't already), e.g. `My_Nice_and_Tidy_Filename.md` becomes `My Nice and Tidy Filename`.
 
 In the case of an articles (including category-articles), this title can be overridden by setting one in the page [front-matter using the 'title' keyword](#article-metadata).
 If you need to rename a regular category (one without an `index.md`), this can be done in the [`.pages.yml` file](#articlecategory-order).
@@ -46,7 +42,7 @@ By default articles will be ordered alphabetically.
 
 Order can be set manually with the use of a `.page.yml` file, this file determines the ordering of all of it's sibling articles and categories.
 
-The `.page.yml` might looks like this:c
+The `.page.yml` might looks like this:
 
 ```yml
 ---
@@ -69,7 +65,6 @@ Don't use this method to set the names of articles or category-articles (use the
 nav:
 - Getting_Started
 - Māui-Mahuika (Differences) : Maui_Mahuika_Differences
-- ZA̡͊͠͝LGΌ H̸̡̪̯ͨ͊̽̅̾̎Ȩ̬̩̾͛ͪ̈́̀́͘ ̶̧̨̱̹̭̯ͧ̾ͬC̷̙̲̝͖ͭ̏ͥͮ͟Oͮ͏̮̪̝͍M̲̖͊̒ͪͩͬ̚̚͜Ȇ̴̟̟͙̞ͩ͌͝S̨̥̫͎̭ͯ̿̔̀ͅ : Using_regex_to_parse_html
 - ...
 
 ```
@@ -105,7 +100,7 @@ The following sections detail the most usual entries.
 
 ### Material Theme Parameters
 
-- `description` : This will appear when Googling, or using the internal search.  : `string`
+- `description` : This will appear when Googling, or using the internal search. : `string`
 - `icon`        : Page icon.                                                    : `path`
 - `status`      : Will display a symbol on nav                                  : only `new` or `deprecated` are supported
 - `hide`        : Used to turn off features (e.g. table of content)             : `tags`
