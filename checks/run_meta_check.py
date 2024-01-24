@@ -9,14 +9,19 @@ __author__ = "cal w"
 import re
 import sys
 import yaml
+import os
+from pathlib import Path
 
 # Ignore files if they match this regex
-EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r"index.html"]
+EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r".*/index\.html",  r".*/index\.md", r".*\.pages\.yml"]
 
 # Constants for use in checks.
+
 MAX_TITLE_LENGTH = 24   # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 2
+RANGE_SIBLING = [4, 8]
+DOC_ROOT = "docs"
 
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
@@ -39,24 +44,27 @@ EXPECTED_PARAMETERS = {
 
 def main():
     # Per file variables
-    global input_file, title_from_h1, title_from_filename, title, meta, contents
+    global input_path, title_from_h1, title_from_filename, title, meta, contents, input_path
 
     # Walk variables
     global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
 
     global toc, toc_parents, header
 
-    input_files = sys.argv[1:]
+    inputs = sys.argv[1:]
 
-    for input_file in input_files:
-        if any(re.match(pattern, input_file) for pattern in EXCLUDED_FROM_CHECKS):
+    for input_string in inputs:
+        input_path = Path(input_string)
+        if any(re.match(pattern, input_string) for pattern in EXCLUDED_FROM_CHECKS):
             continue
-        with open(input_file, "r") as f:
+        _nav_check()
+        with open(input_path, "r") as f:
             contents = f.read()
             match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
             if not match:
                 print(
-                    f"::warning file={input_file},title=meta.parse::Meta block missing or malformed."
+                    f"::warning file={input_path},title=meta.parse,col=0,endColumn=99,line=1\
+::Meta block missing or malformed."
                 )
                 meta = {}
             else:
@@ -85,14 +93,14 @@ def main():
 
 def _run_check(f):
     for r in f():
-        print(f"::{r.get('level', 'warning')} file={input_file},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
+        print(f"::{r.get('level', 'warning')} file={input_path},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
 
 
 def _title_from_filename():
     """
     I think this is the same as what mkdocs does.
     """
-    name = " ".join(input_file.split("/")[-1][0:-3].split("_"))
+    name = " ".join(input_path.name[0:-3].split("_"))
     return name[0].upper() + name[1:]
 
 
@@ -140,6 +148,30 @@ def _get_nav_tree():
 
     _unpack(toc, toc_parents)["children"][header_name] = {"level": header_level, "lineno": lineno, "children": {}}
     toc_parents += [header_name]
+
+
+def _nav_check():
+    doc_root = Path(DOC_ROOT).resolve()
+    rel_path = input_path.relative_to(doc_root)
+    for i in range(1, len(rel_path.parts)):
+        num_siblings = 0
+        print(doc_root.joinpath(Path(*rel_path.parts[:i])))
+        print(os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))))
+        for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
+            if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
+                num_siblings += 1
+        if num_siblings < RANGE_SIBLING[0]:
+            print(
+                f"::warning file={input_path},title=meta.siblings,col=0,endColumn=99,line=1::Parent category \
+'{rel_path.parts[i-1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
+items here to justify it's existence."
+            )
+        elif num_siblings > RANGE_SIBLING[1]:
+            print(
+                f"::warning file={input_path},title=meta.siblings,col=0,endColumn=99,line=1::Parent category \
+'{rel_path.parts[i-1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
+under '{RANGE_SIBLING[1]}', maybe add some new categories?"
+            )
 
 
 def title_redundant():
@@ -200,7 +232,7 @@ def click_here():
     # m2 = re.search(r"\[here\]\(.*\)", line)
 
 
-def walk_nav():
+def walk_toc():
     def _count_children(d):
         only_child = (len(d["children"]) == 1)
         for title, c in d["children"].items():
@@ -219,7 +251,7 @@ def walk_nav():
 
 # For checks to run on page as a whole
 ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags,
-             walk_nav]
+             walk_toc]
 
 # Checks to be run on each line
 WALKCHECKS = [click_here]
