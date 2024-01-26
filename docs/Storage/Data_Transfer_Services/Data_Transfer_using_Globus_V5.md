@@ -154,7 +154,7 @@ To find other NeSI endpoints, type in "nesi#":
 
 ![filemanage\_nesi.png](../../assets/images/Data_Transfer_using_Globus_V11.png)
 
-## In brief:
+## In brief
 
 - Sign in to the NeSI Globus Web App <https://transfer.nesi.org.nz/>.
   You will be taken to the *File Manager* page
@@ -194,19 +194,17 @@ transfers between personal endpoints).
 To share files with others outside your filesystem,
 see <https://docs.globus.org/how-to/share-files/>
 
- 
-
 ## Using Globus to transfer data to or from the cloud
 
 Globus connectors enable a uniform interface for accessing, moving, and
 sharing across a variety of cloud providers. We do not currently have a
 connector subscription (note a subscription is required per cloud
 provider) so we can’t use globus to transfer to/from cloud storage. If
-you see this as key for you, please let us know (support@nesi.org.nz).
+you see this as key for you, please let us know (<support@nesi.org.nz>).
 
 Our current advice for moving data to or from the cloud is to use tools
 such as Rclone  ([https://rclone.org/](https://rclone.org/)) or the
-cloud CLI's such as aswcli for S3 (https://aws.amazon.com/cli/) or
+cloud CLI's such as aswcli for S3 (<https://aws.amazon.com/cli/>) or
 gcloud CLI
 ([https://cloud.google.com/sdk/gcloud](https://cloud.google.com/sdk/gcloud)).
 If you have any trouble or would like further advice, please {% include "partials/support_request.html" %}.

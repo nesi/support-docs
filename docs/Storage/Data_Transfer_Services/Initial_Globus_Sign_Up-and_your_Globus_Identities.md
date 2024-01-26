@@ -20,8 +20,6 @@ drop-down box. If your organisation is not present in the drop-down box,
 you can also use any of the available methods - this then becomes your
 primary identity in Globus.
 
-
-
 ![Globus\_login.png](../../assets/images/Initial_Globus_Sign_Up-and_your_Globus_Identities.png)
 
 ### 2) Link other Globus identities to your primary identity
@@ -41,32 +39,10 @@ them  to your Google ID account following the instructions at
 
  ![identities.png](../../assets/images/Initial_Globus_Sign_Up-and_your_Globus_Identities_0.png)
 
- 
-
- 
-
-Note: 
+Note:
 
 If you had a Globus account before February 2016, that account ID is now
 your "GlobusID".
 
 Your groups and data-shares are associated with your login so you should
 ensure that your primary identity is the login you will generally use.
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 

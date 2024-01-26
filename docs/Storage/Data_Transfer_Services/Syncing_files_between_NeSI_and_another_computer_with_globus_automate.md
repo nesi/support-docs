@@ -1,5 +1,7 @@
 ---
 created_at: '2023-01-12T20:45:15Z'
+hidden: false
+weight: 10
 tags: []
 title: Sync'ing files between NeSI and another computer with globus-automate
 vote_count: 0
@@ -7,15 +9,6 @@ vote_sum: 0
 zendesk_article_id: 6202743496591
 zendesk_section_id: 360000040596
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 It is common to generate large amounts of simulation data on NeSI and
 then having to migrate the files to another computer for storage or
@@ -63,20 +56,20 @@ content:
 
 where
 
--   `ENDPOINT1` is the source endpoint UUID, which you can get
+- `ENDPOINT1` is the source endpoint UUID, which you can get
     <https://app.globus.org/collections> by clicking on the collection
     of your choice. Using a guest collection will allow you to transfer
     the data without two-factor authentication
--   `ENDPOINT2` is the destination UUID, e.g. your personal endpoint
+- `ENDPOINT2` is the destination UUID, e.g. your personal endpoint
     UUID, which may be for your private mapped collection if you're
     transferring to your personal computer
--   `SOURCE_FOLDER` is the **relative** path of the source folder in the
+- `SOURCE_FOLDER` is the **relative** path of the source folder in the
     source endpoint. This is a directory, it cannot be a file. Use "/"
     if you do not intend to transfer the data from sub-directories
--   `DESTINATION_FOLDER` is the **absolute** path of the destination
+- `DESTINATION_FOLDER` is the **absolute** path of the destination
     folder in the destination endpoint when the destination is a private
     mapped collection
--   `SYNC_LEVEL` specifies the synchronisation level in the range 0-3.
+- `SYNC_LEVEL` specifies the synchronisation level in the range 0-3.
     `SYNC_LEVEL=0` will transfer new files that do not exist on
     destination. Leaving this setting out will overwrite all the files
     on destination. Click

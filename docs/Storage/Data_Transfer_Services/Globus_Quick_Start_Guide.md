@@ -16,13 +16,11 @@ Globus is a third-party service for transferring large amounts of data
 between two Globus Data Transfer Nodes (DTNs). To use Globus to transfer
 data to or from NeSI, you need:
 
-1.  A NeSI account
-2.  A Globus account
-3.  Access to Globus DTNs or endpoint  
-    -   Access to a DTN (e.g., at your home institution)
-    -   Personal endpoint if no DTN is available
-
- 
+1. A NeSI account
+2. A Globus account
+3. Access to Globus DTNs or endpoint  
+    - Access to a DTN (e.g., at your home institution)
+    - Personal endpoint if no DTN is available
 
 ## Globus Account
 
@@ -41,8 +39,6 @@ other methods.
 For more detailed instructions please see [Initial Globus Sign-Up, and
 your Globus
 Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
-
- 
 
 ## Globus Endpoint Activation
 
@@ -68,9 +64,9 @@ To activate the NeSI endpoint click go to
 <https://transfer.nesi.org.nz/>  and click "file manager" on the menu
 bar on the left.
 
-1.  Next to "Collection", search for "NeSI Wellington DTN V5", select
+1. Next to "Collection", search for "NeSI Wellington DTN V5", select
     it, then click "Continue".
-2.  In the 'Username**'** field, enter your NeSI HPC username. In the
+2. In the 'Username**'** field, enter your NeSI HPC username. In the
     'Password**'** field, the password is
     `Login Password (First Factor)` +
     `Authenticator Code (Second Factor)` e.g. `password123456`. Please
@@ -78,10 +74,6 @@ bar on the left.
     change every time due to the 2nd factor requirement.
 
 ![NeSI\_Globus\_Authenticate.png](../../assets/images/Globus_Quick_Start_Guide_0.png)
-
- 
-
- 
 
 ## Transferring Data
 
@@ -96,13 +88,5 @@ on the right, to the location on the left.
 To see the progress of the transfer, please click 'Activity' on the left
 hand menu bar.
 
- 
-
 If you have any questions or issues using Globus to transfer data to or
 from NeSI, email [support@nesi.org.nz](https://support@nesi.org.nz).
-
- 
-
- 
-
- 
