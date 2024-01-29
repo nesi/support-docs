@@ -21,6 +21,10 @@ markdown_extensions:
   - neoteroi.cards
   - neoteroi.timeline
   - footnotes
+extra:
+  analytics:
+    provider: google
+    property: G-TVQR4R1F40
 plugins:
   - search
   - redirects:
