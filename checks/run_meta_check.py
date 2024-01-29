@@ -152,7 +152,7 @@ def _get_nav_tree():
 
 def _nav_check():
     doc_root = Path(DOC_ROOT).resolve()
-    rel_path = input_path.relative_to(doc_root)
+    rel_path = input_path.resolve().relative_to(doc_root)
     for i in range(1, len(rel_path.parts)):
         num_siblings = 0
         print(doc_root.joinpath(Path(*rel_path.parts[:i])))
