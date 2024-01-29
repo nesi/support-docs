@@ -1,6 +1,7 @@
 ---
 title: Supported Applications
 template: supported_apps.html
+weight: 0
 ---
 
 For more information on environment-modules see [Finding Software](../HPC_Software_Environment/Finding_Software.md).
