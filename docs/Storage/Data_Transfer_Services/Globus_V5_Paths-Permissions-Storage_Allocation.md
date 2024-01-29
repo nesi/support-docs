@@ -25,7 +25,7 @@ path directory, displayed as '`/home/<username>`'.
 | `/nesi/project/<project_code>`  | yes               | `/nesi/project/<project_code>`  | yes                       | **read only** access  |
 
 For more information about NeSI filesystem, check
-[here](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
+[NeSI_File_Systems_and_Quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
 ## Performing Globus transfers to/from Māui/Mahuika
 
@@ -51,16 +51,16 @@ For more information about NeSI filesystem, check
 To create a symbolic link from a first to a second directory and
 vice-versa (using *full* paths for &lt;first&gt; and &lt;second&gt;):
 
-``` sl
-$ cd <first>
-$ ln -s <full_path_to_second> <alias_to_second>
+``` sh
+cd <first>
+ln -s <full_path_to_second> <alias_to_second>
  
-$ cd <second>
-$ ln -s <full_path_to_first>  <alias_to_first>
+cd <second>
+ln -s <full_path_to_first>  <alias_to_first>
 ```
 
 Alias can be any value which is convenient to you, i.e. easy to
 identify.
 After you do this, there will be an alias listed in each directory that
-points to the other directory. You can see this with the **ls** command,
-and **cd** from each to the other using its alias.
+points to the other directory. You can see this with the `ls` command,
+and `cd` from each to the other using its alias.

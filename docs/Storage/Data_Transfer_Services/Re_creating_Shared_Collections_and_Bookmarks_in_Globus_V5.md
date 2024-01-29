@@ -1,8 +1,7 @@
 ---
 created_at: '2021-11-16T21:30:55Z'
-hidden: false
-weight: 5
-tags: []
+tags:
+- globus
 title: Re-creating Shared Collections and Bookmarks in Globus V5
 vote_count: 0
 vote_sum: 0
@@ -17,8 +16,7 @@ Collections*).
   
 ## Guest Collections
 
-Instructions on creating and sharing Guest Collections are available
-[here](https://docs.globus.org/how-to/share-files/)
+[Instructions on creating and sharing Guest Collections](https://docs.globus.org/how-to/share-files/)
 
 In summary:
 

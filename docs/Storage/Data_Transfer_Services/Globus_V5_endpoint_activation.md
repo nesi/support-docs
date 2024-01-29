@@ -29,8 +29,7 @@ the token number.)
 
  ![mceclip0.png](../../assets/images/Globus_V5_endpoint_activation_0.png)
 
-Check the status of your endpoints at
-<https://www.globus.org/app/console/endpoints>
+Check the status of your endpoints at [https://www.globus.org/app/console/endpoints](https://www.globus.org/app/console/endpoints)
 
 ## Managing Endpoint Activation
 

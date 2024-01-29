@@ -98,7 +98,6 @@ any person who has a Globus account.
 </tbody>
 </table>
 
-## How to establish a New Zealand node
-
-{% include "partials/support_request.html" %} can provide details on how to
-join the national data transfer platform.
+!!! tip "How to establish a new node"
+    {% include "partials/support_request.html" %} for details on how to
+    join the national data transfer platform.
