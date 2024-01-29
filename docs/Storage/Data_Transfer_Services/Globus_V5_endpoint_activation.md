@@ -8,17 +8,6 @@ zendesk_article_id: 4405630948495
 zendesk_section_id: 360000040596
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
- 
-
 ## Activating an Endpoint
 
 When you select an endpoint to transfer data to/from, you may be asked
@@ -38,18 +27,12 @@ authentication (2FA-same as accessing NeSI clusters).  In the
 not*** use any additional characters or spaces between your password and
 the token number.)
 
-                     
  ![mceclip0.png](../../assets/images/Globus_V5_endpoint_activation_0.png)
 
-Check the status of your endpoints at
-<https://www.globus.org/app/console/endpoints>[ ](https://www.globus.org/app/console/endpoints)
+Check the status of your endpoints at [https://www.globus.org/app/console/endpoints](https://www.globus.org/app/console/endpoints)
 
 ## Managing Endpoint Activation
 
 If a transfer is in progress and will not finish in time before your
 credentials expire, that transfer will pause and you will need to
 reauthenticate for it to continue.
-
- 
-
- 
