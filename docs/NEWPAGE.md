@@ -46,7 +46,7 @@ By default articles will be ordered alphabetically.
 
 Order can be set manually with the use of a `.page.yml` file, this file determines the ordering of all of it's sibling articles and categories.
 
-The `.page.yml` might looks like this:c
+The `.page.yml` might looks like this:
 
 ```yml
 ---
@@ -105,7 +105,7 @@ The following sections detail the most usual entries.
 
 ### Material Theme Parameters
 
-- `description` : This will appear when Googling, or using the internal search.  : `string`
+- `description` : This will appear when Googling, or using the internal search. : `string`
 - `icon`        : Page icon.                                                    : `path`
 - `status`      : Will display a symbol on nav                                  : only `new` or `deprecated` are supported
 - `hide`        : Used to turn off features (e.g. table of content)             : `tags`
@@ -120,7 +120,7 @@ The following fields were imported from Zendesk Page:
 - `zendesk_article_id`
 - `zendesk_section_id`
 
-They are not used for anything currently, although comparing vote count, and vote sum is useful for gauging the popularity of a page pre migration.
+They are not used for anything currently, although comparing vote count, and vote sum is useful for gauging the popularity of a page migration.
 
 ## Accessibility Standards
 

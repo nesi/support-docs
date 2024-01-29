@@ -13,18 +13,18 @@ zendesk_section_id: 360000040596
 Globus is a third-party service for transferring large amounts of data
 between Globus Data Transfer Nodes (DTNs). For example you can transfer
 data between the NeSI Wellington DTN V5 and your personal workstation
-endpoint, or an endpoint from your institution. With Globus, very high
+endpoint, or an endpoint from your institution. With Globus, high
 data transfer rates are achievable. This service allows data to be
 accessible to any person who has a Globus account. The newest
-implementation (v5) provides extra features and some key differences
-from the previous setup that you can find [here](https://docs.globus.org/globus-connect-server/).
+implementation (v5) provides [extra features and some key differences
+from the previous setup](https://docs.globus.org/globus-connect-server/).
 
 To use Globus on NeSI platforms, you need:
 
-1. A Globus account (see [Initial Globus Sign-Up and Globus
-   ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
-2. An active NeSI account (see [Creating a NeSI
-   Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
+1. A Globus account (see
+  [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
+2. An active NeSI account (see
+  [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
 3. Access privileges on the non-NeSI Globus endpoint/collection you
    plan on transferring data from or to. This other endpoint/collection
    could be a personal one on your workstation, or it could be managed
@@ -73,8 +73,8 @@ institution and NeSI. You may need to apply to the person or group
 administering the managed server endpoint, most likely your IT team, to
 get access to the endpoint. Your institution may even have several
 endpoints, in which case we recommend that you consider which one would
-be best suited for your data transfer requirements. If you need any help
-in regards to this, get in touch with us via <support@nesi.org.nz>, or
+be best suited for your data transfer requirements. If you need any help,
+{% include "partials/support_request.html" %} or
 consult your institution's IT team.
 
 If your institution doesn't have a managed server endpoint, you can set
@@ -91,7 +91,7 @@ file storage (another managed server endpoint):
 
 !!! info
     Log in to the [NeSI File Manager](https://transfer.nesi.org.nz/file-manager) where you are able to search for DTNs in the Collection field.
-    [Here](https://support.nesi.org.nz/hc/en-gb/articles/360000931775) is a listing of available endpoints on the New Zealand Data Transfer Platform.
+    [Listing of available endpoints on the New Zealand Data Transfer Platform](https://support.nesi.org.nz/hc/en-gb/articles/360000931775)
 
 Find the NeSI endpoint by typing in "NeSI Wellington DTN V5". Select the
 endpoint "NeSI Wellington DTN V5" from the list, and you will be asked
@@ -128,12 +128,11 @@ path, then you could change the path to
 ***/nesi/project/&lt;project\_code&gt;***
 
 \(3\) project sub-directories of
-***/nesi/nobackup/&lt;project\_code&gt;***  - see [Globus Paths,
-Permissions,  Storage
-Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md).  
+***/nesi/nobackup/&lt;project\_code&gt;***  - see
+[Globus Paths,Permissions, Storage Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md).  
   
-Navigate to your selected directory. e.g. the *nobackup* filesystem
-*/nesi/nobackup/&lt;project\_code&gt;* and select the two-endpoint panel
+Navigate to your selected directory. e.g. the `nobackup` filesystem
+`/nesi/nobackup/<project_code>` and select the two-endpoint panel
 for transfer.
 
 ![mceclip3.png](../../assets/images/Data_Transfer_using_Globus_V8.png)
@@ -154,7 +153,7 @@ To find other NeSI endpoints, type in "nesi#":
 
 ![filemanage\_nesi.png](../../assets/images/Data_Transfer_using_Globus_V11.png)
 
-## In brief:
+## In brief
 
 - Sign in to the NeSI Globus Web App <https://transfer.nesi.org.nz/>.
   You will be taken to the *File Manager* page
@@ -162,19 +161,18 @@ To find other NeSI endpoints, type in "nesi#":
 - If this is your first time, you will need to create a Globus
   account.
 - Open the two-endpoint panel
-  ![two\_endpoint.png](../../assets/images/Data_Transfer_using_Globus_V12.png){: style="height:2em;"} located
+  ![two_endpoint.png](../../assets/images/Data_Transfer_using_Globus_V12.png){: style="height:2em;"} located
   on the top-right of the *File Manager* page.
 - Select the Endpoints you wish to move files between (start typing
   "nesi#" to see the list of NeSI DTNs to select from).
   [Authenticate](../../Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md)
   at both endpoints.
 - At Globus.org the endpoint **defaults to
-  "/home/&lt;username&gt;" path** (represented by "/~/") on Mahuika or
+  `/home/<username>` path** (represented by `~`) on Mahuika or
   Māui. We do not recommend uploading data to your home directory, as
   home directories are very small. Instead, navigate to an appropriate
-  project directory under /nobackup (see [Globus Paths, Permissions,
-  Storage
-  Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)).
+  project directory under /nobackup (see
+  [Globus Paths, Permissions,  Storage  Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)).
 - Transfer the files by clicking the appropriate
   ![start.png](../../assets/images/Data_Transfer_using_Globus_V13.png){: style="height:1em;"} button
   depending on the direction of the transfer.
@@ -184,17 +182,14 @@ To find other NeSI endpoints, type in "nesi#":
 
 To transfer files into/out of your laptop, desktop computer or any other
 system you control, configure it as a [Globus Personal
-Endpoint](https://www.globus.org/globus-connect-personal) (see [Personal
-Globus Endpoint
-Configuration](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md) for
-transfers between personal endpoints).
+Endpoint](https://www.globus.org/globus-connect-personal) (see
+[Personal Globus Endpoint Configuration](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
+for transfers between personal endpoints).
 
 ## File sharing
 
 To share files with others outside your filesystem,
-see <https://docs.globus.org/how-to/share-files/>
-
- 
+see [https://docs.globus.org/how-to/share-files/](https://docs.globus.org/how-to/share-files/).
 
 ## Using Globus to transfer data to or from the cloud
 
@@ -202,11 +197,11 @@ Globus connectors enable a uniform interface for accessing, moving, and
 sharing across a variety of cloud providers. We do not currently have a
 connector subscription (note a subscription is required per cloud
 provider) so we can’t use globus to transfer to/from cloud storage. If
-you see this as key for you, please let us know (support@nesi.org.nz).
+you see this as key for you, please {% include "partials/support_request.html" %}.
 
 Our current advice for moving data to or from the cloud is to use tools
 such as Rclone  ([https://rclone.org/](https://rclone.org/)) or the
-cloud CLI's such as aswcli for S3 (https://aws.amazon.com/cli/) or
+cloud CLI's such as aswcli for S3 [https://aws.amazon.com/cli/](https://aws.amazon.com/cli/) or
 gcloud CLI
 ([https://cloud.google.com/sdk/gcloud](https://cloud.google.com/sdk/gcloud)).
 If you have any trouble or would like further advice, please {% include "partials/support_request.html" %}.
