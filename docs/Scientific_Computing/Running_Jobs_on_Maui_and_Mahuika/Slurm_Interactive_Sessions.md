@@ -8,29 +8,21 @@ zendesk_article_id: 360001316356
 zendesk_section_id: 360000030876
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 A SLURM interactive session reserves resources on compute nodes allowing
 you to use them interactively as you would the login node.
 
 There are two main commands that can be used to make a session, `srun`
 and `salloc`, both of which use most of the same options available to
-`sbatch` (see [our Slurm Reference
-Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)). 
-!!! prerequisite Warning
+`sbatch` (see
+[our Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)).
+
+!!! warning
      An interactive session will, once it starts, use the entire requested
      block of CPU time and other resources unless earlier exited, even
      if unused. To avoid unnecessary charges to your project, don't forget
      to exit an interactive session once finished.
 
-## Using 'srun --pty bash'
+## Using `srun --pty bash`
 
 `srun` will add your resource request to the queue. When the allocation
 starts, a new bash session will start up on **one of the granted
@@ -38,19 +30,19 @@ nodes.**
 
 For example;
 
-``` sl
+```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
 ```
 
  You will receive a message.
 
-``` sl
+```out
 srun: job 10256812 queued and waiting for resources
 ```
 
 And when the job starts:
 
-``` sl
+```out
 srun: job 10256812 has been allocated resources
 [wbn079 ~ SUCCESS ]$
 ```
@@ -58,8 +50,8 @@ srun: job 10256812 has been allocated resources
 Note the host name in the prompt has changed to the compute node
 `wbn079`.
 
-For a full description of `srun` and its options, see
-[here](https://slurm.schedmd.com/srun.html).
+For a full description of `srun` and its options, see the
+[schedmd documentation](https://slurm.schedmd.com/srun.html).
 
 ## Using `salloc`
 
@@ -70,20 +62,20 @@ a GUI on the login node, but your processes on the compute nodes.
 
 For example:
 
-``` sl
+```sh
 salloc --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00
 ```
 
- You will receive a message.
+You will receive a message.
 
-``` sl
+```out
 salloc: Pending job allocation 10256925
 salloc: job 10256925 queued and waiting for resources
 ```
 
 And when the job starts;
 
-``` sl
+```out
 salloc: job 10256925 has been allocated resources
 salloc: Granted job allocation 10256925 
 [mahuika01~ SUCCESS ]$
@@ -102,7 +94,8 @@ time, however the job may still be delayed if requested resources are
 not available. You can request a start time using the `--begin` flag.
 
 The `--begin` flag takes either absolute or relative times as values.
-!!! prerequisite Warning
+
+!!! warning
      If you specify absolute dates and/or times, Slurm will interpret those
      according to your environment's current time zone. Ensure that you
      know what time zone your environment is using, for example by running
@@ -176,7 +169,8 @@ time.
 
 Slurm offers an easy solution: Identify the job, and use `scontrol` to
 postpone its start time.
-!!! prerequisite Note
+
+!!! note
      Job IDs are unique to each cluster but not across the whole of NeSI.
      Therefore, `scontrol` must be run on a node belonging to the cluster
      where the job is queued.
@@ -184,17 +178,18 @@ postpone its start time.
 The following command will delay the start of the job with numeric ID
 12345678 until (at the earliest) 9:30 a.m. the next day:
 
-``` sl
+```sh
 scontrol update jobid=12345678 StartTime=tomorrowT09:30:00
 ```
 
 This variation, if run on a Friday, will delay the start of the same job
 until (at the earliest) 9:30 a.m. on Monday:
 
-``` sl
+```sh
 scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
 ```
-!!! prerequisite Warning
+
+!!! warning
      Don't just set `StartTime=tomorrow` with no time specification unless
      you like the idea of your interactive session starting at midnight or
      in the wee small hours of the morning.
@@ -205,7 +200,7 @@ In the same way, you can use scontrol to set a job's start time to
 earlier than its current value. A likely application is to allow a job
 to start immediately even though it stood postponed to a later time:
 
-``` sl
+```sh
 scontrol update jobid=12345678 StartTime=now
 ```
 
@@ -213,7 +208,7 @@ scontrol update jobid=12345678 StartTime=now
 
 There are many other changes you can make by means of `scontrol`. For
 further information, please see [the `scontrol`
-documentation](https://slurm.schedmd.com/scontrol.html) (off site).
+documentation](https://slurm.schedmd.com/scontrol.html).
 
 ## Modifying multiple interactive sessions at once
 
@@ -226,7 +221,7 @@ job name.
 For example, if all your interactive job names start with the text "IJ",
 you could do this:
 
-``` sl
+```sh
 # -u $(whoami) restricts the search to my jobs only.
 # The --states=PD option restricts the search to pending jobs only.
 #
@@ -246,7 +241,7 @@ In order to use `scontrol`, we need to throw away all of the line except
 for the job ID, so let's use `awk` to do this, and send the output to
 `scontrol` via `xargs`:
 
-``` sl
+```sh
 squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
 awk '{print $1}' | \
 xargs -I {} scontrol update jobid={} StartTime=tomorrowT09:30:00
@@ -258,7 +253,7 @@ jobs, you can set up cron jobs on Māui, Mahuika and/or Māui-ancil login
 nodes. This is left as an exercise for the reader, having regard to the
 following:
 
--   **Time zone:** Even if your environment is set up to use a different
+- **Time zone:** Even if your environment is set up to use a different
     time zone (commonly New Zealand time, which adjusts for daylight
     saving as needed), time schedules in the crontab itself are
     interpreted in UTC. So if you want something to run at 4:30 p.m. New
@@ -266,7 +261,7 @@ following:
     to run at 4:30 a.m. UTC (during winter) or 3:30 a.m. UTC (during
     summer), and you will need to edit the crontab every six months or
     so.
--   **Weekends:** If you just have a single cron job that postpones
+- **Weekends:** If you just have a single cron job that postpones
     pending interactive jobs until the next day, interactive jobs
     pending on a Friday afternoon will be postponed until Saturday
     morning, which is probably not what you want. Either your cron job
