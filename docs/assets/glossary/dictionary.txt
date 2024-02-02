@@ -54,7 +54,7 @@ AdapterRemoval's
 AdapterRemoval
 Advisor's
 Advisor
-Allinea's
+AgResearch
 Allinea
 AlphaFold's
 AlphaFold
@@ -64,22 +64,25 @@ AlwaysIntelMKL's
 AlwaysIntelMKL
 Amber's
 Amber
+Amdahl
 Anaconda2's
 Anaconda2
 Anaconda3's
 Anaconda3
-Aotearoa's
 Aotearoa
+Apache
 Apptainer's
 Apptainer
 Armadillo's
 Armadillo
 Arrow's
 Arrow
+Aspera
 Aspera-CLI's
 Aspera-CLI
 Augustus's
 Augustus
+AutoDock
 AutoDock-GPU's
 AutoDock-GPU
 AutoDock_Vina's
@@ -167,6 +170,8 @@ BreakDancer
 BreakSeq2's
 BreakSeq2
 Broadwell
+Bruijn
+CAE
 CCL's
 CCL
 CD-HIT's
@@ -174,6 +179,7 @@ CD-HIT
 CDO's
 CDO
 CESM
+CFD
 CFITSIO's
 CFITSIO
 CGAL's
@@ -198,6 +204,7 @@ CPU's
 CPU
 CRAMINO's
 CRAMINO
+CRI
 CRLF
 CTPL's
 CTPL
@@ -215,6 +222,7 @@ Catch2
 CellRanger's
 CellRanger
 CentOS
+Centos
 Centrifuge's
 Centrifuge
 Cereal's
@@ -278,6 +286,9 @@ DISCOVARdenovo's
 DISCOVARdenovo
 DRAM's
 DRAM
+DTNs's
+DTNs
+DTN's
 DTN
 DVS
 DaliLite's
@@ -324,6 +335,7 @@ ETE's
 ETE
 EasyBuild's
 EasyBuild
+Easybuild
 Eigen's
 Eigen
 Elmer's
@@ -352,6 +364,7 @@ FCM's
 FCM
 FDS's
 FDS
+FEA
 FENSAP
 FFTW's
 FFTW
@@ -359,6 +372,7 @@ FFmpeg's
 FFmpeg
 FLTK's
 FLTK
+FTE
 FTGL's
 FTGL
 FastANI's
@@ -410,6 +424,7 @@ GEMMA's
 GEMMA
 GEOS's
 GEOS
+GFortran
 GLM's
 GLM
 GLPK's
@@ -473,23 +488,23 @@ Gerris's
 Gerris
 GetOrganelle's
 GetOrganelle
-GitHub's
 GitHub
-GitLab's
 GitLab
 Glib
 GlimmerHMM's
 GlimmerHMM
-Globus's
 Globus
+GlobusID
 Go's
 Go
 Graphviz's
 Graphviz
+GridRunner
 Gubbins's
 Gubbins
 Guile's
 Guile
+HCS
 HDF's
 HDF
 HDF-EOS's
@@ -546,6 +561,8 @@ IRkernel's
 IRkernel
 ISA-L's
 ISA-L
+Illumina
+ImagMagick
 ImageMagick's
 ImageMagick
 Infernal's
@@ -566,13 +583,12 @@ Java's
 Java
 Jellyfish's
 Jellyfish
+Jinja
 JsonCpp's
 JsonCpp
 Julia's
 Julia
-Jupyter's
 Jupyter
-JupyterHub's
 JupyterHub
 JupyterLab's
 JupyterLab
@@ -587,6 +603,8 @@ Kaiju's
 Kaiju
 Kent_tools's
 Kent_tools
+Keras
+Keycloak
 KorfSNAP's
 KorfSNAP
 Kraken
@@ -625,6 +643,7 @@ LUMPY's
 LUMPY
 LZO's
 LZO
+Landcare
 LegacySystemLibs's
 LegacySystemLibs
 LibTIFF's
@@ -635,7 +654,6 @@ Libint's
 Libint
 LittleCMS's
 LittleCMS
-Lmod's
 Lmod
 Loki's
 Loki
@@ -653,6 +671,8 @@ MATIO's
 MATIO
 MATLAB's
 MATLAB
+MBIE's
+MBIE
 MCL's
 MCL
 MCR's
@@ -684,6 +704,7 @@ MUSCLE's
 MUSCLE
 MUST's
 MUST
+MWLR
 MaSuRCA's
 MaSuRCA
 MacOS
@@ -691,11 +712,12 @@ Magma's
 Magma
 Mahuika's
 Mahuika
+Manaaki
 MarkerMiner's
 MarkerMiner
+Marsden
 Mash's
 Mash
-MathWorks
 Maven's
 Maven
 MaxBin's
@@ -724,6 +746,7 @@ Metashape's
 Metashape
 Metaxa2's
 Metaxa2
+Milan
 Miniconda
 Miniconda3's
 Miniconda3
@@ -783,6 +806,7 @@ NVHPC
 NWChem's
 NWChem
 NZ
+NZD
 NZDT
 NZST
 Nano
@@ -797,7 +821,6 @@ NanoStat
 Nanopore
 NeSI's
 NeSI
-New Zealanders
 New Zealander
 Newton-X's
 Newton-X
@@ -812,6 +835,7 @@ Nsight-Compute's
 Nsight-Compute
 Nsight-Systems's
 Nsight-Systems
+Nvidia
 OASIS3-MCT's
 OASIS3-MCT
 OBITools's
@@ -820,7 +844,6 @@ OCI's
 OCI
 OMA's
 OMA
-OMP's
 OMP
 OOM
 OPARI2's
@@ -838,6 +861,7 @@ Octave's
 Octave
 Octopus's
 Octopus
+OneDrive
 OpenACC
 OpenBLAS's
 OpenBLAS
@@ -854,7 +878,6 @@ OpenFOAM
 OpenGL
 OpenJPEG's
 OpenJPEG
-OpenMP's
 OpenMP
 OpenMPI's
 OpenMPI
@@ -875,6 +898,7 @@ OrthoFinder's
 OrthoFinder
 OrthoMCL's
 OrthoMCL
+Otago
 PALEOMIX's
 PALEOMIX
 PAML's
@@ -898,6 +922,7 @@ PETSc's
 PETSc
 PFFT's
 PFFT
+PFR
 PGI's
 PGI
 PHASIUS's
@@ -911,6 +936,7 @@ PRANK's
 PRANK
 PROJ's
 PROJ
+PacBio
 Pango's
 Pango
 ParMETIS's
@@ -933,6 +959,7 @@ PhyloPhlAn's
 PhyloPhlAn
 Pilon's
 Pilon
+Pletzer
 PnetCDF's
 PnetCDF
 Porechop's
@@ -1081,6 +1108,7 @@ SSAHA2's
 SSAHA2
 SSH
 SSHFS
+SSRF
 STAR's
 STAR
 STAR-Fusion's
@@ -1099,6 +1127,7 @@ ScaLAPACK's
 ScaLAPACK
 Scalasca's
 Scalasca
+Schrödinger
 Score-P's
 Score-P
 SeqAn's
@@ -1120,7 +1149,6 @@ SignalP
 Singularity's
 Singularity
 Skylake
-Slurm's
 Slurm
 Sniffles's
 Sniffles
@@ -1153,6 +1181,7 @@ SuperLU's
 SuperLU
 Supernova's
 Supernova
+Synda
 Szip's
 Szip
 TMHMM's
@@ -1165,6 +1194,7 @@ TURBOMOLE
 TWL-NINJA's
 TWL-NINJA
 TZ
+Tamaki
 Tcl's
 Tcl
 TensorFlow's
@@ -1195,7 +1225,6 @@ Trinotate's
 Trinotate
 Trycycler's
 Trycycler
-Tuakiri's
 Tuakiri
 TuiView's
 TuiView
@@ -1206,11 +1235,14 @@ UCX
 UDF
 UDUNITS's
 UDUNITS
+UI
 USEARCH's
 USEARCH
 UTF
+UUID
 Unicycler's
 Unicycler
+UoA
 VASP's
 VASP
 VCF-kit's
@@ -1223,6 +1255,10 @@ VESTA's
 VESTA
 VIBRANT's
 VIBRANT
+VMs's
+VMs
+VM's
+VM
 VMD's
 VMD
 VNC
@@ -1255,10 +1291,12 @@ VisIt's
 VisIt
 WAAFLE's
 WAAFLE
+WCRP
 WRF
 WSL
 WhatsHap's
 WhatsHap
+Whenua
 WinSCP
 Wise2's
 Wise2
@@ -1278,6 +1316,8 @@ XSD
 XVFB
 XZ's
 XZ
+Xeon
+Xerces
 Xerces-C++'s
 Xerces-C++
 Xming
@@ -1288,6 +1328,8 @@ Yade's
 Yade
 Yasm's
 Yasm
+Zealander
+Zendesk
 ZeroMQ's
 ZeroMQ
 Zip's
@@ -1298,6 +1340,7 @@ admonition
 analytics
 angsd's
 angsd
+annum
 ant's
 ant
 antiSMASH's
@@ -1366,7 +1409,10 @@ chewBBACA
 chiplets
 chopper's
 chopper
+collapsable
+conda
 config
+craype
 cromwell's
 cromwell
 cron
@@ -1375,8 +1421,11 @@ ctags's
 ctags
 ctffind's
 ctffind
+ctrl
 cuDNN's
 cuDNN
+customisable
+customisations
 cutadapt's
 cutadapt
 cuteSV's
@@ -1661,6 +1710,7 @@ lp_solve's
 lp_solve
 lwgrp's
 lwgrp
+lz4's
 lz4
 magma's
 magma
@@ -1682,6 +1732,7 @@ metagenomics
 metagenomic
 miRDeep2's
 miRDeep2
+microarchitecture
 midl's
 midl
 mihi
@@ -1724,6 +1775,7 @@ nanomath's
 nanomath
 nanopolish's
 nanopolish
+nav
 ncbi-vdb's
 ncbi-vdb
 nccmp's
@@ -1734,6 +1786,7 @@ ncview's
 ncview
 ne's
 ne
+nearline's
 nearline
 netCDF's
 netCDF
@@ -1809,6 +1862,7 @@ profilers's
 profilers
 profiler's
 profiler
+programmatically
 programmes
 programme
 prokka's
@@ -1856,6 +1910,7 @@ re2c
 repos
 repo
 reproducibility
+requeued
 rkcommon's
 rkcommon
 rnaQUAST's
@@ -1948,6 +2003,9 @@ tmux's
 tmux
 toolchains
 toolchain
+tooltips's
+tooltips
+tooltip's
 tooltip
 transcriptomes
 transcriptome
@@ -1957,8 +2015,10 @@ trimAl's
 trimAl
 um2netcdf's
 um2netcdf
+unallocated
 unimap's
 unimap
+unmount
 unrar's
 unrar
 util-linux's
