@@ -352,7 +352,7 @@ CP2K is a freely available (GPL) program, written in Fortran 95, to perform atom
 
 **CPU:**
 
-Slectronic circuitry executes instructions of a computer program.
+Electronic circuitry that executes instructions of a computer program.
 
 **CRAMINO:**
 
@@ -2884,6 +2884,10 @@ Mixed Integer Linear Programming (MILP) solver
 
 The light-weight group library defines data structures and collective operations to
 
+**lz4:**
+
+LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.  It features an extremely fast decoder, with speed in multiple GB/s per core.
+
 **magma:**
 
 The MAGMA project aims to develop a dense linear algebra library similar to
@@ -3007,6 +3011,10 @@ Visual browser for netCDF format files.
 **ne:**
 
 ne is a free (GPL'd) text editor based on the POSIX standard
+
+**nearline:**
+
+NeSI nearline client provides 'End User' access to NeSI's archive filesystem Nearline which is connected to a Tape library.
 
 **netCDF:**
 
