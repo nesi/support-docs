@@ -122,5 +122,36 @@ If the CI is failing the spellcheck phase, and you believe the identified words 
 
 *Not documented at the moment (TODO)*
 
+## Contributing to the 'Supported Apps' Page
 
+Quite a lot of data-sources come together to make this page:
 
+- mkdocs article titles
+- lmod info scraped from all clusters
+- licence counts from promethius instance
+- licence details from config file 
+- Manual overwrites in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml).
+
+Most of these are collected together in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml)
+
+### Adding/Fixing Information
+
+#### Description, Homepage, Packages, Clusters
+
+Fix the information in the module file.
+
+#### NeSI Documentation Link
+
+Is there a child page with the same title as the module? (case sensitive).
+
+#### Domain, Licence Type
+
+Can be added in [modules list](https://github.com/nesi/modules-list/blob/main/tags/domains.yml)
+
+#### Network Licence Details
+
+Ask cal, or read the readme at `/opt/nesi/nesi-apps-admin/LicConfig/`
+
+### Everything Else
+
+Can be added in the manual [overwrite file](https://github.com/nesi/modules-list/blob/main/overwrites.yml).
