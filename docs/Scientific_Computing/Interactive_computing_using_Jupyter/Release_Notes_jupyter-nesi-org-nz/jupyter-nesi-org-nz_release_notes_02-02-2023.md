@@ -20,5 +20,5 @@ zendesk_section_id: 360001150156
         *~/.local/Python-3.10-gimkl-2022a* directory, as it could
         conflict with our JupyterLab installation, and consider
         [Installing packages in a Python virtual
-        environment](../../Scientific_Computing/Supported_Applications/Python.md#installing_packages_in_a_python_virtual_environment)
+        environment](../../../Scientific_Computing/Supported_Applications/Python.md#installing_packages_in_a_python_virtual_environment)
         instead

@@ -33,11 +33,10 @@ zendesk_section_id: 360001091155
     images in the *WebP* format.
 - Updated the allocation request form's end date message, restricting
     allocation requests to no further than one year in the future.
-- Changed which system components from NeSI's System Status page
-    *(<https://status.nesi.org.nz/>)* are default notifications emailed
+- Changed which system components from NeSI's [System Status page](https://status.nesi.org.nz) are default notifications emailed
     to users. Users can customise their system status email
     notifications at any time. [Read more about that
-    here](../../General/Announcements/Status_page_subscription_notification_changes.md).
+    here](../../../General/Announcements/Status_page_subscription_notification_changes.md).
 
 If you have any questions about any of the improvements or fixes, please
  {% include "partials/support_request.html" %}.
