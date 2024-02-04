@@ -3,16 +3,6 @@
     {% if lic.faculty_long or lic.faculty_short -%}
         {% set ns.faculty_col = true -%}
     {% endif -%}
-    {% for f in lic.features -%}
-        {% if f.visible_on_docs -%}
-            {% if f.use_conditions -%}
-                {% set ns.condition_col = true -%}
-            {% endif -%}
-            {% if f.slurm_track and f.slurm_token_name -%}
-                {% set ns.token_col = true -%}
-            {% endif -%}
-        {% endif -%}
-    {% endfor -%}
 {% endfor -%}
 <table>
     <thead>
@@ -21,44 +11,16 @@
 {% if ns.faculty_col -%}
     <th>Faculty</th>
 {% endif -%}
-    <th>Feature</th>
-    <!-- <th style="min-width:1rem"></th> -->
-{% if ns.condition_col -%}
-    <th>Conditions</th>
-{% endif -%}
-{% if ns.token_col -%}
-    <th>Token <span class="twemoji" title="Include this in your Slurm script to prevent your job starting without a licence."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path></svg></span></th>
-{% endif -%}
 </tr>
     </thead>
     <tbody>
     {% for lic in app.network_licences -%}
     <tr>
-        {% set vis = lic.features | selectattr("visible_on_docs") | list -%}
-        {% set rowspan = [(vis|length),  1] | max -%}
-        <td rowspan={{rowspan}}>{{ lic.institution_long or lic.institution_short }}</td>
+        <td>{{ lic.institution_long or lic.institution_short }}</td>
         {% if ns.faculty_col -%}
-        <td rowspan={{rowspan}}>{{ lic.faculty_long or lic.faculty_short }}</td>
+        <td>{{ lic.faculty_long or lic.faculty_short }}</td>
         {% endif -%}
-            {% for f in vis -%}
-                <td><em title="{{ f.total }} total licences">{{ f.feature_name }}</em></td>
-                {% if ns.condition_col -%}
-                <td>{{f.use_conditions}}</td>
-                {% endif -%}
-                {% if ns.token_col -%}
-                    <td>
-                        {% if f.slurm_track and f.slurm_token_name -%}
-                        <pre><code>#SBATCH -L={{ f.slurm_token_name }}:{{ f.usage_formula }}</code></pre>
-                        {% else -%}
-                        <!-- <span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span> -->
-                        {% endif -%}
-                    </td>
-                {% endif -%}
-            </tr>
-            {% if loop.last %} {% else %}<tr>{% endif %}
-            {% else %}
-                </tr>
-            {% endfor -%}
+    </tr>
     {% endfor -%}
     </tbody>
 
