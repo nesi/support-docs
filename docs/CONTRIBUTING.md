@@ -55,7 +55,7 @@ You can use any IDE you want, but various tools have been configured for use wit
 
 #### Recommended Extensions
 
-When opening the workspace for the first time, you should be prompted to install the [Recommended VS Code Plugins](../.vscode/extensions.json).
+When opening the workspace for the first time, you should be prompted to install the <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/extensions.json">Recommended VS Code Plugins</a>.
 
 #### Snippets
 
@@ -71,7 +71,7 @@ Some of the same checks run during the GitHub CI, can also be run in VS Code.
 
 This is shown with word underlining, and in the 'PROBLEMS' tab in the terminal.
 
-Tasks allow continuous checks to be run in the background, these can be defined in [`../.vscode/tasks.json`](../.vscode/tasks.json), also include in [`../.vscode/settings.json`](../.vscode/settings.json) in order to trigger on save.
+Tasks allow continuous checks to be run in the background, these can be defined in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/tasks.json">`../.vscode/tasks.json`</a>, also include in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/settings.json">`../.vscode/settings.json`</a> in order to trigger on save.
 
 ## Making a Merge Request
 
