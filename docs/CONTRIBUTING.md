@@ -110,13 +110,20 @@ If some of the CI checks failed (make sure they are not important ones), you wil
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
+## Update Remote Assets
+
+Certain files need to be fetched from other repos for up to date info. This will be automated, but for not the proccess is manual.
+
+1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
+2. A branch `new-assets` will be created, which can be merged into main.
+
 ## Adding Words to Dictionary
 
 If the CI is failing the spellcheck phase, and you believe the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
 
 1. Visit the [NeSI Word List](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
-2. Once changes to the word list have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
-3. A branch `new-assets` will be created, which can be merged into main (you should see your new words are added).
+2. Once changes to the word list have been merged, return to this repo and run [update remote assets](#update-remote-assets).
+3. You should see your new words in the [Dictionary](assets/Glossary/dictionary.txt) if your words included a definition, they will also be in the [Glossary](assets/glossary/Glossary.md).
 
 ## Raise an issue
 
@@ -155,3 +162,7 @@ Ask cal, or read the readme at `/opt/nesi/nesi-apps-admin/LicConfig/`
 ### Everything Else
 
 Can be added in the manual [overwrite file](https://github.com/nesi/modules-list/blob/main/overwrites.yml).
+
+### Updating
+
+Any of these changes will require an [update of remote assets](#update-remote-assets).

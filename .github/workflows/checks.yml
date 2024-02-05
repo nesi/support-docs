@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       fileList:
-          description: Files to Lint (space delimited). Use `docs`/**/*.md` to lint all.
+          description: Files to Lint (space delimited). Use `docs/**/*.md` to lint all.
           required: true
-          default: "docs/specification.md"
+          default: "docs/CONTRIBUTING.md"
           type: string
       checkSpelling:
         description: Check Spelling
