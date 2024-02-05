@@ -35,6 +35,10 @@ Following pages contain information to help maintain the documentation:
 
 We are using the [mkdocs material theme](https://squidfunk.github.io/mkdocs-material/).
 
+## Analyics
+
+The site uses [Google analytics](https://analytics.google.com/analytics/web/#/p424742084). You will need to ask a google workspace admin to add you to the project.
+
 ## Migration
 
 Migration of the Zendesk documentation is done using our [migration pipeline (NeSI internal GitLab](https://git.hpcf.nesi.org.nz/cwal219/migratedocs).
