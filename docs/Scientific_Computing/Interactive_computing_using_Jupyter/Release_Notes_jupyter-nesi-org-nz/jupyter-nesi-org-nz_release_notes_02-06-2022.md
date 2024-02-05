@@ -14,10 +14,10 @@ zendesk_section_id: 360001150156
 ## New and Improved
 
 - Updated JupyterLab version to v3.4.2
-- Updated [RStudio-on-NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md) (v0.22.5): fix library path when using NeSI R package in RStudio (e.g. R-bundle-Bioconductor)
+- Updated [RStudio-on-NeSI](../../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md) (v0.22.5): fix library path when using NeSI R package in RStudio (e.g. R-bundle-Bioconductor)
 - Plotly extension re-added (missing in the previous release)
 - Added [papermill](https://pypi.org/project/papermill/) extension
-- Updated [NeSI Virtual Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md) to v2.4.1
+- Updated [NeSI Virtual Desktop](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md) to v2.4.1
     - Image changes
         - Update default Firefox version.
         - Update to use singularity 3.8.5.

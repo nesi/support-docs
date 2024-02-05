@@ -2,7 +2,7 @@
 title: Contributing
 ---
 
-**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/contributing/)**{ .hidden }
+**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/CONTRIBUTING)**{ .hidden }
 
 !!! prerequisite "See also"
     - For examples of markdown use, [see FORMAT](FORMAT.md).
@@ -55,7 +55,7 @@ You can use any IDE you want, but various tools have been configured for use wit
 
 #### Recommended Extensions
 
-When opening the workspace for the first time, you should be prompted to install the [Recommended VS Code Plugins](../.vscode/extensions.json).
+When opening the workspace for the first time, you should be prompted to install the <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/extensions.json">Recommended VS Code Plugins</a>.
 
 #### Snippets
 
@@ -63,7 +63,7 @@ When opening the workspace for the first time, you should be prompted to install
 
 e.g. starting to type an image include `![my image](` then pressing `ctrl` + `space` will show all the valid paths.
 
-Custom snippets can be added in [`../.vscode/includes.code-snippets`](../.vscode/includes.code-snippets)
+Custom snippets can be added in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/includes.code-snippets.json">`../.vscode/includes.code-snippets`</a>
 
 #### Tasks
 
@@ -71,7 +71,7 @@ Some of the same checks run during the GitHub CI, can also be run in VS Code.
 
 This is shown with word underlining, and in the 'PROBLEMS' tab in the terminal.
 
-Tasks allow continuous checks to be run in the background, these can be defined in [`../.vscode/tasks.json`](../.vscode/tasks.json), also include in [`../.vscode/settings.json`](../.vscode/settings.json) in order to trigger on save.
+Tasks allow continuous checks to be run in the background, these can be defined in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/tasks.json">`../.vscode/tasks.json`</a>, also include in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/settings.json">`../.vscode/settings.json`</a> in order to trigger on save.
 
 ## Making a Merge Request
 
@@ -136,7 +136,7 @@ Quite a lot of data-sources come together to make this page:
 - mkdocs article titles
 - lmod info scraped from all clusters
 - licence counts from promethius instance
-- licence details from config file 
+- licence details from config file
 - Manual overwrites in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml).
 
 Most of these are collected together in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml)
