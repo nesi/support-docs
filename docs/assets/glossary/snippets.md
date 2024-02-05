@@ -174,10 +174,10 @@
 *[CONCOCT]: Program for unsupervised binning of metagenomic contigs by using nucleotide composition,
 *[CP2K's]: CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular
 *[CP2K]: CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular
-*[CPUs's]: Slectronic circuitry executes instructions of a computer program.
-*[CPUs]: Slectronic circuitry executes instructions of a computer program.
-*[CPU's]: Slectronic circuitry executes instructions of a computer program.
-*[CPU]: Slectronic circuitry executes instructions of a computer program.
+*[CPUs's]: Electronic circuitry that executes instructions of a computer program.
+*[CPUs]: Electronic circuitry that executes instructions of a computer program.
+*[CPU's]: Electronic circuitry that executes instructions of a computer program.
+*[CPU]: Electronic circuitry that executes instructions of a computer program.
 *[CRAMINO's]: A tool for quick quality assessment of cram and bam files, intended for long read sequencing
 *[CRAMINO]: A tool for quick quality assessment of cram and bam files, intended for long read sequencing
 *[CTPL's]: C++ Thread Pool Library
@@ -1438,6 +1438,8 @@ This allows applications that 'require' a GUI to run in a command line environme
 *[lp_solve]: Mixed Integer Linear Programming (MILP) solver
 *[lwgrp's]: The light-weight group library defines data structures and collective operations to
 *[lwgrp]: The light-weight group library defines data structures and collective operations to
+*[lz4's]: LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.  It features an extremely fast decoder, with speed in multiple GB/s per core.
+*[lz4]: LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.  It features an extremely fast decoder, with speed in multiple GB/s per core.
 *[magma's]: The MAGMA project aims to develop a dense linear algebra library similar to
 *[magma]: The MAGMA project aims to develop a dense linear algebra library similar to
 *[makedepend's]: The makedepend package contains a C-preprocessor like utility to determine build-time dependencies.
@@ -1500,6 +1502,8 @@ This allows applications that 'require' a GUI to run in a command line environme
 *[ncview]: Visual browser for netCDF format files.
 *[ne's]: ne is a free (GPL'd) text editor based on the POSIX standard
 *[ne]: ne is a free (GPL'd) text editor based on the POSIX standard
+*[nearline's]: NeSI nearline client provides 'End User' access to NeSI's archive filesystem Nearline which is connected to a Tape library.
+*[nearline]: NeSI nearline client provides 'End User' access to NeSI's archive filesystem Nearline which is connected to a Tape library.
 *[netCDF's]: NetCDF (network Common Data Form) is a set of software libraries
 *[netCDF]: NetCDF (network Common Data Form) is a set of software libraries
 *[netCDF-C++'s]: NetCDF (network Common Data Form) is a set of software libraries

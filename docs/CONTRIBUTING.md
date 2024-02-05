@@ -2,7 +2,7 @@
 title: Contributing
 ---
 
-**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/contributing/)**{ .hidden }
+**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/CONTRIBUTING)**{ .hidden }
 
 !!! prerequisite "See also"
     - For examples of markdown use, [see FORMAT](FORMAT.md).
@@ -55,7 +55,7 @@ You can use any IDE you want, but various tools have been configured for use wit
 
 #### Recommended Extensions
 
-When opening the workspace for the first time, you should be prompted to install the [Recommended VS Code Plugins](../.vscode/extensions.json).
+When opening the workspace for the first time, you should be prompted to install the <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/extensions.json">Recommended VS Code Plugins</a>.
 
 #### Snippets
 
@@ -63,7 +63,7 @@ When opening the workspace for the first time, you should be prompted to install
 
 e.g. starting to type an image include `![my image](` then pressing `ctrl` + `space` will show all the valid paths.
 
-Custom snippets can be added in [`../.vscode/includes.code-snippets`](../.vscode/includes.code-snippets)
+Custom snippets can be added in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/includes.code-snippets.json">`../.vscode/includes.code-snippets`</a>
 
 #### Tasks
 
@@ -71,7 +71,7 @@ Some of the same checks run during the GitHub CI, can also be run in VS Code.
 
 This is shown with word underlining, and in the 'PROBLEMS' tab in the terminal.
 
-Tasks allow continuous checks to be run in the background, these can be defined in [`../.vscode/tasks.json`](../.vscode/tasks.json), also include in [`../.vscode/settings.json`](../.vscode/settings.json) in order to trigger on save.
+Tasks allow continuous checks to be run in the background, these can be defined in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/tasks.json">`../.vscode/tasks.json`</a>, also include in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/settings.json">`../.vscode/settings.json`</a> in order to trigger on save.
 
 ## Making a Merge Request
 
@@ -110,13 +110,20 @@ If some of the CI checks failed (make sure they are not important ones), you wil
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
+## Update Remote Assets
+
+Certain files need to be fetched from other repos for up to date info. This will be automated, but for not the proccess is manual.
+
+1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
+2. A branch `new-assets` will be created, which can be merged into main.
+
 ## Adding Words to Dictionary
 
 If the CI is failing the spellcheck phase, and you believe the identified words are not typos, (double check your capitalisation and apostrophes first) you can update the dictionary being used.
 
 1. Visit the [NeSI Word List](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
-2. Once changes to the word list have been merged, you can fetch the new assets by running the [![Fetch Remote Assets](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs-concept/actions/workflows/fetch_includes.yml) workflow in this repo.
-3. A branch `new-assets` will be created, which can be merged into main (you should see your new words are added).
+2. Once changes to the word list have been merged, return to this repo and run [update remote assets](#update-remote-assets).
+3. You should see your new words in the [Dictionary](assets/Glossary/dictionary.txt) if your words included a definition, they will also be in the [Glossary](assets/glossary/Glossary.md).
 
 ## Raise an issue
 
@@ -129,7 +136,7 @@ Quite a lot of data-sources come together to make this page:
 - mkdocs article titles
 - lmod info scraped from all clusters
 - licence counts from promethius instance
-- licence details from config file 
+- licence details from config file
 - Manual overwrites in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml).
 
 Most of these are collected together in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml)
@@ -155,3 +162,7 @@ Ask cal, or read the readme at `/opt/nesi/nesi-apps-admin/LicConfig/`
 ### Everything Else
 
 Can be added in the manual [overwrite file](https://github.com/nesi/modules-list/blob/main/overwrites.yml).
+
+### Updating
+
+Any of these changes will require an [update of remote assets](#update-remote-assets).

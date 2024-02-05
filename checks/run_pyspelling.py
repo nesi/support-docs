@@ -20,13 +20,12 @@ if __name__ == "__main__":
             if not r.words:
                 continue
             for word in r.words:
-                print(word)
-#             line_no = 0
-#             for line in source_md:
-#                 line_no += 1
-#                 for word in r.words:
-#                     matches = re.finditer(r"[^a-zA-Z`._/[\\-]+(" + word + r")[^a-zA-Z`_/\\-]+", line)
-#                     for m in matches:
-#                         print(f"::warning file={source},line={line_no},col={m.start()+3},endColumn={m.end()},\
-# title=spelling::Word '{word}' is mispeled.")
-#     sys.exit(0)
+                line_no = 0
+                for line in source_md:
+                    line_no += 1
+                    for word in r.words:
+                        matches = re.finditer(r"[^a-zA-Z`._/[\\-]+(" + word + r")[^a-zA-Z`_/\\-]+", line)
+                        for m in matches:
+                            print(f"::warning file={source},line={line_no},col={m.start()+3},endColumn={m.end()},\
+    title=spelling::Word '{word}' is mispeled.")
+        sys.exit(0)

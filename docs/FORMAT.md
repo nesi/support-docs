@@ -2,7 +2,7 @@
 title: Formatting
 ---
 
-**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/format/)**{ .hidden }
+**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/FORMAT/)**{ .hidden }
 
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
@@ -106,7 +106,7 @@ An Admonition **shouldn't be made collapsable-closed** (`???`) unless it has bee
 There are various flavors.
 
 !!! prerequisite
-    - [link to page a user should read in order to follow](format.md)
+    - [link to page a user should read in order to follow](FORMAT.md)
     - some thing other requirement user must have to follow this page
     - usually you will want this to be a list format.
     - Should be right at the top of the page.
