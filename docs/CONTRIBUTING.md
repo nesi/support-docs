@@ -2,7 +2,7 @@
 title: Contributing
 ---
 
-**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/contributing/)**{ .hidden }
+**[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs-concept/CONTRIBUTING)**{ .hidden }
 
 !!! prerequisite "See also"
     - For examples of markdown use, [see FORMAT](FORMAT.md).
@@ -63,7 +63,7 @@ When opening the workspace for the first time, you should be prompted to install
 
 e.g. starting to type an image include `![my image](` then pressing `ctrl` + `space` will show all the valid paths.
 
-Custom snippets can be added in [`../.vscode/includes.code-snippets`](../.vscode/includes.code-snippets)
+Custom snippets can be added in <a href="https://github.com/nesi/support-docs-concept/blob/main/.vscode/includes.code-snippets.json">`../.vscode/includes.code-snippets`</a>
 
 #### Tasks
 
@@ -129,7 +129,7 @@ Quite a lot of data-sources come together to make this page:
 - mkdocs article titles
 - lmod info scraped from all clusters
 - licence counts from promethius instance
-- licence details from config file 
+- licence details from config file
 - Manual overwrites in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml).
 
 Most of these are collected together in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml)
