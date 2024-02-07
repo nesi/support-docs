@@ -131,6 +131,12 @@
                 },
                 "fileLocation": "autoDetect",
             },
+        // make this a problem matecher.
+        //     INFO    -  [macros] - ERROR # _Macro Rendering Error_
+
+        //    _File_: `Glossary.md`
+
+        //    _TemplateNotFound_: assets/glossary/Glossary.md
         }
     ]
 }
