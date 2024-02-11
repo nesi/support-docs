@@ -100,6 +100,37 @@
                 "owner": "spelling",
                 "fileLocation": "autoDetect",
             },
+        },
+        {
+            "label": "build",
+            "type": "shell",
+
+            "isBackground": true,
+            "presentation": {
+                "echo": false,
+                "reveal":"never",
+                "panel": "shared",
+                "close": false,
+                "focus": false,
+                "showReuseMessage": false
+            },
+            "command": "mkdocs serve --dirty",
+            "problemMatcher": {
+                "severity": "info",
+                "pattern": [{
+                    "regexp": "^(WARNING|INFO) -  Doc file '(.*)' (.*)$",
+                    "severity": 1,
+                    "file": 2,
+                    "message": 3,
+                    "kind": "file"
+                }],
+                "owner": "build",
+                "background": {
+                    "beginsPattern": "INFO    -  Building documentation...",
+                    "endsPattern": "INFO    -  Documentation built in .*"
+                },
+                "fileLocation": "autoDetect",
+            },
         }
     ]
 }
