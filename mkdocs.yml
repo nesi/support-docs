@@ -45,17 +45,15 @@ repo_url: https://github.com/nesi/support-docs-concept
 edit_uri: edit/main/docs/
 site_description: NeSI Support Documentation
 site_dir: public
-site_name: NeSI Support Center
+site_name: NeSI Support Documentation
 site_url: https://github.com/nesi/support-docs-concept
 extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
   - assets/stylesheets/custom_admonations.css
   - assets/stylesheets/theme.css
-  # - assets/stylesheets/supportedApplications.css
 extra_javascript:
     - assets/javascripts/general.js
-  # - assets/javascripts/supportedApplications.js
 theme:
   custom_dir: overrides
   favicon: assets/icons/favicon.ico
