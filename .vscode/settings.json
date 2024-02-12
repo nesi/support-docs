@@ -11,4 +11,19 @@
             "docs/**/*.md"
         ]
     },
+    "files.autoSave": "afterDelay",
+    "editor.renderWhitespace": "all",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.codeActionsOnSave": {
+
+    },
+    "editor.lightbulb.enabled": false,
+    "editor.tabCompletion": "on",
+    "files.insertFinalNewline": true,
+    "workbench.commandPalette.experimental.suggestCommands": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    "scm.alwaysShowRepositories": true,
+    "task.problemMatchers.neverPrompt": true,
+    "problems.showCurrentInStatus": true,
 }
