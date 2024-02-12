@@ -35,7 +35,7 @@ jobs:
     name: Determine what files to check
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
        fetch-depth: 0
     - name: Get changed files
@@ -59,7 +59,7 @@ jobs:
     needs: get
     steps:
       - name: Check out repo.
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install dependencies
         run: |
           sudo apt install -y aspell
@@ -75,7 +75,7 @@ jobs:
     needs: get
     steps:
       - name: Check out repo.
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install dependencies
         run: pip install proselint
       - name: Run proselint
@@ -89,7 +89,7 @@ jobs:
      needs: get
      steps:
        - name: Check out repo.
-         uses: actions/checkout@v3
+         uses: actions/checkout@v4
        - name: Install dependencies
          run: npm install -g markdownlint-cli
        - name: Run markdownlint
@@ -103,7 +103,7 @@ jobs:
      needs: get
      steps:
        - name: Check out repo.
-         uses: actions/checkout@v3
+         uses: actions/checkout@v4
        - name: Check markdown meta.
          run: |
           shopt -s globstar extglob
@@ -114,7 +114,7 @@ jobs:
      runs-on: ubuntu-latest
      needs: get
      steps:
-       - uses: actions/checkout@v3
+       - uses: actions/checkout@v4
          with:
           fetch-depth: 0
        - run: pip install -r requirements.txt
