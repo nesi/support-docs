@@ -58,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: get
     steps:
-      - if: ! ${{needs.get.outputs.filelist}}
+      - if: ${{! needs.get.outputs.filelist}}
         name: No files need spellchecking
         run:  exit 0
       - if: ${{needs.get.outputs.filelist}}
