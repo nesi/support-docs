@@ -3,8 +3,6 @@ env:
   MODULE_LIST_PATH: docs/assets/module-list.json
 on:
   push:
-    paths:
-      - docs/**/*.md
   workflow_dispatch:
     inputs:
       fileList:
@@ -45,7 +43,7 @@ jobs:
       uses: tj-actions/changed-files@v40
       with:
           files: |
-             **.md
+             docs/**/*.md
     - name: Push Changed files to output
       if: inputs.fileList == ''
       id: diff
