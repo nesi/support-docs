@@ -33,7 +33,6 @@ Following pages contain information to help maintain the documentation:
 - See [create a new page](https://nesi.github.io/support-docs-concept/NEWPAGE), for general principles to consider when writing pages.
 - See [macros](https://nesi.github.io/support-docs-concept/MACROS), for `mkdocs-macros-plugin` environment.
 
-
 ## Theme
 
 We are using the [mkdocs material theme](https://squidfunk.github.io/mkdocs-material/).
