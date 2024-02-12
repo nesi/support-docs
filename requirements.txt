@@ -16,6 +16,7 @@ codespell
 proselint
 linkcheckmd
 symspellpy
+pyspelling
 
 
 # Add your custom theme if not inside a theme_dir

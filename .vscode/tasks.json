@@ -107,7 +107,7 @@
 
             "isBackground": true,
             "presentation": {
-                "echo": false,
+                "echo": true,
                 "reveal":"never",
                 "panel": "shared",
                 "close": false,
@@ -115,6 +115,9 @@
                 "showReuseMessage": false
             },
             "command": "mkdocs serve --dirty",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
             "problemMatcher": {
                 "severity": "info",
                 "pattern": [{

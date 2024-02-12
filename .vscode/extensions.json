@@ -7,7 +7,9 @@
 		"redhat.vscode-yaml",
 		"ms-python.black-formatter",
 		"GitHub.vscode-github-actions",
-		"GitHub.vscode-pull-request-github"
+		"GitHub.vscode-pull-request-github",
+		"jebbs.markdown-extended",
+		"Gruntfuggly.triggertaskonsave"
 	],
 	"unwantedRecommendations": [
 		
