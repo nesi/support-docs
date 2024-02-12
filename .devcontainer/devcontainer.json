@@ -21,7 +21,8 @@
                 "ms-python.black-formatter",
                 "GitHub.vscode-github-actions",
                 "GitHub.vscode-pull-request-github",
-                "jebbs.markdown-extended"
+                "jebbs.markdown-extended",
+                "Gruntfuggly.triggertaskonsave"
             ]
         }
     }
