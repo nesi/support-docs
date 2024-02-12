@@ -48,7 +48,7 @@ jobs:
       if: inputs.fileList == ''
       id: diff
       run: |
-        [ -z "${{steps.get-changed-files.outputs.all_changed_files}}" ] && ( echo "Error, no files changed" && exit 1 )
+        [ -z "${{steps.get-changed-files.outputs.all_changed_files}}" ] && echo "No files changed"
         echo "Changed files: ${{steps.get-changed-files.outputs.all_changed_files}}"
         echo "filelist=${{steps.get-changed-files.outputs.all_changed_files}}" >> $GITHUB_OUTPUT
     outputs:
