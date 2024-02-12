@@ -114,7 +114,7 @@
                 "focus": false,
                 "showReuseMessage": false
             },
-            "command": "source .venv/bin/activate && mkdocs serve --dirty",
+            "command": "mkdocs serve --dirty",
             "runOptions": {
                 "runOn": "folderOpen"
             },
