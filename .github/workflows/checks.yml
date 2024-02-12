@@ -74,8 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: get
     steps:
-      - if: ${{! needs.get.outputs.filelist}}
-        name: Check out repo.
+      - name: Check out repo.
         uses: actions/checkout@v3
       - name: Install dependencies
         run: pip install proselint
