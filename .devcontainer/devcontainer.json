@@ -4,26 +4,9 @@
 	"image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": { 
-        "ghcr.io/devcontainers-contrib/features/mkdocs":{} 
-    },
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [8000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pip3 install --user -r requirements.txt",
-    // "customizations": {
-    //     "vscode": {
-    //     "extensions": [
-    //         "samuelcolvin.jinjahtml",
-    //         "DavidAnson.vscode-markdownlint",
-    //         "arsprogramma.compliment",
-    //         "TakumiI.markdowntable",
-    //         "redhat.vscode-yaml",
-    //         "ms-python.black-formatter",
-    //         "GitHub.vscode-github-actions",
-    //         "GitHub.vscode-pull-request-github"
-    //     ]
-    //     }
-    // }
 }
