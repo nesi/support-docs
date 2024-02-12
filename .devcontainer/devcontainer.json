@@ -8,5 +8,21 @@
 	"forwardPorts": [8000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt"
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "samuelcolvin.jinjahtml",
+                "DavidAnson.vscode-markdownlint",
+                "arsprogramma.compliment",
+                "TakumiI.markdowntable",
+                "redhat.vscode-yaml",
+                "ms-python.black-formatter",
+                "GitHub.vscode-github-actions",
+                "GitHub.vscode-pull-request-github",
+                "jebbs.markdown-extended"
+            ]
+        }
+    }
 }
