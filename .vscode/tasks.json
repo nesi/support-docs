@@ -107,7 +107,7 @@
 
             "isBackground": true,
             "presentation": {
-                "echo": false,
+                "echo": true,
                 "reveal":"never",
                 "panel": "shared",
                 "close": false,
@@ -115,6 +115,9 @@
                 "showReuseMessage": false
             },
             "command": "mkdocs serve --dirty",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
             "problemMatcher": {
                 "severity": "info",
                 "pattern": [{
@@ -131,6 +134,12 @@
                 },
                 "fileLocation": "autoDetect",
             },
+        // make this a problem matecher.
+        //     INFO    -  [macros] - ERROR # _Macro Rendering Error_
+
+        //    _File_: `Glossary.md`
+
+        //    _TemplateNotFound_: assets/glossary/Glossary.md
         }
     ]
 }
