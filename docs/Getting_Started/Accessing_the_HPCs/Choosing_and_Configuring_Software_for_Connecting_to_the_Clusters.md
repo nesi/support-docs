@@ -12,7 +12,6 @@ zendesk_article_id: 360001016335
 zendesk_section_id: 360000034315
 ---
 
-
 !!! prerequisite
     -  Have an [active account and project](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
     -  Set up your [NeSI Account Password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
