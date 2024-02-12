@@ -14,6 +14,15 @@ Any changes made should be merged via a pull request.
 
 Press `.`, will open up Visual Studio Code in browser.
 
+## Major edits through GitHub
+
+This repository has been configured to be useable with [GitHub Codespaces](https://github.com/features/codespaces).
+It allows acessing a full featured pre-configured development environment remotely, without installing anything on your local machine.
+
+Clicking on the following link will open a VS Code instance ready to be used with the latest version of the documentation files.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs-concept?quickstart=1)
+
 ## Local Development Environment
 
 A local development environment is not required to make doc edits, but if you are making lots of changes, the real time rendering can be quite helpful.
@@ -49,7 +58,7 @@ Take note of any warnings or errors.
 
 A link to the deployment will be printed once served.
 
-### IDE
+### VS Code configuration
 
 You can use any IDE you want, but various tools have been configured for use with VS Code.
 
