@@ -111,7 +111,7 @@ jobs:
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
   testBuild:
      name: Test build
-     if: ${{((github.event_name != 'workflow_dispatch') && needs.get.outputs.filelist) || inputs.testBuild}}
+     if: ${{github.event_name != 'workflow_dispatch' || inputs.testBuild}}
      runs-on: ubuntu-latest
      needs: get
      steps:
