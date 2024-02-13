@@ -157,8 +157,6 @@ def _nav_check():
     rel_path = input_path.resolve().relative_to(doc_root)
     for i in range(1, len(rel_path.parts)):
         num_siblings = 0
-        print(doc_root.joinpath(Path(*rel_path.parts[:i])))
-        print(os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))))
         for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
             if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
                 num_siblings += 1
