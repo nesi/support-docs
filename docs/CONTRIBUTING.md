@@ -132,13 +132,13 @@ If the CI is failing the spellcheck phase, and you believe the identified words 
 
 1. Visit the [NeSI Word List](https://github.com/nesi/nesi-wordlist), follow the instructions there on adding words.
 2. Once changes to the word list have been merged, return to this repo and run [update remote assets](#update-remote-assets).
-3. You should see your new words in the [Dictionary](assets/Glossary/dictionary.txt) if your words included a definition, they will also be in the [Glossary](assets/glossary/Glossary.md).
+3. You should see your new words in the [Dictionary](assets/glossary/dictionary.txt) if your words included a definition, they will also be in the <a href="https://github.com/nesi/support-docs-concept/blob/main/overrides/Glossary.md">Glossary</a>.
 
 ## Raise an issue
 
 *Not documented at the moment (TODO)*
 
-## Contributing to the 'Supported Apps' Page
+## The 'Supported Apps' Page
 
 Quite a lot of data-sources come together to make this page:
 
