@@ -30,4 +30,5 @@
     "git.pullBeforeCheckout": true,
     "git.enableSmartCommit": true,
     "git.postCommitCommand": "sync",
+    "git.branchProtectionPrompt": "alwaysCommitToNewBranch"
 }
