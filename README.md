@@ -1,5 +1,7 @@
 # NesI support documentation
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs-concept?quickstart=1)
+
 [![Deploy to gh-pages](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment_status)](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml)
 
 This repository contains the sources files for the NeSI support documentation.
