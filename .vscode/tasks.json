@@ -11,7 +11,7 @@
             ],
             "type": "process",
             "presentation": {
-                "echo": false,
+                "echo": true,
                 "reveal":"never",
                 "panel": "shared",
                 "close": false,
@@ -46,7 +46,7 @@
             ],
             "type": "process",
             "presentation": {
-                "echo": false,
+                "echo": true,
                 "reveal":"never",
                 "panel": "shared",
                 "close": false,
@@ -65,7 +65,6 @@
                     "endLine": 5,
                     "message": 7,
                     "loop": true
-
                 },
                 "owner": "proselint",
                 "fileLocation": "autoDetect",
@@ -78,7 +77,7 @@
             ],
             "type": "process",
             "presentation": {
-                "echo": false,
+                "echo": true,
                 "reveal":"never",
                 "panel": "shared",
                 "close": false,
@@ -95,8 +94,9 @@
                     "line": 3,
                     "column": 4,
                     "endLine": 5,
-                    "message": 7
-                }],
+                    "message": 7,
+                    "loop": true
+                    }],
                 "owner": "spelling",
                 "fileLocation": "autoDetect",
             },
@@ -125,14 +125,18 @@
                     "severity": 1,
                     "file": 2,
                     "message": 3,
-                    "kind": "file"
+                    "kind": "file",
+                    "loop": true
                 }],
                 "owner": "build",
                 "background": {
                     "beginsPattern": "INFO    -  Building documentation...",
                     "endsPattern": "INFO    -  Documentation built in .*"
                 },
-                "fileLocation": "autoDetect",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/docs"
+                ],
             },
         // make this a problem matecher.
         //     INFO    -  [macros] - ERROR # _Macro Rendering Error_

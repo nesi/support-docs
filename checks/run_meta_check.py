@@ -59,6 +59,7 @@ def main():
             continue
         _nav_check()
         with open(input_path, "r") as f:
+            print(f"Checking meta for {f}")
             contents = f.read()
             match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
             if not match:
@@ -94,6 +95,7 @@ def main():
 def _run_check(f):
     for r in f():
         print(f"::{r.get('level', 'warning')} file={input_path},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
+        sys.stdout.flush()
 
 
 def _title_from_filename():

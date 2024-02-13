@@ -12,6 +12,7 @@
         ]
     },
     "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 5,
     "editor.renderWhitespace": "all",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.lightbulb.enabled": false,
