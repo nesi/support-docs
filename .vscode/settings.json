@@ -14,9 +14,6 @@
     "files.autoSave": "afterDelay",
     "editor.renderWhitespace": "all",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.codeActionsOnSave": {
-
-    },
     "editor.lightbulb.enabled": false,
     "editor.tabCompletion": "on",
     "files.insertFinalNewline": true,
@@ -26,4 +23,10 @@
     "scm.alwaysShowRepositories": true,
     "task.problemMatchers.neverPrompt": true,
     "problems.showCurrentInStatus": true,
+    "git.defaultBranchName": "dev",
+    "git.autofetch": true,
+    "git.branchRandomName.enable": true,
+    "git.pullBeforeCheckout": true,
+    "git.enableSmartCommit": true,
+    "git.postCommitCommand": "sync",
 }
