@@ -3,7 +3,6 @@
 # FIXME direct use of aspell might be simpler than postprocessing pyspelling
 
 import sys
-import re
 from pathlib import Path
 
 from pyspelling import spellcheck
