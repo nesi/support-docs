@@ -30,5 +30,9 @@
     "git.enableSmartCommit": true,
     "git.postCommitCommand": "sync",
     "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
-    "git.branchProtection": ["main"]
+    "git.branchProtection": [
+        "main"
+    ],
+    "yaml.extension.recommendations": false,
+    "redhat.telemetry.enabled": false
 }
