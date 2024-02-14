@@ -86,17 +86,15 @@
             },
             "command": "./checks/run_pyspelling.py",
             "problemMatcher": {
-                "severity": "info",
-                "pattern": [{
+                "pattern": {
                     "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),col=([0-9]*),endColumn=([0-9]*),title=(.*?)::(.*)$",
                     "severity": 1,
                     "file": 2,
                     "line": 3,
                     "column": 4,
-                    "endLine": 5,
+                    "endColumn": 5,
                     "message": 7,
-                    "loop": true
-                    }],
+                },
                 "owner": "spelling",
                 "fileLocation": "autoDetect",
             },
