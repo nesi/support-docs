@@ -17,6 +17,7 @@ proselint
 linkcheckmd
 symspellpy
 pyspelling
+flashtext
 
 # Add your custom theme if not inside a theme_dir
 # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)

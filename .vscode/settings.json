@@ -24,10 +24,11 @@
     "scm.alwaysShowRepositories": true,
     "task.problemMatchers.neverPrompt": true,
     "problems.showCurrentInStatus": true,
-    "git.defaultBranchName": "dev",
     "git.autofetch": true,
     "git.branchRandomName.enable": true,
     "git.pullBeforeCheckout": true,
     "git.enableSmartCommit": true,
     "git.postCommitCommand": "sync",
+    "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
+    "git.branchProtection": ["main"]
 }
