@@ -4,14 +4,15 @@
 
 import sys
 import re
+from pathlib import Path
+
 from pyspelling import spellcheck
+from flashtext import KeywordProcessor
 
 if __name__ == "__main__":
 
     for source in sys.argv[1:]:
-        with open(source) as f:
-            print(f"Running Pyspelling on {f}")
-            source_md = f.readlines()
+        print(f"Running Pyspelling on {source}")
 
         results = spellcheck(
             ".spellcheck.yml",
@@ -21,24 +22,20 @@ if __name__ == "__main__":
             debug=True,
         )
 
+        keyword_processor = KeywordProcessor(case_sensitive=True)
         for r in results:
             if not r.words:
                 continue
+            keyword_processor.add_keywords_from_list(r.words)
 
-            for word in r.words:
-                line_no = 0
-                for line in source_md:
-                    line_no += 1
-                    for word in r.words:
-                        matches = re.finditer(
-                            r"[^a-zA-Z`._/[\\-]+(" + word + r")[^a-zA-Z`_/\\-]+", line
-                        )
-                        for m in matches:
-                            print(
-                                f"::warning file={source},line={line_no},"
-                                f"col={m.start()+3},endColumn={m.end()},"
-                                f"title=spelling::Word '{word}' is misspelled.",
-                                flush=True,
-                            )
+        source_md = Path(source).read_text().split("\n")
 
-        sys.exit(0)
+        for i, line in enumerate(source_md, start=1):
+            for match in keyword_processor.extract_keywords(line, span_info=True):
+                word, col_start, col_end = match
+                print(
+                    f"::warning file={source},line={i},"
+                    f"col={col_start + 1},endColumn={col_end + 1},"
+                    f"title=spelling::Word '{word}' is misspelled.",
+                    flush=True,
+                )
