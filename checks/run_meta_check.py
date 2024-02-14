@@ -10,6 +10,7 @@ import re
 import sys
 import yaml
 import os
+import time
 from pathlib import Path
 
 # Ignore files if they match this regex
@@ -259,3 +260,7 @@ WALKCHECKS = [click_here]
 
 if __name__ == "__main__":
     main()
+
+    # FIXME terrible hack to make VSCode in codespace capture the error messages
+    # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
+    time.sleep(5)
