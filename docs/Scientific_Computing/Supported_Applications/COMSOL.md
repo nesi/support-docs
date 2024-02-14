@@ -2,39 +2,31 @@
 created_at: '2019-03-26T00:36:24Z'
 tags:
 - engineering
-- COMSOL
 - cae
 - multiphysics
 - cfd
 - fea
-title: COMSOL
+description: Running COMSOL multiphysics on the NeSI cluster.
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360000871556
 zendesk_section_id: 360000040076
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
-``` sl
+```sh
 comsol --help
 ```
 
 Will display a list of COMSOL batch commands.
 
 !!! tip "Useful Links"
-     -   [Running COMSOL in parallel on
-         clusters.](https://www.comsol.com/support/knowledgebase/1001/)
-     -   [Running parametric sweeps, batch sweeps, and cluster sweeps from
-         the command
-         line.](https://www.comsol.com/support/knowledgebase/1250/)
-     -   [COMSOL and
-         Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
+    - [Running COMSOL in parallel on clusters.](https://www.comsol.com/support/knowledgebase/1001/)
+    - [Running parametric sweeps, batch sweeps, and cluster sweeps from the command line.](https://www.comsol.com/support/knowledgebase/1250/)
+    - [COMSOL and Multithreading.](https://www.comsol.com/support/knowledgebase/1096/)
 
 ## Batch Submission
 
@@ -44,19 +36,18 @@ distribution.
 |                         |                                                                                                                                  |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | `-mpibootstrap slurm`   |  Instructs COMSOL to get it's settings from SLURM                                                                                |
-| `-np <cpus>`            | Number of CPUs to use in each task. Equivalent to slurm input `--cpus-per-task` or environment variable `${SLURM_CPUS_PER_TASK}` |
+| `-np <cpus>`            | Number of CPUs to use in each task. Equivalent to Slurm input `--cpus-per-task` or environment variable `${SLURM_CPUS_PER_TASK}` |
 | `-nn <tasks>`           | Number of tasks total. `--ntasks` or `${SLURM_NTASKS}`                                                                           |
 | `-nnhost <tasks>`       | Number of tasks per node. `--ntasks-per-node` `${SLURM_NTASKS_PER_NODE}`                                                         |
-| `-f <path to hostlist>` | Host file. You wont't need to set this in most circumstances.                                                                    |
+| `-f <path to hostlist>` | Host file. You won't need to set this in most circumstances.                                                                    |
 
 ## Example Scripts
 
 === "Serial Job"
     Single *process* with a single *thread*
-    Usually submitted as part of an array, as in the case of parameter
-sweeps.
+    Usually submitted as part of an array, as in the case of parameter sweeps.
 
-    ```
+    ```sl
     #!/bin/bash -e
     
     #SBATCH --job-name      COMSOL-serial
@@ -70,7 +61,7 @@ sweeps.
 
 === "Shared Memory Job"
 
-    ```
+    ```sl
     #!/bin/bash -e
     #SBATCH --job-name      COMSOL-shared
     #SBATCH --licenses      comsol@uoa_foe
@@ -81,9 +72,9 @@ sweeps.
     comsol batch -mpibootstrap slurm -inputfile my_input.mph 
     ```
 
-=== Distributed Memory Job
+=== "Distributed Memory Job"
 
-    ```
+    ```sl
     #!/bin/bash -e
     
     #SBATCH --job-name      COMSOL-distributed
@@ -98,7 +89,7 @@ sweeps.
 
 === "Hybrid Job"
 
-    ```
+    ```sl
     #!/bin/bash -e
     #SBATCH --job-name         COMSOL-hybrid
     #SBATCH --licenses         comsol@uoa_foe
@@ -137,13 +128,12 @@ sweeps.
 
 ## Interactive Use
 
-Providing you have [set up
-X11](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md), you can
+Providing you have [set up X11](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md), you can
 open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.
 
-### LiveLink
+## LiveLink
 
 If you are using COMSOL LiveLink, you will need to load a MATLAB module (in addition to the COMSOL module), e.g.
 
@@ -157,7 +147,7 @@ Then
 comsol matlab -mlroot <path>
 ```
 
-Where `<mlpath>`` is the root directory of the MATLAB version you are using (`dirname $(dirname $(which matlab))`).
+Where `<mlpath>` is the root directory of the MATLAB version you are using (`dirname $(dirname $(which matlab))`).
 
 ## Best Practice
 
@@ -169,5 +159,5 @@ Memory requirements depend on job type, but will scale up with number of CPUs �
 Multithreading will benefit jobs using less than
 8 CPUs, but is not recommended on larger jobs.
 
-*Performance is highly depended on the model used. The above should only be used as a very rough guide.*
+*Performance is highly depended on the model used. The above should only be used as a rough guide.*
 ![Speedup](../../assets/images/speedup_smoothed.png)
