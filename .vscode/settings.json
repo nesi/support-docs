@@ -34,5 +34,6 @@
         "main"
     ],
     "yaml.extension.recommendations": false,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "githubPullRequests.pushBranch": "always"
 }
