@@ -10,8 +10,6 @@ from pyspelling import spellcheck
 
 if __name__ == "__main__":
 
-    ret_code = 0
-
     for source in sys.argv[1:]:
         with open(source) as f:
             print(f"Running Pyspelling on {f}")
@@ -39,9 +37,10 @@ if __name__ == "__main__":
                         )
                         for m in matches:
                             print(
-                                f"::warning file={source},line={line_no},col={m.start()+3},endColumn={m.end()},\
-title=spelling::Word '{word}' is mispeled."
+                                f"::warning file={source},line={line_no},"
+                                f"col={m.start()+3},endColumn={m.end()},"
+                                f"title=spelling::Word '{word}' is misspelled.",
+                                flush=True,
                             )
-                            sys.stdout.flush()
 
         sys.exit(0)
