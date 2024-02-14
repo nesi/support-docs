@@ -3,6 +3,7 @@
 # FIXME direct use of aspell might be simpler than postprocessing pyspelling
 
 import sys
+import time
 from pathlib import Path
 
 from pyspelling import spellcheck
@@ -38,3 +39,7 @@ if __name__ == "__main__":
                     f"title=spelling::Word '{word}' is misspelled.",
                     flush=True,
                 )
+
+    # FIXME terrible hack to make VSCode in codespace capture the error messages
+    # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
+    time.sleep(5)
