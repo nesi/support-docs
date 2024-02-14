@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-"""
-I should just use base aspell. Pyspelling is trasssssh
-"""
+# FIXME direct use of aspell might be simpler than postprocessing pyspelling
 
 import sys
 import re
