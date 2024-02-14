@@ -35,5 +35,6 @@
     ],
     "yaml.extension.recommendations": false,
     "redhat.telemetry.enabled": false,
-    "githubPullRequests.pushBranch": "always"
+    "githubPullRequests.pushBranch": "always",
+    "git.useEditorAsCommitInput": false
 }
