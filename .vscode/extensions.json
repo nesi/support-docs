@@ -8,8 +8,6 @@
 		"ms-python.black-formatter",
 		"GitHub.vscode-pull-request-github",
 		"jebbs.markdown-extended",
-		"Gruntfuggly.triggertaskonsave",
-		"eamodio.gitlens"
+		"Gruntfuggly.triggertaskonsave"
 	],
 }
-
