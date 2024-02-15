@@ -26,13 +26,12 @@
     "problems.showCurrentInStatus": true,
     "git.autofetch": true,
     "git.branchRandomName.enable": true,
+    "git.confirmSync": false,
     "git.pullBeforeCheckout": true,
     "git.enableSmartCommit": true,
     "git.postCommitCommand": "sync",
     "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
-    "git.branchProtection": [
-        "main"
-    ],
+    "git.branchProtection": ["main"],
     "yaml.extension.recommendations": false,
     "redhat.telemetry.enabled": false,
     "githubPullRequests.pushBranch": "always",
