@@ -1,14 +1,14 @@
-- title: Creating a NeSI Account
-  content: How to get started with NeSI
-  url: https://support.nesi.org.nz/hc/en-gb/articles/360000159715
+- title: Making a NeSI Account
+  content: How to get started with NeSI accounts and projects.
+  url: ./Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile/
   image: ./assets/icons/material/account-details.svg
 
-- title: Getting Started
-  content: Walk throughs
-  url: https://my.nesi.org.nz
+- title: Access to the Clusters
+  content: Recommended clients for Linux, Mac, and Windows users. 
+  url: ./Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters/
   image: ./assets/icons/material/compass.svg
 
 - title: SSH Config
-  content: Connect now.
-  url: https://my.nesi.org.nz
+  content: Already familiar with using remote resources?
+  url: ./Getting_Started/Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup/
   image: ./assets/icons/material/cog-transfer-outline.svg
