@@ -10,10 +10,10 @@
 
 - title: File Transfer
   content: Getting your data on and off the cluster.
-  url: Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster/
+  url: Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md
   image: ./assets/icons/material/file-arrow-up-down.svg
 
 - title: Job Scheduler
   content: How to use our job scheduler, Slurm.
-  url: Getting_Started/Next_Steps/Submitting_your_first_job/#slurm
+  url: Getting_Started/Next_Steps/Submitting_your_first_job.md#slurm
   image: ./assets/icons/material/tray-full.svg
