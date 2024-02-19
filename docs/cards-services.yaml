@@ -1,4 +1,4 @@
-- title: NeSI Account Portal
+- title: MyNeSI
   content: Managing your account, project, authorized users etc
   url: https://my.nesi.org.nz
   image: ./assets/icons/material/account-star.svg
@@ -8,12 +8,12 @@
   url: https://jupyter.nesi.org.nz
   image: ./assets/icons/logomark-notext-blackbody-blackmoons.svg
 
-- title: Transferring Files
+- title: File Transfer
   content: Getting your data on and off the cluster.
   url: ./Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster/
   image: ./assets/icons/material/file-arrow-up-down.svg
 
-- title: Submitting Jobs
+- title: Job Scheduler
   content: How to use our job scheduler, Slurm.
   url: ./Getting_Started/Next_Steps/Submitting_your_first_job/#slurm
   image: ./assets/icons/material/tray-full.svg
