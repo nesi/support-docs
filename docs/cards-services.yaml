@@ -5,7 +5,7 @@
 
 - title: JupyterHub
   content: Connect to NeSI through your web browser.
-  url: https://jupyter.nesi.org.nz
+  url: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
   image: ./assets/icons/logomark-notext-blackbody-blackmoons.svg
 
 - title: File Transfer
