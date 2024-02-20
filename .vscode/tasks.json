@@ -17,7 +17,9 @@
                 "showReuseMessage": false
             },
             "command": "./checks/run_meta_check.py",
+
             "problemMatcher": {
+                "severity": "info",
                 "pattern": {
                     "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),col=([0-9]*),endColumn=([0-9]*),line=([0-9]*)::(.*)$",
                     "severity": 1,
