@@ -68,7 +68,7 @@ jobs:
         name: Install dependencies
         run: |
           sudo apt install -y aspell
-          pip install pyspelling
+          pip install pyspelling flashtext
       - if: ${{needs.get.outputs.filelist}}
         name: Run pyspelling
         run: |

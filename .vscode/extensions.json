@@ -5,11 +5,9 @@
 		"arsprogramma.compliment",
 		"TakumiI.markdowntable",
 		"redhat.vscode-yaml",
-		"ms-python.black-formatter",
 		"GitHub.vscode-pull-request-github",
 		"jebbs.markdown-extended",
 		"Gruntfuggly.triggertaskonsave",
-		"eamodio.gitlens"
 	],
 }
 
