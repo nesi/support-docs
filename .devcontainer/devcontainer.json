@@ -25,7 +25,10 @@
                 "GitHub.vscode-pull-request-github",
                 "jebbs.markdown-extended",
                 "Gruntfuggly.triggertaskonsave"
-            ]
+            ],
+            "settings": {
+                "extensions.ignoreRecommendations": true
+            }
         }
     }
 }
