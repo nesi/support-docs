@@ -33,3 +33,10 @@
 .hidden{
     display: none;
 }
+.md-button-support{
+  position: absolute;
+  margin: -2rem 0 0 1rem;
+  width: 80%;
+  text-align: center;
+  font-size: 0.7rem;
+}
