@@ -15,8 +15,6 @@
         "onAutoForward": "ignore"
     },
 
-    "runArgs": ["--profile", "contributor"],
-
     // Use 'postCreateCommand' to run commands after the container is created.
     //"postCreateCommand": "pip3 install --user -r requirements.txt",
     "postCreateCommand": [
