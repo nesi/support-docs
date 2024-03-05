@@ -98,6 +98,14 @@ Don't use a title if another Admonition already exists for that purpose (e.g. `!
 
 Any Admonition can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
 
+??? info "I'm Collapseable"
+    Wheeee
+
+```md
+??? info "I'm Collapseable"
+    Wheeee
+```
+
 Consider making a Admonition collapsable-open (`???+`) if it is particularly long.
 An Admonition **shouldn't be made collapsable-closed** (`???`) unless it has been given an **optional title explaining it's contents**.
 
@@ -111,7 +119,7 @@ There are various flavors.
     - usually you will want this to be a list format.
     - Should be right at the top of the page.
 
-!!! tip
+!!! tip "with title"
     For tangential actionable advice.  
     *`x` other command may be useful here.*
 
@@ -326,6 +334,23 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 ![This is an image](./assets/images/ANSYS_0.png)
 
+!!! note "Pasting from Clipboard"
+    You can 'paste' an image from the clipboard into a markdown document,
+    it will add
+
+    ```md
+    ![Alt text](image.png)
+    ```
+
+    In markdown where you pasted the image, and upload `image.png`, into the same directory.
+
+    Make sure you rename the `image.png` to something more descriptive, move it into the 'assets/images' folder, and update then markdown accordingly.
+
+!!! tip "Drag and Drop"
+    You can easily get the path to a image file by dragging it from the left hand Explorer panel over your document, then pressing <kbd>shift</kbd> (you will be prompted) and dropping the image in the desired position. Copy pasting an image from Explorer into markdown also works.
+
+    You can also start typing `!` and then use context suggestions (<kbd>ctrl</kbd> + <kbd>space</kbd>), select 'Insert Image' and navigate the rest of the way.
+
 ## Links
 
 [External Link]("https://example.com")
@@ -353,6 +378,9 @@ Note the additional spacing around the `+` else it will appear cramped.
 
 The anchor will be the same as the header text with all non-alphanumeric characters removed, converted to lower case, and space characters replaced with `-`.
 For example a header `## This is my (nasty-Header)` can be linked to with the anchor `[Anchor Link](#this-is-my-nastyheader)`
+
+!!! tip "Drag and Drop"
+    You can drag files from the left hand Explorer panel over your document then press <kbd>shift</kbd> (you will be prompted) and drop in the desired position. Copy pasting a file from Explorer into markdown also works.
 
 ??? tip "Ambiguous links"
 
