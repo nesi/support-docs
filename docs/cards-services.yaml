@@ -1,8 +1,3 @@
-- title: MyNeSI
-  content: Managing your account, project, authorized users etc
-  url: https://my.nesi.org.nz
-  image: ./assets/icons/material/account-star.svg
-
 - title: JupyterHub
   content: Connect to NeSI through your web browser.
   url: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
