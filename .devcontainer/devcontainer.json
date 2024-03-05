@@ -6,10 +6,20 @@
     // Features to add to the dev container. More info: https://containers.dev/features.
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [8000],
-
+    "portsAttributes": {
+        "8000": {
+            "label": "Documentation Preview"
+        }
+    },
+    "otherPortsAttributes": {
+        "onAutoForward": "ignore"
+    },
     // Use 'postCreateCommand' to run commands after the container is created.
     //"postCreateCommand": "pip3 install --user -r requirements.txt",
-    "postCreateCommand": ".devcontainer/install-deps.bash",
+    "postCreateCommand": [
+        ".devcontainer/install-deps.bash",
+        "mkdir -p $HOME/.config/vscode-dev-containers/ && touch $HOME/.config/vscode-dev-containers/first-run-notice-already-displayed"
+    ],
 
     // Ensure the postCreateCommand is run before accessing the container.
     "waitFor": "postCreateCommand",
