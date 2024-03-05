@@ -1,4 +1,20 @@
-# Overrides
+# Customising Theme
+
+## Previewing
+
+If theme files have been modified, you will need to rebuild and restart the docs server. (The 'rebuild on changes' does not cover template files).
+
+### Restarting server (codespaces)
+
+In the 'terminal' tab, kill the 'build' task by clicking the rubbish bin.
+
+![Alt text](../docs/assets/images/stop-mkdocs.png)
+
+Then start the build again by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>.
+
+You will see the 'build' task reappear.
+
+## Overrides
 
 This is for customising the material theme, details here https://squidfunk.github.io/mkdocs-material/customization/
 
@@ -8,7 +24,7 @@ Overriding files must mirror the original file structure if you are replacing an
 However, you can put your own custom stuff in here.
 Here is a list of the original available files, before override:
 
-```
+```tree
 ├─ .icons/                             # Bundled icon sets
 ├─ assets/
 │  ├─ images/                          # Images and icons
