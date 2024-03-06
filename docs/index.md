@@ -13,7 +13,7 @@ Technical Documentation for our HPC service.
 
 ## Services
 
-[cards cols=4 (./docs/cards-services.yaml)]
+[cards cols=3 (./docs/cards-services.yaml)]
 
 ## Help
 
