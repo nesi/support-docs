@@ -7,7 +7,6 @@ vote_sum: 10
 zendesk_article_id: 360000691716
 zendesk_section_id: 360000278975
 ---
-
 If you are unsure about using our job scheduler Slurm, more details can
 be found
 [here](../../Getting_Started/Next_Steps/Submitting_your_first_job.md).
@@ -18,20 +17,20 @@ A complete list of Slurm commands can be found
 [here](https://slurm.schedmd.com/man_index.html), or by entering man
 slurm into a terminal
 
-|         |                       |                                                                           |
-|---------|-----------------------|---------------------------------------------------------------------------|
-| sbatch  | `sbatch submit.sl`    | Submits the Slurm script *submit.sl*                                      |
-| squeue  | `squeue`              | Displays entire queue.                                                    |
-|         | `squeue --me`         | Displays your queued jobs.                                                |
-|         | `squeue -p long`      | Displays queued jobs on the *long* partition.                             |
-| sacct   | `sacct`               | Displays all the jobs run by you that day.                                |
-|         | `sacct -S 2019-01-01` | Displays all the jobs run by you since the *1st Jan 2019*                 |
-|         | `sacct -j 123456789`  | Displays job *123456789*                                                  |
-| scancel | `scancel 123456789`   | Cancels job *123456789*                                                   |
-|         | `scancel --me`        | Cancels all your jobs.                                                    |
-| sshare  | `sshare -U`           | Shows the Fair Share scores for all projects of which *you* are a member. |
-| sinfo   | `sinfo`               | Shows the current state of our Slurm partitions.                          |
-|         |                       |                                                                           |
+|         |                         |                                                                             |
+| ------- | ----------------------- | --------------------------------------------------------------------------- |
+| sbatch  | `sbatch submit.sl`    | Submits the Slurm script*submit.sl*                                       |
+| squeue  | `squeue`              | Displays entire queue.                                                      |
+|         | `squeue --me`         | Displays your queued jobs.                                                  |
+|         | `squeue -p long`      | Displays queued jobs on the*long* partition.                              |
+| sacct   | `sacct`               | Displays all the jobs run by you that day.                                  |
+|         | `sacct -S 2019-01-01` | Displays all the jobs run by you since the*1st Jan 2019*                  |
+|         | `sacct -j 123456789`  | Displays job*123456789*                                                   |
+| scancel | `scancel 123456789`  | Cancels job*123456789*                                                    |
+|         | `scancel --me`        | Cancels all your jobs.                                                      |
+| sshare  | `sshare -U`           | Shows the Fair Share scores for all projects of which*you* are a member. |
+| sinfo   | `sinfo`               | Shows the current state of our Slurm partitions.                            |
+|         |                         |                                                                             |
 
 ## `sbatch`` options
 
@@ -45,71 +44,29 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 
 ### General options
 
-  ----------------------- ---------------------------------------- -------------------------------------------------------------------------------------------------------
-  --job-name              `#SBATCH --job-name=MyJob`               The name that will appear when using squeue or sacct
-
-  --account               `#SBATCH --account=nesi99999`            The account your core hours will be 'charged' to.
-
-  --time                  `#SBATCH --time=DD-HH:MM:SS`             Job max walltime  
-
-  --mem                   `#SBATCH --mem=512MB`                    Memory required per node.
-
-  --partition             `#SBATCH --partition=long`               Specified job
-                                                                   [partition](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md).
-
-  --output                `#SBATCH --output=%j_output.out`         Path and name of standard output file.
-
-  --mail-user             `#SBATCH --mail-user=bob123@gmail.com`   Address to send mail notifications.
-
-  --mail-type             `#SBATCH --mail-type=ALL`                Will send a mail notification at `BEGIN END FAIL`
-
-                          `#SBATCH --mail-type=TIME_LIMIT_80`      Will send message at *80%* walltime
-
-  --no-requeue            `#SBATCH --no-requeue`                   Will stop job being requeued in the case of node failure.
-  ----------------------- ---------------------------------------- -------------------------------------------------------------------------------------------------------
+|                  |                                           |                                                                                                                 |
+| ---------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `--job-name`   | ``#SBATCH --job-name=MyJob``              | The name that will appear when using squeue or sacct.                                                           |
+| `--account`    | ``#SBATCH --account=nesi99999``           | The account your core hours will be 'charged' to.                                                               |
+| `--time`       | ``#SBATCH --time=DD-HH:MM:SS``            | Job max walltime.                                                                                               |
+| `--mem`        | ``#SBATCH --mem=512MB``                   | Memory required per node.                                                                                       |
+| `--partition`  | ``#SBATCH --partition=long``              | Specified job[partition](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md). |
+| `--output`     | ``#SBATCH --output=%j_output.out``        | Path and name of standard output file.                                                                          |
+| `--mail-user`  | ``#SBATCH --mail-user=user123@gmail.com`` | Address to send mail notifications.                                                                             |
+| `--mail-type`  | ``#SBATCH --mail-type=ALL``               | Will send a mail notification at `BEGIN END FAIL`.                                                            |
+|                  | ``#SBATCH --mail-type=TIME_LIMIT_80``     | Will send message at*80%* walltime.                                                                           |
+| `--no-requeue` | ``#SBATCH --no-requeue``                  | Will stop job being requeued in the case of node failure.                                                       |
 
 ### Parallel options
 
-<table style="height: 205px; width: 966px;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="odd" style="height: 23px;">
-<td style="width: 148px; height: 23px">--nodes</td>
-<td style="width: 303px; height: 23px"><code
-class="sl">#SBATCH --nodes=2</code></td>
-<td style="width: 446px; height: 23px">Will request tasks be run across
-2 nodes.</td>
-</tr>
-<tr class="even" style="height: 23px;">
-<td style="width: 148px; height: 23px">--ntasks</td>
-<td style="width: 303px; height: 23px"><code
-class="sl">#SBATCH --ntasks=2</code></td>
-<td style="width: 446px; height: 23px">Will start 2 <a
-href="https://support.nesi.org.nz/knowledge/articles/360000690275/">MPI</a>
-tasks.</td>
-</tr>
-<tr class="odd" style="height: 23px;">
-<td style="width: 148px; height: 23px">--ntasks-per-node</td>
-<td style="width: 303px; height: 23px"><code
-class="sl">#SBATCH --ntasks-per-node=1</code></td>
-<td style="width: 446px; height: 23px">Will start 1 task per requested
-node</td>
-</tr>
-<tr class="even" style="height: 23px;">
-<td style="width: 148px; height: 23px">--cpus-per-task</td>
-<td style="width: 303px; height: 23px"><code
-class="sl">#SBATCH --cpus-per-task=10</code></td>
-<td style="width: 446px; height: 23px"><p>Will request 10
-<em>logical</em> CPUs per task.</p>
-<p>See <a
-href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md">Hyperthreading</a>.</p></td>
-</tr>
-<tr class="odd" style="height: 23px;">
-<td style="width: 148px; height: 23px">--mem-per-cpu</td>
+|                       |                                  |                                                                                                                         |
+| --------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `--nodes`           | ``#SBATCH --nodes=2``            | Will request tasks be run across 2 nodes.                                                                               |
+| `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2[MPI](../../Getting_Started/Next_Steps/Parallel_Execution.md) tasks.                                           |
+| `--ntasks-per-node` | ``#SBATCH --ntasks-per-node=1 `` | Will start 1 task per requested node.                                                                                   |
+| `--cpus-per-task`   | ``#SBATCH --cpus-per-task=10``   | Will request 10[*logical* CPUs](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md) per task. |
+| `--mem-per-cpu`     |                                  |                                                                                                                         |
+
 <td style="width: 303px; height: 23px"><code
 class="sl">#SBATCH --mem-per-cpu=512MB</code></td>
 <td style="width: 446px; height: 23px"><p>Memory Per <em>logical</em>
@@ -193,9 +150,7 @@ defined.</td>
      Many options have a short and long form e.g.
      `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
 
-     ``` sh
-     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
-     ```
+    ``sh      echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"     ``
 
 ## Tokens
 
@@ -206,20 +161,18 @@ such as the log file name.
 
 Common examples.
 
-|                        |                                                  |
-|------------------------|--------------------------------------------------|
+|                          |                                                  |
+| ------------------------ | ------------------------------------------------ |
 | `$SLURM_JOB_ID`        | Useful for naming output files that won't clash. |
 | `$SLURM_JOB_NAME`      | Name of the job.                                 |
-| `$SLURM_ARRAY_TASK_ID` | The current index of your array job.             |
+| `$SLURM_ARRAY_TASK_ID` | The current index of your array job.             |
 | `$SLURM_CPUS_PER_TASK` | Useful as an input for multi-threaded functions. |
 | `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
-| `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.             |
+| `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.           |
 
 !!! tip
      In order to decrease the chance of a variable being misinterpreted you
      should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
      possible. e.g.
 
-     ``` sh
-     echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
-     ```
+    ``sh      echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"     ``
