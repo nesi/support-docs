@@ -10,7 +10,6 @@ mkdocs-git-authors-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_file
 mkdocs-awesome-pages-plugin
-markdown-grid-tables
 
 # checkers
 neoteroi-mkdocs
