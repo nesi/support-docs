@@ -32,7 +32,7 @@ slurm into a terminal
 | sinfo   | `sinfo`               | Shows the current state of our Slurm partitions.                            |
 |         |                         |                                                                             |
 
-## `sbatch`` options
+## `sbatch` options
 
 A complete list of *sbatch* options can be found
 [here](https://slurm.schedmd.com/sbatch.html), or by running man sbatch
@@ -63,94 +63,27 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | --------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `--nodes`           | ``#SBATCH --nodes=2``            | Will request tasks be run across 2 nodes.                                                                               |
 | `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2[MPI](../../Getting_Started/Next_Steps/Parallel_Execution.md) tasks.                                           |
-| `--ntasks-per-node` | ``#SBATCH --ntasks-per-node=1 `` | Will start 1 task per requested node.                                                                                   |
-| `--cpus-per-task`   | ``#SBATCH --cpus-per-task=10``   | Will request 10[*logical* CPUs](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md) per task. |
-| `--mem-per-cpu`     |                                  |                                                                                                                         |
-
-<td style="width: 303px; height: 23px"><code
-class="sl">#SBATCH --mem-per-cpu=512MB</code></td>
-<td style="width: 446px; height: 23px"><p>Memory Per <em>logical</em>
-CPU.</p>
-<p><code class="sl">--mem</code> Should be used if shared memory
-job.</p>
-<p>See <a href="../../General/FAQs/How_do_I_request_memory.md">How do I
-request memory?</a>.</p></td>
-</tr>
-<tr class="even" style="height: 46px;">
-<td style="width: 148px; height: 46px">--array</td>
-<td style="width: 303px; height: 46px"><code
-class="sl">#SBATCH --array=1-5</code></td>
-<td style="width: 446px; height: 46px">Will submit job 5 times each with
-a different <code class="sl">$SLURM_ARRAY_TASK_ID</code>
-(1,2,3,4,5)</td>
-</tr>
-<tr class="odd" style="height: 44px;">
-<td style="width: 148px; height: 44px"> </td>
-<td style="width: 303px; height: 44px"><code
-class="sl">#SBATCH --array=0-20:5</code></td>
-<td style="width: 446px; height: 44px">Will submit job 5 times each with
-a different <code class="sl">$SLURM_ARRAY_TASK_ID</code>
-(0,5,10,15,20)</td>
-</tr>
-<tr class="even">
-<td style="width: 148px"> </td>
-<td style="width: 303px"><code
-class="sl">#SBATCH --array=1-100%10</code></td>
-<td style="width: 446px">Will submit 1 though to 100 jobs but no more
-than 10 at once.</td>
-</tr>
-</tbody>
-</table>
+| `--ntasks-per-node` | ```#SBATCH --ntasks-per-node=1``` | Will start 1 task per requested node.                                                                                   |
+| `--cpus-per-task`   | ```#SBATCH --cpus-per-task=10```  | Will request 10[*logical* CPUs](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md) per task. |
+| `--mem-per-cpu`     | ```#SBATCH --mem-per-cpu=512MB``` | Memory Per *logical* CPU. `--mem``  Should be used if shared memory job. See [How do I request memory?](../../General/FAQs/How_do_I_request_memory.md) |
+| --array | `#SBATCH --array=1-5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (1,2,3,4,5). |
+| | `#SBATCH --array=0-20:5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (0,5,10,15,20). |
+| | `#SBATCH --array=1-100%10` | Will submit 1 though to 100 jobs but no more than 10 at once. |
 
 ### Other
 
-<table style="height: 76px; width: 966px;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="width: 150.433px">--qos</td>
-<td style="width: 320px"><code
-class="sl">#SBATCH --qos=debug</code></td>
-<td style="width: 461.567px">Adding this line gives your job a very high
-priority. <em>Limited to one job at a time, max 15 minutes</em>.</td>
-</tr>
-<tr class="even">
-<td style="width: 150.433px">--profile</td>
-<td style="width: 320px"><code
-class="sl">#SBATCH --profile=ALL</code></td>
-<td style="width: 461.567px"><p>Allows generation of a .h5 file
-containing job profile information.</p>
-<p>See <a
-href="https://support.nesi.org.nz/hc/en-gb/articles/360000810616-How-can-I-profile-a-SLURM-job-">Slurm
-Native Profiling</a>.</p></td>
-</tr>
-<tr class="odd">
-<td style="width: 150.433px">--dependency</td>
-<td style="width: 320px"><code
-class="sl">#SBATCH --dependency=afterok:123456789</code></td>
-<td style="width: 461.567px">Will only start after the job 123456789 has
-completed.</td>
-</tr>
-<tr class="even">
-<td style="width: 150.433px">--hint</td>
-<td style="width: 320px"><code
-class="sl">#SBATCH --hint=nomultithread</code></td>
-<td style="width: 461.567px">Disables <a
-href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md">hyperthreading</a>,
-be aware that this will significantly change how your job is
-defined.</td>
-</tr>
-</tbody>
-</table>
-!!! tip
-     Many options have a short and long form e.g.
-     `#SBATCH --job-name=MyJob` & `#SBATCH -J=MyJob`.
+|    |    |    |
+| -- | -- | -- |
+| `--qos` | `#SBATCH --qos=debug` | Adding this line gives your job a high priority. *Limited to one job at a time, max 15 minutes*. |
+| `--profile` | `#SBATCH --profile=ALL` | Allows generation of a .h5 file containing job profile information. See [Slurm Native Profiling](../../Scientific_Computing/Profiling_and_Debugging/Slurm_Native_Profiling.md) |
+| `--dependency` | `#SBATCH --dependency=afterok:123456789` | Will only start after the job 123456789 has completed. |
+| `--hint` | `#SBATCH --hint=nomultithread` | Disables [hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md), be aware that this will significantly change how your job is defined. |
 
-    ``sh      echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"     ``
+!!! tip
+     Many options have a short (`-`) and long (`--`) form e.g.  
+     `#SBATCH --job-name=MyJob`  
+     or  
+     `#SBATCH -J=MyJob`.
 
 ## Tokens
 
@@ -175,4 +108,6 @@ Common examples.
      should use the syntax `${NAME_OF_VARIABLE}` and define in strings if
      possible. e.g.
 
-    ``sh      echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"     ``
+    ```sh
+    echo "Completed task ${SLURM_ARRAY_TASK_ID} / ${SLURM_ARRAY_TASK_COUNT} successfully"
+    ```
