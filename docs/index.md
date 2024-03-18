@@ -5,7 +5,7 @@ template: main.html
 
 # NeSI Support Documentation
 
-Technical Documentation for our HPC service.
+Technical documentation for our HPC service.
 
 ## Quickstart
 
