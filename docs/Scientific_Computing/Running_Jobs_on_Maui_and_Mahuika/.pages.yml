@@ -9,7 +9,6 @@ nav:
  - Milan_Compute_Nodes.md
  - Maui_Slurm_Partitions.md
  - SLURM-Best_Practice.md
- - Hyperthreading.md
  - NetCDF-HDF5_file_locking.md
  - Checksums.md
  - ...
