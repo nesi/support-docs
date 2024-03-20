@@ -15,7 +15,7 @@
     "files.autoSaveDelay": 5,
     "editor.renderWhitespace": "all",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.lightbulb.enabled": false,
+    "editor.lightbulb.enabled": "off",
     "editor.tabCompletion": "on",
     "files.insertFinalNewline": true,
     "workbench.commandPalette.experimental.suggestCommands": true,
