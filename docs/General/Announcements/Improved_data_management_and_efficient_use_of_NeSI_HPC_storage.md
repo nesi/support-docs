@@ -105,6 +105,12 @@ them for up to seven days. For more information,
 
 ### Where should I store my data on NeSI systems?
 
+| Access Frequency |  Modifying Frequency | Recommended option |
+| -- | -- | -- |
+| Often  | Often | `nobackup` |
+| Often | Seldom | `project` |
+| Seldom | Seldom | `nearline` |
+
 In general, the **project directory** should be used for reference data,
 tools, and job submission and management scripts. The **nobackup
 directory** should be used for holding large reference working datasets
