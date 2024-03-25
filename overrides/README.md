@@ -76,5 +76,21 @@ You can find the original files in the [mkdocs-material repo](https://github.com
 
 The following files have been overridden/added.
 
-`supported_apps.html`: Added. Custom template for supported apps page. Should only be used there.
-`main.html`: OVERRIDDEN. Needed to include custom banner, [concept_banner.html](partials/concept_banner.html).
+Top level is for complete pages and can be specified in a pages frontmatter under `template:`.
+
+[`supported_apps.html`](supported_apps.html): Added. Custom template for supported apps page. Should only be used there.
+[`main.html`](main.html): OVERRIDDEN. Needed to include custom banner, [`partials/concept_banner.html`](partials/concept_banner.html).
+
+Partials are templates expected to be used as an include to another template.
+
+`partials`
+[`partials/app_header.html`](partials/app_header.html): ADDED, For use in pages documenting a application that is in [modules-list.json](../docs/assets/module-list.json). Would like to move away from this.
+[`partials/concept_banner.htm`](partials/concept_banner.html): ADDED, Banner notification, indluded in header.
+[`partials/footer.html`](partials/footer.html): OVERRIDDEN, Custom NeSI footer. Would like to include a `super()` in there somewhere.
+[`partials/glossary.html`](partials/glossary.html): ADDED, Under construction.
+[`partials/header.html`](partials/header.html): OVERRIDDEN, To make NeSI logo in nav a link to home. Would really like to remove this
+[`partials/nav_support_request.html]`(partials/nav_support_request.html): ADDED, Support request button used in [`partials/nav.html`](partials/nav.html).
+[`partials/nav.html`](partials/nav.html): OVERRIDDEN, to include [`partials/nav_support_request.html]`(partials/nav_support_request.html)
+[`partials/support_request.html`](partials/support_request.html): ADDED, for use in pages whenever asking user to contact support.
+
+`partials/app/`: For specific components in use on supported apps page and in app documentation.
