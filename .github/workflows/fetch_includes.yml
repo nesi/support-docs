@@ -24,7 +24,7 @@ jobs:
       - name: Link apps pages
         run: python3 .github/workflows/link_apps_pages.py
       - name: Fetch Glossary
-        run: wget -O overrides/Glossary.md ${GLOSSARY_URL}
+        run: wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
       - name: Fetch Dictionary
         run: wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
       - name: Fetch Snippets
