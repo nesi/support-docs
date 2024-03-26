@@ -5,3 +5,4 @@ production/*
 **.pyc
 .venv/**
 .ipynb_checkpoints
+dictionary.dic

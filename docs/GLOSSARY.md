@@ -5,4 +5,4 @@ search:
 
 List of terms used in this documentation.
 
-{% include "Glossary.md" %}
+{% include "partials/glossary.html" %}

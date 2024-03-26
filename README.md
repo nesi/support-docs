@@ -32,6 +32,8 @@ Following pages contain information to help maintain the documentation:
 - See [formatting](https://nesi.github.io/support-docs-concept/FORMAT), for examples of markdown syntax.
 - See [create a new page](https://nesi.github.io/support-docs-concept/NEWPAGE), for general principles to consider when writing pages.
 - See [macros](https://nesi.github.io/support-docs-concept/MACROS), for `mkdocs-macros-plugin` environment.
+- See [checks](checks/README.md), for information on quality assurance tests.
+- See [wokflows](.github/workflows/README.md), for information on CI workflows.
 
 ## Theme
 

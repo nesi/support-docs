@@ -2,13 +2,6 @@
 {% block header %}
 {% include "partials/concept_banner.html" %}
 {{ super() }}
-{% if page.meta and page.meta.prereq %}
-<ul>
-    {% for pre in page.meta.prereq %}
-    <li>{{pre}}</li>
-    {% endfor %}
-</ul>>
-{% endif %}
 {% endblock %}
 {% block content %}
 {{ super() }}
