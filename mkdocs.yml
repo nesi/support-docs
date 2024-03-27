@@ -5,6 +5,7 @@ markdown_extensions:
       baselevel: 1
       permalink: true
       toc_depth: 3
+      title: On this page
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -68,7 +69,7 @@ theme:
     - navigation.path             # Breadcrumbs. Insiders only
     - content.code.copy
     - content.action.edit
-    # - header.site_name_homepage
+    - header.site_name_homepage
   language: en
   logo: assets/icons/logo.svg
   name: material
