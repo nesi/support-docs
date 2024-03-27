@@ -31,9 +31,10 @@ plugins:
   - awesome-pages:
       filename: .pages.yml
  # - git-authors
-  - tags
+  - tags:
+      tags: false  # This will keep tags for the purpose of indexing, but not display on page.
   - git-revision-date-localized:
-      enable_creation_date: true
+      enable_creation_date: false
   - macros:
       on_error_fail: !ENV [TEST_ENV, false]
       verbose: !ENV [TEST_ENV, false]
@@ -59,11 +60,15 @@ theme:
   features:
     - navigation.indexes
     # - navigation.sections
-    - navigation.top
-    - navigation.prune
+    - navigation.instant          # Single Page Application
+    - navigation.instant.prefetch # Start loading page on link hover. Insiders only
+    - navigation.top              # 'Return to top' button
+    # - navigation.prune            # Reduces site size. ALSO BREAKS NAV BEHAVIOR
+    - navigation.tracking         # Put anchor in URL
+    - navigation.path             # Breadcrumbs. Insiders only
     - content.code.copy
-    - content.action.edit 
-    - navigation.path # Insiders only
+    - content.action.edit
+    # - header.site_name_homepage
   language: en
   logo: assets/icons/logo.svg
   name: material
@@ -78,5 +83,3 @@ theme:
       toggle:
         icon: material/lightbulb-outline
         name: Switch to light mode
-    # on_post_build: "custom_hooks:check_links" # This doesn't work very well.
-    #on_post_build: ":lint"
