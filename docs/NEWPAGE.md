@@ -108,7 +108,7 @@ The following sections detail the most usual entries.
 - `description` : This will appear when Googling, or using the internal search. : `string`
 - `icon`        : Page icon.                                                    : `path`
 - `status`      : Will display a symbol on nav                                  : only `new` or `deprecated` are supported
-- `hide`        : Used to turn off features (e.g. table of content)             : `tags`
+- `hide`        : Used to turn off features (e.g. table of content)             : `tags` `toc` `nav`
 
 ### Zendesk Imported
 

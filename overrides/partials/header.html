@@ -19,7 +19,7 @@
       <div class="md-header__title" data-md-component="header-title">
         <div class="md-header__ellipsis">
           <div class="md-header__topic">
-            <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" class="md-ellipsis">
+            <a {% if "header.site_name_homepage" in features  %} href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" {% endif %} class="md-ellipsis">
               {{ config.site_name }}
             </a>
           </div>
