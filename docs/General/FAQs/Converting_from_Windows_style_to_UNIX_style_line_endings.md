@@ -2,8 +2,8 @@
 created_at: '2016-03-14T01:52:06Z'
 tags: []
 title: Converting from Windows-style to UNIX-style line endings
-vote_count: 43
-vote_sum: 9
+vote_count: 47
+vote_sum: 13
 zendesk_article_id: 218032857
 zendesk_section_id: 360000039036
 ---
@@ -92,8 +92,8 @@ box (a box containing Ln, Col and Sel entries) and the text encoding box
 (which will contain UTF-8, ANSI, or some other technical string) will be
 a box containing the current line ending format.
 
-- In most cases, this box will contain the text "DOS\Windows".
-- In a few cases, such as the file having been prepared on a UNIX or
+-   In most cases, this box will contain the text "DOS\\Windows".
+-   In a few cases, such as the file having been prepared on a UNIX or
     Linux machine or a Mac, it will contain the text "UNIX".
 - It is possible, though highly unlikely by now, that the file may
     have old-style (pre-OSX) Mac line endings, in which case the box

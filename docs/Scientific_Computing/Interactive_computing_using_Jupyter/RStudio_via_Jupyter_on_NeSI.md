@@ -34,8 +34,8 @@ javascript in your web browser.
 ## Changing R version
 
 You can configure a set of [environment
-modules](../../Getting_Started/Next_Steps/The_HPC_environment.md) to
-preload before starting RStudio. This can be useful if you want to
+modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
+to preload before starting RStudio. This can be useful if you want to
 change the version of the R interpreter or use NeSI's *R-Geo* or
 *R-bundle-Bioconductor* modules.
 
@@ -129,6 +129,8 @@ cat ~/.jupyter/.jupyterhub_${USER}_${SLURM_JOB_ID}.log
 
 ## Troubleshooting
 
+### Error 500
+
 If you get an error 500 after clicking on the launcher icon, this could
 be due to RStudio taking too much time to start, which is interpreted as
 a failure by JupyterLab. Please try to start RStudio again from the
@@ -136,11 +138,19 @@ launcher. If the problem persists, {% include "partials/support_request.html" %}
 
 ![error\_500.PNG](../../assets/images/RStudio_via_Jupyter_on_NeSI_0.png)
 
-If you have disabled javascript in your web browser, you will need to
-enter your password manually in the RStudio login screen. To retrieve
-the password, open a terminal in JupyterLab and enter the following to
-print the password:
+If you have disabled javascript in your web browser, you will need
+to enter your password manually in the RStudio login screen. To
+retrieve the password, open a terminal in JupyterLab and enter the
+following to print the password:
 
 ```sh
 $ cat ~/.config/rstudio_on_nesi/server_password
 ```
+
+### Error 599
+
+    RStudio fails to load, times out, fails to initialze  
+    If your RStudio session won't load, a possible solution is to delete
+    the contents of the two hidden directories  in your home directory.
+    -   `.local/share/rstudio`
+    -   `.local/share/rstudio_on_nesi`

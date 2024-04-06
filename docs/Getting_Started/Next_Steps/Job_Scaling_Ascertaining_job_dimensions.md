@@ -71,7 +71,7 @@ data, or only doing a subset of the calculations you intend to do in the
 complete jobs, cutting your initial test jobs down in size means that
 they will both queue faster and run for less time. Also, if one of these
 jobs fails due to not asking for enough resources, a small scale job
-will (hopefully) not have waited for hours or days in the queue
+will not have waited for hours or days in the queue
 beforehand.
 
 !!! example

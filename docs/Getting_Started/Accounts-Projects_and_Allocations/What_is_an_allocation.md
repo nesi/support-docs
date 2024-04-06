@@ -20,6 +20,15 @@ research programme, however you're welcome to review [our article on
 allocation classes](../../General/NeSI_Policies/Allocation_classes.md)
 to find out what class you're likely eligible for.
 
+## An important note on CPU hour allocations
+
+You may continue to submit jobs even if you have used all your CPU-hour
+allocation. The effect of 0 remaining CPU hours allocation is a [lower
+fairshare](https://support.nesi.org.nz/hc/en-gb/articles/360000743536-Fair-Share),
+not the inability to use CPUs. Your ability to submit jobs will only be
+removed when your project's allocation expires, not when core-hours are
+exhausted.
+
 ## HPC Platform allocations
 
 The form of NeSI allocation you may be most familiar with is an
@@ -30,7 +39,7 @@ plus one kind of compute allocation) in order to be valid and active.
 Compute allocations are expressed in terms of a number of units, to be
 consumed or reserved between a set start date and time and a set end
 date and time. For allocations of computing power, we use [Fair
-Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
+Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md)
 to balance work between different projects. NeSI allocations and the
 relative "prices" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running

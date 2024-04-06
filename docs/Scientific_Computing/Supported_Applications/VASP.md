@@ -71,7 +71,7 @@ are not from a known group or if the license is new.
 #SBATCH --job-name        MyVASPJob
 #SBATCH --time            01:00:00
 #SBATCH --nodes           1
-#SBATCH --ntasks          16               # start 16 MPI tasks or 16
+#SBATCH --ntasks          16               # start 16 MPI tasks
 #SBATCH --mem             20G
 #SBATCH --hint            nomultithread
 
@@ -81,7 +81,7 @@ module load VASP/6.4.1-intel-2022a
 # Use the -K switch so that, if any of the VASP processes exits with an
 # error, the entire job will stop instead of continuing to waste core
 # hours on a defunct run.
-srun -K vasp_std
+srun -K1 vasp_std
 ```
 
 ### Avoid hyperthreading
@@ -104,12 +104,12 @@ as shown in our example script above.
 
 ### How many cores should I request?
 
-Unsurprisingly, the number of cores used in a VASP calculation has
-significant influence on how long the calculation takes to finish. The
-more cores a problem can parallelise over, the more it can do at once.
-However, this parallelisation carries with it some communication costs.
-Too many cores for too small a problem can decrease efficiency and speed
-(not to mention waste resources), as the cost of communicating
+Unsurprisingly, the number of cores used in a VASP calculation
+significantly influences on how long the calculation takes to finish.
+The more cores a problem can parallelise over, the more it can do at
+once. However, this parallelisation carries with it some communication
+costs. Too many cores for too small a problem can decrease efficiency
+and speed (not to mention waste resources), as the cost of communicating
 tasks/threads becomes greater than the cost of the calculation itself.
 
 To determine an appropriate number of cores to request for a VASP
@@ -371,7 +371,7 @@ Here are some additional notes specific to running VASP on GPUs on NeSI:
             #SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
             # end snippet
             ```
-- Multiple threads per MPI process (--cpus-per-task) might be
+- Multiple threads per MPI process (`--cpus-per-task`) might be
     beneficial for performance but you should start by setting this
     to 1 to get a baseline
 - VASP will scale better across multiple GPUs when they are all on

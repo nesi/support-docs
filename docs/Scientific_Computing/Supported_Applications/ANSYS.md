@@ -263,7 +263,7 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 
 !!! warning
     Closing the fluent GUI will not end the SLURM interactive session. Use
-    `exit` or `scancel `*`jobid`* when finished, else you will continue to
+    `exit` or `scancel <jobid>` when finished, else you will continue to
     'use' the requested CPUs.
 
 ### Checkpointing

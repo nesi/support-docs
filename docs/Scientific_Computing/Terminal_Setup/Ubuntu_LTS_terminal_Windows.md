@@ -2,8 +2,8 @@
 created_at: '2019-07-15T04:12:01Z'
 tags: []
 title: Ubuntu LTS terminal (Windows)
-vote_count: 3
-vote_sum: 3
+vote_count: 4
+vote_sum: 2
 zendesk_article_id: 360001050575
 zendesk_section_id: 360000189696
 ---

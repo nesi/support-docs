@@ -2,8 +2,8 @@
 created_at: '2023-01-12T02:42:17Z'
 tags: []
 title: Data transfer between NeSI and a PC without NeSI two-factor authentication
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 6198499650703
 zendesk_section_id: 360000040596
 ---

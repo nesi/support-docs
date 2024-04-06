@@ -75,14 +75,23 @@ run, but the limits on each machine is different.
 
 ### Mahuika
 
+Currently, Mahuika has Intel Broadwell and [AMD Milan
+CPUs](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md).
+To run on the faster AMD Milan CPUs you will need to specify
+"--partition=milan" in your Slurm script.
+
 Mahuika is made up of several [partitions which have different resources
 and different
 limits](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md).
 A job can request up to 20,000 CPU core hours, running up to 3 weeks
 with up to 576 CPU cores (equivalent to eight full nodes). Furthermore,
 there are special nodes available with high memory (up to 6 TB) or GPUs.
+
 Depending on what resources you are requesting and for how long, your
-jobs will be automatically assigned to the most suitable partition.
+jobs will be automatically assigned to the most suitable partition on
+any of the Intel Broadwell partitions. (You will still need to specify
+--partition=milan to run on the AMD Milan nodes.)
+
 Mahuika allows the submission of jobs with variable numbers of CPUs and
 amounts of RAM (memory). The nodes your job is running on will probably
 be shared with other jobs.

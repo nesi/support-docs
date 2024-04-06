@@ -2,8 +2,8 @@
 created_at: '2019-01-18T01:56:15Z'
 tags: []
 title: 'SLURM: Best Practice'
-vote_count: 3
-vote_sum: 1
+vote_count: 4
+vote_sum: 2
 zendesk_article_id: 360000705196
 zendesk_section_id: 360000030876
 ---
@@ -76,7 +76,7 @@ job array in a single command)
 
 A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation
-[here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md).
+[here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md).
 
 ## Cross machine submission
 

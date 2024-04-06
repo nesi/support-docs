@@ -110,21 +110,61 @@ will submit, `ArrayJob_1` and `ArrayJob_2`, which will return the results `This 
 
 Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the recommended method of variation between the jobs.
 
-!!! warning
-
-    Environment variables *will not work* in the Slurm header.
-    In place of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`.
-    This can be useful for sorting your output files e.g.
+- As a direct input to a function.  
 
     ``` sl
-    #SBATCH --output=outputs/run_%a/slurm_output.out
-    #SBATCH --output=outputs/run_%a/slurm_error.err
+    matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
     ```
 
-#### As a direct input to a function
+- As an index to an array.  
 
-``` bash
-matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
+    ``` sl
+    inArray=(1 2 4 8 16 32 64 128)
+    input=${inArray[$SLURM_ARRAY_TASK_ID]}
+    ```
+
+- For selecting input files.  
+
+    ``` sl
+    input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
+    ```
+
+- As a seed for a pseudo-random number.  
+    - In R
+
+        ``` sl
+        task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
+        set.seed(task_id)
+        ```
+
+    - In MATLAB
+
+        ``` sl
+        task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
+        rng(task_id)
+        ```
+
+    *Using a seed is important, otherwise multiple jobs may receive the
+    same pseudo-random numbers.*
+
+- As an index to an array of filenames. 
+
+    ``` sl
+    files=( inputs/*.dat )
+    input=${files[SLURM_ARRAY_TASK_ID]}
+    # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
+    ```
+
+    This example will submit a job array with each job using a .dat file
+    in 'inputs' as the variable input (in alphabetcial order).
+
+Environment variables *will not work* in the Slurm header. In place
+of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
+useful for sorting your output files e.g.
+
+``` sl
+#SBATCH --output=outputs/run_%a/slurm_output.out
+#SBATCH --output=outputs/run_%a/slurm_error.err
 ```
 
 #### As an index to an array

@@ -2,8 +2,8 @@
 created_at: '2023-02-09T01:30:43Z'
 tags: []
 title: Milan Compute Nodes
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 6367209795471
 zendesk_section_id: 360000030876
 ---
@@ -66,7 +66,7 @@ the new nodes.
 
 Of course you can also recompile code inside a job run in the Milan
 partition and so produce an executable linked against the new system
-libraries, but then that would be unlikely to work on the old nodes.
+libraries.
 
 In the longer term, all Mahuika nodes will be upgraded to Rocky 8.
 

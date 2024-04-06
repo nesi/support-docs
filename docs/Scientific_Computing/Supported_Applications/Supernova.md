@@ -58,7 +58,7 @@ own licensing agreement.
 
 <https://support.10xgenomics.com/de-novo-assembly/software/downloads/latest>
 
-## Example script
+## Example script``
 
 ``` sl
 #SBATCH -J mySupernovajob
@@ -127,7 +127,7 @@ The link assumes the form..
 In a new local terminal window open an ssh tunnel to the node. This
 takes the following general form
 
-**`ssh -L <d>:<node>:<port> -N <server>`**
+`ssh -L <d>:<node>:<port> -N <server>`
 
 - &lt;d&gt; An integer
 - &lt;server&gt; see: [  
@@ -162,4 +162,5 @@ http://localhost:9999/?auth=Bx2ccMZmJxaIfRNBOZ_XO_mQd1njNGL3rZry_eNI1yU
     directory (the directory named by `ID=${SLURM_JOB_NAME}` where the
     `_log ` file is also located) and passed to supernova in the
     `--id=${ID}` argument in the sample Slurm script above. Avoid
-    changing any other settings in both the call to Slurm and supernova.
+    changing any other settings in both the call to Slurm and
+    supernova.``````
