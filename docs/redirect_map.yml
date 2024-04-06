@@ -43,8 +43,8 @@ hc/en-gb/articles/360000175675-Proposal-Development-allocations.md: General/NeSI
 hc/en-gb/articles/360000175675.md: General/NeSI_Policies/Proposal_Development_allocations.md
 hc/en-gb/articles/360000175695-Postgraduate-allocations.md: General/NeSI_Policies/Postgraduate_allocations.md
 hc/en-gb/articles/360000175695.md: General/NeSI_Policies/Postgraduate_allocations.md
-hc/en-gb/articles/360000175735-Overview.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Overview.md
-hc/en-gb/articles/360000175735.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Overview.md
+hc/en-gb/articles/360000175735-Overview.md: Scientific_Computing/The_NeSI_High_Performance_Computers/index.md
+hc/en-gb/articles/360000175735.md: Scientific_Computing/The_NeSI_High_Performance_Computers/index.md
 hc/en-gb/articles/360000176116-Institutional-allocations.md: General/NeSI_Policies/Institutional_allocations.md
 hc/en-gb/articles/360000176116.md: General/NeSI_Policies/Institutional_allocations.md
 hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas.md: Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md
@@ -543,5 +543,5 @@ hc/en-gb/articles/9308584352783-Accessing-NeSI-Support-during-the-Easter-break.m
 hc/en-gb/articles/9308584352783.md: General/Announcements/Accessing_NeSI_Support_during_the_Easter_break.md
 hc/en-gb/articles/9329030038543-my-nesi-org-nz-release-notes-v2-21-0.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-21-0.md
 hc/en-gb/articles/9329030038543.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-21-0.md
-hc/en-gb/articles/9376633910159-jupyter-nesi-org-nz-release-notes-26-03-2024.md: Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
-hc/en-gb/articles/9376633910159.md: Scientific_Computing/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
+hc/en-gb/articles/9376633910159-jupyter-nesi-org-nz-release-notes-26-03-2024.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
+hc/en-gb/articles/9376633910159.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md

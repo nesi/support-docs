@@ -32,7 +32,7 @@ Click on the links below to add the date & Zoom link to your calendar:
     AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MXN0aGx1bjJpbjRicnJpMWZka2Jkc3NjbHIgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
 If you are unable to add an Office Hour session to your calendar through
-these links, please email us at [training@nesi.org.nz](training@nesi.org.nz) and we can send a
+these links, please email us at [training@nesi.org.nz](mailto:training@nesi.org.nz) and we can send a
 calendar invite directly to you.
 
 ## How Does It Work
