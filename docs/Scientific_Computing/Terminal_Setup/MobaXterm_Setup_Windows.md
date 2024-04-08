@@ -21,8 +21,9 @@ Setting up MobaXterm as shown below will allow you to connect to the
 Cluster with less keyboard inputs as well as allow use of the file
 transfer GUI.
 
-1. Download MobaXterm
-    [here](https://mobaxterm.mobatek.net/download-home-edition.html)
+1. [Download MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)
+    - Some users have reported having issues downloading files using
+        MobaXterm 23.6. We suggest using version 23.5 instead.
     - Use the Portable Edition if you don't have administrator rights
         on your machine. This is the recommended way for NIWA
         researchers.
@@ -127,8 +128,7 @@ Two steps to try:
         `mahuika` as well). I recommend removing all of it and restart
         MobaXterm before the next login attempt
 
-Then setup a new session [according to the support doc
-instructions](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
+Then setup a new session [according to the support doc instructions](./MobaXterm_Setup_Windows.mdMobaXter)
 as before.
 
 !!! prerequisite "What Next?"

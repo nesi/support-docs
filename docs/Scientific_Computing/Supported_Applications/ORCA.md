@@ -4,8 +4,8 @@ tags:
 - mahuika
 - chemistry
 title: ORCA
-vote_count: 3
-vote_sum: 3
+vote_count: 6
+vote_sum: 4
 zendesk_article_id: 213718027
 zendesk_section_id: 360000040076
 ---
@@ -43,7 +43,7 @@ particular version of it, please  {% include "partials/support_request.html" %}.
 #!/bin/bash -e
 #SBATCH --job-name      ORCA_job
 #SBATCH --time          01:00:00
-#SBATCH --ntasks        16  # ORCA can be inefficient with ntasks > 16
+#SBATCH --ntasks        16
 #SBATCH --mem-per-cpu   1G
 
 module load ORCA/5.0.4-OpenMPI-4.1.5

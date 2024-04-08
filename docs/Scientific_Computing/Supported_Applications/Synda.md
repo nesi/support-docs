@@ -122,7 +122,7 @@ Total size: 262.8 MB
 New files size: 262.8 MB
 ```
 
-To download the dataset, type
+``To download the dataset, type
 
 ``` sh
 synda get CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gn.v2018070

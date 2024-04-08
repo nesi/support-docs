@@ -3,8 +3,8 @@ created_at: '2019-08-09T00:46:44Z'
 status: deprecated
 tags: []
 title: JupyterLab
-vote_count: 0
-vote_sum: 0
+vote_count: 3
+vote_sum: 1
 zendesk_article_id: 360001093315
 zendesk_section_id: 360000040076
 ---

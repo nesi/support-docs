@@ -2,8 +2,8 @@
 created_at: '2018-05-18T02:34:03Z'
 tags: []
 title: Project Extensions and New Allocations on Existing Projects
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 360000202196
 zendesk_section_id: 360000196195
 ---

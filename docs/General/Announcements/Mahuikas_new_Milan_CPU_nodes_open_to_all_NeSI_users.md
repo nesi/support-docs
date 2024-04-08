@@ -1,7 +1,7 @@
 ---
 created_at: '2023-03-30T02:23:48Z'
 tags: []
-title: "Mahuika\u2019s new Milan CPU nodes open to all NeSI users"
+title: "Mahuika's new Milan CPU nodes open to all NeSI users"
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 6686934564239
@@ -17,40 +17,36 @@ NeSI’s strategy to lower the carbon footprint and continually improve
 the performance and fit-for-purpose design of our platforms to meet your
 research needs.
 
-**What’s new**
+## What’s new
 
--   faster, more powerful computing, enabled by AMD 3rd Gen EPYC Milan
+- faster, more powerful computing, enabled by AMD 3rd Gen EPYC Milan
     architecture
 
--   specialised high-memory capabilities, allowing rapid simultaneous
+- specialised high-memory capabilities, allowing rapid simultaneous
     processing
 
--   improved energy efficiency - these nodes are 2.5 times more power
+- improved energy efficiency - these nodes are 2.5 times more power
     efficient than Mahuika’s original Broadwell nodes
 
-**How to access**
+How to access
 
--   Visit our Support portal for [instructions to get
-    started](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md "https://support.nesi.org.nz/hc/en-gb/articles/6367209795471-Milan-Compute-Nodes")
+- Visit our Support portal for [instructions to get
+    started](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
     and details of how the Milan nodes differ from Mahuika’s original
     Broadwell nodes
 
-**Learn more**
+## Learn more
 
--   [Watch this webinar](https://youtu.be/IWRZLl__uhg) sharing a quick
+- [Watch this webinar](https://youtu.be/IWRZLl__uhg) sharing a quick
     overview of the new resources and some tips for making the most of
     the nodes.
 
--   Bring questions to our [weekly Online Office
+- Bring questions to our [weekly Online Office
     Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
 
--    {% include "partials/support_request.html" %}
+- {% include "partials/support_request.html" %}
     any time
-
- 
 
 If you have feedback on the new nodes or suggestions for improving your
 experience getting started with or using any of our systems, please [get
 in touch {% include "partials/support_request.html" %}.
-
- 

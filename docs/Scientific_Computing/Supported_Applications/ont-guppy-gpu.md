@@ -2,8 +2,8 @@
 created_at: '2022-03-22T07:46:51Z'
 tags: []
 title: ont-guppy-gpu
-vote_count: 4
-vote_sum: 2
+vote_count: 5
+vote_sum: 3
 zendesk_article_id: 4546820344079
 zendesk_section_id: 360000040076
 ---

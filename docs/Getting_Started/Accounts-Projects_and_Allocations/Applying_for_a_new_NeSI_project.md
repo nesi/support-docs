@@ -5,8 +5,8 @@ tags:
 - project
 - mynesi
 title: Applying for a new NeSI project
-vote_count: 5
-vote_sum: 3
+vote_count: 6
+vote_sum: 4
 zendesk_article_id: 360000174976
 zendesk_section_id: 360000196195
 ---

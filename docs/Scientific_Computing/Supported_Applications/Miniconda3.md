@@ -134,10 +134,10 @@ conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
 
 ## Faster solver `mamba` (experimental feature)
 
-If you are using the module `Miniconda3/`*`22.11.1-1`*, you can
-accelerate conda environments creation and package installation using
-the new `libmamba` solver. To use it, append the option
-`--solver=libmamba` to your command.
+If you are using the module `Miniconda3/22.11.1-1`, you can accelerate
+conda environments creation and package installation using the new
+`libmamba` solver. To use it, append the option `--solver=libmamba` to
+your command.
 
 For example, to create an environment from an `environment.yml` file,
 use:

@@ -5,8 +5,8 @@ tags:
 - nearline
 - tape
 title: Nearline Long-Term Storage Service
-vote_count: 2
-vote_sum: 2
+vote_count: 3
+vote_sum: 3
 zendesk_article_id: 360001169956
 zendesk_section_id: 360000042255
 ---
@@ -134,10 +134,8 @@ nlput [ --nowait ] <projectID> { <src_dir> | <file_list> }
 ```
 
 The source directory or file list needs to be located under
-`/nesi/`**`project`**`/` or `/nesi/`**`nobackup`**`/`and specified as
-such.
-
-!!! note
+`/nesi/project/` or `/nesi/nobackup/`and specified as such. 
+!!! prerequisite Note
      The following will not work:
      ``` sh
      cd /nesi/project/nesi12345
@@ -229,13 +227,12 @@ will copy all data within the `Results` directory into
 `/nesi/nearline/nesi12345/To/Archive/Results/`.
 
 !!! warning
-    If you put `/nesi/`**`project`**`/nesi12345/To/Archive/Results/` on
-    Nearline as well as
-    `/nesi/`**`nobackup`**`/nesi12345/To/Archive/Results/`, the contents
-    of both source locations (`project` and `nobackup`) will be merged
-    into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
-    `/nesi/nearline/nesi12345/`, files with the same name and path will be
-    skipped.
+     If you put `/nesi/project/nesi12345/To/Archive/Results/` on Nearline
+     as well as `/nesi/nobackup/nesi12345/To/Archive/Results/`, the
+     contents of both source locations (`project` and `nobackup`) will be
+     merged into `/nesi/nearline/nesi12345/To/Archive/Results/`. Within
+     `/nesi/nearline/nesi12345/`, files with the same name and path will be
+     skipped.
 
 ### Put - file list
 

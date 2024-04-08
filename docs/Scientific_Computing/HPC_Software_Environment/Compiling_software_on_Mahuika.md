@@ -21,8 +21,8 @@ code.
 
 ## Compilers and Toolchains
 
-Compilers produced by three different vendors are provided on Mahuika:
-Cray, GNU and Intel.
+GNU and Intel compilers are provided on Mahuika. They can be accessed by
+loading one of the toolchains:
 
 The GNU and Intel compilers can be accessed by loading one of the
 toolchains:
@@ -32,25 +32,24 @@ toolchains:
 - `module load intel/{% if applications.gimkl.machines.mahuika.default == 'latest' -%}{{  applications.gimkl.machines.mahuika.versions | last }}{% else -%}{{ applications.gimkl.machines.mahuika.versions.default }}{% endif -%}` - Intel compilers (version 2020.0.166),
     Intel MPI and Intel MKL
 
-A large number of dependencies are built against these toolchains, so
-they are usually a good place to start when building your own software.
-However, if for any reason you require a different version of one of
-these compilers, you can load a compiler module directly, instead of
-loading a toolchain. For example, the installed versions of the GNU
-compilers can be listed with the following command:
+There are also various smaller "sub-toolchains" which can be used in the
+same way.  Toolchains should not be mixed, except where one is a subset
+of the other, so for example it is OK to use a library built with
+*GCC/12.3.0* or *gompi/2023a* as a dependency of an application being
+built with *foss/2023a*.
 
-`module spider GCC`
-
-and version 7.4.0 loaded with the following command:
-
-`module load GCC/7.4.0`
-
-The Cray compilers behave differently to the GNU and Intel compilers,
-since they are installed as a Cray Programming Environment, and have
-some special features (see section Cray Programming Environment). The
-Cray compilers are loaded with:
-
-`module load PrgEnv-cray`
+|                          |               |           |            |               |           |
+|--------------------------|---------------|-----------|------------|---------------|-----------|
+| **Toolchain**            | **Compilers** | **MPI**   | **LAPACK** | **ScaLAPACK** | **FFTW**  |
+| GCC/12.3.0               | GCC           |           |            |               |           |
+| gompi/2023a              | GCC           | OpenMPI   |            |               |           |
+| foss/2023a               | GCC           | OpenMPI   | FlexiBLAS  | ScaLAPACK     | FFTW      |
+| GCC/11.3.0               | GCC           |           |            |               |           |
+| gimpi/2022a              | GCC           | Intel MPI | Intel MKL  | Intel MKL     | Intel MKL |
+| gimkl/2022a              | GCC           | Intel MPI | Intel MKL  | Intel MKL     | Intel MKL |
+| intel-compilers/2022.0.2 | Intel         |           |            |               |           |
+| iimpi/2022a              | Intel         | Intel MPI |            |               |           |
+| intel/2022a              | Intel         | Intel MPI | Intel MKL  | Intel MKL     | Intel MKL |
 
 ## Third party applications
 
@@ -84,25 +83,21 @@ should give you an impression which steps you usually need to consider:
     (see below)
 8. Compile the code (`make`)
 9. install the binaries and libraries into the specified directory
-    (`make install`) 
+    (`make install`)
 
 ## Compilers
 
 Compilers are provided for Fortran, C, and C++. For MPI-parallelised
-code, different compilers typically need to be used. The different
-**compilers** are listed:
+code, MPI compiler wrappers typically need to be used. 
 
-| Language      | Cray | Intel    | GNU      |
-| ------------- | ---- | -------- | -------- |
-| Fortran       | ftn  | ifort    | gfortran |
-| Fortran + MPI | ftn  | mpiifort | mpif90   |
-| C             | cc   | icc      | gcc      |
-| C + MPI       | cc   | mpiicc   | mpicc    |
-| C++           | CC   | icpc     | g++      |
-| C++ + MPI     | CC   | mpiicpc  | mpicxx   |
-
-**Note**, Cray uses compiler wrappers which are described [later in more
-detail](#cray-programming-environment).
+| Language      | Intel    | GNU      |
+| ------------- | -------- | -------- |
+| Fortran       | ifort    | gfortran |
+| Fortran + MPI | mpiifort | mpif90   |
+| C             | icc      | gcc      |
+| C + MPI       | mpiicc   | mpicc    |
+| C++           | icpc     | g++      |
+| C++ + MPI     | mpiicpc  | mpicxx   |
 
 In general you then compile your code using:
 
@@ -110,7 +105,7 @@ In general you then compile your code using:
 
 e.g.
 
-`ftn -O3 hello.f90`
+`gfortran -O3 hello.f90`
 
 ## Compiler options
 
@@ -121,39 +116,29 @@ change them if you decide to switch compilers. The following table
 provides a list of commonly used compiler **options** for the different
 compilers:
 
-| Group                              | Cray                                                   | Intel                      | GNU                                       | Notes                                                                                      |
-| ---------------------------------- | ------------------------------------------------------ | -------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Debugging                          | `-g` or `-G{0,1,2,fast}`                               | `-g` or `-debug [keyword]` | `-g` or `-g{0,1,2,3} `                    | Set level of debugging information, some levels may disable certain compiler optimisations |
-| Light compiler optimisation        | `-O2`                                                  | `-O2`                      | `-O2 `                                    |                                                                                            |
-| Aggressive compiler optimisation   | `-O3 -hfp3`                                            | `-O3 -ipo`                 | `-O3 -ffast-math -funroll-loops `         | This may affect numerical accuracy                                                         |
-| Architecture specific optimisation | Load this module first: `module load craype-broadwell` | `-xHost`                   | `-march=native` `-mtune=native`           | Build and compute nodes have the same architecture (Broadwell)                             |
-| Vectorisation reports              | `-hlist=m `                                            | `-qopt-report `            | `-fopt-info-vec` or `-fopt-info-missed`   |                                                                                            |
-| OpenMP                             | `-homp` (default)                                      | `-qopenmp`                 | `-fopenmp``                             | |                                                                                            |
+| Group                              | Intel                      | GNU                                       | Notes                                                                                      |
+| ---------------------------------- | -------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Debugging                          | `-g` or `-debug [keyword]` | `-g` or `-g{0,1,2,3} `                    | Set level of debugging information, some levels may disable certain compiler optimisations |
+| Light compiler optimisation        | `-O2`                      | `-O2 `                                    |                                                                                            |
+| Aggressive compiler optimisation   | `-O3 -ipo`                 | `-O3 -ffast-math -funroll-loops `         | This may affect numerical accuracy                                                         |
+| Architecture specific optimisation | `-xHost`                   | `-march=native` `-mtune=native`           | Build and compute nodes have the same architecture (Broadwell)                             |
+| Vectorisation reports              | `-qopt-report `            | `-fopt-info-vec` or `-fopt-info-missed`   |                                                                                            |
+| OpenMP                             | `-qopenmp`                 | `-fopenmp``                               |                                                                                            |
 
 Additional compiler options are documented in the compiler man pages,
 e.g. `man mpicc`, which are available *after* loading the related
 compiler module. Additional documentation can be also found at the
 vendor web pages:
 
-- [Cray Fortran
-    v8.7](https://pubs.cray.com/content/S-3901/8.7/cray-fortran-reference-manual/fortran-compiler-introduction),
-    [Cray C and C++
-    v8.7](https://pubs.cray.com/content/S-2179/8.7/cray-c-and-c++-reference-manual/invoke-the-c-and-c++-compilers)
-- [Intel Parallel Studio XE Cluster
-    Edition](https://software.intel.com/en-us/node/685016) for Linux is
-    installed on the Mahuika HPC Cluster, Mahuika Ancillary Nodes
-- [Intel Developer
-    Guides](https://software.intel.com/en-us/documentation/view-all?search_api_views_fulltext=&current_page=0&value=78151,83039;20813,80605,79893,20812,20902;20816;20802;20804)
+- [Intel Parallel Studio XE Cluster Edition](https://software.intel.com/en-us/node/685016) for Linux is installed on the Mahuika HPC Cluster, Mahuika Ancillary Nodes
+- [Intel Developer Guides](https://software.intel.com/en-us/documentation/view-all?search_api_views_fulltext=&current_page=0&value=78151,83039;20813,80605,79893,20812,20902;20816;20802;20804)
 - [GCC Manuals](https://gcc.gnu.org/onlinedocs/)
-
-**Note**: Cray uses compiler wrappers. To list the compiler options,
-please consult the man pages for the actual compiler, not the wrapper.
 
 For example, the following commands would be used to compile with the
 gfortran compiler, activate compiler warnings (`-Wall`), and requiring
 aggressive compiler optimisation (`-O3`):
 
-`module load gimkl/2018b`
+`module load gimkl/2022b`
 
 `mpif90 -Wall -O3 -o simpleMpi simpleMpi.f90`
 
@@ -196,14 +181,12 @@ and look in the module description using:
 
 `module help <module-name>`
 
-Sometimes modules provide multiple libraries, e.g. *cray-libsci*.
-
 Most libraries are provided using the EasyBuild software management
-system, that NeSI/NIWA use to provide modules. Easybuild automatically
-defines environment variables `$EBROOT<library name in upper case>` when
-a module is loaded, which help pointing the compiler and linker to
-include files and libraries as in the example above. Thus, you can keep
-your Makefile independent of library versions, by defining e.g.
+system, that we use to install modules. Easybuild automatically defines
+environment variables `$EBROOT<library name in upper case>` when a
+module is loaded, which help pointing the compiler and linker to include
+files and libraries as in the example above. Thus, you can keep your
+Makefile independent of library versions, by defining e.g.
 `-L$EBROOT<library name in upper case>/lib`. Therewith you can use
 another version by only swapping modules. If you are unsure which
 `$EBROOT<...>` variables are available, use
@@ -215,18 +198,14 @@ to find out.
 Note that specifying search paths with `-I` and `-L` is not strictly
 necessary in case of the GNU and Intel compilers, which will use the
 contents of `CPATH`, `LIRARY_PATH`, and `LD_LIBRARY_PATH` provided by
-the NeSI/NIWA module. This will not work with the Cray compiler.
+the environment module.
 
 **Important note:** Make sure that you load the correct variant of a
 library, depending on your choice of compiler. Switching compiler
-environment will *not* switch NeSI/NIWA modules automatically.
-Furthermore, loading a NeSI/NIWA module may switch programming
+environment will *not* switch environment modules automatically.
+Furthermore, loading an environment module may switch programming
 environment if it was built with a different compiler. In general, the
 used library should be build with the same compiler.
-
-**Note:** the mentioned MPI compilers are practically compiler wrappers
-adding the location to the MPI library. This can be observed calling
-e.g. `mpif90 -showme`
 
 ### Common Linker Problems
 
@@ -246,20 +225,18 @@ linker reported:
     could mean that some of your source files or external libraries were
     built with OpenMP support, which requires you to set an OpenMP flag
     (`-fopenmp` for GNU compilers, `-qopenmp` for Intel) in your linker
-    command. For the Cray compilers, OpenMP is enabled by default and
-    can be controlled using `-h[no]omp`.
+    command.
 - Do you see a very long list of complex-looking function names, and
     does your source code or external library dependency include C++
     code? You may need to explicitly link against the C++ standard
-    library (`-lstdc++` for GNU and Cray compilers, `-cxxlib` for Intel
+    library (`-lstdc++` for GNU compilers, `-cxxlib` for Intel
     compilers); this is a particularly common problem for statically
     linked code.
 - Do the function names end with an underscore ("\_")? You might be
     missing some Fortran code, either from your own sources or from a
     library that was written in Fortran, or parts of your Fortran code
     were built with flags such as `-assume nounderscore` (Intel) or
-    `-fno-underscoring` (GNU), while others were using different flags
-    (note that the Cray compiler always uses underscores).
+    `-fno-underscoring` (GNU), while others were using different flags.
 - Do the function names end with double underscores ("\_\_")? Fortran
     compilers offer an option to add double underscores to Fortran
     subroutine names for compatibility reasons
@@ -273,18 +250,3 @@ linker reported:
 Note that the linker requires that function names match exactly, so any
 variation in function name in your code will lead to a "missing symbols"
 error (with the exception of character case in Fortran source code).
-
-## Cray Programming Environment
-
-The Cray Programming Environment includes the Cray compiler, various
-libraries and tools. These work nicely together and provide certain
-user-friendly features by using compiler wrappers. This works very
-similar as the Cray XC environment, provided on Māui, and is described
-in detail on the page [Building Code on
-Māui](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui.md).
-
-**Note:** on Māui the three compilers (Cray, Gnu and Intel) are provided
-in this special environment, which provides support for both dynamic and
-static linking. In contrast to that, on Mahuika only the Cray compiler
-is provided in this environment. Furthermore, it only provides support
-for dynamic linking.

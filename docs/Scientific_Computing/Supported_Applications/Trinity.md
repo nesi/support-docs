@@ -2,8 +2,8 @@
 created_at: '2019-06-03T23:23:13Z'
 tags: []
 title: Trinity
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 360000980375
 zendesk_section_id: 360000040076
 ---

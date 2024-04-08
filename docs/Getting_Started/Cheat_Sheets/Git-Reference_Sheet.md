@@ -6,8 +6,8 @@ tags:
 - version control
 - repository
 title: 'Git: Reference Sheet'
-vote_count: 11
-vote_sum: 11
+vote_count: 13
+vote_sum: 13
 zendesk_article_id: 360001508515
 zendesk_section_id: 360000278975
 ---
@@ -116,7 +116,7 @@ You can create a repository with either of the following commands.
 
 By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
-` git branch --set-upstream-to <origin>`.
+` git branch --set-upstream-to   <origin>`.
 
 |        |                             |                                                                                                                      |
 |--------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|

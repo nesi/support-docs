@@ -3,8 +3,8 @@ created_at: '2018-05-29T04:01:33Z'
 tags: 
 - globus
 title: Personal Globus Endpoint Configuration
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 360000217915
 zendesk_section_id: 360000040596
 ---

@@ -3,7 +3,6 @@ created_at: '2020-11-02T03:07:06Z'
 tags: []
 title: CESM
 vote_count: 0
-# template: app.html
 vote_sum: 0
 zendesk_article_id: 360002105076
 zendesk_section_id: 360000040076
@@ -52,7 +51,7 @@ the CESM source to live) and then run the commands to download CESM
 
 ``` sh
 cd /nesi/project/<your_project_code>
-git clone -b release-cesm2.1.3 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
+git clone -b release-cesm2.1.5 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
 cd my_cesm_sandbox
 ./manage_externals/checkout_externals
 ```
