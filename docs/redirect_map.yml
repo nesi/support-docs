@@ -91,10 +91,8 @@ hc/en-gb/articles/360000336076-Compiling-software-on-M%C4%81ui.md: Scientific_Co
 hc/en-gb/articles/360000336076.md: Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui.md
 hc/en-gb/articles/360000360576-Finding-Software.md: Scientific_Computing/HPC_Software_Environment/Finding_Software.md
 hc/en-gb/articles/360000360576.md: Scientific_Computing/HPC_Software_Environment/Finding_Software.md
-hc/en-gb/articles/360000361675-Software-Installation-Request.md: Scientific_Computing/Supported_Applications/Software
-  Installation Request.md
-hc/en-gb/articles/360000361675.md: Scientific_Computing/Supported_Applications/Software
-  Installation Request.md
+hc/en-gb/articles/360000361675-Software-Installation-Request.md: Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md
+hc/en-gb/articles/360000361675.md: Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md
 hc/en-gb/articles/360000428676-Introductory-Material.md: Getting_Started/Getting_Help/Introductory_Material.md
 hc/en-gb/articles/360000428676.md: Getting_Started/Getting_Help/Introductory_Material.md
 hc/en-gb/articles/360000470655-Why-can-t-I-log-in-using-MobaXTerm.md: General/FAQs/Why_cant_I_log_in_using_MobaXTerm.md
@@ -283,8 +281,8 @@ hc/en-gb/articles/360001555615-Jupyter-on-NeSI.md: Scientific_Computing/Interact
 hc/en-gb/articles/360001555615.md: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
 hc/en-gb/articles/360001580415-Miniconda3.md: Scientific_Computing/Supported_Applications/Miniconda3.md
 hc/en-gb/articles/360001580415.md: Scientific_Computing/Supported_Applications/Miniconda3.md
-hc/en-gb/articles/360001584875-What-is-a-core-file.md: General/FAQs/What_is_a_-core_file.md
-hc/en-gb/articles/360001584875.md: General/FAQs/What_is_a_-core_file.md
+hc/en-gb/articles/360001584875-What-is-a-core-file.md: General/FAQs/What_is_a_core_file.md
+hc/en-gb/articles/360001584875.md: General/FAQs/What_is_a_core_file.md
 hc/en-gb/articles/360001593096-Delft3D.md: Scientific_Computing/Supported_Applications/Delft3D.md
 hc/en-gb/articles/360001593096.md: Scientific_Computing/Supported_Applications/Delft3D.md
 hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI.md: Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md
@@ -299,10 +297,8 @@ hc/en-gb/articles/360002113295-Long-Term-Storage-Nearline-release-notes-v1-1-0-1
 hc/en-gb/articles/360002113295.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-14.md
 hc/en-gb/articles/360002327275-Job-efficiency-review.md: Getting_Started/Getting_Help/Job_efficiency_review.md
 hc/en-gb/articles/360002327275.md: Getting_Started/Getting_Help/Job_efficiency_review.md
-hc/en-gb/articles/360002558216-Lambda-Stack.md: Scientific_Computing/Supported_Applications/Lambda
-  Stack.md
-hc/en-gb/articles/360002558216.md: Scientific_Computing/Supported_Applications/Lambda
-  Stack.md
+hc/en-gb/articles/360002558216-Lambda-Stack.md: Scientific_Computing/Supported_Applications/Lambda_Stack.md
+hc/en-gb/articles/360002558216.md: Scientific_Computing/Supported_Applications/Lambda_Stack.md
 hc/en-gb/articles/360002655596-Long-term-Storage-Nearline-release-notes-v1-1-0-18.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-18.md
 hc/en-gb/articles/360002655596.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-18.md
 hc/en-gb/articles/360002667556-Access-Policy.md: General/NeSI_Policies/Access_Policy.md
@@ -545,3 +541,5 @@ hc/en-gb/articles/9329030038543-my-nesi-org-nz-release-notes-v2-21-0.md: Getting
 hc/en-gb/articles/9329030038543.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-21-0.md
 hc/en-gb/articles/9376633910159-jupyter-nesi-org-nz-release-notes-26-03-2024.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
 hc/en-gb/articles/9376633910159.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
+hc.md: index.md
+hc/en-gb.md: index.md

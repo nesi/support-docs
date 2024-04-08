@@ -31,7 +31,7 @@ include:
 
 - Commonly used data science environments and libraries such as
     [Keras](../../Scientific_Computing/Supported_Applications/Keras.md),
-    [LambdaStack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md),
+    [LambdaStack](../../Scientific_Computing/Supported_Applications/Lambda_Stack.md),
     [Tensorflow](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
     and [Conda](https://docs.conda.io/en/latest/) are available to
     create comprehensive workflows.
