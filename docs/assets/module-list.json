@@ -126,7 +126,7 @@
                 "server_version": ""
             }
         ],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ABAQUS",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/ABAQUS",
         "url": "https://www.continuum.io/anaconda-overview"
     },
     "ABRicate": {
@@ -566,7 +566,7 @@
                 "server_version": ""
             }
         ],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ANSYS",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/ANSYS",
         "url": "https://www.ansys.com"
     },
     "ANTLR": {
@@ -965,7 +965,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/AlphaFold",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/AlphaFold",
         "url": "https://github.com/deepmind/alphafold"
     },
     "AlphaFold2DB": {
@@ -1544,7 +1544,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/BLAST",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/BLAST",
         "url": "http://blast.ncbi.nlm.nih.gov/"
     },
     "BLASTDB": {
@@ -1675,7 +1675,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/BRAKER",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/BRAKER",
         "url": "https://github.com/Gaius-Augustus/BRAKER"
     },
     "BUSCO": {
@@ -2868,7 +2868,7 @@
                 "server_version": ""
             }
         ],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/COMSOL"
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/COMSOL"
     },
     "CONCOCT": {
         "default": "",
@@ -3377,7 +3377,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Clair3",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Clair3",
         "url": "https://github.com/HKU-BAL/Clair3"
     },
     "Clustal-Omega": {
@@ -4049,7 +4049,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Delft3D",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Delft3D",
         "url": "http://oss.deltares.nl/web/delft3d"
     },
     "Delft3D_FM": {
@@ -4134,7 +4134,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Dorado",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Dorado",
         "url": "https://nanoporetech.com/products/minit"
     },
     "Doxygen": {
@@ -4768,7 +4768,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/FDS",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/FDS",
         "url": "https://pages.nist.gov/fds-smv/"
     },
     "FFTW": {
@@ -5386,7 +5386,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/GATK",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/GATK",
         "url": "http://www.broadinstitute.org/gatk/"
     },
     "GCC": {
@@ -5933,7 +5933,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/GROMACS",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/GROMACS",
         "url": "http://www.gromacs.org"
     },
     "GSL": {
@@ -6174,7 +6174,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Gaussian"
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Gaussian"
     },
     "Gdk-Pixbuf": {
         "default": "",
@@ -7366,7 +7366,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Java",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Java",
         "url": "http://java.com/"
     },
     "Jellyfish": {
@@ -7463,7 +7463,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Julia",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Julia",
         "url": "https://julialang.org/"
     },
     "JupyterLab": {
@@ -7498,7 +7498,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/JupyterLab",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/JupyterLab",
         "url": "https://pypi.org/project/jupyterlab/"
     },
     "KAT": {
@@ -8386,7 +8386,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/MAKER",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/MAKER",
         "url": "http://www.yandell-lab.org/software/maker.html"
     },
     "MATIO": {
@@ -8671,7 +8671,7 @@
                 "server_version": ""
             }
         ],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/MATLAB"
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/MATLAB"
     },
     "MCL": {
         "default": "",
@@ -9638,7 +9638,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Miniconda3",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Miniconda3",
         "url": "https://www.continuum.io/anaconda-overview"
     },
     "Minimac3": {
@@ -10836,7 +10836,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ORCA",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/ORCA",
         "url": "https://orcaforum.kofo.mpg.de"
     },
     "OSPRay": {
@@ -11122,7 +11122,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/OpenFOAM",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/OpenFOAM",
         "url": "https://www.openfoam.org/"
     },
     "OpenJPEG": {
@@ -11246,7 +11246,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/OpenSees",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/OpenSees",
         "url": "http://opensees.berkeley.edu"
     },
     "OpenSeesPy": {
@@ -11877,7 +11877,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ParaView",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/ParaView",
         "url": "http://www.paraview.org"
     },
     "Parallel": {
@@ -12390,7 +12390,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Python",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Python",
         "url": "http://python.org/"
     },
     "Python-Geo": {
@@ -12649,7 +12649,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/R",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/R",
         "url": "http://www.r-project.org/"
     },
     "R-Geo": {
@@ -12764,7 +12764,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/RAxML",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/RAxML",
         "url": "https://github.com/stamatak/standard-RAxML"
     },
     "RAxML-NG": {
@@ -13226,7 +13226,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Relion",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Relion",
         "url": "http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page"
     },
     "RepeatMasker": {
@@ -14497,7 +14497,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Singularity",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Singularity",
         "url": "https://www.sylabs.io/docs/"
     },
     "Sniffles": {
@@ -14878,7 +14878,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Supernova"
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Supernova"
     },
     "Szip": {
         "default": "",
@@ -15390,7 +15390,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/Trinity",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Trinity",
         "url": "http://trinityrnaseq.github.io"
     },
     "Trinotate": {
@@ -15495,7 +15495,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/TurboVNC",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/TurboVNC",
         "url": "https://www.turbovnc.org"
     },
     "UCC": {
@@ -15688,7 +15688,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VASP",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/VASP",
         "url": "http://www.vasp.at"
     },
     "VCF-kit": {
@@ -15931,7 +15931,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VTune",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/VTune",
         "url": "https://software.intel.com/en-us/vtune"
     },
     "Valgrind": {
@@ -16144,7 +16144,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/VirSorter",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/VirSorter",
         "url": "https://github.com/jiarong/VirSorter2"
     },
     "VirtualGL": {
@@ -19753,7 +19753,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ipyrad",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/ipyrad",
         "url": "https://ipyrad.readthedocs.io"
     },
     "ispc": {
@@ -22428,7 +22428,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/ont-guppy-gpu",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/ont-guppy-gpu",
         "url": "https://nanoporetech.com/products/minit"
     },
     "padloc": {
@@ -24054,7 +24054,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "https://nesi.github.io/support-docs-concept/Scientific_Computing/Supported_Applications/snpEff",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/snpEff",
         "url": "https://pcingola.github.io/SnpEff/"
     },
     "somalier": {

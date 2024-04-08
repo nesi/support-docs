@@ -29,7 +29,7 @@ _One day I would like to simplify this whole thing._
 
 A series of QA checks run on the documentation.
 
-The checks can be started manually from the ![workflow page](https://github.com/nesi/support-docs-concept/actions/workflows/checks.yml/badge.svg),
+The checks can be started manually from the ![workflow page](https://github.com/nesi/support-docs/actions/workflows/checks.yml/badge.svg),
 select the target branch, give the pattern of files to include, and select which checks you want done.
 
 Checks will also be run on any _non main_ branch pushes. All checks will be run, but only on _changed_ files.

@@ -1,12 +1,12 @@
 # NesI support documentation
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs-concept?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs?quickstart=1)
 
-[![Deploy to gh-pages](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment_status)](https://github.com/nesi/support-docs-concept/actions/workflows/deploy.yml)
+[![Deploy to gh-pages](https://github.com/nesi/support-docs/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment_status)](https://github.com/nesi/support-docs/actions/workflows/deploy.yml)
 
 This repository contains the sources files for the NeSI support documentation.
 
-Rendered pages are visible at [https://nesi.github.io/support-docs-concept/](https://nesi.github.io/support-docs-concept/).
+Rendered pages are visible at [https://nesi.github.io/support-docs/](https://nesi.github.io/support-docs/).
 
 **Warning**
     This is a beta version and should **not** be considered as the official documentation.
@@ -28,10 +28,10 @@ The repository is organised using the following folders:
 
 Following pages contain information to help maintain the documentation:
 
-- See [contributing](https://nesi.github.io/support-docs-concept/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
-- See [formatting](https://nesi.github.io/support-docs-concept/FORMAT), for examples of markdown syntax.
-- See [create a new page](https://nesi.github.io/support-docs-concept/NEWPAGE), for general principles to consider when writing pages.
-- See [macros](https://nesi.github.io/support-docs-concept/MACROS), for `mkdocs-macros-plugin` environment.
+- See [contributing](https://nesi.github.io/support-docs/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
+- See [formatting](https://nesi.github.io/support-docs/FORMAT), for examples of markdown syntax.
+- See [create a new page](https://nesi.github.io/support-docs/NEWPAGE), for general principles to consider when writing pages.
+- See [macros](https://nesi.github.io/support-docs/MACROS), for `mkdocs-macros-plugin` environment.
 - See [checks](checks/README.md), for information on quality assurance tests.
 - See [workflows](.github/workflows/README.md), for information on CI workflows.
 
