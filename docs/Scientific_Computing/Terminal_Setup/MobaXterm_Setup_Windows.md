@@ -128,7 +128,7 @@ Two steps to try:
         `mahuika` as well). I recommend removing all of it and restart
         MobaXterm before the next login attempt
 
-Then setup a new session [according to the support doc instructions](./MobaXterm_Setup_Windows.mdMobaXter)
+Then setup a new session [according to the support doc instructions](./MobaXterm_Setup_Windows.md)
 as before.
 
 !!! prerequisite "What Next?"
