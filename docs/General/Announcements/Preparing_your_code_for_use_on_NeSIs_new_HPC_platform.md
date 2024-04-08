@@ -39,7 +39,7 @@ project for migration.
 
 The platform NeSI has selected to replace Mahuika is similar to the
 recently commissioned [Mahuika AMD Milan compute
-nodes](../../General/Announcements/Mahuika's_new_Milan_CPU_nodes_open_to_all_NeSI_users.md).
+nodes](../../General/Announcements/Mahuikas_new_Milan_CPU_nodes_open_to_all_NeSI_users.md).
 So, we'll be using these current nodes to validate any issues,
 mitigating risks of your subsequent migration to the new platform.
 

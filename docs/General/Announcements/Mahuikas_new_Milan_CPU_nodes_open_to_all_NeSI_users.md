@@ -1,7 +1,7 @@
 ---
 created_at: '2023-03-30T02:23:48Z'
 tags: []
-title: "Mahuika\u2019s new Milan CPU nodes open to all NeSI users"
+title: "Mahuika's new Milan CPU nodes open to all NeSI users"
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 6686934564239
