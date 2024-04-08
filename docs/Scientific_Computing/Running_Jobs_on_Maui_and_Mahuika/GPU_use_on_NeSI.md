@@ -347,7 +347,7 @@ applications:
 
 - [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS.md#gpus)
 - [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md#nvidia_gpu_container)
-- [Lambda Stack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md)
+- [Lambda Stack](../../Scientific_Computing/Supported_Applications/Lambda_Stack.md)
 - [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#GPU)
 - [TensorFlow on GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
 
