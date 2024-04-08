@@ -3,21 +3,15 @@ created_at: '2024-02-15T03:27:38Z'
 hidden: false
 position: 0
 tags: []
-title: FlexiBLAS
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 9027967596303
 zendesk_section_id: 360000040076
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
 
 [FlexiBLAS](https://www.mpi-magdeburg.mpg.de/projects/flexiblas) is a
 lightweight wrapper around the BLAS and LAPACK APIs.  It allows you to

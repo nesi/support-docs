@@ -33,8 +33,7 @@ javascript in your web browser.
 
 ## Changing R version
 
-You can configure a set of [environment
-modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
+You can configure a set of [environment modules](../../Getting_Started/Next_Steps/The_HPC_environment.md)
 to preload before starting RStudio. This can be useful if you want to
 change the version of the R interpreter or use NeSI's *R-Geo* or
 *R-bundle-Bioconductor* modules.
@@ -144,7 +143,7 @@ retrieve the password, open a terminal in JupyterLab and enter the
 following to print the password:
 
 ```sh
-$ cat ~/.config/rstudio_on_nesi/server_password
+cat ~/.config/rstudio_on_nesi/server_password
 ```
 
 ### Error 599

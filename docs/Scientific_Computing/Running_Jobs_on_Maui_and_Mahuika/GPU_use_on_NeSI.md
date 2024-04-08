@@ -354,5 +354,5 @@ applications:
 And programming toolkits:
 
 - [Offloading to GPU with OpenMP](../../Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
-- [Offloading to GPU with OpenACC using the Cray compiler](https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler)
+- [Offloading to GPU with OpenACC using the Cray compiler](../HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md)
 - [NVIDIA GPU Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)

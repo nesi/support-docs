@@ -1,12 +1,9 @@
 ---
 created_at: '2016-02-04T03:09:05Z'
-hidden: false
-position: 37
 tags:
 - mahuika
 - tier1
 - chemistry
-title: Molpro
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 216296818
@@ -14,16 +11,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 Molpro is a complete system of *ab initio* programs for molecular
 electronic structure calculations.
@@ -86,7 +78,7 @@ desk](mailto:support@nesi.org.nz).
 
 ## Example Slurm script
 
-``` bash
+```sl
 #!/bin/bash -e
 
 #SBATCH --job-name    Molpro_job

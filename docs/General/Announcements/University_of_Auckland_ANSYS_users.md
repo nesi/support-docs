@@ -21,5 +21,4 @@ ansysli_util -revn 202 -deleteuserprefs
 ```
 
 The effect this will have on all of the ANSYS products is yet to be
-determined, so please open a [support
-ticket](mailto:support.nesi.org.nz) if you encounter problems.
+determined, so please {% include "partials/support_request.html" %} if you encounter problems.

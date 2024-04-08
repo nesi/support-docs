@@ -128,8 +128,7 @@ Two steps to try:
         `mahuika` as well). I recommend removing all of it and restart
         MobaXterm before the next login attempt
 
-Then setup a new session [according to the support doc
-instructions](https://support.nesi.org.nz/hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows-)
+Then setup a new session [according to the support doc instructions](./MobaXterm_Setup_Windows.mdMobaXter)
 as before.
 
 !!! prerequisite "What Next?"

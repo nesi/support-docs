@@ -1,7 +1,5 @@
 ---
 created_at: '2015-12-13T20:47:26Z'
-hidden: false
-position: 39
 tags:
 - mahuika
 - tier1
@@ -13,17 +11,9 @@ zendesk_article_id: 215680177
 zendesk_section_id: 360000040076
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
 
 NWChem aims to provide its users with computational chemistry tools that
 are scalable both in their ability to treat large scientific
@@ -41,11 +31,9 @@ NWChem is available to anyone as open source software at no cost under
 the terms of the [Educational Community Licence, version
 2.0](http://opensource.org/licenses/ecl2.php).
 
-## Example scripts
+## Example Slurm script
 
-### Example Slurm script
-
-``` bash
+```sh
 #!/bin/bash -e
 
 #SBATCH --job-name       NWChem_job
@@ -65,9 +53,7 @@ module load NWChem/6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16
 srun nwchem NWChem_job.nw
 ```
 
-## Further notes
-
-### Shared memory limits
+## Shared memory limits
 
 NWChem relies on an environment variable, `ARMCI_DEFAULT_SHMMAX`, to set
 the amount of shared memory used per node. `ARMCI_DEFAULT_SHMMAX` must

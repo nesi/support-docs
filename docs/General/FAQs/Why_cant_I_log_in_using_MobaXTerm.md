@@ -17,8 +17,8 @@ To fix these problems, you will need to do the following:
 
 Upgrade your MobaXTerm to the most recent stable version. You can
 download the most recent stable version
-from <https://mobaxterm.mobatek.net>.
-!!! prerequisite Warning
+from [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net).
+!!! warning
      Some users have reported having issues downloading files using
      MobaXterm 23.6. We suggest using version 23.5 instead.
 
@@ -57,8 +57,5 @@ trying to use your old password from credential manager.
 4. Restart MobaXterm
 5. Try logging in again
 
-For more information about how to log in to our HPC facilities, please
-see [this
-article](https://support.nesi.org.nz/hc/articles/360000161315-Logging-in-to-the-HPCs),
-and for more login troubleshooting
-[here](../../General/FAQs/Login_Troubleshooting.md).
+More information about [how to log in to our HPC facilities](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md),
+and [login troubleshooting](../../General/FAQs/Login_Troubleshooting.md).

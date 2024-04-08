@@ -10,15 +10,6 @@ zendesk_article_id: 7463891150863
 zendesk_section_id: 360000040056
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Most programs which create temporary files will put those files in the
 directory specified by the environment variable `TMPDIR` if that is set,
 or `/tmp` otherwise.
@@ -59,8 +50,6 @@ your jobs temporary files use. An example of how `TMPDIR` may be set
 yourself is shown below,
 
 `export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID`
-
- 
 
 ### Example of copying data into $TMPDIR for use mid-job
 

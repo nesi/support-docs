@@ -11,15 +11,6 @@ zendesk_article_id: 8817840423439
 zendesk_section_id: 200732737
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 ## Background
 
 Since 2018 NeSI and its Collaborators (University of Auckland, NIWA,
@@ -62,8 +53,8 @@ To access Mahuika's AMD Milan nodes and submit jobs from any NeSI lander
 node or Māui login node, use: `ssh login.mahuika.nesi.org.nz`.
 
 At any point, if you don't see what you need or something isn’t working,
-[contact us](mailto:support@nesi.org.nz). We’re keen to ensure this
-early-stage validation process is as quick and painless as possible.
+{% include "partials/support_request.html" %}. We’re keen to ensure this
+early stage validation process is as quick and painless as possible.
 
 ## Porting your batch scripts
 
@@ -105,13 +96,13 @@ occupied by a single job at a time. 
 
 When submitting an MPI job you have (at least) three options:
 
--   Request a number of tasks without worrying what nodes they land on.
+- Request a number of tasks without worrying what nodes they land on.
      That is OK for quick tests, but probably not optimal for real work
     as it both increases dependence on the interconnect and fragments
     node resources, as such job submissions end up much more scattered
     than they would on Māui.
--   Request a number of tasks and a number (or range) of nodes.
--   Request a number of nodes and a number of tasks per node.  This is
+- Request a number of tasks and a number (or range) of nodes.
+- Request a number of nodes and a number of tasks per node.  This is
     appropriate for most Māui-sized jobs, and by requesting all of the
     CPUs on a node better isolates the job from contention with other
     jobs over socket-level or node-level resources such as memory
@@ -150,17 +141,17 @@ use a compiler directly, for example *gfortran* or *gcc*.
 We have GCC and Intel compilers (but not the Cray compiler) available on
 Mahuika via environment modules, recent examples being:
 
--   *GCC/12.3.0*  - *gfortran*, *gcc*, and *g++*
--   *intel-compilers/2022.0.2*  - *ifort*, *icc*, and *icpc*
+- *GCC/12.3.0*  - *gfortran*, *gcc*, and *g++*
+- *intel-compilers/2022.0.2*  - *ifort*, *icc*, and *icpc*
 
 If you also require MPI or any of the libraries BLAS, LAPACK, ScaLAPACK,
 or FFTW then you will be best off loading one of our EasyBuild
 "toolchain" environment modules such as:
 
--   *foss/2023a*  - GCC, FFTW,
+- *foss/2023a*  - GCC, FFTW,
     [FlexiBLAS](../../Scientific_Computing/Supported_Applications/FlexiBLAS.md),
     OpenBLAS, OpenMPI
--   *intel/2022a*  - Intel compilers, Intel MKL with its FFTW wrappers,
+- *intel/2022a*  - Intel compilers, Intel MKL with its FFTW wrappers,
     Intel MPI.
 
 For more on this topic, please see [Compiling software on
@@ -180,13 +171,10 @@ NeSI hardware will have AMD Zen4 CPUs, which will have AVX512.
 
 ## Questions?
 
-If you have any questions or need any help, email <support@nesi.org.nz>
+If you have any questions or need any help, {% include "partials/support_request.html" %}
 or pop in to one of our [weekly Online Office
 Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md)
 to chat with Support staff one-to-one.
 
 No question is too small - don't hesitate to reach out.
 
- 
-
- 
