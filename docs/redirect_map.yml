@@ -281,8 +281,8 @@ hc/en-gb/articles/360001555615-Jupyter-on-NeSI.md: Scientific_Computing/Interact
 hc/en-gb/articles/360001555615.md: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
 hc/en-gb/articles/360001580415-Miniconda3.md: Scientific_Computing/Supported_Applications/Miniconda3.md
 hc/en-gb/articles/360001580415.md: Scientific_Computing/Supported_Applications/Miniconda3.md
-hc/en-gb/articles/360001584875-What-is-a-core-file.md: General/FAQs/What_is_a_-core_file.md
-hc/en-gb/articles/360001584875.md: General/FAQs/What_is_a_-core_file.md
+hc/en-gb/articles/360001584875-What-is-a-core-file.md: General/FAQs/What_is_a_core_file.md
+hc/en-gb/articles/360001584875.md: General/FAQs/What_is_a_core_file.md
 hc/en-gb/articles/360001593096-Delft3D.md: Scientific_Computing/Supported_Applications/Delft3D.md
 hc/en-gb/articles/360001593096.md: Scientific_Computing/Supported_Applications/Delft3D.md
 hc/en-gb/articles/360001600235-Virtual-Desktop-via-Jupyter-on-NeSI.md: Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md
@@ -541,4 +541,5 @@ hc/en-gb/articles/9329030038543-my-nesi-org-nz-release-notes-v2-21-0.md: Getting
 hc/en-gb/articles/9329030038543.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-21-0.md
 hc/en-gb/articles/9376633910159-jupyter-nesi-org-nz-release-notes-26-03-2024.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
 hc/en-gb/articles/9376633910159.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
-hc: index.md
+hc.md: index.md
+hc/en-gb.md: index.md
