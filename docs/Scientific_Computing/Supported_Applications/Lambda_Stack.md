@@ -3,7 +3,6 @@ created_at: '2021-01-05T20:28:08Z'
 tags: []
 title: Lambda Stack
 vote_count: 1
-# template: app.html
 vote_sum: 1
 zendesk_article_id: 360002558216
 zendesk_section_id: 360000040076
