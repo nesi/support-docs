@@ -1,7 +1,5 @@
 ---
 created_at: '2019-07-04T20:48:57Z'
-hidden: false
-position: 10
 tags:
 - software
 - versions
@@ -12,18 +10,9 @@ zendesk_article_id: 360001045096
 zendesk_section_id: 360000040056
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Much of the software installed on the NeSI cluster have multiple
-versions available as shown
-[here](https://support.nesi.org.nz/hc/en-gb/sections/360000040076-Supported-Applications)
+versions available as shown on the
+[supported applications page](../Supported_Applications/index.md)
 or by using the `module avail` or `module spider` commands.
 
 If only the application name is given a default version will be chosen,
@@ -36,14 +25,14 @@ we may install it.
 
 ## Example
 
-``` sl
+``` sh
 module load ANSYS
 ```
 
-Will load the default version of ANSYS, in this case ANSYS/19.2, however
+Will load the default version of ANSYS, in this case {{applications.ANSYS.machines.mahuika.default}}, however
 this may change.
 
-``` sl
+``` sh
 module load ANSYS/18.1
 ```
 

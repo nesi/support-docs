@@ -1,7 +1,5 @@
 ---
 created_at: '2015-07-29T23:31:02Z'
-hidden: false
-position: 29
 tags:
 - mahuika
 - chemistry
@@ -13,16 +11,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 ## Description
 
@@ -55,7 +48,7 @@ For the sake of compliance with Gaussian licence agreements, we maintain
 a special Gaussian UNIX group. Only members of this group may access and
 use Gaussian. You can ask to join the Gaussian group by emailing our
 support team at
-[support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Request%20to%20join%20the%20Gaussian%20group).
+ {% include "partials/support_request.html" %}.
 
 All University of Auckland staff and students are in the Gaussian group
 automatically. If you are not a staff member or student at the
@@ -68,7 +61,7 @@ believe these conditions are no longer met.
 
 If you have any questions regarding your eligibility to access Gaussian
 or any particular version or installation of it, please contact [our
-support desk](mailto:support@nesi.org.nz).
+support desk {% include "partials/support_request.html" %}.
 
 ## Example jobs
 
@@ -79,7 +72,7 @@ Please note that it has a memory requirement built in: at least 2 GB for
 Gaussian itself, plus a further 2 GB as a buffer zone, for a minimum
 request of 4 GB (4,096 MB).
 
-``` bash
+``` sl
 #!/bin/bash -e
 
 #SBATCH --job-name=H2O
@@ -154,7 +147,7 @@ fails or is killed by the scheduler. In this case, the value of the
 checkpoint file is a placeholder (as are the number of cores and the
 memory) and is replaced with a real value when the Slurm job starts.
 
-``` sl
+``` sh
 $RunGauss$
 
 %NProcShared=<<NUMBER_OF_CORES>>
@@ -181,10 +174,10 @@ submission script.
 
 The key properties are `%NProcShared` and `%Mem`:
 
--   `%NProcShared` should be set to the number of CPU cores you intend
+- `%NProcShared` should be set to the number of CPU cores you intend
     to use, matching the value of the `-c` or `--cpus-per-task`
     directive in the Slurm job file.
--   `%Mem` should be set to the amount of memory you intend to use. It
+- `%Mem` should be set to the amount of memory you intend to use. It
     should be about 2 GB (2,048 MB) less than the value of `--mem` in
     the Slurm job submission script. Note that `--mem` is interpreted as
     being in MB rather than GB unless otherwise specified (i.e., with a

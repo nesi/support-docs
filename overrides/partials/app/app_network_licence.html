@@ -1,0 +1,42 @@
+{# Determine needed number of columns. #}
+{% set ns = namespace() %}
+{% set colspan=2 %}
+{% for lic in app.network_licences -%}
+    {% if lic.faculty_long or lic.faculty_short -%}
+        {% set ns.faculty_col = true -%}
+    {% endif -%}
+{% endfor -%}
+<table>
+    <thead>
+    <tr>
+    <th>Institution</th>
+{% if ns.faculty_col -%}
+    {% set colspan = colspan+1 %}
+    <th>Faculty</th>
+{% endif -%}
+    <th>Uptime</th>
+</tr>
+    </thead>
+    <tbody>
+    {% for lic in app.network_licences -%}
+        {% set vis = lic.features | selectattr("visible_on_docs") | list -%}
+        {% set servernicename = lic.server | e |replace("@", "_") | lower %}
+        
+        <tr id="{{ servernicename }}_summary" {% if vis | length > 1 -%}onclick="toggle('{{ servernicename }}_details')" title="Click for token information"{% endif -%}>   
+            <td>{{ lic.institution_long or lic.institution_short }}</td>
+            {% if ns.faculty_col -%}
+            <td>{{ lic.faculty_long or lic.faculty_short }}</td>
+            {% endif -%}
+            <td>{{ "{:.0%}".format(lic.server_uptime) }}</td>
+        </tr>
+        {# List of visible licences #}
+        {% if vis | length > 1 -%}
+            <tr class="hidden" id="{{ servernicename }}_details">
+                <td colspan={{ colspan }}>
+                    {% include "partials/app/app_network_licence_feature.html" -%}
+                </td>
+            </tr>
+        {% endif -%}
+    {% endfor -%}
+    </tbody>
+</table>

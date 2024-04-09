@@ -1,7 +1,5 @@
 ---
 created_at: '2021-01-13T00:20:08Z'
-hidden: false
-position: 1
 tags: []
 title: Acceptable Use Policy
 vote_count: 0
@@ -10,17 +8,7 @@ zendesk_article_id: 360002751455
 zendesk_section_id: 360000224835
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-See
-<https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy> for
+See [Acceptable Use Policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy) for
 the current version of the NeSI Acceptable Use Policy.
 
 The NeSI Acceptable Use Policy is presented to each user when they

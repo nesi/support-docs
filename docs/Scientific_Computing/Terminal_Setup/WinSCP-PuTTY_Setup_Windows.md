@@ -1,7 +1,5 @@
 ---
 created_at: '2018-11-26T03:03:23Z'
-hidden: false
-position: 3
 tags: []
 title: WinSCP/PuTTY Setup (Windows)
 vote_count: 4
@@ -10,81 +8,60 @@ zendesk_article_id: 360000584256
 zendesk_section_id: 360000189696
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Requirements
-     -   Have an [active account and
-         project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
-     -   Set up your [NeSI account
-         password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-     -   Set up Second [Factor
-         Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+!!! prerequisite
+     -   Have an [active account and project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Set up your [NeSI account password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
+     -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
      -   Be using the Windows operating system.
-
- 
 
 WinSCP is an SCP client for windows implementing the SSH protocol from
 PuTTY.
 
-WinSCP can be downloaded [here](https://winscp.net/eng/download.php).
+1. [Download WinSCP](https://winscp.net/eng/download.php).
 
-Upon startup:
+2. Upon startup:
+    ![WinSCP1.png](../../assets/images/WinSCP-PuTTY_Setup_Windows.png)
 
-![WinSCP1.png](../../assets/images/WinSCP-PuTTY_Setup_Windows.png)
+3. Add a *New Site* and set:
 
-1. Add a *New Site* and set:
+    - Enter *Host Name:* `login.mahuika.nesi.org.nz` or `login.maui.nesi.org.nz`
+    - Enter your NeSI account username into *User name:* (Password optional)
 
--   Enter in *Host Name: *login.mahuika.nesi.org.nz or
-    login.maui.nesi.org.nz
--   Enter your NeSI account username into *User name:* (Password
-    optional)
-!!! prerequisite Tip
-     For "file protocol" (the topmost drop-down menu), either SCP or SFTP
-     is acceptable. If you are trying to move many small files or have a
-     slow or flaky Internet connection, you may find that SFTP performs
-     better than SCP. Feel free to try both and see which works best for
-     you.
+    !!! tip
+        For "file protocol" (the topmost drop-down menu), either SCP or SFTP
+        is acceptable. If you are trying to move many small files or have a
+        slow or flaky Internet connection, you may find that SFTP performs
+        better than SCP. Feel free to try both and see which works best for
+        you.
 
-  
-![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
+        ![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
-5\. Open Advanced Settings.
+4. Open Advanced Settings.
 
-![WinSCP3.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
+    ![WinSCP3.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
 
-6\. Navigate to *Connection &gt; Tunnel *and set:
-
--   Enable "Connect through SSH tunnel".
--   Under "Host name:" enter lander.nesi.org.nz
--   Under "User name:" enter your username.
--   Optionally, enter your password in the "Password:" box.
-
-10\. *OK &gt; Save*
+5. Navigate to *Connection & Tunnel* and set:
+    - Enable "Connect through SSH tunnel".
+    - Under "Host name:" enter lander.nesi.org.nz
+    - Under "User name:" enter your username.
+    - Optionally, enter your password in the "Password:" box.
+6. *OK &gt; Save*
 
 ## Setup for PuTTY Terminal
 
 The default WinSCP terminal lacks much functionality. We highly
 recommend you use the PuTTY terminal instead.
 
-1\. Download PuTTY [here](https://www.putty.org/) and install.
+1. [Download PuTTY](https://www.putty.org/) and install.
 
-2.In WinSCP open 'Tools &gt; Preferences'
+2. In WinSCP open 'Tools &gt; Preferences'
 
-![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
+    ![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
 
-3\. Under *Integration &gt; Applications* enable *Remember session
+3. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
-
- 
+    ![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
 
 ## Setup for Xming (Optional)
 
@@ -114,7 +91,7 @@ in any windows file system.
 
 ![putTerm.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_6.png) Will
 open a **PuTTY terminal**. Assuming you followed the steps setting up
-PuTTY, this should automatically enter in your details.
+PuTTY, this should automatically enter your details.
 
 ![winTerm.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_7.png) Will
 open the default **WinSCP terminal**. While the functionality is
@@ -122,9 +99,9 @@ identical to any other terminal the interface is slightly abstracted,
 with a separate window for input and command history drop-down.
 
 ![winAdd.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_8.png) Type
-here to **change directory**.** **The GUI doesn't follow your current
+here to **change directory**. The GUI doesn't follow your current
 terminal directory like MobaXterm so must be changed
-manually. (Recommend making this larger as the default is very hard to
+manually. (Recommend making this larger as the default is hard to
 type in).
 
 ![winBook.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
@@ -136,23 +113,24 @@ current directory.
 
 By default, WinSCP will create multiple tunnels for file transfers.
 Occasionally this can lead to an excessive number of prompts. Limiting
-number of tunnels will reduce the number of times you are prompted. 
+number of tunnels will reduce the number of times you are prompted.
 
-1\. Open settings
+1. Open settings
+    ![winscp\_settings.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png)
 
-![winscp\_settings.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png)
-
-2\. Under 'Transfer' -&gt; 'Background', set the 'Maximal number of
-transfers at the same time' to '1' and untick 'Use multiple connections
+2. Under 'Transfer' -&gt; 'Background', set the 'Maximal number of
+transfers at the same time' to '1' and un-tick 'Use multiple connections
 for a single transfer'.
 
-![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png) 
-!!! prerequisite Important
+![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png)
+
+!!! warning
      As WinSCP uses multiple tunnels for file transfer you will be required
      to authenticate again on your first file operation of the session. The
      second prompt for your second-factor token can be skipped, just as
      with login authentication.
-!!! prerequisite What Next?
+
+!!! prerequisite "What Next?"
      -   [Moving files to/from a
          cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
      -   Setting up

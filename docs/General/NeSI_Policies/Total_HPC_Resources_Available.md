@@ -1,7 +1,5 @@
 ---
 created_at: '2018-05-18T00:02:48Z'
-hidden: false
-position: 2
 tags: []
 title: Total HPC Resources Available
 vote_count: 0
@@ -10,18 +8,9 @@ zendesk_article_id: 360000201756
 zendesk_section_id: 360000224835
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 NeSI resources available for allocation each year combined across both
-[Mahuika](https://support.nesi.org.nz/hc/articles/360000163575) and
-[Māui](https://support.nesi.org.nz/hc/articles/360000163695) HPC systems
+[Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md) and
+[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md) HPC systems
 include 152 million x86 CPU Core-hours and 112 thousand GPGPU-hours
 (equivalent to 400 million Cuda Core-hours) per annum and are divided
 between Allocation Classes as specified in Table 1, and Table 2.
@@ -129,8 +118,6 @@ width="98"><p><strong>5,610,240</strong></p></td>
 </tbody>
 </table>
 
- 
-
 Table 2: GPGPU resources available for Allocation per annum. Note: these
 are the maximum resources available (assuming all GPGPUs are used for
 computation). Actual total allocations will be lower, as one or more
@@ -200,5 +187,3 @@ Cuda Core-hours per annum</p></td>
 </tr>
 </tbody>
 </table>
-
- 

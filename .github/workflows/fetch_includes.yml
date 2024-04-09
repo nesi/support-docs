@@ -4,7 +4,7 @@ on: workflow_dispatch
 #  contents: write
 env:
   MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
-  GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/Glossary.md"
+  GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
   DICTIONARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
   SNIPPETS_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
   BRANCH_NAME: "new-assets"
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Set Up Env"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
@@ -21,19 +21,22 @@ jobs:
           mkdir -pv docs/assets/glossary
       - name: Fetch Module List
         run: wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
+      - name: Link apps pages
+        run: python3 .github/workflows/link_apps_pages.py
       - name: Fetch Glossary
-        run: wget -O docs/assets/glossary/Glossary.md ${GLOSSARY_URL}
+        run: wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
       - name: Fetch Dictionary
         run: wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
       - name: Fetch Snippets
         run: wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
       - name: Commit to Branch '${BRANCH_NAME}'
         run: |
-          git pull origin ${BRANCH_NAME}
+          git pull origin main
           git add --all
       - run: git commit -m "update remote assets"
-      - name: Push
+      - name: Push, and make PR
         run: |
           git push origin ${BRANCH_NAME}
+          gh pr create -B main -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,11 +1,13 @@
 {
 	"recommendations": [
-		"sissel.shopify-liquid",
+		"samuelcolvin.jinjahtml",
 		"DavidAnson.vscode-markdownlint",
 		"arsprogramma.compliment",
-		"redhat.vscode-yaml"
+		"TakumiI.markdowntable",
+		"redhat.vscode-yaml",
+		"GitHub.vscode-pull-request-github",
+		"jebbs.markdown-extended",
+		"Gruntfuggly.triggertaskonsave",
 	],
-	"unwantedRecommendations": [
-		
-	]
 }
+

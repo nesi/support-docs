@@ -1,25 +1,22 @@
 ---
 created_at: '2019-08-09T00:46:44Z'
-hidden: false
-position: 33
+status: deprecated
 tags: []
 title: JupyterLab
-vote_count: 0
-vote_sum: 0
+vote_count: 3
+vote_sum: 1
 zendesk_article_id: 360001093315
 zendesk_section_id: 360000040076
 ---
 
 
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Note
      This documentation contains our legacy instructions for running
      JupyterLab by tunnelling through the lander node.  
      [If you are a Mahuika cluster user, we recommend using jupyter via 
@@ -68,8 +65,9 @@ This number needs to be used while establishing the port forwarding and
 while launching JupyterLab. In the following we use the port number
 15051 (**please select another number**).
 
-### Setup SSH port forwarding 
-!!! prerequisite Requirements
+### Setup SSH port forwarding
+
+!!! prerequisite
      -   In the following we assume you already configured
          your`.ssh/config` to use two hop method as described in the
          [Standard Terminal
@@ -80,20 +78,21 @@ machine and the NeSI system. Therewith a local port will be connected to
 the remote port on the NeSI system. For simplicity, we kept both numbers
 the same (here 15051). This can be specified on the [command line in the
 terminal](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) or using the
-[MobaXterm GUI](#h_cc633523-5df0-4f24-a460-391ced9a0316).
+[MobaXterm GUI](#mobaxterm-gui).
 
 #### SSH Command Line
 
 The ssh command need to be called with following arguments, e.g. for
 Mahuika:
 
-``` sl
+``` sh
 ssh -N -L 15051:localhost:15051 mahuika
 ```
 
 Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".
-!!! prerequisite Tips
+
+!!!  tip
      -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
          following to your `.ssh/config` to avoid establishing the
          additional hop manually.
@@ -111,7 +110,8 @@ Local Port".
          other nodes, e.g. `w-clim01`
 
 #### MobaXterm GUI
-!!! prerequisite Tips
+
+!!! tips
      -   MobaXterm has an internal terminal which acts like a linux
          terminal and can be configured as described in the [Standard
          Terminal
@@ -120,7 +120,6 @@ Local Port".
          line](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) approach above can
          be used.
 
- 
 
 MobaXterm has a GUI to setup and launch sessions with port forwarding,
 click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
@@ -164,13 +163,13 @@ module load IRkernel  # optional
 
 The JupyterLab server then can be started on the present node (login or
 virtual lab) or offloaded to a compute node. Please launch compute or
-memory intensive tasks [on a compute
-node](#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d).
+memory intensive tasks on a compute
+node
 
 #### On login nodes / virtual labs
 
 For very small (computational cheap and small memory) the JupyterLab can
-be started on the login or virtual lab using: 
+be started on the login or virtual lab using:
 
 ``` sl
 jupyter lab --port 15051 --no-browser
@@ -179,7 +178,7 @@ jupyter lab --port 15051 --no-browser
 Where, `--port 15051` specifies the above selected port number and
 `--no-browser` option prevents JupyterLab from trying to open a browser
 on the compute/login node side. Jupyter will present output as described
-in the [next section](#h_6cb2d7b4-f63c-49ed-ba73-f58fd903d86d) including
+in the next section including
 the URL and a unique key, which needs to be copied in your local
 browser.
 
@@ -230,7 +229,8 @@ libraries, which implement threading align the numbers of threads (often
 called jobs) to the selected number of cores (otherwise the performance
 will be affected).
 
-### JupyterLab in your local browser 
+### JupyterLab in your local browser
+
 
 Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After

@@ -1,7 +1,5 @@
 ---
 created_at: '2020-02-25T02:35:13Z'
-hidden: false
-position: 3
 tags: []
 title: What is an allocation?
 vote_count: 3
@@ -9,15 +7,6 @@ vote_sum: -1
 zendesk_article_id: 360001385735
 zendesk_section_id: 360000196195
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 Because NeSI's resources are limited, we manage access to our resources
 through allocations. Typically, an allocation is a grant of a certain
@@ -31,6 +20,15 @@ research programme, however you're welcome to review [our article on
 allocation classes](../../General/NeSI_Policies/Allocation_classes.md)
 to find out what class you're likely eligible for.
 
+## An important note on CPU hour allocations
+
+You may continue to submit jobs even if you have used all your CPU-hour
+allocation. The effect of 0 remaining CPU hours allocation is a [lower
+fairshare](https://support.nesi.org.nz/hc/en-gb/articles/360000743536-Fair-Share),
+not the inability to use CPUs. Your ability to submit jobs will only be
+removed when your project's allocation expires, not when core-hours are
+exhausted.
+
 ## HPC Platform allocations
 
 The form of NeSI allocation you may be most familiar with is an
@@ -41,7 +39,7 @@ plus one kind of compute allocation) in order to be valid and active.
 Compute allocations are expressed in terms of a number of units, to be
 consumed or reserved between a set start date and time and a set end
 date and time. For allocations of computing power, we use [Fair
-Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
+Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md)
 to balance work between different projects. NeSI allocations and the
 relative "prices" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running
@@ -60,9 +58,8 @@ Share adjusted core-hour" on Mahuika's standard compute nodes.
 The price of hardware in terms of compute units is shown in the
 following table.
 
-|                        |                                         |
+|  Hardware type         |    Fair Share Price                     |
 |------------------------|-----------------------------------------|
-| Hardware type          | Fair Share Price                        |
 | CPU                    | 0.35 compute units per logical-CPU-hour |
 | Memory (RAM)           | 0.10 compute units per GB-hour          |
 | P100 GPU device        | 7.0 compute units per device-hour       |
@@ -81,11 +78,11 @@ is two
 (see [Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md) for
 details). Therefore:
 
--   the lowest possible price for a CPU-only job is 0.70 compute units
+- the lowest possible price for a CPU-only job is 0.70 compute units
     per hour, plus memory (RAM).
--   the lowest possible price for a CPU + P100 GPU job is 7.70 compute
+- the lowest possible price for a CPU + P100 GPU job is 7.70 compute
     units per hour, plus memory (RAM).
--   the lowest possible price for a CPU + A100 GPU job is 18.70 compute
+- the lowest possible price for a CPU + A100 GPU job is 18.70 compute
     units per hour, plus memory (RAM).
 
 In reality, every job must request at least some RAM.
@@ -138,5 +135,3 @@ scientific programming expertise to your project.
 
 We do not yet have a ratio of consultancy hours to Mahuika compute
 units.
-
- 

@@ -1,7 +1,5 @@
 ---
 created_at: '2020-06-08T04:21:37Z'
-hidden: false
-position: 0
 tags:
 - jupyter
 - hub
@@ -15,46 +13,32 @@ zendesk_article_id: 360001555615
 zendesk_section_id: 360001189255
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Note
+!!! Note
      This service is available for users with a current allocation on
      Mahuika only.  
-     [Please contact us to request a suitable
-     allocation.](https://support.nesi.org.nz/hc/en-gb/requests/new)
+     Please {% include "partials/support_request.html" %} to request a suitable
+     allocation.
 
 ## Introduction
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
-[interactive
-computing](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
+[interactive computing](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing [Slurm job
 submissions](../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
 and workflows and much more.
-!!! prerequisite See also
-     -   See the [RStudio via Jupyter on
-         NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md)
+
+!!! prerequisite "See also"
+     -   See the [RStudio via Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md)
          page for launching an RStudio instance.
-     -   See the [MATLAB via Jupyter on
-         NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/MATLAB_via_Jupyter_on_NeSI.md)
+     -   See the [MATLAB via Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/MATLAB_via_Jupyter_on_NeSI.md)
          page for launching MATLAB via Jupyter
-     -   See the [Virtual Desktop via Jupyter on
-         NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md)
+     -   See the [Virtual Desktop via Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md)
          page for launching a virtual desktop via Jupyter.
-     -   See the [Jupyter kernels - Tool-assisted
-         management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Tool_assisted_management.md)
-         (recommended) and [Jupyter kernels - Manual
-         management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management.md)
+     -   See the [Jupyter kernels - Tool-assisted management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Tool_assisted_management.md)
+         (recommended) and [Jupyter kernels - Manual management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management.md)
          pages for adding kernels.
 
 ## Accessing Jupyter on NeSI
@@ -63,33 +47,36 @@ Jupyter at NeSI is powered by [JupyterHub](https://jupyter.org/hub), a
 multi-user hub that spawns, manages and proxies multiple instances of
 the single-user Jupyter server.
 
-### Access NeSI's JupyterHub here:
+### Access NeSI's JupyterHub here
 
-<https://jupyter.nesi.org.nz>
+[ttps://jupyter.nesi.org.nz](ttps://jupyter.nesi.org.nz)
 
-When you log in with your [NeSI
-credentials](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
+When you log in with your [NeSI credentials](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
 you will be taken to the "Server Options" page, where typical job
 configuration options can be selected to allocate the resources that
 will be used to run Jupyter. Typical jobs, not requesting a GPU, should
 be up and running within one to two minutes. Requesting a GPU can
 increase this time significantly as there are only a small number of
 GPUs available at NeSI.
-!!! prerequisite Tip
+
+!!! tip
      If your server appears to not have started within 3 minutes please
      reload the browser window and check again, otherwise contact
-     [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=Jupyter%20on%20NeSI).
+      {% include "partials/support_request.html" %}.
 
 ## Known issues
 
--   When using *srun* in a Jupyter terminal you may see messages like
+- When using *srun* in a Jupyter terminal you may see messages like
     those shown below. The "error" messages are actually just warnings
     and can be ignored; the *srun* command should still work.
     Alternatively, you could run *unset TMPDIR* in the terminal before
     running *srun* to avoid these warnings.
 
-    ``` sl
-    $ srun --pty bash
+    ``` sh
+    srun --pty bash
+    ```
+
+    ```out
     srun: job 28560743 queued and waiting for resources
     srun: job 28560743 has been allocated resources
     slurmstepd: error: Unable to create TMPDIR [/dev/shm/jobs/28560712]: Permission denied
@@ -124,9 +111,9 @@ JupyterLab provides a terminal that can be an alternative means of
 gaining command line access to NeSI systems instead of using an SSH
 client. Some things to note are:
 
--   when you launch the terminal application some environment modules
-    are already loaded, so you may want to run `module purge` 
--   processes launched directly in the JupyterLab terminal will probably
+- when you launch the terminal application some environment modules
+    are already loaded, so you may want to run `module purge`
+- processes launched directly in the JupyterLab terminal will probably
     be killed when you Jupyter session times out
 
 ## Ending your interactive session and logging out
@@ -134,8 +121,8 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-![](../../assets/images/Jupyter_on_NeSI.png)
-![](../../assets/images/Jupyter_on_NeSI_0.png)
+![control panel](../../assets/images/Jupyter_on_NeSI.png)
+![stop server](../../assets/images/Jupyter_on_NeSI_0.png)
 
 If you click "Log Out" without stopping your server, the server will
 continue to run until the Slurm job reaches its maximum wall time.
@@ -167,24 +154,23 @@ If the extension is packaged as a prebuilt extension (e.g. as a pip
 package), then you can install it from the JupyterLab terminal by
 running:
 
-``` sl
-$ pip install --user <packagename>
+``` sh
+pip install --user <packagename>
 ```
 
 For example, the [Dask
 extension](https://github.com/dask/dask-labextension#jupyterlab-30-or-greater)
 can be installed with the following:
 
-``` sl
-$ pip install --user dask-labextension
+``` sh
+pip install --user dask-labextension
 ```
 
 ### Installing source extensions
 
 Installing source extensions requires a rebuild of the JupyterLab web
 application. Since this requires write permissions, you will need to set
-the JupyterLab [application
-directory](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html#advanced-usage)
+the JupyterLab [application directory](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html#advanced-usage)
 to a location that you can write to. To do this you need to create a
 file named *~/.jupyterlab3\_dir* in your home directory with the full
 path to your desired JupyterLab application directory and then run some
@@ -193,34 +179,34 @@ commands to initialise the JupyterLab application directory.
 Running the following commands will create the JupyterLab application
 directory in your home directory:
 
-``` sl
-$ module load JupyterLab
-$ echo $HOME/.local/share/jupyter/lab > ~/.jupyterlab3_dir
-$ export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
-$ jupyter lab build
+``` sh
+module load JupyterLab
+echo $HOME/.local/share/jupyter/lab > ~/.jupyterlab3_dir
+export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+jupyter lab build
 ```
 
 These changes will only take effect after relaunching your Jupyter
 server and then you should be able to install JupyterLab extensions as
 you please.
-!!! prerequisite Note
+
+!!!note
      The above commands will put the JupyterLab application directory in
      your home directory. The application directory often requires at least
      1-2GB of disk space and 30,000 inodes (file count), so make sure you
-     have space available in your home directory first (see [NeSI File
-     Systems and
-     Quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md))
+     have space available in your home directory first (see
+     [NeSI File Systems and Quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md))
      or request a larger quota.
 
 You could change the path to point to a location in your project
 directory, especially if multiple people on your project will share the
 same JupyterLab application directory, e.g.:
 
-``` sl
-$ module load JupyterLab
-$ echo /nesi/project/<project_code>/$USER/jupyter/lab > ~/.jupyterlab_dir
-$ export JUPYTERLAB_DIR=/nesi/project/<project_code>/$USER/jupyter/lab
-$ jupyter lab build
+``` sh
+module load JupyterLab
+echo /nesi/project/<project_code>/$USER/jupyter/lab > ~/.jupyterlab_dir
+export JUPYTERLAB_DIR=/nesi/project/<project_code>/$USER/jupyter/lab
+jupyter lab build
 ```
 
 ## Log files
@@ -235,6 +221,6 @@ issue.
 
 ## External documentation
 
--   [Jupyter](https://jupyter.readthedocs.io/en/latest/)
--   [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/)
--   [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
+- [Jupyter](https://jupyter.readthedocs.io/en/latest/)
+- [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/)
+- [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)

@@ -1,7 +1,5 @@
 ---
 created_at: '2019-02-06T22:27:04Z'
-hidden: false
-position: 0
 tags: []
 title: Why is my job taking a long time to start?
 vote_count: 1
@@ -10,30 +8,16 @@ zendesk_article_id: 360000737555
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 If you think your job is taking unexpectedly long to start running,
 there are several possible causes.
 
--   [Scheduled maintenance](#scheduled-maintenance)
--   [Delays in the queue](#delays-in-the-queue)
-    -   [Your job is being beaten by other high-priority
-        jobs](#other-high-priority-jobs)
-        -   [Your project has a low Fair Share
-            score](#low-fair-share-score)
-        -   [Your project has a high Fair Share score, but there are
-            lots of other jobs from similarly high-priority
-            projects](#queue-congestion)
-    -   [Your job's resource demands are hard to
-        satisfy](#difficult-job)
-    -   [Some other problem](#other-problem)
+- [Scheduled maintenance](#scheduled-maintenance)
+- [Delays in the queue](#delays-in-the-queue)
+    - [Your job is being beaten by other high-priority jobs](#other-high-priority-jobs)
+        - [Your project has a low Fair Share score](#low-fair-share-score)
+        - [Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects](#queue-congestion)
+    - [Your job's resource demands are hard to satisfy](#difficult-job)
+    - [Some other problem](#other-problem)
 
 ## Scheduled maintenance
 
@@ -48,14 +32,14 @@ returns to service, depending on the nature of the work to be done.
 If your job is not supposed to be affected by a maintenance period, you
 can get more information by running this command:
 
-``` sl
+```sh
 nn_my_queued_jobs
 ```
 
 This command will, for each of your queued jobs, produce an output
 looking something like this:
 
-``` sl
+```sh
 $ nn_my_queued_jobs 
 ACCOUNT                JOBID NAME                 SUBMIT_TIME         QOS    NODE CPUS MIN_MEMORY PRIORITY START_TIME          REASON
 nesi99999           12345678 SomeRandomJob        2019-01-01T12:00:00 collab    1    8         2G     1553        N/A          QOSMaxCpuPerJobLimit
@@ -66,14 +50,14 @@ side, is the "Reason" column. This column tells you why the job is
 delayed. Common answers include "Priority", "Resources", "Dependency",
 "ReqNodeNotAvail", and others.
 
--   **Priority** means that the job just isn't in the front of the queue
+- **Priority** means that the job just isn't in the front of the queue
     yet.
--   **Resources** means that there are not currently enough free
+- **Resources** means that there are not currently enough free
     resources to run the job.
--   **Dependency** means the job is in some way dependent on another,
+- **Dependency** means the job is in some way dependent on another,
     and the other job (the dependency) has not yet reached the required
     state.
--   **ReqNodeNotAvail** means that the job has requested some specific
+- **ReqNodeNotAvail** means that the job has requested some specific
     node that is busy working on other jobs, is out of service, or does
     not exist.
 
@@ -85,7 +69,7 @@ importance of reasons. For example, one job could say Priority and
 another could say Resources, when in fact both are waiting due to
 Priority and Resources at the same time.
 
-### Your job is being beaten by other high-priority jobs
+### Other high-priority jobs
 
 You can check the job's priority relative to other waiting jobs by means
 of the following command on a
@@ -94,7 +78,7 @@ or
 [Māui](https://support.nesi.org.nz/hc/articles/360000163695-M%C4%81ui)
 login node (as appropriate):
 
-``` sl
+```sh
 nn_job_priorities
 ```
 
@@ -104,7 +88,7 @@ to lowest.
 
 The output should look something like this:
 
-``` sl
+```sh
           JOBID PARTITION   PRIORITY        AGE   FAIRSHARE    JOBSIZE        QOS
          793492 gpu             1553        504        1000         20         30
         2008465 long            1107        336         723         18         30
@@ -122,7 +106,7 @@ The output should look something like this:
 The important aspect of this list is not your job's numeric priority
 score, but rather its priority ranking compared to other jobs.
 
-#### Your project has a low Fair Share score
+#### Low Fair Share score
 
 If, compared to other jobs in the queue, your job's priority (third
 column) and fair share score (fifth column) are both low, this usually
@@ -132,7 +116,7 @@ page](https://support.nesi.org.nz/hc/articles/360000743536) for more
 information on Fair Share, how you can check your project's fair share
 score, and what you can do about a low project fair share score.
 
-#### Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects
+#### Queue Congestion
 
 In the unlikely scenario that your job's position in the list is low but
 your job's fair share score is high (i.e. nearly 1,000), you will just
@@ -144,30 +128,30 @@ when researchers submit a lot of work at about the same time. Because it
 is triggered by aggregate researcher behaviour, there isn't much we can
 do about it.
 
-### Your job's resource demands are hard to satisfy
+### Difficult Job
 
 If your job's priority is high compared to other jobs but the job still
 won't start, make sure that your resource requests (in your Slurm
 script) are appropriate. If the nature of your work allows, you could
 try:
 
--   Being more flexible about where in the cluster CPU cores come from
--   Asking for less memory (RAM)
--   Asking for a shorter wall time
+- Being more flexible about where in the cluster CPU cores come from
+- Asking for less memory (RAM)
+- Asking for a shorter wall time
 
 You can use the `scontrol` command to reduce the job's requested wall
 time limit, for example the following command will set the wall time
 limit of job 12345678 to one hour:
 
-``` sl
-$ scontrol update jobid=12345678 TimeLimit=01:00:00
+```sh
+scontrol update jobid=12345678 TimeLimit=01:00:00
 ```
 
 The `scontrol update` command does not print out any message to say that
 it has succeeded, so you can check its effect using `scontrol show`:
 
-``` sl
-$ scontrol show job 12345678 | grep TimeLimit
+```sh
+scontrol show job 12345678 | grep TimeLimit
    RunTime=00:00:00 TimeLimit=00:01:00 TimeMin=N/A
 ```
 
@@ -183,9 +167,8 @@ you should cancel your queued job using the `scancel` command and then
 resubmit it. If your project's fair share score is high, your newly
 submitted job should progress quickly through the queue.
 
-### Some other problem
+### Other problem
 
 If your job priority is high, your resource requests are low and your
-job still won't start, please [send a request to our support
-team](https://support.nesi.org.nz/hc/requests/new) and we will look into
+job still won't start, please  {% include "partials/support_request.html" %} and we will look into
 the problem.

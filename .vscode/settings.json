@@ -1,0 +1,39 @@
+{
+    "editor.indentSize": "tabSize",
+    "triggerTaskOnSave.tasks": {
+        "meta-checks": [
+            "docs/**/*.md"
+        ],
+        "proselint-checks": [
+            "docs/**/*.md"
+        ],
+        "spelling-checks": [
+            "docs/**/*.md"
+        ]
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 5,
+    "editor.renderWhitespace": "all",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.lightbulb.enabled": "off",
+    "editor.tabCompletion": "on",
+    "files.insertFinalNewline": true,
+    "workbench.commandPalette.experimental.suggestCommands": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    "scm.alwaysShowRepositories": true,
+    "task.problemMatchers.neverPrompt": true,
+    "problems.showCurrentInStatus": true,
+    "git.autofetch": true,
+    "git.branchRandomName.enable": true,
+    "git.confirmSync": false,
+    "git.pullBeforeCheckout": true,
+    "git.enableSmartCommit": true,
+    "git.postCommitCommand": "sync",
+    "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
+    "git.branchProtection": ["main"],
+    "yaml.extension.recommendations": false,
+    "redhat.telemetry.enabled": false,
+    "githubPullRequests.pushBranch": "always",
+    "git.useEditorAsCommitInput": false
+}

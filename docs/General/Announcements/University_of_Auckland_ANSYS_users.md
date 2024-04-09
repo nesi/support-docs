@@ -1,7 +1,5 @@
 ---
 created_at: '2021-04-03T22:28:54Z'
-hidden: false
-position: 7
 tags: []
 title: University of Auckland - ANSYS users
 vote_count: 0
@@ -10,14 +8,6 @@ zendesk_article_id: 360003984776
 zendesk_section_id: 200732737
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 On 01/04/2021 afternoon, there was a change to the University ANSYS
 licences; you may find that your jobs fail with a licence error.
@@ -31,5 +21,4 @@ ansysli_util -revn 202 -deleteuserprefs
 ```
 
 The effect this will have on all of the ANSYS products is yet to be
-determined, so please open a [support
-ticket](mailto:support.nesi.org.nz) if you encounter problems.
+determined, so please {% include "partials/support_request.html" %} if you encounter problems.

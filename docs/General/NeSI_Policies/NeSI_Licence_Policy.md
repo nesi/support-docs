@@ -1,7 +1,5 @@
 ---
 created_at: '2019-08-07T03:50:45Z'
-hidden: false
-position: 12
 tags: []
 title: NeSI Licence Policy
 vote_count: 0
@@ -10,20 +8,12 @@ zendesk_article_id: 360001097936
 zendesk_section_id: 360000224835
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 With very few exceptions, NeSI does not hold software licences of its
 own. If you wish to use any of the proprietary software installed on the
 NeSI cluster, you, or more likely your institution or department, will
 need to have an appropriate licence.
-!!! prerequisite Warning
+
+!!! Warning
      Slurm and many other applications use the American spelling of the
      noun, "*license*".
 
@@ -51,8 +41,7 @@ are a member of the listed institution or faculty you should be able to
 use the software without any set-up.
 
 If you believe you should have access to a licence but do not, or would
-like to organise remote use of your institution's licence, please [email
-NeSI Support](mailto:support@nesi.org.nz) and cc: your own IT services.
+like to organise remote use of your institution's licence, please {% include "partials/support_request.html" %} and cc: your own IT services.
 
 ### Personal or Research Group Licences
 
@@ -115,7 +104,7 @@ using the software on NeSI.
      complies with the terms of your licence or is otherwise permitted by
      law.**
 
-## Slurm Tokens 
+## Slurm Tokens
 
 We encourage the use of Slurm licence tokens in your batch scripts, for
 example:
@@ -135,7 +124,8 @@ likely leading to a timeout).
 
 The names of the Slurm licence tokens are included in the
 application-specific documentation.
-!!! prerequisite Note
+
+!!! Note
      Slurm licence reservations work independently of the licence server.
      Not including a Slurm token will not prevent your job from running,
      not will including one modify how your job runs (only *when* it runs).

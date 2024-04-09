@@ -1,0 +1,47 @@
+{# 'vis' is a list of visible features in this licence, should be set in parent template. #}
+{# Need to use a namespace as otherwise loop variables are local only. #}
+{% set ns = namespace() %}
+{# Determine number of columns needed. #}
+{% for f in vis -%}
+    {% if f.use_conditions -%}
+        {% set ns.condition_col = true -%}
+    {% endif -%}
+    {% if f.slurm_track and f.slurm_token_name -%}
+        {% set ns.token_col = true -%}
+    {% endif -%}
+{% endfor -%}
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Count</th>
+            {% if ns.condition_col -%}<th>Conditions</th>{% endif -%}
+            {% if ns.token_col -%}<th>Token <span class="twemoji"
+                    title="Include this in your Slurm script to prevent your job starting without a licence.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"></path>
+                    </svg></span></th>
+            {% endif -%}
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in vis -%}
+        <tr>
+            <td>{{ f.feature_name }}</td>
+            <td title="Average {{ '{:.0%}'.format(lic.server_uptime) }} free.">{{ f.total|int }}</td>
+            {% if ns.condition_col -%}
+            <td>{{f.use_conditions}}</td>
+            {% endif -%}
+            {% if ns.token_col -%}
+            <td>
+                {% if f.slurm_track and f.slurm_token_name -%}
+                <pre><code>#SBATCH -L={{ f.slurm_token_name }}:{{ f.usage_formula }}</code></pre>
+                {% else -%}
+                <span title="Specifying licence tokens is not required for this feature"><p><em>Not Required</em></p></span>
+                {% endif -%}
+            </td>
+            {% endif -%}
+        </tr>
+        {% endfor -%}
+    </tbody>
+</table>

@@ -1,7 +1,5 @@
 ---
 created_at: '2020-05-11T23:29:39Z'
-hidden: false
-position: 0
 tags:
 - visualisation
 - image
@@ -14,19 +12,10 @@ zendesk_article_id: 360001514795
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 If for any reason downloading images is impractical you can view them on
 the cluster using the `display` command. For example,
 
-``` sl
+```sh
 display myImage.png
 ```
 

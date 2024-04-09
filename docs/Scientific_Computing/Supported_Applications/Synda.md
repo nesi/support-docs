@@ -1,7 +1,5 @@
 ---
 created_at: '2019-10-14T21:25:00Z'
-hidden: false
-position: 52
 tags: []
 title: Synda
 vote_count: 1
@@ -9,15 +7,6 @@ vote_sum: 1
 zendesk_article_id: 360001208256
 zendesk_section_id: 360000040076
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## What is synda?
 
@@ -34,26 +23,26 @@ Maui\_ancil.
 
 1\. Load Anaconda3
 
-``` sl
+``` sh
 module load Anaconda3
 ```
 
 2\. Create a conda environment and activate the environment
 
-``` sl
+``` sh
 conda create --prefix=<SYNDA_ENV>
 ```
 
 where &lt;SYNDA\_ENV&gt; is a directory of your choice. Activate your
 new environment
 
-``` sl
+``` sh
 conda activate <SYNDA_ENV>
 ```
 
 3\. Install synda (currently version 3.10)
 
-``` sl
+``` sh
 conda install -c IPSL synda
 ```
 
@@ -62,7 +51,7 @@ conda install -c IPSL synda
 Set the ST\_HOME environment variable and populate `$ST_HOME`, for
 instance
 
-``` sl
+``` sh
 export ST_HOME=/nesi/nobackup/<YOUR PROJECT>/synda_home
 ```
 
@@ -78,7 +67,7 @@ later.
 
 To configure and store your ESGF credentials, type
 
-``` sl
+``` sh
 synda -h
 synda check-env
 ```
@@ -86,7 +75,7 @@ synda check-env
 Paste in the openID you received when creating your ESGF account. If you
 created an account on esgf-node.llnl.gov then your openID will be:
 
-``` sl
+``` sh
 openID url: https://esgf-node.llnl.gov/esgf-idp/openid/USER_NAME
 ```
 
@@ -94,7 +83,7 @@ openID url: https://esgf-node.llnl.gov/esgf-idp/openid/USER_NAME
 can change your default configuration by editing
 $ST\_HOME/conf/sdt.conf. I have
 
-``` sl
+``` sh
 indexes = esgf-node.llnl.gov
 default_index = esgf-node.llnl.gov
 ```
@@ -105,13 +94,13 @@ Find all the datasets for given ocean surface temperature ("tos"),
 variant label ("r1i1p1f1") produced by institution "NOAA-GFDL" for
 historical data and table Id "Omon":
 
-``` sl
+``` sh
 synda search project=CMIP6 realm=ocean variable=tos variant_label=r1i1p1f1 institution_id=NOAA-GFDL table_id=Omon experiment_id=historical
 ```
 
 This will return
 
-``` sl
+``` sh
 new  CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gn.v20180701
 new  CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gr.v20180701
 new  CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gn.v20190726
@@ -120,22 +109,22 @@ new  CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726
 
 Choose one of the datasets. To find out how big the dataset is, type: 
 
-``` sl
+``` sh
 synda stat CMIP6.CMIP.NOAA-GFDL.GFDL-ESM4.historical.r1i1p1f1.Omon.tos.gr.v20190726
 ```
 
 which returns
 
-``` sl
+``` sh
 Total files count: 9
 New files count: 9
 Total size: 262.8 MB
 New files size: 262.8 MB
 ```
 
-To download the dataset, type
+``To download the dataset, type
 
-``` sl
+``` sh
 synda get CMIP6.CMIP.NOAA-GFDL.GFDL-CM4.historical.r1i1p1f1.Omon.tos.gn.v2018070
 ```
 

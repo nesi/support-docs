@@ -1,7 +1,5 @@
 ---
 created_at: '2018-05-01T23:10:09Z'
-hidden: false
-position: 9
 tags:
 - info
 - allocation
@@ -12,15 +10,6 @@ vote_sum: 1
 zendesk_article_id: 360000175635
 zendesk_section_id: 360000224835
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 This is the highest award given for use of NeSI services. A Merit
 allocation is intended for highly skilled research teams carrying out
@@ -67,7 +56,4 @@ Read more about [how we review
 applications](../../General/NeSI_Policies/How_we_review_applications.md).
 
 To learn more about NeSI Projects or to apply for a new project, please
-read our article [Applying for a NeSI
-Project](https://support.nesi.org.nz/hc/articles/360000174976).
-
- 
+read our article [Applying for a NeSI Project](https://support.nesi.org.nz/hc/articles/360000174976).

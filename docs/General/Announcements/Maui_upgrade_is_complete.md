@@ -1,7 +1,5 @@
 ---
 created_at: '2023-03-09T02:46:57Z'
-hidden: false
-position: 0
 status: new
 tags: []
 title: "M\u0101ui upgrade is complete"
@@ -11,23 +9,13 @@ zendesk_article_id: 6546340907919
 zendesk_section_id: 200732737
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 The recent upgrade of the Māui is now complete. The operating system,
 libraries, and software stack have been upgraded and rebuilt, improving
 performance and stability and enabling new capabilities.
 
 If you encounter any issues, have any questions about the upgrade, need
 help with getting your software working on the upgraded system, or have
-a suggestion for our documentation, please contact us via email at
-[support@nesi.org.nz](mailto:support@nesi.org.nz). We are committed to
+a suggestion for our documentation, please {% include "partials/support_request.html" %}. We are committed to
 providing you with the best computing resources possible and will do our
 best to assist you.
 
@@ -55,24 +43,24 @@ be an ongoing effort post-upgrade).
 The following information will help your transition from the pre-upgrade
 Māui environment to the post-upgrade one: 
 
--   The three main toolchains (CrayCCE, CrayGNU and CrayIntel) have all
+- The three main toolchains (CrayCCE, CrayGNU and CrayIntel) have all
     been updated to release 23.02 (CrayCCE and CrayGNU) and 23.02-19
     (CrayIntel). **The previously installed versions are no longer
     available**.
--   Consequently, nearly all of the previously provided **environment
+- Consequently, nearly all of the previously provided **environment
     modules have been replaced by new versions**. You can use the
     *module avail* command to see what versions of those software
     packages are now available. If your batch scripts load exact module
     versions, they will need updating.
--   The few jobs in the Slurm queue at the start of the upgrade process
+- The few jobs in the Slurm queue at the start of the upgrade process
     have been placed in a “user hold” state. You have the choice of
     cancelling them with *scancel &lt;jobid&gt;* or releasing them with
     *scontrol release &lt;jobid&gt;*.
--   Be aware that if you have jobs submitted that rely on any software
+- Be aware that if you have jobs submitted that rely on any software
     built before the upgrade, there is a good chance that this software
     will not run. **We recommend rebuilding any binaries you maintain**
     before running jobs that utilise those binaries.
--   Note that Māui login does not require adding a second factor to the
+- Note that Māui login does not require adding a second factor to the
     password when authenticating on the Māui login node after the first
     successful login attempt. That is, if you have successfully logged
     in using &lt;first factor&gt;&lt;second factor&gt; format, no second
@@ -86,8 +74,7 @@ changes, so please review it before starting any new projects. 
 Software built on Māui may not work without recompilation after the
 upgrade. See the tables below for more detail regarding version changes.
 If you have any particular concerns about the impact on your work,
-please contact [NeSI
-Support](https://support.nesi.org.nz/hc/en-gb/requests/new).
+please {% include "partials/support_request.html" %}.
 
 The table below outlines the known and expected Cray component changes:
 
@@ -230,5 +217,4 @@ Systems](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a
 [Cray XC (x86) Programming Environments
 19.04](https://support.hpe.com/hpesc/public/docDisplay?docId=a00114073en_us&docLocale=en_US)
 
-[Applications supported by NeSI
-team](https://support.nesi.org.nz/hc/en-gb/sections/360000040076)
+[Applications supported by NeSIteam](../../Scientific_Computing/Supported_Applications/index.md)

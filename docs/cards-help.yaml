@@ -1,12 +1,12 @@
 
 - title: Introductory Workshops
   content: We offer introductory workshops for new HPC users on most weeks of the year. 
-  url: https://support.nesi.org.nz/hc/en-gb/articles/360000428676
+  url: Getting_Started/Getting_Help/Introductory_Material.md
 
-- title: Help desk
+- title: Contact Support
   content: The NeSI help desk can be contacted via email support@nesi.org.nz or from this site.
   url: mailto:support@nesi.org.nz
 
 - title: Consultancy service 
   content: Scientific and HPC-focussed computational support across a range of domains.
-  url: https://support.nesi.org.nz/hc/en-gb/articles/360000751916
+  url: Getting_Started/Getting_Help/Consultancy.md

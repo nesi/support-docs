@@ -1,7 +1,5 @@
 ---
 created_at: '2023-07-05T23:56:56Z'
-hidden: false
-position: 1
 tags: []
 title: Pricing
 vote_count: 0
@@ -11,23 +9,13 @@ zendesk_section_id: 7348891753487
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 We have two categories of pricing for NeSI services through
 Subscriptions:
 
--   Public sector & not-for-profit
--   Commercial
+- Public sector & not-for-profit
+- Commercial
 
 Prices are reviewed annually and subject to change.
-
- 
 
 ## Current pricing
 
@@ -36,9 +24,5 @@ page](https://www.nesi.org.nz/community/partners-pricing#subscriptions) on
 the NeSI website for the latest pricing information. The website page
 will always display the current pricing of a NeSI service.
 
- 
-
 If you have any questions about anything mentioned on this page, don’t
 hesitate to [get in touch](mailto:info@nesi.org.nz).
-
- 

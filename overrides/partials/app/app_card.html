@@ -1,0 +1,63 @@
+<details class="software list-group-item-action list-group-item list-group-item-application 
+    {% for domain in app.domains -%}list-group-item-application-{{ domain }}{% endfor -%}
+    {% for machine in app.machines -%}list-group-item-application-{{ machine }}{% endfor -%}
+    ">
+    <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
+        data-target="#collapse-{{ app_name | lower }}" aria-expanded="true">
+        <h4 class="app-list-header">{{ app_name }}</h4>
+        {% if app.licence_type -%}
+        <span class="twemoji warning badge badge-licence badge-licence-{{ app.licence_type }}" title="{{ app.licence_type | capitalize }} software. Restrictions may apply."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"></path></svg></span>
+        <!-- <span class="warning badge badge-licence badge-licence-{{ app.licence_type }}"  data-toggle="tooltip">  -->
+        <!-- </span> -->
+        {% endif -%}
+        {% for domain in app.domains -%} 
+            <span onclick="addDomainFilter('{{ domain }}')" class="badge-largeinator">
+                <span class="badge badge-domain badge-domain-{{ domain }}">{{ domain | capitalize }}</span>
+            </span>
+        {% endfor -%}
+        {% for machine in app.machines -%} 
+            <span onclick="addDomainFilter('{{ machine }}')" style="float:right;"
+            title="insert tooltip here" data-toggle="tooltip"class="badge-largeinator">
+            <span class="badge badge-cluster badge-cluster-{{ machine }}">{{ machine | capitalize }}</span>
+            </span>
+        {% endfor -%}
+    </summary>
+        <div class="card-body card-app">
+            <p class="cardbody cardbody-description">{{ app.description }}</p>
+            <!-- <div class="cardbody cardbody-info"> -->
+            <div class="grid flex-card-parent">
+                <div class="flex-card">
+                    <h5>Available Modules</h5>
+                    {% include "partials/app/app_version.html" -%}
+                </div>
+                <div class="flex-card">
+                    <h5>Links</h5>
+                    <ul class="docLinks-list">
+                    {% if app.homepage or app.url -%}
+                    <li>
+                        <span class="twemoji">{% include ".icons/material/home.svg" %}</span>
+                        <a href="{{ app.homepage or app.url }}">{{ app_name }} Homepage</a>
+                    </li>
+                    {% endif -%}
+                    {% if app.support -%}
+                    <li> 
+                        <span class="twemoji">{% include ".icons/material/book-open-page-variant-outline.svg" %}</span>
+                        <a href="{{ app.support }}">NeSI Documentation</a>
+                    </li>
+                    {% endif -%}    
+                    </ul>
+                </div>
+            {% if app.licence_type %}
+                <div class="flex-card flex-card-full">
+                <h5>Licence</h5>
+                <span class="warning badge badge-licence badge-licence-{{ app.licence_type }}" style="margin-left: -2em;float: left;"></span>
+                <p>{{ app_name }} is {{ app.licence_type }} software.</p>
+                {% if app.network_licences %}
+                    <p>Access to a valid licence token is required to run {{ app_name }}.
+                    {% include "partials/app/app_network_licence.html" -%}
+                {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</details>

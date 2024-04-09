@@ -38,7 +38,7 @@
     padding: 0.4em 0.4em 0.4em 0.4em;
     margin: 0 0.2em 0 0.2em;
     border-radius: .25rem;
-    border: 1px black solid;
+    border: 1px var(--md-default-fg-color--light) solid;
 }
 .btn-cluster:before {
     content: " \f233 ";
@@ -61,6 +61,22 @@
     color:  var(--md-primary-bg-color);
     background-color: #972220;
 }
+
+.grid.flex-card-parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.flex-card {
+    flex-grow: 1;
+}
+.flex-card-full {
+    flex-basis:100%
+}
 .app-list-header {
       display: inline;
       }
@@ -71,9 +87,10 @@
     display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
+    transition: all .5s ease-in-out;
 }
 .version-table{
-    width: auto;
+    width: max-content;
     flex-grow: 0.9;
 }
 tr.version-table-row>th {
@@ -120,16 +137,6 @@ div#tier2 {
 li {
     list-style: none;
 }
-.sd-warning:before {
-    content: " \f071";
-    font-family: "FontAwesome";
-    color: red;
-    top: -10px;
-    display: unset;
-    border-box: unset;
-    margin-right: 10px;
-    padding-bottom: -20px;
-}
 /*badges*/
 .badge{
     margin: 0 0.5em 0 0.5em;
@@ -143,7 +150,6 @@ li {
 .badge-closeable > button {
     background-color: transparent;
     border: 0;
-    -webkit-appearance: none;
     float: right;
     cursor: pointer;
     padding: 0.4em 0.3em 0.3em 0.6em;
@@ -215,7 +221,8 @@ li {
     display:none;
 }
 .badge-licence{
-    margin:4px -0.5em 0 0em;
+    padding: 0;
+    color: red;
     cursor: default;
 }
 .badge-largeinator{
@@ -243,8 +250,42 @@ div#updated {
 #srchbar-badge-party {
     border: 1px solid #eceff1;
     border-left: none;
-    padding-top: 0.2em;
+    padding-top: 0.2rem;
 }    
-#srchbar{
+/* #srchbar{
     border-right:0;
+} */
+.md-search-aux{
+    display:inline-block;
+    width: 100%;
+    padding: 0 0 1rem 0;
+}
+.md-search-aux__inner {
+    width: 100%
+}
+.md-search__icon.md-search-aux__icon{
+    color: var(--md-default-fg-color--light);
+}
+.md-search-aux__input{
+    box-shadow: 0 0 0.6rem #0000;
+    height: 1.8rem;
+    position: relative;
+    transition: color .25s,background-color .25s;
+    z-index: 2;
+}
+.md-search__icon[for=__search-aux] {
+    position: absolute;
+    top: .3rem;
+    left: 0.5rem;
+    z-index: 2
+}
+.md-search-aux__form{
+    background-color: var(--md-default-bg-color);
+    border-radius: 0.1rem;
+    box-shadow: 0 0 0.6rem #00000012;
+}
+
+.md-source-file{
+    display: none; 
+    /* This is lazy */
 }

@@ -1,7 +1,5 @@
 ---
 created_at: '2022-04-04T03:32:24Z'
-hidden: false
-position: 2
 tags: []
 title: MATLAB via Jupyter on NeSI
 vote_count: 0
@@ -10,22 +8,13 @@ zendesk_article_id: 4614893064591
 zendesk_section_id: 360001189255
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
 !!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-!!! prerequisite Note
      This functionality is experimental and developing, which may introduce
      breaking changes in the future.
      If you would like to report a bug or propose a change see the GitHub
      repo
      [https://github.com/nesi/jupyter-matlab-proxy](https://github.com/nesi/jupyter-matlab-proxy?organization=nesi&organization=nesi)
-     or contact NeSI support at <support@nesi.org.nz>.
+     or {% include "partials/support_request.html" %}.
 
 ## Getting started
 
@@ -46,9 +35,10 @@ MATLAB may take a few minutes to load, once it does you will be put
 straight into the MATLAB environment. 
 
 You can open the status page at any time by clicking the
-[![](../../assets/images/MATLAB_via_Jupyter_on_NeSI_1.png)](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
+![../../assets/images/MATLAB_via_Jupyter_on_NeSI_1.png)](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/tools_icon.png)
 button.
-!!! prerequisite Note
+
+!!! warning
      Your license must be valid for MATLAB 2021b or newer.
 
 ## Licensing
@@ -75,8 +65,4 @@ warning whenever you run a system command, and some system commands will
 not work as intended.
 
 For more details see
-[MATLAB#known\_bugs](../../Scientific_Computing/Supported_Applications/MATLAB.md#known_bugs).
-
- 
-
- 
+[MATLAB#known\_bugs](../../Scientific_Computing/Supported_Applications/MATLAB.md#known-bugs).

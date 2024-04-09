@@ -1,7 +1,5 @@
 ---
 created_at: '2019-04-25T22:26:56Z'
-hidden: false
-position: 7
 tags: []
 title: Allocation classes
 vote_count: 1
@@ -9,15 +7,6 @@ vote_sum: 1
 zendesk_article_id: 360000925176
 zendesk_section_id: 360000224835
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 The NeSI access policy, agreed by representatives of the Crown and
 NeSI's partner institutions, establishes several allocation classes. In
@@ -209,8 +198,7 @@ entitlements and institutional resource allocation decisions</td>
 </table>
 
 If you only qualify for a Proposal Development allocation right now,
-please [get in touch with
-us](https://support.nesi.org.nz/hc/requests/new) before applying for a
+please {% include "partials/support_request.html" %} before applying for a
 new project. Our Engagement Team is happy to talk to you and
 representatives of your institution about [Subscription
 options](https://www.nesi.org.nz/community/partners-pricing#subscriptions).

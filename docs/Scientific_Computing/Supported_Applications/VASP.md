@@ -1,7 +1,5 @@
 ---
 created_at: '2015-09-08T03:11:50Z'
-hidden: false
-position: 57
 tags:
 - mahuika
 - chemistry
@@ -13,16 +11,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-<!-- The above lines, specifying the category, section and title, must be
-present and always comprising the first three lines of the article. -->
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 ## Description
 
@@ -40,11 +33,11 @@ atomic charges with pseudopotentials.
 
 VASP can (among many other things) perform
 
--   structural relaxation and calculation of forces between nuclei
--   molecular dynamics
--   magnetic moments
--   partial charges
--   optical properties
+- structural relaxation and calculation of forces between nuclei
+- molecular dynamics
+- magnetic moments
+- partial charges
+- optical properties
 
 For more information, please visit the VASP home page at
 <http://www.vasp.at>.
@@ -64,8 +57,7 @@ any NeSI cluster if you have a valid licence to use that version of VASP
 with your research group, employer, or institution, and if the terms of
 your licence permit cluster use.
 
-If you do have a valid license, please contact [our support
-team](mailto:support@nesi.org.nz) to gain access to the VASP
+If you do have a valid license, please {% include "partials/support_request.html" %} to gain access to the VASP
 executables. You may be asked to provide proof of your license if you
 are not from a known group or if the license is new.
 
@@ -73,13 +65,13 @@ are not from a known group or if the license is new.
 
 ### Example script
 
-``` bash
+``` sl
 #!/bin/bash -e
 
 #SBATCH --job-name        MyVASPJob
 #SBATCH --time            01:00:00
 #SBATCH --nodes           1
-#SBATCH --ntasks          16               # start 16 MPI tasks or 16
+#SBATCH --ntasks          16               # start 16 MPI tasks
 #SBATCH --mem             20G
 #SBATCH --hint            nomultithread
 
@@ -89,10 +81,10 @@ module load VASP/6.4.1-intel-2022a
 # Use the -K switch so that, if any of the VASP processes exits with an
 # error, the entire job will stop instead of continuing to waste core
 # hours on a defunct run.
-srun -K vasp_std
+srun -K1 vasp_std
 ```
 
-### Don't use hyperthreading!
+### Avoid hyperthreading
 
 We and several researchers have found that VASP doesn't behave well with
 hyperthreading, and will run at a third to a half of its expected speed.
@@ -110,16 +102,14 @@ or, equivalently,
 
 as shown in our example script above.
 
- 
-
 ### How many cores should I request?
 
-Unsurprisingly, the number of cores used in a VASP calculation has
-significant influence on how long the calculation takes to finish. The
-more cores a problem can parallelise over, the more it can do at once.
-However, this parallelisation carries with it some communication costs.
-Too many cores for too small a problem can decrease efficiency and speed
-(not to mention waste resources), as the cost of communicating
+Unsurprisingly, the number of cores used in a VASP calculation
+significantly influences on how long the calculation takes to finish.
+The more cores a problem can parallelise over, the more it can do at
+once. However, this parallelisation carries with it some communication
+costs. Too many cores for too small a problem can decrease efficiency
+and speed (not to mention waste resources), as the cost of communicating
 tasks/threads becomes greater than the cost of the calculation itself.
 
 To determine an appropriate number of cores to request for a VASP
@@ -153,7 +143,7 @@ job at greater risk of node failure. You can request a single node with
 `--nodes=1`for jobs of up to `--ntasks=128`, which is enough for most
 VASP calculations. If you would like help making a large job more
 efficient, please [contact our support
-team](https://support.nesi.org.nz/hc/en-gb/requests/new).
+team {% include "partials/support_request.html" %}.
 
 ### VASP runs faster on Milan nodes
 
@@ -305,8 +295,6 @@ corresponds to only exchange and not to exchange and correlation." For
 more information on correct usage of LIBXC please see[VASP's
 documentation](https://www.vasp.at/wiki/index.php/LIBXC1) on this.
 
- 
-
 ### Which VASP executable should I use?
 
 VASP is unusual among scientific software packages in that some of its
@@ -355,13 +343,13 @@ and details about the available GPUs on NeSI
 
 Here are some additional notes specific to running VASP on GPUs on NeSI:
 
--   -   The command that you use to run VASP does not change - unlike
-        the previous CUDA version, which had a `vasp_gpu` executable,
-        with the OpenACC version the usual VASP executables (`vasp_std`,
-        `vasp_gam`, `vasp_ncl`) are all built with OpenACC GPU support
-        in the *\*-NVHPC-\** modules, so just use those as usual
-    -   Always select one MPI process (Slurm task) per GPU, for example:
-        -   Running on 1 P100 GPU  
+- The command that you use to run VASP does not change - unlike
+    the previous CUDA version, which had a `vasp_gpu` executable,
+    with the OpenACC version the usual VASP executables (`vasp_std`,
+    `vasp_gam`, `vasp_ncl`) are all built with OpenACC GPU support
+    in the *\*-NVHPC-\** modules, so just use those as usual
+- Always select one MPI process (Slurm task) per GPU, for example:
+    - Running on 1 P100 GPU  
 
             ``` sl
             # snippet of Slurm script
@@ -372,7 +360,7 @@ Here are some additional notes specific to running VASP on GPUs on NeSI:
             # end snippet
             ```
 
-        -   Running on 4 HGX A100 GPUs on a single node  
+    - Running on 4 HGX A100 GPUs on a single node  
 
             ``` sl
             # snippet of Slurm script
@@ -383,27 +371,27 @@ Here are some additional notes specific to running VASP on GPUs on NeSI:
             #SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
             # end snippet
             ```
-    -   Multiple threads per MPI process (--cpus-per-task) might be
-        beneficial for performance but you should start by setting this
-        to 1 to get a baseline
-    -   VASP will scale better across multiple GPUs when they are all on
-        the same node compared to across multiple nodes
-    -   if you see memory errors like
-        `call to cuMemAlloc returned error 2: Out of memory` you
-        probably ran out of GPU memory. You could try requesting more
-        GPUs (so the total amount of available memory is higher) and/or
-        moving to GPUs with more memory (note: GPU memory is distinct
-        from the usual memory you have to request for your job via
-        `#SBATCH --mem` or similar; when you are allocated a GPU you get
-        access to all the GPU memory on that device)
-        -   P100 GPUs have 12 GB GPU memory and you can have a maximum
+- Multiple threads per MPI process (`--cpus-per-task`) might be
+    beneficial for performance but you should start by setting this
+    to 1 to get a baseline
+- VASP will scale better across multiple GPUs when they are all on
+    the same node compared to across multiple nodes
+- if you see memory errors like
+    `call to cuMemAlloc returned error 2: Out of memory` you
+    probably ran out of GPU memory. You could try requesting more
+    GPUs (so the total amount of available memory is higher) and/or
+    moving to GPUs with more memory (note: GPU memory is distinct
+    from the usual memory you have to request for your job via
+    `#SBATCH --mem` or similar; when you are allocated a GPU you get
+    access to all the GPU memory on that device)
+    - P100 GPUs have 12 GB GPU memory and you can have a maximum
             of 2 per node
-        -   PCI A100 GPUs have 40 GB GPU memory and you can have a
+    - PCI A100 GPUs have 40 GB GPU memory and you can have a
             maximum of 2 per node
-        -   HGX A100 GPUs have 80 GB GPU memory and you can have a
+    - HGX A100 GPUs have 80 GB GPU memory and you can have a
             maximum of 4 per node
-    -   the HGX GPUs have a faster interconnect between the GPUs within
+- the HGX GPUs have a faster interconnect between the GPUs within
         a single node; if using multiple GPUs you may get better
         performance with the HGX A100s than with the PCI A100s
-    -   A100 GPUs have more compute power than P100s so will perform
+- A100 GPUs have more compute power than P100s so will perform
         better if your simulation can take advantage of the extra power

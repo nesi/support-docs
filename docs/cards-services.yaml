@@ -1,19 +1,14 @@
-- title: NeSI Account Portal
-  content: Managing your account, project, authorized users etc
-  url: https://my.nesi.org.nz
-  image: ./assets/icons/material/account-star.svg
+- title: JupyterHub
+  content: Connect to NeSI through your web browser.
+  url: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
+  image: ./assets/icons/logomark-notext-blackbody-blackmoons.svg
 
-- title: Connecting to the Clusters
-  content: Setting up your connection to the cluster.
-  url: https://my.nesi.org.nz
-  image: ./assets/icons/material/lan-connect.svg
-
-- title: Transferring Files
-  content: Globus, scp, jupyter.
-  url: https://my.nesi.org.nz
+- title: File Transfer
+  content: Getting your data on and off the cluster.
+  url: Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md
   image: ./assets/icons/material/file-arrow-up-down.svg
 
-- title: Submitting Jobs
-  content: How to use our job scheduler, Slurm
-  url: https://my.nesi.org.nz
+- title: Job Scheduler
+  content: How to use our job scheduler, Slurm.
+  url: Getting_Started/Next_Steps/Submitting_your_first_job.md#slurm
   image: ./assets/icons/material/tray-full.svg

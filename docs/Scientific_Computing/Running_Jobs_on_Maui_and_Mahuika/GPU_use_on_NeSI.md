@@ -1,7 +1,5 @@
 ---
 created_at: '2020-04-19T22:59:58Z'
-hidden: false
-position: 3
 tags:
 - gpu
 title: GPU use on NeSI
@@ -11,44 +9,30 @@ zendesk_article_id: 360001471955
 zendesk_section_id: 360000030876
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 This page provides generic information about how to access NeSI's GPU
 cards.
 
 For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
 please have a look at the dedicated pages listed at the end of this
 page.
-!!! prerequisite Important
-     An overview of available GPU cards is available in the [Available GPUs
-     on
-     NeSI](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md)
+
+!!! warning
+     An overview of available GPU cards is available in the [Available GPUs on NeSI](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md)
      support page.
      Details about GPU cards for each system and usage limits are in the
-     [Mahuika Slurm
-     Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md)
-     and [Māui\_Ancil (CS500) Slurm
-     Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md#_Toc514341606)
+     [Mahuika Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md)
+     and [Māui\_Ancil (CS500) Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md#_Toc514341606)
      support pages.
      Details about pricing in terms of compute units can be found in the
-     [What is an
-     allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+     [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
      page.
 
 ## Request GPU resources using Slurm
 
-To request a GPU for your [Slurm
-job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md), add
+To request a GPU for your [Slurm job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md), add
 the following option at the beginning of your submission script:
 
-``` sl
+```sl
 #SBATCH --gpus-per-node=1
 ```
 
@@ -63,20 +47,20 @@ If not specified, the default GPU type is `P100`. For some types of GPU,
 you also need to specify a partition. Here is a summary of typical use
 cases:
 
--   1 P100 GPU on Mahuika
+- 1 P100 GPU on Mahuika
 
     ``` sl
     #SBATCH --gpus-per-node=P100:1
     ```
 
--   1 P100 GPU on Māui Ancillary Nodes
+- 1 P100 GPU on Māui Ancillary Nodes
 
     ``` sl
     #SBATCH --partition=nesi_gpu
     #SBATCH --gpus-per-node=1
     ```
 
--   2 P100 GPUs per node on Mahuika
+- 2 P100 GPUs per node on Mahuika
 
     ``` sl
     #SBATCH --gpus-per-node=P100:2
@@ -84,13 +68,13 @@ cases:
 
     *You cannot ask for more than 2 P100 GPU per node on Mahuika.*
 
--   1 A100 (40GB) GPU on Mahuika
+- 1 A100 (40GB) GPU on Mahuika
 
     ``` sl
     #SBATCH --gpus-per-node=A100:1
     ```
 
--   2 A100 (40GB) GPUs on Mahuika
+- 2 A100 (40GB) GPUs on Mahuika
 
     ``` sl
     #SBATCH --gpus-per-node=A100:2
@@ -99,7 +83,7 @@ cases:
     *You cannot ask for more than 2 A100 (40GB) GPUs per node on
     Mahuika.*
 
--   1 A100-1g.5gb GPU on Mahuika
+- 1 A100-1g.5gb GPU on Mahuika
 
     ``` sl
     #SBATCH --gpus-per-node=A100-1g.5gb:1
@@ -108,7 +92,7 @@ cases:
     *This type of GPU is limited to 1 job per user and recommended for
     development and debugging.*
 
--   1 A100 (80GB) GPU on Mahuika
+- 1 A100 (80GB) GPU on Mahuika
 
     ``` sl
     #SBATCH --partition=hgx
@@ -119,7 +103,7 @@ cases:
     page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
     for more information.*
 
--   4 A100 (80GB & NVLink) GPU on Mahuika
+- 4 A100 (80GB & NVLink) GPU on Mahuika
 
     ``` sl
     #SBATCH --partition=hgx
@@ -133,7 +117,7 @@ cases:
     *You cannot ask for more than 4 A100 (80GB) GPUs per node on
     Mahuika.*
 
--   1 A100 GPU on Mahuika, regardless of the type
+- 1 A100 GPU on Mahuika, regardless of the type
 
     ``` sl
     #SBATCH --partition=gpu,hgx
@@ -145,23 +129,27 @@ cases:
     regular Mahuika node (A100 40GB GPU) or on a Milan node (A100 80GB
     GPU).*
 
-You can also use the `--gpus-per-node`option in [Slurm interactive
-sessions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md),
+You can also use the `--gpus-per-node`option in [Slurm interactive sessions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md),
 with the `srun` and `salloc` commands. For example:
 
-``` sl
+``` sh
 srun --job-name "InteractiveGPU" --gpus-per-node 1 --cpus-per-task 8 --mem 2GB --time 00:30:00 --pty bash
 ```
 
 will request and then start a bash session with access to a GPU, for a
 duration of 30 minutes.
-!!! prerequisite Important
+
+!!! warning
      When you use the `--gpus-per-node`option, Slurm automatically sets the
      `CUDA_VISIBLE_DEVICES` environment variable inside your job
      environment to list the index/es of the allocated GPU card/s on each
      node.
-     ``` sl
-     $ srun --job-name "GPUTest" --gpus-per-node=P100:2 --time 00:05:00 --pty bash
+
+     ``` sh
+     srun --job-name "GPUTest" --gpus-per-node=P100:2 --time 00:05:00 --pty bash
+     ```
+     
+     ```out
      srun: job 20015016 queued and waiting for resources
      srun: job 20015016 has been allocated resources
      $ echo $CUDA_VISIBLE_DEVICES
@@ -172,46 +160,47 @@ duration of 30 minutes.
 
 To use an Nvidia GPU card with your application, you need to load the
 driver and the CUDA toolkit via the [environment
-modules](../../Getting_Started/Next_Steps/The_HPC_environment.md)
+modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
 mechanism:
 
-``` sl
+``` sh
 module load CUDA/11.0.2
 ```
 
 You can list the available versions using:
 
-``` sl
+``` sh
 module spider CUDA
 ```
 
-Please contact us at <support@nesi.org.nz> if you need a version not
+Please{% include "partials/support_request.html" %} if you need a version not
 available on the platform.
-!!! prerequisite Note
+
+!!! note
      On Māui Ancillary Nodes, use `module avail CUDA` to list available
      versions.
 
 The CUDA module also provides access to additional command line tools:
 
--   -   -   [**nvidia-smi**](https://developer.nvidia.com/nvidia-system-management-interface)
+- [nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface)
             to directly monitor GPU resource utilisation,
-        -   [**nvcc**](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
+- [nvcc](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html)
             to compile CUDA programs,
-        -   [**cuda-gdb**](https://docs.nvidia.com/cuda/cuda-gdb/index.html)
+- [cuda-gdb](https://docs.nvidia.com/cuda/cuda-gdb/index.html)
             to debug CUDA applications.
 
 In addition, the [cuDNN](https://developer.nvidia.com/cudnn) (NVIDIA
 CUDA® Deep Neural Network library) library is accessible via its
 dedicated module:
 
-``` sl
+``` sh
 module load cuDNN/8.0.2.39-CUDA-11.0.2
 ```
 
 which will automatically load the related CUDA version. Available
 versions can be listed using:
 
-``` sl
+``` sh
 module spider cuDNN
 ```
 
@@ -277,8 +266,9 @@ Wed May 12 12:08:27 2021
 +-----------------------------------------------------------------------------+
 CUDA_VISIBLE_DEVICES=0
 ```
-!!! prerequisite Note
-     CUDA\_VISIBLE\_DEVICES=0 indicates that this job was allocated to CUDA
+
+!!! note
+    `CUDA_VISIBLE_DEVICES=0` indicates that this job was allocated to CUDA
      GPU index 0 on this node. It is not a count of allocated GPUs.
 
 ## NVIDIA Nsight Systems and Compute profilers
@@ -287,10 +277,19 @@ CUDA_VISIBLE_DEVICES=0
 system-wide analysis tool, particularly good for profiling CPU-GPU
 interactions. It is provided on Mahuika via the `Nsight-Systems` module:
 
-``` sl
-$ module load Nsight-Systems/2020.5.1
+``` sh
+module load Nsight-Systems/2020.5.1
+```
+
+```out
 Load `PyQt/5.12.1-gimkl-2020a-Python-3.8.2` module prior to running `nsys-ui`
-$ nsys --version
+```
+
+```sh
+nsys --version
+```
+
+```out
 NVIDIA Nsight Systems version 2020.5.1.85-5ee086b
 ```
 
@@ -304,10 +303,19 @@ graphical interface.
 profiler for CUDA kernels. It is accessible on Mahuika using the
 `Nsight-Compute` module:
 
-``` sl
-$ module load Nsight-Compute/2020.3.0
+``` sh
+module load Nsight-Compute/2020.3.0
+```
+
+```out
 Load `PyQt/5.12.1-gimkl-2020a-Python-3.8.2` module prior to running `nsys-ui`
-$ ncu --version
+```
+
+```sh
+ncu --version
+```
+
+```out
 NVIDIA (R) Nsight Compute Command Line Profiler
 Copyright (c) 2018-2020 NVIDIA Corporation
 Version 2020.3.0.0 (build 29307467) (public-release)
@@ -318,14 +326,15 @@ Then you can use the
 line tool or the
 [ncu-ui](https://docs.nvidia.com/nsight-compute/NsightCompute/index.html)
 graphical interface.
-!!! prerequisite Important
+
+!!! warning
      The `nsys-ui` and `ncu-ui` tools require access to a display server,
      either via
      [X11](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md) or a
-     [Virtual
-     Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md).
+     [Virtual Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md).
      You also need to load the `PyQt` module beforehand:
-     ``` sl
+
+     ```sh
      module load PyQt/5.12.1-gimkl-2020a-Python-3.8.2
      module load Nsight-Systems/2020.5.1
      nsys-ui  # this will work only if you have a graphical session
@@ -336,19 +345,14 @@ graphical interface.
 The following pages provide additional information for supported
 applications:
 
--   [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS.md#gpus)
--   [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md#nvidia_gpu_container)
--   [Lambda
-    Stack](../../Scientific_Computing/Supported_Applications/Lambda Stack.md)
--   [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#GPU)
--   [TensorFlow on
-    GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow on GPUs.md)
+- [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS.md#gpus)
+- [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md#nvidia_gpu_container)
+- [Lambda Stack](../../Scientific_Computing/Supported_Applications/Lambda_Stack.md)
+- [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#GPU)
+- [TensorFlow on GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
 
 And programming toolkits:
 
--   [Offloading to GPU with
-    OpenMP](../../Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
--   [Offloading to GPU with OpenACC using the Cray
-    compiler](https://support.nesi.org.nz/hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC-using-the-Cray-compiler)
--   [NVIDIA GPU
-    Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)
+- [Offloading to GPU with OpenMP](../../Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
+- [Offloading to GPU with OpenACC using the Cray compiler](../HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md)
+- [NVIDIA GPU Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)

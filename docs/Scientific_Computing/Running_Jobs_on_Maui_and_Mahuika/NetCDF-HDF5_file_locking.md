@@ -1,7 +1,5 @@
 ---
 created_at: '2019-04-12T02:21:25Z'
-hidden: false
-position: 17
 tags: []
 title: NetCDF / HDF5 file locking
 vote_count: 2
@@ -9,15 +7,6 @@ vote_sum: 2
 zendesk_article_id: 360000902955
 zendesk_section_id: 360000030876
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 NeSI provides libraries for creating and accessing files in the NetCDF
 and HDF5 formats on both Mahuika and Māui.
@@ -38,32 +27,32 @@ system GPFS on the XC50 compute nodes).
 Accordingly, NetCDF-4 and HDF5 applications that write data from Māui
 compute nodes need to disable file locking with:
 
-``` sl
+```sh
 export HDF5_USE_FILE_LOCKING=FALSE
 ```
 
 If file locking is enabled, HDF5/NetCDF4 applications may experience
 errors such as
 
-``` sl
+```err
 ncdump: /path/to/file.nc: NetCDF: HDF error
 ```
 
 or
 
-``` sl
+```err
 Error in EM_FOPEN: NetCDF: HDF error - /path/to/file.nc 
 ```
 
 or
 
-``` sl
+```err
 (-101) // Error at HDF5 layer
 ```
 
 or
 
-``` sl
+```err
 HDF5-DIAG: Error detected in HDF5 (1.10.2) thread 0:
 #000: ../../src/H5F.c line 445 in H5Fcreate(): unable to create file
 major: File accessibilty
@@ -79,13 +68,12 @@ major: File accessibilty
 minor: Bad file ID accessed
 ```
 
-**Important:** As file locking has to be disabled on the XC50, care
-should be taken to avoid concurrent reader/writer access in your
-application.
+!!! warning
+    As file locking has to be disabled on the XC50, care
+    should be taken to avoid concurrent reader/writer access in your
+    application.
 
 For more information see:
 
--   [Design -File Locking under SWMR in
-    HDF5](https://support.hdfgroup.org/HDF5/docNewFeatures/SWMR/Design-HDF5-FileLocking.pdf)
--   [release notes, where mechanism for disabling file locking was
-    introduced](https://support.hdfgroup.org/ftp/HDF5/releases/ReleaseFiles/hdf5-1.10.1-RELEASE.txt)
+- [Design -File Locking under SWMR in HDF5](https://support.hdfgroup.org/HDF5/docNewFeatures/SWMR/Design-HDF5-FileLocking.pdf)
+- [release notes, where mechanism for disabling file locking was introduced](https://support.hdfgroup.org/ftp/HDF5/releases/ReleaseFiles/hdf5-1.10.1-RELEASE.txt)

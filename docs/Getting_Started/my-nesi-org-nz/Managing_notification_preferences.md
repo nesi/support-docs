@@ -1,7 +1,5 @@
 ---
 created_at: '2022-03-24T20:50:10Z'
-hidden: false
-position: 0
 tags: []
 title: Managing notification preferences
 vote_count: 0
@@ -9,15 +7,6 @@ vote_sum: 0
 zendesk_article_id: 4563294188687
 zendesk_section_id: 360001059296
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Overview
 
@@ -40,11 +29,6 @@ notifications.
 
 ![2022-04-12\_16-46-56.png](../../assets/images/Managing_notification_preferences.png)
 
- 
-
- 
-
 ### See also
 
-Our support article on the NeSI [System
-status.](../../Getting_Started/Getting_Help/System_status.md)
+Our support article on the NeSI [System status.](../../Getting_Started/Getting_Help/System_status.md)

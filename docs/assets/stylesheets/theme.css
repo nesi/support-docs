@@ -18,3 +18,25 @@
     height: 4rem;
     margin: -2rem;
 }
+.md-tag.md-tag-ver{
+  color: var(--md-code-fg-color);
+}
+.md-tag.md-tag-ver-shown {
+    outline: var(--md-primary-fg-color) 2px solid;
+}
+.md-typeset__table {
+  width: 100%;
+}
+.md-typeset__table table:not([class]) {
+  display: table
+}
+.hidden{
+    display: none;
+}
+.md-button-support{
+  position: absolute;
+  margin: -2rem 0 0 1rem;
+  width: 80%;
+  text-align: center;
+  font-size: 0.7rem;
+}

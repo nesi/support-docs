@@ -1,7 +1,5 @@
 ---
 created_at: '2022-03-22T02:16:17Z'
-hidden: false
-position: 0
 tags:
 - general
 title: Slurm upgrade to version 21.8
@@ -10,15 +8,6 @@ vote_sum: 0
 zendesk_article_id: 4544913401231
 zendesk_section_id: 200732737
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 -   Added `--me` option, equivalent to` --user=$USER`.
 -   Added "pendingtime" as a option for --Format.

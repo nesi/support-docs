@@ -1,7 +1,5 @@
 ---
 created_at: '2022-01-31T21:28:03Z'
-hidden: false
-position: 4
 tags: []
 title: Jupyter kernels - Tool-assisted management
 vote_count: 1
@@ -9,15 +7,6 @@ vote_sum: 1
 zendesk_article_id: 4414958674831
 zendesk_section_id: 360001189255
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Introduction
 
@@ -28,8 +17,7 @@ notebooks. For example, you may want to load a specific environment
 module in your kernel or use a Conda environment.
 
 To register a Jupyter kernel, you can follow the steps highlighted in
-the [Jupyter kernels - Manual
-management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management.md)
+the [Jupyter kernels - Manual management](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Manual_management.md)
 or use the `nesi-add-kernel` tool provided on Jupyter on NeSI service.
 This page details the latter option, which we recommend.
 
@@ -40,7 +28,7 @@ on NeSI or from a regular ssh connection on Mahuika login node. If you
 use the ssh option, make sure to load the JupyterLab module to have
 access to the `nesi-add-kernel` tool:
 
-``` sl
+``` sh
 module purge  # remove all previously loaded modules
 module load JupyterLab
 ```
@@ -48,31 +36,31 @@ module load JupyterLab
 Then, to list all available options, use the `-h` or `--help` options as
 follows:
 
-``` sl
+``` sh
 nesi-add-kernel --help
 ```
 
 Here is an example to add a TensorFlow kernel, using NeSI’s module:
 
-``` sl
+``` sh
 nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 ```
 
 and to share the kernel with other members of your NeSI project:
 
-``` sl
+``` sh
 nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5 
 ```
 
 To list all the installed kernels, use the following command:
 
-``` sl
+``` sh
 jupyter-kernelspec list
 ```
 
 and to delete a specific kernel:
 
-``` sl
+``` sh
 jupyter-kernelspec remove <kernel_name>
 ```
 
@@ -82,7 +70,7 @@ where `<kernel_name>` stands for the name of the kernel to delete.
 
 First, make sure the `JupyterLab` module is loaded:
 
-``` sl
+``` sh
 module purge
 module load JupyterLab
 ```
@@ -90,13 +78,13 @@ module load JupyterLab
 To add a Conda environment created using
 `conda create -p <conda_env_path>`, use:
 
-``` sl
+``` sh
 nesi-add-kernel my_conda_env -p <conda_env_path>
 ```
 
 otherwise if created using `conda create -n <conda_env_name>`, use:
 
-``` sl
+``` sh
 nesi-add-kernel my_conda_env -n <conda_env_name>
 ```
 
@@ -108,7 +96,7 @@ which Python module you used to create it.
 For example, if we create a virtual environment named `my_test_venv`
 using Python 3.10.5:
 
-``` sl
+``` sh
 module purge
 module load Python/3.10.5-gimkl-2022a
 python -m venv my_test_venv
@@ -117,7 +105,7 @@ python -m venv my_test_venv
 to create the corresponding `my_test_kernel` kernel, we need to use the
 command:
 
-``` sl
+``` sh
 module purge
 module load JupyterLab
 nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
@@ -128,7 +116,7 @@ nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 To use a Singularity container, use the `-c` or `--container` options as
 follows:
 
-``` sl
+``` sh
 module purge
 module load JupyterLab
 nesi-add-kernel my_test_kernel -c <container_image.sif>
@@ -146,7 +134,7 @@ kernel.
 Here is an example instantiating a NVIDIA NGC container as a kernel.
 First, we need to pull the container:
 
-``` sl
+``` sh
 module purge
 module load Singularity/3.11.3
 singularity pull nvidia_tf.sif docker://nvcr.io/nvidia/tensorflow:21.07-tf2-py3
@@ -156,7 +144,7 @@ then we can instantiate the kernel, using the `--nv` singularity flag to
 ensure that the GPU will be found at runtime (assuming our Jupyter
 session has access to a GPU):
 
-``` sl
+``` sh
 module purge
 module load JupyterLab
 nesi-add-kernel nvidia_tf -c nvidia_tf.sif --container-args "'--nv'"

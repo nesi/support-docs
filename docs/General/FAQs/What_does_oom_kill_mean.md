@@ -1,7 +1,5 @@
 ---
 created_at: '2018-10-25T02:22:02Z'
-hidden: false
-position: 0
 tags:
 - faq
 title: What does "oom-kill" mean?
@@ -11,18 +9,9 @@ zendesk_article_id: 360000532595
 zendesk_section_id: 360000039036
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 OOM stands for "Out Of Memory", and so an error such as this:
 
-``` sl
+```sl
 slurmstepd: error: Detected 1 oom-kill event(s) in step 370626.batch cgroup
 ```
 
@@ -32,10 +21,10 @@ reserved for it.  
 OOM events can happen even without Slurm's `sacct` command reporting
 such a high memory usage, for two reasons:
 
--   Unlike the enforcement via cgroups, Slurm's accounting system only
+- Unlike the enforcement via cgroups, Slurm's accounting system only
     records usage every 30 seconds, so sudden spikes in memory usage may
     not be recorded, but can still trigger the OOM killer;
--   Slurm's accounting system also does not include any temporary files
+- Slurm's accounting system also does not include any temporary files
     the job may have put in the memory-based `/tmp` or `$TMPDIR`
     filesystems.
 

@@ -1,0 +1,34 @@
+{% if not app -%}{% set app = applications[app_name] -%}{% endif -%}
+<div class="tabbed-set tabbed-alternate" data-tabs="0:{{ app.machines | length }}">
+    {% for machine in app.machines -%} 
+    <input {% if loop.first -%} checked="checked" {% endif -%} id="__tabbed__{{app_name | lower}}_{{ loop.index }}" name="__tabbed__{{app_name | lower}}_0" type="radio">
+    {% endfor %}
+    <div class="tabbed-labels">
+        {% for machine in app.machines -%} 
+        <label for="__tabbed__{{app_name | lower}}_{{ loop.index }}">{{ machine | capitalize }}</label>
+        {% endfor %}
+    </div>
+    <div class="tabbed-content">
+    {% for machine_name, machine in app.machines.items() -%}
+        {% if machine.default != 'latest' -%}
+            {% set latest = machine.default -%}
+        {% else -%}
+            {% set latest = machine.versions | last -%}
+        {% endif -%}
+        <div class="tabbed-block">
+            <p><nav class="md-tags md-tags-ver-{{app_name | lower}}-{{machine_name | lower}}">
+                    {% for version in machine.versions -%} 
+                    <a id="mod_{{app_name | lower}}_{{machine_name | lower}}_{{version}}" onclick="changeVersion('{{ app_name | lower }}', '{{ machine_name | lower }}','{{version}}')" {% if version == latest -%} class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" {% endif -%}  class="md-tag-ver md-tag">{{ version }}</a>
+                    {% endfor %}       
+            </nav></p>
+            <pre><code>module load {{app_name}}/<span id="mod_{{app_name | lower}}_{{machine_name | lower}}">{{latest}}</span></code></pre>
+        </div>
+    {% endfor -%}
+    </div>
+    <div class="tabbed-control tabbed-control--prev" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+    <div class="tabbed-control tabbed-control--next" hidden="">
+        <button class="tabbed-button" tabindex="-1" aria-hidden="true"></button>
+    </div>
+</div>

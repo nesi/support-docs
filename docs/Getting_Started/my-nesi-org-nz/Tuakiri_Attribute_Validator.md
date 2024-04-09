@@ -1,7 +1,5 @@
 ---
 created_at: '2021-04-30T03:29:54Z'
-hidden: false
-position: 0
 tags: []
 title: Tuakiri Attribute Validator
 vote_count: 0
@@ -9,15 +7,6 @@ vote_sum: 0
 zendesk_article_id: 360004218816
 zendesk_section_id: 360001059296
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 ## Tuakiri Attribute Validator
 
@@ -49,7 +38,7 @@ value of your auEduPersonSharedToken as proffered by your institution's
 identity provision service and its value as recorded in the NeSI
 database (more common), you will not be able to log in to My NeSI. If
 you cannot log in, please raise a support ticket with your institutions
-IT support. 
+IT support.
 
 For troubleshooting the support team may ask you for a PDF of your
 Tuakiri attributes. Tuakiri does not include your password in the

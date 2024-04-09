@@ -1,23 +1,19 @@
 ---
 created_at: '2022-03-22T07:46:51Z'
-hidden: false
-position: 5
 tags: []
 title: ont-guppy-gpu
-vote_count: 4
-vote_sum: 2
+vote_count: 5
+vote_sum: 3
 zendesk_article_id: 4546820344079
 zendesk_section_id: 360000040076
 ---
 
 
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
+[//]: <> (APPS PAGE BOILERPLATE START)
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+[//]: <> (APPS PAGE BOILERPLATE END)
 
 ## Description
 
@@ -44,19 +40,17 @@ https://community.nanoporetech.com/
 
 ### Example Slurm script
 
--   Following Slurm script is a template to run Basecalling on NVIDIA
+- Following Slurm script is a template to run Basecalling on NVIDIA
     P100 GPUs.( We do not recommend running Guppy jobs on CPUs )
--   `--device auto` will automatically pick up the GPU over CPU
--   Also,  NeSI Mahuika cluster can provide A100 GPUs  which can be 5-6
+- `--device auto` will automatically pick up the GPU over CPU
+- Also,  NeSI Mahuika cluster can provide A100 GPUs  which can be 5-6
     times faster than P100 GPUs for Guppy Basecalling with  version. 5
     and above. This can be requested with
     `#SBATCH --gpus-per-node A100:1` variable
--   Config files are stored in
+- Config files are stored in
     ***/opt/nesi/CS400\_centos7\_bdw/ont-guppy-gpu/(version)/data/ ***
     with read permissions to all researchers (replace ***(version)***
     with the version of the module)
-
- 
 
 ``` sl
 #!/bin/bash -e

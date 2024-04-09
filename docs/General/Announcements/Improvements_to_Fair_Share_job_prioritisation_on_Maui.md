@@ -1,7 +1,5 @@
 ---
 created_at: '2020-09-04T02:01:07Z'
-hidden: false
-position: 9
 tags: []
 title: "Improvements to Fair Share job prioritisation on M\u0101ui"
 vote_count: 0
@@ -9,15 +7,6 @@ vote_sum: 0
 zendesk_article_id: 360001829555
 zendesk_section_id: 200732737
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 *On Thursday 3 September 2020, NeSI updated the way we prioritise jobs
 on the Māui HPC platform.*

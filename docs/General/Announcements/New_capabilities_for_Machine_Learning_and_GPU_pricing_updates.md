@@ -1,7 +1,5 @@
 ---
 created_at: '2021-05-26T00:31:12Z'
-hidden: false
-position: 5
 tags: []
 title: New capabilities for Machine Learning and GPU pricing updates
 vote_count: 0
@@ -10,40 +8,28 @@ zendesk_article_id: 360004491956
 zendesk_section_id: 200732737
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 We’re excited to announce an addition of new GPU capabilities to our
 platform and some noteworthy changes to resource pricing as a result.
 
- 
+## New Graphics Processing Units (GPUs)
 
-**New Graphics Processing Units (GPUs)**
-
-We’ve installed eight NVIDIA A100 GPU cards into the [Mahuika HPC
-system](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md),
+We’ve installed eight NVIDIA A100 GPU cards into the 
+[Mahuika HPC system](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md),
 providing a significant boost in computing performance and an
 environment particularly suited to machine learning workloads. Over the
 last few months we’ve worked directly with a group of beta tester
 researchers to ensure this new capability is fit-for-purpose and tuned
 to communities' specific software and tool requirements. 
 
-These new A100s, alongside [software optimised for data
-science](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-),
+These new A100s, alongside 
+[software optimised for data science](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-),
 are available to researchers using **machine learning** approaches. If
-this is you, [contact NeSI
-Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) to
+this is you, {% include "partials/support_request.html" %} to
 discuss how these new resources could support your work.
 
  
 
-**Reduced pricing for P100s**
+## Reduced pricing for P100s
 
 We’ve recently reviewed our
 [pricing](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
@@ -62,12 +48,11 @@ October](https://www.nesi.org.nz/services/high-performance-computing-and-analyti
 For more technical information about using GPUs on NeSI, [click
 here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
 If you have questions about allocations or how to access the P100s,
-[contact NeSI
-Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new).
+{% include "partials/support_request.html" %}.
 
  
 
-**Sharing our learning along the way**
+## Sharing our learning along the way
 
 If you’re curious about what it takes to get the best of the A100 cards,
 you can learn about our experiences in the first post of a new ‘Tech
@@ -81,9 +66,7 @@ conducted in the spaces of deep learning and molecular dynamics codes,
 as well as take a closer look at which codes are suitable to run on GPUs
 and whether your research project is a fit.
 
- 
-
-**Future GPU investments**
+## Future GPU investments
 
 Looking ahead, we’re currently finalising another investment into
 additional GPU cards later this year. We’re also exploring the A100s'
@@ -95,15 +78,11 @@ These activities will enable us to expand GPU access to an even broader
 community of users, as well as support more advanced and demanding
 performance needs across domains. If you’re interested in using these
 A100s for something other than machine learning, let us know by
-[contacting NeSI
-Support](mailto:https://support.nesi.org.nz/hc/en-gb/requests/new) -
-that way we can keep you up to date on our plans.
-
- 
+{% include "partials/support_request.html" %}
+that way we can keep you up to date on our plans. 
 
 If you have questions or comments on anything mentioned above,
-please [get in
-touch](https://support.nesi.org.nz/hc/en-gb/requests/new).
+please {% include "partials/support_request.html" %}
 
  
 

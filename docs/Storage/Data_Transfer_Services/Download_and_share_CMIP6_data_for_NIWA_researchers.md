@@ -1,25 +1,12 @@
 ---
 created_at: '2019-12-05T22:46:53Z'
-hidden: false
-position: 8
 tags: []
 title: Download and share CMIP6 data (for NIWA researchers)
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 360001287235
 zendesk_section_id: 360000040596
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
-
 
 The [Coupled Model Intercomparison
 Project](https://www.wcrp-climate.org/wgcm-cmip), which began in 1995
@@ -36,63 +23,62 @@ data will be downloaded asynchronously - no need to stare at a screen
 for hours.  The downloaded data will reside in a shared directory and
 hence will also be accessible to your collaborators.
 
-The instructions are geared towards members of the niwa02916 group -
-send a message to <support@nesi.org.nz> if you are a NIWA employee and
+The instructions are geared towards members of the `niwa02916` group -
+{% include "partials/support_request.html" %} if you are a NIWA employee and
 want to become part of this group. Other NeSI users may want to
 read [this](../../Scientific_Computing/Supported_Applications/Synda.md),
-which explains how to install the synda tool. Once installed, you can
+which explains how to install the Synda tool. Once installed, you can
 then type similar commands to the ones below to test your configuration.
 
 ## Setup
 
-On mahuika or w-mauivlab01.maui.nesi.org.nz:
+On `mahuika` or `w-mauivlab01.maui.nesi.org.nz`:
 
-``` sl
+```sh
 source /nesi/project/niwa02916/synda_env.sh
 ```
 
-This will load the Anaconda3 environment and set the ST\_HOME variable.
+This will load the Anaconda3 environment and set the `ST_HOME` variable.
 You should also now be able to invoke
-[synda](../../Scientific_Computing/Supported_Applications/Synda.md)
+[Synda](../../Scientific_Computing/Supported_Applications/Synda.md)
 commands, a tool that can be used to synchronise CMIP data with Earth
 System Grid Federation archives. A full list of options can be obtained
 with
 
-``` sl
+```sh
 synda -h
 ```
 
-Below we demonstrate how synda might be used.
+Below we demonstrate how Synda might be used.
 
-## Find some datasets 
+## Find some datasets
 
-CMIP6 datasets are organised by institution\_id, experiment\_id,
+CMIP6 datasets are organised by institution_id, experiment_id,
 variable etc. A full list can be glanced
 from <https://esgf-node.llnl.gov/search/cmip6/>. A possible search might
 involve
 
-``` sl
+``` sh
 synda search institution_id=NCAR experiment_id=1pctCO2 variable=ta
 ```
 
 which returns
 
+```out
 new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 
 new  CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.Amon.ta.gn.v20190425
-
 ...
+```
 
-as well as some other datasets. 
-
- 
+as well as some other datasets.
 
 ## Find out how big the datasets are
 
 Once you know what you want to download, it's a good idea to check the
 size of the dataset:
 
-``` sl
+``` sh
 synda stat CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 ```
 
@@ -101,9 +87,9 @@ This prints "Total files count: 16, New files count: 16, Total size:
 have not yet been downloaded. You can see that there are 16 files to
 download, taking nearly 50GB of disk space.
 
-## Download/install the dataset 
+## Download/install the dataset
 
-``` sl
+``` sh
 synda install CMIP6.CMIP.NCAR.CESM2-WACCM.1pctCO2.r1i1p1f1.day.ta.gn.v20190425
 ```
 
@@ -119,12 +105,12 @@ background process so you can close your terminal if you want and come
 back later to check progress.
 
 The data will end up
-under $ST\_HOME/data/CMIP6/CMIP/NCAR/CESM2-WACCM/1pctCO2/r1i1p1f1/day/ta/gn/v20190425
-in this case. 
+under `$ST_HOME/data/CMIP6/CMIP/NCAR/CESM2-WACCM/1pctCO2/r1i1p1f1/day/ta/gn/v20190425`
+in this case.
 
 You can type
 
-``` sl
+``` sh
 synda queue
 ```
 
@@ -134,5 +120,6 @@ Note that if another researcher (or you) decide execute the same synda
 install command then synda will recognise the files to be already
 installed and will print the message
 
-INFO: Nothing to install (matching files are already installed or
-waiting in the download queue)
+!!! info
+    Nothing to install (matching files are already installed or
+    waiting in the download queue)

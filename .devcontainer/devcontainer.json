@@ -1,0 +1,45 @@
+{
+    "name": "Editor Environment",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
+    
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [8000],
+    "portsAttributes": {
+        "8000": {
+            "label": "Documentation Preview"
+        }
+    },
+    "otherPortsAttributes": {
+        "onAutoForward": "ignore"
+    },
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    //"postCreateCommand": "pip3 install --user -r requirements.txt",
+    "postCreateCommand": [
+        ".devcontainer/install-deps.bash",
+        "mkdir -p $HOME/.config/vscode-dev-containers/ && touch $HOME/.config/vscode-dev-containers/first-run-notice-already-displayed"
+    ],
+
+    // Ensure the postCreateCommand is run before accessing the container.
+    "waitFor": "postCreateCommand",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "samuelcolvin.jinjahtml",
+                "DavidAnson.vscode-markdownlint",
+                "arsprogramma.compliment",
+                "TakumiI.markdowntable",
+                "redhat.vscode-yaml",
+                "GitHub.vscode-pull-request-github",
+                "jebbs.markdown-extended",
+                "Gruntfuggly.triggertaskonsave"
+            ],
+            "settings": {
+                "extensions.ignoreRecommendations": true
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{{ app.description }}
+
+{% include "partials/app/app_homepage.html" -%}
+{% include "partials/app/app_warnings.html" -%}
+
+## Available Modules
+
+{% include "partials/app/app_version.html" -%}
+<!-- Uncomment this if we make a good page on modues -->
+<!-- _See [environment modules]() for more info on how NeSI uses modules._ -->
+
+{% if app.network_licences -%}
+
+## Licences
+
+<p>The following network licence servers can be accessed from the NeSI cluster.</p>
+{% include "partials/app/app_network_licence.html" -%}
+
+<p>If you do not have access, or want a server connected {% include "partials/support_request.html" %}.</p>
+
+{% endif -%}

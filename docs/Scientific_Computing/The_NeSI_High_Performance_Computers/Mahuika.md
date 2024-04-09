@@ -1,10 +1,7 @@
 ---
 created_at: '2018-04-22T21:09:28Z'
-hidden: false
-position: 3
 tags:
 - hpc
-- info
 - mahuika
 - cs400
 title: Mahuika
@@ -13,15 +10,6 @@ vote_sum: 3
 zendesk_article_id: 360000163575
 zendesk_section_id: 360000034335
 ---
-
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
 
 Mahuika is a Cray CS400 cluster featuring Intel Xeon Broadwell nodes,
 FDR InfiniBand interconnect, and NVIDIA GPGPUs.
@@ -40,15 +28,15 @@ ssh to these nodes after logging onto the NeSI lander node.
 
 ## Notes
 
-1.  The Cray Programming Environment on Mahuika, differs from that on
+1. The Cray Programming Environment on Mahuika, differs from that on
     Māui.
-2.  The `/home, /nesi/project`, and `/nesi/nobackup`
+2. The `/home, /nesi/project`, and `/nesi/nobackup`
     [filesystems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
     are mounted on Mahuika.
-3.  Read about how to compile and link code on Mahuika in section
+3. Read about how to compile and link code on Mahuika in section
     entitled: [Compiling software on
     Mahuika.](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md)
-4.  An extension to Mahuika with additional, upgraded resources is also
+4. An extension to Mahuika with additional, upgraded resources is also
     available. see [Milan Compute
     Nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
     for details on access
@@ -149,8 +137,6 @@ Rocky 8.5 on Milan</span></p></td>
 </tbody>
 </table>
 
- 
-
 ##  Storage (IBM ESS)
 
 |                        |                                                                                                                                                                     |
@@ -162,7 +148,3 @@ Rocky 8.5 on Milan</span></p></td>
 Scratch and persistent storage are accessible from Mahuika, as well as
 from Māui and the ancillary nodes. Offline storage will in due course be
 accessible indirectly, via a dedicated service.
-
- 
-
- 

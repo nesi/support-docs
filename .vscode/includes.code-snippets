@@ -1,0 +1,93 @@
+{
+	// Place your support-docs workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Contact Support": {
+		"scope": "markdown",
+		"prefix": ["contact support", "{% include \"partials/support_request.html\" %}" ],
+		"body": [
+			"{% include \"partials/support_request.html\" %}${0}",
+		],
+		"description": "Insert 'support request' snippet."
+	},
+	"Article Status": {
+		"scope": "yaml",
+		"prefix": ["status:"],
+		"body": [
+			"status: ${1|deprecated,new|}",
+		]
+	},
+	"Insert Admonation": {
+		"scope": "markdown",
+		"description" : "Insert Admonation",
+		"prefix": ["!!! "],
+		"body": [
+			"!!! ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|}",
+			"    ${TM_SELECTED_TEXT}${0}"
+		]
+	},
+	"Insert Admonation (with custom title)": {
+		"scope": "markdown",
+		"prefix": ["!!! "],
+		"body": [
+			"!!! ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|} \"${2}\"\n\t", 
+			"    ${TM_SELECTED_TEXT}${0}"
+		]
+	},
+	"Insert Admonation (collapsed)": {
+		"scope": "markdown",
+		"prefix": ["???"],
+		"body": [
+			"??? ${1|note,tip,info,question,warning,failure,danger,bug,example,quote,prerequisite|} \"${2}\"\n\t", 
+			"    ${TM_SELECTED_TEXT}${0}"
+		]
+	},
+	"Insert Tab Container": {
+		"scope": "markdown",
+		"prefix": ["=== \""],
+		"body": [
+			"=== \"${1:tab name}\"",
+			"    ${2:tab content}",
+			"===${0}"
+		]
+	},
+	"Insert Example Slurm Script": {
+		"scope": "markdown",
+		"prefix": ["```sl"],
+		"body": [
+			"```sl",
+			"#!/bin/bash -e",
+			"",
+			"#SBATCH --job-name        ${1:my job}",
+			"#SBATCH --account         ${2:project99999}",
+			"#SBATCH --time            ${3:01:00:00}",
+			"#SBATCH --mem             ${4:2G}",
+			"",
+			"${0}"
+			"```"
+		]
+	},
+	"Insert Image": {
+		"scope": "markdown",
+		"prefix": ["!["],
+		"body": "![${1:Image Caption}](../../assets/images${0})"
+	},
+	"Insert Front Matter": {
+		"scope": "markdown",
+		"prefix": ["---"],
+		"body": [
+			"---"
+			"created_at: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			// "title: ${1:${TM_FILENAME/_/ /g}}}",
+			"description: ${1}",
+			"tags: [${2}]",
+			"---",
+			"",
+			"${0}"
+		]
+	}
+}

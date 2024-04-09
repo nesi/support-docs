@@ -1,7 +1,5 @@
 ---
 created_at: '2019-02-24T23:26:19Z'
-hidden: false
-position: 0
 tags:
 - slurm
 - profiling
@@ -12,20 +10,11 @@ zendesk_article_id: 360000810616
 zendesk_section_id: 360000278935
 ---
 
-
-
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-[//]: <> (vvvvvvvvvvvvvvvvvvvv)
-!!! warning
-    This page has been automatically migrated and may contain formatting errors.
-[//]: <> (^^^^^^^^^^^^^^^^^^^^)
-[//]: <> (REMOVE ME IF PAGE VALIDATED)
-
 Job resource usage can be determined on job completion by checking the
 following sacct columns;
 
--   MaxRSS - Peak memory usage.
--   TotalCPU - Check *Elapsed* x *Alloc *≈*TotalCPU* 
+- MaxRSS - Peak memory usage.
+- TotalCPU - Check *Elapsed* x *Alloc*≈*TotalCPU*
 
 However if you want to examine resource usage over the run-time of your
 job,  
@@ -47,10 +36,10 @@ You can plot the contents of this file with the command
 `nn_profile_plot job_<jobid>.h5`, this will generate a file named
 `job_<jobid>_profile.png`.
 
-Alternatively you could use one of the following scripts. 
+Alternatively you could use one of the following scripts.
 
--   [Python](https://github.com/nesi/nesi-tools/blob/main/.dev_nn_profile_plot.py)
--   [MATLAB](https://github.com/CallumWalley/slurm_native_h5_plotter)
+- [Python](https://github.com/nesi/nesi-tools/blob/main/.nn_profile_plot.py)
+- [MATLAB](https://github.com/CallumWalley/slurm_native_h5_plotter)
 
 Any GPU usage will also be recorded in the profile, so long as the
 process was executed via *srun*.
