@@ -57,7 +57,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.9999700077979725,
+                        "hourly_average": 0.9999700041994121,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -71,7 +71,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.6454396856817227,
+                        "hourly_average": 0.6174635551022857,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -85,7 +85,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.844052146441925,
+                        "hourly_average": 0.8500765892775012,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -103,7 +103,7 @@
                 "server": "ABAQUS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9848859260962014,
+                "server_uptime": 0.9848837543466391,
                 "server_version": "11.13.1"
             },
             {
@@ -122,7 +122,7 @@
                 "server": "ABAQUS@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9856330095971496,
+                "server_uptime": 0.985458516538782,
                 "server_version": ""
             }
         ],
@@ -423,7 +423,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.7231768289178783,
+                "server_uptime": 0.7230220996062879,
                 "server_version": ""
             },
             {
@@ -457,7 +457,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9996948195620661,
+                "server_uptime": 0.9996351252736561,
                 "server_version": ""
             },
             {
@@ -476,7 +476,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.723205562898684,
+                "server_uptime": 0.7230508377158951,
                 "server_version": ""
             },
             {
@@ -495,7 +495,7 @@
                 "server": "ANSYS@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.723205562898684,
+                "server_uptime": 0.7231083139351093,
                 "server_version": ""
             },
             {
@@ -514,7 +514,7 @@
                 "server": "ANSYS@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.985977817366818,
+                "server_uptime": 0.9859758025117108,
                 "server_version": ""
             },
             {
@@ -562,7 +562,7 @@
                 "server": "ANSYS@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9859203494052066,
+                "server_uptime": 0.9859183262924964,
                 "server_version": ""
             }
         ],
@@ -919,6 +919,30 @@
         "support": "",
         "url": "https://github.com/%/(github_account)s/adapterremoval"
     },
+    "AdaptiveCpp": {
+        "default": "",
+        "description": "AdaptiveCpp (formerly hipSYCL) is a SYCL implementation targeting CPUs and",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/illuhad/hipSYCL",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "23.10.0-GCC-12.3.0-CUDA-12.2.2"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/illuhad/hipSYCL"
+    },
     "Advisor": {
         "default": "",
         "description": "Vectorization Optimization and Thread Prototyping",
@@ -1016,29 +1040,6 @@
         "support": "",
         "url": "https://danieldk.eu/Posts/2020-08-31-MKL-Zen.html"
     },
-    "Amber": {
-        "default": "",
-        "description": "Amber (originally Assisted Model Building with Energy",
-        "domains": [],
-        "extensions": [],
-        "force_hide": "False",
-        "force_show": "False",
-        "homepage": "http://ambermd.org/amber.html",
-        "licence_type": "proprietary",
-        "link_output_dictride": "",
-        "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "16-intel-2018b-AmberTools-17-patchlevel-10-15"
-                ]
-            }
-        },
-        "module_path": "",
-        "modulefile_text": "",
-        "network_licences": [],
-        "support": ""
-    },
     "Anaconda2": {
         "default": "",
         "description": "Built to complement the rich, open source Python community, the Anaconda platform provides an enterprise-ready data analytics platform  that empowers companies to adopt a modern open data science analytics architecture.  IMPORTANT: This version of Anaconda Python comes with Intel MKL support to speed up            certain types of mathematical computations, such as linear algebra or FFT.            The module sets             MKL_NUM_THREADS=1             to run MKL on a single thread by default, avoiding accidental oversubscription            of cores. The number of threads can be increased for large problems, please            refer to the Intel MKL documentation for guidance.",
@@ -1116,7 +1117,8 @@
                 "versions": [
                     "1.1.8",
                     "1.1.9",
-                    "1.2.2"
+                    "1.2.2",
+                    "1.2.5"
                 ]
             }
         },
@@ -1565,7 +1567,8 @@
                     "2023-04",
                     "2023-07",
                     "2023-10",
-                    "2024-01"
+                    "2024-01",
+                    "2024-04"
                 ]
             }
         },
@@ -1700,7 +1703,8 @@
                     "5.1.3-gimkl-2020a",
                     "5.2.2-gimkl-2020a",
                     "5.3.2-gimkl-2020a",
-                    "5.4.7-gimkl-2022a"
+                    "5.4.7-gimkl-2022a",
+                    "5.6.1-gimkl-2022a"
                 ]
             }
         },
@@ -2395,7 +2399,8 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "",
+        "url": "http://weizhong-lab.ucsd.edu/cd-hit/"
     },
     "CDO": {
         "default": "",
@@ -2587,7 +2592,6 @@
             "chemistry",
             "engineering",
             "physics",
-            "COMSOL",
             "cae",
             "multiphysics",
             "cfd",
@@ -2628,7 +2632,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.8542656440885028,
+                        "hourly_average": 0.8452522481329066,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
@@ -2646,7 +2650,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.8735704844549164,
+                "server_uptime": 0.9695950800356352,
                 "server_version": "11.16.2"
             },
             {
@@ -2662,7 +2666,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.9171815945767593,
+                        "hourly_average": 0.8907454627268636,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -2680,7 +2684,7 @@
                 "server": "COMSOL@uoa_idg",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9847997241537843,
+                "server_uptime": 0.9847975400178176,
                 "server_version": "11.15.1"
             },
             {
@@ -2696,7 +2700,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.7421283658797533,
+                        "hourly_average": 0.754584908301834,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -2714,7 +2718,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9847997241537843,
+                "server_uptime": 0.9847975400178176,
                 "server_version": ""
             },
             {
@@ -2730,7 +2734,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.9434861219702892,
+                        "hourly_average": 0.9536745241396697,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
@@ -2748,7 +2752,7 @@
                 "server": "COMSOL@uoa_foes",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9848859260962014,
+                "server_uptime": 0.9848837543466391,
                 "server_version": "11.15.1"
             },
             {
@@ -2764,7 +2768,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.7094596621763524,
+                        "hourly_average": 0.6831793086893903,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -2778,7 +2782,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 0.7093696558759113,
+                        "hourly_average": 0.6831493038886222,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -2796,7 +2800,7 @@
                 "server": "COMSOL@uoa_foe_des_rc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9847997241537843,
+                "server_uptime": 0.9847975400178176,
                 "server_version": "11.15.1"
             },
             {
@@ -2830,7 +2834,7 @@
                 "server": "COMSOL@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9852882018274812,
+                "server_uptime": 0.9851998735523178,
                 "server_version": ""
             },
             {
@@ -2846,7 +2850,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.4806857818504286,
+                        "hourly_average": 0.4872519738593015,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -2864,7 +2868,7 @@
                 "server": "COMSOL@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.999425320383886,
+                "server_uptime": 0.9991953329309998,
                 "server_version": ""
             }
         ],
@@ -2921,6 +2925,30 @@
         "network_licences": [],
         "support": "",
         "url": "https://www.cp2k.org/"
+    },
+    "CPMD": {
+        "default": "",
+        "description": "The CPMD code is a parallelized plane wave / pseudopotential implementation of DFT,",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/CPMD-code",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "4.3-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/CPMD-code"
     },
     "CRAMINO": {
         "default": "",
@@ -2996,9 +3024,11 @@
                     "11.3.1",
                     "11.4.1",
                     "11.6.2",
+                    "11.7.1",
                     "11.8.0",
                     "12.0.0",
-                    "12.1.1"
+                    "12.1.1",
+                    "12.2.2"
                 ]
             },
             "maui_ancil": {
@@ -3370,7 +3400,8 @@
                 "default": "latest",
                 "versions": [
                     "0.1.12-Miniconda3",
-                    "1.0.0-Miniconda3"
+                    "1.0.0-Miniconda3",
+                    "1.0.5-Miniconda3"
                 ]
             }
         },
@@ -3379,6 +3410,30 @@
         "network_licences": [],
         "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Clair3",
         "url": "https://github.com/HKU-BAL/Clair3"
+    },
+    "Clang": {
+        "default": "",
+        "description": "C, C++, Objective-C compiler, based on LLVM.  Does not",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://clang.llvm.org/",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "17.0.6-GCC-12.3.0-CUDA-12.2.2"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://clang.llvm.org/"
     },
     "Clustal-Omega": {
         "default": "",
@@ -3469,7 +3524,8 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "0.6.1-GCC-11.3.0"
+                    "0.6.1-GCC-11.3.0",
+                    "0.7.0-GCC-12.3.0"
                 ]
             }
         },
@@ -3849,7 +3905,8 @@
                     "2.0.14-GCC-9.2.0",
                     "2.0.15-GCC-11.3.0",
                     "2.1.1-GCC-11.3.0",
-                    "2.1.6-GCC-11.3.0"
+                    "2.1.6-GCC-11.3.0",
+                    "2.1.9-GCC-11.3.0"
                 ]
             }
         },
@@ -4127,7 +4184,9 @@
                     "0.4.1",
                     "0.4.2",
                     "0.4.3",
-                    "0.5.0"
+                    "0.5.0",
+                    "0.5.3",
+                    "0.6.0"
                 ]
             }
         },
@@ -4445,7 +4504,8 @@
                     "4.7.0",
                     "4.7.1",
                     "4.8.1",
-                    "4.8.2"
+                    "4.8.2",
+                    "4.9.0"
                 ]
             },
             "maui": {
@@ -4455,7 +4515,8 @@
                     "4.7.0",
                     "4.7.1",
                     "4.8.1",
-                    "4.8.2"
+                    "4.8.2",
+                    "4.9.0"
                 ]
             }
         },
@@ -5168,7 +5229,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/FlexiBLAS",
         "url": "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release"
     },
     "Flye": {
@@ -5820,6 +5881,30 @@
         "support": "",
         "url": "https://gi.readthedocs.io/en/latest/"
     },
+    "GPAW": {
+        "default": "",
+        "description": "GPAW is a density-functional theory (DFT) Python code based on the projector-augmented wave (PAW)",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://wiki.fysik.dtu.dk/gpaw/",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "24.1.0-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://wiki.fysik.dtu.dk/gpaw/"
+    },
     "GRADS": {
         "default": "",
         "description": "The Grid Analysis and Display System (GrADS) is an interactive desktop tool that is used for easy access, manipulation, and visualization of earth science data.",
@@ -6428,7 +6513,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.3.1-gimkl-2017a",
                     "3.2.2-gimkl-2022a-Python-3.10.5"
                 ]
             }
@@ -6751,7 +6835,8 @@
                     "1.15.1-GCC-11.3.0",
                     "1.16-GCC-11.3.0",
                     "1.18-GCC-11.3.0",
-                    "1.19-GCC-11.3.0"
+                    "1.19-GCC-11.3.0",
+                    "1.19-GCC-12.3.0"
                 ]
             }
         },
@@ -7235,7 +7320,8 @@
                     "5.61-93.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
                     "5.62-94.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
                     "5.63-95.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
-                    "5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3"
+                    "5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
+                    "5.66-98.0-gimkl-2022aPerl-5.34.1-Python-3.11.3"
                 ]
             }
         },
@@ -7470,7 +7556,7 @@
         "default": "",
         "description": "An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.",
         "domains": [],
-        "extensions": "aiohttp-3.8.3, aiosignal-1.3.1, alembic-1.9.2, ansiwrap-0.8.4, anyio-3.6.2, arrow-1.2.3, async-timeout-4.0.2, async_generator-1.10, Babel-2.11.0, beautifulsoup4-4.11.1, certipy-0.1.3, charset-normalizer-2.1.1, colorama-0.4.6, cryptography-39.0.0, defopt-6.4.0, deprecation-2.1.0, docutils-0.19, editables-0.3, fastjsonschema-2.16.2, fqdn-1.5.1, frozenlist-1.3.3, hatch_jupyter_builder-0.8.2, hatch_nodejs_version-0.3.1, hatchling-1.12.2, ipympl-0.9.2, ipywidgets-8.0.4, isoduration-20.11.0, jlab_enhanced_launcher-3.2.0, json5-0.9.11, jsonpointer-2.3, jsonschema-4.17.3, jupyter-matlab-proxy-0.4.1, jupyter-server-proxy-3.2.2, jupyter_client-7.4.9, jupyter_contrib_core-0.4.2, jupyter_contrib_nbextensions-0.7.0, jupyter_core-5.1.3, jupyter_events-0.6.3, jupyter_highlight_selected_word-0.2.0, jupyter_latex_envs-1.4.6, jupyter_nbextensions_configurator-0.6.1, jupyter_packaging-0.12.3, jupyter_server-2.1.0, jupyter_server_mathjax-0.2.6, jupyter_server_terminals-0.4.4, jupyter_telemetry-0.1.0, jupyterhub-2.3.1, JupyterLab-3.5.3, jupyterlab-topbar-0.6.1, jupyterlab_git-0.41.0, jupyterlab_hide_code-3.5.2, jupyterlab_server-2.19.0, jupyterlab_slurm-103.0.2, jupyterlab_slurm_time-0.2.1, jupyterlab_widgets-3.0.5, matlab_proxy-0.2.7, mistune-2.0.4, multidict-6.0.4, nbclassic-0.4.8, nbconvert-7.2.8, nbdime-3.1.1, nbformat-5.7.3, nbqa-1.6.1, nesi-virtual-desktops-2.4.3, nesi_jupyter_helpers-0.3.1, notebook_shim-0.2.2, oauthlib-3.2.2, pamela-1.0.0, papermill-2.4.0, pathspec-0.10.3, plotly-5.13.0, pockets-0.9.1, pyOpenSSL-23.0.0, python-editor-1.0.4, python-json-logger-2.0.4, pyviz_comms-2.2.1, pyzmq-25.0.0, requests-2.28.2, requests-unixsocket-0.3.0, rfc3339_validator-0.1.4, rfc3986_validator-0.1.1, rstudio_on_nesi-0.24.0, ruamel.yaml-0.17.21, ruamel.yaml.clib-0.2.7, semantic_version-2.10.0, setuptools-66.1.1, simpervisor-0.4, sniffio-1.3.0, soupsieve-2.3.2, sphinxcontrib-napoleon-0.7+master, textwrap3-0.9.2, tinycss2-1.2.1, tokenize_rt-5.0.0, tomlkit-0.11.6, tornado-6.2, traitlets-5.8.1, uri_template-1.2.0, webcolors-1.12, websocket-client-1.4.2, widgetsnbextension-4.0.5, yarl-1.8.2",
+        "extensions": "aiofiles-22.1.0, aiohttp-3.8.6, aiosignal-1.3.1, aiosqlite-0.19.0, alembic-1.12.1, ansiwrap-0.8.4, anyio-4.0.0, argon2-cffi-bindings-21.2.0, argon2_cffi-23.1.0, arrow-1.3.0, async-timeout-4.0.3, async_generator-1.10, autopep8-2.0.4, Babel-2.13.1, beautifulsoup4-4.12.2, certipy-0.1.3, charset-normalizer-3.3.2, colorama-0.4.6, cryptography-39.0.0, defusedxml-0.7.1, deprecation-2.1.0, fastjsonschema-2.19.0, fqdn-1.5.1, frozenlist-1.4.0, hatch_jupyter_builder-0.8.3, hatch_nodejs_version-0.3.2, ipympl-0.9.3, ipython_genutils-0.2.0, ipywidgets-8.0.6, isoduration-20.11.0, jlab_enhanced_launcher-3.2.0, json5-0.9.14, jsonpointer-2.4, jsonschema-4.20.0, jsonschema_specifications-2023.11.1, jupyter-matlab-proxy-0.4.1, jupyter_client-7.4.9, jupyter_contrib_core-0.4.2, jupyter_contrib_nbextensions-0.7.0, jupyter_core-5.5.0, jupyter_events-0.9.0, jupyter_highlight_selected_word-0.2.0, jupyter_latex_envs-1.4.6, jupyter_nbextensions_configurator-0.6.1, jupyter_packaging-0.12.3, jupyter_server-2.10.1, jupyter_server_fileid-0.9.0, jupyter_server_mathjax-0.2.6, jupyter_server_proxy-4.1.0, jupyter_server_terminals-0.4.4, jupyter_server_ydoc-0.8.0, jupyter_telemetry-0.1.0, jupyter_ydoc-0.2.5, jupyterhub-2.3.1, JupyterLab-3.6.3, jupyterlab-topbar-0.6.1, jupyterlab_git-0.44.0, jupyterlab_hide_code-3.6.3, jupyterlab_pygments-0.2.2, jupyterlab_server-2.25.1, jupyterlab_slurm-103.0.2, jupyterlab_slurm_time-0.2.1, jupyterlab_widgets-3.0.7, matlab_proxy-0.2.7, mistune-3.0.2, multidict-6.0.4, nbclassic-1.0.0, nbclient-0.9.0, nbconvert-7.11.0, nbdime-3.2.1, nbformat-5.9.2, nbqa-1.7.0, nesi-virtual-desktops-2.4.3, nesi_jupyter_helpers-0.3.1, notebook-6.5.6, notebook_shim-0.2.3, overrides-7.4.0, pamela-1.1.0, pandocfilters-1.5.0, papermill-2.5.0, plotly-5.14.1, prometheus_client-0.19.0, pyOpenSSL-23.0.0, python-editor-1.0.4, python-json-logger-2.0.7, pyviz_comms-2.2.1, pyzmq-24.0.1, referencing-0.31.0, requests-2.31.0, requests-unixsocket-0.3.0, rfc3339_validator-0.1.4, rfc3986_validator-0.1.1, rpds_py-0.13.1, rstudio_on_nesi-0.24.0, ruamel.yaml-0.18.5, ruamel.yaml.clib-0.2.8, Send2Trash-1.8.2, simpervisor-1.0.0, sniffio-1.3.0, soupsieve-2.5, terminado-0.18.0, textwrap3-0.9.2, tinycss2-1.2.1, tokenize_rt-5.2.0, tomli-2.0.1, tomlkit-0.12.3, types_python_dateutil-2.8.19.14, uri_template-1.3.0, webcolors-1.13, websocket-client-1.6.4, y_py-0.6.2, yarl-1.9.2, ypy_websocket-0.8.4",
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://pypi.org/project/jupyterlab/",
@@ -7491,7 +7577,8 @@
                     "2022.6.0-gimkl-2020a-3.4.3",
                     "2022.7.0-gimkl-2020a-3.4.3",
                     "2022.8.0-gimkl-2020a-3.4.5",
-                    "2023.1.0-gimkl-2022a-3.5.3"
+                    "2023.1.0-gimkl-2022a-3.5.3",
+                    "2023.11.0-gimkl-2022a-3.6.3"
                 ]
             }
         },
@@ -7968,7 +8055,6 @@
                 "default": "latest",
                 "versions": [
                     "4.0.0-gimkl-2017a",
-                    "5.0.1-gimkl-2017a",
                     "6.0.1-GCC-5.4.0",
                     "6.0.1-GCCcore-7.4.0",
                     "9.0.0-GCCcore-9.2.0",
@@ -8007,7 +8093,8 @@
                 "versions": [
                     "0.9.23-GCCcore-7.4.0",
                     "0.9.24-GCCcore-9.2.0",
-                    "0.9.29-GCC-11.3.0"
+                    "0.9.29-GCC-11.3.0",
+                    "0.9.31-GCC-12.3.0"
                 ]
             }
         },
@@ -8481,7 +8568,7 @@
                 "server": "MATLAB@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9852882018274812,
+                "server_uptime": 0.9852860878811391,
                 "server_version": ""
             },
             {
@@ -8516,7 +8603,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "matlab",
-                        "hourly_average": 0.854953626927093,
+                        "hourly_average": 0.849517768836195,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "matlab@gns",
@@ -8534,7 +8621,7 @@
                 "server": "MATLAB@gns",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9853456697890925,
+                "server_uptime": 0.9853435641003535,
                 "server_version": "11.16.2"
             },
             {
@@ -8553,7 +8640,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.5469513246365152,
+                "server_uptime": 0.4509871540650056,
                 "server_version": ""
             },
             {
@@ -8572,7 +8659,7 @@
                 "server": "MATLAB@uoa",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9850008620194242,
+                "server_uptime": 0.9849124924562462,
                 "server_version": ""
             },
             {
@@ -8591,7 +8678,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9992816504798575,
+                "server_uptime": 0.9991091186021783,
                 "server_version": ""
             },
             {
@@ -8610,7 +8697,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9999425320383886,
+                "server_uptime": 0.9995976664654999,
                 "server_version": ""
             },
             {
@@ -8629,7 +8716,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.5329291420033332,
+                "server_uptime": 0.4369629565767164,
                 "server_version": ""
             },
             {
@@ -8648,7 +8735,7 @@
                 "server": "MATLAB@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.5329291420033332,
+                "server_uptime": 0.4369629565767164,
                 "server_version": ""
             },
             {
@@ -8667,7 +8754,7 @@
                 "server": "MATLAB@pfr",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.4944692038859854,
+                "server_uptime": 0.44667786595609105,
                 "server_version": ""
             }
         ],
@@ -8809,6 +8896,7 @@
                     "4.0.3-gimkl-2017a",
                     "5.1.0-GCC-7.4.0",
                     "5.1.0-GCC-11.3.0",
+                    "5.1.0-GCC-12.3.0",
                     "5.1.0-GCCcore-9.2.0",
                     "5.1.0-gimkl-2017a",
                     "5.1.0-gimkl-2017a-32bitIDX",
@@ -9303,7 +9391,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "18.1.8-GCC-5.4.0",
                     "18.3.4-GCCcore-7.4.0",
                     "19.2.1-GCCcore-9.2.0"
                 ]
@@ -9791,7 +9878,9 @@
         "default": "",
         "description": "Molpro is a complete system of ab initio programs for molecular electronic structure calculations.",
         "domains": [
-            "chemistry"
+            "chemistry",
+            "mahuika",
+            "tier1"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -9811,7 +9900,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/Molpro"
     },
     "Mono": {
         "default": "",
@@ -9988,6 +10077,7 @@
                 "versions": [
                     "2.12-gimkl-2017a-cuda",
                     "2.12-gimkl-2017a-mpi",
+                    "2.14-gimkl-2022a-cuda",
                     "2.14-gimkl-2022a-mpi"
                 ]
             }
@@ -10262,9 +10352,7 @@
                 "default": "latest",
                 "versions": [
                     "7.5.0-iimpi-2022a",
-                    "7.5.0",
-                    "7.5.1-iimpi-2022a",
-                    "7.5.1"
+                    "7.5.1-iimpi-2022a"
                 ]
             }
         },
@@ -10358,7 +10446,9 @@
         "description": "NWChem aims to provide its users with computational chemistry tools that are scalable both in",
         "domains": [
             "biology",
-            "chemistry"
+            "chemistry",
+            "mahuika",
+            "tier1"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -10377,7 +10467,7 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "",
+        "support": "https://nesi.github.io/support-docs/Scientific_Computing/Supported_Applications/NWChem",
         "url": "http://www.nwchem-sw.org"
     },
     "NanoComp": {
@@ -11207,7 +11297,8 @@
                     "1.1.0e-gimkl-2017a",
                     "1.1",
                     "1.1.1k-GCCcore-9.2.0",
-                    "1.1.1k-GCCcore-11.3.0"
+                    "1.1.1k-GCCcore-11.3.0",
+                    "1.1.1k-GCCcore-12.3.0"
                 ]
             }
         },
@@ -12480,7 +12571,8 @@
                     "2021.4",
                     "2021.11",
                     "2022.2",
-                    "2023.5"
+                    "2023.5",
+                    "2024.2-shotgun"
                 ]
             }
         },
@@ -12624,8 +12716,6 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.4.2-gimkl-2017a",
-                    "3.5.1-gimkl-2017a",
                     "3.5.3-gimkl-2018b",
                     "3.6.1-gimkl-2018b",
                     "3.6.2-gimkl-2020a",
@@ -13395,12 +13485,6 @@
         "licence_type": "",
         "link_output_dictride": "",
         "machines": {
-            "mahuika": {
-                "default": "latest",
-                "versions": [
-                    "1.1.456"
-                ]
-            },
             "maui_ancil": {
                 "default": "latest",
                 "versions": [
@@ -13458,7 +13542,8 @@
                     "1.59.0-GCCcore-9.2.0",
                     "1.60.0-GCC-11.3.0",
                     "1.66.1-GCC-11.3.0",
-                    "1.73.0-GCC-12.3.0"
+                    "1.73.0-GCC-12.3.0",
+                    "1.76.0-GCC-12.3.0"
                 ]
             }
         },
@@ -13524,7 +13609,8 @@
                     "1.12-GCC-9.2.0",
                     "1.13-GCC-9.2.0",
                     "1.15.1-GCC-11.3.0",
-                    "1.16.1-GCC-11.3.0"
+                    "1.16.1-GCC-11.3.0",
+                    "1.19-GCC-12.3.0"
                 ]
             }
         },
@@ -16550,6 +16636,30 @@
         "network_licences": [],
         "support": ""
     },
+    "Z3": {
+        "default": "",
+        "description": "A theorem prover from Microsoft Research.",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/Z3Prover/z3",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "4.12.2-GCCcore-12.3.0"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/Z3Prover/z3"
+    },
     "ZeroMQ": {
         "default": "",
         "description": "ZeroMQ looks like an embeddable networking library but acts like a concurrency framework.",
@@ -17515,7 +17625,8 @@
                     "8.2.2.26-CUDA-11.4.1",
                     "8.4.1.50-CUDA-11.6.2",
                     "8.6.0.163-CUDA-11.8.0",
-                    "8.8.0.121-CUDA-12.0.0"
+                    "8.8.0.121-CUDA-12.0.0",
+                    "8.9.7.29-CUDA-12.2.2"
                 ]
             },
             "maui_ancil": {
@@ -19392,7 +19503,8 @@
                 "versions": [
                     "1.11.13",
                     "2.2.0-GCCcore-9.2.0",
-                    "2.7.0-GCC-11.3.0"
+                    "2.7.0-GCC-11.3.0",
+                    "2.10.0-GCC-12.3.0"
                 ]
             }
         },
@@ -19442,7 +19554,6 @@
                 "versions": [
                     "2017.1.132-GCC-5.4.0",
                     "2017.6.256-GCC-5.4.0",
-                    "2018.1.163-GCC-7.1.0",
                     "2018.1.163-GCC-7.4.0"
                 ]
             },
@@ -19473,7 +19584,6 @@
                 "default": "latest",
                 "versions": [
                     "2017.6.256-GCC-5.4.0",
-                    "2018.1.163-GCC-7.1.0",
                     "2018.1.163-GCC-7.4.0",
                     "2020.0.166"
                 ]
@@ -19507,7 +19617,6 @@
                 "default": "latest",
                 "versions": [
                     "2017.6.256-GCC-5.4.0",
-                    "2018.1.163-GCC-7.1.0",
                     "2018.1.163-GCC-7.4.0"
                 ]
             },
@@ -19640,10 +19749,7 @@
                 "default": "latest",
                 "versions": [
                     "2017.6.256-GCC-5.4.0",
-                    "2017.6.256-iccifort-2017.1.132-GCC-5.4.0",
                     "2017.6.256-iccifort-2017.6.256-GCC-5.4.0",
-                    "2018.1.163-GCC-7.4.0",
-                    "2018.1.163-iccifort-2018.1.163-GCC-7.1.0",
                     "2018.1.163-iccifort-2018.1.163-GCC-7.4.0",
                     "2018.4.274-GCC-7.4.0",
                     "2019.6.166-GCC-9.2.0",
@@ -20158,7 +20264,8 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.5.2-GCCcore-9.2.0"
+                    "3.5.2-GCCcore-9.2.0",
+                    "3.7.2-GCC-12.3.0"
                 ]
             }
         },
@@ -20895,6 +21002,30 @@
         "support": "",
         "url": "https://www.nongnu.org/libunwind/"
     },
+    "libvdwxc": {
+        "default": "",
+        "description": "libvdwxc is a general library for evaluating energy and potential for",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://libvdwxc.org",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "0.4.0-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://libvdwxc.org"
+    },
     "libvpx": {
         "default": "",
         "description": "The WebM Project is dedicated to developing a high-quality, open video format for the web that's freely available to everyone.",
@@ -20937,6 +21068,7 @@
                     "4.2.3-gimkl-2017a",
                     "5.1.5-intel-2020a",
                     "5.1.5-intel-2022a",
+                    "6.2.2-GCC-12.3.0",
                     "6.2.2-intel-2022a"
                 ]
             },
@@ -21044,7 +21176,8 @@
                 "versions": [
                     "1.8.3-gimkl-2017a",
                     "1.16.2-gimkl-2020a",
-                    "1.16.2-intel-2022a"
+                    "1.16.2-intel-2022a",
+                    "1.17-GCC-12.3.0"
                 ]
             }
         },
@@ -21212,6 +21345,30 @@
         "network_licences": [],
         "support": "",
         "url": "https://lz4.github.io/lz4/"
+    },
+    "maf_stream": {
+        "default": "",
+        "description": "Collection of utilities to manipulate multiple alignments in the Multiple Alignment Format",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/joelarmstrong/maf_stream",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "202005-GCC-12.3.0"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/joelarmstrong/maf_stream"
     },
     "magma": {
         "default": "",
@@ -21551,7 +21708,10 @@
                     "2.18-GCC-11.3.0",
                     "2.20-GCC-9.2.0",
                     "2.24-GCC-9.2.0",
-                    "2.24-GCC-11.3.0"
+                    "2.24-GCC-11.3.0",
+                    "2.26-GCC-12.3.0",
+                    "2.27-GCC-12.3.0",
+                    "2.28-GCC-12.3.0"
                 ]
             }
         },
@@ -21679,6 +21839,30 @@
         "network_licences": [],
         "support": "",
         "url": "https://github.com/epi2me-labs/modbam2bed"
+    },
+    "modkit": {
+        "default": "",
+        "description": "Tool for working with modified bases from Oxford Nanopore",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/nanoporetech/modkit",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "0.2.5-GCC-12.3.0"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/nanoporetech/modkit"
     },
     "mosdepth": {
         "default": "",
@@ -22234,7 +22418,8 @@
                     "4.5.2-gimpi-2020a",
                     "4.5.2-iimpi-2020a",
                     "4.6.0-gimpi-2022a",
-                    "4.6.0-iimpi-2022a"
+                    "4.6.0-iimpi-2022a",
+                    "4.6.1-gompi-2023a"
                 ]
             },
             "maui_ancil": {
@@ -24694,7 +24879,8 @@
                 "default": "latest",
                 "versions": [
                     "1.3.1-Miniconda3",
-                    "1.4.1-Miniconda3"
+                    "1.4.1-Miniconda3",
+                    "2.0-Miniconda3"
                 ]
             }
         },
@@ -24903,6 +25089,30 @@
         "support": "",
         "url": "https://xkbcommon.org/"
     },
+    "xtb": {
+        "default": "",
+        "description": "xtb - An extended tight-binding semi-empirical program package.",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://xtb-docs.readthedocs.io",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "6.6.1-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://xtb-docs.readthedocs.io"
+    },
     "yacrd": {
         "default": "",
         "description": "Chimeric Read Detector for long reads",
@@ -24990,7 +25200,8 @@
                 "default": "latest",
                 "versions": [
                     "0.6.2-GCCcore-7.4.0",
-                    "0.6.3-GCCcore-9.2.0"
+                    "0.6.3-GCCcore-9.2.0",
+                    "0.8.0-GCC-12.3.0"
                 ]
             }
         },
