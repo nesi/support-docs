@@ -55,43 +55,46 @@ def main():
     inputs = sys.argv[1:]
 
     for input_string in inputs:
+
         input_path = Path(input_string)
         if any(re.match(pattern, input_string) for pattern in EXCLUDED_FROM_CHECKS):
             continue
         _nav_check()
         with open(input_path, "r") as f:
-            print(f"Checking meta for {f}")
-            contents = f.read()
-            match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
-            if not match:
-                print(
-                    f"::warning file={input_path},title=meta.parse,col=0,endColumn=99,line=1\
-::Meta block missing or malformed."
-                )
-                meta = {}
-            else:
-                meta = yaml.safe_load(match.group(1))
+            print(f"Checking meta for {f.name}")
+            try:
+                contents = f.read()
+                match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
+                if not match:
+                    print(
+                        f"::warning file={input_path},title=meta.parse,col=0,endColumn=99,line=1\
+    ::Meta block missing or malformed."
+                    )
+                    meta = {}
+                else:
+                    meta = yaml.safe_load(match.group(1))
 
-            title_from_filename = _title_from_filename()
-            title_from_h1 = _title_from_h1()
-            title = meta["title"] if "title" in meta else "" or title_from_h1 or title_from_filename
-            # global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
+                title_from_filename = _title_from_filename()
+                title_from_h1 = _title_from_h1()
+                title = meta["title"] if "title" in meta else "" or title_from_h1 or title_from_filename
+                # global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
 
-            header = ""
-            lineno = 0
-            in_code_block = False
-            toc_parents = [title]
-            toc = {title: {"level": 1, "lineno": 0, "children": {}}}
+                header = ""
+                lineno = 0
+                in_code_block = False
+                toc_parents = [title]
+                toc = {title: {"level": 1, "lineno": 0, "children": {}}}
 
-            for line in contents.split("\n"):
-                lineno += 1
-                for check in WALKCHECKS:
-                    in_code_block = not in_code_block if re.match(r"^\s*```\s?\w*$", line) else in_code_block
-                    _get_nav_tree()
+                for line in contents.split("\n"):
+                    lineno += 1
+                    for check in WALKCHECKS:
+                        in_code_block = not in_code_block if re.match(r"^\s*```\s?\w*$", line) else in_code_block
+                        _get_nav_tree()
+                        _run_check(check)
+                for check in ENDCHECKS:
                     _run_check(check)
-            for check in ENDCHECKS:
-                _run_check(check)
-
+            except Exception as e:
+                print(f"::error file={input_path},title=misc,col=0,endColumn=0,line=1 ::{e}")
 
 def _run_check(f):
     for r in f():
@@ -127,6 +130,8 @@ def _get_nav_tree():
     global toc, toc_parents
 
     def _unpack(toc, a):
+        if len(a) < 1:
+            return toc
         if len(a) < 2:
             return toc[a[0]]
         return _unpack(toc[a[0]]["children"], a[1:])
@@ -138,7 +143,7 @@ def _get_nav_tree():
 
     if not header_match:
         return
-
+    
     header_level = len(header_match.group(1))
     header_name = header_match.group(2)
 

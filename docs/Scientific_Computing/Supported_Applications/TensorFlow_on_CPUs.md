@@ -3,7 +3,7 @@ created_at: '2019-06-14T05:35:45Z'
 tags: []
 title: TensorFlow on CPUs
 vote_count: 2
-# template: app.html
+
 vote_sum: 2
 zendesk_article_id: 360000997675
 zendesk_section_id: 360000040076

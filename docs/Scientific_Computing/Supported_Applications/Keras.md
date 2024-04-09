@@ -3,7 +3,6 @@ created_at: '2019-07-24T04:30:33Z'
 tags: []
 title: Keras
 vote_count: 0
-# template: app.html
 vote_sum: 0
 zendesk_article_id: 360001075936
 zendesk_section_id: 360000040076

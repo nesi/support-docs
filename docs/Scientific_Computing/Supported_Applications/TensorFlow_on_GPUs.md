@@ -4,7 +4,7 @@ tags:
 - gpu
 title: TensorFlow on GPUs
 vote_count: 2
-# template: app.html
+
 vote_sum: 2
 zendesk_article_id: 360000990436
 zendesk_section_id: 360000040076
