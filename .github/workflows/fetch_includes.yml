@@ -1,7 +1,8 @@
 name: Fetch Remote Assets 
-on: workflow_dispatch
-# permissions:
-#  contents: write
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '00 01 * * *' # Should run 1 hour after module list update.
 env:
   MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
   GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
@@ -30,11 +31,14 @@ jobs:
       - name: Fetch Snippets
         run: wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
       - name: Commit to Branch '${BRANCH_NAME}'
+        id: commit
         run: |
           git pull origin main
           git add --all
-      - run: git commit -m "update remote assets"
+          git commit -m "update remote assets"
+          echo "no-change=$?" >> $GITHUB_OUTPUT
       - name: Push, and make PR
+        if: ${{ ! steps.commit.outputs.no-change }}
         run: |
           git push origin ${BRANCH_NAME}
           gh pr create -B main -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
