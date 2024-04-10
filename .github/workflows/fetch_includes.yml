@@ -18,6 +18,7 @@ jobs:
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git checkout ${GITHUB_REF}
           git pull origin ${GITHUB_REF}
           git checkout -b $(date +'%Y-%m-%d')-${BRANCH_NAME}
           mkdir -pv docs/assets/glossary
