@@ -7,8 +7,7 @@
             "mahuika",
             "gpu",
             "mpi",
-            "omp",
-            "fea"
+            "omp"
         ],
         "extensions": [],
         "force_hide": "False",
