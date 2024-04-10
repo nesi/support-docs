@@ -8,7 +8,7 @@ env:
   GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
   DICTIONARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
   SNIPPETS_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
-  BRANCH_NAME: "new-assets"
+  BRANCH_NAME: "assets-update"
 jobs:
   fetch-includes:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git checkout -b ${BRANCH_NAME}
+          git checkout -b $(date +'%Y-%m-%d')-${BRANCH_NAME}
           mkdir -pv docs/assets/glossary
       - name: Fetch Module List
         run: wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
@@ -30,12 +30,12 @@ jobs:
         run: wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
       - name: Fetch Snippets
         run: wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
-      - name: Commit to Branch '${BRANCH_NAME}'
+      - name: Commit to Branch 
         id: commit
         run: |
           git pull origin ${GITHUB_REF}
           git add --all
-          git commit -m "update remote assets"
+          git commit -m "Add updated remote assets"
           echo "change=$?" >> $GITHUB_OUTPUT
       - name: Push, and make PR
         if: ${{ steps.commit.outputs.change != 1 }}
@@ -43,5 +43,6 @@ jobs:
           echo "last job ${{ steps.commit.outputs.change }}"
           git push origin ${BRANCH_NAME}
           gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
+          gh pr merge --auto
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
