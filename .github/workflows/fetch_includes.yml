@@ -39,6 +39,7 @@ jobs:
           git commit -m "Add updated remote assets"
           echo 'change=$?' >> $GITHUB_OUTPUT
           set -e 
+          echo $GITHUB_OUTPUT
       - name: Push, and make PR
         if: ${{ steps.commit.outputs.change != 1 }}
         run: |
