@@ -36,16 +36,7 @@ jobs:
         id: commit
         run: |
           git add --all
-          set +e 
-          git commit -m "Add updated remote assets"
-          echo $?
-          echo 'change=$?' >> $GITHUB_OUTPUT
-          set -e 
-          echo $GITHUB_OUTPUT
-      - name: Push, and make PR
-        if: ${{ steps.commit.outputs.change != 1 }}
-        run: |
-          echo "last job ${{ steps.commit.outputs.change }}"
+          git commit -m "Add updated remote assets" || echo "No Changes";exit 0
           git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
           gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
           gh pr merge $(date +'%Y-%m-%d')-${BRANCH_NAME} --squash --auto --delete-branch
