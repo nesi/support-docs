@@ -33,7 +33,7 @@ jobs:
       - name: Commit to Branch '${BRANCH_NAME}'
         id: commit
         run: |
-          git pull origin main
+          git pull origin ${GITHUB_REF}
           git add --all
           git commit -m "update remote assets"
           echo "no-change=$?" >> $GITHUB_OUTPUT
@@ -41,6 +41,6 @@ jobs:
         if: ${{ ! steps.commit.outputs.no-change }}
         run: |
           git push origin ${BRANCH_NAME}
-          gh pr create -B main -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
+          gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
