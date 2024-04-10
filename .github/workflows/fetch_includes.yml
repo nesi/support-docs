@@ -38,7 +38,7 @@ jobs:
           git commit -m "update remote assets"
           echo "change=$?" >> $GITHUB_OUTPUT
       - name: Push, and make PR
-        if: ${{ steps.commit.outputs.change != 0 }}
+        if: ${{ steps.commit.outputs.change != 1 }}
         run: |
           echo "last job ${{ steps.commit.outputs.change }}"
           git push origin ${BRANCH_NAME}
