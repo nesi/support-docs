@@ -36,10 +36,11 @@ jobs:
           git pull origin ${GITHUB_REF}
           git add --all
           git commit -m "update remote assets"
-          echo "no-change=$?" >> $GITHUB_OUTPUT
+          echo "change=$?" >> $GITHUB_OUTPUT
       - name: Push, and make PR
-        if: ${{ ! steps.commit.outputs.no-change }}
+        if: ${{ steps.commit.outputs.change != 0 }}
         run: |
+          echo "last job ${{ steps.commit.outputs.change }}"
           git push origin ${BRANCH_NAME}
           gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
         env:
