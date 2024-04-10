@@ -41,8 +41,8 @@ jobs:
         if: ${{ steps.commit.outputs.change != 1 }}
         run: |
           echo "last job ${{ steps.commit.outputs.change }}"
-          git push origin ${BRANCH_NAME}
-          gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
+          git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
+          gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
           gh pr merge --auto
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
