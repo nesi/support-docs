@@ -18,6 +18,7 @@ jobs:
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git pull origin ${GITHUB_REF}
           git checkout -b $(date +'%Y-%m-%d')-${BRANCH_NAME}
           mkdir -pv docs/assets/glossary
       - name: Fetch Module List
@@ -33,7 +34,6 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
-          git pull origin ${GITHUB_REF}
           git add --all
           git commit -m "Add updated remote assets"
           echo "change=$?" >> $GITHUB_OUTPUT
