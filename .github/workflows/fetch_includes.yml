@@ -38,6 +38,7 @@ jobs:
           git add --all
           set +e 
           git commit -m "Add updated remote assets"
+          echo $?
           echo 'change=$?' >> $GITHUB_OUTPUT
           set -e 
           echo $GITHUB_OUTPUT
