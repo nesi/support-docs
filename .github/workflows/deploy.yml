@@ -3,11 +3,6 @@ on:
  push:
     branches: [main]
  workflow_dispatch:
-  inputs:
-    dry-run:
-      type: boolean
-      description: Dry run (will build to 'gh-pages-test')
-      default: false
 permissions:
   contents: write
 env:
@@ -21,13 +16,20 @@ jobs:
       - uses: actions/checkout@v4
         with:
          fetch-depth: 0 
-      - name: Install dependencies
-        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
+      - name: Install dependencies
+        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - run: mkdocs gh-deploy --verbose --force
