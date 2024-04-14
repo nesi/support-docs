@@ -14,7 +14,7 @@ During the Easter break, [NeSI platform
 services](https://status.nesi.org.nz/) will be online and available, but
 urgent / critical requests received between 5:00 pm Thursday 28 March
 and 9:00 am Wednesday 03 April will be addressed on a best effort
-basis. 
+basis.
 
 Below is a quick reminder of our main support channels as well as other
 sources of self-service support:

@@ -96,7 +96,7 @@ must create an SSH tunnel through the NeSI lander node.
      Once you kill a relevant SSH tunnel connection (e.g. `Ctrl-c`) you
      will no longer be able to connect to your NICE DCV session.
 
-1.  On your machine run the following command in your Linux terminal
+1. On your machine run the following command in your Linux terminal
     emulator (assuming you added the
     [recommended](../Terminal_Setup/Standard_Terminal_Setup.md)
     sections to your `~/.ssh/config` file). This command opens an SSH
@@ -117,7 +117,7 @@ must create an SSH tunnel through the NeSI lander node.
 
 ### To connect to Mahuika
 
-    1.  Open an SSH tunnel through the lander node to the Mahuika login
+    1. Open an SSH tunnel through the lander node to the Mahuika login
         node.
 
         ``` sl
@@ -132,7 +132,7 @@ must create an SSH tunnel through the NeSI lander node.
         point be prompted for your password and your second factor.
         Enter them in the usual manner.
 
-    2.  In a new terminal, open an SSH tunnel through this existing
+    2. In a new terminal, open an SSH tunnel through this existing
         tunnel to Mahuika's NICE DCV node.
 
         ``` sl
@@ -146,7 +146,7 @@ must create an SSH tunnel through the NeSI lander node.
         The second factor is optional (you can just press Enter), but if
         you provide a second factor it must be correct.
 
-2.  Open a second terminal session, and run the following command in it.
+2. Open a second terminal session, and run the following command in it.
 
     ``` sl
     # The first port number (28443 in this example) can be anything you like > 1024,

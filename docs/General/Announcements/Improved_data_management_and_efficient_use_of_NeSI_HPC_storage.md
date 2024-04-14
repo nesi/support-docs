@@ -101,7 +101,7 @@ and cached between updates.
 ### Can I recover data that I accidentally delete from my `/project` directory?
 
 Perhaps. We regularly make read-only copies of the file system and save
-them for up to seven days. For more information, 
+them for up to seven days. For more information,
 [refer to our File Recovery page](../../Storage/Data_Recovery/File_Recovery.md).
 
 ### Where should I store my data on NeSI systems?
