@@ -36,7 +36,7 @@ and any (multi-cluster) Slurm partitions on the Māui or Mahuika systems.
 ## Notes
 
 1. The `/home, /nesi/project`, and `/nesi/nobackup`
-    [filesystems](https://support.nesi.org.nz/hc/articles/360000177256)
+    [filesystems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
     are mounted on the Māui Ancillary Nodes.
 2. The Māui Ancillary nodes have Skylake processors, while the Mahuika
     nodes use Broadwell processors.
@@ -67,8 +67,7 @@ w-mauivlab01.maui.nesi.org.nz
 
 If you are looking for accessing this node from your local machine you
 could add the following section to `~/.ssh/config` (extending the
-[recommended terminal
-setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup))
+[recommended terminal setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 ``` sh
 Host w-mauivlab01 

@@ -42,9 +42,10 @@ filesystem).
 If you need assistance with this, {% include "partials/support_request.html" %} and
 we’d be happy to help or answer questions.
 
-If you have data that may be used again on NeSI later, {% include "partials/support_request.html" %}
+If you have data that may be used again on NeSI later,
+{% include "partials/support_request.html" %}
 and we will consider whether a
-[Nearline](https://support.nesi.org.nz/hc/en-gb/articles/360001169956-Long-Term-Storage-Service)
+[Nearline](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
 storage allocation would be appropriate to manage this.
 
 ### 18 October 2021
@@ -101,7 +102,7 @@ and cached between updates.
 
 Perhaps. We regularly make read-only copies of the file system and save
 them for up to seven days. For more information, 
-[refer to our File Recovery page](../../Storage/Data_Recovery/File_Recovery.md "https://support.nesi.org.nz/hc/en-gb/articles/360000207315-File-Recovery").
+[refer to our File Recovery page](../../Storage/Data_Recovery/File_Recovery.md).
 
 ### Where should I store my data on NeSI systems?
 
@@ -127,7 +128,7 @@ situ.
 There are two tracked resources in the NeSI filesystem, *disk
 space* and *inodes (number of files)*. If you run into problems with
 either of these, [refer to this Support page for more
-information](../../General/FAQs/Ive_run_out_of_storage_space.md "https://support.nesi.org.nz/hc/en-gb/articles/360001125996-I-ve-run-out-of-storage-space").
+information](../../General/FAQs/Ive_run_out_of_storage_space.md).
 
 ### I have questions that aren’t covered here. Who can I talk to?
 

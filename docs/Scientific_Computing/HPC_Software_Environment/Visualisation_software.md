@@ -16,8 +16,7 @@ zendesk_section_id: 360000040056
 NeSI provides a variety of visualisation software solutions via modules.
 Available software and software versions vary between the Mahuika and
 Māui Ancil systems. Additional software can be provided upon request,
-see section [Supported
-Applications](https://support.nesi.org.nz/hc/en-gb/sections/360000040076-Supported-Applications).
+see section [Supported Applications](../Supported_Applications/index.md).
 
 Most software only requires a CPU node to run, but some software, in
 particular high-performance 3D visualisation software, can utilise a GPU

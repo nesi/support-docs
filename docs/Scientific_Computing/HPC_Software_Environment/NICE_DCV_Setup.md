@@ -45,7 +45,7 @@ possible.
 #### On Māui
 
     1. Connect to the lander node following the instructions
-        [here](https://support.nesi.org.nz/hc/en-gb/sections/360000034315-Accessing-the-HPCs).
+        [here](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
         For example:
 
         ``` sl
@@ -98,7 +98,7 @@ must create an SSH tunnel through the NeSI lander node.
 
 1.  On your machine run the following command in your Linux terminal
     emulator (assuming you added the
-    [recommended](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup)
+    [recommended](../Terminal_Setup/Standard_Terminal_Setup.md)
     sections to your `~/.ssh/config` file). This command opens an SSH
     tunnel through the NeSI lander node to the SSH port on w-ndcv01.
 
@@ -231,8 +231,8 @@ successful login with the client or browser. You can then use the
 application launcher to start an application. You can also launch the
 terminal application by right-clicking on the desktop and selecting
 "Konsole". This will give you access to the NeSI software stack that
-includes various [visualisation software
-solutions](https://support.nesi.org.nz/knowledge/articles/360000700295/en-gb?brand_id=30406&return_to=%2Fhc%2Fen-gb%2Farticles%2F360000700295).
+includes various visualisation software
+solutions.
 
 ## Disconnecting and Stopping a Session
 

@@ -30,11 +30,11 @@ of self-service support:
     Note: non-emergency requests will be addressed on or after 03 January 2024.
 
 - [Sign up for NeSI system status
-    updates](../../Getting_Started/Getting_Help/System_status.md "https://support.nesi.org.nz/hc/en-gb/articles/360000751636") for
+    updates](../../Getting_Started/Getting_Help/System_status.md) for
     advance warning of any system updates or unplanned outages.
 
 - [Consult our User
-    Documentation](https://support.nesi.org.nz/hc/en-gb/categories/360000013836 "https://support.nesi.org.nz/hc/en-gb/categories/360000013836") pages
+    Documentation](https://www.docs.nesi.org.nz) pages
     for instructions and guidelines for using the systems
 
 - [Visit NeSI’s YouTube

@@ -10,8 +10,7 @@ zendesk_section_id: 360000040056
 
 ## Environment Modules
 
-NeSI uses environment modules to manage [installed
-software](https://support.nesi.org.nz/hc/articles/360000170355).
+NeSI uses environment modules to manage [installed software](../Supported_Applications/index.md).
 
 Using the `module` command you can:
 

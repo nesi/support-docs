@@ -52,7 +52,7 @@ troubleshoot things further.
 Remember, you can  {% include "partials/support_request.html" %} at any
 time and we have a team of experts ready to answer any questions you may
 have, big or small. You can also find helpful user resources, links and
-documentation elsewhere in our [User Support Centre](https://support.nesi.org.nz/hc/en-gb).
+documentation elsewhere in our User Support Centre.
 
 ## Feedback
 

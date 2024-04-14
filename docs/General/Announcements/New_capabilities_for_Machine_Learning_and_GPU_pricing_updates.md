@@ -22,12 +22,10 @@ researchers to ensure this new capability is fit-for-purpose and tuned
 to communities' specific software and tool requirements. 
 
 These new A100s, alongside 
-[software optimised for data science](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-),
+[software optimised for data science](../FAQs/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md)),
 are available to researchers using **machine learning** approaches. If
 this is you, {% include "partials/support_request.html" %} to
 discuss how these new resources could support your work.
-
- 
 
 ## Reduced pricing for P100s
 

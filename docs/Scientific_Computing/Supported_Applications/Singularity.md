@@ -126,12 +126,9 @@ A container in Singularity's SIF format can be easily moved to the HPC
 filesystem by:
 
 - Copying the image file from your local computer with basic file
-    transfer tools - please refer to our documentation on [Moving files
-    to/from the
-    cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-    and [Data Transfer using
-    Globus](https://support.nesi.org.nz/hc/en-gb/articles/360000576776)
-    (if you have a very large container) for details
+    transfer tools - please refer to our documentation on 
+    [Moving files to/from the cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+    and [Data Transfer using Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md)(if you have a large container) for details
 - Downloading the container from an online repository
 
 To download a container, use commands such as

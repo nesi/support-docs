@@ -23,20 +23,18 @@ sources of self-service support:
     page](https://status.nesi.org.nz/ "https://status.nesi.org.nz/").
     You can also subscribe for notifications of system updates and
     unplanned outages sent straight to your inbox. [Sign up
-    here.](../../Getting_Started/Getting_Help/System_status.md "https://support.nesi.org.nz/hc/en-gb/articles/360000751636")
+    here.](../../Getting_Started/Getting_Help/System_status.md)
 
 - [Consult our User
-    Documentation](https://support.nesi.org.nz/hc/en-gb/categories/360000013836 "https://support.nesi.org.nz/hc/en-gb/categories/360000013836") pages
+    Documentation](https://www.docs.nesi.org.nz) pages
     for instructions and guidelines for using the systems.
 
 - [Visit NeSI’s YouTube
     channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
     introductory training webinars.
 
-- [Submit a ticket to
-    Support](https://support.nesi.org.nz/hc/en-gb/requests/new "https://support.nesi.org.nz/hc/en-gb/requests/new") (Note:
+- {% include "partials/support_request.html" %} (Note:
     non-emergency requests will be addressed on or after 03 April)
 
 On behalf of the entire NeSI team, we wish you a safe and relaxing
 break.
-

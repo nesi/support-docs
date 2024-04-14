@@ -10,32 +10,6 @@ zendesk_article_id: 360000204076
 zendesk_section_id: 360000030876
 ---
 
-<!-- ## Definitions
-
-**CPU:** A logical core, also known as a hardware thread. Referred to as
-a "CPU" in the Slurm documentation.  Since
-[Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236/)
-is enabled, there are two CPUs per physical core, and every task— and
-therefore every job — is allocated an even number of CPUs.
-
-**Fairshare Weight:** CPU hours are multiplied by this factor to
-determine usage for the purpose of calculating a project's [fair-share
-score](https://support.nesi.org.nz/hc/en-gb/articles/360000743536/).
-
-**Job:** A running batch script and any other processes which it might
-launch with *srun*.
-
-**Node: **A single computer within the cluster with its own CPUs and RAM
-(memory), and sometimes also GPUs. A node is analogous to a workstation
-(desktop PC) or laptop.
-
-**Task:** An instance of a running computer program, consisting of one
-or more threads. All of a task's threads must run within the same node.
-
-**Thread:** A sequence of instructions executed by a CPU.
-
-**Walltime: **Real world time, as opposed to CPU time (walltime x CPUs). -->
-
 ## General Limits
 
 - No individual job can request more than 20,000 CPU hours. This has
