@@ -40,3 +40,6 @@
   text-align: center;
   font-size: 0.7rem;
 }
+.md-nav--primary > .md-nav__title {
+    display: none;
+}
