@@ -1,7 +1,6 @@
 ---
 created_at: '2021-02-23T19:52:34Z'
 tags: []
-title: About the Release Notes section
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360003507115
@@ -23,9 +22,9 @@ be located under Storage, Long-Term Storage
 
 ## 3rd party applications
 
-3rd party applications listed under [Supported Applications](../../Scientific_Computing/Supported_Applications/index.md)
+3rd party applications listed under [Supported Applications](../Scientific_Computing/Supported_Applications/index.md)
 have child pages with details about the available versions on NeSI, and
-a reference to the vedor release notes or documentation.
+a reference to the vendor release notes or documentation.
 
 ## NeSI services
 
