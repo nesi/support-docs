@@ -142,4 +142,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: pip install -r requirements.txt
+      - run: echo "::group::Test Build"
       - run: ./checks/run_test_build.py
+      - run: echo "::endgroup::"
+
