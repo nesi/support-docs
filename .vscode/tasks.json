@@ -7,13 +7,8 @@
             "args": [
                 "${file}"
             ],
-            "type": "process",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_meta_check.py",
@@ -39,13 +34,8 @@
             "args": [
                 "${file}"
             ],
-            "type": "process",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_proselint.py",
@@ -68,13 +58,8 @@
             "args": [
                 "${file}"
             ],
-            "type": "process",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_pyspelling.py",
@@ -93,47 +78,40 @@
             },
         },
         {
-            "label": "build",
-            "type": "shell",
-            "isBackground": true,
+            "label": "test-build",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
-            "command": "mkdocs serve --dirty",
-            "runOptions": {
-                "runOn": "folderOpen"
-            },
+            "command": "./checks/run_test_build.py",
             "problemMatcher": {
                 "severity": "info",
-                "pattern": [{
-                    "regexp": "^(WARNING|INFO) -  Doc file '(.*)' (.*)$",
+                "pattern": {
+                    "regexp": "^::(.*) file=(.*?),title=(.*?),col=([0-9]*),endColumn=([0-9]*),line=([0-9]*)::(.*)$",
                     "severity": 1,
                     "file": 2,
-                    "message": 3,
-                    "kind": "file",
-                    "loop": true
-                }],
-                "owner": "build",
-                "background": {
-                    "beginsPattern": "INFO    -  Building documentation...",
-                    "endsPattern": "INFO    -  Documentation built in .*"
+                    "code": 3,
+                    "column": 4,
+                    "endColumn": 5,
+                    "line": 6,
+                    "message": 7
                 },
                 "fileLocation": [
                     "relative",
                     "${workspaceFolder}/docs"
                 ],
             },
-        // make this a problem matecher.
-        //     INFO    -  [macros] - ERROR # _Macro Rendering Error_
-
-        //    _File_: `Glossary.md`
-
-        //    _TemplateNotFound_: assets/glossary/Glossary.md
-        }
+        },
+        {
+            "label": "serve",
+            "group": "build",
+            "type": "shell",
+            "isBackground": true,
+            "presentation": {
+                "reveal":"never",
+                "showReuseMessage": false
+            },
+            "command": "mkdocs serve --dirty --quiet"
+        },
     ]
 }
