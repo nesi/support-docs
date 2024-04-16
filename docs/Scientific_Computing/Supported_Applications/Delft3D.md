@@ -20,7 +20,7 @@ zendesk_section_id: 360000040076
 
 === "Serial"
 
-    For when only one CPU is required, generally as part of a [job array](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-Parallel-Execution#t_array).
+    For when only one CPU is required, generally as part of a [job array](../../Getting_Started/Next_Steps/Parallel_Execution.md#job-arrays).
 
     ```sl
     #!/bin/bash -e

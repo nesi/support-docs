@@ -99,8 +99,7 @@ cases:
     #SBATCH --gpus-per-node=A100:1
     ```
 
-    *These GPUs are on Milan nodes, check the [dedicated support
-    page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
+    *These GPUs are on Milan nodes, check the [dedicated support page](../Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
     for more information.*
 
 - 4 A100 (80GB & NVLink) GPU on Mahuika
@@ -110,8 +109,7 @@ cases:
     #SBATCH --gpus-per-node=A100:4
     ```
 
-    *These GPUs are on Milan nodes, check the [dedicated support
-    page](https://support.nesi.org.nz/knowledge/articles/6367209795471/)
+    *These GPUs are on Milan nodes, check the [dedicated support page](../Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
     for more information.*
 
     *You cannot ask for more than 4 A100 (80GB) GPUs per node on
@@ -159,8 +157,7 @@ duration of 30 minutes.
 ## Load CUDA and cuDNN modules
 
 To use an Nvidia GPU card with your application, you need to load the
-driver and the CUDA toolkit via the [environment
-modules](https://support.nesi.org.nz/hc/en-gb/articles/360001113076-The-HPC-environment-)
+driver and the CUDA toolkit via the [environment modules](../HPC_Software_Environment/Finding_Software.md)
 mechanism:
 
 ``` sh

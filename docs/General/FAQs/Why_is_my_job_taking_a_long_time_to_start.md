@@ -62,7 +62,7 @@ delayed. Common answers include "Priority", "Resources", "Dependency",
     not exist.
 
 A more comprehensive list of job reason codes is available
-[here](https://slurm.schedmd.com/squeue.html#lbAF) (offsite). As noted
+[in the SLURM documentation](https://slurm.schedmd.com/squeue.html#lbAF) (offsite). As noted
 on that page, if a job is waiting for execution for several reasons,
 only one reason will be displayed, and there is not a documented
 importance of reasons. For example, one job could say Priority and
@@ -73,9 +73,9 @@ Priority and Resources at the same time.
 
 You can check the job's priority relative to other waiting jobs by means
 of the following command on a
-[Mahuika](https://support.nesi.org.nz/hc/articles/360000163575-Mahuika)
+[Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md)
 or
-[Māui](https://support.nesi.org.nz/hc/articles/360000163695-M%C4%81ui)
+[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md)
 login node (as appropriate):
 
 ```sh
@@ -111,8 +111,8 @@ score, but rather its priority ranking compared to other jobs.
 If, compared to other jobs in the queue, your job's priority (third
 column) and fair share score (fifth column) are both low, this usually
 means that your project team has recently been using through CPU core
-hours faster than expected. See [this
-page](https://support.nesi.org.nz/hc/articles/360000743536) for more
+hours faster than expected.
+See [Fair Share -- How jobs get prioritised](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md) for more
 information on Fair Share, how you can check your project's fair share
 score, and what you can do about a low project fair share score.
 

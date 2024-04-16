@@ -17,8 +17,8 @@ zendesk_section_id: 360000033936
     We have recently started rolling out compression of inactive data on the NeSI Project filesystem.
     Please see the [documentation below](#transparent-file-data-compression) to learn more about how this works and what data will be compressed.
 
-[Māui](https://support.nesi.org.nz/hc/articles/360000163695) and
-[Mahuika](https://support.nesi.org.nz/hc/articles/360000163575), along
+[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md) and
+[Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md), along
 with all the ancillary nodes, share access to the same IBM Storage Scale
 file systems. Storage Scale was previously known as Spectrum Scale, and
 before that as GPFS, or General Parallel File System - we'll generally
@@ -171,7 +171,7 @@ See [more information about the nearline service](../../Storage/Nearline_long_te
 ## Snapshots
 
 If you have accidentally deleted data you can recover it from
-a [snapshot](https://support.nesi.org.nz/knowledge/articles/360000207315/en-gb?brand_id=30406).
+a [snapshot](../Data_Recovery/File_Recovery.md).
 Snapshots are taken daily of `home/` and `project` directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 {% include "partials/support_request.html" %}

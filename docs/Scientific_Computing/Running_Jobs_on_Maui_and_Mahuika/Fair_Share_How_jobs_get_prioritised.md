@@ -147,8 +147,7 @@ from Fair Share by submitting work at close to a constant rate.
 
 If you expect that your project team will need widely varying rates of
 computer use during your allocation period and you can predict when your
-busy and quiet periods will be, please [contact our support
-team](https://support.nesi.org.nz/hc/en-gb/requests/new) to enquire
+busy and quiet periods will be, please {% include "partials/support_request.html" %} to enquire
 about splitting your project's allocation up into parts. Please be aware
 that we cannot guarantee this option will be available for any given
 project, and that we are most likely to be able to accommodate such a

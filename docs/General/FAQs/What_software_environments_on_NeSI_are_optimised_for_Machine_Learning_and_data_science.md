@@ -1,17 +1,15 @@
 ---
 created_at: '2021-05-25T02:15:36Z'
 tags: []
-title: What software environments on NeSI are optimised for Machine Learning and data
-  science?
+title: What software environments on NeSI are optimised for Machine Learning and data science?
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360004558895
 zendesk_section_id: 360000039036
 ---
 
-When using NeSI's [HPC
-platform](https://support.nesi.org.nz/hc/en-gb/sections/360000034335),
-you can bring your own code to install or you can access our extensive
+When using NeSI's HPC
+platform, you can bring your own code to install or you can access our extensive
 software library which is already built and compiled, ready for you to
 use.
 
@@ -37,8 +35,7 @@ include:
     create comprehensive workflows.
 
 For more information about available software and applications, you
-can [browse our catalogue
-here](https://support.nesi.org.nz/hc/en-gb/sections/360000040076).
+can [browse our catalogue](../../Scientific_Computing/Supported_Applications/index.md).
 
 As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using

@@ -42,7 +42,7 @@ How to access
     the nodes.
 
 - Bring questions to our [weekly Online Office
-    Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md "https://support.nesi.org.nz/hc/en-gb/articles/4830713922063-Weekly-Online-Office-Hours")
+    Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md)
 
 - {% include "partials/support_request.html" %}
     any time

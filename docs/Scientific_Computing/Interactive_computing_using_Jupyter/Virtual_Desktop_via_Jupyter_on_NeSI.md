@@ -4,6 +4,7 @@ tags: []
 title: Virtual Desktop via Jupyter on NeSI
 vote_count: 2
 vote_sum: 2
+status: deprecated
 zendesk_article_id: 360001600235
 zendesk_section_id: 360001189255
 ---
@@ -70,67 +71,4 @@ You can build your own container bootstrapping off
 `vdt_base.sif`/`rocky8vis.sif` and then overwrite the default by setting
 `VDT_BASE_IMAGE` in `pre.bash`.
 
-<!--
-<h2 id="h_01HDHQPY636ARH8CE6RP0700VX">Setup Scripts</h2>
-<p>
-  Several scripts are available that will help you get started by setting up desktop
-  shortcuts and loading module in the base environment. These can be found at
-  <code>$VDT_ROOT/setup_scripts</code>
-</p>
-<h2>noVNC</h2>
-<p>Recommend setting scaling to 'remote'</p>
-<div style="display: flex;">
-  <img src="https://support.nesi.org.nz/hc/article_attachments/360004678036" width="426" height="362"><img src="https://support.nesi.org.nz/hc/article_attachments/360005192376">
-</div>
-<blockquote class="blockquote-warning">
-  <h3 id="prerequisites">Restore Defaults</h3>
-  <p>
-    All local settings can be restored by running the command
-    <code>vdt clean</code> (or <code>/opt/nesi/vdt clean</code>). Note, this
-    will probably break any running desktop sessions.
-  </p>
-</blockquote>
--->
-
 *You can help contribute to this project [here](https://github.com/nesi/nesi-virtual-desktops/projects/1).*
-
-<!--
-<table style="height:190px;width:722px;display:none">
-  <tbody>
-    <tr>
-      <td style="width:47px">&nbsp;Desktop</td>
-      <td style="width:272.122px">&nbsp;command</td>
-      <td style="width:143.878px">Working</td>
-      <td style="width:138px">OS</td>
-      <td style="width:62px">Desktop</td>
-    </tr>
-    <tr>
-      <td style="width:47px">eng_dev</td>
-      <td style="width:272.122px">
-        <code>/opt/nesi/vdt/run&nbsp;eng_dev &lt;port&gt;</code>
-      </td>
-      <td style="width:143.878px">
-        <p>
-          ABAQUS<br>
-          ANSYS<br>
-          MATLAB<br>
-          COMSOL
-        </p>
-      </td>
-      <td style="width:138px">Centos7</td>
-      <td style="width:62px">xfce</td>
-    </tr>
-    <tr>
-      <td style="width:47px">default</td>
-      <td style="width:272.122px">
-        <code>/opt/nesi/vdt/run&nbsp;default &lt;port&gt;</code>
-      </td>
-      <td style="width:143.878px">
-        <p>&nbsp;</p>
-      </td>
-      <td style="width:138px">Centos7</td>
-      <td style="width:62px">xfce</td>
-    </tr>
-  </tbody>
-</table>
--->

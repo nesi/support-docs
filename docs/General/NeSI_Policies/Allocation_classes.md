@@ -208,5 +208,4 @@ take a while to set up.
 Our team is happy to answer any questions you may have throughout the
 application process.
 
-For more information, see [how we review
-applications](https://support.nesi.org.nz/hc/articles/360000202136).
+For more information, see [how we review applications](../NeSI_Policies/How_we_review_applications.md).

@@ -13,21 +13,19 @@ platform and some noteworthy changes to resource pricing as a result.
 
 ## New Graphics Processing Units (GPUs)
 
-We’ve installed eight NVIDIA A100 GPU cards into the 
+We’ve installed eight NVIDIA A100 GPU cards into the
 [Mahuika HPC system](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md),
 providing a significant boost in computing performance and an
 environment particularly suited to machine learning workloads. Over the
 last few months we’ve worked directly with a group of beta tester
 researchers to ensure this new capability is fit-for-purpose and tuned
-to communities' specific software and tool requirements. 
+to communities' specific software and tool requirements.
 
-These new A100s, alongside 
-[software optimised for data science](https://support.nesi.org.nz/hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-approaches-),
+These new A100s, alongside
+[software optimised for data science](../FAQs/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md)),
 are available to researchers using **machine learning** approaches. If
 this is you, {% include "partials/support_request.html" %} to
 discuss how these new resources could support your work.
-
- 
 
 ## Reduced pricing for P100s
 
@@ -49,8 +47,6 @@ For more technical information about using GPUs on NeSI, [click
 here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
 If you have questions about allocations or how to access the P100s,
 {% include "partials/support_request.html" %}.
-
- 
 
 ## Sharing our learning along the way
 
@@ -79,12 +75,10 @@ community of users, as well as support more advanced and demanding
 performance needs across domains. If you’re interested in using these
 A100s for something other than machine learning, let us know by
 {% include "partials/support_request.html" %}
-that way we can keep you up to date on our plans. 
+that way we can keep you up to date on our plans.
 
 If you have questions or comments on anything mentioned above,
 please {% include "partials/support_request.html" %}
-
- 
 
 Thank you,
 

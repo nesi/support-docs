@@ -43,9 +43,6 @@ my.nesi.org.nz.
      If you still can't find the email, {% include "partials/support_request.html" %}.
 
 !!! note "What next?"
-     -   [Project
-         Eligibility](https://support.nesi.org.nz/hc/en-gb/articles/360000925176-Project-Eligibility)
-     -   [Applying for a new
-         project.](https://support.nesi.org.nz/hc/en-gb/articles/360000174976-Applying-for-a-NeSI-project)
-     -   [Applying to join an existing
-         project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md).
+     -   [Project Eligibility](../../General/NeSI_Policies/Allocation_classes.md)
+     -   [Applying for a new project.](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
+     -   [Applying to join an existing project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md).

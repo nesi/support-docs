@@ -91,7 +91,7 @@ file storage (another managed server endpoint):
 
 !!! info
     Log in to the [NeSI File Manager](https://transfer.nesi.org.nz/file-manager) where you are able to search for DTNs in the Collection field.
-    [Listing of available endpoints on the New Zealand Data Transfer Platform](https://support.nesi.org.nz/hc/en-gb/articles/360000931775)
+    [Listing of available endpoints on the New Zealand Data Transfer Platform](National_Data_Transfer_Platform.md)
 
 Find the NeSI endpoint by typing in "NeSI Wellington DTN V5". Select the
 endpoint "NeSI Wellington DTN V5" from the list, and you will be asked
