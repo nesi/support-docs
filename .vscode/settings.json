@@ -9,6 +9,9 @@
         ],
         "spelling-checks": [
             "docs/**/*.md"
+        ],
+        "test-build": [
+            "docs/**/*.md"
         ]
     },
     "files.autoSave": "afterDelay",
