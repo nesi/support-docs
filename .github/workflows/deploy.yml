@@ -37,20 +37,18 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build documentation
         run: |
-          mkdocs build --clean
+          mkdocs build --clean --quiet
       - name: Adjust permissions
         run: |
-          chmod -c -R +rX site/ | while read line; do
+          chmod -c -R +rX public/ | while read line; do
             echo "::info title=Invalid file permissions automatically fixed::$line"
           done
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
-
+          path: public
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-
       - name: Save build cache
         uses: actions/cache/save@v4
         with:
