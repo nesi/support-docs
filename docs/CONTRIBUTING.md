@@ -12,7 +12,13 @@ Any changes made should be merged via a pull request.
 
 ## Minor edits through GitHub
 
-Press `.`, will open up Visual Studio Code in browser.
+Open the GitHub page of the repository, i.e. https://github.com/nesi/support-docs, and find the support page you want to edit.  
+Then click on the edit icon or press <kbd>e</kbd> to open the integrated editor.
+
+In the integrated editor, use the `preview` tab to check the rendered version.
+**Note:** Be aware that, unfortunately, the GitHub preview won't render properly some elements, in particular admonitions.
+
+Once you have finished, press the `Commit changes...` button to create a new commit.
 
 ## Major edits through GitHub
 
