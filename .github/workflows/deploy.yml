@@ -3,33 +3,56 @@ on:
  push:
     branches: [main]
  workflow_dispatch:
+env:
+  MODULE_LIST_PATH: docs/assets/module-list.json
 permissions:
   contents: write
-env:
-  INPUTS_DRYRUN: ${{ inputs.dry-run }}
-  MODULE_LIST_PATH: docs/assets/module-list.json
+  id-token: write
+  pages: write
 jobs:
-  deploy:
+  documentation:
+    name: Build documentation
     runs-on: ubuntu-latest
-    # if:  ( ${{ github.event_name }} == 'workflow_dispatch' || ${{ github.event.workflow_run.conclusion == 'success' }} )
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-         fetch-depth: 0 
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
+          fetch-depth: 0
+          sparse-checkout: |
+            docs
+            overrides
+      - name: Set up Python runtime
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Set up build cache
+        uses: actions/cache/restore@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: mkdocs-${{ hashfiles('.cache/**') }}
           path: .cache
           restore-keys: |
-            mkdocs-material-
-      - name: Install dependencies
-        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - run: mkdocs gh-deploy --verbose --force
+            mkdocs-
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Build documentation
+        run: |
+          mkdocs build --clean
+      - name: Adjust permissions
+        run: |
+          chmod -c -R +rX site/ | while read line; do
+            echo "::info title=Invalid file permissions automatically fixed::$line"
+          done
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+
+      - name: Save build cache
+        uses: actions/cache/save@v4
+        with:
+          key: mkdocs-${{ hashfiles('.cache/**') }}
+          path: .cache
