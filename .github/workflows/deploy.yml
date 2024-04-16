@@ -5,6 +5,7 @@ on:
  workflow_dispatch:
 env:
   MODULE_LIST_PATH: docs/assets/module-list.json
+  PYTHON_VERSION: 3.x
 permissions:
   contents: write
   id-token: write
@@ -24,6 +25,7 @@ jobs:
       - name: Set up Python runtime
         uses: actions/setup-python@v5
         with:
+          python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
           cache-dependency-path: requirements.txt
       - name: Set up build cache
