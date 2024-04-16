@@ -9,7 +9,7 @@ zendesk_section_id: 360000189696
 ---
 
 !!! prerequisite
-     -   Be a [member of an active project.](https://support.nesi.org.nz/hc/en-gb/articles/360000693896-Applying-to-join-a-NeSI-project)
+     -   Be a [member of an active project.](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md)
      -   Windows with [WSL enabled.](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
 
 Currently the native Windows command prompt (even with WSL enabled) does

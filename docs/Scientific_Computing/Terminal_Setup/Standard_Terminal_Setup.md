@@ -10,7 +10,7 @@ zendesk_section_id: 360000189696
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
      -   Set up your [Linux Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
      -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
      -   Using standard Linux/Mac terminal *or* [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
@@ -88,7 +88,7 @@ having to re-enter authentication e.g.
 scp <path/filename> mahuika:~/
 ```
 
-(For more info visit [data transfer](https://support.nesi.org.nz/hc/en-gb/articles/360000578455-File-Transfer-with-SCP)).
+(For more info visit [data transfer](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md).
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)

@@ -434,7 +434,7 @@ If an `nlput` or `nlpurge` is running in that project, the project is
 locked until the task is finished.
 
 **If a job stays in one state for an unexpectedly long time, please
-[contact NeSI Support](https://support.nesi.org.nz/hc/request/new)**.
+{% include "partials/support_request.html" %}**.
 
 ## View nearline quota
 

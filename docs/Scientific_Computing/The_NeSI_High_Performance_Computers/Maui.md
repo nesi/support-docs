@@ -1,5 +1,6 @@
 ---
 created_at: '2018-04-22T23:01:48Z'
+status: deprecated
 tags:
 - hpc
 - info
@@ -23,8 +24,7 @@ simulations and calculations that require large numbers of CPUs working
 in a tightly-coupled parallel fashion, as well as interactive data
 analysis. To support workflows that are primarily single core jobs, for
 example pre- and post-processing work, and to provide virtual lab
-services, we offer a small number [Māui ancillary
-nodes](https://support.nesi.org.nz/hc/articles/360000203776).
+services, we offer a small number [Māui ancillary nodes](../The_NeSI_High_Performance_Computers/Maui_Ancillary.md).
 
 !!! tips
      The computing capacity of the Māui ancillary nodes is limited. If you
@@ -43,18 +43,17 @@ lander node. Jobs can be submitted to the HPC from these nodes.
 
 1.  The Cray Programming Environment on the XC50 (supercomputer) differs
     from that on Mahuika and the Māui Ancillary nodes.
-2.  The `/home, /nesi/project`, and `/nesi/nobackup` [file
-    systems](https://support.nesi.org.nz/hc/articles/360000177256) are
+2.  The `/home, /nesi/project`, and `/nesi/nobackup` [file systems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md) are
     mounted on Māui.
 3.  The I/O subsystem on the XC50 can provide high bandwidth to disk
     (large amounts of data), but not many separate reading or writing
-    operations.** **If your code performs a lot of disk read or write
+    operations. If your code performs a lot of disk read or write
     operations, it should be run on either the [Māui ancillary
     nodes](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md) or [Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md).
 
 All Māui resources are indicated below, and the the Māui Ancillary Node
 resources
-[here](https://support.nesi.org.nz/knowledge/articles/360000203776/en-gb?brand_id=30406).
+[here](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md).
 
 ## Māui Supercomputer (Cray XC50)
 

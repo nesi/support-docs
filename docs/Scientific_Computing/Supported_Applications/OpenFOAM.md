@@ -61,7 +61,7 @@ reconstructPar -latestTime     #Collect
 
 OpenFOAM generates a large number of files during run-time. In addition
 to the I/O load there is also the danger of using up available
-[inodes](https://support.nesi.org.nz/knowledge/articles/360000177256).
+[inodes](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
 **Filesystems in excess of their allocation will cause any job trying to
 write there to crash.**

@@ -14,23 +14,6 @@ zendesk_section_id: 360000030876
      Partitions on these systems that may be used for NeSI workloads carry
      the prefix `nesi_`.
 
-<!-- ## Definitions
-
-**CPU** - A logical core, also known as a hardware thread. Referred to
-as a "CPU" in the Slurm documentation.  Since
-[Hyperthreading](https://support.nesi.org.nz/hc/en-gb/articles/360000568236/)
-is enabled, there are two CPUs per physical core, and every task— and
-therefore every job — is allocated an even number of CPUs.
-
-**Job:** A running batch script and any other processes which it might
-launch with *srun*.
-
-**Node: **A single computer within the cluster with its own CPUs and RAM
-(memory), and sometimes also GPUs. A node is analogous to a workstation
-(desktop PC) or laptop.
-
-**Walltime: **Real world time, as opposed to CPU time (walltime x CPUs).
- -->
 ## Māui (XC50) Slurm Partitions
 
 Nodes are not shared between jobs on Māui, so the minimum charging unit
@@ -111,8 +94,7 @@ higher-priority jobs can start reasonably quickly.
 ### Debug QoS
 
 Each job has a "QoS", with the default QoS for a job being determined by
-the [allocation
-class](https://support.nesi.org.nz/hc/en-gb/articles/360000202535-Overview)
+the [allocation class](../../General/NeSI_Policies/Allocation_classes.md)
 of its project. Specifying `--qos=debug` will override that and give the
 job high priority, but is subject to strict limits: 15 minutes per
 job, and only 1 job at a time per user. Debug jobs are limited to 2

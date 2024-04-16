@@ -17,10 +17,9 @@ zendesk_section_id: 360000189716
 ---
 
 !!! prerequisite
-    Have an [active account and project.](https://support.nesi.org.nz/hc/en-gb/sections/360000196195-Accounts-Projects)
+    Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
 
-Find more information on the different types of directories
-[here](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
+Find more information on [the NeSI Filesystem](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
 ## Using the Jupyter interface
 
@@ -45,7 +44,7 @@ The Download button is at the bottom.
 ## Standard Terminal
 
 !!! prerequisite
-    Have SSH [configured as recommended](https://support.nesi.org.nz/hc/en-gb/sections/360000189696)
+    Have SSH [configured as recommended](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 In a local terminal the following commands can be used to:
 
@@ -63,7 +62,7 @@ scp mahuika:<path/filename> <path/filename>
 
 !!! note
     - This will only work if you have set up aliases as described in
-      [Terminal Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Terminal-Setup-MacOS-Linux-).
+      [Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
     - As the terms 'maui' and 'mahuika' are defined locally, the above
       commands *only works when using a local terminal* (i.e. not on Mahuika).
     - If you are using Windows subsystem, the root paths are different

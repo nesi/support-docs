@@ -10,11 +10,9 @@ zendesk_article_id: 360000718515
 zendesk_section_id: 360000040076
 ---
 
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 ## Description
 
@@ -85,7 +83,7 @@ Further to that we also suggest,
     Recommended
     reading..[https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/](https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/#)<http://qb.cshl.edu/genomescope/>
 - When passing `--localmem` to supernova, ensure this number is less
-    than the total memory passed to Slurm. 
+    than the total memory passed to Slurm.
 - Pass `${SLURM_CPUS_PER_TASK}` to supernova with the `--localcores`
     argument.
 
@@ -130,8 +128,7 @@ takes the following general form
 `ssh -L <d>:<node>:<port> -N <server>`
 
 - &lt;d&gt; An integer
-- &lt;server&gt; see: [  
-    https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup](https://support.nesi.org.nz/hc/en-gb/articles/360000625535-Recommended-Terminal-Setup)
+- &lt;server&gt; see: [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 When details are added to the general form from the specifics in the
 snippet above, the following could be run..

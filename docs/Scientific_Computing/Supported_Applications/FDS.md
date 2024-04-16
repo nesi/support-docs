@@ -26,9 +26,9 @@ General documentation can be found
 [here](https://github.com/firemodels/fds/releases/download/FDS6.7.1/FDS_User_Guide.pdf).
 
 FDS can utilise both
-[MPI](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-SLURM-Parallel-Execution#t_mpi)
+[MPI](../../Getting_Started/Next_Steps/Parallel_Execution.md#mpi)
 and
-[OpenMP](https://support.nesi.org.nz/hc/en-gb/articles/360000690275-SLURM-Parallel-Execution#t_multi)
+[OpenMP](../../Getting_Started/Next_Steps/Parallel_Execution.md#multi-threading)
 
 ## Example Script
 
