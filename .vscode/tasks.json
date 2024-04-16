@@ -7,14 +7,8 @@
             "args": [
                 "${file}"
             ],
-            "type": "process",
-            "group": "none",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_meta_check.py",
@@ -40,14 +34,8 @@
             "args": [
                 "${file}"
             ],
-            "group": "none",
-            "type": "process",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_proselint.py",
@@ -70,14 +58,8 @@
             "args": [
                 "${file}"
             ],
-            "type": "process",
-            "group": "none",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_pyspelling.py",
@@ -97,14 +79,8 @@
         },
         {
             "label": "test-build",
-            "type": "process",
-            "group": "none",
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "./checks/run_test_build.py",
@@ -132,11 +108,7 @@
             "type": "shell",
             "isBackground": true,
             "presentation": {
-                "echo": true,
                 "reveal":"never",
-                "panel": "shared",
-                "close": false,
-                "focus": false,
                 "showReuseMessage": false
             },
             "command": "mkdocs serve --dirty --quiet"
