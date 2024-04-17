@@ -13,13 +13,22 @@ jobs:
     if: ${{ github.base_ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - run: gh pr checks --watch
   automerge-test2:
     runs-on: ubuntu-latest
     if: ${{ github.event.checks.conclusion == 'success' }} 
     steps:
+    - uses: actions/checkout@v4
+      with:
+            fetch-depth: 0
     - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
   automerge-test3:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
