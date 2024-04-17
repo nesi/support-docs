@@ -16,8 +16,7 @@ Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub and GitLab for
 developing, managing and distributing code.
 
-Full Git documentation can be
-found [here](https://git-scm.com/docs/git), or using `man git`.
+Full Git documentation can be found [here](https://git-scm.com/docs/git), or using `man git`.
 
 ![Git\_Diagram.svg](../../assets/images/Git-Reference_Sheet.svg)
 

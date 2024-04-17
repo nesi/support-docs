@@ -29,13 +29,9 @@ Try to keep your title short enough that it does not 'wrap' (become more than on
 this usually happens around 24-ish characters however this will vary depending on the letters being used.
 
 !!! tip "File Name hygiene"
-  Regular 'snake_case' naming conventions should be used for articles/categories.
+    Regular 'snake_case' naming conventions should be used for articles/categories, i.e. no non-alphanumeric characters (except `_` and `-`).
 
-  i.e. No non-alphanumeric characters (except `_` and `-`).
-  
-  When converting from filename, to title, spaces will replace `_` and the first letter of the first word will be capitalised (if it wasn't already).
-
-  e.g. `My_Nice_and_Tidy_Filename.md` -> `My Nice and Tidy Filename`
+    When converting from filename, to title, spaces will replace `_` and the first letter of the first word will be capitalised (if it wasn't already), e.g. `My_Nice_and_Tidy_Filename.md` becomes `My Nice and Tidy Filename`
 
 In the case of an articles (including category-articles), this title can be overridden by setting one in the page [front-matter using the 'title' keyword](#article-metadata).
 If you need to rename a regular category (one without an `index.md`), this can be done in the [`.pages.yml` file](#articlecategory-order).

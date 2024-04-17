@@ -53,6 +53,6 @@ factor in the authentication process.
 This code rotates every 30 seconds, and it **can only be used once**.
 This means that you can only try logging in to the lander node once
 every 30 seconds.
+
 !!! tip "What next?"
-    - [Getting access to the
-      cluster](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+    [Getting access to the cluster](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
