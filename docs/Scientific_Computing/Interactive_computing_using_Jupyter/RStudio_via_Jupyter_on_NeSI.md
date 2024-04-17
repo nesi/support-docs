@@ -148,8 +148,8 @@ cat ~/.config/rstudio_on_nesi/server_password
 
 ### Error 599
 
-    RStudio fails to load, times out, fails to initialze  
-    If your RStudio session won't load, a possible solution is to delete
-    the contents of the two hidden directories  in your home directory.
-    -   `.local/share/rstudio`
-    -   `.local/share/rstudio_on_nesi`
+RStudio fails to load, times out, fails to initialze  
+If your RStudio session won't load, a possible solution is to delete the contents of the two hidden directories in your home directory.
+
+- `.local/share/rstudio`
+- `.local/share/rstudio_on_nesi`
