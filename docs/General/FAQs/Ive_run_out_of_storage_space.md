@@ -64,7 +64,6 @@ using,
 ```sh
 /usr/sbin/unsquashfs destination.squash
 ```
-{% if %}
 
 You can do many other things with SquashFS archives, like quickly
 list the files in the archive, extract some but not all of the
