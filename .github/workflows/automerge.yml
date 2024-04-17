@@ -2,7 +2,9 @@ name: automerge
 on:
   pull_request:
     types:
-      - unassigned
+      - opened
+    branches:
+      - main
 jobs:
   automerge-test1:
     if: ${{ github.base_ref == 'main' }}
