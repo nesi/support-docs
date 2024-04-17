@@ -1,17 +1,20 @@
 name: automerge
 on:
-  pull_request_target:
-    branches: [main]
+  pull_request:
     types:
       - unassigned
 jobs:
-  automerge-test:
+  automerge-test1:
+    if: ${{ github.base_ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
     - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
-  automerge:
+  automerge-test2:
     runs-on: ubuntu-latest
     if: ${{ github.event.checks.conclusion == 'success' }} 
-    # if: ${{ github.base_ref == 'main' }}
+    steps:
+    - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
+  automerge-test3:
+    runs-on: ubuntu-latest
     steps:
     - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
