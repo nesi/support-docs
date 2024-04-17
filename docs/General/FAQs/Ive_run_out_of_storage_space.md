@@ -9,8 +9,6 @@ zendesk_article_id: 360001125996
 zendesk_section_id: 360000039036
 ---
 
-{% if %}
-
 There are two tracked resources in the NeSI filesystem, *disk space* and
 *inodes (number of files)*.
 
