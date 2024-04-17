@@ -96,6 +96,7 @@
                     "line": 6,
                     "message": 7
                 },
+                "owner": "test-build",
                 "fileLocation": [
                     "relative",
                     "${workspaceFolder}/docs"
@@ -106,9 +107,6 @@
             "label": "serve",
             "group": "build",
             "type": "shell",
-            "runOptions": {
-                "runOn": "folderOpen"
-            },
             "isBackground": true,
             "presentation": {
                 "reveal":"never",
