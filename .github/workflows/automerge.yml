@@ -17,11 +17,11 @@ jobs:
         fetch-depth: 0
     - run: |
         gh pr checks $GITHUB_HEAD_REF --watch --fail-fast --required
-        gh run view $GITHUB_HEAD_REF
-        gh api \
-          -H "Accept: application/vnd.github+json" \
-          -H "X-GitHub-Api-Version: 2022-11-28" \
-          /repos/${{ github.repository_owner }}/${{ github.repository }}/check-runs
-        gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
+        gh run view --json run_id $GITHUB_HEAD_REF
+        # gh api \
+        #   -H "Accept: application/vnd.github+json" \
+        #   -H "X-GitHub-Api-Version: 2022-11-28" \
+        #   /repos/${{ github.repository_owner }}/${{ github.repository }}/check-runs
+        # gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
 
 
