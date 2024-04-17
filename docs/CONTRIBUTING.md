@@ -19,6 +19,8 @@ Any changes made should be merged via a pull request.
 - Once you have finished, press the `Commit changes...` button to create a new commit.
   This will lead you to create a new pull request too.
 
+  ![GitHub pull request form](assets/images/example_pr_github.png)
+
 ## Major edits through GitHub
 
 This repository has been configured to be useable with [GitHub Codespaces](https://github.com/features/codespaces).
