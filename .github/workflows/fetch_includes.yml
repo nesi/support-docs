@@ -36,7 +36,7 @@ jobs:
         id: commit
         run: |
           git add --all
-          git commit -m "Add updated remote assets" || echo "No Changes";exit 0
+          git commit -m "Add updated remote assets" || (echo "No Changes";exit 0)
           git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
           gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
           gh pr merge $(date +'%Y-%m-%d')-${BRANCH_NAME} --squash --auto --delete-branch
