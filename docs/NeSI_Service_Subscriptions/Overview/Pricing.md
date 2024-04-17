@@ -8,8 +8,6 @@ zendesk_article_id: 7349177261455
 zendesk_section_id: 7348891753487
 ---
 
-{% if %}
-
 We have two categories of pricing for NeSI services through
 Subscriptions:
 
