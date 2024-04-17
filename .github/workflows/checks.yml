@@ -145,9 +145,4 @@ jobs:
       - run: echo "::group::Test Build"
       - run: ./checks/run_test_build.py
       - run: echo "::endgroup::"
-  automerge:
-    runs-on: ubuntu-latest
-    needs: [spellcheck, proselint, mdlint, metacheck, testBuild]
-    if: ${{ github.base_ref == 'main' }}
-    steps:
-    - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
+
