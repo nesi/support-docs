@@ -4,8 +4,11 @@ on:
     branches: [main]
     types:
       - unassigned
-      - review_request_removed
 jobs:
+  automerge-test:
+    runs-on: ubuntu-latest
+    steps:
+    - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
   automerge:
     runs-on: ubuntu-latest
     if: ${{ github.event.checks.conclusion == 'success' }} 
