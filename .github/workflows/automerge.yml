@@ -1,4 +1,6 @@
 name: automerge
+env:
+  GH_TOKEN: ${{ github.token }}
 on:
   pull_request:
     types:
@@ -6,11 +8,12 @@ on:
     branches:
       - main
 jobs:
+  
   automerge-test1:
     if: ${{ github.base_ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
-    - run: gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
+    - run: gh pr checks --watch
   automerge-test2:
     runs-on: ubuntu-latest
     if: ${{ github.event.checks.conclusion == 'success' }} 
