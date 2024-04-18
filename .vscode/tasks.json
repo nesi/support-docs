@@ -96,6 +96,7 @@
                     "line": 6,
                     "message": 7
                 },
+                "owner": "test-build",
                 "fileLocation": [
                     "relative",
                     "${workspaceFolder}/docs"
