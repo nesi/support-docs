@@ -11,33 +11,33 @@ import re
 This doesnt work and I have no idea why.
 """
 
-def ignore_macro(record):
+def parse_macro(record):
 
+    # These are not useful messages
     if record.name == "mkdocs.commands.build":
         return False
+    # Macro log messages are wrapped in a INFO message (priciple of least astonishment).
+    # Need to be parsed to be useful
     if record.name == "mkdocs.plugins.mkdocs_macros.util":
         m = re.search(r"\[macros\] - (?P<level>\S*) # _(?P<title>.*)_\n\n_File_: `(?P<file>.*)`\n\n(?P<message>.*)",
                       record.msg, re.MULTILINE)
-        if m:
-            g = m.groupdict()
-            record.levelname = g["level"]
-            record.name = g["title"]
-            record.filename = g["file"]
-            record.msg = g["message"]
-        else:
+        if not m:
             return False
+
+        g = m.groupdict()
+        record.levelname = g["level"]
+        record.name = g["title"]
+        record.filename = g["file"]
+        record.msg = g["message"]
     return True
     
 if __name__ == '__main__':
-    try:
-        log = logging.getLogger('root')
-        log.setLevel(logging.INFO)
-        sh = logging.StreamHandler(sys.stdout)
-        sh.addFilter(ignore_macro)
-        sh.setFormatter(logging.Formatter(
-            '::%(levelname)s file=%(filename)s,title=%(name)s,col=0,endColumn=0,line=%(lineno)s::%(message)s'))
-        log.addHandler(sh)
-        config = load_config(config_file_path="./mkdocs.yml")
-        build.build(config, None, True)
-    except Exception as e:
-        print(e)
+    log = logging.getLogger('root')
+    log.setLevel(logging.INFO)
+    sh = logging.StreamHandler(sys.stdout)
+    sh.addFilter(parse_macro)
+    sh.setFormatter(logging.Formatter(
+        '::%(levelname)s file=%(filename)s,title=%(name)s,col=0,endColumn=0,line=%(lineno)s::%(message)s'))
+    log.addHandler(sh)
+    config = load_config(config_file_path="./mkdocs.yml")
+    build.build(config, None, dirty=True)

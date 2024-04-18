@@ -37,7 +37,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: false
   - macros:
-      on_error_fail: false
+      on_error_fail: true
       verbose: false 
       module_name: macro_hooks
       include_dir: overrides
