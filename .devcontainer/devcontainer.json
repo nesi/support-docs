@@ -35,7 +35,8 @@
                 "redhat.vscode-yaml",
                 "GitHub.vscode-pull-request-github",
                 "jebbs.markdown-extended",
-                "Gruntfuggly.triggertaskonsave"
+                "Gruntfuggly.triggertaskonsave",
+                "carlthome.git-line-blame"
             ],
             "settings": {
                 "extensions.ignoreRecommendations": true
