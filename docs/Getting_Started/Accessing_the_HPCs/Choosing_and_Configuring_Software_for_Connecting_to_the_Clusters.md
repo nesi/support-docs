@@ -104,8 +104,7 @@ friendly place to become familiar with command line use.
 There are multiple free options when it comes to VM software. We
 recommend [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-Further instructions on how to set up a virtual machine can be found
-[here](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
+[See instructions on how to set up a virtual machine.](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
 Once you have a working VM you may continue following the
 instructions as given for [Linux/MacOS](#linux-or-mac-os).
