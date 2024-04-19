@@ -5,7 +5,6 @@ tags:
 - mobaxterm
 - gitbash
 - login
-title: Choosing and Configuring Software for Connecting to the Clusters
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360001016335
