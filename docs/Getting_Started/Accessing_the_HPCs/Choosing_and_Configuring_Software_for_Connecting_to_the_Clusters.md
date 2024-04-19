@@ -46,9 +46,9 @@ On MacOS or Linux you will already have a terminal emulator
 installed, usually called, "Terminal." To find it, simply search for
 "terminal".  
 Congratulations! You are ready to move to the next step.
+
 !!! prerequisite "What next?"
-    -  Setting up your [Default
-       Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 ## Windows
 
