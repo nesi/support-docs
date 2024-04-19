@@ -52,7 +52,6 @@
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.wordWrap": "on",
         "editor.suggest.preview": true,
-        "editor.suggest.localityBonus": true,
         "editor.suggest.showUsers": false,
     },
 }
