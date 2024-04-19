@@ -49,6 +49,8 @@ Congratulations! You are ready to move to the next step.
 !!! prerequisite "What next?"
     Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
+{% if %}
+
 ## Windows
 
 As Windows is not a "Unix-Like" operating system, getting access to a
