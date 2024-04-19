@@ -49,8 +49,6 @@ Congratulations! You are ready to move to the next step.
 !!! prerequisite "What next?"
     Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
-{% if %}
-
 ## Windows
 
 As Windows is not a "Unix-Like" operating system, getting access to a
@@ -106,8 +104,7 @@ friendly place to become familiar with command line use.
 There are multiple free options when it comes to VM software. We
 recommend [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-Further instructions on how to set up a virtual machine can be found
-[here](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
+[See instructions on how to set up a virtual machine.](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
 Once you have a working VM you may continue following the
 instructions as given for [Linux/MacOS](#linux-or-mac-os).
