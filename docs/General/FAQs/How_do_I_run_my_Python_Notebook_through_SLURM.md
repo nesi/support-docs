@@ -2,8 +2,8 @@
 created_at: '2023-09-17T23:51:43Z'
 tags: []
 title: How do I run my Python Notebook through SLURM?
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: -1
 zendesk_article_id: 7918332923023
 zendesk_section_id: 360000039036
 ---
