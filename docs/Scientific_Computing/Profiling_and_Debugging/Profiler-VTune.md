@@ -41,6 +41,7 @@ First login to Mahuika and then run:
 
 ``` sh
 module load VTune
+module load Qt5/5.12.3-GCCcore-9.2.0
 ```
 
 To use the VTune amplifier command line tool help run:
