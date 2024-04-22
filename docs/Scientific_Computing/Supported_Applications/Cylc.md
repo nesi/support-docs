@@ -2,8 +2,8 @@
 created_at: '2022-08-03T21:35:50Z'
 tags: []
 title: Cylc
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 5254610390415
 zendesk_section_id: 360000040076
 ---

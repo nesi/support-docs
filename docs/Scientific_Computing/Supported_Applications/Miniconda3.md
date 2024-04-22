@@ -2,8 +2,8 @@
 created_at: '2020-06-23T23:10:13Z'
 tags: []
 title: Miniconda3
-vote_count: 4
-vote_sum: 4
+vote_count: 5
+vote_sum: 5
 zendesk_article_id: 360001580415
 zendesk_section_id: 360000040076
 ---
