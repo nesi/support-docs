@@ -41,5 +41,17 @@
     "git.useEditorAsCommitInput": false,
     "yaml.schemas": {
         "https://json.schemastore.org/github-workflow.json": "file:///workspaces/support-docs/.github/workflows/deploy.yml"
-    }
+    },
+    "markdown.copyFiles.destination": {
+        "docs/**/*": "docs/assets/images/"
+    },
+    "markdown.updateLinksOnFileMove.enabled":"prompt",
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": true,
+        "editor.unicodeHighlight.invisibleCharacters": true,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.suggest.preview": true,
+        "editor.suggest.showUsers": false,
+    },
 }
