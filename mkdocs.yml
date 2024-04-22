@@ -55,6 +55,7 @@ extra_css:
   - assets/stylesheets/theme.css
 extra_javascript:
     - assets/javascripts/general.js
+    - https://status.nesi.org.nz/embed/script.js
 theme:
   custom_dir: overrides
   favicon: assets/icons/favicon.ico
