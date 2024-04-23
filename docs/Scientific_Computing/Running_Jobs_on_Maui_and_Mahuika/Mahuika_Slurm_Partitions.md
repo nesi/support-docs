@@ -47,7 +47,7 @@ E.g.:
 sbatch: `bigmem` is not the most appropriate partition for this job, which would otherwise default to `large`. If you believe this is incorrect then {% include "partials/support_request.html" %} and quote the Job ID number.
 ```
 
-<table><tbody>
+<table class="table--biggified"><tbody>
 <tr>
 <th>Name</th>
 <th>Max Walltime</th>
@@ -201,6 +201,7 @@ GB, and 1 GPU.
 | A100 (`gpu` partition) | NVIDIA Tesla A100 PCIe 40GB cards                                                                                                              |
 | A100-1g.5gb            | 1 NVIDIA Tesla A100 PCIe 40GB card divided into [7 MIG GPU slices](https://www.nvidia.com/en-us/technologies/multi-instance-gpu/) (5GB each).  |
 | A100 (`hgx` partition) | NVIDIA Tesla A100 80GB, on a HGX baseboard with NVLink GPU-to-GPU interconnect between the 4 GPUs                                              |
+{: table--biggified }
 
 The default GPU type is P100, of which you can request 1 or 2 per node:
 
