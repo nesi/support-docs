@@ -44,7 +44,7 @@ partition then you may receive a warning, please do not ignore this.
 E.g.:
 
 ```out
-sbatch: `bigmem` is not the most appropriate partition for this job, which would otherwise default to `large`. If you believe this is incorrect then {% include "partials/support_request.html" %} and quote the Job ID number.
+sbatch: `bigmem` is not the most appropriate partition for this job, which would otherwise default to `large`. If you believe this is incorrect then contact support and quote the Job ID number.
 ```
 
 <table><tbody>
