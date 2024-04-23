@@ -33,7 +33,7 @@ run successfully.
 sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" 
 # "$0" is equal to the name of this script.
 
-# Code that implements checkpointing
+# Code that implements checkpointing
 ```
 
 This job will resubmit itself forever until stopped.
