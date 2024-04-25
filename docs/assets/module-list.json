@@ -11921,6 +11921,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
+                    "4.0.3-foss-2023a",
                     "4.0.3-gimkl-2017a",
                     "4.0.3-gimpi-2018b",
                     "4.0.3-gimpi-2020a",
