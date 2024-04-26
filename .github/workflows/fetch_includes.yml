@@ -40,7 +40,7 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
-            if [[ $(git log origin/main..HEAD) ]]; then 
+            if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then 
                 git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --title test --body test
                 gh pr merge $(date +'%Y-%m-%d')-${BRANCH_NAME} --squash --admin --delete-branch
