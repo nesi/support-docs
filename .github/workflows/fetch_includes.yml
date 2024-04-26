@@ -39,7 +39,7 @@ jobs:
         id: commit
         run: |
             git status
-            git log
+            git branch -v
             git log origin/main
             git log origin/main..HEAD
             if [[ $(git log origin/main..HEAD) ]]; then 
