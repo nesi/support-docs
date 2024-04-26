@@ -22,21 +22,22 @@ jobs:
           git pull origin ${GITHUB_REF}
           git checkout -b $(date +'%Y-%m-%d')-${BRANCH_NAME}
           mkdir -pv docs/assets/glossary
-      - name: Fetch Module List
-        run: wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
-      - name: Link apps pages
-        run: python3 .github/workflows/link_apps_pages.py
-      - name: Fetch Glossary
-        run: wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
-      - name: Fetch Dictionary
-        run: wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
-      - name: Fetch Snippets
-        run: wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
+      - name: Module List
+        run: |
+          wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
+          python3 .github/workflows/link_apps_pages.py
+          git add --all
+          git commit -m "Updated Module List" || (echo "No Changes";exit 0)
+      - name: Fetch Wordlist
+        run: |
+            wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
+            wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
+            wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
+            git add --all
+            git commit -m "Updated Glossary" || (echo "No Changes";exit 0)
       - name: Commit to Branch 
         id: commit
         run: |
-          git add --all
-          git commit -m "Add updated remote assets" || (echo "No Changes";exit 0)
           git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
           gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
           gh pr merge $(date +'%Y-%m-%d')-${BRANCH_NAME} --squash --auto --delete-branch
