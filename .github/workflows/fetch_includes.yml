@@ -38,8 +38,12 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
-          git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
-          gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --title 'Update Remote Assets' --body 'Created by Github action'
-          gh pr merge $(date +'%Y-%m-%d')-${BRANCH_NAME} --squash --auto --delete-branch
+            if [[ $(git log origin/main..HEAD) ]]; then 
+                git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
+                gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --fill --fill-verbose
+                gh pr merge $(date +'%Y-%m-%d')-${BRANCH_NAME} --squash --admin --delete-branch
+            else
+                echo "no changes"
+            fi
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
