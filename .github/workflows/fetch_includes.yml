@@ -38,6 +38,10 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
+            git status
+            git log
+            git log origin/main
+            git log origin/main..HEAD
             if [[ $(git log origin/main..HEAD) ]]; then 
                 git push origin $(date +'%Y-%m-%d')-${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H $(date +'%Y-%m-%d')-${BRANCH_NAME} --fill --fill-verbose
