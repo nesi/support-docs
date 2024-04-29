@@ -27,6 +27,7 @@ extra:
     property: G-TVQR4R1F40
 plugins:
   - search
+  - open-in-new-tab
   - redirects:
       map_file: docs/redirect_map.yml
   - awesome-pages:
