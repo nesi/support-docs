@@ -102,5 +102,4 @@ size score, it is our general experience that an ability to be
 backfilled is on the whole more useful when it comes to getting work
 done on the HPCs.
 
-More information about backfill can be found
-[here](https://slurm.schedmd.com/sched_config.html).
+More information about backfill can be found [here](https://slurm.schedmd.com/sched_config.html).
