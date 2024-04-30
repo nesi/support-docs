@@ -19,17 +19,12 @@ user.
 
 Click on the links below to add the date & Zoom link to your calendar:
 
-- [03 April (Wednesday): 3:00-4:00
-    PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MXNtdHRraWVxMWZpcWlmNXJ2aHIyYWUwa28gY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
-- [10 April (Wednesday): 9:00-10:00
-    AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3BtNnJkbHJ2bWtyc3BxZWVtanQ0a2VpN3EgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
-- [17 April (Wednesday): 3:00-4:00
-    PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTdrNjJxMDlhODltZGV1Z3B1dDNmNWE1cWEgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-
-- [24 April (Wednesday): 9:00-10:00
-    AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MXN0aGx1bjJpbjRicnJpMWZka2Jkc3NjbHIgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+* [01 May (Wednesday): 9:00-10:00 AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmM1cmZpanZwOW1ra2gwZGNycWxrbmJkbXYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+* [08 May (Wednesday): 3:00-4:00 PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzdobTc4YTM3OWoxcGIyMTQ0aHY4NjM2anAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+* [15 May (Wednesday): 9:00-10:00 AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGowZ200NmpsbHFhc29nbGQ3OG1nNWNqb2ogY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+* [22 May (Wednesday): 3:00-4:00 PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmNnMDFndTZycXVmdWtscmVlbHJhM21jOHMgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+* [29 May (Wednesday): 9:00-10:00 AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N3ZkMTJ0NW9vcmRnZGYxcHUwNmFqZXNsMjcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
 
 If you are unable to add an Office Hour session to your calendar through
 these links, please email us at [training@nesi.org.nz](mailto:training@nesi.org.nz) and we can send a
