@@ -18,6 +18,7 @@
     // Use 'postCreateCommand' to run commands after the container is created.
     //"postCreateCommand": "pip3 install --user -r requirements.txt",
     "postCreateCommand": [
+        "git config --global pull.rebase false",
         ".devcontainer/install-deps.bash",
         "mkdir -p $HOME/.config/vscode-dev-containers/ && touch $HOME/.config/vscode-dev-containers/first-run-notice-already-displayed"
     ],
