@@ -43,7 +43,7 @@
         "https://json.schemastore.org/github-workflow.json": "file:///workspaces/support-docs/.github/workflows/deploy.yml"
     },
     "markdown.copyFiles.destination": {
-        "docs/**/*": "docs/assets/images/"
+        "docs/**/*": "/docs/assets/images/"
     },
     "markdown.updateLinksOnFileMove.enabled":"prompt",
     "[markdown]": {
