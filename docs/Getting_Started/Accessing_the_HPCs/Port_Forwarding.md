@@ -8,11 +8,8 @@ zendesk_article_id: 360001523916
 zendesk_section_id: 360000034315
 ---
 
-
 !!! prerequisite
-    -   Have your [connection to the NeSI
-        cluster](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
-        configured
+    Have your [connection to the NeSI cluster](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md) configured
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
