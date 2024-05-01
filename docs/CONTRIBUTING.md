@@ -126,6 +126,24 @@ If some of the CI checks failed (make sure they are not important ones), you wil
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
+## Schedule A Merge Request
+
+Any request can be scheduled to automatically merge at a certain time by adding the following to your merge request message.
+
+```md
+/schedule <datetime>
+```
+
+Where <datetime> is [any string that can be parsed by `Date()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
+
+e.g.
+
+```md
+/schedule Wednesday
+/schedule 01-05-2024
+/schedule 20240501T160000
+```
+
 ## Update Remote Assets
 
 Certain files need to be fetched from other repos for up to date info. This will be automated, but for not the proccess is manual.
