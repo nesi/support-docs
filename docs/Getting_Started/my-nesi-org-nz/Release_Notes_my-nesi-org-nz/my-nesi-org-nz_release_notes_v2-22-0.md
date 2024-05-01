@@ -27,7 +27,7 @@ title: my.nesi.org.nz release notes v2.22.0
 
 ## Fixes
 
-- The total value of compute units values used in the current allocation are now correctly displayed Mahuika allocation only in the project details green box.
+- Users with Mahuika allocations can now see the total compute values used to date in their current allocation, displayed in the project details section of their MyNeSI dashboard (green box at top of page).
 
 If you have any questions about any of the updates or fixes, please
 {% include "partials/support_request.html" %}.
