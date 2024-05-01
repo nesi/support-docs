@@ -17,7 +17,7 @@ jobs:
         with:
           merge_method: squash
           # Time zone to use. Default is UTC.
-          time_zone: 'Pacific/Auckland'
+          # time_zone: 'Pacific/Auckland'
           require_statuses_success: 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
