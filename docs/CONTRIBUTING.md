@@ -42,7 +42,7 @@ Branch deployments can be shared
 
 3. Copy forwarded address (<kbd>ctrl</kbd> + <kbd>c</kbd>)
 
-![share codespace](docs/assets/images/shareCodespaceDeployment.png)
+![share codespace](assets/images/shareCodespaceDeployment.png)
 
 Sharing this address will allow other people to view your deployment, so long as your codespace is running.
 
