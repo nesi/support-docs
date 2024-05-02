@@ -15788,7 +15788,10 @@
         "description": "The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles.",
         "domains": [
             "chemistry",
-            "mahuika"
+            "mahuika",
+            "Density Functional Theory",
+            "Molecular Dynamics",
+            "Computational Chemistry"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -19790,6 +19793,30 @@
         "network_licences": [],
         "support": "",
         "url": "https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onemkl.html"
+    },
+    "impalajit": {
+        "default": "",
+        "description": "A lightweight JIT compiler for flexible data access in simulation applications",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/uphoffc/ImpalaJIT",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "20211029-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/uphoffc/ImpalaJIT"
     },
     "impi": {
         "default": "",
@@ -25258,6 +25285,7 @@
                 "versions": [
                     "0.6.2-GCCcore-7.4.0",
                     "0.6.3-GCCcore-9.2.0",
+                    "0.8.0-foss-2023a",
                     "0.8.0-GCC-12.3.0"
                 ]
             }
