@@ -23,12 +23,28 @@ Any changes made should be merged via a pull request.
 
 ## Major edits through GitHub
 
+### Codespace Environment
+
 This repository has been configured to be useable with [GitHub Codespaces](https://github.com/features/codespaces).
 It allows acessing a full featured pre-configured development environment remotely, without installing anything on your local machine.
 
 Clicking on the following link will open a VS Code instance ready to be used with the latest version of the documentation files.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs?quickstart=1)
+
+### Sharing Codespace Deployment
+
+Branch deployments can be shared
+
+1. Open 'PORTS' Tab.
+
+2. Right click on the port and select in the menu, 'Port Visiblity' -> 'Public'.
+
+3. Copy forwarded address (<kbd>ctrl</kbd> + <kbd>c</kbd>)
+
+![share codespace](docs/assets/images/shareCodespaceDeployment.png)
+
+Sharing this address will allow other people to view your deployment, so long as your codespace is running.
 
 ## Local Development Environment
 
