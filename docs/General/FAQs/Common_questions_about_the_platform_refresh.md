@@ -18,4 +18,39 @@ All software currently supported on Mahuika's Milan nodes will be deployed. If y
 
 We're planning to run our migration in stages in order to avoid any lengthy outages and to maintain a smooth user experience. We'll be sharing more details on migration timing in the coming months.
 
- 
+## Do I need to move my data or software?
+
+for now we're managing it... don't worry about it.
+
+## Do I need to create a user account?
+
+No. all existing users will be carried over.
+
+## I'm currently running on Mahuika, will something change for me?
+
+... testing software on Milan, encourage them to test in advance... If you run into issues, we're ready to offer support to help you troubleshoot...
+
+## ...something clarifying Nearline, since I believe that is not as straightforward as project/nobackup.
+
+... TBC
+
+## Why is NeSI making this change?
+
+
+## I'm running on Maui, will there be any changes affecting me?
+
+
+## What benefits do we get with the new platform?
+
+
+## Are any NeSI Services impacted by this change?
+
+
+## Should I expect different performance?
+
+
+## will the cost (e.g. for subscribers) change?
+
+... TBC
+
+## how long will I keep access to the old/current system?
