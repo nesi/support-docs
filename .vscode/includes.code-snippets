@@ -67,7 +67,7 @@
 			"#SBATCH --time            ${3:01:00:00}",
 			"#SBATCH --mem             ${4:2G}",
 			"",
-			"${0}"
+			"${0}",
 			"```"
 		]
 	},
@@ -79,8 +79,9 @@
 	"Insert Front Matter": {
 		"scope": "markdown",
 		"prefix": ["---"],
+		"description" : "Insert Meta",
 		"body": [
-			"---"
+			"---",
 			"created_at: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
 			// "title: ${1:${TM_FILENAME/_/ /g}}}",
 			"description: ${1}",
@@ -89,5 +90,32 @@
 			"",
 			"${0}"
 		]
-	}
+	},
+	// For more elaborate page templates see: https://marketplace.visualstudio.com/items?itemName=rioj7.vscode-file-templates
+	"Template New Page": {
+		"isFileTemplate": true,
+		"body": [
+		"---",
+		"created_at: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+		"description: ${1:Will be used to generate page preview. Should not contain keywords not in the body of article.}",
+		"tags: [${2:tag1},${3:tag2}]",
+		"---",
+		"",
+		"${4:Short preface to article.}",
+		"",
+		"##${5:L2 Header}",
+		"",
+		"##${6:L3 Header}",
+		"",
+		"=== \"First Tab\"",
+		"    Some Content",
+		"    Multiline content",
+		"=== \"Second Tab\"",
+		"    More content",
+		"    Even more content",
+		"",
+		"!!! note \"Custom Admonation Title\"",
+		"    Admonation content."
+		]
+	},
 }

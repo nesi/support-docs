@@ -12,7 +12,7 @@ Any changes made should be merged via a pull request.
 
 ## Minor edits through GitHub
 
-- Open the GitHub page of the repository, i.e. https://github.com/nesi/support-docs, and find the support page you want to edit.
+- Open the GitHub page of the repository, i.e. [https://github.com/nesi/support-docs](https://github.com/nesi/support-docs), and find the support page you want to edit.
 - Then click on the edit icon or press <kbd>e</kbd> to open the integrated editor.
 - In the integrated editor, use the `preview` tab to check the rendered version.  
   **Note:** Be aware that, unfortunately, the GitHub preview won't render properly some elements, in particular admonitions.
@@ -97,6 +97,13 @@ e.g. starting to type an image include `![my image](` then pressing `ctrl` + `sp
 
 Custom snippets can be added in <a href="https://github.com/nesi/support-docs/blob/main/.vscode/includes.code-snippets.json">`../.vscode/includes.code-snippets`</a>
 
+#### Command Palette
+
+Pressing <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>, will open up the VSCode _command pallet_.
+This allows you access to all functionality within VS Code, with only a few key presses.
+
+![alt text](assets/images/code_command_pallete.png)
+
 #### Tasks
 
 Some of the same checks run during the GitHub CI, can also be run in VS Code.
@@ -104,6 +111,13 @@ Some of the same checks run during the GitHub CI, can also be run in VS Code.
 This is shown with word underlining, and in the 'PROBLEMS' tab in the terminal.
 
 Tasks allow continuous checks to be run in the background, these can be defined in <a href="https://github.com/nesi/support-docs/blob/main/.vscode/tasks.json">`../.vscode/tasks.json`</a>, also include in <a href="https://github.com/nesi/support-docs/blob/main/.vscode/settings.json">`../.vscode/settings.json`</a> in order to trigger on save.
+
+## Checks
+
+Whenever a change is commited, or a merge request opened, a series of automatic checks will be started.
+From a pull request, the status of these checks can be seen in the 'Checks' tab, or inline under the 'Files Changed' Tab.
+
+Will give three levels of ourput, **Errors** (serious issues that will prevent merging into main), **Warnings** (non-critical suggestions for improvement) and **Info** (pedantry).
 
 ## Making a Merge Request
 
