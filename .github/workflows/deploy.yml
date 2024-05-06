@@ -3,6 +3,11 @@ on:
  push:
     branches: [main]
  workflow_dispatch:
+  inputs:
+    pr-deploy:
+      description: Deploy open merge requests in sub-directories.
+      type: boolean
+      default: true
 env:
   MODULE_LIST_PATH: docs/assets/module-list.json
   PYTHON_VERSION: 3.x
@@ -41,7 +46,7 @@ jobs:
       - name: Get list of dev deployments
         id: dev-deps
         run: |
-          echo "branches=\"$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr > /dev/null && printf $pr; done)\"" >> $GITHUB_OUTPUT
+          echo "branches=$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr > /dev/null && printf \"${pr} \"; done" >> $GITHUB_OUTPUT
       - name: Create dev sub-deployments
         run: |
             for pr in ${{ steps.dev-deps.outputs.branches }}; do git --work-tree=docs/ checkout origin/$pr -- docs/ && mv docs/docs docs/$pr; done
