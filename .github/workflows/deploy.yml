@@ -46,7 +46,7 @@ jobs:
       - name: Get list of dev deployments
         id: dev-deps
         run: |
-          echo "branches=$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr > /dev/null && printf \"${pr} \"; done" >> $GITHUB_OUTPUT
+          echo "branches=$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr > /dev/null && printf \"${pr} \"; done)" >> $GITHUB_OUTPUT
       - name: Create dev sub-deployments
         run: |
             for pr in ${{ steps.dev-deps.outputs.branches }}; do git --work-tree=docs/ checkout origin/$pr -- docs/ && mv docs/docs docs/$pr; done
