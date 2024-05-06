@@ -73,6 +73,6 @@ jobs:
         run: |
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             msg="Test deployment available at <a href=\"https://docs.nesi.org.nz/${pr}\">https://docs.nesi.org.nz/${pr}</a>"
-            gh pr comment ${pr} --edit-last --body "${msg}" || gh pr comment ${pr} --body "${msg}"
+            (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
           done
 
