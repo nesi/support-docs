@@ -1,3 +1,5 @@
+
+Deliberate breakage
 hooks:
   - mkdocs_hooks.py
 markdown_extensions:
