@@ -37,9 +37,16 @@ jobs:
             mkdocs-
       - name: Install Python dependencies
         run: pip install -r requirements.txt
+      - name: Get list of dev deployments
+        id: dev-deps
+        run: |
+          echo "branches=$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr > /dev/null && echo $pr; done)" >> GITHUB_OUTPUT
+      - name: Create dev sub-deployments
+        run: |
+            for pr in ${{ steps.dev-deps.outputs.branches }}; do git --work-tree=docs/ checkout origin/$pr -- docs/ && mv docs/docs docs/$pr; done
       - name: Build documentation
         run: |
-          mkdocs build --clean --quiet
+              mkdocs build --clean --quiet
       - name: Adjust permissions
         run: |
           chmod -c -R +rX public/ | while read line; do
@@ -56,3 +63,9 @@ jobs:
         with:
           key: mkdocs-${{ hashfiles('.cache/**') }}
           path: .cache
+      - name: Post messages to PRs
+        run: |
+          for pr in ${{ steps.dev-deps.outputs.branches }}; do 
+            gh pr comment $pr --edit-last -b "Test deployment available at <a href=\"https://docs.nesi.org.nz/$pr\">https://docs.nesi.org.nz/$pr</a>"; 
+          done
+
