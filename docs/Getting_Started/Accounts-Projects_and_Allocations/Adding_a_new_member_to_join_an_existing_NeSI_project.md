@@ -17,9 +17,9 @@ title: Adding a new member to join an existing NeSI project
 1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.
 2. Under **List Projects**, click on the project you want to add members to.
 3. When the page is loaded, scroll down to the section **Project Members** and select the **+** button
-4. Enter the Username of the new member, the role and click **Submit**. 
+4. Enter the Username of the new member, select a project role from the dropdown options, and click **Submit**. 
    ![Adding_Members.png](../../assets/images/Adding_Members.png)
 
 !!! prerequisite "What Next?"
-     -   A new team member will now be able to access the system: [set your NeSI account../Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md
+     -   A new team member will now be able to access your project on NeSI: [set your NeSI account../Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md
          password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
