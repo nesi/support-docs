@@ -18,17 +18,14 @@ zendesk_section_id: 360000196195
 
 ## How to join an existing project on NeSI
 
-1. Make sure you have been given the project code by the project owner.
-2. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/).
-3. Under the [Projects](https://my.nesi.org.nz/projects/join) page use
-    the "**Join Project**" link to request to be added to the project as
-    a member.
+You need to contact the owner of the project, you would like to join, and provide your NeSI account username.
 
-Once submitted you will receive a ticket confirmation via email.
+If you do not know what is your NeSI account username:
+1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.
+2. Click My HPC Account, under Account on left hand panel and note your username.
+   ![authentication\_factor\_setup.png](../../assets/images/Setting_Up_and_Resetting_Your_Password.png)
 
 !!! prerequisite "What Next?"
-     -   The project owner will be notified, and asked to approve your
-         request.
-     -   Once your request has been approved by the project owner and
-         processed by us, you will be able to [set your NeSI account
+     -   The project owner will add your username to the project.
+     -   Once it is done, you will be able to [set your NeSI account
          password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
