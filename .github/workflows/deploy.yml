@@ -71,7 +71,8 @@ jobs:
           path: .cache
       - name: Post messages to PRs
         run: |
-          for pr in ${{ steps.dev-deps.outputs.branches }}; do 
-            gh pr comment $pr --edit-last -b "Test deployment available at <a href=\"https://docs.nesi.org.nz/$pr\">https://docs.nesi.org.nz/$pr</a>"; 
+          for pr in ${{ steps.dev-deps.outputs.branches }}; do
+            msg="Test deployment available at <a href=\"https://docs.nesi.org.nz/${pr}\">https://docs.nesi.org.nz/${pr}</a>"
+            gh pr comment ${pr} --edit-last -b ${msg} || gh pr comment ${pr} -b ${msg}
           done
 
