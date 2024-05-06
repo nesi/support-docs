@@ -72,7 +72,9 @@ jobs:
       - name: Post messages to PRs
         run: |
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
+            echo ${pr}
             msg="Test deployment available at <a href=\"https://docs.nesi.org.nz/${pr}\">https://docs.nesi.org.nz/${pr}</a>"
-            gh pr comment ${pr} --edit-last -b ${msg} || gh pr comment ${pr} -b ${msg}
+            echo "gh pr comment ${pr} --edit-last --body ${msg}"
+            # || gh pr comment ${pr} -b ${msg}
           done
 
