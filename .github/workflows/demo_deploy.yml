@@ -17,6 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           fetch-depth: 0
       - name: Get list of dev deployments
         id: dev-deps
