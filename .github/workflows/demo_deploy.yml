@@ -13,6 +13,7 @@ permissions:
   pull-requests:  write
   id-token: write
   pages: write
+  actions: write
 jobs:
   documentation:
     name: Build documentation
