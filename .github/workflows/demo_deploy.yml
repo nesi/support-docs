@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "branches=$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr > /dev/null && printf "${pr} "; done)" >> $GITHUB_OUTPUT
       - name: make private key
-        run: echo ${{ secrets.SSH_PRIVATE_KEY }} > rsa_key
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > rsa_key
       - name: Trigger Workflow in Another Repository
         run: |
           curl -L \
