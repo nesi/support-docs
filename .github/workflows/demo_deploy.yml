@@ -4,7 +4,7 @@ on:
 env:
   MODULE_LIST_PATH: docs/assets/module-list.json
   PYTHON_VERSION: 3.x
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   TARGET_REPO: "support-docs-dev"
   TARGET_OWNER: "nesi"
   WORKFLOW_ID: "deploy.yml"
