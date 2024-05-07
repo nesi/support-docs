@@ -1,7 +1,6 @@
 name: Deploy PR branches
 on: 
   pull_request:
-    branches-ignore: [main]
 env:
   MODULE_LIST_PATH: docs/assets/module-list.json
   PYTHON_VERSION: 3.x
