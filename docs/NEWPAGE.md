@@ -10,13 +10,70 @@ title: Create a new page
 
 This page details how to create a new article or category in the documentation.
 
+## In GitHub
+
+1. Open parent category (folder)
+    Navigate to the directory where you want to make a new page.
+
+2. Create new file by clicking _Add File_, _Create New File_.
+
+    ![alt text](assets/images/addfile_github.png).
+
+3. Enter your new file name.
+    Remember to use safe file names, no funky characters and use `_` instead of spaces.
+    See [Article/Category Naming](#articlecategory-naming) for more info.
+
+4. Add metadata header.
+    Should at minimum contain.
+
+    ```yml
+    ---
+    created: 
+    description: "Will be used to generate page preview. Should not contain keywords not in the body of article."
+    tags: [Tag1, Tag2]
+    ---
+    ```
+
+5. Write rest of page.
+    Rembember headers start at H2 (`##H2`). For more information see [FORMAT.md](FORMAT.md#headers)
+
+6. Click `commit changes`.
+    If this is a draft page, and you plan to come back to work on it, you will want to give it a descriptive branch name.
+    ![Commit](assets/images/example_pr_github.png).
+
+    See [CONTRIBUTING](CONTRIBUTING.md#making-a-merge-request)
+
+7. Merge pull request in order to _publish_ change.
+
+## In Codespace
+
+1. Open parent category (folder)
+    Navigate to the directory where you want to make a new page.
+
+2. Click the _new file_ button.
+
+3. Enter your new file name.
+    Remember to use safe file names, no funky characters and use `_` instead of spaces.
+    See [Article/Category Naming](#articlecategory-naming) for more info.
+
+4. Prefill with template (optional)
+    <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>, `fill file with snippet`, 'Template New Page'.
+    See [CONTRIBUTING](CONTRIBUTING.md#command-palette).
+
+5. Write Article.
+    Remember, you can add elements and autocomplete using <kbd>ctrl</kbd> + <kbd>space</kbd>.
+    See [CONTRIBUTING](CONTRIBUTING.md#snippets)
+
+6. Check problems (optional)
+    Open the `PROBLEMS` tab in the bottom panel.
+
 ## Article/Category Location
 
 Public facing articles are found in the `docs` folder:
 
 - Any directory will be a category.
 - Any markdown file, i.e. a text file ending with the `.md` extension, inside will be rendered as an article.
-- A directory containing a `index.md` file will be both an article and category.
+- A file named `index.md` file will be the landing page for that category.
 (clicking on will take to the rendered markdown in `index.md`, any other markdown in the directory will be nested articles.)
 
 ![Documentation Structure](assets/images/doc_struct.png)
