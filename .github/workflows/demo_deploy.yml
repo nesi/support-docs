@@ -8,12 +8,7 @@ env:
   TARGET_REPO: "support-docs-dev"
   TARGET_OWNER: "nesi"
   WORKFLOW_ID: "deploy.yml"
-permissions:
-  contents: write
-  pull-requests:  write
-  id-token: write
-  pages: write
-  actions: write
+permissions: write-all
 jobs:
   documentation:
     name: Build documentation
