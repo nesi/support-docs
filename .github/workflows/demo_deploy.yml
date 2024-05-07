@@ -8,6 +8,7 @@ env:
   TARGET_REPO: "support-docs-dev"
   TARGET_OWNER: "CallumWalley"
   WORKFLOW_ID: "deploy.yml"
+  DEPLOY_URL: "https://callumwalley.github.io/support-docs-dev"
 permissions: write-all
 jobs:
   documentation:
@@ -47,6 +48,6 @@ jobs:
       - name: Post messages to PRs
         run: |
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
-            msg="Test deployment available at <a href=\"https://docs.nesi.org.nz/${pr}\">https://docs.nesi.org.nz/${pr}</a>"
+            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
             (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
           done
