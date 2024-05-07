@@ -4,7 +4,7 @@ on:
 env:
   MODULE_LIST_PATH: docs/assets/module-list.json
   PYTHON_VERSION: 3.x
-  GH_TOKEN: ${{ github.token }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   TARGET_REPO: "support-docs-dev"
   TARGET_OWNER: "CallumWalley"
   WORKFLOW_ID: "deploy.yml"
