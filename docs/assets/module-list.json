@@ -816,6 +816,30 @@
         "support": "",
         "url": "http://sanger-pathogens.github.io/ariba/"
     },
+    "ASAGI": {
+        "default": "",
+        "description": "a pArallel Server for Adaptive GeoInformation",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://tum-i5.github.io/ASAGI/index.xhtml",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "20240327-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://tum-i5.github.io/ASAGI/index.xhtml"
+    },
     "ATK": {
         "default": "",
         "description": "ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications.",
@@ -11880,6 +11904,54 @@
         "support": "",
         "url": "http://trac.osgeo.org/proj/"
     },
+    "PSpaMM": {
+        "default": "",
+        "description": "Generates inline-Assembly for sparse Matrix Multiplication.",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/SeisSol/PSpaMM",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "0.2.1-foss-2023a-Python-3.11.6"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/SeisSol/PSpaMM"
+    },
+    "PUMI": {
+        "default": "",
+        "description": "parallel unstructured mesh infrastructure API",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://scorec.rpi.edu/~seol/PUMI.pdf",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "2.2.7-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://scorec.rpi.edu/~seol/PUMI.pdf"
+    },
     "Pango": {
         "default": "",
         "description": "Pango is a library for laying out and rendering of text, with an emphasis on internationalization.",
@@ -14388,6 +14460,30 @@
         "support": "",
         "url": "https://www.score-p.org"
     },
+    "SeisSol": {
+        "default": "",
+        "description": "SeisSol is a software package for simulating wave propagation and dynamic rupture based on the arbitrary high-order accurate derivative discontinuous Galerkin method (ADER-DG).",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "http://www.seissol.org",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "1.1.3-foss-2023a-Python-3.11.6"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "http://www.seissol.org"
+    },
     "SeqAn": {
         "default": "",
         "description": "",
@@ -15740,7 +15836,10 @@
         "description": "The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles.",
         "domains": [
             "chemistry",
-            "mahuika"
+            "mahuika",
+            "Density Functional Theory",
+            "Molecular Dynamics",
+            "Computational Chemistry"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -18027,6 +18126,30 @@
         "support": "",
         "url": "https://murraycadzow.github.io/2021-obss-day4/index.html"
     },
+    "easi": {
+        "default": "",
+        "description": "easi is a library for the Easy Initialization of models in three (or less or more) dimensional domains.",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://easyinit.readthedocs.io/en/latest/",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "1.3.0-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://easyinit.readthedocs.io/en/latest/"
+    },
     "ecCodes": {
         "default": "",
         "description": "ecCodes is a package developed by ECMWF which provides an application programming interface and",
@@ -19742,6 +19865,30 @@
         "network_licences": [],
         "support": "",
         "url": "https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onemkl.html"
+    },
+    "impalajit": {
+        "default": "",
+        "description": "A lightweight JIT compiler for flexible data access in simulation applications",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/uphoffc/ImpalaJIT",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "20211029-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/uphoffc/ImpalaJIT"
     },
     "impi": {
         "default": "",
@@ -25210,6 +25357,7 @@
                 "versions": [
                     "0.6.2-GCCcore-7.4.0",
                     "0.6.3-GCCcore-9.2.0",
+                    "0.8.0-foss-2023a",
                     "0.8.0-GCC-12.3.0"
                 ]
             }
