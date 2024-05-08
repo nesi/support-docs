@@ -45,5 +45,5 @@ jobs:
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
             (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
-            echo "::info title=Deploy successful::${msg}" 
+            echo "::info title=\"Deploy successful\"::\"${msg}\"" 
           done
