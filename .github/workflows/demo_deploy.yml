@@ -33,7 +33,7 @@ jobs:
       - name: Wait for Workflow Action
         uses: kamilchodola/wait-for-workflow-action@1.1.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
           workflow_id: 'deploy.yml'
           interval: '5'
           timeout: '60'
