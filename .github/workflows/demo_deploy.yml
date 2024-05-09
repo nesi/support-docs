@@ -20,7 +20,9 @@ jobs:
       - name: Get list of open request branches
         id: dev-deps
         run: |
-          echo "branches=$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr > /dev/null && printf "${pr} "; done)" >> $GITHUB_OUTPUT
+          branches="$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr --required --wait --fail-fast > /dev/null && printf "${pr} "; done)"
+          echo "info:: title=Open Valid Merge Requests" :: ${branches}
+          echo "branches=$branches" >> $GITHUB_OUTPUT
       - name: Trigger Workflow in Another Repository
         run: |
           curl -L \
