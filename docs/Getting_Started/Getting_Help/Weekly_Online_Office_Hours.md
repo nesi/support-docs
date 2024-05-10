@@ -1,33 +1,30 @@
 ---
 created_at: '2022-05-18T03:38:21Z'
-tags: []
+tags: [intro, hpc]
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 4830713922063
 zendesk_section_id: 360000164635
+description: |
+    Have questions about NeSI services?  
+    Looking for tips on how to optimise your HPC jobs?  
+    Or, simply want to meet some of the team behind NeSI Support?  
+
+    We run regular online Office Hours sessions, hosted via Zoom. These
+    sessions are open to anyone, you don't need to be an existing NeSI
+    user.
 ---
 
-Have questions about NeSI services<br>
-Looking for tips on how to optimise your HPC jobs?<br>
-Or, simply want to meet some of the team behind NeSI Support?<br>
+{{ description }}
 
-We run regular online Office Hours sessions, hosted via Zoom. These
-sessions are open to anyone, you don't need to be an existing NeSI
-user.
-
-## Office Hours in April 2024
+## Office Hours Dates
 
 Click on the links below to add the date & Zoom link to your calendar:
 
-
-* [01 May (Wednesday): 9:00-10:00 AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmM1cmZpanZwOW1ra2gwZGNycWxrbmJkbXYgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-* [08 May (Wednesday): 3:00-4:00 PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzdobTc4YTM3OWoxcGIyMTQ0aHY4NjM2anAgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-* [15 May (Wednesday): 9:00-10:00 AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGowZ200NmpsbHFhc29nbGQ3OG1nNWNqb2ogY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-* [22 May (Wednesday): 3:00-4:00 PM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmNnMDFndTZycXVmdWtscmVlbHJhM21jOHMgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
-* [29 May (Wednesday): 9:00-10:00 AM](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N3ZkMTJ0NW9vcmRnZGYxcHUwNmFqZXNsMjcgY19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bn&tmsrc=c_hen6rr02et39kat2hmuamidots%40group.calendar.google.com)
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Pacific%2FAuckland&bgcolor=%23ffffff&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=Y19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 If you are unable to add an Office Hour session to your calendar through
-these links, please email us at [training@nesi.org.nz](mailto:training@nesi.org.nz) and we can send a
+these links, please email us at [training@nesi.org.nz](mailto:training@nesi.org.nz) and we can send a
 calendar invite directly to you.
 
 ## How Does It Work
