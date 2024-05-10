@@ -43,3 +43,6 @@
 .md-nav--primary > .md-nav__title {
     display: none;
 }
+[data-md-color-scheme=slate] nt-card-image>img {
+  filter: brightness(0) invert(1);
+}
