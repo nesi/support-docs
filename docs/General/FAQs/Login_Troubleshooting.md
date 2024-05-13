@@ -53,7 +53,7 @@ ssh login.<mahuika/maui>.nesi.org.nz
 **If this fails:** Are you logging in to the correct cluster?
 Mahuika/Maui have separate access control, also Māui requires your
 password input in a different format, see
-[here](../../General/FAQs/Mahuika_Maui_Differences.md).
+[here](../Announcements/Mahuika_Maui_Differences.md).
 
 **If this succeeds**:
 
