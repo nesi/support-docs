@@ -3,7 +3,7 @@ env:
   MODULE_LIST_PATH: docs/assets/module-list.json
 on:
   push:
-    # branches-ignore: [main]
+    branches-ignore: [main]
   workflow_dispatch:
     inputs:
       fileList:
