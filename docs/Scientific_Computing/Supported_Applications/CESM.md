@@ -2,8 +2,8 @@
 created_at: '2020-11-02T03:07:06Z'
 tags: []
 title: CESM
-vote_count: 0
-vote_sum: 0
+vote_count: 1
+vote_sum: 1
 zendesk_article_id: 360002105076
 zendesk_section_id: 360000040076
 ---

@@ -8,11 +8,8 @@ zendesk_article_id: 360001523916
 zendesk_section_id: 360000034315
 ---
 
-
 !!! prerequisite
-    -   Have your [connection to the NeSI
-        cluster](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
-        configured.
+    Have your [connection to the NeSI cluster](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md) configured
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
@@ -55,17 +52,17 @@ ssh -L <local_port>:<destination_host>:<remote_port> <ssh_host>
 ### Example
 
 A client program on my local machine uses the port 5555 to communicate.
-I want to connect to a server running on mahuika that is listening on
+I want to connect to a server running on Mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:
 
 ``` sh
 ssh -L 5555:localhost:6666 mahuika 
 ```
 
-Your terminal will now function like a normal connection to mahuika.
-However if you close this terminal session the port forwarding will end.
+Your terminal will now function like a normal connection to Mahuika.
+However, if you close this terminal session the port forwarding will end.
 
-If there is no existing session on mahuika, you will be prompted for
+If there is no existing session on Mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure.
 !!! note

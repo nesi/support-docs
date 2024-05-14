@@ -5,7 +5,6 @@ tags:
 - mobaxterm
 - gitbash
 - login
-title: Choosing and Configuring Software for Connecting to the Clusters
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360001016335
@@ -46,9 +45,9 @@ On MacOS or Linux you will already have a terminal emulator
 installed, usually called, "Terminal." To find it, simply search for
 "terminal".  
 Congratulations! You are ready to move to the next step.
+
 !!! prerequisite "What next?"
-    -  Setting up your [Default
-       Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 ## Windows
 
@@ -105,8 +104,7 @@ friendly place to become familiar with command line use.
 There are multiple free options when it comes to VM software. We
 recommend [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-Further instructions on how to set up a virtual machine can be found
-[here](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
+[See instructions on how to set up a virtual machine.](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
 Once you have a working VM you may continue following the
 instructions as given for [Linux/MacOS](#linux-or-mac-os).

@@ -816,6 +816,30 @@
         "support": "",
         "url": "http://sanger-pathogens.github.io/ariba/"
     },
+    "ASAGI": {
+        "default": "",
+        "description": "a pArallel Server for Adaptive GeoInformation",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://tum-i5.github.io/ASAGI/index.xhtml",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "20240327-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://tum-i5.github.io/ASAGI/index.xhtml"
+    },
     "ATK": {
         "default": "",
         "description": "ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications.",
@@ -1473,6 +1497,7 @@
                 "default": "latest",
                 "versions": [
                     "0.1.1-r16-GCC-11.3.0",
+                    "0.1.1-r16-GCC-12.3.0",
                     "0.1.1-r16-intel-2017a",
                     "0.1.1-r16-intel-2018b",
                     "0.1.1-r16-intel-2020a",
@@ -1563,10 +1588,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2023-01",
-                    "2023-04",
                     "2023-07",
-                    "2023-10",
                     "2024-01",
                     "2024-04"
                 ]
@@ -3872,6 +3894,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
+                    "3.5.0-foss-2023a",
                     "3.5.0-intel-2022a"
                 ]
             }
@@ -9048,7 +9071,7 @@
         "extensions": [],
         "force_hide": "False",
         "force_show": "False",
-        "homepage": "http://graal.ens-lyon.fr/MUMPS/",
+        "homepage": "https://mumps-solver.org/",
         "licence_type": "",
         "link_output_dictride": "",
         "machines": {
@@ -9059,7 +9082,9 @@
                     "4.10.0-gimkl-2020a-metis-4.0.3",
                     "4.10.0-gimkl-2020a",
                     "5.3.1-gimkl-2020a-METIS-5.1.0",
-                    "5.5.0-gimkl-2022a"
+                    "5.5.0-gimkl-2022a",
+                    "5.6.1-foss-2023a-plain",
+                    "5.6.1-foss-2023a"
                 ]
             }
         },
@@ -9067,7 +9092,7 @@
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
-        "url": "http://graal.ens-lyon.fr/MUMPS/"
+        "url": "https://mumps-solver.org/"
     },
     "MUMmer": {
         "default": "",
@@ -11330,6 +11355,7 @@
                     "3.0.0-gimkl-2017a",
                     "3.2.0-gimkl-2020a-METIS4",
                     "3.2.0-gimkl-2020a",
+                    "3.6.0-foss-2023a",
                     "20220411-gimkl-2020a"
                 ]
             }
@@ -11524,7 +11550,8 @@
                 "default": "latest",
                 "versions": [
                     "4.9i-GCC-7.4.0",
-                    "4.9j-GCC-9.2.0"
+                    "4.9j-GCC-9.2.0",
+                    "4.10.7-GCC-12.3.0"
                 ]
             }
         },
@@ -11877,6 +11904,54 @@
         "support": "",
         "url": "http://trac.osgeo.org/proj/"
     },
+    "PSpaMM": {
+        "default": "",
+        "description": "Generates inline-Assembly for sparse Matrix Multiplication.",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/SeisSol/PSpaMM",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "0.2.1-foss-2023a-Python-3.11.6"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/SeisSol/PSpaMM"
+    },
+    "PUMI": {
+        "default": "",
+        "description": "parallel unstructured mesh infrastructure API",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://scorec.rpi.edu/~seol/PUMI.pdf",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "2.2.7-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://scorec.rpi.edu/~seol/PUMI.pdf"
+    },
     "Pango": {
         "default": "",
         "description": "Pango is a library for laying out and rendering of text, with an emphasis on internationalization.",
@@ -11918,6 +11993,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
+                    "4.0.3-foss-2023a",
                     "4.0.3-gimkl-2017a",
                     "4.0.3-gimpi-2018b",
                     "4.0.3-gimpi-2020a",
@@ -13670,7 +13746,8 @@
                     "6.0.6-gimpi-2018b",
                     "6.0.9-gimpi-2020a",
                     "6.1.2-gimpi-2022a",
-                    "7.0.3-gimpi-2022a"
+                    "7.0.3-gimpi-2022a",
+                    "7.0.4-foss-2023a"
                 ]
             },
             "maui": {
@@ -14383,6 +14460,30 @@
         "support": "",
         "url": "https://www.score-p.org"
     },
+    "SeisSol": {
+        "default": "",
+        "description": "SeisSol is a software package for simulating wave propagation and dynamic rupture based on the arbitrary high-order accurate derivative discontinuous Galerkin method (ADER-DG).",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "http://www.seissol.org",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "1.1.3-foss-2023a-Python-3.11.6"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "http://www.seissol.org"
+    },
     "SeqAn": {
         "default": "",
         "description": "",
@@ -14591,7 +14692,7 @@
         "default": "",
         "description": "A fast structural variant caller for long-read sequencing.",
         "domains": [],
-        "extensions": "sniffles-2.0.7",
+        "extensions": "sniffles-2.3.3",
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/fritzsedlazeck/Sniffles",
@@ -14601,7 +14702,8 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "2.0.7-gimkl-2022a-Python-3.10.5"
+                    "2.0.7-gimkl-2022a-Python-3.10.5",
+                    "2.3.3-gimkl-2022a-Python-3.10.5"
                 ]
             }
         },
@@ -15735,7 +15837,10 @@
         "description": "The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles.",
         "domains": [
             "chemistry",
-            "mahuika"
+            "mahuika",
+            "Density Functional Theory",
+            "Molecular Dynamics",
+            "Computational Chemistry"
         ],
         "extensions": [],
         "force_hide": "False",
@@ -15761,6 +15866,7 @@
                     "6.3.2-intel-2022a",
                     "6.3.2-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
                     "6.4.1-intel-2022a",
+                    "6.4.2-foss-2023a",
                     "6.4.2-intel-2022a"
                 ]
             },
@@ -17245,7 +17351,8 @@
                 "versions": [
                     "0.35.4-gimkl-2020a-R-4.0.1",
                     "0.36.1-gimkl-2020a-R-4.1.0",
-                    "0.38.1-gimkl-2022a-R-4.2.1"
+                    "0.38.1-gimkl-2022a-R-4.2.1",
+                    "0.38.3-gimkl-2022a-R-4.3.1"
                 ]
             }
         },
@@ -18019,6 +18126,30 @@
         "network_licences": [],
         "support": "",
         "url": "https://murraycadzow.github.io/2021-obss-day4/index.html"
+    },
+    "easi": {
+        "default": "",
+        "description": "easi is a library for the Easy Initialization of models in three (or less or more) dimensional domains.",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://easyinit.readthedocs.io/en/latest/",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "1.3.0-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://easyinit.readthedocs.io/en/latest/"
     },
     "ecCodes": {
         "default": "",
@@ -19735,6 +19866,30 @@
         "network_licences": [],
         "support": "",
         "url": "https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onemkl.html"
+    },
+    "impalajit": {
+        "default": "",
+        "description": "A lightweight JIT compiler for flexible data access in simulation applications",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/uphoffc/ImpalaJIT",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "20211029-foss-2023a"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/uphoffc/ImpalaJIT"
     },
     "impi": {
         "default": "",
@@ -25203,6 +25358,7 @@
                 "versions": [
                     "0.6.2-GCCcore-7.4.0",
                     "0.6.3-GCCcore-9.2.0",
+                    "0.8.0-foss-2023a",
                     "0.8.0-GCC-12.3.0"
                 ]
             }

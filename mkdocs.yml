@@ -27,6 +27,7 @@ extra:
     property: G-TVQR4R1F40
 plugins:
   - search
+  - open-in-new-tab
   - redirects:
       map_file: docs/redirect_map.yml
   - awesome-pages:
@@ -55,6 +56,7 @@ extra_css:
   - assets/stylesheets/theme.css
 extra_javascript:
     - assets/javascripts/general.js
+    - https://status.nesi.org.nz/embed/script.js
 theme:
   custom_dir: overrides
   favicon: assets/icons/favicon.ico

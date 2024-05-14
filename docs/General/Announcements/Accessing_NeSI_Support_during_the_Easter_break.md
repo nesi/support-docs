@@ -1,4 +1,5 @@
 ---
+description: A page sharing the details of reduced support hours over Easter break
 created_at: '2024-03-20T01:58:22Z'
 hidden: false
 position: 0

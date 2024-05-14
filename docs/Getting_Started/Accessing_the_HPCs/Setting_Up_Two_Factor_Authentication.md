@@ -5,7 +5,6 @@ tags:
 - access
 - mfa
 - token
-title: Setting Up Two-Factor Authentication
 vote_count: 6
 vote_sum: -6
 zendesk_article_id: 360000203075

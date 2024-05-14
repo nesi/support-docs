@@ -5,8 +5,8 @@ tags:
 - allocation
 - assessment
 title: Merit allocations
-vote_count: 1
-vote_sum: 1
+vote_count: 2
+vote_sum: 2
 zendesk_article_id: 360000175635
 zendesk_section_id: 360000224835
 ---

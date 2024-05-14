@@ -1,4 +1,4 @@
-# NesI support documentation
+# NeSI support documentation
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs?quickstart=1)
 
