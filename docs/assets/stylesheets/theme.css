@@ -46,3 +46,7 @@
 [data-md-color-scheme=slate] .nt-card-image>img {
   filter: brightness(0) invert(1);
 }
+/* Fix codeblock formatting change.*/
+.md-typeset .md-code__content { 
+    display: inline;
+}
