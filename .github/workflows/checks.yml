@@ -1,6 +1,7 @@
 name: Checks
 env:
   MODULE_LIST_PATH: docs/assets/module-list.json
+# arbritrary change
 on:
   push:
     branches-ignore: [main]
