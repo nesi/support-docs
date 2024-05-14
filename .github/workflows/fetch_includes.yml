@@ -46,6 +46,9 @@ jobs:
                 git push origin ${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}"
                 gh pr merge ${BRANCH_NAME} --squash --auto --delete-branch
+                # Supposedly this fixes bug https://stackoverflow.com/questions/52200096/github-pull-request-waiting-for-status-to-be-reported
+                git commit --amend --no-edit
+                git push origin ${BRANCH_NAME} --force-with-lease
             else
                 echo "no changes"
             fi
