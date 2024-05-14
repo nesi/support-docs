@@ -803,6 +803,7 @@ NSS's
 NSS
 NVHPC's
 NVHPC
+NVLink
 NWChem's
 NWChem
 NZ
@@ -1569,6 +1570,7 @@ gsort's
 gsort
 h5pp's
 h5pp
+hapū
 help2man's
 help2man
 hifiasm's
@@ -1606,6 +1608,7 @@ ipyrad's
 ipyrad
 ispc's
 ispc
+iwi
 jbigkit's
 jbigkit
 jcvi's
@@ -1618,6 +1621,7 @@ json-c's
 json-c
 jvarkit's
 jvarkit
+kaitiakitanga
 kalign2's
 kalign2
 kallisto's
