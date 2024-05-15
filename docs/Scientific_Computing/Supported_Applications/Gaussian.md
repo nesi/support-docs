@@ -83,7 +83,7 @@ INPUT_FILE="H2O.gjf"
 
 GAUSSIAN_MEM="$((${SLURM_MEM_PER_NODE} - 2048))"
 
-cat << EOF > $TEMPLATE_FILE
+cat << EOF > $INPUT_FILE
 \$RunGauss\$
 
 %NProcShared="${SLURM_CPUS_PER_TASK}"
@@ -116,7 +116,7 @@ srun g09 < "${INPUT_FILE}"
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=4
 #SBATCH --hint=nomultithread
-#SBATCH --mem-per-node 4G
+#SBATCH --mem=4G
 
 module load Gaussian/{{ applications.Gaussian.machines.mahuika.versions | last }}
 
