@@ -107,9 +107,6 @@
             "label": "serve",
             "group": "build",
             "type": "shell",
-            "runOptions": {
-                "runOn": "folderOpen"
-            },
             "isBackground": true,
             "presentation": {
                 "reveal":"never",
