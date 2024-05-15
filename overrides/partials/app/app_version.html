@@ -21,7 +21,7 @@
                     <a id="mod_{{app_name | lower}}_{{machine_name | lower}}_{{version}}" onclick="changeVersion('{{ app_name | lower }}', '{{ machine_name | lower }}','{{version}}')" {% if version == latest -%} class="md-tag-ver-shown md-tag-ver md-tag" title="Default Version" {% endif -%}  class="md-tag-ver md-tag">{{ version }}</a>
                     {% endfor %}       
             </nav></p>
-            <pre><code>module load {{app_name}}/<span id="mod_{{app_name | lower}}_{{machine_name | lower}}">{{latest}}</span></code></pre>
+            <pre><code id="mod_{{app_name | lower}}_{{machine_name | lower}}">module load {{app_name}}/{{latest}}</code></pre>
         </div>
     {% endfor -%}
     </div>
