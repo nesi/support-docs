@@ -44,11 +44,10 @@ jobs:
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
             if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then
                 git push origin ${BRANCH_NAME}
-                gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}"
-                gh pr merge ${BRANCH_NAME} --squash --auto --delete-branch
+                gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
+                gh pr merge ${BRANCH_NAME} --squash --delete-branch
                 # Supposedly this fixes bug https://stackoverflow.com/questions/52200096/github-pull-request-waiting-for-status-to-be-reported
-                git commit --amend --no-edit
-                git push origin ${BRANCH_NAME} --force-with-lease
+                gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
             else
                 echo "no changes"
             fi
