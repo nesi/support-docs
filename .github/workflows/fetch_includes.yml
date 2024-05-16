@@ -45,8 +45,6 @@ jobs:
             if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then
                 git push origin ${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
-                gh pr merge ${BRANCH_NAME} --squash --delete-branch
-                # Supposedly this fixes bug https://stackoverflow.com/questions/52200096/github-pull-request-waiting-for-status-to-be-reported
                 gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
             else
                 echo "no changes"
