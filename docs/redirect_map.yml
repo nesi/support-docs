@@ -543,9 +543,9 @@ hc/en-gb/articles/9376633910159-jupyter-nesi-org-nz-release-notes-26-03-2024.md:
 hc/en-gb/articles/9376633910159.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
 hc/en-gb/sections/360000040076.md : Scientific_Computing/Supported_Applications/index.md
 hc/en-gb/sections/360000040076-Supported-Applications.md: Scientific_Computing/Supported_Applications/index.md
-requests.md: https://nznesi.atlassian.net/servicedesk/customer/user/requests
-requests/new.md: https://nznesi.atlassian.net/servicedesk/customer/portal/1
-hc/en-gb/requests.md: https://nznesi.atlassian.net/servicedesk/customer/user/requests
-hc/en-gb/requests/new.md: https://nznesi.atlassian.net/servicedesk/customer/portal/1
+requests.md: NeSI_support_portal.md
+requests/new.md: NeSI_support_portal.md
+hc/en-gb/requests.md: NeSI_support_portal.md
+hc/en-gb/requests/new.md: NeSI_support_portal.md
 hc.md: index.md
 hc/en-gb.md: index.md
