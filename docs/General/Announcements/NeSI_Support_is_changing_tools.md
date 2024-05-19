@@ -15,12 +15,11 @@ The process of raising a ticket won't change much (see below for more details), 
 
 * Replies to support tickets will come from 'support@cloud.nesi.org.nz'.
 * We are reviewing the value of having a separate portal where you can view your open tickets or raise new tickets.
-Tell us what you think using this form or by sending an email to [support@nesi.org.nz](mailto:support@nesi.org.nz).
+Tell us what you think using this [form](https://docs.google.com/forms/d/e/1FAIpQLSdvR-0kJxunSiKUYNtHsG6l7Ne9Q5KPeunCVJiSbMuTvGcS8A/viewform) or by sending an email to [support@nesi.org.nz](mailto:support@nesi.org.nz).
 
 ## What stays the same
 
 * Requests for support or questions about NeSI platforms and services can still be sent by email to support@nesi.org.nz. These will raise new support tickets for response from a member of our Support Team.
-
 * All your current tickets will stay open. Any requests you currently have in the queue will be migrated over to the new ticketing system and solved from there.
 
 ## Documentation Changes
