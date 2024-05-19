@@ -49,7 +49,7 @@ the single-user Jupyter server.
 
 ### Access NeSI's JupyterHub here
 
-[ttps://jupyter.nesi.org.nz](ttps://jupyter.nesi.org.nz)
+[https://jupyter.nesi.org.nz](https://jupyter.nesi.org.nz)
 
 When you log in with your [NeSI credentials](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
 you will be taken to the "Server Options" page, where typical job
