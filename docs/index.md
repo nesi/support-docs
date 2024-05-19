@@ -5,7 +5,7 @@ hide: toc
 
 # NeSI Support Documentation
 
-Technical documentation the NeSI High Performance Computing service.
+Technical documentation the NeSI High Performance Computing platform.
 
 ## Quickstart
 
