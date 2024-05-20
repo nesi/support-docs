@@ -30,7 +30,8 @@ def parse_macro(record):
         record.filename = g["file"]
         record.msg = g["message"]
     return True
-    
+
+
 if __name__ == '__main__':
     log = logging.getLogger('root')
     log.setLevel(logging.INFO)

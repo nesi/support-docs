@@ -1,8 +1,4 @@
 {% extends "base.html" %}
-{% block header %}
-{% include "partials/concept_banner.html" %}
-{{ super() }}
-{% endblock %}
 {% block site_nav %}
     {% if nav %}
         {% if page.meta and page.meta.hide %}
