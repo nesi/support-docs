@@ -7,17 +7,17 @@ title: my.nesi.org.nz release notes v2.23.0
 
 ## New and Improved
 
-- No need to contact NeSI support anymore for joining an existing project, contact the owner of the project to add you. The join page is now updated to link to the updated documentation pages
+- To join an existing project, you can now ask the owner of the project to add you. Previously, this task required you to contact NeSI Support. The new steps to follow are outlined in the documentation pages linked below:
     - https://docs.nesi.org.nz/Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project/
     - https://docs.nesi.org.nz/Getting_Started/Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project/
 
-- New warning email if the persistent storage is coming (close to 95%) or is at capacity (100% >)
+- You will receive a warning email if your persistent storage is coming close to (95%) or is at capacity (100% >)
 
 ## Fixes
 
-- We have enforced the selection of grant question "Is the project funded by a grant/contract?" in the allocation renewal form
+- In the allocation renewal form, the question "Is the project funded by a grant/contract?" is now mandatory to answer
 
-- We have reinstated the alert informing the user when a project does not have any current resource allocation
+- We have reinstated the alert informing users when a project does not have a current resource allocation
 
 If you have any questions about any of the updates or fixes, please
 {% include "partials/support_request.html" %}.
