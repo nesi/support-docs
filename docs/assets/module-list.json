@@ -9536,7 +9536,7 @@
         "default": "",
         "description": "MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data (i.e. not 16S) with species-level. With the newly added StrainPhlAn module, it is now possible to perform accurate strain-level microbial profiling.",
         "domains": [],
-        "extensions": "bcbio-gff-0.6.9, CMSeq-1.0.4, hclust2-1.0.0, MetaPhlAn-4.0.4",
+        "extensions": "bcbio-gff-0.7.1, CMSeq-1.0.4, hclust2-1.0.0, MetaPhlAn-4.1.0",
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://huttenhower.sph.harvard.edu/metaphlan/",
@@ -9548,7 +9548,8 @@
                 "versions": [
                     "3.0.9-gimkl-2020a-Python-3.8.2",
                     "3.0.14-gimkl-2020a-Python-3.8.2",
-                    "4.0.4-gimkl-2022a-Python-3.10.5"
+                    "4.0.4-gimkl-2022a-Python-3.10.5",
+                    "4.1.0-gimkl-2022a-Python-3.10.5"
                 ]
             }
         },
