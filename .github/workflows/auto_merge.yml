@@ -15,6 +15,6 @@ jobs:
     - run: |
         for branch in $(gh pr list -R nesi/support-docs --label "auto_merge" --json headRefName --jq .[].headRefName);do
             git checkout $branch
-            gh pr merge $GITHUB_HEAD_REF --squash --auto --delete-branch
+            gh pr merge --squash --auto --delete-branch
         done
 
