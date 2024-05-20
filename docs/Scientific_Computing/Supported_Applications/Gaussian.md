@@ -114,36 +114,39 @@ srun g09 < "${INPUT_FILE}"
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=H2O-distributed
-#SBATCH --account=<projectid>
+#SBATCH --job-name=H2O_distributed_memory
+#SBATCH --account=nesi99999
 #SBATCH --time=00:15:00
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=4
 #SBATCH --hint=nomultithread
 #SBATCH --mem=4G
 
-module load Gaussian/{{ applications.Gaussian.machines.mahuika.versions | last }}
+module load Gaussian/09-D.01
 
 INPUT_FILE="H2O.gjf"
 
 GAUSSIAN_MEM="$((${SLURM_MEM_PER_NODE} - 2048))"
 
-cat << EOF > $TEMPLATE_FILE
-\$RunGauss\$
+# It is reconmended to prepare a job-specific scratch directory
+export GAUSS_SCRDIR="/nesi/nobackup/${SLURM_JOB_ACCOUNT}/gaussian_job_${SLURM_JOB_ID}"
+mkdir -p "${GAUSS_SCRDIR}"
+
+cat << EOF > $INPUT_FILE
 
 %LindaWorkers=$(for n in $(srun hostname | sort -u);do printf "${n}:${SLURM_NPROCS},"; done)
 %Mem=${GAUSSIAN_MEM}MB
 %Chk=${INPUT_FILE}.chk
 
+# HF/6-31G(d) Opt=ModRedun Test
 
-# Atomic Co-ordinates
+water geo optimisation HF/6-31G(d)
 
 0 1
 H
 O 1 0.95
 H 2 0.95 1 109.0
 
-# Make sure to include trailing blank line
 
 EOF
 
@@ -159,11 +162,11 @@ It is important to ensure that the memory and number of cores in the
 Gaussian input file itself are consistent with what you set in your job
 submission script.
 
-The key properties are `%NProcShared` and `%Mem`:
+The key properties are `%CPU` and `%Mem`:
 
-- `%NProcShared` should be set to the number of CPU cores you intend
+- `%CPU` should be set to the number of CPU cores you intend
     to use, matching the value of the `-c` or `--cpus-per-task`
-    directive in the Slurm job file.
+    directive in the Slurm job file. Because Slurm assigns which CPUs of the compute node your jobs lands on, the 'taskset' command is needed to identify what CPUs are available to your job.
 - `%Mem` should be set to the amount of memory you intend to use. It
     should be about 2 GB (2,048 MB) less than the value of `--mem` in
     the Slurm job submission script. Note that `--mem` is interpreted as
