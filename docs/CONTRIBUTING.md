@@ -8,6 +8,15 @@ title: Contributing
     - For examples of markdown use, [see FORMAT](FORMAT.md).
     - For information about page creation, [see NEWPAGE](NEWPAGE.md).
 
+!!! info
+    The following videos provide some additional context and demonstrate the contribution workflow on GitHub:
+
+    - https://www.youtube.com/watch?v=s2suxaJMH0g: a general tour of the git repo and where/how pages are looking for a contributor,
+    - https://www.youtube.com/watch?v=ltgpwHSO2NM: how to make small contributions and an introduction to pull requests,
+    - https://www.youtube.com/watch?v=2bHOLf2hxaA: how to use CodeSpace for bigger changes.
+
+    The primary target audience is the NeSI team.
+
 Any changes made should be merged via a pull request.
 
 ## Minor edits through GitHub
