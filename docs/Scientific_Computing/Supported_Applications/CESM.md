@@ -69,7 +69,7 @@ wget https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-a
 tar xf git-lfs-linux-amd64-v3.5.1.tar.gz
 cd git-lfs-3.5.1
 ./install.sh --local
-export PATH=$PATH:~/.local/bin
+export PATH=~/.local/bin:$PATH
 echo export PATH=\$HOME/.local/bin:\$PATH >> ~/.bashrc
 ```
 
