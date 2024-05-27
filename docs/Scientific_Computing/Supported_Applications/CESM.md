@@ -60,8 +60,8 @@ The export command above could be added to your *~/.bashrc* file to make it pers
 
 Git Large File Storage seems to be required to download some of the CESM
 components. Download the Git-LFS archive from
-[here](https://git-lfs.github.com/) and install it into your home directory
-Finally add that directory to *PATH* in your ~/.bashrc file.
+[here](https://git-lfs.github.com/) and install it into your home directory.
+Finally, add that directory to *PATH* in your ~/.bashrc file.
 The following commands will achieve this:
 
 ```sh
@@ -79,7 +79,7 @@ Confirm Git-LFS is installed by running:
 git lfs version
 ```
 
-which should print something like
+which should print something like:
 
 ```
 git-lfs/3.5.1 (GitHub; linux amd64; go 1.21.7; git e237bb3a)
