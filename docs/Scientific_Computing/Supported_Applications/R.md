@@ -430,3 +430,17 @@ Options:
 
 - `strtoi(Sys.getenv("SLURM_CPUS_PER_TASK"))`
 - `as.numeric(Sys.getenv("SLURM_CPUS_PER_TASK"))`
+
+### INLA Package
+
+Running functions from the INLA package may results in GLib versions not found. Installing a specific version and binary for the package as below has worked.
+
+```
+module load R-bundle-Bioconductor/3.17-gimkl-2022a-R-4.3.1 
+R 
+
+#https://inla.r-inla-download.org/R/testing/bin/windows/contrib/4.3/ 
+remotes::install_version("INLA", version="23.06.29",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/testing"), dep=TRUE) 
+
+INLA::inla.binary.install() #5 options, choose centos 
+```
