@@ -12286,7 +12286,9 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "1.9.0-intel-2020a"
+                    "1.9.0-intel-2020a",
+                    "1.13.0-gompi-2023a",
+                    "1.13.0-iimpi-2022a"
                 ]
             }
         },
