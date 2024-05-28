@@ -4,7 +4,7 @@ description:
 tags: []
 ---
 
-From the 27th of May, NeSI's Support team will be using a new ticketing system to accept, track, and solve inquiries and issues sent to [support@nesi.org.nz](mailto:support@nesi.org.nz). The change is part of an evolution of our tools to better support researchers using NeSI's compute platforms and data services.
+From the 29th of May, NeSI's Support team will be using a new support desk platform to accept, track, and solve inquiries and issues sent to [support@nesi.org.nz](mailto:support@nesi.org.nz). The change is part of an evolution of our tools to better support researchers using NeSI's compute platforms and data services.
 
 ## How this impacts you
 
@@ -20,7 +20,7 @@ Tell us what you think using this [form](https://docs.google.com/forms/d/e/1FAIp
 ## What stays the same
 
 * Requests for support or questions about NeSI platforms and services can still be sent by email to [support@nesi.org.nz](mailto:support@nesi.org.nz). These will raise new support tickets for response from a member of our Support Team.
-* All your current tickets will stay open. Any requests you currently have in the queue will be migrated over to the new ticketing system and solved from there.
+* All your current tickets will stay open. Any requests you currently have in the queue will be migrated over to the new support desk platform and solved from there.
 
 ## Documentation Changes
 
