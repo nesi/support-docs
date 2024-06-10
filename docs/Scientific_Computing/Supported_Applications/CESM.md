@@ -87,13 +87,19 @@ git-lfs/3.5.1 (GitHub; linux amd64; go 1.21.7; git e237bb3a)
 
 ## Download CESM
 
+First, set an environment with your NeSI project code to make replacing our default one easier
+in the commands below (replacing *&lt;your\_project\_code&gt;* with your project code):
+
+```sh
+export PROJECT_CODE=<your_project_code>
+```
+
 These instructions are based on the [upstream documentation](https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html).
 First switch to your project directory (or wherever else you would like
-the CESM source to live) and then run the commands to download CESM
-(replacing *&lt;your\_project\_code&gt;* with your project code):
+the CESM source to live) and then run the commands to download CESM:
 
 ``` sh
-cd /nesi/project/<your_project_code>
+cd /nesi/project/${PROJECT_CODE}
 git clone -b release-cesm2.1.5 https://github.com/ESCOMP/CESM.git my_cesm_sandbox
 cd my_cesm_sandbox
 ./manage_externals/checkout_externals
@@ -106,19 +112,24 @@ certificate.
 
 ## NeSI specific CIME configuration
 
+Make sure you still have the environment variable set with your project code:
+
+```sh
+export PROJECT_CODE=<your_project_code>
+```
+
 Clone the repo containing NeSI specific CIME configuration
 ([CIME](http://esmci.github.io/cime/versions/master/html/what_cime/index.html)
 provides a case control system for configuring, building and executing
-Earth system models) and copy the config files to *~/.cime*. In the
-following, replace *&lt;your\_project\_code&gt;* with your project code
-(this will overwrite any current configuration your have in *~/.cime*):
+Earth system models) and copy the config files to *~/.cime* (this will overwrite
+any current configuration your have in *~/.cime*):
 
 ``` sh
-cd /nesi/project/<your_project_code>
+cd /nesi/project/${PROJECT_CODE}
 git clone https://github.com/nesi/nesi-cesm-config.git
 cd nesi-cesm-config
 mkdir -p ~/.cime
-sed 's/nesi99999/<your_project_code>/g' config_machines.xml > ~/.cime/config_machines.xml
+sed "s/nesi99999/${PROJECT_CODE}/g" config_machines.xml > ~/.cime/config_machines.xml
 cp config_batch.xml ~/.cime/config_batch.xml
 cp config_compilers.xml ~/.cime/config_compilers.xml
 ```
@@ -131,10 +142,16 @@ large.
 Make sure that the directory pointed to by `DIN_LOC_ROOT` in *~/.cime/config_machines.xml* exists, e.g.
 
 ```sh
-mkdir -p /nesi/nobackup/<your_project_code>/cesm/inputdata
+mkdir -p /nesi/nobackup/${PROJECT_CODE}/cesm/inputdata
 ```
 
 ## Setting up and running a test case
+
+Make sure you still have the environment variable set with your project code:
+
+```sh
+export PROJECT_CODE=<your_project_code>
+```
 
 Here we will run the test described in the CESM [quick start
 guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html). The
@@ -144,14 +161,14 @@ above link for more information.
 Change to the *cime/scripts* directory:
 
 ``` sh
-cd /nesi/project/<your_project_code>/my_cesm_sandbox/cime/scripts
+cd /nesi/project/${PROJECT_CODE}/my_cesm_sandbox/cime/scripts
 ```
 
 Create the case directory:
 
 ```sh
 ./create_newcase \
-    --case /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test \
+    --case /nesi/nobackup/${PROJECT_CODE}/$USER/cesm/output/b.e20.B1850.f19_g17.test \
     --compset B1850 --res f19_g17 --machine mahuika --compiler gnu
 ```
 
@@ -164,7 +181,7 @@ In the above command:
 Change to the new case directory that you just created:
 
 ```sh
-cd /nesi/nobackup/<your_project_code>/$USER/cesm/output/b.e20.B1850.f19_g17.test
+cd /nesi/nobackup/${PROJECT_CODE}/$USER/cesm/output/b.e20.B1850.f19_g17.test
 ```
 
 **On Mahuika only**: we will now adjust the number of processors (tasks) the simulation will run on. This case is configured to run on 6 full nodes by default but we're just running a short test, so let's reduce the maximum number of tasks per node, keeping the layout between different components the same:
