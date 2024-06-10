@@ -4712,6 +4712,30 @@
         "support": "",
         "url": "https://sco.h-its.org/exelixis/web/software/examl/index.html"
     },
+    "ExpansionHunter": {
+        "default": "",
+        "description": "Tool for estimating repeat sizes",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/Illumina/ExpansionHunter",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "5.0.0"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/Illumina/ExpansionHunter"
+    },
     "Extrae": {
         "default": "",
         "description": "Extrae is capable of instrumenting applications based on MPI, OpenMP, pthreads, CUDA1, OpenCL1, and StarSs1 using different instrumentation approaches",
@@ -13042,6 +13066,30 @@
         "network_licences": [],
         "support": "",
         "url": "http://eddylab.org/software/recon/"
+    },
+    "REViewer": {
+        "default": "",
+        "description": "Tool for visualizing alignments of reads in regions containing tandem repeats",
+        "domains": [],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/Illumina/REViewer",
+        "licence_type": "",
+        "link_output_dictride": "",
+        "machines": {
+            "mahuika": {
+                "default": "latest",
+                "versions": [
+                    "0.2.7"
+                ]
+            }
+        },
+        "module_path": "",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "url": "https://github.com/Illumina/REViewer"
     },
     "RFPlasmid": {
         "default": "",
