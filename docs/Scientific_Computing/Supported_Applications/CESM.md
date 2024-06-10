@@ -32,6 +32,20 @@ module load git
 You should ensure the *git* module is still loaded when running `git` commands
 later on in this guide.
 
+!!! note
+
+    It should be safe to load the git module in your *~/.bashrc* (or other shell init file),
+    since it shouldn't conflict with other modules, but if you use Māui too you should wrap
+    it in a block such as:
+
+    ```sh
+    if [[ "${SYSTEM_STRING}" == "CS400" ]]; then
+        module load git
+    fi
+    ```
+
+    This will ensure the `module load git` command only runs on Mahuika.
+
 ### Māui only
 
 On Māui only, you may need to install the Perl *XML::LibXML* module,
@@ -54,7 +68,15 @@ Then export the path the module was installed to so that it is picked up by Perl
 export PERL5LIB=~/perl5/lib/perl5/x86_64-linux-thread-multi
 ```
 
-The export command above could be added to your *~/.bashrc* file to make it persistent.
+The export command above could be added to your *~/.bashrc* file to make it persistent but make sure
+you wrap it in a block that ensures the environment variable is only set on Māui (if you are likely
+to use Mahuika too), for example:
+
+```sh
+if [[ "${SYSTEM_STRING}" == "XC50" ]]; then
+    export PERL5LIB=~/perl5/lib/perl5/x86_64-linux-thread-multi
+fi
+```
 
 ### Mahuika and Māui
 
