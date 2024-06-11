@@ -6614,7 +6614,8 @@
                 "versions": [
                     "4.2.13-gimkl-2017a",
                     "4.2.14-GCCcore-7.4.0",
-                    "4.2.15-GCCcore-9.2.0"
+                    "4.2.15-GCCcore-9.2.0",
+                    "4.2.16-GCC-12.3.0"
                 ]
             },
             "maui_ancil": {
@@ -7453,7 +7454,8 @@
                 "versions": [
                     "1.900.29-gimkl-2017a",
                     "2.0.14-GCC-7.4.0",
-                    "2.0.14-GCCcore-7.4.0"
+                    "2.0.14-GCCcore-7.4.0",
+                    "2.0.33-GCC-12.3.0"
                 ]
             },
             "maui_ancil": {
@@ -7467,7 +7469,8 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "",
+        "url": "http://www.ece.uvic.ca/~frodo/jasper/"
     },
     "Java": {
         "default": "",
@@ -10231,6 +10234,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
+                    "6.6.2-foss-2023a",
                     "6.6.2-intel-2018b"
                 ]
             },
@@ -17555,7 +17559,8 @@
                 "versions": [
                     "1.16.0-GCCcore-7.4.0",
                     "1.16.0-GCCcore-9.2.0",
-                    "1.17.4-GCC-11.3.0"
+                    "1.17.4-GCC-11.3.0",
+                    "1.17.8-GCC-12.3.0"
                 ]
             }
         },
@@ -18956,6 +18961,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
+                    "1.6.0-GCC-12.3.0",
                     "1.6.0-GCCcore-7.4.0"
                 ]
             }
@@ -18979,14 +18985,16 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "3.1.0-intel-2018b"
+                    "3.1.0-intel-2018b",
+                    "3.2.0-GCC-12.3.0"
                 ]
             }
         },
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "",
+        "url": "http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/"
     },
     "ga4gh": {
         "default": "",
@@ -20904,7 +20912,8 @@
                 "default": "latest",
                 "versions": [
                     "1.15-GCCcore-7.4.0",
-                    "1.15-GCCcore-9.2.0"
+                    "1.15-GCCcore-9.2.0",
+                    "1.17-GCC-12.3.0"
                 ]
             },
             "maui_ancil": {
@@ -23194,7 +23203,8 @@
                 "versions": [
                     "0.38.4-GCCcore-7.4.0",
                     "0.38.4-GCCcore-9.2.0",
-                    "0.40.0"
+                    "0.40.0",
+                    "0.42.2-GCC-12.3.0"
                 ]
             }
         },
