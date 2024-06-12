@@ -8,7 +8,7 @@ Along the way, we'll use this page to share answers to some of the most common q
 
 ## When is this happening?
 
-New equipment is being delivered as we speak and we've begun installing components in Waipapa Taumata Rau, University of Auckland's Tamaki Data Centre. New services aren't expected online before July 2024. We'll keep you updated as our timelines are confirmed. If you are enthusiastic to be among the first groups to try the new platform, please be in touch.
+New equipment is being delivered as we speak and we've begun installing components in Waipapa Taumata Rau, University of Auckland's Tamaki Data Centre. New services aren't expected online before August 2024. We'll keep you updated as our timelines are confirmed. If you are enthusiastic to be among the first groups to try the new platform, please [get in touch](mailto:support@nesi.org.nz).
 
 ## Why is NeSI making this change?
 
@@ -32,7 +32,7 @@ No. All existing NeSI users will be migrated in a staggered manner to the new sy
 
 ## I'm currently running on Mahuika, will something change for me?
 
-The platform NeSI has selected to replace Mahuika is similar to the recently commissioned Mahuika AMD Milan compute nodes. So, we'll be using these current nodes to validate any issues. If you are already using the Milan nodes to support your work, no action is required from you at this point. If you are using Mahuika's Broadwell nodes or Maui, please aim to test your code on Milan as soon as possible. If you encounter any errors or have any challenges when submitting your jobs on these nodes, let us know and we can work together to solve any issues.
+The platform NeSI has selected to replace Mahuika is similar to the recently commissioned Mahuika AMD Milan compute nodes. So, we'll be using these current nodes to validate any issues. If you are already using the Milan nodes to support your work, no action is required from you at this point. If you are using Mahuika's Broadwell nodes or Maui, please aim to [test your code on Milan](https://docs.nesi.org.nz/General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform/) as soon as possible. If you encounter any errors or have any challenges when submitting your jobs on these nodes, let us know and we can work together to solve any issues.
 
 ## Does this affect the Nearline service? 
 
