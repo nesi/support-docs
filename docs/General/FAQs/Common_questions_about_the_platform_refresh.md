@@ -36,7 +36,7 @@ The platform NeSI has selected to replace Mahuika is similar to the recently com
 
 ## Does this affect the Nearline service? 
 
-Yes, all NeSI compute and storage services will leverage the new infrastructure.
+Yes, all NeSI compute and storage services will leverage the new infrastructure. The Nearline service is one of the areas which will be changing quite a bit, leveraging different technology to deliver an easier to use cold storage solution. We'll be sharing more details on this soon. No action is required from you at this stage, but if you have workflows which touch nearline at the moment these will need to be updated.
 
 ## I'm running on Maui, will there be any changes affecting me?
 
