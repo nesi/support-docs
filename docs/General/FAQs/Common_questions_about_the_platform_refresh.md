@@ -16,7 +16,7 @@ We know that computational capabilities and eResearch services are critical to s
 
 ## Will the software package I use be available on the new platforms?
 
-All software currently supported on Mahuika's Milan nodes will be deployed. If you haven't tried these nodes yet, visit this guide for testing your code on Milan.
+All software currently supported on Mahuika's Milan nodes will be deployed. If you haven't tried these nodes yet, [visit this guide for testing your code on Milan](https://github.com/nesi/support-docs/blob/platform-refresh-faq-draft/docs/General/FAQs/'General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform').
 
 ## Will a long system outage be required as part of the migration of data, users, and teams?
 
