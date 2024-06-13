@@ -35,6 +35,23 @@ with the new infrastructure environment in advance, the ways it will
 differ from Māui, and actions you may need to take to prepare your
 project for migration.
 
+Below is a quick overview of some of the changes you need to be aware of when porting code from from maui to mahuika:
+
+| maui                   |  mahuika              |  comments                           |
+|------------------------|-----------------------|-------------------------------------|
+| NA                     | module purge
+| module avail -S X      | module spider X       | search for module X                 |
+| module load PrgEnv-cray/6.0.10 |   NA          | no Cray compiler on Mahuika milan nodes |
+| module load  craype-hugepages*M | NA           |                                         |
+| module load PrgEnv-intel | module load  intel       | Intel MPI and Intel compilers                      |
+| module load PrgEnv-gnu |   module load  gimkl       | Intel MPI and GNU compilers                        |
+| ftn                    | ifort, gfortran, mpiifort or mpif90 | Fortran compiler, use mpiifort (Intel) or mpif90 (GNU) if your code has MPI |
+| CC                     | icc, g++, mpiicc or mpicxx | C++ compiler, use mpiicc (Intel) or mpicxx (GNU) if your code has MPI |
+| cc                     | icc, gcc, mpiicc or mpicc | C compiler, use mpiicc (Intel) or mpicc (GNU) if your code has MPI |
+
+
+
+
 ## Test your code on Mahuika
 
 The platform NeSI has selected to replace Mahuika is similar to the
