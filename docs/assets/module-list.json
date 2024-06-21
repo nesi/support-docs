@@ -4209,7 +4209,8 @@
                     "0.5.0",
                     "0.5.3",
                     "0.6.0",
-                    "0.7.0"
+                    "0.7.0",
+                    "0.7.2"
                 ]
             }
         },
@@ -6017,7 +6018,6 @@
                     "2.4-GCC-7.4.0",
                     "2.4-GCCcore-7.4.0",
                     "2.4-GCCcore-9.2.0",
-                    "2.4-iccifort-2018.1.163-GCC-7.4.0",
                     "2.6-GCCcore-9.2.0",
                     "2.6",
                     "2.7-GCC-11.3.0",
@@ -10153,8 +10153,7 @@
             "mahuika": {
                 "default": "latest",
                 "versions": [
-                    "6.6.2-foss-2023a",
-                    "6.6.2-intel-2018b"
+                    "6.6.2-foss-2023a"
                 ]
             },
             "maui_ancil": {
@@ -10168,7 +10167,8 @@
         "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
-        "support": ""
+        "support": "",
+        "url": "https://www.ncl.ucar.edu"
     },
     "NCO": {
         "default": "",
@@ -12457,7 +12457,6 @@
                 "versions": [
                     "2.7.14-gimkl-2017a",
                     "2.7.16-gimkl-2018b",
-                    "2.7.16-intel-2018b",
                     "2.7.18-gimkl-2020a",
                     "3.6.3-gimkl-2017a",
                     "3.7.3-gimkl-2018b",
@@ -15778,10 +15777,8 @@
                 "versions": [
                     "4.6-gimkl-2017a",
                     "4.6-gimkl-2020a",
-                    "5.3.5-intel-2017a-VTST-BEEF",
                     "5.3.5-intel-2017a",
                     "5.4.4-gimkl-2022a",
-                    "5.4.4-intel-2017a",
                     "5.4.4-intel-2020a",
                     "6.2.1-intel-2022a-NOOMP",
                     "6.2.1-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
