@@ -8,7 +8,7 @@ Along the way, we'll use this page to share answers to some of the most common q
 
 ## When is this happening?
 
-New equipment is being delivered as we speak and we've begun installing components in Waipapa Taumata Rau, University of Auckland's Tamaki Data Centre. New services aren't expected online before August 2024. We'll keep you updated as our timelines are confirmed. If you are enthusiastic to be among the first groups to try the new platform, please [get in touch](mailto:support@nesi.org.nz).
+New equipment is being delivered as we speak and we've begun installing components in Waipapa Taumata Rau, University of Auckland's Tamaki Data Centre. New services aren't expected online before September 2024. We'll keep you updated as our timelines are confirmed. If you are enthusiastic to be among the first groups to try the new platform, please [get in touch](mailto:support@nesi.org.nz).
 
 ## Why is NeSI making this change?
 
@@ -24,7 +24,7 @@ We're planning to run our migration in stages in order to avoid any lengthy outa
 
 ## Do I need to move my data or software?
 
-No. Our current plan is for the NeSI team to migrate users, data, and teams in staggered phases once the systems are ready. No action from you will be required. If you currently do not use Mahuika's Milan nodes, please aim to test your software on those nodes now, so that we can identify any potential issues in advance. 
+Our current plan is for the NeSI team to migrate users, data, and teams in staggered phases once the systems are ready. No action from you will be required. If you currently do not use Mahuika's Milan nodes, please aim to test your software on those nodes now, so that we can identify any potential issues in advance. 
 
 ## Do I need to create a user account?
 
@@ -46,7 +46,7 @@ Some projects on Māui will move to the new NeSI infrastructure, so each Māui p
 
 We’re bringing on more efficient CPUs, more powerful GPUs, enhanced storage capabilities, and new cloud-native development environments. This evolution in our platform enables NeSI to upgrade our existing services, grow our technology partnerships, and unlock a richer array of services beyond traditional HPC.     
 
-## Are any NeSI Services impacted by this change?
+## Which NeSI Services are impacted by this change?
 
 All NeSI compute, storage and data services will leverage the new infrastructure. We also expect our Consultancy and Training Service to realise benefits from the new platforms.
 
