@@ -58,8 +58,8 @@ err=Can't locate XML/LibXML.pm in @INC (you may need to install the XML::LibXML 
 You can install the module with the following:
 
 ```sh
-curl -L [https://cpanmin.us](https://cpanmin.us/) | perl - App::cpanminus 
-cpanm XML::LibXML
+curl -L https://cpanmin.us/ | perl - App::cpanminus
+~/perl5/bin/cpanm XML::LibXML
 ```
 
 Then export the path the module was installed to so that it is picked up by Perl:
