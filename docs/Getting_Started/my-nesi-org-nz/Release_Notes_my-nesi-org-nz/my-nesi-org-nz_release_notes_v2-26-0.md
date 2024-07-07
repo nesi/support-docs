@@ -7,7 +7,7 @@ title: my.nesi.org.nz release notes v2.26.0
 
 ## New and Improved
 
-- When a new allocation is requested, we are now extrapolating the Mahuika compute units from previous allocations to help estimate the next usage. 
+- When a new allocation is requested, we are now able to extrapolate Mahuika compute units from previous allocations to help estimate future usage. 
 
 ## Fixes
 
