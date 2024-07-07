@@ -30,13 +30,13 @@ All existing NeSI users will be migrated to the new systems. Your existing user 
 
 The platform NeSI has selected to replace Mahuika is similar to Mahuika's AMD Milan compute nodes. We're using these current Milan nodes to validate any issues. If you are already using the Milan nodes to support your work, no action is required from you at this point. If you are using Mahuika's Broadwell nodes or Māui, we recommend you [test your workloads on Milan](https://docs.nesi.org.nz/General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform/) now.
 
+## I'm currently running on Māui, will something change for me?
+
+Some projects on Māui will move to the new NeSI infrastructure. We have been in touch with those Māui projects and given them a small allocation on Mahuika which can be used to validate the software they need is available (or can be built) on Mahuika's AMD Milan nodes and works as expected. All members of the Māui project can use this Mahuika allocation. Visit this [how-to guide for instructions]('General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform') of how to test your workloads on Milan.
+
 ## Does this affect Nearline? 
 
 All NeSI compute and storage services will leverage the new infrastructure. Nearline is changing, leveraging different technology to deliver an easier to use cold storage solution. We'll share more details on this soon. No action is required from you at this stage. If you have workflows which touch Nearline we will update our docs as the replacement service comes online.
-
-## I'm running on Māui, will there be any changes affecting me?
-
-Some projects on Māui will move to the new NeSI infrastructure. We have been in touch with those Māui projects and given them a small allocation on Mahuika which can be used to validate the software they need is available (or can be built) on Mahuika's AMD Milan nodes and works as expected. All members of the Māui project can use this Mahuika allocation. Visit this [how-to guide for instructions]('General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform') of how to test your workloads on Milan.
 
 ## I have more questions that aren't covered here. Where can I go or who can I talk to for more information?
 
