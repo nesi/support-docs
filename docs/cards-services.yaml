@@ -1,4 +1,4 @@
-- title: JupyterHub
+- title: Jupyter Notebooks
   content: Connect to NeSI through your web browser.
   url: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
   image: ./assets/icons/logomark-notext-blackbody-blackmoons.svg

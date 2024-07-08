@@ -1,5 +1,7 @@
 ---
 nav:
+  - Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md
+  - NeSI_Support_is_changing_tools.md
   - Accessing_NeSI_Support_during_the_holiday_break.md
   - Improved_data_management_and_efficient_use_of_NeSI_HPC_storage.md
   - Improvements_to_Fair_Share_job_prioritisation_on_Maui.md

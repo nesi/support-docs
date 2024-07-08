@@ -27,6 +27,12 @@ extra:
     property: G-TVQR4R1F40
 plugins:
   - search
+  - exclude-search:
+      exclude:
+      - MACROS.md
+      - NEWPAGE.md
+      - GLOSSARY.md
+      - CONTRIBUTING.md
   - open-in-new-tab
   - redirects:
       map_file: docs/redirect_map.yml
@@ -48,7 +54,7 @@ edit_uri: edit/main/docs/
 site_description: NeSI Support Documentation
 site_dir: public
 site_name: NeSI Support Documentation
-site_url: https://github.com/nesi/support-docs
+site_url: https://docs.nesi.org.nz/
 extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css

@@ -1,0 +1,20 @@
+name: automerge
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '30 12 * * *' # Should run 30 min after get remote assets.
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - run: |
+        for branch in $(gh pr list -R nesi/support-docs --label "auto_merge" --json headRefName --jq .[].headRefName);do
+            git checkout $branch
+            gh pr merge --squash --auto --delete-branch
+        done
+

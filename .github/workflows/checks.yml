@@ -36,7 +36,8 @@ jobs:
     name: Determine what files to check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Get changed files
@@ -49,7 +50,8 @@ jobs:
         if: inputs.fileList == ''
         id: diff
         run: |
-          echo "Changed files: ${{steps.get-changed-files.outputs.all_changed_files}}"
+          echo "::info::Workflow triggered by PR"
+          echo "Changed files: '${{steps.get-changed-files.outputs.all_changed_files}}'"
           echo "filelist=${{steps.get-changed-files.outputs.all_changed_files}}" >> $GITHUB_OUTPUT
     outputs:
       filelist: ${{steps.diff.outputs.filelist || inputs.fileList}}

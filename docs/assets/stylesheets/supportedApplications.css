@@ -10,7 +10,6 @@
 .md-typeset details.software {
   margin: 0 0 -1px 0;
   border-radius: 0;
-  background-color: var(--md-primary-bg-color);
   border: 1px solid var(--md-default-fg-color);
   /* Nesting here to increase prio */
   &.hide_cluster {
