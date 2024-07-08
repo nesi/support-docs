@@ -1,6 +1,5 @@
 ---
 created_at: '2023-03-09T02:46:57Z'
-status: new
 tags: []
 title: "M\u0101ui upgrade is complete"
 vote_count: 1
