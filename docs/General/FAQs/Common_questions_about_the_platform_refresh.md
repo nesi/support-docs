@@ -12,7 +12,7 @@ New equipment is being delivered as we speak and we've begun installing componen
 
 ## Will the software package I use be available on the new platforms?
 
-All software currently supported on Mahuika's Milan nodes will be deployed. To view a list of software currently running on Mahuika, [visit our Supported Applications page](https://docs.nesi.org.nz/Scientific_Computing/Supported_Applications/) in our Support Documentation site. If you haven't tried running your code on the Milan nodes yet, [visit this guide for instructions](https://github.com/nesi/support-docs/blob/platform-refresh-faq-draft/docs/General/FAQs/'General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform').
+All software currently supported on Mahuika's Milan nodes will be deployed. To view a list of software currently running on Mahuika, [visit our Supported Applications page](https://docs.nesi.org.nz/Scientific_Computing/Supported_Applications/) in our Support Documentation site. If you haven't tried running your code on the Milan nodes yet, [visit this guide for instructions](https://docs.nesi.org.nz/General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform/).
 
 ## Will a long system outage be required as part of the migration of data and projects?
 
@@ -20,7 +20,7 @@ We're planning to run migration in stages in order to avoid any lengthy outages 
 
 ## Do I need to move my data or software?
 
-Projects and data will be migrated in staggered phases as systems become available. You might be asked to check and confirm your migration has been successful, and that you are able to continue your work. If you currently do not use Mahuika's Milan nodes, we recommend you test your workloads on those nodes now. [Visit this guide for testing your code on Milan](https://github.com/nesi/support-docs/blob/platform-refresh-faq-draft/docs/General/FAQs/'General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform').
+Projects and data will be migrated in staggered phases as systems become available. You might be asked to check and confirm your migration has been successful, and that you are able to continue your work. If you currently do not use Mahuika's Milan nodes, we recommend you test your workloads on those nodes now. [Visit this guide for testing your code on Milan](https://docs.nesi.org.nz/General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform/).
 
 ## Do I need to create a user account?
 
