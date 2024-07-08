@@ -5,6 +5,7 @@ tags:
   - toolchain
   - compiler
   - milan
+description: Overview of some of the changes you need to be aware of when porting code from from Māui to Mahuika
 title: Preparing your code for use on NeSI's new HPC platform
 vote_count: 0
 vote_sum: 0
