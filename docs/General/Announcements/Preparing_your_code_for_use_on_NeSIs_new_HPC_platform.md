@@ -35,9 +35,9 @@ with the new infrastructure environment in advance, the ways it will
 differ from Māui, and actions you may need to take to prepare your
 project for migration.
 
-Below is a quick overview of some of the changes you need to be aware of when porting code from from maui to mahuika:
+Below is a quick overview of some of the changes you need to be aware of when porting code from from Māui to Mahuika:
 
-| maui                   |  mahuika              |  comments                           |
+| Māui                   |  Mahuika              |  comments                           |
 |------------------------|-----------------------|-------------------------------------|
 | NA                     | module purge
 | module avail -S X      | module spider X       | search for module X                 |
@@ -54,20 +54,14 @@ Below is a quick overview of some of the changes you need to be aware of when po
 
 ## Test your code on Mahuika
 
-The platform NeSI has selected to replace Mahuika is similar to the
-recently commissioned [Mahuika AMD Milan compute
+The platform NeSI has selected to replace Mahuika is similar to the [Mahuika AMD Milan compute
 nodes](../../General/Announcements/Mahuikas_new_Milan_CPU_nodes_open_to_all_NeSI_users.md).
-So, we'll be using these current nodes to validate any issues,
-mitigating risks of your subsequent migration to the new platform.
+So, we'll be using these current nodes to validate any issues, mitigating risks of your subsequent migration to the new platform.
 
-Some projects on Māui will move to the new NeSI hardware, so each Māui
-project has been given a small allocation on Mahuika which can be used
-by Māui users to validate the software they need is available (or can be
-built) on the AMD Milan nodes and works as expected. All members of the
-project can use this Mahuika allocation.
+Some projects on Māui will move to the new NeSI hardware. These projects have been notified and given a small allocation on Mahuika which can be used by the Māui users to validate the software they need is available (or can be built) on the AMD Milan nodes and works as expected. All members of the project can use this Mahuika allocation.
 
-To access Mahuika's AMD Milan nodes and submit jobs from any NeSI lander
-node or Māui login node, use: `ssh login.mahuika.nesi.org.nz`.
+To access Mahuika's AMD Milan nodes and submit jobs from any NeSI lander node or Māui login node, use:
+`ssh login.mahuika.nesi.org.nz`
 
 At any point, if you don't see what you need or something isn’t working,
 {% include "partials/support_request.html" %}. We’re keen to ensure this
