@@ -32,7 +32,7 @@ The platform NeSI has selected to replace Mahuika is similar to Mahuika's AMD Mi
 
 ## I'm currently running on Māui, will something change for me?
 
-Some projects on Māui will move to the new NeSI infrastructure. We have been in touch with those Māui projects and given them a small allocation on Mahuika which can be used to validate the software they need is available (or can be built) on Mahuika's AMD Milan nodes and works as expected. All members of the Māui project can use this Mahuika allocation. Visit this [how-to guide for instructions]('General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform') of how to test your workloads on Milan.
+Some projects on Māui will move to the new NeSI infrastructure. We have been in touch with those Māui projects and given them a small allocation on Mahuika which can be used to validate the software they need is available (or can be built) on Mahuika's AMD Milan nodes and works as expected. All members of the Māui project can use this Mahuika allocation. Visit this [how-to guide for instructions](https://docs.nesi.org.nz/General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform/) of how to test your workloads on Milan.
 
 ## Does this affect Nearline? 
 
@@ -40,5 +40,5 @@ All NeSI compute and storage services will leverage the new infrastructure. Near
 
 ## I have more questions that aren't covered here. Where can I go or who can I talk to for more information?
 
-Reach out anytime - no question is too small. We are ready to respond - email us at support@nesi.org.nz and we also invite you to join our [weekly Online Office Hours]('Getting_Started/Getting_Help/Weekly_Online_Office_Hours') to chat with us one-to-one.
+Reach out anytime - no question is too small. We are ready to respond - email us at support@nesi.org.nz and we also invite you to join our [weekly Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) to chat with us one-to-one.
 
