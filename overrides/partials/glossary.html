@@ -566,10 +566,6 @@ The EIGENSOFT package combines functionality from our population genetics method
 
 Eigenvalue SoLvers for Petaflop-Applications .
 
-**EMAN:**
-
-EMAN is a powerful image processing library as well as a complete software suite for single particle reconstruction. This is a process for converting randomly oriented 2D projection images into a 3D model, and is typically used in conjunction with electron cryomicroscopy.
-
 **EMAN2:**
 
 Greyscale scientific image processing suite with a primary focus on processing data from transmission electron microscopes
@@ -602,10 +598,6 @@ Eigen is a C++ template library for linear algebra: matrices, vectors, numerical
 
 Embree is a collection of high-performance ray tracing kernels, developed at Intel. The target users of Embree are graphics application engineers who want to improve the performance of their photo-realistic rendering application by leveraging Embree's performance-optimized ray tracing kernels.
 
-**EnergyPlus:**
-
-Energy simulation program used to model energy consumption and water use in buildings.
-
 **EukRep-EukCC:**
 
 Completeness and contamination estimator for metagenomic assembled microbial eukaryotic genomes. Also condatains smetana, carveme and memote .
@@ -617,6 +609,10 @@ Bayesian tree inference, particularly suitable for large-scale analyses.
 **ExaML:**
 
 Exascale Maximum Likelihood for phylogenetic inference using MPI.
+
+**ExpansionHunter:**
+
+Tool for estimating repeat sizes
 
 **Extrae:**
 
@@ -701,10 +697,6 @@ FlexiBLAS is a wrapper library that enables the exchange of the BLAS and LAPACK 
 **Flye:**
 
 Flye is a de novo assembler for long and noisy reads, such as those produced by PacBio and Oxford Nanopore Technologies.
-
-**FoX:**
-
-FoX is an XML library written in Fortran 95. It allows software developers to read, write and modify XML documents from Fortran applications without the complications of dealing with multi-language development.
 
 **FragGeneScan:**
 
@@ -1514,10 +1506,6 @@ OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
 
 Open Babel is a chemical toolbox designed to speak the many languages of chemical data. It's an open, collaborative project allowing anyone to search, convert, analyze, or store data from molecular modeling, chemistry, solid-state materials, biochemistry, or related areas.
 
-**OpenCMISS:**
-
-OpenCMISS is a set of libraries and applications which provide modelling and visualisation capabilities for complex bioengineering problems. This version is built from https://github.com/OpenCMISS/setup develop branch.
-
 **OpenCV:**
 
 OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
@@ -1781,6 +1769,10 @@ fast, safe, thread-friendly alternative to backtracking regular expression engin
 **RECON:**
 
 De novo identification and classification of repeat sequence families from genomic sequences
+
+**REViewer:**
+
+Tool for visualizing alignments of reads in regions containing tandem repeats
 
 **RFPlasmid:**
 
@@ -2146,10 +2138,6 @@ TransDecoder identifies candidate coding regions within transcript sequences.
 
 TreeMix is a method for inferring the patterns of population splits and mixtures in the history of a set of populations.
 
-**Trilinos:**
-
-The Trilinos Project is an effort to develop algorithms and enabling technologies within an object-oriented software framework for the solution of large-scale, complex multi-physics engineering and scientific problems. A unique design feature of Trilinos is its focus on packages.
-
 **TrimGalore:**
 
 A wrapper of FastQC and cutadapt to automate quality and adapter trimming as well as quality control, with some added functionality to remove biased methylation positions for RRBS sequence files
@@ -2351,10 +2339,6 @@ ZeroMQ looks like an embeddable networking library but acts like a concurrency f
 **Zip:**
 
 Zip is a compression and file packaging/archive utility. Although highly compatible both with PKWARE's PKZIP and PKUNZIP utilities for MS-DOS and with Info-ZIP's own UnZip, our primary objectives have been portability and other-than-MSDOS functionality
-
-**Zonation:**
-
-Spatial conservation prioritisation framework for large-scale conservation planning.
 
 **abritamr:**
 
@@ -3487,10 +3471,6 @@ Stand-alone program that maps and aligns a set of cDNA or protein sequences onto
 **spdlog:**
 
 Fast C++ logging library.
-
-**spglib:**
-
-Spglib is a C library for finding and handling crystal symmetries.
 
 **splat:**
 

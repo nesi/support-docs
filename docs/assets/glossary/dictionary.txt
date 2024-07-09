@@ -105,6 +105,7 @@ BEEF's
 BEEF
 BGC-Bayesian-genomic-clines's
 BGC-Bayesian-genomic-clines
+BLAS
 BLAST's
 BLAST
 BLASTDB's
@@ -196,6 +197,7 @@ CONCOCT's
 CONCOCT
 CP2K's
 CP2K
+CPE
 CPMD's
 CPMD
 CPUs's
@@ -322,8 +324,6 @@ EIGENSOFT's
 EIGENSOFT
 ELPA's
 ELPA
-EMAN's
-EMAN
 EMAN2's
 EMAN2
 EMBOSS's
@@ -342,14 +342,14 @@ Eigen's
 Eigen
 Embree's
 Embree
-EnergyPlus's
-EnergyPlus
 EukRep-EukCC's
 EukRep-EukCC
 ExaBayes's
 ExaBayes
 ExaML's
 ExaML
+ExpansionHunter's
+ExpansionHunter
 Extrae's
 Extrae
 FALCON's
@@ -397,8 +397,6 @@ FlexiBLAS's
 FlexiBLAS
 Flye's
 Flye
-FoX's
-FoX
 Fortran
 FragGeneScan's
 FragGeneScan
@@ -884,8 +882,6 @@ OpenBLAS's
 OpenBLAS
 OpenBabel's
 OpenBabel
-OpenCMISS's
-OpenCMISS
 OpenCV's
 OpenCV
 OpenFAST's
@@ -1031,6 +1027,8 @@ RE2
 REANNZ
 RECON's
 RECON
+REViewer's
+REViewer
 RFPlasmid's
 RFPlasmid
 RFdiffusion's
@@ -1140,6 +1138,7 @@ Salmon's
 Salmon
 Sambamba's
 Sambamba
+ScaLAPAC
 ScaLAPACK's
 ScaLAPACK
 Scalasca's
@@ -1230,8 +1229,6 @@ Transrate's
 Transrate
 TreeMix's
 TreeMix
-Trilinos's
-Trilinos
 TrimGalore's
 TrimGalore
 Trimmomatic's
@@ -1353,8 +1350,6 @@ ZeroMQ's
 ZeroMQ
 Zip's
 Zip
-Zonation's
-Zonation
 abritamr's
 abritamr
 admonition
@@ -1907,6 +1902,8 @@ pplacer
 precompiled
 preseq's
 preseq
+procurements
+procurement
 prodigal's
 prodigal
 prodigal-gv's
@@ -2020,8 +2017,6 @@ spaln's
 spaln
 spdlog's
 spdlog
-spglib's
-spglib
 splat's
 splat
 spoa's
