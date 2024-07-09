@@ -15,26 +15,13 @@ zendesk_section_id: 200732737
 
 ## Background
 
-Since 2018 NeSI and its Collaborators (University of Auckland, NIWA,
-University of Otago, Manaaki Whenua) have operated the current national
-HPC platform and underlying infrastructure, best known as Mahuika and
-Māui. These Collaborators are now refreshing the underlying HPC
-infrastructure through two procurements, led by NeSI for Mahuika and
-NIWA for Māui.
+Since 2018 NeSI and its Collaborators (University of Auckland, NIWA, University of Otago, Manaaki Whenua) have operated the current national HPC platform and underlying infrastructure, best known as Mahuika and Māui.
 
-NeSI has [completed its procurement](https://www.nesi.org.nz/news/2024/02/partnering-deliver-next-generation-cloud-data-and-ai-solutions-empower-aotearoas),
-selected the underlying infrastructure platform, and is commissioning
-the replacement for Mahuika. We anticipate migrating users in a
-staggered manner during the coming 6+ months. We will take all care to
-manage any changes for you in your work in using NeSI’s HPC.
+NeSI is [refreshing its platform](https://www.nesi.org.nz/news/2024/02/partnering-deliver-next-generation-cloud-data-and-ai-solutions-empower-aotearoas),
+and we anticipate migrating users in a staggered manner starting in July 2024. We will take all care to manage any changes for you and your work in using NeSI’s HPC.
 
-We anticipate teams might require assistance with getting ready, so
-we’re providing wrap-around support. Our goal is to reduce the risk or
-pain of the transition for you and your team(s) by working with you to
-prepare. This page provides an overview of how to familiarise yourself
-with the new infrastructure environment in advance, the ways it will
-differ from Māui, and actions you may need to take to prepare your
-project for migration.
+We anticipate teams might require assistance with getting ready, so we’re providing wrap-around support. This page provides an overview of how to familiarise yourself
+with infrastructure similar to the new environment in advance. We explain the ways it will differ from Māui and Mahuika's Broadwell nodes, and actions you may need to take to prepare your project for migration.
 
 Below is a quick overview of some of the changes you need to be aware of when porting code from from Māui to Mahuika:
 
