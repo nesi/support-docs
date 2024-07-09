@@ -2,7 +2,7 @@
 description: Common questions researchers have about NeSI's platform refresh in 2024.
 ---
 
-NeSI is evolving its technology platform to ensure Aotearoa's national eResearch infrastructure and services are more accessible, responsive, and flexible to your needs. 
+NeSI is evolving its technology platform to ensure Aotearoa's national eResearch infrastructure and services are more accessible, responsive, and flexible to your needs. For more details [visit the NeSI website](https://www.nesi.org.nz/platform-refresh).
 
 Along the way, we'll use this page to share answers to some of the most common questions we're hearing from you.
 
