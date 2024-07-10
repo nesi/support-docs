@@ -284,8 +284,6 @@
 *[EIGENSOFT]: The EIGENSOFT package combines functionality from our population genetics methods (Patterson et al. 2006) and our EIGENSTRAT stratification correction method (Price et al. 2006). The EIGENSTRAT method uses principal components analysis to explicitly model ancestry differences between cases and controls along continuous axes of variation; the resulting correction is specific to a candidate marker’s variation in frequency across ancestral populations, minimizing spurious associations while maximizing power to detect true associations. The EIGENSOFT package has a built-in plotting script and supports multiple file formats and quantitative phenotypes.
 *[ELPA's]: Eigenvalue SoLvers for Petaflop-Applications .
 *[ELPA]: Eigenvalue SoLvers for Petaflop-Applications .
-*[EMAN's]: EMAN is a powerful image processing library as well as a complete software suite for single particle reconstruction. This is a process for converting randomly oriented 2D projection images into a 3D model, and is typically used in conjunction with electron cryomicroscopy.
-*[EMAN]: EMAN is a powerful image processing library as well as a complete software suite for single particle reconstruction. This is a process for converting randomly oriented 2D projection images into a 3D model, and is typically used in conjunction with electron cryomicroscopy.
 *[EMAN2's]: Greyscale scientific image processing suite with a primary focus on processing data from transmission electron microscopes
 *[EMAN2]: Greyscale scientific image processing suite with a primary focus on processing data from transmission electron microscopes
 *[EMBOSS's]: EMBOSS is 'The European Molecular Biology Open Software Suite'. EMBOSS is a free Open Source software analysis package specially developed for the needs of the molecular biology (e.g. EMBnet) user community.
@@ -302,14 +300,14 @@
 *[Eigen]: Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
 *[Embree's]: Embree is a collection of high-performance ray tracing kernels, developed at Intel. The target users of Embree are graphics application engineers who want to improve the performance of their photo-realistic rendering application by leveraging Embree's performance-optimized ray tracing kernels.
 *[Embree]: Embree is a collection of high-performance ray tracing kernels, developed at Intel. The target users of Embree are graphics application engineers who want to improve the performance of their photo-realistic rendering application by leveraging Embree's performance-optimized ray tracing kernels.
-*[EnergyPlus's]: Energy simulation program used to model energy consumption and water use in buildings.
-*[EnergyPlus]: Energy simulation program used to model energy consumption and water use in buildings.
 *[EukRep-EukCC's]: Completeness and contamination estimator for metagenomic assembled microbial eukaryotic genomes. Also condatains smetana, carveme and memote .
 *[EukRep-EukCC]: Completeness and contamination estimator for metagenomic assembled microbial eukaryotic genomes. Also condatains smetana, carveme and memote .
 *[ExaBayes's]: Bayesian tree inference, particularly suitable for large-scale analyses.
 *[ExaBayes]: Bayesian tree inference, particularly suitable for large-scale analyses.
 *[ExaML's]: Exascale Maximum Likelihood for phylogenetic inference using MPI.
 *[ExaML]: Exascale Maximum Likelihood for phylogenetic inference using MPI.
+*[ExpansionHunter's]: Tool for estimating repeat sizes
+*[ExpansionHunter]: Tool for estimating repeat sizes
 *[Extrae's]: Extrae is capable of instrumenting applications based on MPI, OpenMP, pthreads, CUDA1, OpenCL1, and StarSs1 using different instrumentation approaches
 *[Extrae]: Extrae is capable of instrumenting applications based on MPI, OpenMP, pthreads, CUDA1, OpenCL1, and StarSs1 using different instrumentation approaches
 *[FALCON's]: Falcon: a set of tools for fast aligning long reads for consensus and assembly
@@ -352,8 +350,6 @@
 *[FlexiBLAS]: FlexiBLAS is a wrapper library that enables the exchange of the BLAS and LAPACK implementation used by a program without recompiling or relinking it.
 *[Flye's]: Flye is a de novo assembler for long and noisy reads, such as those produced by PacBio and Oxford Nanopore Technologies.
 *[Flye]: Flye is a de novo assembler for long and noisy reads, such as those produced by PacBio and Oxford Nanopore Technologies.
-*[FoX's]: FoX is an XML library written in Fortran 95. It allows software developers to read, write and modify XML documents from Fortran applications without the complications of dealing with multi-language development.
-*[FoX]: FoX is an XML library written in Fortran 95. It allows software developers to read, write and modify XML documents from Fortran applications without the complications of dealing with multi-language development.
 *[FragGeneScan's]: FragGeneScan is an application for finding (fragmented) genes in short reads.
 *[FragGeneScan]: FragGeneScan is an application for finding (fragmented) genes in short reads.
 *[FreeBayes's]: Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.
@@ -757,8 +753,6 @@
 *[OpenBLAS]: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
 *[OpenBabel's]: Open Babel is a chemical toolbox designed to speak the many languages of chemical data. It's an open, collaborative project allowing anyone to search, convert, analyze, or store data from molecular modeling, chemistry, solid-state materials, biochemistry, or related areas.
 *[OpenBabel]: Open Babel is a chemical toolbox designed to speak the many languages of chemical data. It's an open, collaborative project allowing anyone to search, convert, analyze, or store data from molecular modeling, chemistry, solid-state materials, biochemistry, or related areas.
-*[OpenCMISS's]: OpenCMISS is a set of libraries and applications which provide modelling and visualisation capabilities for complex bioengineering problems. This version is built from https://github.com/OpenCMISS/setup develop branch.
-*[OpenCMISS]: OpenCMISS is a set of libraries and applications which provide modelling and visualisation capabilities for complex bioengineering problems. This version is built from https://github.com/OpenCMISS/setup develop branch.
 *[OpenCV's]: OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
 *[OpenCV]: OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
 *[OpenFAST's]: Wind turbine multiphysics simulation tool
@@ -890,6 +884,8 @@
 *[RE2]: fast, safe, thread-friendly alternative to backtracking regular expression engines like those used in PCRE, Perl, and Python. It is a C++library.
 *[RECON's]: De novo identification and classification of repeat sequence families from genomic sequences
 *[RECON]: De novo identification and classification of repeat sequence families from genomic sequences
+*[REViewer's]: Tool for visualizing alignments of reads in regions containing tandem repeats
+*[REViewer]: Tool for visualizing alignments of reads in regions containing tandem repeats
 *[RFPlasmid's]: Predicting plasmid contigs from assemblies
 *[RFPlasmid]: Predicting plasmid contigs from assemblies
 *[RFdiffusion's]: Structure generation, with or without conditional information (a motif, target etc) It can perform a whole range of protein design challenges as we have outlined in the RFdiffusion paper.
@@ -1070,8 +1066,6 @@
 *[TransDecoder]: TransDecoder identifies candidate coding regions within transcript sequences.
 *[TreeMix's]: TreeMix is a method for inferring the patterns of population splits and mixtures in the history of a set of populations.
 *[TreeMix]: TreeMix is a method for inferring the patterns of population splits and mixtures in the history of a set of populations.
-*[Trilinos's]: The Trilinos Project is an effort to develop algorithms and enabling technologies within an object-oriented software framework for the solution of large-scale, complex multi-physics engineering and scientific problems. A unique design feature of Trilinos is its focus on packages.
-*[Trilinos]: The Trilinos Project is an effort to develop algorithms and enabling technologies within an object-oriented software framework for the solution of large-scale, complex multi-physics engineering and scientific problems. A unique design feature of Trilinos is its focus on packages.
 *[TrimGalore's]: A wrapper of FastQC and cutadapt to automate quality and adapter trimming as well as quality control, with some added functionality to remove biased methylation positions for RRBS sequence files
 *[TrimGalore]: A wrapper of FastQC and cutadapt to automate quality and adapter trimming as well as quality control, with some added functionality to remove biased methylation positions for RRBS sequence files
 *[Trimmomatic's]: Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
@@ -1172,8 +1166,6 @@ This allows applications that 'require' a GUI to run in a command line environme
 *[ZeroMQ]: ZeroMQ looks like an embeddable networking library but acts like a concurrency framework. It gives you sockets that carry atomic messages across various transports like in-process, inter-process, TCP, and multicast. You can connect sockets N-to-N with patterns like fanout, pub-sub, task distribution, and request-reply.
 *[Zip's]: Zip is a compression and file packaging/archive utility. Although highly compatible both with PKWARE's PKZIP and PKUNZIP utilities for MS-DOS and with Info-ZIP's own UnZip, our primary objectives have been portability and other-than-MSDOS functionality
 *[Zip]: Zip is a compression and file packaging/archive utility. Although highly compatible both with PKWARE's PKZIP and PKUNZIP utilities for MS-DOS and with Info-ZIP's own UnZip, our primary objectives have been portability and other-than-MSDOS functionality
-*[Zonation's]: Spatial conservation prioritisation framework for large-scale conservation planning.
-*[Zonation]: Spatial conservation prioritisation framework for large-scale conservation planning.
 *[abritamr's]: AMR gene detection pipeline that runs AMRFinderPlus on a single (or list ) of given isolates
 *[abritamr]: AMR gene detection pipeline that runs AMRFinderPlus on a single (or list ) of given isolates
 *[angsd's]: Program for analysing NGS data.
@@ -1740,8 +1732,6 @@ This allows applications that 'require' a GUI to run in a command line environme
 *[spaln]: Stand-alone program that maps and aligns a set of cDNA or protein sequences onto a whole genomic sequence in a single job.
 *[spdlog's]: Fast C++ logging library.
 *[spdlog]: Fast C++ logging library.
-*[spglib's]: Spglib is a C library for finding and handling crystal symmetries.
-*[spglib]: Spglib is a C library for finding and handling crystal symmetries.
 *[splat's]: Splat deploys (builds and installs) the components of heterogenous systems such as cylc suites, described by splat config files, into target directory trees.
 *[splat]: Splat deploys (builds and installs) the components of heterogenous systems such as cylc suites, described by splat config files, into target directory trees.
 *[spoa's]: c++ implementation of the partial order alignment (POA) algorithm which is used to generate consensus sequences
