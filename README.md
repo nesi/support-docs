@@ -8,10 +8,6 @@ This repository contains the sources files for the NeSI support documentation.
 
 Rendered pages are visible at [https://nesi.github.io/support-docs/](https://nesi.github.io/support-docs/).
 
-**Warning**
-    This is a beta version and should **not** be considered as the official documentation.
-    The official documentation is accessible at [https://support.nesi.org.nz](https://support.nesi.org.nz).
-
 ## Contents
 
 The repository is organised using the following folders:
