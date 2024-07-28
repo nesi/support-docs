@@ -9,7 +9,6 @@ vote_sum: 0
 
 ## New and Improved
 
-- Better support for password managers filling all fields automatically  
 - Disabling the notifications linked to new JupyterLab updates
 
 ## Fixed
