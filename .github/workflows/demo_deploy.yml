@@ -65,6 +65,7 @@ jobs:
                 fi
                 msg="${msg}</ul>"
             fi
+            echo ${msg}
             (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
             echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
           done
