@@ -47,6 +47,7 @@ jobs:
         run: |
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
+            git fetch --all
             changed_pages="$(git diff --name-only ${pr} -- '*.md')"
             maxlines=-3
             if [ -z "${changed_pages}" ]; then
