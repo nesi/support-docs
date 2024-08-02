@@ -151,17 +151,3 @@ suitable permissions model.
      -   [How can I give read-only team members access to my files?](../../General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md)
      -   [NeSI file systems and quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
 
-maxlines=-5
-
-msg = "seems like the following pages changed."
-for f in $(git diff --name-only main -- '*.md');do
-    ((maxlines+=1))
-    if [maxlines -lt 0]; then
-        g=${f#*/}; h=${g%.*}
-        msg+="\n    [${g}]({$BASE}/${g})"
-    fi
-done
-
-if [maxlines -gt 1];then
-    msg="${msg}\n    ... and ${maxlines} more."
-fi
