@@ -48,10 +48,11 @@ jobs:
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"
+            echo $changed_pages
             maxlines=-5
             if [ -n "${changed_pages}" ]; then
                 msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
-                for f in $changed_pages;do
+                for f in "${changed_pages}";do
                     ((maxlines+=1))
                     if [ ${maxlines} -lt 0 ]; then
                         g=${f#*/}; h=${g%.*}
@@ -60,9 +61,9 @@ jobs:
                 done
                 
                 if [ ${maxlines} -gt 1 ];then
-                    msg="${msg}\n    ... and ${maxlines} more."
+                    msg="${msg}<li>   ... and ${maxlines} more.</li>"
                 fi
-                msg=${msg}</ul>
+                msg="${msg}</ul>"
             fi
             (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
             echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
