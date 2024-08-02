@@ -53,10 +53,11 @@ jobs:
             if [ -n "${changed_pages}" ]; then
                 msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                 for f in ${changed_pages};do
+                    echo $f
                     ((maxlines+=1))
                     if [ ${maxlines} -lt 0 ]; then
                         g=${f#*/}; h=${g%.*}
-                        msg="${msg}<li><a href=\"${DEPLOY_URL}/${pr}/${h}\">${h#*/}</a></li>"
+                        msg="${msg}<li><a href=\"${DEPLOY_URL}/${pr}/${h}\">${h##*/}</a></li>"
                     fi
                 done
                 
