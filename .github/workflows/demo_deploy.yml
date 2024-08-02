@@ -47,22 +47,22 @@ jobs:
         run: |
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
-            git fetch --all
-            changed_pages="$(git diff --name-only ${pr} -- '*.md')"
-            maxlines=-3
-            if [ -z "${changed_pages}" ]; then
-                msg="${msg}\n\nSeems the following pages differ;"
+            changed_pages="$(git diff --name-only origin/main -- '*.md')"
+            maxlines=-5
+            if [ -n "${changed_pages}" ]; then
+                msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                 for f in $changed_pages;do
                     ((maxlines+=1))
                     if [ ${maxlines} -lt 0 ]; then
                         g=${f#*/}; h=${g%.*}
-                        msg="${msg}\n<a href=\"${DEPLOY_URL}/${pr}/${h}\">${h}</a>"
+                        msg="${msg}<li>    <a href=\"${DEPLOY_URL}/${pr}/${h}\">${h}</a></li>"
                     fi
                 done
-            
+                
                 if [ ${maxlines} -gt 1 ];then
                     msg="${msg}\n    ... and ${maxlines} more."
                 fi
+                msg=${msg}</ul>
             fi
             (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
             echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
