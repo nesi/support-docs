@@ -11,6 +11,9 @@ zendesk_article_id: 360000205355
 zendesk_section_id: 360000033936
 ---
 
+
+safsa fsa
+
 It is important to understand the different I/O performance
 characteristics of nodes that connect to storage using *native Spectrum
 Scale clients*, and those that employ *Cray’s DVS* *solution*.
