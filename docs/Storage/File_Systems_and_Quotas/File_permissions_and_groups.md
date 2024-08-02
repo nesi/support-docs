@@ -19,7 +19,7 @@ Default permissions differ from file system to file system.
 Each user has a private user group, of which that user is by default the
 only member. Each user is also a member of various other groups, such
 as:
-
+ saD asd a
 - A group for each active NeSI project of which that user is a member
 - Groups for all active users, all active Mahuika users, all active
     Māui users, etc. as appropriate
