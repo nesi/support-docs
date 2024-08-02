@@ -47,7 +47,7 @@ jobs:
         run: |
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
-            changed_pages="$(git diff --name-only ${{ github.event.repository.default_branch }} -- '*.md')"
+            changed_pages="$(git diff --name-only ${pr} -- '*.md')"
             maxlines=-3
             if [ -z "${changed_pages}" ]; then
                 msg="${msg}\n\nSeems the following pages differ;"
