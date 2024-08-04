@@ -10,7 +10,7 @@ env:
 permissions: write-all
 jobs:
   demo-deploy:
-    continue-on-error: true
+    # continue-on-error: true
     name: Trigger test deployments
     runs-on: ubuntu-latest
     steps:
@@ -46,14 +46,15 @@ jobs:
       - name: Post messages open requests
         run: |
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
+            echo "For branch ${pr}"
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"
-            echo $changed_pages
             maxlines=-5
             if [ -n "${changed_pages}" ]; then
                 msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                 for f in ${changed_pages};do
-                    echo $f
+                    echo "$f"
+                    echo "--"
                     ((maxlines+=1))
                     if [ ${maxlines} -lt 0 ]; then
                         g=${f#*/}; h=${g%.*}
@@ -65,8 +66,10 @@ jobs:
                     msg="${msg}<li>   ... and ${maxlines} more.</li>"
                 fi
                 msg="${msg}</ul>"
+            else
+                echo "No changed pages"
             fi
-            echo ${msg}
+            echo "${msg}"
             (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
             echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
           done
