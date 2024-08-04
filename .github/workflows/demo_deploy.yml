@@ -45,6 +45,7 @@ jobs:
           #     https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/actions/runs/deploy.yml
       - name: Post messages open requests
         run: |
+          set -o xtrace
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             echo "For branch ${pr}"
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
