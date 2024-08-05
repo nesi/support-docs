@@ -63,9 +63,9 @@ jobs:
                     fi
                 done
                 
-                if [ ${maxlines} -gt 1 ];then
-                    msg="${msg}<li>   ... and ${maxlines} more.</li>"
-                fi
+                # if [ ${maxlines} -gt 1 ];then
+                #     msg="${msg}<li>   ... and ${maxlines} more.</li>"
+                # fi
                 msg="${msg}</ul>"
             else
                 echo "No changed pages"
