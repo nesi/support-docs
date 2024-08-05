@@ -50,19 +50,19 @@ jobs:
             echo "For branch ${pr}"
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"
-            maxlines=-5
+            # maxlines=-5
             if [ -n "${changed_pages}" ]; then
                 msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                 for f in ${changed_pages};do
                     echo "$f"
                     echo "--"
-                    ((maxlines+=1))
-                    if [ ${maxlines} -lt 0 ]; then
-                        g=${f#*/}; h=${g%.*}
-                        msg="${msg}<li><a href=\"${DEPLOY_URL}/${pr}/${h}\">${h##*/}</a></li>"
-                    fi
+                    # ((maxlines+=1))
+                    #if [ ${maxlines} -lt 0 ]; then
+                    g=${f#*/}; h=${g%.*}
+                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${pr}/${h}\">${h##*/}</a></li>"
+                    #fi
                 done
-                
+                echo "exit loop 1"
                 # if [ ${maxlines} -gt 1 ];then
                 #     msg="${msg}<li>   ... and ${maxlines} more.</li>"
                 # fi
