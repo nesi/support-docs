@@ -45,7 +45,6 @@ jobs:
           #     https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/actions/runs/deploy.yml
       - name: Post messages open requests
         run: |
-          set -o xtrace
           for pr in ${{ steps.dev-deps.outputs.branches }}; do
             echo "For branch ${pr}"
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
@@ -54,22 +53,21 @@ jobs:
             if [ -n "${changed_pages}" ]; then
                 msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                 for f in ${changed_pages};do
-                    echo "$f"
-                    echo "--"
-                    # ((maxlines+=1))
-                    #if [ ${maxlines} -lt 0 ]; then
+                    maxlines=((maxlines+1))
+                    #if [ ${maxlines} -lt 1 ]; then
                     g=${f#*/}; h=${g%.*}
-                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${pr}/${h}\">${h##*/}</a></li>"
+                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${pr}/${h}\">${h##*/} target=_blank</a></li>"
                     #fi
                 done
                 echo "exit loop 1"
-                # if [ ${maxlines} -gt 1 ];then
+                # if [ ${maxlines} -gt 0 ];then
                 #     msg="${msg}<li>   ... and ${maxlines} more.</li>"
                 # fi
                 msg="${msg}</ul>"
             else
                 echo "No changed pages"
             fi
+            msg="${msg}<br><em>Test site may take a minute or so to deploy after PR Open or Update.</em>"
             echo "${msg}"
             (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
             echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
