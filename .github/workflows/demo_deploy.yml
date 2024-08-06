@@ -39,8 +39,7 @@ jobs:
           fetch-depth: 0
       - name: Post messages open requests
         run: |
-            echo "For branch ${pr}"
-            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${{github.ref_name}}\">${DEPLOY_URL}/${{ github.ref_name }}</a>"
+            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${{ github.ref_name }}\">${DEPLOY_URL}/${{ github.ref_name }}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"
             # maxlines=-5
             if [ -n "${changed_pages}" ]; then
