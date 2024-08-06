@@ -6,7 +6,7 @@
 
 This repository contains the sources files for the NeSI support documentation.
 
-Rendered pages are visible at [https://nesi.github.io/support-docs/](https://nesi.github.io/support-docs/).
+Rendered pages are visible at [https://docs.nesi.org.nz](http://docs.nesi.org.nz).
 
 ## Contents
 
@@ -30,6 +30,12 @@ Following pages contain information to help maintain the documentation:
 - See [macros](https://nesi.github.io/support-docs/MACROS), for `mkdocs-macros-plugin` environment.
 - See [checks](checks/README.md), for information on quality assurance tests.
 - See [workflows](.github/workflows/README.md), for information on CI workflows.
+
+## Viewing PR Branches
+
+![Demo Site](https://github.com/CallumWalley/support-docs-dev/actions/workflows/deploy.yml/badge.svg)
+
+Deployments of open pull requests can be viewed at [https://callumwalley.github.io/support-docs-dev/NAME-OF-BRANCH](https://callumwalley.github.io/support-docs-dev/)
 
 ## Theme
 
