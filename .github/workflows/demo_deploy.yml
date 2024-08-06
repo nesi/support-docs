@@ -50,7 +50,7 @@ jobs:
                     # maxlines=((maxlines+1))
                     #if [ ${maxlines} -lt 1 ]; then
                     g=${f#*/}; h=${g%.*}
-                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${HEAD}/${h}\">${h##*/} target=_blank</a></li>"
+                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
                     #fi
                 done
                 # if [ ${maxlines} -gt 0 ];then
