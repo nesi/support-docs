@@ -42,23 +42,22 @@ jobs:
         run: |
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${HEAD}\">${DEPLOY_URL}/${HEAD}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"
+            # Logic for truncating out long sections commented out.
             # maxlines=-5
             if [ -n "${changed_pages}" ]; then
                 msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                 for f in ${changed_pages};do
-                    maxlines=((maxlines+1))
+                    # maxlines=((maxlines+1))
                     #if [ ${maxlines} -lt 1 ]; then
                     g=${f#*/}; h=${g%.*}
                     msg="${msg}<li><a href=\"${DEPLOY_URL}/${HEAD}/${h}\">${h##*/} target=_blank</a></li>"
                     #fi
                 done
-                echo "exit loop 1"
                 # if [ ${maxlines} -gt 0 ];then
                 #     msg="${msg}<li>   ... and ${maxlines} more.</li>"
                 # fi
                 msg="${msg}</ul>"
             fi
             msg="${msg}<br><em>Test site may take a minute or so to deploy after PR Open or Update.</em>"
-            echo "${msg}"
             (gh pr comment ${HEAD} --edit-last --body "${msg}") || (gh pr comment ${HEAD} --body "${msg}")
-            echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
+            echo "::info title=Deploy successful::${DEPLOY_URL}/${HEAD}" 
