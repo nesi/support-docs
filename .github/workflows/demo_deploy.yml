@@ -14,16 +14,6 @@ jobs:
     name: Trigger test deployments
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Get list of open request branches
-        id: dev-deps
-        run: |
-          branches="$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr --required --watch --fail-fast > /dev/null && printf "${pr} "; done)"
-          echo "info:: title=Open Valid Merge Requests" :: ${branches}
-          echo "branches=$branches" >> $GITHUB_OUTPUT
       - name: Trigger Workflow in Another Repository
         run: |
           curl -L \
@@ -32,7 +22,7 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.PAT }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/dispatches \
-            -d '{"event_type":"deploy","client_payload":{"pr-branches":"${{ steps.dev-deps.outputs.branches }}"}}'
+            -d '{"event_type":"deploy","client_payload":{"pr-branches":"${{ github.ref_name	}}"}}'
       - name: Wait for Workflow Action
         run: |
           # Just give a minute or so to deploy
@@ -43,11 +33,14 @@ jobs:
           #     -H "Authorization: Bearer ${{ secrets.PAT }}" \
           #     -H "X-GitHub-Api-Version: 2022-11-28" \
           #     https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/actions/runs/deploy.yml
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Post messages open requests
         run: |
-          for pr in ${{ steps.dev-deps.outputs.branches }}; do
             echo "For branch ${pr}"
-            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
+            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${{github.ref_name}}\">${DEPLOY_URL}/${{ github.ref_name }}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"
             # maxlines=-5
             if [ -n "${changed_pages}" ]; then
@@ -56,7 +49,7 @@ jobs:
                     maxlines=((maxlines+1))
                     #if [ ${maxlines} -lt 1 ]; then
                     g=${f#*/}; h=${g%.*}
-                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${pr}/${h}\">${h##*/} target=_blank</a></li>"
+                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${{ github.ref_name	}}/${h}\">${h##*/} target=_blank</a></li>"
                     #fi
                 done
                 echo "exit loop 1"
@@ -64,11 +57,8 @@ jobs:
                 #     msg="${msg}<li>   ... and ${maxlines} more.</li>"
                 # fi
                 msg="${msg}</ul>"
-            else
-                echo "No changed pages"
             fi
             msg="${msg}<br><em>Test site may take a minute or so to deploy after PR Open or Update.</em>"
             echo "${msg}"
-            (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
+            (gh pr comment ${github.ref_name} --edit-last --body "${msg}") || (gh pr comment ${{github.ref_name}} --body "${msg}")
             echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
-          done
