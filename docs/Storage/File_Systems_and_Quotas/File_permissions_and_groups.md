@@ -19,7 +19,7 @@ Default permissions differ from file system to file system.
 Each user has a private user group, of which that user is by default the
 only member. Each user is also a member of various other groups, such
 as:
-
+ saD asd a
 - A group for each active NeSI project of which that user is a member
 - Groups for all active users, all active Mahuika users, all active
     Māui users, etc. as appropriate
@@ -150,3 +150,4 @@ suitable permissions model.
      -   [How can I let my fellow project team members read or write my files?](../../General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
      -   [How can I give read-only team members access to my files?](../../General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md)
      -   [NeSI file systems and quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
+

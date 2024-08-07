@@ -12,7 +12,6 @@ vote_sum: 0
 zendesk_article_id: 6359601973135
 zendesk_section_id: 360000033936
 ---
-
 Spectrum Scale filesystems (previously GPFS) allow users to compress
 data (but not metadata) transparently on demand without the need to
 change metadata (file creation and modification dates, etc). This means
