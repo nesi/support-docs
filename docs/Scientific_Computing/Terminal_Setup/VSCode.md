@@ -8,10 +8,13 @@ tags: [vscode]
 
 ## Setup
 
-!!! prerequisite
-    - Mac or Linux users must have first set up an `~/.ssh/config` file as described in
+=== "Linux / MacOS" prerequisite
+    - Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](../Terminal_Setup).
-    - Windows users... coming soon.
+=== "Windows"
+    - Set up WSL as described in `~/.ssh/config` file as described in
+    [Windows Subsystem for Linux (WSL)](../Windows Subsystem for Linux).
+    - 
 
 * Open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
 
