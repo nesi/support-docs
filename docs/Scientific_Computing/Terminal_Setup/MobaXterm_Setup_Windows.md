@@ -30,7 +30,7 @@ transfer GUI.
     - Otherwise, choose freely the Portable or Installer Edition.
 2. To set up a session, Click 'Session' in the top left corner:
 3. In "SSH",
-    - Set the remote host to `login.mahuika.nesi.org.nz` for Mahuika
+    - Set the remote host to `login.mahuika.nesi.org.nz` for Mahuika
         users or `login.maui.nesi.org.nz` for Māui users.
     - Enable the "Specify username" option and put your Username in
         the corresponding box.
@@ -56,8 +56,7 @@ transfer GUI.
      This can be resolved by clicking "OK" each time you are prompted then
      logging in as normal once you are prompted for your `First Factor:` or
      `Password:`.  
-     See [Login
-     Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
+     See [Login Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
      details
 
 ## Usage

@@ -12,8 +12,7 @@ zendesk_section_id: 360000034315
 ---
 
 
-1. [Download and install Xming from
-   here](https://sourceforge.net/projects/xming/). Don't install an SSH
+1. [Download and install Xming from here](https://sourceforge.net/projects/xming/). Don't install an SSH
    client when prompted during the installation, if you are prompted
    for Firewall permissions after installing Xming close the window
    without allowing any Firewall permissions.
@@ -22,5 +21,5 @@ zendesk_section_id: 360000034315
 3. Restart your terminal, start your Xming (there should be a desktop
    icon after installing it). You should now be able to X-Forward
    displays from the HPC when you log in (assuming you have completed
-   the [terminal setup instructions found
-   here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)).
+   the
+   [terminal setup instructions found here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)).

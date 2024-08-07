@@ -14,7 +14,7 @@ zendesk_section_id: 360000034315
 !!! prerequisite
     -  Have an [active account and project](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
     -  Set up your [NeSI Account Password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
-    -  Set up [Two-Factor Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
+    -  Set up [Two-Factor Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
 
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.
@@ -47,7 +47,13 @@ installed, usually called, "Terminal." To find it, simply search for
 Congratulations! You are ready to move to the next step.
 
 !!! prerequisite "What next?"
-    Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+
+### VSCode
+
+The inbuilt 'remotes' plugin allows connecting to remote hosts.
+If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md),
+VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab.
 
 ## Windows
 
@@ -71,10 +77,13 @@ different options, listed in order of preference.
 !!! tip "What next?"
     -  Enabling
        [WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-    -  Setting up the [Ubuntu
-       Terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md)
+    -  Setting up the [Ubuntu Terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md)
     -  Setting up
        [X-Forwarding](../../Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
+
+### VSCode
+
+VSCode can be used with WSL or without.
 
 ### MobaXterm
 
@@ -83,7 +92,7 @@ different options, listed in order of preference.
  transfer GUI.
 
  MobaXterm can be downloaded from
- [here](https://mobaxterm.mobatek.net/download-home-edition.html).
+ [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net/download-home-edition.html).
  The portable edition will allow you to use MobaXterm without needing
  administrator privileges, however it introduces several bugs so we
  *highly* recommend using the installer edition if you have
@@ -102,7 +111,7 @@ require a Linux environment, also it can provide a more user
 friendly place to become familiar with command line use.
 
 There are multiple free options when it comes to VM software. We
-recommend [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+recommend [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
 [See instructions on how to set up a virtual machine.](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
@@ -129,7 +138,7 @@ for new users.
 
 If you are using Git for version control you may already have Git
 Bash installed. If not it can be downloaded
-from [here](https://git-scm.com/downloads).
+from [git-scm.com](https://git-scm.com/downloads).
 
 Git Bash is perfectly adequate for testing your login or setting up
 your password, but lacks many of the features of MobaXterm or a
@@ -140,8 +149,8 @@ primary terminal.
 
 All Windows computers have PowerShell installed, however it will
 only be useful to you if Windows Subsystem for Linux (WSL) is also
-enabled, instructions
-[here](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md).
+enabled, instructions can be found at
+[Windows_Subsystem_for_Linux_WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md).
 
 Like Git Bash, PowerShell is perfectly adequate for testing your
 login or setting up your password, but lacks many of the features of

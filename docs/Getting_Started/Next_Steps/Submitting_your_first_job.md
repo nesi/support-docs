@@ -11,26 +11,20 @@ zendesk_section_id: 360000189716
 
 ## Environment Modules
 
-Modules are a convenient  way to provide access to applications  on the cluster. They prepare the environment you need to run an application.
+Modules are a convenient way to provide access to applications on the cluster. They prepare the environment you need to run an application.
 
-For a full list of module commands run `man module`.
+For a full list of module commands run `man module`.
 
-<style>
-.command {
-    white-space: nowrap;
-}
-</style>
-
-| Command | Description |
-|--|--|
-| <span class="command">`module spider [ <string> ]`</span> | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika) |
-| <span class="command">`module show <string>`</span> | Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module. |
-| <span class="command">`module load <string>`</span> | Load the module (name and version) given by `<string>`. If no version is given, load the default version. |
-| <span class="command">`module list [ <string> ]`</span> | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules. |
+| Command                      | Description                                                                                                                                                                                                           |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `module spider [ <string> ]` | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)                                                |
+| `module show <string>`       | Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module. |
+| `module load <string>`       | Load the module (name and version) given by `<string>`. If no version is given, load the default version.                                                                                                             |
+| `module list [ <string> ]`   | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.                                          |
 
 ## Slurm
 
-Jobs on Mahuika and Māui are submitted in the form of a *batch script* containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
+Jobs on Mahuika and Māui are submitted in the form of a *batch script* containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
 
 ## Creating a batch script
 
@@ -116,7 +110,7 @@ Or since a specified date using:
 sacct -S YYYY-MM-DD
 ```
 
-Each job will show as multiple lines, one line for the parent job and then additional lines for each job step.
+Each job will show as multiple lines, one line for the parent job and then additional lines for each job step.
 
 !!! tip
     - `sacct -X` Only show parent processes.
@@ -141,6 +135,6 @@ When the job completes, or in some cases earlier, two files will be
 added to the directory in which you were working when you submitted the
 job:
 
-`slurm-[jobid].out` containing standard output.
+`slurm-[jobid].out` containing standard output.
 
 `slurm-[jobid].err` containing standard error.
