@@ -16,17 +16,12 @@ Currently the native Windows command prompt (even with WSL enabled) does
 not support certain features, until this is fixed we recommend using the
 Ubuntu LTS Terminal.
 
-1. Open the Microsoft store, search for 'Ubuntu', find and install the
-    latest version of the Ubuntu LTS it should look something like
-    'Ubuntu 20.04 LTS' , though you may find a later version.  
-    ![ubuntu5.png](../../assets/images/Ubuntu_LTS_terminal_Windows.png)
-    ![ubuntu6.png](../../assets/images/Ubuntu_LTS_terminal_Windows_0.png)  
-2. Close the “Add your Microsoft account.. dialogue box as you do not
-    need an account for the installation.You may have to click “Install”
-    for a second time (If the above dialogue box reappears, close as
-    before and download/install will begin).  
-    ![ubuntu3.png](../../assets/images/Ubuntu_LTS_terminal_Windows_1.png)
-     ![ubuntu4.png](../../assets/images/Ubuntu_LTS_terminal_Windows_2.png)  
+
+1. Open 'Windows Power Shell' and type
+     ```ps
+     wsl --install -d Ubuntu-20.04
+     ```
+2. When it has finished downloading, the Ubuntu Terminal will appear and prompt you for a username.
 3. Launch “Ubuntu 18.04 LTS” from start menu and wait for the first
     time installation to complete.
 4. As you are running Ubuntu on Windows for the first time, it will
