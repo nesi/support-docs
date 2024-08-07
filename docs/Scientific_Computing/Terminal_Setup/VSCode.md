@@ -14,7 +14,7 @@ tags: [vscode]
 === "Windows"
     - Set up WSL as described in `~/.ssh/config` file as described in
     [Windows Subsystem for Linux (WSL)](../Windows Subsystem for Linux).
-    - 
+    - Install a Linux distrubution as described in [ubuntu setup](../Windows Subsystem for Linux).
 
 * Open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
 
