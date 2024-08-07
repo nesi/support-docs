@@ -7,45 +7,59 @@ env:
   TARGET_OWNER: "CallumWalley"
   WORKFLOW_ID: "deploy.yml"
   DEPLOY_URL: "https://callumwalley.github.io/support-docs-dev"
+  HEAD: ${{ github.event.pull_request.head.ref }}
 permissions: write-all
 jobs:
   demo-deploy:
+    # continue-on-error: true
     name: Trigger test deployments
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Get list of open request branches
-        id: dev-deps
-        run: |
-          branches="$(for pr in $(gh pr list --json headRefName | jq -r '.[].headRefName'); do gh pr checks $pr --required --watch --fail-fast > /dev/null && printf "${pr} "; done)"
-          echo "info:: title=Open Valid Merge Requests" :: ${branches}
-          echo "branches=$branches" >> $GITHUB_OUTPUT
       - name: Trigger Workflow in Another Repository
         run: |
+          set -x
+          set -o xtrace 
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.PAT }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/dispatches \
-            -d '{"event_type":"deploy","client_payload":{"pr-branches":"${{ steps.dev-deps.outputs.branches }}"}}'
+            -d '{"event_type":"deploy","client_payload":{"pr-branches":"${{ github.event.pull_request.head.ref }}", "use-cache":"true"}}'
       - name: Wait for Workflow Action
         run: |
           # Just give a minute or so to deploy
-          sleep 90
+          # sleep 90
           # curl -L \
           #     -X POST \
           #     -H "Accept: application/vnd.github+json" \
           #     -H "Authorization: Bearer ${{ secrets.PAT }}" \
           #     -H "X-GitHub-Api-Version: 2022-11-28" \
           #     https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/actions/runs/deploy.yml
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Post messages open requests
         run: |
-          for pr in ${{ steps.dev-deps.outputs.branches }}; do
-            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${pr}\">${DEPLOY_URL}/${pr}</a>"
-            (gh pr comment ${pr} --edit-last --body "${msg}") || (gh pr comment ${pr} --body "${msg}")
-            echo "::info title=Deploy successful::https://docs.nesi.org.nz/${pr}" 
-          done
+            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${HEAD}\">${DEPLOY_URL}/${HEAD}</a>"
+            changed_pages="$(git diff --name-only origin/main -- '*.md')"
+            # Logic for truncating out long sections commented out.
+            # maxlines=-5
+            if [ -n "${changed_pages}" ]; then
+                msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
+                for f in ${changed_pages};do
+                    # maxlines=((maxlines+1))
+                    #if [ ${maxlines} -lt 1 ]; then
+                    g=${f#*/}; h=${g%.*}
+                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
+                    #fi
+                done
+                # if [ ${maxlines} -gt 0 ];then
+                #     msg="${msg}<li>   ... and ${maxlines} more.</li>"
+                # fi
+                msg="${msg}</ul>"
+            fi
+            msg="${msg}<br><em>Test site may take a minute or so to deploy after PR Open or Update.</em>"
+            (gh pr comment ${HEAD} --edit-last --body "${msg}") || (gh pr comment ${HEAD} --body "${msg}")
+            echo "::info title=Deploy successful::${DEPLOY_URL}/${HEAD}" 
