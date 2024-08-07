@@ -16,7 +16,7 @@ Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub and GitLab for
 developing, managing and distributing code.
 
-Full Git documentation can be found [here](https://git-scm.com/docs/git), or using `man git`.
+Full Git documentation can be found [here](https://git-scm.com/docs/git), or using `man git`.
 
 ![Git\_Diagram.svg](../../assets/images/Git-Reference_Sheet.svg)
 
@@ -115,15 +115,15 @@ You can create a repository with either of the following commands.
 
 By default, fetch, pull and push will operate on the origin repo. This
 will be the repo you cloned from, or set manually using
-` git branch --set-upstream-to   <origin>`.
+`git branch --set-upstream-to <origin>`.
 
-|        |                             |                                                                                                                      |
+||||
 |--------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|
-| fetch  | `git fetch`                 | Gets status of 'origin'. git fetch **does not** change your working directory or local repository (see `git pull`).  |
+| fetch  | `git fetch`                 | Gets status of `origin`. git fetch **does not** change your working directory or local repository (see `git pull`).  |
 |        | `git fetch <repo> <branch>` | Get status of `<repo>` `<branch>`.                                                                                   |
-| pull   | `git pull`                  | Incorporates changes from 'origin' into local repo.                                                                  |
+| pull   | `git pull`                  | Incorporates changes from 'origin' into local repo.                                                                  |
 |        | `git pull <repo> <branch>`  | Incorporates changes from `<repo>` `<branch>` into local repo.                                                       |
-| push   | `git push`                  | Incorporates changes from local repo into 'origin'.                                                                  |
+| push   | `git push`                  | Incorporates changes from local repo into `origin`.                                                                  |
 |        | `git push <repo> <branch>`  | Incorporates changes from local repo into `<repo>` `<branch>`                                                        |
 
 !!! tip
@@ -140,7 +140,7 @@ multiple branches, or requires merging.
 
 |          |                              |                                            |
 |----------|------------------------------|--------------------------------------------|
-| branch   | `git branch`                 | List branches.                             |
+| branch   | `git branch`                 | List branches.                             |
 |          | `git branch <branch-name>`   | Create new branch `<branch-name`           |
 | checkout | `git checkout <branch-name>` | Switch to editing branch `<branch-name>`   |
 | merge    | `git merge <branch-name>`    | Merge `<branch-name>` into current branch. |
