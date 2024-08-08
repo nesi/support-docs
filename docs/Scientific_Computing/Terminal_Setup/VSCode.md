@@ -19,7 +19,7 @@ tags: [vscode]
     - Open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH', 'Remote Explorer' and  by Microsoft, installed
 
     ![vscode remote extension](../../../assets/images/vscode-remote.png)
-    - Make sure you have set up an `~/.ssh/config` file as described in
+    - Make sure you have set up an `~/.ssh/confisg` file as described in
     [Terminal Setup](../Terminal_Setup), in your subsystem install.
 
 <!-- ```json
