@@ -11,21 +11,22 @@ tags: [vscode]
 === "Linux / MacOS" prerequisite
     - Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](../Terminal_Setup).
+    - Open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
+    ![vscode remote extension](../../../assets/images/vscode-remote.png)
 === "Windows"
-    - Set up WSL as described in `~/.ssh/config` file as described in
-    [Windows Subsystem for Linux (WSL)](../Windows Subsystem for Linux).
-    - Install a Linux distrubution as described in [ubuntu setup](../Windows Subsystem for Linux).
-    - Open 
+    - Set up WSL as described in
+    [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md).
+    - Open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH', 'Remote Explorer' and  by Microsoft, installed
 
-    ```json
-    "remote.SSH.configFile": "\\\\wsl$\\Ubuntu-20.04\\home\\cwal219\\.ssh\\config",
-    "remote.SSH.path": "C:\\Users\\cwal219\\ssh.bat",
-    "security.allowedUNCHosts": ["wsl$", "wsl.localhost"],
-    ```
+    ![vscode remote extension](../../../assets/images/vscode-remote.png)
+    - Make sure you have set up an `~/.ssh/config` file as described in
+    [Terminal Setup](../Terminal_Setup), in your subsystem install.
 
-* Open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
-
-![vscode remote extension](../../../assets/images/vscode-remote.png)
+<!-- ```json
+"remote.SSH.configFile": "\\\\wsl$\\Ubuntu-20.04\\home\\cwal219\\.ssh\\config",
+"remote.SSH.path": "C:\\Users\\cwal219\\ssh.bat",
+"security.allowedUNCHosts": ["wsl$", "wsl.localhost"],
+``` -->
 
 ## Connecting
 
