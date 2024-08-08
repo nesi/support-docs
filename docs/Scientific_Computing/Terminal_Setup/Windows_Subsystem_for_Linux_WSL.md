@@ -41,22 +41,51 @@ WSL is enabled by default on later versions of Windows 10.
 
 In order to make use of WSL features, you will also need to install a Linux distribution.
 
-1. Open 'Windows Power Shell' and type
+Distributions can be obtained through the Microsoft Store, or using command line.
+
+=== "Using The Microsoft Store"
+     - Open the Microsoft store, search for 'Ubuntu', find and install the
+     latest version of the Ubuntu LTS it should look something like
+     'Ubuntu 20.04 LTS' , though you may find a later version.
+
+     ![MS store](../../../assets/images/Ubuntu_LTS_terminal_Windows.png)
+     ![MS store](../../../assets/images/Ubuntu_LTS_terminal_Windows_0.png)  
+          
+     - Close the “Add your Microsoft account.. dialogue box as you do not
+     need an account for the installation.You may have to click “Install”
+     for a second time (If the above dialogue box reappears, close as
+     before and download/install will begin).
+     
+     ![MS store](../../../assets/images/Ubuntu_LTS_terminal_Windows_1.png)
+     ![MS store](../../../assets/images/Ubuntu_LTS_terminal_Windows_2.png)
+=== "Using Command Line"
+     - Open 'Windows Power Shell' and type
+
+     ```ps
+     wsl --install -d Ubuntu-20.04
+     ```
   
-    ```ps
-    wsl --install -d Ubuntu-20.04
-    ```
-  
-2. When it has finished downloading, the Ubuntu Terminal will appear and prompt you to “Enter new UNIX username”
+- When it has finished downloading, the Ubuntu Terminal will appear and prompt you to “Enter new UNIX username”
     and press <kbd>Enter</kbd>.
   
     This can be anything you want, although we reccomend using the same as your Windows username.
-    ![ubuntu1.png](../../assets/images/Ubuntu_LTS_terminal_Windows_3.png)
+    ![ubuntu1.png](../../../assets/images/Ubuntu_LTS_terminal_Windows_3.png)
   
-3. Now, type in a new password for the username you picked and press
+- Now, type in a new password for the username you picked and press
     <kbd>Enter</kbd> (this password can be anything you want, although you shouldn't need to enter it again).
     Then retype the password to confirm and press <kbd>Enter</kbd>.
-    ![ubuntu2.png](../../assets/images/Ubuntu_LTS_terminal_Windows_4.png)
+    ![ubuntu2.png](../../../assets/images/Ubuntu_LTS_terminal_Windows_4.png)
+
+## Creating a Symlink (optional)
+
+You may find having a symbolic link to your Windows filesystems useful.
+
+Within Ubuntu terminal run the following command replacing c with the name of
+your Windows filesystems found in /mnt/.
+
+```sl
+ln -s /mnt/c/Users/YourWindowsUsername/ WinFS
+```
 
 !!! prerequisite What "Next?"
      -   Set up your [SSH config file](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
