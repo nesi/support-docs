@@ -22,7 +22,7 @@ tags: [vscode]
     "remote.SSH.path": "C:\\Users\\cwal219\\ssh.bat",
     "security.allowedUNCHosts": ["wsl$", "wsl.localhost"],
     ```
-    
+
 * Open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
 
 ![vscode remote extension](../../../assets/images/vscode-remote.png)
@@ -39,7 +39,10 @@ You will then be prompted for your password and second fator, as per usual.
     As VSCode will continue attempting to reconnect after a failure,
     take care that you do-not get locked out for too many failed login attempts.
 
-
 ## Features
 
-## Environment Setup
+## Changing Software Versions
+
+You may find that VSCode is not utilising your prefered versions of software (e.g. when debugging or linting).
+
+As the NeSI cluster utilises [Environment Modules](../../Getting_Started/Next_Steps/Submitting_your_first_job.md#environment-modules)

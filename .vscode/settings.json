@@ -1,5 +1,6 @@
 {
     "editor.indentSize": "tabSize",
+    "triggerTaskOnSave.on": true,
     "triggerTaskOnSave.tasks": {
         "meta-checks": [
             "docs/**/*.md"
