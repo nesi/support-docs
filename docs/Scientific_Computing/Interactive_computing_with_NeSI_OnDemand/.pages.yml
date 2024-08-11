@@ -1,0 +1,7 @@
+---
+nav:
+  - JupyterLab
+  - RStudio
+  - ...
+  - changes_from_jupyter_on_nesi.md
+  - Release Notes: Release_Notes
