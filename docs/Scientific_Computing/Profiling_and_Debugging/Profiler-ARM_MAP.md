@@ -65,6 +65,10 @@ from remote (not described in detail here).
 To use MAP we need to load the *forge* module in our batch script and
 add `map --profile` in front of the parallel run statements. For
 example:
+```
+module load forge
+map --profile srun python scatter.py
+```
 
 Upon execution, a `.map` file will be generated. The results can be
 viewed, for instance, with
