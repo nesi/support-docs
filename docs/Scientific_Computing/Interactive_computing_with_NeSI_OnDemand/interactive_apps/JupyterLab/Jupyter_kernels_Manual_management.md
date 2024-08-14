@@ -236,8 +236,8 @@ R -e "IRkernel::installspec(name='myrwithmpfr', displayname = 'R with MPFR', use
 We must now to edit the kernel to load the required NeSI environment
 modules when the kernel is launched. Change to the directory the
 kernelspec was installed to
-(~/.local/share/jupyter/kernels/myrwithmpfr,* *assuming you kept *--name
-myrwithmpfr* in the above command):
+(~/.local/share/jupyter/kernels/myrwithmpfr, assuming you kept `--name
+myrwithmpfr` in the above command):
 
 ``` sh
 cd ~/.local/share/jupyter/kernels/myrwithmpfr
