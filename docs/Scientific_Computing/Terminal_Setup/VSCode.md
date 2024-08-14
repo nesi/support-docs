@@ -34,7 +34,7 @@ Under the 'Remote Explorer' Tab on the left, you should now see the NeSI machine
 
 ![vscode explorer](../../../assets/images/vscode-explorer.png)
 
-You will then be prompted for your password and second fator, as per usual.
+You will then be prompted for your password and second factor, as per usual.
 
 !!! warning
     As VSCode will continue attempting to reconnect after a failure,
@@ -44,6 +44,6 @@ You will then be prompted for your password and second fator, as per usual.
 
 ## Changing Software Versions
 
-You may find that VSCode is not utilising your prefered versions of software (e.g. when debugging or linting).
+You may find that VSCode is not utilising your preferred versions of software (e.g. when debugging or linting).
 
 As the NeSI cluster utilises [Environment Modules](../../Getting_Started/Next_Steps/Submitting_your_first_job.md#environment-modules)
