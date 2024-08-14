@@ -3,24 +3,24 @@
 ## Introduction
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
-[interactive computing](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
+[interactive computing](../../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing [Slurm job
-submissions](../../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
+submissions](../../../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
 and workflows and much more.
 
 !!! prerequisite "See also"
-     -   See the [Jupyter kernels - Tool-assisted management](Jupyter_kernels_Tool_assisted_management.md)
-         (recommended) and [Jupyter kernels - Manual management](Jupyter_kernels_Manual_management.md)
+     -   See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
+         (recommended) and [Jupyter kernels - Manual management](./Jupyter_kernels_Manual_management.md)
          pages for adding kernels.
 
 ## Accessing Jupyter on NeSI
 
 Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
 
-When you log in with your [NeSI credentials](../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
+When you log in with your [NeSI credentials](../../../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
 you will be taken to the "NeSI OnDemand" page, where you can choose from many different interactive applications, including JupyterLab.
 When you select the JupyterLab application you will be presented with certain options, such as how many CPU cores and how much memory you
 require for you interactive session. After launching your session you should be presented with an option to "Connect to JupyterLab", which
@@ -125,7 +125,7 @@ you please.
      your home directory. The application directory often requires at least
      1-2GB of disk space and 30,000 inodes (file count), so make sure you
      have space available in your home directory first (see
-     [NeSI File Systems and Quotas](../../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md))
+     [NeSI File Systems and Quotas](../../../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md))
      or request a larger quota.
 
 You could change the path to point to a location in your project

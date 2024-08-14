@@ -12,8 +12,8 @@ Connect to NeSI OnDemand: [https://ondemand.nesi.org.nz](https://ondemand.nesi.o
 
 A number of interactive applications can be accessed through NeSI OnDemand, including:
 
-- [JupyterLab](JupyterLab/)
-- [RStudio](RStudio/)
-- MATLAB (coming soon?)
-- Code server (coming soon?)
-- Virtual desktop (coming soon?)
+- [JupyterLab](interactive_apps/JupyterLab/index.md)
+- [RStudio](interactive_apps/RStudio.md)
+- [MATLAB](interactive_apps/MATLAB.md)
+- [Code server](interactive_apps/code_server.md)
+- [Virtual desktop](interactive_apps/virtual_desktop.md)

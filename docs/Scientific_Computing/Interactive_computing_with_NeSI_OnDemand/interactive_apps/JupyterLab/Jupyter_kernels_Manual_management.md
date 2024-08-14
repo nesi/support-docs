@@ -14,15 +14,14 @@ kernels are installed by default and can be selected from the Launcher:
 
 Many packages are preinstalled in our default Python and R environments
 and these can be extended further as described on the
-[Python](../../../Scientific_Computing/Supported_Applications/Python.md) and
-[R](../../../Scientific_Computing/Supported_Applications/R.md) support
+[Python](../../../../Scientific_Computing/Supported_Applications/Python.md) and
+[R](../../../../Scientific_Computing/Supported_Applications/R.md) support
 pages.
 
 ## Adding a custom Python kernel
 
 !!! note "see also"
-     See the [Jupyter kernels - Tool-assisted
-     management](Jupyter_kernels_Tool_assisted_management.md)
+     See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
      page for the **preferred** way to register kernels, which uses the
      `nesi-add-kernel` command line tool to automate most of these manual
      steps.
@@ -205,7 +204,7 @@ Launcher as "Shared Virtual Env".
 ## Custom kernel in a Singularity container
 
 An example showing setting up a custom kernel running in a Singularity
-container can be found on our [Lambda Stack](../../../Scientific_Computing/Supported_Applications/Lambda_Stack.md#lambda_stack_via_jupyter)
+container can be found on our [Lambda Stack](../../../../Scientific_Computing/Supported_Applications/Lambda_Stack.md#lambda_stack_via_jupyter)
 support page.
 
 ## Adding a custom R kernel
