@@ -5,14 +5,14 @@
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
 [interactive computing](../../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
 Jupyter allows you to create notebooks that contain live code,
-equations, visualisations and explanatory text. There are many uses for
+equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing [Slurm job
 submissions](../../../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
 and workflows and much more.
 
 !!! prerequisite "See also"
-     -   See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
+     -   See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
          (recommended) and [Jupyter kernels - Manual management](./Jupyter_kernels_Manual_management.md)
          pages for adding kernels.
 
@@ -25,7 +25,6 @@ you will be taken to the "NeSI OnDemand" page, where you can choose from many di
 When you select the JupyterLab application you will be presented with certain options, such as how many CPU cores and how much memory you
 require for you interactive session. After launching your session you should be presented with an option to "Connect to JupyterLab", which
 will take you to the JupyterLab web interface.
-
 
 ## Jupyter user interface
 
@@ -78,7 +77,7 @@ about JupyterLab extensions can be found
 Check the extension's documentation to find out the supported
 installation method for that particular extension.
 
-### Installing prebuilt extensions 
+### Installing prebuilt extensions
 
 If the extension is packaged as a prebuilt extension (e.g. as a pip
 package), then you can install it from the JupyterLab terminal by
