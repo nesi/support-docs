@@ -48,6 +48,7 @@ To submit the job via SLURM, write the following job script `fidibench_intel_app
 #SBATCH --partition=milan
 #SBATCH --job-name=fidibench_app
 
+module purge
 module load Apptainer
 module load intel        # load the Intel MPI
 export I_MPI_FABRICS=ofi # turn off shm to allow the code to run on multiple nodes
