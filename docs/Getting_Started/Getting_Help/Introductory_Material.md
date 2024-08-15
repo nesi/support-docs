@@ -25,6 +25,9 @@ optimising your work on the system.
 
 Slides used in the lectures can be found [here](https://docs.google.com/presentation/d/11TCaJnpZO-s-s4NQ1P0a89flewT7HXmn2PHrW-3EPYg/edit?usp=sharing).
 
+!!! warning
+    Please note that we are currently in the middle of a platform refresh so parts of these introductory materials may soon be out of date. Once they are out of date we will update this matieral and upload new, up to date, videos. You can find details on the platform refresh [here](https://www.nesi.org.nz/platform-refresh).
+
 ## Other ways to get 'Introductory' help
 
 In addition to the material mentioned above, you can also seek help at
