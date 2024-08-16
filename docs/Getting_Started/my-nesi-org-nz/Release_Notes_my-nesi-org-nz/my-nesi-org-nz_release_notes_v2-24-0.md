@@ -3,6 +3,8 @@ created_at: '2024-05-28T19:53:24Z'
 tags:
 - releasenote
 title: my.nesi.org.nz release notes v2.24.0
+search:
+  boost: 0.1
 ---
 
 ## New and Improved
