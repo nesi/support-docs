@@ -2,6 +2,8 @@
 created_at: 2024-05-20
 description: 
 tags: []
+search:
+  boost: 0.1
 ---
 
 From the 29th of May, NeSI's Support team will be using a new support desk platform to accept, track, and solve inquiries and issues sent to [support@nesi.org.nz](mailto:support@nesi.org.nz). The change is part of an evolution of our tools to better support researchers using NeSI's compute platforms and data services.

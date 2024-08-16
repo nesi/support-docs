@@ -6,6 +6,8 @@ vote_count: 1
 vote_sum: 1
 zendesk_article_id: 6546340907919
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 The recent upgrade of the Māui is now complete. The operating system,

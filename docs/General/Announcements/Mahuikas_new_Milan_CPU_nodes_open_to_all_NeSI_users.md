@@ -6,6 +6,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 6686934564239
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 Following a successful early access programme, Mahuika’s newest CPU
