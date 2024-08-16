@@ -10,13 +10,11 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
 ## Setup
 
 === "Linux / MacOS"
-    ### Linux / MacOS {.hidden}
     1. Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](../Terminal_Setup).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
     ![vscode remote extension](../../../assets/images/vscode-remote.png)
 === "Windows"
-    ### Windows {.hidden}
     1. Set up WSL as described in
     [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft installed.
@@ -27,17 +25,17 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
       C:\Windows\system32\wsl.exe ssh %*
       ```
     Where `<username>` is your username.
-    5. In VSCode, open your configuration file by pressing <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>P</kbd>, then typing `user settings json` and select "Preferences: Open User Settings (JSON)"
-    - Add the following to the config file opened
+    5. In VSCode, open your configuration file by pressing <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>P</kbd>, then typing `user settings json` and selecting "Preferences: Open User Settings (JSON)"
+    6. Add the following to the config file opened
     ```json
     "remote.SSH.configFile": "\\\\wsl$\\<distro>\\home\\<username>\\.ssh\\config",
     "remote.SSH.path": "C:\\Users\\<username>\\ssh.bat",
     "security.allowedUNCHosts": ["wsl$", "wsl.localhost"],
     ```
-    Where `<username>` is your username and `<distro>` is your installed WSL distribution (e.g. `Ubuntu-20.04`)
-    Make sure the config file is valid JSON before saving (e.g. each keypair is followed by a `,`
-    and is in between the enclosing `{}`).
-    6. Make sure you have set up an `~/.ssh/confisg` file as described in
+    Where `<username>` is your username and `<distro>` is your installed WSL distribution (e.g. `Ubuntu-20.04`).
+    7. Make sure the config file is valid JSON (e.g. each keypair is followed by a `,`
+    and is in between the enclosing `{}`), then save.
+    8. From inside a WSL terminal follow the steps to set up an `~/.ssh/config` file as described in
     [Terminal Setup](../Terminal_Setup), in your subsystem install.
 
 !!! tip
