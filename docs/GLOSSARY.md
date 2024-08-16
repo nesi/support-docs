@@ -1,6 +1,6 @@
 ---
 search:
-  exclude: true
+  boost: 0.1
 ---
 
 List of terms used in this documentation.
