@@ -147,6 +147,11 @@ vote_count: 1
 vote_sum: -1
 zendesk_article_id: 4405523725583
 zendesk_section_id: 360000278935
+search:
+  boost: 2
+hide:
+  - toc
+  - nav
 ---
 ```
 
@@ -163,8 +168,8 @@ The following sections detail the most usual entries.
 - `description` : Used for internal and external search indexing. This will appear as the page preview when searching in Google. Try not to include words and information here that is not in the body of the article. : `string`
 - `icon`        : Page icon.                                                    : `path`
 - `status`      : Will display a symbol on nav                                  : only `new` or `deprecated` are supported
-- `hide`        : Used to turn off features (e.g. table of content)             : `tags` `toc` `nav`
-- `tags`        : Used for internal and external search indexing               
+- `hide`        : Used to turn off features (e.g. table of content)             : list, `tags` `toc` `nav`
+- `tags`        : Used for internal and external search indexing                : list
 - `search: exclude` : Used to exclude page from internal search                 : `true`
 - `search: boost` : Used to increase or decrease weight in internal search      : 1< for increased,  1> for decrease. 
 
