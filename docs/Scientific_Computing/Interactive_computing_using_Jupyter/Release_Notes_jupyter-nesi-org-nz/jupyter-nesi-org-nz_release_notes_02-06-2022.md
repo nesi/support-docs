@@ -7,6 +7,8 @@ vote_count: 1
 vote_sum: 1
 zendesk_article_id: 4905985717135
 zendesk_section_id: 360001150156
+search:
+  boost: 0.1
 ---
 
 ## Release Update - 2. June 2022
