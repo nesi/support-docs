@@ -18,8 +18,8 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
     1. Set up WSL as described in
     [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft installed.
-    3. Still in the 'Extensions' Tab, search `wsl` and make sure you have 'WSL' by Microsoft installed.
     ![vscode remote extension](../../../assets/images/vscode-remote.png)
+    3. Still in the 'Extensions' Tab, search `wsl` and make sure you have 'WSL' by Microsoft installed.
     4. In `C:\Users\<username>` create a file named `ssh.bat` with the following contents.
       ```bat
       C:\Windows\system32\wsl.exe ssh %*
