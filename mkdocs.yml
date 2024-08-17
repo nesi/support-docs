@@ -27,12 +27,6 @@ extra:
     property: G-TVQR4R1F40
 plugins:
   - search
-  - exclude-search:
-      exclude:
-      - MACROS.md
-      - NEWPAGE.md
-      - GLOSSARY.md
-      - CONTRIBUTING.md
   - open-in-new-tab
   - redirects:
       map_file: docs/redirect_map.yml

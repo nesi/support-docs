@@ -7,6 +7,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 8202966997775
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 NeSI uses its [System Status page](https://status.nesi.org.nz/) as a tool to communicate planned and unplanned maintenance and interruptions to service. Our Status page includes a list of components that reflect high-level functional aspects of NeSI's platforms and services, as well as a more specific detailed list covering different platform elements.
