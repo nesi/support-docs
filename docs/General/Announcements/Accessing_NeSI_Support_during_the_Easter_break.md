@@ -9,6 +9,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 9308584352783
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 During the Easter break, [NeSI platform

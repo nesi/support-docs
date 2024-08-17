@@ -8,6 +8,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 4404255007503
 zendesk_section_id: 360000502675
+search:
+  boost: 0.1
 ---
 
 *Released Wednesday 4 August 2021.*

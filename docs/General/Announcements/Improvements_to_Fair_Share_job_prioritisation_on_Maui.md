@@ -6,6 +6,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 360001829555
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 *On Thursday 3 September 2020, NeSI updated the way we prioritise jobs

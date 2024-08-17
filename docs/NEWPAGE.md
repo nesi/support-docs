@@ -1,5 +1,7 @@
 ---
 title: Create a new page
+search:
+  exclude: true
 ---
 
 **[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs/NEWPAGE/)**{ .hidden }
@@ -147,6 +149,11 @@ vote_count: 1
 vote_sum: -1
 zendesk_article_id: 4405523725583
 zendesk_section_id: 360000278935
+search:
+  boost: 2
+hide:
+  - toc
+  - nav
 ---
 ```
 
@@ -154,20 +161,24 @@ The following sections detail the most usual entries.
 
 ### Mkdocs Parameters
 
-- `title`  : article title
+- `title`  : article title, 
+- `created_at` : When article was created. Currently not shown in rendered page, but should still be filled in as it can be useful info. : `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ssZ`
+
 
 ### Material Theme Parameters
 
-- `description` : This will appear when Googling, or using the internal search. : `string`
+- `description` : Used for internal and external search indexing. This will appear as the page preview when searching in Google. Try not to include words and information here that is not in the body of the article. : `string`
 - `icon`        : Page icon.                                                    : `path`
 - `status`      : Will display a symbol on nav                                  : only `new` or `deprecated` are supported
-- `hide`        : Used to turn off features (e.g. table of content)             : `tags` `toc` `nav`
+- `hide`        : Used to turn off features (e.g. table of content)             : list, `tags` `toc` `nav`
+- `tags`        : Used for internal and external search indexing                : list
+- `search: exclude` : Used to exclude page from internal search                 : `true`
+- `search: boost` : Used to increase or decrease weight in internal search      : 1< for increased,  1> for decrease. 
 
 ### Zendesk Imported
 
 The following fields were imported from Zendesk Page:
 
-- `created_at`
 - `vote_count`
 - `vote_sum`
 - `zendesk_article_id`

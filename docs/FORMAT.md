@@ -1,5 +1,7 @@
 ---
 title: Formatting
+search:
+  exclude: true
 ---
 
 **[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs/FORMAT/)**{ .hidden }

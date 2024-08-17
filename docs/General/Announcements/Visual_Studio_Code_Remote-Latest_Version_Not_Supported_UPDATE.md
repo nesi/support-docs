@@ -10,6 +10,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 8974326930319
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 The latest version of Visual Studio Code (1.86.0) released in January
