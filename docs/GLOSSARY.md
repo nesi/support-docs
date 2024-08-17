@@ -1,6 +1,6 @@
 ---
 search:
-  boost: 0.1
+  boost: 0.01
 ---
 
 List of terms used in this documentation.
