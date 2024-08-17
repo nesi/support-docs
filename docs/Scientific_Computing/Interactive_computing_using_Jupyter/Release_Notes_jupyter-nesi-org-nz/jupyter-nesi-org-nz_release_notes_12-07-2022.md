@@ -7,6 +7,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 5129022601487
 zendesk_section_id: 360001150156
+search:
+  boost: 0.1
 ---
 
 ## New and Improved

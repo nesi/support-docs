@@ -6,6 +6,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 4407274387599
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 A growing number of research projects are storing large amounts of data
 on NeSI systems. To better support this growth, as well as optimise the
