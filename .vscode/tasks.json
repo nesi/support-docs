@@ -112,7 +112,7 @@
                 "reveal":"never",
                 "showReuseMessage": false
             },
-            "command": "mkdocs serve --dirty --quiet"
+            "command": "mkdocs serve --dirty"
         },
     ]
 }
