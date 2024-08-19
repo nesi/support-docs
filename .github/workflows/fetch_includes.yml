@@ -1,8 +1,8 @@
 name: Fetch Remote Assets 
 on: 
   workflow_dispatch:
-  schedule:
-    - cron: '00 12 * * *' # Should run 1 hour after module list update.
+  # schedule:
+  #   - cron: '00 12 * * *' # Should run 1 hour after module list update.
 env:
   MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
   GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
