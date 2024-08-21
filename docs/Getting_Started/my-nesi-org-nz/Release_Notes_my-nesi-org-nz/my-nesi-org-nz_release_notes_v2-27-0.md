@@ -9,8 +9,9 @@ search:
 
 ## New and Improved
 
-- We have upgraded My.Nesi framework (node.js 20.16, Angular 17 and all necessary packages).  
-- We have updated Keycloak to version 22.  
+- If users ...do what... they will be prompted by a new dialogue box to ...confirm what... 
+- We have upgraded many of the software components that power the my.nesi.org.nz framework (node.js 20.16, Angular 17 and all necessary packages), which will improve overall performance and functionality of the site.  
+- We have updated one of our authentication tools, Keycloak, to version 22.
 
 
 If you have any questions about any of the updates or fixes, please
