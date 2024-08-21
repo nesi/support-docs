@@ -5,6 +5,8 @@ tags:
 title: jupyter.nesi.org.nz release notes 30/07/2024
 vote_count: 0
 vote_sum: 0
+search:
+  boost: 0.1
 ---
 
 ## New and Improved

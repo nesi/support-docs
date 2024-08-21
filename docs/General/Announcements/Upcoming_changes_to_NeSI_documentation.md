@@ -10,6 +10,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 9367039527823
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 Over the next few months NeSI will be making the shift to a new

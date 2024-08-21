@@ -6,6 +6,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 9108460666383
 zendesk_section_id: 360001091155
+search:
+  boost: 0.1
 ---
 
 ## 28 February 2024
