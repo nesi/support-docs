@@ -55,7 +55,7 @@ distribution.
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1512               # total mem
 
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -inputfile my_input.mph
     ```
 
@@ -68,7 +68,7 @@ distribution.
     #SBATCH --time          00:05:00        # Walltime
     #SBATCH --cpus-per-task 8
     #SBATCH --mem           4G              # total mem
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph 
     ```
 
@@ -83,7 +83,7 @@ distribution.
     #SBATCH --ntasks        8         
     #SBATCH --mem-per-cpu   1500                # mem per cpu
     
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph
     ```
 
@@ -98,7 +98,7 @@ distribution.
     #SBATCH --cpus-per-task    16
     #SBATCH --mem-per-cpu      1500B             # total mem
  
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph
     ```
 
@@ -115,7 +115,7 @@ distribution.
  
     module purge
 
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     module load MATLAB/2021b
 
     comsol mphserver -silent &

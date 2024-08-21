@@ -527,11 +527,11 @@ There are a few includes you may want to use.
 
 Here is an example using dynamically using the module version information.
 
-`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+`module load ANSYS/{{ applications.ANSYS.default }}`
 
 ```md
 {% raw %}
-`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+`module load ANSYS/{{ applications.ANSYS.default }}`
 {% endraw %}
 ```
 
@@ -541,23 +541,21 @@ And here is another example showing all Python packages installed in Python modu
 
 ??? "Fancy Example"
     Our Python modules come pre-built with the following packages:
-    {% set pyexts=applications.Python.extensions.split(', ') %}
     <table>
     <tr><th>Package</th></tr>
-    {% for pyext in pyexts %}
+    {% for pyext in applications.Python.extensions %}
     <tr><td>{{ pyext }}</td></tr>
     {% endfor %}
     </table>
 
     ```md
     {% raw %}
-    Our Python modules come prebuilt with the following packages: 
-    {% set pyexts=applications.Python.extensions.split(', ') %}
+    Our Python modules come pre-built with the following packages:
     <table>
     <tr><th>Package</th></tr>
-    {% for pyext in pyexts %}
+    {% for pyext in applications.Python.extensions %}
     <tr><td>{{ pyext }}</td></tr>
     {% endfor %}
-    {% endraw %}
     </table>
+    {% endraw %}
     ```

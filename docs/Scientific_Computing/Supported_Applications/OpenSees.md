@@ -41,7 +41,7 @@ sweeps.
     #SBATCH --mem           512MB             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
     
-    module load OpenSees/{{app.machines.mahuika.versions | last}}
+    module load OpenSees/{{app.default}}
     OpenSees "frame.tcl"
 
 ## Input from Shell
