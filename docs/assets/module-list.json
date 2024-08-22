@@ -108,7 +108,7 @@
                 "server_version": ""
             }
         ],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ABAQUS",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ABAQUS",
         "versions": [
             "2017",
             "2018",
@@ -552,7 +552,7 @@
                 "server_version": ""
             }
         ],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ANSYS",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ANSYS",
         "versions": [
             "18.1",
             "19.1",
@@ -1001,7 +1001,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/AlphaFold/2.3.2.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/AlphaFold",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/AlphaFold",
         "versions": [
             "2.3.2"
         ]
@@ -1651,7 +1651,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/BLAST/2.9.0-gimkl-2018b.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/BLAST",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/BLAST",
         "versions": [
             "2.10.0-GCC-9.2.0",
             "2.12.0-GCC-9.2.0",
@@ -1791,7 +1791,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BRAKER/2.1.6-gimkl-2020a-Perl-5.30.1-Python-3.8.2.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/BRAKER",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/BRAKER",
         "versions": [
             "2.1.6-gimkl-2020a-Perl-5.30.1-Python-3.8.2",
             "2.1.6-gimkl-2022a-Perl-5.34.1",
@@ -3088,7 +3088,7 @@
                 "server_version": ""
             }
         ],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/COMSOL",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/COMSOL",
         "versions": [
             "5.3",
             "5.4",
@@ -3627,7 +3627,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Clair3/0.1.12-Miniconda3.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Clair3",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Clair3",
         "versions": [
             "0.1.12-Miniconda3",
             "1.0.0-Miniconda3",
@@ -4317,7 +4317,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Delft3D/141732-intel-2022a.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Delft3D",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Delft3D",
         "versions": [
             "141732-gimkl-2022a",
             "141732-intel-2022a",
@@ -4414,7 +4414,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Dorado/0.3.2.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Dorado",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Dorado",
         "versions": [
             "0.2.1",
             "0.2.4",
@@ -5188,7 +5188,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FDS/6.7.5-1526-intel-2020a.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/FDS",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/FDS",
         "versions": [
             "6.7.1-intel-2017a",
             "6.7.5-1526-intel-2020a",
@@ -5602,7 +5602,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FlexiBLAS/3.3.1-GCC-12.3.0.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/FlexiBLAS",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/FlexiBLAS",
         "versions": [
             "3.1.3-GCC-11.3.0",
             "3.3.1-GCC-12.3.0"
@@ -5813,7 +5813,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GATK/3.8-1.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/GATK",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/GATK",
         "versions": [
             "3.5-Java-1.8.0_144",
             "3.5-Java-15.0.2",
@@ -6358,7 +6358,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GROMACS/2020.5-intel-2020a-cuda-11.0.2-hybrid.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/GROMACS",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/GROMACS",
         "versions": [
             "2019-intel-2018b-cuda-8.0.61-hybrid",
             "2019.3-intel-2018b-cuda-10.0.130-hybrid",
@@ -6594,7 +6594,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Gaussian/09-C.01",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Gaussian",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Gaussian",
         "versions": [
             "09-B",
             "09-C",
@@ -7725,7 +7725,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lang/Java/17.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Java",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Java",
         "versions": [
             "1.7.0_51",
             "1.8.0_144",
@@ -7821,7 +7821,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Julia/1.1.0.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Julia",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Julia",
         "versions": [
             "0.6",
             "1.0",
@@ -7963,7 +7963,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/JupyterLab/2022.7.0-gimkl-2020a-3.4.3.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/JupyterLab",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/JupyterLab",
         "versions": [
             "2.1.3-gimkl-2018b-Python-3.8.1",
             "2.1.5-gimkl-2018b-Python-3.8.1",
@@ -8896,7 +8896,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MAKER/2.31.9-gimkl-2018b.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/MAKER",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/MAKER",
         "versions": [
             "2.31.9-gimkl-2018b",
             "2.31.9-gimkl-2020a"
@@ -9163,7 +9163,7 @@
                 "server_version": ""
             }
         ],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/MATLAB",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/MATLAB",
         "versions": [
             "2017b",
             "2018b",
@@ -10232,7 +10232,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lang/Miniconda3/23.10.0-1.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Miniconda3",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Miniconda3",
         "versions": [
             "22.11.1-1",
             "23.10.0-1",
@@ -10444,7 +10444,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Molpro/mpp-2019.2.2.linux_x86_64_openmp.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Molpro",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Molpro",
         "versions": [
             "2012.1.27-intel-2017a",
             "mpp-2015.1.25.linux_x86_64_openmp",
@@ -11053,7 +11053,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/NWChem/6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/NWChem",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/NWChem",
         "versions": [
             "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16",
             "6.8.revision47-gimkl-2017a-2017-12-14-Python-2.7.14"
@@ -11463,7 +11463,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ORCA/4.0.1-OpenMPI-2.0.2.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ORCA",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ORCA",
         "versions": [
             "4.0.1-OpenMPI-2.0.2",
             "4.2.1-OpenMPI-3.1.4",
@@ -11774,7 +11774,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/OpenFOAM/v1812-gimkl-2018b-libAcoustics.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/OpenFOAM",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/OpenFOAM",
         "versions": [
             "10-gimkl-2022a",
             "2.4.0-gimkl-2018b",
@@ -11909,7 +11909,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/OpenSees/3.2.0-gimkl-2020a-METIS4.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/OpenSees",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/OpenSees",
         "versions": [
             "2.5.0-r6536-gimkl-2017a",
             "2.5.0-r6537-gimkl-2017a",
@@ -12632,7 +12632,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/ParaView/5.6.0-gimpi-2018b.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ParaView",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ParaView",
         "versions": [
             "5.3.0-gimkl-2017a",
             "5.4.1-gimkl-2017a-Python-2.7.14",
@@ -13489,7 +13489,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Python/3.10.5-gimkl-2022a.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Python",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Python",
         "versions": [
             "2.7.14-gimkl-2017a",
             "2.7.16-gimkl-2018b",
@@ -14192,7 +14192,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/R/4.2.1-gimkl-2022a.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/R",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/R",
         "versions": [
             "3.4.2-gimkl-2017a",
             "3.5.0-gimkl-2017a",
@@ -14650,7 +14650,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/RAxML/8.2.10-gimkl-2017a.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/RAxML",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/RAxML",
         "versions": [
             "8.2.10-gimkl-2017a",
             "8.2.12-gimkl-2020a",
@@ -15200,7 +15200,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Relion/2.1-gimkl-2017a.lua.bak_20180822151823",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Relion",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Relion",
         "versions": [
             "2.0.3-gimkl-2017a",
             "2.0.3-gimkl-2017a.lua",
@@ -16662,7 +16662,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Singularity/3.11.3.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Singularity",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Singularity",
         "versions": [
             "3.10.0",
             "3.10.3",
@@ -17057,7 +17057,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Supernova/2.1.1.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Supernova",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Supernova",
         "versions": [
             "2.1.1"
         ]
@@ -17610,7 +17610,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Trinity/2.8.4-gimkl-2017a.lua.bak_20190123101343",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Trinity",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Trinity",
         "versions": [
             "2.11.0-gimkl-2020a",
             "2.13.2-gimkl-2020a",
@@ -17727,7 +17727,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/TurboVNC/2.2.4-GCC-9.2.0.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/TurboVNC",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/TurboVNC",
         "versions": [
             "2.2.3-GCC-7.4.0",
             "2.2.4-GCC-9.2.0"
@@ -17912,7 +17912,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VASP/6.4.2-intel-2022a.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/VASP",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/VASP",
         "versions": [
             "4.6-gimkl-2017a",
             "4.6-gimkl-2020a",
@@ -18149,7 +18149,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/VTune/2019_update4.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/VTune",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/VTune",
         "versions": [
             "2019_update4",
             "2019_update8",
@@ -18348,7 +18348,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/VirSorter/1.0.6-gimkl-2020a-Perl-5.30.1.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/VirSorter",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/VirSorter",
         "versions": [
             "1.0.6-gimkl-2020a-Perl-5.30.1",
             "2.1-gimkl-2020a-Python-3.8.2",
@@ -22246,7 +22246,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/ipyrad/0.9.81-Miniconda3.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ipyrad",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ipyrad",
         "versions": [
             "0.9.61-gimkl-2020a-Python-3.8.2",
             "0.9.81-Miniconda3",
@@ -24963,7 +24963,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/ont-guppy-gpu/6.4.6.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ont-guppy-gpu",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/ont-guppy-gpu",
         "versions": [
             "3.4.4",
             "3.6.0",
@@ -26812,7 +26812,7 @@
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/snpEff/5.0-Java-11.0.4.lua",
         "modulefile_text": "",
         "network_licences": [],
-        "support": "www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/snpEff",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/snpEff",
         "versions": [
             "4.2",
             "4.3t",
