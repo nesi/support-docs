@@ -29,7 +29,7 @@ zendesk_section_id: 360000040076
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem           512M           # Total Memory
     #SBATCH --hint          nomultithread  # Hyperthreading disabled
-    module load Delft3D/{{app.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.default}}
     d_hydro test_input.xml
     ```
 
@@ -47,7 +47,7 @@ zendesk_section_id: 360000040076
     #SBATCH --mem           2G             # Total Memory
     #SBATCH --hint         nomultithread  # Hyperthreading disabled
     
-    module load Delft3D/{{app.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.default}}
     
     srun d_hyrdo test_input.xml
     ```
@@ -78,7 +78,7 @@ zendesk_section_id: 360000040076
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem-per-cpu   1G             #SBATCH --hint          nomultithread  # Hyperthreading disabled
 
-    module load Delft3D/{{app.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.default}}
     srun d_hyrdo test_input.xml
     ```
 

@@ -24,6 +24,11 @@
 .md-tag.md-tag-ver-shown {
     outline: var(--md-primary-fg-color) 2px solid;
 }
+
+.md-tag-ver-warn {
+  text-decoration: line-through;
+}
+ 
 .md-typeset__table {
   width: 100%;
 }

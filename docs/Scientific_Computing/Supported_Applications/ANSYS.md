@@ -94,7 +94,7 @@ Below is an example of this from a fluent script.
 #SBATCH --array         1-100 
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/{{app.machines.mahuika.versions | last}} 
+module load ANSYS/{{app.default}} 
 
 JOURNAL_FILE=fluent_${SLURM_JOB_ID}.in
 cat  ${JOURNAL_FILE}
@@ -175,7 +175,7 @@ Must have one of these flags.
     #SBATCH --mem           512MB             # total memory (per node)
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
 
     JOURNAL_FILE=/share/test/ansys/fluent/wing.in
     fluent 3ddp -g -i ${JOURNAL_FILE}
@@ -205,7 +205,7 @@ Must have one of these flags.
     #SBATCH --mem-per-cpu       1500              # Fine for small jobs; increase if needed
     #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     JOURNAL_FILE=/share/test/ansys/fluent/wing.in
     fluent 3ddp -g -t ${SLURM_NTASKS} -i ${JOURNAL_FILE}
     ```
@@ -390,7 +390,7 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --mem           512MB             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
 
     input="/share/test/ansys/cfx/pump.def"
     cfx5solve -batch -def ${input}
@@ -414,7 +414,7 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --mem-per-cpu       512MB             # Standard for large partition
     #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     input="/share/test/ansys/mechanical/structural.dat" 
     cfx5solve -batch -def "${input} -part ${SLURM_NTASKS}
     ```
@@ -454,7 +454,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --mem           1500M             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -i "${input}
@@ -477,7 +477,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --mem           12G               # 8 threads at 1500 MB per thread
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -np ${SLURM_CPUS_PER_TASK} -i ${input}
     ```
@@ -502,7 +502,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --mem-per-cpu       1500
     #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -dis -np ${SLURM_NTASKS} -i "${input}"
     ```
@@ -540,7 +540,7 @@ xvfb-run cfx5post input.cse
 #SBATCH --mem-per-cpu   512MB             # Memory per cpu
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 input=3cars_shell2_150ms.k
 lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
 ```
@@ -645,7 +645,7 @@ not working for you.
 #SBATCH --ntasks-per-node     36
 #SBATCH --mem-per-cpu         1500
 
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 INPUTNAME="Sim1.aedt"
 startRSM
 
@@ -677,7 +677,7 @@ salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1
 Then load your desired version of ANSYS
 
 ``` sh
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 ```
 
 Run the script to start startRSM, this will start ANSYS remote solver on
@@ -707,7 +707,7 @@ ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=P
 #SBATCH --mem-per-cpu   2GB               # Memory per CPU
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 
 COMP_CPUS=$((SLURM_NTASKS-1))
 MECHANICAL_CPUS=1

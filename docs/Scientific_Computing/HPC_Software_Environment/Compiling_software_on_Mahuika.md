@@ -27,9 +27,9 @@ loading one of the toolchains:
 The GNU and Intel compilers can be accessed by loading one of the
 toolchains:
 
-- `module load gimkl/{% if applications.gimkl.machines.mahuika.default == 'latest' -%}{{  applications.gimkl.machines.mahuika.versions | last }}{% else -%}{{ applications.gimkl.machines.mahuika.versions.default }}{% endif -%}` - the default toolchain, providing GNU
+- `module load gimkl/{% if applications.gimkl.default == 'latest' -%}{{  applications.gimkl.default }}{% else -%}{{ applications.gimkl.versions.default }}{% endif -%}` - the default toolchain, providing GNU
     compilers (version 9.2.0), Intel MPI and Intel MKL
-- `module load intel/{% if applications.gimkl.machines.mahuika.default == 'latest' -%}{{  applications.gimkl.machines.mahuika.versions | last }}{% else -%}{{ applications.gimkl.machines.mahuika.versions.default }}{% endif -%}` - Intel compilers (version 2020.0.166),
+- `module load intel/{% if applications.gimkl.default == 'latest' -%}{{  applications.gimkl.default }}{% else -%}{{ applications.gimkl.versions.default }}{% endif -%}` - Intel compilers (version 2020.0.166),
     Intel MPI and Intel MKL
 
 There are also various smaller "sub-toolchains" which can be used in the

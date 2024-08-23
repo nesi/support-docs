@@ -1,3 +1,8 @@
+// Copied from module list repo.
+CLUSTER_WHITELIST=["mahuika", "maui", "maui_ancil"]
+DOMAIN_WHITELIST=["astronomy","biology","chemistry", "data_analytics", "earth_science", "engineering", "language", "machine_learning", 
+"mathematics","medical_science","physics","social_science","visualisation","climate_science","workflow_management"]
+
 $(document).ready(function() {
 
     params = new URL(document.location).searchParams;
@@ -5,8 +10,8 @@ $(document).ready(function() {
     cluster_tags = (params.get("cluster") ?? "").split(",").filter(Boolean);
     domain_tags = (params.get("domain") ?? "").split(",").filter(Boolean);  
 
-    cluster_tags.forEach((tag)=>addTag(tag, "cluster"));
-    domain_tags.forEach((tag)=>addTag(tag, "domain"));
+    cluster_tags.forEach((tag)=>addBadge(tag, "cluster"));
+    domain_tags.forEach((tag)=>addBadge(tag, "domain"));
 
     if (search_string){
         $('#__search-aux')[0].value = search_string;
@@ -14,39 +19,48 @@ $(document).ready(function() {
     filterSearch(); 
 })
 
-function addTag(tag, type){
-    console.log(`adding tag ${tag}`)
-    $(`#srchbar-badge-party-${type}s`).append(() => {
-        return `<span class="badge badge-closeable badge-${type} badge-${type}-${tag}">${tag.charAt(0).toUpperCase() + tag.replace('_', ' ').slice(1)}<button type="button" onclick="${type}ToggleFilter(\'${tag}\')" data-dismiss="alert" aria-label="Close"></button></span>`;
-    })
-    params.set(type, (params.get(type) ?? "").split(",").filter(Boolean).push(tag).toString());
+function addBadge(tag, filter_type){ 
+    $(`#srchbar-badge-party-${filter_type}s`).append(() => {
+    return `<span class="badge badge-closeable badge-${filter_type} badge-${filter_type}-${tag}">${tag.charAt(0).toUpperCase() + tag.replace('_', ' ').slice(1)}<button type="button" onclick="${filter_type}ToggleFilter(\'${tag}\')" data-dismiss="alert" aria-label="Close"></button></span>`;
+})
+}
+
+function removeBadge(tag, filter_type){
+    $(`#srchbar-badge-party-${filter_type}s > .badge-${filter_type}-${tag}`).remove(); // Remove tag class from DOM
+}
+
+function addTag(tag, filter_type){
+    addBadge(tag, filter_type);
+    params.set(filter_type, (params.get(filter_type) ?? "").split(",").filter(Boolean).concat(tag).join());
     history.pushState(null, '', window.location.pathname + '?' + params.toString());
 }
 
-function removeTag(tag, type){
-    console.log(`removing tag ${tag}`)
-    $(`#srchbar-badge-party-${type}s > .badge-${type}-${tag}`).remove()
-    params.set(type, (params.get(type) ?? "").split(",").filter(Boolean).filter(e => e !== tag).toString())
-    history.pushState(null, '', window.location.pathname + '?' + params.toString());
+function removeTag(tag, filter_type){
+    removeBadge(tag, filter_type);
+    params.set(filter_type, (params.get(filter_type) ?? "").split(",").filter(Boolean).filter(e => e !== tag).join()); // Remove tag class from search string
+    history.pushState(null, '', window.location.pathname + '?' + params.toString()); // push to search history for live update.
 }
 
 function domainToggleFilter(domain) {
-    if ($(`#srchbar-badge-party-domains > .badge-domain-${domain}`).length < 1) {
-        addTag(domain, "domain");
-    } else {
-        removeTag(domain, "domain");
+    if (DOMAIN_WHITELIST.includes(domain)){
+        if ($(`#srchbar-badge-party-domains > .badge-domain-${domain}`).length < 1) {
+            addTag(domain, "domain");
+        } else {
+            removeTag(domain, "domain");
+        }
+        filterSearch();
     }
-    filterSearch();
 }
 
 function clusterToggleFilter(cluster) {
-
-    if ($(`#srchbar-badge-party-domains > .badge-cluster-${cluster}`).length < 1) {
-        addTag(cluster, "cluster");
-    } else {
-        removeTag(cluster, "cluster");
+    if (CLUSTER_WHITELIST.includes(cluster)){
+        if ($(`#srchbar-badge-party-clusters > .badge-cluster-${cluster}`).length < 1) {
+            addTag(cluster, "cluster");
+        } else {
+            removeTag(cluster, "cluster");
+        }
+        filterSearch(); 
     }
-    filterSearch(); 
 }
 
 
@@ -59,7 +73,6 @@ function srchFunc(event) {
     // Rather that add to url, edit history.
     history.pushState(null, '', window.location.pathname + '?' + params.toString());
     filterSearch()
-    
 }
 
 //Goes through each app and shows/hides accordingly.

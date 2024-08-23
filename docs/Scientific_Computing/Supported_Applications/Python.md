@@ -53,7 +53,7 @@ Our most recent Python environment modules have:
     #SBATCH --time        01:00:00
     #SBATCH --mem         512MB
     
-    module load Python/{{app.machines.mahuika.versions | last}}
+    module load Python/{{app.default}}
     
     python MyPythonScript.py
     ```
