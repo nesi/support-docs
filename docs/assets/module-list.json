@@ -4108,7 +4108,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/bbuchfink/diamond",
-        "last_updated": 1708083505,
+        "last_updated": 1724319610,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/DIAMOND/2.1.9-GCC-11.3.0.lua",
         "modulefile_text": "",
@@ -7958,7 +7958,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://pypi.org/project/jupyterlab/",
-        "last_updated": 1712178293,
+        "last_updated": 1724204445,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/JupyterLab/2022.7.0-gimkl-2020a-3.4.3.lua",
         "modulefile_text": "",
@@ -8313,7 +8313,7 @@
     },
     "LASTZ": {
         "admin_list": [],
-        "default": "1.04.03-GCC-9.2.0",
+        "default": "1.04.22-GCC-12.3.0",
         "default_type": "latest",
         "description": "LASTZ is a program for aligning DNA sequences, a pairwise aligner. Originally designed to\n handle sequences the size of human chromosomes and from different species, it is also useful for sequences\n produced by NGS sequencing technologies such as Roche 454.",
         "domains": [
@@ -8324,15 +8324,16 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://www.bx.psu.edu/~rsharris/lastz/",
-        "last_updated": 1607909040,
+        "last_updated": 1724313600,
         "licence_type": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/LASTZ/1.04.03-GCC-9.2.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/LASTZ/1.04.22-GCC-12.3.0.lua",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
         "versions": [
             "1.02.00-gimkl-2018b",
-            "1.04.03-GCC-9.2.0"
+            "1.04.03-GCC-9.2.0",
+            "1.04.22-GCC-12.3.0"
         ]
     },
     "LDC": {
@@ -9809,11 +9810,14 @@
         "domains": [
             "bio"
         ],
-        "extensions": [],
+        "extensions": [
+            "HTTP::Status-6.44",
+            "LWP::Simple-6.67"
+        ],
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://downloads.jbei.org/data/microbial_communities/MaxBin/MaxBin.html",
-        "last_updated": 1693252748,
+        "last_updated": 1724324197,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/MaxBin/2.2.7-GCC-11.3.0-Perl-5.34.1.lua",
         "modulefile_text": "",
@@ -22527,7 +22531,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://bitbucket.org/genomicepidemiology/kma",
-        "last_updated": 1663488796,
+        "last_updated": 1724381071,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/kma/1.4.5-GCC-11.3.0.lua",
         "modulefile_text": "",
@@ -22536,6 +22540,7 @@
         "versions": [
             "1.3.23-gimkl-2020a",
             "1.4.1-gimkl-2020a",
+            "1.4.15-GCC-12.3.0",
             "1.4.5-GCC-11.3.0"
         ]
     },
