@@ -2,11 +2,11 @@
 
 ## Overview
 
-NeSI OnDemand is powered by [Open OnDemand](https://openondemand.org/) and provides interactive access to NeSI's cluster...
+NeSI OnDemand is powered by [Open OnDemand](https://openondemand.org/) and provides web-based, interactive access to NeSI's cluster.
 
 ## Connecting to NeSI OnDemand
 
-Connect to NeSI OnDemand: [https://ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/)...
+Connect to NeSI OnDemand: [https://ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
 ## Interactive applications
 
