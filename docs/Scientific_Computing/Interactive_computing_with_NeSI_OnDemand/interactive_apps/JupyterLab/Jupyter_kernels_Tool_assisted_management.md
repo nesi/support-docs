@@ -105,6 +105,10 @@ nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 
 ## Singularity container
 
+!!! danger
+
+    This section has not been tested on NeSI OnDemand
+
 To use a Singularity container, use the `-c` or `--container` options as
 follows:
 

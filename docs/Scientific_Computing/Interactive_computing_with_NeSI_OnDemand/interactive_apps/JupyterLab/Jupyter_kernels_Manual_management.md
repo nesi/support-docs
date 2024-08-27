@@ -2,15 +2,8 @@
 
 ## Introduction
 
-Jupyter kernels execute the code that you write. The following Jupyter
-kernels are installed by default and can be selected from the Launcher:
-
-- Python 3.8.2
-- Python 3.8.1
-- Python 3.7.3
-- Anaconda3
-- R 4.0.1
-- R 3.6.1
+Jupyter kernels execute the code that you write. NeSI provides a number of
+Python and R kernels by default, which can be selected from the Launcher.
 
 Many packages are preinstalled in our default Python and R environments
 and these can be extended further as described on the
@@ -44,7 +37,7 @@ module:
 
 ``` sh
 module purge
-module load Miniconda3/4.8.2
+module load Miniconda3
 ```
 
 Now create a conda environment named "my-conda-env" using Python 3.6.
@@ -53,7 +46,7 @@ of the environment, version of Python and install other Python packages
 as required.
 
 ``` sh
-conda create --name my-conda-env python=3.6
+conda create --name my-conda-env python=3.11
 source $(conda info --base)/etc/profile.d/conda.sh
 conda activate my-conda-env
 conda install ipykernel
@@ -84,7 +77,7 @@ contents:
 
 # load required modules here
 module purge
-module load Miniconda3/4.8.2
+module load Miniconda3
 
 # activate conda environment
 source $(conda info --base)/etc/profile.d/conda.sh 
@@ -285,9 +278,3 @@ something like this (change &lt;username&gt; to your NeSI username):
 
 After refreshing JupyterLab your new R kernel should show up in the
 Launcher as "R with MPFR".
-
-## Spark
-
-At the time of writing, the latest stable version of Spark does not
-support Python 3.8. If you wish to use Spark (e.g. PySpark) make sure
-you select one of our Python 3.7.3 or Anaconda3 kernels.
