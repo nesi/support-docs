@@ -8,7 +8,7 @@ search:
 ---
 
 ## Fixed
-- When renewing the NeSI 2FA Token https://my.nesi.org.nz/account/manage-mfa, the QR code is now displayed to allow you to take a picture.  
+- When renewing your NeSI two-factor authentication (2FA) token, a QR code is displayed to allow you to take a picture and access an authentication code. At any time, you can manage your 2FA tokens at https://my.nesi.org.nz/account/manage-mfa.  
 
 
 If you have any questions about any of the updates or fixes, please
