@@ -147,11 +147,16 @@ module list
 export LD_LIBRARY_PATH=$WRF_DEPS_DIR/lib:$LD_LIBRARY_PATH
 
 # run real
-srun --output=real.log ./real.exe
+srun --kill-on-bad-exit --output=real.log ./real.exe
 
 # run wrf
-srun --output=wrf.log ./wrf.exe
+srun --kill-on-bad-exit --output=wrf.log ./wrf.exe
 ```
+
+The `srun` argument `--kill-on-bad-exit` should ensure the entire job is killed
+if any individual task fails. Without this option, the WRF job will stay alive
+until the wall limit is reached but won't actually do anything.
+
 
 ## WRF on Māui
 
@@ -224,11 +229,15 @@ export HDF5_USE_FILE_LOCKING=FALSE
 module load craype-hugepages2M
 
 # run real
-srun --output=real.log ./real.exe
+srun --kill-on-bad-exit --output=real.log ./real.exe
 
 # run wrf
-srun --output=wrf.log ./wrf.exe
+srun --kill-on-bad-exit --output=wrf.log ./wrf.exe
 ```
+
+The `srun` argument `--kill-on-bad-exit` should ensure the entire job is killed
+if any individual task fails. Without this option, the WRF job will stay alive
+until the wall limit is reached but won't actually do anything.
 
 #### Parallel netCDF
 
