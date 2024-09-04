@@ -8624,8 +8624,39 @@
         "force_show": "False",
         "homepage": "https://libtiff.gitlab.io/libtiff/",
         "last_updated": 1701400706,
-        "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/LibTIFF/4.4.0-GCCcore-11.3.0.lua",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "versions": [
+            "4.0.10-GCCcore-7.4.0",
+            "4.0.10-GCCcore-9.2.0",
+            "4.0.10-gimkl-2017a",
+            "4.0.7-gimkl-2017a",
+            "4.4.0-GCCcore-11.3.0",
+            "4.4.0-GCCcore-12.3.0",
+            "4.5.1-GCCcore-12.3.0"
+        ]
+    },
+    "Libav": {
+        "admin_list": [
+            {
+                "11.12-gimkl-2017a": "Warning: Libav/11.12-gimkl-2017a is old and will soon be removed. Please use FFmpeg instead."
+            }
+        ],
+        "default": "latest",
+        "default_type": "latest",
+        "description": "",
+        "domains": [
+            "vis"
+        ],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "",
+        "last_updated": "0",
+        "licence_type": "",
+        "module_path": "",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
