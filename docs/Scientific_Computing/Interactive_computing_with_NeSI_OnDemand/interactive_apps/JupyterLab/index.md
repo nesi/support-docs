@@ -74,18 +74,22 @@ module load JupyterLab/2024.08.2-foss-2023a-4.2.4
 ```
 
 Then install the extension by running (the upstream documentation for the package
-you are installing should specify the "<packagename>" that you should use):
+you are installing should specify the "packagename" that you should use):
 
 ``` sh
 pip install --user <packagename>
 ```
 
-For example, the [Dask extension](https://github.com/dask/dask-labextension#jupyterlab-30-or-greater)
+For example, the [Dask extension](https://github.com/dask/dask-labextension#jupyterlab-4x)
 can be installed with the following:
 
 ``` sh
 pip install --user dask-labextension
 ```
+
+Note that we need to specify the `--user` option on the `pip install` command because you don't
+have permission to install packages in the system directory. Adding `--user` installs the package
+into your home directory instead.
 
 ## Log files
 
