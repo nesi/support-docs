@@ -64,8 +64,17 @@ about JupyterLab extensions can be found
 Check the extension's documentation to find out the supported
 installation method for that particular extension.
 
-On NeSI OnDemand we support installing prebuilt extensions (i.e. pip packages),
-from the JupyterLab terminal by running:
+On NeSI OnDemand we support installing prebuilt extensions (i.e. pip installable
+packages) from the terminal application.
+First ensure you have the correct JupyterLab module loaded:
+
+```sh
+module purge
+module load JupyterLab/2024.08.2-foss-2023a-4.2.4
+```
+
+Then install the extension by running (the upstream documentation for the package
+you are installing should specify the "<packagename>" that you should use):
 
 ``` sh
 pip install --user <packagename>
