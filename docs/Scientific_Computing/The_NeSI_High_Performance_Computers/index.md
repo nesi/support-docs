@@ -3,7 +3,6 @@ created_at: '2018-05-01T23:29:39Z'
 tags:
 - hpc
 - info
-title: Overview
 vote_count: 2
 vote_sum: 0
 zendesk_article_id: 360000175735
@@ -52,8 +51,7 @@ the research community with:
 
 These systems are
 [accessed](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
-via a “lander” node using [two-factor
-authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
+via a “lander” node using [two-factor authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
 
 NeSI researchers have access to all compute nodes on Mahuika, and 316
 compute nodes on Māui.
