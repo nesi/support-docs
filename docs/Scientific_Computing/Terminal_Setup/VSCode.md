@@ -11,14 +11,14 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
 
 === "Linux / MacOS"
     1. Make sure you have set up an `~/.ssh/config` file as described in
-    [Terminal Setup](../Terminal_Setup).
+    [Terminal Setup](Standard_Terminal_Setup.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
-    ![vscode remote extension](../../../assets/images/vscode-remote.png)
+    ![vscode remote extension](../../assets/images/vscode-remote.png)
 === "Windows"
     1. Set up WSL as described in
     [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft installed.
-    ![vscode remote extension](../../../assets/images/vscode-remote.png)
+    ![vscode remote extension](../../assets/images/vscode-remote.png)
     3. Still in the 'Extensions' Tab, search `wsl` and make sure you have 'WSL' by Microsoft installed.
     4. In `C:\Users\<username>` create a file named `ssh.bat` with the following contents.
       ```bat
@@ -36,7 +36,7 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
     7. Make sure the config file is valid JSON (e.g. each keypair is followed by a `,`
     and is in between the enclosing `{}`), then save.
     8. From inside a WSL terminal follow the steps to set up an `~/.ssh/config` file as described in
-    [Terminal Setup](../Terminal_Setup), in your subsystem install.
+    [Terminal Setup](Standard_Terminal_Setup.md), in your subsystem install.
 
 !!! tip
     You may want to set `"remote.SSH.showLoginTerminal": true` as VSCode does not always correclty identify when a login prompt is presented.
@@ -45,7 +45,7 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
 
 Under the 'Remote Explorer' Tab on the left, you should now see the NeSI machines (as well as any other machines configured in your `~/.ssh/config` file)
 
-![vscode explorer](../../../assets/images/vscode-explorer.png)
+![vscode explorer](../../assets/images/vscode-explorer.png)
 
 Clicking on these will open a connection to that machine, you will then be prompted for your password and second factor, as per usual.
 
