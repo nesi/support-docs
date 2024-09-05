@@ -73,16 +73,21 @@ This page details how to create a new article or category in the documentation.
 
 Public facing articles are found in the `docs` folder:
 
-- Any directory will be a category.
-- Any markdown file, i.e. a text file ending with the `.md` extension, inside will be rendered as an article.
-- A file named `index.md` file will be the landing page for that category.
-(clicking on will take to the rendered markdown in `index.md`, any other markdown in the directory will be nested articles.)
+- Any directory will be a **category**.
+- Any markdown file, i.e. a text file ending with the `.md` extension, inside will be rendered as an **article**.
+- A directory containing a `index.md` file, will be a **category-article**.
+  (clicking on will take to the rendered markdown in `index.md`, any other markdown in the directory will be nested articles.)
+
+!!! tip "Categories-Articles"
+    When making an article-category, make sure you set `title:` in the frontmatter of the `index.md` file, as otherwise the page title will be 'Index'.
+
+    Ideally, the page title should be the same as the category, to avoid confusion.
 
 ![Documentation Structure](assets/images/doc_struct.png)
 
 ## Article/Category Naming
 
-By default, the file name will be use as title of the article/category.
+By default, the filename will be use as title of the article/category.
 
 Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav,
 this usually happens around 24-ish characters however this will vary depending on the letters being used.
@@ -93,7 +98,8 @@ this usually happens around 24-ish characters however this will vary depending o
     When converting from filename, to title, spaces will replace `_` and the first letter of the first word will be capitalised (if it wasn't already), e.g. `My_Nice_and_Tidy_Filename.md` becomes `My Nice and Tidy Filename`
 
 In the case of an articles (including category-articles), this title can be overridden by setting one in the page [front-matter using the 'title' keyword](#article-metadata).
-If you need to rename a regular category (one without an `index.md`), this can be done in the [`.pages.yml` file](#articlecategory-order).
+If you need to rename a regular category (one without an `index.md`), this can be done in the
+[`.pages.yml` file](#articlecategory-order).
 
 ## Article/Category Order
 
@@ -129,7 +135,8 @@ nav:
 
 ```
 
-For full description of `.pages.yml` use, see the [awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin).
+For full description of `.pages.yml` use, see the
+[awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin).
 
 ## Article Metadata
 
@@ -159,11 +166,10 @@ hide:
 
 The following sections detail the most usual entries.
 
-### Mkdocs Parameters
+### MkDocs Parameters
 
-- `title`  : article title, 
+- `title`  : article title.
 - `created_at` : When article was created. Currently not shown in rendered page, but should still be filled in as it can be useful info. : `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ssZ`
-
 
 ### Material Theme Parameters
 
@@ -173,7 +179,7 @@ The following sections detail the most usual entries.
 - `hide`        : Used to turn off features (e.g. table of content)             : list, `tags` `toc` `nav`
 - `tags`        : Used for internal and external search indexing                : list
 - `search: exclude` : Used to exclude page from internal search                 : `true`
-- `search: boost` : Used to increase or decrease weight in internal search      : 1< for increased,  1> for decrease. 
+- `search: boost` : Used to increase or decrease weight in internal search      : 1< for increased,  1> for decrease.
 
 ### Zendesk Imported
 
@@ -188,5 +194,5 @@ They are not used for anything currently, although comparing vote count, and vot
 
 ## Accessibility Standards
 
-- [nz spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
+- [NZ spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
 - [WCAG spec](https://www.w3.org/TR/WCAG21/)
