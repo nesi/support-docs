@@ -33,11 +33,11 @@ This is our first release to a group of early access users for feedback around N
 
 `Link to mahuika filesystem`
 
-:    This release is an ephemeral environment for gathering feedback around the system therefore we have not linked with your research data in Mahuika/Maui. Any of your test data in during the early test phase may disappear at any point.
+:    This release is an ephemeral environment for gathering feedback around the system therefore we have not linked it with your research data on Mahuika/Maui. Any data stored on the system during this early test phase may disappear at any point.
 
 `"You are already logged in" message`
 
-:    If you have a browser session of NeSI OnDemand that is older than ~3 hours, and try to log back into the system, you may encounter a message saying “You are already logged in” without any actionable button. This is a known bug, and for now you would need to go back to the NeSI OnDemand URL (https://163-7-144-39.sslip.io/) and you will arrive on the correct landing page.
+:    If you have a browser session of NeSI OnDemand that is older than ~3 hours, and try to log back into the system, you may encounter a message saying “You are already logged in” without any actionable button. This is a known bug, and for now you would need to go back to the NeSI OnDemand URL ([https://163-7-144-39.sslip.io/](https://163-7-144-39.sslip.io/)) and you will arrive on the correct landing page.
 
 `User accounts with dots in the username`
 
