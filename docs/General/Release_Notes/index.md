@@ -3,6 +3,7 @@ created_at: '2021-02-23T19:52:34Z'
 tags: []
 vote_count: 0
 vote_sum: 0
+title: Release Notes
 zendesk_article_id: 360003507115
 zendesk_section_id: 360000437436
 ---

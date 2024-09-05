@@ -3,6 +3,7 @@ created_at: '2018-05-01T23:29:39Z'
 tags:
 - hpc
 - info
+title: The NeSI High Performace Computers
 vote_count: 2
 vote_sum: 0
 zendesk_article_id: 360000175735
