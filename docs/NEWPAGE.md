@@ -79,7 +79,7 @@ Public facing articles are found in the `docs` folder:
   (clicking on will take to the rendered markdown in `index.md`, any other markdown in the directory will be nested articles.)
 
 !!! tip "Categories-Articles"
-    When making an article-category, make sure you set `title:` in the frontmatter of the `index.md` file, as otherwise the page title will be 'Index'.
+    When making an category-article, make sure you set `title:` in the frontmatter of the `index.md` file, as otherwise the page title will be 'Index'.
 
     Ideally, the page title should be the same as the category, to avoid confusion.
 
