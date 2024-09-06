@@ -96,4 +96,4 @@ to decompress the data after use. However, testing has shown that there
 can be an impact on job performance due to I/O. You can find out more
 about tests and results regarding performance of transparent
 data compression on the NeSI platforms on our
-[Data Compression support page](../../Storage/File_Systems_and_Quotas/Data_Compression.md).
+[Data Compression support page](Data_Compression.md).

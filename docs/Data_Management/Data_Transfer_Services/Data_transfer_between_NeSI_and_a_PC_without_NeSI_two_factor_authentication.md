@@ -15,7 +15,7 @@ is particularly useful in the context of automated, or [scripted data
 transfers](../../Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md).
 
 The approach is based on using
-[Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md)
+[Globus](Data_Transfer_using_Globus_V5.md)
 and a guest collection on the source side. **Globus** allows you to copy
 and synchronise files between NeSI's platforms and other computers,
 including your personal computer.

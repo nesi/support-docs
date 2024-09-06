@@ -22,7 +22,7 @@ from the previous setup](https://docs.globus.org/globus-connect-server/).
 To use Globus on NeSI platforms, you need:
 
 1. A Globus account (see
-  [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
+  [Initial Globus Sign-Up and Globus ID](Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 2. An active NeSI account (see
   [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
 3. Access privileges on the non-NeSI Globus endpoint/collection you
@@ -129,7 +129,7 @@ path, then you could change the path to
 
 \(3\) project sub-directories of
 ***/nesi/nobackup/&lt;project\_code&gt;***  - see
-[Globus Paths,Permissions, Storage Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md).  
+[Globus Paths,Permissions, Storage Allocation](Globus_V5_Paths-Permissions-Storage_Allocation.md).  
   
 Navigate to your selected directory. e.g. the `nobackup` filesystem
 `/nesi/nobackup/<project_code>` and select the two-endpoint panel
@@ -165,14 +165,14 @@ To find other NeSI endpoints, type in "nesi#":
   on the top-right of the *File Manager* page.
 - Select the Endpoints you wish to move files between (start typing
   "nesi#" to see the list of NeSI DTNs to select from).
-  [Authenticate](../../Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md)
+  [Authenticate](Globus_V5_endpoint_activation.md)
   at both endpoints.
 - At Globus.org the endpoint **defaults to
   `/home/<username>` path** (represented by `~`) on Mahuika or
   Māui. We do not recommend uploading data to your home directory, as
   home directories are very small. Instead, navigate to an appropriate
   project directory under /nobackup (see
-  [Globus Paths, Permissions,  Storage  Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)).
+  [Globus Paths, Permissions,  Storage  Allocation](Globus_V5_Paths-Permissions-Storage_Allocation.md)).
 - Transfer the files by clicking the appropriate
   ![start.png](../../assets/images/Data_Transfer_using_Globus_V13.png){: style="height:1em;"} button
   depending on the direction of the transfer.
@@ -183,7 +183,7 @@ To find other NeSI endpoints, type in "nesi#":
 To transfer files into/out of your laptop, desktop computer or any other
 system you control, configure it as a [Globus Personal
 Endpoint](https://www.globus.org/globus-connect-personal) (see
-[Personal Globus Endpoint Configuration](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
+[Personal Globus Endpoint Configuration](Personal_Globus_Endpoint_Configuration.md)
 for transfers between personal endpoints).
 
 ## File sharing

@@ -25,7 +25,7 @@ path directory, displayed as '`/home/<username>`'.
 | `/nesi/project/<project_code>`  | yes               | `/nesi/project/<project_code>`  | yes                       | **read only** access  |
 
 For more information about NeSI filesystem, check
-[NeSI_File_Systems_and_Quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
+[NeSI_File_Systems_and_Quotas](../File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
 ## Performing Globus transfers to/from Māui/Mahuika
 

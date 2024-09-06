@@ -53,7 +53,7 @@ copying to and from. Please note that the NeSI `project` directory is
 read only, and `nobackup` is read and write.
 
 A list of some Institutional endpoints can be found here:
-[National-Data-Transfer-Platform](../../Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md).
+[National-Data-Transfer-Platform](National_Data_Transfer_Platform.md).
 You can also set up your own [personal
 endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
 to transfer data to or from your personal computer, however,
