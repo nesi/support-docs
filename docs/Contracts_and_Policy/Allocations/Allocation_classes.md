@@ -208,4 +208,4 @@ take a while to set up.
 Our team is happy to answer any questions you may have throughout the
 application process.
 
-For more information, see [how we review applications](./../Access/How_we_review_applications.md).
+For more information, see [how we review applications](../Access/How_we_review_applications.md).

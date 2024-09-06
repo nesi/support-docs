@@ -62,10 +62,10 @@ is simpler:
 1. **Eligibility check:** We look at the information you have given us
     (and may ask you more questions) to find out which of our regular
     allocation classes
-    ([Merit](./../Allocations/Merit_allocations.md),
-    [Postgraduate](./../Allocations/Postgraduate_allocations.md)
+    ([Merit](../Allocations/Merit_allocations.md),
+    [Postgraduate](../Allocations/Postgraduate_allocations.md)
     or
-    [Institutional](./../Allocations/Institutional_allocations.md))
+    [Institutional](../Allocations/Institutional_allocations.md))
     this research programme is eligible to receive. Your research
     programme may be eligible for more than one allocation class.
 2. **Amount and duration:** We will calculate the approximate amount of
@@ -78,7 +78,7 @@ is simpler:
 3. **Choice of Class and Contention:** We will choose from which class
     to award your allocation, based on your research programme's
     eligibility for the different classes and whether your proposed
-    allocation would exceed [any class-based allocation limits](./../Allocations/Allocation_classes.md).
+    allocation would exceed [any class-based allocation limits](../Allocations/Allocation_classes.md).
     We may change this choice depending on which classes, if any, are
     under contention.
 4. **Approval:** If we decide that your project should be considered
