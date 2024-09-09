@@ -1790,7 +1790,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/Gaius-Augustus/BRAKER",
-        "last_updated": 1684894505,
+        "last_updated": 1725859362,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BRAKER/2.1.6-gimkl-2020a-Perl-5.30.1-Python-3.8.2.lua",
         "modulefile_text": "",
@@ -1800,7 +1800,8 @@
             "2.1.6-gimkl-2020a-Perl-5.30.1-Python-3.8.2",
             "2.1.6-gimkl-2022a-Perl-5.34.1",
             "3.0.2-gimkl-2022a-Perl-5.34.1",
-            "3.0.3-gimkl-2022a-Perl-5.34.1"
+            "3.0.3-gimkl-2022a-Perl-5.34.1",
+            "3.0.8-gimkl-2022a-Perl-5.34.1"
         ]
     },
     "BUSCO": {
@@ -5221,7 +5222,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.fftw.org",
-        "last_updated": 1699309647,
+        "last_updated": 1725866160,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FFTW/3.3.10-GCC-12.3.0.lua",
         "modulefile_text": "",
@@ -5230,6 +5231,7 @@
         "versions": [
             "3.3.10-GCC-12.3.0",
             "3.3.10-gompi-2022a",
+            "3.3.10-intel-compilers-2023.2.1",
             "3.3.5-gimkl-2017a",
             "3.3.8-gimpi-2017a",
             "3.3.8-gimpi-2018b",
@@ -5249,14 +5251,15 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.fftw.org",
-        "last_updated": 1699310382,
+        "last_updated": 1725867312,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FFTW.MPI/3.3.10-gompi-2023a.lua",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
         "versions": [
-            "3.3.10-gompi-2023a"
+            "3.3.10-gompi-2023a",
+            "3.3.10-iompi-2023a"
         ]
     },
     "FFmpeg": {
@@ -5602,7 +5605,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release",
-        "last_updated": 1699306199,
+        "last_updated": 1725865027,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FlexiBLAS/3.3.1-GCC-12.3.0.lua",
         "modulefile_text": "",
@@ -5610,7 +5613,8 @@
         "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/FlexiBLAS",
         "versions": [
             "3.1.3-GCC-11.3.0",
-            "3.3.1-GCC-12.3.0"
+            "3.3.1-GCC-12.3.0",
+            "3.4.4-intel-compilers-2023.2.1"
         ]
     },
     "Flye": {
@@ -6638,12 +6642,14 @@
             "bio"
         ],
         "extensions": [
-            "Clone::Choose-0.010"
+            "Clone::Choose-0.010",
+            "Sub::Quote-2.006008",
+            "YAML-LibYAML-0.901.0"
         ],
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://exon.gatech.edu/GeneMark/gmes_instructions.html",
-        "last_updated": 1678079415,
+        "last_updated": 1725841002,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GeneMark-ES/4.71-GCC-11.3.0.lua",
         "modulefile_text": "",
@@ -6917,7 +6923,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://www.hdfgroup.org/HDF5/",
-        "last_updated": 1700181595,
+        "last_updated": 1725859636,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HDF5/1.12.2-iimpi-2022a.lua",
         "modulefile_text": "",
@@ -6932,6 +6938,7 @@
             "1.12.2-gimpi-2022a",
             "1.12.2-iimpi-2022a",
             "1.14.3-gompi-2023a",
+            "1.14.3-iompi-2023a",
             "1.8.12-gimkl-2017a",
             "1.8.12-gimpi-2020a",
             "1.8.18-gimkl-2017a",
@@ -11626,7 +11633,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://xianyi.github.com/OpenBLAS/",
-        "last_updated": 1699305642,
+        "last_updated": 1725860207,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/OpenBLAS/0.3.6-GCC-9.2.0.lua",
         "modulefile_text": "",
@@ -11636,6 +11643,7 @@
             "0.3.20-GCC-11.2.0",
             "0.3.20-GCC-11.3.0",
             "0.3.23-GCC-12.3.0",
+            "0.3.23-intel-compilers-2023.2.1",
             "0.3.6-GCC-7.4.0",
             "0.3.6-GCC-9.2.0",
             "0.3.9-GCC-9.2.0"
@@ -11840,7 +11848,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.open-mpi.org/",
-        "last_updated": 1698722065,
+        "last_updated": 1725859188,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/mpi/OpenMPI/4.1.1-GCC-9.2.0.lua",
         "modulefile_text": "",
@@ -11855,7 +11863,8 @@
             "4.1.3-GCC-11.2.0",
             "4.1.3-GCC-11.3.0",
             "4.1.3-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
-            "4.1.5-GCC-12.3.0"
+            "4.1.5-GCC-12.3.0",
+            "4.1.5-intel-compilers-2023.2.1"
         ]
     },
     "OpenSSL": {
@@ -16335,7 +16344,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.netlib.org/scalapack/",
-        "last_updated": 1699310484,
+        "last_updated": 1725867636,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ScaLAPACK/2.2.0-gompi-2023a-fb.lua",
         "modulefile_text": "",
@@ -16343,7 +16352,8 @@
         "support": "",
         "versions": [
             "2.1.0-gompi-2022a",
-            "2.2.0-gompi-2023a-fb"
+            "2.2.0-gompi-2023a-fb",
+            "2.2.0-iompi-2023a-fb"
         ]
     },
     "Scalasca": {
@@ -19680,7 +19690,7 @@
     },
     "compleasm": {
         "admin_list": [],
-        "default": "0.2.2-gimkl-2022a",
+        "default": "0.2.6-gimkl-2022a",
         "default_type": "latest",
         "description": "faster and more accurate reimplementation of BUSCO.",
         "domains": [
@@ -19690,15 +19700,16 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/huangnengCSU/compleasm",
-        "last_updated": 1705269537,
+        "last_updated": 1725859162,
         "licence_type": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/compleasm/0.2.2-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/compleasm/0.2.6-gimkl-2022a.lua",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
         "versions": [
             "0.2.2-gimkl-2022a",
-            "0.2.5-gimkl-2022a"
+            "0.2.5-gimkl-2022a",
+            "0.2.6-gimkl-2022a"
         ]
     },
     "cromwell": {
@@ -22225,14 +22236,15 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit.html",
-        "last_updated": 1652227286,
+        "last_updated": 1725857342,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/intel-compilers/2022.0.2.lua",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
         "versions": [
-            "2022.0.2"
+            "2022.0.2",
+            "2023.2.1"
         ]
     },
     "intltool": {
@@ -22254,6 +22266,50 @@
         "network_licences": [],
         "support": "",
         "versions": []
+    },
+    "iofbf": {
+        "admin_list": [],
+        "default": "2023a",
+        "default_type": "latest",
+        "description": "Intel based compiler toolchain, including\n OpenMPI for MPI support, FlexiBLAS (Defaulting to OpenBLAS), FFTW and ScaLAPACK.",
+        "domains": [
+            "toolchain"
+        ],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "(none)",
+        "last_updated": 1725867649,
+        "licence_type": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/iofbf/2023a.lua",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "versions": [
+            "2023a"
+        ]
+    },
+    "iompi": {
+        "admin_list": [],
+        "default": "2023a",
+        "default_type": "latest",
+        "description": "GNU Compiler Collection (GCC) based compiler toolchain,\n including OpenMPI for MPI support.",
+        "domains": [
+            "toolchain"
+        ],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "(none)",
+        "last_updated": 1725859198,
+        "licence_type": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/iompi/2023a.lua",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "versions": [
+            "2023a"
+        ]
     },
     "ipyrad": {
         "admin_list": [
@@ -24286,13 +24342,13 @@
         "admin_list": [],
         "default": "4.7.1",
         "default_type": "latest",
-        "description": "",
+        "description": "MpCCI is a vendor neutral and application independent interface for co-simulation. MpCCI offers advanced and proven features for multiphysics modelling.",
         "domains": [],
         "extensions": [],
         "force_hide": "False",
         "force_show": "False",
-        "homepage": "",
-        "last_updated": 1725346150,
+        "homepage": "https://www.mpcci.de/",
+        "last_updated": 1725837256,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/mpcci/4.7.1.lua",
         "modulefile_text": "",
