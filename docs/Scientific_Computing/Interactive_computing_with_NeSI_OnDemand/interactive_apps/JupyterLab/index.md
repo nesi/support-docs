@@ -30,8 +30,9 @@ to use notebooks, text editor, terminals and custom components together.
 
 ### File systems
 
-Your JupyterLab session will start in your home directory the first time you launch it.
-On subsequent launches it may remember your previous working directory and start there.
+Your Jupyter server will start in a directory created within your home directory called `.nesiondemand`. Within that directory, you will find symbolic links to your home directory and to the project and nobackup directories of your active projects. We do not recommend that you store files in this initial directory because next time you log into OnDemand the directory will be repopulated based on your user groups, instead switch to one of your home, project or nobackup directories first.
+
+If you wish to not have this folder recreated upon login then please place the following file in your HOME directory `.nesiondemand.stop` and this will stop the folder from being recreated upon login.
 
 ### Jupyter kernels
 
