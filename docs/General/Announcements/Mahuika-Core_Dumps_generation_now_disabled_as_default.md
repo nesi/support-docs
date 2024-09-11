@@ -1,6 +1,6 @@
 ---
 created_at: '2022-07-11T23:23:04Z'
-status: new
+status:
 tags:
 - mahuika
 - .core
