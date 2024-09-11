@@ -5222,7 +5222,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.fftw.org",
-        "last_updated": 1725866160,
+        "last_updated": 1725943179,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FFTW/3.3.10-GCC-12.3.0.lua",
         "modulefile_text": "",
@@ -5251,7 +5251,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.fftw.org",
-        "last_updated": 1725867312,
+        "last_updated": 1725943883,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FFTW.MPI/3.3.10-gompi-2023a.lua",
         "modulefile_text": "",
@@ -5605,7 +5605,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release",
-        "last_updated": 1725865027,
+        "last_updated": 1725941965,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FlexiBLAS/3.3.1-GCC-12.3.0.lua",
         "modulefile_text": "",
@@ -6923,7 +6923,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://www.hdfgroup.org/HDF5/",
-        "last_updated": 1725859636,
+        "last_updated": 1725938033,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HDF5/1.12.2-iimpi-2022a.lua",
         "modulefile_text": "",
@@ -11633,7 +11633,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://xianyi.github.com/OpenBLAS/",
-        "last_updated": 1725860207,
+        "last_updated": 1725938389,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/OpenBLAS/0.3.6-GCC-9.2.0.lua",
         "modulefile_text": "",
@@ -11848,7 +11848,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.open-mpi.org/",
-        "last_updated": 1725859188,
+        "last_updated": 1725937676,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/mpi/OpenMPI/4.1.1-GCC-9.2.0.lua",
         "modulefile_text": "",
@@ -16344,7 +16344,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://www.netlib.org/scalapack/",
-        "last_updated": 1725867636,
+        "last_updated": 1725944120,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ScaLAPACK/2.2.0-gompi-2023a-fb.lua",
         "modulefile_text": "",
@@ -19686,6 +19686,28 @@
         "versions": [
             "0.2.0-GCC-11.3.0",
             "0.5.0-GCC-11.3.0"
+        ]
+    },
+    "code-server": {
+        "admin_list": [],
+        "default": "4.92.2",
+        "default_type": "latest",
+        "description": "code-server for OpenOnDemand",
+        "domains": [
+            "lang"
+        ],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://github.com/coder/code-server",
+        "last_updated": 1726012480,
+        "licence_type": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lang/code-server/4.92.2.lua",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "versions": [
+            "4.92.2"
         ]
     },
     "compleasm": {
