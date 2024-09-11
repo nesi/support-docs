@@ -13,7 +13,6 @@ mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_
 mkdocs-awesome-pages-plugin
 
 # checkers
-neoteroi-mkdocs
 codespell
 proselint
 linkcheckmd
