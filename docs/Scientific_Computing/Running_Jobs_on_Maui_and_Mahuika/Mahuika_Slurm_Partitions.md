@@ -122,7 +122,9 @@ sbatch: `bigmem` is not the most appropriate partition for this job, which would
 <tr>
 <td>hugemem</td>
 <td>7 days</td>
-<td>4</td>
+<td>2<br/>
+1<br/>
+1</td>
 <td>80<br/>
 128<br/>
 176</td>
