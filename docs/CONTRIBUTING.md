@@ -153,19 +153,38 @@ Might be worth having a quick look at these before making a pull request.
 
 Make a pull [request](https://github.com/nesi/support-docs/pulls)
 
+After a few minutes, a preview of the source branch will be deployed, a bot will post a link in the comments with the relevent pages.
+
+![image](https://github.com/user-attachments/assets/3d48137b-2b2a-440c-b617-23c075261b07)
+
 Assign a reviewer if you wish.
 
-Pull will merge automatically if all checks passed. (add timer too maybe?)
+If you want someone else to check and merge, add the https://github.com/nesi/support-docs/labels/review_merge tag.
+
+Adding the tag https://github.com/nesi/support-docs/labels/auto_merge will cause the request to be merged at midnight, if all checks passed.
 
 ## Reviewing A Merge Request
 
 Under the 'pull requests' tab, open one of the pending requests.
+
+See [Merge Etiquette](#merge-etiquette) below.
 
 Clicking on the 'Files Changed' tab, will give a convenient diff of the changes, as well as inline errors identified by the CI checks.
 
 If some of the CI checks failed (make sure they are not important ones), you will have to click the  `Merge without waiting for requirements to be met (bypass branch protections)` button before proceeding with the merge.
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
+
+
+## Merge Etiquette
+
+Just because a merge request has been opened, doesn't mean anyone should merge it.
+
+| Has Tag | Should I review it? | Should I merge it? |
+| - | - | - |
+| https://github.com/nesi/support-docs/labels/auto_merge | **Sure**  | **Sure**<br>It will be merged at midnight anyway.<br>Remove this label if you think further checking is required.  |
+| https://github.com/nesi/support-docs/labels/review_merge | **Yes Please!** <br> Someone is wanting this page reviewed!<br>Feel free to start a conversation if you don't think it is up to scratch. | Once you have reviewed, **Yes** |
+| neither, above | **Sure**<br>It might be appreciated. | Unless you were assigned as reviewer **No!** <br> Another person or team may still be working on this issue. Leave it alone!  |
 
 ## Update Remote Assets
 
