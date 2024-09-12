@@ -36,8 +36,8 @@ Any changes made should be merged via a pull request.
 
 ### Codespace Environment
 
-This repository has been configured to be useable with [GitHub Codespaces](https://github.com/features/codespaces).
-It allows acessing a full featured pre-configured development environment remotely, without installing anything on your local machine.
+This repository has been configured to be usable with [GitHub Codespaces](https://github.com/features/codespaces).
+It allows accessing a full featured pre-configured development environment remotely, without installing anything on your local machine.
 
 Clicking on the following link will open a VS Code instance ready to be used with the latest version of the documentation files.
 
@@ -219,7 +219,7 @@ Most of these are collected together in the [modules list repo](https://github.c
 
 ### Adding/Fixing Information
 
-#### Description, Homepage, Packages, Clusters
+#### Description, Homepage, Packages
 
 Fix the information in the module file.
 
@@ -230,6 +230,10 @@ Is there a child page with the same title as the module? (case sensitive).
 #### Domain, Licence Type
 
 Can be added in [modules list](https://github.com/nesi/modules-list/blob/main/tags/domains.yml)
+
+#### Deprecations and Warning
+
+Pulled from lmod admin.lists file
 
 #### Network Licence Details
 
