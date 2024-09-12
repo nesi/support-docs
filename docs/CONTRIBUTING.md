@@ -159,9 +159,10 @@ After a few minutes, a preview of the source branch will be deployed, a bot will
 
 Assign a reviewer if you wish.
 
-If you want someone else to check and merge, add the https://github.com/nesi/support-docs/labels/review_merge tag.
+If you want someone else to check and merge, add the <a id="label-5d55e2" href="https://github.com/nesi/support-docs/labels/review_merge" data-name="review_merge" style="--label-r:132;--label-g:27;--label-b:28;--label-h:359;--label-s:66;--label-l:31;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-ac05ccf2-9ff7-4214-ba9b-244f26120659">
+  review_merge</a> tag.
 
-Adding the tag https://github.com/nesi/support-docs/labels/auto_merge will cause the request to be merged at midnight, if all checks passed.
+Adding the tag  <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-466464af-99fc-4bc8-87c9-f5d794783843"> will cause the request to be merged at midnight, if all checks passed.
 
 ## Reviewing A Merge Request
 
@@ -182,8 +183,10 @@ Just because a merge request has been opened, doesn't mean anyone should merge i
 
 | Has Tag | Should I review it? | Should I merge it? |
 | - | - | - |
-| https://github.com/nesi/support-docs/labels/auto_merge | **Sure**  | **Sure**<br>It will be merged at midnight anyway.<br>Remove this label if you think further checking is required.  |
-| https://github.com/nesi/support-docs/labels/review_merge | **Yes Please!** <br> Someone is wanting this page reviewed!<br>Feel free to start a conversation if you don't think it is up to scratch. | Once you have reviewed, **Yes** |
+| <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-466464af-99fc-4bc8-87c9-f5d794783843">
+  auto_merge</a> | **Sure**  | **Sure**<br>It will be merged at midnight anyway.<br>Remove this label if you think further checking is required.  |
+| <a id="label-5d55e2" href="https://github.com/nesi/support-docs/labels/review_merge" data-name="review_merge" style="--label-r:132;--label-g:27;--label-b:28;--label-h:359;--label-s:66;--label-l:31;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-ac05ccf2-9ff7-4214-ba9b-244f26120659">
+  review_merge</a> | **Yes Please!** <br> Someone is wanting this page reviewed!<br>Feel free to start a conversation if you don't think it is up to scratch. | Once you have reviewed, **Yes** |
 | neither, above | **Sure**<br>It might be appreciated. | Unless you were assigned as reviewer **No!** <br> Another person or team may still be working on this issue. Leave it alone!  |
 
 ## Update Remote Assets
