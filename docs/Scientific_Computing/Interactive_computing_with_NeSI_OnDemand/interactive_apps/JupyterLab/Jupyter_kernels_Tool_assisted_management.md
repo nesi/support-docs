@@ -1,5 +1,10 @@
 # Jupyter kernels - Tool-assisted management
 
+!!! warning
+
+    NeSI OnDemand is in development and accessible to early access users only.
+    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+
 ## Introduction
 
 Jupyter can execute code in different computing environments using

@@ -1,5 +1,10 @@
 # Jupyter kernels - Manual management
 
+!!! warning
+
+    NeSI OnDemand is in development and accessible to early access users only.
+    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+
 ## Introduction
 
 Jupyter kernels execute the code that you write. NeSI provides a number of

@@ -1,5 +1,10 @@
 # NeSI OnDemand how-to guide
 
+!!! warning
+
+    NeSI OnDemand is in development and accessible to early access users only.
+    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+
 ## How to log in
 
 Go to NeSI OnDemand (Early test instance URL: https://163-7-144-39.sslip.io/). It will automatically take you to the Tuakiri login screen.

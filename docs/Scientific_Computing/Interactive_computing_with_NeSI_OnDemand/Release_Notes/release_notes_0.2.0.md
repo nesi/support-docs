@@ -1,5 +1,10 @@
 # v0.2.0 Release Notes
 
+!!! warning
+
+    NeSI OnDemand is in development and accessible to early access users only.
+    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+
 ## Release Summary
 
 NeSI OnDemand is NeSI’s new offering for providing researchers with access to JupyterLab and RStudio. We are adopting Open OnDemand technology, which enables us to build and extend the catalogue of web based applications.
