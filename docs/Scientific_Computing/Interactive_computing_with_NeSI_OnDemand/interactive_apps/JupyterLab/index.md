@@ -18,18 +18,13 @@ and workflows and much more.
 ## Accessing Jupyter on NeSI
 
 Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
-
-After logging in you will be taken to the "NeSI OnDemand" front page, where you can choose from many different interactive applications, including JupyterLab.
-When you select the JupyterLab application you will be presented with certain options, such as how many CPU cores and how much memory you
-require for you interactive session. After launching your session you should be presented with an option to "Connect to JupyterLab", which
-will take you to the JupyterLab web interface.
+For more details see the [how-to guide](../../how_to_guide#how-to-launch-jupyterlab-rstudio).
 
 ## Jupyter user interface
 
 ### JupyterLab
 
-Once the "Connect to JupyterLab" button is available and you have clicked it you will be redirected to
-[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/). JupyterLab
+[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
 is the next generation of the Jupyter user interface and provides a way
 to use notebooks, text editor, terminals and custom components together.
 
