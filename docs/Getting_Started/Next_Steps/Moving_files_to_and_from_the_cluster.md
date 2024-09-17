@@ -17,7 +17,7 @@ zendesk_section_id: 360000189716
 ---
 
 !!! prerequisite
-    Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
+    Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_a_NeSI_Account.md)
 
 Find more information on [the NeSI Filesystem](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 

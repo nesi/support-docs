@@ -5,13 +5,26 @@ tags: []
 ---
 
 ```mermaid
-graph TD
-subgraph "Accounts, Projects and Allocations"
-    A[Creating a NeSI Account Profile] 
-    A-->B[Applying for a new NeSI Project]
-    A-->C[Applying to Join a NeSI Project]
+graph TB
+subgraph A[Accounts_Projects_and_Allocations]
+    direction TB
+    AA[Creating a NeSI Account] 
+    AA-->AB[Applying for a new NeSI Project]
+    AA-->AC[Applying to Join a NeSI Project]
+    AB --> AD[Adding_members_to_your_nesi_project] 
+    AF[Project_extensions]
+    AG[Quarterly_Allocations]
+    AE[Allocations]
 end
-subgraph Connecting to the Cluster
+subgraph B[Accessing_the_HPCs]
+    direction TB
+    BA[Setting_up_and_resetting_your_password]
+    BA-->BB[Setting_Up_Two_factor_authentication]
+    BB --> BC
+    subgraph BC[Connecting_via_SSH]
+        BCA[Terminal Setup] 
+    end
+end
+A --> B
 
-end
 ```

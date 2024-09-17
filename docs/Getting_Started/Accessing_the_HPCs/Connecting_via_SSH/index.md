@@ -5,6 +5,7 @@ tags:
 - mobaxterm
 - gitbash
 - login
+title: Connecting via SSH
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360001016335
@@ -12,30 +13,15 @@ zendesk_section_id: 360000034315
 ---
 
 !!! prerequisite
-    -  Have an [active account and project](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
-    -  Set up your [NeSI Account Password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
-    -  Set up [Two-Factor Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
+    -  Have an [active account and project](../../Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
+    -  Set up your [NeSI Account Password](../Setting_Up_and_Resetting_Your_Password.md).
+    -  Set up [Two-Factor Authentication](../Setting_Up_Two_Factor_Authentication.md).
 
-Before you can start submitting work you will need some way of
-connecting to the NeSI clusters.
+Establishing an SSH (Secure SHell) connection gives
+you access to a command line interface (bash) on the cluster.
 
-This is done by establishing an SSH (Secure SHell) connection, giving
-you access to a command line interface (bash) on the cluster. In order
-to set up such a connection, you will need a suitable Terminal (or
-equivalent application). The correct option for you depends on your
-operating system and level of experience.
-
-## Web Browser
-
-### JupyterHub
-
- JupyterHub is a service providing access to Jupyter Notebooks on
- NeSI. A terminal similar to the other setups describe below can be
- accessed through the Jupyter Launcher.  
-
-!!! prerequisite "What next?"
-    -  More info on [Jupyter Terminal](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md#jupyter-term)
-    -  Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
+In order to set up such a connection, you will need a suitable Terminal (or
+equivalent application).
 
 ## Linux or Mac OS
 
@@ -47,12 +33,12 @@ installed, usually called, "Terminal." To find it, simply search for
 Congratulations! You are ready to move to the next step.
 
 !!! prerequisite "What next?"
-    Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Setting up your [Recommended SSH config](Reccomended_SSH_config.md.md)
 
 ### VSCode
 
 The inbuilt 'remotes' plugin allows connecting to remote hosts.
-If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md),
+If you have set up your `~/.ssh/config` as described in [Recommended SSH config](Recommended_SSH_config.md),
 VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab.
 
 ## Windows
@@ -76,10 +62,10 @@ different options, listed in order of preference.
 
 !!! tip "What next?"
     -  Enabling
-       [WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-    -  Setting up the [Ubuntu Terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md)
+       [WSL](Windows_Subsystem_for_Linux_WSL.md)
+    -  Setting up the [Ubuntu Terminal](Ubuntu_LTS_terminal_Windows.md)
     -  Setting up
-       [X-Forwarding](../../Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
+       [X-Forwarding](../X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
 
 ### VSCode
 
@@ -98,9 +84,10 @@ VSCode can be used with WSL or without.
  *highly* recommend using the installer edition if you have
  administrator privileges on your workstation or if your
  institution's IT team supports MobaXTerm.
+
 !!! tip "What next?"
     -  Setting up
-       [MobaXterm](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
+       [MobaXterm](../../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
 
 ### Using a Virtual Machine
 
@@ -132,7 +119,7 @@ for new users.
 
 !!! tip "What next?"
     -  Setting up
-       [WinSCP](../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
+       [WinSCP](../../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
 
 ### Git Bash
 
@@ -150,7 +137,7 @@ primary terminal.
 All Windows computers have PowerShell installed, however it will
 only be useful to you if Windows Subsystem for Linux (WSL) is also
 enabled, instructions can be found at
-[Windows_Subsystem_for_Linux_WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md).
+[Windows_Subsystem_for_Linux_WSL](../../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md).
 
 Like Git Bash, PowerShell is perfectly adequate for testing your
 login or setting up your password, but lacks many of the features of

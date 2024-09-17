@@ -13,7 +13,7 @@ zendesk_section_id: 360000196195
 ---
 
 !!! prerequisite
-     -   You must have a [NeSI
+     -   You must have a [NeSICreating_a_NeSI_Account.md
          account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
 
 ## How to join an existing project on NeSI

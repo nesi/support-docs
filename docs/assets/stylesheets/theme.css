@@ -14,7 +14,8 @@
     --md-accent-bg-color:                rgb(210,227,235);
     --md-accent-bg-color--light:         rgb(210,227,235,0.5);
   }
-  .md-header__button.md-logo img, .md-header__button.md-logo svg {
+/* Used in supported applications page */
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
     height: 4rem;
     margin: -2rem;
 }
@@ -35,9 +36,11 @@
 .md-typeset__table table:not([class]) {
   display: table
 }
+/* convenience class */
 .hidden{
     display: none;
 }
+/* request support custom button */
 .md-button-support{
   position: absolute;
   margin: -2rem 0 0 1rem;
@@ -55,10 +58,15 @@
 .md-typeset .md-code__content { 
     display: inline;
 }
-
-
+/* Always 3 cards */
+.md-typeset .grid {
+  grid-template-columns: repeat(3, minmax(16rem, 1fr))
+}
 .md-button--primary {
   /* Make button more buttony */
   box-shadow: grey 2px 2px 2px;
 }
-
+/* Make sidebar slightly wider */
+.md-sidebar {
+  width: 14rem;
+}

@@ -10,11 +10,12 @@ zendesk_section_id: 360000189696
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-     -   Set up your [Linux Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-     -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
-     -   Using standard Linux/Mac terminal *or* [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-         with [Ubuntu terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md).
+     -   Have an [active account and project.](../../Accounts-Projects_and_Allocations/Creating_a_NeSI_Account.md)
+     -   Set up your [Linux Password.](../Setting_Up_and_Resetting_Your_Password.md)
+     -   Set up Second [Factor Authentication.](../Setting_Up_Two_Factor_Authentication.md)
+     -   Using standard Linux/Mac terminal *or*
+     [Windows Subsystem for Linux](Windows_Subsystem_for_Linux_WSL.md)
+         with [Ubuntu terminal](Ubuntu_LTS_terminal_Windows.md).
 
 ## First time setup
 
@@ -25,7 +26,7 @@ configurations.
     create a hidden file in your home directory to store socket
     configurations.
 
-2. Open your ssh config file with `nano ~/.ssh/config` and add the
+2. Open your ssh config file with `nano ~/.ssh/config` (or another text editor) and add the
     following (replacing **`username`** with your username):
 
     ```sh
@@ -61,7 +62,7 @@ configurations.
         ControlPersist 1
     ```
 
-    Close and save with ctrl x, y, Enter
+    Close and save nano with <kbd>ctrl</kbd> + <kbd>x</kbd>, <kbd>y</kbd>, <kbd>enter</kbd>
 
 3. Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
@@ -91,5 +92,5 @@ scp <path/filename> mahuika:~/
 For more info visit [data transfer](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md).
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     -   Setting up an [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md) (optional).
+     -   [Moving files to/from a cluster.](../../Moving_files_to_and_from_the_cluster.md)
+     -   Setting up an [X-Server](X_Forwarding_on_NeSI.md) (optional).

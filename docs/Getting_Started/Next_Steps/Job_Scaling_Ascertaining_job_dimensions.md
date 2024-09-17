@@ -46,7 +46,7 @@ not.
 | Memory | The job may wait in the queue for longer. Your fair share score will fall more than necessary. | Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error. This may not happen immediately. |
 | Wall time | The job may wait in the queue for longer than necessary | The job will run out of time and get killed. |
 
-***See [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
+***See [What is an allocation?](../Accounts-Projects_and_Allocations/Allocations.md) for more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale

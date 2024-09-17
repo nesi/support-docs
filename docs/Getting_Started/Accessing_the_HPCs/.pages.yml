@@ -2,7 +2,7 @@
 nav:
   - Setting_Up_and_Resetting_Your_Password.md
   - Setting_Up_Two_Factor_Authentication.md
-  - Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md
-  - X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md
+  - Connecting_via_SSH
+  - Connecting_via_Web.md
   - Port_Forwarding.md
   - ...
