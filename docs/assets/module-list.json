@@ -1530,7 +1530,7 @@
                 "2.26.0-gimkl-2017a": "Warning: BEDTools/2.26.0-gimkl-2017a is obsolete and will soon be removed, so please select a more recent version (try 'module spider BEDTools')."
             }
         ],
-        "default": "2.28.0-gimkl-2018b",
+        "default": "2.31.1-GCC-12.3.0",
         "default_type": "latest",
         "description": "The BEDTools utilities allow one to address common genomics tasks such as finding feature overlaps\n and computing coverage. The utilities are largely based on four widely-used file formats: BED, GFF/GTF, VCF,\n and SAM/BAM.",
         "domains": [
@@ -1541,9 +1541,9 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/arq5x/bedtools2",
-        "last_updated": 1657436737,
+        "last_updated": 1726474697,
         "licence_type": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BEDTools/2.28.0-gimkl-2018b.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BEDTools/2.31.1-GCC-12.3.0.lua",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
@@ -1552,7 +1552,8 @@
             "2.26.0-gimkl-2017a",
             "2.28.0-gimkl-2018b",
             "2.29.2-GCC-9.2.0",
-            "2.30.0-GCC-11.3.0"
+            "2.30.0-GCC-11.3.0",
+            "2.31.1-GCC-12.3.0"
         ]
     },
     "BEEF": {
@@ -1884,7 +1885,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/pezmaster31/bamtools",
-        "last_updated": 1652221759,
+        "last_updated": 1726472252,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BamTools/2.5.1-gimkl-2018b.lua",
         "modulefile_text": "",
@@ -1895,7 +1896,8 @@
             "2.5.1-gimkl-2018b",
             "2.5.1-gimkl-2020a",
             "2.5.2-GCC-11.2.0",
-            "2.5.2-GCC-11.3.0"
+            "2.5.2-GCC-11.3.0",
+            "2.5.2-GCCcore-12.3.0"
         ]
     },
     "Bandage": {
@@ -4415,7 +4417,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://nanoporetech.com/products/minit",
-        "last_updated": 1722546642,
+        "last_updated": 1726550073,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Dorado/0.3.2.lua",
         "modulefile_text": "",
@@ -4438,7 +4440,8 @@
             "0.6.0",
             "0.7.0",
             "0.7.2",
-            "0.7.3"
+            "0.7.3",
+            "0.8.0"
         ]
     },
     "Doxygen": {
@@ -10663,7 +10666,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://multiqc.info",
-        "last_updated": 1667100360,
+        "last_updated": 1726471087,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/MultiQC/1.13-gimkl-2022a-Python-3.10.5.lua",
         "modulefile_text": "",
@@ -10672,6 +10675,7 @@
         "versions": [
             "1.12-gimkl-2020a-Python-3.9.9",
             "1.13-gimkl-2022a-Python-3.10.5",
+            "1.24.1-foss-2023a-Python-3.11.6",
             "1.5-gimkl-2017a-Python-3.6.3",
             "1.5-gimkl-2018b-Python-3.7.3",
             "1.7-gimkl-2018b-Python-3.7.3",
@@ -11143,7 +11147,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/wdecoster/NanoPlot",
-        "last_updated": 1675042676,
+        "last_updated": 1726443348,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/NanoPlot/1.41.0-gimkl-2022a-Python-3.10.5.lua",
         "modulefile_text": "",
@@ -11151,7 +11155,8 @@
         "support": "",
         "versions": [
             "1.38.0-gimkl-2020a-Python-3.8.2",
-            "1.41.0-gimkl-2022a-Python-3.10.5"
+            "1.41.0-gimkl-2022a-Python-3.10.5",
+            "1.43.0-foss-2023a-Python-3.11.6"
         ]
     },
     "NanoStat": {
@@ -13705,20 +13710,23 @@
                 "5.0.2-gimkl-2017a": "Warning: QUAST/5.0.2-gimkl-2017a is very old, please select a more recent version (try 'module spider QUAST')."
             }
         ],
-        "default": "5.0.2-gimkl-2018b",
+        "default": "5.2.0-foss-2023a",
         "default_type": "latest",
         "description": "Evaluates genome assemblies",
         "domains": [
             "bio",
             "biology"
         ],
-        "extensions": [],
+        "extensions": [
+            "QUAST-5.2.0",
+            "simplejson-3.17.2"
+        ],
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://quast.sourceforge.net/quast",
-        "last_updated": 1712022075,
+        "last_updated": 1726475233,
         "licence_type": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/QUAST/5.0.2-gimkl-2018b.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/QUAST/5.2.0-foss-2023a.lua",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
@@ -13726,6 +13734,7 @@
             "4.4-gimkl-2017a",
             "5.0.2-gimkl-2017a",
             "5.0.2-gimkl-2018b",
+            "5.2.0-foss-2023a",
             "5.2.0-gimkl-2022a"
         ]
     },
@@ -25353,13 +25362,14 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://huttenhower.sph.harvard.edu/metaphlan/",
-        "last_updated": 1675041882,
+        "last_updated": 1726442486,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/pauvre/0.2.3-gimkl-2020a-Python-3.8.2.lua",
         "modulefile_text": "",
         "network_licences": [],
         "support": "",
         "versions": [
+            "0.2.3-foss-2023a-Python-3.11.6",
             "0.2.3-gimkl-2020a-Python-3.8.2",
             "0.2.3-gimkl-2022a-Python-3.10.5"
         ]
@@ -25853,7 +25863,7 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "https://github.com/dfguan/purge_dups",
-        "last_updated": 1672963634,
+        "last_updated": 1726549797,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/purge_dups/1.2.6-gimkl-2022a-Python-3.10.5.lua",
         "modulefile_text": "",
