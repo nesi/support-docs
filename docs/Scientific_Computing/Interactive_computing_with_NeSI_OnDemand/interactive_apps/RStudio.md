@@ -8,13 +8,16 @@
 The docs for RStudio via Jupyter are [here](../../Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md), we'll need to decide what needs to change and what can be copied across.
 
 ## Logging in
+![UPDATE WITH PROJECT](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png)
+
+![](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png)
 
 ## Plots not showing
 The current R modules on NeSI OnDemand do not support the X11 graphics device due to missing the depedency `cairo`. There is a one off fix for this by changing the backend graphics device from `Default` to `AGG` (Anti-Grain Geometry) in the RStudio settings. 
 
 This can be done by going to `Tools` -> `Global Options` -> `Graphics` and switch `Default` to `AGG`. This will allow the plots to be displayed in the RStudio interface. You do not need to restart the RStudio session for this to take effect.
 
-![](../../assets/images/RStudio_via_OOD_on_NeSI_1.png)
+![](../../../assets/images/RStudio_via_OOD_on_NeSI_2.png)
 
 Modules from 4.4 onwards will have this issue fixed.
 
