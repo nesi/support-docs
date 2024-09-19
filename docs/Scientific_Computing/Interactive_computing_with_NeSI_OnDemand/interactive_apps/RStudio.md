@@ -14,7 +14,7 @@ The current R modules on NeSI OnDemand do not support the X11 graphics device du
 
 This can be done by going to `Tools` -> `Global Options` -> `Graphics` and switch `Default` to `AGG`. This will allow the plots to be displayed in the RStudio interface. You do not need to restart the RStudio session for this to take effect.
 
-![](support-docs/docs/assets/images/RStudio_via_OOD_on_NeSI_1.png)
+![](../../assets/images/RStudio_via_OOD_on_NeSI_1.png)
 
 Modules from 4.4 onwards will have this issue fixed.
 
