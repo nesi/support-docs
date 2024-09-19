@@ -6,3 +6,42 @@
     If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
 
 The docs for RStudio via Jupyter are [here](../../Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md), we'll need to decide what needs to change and what can be copied across.
+
+## Logging in
+
+## Plots not showing
+The current R modules on NeSI OnDemand do not support the X11 graphics device due to missing the depedency `cairo`. There is a one off fix for this by changing the backend graphics device from `Default` to `AGG` (Anti-Grain Geometry) in the RStudio settings. 
+
+This can be done by going to `Tools` -> `Global Options` -> `Graphics` and switch `Default` to `AGG`. This will allow the plots to be displayed in the RStudio interface. You do not need to restart the RStudio session for this to take effect.
+
+![](support-docs/docs/assets/images/RStudio_via_OOD_on_NeSI_1.png)
+
+Modules from 4.4 onwards will have this issue fixed.
+
+## Libraries not showing
+There is a bug with the R-Geo and R-bundle-Biocondutor libraries not showing up in the RStudio interface. This is a known issue and is being worked on. There are two workarounds for this issue:
+
+1. Manually add the library to `.libPaths()` in the R console as shown below:
+
+```R
+myPaths <- .libPaths()
+myPaths <- c(myPaths, "/opt/nesi/CS400_centos7_bdw/R-Geo/4.3.2-foss-2023a")
+
+# reorder paths
+myPaths <- c(myPaths[1], myPaths[3], myPaths[2]) 
+
+# reasign the library paths
+.libPaths(myPaths)
+
+# confirm the library paths
+.libPaths()
+[1] "/nesi/home/$USER/R/foss-2023a/4.3"
+[2] "/opt/nesi/CS400_centos7_bdw/R-Geo/4.3.2-foss-2023a"
+[3] "/opt/nesi/CS400_centos7_bdw/R/4.3.2-foss-2023a/lib64/R/library"
+```
+2. Permanent fix by adding the library path(s) to the `.Renviron` file in your home directory. This will automatically add the library path to the R console when it starts up. Copy and Paste the following lines to the file:
+
+```
+R_LIBS=/opt/nesi/CS400_centos7_bdw/R-bundle-Bioconductor/4.3.2-foss-2023a
+R_LIBS=/opt/nesi/CS400_centos7_bdw/R-Geo/4.3.2-foss-2023a
+```
