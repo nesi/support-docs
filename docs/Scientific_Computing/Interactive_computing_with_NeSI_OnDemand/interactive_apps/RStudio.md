@@ -18,7 +18,7 @@ Recommendation to set *Save Workspace to Never* to avoid saving large files to t
 ## Bugs
 
 ### Plots not showing
-The current R modules on NeSI OnDemand do not support the default graphics device due to missing the depedency `cairo`. There is a one off fix for this by changing the backend graphics device from `Default` to `AGG` (Anti-Grain Geometry) in the RStudio settings. 
+The current R modules on NeSI OnDemand do not support the default graphics device due to a missing depedency, `cairo`. There is a one off fix for this by changing the backend graphics device from `Default` to `AGG` (Anti-Grain Geometry) in the RStudio settings. 
 
 This can be done by going to `Tools` -> `Global Options` -> `Graphics` and switch `Default` to `AGG`. This will allow the plots to be displayed in the RStudio interface. You do not need to restart the RStudio session for this to take effect.
 
