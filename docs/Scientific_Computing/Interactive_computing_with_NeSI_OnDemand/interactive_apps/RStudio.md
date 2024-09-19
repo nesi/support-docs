@@ -42,9 +42,18 @@ myPaths <- c(myPaths[1], myPaths[3], myPaths[2])
 [2] "/opt/nesi/CS400_centos7_bdw/R-Geo/4.3.2-foss-2023a"
 [3] "/opt/nesi/CS400_centos7_bdw/R/4.3.2-foss-2023a/lib64/R/library"
 ```
-2. Permanent fix by adding the library path(s) to the `.Renviron` file in your home directory. This will automatically add the library path to the R console when it starts up. Copy and Paste the following lines to the file:
+2. Permanent fix by adding the library path(s) to the `.Rprofile` file in your home directory. This will automatically add the library path to the R console when it starts up. Copy and Paste the following lines to the file:
 
 ```
-R_LIBS=/opt/nesi/CS400_centos7_bdw/R-bundle-Bioconductor/4.3.2-foss-2023a
-R_LIBS=/opt/nesi/CS400_centos7_bdw/R-Geo/4.3.2-foss-2023a
+# CHECK LIBRARY PATHS
+myPaths <- .libPaths()
+newPaths <- c("/opt/nesi/CS400_centos7_bdw/R-Geo/4.3.1-gimkl-2022a",
+        "/opt/nesi/CS400_centos7_bdw/R-bundle-Bioconductor/3.17-gimkl-2022a-R-4.3.1>
+
+# join the two lists
+myPaths <- c(myPaths, newPaths)
+
+# reassign the library paths
+.libPaths(myPaths)
 ```
+NOTE: Replace the paths with the correct paths for the libraries you want to add.
