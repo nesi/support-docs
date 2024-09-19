@@ -9,8 +9,10 @@ The docs for RStudio via Jupyter are [here](../../Interactive_computing_using_Ju
 
 ## Logging in
 ::: {layout-ncol="2"}
+
 ![UPDATE WITH PROJECT](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png){width=35%}
 ![](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png){width=62%}
+
 :::
 ## Settings
 Recommendation to set *Save Workspace to Never* to avoid saving large files to the workspace. This can be done by going to `Tools` -> `Global Options` -> `General` and setting the `Save workspace to .RData on exit` to `Never`. This will prevent the workspace from being unable to load due to not enough memory in the selected session.
