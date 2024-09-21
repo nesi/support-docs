@@ -16856,6 +16856,28 @@
             "2.3.1-gimkl-2018b-Hadoop-2.7"
         ]
     },
+    "SpectrA": {
+        "admin_list": [],
+        "default": "1.0.1-GCCcore-12.3.0",
+        "default_type": "latest",
+        "description": "C++ library for large scale eigenvalue problems, built on top of Eigen, an open source linear algebra library.",
+        "domains": [
+            "math"
+        ],
+        "extensions": [],
+        "force_hide": "False",
+        "force_show": "False",
+        "homepage": "https://spectralib.org/",
+        "last_updated": 1726880940,
+        "licence_type": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/math/SpectrA/1.0.1-GCCcore-12.3.0.lua",
+        "modulefile_text": "",
+        "network_licences": [],
+        "support": "",
+        "versions": [
+            "1.0.1-GCCcore-12.3.0"
+        ]
+    },
     "SqueezeMeta": {
         "admin_list": [],
         "default": "1.6.0-Miniconda3",
