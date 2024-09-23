@@ -5,8 +5,6 @@
     NeSI OnDemand is in development and accessible to early access users only.
     If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
 
-The docs for RStudio via Jupyter are [here](../../Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md), we'll need to decide what needs to change and what can be copied across.
-
 ## Logging in
 ![UPDATE WITH PROJECT](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png){width=35%} ![](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png){fig.align="right" width=62%}
 
