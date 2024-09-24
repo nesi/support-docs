@@ -11,8 +11,8 @@
                 {% endfor -%}
                 <button id="mod_{{app_name | lower}}_{{version}}" 
  class="md-tag-ver md-tag {% if version == app.default -%}md-tag-ver-shown {% endif -%}{% if v.warning_message -%}md-tag-ver-warn {% endif -%}"
- {% if version == app.default -%} title='Default Version'{% endif -%}
  {% if v.warning_message -%} title="{{ v.warning_message }}"{% endif -%}
+ {% if version == app.default -%} title='Default Version'{% endif -%}
  onclick="changeVersion('{{ app_name }}','{{ version }}'{% if v.warning_message -%}, true{% endif -%})">{{ version }}</button>
         {% endfor -%}     
     {% endif -%}
@@ -20,5 +20,5 @@
 <pre><code id="mod_{{app_name | lower}}_code">module load {{app_name}}/{{app.default}}</code></pre>
 <div id="mod_{{app_name | lower}}_warn" class="admonition warning" style="display: {% if v.default_has_warning -%}block{% else -%}none{% endif -%}">
     <p class="admonition-title">Warning</p>
-    <p class="warning-text"></p>
+    <p class="warning-text">{{ v.warning_message }}</p>
 </div>
