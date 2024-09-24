@@ -6926,7 +6926,6 @@
         "force_hide": "False",
         "force_show": "False",
         "homepage": "http://www.hdfgroup.org/HDF5/",
-        "last_updated": 1725938033,
         "licence_type": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HDF5/1.12.2-iimpi-2022a.lua",
         "modulefile_text": "",
