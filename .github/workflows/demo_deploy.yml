@@ -3,10 +3,10 @@ on:
   pull_request:
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  TARGET_REPO: "support-docs-dev"
+  TARGET_REPO: "mkdocs-demo-deploy"
   TARGET_OWNER: "CallumWalley"
   WORKFLOW_ID: "deploy.yml"
-  DEPLOY_URL: "https://callumwalley.github.io/support-docs-dev"
+  DEPLOY_URL: "https://callumwalley.github.io/mkdocs-demo-deploy"
   HEAD: ${{ github.event.pull_request.head.ref }}
 permissions: write-all
 jobs:
@@ -25,11 +25,11 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.PAT }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/dispatches \
-            -d '{"event_type":"deploy","client_payload":{"pr-branches":"${{ github.event.pull_request.head.ref }}", "use-cache":"true"}}'
+            -d "{\"event_type\":\"deploy\",\"client_payload\":{\"targets\":\"${GITHUB_REPOSITORY}:${HEAD}\", \"use-cache\":\"true\"}}"
       - name: Wait for Workflow Action
         run: |
           # Just give a minute or so to deploy
-          # sleep 90
+          sleep 60
           # curl -L \
           #     -X POST \
           #     -H "Accept: application/vnd.github+json" \
@@ -42,7 +42,7 @@ jobs:
           fetch-depth: 0
       - name: Post messages open requests
         run: |
-            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${HEAD}\">${DEPLOY_URL}/${HEAD}</a>"
+            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${HEAD}\">${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"
             # Logic for truncating out long sections commented out.
             # maxlines=-5
@@ -52,7 +52,7 @@ jobs:
                     # maxlines=((maxlines+1))
                     #if [ ${maxlines} -lt 1 ]; then
                     g=${f#*/}; h=${g%.*}
-                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
+                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
                     #fi
                 done
                 # if [ ${maxlines} -gt 0 ];then
@@ -62,4 +62,4 @@ jobs:
             fi
             msg="${msg}<br><em>Test site may take a minute or so to deploy after PR Open or Update.</em>"
             (gh pr comment ${HEAD} --edit-last --body "${msg}") || (gh pr comment ${HEAD} --body "${msg}")
-            echo "::info title=Deploy successful::${DEPLOY_URL}/${HEAD}" 
+            echo "::info title=Deploy successful::${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}" 
