@@ -7,6 +7,7 @@ Description of current CI workflow.
 Retrieves dynamically generated content from external sources.
 
 Currently retrieves:
+
 - Software module list from [modules-list](https://github.com/nesi/modules-list).
 - Glossary, spellcheck dictionary and snippets from [nesi-wordlist](https://github.com/nesi/nesi-wordlist)
 
