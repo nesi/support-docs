@@ -56,6 +56,7 @@ markdown_extensions:
   - neoteroi.cards
   - neoteroi.timeline
   - footnotes
+  - def_list
 extra:
   analytics:
     provider: google
