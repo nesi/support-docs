@@ -1,3 +1,38 @@
+site_name: NeSI Support Documentation
+repo_name: GitHub
+repo_url: https://github.com/nesi/support-docs
+edit_uri: edit/main/docs/
+site_description: NeSI Support Documentation
+site_dir: public
+site_url: https://docs.nesi.org.nz/
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: assets/icons/favicon_nesi.ico
+  language: en
+  logo: assets/icons/logo_nesi.svg
+  palette:
+    - primary: custom
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    - primary: custom
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+  features:
+    - navigation.indexes
+    - navigation.instant          # Single Page Application
+    - navigation.instant.prefetch # Start loading page on link hover. Insiders only
+    - navigation.top              # 'Return to top' button
+    # - navigation.prune            # Reduces site size. ALSO BREAKS NAV BEHAVIOR
+    - navigation.tracking         # Put anchor in URL
+    - navigation.path             # Breadcrumbs. Insiders only
+    - content.code.copy
+    - content.action.edit
+    - header.site_name_homepage
 hooks:
   - mkdocs_hooks.py
 markdown_extensions:
@@ -43,13 +78,6 @@ plugins:
       verbose: false 
       module_name: macro_hooks
       include_dir: overrides
-repo_name: GitHub
-repo_url: https://github.com/nesi/support-docs
-edit_uri: edit/main/docs/
-site_description: NeSI Support Documentation
-site_dir: public
-site_name: NeSI Support Documentation
-site_url: https://docs.nesi.org.nz/
 extra_css:
   - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
@@ -58,32 +86,3 @@ extra_css:
 extra_javascript:
     - assets/javascripts/general.js
     - https://status.nesi.org.nz/embed/script.js
-theme:
-  custom_dir: overrides
-  favicon: assets/icons/favicon.ico
-  features:
-    - navigation.indexes
-    # - navigation.sections
-    - navigation.instant          # Single Page Application
-    - navigation.instant.prefetch # Start loading page on link hover. Insiders only
-    - navigation.top              # 'Return to top' button
-    # - navigation.prune            # Reduces site size. ALSO BREAKS NAV BEHAVIOR
-    - navigation.tracking         # Put anchor in URL
-    - navigation.path             # Breadcrumbs. Insiders only
-    - content.code.copy
-    - content.action.edit
-    - header.site_name_homepage
-  language: en
-  logo: assets/icons/logo.svg
-  name: material
-  palette:
-    - primary: custom
-      scheme: default
-      toggle:
-        icon: material/lightbulb
-        name: Switch to dark mode
-    - primary: custom
-      scheme: slate
-      toggle:
-        icon: material/lightbulb-outline
-        name: Switch to light mode
