@@ -6,6 +6,7 @@ Modify proselint outputs into a format recognised by github actions.
 
 import sys
 from pathlib import Path
+import time
 
 import proselint
 from proselint import config, tools
@@ -27,5 +28,6 @@ if __name__ == "__main__":
                 f"::{notice[7]} file={file},line={notice[2]+1},"
                 f"col={notice[3]+2},endColumn={notice[2]+notice[6]+1},"
                 f"title={notice[0]}::'{notice[1]}'",
-                flush=True,
+                flush=True
             )
+            time.sleep(0.01)

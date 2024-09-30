@@ -1,24 +1,38 @@
-:root {
-    --md-default-fg-color:               #C9445B;
-    --md-default-fg-color--light:        #1a0206;
-    --md-default-fg-color--lighter:      rgb(11,33,57,0.5);
-    --md-default-fg-color--lightest:     rgb(11,33,57,0.1);
+:root{
+  --nesi-grey : #414f5c;
+  --nesi-grey--light: #94a5ad;
+  --nesi-yellow :#fcce06;
+  --nesi-purple: rgb(202, 159, 213);
+  --nesi-orange : rgb(244, 121, 37);
+  --nesi-blue : #4fbaed;
+  --nesi-red:#ef315e;
+  --nesi-green: #cce310;
 
-    --md-primary-fg-color:               #C9445B;
-    --md-primary-fg-color--light:        rgb(35,171,227);
-    --md-primary-fg-color--dark:         rgb(11,33,57);
+  [data-md-color-scheme="default"]{
+    --md-primary-fg-color:               var(--nesi-red);
     
-    --md-accent-fg-color:                rgb(248,150,29);
-    --md-accent-fg-color--transparent:   rgb(248,150,29,0.25);
-  
-    --md-accent-bg-color:                rgb(210,227,235);
-    --md-accent-bg-color--light:         rgb(210,227,235,0.5);
+    --md-accent-fg-color:                var(--nesi-orange);;
+    --md-accent-fg-color--transparent:   rgb(244, 121, 37, 0.25);
   }
-/* Used in supported applications page */
-.md-header__button.md-logo img, .md-header__button.md-logo svg {
-    height: 4rem;
-    margin: -2rem;
+
+    /* --md-accent-bg-color:                rgb(210,227,235); */
+  [data-md-color-scheme="slate"] {
+    --md-primary-fg-color:               var(--nesi-red);
+    --md-accent-fg-color:                var(--nesi-orange);;
+    --md-accent-fg-color--transparent:   rgb(244, 121, 37, 0.25);
+
+    .nt-card-image>img {
+      filter: brightness(0) invert(1);
+    }
+  }
 }
+/* Logo biggification */
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+  height: 4rem;
+  margin: -2rem;
+}
+
+/* Version table stuff */
 .md-tag.md-tag-ver{
   color: var(--md-code-fg-color);
 }
@@ -29,18 +43,17 @@
 .md-tag-ver-warn {
   text-decoration: line-through;
 }
- 
 .md-typeset__table {
   width: 100%;
 }
 .md-typeset__table table:not([class]) {
   display: table
 }
-/* convenience class */
+/* convenience class. Not sure if it is used */
 .hidden{
     display: none;
 }
-/* request support custom button */
+/* Get support button */
 .md-button-support{
   position: absolute;
   margin: -2rem 0 0 1rem;
@@ -48,25 +61,69 @@
   text-align: center;
   font-size: 0.7rem;
 }
+/* Don't duplicate header title */
 .md-nav--primary > .md-nav__title {
     display: none;
 }
-[data-md-color-scheme=slate] .nt-card-image>img {
-  filter: brightness(0) invert(1);
-}
-/* Fix codeblock formatting change.*/
-.md-typeset .md-code__content { 
-    display: inline;
-}
-/* Always 3 cards */
-.md-typeset .grid {
-  grid-template-columns: repeat(3, minmax(16rem, 1fr))
-}
-.md-button--primary {
+/* fix neotiri card colors */
+
   /* Make button more buttony */
+.md-button--primary {
   box-shadow: grey 2px 2px 2px;
 }
 /* Make sidebar slightly wider */
 .md-sidebar {
   width: 14rem;
+}
+/* prerequisite custom admonition */
+:root {
+  --md-admonition-icon--prerequisite: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 9H7V7h10m0 6H7v-2h10m-3 6H7v-2h7M12 3a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m7 0h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg>')
+}
+
+.md-typeset .admonition.prerequisite,
+.md-typeset details.prerequisite {
+  border-color: rgb(170, 170, 60);
+}
+.md-typeset .prerequisite > .admonition-title,
+.md-typeset .prerequisite > summary {
+  background-color: rgba(170, 170, 60, 0.1);
+} 
+.md-typeset .prerequisite > .admonition-title::before,
+.md-typeset .prerequisite > summary::before {
+  background-color: rgb(170, 170, 60);
+  -webkit-mask-image: var(--md-admonition-icon--prerequisite);
+          mask-image: var(--md-admonition-icon--prerequisite);
+}
+/* Footer */
+#new-footer {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 400;
+  /* MB logo has black border */
+  background-color: #101010;
+}
+
+#partners {
+  height: auto;
+  background-color: #101010;
+}
+
+#partners #logos img {
+  height: 40px;
+  margin: 10px;
+}
+
+#partners #logos {
+  padding: 10px;
+  text-align: center;
+}
+
+#partners #logos .nesi-footer-logo img {
+  margin-right: 100px;
+  height: 60px;
+}
+
+#partners #logos img {
+  height: 40px;
+  margin: 10px;
 }
