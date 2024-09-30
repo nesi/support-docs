@@ -6,10 +6,13 @@ from mkdocs.config.base import Config, load_config
 import logging
 import sys
 import re
+import time
+
 
 """ 
-This doesnt work and I have no idea why.
+This works but is a bit messy
 """
+
 
 def parse_macro(record):
 
@@ -29,6 +32,13 @@ def parse_macro(record):
         record.name = g["title"]
         record.filename = g["file"]
         record.msg = g["message"]
+
+    # Does not give correct path to file in question in 'title'.
+    # Infer from message.
+    m = re.search(r"'(.*?\.md)'",  record.msg)
+    if m:
+        record.filename = m.group(1)
+
     return True
 
 
@@ -41,4 +51,5 @@ if __name__ == '__main__':
         '::%(levelname)s file=%(filename)s,title=%(name)s,col=0,endColumn=0,line=%(lineno)s::%(message)s'))
     log.addHandler(sh)
     config = load_config(config_file_path="./mkdocs.yml")
-    build.build(config, dirty=True)
+    build.build(config)
+    time.sleep(5)

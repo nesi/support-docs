@@ -1,11 +1,15 @@
 """
-Serves a similar function to 'mkdocs_hooks' except for at render rather than template stage.
+Allows injection of variables into macro stage of rendering.
+This allows for arbitrary use of variables in ARTICLES, (e.g. `docs/.md`).
+As opposed to `mkdocs_hooks.py` which works only in template step, (e.g. `overrides/*.html`).
+If this is confusing, ask Cal to explain.
 """
 
 import os
 import json
 
 module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
+
 
 def define_env(env):
     """
