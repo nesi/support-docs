@@ -29,6 +29,6 @@ guides.
     (includes DDT and MAP, now called Arm Forge)
 - [Nvidia Documentation](https://docs.nvidia.com/cuda/)
 - [cuda-gdb](https://docs.nvidia.com/cuda/cuda-gdb/) debugger
-- [cuda-memcheck](https://docs.nvidia.com/cuda/cuda-memcheck/) memory
+- [cuda-memcheck](https://docs.nvidia.com/cuda/archive/11.4.4/cuda-memcheck/index.html) memory
     checker.
 - [GCC Manuals](https://gcc.gnu.org/onlinedocs/)
