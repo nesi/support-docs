@@ -20,7 +20,7 @@ This guide is based on WRF 4.6.0 and WPS 4.6.0
 ## WRF on Mahuika
 ### Building WRF on Mahuika
 
-The following script will run through the complete install procedure of WRF on Mahuika. Run the script with `bash` *script\_name.sh*:
+The following script will run through the complete install procedure of WRF on Mahuika. You can run the script with `bash` *script\_name.sh*:
 ``` sh
 #!/bin/bash
 
@@ -56,7 +56,7 @@ It will take some time for WRF to compile (~30 minutes). You may wish to run thi
 
 ### Running WRF on Mahuika
 
-An example Slurm job script for WRF on Mahuika is given below. The job can be submitted with `sbatch` *name\_of\_script.sl*`
+An example Slurm job script for WRF on Mahuika is given below. The job can be submitted with `sbatch` *name\_of\_script.sl*
 
 ``` sl
 #!/bin/bash -e
@@ -82,8 +82,8 @@ if any individual task fails. Without this option, the WRF job will stay alive
 until the wall limit is reached but won't actually do anything.
 
 
-### Building WPS on Mahuika
-The following script will build serial WPS on Mahuika. Like the WRF build process, this will ask you to specify the compiler from a list of options:
+### Building and running WPS on Mahuika
+The following script will build WPS on Mahuika. Like the WRF build process, this will ask you to specify a compiler from the list of options:
 
 ``` sh
 #!/bin/bash
@@ -105,7 +105,7 @@ export WRF_DIR='path/to/WRF/directory'
 
 ./clean > /dev/null 2>&1
 
-echo -e "\n\033[31m=============On Mahuika, please choose option 1 below===========\033[0m"
+echo -e "\n\033[31m=============On Mahuika, please choose option 1 (serial) or 3 (MPI parallel) below===========\033[0m"
 ./configure
 
 echo -e "\n\033[31m=============Now compiling WPS. log file is './WPS-4.6.0/WPS_build.log'===========\033[0m"
@@ -113,7 +113,7 @@ echo -e "\n\033[31m=============Now compiling WPS. log file is './WPS-4.6.0/WPS_
 
 ```
 !!! Note
-    Change the `WRF_DIR` directory to the *full path* where you built WRF. Also, please **choose option 1** (`Linux x86_64, gfortran    (serial)`) for the compiler.
+    Change the `WRF_DIR` directory to the *full path* where you built WRF. Please **choose option 1** (`Linux x86_64, gfortran    (serial)`) to build serial (non MPI) WPS programmes, **choose option 3** (`Linux x86_64, gfortran    (dmpar)` for parallel WPS programmes.
 
 WPS will compile much faster than WRF. Most WPS jobs can be run from the command line on the login node. If you wish to submit a WPS job (`geogrid.exe` for example) to a compute node, it can be done via the following Slurm script:
 ```
@@ -133,7 +133,7 @@ export WRF_DIR='path/to/WRF/build'
 ./geogrid.exe
 
 ```
-Note the required module environments if you wish to run `geogrid.exe` from the login node.
+Note, just as in the Slurm script above, you will need netCDF and JasPer modules in your environment if you wish to run WPS programmes from the login node.
 
 ## WRF on Māui
 
