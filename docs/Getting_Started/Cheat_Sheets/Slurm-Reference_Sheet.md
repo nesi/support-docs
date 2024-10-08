@@ -12,7 +12,7 @@ zendesk_section_id: 360000278975
 ---
 
 If you are unsure about using our job scheduler Slurm, more details can
-be found on [Submitting_your_first_job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md).
+be found on [Submitting_your_first_job](../Submitting_A_Job/index.md).
 
 ## Slurm Commands
 
@@ -62,7 +62,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 |                       |                                  |                                                                                                                         |
 | --------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `--nodes`           | ``#SBATCH --nodes=2``            | Will request tasks be run across 2 nodes.                                                                               |
-| `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2 [MPI](../../Getting_Started/Next_Steps/Parallel_Execution.md) tasks.                                           |
+| `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2 [MPI](../Submitting_A_Job/Parallel_Execution.md) tasks.                                           |
 | `--ntasks-per-node` | `#SBATCH --ntasks-per-node=1` | Will start 1 task per requested node.                                                                                   |
 | `--cpus-per-task`   | `#SBATCH --cpus-per-task=10`  | Will request 10 [*logical* CPUs](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md) per task. |
 | `--mem-per-cpu`     | `#SBATCH --mem-per-cpu=512MB` | Memory Per *logical* CPU. `--mem`  Should be used if shared memory job. See [How do I request memory?](../../General/FAQs/How_do_I_request_memory.md) |

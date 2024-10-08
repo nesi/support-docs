@@ -25,6 +25,12 @@ subgraph B[Accessing_the_HPCs]
         BCA[Terminal Setup] 
     end
 end
+subgraph C[Your_First_Job]
+    direction TB
+    CA[Setting_up_and_resetting_your_password]
+    CA-->BB[Setting_Up_Two_factor_authentication]
+end
 A --> B
+B --> C
 
 ```

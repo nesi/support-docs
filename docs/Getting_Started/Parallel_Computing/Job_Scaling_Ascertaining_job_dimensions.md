@@ -77,5 +77,5 @@ will not have waited for hours or days in the queue
 beforehand.
 
 !!! example
-     - [Multithreading Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
-     - [MPI Scaling](../../Getting_Started/Next_Steps/MPI_Scaling_Example.md)
+     - [Multithreading Scaling](./Multithreading_Scaling_Example.md)
+     - [MPI Scaling](./MPI_Scaling_Example.md)

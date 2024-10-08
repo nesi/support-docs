@@ -10,7 +10,7 @@ zendesk_section_id: 360000040056
 
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
-article on [Parallel
+article on [Parallel../../Getting_Started/Submitting_A_Job/Parallel_Execution.md
 Execution](../../Getting_Started/Next_Steps/Parallel_Execution.md) for
 an introduction). Care needs to be taken when running multiple threads
 on the HPC to achieve best performance - getting it wrong can easily

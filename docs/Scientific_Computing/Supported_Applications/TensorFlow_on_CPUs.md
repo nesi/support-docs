@@ -112,7 +112,7 @@ srun python my_tensorflow_program.py
 ```
 
 If you are unsure about setting up the memory and runtime parameters,
-have a look at our article [Ascertaining job
+have a look at our article [Ascertaining job../../Getting_Started/Submitting_A_Job/Job_Scaling_Ascertaining_job_dimensions.md
 dimensions](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md).
 Please also read the section on operator parallelisation below before
 you choose a number of CPUs.

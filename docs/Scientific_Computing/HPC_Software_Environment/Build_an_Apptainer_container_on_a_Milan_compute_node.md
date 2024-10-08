@@ -74,7 +74,7 @@ Option `--force` will rebuild *my_container.sif* even if it already is in
 the directory.
 
 More information about how to submit a Slurm job is available in the
-[Submitting your first
+[Submitting your first../../Getting_Started/Submitting_A_Job/Submitting_your_first_job.md
 job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
 support page.
 

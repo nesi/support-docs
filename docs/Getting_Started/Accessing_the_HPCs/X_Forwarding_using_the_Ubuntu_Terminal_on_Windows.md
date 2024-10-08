@@ -20,6 +20,5 @@ zendesk_section_id: 360000034315
    `sudo apt install x11-apps -y`.
 3. Restart your terminal, start your Xming (there should be a desktop
    icon after installing it). You should now be able to X-Forward
-   displays from the HPC when you log in (assuming you have completed
-   the
+   displays from the HPC when you log in (assuming you have completed the
    [terminal setup instructions found here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)).

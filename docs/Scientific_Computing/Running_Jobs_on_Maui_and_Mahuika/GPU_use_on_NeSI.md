@@ -33,7 +33,7 @@ page.
 
 ## Request GPU resources using Slurm
 
-To request a GPU for your [Slurm job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md), add
+To request a GPU for your [Slurm job](../../Getting_Started/Submitting_A_Job/index.md), add
 the following option at the beginning of your submission script:
 
 ```sl

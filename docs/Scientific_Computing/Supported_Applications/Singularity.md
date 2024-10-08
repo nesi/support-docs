@@ -127,7 +127,7 @@ filesystem by:
 
 - Copying the image file from your local computer with basic file
     transfer tools - please refer to our documentation on
-    [Moving files to/from the cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+    [Moving files to/from the cluster](../../Getting_Started/Submitting_A_Job/Moving_files_to_and_from_the_cluster.md)
     and [Data Transfer using Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md)(if you have a large container) for details
 - Downloading the container from an online repository
 

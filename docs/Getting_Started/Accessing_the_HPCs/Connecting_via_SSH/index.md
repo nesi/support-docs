@@ -83,7 +83,7 @@ VSCode can be used with WSL or without.
  administrator privileges, however it introduces several bugs so we
  *highly* recommend using the installer edition if you have
  administrator privileges on your workstation or if your
- institution's IT team supports MobaXTerm.
+ institution's IT team supports MobaXterm.
 
 !!! tip "What next?"
     -  Setting up

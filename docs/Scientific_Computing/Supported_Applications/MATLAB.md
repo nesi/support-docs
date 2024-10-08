@@ -83,7 +83,7 @@ utilise more than a 4-8 CPUs this way.
 
 !!! tip
      If your code is explicitly parallel at a high level it is preferable to use
-     [SLURM job arrays](../../Getting_Started/Next_Steps/Parallel_Execution.md)
+     [SLURM job arrays](../../Getting_Started/Submitting_A_Job/Parallel_Execution.md)
      as there is less computational overhead and the multiple smaller jobs
      will queue faster and therefore improve your throughput.
 

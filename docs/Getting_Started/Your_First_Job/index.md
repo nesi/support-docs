@@ -9,18 +9,11 @@ zendesk_article_id: 360000684396
 zendesk_section_id: 360000189716
 ---
 
-## Environment Modules
+# File Transfer
 
-Modules are a convenient way to provide access to applications on the cluster. They prepare the environment you need to run an application.
+## Software
 
-For a full list of module commands run `man module`.
-
-| Command                      | Description                                                                                                                                                                                                           |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `module spider [ <string> ]` | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)                                                |
-| `module show <string>`       | Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module. |
-| `module load <string>`       | Load the module (name and version) given by `<string>`. If no version is given, load the default version.                                                                                                             |
-| `module list [ <string> ]`   | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.                                          |
+One of the first things you will need to do once you have access to the cluster will be finding, or installing the software you require for your research, the most straightforward way is through the use of [Environment Modules](link to page)
 
 ## Slurm
 

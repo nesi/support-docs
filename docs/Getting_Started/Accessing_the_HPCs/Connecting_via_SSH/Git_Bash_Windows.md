@@ -23,8 +23,8 @@ zendesk_section_id: 360000189696
 
    The login process can be simplified with a few configurations.
 
-2. Open Git Bash and run `nano ~/.ssh/config` to open your ssh config
-    file and add the following (replacing `<username>` with your
+2. Open Git Bash and run `nano ~/.ssh/config` to open your ssh config
+    file and add the following (replacing `<username>` with your
     username):
 
     ```ssh
@@ -70,13 +70,13 @@ Assuming you have followed the setup above you will be able to connect
 to the clusters directly using;
 
 ``` sl
-ssh mahuika
+ssh mahuika
 ```
 
 or
 
 ``` sl
-ssh maui
+ssh maui
 ```
 
 As multiplexing is not configured *you will have to enter your login
@@ -86,4 +86,5 @@ credentials every time you open a new terminal or try to move a file.*
 scp <path/filename> mahuika:~/
 ```
 
-(For more info visit [data transfer](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md).
+!!! prerequisite "What Next?"
+   For more info visit [data transfer](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md).
