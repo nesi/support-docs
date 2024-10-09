@@ -48,14 +48,16 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.snippets:
     # auto_append:
     # - docs/assets/glossary/snippets.md  # Causes massive slowdown. Also, bad.
   - attr_list
   - abbr
-  - neoteroi.cards
-  - neoteroi.timeline
   - footnotes
+  - md_in_html
   - def_list
 extra:
   analytics:
@@ -79,7 +81,6 @@ plugins:
       module_name: macro_hooks
       include_dir: overrides
 extra_css:
-  - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
   - assets/stylesheets/custom_admonations.css
   - assets/stylesheets/theme.css

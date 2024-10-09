@@ -9,7 +9,7 @@ description: How to add a new member to your NeSI project.
 ---
 
 !!! prerequisite
-    - Have a [NeSI Account profile](./Creating_a_NeSI_Account_Profile.md).
+    - Have a [NeSI Account profile](./Creating_a_NeSI_Account.md).
     - Be the **owner** of a [NeSI project](./Applying_for_a_new_NeSI_project.md).
 
 1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.

@@ -36,7 +36,7 @@ running TensorFlow with GPU support.
 
 ## Use NeSI modules
 
-TensorFlow is available on Mahuika as an [environment
+TensorFlow is available on Mahuika as an [environment../../Getting_Started/Submitting_A_Job/The_HPC_environment.md
 module](../../Getting_Started/Next_Steps/The_HPC_environment.md)
 
 ``` sh

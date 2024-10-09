@@ -83,7 +83,7 @@ utilise more than a 4-8 CPUs this way.
 
 !!! tip
      If your code is explicitly parallel at a high level it is preferable to use
-     [SLURM job arrays](../../Getting_Started/Next_Steps/Parallel_Execution.md)
+     [SLURM job arrays](../../Getting_Started/Submitting_A_Job/Parallel_Execution.md)
      as there is less computational overhead and the multiple smaller jobs
      will queue faster and therefore improve your throughput.
 
@@ -195,7 +195,7 @@ support page.
 
 !!! tip "GPU cost"
      A GPU device-hour costs more than a core-hour, depending on the type
-     of GPU. You can find a comparison table in our [What is an
+     of GPU. You can find a comparison table in our [What is an../../Getting_Started/Accounts-Projects_and_Allocations/Allocations.md
      allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
      support page.
 

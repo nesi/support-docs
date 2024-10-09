@@ -57,8 +57,8 @@ name, e.g. cray-netcdf.
 
 NOTE: The substring search will be soon implemented by default, then you
 do not need to specify the -S anymore. Furthermore, this improvement
-should be also ported to the Māui\_Ancil part.
+should be also ported to the Māui\_Ancil part.
 
-!!! tip
+!!! prerequisite "What Next"
     You can create your own modules. This is described
     [here](../../Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md).

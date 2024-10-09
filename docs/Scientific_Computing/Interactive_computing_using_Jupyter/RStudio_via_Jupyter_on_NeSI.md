@@ -33,7 +33,7 @@ javascript in your web browser.
 
 ## Changing R version
 
-You can configure a set of [environment modules](../../Getting_Started/Next_Steps/The_HPC_environment.md)
+You can configure a set of [environment modules](../../Getting_Started/Submitting_A_Job/The_HPC_environment.md)
 to preload before starting RStudio. This can be useful if you want to
 change the version of the R interpreter or use NeSI's *R-Geo* or
 *R-bundle-Bioconductor* modules.
