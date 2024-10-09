@@ -191,7 +191,7 @@ Just because a merge request has been opened, doesn't mean anyone should merge i
 
 ## Update Remote Assets
 
-Certain files need to be fetched from other repos for up to date info. This will be automated, but for not the proccess is manual.
+Certain files need to be fetched from other repos for up to date info. This will be automated, but for now the proccess is manual.
 
 1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
 2. A branch `new-assets` will be created, which can be merged into main.
@@ -214,7 +214,7 @@ Quite a lot of data-sources come together to make this page:
 
 - mkdocs article titles
 - lmod info scraped from all clusters
-- licence counts from promethius instance
+- licence counts from prometheus instance
 - licence details from config file
 - Manual overwrites in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml).
 
