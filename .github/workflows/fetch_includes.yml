@@ -46,7 +46,7 @@ jobs:
             git fetch
             if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then
                 git rebase ${BRANCH_NAME}
-                git pull
+                git pull origin
                 git push origin ${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
                 gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
