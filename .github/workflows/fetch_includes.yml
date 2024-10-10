@@ -21,9 +21,8 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config pull.rebase true
-          git pull origin main
-          git branch -D ${BRANCH_NAME} || true
-          git checkout -b ${BRANCH_NAME}
+          git pull origin ${BRANCH_NAME} || git checkout -b ${BRANCH_NAME}
+          git merge origin ${GITHUB_REF}
           mkdir -pv docs/assets/glossary
       - name: Module List
         run: |
@@ -41,6 +40,7 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
+            git fetch
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
             if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then
                 git push origin ${BRANCH_NAME}
