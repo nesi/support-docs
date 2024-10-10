@@ -38,6 +38,10 @@ background, look for this ![mceclip0.png](../assets/images/X11_on_NeSI.png) symb
      the top left hand corner
      (![xon.png](../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../assets/images/X11_on_NeSI_1.png)=off).
 
+<!-- !!! note
+    Open your Ubuntu terminal and install x11-apps with the command:  
+   `sudo apt install x11-apps -y`. -->
+
 ## X-Forwarding
 
 Finally your ssh tunnel must be set up to 'forward' along X-11
