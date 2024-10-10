@@ -117,7 +117,7 @@ modified times, sizes and file paths.
 
 `nlcompare` is particularly useful if you want to compare a directory on
 Nearline to a corresponding directory in `/nesi/project` or
-`/nesi/nobackup`. See [Verifying uploads to Nearline
+`/nesi/nobackup`. See [Verifying uploads to Nearline../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md
 storage](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md)
 for more information on how to do a comparison and verification.
 
@@ -258,7 +258,7 @@ As a good practice:
   directory once there is a copy of it on Nearline.
 - Before deleting any data from your project or nobackup directory
   that has been uploaded to Nearline, please consider whether you
-  require [verification of the
+  require [verification of the../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md
   transfer](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md).
   We recommend that you do at least a basic verification of all
   transfers.
@@ -271,7 +271,7 @@ version of data from nobackup or project:
    (on `/nesi/nearline`). To look at one directory
    on `/nesi/nearline` at a time, use `nlls`; if you need to compare a
    large number of files across a range of directories, or for more
-   thorough verification (e.g. checksums), read [this
+   thorough verification (e.g. checksums), read [this../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md
    article](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md)
    or {% include "partials/support_request.html" %}.
 2. Once you know which files you need to update (i.e. only files whose
