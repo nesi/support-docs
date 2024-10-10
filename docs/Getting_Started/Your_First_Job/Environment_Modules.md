@@ -1,8 +1,12 @@
-## Environment Modules
+---
+created_at: 2024-10-11
+description: How to access software on the NeSI cluster with the use of environment modules.
+tags: []
+---
 
-!!! prerequisite "See Also"
-    *[Software](./Software.md)
-    *
+
+
+## Environment Modules
 
 For most users _Environment modules_ are the most convenient way to provide access to applications on the cluster.
 

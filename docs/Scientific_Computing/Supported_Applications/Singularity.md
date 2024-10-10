@@ -308,7 +308,7 @@ Note that the output directory "outputdata" in the HPC file system is
 automatically suffixed with the Slurm job ID in the above example, but
 it is always available under the same path "/var/outputdata" from within
 the container. This makes it easy to run multiple containers in separate
-Slurm jobs. Please refer to our [SLURM: Reference
+Slurm jobs. Please refer to our [SLURM: Reference../../Getting_Started/Getting_Help/Cheat_Sheets/Slurm-Reference_Sheet.md
 Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md) for
 further details on using Slurm.
 

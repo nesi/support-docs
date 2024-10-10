@@ -98,7 +98,7 @@ This file system is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. All home directories
 are backed up daily, both via the Spectrum Protect backup system, which
 retains the last 10 versions of all files for up to 90 days, and via
-[Scale snapshots](./../Data_Recovery/File_Recovery.md).
+[Scale snapshots](./File_Recovery.md).
 No cleaning policy will be applied to your home directory as long as
 your My NeSI account is active and you are a member of at least one
 active project.
@@ -171,7 +171,7 @@ See [more information about the nearline service](../Nearline_long_term_storage/
 ## Snapshots
 
 If you have accidentally deleted data you can recover it from
-a [snapshot](./../Data_Recovery/File_Recovery.md).
+a [snapshot](./File_Recovery.md).
 Snapshots are taken daily of `home/` and `project` directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 {% include "partials/support_request.html" %}

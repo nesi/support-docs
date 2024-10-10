@@ -14,7 +14,7 @@ you to use them interactively as you would the login node.
 There are two main commands that can be used to make a session, `srun`
 and `salloc`, both of which use most of the same options available to
 `sbatch` (see
-[our Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)).
+[our Slurm Reference Sheet](../../Getting_Started/Getting_Help/Cheat_Sheets/Slurm-Reference_Sheet.md)).
 
 !!! warning
      An interactive session will, once it starts, use the entire requested

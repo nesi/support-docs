@@ -86,7 +86,7 @@ dependencies:
 ## Configuring Slurm
 
 At runtime, Slurm will launch a number of Python processes as requested
-in the [Slurm configuration script](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md).
+in the [Slurm configuration script](../../Getting_Started/Getting_Help/Cheat_Sheets/Slurm-Reference_Sheet.md).
 Each process is given an ID (or "rank") starting at rank 0. Dask-MPI
 then assigns different roles to the different ranks:
 

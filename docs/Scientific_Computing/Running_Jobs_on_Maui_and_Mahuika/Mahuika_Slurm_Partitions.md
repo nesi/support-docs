@@ -23,7 +23,7 @@ they undertake to do so with job arrays.
 
 ## Partitions
 
-A partition can be specified via the appropriate [sbatch option](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md),
+A partition can be specified via the appropriate [sbatch option](../../Getting_Started/Getting_Help/Cheat_Sheets/Slurm-Reference_Sheet.md),
 e.g.:
 
 ``` sl

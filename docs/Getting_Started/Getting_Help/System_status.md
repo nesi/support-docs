@@ -21,7 +21,7 @@ The [support.nesi.org.nz](https://support.nesi.org.nz) homepage shows current in
 
 In order to manage your subscription to notifications, either log into [my.nesi](https://my.nesi.org.nz/account/preference) or use the link included at the bottom of the notification email message "Manage your subscription" or "Unsubscribe" to manage your preferences.
 
-See also our support article [Managing NeSI notification preferences](../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md)
+See also our support article [Managing NeSI notification preferences](../Accounts-Projects_and_Allocations/my-nesi-org-nz/Managing_notification_preferences.md)
 
 ![mceclip0.png](../../assets/images/System_status.png){ width="80%" }
 

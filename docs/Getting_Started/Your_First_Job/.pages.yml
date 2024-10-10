@@ -1,7 +1,6 @@
 ---
 nav:
-  - Moving_files_to_and_from_the_cluster.md
-  - Submitting_your_first_job.md
-  - Parallel_Execution.md
-  - Finding_Job_Efficiency.md
+  - File_Transfer.md
+  - Environment_Modules.md
+  - Slurm_Scheduler.md
   - ...
