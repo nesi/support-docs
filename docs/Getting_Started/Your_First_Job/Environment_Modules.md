@@ -6,7 +6,6 @@ tags: []
 
 
 
-## Environment Modules
 
 For most users _Environment modules_ are the most convenient way to provide access to applications on the cluster.
 
@@ -19,6 +18,8 @@ An _Environment Module_ encapsulates all these variables and other dependencies 
 
 They prepare the environment you need to run an application.
 
+## Basic Commands
+
 For a full list of module commands run `man module`.
 
 | Command | Description |
@@ -29,3 +30,33 @@ For a full list of module commands run `man module`.
 | `module unload <string>`     | Load the module |
 | `module list [ <string> ]`   | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules. |
 | `module purge`               | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.                                          |
+
+## Version Management
+
+Much of the software installed on the NeSI cluster have multiple
+versions available as shown on the
+[supported applications page](../Supported_Applications/index.md)
+or by using the `module avail` or `module spider` commands.
+
+If only the application name is given a default version will be chosen,
+generally the most recent one. However it is good practice to load
+modules using the specific version so you can ensure consistent
+execution of your job even after the default version has been changed.
+
+If you need a specific version of software, feel free to ask support and
+we may install it.
+
+### Example
+
+``` sh
+module load ANSYS
+```
+
+Will load the default version of ANSYS, in this case {{applications.ANSYS.default}}, however
+this may change.
+
+``` sh
+module load ANSYS/18.1
+```
+
+Will always load that version specifically.

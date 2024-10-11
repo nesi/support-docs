@@ -4,14 +4,9 @@ description: Introduction to NeSI scheduler.
 tags: []
 ---
 
-
-
-
-## Slurm
-
 Jobs on Mahuika and Māui are submitted in the form of a *batch script* containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
 
-### Creating a batch script
+## Creating a batch script
 
 Create a new file and open it with `nano myjob.sl`
 
