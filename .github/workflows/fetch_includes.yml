@@ -22,7 +22,8 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           # git config pull.rebase true
           git pull origin ${BRANCH_NAME} || git checkout -b ${BRANCH_NAME}
-          git merge origin/${GITHUB_REF}
+          git fetch
+          git merge ${GITHUB_REF}
           mkdir -pv docs/assets/glossary
       - name: Module List
         run: |
