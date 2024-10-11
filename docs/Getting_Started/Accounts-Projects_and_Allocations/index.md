@@ -16,15 +16,13 @@ tags: []
 - [:material-newspaper-plus:{ .lg .middle } __Connecting Via JupyterHub__](Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
 
     ---
-
     Creating a NeSI account can be done by filling out the form at
     [my.nesi.org.nz](https://my.nesi.org.nz/projects/apply)
 
 - [:material-account-multiple-plus:{ .lg .middle } __Connecting Via SSH__](Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project.md)
 
     ---
-
     Project owners may add project collaborators via
     [my.nesi.org.nz](https://my.nesi.org.nz/projects)
-    
+
 </div>

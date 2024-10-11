@@ -15,14 +15,12 @@ tags: []
 - [:material-newspaper-plus:{ .lg .middle } __Applying for a new NeSI Project__](Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
 
     ---
-
     Applying for a new NeSI project can be done by filling out the form at
     [my.nesi.org.nz](https://my.nesi.org.nz/projects/apply)
 
 - [:material-account-multiple-plus:{ .lg .middle } __Adding Members to a NeSI Project__](Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project.md)
 
     ---
-
     Project owners may add project collaborators via
     [my.nesi.org.nz](https://my.nesi.org.nz/projects), in the project view under _Project Members_.
 

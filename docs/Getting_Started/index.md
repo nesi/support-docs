@@ -21,20 +21,16 @@ _Start here if you are new to NeSI_
 - [:material-newspaper-plus:{ .lg .middle } __Applying for a new NeSI Project__](Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
 
     ---
-
     Applying for a new NeSI project can be done by filling out the form at
     [my.nesi.org.nz](https://my.nesi.org.nz/projects/apply)
 
 - [:material-account-multiple-plus:{ .lg .middle } __Adding Members to a NeSI Project__](Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project.md)
 
     ---
-
     Project owners may add project collaborators via
     [my.nesi.org.nz](https://my.nesi.org.nz/projects), in the project view under _Project Members_.
 
 </div>
-
----
 
 ## Accessing the HPC
 
@@ -52,14 +48,12 @@ _Start here if you are a member of an active project_
 - [:material-newspaper-plus:{ .lg .middle } __Connecting Via JupyterHub__](Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
 
     ---
-
     Creating a NeSI account can be done by filling out the form at
     [my.nesi.org.nz](https://my.nesi.org.nz/projects/apply)
 
 - [:material-account-multiple-plus:{ .lg .middle } __Connecting Via SSH__](Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project.md)
 
     ---
-
     Project owners may add project collaborators via
     [my.nesi.org.nz](https://my.nesi.org.nz/projects)
 
@@ -69,12 +63,12 @@ _Start here if you are a member of an active project_
 
 _Start here if you can log into the cluster_
 
-
 <div class="grid cards" markdown>
 
 - [:material-account-star:{ .lg .middle } __File Transfer__](File_Transfer.md)
 
     ---
+    Words
 
 - [:material-newspaper-plus:{ .lg .middle } __Software__]()
 
@@ -84,4 +78,5 @@ _Start here if you can log into the cluster_
 - [:material-account-multiple-plus:{ .lg .middle } __Slurm Scheduler__](Slurm_Scheduler.md)
 
     ---
+    Words
 </div>
