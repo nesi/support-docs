@@ -3,4 +3,5 @@ nav:
   - File_Transfer.md
   - Environment_Modules.md
   - Slurm_Scheduler.md
+  - Finding_Job_Efficiency.md
   - ...

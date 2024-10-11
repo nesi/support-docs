@@ -9,7 +9,7 @@ zendesk_section_id: 360000189716
 
 Many scientific software applications are written to take advantage of multiple CPUs in some way. But often this must be specifically requested by the user at the time they run the program, rather than happening automatically.
 
-The are three types of parallel execution we will cover are [Multi-Threading](#multi-threading), [Distributed (MPI)](#mpi) and [Job Arrays](#job-arrays).
+The are three types of parallel execution we will cover are [Multi-Threading](#multi-threading), [Distributed (MPI)](#mpi) and [Job Arrays](#job-arrays).
 
 !!! note
     Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2** *logical* CPU's = **1** *physical* core).  

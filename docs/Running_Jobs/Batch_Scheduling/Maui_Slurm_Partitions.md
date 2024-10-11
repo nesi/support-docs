@@ -84,7 +84,7 @@ limit:
 | 240   | 5     | 1200       | 1200 node-hours, 240 nodes |
 | 240   | 1     | 240        | 240 nodes                  |
 
-Most of the time [job../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md
+Most of the time [job../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md
 priority](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md) will
 be the most important influence on how long your jobs have to wait - the
 above limits are just backstops to ensure that Māui's resources are not
