@@ -8,7 +8,7 @@ hide: toc
 
 ## Accounts, Projects and Allocations
 
-_If you are new, start here_
+_Start here if you are new to NeSI_
 
 <div class="grid cards" markdown>
 
@@ -38,7 +38,7 @@ _If you are new, start here_
 
 ## Accessing the HPC
 
-_If you are a member of an active project, start here_
+_Start here if you are a member of an active project_
 
 <div class="grid cards" markdown>
 
@@ -67,29 +67,21 @@ _If you are a member of an active project, start here_
 
 ## Your First Job
 
-_If you can log into the cluster, start here_
+_Start here if you can log into the cluster_
+
 
 <div class="grid cards" markdown>
 
-- [:material-account-star:{ .lg .middle } __Password and Second Factor__](Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-
-    ---
-    You must have set a [_cluster password_](Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md) and [_second factor_](Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md) to connect.
-
-    Both can be set at [my.nesi.org.nz](https://my.nesi.org.nz)
-
-- [:material-newspaper-plus:{ .lg .middle } __Connecting Via JupyterHub__](Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
+- [:material-account-star:{ .lg .middle } __File Transfer__](File_Transfer.md)
 
     ---
 
-    Creating a NeSI account can be done by filling out the form at
-    [my.nesi.org.nz](https://my.nesi.org.nz/projects/apply)
-
-- [:material-account-multiple-plus:{ .lg .middle } __Connecting Via SSH__](Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project.md)
+- [:material-newspaper-plus:{ .lg .middle } __Software__]()
 
     ---
+    [Environment Modules](Environment_Modules.md)
 
-    Project owners may add project collaborators via
-    [my.nesi.org.nz](https://my.nesi.org.nz/projects)
+- [:material-account-multiple-plus:{ .lg .middle } __Slurm Scheduler__](Slurm_Scheduler.md)
 
+    ---
 </div>
