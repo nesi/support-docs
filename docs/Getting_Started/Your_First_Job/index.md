@@ -7,6 +7,7 @@ vote_count: 8
 vote_sum: 8
 zendesk_article_id: 360000684396
 zendesk_section_id: 360000189716
+title: Your First Job
 ---
 
 <div class="grid cards" markdown>

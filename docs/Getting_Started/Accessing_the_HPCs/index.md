@@ -2,6 +2,7 @@
 created_at: 2024-10-11
 description: 
 tags: []
+title: Accessing the HPCs
 ---
 
 <div class="grid cards" markdown>

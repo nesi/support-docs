@@ -1,11 +1,9 @@
 ---
 created_at: '2018-07-31T10:13:22Z'
 tags: []
-title: Finding Software
+title: Software
 vote_count: 1
 vote_sum: 1
-zendesk_article_id: 360000360576
-zendesk_section_id: 360000040056
 ---
 
 ## Environment Modules

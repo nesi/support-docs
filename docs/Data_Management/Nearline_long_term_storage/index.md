@@ -4,7 +4,7 @@ tags:
 - storage
 - nearline
 - tape
-title: Nearline Long-Term Storage Service
+title: Nearline Long-Term Storage
 vote_count: 3
 vote_sum: 3
 zendesk_article_id: 360001169956

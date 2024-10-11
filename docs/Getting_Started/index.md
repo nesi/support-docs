@@ -4,6 +4,7 @@ description:
 title: Getting Started
 tags: []
 hide: toc
+title: Getting Started
 ---
 
 ## Accounts, Projects and Allocations

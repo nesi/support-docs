@@ -5,6 +5,7 @@ vote_count: 7
 vote_sum: 5
 zendesk_article_id: 360000690275
 zendesk_section_id: 360000189716
+title: Parallel Computing
 ---
 
 Many scientific software applications are written to take advantage of multiple CPUs in some way. But often this must be specifically requested by the user at the time they run the program, rather than happening automatically.
