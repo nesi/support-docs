@@ -1241,6 +1241,8 @@ Spack's
 Spack
 Spark's
 Spark
+SpectrA's
+SpectrA
 Spectrum Scale's
 Spectrum Scale
 SquashFS
@@ -1407,6 +1409,8 @@ Xerces
 Xerces-C++'s
 Xerces-C++
 Xming
+Xorg
+Xquartz
 YAML
 YAXT's
 YAXT
@@ -1995,6 +1999,8 @@ pggb's
 pggb
 pgge's
 pgge
+phonopy's
+phonopy
 phylogenetics
 phylogenetic
 phyx's
@@ -2012,6 +2018,7 @@ pod5
 pplacer's
 pplacer
 precompiled
+prepending
 preseq's
 preseq
 procurements
@@ -2071,6 +2078,7 @@ rclone's
 rclone
 re2c's
 re2c
+recurse
 refs's
 refs
 repos
@@ -2086,6 +2094,7 @@ rstudio's
 rstudio
 rstudio-server's
 rstudio-server
+rsync
 runtime
 rust-fmlrc's
 rust-fmlrc
