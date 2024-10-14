@@ -12,7 +12,7 @@ zendesk_section_id: 360000196195
 ---
 
 !!! prerequisite
-    - Have a [NeSI Account profile](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
+    - Have a [NeSI Account profile](./Creating_a_NeSI_Account.md).
     - NIWA researchers only: read and follow the
         [NIWA internal documentation for gaining access to the HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services)
         (this link is only valid from within the NIWA network or VPN).
