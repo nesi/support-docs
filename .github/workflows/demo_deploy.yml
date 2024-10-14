@@ -13,7 +13,7 @@ jobs:
   demo-deploy:
     continue-on-error: true
     name: Trigger test deployments
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Trigger Workflow in Another Repository
         run: |
