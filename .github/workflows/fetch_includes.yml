@@ -11,7 +11,7 @@ env:
   BRANCH_NAME: "assets-update"
 jobs:
   fetch-includes:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: "Set Up Env"
         uses: actions/checkout@v4
