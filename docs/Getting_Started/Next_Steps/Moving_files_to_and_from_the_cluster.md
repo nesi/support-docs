@@ -12,8 +12,6 @@ tags:
 - moving
 vote_count: 11
 vote_sum: 3
-zendesk_article_id: 360000578455
-zendesk_section_id: 360000189716
 ---
 
 !!! prerequisite
@@ -23,9 +21,8 @@ Find more information on [the NeSI Filesystem](../../Storage/File_Systems_and_Qu
 
 ## Using the Jupyter interface
 
-Many users have found the [Jupyter interface](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)
-useful for running code on NeSI. The Jupyter interface only
-requires a web browser; the instructions are same whether your are
+The [Jupyter interface](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)
+useful for running code on NeSI requiring only a web browser; the instructions are same whether your are
 connecting from a Windows, Mac or a Linux computer.
 
 To upload a file, click on the
@@ -44,7 +41,7 @@ The Download button is at the bottom.
 ## Standard Terminal
 
 !!! prerequisite
-  Have SSH setup as described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Have SSH setup as described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 In a local terminal the following commands can be used to:
 
@@ -78,7 +75,7 @@ your password.
 ## File Managers
 
 !!! prerequisite
-  Have SSH setup as described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Have SSH setup as described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 Most file managers can be used to connect to a remote directory simply
 by typing in the address bar provided your have an active connection to
@@ -94,13 +91,12 @@ This **does not** work for Finder (Mac default)
 ![files](../../assets/images/Moving_files_to_and_from_the_cluster_1.png)
 
 If your default file manager does not support mounting over SFTP, see
-our documentation
-on [SSHFS](../../General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md).
+[Can I use SSHFS to mount the cluster filesystem on my local machine?](../../General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md).
 
 ## MobaXterm
 
 !!! prerequisite
-  [MobaXterm Setup Windows](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
+    [MobaXterm Setup Windows](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
 
 Clicking the "*Scp*" tab (located on the left-hand side of the  
 window) opens up a graphical user interface that can be used for basic
@@ -111,13 +107,13 @@ the up and down arrows on the toolbar to upload and download files.
 
 You may also transfer files as described under 'Standard Terminal'
 (provided
-[WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
+[Windows_Subsystem_for_Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
 is enabled).
 
 ## WinSCP
 
 !!! prerequisite
-  [WinSCP-PuTTY Setup Windows](../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
+    [WinSCP-PuTTY Setup Windows](../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
 
 As WinSCP uses multiple tunnels for file transfer you will be required
 to authenticate again on your first file operation of the session. The
@@ -128,8 +124,8 @@ authentication.
 
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.
-You can find more details on its use on our
-[Globus support page](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md).
+You can find more details in
+[Data_Transfer_using_Globus_V5](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md).
 
 ## Rclone
 
