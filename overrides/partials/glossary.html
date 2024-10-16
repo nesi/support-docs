@@ -1440,6 +1440,10 @@ Fast genome and metagenome distance estimation using MinHash
 
 Implements a fast and approximate algorithm for computing local alignment boundaries between long DNA sequences
 
+## Mashtree:
+
+Create a tree using Mash distances.
+
 ## Maven:
 
 Binary maven install, Apache Maven is a software project management and comprehension tool. Based on

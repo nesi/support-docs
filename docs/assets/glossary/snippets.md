@@ -1093,6 +1093,8 @@ whatis([==[Homepage: http://magma.maths.usyd.edu.au/magma/
 *[Mash]: Fast genome and metagenome distance estimation using MinHash
 *[MashMap's]: Implements a fast and approximate algorithm for computing local alignment boundaries between long DNA sequences
 *[MashMap]: Implements a fast and approximate algorithm for computing local alignment boundaries between long DNA sequences
+*[Mashtree's]: Create a tree using Mash distances.
+*[Mashtree]: Create a tree using Mash distances.
 *[Maven's]: Binary maven install, Apache Maven is a software project management and comprehension tool. Based on
 the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a
 central piece of information.
