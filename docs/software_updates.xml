@@ -1,0 +1,3460 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  
+  
+  
+  
+  <channel>
+    
+    
+    
+    
+    <title>Software Updates</title>
+    
+    
+    
+    
+    <link>docs.nesi.org.nz</link>
+    
+    
+    
+    
+    <description>Automated Software Updates Feed</description>
+    
+    
+    
+    
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    
+    
+    
+    
+    <generator>python-feedgen</generator>
+    
+    
+    
+    
+    <language>en</language>
+    
+    
+    
+    
+    <lastBuildDate>Wed, 16 Oct 2024 02:51:48 +0000</lastBuildDate>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of QuickTree changed from 2.5-GCC-11.3.0 to 2.5-GCC-12.3.0.</title>
+      
+      
+      
+      
+      <category domain="software">QuickTree</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of QuickTree changed from 2.5-GCC-11.3.0 to 2.5-GCC-12.3.0.</title>
+      
+      
+      
+      
+      <category domain="software">QuickTree</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>2.5-GCC-12.3.0 added.</title>
+      
+      
+      
+      
+      <category domain="software">QuickTree</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Mashtree has been added.</title>
+      
+      
+      
+      
+      <category domain="software">Mashtree</category>
+      
+      
+      
+      
+      <category domain="type">softwareAdded</category>
+      
+      
+      
+      
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of pauvre changed from 0.2.3-gimkl-2020a-Python-3.8.2 to 0.2.3-gimkl-2020a-Python-3.8.2.</title>
+      
+      
+      
+      
+      <category domain="software">pauvre</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>0.2.3-foss-2023a-Python-3.11.6 added.</title>
+      
+      
+      
+      
+      <category domain="software">pauvre</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of BamTools changed from 2.5.1-gimkl-2018b to 2.5.1-gimkl-2018b.</title>
+      
+      
+      
+      
+      <category domain="software">BamTools</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>2.5.2-GCCcore-12.3.0 added.</title>
+      
+      
+      
+      
+      <category domain="software">BamTools</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of QUAST changed from 5.0.2-gimkl-2018b to 5.2.0-foss-2023a.</title>
+      
+      
+      
+      
+      <category domain="software">QUAST</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of QUAST changed from 5.0.2-gimkl-2018b to 5.2.0-foss-2023a.</title>
+      
+      
+      
+      
+      <category domain="software">QUAST</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>5.2.0-foss-2023a added.</title>
+      
+      
+      
+      
+      <category domain="software">QUAST</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of BEDTools changed from 2.28.0-gimkl-2018b to 2.31.1-GCC-12.3.0.</title>
+      
+      
+      
+      
+      <category domain="software">BEDTools</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of BEDTools changed from 2.28.0-gimkl-2018b to 2.31.1-GCC-12.3.0.</title>
+      
+      
+      
+      
+      <category domain="software">BEDTools</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>2.31.1-GCC-12.3.0 added.</title>
+      
+      
+      
+      
+      <category domain="software">BEDTools</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of MultiQC changed from 1.13-gimkl-2022a-Python-3.10.5 to 1.13-gimkl-2022a-Python-3.10.5.</title>
+      
+      
+      
+      
+      <category domain="software">MultiQC</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>1.24.1-foss-2023a-Python-3.11.6 added.</title>
+      
+      
+      
+      
+      <category domain="software">MultiQC</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of NanoPlot changed from 1.41.0-gimkl-2022a-Python-3.10.5 to 1.41.0-gimkl-2022a-Python-3.10.5.</title>
+      
+      
+      
+      
+      <category domain="software">NanoPlot</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>1.43.0-foss-2023a-Python-3.11.6 added.</title>
+      
+      
+      
+      
+      <category domain="software">NanoPlot</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Mon, 16 Sep 2024 00:00:00 +1200</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of TSEBRA changed from 1.1.0-gimkl-2022a-Python-3.10.5 to 1.1.0-gimkl-2022a-Python-3.10.5.</title>
+      
+      
+      
+      
+      <category domain="software">TSEBRA</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Tue, 15 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>1.1.2.5-gimkl-2022a-Python-3.11.3 added.</title>
+      
+      
+      
+      
+      <category domain="software">TSEBRA</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Tue, 15 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of TSEBRA changed from 1.1.0-gimkl-2022a-Python-3.10.5 to 1.1.0-gimkl-2022a-Python-3.10.5.</title>
+      
+      
+      
+      
+      <category domain="software">TSEBRA</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>1.1.2.5-gimkl-2022a-Python-3.11.3 added.</title>
+      
+      
+      
+      
+      <category domain="software">TSEBRA</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of binutils changed from 2.27-GCCcore-6.3.0 to 2.26-GCCcore-5.4.0.</title>
+      
+      
+      
+      
+      <category domain="software">binutils</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>make has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">make</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Rose has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Rose</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Loki has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Loki</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>FPM has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">FPM</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>ARCSI has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">ARCSI</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Anaconda3-Geo2 has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Anaconda3-Geo2</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Cannoli has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Cannoli</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Augustus has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Augustus</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>OpenCMISS has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">OpenCMISS</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Transrate has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Transrate</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Amber has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Amber</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>blasr_libcpp has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">blasr_libcpp</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>branches has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">branches</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>PBJelly has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">PBJelly</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>SOAPdenovo2 has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">SOAPdenovo2</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>TensorBoard has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">TensorBoard</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>XGKS has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">XGKS</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>pyseer has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">pyseer</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>MPICH has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">MPICH</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>PGI has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">PGI</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>JupyterHub has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">JupyterHub</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>nettle has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">nettle</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>IDBA has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">IDBA</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>intltool has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">intltool</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Anaconda3-Geo has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Anaconda3-Geo</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Python-GPU has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Python-GPU</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>XALT has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">XALT</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>grib_api has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">grib_api</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Elmer has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Elmer</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>libmatheval has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">libmatheval</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>TopHat has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">TopHat</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Scalasca has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Scalasca</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Meraculous has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Meraculous</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>SeqMonk has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">SeqMonk</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>pkg-config has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">pkg-config</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Anaconda3_Geo2 has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Anaconda3_Geo2</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Libav has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Libav</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Siesta-Optical has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Siesta-Optical</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>CubeGUI has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">CubeGUI</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>openseespy has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">openseespy</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Score-P has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Score-P</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>rstudio has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">rstudio</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>test has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">test</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>MotionCorr has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">MotionCorr</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Paraver has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Paraver</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Guile has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Guile</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Yade has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Yade</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>MOB-suite has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">MOB-suite</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>xbitmaps has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">xbitmaps</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>MetaVelvet has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">MetaVelvet</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>EnergyPlus has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">EnergyPlus</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>rstudio-server has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">rstudio-server</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Rstudio has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Rstudio</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Gerris has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Gerris</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>SNVoter has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">SNVoter</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>EMAN has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">EMAN</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>parallel has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">parallel</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>GLnexus has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">GLnexus</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>cylc has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">cylc</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>BioConductor has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">BioConductor</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>IVE has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">IVE</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>ADAM has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">ADAM</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>proovread has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">proovread</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>FoX has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">FoX</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>DBG2OLC has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">DBG2OLC</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>NCARG has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">NCARG</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>datamash has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">datamash</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Trilinos has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Trilinos</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Zonation has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Zonation</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Berkeley_UPC has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Berkeley_UPC</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>spglib has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">spglib</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>DMTCP has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">DMTCP</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>PFFT has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">PFFT</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>EMIRGE has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">EMIRGE</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Octave has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Octave</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>ErlangOTP has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">ErlangOTP</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>libconfig has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">libconfig</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>protobuf-python has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">protobuf-python</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>minieigen has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">minieigen</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>BLASR has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">BLASR</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Octopus has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">Octopus</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>BerkeleyGW has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">BerkeleyGW</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>networkx has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">networkx</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>DendroPy has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">DendroPy</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>motif has been removed.</title>
+      
+      
+      
+      
+      <category domain="software">motif</category>
+      
+      
+      
+      
+      <category domain="type">softwareRemoved</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>skani has been added.</title>
+      
+      
+      
+      
+      <category domain="software">skani</category>
+      
+      
+      
+      
+      <category domain="type">softwareAdded</category>
+      
+      
+      
+      
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of Flye changed from 2.9.3-gimkl-2022a-Python-3.11.3 to 2.9.5-foss-2023a-Python-3.11.6.</title>
+      
+      
+      
+      
+      <category domain="software">Flye</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>Default version of Flye changed from 2.9.3-gimkl-2022a-Python-3.11.3 to 2.9.5-foss-2023a-Python-3.11.6.</title>
+      
+      
+      
+      
+      <category domain="software">Flye</category>
+      
+      
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      
+      
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+    
+    
+    <item>
+      
+      
+      
+      
+      <title>2.9.5-foss-2023a-Python-3.11.6 added.</title>
+      
+      
+      
+      
+      <category domain="software">Flye</category>
+      
+      
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      
+      
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +1300</pubDate>
+      
+      
+    
+    
+    </item>
+    
+    
+  
+    
+    <item>
+      
+      
+      <title>2017 added.</title>
+      
+      
+      <category domain="type">versionAdded</category>
+      
+      
+      <category domain="software">ABAQUS</category>
+      
+      
+      <pubDate>20241016</pubDate>
+      
+    
+    </item>
+    
+    
+    <item>
+      
+      
+      <title>Default version of ABAQUS changed from 2020 to 2020.</title>
+      
+      
+      <category domain="type">defaultChanged</category>
+      
+      
+      <category domain="software">ABAQUS</category>
+      
+      
+      <pubDate>20241016</pubDate>
+      
+    
+    </item>
+    
+  
+    <item>
+      <title>2017 added.</title>
+      <category domain="type">versionAdded</category>
+      <category domain="software">ABAQUS</category>
+      <pubDate>20241016</pubDate>
+    </item>
+    <item>
+      <title>Default version of ABAQUS changed from 2020 to 2020.</title>
+      <category domain="type">defaultChanged</category>
+      <category domain="software">ABAQUS</category>
+      <pubDate>20241016</pubDate>
+    </item>
+  </channel>
+  
+  
+
+
+</rss>
