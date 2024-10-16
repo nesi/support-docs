@@ -5,6 +5,7 @@ on:
     - cron: '00 12 * * *' # Should run 1 hour after module list update.
 env:
   MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
+  MODULES_UPDATE_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
   GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
   DICTIONARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
   SNIPPETS_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
@@ -28,6 +29,7 @@ jobs:
       - name: Module List
         run: |
           wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
+          wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
           python3 .github/workflows/link_apps_pages.py
           git add --all
           git commit -m "Updated Module List" || (echo "No Changes";exit 0)
