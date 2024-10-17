@@ -5,9 +5,9 @@ window.onload = function() {
 async function update() {
     const feedList = document.getElementById("feed");
     const rss_feeds = [
-        `${window.location.origin}/software_updates.xml`,
-        `${window.location.origin}/page_update.xml`,
-        `${window.location.origin}/page_creation.xml`,
+        `https://docs.nesi.org.nz/software_updates.xml`,
+        `https://docs.nesi.org.nz/page_update.xml`,
+        `https://docs.nesi.org.nz/page_creation.xml`,
         "https://status.nesi.org.nz/history.rss"
     ];
     
