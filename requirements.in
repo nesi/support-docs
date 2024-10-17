@@ -5,6 +5,7 @@ mkdocs-bootstrap4
 mkdocs-material
 mkdocs-spellcheck
 mkdocs-simple-hooks
+mkdocs-rss-plugin
 mkdocs-macros-plugin
 mkdocs-open-in-new-tab
 mkdocs-git-authors-plugin

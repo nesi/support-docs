@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 20px;
+}
+
+#feed {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feed-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.feed-item:last-child {
+    border-bottom: none;
+}
+
+.feed-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feed-item .pubDate {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.feed-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+.feed-item .channel {
+    font-size: 0.85em;
+    color: #777;
+    font-style: italic;
+}
+
+a {
+    color: #2a7ae2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

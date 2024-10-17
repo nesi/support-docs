@@ -64,6 +64,11 @@ extra:
 plugins:
   - search
   - open-in-new-tab
+  - rss:
+      json_feed_enabled: false
+      feeds_filenames:
+        rss_created: page_creation.xml
+        rss_updated: page_update.xml
   - redirects:
       map_file: docs/redirect_map.yml
   - awesome-pages:
