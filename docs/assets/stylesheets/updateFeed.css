@@ -12,7 +12,14 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
+aside.md-source-file {
+    display: none;
+}
+.md-feed-date {
+    color: var(--md-default-fg-color--light);
+    font-size: .68rem;
+    gap: .3rem;
+}
 /* .feed-item:last-child {
     border-bottom: none;
 } */
