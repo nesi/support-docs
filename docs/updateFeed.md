@@ -1,6 +1,7 @@
 ---
 template: updateFeed.html
-hide:
-    - toc
-    - date
+title: Update Feed
+description: Updates to the cluster, software and documentation.
+hide: toc
+
 ---

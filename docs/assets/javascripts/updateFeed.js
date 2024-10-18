@@ -66,8 +66,7 @@ async function update() {
                     </span>
                     </span>
                     </div>
-                </div>
-                <hr>`;
+                </div>`;
         }catch (error) {
                     console.error("Error fetching or parsing feeds: ", error);
     }

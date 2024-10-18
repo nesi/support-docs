@@ -38,6 +38,8 @@ EXPECTED_PARAMETERS = {
     "tags": "",         # Add info here when implimented.
     "vote_count": "",
     "vote_sum": "",
+    "search": "",
+    "hide": ["toc", "nav", "tags"],
     "zendesk_article_id": "",
     "zendesk_section_id": "",
 }
