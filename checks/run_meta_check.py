@@ -27,7 +27,7 @@ DOC_ROOT = "docs"
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
     "title": "",
-    "template": ["main.html", "supported_apps.html"],
+    "template": ["main.html", "supported_apps.html", "updateFeed.html"],
     "description": "",
     "icon": "",
     "status": ["new", "deprecated"],
@@ -38,6 +38,8 @@ EXPECTED_PARAMETERS = {
     "tags": "",         # Add info here when implimented.
     "vote_count": "",
     "vote_sum": "",
+    "search": "",
+    "hide": ["toc", "nav", "tags"],
     "zendesk_article_id": "",
     "zendesk_section_id": "",
 }
