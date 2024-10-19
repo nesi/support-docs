@@ -32,6 +32,7 @@ theme:
     - navigation.path             # Breadcrumbs. Insiders only
     - navigation.sections
     - navigation.tabs.sticky
+    - navigation.tabs.sticky
     - navigation.sections
     - content.code.copy
     - content.action.edit
