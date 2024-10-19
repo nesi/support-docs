@@ -6,7 +6,7 @@
     background-color: #fff;
 }
 
-.feed-item {
+.md-feed-item {
     margin: 10px;
     padding: 15px;
     border-radius: 8px;
@@ -21,18 +21,17 @@ aside.md-source-file {
     font-size: .68rem;
     gap: .3rem;
     display: inline-flex;
+    align-items: center;
 }
 /* .feed-item:last-child {
     border-bottom: none;
 } */
-
-.feed-item h3 {
-    font-size: 1.5em;
-    margin: 10px;
+ /* Make content inside cards more readable */
+.md-feed-description h2,h3,a,p {
+    font-size: 0.8rem;
 }
 
-.feed-item .pubDate {
-    font-size: 0.9em;
-    color: #888;
-    margin-bottom: 10px;
+.md-feed-item h3 {
+    font-size: 1.5em;
+    margin: 10px;
 }
