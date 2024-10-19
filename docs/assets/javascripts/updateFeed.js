@@ -57,7 +57,7 @@ async function update() {
         try{  
             htmlContent += `
                 <div class="feed-item">
-                    <h3>${f.title}</h3>
+                    <h3 href="${f.link}">${f.title}</h3>
                     <div><p>${f.description}</p></div>
                     <div>
                     <span class="md-icon md-feed-date" title="Date">
