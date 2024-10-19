@@ -1,11 +1,11 @@
 nav:
-  Researcher Support
+  - Section: Researcher Support
     - Getting_Started
     - General
     - Scientific_Computing
     - Storage
     - NeSI_Service_Subscriptions
-  Researcher Developer Cloud
+  - Section: Researcher Developer Cloud
     - research_developer_cloud/index.md
     - research_developer_cloud/user-guides/index.md
     - research_developer_cloud/security/index.md
