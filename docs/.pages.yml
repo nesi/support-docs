@@ -7,8 +7,8 @@ nav:
     - Storage
     - NeSI_Service_Subscriptions
   - Researcher Developer Cloud:
-    - research_developer_cloud/index.md
-    - research_developer_cloud/user-guides/index.md
-    - research_developer_cloud/security/index.md
-    - research_developer_cloud/release-notes/summary.md
+    - research_developer_cloud
+    - research_developer_cloud/user-guides
+    - research_developer_cloud/security
+    - research_developer_cloud/release-notes
 
