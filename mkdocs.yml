@@ -33,7 +33,6 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - content.code.copy
     - content.action.edit
     - header.site_name_homepage
