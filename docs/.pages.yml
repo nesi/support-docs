@@ -1,11 +1,11 @@
 nav:
-  - Home: index.md
-  - Researcher Support:
+  - Researcher Support: 
+    - index.md
     - Getting_Started
     - General
     - Scientific_Computing
     - Storage
     - NeSI_Service_Subscriptions
-  - Researcher Developer Cloud:
+  - Research Developer Cloud:
     - research_developer_cloud
 
