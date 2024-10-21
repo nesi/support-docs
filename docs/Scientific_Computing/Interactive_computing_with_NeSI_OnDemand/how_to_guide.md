@@ -7,7 +7,7 @@
 
 ## How to log in
 
-Go to NeSI OnDemand (Early test instance URL: https://163-7-144-39.sslip.io/). It will automatically take you to the Tuakiri login screen.
+Go to [NeSI OnDemand](https://ondemand.nesi.org.nz/). It will automatically take you to the Tuakiri login screen.
 
 ![image-20240903-110950](https://github.com/user-attachments/assets/2eccbaad-cd70-489b-9938-663f3fd30082)
 
