@@ -5,7 +5,7 @@ position: 1
 status: new
 tags:
 - announcement
-title: 'Visual Studio Code Remote: Latest Version Not Supported (UPDATE)'
+title: 'Visual Studio Code Remote: Latest Version Not Supported'
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 8974326930319
