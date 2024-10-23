@@ -9,7 +9,7 @@ zendesk_section_id: 360000040056
 ---
 
 Many codes can be accelerated significantly by offloading computations
-to a GPU. Some NeSI [Mahuika nodes have GPUs attached to../../Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
+to a GPU. Some NeSI [Mahuika nodes have GPUs attached to../../Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
 them](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
 If you want your code to run faster, if you're developing your own code
 or if you have access to the source code and you feel comfortable
