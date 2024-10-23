@@ -55,4 +55,6 @@
         "editor.suggest.preview": true,
         "editor.suggest.showUsers": false,
     },
+    "githubIssues.userCompletions.enabled": false,
+    "githubIssues.issueCompletions.enabled": false,
 }

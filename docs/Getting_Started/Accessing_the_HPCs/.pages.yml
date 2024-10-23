@@ -1,8 +1,5 @@
 ---
 nav:
-  - Setting_Up_and_Resetting_Your_Password.md
-  - Setting_Up_Two_Factor_Authentication.md
   - Connecting_via_SSH
   - Connecting_via_Web.md
-  - Port_Forwarding.md
   - ...

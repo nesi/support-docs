@@ -40,23 +40,6 @@ place of `module`. With Lmod you can:
 Further information can be found in the online [User Guide for
 Lmod](https://lmod.readthedocs.io/en/latest/010_user.html).
 
-## Modules on Māui
-
-On Māui and Māui\_Ancil we use top level modules to provide the
-different software stacks. Per default the "NeSI" module is loaded,
-which provides access to the different NeSI software stacks.
-
-On Māui XC nodes an improved version of the modules framework is
-provided. Therewith you can also search for modules using a sub-string
-using the "-S" option, e.g.
-
-as a result you will also find modules having the substring "netcdf" in
-name, e.g. cray-netcdf.
-
-NOTE: The substring search will be soon implemented by default, then you
-do not need to specify the -S anymore. Furthermore, this improvement
-should be also ported to the Māui\_Ancil part.
-
 !!! prerequisite "What Next"
     You can create your own modules. This is described
     [here](../../Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md).
