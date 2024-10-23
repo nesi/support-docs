@@ -1,6 +1,7 @@
 nav:
     - Getting_Started
     - Software
-    - Running_Jobs
     - Data_Management
+    - Batch_Computing
+    - Interactive_Computing
     - Contracts_and_Policy
