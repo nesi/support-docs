@@ -1,5 +1,5 @@
 ---
-title: Supported Applications
+title: Available Software
 template: supported_apps.html
 ---
 
