@@ -18,7 +18,7 @@ Intel's implementation of it is called
 
 CPUs capable of Hyperthreading consists of two logical processors per
 physical core. The logical processors can operate on data/instruction
-*threads* simultaneously, meaning the physical core can perform two
+*threads* simultaneously, meaning the physical core can perform two
 operations concurrently. In other words, the difference between logical
 and physical cores is that logical cores are not full stand-alone CPUs,
 and share some hardware with nearby logical cores. Physical cores are
@@ -30,7 +30,7 @@ default, Slurm will allocate two threads to each physical core.
 ## Hyperthreading with Slurm
 
 When Slurm request a CPU, it is **requesting logical cores,** which, as
-mentioned above, there are two of per physical core. If you use
+mentioned above, there are two of per physical core. If you use
 `--ntasks=n` to request CPUs, Slurm will start `n` MPI tasks which are
 each assigned to one physical core. Since Slurm "sees" logical cores,
 once your job starts you will have twice the number of CPUs as `ntasks`.
@@ -189,7 +189,7 @@ considered a bonus.
     halve their memory requests as those are based on memory per logical
     CPU, not per the number of threads or tasks.  For non-MPI jobs, or
     for MPI jobs that request the same number of tasks on every node, we
-    recommend to specify `--mem` (i.e. memory per node) instead. See
+    recommend to specify `--mem` (i.e. memory per node) instead. See
     [How to request memory../../../General/FAQs/How_do_I_request_memory.md../General/FAQs/How_do_I_request_memory.md../../../General/FAQs/How_do_I_request_memory.md
     (RAM)](../../General/FAQs/How_do_I_request_memory.md) for more
     information.

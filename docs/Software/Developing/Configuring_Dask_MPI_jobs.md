@@ -263,7 +263,7 @@ Conda environment inside the container.
 
 !!! note Tips
      You can build this container on NeSI, using the Mahuika Extension
-     nodes, following the instructions from the [dedicated support../HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node.md
+     nodes, following the instructions from the [dedicated support../HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node.md../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node.md../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node.md
      page](../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node.md).
 
 ### Slurm configuration
