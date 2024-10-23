@@ -10,7 +10,7 @@ zendesk_section_id: 360000040056
 
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
-article on [Parallel../../Getting_Started/Submitting_A_Job/Parallel_Execution.md../../../Getting_Started/Next_Steps/Parallel_Execution.md../../Getting_Started/Next_Steps/Parallel_Execution.md../../Getting_Started/Next_Steps/Parallel_Execution.md
+article on [Parallel../../Getting_Started/Submitting_A_Job/Parallel_Execution.md../../../Getting_Started/Next_Steps/Parallel_Execution.md../../Getting_Started/Next_Steps/Parallel_Execution.md../../Getting_Started/Next_Steps/Parallel_Execution.md../../Getting_Started/Next_Steps/Parallel_Execution.md
 Execution](../../Getting_Started/Next_Steps/Parallel_Execution.md) for
 an introduction). Care needs to be taken when running multiple threads
 on the HPC to achieve best performance - getting it wrong can easily
@@ -37,7 +37,7 @@ performance, as a socket connects the processor to its RAM and other
 processors. A processor in each socket consists of multiple physical
 cores, and each physical core is split into two logical cores using a
 technology called
-[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)).
+[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md).
 
 A processor also includes caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory
