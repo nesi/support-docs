@@ -1,11 +1,6 @@
 ---
 created_at: '2019-07-22T03:46:24Z'
-tags: []
-title: OpenMP settings
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001070496
-zendesk_section_id: 360000040056
+tags: [OpenMP, shared memory]
 ---
 
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application
@@ -15,7 +10,7 @@ threads that run on separate cores, executing their shares of the total
 workload concurrently. OpenMP is suited for the Mahuika and Māui HPCs as
 each platform has 36 and 40 physical cores per node respectively.  Each
 physical core can handle up to two threads in parallel using
-[Hyperthreading](../../Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md).
+[Hyperthreading](../../../Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md).
 Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui
 
 The environment variable that controls the number of threads is
@@ -36,7 +31,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 ```
 
 in your Slurm script - although this can sometimes be more complicated,
-e.g., with [TensorFlow on../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md../../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md
+e.g., with [TensorFlow on../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md../../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md../../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md
 CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md).
 
 On Mahuika, you will be charged for the number of physical cores that
@@ -48,7 +43,7 @@ In order to achieve good and consistent parallel scaling, additional
 settings may be required. This is particularly true on Mahuika whose
 nodes are shared between different Slurm jobs. Following are some
 settings that can help improve scaling and/or make your timings more
-consistent, additional information can be found in our article [Thread../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md../../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md
+consistent, additional information can be found in our article [Thread../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md../../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md../../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md
 Placement and Thread
 Affinity](../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md).
 
@@ -94,7 +89,7 @@ The fourth column places 2 threads per physical cores (i.e.
 `OMP_NUM_THREADS=2` times the number of physical cores) and this often
 gives the best performance.
 
-##  Bottom line
+## Bottom line
 
 Be explicit by using `--hint` and setting `OMP_PROC_BIND` and `OMP_PLACES`.
 In many cases we expect one of the following to work best:

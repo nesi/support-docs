@@ -11,7 +11,7 @@ zendesk_section_id: 360000034335
 
 
 NeSI has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale.
-Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm), interactively (using [Jupyter on../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md../../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md../Interactive_computing_using_Jupyter/index.md../Interactive_computing_with_Jupyter/Jupyter_on_NeSI.md../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
+Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm), interactively (using [Jupyter on../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md../../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md../Interactive_computing_using_Jupyter/index.md../Interactive_computing_with_Jupyter/Jupyter_on_NeSI.md../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
 NeSI](../Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)),
 or Virtual Machines (VMs).
 

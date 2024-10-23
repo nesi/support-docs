@@ -11,7 +11,7 @@ zendesk_section_id: 360000030876
 The fair-share system is designed to encourage users to balance their
 use of resources over their allocation period. Fair-share is the largest
 factor in determining priority, but not the only one. For more details
-see [Job Prioritisation](../Batch_Scheduling/Job_prioritisation.md).
+see [Job Prioritisation](../../Batch_Computing/Job_prioritisation.md).
 
 ## Fair Share Score
 

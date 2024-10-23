@@ -190,7 +190,7 @@ considered a bonus.
     CPU, not per the number of threads or tasks.  For non-MPI jobs, or
     for MPI jobs that request the same number of tasks on every node, we
     recommend to specify `--mem` (i.e. memory per node) instead. See
-    [How to request memory../../../General/FAQs/How_do_I_request_memory.md../General/FAQs/How_do_I_request_memory.md../../../General/FAQs/How_do_I_request_memory.md
+    [How to request memory../../../General/FAQs/How_do_I_request_memory.md../General/FAQs/How_do_I_request_memory.md../../../General/FAQs/How_do_I_request_memory.md../../General/FAQs/How_do_I_request_memory.md../../General/FAQs/How_do_I_request_memory.md
     (RAM)](../../General/FAQs/How_do_I_request_memory.md) for more
     information.
 - Non-MPI jobs which specify `--cpus-per-task` and use **srun** should
