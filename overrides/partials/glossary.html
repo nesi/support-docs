@@ -783,6 +783,10 @@ FastTree infers approximately-maximum-likelihood phylogenetic trees from alignme
 
 A Perl version of the rename utility, with support for regular expressions.
 
+## FileSender:
+
+Send large files quickly and securely using REANNZ FileSender.
+
 ## Filtlong:
 
 Tool for filtering long reads by quality.
@@ -4029,6 +4033,10 @@ A general-purpose genome simulator
 ## sismonr:
 
 Simulation of In Silico Multi-Omic Networks R package.
+
+## skani:
+
+accurate, fast nucleotide identity calculation for MAGs, genomes, and databases
 
 ## slow5tools:
 
