@@ -572,6 +572,8 @@ fonts in their OpenGL (www.opengl.org) applications.
  time and memory. 
 *[File-Rename's]: A Perl version of the rename utility, with support for regular expressions.
 *[File-Rename]: A Perl version of the rename utility, with support for regular expressions.
+*[FileSender's]: Send large files quickly and securely using REANNZ FileSender.
+*[FileSender]: Send large files quickly and securely using REANNZ FileSender.
 *[Filtlong's]: Tool for filtering long reads by quality.
 *[Filtlong]: Tool for filtering long reads by quality.
 *[FimTyper's]: Identifies the FimH type in total or partial sequenced isolates of E. coli..
@@ -3061,6 +3063,8 @@ reads to a separate FASTQ file. When marking duplicates, samblaster will require
 *[simuG]: A general-purpose genome simulator
 *[sismonr's]: Simulation of In Silico Multi-Omic Networks R package.
 *[sismonr]: Simulation of In Silico Multi-Omic Networks R package.
+*[skani's]: accurate, fast nucleotide identity calculation for MAGs, genomes, and databases
+*[skani]: accurate, fast nucleotide identity calculation for MAGs, genomes, and databases
 *[slow5tools's]: Toolkit for converting (FAST5 <-> SLOW5), compressing, viewing, indexing
  and manipulating data in SLOW5 format.
 *[slow5tools]: Toolkit for converting (FAST5 <-> SLOW5), compressing, viewing, indexing
