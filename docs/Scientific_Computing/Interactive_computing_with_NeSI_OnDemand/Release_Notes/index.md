@@ -20,7 +20,7 @@ It required work on K8s autoscaling and FreeIPA updates for auto-enrollment. Fur
 
 # 0.3.0 - initial release for Jupyter-only users
 
-Features:
+## Features
 
 - JupyterLab and RStudio are available for researchers
 
@@ -30,7 +30,7 @@ Features:
 
 - Minor UX improvements
 
-Known issues:
+## Known issues
 
 - Users with dot in the name not yet supported
 
