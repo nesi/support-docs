@@ -1,16 +1,11 @@
-# NeSI OnDemand Release Notes
+# ondemand Release Notes
 
-
-
-
-    NeSI OnDemand is in development and accessible to early access users only.
+!!! Note
+    ondemand is in development and accessible to early access users only.
     If you are interested in helping us test it please contact us at support@nesi.org.nz. 
 
 
-
-
-
-# 0.3.1 - high mem option available in OnDemand
+# 0.3.1 - High memory option available in ondemand
 
 This release enables high memory node to be selected by the users. Currently we support up to 32GB instance on the app launch.
 
