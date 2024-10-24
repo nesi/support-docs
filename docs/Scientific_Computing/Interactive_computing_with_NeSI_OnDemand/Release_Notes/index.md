@@ -1,16 +1,11 @@
-# NeSI OnDemand Release Notes
+!!! Note
+     ondemand is in development and accessible to early access users only.
+     If you are interested in helping us test it please contact us at support@nesi.org.nz. 
 
 
+# ondemand Release Notes
 
-
-    NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please contact us at support@nesi.org.nz. 
-
-
-
-
-
-# 0.3.1 - high mem option available in OnDemand
+# 0.3.1 - High memory option available in ondemand
 
 This release enables high memory node to be selected by the users. Currently we support up to 32GB instance on the app launch.
 
@@ -20,7 +15,7 @@ It required work on K8s autoscaling and FreeIPA updates for auto-enrollment. Fur
 
 # 0.3.0 - initial release for Jupyter-only users
 
-Features:
+## Features
 
 - JupyterLab and RStudio are available for researchers
 
@@ -30,7 +25,7 @@ Features:
 
 - Minor UX improvements
 
-Known issues:
+## Known issues
 
 - Users with dot in the name not yet supported
 
