@@ -10,6 +10,8 @@ env:
   DICTIONARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
   SNIPPETS_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
   BRANCH_NAME: "assets-update"
+  TARGET_OWNER: "nesi"
+  TARGET_REPO: "support-docs"
 jobs:
   fetch-includes:
     runs-on: ubuntu-22.04
