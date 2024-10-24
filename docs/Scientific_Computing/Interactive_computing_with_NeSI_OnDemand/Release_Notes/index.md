@@ -1,9 +1,9 @@
-# ondemand Release Notes
-
 !!! Note
      ondemand is in development and accessible to early access users only.
      If you are interested in helping us test it please contact us at support@nesi.org.nz. 
 
+
+# ondemand Release Notes
 
 # 0.3.1 - High memory option available in ondemand
 
