@@ -124,7 +124,7 @@ startFrom ${START_TIME};
 
  This is essential when running parameter sweeps.
 
-You can also directly edit your dictionaries with `sed`,Concordia.ah
+You can also directly edit your dictionaries with `sed`, e.g
 
 ```sh
 NSUBDOMAINS=10
