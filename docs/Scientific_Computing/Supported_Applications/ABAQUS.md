@@ -121,7 +121,7 @@ Not all solvers are compatible with all types of parallelisation.
 
     ```sl
     #!/bin/bash -e
-    
+
     #SBATCH --job-name      ABAQUS-SharedUDF
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --cpus-per-task 4
@@ -165,13 +165,14 @@ Not all solvers are compatible with all types of parallelisation.
     generally have less memory/cpus.
 
     ```sl
-    #!/bin/bash -e
-    
+    #!/bin/bash -es
+
+    sadsad
     #SBATCH --job-name      ABAQUS-gpu
-    #SBATCH --time          00:05:00       # Walltime</span></span>
-    #SBATCH --cpus-per-task 4
-    #SBATCH --mem           4G         # total mem</span></span>
-    #SBATCH --gpus-per-node
+    #SBATCH --time=00:05:00       # Walltime</span></span>
+    #SBATCH --cpus-per-task = 4
+    #SBATCH -m           4G         # total mem</span></span>
+    #SBATCH -g sadas
     module load ABAQUS/{{app.default}}
     module load CUDA
     abaqus job="propeller_s4rs_c3d8r" cpus=${SLURM_CPUS_PER_TASK} \
