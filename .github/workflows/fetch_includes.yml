@@ -23,7 +23,7 @@ jobs:
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          # git config pull.rebase true
+          git config pull.ff only 
           git pull origin ${BRANCH_NAME} || git checkout -b ${BRANCH_NAME}
           git fetch
           git merge ${GITHUB_REF}
