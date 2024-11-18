@@ -33,7 +33,7 @@ source $FOAM_BASH
 
 ## Example Script
 
-```sh
+```sl
 #!/bin/bash -e
 
 #SBATCH --time              04:00:00
