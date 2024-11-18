@@ -270,11 +270,11 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 
 It is best practice when running long jobs to enable autosaves.
 
-``` sh
-/file/autosave/data-frequency 
+```ansys
+/file/autosave/data-frequency 500
 ```
 
-Where `` is the number of iterations to run before creating a save.
+Where `500` is the number of iterations to run before creating a save.
 
 In order to save disk space you may also want to include the line
 
@@ -283,7 +283,7 @@ In order to save disk space you may also want to include the line
 Including the following code at the top of your journal file will allow
 you to interrupt the job.
 
-``` sh
+```ansys
 (set! checkpoint/exit-filename "./exit-fluent")
 ```
 
