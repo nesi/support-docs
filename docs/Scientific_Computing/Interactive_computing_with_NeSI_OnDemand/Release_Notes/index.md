@@ -3,7 +3,7 @@
      If you are interested in helping us test it please contact us at [support@nesi.org.nz](mailto:support@nesi.org.nz). 
 
 
-# ondemand Release Notes
+# NeSI OnDemand Release Notes
 
 ## 0.3.1 - High memory option available in ondemand
 
