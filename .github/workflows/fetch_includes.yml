@@ -1,6 +1,10 @@
 name: Fetch Remote Assets 
 on: 
   workflow_dispatch:
+      inputs:
+          force:
+              type: boolean
+          description: Include 🎉🤣 emojis
   schedule:
     - cron: '00 12 * * *' # Should run 1 hour after module list update.
 env:
@@ -45,11 +49,11 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
-            git fetch
+            if [[ ${{ github.event.inputs.force }} == 'true' ]];then git commit --allow-empty -m "force trigger"; fi
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
-            if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then
+            if [[ $(git log ${GITHUB_REF}..HEAD) ||  ${{ github.event.inputs.force }} == 'true' ]]; then
                 git push origin ${BRANCH_NAME}
-                gh pr create --title "Automatoed asset update" --body "$body_message"
+                gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
                 gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
                 # gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
                 #gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
