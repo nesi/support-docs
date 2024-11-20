@@ -36,10 +36,6 @@ Due to this environment being our test build, you may encounter many internal te
 
 Pre-populated with [Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos] folders, which is different to NeSI default.
 
-## User home folder permissions
-
-Everybody seems to have read/execute access to all home folders.
-
 
 !!! Note
 
