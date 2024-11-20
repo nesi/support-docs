@@ -27,5 +27,5 @@ A number of interactive applications can be accessed through NeSI OnDemand, incl
 
 ## Release notes
 
-Release notes can be found [here](Release_Notes/index.md) and the main differences
+Release notes can be found [here](Release_Notes/index.md), known issues [here](known_issues/index.md) and the main differences
 compared to our Jupyter on NeSI service are described [here](changes_from_jupyter_on_nesi.md).
