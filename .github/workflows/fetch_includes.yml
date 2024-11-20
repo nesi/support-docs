@@ -49,15 +49,17 @@ jobs:
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
             if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then
                 git push origin ${BRANCH_NAME}
+                gh pr create --title "Automatoed asset update" --body "$body_message"
+                gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
                 # gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
                 #gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
-                curl -L \
-                  -X POST \
-                  -H "Accept: application/vnd.github+json" \
-                  -H "Authorization: Bearer ${{ secrets.PAT }}" \
-                  -H "X-GitHub-Api-Version: 2022-11-28" \
-                  https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/pulls \
-                  -d '{"title":"Automatic Asset Update - $(date +'%Y-%m-%d')" ,"body"::${body_message}"","head":"$BRANCH_NAME","base":"main"}'
+                # curl -L \
+                #   -X POST \
+                #   -H "Accept: application/vnd.github+json" \
+                #   -H "Authorization: Bearer ${{ secrets.PAT }}" \
+                #   -H "X-GitHub-Api-Version: 2022-11-28" \
+                #   https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/pulls \
+                #   -d '{"title":"Automatic Asset Update - $(date +'%Y-%m-%d')" ,"body"::${body_message}"","head":"$BRANCH_NAME","base":"main"}'
             else
                 echo "no changes"
             fi
