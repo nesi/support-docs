@@ -5,31 +5,31 @@ tags: [refresh]
 ---
 
 Migration of your data from GPFS to WEKA will be ongoing for several weeks.
-We will be copying across a few project directories in parallel at a time, using rsync.
+We will be copying across a few project directories in parallel at a time, using _rsync_.
 As each project directory is completed, the home directories of that project’s members will also be copied.
-To keep the WEKA copy of your data as fresh as possible, we will continue cycling through the projects, repeatedly syncing your directories from GPFS to WEKA until you ask us to stop.
+To keep the WEKA copy of your data as fresh as possible, we will continue cycling through the projects that way, repeatedly syncing your directories from GPFS to WEKA until you ask us to stop.
 
-On the second and successive rounds of synchronisation, the corresponding nobackup directories will also be copied across, however since they are larger and often contain data which is too transient to be worth preserving, we ask that you specify which files you want included from those, as described below.
+On the second and sucessive rounds of these synchronisations, the nobackup directories will also be examined. However **by default nothing will be migrated from nobackup directories**, as they often contain large amounts of data which is too transient to be worth preserving. You can override that, specifying nobackup content which should be preserved, as described below. 
 
 ## Controlling which data gets migrated
 
-You can place a file named `.RSYNC_FILTER` in your directory (home, project, or nobackup) to control which files are included or excluded from migration to WEKA.  Note that the file is a hidden one, as its name starts with `.`. Full documentation can be found [online](https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES) or via `man rsync`, but in brief:
+You can place a file named `.RSYNC_FILTER` in your directory (home, project, or nobackup) telling rsync to include or exclude particular file paths from the migration to WEKA.  Note that the file is a hidden one, as its name starts with `.`. Full documentation can be found [online](https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES) or via `man rsync`, but in brief:
 
 ### Rules
 
 Each line of the file (other than comment lines and blank lines) specifies a rule.  The paths to the various files and sub-directories are tested against these rules in turn, with the first rule to match the path taking effect.  Each rule consists of an operator (`+` or `-`), an optional modifier (`!`), a single space, and then a pattern:
 
-- `-` pattern excludes paths which match the pattern.
+- `- pattern` excludes paths which match the pattern.
 
-- `-!` pattern excludes paths which don't match the pattern.
+- `-! pattern` excludes paths which don't match the pattern.
 
-- `+` pattern includes paths which match the pattern.
+- `+ pattern` includes paths which match the pattern.
 
-- `+!` pattern includes paths which don't match the pattern.
+- `+! pattern` includes paths which don't match the pattern.
 
 ### Patterns
 
-A pattern can be as simple as the same of a subdirectory, but can also include wildcards:
+A pattern can be as simple as the name of a subdirectory, but can also include wildcards:
 
 - `*` matches anything other than a slash `/`, ie: any component of a path.
 
@@ -47,7 +47,7 @@ A pattern can be as simple as the same of a subdirectory, but can also include w
 
 We are running rsync with these filtering rules:
 
-```sh
+```rsync
 # System generated directories which we don't want to copy
 - /.snapshots
 - /.policy
@@ -58,18 +58,23 @@ We are running rsync with these filtering rules:
 : .RSYNC_FILTER
 ```
 
-It is unlikely that you will want to add additional rules via an `.RSYNC_FILTER` file in these directories, but if you do then it is most likely to be a fairly simple exclusion such as `- /NotNeededAfter2024`.
+It is unlikely that you will want to add additional rules via an `.RSYNC_FILTER` file in these directories, but if you do then it is most likely to be a fairly simple exclusion such as
+
+```rsync
+# Leave behind this nearly obsolete directory
+- /NotNeededAfter2024`.
+```
 
 ### Nobackup directories
 
-For nobackup directories we use the same filter rules as above with one additional rule at the end so that the default is to not migrate any of the contents of your nobackup directory:
+For nobackup directories we use the same filter rules as above with one additional rule at the end which excludes everything:
 
 ```rsync
 # Default to excluding everything
 - *
 ```
 
-so you will have to override that if you want anything migrated to WEKA. eg:
+so you will have to override that if you want anything from your nobackup directory migrated into WEKA. eg:
 
 ```sh
 echo '+ *' > /nesi/nobackup/nesi99999/.RSYNC_FILTER
@@ -79,21 +84,21 @@ However unless you have a very small amount of nobackup data, please give it mor
 
 A more selective example of a simple .RSYNC_FILTER file would be:
 
-```sh
+```rsync
 # Keep everything other than the "JobTmpDir" directory
 +! JobTmpDir
 ```
 
 or
 
-```sh
+```rsync
 # Keep only the "Important" directory and its contents
 + Important/***
 ```
 
 or equivalently:
 
-```sh
+```rsync
 # Keep only the "Important" directory and its contents
 + /Important
 + /Important/**
@@ -104,7 +109,3 @@ Note that `+ /Important` by itself would only keep the (now empty) directory, an
 ## Checking on progress
 
 Logs can be found in `/opt/nesi/migration/syncs` which record each successful synchronisation.  
-
-## Overlapping use of the old and new systems
-
-At some point after all of your needed data has been copied across we will be migrating your work to the new system. It will be simplest to avoid using the old and new systems at the same time, but for some users there may be an overlap period when you which to access both systems, and if so care will need to be taken, because rsync can not tell the difference between a file you created directly on WEKA versus one which was copied from GPFS and has since deleted there.  If you wish to protect a directory on WEKA while still syncing other changing data from GPFS then that can be done with the same filtering mechanism described above.  A rule such as `- TestingOnWEKA` in your `~/.RSYNC_FILER` file (on the old, GPFS end) should protect a corresponding `~/TestingOnWEKA` directory on WEKA from being deleted by rsync.
