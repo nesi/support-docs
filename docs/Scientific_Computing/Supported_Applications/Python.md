@@ -19,8 +19,8 @@ zendesk_section_id: 360000040076
 
 All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released
-under a specific open-source licence. The licences are available on [the
-Python documentation server](https://docs.python.org).
+under a specific open-source licence. The licences are available on 
+[the Python documentation server](https://docs.python.org).
 
 ## System Python vs Environment Modules
 
