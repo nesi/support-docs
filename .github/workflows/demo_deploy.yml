@@ -1,6 +1,7 @@
 name: Deploy PR branches
 on: 
   pull_request:
+    branches-ignore: "assets-update"
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   TARGET_REPO: "mkdocs-demo-deploy"
