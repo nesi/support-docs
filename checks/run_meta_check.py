@@ -38,8 +38,6 @@ EXPECTED_PARAMETERS = {
     "tags": "",         # Add info here when implimented.
     "vote_count": "",
     "vote_sum": "",
-    "zendesk_article_id": "",
-    "zendesk_section_id": "",
 }
 
 
@@ -104,7 +102,6 @@ def _run_check(f):
         time.sleep(0.01)
 
 
-
 def _title_from_filename():
     """
     I think this is the same as what mkdocs does.
@@ -147,7 +144,7 @@ def _get_nav_tree():
 
         if not header_match:
             return
-        
+       
         header_level = len(header_match.group(1))
         header_name = header_match.group(2)
 
