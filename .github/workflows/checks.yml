@@ -66,13 +66,13 @@ jobs:
     runs-on: ubuntu-22.04
     needs: get
     steps:
-      - if: (needs.get.outputs.filelist) || ( github.base_ref == "refs/heads/assets-update" )
+      - if: (needs.get.outputs.filelist)
         name: No files to spellcheck
         run: exit 0
-      - if: (needs.get.outputs.filelist) || ( github.base_ref == "refs/heads/assets-update" )
+      - if: (needs.get.outputs.filelist)
         name: Check out repo.
         uses: actions/checkout@v4
-      - if: (needs.get.outputs.filelist) || ( github.base_ref == "refs/heads/assets-update" )
+      - if: (needs.get.outputs.filelist)
         name: Install dependencies
         run: |
           sudo apt install -y aspell
