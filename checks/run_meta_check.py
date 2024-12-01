@@ -27,7 +27,7 @@ DOC_ROOT = "docs"
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
     "title": "",
-    "template": ["main.html", "supported_apps.html"],
+    "template": ["main.html", "supported_apps.html", "updateFeed.html"],
     "description": "",
     "icon": "",
     "status": ["new", "deprecated"],
@@ -38,6 +38,10 @@ EXPECTED_PARAMETERS = {
     "tags": "",         # Add info here when implimented.
     "vote_count": "",
     "vote_sum": "",
+    "search": "",
+    "hide": ["toc", "nav", "tags"],
+    "zendesk_article_id": "",
+    "zendesk_section_id": "",
 }
 
 
@@ -102,6 +106,7 @@ def _run_check(f):
         time.sleep(0.01)
 
 
+
 def _title_from_filename():
     """
     I think this is the same as what mkdocs does.
@@ -144,7 +149,7 @@ def _get_nav_tree():
 
         if not header_match:
             return
-       
+        
         header_level = len(header_match.group(1))
         header_name = header_match.group(2)
 
