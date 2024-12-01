@@ -163,8 +163,6 @@ Bpipe's
 Bpipe
 Bracken's
 Bracken
-BreakDancer's
-BreakDancer
 BreakSeq2's
 BreakSeq2
 Broadwell
@@ -203,6 +201,8 @@ CPUs's
 CPUs
 CPU's
 CPU
+CRABS's
+CRABS
 CRAMINO's
 CRAMINO
 CRI
@@ -422,8 +422,6 @@ GLPK's
 GLPK
 GLib's
 GLib
-GLibmm's
-GLibmm
 GMAP-GSNAP's
 GMAP-GSNAP
 GMP's
@@ -819,6 +817,8 @@ Newton-X's
 Newton-X
 NextGenMap's
 NextGenMap
+NextPolish2's
+NextPolish2
 Nextflow's
 Nextflow
 Nim's
@@ -849,6 +849,7 @@ OSU-Micro-Benchmarks
 OSX
 OTF2's
 OTF2
+OTP
 OnDemand
 OneDrive
 OpenACC
@@ -1346,9 +1347,11 @@ autoscale
 autoscaling
 azul-zulu's
 azul-zulu
+backend
 backplane
 bamUtil's
 bamUtil
+barcode
 barrnap's
 barrnap
 basecaller
@@ -1695,8 +1698,8 @@ libpng's
 libpng
 libreadline's
 libreadline
-libsigc++'s
-libsigc++
+libsodium's
+libsodium
 libspatialite's
 libspatialite
 libtool's
@@ -1709,8 +1712,6 @@ libvdwxc's
 libvdwxc
 libxc's
 libxc
-libxml++'s
-libxml++
 libxml2's
 libxml2
 libxslt's
@@ -1741,6 +1742,8 @@ manta's
 manta
 mapDamage's
 mapDamage
+matlab-proxy's
+matlab-proxy
 meRanTK's
 meRanTK
 medaka's
