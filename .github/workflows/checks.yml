@@ -28,6 +28,10 @@ on:
         description: Check Meta
         default: true
         type: boolean
+      checkSlurm:
+        description: Check Slurm
+        default: true
+        type: boolean
       testBuild:
         description: Test Build
         default: true
@@ -135,6 +139,23 @@ jobs:
         run: |
           shopt -s globstar extglob
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
+  slurmcheck:
+    name: Check slurm scripts
+    if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkSlurm}}
+    runs-on: ubuntu-22.04
+    needs: get
+    steps:
+      - if: ${{ ! needs.get.outputs.filelist}}
+        name: No files to check meta on.
+        run: exit 0
+      - if: ${{needs.get.outputs.filelist}}
+        name: Check out repo.
+        uses: actions/checkout@v4
+      - if: ${{needs.get.outputs.filelist}}
+        name: Check markdown meta.
+        run: |
+          shopt -s globstar extglob
+          python3 checks/run_slurm_lint.py ${{needs.get.outputs.filelist}}
   testBuild:
     name: Test build
     if: ${{github.event_name != 'workflow_dispatch' || inputs.testBuild}}
