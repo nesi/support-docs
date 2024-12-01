@@ -1,9 +1,21 @@
+---
+tags:
+- jupyter
+- hub
+- home
+- lab
+- notebook
+- ondemand
+- rstudio
+title: NeSI OnDemand how-to guide
+---
+
+!!! info
+     NeSI OnDemand is in development and accessible to early access users only.
+     If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+
+
 # NeSI OnDemand how-to guide
-
-!!! warning
-
-    NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
 
 ## How to log in
 
