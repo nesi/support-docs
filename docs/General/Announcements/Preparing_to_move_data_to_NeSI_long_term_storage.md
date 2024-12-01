@@ -4,7 +4,7 @@ description: "Copy of 04 September email sent to all NeSI users with current Nea
 status: new
 ---
 
-As part of NeSI's [shift to new platforms]("https://www.nesi.org.nz/platform-refresh"), our long-term storage service is changing. Our new platform will address diverse data management needs across various research fields, and deliver an easier-to-use and scaleable storage tool. We'll be sharing more details soon.
+As part of NeSI's [shift to new platforms](https://www.nesi.org.nz/platform-refresh), our long-term storage service is changing. Our new platform will address diverse data management needs across various research fields, and deliver an easier-to-use and scaleable storage tool. We'll be sharing more details soon.
 
 The initial storage offering on this new platform is a replacement for the current Nearline service. Called NeSI Freezer, it will initially offer a similar long-term tape-based solution storing a single copy of data. We will look at the roadmap for this service once we've completed migration.
 

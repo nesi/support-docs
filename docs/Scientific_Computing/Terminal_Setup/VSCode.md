@@ -1,7 +1,7 @@
 ---
 created_at: 2024-08-05
 description: How to set up Visual Studio Code to access the NeSI cluster
-tags: [ide, code]
+tags: [ide, code, visual studio code, vscode]
 ---
 
 'Visual Studio Code' (not to be confused with 'Visual Studio') or 'VSCode', is a popular editor/IDE with many useful extensions.
@@ -15,6 +15,19 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
     ![vscode remote extension](../../assets/images/vscode-remote.png)
 === "Windows"
+    1. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft installed.
+    ![vscode remote extension](../../assets/images/vscode-remote.png)
+    2. Open the 'Remote Explorer' Tab, then click on the 'Open SSH Config file' (gear symbol).
+    If you are prompted to create a file, the first option is fine.
+    ![vscode remote explorer](../../assets/images/vscode-remote-windows.png)
+    3. Set up your SSH Config file as described in Step 2 of [Terminal Setup](Standard_Terminal_Setup.md#first-time-setup).
+    4. Remove or comment out the `Control Path` line under `Host *`.
+    !!! warning
+        As Windows does not support SSH sockets, you will have to enter your password and second factor every time you open a new tab.
+        If this bothers you, you may want to consider the next option "Windows via WSL".
+=== "Windows via WSL"
+    !!! danger
+        This method may not work anymore. Only attempt if you have too much time on your hands.
     1. Set up WSL as described in
     [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft installed.

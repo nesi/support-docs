@@ -25,6 +25,7 @@ theme:
   features:
     - navigation.indexes
     - navigation.instant          # Single Page Application
+    - navigation.instant.progress
     - navigation.instant.prefetch # Start loading page on link hover. Insiders only
     - navigation.top              # 'Return to top' button
     # - navigation.prune            # Reduces site size. ALSO BREAKS NAV BEHAVIOR
@@ -33,6 +34,7 @@ theme:
     - content.code.copy
     - content.action.edit
     - header.site_name_homepage
+    
 hooks:
   - mkdocs_hooks.py
 markdown_extensions:
@@ -64,6 +66,11 @@ extra:
 plugins:
   - search
   - open-in-new-tab
+  - rss:
+      json_feed_enabled: false
+      feeds_filenames:
+        rss_created: page_creation.xml
+        rss_updated: page_update.xml
   - redirects:
       map_file: docs/redirect_map.yml
   - awesome-pages:

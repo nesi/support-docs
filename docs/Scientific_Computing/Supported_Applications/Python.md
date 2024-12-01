@@ -19,8 +19,8 @@ zendesk_section_id: 360000040076
 
 All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released
-under a specific open-source licence. The licences are available on [the
-Python documentation server](https://docs.python.org).
+under a specific open-source licence. The licences are available on 
+[the Python documentation server](https://docs.python.org).
 
 ## System Python vs Environment Modules
 
@@ -152,10 +152,8 @@ Our most recent Python environment modules have:
     those processes, safely circumventing Python's [global interpreter lock](https://wiki.python.org/moin/GlobalInterpreterLock).
 
     For more in depth examples of and descriptions of Multiprocessing in
-    Python you may find [this Multithreading/Multiprocessing Youtube
-tutorial
-series](https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&index=1)
-helpful
+    Python you may find 
+    [this Multithreading/Multiprocessing Youtube tutorial series](https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&index=1) helpful.
 
 === "Job Arrays"
     Job arrays can be handled using the Slurm environment variable

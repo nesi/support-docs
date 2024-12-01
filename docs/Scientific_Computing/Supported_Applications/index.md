@@ -1,7 +1,13 @@
 ---
 title: Supported Applications
 template: supported_apps.html
+hide:
+    - toc
 ---
+
+
+<!-- This page uses a custom page template 'overrides/supported_apps.html'. If you are looking to contribute to this list, please see https://github.com/nesi/support-docs/blob/main/docs/CONTRIBUTING.md#the-supported-apps-page for details -->
+
 
 For more information on environment-modules see [Finding Software](../HPC_Software_Environment/Finding_Software.md).
 

@@ -4,6 +4,7 @@ env:
 on:
   push:
     branches-ignore: [main]
+  repository_dispatch:
   workflow_dispatch:
     inputs:
       fileList:
@@ -27,6 +28,10 @@ on:
         description: Check Meta
         default: true
         type: boolean
+      checkSlurm:
+        description: Check Slurm
+        default: true
+        type: boolean
       testBuild:
         description: Test Build
         default: true
@@ -34,7 +39,7 @@ on:
 jobs:
   get:
     name: Determine what files to check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -58,7 +63,7 @@ jobs:
   spellcheck:
     name: Check Spelling
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.checkSpelling }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -80,7 +85,7 @@ jobs:
   proselint:
     name: Check Prose
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkProse}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -100,7 +105,7 @@ jobs:
   mdlint:
     name: Check Markdown
     if: ${{github.event_name != 'workflow_dispatch' || inputs.checkMarkdown}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -120,7 +125,7 @@ jobs:
   metacheck:
     name: Check page meta
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkMeta}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: get
     steps:
       - if: ${{ ! needs.get.outputs.filelist}}
@@ -134,10 +139,27 @@ jobs:
         run: |
           shopt -s globstar extglob
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
+  slurmcheck:
+    name: Check slurm scripts
+    if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkSlurm}}
+    runs-on: ubuntu-22.04
+    needs: get
+    steps:
+      - if: ${{ ! needs.get.outputs.filelist}}
+        name: No files to check meta on.
+        run: exit 0
+      - if: ${{needs.get.outputs.filelist}}
+        name: Check out repo.
+        uses: actions/checkout@v4
+      - if: ${{needs.get.outputs.filelist}}
+        name: Check markdown meta.
+        run: |
+          shopt -s globstar extglob
+          python3 checks/run_slurm_lint.py ${{needs.get.outputs.filelist}}
   testBuild:
     name: Test build
     if: ${{github.event_name != 'workflow_dispatch' || inputs.testBuild}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: get
     steps:
       - uses: actions/checkout@v4

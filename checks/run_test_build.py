@@ -51,5 +51,9 @@ if __name__ == '__main__':
         '::%(levelname)s file=%(filename)s,title=%(name)s,col=0,endColumn=0,line=%(lineno)s::%(message)s'))
     log.addHandler(sh)
     config = load_config(config_file_path="./mkdocs.yml")
-    build.build(config)
+    config.plugins.on_startup(command='build', dirty=True)
+    try:
+        build.build(config, dirty=True)
+    finally:
+        config.plugins.on_shutdown()
     time.sleep(5)

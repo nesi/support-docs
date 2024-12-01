@@ -33,8 +33,8 @@ annotate genetic variants detected from diverse genomes .
  interpreting and visualizing multidimensional data.
 *[AOCC's]: AMD Optimized C/C++ & Fortran compilers (AOCC) based on LLVM 13.0
 *[AOCC]: AMD Optimized C/C++ & Fortran compilers (AOCC) based on LLVM 13.0
-*[AOCL-BLIS's]: Optimized version of FFTW for AMD EPYC family of processors..
-*[AOCL-BLIS]: Optimized version of FFTW for AMD EPYC family of processors..
+*[AOCL-BLIS's]: Optimized version of BLIS for AMD EPYC family of processors..
+*[AOCL-BLIS]: Optimized version of BLIS for AMD EPYC family of processors..
 *[AOCL-FFTW's]: Optimized version of FFTW for AMD EPYC family of processors.
 *[AOCL-FFTW]: Optimized version of FFTW for AMD EPYC family of processors.
 *[AOCL-ScaLAPACK's]: Optimized version of ScaLAPACK for AMD EPYC family of processors.
@@ -265,8 +265,6 @@ sequencing reads to long reference sequences.
 species in DNA sequences from a metagenomics sample.
 *[Bracken]: Hghly accurate statistical method that computes the abundance of 
 species in DNA sequences from a metagenomics sample.
-*[BreakDancer's]: Genome-wide detection of structural variants from next generation paired-end sequencing reads.
-*[BreakDancer]: Genome-wide detection of structural variants from next generation paired-end sequencing reads.
 *[BreakSeq2's]: Nucleotide-resolution analysis of structural variants
 *[BreakSeq2]: Nucleotide-resolution analysis of structural variants
 *[CCL's]: Clozure CL (often called CCL for short) is a free Common Lisp implementation 
@@ -315,6 +313,8 @@ coverage data in multiple samples and linkage data from paired end reads.
 *[CPUs]: Electronic circuitry that executes instructions of a computer program.
 *[CPU's]: Electronic circuitry that executes instructions of a computer program.
 *[CPU]: Electronic circuitry that executes instructions of a computer program.
+*[CRABS's]: Creating Reference databases for Amplicon-Based Sequencing.
+*[CRABS]: Creating Reference databases for Amplicon-Based Sequencing.
 *[CRAMINO's]: A tool for quick quality assessment of cram and bam files, intended for long read sequencing
 *[CRAMINO]: A tool for quick quality assessment of cram and bam files, intended for long read sequencing
 *[CTPL's]: C++ Thread Pool Library
@@ -572,6 +572,8 @@ fonts in their OpenGL (www.opengl.org) applications.
  time and memory. 
 *[File-Rename's]: A Perl version of the rename utility, with support for regular expressions.
 *[File-Rename]: A Perl version of the rename utility, with support for regular expressions.
+*[FileSender's]: Send large files quickly and securely using REANNZ FileSender.
+*[FileSender]: Send large files quickly and securely using REANNZ FileSender.
 *[Filtlong's]: Tool for filtering long reads by quality.
 *[Filtlong]: Tool for filtering long reads by quality.
 *[FimTyper's]: Identifies the FimH type in total or partial sequenced isolates of E. coli..
@@ -619,17 +621,13 @@ FreeSurfer contains a fully automatic structural imaging stream for processing c
 *[GDAL's]: GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
  Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
  to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for
- data translation and processing.
- NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), 
- which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) 
- after loading the GDAL module. 
+ data translation and processing. 
+ NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) after loading the GDAL module.
 *[GDAL]: GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
  Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
  to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for
- data translation and processing.
- NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), 
- which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) 
- after loading the GDAL module. 
+ data translation and processing. 
+ NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) after loading the GDAL module.
 *[GEMMA's]: Genome-wide Efficient Mixed Model Association
 *[GEMMA]: Genome-wide Efficient Mixed Model Association
 *[GEOS's]: GEOS (Geometry Engine - Open Source) is a C++ port of the  Java Topology Suite (JTS)
@@ -642,8 +640,6 @@ FreeSurfer contains a fully automatic structural imaging stream for processing c
 *[GLPK]: GNU Linear Programming Kit is intended for solving large-scale linear programming (LP), mixed integer programming (MIP), and other related problems.
 *[GLib's]: GLib is one of the base libraries of the GTK+ project
 *[GLib]: GLib is one of the base libraries of the GTK+ project
-*[GLibmm's]: C++ bindings for Glib
-*[GLibmm]: C++ bindings for Glib
 *[GMAP-GSNAP's]: GMAP: A Genomic Mapping and Alignment Program for mRNA and EST Sequences
  GSNAP: Genomic Short-read Nucleotide Alignment Program
 *[GMAP-GSNAP]: GMAP: A Genomic Mapping and Alignment Program for mRNA and EST Sequences
@@ -1093,6 +1089,8 @@ whatis([==[Homepage: http://magma.maths.usyd.edu.au/magma/
 *[Mash]: Fast genome and metagenome distance estimation using MinHash
 *[MashMap's]: Implements a fast and approximate algorithm for computing local alignment boundaries between long DNA sequences
 *[MashMap]: Implements a fast and approximate algorithm for computing local alignment boundaries between long DNA sequences
+*[Mashtree's]: Create a tree using Mash distances.
+*[Mashtree]: Create a tree using Mash distances.
 *[Maven's]: Binary maven install, Apache Maven is a software project management and comprehension tool. Based on
 the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a
 central piece of information.
@@ -1293,6 +1291,8 @@ individuals fall into each of a set of user-defined hybrid categories.
 *[NextGenMap]: NextGenMap is a flexible highly sensitive short read mapping tool that
  handles much higher mismatch rates than comparable algorithms while still outperforming
  them in terms of runtime.
+*[NextPolish2's]: a fast and efficient genome polishing tool for long-read assembly
+*[NextPolish2]: a fast and efficient genome polishing tool for long-read assembly
 *[Nextflow's]: Nextflow is a reactive workflow framework and a programming DSL
  that eases writing computational pipelines with complex data
 *[Nextflow]: Nextflow is a reactive workflow framework and a programming DSL
@@ -1350,6 +1350,7 @@ interactively, enabling new insights into data exploration.
  The Open Trace Format 2 is a highly scalable, memory efficient event trace data format plus support library
 *[OTF2]: 
  The Open Trace Format 2 is a highly scalable, memory efficient event trace data format plus support library
+*[OTP]: An automatically generated numeric code that authenticates a user for a single login.
 *[OpenBLAS's]: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
 *[OpenBLAS]: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
 *[OpenBabel's]: Open Babel is a chemical toolbox designed to speak the many
@@ -1748,8 +1749,6 @@ static mapping, and sparse matrix block ordering, and sequential mesh and hyperg
 *[SCOTCH]: Software package and libraries for sequential and parallel graph partitioning,
 static mapping, and sparse matrix block ordering, and sequential mesh and hypergraph partitioning.
 *[SCP]: Means of securely transferring files between over an SSH connection.
-*[SCons's]: SCons is a software construction tool.
-*[SCons]: SCons is a software construction tool.
 *[SDL2's]: Simple DirectMedia Layer, a cross-platform multimedia library
 *[SDL2]: Simple DirectMedia Layer, a cross-platform multimedia library
 *[SEPP's]: SATe-enabled Phylogenetic Placement. Phylogenetic placement of short reads into reference alignments and trees.
@@ -1859,6 +1858,8 @@ in  amino acid  sequences  from  different organisms
  and all of these builds can coexist on the same machine.
 *[Spark's]: Spark is Hadoop MapReduce done in memory
 *[Spark]: Spark is Hadoop MapReduce done in memory
+*[SpectrA's]: C++ library for large scale eigenvalue problems, built on top of Eigen, an open source linear algebra library.
+*[SpectrA]: C++ library for large scale eigenvalue problems, built on top of Eigen, an open source linear algebra library.
 *[Spectrum Scale's]: High-performance clustered file system software developed by IBM.
 *[Spectrum Scale]: High-performance clustered file system software developed by IBM.
 *[SqueezeMeta's]: fully automated metagenomics pipeline, from reads to bins.
@@ -2693,8 +2694,8 @@ compression and decompression. libjpeg is a library that implements JPEG image e
  allow users to edit command lines as they are typed in. Both Emacs and vi editing modes are available.
  The Readline library includes additional functions to maintain a list of previously-entered command lines,
  to recall and perhaps reedit those lines, and perform csh-like history expansion on previous commands.
-*[libsigc++'s]: The libsigc++ package implements a typesafe callback system for standard C++.
-*[libsigc++]: The libsigc++ package implements a typesafe callback system for standard C++.
+*[libsodium's]: library for encryption, decryption, signatures, password hashing and more.
+*[libsodium]: library for encryption, decryption, signatures, password hashing and more.
 *[libspatialite's]: SpatiaLite is an open source library intended to extend the SQLite core to support
  fully fledged Spatial SQL capabilities.
 *[libspatialite]: SpatiaLite is an open source library intended to extend the SQLite core to support
@@ -2719,8 +2720,6 @@ of density functional theory (DFT) codes.
  The aim is to provide a portable, well tested and reliable set of exchange and correlation functionals.
 *[libxc]: Libxc is a library of exchange-correlation functionals for density-functional theory.
  The aim is to provide a portable, well tested and reliable set of exchange and correlation functionals.
-*[libxml++'s]: libxml++ is a C++ wrapper for the libxml XML parser library.
-*[libxml++]: libxml++ is a C++ wrapper for the libxml XML parser library.
 *[libxml2's]: Libxml2 is the XML C parser and 
 toolchain developed for the Gnome project
  (but usable outside of the Gnome platform).
@@ -2765,6 +2764,8 @@ group MPI processes as an ordered set.
 DNA sequencing reads generated by Next-Generation Sequencing platforms.
 *[mapDamage]: tracks and quantifies DNA damage patterns among ancient 
 DNA sequencing reads generated by Next-Generation Sequencing platforms.
+*[matlab-proxy's]: Python package which enables you to launch MATLAB and access it from a web browser.
+*[matlab-proxy]: Python package which enables you to launch MATLAB and access it from a web browser.
 *[meRanTK's]: High performance toolkit for complete analysis of methylated RNA data.
 *[meRanTK]: High performance toolkit for complete analysis of methylated RNA data.
 *[medaka's]: Medaka is a tool to create a consensus sequence from nanopore sequencing data.
@@ -2923,6 +2924,8 @@ and several bioinformatic post-processing features
 *[pggb]: PanGenome Graph Builder(pggb)
 *[pgge's]: pangenome graph evaluator
 *[pgge]: pangenome graph evaluator
+*[phonopy's]: Phonopy is an open source package of phonon calculations based on the supercell approach.
+*[phonopy]: Phonopy is an open source package of phonon calculations based on the supercell approach.
 *[phyx's]: phyx performs phylogenetics analyses on trees and sequences.
 *[phyx]: phyx performs phylogenetics analyses on trees and sequences.
 *[picard's]: A set of tools (in Java) for working with next generation sequencing data in the BAM format.
@@ -3055,6 +3058,8 @@ reads to a separate FASTQ file. When marking duplicates, samblaster will require
 *[simuG]: A general-purpose genome simulator
 *[sismonr's]: Simulation of In Silico Multi-Omic Networks R package.
 *[sismonr]: Simulation of In Silico Multi-Omic Networks R package.
+*[skani's]: accurate, fast nucleotide identity calculation for MAGs, genomes, and databases
+*[skani]: accurate, fast nucleotide identity calculation for MAGs, genomes, and databases
 *[slow5tools's]: Toolkit for converting (FAST5 <-> SLOW5), compressing, viewing, indexing
  and manipulating data in SLOW5 format.
 *[slow5tools]: Toolkit for converting (FAST5 <-> SLOW5), compressing, viewing, indexing

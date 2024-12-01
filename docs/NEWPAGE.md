@@ -168,29 +168,34 @@ The following sections detail the most usual entries.
 
 ### MkDocs Parameters
 
-- `title`  : article title.
-- `created_at` : When article was created. Currently not shown in rendered page, but should still be filled in as it can be useful info. : `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ssZ`
+| Parameter | Usage | Allowed Values | Example |
+| - | - | - | - |
+| `title`  | article title. | str | `title: My Title` |
+| `created_at` | When article was created. Currently not shown in rendered page, but should still be filled in as it can be useful info. : `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ssZ` | `created_at: 2024-01-01` |
 
 ### Material Theme Parameters
 
-- `description` : Used for internal and external search indexing. This will appear as the page preview when searching in Google. Try not to include words and information here that is not in the body of the article. : `string`
-- `icon`        : Page icon.                                                    : `path`
-- `status`      : Will display a symbol on nav                                  : only `new` or `deprecated` are supported
-- `hide`        : Used to turn off features (e.g. table of content)             : list, `tags` `toc` `nav`
-- `tags`        : Used for internal and external search indexing                : list
-- `search: exclude` : Used to exclude page from internal search                 : `true`
-- `search: boost` : Used to increase or decrease weight in internal search      : 1< for increased,  1> for decrease.
+| Parameter | Usage | Allowed Values | Example |
+| - | - | - | - |
+| `description` | Used for internal and external search indexing. This will appear as the page preview when searching in Google. Try not to include words and information here that is not in the body of the article. | string | `description: A short summary.` |
+| `icon`        | Page icon.                                                    | Path |  |
+| `status`      | Will display a symbol on nav                                  | `new` or `deprecated` | |
+| `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
+| `tags`        | Used for internal and external search indexing                | String[] | `tags: [ "slurm", "containers" ]` |
+| `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
+| `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
 
 ### Zendesk Imported
 
 The following fields were imported from Zendesk Page:
 
-- `vote_count`
+- `vote_count` 
 - `vote_sum`
 - `zendesk_article_id`
 - `zendesk_section_id`
 
-They are not used for anything currently, although comparing vote count, and vote sum is useful for gauging the popularity of a page migration.
+`zendesk_article_id` and `zendesk_section_id` serve no purpose and can be deleted.
+`vote_count` and `vote_sum` are useful for determining past popularity of a page, but will become less useful with time.
 
 ## Accessibility Standards
 
