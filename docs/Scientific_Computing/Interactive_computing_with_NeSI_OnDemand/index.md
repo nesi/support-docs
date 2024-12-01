@@ -21,9 +21,9 @@ A number of interactive applications can be accessed through NeSI OnDemand, incl
 
 - [JupyterLab](interactive_apps/JupyterLab/index.md)
 - [RStudio](interactive_apps/RStudio.md)
-- [MATLAB](interactive_apps/MATLAB.md)
-- [Code server](interactive_apps/code_server.md)
-- [Virtual desktop](interactive_apps/virtual_desktop.md)
+- [MATLAB](interactive_apps/MATLAB.md) - currently under development, let us know if this is of interest
+- [Code server](interactive_apps/code_server.md) - currently under development, let us know if this is of interest
+- [Virtual desktop](interactive_apps/virtual_desktop.md) - currently under development, let us know if this is of interest
 
 ## Release notes
 
