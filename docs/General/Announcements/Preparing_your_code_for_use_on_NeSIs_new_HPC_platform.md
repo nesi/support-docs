@@ -7,12 +7,8 @@ tags:
   - milan
 description: Overview of some of the changes you need to be aware of when porting code from from Māui to Mahuika
 title: Preparing your code for use on NeSI's new HPC platform
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 8817840423439
-zendesk_section_id: 200732737
 search:
-  boost: 0.1
+  boost: 2
 ---
 
 ## Background
@@ -25,13 +21,13 @@ and we anticipate migrating users in a staggered manner starting in July 2024. W
 We anticipate teams might require assistance with getting ready, so we’re providing wrap-around support. This page provides an overview of how to familiarise yourself
 with infrastructure similar to the new environment in advance. We explain the ways it will differ from Māui and Mahuika's Broadwell nodes, and actions you may need to take to prepare your project for migration.
 
-Below is a quick overview of some of the changes you need to be aware of when porting code from from Māui to Mahuika:
+Below is a quick overview of some of the changes you need to be aware of when porting code from Māui to Mahuika:
 
 | Māui                   |  Mahuika              |  comments                           |
 |------------------------|-----------------------|-------------------------------------|
 | NA                     | `module purge`
 | `module avail -S X`      | `module spider X`       | search for module X                 |
-| `module load PrgEnv-cray/6.0.10` |   NA          | no Cray compiler on Mahuika milan nodes |
+| `module load PrgEnv-cray/6.0.10` |   NA          | no Cray compiler on Mahuika Milan nodes |
 | `module load  craype-hugepages*M` | NA           |                                         |
 | `module load PrgEnv-intel` | `module load  intel`       | Intel MPI and Intel compilers                      |
 | `module load PrgEnv-gnu` |   `module load  gimkl`       | Intel MPI and GNU compilers                        |
@@ -44,7 +40,7 @@ Below is a quick overview of some of the changes you need to be aware of when po
 
 ## Test your code on Mahuika
 
-The platform NeSI has selected to replace Mahuika is most similar to the 
+The platform NeSI has selected to replace Mahuika is most similar to the
 [Mahuika AMD Milan compute nodes](../../General/Announcements/Mahuikas_new_Milan_CPU_nodes_open_to_all_NeSI_users.md) than nodes on other partitions.
 So, we'll be using the Milan nodes to validate any issues, mitigating risks of your subsequent migration to the new platform.
 
@@ -62,13 +58,13 @@ early stage validation process is as quick and painless as possible.
 
 The module command works much the same way on Mahuika, though it happens
 to be a different implementation ("Lmod") with a few extra features.
- You will probably find its extra search command `module spider` to be
-faster and more useful than the familiar `module avail`.  
+You will probably find its extra search command `module spider` to be
+faster and more useful than the familiar `module avail`.
 
 If you currently use software on Māui that we have provided via
 environment modules, then please check to see if we have it installed on
 Mahuika (note that it is unlikely to be the same version) and let us
-know about anything that you can't find.  If you compile your own
+know about anything that you can't find. If you compile your own
 software, then see below.
 
 ### Slurm options
@@ -77,13 +73,13 @@ software, then see below.
 
 There are several partitions available to NeSI jobs on Mahuika, however
 for the purposes of migrating from Māui and future-proofing, we
-recommend the "milan" partition. As its name suggests, that partition
+recommend the `milan` partition. As its name suggests, that partition
 has AMD Milan (Zen3) CPUs, while the rest of Mahuika has Intel Broadwell
 CPUs.
 
-If for any reason you want to use any of the other Mahuika partitions,see 
+If for any reason you want to use any of the other Mahuika partitions,see
 [Mahuika Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md) for
-an overview and 
+an overview and
 [Milan Compute Nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md) for
 the differences between them and *milan*.
 
@@ -91,17 +87,17 @@ the differences between them and *milan*.
 
 Māui is scheduled by node while Mahuika is scheduled by core, so small
 jobs can share Mahuika nodes, while on Māui nodes are exclusively
-occupied by a single job at a time. 
+occupied by a single job at a time.
 
 When submitting an MPI job you have (at least) three options:
 
 - Request a number of tasks without worrying what nodes they land on.
-     That is OK for quick tests, but probably not optimal for real work
+    That is OK for quick tests, but probably not optimal for real work
     as it both increases dependence on the interconnect and fragments
     node resources, as such job submissions end up much more scattered
     than they would on Māui.
 - Request a number of tasks and a number (or range) of nodes.
-- Request a number of nodes and a number of tasks per node.  This is
+- Request a number of nodes and a number of tasks per node. This is
     appropriate for most Māui-sized jobs, and by requesting all of the
     CPUs on a node better isolates the job from contention with other
     jobs over socket-level or node-level resources such as memory
@@ -112,19 +108,16 @@ When submitting an MPI job you have (at least) three options:
 Since most ex-Māui jobs will want to take whole nodes, it is important
 to be aware of the size of those nodes:
 
-|       | Māui         | Mahuika (milan partition)  |
+|       | Māui         | Mahuika (`milan` partition)  |
 |-------|--------------|---------------------------|
-|       |          |  |
 | cores | 40           | 128                       |
 | CPUs  | 80           | 256                       |
 | RAM   | 90 or 180 GB | 460 or 960 GB             |
 
- 
-
 ### Temporary files
 
 In Mahuika batch scripts, please replace any mention of `/tmp` with
-`$TMPDIR`. 
+`$TMPDIR`.
 
 ## Porting your software
 
@@ -134,7 +127,7 @@ If you have been compiling software on Māui you will be familiar with
 the CPE, the "Cray Programming Environment" compiler wrappers (`ftn`,
 `cc` and their underlying infrastructure) which allow you to switch
 between the GCC, Intel, and Cray compilers while using the same command
-lines.  CPE is not supported on Mahuika, and so it will be necessary to
+lines. CPE is not supported on Mahuika, and so it will be necessary to
 use a compiler directly, for example `gfortran` or `gcc`.
 
 We have GCC and Intel compilers (but not the Cray compiler) available on
@@ -174,4 +167,3 @@ or pop in to one of our [weekly Online Office Hours](../../Getting_Started/Getti
 to chat with Support staff one-to-one.
 
 No question is too small - don't hesitate to reach out.
-

@@ -2,6 +2,9 @@
 created_at: 2024-11-27
 description: 
 tags: [refresh]
+status: new
+search:
+  boost: 2
 ---
 
 Migration of your data from GPFS to WEKA will be ongoing for several weeks.
@@ -9,7 +12,8 @@ We will be copying across a few project directories in parallel at a time, using
 As each project directory is completed, the home directories of that project’s members will also be copied.
 To keep the WEKA copy of your data as fresh as possible, we will continue cycling through the projects that way, repeatedly syncing your directories from GPFS to WEKA until you ask us to stop.
 
-On the second and sucessive rounds of these synchronisations, the nobackup directories will also be examined. However **by default nothing will be migrated from nobackup directories**, as they often contain large amounts of data which is too transient to be worth preserving. You can override that, specifying nobackup content which should be preserved, as described below. 
+On the second and successive rounds of these synchronisations, the nobackup directories will also be examined.
+However **by default nothing will be migrated from nobackup directories**, as they often contain large amounts of data which is too transient to be worth preserving. You can override that, specifying nobackup content which should be preserved, as described below.
 
 ## Controlling which data gets migrated
 
@@ -31,11 +35,11 @@ Each line of the file (other than comment lines and blank lines) specifies a rul
 
 A pattern can be as simple as the name of a subdirectory, but can also include wildcards:
 
-- `*` matches anything other than a slash `/`, ie: any component of a path.
+- `*` matches anything other than a slash `/`, i.e: any component of a path.
 
 - `**` matches anything, so `keep**` would include all of the contents of a directory named `~/keepthis`.
 
-- A trailing `dir_name/***` matches both `dir_name/` and `dir_name/**`, ie: the directory and all its contents.
+- A trailing `dir_name/***` matches both `dir_name/` and `dir_name/**`, i.e: the directory and all its contents.
 
 - A leading `/` anchors the pattern in the top directory, so  `/tmp` matches `~/tmp` but not `~/other/tmp`.
 
@@ -74,7 +78,8 @@ For nobackup directories we use the same filter rules as above with one addition
 - *
 ```
 
-so you will have to override that if you want anything from your nobackup directory migrated into WEKA. eg:
+so you will have to override that if you want anything from your nobackup directory migrated into WEKA.
+e.g:
 
 ```sh
 echo '+ *' > /nesi/nobackup/nesi99999/.RSYNC_FILTER
