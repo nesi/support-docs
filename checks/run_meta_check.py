@@ -18,7 +18,7 @@ EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r".*/index\.html",  r".*/index\.md", 
 
 # Constants for use in checks.
 
-MAX_TITLE_LENGTH = 24   # As font isn't monospace, this is only approx
+MAX_TITLE_LENGTH = 28   # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 2
 RANGE_SIBLING = [4, 8]
@@ -36,10 +36,7 @@ EXPECTED_PARAMETERS = {
     "suggested": "",    # Add info here when implimented.
     "created_at": "",
     "tags": "",         # Add info here when implimented.
-    "vote_count": "",
-    "vote_sum": "",
-    "zendesk_article_id": "",
-    "zendesk_section_id": "",
+    "search": ""
 }
 
 
@@ -102,7 +99,6 @@ def _run_check(f):
         print(f"::{r.get('level', 'warning')} file={input_path},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
         sys.stdout.flush()
         time.sleep(0.01)
-
 
 
 def _title_from_filename():
