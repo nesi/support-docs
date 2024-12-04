@@ -5,7 +5,8 @@ tags:
   - toolchain
   - compiler
   - milan
-description: Overview of some of the changes you need to be aware of when porting code from from Māui to Mahuika
+  - refresh
+description: Overview of some of the changes you need to be aware of when porting code from Māui to Mahuika
 title: Preparing your code for use on NeSI's new HPC platform
 search:
   boost: 2
@@ -25,7 +26,7 @@ Below is a quick overview of some of the changes you need to be aware of when po
 
 | Māui                   |  Mahuika              |  comments                           |
 |------------------------|-----------------------|-------------------------------------|
-| NA                     | `module purge`
+| NA                     | `module purge` | |
 | `module avail -S X`      | `module spider X`       | search for module X                 |
 | `module load PrgEnv-cray/6.0.10` |   NA          | no Cray compiler on Mahuika Milan nodes |
 | `module load  craype-hugepages*M` | NA           |                                         |
@@ -34,9 +35,6 @@ Below is a quick overview of some of the changes you need to be aware of when po
 | `ftn`                    | `ifort`, `gfortran`, `mpiifort` or `mpif90` | Fortran compiler, use `mpiifort` (Intel) or `mpif90` (GNU) if your code has MPI |
 | `CC`                     | `icc`, `g++`, `mpiicc` or `mpicxx` | C++ compiler, use `mpiicc` (Intel) or `mpicxx` (GNU) if your code has MPI |
 | `cc`                     | `icc`, `gcc`, `mpiicc` or `mpicc` | C compiler, use `mpiicc` (Intel) or `mpicc` (GNU) if your code has MPI |
-
-
-
 
 ## Test your code on Mahuika
 

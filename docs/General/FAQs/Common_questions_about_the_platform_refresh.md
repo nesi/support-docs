@@ -1,6 +1,7 @@
 ---
 description: Common questions researchers have about NeSI's platform refresh in 2024.
 status: new
+tags: [refresh]
 search:
   boost: 2
 ---
