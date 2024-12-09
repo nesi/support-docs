@@ -29,6 +29,15 @@
             "program": "checks/run_test_build.py",
             "console": "integratedTerminal",
             "justMyCode": false
+        },
+        {
+            "name": "Debug Slurm Lint",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "checks/run_slurm_lint.py",
+            "args": ["docs/Scientific_Computing/Supported_Applications/ABAQUS.md"],
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }

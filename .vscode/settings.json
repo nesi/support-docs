@@ -11,6 +11,9 @@
         "spelling-checks": [
             "docs/**/*.md"
         ],
+        "slurm-lint": [
+            "docs/**/*.md"
+        ],
         "test-build": [
             "docs/**/*.md"
         ]

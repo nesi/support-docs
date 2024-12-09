@@ -49,14 +49,14 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
-            if [[ ${{ github.event.inputs.force }} == 'true' ]];then git commit --allow-empty -m "force trigger"; fi
+            if [[ $'{{ github.event.inputs.force }}' == 'true' ]];then git commit --allow-empty -m "force trigger"; fi
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
             if [[ $(git log ${GITHUB_REF}..HEAD) ||  ${{ github.event.inputs.force }} == 'true' ]]; then
                 git push origin ${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
                 gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
                 # gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
-                #gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
+                gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
                 # curl -L \
                 #   -X POST \
                 #   -H "Accept: application/vnd.github+json" \
