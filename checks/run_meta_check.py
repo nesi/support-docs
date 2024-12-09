@@ -36,7 +36,6 @@ EXPECTED_PARAMETERS = {
     "suggested": "",    # Add info here when implimented.
     "created_at": "",
     "tags": "",         # Add info here when implimented.
-    "search": ""
     "search": "",
     "hide": ["toc", "nav", "tags"],
 }
