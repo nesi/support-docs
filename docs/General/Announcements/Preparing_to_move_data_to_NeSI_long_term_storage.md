@@ -1,10 +1,13 @@
 ---
-created: 2024-09-05
+created_at: 2024-09-05
 description: "Copy of 04 September email sent to all NeSI users with current Nearline allocations"
 status: new
+tags: [refresh]
+search:
+  boost: 2
 ---
 
-As part of NeSI's [shift to new platforms](https://www.nesi.org.nz/platform-refresh), our long-term storage service is changing. Our new platform will address diverse data management needs across various research fields, and deliver an easier-to-use and scaleable storage tool. We'll be sharing more details soon.
+As part of NeSI's [shift to new platforms](https://www.nesi.org.nz/platform-refresh), our long-term storage service is changing. Our new platform will address diverse data management needs across various research fields, and deliver an easier-to-use and scalable storage tool. We'll be sharing more details soon.
 
 The initial storage offering on this new platform is a replacement for the current Nearline service. Called NeSI Freezer, it will initially offer a similar long-term tape-based solution storing a single copy of data. We will look at the roadmap for this service once we've completed migration.
 
@@ -22,7 +25,8 @@ Steps involved:
 
 ## Questions?
 
-We have an [FAQ page](../../General/FAQs/Common_questions_about_the_platform_refresh/) to help answer common questions and
-[weekly Online Office Hours](../..//Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) with our support team, who are ready to answer or talk through any questions or issues you might have. You can also reach out anytime via email. {% include "partials/support_request.html" %}
+We have an [FAQ page](../FAQs/Common_questions_about_the_platform_refresh/) to help answer common questions and
+[weekly Online Office Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) with our support team, who are ready to answer or talk through any questions or issues you might have. You can also reach out anytime via email.
+{% include "partials/support_request.html" %}
 
 We are ready to work with you ensure this transition is a smooth process and the new storage platform delivers an improved experience.

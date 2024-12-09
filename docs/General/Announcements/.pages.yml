@@ -2,15 +2,5 @@
 nav:
   - Preparing_to_move_data_to_NeSI_long_term_storage.md
   - Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md
-  - NeSI_Support_is_changing_tools.md
   - Accessing_NeSI_Support_during_the_holiday_break.md
   - Improved_data_management_and_efficient_use_of_NeSI_HPC_storage.md
-  - Improvements_to_Fair_Share_job_prioritisation_on_Maui.md
-  - Mahuika-Core_Dumps_generation_now_disabled_as_default.md
-  - Mahuikas_new_Milan_CPU_nodes_open_to_all_NeSI_users.md
-  - Maui_upgrade_is_complete.md
-  - New_capabilities_for_Machine_Learning_and_GPU_pricing_updates.md
-  - Slurm_upgrade_to_version_21-8.md
-  - Status_page_subscription_notification_changes.md
-  - University_of_Auckland_ANSYS_users.md
-  - Upcoming_webinar-Tips_for_making_the_most_of_Mahuikas_new_Milan_nodes.md
