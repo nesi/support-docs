@@ -9,7 +9,7 @@ search:
 
 ## New and Improved
 
-- Update to the holiday banner that will be displayed in my.nesi from the 20th of December to the 6th of January.  
+- The holiday banner displayed in my.nesi has been updated to reflect NeSI Support's hours during the summer break from 20 December 2024 to 06 January 2025. For more information on how to access NeSI Support during the holidays, [click here](https://docs.nesi.org.nz/General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/).  
 - The Mahuika compute units default values in the allocation request are now rounded if they are > 1000.  
 
 If you have any questions about any of the updates, please
