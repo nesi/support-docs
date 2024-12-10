@@ -13,12 +13,12 @@ search:
 
 
 As another busy year draws to a close, NeSI’s Support Team will be
-taking a summer break from **5:00 PM on 21 December 2023 to 9:00 am on
-03 January 2024**
+taking a summer break from **5:00 PM on 20 December 2024 to 9:00 am on
+06 January 2024**
 
 During this time, [NeSI platform services](https://status.nesi.org.nz/)
 will be online and available, but non-critical support requests will be
-responded to when the team is back on 03 January.
+responded to when the team is back on 06 January.
 
 Urgent / critical requests will be addressed on a best effort basis. Any
 changes to system status will be reported via our [System Status
@@ -29,7 +29,7 @@ A quick reminder of our main support channels as well as other sources
 of self-service support:
 
 - {% include "partials/support_request.html" %}
-    Note: non-emergency requests will be addressed on or after 03 January 2024.
+    Note: non-emergency requests will be addressed on or after 06 January 2025.
 
 - [Sign up for NeSI system status
     updates](../../Getting_Started/Getting_Help/System_status.md) for
