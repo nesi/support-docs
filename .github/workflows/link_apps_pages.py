@@ -10,6 +10,8 @@ import yaml
 Quick and dirty script to associate support pages with apps in module list.
 """
 
+valid_eb_tags = ['base', 'ai', 'astro', 'bio', 'cae', 'chem', 'compiler', 'data', 'debugger', 'devel', 'geo', 'ide', 'lang', 'lib', 'math', 'mpi', 'numlib', 'perf', 'quantum', 'phys', 'system', 'toolchain', 'tools', 'vis']
+
 
 MODULE_LIST_PATH = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 
