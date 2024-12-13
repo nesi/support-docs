@@ -41,7 +41,7 @@ Deployments of open pull requests can be viewed at [https://callumwalley.github.
 
 We are using the [mkdocs material theme](https://squidfunk.github.io/mkdocs-material/).
 
-## Analyics
+## Analytics
 
 The site uses [Google analytics](https://analytics.google.com/analytics/web/#/p424742084). You will need to ask a google workspace admin to add you to the project.
 
