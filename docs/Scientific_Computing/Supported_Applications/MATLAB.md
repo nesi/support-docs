@@ -3,19 +3,11 @@ created_at: '2015-10-14T22:58:53Z'
 tags:
 - engineering
 - ml
-title: MATLAB
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 212639047
-zendesk_section_id: 360000040076
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 !!! warning "No Licence?"
      If you want to run MATLAB code on the cluster, but are not a member of an institution without access to floating licences, MATLAB code can still be run on the cluster using MCR.
@@ -23,12 +15,14 @@ zendesk_section_id: 360000040076
 ## Example scripts
 
 !!! info
-     When developing MATLAB code on your local machine, take measures to ensure it will be platform independent.  Use relative paths when possible and not avoid using '\\s see [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
+     When developing MATLAB code on your local machine, take measures to ensure it will be platform independent.  Use relative paths when possible and not avoid using '\\'s see [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
 
 === "Script"
 
     ```sl
     #!/bin/bash -e
+
+    #SBATCH --account        nesi99991     # Your project code
     #SBATCH --job-name   MATLAB_job     # Name to appear in squeue 
     #SBATCH --time       01:00:00       # Max walltime 
     #SBATCH --mem        512MB          # Max memory
@@ -43,7 +37,8 @@ zendesk_section_id: 360000040076
 
     ``` sl
     #!/bin/bash -e
-     
+
+    #SBATCH --account        nesi99991     # Your project code
     #SBATCH --job-name       MATLAB_job    # Name to appear in squeue
     #SBATCH --time           06:00:00      # Max walltime
     #SBATCH --mem            2048MB        # Max memory
