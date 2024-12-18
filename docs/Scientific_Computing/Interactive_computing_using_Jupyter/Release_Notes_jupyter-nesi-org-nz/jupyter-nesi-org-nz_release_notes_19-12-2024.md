@@ -9,13 +9,9 @@ search:
   boost: 0.1
 ---
 
-## New and Improved
-
-N/A  
-
 ## Fixed
 
-- Update to the OnDemand message to only be visible to OnDemand users.  
+- A message inviting you to use OnDemand rather than Jupyter on NeSI is now visible only to users who have been invited as Ondemand early access users.   
 Note: users need to refresh their browser's cache.  
 
 If you have any questions about any of the improvements or fixes,
