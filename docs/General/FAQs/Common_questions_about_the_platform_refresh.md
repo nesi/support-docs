@@ -1,5 +1,5 @@
 ---
-description: Common questions researchers have about NeSI's platform refresh in 2024.
+description: Common questions researchers have about NeSI's platform refresh.
 status: new
 tags: [refresh]
 search:
