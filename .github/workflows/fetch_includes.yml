@@ -36,7 +36,7 @@ jobs:
         run: |
           wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
           wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
-          #python3 .github/workflows/link_apps_pages.py
+          python3 .github/workflows/link_apps_pages.py
           git add --all
           git commit -m "Updated Module List" || (echo "No Changes";exit 0)
       - name: Fetch Wordlist
