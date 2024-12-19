@@ -49,7 +49,7 @@ jobs:
         run: | 
           wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
           wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
-          ls ../.github/workflows
+          python3 .github/workflows/link_apps_pages.py
           wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
           wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
           wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
