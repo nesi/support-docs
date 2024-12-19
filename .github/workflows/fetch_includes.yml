@@ -49,9 +49,9 @@ jobs:
       - name: Commit to Branch 
         id: commit
         run: |
-            if [[ '${{ github.event.inputs.force }}' == 'true' ]];then 
-              git commit --allow-empty -m "force trigger"
-            fi
+            # if [[ '${{ github.event.inputs.force }}' = 'true' ]];then 
+            #   git commit --allow-empty -m "force trigger"
+            # fi
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
             if [[ $(git log ${GITHUB_REF}..HEAD) ||  ${{ github.event.inputs.force }} == 'true' ]]; then
                 git push origin ${BRANCH_NAME}
