@@ -1274,6 +1274,7 @@ VirtualGL
 WAAFLE's
 WAAFLE
 WCRP
+WEKA
 WRF
 WSL
 WhatsHap's
@@ -1942,6 +1943,7 @@ rkcommon's
 rkcommon
 rnaQUAST's
 rnaQUAST
+roadmap
 rollout
 rsync
 runtime

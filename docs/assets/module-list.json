@@ -369,15 +369,16 @@
         "homepage": "https://github.com/deepmind/alphafold",
         "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/AlphaFold",
         "versions": [
-            "2.3.2"
+            "2.3.2",
+            "3.0.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.3.2",
+        "default": "3.0.0",
         "default_type": "latest",
-        "last_updated": 1682328397,
+        "last_updated": 1733003523,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/AlphaFold/2.3.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AlphaFold/3.0.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -399,6 +400,26 @@
         "last_updated": 1682028220,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AlphaFold2DB/2022-06.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "AlphaFold3DB": {
+        "description": "AlphaFold3 databases",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "",
+        "support": "",
+        "versions": [
+            "2024-12"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2024-12",
+        "default_type": "latest",
+        "last_updated": 1733003796,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AlphaFold3DB/2024-12.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1185,7 +1206,8 @@
             "3.6.3-gimkl-2020a",
             "3.6.3-intel-2017a",
             "3.6.3-intel-2020a",
-            "3.8.0-intel-2022a"
+            "3.8.0-intel-2022a",
+            "3.9.1-foss-2023a"
         ],
         "admin_list": [
             {
@@ -1198,7 +1220,7 @@
         "network_licences": [],
         "default": "3.6.3-intel-2017a",
         "default_type": "latest",
-        "last_updated": 1653873483,
+        "last_updated": 1733965767,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/arpack-ng/3.6.3-intel-2017a.lua",
         "force_hide": "False",
@@ -1907,7 +1929,8 @@
             "2.5.2",
             "2.6.3",
             "2.6.6",
-            "2.7.0"
+            "2.7.0",
+            "2.7.7"
         ],
         "admin_list": [
             {
@@ -1926,7 +1949,7 @@
         "network_licences": [],
         "default": "2.6.6",
         "default_type": "latest",
-        "last_updated": 1664489106,
+        "last_updated": 1734418606,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BEAST/2.6.6.lua",
         "force_hide": "False",
@@ -4304,6 +4327,8 @@
             "12.1.1",
             "12.2.2",
             "12.3.0",
+            "12.4.1",
+            "12.6.3",
             "8.0.61",
             "9.0.176",
             "9.1.85"
@@ -4312,7 +4337,7 @@
         "network_licences": [],
         "default": "11.0.2",
         "default_type": "latest",
-        "last_updated": 1731469100,
+        "last_updated": 1733363565,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CUDA/11.0.2.lua",
         "force_hide": "False",
@@ -4344,7 +4369,8 @@
             "8.6.0.163-CUDA-11.8.0",
             "8.8.0.121-CUDA-12.0.0",
             "8.9.7.29-CUDA-12.2.2",
-            "8.9.7.29-CUDA-12.3.0"
+            "8.9.7.29-CUDA-12.3.0",
+            "9.5.1.17-CUDA-12.6.3"
         ],
         "admin_list": [
             {
@@ -4360,7 +4386,7 @@
         "network_licences": [],
         "default": "7.6.4.38-CUDA-10.1.243",
         "default_type": "latest",
-        "last_updated": 1731469494,
+        "last_updated": 1733364248,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/cuDNN/7.6.4.38-CUDA-10.1.243.lua",
         "force_hide": "False",
@@ -4968,16 +4994,18 @@
         "homepage": "http://oss.deltares.nl/web/delft3d",
         "support": "",
         "versions": [
+            "140221-foss-2023a",
+            "142431-intel-2022a",
             "68673-intel-2020a",
             "68819-intel-2020a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "68673-intel-2020a",
+        "default": "142431-intel-2022a",
         "default_type": "latest",
-        "last_updated": 1646174196,
+        "last_updated": 1734735847,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/geo/Delft3D_FM/68673-intel-2020a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/geo/Delft3D_FM/142431-intel-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5170,15 +5198,16 @@
             "0.7.2",
             "0.7.3",
             "0.8.0",
-            "0.8.3"
+            "0.8.3",
+            "0.9.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.3.2",
+        "default": "0.9.0",
         "default_type": "latest",
-        "last_updated": 1731356577,
+        "last_updated": 1736196479,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Dorado/0.3.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Dorado/0.9.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5753,6 +5782,28 @@
         "last_updated": 1687766319,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/emmtyper/0.2.0-gimkl-2022a-Python-3.11.3.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Emu": {
+        "description": " species-level taxonomic abundance for full-length 16S reads.",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://gitlab.com/treangenlab/emu",
+        "support": "",
+        "versions": [
+            "3.5.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.5.0",
+        "default_type": "latest",
+        "last_updated": 1733035740,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Emu/3.5.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7055,6 +7106,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "FreeFEM": {
+        "description": "FreeFEM offers a fast interpolation algorithm and a language for the manipulation\n of data on multiple meshes.",
+        "domains": [
+            "cae"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://freefem.org",
+        "support": "",
+        "versions": [
+            "4.15-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "4.15-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1736123493,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/cae/FreeFEM/4.15-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "FreeSurfer": {
         "description": "FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.\nFreeSurfer contains a fully automatic structural imaging stream for processing cross sectional and longitudinal data.",
         "domains": [
@@ -7539,20 +7612,22 @@
         "force_show": "False"
     },
     "GDAL": {
-        "description": "GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style\n Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model\n to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for\n data translation and processing. \n NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) after loading the GDAL module.",
+        "description": "GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style\n Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model\n to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for\n data translation and processing.",
         "domains": [
+            "data",
             "earth_science",
             "geo"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.gdal.org/",
+        "homepage": "https://www.gdal.org",
         "support": "",
         "versions": [
             "2.2.2-gimkl-2017a-GEOS-3.5.1",
             "2.4.0-gimkl-2018b",
             "3.0.1-gimkl-2018b",
             "3.0.4-gimkl-2020a",
+            "3.2.1-intel-2022a",
             "3.4.1-gimkl-2020a",
             "3.5.1-gimpi-2022a",
             "3.6.3-gimpi-2022a",
@@ -7560,11 +7635,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.2.2-gimkl-2017a-GEOS-3.5.1",
+        "default": "3.2.1-intel-2022a",
         "default_type": "latest",
-        "last_updated": 1701401986,
+        "last_updated": 1734671319,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/geo/GDAL/2.2.2-gimkl-2017a-GEOS-3.5.1.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GDAL/3.2.1-intel-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8988,15 +9063,17 @@
             "4.2.13-gimkl-2017a",
             "4.2.14-GCCcore-7.4.0",
             "4.2.15-GCCcore-9.2.0",
-            "4.2.16-GCC-12.3.0"
+            "4.2.16-GCC-11.3.0",
+            "4.2.16-GCC-12.3.0",
+            "4.2.16-intel-compilers-2022.0.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.2.15-GCCcore-9.2.0",
+        "default": "4.2.16-intel-compilers-2022.0.2",
         "default_type": "latest",
-        "last_updated": 1717979570,
+        "last_updated": 1734669678,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HDF/4.2.15-GCCcore-9.2.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HDF/4.2.16-intel-compilers-2022.0.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9471,13 +9548,15 @@
         "versions": [
             "2.18.2-gimkl-2018b",
             "2.21.0-gimkl-2022a",
-            "2.25.0-gimkl-2022a"
+            "2.24.0-intel-2022a",
+            "2.25.0-gimkl-2022a",
+            "2.28.0-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "2.21.0-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1665095040,
+        "last_updated": 1734668443,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Hypre/2.21.0-gimkl-2022a.lua",
         "force_hide": "False",
@@ -10294,13 +10373,14 @@
             "11.0.4",
             "15.0.2",
             "17",
-            "20.0.2"
+            "20.0.2",
+            "21.0.5"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "17",
         "default_type": "latest",
-        "last_updated": 1694560598,
+        "last_updated": 1734035409,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lang/Java/17.lua",
         "force_hide": "False",
@@ -14332,6 +14412,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Mmg": {
+        "description": "\nMmg is an open source software for simplicial remeshing. It provides 3 applications and 4 libraries:\nthe mmg2d application and the libmmg2d library: adaptation and optimization of a two-dimensional\ntriangulation and generation of a triangulation from a set of points or from given boundary edges\nthe mmgs application and the libmmgs library: adaptation and optimization of a surface triangulation\nand isovalue discretization the mmg3d application and the libmmg3d library: adaptation and optimization\nof a tetrahedral mesh and implicit domain meshing the libmmg library gathering the libmmg2d,\nlibmmgs and libmmg3d libraries.",
+        "domains": [
+            "math"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.mmgtools.org/",
+        "support": "",
+        "versions": [
+            "5.7.2-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "5.7.2-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1733965698,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/math/Mmg/5.7.2-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "MMseqs2": {
         "description": "MMseqs2: ultra fast and sensitive search and clustering suite",
         "domains": [
@@ -14702,13 +14804,14 @@
             "3.1.5-gimkl-2017a",
             "4.0.2-GCCcore-7.4.0",
             "4.0.2-GCCcore-9.2.0",
-            "4.1.0-GCC-11.3.0"
+            "4.1.0-GCC-11.3.0",
+            "4.2.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "4.0.2-GCCcore-9.2.0",
         "default_type": "latest",
-        "last_updated": 1662020433,
+        "last_updated": 1733962552,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/math/MPFR/4.0.2-GCCcore-9.2.0.lua",
         "force_hide": "False",
@@ -14886,7 +14989,8 @@
             "5.3.1-gimkl-2020a-METIS-5.1.0",
             "5.5.0-gimkl-2022a",
             "5.6.1-foss-2023a",
-            "5.6.1-foss-2023a-plain"
+            "5.6.1-foss-2023a-plain",
+            "5.6.1-intel-2022a"
         ],
         "admin_list": [
             {
@@ -14899,7 +15003,7 @@
         "network_licences": [],
         "default": "4.10.0-gimkl-2020a-metis-4.0.3",
         "default_type": "latest",
-        "last_updated": 1713761562,
+        "last_updated": 1734671581,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/math/MUMPS/4.10.0-gimkl-2020a-metis-4.0.3.lua",
         "force_hide": "False",
@@ -16227,7 +16331,7 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.nwchem-sw.org",
+        "homepage": "https://nwchemgit.github.io/ ",
         "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/NWChem",
         "versions": [
             "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16"
@@ -16240,7 +16344,7 @@
         "network_licences": [],
         "default": "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16",
         "default_type": "latest",
-        "last_updated": 1580479323,
+        "last_updated": 1736459574,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/NWChem/6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16.lua",
         "force_hide": "False",
@@ -17356,13 +17460,14 @@
             "8.40-gimkl-2017a",
             "8.43-GCCcore-7.4.0",
             "8.43-GCCcore-9.2.0",
-            "8.45-GCC-11.3.0"
+            "8.45-GCC-11.3.0",
+            "8.45-GCCcore-11.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "8.43-GCCcore-7.4.0",
         "default_type": "latest",
-        "last_updated": 1662534601,
+        "last_updated": 1734669397,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PCRE/8.43-GCCcore-7.4.0.lua",
         "force_hide": "False",
@@ -17781,6 +17886,8 @@
         "homepage": "http://www.mcs.anl.gov/petsc",
         "support": "",
         "versions": [
+            "3.18.4-intel-2022a",
+            "3.19-foss-2023a",
             "3.19-gimkl-2022a",
             "3.9.3-gimkl-2018b"
         ],
@@ -17788,7 +17895,7 @@
         "network_licences": [],
         "default": "3.9.3-gimkl-2018b",
         "default_type": "latest",
-        "last_updated": 1681171353,
+        "last_updated": 1734672942,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PETSc/3.9.3-gimkl-2018b.lua",
         "force_hide": "False",
@@ -21700,6 +21807,7 @@
             "6.0.6-gimpi-2018b",
             "6.0.9-gimpi-2020a",
             "6.1.2-gimpi-2022a",
+            "6.1.2-iimpi-2022a",
             "7.0.3-gimpi-2022a",
             "7.0.4-foss-2023a"
         ],
@@ -21707,7 +21815,7 @@
         "network_licences": [],
         "default": "6.1.2-gimpi-2022a",
         "default_type": "latest",
-        "last_updated": 1713233440,
+        "last_updated": 1734668689,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/math/SCOTCH/6.1.2-gimpi-2022a.lua",
         "force_hide": "False",
@@ -22318,6 +22426,28 @@
         "last_updated": 1669691011,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SKESA/2.4.0-gimpi-2022a_saute.1.3.0_1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "SLEPc": {
+        "description": "SLEPc (Scalable Library for Eigenvalue Problem Computations) is a software library for the solution\n of large scale sparse eigenvalue problems on parallel computers. It is an extension of PETSc and can be used for\n either standard or generalized eigenproblems, with real or complex arithmetic. It can also be used for computing a\n partial SVD of a large, sparse, rectangular matrix, and to solve quadratic eigenvalue problems.",
+        "domains": [
+            "numlib"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://slepc.upv.es",
+        "support": "",
+        "versions": [
+            "3.19.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.19.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1734045568,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/SLEPc/3.19.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -23211,7 +23341,10 @@
         "versions": [
             "1.3.5-gimkl-2018b",
             "2.2.0-gimkl-2022a",
-            "2.2.0-gimkl-2022a-Python-3.11.3"
+            "2.2.0-gimkl-2022a-Python-3.11.3",
+            "2.2.1-gimkl-2022a-Python-3.11.3",
+            "2.2.3-gimkl-2022a",
+            "2.2.3-gimkl-2022a-Python-3.11.3"
         ],
         "admin_list": [
             {
@@ -23219,11 +23352,11 @@
             }
         ],
         "network_licences": [],
-        "default": "2.2.0-gimkl-2022a",
+        "default": "2.2.1-gimkl-2022a-Python-3.11.3",
         "default_type": "latest",
-        "last_updated": 1684828648,
+        "last_updated": 1734062483,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/StringTie/2.2.0-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/StringTie/2.2.1-gimkl-2022a-Python-3.11.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -23336,19 +23469,21 @@
         "versions": [
             "4.5.4-gimkl-2017a",
             "4.5.4-gimkl-2018b",
+            "5.13.0-foss-2023a",
             "5.13.0-gimkl-2022a",
             "5.4.0-gimkl-2018b-METIS-5.1.0",
             "5.4.0-intel-2018b-METIS-5.1.0",
             "5.6.0-gimkl-2020a-METIS-5.1.0",
             "5.6.0-intel-2020a-METIS-5.1.0",
             "5.6.0-intel-2022a-METIS-5.1.0",
-            "5.8.1-gimkl-2022a-METIS-5.1.0"
+            "5.8.1-gimkl-2022a-METIS-5.1.0",
+            "7.8.3-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "5.13.0-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1682573811,
+        "last_updated": 1734044835,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/SuiteSparse/5.13.0-gimkl-2022a.lua",
         "force_hide": "False",
@@ -24621,7 +24756,7 @@
         "network_licences": [],
         "default": "6.4.2-intel-2022a",
         "default_type": "static",
-        "last_updated": 1714094138,
+        "last_updated": 1733257076,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VASP/6.4.2-intel-2022a.lua",
         "force_hide": "False",
@@ -25113,6 +25248,28 @@
         "last_updated": 1715213259,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/WAAFLE/0.1.0-gimkl-2022a-Python-3.10.5.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "wannier90": {
+        "description": "Wannier90 is an open-source code for generating maximally-localized Wannier functions and using them to compute advanced electronic properties of materials with high efficiency and accuracy.",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://wannier.org/",
+        "support": "",
+        "versions": [
+            "3.1.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.1.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1732152323,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/wannier90/3.1.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
