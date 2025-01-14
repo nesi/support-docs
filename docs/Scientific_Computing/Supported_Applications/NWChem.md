@@ -25,7 +25,7 @@ classical, and all combinations; Gaussian basis functions or
 plane-waves; scaling from one to thousands of processors; properties and
 relativity.
 
-The NWChem home page is at <http://www.nwchem-sw.org>.
+The NWChem home page is at <https://nwchemgit.github.io/>.
 
 NWChem is available to anyone as open source software at no cost under
 the terms of the [Educational Community Licence, version

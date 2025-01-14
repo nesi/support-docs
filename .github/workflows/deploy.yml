@@ -29,6 +29,7 @@ jobs:
           sparse-checkout: |
             docs
             overrides
+            .github
       - name: Set up Python runtime
         uses: actions/setup-python@v5
         with:

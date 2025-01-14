@@ -1,5 +1,5 @@
 ---
-description: Common questions researchers have about NeSI's platform refresh in 2024.
+description: Common questions researchers have about NeSI's platform refresh.
 status: new
 tags: [refresh]
 search:
@@ -16,8 +16,11 @@ All new hardware has been delivered to the Waipapa Taumata Rau University of Auc
 
 ## Do I need to move my data or software?
 
-Projects and data will be migrated in staggered phases as systems become available. Starting the week of 16 December 2024, we will begin copying project data from the current NeSI systems to our new high performance storage platform. We are copying home, and project data, starting with project directories. You can continue to read and write data to/from the current storage system during this process, and carry on using NeSI services as usual. Once all data has been migrated and our new HPC service is officially brought online and ready for you to run jobs, we will be in contact to help you get started on the new system.
-We will have more information to share later in January 2025 that provide additional details and a path for user migration onto the new platforms. 
+Projects and data will be migrated in staggered phases as systems become available. Starting the week of 16 December 2024, we will begin copying project data from the current NeSI systems to our new high performance storage platform. We are copying home, and project data, starting with project directories. You can continue to read and write data to/from the current storage system during this process, and carry on using NeSI services as usual. Once all data has been migrated and our new HPC service is officially brought online and ready for you to run jobs, we will be in contact to help you get started on the new system. We will have more information to share later in January 2025 that provide additional details and a path for user migration onto the new platforms. 
+
+## What project data is being moved?
+
+We are copying home, and project data, starting with project directories. We will be copying across a few project directories in parallel at a time, using rsync. As each project directory is completed, the home directories of that project’s members will also be copied. To keep the WEKA copy of your data as fresh as possible, we will continue cycling through the projects that way, repeatedly syncing your directories from GPFS to WEKA until you ask us to stop. On the second and successive rounds of these synchronisations, the nobackup directories will also be examined. However by default nothing will be migrated from nobackup directories, as they often contain large amounts of data which is too transient to be worth preserving. More details for understanding what data gets migrated can be [read here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/).
 
 ## Will the software package I use be available on the new platforms?
 
