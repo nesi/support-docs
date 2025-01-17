@@ -1,0 +1,14 @@
+- title: Online Office Hours
+  content: Drop-in sessions over Zoom. Bring your problems or questions and get one-on-one support.
+  url: Getting_Started/Getting_Help/Weekly_Online_Office_Hours/
+  image: ./assets/icons/material/video-call.svg
+
+- title: Frequently Asked Questions
+  content: Answers to some of your questions about what's happening.
+  url: https://docs.nesi.org.nz/General/FAQs/Common_questions_about_the_platform_refresh/
+  image: ./assets/icons/material/help.svg
+
+- title: Latest Updates
+  content: Quick status updates and links to documentation that will help you prepare for migration.
+  url: General/Announcements/platform_refresh_updates/
+  image: ./assets/icons/material/update.svg
