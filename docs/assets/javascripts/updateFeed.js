@@ -2,6 +2,8 @@ window.onload = function() {
     update();
 }
 
+MAX_ENTRIES = 100;
+
 async function update() {
     const feedList = document.getElementById("md-feed__inner");
     const rss_feeds = [
@@ -54,7 +56,7 @@ async function update() {
 
     let htmlContent = "";
     // Collect all innerHTML content before updating the DOM to minimize reflows
-    allChannel.forEach(f => {
+    allChannel.array.slice(0, MAX_ENTRIES).forEach(f => {
         try{  
 
             title = `<h3>${f.title}</h3>`;
