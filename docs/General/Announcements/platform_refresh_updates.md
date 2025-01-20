@@ -5,7 +5,7 @@ tags: []
 ---
 
 
-page | updated
+Page | Updated
 ----|----
 [Moving To The New Filesystem](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/) | December 9, 2024
 [Preparing To Move Data To NeSI Long Term Storage](https://docs.nesi.org.nz/General/Announcements/Preparing_to_move_data_to_NeSI_long_term_storage/) | December 9, 2024
