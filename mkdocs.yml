@@ -67,6 +67,8 @@ plugins:
   - search
   - open-in-new-tab
   - rss:
+      categories:
+      - tags
       json_feed_enabled: false
       feeds_filenames:
         rss_created: page_creation.xml
