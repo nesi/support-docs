@@ -5,3 +5,5 @@ hide: toc
 ---
 
 {{description}}
+
+*Click data source for RSS link*
