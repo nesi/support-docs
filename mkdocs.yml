@@ -84,7 +84,7 @@ plugins:
       filename: .pages.yml
  # - git-authors
   - tags:
-      tags: true  # This will keep tags for the purpose of indexing, but not display on page.
+      tags: false  # This will keep tags for the purpose of indexing, but not display on page.
       tags_file: tags.md
   - git-revision-date-localized:
       enable_creation_date: false
