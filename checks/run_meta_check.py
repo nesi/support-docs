@@ -27,7 +27,7 @@ DOC_ROOT = "docs"
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
     "title": "",
-    "template": ["main.html", "supported_apps.html", "updateFeed.html"],
+    "template": ["main.html", "supported_apps.html", "updates.html"],
     "description": "",
     "icon": "",
     "status": ["new", "deprecated"],
