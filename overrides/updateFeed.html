@@ -4,6 +4,7 @@
 
 {% block libs %}
     {{ super() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="{{ base_url }}/assets/javascripts/updateFeed.js"></script>
 {% endblock -%}
 {% block styles %}
@@ -12,6 +13,12 @@
 {% endblock -%}
 {% block content -%}
     {{ super() }}
+    <nav  id="md-filter__options">
+        <strong>Show Only:</strong>
+        <span id="md-filter-tag-container">
+        </span>
+    </nav>
+    <hr>
     <div id="md-feed">
         <div id="md-feed__inner"></div>
         <div class="md-progress" data-md-component="progress" role="progressbar"></div>

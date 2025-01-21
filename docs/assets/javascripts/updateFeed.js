@@ -1,8 +1,55 @@
-window.onload = function() {
-    update();
-}
+// window.onload = function() {
+//     update();
+// }
 
 MAX_ENTRIES = 100;
+$(document).ready(function() {
+
+    params = new URL(document.location).searchParams;
+    // searchParams = params.get("search");
+    filterParams = (params.get("filter") ?? "").split(",").filter(Boolean);
+
+    filterParams.forEach((tag)=>addTag(tag));
+    update();
+    filterSearch(); 
+})
+
+function filterSearch(){
+    // only show nav element if filter in use.
+    if (filterParams){
+        $("#md-filter__options").show();
+    }else{
+        $("#md-filter__options").hide();
+    }
+}
+
+function addBadge(tag){ 
+    $(`#md-filter-tag-container`).append(() => {
+    return `<span class="md-tag md-tag-closeable badge-${slugify(tag)}">${tag}<button type="button" onclick="removeTag(\'${tag}\')" data-dismiss="alert" aria-label="Close"></button></span>`;
+    })
+}
+
+function removeBadge(tag){
+    $(`#md-filter-tag-container > .badge-${slugify(tag)}`).remove(); // Remove tag class from DOM
+}
+
+function addTag(tag){
+    if ((params.get("filter") ?? "").split(",").includes(slugify(tag))){
+        // if already contains tag. remove it instead.
+        removeTag(tag);
+        return
+    }
+    addBadge(tag);
+    params.set('filter', (params.get('filter') ?? "").split(",").filter(Boolean).concat(slugify(tag)).join());
+    history.pushState(null, '', window.location.pathname + '?' + params.toString());
+}
+
+function removeTag(tag){
+    removeBadge(tag);
+    const slugifiedTag = slugify(tag);
+    params.set('filter', (params.get('filter') ?? "").split(",").filter(Boolean).filter(e => e !== slugifiedTag).join()); // Remove tag class from search string
+    history.pushState(null, '', window.location.pathname + '?' + params.toString()); // push to search history for live update.
+}
 
 async function update() {
     const feedList = document.getElementById("md-feed__inner");
@@ -42,6 +89,7 @@ async function update() {
                     channel: channelName,
                     link: item.querySelector("link")?.textContent || "",
                     channelUrl: feed,
+                    categories:  (Array.from(item.querySelectorAll("category"))).map(x=> x.innerHTML).concat([channelName]),
                     title: item.querySelector("title")?.textContent || "", 
                     description: item.querySelector("description")?.textContent || "", 
                 });
@@ -56,7 +104,7 @@ async function update() {
 
     let htmlContent = "";
     // Collect all innerHTML content before updating the DOM to minimize reflows
-    allChannel.array.slice(0, MAX_ENTRIES).forEach(f => {
+    allChannel.slice(0, MAX_ENTRIES).forEach(f => {
         try{  
 
             title = `<h3>${f.title}</h3>`;
@@ -67,6 +115,9 @@ async function update() {
                 <div class="md-feed-item">
                     ${title}
                     <div class="md-feed-description"><p>${f.description}</p></div>
+                    <nav class="md-tags">
+                    ${f.categories.map(x => `<button onclick="addTag('${x}')" class=\"md-tag\">${x}</button>` ).join("")}
+                    </nav>
                     <div>
                     <span class="md-icon md-feed-date" title="Date">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
@@ -82,4 +133,13 @@ async function update() {
     }
     });
     feedList.innerHTML = htmlContent;  // Update the DOM once with all content
+}
+
+function slugify(str) {
+    str = str.replace(/^\s+|\s+$/g, '');
+    str = str.toLowerCase();
+    str = str.replace(/[^a-z0-9 -]/g, '')
+             .replace(/\s+/g, '-') 
+             .replace(/-+/g, '-');
+    return str;
 }
