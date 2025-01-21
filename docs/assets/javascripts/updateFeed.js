@@ -2,30 +2,44 @@
 //     update();
 // }
 
-MAX_ENTRIES = 100;
-$(document).ready(function() {
+MAX_ENTRIES = 150;
+$(document).ready(async function() {
 
     params = new URL(document.location).searchParams;
     // searchParams = params.get("search");
     filterParams = (params.get("filter") ?? "").split(",").filter(Boolean);
 
-    filterParams.forEach((tag)=>addTag(tag));
-    update();
+    filterParams.forEach((tag)=>addBadge(tag));
+    await mergeFeed();
     filterSearch(); 
 })
 
 function filterSearch(){
+    $(".md-throbber").show();
+    let filterParams = (params.get("filter") ?? "").split(",").filter(Boolean)
     // only show nav element if filter in use.
-    if (filterParams){
+    if (filterParams.length > 0){
         $("#md-filter__options").show();
     }else{
         $("#md-filter__options").hide();
     }
+    let visibleCount = 0;
+    $('#md-feed__inner').children().each(function(i) {
+        if (visibleCount < MAX_ENTRIES && (filterParams.length < 1 || filterParams.some(x => $(this).hasClass(`md-category-${x}`)))) {
+            $(this).show();
+            visibleCount++;
+        } else {
+            $(this).hide();
+        }
+    });
+    $(".md-throbber").hide();
 }
+
+
 
 function addBadge(tag){ 
     $(`#md-filter-tag-container`).append(() => {
-    return `<span class="md-tag md-tag-closeable badge-${slugify(tag)}">${tag}<button type="button" onclick="removeTag(\'${tag}\')" data-dismiss="alert" aria-label="Close"></button></span>`;
+    return `<span class="md-tag md-tag-closeable badge-${slugify(tag)}">${tag}<button type="button" onclick="removeTag(\'${tag}\')" data-dismiss="alert" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button></span>`;
     })
 }
 
@@ -42,6 +56,7 @@ function addTag(tag){
     addBadge(tag);
     params.set('filter', (params.get('filter') ?? "").split(",").filter(Boolean).concat(slugify(tag)).join());
     history.pushState(null, '', window.location.pathname + '?' + params.toString());
+    filterSearch();
 }
 
 function removeTag(tag){
@@ -49,10 +64,12 @@ function removeTag(tag){
     const slugifiedTag = slugify(tag);
     params.set('filter', (params.get('filter') ?? "").split(",").filter(Boolean).filter(e => e !== slugifiedTag).join()); // Remove tag class from search string
     history.pushState(null, '', window.location.pathname + '?' + params.toString()); // push to search history for live update.
+    filterSearch();
 }
 
-async function update() {
-    const feedList = document.getElementById("md-feed__inner");
+
+// Todo, make this aysnc.
+async function mergeFeed() {
     const rss_feeds = [
         `${window.location.origin}/software_updates.xml`,
         `${window.location.origin}/page_update.xml`,
@@ -102,17 +119,17 @@ async function update() {
     // Sort feeds by publication date
     allChannel.sort((a, b) => b.date - a.date);
 
-    let htmlContent = "";
     // Collect all innerHTML content before updating the DOM to minimize reflows
-    allChannel.slice(0, MAX_ENTRIES).forEach(f => {
+    allChannel.forEach(f => {
         try{  
-
             title = `<h3>${f.title}</h3>`;
+            let classes = "md-feed-item";
+            f.categories.forEach(cat => classes+= " md-category-" + slugify(cat));
             if (f.link){
                 title = `<a class="md-feed-title" href="${f.link}">${title}</a>`
             }
-            htmlContent += `
-                <div class="md-feed-item">
+            let htmlContent = `
+                <div class="${classes}" style='display:none'>
                     ${title}
                     <div class="md-feed-description"><p>${f.description}</p></div>
                     <nav class="md-tags">
@@ -126,13 +143,11 @@ async function update() {
                     </span>
                     </div>
                 </div>`;
-            console.log(f);
-
+            $("#md-feed__inner").append(htmlContent);  // Update the DOM once with all content
         }catch (error) {
                     console.error("Error fetching or parsing feeds: ", error);
     }
     });
-    feedList.innerHTML = htmlContent;  // Update the DOM once with all content
 }
 
 function slugify(str) {

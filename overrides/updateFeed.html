@@ -13,7 +13,7 @@
 {% endblock -%}
 {% block content -%}
     {{ super() }}
-    <nav  id="md-filter__options">
+    <nav style="display: none;" id="md-filter__options">
         <strong>Show Only:</strong>
         <span id="md-filter-tag-container">
         </span>
@@ -21,7 +21,7 @@
     <hr>
     <div id="md-feed">
         <div id="md-feed__inner"></div>
-        <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+        <div class="md-throbber"></div>
     </div>
 
 {% endblock -%}

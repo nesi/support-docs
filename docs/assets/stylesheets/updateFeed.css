@@ -43,10 +43,21 @@ aside.md-source-file {
     padding: 0.4em 0.3em 0.3em 0.6em;
     margin: -0.3em;
 }
-.md-tag-closeable > button::after {
-    content: " \f057";
-    font-family: "FontAwesome";
-}
 .md-tag-closeable {
     cursor: default;
 }
+
+.md-throbber {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ddd;
+    border-top: 5px solid var(--md-primary-fg-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
