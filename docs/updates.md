@@ -1,10 +1,7 @@
 ---
-template: updateFeed.html
-title: Update Feed
+template: updates.html
 description: Updates to the cluster, software and documentation.
 hide: toc
 ---
 
 {{description}}
-
-

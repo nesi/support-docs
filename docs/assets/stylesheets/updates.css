@@ -46,7 +46,9 @@ aside.md-source-file {
 .md-tag-closeable {
     cursor: default;
 }
-
+.md-tag-clickable {
+    cursor: pointer;
+}
 .md-throbber {
     margin: auto;
     width: 40px;

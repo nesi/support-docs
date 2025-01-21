@@ -133,7 +133,7 @@ async function mergeFeed() {
                     ${title}
                     <div class="md-feed-description"><p>${f.description}</p></div>
                     <nav class="md-tags">
-                    ${f.categories.map(x => `<button onclick="addTag('${x}')" class=\"md-tag\">${x}</button>` ).join("")}
+                    ${f.categories.map(x => `<button onclick="addTag('${x}')" class=\"md-tag md-tag-clickable\">${x}</button>` ).join("")}
                     </nav>
                     <div>
                     <span class="md-icon md-feed-date" title="Date">
