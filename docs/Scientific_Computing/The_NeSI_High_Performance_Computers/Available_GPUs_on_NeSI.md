@@ -1,12 +1,8 @@
 ---
 created_at: '2022-06-13T04:54:38Z'
+description:  This page below outlines the different types of GPUs available on NeSI
 tags: |
-    gpu
-title: Available GPUs on NeSI
-vote_count: 3
-vote_sum: 3
-zendesk_article_id: 4963040656783
-zendesk_section_id: 360000034335
+    - gpu
 ---
 
 

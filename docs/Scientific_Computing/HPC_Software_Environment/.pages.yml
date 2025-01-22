@@ -7,8 +7,6 @@ nav:
  - Configuring_Dask_MPI_jobs.md
  - Software_Version_Management.md
  - Thread_Placement_and_Thread_Affinity.md
- - NICE_DCV_Setup.md
- - Visualisation_software.md
  - Finding_Software.md
  - Installing_Third_Party_applications.md
  - Compiling_software_on_Mahuika.md

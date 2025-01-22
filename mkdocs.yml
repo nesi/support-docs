@@ -69,7 +69,12 @@ plugins:
   - rss:
       categories:
       - tags
+      - title
       json_feed_enabled: false
+      pretty_print: true
+      match_path: .*.md
+      feed_title: NeSI Support Docs Updates
+      length: 100
       feeds_filenames:
         rss_created: page_creation.xml
         rss_updated: page_update.xml
@@ -79,8 +84,8 @@ plugins:
       filename: .pages.yml
  # - git-authors
   - tags:
-      tags: true  # This will keep tags for the purpose of indexing, but not display on page.
-      # tags_file: tags.md
+      tags: false  # This will keep tags for the purpose of indexing, but not display on page.
+      tags_file: tags.md
   - git-revision-date-localized:
       enable_creation_date: false
   - macros:
