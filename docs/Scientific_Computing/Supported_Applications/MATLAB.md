@@ -326,13 +326,7 @@ The most up to date compilers supported by MATLAB can be loaded on NeSI
 using `module load gimkl/2017a`
 
 If no GCC module is loaded, the default system version of these
-compilers will be used.
-
-Further configuration can be done within MATLAB using the command
-`mex -setup`
-
-`mex <file_name>`  will then compile the mex function.
-
+compilers will be used.#using-gpu
 Default compiler flags can be overwritten with by setting the
 appropriate environment variables. The COMPFLAGS variable is ignored as
 it is Windows specific.

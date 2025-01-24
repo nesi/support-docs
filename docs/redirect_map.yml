@@ -69,12 +69,8 @@ hc/en-gb/articles/360000205355-I-O-Performance-Considerations.md: Storage/File_S
 hc/en-gb/articles/360000205355.md: Storage/File_Systems_and_Quotas/I-O_Performance_Considerations.md
 hc/en-gb/articles/360000205435-File-permissions-and-groups.md: Storage/File_Systems_and_Quotas/File_permissions_and_groups.md
 hc/en-gb/articles/360000205435.md: Storage/File_Systems_and_Quotas/File_permissions_and_groups.md
-hc/en-gb/articles/360000205656-Manuals.md: Scientific_Computing/Manuals_and_User_Guides/Manuals.md
-hc/en-gb/articles/360000205656.md: Scientific_Computing/Manuals_and_User_Guides/Manuals.md
 hc/en-gb/articles/360000207315-File-Recovery.md: Storage/Data_Recovery/File_Recovery.md
 hc/en-gb/articles/360000207315.md: Storage/Data_Recovery/File_Recovery.md
-hc/en-gb/articles/360000208356-XC50-Aries-Network-Architecture.md: Scientific_Computing/Manuals_and_User_Guides/XC50_Aries_Network_Architecture.md
-hc/en-gb/articles/360000208356.md: Scientific_Computing/Manuals_and_User_Guides/XC50_Aries_Network_Architecture.md
 hc/en-gb/articles/360000214036-Two-Factor-Authentication-FAQ.md: General/FAQs/Two_Factor_Authentication_FAQ.md
 hc/en-gb/articles/360000214036.md: General/FAQs/Two_Factor_Authentication_FAQ.md
 hc/en-gb/articles/360000216035-Account-Requests-for-non-Tuakiri-Members.md: General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members.md
@@ -131,14 +127,10 @@ hc/en-gb/articles/360000691716-Slurm-Reference-Sheet.md: Getting_Started/Cheat_S
 hc/en-gb/articles/360000691716.md: Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md
 hc/en-gb/articles/360000693896-Applying-to-join-an-existing-NeSI-project.md: Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md
 hc/en-gb/articles/360000693896.md: Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md
-hc/en-gb/articles/360000700295-Visualisation-software.md: Scientific_Computing/HPC_Software_Environment/Visualisation_software.md
-hc/en-gb/articles/360000700295.md: Scientific_Computing/HPC_Software_Environment/Visualisation_software.md
 hc/en-gb/articles/360000705196-SLURM-Best-Practice.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice.md
 hc/en-gb/articles/360000705196.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice.md
 hc/en-gb/articles/360000718515-Supernova.md: Scientific_Computing/Supported_Applications/Supernova.md
 hc/en-gb/articles/360000718515.md: Scientific_Computing/Supported_Applications/Supernova.md
-hc/en-gb/articles/360000719156-NICE-DCV-Setup.md: Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup.md
-hc/en-gb/articles/360000719156.md: Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup.md
 hc/en-gb/articles/360000728016-Job-Scaling-Ascertaining-job-dimensions.md: Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md
 hc/en-gb/articles/360000728016.md: Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md
 hc/en-gb/articles/360000737555-Why-is-my-job-taking-a-long-time-to-start.md: General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
@@ -320,8 +312,6 @@ hc/en-gb/articles/360003592875-Navigating-the-my-nesi-org-nz-web-interface.md: G
 hc/en-gb/articles/360003592875.md: Getting_Started/my-nesi-org-nz/Navigating_the_my-nesi-org-nz_web_interface.md
 hc/en-gb/articles/360003648716-The-NeSI-Project-Request-Form.md: Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md
 hc/en-gb/articles/360003648716.md: Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md
-hc/en-gb/articles/360003686055-Troubleshooting-on-NeSI.md: Scientific_Computing/Manuals_and_User_Guides/Troubleshooting_on_NeSI.md
-hc/en-gb/articles/360003686055.md: Scientific_Computing/Manuals_and_User_Guides/Troubleshooting_on_NeSI.md
 hc/en-gb/articles/360003984776-University-of-Auckland-ANSYS-users.md: General/Announcements/University_of_Auckland_ANSYS_users.md
 hc/en-gb/articles/360003984776.md: General/Announcements/University_of_Auckland_ANSYS_users.md
 hc/en-gb/articles/360004065335-NeSI-Privacy-Policy.md: General/NeSI_Policies/NeSI_Privacy_Policy.md

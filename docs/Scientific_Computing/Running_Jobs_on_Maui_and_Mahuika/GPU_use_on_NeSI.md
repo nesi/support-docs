@@ -2,11 +2,6 @@
 created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
-title: GPU use on NeSI
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001471955
-zendesk_section_id: 360000030876
 ---
 
 This page provides generic information about how to access NeSI's GPU
@@ -21,7 +16,7 @@ page.
      support page.
      Details about GPU cards for each system and usage limits are in the
      [Mahuika Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md)
-     and [Māui\_Ancil (CS500) Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md#_Toc514341606)
+     and [Māui\_Ancil (CS500) Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md)
      support pages.
      Details about pricing in terms of compute units can be found in the
      [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
@@ -346,10 +341,10 @@ graphical interface.
 The following pages provide additional information for supported
 applications:
 
-- [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS.md#gpus)
-- [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md#nvidia_gpu_container)
+- [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS.md#examples)
+- [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md#nvidia-gpu-container)
 - [Lambda Stack](../../Scientific_Computing/Supported_Applications/Lambda_Stack.md)
-- [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#GPU)
+- [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#using-gpus)
 - [TensorFlow on GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
 
 And programming toolkits:

@@ -3,8 +3,6 @@ created_at: '2018-11-30T00:34:14Z'
 tags:
 - ssh
 - howto
-vote_count: 8
-vote_sum: 6
 description: How to setup your ssh config file in order to connect to the NeSI cluster.
 ---
 
@@ -14,7 +12,7 @@ description: How to setup your ssh config file in order to connect to the NeSI c
      -   Set up [Second Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
      -   Have one of:
          - Built in Linux/Mac terminal
-         - [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md) with [Ubuntu terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md).
+         - [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
          - [VSCode](../../Scientific_Computing/Terminal_Setup/VSCode.md)
 
 ## First time setup
