@@ -11,6 +11,7 @@ import sys
 import time
 from pathlib import Path
 
+msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 
 LINES_AFTER_SHEBANG = 1
 LINES_AFTER_HEADER = 1
@@ -57,6 +58,7 @@ def parse_script(start_linno, indent, slurm):
 
     def _run_check(f):
         for r in f():
+            msg_count[r.get('level', 'warning')] += 1
             print(f"::{r.get('level', 'warning')} file={input_path},title={f.__name__}," +
                   f"col={r.get('col', 0) + indent},endColumn={r.get('endColumn', 99) + indent}," +
                   f"line={start_linno + r.get('line', lineno)}::{r.get('message', 'something wrong')}")
@@ -184,3 +186,6 @@ if __name__ == "__main__":
     # FIXME terrible hack to make VSCode in codespace capture the error messages
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
+
+    # Arbitrary weighting whether to fail check or not
+    exit(100 < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))

@@ -13,6 +13,8 @@ import time
 This works but is a bit messy
 """
 
+msg_count = {"DEBUG": 0, "INFO": 0, "WARNING": 0, "ERROR": 0}
+
 
 def parse_macro(record):
 
@@ -42,11 +44,18 @@ def parse_macro(record):
     return True
 
 
+def count_msg(record):
+    msg_count[record.levelname] += 1
+
+    return True
+
+
 if __name__ == '__main__':
     log = logging.getLogger('root')
     log.setLevel(logging.INFO)
     sh = logging.StreamHandler(sys.stdout)
     sh.addFilter(parse_macro)
+    sh.addFilter(count_msg)
     sh.setFormatter(logging.Formatter(
         '::%(levelname)s file=%(filename)s,title=%(name)s,col=0,endColumn=0,line=%(lineno)s::%(message)s'))
     log.addHandler(sh)
@@ -56,4 +65,7 @@ if __name__ == '__main__':
         build.build(config, dirty=True)
     finally:
         config.plugins.on_shutdown()
+
     time.sleep(5)
+    exit(100 < msg_count["INFO"] + (30 * msg_count["WARNING"] + (100 * msg_count["ERROR"])))
+
