@@ -2,10 +2,6 @@
 created_at: '2020-05-12T01:43:30Z'
 tags: []
 title: Port Forwarding
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001523916
-zendesk_section_id: 360000034315
 ---
 
 !!! prerequisite
@@ -13,28 +9,26 @@ zendesk_section_id: 360000034315
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
-on the cluster and want to connect to it you will need to set up [port
-forwarding](https://en.wikipedia.org/wiki/Port_forwarding).
+on the cluster and want to connect to it you will need to set up
+[port forwarding](https://en.wikipedia.org/wiki/Port_forwarding).
 
 Three values must be known, the *local port*, the *host alias*, and the
-*remote port*. Chosen port numbers should be between **1024** and
+*remote port*. Chosen port numbers should be between **1024** and
 **49151** and not be in use by another process.
 
 **Localhost:** The self address of a host (computer), equivalent
-to `127.0.0.1`. The alias `localhost` can also be used in most cases.
+to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 
-**Local Port:** The port number you will use on your local machine.
+**Local Port:** The port number you will use on your local machine.
 
 **Host Alias:** An alias for the socket of your main connection to the
 cluster, `mahuika` or `maui` if you have set up your ssh config file as
-described
-[here](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
 !!! note
-    The following examples use aliases as set up in [standard terminal
-    setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+    The following examples use aliases as set up in [standard terminal setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
     This allows the forwarding from your local machine to the NeSI
     cluster, without having to re-tunnel through the lander node.
 
@@ -46,17 +40,15 @@ enabled.*
 The command for forwarding a port is
 
 ``` sh
-ssh -L <local_port>:<destination_host>:<remote_port> <ssh_host>
+ssh -L <local_port>:<destination_host>:<remote_port> <ssh_host>
 ```
-
-### Example
 
 A client program on my local machine uses the port 5555 to communicate.
 I want to connect to a server running on Mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:
 
 ``` sh
-ssh -L 5555:localhost:6666 mahuika 
+ssh -L 5555:localhost:6666 mahuika
 ```
 
 Your terminal will now function like a normal connection to Mahuika.
@@ -65,6 +57,7 @@ However, if you close this terminal session the port forwarding will end.
 If there is no existing session on Mahuika, you will be prompted for
 your first and second factor, same as during the regular log in
 procedure.
+
 !!! note
     Your local port and remote port do not have to be different numbers.
     It is generally easier to use the same number for both.
@@ -84,7 +77,7 @@ LocalForward <local_port> <host_alias>:<remote_port>
 ExitOnForwardFailure yes
 ```
 
-ExitOnForwardFailure is optional, but it is useful to kill the session
+`ExitOnForwardFailure` is optional, but it is useful to kill the session
 if the port fails.
 
 For example:
@@ -107,6 +100,7 @@ isn't a requirement, but it makes things easier to remember.
 
 Now so long as you have a connection to the cluster, your chosen port
 will be forwarded.
+
 !!! note
     -   If you get a error message
         ``` sh
@@ -141,14 +135,14 @@ The two tunnels should look like this.
 
 ![mobakey.png](../../assets/images/Port_Forwarding_1.png)
 
-<span style='color:#32CD32'>■</span> local port  
-<span style="color:orange">■</span> remote port  
-<span style="color:red">■</span> must match  
+<span style='color:#32CD32'>■</span> local port  
+<span style="color:orange">■</span> remote port  
+<span style="color:red">■</span> must match  
 <span style="color:#FF00FF">■</span> doesn't matter
 
 ## sshuttle
 
-[sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
+[sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
 MacOS platforms (unfortunately Windows is not supported). `sshuttle`
 allows users to create a VPN connection from a local machine to any
@@ -162,7 +156,7 @@ The command line for `sshuttle` has the following form:
 sshuttle [-l [ip:]port] -r <host_alias>[:port] <subnets...>
 ```
 
-More information about specific keys and modifiers for sshuttle commands
+More information about specific keys and modifiers for `sshuttle` commands
 is available in the online documentation.
 
 As an example, this is how to establish a tunnel through Mahuika login
@@ -180,7 +174,7 @@ which uses remote SSH host Mahuika to forward all traffic coming to
 Ports can also be forwarded from the login node to a compute node.
 
 The best way to do this is by creating a reverse tunnel **from your
-slurm job** (that way the tunnel doesn't depend on a separate shell, and
+Slurm job** (that way the tunnel doesn't depend on a separate shell, and
 the tunnel will not outlive the job).
 
 The syntax for opening a reverse tunnel is similar the regular tunnel
@@ -195,10 +189,12 @@ ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
 An example Slurm script:
 
 ``` sl
-#!/bin/bash
+#!/bin/bash -e
 
-#SBATCH --time 00:15:00
-#SBATCH --mem  1G
+#SBATCH --job-name  port-forward
+#SBATCH --account   nesi99999
+#SBATCH --time      00:15:00
+#SBATCH --mem       1G
 
 ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
@@ -208,5 +204,4 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 !!! tip "What Next?"
     -   Using
         [JupyterLab](../../Scientific_Computing/Supported_Applications/JupyterLab.md) on the cluster.
-    -   [NiceDCV](../../Scientific_Computing/HPC_Software_Environment/NICE_DCV_Setup.md)
     -   [Paraview](../../Scientific_Computing/Supported_Applications/ParaView.md)

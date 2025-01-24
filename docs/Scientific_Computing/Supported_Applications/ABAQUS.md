@@ -7,11 +7,6 @@ tags:
 - mpi
 - omp
 - fea
-title: ABAQUS
-vote_count: 2
-vote_sum: 0
-zendesk_article_id: 212457807
-zendesk_section_id: 360000040076
 ---
 
 {% set app_name = page.title | trim %}
