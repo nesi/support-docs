@@ -8,7 +8,7 @@ This article describes how to run an applicatiopn that was compiled in an [Appta
 
 ## Example application
 
-We'll use the fidibench set of benchmarks to illustrate the process
+We'll use the fidibench set of benchmarks to illustrate the process. On mahuika,
 ```sh
 git clone https://github.com/pletzer/fidibench
 cd fidibench
@@ -29,13 +29,15 @@ We can now build an application using the `nvc++` compiler inside the container:
 Apptainer> CXX=nvc++ cmake -DOPENACC=1 ..
 Apptainer> cd upwind/cxx
 Apptainer> make upwindAccCxx
+Apptainer> exit
 ```
 The application (`upwindAccCxx`) contains OpenACC directives to offload to a GPU.
 
 ## Run the application
 
 ```sh
-srun --gpus-per-node=A100-1g.5gb:1 apptainer exec --nv /nesi/nobackup/pletzera/ngarch_nvhpc.sif ./upwindAccCxx
+srun --gpus-per-node=A100-1g.5gb:1 apptainer exec --nv \
+     /nesi/nobackup/pletzera/ngarch_nvhpc.sif ./upwind/cxx/upwindAccCxx
 ```
 should print 
 ```
