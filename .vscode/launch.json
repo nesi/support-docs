@@ -20,7 +20,7 @@
             "program": "checks/run_meta_check.py",
             "args": ["docs/fail_checks.md"],
             "console": "integratedTerminal",
-            "justMyCode": false
+            "justMyCode": true
         },
         {
             "name": "Debug Testbuild",
