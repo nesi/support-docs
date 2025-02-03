@@ -57,7 +57,7 @@ Branch deployments can be shared
 
 Sharing this address will allow other people to view your deployment, so long as your codespace is running.
 
-## Local Development Environment
+## Local Development Environment (RECCOMENDED)
 
 A local development environment is not required to make doc edits, but if you are making lots of changes, the real time rendering can be quite helpful.
 
@@ -125,10 +125,10 @@ Tasks allow continuous checks to be run in the background, these can be defined 
 
 ## Checks
 
-Whenever a change is commited, or a merge request opened, a series of automatic checks will be started.
+Whenever a change is committed, or a merge request opened, a series of automatic checks will be started.
 From a pull request, the status of these checks can be seen in the 'Checks' tab, or inline under the 'Files Changed' Tab.
 
-Will give three levels of ourput, **Errors** (serious issues that will prevent merging into main), **Warnings** (non-critical suggestions for improvement) and **Info** (pedantry).
+Will give three levels of output, **Errors** (serious issues that will prevent merging into main), **Warnings** (non-critical suggestions for improvement) and **Info** (pedantry).
 
 ## Making a Merge Request
 
@@ -176,7 +176,6 @@ If some of the CI checks failed (make sure they are not important ones), you wil
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
-
 ## Merge Etiquette
 
 Just because a merge request has been opened, doesn't mean anyone should merge it.
@@ -191,7 +190,9 @@ Just because a merge request has been opened, doesn't mean anyone should merge i
 
 ## Update Remote Assets
 
-Certain files need to be fetched from other repos for up to date info. This will be automated, but for now the proccess is manual.
+*Still haven't found a way to do this properly 😔*
+
+Certain files need to be fetched from other repos for up to date info. This will be automated, but for now the process is manual.
 
 1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
 2. A branch `new-assets` will be created, which can be merged into main.
@@ -214,7 +215,7 @@ Quite a lot of data-sources come together to make this page:
 
 - mkdocs article titles
 - lmod info scraped from all clusters
-- licence counts from prometheus instance
+- licence counts from Prometheus instance
 - licence details from config file
 - Manual overwrites in the [modules list repo](https://github.com/nesi/modules-list/blob/main/tags/licence_type.yml).
 
