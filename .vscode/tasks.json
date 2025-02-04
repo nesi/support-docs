@@ -144,14 +144,11 @@
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {
-                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),col=([0-9]*),endColumn=([0-9]*),line=([0-9]*)::(.*)$",
+                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?)::(.*)$",
                     "severity": 1,
                     "file": 2,
                     "code": 3,
-                    "column": 4,
-                    "endColumn": 5,
-                    "line": 6,
-                    "message": 7,
+                    "message": 4
                 },
                 "owner": "fetch",
                 "fileLocation": "autoDetect",

@@ -9,7 +9,7 @@ SNIPPETS_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/
 wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
 wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
 python3 .github/workflows/link_apps_pages.py
-git add --all
+git add docs/assets/module-list.json docs/software_updates.xml
 git commit -m "Updated Module List" || (echo "No Changes";exit 0)
 
 echo "Fetch Wordlist"
@@ -17,5 +17,7 @@ echo "Fetch Wordlist"
 wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
 wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
 wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
-git add --all
+git add overrides/partials/glossary.html docs/assets/glossary/dictionary.txt docs/assets/glossary/snippets.md
 git commit -m "Updated Glossary" || (echo "No Changes";exit 0)
+
+sleep 1
