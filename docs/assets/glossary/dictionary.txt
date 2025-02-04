@@ -63,11 +63,14 @@ AlphaFold's
 AlphaFold
 AlphaFold2DB's
 AlphaFold2DB
+AlphaFold3DB's
+AlphaFold3DB
 AlwaysIntelMKL's
 AlwaysIntelMKL
 Amdahl
 Anaconda3's
 Anaconda3
+Ancil
 Aotearoa
 Apache
 Apptainer's
@@ -330,6 +333,8 @@ Eigen's
 Eigen
 Embree's
 Embree
+Emu's
+Emu
 EukRep-EukCC's
 EukRep-EukCC
 ExaBayes's
@@ -392,6 +397,8 @@ FragGeneScan's
 FragGeneScan
 FreeBayes's
 FreeBayes
+FreeFEM's
+FreeFEM
 FreeIPA
 FreeSurfer's
 FreeSurfer
@@ -744,6 +751,8 @@ Minimac4's
 Minimac4
 MitoZ's
 MitoZ
+Mmg's
+Mmg
 MobaXterm
 ModDotPlot's
 ModDotPlot
@@ -1008,6 +1017,8 @@ RFPlasmid's
 RFPlasmid
 RFdiffusion's
 RFdiffusion
+RJMCMC's
+RJMCMC
 RMBlast's
 RMBlast
 RNAmmer's
@@ -1080,6 +1091,8 @@ SIP's
 SIP
 SKESA's
 SKESA
+SLEPc's
+SLEPc
 SMRT-Link's
 SMRT-Link
 SNVoter-NanoMethPhase's
@@ -1230,6 +1243,8 @@ Unicycler
 UoA
 VASP's
 VASP
+VBZ-Compression's
+VBZ-Compression
 VCF-kit's
 VCF-kit
 VCFtools's
@@ -1406,6 +1421,8 @@ cromwell's
 cromwell
 cron
 crontab
+csvtk's
+csvtk
 ctags's
 ctags
 ctffind's
@@ -1745,6 +1762,7 @@ mapDamage's
 mapDamage
 matlab-proxy's
 matlab-proxy
+md
 meRanTK's
 meRanTK
 medaka's
@@ -2038,6 +2056,8 @@ templating
 tmpfs
 tmux's
 tmux
+tomo's
+tomo
 toolchains
 toolchain
 tooltips's
@@ -2068,6 +2088,8 @@ vg's
 vg
 walltimes
 walltime
+wannier90's
+wannier90
 wgsim's
 wgsim
 wheel's

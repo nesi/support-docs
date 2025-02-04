@@ -128,6 +128,10 @@ AlphaFold can predict protein structures with atomic accuracy even where no simi
 
 AlphaFold2 databases
 
+## AlphaFold3DB:
+
+AlphaFold3 databases
+
 ## AlwaysIntelMKL:
 
 Overrides the MKL internal utility function mkl_serv_intel_cpu_true 
@@ -687,6 +691,10 @@ the performance of their photo-realistic rendering application by leveraging Emb
 performance-optimized ray tracing kernels.
 
 
+## Emu:
+
+ species-level taxonomic abundance for full-length 16S reads.
+
 ## EukRep-EukCC:
 
 Completeness and contamination estimator for metagenomic assembled microbial eukaryotic genomes.
@@ -813,6 +821,11 @@ FragGeneScan is an application for finding (fragmented) genes in short reads.
 
 Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.
 
+## FreeFEM:
+
+FreeFEM offers a fast interpolation algorithm and a language for the manipulation
+ of data on multiple meshes.
+
 ## FreeSurfer:
 
 FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.
@@ -852,9 +865,8 @@ Interface to Gd Graphics Library
 
 GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
  Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
- to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for
- data translation and processing. 
- NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) after loading the GDAL module.
+ to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for
+ data translation and processing.
 
 ## GEMMA:
 
@@ -1547,6 +1559,17 @@ Toolkit which aims to automatically filter pair-end raw data,
  assemble genome, search for mitogenome sequences from the genome assembly result, annotate mitogenome,
  and mitogenome visualization.
 
+## Mmg:
+
+
+Mmg is an open source software for simplicial remeshing. It provides 3 applications and 4 libraries:
+the mmg2d application and the libmmg2d library: adaptation and optimization of a two-dimensional
+triangulation and generation of a triangulation from a set of points or from given boundary edges
+the mmgs application and the libmmgs library: adaptation and optimization of a surface triangulation
+and isovalue discretization the mmg3d application and the libmmg3d library: adaptation and optimization
+of a tetrahedral mesh and implicit domain meshing the libmmg library gathering the libmmg2d,
+libmmgs and libmmg3d libraries.
+
 ## ModDotPlot:
 
 Novel dot plot visualization tool used to view tandem repeats
@@ -2129,6 +2152,10 @@ Predicting plasmid contigs from assemblies
 Structure generation, with or without conditional information (a motif, target etc) It can perform a whole range of protein design challenges as we have outlined 
 in the RFdiffusion paper.
 
+## RJMCMC:
+
+This library provides routines for running Reversible Jump Monte-Carlo Markov chains for 1-D and 2-D spatial regression problems.
+
 ## RMBlast:
 
 RMBlast supports RepeatMasker searches by adding a few necessary features to the stock NCBI blastn program. These include:
@@ -2281,6 +2308,13 @@ SIP is a tool that makes it very easy to create Python bindings for C and C++ li
 ## SKESA:
 
 SKESA is a de-novo sequence read assembler for cultured single isolate genomes based on DeBruijn graphs.
+
+## SLEPc:
+
+SLEPc (Scalable Library for Eigenvalue Problem Computations) is a software library for the solution
+ of large scale sparse eigenvalue problems on parallel computers. It is an extension of PETSc and can be used for
+ either standard or generalized eigenproblems, with real or complex arithmetic. It can also be used for computing a
+ partial SVD of a large, sparse, rectangular matrix, and to solve quadratic eigenvalue problems.
 
 ## SMRT-Link:
 
@@ -2600,6 +2634,10 @@ USEARCH is a unique sequence analysis tool which offers search and clustering al
 The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale
 materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics,
 from first principles.
+
+## VBZ-Compression:
+
+VBZ compression HDF5 plugin for nanopolish
 
 ## VCF-kit:
 
@@ -2924,6 +2962,10 @@ faster and more accurate reimplementation of BUSCO.
 ## cromwell:
 
 Workflow Management System geared towards scientific workflows.
+
+## csvtk:
+
+A cross-platform, efficient and practical CSV/TSV toolkit
 
 ## ctags:
 
@@ -4143,6 +4185,11 @@ tmux is a terminal multiplexer. It lets you switch easily
 between several programs in one terminal, detach them (they keep 
 running in the background) and reattach them to a different terminal.
 
+## tomo:
+
+This code computes 2D Travel Time Tomography using the Reversible Jump
+algorithm with a Voronoi cell parameterisation.
+
 ## trf:
 
 Locates tandem repeats in DNA sequences.
@@ -4175,6 +4222,10 @@ Hybrid genome assembly pipeline developed for telomere-to-telomere assembly of P
 ## vg:
 
 variation graph data structures, interchange formats, alignment, genotyping, and variant calling methods
+
+## wannier90:
+
+Wannier90 is an open-source code for generating maximally-localized Wannier functions and using them to compute advanced electronic properties of materials with high efficiency and accuracy.
 
 ## wgsim:
 
