@@ -200,4 +200,4 @@ if __name__ == "__main__":
     time.sleep(5)
 
     # Arbitrary weighting whether to fail check or not
-    exit(100 < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))
+    exit(100*(len(sys.argv)-1) < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))

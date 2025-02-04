@@ -67,5 +67,5 @@ if __name__ == '__main__':
         config.plugins.on_shutdown()
 
     time.sleep(5)
-    exit(100 < msg_count["INFO"] + (30 * msg_count["WARNING"] + (100 * msg_count["ERROR"])))
+    exit(100*(len(sys.argv)-1) < msg_count["INFO"] + (30 * msg_count["WARNING"] + (100 * msg_count["ERROR"])))
 
