@@ -32,21 +32,21 @@ Below are some example `.RSYNC_FILTER` patterns.
 === "Keep One"
     <table><tbody>
       <tr>
-        <td width="60%">Keep only the "Important" directory and its contents<pre><code>+ /Important/***</code></pre></td>
+        <td width="60%"><pre><code># Keep only the "Important" directory and its contents<br>+ /Important/***</code></pre></td>
         <td><pre class="no-copy"><code> ── nesi99991/<br>   ├── <span style="color:red">2142147143.core</span><br>   ├── <span style="color:green">Important/</span><br>   │   ├── <span style="color:green">code.py</span><br>   │   └── <span style="color:green">results.txt</span><br>   └── <span style="color:red">JobTmpDir/</span><br></code></pre></td>
       </tr></tbody>
     </table>
 === "Keep All Except"
     <table><tbody>
       <tr>
-        <td width="60%">Keep everything other than the "JobTmpDir" directory<pre><code>+! /JobTmpDir</code></pre></td>
+        <td width="60%"><pre><code># Keep everything other than the "JobTmpDir" directory<br>+! /JobTmpDir</code></pre></td>
         <td><pre class="no-copy"><code> ── nesi99991/<br>   ├── <span style="color:green">2142147143.core</span><br>   ├── <span style="color:green">Important/</span><br>   │   ├── <span style="color:green">code.py</span><br>   │   └── <span style="color:green">results.txt</span><br>   └── <span style="color:red">JobTmpDir/</span><br></code></pre></td>
       </tr></tbody>
     </table>
 === "Keep All"
     <table><tbody>
       <tr>
-        <td width="60%">Keep everything.<pre><code>+ *</code></pre></td>
+        <td width="60%"><pre><code># Keep everything<br>.+ *</code></pre></td>
         <td><pre class="no-copy"><code> ── nesi99991/<br>   ├── <span style="color:green">2142147143.core</span><br>   ├── <span style="color:green">Important/</span><br>   │   ├── <span style="color:green">code.py</span><br>   │   └── <span style="color:green">results.txt</span><br>   └── <span style="color:green">JobTmpDir/</span><br></code></pre></td>
       </tr></tbody>
     </table>
