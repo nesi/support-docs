@@ -67,7 +67,7 @@ It is unlikely that you will want to add additional rules via an `.RSYNC_FILTER`
 
 ```rsync
 # Leave behind this nearly obsolete directory
-- /NotNeededAfter2024`.
+- /NotNeededAfter2024
 ```
 
 ### Rules
