@@ -124,3 +124,32 @@
   height: 40px;
   margin: 10px;
 }
+
+[dir=ltr] .md-tabs__list {
+  margin-left: 2rem;
+}
+
+.md-tabs__link {
+  margin-top: -0.1rem;
+}
+.md-tabs__item {
+  height: 1rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+}
+.md-tabs {
+  background-color: var(--md-primary-bg-color);
+}
+.md-tabs__link {
+  background: var(--md-primary-fg-color);
+  border: sold 1px var(--md-primary-fg-color);
+  padding-bottom: 0.4em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+label#__nav_1_label, label#__nav_2_label, label#__nav_3_label, label#__nav_4_label{
+  display: none;
+}

@@ -28,6 +28,7 @@ theme:
     - navigation.instant.progress
     - navigation.instant.prefetch # Start loading page on link hover. Insiders only
     - navigation.top              # 'Return to top' button
+    - navigation.tabs
     # - navigation.prune            # Reduces site size. ALSO BREAKS NAV BEHAVIOR
     - navigation.tracking         # Put anchor in URL
     - navigation.path             # Breadcrumbs. Insiders only
