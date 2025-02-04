@@ -29,6 +29,14 @@ For nobackup directories the default filter rule excludes everything:
 
 Below are some example `.RSYNC_FILTER` patterns.
 
+<table><tbody>
+  <tr>
+    <td><code># Keep only the "Important" directory and its contents<br>+ /Important/***</code></td>
+    <td><code> ── projects/<br>   ├── file.md<br>   ├── folder/<br>   │   ├── another_file.md<br>   │   └── 29421094.core<br>   └── secrets/<br></code></td>
+  </tr></tbody>
+</table>
+
+
 === "Keep One"
     ```rsync
     # Keep only the "Important" directory and its contents
