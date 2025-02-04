@@ -12,7 +12,6 @@
                 "showReuseMessage": false
             },
             "command": "./checks/run_meta_check.py",
-
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {
@@ -133,7 +132,7 @@
             "label": "fetch",
             "group": "none",
             "type": "shell",
-            "isBackground": true,
+            "isBackground": false,
             "presentation": {
                 "reveal":"never",
                 "showReuseMessage": false
