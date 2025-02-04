@@ -16,6 +16,8 @@ from pathlib import Path
 # Ignore files if they match this regex
 EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r".*/index\.html",  r".*/index\.md", r".*\.pages\.yml"]
 
+msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
+
 # Constants for use in checks.
 
 MAX_TITLE_LENGTH = 28   # As font isn't monospace, this is only approx
@@ -27,7 +29,7 @@ DOC_ROOT = "docs"
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
     "title": "",
-    "template": ["main.html", "supported_apps.html", "updateFeed.html"],
+    "template": ["main.html", "supported_apps.html", "updates.html"],
     "description": "",
     "icon": "",
     "status": ["new", "deprecated"],
@@ -59,15 +61,13 @@ def main():
             continue
         _nav_check()
         with open(input_path, "r") as f:
-            print(f"Checking meta for {f.name}")
+            _emit("", {"level": "debug", "file":  input_path, "message": f"Checking meta for {f.name}"})
             try:
                 contents = f.read()
                 match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
                 if not match:
-                    print(
-                        f"::warning file={input_path},title=meta.parse,col=0,endColumn=99,line=1\
-    ::Meta block missing or malformed."
-                    )
+                    _emit("meta.parse", {"file": input_path, "col": 0, "endColumn": 99, "line": 1,
+                          "message": "Meta block missing or malformed."})
                     meta = {}
                 else:
                     meta = yaml.safe_load(match.group(1))
@@ -92,14 +92,19 @@ def main():
                 for check in ENDCHECKS:
                     _run_check(check)
             except Exception as e:
-                print(f"::error file={input_path},title=misc,col=0,endColumn=0,line=1 ::{e}")
+                _emit("misc", {"level": "error", "file": input_path, "message": e})
 
 
 def _run_check(f):
     for r in f():
-        print(f"::{r.get('level', 'warning')} file={input_path},title={f.__name__},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
-        sys.stdout.flush()
-        time.sleep(0.01)
+        _emit(f.__name__, r)
+
+
+def _emit(f, r):
+    msg_count[r.get('level', 'warning')] += 1
+    print(f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
+    sys.stdout.flush()
+    time.sleep(0.01)
 
 
 def _title_from_filename():
@@ -144,7 +149,7 @@ def _get_nav_tree():
 
         if not header_match:
             return
-        
+
         header_level = len(header_match.group(1))
         header_name = header_match.group(2)
 
@@ -158,29 +163,29 @@ def _get_nav_tree():
         _unpack(toc, toc_parents)["children"][header_name] = {"level": header_level, "lineno": lineno, "children": {}}
         toc_parents += [header_name]
     except Exception:
-        print(f"::error file={input_path},title=misc-nav,col=0,endColumn=0,line=1 ::Failed to parse Nav tree. Something is wrong.")
+        _emit("misc.nav", {"level": "error", "file": input_path,
+              "message": "Failed to parse Nav tree. Something is very wrong."})
 
 
 def _nav_check():
-    doc_root = Path(DOC_ROOT).resolve()
-    rel_path = input_path.resolve().relative_to(doc_root)
-    for i in range(1, len(rel_path.parts)):
-        num_siblings = 0
-        for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
-            if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
-                num_siblings += 1
-        if num_siblings < RANGE_SIBLING[0]:
-            print(
-                f"::warning file={input_path},title=meta.siblings,col=0,endColumn=99,line=1::Parent category \
-'{rel_path.parts[i-1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
-items here to justify it's existence."
-            )
-        elif num_siblings > RANGE_SIBLING[1]:
-            print(
-                f"::warning file={input_path},title=meta.siblings,col=0,endColumn=99,line=1::Parent category \
-'{rel_path.parts[i-1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
-under '{RANGE_SIBLING[1]}', maybe add some new categories?"
-            )
+    try:
+        doc_root = Path(DOC_ROOT).resolve()
+        rel_path = input_path.resolve().relative_to(doc_root)
+        for i in range(1, len(rel_path.parts)):
+            num_siblings = 0
+            for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
+                if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
+                    num_siblings += 1
+            if num_siblings < RANGE_SIBLING[0]:
+                _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
+    '{rel_path.parts[i-1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
+    items here to justify it's existence."})
+            elif num_siblings > RANGE_SIBLING[1]:
+                _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
+    '{rel_path.parts[i-1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
+    under '{RANGE_SIBLING[1]}', maybe add some new categories?"})
+    except ValueError as e:
+        _emit("meta.nav", {"file": input_path, "level": "error", "message": f"{e}. Nav checks will be skipped"})
 
 
 def title_redundant():
@@ -272,3 +277,6 @@ if __name__ == "__main__":
     # FIXME terrible hack to make VSCode in codespace capture the error messages
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
+
+    # Arbitrary weighting whether to fail check or not
+    exit((100 * (len(sys.argv)-1)) < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))

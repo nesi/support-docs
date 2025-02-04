@@ -3,7 +3,7 @@
 !!! warning
 
     NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+    If you are interested in helping us test it please {% include "partials/support_request.html" %}.
 
 ## Introduction
 
@@ -11,14 +11,14 @@ NeSI supports the use of [Jupyter](https://jupyter.org/) for interactive computi
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
-learning, numerical simulation, managing [Slurm job
-submissions](../../../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
+learning, numerical simulation, managing
+[Slurm job submissions](../../../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
 and workflows and much more.
 
 ## Accessing Jupyter on NeSI
 
 Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
-For more details see the [how-to guide](../../how_to_guide#how-to-launch-jupyterlab-rstudio).
+For more details see the [how-to guide](../../how_to_guide.md#how-to-launch-jupyterlab-rstudio).
 
 ## Jupyter user interface
 
@@ -40,7 +40,7 @@ If you wish to not have this folder recreated upon login then please place the f
 
 NeSI provides some default Python and R kernels that are available to all users and are based on some
 of environment modules. It's also possible to create additional kernels that are visible only to
-you (they can optionally be made visible to other members of a specfic NeSI project that you belong to). See:
+you (they can optionally be made visible to other members of a specific NeSI project that you belong to). See:
 
 - [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md) (recommended)
 - [Jupyter kernels - Manual management](./Jupyter_kernels_Manual_management.md)

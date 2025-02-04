@@ -1,3 +1,12 @@
+---
+created_at: 2025-01-24
+description: How to set up your own custom kernals for use on NeSI JupyterHub
+tags: 
+    - JupyterHub
+    - Python
+    - R
+---
+
 # Jupyter kernels - Manual management
 
 !!! warning
@@ -12,8 +21,8 @@ Python and R kernels by default, which can be selected from the Launcher.
 
 Many packages are preinstalled in our default Python and R environments
 and these can be extended further as described on the
-[Python](../../../../Scientific_Computing/Supported_Applications/Python.md) and
-[R](../../../../Scientific_Computing/Supported_Applications/R.md) support
+[Python](../../../../Scientific_Computing/Supported_Applications/Python.md) and
+[R](../../../../Scientific_Computing/Supported_Applications/R.md) support
 pages.
 
 ## Adding a custom Python kernel
@@ -202,7 +211,7 @@ Launcher as "Shared Virtual Env".
 ## Custom kernel in a Singularity container
 
 An example showing setting up a custom kernel running in a Singularity
-container can be found on our [Lambda Stack](../../../../Scientific_Computing/Supported_Applications/Lambda_Stack.md#lambda_stack_via_jupyter)
+container can be found on our [Lambda Stack](../../../../Scientific_Computing/Supported_Applications/Lambda_Stack.md#lambda-stack-via-jupyter)
 support page.
 
 ## Adding a custom R kernel
@@ -259,15 +268,7 @@ exec R $@
 Make the wrapper script executable:
 
 ``` sh
-chmod +x wrapper.sh
-```
-
-Next edit the *kernel.json* to change the first element of the argv list
-to point to the wrapper script we just created. The file should look
-something like this (change &lt;username&gt; to your NeSI username):
-
-```json
-{
+chmod +x wrapper.sh_
  "argv": [
  "/home/<username>/.local/share/jupyter/kernels/myrwithmpfr/wrapper.sh",
  "--slave",

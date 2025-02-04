@@ -45,6 +45,19 @@ We are using the [mkdocs material theme](https://squidfunk.github.io/mkdocs-mate
 
 The site uses [Google analytics](https://analytics.google.com/analytics/web/#/p424742084). You will need to ask a google workspace admin to add you to the project.
 
+## Updating Dependencies
+
+Occasionally you may want to update the dependencies used by mkdocs to build and lint this site.
+
+Make a new branch and
+
+```sh
+pip-compile --allow-unsafe > requirements.txt
+pip install -r requirements.txt
+```
+
+Make sure to test it on a GitHub runner (not just locally), as this is the actual build environment.
+
 ## Migration
 
 Migration of the Zendesk documentation is done using our [migration pipeline (NeSI internal GitLab](https://git.hpcf.nesi.org.nz/cwal219/migratedocs).

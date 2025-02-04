@@ -11,9 +11,13 @@ import time
 import proselint
 from proselint import config, tools
 
+ALLOWABLE_NOTICES = 5
+
 if __name__ == "__main__":
 
     files = sys.argv[1:]
+
+    count_notices = 0
 
     # Load defaults from config.
     config_custom = tools.load_options(
@@ -30,4 +34,7 @@ if __name__ == "__main__":
                 f"title={notice[0]}::'{notice[1]}'",
                 flush=True
             )
+            count_notices += 1
             time.sleep(0.01)
+
+    exit(count_notices >= ALLOWABLE_NOTICES*(len(sys.argv)-1))

@@ -4,10 +4,6 @@ tags:
 - ml
 - language
 title: Python
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 207782537
-zendesk_section_id: 360000040076
 ---
 
 
@@ -19,7 +15,7 @@ zendesk_section_id: 360000040076
 
 All versions of Python available on NeSI platforms are owned and
 licensed by the Python Software Foundation. Each version is released
-under a specific open-source licence. The licences are available on 
+under a specific open-source licence. The licences are available on
 [the Python documentation server](https://docs.python.org).
 
 ## System Python vs Environment Modules
@@ -50,6 +46,7 @@ Our most recent Python environment modules have:
     #!/bin/bash -e
     
     #SBATCH --job-name    Python_Serial
+    #SBATCH --account     nesi99999
     #SBATCH --time        01:00:00
     #SBATCH --mem         512MB
     
@@ -62,7 +59,9 @@ Our most recent Python environment modules have:
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name=PythonMPI
+    #SBATCH --account     nesi99999
     #SBATCH --ntasks=2          # Number of MPI tasks
     #SBATCH --time=00:30:00
     #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
@@ -105,7 +104,9 @@ Our most recent Python environment modules have:
 
     ``` sl
       #!/bin/bash -e
+
       #SBATCH --job-name=PytonMultiprocessing
+      #SBATCH --account     nesi99999
       #SBATCH --cpus-per-task=2   # Number of logical CPUs
       #SBATCH --time=00:10:00
       #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
@@ -166,11 +167,12 @@ Our most recent Python environment modules have:
     ``` sl
     #!/bin/bash -e
     
-    #SBATCH -J test
-    #SBATCH --time=00:01:00
-    #SBATCH --ntasks=1
-    #SBATCH --cpus-per-task=1
-    #SBATCH --array=1-2 # Array jobs
+    #SBATCH --job-name       test
+    #SBATCH --account        nesi99999
+    #SBATCH --time           00:01:00
+    #SBATCH --ntasks         1
+    #SBATCH --cpus-per-task  1
+    #SBATCH --array          1-2 # Array jobs
     
     module load Anaconda3
 
@@ -258,8 +260,7 @@ If you are working on multiple projects, this method will cause issues
 as your projects may require different versions of packages which are
 not compatible.
 
-We **strongly** recommend using separate [Python virtual
-environments](https://docs.python.org/3/library/venv.html) to isolate
+We **strongly** recommend using separate [Python virtual environments](https://docs.python.org/3/library/venv.html) to isolate
 dependencies between projects, avoid filling your home space and being
 able to share installation with collaborators
 
@@ -298,7 +299,9 @@ like
 
 ``` sl
 #!/bin/bash -e
+
 #SBATCH --job-name    MyPythonJob
+#SBATCH --account     nesi99999
 #SBATCH --time        01:00:00
 #SBATCH --mem         512MB
 
@@ -324,13 +327,15 @@ python3 -m venv --system-site-packages /nesi/project/PROJECT_ID/my_venv
 ```
 
 A downside of this is that now your virtual environment also finds
-packages from your `$HOME` folder. To avoid this behavirour, make sure
+packages from your `$HOME` folder. To avoid this behaviour, make sure
 to use `export PYTHONNOUSERSITE=1` before calling pip or running a
 Python script. For example, in a Slurm job submission script
 
 ``` sl
 #!/bin/bash -e
+
 #SBATCH --job-name    MyPythonJob
+#SBATCH --account     nesi99999
 #SBATCH --time        01:00:00
 #SBATCH --mem         512MB
 
@@ -352,7 +357,7 @@ Python command line. It is available in many NeSI Python modules.
 
 To open an iPython console, simply run the `ipython` command:
 
-``` sl
+``` sh
 [jblo123@build-wm ~]$ module load Python/3.6.3-gimkl-2017a
 [jblo123@build-wm ~]$ ipython
 ```
@@ -365,7 +370,7 @@ has a full stop somewhere in it), that module (or the function you want
 from it) must first be imported, using either an "import X" statement or
 a "from X import Y" statement.
 
-``` sh
+``` py
 import os
 os.<TAB>   # List all functions in the os module
 os.O_<TAB> # List functions starting with "O_" from the os module
@@ -374,13 +379,13 @@ len<TAB>   # List functions starting with "len"
 
 Here,
 
-``` sh
+``` py
 o<TAB>
 ```
 
 or even
 
-``` sh
+``` py
 os<TAB>
 ```
 
@@ -392,7 +397,7 @@ have to put the full stop after the "os" if you want to do that.
 In iPython, you can query any object by typing the object name followed
 by a question mark (?), then hitting Enter. For instance:
 
-``` sh
+``` py
 In [1]: x = 5
 In [2]: x?
 Type:        int

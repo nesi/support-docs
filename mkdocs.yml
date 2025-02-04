@@ -45,7 +45,11 @@ markdown_extensions:
       title: On this page
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
@@ -67,7 +71,14 @@ plugins:
   - search
   - open-in-new-tab
   - rss:
+      categories:
+      - tags
+      - title
       json_feed_enabled: false
+      pretty_print: true
+      match_path: .*.md
+      feed_title: NeSI Support Docs Updates
+      length: 100
       feeds_filenames:
         rss_created: page_creation.xml
         rss_updated: page_update.xml
@@ -78,11 +89,12 @@ plugins:
  # - git-authors
   - tags:
       tags: false  # This will keep tags for the purpose of indexing, but not display on page.
+      # tags_file: tags.md # Causes A warning now? idk
   - git-revision-date-localized:
       enable_creation_date: false
   - macros:
       on_error_fail: true
-      verbose: false 
+      verbose: true 
       module_name: macro_hooks
       include_dir: overrides
 extra_css:

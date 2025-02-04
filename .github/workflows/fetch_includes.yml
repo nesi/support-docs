@@ -32,20 +32,8 @@ jobs:
           git fetch
           git merge ${GITHUB_REF}
           mkdir -pv docs/assets/glossary
-      - name: Module List
-        run: |
-          wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
-          wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
-          python3 .github/workflows/link_apps_pages.py
-          git add --all
-          git commit -m "Updated Module List" || (echo "No Changes";exit 0)
-      - name: Fetch Wordlist
-        run: |
-            wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
-            wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
-            wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
-            git add --all
-            git commit -m "Updated Glossary" || (echo "No Changes";exit 0)
+      - name: Run script
+        run: bash .github/fetch_includes.sh
       - name: Commit to Branch 
         id: commit
         run: |

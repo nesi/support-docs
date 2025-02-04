@@ -3,13 +3,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '00 12 * * *' # Should run 1 hour after module list update.
 env:
-  MODULE_LIST_PATH: docs/assets/module-list.json
-  MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
-  MODULES_UPDATE_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
-  GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
-  DICTIONARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
-  SNIPPETS_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
   PYTHON_VERSION: 3.x
   GH_TOKEN: ${{ github.token }}
 permissions:
@@ -46,13 +42,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
       - name: Fetch Remote Files
-        run: | 
-          wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
-          wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
-          python3 .github/workflows/link_apps_pages.py
-          wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
-          wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
-          wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
+        run: bash .github/fetch_includes.sh
       - name: Build documentation
         run: |
               mkdocs build --clean --quiet
