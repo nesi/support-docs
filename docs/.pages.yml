@@ -1,6 +1,5 @@
 nav:
-    - Getting_Started
-    - General
+    - Access
+    - Researcher_Developer_Cloud
     - Scientific_Computing
-    - Storage
-    - NeSI_Service_Subscriptions
+    - Training
