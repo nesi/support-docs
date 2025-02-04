@@ -142,7 +142,7 @@
             "runOptions": {
                 "runOn": "folderOpen"
             },
-            "command": ".github/fetch_includes.sh"
+            "command": "bash .github/fetch_includes.sh"
         },
         {
             "label": "serve",
