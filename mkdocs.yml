@@ -31,6 +31,9 @@ theme:
     # - navigation.prune            # Reduces site size. ALSO BREAKS NAV BEHAVIOR
     - navigation.tracking         # Put anchor in URL
     - navigation.path             # Breadcrumbs. Insiders only
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
     - content.code.copy
     - content.action.edit
     - header.site_name_homepage
