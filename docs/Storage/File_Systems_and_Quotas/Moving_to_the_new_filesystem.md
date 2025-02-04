@@ -29,29 +29,27 @@ For nobackup directories the default filter rule excludes everything:
 
 Below are some example `.RSYNC_FILTER` patterns.
 
-<table><tbody>
-  <tr>
-    <td><code># Keep only the "Important" directory and its contents<br>+ /Important/***</code></td>
-    <td><code> ── projects/<br>   ├── file.md<br>   ├── folder/<br>   │   ├── another_file.md<br>   │   └── 29421094.core<br>   └── secrets/<br></code></td>
-  </tr></tbody>
-</table>
-
-
 === "Keep One"
-    ```rsync
-    # Keep only the "Important" directory and its contents
-    + /Important/***
-    ```
+    <table><tbody>
+      <tr>
+        <td width="60%">Keep only the "Important" directory and its contents<pre><code>+ /Important/***</code></pre></td>
+        <td><pre class="no-copy"><code> ── nesi99991/<br>   ├── <span style="color:red">2142147143.core</span><br>   ├── <span style="color:green">Important/</span><br>   │   ├── <span style="color:green">code.py</span><br>   │   └── <span style="color:green">results.txt</span><br>   └── <span style="color:red">JobTmpDir/</span><br></code></pre></td>
+      </tr></tbody>
+    </table>
 === "Keep All Except"
-    ```rsync
-    # Keep everything other than the "JobTmpDir" directory
-    +! /JobTmpDir
-    ```
+    <table><tbody>
+      <tr>
+        <td width="60%">Keep everything other than the "JobTmpDir" directory<pre><code>+! /JobTmpDir</code></pre></td>
+        <td><pre class="no-copy"><code> ── nesi99991/<br>   ├── <span style="color:green">2142147143.core</span><br>   ├── <span style="color:green">Important/</span><br>   │   ├── <span style="color:green">code.py</span><br>   │   └── <span style="color:green">results.txt</span><br>   └── <span style="color:red">JobTmpDir/</span><br></code></pre></td>
+      </tr></tbody>
+    </table>
 === "Keep All"
-    ```rsync
-    # Keep everything.
-    + *
-    ```
+    <table><tbody>
+      <tr>
+        <td width="60%">Keep everything.<pre><code>+ *</code></pre></td>
+        <td><pre class="no-copy"><code> ── nesi99991/<br>   ├── <span style="color:green">2142147143.core</span><br>   ├── <span style="color:green">Important/</span><br>   │   ├── <span style="color:green">code.py</span><br>   │   └── <span style="color:green">results.txt</span><br>   └── <span style="color:green">JobTmpDir/</span><br></code></pre></td>
+      </tr></tbody>
+    </table>
     !!! warning
         Unless you have a small amount of `nobackup` data, please give it more thought that that!  
         There is no point in copying across data which will be obsolete by the time you get login access to the new system.
