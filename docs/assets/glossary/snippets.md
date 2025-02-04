@@ -77,6 +77,8 @@ GPUs, with a focus on leveraging existing toolchains such as CUDA or HIP
 *[AlphaFold]: AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known
 *[AlphaFold2DB's]: AlphaFold2 databases
 *[AlphaFold2DB]: AlphaFold2 databases
+*[AlphaFold3DB's]: AlphaFold3 databases
+*[AlphaFold3DB]: AlphaFold3 databases
 *[AlwaysIntelMKL's]: Overrides the MKL internal utility function mkl_serv_intel_cpu_true 
 so that AVX2 optimised kernels will be used, even when running on an AMD CPU.
 *[AlwaysIntelMKL]: Overrides the MKL internal utility function mkl_serv_intel_cpu_true 
@@ -506,6 +508,8 @@ The target users of Embree are graphics application engineers who want to improv
 the performance of their photo-realistic rendering application by leveraging Embree's
 performance-optimized ray tracing kernels.
 
+*[Emu's]:  species-level taxonomic abundance for full-length 16S reads.
+*[Emu]:  species-level taxonomic abundance for full-length 16S reads.
 *[EukRep-EukCC's]: Completeness and contamination estimator for metagenomic assembled microbial eukaryotic genomes.
 Also condatains smetana, carveme and memote .
 *[EukRep-EukCC]: Completeness and contamination estimator for metagenomic assembled microbial eukaryotic genomes.
@@ -590,6 +594,10 @@ used by a program without recompiling or relinking it.
 *[FragGeneScan]: FragGeneScan is an application for finding (fragmented) genes in short reads.
 *[FreeBayes's]: Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.
 *[FreeBayes]: Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.
+*[FreeFEM's]: FreeFEM offers a fast interpolation algorithm and a language for the manipulation
+ of data on multiple meshes.
+*[FreeFEM]: FreeFEM offers a fast interpolation algorithm and a language for the manipulation
+ of data on multiple meshes.
 *[FreeSurfer's]: FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.
 FreeSurfer contains a fully automatic structural imaging stream for processing cross sectional and longitudinal data.
 *[FreeSurfer]: FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.
@@ -620,14 +628,12 @@ FreeSurfer contains a fully automatic structural imaging stream for processing c
 *[GD]: Interface to Gd Graphics Library
 *[GDAL's]: GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
  Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
- to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for
- data translation and processing. 
- NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) after loading the GDAL module.
+ to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for
+ data translation and processing.
 *[GDAL]: GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
  Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
- to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for
- data translation and processing. 
- NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) after loading the GDAL module.
+ to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for
+ data translation and processing.
 *[GEMMA's]: Genome-wide Efficient Mixed Model Association
 *[GEMMA]: Genome-wide Efficient Mixed Model Association
 *[GEOS's]: GEOS (Geometry Engine - Open Source) is a C++ port of the  Java Topology Suite (JTS)
@@ -1187,6 +1193,22 @@ This package includes mimicpy
 *[MitoZ]: Toolkit which aims to automatically filter pair-end raw data,
  assemble genome, search for mitogenome sequences from the genome assembly result, annotate mitogenome,
  and mitogenome visualization.
+*[Mmg's]: 
+Mmg is an open source software for simplicial remeshing. It provides 3 applications and 4 libraries:
+the mmg2d application and the libmmg2d library: adaptation and optimization of a two-dimensional
+triangulation and generation of a triangulation from a set of points or from given boundary edges
+the mmgs application and the libmmgs library: adaptation and optimization of a surface triangulation
+and isovalue discretization the mmg3d application and the libmmg3d library: adaptation and optimization
+of a tetrahedral mesh and implicit domain meshing the libmmg library gathering the libmmg2d,
+libmmgs and libmmg3d libraries.
+*[Mmg]: 
+Mmg is an open source software for simplicial remeshing. It provides 3 applications and 4 libraries:
+the mmg2d application and the libmmg2d library: adaptation and optimization of a two-dimensional
+triangulation and generation of a triangulation from a set of points or from given boundary edges
+the mmgs application and the libmmgs library: adaptation and optimization of a surface triangulation
+and isovalue discretization the mmg3d application and the libmmg3d library: adaptation and optimization
+of a tetrahedral mesh and implicit domain meshing the libmmg library gathering the libmmg2d,
+libmmgs and libmmg3d libraries.
 *[ModDotPlot's]: Novel dot plot visualization tool used to view tandem repeats
 *[ModDotPlot]: Novel dot plot visualization tool used to view tandem repeats
 *[ModelTest-NG's]: Tool for selecting the best-fit model of evolution for DNA and protein alignments.
@@ -1658,6 +1680,8 @@ on GEOS and/or GDAL.
 in the RFdiffusion paper.
 *[RFdiffusion]: Structure generation, with or without conditional information (a motif, target etc) It can perform a whole range of protein design challenges as we have outlined 
 in the RFdiffusion paper.
+*[RJMCMC's]: This library provides routines for running Reversible Jump Monte-Carlo Markov chains for 1-D and 2-D spatial regression problems.
+*[RJMCMC]: This library provides routines for running Reversible Jump Monte-Carlo Markov chains for 1-D and 2-D spatial regression problems.
 *[RMBlast's]: RMBlast supports RepeatMasker searches by adding a few necessary features to the stock NCBI blastn program. These include:
 Support for custom matrices ( without KA-Statistics ).
 Support for cross_match-like complexity adjusted scoring. Cross_match is Phil Green's seeded smith-waterman search algorithm.
@@ -1765,6 +1789,14 @@ for SNP array and high coverage sequencing data.
 *[SIP]: SIP is a tool that makes it very easy to create Python bindings for C and C++ libraries.
 *[SKESA's]: SKESA is a de-novo sequence read assembler for cultured single isolate genomes based on DeBruijn graphs.
 *[SKESA]: SKESA is a de-novo sequence read assembler for cultured single isolate genomes based on DeBruijn graphs.
+*[SLEPc's]: SLEPc (Scalable Library for Eigenvalue Problem Computations) is a software library for the solution
+ of large scale sparse eigenvalue problems on parallel computers. It is an extension of PETSc and can be used for
+ either standard or generalized eigenproblems, with real or complex arithmetic. It can also be used for computing a
+ partial SVD of a large, sparse, rectangular matrix, and to solve quadratic eigenvalue problems.
+*[SLEPc]: SLEPc (Scalable Library for Eigenvalue Problem Computations) is a software library for the solution
+ of large scale sparse eigenvalue problems on parallel computers. It is an extension of PETSc and can be used for
+ either standard or generalized eigenproblems, with real or complex arithmetic. It can also be used for computing a
+ partial SVD of a large, sparse, rectangular matrix, and to solve quadratic eigenvalue problems.
 *[SMRT-Link's]: PacBio’s open-source software suite is designed for use with Single Molecule, 
  Real-Time (SMRT) Sequencing data.
 *[SMRT-Link]: PacBio’s open-source software suite is designed for use with Single Molecule, 
@@ -2000,6 +2032,8 @@ from first principles.
 *[VASP]: The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale
 materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics,
 from first principles.
+*[VBZ-Compression's]: VBZ compression HDF5 plugin for nanopolish
+*[VBZ-Compression]: VBZ compression HDF5 plugin for nanopolish
 *[VCF-kit's]: VCF-kit is a command-line based collection of utilities for performing analysis on
  Variant Call Format (VCF) files.
 *[VCF-kit]: VCF-kit is a command-line based collection of utilities for performing analysis on
@@ -2254,6 +2288,8 @@ Log Cursor, Sequence and Transaction objects.
 *[compleasm]: faster and more accurate reimplementation of BUSCO.
 *[cromwell's]: Workflow Management System geared towards scientific workflows.
 *[cromwell]: Workflow Management System geared towards scientific workflows.
+*[csvtk's]: A cross-platform, efficient and practical CSV/TSV toolkit
+*[csvtk]: A cross-platform, efficient and practical CSV/TSV toolkit
 *[ctags's]: Ctags generates an index (or tag) file of language objects found in source files that allows these
  items to be quickly and easily located by a text editor or other utility.
 *[ctags]: Ctags generates an index (or tag) file of language objects found in source files that allows these
@@ -3136,6 +3172,10 @@ running in the background) and reattach them to a different terminal.
 *[tmux]: tmux is a terminal multiplexer. It lets you switch easily 
 between several programs in one terminal, detach them (they keep 
 running in the background) and reattach them to a different terminal.
+*[tomo's]: This code computes 2D Travel Time Tomography using the Reversible Jump
+algorithm with a Voronoi cell parameterisation.
+*[tomo]: This code computes 2D Travel Time Tomography using the Reversible Jump
+algorithm with a Voronoi cell parameterisation.
 *[trf's]: Locates tandem repeats in DNA sequences.
 *[trf]: Locates tandem repeats in DNA sequences.
 *[trimAl's]: Tool for automated alignment trimming in large-scale phylogenetic analyses
@@ -3154,6 +3194,8 @@ alignment.
 *[verkko]: Hybrid genome assembly pipeline developed for telomere-to-telomere assembly of PacBio HiFi and Oxford Nanopore reads
 *[vg's]: variation graph data structures, interchange formats, alignment, genotyping, and variant calling methods
 *[vg]: variation graph data structures, interchange formats, alignment, genotyping, and variant calling methods
+*[wannier90's]: Wannier90 is an open-source code for generating maximally-localized Wannier functions and using them to compute advanced electronic properties of materials with high efficiency and accuracy.
+*[wannier90]: Wannier90 is an open-source code for generating maximally-localized Wannier functions and using them to compute advanced electronic properties of materials with high efficiency and accuracy.
 *[wgsim's]: Wgsim is a small tool for simulating sequence reads from a reference genome.
 *[wgsim]: Wgsim is a small tool for simulating sequence reads from a reference genome.
 *[wheel's]: A built-package format for Python.

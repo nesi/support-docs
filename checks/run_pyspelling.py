@@ -9,7 +9,11 @@ from pathlib import Path
 from pyspelling import spellcheck
 from flashtext import KeywordProcessor
 
+ALLOWABLE_TYPOS = 20
+
 if __name__ == "__main__":
+
+    count_typos = 0
 
     for source in sys.argv[1:]:
         print(f"Running Pyspelling on {source}")
@@ -39,7 +43,9 @@ if __name__ == "__main__":
                     f"title=spelling::Word '{word}' is misspelled.",
                     flush=True,
                 )
+                count_typos += 1
 
     # FIXME terrible hack to make VSCode in codespace capture the error messages
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
+    exit(count_typos >= ALLOWABLE_TYPOS*(len(sys.argv)-1))
