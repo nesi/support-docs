@@ -194,6 +194,8 @@ Just because a merge request has been opened, doesn't mean anyone should merge i
 
 Certain files need to be fetched from other repos for up to date info. This will be automated, but for now the process is manual.
 
+For local builds, run `bash .github/fetch_includes.sh`, this should be run automatically on workspace open if you use VSCode.
+
 1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
 2. A branch `new-assets` will be created, which can be merged into main.
 
