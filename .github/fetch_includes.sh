@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
-MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
-MODULES_UPDATE_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
-GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
-DICTIONARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
-SNIPPETS_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
+MODULES_LIST_URL="https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
+MODULES_UPDATE_URL="https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
+GLOSSARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
+DICTIONARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
+SNIPPETS_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
 
 wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
 wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
