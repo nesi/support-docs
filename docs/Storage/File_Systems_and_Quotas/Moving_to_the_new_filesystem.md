@@ -1,7 +1,9 @@
 ---
 created_at: 2024-11-27
-description: 
-tags: [refresh]
+description: How to control which data get migrated to the new filesystem.
+tags:
+- refresh
+- filesystem
 status: new
 search:
   boost: 2
