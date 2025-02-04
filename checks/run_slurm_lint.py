@@ -21,8 +21,18 @@ SBATCH_DELIM = r"=|\s+"
 
 REQUIRED_SBATCH_HEADER = [
     {"long": "--job-name", "short": "-j"},
-    {"long": "--account", "short": "-a"},
+    {"long": "--account", "short": "-A"},
     {"long": "--time", "short": "-t"},
+]
+
+# Not used yet
+ALLOWED_SBATCH_HEADER = [
+    {"long": "--cpus-per-task", "short": "-c"},
+    {"long": "--array", "short": "-a"},
+    {"long": "--dependency", "short": "-d"},
+    {"long": "--gpus-per-node", "short": ""},
+    {"long": "--hint", "short": ""},
+    {"long": "--mem=", "short": ""}
 ]
 
 
@@ -144,9 +154,11 @@ def content_before_slurm_header():
 
 
 def malformed_delimiter():
+    global uses_equals_delim, uses_whitespace_delim
     delim = match_header_line.group(3)
     if delim == "=":
         uses_equals_delim = True
+        yield {"level": "notice", "message": "Whitespace is preffered SLURM header delimiter."}
     elif delim.isspace():
         uses_whitespace_delim = True
     else:
@@ -160,7 +172,7 @@ def inconsistant_delimiter():
 
 def short_option():
     if not match_header_line.group(2)[:2] == "--":
-        yield {"level": "info", "col": 8, "endColumn": 8 + len(match_header_line.group(2)), 
+        yield {"level": "notice", "col": 8, "endColumn": 8 + len(match_header_line.group(2)), 
                "message": f"Using short form flag '{match_header_line.group(2)}'. Long form is prefered."}
 
 

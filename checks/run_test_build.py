@@ -30,7 +30,7 @@ def parse_macro(record):
             return False
 
         g = m.groupdict()
-        record.levelname = g["level"]
+        record.levelname = g["level"].strip().upper().split("\x1b")[0]
         record.name = g["title"]
         record.filename = g["file"]
         record.msg = g["message"]

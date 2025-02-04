@@ -131,6 +131,20 @@
             },
         },
         {
+            "label": "fetch",
+            "group": "none",
+            "type": "shell",
+            "isBackground": true,
+            "presentation": {
+                "reveal":"never",
+                "showReuseMessage": false
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "command": ".github/fetch_includes.sh"
+        },
+        {
             "label": "serve",
             "group": "build",
             "type": "shell",

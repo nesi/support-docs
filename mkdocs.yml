@@ -90,7 +90,7 @@ plugins:
       enable_creation_date: false
   - macros:
       on_error_fail: true
-      verbose: false 
+      verbose: true 
       module_name: macro_hooks
       include_dir: overrides
 extra_css:

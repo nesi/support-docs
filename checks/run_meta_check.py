@@ -168,22 +168,24 @@ def _get_nav_tree():
 
 
 def _nav_check():
-    doc_root = Path(DOC_ROOT).resolve()
-    rel_path = input_path.resolve().relative_to(doc_root)
-    for i in range(1, len(rel_path.parts)):
-        num_siblings = 0
-        for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
-            if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
-                num_siblings += 1
-        if num_siblings < RANGE_SIBLING[0]:
-            _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
-'{rel_path.parts[i-1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
-items here to justify it's existence."})
-        elif num_siblings > RANGE_SIBLING[1]:
-            _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
-'{rel_path.parts[i-1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
-under '{RANGE_SIBLING[1]}', maybe add some new categories?"})
-
+    try:
+        doc_root = Path(DOC_ROOT).resolve()
+        rel_path = input_path.resolve().relative_to(doc_root)
+        for i in range(1, len(rel_path.parts)):
+            num_siblings = 0
+            for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
+                if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
+                    num_siblings += 1
+            if num_siblings < RANGE_SIBLING[0]:
+                _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
+    '{rel_path.parts[i-1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
+    items here to justify it's existence."})
+            elif num_siblings > RANGE_SIBLING[1]:
+                _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
+    '{rel_path.parts[i-1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
+    under '{RANGE_SIBLING[1]}', maybe add some new categories?"})
+    except ValueError as e:
+        _emit("meta.nav", {"file": input_path, "level": "error", "message": f"{e}. Nav checks will be skipped"})
 
 def title_redundant():
     lineno = _get_lineno(r"^title:.*$")
