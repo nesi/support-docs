@@ -83,8 +83,8 @@ plugins:
       feeds_filenames:
         rss_created: page_creation.xml
         rss_updated: page_update.xml
-  - redirects:
-      map_file: docs/redirect_map.yml
+  # - redirects:
+  #     map_file: docs/redirect_map.yml
   - awesome-pages:
       filename: .pages.yml
  # - git-authors

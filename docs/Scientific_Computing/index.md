@@ -1,4 +1,6 @@
 ---
+template: main.html
+hide: toc
 ---
 
 # NeSI Support Documentation
