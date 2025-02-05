@@ -1,4 +1,8 @@
 nav:
     - Getting_Started
-    - Scientific_Computing_old
-    - Storage
+    - Software
+    - Data_Management
+    - Interactive_Computing
+    - Batch_Computing
+    - Parallel_Computing
+    - ...
