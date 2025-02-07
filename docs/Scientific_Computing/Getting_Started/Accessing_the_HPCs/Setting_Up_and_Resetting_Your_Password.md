@@ -26,19 +26,18 @@ zendesk_section_id: 360000034315
    Password** (If you are resetting your password this will read
    **Reset Password**).  
    Note your **Username**.  
-   ![authentication\_factor\_setup.png](../../assets/images/Setting_Up_and_Resetting_Your_Password.png)  
+   ![authentication\_factor\_setup.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password.png)  
 
 3. Enter and verify your new password, making sure it follows the
-   [password
-   policy](../../General/NeSI_Policies/NeSI_Password_Policy.md).  
-   ![SetNeSIaccountPassword.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_0.png)
+   [password policy](../../../Access/NeSI_Policies/NeSI_Password_Policy.md).  
+   ![SetNeSIaccountPassword.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_0.png)
 
 4. If the password set was successful, following confirmation label
    will appear on the same page within few seconds  
-   ![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_1.png)
+   ![change\_success.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_1.png)
 
 5. Followed by an email confirmation similar to below
-   ![password\_set\_confirmation.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_2.png)
+   ![password\_set\_confirmation.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_2.png)
 
 ## Resetting NeSI Password via my NeSI Portal
 
@@ -55,10 +54,10 @@ zendesk_section_id: 360000034315
 
 4. If the password **reset** was successful, following confirmation
    label will appear on the same page within few seconds  
-   ![change\_success.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_3.png)
+   ![change\_success.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_3.png)
 
 5. Followed by an email confirmation similar to below  
-![password\_set\_confirmation.png](../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png)
+![password\_set\_confirmation.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png)
 
 !!! prerequisite "What next?"
     -  Set up [Second Factor

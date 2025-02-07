@@ -159,7 +159,7 @@ parent process).
 
 Processes in green can be ignored
 
-![how\_to\_read\_htop.png](../../assets/images/Finding_Job_Efficiency.png)
+![how\_to\_read\_htop.png](../../../assets/images/Finding_Job_Efficiency.png)
 
 **RES** - Current memory being used (same thing as 'RSS' from sacct)
 
@@ -189,12 +189,12 @@ The only way to get the full context, is to compare walltime performance between
 
 ### Example
 
-![qdyn\_eff.png](../../assets/images/Finding_Job_Efficiency_0.png)
+![qdyn\_eff.png](../../../assets/images/Finding_Job_Efficiency_0.png)
 
 From the above plot of CPU efficiency, you might decide a 5% reduction
 of CPU efficiency is acceptable and scale your job up to 18 CPU cores .
 
-![qdyn\_walltime.png](../../assets/images/Finding_Job_Efficiency_1.png)
+![qdyn\_walltime.png](../../../assets/images/Finding_Job_Efficiency_1.png)
 
 However, when looking at a plot of walltime it becomes apparent that
 performance gains per CPU added drop significantly after 4 CPUs, and in

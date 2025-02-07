@@ -121,8 +121,8 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-![control panel](../../assets/images/Jupyter_on_NeSI.png)
-![stop server](../../assets/images/Jupyter_on_NeSI_0.png)
+![control panel](../../../assets/images/Jupyter_on_NeSI.png)
+![stop server](../../../assets/images/Jupyter_on_NeSI_0.png)
 
 If you click "Log Out" without stopping your server, the server will
 continue to run until the Slurm job reaches its maximum wall time.

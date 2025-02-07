@@ -27,14 +27,14 @@ connecting from a Windows, Mac or a Linux computer.
 
 To upload a file, click on the
 
-![up arrow](../../assets/images/Moving_files_to_and_from_the_cluster.png)
+![up arrow](../../../assets/images/Moving_files_to_and_from_the_cluster.png)
 
 button, near the top left and generally under the Run button.
 
 To download a file, navigate the file browser on the left and
 right-click on the file to see the menu below,
 
-![right click menu](../../assets/images/Moving_files_to_and_from_the_cluster_0.png)
+![right click menu](../../../assets/images/Moving_files_to_and_from_the_cluster_0.png)
 
 The Download button is at the bottom.
 
@@ -88,7 +88,7 @@ This **does not** work for File Explorer (Windows default)
 
 This **does not** work for Finder (Mac default)
 
-![files](../../assets/images/Moving_files_to_and_from_the_cluster_1.png)
+![files](../../../assets/images/Moving_files_to_and_from_the_cluster_1.png)
 
 If your default file manager does not support mounting over SFTP, see
 [Can I use SSHFS to mount the cluster filesystem on my local machine?](../../General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md).
@@ -103,7 +103,7 @@ window) opens up a graphical user interface that can be used for basic
 file operations. You can drag and drop files in the file explorer or use
 the up and down arrows on the toolbar to upload and download files.
 
-![moba terminal](../../assets/images/Moving_files_to_and_from_the_cluster_2.png)
+![moba terminal](../../../assets/images/Moving_files_to_and_from_the_cluster_2.png)
 
 You may also transfer files as described under 'Standard Terminal'
 (provided

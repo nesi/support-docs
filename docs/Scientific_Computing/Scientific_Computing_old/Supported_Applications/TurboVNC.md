@@ -186,7 +186,7 @@ will be 5902; and so on.
     As an alternative to steps 1 and 2, if using MobaXTerm in Windows,
     set up and then start port forwarding connections to look like
     this:  
-    ![2020-02-10\_TurboVNC\_MobaXTerm\_ssh\_tunnel\_setup.png](../../assets/images/TurboVNC.png)  
+    ![2020-02-10\_TurboVNC\_MobaXTerm\_ssh\_tunnel\_setup.png](../../../assets/images/TurboVNC.png)  
 
     - The tunnel through the lander node must be started before the
         tunnel through localhost can be started.

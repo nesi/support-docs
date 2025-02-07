@@ -149,7 +149,7 @@ take &lt;d&gt; and &lt;auth&gt; from the code snippet above..
 http://localhost:9999/?auth=Bx2ccMZmJxaIfRNBOZ_XO_mQd1njNGL3rZry_eNI1yU
 ```
 
-![Screen\_Shot\_2019-01-28\_at\_2.17.29\_PM.png](../../assets/images/Supernova.png)
+![Screen\_Shot\_2019-01-28\_at\_2.17.29\_PM.png](../../../assets/images/Supernova.png)
 
 ## Things to watch out for
 

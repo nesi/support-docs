@@ -219,7 +219,7 @@ rm "abaqus_v6.env"
 
 ## Performance
 
-![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
+![ABAQUS\_speedup\_SharedVMPI.png](../../../assets/images/ABAQUS.png)
 
 *Note: Hyperthreading off, testing done on small mechanical FEA model.
 Results highly model dependant. Do your own tests.*

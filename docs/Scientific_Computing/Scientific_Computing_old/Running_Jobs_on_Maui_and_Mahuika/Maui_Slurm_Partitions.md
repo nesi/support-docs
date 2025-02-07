@@ -94,7 +94,7 @@ higher-priority jobs can start reasonably quickly.
 ### Debug QoS
 
 Each job has a "QoS", with the default QoS for a job being determined by
-the [allocation class](../../General/NeSI_Policies/Allocation_classes.md)
+the [allocation class](../../../Access/NeSI_Policies/Allocation_classes.md)
 of its project. Specifying `--qos=debug` will override that and give the
 job high priority, but is subject to strict limits: 15 minutes per
 job, and only 1 job at a time per user. Debug jobs are limited to 2

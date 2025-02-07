@@ -207,7 +207,7 @@ $ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
 Here, we see that our workflow "simple" has a "taskC", which waits for
 "taskA" and "taskB" to complete,
 
-![simple.png](../../assets/images/Cylc.png)
+![simple.png](../../../assets/images/Cylc.png)
 
 The "1" indicates that this workflow graph is executed only once.
 

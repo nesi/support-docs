@@ -22,7 +22,7 @@ NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
 
-![rstudio\_launcher.png](../../assets/images/RStudio_via_Jupyter_on_NeSI.png)
+![rstudio\_launcher.png](../../../assets/images/RStudio_via_Jupyter_on_NeSI.png)
 
 Clicking on this entry will open a separate tab in your web browser,
 where RStudio will be accessible.
@@ -135,7 +135,7 @@ be due to RStudio taking too much time to start, which is interpreted as
 a failure by JupyterLab. Please try to start RStudio again from the
 launcher. If the problem persists, {% include "partials/support_request.html" %}.
 
-![error\_500.PNG](../../assets/images/RStudio_via_Jupyter_on_NeSI_0.png)
+![error\_500.PNG](../../../assets/images/RStudio_via_Jupyter_on_NeSI_0.png)
 
 If you have disabled javascript in your web browser, you will need
 to enter your password manually in the RStudio login screen. To

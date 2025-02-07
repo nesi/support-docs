@@ -461,7 +461,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../../assets/images/Nearline_Long_Term_Storage_Service.png)
+![librarian\_get\_put.jpeg](../../../assets/images/Nearline_Long_Term_Storage_Service.png)
 
 ## Underlying mechanism
 

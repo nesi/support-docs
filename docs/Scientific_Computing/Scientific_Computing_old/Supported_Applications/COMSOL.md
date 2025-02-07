@@ -160,4 +160,4 @@ Multithreading will benefit jobs using less than
 8 CPUs, but is not recommended on larger jobs.
 
 *Performance is highly depended on the model used. The above should only be used as a rough guide.*
-![Speedup](../../assets/images/speedup_smoothed.png)
+![Speedup](../../../assets/images/speedup_smoothed.png)

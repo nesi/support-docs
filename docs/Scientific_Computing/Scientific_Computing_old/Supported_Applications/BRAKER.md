@@ -59,7 +59,7 @@ Artistic License
 !!! info "prerequisite Obtain GeneMark-ES/ET Academic License"
     GeneMark-ES/ET which is one of the dependencies for BRAKER requires an individual academic license  (this is free). This can be obtained as below
      -   Download URL <http://topaz.gatech.edu/genemark/license_download.cgi>
-     -   ![genemark\_es\_license.png](../../assets/images/BRAKER.png)
+     -   ![genemark\_es\_license.png](../../../assets/images/BRAKER.png)
      -   Downloaded filename will be in the format of `gm_key_64.gz`
      -   Decompress this file with `gunzip gm_key_64.gz`  and move it to
          home directory as  a **hidden** file under the filename `.gm_key` .i.e. `~/.gm_key`

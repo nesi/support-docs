@@ -13,13 +13,13 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
     1. Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](Standard_Terminal_Setup.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
-    ![vscode remote extension](../../assets/images/vscode-remote.png)
+    ![vscode remote extension](../../../assets/images/vscode-remote.png)
 === "Windows"
     1. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft installed.
-    ![vscode remote extension](../../assets/images/vscode-remote.png)
+    ![vscode remote extension](../../../assets/images/vscode-remote.png)
     2. Open the 'Remote Explorer' Tab, then click on the 'Open SSH Config file' (gear symbol).
     If you are prompted to create a file, the first option is fine.
-    ![vscode remote explorer](../../assets/images/vscode-remote-windows.png)
+    ![vscode remote explorer](../../../assets/images/vscode-remote-windows.png)
     3. Set up your SSH Config file as described in Step 2 of [Terminal Setup](Standard_Terminal_Setup.md#first-time-setup).
     4. Remove or comment out the `Control Path` line under `Host *`.
     !!! warning
@@ -31,7 +31,7 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
     1. Set up WSL as described in
     [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft installed.
-    ![vscode remote extension](../../assets/images/vscode-remote.png)
+    ![vscode remote extension](../../../assets/images/vscode-remote.png)
     3. Still in the 'Extensions' Tab, search `wsl` and make sure you have 'WSL' by Microsoft installed.
     4. In `C:\Users\<username>` create a file named `ssh.bat` with the following contents.
       ```bat
@@ -58,7 +58,7 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
 
 Under the 'Remote Explorer' Tab on the left, you should now see the NeSI machines (as well as any other machines configured in your `~/.ssh/config` file)
 
-![vscode explorer](../../assets/images/vscode-explorer.png)
+![vscode explorer](../../../assets/images/vscode-explorer.png)
 
 Clicking on these will open a connection to that machine, you will then be prompted for your password and second factor, as per usual.
 

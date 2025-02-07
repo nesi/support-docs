@@ -33,7 +33,7 @@ up using one of the available options on the page. Please note that the
 organisation is not listed, please sign in (sign up) using any of the
 other methods.
 
-![Globus\_login.png](../../assets/images/Globus_Quick_Start_Guide.png)
+![Globus\_login.png](../../../assets/images/Globus_Quick_Start_Guide.png)
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
 your Globus
@@ -72,7 +72,7 @@ bar on the left.
     **do not** save your password on "*Browser settings*" as it will
     change every time due to the 2nd factor requirement.
 
-![NeSI_Globus_Authenticate.png](../../assets/images/Globus_Quick_Start_Guide_0.png)
+![NeSI_Globus_Authenticate.png](../../../assets/images/Globus_Quick_Start_Guide_0.png)
 
 ## Transferring Data
 
@@ -82,7 +82,7 @@ initiate the transfer, select one of the two directional arrows. In the
 image below, the 'config' folder is being transferred from the location
 on the right, to the location on the left.
 
-![Globus_transfer_data.png](../../assets/images/Globus_Quick_Start_Guide_1.png)
+![Globus_transfer_data.png](../../../assets/images/Globus_Quick_Start_Guide_1.png)
 
 To see the progress of the transfer, please click 'Activity' on the left
 hand menu bar.

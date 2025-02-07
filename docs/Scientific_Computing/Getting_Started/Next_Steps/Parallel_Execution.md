@@ -23,9 +23,9 @@ See [our article on hyperthreading](../../Scientific_Computing_old/Running_Jobs_
 
 Multi-threading is a method of parallelisation whereby the initial single thread of a process forks into a number of parallel threads, generally *via* a library such as OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or pthread (POSIX threads).
 
-![serial](../../assets/images/parallel_execution_serial.png)  
+![serial](../../../assets/images/parallel_execution_serial.png)  
 
-![parallel](../../assets/images/Parallel_Execution.png)  
+![parallel](../../../assets/images/Parallel_Execution.png)  
 Multi-threading involves dividing the process into multiple 'threads' which can be run across multiple cores.
 
 Multi-threading is limited in that it requires shared memory, so all CPU cores used must be on the same node. However, because all the CPUs share the same memory environment things only need to be loaded into memory once, meaning that memory requirements will usually not increase proportionally to the number of CPUs.

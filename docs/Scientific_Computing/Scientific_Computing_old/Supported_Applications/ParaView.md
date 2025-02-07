@@ -58,13 +58,13 @@ setup:
 
 - Launch the ParaView GUI on your local machine and go to "File &gt;
     Connect" or click
-    the ![paraview.png](../../assets/images/ParaView.png) button.
+    the ![paraview.png](../../../assets/images/ParaView.png) button.
 
 - Click on "Add Server", choose server type "Client / Server", host
     "localhost" (as we will be using the SSH tunnel), and port "11111",
     then click on "Configure" .
 
-- ![paraview.png](../../assets/images/ParaView_0.png)
+- ![paraview.png](../../../assets/images/ParaView_0.png)
 
 - Select the new server and click on "Connect"
 

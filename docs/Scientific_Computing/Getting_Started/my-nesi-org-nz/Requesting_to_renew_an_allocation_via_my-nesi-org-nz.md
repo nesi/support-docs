@@ -13,14 +13,14 @@ zendesk_section_id: 360001059296
 
 1. Login to <https://my.nesi.org.nz/projects/list> and select a project
     from the list.  
-    ![my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.png)
+    ![my.nesi.png](../../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.png)
 2. Click the Plus button icon 'action' next to the compute allocation
     line item   
-    ![my.nesi.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_0.png)
+    ![my.nesi.png](../../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_0.png)
 3. Verify the preset values and add a comment in case you update
     some.  
     Finally, click 'Submit'
-    ![mceclip2.png](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
+    ![mceclip2.png](../../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
 
 ### Can I request any allocation size?
 

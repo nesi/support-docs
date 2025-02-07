@@ -157,7 +157,7 @@ Generally your custom solver will be stored in a git repo. Make sure you
 have the same version as the OpenFOAM you plan to use, this may require
 changing branch.
 
-![git\_releases.png](../../assets/images/OpenFOAM.png)
+![git\_releases.png](../../../assets/images/OpenFOAM.png)
 
 #### Release
 

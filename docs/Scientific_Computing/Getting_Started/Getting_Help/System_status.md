@@ -23,11 +23,11 @@ In order to manage your subscription to notifications, either log into [my.nesi]
 
 See also our support article [Managing NeSI notification preferences](../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md)
 
-![mceclip0.png](../../assets/images/System_status.png){ width="80%" }
+![mceclip0.png](../../../assets/images/System_status.png){ width="80%" }
 
 ## status.nesi.org.nz
 
 NeSI does publish service incidents and scheduled maintenance via [status.nesi.org.nz](https://status.nesi.org.nz).
 Interested parties are invited to subscribe to updates (via SMS or email).
 
-![system status](../../assets/images/System_status_0.png){ width="80%" }
+![system status](../../../assets/images/System_status_0.png){ width="80%" }

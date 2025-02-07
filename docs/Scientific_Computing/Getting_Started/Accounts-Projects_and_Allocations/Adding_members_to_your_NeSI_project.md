@@ -17,7 +17,7 @@ description: How to add a new member to your NeSI project.
 3. When the page is loaded, scroll down to the section **Project Members** and select the **+** button (you will need to be the owner of the project).
 4. Enter the Username of the new member, select a project role from the drop-down options, and click **Submit**.
 
-   ![Adding_Members.png](../../assets/images/Adding_Members.png)
+   ![Adding_Members.png](../../../assets/images/Adding_Members.png)
 
 !!! prerequisite "What Next?"
     - The new team member will now be able to access your project on NeSI, provided they have [set a NeSI account password](../Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).

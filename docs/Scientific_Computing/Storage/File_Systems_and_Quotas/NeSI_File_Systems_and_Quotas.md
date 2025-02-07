@@ -34,7 +34,7 @@ command:
 The values for `nn_storage_quota` are updated approximately every hour
 and cached between updates.
 
-![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.svg)
+![neSI\_filetree.svg](../../../assets/images/NeSI_File_Systems_and_Quotas.svg)
 
 ## File System Specifications
 
@@ -136,7 +136,7 @@ apply per-project quotas to both disk space and number of files on this
 file system. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
-requirements with us during [the project application process](../../General/NeSI_Policies/How_we_review_applications.md),
+requirements with us during [the project application process](../../../Access/NeSI_Policies/How_we_review_applications.md),
 or {% include "partials/support_request.html" %} at any time.
 
 To ensure this file system remains fit-for-purpose, we have a regular
