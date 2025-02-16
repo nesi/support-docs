@@ -4751,7 +4751,8 @@
             "0.7.3",
             "0.8.0",
             "0.8.3",
-            "0.9.0"
+            "0.9.0",
+            "0.9.1"
         ],
         "admin_list": [
             {
@@ -4767,7 +4768,7 @@
         "network_licences": [],
         "default": "0.9.0",
         "default_type": "latest",
-        "last_updated": 1736196479,
+        "last_updated": 1739136364,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Dorado/0.9.0.lua",
         "force_hide": "False",
@@ -6365,7 +6366,6 @@
         "homepage": "https://developer.arm.com/products/software-development-tools/hpc/arm-forge",
         "support": "",
         "versions": [
-            "20.0.2",
             "21.1.3",
             "21.1.3",
             "21.1.3",
@@ -9479,6 +9479,7 @@
         "homepage": "https://julialang.org/",
         "support": "",
         "versions": [
+            "1.11.3-GCC-12.3.0-VTune",
             "1.2.0-gimkl-2018b-VTune",
             "1.5.1-GCC-9.2.0-VTune",
             "1.6.0-GCC-9.2.0-VTune",
@@ -9510,7 +9511,7 @@
         "network_licences": [],
         "default": "1.2.0-gimkl-2018b-VTune",
         "default_type": "latest",
-        "last_updated": 1701639957,
+        "last_updated": 1739153789,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lang/Julia/1.2.0-gimkl-2018b-VTune.lua",
         "force_hide": "False",
@@ -12110,7 +12111,7 @@
         "default_type": "static",
         "last_updated": 1731286240,
         "modulefile_text": "",
-        "module_path": "/scale_wlg_persistent/filesets/opt_nesi/CS400_centos7_bdw/modules/all/MATLAB/2021b.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MATLAB/2021b.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14798,6 +14799,9 @@
         "admin_list": [
             {
                 "6.8.revision47-gimkl-2017a-2017-12-14-Python-2.7.14": "Warning: NWChem/6.8.revision47-gimkl-2017a-2017-12-14-Python-2.7.14 is old and will soon be removed. Please check for a newer version ('module spider NWChem') or let us know if you need a new version installed."
+            },
+            {
+                "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16": "Warning: this NWChem environment module is old and marked for deletion. If you would like us to install a newer NWChem then please let us know."
             }
         ],
         "network_licences": [],
