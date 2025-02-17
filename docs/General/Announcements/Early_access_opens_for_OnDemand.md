@@ -1,7 +1,9 @@
 ---
-created: 2025-02-17
+created_at: 2025-02-17
 description: "Early access is now available for OnDemand, NeSI's new interactive computing environment."
-tags: refresh
+tags: 
+- refresh
+- ondemand
 ---
 
 As part of NeSI’s platform refresh, we’re beginning to migrate NeSI users to one of our first new service offerings – OnDemand. 
