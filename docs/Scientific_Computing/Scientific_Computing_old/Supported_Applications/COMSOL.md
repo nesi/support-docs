@@ -7,10 +7,6 @@ tags:
 - cfd
 - fea
 description: Running COMSOL multiphysics on the NeSI cluster.
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000871556
-zendesk_section_id: 360000040076
 ---
 
 {% set app_name = page.title | trim %}
@@ -63,6 +59,7 @@ distribution.
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name      COMSOL-shared
     #SBATCH --licenses      comsol@uoa_foe
     #SBATCH --time          00:05:00        # Walltime
@@ -91,6 +88,7 @@ distribution.
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name         COMSOL-hybrid
     #SBATCH --licenses         comsol@uoa_foe
     #SBATCH --time             00:05:00          # Walltime
@@ -105,8 +103,8 @@ distribution.
 === "LiveLink"
 
     ```sl
-
     #!/bin/bash -e
+
     #SBATCH --job-name         COMSOL-livelink
     #SBATCH --licenses         comsol@uoa_foe
     #SBATCH --time             00:05:00
@@ -162,10 +160,9 @@ Multithreading will benefit jobs using less than
 *Performance is highly depended on the model used. The above should only be used as a rough guide.*
 ![Speedup](../../../assets/images/speedup_smoothed.png)
 
-## Tmpdir
+## TmpDir
 
 If you find yourself receiving the error 'Disk quota exceeded', yet `nn_storage_quota` shows plenty of room in your filesystem, you may be running out of tmpdir.
-This can be fixed by using the `--tmpdir` flag in the comsol command line, e.g. `comsol --tmpdir /nesi/nobackup/nesi99991/comsoltmp`, or by exporting `TMPDIR` before running the command, e.g. `export TMPDIR=/nesi/nobackup/nesi99991/comsoltmp`.
+This can be fixed by using the `--tmpdir` flag in the COMSOL command line, e.g. `comsol --tmpdir /nesi/nobackup/nesi99991/comsoltmp`, or by exporting `TMPDIR` before running the command, e.g. `export TMPDIR=/nesi/nobackup/nesi99991/comsoltmp`.
 
 You may also want to set this at the Java level with `export _JAVA_OPTIONS=-Djava.io.tmpdir=/nesi/nobackup/nesi99991/comsoltmp`
-
