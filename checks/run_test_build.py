@@ -13,7 +13,7 @@ import time
 This works but is a bit messy
 """
 
-msg_count = {"DEBUG": 0, "INFO": 0, "WARNING": 0, "ERROR": 0}
+msg_count = {"DEBUG": 0, "NOTICE": 0, "WARNING": 0, "ERROR": 0}
 
 
 def parse_macro(record):
@@ -74,4 +74,4 @@ if __name__ == '__main__':
         config.plugins.on_shutdown()
 
     time.sleep(5)
-    exit(100 < msg_count["INFO"] + (30 * msg_count["WARNING"] + (100 * msg_count["ERROR"])))
+    exit(100 < msg_count["NOTICE"] + (30 * msg_count["WARNING"] + (100 * msg_count["ERROR"])))
