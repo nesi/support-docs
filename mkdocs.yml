@@ -71,6 +71,7 @@ extra:
 plugins:
   - search
   - open-in-new-tab
+  - autolinks
   - rss:
       categories:
       - tags

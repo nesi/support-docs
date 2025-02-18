@@ -42,4 +42,4 @@ You will also receive an email confirmation:
 ## Related content
 
 [Setting Up Two-Factor
-Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+Authentication](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)

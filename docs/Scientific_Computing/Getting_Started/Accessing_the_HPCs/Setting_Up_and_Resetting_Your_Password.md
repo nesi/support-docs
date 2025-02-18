@@ -13,9 +13,9 @@ zendesk_section_id: 360000034315
 
 
 !!! prerequisite
-    -  Have a [NeSI
+    -  Have a [NeSI../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md
        account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
-    -  Be a member of an [active project.](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
+    -  Be a member of an [active project.](../../../Access/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
 
 ## Setting NeSI Password
 
@@ -61,4 +61,4 @@ zendesk_section_id: 360000034315
 
 !!! prerequisite "What next?"
     -  Set up [Second Factor
-       Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+       Authentication.](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)

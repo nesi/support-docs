@@ -47,6 +47,7 @@ distribution.
     #!/bin/bash -e
     
     #SBATCH --job-name      COMSOL-serial
+    #SBATCH --account       nesi99991
     #SBATCH --licenses      comsol@uoa_foe
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1512               # total mem
@@ -61,6 +62,7 @@ distribution.
     #!/bin/bash -e
 
     #SBATCH --job-name      COMSOL-shared
+    #SBATCH --account       nesi99991
     #SBATCH --licenses      comsol@uoa_foe
     #SBATCH --time          00:05:00        # Walltime
     #SBATCH --cpus-per-task 8
@@ -75,6 +77,7 @@ distribution.
     #!/bin/bash -e
     
     #SBATCH --job-name      COMSOL-distributed
+    #SBATCH --account       nesi99991
     #SBATCH --licenses      comsol@uoa_foe
     #SBATCH --time          00:05:00            # Walltime
     #SBATCH --ntasks        8         
@@ -90,6 +93,7 @@ distribution.
     #!/bin/bash -e
 
     #SBATCH --job-name         COMSOL-hybrid
+    #SBATCH --account          nesi99991
     #SBATCH --licenses         comsol@uoa_foe
     #SBATCH --time             00:05:00          # Walltime
     #SBATCH --ntasks           4                 
@@ -106,6 +110,7 @@ distribution.
     #!/bin/bash -e
 
     #SBATCH --job-name         COMSOL-livelink
+    #SBATCH --account          nesi99991
     #SBATCH --licenses         comsol@uoa_foe
     #SBATCH --time             00:05:00
     #SBATCH --cpus-per-task    16

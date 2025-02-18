@@ -11,7 +11,7 @@ zendesk_section_id: 360000039036
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
 filesystem on your local machine. SSHFS relies on SSH underneath, so you
 should follow the "Recommended logon procedure" instructions
-[here](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md) to configure SSH
+[here](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md) to configure SSH
 first.
 
 ## Linux

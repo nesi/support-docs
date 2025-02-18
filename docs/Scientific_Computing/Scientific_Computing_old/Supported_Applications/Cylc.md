@@ -250,7 +250,7 @@ $ ssh -N -L PORT:localhost:PORT HOST
 
 where **PORT** is a valid port number and **HOST** can be Māui or
 mahuika. See the [NeSI
-page](../../Getting_Started/Accessing_the_HPCs/Port_Forwarding.md) for
+page](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Port_Forwarding.md) for
 the range of allowed ports (currently 1024-49151). Choose any number in
 this range but make sure your port number is fairly unique to avoid
 clashing with other users. Option -N is optional: it opens the

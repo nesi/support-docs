@@ -24,9 +24,9 @@ If you do not know your NeSI account username:
 
 1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.  
 2. In the left side panel, under Account, click My HPC Account. Your Username will appear at the top of the page.  
-   ![authentication\_factor\_setup.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password.png)
+   ![authentication\_factor\_setup.png](../../assets/images/Setting_Up_and_Resetting_Your_Password.png)
 
 !!! prerequisite "What Next?"
      -   The project owner will add your username to the project.
-     -   Once it is done, you will be able to [set your NeSI account
-         password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
+     -   Once it is done, you will be able to 
+     [set your NeSI account password](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).

@@ -19,7 +19,7 @@ Your *Fair Share score* is a number between **0** and **1**. Projects
 with a **larger** Fair Share score receive a **higher priority** in the
 queue.
 
-A project is given an [allocation of compute units](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+A project is given an [allocation of compute units](../../../Access/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
 over a given **period**. An institution also has a percentage **Fair Share entitlement**
 of each machine's deliverable capacity over that same period.
 

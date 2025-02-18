@@ -51,7 +51,7 @@ the single-user Jupyter server.
 
 [https://jupyter.nesi.org.nz](https://jupyter.nesi.org.nz)
 
-When you log in with your [NeSI credentials](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
+When you log in with your [NeSI credentials](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
 you will be taken to the "Server Options" page, where typical job
 configuration options can be selected to allocate the resources that
 will be used to run Jupyter. Typical jobs, not requesting a GPU, should

@@ -9,7 +9,7 @@ zendesk_section_id: 360000189696
 
 !!! prerequisite
     -   Have working
-    [terminal](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+    [terminal](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
     set up.
 
 X-11 is a protocol for rendering graphical user interfaces (GUIs) that

@@ -19,7 +19,7 @@ page.
      and [Māui\_Ancil (CS500) Slurm Partitions](./Maui_Slurm_Partitions.md)
      support pages.
      Details about pricing in terms of compute units can be found in the
-     [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+     [What is an allocation?](../../../Access/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
      page.
 
 !!! note

@@ -27,7 +27,7 @@ The NeSI project filesystem is becoming critically full, however it is
 currently storing a large amount of dormant data that has not been
 accessed for more than 12 months. We need your help to free up space on
 the project filesystem as soon as possible. Please review the data you
-are currently storing in any  `/nesi/project/` directories and **delete
+are currently storing in any `/nesi/project/` directories and **delete
 or relocate** any files that are no longer required for ongoing
 computational and/or analytics work on NeSI.
 
@@ -53,7 +53,7 @@ storage allocation would be appropriate to manage this.
 ### 18 October 2021
 
 We will begin a limited roll-out of a new feature to automatically
-identify inactive files in  `/nesi/project/` directories and schedule
+identify inactive files in `/nesi/project/` directories and schedule
 them for deletion. Generally, we will be looking to identify files that
 are inactive / untouched for more than 12 months.
 
@@ -72,7 +72,7 @@ research project itself becomes inactive.
 
 ### January 2022
 
-Starting in January 2022, we will expand the `/nesi/project/` directory
+Starting in January 2022, we will expand the `/nesi/project/` directory
 data management programme to include all active projects on NeSI.
 Additional Support documentation and user information sessions will be
 hosted prior to wider implementation, to provide advance notice of the

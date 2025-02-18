@@ -12,9 +12,9 @@ zendesk_section_id: 360000034315
 ---
 
 !!! prerequisite
-    -  Have a [NeSI account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
-    -  Be a member of an [active project](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
-    -  Have [set up your NeSI account password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).  
+    -  Have a [NeSI account](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
+    -  Be a member of an [active project](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
+    -  Have [set up your NeSI account password](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).  
     -  Have a device with an authentication app.
 
 ##  Authentication App
@@ -54,4 +54,4 @@ This means that you can only try logging in to the lander node once
 every 30 seconds.
 
 !!! tip "What next?"
-    [Getting access to the cluster](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+    [Getting access to the cluster](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
