@@ -1,6 +1,9 @@
 ---
 created_at: 2025-01-28
 template: not_a_template
+not_a_parameter: This isn't valid
+tags:
+  - Not enough
 ---
 
 
@@ -37,6 +40,8 @@ Bad formatting for markdownlint
 ## Header nesting
  
 
+bad Slurm script
+
 ```sl
 !#/bin/bash
 
@@ -49,6 +54,7 @@ module load something
 ```
 
 [bad link](../docs/General/not-a-page.md)
+[bad link](not-a-page.md)
 
 [bad internal link](#impropers)
 

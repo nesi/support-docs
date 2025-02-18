@@ -3,5 +3,5 @@
     "hyperbole.misc": false,
     "typography.exclamation": false,
     "typography.symbols": false,
-    "links.broken": true
+    "links.broken": false
 }}

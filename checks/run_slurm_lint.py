@@ -48,15 +48,16 @@ def main():
     inputs = sys.argv[1:]
 
     for input_string in inputs:
-
+        print(f"::DEBUG file={input_string},title=filenamecol=0,endColumn=99,line=0:: \
+            Running Meta-Check on {input_string}")
         input_path = Path(input_string)
         with open(input_path, "r") as f:
             contents = f.read()
             for lineno, indent, slurm in finditer2(r"\n( *)```\s*sl.*\n([\s\S\n]*?)\n\s*```", contents, re.MULTILINE):
-                #try:
-                parse_script(lineno+3, indent, slurm)
-                #except Exception as e:
-                #    print(f"::ERROR file={input_path},title=failed_to_parse, col=0, endColumn=99, line={lineno}::Failed to parse slurm script {e}")
+                try:
+                    parse_script(lineno+3, indent, slurm)
+                except Exception as e:
+                    print(f"::ERROR file={input_path},title=failed_to_parse, col=0, endColumn=99, line={lineno}::Failed to parse slurm script {e}")
 
 
 def parse_script(start_linno, indent, slurm):
