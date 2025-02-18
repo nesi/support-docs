@@ -31,8 +31,7 @@ latter but not the former:
 test -r ~/.bashrc && . ~/.bashrc
 ```
 
-Please see the article, "[.bashrc or
-.bash\_profile?](../../General/FAQs/What_are_my-bashrc_and-bash_profile_for.md)"
+Please see the article, [.bashrc or.bash profile?](../../General/FAQs/What_are_my-bashrc_and-bash_profile_for.md)
 for more information.
 
 ## What about cron jobs?
@@ -44,6 +43,6 @@ start it with:
 CRON_TZ=NZ
 ```
 
-Also note that cron does not source either `~/.bashrc` or
+Also note that cron does not source either `~/.bashrc` or
 `~/.bash_profile`, so most environment variables will not be set,
 including TZ.

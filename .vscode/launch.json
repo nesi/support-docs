@@ -9,7 +9,7 @@
             "type": "debugpy",
             "request": "launch",
             "program": "checks/run_proselint.py",
-            "args": ["docs/fail_checks.md"],
+            "args": ["checks/fail_checks.md"],
             "console": "integratedTerminal",
             "justMyCode": false
         },
@@ -18,9 +18,18 @@
             "type": "debugpy",
             "request": "launch",
             "program": "checks/run_meta_check.py",
-            "args": ["docs/fail_checks.md"],
+            "args": ["checks/fail_checks.md"],
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "Debug Spell Check",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "checks/run_spell_check.py",
+            "args": ["checks/fail_checks.md"],
+            "console": "integratedTerminal",
+            "justMyCode": false
         },
         {
             "name": "Debug Testbuild",
@@ -28,14 +37,14 @@
             "request": "launch",
             "program": "checks/run_test_build.py",
             "console": "integratedTerminal",
-            "justMyCode": false
+            "justMyCode": true
         },
         {
             "name": "Debug Slurm Lint",
             "type": "debugpy",
             "request": "launch",
             "program": "checks/run_slurm_lint.py",
-            "args": ["docs/Scientific_Computing/Supported_Applications/ABAQUS.md"],
+            "args": ["checks/fail_checks.md"],
             "console": "integratedTerminal",
             "justMyCode": true
         }

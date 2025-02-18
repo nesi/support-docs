@@ -61,7 +61,7 @@
                 "reveal":"never",
                 "showReuseMessage": false
             },
-            "command": "./checks/run_pyspelling.py",
+            "command": "./checks/run_spell_check.py",
             "problemMatcher": {
                 "pattern": {
                     "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),col=([0-9]*),endColumn=([0-9]*),title=(.*?)::(.*)$",

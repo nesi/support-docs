@@ -15,13 +15,13 @@ if __name__ == "__main__":
 
     count_typos = 0
 
-    for source in sys.argv[1:]:
-        print(f"Running Pyspelling on {source}")
+    for file in sys.argv[1:]:
+        print(f"::DEBUG file={file},line=0,col=0,endColumn=0,title=file:: Running proselint on '{file}'")
 
         results = spellcheck(
             ".spellcheck.yml",
             names=["Markdown"],
-            sources=[source],
+            sources=[file],
             verbose=0,
             debug=True,
         )
@@ -32,13 +32,13 @@ if __name__ == "__main__":
                 continue
             keyword_processor.add_keywords_from_list(r.words)
 
-        source_md = Path(source).read_text().split("\n")
+        source_md = Path(file).read_text().split("\n")
 
         for i, line in enumerate(source_md, start=1):
             for match in keyword_processor.extract_keywords(line, span_info=True):
                 word, col_start, col_end = match
                 print(
-                    f"::warning file={source},line={i},"
+                    f"::warning file={file},line={i},"
                     f"col={col_start + 1},endColumn={col_end + 1},"
                     f"title=spelling::Word '{word}' is misspelled.",
                     flush=True,

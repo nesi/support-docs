@@ -55,7 +55,6 @@ def main():
     inputs = sys.argv[1:]
 
     for input_string in inputs:
-
         input_path = Path(input_string)
         if any(re.match(pattern, input_string) for pattern in EXCLUDED_FROM_CHECKS):
             continue
@@ -102,7 +101,8 @@ def _run_check(f):
 
 def _emit(f, r):
     msg_count[r.get('level', 'warning')] += 1
-    print(f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
+    print(f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},\
+endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
     sys.stdout.flush()
     time.sleep(0.01)
 
@@ -127,7 +127,7 @@ def _get_lineno(pattern):
         if m:
             return i
         i += 1
-    return 0
+    return i
 
 
 def _get_nav_tree():
@@ -207,7 +207,7 @@ def meta_unexpected_key():
             yield {"line": _get_lineno(r"^" + key + r":.*$"),
                    "message": f"Unexpected parameter in front-matter '{key}'"}
         elif EXPECTED_PARAMETERS[key] and value not in EXPECTED_PARAMETERS[key]:
-            yield {"level": "error", "line": _get_lineno(r"^status:.*$"),
+            yield {"level": "error", "line": _get_lineno(f"^{key}:.*$"),
                    "message": f"'{value}' is not valid for {key}. [{','.join(EXPECTED_PARAMETERS[key])}]"}
 
 
@@ -263,6 +263,7 @@ def walk_toc():
             yield y
 
 
+# Define checks here
 # For checks to run on page as a whole
 ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags,
              walk_toc]

@@ -41,6 +41,10 @@ def parse_macro(record):
     if m:
         record.filename = m.group(1)
 
+    # Swap to use notice for github parsing.
+    if record.levelname == "INFO":
+        record.levelname = "NOTICE"
+
     return True
 
 
@@ -51,6 +55,9 @@ def count_msg(record):
 
 
 if __name__ == '__main__':
+    # Github uses 'NOTICE' rather than 'INFO'
+    # This should overwrite existing INFO level.
+    logging.addLevelName(logging.INFO, "NOTICE")
     log = logging.getLogger('root')
     log.setLevel(logging.INFO)
     sh = logging.StreamHandler(sys.stdout)
