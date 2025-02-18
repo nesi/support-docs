@@ -350,11 +350,13 @@ When using versions of MATLAB more recent than 2021a you may notice the
 following warning.
 
 ```matlab
-ldd
+ldd: missing file arguments
+Try `ldd --help' for more information.
+glibc_shim: Didn't find correct code to patch
 ```
 
 This is due to our operating system being too old.
 
 With the exception of a few commands that directly make requests of the OS, your code should run fine.
 
-If you believe this bug is causing problems, running on our newer hardware will fix it.
+If you believe this bug is causing problems, running on our newer hardware (e.g.  `--partition milan`) will fix it.
