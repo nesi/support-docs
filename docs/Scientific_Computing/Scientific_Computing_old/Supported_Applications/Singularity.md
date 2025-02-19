@@ -41,7 +41,7 @@ resources). Resources and data outside of the container can be mapped
 into the container to achieve integration, for example, Singularity
 makes it simple to expose GPUs to the container and to access
 input/output files & directories mounted on the host (such as those on
-[shared filesystems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)).
+[shared filesystems](NeSI_File_Systems_and_Quotas.md)).
 
 Contrary to other containerisation tools such as Docker, Singularity
 removes the need for elevated privileges ("root access", e.g., via the
@@ -77,7 +77,7 @@ a remote build service (currently only the
 However, it is possible to build *some* containers directly on NeSI,
 using the Milan compute nodes and [Apptainer](https://apptainer.org/).
 Specific instructions are provided in a dedicated support page
-[Build an Apptainer container on a Milan compute node](../../Scientific_Computing_old/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node.md).
+[Build an Apptainer container on a Milan compute node](Build_an_Apptainer_container_on_a_Milan_compute_node.md).
 Please note **this may fail** to build some containers and encourage you
 to contact us at <support@nesi.org.nz> if you encounter an issue.
 
@@ -125,8 +125,8 @@ filesystem by:
 
 - Copying the image file from your local computer with basic file
     transfer tools - please refer to our documentation on
-    [Moving files to/from the cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-    and [Data Transfer using Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md)(if you have a large container) for details
+    [Moving files to/from the cluster](Moving_files_to_and_from_the_cluster.md)
+    and [Data Transfer using Globus](Data_Transfer_using_Globus_V5.md)(if you have a large container) for details
 - Downloading the container from an online repository
 
 To download a container, use commands such as

@@ -26,7 +26,7 @@ zendesk_section_id: 360000196195
     - Become familiar with foundational HPC skills, for example by
          attending a NeSI introductory workshop, one of our weekly introductory sessions (or watching the recording),
          or having one or more of your project team members do so.
-    - Review our [allocation classes](../NeSI_Policies/Allocation_classes.md). If
+    - Review our [allocation classes](Allocation_classes.md). If
          you don't think you currently qualify for any class other than
          Proposal Development, please {% include "partials/support_request.html" %} as soon as
          possible to discuss your options. Your institution may be in a
@@ -68,7 +68,7 @@ information:
     research programme's current or expected funding)
 - Details of how your project is funded (this will help determine
     whether you are eligible for an allocation from our
-    [Merit](../NeSI_Policies/Merit_allocations.md) class)
+    [Merit](Merit_allocations.md) class)
 - Your previous HPC experience
 - Whether you would like expert scientific programming support on your
     project
@@ -80,8 +80,8 @@ is relevant.
 
 !!! prerequisite "What Next?"
      - Your NeSI Project proposal will be
-         [reviewed](../NeSI_Policies/How_we_review_applications.md),
+         [reviewed](How_we_review_applications.md),
          after which you will be informed of the outcome.
      - We may contact you if further details are required.
      - When your project is approved you will be able to 
-     [set your Linux Password](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
+     [set your Linux Password](Setting_Up_and_Resetting_Your_Password.md).

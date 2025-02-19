@@ -9,7 +9,7 @@ zendesk_section_id: 360000039036
 ---
 
 - `--mem`: Memory per node
-- `--mem-per-cpu`: Memory per [logical CPU](../../Scientific_Computing_old/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
+- `--mem-per-cpu`: Memory per [logical CPU](Hyperthreading.md)
 
 In most circumstances, you should request memory using `--mem`. The
 exception is if you are running an MPI job that could be placed on more

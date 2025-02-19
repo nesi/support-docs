@@ -22,4 +22,4 @@ zendesk_section_id: 360000034315
    icon after installing it). You should now be able to X-Forward
    displays from the HPC when you log in (assuming you have completed
    the
-   [terminal setup instructions found here](../../Scientific_Computing_old/Terminal_Setup/Standard_Terminal_Setup.md)).
+   [terminal setup instructions found here](Standard_Terminal_Setup.md)).

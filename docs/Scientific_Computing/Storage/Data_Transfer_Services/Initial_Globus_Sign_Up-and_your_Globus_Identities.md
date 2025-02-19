@@ -17,7 +17,7 @@ Google or GlobusID.
     you can also use any of the available methods - this then becomes your
     primary identity in Globus.
 
-    ![Globus\_login.png](../../../assets/images/Initial_Globus_Sign_Up-and_your_Globus_Identities.png)
+    ![Globus\_login.png](Initial_Globus_Sign_Up-and_your_Globus_Identities.png)
 
 2. Link other Globus identities to your primary identity
 
@@ -33,7 +33,7 @@ Google or GlobusID.
     If you have other identities in Globus (for example, a GlobusID),
     [link them to your Google ID account](https://docs.globus.org/how-to/link-to-existing/).
 
-    ![identities.png](../../../assets/images/Initial_Globus_Sign_Up-and_your_Globus_Identities_0.png)
+    ![identities.png](Initial_Globus_Sign_Up-and_your_Globus_Identities_0.png)
 
 !!! warning
     If you had a Globus account before February 2016, that account ID is now

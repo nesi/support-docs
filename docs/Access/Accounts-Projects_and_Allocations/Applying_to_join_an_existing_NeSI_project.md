@@ -29,4 +29,4 @@ If you do not know your NeSI account username:
 !!! prerequisite "What Next?"
      -   The project owner will add your username to the project.
      -   Once it is done, you will be able to 
-     [set your NeSI account password](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
+     [set your NeSI account password](Setting_Up_and_Resetting_Your_Password.md).

@@ -218,4 +218,4 @@ Systems](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a
 [Cray XC (x86) Programming Environments
 19.04](https://support.hpe.com/hpesc/public/docDisplay?docId=a00114073en_us&docLocale=en_US)
 
-[Applications supported by NeSIteam](../../Scientific_Computing_old/Supported_Applications/index.md)
+[Applications supported by NeSIteam](index.md)

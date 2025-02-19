@@ -45,7 +45,7 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
      intuitive formula <code>⌊ 5 x N<sup>0.422</sup> ⌋</code> where `N` is number
      of CPUs.
 
-[Hyperthreading](../Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
+[Hyperthreading](Hyperthreading.md)
 can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding `#SBATCH --hint nomultithread` to your slurm script if
@@ -219,7 +219,7 @@ rm "abaqus_v6.env"
 
 ## Performance
 
-![ABAQUS\_speedup\_SharedVMPI.png](../../../assets/images/ABAQUS.png)
+![ABAQUS\_speedup\_SharedVMPI.png](ABAQUS.png)
 
 *Note: Hyperthreading off, testing done on small mechanical FEA model.
 Results highly model dependant. Do your own tests.*

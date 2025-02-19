@@ -22,7 +22,7 @@ zendesk_section_id: 360001189255
 ## Introduction
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
-[interactive computing](../Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
+[interactive computing](Slurm_Interactive_Sessions.md).
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
@@ -51,7 +51,7 @@ the single-user Jupyter server.
 
 [https://jupyter.nesi.org.nz](https://jupyter.nesi.org.nz)
 
-When you log in with your [NeSI credentials](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
+When you log in with your [NeSI credentials](Setting_Up_and_Resetting_Your_Password.md)
 you will be taken to the "Server Options" page, where typical job
 configuration options can be selected to allocate the resources that
 will be used to run Jupyter. Typical jobs, not requesting a GPU, should
@@ -121,8 +121,8 @@ client. Some things to note are:
 To end a JupyterLab session, please select "Hub Control Panel" under the
 File menu then "Stop My Server". Finally, click on "Log Out".
 
-![control panel](../../../assets/images/Jupyter_on_NeSI.png)
-![stop server](../../../assets/images/Jupyter_on_NeSI_0.png)
+![control panel](Jupyter_on_NeSI.png)
+![stop server](Jupyter_on_NeSI_0.png)
 
 If you click "Log Out" without stopping your server, the server will
 continue to run until the Slurm job reaches its maximum wall time.
@@ -195,7 +195,7 @@ you please.
      your home directory. The application directory often requires at least
      1-2GB of disk space and 30,000 inodes (file count), so make sure you
      have space available in your home directory first (see
-     [NeSI File Systems and Quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md))
+     [NeSI File Systems and Quotas](NeSI_File_Systems_and_Quotas.md))
      or request a larger quota.
 
 You could change the path to point to a location in your project

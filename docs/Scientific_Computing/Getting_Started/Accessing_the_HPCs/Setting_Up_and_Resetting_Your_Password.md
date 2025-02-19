@@ -15,7 +15,7 @@ zendesk_section_id: 360000034315
 !!! prerequisite
     -  Have a [NeSI../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md
        account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
-    -  Be a member of an [active project.](../../../Access/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
+    -  Be a member of an [active project.](Applying_for_a_new_NeSI_project.md)
 
 ## Setting NeSI Password
 
@@ -26,18 +26,18 @@ zendesk_section_id: 360000034315
    Password** (If you are resetting your password this will read
    **Reset Password**).  
    Note your **Username**.  
-   ![authentication\_factor\_setup.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password.png)  
+   ![authentication\_factor\_setup.png](Setting_Up_and_Resetting_Your_Password.png)  
 
 3. Enter and verify your new password, making sure it follows the
-   [password policy](../../../Access/NeSI_Policies/NeSI_Password_Policy.md).  
-   ![SetNeSIaccountPassword.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_0.png)
+   [password policy](NeSI_Password_Policy.md).  
+   ![SetNeSIaccountPassword.png](Setting_Up_and_Resetting_Your_Password_0.png)
 
 4. If the password set was successful, following confirmation label
    will appear on the same page within few seconds  
-   ![change\_success.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_1.png)
+   ![change\_success.png](Setting_Up_and_Resetting_Your_Password_1.png)
 
 5. Followed by an email confirmation similar to below
-   ![password\_set\_confirmation.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_2.png)
+   ![password\_set\_confirmation.png](Setting_Up_and_Resetting_Your_Password_2.png)
 
 ## Resetting NeSI Password via my NeSI Portal
 
@@ -54,10 +54,10 @@ zendesk_section_id: 360000034315
 
 4. If the password **reset** was successful, following confirmation
    label will appear on the same page within few seconds  
-   ![change\_success.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_3.png)
+   ![change\_success.png](Setting_Up_and_Resetting_Your_Password_3.png)
 
 5. Followed by an email confirmation similar to below  
-![password\_set\_confirmation.png](../../../assets/images/Setting_Up_and_Resetting_Your_Password_4.png)
+![password\_set\_confirmation.png](Setting_Up_and_Resetting_Your_Password_4.png)
 
 !!! prerequisite "What next?"
     -  Set up [Second Factor

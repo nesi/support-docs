@@ -31,7 +31,7 @@ ssh to these nodes after logging onto the NeSI lander node.
 1. The Cray Programming Environment on Mahuika, differs from that on
     Māui.
 2. The `/home, /nesi/project`, and `/nesi/nobackup`
-    [filesystems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
+    [filesystems](NeSI_File_Systems_and_Quotas.md)
     are mounted on Mahuika.
 3. Read about how to compile and link code on Mahuika in section
     entitled: [Compiling software on../HPC_Software_Environment/Compiling_software_on_Mahuika.md

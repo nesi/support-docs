@@ -17,14 +17,14 @@ Scale clients*, and those that employ *Cray’s DVS* *solution*.
 
 Applications that make heavy demands on metadata services and or have
 high levels of small I/O activity should generally not be run on
-[Māui](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Maui.md) (the Cray
+[Māui](Maui.md) (the Cray
 XC50).
 
 ## Nodes which access storage via native Spectrum Scale Clients
 
-All [Mauhika](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Mahuika.md)
-HPC Cluster, [Mahuika Ancillary](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Mahuika.md),
-[Māui Ancillary](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Maui_Ancillary.md) and
+All [Mauhika](Mahuika.md)
+HPC Cluster, [Mahuika Ancillary](Mahuika.md),
+[Māui Ancillary](Maui_Ancillary.md) and
 Māui login (aka build) nodes have native Spectrum Scale clients
 installed and provide high performance access to storage:
 
@@ -96,4 +96,4 @@ to decompress the data after use. However, testing has shown that there
 can be an impact on job performance due to I/O. You can find out more
 about tests and results regarding performance of transparent
 data compression on the NeSI platforms on our
-[Data Compression support page](../../Storage/File_Systems_and_Quotas/Data_Compression.md).
+[Data Compression support page](Data_Compression.md).

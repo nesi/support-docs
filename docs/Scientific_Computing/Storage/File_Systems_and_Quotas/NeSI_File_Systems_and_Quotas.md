@@ -17,8 +17,8 @@ zendesk_section_id: 360000033936
     We have recently started rolling out compression of inactive data on the NeSI Project filesystem.
     Please see the [documentation below](#transparent-file-data-compression) to learn more about how this works and what data will be compressed.
 
-[Māui](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Maui.md) and
-[Mahuika](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Mahuika.md), along
+[Māui](Maui.md) and
+[Mahuika](Mahuika.md), along
 with all the ancillary nodes, share access to the same IBM Storage Scale
 file systems. Storage Scale was previously known as Spectrum Scale, and
 before that as GPFS, or General Parallel File System - we'll generally
@@ -98,7 +98,7 @@ This file system is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. All home directories
 are backed up daily, both via the Spectrum Protect backup system, which
 retains the last 10 versions of all files for up to 90 days, and via
-[Scale snapshots](../Data_Recovery/File_Recovery.md).
+[Scale snapshots](File_Recovery.md).
 No cleaning policy will be applied to your home directory as long as
 your My NeSI account is active and you are a member of at least one
 active project.
@@ -112,7 +112,7 @@ cleaning policy is applied.
 
 It provides storage space for datasets, shared code or configuration
 scripts that need to be accessed by users within a project, and
-[potentially by other projects](../File_Systems_and_Quotas/File_permissions_and_groups.md).
+[potentially by other projects](File_permissions_and_groups.md).
 Read and write performance increases using larger files, therefore you should
 consider archiving small files with the `nn_archive_files` utility, or a
 similar archiving package such as `tar` .
@@ -136,12 +136,12 @@ apply per-project quotas to both disk space and number of files on this
 file system. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
-requirements with us during [the project application process](../../../Access/NeSI_Policies/How_we_review_applications.md),
+requirements with us during [the project application process](How_we_review_applications.md),
 or {% include "partials/support_request.html" %} at any time.
 
 To ensure this file system remains fit-for-purpose, we have a regular
 cleaning policy as described in
-[Automatic cleaning of nobackup filesystem](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
+[Automatic cleaning of nobackup filesystem](Automatic_cleaning_of_nobackup_file_system.md).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
@@ -166,12 +166,12 @@ an Automatic Tape Library (ATL). Files will remain on `/nesi/nearline`
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
-See [more information about the nearline service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md).
+See [more information about the nearline service](Nearline_Long_Term_Storage_Service.md).
 
 ## Snapshots
 
 If you have accidentally deleted data you can recover it from
-a [snapshot](../Data_Recovery/File_Recovery.md).
+a [snapshot](File_Recovery.md).
 Snapshots are taken daily of `home/` and `project` directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 {% include "partials/support_request.html" %}
@@ -213,7 +213,7 @@ though this is mitigated by space and bandwidth savings.
 
 Transparent file data compression can be controlled and applied by users
 via file attributes, you can find out more about using this method on
-our [Data Compression support page](../../Storage/File_Systems_and_Quotas/Data_Compression.md).
+our [Data Compression support page](Data_Compression.md).
 File data compression can also be automatically applied by administrators
 through the Scale policy engine. We leverage this latter feature to
 regularly identify and compress inactive data on the `/nesi/project`

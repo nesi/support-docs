@@ -125,7 +125,7 @@ same directory as classify.py. This file contains the predictions for
 the first 50 test images, which will vary for each training but the
 result will look like:
 
-![someResults.png](../../../assets/images/Keras.png)
+![someResults.png](Keras.png)
 
 (The purple images have no dots.) With each image the number of dots is
 displayed as well as the value inferred by the model in parentheses. The

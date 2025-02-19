@@ -21,8 +21,8 @@ Python and R kernels by default, which can be selected from the Launcher.
 
 Many packages are preinstalled in our default Python and R environments
 and these can be extended further as described on the
-[Python](../../../Supported_Applications/Python.md) and
-[R](../../../Supported_Applications/R.md) support
+[Python](Python.md) and
+[R](R.md) support
 pages.
 
 ## Adding a custom Python kernel

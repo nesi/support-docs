@@ -12,7 +12,7 @@ This article describes a technique to build
 [Apptainer](https://apptainer.org/) containers using [Milan compute../Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md
 nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md),
 via a Slurm job. You can also build
-[Singularity](../Supported_Applications/Singularity.md)
+[Singularity](Singularity.md)
 container using this technique.
 
 ## Building container via Slurm

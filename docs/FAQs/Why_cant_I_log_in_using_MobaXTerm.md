@@ -57,5 +57,5 @@ trying to use your old password from credential manager.
 4. Restart MobaXterm
 5. Try logging in again
 
-More information about [how to log in to our HPC facilities](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md),
-and [login troubleshooting](../../General/FAQs/Login_Troubleshooting.md).
+More information about [how to log in to our HPC facilities](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md),
+and [login troubleshooting](Login_Troubleshooting.md).

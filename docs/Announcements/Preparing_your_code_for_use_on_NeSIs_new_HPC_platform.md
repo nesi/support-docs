@@ -39,7 +39,7 @@ Below is a quick overview of some of the changes you need to be aware of when po
 ## Test your code on Mahuika
 
 The platform NeSI has selected to replace Mahuika is most similar to the
-[Mahuika AMD Milan compute nodes](../../General/Announcements/Mahuikas_new_Milan_CPU_nodes_open_to_all_NeSI_users.md) than nodes on other partitions.
+[Mahuika AMD Milan compute nodes](Mahuikas_new_Milan_CPU_nodes_open_to_all_NeSI_users.md) than nodes on other partitions.
 So, we'll be using the Milan nodes to validate any issues, mitigating risks of your subsequent migration to the new platform.
 
 Some projects on Māui will move to the new NeSI hardware. These projects have been notified and given a small allocation on Mahuika which can be used by the Māui users to validate the software they need is available (or can be built) on the AMD Milan nodes and works as expected. All members of the project can use this Mahuika allocation.
@@ -76,9 +76,9 @@ has AMD Milan (Zen3) CPUs, while the rest of Mahuika has Intel Broadwell
 CPUs.
 
 If for any reason you want to use any of the other Mahuika partitions,see
-[Mahuika Slurm Partitions](../../Scientific_Computing_old/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md) for
+[Mahuika Slurm Partitions](Mahuika_Slurm_Partitions.md) for
 an overview and
-[Milan Compute Nodes](../../Scientific_Computing_old/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md) for
+[Milan Compute Nodes](Milan_Compute_Nodes.md) for
 the differences between them and *milan*.
 
 #### Shared nodes
@@ -139,12 +139,12 @@ or FFTW then you will be best off loading one of our EasyBuild
 "toolchain" environment modules such as:
 
 - `foss/2023a`  - GCC, FFTW,
-    [FlexiBLAS](../../Scientific_Computing_old/Supported_Applications/FlexiBLAS.md),
+    [FlexiBLAS](FlexiBLAS.md),
     OpenBLAS, OpenMPI
 - `intel/2022a`  - Intel compilers, Intel MKL with its FFTW wrappers,
     Intel MPI.
 
-For more on this topic, please see [Compiling software on Mahuika](../../Scientific_Computing_old/HPC_Software_Environment/Compiling_software_on_Mahuika.md).
+For more on this topic, please see [Compiling software on Mahuika](Compiling_software_on_Mahuika.md).
 
 Since an increasing proportion of NeSI CPUs are AMD ones, good
 performance of Intel's MKL library should not be assumed - other
@@ -161,7 +161,7 @@ NeSI hardware will have AMD Zen4 CPUs, which will have AVX512.
 ## Questions?
 
 If you have any questions or need any help, {% include "partials/support_request.html" %}
-or pop in to one of our [weekly Online Office Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md)
+or pop in to one of our [weekly Online Office Hours](Weekly_Online_Office_Hours.md)
 to chat with Support staff one-to-one.
 
 No question is too small - don't hesitate to reach out.

@@ -16,7 +16,7 @@ search:
 ---
 
 A Slurm configuration change has been made on Mahuika so that the 
-maximum size of [core file](../FAQs/What_is_a_core_file.md) that
+maximum size of [core file](What_is_a_core_file.md) that
 can be generated inside a job now defaults to `0` bytes rather
 than `unlimited`.
 

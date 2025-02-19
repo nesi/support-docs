@@ -50,7 +50,7 @@ while launching JupyterLab. In the following we use the port number
 !!! prerequisite
      -   In the following we assume you already configured
          your`.ssh/config` to use two hop method as described in the
-         [Standard Terminal Setup](../Terminal_Setup/Standard_Terminal_Setup.md).
+         [Standard Terminal Setup](Standard_Terminal_Setup.md).
 
 First, the port forwarding needs to be enabled between your local
 machine and the NeSI system. Therewith a local port will be connected to
@@ -111,7 +111,7 @@ click 'Tools &gt; MobaSSH Thunnel (port forwarding)':
     the remote server (right upper box, second line)
 -   Save
 
-![sshTunnel.PNG](../../../assets/images/JupyterLab.PNG)
+![sshTunnel.png](JupyterLab.png)
 
 ### Launch the JupyterLab server 
 
@@ -214,7 +214,7 @@ Finally, you need to open your local web browser and copy and paste the
 URL specified by the JupyterLab server into the address bar. After
 initializing Jupyter Lab you should see a page similar to:
 
-![Jupyter.PNG](../../../assets/images/JupyterLab_0.PNG)
+![Jupyter.png](JupyterLab_0.png)
 
 ## Kernels
 

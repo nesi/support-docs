@@ -14,7 +14,7 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
-![mceclip0.png](../../../assets/images/Globus_V5_Paths-Permissions-Storage_Allocation.png)
+![mceclip0.png](Globus_V5_Paths-Permissions-Storage_Allocation.png)
 
 ###  On NeSI's Māui/Mahuika clusters this means
 
@@ -25,7 +25,7 @@ path directory, displayed as '`/home/<username>`'.
 | `/nesi/project/<project_code>`  | yes               | `/nesi/project/<project_code>`  | yes                       | **read only** access  |
 
 For more information about NeSI filesystem, check
-[NeSI_File_Systems_and_Quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
+[NeSI_File_Systems_and_Quotas](NeSI_File_Systems_and_Quotas.md).
 
 ## Performing Globus transfers to/from Māui/Mahuika
 

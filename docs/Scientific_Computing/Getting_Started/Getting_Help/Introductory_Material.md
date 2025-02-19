@@ -34,7 +34,7 @@ In addition to the material mentioned above, you can also seek help at
 our weekly "Office Hours" or by attending a Workshop. Office hours are
 drop-in sessions hosted by the NeSI Support Team where any and all
 questions are welcome. **Our Office Hours schedule** can be found
-[here](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md).
+[here](Weekly_Online_Office_Hours.md).
 
 NeSI also participates in and organises [Workshops](https://www.nesi.org.nz/services/training) covering a range of topics. Many of these workshops - and particularly "Introduction to HPC using NeSI", are designed for new users.
 

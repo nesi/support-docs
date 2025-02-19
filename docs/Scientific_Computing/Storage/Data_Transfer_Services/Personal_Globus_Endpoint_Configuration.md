@@ -22,7 +22,7 @@ Globus's [Endpoints administered by
 you](https://app.globus.org/endpoints?scope=administered-by-me) to see
 whether your endpoint shows up as active.
 
-![mceclip0.png](../../../assets/images/Personal_Globus_Endpoint_Configuration.png)
+![mceclip0.png](Personal_Globus_Endpoint_Configuration.png)
 
 ## Personal Endpoint file-transfer and sharing
 
@@ -37,7 +37,7 @@ eScience Infrastructure*.
 Check if your account already has this membership by viewing the [Globus
 Plus](https://app.globus.org/account/plus) tab under your Account:
 
-![mceclip2.png](../../../assets/images/Personal_Globus_Endpoint_Configuration_0.png)
+![mceclip2.png](Personal_Globus_Endpoint_Configuration_0.png)
 
 If you do not see an entry for *New Zealand eScience Infrastructure* on
 this page, then:

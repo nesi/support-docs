@@ -47,7 +47,7 @@ we’d be happy to help or answer questions.
 If you have data that may be used again on NeSI later,
 {% include "partials/support_request.html" %}
 and we will consider whether a
-[Nearline](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
+[Nearline](Nearline_Long_Term_Storage_Service.md)
 storage allocation would be appropriate to manage this.
 
 ### 18 October 2021
@@ -88,7 +88,7 @@ levels, as that impacts their performance and availability for users. We
 also want to ensure our active storage filesystems aren't being used to
 store inactive data. This new data management feature
 for `/nesi/project/` directories will complement our existing programme
-of [automatic cleaning of the /nobackup file system](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
+of [automatic cleaning of the /nobackup file system](Automatic_cleaning_of_nobackup_file_system.md).
 
 ### Can I check how much storage I’m currently using on NeSI systems?
 
@@ -104,7 +104,7 @@ and cached between updates.
 
 Perhaps. We regularly make read-only copies of the file system and save
 them for up to seven days. For more information,
-[refer to our File Recovery page](../../Storage/Data_Recovery/File_Recovery.md).
+[refer to our File Recovery page](File_Recovery.md).
 
 ### Where should I store my data on NeSI systems?
 

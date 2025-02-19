@@ -16,7 +16,7 @@ use.
 Examples of software environments on NeSI optimised for data science
 include:
 
-- [R](../../Scientific_Computing_old/Supported_Applications/R.md) and [Python](../../Scientific_Computing_old/Supported_Applications/TensorFlow_on_GPUs.md) users
+- [R](../../Scientific_Computing_old/Supported_Applications/R.md) and [Python](TensorFlow_on_GPUs.md) users
     can get right into using and exploring the several built-in packages
     or create custom code.
 
@@ -28,14 +28,14 @@ include:
     and/or Conda can be accessed via Jupyter.
 
 - Commonly used data science environments and libraries such as
-    [Keras](../../Scientific_Computing_old/Supported_Applications/Keras.md),
-    [LambdaStack](../../Scientific_Computing_old/Supported_Applications/Lambda_Stack.md),
-    [Tensorflow](../../Scientific_Computing_old/Supported_Applications/TensorFlow_on_GPUs.md)
+    [Keras](Keras.md),
+    [LambdaStack](Lambda_Stack.md),
+    [Tensorflow](TensorFlow_on_GPUs.md)
     and [Conda](https://docs.conda.io/en/latest/) are available to
     create comprehensive workflows.
 
 For more information about available software and applications, you
-can [browse our catalogue](../../Scientific_Computing_old/Supported_Applications/index.md).
+can [browse our catalogue](index.md).
 
 As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using

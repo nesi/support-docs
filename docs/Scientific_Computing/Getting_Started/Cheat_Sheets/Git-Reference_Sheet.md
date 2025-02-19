@@ -59,19 +59,19 @@ documentation](https://docs.github.com/en/authentication/connecting-to-github-wi
 - Now log in to your GitHub account. In the upper-right corner of any
     page, click your profile photo click **Settings**.
 
-    ![Settings icon in the user bar](../../../assets/images/Git-Reference_Sheet.png)
+    ![Settings icon in the user bar](Git-Reference_Sheet.png)
 
 - In the "Access" section of the sidebar, click **SSH and GPG keys**.
 
 - Click **New SSH key** or **Add SSH key**.
 
-    ![SSH Key button](../../../assets/images/Git-Reference_Sheet_0.png)
+    ![SSH Key button](Git-Reference_Sheet_0.png)
 
 - In the "Title" field, put "Mahuika" or "NeSI".
 
 - Paste your key into the "Key" field.
 
-    ![The key field](../../../assets/images/Git-Reference_Sheet_1.png)
+    ![The key field](Git-Reference_Sheet_1.png)
 
 - Click **Add SSH key**.
 

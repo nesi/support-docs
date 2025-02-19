@@ -11,7 +11,7 @@ zendesk_section_id: 360001189255
 !!! note
      This functionality is experimental and may introduce breaking changes
      in the future. These notes should be read in conjunction with NeSI's
-     main [R support page](../Supported_Applications/R.md)
+     main [R support page](R.md)
      Your feedback is welcome, please don't hesitate {% include "partials/support_request.html" %} to make suggestions.
 
 ## Getting started
@@ -22,7 +22,7 @@ NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
 
-![rstudio\_launcher.png](../../../assets/images/RStudio_via_Jupyter_on_NeSI.png)
+![rstudio\_launcher.png](RStudio_via_Jupyter_on_NeSI.png)
 
 Clicking on this entry will open a separate tab in your web browser,
 where RStudio will be accessible.
@@ -33,7 +33,7 @@ javascript in your web browser.
 
 ## Changing R version
 
-You can configure a set of [environment modules](../../Getting_Started/Next_Steps/The_HPC_environment.md)
+You can configure a set of [environment modules](The_HPC_environment.md)
 to preload before starting RStudio. This can be useful if you want to
 change the version of the R interpreter or use NeSI's *R-Geo* or
 *R-bundle-Bioconductor* modules.
@@ -135,7 +135,7 @@ be due to RStudio taking too much time to start, which is interpreted as
 a failure by JupyterLab. Please try to start RStudio again from the
 launcher. If the problem persists, {% include "partials/support_request.html" %}.
 
-![error\_500.PNG](../../../assets/images/RStudio_via_Jupyter_on_NeSI_0.png)
+![error\_500.png](RStudio_via_Jupyter_on_NeSI_0.png)
 
 If you have disabled javascript in your web browser, you will need
 to enter your password manually in the RStudio login screen. To

@@ -34,7 +34,7 @@ ascertain how much of each of these resources you will need.
 Asking for too little or too much, however, can both cause problems:
 your jobs will
 be at increased risk of taking a long time in the queue or failing, and
-your project's [fair share score](../../Scientific_Computing_old/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
+your project's [fair share score](Fair_Share.md)
 is likely to suffer.
 Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
@@ -46,7 +46,7 @@ not.
 | Memory | The job may wait in the queue for longer. Your fair share score will fall more than necessary. | Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error. This may not happen immediately. |
 | Wall time | The job may wait in the queue for longer than necessary | The job will run out of time and get killed. |
 
-***See [What is an allocation?](../../../Access/Accounts-Projects_and_Allocations/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
+***See [What is an allocation?](What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale
@@ -77,5 +77,5 @@ will not have waited for hours or days in the queue
 beforehand.
 
 !!! example
-     - [Multithreading Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
-     - [MPI Scaling](../../Getting_Started/Next_Steps/MPI_Scaling_Example.md)
+     - [Multithreading Scaling](Multithreading_Scaling_Example.md)
+     - [MPI Scaling](MPI_Scaling_Example.md)

@@ -19,7 +19,7 @@ Now, instead of automatically subscribing new users for all notifications, we wi
 
 - **Submit new HPC Jobs** - notices regarding status of login nodes, Slurm scheduler, or filesystem
 - **Jobs running on HPC** - notices regarding network issues, or status of Slurm scheduler or filesystem
-- **Jupyter on NeSI** - notices regarding the status of our [Jupyter Service](../../Scientific_Computing_old/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md) for interactive computing
+- **Jupyter on NeSI** - notices regarding the status of our [Jupyter Service](Jupyter_on_NeSI.md) for interactive computing
 - **HPC Storage** - notices regarding the status of storage resources on NeSI systems
 
 Effective Friday 20 October, we adjusted all existing and non-customised Status page subscriptions to match this shorter notification list.

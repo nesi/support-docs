@@ -143,5 +143,5 @@ configuration is expected to be addressed in the future.
 
 Don't hesitate to {% include "partials/support_request.html" %}. No question is
 too big or small. We are available for Zoom sessions or
-[Weekly Online Office Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md)
+[Weekly Online Office Hours](Weekly_Online_Office_Hours.md)
 if it's easier to discuss your question in a call rather than via email.

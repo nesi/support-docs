@@ -37,7 +37,7 @@ performance, as a socket connects the processor to its RAM and other
 processors. A processor in each socket consists of multiple physical
 cores, and each physical core is split into two logical cores using a
 technology called
-[Hyperthreading](../Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)).
+[Hyperthreading](Hyperthreading.md)).
 
 A processor also includes caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory
@@ -51,7 +51,7 @@ cores (our current HPCs have 18 to 20 cores). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
-![NodeSocketCore.png](../../../assets/images/Thread_Placement_and_Thread_Affinity.png)
+![NodeSocketCore.png](Thread_Placement_and_Thread_Affinity.png)
 
 It is very important to note the following:
 

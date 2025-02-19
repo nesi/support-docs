@@ -70,7 +70,7 @@ reconstructPar -latestTime     #Collect
 
 OpenFOAM generates a large number of files during run-time. In addition
 to the I/O load there is also the danger of using up available
-[inodes](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
+[inodes](NeSI_File_Systems_and_Quotas.md).
 
 **Filesystems in excess of their allocation will cause any job trying to
 write there to crash.**
@@ -157,7 +157,7 @@ Generally your custom solver will be stored in a git repo. Make sure you
 have the same version as the OpenFOAM you plan to use, this may require
 changing branch.
 
-![git\_releases.png](../../../assets/images/OpenFOAM.png)
+![git\_releases.png](OpenFOAM.png)
 
 #### Release
 

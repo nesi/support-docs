@@ -64,8 +64,8 @@ srun fds ${input}
 
 ### Scaling with MPI
 
-![FDS scaling distrubuted mem](../../../assets/images/FDS.png)
+![FDS scaling distrubuted mem](FDS.png)
 
 ### Scaling with oMP
 
-![FDS scaling shared mem](../../../assets/images/FDS_0.png)
+![FDS scaling shared mem](FDS_0.png)

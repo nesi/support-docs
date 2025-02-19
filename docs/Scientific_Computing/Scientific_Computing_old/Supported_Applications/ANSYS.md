@@ -570,7 +570,7 @@ the command `fensapiceGUI` from within your FENSAP project directory.
 1. Launch the run and select the desired
 number of (physical) CPUs.
 2. Open the 'configure' panel.
-    ![FENSAP gui](../../../assets/images/ANSYS.png)
+    ![FENSAP gui](ANSYS.png)
 3. Under 'Additional mpirun parameters' add
     your inline SLURM options. You should include at least.
 
@@ -585,7 +585,7 @@ number of (physical) CPUs.
     Note: All these parameters will be applied to each individual
     step.
 4. Start the job. You can track progress under the 'log' tab.
-    ![FENSAP GUI](../../../assets/images/ANSYS_0.png)
+    ![FENSAP GUI](ANSYS_0.png)
 
 You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by

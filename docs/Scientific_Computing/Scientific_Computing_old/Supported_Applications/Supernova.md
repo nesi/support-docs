@@ -128,7 +128,7 @@ takes the following general form
 `ssh -L <d>:<node>:<port> -N <server>`
 
 - &lt;d&gt; An integer
-- &lt;server&gt; see: [Standard Terminal Setup](../Terminal_Setup/Standard_Terminal_Setup.md)
+- &lt;server&gt; see: [Standard Terminal Setup](Standard_Terminal_Setup.md)
 
 When details are added to the general form from the specifics in the
 snippet above, the following could be run..
@@ -149,7 +149,7 @@ take &lt;d&gt; and &lt;auth&gt; from the code snippet above..
 http://localhost:9999/?auth=Bx2ccMZmJxaIfRNBOZ_XO_mQd1njNGL3rZry_eNI1yU
 ```
 
-![Screen\_Shot\_2019-01-28\_at\_2.17.29\_PM.png](../../../assets/images/Supernova.png)
+![Screen\_Shot\_2019-01-28\_at\_2.17.29\_PM.png](Supernova.png)
 
 ## Things to watch out for
 

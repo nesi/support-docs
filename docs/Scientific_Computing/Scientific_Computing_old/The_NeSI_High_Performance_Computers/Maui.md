@@ -43,7 +43,7 @@ lander node. Jobs can be submitted to the HPC from these nodes.
 
 1.  The Cray Programming Environment on the XC50 (supercomputer) differs
     from that on Mahuika and the Māui Ancillary nodes.
-2.  The `/home, /nesi/project`, and `/nesi/nobackup` [file systems](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md) are
+2.  The `/home, /nesi/project`, and `/nesi/nobackup` [file systems](NeSI_File_Systems_and_Quotas.md) are
     mounted on Māui.
 3.  The I/O subsystem on the XC50 can provide high bandwidth to disk
     (large amounts of data), but not many separate reading or writing

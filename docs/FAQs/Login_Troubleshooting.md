@@ -10,7 +10,7 @@ zendesk_section_id: 360000039036
 
 
 !!! prerequisite
-    - Please make sure you have followed the recommended setup. See [Choosing and Configuring Software for Connecting to the Clusters](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md) for more information.
+    - Please make sure you have followed the recommended setup. See [Choosing and Configuring Software for Connecting to the Clusters](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md) for more information.
     - Most terminals do not give an indication of how many characters have been typed when entering a password.
     - Paste is not usually bound to `ctrl` + `V` and will vary based on your method of access.
 
@@ -53,12 +53,12 @@ ssh login.<mahuika/maui>.nesi.org.nz
 **If this fails:** Are you logging in to the correct cluster?
 Mahuika/Maui have separate access control, also Māui requires your
 password input in a different format, see
-[here](../../General/FAQs/Mahuika_Maui_Differences.md).
+[here](Mahuika_Maui_Differences.md).
 
 **If this succeeds**:
 
-- If you are using a bash terminal, confirm your .ssh config is [set up correctly](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
-- If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
+- If you are using a bash terminal, confirm your .ssh config is [set up correctly](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
+- If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
 
 ### Check you are a member of an active project
 

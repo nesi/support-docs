@@ -12,14 +12,14 @@ please have a look at the dedicated pages listed at the end of this
 page.
 
 !!! warning
-     An overview of available GPU cards is available in the [Available GPUs on NeSI](../The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md)
+     An overview of available GPU cards is available in the [Available GPUs on NeSI](Available_GPUs_on_NeSI.md)
      support page.
      Details about GPU cards for each system and usage limits are in the
      [Mahuika Slurm Partitions](./Mahuika_Slurm_Partitions.md)
      and [Māui\_Ancil (CS500) Slurm Partitions](./Maui_Slurm_Partitions.md)
      support pages.
      Details about pricing in terms of compute units can be found in the
-     [What is an allocation?](../../../Access/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+     [What is an allocation?](What_is_an_allocation.md)
      page.
 
 !!! note
@@ -28,7 +28,7 @@ page.
 
 ## Request GPU resources using Slurm
 
-To request a GPU for your [Slurm job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md), add
+To request a GPU for your [Slurm job](Submitting_your_first_job.md), add
 the following option at the beginning of your submission script:
 
 ```sl
@@ -326,8 +326,8 @@ graphical interface.
 !!! warning
      The `nsys-ui` and `ncu-ui` tools require access to a display server,
      either via
-     [X11](../Terminal_Setup/X11_on_NeSI.md) or a
-     [Virtual Desktop](../Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md).
+     [X11](X11_on_NeSI.md) or a
+     [Virtual Desktop](Virtual_Desktop_via_Jupyter_on_NeSI.md).
      You also need to load the `PyQt` module beforehand:
 
      ```sh
@@ -343,12 +343,12 @@ applications:
 
 - [ABAQUS](../Supported_Applications/ABAQUS.md#examples)
 - [GROMACS](../Supported_Applications/GROMACS.md#nvidia-gpu-container)
-- [Lambda Stack](../Supported_Applications/Lambda_Stack.md)
+- [Lambda Stack](Lambda_Stack.md)
 - [Matlab](../Supported_Applications/MATLAB.md#using-gpus)
-- [TensorFlow on GPUs](../Supported_Applications/TensorFlow_on_GPUs.md)
+- [TensorFlow on GPUs](TensorFlow_on_GPUs.md)
 
 And programming toolkits:
 
-- [Offloading to GPU with OpenMP](../HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
+- [Offloading to GPU with OpenMP](Offloading_to_GPU_with_OpenMP.md)
 - [Offloading to GPU with OpenACC using the Cray compiler](./../HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md)
-- [NVIDIA GPU Containers](../HPC_Software_Environment/NVIDIA_GPU_Containers.md)
+- [NVIDIA GPU Containers](NVIDIA_GPU_Containers.md)

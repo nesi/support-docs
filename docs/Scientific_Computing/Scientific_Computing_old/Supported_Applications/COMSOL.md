@@ -131,7 +131,7 @@ distribution.
 
 ## Interactive Use
 
-Providing you have [set up X11](../Terminal_Setup/X11_on_NeSI.md), you can
+Providing you have [set up X11](X11_on_NeSI.md), you can
 open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.
@@ -163,7 +163,7 @@ Multithreading will benefit jobs using less than
 8 CPUs, but is not recommended on larger jobs.
 
 *Performance is highly depended on the model used. The above should only be used as a rough guide.*
-![Speedup](../../../assets/images/speedup_smoothed.png)
+![Speedup](speedup_smoothed.png)
 
 ## TmpDir
 

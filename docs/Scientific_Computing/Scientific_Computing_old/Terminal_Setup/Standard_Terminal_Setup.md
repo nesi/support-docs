@@ -7,9 +7,9 @@ description: How to setup your ssh config file in order to connect to the NeSI c
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-     -   Set up your [Linux Password.](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-     -   Set up [Second Factor Authentication.](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+     -   Have an [active account and project.](Creating_a_NeSI_Account_Profile.md)
+     -   Set up your [Linux Password.](Setting_Up_and_Resetting_Your_Password.md)
+     -   Set up [Second Factor Authentication.](Setting_Up_Two_Factor_Authentication.md)
      -   Have one of:
          - Built in Linux/Mac terminal
          - [Windows Subsystem for Linux](./Windows_Subsystem_for_Linux_WSL.md)
@@ -66,5 +66,5 @@ ssh mahuika
 ```
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+     -   [Moving files to/from a cluster.](Moving_files_to_and_from_the_cluster.md)
      -   Setting up an [X-Server](./X11_on_NeSI.md) (optional).

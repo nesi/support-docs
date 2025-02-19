@@ -131,7 +131,7 @@ seem to change much. Let's try plotting this data (we used R here, but
 feel free to use excel or whatever your preferred plotting software) to
 help us better understand what is happening:
 
-![Plot1](../../../assets/images/Multithreading_Scaling_Example.png){ width=47% } ![Plot2](../../../assets/images/Multithreading_Scaling_Example_0.png){ width=47% }
+![Plot1](../../../assets/images/Multithreading_Scaling_Example.png){ width=47% } ![Plot2](Multithreading_Scaling_Example_0.png){ width=47% }
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. However, peak memory usage appears unchanged.
@@ -183,7 +183,7 @@ our script with 2, 4, 6, 8, 10, 12, 14 and 16 CPUs and plot the results using `s
 3106181.0      Rscript         00:00:59    11:59.998    16 1205991K COMPLETED
 ```
 
-![TvC-MT.png](../../../assets/images/Multithreading_Scaling_Example_1.png){ width=47% } ![TvL2C-MT.png](../../../assets/images/Multithreading_Scaling_Example_2.png){ width=47% }
+![TvC-MT.png](../../../assets/images/Multithreading_Scaling_Example_1.png){ width=47% } ![TvL2C-MT.png](Multithreading_Scaling_Example_2.png){ width=47% }
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
@@ -205,7 +205,7 @@ small. We could try running our script with more than 16 CPU cores,
 however, in the case of this script we start to have a pretty
 significant drop in marginal speed-up after eight CPU cores.
 
-![](../../../assets/images/Multithreading_Scaling_Example_3.png)
+![](Multithreading_Scaling_Example_3.png)
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

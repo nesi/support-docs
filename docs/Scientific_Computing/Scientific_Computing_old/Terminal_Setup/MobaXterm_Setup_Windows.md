@@ -12,9 +12,9 @@ zendesk_section_id: 360000189696
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-     -   Set up your [Linux Password.](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-     -   Set up Second [Factor Authentication.](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+     -   Have an [active account and project.](Creating_a_NeSI_Account_Profile.md)
+     -   Set up your [Linux Password.](Setting_Up_and_Resetting_Your_Password.md)
+     -   Set up Second [Factor Authentication.](Setting_Up_Two_Factor_Authentication.md)
      -   Windows operating system.
 
 Setting up MobaXterm as shown below will allow you to connect to the
@@ -43,9 +43,9 @@ transfer GUI.
         field, as well as your NeSI username in the Username field for
         the gateway SSH server then select OK to close the window.
 
-    ![mceclip4.png](../../../assets/images/MobaXterm_Setup_Windows.png)
+    ![mceclip4.png](MobaXterm_Setup_Windows.png)
 
-    ![mceclip5.png](../../../assets/images/MobaXterm_Setup_Windows_0.png)
+    ![mceclip5.png](MobaXterm_Setup_Windows_0.png)
 
 6. Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
@@ -56,7 +56,7 @@ transfer GUI.
      This can be resolved by clicking "OK" each time you are prompted then
      logging in as normal once you are prompted for your `First Factor:` or
      `Password:`.  
-     See [Login Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
+     See [Login Troubleshooting](Login_Troubleshooting.md) for more
      details
 
 ## Usage
@@ -64,7 +64,7 @@ transfer GUI.
 You will see your saved session in the left hand panel under 'Sessions'.
 Double click to start.
 
-![mceclip6.png](../../../assets/images/MobaXterm_Setup_Windows_1.png)
+![mceclip6.png](MobaXterm_Setup_Windows_1.png)
 
 You will be prompted by dialogue box.
 
@@ -131,4 +131,4 @@ Then setup a new session [according to the support doc instructions](./MobaXterm
 as before.
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+     -   [Moving files to/from a cluster.](Moving_files_to_and_from_the_cluster.md)

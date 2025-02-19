@@ -31,4 +31,4 @@ notifications.
 
 ### See also
 
-Our support article on the NeSI [System status.](../../Getting_Started/Getting_Help/System_status.md)
+Our support article on the NeSI [System status.](System_status.md)

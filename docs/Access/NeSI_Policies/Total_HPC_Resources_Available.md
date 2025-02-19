@@ -9,8 +9,8 @@ zendesk_section_id: 360000224835
 ---
 
 NeSI resources available for allocation each year combined across both
-[Mahuika](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Mahuika.md) and
-[Māui](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Maui.md) HPC systems
+[Mahuika](Mahuika.md) and
+[Māui](Maui.md) HPC systems
 include 152 million x86 CPU Core-hours and 112 thousand GPGPU-hours
 (equivalent to 400 million Cuda Core-hours) per annum and are divided
 between Allocation Classes as specified in Table 1, and Table 2.

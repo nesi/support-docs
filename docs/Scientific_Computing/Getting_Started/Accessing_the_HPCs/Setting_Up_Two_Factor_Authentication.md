@@ -12,9 +12,9 @@ zendesk_section_id: 360000034315
 ---
 
 !!! prerequisite
-    -  Have a [NeSI account](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
-    -  Be a member of an [active project](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
-    -  Have [set up your NeSI account password](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).  
+    -  Have a [NeSI account](Creating_a_NeSI_Account_Profile.md).  
+    -  Be a member of an [active project](Creating_a_NeSI_Account_Profile.md).  
+    -  Have [set up your NeSI account password](Setting_Up_and_Resetting_Your_Password.md).  
     -  Have a device with an authentication app.
 
 ##  Authentication App
@@ -33,10 +33,10 @@ If you some reason you can't do this, please contact NeSI support.
 
 2. Click **My HPC Account** on left hand panel  and then **Setup
    Two-Factor Authentication device**  
-   ![authentication\_factor\_setup.png](../../../assets/images/Setting_Up_Two_Factor_Authentication.png)
+   ![authentication\_factor\_setup.png](Setting_Up_Two_Factor_Authentication.png)
 
 3. Click the "**Setup Two-Factor Authentication device**" link.  
-   ![set\_up\_2fa\_device.png](../../../assets/images/Setting_Up_Two_Factor_Authentication_0.png)
+   ![set\_up\_2fa\_device.png](Setting_Up_Two_Factor_Authentication_0.png)
 
 4. After clicking on "Continue" you will retrieve the QR code.
 
@@ -54,4 +54,4 @@ This means that you can only try logging in to the lander node once
 every 30 seconds.
 
 !!! tip "What next?"
-    [Getting access to the cluster](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+    [Getting access to the cluster](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)

@@ -12,7 +12,7 @@ Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
 learning, numerical simulation, managing
-[Slurm job submissions](../../../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
+[Slurm job submissions](Submitting_your_first_job.md)
 and workflows and much more.
 
 ## Accessing Jupyter on NeSI

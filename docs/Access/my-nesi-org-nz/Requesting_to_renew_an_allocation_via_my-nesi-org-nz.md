@@ -39,5 +39,5 @@ Please be aware that:
 - An allocation from an institution's entitlement is subject to
     approval by that institution.
 
-See [Project Extensions and New Allocations on Existing Projects](../../../Access/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md)
+See [Project Extensions and New Allocations on Existing Projects](Project_Extensions_and_New_Allocations_on_Existing_Projects.md)
 for more details.

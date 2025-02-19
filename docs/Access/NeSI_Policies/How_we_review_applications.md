@@ -52,8 +52,8 @@ new projects is as follows:
     of GPU hours or access to ancillary nodes or virtual labs.
 6. **Decision and notification:** If we approve an initial allocation
     for your project, we will typically award the project an
-    [allocation of Mahuika compute units, Māui node hours, or both, and also an online storage allocation](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md),
-    from one of [our allocation classes](../../General/NeSI_Policies/Allocation_classes.md).
+    [allocation of Mahuika compute units, Māui node hours, or both, and also an online storage allocation](What_is_an_allocation.md),
+    from one of [our allocation classes](Allocation_classes.md).
     In an case, we will send you an email telling you about our decision.
 
 Our review process for requests for new allocations on existing projects

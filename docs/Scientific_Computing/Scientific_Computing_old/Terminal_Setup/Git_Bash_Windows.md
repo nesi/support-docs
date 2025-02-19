@@ -14,8 +14,8 @@ zendesk_section_id: 360000189696
 ---
 
 !!! prerequisite
-     -   Have a [NeSI account.](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
-     -   Be a member of an [active project.](../../../Access/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md)
+     -   Have a [NeSI account.](Creating_a_NeSI_Account_Profile.md))
+     -   Be a member of an [active project.](Applying_to_join_an_existing_NeSI_project.md)
 
 ## First time setup
 
@@ -86,4 +86,4 @@ credentials every time you open a new terminal or try to move a file.*
 scp <path/filename> mahuika:~/
 ```
 
-(For more info visit [data transfer](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md).
+(For more info visit [data transfer](Moving_files_to_and_from_the_cluster.md).

@@ -16,7 +16,7 @@ search:
 ## New and Improved
 
 -   An updated web application is introducing a
-    [navigation](../../../Getting_Started/my-nesi-org-nz/Navigating_the_my-nesi-org-nz_web_interface.md)
+    [navigation](Navigating_the_my-nesi-org-nz_web_interface.md)
     in the sidebar and links to important functions
 
 -   Improved [project application

@@ -51,8 +51,8 @@ the research community with:
 - Offsite replication of critical data (both online and offline).
 
 These systems are
-[accessed](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
-via a “lander” node using [two-factor authentication](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
+[accessed](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+via a “lander” node using [two-factor authentication](Setting_Up_Two_Factor_Authentication.md).
 
 NeSI researchers have access to all compute nodes on Mahuika, and 316
 compute nodes on Māui.

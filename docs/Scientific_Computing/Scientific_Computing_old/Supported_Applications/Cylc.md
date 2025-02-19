@@ -197,17 +197,17 @@ $ cylc graph simple
 ```
 
 which will generate a png file, generally in the /tmp directory with a
-name like /tmp/tmpzq3bjktw.PNG. Take note of the name of the png file.
+name like /tmp/tmpzq3bjktw.png. Take note of the name of the png file.
 To visualise the file you can type
 
 ``` sh
-$ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
+$ display  /tmp/tmpzq3bjktw.png # ADJUST the file name
 ```
 
 Here, we see that our workflow "simple" has a "taskC", which waits for
 "taskA" and "taskB" to complete,
 
-![simple.png](../../../assets/images/Cylc.png)
+![simple.png](Cylc.png)
 
 The "1" indicates that this workflow graph is executed only once.
 

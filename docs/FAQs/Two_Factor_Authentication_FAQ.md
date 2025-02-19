@@ -25,7 +25,7 @@ mobile device. On that mobile device, you will then need to install
 Google Authenticator (or another QR code reader application that
 implements the Time-based One Time Password algorithm) on your mobile
 device.
-See also [Setting Up Two-Factor Authentication](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
+See also [Setting Up Two-Factor Authentication](Setting_Up_Two_Factor_Authentication.md).
 
 ## Can I use an SSH key pair as an alternative second factor?
 
@@ -50,7 +50,7 @@ existing accounts** then scan the QR code provided on the old device.
 
 ## How do I get a new Second Factor?
 
-See article [here](../../General/FAQs/How_to_replace_my_2FA_token.md).
+See article [here](How_to_replace_my_2FA_token.md).
 
 ## Can I use the same Second Factor again?
 

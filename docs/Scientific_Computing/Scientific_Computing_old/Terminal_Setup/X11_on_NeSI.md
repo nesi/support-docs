@@ -9,7 +9,7 @@ zendesk_section_id: 360000189696
 
 !!! prerequisite
     -   Have working
-    [terminal](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+    [terminal](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
     set up.
 
 X-11 is a protocol for rendering graphical user interfaces (GUIs) that
@@ -30,13 +30,13 @@ Download links for X-servers can be found below.
 | Windows          | [Xming](https://sourceforge.net/projects/xming/)  |
 
 Make sure you have launched the server and it is running in the
-background, look for this ![mceclip0.png](../../../assets/images/X11_on_NeSI.png) symbol in your taskbar.
+background, look for this ![mceclip0.png](X11_on_NeSI.png) symbol in your taskbar.
 
 !!! note
      MobaXterm has a build in X server, no setup required. By default the
      server is started alongside MobaXterm. You can check it's status in
      the top left hand corner
-     (![xon.png](../../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](../../../assets/images/X11_on_NeSI_1.png)=off).
+     (![xon.png](../../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](X11_on_NeSI_1.png)=off).
 
 ## X-Forwarding
 
@@ -60,9 +60,9 @@ ssh -Y login.nesi.org.nz
  Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
-![x11moba.png](../../../assets/images/X11_on_NeSI_2.png)
+![x11moba.png](X11_on_NeSI_2.png)
 
-If the ![mceclip0.png](../../../assets/images/X11_on_NeSI_3.png) button in
+If the ![mceclip0.png](X11_on_NeSI_3.png) button in
 the top right corner of your window is coloured, the X-server should be
 running.
 

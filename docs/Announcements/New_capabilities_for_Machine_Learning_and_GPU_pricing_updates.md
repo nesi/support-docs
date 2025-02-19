@@ -16,7 +16,7 @@ platform and some noteworthy changes to resource pricing as a result.
 ## New Graphics Processing Units (GPUs)
 
 We’ve installed eight NVIDIA A100 GPU cards into the
-[Mahuika HPC system](../../Scientific_Computing_old/The_NeSI_High_Performance_Computers/Mahuika.md),
+[Mahuika HPC system](Mahuika.md),
 providing a significant boost in computing performance and an
 environment particularly suited to machine learning workloads. Over the
 last few months we’ve worked directly with a group of beta tester
@@ -24,7 +24,7 @@ researchers to ensure this new capability is fit-for-purpose and tuned
 to communities' specific software and tool requirements.
 
 These new A100s, alongside
-[software optimised for data science](../FAQs/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md)),
+[software optimised for data science](What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md)),
 are available to researchers using **machine learning** approaches. If
 this is you, {% include "partials/support_request.html" %} to
 discuss how these new resources could support your work.
@@ -32,7 +32,7 @@ discuss how these new resources could support your work.
 ## Reduced pricing for P100s
 
 We’ve recently reviewed our
-[pricing](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+[pricing](What_is_an_allocation.md)
 and reduced the price of our existing
 [P100](https://www.nvidia.com/en-us/data-center/tesla-p100/) GPUs to 7.0
 compute units per device-hour. The P100 GPUs are available to any

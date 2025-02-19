@@ -25,8 +25,8 @@ Steps involved:
 
 ## Questions?
 
-We have an [FAQ page](../FAQs/Common_questions_about_the_platform_refresh.md) to help answer common questions and
-[weekly Online Office Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md) with our support team, who are ready to answer or talk through any questions or issues you might have. You can also reach out anytime via email.
+We have an [FAQ page](Common_questions_about_the_platform_refresh.md) to help answer common questions and
+[weekly Online Office Hours](Weekly_Online_Office_Hours.md) with our support team, who are ready to answer or talk through any questions or issues you might have. You can also reach out anytime via email.
 {% include "partials/support_request.html" %}
 
 We are ready to work with you ensure this transition is a smooth process and the new storage platform delivers an improved experience.

@@ -9,9 +9,9 @@ zendesk_section_id: 360000189696
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-     -   Set up your [NeSI account password.](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-     -   Set up Second [Factor Authentication.](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+     -   Have an [active account and project.](Creating_a_NeSI_Account_Profile.md)
+     -   Set up your [NeSI account password.](Setting_Up_and_Resetting_Your_Password.md)
+     -   Set up Second [Factor Authentication.](Setting_Up_Two_Factor_Authentication.md)
      -   Be using the Windows operating system.
 
 WinSCP is an SCP client for windows implementing the SSH protocol from
@@ -20,7 +20,7 @@ PuTTY.
 1. [Download WinSCP](https://winscp.net/eng/download.php).
 
 2. Upon startup:
-    ![WinSCP1.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows.png)
+    ![WinSCP1.png](WinSCP-PuTTY_Setup_Windows.png)
 
 3. Add a *New Site* and set:
 
@@ -34,11 +34,11 @@ PuTTY.
         better than SCP. Feel free to try both and see which works best for
         you.
 
-        ![WinSCP2.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
+        ![WinSCP2.png](WinSCP-PuTTY_Setup_Windows_0.png)
 
 4. Open Advanced Settings.
 
-    ![WinSCP3.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
+    ![WinSCP3.png](WinSCP-PuTTY_Setup_Windows_1.png)
 
 5. Navigate to *Connection & Tunnel* and set:
     - Enable "Connect through SSH tunnel".
@@ -56,12 +56,12 @@ recommend you use the PuTTY terminal instead.
 
 2. In WinSCP open 'Tools &gt; Preferences'
 
-    ![WinSCP2-5.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
+    ![WinSCP2-5.png](WinSCP-PuTTY_Setup_Windows_2.png)
 
 3. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-    ![WinSCP4.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
+    ![WinSCP4.png](WinSCP-PuTTY_Setup_Windows_3.png)
 
 ## Setup for Xming (Optional)
 
@@ -75,7 +75,7 @@ SSH Client' is selected).
 2\. Under *Integration &gt; Applications* and add -X after
 PuTTY/Terminal client path.
 
-*![WinSCP6.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_4.png)*
+*![WinSCP6.png](WinSCP-PuTTY_Setup_Windows_4.png)*
 
 3\. Restart your session.
 !!! prerequisite Important
@@ -87,24 +87,24 @@ PuTTY/Terminal client path.
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows file system.
 
-![WinSCP5.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_5.png)
+![WinSCP5.png](WinSCP-PuTTY_Setup_Windows_5.png)
 
-![putTerm.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_6.png) Will
+![putTerm.png](WinSCP-PuTTY_Setup_Windows_6.png) Will
 open a **PuTTY terminal**. Assuming you followed the steps setting up
 PuTTY, this should automatically enter your details.
 
-![winTerm.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_7.png) Will
+![winTerm.png](WinSCP-PuTTY_Setup_Windows_7.png) Will
 open the default **WinSCP terminal**. While the functionality is
 identical to any other terminal the interface is slightly abstracted,
 with a separate window for input and command history drop-down.
 
-![winAdd.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_8.png) Type
+![winAdd.png](WinSCP-PuTTY_Setup_Windows_8.png) Type
 here to **change directory**. The GUI doesn't follow your current
 terminal directory like MobaXterm so must be changed
 manually. (Recommend making this larger as the default is hard to
 type in).
 
-![winBook.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
+![winBook.png](WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
 current directory.
 
 ### Troubleshooting
@@ -116,13 +116,13 @@ Occasionally this can lead to an excessive number of prompts. Limiting
 number of tunnels will reduce the number of times you are prompted.
 
 1. Open settings
-    ![winscp\_settings.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png)
+    ![winscp\_settings.png](WinSCP-PuTTY_Setup_Windows_10.png)
 
 2. Under 'Transfer' -&gt; 'Background', set the 'Maximal number of
 transfers at the same time' to '1' and un-tick 'Use multiple connections
 for a single transfer'.
 
-![winscp\_Settings2.png](../../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png)
+![winscp\_Settings2.png](WinSCP-PuTTY_Setup_Windows_11.png)
 
 !!! warning
      As WinSCP uses multiple tunnels for file transfer you will be required

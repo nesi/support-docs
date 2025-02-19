@@ -19,7 +19,7 @@ search:
     fixes](https://jupyterlab.readthedocs.io/en/stable/getting_started/changelog.html#id12)
 - Updated to JupyterHub 1.4.2
 - Rendering time remaining, CPU and Memory usage in the top menu bar  
-    ![mceclip0.png](../../../assets/images/jupyter-nesi-org-nz_release_notes_16-09-2021.png)  
+    ![mceclip0.png](jupyter-nesi-org-nz_release_notes_16-09-2021.png)  
 - Confirmed JupyterLab extension for version control using Git
     working  
     See <https://pypi.org/project/jupyterlab-git/>

@@ -15,7 +15,7 @@ investigate.
 ### OOM
 
 One common reason is a limited amount of memory. Then the application
-could crash with an [Out Of Memory exception](../../General/FAQs/What_does_oom_kill_mean.md).
+could crash with an [Out Of Memory exception](What_does_oom_kill_mean.md).
 
 ### Stack size
 

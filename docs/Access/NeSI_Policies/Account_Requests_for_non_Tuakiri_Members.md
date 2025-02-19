@@ -44,5 +44,5 @@ my.nesi.org.nz.
 
 !!! note "What next?"
      -   [Project Eligibility](Allocation_classes.md)
-     -   [Applying for a new project.](../Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
-     -   [Applying to join an existing project](../Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md).
+     -   [Applying for a new project.](Applying_for_a_new_NeSI_project.md)
+     -   [Applying to join an existing project](Applying_to_join_an_existing_NeSI_project.md).
