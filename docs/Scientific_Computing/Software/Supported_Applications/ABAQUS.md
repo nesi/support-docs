@@ -76,7 +76,7 @@ Not all solvers are compatible with all types of parallelisation.
 
 === "Serial"
     For when only one CPU is required, generally as part of
-    a [job array](../../Getting_Started/Next_Steps/Parallel_Execution.md#job-arrays)
+    a [job array](../../Mahuika_Cluster/Next_Steps/Parallel_Execution.md#job-arrays)
 
     ```sl
     #!/bin/bash -e

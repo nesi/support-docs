@@ -1,4 +1,7 @@
 nav:
-    - Getting_Started
-    - Scientific_Computing_old
-    - Storage
+    - Mahuika_Cluster
+    - Data_Management
+    - Software
+    - Batch_Computing
+    - Interactive_Computing
+    - Parallel_Computing
