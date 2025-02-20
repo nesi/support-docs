@@ -1,14 +1,2 @@
 nav:
- - Checking_your_projects_usage_using_nn_corehour_usage.md
- - GPU_use_on_NeSI.md
- - Job_Checkpointing.md
- - Slurm_Interactive_Sessions.md
- - Fair_Share.md
- - Job_prioritisation.md
- - Mahuika_Slurm_Partitions.md
- - Milan_Compute_Nodes.md
- - Maui_Slurm_Partitions.md
- - SLURM-Best_Practice.md
- - NetCDF-HDF5_file_locking.md
- - Checksums.md
  - ...

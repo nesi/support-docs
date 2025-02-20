@@ -65,4 +65,4 @@ warning whenever you run a system command, and some system commands will
 not work as intended.
 
 For more details see
-[MATLAB#known\_bugs](MATLAB.md#known-bugs).
+[MATLAB](MATLAB.md#known-bugs).

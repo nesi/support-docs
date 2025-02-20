@@ -43,6 +43,6 @@ start it with:
 CRON_TZ=NZ
 ```
 
-Also note that cron does not source either `~/.bashrc` or
+Also note that cron does not source either `~/.bashrc` or
 `~/.bash_profile`, so most environment variables will not be set,
 including TZ.

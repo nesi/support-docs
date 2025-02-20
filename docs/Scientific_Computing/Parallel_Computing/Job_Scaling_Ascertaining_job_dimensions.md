@@ -34,7 +34,7 @@ ascertain how much of each of these resources you will need.
 Asking for too little or too much, however, can both cause problems:
 your jobs will
 be at increased risk of taking a long time in the queue or failing, and
-your project's [fair share score](Fair_Share.md)
+your project's [fair share score](../Mahuika_Cluster/Next_Steps/Fair_Share.md)
 is likely to suffer.
 Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
@@ -46,7 +46,7 @@ not.
 | Memory | The job may wait in the queue for longer. Your fair share score will fall more than necessary. | Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error. This may not happen immediately. |
 | Wall time | The job may wait in the queue for longer than necessary | The job will run out of time and get killed. |
 
-***See [What is an allocation?](What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
+***See [What is an allocation?](../Mahuika_Cluster/Next_Steps/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale

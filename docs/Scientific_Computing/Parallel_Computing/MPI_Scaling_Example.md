@@ -174,7 +174,7 @@ Let's run our Slurm script with sbatch and look at our output from
 Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
 will always receive 2 logical CPUs which is equal to 1 physical CPUs.
 For a more in depth explanation about logical and physical CPU cores see
-our [Hyperthreading article](Hyperthreading.md))
+our [Hyperthreading article](../Mahuika_Cluster/Next_Steps/Hyperthreading.md))
 and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
 18 minutes and 51 seconds.
 
@@ -213,7 +213,7 @@ results:
 6054939.0      python          00:06:51     01:18:37     6  174028K  COMPLETED 
 ```
 
-![MPIscalingMem.png](MPI_Scaling_Example.png)
+![MPIscalingMem.png](../Mahuika_Cluster/Next_Steps/MPI_Scaling_Example.png)
 
 First, looking at the plot (we used R here, but feel free to use excel
 or whatever your preferred plotting software) of memory usage per task
@@ -237,7 +237,7 @@ memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-![MPIscalingSeeds.png](MPI_Scaling_Example_0.png){ width=47% } ![MPIscalingSeedsLog.png](MPI_Scaling_Example_1.png){ width=47% }
+![MPIscalingSeeds.png](../Mahuika_Cluster/Next_Steps/MPI_Scaling_Example_0.png){ width=47% } ![MPIscalingSeedsLog.png](../Mahuika_Cluster/Next_Steps/MPI_Scaling_Example_1.png){ width=47% }
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time.
@@ -295,7 +295,7 @@ increasing as we add more seeds, but the maximum memory per CPU doesn't
 seem to change much. Let's try plotting this data to help us better
 understand what is happening:
 
-![MPIseedsvtime.png](MPI_Scaling_Example_2.png)
+![MPIseedsvtime.png](../Mahuika_Cluster/Next_Steps/MPI_Scaling_Example_2.png)
 
 This confirms our assumption of wall-time scaling linearly with number
 of iterations. Since our 5,000 seed job to 7 minutes and 41 seconds we

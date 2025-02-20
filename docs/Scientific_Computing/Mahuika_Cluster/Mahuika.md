@@ -31,12 +31,12 @@ ssh to these nodes after logging onto the NeSI lander node.
 1. The Cray Programming Environment on Mahuika, differs from that on
     Māui.
 2. The `/home, /nesi/project`, and `/nesi/nobackup`
-    [filesystems](NeSI_File_Systems_and_Quotas.md)
+    [filesystems](The_NeSI_High_Performance_Computers/NeSI_File_Systems_and_Quotas.md)
     are mounted on Mahuika.
 3. Read about how to compile and link code on Mahuika in section
-    entitled: [Compiling software on Mahuika.](Compiling_software_on_Mahuika.md)
+    entitled: [Compiling software on Mahuika.](The_NeSI_High_Performance_Computers/Compiling_software_on_Mahuika.md)
 4. An extension to Mahuika with additional, upgraded resources is also
-    available. see [Milan Compute Nodes](Milan_Compute_Nodes.md)
+    available. see [Milan Compute Nodes](The_NeSI_High_Performance_Computers/Milan_Compute_Nodes.md)
     for details on access
 
 ## Mahuika HPC Cluster (Cray CS400)

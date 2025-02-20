@@ -11,7 +11,7 @@ zendesk_section_id: 360000034335
 ---
 
 The NeSI High Performance Computers
-[Māui](Maui.md) and
+[Māui](The_NeSI_High_Performance_Computers/Maui.md) and
 [Mahuika](Mahuika.md) provide
 the New Zealand research community with access to a national
 data-centric and data intensive research computing environment built on
@@ -37,7 +37,7 @@ different processors (Skylake on Māui, and Broadwell on Mahuika), and
 different flavours of Linux (SLES on Māui and CentOS on Mahuika), so
 shared applications should be explicitly compiled and linked for each
 architecture. These systems and Ancillary Nodes on Mahuika and
-on [Māui](Maui.md)  provide
+on [Māui](The_NeSI_High_Performance_Computers/Maui.md)  provide
 the research community with:
 
 - Leading edge HPCs (both Capacity and Capability) via a single point
@@ -51,8 +51,8 @@ the research community with:
 - Offsite replication of critical data (both online and offline).
 
 These systems are
-[accessed](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
-via a “lander” node using [two-factor authentication](Setting_Up_Two_Factor_Authentication.md).
+[accessed](The_NeSI_High_Performance_Computers/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+via a “lander” node using [two-factor authentication](The_NeSI_High_Performance_Computers/Setting_Up_Two_Factor_Authentication.md).
 
 NeSI researchers have access to all compute nodes on Mahuika, and 316
 compute nodes on Māui.

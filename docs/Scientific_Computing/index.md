@@ -1,5 +1,5 @@
 ---
-template: main.html
+created_at: 2025-02-20
 ---
 
-placeholder
+SCIENTIFIC COMPUTING PLACEHOLDER

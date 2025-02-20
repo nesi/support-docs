@@ -31,7 +31,7 @@ following outcomes:
     - For "quick wins" we may be able to achieve these improvements
         within the scope of the job efficiency review
     - For larger pieces of work, we would assist you in applying for a
-        [NeSI Consultancy](Consultancy.md)
+        [NeSI Consultancy](../../Training/Consultancy.md)
         project, where we would work with you on a longer term project
         to implement any agreed changes
 

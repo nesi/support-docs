@@ -81,7 +81,7 @@ jobs:
         name: Run pyspelling
         run: |
           shopt -s globstar extglob
-          python3 checks/run_pyspelling.py ${{needs.get.outputs.filelist}}
+          python3 checks/run_spell_check.py ${{needs.get.outputs.filelist}}
   proselint:
     name: Check Prose
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkProse}}
