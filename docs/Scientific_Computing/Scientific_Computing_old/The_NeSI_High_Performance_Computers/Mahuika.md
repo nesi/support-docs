@@ -34,11 +34,9 @@ ssh to these nodes after logging onto the NeSI lander node.
     [filesystems](NeSI_File_Systems_and_Quotas.md)
     are mounted on Mahuika.
 3. Read about how to compile and link code on Mahuika in section
-    entitled: [Compiling software on../HPC_Software_Environment/Compiling_software_on_Mahuika.md
-    Mahuika.](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md)
+    entitled: [Compiling software on Mahuika.](Compiling_software_on_Mahuika.md)
 4. An extension to Mahuika with additional, upgraded resources is also
-    available. see [Milan Compute../Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md
-    Nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
+    available. see [Milan Compute Nodes](Milan_Compute_Nodes.md)
     for details on access
 
 ## Mahuika HPC Cluster (Cray CS400)

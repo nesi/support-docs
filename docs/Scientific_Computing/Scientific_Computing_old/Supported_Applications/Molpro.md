@@ -35,8 +35,7 @@ permit cluster use.
 If you are unsure whether you are eligible to access Molpro or any
 particular version of it on a NeSI cluster, please speak to your
 supervisor, or the person with responsibility for your institution or
-department's software procurement. Alternatively, you can contact [our
-support desk](mailto:support@.nesi.org.nz).
+department's software procurement. Alternatively, you can {% include "partials/support_request.html" %}.
 
 ### Licence tokens
 
@@ -72,8 +71,7 @@ you will need to update the key file manually from time to time.
 
 If you are provided with a Molpro licence key file but cannot read the
 file or access the directory in which it resides due to UNIX
-permissions, please email [the NeSI support
-desk](mailto:support@nesi.org.nz).
+permissions, {% include "partials/support_request.html" %}.
 
 ## Example Slurm script
 

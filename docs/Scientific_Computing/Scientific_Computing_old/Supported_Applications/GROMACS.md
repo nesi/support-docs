@@ -25,9 +25,7 @@ but since GROMACS is extremely fast at calculating the nonbonded
 interactions (that usually dominate simulations) many groups are also
 using it for research on non-biological systems, e.g. polymers.
 
-GROMACS is available to anyone at no cost under the terms of [the GNU
-Lesser General Public
-Licence](http://www.gnu.org/licenses/lgpl-2.1.html). Gromacs is a joint
+GROMACS is available to anyone at no cost under the terms of [the GNU Lesser General Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html). Gromacs is a joint
 effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software.

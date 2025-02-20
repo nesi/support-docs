@@ -21,7 +21,7 @@ Log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 Once you've created a token, you should see the 'Manage Two-Factor
 token' option.
 
-![image2018-10-26\_15-36-10.png](../../assets/images/How_to_replace_my_2FA_token.png)
+![image2018-10-26\_15-36-10.png](How_to_replace_my_2FA_token.png)
 
 ## Delete the Two-Factor token
 
@@ -29,17 +29,16 @@ Select the option 'Manage Two-Factor token' under 'Account'.
 
 You should see the confirmation of the previous token.
 
-![confirm](../../assets/images/How_to_replace_my_2FA_token_0.png)
+![confirm](How_to_replace_my_2FA_token_0.png)
 
 After 'Delete Token' has been selected:
 
-![delete](../../assets/images/How_to_replace_my_2FA_token_1.png)
+![delete](How_to_replace_my_2FA_token_1.png)
 
 You will also receive an email confirmation:
 
-![email](../../assets/images/How_to_replace_my_2FA_token_2.png)
+![email](How_to_replace_my_2FA_token_2.png)
 
 ## Related content
 
-[Setting Up Two-Factor
-Authentication](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+[Setting Up Two-Factor Authentication](Setting_Up_Two_Factor_Authentication.md)

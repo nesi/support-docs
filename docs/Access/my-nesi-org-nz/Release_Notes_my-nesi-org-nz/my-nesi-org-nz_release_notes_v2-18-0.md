@@ -16,8 +16,7 @@ search:
 
 ## New and Improved
 
-- A link to [NeSI's privacy
-    policy](https://www.nesi.org.nz/about-us/security-privacy/privacy-policy)
+- A link to [NeSI's privacy policy](https://www.nesi.org.nz/about-us/security-privacy/privacy-policy)
     has been added to the bottom of all pages of my.nesi environment
 - We've shifted from using Tuakiri's RapidConnect service to Tuakiri's
     OpenID Connect bridge to improve overall security of my.nesi's user
@@ -37,8 +36,8 @@ search:
     allocation requests to no further than one year in the future.
 - Changed which system components from NeSI's [System Status page](https://status.nesi.org.nz) are default notifications emailed
     to users. Users can customise their system status email
-    notifications at any time. [Read more about that
-    here](../../../General/Announcements/Status_page_subscription_notification_changes.md).
+    notifications at any time. 
+    [Read more about that here](Status_page_subscription_notification_changes.md).
 
 If you have any questions about any of the improvements or fixes, please
  {% include "partials/support_request.html" %}.

@@ -24,5 +24,4 @@ search:
 - Improvement on the error handling of connections
 
 If you have any questions about any of the improvements or fixes,
-please [contact NeSI
-Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+please [contact NeSISupport](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").

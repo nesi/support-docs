@@ -20,7 +20,7 @@ title: Format and Mount volumes
 You can verify that the volume is attached to your instance via the NeSI RDC dashboard under `Project` > `Volumes` > `Volumes`
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/volume-attached.png)
+  ![Alt text](volume-attached.png)
 </figure>
 
 Connect to the instance with the attached Volume and using the command `lsblk` it should have an output similar to the following

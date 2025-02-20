@@ -27,8 +27,7 @@ relativity.
 The NWChem home page is at <https://nwchemgit.github.io/>.
 
 NWChem is available to anyone as open source software at no cost under
-the terms of the [Educational Community Licence, version
-2.0](http://opensource.org/licenses/ecl2.php).
+the terms of the [Educational Community Licence, version 2.0](http://opensource.org/licenses/ecl2.php).
 
 ## Example Slurm script
 

@@ -24,7 +24,7 @@ simulations and calculations that require large numbers of CPUs working
 in a tightly-coupled parallel fashion, as well as interactive data
 analysis. To support workflows that are primarily single core jobs, for
 example pre- and post-processing work, and to provide virtual lab
-services, we offer a small number [Māui ancillary nodes](./Maui_Ancillary.md).
+services, we offer a small number [Māui ancillary nodes](Maui_Ancillary.md).
 
 !!! tips
      The computing capacity of the Māui ancillary nodes is limited. If you
@@ -48,12 +48,9 @@ lander node. Jobs can be submitted to the HPC from these nodes.
 3.  The I/O subsystem on the XC50 can provide high bandwidth to disk
     (large amounts of data), but not many separate reading or writing
     operations. If your code performs a lot of disk read or write
-    operations, it should be run on either the [Māui ancillaryMaui_Ancillary.md
-    nodes](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md) or [Mahuika](./Mahuika.md).
+    operations, it should be run on either the [Māui ancillary nodes](Maui_Ancillary.md) or [Mahuika](Mahuika.md).
 
-All Māui resources are indicated below, and the the Māui Ancillary Node
-resources
-[here](./Maui_Ancillary.md).
+All Māui resources are indicated below, and the [Māui Ancillary Node resources](Maui_Ancillary.md).
 
 ## Māui Supercomputer (Cray XC50)
 
@@ -126,7 +123,3 @@ SUSE Linux Enterprise Server 15 SP3<br />
 | **Scratch Capacity** (accessible from all Māui, Mahuika, and Ancillary nodes).   | 4,412 TB (IBM Spectrum Scale, version 5.0). Total I/O bandwidth to disks is 130 GB/s                                                              |
 | **Persistent storage** (accessible from all Māui, Mahuika, and Ancillary nodes). | 1,765 TB (IBM Spectrum Scale, version 5.0) Shared Storage. Total I/O bandwidth to disks is 65 GB/s (i.e. the /home and /nesi/project filesystems) |
 | **Offline storage** (accessible from all Māui, Mahuika, and Ancillary nodes).    | Of the order of 100 PB (compressed)                                                                                                               |
-
- 
-
- 

@@ -37,5 +37,4 @@ If your problem involves a SLURM job, please include:
 - directory/pathway to files.
 - When you last had a job succeed (and slurm jobid if applicable) 
 
-[Further
-Reading](https://hpc-uit.readthedocs.io/en/latest/help/writing-support-requests.html)
+[FurtherReading](https://hpc-uit.readthedocs.io/en/latest/help/writing-support-requests.html)

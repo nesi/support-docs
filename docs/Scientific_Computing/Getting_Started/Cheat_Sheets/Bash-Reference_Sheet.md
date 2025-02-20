@@ -11,8 +11,7 @@ zendesk_section_id: 360000278975
 Regardless of the operating system of your personal computer you will
 need to know some basic Unix Shell commands since the HPC are Linux
 machines. If you do not have any experiencing using Unix Shell we would
-advise going at least the first (3 parts) of the [Software Carpentry
-Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
+advise going at least the first (3 parts) of the [Software Carpentry Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
 
 | Command Description | Examples                                         |  Command                                                                                                         |
 | ------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -42,9 +41,9 @@ Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
 !!! tip
      Pressing the 'tab' key once will automatically complete the line if it
      is the only option. e.g. 
-     ![complete1.gif](../../../assets/images/Unix_Shell-Reference_Sheet.gif)
+     ![complete1.gif](Unix_Shell-Reference_Sheet.gif)
      If there are more than one possible completions, pressing tab again
      will show all those options.
-     ![complete2.gif](../../../assets/images/Unix_Shell-Reference_Sheet_0.gif)
+     ![complete2.gif](Unix_Shell-Reference_Sheet_0.gif)
      Use of the tab key can help navigate the filesystem, spellcheck your
      commands and save you time typing.

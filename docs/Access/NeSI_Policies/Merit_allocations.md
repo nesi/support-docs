@@ -14,8 +14,7 @@ zendesk_section_id: 360000224835
 This is the highest award given for use of NeSI services. A Merit
 allocation is intended for highly skilled research teams carrying out
 high quality research funded via a peer review process that supports the
-[New Zealand Government's Science
-Goals](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/).
+[New Zealand Government's Science Goals](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/).
 Merit allocations may be made for the HPC Compute & Analytics and
 Consultancy services.
 
@@ -24,8 +23,7 @@ must meet the following criteria:
 
 - The underpinning research programme (that requires access to NeSI
     HPC services to achieve the objectives of the research) must support
-    the [Government’s Science
-    Goals](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/).
+    the [Government’s Science Goals](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/).
 - To demonstrate research quality and alignment with national research
     priorities, the research funding must have come from a
     peer-reviewed, contestable process at an institutional, regional or
@@ -51,8 +49,7 @@ must meet the following criteria:
     discretion consider your application for a Merit award if your
     supervisor is a named investigator.
 
-Read more about [how we review
-applications](../../General/NeSI_Policies/How_we_review_applications.md).
+Read more about [how we review applications](How_we_review_applications.md).
 
 To learn more about NeSI Projects or to apply for a new project, please
-read our article [Applying for a NeSI Project](Applying_for_a_new_NeSI_project.md).
+read our article [Applying for a NeSI Project](Applying_for_a_new_NeSI_project.md).

@@ -15,8 +15,7 @@ zendesk_section_id: 360000040076
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-The Genome Analysis Toolkit (GATK), developed at the [Broad
-Institute](http://www.broadinstitute.org/), provides a wide variety of
+The Genome Analysis Toolkit (GATK), developed at the [Broad Institute](http://www.broadinstitute.org/), provides a wide variety of
 tools focusing primarily on variant discovery and genotyping. It is
 regarded as the industry standard for identifying SNPS and indels in
 germline DNA and RNAseq data.

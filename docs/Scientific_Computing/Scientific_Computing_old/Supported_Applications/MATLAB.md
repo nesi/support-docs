@@ -222,8 +222,7 @@ specify it with
 
 ### mexopencv
 
-mexopencv is [mex wrapper MATLAB wrapper for the openCV
-library.](https://github.com/kyamagu/mexopencv)
+mexopencv is [mex wrapper MATLAB wrapper for the openCV library.](https://github.com/kyamagu/mexopencv)
 
 Some of the internal MATLAB libraries clash with those used by OpenCV,
 to avoid problems cause by this

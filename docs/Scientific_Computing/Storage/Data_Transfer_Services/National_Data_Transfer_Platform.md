@@ -90,7 +90,7 @@ any person who has a Globus account.
     <td><a href="https://app.globus.org/file-manager?origin_id=3064bb28-e940-11e8-8caa-0a1d4c5c824a">NeSI Wellington DTN</a></td>
     <td>Old NeSI Globus Endpoint, being decommissioned 2021-12-08</td>
     <td>Transferring files to/from Māui/mahuika, and file-sharing.</td>
-    <td>[Conditions](./Data_Transfer_using_Globus_V5.md)</td>
+    <td>[Conditions](Data_Transfer_using_Globus_V5.md)</td>
     <td><a href="mailto:support@nesi.org.nz">support@nesi.org.nz</a></td>
 </tr>
 </tbody>

@@ -9,8 +9,7 @@ zendesk_section_id: 360000040056
 ---
 
 Many codes can be accelerated significantly by offloading computations
-to a GPU. Some NeSI [Mahuika nodes have GPUs attached to../Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
-them](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
+to a GPU. Some NeSI [Mahuika nodes have GPUs attached them](GPU_use_on_NeSI.md).
 If you want your code to run faster, if you're developing your own code
 or if you have access to the source code and you feel comfortable
 editing the code, read on.
@@ -117,5 +116,5 @@ time srun --ntasks=1 --cpus-per-task=1 --gpus-per-node=P100:1 ./totalAccGpu
 | total       | 7.6        |
 | totalAccGpu | 0.41       |
 
-Check out [this page](./Offloading_to_GPU_with_OpenMP.md)
+Check out [this page](Offloading_to_GPU_with_OpenMP.md)
 to find out how you can offload computations to a GPU using OpenMP.

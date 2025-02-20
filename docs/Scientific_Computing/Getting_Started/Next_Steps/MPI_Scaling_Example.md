@@ -237,7 +237,7 @@ memory usage of all your jobs.
 Looking at the memory usage for an 8 CPU job, it looks like an 8 CPU has
 a maximum memory requirement of 0.18 GB.
 
-![MPIscalingSeeds.png](../../../assets/images/MPI_Scaling_Example_0.png){ width=47% } ![MPIscalingSeedsLog.png](MPI_Scaling_Example_1.png){ width=47% }
+![MPIscalingSeeds.png](MPI_Scaling_Example_0.png){ width=47% } ![MPIscalingSeedsLog.png](MPI_Scaling_Example_1.png){ width=47% }
 
 The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time.

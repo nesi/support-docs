@@ -27,7 +27,7 @@ pages.
 
 !!! note "see also"
      See the 
-     [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
+     [Jupyter kernels - Tool-assisted management](Jupyter_kernels_Tool_assisted_management.md)
      page for the **preferred** way to register kernels, which uses the
      `nesi-add-kernel` command line tool to automate most of these manual
      steps.

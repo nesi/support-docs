@@ -7,4 +7,4 @@
 
 The MATLAB app is currently being developed.
 
-The docs for MATLAB via Jupyter are [here](./../../Interactive_computing_using_Jupyter/MATLAB_via_Jupyter_on_NeSI.md).
+The docs for MATLAB via Jupyter are [here](MATLAB_via_Jupyter_on_NeSI.md).

@@ -146,8 +146,7 @@ the use of variables in what might otherwise be a fixed input.
 
 ## Fluent
 
-[Some great documentation on journal
-files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html)
+[Some great documentation on journal files](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html)
 
 `fluent -help` for a list of commands.
 
@@ -215,8 +214,7 @@ Must have one of these flags.
 While it will always be more time and resource efficient using a slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
-the login node, otherwise use of an [slurm interactive../Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md
-session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md)
+the login node, otherwise use of an [slurm interactive session](Slurm_Interactive_Sessions.md)
 is recommended.
 
 For example.
@@ -624,8 +622,7 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a slurm script or by [interactive../Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md
-session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
+ANSYS-EM jobs can be submitted through a slurm script or by [interactive session](Slurm_Interactive_Sessions.md).
 
 ### RSM
 

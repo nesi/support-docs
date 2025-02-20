@@ -10,8 +10,8 @@ zendesk_section_id: 360000040056
 
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
-article on [Parallel
-Execution](../../Getting_Started/Next_Steps/Parallel_Execution.md) for
+article on
+[Parallel Execution](Parallel_Execution.md) for
 an introduction). Care needs to be taken when running multiple threads
 on the HPC to achieve best performance - getting it wrong can easily
 increase compute times by tens of percents, sometimes even more. This is
@@ -328,8 +328,7 @@ OMP: Info #247: KMP_AFFINITY: pid 180198 tid 180202 thread 3 bound to OS proc se
 [...]
 ```
 
-Please refer to the [Intel
-documentation](https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference-thread-affinity-interface-linux-and-windows)
+Please refer to the [Inteldocumentation](https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference-thread-affinity-interface-linux-and-windows)
 for further information on "KMP\_AFFINITY".
 
 ## Tips

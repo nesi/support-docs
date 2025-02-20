@@ -36,8 +36,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 ```
 
 in your Slurm script - although this can sometimes be more complicated,
-e.g., with [TensorFlow on../Supported_Applications/TensorFlow_on_CPUs.md
-CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md).
+e.g., with [TensorFlow on CPUs](TensorFlow_on_CPUs.md).
 
 On Mahuika, you will be charged for the number of physical cores that
 you requested - the second logical core on a physical core is free,
@@ -48,9 +47,8 @@ In order to achieve good and consistent parallel scaling, additional
 settings may be required. This is particularly true on Mahuika whose
 nodes are shared between different Slurm jobs. Following are some
 settings that can help improve scaling and/or make your timings more
-consistent, additional information can be found in our article [ThreadThread_Placement_and_Thread_Affinity.md
-Placement and Thread
-Affinity](../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md).
+consistent, additional information can be found in our article 
+[Thread Placement and Thread Affinity](Thread_Placement_and_Thread_Affinity.md).
 
 1. `--hint=nomultithread`. Set this in conjunction with srun or sbatch to
 tell Slurm that you don't want to use hyperthreads. Your program will
@@ -69,8 +67,7 @@ physical cores, or to "threads" if you want to use hyperthreading. 
 
 The effect of each setting is illustrated below. In this experiment we
 measured the execution time twice of the finite difference
-code [upwindCxx -numCells 256 -numSteps
-10.](https://github.com/pletzer/fidibench) The code was built with the
+code [upwindCxx -numCells 256 -numSteps 10.](https://github.com/pletzer/fidibench) The code was built with the
 gimpi/2018b toolchain on Mahuika.
 
 

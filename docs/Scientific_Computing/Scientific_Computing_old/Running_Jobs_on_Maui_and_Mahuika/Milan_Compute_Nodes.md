@@ -123,9 +123,7 @@ to try it:
 module load AOCC
 ```
 
-For more information on AOCC compiler suite please, visit [AMD
-Optimizing C/C++ and Fortran Compilers
-(AOCC)](https://developer.amd.com/amd-aocc/)
+For more information on AOCC compiler suite please, visit [AMD Optimizing C/C++ and Fortran Compilers (AOCC)](https://developer.amd.com/amd-aocc/)
 
 ## Network
 

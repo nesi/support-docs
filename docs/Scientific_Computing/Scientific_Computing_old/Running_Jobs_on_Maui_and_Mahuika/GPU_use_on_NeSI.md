@@ -15,8 +15,8 @@ page.
      An overview of available GPU cards is available in the [Available GPUs on NeSI](Available_GPUs_on_NeSI.md)
      support page.
      Details about GPU cards for each system and usage limits are in the
-     [Mahuika Slurm Partitions](./Mahuika_Slurm_Partitions.md)
-     and [Māui\_Ancil (CS500) Slurm Partitions](./Maui_Slurm_Partitions.md)
+     [Mahuika Slurm Partitions](Mahuika_Slurm_Partitions.md)
+     and [Māui\_Ancil (CS500) Slurm Partitions](Maui_Slurm_Partitions.md)
      support pages.
      Details about pricing in terms of compute units can be found in the
      [What is an allocation?](What_is_an_allocation.md)
@@ -24,7 +24,7 @@ page.
 
 !!! note
      Recall, memory associated with the GPUs is the VRAM, and is a separate resource from the RAM requested by Slurm. The memory values listed below are VRAM values. For available RAM on the GPU nodes, please see 
-     [Mahuika Slurm Partitions](./Mahuika_Slurm_Partitions.md).
+     [Mahuika Slurm Partitions](Mahuika_Slurm_Partitions.md).
 
 ## Request GPU resources using Slurm
 
@@ -98,7 +98,7 @@ cases:
     #SBATCH --gpus-per-node=A100:1
     ```
 
-    *These GPUs are on Milan nodes, check the [dedicated support page](./Milan_Compute_Nodes.md)
+    *These GPUs are on Milan nodes, check the [dedicated support page](Milan_Compute_Nodes.md)
     for more information.*
 
 - 4 A100 (80GB & NVLink) GPU on Mahuika
@@ -108,7 +108,7 @@ cases:
     #SBATCH --gpus-per-node=A100:4
     ```
 
-    *These GPUs are on Milan nodes, check the [dedicated support page](./Milan_Compute_Nodes.md)
+    *These GPUs are on Milan nodes, check the [dedicated support page](Milan_Compute_Nodes.md)
     for more information.*
 
     *You cannot ask for more than 4 A100 (80GB) GPUs per node on
@@ -126,7 +126,7 @@ cases:
     regular Mahuika node (A100 40GB GPU) or on a Milan node (A100 80GB
     GPU).*
 
-You can also use the `--gpus-per-node`option in [Slurm interactive sessions](./Slurm_Interactive_Sessions.md),
+You can also use the `--gpus-per-node`option in [Slurm interactive sessions](Slurm_Interactive_Sessions.md),
 with the `srun` and `salloc` commands. For example:
 
 ``` sh
@@ -156,7 +156,7 @@ duration of 30 minutes.
 ## Load CUDA and cuDNN modules
 
 To use an Nvidia GPU card with your application, you need to load the
-driver and the CUDA toolkit via the [environment modules](./../HPC_Software_Environment/Finding_Software.md)
+driver and the CUDA toolkit via the [environment modules](Finding_Software.md)
 mechanism:
 
 ``` sh
@@ -350,5 +350,5 @@ applications:
 And programming toolkits:
 
 - [Offloading to GPU with OpenMP](Offloading_to_GPU_with_OpenMP.md)
-- [Offloading to GPU with OpenACC using the Cray compiler](./../HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md)
+- [Offloading to GPU with OpenACC using the Cray compiler](Offloading_to_GPU_with_OpenACC.md)
 - [NVIDIA GPU Containers](NVIDIA_GPU_Containers.md)

@@ -46,8 +46,7 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
    directly, which does not require root access:
 
     !!! note
-        Please do refer [Build Environment../Supported_Applications/Singularity.md#build-environment-variables
-        Variables](../../Scientific_Computing/Supported_Applications/Singularity.md#build-environment-variables)
+        Please do refer [Build Environment Variables](Singularity.md#build-environment-variables)
         prior to running the following `pull` command.
 
     ```sh

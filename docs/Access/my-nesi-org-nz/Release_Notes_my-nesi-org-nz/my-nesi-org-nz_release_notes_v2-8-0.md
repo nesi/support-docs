@@ -15,10 +15,8 @@ search:
 
 ## New and Improved
 
--   Improved [NeSI Notification
-    Preferences](../../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md)
+-   Improved [NeSI Notification Preferences](Managing_notification_preferences.md)
     to be project-specific
 
--   Improved [allocation renewal
-    requests](../../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)
+-   Improved [allocation renewal requests](Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)
     by providing more context

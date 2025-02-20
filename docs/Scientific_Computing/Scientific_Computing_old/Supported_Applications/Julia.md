@@ -191,10 +191,8 @@ $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
 
 ## Profiling Julia code
 
-In addition to the Julia Profile module (see the [official
-documentation](https://docs.julialang.org/en/v1/manual/profile/)), it is
-also possible to profile Julia code with [external
-profilers](https://docs.julialang.org/en/v1/manual/profile/#External-Profiling-1).
+In addition to the Julia Profile module (see the [official documentation](https://docs.julialang.org/en/v1/manual/profile/)), it is
+also possible to profile Julia code with [external profilers](https://docs.julialang.org/en/v1/manual/profile/#External-Profiling-1).
 On Mahuika we have installed "-VTune" variants of Julia, which are built
 from source with support for profiling using Intel VTune. VTune is a
 nice tool for profiling parallel code (e.g. code making use of threading
@@ -236,5 +234,4 @@ have X11 forwarding enabled:
 amplxe-gui --path-to-open <vtune-result-directory>
 ```
 
- Additional information about VTune can be found in the [User
-Guide](https://software.intel.com/en-us/vtune-amplifier-help).
+ Additional information about VTune can be found in the [User Guide](https://software.intel.com/en-us/vtune-amplifier-help).

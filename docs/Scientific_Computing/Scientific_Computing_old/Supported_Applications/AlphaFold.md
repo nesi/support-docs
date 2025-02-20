@@ -17,9 +17,7 @@ zendesk_section_id: 360000040076
 
 !!! prerequisite Tips
      An extended version of AlphaFold2 on NeSI Mahuika cluster which
-     contains additional information such as visualisation of AlphaFold
-     outputs, etc [can be found
-     here](https://nesi.github.io/alphafold2-on-mahuika/)
+     contains additional information such as [visualisation of AlphaFold outputs, etc](https://nesi.github.io/alphafold2-on-mahuika/)
 
 ## Description
 
@@ -30,10 +28,10 @@ as AlphaFold throughout the rest of this document.
 
 Any publication that discloses findings arising from using this source
 code or the model parameters
-should [cite](https://github.com/deepmind/alphafold#citing-this-work) the [AlphaFold
-paper](https://doi.org/10.1038/s41586-021-03819-2). Please also refer to
-the [Supplementary
-Information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) for
+should [cite](https://github.com/deepmind/alphafold#citing-this-work) the 
+[AlphaFold paper](https://doi.org/10.1038/s41586-021-03819-2). 
+Please also refer to the
+[Supplementary Information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) for
 a detailed description of the method.
 
 Home page is at <https://github.com/deepmind/alphafold>
@@ -191,8 +189,7 @@ run_alphafold.py \
 If you would like to use a version prior to 2.3.2, It can be done via
 the Singularity containers.
 
-We prepared a Singularity container image based on the [official
-Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
+We prepared a Singularity container image based on the [official Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
 modifications. Image (.*simg*) and the corresponding definition file
 (*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
@@ -286,8 +283,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
     were identical. Therefore, the above example was set to former
     via `P100:1`
 3. The `--nv` flag enables GPU support.
-4. `--pwd /app/alphafold` is to workaround this [existing
-    issue](https://github.com/deepmind/alphafold/issues/32)
+4. `--pwd /app/alphafold` is to workaround this [existing issue](https://github.com/deepmind/alphafold/issues/32)
 
 ### AlphaFold2 : Initial Release ( this version does not support `multimer`)
 

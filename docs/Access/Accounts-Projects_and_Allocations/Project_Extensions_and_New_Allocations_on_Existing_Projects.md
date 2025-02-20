@@ -58,16 +58,14 @@ extension request.
 You can submit a request for an extension using <https://my.nesi.org.nz>
 or by {% include "partials/support_request.html" %}.
 
-Please see [Requesting to renew an allocation via
-my.nesi.org.nz](../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)
+Please see [Requesting to renew an allocation via my.nesi.org.nz](Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)
 for more details.
 
 You will receive a series of automated emails inviting you to apply for
 a new allocation (or, alternatively, clean up your project data) in the
 following circumstances:
 
-- In the lead-up to the end of the [call
-    window](https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations)
+- In the lead-up to the end of the [call window](https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations)
     immediately before your currently active allocation is scheduled to
     end.
 - In the lead-up to the end of your allocation.
@@ -104,7 +102,7 @@ If this is your situation, please let us know when you request your
 project extension. Please note that we are unlikely to let a project
 continue without a compute allocation for more than six months at a
 time. If you expect that your project will be suspended for more than
-six months, we encourage you to enquire about our [Long-Term Storage
-Service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md) or
-to move your research data off our facility and make arrangements with
+six months, we encourage you to enquire about our
+[Long-Term Storage Service](Nearline_Long_Term_Storage_Service.md)
+or to move your research data off our facility and make arrangements with
 your project's host institution for long-term data storage.

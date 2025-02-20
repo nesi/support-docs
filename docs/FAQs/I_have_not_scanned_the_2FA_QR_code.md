@@ -23,5 +23,4 @@ the option 'Manage Two-Factor token' under 'Account'.
 
 ## Related content
 
-[How to replace my 2FA
-token](../../General/FAQs/How_to_replace_my_2FA_token.md)
+[How to replace my 2FA token](How_to_replace_my_2FA_token.md)

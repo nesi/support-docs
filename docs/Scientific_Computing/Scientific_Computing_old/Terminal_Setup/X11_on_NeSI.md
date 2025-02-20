@@ -36,7 +36,7 @@ background, look for this ![mceclip0.png](X11_on_NeSI.png) symbol in your task
      MobaXterm has a build in X server, no setup required. By default the
      server is started alongside MobaXterm. You can check it's status in
      the top left hand corner
-     (![xon.png](../../../assets/images/X11_on_NeSI_0.png)=on, ![off.png](X11_on_NeSI_1.png)=off).
+     (![xon.png](X11_on_NeSI_0.png)=on, ![off.png](X11_on_NeSI_1.png)=off).
 
 ## X-Forwarding
 

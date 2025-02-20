@@ -22,8 +22,7 @@ execution time of a program is spent. This is known as profiling. It is
 good practice to profile a code before attempting to modify the code to
 improve its performance. VTune collects key profiling data and presents
 them in an intuitive way.  Another tool that provides similar
-information is [ARM../Profiling_and_Debugging/Profiler-ARM_MAP.md
-MAP](Profiler-ARM_MAP.md).
+information is [ARM MAP](Profiler-ARM_MAP.md).
 
 ## How to use VTune
 

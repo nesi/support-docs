@@ -87,4 +87,4 @@ ln -s /mnt/c/Users/YourWindowsUsername/ WinFS
 ```
 
 !!! prerequisite What "Next?"
-     -   Set up your [SSH config file](./Standard_Terminal_Setup.md).
+     -   Set up your [SSH config file](Standard_Terminal_Setup.md).

@@ -155,7 +155,7 @@ request for projects that expect to use the cluster heavily on average,
 can predict when they will need their heaviest use with a high degree of
 confidence, and give us plenty of notice.
 
-For full details on Slurm's Fair share mechanism, please see [this
+For full details on Slurm's Fair share mechanism, please see 
 page](https://slurm.schedmd.com/priority_multifactor.html#fairshare)
 (offsite).
 

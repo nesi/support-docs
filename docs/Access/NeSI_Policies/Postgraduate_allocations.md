@@ -36,8 +36,7 @@ project an allocation from the Postgraduate class:
  until a later time, if there is insufficient computing capacity
     available to meet demand.
 
-Read more about [how we review
-applications](../../General/NeSI_Policies/How_we_review_applications.md).
+Read more about [how we review applications](How_we_review_applications.md).
 
 To learn more about NeSI Projects, and to apply please review the
 content of the section entitled [Applying for a NeSI Project](Applying_for_a_new_NeSI_project.md).

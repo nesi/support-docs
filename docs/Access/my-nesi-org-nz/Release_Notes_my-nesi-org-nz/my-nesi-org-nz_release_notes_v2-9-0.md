@@ -15,7 +15,6 @@ search:
 
 ## New and Improved
 
--   Improved [allocation renewal
-    requests](../../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md) default
+-   Improved [allocation renewal requests](Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md) default
     organisation selection
 -   Added a sub-section to list open allocation requests

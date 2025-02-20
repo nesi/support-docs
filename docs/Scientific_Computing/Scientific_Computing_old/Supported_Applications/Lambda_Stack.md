@@ -10,8 +10,7 @@ zendesk_section_id: 360000040076
 
 ## Introduction
 
-[Lambda
-Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
+[Lambda Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
 AI software stack from Lambda containing PyTorch, TensorFlow, CUDA,
 cuDNN and more. On NeSI you can run Lambda Stack via
 [Singularity](https://sylabs.io/guides/3.7/user-guide/) (based on the

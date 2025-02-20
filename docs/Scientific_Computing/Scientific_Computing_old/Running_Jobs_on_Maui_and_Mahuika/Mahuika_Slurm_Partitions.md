@@ -216,7 +216,7 @@ To request A100 GPUs, use instead:
 #SBATCH --gpus-per-node=A100:1
 ```
 
-See [GPU use on NeSI](./GPU_use_on_NeSI.md)
+See [GPU use on NeSI](GPU_use_on_NeSI.md)
 for more details about Slurm and CUDA settings.
 
 ### Limits on GPU Jobs
@@ -242,7 +242,7 @@ connected via
 
 - Explicitly specify the partition to access them, with
     `--partition=hgx`.
-- Hosting nodes are Milan nodes. Check the [dedicated support page](./Milan_Compute_Nodes.md)
+- Hosting nodes are Milan nodes. Check the [dedicated support page](Milan_Compute_Nodes.md)
     for more information about the Milan nodes' differences from
     Mahuika's Broadwell nodes.
 

@@ -16,8 +16,7 @@ data between the NeSI Wellington DTN V5 and your personal workstation
 endpoint, or an endpoint from your institution. With Globus, high
 data transfer rates are achievable. This service allows data to be
 accessible to any person who has a Globus account. The newest
-implementation (v5) provides [extra features and some key differences
-from the previous setup](https://docs.globus.org/globus-connect-server/).
+implementation (v5) provides [extra features and some key differences from the previous setup](https://docs.globus.org/globus-connect-server/).
 
 To use Globus on NeSI platforms, you need:
 
@@ -181,8 +180,7 @@ To find other NeSI endpoints, type in "nesi#":
 ## Transferring data using a personal endpoint
 
 To transfer files into/out of your laptop, desktop computer or any other
-system you control, configure it as a [Globus Personal
-Endpoint](https://www.globus.org/globus-connect-personal) (see
+system you control, configure it as a [Globus Personal Endpoint](https://www.globus.org/globus-connect-personal) (see
 [Personal Globus Endpoint Configuration](Personal_Globus_Endpoint_Configuration.md)
 for transfers between personal endpoints).
 

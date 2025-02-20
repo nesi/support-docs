@@ -34,7 +34,7 @@ command:
 The values for `nn_storage_quota` are updated approximately every hour
 and cached between updates.
 
-![neSI\_filetree.svg](../../../assets/images/NeSI_File_Systems_and_Quotas.svg)
+![neSI\_filetree.svg](NeSI_File_Systems_and_Quotas.svg)
 
 ## File System Specifications
 
@@ -119,8 +119,7 @@ similar archiving package such as `tar` .
 
 Each NeSI project receives quota allocations for
 `/nesi/project/<project_code>`, based on the requirements you tell us
-about in your [application for a new NeSI
-project](https://my.nesi.org.nz/html/request_project), and separately
+about in your [application for a new NeSI project](https://my.nesi.org.nz/html/request_project), and separately
 covering disk space and number of files.
 
 ### /nesi/nobackup
@@ -228,7 +227,6 @@ cold data. We may decrease this in future.
 Additionally, we only automatically compress files in the range of 4kB -
 10GB in size. Files larger than this can be compressed by user
 interaction - see the instructions for the `mmchattr` command on
-the [Data Compression support
-page](../../Storage/File_Systems_and_Quotas/Data_Compression.md). Also
+the [Data Compression supportpage](Data_Compression.md). Also
 note that the Scale filesystem will only store compressed blocks when
 the compression space saving is &gt;=10%.

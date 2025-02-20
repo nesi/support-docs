@@ -30,8 +30,7 @@ at [https://orcaforum.kofo.mpg.de](https://orcaforum.kofo.mpg.de)
 ## Licensing requirements
 
 ORCA is released as precompiled binaries at no cost, pursuant to a
-closed-source licence.  Users are advised that the terms of [the ORCA
-licence](https://orcaforum.kofo.mpg.de/app.php/dlext/?view=detail&df_id=41)
+closed-source licence.  Users are advised that the terms of [the ORCA licence](https://orcaforum.kofo.mpg.de/app.php/dlext/?view=detail&df_id=41)
 allow its use in the course of academic research only, and that each
 research group is expected to register with the ORCA developers. If you
 have any questions regarding your eligibility to access ORCA or any

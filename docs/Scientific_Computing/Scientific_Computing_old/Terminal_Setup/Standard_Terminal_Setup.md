@@ -12,8 +12,8 @@ description: How to setup your ssh config file in order to connect to the NeSI c
      -   Set up [Second Factor Authentication.](Setting_Up_Two_Factor_Authentication.md)
      -   Have one of:
          - Built in Linux/Mac terminal
-         - [Windows Subsystem for Linux](./Windows_Subsystem_for_Linux_WSL.md)
-         - [VSCode](./VSCode.md)
+         - [Windows Subsystem for Linux](Windows_Subsystem_for_Linux_WSL.md)
+         - [VSCode](VSCode.md)
 
 ## First time setup
 
@@ -67,4 +67,4 @@ ssh mahuika
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](Moving_files_to_and_from_the_cluster.md)
-     -   Setting up an [X-Server](./X11_on_NeSI.md) (optional).
+     -   Setting up an [X-Server](X11_on_NeSI.md) (optional).

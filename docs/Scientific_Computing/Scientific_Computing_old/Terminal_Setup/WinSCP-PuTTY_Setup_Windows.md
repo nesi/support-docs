@@ -131,8 +131,7 @@ for a single transfer'.
      with login authentication.
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a
-         cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+     -   [Moving files to/from a cluster.](Moving_files_to_and_from_the_cluster.md)
      -   Setting up
-         an [X-Server](./X11_on_NeSI.md)
+         an [X-Server](X11_on_NeSI.md)
          (optional).

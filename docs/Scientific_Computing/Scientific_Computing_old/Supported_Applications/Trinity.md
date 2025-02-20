@@ -15,9 +15,7 @@ zendesk_section_id: 360000040076
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-Trinity, developed at the [Broad
-Institute](http://www.broadinstitute.org/) and the [Hebrew University of
-Jerusalem](http://www.cs.huji.ac.il/), performs _de&nbsp;novo_ reconstruction
+Trinity, developed at the [Broad Institute](http://www.broadinstitute.org/) and the [Hebrew University of Jerusalem](http://www.cs.huji.ac.il/), performs _de&nbsp;novo_ reconstruction
 of transcriptomes from RNA-seq data. It combines three independent
 software modules: Inchworm, Chrysalis, and Butterfly, applied
 sequentially to process large volumes of RNA-seq reads. Trinity
@@ -43,8 +41,7 @@ data, compared to running both phases in one multithreaded job (see the
 
 ### File system considerations
 
-You should run Trinity within your [nobackup project
-directory](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),
+You should run Trinity within your [nobackup project directory](NeSI_File_Systems_and_Quotas.md),
 which has no limit on disk space usage but does have a file count quota.
 Trinity creates a large number of files, particularly in the
 "read\_partitions" directory, thus it is important that you {% include "partials/support_request.html" %} before running Trinity on NeSI, as we

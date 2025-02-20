@@ -16,7 +16,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Compute` tab and select the `Key Pairs` category
@@ -24,7 +24,7 @@ Open the `Project` tab, open the `Compute` tab and select the `Key Pairs` catego
 Click `Create Key Pair`.
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/new-key-pair.png)
+  ![Alt text](new-key-pair.png)
 </figure>
 
 In the `Create Key Pair` dialog box, enter a name for your `key pair,` and select a `Key Type`
@@ -39,7 +39,7 @@ In the `Create Key Pair` dialog box, enter a name for your `key pair,` and selec
     :   This will be used to generate an Certificate based key.
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/new-key-pair-filled.png)
+  ![Alt text](new-key-pair-filled.png)
 </figure>
 
 Once all fields are supplied click `Create Key Pair`
@@ -47,7 +47,7 @@ Once all fields are supplied click `Create Key Pair`
 The private key will be downloaded automatically
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/new-key-pair-download.png)
+  ![Alt text](new-key-pair-download.png)
 </figure>
 
 To change its permissions so that only you can read and write to the file, run the following command:
@@ -72,7 +72,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Compute` tab and select the `Key Pairs` category

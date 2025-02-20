@@ -126,8 +126,6 @@ using the *Metrics* Menu*.*
 As an example, “CPU instructions” presents the usage of different
 instruction sets during the program run time.
 
-[![example-map-scatter\_CPU](ARM_MAP_scatter_mpi_CPU.png)
-
 The lower part can also be used to check the *application output* or
 show statistics on basis of *files* or *functions*.
 

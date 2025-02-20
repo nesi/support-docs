@@ -18,8 +18,7 @@ search:
   - RStudio server v2022.07.1
   - Allow usage of NeSI environment modules in RStudio terminal (beta)
   - Allow usage of Slurm commands in RStudio terminal (beta)
-- Updated [NeSI Virtual../Virtual_Desktop_via_Jupyter_on_NeSI.md
-    Desktop](../../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md)
+- Updated [NeSI Virtual Desktop](Virtual_Desktop_via_Jupyter_on_NeSI.md)
     to v2.4.3  
   - Utilising latest version of
         [Singularity](Singularity.md)  

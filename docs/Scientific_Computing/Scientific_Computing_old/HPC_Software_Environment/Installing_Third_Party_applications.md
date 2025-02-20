@@ -24,9 +24,9 @@ In any case, if you have issues, do not hesitate to {% include "partials/support
 
 ## Additional Packages for Python, R, etc.
 
-See [Python](../Supported_Applications/Python.md) or [R](R.md),
+See [Python](Python.md) or [R](R.md),
 or for other languages check if we have additional documentation for it
-in our [application documentation](./../Supported_Applications/index.md).
+in our [application documentation](../Supported_Applications/index.md).
 
 ## Third party applications
 

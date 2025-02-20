@@ -19,4 +19,4 @@ please email
 and wait for a member of our support team to confirm your account and
 group membership.
 
-![mceclip0.png](../../assets/images/Why_am_I_seeing_Account_is_not_ready.png)
+![mceclip0.png](Why_am_I_seeing_Account_is_not_ready.png)

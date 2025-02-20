@@ -15,7 +15,7 @@ A Proposal Development allocation is a short-term allocation of up to
 (on Māui) or both, for up to six months. During your Proposal
 Development allocation you can find out:
 
-- whether your software can run on a [NeSI HPC](index.md),
+- whether your software can run on a [NeSI HPC](../../Scientific_Computing/Scientific_Computing_old/Supported_Applications/index.md),
 - how your software scales to multiple cores or across compute nodes,
 - approximately how many compute units or node hours your research
     project is likely to need.
@@ -34,8 +34,8 @@ Proposal Development allocation.
 
 Once you have completed your Proposal Development allocation, you are
 welcome to apply for a further allocation. If you are successful, the
-project's next allocation will be from another of the [allocation
-classes](../../General/NeSI_Policies/Allocation_classes.md).
+project's next allocation will be from another of the
+[allocation classes](Allocation_classes.md).
 
 The [How Applications are Reviewed](How_we_review_applications.md) section
 provides additional important information for applicants.

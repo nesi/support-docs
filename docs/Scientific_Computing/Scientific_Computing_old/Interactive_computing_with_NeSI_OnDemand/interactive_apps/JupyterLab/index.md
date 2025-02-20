@@ -18,7 +18,7 @@ and workflows and much more.
 ## Accessing Jupyter on NeSI
 
 Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
-For more details see the [how-to guide](./../../how_to_guide.md#how-to-launch-jupyterlab-rstudio).
+For more details see the [how-to guide](../../how_to_guide.md#how-to-launch-jupyterlab-rstudio).
 
 ## Jupyter user interface
 
@@ -42,8 +42,8 @@ NeSI provides some default Python and R kernels that are available to all users 
 of environment modules. It's also possible to create additional kernels that are visible only to
 you (they can optionally be made visible to other members of a specific NeSI project that you belong to). See:
 
-- [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md) (recommended)
-- [Jupyter kernels - Manual management](./Jupyter_kernels_Manual_management.md)
+- [Jupyter kernels - Tool-assisted management](Jupyter_kernels_Tool_assisted_management.md) (recommended)
+- [Jupyter kernels - Manual management](Jupyter_kernels_Manual_management.md)
 
 ### Jupyter terminal
 

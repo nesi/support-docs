@@ -24,7 +24,7 @@ researchers to ensure this new capability is fit-for-purpose and tuned
 to communities' specific software and tool requirements.
 
 These new A100s, alongside
-[software optimised for data science](What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md)),
+[software optimised for data science](What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md),
 are available to researchers using **machine learning** approaches. If
 this is you, {% include "partials/support_request.html" %} to
 discuss how these new resources could support your work.
@@ -39,14 +39,11 @@ compute units per device-hour. The P100 GPUs are available to any
 project with a Mahuika allocation so if you have an existing allocation
 on Mahuika, you can access the P100s right away.
 
-If you need a larger or new allocation on Mahuika, you can [apply for
-access](https://www.nesi.org.nz/services/applyforaccess) now, but
+If you need a larger or new allocation on Mahuika, you can [apply for access](https://www.nesi.org.nz/services/applyforaccess) now, but
 requests will likely be considered as part of our next allocation call
-window: [31 August - 01
-October](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
+window: [31 August - 01 October](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
 
-For more technical information about using GPUs on NeSI, [click../../Scientific_Computing_old/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
-here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
+For more technical information about using [GPUs on NeSI](GPU_use_on_NeSI.md).
 If you have questions about allocations or how to access the P100s,
 {% include "partials/support_request.html" %}.
 

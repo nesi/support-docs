@@ -19,8 +19,7 @@ search:
     [navigation](Navigating_the_my-nesi-org-nz_web_interface.md)
     in the sidebar and links to important functions
 
--   Improved [project application
-    form](../../../Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md)
+-   Improved [project application form](The_NeSI_Project_Request_Form.md)
     with automatic draft state so you can continue the application at a
     later stage without the need to re-enter details
 

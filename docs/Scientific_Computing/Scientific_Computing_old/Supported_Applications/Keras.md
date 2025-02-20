@@ -10,8 +10,8 @@ zendesk_section_id: 360000040076
 
 Keras is a modular and extendable API for building neural networks in
 Python. Keras is included with TensorFlow. Note that there are
-[CPU and](./TensorFlow_on_CPUs.md)
-[GPU versions](./TensorFlow_on_GPUs.md) of
+[CPU and](TensorFlow_on_CPUs.md)
+[GPU versions](TensorFlow_on_GPUs.md) of
 TensorFlow, here we'll use TensorFlow 1.10 for GPUs, which is available
 as an environment module.
 
@@ -50,7 +50,7 @@ An example of image is test/img49.jpg.
 display test/img49.jpg
 ```
 
-![img49.jpg](../../../assets/images/Keras.jpg)
+![img49.jpg](Keras.jpg)
 
 which shows five, partially overlapping dots. Note that along with the
 images, a comma separated values (csv) file (e.g. train/train.csv)

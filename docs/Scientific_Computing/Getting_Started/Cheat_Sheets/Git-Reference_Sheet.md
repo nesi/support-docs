@@ -18,7 +18,7 @@ developing, managing and distributing code.
 
 Full Git documentation can be found [here](https://git-scm.com/docs/git), or using `man git`.
 
-![Git\_Diagram.svg](../../../assets/images/Git-Reference_Sheet.svg)
+![Git\_Diagram.svg](Git-Reference_Sheet.svg)
 
 ## Authentication
 
@@ -31,8 +31,7 @@ need to authenticate yourself on the cluster.
 
 ### SSH Authentication (GitHub)
 
-More information can be found in the [GitHub
-documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+More information can be found in the [GitHubdocumentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 - On the NeSI cluster, run the command
 

@@ -71,8 +71,7 @@ where
     `SYNC_LEVEL=0` will transfer new files that do not exist on
     destination. Leaving this setting out will overwrite all the files
     on destination.
-    [See how other sync\_level settings can be used to update data in
-    the destination directory based on modification time and checksums](https://docs.globus.org/api/transfer/task_submit/#transfer_specific_fields).
+    [See how other sync level settings can be used to update data in    the destination directory based on modification time and checksums](https://docs.globus.org/api/transfer/task_submit/#transfer_specific_fields).
 
 ## Step 2: Initiate the transfer
 

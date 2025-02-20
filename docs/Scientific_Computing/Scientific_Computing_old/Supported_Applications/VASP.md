@@ -170,11 +170,9 @@ parallelisation the FFTs (controlled with
 optimise your VASP job parallelisation in these ways, see the following
 links:
 
-[Basic
-parallisation](https://www.vasp.at/wiki/index.php/Category:Parallelization)
+[Basic parallisation](https://www.vasp.at/wiki/index.php/Category:Parallelization)
 
-[Optimising the
-parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
+[Optimising the parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
 
 ### Our VASP5 modules do not support OpenMP
 
@@ -241,15 +239,12 @@ None of them affect VASP unless specified in your `INCAR` file.
 
 #### VTST
 
-The [VASP Transition State
-Tools](http://theory.cm.utexas.edu/vtsttools/), a third-party package
+The [VASP Transition State Tools](http://theory.cm.utexas.edu/vtsttools/), a third-party package
 for finding transition states and computing rate constants.
 
 #### BEEF
 
-Our recent non-CUDA VASP executables all include BEEF ([Bayesian Error
-Estimation
-Functionals](http://suncat.stanford.edu/#/theory/facility/software/functional/)).
+Our recent non-CUDA VASP executables all include BEEF ([Bayesian Error Estimation Functionals](http://suncat.stanford.edu/#/theory/facility/software/functional/)).
 
 #### VASP-Sol
 
@@ -288,8 +283,7 @@ As per the VASP documentation, "LIBXC2can be used only if the functional
 specified
 with[LIBXC1](https://www.vasp.at/wiki/index.php/LIBXC1 "LIBXC1")
 corresponds to only exchange and not to exchange and correlation." For
-more information on correct usage of LIBXC please see[VASP's
-documentation](https://www.vasp.at/wiki/index.php/LIBXC1) on this.
+more information on correct usage of LIBXC please see[VASP's documentation](https://www.vasp.at/wiki/index.php/LIBXC1) on this.
 
 ### Which VASP executable should I use?
 

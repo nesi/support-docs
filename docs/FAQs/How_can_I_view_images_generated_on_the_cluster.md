@@ -19,5 +19,4 @@ the cluster using the `display` command. For example,
 display myImage.png
 ```
 
-This requires a [working X-11../../Scientific_Computing_old/Terminal_Setup/X11_on_NeSI.md
-server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md).
+This requires a [working X11 connection](X11_on_NeSI.md).

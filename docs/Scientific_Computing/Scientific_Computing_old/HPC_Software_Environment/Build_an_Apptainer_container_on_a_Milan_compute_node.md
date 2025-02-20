@@ -9,8 +9,7 @@ zendesk_section_id: 360000040056
 ---
 
 This article describes a technique to build
-[Apptainer](https://apptainer.org/) containers using [Milan compute../Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md
-nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md),
+[Apptainer](https://apptainer.org/) containers using [Milan compute nodes](Milan_Compute_Nodes.md),
 via a Slurm job. You can also build
 [Singularity](Singularity.md)
 container using this technique.
@@ -18,8 +17,7 @@ container using this technique.
 ## Building container via Slurm
 
 The new Milan compute nodes can be used to build Apptainer containers
-using the [fakeroot
-feature](https://apptainer.org/docs/user/main/fakeroot.html). This
+using the [fakeroot feature](https://apptainer.org/docs/user/main/fakeroot.html). This
 functionality is only available on these nodes at the moment due to
 their operating system version.
 
@@ -74,8 +72,7 @@ Option `--force` will rebuild *my_container.sif* even if it already is in
 the directory.
 
 More information about how to submit a Slurm job is available in the
-[Submitting your first
-job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
+[Submitting your first job](Submitting_your_first_job.md)
 support page.
 
 !!! info "Build environment variables"

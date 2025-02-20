@@ -3,7 +3,7 @@
 !!! warning
 
     NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+    If you are interested in helping us test it please {% include "partials/support_request.html" %}.
 
 ## Overview
 
@@ -22,15 +22,15 @@ For more information see the [How-to guide](how_to_guide.md).
 
 A number of interactive applications can be accessed through NeSI OnDemand, including:
 
-- [JupyterLab](interactive_apps/JupyterLab/index.md)
-- [RStudio](interactive_apps/RStudio.md)
-- [MATLAB](interactive_apps/MATLAB.md) - currently under development, let us know if this is of interest
-- [Code server](interactive_apps/code_server.md) - currently under development, let us know if this is of interest
-- [Virtual desktop](interactive_apps/virtual_desktop.md) - currently under development, let us know if this is of interest
+- [JupyterLab](index.md)
+- [RStudio](RStudio.md)
+- [MATLAB](MATLAB.md) - currently under development, let us know if this is of interest
+- [Code server](code_server.md) - currently under development, let us know if this is of interest
+- [Virtual desktop](virtual_desktop.md) - currently under development, let us know if this is of interest
 
 ## Release notes
 
-Release notes can be found [here](Release_Notes/index.md) and the main differences
+Release notes can be found at the main differences
 compared to the current Jupyter on NeSI service are described [here](changes_from_jupyter_on_nesi.md).
 
 ## Acknowledgements

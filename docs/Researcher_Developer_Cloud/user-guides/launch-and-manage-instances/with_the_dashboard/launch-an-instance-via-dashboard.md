@@ -14,7 +14,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Compute` tab and select `Instances`
@@ -22,7 +22,7 @@ Open the `Project` tab, open the `Compute` tab and select `Instances`
 Click `Launch Instance`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/instance-overview.png)
+  ![Alt text](instance-overview.png)
 </figure>
 
 Within the `Launch Instance` dialog box there are the following values:

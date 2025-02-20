@@ -14,13 +14,13 @@ Cyberduck can be downloaded and installed from the [Cyberduck website](https://c
 Once Cyberduck is installed you will want to start it and click on `Open Connection`
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/cyberduck-overview.png)
+  ![Alt text](cyberduck-overview.png)
 </figure>
 
 Within the `Open Connection` dialog you will want to ensure that the dropdown has selected `Amazon S3`
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/cyberduck-connection-dialog.png)
+  ![Alt text](cyberduck-connection-dialog.png)
 </figure>
 
 We then need to update the details to interact and auth with FlexiHPC
@@ -35,11 +35,11 @@ We then need to update the details to interact and auth with FlexiHPC
 :   This should be the EC2 Credentials Secret key token
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/cyberduck-connection-dialog-rdc.png)
+  ![Alt text](cyberduck-connection-dialog-rdc.png)
 </figure>
 
 Click on `Connect` to open the connection
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/cyberduck-container-view.png)
+  ![Alt text](cyberduck-container-view.png)
 </figure>

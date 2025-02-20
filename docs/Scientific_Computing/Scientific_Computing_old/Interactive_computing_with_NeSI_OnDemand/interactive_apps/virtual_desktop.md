@@ -7,4 +7,4 @@
 
 The Virtual Desktop app is currently being developed.
 
-The docs for Virtual desktop via Jupyter are [here](./../../Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md).
+The docs for Virtual desktop via Jupyter are [here](Virtual_Desktop_via_Jupyter_on_NeSI.md).

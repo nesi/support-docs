@@ -27,8 +27,7 @@ to participation in that activity.
 
 ## Licence
 
-R is made available at no cost under the terms of version 2 of the [GNU
-General Public Licence](https://www.r-project.org/COPYING).
+R is made available at no cost under the terms of version 2 of the [GNU General Public Licence](https://www.r-project.org/COPYING).
 
 ## NeSI Customisations
 
@@ -233,8 +232,7 @@ png(filename="plot.png")
 This statement instructs R to export all future graphical output to a
 PNG file named `plot.png`, until a different device driver is selected.
 
-For more information about graphical device drivers, please see [the R
-documentation](https://cran.r-project.org/doc/manuals/R-intro.html#Device-drivers).
+For more information about graphical device drivers, please see [the R documentation](https://cran.r-project.org/doc/manuals/R-intro.html#Device-drivers).
 
 ## Dealing with packages
 

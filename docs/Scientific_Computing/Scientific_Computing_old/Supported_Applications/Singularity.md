@@ -34,8 +34,7 @@ enabling simple portability and supporting reproducibility of scientific
 results.
 
 Unlike a virtual machine, a running *container instance* shares the host
-operating system's kernel, relying heavily on [Linux
-namespaces](https://en.wikipedia.org/wiki/Linux_namespaces) (kernel
+operating system's kernel, relying heavily on [Linux namespaces](https://en.wikipedia.org/wiki/Linux_namespaces) (kernel
 partitioning and isolation features for previously global Linux system
 resources). Resources and data outside of the container can be mapped
 into the container to achieve integration, for example, Singularity
@@ -64,12 +63,10 @@ supported Singularity version.
 ## Building a new container
 
 For more general information on building containers please see the
-[Singularity
-Documentation](https://sylabs.io/guides/3.0/user-guide/build_a_container.html). 
+[Singularity Documentation](https://sylabs.io/guides/3.0/user-guide/build_a_container.html). 
 
 As building a container requires root privileges in general, this cannot
-be done directly on any NeSI nodes. You will need to copy a [Singularity
-Image Format (SIF)](https://github.com/sylabs/sif) to the cluster from
+be done directly on any NeSI nodes. You will need to copy a [Singularity Image Format (SIF)](https://github.com/sylabs/sif) to the cluster from
 on a local Linux machine or the cloud. Alternatively you can make use of
 a remote build service (currently only the
 [syslabs](https://cloud.sylabs.io/builder) builder is available).
@@ -154,8 +151,7 @@ singularity pull ubuntu.sif docker://ubuntu
 ```
 
 Access to private containers that needs registration is also supported,
-as detailed in the [Singularity
-documentation](https://sylabs.io/guides/master/user-guide/singularity_and_docker.html).
+as detailed in the [Singularity documentation](https://sylabs.io/guides/master/user-guide/singularity_and_docker.html).
 
 If you are building your own containers, you can also use Docker
 containers as basis for a Singularity image, by specifying it in the
@@ -253,8 +249,7 @@ export SINGULARITY_BIND="/nesi/project/<your project ID>/inputdata:/var/inputdat
 
 ### Accessing a GPU
 
-If your Slurm job has requested access to an NVIDIA GPU (see [GPU use on../Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
-NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
+If your Slurm job has requested access to an NVIDIA GPU (see [GPU use on NeSI](GPU_use_on_NeSI.md)
 to learn how to request a GPU), a singularity container can
 transparently access it using the `--nv` flag:
 
@@ -306,8 +301,7 @@ Note that the output directory "outputdata" in the HPC file system is
 automatically suffixed with the Slurm job ID in the above example, but
 it is always available under the same path "/var/outputdata" from within
 the container. This makes it easy to run multiple containers in separate
-Slurm jobs. Please refer to our [SLURM: Reference
-Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md) for
+Slurm jobs. Please refer to our [SLURM: Reference Sheet](Slurm-Reference_Sheet.md) for
 further details on using Slurm.
 
 ## Tips & Tricks

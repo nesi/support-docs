@@ -32,13 +32,12 @@ or relocate** any files that are no longer required for ongoing
 computational and/or analytics work on NeSI.
 
 We have started regular audits of data stored in project folders, using
-the same format as our nobackup auto cleaning ([described
-here](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md)).
+the same format as our [nobackup auto cleaning system](Automatic_cleaning_of_nobackup_file_system.md).
 See the file
 `/nesi/project/<project_code>/.policy.test/scan485/latest.summary.txt`
 for a summary of the number and size of files within each project that
 have not been accessed for more than 485 days (this is ~15 months, and
-is the draft auto cleaning timeframe under consideration for the project
+is the draft auto cleaning time frame under consideration for the project
 filesystem).
 
 If you need assistance with this, {% include "partials/support_request.html" %} and
@@ -76,7 +75,7 @@ Starting in January 2022, we will expand the `/nesi/project/` directory
 data management programme to include all active projects on NeSI.
 Additional Support documentation and user information sessions will be
 hosted prior to wider implementation, to provide advance notice of the
-change and to answer any questions you may have around data lifecycle
+change and to answer any questions you may have around data life cycle
 management.
 
 ## Frequently asked questions
@@ -87,7 +86,7 @@ We want to avoid our online filesystems reaching critically full
 levels, as that impacts their performance and availability for users. We
 also want to ensure our active storage filesystems aren't being used to
 store inactive data. This new data management feature
-for `/nesi/project/` directories will complement our existing programme
+for `/nesi/project/` directories will complement our existing programme
 of [automatic cleaning of the /nobackup file system](Automatic_cleaning_of_nobackup_file_system.md).
 
 ### Can I check how much storage I’m currently using on NeSI systems?
@@ -129,8 +128,7 @@ situ.
 
 There are two tracked resources in the NeSI filesystem, *disk
 space* and *inodes (number of files)*. If you run into problems with
-either of these, [refer to this Support page for more
-information](../../General/FAQs/Ive_run_out_of_storage_space.md).
+either of these, see [I've Run Out of Storage Space](Ive_run_out_of_storage_space.md).
 
 ### I have questions that aren’t covered here. Who can I talk to?
 

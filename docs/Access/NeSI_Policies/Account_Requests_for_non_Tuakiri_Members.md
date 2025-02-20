@@ -21,7 +21,7 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](../../assets/images/Account_Requests_for_non_Tuakiri_Members.png)
+![mceclip0.png](Account_Requests_for_non_Tuakiri_Members.png)
 
 !!! prerequisite
      The email address you use on your application must be your

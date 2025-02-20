@@ -10,7 +10,7 @@ zendesk_section_id: 360000040056
 
 ## Environment Modules
 
-NeSI uses environment modules to manage [installed software](./../Supported_Applications/index.md).
+NeSI uses environment modules to manage [installed software](../Supported_Applications/index.md).
 
 Using the `module` command you can:
 
@@ -39,8 +39,7 @@ place of `module`. With Lmod you can:
     only the default set of modules, but also the default set of
     environment variables.
 
-Further information can be found in the online [User Guide for
-Lmod](https://lmod.readthedocs.io/en/latest/010_user.html).
+Further information can be found in the online [User Guide for Lmod](https://lmod.readthedocs.io/en/latest/010_user.html).
 
 ## Modules on Māui
 
@@ -61,4 +60,4 @@ should be also ported to the Māui\_Ancil part.
 
 !!! tip
     You can create your own modules. This is described
-    [here](./Installing_Third_Party_applications.md).
+    [here](Installing_Third_Party_applications.md).

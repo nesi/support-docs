@@ -36,8 +36,7 @@ other methods.
 ![Globus\_login.png](Globus_Quick_Start_Guide.png)
 
 For more detailed instructions please see [Initial Globus Sign-Up, and
-your Globus
-Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
+your Globus Identities](Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
 
 ## Globus Endpoint Activation
 
@@ -54,8 +53,7 @@ read only, and `nobackup` is read and write.
 
 A list of some Institutional endpoints can be found here:
 [National-Data-Transfer-Platform](National_Data_Transfer_Platform.md).
-You can also set up your own [personal
-endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
+You can also set up your own [personal endpoint](Personal_Globus_Endpoint_Configuration.md)
 to transfer data to or from your personal computer, however,
 administrative access to your computer is required
 

@@ -126,8 +126,7 @@ Collector</span></p></td>
     is one of gnu, intel, or cray). This facility is not available on
     the Mahuika HPC Cluster, Mahuika Ancillary Nodes and Māui Ancillary
     nodes.
-4. [Intel Parallel Studio XE Cluster
-    Edition](https://software.intel.com/en-us/node/685016) for Linux
+4. [Intel Parallel Studio XE Cluster Edition](https://software.intel.com/en-us/node/685016) for Linux
     will be installed on the Mahuika HPC Cluster, Mahuika Ancillary
     Nodes and Māui Ancillary nodes.
 5. Intel Parallel Studio XE Professional Edition for CLE will be

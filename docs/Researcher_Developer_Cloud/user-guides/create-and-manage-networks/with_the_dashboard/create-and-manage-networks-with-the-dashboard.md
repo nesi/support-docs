@@ -16,13 +16,13 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Network` tab and select the `Networks` category
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/networks-overview.png)
+  ![Alt text](networks-overview.png)
 </figure>
 
 Click `Create Network` on the right hand side
@@ -82,7 +82,7 @@ Within the `Create Network > Subnet Details` dialog you have the following optio
 Click `Create` and it should start to create your new network
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/specific-network-view.png)
+  ![Alt text](specific-network-view.png)
 </figure>
 
 ## Delete a network
@@ -92,7 +92,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Network` tab and select the `Networks` category
@@ -100,7 +100,7 @@ Open the `Project` tab, open the `Network` tab and select the `Networks` categor
 Select the network you wish to delete with the check box
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/networks-overview-selected.png)
+  ![Alt text](networks-overview-selected.png)
 </figure>
 
 The `Delete Network` button should become a solid red

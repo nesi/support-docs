@@ -25,19 +25,16 @@ running TensorFlow with GPU support.
 
 !!! tip "See also"
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
-         see the [GPU use on../Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
-         NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
+         see the [GPU use on NeSI](GPU_use_on_NeSI.md)
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
-         [TensorFlow on
-         CPUs](TensorFlow_on_CPUs.md)
+         [TensorFlow on CPUs](TensorFlow_on_CPUs.md)
          for tips on how to configure TensorFlow and Slurm for optimal
          performance.
 
 ## Use NeSI modules
 
-TensorFlow is available on Mahuika as an [environment
-module](../../Getting_Started/Next_Steps/The_HPC_environment.md)
+TensorFlow is available on Mahuika as an [environment module](The_HPC_environment.md)
 
 ``` sh
 module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
@@ -132,8 +129,7 @@ pip install tensorflow==2.5.0
 ```
 
 To use TensorFlow on GPUs, you also need to load cuDNN/CUDA modules with
-the proper versions. See the official documentation about [tested
-configurations](https://www.tensorflow.org/install/source#gpu) for
+the proper versions. See the official documentation about [tested configurations](https://www.tensorflow.org/install/source#gpu) for
 compatibilities. For example, Tensorflow 2.5.0 requires you to load the
 `cuDNN/8.1.1.33-CUDA-11.2.0` module:
 
@@ -190,24 +186,21 @@ take into consideration the following:
 
 You can use containers to run your application on the NeSI platform. We
 provide support for
-[Singularity](./Singularity.md)
+[Singularity](Singularity.md)
 containers, that can be run by users without requiring additional
 privileges. Note that Docker containers can be converted into
 Singularity containers.
 
-For TensorFlow, we recommend using the [official container provided by
-NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow).
+For TensorFlow, we recommend using the [official container provided by NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow).
 More information about using Singularity with GPU enabled containers is
-available on the [NVIDIA GPU../HPC_Software_Environment/NVIDIA_GPU_Containers.md
-Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)
+available on the [NVIDIA GPU Containers](NVIDIA_GPU_Containers.md)
 support page.
 
 ## Specific versions for A100
 
 Here are the recommended options to run TensorFlow on the A100 GPUs:
 
-- If you use TensorFlow 1, use the TF1 [container provided by
-    NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow),
+- If you use TensorFlow 1, use the TF1 [container provided by NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow),
     which comes with a version of TensorFlow 1.15 compiled specifically
     to support the A100 GPUs (Ampere architecture). Other official
     Python packages won't support the A100, triggering various crashes

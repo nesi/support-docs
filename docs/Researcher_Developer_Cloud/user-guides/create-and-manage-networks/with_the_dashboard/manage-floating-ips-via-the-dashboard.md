@@ -16,7 +16,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Network` tab and select `Floating IPs`
@@ -43,7 +43,7 @@ Within the `Allocate Floating IP` dialog you have the following options
 Click `Allocate IP`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/floating-ips.png)
+  ![Alt text](floating-ips.png)
 </figure>
 
 Under `Actions` click `Associate`
@@ -59,7 +59,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Network` tab and select `Floating IPs`

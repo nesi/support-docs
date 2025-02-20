@@ -66,7 +66,7 @@ procedure.
 
 If you are using port forwarding on a regular basis, and don't want the
 hassle of opening a new tunnel every time, you can include a port
-forwarding line in your ssh config file ~/.ssh/config on your local
+forwarding line in your ssh config file `~/.ssh/config` on your local
 machine.
 
 Under the alias for the cluster you want to connect to add the following

@@ -183,14 +183,12 @@ source code.
 Extra compiler options can be set in your local `abaqus_v6.env` [file](#environment-file).
 
 The default compile commands are for `imkl`, other compilers can be
-loaded with `module load`, you may have to change the [compile../HPC_Software_Environment/Compiling_software_on_Mahuika.md
-commands](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md)
+loaded with `module load`, you may have to change the [compile commands](Compiling_software_on_Mahuika.md)
 in your local `.env` file.
 
 ## Environment file
 
-The [ABAQUS environment
-file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
+The [ABAQUS environmentfile](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
 a number of parameters that define how the your job will run, some of
 these you may with to change.
 

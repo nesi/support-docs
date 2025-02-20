@@ -29,8 +29,7 @@ See the NeSI  [Snakemake](https://snakemake-on-nesi.sschmeier.com/) page
 for another, possible choice.
 
 In this article, we show how you can create a simple workflow and run it
-on NeSI's platform. Consult the [Cylc
-documentation](https://cylc.github.io/documentation/) for more elaborate
+on NeSI's platform. Consult the [Cylc documentation](https://cylc.github.io/documentation/) for more elaborate
 examples, including some with a cycling (repeated) graph pattern. One of
 the strengths of Cylc is that simple workflows can be executed simply
 while allowing for very complex workflows, with thousands of tasks,
@@ -249,8 +248,7 @@ $ ssh -N -L PORT:localhost:PORT HOST
 ```
 
 where **PORT** is a valid port number and **HOST** can be Māui or
-mahuika. See the [NeSI
-page](../../Scientific_Computing/Getting_Started/Accessing_the_HPCs/Port_Forwarding.md) for
+mahuika. See the [Port Forwarding](Port_Forwarding.md) for
 the range of allowed ports (currently 1024-49151). Choose any number in
 this range but make sure your port number is fairly unique to avoid
 clashing with other users. Option -N is optional: it opens the

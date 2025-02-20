@@ -16,13 +16,13 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Identity` tab and click `Application Credentials` category
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/app-creds-overview.png)
+  ![Alt text](app-creds-overview.png)
 </figure>
 
 Click `Create Application Credentials`
@@ -85,7 +85,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Identity` tab and click `Application Credentials` category
@@ -93,7 +93,7 @@ Open the `Identity` tab and click `Application Credentials` category
 Using the check box select the `Application Credentials` you would like to delete and the `Delete Application Credentials` should become clickable in the top right
 
 <figure markdown>
-  ![Alt text](../../assets/images/flexi/app-cred-selected.png)
+  ![Alt text](app-cred-selected.png)
 </figure>
 
 Click `Delete Application Credentials` and a confirmation dialog will appear

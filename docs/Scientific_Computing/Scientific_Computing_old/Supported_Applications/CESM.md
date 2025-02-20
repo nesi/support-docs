@@ -175,8 +175,7 @@ Make sure you still have the environment variable set with your project code:
 export PROJECT_CODE=<your_project_code>
 ```
 
-Here we will run the test described in the CESM [quick start
-guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html). The
+Here we will run the test described in the CESM [quick start guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html). The
 following are basic instructions to create and run the case, see the
 above link for more information.
 

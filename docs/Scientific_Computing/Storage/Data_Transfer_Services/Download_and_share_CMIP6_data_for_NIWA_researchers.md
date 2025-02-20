@@ -8,10 +8,8 @@ zendesk_article_id: 360001287235
 zendesk_section_id: 360000040596
 ---
 
-The [Coupled Model Intercomparison
-Project](https://www.wcrp-climate.org/wgcm-cmip), which began in 1995
-under the auspices of the [World Climate Research Programme
-(WCRP)](https://www.wcrp-climate.org/about-wcrp/wcrp-overview), is now
+The [Coupled Model Intercomparison Project](https://www.wcrp-climate.org/wgcm-cmip), which began in 1995
+under the auspices of the [World Climate Research Programme (WCRP)](https://www.wcrp-climate.org/about-wcrp/wcrp-overview), is now
 in its sixth phase (CMIP6). CMIP6 orchestrates somewhat independent
 model intercomparison activities and their experiments, which have
 adopted a common infrastructure for collecting, organising, and

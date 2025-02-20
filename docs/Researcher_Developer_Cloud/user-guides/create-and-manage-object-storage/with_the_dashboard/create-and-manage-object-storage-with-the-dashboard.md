@@ -16,7 +16,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Object Storage` tab and select the `Containers` category
@@ -24,7 +24,7 @@ Open the `Project` tab, open the `Object Storage` tab and select the `Containers
 Click `+ Container`.
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/object-storage-overview.png)
+  ![Alt text](object-storage-overview.png)
 </figure>
 
 Within the `Create Container` dialog you have a few options
@@ -52,7 +52,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Object Storage` tab and select the `Containers` category
@@ -60,7 +60,7 @@ Open the `Project` tab, open the `Object Storage` tab and select the `Containers
 Select the container you would like to delete and it should highlight with blue
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/object-storage-container-overview.png)
+  ![Alt text](object-storage-container-overview.png)
 </figure>
 
 Hovering over the `Trashcan Icon` should show a tooltip that says *Delete Container* and clicking it should present a `Confirm Delete` dialog.
@@ -81,7 +81,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Object Storage` tab and select the `Containers` category
@@ -89,7 +89,7 @@ Open the `Project` tab, open the `Object Storage` tab and select the `Containers
 Select the container you would like to delete and it should highlight with blue
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/object-storage-container-overview.png)
+  ![Alt text](object-storage-container-overview.png)
 </figure>
 
 On the far right there should be 3 icons, `Upload File` `+ Folder` and `Delete Item`
@@ -97,7 +97,7 @@ On the far right there should be 3 icons, `Upload File` `+ Folder` and `Delete I
 Click the `Upload File` icon and within the `Upload File` dialog clicking `Choose File` should allow you to browse to the file on your local machine. You are also able to give it a different name should you so choose.
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/object-storage-upload-dialog.png)
+  ![Alt text](object-storage-upload-dialog.png)
 </figure>
 
 Clicking `Upload File` will now begin to upload that file to the object storage container. The time it takes to complete the upload will depend on the file size and the network upload speed.
@@ -111,7 +111,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Object Storage` tab and select the `Containers` category
@@ -119,7 +119,7 @@ Open the `Project` tab, open the `Object Storage` tab and select the `Containers
 Select the container you would like to delete and it should highlight with blue
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/object-storage-container-overview.png)
+  ![Alt text](object-storage-container-overview.png)
 </figure>
 
 On the far right there should be 3 icons, `Upload File` `+ Folder` and `Delete Item`

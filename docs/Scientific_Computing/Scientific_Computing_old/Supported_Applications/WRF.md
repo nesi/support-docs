@@ -52,7 +52,7 @@ export J="-j 12"
 !!! Note
     Please select option 34 (dmpar gfortran/gccGNU) when asked `Please select from among the following Linux x86_64 options`.
 
-It will take some time for WRF to compile (~30 minutes). You may wish to run this from a [tmux](https://docs.nesi.org.nz/Getting_Started/Cheat_Sheets/tmux-Reference_sheet/) session to minimise the risk of disconnecting. Check the `wrf_build.log` file for any error or warning messages when finished.
+It will take some time for WRF to compile (~30 minutes). You may wish to run this from a [tmux](tmux-Reference_sheet.md) session to minimise the risk of disconnecting. Check the `wrf_build.log` file for any error or warning messages when finished.
 
 ### Running WRF on Mahuika
 

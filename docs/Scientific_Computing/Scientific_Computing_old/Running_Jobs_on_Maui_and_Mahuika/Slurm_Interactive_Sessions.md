@@ -207,8 +207,7 @@ scontrol update jobid=12345678 StartTime=now
 ### Other changes using `scontrol`
 
 There are many other changes you can make by means of `scontrol`. For
-further information, please see [the `scontrol`
-documentation](https://slurm.schedmd.com/scontrol.html).
+further information, please see [the `scontrol` documentation](https://slurm.schedmd.com/scontrol.html).
 
 ## Modifying multiple interactive sessions at once
 

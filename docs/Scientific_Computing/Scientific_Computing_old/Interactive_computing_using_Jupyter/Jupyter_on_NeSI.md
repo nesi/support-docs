@@ -26,19 +26,19 @@ NeSI supports the use of [Jupyter](https://jupyter.org/) for
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
-learning, numerical simulation, managing [Slurm job
-submissions](../../Getting_Started/Next_Steps/Submitting_your_first_job.md)
+learning, numerical simulation, managing 
+[Slurm submissions](Submitting_your_first_job.md)
 and workflows and much more.
 
 !!! prerequisite "See also"
-     -   See the [RStudio via Jupyter on NeSI](./RStudio_via_Jupyter_on_NeSI.md)
+     -   See the [RStudio via Jupyter on NeSI](RStudio_via_Jupyter_on_NeSI.md)
          page for launching an RStudio instance.
-     -   See the [MATLAB via Jupyter on NeSI](./MATLAB_via_Jupyter_on_NeSI.md)
+     -   See the [MATLAB via Jupyter on NeSI](MATLAB_via_Jupyter_on_NeSI.md)
          page for launching MATLAB via Jupyter
-     -   See the [Virtual Desktop via Jupyter on NeSI](./Virtual_Desktop_via_Jupyter_on_NeSI.md)
+     -   See the [Virtual Desktop via Jupyter on NeSI](Virtual_Desktop_via_Jupyter_on_NeSI.md)
          page for launching a virtual desktop via Jupyter.
-     -   See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
-         (recommended) and [Jupyter kernels - Manual management](./Jupyter_kernels_Manual_management.md)
+     - See the [Jupyter kernels - Tool-assisted management](Jupyter_kernels_Tool_assisted_management.md)
+         (recommended) and [Jupyter kernels - Manual management](Jupyter_kernels_Manual_management.md)
          pages for adding kernels.
 
 ## Accessing Jupyter on NeSI
@@ -158,8 +158,7 @@ running:
 pip install --user <packagename>
 ```
 
-For example, the [Dask
-extension](https://github.com/dask/dask-labextension#jupyterlab-30-or-greater)
+For example, the [Dask extension](https://github.com/dask/dask-labextension#jupyterlab-30-or-greater)
 can be installed with the following:
 
 ``` sh

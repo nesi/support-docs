@@ -14,7 +14,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Compute` tab and select `Instances` then select the compute instance you want to resize.
@@ -22,7 +22,7 @@ Open the `Project` tab, open the `Compute` tab and select `Instances` then selec
 Under the `Actions` menu on the far right, select `Resize Instance`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/instance-action-menu.png)
+  ![Alt text](instance-action-menu.png)
 </figure>
 
 Within the `Resize Instance` dialog, under the `Flavor Choice` tab you have the following options
@@ -34,7 +34,7 @@ Within the `Resize Instance` dialog, under the `Flavor Choice` tab you have the 
 :   This is the flavor you would like to resize your compute instance too.
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/resize-instance-dialog.png)
+  ![Alt text](resize-instance-dialog.png)
 </figure>
 
 Under the Advanced Options tab 
@@ -50,7 +50,7 @@ Click `Resize`
 After a few moments you will be asked to confirm the Resize
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/confirm-resize.png)
+  ![Alt text](confirm-resize.png)
 </figure>
 
 Under the `Actions` menu click `Confirm Resize/Migrate` to confirm and complete the resize.

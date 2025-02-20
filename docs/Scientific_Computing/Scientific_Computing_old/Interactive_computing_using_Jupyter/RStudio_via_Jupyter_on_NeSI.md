@@ -16,8 +16,7 @@ zendesk_section_id: 360001189255
 
 ## Getting started
 
-RStudio can be accessed as a web application via [Jupyter onJupyter_on_NeSI.md
-NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md).
+RStudio can be accessed as a web application via [Jupyter on NeSI](Jupyter_on_NeSI.md).
 
 In the JupyterLab interface, RStudio can be started using the
 corresponding entry in the launcher.
@@ -91,8 +90,7 @@ The alternative is to install packages in a terminal session
 
 ## Advanced usage
 
-RStudio runs in a [Singularity../Supported_Applications/Singularity.md
-container](../../Scientific_Computing/Supported_Applications/Singularity.md)
+RStudio runs in a [Singularity container](Singularity.md)
 prepared by the NeSI team to run on
 [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz). The related code is
 hosted on GitHub, in the

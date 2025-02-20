@@ -16,15 +16,13 @@ use.
 Examples of software environments on NeSI optimised for data science
 include:
 
-- [R](../../Scientific_Computing_old/Supported_Applications/R.md) and [Python](TensorFlow_on_GPUs.md) users
+- [R](R.md) and [Python](TensorFlow_on_GPUs.md) users
     can get right into using and exploring the several built-in packages
     or create custom code.
 
-- [Jupyter on NeSI../../Scientific_Computing_old/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
-    ](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)is
+- [Jupyter on NeSI](Jupyter_on_NeSI.md)is
     particularly well suited to artificial intelligence and machine
-    learning workloads. [R../../Scientific_Computing_old/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md
-    Studio](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md)
+    learning workloads. [RStudio](RStudio_via_Jupyter_on_NeSI.md)
     and/or Conda can be accessed via Jupyter.
 
 - Commonly used data science environments and libraries such as
@@ -41,12 +39,10 @@ As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using
 more broad terms such as "machine learning".
 
-![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
+![MachineLearningSoftwareEnvironments](What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
 
 For more information on NeSI's model and approach to application
-support, refer to our [policy for the management of scientific
-application
-software](../../General/NeSI_Policies/NeSI_Application_Support_Model.md).
+support, refer to our [policy for the management of scientific application software](NeSI_Application_Support_Model.md).
 
 If you need help installing your software or would like to discuss your
 software needs with us, {% include "partials/support_request.html" %}.

@@ -50,8 +50,7 @@ srun raxmlHPC-PTHREADS-AVX -T $SLURM_CPUS_PER_TASK -m GTRCAT -s aln.fasta -n tre
 
 ## Documentation
 
-`raxmlHPC-AVX -help` and the [RAxML
-manual](https://github.com/stamatak/standard-RAxML/tree/master/manual).
+`raxmlHPC-AVX -help` and the [RAxML manual](https://github.com/stamatak/standard-RAxML/tree/master/manual).
 
 ## Parallel Versions
 

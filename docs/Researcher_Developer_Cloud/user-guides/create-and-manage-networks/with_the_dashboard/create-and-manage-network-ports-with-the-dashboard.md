@@ -16,7 +16,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Network` tab, select the `Networks` category and then select the network you want to assign the network port to.
@@ -24,7 +24,7 @@ Open the `Project` tab, open the `Network` tab, select the `Networks` category a
 Click on the `Ports` tab
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/network-ports-overview.png)
+  ![Alt text](network-ports-overview.png)
 </figure>
 
 Then click `Create Port`
@@ -80,18 +80,18 @@ After the above we have the last 2 options within the `Create Port` dialog
 `VNIC Type`
 :   This is the type of Virtual Network Interface Card that is bound to the port. The default of Normal should be enough for most cases.
 
-There is also the option to assign security groups to this network port as well. The user guide [Manage Security Groups](./manage-security-groups-with-the-dashboard.md) will provide more information about them.
+There is also the option to assign security groups to this network port as well. The user guide [Manage Security Groups](manage-security-groups-with-the-dashboard.md) will provide more information about them.
 
 We then click on `Create`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/network-ports-create-dialog.png)
+  ![Alt text](network-ports-create-dialog.png)
 </figure>
 
 This will then create the network port so that we can assign it to a instance later on
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/network-ports-added.png)
+  ![Alt text](network-ports-added.png)
 </figure>
 
 !!! note
@@ -104,19 +104,19 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Compute` tab and select `Instances`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/compute-overview.png)
+  ![Alt text](compute-overview.png)
 </figure>
 
 Under the `Actions` dropdown select `Attach Interface`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/instance-action-menu.png)
+  ![Alt text](instance-action-menu.png)
 </figure>
 
 Within the `Attach Interface` dialog we have a few options to attach the network port. We can create a new one here or attach a previously created one.
@@ -139,7 +139,7 @@ Click `Attach Interface`
 The instance should now have the new network port attached
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/compute-network-port-attached.png)
+  ![Alt text](compute-network-port-attached.png)
 </figure>
 
 ## Detach a network port from an instance
@@ -149,19 +149,19 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Compute` tab and select `Instances`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/compute-overview.png)
+  ![Alt text](compute-overview.png)
 </figure>
 
 Under the `Actions` dropdown select `Detach Interface`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/instance-action-menu.png)
+  ![Alt text](instance-action-menu.png)
 </figure>
 
 Within the `Detach Interface` dialog select the IP address for the Network port you wish to detach
@@ -169,7 +169,7 @@ Within the `Detach Interface` dialog select the IP address for the Network port 
 Click `Detach Interface`
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/compute-network-port-removed.png)
+  ![Alt text](compute-network-port-removed.png)
 </figure>
 
 ## Delete a network port
@@ -179,7 +179,7 @@ Log into the [NeSI FlexiHPC Dashboard](https://dashboard.cloud.nesi.org.nz/)
 Select the project you would like to deploy the new instance too (Use the project selector on the top left-hand side):
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/project-selector.png)
+  ![Alt text](project-selector.png)
 </figure>
 
 Open the `Project` tab, open the `Network` tab, select the `Networks` category and then select the network you want to assign the network port to.
@@ -187,7 +187,7 @@ Open the `Project` tab, open the `Network` tab, select the `Networks` category a
 Click on the `Ports` tab
 
 <figure markdown>
-  ![Alt text](../../../assets/images/flexi/network-ports-overview-selected.png)
+  ![Alt text](network-ports-overview-selected.png)
 </figure>
 
 Select the port you wish to delete with the check box and the `Delete Port` option so become solid.
