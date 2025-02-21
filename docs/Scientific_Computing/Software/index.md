@@ -1,5 +1,6 @@
 ---
 created_at: '2019-08-16T01:22:03Z'
+title:      'Software'
 tags:
   - lmod
   - modules
@@ -73,6 +74,10 @@ You are welcome to install software yourself, either in your `home` or `project`
 See [Building Software](Building_Software/index.md) for more info.
 
 If you require assistance, don't hesitate to {% include "partials/support_request.html" %}.
+
+## Containers
+
+You may run OCI containers using Apptainer, see [Apptainer.md](Apptainer.md) for more details.
 
 ## Installion Request
 
