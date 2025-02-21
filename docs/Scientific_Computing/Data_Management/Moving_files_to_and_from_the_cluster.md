@@ -75,7 +75,7 @@ your password.
 ## File Managers
 
 !!! prerequisite
-    Have SSH setup as described in [Standard Terminal Setup](../Mahuika_Cluster/Next_Steps/Standard_Terminal_Setup.md)
+    Have SSH setup as described in [Standard Terminal Setup](Standard_Terminal_Setup.md)
 
 Most file managers can be used to connect to a remote directory simply
 by typing in the address bar provided your have an active connection to

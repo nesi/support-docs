@@ -77,7 +77,7 @@ If you require assistance, don't hesitate to {% include "partials/support_reques
 
 ## Containers
 
-You may run OCI containers using Apptainer, see [Apptainer.md](Apptainer.md) for more details.
+You may run OCI containers using Apptainer, see [Apptainer](Singularity.md) for more details.
 
 ## Installion Request
 
@@ -85,7 +85,7 @@ To request that we install a scientific application (either a new
 application, or a new version of an already installed application),
 please {% include "partials/support_request.html" %}.
 
-??? Information to Include in Request
+??? info "Information to Include in Request"
     - What is the name and version number of the software you would like
       to be installed? If you wish to use a copy from a version control
       repository, what tag or release do you need? Please be aware that we

@@ -3,56 +3,108 @@ created_at: '2018-05-01T23:29:39Z'
 tags:
 - hpc
 - info
-title: The NeSI High Performace Computers
-vote_count: 2
-vote_sum: 0
-zendesk_article_id: 360000175735
-zendesk_section_id: 360000034335
+title: Mahuika
 ---
 
-The NeSI High Performance Computers
-[Māui](The_NeSI_High_Performance_Computers/Maui.md) and
-[Mahuika](Mahuika.md) provide
-the New Zealand research community with access to a national
-data-centric and data intensive research computing environment built on
-leading edge high performance computing (HPC) systems.
+Mahuika is NeSI's High Performance Computing Cluster.
 
-- Māui, which in Maori mythology is credited with catching a giant
-    fish using a fishhook taken from his grandmother's jaw-bone; the
-    giant fish would become the North Island of New Zealand, provides a
-    Capability (i.e. Supercomputer) HPC resource on which researchers
-    can run simulations and calculations that require large numbers
-    (e.g. thousands) of processing cores working in a tightly-coupled,
-    parallel fashion.
-- Mahuika, which in Maori mythology, is a fire deity, from whom Māui
-    obtained the secret of making fire, provides a Capacity (i.e.
-    Cluster) HPC resource to allow researchers to run many small (e.g.
-    from 1 core to a few hundred cores) compute jobs simultaneously
-    (aka  High Throughput Computing).
 
-Māui and Mahuika share the same high performance filesystems,
-accordingly, data created on either system are visible on the other
-(i.e. without the need to copy data between systems). However, they have
-different processors (Skylake on Māui, and Broadwell on Mahuika), and
-different flavours of Linux (SLES on Māui and CentOS on Mahuika), so
-shared applications should be explicitly compiled and linked for each
-architecture. These systems and Ancillary Nodes on Mahuika and
-on [Māui](The_NeSI_High_Performance_Computers/Maui.md)  provide
-the research community with:
+## Getting Started
 
-- Leading edge HPCs (both Capacity and Capability) via a single point
-    of access;
-- New user facing services that can act on the data held within the NeSI HPC infrastructure, including:
-  - Pre- and post-processing systems to support workflows;
-  - Virtual Laboratories that provide interactive access to science domain specific tools \[Coming soon\];
-  - Remote visualisation services \[Coming soon\];
-  - Advanced data analytics tools, and
-  - The ability to seamlessly move data between high performance disk storage and offline tape.
-- Offsite replication of critical data (both online and offline).
+Something pointing to [Connecting]()
 
-These systems are
-[accessed](The_NeSI_High_Performance_Computers/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
-via a “lander” node using [two-factor authentication](The_NeSI_High_Performance_Computers/Setting_Up_Two_Factor_Authentication.md).
+## Hardware
 
-NeSI researchers have access to all compute nodes on Mahuika, and 316
-compute nodes on Māui.
+<table style="width: 700px; height: 658px;">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd" style="height: 55px;">
+<td style="height: 55px; width: 240.278px"><p><span><strong>Login
+nodes</strong></span></p></td>
+<td style="height: 55px; width: 436.389px"><p><span>72 cores in 2×
+Broadwell (E5-2695v4, 2.1 GHz, dual socket 18 cores per socket)
+nodes</span></p></td>
+</tr>
+<tr class="even" style="height: 27.4333px;">
+<td style="height: 27px; width: 240.278px"><p><span><strong>Compute
+nodes</strong></span></p></td>
+<td style="height: 27px; width: 436.389px"><p><span>8,136 cores in 226 ×
+Broadwell (E5-2695v4, 2.1 GHz, dual socket 18 cores per socket)
+nodes;<br />
+7,552 cores in 64 <span>HPE Apollo 2000 XL225n nodes (</span><a
+href="https://www.amd.com/en/products/cpu/amd-epyc-7713">AMD EPYC Milan
+7713</a>) the Milan partition</span></p></td>
+</tr>
+<tr class="odd" style="height: 22px;">
+<td style="height: 22px; width: 240.278px"><p><span><strong>Compute
+nodes (reserved for NeSI Cloud)<br />
+</strong></span></p></td>
+<td style="height: 22px; width: 436.389px"><p><span>288 cores in 8 ×
+Broadwell (E5-2695v4, 2.1 GHz, dual socket 18 cores per socket)
+nodes</span></p></td>
+</tr>
+<tr class="even" style="height: 148px;">
+<td style="width: 240.278px; height: 148px"><p><span><strong>GPUs<br />
+</strong></span></p></td>
+<td style="width: 436.389px; height: 148px"><p><span>9 NVIDIA Tesla P100
+PCIe 12GB cards (1 node with 1 GPU, </span>4 nodes with 2 GPUs)</p>
+<p><span>8 NVIDIA A100 PCIe 40GB cards (4 nodes with 1 GPU, 2 nodes with
+2 GPUs)<br />
+</span></p>
+<p><span>16 NVIDIA A100 HGX 80GB cards (4 nodes with 4 GPU
+each)</span><span></span></p></td>
+</tr>
+<tr class="odd" style="height: 22px;">
+<td
+style="height: 22px; width: 240.278px"><p><span><strong>Hyperthreading</strong></span></p></td>
+<td style="height: 22px; width: 436.389px"><p><span>Enabled
+(accordingly, SLURM will see ~31,500 cores)</span></p></td>
+</tr>
+<tr class="even" style="height: 27px;">
+<td style="height: 27px; width: 240.278px"><p><span><strong>Theoretical
+Peak Performance</strong></span></p></td>
+<td style="height: 27px; width: 436.389px"><p><span>308.6
+TFLOPs</span></p></td>
+</tr>
+<tr class="odd" style="height: 70px;">
+<td style="height: 70px; width: 240.278px"><p><span><strong>Memory
+capacity per compute node</strong></span></p></td>
+<td style="height: 70px; width: 436.389px"><p><span>128
+GB</span></p></td>
+</tr>
+<tr class="even" style="height: 70px;">
+<td style="height: 70px; width: 240.278px"><p><span><strong>Memory
+capacity per login (build) node</strong></span></p></td>
+<td style="height: 70px; width: 436.389px"><p><span>512
+GB</span></p></td>
+</tr>
+<tr class="odd" style="height: 49px;">
+<td style="height: 49px; width: 240.278px"><p><span><strong>Total System
+memory</strong></span></p></td>
+<td style="height: 49px; width: 436.389px"><p><span>84.0
+TB</span></p></td>
+</tr>
+<tr class="even" style="height: 70px;">
+<td
+style="height: 70px; width: 240.278px"><p><span><strong>Interconnect</strong></span></p></td>
+<td style="height: 70px; width: 436.389px"><p><span>FDR (54.5Gb/s)
+InfiniBand to EDR (100Gb/s) Core fabric. 3.97:1 Fat-tree
+topology</span></p></td>
+</tr>
+<tr class="odd" style="height: 49px;">
+<td style="height: 49px; width: 240.278px"><p><span><strong>Workload
+Manager</strong></span></p></td>
+<td style="height: 49px; width: 436.389px"><p><span>Slurm
+(Multi-Cluster)</span></p></td>
+</tr>
+<tr class="even" style="height: 49px;">
+<td style="height: 49px; width: 240.278px"><p><span><strong>Operating
+System</strong></span></p></td>
+<td style="height: 49px; width: 436.389px"><p><span>CentOS 7.4 &amp;
+Rocky 8.5 on Milan</span></p></td>
+</tr>
+</tbody>
+</table>
