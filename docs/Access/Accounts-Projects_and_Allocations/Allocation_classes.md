@@ -14,7 +14,7 @@ general terms, the allocation class granted to your project is used to
 decide who pays for that aspect of your project's consumption of NeSI
 services.
 
-<table style="width: 80%;">
+<table style="width: 100%;">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
