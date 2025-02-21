@@ -48,8 +48,7 @@ files as viable.
 
 Many files can be compressed into a single SquashFS archive. We have
 written a utility, `nn_archive_files`, to help with this process.
-This utility can be run on Māui or Mahuika, but not, as yet, on
-Māui-ancil; and it can submit the work as a Slurm job, which is
+It can submit the work as a Slurm job, which is
 preferred. `nn_archive_files` can take, as trailing options, the
 same options as `mksquashfs`, including choice of compression
 algorithm; see `man mksquashfs` for more details.  

@@ -12,8 +12,7 @@ zendesk_section_id: 360000040056
 programming interface that lets you write parallel programs on shared
 memory platforms. In a parallel section, OpenMP code can create multiple
 threads that run on separate cores, executing their shares of the total
-workload concurrently. OpenMP is suited for the Mahuika and Māui HPCs as
-each platform has 36 and 40 physical cores per node respectively.  Each
+workload concurrently. Each
 physical core can handle up to two threads in parallel using
 [Hyperthreading](Hyperthreading.md).
 Therefore you can run up to 72 threads on Mahuika and 80 threads on Māui
@@ -47,7 +46,7 @@ In order to achieve good and consistent parallel scaling, additional
 settings may be required. This is particularly true on Mahuika whose
 nodes are shared between different Slurm jobs. Following are some
 settings that can help improve scaling and/or make your timings more
-consistent, additional information can be found in our article 
+consistent, additional information can be found in our article
 [Thread Placement and Thread Affinity](Thread_Placement_and_Thread_Affinity.md).
 
 1. `--hint=nomultithread`. Set this in conjunction with srun or sbatch to
@@ -63,7 +62,7 @@ generally advisable to pin the threads to avoid delays caused by thread
 migration.
 
 3. `OMP_PLACES`. Set this to "cores" if you want to pin the threads to
-physical cores, or to "threads" if you want to use hyperthreading. 
+physical cores, or to "threads" if you want to use hyperthreading.
 
 The effect of each setting is illustrated below. In this experiment we
 measured the execution time twice of the finite difference

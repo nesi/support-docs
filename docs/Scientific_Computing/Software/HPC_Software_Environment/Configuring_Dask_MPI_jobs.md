@@ -39,7 +39,7 @@ MPI.
 
 While some of the MPI distributions should be compatible with each
 other, it is advisable to use the same MPI distribution as the host HPC
-system for reliability. The Mahuika and Māui Ancil clusters use Intel
+system for reliability. The Mahuika cluster uses Intel
 MPI.
 
 ## Using Dask-MPI on Mahuika
@@ -51,7 +51,7 @@ available on Mahuika that come with the mpi4py package, e.g.
 module load Python/3.9.9-gimkl-2020a
 ```
 
-## Installing Dask-MPI with Conda on Mahuika and Māui Ancil
+## Installing Dask-MPI with Conda on Mahuika
 
 Load an Anaconda3 or Miniconda3 module and use the following commands to
 install mpi4py with the Intel MPI distribution *before* installing the

@@ -165,11 +165,9 @@ From: ubuntu:latest
     # intallation instructions go here
 ```
 
-## Running a container on Mahuika or Māui Ancil
+## Running a container on Mahuika
 
-Singularity is not currently available on the Māui XC50 supercomputer.
-
-Singularity containers can easily be run on Mahuika or Māui Ancil once
+Singularity containers can easily be run on Mahuika once
 they are uploaded to a NeSI filesystem. Load the Singularity module
 first by running the command
 

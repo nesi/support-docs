@@ -28,11 +28,6 @@ packages and no curation by the NeSI team.
      - If you only need access to Python and standard numerical libraries
          (numpy, scipy, matplotlib, etc.), you can use the [Python environment module](Python.md).
 
-!!! tip "Māui Ancillary Nodes"
-     On Māui Ancillary Nodes, you can also use the `Anaconda3` module,
-     which provides a default environment pre-installed with a set of
-     numerical libraries (numpy, scipy, matplotlib, etc.).
-
 ## Module loading and conda environments isolation
 
 When using the Miniconda3 module, we recommend using the following

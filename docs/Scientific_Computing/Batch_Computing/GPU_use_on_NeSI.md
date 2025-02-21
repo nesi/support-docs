@@ -16,7 +16,6 @@ page.
      support page.
      Details about GPU cards for each system and usage limits are in the
      [Mahuika Slurm Partitions](Mahuika_Slurm_Partitions.md)
-     and [Māui\_Ancil (CS500) Slurm Partitions](Maui_Slurm_Partitions.md)
      support pages.
      Details about pricing in terms of compute units can be found in the
      [What is an allocation?](What_is_an_allocation.md)
@@ -172,9 +171,6 @@ module spider CUDA
 Please{% include "partials/support_request.html" %} if you need a version not
 available on the platform.
 
-!!! note
-     On Māui Ancillary Nodes, use `module avail CUDA` to list available
-     versions.
 
 The CUDA module also provides access to additional command line tools:
 

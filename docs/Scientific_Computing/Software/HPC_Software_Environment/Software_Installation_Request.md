@@ -18,8 +18,6 @@ your message, please provide the following information:
     repository, what tag or release do you need? Please be aware that we
     usually require a stable release version of a piece of software
     before we will install it for all users.
-- Do you have a preference about which platform (Mahuika or Māui) we
-    install it on?
 - Why would you like us to install this software package?
 - What is the web site or home web page of the package? If you don't
     know this information or the package doesn't have a web site, who is

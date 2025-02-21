@@ -147,17 +147,6 @@ module spider cuDNN
 Please contact us at [support@nesi.org.nz](mailto:support@nesi.org.nz) if you need a version not
 available on the platform.
 
-!!! note "Māui Ancillary Nodes"
-     -   Load the Anaconda3 module instead of Miniconda3 to manipulate
-         conda environments:  
-         ``` sl
-         module load Anaconda3/2020.02-GCC-7.1.0
-         ```
-     -   Use `module avail` to list available versions of modules, e.g.
-         ``` sl
-         module avail cuDNN
-         ```
-
 Additionnally, depending your version of TensorFlow, you may need to
 take into consideration the following:
 

@@ -50,11 +50,6 @@ ssh <user>@lander.nesi.org.nz
 ssh login.<mahuika/maui>.nesi.org.nz
 ```
 
-**If this fails:** Are you logging in to the correct cluster?
-Mahuika/Maui have separate access control, also Māui requires your
-password input in a different format, see
-[here](Mahuika_Maui_Differences.md).
-
 **If this succeeds**:
 
 - If you are using a bash terminal, confirm your .ssh config is [set up correctly](Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
@@ -86,7 +81,7 @@ contact the person or team responsible for supporting it.
 
 ### Ensure you're not reusing the same 6-digit code from your token
 
-Login will fail if the same 6-digit code is used to access the Māui or
+Login will fail if the same 6-digit code is used to access the
 Mahuika login node after it has been used to access the lander node, or
 for consecutive login attempts to any node. If in doubt, wait 30 seconds
 for a new token to be generated.

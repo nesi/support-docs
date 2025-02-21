@@ -87,20 +87,6 @@ details). Therefore:
 
 In reality, every job must request at least some RAM.
 
-### Māui allocations
-
-The compute capacity of the
-[Māui](Maui.md)
-supercomputer is allocated by node-hours. Though some Māui nodes have
-more RAM than others, we do not currently distinguish between low-memory
-and high-memory nodes for allocation, billing or Fair Share purposes.
-
-Each allocation on Māui includes an entitlement to use the Māui
-ancillary nodes equally with other NeSI projects having Māui allocations
-at that time.
-
-One Māui node hour is roughly equivalent to 40 Mahuika compute units.
-
 ### Online storage allocations
 
 An online storage allocation, unlike compute allocations, is more like a

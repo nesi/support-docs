@@ -58,14 +58,6 @@ conda create -p /nesi/project/<project ID>/conda_envs/tf_cpu tensorflow-mkl
 source activate /nesi/project/<project ID>/conda_envs/tf_cpu
 ```
 
-To install TensorFlow on Māui Ancil, run
-
-``` sh
-module load Anaconda3
-conda create -p /nesi/project/<project ID>/conda_envs/tf_cpu tensorflow-mkl
-source activate /nesi/project/<project ID>/conda_envs/tf_cpu
-```
-
 Conda will create a new environment in your project directory with an
 optimised CPU version of TensorFlow. You can choose a specific version
 as well using the syntax "tensorflow-mkl==x.y.z".

@@ -130,36 +130,3 @@ opportunity to set break/watch points, and define the type execution
 (in/over/out of functions or just until next break point). For more
 detailed information see the [DDT manual](https://developer.arm.com/docs/101136/latest/ddt)
 
-## ATP (Cray Abnormal Termination Processing)
-
-!!! warning
-    This tool is only available on Māui.
-
-Abnormal Termination Processing (ATP) is a system that monitors Cray XC
-System (Maui) user applications, and should an application take a system
-trap, ATP preforms analysis on the dying application. All of the stack
-backtraces of the application processes are gathered into a merged  
-stack back trace tree and written to disk as the file `atpMergedBT.dot`.
-The stack back trace for the first process to die is sent to stderr as is
-the number of the signal that caused the death. If the core file size
-limit (`RLIMIT_CORE`) is non-zero, a heuristically selected set of
-processes dump their core.
-
-An example output looks like:
-
-```out
-Application 427046 is crashing. ATP analysis proceeding...
-
-ATP Stack walkback for Rank 0 starting:
- _start@start.S:118
- __libc_start_main@libc-start.c:289
- main@fail.c:65
- m_routine@fail.c:38
- calculation@fail.c:31
- do_task@fail.c:25
-ATP Stack walkback for Rank 0 done
-Process died with signal 8: 'Floating point exception'
-Forcing core dumps of ranks 0, 1
-View application merged backtrace tree with: stat-view atpMergedBT.dot
-You may need to: module load stat
-```

@@ -19,8 +19,8 @@ could crash with an [Out Of Memory exception](What_does_oom_kill_mean.md).
 
 ### Stack size
 
-On our XC system (Māui) the stack size is limited. If you application
-needs more resources on stack, if could result in strange unpredictable
+If you application
+needs more resources on stack, it could result in strange unpredictable
 crashes. You could get for example an \`array index out of bounds\`
 error, not directly pointing to the source of the issue. You can try to
 unlimit stack size using \`ulimit -s unlimited\` in your submission
@@ -31,10 +31,9 @@ script.
 Another common issue is an error in the code. For example an application
 could (may to unexpected input and missing error handling) call a
 division by 0. Debugger can help to find the source of the issue. On the
-NeSI systems are different debuggers available. For serial application
-the [Gnu debugger
-gdb](https://sourceware.org/gdb/download/onlinedocs/gdb/index.html) is
-available. Furthermore, the [ARM DDT
-debugger](https://developer.arm.com/docs/101136/latest/ddt/getting-started)
+NeSI systems are different debuggers available. For serial application the
+[Gnu debugger gdb](https://sourceware.org/gdb/download/onlinedocs/gdb/index.html) is
+available. Furthermore, the
+[ARM DDT debugger](https://developer.arm.com/docs/101136/latest/ddt/getting-started)
 is available, which can handle, parallel, serial, applications, written
 in C/C++, Fortran, and Python (limited support).

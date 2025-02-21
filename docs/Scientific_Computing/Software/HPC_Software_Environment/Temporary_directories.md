@@ -14,11 +14,6 @@ Most programs which create temporary files will put those files in the
 directory specified by the environment variable `TMPDIR` if that is set,
 or `/tmp` otherwise.
 
-## Māui
-
-Since Māui nodes host only one job at a time, there is no problem with
-using `/tmp`, which gets emptied after every job.  
-
 ## Mahuika
 
 On Mahuika it is best to avoid the `/tmp` directory since that is shared

@@ -17,8 +17,7 @@ first.
 ## Linux
 
 Use the following commands to mount your home directory from Mahuika on
-your local machine (the same command will work for Māui, just replace
-the names):
+your local machine:
 
 ```sh
 # create a mount point and connect
