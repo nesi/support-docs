@@ -1,11 +1,7 @@
 ---
 created_at: '2018-07-12T03:48:47Z'
 tags: []
-title: "Compiling software: Mahuika"
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000329015
-zendesk_section_id: 360000040056
+title: "Compiling software"
 ---
 
 ## Where to build

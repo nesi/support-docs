@@ -1,20 +1,10 @@
 ---
 created_at: '2018-09-24T01:51:32Z'
 tags: []
-title: Installing (Third Party) applications
+title: Building_Software
 vote_count: 3
 vote_sum: 3
-zendesk_article_id: 360000474535
-zendesk_section_id: 360000040056
 ---
-
-## Additional Packages for Python, R, etc.
-
-See [Python](Python.md) or [R](R.md),
-or for other languages check if we have additional documentation for it
-in our [application documentation](../Supported_Applications/index.md).
-
-## Third party applications
 
 Installation instruction vary from application to application. In any
 case we suggest to read the provided installing instructions.

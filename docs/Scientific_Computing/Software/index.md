@@ -1,6 +1,6 @@
 ---
 created_at: '2019-08-16T01:22:03Z'
-title:      'Software'
+title: Software
 tags:
   - lmod
   - modules
@@ -68,7 +68,7 @@ module load ANSYS/18.1
 
 Will always load that version specifically.
 
-## Self Install
+## Installing Your Own Software
 
 You are welcome to install software yourself, either in your `home` or `project` directories.
 See [Building Software](Building_Software/index.md) for more info.
