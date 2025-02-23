@@ -4040,6 +4040,7 @@
             "12.2.2",
             "12.3.0",
             "12.4.1",
+            "12.5.0",
             "12.6.3",
             "8.0.61",
             "9.0.176",
@@ -4049,7 +4050,7 @@
         "network_licences": [],
         "default": "11.0.2",
         "default_type": "latest",
-        "last_updated": 1733363565,
+        "last_updated": 1740036467,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CUDA/11.0.2.lua",
         "force_hide": "False",
@@ -4077,6 +4078,7 @@
             "8.8.0.121-CUDA-12.0.0",
             "8.9.7.29-CUDA-12.2.2",
             "8.9.7.29-CUDA-12.3.0",
+            "9.3.0.75-CUDA-12.5.0",
             "9.5.1.17-CUDA-12.6.3"
         ],
         "admin_list": [
@@ -4093,7 +4095,7 @@
         "network_licences": [],
         "default": "7.6.4.38-CUDA-10.1.243",
         "default_type": "latest",
-        "last_updated": 1733364248,
+        "last_updated": 1740036865,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/cuDNN/7.6.4.38-CUDA-10.1.243.lua",
         "force_hide": "False",
@@ -8232,13 +8234,14 @@
         "versions": [
             "0.15.5-GCC-9.2.0",
             "0.19.5-GCC-11.3.0",
-            "0.19.7-GCC-11.3.0"
+            "0.19.7-GCC-11.3.0",
+            "0.24.0-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "0.19.7-GCC-11.3.0",
         "default_type": "latest",
-        "last_updated": 1698878247,
+        "last_updated": 1740208923,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/hifiasm/0.19.7-GCC-11.3.0.lua",
         "force_hide": "False",
@@ -19625,26 +19628,6 @@
         "last_updated": 1709142490,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/0.1.18-gimkl-2018b.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "SAS": {
-        "description": "SAS is a statistical software suite developed by SAS Institute for data management, advanced analytics, multivariate analysis, business intelligence, criminal investigation, and predictive analytics. - Homepage: https://www.sas.com/en_nz/home.html/",
-        "domains": [],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "9.4"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "9.4",
-        "default_type": "latest",
-        "last_updated": 1626409285,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/SAS/9.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
