@@ -150,6 +150,20 @@
   border-bottom-right-radius: 6px;
 }
 
+/* For icons on home pages */
+img.index-icon {
+  vertical-align: middle;
+  margin-right: 1em;
+  max-width: 20%;
+}
+
+/* Allow x3 grids */
+/* https://github.com/squidfunk/mkdocs-material/issues/3018#issuecomment-1316559519 */
+.md-typeset .grid {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))
+}
+
+
 label#__nav_1_label, label#__nav_2_label, label#__nav_3_label, label#__nav_4_label{
   display: none;
 }

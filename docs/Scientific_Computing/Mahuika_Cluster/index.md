@@ -4,18 +4,46 @@ tags:
 - hpc
 - info
 title: Mahuika
+hide:
+  - toc
 ---
 
 Mahuika is NeSI's High Performance Computing Cluster.
 
+## Quickstart
 
-## Getting Started
+<div class="grid cards" markdown>
 
-Something pointing to [Connecting]()
+-   ![](../../assets/icons/material/account-details.svg){ .index-icon } __NeSI Accounts__
+
+    ---
+
+    How set up a NeSI account and project.
+
+    - [Creating a NeSI Account](../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
+    - [Applying For a New NeSI Project](../Access/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
+    - [Applying to Join a NeSI Project](../Access/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md)
+
+-   ![](../../assets/icons/material/compass.svg){ .index-icon } __Cluster Access__
+
+    ---
+    How to log into the cluster
+
+    - [Connect With SSH]()
+    - [Connect Via OpenOnDemand]()
+
+-   ![](../../assets/icons/material/cog-transfer-outline.svg){ .index-icon } __SSH Config__
+
+    ---
+
+    How to Set Up your SSH config file.
+
+</div>
+
 
 ## Hardware
 
-<table style="width: 700px; height: 658px;">
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
