@@ -1,0 +1,7 @@
+nav:
+  - with_the_dashboard
+  - with_the_CLI
+  - other_tools
+  - connect-to-instance-ssh.md
+  - default-user-nesi-images.md
+  - ...

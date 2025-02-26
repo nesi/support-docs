@@ -1,0 +1,6 @@
+nav:
+  - launch-an-instance-via-cli.md
+  - launch-an-instance-from-an-image.md
+  - launch-an-instance-from-a-volume.md
+  - resizing-an-Instance-via-cli.md
+  - manage-security-groups-of-an-Instance-via-the-cli.md

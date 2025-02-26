@@ -1,0 +1,11 @@
+nav:
+  - index.md
+  - launch-and-manage-instances
+  - uploading-and-managing-Images
+  - create-and-manage-volumes
+  - create-and-manage-networks
+  - create-and-manage-identity
+  - create-and-manage-keypairs     
+  - create-and-manage-object-storage
+  - setting-up-your-CLI-environment
+  - ...
