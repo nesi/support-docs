@@ -1,7 +1,11 @@
 ---
 created_at: 2024-08-05
 description: How to set up Visual Studio Code to access the NeSI cluster
-tags: [ide, code, visual studio code, vscode]
+tags: 
+  - ide
+  - code
+  - visual studio code
+  - vscode
 ---
 
 'Visual Studio Code' (not to be confused with 'Visual Studio') or 'VSCode', is a popular editor/IDE with many useful extensions.

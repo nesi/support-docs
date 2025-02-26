@@ -5,10 +5,7 @@ tags:
 - mobaxterm
 - gitbash
 - login
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360001016335
-zendesk_section_id: 360000034315
+title: Terminal Setup
 ---
 
 !!! prerequisite
@@ -19,11 +16,11 @@ zendesk_section_id: 360000034315
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.
 
-This is done by establishing an SSH (Secure SHell) connection, giving
-you access to a command line interface (bash) on the cluster. In order
-to set up such a connection, you will need a suitable Terminal (or
-equivalent application). The correct option for you depends on your
-operating system and level of experience.
+This page will cover establishing an SSH (Secure SHell) connection, giving
+you access to a command line interface (bash) on the cluster.
+
+In order to set up such a connection, you will need a suitable Terminal program.
+The best option for you depends on your operating system and level of experience.
 
 ## Linux or Mac OS
 
@@ -34,14 +31,17 @@ installed, usually called, "Terminal." To find it, simply search for
 "terminal".  
 Congratulations! You are ready to move to the next step.
 
-!!! prerequisite "What next?"
-    Setting up your [Default Terminal](../Connecting/Standard_Terminal_Setup.md)
+!!! tip "What next?"
+    Set up your [SSH Config](SSH_Config_Setup.md)
 
 ### VSCode
 
 The inbuilt 'remotes' plugin allows connecting to remote hosts.
-If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](../Connecting/Standard_Terminal_Setup.md),
-VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab.
+If you have set up your `~/.ssh/config` as described in [SSH Config Setup](SSH_Config_Setup.md),
+VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab. See [VSCode](VSCode.md#setup) for more info.
+
+!!! tip "What next?"
+    - [VSCode](VSCode.md#setup)
 
 ## Windows
 
@@ -64,14 +64,14 @@ different options, listed in order of preference.
 
 !!! tip "What next?"
     -  Enabling
-       [WSL](../Connecting/Windows_Subsystem_for_Linux_WSL.md)
-    -  Setting up the [Ubuntu Terminal](../Connecting/Windows_Subsystem_for_Linux_WSL.md)
-    -  Setting up
-       [X-Forwarding](./X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
+       [WSL](Windows_Subsystem_for_Linux_WSL.md)
 
 ### VSCode
 
 VSCode can be used with WSL or without.
+
+!!! tip "What next?"
+    - [VSCode](VSCode.md#setup)
 
 ### MobaXterm
 
@@ -79,18 +79,8 @@ VSCode can be used with WSL or without.
  several useful features like multiplexing, X11 forwarding and a file
  transfer GUI.
 
- MobaXterm can be downloaded from
- [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net/download-home-edition.html).
- The portable edition will allow you to use MobaXterm without needing
- administrator privileges, however it introduces several bugs so we
- *highly* recommend using the installer edition if you have
- administrator privileges on your workstation or if your
- institution's IT team supports MobaXTerm.
 !!! tip "What next?"
-    -  Setting up
-       [MobaXterm](../Connecting/MobaXterm_Setup_Windows.md)
-
-### Using a Virtual Machine
+    -  Setting up Connecting
 
 In order to avoid the problems of using a Windows environment, it
 may be advisable to install a Linux Virtual machine. This may be
@@ -120,7 +110,7 @@ for new users.
 
 !!! tip "What next?"
     -  Setting up
-       [WinSCP](../Connecting/WinSCP-PuTTY_Setup_Windows.md)
+       [WinSCP](WinSCP-PuTTY_Setup_Windows.md)
 
 ### Git Bash
 
@@ -133,12 +123,15 @@ your password, but lacks many of the features of MobaXterm or a
 native Unix-Like terminal. Therefore we do not recommend it as your
 primary terminal.
 
+!!! tip "What next?"
+    Set up your [SSH Config](SSH_Config_Setup.md)
+
 ### Windows PowerShell
 
 All Windows computers have PowerShell installed, however it will
 only be useful to you if Windows Subsystem for Linux (WSL) is also
 enabled, instructions can be found at
-[Windows_Subsystem_for_Linux_WSL](../Connecting/Windows_Subsystem_for_Linux_WSL.md).
+[Windows_Subsystem_for_Linux_WSL](Windows_Subsystem_for_Linux_WSL.md).
 
 Like Git Bash, PowerShell is perfectly adequate for testing your
 login or setting up your password, but lacks many of the features of

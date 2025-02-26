@@ -11,27 +11,35 @@ Technical Documentation for NeSI's High Performance Computing Cluster, Mahuika.
 
 <div class="grid cards" markdown>
 
--   ![](../assets/icons/material/account-details.svg){ .index-icon } __NeSI Accounts__
+-   ![](../assets/icons/material/account-details.svg) __Mahuika Cluster__
+
+    ---
+    Learn about our High Performance Computer _Mahuika_, and how to access.
+
+    - [How to Get Access](Mahuika_Cluster/index.md)
+
+
+-   ![](../assets/icons/material/compass.svg) __Data Management__
 
     ---
 
-    How to get started with NeSI accounts and projects.
+    Learn about the [NeSI filesystem](Data_Management/File_Systems_and_Quotas/index.md), and how to [transfer files](Data_Management/Moving_files_to_and_from_the_cluster.md).
 
-    - [Creating a NeSI Account](../Access/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-    - [Applying For a New NeSI Project](../Access/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md)
-    - [Applying to Join a NeSI Project](../Access/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md)
-
--   ![](../assets/icons/material/compass.svg){ .index-icon } __Cluster Access__
+-   ![](../assets/icons/material/cog-transfer-outline.svg) __Software__
 
     ---
 
-    Recommended clients for Linux, Mac, and Windows users.
+    How to [load software](Software/index.md)
 
--   ![](../assets/icons/material/cog-transfer-outline.svg){ .index-icon } __SSH Config__
+    Browse [installed software](Software/Software_Catalouge/index.md)
+    
+    How to [build software on Mahuika](Software/Building_Software/index.md).
+
+-   ![](../assets/icons/material/cog-transfer-outline.svg) __Batch Computing__
 
     ---
 
-    How to Set Up your SSH config file.
+    Learn about our scheduler [Slurm](), and how to make the most of your allocation.
 
 </div>
 
