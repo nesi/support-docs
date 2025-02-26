@@ -179,11 +179,11 @@ The following sections detail the most usual entries.
 | - | - | - | - |
 | `description` | Used for internal and external search indexing. This will appear as the page preview when searching in Google. Try not to include words and information here that is not in the body of the article. | string | `description: A short summary.` |
 | `icon`        | Page icon.                                                    | Path |  |
-| `status`      | Will display a symbol on nav                                  | `new` or `deprecated` | |
-| `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
-| `tags`        | Used for internal and external search indexing                | String[] | `tags: [ "slurm", "containers" ]` |
-| `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
-| `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
+| `status`      | Will display a symbol on nav                                  | String `new`, `deprecated` | `status: deprecated` to add <span class="md-status md-status--deprecated"></span> symbol |
+| `hide`        | Used to turn off features (e.g. table of content)             | String [ ] `tags`, `toc`, `nav`| <pre class="no-copy"><code>hide:<br>    - toc</code></pre> Hide table of contents. |
+| `tags`        | Used for internal and external search indexing                | String [ ] |  <pre class="no-copy"><code>tags:<br>  - slurm<br>  - containers</code></pre> |
+| <pre class="no-copy"><code>search:<br>  exclude</code></pre> | Used to exclude page from internal search                 | Bool | <pre class="no-copy"><code>search:<br>  exclude: True</code></pre>|
+| <pre class="no-copy"><code>search:<br>  boost</code></pre> | Used to increase or decrease weight in internal search      | Float | <pre class="no-copy"><code>search:<br>  boost: 0.1</code></pre> to lower weight,  <pre class="no-copy"><code>search:<br>  boost: 10</code></pre> to raise weight |
 
 ### Zendesk Imported
 
