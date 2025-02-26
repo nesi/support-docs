@@ -202,13 +202,21 @@ def meta_unexpected_key():
     """
     Check for unexpected keys.
     """
+    def _test(v):
+        if v not in EXPECTED_PARAMETERS[key]:
+            yield {"level": "error", "line": _get_lineno(f"^{key}:.*$"),
+                   "message": f"'{value}' is not valid for {key}. [{','.join(EXPECTED_PARAMETERS[key])}]"}
+
     for key, value in meta.items():
         if key not in EXPECTED_PARAMETERS.keys():
             yield {"line": _get_lineno(r"^" + key + r":.*$"),
                    "message": f"Unexpected parameter in front-matter '{key}'"}
-        elif EXPECTED_PARAMETERS[key] and value not in EXPECTED_PARAMETERS[key]:
-            yield {"level": "error", "line": _get_lineno(f"^{key}:.*$"),
-                   "message": f"'{value}' is not valid for {key}. [{','.join(EXPECTED_PARAMETERS[key])}]"}
+        elif EXPECTED_PARAMETERS[key]:
+            if isinstance(value, list):
+                for v in value:
+                    _test(v)
+            else:
+                _test(value)
 
 
 def meta_missing_description():
