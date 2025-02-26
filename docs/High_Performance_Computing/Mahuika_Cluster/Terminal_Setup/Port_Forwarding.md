@@ -5,7 +5,7 @@ title: Port Forwarding
 ---
 
 !!! prerequisite
-    Have your [connection to the NeSI cluster](Standard_Terminal_Setup.md) configured
+    Have your [connection to the NeSI cluster](../Connecting/Standard_Terminal_Setup.md) configured
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
@@ -23,12 +23,12 @@ to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 
 **Host Alias:** An alias for the socket of your main connection to the
 cluster, `mahuika` or `maui` if you have set up your ssh config file as
-described in [Standard Terminal Setup](Standard_Terminal_Setup.md).
+described in [Standard Terminal Setup](../Connecting/Standard_Terminal_Setup.md).
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
 !!! note
-    The following examples use aliases as set up in [standard terminal setup](Standard_Terminal_Setup.md).
+    The following examples use aliases as set up in [standard terminal setup](../Connecting/Standard_Terminal_Setup.md).
     This allows the forwarding from your local machine to the NeSI
     cluster, without having to re-tunnel through the lander node.
 
@@ -120,12 +120,12 @@ method described above. This is the recommended method.
 You can tell if MobaXterm is using WSL as it will appear in the banner
 when starting a new terminal session.
 
-![mceclip0.png](Port_Forwarding.png)
+![mceclip0.png](../Connecting/Port_Forwarding.png)
 
 You can also set up port forwarding using the MobaXterm tunnelling
 interface.
 
-![mceclip1.png](Port_Forwarding_0.png)
+![mceclip1.png](../Connecting/Port_Forwarding_0.png)
 
 You will need to create **two** tunnels. One from lander to mahuika. And
 another from mahuika to itself. (This is what using an alias in the
@@ -133,7 +133,7 @@ first two examples allows us to avoid).
 
 The two tunnels should look like this.
 
-![mobakey.png](Port_Forwarding_1.png)
+![mobakey.png](../Connecting/Port_Forwarding_1.png)
 
 <span style='color:#32CD32'>■</span> local port  
 <span style="color:orange">■</span> remote port  
@@ -203,5 +203,5 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 
 !!! tip "What Next?"
     -   Using
-        [JupyterLab](JupyterLab.md) on the cluster.
-    -   [Paraview](ParaView.md)
+        [JupyterLab](../Connecting/JupyterLab.md) on the cluster.
+    -   [Paraview](../Connecting/ParaView.md)

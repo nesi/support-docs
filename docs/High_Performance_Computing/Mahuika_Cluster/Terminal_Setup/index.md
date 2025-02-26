@@ -12,9 +12,9 @@ zendesk_section_id: 360000034315
 ---
 
 !!! prerequisite
-    -  Have an [active account and project](Creating_a_NeSI_Account_Profile.md).
-    -  Set up your [NeSI Account Password](Setting_Up_and_Resetting_Your_Password.md).
-    -  Set up [Two-Factor Authentication](Setting_Up_Two_Factor_Authentication.md).
+    -  Have an [active account and project](../Connecting/Creating_a_NeSI_Account_Profile.md).
+    -  Set up your [NeSI Account Password](../Connecting/Setting_Up_and_Resetting_Your_Password.md).
+    -  Set up [Two-Factor Authentication](../Connecting/Setting_Up_Two_Factor_Authentication.md).
 
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.
@@ -24,18 +24,6 @@ you access to a command line interface (bash) on the cluster. In order
 to set up such a connection, you will need a suitable Terminal (or
 equivalent application). The correct option for you depends on your
 operating system and level of experience.
-
-## Web Browser
-
-### JupyterHub
-
- JupyterHub is a service providing access to Jupyter Notebooks on
- NeSI. A terminal similar to the other setups describe below can be
- accessed through the Jupyter Launcher.  
-
-!!! prerequisite "What next?"
-    -  More info on [Jupyter Terminal](../../Scientific_Computing_old/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md#jupyter-terminal)
-    -  Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
 ## Linux or Mac OS
 
@@ -47,12 +35,12 @@ installed, usually called, "Terminal." To find it, simply search for
 Congratulations! You are ready to move to the next step.
 
 !!! prerequisite "What next?"
-    Setting up your [Default Terminal](Standard_Terminal_Setup.md)
+    Setting up your [Default Terminal](../Connecting/Standard_Terminal_Setup.md)
 
 ### VSCode
 
 The inbuilt 'remotes' plugin allows connecting to remote hosts.
-If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](Standard_Terminal_Setup.md),
+If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](../Connecting/Standard_Terminal_Setup.md),
 VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab.
 
 ## Windows
@@ -76,10 +64,10 @@ different options, listed in order of preference.
 
 !!! tip "What next?"
     -  Enabling
-       [WSL](Windows_Subsystem_for_Linux_WSL.md)
-    -  Setting up the [Ubuntu Terminal](Windows_Subsystem_for_Linux_WSL.md)
+       [WSL](../Connecting/Windows_Subsystem_for_Linux_WSL.md)
+    -  Setting up the [Ubuntu Terminal](../Connecting/Windows_Subsystem_for_Linux_WSL.md)
     -  Setting up
-       [X-Forwarding](X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
+       [X-Forwarding](./X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
 
 ### VSCode
 
@@ -100,7 +88,7 @@ VSCode can be used with WSL or without.
  institution's IT team supports MobaXTerm.
 !!! tip "What next?"
     -  Setting up
-       [MobaXterm](MobaXterm_Setup_Windows.md)
+       [MobaXterm](../Connecting/MobaXterm_Setup_Windows.md)
 
 ### Using a Virtual Machine
 
@@ -132,7 +120,7 @@ for new users.
 
 !!! tip "What next?"
     -  Setting up
-       [WinSCP](WinSCP-PuTTY_Setup_Windows.md)
+       [WinSCP](../Connecting/WinSCP-PuTTY_Setup_Windows.md)
 
 ### Git Bash
 
@@ -150,7 +138,7 @@ primary terminal.
 All Windows computers have PowerShell installed, however it will
 only be useful to you if Windows Subsystem for Linux (WSL) is also
 enabled, instructions can be found at
-[Windows_Subsystem_for_Linux_WSL](Windows_Subsystem_for_Linux_WSL.md).
+[Windows_Subsystem_for_Linux_WSL](../Connecting/Windows_Subsystem_for_Linux_WSL.md).
 
 Like Git Bash, PowerShell is perfectly adequate for testing your
 login or setting up your password, but lacks many of the features of

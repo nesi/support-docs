@@ -27,10 +27,11 @@ Download links for X-servers can be found below.
 | ---------------- | ------------------------------------------------- |
 | MacOS            | [Xquartz](https://www.xquartz.org/)               |
 | Linux            | [Xorg](https://www.x.org/wiki/Releases/Download/) |
+| Linux (Debian)   | `sudo apt install x11-apps -y`                    |
 | Windows          | [Xming](https://sourceforge.net/projects/xming/)  |
 
 Make sure you have launched the server and it is running in the
-background, look for this ![mceclip0.png](X11_on_NeSI.png) symbol in your taskbar.
+background, look for this ![mceclip0.png](X11_on_NeSI.png) symbol in your taskbar.
 
 !!! note
      MobaXterm has a build in X server, no setup required. By default the
@@ -57,7 +58,7 @@ ssh -Y login.nesi.org.nz
 
 ### MobaXterm
 
- Under 'session settings' for your connection make sure the X-11
+Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
 ![x11moba.png](X11_on_NeSI_2.png)
