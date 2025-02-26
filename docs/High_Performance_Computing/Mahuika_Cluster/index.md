@@ -29,8 +29,8 @@ Mahuika is NeSI's High Performance Computing Cluster.
     ---
     How to log into the cluster
 
-    - [Connect With SSH]()
-    - [Connect Via OpenOnDemand]()
+    - [Connect Via OpenOnDemand](../OpenOnDemand/index.md) Best for new users, or those wanting to use an [OnDemand App]()
+    - [Connect With SSH]() Best for those familiar with command line, and accessing machines remotely.
 
 -   ![](../../assets/icons/material/cog-transfer-outline.svg){ .index-icon } __SSH Config__
 
@@ -39,7 +39,6 @@ Mahuika is NeSI's High Performance Computing Cluster.
     How to Set Up your SSH config file.
 
 </div>
-
 
 ## Hardware
 
