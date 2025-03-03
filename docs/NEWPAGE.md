@@ -189,7 +189,7 @@ The following sections detail the most usual entries.
 
 The following fields were imported from Zendesk Page:
 
-- `vote_count` 
+- `vote_count`
 - `vote_sum`
 - `zendesk_article_id`
 - `zendesk_section_id`

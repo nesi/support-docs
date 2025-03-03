@@ -60,8 +60,6 @@ markdown_extensions:
     # - docs/assets/glossary/snippets.md  # Causes massive slowdown. Also, bad.
   - attr_list
   - abbr
-  - neoteroi.cards
-  - neoteroi.timeline
   - footnotes
   - md_in_html
   - def_list
