@@ -3,14 +3,14 @@ created_at: '2018-05-01T23:29:39Z'
 tags:
 - hpc
 - info
-title: Mahuika
+title: Mahuika Cluster
 hide:
   - toc
 ---
 
 Mahuika is NeSI's High Performance Computing Cluster.
 
-## Quickstart
+## Getting Started
 
 <div class="grid cards" markdown>
 

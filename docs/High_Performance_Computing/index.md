@@ -7,11 +7,9 @@ hide:
 
 Technical Documentation for NeSI's High Performance Computing Cluster, Mahuika.
 
-## Quickstart
-
 <div class="grid cards" markdown>
 
--   ![](../assets/icons/material/account-details.svg) __Mahuika Cluster__
+-   ![](../assets/icons/material/account-details.svg) [__Mahuika Cluster__](Mahuika_Cluster/)
 
     ---
     Learn about our High Performance Computer _Mahuika_, and how to access.
@@ -19,13 +17,13 @@ Technical Documentation for NeSI's High Performance Computing Cluster, Mahuika.
     - [How to Get Access](Mahuika_Cluster/index.md)
 
 
--   ![](../assets/icons/material/compass.svg) __Data Management__
+-   ![](../assets/icons/material/compass.svg) [__Data Management__](Data_Management/)
 
     ---
 
     Learn about the [NeSI filesystem](Data_Management/File_Systems_and_Quotas/index.md), and how to [transfer files](Data_Management/Moving_files_to_and_from_the_cluster.md).
 
--   ![](../assets/icons/material/cog-transfer-outline.svg) __Software__
+-   ![](../assets/icons/material/cog-transfer-outline.svg) [__Software__](Software/)
 
     ---
 
@@ -35,7 +33,7 @@ Technical Documentation for NeSI's High Performance Computing Cluster, Mahuika.
     
     How to [build software on Mahuika](Software/Building_Software/index.md).
 
--   ![](../assets/icons/material/cog-transfer-outline.svg) __Batch Computing__
+-   ![](../assets/icons/material/cog-transfer-outline.svg) [__Batch Computing__](Batch_Computing/)
 
     ---
 

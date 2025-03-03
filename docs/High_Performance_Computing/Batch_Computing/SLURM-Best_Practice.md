@@ -76,7 +76,7 @@ job array in a single command)
 
 A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation
-[here](Fair_Share_How_jobs_get_prioritised.md).
+[here](Project_Accounting/Fair_Share_How_jobs_get_prioritised.md).
 
 ## Cross machine submission
 

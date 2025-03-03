@@ -85,8 +85,8 @@ they get requeued after a node failure.
 
 Cluster and partition-specific limits can sometimes prevent jobs from
 starting regardless of their priority score.  For details see the pages
-on [Mahuika](Mahuika_Slurm_Partitions.md) or
-[Māui.](Maui_Slurm_Partitions.md)
+on [Mahuika](../Mahuika_Slurm_Partitions.md) or
+[Māui.](../Maui_Slurm_Partitions.md)
 
 ## Backfill
 

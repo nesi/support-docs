@@ -6,7 +6,7 @@ tags:
 - storage
 - maui
 - quota
-title: NeSI File Systems and Quotas
+title: File Systems and Quotas
 vote_count: 4
 vote_sum: 4
 zendesk_article_id: 360000177256
