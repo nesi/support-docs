@@ -1,0 +1,6 @@
+nav:
+  - create-and-manage-networks-with-the-dashboard.md
+  - manage-security-groups-with-the-dashboard.md
+  - create-and-manage-network-ports-with-the-dashboard.md
+  - manage-floating-ips-via-the-dashboard.md
+  - ...

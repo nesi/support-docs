@@ -8,6 +8,7 @@ mkdocs-simple-hooks
 mkdocs-rss-plugin
 mkdocs-macros-plugin
 mkdocs-rss-plugin
+mkdocs-autolinks-plugin
 mkdocs-open-in-new-tab
 mkdocs-git-authors-plugin
 mkdocs-git-revision-date-localized-plugin
@@ -15,7 +16,6 @@ mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_
 mkdocs-awesome-pages-plugin
 
 # checkers
-neoteroi-mkdocs
 codespell
 proselint
 linkcheckmd

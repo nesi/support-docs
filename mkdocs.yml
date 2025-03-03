@@ -28,6 +28,7 @@ theme:
     - navigation.instant.progress
     - navigation.instant.prefetch # Start loading page on link hover. Insiders only
     - navigation.top              # 'Return to top' button
+    - navigation.tabs
     # - navigation.prune            # Reduces site size. ALSO BREAKS NAV BEHAVIOR
     - navigation.tracking         # Put anchor in URL
     - navigation.path             # Breadcrumbs. Insiders only
@@ -59,9 +60,8 @@ markdown_extensions:
     # - docs/assets/glossary/snippets.md  # Causes massive slowdown. Also, bad.
   - attr_list
   - abbr
-  - neoteroi.cards
-  - neoteroi.timeline
   - footnotes
+  - md_in_html
   - def_list
 extra:
   analytics:
@@ -70,6 +70,7 @@ extra:
 plugins:
   - search
   - open-in-new-tab
+  - autolinks
   - rss:
       categories:
       - tags
@@ -82,8 +83,8 @@ plugins:
       feeds_filenames:
         rss_created: page_creation.xml
         rss_updated: page_update.xml
-  - redirects:
-      map_file: docs/redirect_map.yml
+  # - redirects:
+  #     map_file: docs/redirect_map.yml
   - awesome-pages:
       filename: .pages.yml
  # - git-authors

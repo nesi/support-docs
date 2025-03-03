@@ -1,24 +1,32 @@
 ---
-template: main.html
-hide: toc
+created_at: 2025-02-04
+hide:
+  - toc
+  - nav
+title: ""
 ---
 
-# NeSI Support Documentation
 
-Technical documentation for the NeSI High Performance Computing platform.
+<div class="grid cards" markdown>
 
-## Platform Refresh
+-   ![](../assets/icons/material/account-details.svg) [__Accounts and Services__](Access/)
 
-[cards cols=3 (./docs/cards-platform-refresh.yaml)]
+    ---
+    Accounts n stuff
 
-## Quickstart
+-   ![](../assets/icons/material/compass.svg) [__High Performance Computing__](High_Performance_Computing/)
 
-[cards cols=3 (./docs/cards-quickstart.yaml)]
+    ---
+    Hatch Pea Sea Services.
 
-## Services
+-   ![](../assets/icons/material/cog-transfer-outline.svg) [__Research Developer Cloud__](Researcher_Developer_Cloud/)
 
-[cards cols=3 (./docs/cards-services.yaml)]
+    ---
+    Develop research on [the cloud](Researcher_Developer_Cloud/).
 
-## Help
+-   ![](../assets/icons/material/cog-transfer-outline.svg) [__Training__](Capability_&_Skills/)
 
-[cards cols=3 (./docs/cards-help.yaml)]
+    ---
+    [Train'n](Capability_&_Skills/)
+
+</div>

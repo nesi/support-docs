@@ -305,7 +305,13 @@ May want to add formatting to this later.
 some code 
 ```
 
-DON'T prefix a command with `$` (e.g. `$ ls` if this is something we want it should be added through formatting, not text.
+DON'T prefix a command with `$` e.g. `$ ls` if this is something we want it should be added through formatting, not text.
+
+By default code blocks will have a 'copy content' button, this can be disabled by adding the class `.no-copy` e.g.
+
+<pre class="no-copy"><code><span>``` txt { .no-copy }</span>
+<span>something you wont need to copy</span>
+<span>```</span></code></pre>
 
 ### Inline
 
@@ -320,7 +326,7 @@ Code should be used for any text that you want the user to copy exactly.
 
 Keyboard keys can be added using the `<kbd>` tag.
 
-Press `<kbd>`ctrl`</kbd>` + `<kbd>`c`</kbd>` to copy text from terminal.
+Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 
 ```md
 Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
@@ -535,6 +541,68 @@ Leading and trailing `|` are optional.
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 ```
+
+## Grids
+
+Grids can be made by wrapping a list in `html` tags `<div class="grid cards" markdown>`.
+
+<div class="grid cards md-grid-three" markdown>
+-   ![](account-details.svg) __Card One__
+
+    ---
+    Card body one
+
+
+-   ![](compass.svg) __Card Two__
+
+    ---
+
+    Card body two
+
+-   ![](cog-transfer-outline.svg) __Card Three__
+
+    ---
+
+    Card body three
+</div>
+
+```html
+<div class="grid cards md-grid-three" markdown>
+-   ![](account-details.svg) __Card One__
+
+    ---
+    Card body one
+
+
+-   ![](compass.svg) __Card Two__
+
+    ---
+
+    Card body two
+
+-   ![](cog-transfer-outline.svg) __Card Three__
+
+    ---
+
+    Card body three
+
+</div>
+```
+
+By default, cards will have a max of two columns, the classes `md-grid-three` and `md-grid-four` can be added to the main `<div>`, to increase this to three and four cards respectivly.
+
+If increasing number of cards per row consider [hiding the table of contents using `hide`](NEWPAGE.md#material-theme-parameters) to allow more room.
+
+The card format
+
+```md
+-   ![](image) __Title__
+
+    --- (horizontal rule)
+    Text
+```
+
+Is not part of the grid format itself, but should be used as a standard format for cards.
 
 ## Macros
 
