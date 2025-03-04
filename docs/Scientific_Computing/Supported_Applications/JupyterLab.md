@@ -71,7 +71,7 @@ ssh -N -L 15051:localhost:15051 mahuika
 Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".
 
-!!!  tips
+!!! tips
      For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
      following to your `.ssh/config` to avoid establishing the
      additional hop manually.
@@ -85,8 +85,8 @@ Local Port".
          ServerAliveInterval 300
          ServerAliveCountMax 2
       ```
-          &lt;username&gt; needs to be changed. Hostnames can be adapted for
-          other nodes, e.g. `w-clim01`
+      &lt;username&gt; needs to be changed. Hostnames can be adapted for
+      other nodes, e.g. `w-clim01`
 
 #### MobaXterm GUI
 
