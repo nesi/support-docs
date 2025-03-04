@@ -39,7 +39,7 @@ on:
 jobs:
   get:
     name: Determine what files to check
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -63,7 +63,7 @@ jobs:
   spellcheck:
     name: Check Spelling
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.checkSpelling }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -85,7 +85,7 @@ jobs:
   proselint:
     name: Check Prose
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkProse}}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -105,7 +105,7 @@ jobs:
   mdlint:
     name: Check Markdown
     if: ${{github.event_name != 'workflow_dispatch' || inputs.checkMarkdown}}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -125,7 +125,7 @@ jobs:
   metacheck:
     name: Check page meta
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkMeta}}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{ ! needs.get.outputs.filelist}}
@@ -142,7 +142,7 @@ jobs:
   slurmcheck:
     name: Check slurm scripts
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkSlurm}}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{ ! needs.get.outputs.filelist}}
@@ -159,7 +159,7 @@ jobs:
   testBuild:
     name: Test build
     if: ${{github.event_name != 'workflow_dispatch' || inputs.testBuild}}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - uses: actions/checkout@v4
