@@ -71,32 +71,30 @@ ssh -N -L 15051:localhost:15051 mahuika
 Here -N means "Do not execute a remote command" and -L means "Forward
 Local Port".
 
-!!!  tip
-     -   For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
-         following to your `.ssh/config` to avoid establishing the
-         additional hop manually.
-         ``` ssh
-         Host maui_vlab
-            User <username>
-            Hostname w-mauivlab01.maui.niwa.co.nz
-            ProxyCommand ssh -W %h:%p maui
-            ForwardX11 yes
-            ForwardX11Trusted yes
-            ServerAliveInterval 300
-            ServerAliveCountMax 2
-         ```
-         &lt;username&gt; needs to be changed. Hostnames can be adapted for
-         other nodes, e.g. `w-clim01`
+!!!  tips
+     For Maui\_Ancil, e.g. w-mauivlab01 you may want to add the
+     following to your `.ssh/config` to avoid establishing the
+     additional hop manually.
+     ``` ssh
+     Host maui_vlab
+         User <username>
+         Hostname w-mauivlab01.maui.niwa.co.nz
+         ProxyCommand ssh -W %h:%p maui
+         ForwardX11 yes
+         ForwardX11Trusted yes
+         ServerAliveInterval 300
+         ServerAliveCountMax 2
+      ```
+          &lt;username&gt; needs to be changed. Hostnames can be adapted for
+          other nodes, e.g. `w-clim01`
 
 #### MobaXterm GUI
 
 !!! tips
-     -   MobaXterm has an internal terminal which acts like a linux
-         terminal and can be configured as described in the [Standard
-         Terminal
-         Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
-         Therewith the [SSH command line](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) approach above can
-         be used.
+     MobaXterm has an internal terminal which acts like a linux
+     terminal and can be configured as described in the [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+     Therewith the [SSH command line](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) approach above can
+     be used.
 
 
 MobaXterm has a GUI to setup and launch sessions with port forwarding,
