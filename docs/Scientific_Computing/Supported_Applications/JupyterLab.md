@@ -117,14 +117,14 @@ After successfully establishing the port forwarding, we need open
 another terminal and login to the NeSI system in the usual way, e.g.
 opening a new terminal and start another ssh session:
 
-``` sl
+``` sh
 ssh mahuika
 ```
 
 On the Mahuika login node, load the environment module which provides
 JupyterLab:
 
-``` sl
+``` sh
 module load JupyterLab
 ```
 
@@ -132,7 +132,7 @@ Or alternatively, and particularly if you are using a Māui ancillary
 node instead of Mahuika, you can use the Anaconda version of JupyterLab
 instead:
 
-``` sl
+``` sh
 module load Anaconda3
 module load IRkernel  # optional
 ```
@@ -147,7 +147,7 @@ node
 For very small (computational cheap and small memory) the JupyterLab can
 be started on the login or virtual lab using:
 
-``` sl
+``` sh
 jupyter lab --port 15051 --no-browser
 ```
 
@@ -165,7 +165,7 @@ should run on compute nodes. Therefore, a script is provided, taking
 care of port forwarding to the compute node and launching JupyterLab. A
 session with 60 min on 1 core can be launched using:
 
-``` sl
+``` sh
 srun --ntasks 1 -t 60  jupyter-compute 15051  # please change port number
 ```
 
@@ -173,7 +173,7 @@ After general output, JupyterLab prints a URL with a unique key and the
 network port number where the web-server is listening, this should look
 similar to:
 
-``` sl
+``` sh
 ...
 [C 14:03:19.911 LabApp]
   To access the notebook, open this file in a browser:
@@ -187,14 +187,14 @@ The last line will be needed in the browser later.
 Therewith the Notebook and its containing tasks are performed on a
 compute node. You can double check e.g. using
 
-``` sl
+``` sh
 import os
 os.open('hostname').read()
 ```
 
 More resources can be requested, e.g. by using:
 
-``` sl
+``` sh
 srun --ntasks 1 -t 60 --cpus-per-task 5 --mem 512MB jupyter-compute 15051 
 ```
 
@@ -226,7 +226,7 @@ The following JupyterLab kernel are installed:
 
 verify that the module IRkernel is loaded
 
-``` sl
+``` sh
 module load IRkernel
 ```
 
@@ -236,7 +236,7 @@ pySpark and SparkR is supported in NeSI Jupyter notebooks. Therefore,
 the module Spark needs to be loaded before starting Jupyter. Please run
 Spark workflows on compute nodes.
 
-``` sl
+``` sh
 module load Spark
 ```
 
