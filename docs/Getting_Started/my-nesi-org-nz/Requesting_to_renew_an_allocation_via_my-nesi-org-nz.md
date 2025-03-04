@@ -10,15 +10,16 @@ description: How to request a NeSI allocaiton renewal.
 
 1. Compute Resources:
 
-    - Annually, you need to create or renew your compute resources and associated resources if you had them previously.  
-    - If you made a mistake or want to modify the compute resources already allocated, you need to raise a new request.  
+    - At least annually, you will need renew your compute resources and associated resources for your projects. You should receive emails ahead of time warning your of any expiring allocation.
+    - Additionally, you can request a new allocation early in order to have your compute allocation increased before the current allocation expires if you find that the current compute allocation is no longer meeting your needs
+    - If you made a mistake in your allocation request please respond to the confirmation email will recieve after submitting your request with the details of the changes you wish to make to your renewal request.  
 
-    Choose the option "New allocation request for compute and storage (replacing any existing allocation for this project)".  
-    Indicate the number of compute units or CPU core hours,the platform, the persistent and temporary storage limits, and the start and end dates of the possible allocation. Add any comments to describe the intended usage (e.g. "Will use mostly JupyterLab") to help tune the allocation.  
+    Choose the default option "New allocation request for compute and storage (replacing any existing allocation for this project)".  
+    Indicate the number of compute units or CPU core hours, the platform, the persistent and temporary storage limits, and the start and end dates of the possible allocation. Add any comments to describe the intended usage (e.g. "Will use mostly JupyterLab") to help tune the allocation.  
 
 2. Storage Increase Requests:
 
-    - In the meantime, you can also request an increase in the storage of an existing allocation with compute.  
+    - You can also request an standalone increase in the storage of an existing allocation compute and storage.  
 
     Choose the option "Increase/update the storage of an existing allocation (adding/replacing any current storage allocation for this project)".  
     Indicate the persistent and temporary storage new limits.  
@@ -32,7 +33,7 @@ description: How to request a NeSI allocaiton renewal.
 
 4. Storage Update Requests:
 
-    - Biennially, long-term storage allocations need to be extended. You must raise a request to update the storage of an existing allocation for this purpose.  
+    - Biennially, long-term storage allocations need to be extended. You must raise a request to update the storage of an existing allocation for this purpose. You should receive emails ahead of time warning your of any expiring allocation.  
 
     Choose the option "Increase/update the storage of an existing allocation (adding/replacing any current storage allocation for this project)".  
     Indicate the long-term storage space, its current name and the new end date.
