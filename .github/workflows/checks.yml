@@ -76,7 +76,7 @@ jobs:
         name: Install dependencies
         run: |
           sudo apt install -y aspell
-          pip install pyspelling flashtext
+          pip3 install pyspelling flashtext
       - if: ${{needs.get.outputs.filelist}}
         name: Run pyspelling
         run: |
@@ -96,7 +96,7 @@ jobs:
         uses: actions/checkout@v4
       - if: ${{needs.get.outputs.filelist}}
         name: Install dependencies
-        run: pip install proselint
+        run: pip3 install proselint
       - if: ${{needs.get.outputs.filelist}}
         name: Run proselint
         run: |
@@ -165,7 +165,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: pip install -r requirements.txt
+      - run: pip3 install -r requirements.txt
       - run: echo "::group::Test Build"
       - run: ./checks/run_test_build.py
       - run: echo "::endgroup::"
