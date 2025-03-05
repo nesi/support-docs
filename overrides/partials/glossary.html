@@ -48,10 +48,6 @@ annotate genetic variants detected from diverse genomes .
 
 A bundle of computer-aided engineering software including Fluent and CFX.
 
-## ANTLR:
-
-ANother Tool for Language Recognition
-
 ## ANTs:
 
 ANTs extracts information from complex datasets that include imaging. ANTs is useful for managing,
@@ -183,10 +179,6 @@ multiple compute units.
 
  AutoDock Vina is an open-source program for doing molecular docking. 
 
-## Autoconf-archive:
-
-A collection of more than 500 macros for GNU Autoconf
-
 ## BBMap:
 
 BBMap short read aligner, and other bioinformatic tools.
@@ -194,11 +186,6 @@ BBMap short read aligner, and other bioinformatic tools.
 ## BCFtools:
 
 Manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF.
-
-## BCL-Convert:
-
-Converts per cycle binary data output by Illumina sequencers containing basecall
-files and quality scores to per read FASTQ files
 
 ## BEAST:
 
@@ -254,7 +241,7 @@ and the BOLT-REML algorithm for variance components analysis
 
 ## BRAKER:
 
-BRAKER is a pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET
+Pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET
  and AUGUSTUS in novel eukaryotic genomes.
 
 ## BUSCO:
@@ -290,11 +277,6 @@ Identify candidate loci under natural selection from genetic data,
 ## BayesAss:
 
 Program for inference of recent immigration rates between populations using unlinked multilocus genotypes
-
-## Bazel:
-
-Bazel is a build tool that builds code quickly and reliably.
-It is used to build the majority of Google's software.
 
 ## Beagle:
 
@@ -336,12 +318,6 @@ determine cytosine methylation states
 Bison is a general-purpose parser generator that converts an annotated context-free grammar
 into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.
 
-## BlenderPy:
-
-Blender provides a pipeline for 3D modeling, rigging, animation, simulation, rendering, 
-compositing, motion tracking, video editing and 2D animation.  
-This particular build of Blender provides a Python package 'bpy' rather than the stand-alone application.
-
 ## Boost:
 
 Boost provides free peer-reviewed portable C++ source libraries.
@@ -355,22 +331,10 @@ Ultrafast, memory-efficient short read aligner.
 Ultrafast and memory-efficient tool for aligning
 sequencing reads to long reference sequences.
 
-## Bpipe:
-
-A platform for running big bioinformatics jobs that consist of a series of processing stages
-
 ## Bracken:
 
 Hghly accurate statistical method that computes the abundance of 
 species in DNA sequences from a metagenomics sample.
-
-## BreakSeq2:
-
-Nucleotide-resolution analysis of structural variants
-
-## CCL:
-
-Clozure CL (often called CCL for short) is a free Common Lisp implementation 
 
 ## CD-HIT:
 
@@ -437,20 +401,12 @@ Creating Reference databases for Amplicon-Based Sequencing.
 
 A tool for quick quality assessment of cram and bam files, intended for long read sequencing
 
-## CTPL:
-
-C++ Thread Pool Library
-
 ## CUDA:
 
 CUDA (formerly Compute Unified Device Architecture) is a parallel
  computing platform and programming model created by NVIDIA and implemented by the
  graphics processing units (GPUs) that they produce. CUDA gives developers access
  to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs.
-
-## CUnit:
-
-Automated testing framework for C.
 
 ## Canu:
 
@@ -459,11 +415,6 @@ Sequence assembler designed for high-noise single-molecule sequencing.
 ## CapnProto:
 
 Fast data interchange format and capability-based RPC system.
-
-## Catch2:
-
-A modern, C++-native, header-only,  test framework for unit-tests, TDD and BDD 
- - using C++11, C++14, C++17 and later (or C++03 on the Catch1.x branch) 
 
 ## CellRanger:
 
@@ -520,10 +471,6 @@ C, C++, Objective-C compiler, based on LLVM.  Does not
 ## ClustalW2:
 
 ClustalW2 is a general purpose multiple sequence alignment program for DNA or proteins.
-
-## Corset:
-
-Clusters contigs and counts reads from de novo assembled transcriptomes.
 
 ## CoverM:
 
@@ -583,10 +530,6 @@ Generally Applicable Atomic-Charge Dependent London Dispersion Correction.
 
 Sequence aligner for protein and translated DNA searches
 
-## DISCOVARdenovo:
-
-Assembler suitable for large genomes based on Illumina reads of length 250 or longer.
-
 ## DOI:
 
 A unique identifier that identifies digital objects. The object may change physical locations, but the DOI assigned to that object will never change.
@@ -594,11 +537,6 @@ A unique identifier that identifies digital objects. The object may change physi
 ## DRAM:
 
 Tool for annotating metagenomic assembled genomes and VirSorter identified viral contigs..
-
-## DaliLite:
-
-Tool set for simulating/evaluating SVs, merging and comparing SVs within and among samples,
- and includes various methods to reformat or summarize SVs.
 
 ## DeconSeq:
 
@@ -664,10 +602,6 @@ EMBOSS is 'The European Molecular Biology Open Software Suite'.
  EMBOSS is a free Open Source software analysis package specially developed for
  the needs of the molecular biology (e.g. EMBnet) user community.
 
-## ENMTML:
-
-R package for integrated construction of Ecological Niche Models.
-
 ## ESMF:
 
 The Earth System Modeling Framework (ESMF) is software for building and coupling weather,
@@ -712,14 +646,6 @@ Exascale Maximum Likelihood for phylogenetic inference using MPI.
 
 Tool for estimating repeat sizes
 
-## Extrae:
-
-Extrae is capable of instrumenting applications based on MPI, OpenMP, pthreads, CUDA1, OpenCL1, and StarSs1 using different instrumentation approaches
-
-## FALCON:
-
-Falcon: a set of tools for fast aligning long reads for consensus and assembly
-
 ## FASTX-Toolkit:
 
 Tools for Short-Reads FASTA/FASTQ files preprocessing.
@@ -756,11 +682,6 @@ An efficient and objective tool for optimizing microbiome rRNA gene trimming par
 FLTK is a cross-platform C++ GUI toolkit for UNIX/Linux (X11), Microsoft Windows,
  and MacOS X. FLTK provides modern GUI functionality without the bloat and supports 3D graphics via OpenGL
  and its built-in GLUT emulation.
-
-## FTGL:
-
- FTGL is a free open source library to enable developers to use arbitrary
-fonts in their OpenGL (www.opengl.org) applications. 
 
 ## FastANI:
 
@@ -876,15 +797,6 @@ Genome-wide Efficient Mixed Model Association
 
 GEOS (Geometry Engine - Open Source) is a C++ port of the  Java Topology Suite (JTS)
 
-## GLM:
-
-OpenGL Mathematics (GLM) is a header only C++ mathematics library for graphics software based on
- the OpenGL Shading Language (GLSL) specifications.
-
-## GLPK:
-
-GNU Linear Programming Kit is intended for solving large-scale linear programming (LP), mixed integer programming (MIP), and other related problems.
-
 ## GLib:
 
 GLib is one of the base libraries of the GTK+ project
@@ -902,14 +814,6 @@ operating on signed integers, rational numbers, and floating point numbers.
 ## GOLD:
 
 A genetic algorithm for docking flexible ligands into protein binding sites
-
-## GObject-Introspection:
-
-GObject introspection is a middleware layer between C libraries
- (using GObject) and language bindings. The C library can be scanned at
- compile time and generate a metadata file, in addition to the actual
- native C library. Then at runtime, language bindings can read this
- metadata and automatically provide bindings to call into the C library.
 
 ## GPAW:
 
@@ -967,7 +871,6 @@ GTK+ is the primary library used to construct user interfaces in GNOME.
 GTS stands for the GNU Triangulated Surface Library.
  It is an Open Source Free Software Library intended to provide a set of useful
  functions to deal with 3D surfaces meshed with interconnected triangles.
-
 
 ## GUI:
 
@@ -1063,10 +966,6 @@ HMMER is used for searching sequence databases for homologs of protein sequences
  came at significant computational expense, but in the new HMMER3 project, HMMER is now
  essentially as fast as BLAST.
 
-## HOPS:
-
-Pipeline which focuses on screening MALT data for the presence of a user-specified list of target species.
-
 ## HPC:
 
 Like a regular computer, but larger. Primarily used for heating data centers.
@@ -1119,10 +1018,6 @@ C/C++ and Java libraries providing Unicode and Globalization
  tool for interactive exploration of large, integrated genomic datasets. It supports a wide 
  variety of data types, including array-based and next-generation sequence data 
 
-## IMPUTE:
-
-Genotype imputation and haplotype phasing.
-
 ## IQ-TREE:
 
 Efficient phylogenomic software by maximum likelihood
@@ -1144,11 +1039,6 @@ Create, edit, compose, or convert bitmap images
 Infernal ('INFERence of RNA ALignment') is for searching DNA sequence databases
 for RNA structure and sequence similarities.
 
-## Inspector:
-
-Intel Inspector XE is an easy to use memory error checker and thread checker for serial
- and parallel applications
-
 ## InterProScan:
 
 Sequence analysis application (nucleotide and protein sequences) that combines
@@ -1157,10 +1047,6 @@ Sequence analysis application (nucleotide and protein sequences) that combines
 ## JAGS:
 
 Just Another Gibbs Sampler - a program for the statistical analysis of Bayesian hierarchical models by Markov Chain Monte Carlo.
-
-## JUnit:
-
-A programmer-oriented testing framework for Java.
 
 ## JasPer:
 
@@ -1183,6 +1069,12 @@ The JasPer Project is an open-source initiative to provide a free
  JsonCpp is a C++ library that allows manipulating JSON values,
  including serialization and deserialization to and from strings. It can also preserve existing comment in
  unserialization/serialization steps, making it a convenient format to store user input files. 
+
+## Julia:
+
+A high-level, high-performance dynamic language for technical computing.
+
+This version was compiled from source with USE_INTEL_JITEVENTS=1 to enable profiling with VTune.
 
 ## JupyterLab:
 
@@ -1232,10 +1124,6 @@ Taxonomic sequence classifier.
 
 Krona Tools is a set of scripts to create Krona charts from 
 several Bioinformatics tools as well as from text and XML files.
-
-## KyotoCabinet:
-
-Library of routines for managing a database.
 
 ## LAME:
 
@@ -1339,17 +1227,9 @@ GNU M4 is an implementation of the traditional Unix macro processor. It is mostl
 
 Multiple sequence alignment program offering a range of methods.
 
-## MAGMA:
-
-Tool for gene analysis and generalized gene-set analysis of GWAS data.
-
 ## MAKER:
 
 Genome annotation pipeline
-
-## MATIO:
-
-matio is an C library for reading and writing Matlab MAT files.
 
 ## MATLAB:
 
@@ -1384,11 +1264,6 @@ multilevel recursive-bisection, multilevel k-way, and multi-constraint partition
 
 MMseqs2: ultra fast and sensitive search and clustering suite
 
-## MODFLOW:
-
-MODFLOW is the U.S. Geological Survey modular finite-difference flow model, which is a computer code that solves the groundwater flow equation. The program is used by hydrogeologists to simulate the flow of groundwater through aquifers.
-
-
 ## MPFR:
 
 The MPFR library is a C library for multiple-precision 
@@ -1397,10 +1272,6 @@ The MPFR library is a C library for multiple-precision
 ## MPI:
 
 A standardised message-passing standard designed to function on parallel computing architectures.
-
-## MSMC:
-
-Multiple Sequentially Markovian Coalescent, infers population size and gene flow from multiple genome sequences 
 
 ## MUMPS:
 
@@ -1417,10 +1288,6 @@ MUSCLE is a program for creating multiple alignments of amino acid or nucleotide
 sequences. A range of options is provided that give you the choice of optimizing accuracy, speed,
 or some compromise between the two.
 
-## MUST:
-
-MUST detects usage errors of the Message Passing Interface (MPI) and reports them to the user.
-
 ## MaSuRCA:
 
 MaSuRCA is whole genome assembly software. It combines the efficiency of the de Bruijn graph  
@@ -1428,19 +1295,9 @@ MaSuRCA is whole genome assembly software. It combines the efficiency of the de 
  only short reads from Illumina sequencing or a mixture of short reads and long reads 
  (Sanger, 454, Pacbio and Nanopore).
 
-## Magma:
-
-Magma is a large, well-supported software package designed for computations in algebra, number theory, algebraic geometry and algebraic combinatorics. It provides a mathematically rigorous environment     for defining and working with structures such as groups, rings, fields, modules, algebras, schemes, curves, graphs, designs, codes and many others. Magma also supports a number of databases designed     to aid computational research in those areas of mathematics which are algebraic in nature.
- 
-whatis([==[Homepage: http://magma.maths.usyd.edu.au/magma/
-
 ## Mamba:
 
 Mamba is a fast, robust, and cross-platform package manager.
-
-## MarkerMiner:
-
-Workflow for effective discovery of SCN loci in flowering plants angiosperms
 
 ## Mash:
 
@@ -1578,15 +1435,6 @@ Novel dot plot visualization tool used to view tandem repeats
 
 Tool for selecting the best-fit model of evolution for DNA and protein alignments.
 
-## Molcas:
-
-Molcas is an ab initio quantum chemistry software package
-developed by scientists to be used by scientists. The basic philosophy is is to
-be able to treat general electronic structures for molecules consisting of
-atoms from most of the periodic table. As such, the primary focus of the
-package is on multiconfigurational methods with applications typically
-connected to the treatment of highly degenerate states.
-
 ## Molpro:
 
 Molpro is a complete system of ab initio programs for molecular electronic structure calculations.
@@ -1706,12 +1554,6 @@ individuals fall into each of a set of user-defined hybrid categories.
 
 NX is a general-purpose program package for simulating the dynamics of electronically excited molecules and molecular assemblies.
 
-## NextGenMap:
-
-NextGenMap is a flexible highly sensitive short read mapping tool that
- handles much higher mismatch rates than comparable algorithms while still outperforming
- them in terms of runtime.
-
 ## NextPolish2:
 
 a fast and efficient genome polishing tool for long-read assembly
@@ -1743,11 +1585,6 @@ any quantity of CPUs and GPUs
 ## OBITools:
 
 Manipulate various data and sequence files.
-
-## OMA:
-
-Orthologous MAtrix project is a method and database for the inference 
- of orthologs among complete genomes
 
 ## OPARI2:
 
@@ -1806,10 +1643,6 @@ OpenCV (Open Source Computer Vision Library) is an open source computer vision
  a common infrastructure for computer vision applications and to accelerate
  the use of machine perception in the commercial products.
 
-## OpenFAST:
-
-Wind turbine multiphysics simulation tool
-
 ## OpenFOAM:
 
 OpenFOAM is a free, open source CFD software package.
@@ -1844,21 +1677,9 @@ Wraps OpenSees for Python.  Load an OpenSees module as well.
 OpenSlide is a C library that provides a simple interface to
 read whole-slide images (also known as virtual slides).
 
-## OrfM:
-
-A simple and not slow open reading frame (ORF) caller.
-
-## OrthoFiller:
-
-Identifies missing annotations for evolutionarily conserved genes.
-
 ## OrthoFinder:
 
 OrthoFinder is a fast, accurate and comprehensive platform for comparative genomics
-
-## OrthoMCL:
-
-Genome-scale algorithm for grouping orthologous protein sequences.
 
 ## PALEOMIX:
 
@@ -1889,32 +1710,14 @@ The PCRE library is a set of functions that implement regular expression pattern
  and semantics as Perl 5.
 
 
-## PDT:
-
-Program Database Toolkit (PDT) is a framework for analyzing source code written in several programming languages and for making rich program
- knowledge accessible to developers of static and dynamic analysis tools. 
-
 ## PEAR:
 
 Memory-efficient,fully parallelized and highly accurate pair-end read merger.
-
-## PEST++:
-
-PEST++ is a software suite aimed at supporting
- complex numerical models in the decision-support context.
- Much focus has been devoted to supporting environmental models
- (groundwater, surface water, etc) but these tools are readily
- applicable to any computer model.
-
 
 ## PETSc:
 
 PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the
  scalable (parallel) solution of scientific applications modeled by partial differential equations.
-
-## PHASIUS:
-
-A tool to visualize phase block structure from (many) BAM or CRAM files together with BED annotation
 
 ## PLINK:
 
@@ -1996,12 +1799,6 @@ Build and execute shell commands in parallel
 
 A high-level Parallel I/O Library for structured grid applications
 
-## Peregrine:
-
-Genome assembler for long reads (length > 10kb, accuracy > 99%). 
-Based on Sparse HIereachical MimiMizER (SHIMMER) for fast read-to-read overlaping
-
-
 ## Perl:
 
 Larry Wall's Practical Extraction and Report Language
@@ -2052,10 +1849,6 @@ Pipeline for predicting and scoring hints (in the form of introns, start and
 ## Proteinortho:
 
 Proteinortho is a tool to detect orthologous genes within different species.
-
-## PyOpenGL:
-
-PyOpenGL is the most common cross platform Python binding to OpenGL and related APIs.
 
 ## PyQt:
 
@@ -2166,10 +1959,6 @@ Support for cross_match-like masklevel filtering..
 ## RNAmmer:
 
 consistent and rapid annotation of ribosomal RNA genes.
-
-## ROCm:
-
-Platform for GPU Enabled HPC and UltraScale Computing
 
 ## ROOT:
 
@@ -2326,18 +2115,9 @@ PacBio’s open-source software suite is designed for use with Single Molecule,
 SNVoter - A top up tool to enhance SNV calling from Nanopore sequencing data & 
 NanoMethPhase - Phase long reads and CpG methylations from Oxford Nanopore Technologies.
 
-## SOCI:
-
-Database access library for C++ that makes the illusion of embedding SQL queries in the
- regular C++ code, staying entirely within the Standard C++.
-
 ## SPAdes:
 
  Genome assembler for single-cell and isolates data sets 
-
-## SPIDER:
-
-System for Processing Image Data from Electron microscopy and Related fields
 
 ## SQLite:
 
@@ -2355,10 +2135,6 @@ A network communication protocol that enables two computers to communicate
 ## STAR:
 
 Fast universal RNA-seq aligner
-
-## STAR-Fusion:
-
-Processes the output generated by the STAR aligner to map junction reads and spanning reads to a reference annotation set
 
 ## SUNDIALS:
 
@@ -2544,11 +2320,6 @@ An open-source software library for Machine Intelligence
 
 NVIDIA TensorRT is a platform for high-performance deep learning inference
 
-## Theano:
-
-Theano is a Python library that allows you to define, optimize,
-and evaluate mathematical expressions involving multi-dimensional arrays efficiently.
-
 ## Tk:
 
 Tk is an open source, cross-platform widget toolchain that provides a library of basic elements for
@@ -2680,14 +2451,6 @@ Performs chimera detection, clustering, full-length and prefix dereplication, re
 all-vs-all pairwise global alignment, exact and global alignment searching, shuffling, subsampling 
 and sorting. It also supports FASTQ file analysis, filtering, conversion and merging of paired-end reads.
 
-## VTK:
-
-The Visualization Toolkit (VTK) is an open-source, freely available software system for
- 3D computer graphics, image processing and visualization. VTK consists of a C++ class library and several
- interpreted interface layers including Tcl/Tk, Java, and Python. VTK supports a wide variety of visualization
- algorithms including: scalar, vector, tensor, texture, and volumetric methods; and advanced modeling techniques
- such as: implicit modeling, polygon reduction, mesh smoothing, cutting, contouring, and Delaunay triangulation.
-
 ## VTune:
 
 Intel VTune Amplifier XE is the premier performance profiler for C, C++, C#, Fortran,
@@ -2727,12 +2490,6 @@ Tools for computing various oligonucleotide frequency (ONF) based distance/dissi
 
 VirSorter: mining viral signal from microbial genomic data.
 
-## VirtualGL:
-
-VirtualGL is an open source toolkit that gives any Linux or 
-Unix remote display software the ability to run OpenGL applications with full 
-hardware acceleration.
-
 ## WAAFLE:
 
 Workflow to Annotate Assemblies and Find LGT Events.
@@ -2749,21 +2506,6 @@ Winnowmap is a long-read mapping algorithm, and a result of our exploration
 ## Wise2:
 
 Aligning proteins or protein HMMs to DNA
-
-## XHMM:
-
-Calls copy number variation (CNV) from normalized read-depth data from exome capture or other targeted sequencing experiments.
-
-## XMDS2:
-
- Fast integrator of stochastic partial differential equations.
-
-## XSD:
-
-CodeSynthesis XSD is an open-source, cross-platform W3C XML Schema to C++ data binding compiler.
- Provided with an XML instance specification (XML Schema), it generates C++ classes that represent the given vocabulary
- as well as XML parsing and serialization code. You can then access the data stored in XML using types and functions
- that semantically correspond to your application domain rather than dealing with the intricacies of reading and writing XML
 
 ## XVFB:
 
@@ -2901,12 +2643,6 @@ An extension to awk, adding the support of several common biological data format
 
 breseq is a computational pipeline for the analysis of short-read re-sequencing data
 
-## bsddb3:
-
-bsddb3 is a nearly complete Python binding of the
-Oracle/Sleepycat C API for the Database Environment, Database, Cursor,
-Log Cursor, Sequence and Transaction objects.
-
 ## bzip2:
 
 bzip2 is a freely available, patent free, high-quality data compressor. It typically
@@ -2993,10 +2729,6 @@ The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library
 
 Fast and scalable long-read-based SV detection
 
-## cwltool:
-
-Common Workflow Language tool description reference implementation
-
 ## cyvcf2:
 
 cython + htslib == fast VCF and BCF processing
@@ -3004,10 +2736,6 @@ cython + htslib == fast VCF and BCF processing
 ## dadi:
 
 Diffusion Approximation for Demographic Inference
-
-## dammit:
-
-de novo transcriptome annotator..
 
 ## datasets:
 
@@ -3058,10 +2786,6 @@ ecCodes is a package developed by ECMWF which provides an application programmin
  a set of tools for decoding and encoding messages in the following formats: WMO FM-92 GRIB edition 1 and edition 2,
  WMO FM-94 BUFR edition 3 and edition 4, WMO GTS abbreviated header (only decoding).
 
-## ectyper:
-
-Standalone versatile serotyping module for Escherichia coli..
-
 ## edlib:
 
 Lightweight, super fast library for sequence alignment using edit (Levenshtein) distance.
@@ -3109,17 +2833,9 @@ A tool designed to provide fast all-in-one preprocessing for FastQ files.
  A collection of small and efficient programs for performing some common and 
  uncommon tasks with FASTQ files. 
 
-## fcGENE:
-
-Format converting tool for genotype Data.
-
 ## fgbio:
 
 A set of tools to analyze genomic data with a focus on Next Generation Sequencing.
-
-## fineRADstructure:
-
-A package for population structure inference from RAD-seq data
 
 ## fineSTRUCTURE:
 
@@ -3131,17 +2847,15 @@ FlatBuffers: Memory Efficient Serialization Library
 
 ## flex:
 
-Flex (Fast Lexical Analyzer) is a tool for generating scanners. A scanner,
- sometimes called a tokenizer, is a program which recognizes lexical patterns in text.
 
-## fmlrc:
+ Flex (Fast Lexical Analyzer) is a tool for generating scanners. A scanner, 
+ sometimes called a tokenizer, is a program which recognizes lexical patterns
+ in text.
 
- Tool for performing  hybrid correction of long read sequencing 
-using the BWT and FM-index of short-read sequencing data
 
 ## fmt:
 
-Formatting library providing a fast and safe alternative to C stdio and C++ iostreams.
+fmt (formerly cppformat) is an open-source formatting library.
 
 ## fontconfig:
 
@@ -3178,10 +2892,6 @@ funcX is a distributed Function as a Service (FaaS) platform that enables flexib
  launched by the user on a compute system to serve as a conduit for executing functions on
  that computer.
 
-## fxtract:
-
-Extract sequences from a fastx (fasta or fastq) file given a subsequence.
-
 ## g2clib:
 
 Library contains GRIB2 encoder/decoder ('C' version).
@@ -3189,10 +2899,6 @@ Library contains GRIB2 encoder/decoder ('C' version).
 ## g2lib:
 
 Library contains GRIB2 encoder/decoder and search/indexing routines.
-
-## ga4gh:
-
-A reference implementation of the GA4GH API
 
 ## gcloud:
 
@@ -3241,10 +2947,6 @@ GNU Compiler Collection (GCC) based compiler toolchain with Intel MPI.
 Git is a free and open source distributed version control system designed
 to handle everything from small to very large projects with speed and efficiency.
 
-## globus-automate-client:
-
-Client for the Globus Flows service.
-
 ## globus-compute-endpoint:
 
 Globus Compute is a distributed Function as a Service (FaaS) platform that enables flexible,
@@ -3286,14 +2988,6 @@ Google's C++ test framework
  table lookup needs a single string comparison only.
 
 
-## grive2:
-
-Command line tool for Google Drive.
-
-## gsort:
-
-Tool to sort genomic files according to a genomefile.
-
 ## h5pp:
 
 A simple C++17 wrapper for HDF5.
@@ -3302,18 +2996,9 @@ A simple C++17 wrapper for HDF5.
 
 Detects in-sample contamination in mtDNA or WGS sequencing studies by analyzing the mitchondrial content
 
-## help2man:
-
-help2man produces simple manual pages from the '--help' and '--version' output of other commands.
-
 ## hifiasm:
 
 Hifiasm: a haplotype-resolved assembler for accurate Hifi reads.
-
-## hunspell:
-
-Spell checker and morphological analyzer library and program designed for languages
- with rich morphology and complex word compounding or character encoding.
 
 ## hwloc:
 
@@ -3323,12 +3008,6 @@ The Portable Hardware Locality (hwloc) software package provides a portable abst
  system attributes such as cache and memory information as well as the locality of I/O devices such as
  network interfaces, InfiniBand HCAs or GPUs. It primarily aims at helping applications with gathering
  information about modern computing hardware so as to exploit it accordingly and efficiently.
-
-## hypothesis:
-
-Hypothesis is an advanced testing library for Python. It lets you write tests which are parametrized
- by a source of examples, and then generates simple and comprehensible examples that make your tests fail. This lets
- you find more bugs in your code with less work.
 
 ## icc:
 
@@ -3389,15 +3068,6 @@ GNU Compiler Collection (GCC) based compiler toolchain,
 
 ipyrad is an interactive toolkit for assembly and analysis of restriction-site associated genomic
  data sets (e.g., RAD, ddRAD, GBS) for population genetic and phylogenetic studies.
-
-## ispc:
-
-Intel SPMD Program Compilers; An open-source compiler for high-performance
- SIMD programming on the CPU. ispc is a compiler for a variant of the C programming language,
- with extensions for 'single program, multiple data' (SPMD) programming.
- Under the SPMD model, the programmer writes a program that generally appears
- to be a regular serial program, though the execution model is actually that
- a number of program instances execute in parallel on the hardware.
 
 ## jbigkit:
 
@@ -3576,11 +3246,6 @@ SpatiaLite is an open source library intended to extend the SQLite core to suppo
 GNU libtool is a generic library support script. Libtool hides the complexity of using shared libraries
  behind a consistent, portable interface.
 
-## libunistring:
-
-This library provides functions for manipulating Unicode strings and for manipulating C strings
- according to the Unicode standard.
-
 ## libunwind:
 
 Define a portable and efficient C programming API to determine the call-chain of a program. 
@@ -3661,10 +3326,6 @@ DNA sequencing reads generated by Next-Generation Sequencing platforms.
 
 Python package which enables you to launch MATLAB and access it from a web browser.
 
-## meRanTK:
-
-High performance toolkit for complete analysis of methylated RNA data.
-
 ## medaka:
 
 Medaka is a tool to create a consensus sequence from nanopore sequencing data.
@@ -3681,10 +3342,6 @@ Flexible pipeline for genome-resolved metagenomic data analysis.
 ## miRDeep2:
 
  Completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs 
-
-## mimalloc:
-
-mimalloc is a general purpose allocator with excellent performance characteristics.
 
 ## miniBUSCO:
 
@@ -3707,10 +3364,6 @@ rate ~15%. .
 
 Aligns a protein sequence against a genome with affine gap penalty, splicing and frameshift..
 
-## mlpack:
-
-Fast, and flexible C++ machine learning library with bindings to other languages
-
 ## modbam2bed:
 
 A program to aggregate modified base counts stored in a modified-base BAM file to a bedMethyl file.
@@ -3726,10 +3379,6 @@ Fast BAM/CRAM depth calculation for WGS, exome, or targeted sequencing
 ## mpcci:
 
 MpCCI is a vendor neutral and application independent interface for co-simulation. MpCCI offers advanced and proven features for multiphysics modelling.
-
-## mpifileutils:
-
-MPI-Based File Utilities For Distributed Systems
 
 ## muParser:
 
@@ -3856,12 +3505,6 @@ Almost universal document converter
 
 parallel fastq-dump wrapper
 
-## parasail:
-
-parasail is a SIMD C (C99) library containing implementations
- of the Smith-Waterman (local), Needleman-Wunsch (global), and semi-global
- pairwise sequence alignment algorithms. 
-
 ## patchelf:
 
 PatchELF is a small utility to modify the dynamic linker and RPATH of ELF executables.
@@ -3968,21 +3611,9 @@ Computes metrics and generates interactive QC plots for Oxford Nanopore technolo
 
 PyMOL (open source version) molecular visualization system.
 
-## pyspoa:
-
-Python bindings to spoa.
-
 ## qcat:
 
 Command-line tool for demultiplexing Oxford Nanopore reads from FASTQ files
-
-## rDock:
-
-rDock is a fast and versatile Open Source docking program that
-can be used to dock small molecules against proteins and nucleic acids. It is
-designed for High Throughput Virtual Screening (HTVS) campaigns and Binding Mode
-prediction studies. rDock is mainly written in C++ and accessory scripts and
-programs are written in C++, perl or python languages.
 
 ## randfold:
 
@@ -3991,10 +3622,6 @@ Minimum free energy of folding randomization test software
 ## rasusa:
 
 Randomly subsample sequencing reads to a specified coverage.
-
-## razers3:
-
-Tool for mapping millions of short genomic reads onto a reference genome.
 
 ## rclone:
 
@@ -4010,19 +3637,9 @@ fast lexers: at least as fast as their reasonably optimized hand-coded counterpa
 traditional table-driven approach, re2c encodes the generated finite state automata directly in the form
 of conditional jumps and comparisons.
 
-## rkcommon:
-
-
-A common set of C++ infrastructure and CMake utilities used by various components of Intel® oneAPI Rendering Toolkit.
-
-
 ## rnaQUAST:
 
 Tool for evaluating RNA-Seq assemblies using reference genome and gene database
-
-## rust-fmlrc:
-
-FM-index Long Read Corrector (Rust implementation)
 
 ## samblaster:
 
@@ -4030,14 +3647,6 @@ samblaster is a fast and flexible program for marking duplicates in read-id grou
 It can also optionally output discordant read pairs and/or split read mappings to separate SAM files, and/or unmapped/clipped 
 reads to a separate FASTQ file. When marking duplicates, samblaster will require approximately 20MB of memory per 1M read pairs.
 
-
-## samclip:
-
-Filter SAM file for soft and hard clipped alignments.
-
-## savvy:
-
-Interface to various variant calling formats.
 
 ## sbt:
 
@@ -4083,11 +3692,6 @@ accurate, fast nucleotide identity calculation for MAGs, genomes, and databases
 Toolkit for converting (FAST5 <-> SLOW5), compressing, viewing, indexing
  and manipulating data in SLOW5 format.
 
-## smafa:
-
-Smafa attempts to align or cluster pre-aligned biological sequences, handling sequences
- which are all the same length.
-
 ## smoove:
 
 simplifies and speeds calling and genotyping SVs for short reads.
@@ -4095,11 +3699,6 @@ simplifies and speeds calling and genotyping SVs for short reads.
 ## snakemake:
 
 The Snakemake workflow management system is a tool to create reproducible and scalable data analyses.
-
-## snaphu:
-
-SNAPHU is an implementation of the Statistical-cost, Network-flow Algorithm for Phase Unwrapping
- proposed by Chen and Zebker
 
 ## snappy:
 
@@ -4152,10 +3751,6 @@ Like a regular computer, but larger. Primarily used for heating data centers.
 
 A robust and fast clustering method for amplicon-based studies.
 The purpose of swarm is to provide a novel clustering algorithm that handles massive sets of amplicons. Results of traditional clustering algorithms are strongly input-order dependent, and rely on an arbitrary global clustering threshold. swarm results are resilient to input-order changes and rely on a small local linking threshold d, representing the maximum number of differences between two amplicons.
-
-## swissknife:
-
-Perl module for reading and writing UniProtKB data in plain text format.
 
 ## tRNAscan-SE:
 
