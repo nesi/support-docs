@@ -19526,15 +19526,16 @@
         "homepage": "https://www.rstudio.com/",
         "support": "",
         "versions": [
-            "2024.04.2-764"
+            "2024.04.2-764",
+            "2024.12.1-563"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2024.04.2-764",
+        "default": "2024.12.1-563",
         "default_type": "latest",
-        "last_updated": 1722209369,
+        "last_updated": 1741204323,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lang/RStudio-Server/2024.04.2-764.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lang/RStudio-Server/2024.12.1-563.lua",
         "force_hide": "False",
         "force_show": "False"
     },
