@@ -3884,6 +3884,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "CREST": {
+        "description": "CREST is an utility/driver program for the xtb program. Originally it was designed\n as conformer sampling program, hence the abbreviation Conformer\u2013Rotamer Ensemble Sampling Tool,\n but now offers also some utility functions for calculations with the GFNn\u2013xTB methods. Generally\n the program functions as an IO based OMP scheduler (i.e., calculations are performed by the xtb\n program) and tool for the creation and analysation of structure ensembles.\n",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://xtb-docs.readthedocs.io/en/latest/crest.html",
+        "support": "",
+        "versions": [
+            "3.0.2-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.0.2-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1743131830,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CREST/3.0.2-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "cromwell": {
         "description": "Workflow Management System geared towards scientific workflows.",
         "domains": [
@@ -7458,16 +7480,16 @@
             "cryptography-42.0.5",
             "dill-0.3.9",
             "globus_compute_common-0.5.0",
-            "globus_compute_endpoint-3.2.0",
-            "globus_compute_sdk-3.2.0",
+            "globus_compute_endpoint-3.4.0",
+            "globus_compute_sdk-3.4.0",
             "globus_identity_mapping-0.4.0",
-            "globus_sdk-3.50.0",
-            "jinja2-3.1.4",
+            "globus_sdk-3.53.0",
+            "jinja2-3.1.6",
             "jsonschema-4.23.0",
             "marshmallow-3.20.2",
             "marshmallow_oneofschema-3.1.1",
             "paramiko-3.4.0",
-            "parsl-2025.2.17",
+            "parsl-2025.3.17",
             "pika-1.3.2",
             "py-1.11.0",
             "pydantic-2.8.2",
@@ -7501,15 +7523,16 @@
             "2.27.1-foss-2023a-Python-3.11.6",
             "2.3.2-gimkl-2022a-Python-3.10.5",
             "2.30.1-foss-2023a-Python-3.11.6",
-            "3.2.0-foss-2023a-Python-3.11.6"
+            "3.2.0-foss-2023a-Python-3.11.6",
+            "3.4.0-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.2.0-foss-2023a-Python-3.11.6",
+        "default": "3.4.0-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1741289501,
+        "last_updated": 1743024309,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.2.0-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.4.0-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -23601,15 +23624,16 @@
         "homepage": "https://xtb-docs.readthedocs.io",
         "support": "",
         "versions": [
-            "6.6.1-foss-2023a"
+            "6.6.1-foss-2023a",
+            "6.7.1-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.6.1-foss-2023a",
+        "default": "6.7.1-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1711330626,
+        "last_updated": 1743131244,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/xtb/6.6.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/xtb/6.7.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
