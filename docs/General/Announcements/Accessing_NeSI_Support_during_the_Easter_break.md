@@ -13,11 +13,10 @@ search:
   boost: 0.1
 ---
 
-During the Easter break, [NeSI platform
+During the Easter break (18-21 April 2025) and ANZAC Day (25 April 2025), [NeSI platform
 services](https://status.nesi.org.nz/) will be online and available, but
-urgent / critical requests received between 5:00 pm Thursday 28 March
-and 9:00 am Wednesday 03 April will be addressed on a best effort
-basis.
+urgent / critical requests received during these times will be addressed on a best effort
+basis. 
 
 Below is a quick reminder of our main support channels as well as other
 sources of self-service support:
