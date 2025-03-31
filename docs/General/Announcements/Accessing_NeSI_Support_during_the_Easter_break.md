@@ -1,10 +1,10 @@
 ---
-description: A page sharing the details of reduced support hours over Easter break
+description: A page sharing the details of reduced support hours over Easter and ANZAC break
 created_at: '2024-03-20T01:58:22Z'
 hidden: false
 position: 0
 tags: []
-title: Accessing NeSI Support during the Easter break
+title: Accessing NeSI Support during the Easter and ANZAC holidays
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 9308584352783
@@ -36,7 +36,7 @@ sources of self-service support:
     introductory training webinars.
 
 - {% include "partials/support_request.html" %} (Note:
-    non-emergency requests will be addressed on or after 03 April)
+    non-emergency requests will be addressed after the Easter and ANZAC breaks listed above)
 
 On behalf of the entire NeSI team, we wish you a safe and relaxing
 break.
