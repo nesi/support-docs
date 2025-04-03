@@ -5,6 +5,16 @@
 
 # NeSI OnDemand Release Notes
 
+## 0.3.2 - Fixes to ongoing bugs
+
+Two bugs that have been an ongoing issue for the users have been fixed.
+
+- Session starting incorrectly with missing port on the URL. This was due to the behind the scenes clean-up algorithm being too aggressive. This has now been fixed.
+- Users with dots in the username could not launch sessions correctly. This has been fixed.
+
+(This release is on Open OnDemand version 3.1.10)
+
+
 ## 0.3.1 - High memory option available in ondemand
 
 This release enables high memory node to be selected by the users. Currently we support up to 32GB instance on the app launch.
