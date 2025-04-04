@@ -1,0 +1,31 @@
+#new-footer {
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #101010;
+}
+
+#partners {
+    height: auto;
+    background-color: #101010;
+}
+
+#partners #logos img {
+    height: 40px;
+    margin: 10px;
+}
+
+#partners #logos {
+    padding: 10px;
+    text-align: center;
+}
+
+#partners #logos .nesi-footer-logo img {
+    margin-right: 100px;
+    height: 60px;
+}
+
+#partners #logos img {
+    height: 40px;
+    margin: 10px;
+}
