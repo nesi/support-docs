@@ -2,7 +2,7 @@
 created_at: 2024-09-05
 description: "Copy of 04 September email sent to all NeSI users with current Nearline allocations"
 status: new
-tags: [refresh]
+tags: freezer, nearline
 search:
   boost: 2
 ---
