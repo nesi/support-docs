@@ -12,7 +12,6 @@
                 "showReuseMessage": false
             },
             "command": "./checks/run_meta_check.py",
-
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {
@@ -62,7 +61,7 @@
                 "reveal":"never",
                 "showReuseMessage": false
             },
-            "command": "./checks/run_pyspelling.py",
+            "command": "./checks/run_spell_check.py",
             "problemMatcher": {
                 "pattern": {
                     "regexp": "^::(notice|warning|error) file=(.*?),line=([0-9]*),col=([0-9]*),endColumn=([0-9]*),title=(.*?)::(.*)$",
@@ -101,6 +100,58 @@
                     "relative",
                     "${workspaceFolder}/docs"
                 ],
+            },
+        },
+        {
+            "label": "slurm-lint",
+            "args": [
+                "${file}"
+            ],
+            "presentation": {
+                "reveal":"never",
+                "showReuseMessage": false
+            },
+            "command": "./checks/run_slurm_lint.py",
+            "problemMatcher": {
+                "severity": "info",
+                "pattern": {
+                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),col=([0-9]*),endColumn=([0-9]*),line=([0-9]*)::(.*)$",
+                    "severity": 1,
+                    "file": 2,
+                    "code": 3,
+                    "column": 4,
+                    "endColumn": 5,
+                    "line": 6,
+                    "message": 7,
+                },
+                "owner": "slurm-lint",
+                "fileLocation": "autoDetect",
+            },
+        },
+        {
+            "label": "fetch",
+            "group": "none",
+            "type": "shell",
+            "isBackground": false,
+            "presentation": {
+                "reveal":"never",
+                "showReuseMessage": false
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "command": "bash .github/fetch_includes.sh",
+            "problemMatcher": {
+                "severity": "info",
+                "pattern": {
+                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?)::(.*)$",
+                    "severity": 1,
+                    "file": 2,
+                    "code": 3,
+                    "message": 4
+                },
+                "owner": "fetch",
+                "fileLocation": "autoDetect",
             },
         },
         {

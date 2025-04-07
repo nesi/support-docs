@@ -328,6 +328,43 @@ Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 
 Note the additional spacing around the `+` else it will appear cramped.
 
+### Slurm Scripts
+
+The most common use of a code block is to display an example Slurm script.  
+
+We want our examples to be easy to understand, but also users _will_ copy
+paste them, so we also want them to be working scripts that wont cause easily avoidable errors.
+
+If possible stick to the following principles.
+
+- Make sure the code block has the `sl` language tag. This will inform syntax highlight an CI checks.
+- Use `!#/bin/bash -e` as your shebang.
+- One blank line between shebang and Slurm Header.
+- Use <kbd>tab</kbd> for your Slurm header delimiter.
+- Use the long for Slurm keywords, e.g. `--job-name` rather than `-j`.
+- Make sure to include `--job-name`, `--account` (`nesi99991`) and `--time`.
+- One blank line after Slurm header.
+- Always `module purge` before `module load`.
+- Include version in `module load`. See [Variable Injection](#variables-injection) for convenience macro.
+- Don't be too fancy. We all know you are very clever,
+but your script examples should do the bare minimum needed to provide a safe example.
+- If possible, include an example that will work for the user, e.g. one of the tutorial files. (`wget`, `$EB_ROOT`, etc)
+
+#### Example
+
+<pre><code><span>```sl</span>
+<span>#!/bin/bash -e</span>
+<span></span>
+<span>#SBATCH --job-name          test-job</span>
+<span>#SBATCH --account          nesi99991</span>
+<span>#SBATCH --time             01:00:00 </span>
+<span></span>
+<span>module purge</span>
+<span>module load MATLAB/2022a</span>
+<span></span>
+<span>matlab -r myFile.m    # Some nice informative comment.</span>
+<span>```</span></code></pre>
+
 ## Images
 
 ```md

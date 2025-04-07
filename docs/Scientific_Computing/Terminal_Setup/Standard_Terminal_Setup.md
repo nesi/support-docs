@@ -3,18 +3,17 @@ created_at: '2018-11-30T00:34:14Z'
 tags:
 - ssh
 - howto
-vote_count: 8
-vote_sum: 6
-zendesk_article_id: 360000625535
-zendesk_section_id: 360000189696
+description: How to setup your ssh config file in order to connect to the NeSI cluster.
 ---
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
      -   Set up your [Linux Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-     -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
-     -   Using standard Linux/Mac terminal *or* [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-         with [Ubuntu terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md).
+     -   Set up [Second Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
+     -   Have one of:
+         - Built in Linux/Mac terminal
+         - [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
+         - [VSCode](../../Scientific_Computing/Terminal_Setup/VSCode.md)
 
 ## First time setup
 
@@ -22,25 +21,16 @@ The login process can be simplified significantly with a few easy
 configurations.
 
 1. In a new local terminal run; `mkdir -p ~/.ssh/sockets` this will
-    create a hidden file in your home directory to store socket
+    create a subdirectory in your home directory to store socket
     configurations.
 
-2. Open your ssh config file with `nano ~/.ssh/config` and add the
+2. Open your ssh config file (e.g. `nano ~/.ssh/config` to open with the text editor `nano`) and add the
     following (replacing **`username`** with your username):
 
     ```sh
     Host mahuika
        User username
        Hostname login.mahuika.nesi.org.nz
-       ProxyCommand ssh -W %h:%p lander
-       ForwardX11 yes
-       ForwardX11Trusted yes
-       ServerAliveInterval 300
-       ServerAliveCountMax 2
-
-    Host maui
-       User username
-       Hostname login.maui.nesi.org.nz
        ProxyCommand ssh -W %h:%p lander
        ForwardX11 yes
        ForwardX11Trusted yes
@@ -74,21 +64,6 @@ to the clusters directly using;
 ```sh
 ssh mahuika
 ```
-
-or
-
-```sh
-ssh maui
-```
-
-Subsequent local terminals opened will be able to `scp` files without
-having to re-enter authentication e.g.
-
-```sh
-scp <path/filename> mahuika:~/
-```
-
-For more info visit [data transfer](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md).
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)

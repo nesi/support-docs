@@ -34,7 +34,7 @@ operating system and level of experience.
  accessed through the Jupyter Launcher.  
 
 !!! prerequisite "What next?"
-    -  More info on [Jupyter Terminal](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md#jupyter-term)
+    -  More info on [Jupyter Terminal](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md#jupyter-terminal)
     -  Visit [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz/hub/).
 
 ## Linux or Mac OS
@@ -77,7 +77,7 @@ different options, listed in order of preference.
 !!! tip "What next?"
     -  Enabling
        [WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-    -  Setting up the [Ubuntu Terminal](../../Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md)
+    -  Setting up the [Ubuntu Terminal](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
     -  Setting up
        [X-Forwarding](../../Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md)
 
@@ -119,8 +119,8 @@ Once you have a working VM you may continue following the
 instructions as given for [Linux/MacOS](#linux-or-mac-os).
 
 !!! tip "What next?"
-    -  Setting up a [Virtual
-       Machine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
+    -  Setting up a
+    [Virtual Machine](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/)
 
 ### WinSCP
 

@@ -3,16 +3,24 @@
     "triggerTaskOnSave.on": true,
     "triggerTaskOnSave.tasks": {
         "meta-checks": [
-            "docs/**/*.md"
+            "docs/**/*.md",
+            "checks/fail_checks.md"
         ],
         "proselint-checks": [
-            "docs/**/*.md"
+            "docs/**/*.md",
+            "checks/fail_checks.md"
         ],
         "spelling-checks": [
-            "docs/**/*.md"
+            "docs/**/*.md",
+            "checks/fail_checks.md"
+        ],
+        "slurm-lint": [
+            "docs/**/*.md",
+            "checks/fail_checks.md"
         ],
         "test-build": [
-            "docs/**/*.md"
+            "docs/**/*.md",
+            "checks/fail_checks.md"
         ]
     },
     "files.autoSave": "afterDelay",

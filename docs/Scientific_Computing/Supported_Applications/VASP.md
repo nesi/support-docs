@@ -1,16 +1,10 @@
 ---
 created_at: '2015-09-08T03:11:50Z'
 tags:
-- mahuika
 - chemistry
 - Density Functional Theory
 - Molecular Dynamics
 - Computational Chemistry
-title: VASP
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 209379527
-zendesk_section_id: 360000040076
 ---
 
 
@@ -49,7 +43,7 @@ For more information, please visit the VASP home page at
 
 VASP is currently available on the Mahuika and Māui clusters.
 
-## Licensing requirements
+## Licences
 
 VASP is made available to researchers under commercial licence
 agreements with individuals, research groups or institutions. Whether
@@ -145,13 +139,12 @@ it run faster. Distributing a job across multiple nodes may also put the
 job at greater risk of node failure. You can request a single node with
 `--nodes=1`for jobs of up to `--ntasks=128`, which is enough for most
 VASP calculations. If you would like help making a large job more
-efficient, please [contact our support
+efficient, please contact our support
 team {% include "partials/support_request.html" %}.
 
 ### VASP runs faster on Milan nodes
 
-[Milan compute
-nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
+[Milan compute nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
 are not only our most powerful compute nodes, but often have shorter
 queues! These nodes are still opt-in at the moment, meaning you need to
 specify `--partition=milan` in your Slurm script, which we strongly

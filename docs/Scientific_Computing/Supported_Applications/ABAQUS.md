@@ -7,11 +7,6 @@ tags:
 - mpi
 - omp
 - fea
-title: ABAQUS
-vote_count: 2
-vote_sum: 0
-zendesk_article_id: 212457807
-zendesk_section_id: 360000040076
 ---
 
 {% set app_name = page.title | trim %}
@@ -135,12 +130,12 @@ Not all solvers are compatible with all types of parallelisation.
 
 === "Distributed Memory"
     `mp_mode=mpi`
-    Multiple processes each with a single *thread*. Not limited to one node.
-    Model will be segmented into `-np` pieces which
-    should be equal to `--ntasks`
+    Multiple processes each with a single *thread*. Not limited to one node.
+    Model will be segmented into `-np` pieces which
+    should be equal to `--ntasks`
     Each task could be running on a different node leading to increased
-    communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the
-    queue as contiguous cpu's are harder to schedule.
+    communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the
+    queue as contiguous cpu's are harder to schedule.
     This is the default method if `mp_mode` is left
     unspecified.
 
@@ -171,7 +166,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --time          00:05:00       # Walltime</span></span>
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           4G         # total mem</span></span>
-    #SBATCH --gpus-per-node
+    #SBATCH --gpus-per-node 1
     module load ABAQUS/{{app.default}}
     module load CUDA
     abaqus job="propeller_s4rs_c3d8r" cpus=${SLURM_CPUS_PER_TASK} \

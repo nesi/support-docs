@@ -3,19 +3,13 @@ created_at: '2015-10-14T22:58:53Z'
 tags:
 - engineering
 - ml
-title: MATLAB
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 212639047
-zendesk_section_id: 360000040076
+- matlab
+description: Examples and tips on how to use MATLAB on the NeSI platform.
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 !!! warning "No Licence?"
      If you want to run MATLAB code on the cluster, but are not a member of an institution without access to floating licences, MATLAB code can still be run on the cluster using MCR.
@@ -23,12 +17,14 @@ zendesk_section_id: 360000040076
 ## Example scripts
 
 !!! info
-     When developing MATLAB code on your local machine, take measures to ensure it will be platform independent.  Use relative paths when possible and not avoid using '\\s see [here](https://www.mathworks.com/help/matlab/ref/fullfile.html).
+     When developing MATLAB code on your local machine, take measures to ensure it will be platform independent.  Use relative paths when possible and not avoid using '\\'s see [fullfile](https://www.mathworks.com/help/matlab/ref/fullfile.html).
 
 === "Script"
 
     ```sl
     #!/bin/bash -e
+
+    #SBATCH --account        nesi99991     # Your project code
     #SBATCH --job-name   MATLAB_job     # Name to appear in squeue 
     #SBATCH --time       01:00:00       # Max walltime 
     #SBATCH --mem        512MB          # Max memory
@@ -43,7 +39,8 @@ zendesk_section_id: 360000040076
 
     ``` sl
     #!/bin/bash -e
-     
+
+    #SBATCH --account        nesi99991     # Your project code
     #SBATCH --job-name       MATLAB_job    # Name to appear in squeue
     #SBATCH --time           06:00:00      # Max walltime
     #SBATCH --mem            2048MB        # Max memory
@@ -129,8 +126,8 @@ embarrassingly parallel. Therefore all variables either need to be
 defined locally (used internally within one iteration of the loop), or
 static (not changing during execution of loop).
 
-More info
-[here](https://au.mathworks.com/help/parallel-computing/parfor.html).
+More info on
+[parfor](https://au.mathworks.com/help/parallel-computing/parfor.html).
 
 #### parfeval
 
@@ -153,8 +150,8 @@ end
 
 `fetchOutputs` is used to retrieve the values.
 
-More info
-[here](https://au.mathworks.com/help/parallel-computing/parfeval.html).
+More info on 
+[parfeval](https://au.mathworks.com/help/parallel-computing/parfeval.html).
 
 !!! tip
      When killed (cancelled, timeout, etc), job steps utilising parpool may
@@ -162,47 +159,42 @@ More info
      and not necessarily cause to raise total memory requested.
 
 Determining which of
-[these](https://au.mathworks.com/help/parallel-computing/troubleshoot-variables-in-parfor-loops.html) categories
+[parfor variable categories](https://au.mathworks.com/help/parallel-computing/troubleshoot-variables-in-parfor-loops.html) 
 your variables fall under is a good place to start when attempting to
 parallelise your code.
 
 ## Using GPUs
 
 As with standard parallelism, some MATLAB functions will work implicitly
-on GPUs while other require setup. More info on using GPUs with MATLAB
-[here](https://au.mathworks.com/help/parallel-computing/run-matlab-functions-on-a-gpu.html),
-and writing code for GPUs
-[here](https://au.mathworks.com/hardware-support/nvidia-tesla.html).
+on GPUs while other require setup. More info on using [GPUs with MATLAB](https://au.mathworks.com/help/parallel-computing/run-matlab-functions-on-a-gpu.html),
+and [writing code for GPUs](https://au.mathworks.com/hardware-support/nvidia-tesla.html).
 
 MATLAB uses NVIDIA CUDA toolkit. Depending on the version of MATLAB, a
-different version of CUDA is needed, see [GPU Support by
-Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)
+different version of CUDA is needed, see [GPU Support by Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)
 in MATLAB documentation. Use `module spider CUDA` to list all available
 CUDA modules and select the appropriate one. For example, for MATLAB
 R2021a, use `module load CUDA/11.0.2` before launching MATLAB.
 
 If you want to know more about how to access the different type of
-available GPUs on NeSI, check the [GPU use on
-NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
+available GPUs on NeSI, check the [GPU use on NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
 support page.
 
 !!! tip "Support for A100 GPUs"
      To use MATLAB with a A100 or a A100-1g.5gb GPU, you need to use a
-     version of MATLAB supporting the *Ampere* architecture (see [GPU
-     Support by
-     Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)).
+     version of MATLAB supporting the *Ampere* architecture (see [GPU Support by Release](https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html)).
      We recommend that you use R2021a or a more recent version.
 
 !!! tip "GPU cost"
      A GPU device-hour costs more than a core-hour, depending on the type
-     of GPU. You can find a comparison table in our [What is an
-     allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+     of GPU. You can find a comparison table in our [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
      support page.
 
 ### GPU Example
 
 ``` sl
 #!/bin/bash -e
+
+#SBATCH --account        nesi99991     # Your project code
 #SBATCH --job-name       MATLAB_GPU    # Name to appear in squeue
 #SBATCH --time           01:00:00      # Max walltime
 #SBATCH --mem            10G           # 10G per GPU
@@ -253,8 +245,7 @@ Fortunately MATLAB lets programmers extend their scripts with C/C++ or
 Fortran, which is referred to as
 [mexing](https://au.mathworks.com/help/matlab/ref/mex.html).
 
-more info about compiling software on NeSI
-[here](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md).
+more info about [compiling software on NeSI](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md).
 
 ### Writing mex functions
 
@@ -318,8 +309,8 @@ MATLAB will take care of destroying matrices and other object so you
 should feel free to create objects inside C++ code (required for
 functions that have return values).
 
-Some mex function source code examples can be found in the table
-[here](https://au.mathworks.com/help/matlab/matlab_external/table-of-mex-file-source-code-files.html).
+Some examples can be found in the table
+[mex function source code](https://au.mathworks.com/help/matlab/matlab_external/table-of-mex-file-source-code-files.html).
 
 ### Compilation
 
@@ -335,13 +326,7 @@ The most up to date compilers supported by MATLAB can be loaded on NeSI
 using `module load gimkl/2017a`
 
 If no GCC module is loaded, the default system version of these
-compilers will be used.
-
-Further configuration can be done within MATLAB using the command
-`mex -setup`
-
-`mex <file_name>`  will then compile the mex function.
-
+compilers will be used.#using-gpu
 Default compiler flags can be overwritten with by setting the
 appropriate environment variables. The COMPFLAGS variable is ignored as
 it is Windows specific.
@@ -365,11 +350,13 @@ When using versions of MATLAB more recent than 2021a you may notice the
 following warning.
 
 ```matlab
-ldd
+ldd: missing file arguments
+Try `ldd --help' for more information.
+glibc_shim: Didn't find correct code to patch
 ```
 
 This is due to our operating system being too old.
 
 With the exception of a few commands that directly make requests of the OS, your code should run fine.
 
-If you believe this bug is causing problems, running on our newer hardware will fix it.
+If you believe this bug is causing problems, running on our newer hardware (e.g.  `--partition milan`) will fix it.

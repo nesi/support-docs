@@ -1,17 +1,24 @@
 name: Fetch Remote Assets 
 on: 
   workflow_dispatch:
+      inputs:
+          force:
+              type: boolean
+              description: Force even if no changes.
   schedule:
     - cron: '00 12 * * *' # Should run 1 hour after module list update.
 env:
   MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
+  MODULES_UPDATE_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
   GLOSSARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
   DICTIONARY_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
   SNIPPETS_URL: "https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
   BRANCH_NAME: "assets-update"
+  TARGET_OWNER: "nesi"
+  TARGET_REPO: "support-docs"
 jobs:
   fetch-includes:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: "Set Up Env"
         uses: actions/checkout@v4
@@ -20,34 +27,30 @@ jobs:
       - run: | 
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config pull.rebase true
-          # git checkout ${GITHUB_REF}
-          # git pull origin ${GITHUB_REF}
-          git branch -D ${BRANCH_NAME} || true
-          git checkout -b ${BRANCH_NAME}
+          git config pull.ff only 
+          git pull origin ${BRANCH_NAME} || git checkout -b ${BRANCH_NAME}
+          git fetch
+          git merge ${GITHUB_REF}
           mkdir -pv docs/assets/glossary
-      - name: Module List
-        run: |
-          wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
-          python3 .github/workflows/link_apps_pages.py
-          git add --all
-          git commit -m "Updated Module List" || (echo "No Changes";exit 0)
-      - name: Fetch Wordlist
-        run: |
-            wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
-            wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
-            wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
-            git add --all
-            git commit -m "Updated Glossary" || (echo "No Changes";exit 0)
+      - name: Run script
+        run: bash .github/fetch_includes.sh
       - name: Commit to Branch 
         id: commit
         run: |
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
-            if [[ $(git log ${GITHUB_REF}..HEAD) ]]; then
-                git pull origin ${BRANCH_NAME}
+            if [[ $(git log ${GITHUB_REF}..HEAD) ||  ${{ github.event.inputs.force }} == 'true' ]]; then
                 git push origin ${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
+                gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
+                # gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
                 gh workflow run -R nesi/support-docs -r assets-update -f fileList=" " checks.yml
+                # curl -L \
+                #   -X POST \
+                #   -H "Accept: application/vnd.github+json" \
+                #   -H "Authorization: Bearer ${{ secrets.PAT }}" \
+                #   -H "X-GitHub-Api-Version: 2022-11-28" \
+                #   https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/pulls \
+                #   -d '{"title":"Automatic Asset Update - $(date +'%Y-%m-%d')" ,"body"::${body_message}"","head":"$BRANCH_NAME","base":"main"}'
             else
                 echo "no changes"
             fi

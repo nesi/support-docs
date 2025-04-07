@@ -2,7 +2,6 @@
 created_at: '2016-02-04T03:09:05Z'
 tags:
 - mahuika
-- tier1
 - chemistry
 vote_count: 0
 vote_sum: 0

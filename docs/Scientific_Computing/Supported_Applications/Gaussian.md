@@ -3,11 +3,7 @@ created_at: '2015-07-29T23:31:02Z'
 tags:
 - mahuika
 - chemistry
-vote_count: 5
-vote_sum: 1
 description: How to run Gaussian on the NeSI HPC
-zendesk_article_id: 207127857
-zendesk_section_id: 360000040076
 ---
 
 {% set app_name = page.title | trim %}
@@ -27,7 +23,7 @@ species and compounds which are difficult or impossible to observe
 experimentally (e.g., short-lived intermediates and transition
 structures).
 
-## Licensing requirements
+## Licences
 
 Gaussian is made available to researchers under closed-source,
 commercial licence agreements with individuals, research groups or
