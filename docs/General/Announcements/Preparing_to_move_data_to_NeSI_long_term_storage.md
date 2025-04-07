@@ -1,6 +1,6 @@
 ---
 created_at: 2024-09-05
-description: "An important update about NeSI's Nearline service and transition plan to Freezer, NeSI's new long-term storage platform."
+description: "An important update about NeSI's Nearline service."
 status: new
 tags: [refresh]
 search:
@@ -13,7 +13,7 @@ We’re nearly ready to welcome you onto Freezer, NeSI’s [new long-term storag
 
 Below are important details about our transition from Nearline and our plan for welcoming you onto Freezer. 
 
-## Help us streamline the migration process
+## Help us streamline migration
 
 We’re currently migrating your data from Nearline to Freezer so that it is ready and waiting for you on the new platform. To ensure this process runs as efficiently and quickly as possible, please refrain from writing new data or recalling any data after Friday 11 April. 
 
@@ -43,7 +43,7 @@ _Read/write access during the transition period:_
 | Freezer service available (estimate: mid to late May) | available                             | available                                |
 
 
-## Data management during this transition
+## Data management during transition
 
 The current tapes from Nearline will form part of NIWA’s new long-term storage offering, Rapids. Once all Nearline data has been migrated to NeSI’s Freezer service, its metadata will be removed from Rapids, and over time, the tape storage media will be over-written. This means that the data will be inaccessible on NIWA’s service, however the data itself may be retained until eventual destruction by NIWA when the tapes are decommissioned. We are working with NIWA to ensure that suitable protections are in place and that the data is managed appropriately.
 
