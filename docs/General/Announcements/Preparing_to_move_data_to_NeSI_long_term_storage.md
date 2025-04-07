@@ -37,7 +37,8 @@ _Read/write access during the transition period:_
 | Phase                                         | Read access                           | Read/write access                        |
 |:-----------------------------------------------|:--------------------------------------|:----------------------------------------|
 | Current                                   | available                             | available until 11 April                |
-| Preparing for Nearline outage (11-14 April)| no new read access, existing jobs will finish | no new read/write access, existing jobs will finish |
+| Preparing for Nearline outage (11-14 April)| no new read access, but existing jobs will be allowed to finish | no new read/write access, existing jobs will finish |
+
 | Nearline service outage (expecting two weeks) and physical tape migration | not available                         | not available                            |
 | Transitional phase (starting May 1)       | available                             | not available                            |
 | Freezer service available (estimate: mid to late May) | available                             | available                                |
