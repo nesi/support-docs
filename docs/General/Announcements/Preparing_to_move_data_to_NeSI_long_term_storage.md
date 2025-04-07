@@ -2,7 +2,7 @@
 created_at: 2024-09-05
 description: "An important update about NeSI's Nearline service."
 status: new
-tags: [refresh]
+tags: freezer, nearline
 search:
   boost: 2
 ---
