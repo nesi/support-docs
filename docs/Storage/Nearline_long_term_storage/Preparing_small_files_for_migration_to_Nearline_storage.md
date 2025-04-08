@@ -8,6 +8,8 @@ zendesk_article_id: 360001298595
 zendesk_section_id: 360000042255
 ---
 
+!!! warning
+    We are currently in the process of migrating to our [new long-term storage platform, Freezer](https://www.nesi.org.nz/case-studies/deeper-dive-nesis-platform-refresh-part-1). That means no new Nearline allocations are currently being granted and a Nearline service outage is scheduled to begin on Monday 14 April for about two weeks. If you have an urgent need to write or recall data beyond 11 April, [contact NeSI Support](mailto:support@nesi.org.nz). [You can find more details regarding the migration to Freezer on our announcement page](https://docs.nesi.org.nz/General/Announcements/update_to_nearline_service/).
 
 Migration of files from your project or nobackup directory to your
 nearline directory is a two-step process. In the first step, the data is
