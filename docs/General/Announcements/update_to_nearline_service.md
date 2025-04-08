@@ -2,7 +2,7 @@
 created_at: 2024-09-05
 description: "An important update about NeSI's Nearline service."
 status: new
-tags: freezer, nearline
+tags: [refresh]
 search:
   boost: 2
 ---
@@ -45,12 +45,12 @@ _Read/write access during the transition period:_
 | Freezer service available (estimate: mid to late May) | available                             | available                                |
 
 
-## Data management during transition
+## Data management
 
 The current tapes from Nearline will form part of NIWA’s new long-term storage offering, Rapids. Once all Nearline data has been migrated to NeSI’s Freezer service, its metadata will be removed from Rapids, and over time, the tape storage media will be over-written. This means that the data will be inaccessible on NIWA’s service, however the data itself may be retained until eventual destruction by NIWA when the tapes are decommissioned. We are working with NIWA to ensure that suitable protections are in place and that the data is managed appropriately.
 
 ## We're here to support you
 
 We are ready to provide wrap-around support for you as we modernise and improve our long-term storage service. We have
-[weekly Online Office Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md) to talk through any questions you may have or provide one-to-one support. Also, you can email our Support Team at any time. {% include "partials/support_request.html" %}
+[weekly Online Office Hours](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md) to talk through any questions you may have or provide one-to-one support. Also, you can [email our Support Team at any time](mailto:support@nesi.org.nz).
 
