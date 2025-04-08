@@ -6,12 +6,6 @@
 
 This page contains a list of known issues with NeSI OnDemand, if any.
 
-## Token expiry
-
-This is another known bug where the back-end system token isn’t refreshed correctly after timeouts. If you run into error messages while trying to launch an app, you can resolve this by logging out of NeSI OnDemand, logging back in again and then clicking on Help button at the top right and selecting Restart Web Server.
-
-[![restart_web_server](restart_web_server.png)](restart_web_server.png)
-
 ## Filesystem synchronisation
 
 Your data will have been copied from Mahuika into the OnDemand environment. However, any changes made in OnDemand will not be synchronised back to Mahuika.
@@ -19,10 +13,6 @@ Your data will have been copied from Mahuika into the OnDemand environment. Howe
 ## "You are already logged in" message
 
 If you have a browser session of NeSI OnDemand that is older than ~3 hours, and try to log back into the system, you may encounter a message saying “You are already logged in” without any actionable button. This is a known bug, and for now you would need to go back to the NeSI OnDemand URL ([https://ondemand.nesi.org.nz/](https://ondemand.nesi.org.nz/)) and you will arrive on the correct landing page.
-
-## User accounts with dots in the username
-
-If you have an existing NeSI account with a dot as a part of your Linux username, there is a known bug with Open OnDemand and Kubernetes which prevents us from initiating some application. Currently RStudio has this issue and we are working on a fix.
 
 ## "Error -- can't find user for …" messages
 
