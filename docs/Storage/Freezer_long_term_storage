@@ -1,0 +1,147 @@
+---
+created: 2025-04-04
+description: "NeSI's Freezer service allows you to store your data on tape for long term storage."
+tags: [Freezer, storage]
+---
+
+NeSI's Freezer service  powered by Versity, is our completely redesigned long-term storage service to support research data. It consists of a staging area (disk) connected to a tape library. Users of this service gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use this service for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the freezer backend service and size of the data to be ingested or retrieved.
+
+Due to the tape storage backend Freezer is intended for use with relatively large files and should not be used for a large number of small files. This service is a replacement for Nearline. Freezer is compatible with the common S3 cloud protocol and existing tools such as those used for accessing AWS S3 service.
+
+## Getting started
+
+Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI] ("https://my.nesi.org.nz/")
+
+We recommend using s3cmd tool for interacting with Freezer
+
+## Installation
+The s3cmd tool is not installed by default so has to be user installed. 
+
+Load a Python module
+'''module load Python/3.11.6-foss-2023a'''
+Install s3cmd for your user
+'''pip install s3cmd --user'''
+
+## Configure
+Configuring the tool allows for user credentials and default buckets to be remembered.
+'''s3cmd --configure
+Enter new values or accept defaults in brackets with Enter.
+Refer to user manual for detailed description of all options.
+Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
+Access Key: tber027 
+Secret Key: $dR!2sn67Hh4
+Default Region: us-east-1
+Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
+S3 Endpoint: 210.7.37.122:7070
+Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(location)s" vars can be used
+if the target S3 system supports dns based buckets.
+DNS-style bucket+hostname:port template for accessing a bucket: 210.7.37.122:7070
+Encryption password is used to protect your files from reading
+by unauthorized persons while in transfer to S3
+Encryption password: 
+Path to GPG program [/usr/bin/gpg]: 
+When using secure HTTPS protocol all communication with Amazon S3
+servers is protected from 3rd party eavesdropping. This method is
+slower than plain HTTP, and can only be proxied with Python 2.7 or newer
+Use HTTPS protocol: No
+On some networks all internet access must go through a HTTP proxy.
+Try setting it here if you can't connect to S3 directly
+HTTP Proxy server name: 
+New settings:
+  Access Key: tber027
+  Secret Key: $dR!2sn67Hh4
+  Default Region: us-east-1
+  S3 Endpoint: 210.7.37.122:7070
+  DNS-style bucket+hostname:port template for accessing a bucket: 210.7.37.122:7070
+  Encryption password: 
+  Path to GPG program: /usr/bin/gpg
+  Use HTTPS protocol: False
+  HTTP Proxy server name: 
+  HTTP Proxy server port: 0
+Test access with supplied credentials? [Y/n] '''
+
+## List contents of a bucket
+
+List all objects in a bucket
+'''s3cmd ls -r s3://nesi99999/'''
+This can also be used to list all the objects in path
+
+## List all buckets
+
+List all objects in all buckets
+'''s3cmd la'''
+
+## Disk usage by buckets
+'''s3cmd du
+6282828001060    1781 objects s3://nesi99999/
+------------
+6282828001060 Total'''
+
+## Put objects
+
+To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
+
+'''s3cmd put yourfile s3://nesi99999/cwil201/yourfile
+upload: 'yourfile' -> 's3://nesi99999/cwil201/yourfile'  [1 of 1]
+ 172202 of 172202   100% in    0s   920.89 KB/s  done'''
+
+or folders
+
+'''s3cmd put yourfolder s3://nesi99999/cwil201/yourfolder/ --recursive
+upload: 'yourfolder/yourfile' -> 's3://nesi99999/cwil201/yourfolder/yourfolder/yourfile'  [1 of 1]
+ 172202 of 172202   100% in    0s  1691.71 KB/s  done'''
+
+Once the upload is successful, as signalled by the ‘done’ your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.  
+
+## List objects before restore
+
+List contained objects/files/folders:
+
+'''s3cmd ls s3://nesi99999/tb-test/openrefine01/'''
+
+or all objects recursive -r or --recursive
+
+'''s3cmd ls -r s3://nesi99999/tb-test/openrefine01/'''
+
+## Restore from tape
+
+Restore file from Glacier storage <StorageClass>GLACIER</StorageClass>
+
+'''s3cmd restore --recursive s3://nesi99999/tb-test/openrefine01/ 
+restore: 's3://nesi99999/tb-test/openrefine01/1957656657122.project/data.zip'
+restore: 's3://nesi99999/tb-test/openrefine01/1957656657122.project/metadata.json'
+restore: 's3://nesi99999/tb-test/openrefine01/1957656657122.project/metadata.old.json'
+restore: 's3://nesi99999/tb-test/openrefine01/dbextension/.saved-db-connections.json'
+restore: 's3://nesi99999/tb-test/openrefine01/workspace.json'
+restore: 's3://nesi99999/tb-test/openrefine01/workspace.old.json''''
+
+## Get objects after restore
+
+Example to get/download the directory ‘openrefine01’ and all contained objects/files/folders:
+
+## s3cmd reference
+
+[s3cmd tool] ("https://s3tools.org/usage")
+
+### Glossary
+
+## Known issues/pain points to resolve
+
+get s3cmd tool installed by default on Mahuika
+
+the region field is confusing and misleading, currently only us-east-1 works (even though this is not the region of where the data is) - investigate if we can adapt or contribute to the s3cmd tool to remove some of the s3 - source code - s3cmd/s3cmd.1 at 8cb9b23992714b5ec22c1e514a50996e25aa333b · s3tools/s3cmd - should it be ap-southeast-2-akl-1a
+
+many open issues and unresolved PRs on the s3cmd tool 
+
+have to reload correct python module on re-connect to Mahuika
+
+can only transfer data from Mahuika to Freezer (from other locations is out of scope in the short term)
+
+Error when attempting s3cmd du
+''' Invoked as: /home/njon001/.local/Python-3.11-foss-2023a/bin/s3cmd du
+Problem: <class 'UnboundLocalError: cannot access local variable 'size' where it is not associated with a value
+S3cmd:   2.4.0
+python:   3.11.6 (main, Nov 20 2023, 12:22:12) [GCC 12.3.0]''''
+
+
+
