@@ -14,3 +14,5 @@ search:
 
 If you have any questions about any of the updates, please
 {% include "partials/support_request.html" %}.
+
+Note: This also covers my.nesi.org.nz release notes v2.32.0 where we improved further the Mahuika compute units default values rounding.

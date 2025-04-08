@@ -17,7 +17,7 @@ person includes:
 - Acting as a primary liaison / contact person on behalf of your
     institution for anything related to the service Subscription.
 
-- Rpproving allocation requests for projects from your institution.
+- Approving allocation requests for projects from your institution.
 
 - Receiving and reviewing the Subscriber Monthly Usage Reports.
 
