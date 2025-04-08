@@ -10,7 +10,6 @@ search:
   boost: 2
 ---
 
-_Updated on 07 April 2025_
 
 We’re nearly ready to welcome you onto Freezer, NeSI’s [new long-term storage platform](https://www.nesi.org.nz/case-studies/deeper-dive-nesis-platform-refresh-part-1). The initial storage offering on this new platform replaces our current Nearline service and will offer a similar long-term tape-based solution storing a single copy of data.
 
