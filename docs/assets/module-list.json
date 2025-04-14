@@ -2248,8 +2248,6 @@
         "homepage": "",
         "support": "",
         "versions": [
-            "2024-01",
-            "2024-04",
             "2024-07",
             "2024-10",
             "2025-01"
@@ -7480,16 +7478,16 @@
             "cryptography-42.0.5",
             "dill-0.3.9",
             "globus_compute_common-0.5.0",
-            "globus_compute_endpoint-3.2.0",
-            "globus_compute_sdk-3.2.0",
+            "globus_compute_endpoint-3.4.0",
+            "globus_compute_sdk-3.4.0",
             "globus_identity_mapping-0.4.0",
-            "globus_sdk-3.50.0",
-            "jinja2-3.1.4",
+            "globus_sdk-3.53.0",
+            "jinja2-3.1.6",
             "jsonschema-4.23.0",
             "marshmallow-3.20.2",
             "marshmallow_oneofschema-3.1.1",
             "paramiko-3.4.0",
-            "parsl-2025.2.17",
+            "parsl-2025.3.17",
             "pika-1.3.2",
             "py-1.11.0",
             "pydantic-2.8.2",
@@ -7523,15 +7521,16 @@
             "2.27.1-foss-2023a-Python-3.11.6",
             "2.3.2-gimkl-2022a-Python-3.10.5",
             "2.30.1-foss-2023a-Python-3.11.6",
-            "3.2.0-foss-2023a-Python-3.11.6"
+            "3.2.0-foss-2023a-Python-3.11.6",
+            "3.4.0-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.2.0-foss-2023a-Python-3.11.6",
+        "default": "3.4.0-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1741289501,
+        "last_updated": 1743024309,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.2.0-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.4.0-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8532,11 +8531,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.19-GCC-11.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1702956401,
+        "last_updated": 1743996074,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.19-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14436,7 +14435,8 @@
             "22.10.7",
             "23.04.1",
             "23.10.0",
-            "24.04.4"
+            "24.04.4",
+            "24.10.5"
         ],
         "admin_list": [
             {
@@ -14459,11 +14459,11 @@
             }
         ],
         "network_licences": [],
-        "default": "24.04.4",
+        "default": "24.10.5",
         "default_type": "latest",
-        "last_updated": 1730166651,
+        "last_updated": 1744157970,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.04.4.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.10.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19670,6 +19670,32 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "s3cmd": {
+        "description": "Command line tool for managing S3 compatible storage services",
+        "domains": [
+            "tools"
+        ],
+        "extensions": [
+            "python-dateutil-2.9.0.post0",
+            "python-magic-0.4.27",
+            "s3cmd-2.4.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/s3tools/s3cmd",
+        "support": "",
+        "versions": [
+            "2.4.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.4.0",
+        "default_type": "latest",
+        "last_updated": 1744170483,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/s3cmd/2.4.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "SAGE": {
         "description": "Ppackage containing programs for use in the genetic analysis of\nfamily, pedigree and individual data.",
         "domains": [
@@ -19838,11 +19864,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.19-GCC-12.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
         "last_updated": 1743996137,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.19-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
