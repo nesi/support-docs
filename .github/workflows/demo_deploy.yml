@@ -14,9 +14,10 @@ jobs:
   demo-deploy:
     continue-on-error: true
     name: Trigger test deployments
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Trigger Workflow in Another Repository
+        continue-on-error: true 
         run: |
           set -x
           set -o xtrace 
@@ -54,6 +55,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Post messages open requests
+        continue-on-error: true
         run: |
             msg="Test deployment available at <a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}\">${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}</a>"
             changed_pages="$(git diff --name-only origin/main -- '*.md')"

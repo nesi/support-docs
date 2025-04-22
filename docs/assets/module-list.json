@@ -2248,8 +2248,6 @@
         "homepage": "",
         "support": "",
         "versions": [
-            "2024-01",
-            "2024-04",
             "2024-07",
             "2024-10",
             "2025-01"
@@ -8518,6 +8516,7 @@
             "1.18-GCC-11.3.0",
             "1.19-GCC-11.3.0",
             "1.19-GCC-12.3.0",
+            "1.21-GCC-12.3.0",
             "1.3.2-gimkl-2017a",
             "1.8-gimkl-2017a",
             "1.8-gimkl-2018b",
@@ -14436,7 +14435,8 @@
             "22.10.7",
             "23.04.1",
             "23.10.0",
-            "24.04.4"
+            "24.04.4",
+            "24.10.5"
         ],
         "admin_list": [
             {
@@ -14461,7 +14461,7 @@
         "network_licences": [],
         "default": "24.04.4",
         "default_type": "latest",
-        "last_updated": 1730166651,
+        "last_updated": 1744157970,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.04.4.lua",
         "force_hide": "False",
@@ -19817,6 +19817,7 @@
             "1.15.1-GCC-11.3.0",
             "1.16.1-GCC-11.3.0",
             "1.19-GCC-12.3.0",
+            "1.21-GCC-12.3.0",
             "1.3.1-gimkl-2017a",
             "1.8-gimkl-2017a",
             "1.8-gimkl-2018b",
@@ -19839,7 +19840,7 @@
         "network_licences": [],
         "default": "1.19-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1709142490,
+        "last_updated": 1743996137,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.19-GCC-12.3.0.lua",
         "force_hide": "False",
