@@ -3401,15 +3401,16 @@
         "versions": [
             "0.2.2-gimkl-2022a",
             "0.2.5-gimkl-2022a",
-            "0.2.6-gimkl-2022a"
+            "0.2.6-gimkl-2022a",
+            "0.2.7-gimkl-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.2.6-gimkl-2022a",
+        "default": "0.2.7-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1736737368,
+        "last_updated": 1744759240,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/compleasm/0.2.6-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/compleasm/0.2.7-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8531,11 +8532,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.19-GCC-11.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1702956401,
+        "last_updated": 1743996074,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.19-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14199,18 +14200,15 @@
         "homepage": "",
         "support": "",
         "versions": [
-            "1.1.0.21",
-            "1.1.0.21",
-            "1.1.0.22",
-            "1.1.0.22"
+            "1.1.0.23"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.1.0.22",
+        "default": "1.1.0.23",
         "default_type": "latest",
-        "last_updated": 1630017054,
+        "last_updated": 1744347812,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/tools/nearline/1.1.0.22",
+        "module_path": "/opt/nesi/share/modules/all/nearline/1.1.0.23",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14459,11 +14457,11 @@
             }
         ],
         "network_licences": [],
-        "default": "24.04.4",
+        "default": "24.10.5",
         "default_type": "latest",
         "last_updated": 1744157970,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.04.4.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.10.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15439,7 +15437,8 @@
         "support": "",
         "versions": [
             "6.2-gimpi-2022a",
-            "6.2-gompi-2022a"
+            "6.2-gompi-2022a",
+            "6.2-gompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
@@ -19670,6 +19669,32 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "s3cmd": {
+        "description": "Command line tool for managing S3 compatible storage services",
+        "domains": [
+            "tools"
+        ],
+        "extensions": [
+            "python-dateutil-2.9.0.post0",
+            "python-magic-0.4.27",
+            "s3cmd-2.4.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/s3tools/s3cmd",
+        "support": "",
+        "versions": [
+            "2.4.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.4.0",
+        "default_type": "latest",
+        "last_updated": 1744170483,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/s3cmd/2.4.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "SAGE": {
         "description": "Ppackage containing programs for use in the genetic analysis of\nfamily, pedigree and individual data.",
         "domains": [
@@ -19838,11 +19863,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.19-GCC-12.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
         "last_updated": 1743996137,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.19-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
