@@ -5,6 +5,9 @@ tags:
     - refresh
 ---
 
+!!! warning "EARLY ACCESS ONLY"
+    This is only relevant to those with early access to HPC3.
+
 What's not working yet
 
 ## pam_slurm_adopt
