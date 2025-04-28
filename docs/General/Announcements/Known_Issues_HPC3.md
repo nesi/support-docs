@@ -1,5 +1,6 @@
 ---
 created_at: 2025-04-28
+description: List of features currently missing from HPC3.
 tags: 
     - hpc3
     - refresh
