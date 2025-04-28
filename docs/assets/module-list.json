@@ -2248,8 +2248,6 @@
         "homepage": "",
         "support": "",
         "versions": [
-            "2024-01",
-            "2024-04",
             "2024-07",
             "2024-10",
             "2025-01"
@@ -3403,15 +3401,16 @@
         "versions": [
             "0.2.2-gimkl-2022a",
             "0.2.5-gimkl-2022a",
-            "0.2.6-gimkl-2022a"
+            "0.2.6-gimkl-2022a",
+            "0.2.7-gimkl-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.2.6-gimkl-2022a",
+        "default": "0.2.7-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1736737368,
+        "last_updated": 1744759240,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/compleasm/0.2.6-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/compleasm/0.2.7-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3881,6 +3880,28 @@
         "last_updated": 1674719647,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/CRAMINO/0.9.7-GCC-11.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "CREST": {
+        "description": "CREST is an utility/driver program for the xtb program. Originally it was designed\n as conformer sampling program, hence the abbreviation Conformer\u2013Rotamer Ensemble Sampling Tool,\n but now offers also some utility functions for calculations with the GFNn\u2013xTB methods. Generally\n the program functions as an IO based OMP scheduler (i.e., calculations are performed by the xtb\n program) and tool for the creation and analysation of structure ensembles.\n",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://xtb-docs.readthedocs.io/en/latest/crest.html",
+        "support": "",
+        "versions": [
+            "3.0.2-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.0.2-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1743131830,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CREST/3.0.2-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4526,7 +4547,7 @@
         "domains": [],
         "extensions": [],
         "licence_type": "",
-        "homepage": "",
+        "homepage": "https://docs.deepmodeling.com/projects/deepmd/en/master/",
         "support": "",
         "versions": [
             "2.1.1"
@@ -7458,16 +7479,16 @@
             "cryptography-42.0.5",
             "dill-0.3.9",
             "globus_compute_common-0.5.0",
-            "globus_compute_endpoint-3.2.0",
-            "globus_compute_sdk-3.2.0",
+            "globus_compute_endpoint-3.4.0",
+            "globus_compute_sdk-3.4.0",
             "globus_identity_mapping-0.4.0",
-            "globus_sdk-3.50.0",
-            "jinja2-3.1.4",
+            "globus_sdk-3.53.0",
+            "jinja2-3.1.6",
             "jsonschema-4.23.0",
             "marshmallow-3.20.2",
             "marshmallow_oneofschema-3.1.1",
             "paramiko-3.4.0",
-            "parsl-2025.2.17",
+            "parsl-2025.3.17",
             "pika-1.3.2",
             "py-1.11.0",
             "pydantic-2.8.2",
@@ -7501,15 +7522,16 @@
             "2.27.1-foss-2023a-Python-3.11.6",
             "2.3.2-gimkl-2022a-Python-3.10.5",
             "2.30.1-foss-2023a-Python-3.11.6",
-            "3.2.0-foss-2023a-Python-3.11.6"
+            "3.2.0-foss-2023a-Python-3.11.6",
+            "3.4.0-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.2.0-foss-2023a-Python-3.11.6",
+        "default": "3.4.0-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1741289501,
+        "last_updated": 1743024309,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.2.0-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.4.0-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8495,6 +8517,7 @@
             "1.18-GCC-11.3.0",
             "1.19-GCC-11.3.0",
             "1.19-GCC-12.3.0",
+            "1.21-GCC-12.3.0",
             "1.3.2-gimkl-2017a",
             "1.8-gimkl-2017a",
             "1.8-gimkl-2018b",
@@ -8509,11 +8532,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.19-GCC-11.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1702956401,
+        "last_updated": 1743996074,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.19-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14177,18 +14200,15 @@
         "homepage": "",
         "support": "",
         "versions": [
-            "1.1.0.21",
-            "1.1.0.21",
-            "1.1.0.22",
-            "1.1.0.22"
+            "1.1.0.23"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.1.0.22",
+        "default": "1.1.0.23",
         "default_type": "latest",
-        "last_updated": 1630017054,
+        "last_updated": 1744347812,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/tools/nearline/1.1.0.22",
+        "module_path": "/opt/nesi/share/modules/all/nearline/1.1.0.23",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14413,7 +14433,8 @@
             "22.10.7",
             "23.04.1",
             "23.10.0",
-            "24.04.4"
+            "24.04.4",
+            "24.10.5"
         ],
         "admin_list": [
             {
@@ -14436,11 +14457,11 @@
             }
         ],
         "network_licences": [],
-        "default": "24.04.4",
+        "default": "24.10.5",
         "default_type": "latest",
-        "last_updated": 1730166651,
+        "last_updated": 1744157970,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.04.4.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.10.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15416,7 +15437,8 @@
         "support": "",
         "versions": [
             "6.2-gimpi-2022a",
-            "6.2-gompi-2022a"
+            "6.2-gompi-2022a",
+            "6.2-gompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
@@ -19647,6 +19669,32 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "s3cmd": {
+        "description": "Command line tool for managing S3 compatible storage services",
+        "domains": [
+            "tools"
+        ],
+        "extensions": [
+            "python-dateutil-2.9.0.post0",
+            "python-magic-0.4.27",
+            "s3cmd-2.4.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/s3tools/s3cmd",
+        "support": "",
+        "versions": [
+            "2.4.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.4.0",
+        "default_type": "latest",
+        "last_updated": 1744170483,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/s3cmd/2.4.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "SAGE": {
         "description": "Ppackage containing programs for use in the genetic analysis of\nfamily, pedigree and individual data.",
         "domains": [
@@ -19794,6 +19842,7 @@
             "1.15.1-GCC-11.3.0",
             "1.16.1-GCC-11.3.0",
             "1.19-GCC-12.3.0",
+            "1.21-GCC-12.3.0",
             "1.3.1-gimkl-2017a",
             "1.8-gimkl-2017a",
             "1.8-gimkl-2018b",
@@ -19814,11 +19863,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.19-GCC-12.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1709142490,
+        "last_updated": 1743996137,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.19-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -23601,15 +23650,16 @@
         "homepage": "https://xtb-docs.readthedocs.io",
         "support": "",
         "versions": [
-            "6.6.1-foss-2023a"
+            "6.6.1-foss-2023a",
+            "6.7.1-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.6.1-foss-2023a",
+        "default": "6.7.1-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1711330626,
+        "last_updated": 1743131244,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/xtb/6.6.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/xtb/6.7.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },

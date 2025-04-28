@@ -11,6 +11,9 @@ zendesk_article_id: 360001169956
 zendesk_section_id: 360000042255
 ---
 
+!!! warning
+    We are currently in the process of migrating to our [new long-term storage platform, Freezer](https://www.nesi.org.nz/case-studies/deeper-dive-nesis-platform-refresh-part-1). That means no new Nearline allocations are currently being granted and a Nearline service outage is scheduled to begin on Monday 14 April for about two weeks. If you have an urgent need to write or recall data beyond 11 April, [contact NeSI Support](mailto:support@nesi.org.nz). [You can find more details regarding the migration to Freezer on our announcement page](https://docs.nesi.org.nz/General/Announcements/update_to_nearline_service/).
+
 NeSI's Nearline service allows you to store your data on our hierarchical system, which consists of a staging area (disk) connected to a tape library. Users of this service gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use this service for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the nearline backend service and size of the data to be ingested or retrieved.
 
 Due to the tape storage backend Nearline is intended for use with relatively large files and should not be used for a large number of small files. Files smaller than 64 MB will not be accepted for upload and should be combined into archive files using `nn_archive_files`, `tar` or a similar tool. Likewise, Nearline write semantics are different from a normal filesystem - overwriting existing files (e.g. when the source data has been updated) is not supported, these must first be removed (purged from Nearline) before being written (put to Nearline) again.
