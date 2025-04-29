@@ -1,7 +1,6 @@
 ---
 created_at: 2024-09-05
 description: "An important update about NeSI's Nearline service."
-status: new
 tags:
   - refresh
   - nearline
