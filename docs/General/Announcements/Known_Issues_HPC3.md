@@ -32,6 +32,10 @@ The current nodes are not accessible.
 
 The Slurm option `--profile` will not work.
 
+## Cylc workflow engine
+
+Cylc has not been installed. You can use the instructions [here](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install cylc.
+
 ## Internet
 
 You will not be able to connect to the internet.
@@ -41,5 +45,5 @@ You will not be able to connect to the internet.
 ## Software
 
 - Delft3D_FM
-- Ans software using node locked licences (QChem).
+- Any software using node locked licences (QChem).
 - Any software using an external licence server,  (MATLAB, ANSYS, ABAQUS, COMSOL).
