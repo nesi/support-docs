@@ -35,6 +35,10 @@ Our custom Slurm option `--gres=ssd` does not yet work.
 
 The Slurm option `--profile` will run, but the profiles generated are only visible to NeSI staff.
 
+## Cylc workflow engine
+
+Cylc has not been installed. You can use the instructions [here](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install cylc.
+
 ## Internet
 
 You will not be able to connect to the internet from compute node.  In particular that will affect software which uses an externally hosted license server, such as MATLAB and ANSYS.
