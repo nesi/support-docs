@@ -20,13 +20,14 @@ To ensure a smooth process, we’re managing the migration in stages to avoid an
 
 Join us for a progress update on 01 May where we’ll share more details about the transition process and can answer any questions you may have:
 
-Platform Refresh Update: Getting ready for migration
-Thursday 01 May
-1:00 - 2:00 pm
-Online - [Register here for the Zoom link](https://www.eventbrite.co.nz/e/platform-refresh-update-getting-ready-for-migration-registration-1250718515749?aff=oddtdtcreator)
+**Platform Refresh Update: Getting ready for migration**
+
+**Thursday 01 May , 1:00 - 2:00 pm**
+
+**Online - [Register here for the Zoom link](https://www.eventbrite.co.nz/e/platform-refresh-update-getting-ready-for-migration-registration-1250718515749?aff=oddtdtcreator)**
 
 This session will be recorded.
 
-It’s taken a lot of hard work to get to this point and we can’t wait for you to experience everything these new platforms have to offer. If you missed our last progress update, you can catch up here.
+It’s taken a lot of hard work to get to this point and we can’t wait for you to experience everything these new platforms have to offer. If you missed our last progress update, you can [catch up here](https://www.nesi.org.nz/news/2025/04/laying-essential-groundwork-launching-nesis-new-platforms).
 
 If you have any questions before our May 1st webinar, don’t hesitate to get in touch.
