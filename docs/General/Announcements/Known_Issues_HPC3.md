@@ -13,7 +13,7 @@ What's not working yet
 
 ## pam_slurm_adopt
 
-You cannot `ssh` to compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remore compute nodes, eg: ORCA, some versions of PEST.
+You cannot `ssh` to compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes, e.g: ORCA, some versions of PEST.
 
 ## Filesystem Snapshots
 
@@ -41,7 +41,7 @@ Cylc has not been installed. You can use [these instructions](https://cylc.githu
 
 ## Internet
 
-You will not be able to connect to the internet from compute node.  In particular that will affect software which uses an externally hosted license server, such as MATLAB and ANSYS.
+You will not be able to connect to the internet from compute node. In particular that will affect software which uses an externally hosted license server, such as MATLAB and ANSYS.
 
 ## email
 
@@ -49,6 +49,7 @@ Slurm options `--mail-type` is not yet effective.
 
 ## Software
 
-- Some software will need to be recompiled (Delft3D_FM).
 - Any software using node locked licences (QChem).
 - Any software using an external licence server,  (MATLAB, ANSYS, ABAQUS, COMSOL).
+- Some software will need to be recompiled (Delft3D_FM).
+
