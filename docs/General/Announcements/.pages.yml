@@ -1,5 +1,6 @@
 ---
 nav:
+  - migration_timeline_and_transition_plan.md
   - update_to_nearline_service.md
   - Early_access_opens_for_OnDemand.md
   - Visual_Studio_Code_Remote-Next_Release_Not_Supported.md
