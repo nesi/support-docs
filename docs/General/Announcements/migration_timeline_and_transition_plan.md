@@ -28,6 +28,6 @@ Join us for a progress update on 01 May where we’ll share more details about t
 
 This session will be recorded.
 
-It’s taken a lot of hard work to get to this point and we can’t wait for you to experience everything these new platforms have to offer. If you missed our last progress update, you can catch up here.
+It’s taken a lot of hard work to get to this point and we can’t wait for you to experience everything these new platforms have to offer. If you missed our last progress update, you can [catch up here](https://www.nesi.org.nz/news/2025/04/laying-essential-groundwork-launching-nesis-new-platforms).
 
 If you have any questions before our May 1st webinar, don’t hesitate to get in touch.
