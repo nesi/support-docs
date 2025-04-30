@@ -21,7 +21,7 @@ You will not be able to recover any deleted files.
 
 ## Nodes
 
-So far there are only 2 Milan nodes present (the rest are still in Mahuika, or in transit), along with all the new Genoa nodes.  There are no hugemem nodes either, but the largest of the Genoa nodes do have 1.5 TB of memory.
+So far there are only the new Genoa and 2 of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes either, but the largest of the Genoa nodes do have 1.5 TB of memory.
 
 ## GPUs
 
@@ -41,7 +41,7 @@ Cylc has not been installed. You can use [these instructions](https://cylc.githu
 
 ## Internet
 
-You will not be able to connect to the internet from compute node. In particular that will affect software which uses an externally hosted license server, such as MATLAB and ANSYS.
+You will not be able to connect to the internet from a compute node. In particular that will affect software which uses an externally hosted license server, such as MATLAB and ANSYS.
 In addition functions such as `wget` and `curl` or access to external databases such as NCBI won't work.
 
 ## email
