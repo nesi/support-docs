@@ -7,7 +7,8 @@ hide: toc
 
 Technical documentation for the NeSI High Performance Computing platform.
 
-## Platform Refresh
+## New platforms coming online
+Ways you can stay connected with the changes as we shift to new platforms.
 
 [cards cols=3 (./docs/cards-platform-refresh.yaml)]
 
