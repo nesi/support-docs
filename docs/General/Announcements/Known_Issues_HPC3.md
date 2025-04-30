@@ -13,7 +13,7 @@ What's not working yet
 
 ## pam_slurm_adopt
 
-You cannot _ssh_ to compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remore compute nodes, eg: ORCA, some versions of PEST.
+You cannot `ssh` to compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remore compute nodes, eg: ORCA, some versions of PEST.
 
 ## Filesystem Snapshots
 
@@ -37,7 +37,7 @@ The Slurm option `--profile` will run, but the profiles generated are only visib
 
 ## Cylc workflow engine
 
-Cylc has not been installed. You can use the instructions [here](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install cylc.
+Cylc has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install cylc.
 
 ## Internet
 
@@ -49,6 +49,6 @@ Slurm options `--mail-type` is not yet effective.
 
 ## Software
 
-- Delft3D_FM
+- Some software will need to be recompiled (Delft3D_FM).
 - Any software using node locked licences (QChem).
 - Any software using an external licence server,  (MATLAB, ANSYS, ABAQUS, COMSOL).
