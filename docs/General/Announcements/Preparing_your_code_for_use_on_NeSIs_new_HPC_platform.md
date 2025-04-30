@@ -1,6 +1,5 @@
 ---
 created_at: '2024-01-16T22:06:12Z'
-status: new
 tags: 
   - toolchain
   - compiler
