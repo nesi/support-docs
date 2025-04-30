@@ -42,6 +42,7 @@ Cylc has not been installed. You can use [these instructions](https://cylc.githu
 ## Internet
 
 You will not be able to connect to the internet from compute node. In particular that will affect software which uses an externally hosted license server, such as MATLAB and ANSYS.
+In addition functions such as `wget` and `curl` or access to external databases such as NCBI won't work.
 
 ## email
 
