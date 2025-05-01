@@ -9,7 +9,7 @@ tags:
 !!! warning "EARLY ACCESS ONLY"
     This is only relevant to those with early access to HPC3.
 
-What's not working yet
+What's not working yet - the hope is to have these issues resolved by the end of may or as soon as possible.
 
 ## pam_slurm_adopt
 
