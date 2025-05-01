@@ -23,13 +23,13 @@ You can place a file named `.RSYNC_FILTER` in your directory (home, project, or 
 
 Each line of the file (other than comment lines and blank lines) specifies a rule.  The paths to the various files and sub-directories are tested against these rules in turn, with the first rule to match the path taking effect.  Each rule consists of an operator (`+` or `-`), an optional modifier (`!`), a single space, and then a pattern:
 
-- `- pattern` excludes paths which match the pattern.
-
-- `-! pattern` excludes paths which don't match the pattern.
-
 - `+ pattern` includes paths which match the pattern.
 
+- `- pattern` excludes paths which match the pattern.
+
 - `+! pattern` includes paths which don't match the pattern.
+
+- `-! pattern` excludes paths which don't match the pattern.
 
 ### Patterns
 
@@ -57,6 +57,7 @@ We are running rsync with these filtering rules:
 - /.policy
 # Caches and corefiles don't need to be preserved
 - /.cache
+- /*/.lmod.d
 - core.[0-9]*
 # Your additional rules from any .RSYNC_FILTER file are inserted here
 : .RSYNC_FILTER
@@ -91,14 +92,14 @@ A more selective example of a simple .RSYNC_FILTER file would be:
 
 ```rsync
 # Keep everything other than the "JobTmpDir" directory
-+! JobTmpDir
++! /JobTmpDir
 ```
 
 or
 
 ```rsync
 # Keep only the "Important" directory and its contents
-+ Important/***
++ /Important/***
 ```
 
 or equivalently:
@@ -111,6 +112,34 @@ or equivalently:
 
 Note that `+ /Important` by itself would only keep the (now empty) directory, and `+ /Important/**` by itself would never be tested against the important file names because the directory would be excluded and so never looked at by rsync.  `+ /Important**` would work but would also match a filename like, for example, `ImportantButNotReally.2023.tgz`.
 
+If combining exclusions and inclusions, remember that the order matters, as the first rule to match each file path is the effective one:
+
+```rsync
+# Specific match appears before the generic wildcard, since "Temporary" would also match "***"
+- /MyData/Temporary
++ /MyData/***
+```
+
+## Large multi-user projects
+
+`.RSYNC_FILTER` files can be put in any directory, not just the top one, so resposibility for subdirectories can be delegated, which may be useful if you have a project or nobackup directory containing several per-user subdirectories.  Users can then manage their own `.RSYNC_FILTER` files, just so long as the project's top level rules don’t completely exclude their directory in advance.  In such cases the .RSYNC_FILTER in the nobackup directory might look like:
+
+```rsync
+# Include all top-level directories (but not their contents), subdirectories can specify their own inclusions. 
++ /*/
+```
+
+or
+
+```rsync
+# Keep everything except any stray non-directory top level content, subdirectories can specify their own exclusions.
++ /*/***
+```
+
 ## Checking on progress
 
-Logs can be found in `/opt/nesi/migration/syncs` which record each successful synchronisation.  
+To check on how often or how recently your data was synced, the command `nn_data_migration_rsyncs` displays the five most recent rsync runs. You can give a project code to it as a command line argument, or else it will default to showing records for your home directory and the project and nobackup directories for each of your projects.  
+
+For the size of the migrated data, logs can be found in `/opt/nesi/migration/syncs` which record each successful synchronisation, but it will soon be just as easy to log in to the new system and check for yourself what data is present.
+
+
