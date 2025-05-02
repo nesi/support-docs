@@ -9,7 +9,7 @@ tags:
 !!! warning "EARLY ACCESS ONLY"
     This is only relevant to those with early access to HPC3.
 
-What's not working yet - the hope is to have these issues resolved by the end of may or as soon as possible.
+What's not working yet - the hope is to have these issues resolved by the end of May or as soon as possible.
 
 ## pam_slurm_adopt
 
@@ -53,4 +53,8 @@ Slurm options `--mail-type` is not yet effective.
 - Any software using node locked licences (QChem).
 - Any software using an external licence server,  (MATLAB, ANSYS, ABAQUS, COMSOL).
 - Some software will need to be recompiled (Delft3D_FM).
+
+## Globus
+
+There are currently no endpoints configured, workflows that make use of globus will not work
 
