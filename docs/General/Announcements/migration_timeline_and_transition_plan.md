@@ -16,15 +16,15 @@ This is our latest advanced HPC and AI platform designed to underpin a diverse a
 
 ## Migration timeline
 
-During May & June, we’re all moving to the new platforms. Here’s our current timeline:
+During May & June, we’re all moving to the new platforms. Here’s our current timeline. From Next Week:
 
-* Next Week, from **5 May** – Onboard early access users - reach out to support@nesi.org.nz if you’re keen on jumping in.
+* **5 May** – Onboard early access users - reach out to support@nesi.org.nz if you’re keen on jumping in.
 * **8 May** onwards – No new projects or allocations or users will start on Māui or Mahuika. These requests will be allocated on the new platforms to start from 1 June
 * Week of **12 May** – Onboard all users with existing NeSI HPC allocations
 * **19/20 May** - [Outage](https://status.nesi.org.nz/incidents/3y3ttj57fts6) to move our user identity and project admin platforms. Impacts:
-  * Mahuika and Māui HPC clusters will be unaffected for ssh users
-  * Users will not be able to login to my.nesi.org.nz or use interactive compute services (OnDemand, Jupyter)
-  * Users will not be able to log-in to the new HPC platform (running jobs will be unaffected)
+    * Mahuika and Māui HPC clusters will be unaffected for ssh users
+    * Users will not be able to login to my.nesi.org.nz or use interactive compute services (OnDemand, Jupyter)
+    * Users will not be able to log-in to the new HPC platform (running jobs will be unaffected)
 * **23 May** - Access to Māui HPC platform is closed off
 * **1 June** onwards – Onboard new projects (projects, users, allocations)
 * **13 June** - Access to Mahuika HPC platform is closed off
