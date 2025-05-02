@@ -30,8 +30,10 @@ During May & June, we’re all moving to the new platforms. Here’s our current
 - **13 June** - Access to Mahuika HPC platform is closed off
 
 
-!!! "Note:"
-    We are physically moving parts of the computing infrastructure from Wellington to Auckland. During that time, capacity will fluctuate and there will be periods of longer queue wait times and slower throughput of work. If you’re worried about that, get in touch and we’ll see what we can do to support you.
+!!! info
+    We are physically moving parts of the computing infrastructure from Wellington to Auckland. 
+    During that time, capacity will fluctuate and there will be periods of longer queue wait times and slower throughput of work. 
+    If you’re worried about that, get in touch and we’ll see what we can do to support you.
 
  
 ## Get ready to migrate
