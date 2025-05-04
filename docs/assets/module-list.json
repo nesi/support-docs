@@ -15409,15 +15409,16 @@
         "versions": [
             "6.2-gimpi-2022a",
             "6.2-gompi-2022a",
-            "6.2-gompi-2023a"
+            "6.2-gompi-2023a",
+            "6.2-iimpi-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.2-gompi-2022a",
+        "default": "6.2-iimpi-2022a",
         "default_type": "latest",
-        "last_updated": 1682639629,
+        "last_updated": 1745951411,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/perf/OSU-Micro-Benchmarks/6.2-gompi-2022a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/perf/OSU-Micro-Benchmarks/6.2-iimpi-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
