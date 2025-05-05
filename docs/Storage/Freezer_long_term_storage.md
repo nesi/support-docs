@@ -48,7 +48,7 @@ Access Key: <your username>
 Secret Key: <your secret key>
 Default Region: us-east-1
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
-S3 Endpoint: 210.7.37.122:7070
+S3 Endpoint: freezer.nesi.org.nz:7070
 ```
 
 ```
@@ -80,8 +80,8 @@ New settings:
   Access Key: <your username>
   Secret Key: <your secret key>
   Default Region: us-east-1
-  S3 Endpoint: 210.7.37.122:7070
-  DNS-style bucket+hostname:port template for accessing a bucket: 210.7.37.122:7070
+  S3 Endpoint: freezer.nesi.org.nz:7070
+  DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
   Encryption password: 
   Path to GPG program: /usr/bin/gpg
   Use HTTPS protocol: False
