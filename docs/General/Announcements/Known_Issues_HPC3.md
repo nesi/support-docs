@@ -21,7 +21,7 @@ The resources dedicated to interactive work via a web browser are smaller, and s
 
 Slurm jobs can not yet be submitted from within OnDemand.
 
-## Login Authenication
+## Login Authentication
 
 Currently, when logging into HPC3 using a proxy you will be prompted for authentication twice.
 
@@ -55,11 +55,11 @@ Our custom Slurm option `--gres=ssd` does not yet work.
 
 **Delft3D_FM** wasn't working in Mahuika's milan partition so probably needs rebuilding.
 
-As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environement modules cause system software to stop working, eg: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
+As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
 
 ## Globus
 
-There are currently no endpoints configured, workflows that make use of globus will not work
+There are currently no endpoints configured, workflows that make use of Globus will not work
 
 ## email
 
