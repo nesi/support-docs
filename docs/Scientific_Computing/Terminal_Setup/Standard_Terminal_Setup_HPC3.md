@@ -68,6 +68,9 @@ configurations.
 
     Depending on the terminal used, you may have to hold `ctrl` when clicking to follow the link.
 
+!!! warn "Double Authentication"
+    If you set up your `.ssh/config` as recommended you will be prompted to authenticate again. We are working on fixing this.
+
 7. Select your institution, you will be prompted to provide your login details.
 
 8. Click 'Yes' when prompted to trust this device. This will allow you to log in without 2FA for 7 days. The name can be anything.
