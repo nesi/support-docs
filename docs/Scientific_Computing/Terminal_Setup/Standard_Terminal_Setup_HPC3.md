@@ -6,8 +6,7 @@ tags:
 description: How to setup your ssh config file in order to connect to the NeSI cluster.
 ---
 
-!!! warning "EARLY ACCESS ONLY"
-    See [Known Issues HPC3](../../General/Announcements/Known_Issues_HPC3.md) for more info.
+{% include "partials/hpc3_disclaimer.html" %}
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
