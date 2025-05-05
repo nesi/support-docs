@@ -35,7 +35,7 @@ No A100 GPUs have been moved yet, so only H100 and L4 GPUs are available.
 
 ## Internet
 
-You will not be able to connect to the internet from a compute node. In particular that will affect software which uses an externally hosted license server, such as MATLAB and ANSYS. And programs such as `wget` and `curl` or access to external databases such as NCBI won't work.
+as at 6th May Internet connectivity is available but may change and should not be relied upon. 
 
 ## Node-local SSD access
 
