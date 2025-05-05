@@ -21,6 +21,10 @@ The resources dedicated to interactive work via a web browser are smaller, and s
 
 Slurm jobs can not yet be submitted from within OnDemand.
 
+## Login Authenication
+
+Currently, when logging into HPC3 using a proxy you will be prompted for authentication twice.
+
 ## Login Nodes
 
 The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU and memory limits.
