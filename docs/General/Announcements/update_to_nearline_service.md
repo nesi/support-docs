@@ -1,5 +1,5 @@
 ---
-created_at: 2024-09-05
+created_at: 2025-04-07
 description: "An important update about NeSI's Nearline service."
 tags:
   - refresh
@@ -40,7 +40,7 @@ _Read/write access during the transition period:_
 | Current                                   | available                             | available until 11 April                |
 | Preparing for Nearline outage (11-14 April)| no new read access, but existing jobs will be allowed to finish | no new read/write access, existing jobs will finish |
 | Nearline service outage (estimate: 2 weeks) and physical tape migration | not available                         | not available                            |
-| Transitional phase (starting May 1)       | available                             | not available                            |
+| Transitional phase (starting May 12)       | available                             | not available                            |
 | Freezer service available (estimate: mid to late May) | available                             | available                                |
 
 

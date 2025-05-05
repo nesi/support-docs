@@ -1,5 +1,6 @@
 ---
 created_at: 2025-04-28
+description: List of features currently missing from HPC3.
 tags: 
     - hpc3
     - refresh
@@ -8,42 +9,64 @@ tags:
 !!! warning "EARLY ACCESS ONLY"
     This is only relevant to those with early access to HPC3.
 
-What's not working yet
+What's not working yet - the hope is to have these issues resolved by the end of May or as soon as possible. This is a temporary page.
 
-## pam_slurm_adopt
+## Filesystem Snapshots
 
-You cannot SSH to compute nodes, even if you are running jobs.
+You can not recover any deleted files.
 
-## snapshots
+## OnDemand (including Jupyter)
 
-You will not be able to recover deleted files.
+The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
-## Nodes
+Slurm jobs can not yet be submitted from within OnDemand.
 
-The current nodes are not accessible.
+## Login Nodes
 
-    milan nodes (wmc[005-014,017-060],wml[061-068])
-    hugemem nodes (wbh001,wch001,wcl[001-002])
+The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU and memory limits.
 
+## Compute Nodes
 
-    the Slurm option `--gres=ssd` will not work.
+So far there are only the new Genoa and 2 of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes either, but the largest of the Genoa nodes do have 1.5 TB of memory.
 
-## Slurm native profiling
+## GPUs
 
-The Slurm option `--profile` will not work.
-
-## Cylc workflow engine
-
-Cylc has not been installed. You can use the instructions [here](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install cylc.
+No A100 GPUs have been moved yet, so only H100 and L4 GPUs are available.
 
 ## Internet
 
-You will not be able to connect to the internet.
+as at 6th May Internet connectivity is available but may change and should not be relied upon. 
 
-## email
+## Node-local SSD access
+
+Our custom Slurm option `--gres=ssd` does not yet work.
 
 ## Software
 
-- Delft3D_FM
-- Any software using node locked licences (QChem).
-- Any software using an external licence server,  (MATLAB, ANSYS, ABAQUS, COMSOL).
+**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until we have internet access from compute nodes and institutional IT department firewall rules have been updated.
+
+**Cylc** has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install it.
+
+**QChem** and any other software using node locked licences won't work on nodes which are not yet registered with that license.
+
+**Delft3D_FM** wasn't working in Mahuika's milan partition so probably needs rebuilding.
+
+As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environement modules cause system software to stop working, eg: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
+
+## Globus
+
+There are currently no endpoints configured, workflows that make use of globus will not work
+
+## email
+
+Slurm options `--mail-type` is not yet effective.
+
+## ssh into Slurm jobs
+
+You cannot yet `ssh` into compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes.
+
+## Slurm native profiling
+
+The Slurm option `--profile` will generate profile data, but that data is as yet only visible to NeSI staff.
+
+
