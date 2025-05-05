@@ -17,18 +17,12 @@ Before getting started, you will need an allocation and credentials. To apply fo
 We recommend using s3cmd tool for interacting with Freezer
 
 ## Installation
-The s3cmd tool is not installed by default so has to be user installed. 
+The s3cmd tool needs to be activated. 
 
-Load a Python module
-
-```sh
-module load Python/3.11.6-foss-2023a
-```
-
-Install s3cmd for your user
+Load the s3cmd module
 
 ```sh
-pip install s3cmd --user
+module load s3cmd/2.4.0
 ```
 
 ## Configure
@@ -38,7 +32,7 @@ Configuring the tool allows for user credentials and default buckets to be remem
 s3cmd --configure
 ```
 
-Enter in your stuff
+Enter in your details
 
 ```
 Enter new values or accept defaults in brackets with Enter.
@@ -84,7 +78,7 @@ New settings:
   DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
   Encryption password: 
   Path to GPG program: /usr/bin/gpg
-  Use HTTPS protocol: False
+  Use HTTPS protocol: True
   HTTP Proxy server name: 
   HTTP Proxy server port: 0
 
