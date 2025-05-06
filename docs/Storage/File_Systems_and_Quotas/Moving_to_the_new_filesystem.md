@@ -120,9 +120,9 @@ If combining exclusions and inclusions, remember that the order matters, as the 
 + /MyData/***
 ```
 
-## Large multi-user projects
+### Large multi-user projects
 
-`.RSYNC_FILTER` files can be put in any directory, not just the top one, so resposibility for subdirectories can be delegated, which may be useful if you have a project or nobackup directory containing several per-user subdirectories.  Users can then manage their own `.RSYNC_FILTER` files, just so long as the project's top level rules don’t completely exclude their directory in advance.  In such cases the .RSYNC_FILTER in the nobackup directory might look like:
+`.RSYNC_FILTER` files can be put in any directory, not just the top one, so resposibility for subdirectories can be delegated, which may be useful if you have a project or nobackup directory containing several per-user subdirectories.  Users can then manage their own `.RSYNC_FILTER` files, just so long as the project's top level rules don’t completely exclude their directory in advance.  In such cases the `.RSYNC_FILTER` in the nobackup directory might look like:
 
 ```rsync
 # Include all top-level directories (but not their contents), subdirectories can specify their own inclusions. 
@@ -140,6 +140,18 @@ or
 
 To check on how often or how recently your data was synced, the command `nn_data_migration_rsyncs` displays the five most recent rsync runs. You can give a project code to it as a command line argument, or else it will default to showing records for your home directory and the project and nobackup directories for each of your projects.  
 
-For the size of the migrated data, logs can be found in `/opt/nesi/migration/syncs` which record each successful synchronisation, but it will soon be just as easy to log in to the new system and check for yourself what data is present.
+## Using the new WEKA copy of your data
 
+Once you can log in to the new cluster and so see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file.  You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end. There could be small differences in size due to differences between the ways GPFS and WEKA work, but they should be approximately the same.
 
+All home, project, and nobackup directories are still being rsynced from GPFS every couple of days, and that rsync is configured to mirror rather than just update, because that makes sense before you start using the WEKA copy. So **any changes you make on WEKA will get obliterated at random times**. There are two ways to avoid that though:
+
+### Protecting individual file paths
+
+An `.RSYNC_FILTER` file in the WEKA copy can protect new files there from deletion. For example, an `.RSYNC_FILTER` file containing the line `P /example` will protect the (sibling) directory named "example", so preventing rsync from modifying its contents. This is a distinct file from the one of the same name at the GPFS end, which will not be copied accross to WEKA. 
+
+### Stopping the data migration
+
+Once you are happy that all your data has been sucessfully copied to WEKA and you are ready to move to working entirely the new platform, place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup). For example, `touch $HOME/.GOODBYE_GPFS`.  That signals to our rsyncing script to skip that directory entirely. 
+
+Once a home directory or both the filesets of a project have indicated ".GOODBYE_GPFS" we will stop even checking them, forever, so it will not be possible restart their rsyncing without asking NeSI Support to do it.
