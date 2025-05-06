@@ -171,26 +171,5 @@ Example to get/download the directory ‘openrefine01’ and all contained objec
 
 [s3cmd tool](https://s3tools.org/usage)
 
-### Glossary
-
-## Known issues/pain points to resolve
-
-get s3cmd tool installed by default on Mahuika
-
-the region field is confusing and misleading, currently only us-east-1 works (even though this is not the region of where the data is) - investigate if we can adapt or contribute to the s3cmd tool to remove some of the s3 - source code - s3cmd/s3cmd.1 at 8cb9b23992714b5ec22c1e514a50996e25aa333b · s3tools/s3cmd - should it be ap-southeast-2-akl-1a
-
-many open issues and unresolved PRs on the s3cmd tool 
-
-have to reload correct python module on re-connect to Mahuika
-
-can only transfer data from Mahuika to Freezer (from other locations is out of scope in the short term)
-
-Error when attempting s3cmd du
-```
-Invoked as: /home/njon001/.local/Python-3.11-foss-2023a/bin/s3cmd du
-Problem: <class 'UnboundLocalError: cannot access local variable 'size' where it is not associated with a value
-S3cmd:   2.4.0
-python:   3.11.6 (main, Nov 20 2023, 12:22:12) [GCC 12.3.0]
-```
 
 
