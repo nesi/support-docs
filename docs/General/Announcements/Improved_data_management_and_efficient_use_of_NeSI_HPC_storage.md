@@ -47,7 +47,7 @@ we’d be happy to help or answer questions.
 If you have data that may be used again on NeSI later,
 {% include "partials/support_request.html" %}
 and we will consider whether a
-[Nearline](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
+[Nearline](../../Storage/Long_Term_Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
 storage allocation would be appropriate to manage this.
 
 ### 18 October 2021

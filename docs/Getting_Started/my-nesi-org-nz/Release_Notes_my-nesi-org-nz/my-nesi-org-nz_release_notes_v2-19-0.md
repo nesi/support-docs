@@ -22,7 +22,7 @@ search:
     -   simplified the overview of the project application process
     -   updated the list of organisations supported by Tuakiri 
 -   Improved visibility of [Nearline (long-term
-    storage)](../../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
+    storage)](../../../Storage/Long_Term_Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
     allocations if any exist for your project(s). A project with only
     Nearline resources will have a status of Archived.
 -   Notification banner created to display holiday hours for NeSI
