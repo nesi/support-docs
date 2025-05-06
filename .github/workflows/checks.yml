@@ -57,7 +57,7 @@ jobs:
         run: |
           echo "::info::Workflow triggered by PR"
           git fetch
-          git branch -l
+          git branch -la
           ls
           ls docs/**/*.md
           changed_files="$(git diff --name-only origin/main ${{ github.ref_name }} docs/**/*.md | tr '\n' ' ')"
