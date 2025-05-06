@@ -31,8 +31,8 @@ All software currently supported on Mahuika's Milan nodes will be deployed. To v
 
 ## Will a long system outage be required as part of the migration of data and projects?
 
-We one outage scheduled so far:
- * **19/20 May** - [Outage](https://status.nesi.org.nz/incidents/3y3ttj57fts6) to move our user identity and project admin platforms. Impacts:
+We have one outage scheduled so far:
+  * **19/20 May** - [Outage](https://status.nesi.org.nz/incidents/3y3ttj57fts6) to move our user identity and project admin platforms. Impacts:
     * Mahuika and Māui HPC clusters will be unaffected for ssh users
     * Users will not be able to login to my.nesi.org.nz or use interactive compute services (OnDemand, Jupyter)
     * Users will not be able to log-in to the new HPC platform (running jobs will be unaffected)
