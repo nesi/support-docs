@@ -14,6 +14,8 @@ This page is an overview of the Markdown syntax supported in this documentation.
 
 ## Headers
 
+Headers should be surrounded by blank lines.
+
 <h2>H2</h2>
 
 ```md
@@ -51,6 +53,11 @@ Put 2 spaces at the end of a line to force a line break.
 If you simply hit enter and don't use 2 spaces it will be considered one line.
 ```
 
+Most markdown structures (lists, Admonitions, headers, code blocks, etc) should be surrounded by an empty line.
+i.e. A newline before and after.
+It is good practice to add a new line after every sentance, or when the line becomes too long.
+This won't change how the text is rendered, but helps make the source markdown more readable.
+
 ## Text Emphasis
 
 **bold**: `**bold**`
@@ -58,6 +65,8 @@ If you simply hit enter and don't use 2 spaces it will be considered one line.
 _italic_: `_italic`
 
 ## Tab Containers
+
+Tab Containers should be surrounded by blank lines.
 
 === "Tab One"
     something in the tab
@@ -72,6 +81,8 @@ _italic_: `_italic`
 ```
 
 ## Admonitions
+
+Admonitions should be surrounded by blank lines.
 
 !!! warning
     A warning.
@@ -275,6 +286,7 @@ There are various flavors.
 Code blocks require a language lexer in order to do syntax highlighting, e.g. `python` ,`slurm`, `cuda`, `json`, `markdown`, `bash`
 (most of these have short codes too, `py`,`sl`,`cd`,`md`,`sh`).
 [A full list of lexers can be found in this list](https://pygments.org/languages/).
+Code blocks should be surrounded by blank lines.
 
 ```py
 import somepackage
@@ -455,25 +467,41 @@ Acroynym should be automatically made tool-tips e.g. MPI.
 
 ## Lists
 
+As with other markdown structures, lists must be surrounded by a blank line.
+
 ### Unordered List
 
-- item1
-- item2
-- a
-- item
+some text
 
-```md
 - item1
 - item2
 - a
   multi-line
-- item
+  item
 - nested
   - items
     - nested-er
+   
+some other text
+
+```md
+some text
+
+- item1
+- item2
+- a
+  multi-line
+  item
+- nested
+  - items
+    - nested-er
+   
+some other text
 ```
 
 ### Ordered List
+
+some text
 
 1. item1
 2. a
@@ -486,17 +514,23 @@ Acroynym should be automatically made tool-tips e.g. MPI.
    2. nested item 2
       1. even nested-er
 
+some other text
+
 ```md
+some text
+
 1. item1
 2. a
-   multiline
+   multi-line
    item
    with multiple
    lines
 3. nested
-    1. nested item 1
-    2. nested item 2
-        1. even nested-er
+   1. nested item 1
+   2. nested item 2
+      1. even nested-er
+
+some other text
 ```
 
 *Note, nested list items use numbers, but will be rendered as whatever the indent is.*
