@@ -105,6 +105,6 @@ project extension. Please note that we are unlikely to let a project
 continue without a compute allocation for more than six months at a
 time. If you expect that your project will be suspended for more than
 six months, we encourage you to enquire about our [Long-Term Storage
-Service](../../Storage/Long_Term_Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md) or
+Service](../../Storage/Long_Term_Storage/Nearline_service/Nearline_Long_Term_Storage_Service.md) or
 to move your research data off our facility and make arrangements with
 your project's host institution for long-term data storage.
