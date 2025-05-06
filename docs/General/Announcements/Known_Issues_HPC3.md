@@ -11,6 +11,10 @@ tags:
 
 What's not working yet - the hope is to have these issues resolved by the end of May or as soon as possible. This is a temporary page.
 
+## Login
+
+Loging in requires authenticating twice.
+
 ## Filesystem Snapshots
 
 You can not recover any deleted files.
@@ -27,15 +31,15 @@ The initial login nodes are smaller than the Mahuika ones, have slower disk I/O,
 
 ## Compute Nodes
 
-So far there are only the new Genoa and 2 of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes either, but the largest of the Genoa nodes do have 1.5 TB of memory.
+So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes either, but the largest of the Genoa nodes do have 1.5 TB of memory.
 
 ## GPUs
 
-No A100 GPUs have been moved yet, so only H100 and L4 GPUs are available.
+No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available.
 
 ## Internet
 
-as at 6th May Internet connectivity is available but may change and should not be relied upon. 
+As at 7th May Internet connectivity from compute nodes is available but may change and should not be relied upon. Downloads can be done from login nodes as normal.
 
 ## Node-local SSD access
 
@@ -43,7 +47,7 @@ Our custom Slurm option `--gres=ssd` does not yet work.
 
 ## Software
 
-**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until we have internet access from compute nodes and institutional IT department firewall rules have been updated.
+**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until we have a stable IP address for internet access from compute nodes and institutional IT department firewall rules have been updated to match it.
 
 **Cylc** has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install it.
 
@@ -64,6 +68,10 @@ Slurm options `--mail-type` is not yet effective.
 ## ssh into Slurm jobs
 
 You cannot yet `ssh` into compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes.
+
+## Slurm configuration
+
+Slurm settings may change without notice during the first couple of weeks, including the limits on job sizes and the default for `--threads-per-core`, ie: hyperthreading.
 
 ## Slurm native profiling
 
