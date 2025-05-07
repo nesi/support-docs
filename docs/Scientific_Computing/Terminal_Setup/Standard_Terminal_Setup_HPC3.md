@@ -15,6 +15,9 @@ description: How to setup your ssh config file in order to connect to the NeSI c
          - [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
          - [VSCode](../../Scientific_Computing/Terminal_Setup/VSCode.md)
 
+!!! warn
+    The following instructions may not work when using any non-standard terminal client.
+
 ## First time setup
 
 The login process can be simplified significantly with a few easy
