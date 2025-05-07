@@ -94,10 +94,13 @@ Test access with supplied credentials? [Y/n]
 List all objects in a bucket
 
 ```sh
-s3cmd ls -r -H s3://nesi99999/
+s3cmd ls -r -l -H s3://nesi99999/
 ```
 
-This can also be used to list all the objects in path
+This can also be used to list all the objects in path.
+
+!!! warning
+    The listing only shows the storage class when using the `-l` option. This is important to determine whether the data is available or must be restored from tape first.
 
 ### List all buckets
 
@@ -131,20 +134,20 @@ upload: 'yourfolder/yourfile' -> 's3://nesi99999/cwil201/yourfolder/yourfolder/y
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
 
-Once the upload is successful, as signalled by the ‘done’ your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.  
+Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.  
 
 ### List objects before restore
 
 List contained objects/files/folders:
 
 ```sh
-s3cmd ls s3://nesi99999/tb-test/openrefine01/
+s3cmd ls -l -H s3://nesi99999/tb-test/openrefine01/
 ```
 
 or all objects recursive -r or --recursive
 
 ```sh
-s3cmd ls -r s3://nesi99999/tb-test/openrefine01/
+s3cmd ls -r -l -H s3://nesi99999/tb-test/openrefine01/
 ```
 
 ### Restore from tape
