@@ -26,9 +26,11 @@ Currently, when logging into HPC3 using a proxy you will be prompted for authent
 
 You can not recover any deleted files.
 
-## Login Nodes
+## Login
 
 The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU and memory limits.
+
+Mobaxterm - configuration may not be possible currently due to name lengths. ssh through a terminal will still be possible.  
 
 ## Compute Nodes
 
