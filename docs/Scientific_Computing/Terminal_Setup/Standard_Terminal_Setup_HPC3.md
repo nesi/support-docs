@@ -33,7 +33,7 @@ configurations.
     ```sh
     Host hpc3lander 
     User username 
-    HostName lander.test.nesi.org.nz 
+    HostName lander.hpc.nesi.org.nz 
 
     Host hpc3login
     User username 
