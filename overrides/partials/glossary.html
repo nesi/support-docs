@@ -310,13 +310,13 @@ providing them a set of re-usable tools.
 
 ## Bismark:
 
-A tool to map bisulfite converted sequence reads and 
+A tool to map bisulfite converted sequence reads and
 determine cytosine methylation states
 
 ## Bison:
 
 Bison is a general-purpose parser generator that converts an annotated context-free grammar
-into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.
+ into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.
 
 ## Boost:
 
@@ -357,8 +357,8 @@ The goal of the CGAL Open Source Project is to provide easy access to efficient
 
 ## CMake:
 
-CMake, the cross-platform, open-source build system. CMake is
-a family of tools designed to build, test and package software.  
+CMake, the cross-platform, open-source build system.
+ CMake is a family of tools designed to build, test and package software.
 
 ## CNVnator:
 
@@ -400,6 +400,15 @@ Creating Reference databases for Amplicon-Based Sequencing.
 ## CRAMINO:
 
 A tool for quick quality assessment of cram and bam files, intended for long read sequencing
+
+## CREST:
+
+CREST is an utility/driver program for the xtb program. Originally it was designed
+ as conformer sampling program, hence the abbreviation Conformer–Rotamer Ensemble Sampling Tool,
+ but now offers also some utility functions for calculations with the GFNn–xTB methods. Generally
+ the program functions as an IO based OMP scheduler (i.e., calculations are performed by the xtb
+ program) and tool for the creation and analysation of structure ensembles.
+
 
 ## CUDA:
 
@@ -683,6 +692,17 @@ FLTK is a cross-platform C++ GUI toolkit for UNIX/Linux (X11), Microsoft Windows
  and MacOS X. FLTK provides modern GUI functionality without the bloat and supports 3D graphics via OpenGL
  and its built-in GLUT emulation.
 
+## Faiss:
+
+
+Faiss is a library for efficient similarity search and clustering of dense
+ vectors. It contains algorithms that search in sets of vectors of any size, up
+ to ones that possibly do not fit in RAM. It also contains supporting code for
+ evaluation and parameter tuning. Faiss is written in C++ with complete
+ wrappers for Python/numpy. Some of the most useful algorithms are implemented
+ on the GPU. It is developed primarily at Meta's Fundamental AI Research group.
+
+
 ## FastANI:
 
 Tool for fast alignment-free computation of
@@ -754,7 +774,10 @@ FreeSurfer contains a fully automatic structural imaging stream for processing c
 
 ## FreeXL:
 
-FreeXL is an open source library to extract valid data from within an Excel (.xls) spreadsheet.
+
+ FreeXL is an open source library to extract valid data from within an
+ Excel (.xls) spreadsheet.
+
 
 ## FriBidi:
 
@@ -762,10 +785,10 @@ Free Implementation of the Unicode Bidirectional Algorithm.
 
 ## GATK:
 
-The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute 
+The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute
  to analyse next-generation resequencing data. The toolkit offers a wide variety of tools,
- with a primary focus on variant discovery and genotyping as well as strong emphasis on 
- data quality assurance. Its robust architecture, powerful processing engine and 
+ with a primary focus on variant discovery and genotyping as well as strong emphasis on
+ data quality assurance. Its robust architecture, powerful processing engine and
  high-performance computing features make it capable of taking on projects of any size.
 
 ## GCC:
@@ -786,8 +809,11 @@ Interface to Gd Graphics Library
 
 GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
  Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
- to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for
+ to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for
  data translation and processing.
+ NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), 
+ which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) 
+ after loading the GDAL module. 
 
 ## GEMMA:
 
@@ -936,8 +962,9 @@ Genealogies Unbiased By recomBinations In Nucleotide Sequences
 
 ## HDF5:
 
-HDF5 is a unique technology suite that makes possible the management of
- extremely large and complex data collections.
+HDF5 is a data model, library, and file format for storing and managing data.
+ It supports an unlimited variety of datatypes, and is designed for flexible
+ and efficient I/O and for high volume and complex data.
 
 ## HISAT2:
 
@@ -1028,7 +1055,16 @@ R packages for providing R kernel for Jupyter.
 
 ## ISA-L:
 
-Intelligent Storage Acceleration Library
+
+ISA-L is a collection of optimized low-level functions targeting storage applications. 
+  ISA-L includes:
+   *Erasure codes - Fast block Reed-Solomon type erasure codes for any encode/decode matrix in GF(2^8).
+   *CRC - Fast implementations of cyclic redundancy check. Six different polynomials supported.
+          iscsi32, ieee32, t10dif, ecma64, iso64, jones64.
+   *Raid - calculate and operate on XOR and P+Q parity found in common RAID implementations.
+   *Compression - Fast deflate-compatible data compression, includes igzip.
+   *De-compression - Fast inflate-compatible data compression. 
+
 
 ## ImageMagick:
 
@@ -1466,7 +1502,8 @@ Aggregate results from bioinformatics analyses across many samples into a single
 
 ## NAMD:
 
-NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems.
+NAMD is a parallel molecular dynamics code designed for high-performance simulation of
+ large biomolecular systems.
 
 ## NASM:
 
@@ -1666,7 +1703,7 @@ The OpenSSL Project is a collaborative effort to develop a robust, commercial-gr
 
 ## OpenSees:
 
-Simulates the performance of structural and geotechnical systems subjected to earthquakes.
+OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes.
 
 ## OpenSeesPy:
 
@@ -1700,8 +1737,10 @@ PAPI provides the tool designer and application engineer with a consistent inter
 
 ## PCRE:
 
-The PCRE library is a set of functions that implement regular expression pattern matching using
- the same syntax and semantics as Perl 5.
+
+ The PCRE library is a set of functions that implement regular expression
+ pattern matching using the same syntax and semantics as Perl 5.
+
 
 ## PCRE2:
 
@@ -1721,11 +1760,11 @@ PETSc, pronounced PET-see (the S is silent), is a suite of data structures and r
 
 ## PLINK:
 
- PLINK is a free, open-source whole genome association analysis toolset,
+ PLINK is a free, open-source whole genome association analysis toolset, 
  designed to perform a range of basic, large-scale analyses in a computationally efficient manner.
- The focus of PLINK is purely on analysis of genotype/phenotype data, so there is no support for
- steps prior to this (e.g. study design and planning, generating genotype or CNV calls from raw data).
- Through integration with gPLINK and Haploview, there is some support for the subsequent visualization,
+ The focus of PLINK is purely on analysis of genotype/phenotype data, so there is no support for 
+ steps prior to this (e.g. study design and planning, generating genotype or CNV calls from raw data). 
+ Through integration with gPLINK and Haploview, there is some support for the subsequent visualization, 
  annotation and storage of results. 
 
 ## PLUMED:
@@ -1774,26 +1813,11 @@ ParMETIS is an MPI-based parallel library that implements a variety of algorithm
 
 ## ParaView:
 
-
-ParaView is a scientific parallel visualizer.
-
-This version supports CPU-only rendering without
-X context using the OSMesa library, it does not
-support GPU rendering.
-
-Use the GALLIUM_DRIVER environment variable to choose
-a software renderer, it is recommended to use
-
-GALLIUM_DRIVER=swr
-
-for best performance.
-
-Ray tracing using the OSPRay library is also supported.
-
+Parallel scientific visualizer.
 
 ## Parallel:
 
-Build and execute shell commands in parallel
+parallel: Build and execute shell commands in parallel
 
 ## ParallelIO:
 
@@ -1866,8 +1890,7 @@ Python is a programming language that lets you work more quickly and integrate y
 
 ## Python-Geo:
 
-GDAL, pyModis, RIOS, Fiona, Shapely, descartes and pygrib - Python
- packages for geospatial data I/O, mostly based on the OSGEO libraries GDAL and OGR
+Python packages for geospatial data I/O, mostly based on the OSGEO libraries GDAL and OGR
 
 ## QIIME2:
 
@@ -2058,10 +2081,6 @@ family, pedigree and individual data.
 
 Samtools is a suite of programs for interacting with high-throughput sequencing data.
  SAMtools - Reading/writing/editing/indexing/viewing SAM/BAM/CRAM format
-
-## SAS:
-
-SAS is a statistical software suite developed by SAS Institute for data management, advanced analytics, multivariate analysis, business intelligence, criminal investigation, and predictive analytics. - Homepage: https://www.sas.com/en_nz/home.html/
 
 ## SCOTCH:
 
@@ -2279,7 +2298,9 @@ Supernova is a software package for de novo assembly from Chromium Linked-Reads
 
 ## Szip:
 
-Szip compression software, providing lossless compression of scientific data
+
+ Szip compression software, providing lossless compression of scientific data
+
 
 ## TEtranscripts:
 
@@ -2645,9 +2666,12 @@ breseq is a computational pipeline for the analysis of short-read re-sequencing 
 
 ## bzip2:
 
-bzip2 is a freely available, patent free, high-quality data compressor. It typically
- compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical
- compressors), whilst being around twice as fast at compression and six times faster at decompression.
+
+ bzip2 is a freely available, patent free, high-quality data compressor. It
+ typically compresses files to within 10% to 15% of the best available
+ techniques (the PPM family of statistical compressors), whilst being around
+ twice as fast at compression and six times faster at decompression.
+
 
 ## c-ares:
 
@@ -2714,15 +2738,14 @@ ctffind is a program for finding CTFs of electron micrographs
 
 ## cuDNN:
 
-The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for
-    deep neural networks.
+The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks.
 
 ## cutadapt:
 
- cutadapt removes adapter sequences 
- from high-throughput sequencing data. This is usually 
- necessary when the read length of the sequencing machine 
- is longer than the molecule that is sequenced, for 
+ cutadapt removes adapter sequences
+ from high-throughput sequencing data. This is usually
+ necessary when the read length of the sequencing machine
+ is longer than the molecule that is sequenced, for
  example when sequencing microRNAs.  
 
 ## cuteSV:
@@ -2864,10 +2887,6 @@ fmt (formerly cppformat) is an open-source formatting library.
  customization and application access.
 
 
-## forge:
-
-Arm Forge combines Arm DDT, the leading debugger for time-saving high performance application debugging, and Arm MAP, the trusted performance profiler for invaluable optimization advice.
-
 ## foss:
 
 GNU Compiler Collection (GCC) based compiler toolchain, including
@@ -2980,13 +2999,7 @@ Google's C++ test framework
 
 ## gperf:
 
-
- GNU gperf is a perfect hash function generator. For a given list of strings,
- it produces a hash function and hash table, in form of C or C++ code, for
- looking up a value depending on the input string. The hash function is
- perfect, which means that the hash table has no collisions, and the hash
- table lookup needs a single string comparison only.
-
+Pperfect hash function generator.
 
 ## h5pp:
 
@@ -3002,12 +3015,16 @@ Hifiasm: a haplotype-resolved assembler for accurate Hifi reads.
 
 ## hwloc:
 
-The Portable Hardware Locality (hwloc) software package provides a portable abstraction
- (across OS, versions, architectures, ...) of the hierarchical topology of modern architectures, including
- NUMA memory nodes, sockets, shared caches, cores and simultaneous multithreading. It also gathers various
- system attributes such as cache and memory information as well as the locality of I/O devices such as
- network interfaces, InfiniBand HCAs or GPUs. It primarily aims at helping applications with gathering
- information about modern computing hardware so as to exploit it accordingly and efficiently.
+
+ The Portable Hardware Locality (hwloc) software package provides a portable
+ abstraction (across OS, versions, architectures, ...) of the hierarchical
+ topology of modern architectures, including NUMA memory nodes, sockets, shared
+ caches, cores and simultaneous multithreading. It also gathers various system
+ attributes such as cache and memory information as well as the locality of I/O
+ devices such as network interfaces, InfiniBand HCAs or GPUs. It primarily
+ aims at helping applications with gathering information about modern computing
+ hardware so as to exploit it accordingly and efficiently.
+
 
 ## icc:
 
@@ -3027,10 +3044,7 @@ Intel C/C++ and Fortran compilers, alongside Intel MPI.
 
 ## imkl:
 
-Intel Math Kernel Library is a library of highly optimized,
- extensively threaded math routines for science, engineering, and financial
- applications that require maximum performance. Core math functions include
- BLAS, LAPACK, ScaLAPACK, Sparse Solvers, Fast Fourier Transforms, Vector Math, and more.
+Intel oneAPI Math Kernel Library
 
 ## imkl-FFTW:
 
@@ -3042,13 +3056,11 @@ A lightweight JIT compiler for flexible data access in simulation applications
 
 ## impi:
 
-The Intel(R) MPI Library for Linux* OS is a multi-fabric message
- passing library based on ANL MPICH2 and OSU MVAPICH2. The Intel MPI Library for
- Linux OS implements the Message Passing Interface, version 2 (MPI-2) specification. - Homepage: http://software.intel.com/en-us/intel-mpi-library/
+Intel MPI Library, compatible with MPICH ABI
 
 ## intel:
 
-Intel Cluster Toolkit Compiler Edition provides Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL.
+Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).
 
 ## intel-compilers:
 
@@ -3079,7 +3091,7 @@ Collection of Python libraries to parse bioinformatics files, or perform computa
 
 ## jemalloc:
 
-jemalloc is a general purpose malloc(3) implementation that emphasizes fragmentation avoidance and
+A general purpose malloc(3) implementation that emphasizes fragmentation avoidance and
  scalable concurrency support.
 
 ## jq:
@@ -3205,7 +3217,7 @@ Arrays on GPU device memory, for Theano
 
 ## libgtextutils:
 
-ligtextutils is a dependency of fastx-toolkit and is provided via the same upstream
+ligtextutils is a dependency of fastx-toolkit
 
 ## libiconv:
 
@@ -3227,10 +3239,14 @@ libpng is the official PNG reference library
 
 ## libreadline:
 
-The GNU Readline library provides a set of functions for use by applications that
- allow users to edit command lines as they are typed in. Both Emacs and vi editing modes are available.
- The Readline library includes additional functions to maintain a list of previously-entered command lines,
- to recall and perhaps reedit those lines, and perform csh-like history expansion on previous commands.
+
+ The GNU Readline library provides a set of functions for use by applications
+ that allow users to edit command lines as they are typed in. Both Emacs and
+ vi editing modes are available. The Readline library includes additional
+ functions to maintain a list of previously-entered command lines, to recall
+ and perhaps reedit those lines, and perform csh-like history expansion on
+ previous commands.
+
 
 ## libsodium:
 
@@ -3263,9 +3279,10 @@ Libxc is a library of exchange-correlation functionals for density-functional th
 
 ## libxml2:
 
-Libxml2 is the XML C parser and 
-toolchain developed for the Gnome project
+
+ Libxml2 is the XML C parser and toolchain developed for the Gnome project
  (but usable outside of the Gnome platform).
+
 
 ## libxslt:
 
@@ -3413,9 +3430,12 @@ The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for
 
 ## ncurses:
 
-The Ncurses (new curses) library is a free software emulation of curses in System V Release 4.0,
- and more. It uses Terminfo format, supports pads and color and multiple highlights and forms characters and
- function-key mapping, and has all the other SYSV-curses enhancements over BSD Curses.
+
+ The Ncurses (new curses) library is a free software emulation of curses in
+ System V Release 4.0, and more. It uses Terminfo format, supports pads and
+ color and multiple highlights and forms characters and function-key mapping,
+ and has all the other SYSV-curses enhancements over BSD Curses.
+
 
 ## ncview:
 
@@ -3430,8 +3450,8 @@ in its resource usage.
 
 ## netCDF:
 
-NetCDF (network Common Data Form) is a set of software libraries 
- and machine-independent data formats that support the creation, access, and sharing of array-oriented 
+NetCDF (network Common Data Form) is a set of software libraries
+ and machine-independent data formats that support the creation, access, and sharing of array-oriented
  scientific data.
 
 ## netCDF-C++:
@@ -3640,6 +3660,10 @@ of conditional jumps and comparisons.
 ## rnaQUAST:
 
 Tool for evaluating RNA-Seq assemblies using reference genome and gene database
+
+## s3cmd:
+
+Command line tool for managing S3 compatible storage services
 
 ## samblaster:
 
