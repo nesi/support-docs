@@ -7,8 +7,6 @@ tags:
     - refresh
 ---
 
-{% include "partials/hpc3_disclaimer.html" %}
-
 This article presents an overview comparison of the differences between the NeSI Mahuika cluster and the new cluster (often referred to in documentation under the provisional name HPC3).
 It is not a comprehensive view of the differences and where appropriate individual support pages will be updated to reflect changes and enhancements.
 For example the [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md) will have a number of changes made to it along with significant changes to the Slurm Partitions.
