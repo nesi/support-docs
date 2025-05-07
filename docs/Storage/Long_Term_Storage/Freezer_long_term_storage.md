@@ -38,8 +38,8 @@ Enter in your details
 Enter new values or accept defaults in brackets with Enter.
 Refer to user manual for detailed description of all options.
 Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
-Access Key: <your username> 
-Secret Key: <your secret key>
+Access Key: ${AWS_ACCESS_KEY} 
+Secret Key: ${AWS_SECRET_KEY}
 Default Region: us-east-1
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
 S3 Endpoint: freezer.nesi.org.nz:7070
@@ -71,8 +71,8 @@ On some networks all internet access must go through a HTTP proxy.
 Try setting it here if you can't connect to S3 directly
 HTTP Proxy server name: 
 New settings:
-  Access Key: <your username>
-  Secret Key: <your secret key>
+  Access Key: ${AWS_ACCESS_KEY}
+  Secret Key: ${AWS_SECRET_KEY}
   Default Region: us-east-1
   S3 Endpoint: freezer.nesi.org.nz:7070
   DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
