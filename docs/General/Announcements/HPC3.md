@@ -8,7 +8,9 @@ tags:
 
 {% include "partials/hpc3_disclaimer.html" %}
 
-abandon hope all ye who enter here
+NeSI is in the progress of migrating to new hardware. Blah blah blah.
+
+<p hidden>abandon hope all ye who enter here</p>
 
 ## Other Links
 
@@ -16,6 +18,7 @@ abandon hope all ye who enter here
 - [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md): SSH config setup.
 - [Known Issues HPC3](Known_Issues_HPC3.md): 
 - [Migration Timeline](migration_timeline_and_transition_plan.md): Planned transition timeline.
+- [Differences Between Mahuika and HPC3](Differences_Between_Mahuika_and_HPC3.md)
 - [Preparing your code for use on NeSI's new HPC platform](Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md): How to prepare for the new software stack.
 - [Update to Nearline Service](update_to_nearline_service.md): Changes to nearline storage,
 - [Platform Refresh Updates](platform_refresh_updates.md): Stay connected with the latest updates.
