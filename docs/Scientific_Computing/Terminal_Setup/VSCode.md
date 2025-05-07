@@ -9,6 +9,14 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
 
 ## Setup
 
+!!! warn "Switching to HPC3"
+    If you have previously logged into Mahuika with VSCode, you will need to delete the directory `~/.vscode-server`
+    before logging into HPC3 (and vice versa). You can do this with the command,
+
+    ```sh
+    rm -rf ~/.vscode-server
+    ```
+
 === "Linux / MacOS"
     1. Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](Standard_Terminal_Setup.md).

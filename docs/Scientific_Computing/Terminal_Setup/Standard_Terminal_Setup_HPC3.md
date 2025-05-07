@@ -6,8 +6,7 @@ tags:
 description: How to setup your ssh config file in order to connect to the NeSI cluster.
 ---
 
-!!! warning "EARLY ACCESS ONLY"
-    See [Known Issues HPC3](../../General/Announcements/Known_Issues_HPC3.md) for more info.
+{% include "partials/hpc3_disclaimer.html" %}
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
@@ -15,6 +14,9 @@ description: How to setup your ssh config file in order to connect to the NeSI c
          - Built in Linux/Mac terminal
          - [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
          - [VSCode](../../Scientific_Computing/Terminal_Setup/VSCode.md)
+
+!!! warn
+    The following instructions may not work when using any non-standard terminal client.
 
 ## First time setup
 
@@ -30,11 +32,11 @@ configurations.
 
     ```sh
     Host hpc3lander 
-    User cwal219 
-    HostName lander.test.nesi.org.nz 
+    User username 
+    HostName lander.hpc.nesi.org.nz 
 
-    Host hpc3login 
-    User cwal219 
+    Host hpc3login
+    User username 
     Hostname login01.hpc.nesi.org.nz 
     ProxyCommand ssh -W %h:%p hpc3lander
     ```
@@ -68,6 +70,9 @@ configurations.
     ```
 
     Depending on the terminal used, you may have to hold `ctrl` when clicking to follow the link.
+
+!!! warn "Double Authentication"
+    If you set up your `.ssh/config` as recommended you will be prompted to authenticate again. We are working on fixing this.
 
 7. Select your institution, you will be prompted to provide your login details.
 

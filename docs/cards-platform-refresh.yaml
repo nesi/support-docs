@@ -1,7 +1,7 @@
-- title: Online Office Hours
-  content: Drop-in sessions over Zoom. Bring your problems or questions and get one-on-one support.
-  url: Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md
-  image: ./assets/icons/material/video-call.svg
+- title: Getting Started With HPC3
+  content: All you need to know to get started with the new HPC3 platform.
+  url: General/Announcements/HPC3.md
+  image: ./assets/icons/material/widget-red.svg
 
 - title: Frequently Asked Questions
   content: Answers to some of your questions about what's happening.
