@@ -22,7 +22,8 @@ Before requesting access and trying to login to the new cluster, please read the
     - using .RSYNC_FILTER
     - Syncing Data  
     - Protecting Files
-- Logging in/ssh with [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md)
+- [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md)  
+    - Logging in with `ssh` 
 - Please give feedback
 
 ## Other Links
