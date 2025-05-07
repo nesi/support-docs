@@ -14,12 +14,11 @@ NeSI is in the progress of migrating to new hardware.
 
 ## Other Links
 
-- [Early access opens for OnDemand](Early_access_opens_for_OnDemand.md)
 - [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md)
-- [Known Issues HPC3](Known_Issues_HPC3.md)
-- [Migration Timeline](migration_timeline_and_transition_plan.md):
-- [Differences Between Mahuika and HPC3](../FAQs/Mahuika_HPC3_Differences.md)
+- [Moving to the new Filesystem](../../Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem.md#checking-on-progress)
 - [Preparing your code for use on NeSI's new HPC platform](Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md)
+- [Differences Between Mahuika and HPC3](../FAQs/Mahuika_HPC3_Differences.md)
+- [Known Issues HPC3](Known_Issues_HPC3.md)
 - [Update to Nearline Service](update_to_nearline_service.md)
-- [Platform Refresh Updates](platform_refresh_updates.md)
+- [Early access opens for OnDemand](Early_access_opens_for_OnDemand.md)
 - [Common Questions About the Platform Refresh](../FAQs/Common_questions_about_the_platform_refresh.md)
