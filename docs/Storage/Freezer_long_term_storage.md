@@ -94,25 +94,23 @@ Test access with supplied credentials? [Y/n]
 List all objects in a bucket
 
 ```sh
-s3cmd ls -r s3://nesi99999/
+s3cmd ls -r -H s3://nesi99999/
 ```
 
 This can also be used to list all the objects in path
 
 ## List all buckets
 
-List all objects in all buckets
+List all objects in all buckets (only for NeSI project owners)
 ```sh
 s3cmd la
 ```
 
-## Disk usage by buckets
+## Storage usage by specific bucket
 
 ```sh
-s3cmd du
-6282828001060    1781 objects s3://nesi99999/
-------------
-6282828001060 Total
+s3cmd du -H s3://nesi99999_9776
+   7G      1781 objects s3://nesi99999_9776/
 ```
 
 ## Put objects
