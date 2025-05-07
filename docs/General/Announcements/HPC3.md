@@ -8,7 +8,7 @@ tags:
 
 {% include "partials/hpc3_disclaimer.html" %}
 
-NeSI is in the progress of migrating to new hardware. Blah blah blah.
+NeSI is in the progress of migrating to new hardware.
 
 <p hidden>abandon hope all ye who enter here</p>
 
