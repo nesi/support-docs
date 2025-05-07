@@ -6,24 +6,21 @@ tags:
     - refresh
 ---
 
-!!! warning "EARLY ACCESS ONLY"
-    This is only relevant to those with early access to HPC3.
-
-What's not working yet - the hope is to have these issues resolved by the end of May or as soon as possible. This is a temporary page.
+Known issues in HPC3 - the hope is to have these resolved by the end of May or as soon as possible. This is intended to be a temporary page.
 
 ## Login
 
 Loging in requires authenticating twice.
-
-## Filesystem Snapshots
-
-You can not recover any deleted files.
 
 ## OnDemand (including Jupyter)
 
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
 Slurm jobs can not yet be submitted from within OnDemand.
+
+## Filesystem Snapshots
+
+You can not recover any deleted files.
 
 ## Login Nodes
 
@@ -32,6 +29,10 @@ The initial login nodes are smaller than the Mahuika ones, have slower disk I/O,
 ## Compute Nodes
 
 So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes either, but the largest of the Genoa nodes do have 1.5 TB of memory.
+
+## MPI
+
+An InfiniBand configuration issue currently affects some multi-node MPI jobs. As a possible workaround, note that the Genoa nodes can each run 168 tasks (or 336 tasks hyperthreaded), so single-node MPI jobs (with `-N 1`) can be quite large, and are in any case a good idea for jobs which will fit in a single node, for reasons of performance, job priority, and avoiding fragmentation of resources.
 
 ## GPUs
 
