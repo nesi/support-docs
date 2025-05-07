@@ -32,11 +32,11 @@ configurations.
 
     ```sh
     Host hpc3lander 
-    User cwal219 
+    User username 
     HostName lander.test.nesi.org.nz 
 
-    Host hpc3login 
-    User cwal219 
+    Host hpc3login
+    User username 
     Hostname login01.hpc.nesi.org.nz 
     ProxyCommand ssh -W %h:%p hpc3lander
     ```
