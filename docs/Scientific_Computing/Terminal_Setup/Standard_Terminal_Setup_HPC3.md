@@ -85,7 +85,7 @@ configurations.
 
 10. Return to your terminal, and press <kbd>enter</kbd>.
 
-## Subsiquent log in
+## Subsequent log in
 
 1. `ssh hpc3login`
 2. Follow the link.
