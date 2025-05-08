@@ -55,7 +55,7 @@ configurations.
 5. You will be prompted to approve host authenticity
 
     ```sh
-    The authenticity of host 'lander.test.nesi.org.nz (163.7.144.68)' can't be established.
+    The authenticity of host 'lander.hpc.nesi.org.nz (163.7.144.68)' can't be established.
     ECDSA key fingerprint is SHA256:############################################.
     ECDSA key fingerprint is MD5:##:##:##:##:##:##:##:##:##:##:##:##:##:##:##:##.
     Are you sure you want to continue connecting (yes/no)? 
