@@ -66,6 +66,21 @@ On Mahuika mutithreaded jobs placed a thread on each virtual CPU by default,
 with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs were not hyperthreaded while single-task multithreaded jobs were.
 On HPC3 `--threads-per-core` defaults to `1`, i.e: hyperthreading is avoided, but unlike Mahuika tasks are allowed to share a core if `--threads-per-core` is set to `2`. These settings may yet change, but parallel jobs can explicitly set  `--threads-per-core` to be sure.
 
+Unsuitable memory request now give an error as opposed to a warning.
+new HPC:
+```
+$ srun --partition=genoa2 --mem=20G --pty bash
+srun: error: The genoa2 partition does not seem suitable for this job
+srun: error: Unable to allocate resources: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+```
+Mahuika:
+```
+$ srun --partition=milan --mem=20G --pty bash
+srun: "milan" is not the most appropriate partition for this job, which would otherwise default to "bigmem,infill". If you believe this is incorrect then please contact support@nesi.org.nz and quote the Job ID number.
+srun: job 54606638 queued and waiting for resources
+```
+The solution is either remove the `--partition` specification and let Slurm choose the partition or select a partition with more suitable memory-per-CPU.
+
 ### Partitions & limits
 
 These have changed.  As on Mahuika, the default should be OK, but if you want to select a particular microarchitecture you can use `-p milan` or `-p genoa`.  The three Cascade Lake “hugemem” nodes will also have their own partition.
