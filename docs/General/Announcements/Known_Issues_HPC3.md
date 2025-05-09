@@ -36,10 +36,6 @@ Mobaxterm - configuration may not be possible currently due to name lengths. ssh
 
 So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes either, but the largest of the Genoa nodes do have 1.5 TB of memory.
 
-## MPI
-
-An InfiniBand configuration issue currently affects some multi-node MPI jobs. As a possible workaround, note that the Genoa nodes can each run 168 tasks (or 336 tasks hyperthreaded), so single-node MPI jobs (with `-N 1`) can be quite large, and are in any case a good idea for jobs which will fit in a single node, for reasons of performance, job priority, and avoiding fragmentation of resources.
-
 ## GPUs
 
 No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available.
