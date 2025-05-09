@@ -121,7 +121,7 @@ modified times, sizes and file paths.
 `nlcompare` is particularly useful if you want to compare a directory on
 Nearline to a corresponding directory in `/nesi/project` or
 `/nesi/nobackup`. See [Verifying uploads to Nearline
-storage](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md)
+storage](./Verifying_uploads_to_Nearline_storage.md)
 for more information on how to do a comparison and verification.
 
 If the contents of the Nearline directory and the corresponding local
@@ -262,7 +262,7 @@ As a good practice:
 - Before deleting any data from your project or nobackup directory
   that has been uploaded to Nearline, please consider whether you
   require [verification of the
-  transfer](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md).
+  transfer](./Verifying_uploads_to_Nearline_storage.md).
   We recommend that you do at least a basic verification of all
   transfers.
 
@@ -275,7 +275,7 @@ version of data from nobackup or project:
    on `/nesi/nearline` at a time, use `nlls`; if you need to compare a
    large number of files across a range of directories, or for more
    thorough verification (e.g. checksums), read [this
-   article](../../Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md)
+   article](./Verifying_uploads_to_Nearline_storage.md)
    or {% include "partials/support_request.html" %}.
 2. Once you know which files you need to update (i.e. only files whose
    Nearline version is out of date), remove the old files on Nearline
@@ -464,7 +464,7 @@ will be merged in the Nearline file system. Further, when retrieving
 data from Nearline, keep in mind that the directory structure up to your
 projectID will be retrieved:
 
-![librarian\_get\_put.jpeg](../../assets/images/Nearline_Long_Term_Storage_Service.png)
+![librarian\_get\_put.jpeg](../../../assets/images/Nearline_Long_Term_Storage_Service.png)
 
 ## Underlying mechanism
 

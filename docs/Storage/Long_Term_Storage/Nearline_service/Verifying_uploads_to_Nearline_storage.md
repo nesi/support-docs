@@ -12,7 +12,7 @@ zendesk_section_id: 360000042255
     We are currently in the process of migrating to our [new long-term storage platform, Freezer](https://www.nesi.org.nz/case-studies/deeper-dive-nesis-platform-refresh-part-1). That means no new Nearline allocations are currently being granted and a Nearline service outage is scheduled to begin on Monday 14 April for about two weeks. If you have an urgent need to write or recall data beyond 11 April, [contact NeSI Support](mailto:support@nesi.org.nz). [You can find more details regarding the migration to Freezer on our announcement page](https://docs.nesi.org.nz/General/Announcements/update_to_nearline_service/).
 
 Our [Long-Term Storage
-Service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
+Service](./Nearline_Long_Term_Storage_Service.md)
 is currently in an Early Access phase, and we encourage researchers
 using the service to verify their data before deleting it from the
 project directory (persistent storage) or nobackup directory (temporary

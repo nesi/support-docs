@@ -6,17 +6,17 @@ tags:
   - storage
 ---
 
-NeSI's Freezer service  powered by Versity, is our completely redesigned long-term storage service to support research data. It consists of a staging area (disk) connected to a tape library. Users of this service gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use this service for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the freezer backend service and size of the data to be ingested or retrieved.
+NeSI's Freezer service powered by Versity, is our completely redesigned long-term storage service to support research data. It consists of a staging area (disk) connected to a tape library. Users of this service gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use this service for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the freezer backend service and size of the data to be ingested or retrieved.
 
 Due to the tape storage backend Freezer is intended for use with relatively large files and should not be used for a large number of small files. This service is a replacement for Nearline. Freezer is compatible with the common S3 cloud protocol and existing tools such as those used for accessing AWS S3 service.
 
 ## Getting started
 
-Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI](https://my.nesi.org.nz/)
+Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI](https://my.nesi.org.nz/).
+Once onboarded, you can start to use Freezer. 
+We recommend using s3cmd tool for interacting with Freezer.
 
-We recommend using s3cmd tool for interacting with Freezer
-
-## Installation
+### Tool Installation
 The s3cmd tool needs to be activated. 
 
 Load the s3cmd module
@@ -25,7 +25,7 @@ Load the s3cmd module
 module load s3cmd/2.4.0
 ```
 
-## Configure
+### Configure
 Configuring the tool allows for user credentials and default buckets to be remembered.
 
 ```sh
@@ -38,8 +38,8 @@ Enter in your details
 Enter new values or accept defaults in brackets with Enter.
 Refer to user manual for detailed description of all options.
 Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
-Access Key: <your username> 
-Secret Key: <your secret key>
+Access Key: ${AWS_ACCESS_KEY} 
+Secret Key: ${AWS_SECRET_KEY}
 Default Region: us-east-1
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
 S3 Endpoint: freezer.nesi.org.nz:7070
@@ -71,8 +71,8 @@ On some networks all internet access must go through a HTTP proxy.
 Try setting it here if you can't connect to S3 directly
 HTTP Proxy server name: 
 New settings:
-  Access Key: <your username>
-  Secret Key: <your secret key>
+  Access Key: ${AWS_ACCESS_KEY}
+  Secret Key: ${AWS_SECRET_KEY}
   Default Region: us-east-1
   S3 Endpoint: freezer.nesi.org.nz:7070
   DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
@@ -88,32 +88,35 @@ Press `y` to confim.
 ```
 Test access with supplied credentials? [Y/n]
 ```
-
-## List contents of a bucket
+## Using s3cmd tool to interact with Freezer
+### List contents of a bucket
 
 List all objects in a bucket
 
 ```sh
-s3cmd ls -r -H s3://nesi99999/
+s3cmd ls -r -l -H s3://nesi99999/
 ```
 
-This can also be used to list all the objects in path
+This can also be used to list all the objects in path.
 
-## List all buckets
+!!! warning
+    The listing only shows the storage class when using the `-l` option. This is important to determine whether the data is available or must be restored from tape first.
+
+### List all buckets
 
 List all objects in all buckets (only for NeSI project owners)
 ```sh
 s3cmd la
 ```
 
-## Storage usage by specific bucket
+### Storage usage by specific bucket
 
 ```sh
 s3cmd du -H s3://nesi99999_9776
    7G      1781 objects s3://nesi99999_9776/
 ```
 
-## Put objects
+### Put objects
 
 To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
 
@@ -131,25 +134,25 @@ upload: 'yourfolder/yourfile' -> 's3://nesi99999/cwil201/yourfolder/yourfolder/y
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
 
-Once the upload is successful, as signalled by the ‘done’ your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.  
+Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.  
 
-## List objects before restore
+### List objects before restore
 
 List contained objects/files/folders:
 
 ```sh
-s3cmd ls s3://nesi99999/tb-test/openrefine01/
+s3cmd ls -l -H s3://nesi99999/tb-test/openrefine01/
 ```
 
 or all objects recursive -r or --recursive
 
 ```sh
-s3cmd ls -r s3://nesi99999/tb-test/openrefine01/
+s3cmd ls -r -l -H s3://nesi99999/tb-test/openrefine01/
 ```
 
-## Restore from tape
+### Restore from tape
 
-Restore file from Glacier storage <StorageClass>GLACIER</StorageClass>
+Restore file from Glacier storage `<StorageClass>GLACIER</StorageClass>`
 
 ```sh
 s3cmd restore --recursive s3://nesi99999/tb-test/openrefine01/ 
@@ -161,9 +164,12 @@ restore: 's3://nesi99999/tb-test/openrefine01/workspace.json'
 restore: 's3://nesi99999/tb-test/openrefine01/workspace.old.json
 ```
 
-## Get objects after restore
+### Get objects after restore
 
 Example to get/download the directory ‘openrefine01’ and all contained objects/files/folders:
+```sh
+
+```
 
 ## s3cmd reference
 
