@@ -35,9 +35,9 @@ configurations.
     User username 
     HostName lander.hpc.nesi.org.nz 
 
-    Host hpc3login
+    Host nesi
     User username 
-    Hostname login01.hpc.nesi.org.nz 
+    Hostname login.hpc.nesi.org.nz 
     ProxyCommand ssh -W %h:%p hpc3lander
     ```
 
@@ -49,7 +49,7 @@ configurations.
 4. Run the command.
 
     ```sh
-    ssh hpc3login
+    ssh nesi
     ```
 
 5. You will be prompted to approve host authenticity
@@ -87,7 +87,7 @@ configurations.
 
 ## Subsequent log in
 
-1. `ssh hpc3login`
+1. `ssh nesi`
 2. Follow the link.
 3. You may be prompted for your 6 digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.
