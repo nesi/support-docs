@@ -45,7 +45,7 @@ tags:
     
     module load Delft3D/{{app.default}}
     
-    srun d_hyrdo test_input.xml
+    srun d_hydro test_input.xml
     ```
 
 === "Distributed Memory"
@@ -77,7 +77,7 @@ tags:
     #SBATCH --hint          nomultithread  # Hyperthreading disabled
 
     module load Delft3D/{{app.default}}
-    srun d_hyrdo test_input.xml
+    srun d_hydro test_input.xml
     ```
 
 !!! warning
