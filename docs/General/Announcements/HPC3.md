@@ -6,10 +6,6 @@ tags:
     - refresh
 ---
 
-NeSI is in the progress of migrating to new hardware. For early access please send a request to support@nesi.org.nz
-
-<p hidden>abandon hope all ye who enter here</p>
-
 ## Before you Start
 
 Before requesting access and trying to login to the new cluster, please read the following pages to help understand what does and doesn't work and what changes there are.
@@ -21,7 +17,7 @@ Before requesting access and trying to login to the new cluster, please read the
     - Syncing Data  
     - Protecting Files
 - [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)  
-    - Logging in with `ssh` 
+    - Logging in with `ssh`
 - Please give feedback
 
 ## Other Links

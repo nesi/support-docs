@@ -1,10 +1,7 @@
 ---
 created_at: '2021-05-13T01:00:08Z'
 tags: []
-vote_count: 7
-vote_sum: 3
-zendesk_article_id: 360004337836
-zendesk_section_id: 360001189255
+status: deprecated
 ---
 
 

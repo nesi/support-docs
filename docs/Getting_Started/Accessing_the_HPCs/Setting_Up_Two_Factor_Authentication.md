@@ -5,10 +5,7 @@ tags:
 - access
 - mfa
 - token
-vote_count: 6
-vote_sum: -6
-zendesk_article_id: 360000203075
-zendesk_section_id: 360000034315
+status: deprecated
 ---
 
 !!! prerequisite

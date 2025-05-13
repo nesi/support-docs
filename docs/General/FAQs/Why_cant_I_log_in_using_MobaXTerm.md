@@ -2,10 +2,7 @@
 created_at: '2018-09-20T23:07:16Z'
 tags: []
 title: Why can't I log in using MobaXTerm?
-vote_count: 16
-vote_sum: -4
-zendesk_article_id: 360000470655
-zendesk_section_id: 360000039036
+status: deprecated
 ---
 
 Recent changes to our authentication system have caused some problems

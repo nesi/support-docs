@@ -1,11 +1,7 @@
 ---
 created_at: '2018-11-16T01:13:47Z'
 tags: []
-title: Login Troubleshooting
-vote_count: 4
-vote_sum: 0
-zendesk_article_id: 360000570215
-zendesk_section_id: 360000039036
+status: deprecated
 ---
 
 
@@ -41,19 +37,14 @@ Authenticator Code (Second Factor):
 You can test what part of your connection has failed by first running:
 
 ```sh
-ssh <user>@lander.nesi.org.nz
+ssh lander.hpc.nesi.org.nz
 ```
 
 **If this succeeds**: Run the following:
 
 ```sh
-ssh login.<mahuika/maui>.nesi.org.nz
+ssh login.hpc.nesi.org.nz
 ```
-
-**If this fails:** Are you logging in to the correct cluster?
-Mahuika/Maui have separate access control, also Māui requires your
-password input in a different format, see
-[here](../../General/FAQs/Mahuika_Maui_Differences.md).
 
 **If this succeeds**:
 
@@ -65,7 +56,7 @@ password input in a different format, see
 If you are not a member of an active project, or your project has no
 active allocation, you will not be able to log in. You should be able to
 find whether you have any active projects with active
-allocations [here](https://my.nesi.org.nz/html/view_projects).
+allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
 
 ### Confirm you are using the correct username and password
 

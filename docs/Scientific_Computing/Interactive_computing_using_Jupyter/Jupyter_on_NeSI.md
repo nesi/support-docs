@@ -7,10 +7,7 @@ tags:
 - lab
 - notebook
 title: Jupyter on NeSI
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001555615
-zendesk_section_id: 360001189255
+status: deprecated
 ---
 
 !!! Note

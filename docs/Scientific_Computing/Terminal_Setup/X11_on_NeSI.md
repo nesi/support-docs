@@ -1,10 +1,10 @@
 ---
 created_at: '2019-07-30T01:58:26Z'
-tags: []
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360001075975
-zendesk_section_id: 360000189696
+tags:
+    - x11
+    - visualisation
+    - mobaxterm
+    - tmux
 ---
 
 !!! prerequisite
@@ -57,7 +57,7 @@ ssh -Y login.nesi.org.nz
 
 ### MobaXterm
 
- Under 'session settings' for your connection make sure the X-11
+Under 'session settings' for your connection make sure the X-11
 forwarding box is checked.
 
 ![x11moba.png](../../assets/images/X11_on_NeSI_2.png)

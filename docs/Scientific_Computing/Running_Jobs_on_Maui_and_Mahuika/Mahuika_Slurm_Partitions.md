@@ -3,10 +3,7 @@ created_at: '2018-05-21T03:28:20Z'
 tags:
 - mahuika
 - slurm
-vote_count: 11
-vote_sum: 9
-zendesk_article_id: 360000204076
-zendesk_section_id: 360000030876
+status: deprecated
 ---
 
 ## General Limits

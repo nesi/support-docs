@@ -29,14 +29,14 @@ configurations.
     following (replacing **`username`** with your username):
 
     ```sh
-    Host hpc3lander 
+    Host nesilander 
     User username 
     HostName lander.hpc.nesi.org.nz 
 
     Host nesi
     User username 
     Hostname login.hpc.nesi.org.nz 
-    ProxyCommand ssh -W %h:%p hpc3lander
+    ProxyCommand ssh -W %h:%p nesilander
     ```
 
     Close and save with ctrl x, y, Enter

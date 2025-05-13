@@ -2,10 +2,7 @@
 created_at: '2022-04-04T03:32:24Z'
 tags: []
 title: MATLAB via Jupyter on NeSI
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4614893064591
-zendesk_section_id: 360001189255
+status: deprecated
 ---
 
 !!! warning
