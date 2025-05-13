@@ -14,7 +14,7 @@ To fix these problems, you will need to do the following:
 
 Upgrade your MobaXTerm to the most recent stable version. You can
 download the most recent stable version
-from [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net).
+from [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net).
 !!! warning
      Some users have reported having issues downloading files using
      MobaXterm 23.6. We suggest using version 23.5 instead.

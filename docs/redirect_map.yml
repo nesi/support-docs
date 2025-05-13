@@ -28,11 +28,6 @@ hc/en-gb/articles/218032857-Converting-from-Windows-style-to-UNIX-style-line-end
 hc/en-gb/articles/218032857.md: General/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md
 hc/en-gb/articles/360000159715-Creating-a-NeSI-Account-Profile.md: Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md
 hc/en-gb/articles/360000159715.md: Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md
-hc/en-gb/articles/360000163575-Mahuika.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md
-hc/en-gb/articles/360000163575.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md
-hc/en-gb/articles/360000163695.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md
-hc/en-gb/articles/360000164576-Programming-environment-differences-between-Maui-and-Mahuika.md: Scientific_Computing/HPC_Software_Environment/Programming_environment_differences_between_Maui_and_Mahuika.md
-hc/en-gb/articles/360000164576.md: Scientific_Computing/HPC_Software_Environment/Programming_environment_differences_between_Maui_and_Mahuika.md
 hc/en-gb/articles/360000170355-NeSI-Application-Support-Model.md: General/NeSI_Policies/NeSI_Application_Support_Model.md
 hc/en-gb/articles/360000170355.md: General/NeSI_Policies/NeSI_Application_Support_Model.md
 hc/en-gb/articles/360000174976-Applying-for-a-new-NeSI-project.md: Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md
@@ -43,8 +38,6 @@ hc/en-gb/articles/360000175675-Proposal-Development-allocations.md: General/NeSI
 hc/en-gb/articles/360000175675.md: General/NeSI_Policies/Proposal_Development_allocations.md
 hc/en-gb/articles/360000175695-Postgraduate-allocations.md: General/NeSI_Policies/Postgraduate_allocations.md
 hc/en-gb/articles/360000175695.md: General/NeSI_Policies/Postgraduate_allocations.md
-hc/en-gb/articles/360000175735-Overview.md: Scientific_Computing/The_NeSI_High_Performance_Computers/index.md
-hc/en-gb/articles/360000175735.md: Scientific_Computing/The_NeSI_High_Performance_Computers/index.md
 hc/en-gb/articles/360000176116-Institutional-allocations.md: General/NeSI_Policies/Institutional_allocations.md
 hc/en-gb/articles/360000176116.md: General/NeSI_Policies/Institutional_allocations.md
 hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas.md: Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md
@@ -59,12 +52,8 @@ hc/en-gb/articles/360000202196-Project-Extensions-and-New-Allocations-on-Existin
 hc/en-gb/articles/360000202196.md: Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md
 hc/en-gb/articles/360000203075-Setting-Up-Two-Factor-Authentication.md: Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md
 hc/en-gb/articles/360000203075.md: Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md
-hc/en-gb/articles/360000203776-M%C4%81ui-Ancillary.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md
-hc/en-gb/articles/360000203776.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md
 hc/en-gb/articles/360000204076-Mahuika-Slurm-Partitions.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md
 hc/en-gb/articles/360000204076.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md
-hc/en-gb/articles/360000204116-M%C4%81ui-Slurm-Partitions.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md
-hc/en-gb/articles/360000204116.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md
 hc/en-gb/articles/360000205355-I-O-Performance-Considerations.md: Storage/File_Systems_and_Quotas/I-O_Performance_Considerations.md
 hc/en-gb/articles/360000205355.md: Storage/File_Systems_and_Quotas/I-O_Performance_Considerations.md
 hc/en-gb/articles/360000205435-File-permissions-and-groups.md: Storage/File_Systems_and_Quotas/File_permissions_and_groups.md
@@ -79,12 +68,8 @@ hc/en-gb/articles/360000217915-Personal-Globus-Endpoint-Configuration.md: Storag
 hc/en-gb/articles/360000217915.md: Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md
 hc/en-gb/articles/360000329015-Compiling-software-on-Mahuika.md: Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md
 hc/en-gb/articles/360000329015.md: Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md
-hc/en-gb/articles/360000335995-Setting-Up-and-Resetting-Your-Password.md: Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md
-hc/en-gb/articles/360000335995.md: Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md
 hc/en-gb/articles/360000336015-NeSI-Password-Policy.md: General/NeSI_Policies/NeSI_Password_Policy.md
 hc/en-gb/articles/360000336015.md: General/NeSI_Policies/NeSI_Password_Policy.md
-hc/en-gb/articles/360000336076-Compiling-software-on-M%C4%81ui.md: Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui.md
-hc/en-gb/articles/360000336076.md: Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Maui.md
 hc/en-gb/articles/360000360576-Finding-Software.md: Scientific_Computing/HPC_Software_Environment/Finding_Software.md
 hc/en-gb/articles/360000360576.md: Scientific_Computing/HPC_Software_Environment/Finding_Software.md
 hc/en-gb/articles/360000361675-Software-Installation-Request.md: Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md
@@ -232,8 +217,6 @@ hc/en-gb/articles/360001208256-Synda.md: Scientific_Computing/Supported_Applicat
 hc/en-gb/articles/360001208256.md: Scientific_Computing/Supported_Applications/Synda.md
 hc/en-gb/articles/360001237915-How-can-I-let-my-fellow-project-team-members-read-or-write-my-files.md: General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md
 hc/en-gb/articles/360001237915.md: General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md
-hc/en-gb/articles/360001244876-Mahuika-M%C4%81ui-Differences.md: General/FAQs/Mahuika_Maui_Differences.md
-hc/en-gb/articles/360001244876.md: General/FAQs/Mahuika_Maui_Differences.md
 hc/en-gb/articles/360001287235-Download-and-share-CMIP6-data-for-NIWA-researchers.md: Storage/Data_Transfer_Services/Download_and_share_CMIP6_data_for_NIWA_researchers.md
 hc/en-gb/articles/360001287235.md: Storage/Data_Transfer_Services/Download_and_share_CMIP6_data_for_NIWA_researchers.md
 hc/en-gb/articles/360001298595-Preparing-small-files-for-migration-to-Nearline-storage.md: Storage/Nearline_long_term_storage/Preparing_small_files_for_migration_to_Nearline_storage.md
@@ -324,8 +307,6 @@ hc/en-gb/articles/360004424575-jupyter-nesi-org-nz-release-notes-12-05-2021.md: 
 hc/en-gb/articles/360004424575.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_12-05-2021.md
 hc/en-gb/articles/360004558895-What-software-environments-on-NeSI-are-optimised-for-Machine-Learning-and-data-science-.md: General/FAQs/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md
 hc/en-gb/articles/360004558895.md: General/FAQs/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md
-hc/en-gb/articles/360004559095-Password-Expiry.md: General/FAQs/Password_Expiry.md
-hc/en-gb/articles/360004559095.md: General/FAQs/Password_Expiry.md
 hc/en-gb/articles/4401821809679-How-can-I-give-read-only-team-members-access-to-my-files.md: General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md
 hc/en-gb/articles/4401821809679.md: General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md
 hc/en-gb/articles/4402140392207-my-nesi-org-nz-release-notes-v2-0-3.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-3.md
@@ -360,8 +341,6 @@ hc/en-gb/articles/4406923475471-jupyter-nesi-org-nz-release-notes-24-09-2021.md:
 hc/en-gb/articles/4406923475471.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_24-09-2021.md
 hc/en-gb/articles/4407274387599-Improved-data-management-efficient-use-of-NeSI-HPC-storage.md: General/Announcements/Improved_data_management_and_efficient_use_of_NeSI_HPC_storage.md
 hc/en-gb/articles/4407274387599.md: General/Announcements/Improved_data_management_and_efficient_use_of_NeSI_HPC_storage.md
-hc/en-gb/articles/4407442866703-X-Forwarding-using-the-Ubuntu-Terminal-on-Windows.md: Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md
-hc/en-gb/articles/4407442866703.md: Getting_Started/Accessing_the_HPCs/X_Forwarding_using_the_Ubuntu_Terminal_on_Windows.md
 hc/en-gb/articles/4407886998671-jupyter-nesi-org-nz-release-notes-14-10-2021.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_14-10-2021.md
 hc/en-gb/articles/4407886998671.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_14-10-2021.md
 hc/en-gb/articles/4408743148431-jupyter-nesi-org-nz-release-notes-02-11-2021.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-11-2021.md
@@ -406,8 +385,6 @@ hc/en-gb/articles/4831190112015-my-nesi-org-nz-release-notes-v2-9-0.md: Getting_
 hc/en-gb/articles/4831190112015.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-9-0.md
 hc/en-gb/articles/4905985717135-jupyter-nesi-org-nz-release-notes-02-06-2022.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-06-2022.md
 hc/en-gb/articles/4905985717135.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_02-06-2022.md
-hc/en-gb/articles/4963040656783-Available-GPUs-on-NeSI.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md
-hc/en-gb/articles/4963040656783.md: Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md
 hc/en-gb/articles/4970675865359-my-nesi-org-nz-release-notes-v2-10-0.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-10-0.md
 hc/en-gb/articles/4970675865359.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-10-0.md
 hc/en-gb/articles/4975669783951-Where-should-I-store-my-data-on-NeSI-systems-.md: General/FAQs/Where_should_I_store_my_data_on_NeSI_systems.md
