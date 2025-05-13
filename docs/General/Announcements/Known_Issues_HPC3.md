@@ -62,6 +62,8 @@ Our custom Slurm option `--gres=ssd` does not yet work.
 
 As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
 
+**MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us known if you find any problems.
+
 ## email
 
 Slurm options `--mail-type` is not yet effective.
@@ -77,5 +79,3 @@ You cannot yet `ssh` into compute nodes, even if you are running jobs there.  Th
 ## Slurm native profiling
 
 The Slurm option `--profile` will generate profile data, but that data is as yet only visible to NeSI staff.
-
-
