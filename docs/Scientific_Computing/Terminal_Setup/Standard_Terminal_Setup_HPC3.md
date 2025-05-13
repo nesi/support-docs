@@ -35,9 +35,9 @@ configurations.
     User username 
     HostName lander.hpc.nesi.org.nz 
 
-    Host hpc3login
+    Host nesi
     User username 
-    Hostname login01.hpc.nesi.org.nz 
+    Hostname login.hpc.nesi.org.nz 
     ProxyCommand ssh -W %h:%p hpc3lander
     ```
 
@@ -49,13 +49,13 @@ configurations.
 4. Run the command.
 
     ```sh
-    ssh hpc3login
+    ssh nesi
     ```
 
 5. You will be prompted to approve host authenticity
 
     ```sh
-    The authenticity of host 'lander.test.nesi.org.nz (163.7.144.68)' can't be established.
+    The authenticity of host 'lander.hpc.nesi.org.nz (163.7.144.68)' can't be established.
     ECDSA key fingerprint is SHA256:############################################.
     ECDSA key fingerprint is MD5:##:##:##:##:##:##:##:##:##:##:##:##:##:##:##:##.
     Are you sure you want to continue connecting (yes/no)? 
@@ -85,9 +85,9 @@ configurations.
 
 10. Return to your terminal, and press <kbd>enter</kbd>.
 
-## Subsiquent log in
+## Subsequent log in
 
-1. `ssh hpc3login`
+1. `ssh nesi`
 2. Follow the link.
 3. You may be prompted for your 6 digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.

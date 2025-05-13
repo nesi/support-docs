@@ -11,7 +11,7 @@ This article presents an overview comparison of the differences between the NeSI
 It is not a comprehensive view of the differences and where appropriate individual support pages will be updated to reflect changes and enhancements.
 For example the [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md) will have a number of changes made to it along with significant changes to the Slurm Partitions.
 
-This page should be read in conjunction with the Known Issues which are not included here as they are temporary differences to be resolved soon.
+This page should be read in conjunction with the [Known Issues](../Announcements/Known_Issues_HPC3.md) which are not included here as they are temporary differences to be resolved soon.
 
 If you are moving from Māui rather than Mahuika,
 then please see [Preparing your code for use on NeSI's new HPC platform](../Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md), and {% include "partials/support_request.html" %} if you require assistance.
@@ -49,9 +49,9 @@ OnDemand is more flexible and can deliver more GUI based apps.
 
 ## Environment Modules
 
-Our Apptainer, nano, s3cmd, and gnuplot environment modules have been depreciated - just use the system version of these tools instead.
+Our *Apptainer*, *nano*, *s3cmd*, and *gnuplot* environment modules have been depreciated - just use the system version of these tools instead.
 
-The module save and module load commands can be used to save and load your custom sets of modules,
+The `module save` and `module load` commands can be used to save and load your custom sets of modules,
 including a “default” one to load at login.
 We don't particularly recommend that, except that it is better than loading environment modules in your `~/.bash_profile.`
 
@@ -61,7 +61,9 @@ This has changed, and so any institutional firewalls which let requests from NeS
 
 ## Slurm
 
-Hyperthreading: All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
+### Hyperthreading
+
+All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
 On Mahuika mutithreaded jobs placed a thread on each virtual CPU by default,
 with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs were not hyperthreaded while single-task multithreaded jobs were.
 On HPC3 `--threads-per-core` defaults to `1`, i.e: hyperthreading is avoided, but unlike Mahuika tasks are allowed to share a core if `--threads-per-core` is set to `2`. These settings may yet change, but parallel jobs can explicitly set  `--threads-per-core` to be sure.
@@ -76,14 +78,13 @@ Jobs with a high count of cores-per-node get a priority boost (visible in the �
 
 There is a per-user limit on the job submit rate which will slow down workflow engines which submit too many jobs.  There are usually solutions to this such as array jobs or Snakemake's “groups” feature.
 
-### Misc
+### Miscellaneous
 
 KillOnBadExit is set true, so if one task in an MPI job fails, by default the whole job will be killed.
 
 Each job gets is own `/tmp` & `/dev/shm`  (via Slurm's job_container/tmpfs plugin) so does not need to bother with `$TMPDIR`.
 
-The batch scripts of recent jobs can be rediscovered with `sacct -B -j <jobid>`.  However because those are now being stored, batch script sizes are limited to 64 kB, down from 4 MB.
-If that is a problem for your workflow we can probably help turn it into something shorter with appropriate use of loops.
+The batch scripts of recent jobs can be rediscovered with `sacct -B -j <jobid>`.  However because those are now being stored, batch script sizes are limited to 64 kB, down from 4 MB.  If that is a problem for your workflow we can probably help turn it into something shorter with appropriate use of loops.
 
 ## Hardware
 
@@ -91,16 +92,17 @@ Node sizes are different, so multithreaded jobs will probably have different opt
 
 ### Milan nodes
 
-Each Milan node has two AMD Milan 7713 CPUs, each with 4 “I/O quadrants” of 2 "chiplets" of 8 cores and one level 3 cache, so each node has a total of 128 cores or 256 hyperthreaded CPUs.
+These are the same nodes as made up the Mahuika Extansion. Each Milan node has two AMD Milan 7713 CPUs, each with 4 “I/O quadrants” of 2 "chiplets" of 8 cores and one level 3 cache, so each node has a total of 128 cores or 256 hyperthreaded CPUs.
 
-The memory available to Slurm jobs is 512 GB per node, so approximately 2 GB per CPU.
-There are 64 nodes available, 8 of which will have double the memory (1 TB).
+The memory available to Slurm jobs on most of the Milan nodes is 512 GB per node, so approximately 2 GB per CPU.
+There are 64 of these nodes available, 8 of which will have twice as much memory, so 1 TB.
 
-### Genoa Nodes
+### Genoa nodes
 
-Each Genoa node has two AMD Genoa 9634 CPUs, each with 12 "chiplets" of 7 cores and one level 3 cache, so each node has a total of 168 cores or 336 hyperthreaded CPUs.
+These nodes are new. Each Genoa node has two AMD Genoa 9634 CPUs, each with 12 "chiplets" of 7 cores and one level 3 cache, so each node has a total of 168 cores or 336 hyperthreaded CPUs.
 
-The memory available to Slurm jobs on most of those nodes is 358 GB per node, so approximately 1 GB per CPU. There are 64 nodes available, 16 of which have more memory (1.5 TB).
+The memory available to Slurm jobs on most of the Genoa nodes is 358 GB per node, so approximately 1 GB per CPU. 
+There are 64 of these nodes available, 16 of which have 4 times as much memory, so 1.5 TB.
 
 ### GPUs
 
