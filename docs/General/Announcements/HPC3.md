@@ -6,8 +6,6 @@ tags:
     - refresh
 ---
 
-{% include "partials/hpc3_disclaimer.html" %}
-
 NeSI is in the progress of migrating to new hardware. For early access please send a request to support@nesi.org.nz
 
 <p hidden>abandon hope all ye who enter here</p>
@@ -22,7 +20,7 @@ Before requesting access and trying to login to the new cluster, please read the
     - using .RSYNC_FILTER
     - Syncing Data  
     - Protecting Files
-- [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md)  
+- [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)  
     - Logging in with `ssh` 
 - Please give feedback
 
