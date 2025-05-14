@@ -55,6 +55,7 @@ AdaptiveCpp's
 AdaptiveCpp
 Advisor's
 Advisor
+AgResearch's
 AgResearch
 Allinea
 AlphaFold's
@@ -192,6 +193,8 @@ CRABS's
 CRABS
 CRAMINO's
 CRAMINO
+CREST's
+CREST
 CRI
 CRLF
 CUDA's
@@ -275,6 +278,7 @@ Delft3D_FM's
 Delft3D_FM
 Delly's
 Delly
+DevOps
 Dorado's
 Dorado
 Doxygen's
@@ -334,6 +338,8 @@ FIGARO
 FLTK's
 FLTK
 FTE
+Faiss's
+Faiss
 FastANI's
 FastANI
 FastME's
@@ -700,6 +706,7 @@ MrBayes's
 MrBayes
 MultiQC's
 MultiQC
+MyNeSI
 Māui's
 Māui
 NAMD's
@@ -972,8 +979,6 @@ SAGE's
 SAGE
 SAMtools's
 SAMtools
-SAS's
-SAS
 SCOTCH's
 SCOTCH
 SCP
@@ -1698,6 +1703,8 @@ numactl's
 numactl
 objects's
 objects
+onboard
+onboarded
 onboarding
 ont-guppy-gpu's
 ont-guppy-gpu
@@ -1801,6 +1808,8 @@ roadmap
 rollout
 rsync
 runtime
+s3cmd's
+s3cmd
 samblaster's
 samblaster
 sbt's
