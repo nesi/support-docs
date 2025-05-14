@@ -1,10 +1,11 @@
 ---
 created_at: '2019-07-30T00:31:40Z'
-tags: [wsl, windows, terminal]
+tags: 
+  - wsl
+  - windows
+  - terminal
 title: Windows Subsystem for Linux (WSL)
 description: Enabling WSL allows utilising Linux tools on Windows.
-vote_count: 4
-vote_sum: 4
 ---
 
 !!! prerequisite

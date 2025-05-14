@@ -12,7 +12,7 @@ please have a look at the dedicated pages listed at the end of this
 page.
 
 !!! warning
-     An overview of available GPU cards is available in the [Available GPUs on NeSI](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md)
+     An overview of available GPU cards is available in the [Available GPUs on NeSI](./Available_GPUs_on_NeSI.md)
      support page.
      Details about GPU cards for each system and usage limits are in the
      [Mahuika Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md)

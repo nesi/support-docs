@@ -325,7 +325,7 @@ cost.
 General information about using GPUs on NeSI can be found
 [here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
 and details about the available GPUs on NeSI
-[here](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md).
+[here](../Running_Jobs_on_Maui_and_Mahuika/Available_GPUs_on_NeSI.md).
 
 Here are some additional notes specific to running VASP on GPUs on NeSI:
 

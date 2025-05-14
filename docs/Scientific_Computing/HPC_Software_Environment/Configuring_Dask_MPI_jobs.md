@@ -2,10 +2,7 @@
 created_at: '2020-02-24T20:26:39Z'
 tags: []
 title: Configuring Dask-MPI jobs
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360001392636
-zendesk_section_id: 360000040056
+status: deprecated
 ---
 
 !!! warning "Start simple"

@@ -2,10 +2,7 @@
 created_at: '2018-11-27T23:55:26Z'
 tags: []
 title: Can I use SSHFS to mount the cluster filesystem on my local machine?
-vote_count: 5
-vote_sum: 3
-zendesk_article_id: 360000621135
-zendesk_section_id: 360000039036
+status: deprecated
 ---
 
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
@@ -22,16 +19,16 @@ the names):
 
 ```sh
 # create a mount point and connect
-mkdir -p ~/mahuika-home
-sshfs -oauto_cache,follow_symlinks mahuika: ~/mahuika-home
+mkdir -p ~/nesi-home
+sshfs -oauto_cache,follow_symlinks nesi: ~/nesi-home
 ```
 
-Now you should be able to navigate to "~/mahuika-home" on your local
+Now you should be able to navigate to "~/nesi-home" on your local
 machine to access your home directory on Mahuika. To unmount the
 directory run:
 
 ```sh
-fusermount -u ~/mahuika-home
+fusermount -u ~/nesi-home
 ```
 
 To mount a project directory, you could run:
@@ -39,7 +36,7 @@ To mount a project directory, you could run:
 ```sh
 # create a mount point and connect
 mkdir -p ~/mahuika-project
-sshfs -oauto_cache,follow_symlinks mahuika:/nesi/project/nesiXXXXX ~/mahuika-project
+sshfs -oauto_cache,follow_symlinks nesi:/nesi/project/nesiXXXXX ~/mahuika-project
 ```
 
 ## MacOS
@@ -50,8 +47,8 @@ and give the volume a sensible name:
 
 ```sh
 # create a mount point and connect
-mkdir -p ~/mahuika-home
-sshfs mahuika: ~/mahuika-home \
+mkdir -p ~/nesi-home
+sshfs mahuika: ~/nesi-home \
     -oauto_cache,follow_symlinks \
     -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
 ```
@@ -59,7 +56,7 @@ sshfs mahuika: ~/mahuika-home \
 To unmount the directory on MacOS, either eject from Finder or run:
 
 ```sh
-umount ~/mahuika-home
+umount ~/nesi-home
 ```
 
 !!! note

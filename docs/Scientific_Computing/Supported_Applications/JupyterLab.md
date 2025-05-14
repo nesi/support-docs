@@ -92,9 +92,9 @@ Local Port".
 
 !!! tips
      MobaXterm has an internal terminal which acts like a linux
-     terminal and can be configured as described in the [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
-     Therewith the [SSH command line](#h_892370eb-662a-4480-9ae4-b56fd64eb7d0) approach above can
-     be used.
+     terminal and can be configured as described in the
+     [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+     There with the SSH command line approach above can be used.
 
 
 MobaXterm has a GUI to setup and launch sessions with port forwarding,

@@ -2,10 +2,7 @@
 created_at: '2019-06-13T04:08:43Z'
 tags: []
 title: Thread Placement and Thread Affinity
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000995575
-zendesk_section_id: 360000040056
+status: deprecated
 ---
 
 Multithreading with OpenMP and other threading libraries is an important

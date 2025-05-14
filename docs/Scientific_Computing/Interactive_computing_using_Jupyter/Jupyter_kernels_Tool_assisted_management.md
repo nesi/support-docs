@@ -2,6 +2,7 @@
 created_at: '2022-01-31T21:28:03Z'
 tags: []
 title: Jupyter kernels - Tool-assisted management
+status: deprecated
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 4414958674831

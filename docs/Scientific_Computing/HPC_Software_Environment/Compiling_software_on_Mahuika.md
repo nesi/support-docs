@@ -2,16 +2,13 @@
 created_at: '2018-07-12T03:48:47Z'
 tags: []
 title: "Compiling software: Mahuika"
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000329015
-zendesk_section_id: 360000040056
+status: deprecated
 ---
 
 ## Where to build
 
 You may compile (build) software on the Mahuika login nodes,
-`login.mahuika.nesi.org.nz`. Please be aware that these login nodes are
+`login.hpc.nesi.org.nz`. Please be aware that these login nodes are
 limited and shared resources. Please limit the amount of processes on
 these nodes. For example, use `make -j 5` instead of `make -j`. If you
 require many CPU cores or long run times for your build process, please

@@ -18,7 +18,7 @@ then please see [Preparing your code for use on NeSI's new HPC platform](../Anno
 
 ## Login
 
-We are now using Tuakiri to provide second-factor authentication, and this changes the login experience.  See [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md) for the full details.
+We are now using Tuakiri to provide second-factor authentication, and this changes the login experience.  See [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md) for the full details.
 
 ## Operating System
 

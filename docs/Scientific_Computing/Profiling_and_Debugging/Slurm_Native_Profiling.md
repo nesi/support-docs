@@ -4,10 +4,7 @@ tags:
 - slurm
 - profiling
 title: Slurm Native Profiling
-vote_count: 4
-vote_sum: 4
-zendesk_article_id: 360000810616
-zendesk_section_id: 360000278935
+status: deprecated
 ---
 
 Job resource usage can be determined on job completion by checking the

@@ -2,10 +2,7 @@
 created_at: '2018-09-20T23:07:16Z'
 tags: []
 title: Why can't I log in using MobaXTerm?
-vote_count: 16
-vote_sum: -4
-zendesk_article_id: 360000470655
-zendesk_section_id: 360000039036
+status: deprecated
 ---
 
 Recent changes to our authentication system have caused some problems
@@ -17,7 +14,7 @@ To fix these problems, you will need to do the following:
 
 Upgrade your MobaXTerm to the most recent stable version. You can
 download the most recent stable version
-from [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net).
+from [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net).
 !!! warning
      Some users have reported having issues downloading files using
      MobaXterm 23.6. We suggest using version 23.5 instead.

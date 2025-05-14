@@ -16,7 +16,7 @@ platform and some noteworthy changes to resource pricing as a result.
 ## New Graphics Processing Units (GPUs)
 
 We’ve installed eight NVIDIA A100 GPU cards into the
-[Mahuika HPC system](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md),
+Mahuika HPC system,
 providing a significant boost in computing performance and an
 environment particularly suited to machine learning workloads. Over the
 last few months we’ve worked directly with a group of beta tester
@@ -24,7 +24,7 @@ researchers to ensure this new capability is fit-for-purpose and tuned
 to communities' specific software and tool requirements.
 
 These new A100s, alongside
-[software optimised for data science](../FAQs/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md)),
+software optimised for data science,
 are available to researchers using **machine learning** approaches. If
 this is you, {% include "partials/support_request.html" %} to
 discuss how these new resources could support your work.

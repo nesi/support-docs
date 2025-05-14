@@ -1,11 +1,11 @@
 ---
 created_at: '2018-11-26T03:03:23Z'
-tags: []
+tags: 
+  - windows
+  - winscp
+  - putty
 title: WinSCP/PuTTY Setup (Windows)
-vote_count: 4
-vote_sum: 2
-zendesk_article_id: 360000584256
-zendesk_section_id: 360000189696
+status: deprecated
 ---
 
 !!! prerequisite
@@ -24,7 +24,7 @@ PuTTY.
 
 3. Add a *New Site* and set:
 
-    - Enter *Host Name:* `login.mahuika.nesi.org.nz` or `login.maui.nesi.org.nz`
+    - Enter *Host Name:* `login.hpc.nesi.org.nz`.
     - Enter your NeSI account username into *User name:* (Password optional)
 
     !!! tip
@@ -131,8 +131,5 @@ for a single transfer'.
      with login authentication.
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a
-         cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     -   Setting up
-         an [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md)
-         (optional).
+     -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+     -   Setting up an [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md)(optional).
