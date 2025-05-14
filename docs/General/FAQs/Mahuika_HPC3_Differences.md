@@ -74,9 +74,12 @@ These have changed.
 
 As on Mahuika, the default should be OK. The Compute nodes are classified as ***small***, ***medium***, or ***big*** RAM capacity. Nodes with different RAM do not have their own partition (recall hugemem and bigmem). Your jobs will land on the respective ***small***, ***medium***, or ***big*** nodes automatically based on your CPU to memory ratio.
 
-  - If a job is ≤ 2 GB/core it goes on ***small*** memory nodes  
-  - If a job is ≤ 4 GB/core it goes on ***medium*** memory nodes  
-  - If a job is ≤ 8 GB/core it goes on ***big*** memory nodes  
+In addition to the Milan Nodes (when transferred)
+
+  - If a job is ≤ 2 GB/core it goes on ***small*** 44 Genoa Nodes 
+  - If a job is ≤ 4 GB/core it goes on ***medium*** 4 Genoa Nodes 
+  - If a job is ≤ 8 GB/core it goes on ***big*** 16 Genoa Nodes
+
 
 There is no need to set `--partition` unless you have a specific reason to run your job on Milan or Genoa.
 
