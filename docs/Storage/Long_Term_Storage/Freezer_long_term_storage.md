@@ -13,17 +13,11 @@ Due to the tape storage backend Freezer is intended for use with relatively larg
 ## Getting started
 
 Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI](https://my.nesi.org.nz/).
-Once onboarded, you can start to use Freezer. 
+Once onboarded, you can start to use Freezer.
 We recommend using s3cmd tool for interacting with Freezer.
 
 ### Tool Installation
-The s3cmd tool needs to be activated. 
-
-Load the s3cmd module
-
-```sh
-module load s3cmd/2.4.0
-```
+The `s3cmd` tool is available by default.  
 
 ### Configure
 Configuring the tool allows for user credentials and default buckets to be remembered.
@@ -94,7 +88,7 @@ Test access with supplied credentials? [Y/n]
 List all objects in a bucket
 
 ```sh
-s3cmd ls -r -l -H s3://nesi99999/
+s3cmd ls -r -l -H s3://nearline-99999/
 ```
 
 This can also be used to list all the objects in path.
@@ -112,29 +106,41 @@ s3cmd la
 ### Storage usage by specific bucket
 
 ```sh
-s3cmd du -H s3://nesi99999_9776
-   7G      1781 objects s3://nesi99999_9776/
+s3cmd du -H s3://nearline_9776
+   7G      1781 objects s3://nearline_9776/
 ```
+`s3cmd du -H` without specifying a bucket is only available for NeSI project owners.
 
 ### Put objects
 
 To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
 
 ```sh
-s3cmd put yourfile s3://nesi99999/cwil201/yourfile
-upload: 'yourfile' -> 's3://nesi99999/cwil201/yourfile'  [1 of 1]
+s3cmd put yourfile s3://nearline_9776/cwil201/yourfile
+upload: 'yourfile' -> 's3://nearline_9776/cwil201/yourfile'  [1 of 1]
  172202 of 172202   100% in    0s   920.89 KB/s  done
 ```
 
 or folders
 
 ```sh
-s3cmd put yourfolder s3://nesi99999/cwil201/yourfolder/ --recursive
-upload: 'yourfolder/yourfile' -> 's3://nesi99999/cwil201/yourfolder/yourfolder/yourfile'  [1 of 1]
+s3cmd put yourfolder s3://nearline_9776/cwil201/yourfolder/ --recursive
+upload: 'yourfolder/yourfile' -> 's3://nearline_9776/cwil201/yourfolder/yourfolder/yourfile'  [1 of 1]
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
 
-Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.  
+Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.
+
+### Synchronise data
+
+tbd
+```sh
+s3cmd sync -r yourfolder s3://nearline_9776/cwil201/yourfolder/
+```
+
+### Preview or dry-run
+
+tbd
 
 ### List objects before restore
 

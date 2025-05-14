@@ -21,9 +21,8 @@ search:
     -   updated the descriptions of NeSI services 
     -   simplified the overview of the project application process
     -   updated the list of organisations supported by Tuakiri 
--   Improved visibility of [Nearline (long-term
-    storage)](../../../Storage/Long_Term_Storage/Nearline_service/Nearline_Long_Term_Storage_Service.md)
-    allocations if any exist for your project(s). A project with only
+-   Improved visibility of long-term
+    storage allocations if any exist for your project(s). A project with only
     Nearline resources will have a status of Archived.
 -   Notification banner created to display holiday hours for NeSI
     Support from the 22nd of December 2023 to the 2nd of January 2024.
