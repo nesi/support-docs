@@ -16,15 +16,6 @@ Before getting started, you will need an allocation and credentials. To apply fo
 
 We recommend using s3cmd tool for interacting with Freezer
 
-## Installation
-The s3cmd tool needs to be activated. 
-
-Load the s3cmd module
-
-```sh
-module load s3cmd/2.4.0
-```
-
 ## Configure
 Configuring the tool allows for user credentials and default buckets to be remembered.
 
