@@ -20,21 +20,19 @@ The Vienna Ab initio Simulation Package (VASP) is a programme for atomic
 scale materials modelling.
 
 VASP computes an approximate solution to the many-body Schrödinger
-equation of a chemical system by either Density Functional Theory (and
-the KS equations), or Hartree-Fock.
+equation of a chemical system by either Density Functional Theory, Hartree-Fock, or both with hybrid functionals.
 
 Periodic boundary conditions make VASP particularly useful for studying
-materials with bulk-like properties. VASP uses a basis set made up of
+materials with bulk materials. (VASP uses a basis set made up of
 plane-waves as opposed to atom centred basis sets, and describes core
-atomic charges with pseudopotentials.
+atomic charges with pseudopotentials)[https://www.vasp.at/wiki/index.php/Category:Theory].
 
-VASP can (among many other things) perform
+VASP is mostly used for studying
 
-- structural relaxation and calculation of forces between nuclei
+- ground state electronic structure
+- structural relaxation and minimising forces between atoms.
 - molecular dynamics
-- magnetic moments
-- partial charges
-- optical properties
+- transition state energies
 
 For more information, please visit the VASP home page at
 <http://www.vasp.at>.
@@ -45,17 +43,9 @@ VASP is currently available on the Mahuika and Māui clusters.
 
 ## Licences
 
-VASP is made available to researchers under commercial licence
-agreements with individuals, research groups or institutions. Whether
-you have access to VASP, which versions you have access to, and under
-what conditions, will vary depending on where you work or study. You
-will only be permitted to access and use any given version of VASP on
-any NeSI cluster if you have a valid licence to use that version of VASP
-with your research group, employer, or institution, and if the terms of
-your licence permit cluster use.
+A VASP license is managed at the reasearch group level. Which versions you have access to depends on what version your reasearch group leader has purchased. You will have access to either VASP4, VASP5, or VASP6. Minor releases are included under the major release license, for example VASP6.?.? is available to those who have a VASP6 license.
 
-If you do have a valid license, please {% include "partials/support_request.html" %} to gain access to the VASP
-executables. You may be asked to provide proof of your license if you
+If your research group has a valid license, please {% include "partials/support_request.html" %} and CC the group leader. NeSI support will add the relevent permissions to your NeSI UID which will allow you to access the VASP modules. You may be asked to provide proof of your license if you
 are not from a known group or if the license is new.
 
 ## Best practices for VASP calculations

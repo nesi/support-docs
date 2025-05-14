@@ -31,6 +31,14 @@ matrix:
       #  [some page](../link/to/some/page.md)
       - open: '(\]\()'
         close: '(\))'
+      # Ignore macros
+      # {{some.template.variable}}
+      - open: '(\{\{)'
+        close: '(\}\})'
+      # Ignore include
+      # {% include "partials/support_request.html" %}
+      - open: '({%)'
+        close: '(%})'
   - pyspelling.filters.url:
   - pyspelling.filters.markdown:
       markdown_extensions:

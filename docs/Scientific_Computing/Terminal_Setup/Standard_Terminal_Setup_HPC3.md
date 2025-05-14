@@ -6,8 +6,7 @@ tags:
 description: How to setup your ssh config file in order to connect to the NeSI cluster.
 ---
 
-!!! warning "EARLY ACCESS ONLY"
-    See [Known Issues HPC3](../../General/Announcements/Known_Issues_HPC3.md) for more info.
+{% include "partials/hpc3_disclaimer.html" %}
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
@@ -15,6 +14,9 @@ description: How to setup your ssh config file in order to connect to the NeSI c
          - Built in Linux/Mac terminal
          - [Windows Subsystem for Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
          - [VSCode](../../Scientific_Computing/Terminal_Setup/VSCode.md)
+
+!!! warn
+    The following instructions may not work when using any non-standard terminal client.
 
 ## First time setup
 
@@ -30,12 +32,14 @@ configurations.
 
     ```sh
     Host hpc3lander 
-    User cwal219 
-    HostName lander.test.nesi.org.nz 
+    User username
+    ForwardX11 yes
+    HostName lander.hpc.nesi.org.nz 
 
-    Host hpc3login 
-    User cwal219 
-    Hostname login01.hpc.nesi.org.nz 
+    Host nesi
+    User username 
+    Hostname login.hpc.nesi.org.nz
+    ForwardX11 yes
     ProxyCommand ssh -W %h:%p hpc3lander
     ```
 
@@ -47,13 +51,13 @@ configurations.
 4. Run the command.
 
     ```sh
-    ssh hpc3login
+    ssh nesi
     ```
 
 5. You will be prompted to approve host authenticity
 
     ```sh
-    The authenticity of host 'lander.test.nesi.org.nz (163.7.144.68)' can't be established.
+    The authenticity of host 'lander.hpc.nesi.org.nz (163.7.144.68)' can't be established.
     ECDSA key fingerprint is SHA256:############################################.
     ECDSA key fingerprint is MD5:##:##:##:##:##:##:##:##:##:##:##:##:##:##:##:##.
     Are you sure you want to continue connecting (yes/no)? 
@@ -69,6 +73,9 @@ configurations.
 
     Depending on the terminal used, you may have to hold `ctrl` when clicking to follow the link.
 
+!!! warn "Double Authentication"
+    If you set up your `.ssh/config` as recommended you will be prompted to authenticate again. We are working on fixing this.
+
 7. Select your institution, you will be prompted to provide your login details.
 
 8. Click 'Yes' when prompted to trust this device. This will allow you to log in without 2FA for 7 days. The name can be anything.
@@ -80,9 +87,9 @@ configurations.
 
 10. Return to your terminal, and press <kbd>enter</kbd>.
 
-## Subsiquent log in
+## Subsequent log in
 
-1. `ssh hpc3login`
+1. `ssh nesi`
 2. Follow the link.
 3. You may be prompted for your 6 digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.
