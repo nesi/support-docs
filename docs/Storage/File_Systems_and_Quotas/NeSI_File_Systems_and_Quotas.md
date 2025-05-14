@@ -166,7 +166,7 @@ an Automatic Tape Library (ATL). Files will remain on `/nesi/nearline`
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
-See [more information about the nearline service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md).
+See [more information about the long term storage service](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md).
 
 ## Snapshots
 
