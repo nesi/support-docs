@@ -31,11 +31,13 @@ configurations.
     ```sh
     Host nesilander 
     User username 
+    ForwardX11 yes
     HostName lander.hpc.nesi.org.nz 
 
     Host nesi
     User username 
-    Hostname login.hpc.nesi.org.nz 
+    Hostname login.hpc.nesi.org.nz
+    ForwardX11 yes
     ProxyCommand ssh -W %h:%p nesilander
     ```
 
