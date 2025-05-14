@@ -186,8 +186,6 @@ hc/en-gb/articles/360001045096.md: Scientific_Computing/HPC_Software_Environment
 hc/en-gb/articles/360001050575-Ubuntu-LTS-terminal-Windows.md: Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md
 hc/en-gb/articles/360001050575.md: Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md
 Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md: Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md
-hc/en-gb/articles/360001053675-Skylake-warning-message-on-M%C4%81ui.md: General/FAQs/Skylake_warning_message_on_Maui.md
-hc/en-gb/articles/360001053675.md: General/FAQs/Skylake_warning_message_on_Maui.md
 hc/en-gb/articles/360001070496-OpenMP-settings.md: Scientific_Computing/HPC_Software_Environment/OpenMP_settings.md
 hc/en-gb/articles/360001070496.md: Scientific_Computing/HPC_Software_Environment/OpenMP_settings.md
 hc/en-gb/articles/360001075575-Windows-Subsystem-for-Linux-WSL.md: Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md

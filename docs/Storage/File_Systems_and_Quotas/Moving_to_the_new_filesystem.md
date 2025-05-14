@@ -65,6 +65,9 @@ We are running rsync with these filtering rules:
 : .RSYNC_FILTER
 ```
 
+!!! warning
+    Despite beginning with "/" the RSYC_FILTER file uses relatives paths from the location of the file.
+
 It is unlikely that you will want to add additional rules via an `.RSYNC_FILTER` file in these directories, but if you do then it is most likely to be a fairly simple exclusion such as
 
 ```rsync
@@ -121,6 +124,9 @@ If combining exclusions and inclusions, remember that the order matters, as the 
 - /MyData/Temporary
 + /MyData/***
 ```
+
+!!! warning
+    Despite beginning with "/" the RSYC_FILTER file uses relatives paths from the location of the file.
 
 ### Large multi-user projects
 
