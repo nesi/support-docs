@@ -30,18 +30,18 @@ configurations.
 
     ```sh
     Host nesilander 
-    User username 
-    ForwardX11 yes
-    HostName lander.hpc.nesi.org.nz 
+        User username 
+        ForwardX11 yes
+        HostName lander.hpc.nesi.org.nz 
 
     Host nesi
-    User username 
-    Hostname login.hpc.nesi.org.nz
-    ForwardX11 yes
-    ProxyCommand ssh -W %h:%p nesilander
+        User username 
+        Hostname login.hpc.nesi.org.nz
+        ForwardX11 yes
+        ProxyCommand ssh -W %h:%p nesilander
     ```
 
-    Close and save with ctrl x, y, Enter
+    Close and save with `ctrl x`, `ctrl y`, `Enter`
 
 3. Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
