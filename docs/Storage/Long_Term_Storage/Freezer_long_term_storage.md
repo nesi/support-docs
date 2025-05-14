@@ -150,13 +150,13 @@ Only shows what should be uploaded or downloaded but don't actually do it. May s
 List contained objects/files/folders:
 
 ```sh
-s3cmd ls -l -H s3://nesi99999/tb-test/openrefine01/
+s3cmd ls -l -H s3://nearline_9776/tb-test/openrefine01/
 ```
 
 or all objects recursive -r or --recursive
 
 ```sh
-s3cmd ls -r -l -H s3://nesi99999/tb-test/openrefine01/
+s3cmd ls -r -l -H s3://nearline_9776/tb-test/openrefine01/
 ```
 
 ### Restore from tape
@@ -164,20 +164,21 @@ s3cmd ls -r -l -H s3://nesi99999/tb-test/openrefine01/
 Restore file from Glacier storage `<StorageClass>GLACIER</StorageClass>`
 
 ```sh
-s3cmd restore --recursive s3://nesi99999/tb-test/openrefine01/ 
-restore: 's3://nesi99999/tb-test/openrefine01/1957656657122.project/data.zip'
-restore: 's3://nesi99999/tb-test/openrefine01/1957656657122.project/metadata.json'
-restore: 's3://nesi99999/tb-test/openrefine01/1957656657122.project/metadata.old.json'
-restore: 's3://nesi99999/tb-test/openrefine01/dbextension/.saved-db-connections.json'
-restore: 's3://nesi99999/tb-test/openrefine01/workspace.json'
-restore: 's3://nesi99999/tb-test/openrefine01/workspace.old.json
+s3cmd restore --recursive s3://nearline_9776/tb-test/openrefine01/ 
+restore: 's3://nearline_9776/tb-test/openrefine01/1957656657122.project/data.zip'
+restore: 's3://nearline_9776/tb-test/openrefine01/1957656657122.project/metadata.json'
+restore: 's3://nearline_9776/tb-test/openrefine01/1957656657122.project/metadata.old.json'
+restore: 's3://nearline_9776/tb-test/openrefine01/dbextension/.saved-db-connections.json'
+restore: 's3://nesi9nearline_97769999/tb-test/openrefine01/workspace.json'
+restore: 's3://nearline_9776/tb-test/openrefine01/workspace.old.json
 ```
 
 ### Get objects after restore
 
 Example to get/download the directory ‘openrefine01’ and all contained objects/files/folders:
-```sh
 
+```sh
+s3cmd get --recursive s3://nearline_9776/tb-test/openrefine01/
 ```
 
 ## s3cmd reference
