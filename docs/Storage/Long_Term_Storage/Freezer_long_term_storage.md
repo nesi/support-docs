@@ -175,7 +175,7 @@ restore: 's3://nearline_9776/tb-test/openrefine01/workspace.old.json
 
 ### Get objects after restore
 
-Example to get/download the directory ‘openrefine01’ and all contained objects/files/folders:
+Example to get or download the directory `openrefine01` and all contained objects/files/folders:
 
 ```sh
 s3cmd get --recursive s3://nearline_9776/tb-test/openrefine01/
