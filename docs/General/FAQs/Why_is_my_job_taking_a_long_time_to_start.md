@@ -2,10 +2,6 @@
 created_at: '2019-02-06T22:27:04Z'
 tags: []
 title: Why is my job taking a long time to start?
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000737555
-zendesk_section_id: 360000039036
 ---
 
 If you think your job is taking unexpectedly long to start running,
@@ -72,18 +68,14 @@ Priority and Resources at the same time.
 ### Other high-priority jobs
 
 You can check the job's priority relative to other waiting jobs by means
-of the following command on a
-[Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md)
-or
-[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md)
-login node (as appropriate):
+of the following command on a login node
 
 ```sh
 nn_job_priorities
 ```
 
 This command is intended to produce the same results as the native Slurm
-command `sprio`, but with jobs sorted in order of priority from highest
+command `sprio`, but with jobs sorted in order of priority from highest
 to lowest.
 
 The output should look something like this:

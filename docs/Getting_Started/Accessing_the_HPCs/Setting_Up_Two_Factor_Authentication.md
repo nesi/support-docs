@@ -11,10 +11,9 @@ status: deprecated
 !!! prerequisite
     -  Have a [NeSI account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
     -  Be a member of an [active project](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).  
-    -  Have [set up your NeSI account password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).  
     -  Have a device with an authentication app.
 
-##  Authentication App
+## Authentication App
 
 In order to generate your second factor, which you will require in order
 to access to any NeSI cluster, you will need a device with an
@@ -26,18 +25,18 @@ If you some reason you can't do this, please contact NeSI support.
 
 ## Linking a device to your account
 
-1. Log in to [My NeSI](https://my.nesi.org.nz) via your browser.
+1. Log in to [My NeSI](https://my.nesi.org.nz) via your browser.
 
 2. Click **My HPC Account** on left hand panel  and then **Setup
    Two-Factor Authentication device**  
-   ![authentication\_factor\_setup.png](../../assets/images/Setting_Up_Two_Factor_Authentication.png)
+   ![authentication factor setup](../../assets/images/Setting_Up_Two_Factor_Authentication.png)
 
 3. Click the "**Setup Two-Factor Authentication device**" link.  
-   ![set\_up\_2fa\_device.png](../../assets/images/Setting_Up_Two_Factor_Authentication_0.png)
+   ![set up 2fa device](../../assets/images/Setting_Up_Two_Factor_Authentication_0.png)
 
 4. After clicking on "Continue" you will retrieve the QR code.
 
-5. Open your Authy or Google Authenticator app and click on the add
+5. Open your Authy or Google Authenticator app and click on the add
    button and select "**Scan a barcode**". Alternatively, if you are
    not able to scan the barcode from your device you can manually enter
    the provided authentication code into your authentication app.
