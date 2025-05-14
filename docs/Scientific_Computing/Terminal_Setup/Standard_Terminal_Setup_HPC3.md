@@ -42,17 +42,20 @@ configurations.
     ```
 
     Close and save with ctrl x, y, Enter
-
-3. Ensure the permissions are correct by
+   
+!!! warning
+    For MobaXterm users `nano` is not available be default if you have not installed `nano` you will want to use your preferred text editor. `notepad` is available on Windows machines but you will need to move to the `.ssh/` directory. To create the `config` file with Notepad use the `cd ~/.ssh/` to enter the `.ssh/` directory and run the command `notepad config.` (ensuring the filename ends with a `.` so it does not default to a `.txt` file), this will open the Notepad GUI. Once you have copied and edit the previously specified block of text you can select "File" the "Save" from the dropdown menu and exit Notepad.
+   
+4. Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
 
-4. Run the command.
+5. Run the command.
 
     ```sh
     ssh nesi
     ```
 
-5. You will be prompted to approve host authenticity
+6. You will be prompted to approve host authenticity
 
     ```sh
     The authenticity of host 'lander.hpc.nesi.org.nz (163.7.144.68)' can't be established.
@@ -63,7 +66,7 @@ configurations.
 
     Type `yes` and <kbd>Enter</kbd>
 
-6. You will be presented with a link.
+7. You will be presented with a link.
 
     ```sh
     Authenticate at https://iam.nesi.org.nz/realms/public/device?user_code=XXXX-XXXX and press ENTER.
