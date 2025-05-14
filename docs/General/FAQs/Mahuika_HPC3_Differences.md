@@ -70,7 +70,15 @@ On HPC3 `--threads-per-core` defaults to `1`, i.e: hyperthreading is avoided, bu
 
 ### Partitions & limits
 
-These have changed.  As on Mahuika, the default should be OK, but if you want to select a particular microarchitecture you can use `-p milan` or `-p genoa`.  The three Cascade Lake “hugemem” nodes will also have their own partition.
+These have changed.  
+
+As on Mahuika, the default should be OK. The Compute nodes are classified as ***small***, ***medium***, or ***big*** RAM capacity. Nodes with different RAM do not have their own partition (recall hugemem and bigmem). Your jobs will land on the respective ***small***, ***medium***, or ***big*** nodes automatically based on your CPU to memory ratio.
+
+  - If a job is ≤ 2 GB/core it goes on ***small*** memory nodes  
+  - If a job is ≤ 4 GB/core it goes on ***medium*** memory nodes  
+  - If a job is ≤ 8 GB/core it goes on ***big*** memory nodes  
+
+There is no need to set `--partition` unless you have a specific reason to run your job on Milan or Genoa.
 
 ### Prioritisation
 
