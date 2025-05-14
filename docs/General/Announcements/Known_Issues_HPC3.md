@@ -64,6 +64,11 @@ As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 
 
 **MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us known if you find any problems.
 
+## License Servers
+
+We are currently unable to connect to external license servers from compute nodes. This means that software which requires a license server to be reachable will not work. This includes MATLAB, ANSYS, ABAQUS, COMSOL, and any other software which uses a node locked license.
+This is a temporary issue, and we are working to resolve it as soon as possible.
+
 ## email
 
 Slurm options `--mail-type` is not yet effective.
