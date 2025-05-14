@@ -133,9 +133,10 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 ### Synchronise data
 
-tbd
+Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options).
+
 ```sh
-s3cmd sync -r yourfolder s3://nearline_9776/cwil201/yourfolder/
+s3cmd sync yourfolder s3://nearline_9776/cwil201/yourfolder/
 ```
 
 ### Preview or dry-run
