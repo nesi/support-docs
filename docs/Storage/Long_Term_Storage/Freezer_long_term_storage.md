@@ -140,7 +140,9 @@ s3cmd sync -r yourfolder s3://nearline_9776/cwil201/yourfolder/
 
 ### Preview or dry-run
 
-tbd
+Use any of the `s3cmd` options with `-n, --dry-run`to preview the action.
+
+Only shows what should be uploaded or downloaded but don't actually do it. May still perform S3 requests to get bucket listings and other information though (only for file transfer commands).
 
 ### List objects before restore
 
