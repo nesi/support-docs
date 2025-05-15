@@ -28,7 +28,7 @@ Mahuika and Māui are scheduled to be shut down over the coming weeks (see our t
 
 ## Get started 
 
-*  Follow our guide to start working on the new platforms
+*  [Follow our guide](https://docs.nesi.org.nz/General/Announcements/HPC3/) to start working on the new platforms
 *  Log in and validate your workflows. Try everything to ensure all works as expected. Any issues, email support@nesi.org.nz.
 *  Once you’re ready to work completely on the new platforms, [follow these instructions](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#stopping-the-data-migration) to end our automated data syncronisation from Mahuika.
 *  Need help? Our team is ready to support you [by email](mailto:support@nesi.org.nz) or [on a call](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
@@ -71,12 +71,14 @@ _Note: An outage previously scheduled for May 19-20 has been postponed. We will 
  
 ## Dive into the details
 
-More details on everything mentioned above have been shared in webinars. Catch up using the links below:
+More details on everything mentioned can be found in webinars and supporting materials below:
 
-- [Watch the recording](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG) 
-- [View the slides](https://drive.google.com/file/d/1DFdGTwQNZft6try6PTTlpJ-5-RmxB42Y/view?usp=sharing)
-- [Read the Q&A](https://docs.google.com/document/d/18OZXXzezhoCN8BspEsz66enGVSE_yyBAubygiC7QDwU/edit?usp=sharing)
-
+- [16 May Webinar - Timeline update & getting started demos](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG)
+- [Slides from demo webinar](https://drive.google.com/file/d/14nrktAT-dhoA3ulXgzpShX56DaUNrYuU/view?usp=sharing)
+- [Demo clip - Logging in](https://youtu.be/IKihbN-QlIA?si=fyZCG2_wzJE6JjeK)
+- [Demo clip - Submitting Slurm jobs from OnDemand](https://youtu.be/bkq6tpRrAwc?si=XvXXWWiSJwBZNT9)
+- [Demo clip - Using MobaXterm on new platforms](https://youtu.be/EDBx24Aeel4?si=zqb2aGFKbD8E8M8x)
+- [Frequently Asked Questions](https://docs.nesi.org.nz/General/FAQs/Common_questions_about_the_platform_refresh/) 
  
 If you have any questions about the migration or the new platforms, email support@nesi.org.nz. 
 
