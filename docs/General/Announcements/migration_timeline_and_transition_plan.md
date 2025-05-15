@@ -16,16 +16,12 @@ This is our latest advanced HPC and AI platform designed to underpin a diverse a
 
 ## Migration timeline
 
-During May & June, we’re all moving to the new platforms. Here’s our current timeline. From Next Week:
+During May & June, we’re all moving to the new platforms. Here’s our current timeline:
 
 * **5 May** – Onboard early access users - reach out to support@nesi.org.nz if you’re keen on jumping in.
 * **8 May** onwards – No new projects or allocations or users will start on Māui or Mahuika. These requests will be allocated on the new platforms to start from 1 June
-* Week of **12 May** – Onboard all users with existing NeSI HPC allocations
-* **19/20 May** - [Outage](https://status.nesi.org.nz/incidents/3y3ttj57fts6) to move our user identity and project admin platforms. Impacts:
-    * Mahuika and Māui HPC clusters will be unaffected for ssh users
-    * Users will not be able to login to my.nesi.org.nz or use interactive compute services (OnDemand, Jupyter)
-    * Users will not be able to log-in to the new HPC platform (running jobs will be unaffected)
-* **23 May** - Access to Māui HPC platform is closed off
+* **15 May** – All users with existing NeSI HPC allocations can log in to the new platforms. Before you start, [visit this page](https://docs.nesi.org.nz/General/Announcements/HPC3/).
+* **26 May** - Access to Māui HPC platform is closed off
 * **1 June** onwards – Onboard new projects (projects, users, allocations)
 * **13 June** - Access to Mahuika HPC platform is closed off
 
@@ -42,10 +38,6 @@ _Confirm the data you want copied across_
 
 - `/home` and `/project` directories are already copied to the new storage and are being continuously updated to capture any changes you’re making. 
 - By default, `/nesi/nobackup` is not migrated. If you want any of this data, you can override the default and force data to be copied. [Follow the instructions](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/) here so that you have everything you need for starting work on the new platforms. Email support@nesi.org.nz if you need help.
-
-_Tour the platform_
-
-- Join us on 15 May at 1:00pm ([register here](https://www.eventbrite.co.nz/e/platform-refresh-update-getting-started-on-the-new-platforms-registration-1347251127389?aff=oddtdtcreator)) for a walk-through of how to get started on the new platforms. We’ll show you what’s changed, what’s the same, and answer any questions.
 
 _Stay up to date_
 
