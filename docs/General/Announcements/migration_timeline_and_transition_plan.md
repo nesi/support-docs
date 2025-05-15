@@ -10,9 +10,9 @@ search:
 
 NeSI’s new HPC and AI platforms are ready for you! 
 
-This is your green light to move onto faster, more powerful infrastructure designed for the future of research computing in Aotearoa New Zealand.
+It's time to move onto faster, more powerful infrastructure designed for the future of research computing in Aotearoa New Zealand.
 
-[Watch our demo of the new tools](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG).
+[Watch our demo of the new tools](https://youtu.be/Qm2inOkEtNc?si=PZGRZF4c64TGxRHu).
 
 This migration brings a rich and high performance platform into the hands of researchers, backed by the same trusted and friendly NeSI team for support and training. 
 
