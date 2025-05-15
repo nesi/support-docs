@@ -36,7 +36,8 @@ Slurm settings may change without notice during the first couple of weeks, inclu
 So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes yet either, but the largest of the Genoa nodes do have 1.5 TB of memory.
 
 ## GPUs
-No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available.
+No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available. To specify the GPU type, use `#SBATCH --gpus-per-node=H100:1` (or L4:1)
+
 
 ## Node-local SSD access
 Our custom Slurm option `--gres=ssd` does not yet work.
