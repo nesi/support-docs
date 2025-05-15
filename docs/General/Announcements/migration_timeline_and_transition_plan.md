@@ -8,7 +8,7 @@ search:
   boost: 2
 ---
 
-This week we are excited to announce the dates we’re migrating to our new platforms - [watch the announcement](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG).
+During May and June, we're all moving to the new platforms. [Watch the announcement](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG).
 
 This is our latest advanced HPC and AI platform designed to underpin a diverse array of computational and data sciences. It brings a rich and high performance platform into the hands of researchers across Aotearoa New Zealand, backed by the same friendly NeSI team for support and training. We’re looking forward to working with you all to take advantage of what it offers.
 
