@@ -30,7 +30,7 @@ There are currently no endpoints configured, workflows that make use of Globus w
 You can not recover any deleted files.
 
 ## Slurm configuration
-Slurm settings may change without notice during the first couple of weeks, including the limits on job sizes and the default for `--threads-per-core`, ie: hyperthreading.
+Slurm settings may change without notice during the first couple of weeks, including the limits on job sizes, memory, cpus and nodes you can use along with the default for `--threads-per-core`, ie: hyperthreading. The maximum job time limit is currently 7 days.
 
 ## Compute nodes
 So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes yet either, but the largest of the Genoa nodes do have 1.5 TB of memory.
