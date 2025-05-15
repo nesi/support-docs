@@ -8,9 +8,36 @@ search:
   boost: 2
 ---
 
-During May and June, we're all moving to the new platforms. [Watch the announcement](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG).
+NeSI’s new HPC and AI platforms are ready for you! 
 
-This is our latest advanced HPC and AI platform designed to underpin a diverse array of computational and data sciences. It brings a rich and high performance platform into the hands of researchers across Aotearoa New Zealand, backed by the same friendly NeSI team for support and training. We’re looking forward to working with you all to take advantage of what it offers.
+This is your green light to move onto faster, more powerful infrastructure designed for the future of research computing in Aotearoa New Zealand.
+
+[Watch our demo of the new tools](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG).
+
+This migration brings a rich and high performance platform into the hands of researchers, backed by the same trusted and friendly NeSI team for support and training. 
+
+We’re looking forward to working with you all to take advantage of what it offers.
+
+## The final countdown begins, so let’s work together
+
+Mahuika and Māui are scheduled to be shut down over the coming weeks (see our timeline below) so it’s time to get moving.
+
+* **You can login to the new platforms today.** We’ve put in the preparation for you – environments are set up, applications tested, data migrated – so jump in and get started. We’re working to optimise things iteratively so your activity helps us pinpoint what to improve next. 
+
+* **The earlier you migrate the smoother the transition will be.** We love working alongside you and resolving issues together. To keep doing that well, we need to work with you now so we’re not troubleshooting under pressure later.
+
+## Get started 
+
+*  Follow our guide to start working on the new platforms
+*  Log in and validate your workflows. Try everything to ensure all works as expected. Any issues, email support@nesi.org.nz.
+*  Once you’re ready to work completely on the new platforms, [follow these instructions](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#stopping-the-data-migration) to end our automated data syncronisation from Mahuika.
+*  Need help? Our team is ready to support you [by email](mailto:support@nesi.org.nz) or [on a call](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
+
+## What to expect next
+
+*  We’ll begin weekly email updates to support your transition
+*  We’ll start sharing release notes and progress updates on improvements to tools & systems
+*  In a few weeks we’ll report back with transition metrics, and we’d love to include your success in that.
 
  
 
@@ -34,24 +61,17 @@ _Note: An outage previously scheduled for May 19-20 has been postponed. We will 
     If you’re worried about that, get in touch and we’ll see what we can do to support you.
 
  
-## Get ready to migrate
+## Stay up to date
 
-_Confirm the data you want copied across_
-
-- `/home` and `/project` directories are already copied to the new storage and are being continuously updated to capture any changes you’re making. 
-- By default, `/nesi/nobackup` is not migrated. If you want any of this data, you can override the default and force data to be copied. [Follow the instructions here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/) so that you have everything you need for starting work on the new platforms. Email support@nesi.org.nz if you need help.
-
-_Stay up to date_
-
-- Dates in our timeline are subject to change. 
-- For ongoing updates check your inbox and follow our support channels (eg. [system status](https://status.nesi.org.nz/), [support docs](https://docs.nesi.org.nz/), etc.)
-- Our online [Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) are also the perfect place to ask any questions (big or small!)
-- Reach out to work one-on-one with us to resolve any issues - support@nesi.org.nz
+*  Dates in our timeline are subject to change.
+*  For ongoing updates check your inbox and follow our support channels (eg. [system status](https://status.nesi.org.nz/), [support docs](https://docs.nesi.org.nz/), etc.)
+*  Our online [Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) are also the perfect place to ask any questions (big or small!)
+*  Reach out to work one-on-one with us to resolve any issues - support@nesi.org.nz
 
  
 ## Dive into the details
 
-More details on everything mentioned above were shared in a webinar. Catch up using the links below:
+More details on everything mentioned above have been shared in webinars. Catch up using the links below:
 
 - [Watch the recording](https://youtu.be/EBDwWN6Fsas?si=rSV8SxfzmUZi5NcG) 
 - [View the slides](https://drive.google.com/file/d/1DFdGTwQNZft6try6PTTlpJ-5-RmxB42Y/view?usp=sharing)
