@@ -102,6 +102,7 @@ hc/en-gb/articles/360000624696-MobaXterm-Setup-Windows.md: Scientific_Computing/
 hc/en-gb/articles/360000624696.md: Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md
 hc/en-gb/articles/360000625535-Standard-Terminal-Setup.md: Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md
 hc/en-gb/articles/360000625535.md: Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md
+Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md: Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md
 hc/en-gb/articles/360000684396-Submitting-your-first-job.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
 hc/en-gb/articles/360000684396.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
 hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token.md: General/FAQs/How_to_replace_my_2FA_token.md
