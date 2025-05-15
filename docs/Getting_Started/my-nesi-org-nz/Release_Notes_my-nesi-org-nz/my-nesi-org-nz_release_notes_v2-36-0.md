@@ -9,7 +9,7 @@ search:
 
 ## New and Improved
 
-- Freezer Allocations Visibility: In the List Projects menu, select a project by clicking on its code or title. If freezer allocations are available, they will now be displayed under the Resource Allocation Details panel. This enhancement provides clearer insight into the associated resource names.  
+- Improved visibility of Freezer allocations: In the List Projects menu, you can select a project by clicking on its code or title. If freezer allocations are available for that project, they will be displayed under the Resource Allocation Details panel.  
 
 If you have any questions about any of the updates, please
 {% include "partials/support_request.html" %}.
