@@ -16,22 +16,24 @@ This is our latest advanced HPC and AI platform designed to underpin a diverse a
 
 ## Migration timeline
 
+_Updated 15 May 2025_
+
 During May & June, we’re all moving to the new platforms. Here’s our current timeline:
 
 * **5 May** – Onboard early access users - reach out to support@nesi.org.nz if you’re keen on jumping in.
-* **8 May** onwards – No new projects or allocations or users will start on Māui or Mahuika. These requests will be allocated on the new platforms to start from 1 June.
+* **8 May onwards** – No new projects or allocations or users will start on Māui or Mahuika. These requests will be allocated on the new platforms to start from 1 June.
 * **15 May** – All users with existing NeSI HPC allocations can log in to the new platforms. Before you start, [visit this page](https://docs.nesi.org.nz/General/Announcements/HPC3/).
-* **26 May** - All jobs on Milan partition must finish by this date. Access to Māui HPC platform is closed off.
+* **26 May** - All jobs on Milan partition / HGX GPU nodes **must finish by this date**. Access to Māui HPC platform ends.
 * **late May / early June** – Freezer, NeSI's new [long-term data storage platform](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), is available.
-* **1 June** onwards – Onboard new projects (projects, users, allocations).
-* **13 June** - Access to Mahuika HPC platform is closed off.
+* **1 June onwards** – Onboard new projects (projects, users, allocations).
+* **13 June** - Access to Mahuika HPC platform ends.
 
 _Note: An outage previously scheduled for May 19-20 has been postponed. We will update the timeline when the new outage date is confirmed._
 
 !!! info
-    We are physically moving parts of the computing infrastructure from Wellington to Auckland. 
+    From 26 May to early June, we are physically moving parts of the computing infrastructure from Wellington to Auckland. 
     During that time, capacity will fluctuate and there will be periods of longer queue wait times and slower throughput of work. 
-    If you’re worried about that, get in touch and we’ll see what we can do to support you.
+    If you’re worried about that, email support@nesi.org.nz and we’ll see what we can do to support you.
 
  
 ## Get ready to migrate
