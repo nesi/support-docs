@@ -35,6 +35,8 @@ such as the latest versions of VSCode.
 The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` file systems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
 One particular feature of WEKA is that it keeps recently accessed files in fast SSD storage while moving other files out to slower disk-based storage.
 
+We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression/) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
+
 There will no longer be any exemptions from nobackup autodeletion.
 Instead a combination of increased project storage and moving data to Freezer (long term storage) will be used.
 
@@ -66,7 +68,10 @@ This has changed, and so any institutional firewalls which let requests from NeS
 All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
 On Mahuika mutithreaded jobs placed a thread on each virtual CPU by default,
 with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs were not hyperthreaded while single-task multithreaded jobs were.
-On HPC3 `--threads-per-core` defaults to `1`, i.e: hyperthreading is avoided, but unlike Mahuika tasks are allowed to share a core if `--threads-per-core` is set to `2`. These settings may yet change, but parallel jobs can explicitly set  `--threads-per-core` to be sure.
+
+On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
+
+Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a mutiple of two or also use the slurm option `--tasks-per-core`. 
 
 ### Partitions & limits
 
