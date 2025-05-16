@@ -9,6 +9,9 @@ search:
   boost: 2
 ---
 
+!!! note
+    GPFS is the filesystem on Mahuika. WEKA is the filesystem on the new HPC. When we reffer to a path in _GPFS_, we are referring to a path on Mahuika path. Similarily, a _WEKA_ path is on the new HPC path.
+
 Migration of your data from GPFS to WEKA will be ongoing for several weeks.
 We will be copying across a few project directories in parallel at a time, using _rsync_.
 As each project directory is completed, the home directories of that project’s members will also be copied.
@@ -19,10 +22,6 @@ However **by default nothing will be migrated from nobackup directories**, as th
 
 ## Controlling which data gets migrated
 
-!!! note
-    GPFS is the filesystem on Mahuika. WEKA is the filesystem on the new HPC. When we reffer to a path in _GPFS_, we are referring to a path on Mahuika path. Similarily, a _WEKA_ path is on the new HPC path.
-
- 
 You can place a file named `.RSYNC_FILTER` in your directory (home, project, or nobackup) telling rsync to include or exclude particular file paths from the migration to WEKA. Note that the file is a hidden one, as its name starts with `.`. Full documentation can be found [online](https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES) or via `man rsync`, but in brief:
 
 ### Rules
