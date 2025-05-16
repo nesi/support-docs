@@ -1,9 +1,15 @@
-!!! Note
-     ondemand is in development and accessible to early access users only.
-     If you are interested in helping us test it please contact us at [support@nesi.org.nz](mailto:support@nesi.org.nz). 
-
-
 # NeSI OnDemand Release Notes
+
+## 1.0.0 - Major version upgrade (20250515)
+
+This release updates Open OnDemand to version 4.0.1.
+
+### Features
+
+- File system has been updated to use the production WEKA system, which is the same file system used with NeSI's new HPC cluster.
+- Two additional apps have been added: Visual Studio Code Server and Virtual Desktop.
+- Shell terminal has been added to the main menu that connects to the login node of the new HPC.
+- Minor UI/UX improvements
 
 ## 0.3.2 - Fixes to ongoing bugs
 
@@ -20,8 +26,6 @@ Two bugs that have been an ongoing issue for the users have been fixed.
 This release enables high memory node to be selected by the users. Currently we support up to 32GB instance on the app launch.
 
 It required work on K8s autoscaling and FreeIPA updates for auto-enrollment. Further work is needed for proper full autoscale, and will be coming up in the next release.
-
-
 
 ## 0.3.0 - initial release for Jupyter-only users
 
