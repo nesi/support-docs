@@ -176,6 +176,17 @@ If some of the CI checks failed (make sure they are not important ones), you wil
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
+## Updating A Merge Request
+
+If the main branch has changed since your feature branch diverged from main, an 'Update' button will appear where the merge button would usually be.
+Updating will pull in any new changes from the main branch into your feature branch.
+
+Choosing whether to update is optional, and should not block a merge.
+You might want to consider updating it if you think there may be a clash with the main branch,
+i.e. someone has made changes to a page you have also changed. 
+This will allow you to fix any merge conflicts in your feature branch, before merging into main.
+
+
 ## Merge Etiquette
 
 Just because a merge request has been opened, doesn't mean anyone should merge it.
