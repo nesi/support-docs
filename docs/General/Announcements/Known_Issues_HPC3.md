@@ -10,6 +10,13 @@ Known issues in HPC3 - the hope is to have these resolved by the end of May or a
 
 See also the more permanent [differences from Mahuika](../../General/FAQs/Mahuika_HPC3_Differences.md).
 
+
+!!!Recently fixed
+     - The low stack size limit of 8kB has been fixed with an increase in `ulimits`
+     - The `--ntasks` option no longer defaults to 1 when it shouldn't
+     - The `nn_` commands are available. eg `nn_seff <jobid>`.
+
+
 ## Login
 Currently, when logging into HPC3 using a proxy you will be prompted for authentication twice.
 
@@ -39,7 +46,6 @@ So far there are only the new Genoa and two of the Milan nodes present (the rest
 
 ## GPUs
 No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available. To specify the GPU type, use `#SBATCH --gpus-per-node=H100:1` (or L4:1)
-
 
 ## Node-local SSD access
 Our custom Slurm option `--gres=ssd` does not yet work.
@@ -73,5 +79,5 @@ You cannot yet `ssh` into compute nodes, even if you are running jobs there.  Th
 ## Slurm native profiling
 The Slurm option `--profile` will generate profile data, but that data is as yet only visible to NeSI staff.
 
-## nn_ commands
-The `nn_` commands are not yet available. This includes `nn_seff <jobid>`.
+## WEKA Filesystems 
+The Filesystems on HPC3 are not yet as fast as they will be
