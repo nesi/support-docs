@@ -18,7 +18,7 @@ description: |
 {{ description }}
 
 !!! info "New: Daily Office Hours to answer your migration questions"
-    Starting Monday 19 May, we're running daily online Office Hours from 9:00-10:00 am to make it easier for you to get in touch with any questions or issues related to migration. The countdown is on to [move to the new platforms](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/), so the earlier you start, the more time we'll have to work with you. No question is too big or small!
+    Starting Monday 19 May, we're running daily online Office Hours from 9:00-10:00 am to make it easier for you to get in touch about migration questions or issues. The countdown is on to [move to the new platforms](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/), so the earlier you start, the more time we'll have to work with you. Don't hesitate to talk to us, no question is too big or small!
     
 
 ## Office Hours Dates
