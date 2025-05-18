@@ -1,10 +1,5 @@
 # Interactive computing with NeSI OnDemand
 
-!!! warning
-
-    NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
-
 ## Overview
 
 NeSI OnDemand empowers students, researchers, and industry professionals with remote and interactive web access to NeSI.
@@ -24,9 +19,9 @@ A number of interactive applications can be accessed through NeSI OnDemand, incl
 
 - [JupyterLab](interactive_apps/JupyterLab/index.md)
 - [RStudio](interactive_apps/RStudio.md)
+- [Code server](interactive_apps/code_server.md)
+- [Virtual desktop](interactive_apps/virtual_desktop.md)
 - [MATLAB](interactive_apps/MATLAB.md) - currently under development, let us know if this is of interest
-- [Code server](interactive_apps/code_server.md) - currently under development, let us know if this is of interest
-- [Virtual desktop](interactive_apps/virtual_desktop.md) - currently under development, let us know if this is of interest
 
 ## Release notes
 
