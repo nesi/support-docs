@@ -1,5 +1,6 @@
 ---
 created_at: '2020-04-19T22:59:58Z'
+status: deprecated
 tags:
 - gpu
 ---
@@ -156,7 +157,7 @@ duration of 30 minutes.
 ## Load CUDA and cuDNN modules
 
 To use an Nvidia GPU card with your application, you need to load the
-driver and the CUDA toolkit via the [environment modules](../HPC_Software_Environment/Finding_Software.md)
+driver and the CUDA toolkit via the [environment modules](../Supported_Applications/index.md)
 mechanism:
 
 ``` sh
@@ -227,15 +228,17 @@ echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES}"
 
 Save this in a `test_gpu.sl` file and submit it using:
 
-``` sl
+``` sh
 sbatch test_gpu.sl
 ```
 
 The content of job output file would look like:
 
-``` sl
+``` sh
 $ cat slurm-20016124.out
+```
 
+```sh
 The following modules were not unloaded:
    (Use "module --force purge" to unload all):
 

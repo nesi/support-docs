@@ -508,5 +508,6 @@ hc/en-gb/articles/9376633910159-jupyter-nesi-org-nz-release-notes-26-03-2024.md:
 hc/en-gb/articles/9376633910159.md: Scientific_Computing/Interactive_computing_using_Jupyter/Release_Notes_jupyter-nesi-org-nz/jupyter-nesi-org-nz_release_notes_26-03-2024.md
 hc/en-gb/sections/360000040076.md : Scientific_Computing/Supported_Applications/index.md
 hc/en-gb/sections/360000040076-Supported-Applications.md: Scientific_Computing/Supported_Applications/index.md
+Scientific_Computing/HPC_Software_Environment/Finding_Software.md : Scientific_Computing/Supported_Applications/index.md
 hc.md: index.md
 hc/en-gb.md: index.md
