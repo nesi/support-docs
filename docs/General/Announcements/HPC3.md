@@ -8,17 +8,14 @@ tags:
 
 ## Before you Start
 
-Before logging in to the new cluster, please read the following pages to understand what's changed and what things we're still actively working on:
+Before using the new cluster, please read all of:
 
 - [Differences between Mahuika and the new HPC](../FAQs/Mahuika_HPC3_Differences.md)
-- [Known Issues on the new HPC](Known_Issues_HPC3.md)
-- [Data Migration](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/)  
-    - using .RSYNC_FILTER
-    - Syncing Data  
-    - Protecting Files
-- [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)  
-    - Logging in with `ssh`
-- Please give feedback - email [support@nesi.org.nz](mailto:support@nesi.org.nz) or come to our [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/)
+- [Known Issues on the new HPC](Known_Issues_HPC3.md) - Are we ready for *your* workflow?
+- [Using the new copy of your data](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#using-the-new-weka-copy-of-your-data) (a section of the [Data Migration](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/) page) - Do your new files keep disappearing?
+- [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+
+If you hit a problem please check the above pages first, and then if not answered there email [support@nesi.org.nz](mailto:support@nesi.org.nz) or come to our [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) which are currently happening daily.
 
 ## Other Links
 
