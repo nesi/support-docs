@@ -70,8 +70,6 @@ hc/en-gb/articles/360000329015-Compiling-software-on-Mahuika.md: Scientific_Comp
 hc/en-gb/articles/360000329015.md: Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md
 hc/en-gb/articles/360000336015-NeSI-Password-Policy.md: General/NeSI_Policies/NeSI_Password_Policy.md
 hc/en-gb/articles/360000336015.md: General/NeSI_Policies/NeSI_Password_Policy.md
-hc/en-gb/articles/360000360576-Finding-Software.md: Scientific_Computing/HPC_Software_Environment/Finding_Software.md
-hc/en-gb/articles/360000360576.md: Scientific_Computing/HPC_Software_Environment/Finding_Software.md
 hc/en-gb/articles/360000361675-Software-Installation-Request.md: Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md
 hc/en-gb/articles/360000361675.md: Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md
 hc/en-gb/articles/360000428676-Introductory-Material.md: Getting_Started/Getting_Help/Introductory_Material.md
@@ -200,8 +198,6 @@ hc/en-gb/articles/360001131076-Offloading-to-GPU-with-OpenACC.md: Scientific_Com
 hc/en-gb/articles/360001131076.md: Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md
 hc/en-gb/articles/360001162856-Automatic-cleaning-of-nobackup-file-system.md: Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md
 hc/en-gb/articles/360001162856.md: Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md
-hc/en-gb/articles/360001169956-Nearline-Long-Term-Storage-Service.md: Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md
-hc/en-gb/articles/360001169956.md: Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md
 hc/en-gb/articles/360001173875-MPI-Scaling-Example.md: Getting_Started/Next_Steps/MPI_Scaling_Example.md
 hc/en-gb/articles/360001173875.md: Getting_Started/Next_Steps/MPI_Scaling_Example.md
 hc/en-gb/articles/360001173895-Multithreading-Scaling-Example.md: Getting_Started/Next_Steps/Multithreading_Scaling_Example.md
@@ -220,8 +216,6 @@ hc/en-gb/articles/360001237915-How-can-I-let-my-fellow-project-team-members-read
 hc/en-gb/articles/360001237915.md: General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md
 hc/en-gb/articles/360001287235-Download-and-share-CMIP6-data-for-NIWA-researchers.md: Storage/Data_Transfer_Services/Download_and_share_CMIP6_data_for_NIWA_researchers.md
 hc/en-gb/articles/360001287235.md: Storage/Data_Transfer_Services/Download_and_share_CMIP6_data_for_NIWA_researchers.md
-hc/en-gb/articles/360001298595-Preparing-small-files-for-migration-to-Nearline-storage.md: Storage/Nearline_long_term_storage/Preparing_small_files_for_migration_to_Nearline_storage.md
-hc/en-gb/articles/360001298595.md: Storage/Nearline_long_term_storage/Preparing_small_files_for_migration_to_Nearline_storage.md
 hc/en-gb/articles/360001316356-Slurm-Interactive-Sessions.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md
 hc/en-gb/articles/360001316356.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md
 hc/en-gb/articles/360001330415-Checksums.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checksums.md
@@ -242,8 +236,6 @@ hc/en-gb/articles/360001419576-MAKER.md: Scientific_Computing/Supported_Applicat
 hc/en-gb/articles/360001419576.md: Scientific_Computing/Supported_Applications/MAKER.md
 hc/en-gb/articles/360001471955-GPU-use-on-NeSI.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
 hc/en-gb/articles/360001471955.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md
-hc/en-gb/articles/360001482516-Verifying-uploads-to-Nearline-storage.md: Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md
-hc/en-gb/articles/360001482516.md: Storage/Nearline_long_term_storage/Verifying_uploads_to_Nearline_storage.md
 hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001500156.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001508515-Git-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Git-Reference_Sheet.md
@@ -268,14 +260,10 @@ hc/en-gb/articles/360002105076-CESM.md: Scientific_Computing/Supported_Applicati
 hc/en-gb/articles/360002105076.md: Scientific_Computing/Supported_Applications/CESM.md
 hc/en-gb/articles/360002109696-WRF.md: Scientific_Computing/Supported_Applications/WRF.md
 hc/en-gb/articles/360002109696.md: Scientific_Computing/Supported_Applications/WRF.md
-hc/en-gb/articles/360002113295-Long-Term-Storage-Nearline-release-notes-v1-1-0-14.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-14.md
-hc/en-gb/articles/360002113295.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-14.md
 hc/en-gb/articles/360002327275-Job-efficiency-review.md: Getting_Started/Getting_Help/Job_efficiency_review.md
 hc/en-gb/articles/360002327275.md: Getting_Started/Getting_Help/Job_efficiency_review.md
 hc/en-gb/articles/360002558216-Lambda-Stack.md: Scientific_Computing/Supported_Applications/Lambda_Stack.md
 hc/en-gb/articles/360002558216.md: Scientific_Computing/Supported_Applications/Lambda_Stack.md
-hc/en-gb/articles/360002655596-Long-term-Storage-Nearline-release-notes-v1-1-0-18.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-18.md
-hc/en-gb/articles/360002655596.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-18.md
 hc/en-gb/articles/360002667556-Access-Policy.md: General/NeSI_Policies/Access_Policy.md
 hc/en-gb/articles/360002667556.md: General/NeSI_Policies/Access_Policy.md
 hc/en-gb/articles/360002667676-Acknowledgement-Citation-and-Publication.md: General/NeSI_Policies/Acknowledgement-Citation_and_Publication.md
@@ -286,8 +274,6 @@ hc/en-gb/articles/360003472036-VirSorter.md: Scientific_Computing/Supported_Appl
 hc/en-gb/articles/360003472036.md: Scientific_Computing/Supported_Applications/VirSorter.md
 hc/en-gb/articles/360003550396-my-nesi-org-nz-release-notes-v2-0-1.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-1.md
 hc/en-gb/articles/360003550396.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-1.md
-hc/en-gb/articles/360003551116-Long-term-Storage-Nearline-release-notes-v1-1-0-19.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-19.md
-hc/en-gb/articles/360003551116.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-19.md
 hc/en-gb/articles/360003584515-Logging-in-to-my-nesi-org-nz.md: Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md
 hc/en-gb/articles/360003584515.md: Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md
 hc/en-gb/articles/360003592875-Navigating-the-my-nesi-org-nz-web-interface.md: Getting_Started/my-nesi-org-nz/Navigating_the_my-nesi-org-nz_web_interface.md
@@ -298,8 +284,6 @@ hc/en-gb/articles/360003984776-University-of-Auckland-ANSYS-users.md: General/An
 hc/en-gb/articles/360003984776.md: General/Announcements/University_of_Auckland_ANSYS_users.md
 hc/en-gb/articles/360004065335-NeSI-Privacy-Policy.md: General/NeSI_Policies/NeSI_Privacy_Policy.md
 hc/en-gb/articles/360004065335.md: General/NeSI_Policies/NeSI_Privacy_Policy.md
-hc/en-gb/articles/360004089016-Long-term-Storage-Nearline-release-notes-v1-1-0-20.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-20.md
-hc/en-gb/articles/360004089016.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_term_Storage_Nearline_release_notes_v1-1-0-20.md
 hc/en-gb/articles/360004218816-Tuakiri-Attribute-Validator.md: Getting_Started/my-nesi-org-nz/Tuakiri_Attribute_Validator.md
 hc/en-gb/articles/360004218816.md: Getting_Started/my-nesi-org-nz/Tuakiri_Attribute_Validator.md
 hc/en-gb/articles/360004337836-RStudio-via-Jupyter-on-NeSI.md: Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md
@@ -316,8 +300,6 @@ hc/en-gb/articles/4403008253071-my-nesi-org-nz-release-notes-v2-1-0.md: Getting_
 hc/en-gb/articles/4403008253071.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-1-0.md
 hc/en-gb/articles/4403946890767-my-nesi-org-nz-release-notes-v2-2-0.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-2-0.md
 hc/en-gb/articles/4403946890767.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-2-0.md
-hc/en-gb/articles/4404255007503-Long-Term-Storage-Nearline-release-notes-v1-1-0-21.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-21.md
-hc/en-gb/articles/4404255007503.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-21.md
 hc/en-gb/articles/4405170961039-AlphaFold.md: Scientific_Computing/Supported_Applications/AlphaFold.md
 hc/en-gb/articles/4405170961039.md: Scientific_Computing/Supported_Applications/AlphaFold.md
 hc/en-gb/articles/4405263435535-my-nesi-org-nz-release-notes-v2-3-0.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-3-0.md
@@ -330,8 +312,6 @@ hc/en-gb/articles/4405623499791-Globus-V5-Paths-Permissions-Storage-Allocation.m
 hc/en-gb/articles/4405623499791.md: Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md
 hc/en-gb/articles/4405630948495-Globus-V5-endpoint-activation.md: Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md
 hc/en-gb/articles/4405630948495.md: Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md
-hc/en-gb/articles/4405757918095-Long-Term-Storage-Nearline-release-notes-v1-1-0-22.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-22.md
-hc/en-gb/articles/4405757918095.md: Storage/Nearline_long_term_storage/Release_Notes_Nearline/Long_Term_Storage_Nearline_release_notes_v1-1-0-22.md
 hc/en-gb/articles/4406437093007-my-nesi-org-nz-release-notes-v2-4-0.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-4-0.md
 hc/en-gb/articles/4406437093007.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-4-0.md
 hc/en-gb/articles/4406437522703-Quarterly-allocation-periods.md: Getting_Started/Accounts-Projects_and_Allocations/Quarterly_allocation_periods.md

@@ -15,17 +15,12 @@ page.
 !!! warning
      An overview of available GPU cards is available in the [Available GPUs on NeSI](./Available_GPUs_on_NeSI.md)
      support page.
-     Details about GPU cards for each system and usage limits are in the
-     [Mahuika Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md)
-     and [Māui\_Ancil (CS500) Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md)
-     support pages.
      Details about pricing in terms of compute units can be found in the
      [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
      page.
 
 !!! note
-     Recall, memory associated with the GPUs is the VRAM, and is a separate resource from the RAM requested by Slurm. The memory values listed below are VRAM values. For available RAM on the GPU nodes, please see 
-     [Mahuika Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md).
+     Recall, memory associated with the GPUs is the VRAM, and is a separate resource from the RAM requested by Slurm. The memory values listed below are VRAM values.
 
 ## Request GPU resources using Slurm
 
@@ -235,7 +230,7 @@ sbatch test_gpu.sl
 The content of job output file would look like:
 
 ``` sh
-$ cat slurm-20016124.out
+cat slurm-20016124.out
 ```
 
 ```sh
