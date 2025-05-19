@@ -55,6 +55,7 @@ Password:
 ```
     Enable the "Specify username" option and put your Username in
         the corresponding box.
+        
 4. In the "Advanced SSH settings"
     - Set SSH-browser type to '**SCP (enhanced speed)**'.
     - Optionally, tick the 'Follow SSH path' button.
