@@ -31,14 +31,23 @@ configurations.
     ```sh
     Host nesilander 
         User username 
-        ForwardX11 yes
         HostName lander.hpc.nesi.org.nz 
+        ForwardX11 yes
+        ForwardX11Trusted yes
+        ServerAliveInterval 300
+        ServerAliveCountMax 2
+
 
     Host nesi
         User username 
         Hostname login.hpc.nesi.org.nz
-        ForwardX11 yes
         ProxyCommand ssh -W %h:%p nesilander
+        ForwardX11 yes
+        ForwardX11Trusted yes
+        ServerAliveInterval 300
+        ServerAliveCountMax 2
+
+        
     ```
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
