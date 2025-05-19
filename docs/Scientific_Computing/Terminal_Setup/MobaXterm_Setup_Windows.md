@@ -7,6 +7,12 @@ title: MobaXterm Setup (Windows)
 description: How to set up cluster access using MobaXterm
 status: deprecated
 ---
+!!! WARNING
+    **WARNING**  
+    The session login process of MobaXTerm is not compatible with Tuakiri 2-factor authentication. 
+    
+    It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browseing, up and downloading and terminal access if you would normally have used MobaXterm.
+
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
