@@ -254,8 +254,9 @@ hc/en-gb/articles/360001523916-Port-Forwarding.md: Getting_Started/Accessing_the
 hc/en-gb/articles/360001523916.md: Getting_Started/Accessing_the_HPCs/Port_Forwarding.md
 hc/en-gb/articles/360001555615-Jupyter-on-NeSI.md: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
 hc/en-gb/articles/360001555615.md: Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md
-hc/en-gb/articles/360001580415-Miniconda3.md: Scientific_Computing/Supported_Applications/Miniconda3.md
-hc/en-gb/articles/360001580415.md: Scientific_Computing/Supported_Applications/Miniconda3.md
+hc/en-gb/articles/360001580415-Miniconda3.md: Scientific_Computing/Supported_Applications/Miniforge3.md
+hc/en-gb/articles/360001580415.md: Scientific_Computing/Supported_Applications/Miniforge3.md
+Scientific_Computing/Supported_Applications/Miniconda3.md: Scientific_Computing/Supported_Applications/Miniforge3.md
 hc/en-gb/articles/360001584875-What-is-a-core-file.md: General/FAQs/What_is_a_core_file.md
 hc/en-gb/articles/360001584875.md: General/FAQs/What_is_a_core_file.md
 hc/en-gb/articles/360001593096-Delft3D.md: Scientific_Computing/Supported_Applications/Delft3D.md
