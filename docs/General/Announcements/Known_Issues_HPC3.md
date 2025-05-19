@@ -20,7 +20,10 @@ See also the more permanent [differences from Mahuika](../../General/FAQs/Mahuik
 ## Login
 Currently, when logging into HPC3 using a proxy you will be prompted for authentication twice.
 
-Mobaxterm - configuration may not be possible currently due to name lengths. ssh through a terminal will still be possible.  
+## Mobaxterm
+The session login process of MobaXTerm is not compatible with Tuakiri 2-factor authentication.
+
+ssh through a terminal will still be possible but it is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browseing, up and downloading and terminal access if you would normally have used MobaXterm. 
 
 ## Login nodes
 The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU and memory limits.
