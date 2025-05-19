@@ -42,7 +42,7 @@ PuTTY.
 
 5. Navigate to *Connection & Tunnel* and set:
     - Enable "Connect through SSH tunnel".
-    - Under "Host name:" enter lander.nesi.org.nz
+    - Under "Host name:" enter lander.hpc.nesi.org.nz
     - Under "User name:" enter your username.
     - Optionally, enter your password in the "Password:" box.
 6. *OK &gt; Save*
@@ -63,6 +63,8 @@ password and pass it to PuTTY*
 
     ![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
 
+![alt text](../../assets/images/image.png)
+
 ## Setup for Xming (Optional)
 
 Xming is an X server for Windows allowing graphical interface with the
@@ -76,6 +78,8 @@ SSH Client' is selected).
 PuTTY/Terminal client path.
 
 *![WinSCP6.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_4.png)*
+
+![alt text](../../assets/images/image.png)
 
 3\. Restart your session.
 !!! prerequisite Important
