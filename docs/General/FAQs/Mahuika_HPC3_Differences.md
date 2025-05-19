@@ -35,6 +35,8 @@ such as the latest versions of VSCode.
 The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` file systems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
 One particular feature of WEKA is that it keeps recently accessed files in fast SSD storage while moving other files out to slower disk-based storage.
 
+Storage (byte) quotas in WEKA work the same way, but there are no inode (file) quotas.
+
 We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression/) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
 
 There will no longer be any exemptions from nobackup autodeletion.
@@ -59,11 +61,11 @@ We don't particularly recommend that, except that it is better than loading envi
 
 ## External IP address
 
-This has changed, and so any institutional firewalls which let requests from NeSI in to a networked license sever will need updating.
+This has changed to 163.7.147.128/26, i.e. 163.7.147.128 - 163.7.147.191, and so any institutional firewalls which let requests from NeSI in to a networked license sever will need updating.
 
 ## Slurm
 
-### Hyperthreading
+### Simultaneous multithreading (Hyperthreading)
 
 All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
 On Mahuika mutithreaded jobs placed a thread on each virtual CPU by default,
@@ -77,16 +79,16 @@ Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is se
 
 These have changed.  
 
-As on Mahuika, the default should be OK. The Compute nodes are classified as ***small***, ***medium***, or ***big*** RAM capacity. Nodes with different RAM do not have their own partition (recall hugemem and bigmem). Your jobs will land on the respective ***small***, ***medium***, or ***big*** nodes automatically based on your CPU to memory ratio.
+As on Mahuika, the default partition selection should generally be OK. There is no need to set `--partition` unless you need the `hugemem` partition or have a specific reason to choose the microarchitecture, in which case you can specify either the `genoa' or `milan` partition. 
 
-In addition to the Milan Nodes (when transferred)
+Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.
 
-  - If a job is ≤ 2 GB/core it goes on ***small*** 44 Genoa Nodes 
-  - If a job is ≤ 4 GB/core it goes on ***medium*** 4 Genoa Nodes 
-  - If a job is ≤ 8 GB/core it goes on ***big*** 16 Genoa Nodes
+It helps if you can get your memory use under 2 GB/core, since in addition to the Milan nodes (when they are transferred) there are amongst the new Genoa nodes:
 
+  - 44 nodes with 2 GB/core, which are available to jobs using up to 2 GB/core.
+  -  4 nodes with 4 GB/core, which are available to jobs using up to 4 GB/core.
+  - 16 nodes with 8 GB/core (1.5 TB per node) which are available to jobs using more than 2 GB/core.
 
-There is no need to set `--partition` unless you have a specific reason to run your job on Milan or Genoa.
 
 ### Prioritisation
 
