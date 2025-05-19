@@ -59,9 +59,9 @@ The `module save` and `module load` commands can be used to save and load your c
 including a “default” one to load at login.
 We don't particularly recommend that, except that it is better than loading environment modules in your `~/.bash_profile.`
 
-## External IP address
+## External IP address for outbound connections 
 
-This has changed to 163.7.147.128/26, i.e. 163.7.147.128 - 163.7.147.191, and so any institutional firewalls which let requests from NeSI in to a networked license sever will need updating.
+This has changed to `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`, and so any institutional firewalls which let requests from NeSI in to a networked license sever will need updating.
 
 ## Slurm
 
@@ -79,7 +79,7 @@ Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is se
 
 These have changed.  
 
-As on Mahuika, the default partition selection should generally be OK. There is no need to set `--partition` unless you need the `hugemem` partition or have a specific reason to choose the microarchitecture, in which case you can specify either the `genoa' or `milan` partition. 
+As on Mahuika, the default partition selection should generally be OK. There is no need to set `--partition` unless you need the `hugemem` partition or have a specific reason to choose the microarchitecture, in which case you can specify either the `genoa` or `milan` partition. 
 
 Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.
 
