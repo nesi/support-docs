@@ -25,45 +25,45 @@ PuTTY.
 3. Add a *New Site* and set:
 
     - Enter *Host Name:* `login.hpc.nesi.org.nz`.
-    - Enter your NeSI account username into *User name:* (Password optional)
+    - Enter your NeSI account username into the *User name:* field
 
-    !!! tip
-        For "file protocol" (the topmost drop-down menu), either SCP or SFTP
-        is acceptable. If you are trying to move many small files or have a
-        slow or flaky Internet connection, you may find that SFTP performs
-        better than SCP. Feel free to try both and see which works best for
-        you.
+!!! tip
+    For "file protocol" (the topmost drop-down menu), either SCP or SFTP
+    is acceptable. If you are trying to move many small files or have a
+    slow or flaky Internet connection, you may find that SFTP performs
+    better than SCP. Feel free to try both and see which works best for
+    you.
+   
+![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
-        ![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
-
-4. Open Advanced Settings.
+5. Open Advanced Settings.
 
     ![WinSCP3.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
 
-5. Navigate to *Connection & Tunnel* and set:
+6. Navigate to *Connection & Tunnel* and set:
     - Enable "Connect through SSH tunnel".
     - Under "Host name:" enter lander.hpc.nesi.org.nz
     - Under "User name:" enter your username.
-    - Optionally, enter your password in the "Password:" box.
-6. *OK &gt; Save*
+7. *OK &gt; Save*
+
+!!! note
+    When logging in the cluster using WinSCP the authentication link is clickable. You do not need to enter anything in the text box under the authentication link.
 
 ## Setup for PuTTY Terminal
 
-The default WinSCP terminal lacks much functionality. We highly
+The default WinSCP terminal is very basic. We
 recommend you use the PuTTY terminal instead.
 
 1. [Download PuTTY](https://www.putty.org/) and install.
 
 2. In WinSCP open 'Tools &gt; Preferences'
 
-    ![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
+![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
 
 3. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-    ![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
-
-![alt text](../../assets/images/image.png)
+![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
 
 ## Setup for Xming (Optional)
 
@@ -78,8 +78,6 @@ SSH Client' is selected).
 PuTTY/Terminal client path.
 
 *![WinSCP6.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_4.png)*
-
-![alt text](../../assets/images/image.png)
 
 3\. Restart your session.
 !!! prerequisite Important
