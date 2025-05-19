@@ -47,7 +47,7 @@ PuTTY.
 7. *OK &gt; Save*
 
 !!! note
-    When logging in the cluster using WinSCP the authentication link is clickable. You do not need to enter anything in the text box under the authentication link.
+    When logging in to the cluster using WinSCP the authentication link is clickable. You do not need to enter anything in the text box under the authentication link.
 
 ## Setup for PuTTY Terminal
 
