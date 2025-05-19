@@ -121,7 +121,7 @@ jobs:
         name: Run markdownlint
         run: |
           shopt -s globstar extglob
-          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | python3 checks/parse_markdownlint.py
 
   metacheck:
     name: Check page meta
