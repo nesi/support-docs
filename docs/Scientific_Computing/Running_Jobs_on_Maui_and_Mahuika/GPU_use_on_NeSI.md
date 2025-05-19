@@ -122,7 +122,8 @@ cases:
     regular Mahuika node (A100 40GB GPU) or on a Milan node (A100 80GB
     GPU).*
 
-You can also use the `--gpus-per-node`option in [Slurm interactive sessions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md),
+You can also use the `--gpus-per-node`option in
+[Slurm interactive sessions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md),
 with the `srun` and `salloc` commands. For example:
 
 ``` sh
@@ -204,6 +205,7 @@ GPU:
 
 ``` sl
 #!/bin/bash -e
+
 #SBATCH --job-name=GPUJob   # job name (shows up in the queue)
 #SBATCH --time=00-00:10:00  # Walltime (DD-HH:MM:SS)
 #SBATCH --gpus-per-node=1   # GPU resources required per node
