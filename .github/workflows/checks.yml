@@ -115,10 +115,14 @@ jobs:
         name: Check out repo.
         uses: actions/checkout@v4
       - if: ${{needs.get.outputs.filelist}}
+        name: Install dependencies
+        run: npm install -g markdownlint-cli
+      - if: ${{needs.get.outputs.filelist}}
         name: Run markdownlint
         run: |
           shopt -s globstar extglob
-          checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | checks/parse_markdownlint.py
+
   metacheck:
     name: Check page meta
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkMeta}}
