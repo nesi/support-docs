@@ -6,19 +6,20 @@ tags:
     - refresh
 ---
 
-Known issues in HPC3 - the hope is to have these resolved by the end of May or as soon as possible. This is intended to be a temporary page.
+Below is a list issues that we're actively working on. We hope to have these resolved by the end of May or as soon as possible. This is intended to be a temporary page.
 
-See also the more permanent [differences from Mahuika](../../General/FAQs/Mahuika_HPC3_Differences.md).
+For differences between the new platforms and Mahuika, see the more permanent [differences from Mahuika](../../General/FAQs/Mahuika_HPC3_Differences.md).
 
 
 !!!Recently fixed
      - The low stack size limit of 8kB has been fixed with an increase in `ulimits`
      - The `--ntasks` option no longer defaults to 1 when it shouldn't
      - The `nn_` commands are available. eg `nn_seff <jobid>`.
+     - Snapshots are available.
 
 
 ## Login
-Currently, when logging into HPC3 using a proxy you will be prompted for authentication twice.
+Currently, when logging into the new platform using a proxy you will be prompted for authentication twice.
 
 ## Mobaxterm
 The session login process of MobaXTerm is not compatible with Tuakiri 2-factor authentication.
@@ -31,16 +32,16 @@ The initial login nodes are smaller than the Mahuika ones, have slower disk I/O,
 ## OnDemand (including Jupyter)
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
-Slurm jobs can be submitted from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser
+Slurm jobs can be submitted from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser.
 
 ## Globus
-There are currently no endpoints configured, workflows that make use of Globus will not work
+There are currently no endpoints configured, workflows that make use of Globus will not work.
 
 ## Filesystem Snapshots
-You can not recover any deleted files.
+Snapshots are happening (eg: `ls /home/.snapshots/`) but we don't yet have the convenience of symlinks to them from inside a `$HOME/.snapshots` directory.
 
 ## Slurm configuration
-Slurm settings may change without notice during the first couple of weeks, including the limits on job sizes, memory, cpus and nodes you can use along with the default for `--threads-per-core`, ie: hyperthreading. The maximum job time limit is currently 7 days.
+Slurm settings may change without notice during the first couple of weeks, including the limits on job sizes, memory, cpus and nodes you can use along with the default for `--threads-per-core`, ie: hyperthreading. The maximum job time limit will stay at 7 days until approximately Monday 26th May.
 
 ## Compute nodes
 So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes yet either, but the largest of the Genoa nodes do have 1.5 TB of memory.
@@ -52,21 +53,17 @@ No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available
 Our custom Slurm option `--gres=ssd` does not yet work.
 
 ## Software
-**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until we have a stable IP address for internet access from compute nodes and institutional IT department firewall rules have been updated to match it.
+**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until we are using the above stable IP address for internet access from compute nodes and institutional IT department firewall rules have been updated to match.
 
 **Cylc** has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install it.
 
 **QChem** and any other software using node locked licences won't work on nodes which are not yet registered with that license.
 
-**Delft3D_FM** wasn't working in Mahuika's milan partition so probably needs rebuilding.
+**Delft3D_FM** wasn't working in Mahuika's Milan partition so probably needs rebuilding.
 
 As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
 
-**MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us known if you find any problems.
-
-## License Servers
-We are currently unable to connect to external license servers from compute nodes. This means that software which requires a license server to be reachable will not work. This includes MATLAB, ANSYS, ABAQUS, COMSOL, and any other software which uses a node locked license.
-This is a temporary issue, and we are working to resolve it as soon as possible.
+**MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us know if you find any problems.
 
 ## email
 Slurm options `--mail-type` is not yet effective.
@@ -81,4 +78,4 @@ You cannot yet `ssh` into compute nodes, even if you are running jobs there.  Th
 The Slurm option `--profile` will generate profile data, but that data is as yet only visible to NeSI staff.
 
 ## WEKA Filesystems 
-The Filesystems on HPC3 are not yet as fast as they will be
+The Filesystems on the new platform are not yet as fast as they will be.
