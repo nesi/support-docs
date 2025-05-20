@@ -15,6 +15,7 @@ See also the more permanent [differences from Mahuika](../../General/FAQs/Mahuik
      - The low stack size limit of 8kB has been fixed with an increase in `ulimits`
      - The `--ntasks` option no longer defaults to 1 when it shouldn't
      - The `nn_` commands are available. eg `nn_seff <jobid>`.
+     - Snapshots are available.
 
 
 ## Login
@@ -31,16 +32,16 @@ The initial login nodes are smaller than the Mahuika ones, have slower disk I/O,
 ## OnDemand (including Jupyter)
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
-Slurm jobs can be submitted from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser
+Slurm jobs can be only submitted from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser
 
 ## Globus
-There are currently no endpoints configured, workflows that make use of Globus will not work
+There are currently no endpoints configured, workflows that make use of Globus will not work yet.
 
 ## Filesystem Snapshots
-You can not recover any deleted files.
+Snapshots are happening (eg: `ls /home/.snapshots/`) but we don't yet have the convenience of symlinks to them from inside a `$HOME/.snapshots` directory.
 
 ## Slurm configuration
-Slurm settings may change without notice during the first couple of weeks, including the limits on job sizes, memory, cpus and nodes you can use along with the default for `--threads-per-core`, ie: hyperthreading. The maximum job time limit is currently 7 days.
+Slurm settings may change without notice during the first couple of weeks, including the limits on job sizes, memory, cpus and nodes you can use along with the default for `--threads-per-core`, ie: hyperthreading. The maximum job time limit will stay at 7 days until approximately Monday 26th May.
 
 ## Compute nodes
 So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes yet either, but the largest of the Genoa nodes do have 1.5 TB of memory.
@@ -52,7 +53,7 @@ No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available
 Our custom Slurm option `--gres=ssd` does not yet work.
 
 ## Software
-**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until we have a stable IP address for internet access from compute nodes and institutional IT department firewall rules have been updated to match it.
+**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until we are using the above stable IP address for internet access from compute nodes and institutional IT department firewall rules have been updated to match.
 
 **Cylc** has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install it.
 
@@ -63,10 +64,6 @@ Our custom Slurm option `--gres=ssd` does not yet work.
 As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
 
 **MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us known if you find any problems.
-
-## License Servers
-We are currently unable to connect to external license servers from compute nodes. This means that software which requires a license server to be reachable will not work. This includes MATLAB, ANSYS, ABAQUS, COMSOL, and any other software which uses a node locked license.
-This is a temporary issue, and we are working to resolve it as soon as possible.
 
 ## email
 Slurm options `--mail-type` is not yet effective.

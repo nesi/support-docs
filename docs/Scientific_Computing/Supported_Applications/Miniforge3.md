@@ -1,11 +1,7 @@
 ---
 created_at: '2020-06-23T23:10:13Z'
 tags: []
-title: Miniconda3
-vote_count: 5
-vote_sum: 5
-zendesk_article_id: 360001580415
-zendesk_section_id: 360000040076
+title: Miniforge3
 ---
 
 
@@ -15,7 +11,7 @@ zendesk_section_id: 360000040076
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-The `Miniconda3` environment module provides the
+The `Miniforge3` environment module provides the
 [Conda](https://docs.conda.io/projects/conda/en/latest/) package and
 environment manager. Conda lets you install packages and their
 dependencies in dedicated environment, giving you more freedom to
@@ -24,33 +20,27 @@ packages and no curation by the NeSI team.
 
 !!! note "Alternatives"
      - If you want a more reproducible and isolated environment, we
-         recommend using the [Singularity
-         containers](../../Scientific_Computing/Supported_Applications/Singularity.md).
+         recommend using the [Singularity containers](../../Scientific_Computing/Supported_Applications/Singularity.md).
      - If you only need access to Python and standard numerical libraries
-         (numpy, scipy, matplotlib, etc.), you can use the [Python
-         environment
-         module](../../Scientific_Computing/Supported_Applications/Python.md).
+         (numpy, scipy, matplotlib, etc.), you can use the 
+         [Python environment module](../../Scientific_Computing/Supported_Applications/Python.md).
 
-!!! tip "Māui Ancillary Nodes"
-     On Māui Ancillary Nodes, you can also use the `Anaconda3` module,
-     which provides a default environment pre-installed with a set of
-     numerical libraries (numpy, scipy, matplotlib, etc.).
 
 ## Module loading and conda environments isolation
 
-When using the Miniconda3 module, we recommend using the following
+When using the Miniforge3 module, we recommend using the following
 snippet to ensure that your conda environments can be activated and are
 isolated as possible from the rest of the system:
 
 ``` sh
-module purge && module load Miniconda3
+module purge && module load Miniforge3
 source $(conda info --base)/etc/profile.d/conda.sh
 export PYTHONNOUSERSITE=1
 ```
 
 Here are the explanations for each line of this snippet:
 
-- `module purge && module load Miniconda3` ensures that no other
+- `module purge && module load Miniforge3` ensures that no other
     environment module can affect your conda environments. In
     particular, the Python environment module change the `PYTHONPATH`
     variable, breaking the isolation of the conda environments. If you
@@ -72,7 +62,7 @@ Here are the explanations for each line of this snippet:
      On Māui Ancillary Nodes, you need to (re)load the `NeSI` module after
      using `module purge`:
      ``` sl
-     module purge && module load NeSI Miniconda3
+     module purge && module load NeSI Miniforge3
      source $(conda info --base)/etc/profile.d/conda.sh
      export PYTHONNOUSERSITE=1
      ```
@@ -80,8 +70,8 @@ Here are the explanations for each line of this snippet:
 ## Prevent conda from using /home storage
 
 Conda environments and the conda packages cache can take a lot of
-storage space. By default, Conda use [/home
-storage](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),
+storage space. By default, Conda use 
+[/home](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),
 which is restricted to 20GB on NeSI. Here are some techniques to avoid
 running out of space when using Conda.
 
@@ -96,8 +86,7 @@ where `<project_code>` should be replace with your project code. This
 setting is saved in your `~/.condarc` configuration file.
 !!! prerequisite Note
      Your package cache will be subject to the nobackup autodelete process
-     (details available in the [Nobackup
-     autodelete](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md)
+     (details available in the [Nobackup autodelete](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md)
      support page). The package cache folder is for temporary storage so it
      is safe if files within the cache folder are removed.
 
@@ -119,7 +108,7 @@ conda activate /nesi/project/<project_code>/my_conda_env
 Note that `-p` and `--prefix` options can also be used when creating an
 environment from an `environment.yml` file:
 
-``` sl
+``` sh
 conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
 ```
 
@@ -128,28 +117,7 @@ conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
      `--prefix`, the entire path of the environment is be added to the
      prompt. To remove this long prefix in your shell prompt, use the
      following configuration:
-     ``` sl
+     ``` sh
      conda config --set env_prompt '({name})'
      ```
 
-## Faster solver `mamba` (experimental feature)
-
-If you are using the module `Miniconda3/22.11.1-1`, you can accelerate
-conda environments creation and package installation using the new
-`libmamba` solver. To use it, append the option `--solver=libmamba` to
-your command.
-
-For example, to create an environment from an `environment.yml` file,
-use:
-
-``` sh
-conda env create --solver=libmamba -f environment.yml -p venv
-```
-
-or to install a package in an activate environment, use:
-
-``` sh
-conda install --solver=libmamba CONDA_PACKAGE
-```
-
-where `CONDA_PACKAGE` is the package of interest.
