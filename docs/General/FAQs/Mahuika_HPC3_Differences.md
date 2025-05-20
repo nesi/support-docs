@@ -35,7 +35,7 @@ such as the latest versions of VSCode.
 The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` file systems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
 One particular feature of WEKA is that it keeps recently accessed files in fast SSD storage while moving other files out to slower disk-based storage.
 
-We have had [automatic compression of some files](../../../Storage/File_Systems_and_Quotas/Data_Compression/) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
+We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression,md) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
 
 Storage (byte) quotas in WEKA work the same way, but there are no inode (file) quotas.
 
@@ -44,7 +44,7 @@ Instead a combination of increased project storage and moving data to Freezer (l
 
 ### Tape
 
-[Freezer](../../Storage/Freezer_long_term_storage.md) replaces Nearline.
+[Freezer](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md) replaces Nearline.
 
 ## Access via Web browser
 
