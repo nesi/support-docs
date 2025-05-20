@@ -7,6 +7,11 @@ title: MobaXterm Setup (Windows)
 description: How to set up cluster access using MobaXterm
 status: deprecated
 ---
+!!! WARNING  
+    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure. 
+    
+    It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
+
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
@@ -14,8 +19,7 @@ status: deprecated
      -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
      -   Windows operating system.
 
-Setting up MobaXterm as shown below will allow you to connect to the
-Cluster with less keyboard inputs as well as allow use of the file
+Setting up MobaXterm as shown below will allow you to connect to Mahuika with less keyboard inputs as well as allow use of the file
 transfer GUI.
 
 1. [Download MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)
@@ -49,8 +53,9 @@ Māui users will instead be prompted with:
 ``` sh
 Password:
 ```
-    - Enable the "Specify username" option and put your Username in
+    Enable the "Specify username" option and put your Username in
         the corresponding box.
+        
 4. In the "Advanced SSH settings"
     - Set SSH-browser type to '**SCP (enhanced speed)**'.
     - Optionally, tick the 'Follow SSH path' button.
@@ -67,14 +72,14 @@ Password:
 6. Click 'OK' on the open window, usually this will start a new session
     immediately. *See usage below.*
 
-!!!  bug
-     There is a bug which causes some users to be repeatedly prompted
-     `<username>@lander.nesi.hpc.org.nz's password:`  
-     This can be resolved by clicking "OK" each time you are prompted then
-     logging in as normal once you are prompted for your `First Factor:` or
-     `Password:`.  
-     See [Login Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
-     details
+!!! bug
+    There is a bug which causes some users to be repeatedly prompted
+    `<username>@lander.nesi.hpc.org.nz's password:`  
+    This can be resolved by clicking "OK" each time you are prompted then
+    logging in as normal once you are prompted for your `First Factor:` or
+    `Password:`.  
+    See [Login Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
+    details
 
 ## Usage
 

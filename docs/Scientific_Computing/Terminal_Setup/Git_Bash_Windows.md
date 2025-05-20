@@ -30,6 +30,10 @@ to the clusters directly using;
 ssh nesi
 ```
 
+You will be prompted twice for Authetication ![alt text](../../assets/images/gitbash_auth1.png)
+Hit `ctrl` and click the link and then `enter` after the browser pop shows
+![alt text](../../assets/images/gitbash_auth2.png)
+
 As multiplexing is not configured *you will have to enter your login
 credentials every time you open a new terminal or try to move a file.*
 
