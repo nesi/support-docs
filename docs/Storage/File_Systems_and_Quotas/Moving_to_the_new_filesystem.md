@@ -147,22 +147,26 @@ or
 + /*/***
 ```
 
-## Checking on progress
-
-To check on how often or how recently your data was synced, the command `nn_data_migration_rsyncs` displays the five most recent rsync runs. You can give a project code to it as a command line argument, or else it will default to showing records for your home directory and the project and nobackup directories for each of your projects.  
-
 ## Using the new WEKA copy of your data
+
+### Checking on progress
+
+To check on how often or how recently your data was synced, the command `nn_data_migration_rsyncs` (on Mahuika) displays the five most recent rsync runs. You can give a project code to it as a command line argument, or else it will default to showing records for your home directory and the project and nobackup directories for each of your projects.  
 
 Once you can log in to the new cluster and so see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file. You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end. There could be small differences in size due to differences between the ways GPFS and WEKA work, but they should be approximately the same.
 
-All home, project, and nobackup directories are still being rsynced from GPFS every couple of days, and that rsync is configured to mirror rather than just update, because that makes sense before you start using the WEKA copy. So **any changes you make on WEKA will get obliterated at random times**. There are two ways to avoid that though:
+### Protecting your new work from the ongoing data synchronisation
 
-### Protecting individual file paths
+All home, project, and nobackup directories are still being rsynced from GPFS every couple of days, and that rsync is configured to mirror rather than just update, because that makes sense before you start using the WEKA copy. So **any changes you make on WEKA will get obliterated at random times**. There are two ways to protect yourself from that:
+
+#### Protecting specific file paths in WEKA
 
 An `.RSYNC_FILTER` file in the WEKA copy can protect new files there from deletion. For example, an `.RSYNC_FILTER` file containing the line `P /example` will protect the (sibling) directory named "example", so preventing rsync from modifying its contents. This is a distinct file from the one of the same name at the GPFS end, which will not be copied across to WEKA.
 
-### Stopping the data migration
+#### Halting the synchronisation from GPFS entirely
 
-Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup). For example, `touch $HOME/.GOODBYE_GPFS`. That signals to our rsyncing script to skip that directory entirely.
+Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, please place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup). For example, `touch $HOME/.GOODBYE_GPFS`. That signals to our rsyncing script to skip that directory entirely.
 
 Once a home directory or both the filesets of a project have indicated ".GOODBYE_GPFS" we will stop even checking them, forever, so it will not be possible restart their rsyncing without asking NeSI Support to do it.
+
+This will not only save your new workspace from regularly resetting back to the state it was on GPFS, it will also let the remaining directories of other users get updated more quickly.
