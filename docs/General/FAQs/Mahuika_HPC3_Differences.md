@@ -35,9 +35,9 @@ such as the latest versions of VSCode.
 The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` file systems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
 One particular feature of WEKA is that it keeps recently accessed files in fast SSD storage while moving other files out to slower disk-based storage.
 
-Storage (byte) quotas in WEKA work the same way, but there are no inode (file) quotas.
+We have had [automatic compression of some files](../../../Storage/File_Systems_and_Quotas/Data_Compression/) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
 
-We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression/) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
+Storage (byte) quotas in WEKA work the same way, but there are no inode (file) quotas.
 
 There will no longer be any exemptions from nobackup autodeletion.
 Instead a combination of increased project storage and moving data to Freezer (long term storage) will be used.
@@ -75,7 +75,7 @@ On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is
 
 Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a mutiple of two or also use the slurm option `--tasks-per-core`. 
 
-### Partitions & limits
+### Partitions
 
 These have changed.  
 
@@ -83,20 +83,33 @@ As on Mahuika, the default partition selection should generally be OK. There is 
 
 Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.
 
-It helps if you can get your memory use under 2 GB/core, since in addition to the Milan nodes (when they are transferred) there are amongst the new Genoa nodes:
+  - If a job is ≤ 2 GB/core it goes on ***small*** 44 Genoa Nodes, or if those are full, ***medium*** nodes. 
+  - If a job is ≤ 4 GB/core it goes on ***medium*** 4 Genoa Nodes, or if those are full, ***big*** nodes.
+  - If a job is > 4 GB/core it goes on ***big*** 16 Genoa Nodes.
 
-  - 44 nodes with 2 GB/core, which are available to jobs using up to 2 GB/core.
-  -  4 nodes with 4 GB/core, which are available to jobs using up to 4 GB/core.
-  - 16 nodes with 8 GB/core (1.5 TB per node) which are available to jobs using more than 2 GB/core.
+### Limits
 
+These are open for review if you find any of them unreasonable or inefficient.  The wall-time limit of 7 days will be increased to match the 21 days of Mahuika on some nodes, probably on Monday 26th May.
+
+#### Per Job
+
+ - 10 nodes
+ - 21 node-days (so 1 node for 3 weeks, or 3 nodes for 1 week, or 10 nodes for 2 days)
+ - 7 days
+
+#### Per User
+
+ - 1344 CPU cores occupied (8 full Genoa nodes), 3528 core-days booked by running jobs (so 3 weeks of one full Genoa node).
+ - 6 TB of memory occupied (4 full 1.5 TB nodes), 30 TB-days booked by running jobs (so 3 weeks of one full 1.5 TB node).
+ - 6 GPUs occupied, 14 GPU-days booked by running jobs (so 2 GPUs for 1 week).
 
 ### Prioritisation
 
 Jobs with a high count of cores-per-node get a priority boost (visible in the “site factor” of `sprio`).  This is to help whole-node jobs get ahead of large distributed jobs with many tasks spread over many nodes.
 
-There is a per-user limit on the job submit rate which will slow down workflow engines which submit too many jobs.  There are usually solutions to this such as array jobs or Snakemake's “groups” feature.
-
 ### Miscellaneous
+
+There is a per-user limit on the job submit rate which will slow down workflow engines which submit too many jobs.  There are usually solutions to this such as array jobs or Snakemake's “groups” feature.
 
 KillOnBadExit is set true, so if one task in an MPI job fails, by default the whole job will be killed.
 
