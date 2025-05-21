@@ -21,10 +21,10 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 ## Login
 Currently, when logging into the new platform using a proxy you will be prompted for authentication twice.
 
-## Mobaxterm
-The session login process of MobaXTerm is not compatible with Tuakiri 2-factor authentication.
+## MobaXterm
+The session login process of MobaXterm is not compatible with Tuakiri 2-factor authentication.
 
-ssh through a terminal will still be possible with MobaXTerm, but it is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, file transfer (for files under 9.8 GB) and terminal access if you would normally have used MobaXTerm. 
+ssh through a terminal will still be possible with MobaXterm, but it is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, file transfer (for files under 9.8 GB) and terminal access if you would normally have used MobaXterm. 
 
 ## Login nodes
 The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU and memory limits.
