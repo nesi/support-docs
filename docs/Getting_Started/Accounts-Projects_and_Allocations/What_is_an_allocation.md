@@ -2,10 +2,7 @@
 created_at: '2020-02-25T02:35:13Z'
 tags: []
 title: What is an allocation?
-vote_count: 3
-vote_sum: -1
-zendesk_article_id: 360001385735
-zendesk_section_id: 360000196195
+status: deprecated
 ---
 
 Because NeSI's resources are limited, we manage access to our resources
@@ -45,11 +42,9 @@ relative "prices" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running
 the associated infrastructure and services.
 
-### Mahuika allocations
+### Allocations
 
-Allocations on
-[Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md)
-are measured in Mahuika compute units. A job uses one Mahuika compute
+Allocations are measured in compute units. A job uses one compute
 unit if it runs for one hour on one physical Mahuika CPU core (two
 logical CPUs), using 3 GB of RAM and no GPU devices. This means a single
 Mahuika compute unit is equivalent to what we previously called a "Fair
@@ -87,19 +82,6 @@ details). Therefore:
 
 In reality, every job must request at least some RAM.
 
-### Māui allocations
-
-The compute capacity of the
-[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md)
-supercomputer is allocated by node-hours. Though some Māui nodes have
-more RAM than others, we do not currently distinguish between low-memory
-and high-memory nodes for allocation, billing or Fair Share purposes.
-
-Each allocation on Māui includes an entitlement to use the Māui
-ancillary nodes equally with other NeSI projects having Māui allocations
-at that time.
-
-One Māui node hour is roughly equivalent to 40 Mahuika compute units.
 
 ### Online storage allocations
 
