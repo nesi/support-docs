@@ -83,13 +83,13 @@ As on Mahuika, the default partition selection should generally be OK. There is 
 
 Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.
 
-  - If a job is ≤ 2 GB/core it goes on ***small*** 44 Genoa Nodes, or if those are full, ***medium*** nodes. 
-  - If a job is ≤ 4 GB/core it goes on ***medium*** 4 Genoa Nodes, or if those are full, ***big*** nodes.
-  - If a job is > 4 GB/core it goes on ***big*** 16 Genoa Nodes.
+  - A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes. 
+  - A job which requests ≤ 4 GB/core will run on the  4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
+  - A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
 
 ### Limits
 
-These are open for review if you find any of them unreasonable or inefficient.  The wall-time limit of 7 days will be increased to match the 21 days of Mahuika on some nodes, probably on Monday 26th May.
+These are open for review if you find any of them unreasonable or inefficient.  The wall-time limit of 7 days will be increased to match the 21 days of Mahuika on at least some nodes, probably on Monday 26th May.
 
 #### Per Job
 
@@ -105,7 +105,7 @@ These are open for review if you find any of them unreasonable or inefficient.  
 
 ### Prioritisation
 
-Jobs with a high count of cores-per-node get a priority boost (visible in the “site factor” of `sprio`).  This is to help whole-node jobs get ahead of large distributed jobs with many tasks spread over many nodes.
+Whole-node jobs and others with a similarly high count of cores-per-node will get a priority boost (visible in the “site factor” of `sprio`).  This is to help whole-node jobs get ahead of large distributed jobs with many tasks spread over many nodes.
 
 ### Miscellaneous
 
@@ -123,14 +123,14 @@ Node sizes are different, so multithreaded jobs will probably have different opt
 
 ### Milan nodes
 
-These are the same nodes as made up the Mahuika Extansion. Each Milan node has two AMD Milan 7713 CPUs, each with 4 “I/O quadrants” of 2 "chiplets" of 8 cores and one level 3 cache, so each node has a total of 128 cores or 256 hyperthreaded CPUs.
+These are the same nodes as made up the Mahuika Extansion. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores or 256 hyperthreaded CPUs.
 
 The memory available to Slurm jobs on most of the Milan nodes is 512 GB per node, so approximately 2 GB per CPU.
 There are 64 of these nodes available, 8 of which will have twice as much memory, so 1 TB.
 
 ### Genoa nodes
 
-These nodes are new. Each Genoa node has two AMD Genoa 9634 CPUs, each with 12 "chiplets" of 7 cores and one level 3 cache, so each node has a total of 168 cores or 336 hyperthreaded CPUs.
+These nodes are new. Each Genoa node has 2 AMD Genoa 9634 CPUs, each with 12 "chiplets" of one L3 cache and 7 cores, so each node has a total of 168 cores or 336 hyperthreaded CPUs.
 
 The memory available to Slurm jobs on most of the Genoa nodes is 358 GB per node, so approximately 1 GB per CPU. 
 There are 64 of these nodes available, 16 of which have 4 times as much memory, so 1.5 TB.

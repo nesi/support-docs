@@ -68,7 +68,7 @@ We are running rsync with these filtering rules:
 : .RSYNC_FILTER
 ```
 
-!!! warning
+!!! note
     Despite beginning with "/" the RSYC_FILTER file uses relatives paths from the location of the file.
 
 It is unlikely that you will want to add additional rules via an `.RSYNC_FILTER` file in these directories, but if you do then it is most likely to be a fairly simple exclusion such as
@@ -128,9 +128,6 @@ If combining exclusions and inclusions, remember that the order matters, as the 
 + /MyData/***
 ```
 
-!!! warning
-    Despite beginning with "/" the RSYC_FILTER file uses relatives paths from the location of the file.
-
 ### Large multi-user projects
 
 `.RSYNC_FILTER` files can be put in any directory, not just the top one, so responsibility for sub directories can be delegated, which may be useful if you have a project or nobackup directory containing several per-user sub directories.  Users can then manage their own `.RSYNC_FILTER` files, just so long as the project's top level rules don’t completely exclude their directory in advance.  In such cases the `.RSYNC_FILTER` in the nobackup directory might look like:
@@ -153,7 +150,7 @@ or
 
 To check on how often or how recently your data was synced, the command `nn_data_migration_rsyncs` (on Mahuika) displays the five most recent rsync runs. You can give a project code to it as a command line argument, or else it will default to showing records for your home directory and the project and nobackup directories for each of your projects.  
 
-Once you can log in to the new cluster and so see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file. You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end. There could be small differences in size due to differences between the ways GPFS and WEKA work, but they should be approximately the same.
+Once you can log in to the new cluster and so see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file. You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end, though there could be differences in size due to [differences between the ways GPFS and WEKA work](../../General/FAQs/Mahuika_HPC3_Differences/#disk).
 
 ### Protecting your new work from the ongoing data synchronisation
 
@@ -170,3 +167,7 @@ Once you are happy that all your data has been successfully copied to WEKA and y
 Once a home directory or both the filesets of a project have indicated ".GOODBYE_GPFS" we will stop even checking them, forever, so it will not be possible restart their rsyncing without asking NeSI Support to do it.
 
 This will not only save your new workspace from regularly resetting back to the state it was on GPFS, it will also let the remaining directories of other users get updated more quickly.
+
+#### Recovering deleted files
+
+If you accidentally remove an important file from WEKA, you might be able to find an older copy of it from a filesystem snapshot, eg: in `/nesi/nobackup/.snapshots/`.
