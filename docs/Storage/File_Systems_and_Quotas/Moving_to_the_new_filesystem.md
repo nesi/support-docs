@@ -150,7 +150,7 @@ or
 
 To check on how often or how recently your data was synced, the command `nn_data_migration_rsyncs` (on Mahuika) displays the five most recent rsync runs. You can give a project code to it as a command line argument, or else it will default to showing records for your home directory and the project and nobackup directories for each of your projects.  
 
-Once you can log in to the new cluster and so see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file. You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end, though there could be differences in size due to [differences between the ways GPFS and WEKA work](../../General/FAQs/Mahuika_HPC3_Differences/#disk).
+Once you can log in to the new cluster and so see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file. You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end, though there could be differences in size due to [differences between the ways GPFS and WEKA work](../../General/FAQs/Mahuika_HPC3_Differences#disk).
 
 ### Protecting your new work from the ongoing data synchronisation
 
