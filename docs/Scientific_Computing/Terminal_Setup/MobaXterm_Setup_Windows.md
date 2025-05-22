@@ -8,14 +8,11 @@ description: How to set up cluster access using MobaXterm
 status: deprecated
 ---
 !!! WARNING  
-    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure. 
-    
+    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure.  
     It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
-
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-     -   Set up your [Linux Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
      -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
      -   Windows operating system.
 

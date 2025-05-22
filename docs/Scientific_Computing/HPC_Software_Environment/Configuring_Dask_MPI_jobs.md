@@ -76,7 +76,7 @@ dependencies:
 ```
 !!! info "See also"
      See the
-     [Miniconda3](../../Scientific_Computing/Supported_Applications/Miniconda3.md)
+     [Miniconda3](../../Scientific_Computing/Supported_Applications/Miniforge3.md)
      page for more information on how to create and manage Miniconda
      environments on NeSI.
 

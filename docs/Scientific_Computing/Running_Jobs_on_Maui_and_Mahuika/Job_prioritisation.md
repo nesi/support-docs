@@ -1,11 +1,7 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
 tags: []
-title: Job prioritisation
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000201636
-zendesk_section_id: 360000030876
+status: deprecated
 ---
 
 Each queued job has a priority score.  Jobs start when sufficient
@@ -84,9 +80,7 @@ they get requeued after a node failure.
 ## Other Limits
 
 Cluster and partition-specific limits can sometimes prevent jobs from
-starting regardless of their priority score.  For details see the pages
-on [Mahuika](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md) or
-[Māui.](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Maui_Slurm_Partitions.md)
+starting regardless of their priority score. 
 
 ## Backfill
 

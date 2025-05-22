@@ -5,28 +5,10 @@ tags:
 - nobackup
 - project
 title: I/O Performance Considerations
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000205355
-zendesk_section_id: 360000033936
+status: deprecated
 ---
 
-It is important to understand the different I/O performance
-characteristics of nodes that connect to storage using *native Spectrum
-Scale clients*, and those that employ *Cray’s DVS* *solution*.
-
-Applications that make heavy demands on metadata services and or have
-high levels of small I/O activity should generally not be run on
-[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md) (the Cray
-XC50).
-
 ## Nodes which access storage via native Spectrum Scale Clients
-
-All [Mauhika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md)
-HPC Cluster, [Mahuika Ancillary](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md),
-[Māui Ancillary](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui_Ancillary.md) and
-Māui login (aka build) nodes have native Spectrum Scale clients
-installed and provide high performance access to storage:
 
 - Metadata operations of the order of 190,000 file creates /second to
     a unique directory can be expected;
