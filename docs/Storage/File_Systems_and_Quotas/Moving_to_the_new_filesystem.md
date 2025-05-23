@@ -162,7 +162,13 @@ An `.RSYNC_FILTER` file in the WEKA copy can protect new files there from deleti
 
 #### Halting the synchronisation from GPFS entirely
 
-Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, please place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup). For example, `touch $HOME/.GOODBYE_GPFS`. That signals to our rsyncing script to skip that directory entirely.
+Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, please place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup).
+
+  - `touch $HOME/.GOODBYE_GPFS`
+  - `touch /nesi/project/your_project/.GOODBYE_GPFS`
+  - `touch /nesi/nobackup/your_project/.GOODBYE_GPFS`
+  
+That signals to our rsyncing script to skip that directory entirely.
 
 Once a home directory or both the filesets of a project have indicated ".GOODBYE_GPFS" we will stop even checking them, forever, so it will not be possible restart their rsyncing without asking NeSI Support to do it.
 
