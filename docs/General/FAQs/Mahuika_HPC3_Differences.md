@@ -51,13 +51,11 @@ Instead a combination of increased project storage and moving data to Freezer (l
 [OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md) is replacing JupyterHub.
 OnDemand is more flexible and can deliver more GUI based apps.
 
-## Environment Modules
+## Software
 
-Our *Apptainer*, *nano*, *s3cmd*, and *gnuplot* environment modules have been depreciated - just use the system version of these tools instead.
+Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have been depreciated - just use the system version of these tools instead.
 
-The `module save` and `module load` commands can be used to save and load your custom sets of modules,
-including a “default” one to load at login.
-We don't particularly recommend that, except that it is better than loading environment modules in your `~/.bash_profile.`
+The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, eg: `gm display ...`.
 
 ## External IP address for outbound connections 
 
@@ -89,13 +87,13 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
 
 ### Limits
 
-These are open for review if you find any of them unreasonable or inefficient.  The wall-time limit of 7 days will be increased to match the 21 days of Mahuika on at least some nodes, probably on Monday 26th May.
+These are open for review if you find any of them unreasonable or inefficient.  
 
 #### Per Job
 
  - 10 nodes
  - 21 node-days (so 1 node for 3 weeks, or 3 nodes for 1 week, or 10 nodes for 2 days)
- - 7 days
+ - 21 days (but less on `milan` until more of those nodes arrive)
 
 #### Per User
 
@@ -123,10 +121,11 @@ Node sizes are different, so multithreaded jobs will probably have different opt
 
 ### Milan nodes
 
-These are the same nodes as made up the Mahuika Extansion. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores or 256 hyperthreaded CPUs.
+These are the same nodes as made up the Mahuika Extension. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores or 256 hyperthreaded CPUs.
 
 The memory available to Slurm jobs on most of the Milan nodes is 512 GB per node, so approximately 2 GB per CPU.
-There are 64 of these nodes available, 8 of which will have twice as much memory, so 1 TB.
+
+At present there are **only two of these nodes** installed as the rest still need to be moved from Mahuika. There will eventually be 64 of these nodes available, 8 of which have twice as much memory, so 1 TB.  
 
 ### Genoa nodes
 
