@@ -6,7 +6,7 @@ tags:
     - refresh
 ---
 
-Below is a list issues that we're actively working on. We hope to have these resolved by the end of May or as soon as possible. This is intended to be a temporary page.
+Below is a list issues that we're actively working on. We hope to have these resolved soon. This is intended to be a temporary page.
 
 For differences between the new platforms and Mahuika, see the more permanent [differences from Mahuika](../../General/FAQs/Mahuika_HPC3_Differences.md).
 
@@ -27,7 +27,7 @@ The session login process of MobaXterm is not compatible with Tuakiri 2-factor a
 ssh through a terminal will still be possible with MobaXterm, but it is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, file transfer (for files under 9.8 GB) and terminal access if you would normally have used MobaXterm. 
 
 ## Login nodes
-The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU and memory limits.
+The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU, memory, and `/tmp` disk limits.
 
 ## OnDemand (including Jupyter)
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
@@ -40,14 +40,13 @@ There are currently no endpoints configured, workflows that make use of Globus w
 ## Filesystem snapshots
 Snapshots are happening (eg: `ls /home/.snapshots/`) but we don't yet have the convenience of symlinks to them from inside a `$HOME/.snapshots` directory.
 
-## Slurm configuration
-Some Slurm settings may change without notice during the first few days, including the limits on job sizes, memory, cpus and nodes. The maximum job time limit will stay at 7 days until approximately Monday 26th May.
-
 ## Compute nodes
-So far there are only the new Genoa and two of the Milan nodes present (the rest are still in Mahuika, or in transit). There are no hugemem nodes yet either, but the largest of the Genoa nodes do have 1.5 TB of memory.
+So far there are all the new Genoa nodes but **only two** of the Milan nodes present, the rest of those being still in Mahuika, or in transit. So please only use the limited Milan resource for small benchmarking tests.  
+
+None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new Genoa nodes do have 1.5 TB of memory.
 
 ## GPUs
-No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available. To specify the GPU type, use `#SBATCH --gpus-per-node=H100:1` (or L4:1)
+No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available. To specify the GPU type, use `#SBATCH --gpus-per-node=H100:1` (or `L4:1`)
 
 ## Software
 **MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until institutional IT department firewall rules have been updated to match out new IP address range.
