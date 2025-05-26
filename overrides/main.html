@@ -31,6 +31,13 @@
     {% endif %}
 {% endblock %}
 {% block content %}
+{% if page.meta and page.meta.status and page.meta.status == "deprecated" %}
+<div class="admonition deprecated">
+<p class="admonition-title">Deprecation</p>
+<p>This page has been marked as deprecated.</p>
+<p>Information you find here may be out of date and no longer accurate.</p>
+</div>
+{% endif %}
 {{ super() }}
 
 {% if git_page_authors %}

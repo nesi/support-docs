@@ -124,3 +124,8 @@
   height: 40px;
   margin: 10px;
 }
+
+/* Make depricated logo stand out */
+span.md-status.md-status--deprecated {
+    filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(70%) contrast(1000%);
+}

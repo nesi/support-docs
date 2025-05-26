@@ -152,6 +152,10 @@ There are various flavors.
     Mention possible bugs users may encounter (and tell them what to do if they encounter it).
     *Nearline doesn't work*
 
+!!! deprecated
+    Automatically added to pages with the `status:deprecated`, should be used when page is out of date.
+    *This page is rubbish!*
+
 ??? warning "Extra Admonitions you probably won't need"
     !!! note
         Use `info` instead of this.
