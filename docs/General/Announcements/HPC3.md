@@ -20,7 +20,7 @@ Before using the new cluster, please read all of:
 If you hit a problem please check the above pages first, and then if not answered there email [support@nesi.org.nz](mailto:support@nesi.org.nz) or come to our [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) which are currently happening daily.
 
 !!! WARNING Warning
-    Before running jobs on the new HPC, you ***MUST*** stop the synchronisation of your data from GPFS to WEKA, otherwise you will lose any new work you do on the new HPC. See the section on
+    Before running any substantial/production jobs on the new HPC, you ***MUST*** stop the synchronisation of your data from GPFS to WEKA, otherwise you will lose any new work you do on the new HPC. See the section on
     [Stop the Synchronisation of your Data](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/####halting-the-synchronisation-from-GPFS-entirely)
 
 ## Other Links
