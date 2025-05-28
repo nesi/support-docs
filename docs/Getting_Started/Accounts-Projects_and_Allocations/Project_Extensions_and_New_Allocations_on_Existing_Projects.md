@@ -15,8 +15,7 @@ for a new project to carry on the same work.
 
 We currently offer two sorts of extensions:
 
-- A new allocation of computing resources (usually compute units on
-    the new 2025 HPC platforms or Mahuika, or node hours on Māui)
+- A new allocation of computing resources,  
 - A project extension without a new allocation of computing resources.
 
 ## Will my project qualify for an extension?
