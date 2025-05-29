@@ -9,7 +9,7 @@ search:
 
 ## New and Improved
 
-- Previously, compute allocation requests included separate fields for compute usage amounts on Mahuika and/or Maui. This has been updated to a single usage amount field, removing the need to specify a platform. If you have specific needs, you can add a comment indicating a desired platform or type of compute resource required. This change affects the following pages and forms:
+- Previously, compute allocation requests included separate fields for compute usage amounts on Mahuika and/or Māui. This has been updated to a single usage amount field, removing the need to specify a platform. If you have specific needs, you can add a comment indicating a desired platform or type of compute resource required. This change affects the following pages and forms:
     - *Projects / New Allocation Request*,  
     - *Projects / Apply for Project*,  
     - *Requests*.  
