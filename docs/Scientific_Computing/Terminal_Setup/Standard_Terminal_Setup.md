@@ -102,6 +102,13 @@ configurations.
 3. You may be prompted for your 6 digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.
 
+## How-to Video
+
+[Watch a demo here](https://www.youtube.com/embed/IKihbN-QlIA?si=N93PPPsi85jPYV7k).
+
+
+
+
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
      -   Setting up an [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md) (optional).
