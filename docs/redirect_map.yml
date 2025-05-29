@@ -119,8 +119,8 @@ hc/en-gb/articles/360000728016-Job-Scaling-Ascertaining-job-dimensions.md: Getti
 hc/en-gb/articles/360000728016.md: Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md
 hc/en-gb/articles/360000737555-Why-is-my-job-taking-a-long-time-to-start.md: General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
 hc/en-gb/articles/360000737555.md: General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
-hc/en-gb/articles/360000743536-Fair-Share-How-jobs-get-prioritised.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md
-hc/en-gb/articles/360000743536.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md
+hc/en-gb/articles/360000743536-Fair-Share-How-jobs-get-prioritised.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md
+hc/en-gb/articles/360000743536.md: Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md
 hc/en-gb/articles/360000751636-System-status.md: Getting_Started/Getting_Help/System_status.md
 hc/en-gb/articles/360000751636.md: Getting_Started/Getting_Help/System_status.md
 hc/en-gb/articles/360000751916-Consultancy.md: Getting_Started/Getting_Help/Consultancy.md
@@ -452,7 +452,7 @@ hc/en-gb/articles/7352114813455.md: NeSI_Service_Subscriptions/Contracts_and_bil
 hc/en-gb/articles/7403361932431-snpEff.md: Scientific_Computing/Supported_Applications/snpEff.md
 hc/en-gb/articles/7403361932431.md: Scientific_Computing/Supported_Applications/snpEff.md
 hc/en-gb/articles/7463891150863-Temporary-directories.md: Scientific_Computing/HPC_Software_Environment/Temporary_directories.md
-hc/en-gb/articles/7463891150863.md: Scientific_Computing/HPC_Software_Environment/Per_job_temporary_directories.md
+hc/en-gb/articles/7463891150863.md: Scientific_Computing/HPC_Software_Environment/Temporary_directories.md
 hc/en-gb/articles/7755261198223-my-nesi-org-nz-release-notes-v2-17-0.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-17-0.md
 hc/en-gb/articles/7755261198223.md: Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-17-0.md
 hc/en-gb/articles/7918332923023-How-do-I-run-my-Python-Notebook-through-SLURM.md: General/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md
