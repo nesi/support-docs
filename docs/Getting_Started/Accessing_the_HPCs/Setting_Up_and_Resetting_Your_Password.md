@@ -5,10 +5,7 @@ tags:
 - authentication
 - mynesi
 title: Setting Up and Resetting Your Password
-vote_count: 4
-vote_sum: 4
-zendesk_article_id: 360000335995
-zendesk_section_id: 360000034315
+status: deprecated
 ---
 
 

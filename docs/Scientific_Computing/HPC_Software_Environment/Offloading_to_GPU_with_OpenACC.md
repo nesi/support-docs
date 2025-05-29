@@ -2,10 +2,7 @@
 created_at: '2019-08-28T01:48:30Z'
 tags: []
 title: Offloading to GPU with OpenACC
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001131076
-zendesk_section_id: 360000040056
+status: deprecated
 ---
 
 Many codes can be accelerated significantly by offloading computations
