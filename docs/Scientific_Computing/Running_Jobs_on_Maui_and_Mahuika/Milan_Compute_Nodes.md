@@ -2,10 +2,7 @@
 created_at: '2023-02-09T01:30:43Z'
 tags: []
 title: Milan Compute Nodes
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 6367209795471
-zendesk_section_id: 360000030876
+status: deprecated
 ---
  
 ## How to access

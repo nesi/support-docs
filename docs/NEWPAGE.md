@@ -197,6 +197,28 @@ The following fields were imported from Zendesk Page:
 `zendesk_article_id` and `zendesk_section_id` serve no purpose and can be deleted.
 `vote_count` and `vote_sum` are useful for determining past popularity of a page, but will become less useful with time.
 
+## Page Status
+
+### Deprecated
+
+If you believe a page has out of date information, you may git it the `deprecated` status in the meta. e.g.
+
+```yaml
+status: deprecated
+```
+
+This will show a little trash symbol next to the page title in the nav, and will add a warning admonition to the start of the page.
+
+### New
+
+If you want to draw attention to a page (for any reason), you may give it the `new` status in the meta. e.g.
+
+```yaml
+status: new
+```
+
+This will show a little exclaimation mark next to the page title in the nav.
+
 ## Accessibility Standards
 
 - [NZ spec](https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-1/)
