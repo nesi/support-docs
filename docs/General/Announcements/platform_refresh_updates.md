@@ -3,9 +3,7 @@ created_at: 2025-01-17
 description: quicklinks to news or documentation about the platform refresh
 tags: [refresh]
 ---
-    
 
-## Progress updates 
 
 Latest Update | Posted
 ----|----
