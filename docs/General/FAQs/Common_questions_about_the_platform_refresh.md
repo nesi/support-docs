@@ -55,13 +55,15 @@ All existing NeSI users will be migrated to the new systems. Your existing user 
 Existing NeSI users can login now. [View our guide here to get started](https://docs.nesi.org.nz/General/Announcements/HPC3/). The earlier you migrate the smoother your transition will be. We love working alongside you and resolving issues together. To keep doing that well, we need to work with you _now_ so we’re not troubleshooting under pressure later. We're aiming to onboard new users, projects and allocations in early June. 
 [View our current timeline here](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/).
 
-## I'm currently running on Mahuika, will something change for me?
+## Compared to Mahuika, what's different on the new platforms?
 
 [This article](https://docs.nesi.org.nz/General/FAQs/Mahuika_HPC3_Differences/) presents a comparison of the differences between Mahuika and the new platforms. If you have questions about the new environment, [send us an email](mailto:support@nesi.org.nz) or come along to our [online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
 
-## I'm currently running on Māui, will something change for me?
+## I'm currently running on Māui. Will something change for me?
 
-Some projects on Māui will move to the new NeSI infrastructure. If you are not sure if you are migrating or have questions about how the new platforms differ from Māui, [send us an email](mailto:support@nesi.org.nz) or come along to our [online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
+For all NIWA-owned projects, Māui access remains until NIWA decommissions the platform (date TBC).
+For any NIWA-owned projects with current Mahuika allocations, NeSI will email you directly to discuss migration plans.  
+If you have any immediate questions or concerns about how migration will work for your project, please reach out to support@nesi.org.nz. If you are not sure if you are migrating or have questions about how the new platforms differ from Māui, [send us an email](mailto:support@nesi.org.nz) or come along to our [online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
 
 ## Does this affect Nearline?
 
