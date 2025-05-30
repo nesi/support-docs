@@ -32,7 +32,7 @@ The initial login nodes are smaller than the Mahuika ones, have slower disk I/O,
 ## OnDemand (including Jupyter)
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
-Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser.
+Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz)
 
 ## Globus
 There are currently no endpoints configured, workflows that make use of Globus will not work.
