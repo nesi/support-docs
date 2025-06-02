@@ -23,6 +23,8 @@ If you hit a problem please check the above pages first, and then if not answere
     Before running any substantial/production jobs on the new HPC, you ***MUST*** stop the synchronisation of your data from GPFS to WEKA, otherwise you will lose any new work you do on the new HPC. See the section on
     [Stop the Synchronisation of your Data](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/####halting-the-synchronisation-from-GPFS-entirely)
 
+    and if you don't understand it, please ask for help in the [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) or email [
+
 ## Other Links
 
 - [Migration Timeline](migration_timeline_and_transition_plan.md)
