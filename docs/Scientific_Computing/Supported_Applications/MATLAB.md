@@ -176,7 +176,7 @@ CUDA modules and select the appropriate one. For example, for MATLAB
 R2021a, use `module load CUDA/11.0.2` before launching MATLAB.
 
 If you want to know more about how to access the different type of
-available GPUs on NeSI, check the [GPU use on NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
+available GPUs on NeSI, check the [GPU use on NeSI](../../Scientific_Computing/Batch_Computing/GPU_use_on_NeSI.md)
 support page.
 
 !!! tip "Support for A100 GPUs"

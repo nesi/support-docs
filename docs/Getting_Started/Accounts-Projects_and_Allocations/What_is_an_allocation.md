@@ -21,7 +21,7 @@ to find out what class you're likely eligible for.
 
 You may continue to submit jobs even if you have used all your CPU-hour
 allocation. The effect of 0 remaining CPU hours allocation is a
-[lower fairshare](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md),
+[lower fairshare](../../Scientific_Computing/Batch_Computing/Fair_Share_How_jobs_get_prioritised.md),
 not the inability to use CPUs. Your ability to submit jobs will only be
 removed when your project's allocation expires, not when core-hours are
 exhausted.
@@ -36,7 +36,7 @@ plus one kind of compute allocation) in order to be valid and active.
 Compute allocations are expressed in terms of a number of units, to be
 consumed or reserved between a set start date and time and a set end
 date and time. For allocations of computing power, we use [Fair
-Share](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share_How_jobs_get_prioritised.md)
+Share](../../Scientific_Computing/Batch_Computing/Fair_Share_How_jobs_get_prioritised.md)
 to balance work between different projects. NeSI allocations and the
 relative "prices" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running
@@ -70,7 +70,7 @@ depend on your contractual arrangements with the NeSI host.
 
 Note that the minimum number of logical cores a job can take on Mahuika
 is two
-(see [Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md) for
+(see [Hyperthreading](../../Scientific_Computing/Batch_Computing/Hyperthreading.md) for
 details). Therefore:
 
 - the lowest possible price for a CPU-only job is 0.70 compute units

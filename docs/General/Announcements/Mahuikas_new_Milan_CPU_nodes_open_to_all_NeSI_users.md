@@ -33,7 +33,7 @@ research needs.
 How to access
 
 - Visit our Support portal for [instructions to get
-    started](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
+    started](../../Scientific_Computing/Batch_Computing/Milan_Compute_Nodes.md)
     and details of how the Milan nodes differ from Mahuika’s original
     Broadwell nodes
 

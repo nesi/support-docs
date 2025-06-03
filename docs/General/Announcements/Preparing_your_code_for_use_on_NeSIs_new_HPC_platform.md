@@ -75,9 +75,9 @@ has AMD Milan (Zen3) CPUs, while the rest of Mahuika has Intel Broadwell
 CPUs.
 
 If for any reason you want to use any of the other Mahuika partitions,see
-[Mahuika Slurm Partitions](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Mahuika_Slurm_Partitions.md) for
+[Mahuika Slurm Partitions](../../Scientific_Computing/Batch_Computing/Mahuika_Slurm_Partitions.md) for
 an overview and
-[Milan Compute Nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md) for
+[Milan Compute Nodes](../../Scientific_Computing/Batch_Computing/Milan_Compute_Nodes.md) for
 the differences between them and *milan*.
 
 #### Shared nodes

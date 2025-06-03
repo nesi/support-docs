@@ -174,7 +174,7 @@ Let's run our Slurm script with sbatch and look at our output from
 Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
 will always receive 2 logical CPUs which is equal to 1 physical CPUs.
 For a more in depth explanation about logical and physical CPU cores see
-our [Hyperthreading article](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md))
+our [Hyperthreading article](../../Scientific_Computing/Batch_Computing/Hyperthreading.md))
 and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
 18 minutes and 51 seconds.
 
