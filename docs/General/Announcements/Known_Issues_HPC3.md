@@ -24,7 +24,7 @@ Currently, when logging into the new platform using a proxy you will be prompted
 ## MobaXterm
 The session login process of MobaXterm is not compatible with Tuakiri 2-factor authentication.
 
-ssh through a terminal will still be possible with MobaXterm, but it is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, file transfer (for files under 9.8 GB) and terminal access if you would normally have used MobaXterm. 
+ssh through a terminal will still be possible with MobaXterm, but it is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, file transfer (for files under 9.8 GB) and terminal access if you would normally have used MobaXterm. [Watch a demo of how to use MobaXterm on the new platform](https://youtu.be/EDBx24Aeel4?si=9uSHdajDG3qBuhUH).
 
 ## Login nodes
 The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU, memory, and `/tmp` disk limits.
@@ -32,7 +32,7 @@ The initial login nodes are smaller than the Mahuika ones, have slower disk I/O,
 ## OnDemand (including Jupyter)
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
-Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser.
+Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz).
 
 ## Globus
 There are currently no endpoints configured, workflows that make use of Globus will not work.

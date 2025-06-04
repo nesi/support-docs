@@ -12,6 +12,9 @@ search:
 !!! note
     GPFS is the filesystem on Mahuika. WEKA is the filesystem on the new HPC. When we refer to a path in GPFS, we are referring to a path on Mahuika. Similarily, a WEKA path is on the new HPC.
 
+!!! WARNING WARNING  
+    Before running substantial/production jobs on the new HPC, you ***MUST*** stop the synchronisation of your data from GPFS to WEKA, otherwise you will lose any new work you do on the new HPC. See the section on [halting the synchronisation from GPFS entirely](#halting-the-synchronisation-from-gpfs-entirely) below.  
+
 Migration of your data from GPFS to WEKA will be ongoing for several weeks.
 We will be copying across a few project directories in parallel at a time, using _rsync_.
 As each project directory is completed, the home directories of that project’s members will also be copied.

@@ -2,10 +2,7 @@
 created_at: '2019-08-26T23:41:11Z'
 tags: []
 title: 'Offloading to GPU with OpenMP '
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360001127856
-zendesk_section_id: 360000040056
+status: deprecated
 ---
 
 With OpenMP 4.5, it has become possible to offload computations from the

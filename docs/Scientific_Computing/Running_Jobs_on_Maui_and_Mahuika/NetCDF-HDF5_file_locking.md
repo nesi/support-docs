@@ -2,10 +2,7 @@
 created_at: '2019-04-12T02:21:25Z'
 tags: []
 title: NetCDF / HDF5 file locking
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360000902955
-zendesk_section_id: 360000030876
+status: deprecated
 ---
 
 NeSI provides libraries for creating and accessing files in the NetCDF
