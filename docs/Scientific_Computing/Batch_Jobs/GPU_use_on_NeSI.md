@@ -94,7 +94,7 @@ cases:
     #SBATCH --gpus-per-node=A100:1
     ```
 
-    *These GPUs are on Milan nodes, check the [dedicated support page](../Batch_Computing/Milan_Compute_Nodes.md)
+    *These GPUs are on Milan nodes, check the [dedicated support page](../Batch_Jobs/Milan_Compute_Nodes.md)
     for more information.*
 
 - 4 A100 (80GB & NVLink) GPU on Mahuika
@@ -104,7 +104,7 @@ cases:
     #SBATCH --gpus-per-node=A100:4
     ```
 
-    *These GPUs are on Milan nodes, check the [dedicated support page](../Batch_Computing/Milan_Compute_Nodes.md)
+    *These GPUs are on Milan nodes, check the [dedicated support page](../Batch_Jobs/Milan_Compute_Nodes.md)
     for more information.*
 
     *You cannot ask for more than 4 A100 (80GB) GPUs per node on
@@ -123,7 +123,7 @@ cases:
     GPU).*
 
 You can also use the `--gpus-per-node`option in
-[Slurm interactive sessions](../../Scientific_Computing/Batch_Computing/Slurm_Interactive_Sessions.md),
+[Slurm interactive sessions](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md),
 with the `srun` and `salloc` commands. For example:
 
 ``` sh

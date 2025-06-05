@@ -34,7 +34,7 @@ ascertain how much of each of these resources you will need.
 Asking for too little or too much, however, can both cause problems:
 your jobs will
 be at increased risk of taking a long time in the queue or failing, and
-your project's [fair share score](../../Scientific_Computing/Batch_Computing/Fair_Share.md)
+your project's [fair share score](../../Scientific_Computing/Batch_Jobs/Fair_Share.md)
 is likely to suffer.
 Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or

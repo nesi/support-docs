@@ -26,7 +26,7 @@ running TensorFlow with GPU support.
 !!! tip "See also"
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
          see the [GPU use on
-         NeSI](../../Scientific_Computing/Batch_Computing/GPU_use_on_NeSI.md)
+         NeSI](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md)
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
          [TensorFlow on

@@ -256,7 +256,7 @@ export SINGULARITY_BIND="/nesi/project/<your project ID>/inputdata:/var/inputdat
 ### Accessing a GPU
 
 If your Slurm job has requested access to an NVIDIA GPU (see [GPU use on
-NeSI](../../Scientific_Computing/Batch_Computing/GPU_use_on_NeSI.md)
+NeSI](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md)
 to learn how to request a GPU), a singularity container can
 transparently access it using the `--nv` flag:
 

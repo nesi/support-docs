@@ -34,7 +34,7 @@ performance, as a socket connects the processor to its RAM and other
 processors. A processor in each socket consists of multiple physical
 cores, and each physical core is split into two logical cores using a
 technology called
-[Hyperthreading](../../Scientific_Computing/Batch_Computing/Hyperthreading.md)).
+[Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md)).
 
 A processor also includes caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory

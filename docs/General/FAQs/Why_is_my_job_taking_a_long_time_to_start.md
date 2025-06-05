@@ -104,7 +104,7 @@ If, compared to other jobs in the queue, your job's priority (third
 column) and fair share score (fifth column) are both low, this usually
 means that your project team has recently been using through CPU core
 hours faster than expected.
-See [Fair Share -- How jobs get prioritised](../../Scientific_Computing/Batch_Computing/Fair_Share_How_jobs_get_prioritised.md) for more
+See [Fair Share -- How jobs get prioritised](../../Scientific_Computing/Batch_Jobs/Fair_Share_How_jobs_get_prioritised.md) for more
 information on Fair Share, how you can check your project's fair share
 score, and what you can do about a low project fair share score.
 

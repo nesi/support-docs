@@ -19,7 +19,7 @@ status: deprecated
 ## Introduction
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for
-[interactive computing](../../Scientific_Computing/Batch_Computing/Slurm_Interactive_Sessions.md).
+[interactive computing](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md).
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine

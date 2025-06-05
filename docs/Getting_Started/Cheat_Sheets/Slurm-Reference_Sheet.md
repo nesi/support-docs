@@ -50,7 +50,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--account`    | `#SBATCH --account=nesi99999`           | The account your core hours will be 'charged' to.                                                               |
 | `--time`       | `#SBATCH --time=DD-HH:MM:SS`            | Job max walltime.                                                                                               |
 | `--mem`        | `#SBATCH --mem=512MB`                   | Memory required per node.                                                                                       |
-| `--partition`  | `#SBATCH --partition=milan`              | Specified job[partition](../../Scientific_Computing/Batch_Computing/Mahuika_Slurm_Partitions.md). |
+| `--partition`  | `#SBATCH --partition=milan`              | Specified job[partition](../../Scientific_Computing/Batch_Jobs/Mahuika_Slurm_Partitions.md). |
 | `--output`     | `#SBATCH --output=%j_output.out`        | Path and name of standard output file.                                                                          |
 | `--mail-user`  | `#SBATCH --mail-user=user123@gmail.com` | Address to send mail notifications.                                                                             |
 | `--mail-type`  | `#SBATCH --mail-type=ALL`               | Will send a mail notification at `BEGIN END FAIL`.                                                            |
@@ -64,7 +64,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--nodes`           | ``#SBATCH --nodes=2``            | Will request tasks be run across 2 nodes.                                                                               |
 | `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2 [MPI](../../Getting_Started/Next_Steps/Parallel_Execution.md) tasks.                                           |
 | `--ntasks-per-node` | `#SBATCH --ntasks-per-node=1` | Will start 1 task per requested node.                                                                                   |
-| `--cpus-per-task`   | `#SBATCH --cpus-per-task=10`  | Will request 10 [*logical* CPUs](../../Scientific_Computing/Batch_Computing/Hyperthreading.md) per task. |
+| `--cpus-per-task`   | `#SBATCH --cpus-per-task=10`  | Will request 10 [*logical* CPUs](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md) per task. |
 | `--mem-per-cpu`     | `#SBATCH --mem-per-cpu=512MB` | Memory Per *logical* CPU. `--mem`  Should be used if shared memory job. See [How do I request memory?](../../General/FAQs/How_do_I_request_memory.md) |
 | --array | `#SBATCH --array=1-5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (1,2,3,4,5). |
 | | `#SBATCH --array=0-20:5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (0,5,10,15,20). |
@@ -77,7 +77,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--qos` | `#SBATCH --qos=debug` | Adding this line gives your job a high priority. *Limited to one job at a time, max 15 minutes*. |
 | `--profile` | `#SBATCH --profile=ALL` | Allows generation of a .h5 file containing job profile information. See [Slurm Native Profiling](../../Scientific_Computing/Profiling_and_Debugging/Slurm_Native_Profiling.md) |
 | `--dependency` | `#SBATCH --dependency=afterok:123456789` | Will only start after the job 123456789 has completed. |
-| `--hint` | `#SBATCH --hint=nomultithread` | Disables [hyperthreading](../../Scientific_Computing/Batch_Computing/Hyperthreading.md), be aware that this will significantly change how your job is defined. |
+| `--hint` | `#SBATCH --hint=nomultithread` | Disables [hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md), be aware that this will significantly change how your job is defined. |
 
 !!! tip
      Many options have a short (`-`) and long (`--`) form e.g.  

@@ -134,7 +134,7 @@ team {% include "partials/support_request.html" %}.
 
 ### VASP runs faster on Milan nodes
 
-[Milan compute nodes](../../Scientific_Computing/Batch_Computing/Milan_Compute_Nodes.md)
+[Milan compute nodes](../../Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md)
 are not only our most powerful compute nodes, but often have shorter
 queues! These nodes are still opt-in at the moment, meaning you need to
 specify `--partition=milan` in your Slurm script, which we strongly
@@ -323,9 +323,9 @@ production you should take into account performance and compute unit
 cost.
 
 General information about using GPUs on NeSI can be found
-[here](../../Scientific_Computing/Batch_Computing/GPU_use_on_NeSI.md)
+[here](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md)
 and details about the available GPUs on NeSI
-[here](../Batch_Computing/Available_GPUs_on_NeSI.md).
+[here](../Batch_Jobs/Available_GPUs_on_NeSI.md).
 
 Here are some additional notes specific to running VASP on GPUs on NeSI:
 

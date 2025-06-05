@@ -76,7 +76,7 @@ job array in a single command)
 
 A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation
-[here](../../Scientific_Computing/Batch_Computing/Fair_Share_How_jobs_get_prioritised.md).
+[here](../../Scientific_Computing/Batch_Jobs/Fair_Share_How_jobs_get_prioritised.md).
 
 ## Cross machine submission
 

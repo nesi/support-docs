@@ -7,7 +7,7 @@ status: deprecated
 
 This article describes a technique to build
 [Apptainer](https://apptainer.org/) containers using [Milan compute
-nodes](../../Scientific_Computing/Batch_Computing/Milan_Compute_Nodes.md),
+nodes](../../Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md),
 via a Slurm job. You can also build
 [Singularity](../../Scientific_Computing/Supported_Applications/Singularity.md)
 container using this technique.
