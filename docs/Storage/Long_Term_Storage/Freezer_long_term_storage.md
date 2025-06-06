@@ -21,7 +21,7 @@ We recommend using `s3cmd` for interacting with Freezer. The `s3cmd` tool is ava
 
 ### Configure s3cmd
 
-You will need to configure the `s3cmd` tool before you use it for the first time. Configuring the `s3cmd` allows for user credentials and default buckets to be remembered. This will only need to do this once.
+You will need to configure the `s3cmd` tool before you use it for the first time. Configuring the `s3cmd` allows for user credentials and default buckets to be remembered. This will only need to be done once.
 
 ```sh
 s3cmd --configure
@@ -31,7 +31,7 @@ Enter the following details when prompted in the terminal:
 
 `Access Key`: Your NeSI user ID
 
-`Secret Key`: This is the code from the 1-time link in your Freezer allocation email. Please let us know if you need to reset this key. {% include "partials/support_request.html" %}.
+`Secret Key`: This is the code from the 1-time link in your Freezer allocation email. Please let us know if you need to <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset this key</a>.
 
 Please copy and paste the sections in <span style="color:blue">blue</span>.
 
@@ -49,8 +49,8 @@ if the target S3 system supports dns based buckets.
 DNS-style bucket+hostname:port template for accessing a bucket:  <span style="color:blue"><b>210.7.37.122:7070</b></span>
 Encryption password is used to protect your files from reading
 by unauthorized persons while in transfer to S3
-Encryption password: <span style="color:blue"><b>Leave blank, </b>press &lt;Enter&gt;</span>
-Path to GPG program [/usr/bin/gpg]: <span style="color:blue"><b>Leave blank, </b>press &lt;Enter&gt;</span>
+Encryption password: <span style="color:green"><b>Leave blank, </b>press &lt;Enter&gt;</span>
+Path to GPG program [/usr/bin/gpg]: <span style="color:green"><b>Leave blank, </b>press &lt;Enter&gt;</span>
 
 When using secure HTTPS protocol all communication with Amazon S3
 servers is protected from 3rd party eavesdropping. This method is
@@ -63,8 +63,8 @@ HTTP Proxy server name: <span style="color:blue"><b>Leave blank, </b>press &lt;E
 
 You will then be presented with a summary.
 <pre><code>New settings:
-  Access Key: FREEZER_ACCOUNT_ID
-  Secret Key: FREEZER_SECRET
+  Access Key: User ID
+  Secret Key: Your Freezer Secret Key
   Default Region: us-east-1
   S3 Endpoint: freezer.nesi.org.nz:7070
   DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
@@ -86,13 +86,23 @@ Not configured. Never mind.
 
 Save settings? [y/N] <span style="color:blue"><b>y</b></span>
 Configuration saved to '/home/&lt;user_id&gt;/.s3cfg'
-</pre></code>
+</code></pre>
 
 ## Using s3cmd tool to interact with Freezer
 
+Freezer uses the S3 (Amazon Simple Storage Service) standard as a protocol for temporarily hosting data prior to writing it to tape.
+All of the data is stored in buckets - this is similar to a folder in a file system, but designed for scalable storage.
+
+Freezer has two types of data storage classes:
+
+- Glacier: data that is on tape
+- Standard: data that is in the s3 bucket
+
+Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please <a href="mailto:support@nesi.org.nz?subject=Forgot%20my%20Freezer%20bucket%20name">email us</a> and let us know which project this is for.
+
 ### List contents of a bucket
 
-List all objects in a bucket
+List all objects in a bucket.
 
 ```sh
 s3cmd ls -r -l -H s3://<freezer_bucket>/
@@ -170,7 +180,7 @@ s3cmd ls -r -l -H s3://<freezer_bucket>/your_directory/your_folder/
 
 ### Restore from tape
 
-It is necessary to restore data from the tape (Glacier) prior to retrieving it. To restore file from Glacier storage `<StorageClass>GLACIER</StorageClass>`
+It is necessary to restore data from the tape (Glacier) prior to retrieving it. To restore file from Glacier storage:
 
 ```sh
 s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/
@@ -185,7 +195,7 @@ restore: 's3://<freezer_bucket>/your_directory/data_folder/workspace.old.json'
 ### Get objects after restore
 
 !!! info
-    Data needs to be retrieved (`STANDARD`) from the tape (`GLACIER`) before it can be restored.
+    Data needs to be restored (`STANDARD`) from the tape (`GLACIER`) before it can be retrived.
 
 Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
