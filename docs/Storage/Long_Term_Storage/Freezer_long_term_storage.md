@@ -13,82 +13,89 @@ Due to the tape storage backend Freezer is intended for use with relatively larg
 ## Getting started
 
 Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI](https://my.nesi.org.nz/).
-Once onboarded, you can start to use Freezer.
-We recommend using s3cmd tool for interacting with Freezer.
+Once onboarded, you can start to use Freezer. Currently Freezer is only available via specific access points, HPC3 and Mahuika. We are currently completing security hardening prior to opening freezer to wider access.
 
-### Tool Installation
-The `s3cmd` tool is available by default.  
+### Interacting with Freezer
 
-### Configure
-Configuring the tool allows for user credentials and default buckets to be remembered.
+We recommend using `s3cmd` for interacting with Freezer. The `s3cmd` tool is available by default on HPC3 and Mahuika. It is not necessary to load any modules to use it.
+
+### Configure s3cmd
+
+You will need to configure the `s3cmd` tool before you use it for the first time. Configuring the `s3cmd` allows for user credentials and default buckets to be remembered. This will only need to do this once.
 
 ```sh
 s3cmd --configure
 ```
 
-Enter in your details
+Enter the following details when prompted in the terminal:
 
-```
-Enter new values or accept defaults in brackets with Enter.
+`Access Key`: Your NeSI user ID
+
+`Secret Key`: This is the code from the 1-time link in your Freezer allocation email. Please let us know if you need to reset this key. {% include "partials/support_request.html" %}.
+
+Please copy and paste the sections in <span style="color:blue">blue</span>.
+
+<pre><code>Enter new values or accept defaults in brackets with Enter.
 Refer to user manual for detailed description of all options.
 Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
-Access Key: FREEZER_ACCOUNT_ID 
-Secret Key: FREEZER_SECRET
-Default Region: us-east-1
+Access Key: <span style="color:green"><b>User ID</b></span>
+Secret Key: <span style="color:green"><b>Your Freezer Secret Key</b></span>
+Default Region: <span style="color:blue"><b>us-east-1</b></span>
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
-S3 Endpoint: freezer.nesi.org.nz:7070
-```
+S3 Endpoint: <span style="color:blue"><b>freezer.nesi.org.nz:7070</b></span>
 
-```
 Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(location)s" vars can be used
 if the target S3 system supports dns based buckets.
-DNS-style bucket+hostname:port template for accessing a bucket: 210.7.37.122:7070
+DNS-style bucket+hostname:port template for accessing a bucket:  <span style="color:blue"><b>210.7.37.122:7070</b></span>
 Encryption password is used to protect your files from reading
 by unauthorized persons while in transfer to S3
-Encryption password: 
-Path to GPG program [/usr/bin/gpg]: 
+Encryption password: <span style="color:blue"><b>Leave blank, </b>press &lt;Enter&gt;</span>
+Path to GPG program [/usr/bin/gpg]: <span style="color:blue"><b>Leave blank, </b>press &lt;Enter&gt;</span>
+
 When using secure HTTPS protocol all communication with Amazon S3
 servers is protected from 3rd party eavesdropping. This method is
 slower than plain HTTP, and can only be proxied with Python 2.7 or newer
-```
-
-When prompted for HTTP protocol say yes.
-
-```
-Use HTTPS protocol: Yes
-```
-
-You will then be presented with a summary.
-
-```
+Use HTTPS protocol: <span style="color:blue"><b>Yes</b></span>
 On some networks all internet access must go through a HTTP proxy.
 Try setting it here if you can't connect to S3 directly
-HTTP Proxy server name: 
-New settings:
+HTTP Proxy server name: <span style="color:blue"><b>Leave blank, </b>press &lt;Enter&gt;</span>
+</code></pre>
+
+You will then be presented with a summary.
+<pre><code>New settings:
   Access Key: FREEZER_ACCOUNT_ID
   Secret Key: FREEZER_SECRET
   Default Region: us-east-1
   S3 Endpoint: freezer.nesi.org.nz:7070
   DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
-  Encryption password: 
+  Encryption password:
   Path to GPG program: /usr/bin/gpg
   Use HTTPS protocol: True
-  HTTP Proxy server name: 
+  HTTP Proxy server name:
   HTTP Proxy server port: 0
+</code></pre>
 
-```
-Press `y` to confim.
+Press `Y` to confim.
 
-```
-Test access with supplied credentials? [Y/n]
-```
+<pre><code>Test access with supplied credentials? [Y/n] <span style="color:blue"><b>Y</b></span>
+Please wait, attempting to list all buckets...
+Success. Your access key and secret key worked fine :-)
+
+Now verifying that encryption works...
+Not configured. Never mind.
+
+Save settings? [y/N] <span style="color:blue"><b>y</b></span>
+Configuration saved to '/home/&lt;user_id&gt;/.s3cfg'
+</pre></code>
+
 ## Using s3cmd tool to interact with Freezer
+
 ### List contents of a bucket
 
 List all objects in a bucket
 
 ```sh
-s3cmd ls -r -l -H s3://nearline-99999/
+s3cmd ls -r -l -H s3://<freezer_bucket>/
 ```
 
 This can also be used to list all the objects in path.
@@ -99,6 +106,7 @@ This can also be used to list all the objects in path.
 ### List all buckets
 
 List all objects in all buckets (only for NeSI project owners)
+
 ```sh
 s3cmd la
 ```
@@ -106,9 +114,10 @@ s3cmd la
 ### Storage usage by specific bucket
 
 ```sh
-s3cmd du -H s3://nearline_9776
-   7G      1781 objects s3://nearline_9776/
+s3cmd du -H s3://<freezer_bucket>
+   7G      1781 objects s3://<freezer_bucket>/
 ```
+
 `s3cmd du -H` without specifying a bucket is only available for NeSI project owners.
 
 ### Put objects
@@ -116,16 +125,16 @@ s3cmd du -H s3://nearline_9776
 To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
 
 ```sh
-s3cmd put yourfile s3://nearline_9776/cwil201/yourfile
-upload: 'yourfile' -> 's3://nearline_9776/cwil201/yourfile'  [1 of 1]
+s3cmd put your_file s3://<freezer_bucket>/your_directory>/your_file
+upload: 'your_file' -> 's3://<freezer_bucket>/your_directory>/your_file'  [1 of 1]
  172202 of 172202   100% in    0s   920.89 KB/s  done
 ```
 
 or folders
 
 ```sh
-s3cmd put yourfolder s3://nearline_9776/cwil201/yourfolder/ --recursive
-upload: 'yourfolder/yourfile' -> 's3://nearline_9776/cwil201/yourfolder/yourfolder/yourfile'  [1 of 1]
+s3cmd put yourfolder s3://<freezer_bucket>/your_directory/your_folder/ --recursive
+upload: 'yourfolder/your_file' -> 's3://<freezer_bucket>/your_directory/your_folder/yourfolder/yourfile'  [1 of 1]
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
 
@@ -136,7 +145,7 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options).
 
 ```sh
-s3cmd sync yourfolder s3://nearline_9776/cwil201/yourfolder/
+s3cmd sync yourfolder s3://<freezer_bucket>/your_directory/your_folder/
 ```
 
 ### Preview or dry-run
@@ -150,40 +159,40 @@ Only shows what should be uploaded or downloaded but don't actually do it. May s
 List contained objects/files/folders:
 
 ```sh
-s3cmd ls -l -H s3://nearline_9776/tb-test/openrefine01/
+s3cmd ls -l -H s3://<freezer_bucket>/your_directory/your_folder/
 ```
 
 or all objects recursive -r or --recursive
 
 ```sh
-s3cmd ls -r -l -H s3://nearline_9776/tb-test/openrefine01/
+s3cmd ls -r -l -H s3://<freezer_bucket>/your_directory/your_folder/
 ```
 
 ### Restore from tape
 
-Restore file from Glacier storage `<StorageClass>GLACIER</StorageClass>`
+It is necessary to restore data from the tape (Glacier) prior to retrieving it. To restore file from Glacier storage `<StorageClass>GLACIER</StorageClass>`
 
 ```sh
-s3cmd restore --recursive s3://nearline_9776/tb-test/openrefine01/ 
-restore: 's3://nearline_9776/tb-test/openrefine01/1957656657122.project/data.zip'
-restore: 's3://nearline_9776/tb-test/openrefine01/1957656657122.project/metadata.json'
-restore: 's3://nearline_9776/tb-test/openrefine01/1957656657122.project/metadata.old.json'
-restore: 's3://nearline_9776/tb-test/openrefine01/dbextension/.saved-db-connections.json'
-restore: 's3://nesi9nearline_97769999/tb-test/openrefine01/workspace.json'
-restore: 's3://nearline_9776/tb-test/openrefine01/workspace.old.json
+s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/
+restore: 's3://<freezer_bucket>/your_directory/data_folder/1957656657122.project/data.zip'
+restore: 's3://<freezer_bucket>/your_directory/data_folder/1957656657122.project/metadata.json'
+restore: 's3://<freezer_bucket>/your_directory/data_folder/1957656657122.project/metadata.old.json'
+restore: 's3://<freezer_bucket>/your_directory/data_folder/dbextension/.saved-db-connections.json'
+restore: 's3://<freezer_bucket>/your_directory/data_folder/workspace.json'
+restore: 's3://<freezer_bucket>/your_directory/data_folder/workspace.old.json'
 ```
 
 ### Get objects after restore
 
-Example to get or download the directory `openrefine01` and all contained objects/files/folders:
+!!! info
+    Data needs to be retrieved (`STANDARD`) from the tape (`GLACIER`) before it can be restored.
+
+Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
 ```sh
-s3cmd get --recursive s3://nearline_9776/tb-test/openrefine01/
+s3cmd get --recursive s3://<freezer_bucket>/your_directory/data_folder/
 ```
 
 ## s3cmd reference
 
 [s3cmd tool](https://s3tools.org/usage)
-
-
-
