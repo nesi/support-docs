@@ -10,6 +10,9 @@
 
     🙋 If you to come across above limitations, please consider switching to a HPC3 login node via `Cluster` > `NeSI HPC Shell access` via OnDemand home page
 
-    
+    <p align="center">
+    <img src="https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_howtoaccesslogin_node_shell.png" alt="image-20240903-112029" width="800">
+    </p>
+
 
 
