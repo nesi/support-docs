@@ -59,7 +59,13 @@ Once the session is ready, you will see a button labeled Connect to Jupyter (or 
 
 * If you would like to access your project or nobackup file system via the Interactive file explorer ( not the terminal), please use the `00_nesi_project` parent directory whcih containts symlinks to all file systems you have access to 
 
+### Access from OnDemand Files app
 
+![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_files_app.png)
+
+### Access from an OnDemand app ( for an example, Jupyter file explorer)
+
+![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_jupyter_fileexplorer.png)
 
 ## OTP token reset process (lost OTP device)
 
