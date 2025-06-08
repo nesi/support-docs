@@ -29,5 +29,4 @@ Pre-populated with [Desktop  Documents  Downloads  Music  Pictures  Public  Temp
     We are in the early process of iterating and improving NeSI OnDemand. If you see any issues or suggestions, please let us know.
 
     - Please e-mail us on [support@nesi.org.nz](mailto:support@nesi.org.nz) with NeSI OnDemand as a part of the subject line and we will get back to you ASAP
-    - Given that this is an early release, the SLA will not follow NeSI standard SLA (9am-5pm working days), and the environment may not be as stable as the production environment. We will support you with the best effort.
 
