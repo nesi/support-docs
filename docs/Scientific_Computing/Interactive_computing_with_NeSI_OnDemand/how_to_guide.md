@@ -10,10 +10,6 @@ tags:
 title: NeSI OnDemand how-to guide
 ---
 
-!!! info
-     NeSI OnDemand is in development and accessible to early access users only.
-     If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
-
 
 # NeSI OnDemand how-to guide
 
@@ -59,11 +55,17 @@ Once the session is ready, you will see a button labeled Connect to Jupyter (or 
 
 
 
-## How to access your project directory
+## How to access your project OR nobackup directory from the Interactive file explorer
 
-For this test release, you will be presented only with our ephemeral storage, and access to the research files you have in Mahuika/Maui will be linked in a future release.
+* If you would like to access your project or nobackup file system via the Interactive file explorer ( not the terminal), please use the `00_nesi_project` parent directory whcih containts symlinks to all file systems you have access to 
 
+### Access from OnDemand Files app
 
+![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_files_app.png)
+
+### Access from an OnDemand app ( for an example, Jupyter file explorer)
+
+![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_jupyter_fileexplorer.png)
 
 ## OTP token reset process (lost OTP device)
 
