@@ -87,7 +87,7 @@ sbatch: `bigmem` is not the most appropriate partition for this job, which would
 <td>1850 MB</td>
 <td>460 GB</td>
 <td rowspan=2>2560</td>
-<td rowspan=2><a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md">Jobs using Milan Nodes</a></td>
+<td rowspan=2><a href="../../Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md">Jobs using Milan Nodes</a></td>
 </tr>
 <td>8</td>
 <td>256</td>
@@ -167,7 +167,7 @@ below for more info.</td>
 <td>460 GB</td>
 <td>64</td>
 <td>Part of
-<a href="../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md">Milan Nodes</a>. See below.</td>
+<a href="../../Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md">Milan Nodes</a>. See below.</td>
 </tr>
 </tbody>
 </table>
@@ -213,7 +213,7 @@ To request A100 GPUs, use instead:
 #SBATCH --gpus-per-node=A100:1
 ```
 
-See [GPU use on NeSI](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
+See [GPU use on NeSI](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md)
 for more details about Slurm and CUDA settings.
 
 ### Limits on GPU Jobs
@@ -239,7 +239,7 @@ connected via
 
 - Explicitly specify the partition to access them, with
     `--partition=hgx`.
-- Hosting nodes are Milan nodes. Check the [dedicated support page](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
+- Hosting nodes are Milan nodes. Check the [dedicated support page](../../Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md)
     for more information about the Milan nodes' differences from
     Mahuika's Broadwell nodes.
 
