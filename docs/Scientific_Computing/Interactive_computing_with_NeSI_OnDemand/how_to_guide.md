@@ -55,9 +55,9 @@ Once the session is ready, you will see a button labeled Connect to Jupyter (or 
 
 
 
-## How to access your project directory
+## How to access your project OR nobackup directory from the Interactive file explorer
 
-For this test release, you will be presented only with our ephemeral storage, and access to the research files you have in Mahuika/Maui will be linked in a future release.
+* If you would like to access your project or nobackup file system via the Interactive file explorer ( not the terminal), please use the `00_nesi_project` parent directory whcih containts symlinks to all file systems you have access to 
 
 
 
