@@ -61,11 +61,15 @@ Once the session is ready, you will see a button labeled Connect to Jupyter (or 
 
 ### Access from OnDemand Files app
 
-![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_files_app.png)
+<p align="center">
+<img src="https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_files_app.png" alt="image-20240903-112029" width="1000">
+</p>
 
 ### Access from an OnDemand app ( for an example, Jupyter file explorer)
 
-![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_jupyter_fileexplorer.png)
+<p align="center">
+<img src="https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_jupyter_fileexplorer.png" alt="image-20240903-112029" width="800">
+</p>
 
 ## OTP token reset process (lost OTP device)
 
