@@ -39,7 +39,7 @@ Once you have already set up NeSI OTP, you will be shown the following screen in
 
 After successfully logging in, you will be presented with the following NeSI OnDemand screen.
 
-![image-20240903-112029](https://github.com/user-attachments/assets/f4aed975-0f47-4e08-b783-d96271a56374)
+![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_Desktop_08Jun2025.png)
 
 
 
