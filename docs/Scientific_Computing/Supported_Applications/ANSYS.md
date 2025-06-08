@@ -216,7 +216,7 @@ While it will always be more time and resource efficient using a slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
 the login node, otherwise use of an [slurm interactive
-session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md)
+session](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md)
 is recommended.
 
 For example.
@@ -625,7 +625,7 @@ Progress can be tracked through the GUI as usual.
 ## ANSYS-Electromagnetic
 
 ANSYS-EM jobs can be submitted through a slurm script or by [interactive
-session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
+session](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md).
 
 ### RSM
 

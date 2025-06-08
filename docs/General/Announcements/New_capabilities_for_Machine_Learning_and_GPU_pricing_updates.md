@@ -46,7 +46,7 @@ window: [31 August - 01
 October](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window).
 
 For more technical information about using GPUs on NeSI, [click
-here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md).
+here](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md).
 If you have questions about allocations or how to access the P100s,
 {% include "partials/support_request.html" %}.
 
