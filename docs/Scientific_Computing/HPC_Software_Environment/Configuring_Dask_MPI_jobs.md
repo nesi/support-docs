@@ -95,7 +95,7 @@ then assigns different roles to the different ranks:
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
 ranks!** Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
+[Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md)
 to place these two ranks onto a single physical core. Ensure that
 activating hyperthreading does not slow down the worker ranks by running
 a short test workload with and without hyperthreading.
