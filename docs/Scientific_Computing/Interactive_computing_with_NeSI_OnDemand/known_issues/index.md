@@ -1,6 +1,3 @@
-!!! Note
-     ondemand is in development and accessible to early access users only.
-     If you are interested in helping us test it please contact us at [support@nesi.org.nz](mailto:support@nesi.org.nz). 
 
 # NeSI OnDemand Known Issues
 
