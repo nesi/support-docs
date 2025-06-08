@@ -1,14 +1,14 @@
-- title: Getting Started With HPC3
-  content: All you need to know to get started with the new HPC3 platform.
+- title: Getting Started
+  content: How to get started with NeSI's new HPC & AI platforms.
   url: General/Announcements/HPC3.md
   image: ./assets/icons/material/widget-red.svg
 
 - title: Frequently Asked Questions
-  content: Answers to some of your questions about what's happening.
+  content: Answers to some of your migration questions.
   url: General/FAQs/Common_questions_about_the_platform_refresh.md
   image: ./assets/icons/material/help.svg
 
 - title: Latest Updates
-  content: Quick status updates and links to documentation that will help you prepare for migration.
+  content: Status updates about the migration process.
   url: General/Announcements/platform_refresh_updates.md
   image: ./assets/icons/material/update.svg
