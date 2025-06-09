@@ -1,9 +1,5 @@
 # JupyterLab via OnDemand
 
-!!! warning
-
-    NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please {% include "partials/support_request.html" %}.
 
 ## Introduction
 
@@ -16,6 +12,7 @@ learning, numerical simulation, managing
 and workflows and much more.
 
 ## Accessing Jupyter on NeSI
+
 
 Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
 For more details see the [how-to guide](../../how_to_guide.md#how-to-launch-jupyterlab-rstudio).
