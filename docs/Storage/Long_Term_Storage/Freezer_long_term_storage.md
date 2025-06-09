@@ -192,6 +192,12 @@ restore: 's3://<freezer_bucket>/your_directory/data_folder/workspace.json'
 restore: 's3://<freezer_bucket>/your_directory/data_folder/workspace.old.json'
 ```
 
+By default files will remain in the s3 bucket for 1 day. If longer is required, this can be modified at the time of file restoration: 
+
+```sh
+s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/ --restore-days=1
+```
+
 ### Get objects after restore
 
 !!! info
