@@ -1,9 +1,5 @@
 # RStudio via OnDemand
 
-!!! warning
-
-    NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
 
 ## Logging in
 ![UPDATE WITH PROJECT](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png){width=35%} ![](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png){fig.align="right" width=62%}
