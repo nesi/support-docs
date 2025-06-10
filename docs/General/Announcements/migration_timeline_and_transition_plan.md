@@ -55,7 +55,7 @@ During May & June, we’re all moving to the new platforms. Here’s our current
 * **1 June onwards** – Onboard new projects (projects, users, allocations).
 * **3-5 June** – [Scheduled outage](https://status.nesi.org.nz/incidents/3y3ttj57fts6). Will impact login access. Jobs already running will not be affected. For updates, [subscribe to System Status](https://status.nesi.org.nz/incidents/3y3ttj57fts6).
 * **early June** – Freezer, NeSI's new [long-term data storage platform](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), is available.
-* * **27 June** - Access to Mahuika HPC platform ends.
+* **27 June** - Access to Mahuika HPC platform ends.
 
 
 !!! info
