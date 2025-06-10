@@ -19,9 +19,7 @@ Before using the new cluster, please read all of:
 If you hit a problem please check the above pages first. If it's not answered there, email [support@nesi.org.nz](mailto:support@nesi.org.nz) or come to our [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
 
 !!! WARNING Warning
-    Your data on the new platforms is automatically being synchronised with Mahuika’s GPFS filesystem. To prevent this process from writing over your data on the new platforms, [follow these instructions](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/####halting-the-synchronisation-from-GPFS-entirely) to stop the sync and protect your work. If you need help, [email us](mailto:support@nesi.org.nz).
-
-    and if you don't understand it, please ask for help in the [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) or email [support@nesi.org.nz](mailto:support@nesi.org.nz).
+    Your data on the new platforms is automatically being synchronised with Mahuika’s GPFS filesystem. To prevent this process from writing over your data on the new platforms, [follow these instructions](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/####halting-the-synchronisation-from-GPFS-entirely) to stop the sync and protect your work. If you need help, please ask for help in our [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) or email [support@nesi.org.nz](mailto:support@nesi.org.nz).
 
 ## Other Links
 
