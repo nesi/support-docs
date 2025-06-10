@@ -71,7 +71,7 @@ function removeTag(tag){
 // Todo, make this aysnc.
 async function mergeFeed() {
     const rss_feeds = [
-        `${window.location.origin}/software_updates.xml`,
+        `https://raw.githubusercontent.com/nesi/modules-list/refs/heads/main/software_updates.xml`,
         `${window.location.origin}/page_update.xml`,
         `${window.location.origin}/page_creation.xml`,
         "https://status.nesi.org.nz/history.rss"
