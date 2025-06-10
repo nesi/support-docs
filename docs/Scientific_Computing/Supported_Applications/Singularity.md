@@ -12,11 +12,8 @@ zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
+{% set app = applications["Apptainer"] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 [Singularity](https://sylabs.io/singularity/) is a science-focused
 application containerisation solution that is specifically tailored for
