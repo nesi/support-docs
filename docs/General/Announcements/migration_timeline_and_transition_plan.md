@@ -43,18 +43,19 @@ Mahuika and Māui are scheduled to be shut down over the coming weeks (see our t
 
 ## Migration timeline
 
-_Updated 20 May 2025_
+_Updated 10 June 2025_
 
 During May & June, we’re all moving to the new platforms. Here’s our current timeline:
 
 * **5 May** – Onboard early access users - reach out to [support@nesi.org.nz](mailto:support@nesi.org.nz) if you’re keen on jumping in.
 * **8 May onwards** – No new projects or allocations or users will start on Māui or Mahuika. These requests will be allocated on the new platforms to start from 1 June.
 * **15 May** – All users with existing NeSI HPC allocations can log in to the new platforms. Before you start, [visit this page](https://docs.nesi.org.nz/General/Announcements/HPC3/).
-* **26 May** - All jobs on Milan partition **must finish by this date**. Access to Māui HPC platform ends.
-* **late May / early June** – Freezer, NeSI's new [long-term data storage platform](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), is available.
+* **26 May** - All jobs on Milan partition **must finish by this date**. NeSI user access to Māui HPC platform ends.
+* **late May / mid June** – Mahuika Milan nodes and HGX GPUs are physically moved to Tāmaki Makaurau Auckland.
 * **1 June onwards** – Onboard new projects (projects, users, allocations).
 * **3-5 June** – [Scheduled outage](https://status.nesi.org.nz/incidents/3y3ttj57fts6). Will impact login access. Jobs already running will not be affected. For updates, [subscribe to System Status](https://status.nesi.org.nz/incidents/3y3ttj57fts6).
-* **13 June** - Access to Mahuika HPC platform ends.
+* **early June** – Freezer, NeSI's new [long-term data storage platform](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), is available.
+* * **27 June** - Access to Mahuika HPC platform ends.
 
 
 !!! info
