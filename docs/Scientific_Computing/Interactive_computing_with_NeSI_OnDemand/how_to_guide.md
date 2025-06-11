@@ -43,6 +43,17 @@ Go to  [**NeSI OnDemand**](https://ondemand.nesi.org.nz/). It will automatically
 
 ![ondemandhome](../../assets/images/OOD_desktop.png)
 
+!!! quote ""
+
+    1. <kbd>Files</kbd> > <kbd>Home Directory</kbd> : Access to OnDemand file explorer
+        - Default landing path for the file explorer is your home directory
+        - There is a <kbd>00_nesi_projects</kbd> directory within home which contains symlinks to all project and nobackup directories you have access to 
+
+    2. <kbd>Clusters</kbd>><kbd>>_NeSI HPC Shell Access</kbd>
+        - Allows us to access HPC login nodes directly from OnDemand 
+
+    3. <kbd>My Interactive Sessions</kbd>
+        - List all of the currently running sessions associated with my user account
 
 
 ## How to launch JupyterLab / RStudio
