@@ -88,9 +88,6 @@ Once the session is ready, you will see a button labeled Connect to Jupyter (or 
 ### Access from an OnDemand app ( for an example, Jupyter file explorer)
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_jupyter_fileexplorer.png" alt="image-20240903-112029" width="800">
+<img src="https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_jupyter_fileexplorer.png" alt="image-20240903-112029" width="600">
 </p>
 
-## OTP token reset process (lost OTP device)
-
-Please contact support@nesi.org.nz with NeSI OnDemand as a part of the subject line and we will get back to you ASAP.
