@@ -1,7 +1,7 @@
 ---
 nav:
-  - Interactive apps: interactive_apps
   - How-to guide: how_to_guide.md
+  - Interactive apps: interactive_apps
   - ...
   - changes_from_jupyter_on_nesi.md
   - Release Notes: Release_Notes
