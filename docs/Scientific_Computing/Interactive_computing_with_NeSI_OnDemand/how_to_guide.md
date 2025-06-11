@@ -59,9 +59,9 @@ Go to  [**NeSI OnDemand**](https://ondemand.nesi.org.nz/). It will automatically
         - Currently available apps for interactive computing 
 
 
-## How to launch JupyterLab / RStudio
+## How to launch an Application
 
-From the home screen, you can click on the app you would like to launch, e.g. JupyterLab, and you will be taken to the following screen.
+From the home page, you can click on the app you would like to launch, e.g. JupyterLab, and you will be taken to the following screen.
 
 ![image-20240903-112130](https://github.com/user-attachments/assets/62e37323-4a8f-48ba-b7a5-613c218b43a6)
 
