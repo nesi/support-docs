@@ -129,3 +129,15 @@
 span.md-status.md-status--deprecated {
     filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(70%) contrast(1000%);
 }
+
+/* Warning symbols for licence server */
+.badge-licence-noup{
+    padding: 0;
+    color: red;
+    cursor: default;
+}
+.badge-licence-lowup{
+    padding: 0;
+    color: yellow;
+    cursor: default;
+}
