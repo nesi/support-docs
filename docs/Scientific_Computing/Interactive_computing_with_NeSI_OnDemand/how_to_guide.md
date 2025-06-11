@@ -63,13 +63,17 @@ Go to  [**NeSI OnDemand**](https://ondemand.nesi.org.nz/). It will automatically
 
 From the home page, you can click on the app you would like to launch, e.g. JupyterLab, and you will be taken to the following screen.
 
+<center>
+![ood-jupyter-icon](../../assets/images/OOD_jupyterlab_icon.png)
+</center>
+
 ![ood-new-form](../../assets/images/OOD_jupyter_form.png)
 
 You can select the number of cores and memory needed and click on Launch to start the application. Currently our system is reserved with limited number of virtual CPUs and RAM, so selecting a value too high on the number will result in a failure message. On successful launch, you will see a screen similar to below:
 
 ![ood-new-start](../../assets/images/OOD_jupyter_session_starting.png)
 
-Once the session is ready, you will see a button labeled Connect to Jupyter (or other app of your choice), which upon clicking will take you to the JupyterLab in this example as seen below:
+Once the session is ready, you will see a button labeled <kbd>Connect to Jupyter</kbd> (or other app of your choice), which upon clicking will take you to the JupyterLab in this example as seen below:
 
 ![image-20240903-112553](https://github.com/user-attachments/assets/c106b182-7f4a-494c-a48d-d67e97ef2dbf)
 
