@@ -1,4 +1,21 @@
-# NeSI OnDemand Current limitations¶
+# NeSI OnDemand - Troubleshooting 
+
+
+
+## "Error -- can't find user for …" messages
+
+If you see this message after logging in, please reach out to us at [support@nesi.org.nz](mailto:support@nesi.org.nz) and we will be able to fix this problem.
+
+## UX, wording, information display
+
+Due to this environment being our test build, you may encounter many internal technical terms that will be addressed through future iterations.
+
+## User home folder default content
+
+Pre-populated with [Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos] folders, which is different to NeSI default.
+
+
+## NeSI OnDemand Current limitations¶
 
 | Limitation                                |  What are the missing functions/commands associated with this|
 --------------------------------------------|--------------------------------------------------------------|
@@ -13,6 +30,5 @@
     <p align="center">
     <img src="https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_howtoaccesslogin_node_shell.png" alt="image-20240903-112029" width="800">
     </p>
-
 
 
