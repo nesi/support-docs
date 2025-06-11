@@ -58,22 +58,41 @@ Go to  [**NeSI OnDemand**](https://ondemand.nesi.org.nz/). It will automatically
     4. **Applications**
         - Currently available apps for interactive computing 
 
+!!! circle-info ""
 
 ## How to launch an Application
 
 From the home page, you can click on the app you would like to launch, e.g. JupyterLab, and you will be taken to the following screen.
 
-![image-20240903-112130](https://github.com/user-attachments/assets/62e37323-4a8f-48ba-b7a5-613c218b43a6)
+<center>
+![ood-jupyter-icon](../../assets/images/OOD_jupyterlab_icon.png)
+</center>
 
-You can select the number of cores and memory needed and click on Launch to start the application. Currently our system is reserved with limited number of virtual CPUs and RAM, so selecting a value too high on the number will result in a failure message. On successful launch, you will see a screen similar to below:
 
-![image-20240903-112408](https://github.com/user-attachments/assets/b428b472-4612-4116-b815-6a8c17637a6a)
 
-Once the session is ready, you will see a button labeled Connect to Jupyter (or other app of your choice), which upon clicking will take you to the JupyterLab in this example as seen below:
+![ood-new-form](../../assets/images/OOD_jupyter_form.png)
+
+!!! bell "How much resources to request"
+
+    Ideally start with the least amount of resources and scale accordingly. In other words, be as efficient as possible ☺️
+
+    <center>
+
+    | Form attributes        | Maximum value |
+    | ---------------------- | ------------- |
+    | **Number of hours**    | 24            |
+    | **Number of cores**    | 4             |
+    | **Memory per job(GB**) | 32GB          |
+    
+    </center>
+
+![ood-new-start](../../assets/images/OOD_jupyter_session_starting.png)
+
+Once the session is ready, you will see a button labeled <kbd>Connect to Jupyter</kbd> (or other app of your choice), which upon clicking will take you to the JupyterLab in this example as seen below:
 
 ![image-20240903-112553](https://github.com/user-attachments/assets/c106b182-7f4a-494c-a48d-d67e97ef2dbf)
 
-
+!!! circle-info ""
 
 ## How to access your project OR nobackup directory from the Interactive file explorer
 
