@@ -58,6 +58,7 @@ Go to  [**NeSI OnDemand**](https://ondemand.nesi.org.nz/). It will automatically
     4. **Applications**
         - Currently available apps for interactive computing 
 
+!!! circle-info ""
 
 ## How to launch an Application
 
@@ -67,9 +68,15 @@ From the home page, you can click on the app you would like to launch, e.g. Jupy
 ![ood-jupyter-icon](../../assets/images/OOD_jupyterlab_icon.png)
 </center>
 
+
+
 ![ood-new-form](../../assets/images/OOD_jupyter_form.png)
 
-You can select the number of cores and memory needed and click on Launch to start the application. Currently our system is reserved with limited number of virtual CPUs and RAM, so selecting a value too high on the number will result in a failure message. On successful launch, you will see a screen similar to below:
+|Form attributes        | Maximum value    |
+|-----------------------|------------------|
+| **Number of hours**   | 24               |
+| **Number of cores**   | 4                |
+| **Memory per job(GB**)| 32GB             |
 
 ![ood-new-start](../../assets/images/OOD_jupyter_session_starting.png)
 
@@ -77,7 +84,7 @@ Once the session is ready, you will see a button labeled <kbd>Connect to Jupyter
 
 ![image-20240903-112553](https://github.com/user-attachments/assets/c106b182-7f4a-494c-a48d-d67e97ef2dbf)
 
-
+!!! circle-info ""
 
 ## How to access your project OR nobackup directory from the Interactive file explorer
 
