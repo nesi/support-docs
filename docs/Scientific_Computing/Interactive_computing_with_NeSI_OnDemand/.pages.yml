@@ -4,6 +4,5 @@ nav:
   - Interactive apps: interactive_apps
   - ...
   - changes_from_jupyter_on_nesi.md
-  - Known Issues: known_issues
-  - Current Limitations: current_limitations.md
+  - Troubleshooting: ood_troubleshooting.md
   - Release Notes: Release_Notes
