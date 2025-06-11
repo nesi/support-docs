@@ -72,11 +72,19 @@ From the home page, you can click on the app you would like to launch, e.g. Jupy
 
 ![ood-new-form](../../assets/images/OOD_jupyter_form.png)
 
-|Form attributes        | Maximum value    |
-|-----------------------|------------------|
-| **Number of hours**   | 24               |
-| **Number of cores**   | 4                |
-| **Memory per job(GB**)| 32GB             |
+!!! bell "How much resources to request"
+
+    Ideally start with the least amount of resources and scale accordingly. In other words, be as efficient as possible on  ☺️
+
+    <center>
+
+    | Form attributes        | Maximum value |
+    | ---------------------- | ------------- |
+    | **Number of hours**    | 24            |
+    | **Number of cores**    | 4             |
+    | **Memory per job(GB**) | 32GB          |
+    
+    </center>
 
 ![ood-new-start](../../assets/images/OOD_jupyter_session_starting.png)
 
