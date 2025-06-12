@@ -215,7 +215,6 @@ Data can be deleted from both the bucket (cache) and from tape (thought this is 
 
 ```sh
 s3cmd rm s3://<freezer_bucket>/your_directory/data_folder/
-delete: 's3://nearline_9776/vfan001/test.txt'
 ```
 
 This command can also be used recursively. 
