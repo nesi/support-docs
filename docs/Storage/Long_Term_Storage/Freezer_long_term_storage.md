@@ -75,7 +75,7 @@ You will then be presented with a summary.
   HTTP Proxy server port: 0
 </code></pre>
 
-Press `Y` to confim.
+Press `Y` to confirm.
 
 <pre><code>Test access with supplied credentials? [Y/n] <span style="color:blue"><b>Y</b></span>
 Please wait, attempting to list all buckets...
@@ -201,13 +201,33 @@ s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/ --re
 ### Get objects after restore
 
 !!! info
-    Data needs to be restored (`STANDARD`) from the tape (`GLACIER`) before it can be retrived.
+    Data needs to be restored (to storage class `STANDARD`) from the tape (storage class `GLACIER`), before it can be retrieved.
 
 Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
 ```sh
 s3cmd get --recursive s3://<freezer_bucket>/your_directory/data_folder/
 ```
+
+### Deleting data
+
+Data can be deleted from both the bucket (cache) and from tape (thought this is a flag to overwrite, rather than actual deletion)
+
+```sh
+s3cmd rm s3://<freezer_bucket>/your_directory/data_folder/
+delete: 's3://nearline_9776/vfan001/test.txt'
+```
+
+This command can also be used recursively. 
+
+```sh
+s3cmd rm s3://<freezer_bucket>/your_directory/data_folder/ --recursive
+```
+
+
+!!! warning
+
+    Please be very careful using the rm command to delete data as the data can't be recovered once deleted
 
 ## s3cmd reference
 
