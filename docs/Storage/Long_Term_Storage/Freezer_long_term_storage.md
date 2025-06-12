@@ -58,7 +58,7 @@ slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 Use HTTPS protocol: <span style="color:blue"><b>Yes</b></span>
 On some networks all internet access must go through a HTTP proxy.
 Try setting it here if you can't connect to S3 directly
-HTTP Proxy server name: <span style="color:blue"><b>Leave blank, </b>press &lt;Enter&gt;</span>
+HTTP Proxy server name: <span style="color:green"><b>Leave blank, </b>press &lt;Enter&gt;</span>
 </code></pre>
 
 You will then be presented with a summary.
