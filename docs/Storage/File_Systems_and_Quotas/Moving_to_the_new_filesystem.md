@@ -165,7 +165,7 @@ An `.RSYNC_FILTER` file in the WEKA copy can protect new files there from deleti
 
 #### Halting the synchronisation from GPFS entirely
 
-Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, please place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup).
+Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely on the new platform, please place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup).
 
   - `touch $HOME/.GOODBYE_GPFS`
   - `touch /nesi/project/your_project/.GOODBYE_GPFS`
@@ -180,3 +180,9 @@ This will not only save your new workspace from regularly resetting back to the 
 #### Recovering deleted files
 
 If you accidentally remove an important file from WEKA, you might be able to find an older copy of it from a filesystem snapshot, eg: in `/nesi/nobackup/.snapshots/`.
+
+## Video tutorial
+
+[Watch a demo of the instructions on this page](https://www.youtube.com/watch?v=BDuyeE3bIsc). 
+
+If you have questions or need help adding the `.RSYNC_FILTER` or `.GOODBYE_GPFS` files to your directories, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz).
