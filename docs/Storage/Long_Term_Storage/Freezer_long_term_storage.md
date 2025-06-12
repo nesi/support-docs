@@ -209,6 +209,26 @@ Example to get or download the directory `data_folder` and all contained objects
 s3cmd get --recursive s3://<freezer_bucket>/your_directory/data_folder/
 ```
 
+### Deleting data
+
+Data can be deleted from both the bucket (cache) and from tape (thought this is a flag to overwrite, rather than actual deletion)
+
+```sh
+s3cmd rm s3://<freezer_bucket>/your_directory/data_folder/
+delete: 's3://nearline_9776/vfan001/test.txt'
+```
+
+This command can also be used recursively. 
+
+```sh
+s3cmd rm s3://<freezer_bucket>/your_directory/data_folder/ --recursive
+```
+
+
+!!! warning
+
+    Please be very careful using the rm command to delete data as the data can't be recovered once deleted
+
 ## s3cmd reference
 
 [s3cmd tool](https://s3tools.org/usage)
