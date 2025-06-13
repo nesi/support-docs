@@ -11,7 +11,7 @@ search:
 
 ## New and Improved
 
-- The A100 option has been removed from the 'Select GPU' list following the latest platform update.  
+- The A100 option has been removed from the 'Select GPU' list following the latest platform update. This infrastructure is being physically moved from Wellington to Auckland as part of NeSI's [platform migration](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/). For updates on the availability of this resource, subscribe to the [System Status notice](https://status.nesi.org.nz/incidents/rr7zlq1c44kq). 
 
 If you have any questions about any of the fixes,
 please [contact NeSI Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
