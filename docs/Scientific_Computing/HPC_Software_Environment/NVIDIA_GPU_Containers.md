@@ -47,7 +47,7 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
 
     !!! note
         Please do refer [Build Environment
-        Variables](../../Scientific_Computing/Supported_Applications/Singularity.md#build-environment-variables)
+        Variables](../../Scientific_Computing/Supported_Applications/Apptainer.md)
         prior to running the following `pull` command.
 
     ```sh
