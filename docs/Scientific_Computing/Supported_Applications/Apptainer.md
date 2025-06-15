@@ -37,11 +37,21 @@
         echo 'export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}' >> ~/.bashrc
         ```
 
-!!! container "1. How to pull a container image from an upstream registry such as docker"
+??? container "1. How to pull a container image from an upstream registry such as docker hub"
     
     Docker containers ( primarily stored in https://hub.docker.com/) can be pulled as Apptainer container images. For an example, if we want to pull the latest version of Tensorflow (GPU) container provided by the Tensorflow developers 
 
     * Search and find the container registry for TF in https://hub.docker/com. 
         * image we are after in this instance is https://hub.docker.com/r/tensorflow/tensorflow/tags
 
-    * Copy tthe version you prefer with blue <kbd>Copy</kbd> button next to the corresponding tag
+    * Copy tthe version you prefer with blue <kbd>Copy</kbd> button next to the corresponding tag. We will use `latest-gpu` as an example
+        * It will be in the form of `docker pull tensorflow/tensorflow:latest-gpu`
+        * IN order to pull this as an apptainer, remove the word `pull` and create a URL as `docker://tensorflow/tensorflow:latest-gpu`
+    * Then pull it with `apptainer pull nameforthelocalimage.aif docker://tensorflow/tensorflow:latest-gpu`
+        * `nameforthelocalimage.aif` is the name of the file to be saved once pulled. File extension can be anything but it is ideal to use `.aif` making it easier to idenity the container image 
+
+    ```bash
+    apptainer pull tensorflow-latest-gpu.aif docker://tensorflow/tensorflow:latest-gpu
+    ```
+
+??? container "2. 
