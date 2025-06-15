@@ -20,7 +20,7 @@ packages and no curation by the NeSI team.
 
 !!! note "Alternatives"
      - If you want a more reproducible and isolated environment, we
-         recommend using the [Singularity containers](../../Scientific_Computing/Supported_Applications/Singularity.md).
+         recommend using the [Singularity containers](../../Scientific_Computing/Supported_Applications/Apptainer.md).
      - If you only need access to Python and standard numerical libraries
          (numpy, scipy, matplotlib, etc.), you can use the 
          [Python environment module](../../Scientific_Computing/Supported_Applications/Python.md).

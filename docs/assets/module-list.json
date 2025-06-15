@@ -991,7 +991,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Apptainer",
         "versions": [
             "1.1.8",
             "1.1.9",
@@ -3478,12 +3478,12 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.5,
+                        "hourly_average": 0.51,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 5,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.2",
                         "visible_on_docs": true

@@ -186,18 +186,18 @@ take into consideration the following:
     conda ...  # any conda commands (create, activate, install...)
     ```
 
-## Singularity containers
+## Apptainer containers
 
 You can use containers to run your application on the NeSI platform. We
 provide support for
-[Singularity](../../Scientific_Computing/Supported_Applications/Singularity.md)
+[Apptainer](../../Scientific_Computing/Supported_Applications/Apptainer.md)
 containers, that can be run by users without requiring additional
 privileges. Note that Docker containers can be converted into
-Singularity containers.
+Apptainer containers.
 
 For TensorFlow, we recommend using the [official container provided by
 NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow).
-More information about using Singularity with GPU enabled containers is
+More information about using Apptainer with GPU enabled containers is
 available on the [NVIDIA GPU
 Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)
 support page.
