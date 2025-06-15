@@ -16,6 +16,8 @@
 
     Apptainer is open source software, distributed under the [BSD License](https://github.com/apptainer/apptainer/blob/main/LICENSE.md).
 
+---
+
 ## **How to `pull` /  `build` / `inspect` / execute a container with `shell`, `exec`, `run`** 
 
 !!! code "Set up APPTAINER_TMPDIR and APPTAINER_CACHEDIR before using Apptainer to avoid using your home directory for temporary and cache operations"
@@ -92,3 +94,13 @@
     # build the container
     apptainer build --force --fakeroot my_container.aif my_container.def
     ```
+
+    * If you encounter the following error when using a base Docker image in your Apptainer definition file
+
+    ```bash
+    While making image from oci registry: error fetching image to cache: while building SIF from layers: conveyor failed to get: unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
+    ```
+    it is likely due to an upstream issue (e.g. bad image on Dockerhub). In this case, try an older image version or a different base image.
+
+    * **Other limitations**
+        - This method, using `fakeroot`, is known to not work for all types of Apptainer/Singularity containers. If you encounter an issue, please Contact our Support Team
