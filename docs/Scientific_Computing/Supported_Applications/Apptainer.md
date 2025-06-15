@@ -36,6 +36,7 @@
         echo 'export APPTAINER_CACHEDIR="/nesi/nobackup/nesi12345/apptainer-cache"' >> ~/.bashrc
         echo 'export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}' >> ~/.bashrc
         ```
+<br>
 
 ??? container "1. How to pull a container image from an upstream registry such as docker hub"
     
@@ -54,7 +55,7 @@
     apptainer pull tensorflow-latest-gpu.aif docker://tensorflow/tensorflow:latest-gpu
     ```
 
-??? container "2. How to build a container with `--fakeroot`"
+??? container "2. How to build a container with `apptainer build --force --fakeroot`"
 
     Although we do not have a dedicated sandbox to build containers at the moment, `fakeroot` is enabled in both the login nodes and compute nodes allowing researchers to build containers as needed 
 
@@ -104,3 +105,67 @@
 
     * **Other limitations**
         - This method, using `fakeroot`, is known to not work for all types of Apptainer/Singularity containers. If you encounter an issue, please Contact our Support Team
+
+??? container "3. Running a container, both interactively ( only the `shell`or `inspect` ) and via Slurm"
+
+    * To have a look at the contents of your container, you can "shell" into it using `apptainer shell containername` . 
+        ```bash
+        apptainer shell my_container.aif
+        ```
+        **Note** - Above shell command will enter the shell within the container image. Note the prompt is now prefixed with "Apptainer",
+        ```bash
+        Apptainer>
+        ```
+        Exit the container by running the command `exit` which will bring you back to the **host** system 
+        ```bash
+        Apptainer> exit
+        ```
+
+    * To view metadata and configuration details about an Apptainer container image, use `apptainer inspect containername` 
+        ```bash
+        apptainer inspect my_container.aif
+        ```
+    * `apptainer exec` command 
+
+        - The `apptainer exec` command allows you to run a specific command inside an Apptainer container, making it ideal for executing scripts, tools, or workflows within the container’s environment. For example, you can run a Python script or query the container’s filesystem without entering an interactive shell. Let't say you have a python script ( let's call it *my_tensorflow.py*) using Tensorflow libraries  with a help menu and assuming you have Tensorflow container with all required libraries 
+
+        ```bash
+        apptainer exec tensorflow-latest-gpu.aif my_tensorflow.py --help
+        ```
+    * The apptainer `run` command, on the other hand, is designed to execute the default process defined in the container (such as its runscript), providing a convenient way to start the container’s main application or service as intended by its creator. This is commonly used when you want to use the container as a standalone executable.
+
+    **Slurm tempalte** 
+
+    ```bash
+    #!/bin/bash -e
+
+    #SBATCH --job-name=tensorflow-via-apptainer
+    #SBATCH --time=01:00:00
+    #SBATCH --mem=4G
+    #SBATCH --ntasks=
+    #SBATCH --cpus-per-task=4
+
+    # Run container %runscript
+    apptainer exec tensorflow-latest-gpu.aif my_tensorflow.py some_argument
+    ```
+
+??? container "4.  Accessing a GPU via Appptainer"
+
+    * If your Slurm job has requested access to an NVIDIA GPU (see GPU use on NeSI to learn how to request a GPU), an Apptainer container can transparently access it using the --nv flag:
+
+        ```bash
+        apptainer exec --nv my_container.sif
+        ```
+    * For an example, 
+
+        ```bash
+        apptainer exec --nv tensorflow-latest-gpu.aif my_tensorflow.py some_argument
+        ```
+
+??? container "5. Network isolation"
+
+    * Apptainer allows you to configure network isolation for containers using the `--net` flag with commands like `apptainer exeec --net`. By default, this isolates the container’s network to a loopback interface, meaning it cannot communicate with the host or external networks unless additional network types are specified. Administrators can enable advanced network types (such as bridge or ptp) for privileged users, but for most users, `--net` alone provides strong network isolation for security and reproducibility
+
+        ```bash
+        apptainer exec --nv --net --network=none tensorflow-latest-gpu.aif 
+        ```
