@@ -27,7 +27,7 @@ access to the `nesi-add-kernel` tool:
 
 ``` sh
 module purge  # remove all previously loaded modules
-module load JupyterLab/2024.08.2-foss-2023a-4.2.4
+module load JupyterLab
 ```
 
 Then, to list all available options, use the `-h` or `--help` options as
@@ -69,7 +69,7 @@ First, make sure the `JupyterLab` module is loaded:
 
 ``` sh
 module purge
-module load JupyterLab/2024.08.2-foss-2023a-4.2.4
+module load JupyterLab
 ```
 
 To add a Conda environment created using
@@ -104,7 +104,7 @@ command:
 
 ``` sh
 module purge
-module load JupyterLab/2024.08.2-foss-2023a-4.2.4
+module load JupyterLab
 nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 ```
 
@@ -119,7 +119,7 @@ follows:
 
 ``` sh
 module purge
-module load JupyterLab/2024.08.2-foss-2023a-4.2.4
+module load JupyterLab
 nesi-add-kernel my_test_kernel -c <container_image.sif>
 ```
 
