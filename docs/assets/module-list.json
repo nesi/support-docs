@@ -635,7 +635,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.04,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -654,7 +654,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.04,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": [
                     {
@@ -688,7 +688,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.04,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -707,7 +707,7 @@
                 "server": "ANSYS@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.04,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -726,7 +726,7 @@
                 "server": "ANSYS@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.04,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -745,7 +745,7 @@
                 "server": "ANSYS@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.04,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": [
                     {
@@ -3478,12 +3478,12 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.27,
+                        "hourly_average": 0.5,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 5,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.2",
                         "visible_on_docs": true

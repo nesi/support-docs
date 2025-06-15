@@ -1,5 +1,4 @@
 nav:
- - Build_an_Apptainer_container_on_a_Milan_compute_node.md
  - OpenMP_settings.md
  - Offloading_to_GPU_with_OpenMP.md
  - Offloading_to_GPU_with_OpenACC.md
