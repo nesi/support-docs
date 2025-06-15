@@ -4,9 +4,9 @@
 
 Apptainer (formerly Singularity) simplifies the creation and execution of containers, ensuring software components are encapsulated for portability and reproducibility
 
-Home page  : https://apptainer.org/
+<small>Home page  : https://apptainer.org</small>
 <br>
-Github     : https://github.com/apptainer/apptainer
+<small>Github     : https://github.com/apptainer/apptainer</small>
 
 ## License
 
