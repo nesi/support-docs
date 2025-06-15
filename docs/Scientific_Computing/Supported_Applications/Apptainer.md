@@ -28,7 +28,7 @@
     export APPTAINER_CACHEDIR="/nesi/nobackup/nesi12345/apptainer-cache"
     export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
     ```
-    ??? quote "Add those environmant variables to your `~/.bashrc` for future use"
+    ??? quote "Add those environment variables to your `~/.bashrc` for future use"
 
         We recommend adding those environment variables to your `~/.bashrc` to make the future use cases of Apptainer. Please make sure to replace `/nesi/nobackup/nesi12345/apptainer-cache` with your nobackup directory. 
 
