@@ -1,5 +1,3 @@
-# Apptainer
-
 <center>
 ![apptainer-icon](../../assets/images/apptainer_icon.png)
 </center>
@@ -56,4 +54,41 @@
 
 ??? container "2. How to build a container with `--fakeroot`"
 
-    How to build a container "
+    Although we do not have a dedicated sandbox to build containers at the moment, `fakeroot` is enabled in both the login nodes and compute nodes allowing researchers to build containers as needed 
+
+    * Since some container builds can consume a reasonable amount of CPUS and memory, our recommendation is to do this via a Slurm job ( interactive or batch queue). We will demonstrate this via the latter option
+        * You will be required to prepare your container definition file ( It will be difficult for NeSI support to provide extensive support on writing container definition files but there are a number of online resources/tutorials with instructions/templates)
+    * To illustrate this functionality, create an example container definition file *my_container.def* from a shell session on NeSI as follows:
+
+    ```bash
+    cat << EOF > my_container.def
+    BootStrap: docker
+    From: ubuntu:20.04
+    %post
+        apt-get -y update
+        apt-get install -y wget
+    EOF
+    ```
+
+    * Then submit the following Slurm job submission script to build the container:
+
+    ```bash linenums="1"
+    #!/bin/bash -e
+
+    #SBATCH --job-name=apptainer_build
+    #SBATCH --time=0-00:30:00
+    #SBATCH --mem=4GB
+    #SBATCH --cpus-per-task=2
+
+    # recent Apptainer modules set APPTAINER_BIND, which typically breaks
+    # container builds, so unset it here
+    unset APPTAINER_BIND
+
+    # create a build and cache directory on nobackup storage
+    export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
+    export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
+    mkdir -p ${APPTAINER_CACHEDIR}
+
+    # build the container
+    apptainer build --force --fakeroot my_container.aif my_container.def
+    ```
