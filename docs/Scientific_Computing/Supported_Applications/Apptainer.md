@@ -169,3 +169,11 @@
         ```bash
         apptainer exec --nv --net --network=none tensorflow-latest-gpu.aif 
         ```
+
+
+!!! stethoscope "Tips & Tricks"
+
+    * Try to configure all software to run in user space without requiring privilege escalation via "sudo" or other privileged capabilities such as reserved network ports - although Singularity supports some of these features inside a container on some systems, they may not always be available on the HPC or other platforms, therefore relying on features such as Linux user namespaces could limit the portability of your container
+    * If your container runs an MPI application, make sure that the MPI distribution that is installed inside the container is compatible with Intel MPI
+    * Write output data and log files to the HPC file system using a directory that is bound into the container - this helps reproducibility of results by keeping the container image immutable, it makes sure that you have all logs available for debugging if a job crashes, and it avoids inflating the container image file
+    
