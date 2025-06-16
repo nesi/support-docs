@@ -51,34 +51,36 @@ per MPI task. If you use multiple MPI tasks per node, you need to set
 CRAY\_CUDA\_MPS=1 to enable the tasks to access the GPU device on each
 node at the same time.
 
-``` sl
-#!/bin/bash -e
+!!! quote ""
 
-#SBATCH --job-name      GROMACS_test # Name to appear in squeue
-#SBATCH --time          00:10:00     # Max walltime
-#SBATCH --mem-per-cpu   512MB        # Max memory per logical core
-#SBATCH --ntasks        5            # 5 MPI tasks
-#SBATCH --cpus-per-task 3            # 3 OpenMP threads per task
+    ``` sl
+    #!/bin/bash -e
 
-module load GROMACS/5.1.4-intel-2017a
+    #SBATCH --job-name      GROMACS_test # Name to appear in squeue
+    #SBATCH --time          00:10:00     # Max walltime
+    #SBATCH --mem-per-cpu   512MB        # Max memory per logical core
+    #SBATCH --ntasks        5            # 5 MPI tasks
+    #SBATCH --cpus-per-task 3            # 3 OpenMP threads per task
 
-# Prepare the binary input from precursor files 
-srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
+    module load GROMACS/5.1.4-intel-2017a
 
-# Run the simulation
-# Note that the -deffnm option is an alternative to specifying several input files individually
-# Note also that the -ntomp option should be used when using hybrid parallelisation
-srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
-```
+    # Prepare the binary input from precursor files 
+    srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
 
-**Note:** To prevent performance issues we moved the serial "gmx" to
-"gmx\_serial". The present "gmx" prints a note and calls "gmx\_mpi
-mdrun" (if called as "gmx mdrun") and "gmx\_serial" in all other cases.
+    # Run the simulation
+    # Note that the -deffnm option is an alternative to specifying several input files individually
+    # Note also that the -ntomp option should be used when using hybrid parallelisation
+    srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
+    ```
 
-**Note:** The hybrid version with CUDA can also run on pure CPU
-architectures. Thus you can use gmx\_mpi from the
-GROMACS/???-cuda-???-hybrid module on Mahuika compute nodes as well as
-Mahuika GPU nodes.
+    **Note:** To prevent performance issues we moved the serial "gmx" to
+    "gmx\_serial". The present "gmx" prints a note and calls "gmx\_mpi
+    mdrun" (if called as "gmx mdrun") and "gmx\_serial" in all other cases.
+    
+    **Note:** The hybrid version with CUDA can also run on pure CPU
+    architectures. Thus you can use gmx\_mpi from the
+    GROMACS/???-cuda-???-hybrid module on Mahuika compute nodes as well as
+    Mahuika GPU nodes.
 
 ### Checkpointing and restarting
 
@@ -151,14 +153,6 @@ by using `-ntomp ${SLURM_CPUS_PER_TASK}`. Hybrid parallelisation can be
 more efficient than MPI-only parallelisation, as within the same node
 there is no need for inter-task communication.
 
-**NOTE** on using GROMACS on Māui:
-
-On the Māui cluster, normally there is no reason to specifically request
-a whole node, as all jobs are scheduled to run on one or more entire
-nodes.  However, we have seen issues with slow performance and will
-recommend using the \`--exclusive\` flag when running GROMACS. It may
-also be advisable to request tasks or CPUs in multiples of 80, since
-that is the number of vCPUs per node.
 
 ## NVIDIA GPU Container
 
@@ -170,6 +164,18 @@ location (you can also pull your own version if you wish):
 */opt/nesi/containers/nvidia/gromacs-2020\_2.sif*. We have also provided
 an example submission script that calls the Singularity image here:
 */opt/nesi/containers/nvidia/gromacs-example.sl*.
+
+!!! screwdriver-wrench "Troubleshooting"
+
+    1.  failure during MPI (Message Passing Interface) initialization, specifically within the OpenFabrics Interface (OFI) communication layer used by many modern MPI implementations will trigger an error message similar to below
+
+        ```bash
+        Abort(1091471) on node 0 (rank 0 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+        MPIR_Init_thread(703).......:
+        MPID_Init(958)..............:
+        MPIDI_OFI_mpi_init_hook(883): OFI addrinfo() failed (ofi_init.c:883:MPIDI_OFI_mpi_init_hook:No data available)
+        ```
+        - If you are to come across this error, try adding `export I_MPI_OFI_PROVIDER=verbs` to the Slurm script ( after loading the GROMACS module) and re-submit the job 
 
 ## Further Documentation
 
