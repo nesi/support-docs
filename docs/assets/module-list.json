@@ -599,7 +599,8 @@
             "2022R2",
             "2023R1",
             "2023R2",
-            "2024R2"
+            "2024R2",
+            "2025R1"
         ],
         "admin_list": [
             {
@@ -774,7 +775,7 @@
         ],
         "default": "19.2",
         "default_type": "static",
-        "last_updated": 1740101339,
+        "last_updated": 1750118133,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANSYS/19.2.lua",
         "force_hide": "False",
@@ -3466,7 +3467,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.5,
+                        "hourly_average": 0.46,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
