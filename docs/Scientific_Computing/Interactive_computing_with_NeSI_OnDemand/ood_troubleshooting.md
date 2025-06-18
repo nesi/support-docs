@@ -36,7 +36,7 @@
         - Current OpenOnDemand implementation has a **two concurrent app sessions per account**. Above `exceeded quota` is an indication that you already have two app sessions running. ( Go to <kbd>My Interactive Sessions</kbd> to confirm this)
 
 
-## 3. NeSI OnDemand Current limitations¶
+## 3. NeSI OnDemand Current limitations
 
 | Limitation                                |  What are the missing functions/commands associated with this|
 --------------------------------------------|--------------------------------------------------------------|
