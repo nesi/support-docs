@@ -1,21 +1,42 @@
 # NeSI OnDemand - Troubleshooting 
 
 
+## 1. Potential issues during login 
 
-## "Error -- can't find user for …" messages
+!!! quote ""
 
-If you see this message after logging in, please reach out to us at [support@nesi.org.nz](mailto:support@nesi.org.nz) and we will be able to fix this problem.
+    1. `Error -- can't find user for` … messages
 
-## UX, wording, information display
+        - If you see this message after logging in, It is an indication the account associated with your username was not provisioned correctly or doesn't exist. Please reach out to us at [support@nesi.org.nz](mailto:support@nesi.org.nz) and we will be able to fix this   problem.<br>
 
-Due to this environment being our test build, you may encounter many internal technical terms that will be addressed through future iterations.
+    2. ❌`We're sorry, but something went wrong` : If you are encounter the following error during login, it is an indication of your home directory being full .i.e. OnDemand relies on some space being available on the home directory to open and maintain per session logs. 
+        - Only solution for this is to clear up some space in the home directory. You can still login to the cluster via another terminal client (`ssh`) to review and clean/delete content from home directory. If you don't have or having difficulty with setting up a terminal client setup for `ssh` access, please reach out to us at support@nesi.org.nz
 
-## User home folder default content
+        <center>
+        ![phusionmassenger](../../assets/images/phusion_massenger.png){width="400"}
+        </center> 
 
-Pre-populated with [Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos] folders, which is different to NeSI default.
+## 2. Errors during App session initialisation 
+
+!!! quote ""
+
+    1. If you are to encounter the folowing  `error no openapi getter` while attempting to open an app, please restart the web server via <kbd>Help</kbd> **>** <kbd>Restart Web Server</kbd>
+        <center>
+        ![openapi-getter](../../assets/images/OOD_openapi_restartwebserver.png)
+        </center>
+    2. Apps stuck at **Undetermined** state
+        <center>
+        ![oodapp-undetermined](../../assets/images/OOD_undetermined.png){width="500"}
+        </center>
+        - If the apps are stuck at the above **Undetermined** state,try terminating that session with <kbd>Cancel</kbd> **>** <kbd>Delete</kbd> and re-open a new session
+    3. `forbidden exceeded quota` 
+        <center>
+        ![ood-quota](../../assets/images/OOD_forbidden_exceeded_quota.png)
+        </center>
+        - Current OpenOnDemand implementation has a **two concurrent app sessions per account**. Above `exceeded quota` is an indication that you already have two app sessions running. ( Go to <kbd>My Interactive Sessions</kbd> to confirm this)
 
 
-## NeSI OnDemand Current limitations¶
+## 3. NeSI OnDemand Current limitations
 
 | Limitation                                |  What are the missing functions/commands associated with this|
 --------------------------------------------|--------------------------------------------------------------|

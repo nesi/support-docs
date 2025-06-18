@@ -606,7 +606,8 @@
             "2022R2",
             "2023R1",
             "2023R2",
-            "2024R2"
+            "2024R2",
+            "2025R1"
         ],
         "admin_list": [
             {
@@ -635,7 +636,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.02,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -654,7 +655,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.02,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": [
                     {
@@ -688,7 +689,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.02,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -707,7 +708,7 @@
                 "server": "ANSYS@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.02,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -726,7 +727,7 @@
                 "server": "ANSYS@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.02,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": []
             },
@@ -745,7 +746,7 @@
                 "server": "ANSYS@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.02,
+                "server_uptime": 0.01,
                 "server_version": "",
                 "features": [
                     {
@@ -781,7 +782,7 @@
         ],
         "default": "19.2",
         "default_type": "static",
-        "last_updated": 1740101339,
+        "last_updated": 1750118133,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANSYS/19.2.lua",
         "force_hide": "False",
@@ -3471,19 +3472,19 @@
                 "server": "COMSOL@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.99,
+                "server_uptime": 1.0,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.51,
+                        "hourly_average": 0.45,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 5,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.2",
                         "visible_on_docs": true
