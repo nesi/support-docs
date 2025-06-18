@@ -48,9 +48,9 @@ available on Mahuika that come with the mpi4py package, e.g.
 module load Python/3.9.9-gimkl-2020a
 ```
 
-## Installing Dask-MPI with Conda on Mahuika and Māui Ancil
+## Installing Dask-MPI with Conda
 
-Load an Anaconda3 or Miniconda3 module and use the following commands to
+Load a Miniforge3 module and use the following commands to
 install mpi4py with the Intel MPI distribution *before* installing the
 Dask-MPI package:
 
@@ -76,7 +76,7 @@ dependencies:
 ```
 !!! info "See also"
      See the
-     [Miniconda3](../../Scientific_Computing/Supported_Applications/Miniforge3.md)
+     [Miniforge3](../../Scientific_Computing/Supported_Applications/Miniforge3.md)
      page for more information on how to create and manage Miniconda
      environments on NeSI.
 
