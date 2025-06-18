@@ -1,18 +1,23 @@
 # NeSI OnDemand - Troubleshooting 
 
 
+## 1. Potential issues during login 
 
-## "Error -- can't find user for …" messages
+!!! quote ""
 
-If you see this message after logging in, please reach out to us at [support@nesi.org.nz](mailto:support@nesi.org.nz) and we will be able to fix this problem.
+    1. `Error -- can't find user for` … messages
 
-## UX, wording, information display
+        If you see this message after logging in, It is an indication the account associated with your username was not provisioned correctly or doesn't exist. Please reach out to us at [support@nesi.org.nz](mailto:support@nesi.org.nz) and we will be able to fix this   problem.
+    
+    2. ❌`We're sorry, but something went wrong` : If you are encounter the following error during login, it is an indication of your home directory being full .i.e. OnDemand relies on some space being available on the home directory to open and maintain per session logs. 
+        - Only solution for this is to clear up some space in the home directory. You can still login to the cluster via another terminal client (`ssh`) to review and clean/delete content from home directory. If you don't have or having difficulty with setting up a terminal client setup for `ssh` access, please reach out to us at support@nesi.org.nz
 
-Due to this environment being our test build, you may encounter many internal technical terms that will be addressed through future iterations.
+        <center>
+        ![phusionmassenger](../../assets/images/phusion_massenger.png){width="400"}
+        </center>
+    3. 
 
-## User home folder default content
-
-Pre-populated with [Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos] folders, which is different to NeSI default.
+## 
 
 
 ## NeSI OnDemand Current limitations¶
