@@ -275,8 +275,8 @@ In the first case with low worker memory consumption and no
 parallelisation, use for example
 
 ```sh
-export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
-export APPTAINER_BIND="/opt/slurm/lib64"
+export I_MPI_PMI_LIBRARY="/lib64/libpmi2.so"
+export APPTAINER_BIND="/lib64"
 srun apptainer run my_container.sif dask_example.py
 ```
 
@@ -284,8 +284,8 @@ In the second case with high worker memory consumption and/or
 parallelisation, use for example
 
 ```sh
-export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
-export APPTAINER_BIND="/opt/slurm/lib64"
+export I_MPI_PMI_LIBRARY="/lib64/libpmi2.so"
+export APPTAINER_BIND="/lib64"
 srun --het-group=0-1 singularity run my_container.sif dask_example.py
 ```
 
