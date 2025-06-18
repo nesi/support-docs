@@ -259,9 +259,7 @@ where the `%runscript` section ensures that the Python script passed to
 Conda environment inside the container.
 
 !!! note Tips
-     You can build this container on NeSI, using the Mahuika Extension
-     nodes, following the instructions from the [dedicated support
-     page](../../Scientific_Computing/HPC_Software_Environment/Build_an_Apptainer_container_on_a_Milan_compute_node.md).
+     You can build this container on NeSI,following the instructions from the [dedicated supportpage](../Supported_Applications/Apptainer.md)
 
 ### Slurm configuration
 
@@ -286,8 +284,8 @@ parallelisation, use for example
 ```sh
 export I_MPI_PMI_LIBRARY="/lib64/libpmi2.so"
 export APPTAINER_BIND="/lib64"
-srun --het-group=0-1 singularity run my_container.sif dask_example.py
+srun --het-group=0-1 apptainer run my_container.sif dask_example.py
 ```
 
-*Note: You may need to append more folders to `SINGULARITY_BIND` to make
+*Note: You may need to append more folders to `APPTAINER_BIND` to make
 your script accessible in the container, e.g. `$PWD`*
