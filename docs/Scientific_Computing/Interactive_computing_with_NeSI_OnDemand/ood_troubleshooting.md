@@ -16,10 +16,23 @@
         ![phusionmassenger](../../assets/images/phusion_massenger.png){width="400"}
         </center> 
 
-## 2. Errors 
+## 2. Errors during App session initialisation 
+
+!!! quote ""
+
+    1. If you are to encounter the folowing  `error no openapi getter` while attempting to open an app, please restart the web server via <kbd>Help</kbd> **>** <kbd>Restart Web Server</kbd>
+        <center>
+        ![openapi-getter](../../assets/images/OOD_openapi_restartwebserver.png)
+        </center>
+    2. Apps stuck at **Undetermined** state
+        <center>
+        ![oodapp-undetermined](../../assets/images/OOD_undetermined.png){width="500"}
+        </center>
+        - If the apps are stuck at the above **Undetermined** state,try terminating that session with <kbd>Cancel</kbd> **>** <kbd>Delete</kbd> and re-open a new session
+    3. 
 
 
-## NeSI OnDemand Current limitations¶
+## 3. NeSI OnDemand Current limitations¶
 
 | Limitation                                |  What are the missing functions/commands associated with this|
 --------------------------------------------|--------------------------------------------------------------|
