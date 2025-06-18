@@ -29,7 +29,11 @@
         ![oodapp-undetermined](../../assets/images/OOD_undetermined.png){width="500"}
         </center>
         - If the apps are stuck at the above **Undetermined** state,try terminating that session with <kbd>Cancel</kbd> **>** <kbd>Delete</kbd> and re-open a new session
-    3. 
+    3. `forbidden exceeded quota` 
+        <center>
+        ![ood-quota](../../assets/images/OOD_forbidden_exceeded_quota.png)
+        </center>
+        - Current OpenOnDemand implementation has a **two concurrent app sessions per account**. Above `exceeded quota` is an indication that you already have two app sessions running. ( Go to <kbd>My Interactive Sessions</kbd> to confirm this)
 
 
 ## 3. NeSI OnDemand Current limitations¶
