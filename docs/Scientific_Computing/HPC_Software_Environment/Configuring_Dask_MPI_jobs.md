@@ -216,9 +216,9 @@ Dask result: 5
 Local result: 5
 ```
 
-## Running Dask-MPI inside a Singularity container
+## Running Dask-MPI inside a Apptainer container
 
-It is straightforward to run a Dask-MPI workload inside a Singularity
+It is straightforward to run a Dask-MPI workload inside a Apptainer
 container on the HPC. For reliable and efficient execution it is best to
 use the same MPI distribution inside and outside the container. This
 restricts choices to Intel MPI on the Mahuika and Māui Ancil clusters;
@@ -238,7 +238,7 @@ guidelines should help with configuring the container correctly.
 2. The correct version of Python and the Intel MPI distribution need to
    be loaded at runtime.
 
-Here is an example of a minimal Singularity container definition file:
+Here is an example of a minimal Apptainer container definition file:
 
 ```singularity
 Bootstrap: docker
@@ -255,7 +255,7 @@ From: continuumio/miniconda3:latest
 ```
 
 where the `%runscript` section ensures that the Python script passed to
-`singularity run` is executed using the Python interpreter of the base
+`apptainer run` is executed using the Python interpreter of the base
 Conda environment inside the container.
 
 !!! note Tips
@@ -265,7 +265,7 @@ Conda environment inside the container.
 
 ### Slurm configuration
 
-Slurm configuration is identical to the case without Singularity, see
+Slurm configuration is identical to the case without Apptainer, see
 section [Configuring Slurm](#configuring-slurm)
 above. The Slurm job submission script needs to be slightly modified to
 setup and launch the container runtime environment, ensuring that Intel
@@ -275,19 +275,17 @@ In the first case with low worker memory consumption and no
 parallelisation, use for example
 
 ```sh
-module load Singularity
 export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
-export SINGULARITY_BIND="/opt/slurm/lib64"
-srun singularity run my_container.sif dask_example.py
+export APPTAINER_BIND="/opt/slurm/lib64"
+srun apptainer run my_container.sif dask_example.py
 ```
 
 In the second case with high worker memory consumption and/or
 parallelisation, use for example
 
 ```sh
-module load Singularity
 export I_MPI_PMI_LIBRARY="/opt/slurm/lib64/libpmi2.so"
-export SINGULARITY_BIND="/opt/slurm/lib64"
+export APPTAINER_BIND="/opt/slurm/lib64"
 srun --het-group=0-1 singularity run my_container.sif dask_example.py
 ```
 
