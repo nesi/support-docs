@@ -134,7 +134,7 @@
         ```
     * The apptainer `run` command, on the other hand, is designed to execute the default process defined in the container (such as its runscript), providing a convenient way to start the container’s main application or service as intended by its creator. This is commonly used when you want to use the container as a standalone executable.
 
-    **Slurm tempalte** 
+    **Slurm template** 
 
     ```bash
     #!/bin/bash -e
