@@ -13,7 +13,7 @@ search:
 
 ## New and Improved
 
-- Creation of the nz-north-1 region. 
+- Region update: Replacing region as us-east-01 with the correct region of nz-north-1 region. NB this is a config change, to refelect where the data is actually stored. No data was ever being transferred to us-east-01. 
 - Improved email handling: Existing members will no longer receive duplicate emails when the gateway pipeline is rerun to update membership.  
 - Resilient provisioning: If one member encounters provisioning issues, the system will continue to provision other members without interruption.
 - Validation before provisioning: Provisioning will now be blocked if the allocation is missing or contains incorrect values, ensuring data integrity and preventing errors.
