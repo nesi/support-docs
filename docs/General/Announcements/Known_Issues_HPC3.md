@@ -16,7 +16,7 @@ For differences between the new platforms and Mahuika, see the more permanent [d
      - Some filesystem snapshots are available.
      - We have a stable IP address range for outgoing connections.
      - `--gres=ssd` works as it did on Mahuika.
-
+     - Globus Endpoint added - `NeSI HPC3 Storage`
 
 ## Login
 Currently, when logging into the new platform using a proxy you will be prompted for authentication twice.
@@ -33,12 +33,6 @@ The initial login nodes are smaller than the Mahuika ones, have slower disk I/O,
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
 Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz).
-
-## Globus
-There are currently no endpoints configured, workflows that make use of Globus will not work.
-
-## Filesystem snapshots
-Snapshots are happening (eg: `ls /home/.snapshots/`) but we don't yet have the convenience of symlinks to them from inside a `$HOME/.snapshots` directory.
 
 ## Compute nodes
 So far there are all the new Genoa nodes but **only two** of the Milan nodes present, the rest of those being still in Mahuika, or in transit. So please only use the limited Milan resource for small benchmarking tests.  
