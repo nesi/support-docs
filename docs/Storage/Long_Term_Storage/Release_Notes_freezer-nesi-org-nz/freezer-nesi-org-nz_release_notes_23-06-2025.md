@@ -14,9 +14,9 @@ search:
 ## New and Improved
 
 - Creation of the nz-north-1 region. 
-- Improved Email Handling: Existing members will no longer receive duplicate emails when the gateway pipeline is rerun to update membership.  
-- Resilient Provisioning: If one member encounters provisioning issues, the system will continue to provision other members without interruption.
-- Validation Before Provisioning: Provisioning will now be blocked if the allocation is missing or contains incorrect values, ensuring data integrity and preventing errors.
+- Improved email handling: Existing members will no longer receive duplicate emails when the gateway pipeline is rerun to update membership.  
+- Resilient provisioning: If one member encounters provisioning issues, the system will continue to provision other members without interruption.
+- Validation before provisioning: Provisioning will now be blocked if the allocation is missing or contains incorrect values, ensuring data integrity and preventing errors.
 - Internal Test Environment Cleanup.  
 
 If you have any questions about any of the fixes,
