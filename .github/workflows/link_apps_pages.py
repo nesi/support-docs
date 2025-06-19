@@ -48,9 +48,10 @@ for input_file in os.listdir(os.path.join(DOC_ROOT, APPS_PAGES_PATH)):
                 print(f"::warning file={os.path.join(DOC_ROOT, APPS_PAGES_PATH, input_file)},\
 title=docpath.change:: Support doc reference for {app} changed from '{module_list[app]['support']}' to '{page_link}'")
             module_list[app]["support"] = page_link
-            for tag in meta["tags"]:
-                if tag not in module_list[app]["domains"]:
-                    module_list[app]["domains"] += [tag]
+            if "tags" in meta:
+                for tag in meta["tags"]:
+                    if tag not in module_list[app]["domains"]:
+                        module_list[app]["domains"] += [tag]
         else:
             print(
                 f"::warning file={os.path.join(DOC_ROOT, APPS_PAGES_PATH, input_file)},\

@@ -337,26 +337,23 @@ Here are some additional notes specific to running VASP on GPUs on NeSI:
 - Always select one MPI process (Slurm task) per GPU, for example:
     - Running on 1 P100 GPU  
 
-            ``` sl
-            # snippet of Slurm script
-            #SBATCH --nodes=1
-            #SBATCH --ntasks-per-node=1  # 1 task per node as we set 1 GPU per node below
-            #SBATCH --cpus-per-task=1
-            #SBATCH --gpus-per-node=P100:1
-            # end snippet
-            ```
+        ```bash
+        #SBATCH --nodes=1
+        #SBATCH --ntasks-per-node=1  # 1 task per node as we set 1 GPU per node below
+        #SBATCH --cpus-per-task=1
+        #SBATCH --gpus-per-node=P100:1
+        ```
 
     - Running on 4 HGX A100 GPUs on a single node  
 
-            ``` sl
-            # snippet of Slurm script
-            #SBATCH --nodes=1
-            #SBATCH --ntasks-per-node=4  # 4 tasks per node as we set 4 GPUs per node below
-            #SBATCH --cpus-per-task=1
-            #SBATCH --gpus-per-node=A100:4
-            #SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
-            # end snippet
-            ```
+        ```bash
+        #SBATCH --nodes=1
+        #SBATCH --ntasks-per-node=4  # 4 tasks per node as we set 4 GPUs per node below
+        #SBATCH --cpus-per-task=1
+        #SBATCH --gpus-per-node=A100:4
+        #SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
+        ```
+
 - Multiple threads per MPI process (`--cpus-per-task`) might be
     beneficial for performance but you should start by setting this
     to 1 to get a baseline

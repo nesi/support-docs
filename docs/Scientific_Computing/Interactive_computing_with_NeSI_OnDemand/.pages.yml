@@ -1,9 +1,8 @@
 ---
 nav:
-  - Interactive apps: interactive_apps
   - How-to guide: how_to_guide.md
+  - Interactive apps: interactive_apps
   - ...
   - changes_from_jupyter_on_nesi.md
+  - Troubleshooting: ood_troubleshooting.md
   - Release Notes: Release_Notes
-  - Known Issues: known_issues
-  - Current Limitations: current_limitations.md

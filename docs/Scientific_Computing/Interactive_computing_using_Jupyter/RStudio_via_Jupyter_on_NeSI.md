@@ -89,7 +89,7 @@ The alternative is to install packages in a terminal session
 ## Advanced usage
 
 RStudio runs in a [Singularity
-container](../../Scientific_Computing/Supported_Applications/Singularity.md)
+container](../../Scientific_Computing/Supported_Applications/Apptainer.md)
 prepared by the NeSI team to run on
 [jupyter.nesi.org.nz](https://jupyter.nesi.org.nz). The related code is
 hosted on GitHub, in the

@@ -15,17 +15,17 @@ search:
 !!! WARNING WARNING  
     Before running substantial/production jobs on the new HPC, you ***MUST*** stop the synchronisation of your data from GPFS to WEKA, otherwise you will lose any new work you do on the new HPC. See the section on [halting the synchronisation from GPFS entirely](#halting-the-synchronisation-from-gpfs-entirely) below.  
 
-Migration of your data from GPFS to WEKA will be ongoing for several weeks.
+Migration of your data from GPFS (Mahuika) to WEKA (new platforms) will be ongoing for several weeks.
 We will be copying across a few project directories in parallel at a time, using _rsync_.
 As each project directory is completed, the home directories of that project’s members will also be copied.
-To keep the WEKA copy of your data as fresh as possible, we will continue cycling through the projects that way, repeatedly syncing your directories from GPFS to WEKA until you ask us to stop.
+To keep the WEKA copy of your data as fresh as possible on the new platform, we will continue cycling through the projects that way, repeatedly syncing your directories from GPFS to WEKA until you ask us to stop.
 
 On the second and successive rounds of these synchronisations, the nobackup directories will also be examined.
 However **by default nothing will be migrated from nobackup directories**, as they often contain large amounts of data which is too transient to be worth preserving. You can override that, specifying nobackup content which should be preserved, as described below.
 
 ## Controlling which data gets migrated
 
-You can place a file named `.RSYNC_FILTER` in your directory (home, project, or nobackup) telling rsync to include or exclude particular file paths from the migration to WEKA. Note that the file is a hidden one, as its name starts with `.`. Full documentation can be found [online](https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES) or via `man rsync`, but in brief:
+You can place a file named `.RSYNC_FILTER` in your **Mahuika directory** (home, project, or nobackup) telling rsync to include or exclude particular file paths from the migration to WEKA on the new platform. Note that the file is a hidden one, as its name starts with `.`. Full documentation can be found [online](https://www.man7.org/linux/man-pages/man1/rsync.1.html#FILTER_RULES) or via `man rsync`, but in brief:
 
 ### Rules
 
@@ -133,7 +133,7 @@ If combining exclusions and inclusions, remember that the order matters, as the 
 
 ### Large multi-user projects
 
-`.RSYNC_FILTER` files can be put in any directory, not just the top one, so responsibility for sub directories can be delegated, which may be useful if you have a project or nobackup directory containing several per-user sub directories.  Users can then manage their own `.RSYNC_FILTER` files, just so long as the project's top level rules don’t completely exclude their directory in advance.  In such cases the `.RSYNC_FILTER` in the nobackup directory might look like:
+`.RSYNC_FILTER` files can be put in any directory on Mahuika, not just the top one, so responsibility for sub-directories can be delegated, which may be useful if you have a project or nobackup directory containing several per-user sub directories.  Users can then manage their own `.RSYNC_FILTER` files, just so long as the project's top level rules don’t completely exclude their directory in advance.  In such cases the `.RSYNC_FILTER` in the nobackup directory might look like:
 
 ```rsync
 # Include all top-level directories (but not their contents), sub directories can specify their own inclusions. 
@@ -153,19 +153,19 @@ or
 
 To check on how often or how recently your data was synced, the command `nn_data_migration_rsyncs` (on Mahuika) displays the five most recent rsync runs. You can give a project code to it as a command line argument, or else it will default to showing records for your home directory and the project and nobackup directories for each of your projects.  
 
-Once you can log in to the new cluster and so see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file. You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end, though there could be differences in size due to [differences between the ways GPFS and WEKA work](../../General/FAQs/Mahuika_HPC3_Differences.md#disk).
+Once you can log in to the new cluster and see the WEKA filsystems for yourself, please check that your important files have arrived there, particularly if you used a complex `.RSYNC_FILTER` file. You can use the command `df -h /nesi/project/<code>/` to compare the total amount of data at each end, though there could be differences in size due to [differences between the ways GPFS and WEKA work](../../General/FAQs/Mahuika_HPC3_Differences.md#disk).
 
 ### Protecting your new work from the ongoing data synchronisation
 
-All home, project, and nobackup directories are still being rsynced from GPFS every couple of days, and that rsync is configured to mirror rather than just update, because that makes sense before you start using the WEKA copy. So **any changes you make on WEKA will get obliterated at random times**. There are two ways to protect yourself from that:
+All home, project, and nobackup directories are still being rsynced from Mahuika's GPFS system every couple of days, and that rsync is configured to mirror rather than just update, because that makes sense before you start using the WEKA copy. So **any changes you make on the new platform / WEKA will get overwritten when the mirror synchronisation runs**. There are two ways to protect yourself from that:
 
 #### Protecting specific file paths in WEKA
 
-An `.RSYNC_FILTER` file in the WEKA copy can protect new files there from deletion. For example, an `.RSYNC_FILTER` file containing the line `P /example` will protect the (sibling) directory named "example", so preventing rsync from modifying its contents. This is a distinct file from the one of the same name at the GPFS end, which will not be copied across to WEKA.
+An `.RSYNC_FILTER` file in the WEKA copy on the new platform can protect new files there from deletion. For example, an `.RSYNC_FILTER` file containing the line `P /example` will protect the (sibling) directory named "example", so preventing rsync from modifying its contents. This is a distinct file from the one of the same name at the GPFS end, which will not be copied across to WEKA.
 
 #### Halting the synchronisation from GPFS entirely
 
-Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, please place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup).
+Once you are happy that all your data has been successfully copied to the new platforms / WEKA system, and you are ready to move to working entirely on the new platform, please place a file named `.GOODBYE_GPFS` in the top directory of each of your three GPFS filesets (home, project, and nobackup) **on Mahuika**.
 
   - `touch $HOME/.GOODBYE_GPFS`
   - `touch /nesi/project/your_project/.GOODBYE_GPFS`
@@ -173,10 +173,16 @@ Once you are happy that all your data has been successfully copied to WEKA and y
   
 That signals to our rsyncing script to skip that directory entirely.
 
-Once a home directory or both the filesets of a project have indicated ".GOODBYE_GPFS" we will stop even checking them, forever, so it will not be possible restart their rsyncing without asking NeSI Support to do it.
+Once a home directory or both the filesets of a project have indicated ".GOODBYE_GPFS" **on Mahuika** we will stop even checking them, forever, so it will not be possible restart their rsyncing without asking NeSI Support to do it.
 
 This will not only save your new workspace from regularly resetting back to the state it was on GPFS, it will also let the remaining directories of other users get updated more quickly.
 
 #### Recovering deleted files
 
 If you accidentally remove an important file from WEKA, you might be able to find an older copy of it from a filesystem snapshot, eg: in `/nesi/nobackup/.snapshots/`.
+
+## Video tutorial
+
+[Watch a demo of the instructions on this page](https://www.youtube.com/watch?v=BDuyeE3bIsc). 
+
+If you have questions or need help adding the `.RSYNC_FILTER` or `.GOODBYE_GPFS` files to your directories, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz).

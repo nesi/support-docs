@@ -58,7 +58,7 @@ slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 Use HTTPS protocol: <span style="color:blue"><b>Yes</b></span>
 On some networks all internet access must go through a HTTP proxy.
 Try setting it here if you can't connect to S3 directly
-HTTP Proxy server name: <span style="color:blue"><b>Leave blank, </b>press &lt;Enter&gt;</span>
+HTTP Proxy server name: <span style="color:green"><b>Leave blank, </b>press &lt;Enter&gt;</span>
 </code></pre>
 
 You will then be presented with a summary.
@@ -75,7 +75,7 @@ You will then be presented with a summary.
   HTTP Proxy server port: 0
 </code></pre>
 
-Press `Y` to confim.
+Press `Y` to confirm.
 
 <pre><code>Test access with supplied credentials? [Y/n] <span style="color:blue"><b>Y</b></span>
 Please wait, attempting to list all buckets...
@@ -135,7 +135,14 @@ s3cmd du -H s3://<freezer_bucket>
 To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
 
 ```sh
-s3cmd put your_file s3://<freezer_bucket>/your_directory>/your_file
+s3cmd put --verbose your_file s3://<freezer_bucket>/your_directory>/your_file
+```
+
+``` out
+INFO: Cache file not found or empty, creating/populating it.
+INFO: Compiling list of local files...
+INFO: Running stat() and reading/calculating MD5 values on 1 files, this may take some time...
+INFO: Summary: 1 local files to upload
 upload: 'your_file' -> 's3://<freezer_bucket>/your_directory>/your_file'  [1 of 1]
  172202 of 172202   100% in    0s   920.89 KB/s  done
 ```
@@ -143,7 +150,14 @@ upload: 'your_file' -> 's3://<freezer_bucket>/your_directory>/your_file'  [1 of 
 or folders
 
 ```sh
-s3cmd put yourfolder s3://<freezer_bucket>/your_directory/your_folder/ --recursive
+s3cmd put --recursive --verbose yourfolder s3://<freezer_bucket>/your_directory/your_folder/
+```
+
+``` out
+INFO: Cache file not found or empty, creating/populating it.
+INFO: Compiling list of local files...
+INFO: Running stat() and reading/calculating MD5 values on 1 files, this may take some time...
+INFO: Summary: 1 local files to upload
 upload: 'yourfolder/your_file' -> 's3://<freezer_bucket>/your_directory/your_folder/yourfolder/yourfile'  [1 of 1]
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
@@ -152,7 +166,7 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 ### Synchronise data
 
-Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options).
+Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
 
 ```sh
 s3cmd sync yourfolder s3://<freezer_bucket>/your_directory/your_folder/
@@ -172,10 +186,26 @@ List contained objects/files/folders:
 s3cmd ls -l -H s3://<freezer_bucket>/your_directory/your_folder/
 ```
 
+``` out
+                    DIR                                                    s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/
+2025-06-16 23:13    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_test.file
+2025-06-16 23:30    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_copy.file
+2025-06-17 01:26     0   d41d8cd98f00b204e9800998ecf8427e     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/1test.txt
+```
+
 or all objects recursive -r or --recursive
 
 ```sh
 s3cmd ls -r -l -H s3://<freezer_bucket>/your_directory/your_folder/
+```
+
+``` out
+2025-06-16 23:13    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_test.file
+2025-06-16 23:30    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_copy.file
+2025-06-17 01:31    14   95b28899a460dd8971705dfcd0f5f0d4     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/4/test3.txt
+2025-06-17 01:31    14   e76c3a8939fb031bab02a89f6fab520b     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/test2.txt
+2025-06-17 01:31    14   be2520c884c1be55bab187374a982b12     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/raw_data/test1.txt
+2025-06-17 01:26     0   d41d8cd98f00b204e9800998ecf8427e     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/test/test.txt
 ```
 
 ### Restore from tape
@@ -183,13 +213,18 @@ s3cmd ls -r -l -H s3://<freezer_bucket>/your_directory/your_folder/
 It is necessary to restore data from the tape (Glacier) prior to retrieving it. To restore file from Glacier storage:
 
 ```sh
-s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/
-restore: 's3://<freezer_bucket>/your_directory/data_folder/1957656657122.project/data.zip'
-restore: 's3://<freezer_bucket>/your_directory/data_folder/1957656657122.project/metadata.json'
-restore: 's3://<freezer_bucket>/your_directory/data_folder/1957656657122.project/metadata.old.json'
-restore: 's3://<freezer_bucket>/your_directory/data_folder/dbextension/.saved-db-connections.json'
-restore: 's3://<freezer_bucket>/your_directory/data_folder/workspace.json'
-restore: 's3://<freezer_bucket>/your_directory/data_folder/workspace.old.json'
+s3cmd restore --recursive --verbose s3://<freezer_bucket>/your_directory/data_folder/
+```
+
+``` out
+INFO: Retrieving list of remote files for s3://<freezer_bucket>/your_directory/your_folder/ ...
+INFO: Summary: Restoring 6 remote files for 1 days at Standard priority
+restore: 's3://n<freezer_bucket>/your_directory/your_folder/10G.file'
+restore: 's3://<freezer_bucket>/your_directory/your_folder/10G_copy.file'
+restore: 's3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/4/test3.txt'
+restore: 's3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/test2.txt'
+restore: 's3://<freezer_bucket>/your_directory/your_folder/MY_TEST/raw_data/test1.txt'
+restore: 's3://<freezer_bucket>/your_directory/your_folder/test.txt'
 ```
 
 By default files will remain in the s3 bucket for 1 day. If longer is required, this can be modified at the time of file restoration: 
@@ -201,12 +236,32 @@ s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/ --re
 ### Get objects after restore
 
 !!! info
-    Data needs to be restored (`STANDARD`) from the tape (`GLACIER`) before it can be retrived.
+    Data needs to be restored (to storage class `STANDARD`) from the tape (storage class `GLACIER`), before it can be retrieved.
 
 Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
 ```sh
 s3cmd get --recursive s3://<freezer_bucket>/your_directory/data_folder/
+```
+
+This will place the all files and subdirectories in the above `data_folder` into your current directory.
+
+### Deleting data
+
+!!! warning
+
+    Please be very careful using the rm command to delete data as the data can't be recovered once deleted
+
+Data can be deleted from both the bucket (cache) and from tape (thought this is a flag to overwrite, rather than actual deletion)
+
+```sh
+s3cmd rm s3://<freezer_bucket>/your_directory/data_folder/
+```
+
+This command can also be used recursively.
+
+```sh
+s3cmd rm --recursive s3://<freezer_bucket>/your_directory/data_folder/
 ```
 
 ## s3cmd reference

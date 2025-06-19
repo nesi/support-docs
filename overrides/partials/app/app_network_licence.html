@@ -22,18 +22,19 @@
         {% set vis = lic.features | selectattr("visible_on_docs") | list -%}
         {% set servernicename = lic.server | e |replace("@", "_") | lower %}
         
-        <tr id="{{ servernicename }}_summary" {% if vis | length > 1 -%}onclick="toggle('{{ servernicename }}_details')" title="Click for token information"{% endif -%}>   
+        <tr id="{{ servernicename }}_summary" {% if vis | length > 1 -%}onclick="toggle('{{ servernicename }}_details')" title="Click for token information"{%elif lic.server_uptime < 0.5 -%}title="This licence server is no longer connected ({{ "{:.0%}".format(lic.server_uptime) }} uptime), contact support if you require it."{% endif -%}>   
             <td>{% if lic.server_uptime < 0.5 -%}<del>{% endif -%}{{ lic.institution_long or lic.institution_short }}{% if lic.server_uptime < 0.5 -%}</del>{% endif -%}</td>
             {% if ns.faculty_col -%}
             <td>{% if lic.server_uptime < 0.5 -%}<del>{% endif -%}{{ lic.faculty_long or lic.faculty_short }}{% if lic.server_uptime < 0.5 -%}</del>{% endif -%}</td>
             {% endif -%}
             <td>
                 {% if lic.server_uptime < 0.5 -%}
-                <span class="twemoji warning badge" title="This licence server is no longer connected ({{ "{:.0%}".format(lic.server_uptime) }}), contact support if you require it."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"></path></svg></span>
+                <span class="twemoji warning badge badge-licence-noup" title="This licence server is no longer connected ({{ "{:.0%}".format(lic.server_uptime) }} uptime), contact support if you require it."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"></path></svg></span>
                 {% elif lic.server_uptime < 0.8 -%}
-                <span class="twemoji warning badge" title="This server has low uptime ({{ "{:.0%}".format(lic.server_uptime) }}). Contact support if you have any issues."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"></path></svg></span>
+                <span class="twemoji warning badge badge-licence-lowup" title="This server has low uptime ({{ "{:.0%}".format(lic.server_uptime) }}). Contact support if you have any issues."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"></path></svg></span>
                 {% endif -%}
-            </tr>
+            </td>
+        </tr>
         {# List of visible licences #}
         {% if vis | length > 1 -%}
             <tr class="hidden" id="{{ servernicename }}_details">
