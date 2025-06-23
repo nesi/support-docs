@@ -40,7 +40,7 @@ Refer to user manual for detailed description of all options.
 Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
 Access Key: <span style="color:green"><b>User ID</b></span>
 Secret Key: <span style="color:green"><b>Your Freezer Secret Key</b></span>
-Default Region: <span style="color:blue"><b>us-east-1</b></span>
+Default Region: <span style="color:blue"><b>akl-1</b></span>
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
 S3 Endpoint: <span style="color:blue"><b>freezer.nesi.org.nz:7070</b></span>
 
@@ -65,7 +65,7 @@ You will then be presented with a summary.
 <pre><code>New settings:
   Access Key: User ID
   Secret Key: Your Freezer Secret Key
-  Default Region: us-east-1
+  Default Region: akl-1
   S3 Endpoint: freezer.nesi.org.nz:7070
   DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
   Encryption password:
