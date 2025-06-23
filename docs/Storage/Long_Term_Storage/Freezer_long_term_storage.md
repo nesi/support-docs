@@ -65,7 +65,7 @@ You will then be presented with a summary.
 <pre><code>New settings:
   Access Key: User ID
   Secret Key: Your Freezer Secret Key
-  Default Region: us-east-1
+  Default Region: akl-1
   S3 Endpoint: freezer.nesi.org.nz:7070
   DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
   Encryption password:
