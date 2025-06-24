@@ -107,7 +107,18 @@ Whole-node jobs and others with a similarly high count of cores-per-node will ge
 
 ### Recorded memory use
 
-The amount of memory use which Slurm reports via `sacct` (or indirectly via `nn_seff`, etc.), despite still being labeled as the MaxRSS (or AveRSS etc.) is no longer the [RSS](https://en.wikipedia.org/wiki/Resident_set_size) but is now the total memory use, which is a higher number as it also includes memory used by files in the memory-based `/tmp` filesystem and any file content which was cached in memory during ordinary I/O. One way you can still discover the RSS (which is often a better measure of the minimum memory needed) is to prefix your commands with `/usr/bin/time --format='MaxRSS = %M kB'`.  
+The amount of memory use which Slurm reports via `sacct` (or indirectly via `nn_seff`, etc.), despite still being labeled as the MaxRSS (or AveRSS etc.) is no longer the [RSS](https://en.wikipedia.org/wiki/Resident_set_size) but is now the total memory use, which is a higher number as it also includes memory used by files in the memory-based `/tmp` filesystem and any file content which was cached in memory during ordinary I/O. For simple commands which don't fork off child processes, one way you can still discover the RSS (which is often a better measure of the minimum memory needed) is to prefix your commands with `/usr/bin/time --format='MaxRSS = %M kB'`.  
+
+### Profiling
+
+We have moved away from the use of HDF5 files for Slurm's built-in job profiling. So instead of using Slurm's `sh5util` command to get the result files and then plotting those in a second step, you now directly get a plot - try `profile_plot --help` for instructions.  
+
+Other consequences of this change include: 
+
+  - Job profiles are not private.
+  - Incomplete profiles can be obtained while a job is still running.
+  - Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
+  - The raw profile data isn't so accessable - please let us know if you need it.
 
 ### Miscellaneous
 
