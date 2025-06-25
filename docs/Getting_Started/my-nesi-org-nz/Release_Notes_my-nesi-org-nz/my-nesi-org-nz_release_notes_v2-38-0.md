@@ -8,9 +8,9 @@ search:
 ---
 
 ## New and Improved
-- Enhanced Project Insights: Researcher project pages now display the new 2025 HPC and storage usage, giving you better visibility into your resource consumption.
-- Improved User Feedback: When submitting allocation requests, you'll now see a spinning wheel to indicate that your request is being processed.  
-- Stronger Security: We've updated all packages to eliminate high-severity vulnerabilities as well as deleting all the unused packages, ensuring a safer and more secure experience.  
+- Enhanced project insights: Researcher project pages now display usage from the new 2025 HPC and storage platforms, giving you better visibility into your resource consumption.
+- Improved visibility of request progress: When submitting allocation requests, you'll now see a spinning wheel to indicate that your request is being processed.  
+- Stronger security: We've updated all packages to eliminate high-severity vulnerabilities and removed all unused packages to minimise risk and maintain a clean, secure environment.  
 
 If you have any questions about any of the updates, please
 {% include "partials/support_request.html" %}.
