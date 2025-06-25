@@ -12,11 +12,8 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 
 !!! info "Recently fixed"
-     - The `nn_` commands are available. eg `nn_seff <jobid>`.
-     - Some filesystem snapshots are available.
-     - We have a stable IP address range for outgoing connections.
-     - `--gres=ssd` works as it did on Mahuika.
      - Globus Endpoint added - `NeSI HPC3 Storage`
+     - New `profile_plot` command is available, replacing `sh5util`.
 
 ## Login
 Currently, when logging into the new platform using a proxy you will be prompted for authentication twice.
@@ -56,16 +53,10 @@ As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 
 **MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us know if you find any problems.
 
 ## email
-Slurm options `--mail-type` is not yet effective.
-
-## Internet
-As at 7th May Internet connectivity from compute nodes is available but may change and should not be relied upon. Downloads can be done from login nodes as normal.
+Slurm option `--mail-type` is not yet effective.
 
 ## ssh into Slurm jobs
 You cannot yet `ssh` into compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes.
 
-## Slurm native profiling
-The Slurm option `--profile` will generate profile data, but that data is as yet only visible to NeSI staff.
-
 ## WEKA Filesystems 
-The Filesystems on the new platform are not yet as fast as they will be.
+The filesystems on the new platform are not yet as fast as they will be.
