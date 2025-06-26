@@ -17,7 +17,7 @@ data to or from NeSI, you need:
 
 1. A NeSI account
 2. A Globus account
-3. Access to Globus DTNs or endpoint  
+3. Access to Globus DTNs or endpoints  
     - Access to a DTN (e.g., at your home institution)
     - Personal endpoint if no DTN is available
 
@@ -25,7 +25,7 @@ data to or from NeSI, you need:
 
 Please note that a Globus account is not the same as a NeSI account. You
 will need both Globus and NeSI accounts in order to transfer data to or
-from NeSI HPC facilities.
+from NeSI HPC and storage facilities.
 
 To get a Globus account, go to <https://transfer.nesi.org.nz/> and sign
 up using one of the available options on the page. Please note that the
@@ -42,13 +42,11 @@ Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your
 ## Globus Endpoint Activation
 
 A NeSI account is required in addition to a Globus account to transfer
-data to or from NeSI facilities. *  
+data to or from NeSI HPC and storage facilities. *  
 *
 
-To transfer data, between two sites, you need to have access to a DTN or
-endpoint at each location. For example, one on NeSI (NeSI Wellington DTN
-V5), the other to University of Otago's central file storage. You will
-also need the appropriate read and write permissions from where you're
+To transfer data between two sites (eg. NeSI platforms and the University of Otago central file storage), you need to have access to the DTN or
+endpoint at each location. You will also need the appropriate read and write permissions from where you're
 copying to and from. Please note that the NeSI `project` directory is
 read only, and `nobackup` is read and write.
 
@@ -57,20 +55,20 @@ A list of some Institutional endpoints can be found here:
 You can also set up your own [personal
 endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
 to transfer data to or from your personal computer, however,
-administrative access to your computer is required
+administrative access to your computer is required.
 
 To activate the NeSI endpoint click go to
 [https://transfer.nesi.org.nz/](https://transfer.nesi.org.nz/)  and click "file manager" on the menu
 bar on the left.
 
-1. Next to "Collection", search for "NeSI Wellington DTN V5", select
+1. Next to "Collection", search for "NeSI HPC Storage", select
     it, then click "Continue".
-2. In the 'Username**'** field, enter your NeSI HPC username. In the
+2. In the 'Username**'** field, enter your NeSI account username. In the
     'Password**'** field, the password is
     `Login Password (First Factor)` +
     `Authenticator Code (Second Factor)` e.g. `password123456`. Please
     **do not** save your password on "*Browser settings*" as it will
-    change every time due to the 2nd factor requirement.
+    change every time due to the second-factor (2FA) requirement.
 
 ![NeSI_Globus_Authenticate.png](../../assets/images/Globus_Quick_Start_Guide_0.png)
 

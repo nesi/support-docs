@@ -11,56 +11,51 @@ zendesk_section_id: 360000040596
 ## Globus
 
 Globus is a third-party service for transferring large amounts of data
-between Globus Data Transfer Nodes (DTNs). For example you can transfer
-data between the NeSI Wellington DTN V5 and your personal workstation
-endpoint, or an endpoint from your institution. With Globus, high
-data transfer rates are achievable. This service allows data to be
-accessible to any person who has a Globus account. The newest
-implementation (v5) provides [extra features and some key differences
-from the previous setup](https://docs.globus.org/globus-connect-server/).
+between Globus Data Transfer Nodes (DTNs). 
 
-To use Globus on NeSI platforms, you need:
+While NeSI supports use of other data transfer tools and protocols such
+as `scp`, Globus provides the most comprehensive, efficient, and easy to
+use service for NeSI users who need to move large data sets (more than a
+few gigabytes at a time).
+
+Using Globus, you can transfer
+data between the NeSI HPC platform and a Globus endpoint created on your personal workstation or at your institution. With Globus, high
+data transfer rates are achievable.
+
+To use Globus to transfer data to/from NeSI platforms, you need:
 
 1. A Globus account (see
   [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 2. An active NeSI account (see
   [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
-3. Access privileges on the non-NeSI Globus endpoint/collection you
-   plan on transferring data from or to. This other endpoint/collection
+3. Access privileges to the Globus endpoint/collection you
+   plan on transferring data from or to. This endpoint/collection
    could be a personal one on your workstation, or it could be managed
    by your institution or a third party.
 
-    - *Note that a NeSI user account does not create a Globus account, and
+    - *Note: A NeSI user account does not create a Globus account, and
         similarly a Globus account does not create a NeSI user account. Nor
         can you, as the end user, link the two through any website.*
 
-Both your accounts (NeSI and Globus) must exist before you try to use our DTN.
+Both your accounts (NeSI and Globus) must exist before you try to use the NeSI DTN.
 
-The NeSI Wellington DTN endpoint is protected by a second factor
-authentication (2FA).  Also note, your NeSI username and password are
-case-sensitive.
-
-## The NeSI Data Transfer Node
-
-The NeSI Data Transfer Node (DTN) acts as an interface between our HPC
-facility storage and a worldwide network of Globus endpoints. This is
-achieved using Globus.org, a web-based service that solves many of the
-challenges encountered moving large volumes of data between systems.
-While NeSI supports use of other data transfer tools and protocols such
-as `scp`, Globus provides the most comprehensive, efficient, and easy to
-use service for NeSI users who need to move large data sets (more than a
-few gigabytes at a time).
 
 ## Types of Globus endpoints or Data Transfer Nodes
 
 Globus data transfers take place between *endpoints*. An endpoint is
 nothing more than an operating system (Windows, Linux, etc) that has the
 Globus endpoint software installed on it. Endpoints come in two kinds:
-personal and server. Within a endpoint users can access data via
+personal and server. Within an endpoint users can access data via
 collections, with specific permissions and the ability to shared with
 others.
 
-The NeSI DTN is an example of a *server endpoint*. These type of
+
+## The NeSI Data Transfer Node
+
+The Data Transfer Node (DTN) for the NeSI platforms is called 'NeSI HPC Storage'. This endpoint acts as an interface between our HPC
+facility storage and a worldwide network of Globus endpoints.
+
+The NeSI HPC Storage endpoint is an example of a *server endpoint*. These types of
 endpoints are usually configured to access large capacity and
 high-performance parallel filesystems. Endpoints can be unmanaged or
 managed by a subscription. NeSI DTN is a server type, managed endpoint
@@ -85,37 +80,35 @@ especially if your institution has an aggressive firewall.
 
 ## Transferring data using a managed endpoint
 
-As an example, to move files between the NeSI HPC Storage (accessible
-from Māui and Mahuika) and the Otago University high-capacity central
+As an example, to move files between the NeSI HPC Storage endpoint and the Otago University high-capacity central
 file storage (another managed server endpoint):
 
 !!! info
     Log in to the [NeSI File Manager](https://transfer.nesi.org.nz/file-manager) where you are able to search for DTNs in the Collection field.
     [Listing of available endpoints on the New Zealand Data Transfer Platform](National_Data_Transfer_Platform.md)
 
-Find the NeSI endpoint by typing in "NeSI Wellington DTN V5". Select the
-endpoint "NeSI Wellington DTN V5" from the list, and you will be asked
+Find the NeSI endpoint by typing in "NeSI HPC Storage". Select the
+endpoint "NeSI HPC Storage" from the list, and you will be asked
 to authenticate your access to the endpoint. Click Continue to the next
 step.
 
 ![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V5.png)
 
-You can choose either of **&lt;username&gt;@wlg-dtn-oidc.nesi.org.nz**
-or NeSI Wellington OIDC Server (wlg-dtn-oidc.nesi.org.nz), they are all
-linked to the same website. If this is your first time login, you may
-ask to *bind* your primary identity to the OIDC login, you need to allow
-that.
+You'll be asked to select an identity to continue. Choose **&lt;username&gt;@iam.nesi.org.nz**.
+Note: OpenID Connect (OIDC) in Globus is used to enable secure authentication and authorization for accessing resources within the Globus ecosystem, particularly on Globus Connect Server endpoints.
+If this is your first login, you may be asked to *bind* your primary identity to the OICD login, and you will need to allow that.
 
 ![mceclip1.png](../../assets/images/Data_Transfer_using_Globus_V6.png)
 
-The NeSI Wellington DTN V5 endpoint is protected by a second factor
-authentication (2FA-same as accessing NeSI clusters).  In the
-'**Username'** field, enter your Māui/Mahuika username. In the
+The NeSI HPC Storage endpoint is protected by a second-factor
+authentication (2FA).  In the
+'**Username'** field, enter your NeSI account username. In the
 '**Password'** field, your `Password` will be equal to
 `Login Password (First Factor)` +
 `Authenticator Code (Second Factor)` e.g. `password123456`. (***Do
 not*** use any additional characters or spaces between your password and
-the token number.)
+the token number.) Note: Your NeSI username and password are
+case-sensitive.
 
 ![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V7.png)
 
@@ -164,12 +157,11 @@ To find other NeSI endpoints, type in "nesi#":
   ![two_endpoint.png](../../assets/images/Data_Transfer_using_Globus_V12.png){: style="height:2em;"} located
   on the top-right of the *File Manager* page.
 - Select the Endpoints you wish to move files between (start typing
-  "nesi#" to see the list of NeSI DTNs to select from).
+  "nesi#" to see the list of NeSI endpoints to select from).
   [Authenticate](../../Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md)
   at both endpoints.
 - At Globus.org the endpoint **defaults to
-  `/home/<username>` path** (represented by `~`) on Mahuika or
-  Māui. We do not recommend uploading data to your home directory, as
+  `/home/<username>` path** (represented by `~`) on the NeSI platform. We do not recommend uploading data to your home directory, as
   home directories are very small. Instead, navigate to an appropriate
   project directory under /nobackup (see
   [Globus Paths, Permissions,  Storage  Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)).
@@ -180,7 +172,7 @@ To find other NeSI endpoints, type in "nesi#":
 
 ## Transferring data using a personal endpoint
 
-To transfer files into/out of your laptop, desktop computer or any other
+To transfer files to/from your laptop, desktop computer or any other
 system you control, configure it as a [Globus Personal
 Endpoint](https://www.globus.org/globus-connect-personal) (see
 [Personal Globus Endpoint Configuration](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
