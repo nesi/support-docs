@@ -40,7 +40,11 @@ None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new 
 No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available. To specify the GPU type, use `#SBATCH --gpus-per-node=H100:1` (or `L4:1`)
 
 ## Software
-**MATLAB**, **ANSYS**, **ABAQUS**, and **COMSOL** make use of external license servers, so won't work until institutional IT department firewall rules have been updated to match out new IP address range.
+
+[**MATLAB**](../../Scientific_Computing/Supported_Applications/MATLAB.md), [**ANSYS**](../../Scientific_Computing/Supported_Applications/ANSYS.md), [**ABAQUS**](../../Scientific_Computing/Supported_Applications/ABAQUS.md), and [**COMSOL**](../../Scientific_Computing/Supported_Applications/COMSOL.md) make use of external license servers, so won't work until institutional IT department firewall rules have been updated to match out new IP address range.
+
+Check the documentation for the specific software to see if your institution has access, and feel free to contact support if it isn't.
+
 
 **Cylc** has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install it.
 
