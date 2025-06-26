@@ -44,8 +44,7 @@ Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your
 ## Globus Endpoint Activation
 
 A NeSI account is required in addition to a Globus account to transfer
-data to or from NeSI HPC and storage facilities. *  
-*
+data to or from NeSI HPC and storage facilities. 
 
 To transfer data between two sites (for example, NeSI platforms and the University of Otago central file storage), you need to have access to the DTN or
 endpoint at each location. You will also need the appropriate read and write permissions from where you're
@@ -64,14 +63,13 @@ bar on the left.
 
 1. Next to "Collection", search for "NeSI HPC Storage", select
     it, then click "Continue".
-2. In the 'Username**'** field, enter your NeSI account username. In the
-    'Password**'** field, the password is
+2. In the 'Username' field, enter your NeSI account username.
+3. In the 'Password' field, the password is
     `Login Password (First Factor)` +
     `Authenticator Code (Second Factor)` e.g. `password123456`. Please
     **do not** save your password on "*Browser settings*" as it will
     change every time due to the second-factor (2FA) requirement.
 
-![NeSI_Globus_Authenticate.png](../../assets/images/Globus_Quick_Start_Guide_0.png)
 
 ## Transferring Data
 
