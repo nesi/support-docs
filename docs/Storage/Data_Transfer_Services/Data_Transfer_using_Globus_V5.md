@@ -44,10 +44,13 @@ Both your accounts (NeSI and Globus) must exist before you try to use the NeSI D
 
 Globus data transfers take place between *endpoints*. An endpoint is
 nothing more than an operating system (Windows, Linux, etc) that has the
-Globus endpoint software installed on it. Endpoints come in two kinds:
-personal and server. Within an endpoint users can access data via
-collections, with specific permissions and the ability to shared with
-others.
+Globus endpoint software installed on it. 
+
+Endpoints come in two kinds:
+- personal
+- server
+
+Within an endpoint users can access data via collections, with specific permissions settings for sharing with others.
 
 
 ## The NeSI Data Transfer Node
@@ -89,16 +92,15 @@ file storage (another managed server endpoint):
 
 Find the NeSI endpoint by typing in "NeSI HPC Storage". Select the
 endpoint "NeSI HPC Storage" from the list, and you will be asked
-to authenticate your access to the endpoint. Click Continue to the next
-step.
+to authenticate your access to the endpoint. 
 
-![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V5.png)
+Click Continue to the next step.
 
-You'll be asked to select an identity to continue. Choose **&lt;username&gt;@iam.nesi.org.nz**.
-Note: OpenID Connect (OIDC) in Globus is used to enable secure authentication and authorization for accessing resources within the Globus ecosystem, particularly on Globus Connect Server endpoints.
-If this is your first login, you may be asked to *bind* your primary identity to the OICD login, and you will need to allow that.
+You'll be asked to select an identity to continue. 
+Choose **&lt;username&gt;@iam.nesi.org.nz**.
 
-![mceclip1.png](../../assets/images/Data_Transfer_using_Globus_V6.png)
+- *Note:* 
+OpenID Connect (OIDC) in Globus is used to enable secure authentication and authorization for accessing resources within the Globus ecosystem, particularly on Globus Connect Server endpoints. If this is your first login, you may be asked to *bind* your primary identity to the OICD login, and you will need to allow that.
 
 The NeSI HPC Storage endpoint is protected by a second-factor
 authentication (2FA).  In the
@@ -109,8 +111,6 @@ authentication (2FA).  In the
 not*** use any additional characters or spaces between your password and
 the token number.) Note: Your NeSI username and password are
 case-sensitive.
-
-![mceclip0.png](../../assets/images/Data_Transfer_using_Globus_V7.png)
 
 After the login, you will navigate to the default root(display as "/")
 path, then you could change the path to
