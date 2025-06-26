@@ -133,7 +133,6 @@ s3cmd du -H s3://<freezer_bucket>
 ### Put objects
 
 To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
-
 ```sh
 s3cmd put --verbose your_file s3://<freezer_bucket>/your_directory>/your_file
 ```
@@ -163,6 +162,25 @@ upload: 'yourfolder/your_file' -> 's3://<freezer_bucket>/your_directory/your_fol
 ```
 
 Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.
+
+### Large files and chunk size
+
+Large files will automatically be split into smaller "chunks" for ease of upload. By defualt these are set to 15 MB size. So for example for a file of ~500 GB chunk size should be increased to 1 GB. This can be done by adding the flag `--multipart-chunk-size-mb=1000` . Any chunk size can be specified, however only 10000 chunks can be created per file so if the chunk size is too small you will get the following error `ERROR: Parameter problem: Chunk size 15 MB results in more than 10000 chunks. Please increase --multipart-chunk-size-mb`. 
+For very large files please use the rough calculation of file size/10,000 and then add an bit extra to determine the optimum chunk size.  
+
+```sh
+s3cmd put --multipart-chunk-size-mb=1000 large_2.db s3://nearline_9776/ --verbose
+```
+
+``` out
+upload: 'large_2.db' -> 's3://nearline_9776/large_2.db'  [part 1 of 23, 1000MB] [1 of 1]
+ 1048576000 of 1048576000   100% in   25s    39.62 MB/s  done
+
+....
+
+upload: 'large_2.db' -> 's3://nearline_9776/large_2.db'  [part 23 of 23, 169MB] [1 of 1]
+ 177209344 of 177209344   100% in    4s    35.90 MB/s  done
+```
 
 ### Synchronise data
 
