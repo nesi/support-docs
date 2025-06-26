@@ -11,7 +11,9 @@ zendesk_section_id: 360000040596
 ## Activating an Endpoint
 
 When you select an endpoint to transfer data to/from, you may be asked
-to authenticate with that endpoint:
+to authenticate with that endpoint.
+
+*Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.*
 
 ![mceclip0.png](../../assets/images/Globus_V5_endpoint_activation.png)  
 Transfers are only possible once you have supplied credentials that
