@@ -9,8 +9,7 @@ zendesk_section_id: 360000040596
 ---
 
 This article shows how to transfer potentially large amounts of data
-between NeSI and your personal computer, without requiring 2FA
-(two-factor authentication) each time you initiate the transfer.  This
+between NeSI and your personal computer, without requiring two-factor authentication (2FA) each time you initiate the transfer.  This
 is particularly useful in the context of automated, or [scripted data
 transfers](../../Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md).
 
@@ -32,9 +31,9 @@ have registered and created an account on Globus.
 ## Step 1: Create a guest collection on NeSI
 
 - Go to <https://app.globus.org/file-manager>
-- In the "Collection" search box type **NeSI Wellington DTN V5** and
+- In the "Collection" search box type **NeSI HPC storage** and
     select this collection
-- *You may then need to log onto NeSI DTN to see the files*
+- *You may then need to log onto the NeSI HPC storage endpoint to see the files*
 - Find the root folder of your guest collection, the directory you
     would like to share, and
     - click on the “Share” button,
