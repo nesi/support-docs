@@ -19,15 +19,15 @@ authenticate your access to the endpoint. This process is known as
 "activating the endpoint". The endpoint remains active for 24 hours.  
 
 The NeSI HPC Storage endpoint is protected by a second-factor
-authentication (2FA), similar to accessing NeSI clusters. In the
+authentication (2FA), similar to accessing NeSI clusters. 
+
+In the
 '**Username'** field, enter your NeSI account username. In the
 '**Password'** field, your `Password` will be equal to
 `Login Password (First Factor)` +
 `Authenticator Code (Second Factor)` e.g. `password123456`. (***Do
 not*** use any additional characters or spaces between your password and
 the token number.)
-
- ![mceclip0.png](../../assets/images/Globus_V5_endpoint_activation_0.png)
 
 Check the status of your endpoints at [https://www.globus.org/app/console/endpoints](https://www.globus.org/app/console/endpoints)
 
