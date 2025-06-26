@@ -15,8 +15,10 @@ Globus is a third-party service for transferring large amounts of data
 between two Globus Data Transfer Nodes (DTNs). To use Globus to transfer
 data to or from NeSI, you need:
 
-1. A NeSI account
-2. A Globus account
+1. An active NeSI account (see
+  [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
+2. A Globus account (see
+  [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 3. Access to Globus DTNs or endpoints  
     - Access to a DTN (e.g., at your home institution)
     - Personal endpoint if no DTN is available
@@ -45,10 +47,9 @@ A NeSI account is required in addition to a Globus account to transfer
 data to or from NeSI HPC and storage facilities. *  
 *
 
-To transfer data between two sites (eg. NeSI platforms and the University of Otago central file storage), you need to have access to the DTN or
+To transfer data between two sites (for example, NeSI platforms and the University of Otago central file storage), you need to have access to the DTN or
 endpoint at each location. You will also need the appropriate read and write permissions from where you're
-copying to and from. Please note that the NeSI `project` directory is
-read only, and `nobackup` is read and write.
+copying to and from. Please note that the NeSI `project` directory is read only, and `nobackup` is read and write.
 
 A list of some Institutional endpoints can be found here:
 [National-Data-Transfer-Platform](../../Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md).
