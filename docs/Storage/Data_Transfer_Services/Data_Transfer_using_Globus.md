@@ -1,7 +1,7 @@
 ---
 created_at: '2021-08-27T03:18:13Z'
 tags: []
-title: Data Transfer using Globus V5
+title: Data Transfer using Globus
 vote_count: 5
 vote_sum: 3
 zendesk_article_id: 4405623380751
@@ -103,11 +103,14 @@ Choose **&lt;username&gt;@iam.nesi.org.nz**.
 OpenID Connect (OIDC) in Globus is used to enable secure authentication and authorization for accessing resources within the Globus ecosystem, particularly on Globus Connect Server endpoints. If this is your first login, you may be asked to *bind* your primary identity to the OICD login, and you will need to allow that.
 
 The NeSI HPC Storage endpoint is protected by a second-factor
-authentication (2FA).  In the
-'**Username'** field, enter your NeSI account username. In the
+authentication (2FA).  
+- In the
+'**Username'** field, enter your NeSI account username.
+- In the
 '**Password'** field, your `Password` will be equal to
 `Login Password (First Factor)` +
-`Authenticator Code (Second Factor)` e.g. `password123456`. (***Do
+`Authenticator Code (Second Factor)` e.g. `password123456`. 
+(***Do
 not*** use any additional characters or spaces between your password and
 the token number.) Note: Your NeSI username and password are
 case-sensitive.
