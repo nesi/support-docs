@@ -43,6 +43,8 @@ have registered and created an account on Globus.
 - You should now see your new guest collection at
     <https://app.globus.org/collections?scope=administered-by-me>
 
+*Note: The example pictured below shows an old NeSI endpoint, now decommissioned. The new endpoint for NeSI HPC facilities is called "NeSI HPC storage".*  
+
 ![mceclip0.png](../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.png)
 
 ## Step 2: Download and install Globus Connect Personal
