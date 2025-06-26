@@ -14,9 +14,11 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
+*Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.* 
+
 ![mceclip0.png](../../assets/images/Globus_V5_Paths-Permissions-Storage_Allocation.png)
 
-###  On NeSI's Māui/Mahuika clusters this means
+###  On NeSI platforms this means
 
 | Globus path                     | Visible to Globus | HPC Filesystem                  | Globus usage              | Permissions           |
 |---------------------------------|-------------------|---------------------------------|---------------------------|-----------------------|
@@ -27,7 +29,7 @@ path directory, displayed as '`/home/<username>`'.
 For more information about NeSI filesystem, check
 [NeSI_File_Systems_and_Quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
-## Performing Globus transfers to/from Māui/Mahuika
+## Performing Globus transfers to/from NeSI platforms
 
 - If transferring files off the cluster, move/copy files onto
     `/nesi/project` or `/nesi/nobackup` first, via your HPC access
