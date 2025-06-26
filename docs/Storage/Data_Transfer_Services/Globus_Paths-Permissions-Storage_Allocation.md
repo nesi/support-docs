@@ -1,7 +1,7 @@
 ---
 created_at: '2021-08-27T03:30:10Z'
 tags: []
-title: Globus V5 Paths, Permissions, Storage Allocation
+title: Globus Paths, Permissions, Storage Allocation
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 4405623499791
