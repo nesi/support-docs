@@ -1,7 +1,7 @@
 ---
 nav:
   - Globus_Quick_Start_Guide.md
-  - Data_Transfer_using_Globus_V5.md
+  - Data_Transfer_using_Globus.md
   - Globus_V5_endpoint_activation.md
   - Globus V5 Paths, Permissions, Storage_Allocation: Globus_V5_Paths-Permissions-Storage_Allocation.md
   - Initial Globus Sign-Up, and your Globus Identities: Initial_Globus_Sign_Up-and_your_Globus_Identities.md
