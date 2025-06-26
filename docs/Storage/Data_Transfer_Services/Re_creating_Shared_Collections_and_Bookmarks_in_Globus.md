@@ -20,37 +20,39 @@ HPC storage**.
 In summary:
 
 1. To re-create existing Collections, select *Share* and *Create Guest
-    Collection  
+    Collection*
 
-    ![globus14.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V5.jpg)  
+*Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.*  
+
+  ![globus14.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V5.jpg)  
 
 2. Enter the [file
     path](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)
-    of the directory to be shared.  
+    of the directory to be shared.
 
-    ![globus10.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V6.jpg)  
+*Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.*
 
-    This can also be copied from your existing Shared Collection on
-    *NeSI Wellington DTN V5  
 
-    ![globus07.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V7.jpg)  
+  ![globus10.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V6.jpg)  
+  
 
-3. Add Permissions for an individual or a Group (existing, or create a
+4. Add Permissions for an individual or a Group (existing, or create a
     new group)  
 
     ![globus11.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V8.jpg)  
 
-4. Users you share with will receive an email notification containing a
+5. Users you share with will receive an email notification containing a
     link to the new *Guest Collection*.
 
 ## Bookmarks
 
 1. Create bookmarks to **NeSI HPC storage** and new Guest
-    Collections  
+    Collections (*Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.*):   
 
-    ![globus13.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V9.jpg)  
+    ![globus13.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V9.jpg)
 
-2. Bookmarks to *NeSI Wellington DTN V5* and Shared Collections on *NeSI
-    Wellington DTN V5* should be deleted.
+
+2. Delete any Bookmarks to *NeSI Wellington DTN V5* or Shared Collections on *NeSI
+    Wellington DTN V5*. 
 
 ![globus12.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V10.jpg)  
