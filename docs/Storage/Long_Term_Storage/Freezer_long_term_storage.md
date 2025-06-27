@@ -133,6 +133,11 @@ s3cmd du -H s3://<freezer_bucket>
 ### Put objects
 
 To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
+
+!!! warning
+
+    If you have large files you may need to change chunk size, please see next section for details
+    
 ```sh
 s3cmd put --verbose your_file s3://<freezer_bucket>/your_directory>/your_file
 ```
@@ -169,7 +174,7 @@ Large files will automatically be split into smaller "chunks" for ease of upload
 For very large files please use the rough calculation of file size/10,000 and then add an bit extra to determine the optimum chunk size.  
 
 ```sh
-s3cmd put --multipart-chunk-size-mb=1000 large_2.db s3://nearline_9776/ --verbose
+s3cmd put --multipart-chunk-size-mb=1000 yourfolder s3://<freezer_bucket>/your_directory/your_folder/ --verbose
 ```
 
 ``` out
