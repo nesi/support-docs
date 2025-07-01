@@ -19,9 +19,9 @@ As part of the science system reforms, effective 01 July the *Crown Research Ins
 
 All researchers and staff of these new PROs will have new emails affiliated with their new organisation.
 What this means for your NeSI account
-There is currently no link between your new domain name (eg. name@agresearch.co.nz and name@bioeconomy.nz) and your existing NeSI account.
+There is currently no link between your new domain name (e.g. name@agresearch.co.nz and name@bioeconomy.nz) and your existing NeSI account.
 
-For the time being, you should continue to use your old / existing NeSI login credentials with your CRI email addresses (eg. name@agresearch.co.nz ) when accessing NeSI systems. Eventually, your new PRO domain & email will be mapped to your NeSI home directory.
+For the time being, you should continue to use your old / existing NeSI login credentials with your CRI email addresses (e.g. name@agresearch.co.nz ) when accessing NeSI systems. Eventually, your new PRO domain & email will be mapped to your NeSI home directory.
 
 ## Logging in via Tuakiri
 
