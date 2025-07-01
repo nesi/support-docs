@@ -13,9 +13,6 @@ For example the [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm
 
 This page should be read in conjunction with the [Known Issues](../Announcements/Known_Issues_HPC3.md) which are not included here as they are temporary differences to be resolved soon.
 
-If you are moving from Māui rather than Mahuika,
-then please see [Preparing your code for use on NeSI's new HPC platform](../Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md), and {% include "partials/support_request.html" %} if you require assistance.
-
 ## Login
 
 We are now using Tuakiri to provide second-factor authentication, and this changes the login experience.  See [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md) for the full details.
@@ -42,24 +39,26 @@ Storage (byte) quotas in WEKA work the same way, but there are no inode (file) q
 There will no longer be any exemptions from nobackup autodeletion.
 Instead a combination of increased project storage and moving data to Freezer (long term storage) will be used.
 
+There are snapshots for short-term recovery of deleted files, in `/home/.snapshots/`, `/nesi/project/.snapshots/`, and `/nesi/nobackup/.snapshots`. But none of the WEKA filesystems are being copied on to tape for longer-term backup like `project` was on GPFS.
+
 ### Tape
 
 [Freezer](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md) replaces Nearline.
 
 ## Access via Web browser
 
-[OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md) is replacing JupyterHub.
+[OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md) has replaced JupyterHub.
 OnDemand is more flexible and can deliver more GUI based apps.
 
 ## Software
 
-Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have been depreciated - just use the system version of these tools instead.
+Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have been depreciated - just use the system versions of these tools instead.
 
 The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, eg: `gm display ...`.
 
 ## External IP address for outbound connections 
 
-This has changed to `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`, and so any institutional firewalls which let requests from NeSI in to a networked license sever will need updating.
+Internet connections made from NeSI (eg: to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
 
 ## Slurm
 
@@ -79,7 +78,7 @@ These have changed.
 
 As on Mahuika, the default partition selection should generally be OK. There is no need to set `--partition` unless you need the `hugemem` partition or have a specific reason to choose the microarchitecture, in which case you can specify either the `genoa` or `milan` partition. 
 
-Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.
+Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.  For example in the `genoa` partition:
 
   - A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes. 
   - A job which requests ≤ 4 GB/core will run on the  4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
@@ -105,10 +104,6 @@ These are open for review if you find any of them unreasonable or inefficient.
 
 Whole-node jobs and others with a similarly high count of cores-per-node will get a priority boost (visible in the “site factor” of `sprio`).  This is to help whole-node jobs get ahead of large distributed jobs with many tasks spread over many nodes.
 
-### Recorded memory use
-
-The amount of memory use which Slurm reports via `sacct` (or indirectly via `nn_seff`, etc.), despite still being labeled as the MaxRSS (or AveRSS etc.) is no longer the [RSS](https://en.wikipedia.org/wiki/Resident_set_size) but is now the total memory use, which is a higher number as it also includes memory used by files in the memory-based `/tmp` filesystem and any file content which was cached in memory during ordinary I/O. For simple commands which don't fork off child processes, one way you can still discover the RSS (which is often a better measure of the minimum memory needed) is to prefix your commands with `/usr/bin/time --format='MaxRSS = %M kB'`.  
-
 ### Profiling
 
 We have moved away from the use of HDF5 files for Slurm's built-in job profiling. So instead of using Slurm's `sh5util` command to get the result files and then plotting those in a second step, you now directly get a plot - try `profile_plot --help` for instructions.  
@@ -119,6 +114,8 @@ Other consequences of this change include:
   - Incomplete profiles can be obtained while a job is still running.
   - Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
   - The raw profile data isn't so accessable - please let us know if you need it.
+
+Note that the memory usage shown in these profiles is currently affected by the known [RSS issue](../Announcements/Known_Issues_HPC3.md/#recorded-memory-use).
 
 ### Miscellaneous
 
@@ -151,4 +148,4 @@ There are 64 of these nodes available, 16 of which have 4 times as much memory, 
 
 ### GPUs
 
-The P100s are being retired.  The A100s will be moved into HPC3 along with the Milan nodes. 8 H100s and 16 L4s are available on various Genoa nodes.
+Mahuika's P100s have been retired. The A100s will be moved into HPC3, 8 into Genoa nodes and 16 staying in their Milan nodes. 8 H100s and 16 L4s are available on various Genoa nodes.

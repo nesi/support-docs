@@ -32,19 +32,18 @@ The resources dedicated to interactive work via a web browser are smaller, and s
 Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz).
 
 ## Compute nodes
-So far there are all the new Genoa nodes but **only two** of the Milan nodes present, the rest of those being still in Mahuika, or in transit. So please only use the limited Milan resource for small benchmarking tests.  
+So far there are all the new Genoa nodes but **only two** of the Milan nodes have been installed. So please only use the limited Milan resource for small benchmarking tests.  
 
 None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new Genoa nodes do have 1.5 TB of memory.
 
 ## GPUs
-No A100 GPUs have been moved yet, so only the new H100 and L4 GPUs are available. To specify the GPU type, use `#SBATCH --gpus-per-node=H100:1` (or `L4:1`)
+Only a few of the A100 GPUs have been installed so far, but the new H100 and L4 GPUs are all available. 
 
 ## Software
 
 [**MATLAB**](../../Scientific_Computing/Supported_Applications/MATLAB.md), [**ANSYS**](../../Scientific_Computing/Supported_Applications/ANSYS.md), [**ABAQUS**](../../Scientific_Computing/Supported_Applications/ABAQUS.md), and [**COMSOL**](../../Scientific_Computing/Supported_Applications/COMSOL.md) make use of external license servers, so won't work until institutional IT department firewall rules have been updated to match out new IP address range.
 
 Check the documentation for the specific software to see if your institution has access, and feel free to contact support if it isn't.
-
 
 **Cylc** has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install it.
 
@@ -55,6 +54,16 @@ Check the documentation for the specific software to see if your institution has
 As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
 
 **MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us know if you find any problems.
+
+## Slurm
+
+### Recorded memory use
+
+The amount of memory use which Slurm reports via `sacct` (or indirectly via `nn_seff`, etc.), despite still being labeled as the MaxRSS (or AveRSS etc.) is no longer the [RSS](https://en.wikipedia.org/wiki/Resident_set_size) but is now the total memory use, which is a higher number as it also includes memory used by files in the memory-based `/tmp` filesystem and any file content which was cached in memory during ordinary I/O. For simple commands which don't fork off child processes, one way you can still discover the RSS (which is often a better measure of the minimum memory needed) is to prefix your commands with `/usr/bin/time --format='MaxRSS = %M kB'`.  
+
+### BadConstraints
+
+This can appear as a reason for a job pending in the `squeue` output when the job is submitted to both `milan` and `genoa` partitions (which is the default behaviour).  It does not appear to cause a serious problem and we think it is likely to be fixed in the next point release of Slurm.
 
 ## email
 Slurm option `--mail-type` is not yet effective.
