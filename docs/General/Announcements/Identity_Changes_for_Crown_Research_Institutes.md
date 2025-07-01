@@ -8,17 +8,19 @@ tags:
     - email
 ---
 
-## What is happening?
+## What is happening
 
 As part of the science system reforms, effective 01 July the *Crown Research Institutes* (CRIs) are merging into three new
 *Public Research Organisations* (PROs):
 
 - **Bioeconomy**: A merger of AgResearch, Manaaki Whenua - Landcare Research, Plant & Food Research, and Scion.
-- **Earth Science**: A merger of NIWA and GNS Science.
+- **Earth Science**: A merger of NIWA, GNS Science, MetService, and Measurement Standards Laboratory of New Zealand.
 - **Health and Forensic Science**: A repurpose of ESR.
 
 All researchers and staff of these new PROs will have new emails affiliated with their new organisation.
-What this means for your NeSI account
+
+## What this means for your NeSI account
+
 There is currently no link between your new domain name (e.g. name@agresearch.co.nz and name@bioeconomy.nz) and your existing NeSI account.
 
 For the time being, you should continue to use your old / existing NeSI login credentials with your CRI email addresses (e.g. name@agresearch.co.nz ) when accessing NeSI systems. Eventually, your new PRO domain & email will be mapped to your NeSI home directory.
