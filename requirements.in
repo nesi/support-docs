@@ -25,3 +25,4 @@ flashtext
 
 # additional tools
 pip-tools
+PyYAML
