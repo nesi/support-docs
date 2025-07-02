@@ -37,29 +37,30 @@ So far there are all the new Genoa nodes but **only two** of the Milan nodes hav
 None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new Genoa nodes do have 1.5 TB of memory.
 
 ## GPUs
-Only a few of the A100 GPUs have been installed so far, but the new H100 and L4 GPUs are all available. 
+The 16 80 GB A100 GPUs which were in the *hgx* partition are (along with their Milan nodes) not yet installed. The 8 PCIe 40 GB A100s are present however, along with the new L4 and H100 GPUs.
+
+If you request a GPU without specifying which *type* of GPU, you will get a random one. So please always specify a GPU type. 
 
 ## Software
-
-[**MATLAB**](../../Scientific_Computing/Supported_Applications/MATLAB.md), [**ANSYS**](../../Scientific_Computing/Supported_Applications/ANSYS.md), [**ABAQUS**](../../Scientific_Computing/Supported_Applications/ABAQUS.md), and [**COMSOL**](../../Scientific_Computing/Supported_Applications/COMSOL.md) make use of external license servers, so won't work until institutional IT department firewall rules have been updated to match out new IP address range.
-
-Check the documentation for the specific software to see if your institution has access, and feel free to contact support if it isn't.
-
-**Cylc** has not been installed. You can use [these instructions](https://cylc.github.io/cylc-doc/stable/html/installation.html) to install it.
+As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
 
 **QChem** and any other software using node locked licences won't work on nodes which are not yet registered with that license.
 
 **Delft3D_FM** wasn't working in Mahuika's Milan partition so probably needs rebuilding.
 
-As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
+**MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. 
 
-**MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. Please let us know if you find any problems.
+Please let us know if you find any additional problems.
 
 ## Slurm
 
 ### Recorded memory use
 
 The amount of memory use which Slurm reports via `sacct` (or indirectly via `nn_seff`, etc.), despite still being labeled as the MaxRSS (or AveRSS etc.) is no longer the [RSS](https://en.wikipedia.org/wiki/Resident_set_size) but is now the total memory use, which is a higher number as it also includes memory used by files in the memory-based `/tmp` filesystem and any file content which was cached in memory during ordinary I/O. For simple commands which don't fork off child processes, one way you can still discover the RSS (which is often a better measure of the minimum memory needed) is to prefix your commands with `/usr/bin/time --format='MaxRSS = %M kB'`.  
+
+### $TMPDIR
+
+The size limit on this per-job in-memory directory is currently only 70 TB per node in total across all jobs. So if you need to use more than about 5 TB of it per node then please use `--gres=ssd` to get your job's $TMPDIR placed on a fast SSD instead.
 
 ### BadConstraints
 
