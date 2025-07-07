@@ -20,26 +20,14 @@ The Vienna Ab initio Simulation Package (VASP) is a programme for atomic
 scale materials modelling.
 
 VASP computes an approximate solution to the many-body Schrödinger
-equation of a chemical system by either Density Functional Theory, Hartree-Fock, or both with hybrid functionals.
+equation of a chemical system using Density Functional Theory or Hartree-Fock, or both (hybrid functionals). Periodic boundary conditions make VASP particularly useful for studying the bulk-like properties of materials.
 
-Periodic boundary conditions make VASP particularly useful for studying
-materials with bulk materials. (VASP uses a basis set made up of
-plane-waves as opposed to atom centred basis sets, and describes core
-atomic charges with pseudopotentials)[https://www.vasp.at/wiki/index.php/Category:Theory].
+For more information on what you can do with VASP see the (official documentation)[https://www.vasp.at/info/about/].
 
-VASP is mostly used for studying
-
-- ground state electronic structure
-- structural relaxation and minimising forces between atoms.
-- molecular dynamics
-- transition state energies
-
-For more information, please visit the VASP home page at
-<http://www.vasp.at>.
 
 ## Availability
 
-VASP is currently available on the Mahuika and Māui clusters.
+VASP is currently available on the Mahuika cluster.
 
 ## Licences
 
@@ -48,7 +36,9 @@ A VASP license is managed at the reasearch group level. Which versions you have 
 If your research group has a valid license, please {% include "partials/support_request.html" %} and CC the group leader. NeSI support will add the relevent permissions to your NeSI UID which will allow you to access the VASP modules. You may be asked to provide proof of your license if you
 are not from a known group or if the license is new.
 
-## Best practices for VASP calculations
+## Tips for running your VASP calculations
+
+Parallelising your VASP calculation appropriately requires some thought and testing. VASP6 and newer impliments OpenMP parallelisation.
 
 ### Example script
 
