@@ -16,4 +16,4 @@ status: deprecated
 For Mahuika and Māui, log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
 'Contact Support'.  
 
-Provide a clear description of your issue. The support team will get back to you as soon as possible to assist you. 
+Provide a clear description of your issue. The support team will get back to you as soon as possible to assist you.

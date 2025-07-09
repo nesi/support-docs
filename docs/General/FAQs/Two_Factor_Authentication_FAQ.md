@@ -1,11 +1,9 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
-tags: [FAQ]
-title: Two Factor Authentication FAQ
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000214036
-zendesk_section_id: 360000039036
+tags: 
+    - 2FA
+    - login
+status: deprecated
 ---
 
 
