@@ -16,7 +16,7 @@ If for any reason downloading images is impractical you can view them on
 the cluster using the `display` command. For example,
 
 ```sh
-display myImage.png
+gm display myImage.png
 ```
 
 This requires a [working X-11
