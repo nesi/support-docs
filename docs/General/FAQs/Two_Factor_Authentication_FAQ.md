@@ -23,7 +23,7 @@ mobile device. On that mobile device, you will then need to install
 Google Authenticator (or another QR code reader application that
 implements the Time-based One Time Password algorithm) on your mobile
 device.
-See also [Setting Up Two-Factor Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
+See also [Setting Up Two-Factor Authentication](../../Getting_Started/Accessing_the_HPCs/First_Time_Login.md).
 
 ## Can I use an SSH key pair as an alternative second factor?
 
