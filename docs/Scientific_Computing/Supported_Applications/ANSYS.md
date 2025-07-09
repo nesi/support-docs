@@ -1,14 +1,9 @@
 ---
 created_at: '2015-10-15T02:15:46Z'
 tags:
-- mahuika
-- application
 - engineering
-title: ANSYS
-vote_count: 3
-vote_sum: 3
-zendesk_article_id: 212642617
-zendesk_section_id: 360000040076
+- cfd
+- fea
 ---
 
 {% set app_name = page.title | trim %}
@@ -294,7 +289,7 @@ simulation at that point.
 
 ### User Defined Functions
 
-When compiling code, make sure to `module load gimkl` in addition to the
+When compiling code, make sure to `module load foss` in addition to the
 ANSYS module.
 
 #### Case Definition
