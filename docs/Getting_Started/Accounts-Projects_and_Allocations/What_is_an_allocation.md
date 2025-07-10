@@ -1,8 +1,10 @@
 ---
 created_at: '2020-02-25T02:35:13Z'
-tags: []
+tags: 
+    - Allocation
+    - Allocations
+    - Compute
 title: What is an allocation?
-status: deprecated
 ---
 
 Because NeSI's resources are limited, we manage access to our resources
@@ -63,7 +65,7 @@ components. Once the job has finished running, this composite price is
 what affects your project's Fair Share score. However, whether your
 institution will be charged based on the composite price or based on
 your job's CPU core hour consumption alone, or on some other basis, will
-depend on your contractual arrangements with the NeSI host.
+depend on your contractual arrangements with NeSI.
 
 ### Online storage allocations
 
@@ -97,5 +99,5 @@ between two dates, or is sometimes expressed as a fraction of an FTE
 between the same two dates. This reflects the commitment of NeSI
 scientific programming expertise to your project.
 
-We do not yet have a ratio of consultancy hours to Mahuika compute
+We do not yet have a ratio of consultancy hours to compute
 units.
