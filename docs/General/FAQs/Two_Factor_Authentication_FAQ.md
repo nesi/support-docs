@@ -40,15 +40,15 @@ It should get synchronised automatically.
 ### Google Authenticator
 
 Open Authenticator on both devices. On the
-original device tap the three-dot menu icon followed by **Transfer
+original device tap the three-dot menu icon followed by **Transfer
 accounts**, then **Export accounts**, select the accounts you want to
-keep and then press **Next**. If these options are not present then
-first update your Authenticator. On the new device press **Import
+keep and then press **Next**. If these options are not present then
+first update your Authenticator. On the new device press **Import
 existing accounts** then scan the QR code provided on the old device.
 
 ## How do I get a new Second Factor?
 
-See article [here](../../General/FAQs/How_to_replace_my_2FA_token.md).
+See article [How to replace my 2FA token](../../General/FAQs/How_to_replace_my_2FA_token.md).
 
 ## Can I use the same Second Factor again?
 
