@@ -6,8 +6,7 @@ tags:
 ---
 
 A Proposal Development allocation is a short-term allocation of up to
-2,000 compute units per month (on Mahuika) or 50 node-hours per month
-(on Māui) or both, for up to six months. During your Proposal
+2,000 compute units per month, for up to six months. During your Proposal
 Development allocation you can find out:
 
 - whether your software can run on a NeSI HPC.
