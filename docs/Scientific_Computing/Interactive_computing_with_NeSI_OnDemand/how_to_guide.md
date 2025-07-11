@@ -1,17 +1,12 @@
 ---
 tags:
-- jupyter
-- hub
-- home
-- lab
-- notebook
-- ondemand
-- rstudio
+    - jupyter
+    - lab
+    - notebook
+    - ondemand
+    - rstudio
 title: NeSI OnDemand how-to guide
 ---
-
-
-# NeSI OnDemand how-to guide
 
 ## How to log in
 
@@ -19,25 +14,26 @@ Go to  [**NeSI OnDemand**](https://ondemand.nesi.org.nz/). It will automatically
 
 ??? circle-info "If you haven't logged into NeSI OnDemand or HPC3 before, part of the login process will include a step to setup a new 2FA"
 
-    ![image-20240903-110950](https://github.com/user-attachments/assets/2eccbaad-cd70-489b-9938-663f3fd30082)
+    ![alt text](../../assets/images/ondemand_login_0.png)
+
 
     * Select your affiliated institution, and log in using your institutional account. Example below shows the University of Auckland login screen.
 
-    * ![image-20240903-111115 (1)](https://github.com/user-attachments/assets/d1006331-8128-421a-b678-16b29fe74a0e)
+    ![alt text](../../assets/images/ondemand_login_1.png)
 
     After logging in, you will be asked to set up your OTP (one-time password) for NeSI. This is an OTP in addition to your institutional 2FA. We are currently enforcing an additional layer of OTP to make sure our system is secure, as the institutions federated by Tuakiri all have different security policies.
-
-    ![image-20240903-111555](https://github.com/user-attachments/assets/4ba7b6bd-a5de-4fc9-a11a-f52154f5587b)
+    
+    ![alt text](../../assets/images/ondemand_login_2.png)
 
     Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the one-time code (6 digit number) along with a device name (e.g. my mobile) and Submit and you are good to go.
 
     Once you have already set up NeSI OTP, you will be shown the following screen instead of the one above, where you can enter the 6 digit number from your authenticator app.
 
-    ![image-20240903-111247](https://github.com/user-attachments/assets/8d84be5d-347f-4a86-8b35-576cb55ffdee)
+    ![alt text](../../assets/images/ondemand_login_3.png)
 
     After successfully logging in, you will be presented with the following NeSI OnDemand screen.
 
-    ![image-20240903-112029](https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_Desktop_08Jun2025.png)
+    ![image-20240903-112029](../../assets/images/OOD_Desktop_08Jun2025.png)
 
 ### OnDemand home page
 
@@ -68,8 +64,6 @@ From the home page, you can click on the app you would like to launch, e.g. Jupy
 ![ood-jupyter-icon](../../assets/images/OOD_jupyterlab_icon.png)
 </center>
 
-
-
 ![ood-new-form](../../assets/images/OOD_jupyter_form.png)
 
 !!! bell "How much resources to request"
@@ -90,13 +84,13 @@ From the home page, you can click on the app you would like to launch, e.g. Jupy
 
 Once the session is ready, you will see a button labeled <kbd>Connect to Jupyter</kbd> (or other app of your choice), which upon clicking will take you to the JupyterLab in this example as seen below:
 
-![image-20240903-112553](https://github.com/user-attachments/assets/c106b182-7f4a-494c-a48d-d67e97ef2dbf)
+![alt text](../../assets/images/jupyter_apps.png)
 
 !!! circle-info ""
 
 ## How to access your project OR nobackup directory from the Interactive file explorer
 
-* If you would like to access your project or nobackup file system via the Interactive file explorer ( not the terminal), please use the <kbd>00_nesi_project</kbd> parent directory whcih containts symlinks to all file systems you have access to 
+* If you would like to access your project or nobackup file system via the Interactive file explorer ( not the terminal), please use the <kbd>00_nesi_project</kbd> parent directory which contains symlinks to all file systems you have access to.
 
 ### Access from OnDemand Files app
 
@@ -109,4 +103,3 @@ Once the session is ready, you will see a button labeled <kbd>Connect to Jupyter
 <p align="center">
 <img src="https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/images/OOD_jupyter_fileexplorer.png" alt="image-20240903-112029" width="600">
 </p>
-
