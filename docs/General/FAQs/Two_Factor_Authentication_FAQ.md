@@ -1,11 +1,9 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
-tags: [FAQ]
-title: Two Factor Authentication FAQ
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000214036
-zendesk_section_id: 360000039036
+tags: 
+    - 2FA
+    - login
+status: deprecated
 ---
 
 
@@ -25,7 +23,7 @@ mobile device. On that mobile device, you will then need to install
 Google Authenticator (or another QR code reader application that
 implements the Time-based One Time Password algorithm) on your mobile
 device.
-See also [Setting Up Two-Factor Authentication](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md).
+See also [Setting Up Two-Factor Authentication](../../Getting_Started/Accessing_the_HPCs/First_Time_Login.md).
 
 ## Can I use an SSH key pair as an alternative second factor?
 
@@ -42,15 +40,15 @@ It should get synchronised automatically.
 ### Google Authenticator
 
 Open Authenticator on both devices. On the
-original device tap the three-dot menu icon followed by **Transfer
+original device tap the three-dot menu icon followed by **Transfer
 accounts**, then **Export accounts**, select the accounts you want to
-keep and then press **Next**. If these options are not present then
-first update your Authenticator. On the new device press **Import
+keep and then press **Next**. If these options are not present then
+first update your Authenticator. On the new device press **Import
 existing accounts** then scan the QR code provided on the old device.
 
 ## How do I get a new Second Factor?
 
-See article [here](../../General/FAQs/How_to_replace_my_2FA_token.md).
+See article [How to replace my 2FA token](../../General/FAQs/How_to_replace_my_2FA_token.md).
 
 ## Can I use the same Second Factor again?
 
