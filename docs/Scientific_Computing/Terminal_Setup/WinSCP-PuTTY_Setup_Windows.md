@@ -5,7 +5,6 @@ tags:
   - winscp
   - putty
 title: WinSCP/PuTTY Setup (Windows)
-status: deprecated
 ---
 
 !!! prerequisite
@@ -66,8 +65,7 @@ password and pass it to PuTTY*
 ## Setup for Xming (Optional)
 
 Xming is an X server for Windows allowing graphical interface with the
-HPC and can be downloaded
-[here](https://sourceforge.net/projects/xming/).
+HPC. [Xming can be downloaded here](https://sourceforge.net/projects/xming/).
 
 1\. Install Xming following the prompts. (Make sure 'Normal PuTTY Link
 SSH Client' is selected).
@@ -131,5 +129,5 @@ for a single transfer'.
      with login authentication.
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     -   Setting up an [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md)(optional).
+     -  [Moving files to and from the cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+     -  [X11 on NeSI](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md)(optional).
