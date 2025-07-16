@@ -30,9 +30,9 @@ configurations.
 
     ```sh
     Host *
-         ControlMaster auto
-         ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-         ControlPersist 1
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+        ControlPersist 1
 
     Host nesilander 
         User username 
