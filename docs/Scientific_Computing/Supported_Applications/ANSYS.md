@@ -85,7 +85,6 @@ Below is an example of this from a fluent script.
 #SBATCH --job-name      Fluent_Array
 #SBATCH --time          01:00:00          # Wall time
 #SBATCH --mem           512MB             # Memory per node
-#SBATCH --licenses      aa_r:1       # One license token per CPU, less 16
 #SBATCH --array         1-100 
 #SBATCH --hint          nomultithread     # No hyperthreading
 
@@ -165,10 +164,9 @@ Must have one of these flags.
 
     #SBATCH --job-name      Fluent-Serial
     #SBATCH --account       nesi99991
-    #SBATCH --licenses      aa_r@uoa_foe:1    #One research license.
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled
-    #SBATCH --mem           512MB             # total memory (per node)
+    #SBATCH --mem           512MB             # Total memory (per node)
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
@@ -194,9 +192,7 @@ Must have one of these flags.
     #SBATCH --job-name          Fluent-Dis
     #SBATCH --account       nesi99991
     #SBATCH --time              00:05:00          # Walltime
-    #SBATCH --licenses          aa_r@uoa_foe:1,aa_r_hpc@uoa_foe:20
-    ##One research license, (ntasks-16) hpc licenses
-    #SBATCH --nodes             1                 # Limit to n nodes (Optional)
+    #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            8                 # Number processes
     #SBATCH --cpus-per-task     1                 # Double if hyperthreading enabled
     #SBATCH --mem-per-cpu       1500              # Fine for small jobs; increase if needed
@@ -383,9 +379,7 @@ solution specify as relative path, or unload compiled lib before saving
 
     #SBATCH --job-name      CFX-serial
     #SBATCH --account       nesi99991
-    #SBATCH --licenses      aa_r@uoa_foe:1    #One research license
     #SBATCH --time          00:05:00          # Walltime
-    #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled
     #SBATCH --mem           512MB             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
@@ -407,11 +401,8 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --job-name          ANSYS-Dis
     #SBATCH --account           nesi99991
     #SBATCH --time              01:00:00          # Walltime
-    #SBATCH --licenses          aa_r@uoa_foe:1,aa_r_hpc@uoa_foe:20
-    ##One research license, (ntasks-16) hpc licenses
-    #SBATCH --nodes             1                 # Limit to n nodes (Optional)
+    #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            36                # Number processes
-    #SBATCH --cpus-per-task     1                 # Double if hyperthreading enabled
     #SBATCH --mem-per-cpu       512MB             # Standard for large partition
     #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
@@ -451,8 +442,7 @@ xvfb-run cfx5post input.cse
     #!/bin/bash -e
 
     #SBATCH --job-name      ANSYS-serial
-    #SBATCH --account           nesi99991
-    #SBATCH --licenses aa_r@uoa_foe:1
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1500M             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
@@ -475,8 +465,7 @@ xvfb-run cfx5post input.cse
     #!/bin/bash -e
 
     #SBATCH --job-name      ANSYS-Shared
-    #SBATCH --account           nesi99991
-    #SBATCH --licenses aa_r@uoa_foe:1
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --cpus-per-task 8                 # Double if hyperthreading enabled
     #SBATCH --mem           12G               # 8 threads at 1500 MB per thread
@@ -501,7 +490,6 @@ xvfb-run cfx5post input.cse
 
     #SBATCH --job-name          ANSYS-Dis
     #SBATCH --account           nesi99991
-    #SBATCH --licenses aa_r@uoa_foe:1,aa_r_hpc@uoa_foe:4
     #SBATCH --time              00:05:00          # Walltime
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            16                # Number processes
@@ -541,9 +529,9 @@ xvfb-run cfx5post input.cse
 #!/bin/bash -e
 
 #SBATCH --job-name      LS-DYNA
-#SBATCH --account       nesi99991
-#SBATCH --account       nesi99999         # Project Account
+#SBATCH --account       nesi99991         # Project Account
 #SBATCH --time          01:00:00          # Walltime
+#SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   512MB             # Memory per cpu
 #SBATCH --hint          nomultithread     # No hyperthreading
@@ -652,7 +640,7 @@ not working for you.
 #SBATCH --job-name         EDT
 #SBATCH --account          nesi99991
 #SBATCH --time             04:00:00
-#SBATCH --nodes            2
+#SBATCH --nodes            2          # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks-per-node  36
 #SBATCH --mem-per-cpu      1500
 
@@ -714,6 +702,7 @@ ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Poo
 #SBATCH --job-name      ANSYS_FSI
 #SBATCH --account       nesi99991         # Project Account
 #SBATCH --time          01:00:00          # Walltime
+#SBATCH --nodes             1             # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   2GB               # Memory per CPU
 #SBATCH --hint          nomultithread     # No hyperthreading
