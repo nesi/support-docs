@@ -2,6 +2,7 @@
 created_at: '2018-05-17T23:35:36Z'
 tags: 
  - Slurm
+ - accounting
 ---
 
 Each queued job has a priority score. Jobs start when sufficient
