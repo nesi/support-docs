@@ -1,5 +1,6 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
+description: What factors are used to determine a jobs prioroty.
 tags: 
  - Slurm
  - accounting
