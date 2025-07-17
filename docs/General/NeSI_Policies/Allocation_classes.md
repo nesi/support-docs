@@ -52,10 +52,9 @@ from one of our other allocation classes.</em></p></td>
 <tr class="odd">
 <td style="width: 20.0%"><p>Maximum Allocation:</p></td>
 <td style="width: 25.6%"><ul>
-<li>2,000 Mahuika compute units per month</li>
-<li>40 Māui node hours per month</li>
+<li>2,000 compute units per month</li>
 <li>Online storage dependent on availability</li>
-<li>Nearline storage dependent on availability</li>
+<li>Freezer storage dependent on availability</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -104,10 +103,9 @@ allocations.</em></p></td>
 <tr class="odd">
 <td style="width: 20.0%">Maximum Allocation:</td>
 <td style="width: 25.6%"><ul>
-<li>1,000,000 Mahuika compute units</li>
-<li>25,000 Māui node hours</li>
+<li>1,000,000 compute units</li>
 <li>Online storage dependent on availability</li>
-<li>Nearline storage dependent on availability</li>
+<li>Freezer storage dependent on availability</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -142,10 +140,9 @@ allocations.</em></p></td>
 <tr class="odd">
 <td style="width: 20.0%">Maximum Allocation:</td>
 <td style="width: 25.6%"><ul>
-<li>500,000 Mahuika compute units</li>
-<li>12,500 Māui node hours</li>
+<li>500,000 compute units</li>
 <li>Online storage dependent on availability</li>
-<li>Nearline storage dependent on availability</li>
+<li>Freezer storage dependent on availability</li>
 </ul></td>
 </tr>
 <tr class="even">

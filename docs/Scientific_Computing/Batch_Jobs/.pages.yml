@@ -8,6 +8,5 @@ nav:
  - Mahuika_Slurm_Partitions.md
  - Milan_Compute_Nodes.md
  - SLURM-Best_Practice.md
- - NetCDF-HDF5_file_locking.md
  - Checksums.md
  - ...
