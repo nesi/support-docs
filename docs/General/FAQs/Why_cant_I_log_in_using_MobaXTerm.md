@@ -48,8 +48,7 @@ trying to use your old password from credential manager.
 
 1. Go to Settings-&gt;Configuration and go to the General tab and click
     on MobaXterm password management
-2. You should see the credentials for NeSI hosts (`lander`, `mahuika`,
-    `maui`)
+2. You should see the credentials for NeSI hosts (`lander.hpc`, `login.hpc`)
 3. Remove all entries.
 4. Restart MobaXterm
 5. Try logging in again
