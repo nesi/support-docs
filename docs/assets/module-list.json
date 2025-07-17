@@ -44,7 +44,7 @@
                 "server": "ABAQUS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.66,
+                "server_uptime": 0.67,
                 "server_version": "11.13.1",
                 "features": [
                     {
@@ -3254,7 +3254,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.66,
+                "server_uptime": 0.67,
                 "server_version": "11.16.2",
                 "features": [
                     {
@@ -3288,7 +3288,7 @@
                 "server": "COMSOL@uoa_idg",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.66,
+                "server_uptime": 0.67,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3322,7 +3322,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.66,
+                "server_uptime": 0.67,
                 "server_version": "",
                 "features": [
                     {
@@ -3356,7 +3356,7 @@
                 "server": "COMSOL@uoa_foes",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.65,
+                "server_uptime": 0.67,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3390,14 +3390,14 @@
                 "server": "COMSOL@uoa_foe_des_rc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.66,
+                "server_uptime": 0.67,
                 "server_version": "11.15.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 83.21,
+                        "hourly_average": 78.32,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3411,7 +3411,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 61.49,
+                        "hourly_average": 57.9,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3479,7 +3479,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 726186397.84,
+                        "hourly_average": 697245148.36,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -11121,6 +11121,12 @@
             },
             {
                 "2021a": "MATLAB/2021a is deprecated and will be removed March 2024Please change your scripts to use MATLAB/2021b or newer."
+            },
+            {
+                "2019b": "MATLAB/2019b is deprecated and will be removed March 2025Please change your scripts to use MATLAB/2023b or newer."
+            },
+            {
+                "2020b": "MATLAB/2020b is deprecated and will be removed September 2025Please change your scripts to use MATLAB/2023b or newer."
             }
         ],
         "network_licences": [
@@ -11230,7 +11236,7 @@
                 "server": "MATLAB@uoa",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.66,
+                "server_uptime": 0.67,
                 "server_version": "",
                 "features": []
             },
@@ -11249,7 +11255,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.34,
+                "server_uptime": 0.36,
                 "server_version": "",
                 "features": []
             },
@@ -11463,6 +11469,12 @@
         "admin_list": [
             {
                 "2021a": "MCR/2021a is deprecated and will be removed March 2024Please change your scripts to use MCR/2021b or newer."
+            },
+            {
+                "2019b": "MCR/2019b is deprecated and will be removed March 2025Please change your scripts to use MCR/2023b or newer."
+            },
+            {
+                "2020b": "MCR/2020b is deprecated and will be removed September 2025Please change your scripts to use MCR/2023b or newer."
             },
             {
                 "2016b": "Warning: MCR/2016b is old and marked for deletion. Please select a more recent version (try 'module spider MCR') or let us know that you still need it."
