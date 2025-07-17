@@ -1,6 +1,7 @@
 ---
 created_at: '2019-02-05T03:58:21Z'
-tags: []
+tags:
+  - accounting
 status: deprecated
 ---
 
@@ -60,7 +61,7 @@ Fair Share is a mechanism to set job priorities. It is based on a share
 of the cluster, that is, a fraction of the cluster's overall computing
 capacity.
 
-### Fair Share on Mahuika and the Māui XC nodes
+### Fair Share on Mahuika
 
 On Mahuika and the Māui XC nodes, but not on the Māui ancillary nodes,
 we set a project's expected rate of use based on that project's
@@ -90,26 +91,8 @@ Therefore:
     the cluster shrinks, though cluster shrinkage is not expected to
     occur.
 
-On Mahuika and the Māui XC nodes, Fair Share is not designed to ensure
+Fair Share is not designed to ensure
 that all project teams get the same share of the cluster.
-
-### Fair Share on the Māui ancillary nodes
-
-The part of the Māui ancillary nodes that is
-managed by NeSI and scheduled using Slurm forms a small resource,
-only four nodes of 40 CPU cores each. It is intended for pre- and
-post-processing work related to computational jobs carried out on the
-Māui XC nodes. Therefore, we do not make allocations of CPU core hours
-on these nodes. Instead, each project team that has a current allocation
-on the Māui XC nodes is entitled to an equal share of the time on these
-four Māui ancillary nodes.
-
-Because job priority on the Māui ancillary nodes
-is still heavily influenced by Fair Share, project teams that have
-recently been doing a lot of work on the Māui ancillary nodes will find
-their jobs there deprioritised, so that other project teams can access
-the resource. However, even heavy users of the Māui ancillary nodes can
-still access resources there if those CPU cores would otherwise be idle.
 
 ## How does Fair Share work?
 
@@ -150,7 +133,7 @@ request for projects that expect to use the cluster heavily on average,
 can predict when they will need their heaviest use with a high degree of
 confidence, and give us plenty of notice.
 
-For full details on Slurm's Fair share mechanism, please see [this page](https://slurm.schedmd.com/priority_multifactor.html#fairshare)
+See the [Slurm documentation](https://slurm.schedmd.com/priority_multifactor.html#fairshare) for full details on Slurm's Fair share mechanism
 
 ## How do I check my project's Fair Share score?
 
