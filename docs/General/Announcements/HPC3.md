@@ -23,7 +23,6 @@ If you hit a problem please check the above pages first. If it's not answered th
 
 ## Other Links
 
-- [Migration Timeline](migration_timeline_and_transition_plan.md)
 - [Common questions about the platform refresh](../FAQs/Common_questions_about_the_platform_refresh.md)
 - [Preparing your code for use on NeSI's new HPC platform](Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md)
 - [Update to Nearline Service](update_to_nearline_service.md)

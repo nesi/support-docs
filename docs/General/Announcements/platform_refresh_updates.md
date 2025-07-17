@@ -7,9 +7,7 @@ tags: [refresh]
 
 Latest Update | Posted
 ----|----
-[Updates to migration timeline and transition plan](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/) | 20 May 2025
 [New platforms open to NeSI users](https://www.nesi.org.nz/news/2025/05/new-hpc-ai-platforms-open-nesi-users) | 15 May 2025
-[Migration timeline and transition plan](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/) | 24 April 2025
 [Update to Nearline service](https://docs.nesi.org.nz/General/Announcements/update_to_nearline_service/) | 07 April 2025
 [Laying essential groundwork for NeSI's new platforms](https://www.nesi.org.nz/news/2025/04/laying-essential-groundwork-launching-nesis-new-platforms) | 01 April 2025
 [A deeper dive into NeSI's new storage platforms](https://www.nesi.org.nz/case-studies/deeper-dive-nesis-platform-refresh-part-1) | 16 December 2024
