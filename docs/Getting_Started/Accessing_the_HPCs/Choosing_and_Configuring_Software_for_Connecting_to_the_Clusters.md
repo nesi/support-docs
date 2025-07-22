@@ -5,7 +5,6 @@ tags:
 - mobaxterm
 - gitbash
 - login
-status: deprecated
 ---
 
 !!! prerequisite
@@ -22,14 +21,14 @@ operating system and level of experience.
 
 ## Web Browser (Recommended)
 
-### OnDemand
+### NeSI OnDemand
 
- OnDemand is a service providing access to the NeSI cluster via web browser.
+ NeSI OnDemand is a service providing access to Jupyter Notebooks,RStudio and VS code servers, a Virtual Desktop, and an SSH terminal, allowing you to utilise NeSI resources via the browser.
 
-!!! prerequisite "What next?"
-    - More info on [Interactive_computing_with_NeSI_OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md)
-    - [NeSI OnDemand Guide](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide)
-    - [ondemand.nesi.org.nz](https://ondemand.nesi.org.nz)
+!!! tip "What next?"
+    -  More info on 
+       [NeSI OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md)
+    -  Visit [ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
 ## Linux or Mac OS
 

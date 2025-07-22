@@ -42,140 +42,53 @@ being performed, force field used and of course the simulated system.
 For a complete set of GROMACS options, please refer to GROMACS
 documentation.
 
-The following job script is just an example and asks for five MPI tasks,
-each of which consists of three OpenMP threads, for a total of 15
-threads. Please try other `mdrun` flags in order to see if they make
-your simulation run faster. Examples of such flags are `-npme`, `-dlb`,
-`-ntomp`. If you use more MPI tasks per node you will have less memory
-per MPI task. If you use multiple MPI tasks per node, you need to set
-CRAY\_CUDA\_MPS=1 to enable the tasks to access the GPU device on each
-node at the same time.
+Within each GRMACS environment module we have two versions of GROMACS, 
+one built with with "thread-MPI", which is really just 
+multithreading, and one with real MPI which can run across multiple nodes in
+a distributed job, ie: with `--ntasks` > 1. 
+In *GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid* and more
+recent environment modules the two programs are named `gmx` and `gmx-mpi`.  
+In our older GROMACS environment modules `gmx` was renamed to `gmx-serial`. 
+
+Unless your problem is so large 
+that it does not fit on one whole compute node you are probably best 
+off not using `gmx-mpi`. The GROMACS documentation says on this:
+
+!!! quote ""
+    
+    The thread-MPI library implements a subset of the MPI 1.1 specification, 
+    based on the system threading support. … Acting as a drop-in replacement 
+    for MPI, thread-MPI enables compiling and running mdrun on a single machine 
+    (i.e. not across a network) without MPI. Additionally, it not only provides 
+    a convenient way to use computers with multicore CPU(s), but thread-MPI 
+    does in some cases make mdrun run slightly faster than with MPI.
 
 !!! quote ""
 
-    ``` sl
-    #!/bin/bash -e
+    Thread-MPI is compatible with most mdrun features and parallelization schemes, 
+    including OpenMP, GPUs; it is not compatible with MPI and multi-simulation runs.
 
-    #SBATCH --job-name      GROMACS_test # Name to appear in squeue
-    #SBATCH --time          00:10:00     # Max walltime
-    #SBATCH --mem-per-cpu   512MB        # Max memory per logical core
-    #SBATCH --ntasks        5            # 5 MPI tasks
-    #SBATCH --cpus-per-task 3            # 3 OpenMP threads per task
+### GPU support
 
-    module load GROMACS/5.1.4-intel-2017a
+GROMACS is built with CUDA support, but that is optional to use - it will run without a GPU.
 
-    # Prepare the binary input from precursor files 
-    srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
+### MPI
 
-    # Run the simulation
-    # Note that the -deffnm option is an alternative to specifying several input files individually
-    # Note also that the -ntomp option should be used when using hybrid parallelisation
-    srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
-    ```
+If you do elect to use `gmx-mpi`, note that hybrid parallelisation (ie with --cpus-per-task > 1) can be
+more efficient than MPI-only parallelisation.  With hybrid parallelisation, it is important to run
+`mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
+be the number of CPUs per task. You can make sure the value is correct
+by using `-ntomp ${SLURM_CPUS_PER_TASK}`. 
 
-    **Note:** To prevent performance issues we moved the serial "gmx" to
-    "gmx\_serial". The present "gmx" prints a note and calls "gmx\_mpi
-    mdrun" (if called as "gmx mdrun") and "gmx\_serial" in all other cases.
-    
-    **Note:** The hybrid version with CUDA can also run on pure CPU
-    architectures. Thus you can use gmx\_mpi from the
-    GROMACS/???-cuda-???-hybrid module on Mahuika compute nodes as well as
-    Mahuika GPU nodes.
+If you use a GPU together with MPI, you may need to set CRAY_CUDA_MPS=1 to enable multiple tasks on 
+one node to access the same GPU device at the same time.
 
 ### Checkpointing and restarting
 
-In the examples given above, the `-cpt 30` option instructs Gromacs to
+The `-cpt 30` option instructs Gromacs to
 write a full checkpoint file every 30 minutes. You can restart from a
 checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
 
-### Warnings regarding CPU affinity
-
-If you run GROMACS on a node that is simultaneously running other jobs
-(even other GROMACS jobs), you may see warnings like this in your
-output:
-     WARNING: In MPI process #0: Affinity setting failed. This can cause
-     performance degradation! If you think your setting are correct,
-     contact the GROMACS developers.
-
-One way to prevent these warnings, which is also useful for reducing the
-risk of inefficient CPU usage, is to request entire nodes. On the
-Mahuika cluster, this can be done using the following lines in your
-input, altered as appropriate:
-
-=== "MPI + SMP"
-    Using MPI parallelisation and hyperthreading, but no OpenMP
-    parallelisation.
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 72   # Must be 72
-                                # (the number of logical cores per node)
-    #SBATCH --cpus-per-task   1    # Must be 1
-    ```
-
-=== "MPI"
-    Using MPI parallelisation with neither hyperthreading nor OpenMP
-    parallelisation.
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 36   # Must be 36
-                                # (the number of physical cores per node)
-    #SBATCH --cpus-per-task   1    # Must be 1
-    #SBATCH --hint=nomultithread   # Don't use hyperthreading
-    ```
-
-=== "OpenMP + MPI + SMP"
-    Using hybrid parallelisation and hyperthreading:
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 1    # Must be 1
-    #SBATCH --cpus-per-task   72   # Must be 72
-                                # (the number of logical cores per node)
-    ```
-
-=== "OpenMP + MPI"
-    Using hybrid parallelisation but not hyperthreading:
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 1    # Must be 1
-    #SBATCH --cpus-per-task   36   # Must be 36
-                                # (the number of physical cores per node)
-    #SBATCH --hint=nomultithread   # Don't use hyperthreading
-    ```
-
-If you opt to use hybrid parallelisation, it is also important to run
-`mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
-be the number of CPUs per task. You can make sure the value is correct
-by using `-ntomp ${SLURM_CPUS_PER_TASK}`. Hybrid parallelisation can be
-more efficient than MPI-only parallelisation, as within the same node
-there is no need for inter-task communication.
-
-
-## NVIDIA GPU Container
-
-NVIDIA has a GPU accelerated version of GROMACS in its NGC container
-registry (more details about NGC
-[here](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)).
-We have pulled a version of their container and stored it at this
-location (you can also pull your own version if you wish):
-*/opt/nesi/containers/nvidia/gromacs-2020\_2.sif*. We have also provided
-an example submission script that calls the Singularity image here:
-*/opt/nesi/containers/nvidia/gromacs-example.sl*.
-
-!!! screwdriver-wrench "Troubleshooting"
-
-    1.  failure during MPI (Message Passing Interface) initialization, specifically within the OpenFabrics Interface (OFI) communication layer used by many modern MPI implementations will trigger an error message similar to below
-
-        ```bash
-        Abort(1091471) on node 0 (rank 0 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
-        MPIR_Init_thread(703).......:
-        MPID_Init(958)..............:
-        MPIDI_OFI_mpi_init_hook(883): OFI addrinfo() failed (ofi_init.c:883:MPIDI_OFI_mpi_init_hook:No data available)
-        ```
-        - If you are to come across this error, try adding `export I_MPI_OFI_PROVIDER=verbs` to the Slurm script ( after loading the GROMACS module) and re-submit the job 
 
 ## Further Documentation
 
