@@ -9,7 +9,6 @@ tags:
 
 !!! prerequisite
     -  Have an [active account and project](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
-    -  Set up [Two-Factor Authentication](./First_Time_Login.md).
 
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.
@@ -20,7 +19,7 @@ to set up such a connection, you will need a suitable Terminal (or
 equivalent application). The correct option for you depends on your
 operating system and level of experience.
 
-## Web Browser
+## Web Browser (Recommended)
 
 ### NeSI OnDemand
 
