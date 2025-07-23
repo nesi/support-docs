@@ -3,12 +3,12 @@
   url: General/Announcements/HPC3.md
   image: ./assets/icons/material/widget-red.svg
 
-- title: Frequently Asked Questions
-  content: Answers to some of your migration questions.
-  url: General/FAQs/Common_questions_about_the_platform_refresh.md
+- title: How-to videos
+  content: Answers to some of your platform questions.
+  url: Getting_Started/Getting_Help/Introductory_Material.md
   image: ./assets/icons/material/help.svg
 
-- title: Latest Updates
+- title: Latest platform news
   content: Status updates about the migration process.
   url: General/Announcements/platform_refresh_updates.md
   image: ./assets/icons/material/update.svg

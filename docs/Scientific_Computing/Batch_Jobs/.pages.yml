@@ -5,9 +5,7 @@ nav:
  - Slurm_Interactive_Sessions.md
  - Fair_Share.md
  - Job_prioritisation.md
- - Mahuika_Slurm_Partitions.md
  - Milan_Compute_Nodes.md
  - SLURM-Best_Practice.md
- - NetCDF-HDF5_file_locking.md
  - Checksums.md
  - ...

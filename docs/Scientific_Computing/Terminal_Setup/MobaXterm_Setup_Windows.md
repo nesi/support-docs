@@ -13,8 +13,6 @@ status: deprecated
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-     -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
-     -   Windows operating system.
 
 Setting up MobaXterm as shown below will allow you to connect to Mahuika with less keyboard inputs as well as allow use of the file
 transfer GUI.
