@@ -2,6 +2,8 @@
 created_at: '2019-02-05T03:58:21Z'
 tags:
   - accounting
+  - Slurm
+description: How balancing your workload lets you make the most of your allocation.
 status: deprecated
 ---
 
@@ -61,10 +63,7 @@ Fair Share is a mechanism to set job priorities. It is based on a share
 of the cluster, that is, a fraction of the cluster's overall computing
 capacity.
 
-### Fair Share on Mahuika
-
-On Mahuika and the Māui XC nodes, but not on the Māui ancillary nodes,
-we set a project's expected rate of use based on that project's
+A project's expected rate of use is based on that project's
 percentage share of all then-current allocations awarded to that
 project's institution on that cluster. This percentage share is in turn
 derived from the sizes (in compute units or nodes) and duration (in

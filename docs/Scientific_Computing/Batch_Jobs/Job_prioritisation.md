@@ -1,7 +1,9 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
+description: What factors are used to determine a jobs prioroty.
 tags: 
  - Slurm
+ - accounting
 ---
 
 Each queued job has a priority score. Jobs start when sufficient
@@ -33,9 +35,7 @@ recent past compared to their expected rate of use (either by submitting
 and running many jobs, or by submitting and running large jobs) will
 have a lower priority, and projects with little recent activity compared
 to their expected rate of use will see their waiting jobs start sooner.
- Fair Share contributes up to 1000 points to the job priority. To see
-the recent usage and current fair-share score of a project, you can use
-the command `sshare`  `nn_corehour_usage`, or .
+Fair Share contributes up to 1000 points to the job priority. To see the current fair-share score of a project you can use the command `sshare`, for seeing recent usage use `nn_corehour_usage`.
 
 ### Job Age
 

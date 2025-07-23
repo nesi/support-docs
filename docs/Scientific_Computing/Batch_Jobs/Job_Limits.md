@@ -1,26 +1,10 @@
 ---
 created_at: 2025-07-17
-description: 
+description: What limits are there on running jobs.
 tags: 
-    - 
-    - 
+    - Slurm
+    - accounting
 ---
-
-
-
-
-### Partitions
-
-These have changed.  
-
-As on Mahuika, the default partition selection should generally be OK. There is no need to set `--partition` unless you need the `hugemem` partition or have a specific reason to choose the microarchitecture, in which case you can specify either the `genoa` or `milan` partition.
-
-Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.  For example in the `genoa` partition:
-
-  - A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes. 
-  - A job which requests ≤ 4 GB/core will run on the  4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
-  - A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
-
 
 These are open for review if you find any of them unreasonable or inefficient.  
 
