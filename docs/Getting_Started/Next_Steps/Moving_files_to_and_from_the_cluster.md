@@ -125,7 +125,7 @@ authentication.
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.
 You can find more details in
-[Data_Transfer_using_Globus_V5](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md).
+[Data_Transfer_using_Globus_V5](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md).
 
 ## Rclone
 

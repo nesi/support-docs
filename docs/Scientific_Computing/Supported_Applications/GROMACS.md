@@ -2,10 +2,6 @@
 created_at: '2019-02-21T02:46:25Z'
 tags: []
 title: GROMACS
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360000792856
-zendesk_section_id: 360000040076
 ---
 
 
@@ -64,7 +60,6 @@ off not using `gmx-mpi`. The GROMACS documentation says on this:
     does in some cases make mdrun run slightly faster than with MPI.
 
 !!! quote ""
-
     Thread-MPI is compatible with most mdrun features and parallelization schemes, 
     including OpenMP, GPUs; it is not compatible with MPI and multi-simulation runs.
 
@@ -80,12 +75,11 @@ more efficient than MPI-only parallelisation.  With hybrid parallelisation, it i
 be the number of CPUs per task. You can make sure the value is correct
 by using `-ntomp ${SLURM_CPUS_PER_TASK}`. 
 
-### Checkpointing and restarting
+GROMACS is built with CUDA support, but that is optional to use - it will run without a GPU.
 
 The `-cpt 30` option instructs Gromacs to
 write a full checkpoint file every 30 minutes. You can restart from a
 checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
-
 
 ## Further Documentation
 

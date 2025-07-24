@@ -12,11 +12,6 @@ NeSI is evolving its technology platform to ensure Aotearoa's national eResearch
 
 Along the way, we'll use this page to share answers to some of the most common questions we're hearing from you.
 
-## When is this happening?
-
-Migration is underway! The new platforms opened for existing NeSI users on May 15th.
-[View our current timeline here](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/).
-
 ## Do I need to move my data or software?
 
 We have copied your `/home` and `/project` directories to our new high-performance WEKA storage on the new platforms.
@@ -53,7 +48,7 @@ All existing NeSI users will be migrated to the new systems. Your existing user 
 ## When can I start running jobs on the new platform?
 
 Existing NeSI users can login now. [View our guide here to get started](https://docs.nesi.org.nz/General/Announcements/HPC3/). The earlier you migrate the smoother your transition will be. We love working alongside you and resolving issues together. To keep doing that well, we need to work with you _now_ so we’re not troubleshooting under pressure later. We're aiming to onboard new users, projects and allocations in early June. 
-[View our current timeline here](https://docs.nesi.org.nz/General/Announcements/migration_timeline_and_transition_plan/).
+
 
 ## Compared to Mahuika, what's different on the new platforms?
 

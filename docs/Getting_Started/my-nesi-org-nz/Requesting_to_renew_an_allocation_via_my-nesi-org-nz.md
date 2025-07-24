@@ -50,7 +50,7 @@ description: How to request a NeSI allocation renewal.
     ![select the resource type](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_2.png)
 4. Verify the preset values and add a comment in case you update
     some.  
-    Finally, click 'Submit'
+    Finally, click 'Submit'  
     ![click submit](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
 
 ### Can I request any allocation size?
