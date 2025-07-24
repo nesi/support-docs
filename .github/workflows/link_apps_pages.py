@@ -10,13 +10,15 @@ import yaml
 Quick and dirty script to associate support pages with apps in module list.
 """
 
+valid_eb_tags = ['base', 'ai', 'astro', 'bio', 'cae', 'chem', 'compiler', 'data', 'debugger', 'devel', 'geo', 'ide', 'lang', 'lib', 'math', 'mpi', 'numlib', 'perf', 'quantum', 'phys', 'system', 'toolchain', 'tools', 'vis']
+
 
 MODULE_LIST_PATH = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 
 # Relative to doc directory.
 DOC_ROOT = os.getenv("DOC_ROOT", "docs")
 APPS_PAGES_PATH = os.getenv("APPS_PAGES_PATH", "Scientific_Computing/Supported_Applications")
-BASE_URL = os.getenv("BASE_URL", "https://nesi.github.io/support-docs/")
+BASE_URL = os.getenv("BASE_URL", "https://www.docs.nesi.org.nz")
 
 module_list = json.load(open(MODULE_LIST_PATH))
 
@@ -46,9 +48,10 @@ for input_file in os.listdir(os.path.join(DOC_ROOT, APPS_PAGES_PATH)):
                 print(f"::warning file={os.path.join(DOC_ROOT, APPS_PAGES_PATH, input_file)},\
 title=docpath.change:: Support doc reference for {app} changed from '{module_list[app]['support']}' to '{page_link}'")
             module_list[app]["support"] = page_link
-            for tag in meta["tags"]:
-                if tag not in module_list[app]["domains"]:
-                    module_list[app]["domains"] += [tag]
+            if "tags" in meta:
+                for tag in meta["tags"]:
+                    if tag not in module_list[app]["domains"]:
+                        module_list[app]["domains"] += [tag]
         else:
             print(
                 f"::warning file={os.path.join(DOC_ROOT, APPS_PAGES_PATH, input_file)},\

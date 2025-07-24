@@ -1,11 +1,9 @@
 ---
 created_at: '2019-02-21T02:46:25Z'
-tags: []
-title: GROMACS
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360000792856
-zendesk_section_id: 360000040076
+tags: 
+  -  molecular dynamics
+  -  chemistry
+description: How to run GROMACS on the NeSI cluster
 ---
 
 
@@ -25,14 +23,13 @@ but since GROMACS is extremely fast at calculating the nonbonded
 interactions (that usually dominate simulations) many groups are also
 using it for research on non-biological systems, e.g. polymers.
 
-GROMACS is available to anyone at no cost under the terms of [the GNU
-Lesser General Public
-Licence](http://www.gnu.org/licenses/lgpl-2.1.html). Gromacs is a joint
-effort, with contributions from developers around the world: users agree
+GROMACS is available to anyone at no cost under the terms of 
+[the GNU Lesser General Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html). 
+Gromacs is a joint effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software.
 
-## Job submission
+## Performance
 
 GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
@@ -42,134 +39,48 @@ being performed, force field used and of course the simulated system.
 For a complete set of GROMACS options, please refer to GROMACS
 documentation.
 
-The following job script is just an example and asks for five MPI tasks,
-each of which consists of three OpenMP threads, for a total of 15
-threads. Please try other `mdrun` flags in order to see if they make
-your simulation run faster. Examples of such flags are `-npme`, `-dlb`,
-`-ntomp`. If you use more MPI tasks per node you will have less memory
-per MPI task. If you use multiple MPI tasks per node, you need to set
-CRAY\_CUDA\_MPS=1 to enable the tasks to access the GPU device on each
-node at the same time.
+Within each GROMACS environment module we have two versions of GROMACS, 
+one built with with "thread-MPI", which is really just 
+multithreading, and one with real MPI which can run across multiple nodes in
+a distributed job, ie: with `--ntasks` > 1. 
+In *GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid* and more
+recent environment modules the two programs are named `gmx` and `gmx-mpi`.  
+In our older GROMACS environment modules `gmx` was renamed to `gmx-serial`. 
 
-``` sl
-#!/bin/bash -e
+Unless your problem is so large 
+that it does not fit on one whole compute node you are probably best 
+off not using `gmx-mpi`. The GROMACS documentation says on this:
 
-#SBATCH --job-name      GROMACS_test # Name to appear in squeue
-#SBATCH --time          00:10:00     # Max walltime
-#SBATCH --mem-per-cpu   512MB        # Max memory per logical core
-#SBATCH --ntasks        5            # 5 MPI tasks
-#SBATCH --cpus-per-task 3            # 3 OpenMP threads per task
+!!! quote ""
+    
+    The thread-MPI library implements a subset of the MPI 1.1 specification, 
+    based on the system threading support. … Acting as a drop-in replacement 
+    for MPI, thread-MPI enables compiling and running mdrun on a single machine 
+    (i.e. not across a network) without MPI. Additionally, it not only provides 
+    a convenient way to use computers with multicore CPU(s), but thread-MPI 
+    does in some cases make mdrun run slightly faster than with MPI.
 
-module load GROMACS/5.1.4-intel-2017a
+!!! quote ""
+    Thread-MPI is compatible with most mdrun features and parallelization schemes, 
+    including OpenMP, GPUs; it is not compatible with MPI and multi-simulation runs.
 
-# Prepare the binary input from precursor files 
-srun -n 1 gmx grompp -v -f minim.mdp -c protein.gro -p protein.top -o protein-EM-vacuum.tpr
+## CUDA
 
-# Run the simulation
-# Note that the -deffnm option is an alternative to specifying several input files individually
-# Note also that the -ntomp option should be used when using hybrid parallelisation
-srun gmx_mpi mdrun -ntomp ${SLURM_CPUS_PER_TASK} -v -deffnm protein-EM-vacuum -c input/protein.gr -cpt 30
-```
+GROMACS is built with CUDA support, but that is optional to use - it will run without a GPU.
 
-**Note:** To prevent performance issues we moved the serial "gmx" to
-"gmx\_serial". The present "gmx" prints a note and calls "gmx\_mpi
-mdrun" (if called as "gmx mdrun") and "gmx\_serial" in all other cases.
+### MPI
 
-**Note:** The hybrid version with CUDA can also run on pure CPU
-architectures. Thus you can use gmx\_mpi from the
-GROMACS/???-cuda-???-hybrid module on Mahuika compute nodes as well as
-Mahuika GPU nodes.
-
-### Checkpointing and restarting
-
-In the examples given above, the `-cpt 30` option instructs Gromacs to
-write a full checkpoint file every 30 minutes. You can restart from a
-checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
-
-### Warnings regarding CPU affinity
-
-If you run GROMACS on a node that is simultaneously running other jobs
-(even other GROMACS jobs), you may see warnings like this in your
-output:
-     WARNING: In MPI process #0: Affinity setting failed. This can cause
-     performance degradation! If you think your setting are correct,
-     contact the GROMACS developers.
-
-One way to prevent these warnings, which is also useful for reducing the
-risk of inefficient CPU usage, is to request entire nodes. On the
-Mahuika cluster, this can be done using the following lines in your
-input, altered as appropriate:
-
-=== "MPI + SMP"
-    Using MPI parallelisation and hyperthreading, but no OpenMP
-    parallelisation.
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 72   # Must be 72
-                                # (the number of logical cores per node)
-    #SBATCH --cpus-per-task   1    # Must be 1
-    ```
-
-=== "MPI"
-    Using MPI parallelisation with neither hyperthreading nor OpenMP
-    parallelisation.
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 36   # Must be 36
-                                # (the number of physical cores per node)
-    #SBATCH --cpus-per-task   1    # Must be 1
-    #SBATCH --hint=nomultithread   # Don't use hyperthreading
-    ```
-
-=== "OpenMP + MPI + SMP"
-    Using hybrid parallelisation and hyperthreading:
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 1    # Must be 1
-    #SBATCH --cpus-per-task   72   # Must be 72
-                                # (the number of logical cores per node)
-    ```
-
-=== "OpenMP + MPI"
-    Using hybrid parallelisation but not hyperthreading:
-
-    ``` sl
-    #SBATCH --nodes           4    # May vary
-    #SBATCH --ntasks-per-node 1    # Must be 1
-    #SBATCH --cpus-per-task   36   # Must be 36
-                                # (the number of physical cores per node)
-    #SBATCH --hint=nomultithread   # Don't use hyperthreading
-    ```
-
-If you opt to use hybrid parallelisation, it is also important to run
+If you do elect to use `gmx-mpi`, note that hybrid parallelisation (ie with --cpus-per-task > 1) can be
+more efficient than MPI-only parallelisation.  With hybrid parallelisation, it is important to run
 `mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
 be the number of CPUs per task. You can make sure the value is correct
-by using `-ntomp ${SLURM_CPUS_PER_TASK}`. Hybrid parallelisation can be
-more efficient than MPI-only parallelisation, as within the same node
-there is no need for inter-task communication.
+by using `-ntomp ${SLURM_CPUS_PER_TASK}`. 
 
-**NOTE** on using GROMACS on Māui:
+## Checkpointing
 
-On the Māui cluster, normally there is no reason to specifically request
-a whole node, as all jobs are scheduled to run on one or more entire
-nodes.  However, we have seen issues with slow performance and will
-recommend using the \`--exclusive\` flag when running GROMACS. It may
-also be advisable to request tasks or CPUs in multiples of 80, since
-that is the number of vCPUs per node.
-
-## NVIDIA GPU Container
-
-NVIDIA has a GPU accelerated version of GROMACS in its NGC container
-registry (more details about NGC
-[here](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)).
-We have pulled a version of their container and stored it at this
-location (you can also pull your own version if you wish):
-*/opt/nesi/containers/nvidia/gromacs-2020\_2.sif*. We have also provided
-an example submission script that calls the Singularity image here:
-*/opt/nesi/containers/nvidia/gromacs-example.sl*.
+The `-cpt 30` option instructs Gromacs to
+write a full checkpoint file every 30 minutes. You can restart from a
+checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
 
 ## Further Documentation
 

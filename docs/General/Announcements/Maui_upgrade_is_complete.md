@@ -1,12 +1,13 @@
 ---
 created_at: '2023-03-09T02:46:57Z'
-status: new
 tags: []
 title: "M\u0101ui upgrade is complete"
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 6546340907919
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 
 The recent upgrade of the Māui is now complete. The operating system,

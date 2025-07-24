@@ -1,13 +1,12 @@
 ---
 nav:
   - Globus_Quick_Start_Guide.md
-  - Data_Transfer_using_Globus_V5.md
-  - Globus_V5_endpoint_activation.md
-  - Globus V5 Paths, Permissions, Storage_Allocation: Globus_V5_Paths-Permissions-Storage_Allocation.md
+  - Data_Transfer_using_Globus.md
+  - Globus_endpoint_activation.md
+  - Globus Paths, Permissions, Storage_Allocation: Globus_Paths-Permissions-Storage_Allocation.md
   - Initial Globus Sign-Up, and your Globus Identities: Initial_Globus_Sign_Up-and_your_Globus_Identities.md
-  - Re-creating Shared Collections and Bookmarks in Globus V5: Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V5.md
+  - Re-creating Shared Collections and Bookmarks in Globus: Re_creating_Shared_Collections_and_Bookmarks_in_Globus.md
   - Personal_Globus_Endpoint_Configuration.md
   - National_Data_Transfer_Platform.md
-  - Download and share CMIP6 data (for NIWA researchers): Download_and_share_CMIP6_data_for_NIWA_researchers.md
   - Data transfer between NeSI and a PC without NeSI two-factor authentication: Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.md
   - Sync'ing files between NeSI and another computer with globus-automate: Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md

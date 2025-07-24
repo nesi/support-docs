@@ -5,19 +5,14 @@ tags:
 - cfd
 - cae
 - fea
-title: OpenFOAM
 vote_count: 0
 vote_sum: 0
-zendesk_article_id: 360000810556
-zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 OpenFOAM (Open Field Operation And Manipulation) is a open-source C++
 toolbox maintained by the OpenFOAM foundation and ESI Group. Although
@@ -31,14 +26,14 @@ to use effectively.
 
 OpenFOAM can be loaded using;
 
-``` sl
+```sh
 module load OpenFOAM
 source $FOAM_BASH
 ```
 
 ## Example Script
 
-```sh
+```sl
 #!/bin/bash -e
 
 #SBATCH --time              04:00:00
@@ -49,13 +44,27 @@ source $FOAM_BASH
 
 #Working directory always needs to contain 'system', 'constant', and '0'
 
-module load OpenFOAM/{{app.machines.mahuika.versions | last}}
+module load OpenFOAM/{{app.default}}
 source ${FOAM_BASH}
 
 decomposePar                   #Break domain into pieces for parallel execution.
 srun simpleFoam -parallel       
 reconstructPar -latestTime     #Collect 
 ```
+
+!!! warning
+    Many of the example scripts packaged with OpenFOAM include the following line;
+
+    ```sh
+    cd ${0%/*} || exit
+    ```
+
+    It will change the current working directory to the location of the script. 
+    This **does not work** from within a Slurm script and you will get an error similar to;
+
+    ```err
+    slurmstepd: error: couldn't chdir to `/var/spool/slurm/jobXXXX': No such file or directory
+    ``` 
 
 ## Filesystem Limitations
 
@@ -124,7 +133,7 @@ startFrom ${START_TIME};
 
  This is essential when running parameter sweeps.
 
-You can also directly edit your dictionaries with `sed`,Concordia.ah
+You can also directly edit your dictionaries with `sed`, e.g
 
 ```sh
 NSUBDOMAINS=10
@@ -150,7 +159,7 @@ changing branch.
 
 ![git\_releases.png](../../assets/images/OpenFOAM.png)
 
-#### If releases are available
+#### Release
 
 Open the 'releases' tab, right click on the '.tar' or '.zip' of the
 version you want and select 'copy link address', then paste that link
@@ -162,7 +171,7 @@ wget https://github.com/vincentcasseau/hyStrath/archive/Concordia.tar.gz
 
 `wget` can also be used to fetch files from other sources.
 
-#### If repo only
+#### Repo Only
 
 Use the command `git clone <path to repo>.git` For example:
 
@@ -173,17 +182,16 @@ git clone https://github.com/vincentcasseau/hyStrath.git
 ### Decompress
 
 If your source is a .zip file use the command `unzip <filename>` if it
-is a .tar.gz use the command `tar -xvzf <filename>`
+is a `.tar.gz` use the command `tar -xvzf <filename>`
 
-From here steps will vary, it is best to check the README of the package
+From here steps will vary, it is best to check the `README.md` of the package
 you are installing.
 
 ### wmake
 
 `wmake` is an OpenFOAM tool used to compile code, based on `make`.
 
-A more comprehensive description of the use of wmake can be
-found [here](https://cfd.direct/openfoam/user-guide/v6-compiling-applications/).
+For a more comprehensive description of the use of `wmake` see [Compiling Applications](https://cfd.direct/openfoam/user-guide/v6-compiling-applications/).
 
 A library/application named 'newApp' would have the structure.
 
@@ -201,18 +209,18 @@ the user having to compile each item manually.
 
 Some apps will try to place the new libraries in `$FOAM_LIBBIN` and
 objects in `$FOAM_APPBIN`, this will cause the build to fail as you will
-not have permission to write there. Make sure the `Make/options` file
-specifies variables `$FOAM_USER_LIBBIN` or `$FOAM_USER_APPBIN` instead.
+not have permission to write there. Make sure the `Make/options` file
+specifies variables `$FOAM_USER_LIBBIN` or `$FOAM_USER_APPBIN` instead.
 
 ### Location
 
-User compiled libraries are kept in `$FOAM_USER_LIBBIN`, by default this
+User compiled libraries are kept in `$FOAM_USER_LIBBIN`, by default this
 is set
-to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib`
+to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/lib`
 
-User compiled objects are kept in `$FOAM_USER_APPBIN`, by default this
+User compiled objects are kept in `$FOAM_USER_APPBIN`, by default this
 is set
-to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/bin`
+to `~/$USER/OpenFOAM/$USER-<version>/platforms/linux64GccDPInt32Opt/bin`
 
 You will need to change these locations if you want the rest of your
 project members to have access.
@@ -232,5 +240,5 @@ These variables need to be set to the same chosen paths before compiling
 and before running the solvers.
 
 !!! warning
-     Make sure to `export` your custom paths before `source $FOAM_BASH`
+     Make sure to `export` your custom paths before `source $FOAM_BASH`
      else they will be reset to default.

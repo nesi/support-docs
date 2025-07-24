@@ -1,5 +1,7 @@
 ---
 title: Formatting
+search:
+  exclude: true
 ---
 
 **[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs/FORMAT/)**{ .hidden }
@@ -11,6 +13,8 @@ title: Formatting
 This page is an overview of the Markdown syntax supported in this documentation.
 
 ## Headers
+
+Headers should be surrounded by blank lines.
 
 <h2>H2</h2>
 
@@ -49,6 +53,11 @@ Put 2 spaces at the end of a line to force a line break.
 If you simply hit enter and don't use 2 spaces it will be considered one line.
 ```
 
+Most markdown structures (lists, Admonitions, headers, code blocks, etc) should be surrounded by an empty line.
+i.e. A newline before and after.
+It is good practice to add a new line after every sentance, or when the line becomes too long.
+This won't change how the text is rendered, but helps make the source markdown more readable.
+
 ## Text Emphasis
 
 **bold**: `**bold**`
@@ -56,6 +65,8 @@ If you simply hit enter and don't use 2 spaces it will be considered one line.
 _italic_: `_italic`
 
 ## Tab Containers
+
+Tab Containers should be surrounded by blank lines.
 
 === "Tab One"
     something in the tab
@@ -70,6 +81,8 @@ _italic_: `_italic`
 ```
 
 ## Admonitions
+
+Admonitions should be surrounded by blank lines.
 
 !!! warning
     A warning.
@@ -138,6 +151,10 @@ There are various flavors.
 !!! bug
     Mention possible bugs users may encounter (and tell them what to do if they encounter it).
     *Nearline doesn't work*
+
+!!! deprecated
+    Automatically added to pages with the `status:deprecated`, should be used when page is out of date.
+    *This page is rubbish!*
 
 ??? warning "Extra Admonitions you probably won't need"
     !!! note
@@ -273,6 +290,7 @@ There are various flavors.
 Code blocks require a language lexer in order to do syntax highlighting, e.g. `python` ,`slurm`, `cuda`, `json`, `markdown`, `bash`
 (most of these have short codes too, `py`,`sl`,`cd`,`md`,`sh`).
 [A full list of lexers can be found in this list](https://pygments.org/languages/).
+Code blocks should be surrounded by blank lines.
 
 ```py
 import somepackage
@@ -325,6 +343,43 @@ Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 ```
 
 Note the additional spacing around the `+` else it will appear cramped.
+
+### Slurm Scripts
+
+The most common use of a code block is to display an example Slurm script.  
+
+We want our examples to be easy to understand, but also users _will_ copy
+paste them, so we also want them to be working scripts that wont cause easily avoidable errors.
+
+If possible stick to the following principles.
+
+- Make sure the code block has the `sl` language tag. This will inform syntax highlight an CI checks.
+- Use `!#/bin/bash -e` as your shebang.
+- One blank line between shebang and Slurm Header.
+- Use <kbd>tab</kbd> for your Slurm header delimiter.
+- Use the long for Slurm keywords, e.g. `--job-name` rather than `-j`.
+- Make sure to include `--job-name`, `--account` (`nesi99991`) and `--time`.
+- One blank line after Slurm header.
+- Always `module purge` before `module load`.
+- Include version in `module load`. See [Variable Injection](#variables-injection) for convenience macro.
+- Don't be too fancy. We all know you are very clever,
+but your script examples should do the bare minimum needed to provide a safe example.
+- If possible, include an example that will work for the user, e.g. one of the tutorial files. (`wget`, `$EB_ROOT`, etc)
+
+#### Example
+
+<pre><code><span>```sl</span>
+<span>#!/bin/bash -e</span>
+<span></span>
+<span>#SBATCH --job-name          test-job</span>
+<span>#SBATCH --account          nesi99991</span>
+<span>#SBATCH --time             01:00:00 </span>
+<span></span>
+<span>module purge</span>
+<span>module load MATLAB/2022a</span>
+<span></span>
+<span>matlab -r myFile.m    # Some nice informative comment.</span>
+<span>```</span></code></pre>
 
 ## Images
 
@@ -416,25 +471,41 @@ Acroynym should be automatically made tool-tips e.g. MPI.
 
 ## Lists
 
+As with other markdown structures, lists must be surrounded by a blank line.
+
 ### Unordered List
 
-- item1
-- item2
-- a
-- item
+some text
 
-```md
 - item1
 - item2
 - a
   multi-line
-- item
+  item
 - nested
   - items
     - nested-er
+   
+some other text
+
+```md
+some text
+
+- item1
+- item2
+- a
+  multi-line
+  item
+- nested
+  - items
+    - nested-er
+   
+some other text
 ```
 
 ### Ordered List
+
+some text
 
 1. item1
 2. a
@@ -447,17 +518,23 @@ Acroynym should be automatically made tool-tips e.g. MPI.
    2. nested item 2
       1. even nested-er
 
+some other text
+
 ```md
+some text
+
 1. item1
 2. a
-   multiline
+   multi-line
    item
    with multiple
    lines
 3. nested
-    1. nested item 1
-    2. nested item 2
-        1. even nested-er
+   1. nested item 1
+   2. nested item 2
+      1. even nested-er
+
+some other text
 ```
 
 *Note, nested list items use numbers, but will be rendered as whatever the indent is.*
@@ -525,11 +602,11 @@ There are a few includes you may want to use.
 
 Here is an example using dynamically using the module version information.
 
-`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+`module load ANSYS/{{ applications.ANSYS.default }}`
 
 ```md
 {% raw %}
-`module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}`
+`module load ANSYS/{{ applications.ANSYS.default }}`
 {% endraw %}
 ```
 
@@ -539,23 +616,21 @@ And here is another example showing all Python packages installed in Python modu
 
 ??? "Fancy Example"
     Our Python modules come pre-built with the following packages:
-    {% set pyexts=applications.Python.extensions.split(', ') %}
     <table>
     <tr><th>Package</th></tr>
-    {% for pyext in pyexts %}
+    {% for pyext in applications.Python.extensions %}
     <tr><td>{{ pyext }}</td></tr>
     {% endfor %}
     </table>
 
     ```md
     {% raw %}
-    Our Python modules come prebuilt with the following packages: 
-    {% set pyexts=applications.Python.extensions.split(', ') %}
+    Our Python modules come pre-built with the following packages:
     <table>
     <tr><th>Package</th></tr>
-    {% for pyext in pyexts %}
+    {% for pyext in applications.Python.extensions %}
     <tr><td>{{ pyext }}</td></tr>
     {% endfor %}
-    {% endraw %}
     </table>
+    {% endraw %}
     ```

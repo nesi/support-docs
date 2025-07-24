@@ -7,7 +7,6 @@ matrix:
     - docs/assets/glossary/dictionary.txt
     encoding: utf-8
   pipeline:
-  - pyspelling.filters.url:
   - pyspelling.filters.context:
       context_visible_first: true
       escapes: '\\[\\`~]'
@@ -28,9 +27,22 @@ matrix:
       #  `content`
       - open: '(?P<open>`+)'
         close: '(?P=open)'
+      # Ignore content in page links
+      #  [some page](../link/to/some/page.md)
+      - open: '(\]\()'
+        close: '(\))'
+      # Ignore macros
+      # {{some.template.variable}}
+      - open: '(\{\{)'
+        close: '(\}\})'
+      # Ignore include
+      # {% include "partials/support_request.html" %}
+      - open: '({%)'
+        close: '(%})'
+  - pyspelling.filters.url:
   - pyspelling.filters.markdown:
       markdown_extensions:
-      - markdown.extensions.toc
+      # - markdown.extensions.toc
       - markdown.extensions.admonition
       - markdown.extensions.attr_list
       - markdown.extensions.abbr

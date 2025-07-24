@@ -9,7 +9,7 @@ Tests should be made as Python scripts to allow flexibility of use. Currently th
 
 ## Spellcheck
 
-*This linter is defined in [run_pyspelling.py](run_pyspelling.py) script.*
+*This linter is defined in [run_spell_check.py](run_spell_check.py) script.*
 
 Spellcheck pipeline settings can be modified in [.spellcheck.yml](../.spellcheck.yml).
 

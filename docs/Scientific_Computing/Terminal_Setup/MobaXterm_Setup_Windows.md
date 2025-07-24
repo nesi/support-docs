@@ -5,20 +5,16 @@ tags:
     - windows
 title: MobaXterm Setup (Windows)
 description: How to set up cluster access using MobaXterm
-vote_count: 5
-vote_sum: 5
-zendesk_article_id: 360000624696
-zendesk_section_id: 360000189696
+status: deprecated
 ---
+!!! WARNING  
+    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure.  
+    It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
 
 !!! prerequisite
      -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
-     -   Set up your [Linux Password.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md)
-     -   Set up Second [Factor Authentication.](../../Getting_Started/Accessing_the_HPCs/Setting_Up_Two_Factor_Authentication.md)
-     -   Windows operating system.
 
-Setting up MobaXterm as shown below will allow you to connect to the
-Cluster with less keyboard inputs as well as allow use of the file
+Setting up MobaXterm as shown below will allow you to connect to Mahuika with less keyboard inputs as well as allow use of the file
 transfer GUI.
 
 1. [Download MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)
@@ -30,49 +26,7 @@ transfer GUI.
     - Otherwise, choose freely the Portable or Installer Edition.
 2. To set up a session, Click 'Session' in the top left corner:
 3. In "SSH",
-    - Set the remote host to `login.mahuika.nesi.org.nz` for Mahuika
-        users or `login.maui.nesi.org.nz` for Māui users.
-    - Enable the "Specify username" option and put your Username in
-        the corresponding box.
-4. In the "Advanced SSH settings"
-    - Set SSH-browser type to '**SCP (enhanced speed)**'.
-    - Optionally, tick the 'Follow SSH path' button.
-5. In the “Network settings” tab:
-    - Select "SSH gateway (jump host)" to open a popup window
-    - In this window enter `lander.nesi.org.nz` in the “Gateway host”
-        field, as well as your NeSI username in the Username field for
-        the gateway SSH server then select OK to close the window.
-
-    ![mceclip4.png](../../assets/images/MobaXterm_Setup_Windows.png)
-
-    ![mceclip5.png](../../assets/images/MobaXterm_Setup_Windows_0.png)
-
-6. Click 'OK' on the open window, usually this will start a new session
-    immediately. *See usage below.*
-
-!!!  bug
-     There is a bug which causes some users to be repeatedly prompted
-     `<username>@lander.nesi.org.nz's password:`  
-     This can be resolved by clicking "OK" each time you are prompted then
-     logging in as normal once you are prompted for your `First Factor:` or
-     `Password:`.  
-     See [Login
-     Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
-     details
-
-## Usage
-
-You will see your saved session in the left hand panel under 'Sessions'.
-Double click to start.
-
-![mceclip6.png](../../assets/images/MobaXterm_Setup_Windows_1.png)
-
-You will be prompted by dialogue box.
-
-``` sh
-Login Password (First Factor):
-```
-
+    - Set the remote host to `login.hpc.nesi.org.nz`.
 Enter your password.
 
 ``` sh
@@ -94,14 +48,46 @@ Māui users will instead be prompted with:
 ``` sh
 Password:
 ```
+    Enable the "Specify username" option and put your Username in
+        the corresponding box.
+        
+4. In the "Advanced SSH settings"
+    - Set SSH-browser type to '**SCP (enhanced speed)**'.
+    - Optionally, tick the 'Follow SSH path' button.
+5. In the “Network settings” tab:
+    - Select "SSH gateway (jump host)" to open a popup window
+    - In this window enter `lander.hpc.nesi.org.nz` in the “Gateway host”
+        field, as well as your NeSI username in the Username field for
+        the gateway SSH server then select OK to close the window.
 
-Māui users must enter their password combined with their second factor.
-For example, if your password is "Password" and your current second
-factor is "123456" then you must enter "Password123456".
+    ![mceclip4.png](../../assets/images/MobaXterm_Setup_Windows.png)
 
-!!! tip
-     If you choose to save your password, the process will be the same
-     minus the prompts for First Factor.
+    ![mceclip5.png](../../assets/images/MobaXterm_Setup_Windows_0.png)
+
+6. Click 'OK' on the open window, usually this will start a new session
+    immediately. *See usage below.*
+
+!!! bug
+    There is a bug which causes some users to be repeatedly prompted
+    `<username>@lander.nesi.hpc.org.nz's password:`  
+    This can be resolved by clicking "OK" each time you are prompted then
+    logging in as normal once you are prompted for your `First Factor:` or
+    `Password:`.  
+    See [Login Troubleshooting](../../General/FAQs/Login_Troubleshooting.md) for more
+    details
+
+## Usage
+
+You will see your saved session in the left hand panel under 'Sessions'.
+Double click to start.
+
+![mceclip6.png](../../assets/images/MobaXterm_Setup_Windows_1.png)
+
+You will be prompted by dialogue box.
+
+``` sh
+Login Password (First Factor):
+```
 
 ## Credential Manager
 

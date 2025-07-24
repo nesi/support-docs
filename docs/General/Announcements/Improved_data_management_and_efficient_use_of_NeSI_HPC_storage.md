@@ -6,6 +6,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 4407274387599
 zendesk_section_id: 200732737
+search:
+  boost: 0.1
 ---
 A growing number of research projects are storing large amounts of data
 on NeSI systems. To better support this growth, as well as optimise the
@@ -45,8 +47,8 @@ we’d be happy to help or answer questions.
 If you have data that may be used again on NeSI later,
 {% include "partials/support_request.html" %}
 and we will consider whether a
-[Nearline](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md)
-storage allocation would be appropriate to manage this.
+[Long Term Storage](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md)
+ allocation would be appropriate to manage this.
 
 ### 18 October 2021
 

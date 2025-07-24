@@ -1,4 +1,4 @@
-# NesI support documentation
+# NeSI support documentation
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs?quickstart=1)
 
@@ -6,11 +6,7 @@
 
 This repository contains the sources files for the NeSI support documentation.
 
-Rendered pages are visible at [https://nesi.github.io/support-docs/](https://nesi.github.io/support-docs/).
-
-**Warning**
-    This is a beta version and should **not** be considered as the official documentation.
-    The official documentation is accessible at [https://support.nesi.org.nz](https://support.nesi.org.nz).
+Rendered pages are visible at [https://docs.nesi.org.nz](http://docs.nesi.org.nz).
 
 ## Contents
 
@@ -35,13 +31,32 @@ Following pages contain information to help maintain the documentation:
 - See [checks](checks/README.md), for information on quality assurance tests.
 - See [workflows](.github/workflows/README.md), for information on CI workflows.
 
+## Viewing PR Branches
+
+![Demo Site](https://github.com/CallumWalley/support-docs-dev/actions/workflows/deploy.yml/badge.svg)
+
+Deployments of open pull requests can be viewed at [https://callumwalley.github.io/support-docs-dev/NAME-OF-BRANCH](https://callumwalley.github.io/support-docs-dev/)
+
 ## Theme
 
 We are using the [mkdocs material theme](https://squidfunk.github.io/mkdocs-material/).
 
-## Analyics
+## Analytics
 
 The site uses [Google analytics](https://analytics.google.com/analytics/web/#/p424742084). You will need to ask a google workspace admin to add you to the project.
+
+## Updating Dependencies
+
+Occasionally you may want to update the dependencies used by mkdocs to build and lint this site.
+
+Make a new branch and
+
+```sh
+pip-compile --allow-unsafe > requirements.txt
+pip install -r requirements.txt
+```
+
+Make sure to test it on a GitHub runner (not just locally), as this is the actual build environment.
 
 ## Migration
 

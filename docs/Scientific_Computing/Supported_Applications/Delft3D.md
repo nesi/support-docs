@@ -2,19 +2,15 @@
 created_at: '2020-06-26T06:09:34Z'
 tags:
  - hydrodynamics
-title: Delft3D
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001593096
-zendesk_section_id: 360000040076
+ - morphodynamics
+ - particle modelling
+ - water quality testing
+ - wave modelling
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 ## Example scripts
 
@@ -29,13 +25,13 @@ zendesk_section_id: 360000040076
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem           512M           # Total Memory
     #SBATCH --hint          nomultithread  # Hyperthreading disabled
-    module load Delft3D/{{app.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.default}}
     d_hydro test_input.xml
     ```
 
 === "Shared Memory"
 
-    For domain based decompositions. Use `--cpus-per-task` to allocate resources.
+    For domain based decompositions. Use `--cpus-per-task` to allocate resources.
     Each subdomain runs in a separate thread, inside one executable. Limited to one node.
 
     ```sl
@@ -47,14 +43,15 @@ zendesk_section_id: 360000040076
     #SBATCH --mem           2G             # Total Memory
     #SBATCH --hint         nomultithread  # Hyperthreading disabled
     
-    module load Delft3D/{{app.machines.mahuika.versions | last}}
+    module load Delft3D/{{app.default}}
     
-    srun d_hyrdo test_input.xml
+    srun d_hydro test_input.xml
     ```
 
 === "Distributed Memory"
+
     Domain is split automatically in stripwise partitions.
-    Can run across multiple nodes. Use `--ntasks` to allocate resources.
+    Can run across multiple nodes. Use `--ntasks` to allocate resources.
 
     Cannot be used in conjunction with:
     - DomainDecomposition
@@ -76,10 +73,11 @@ zendesk_section_id: 360000040076
 
     #SBATCH --job-name      Delft3D_distributed
     #SBATCH --time          00:05:00       # Walltime
-    #SBATCH --mem-per-cpu   1G             #SBATCH --hint          nomultithread  # Hyperthreading disabled
+    #SBATCH --mem-per-cpu   1G             
+    #SBATCH --hint          nomultithread  # Hyperthreading disabled
 
-    module load Delft3D/{{app.machines.mahuika.versions | last}}
-    srun d_hyrdo test_input.xml
+    module load Delft3D/{{app.default}}
+    srun d_hydro test_input.xml
     ```
 
 !!! warning

@@ -13,7 +13,7 @@ When you run software in an interactive environment such as your
 ordinary workstation (desktop PC or laptop), the software is able to
 request from the operating system whatever resources it needs from
 moment to moment. By contrast, on our HPC platforms, you must request
-your needed resources *when you submit the job*, so that the scheduler
+your needed resources *when you submit the job*, so that the scheduler
 can make sure enough resources are available for your job during the
 whole time it is running, and also knows what resources will be free for
 others to use at the same time.
@@ -30,11 +30,13 @@ Some jobs will also need to request GPUs.
 ## What happens if I ask for the wrong resources?
 
 When you are initially trying to set up your jobs it can be difficult to
-ascertain how much of each of these resources you will need. Asking for
-too little or too much, however, can both cause problems: your jobs will
+ascertain how much of each of these resources you will need.
+Asking for too little or too much, however, can both cause problems:
+your jobs will
 be at increased risk of taking a long time in the queue or failing, and
-your project's [fair share score](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md)
-is likely to suffer. Your project's fair share score will be reduced in
+your project's [fair share score](../../Scientific_Computing/Batch_Jobs/Fair_Share.md)
+is likely to suffer.
+Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
 not.
 
@@ -44,7 +46,7 @@ not.
 | Memory | The job may wait in the queue for longer. Your fair share score will fall more than necessary. | Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error. This may not happen immediately. |
 | Wall time | The job may wait in the queue for longer than necessary | The job will run out of time and get killed. |
 
-***See our ["What is an allocation?" support page](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
+***See [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
 
 It is therefore important to try and make your jobs resource requests
 reasonably accurate. In this article we will discuss how you can scale
@@ -52,7 +54,7 @@ your jobs to help you better estimate your jobs resource needs.
 
 ## Job Scaling
 
-Before you start submitting the main bulk of your jobs, it is advisable
+Before you start submitting the main bulk of your jobs, it is advisable
 to first submit a *test job*.
 
 A test job should be representative of the main body of your work,

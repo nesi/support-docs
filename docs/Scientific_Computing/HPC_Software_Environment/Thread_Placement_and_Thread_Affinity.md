@@ -2,10 +2,7 @@
 created_at: '2019-06-13T04:08:43Z'
 tags: []
 title: Thread Placement and Thread Affinity
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000995575
-zendesk_section_id: 360000040056
+status: deprecated
 ---
 
 Multithreading with OpenMP and other threading libraries is an important
@@ -37,7 +34,7 @@ performance, as a socket connects the processor to its RAM and other
 processors. A processor in each socket consists of multiple physical
 cores, and each physical core is split into two logical cores using a
 technology called
-[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)).
+[Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md)).
 
 A processor also includes caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory

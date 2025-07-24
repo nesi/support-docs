@@ -1,29 +1,17 @@
 ---
 created_at: '2018-05-02T04:06:16Z'
 tags:
-- info
-- mahuika
 - storage
-- maui
 - quota
 title: NeSI File Systems and Quotas
-vote_count: 4
-vote_sum: 4
-zendesk_article_id: 360000177256
-zendesk_section_id: 360000033936
+status: deprecated
 ---
 
 !!! tip "Transparent File Compression"
     We have recently started rolling out compression of inactive data on the NeSI Project filesystem.
     Please see the [documentation below](#transparent-file-data-compression) to learn more about how this works and what data will be compressed.
 
-[Māui](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Maui.md) and
-[Mahuika](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Mahuika.md), along
-with all the ancillary nodes, share access to the same IBM Storage Scale
-file systems. Storage Scale was previously known as Spectrum Scale, and
-before that as GPFS, or General Parallel File System - we'll generally
-refer to it as "Scale" where the context is clear.
-
+The NeSI compute nodes, login nodes and OnDemand all share access to the same file systems.
 You may query your actual usage and disk allocations using the following
 command:
 
@@ -166,7 +154,7 @@ an Automatic Tape Library (ATL). Files will remain on `/nesi/nearline`
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
-See [more information about the nearline service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md).
+See more information about the long term storage service.
 
 ## Snapshots
 
@@ -228,7 +216,6 @@ cold data. We may decrease this in future.
 Additionally, we only automatically compress files in the range of 4kB -
 10GB in size. Files larger than this can be compressed by user
 interaction - see the instructions for the `mmchattr` command on
-the [Data Compression support
-page](../../Storage/File_Systems_and_Quotas/Data_Compression.md). Also
+the [Data Compression support page](../../Storage/File_Systems_and_Quotas/Data_Compression.md). Also
 note that the Scale filesystem will only store compressed blocks when
 the compression space saving is &gt;=10%.

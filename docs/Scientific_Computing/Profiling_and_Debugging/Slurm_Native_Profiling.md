@@ -3,11 +3,6 @@ created_at: '2019-02-24T23:26:19Z'
 tags:
 - slurm
 - profiling
-title: Slurm Native Profiling
-vote_count: 4
-vote_sum: 4
-zendesk_article_id: 360000810616
-zendesk_section_id: 360000278935
 ---
 
 Job resource usage can be determined on job completion by checking the
@@ -27,14 +22,10 @@ when profiling a job of less than 1 hour it would be OK to sample every
 second by adding `#SBATCH --acctg-freq=1`, and for a week long job the
 rate should be reduced to once every 5
 minutes: `#SBATCH --acctg-freq=300`.  
-  
-On completion of your job, collate the data into an HDF5 file using
-`sh5util -j <jobid>`, this will collect the results from the nodes where
-your job ran and write into an HDF5 file named: `job_<jobid>.h5`
 
-You can plot the contents of this file with the command
-`nn_profile_plot job_<jobid>.h5`, this will generate a file named
-`job_<jobid>_profile.png`.
+The `profile_plot` command can then be used to generate an image with the results.
+
+See `profile_plot --help` for more info.
 
 Alternatively you could use one of the following scripts.
 

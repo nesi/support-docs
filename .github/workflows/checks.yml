@@ -4,6 +4,7 @@ env:
 on:
   push:
     branches-ignore: [main]
+  repository_dispatch:
   workflow_dispatch:
     inputs:
       fileList:
@@ -27,6 +28,10 @@ on:
         description: Check Meta
         default: true
         type: boolean
+      checkSlurm:
+        description: Check Slurm
+        default: true
+        type: boolean
       testBuild:
         description: Test Build
         default: true
@@ -34,9 +39,10 @@ on:
 jobs:
   get:
     name: Determine what files to check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Get changed files
@@ -49,14 +55,15 @@ jobs:
         if: inputs.fileList == ''
         id: diff
         run: |
-          echo "Changed files: ${{steps.get-changed-files.outputs.all_changed_files}}"
+          echo "::info::Workflow triggered by PR"
+          echo "Changed files: '${{steps.get-changed-files.outputs.all_changed_files}}'"
           echo "filelist=${{steps.get-changed-files.outputs.all_changed_files}}" >> $GITHUB_OUTPUT
     outputs:
       filelist: ${{steps.diff.outputs.filelist || inputs.fileList}}
   spellcheck:
     name: Check Spelling
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.checkSpelling }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -69,16 +76,16 @@ jobs:
         name: Install dependencies
         run: |
           sudo apt install -y aspell
-          pip install pyspelling flashtext
+          pip3 install pyspelling flashtext
       - if: ${{needs.get.outputs.filelist}}
         name: Run pyspelling
         run: |
           shopt -s globstar extglob
-          python3 checks/run_pyspelling.py ${{needs.get.outputs.filelist}}
+          python3 checks/run_spell_check.py ${{needs.get.outputs.filelist}}
   proselint:
     name: Check Prose
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkProse}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -89,7 +96,7 @@ jobs:
         uses: actions/checkout@v4
       - if: ${{needs.get.outputs.filelist}}
         name: Install dependencies
-        run: pip install proselint
+        run: pip3 install proselint
       - if: ${{needs.get.outputs.filelist}}
         name: Run proselint
         run: |
@@ -98,7 +105,7 @@ jobs:
   mdlint:
     name: Check Markdown
     if: ${{github.event_name != 'workflow_dispatch' || inputs.checkMarkdown}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{! needs.get.outputs.filelist}}
@@ -114,11 +121,12 @@ jobs:
         name: Run markdownlint
         run: |
           shopt -s globstar extglob
-          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | checks/parse_markdownlint.py
+          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | python3 checks/parse_markdownlint.py
+
   metacheck:
     name: Check page meta
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkMeta}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - if: ${{ ! needs.get.outputs.filelist}}
@@ -132,17 +140,31 @@ jobs:
         run: |
           shopt -s globstar extglob
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
+  slurmcheck:
+    name: Check slurm scripts
+    if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkSlurm}}
+    runs-on: ubuntu-24.04
+    needs: get
+    steps:
+      - if: ${{ ! needs.get.outputs.filelist}}
+        name: No files to check meta on.
+        run: exit 0
+      - if: ${{needs.get.outputs.filelist}}
+        name: Check out repo.
+        uses: actions/checkout@v4
+      - if: ${{needs.get.outputs.filelist}}
+        name: Check markdown meta.
+        run: |
+          shopt -s globstar extglob
+          python3 checks/run_slurm_lint.py ${{needs.get.outputs.filelist}}
   testBuild:
     name: Test build
     if: ${{github.event_name != 'workflow_dispatch' || inputs.testBuild}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: get
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: pip install -r requirements.txt
-      - run: echo "::group::Test Build"
+      - run: pip3 install -r requirements.txt
       - run: ./checks/run_test_build.py
-      - run: echo "::endgroup::"
-

@@ -1,0 +1,65 @@
+
+#feed {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.md-feed-item {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+aside.md-source-file {
+    display: none;
+}
+.md-feed-date {
+    height: 18px;
+    color: var(--md-default-fg-color--light);
+    font-size: .68rem;
+    gap: .3rem;
+    display: inline-flex;
+    align-items: center;
+}
+/* .feed-item:last-child {
+    border-bottom: none;
+} */
+ /* Make content inside cards more readable */
+.md-feed-description h2,h3,a,p {
+    font-size: 0.8rem;
+}
+
+.md-feed-item h3 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+.md-tag-closeable > button {
+    background-color: transparent;
+    border: 0;
+    float: right;
+    cursor: pointer;
+    padding: 0.4em 0.3em 0.3em 0.6em;
+    margin: -0.3em;
+}
+.md-tag-closeable {
+    cursor: default;
+}
+.md-tag-clickable {
+    cursor: pointer;
+}
+.md-throbber {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ddd;
+    border-top: 5px solid var(--md-primary-fg-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

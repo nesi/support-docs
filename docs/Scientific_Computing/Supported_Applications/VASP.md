@@ -1,15 +1,12 @@
 ---
 created_at: '2015-09-08T03:11:50Z'
 tags:
-- mahuika
 - chemistry
+- Density Functional Theory
+- Molecular Dynamics
+- Computational Chemistry
 title: VASP
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 209379527
-zendesk_section_id: 360000040076
 ---
-
 
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
@@ -19,175 +16,167 @@ zendesk_section_id: 360000040076
 
 ## Description
 
-The Vienna Ab initio Simulation Package (VASP) is a programme for atomic
-scale materials modelling.
+The Vienna Ab initio Simulation Package (VASP) is a programme for atomic scale materials modelling.
 
-VASP computes an approximate solution to the many-body Schrödinger
-equation of a chemical system by either Density Functional Theory (and
-the KS equations), or Hartree-Fock.
+VASP computes an approximate solution to the many-body Schrödinger equation of a chemical system using Density Functional Theory, Hartree-Fock, or both via hybrid functionals. Periodic boundary conditions make VASP particularly useful for studying materials bulk properties.
 
-Periodic boundary conditions make VASP particularly useful for studying
-materials with bulk-like properties. VASP uses a basis set made up of
-plane-waves as opposed to atom centred basis sets, and describes core
-atomic charges with pseudopotentials.
+For more information on what you can do with VASP see the [official documentation](https://www.vasp.at/info/about/).
 
-VASP can (among many other things) perform
+## Licences
 
-- structural relaxation and calculation of forces between nuclei
-- molecular dynamics
-- magnetic moments
-- partial charges
-- optical properties
+A VASP license is managed at the research group level. Which versions you have access to depends on what version your research group leader has purchased. You will have access to either VASP4, VASP5, or VASP6. Minor releases are included under the major release licence, for example VASP6.?.? is available to those who have a VASP6 license.
 
-For more information, please visit the VASP home page at
-<http://www.vasp.at>.
+If your research group has a valid licence, please {% include "partials/support_request.html" %} and CC the group leader. The Support Team will add the relevant permissions to your HPC UID which will allow you to access the VASP modules. You may be asked to provide proof of your license if you are not from a known group or if the license is new.
 
-## Availability
-
-VASP is currently available on the Mahuika and Māui clusters.
-
-## Licensing requirements
-
-VASP is made available to researchers under commercial licence
-agreements with individuals, research groups or institutions. Whether
-you have access to VASP, which versions you have access to, and under
-what conditions, will vary depending on where you work or study. You
-will only be permitted to access and use any given version of VASP on
-any NeSI cluster if you have a valid licence to use that version of VASP
-with your research group, employer, or institution, and if the terms of
-your licence permit cluster use.
-
-If you do have a valid license, please {% include "partials/support_request.html" %} to gain access to the VASP
-executables. You may be asked to provide proof of your license if you
-are not from a known group or if the license is new.
-
-## Best practices for VASP calculations
+## Parallelising your VASP calculation
+Effectively parallelising your calculation is a particularly complicated aspect of VASP. Below is a basic Slurm batch script that can be used to submit a parallel VASP6 job.
 
 ### Example script
 
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name        MyVASPJob
-#SBATCH --time            01:00:00
-#SBATCH --nodes           1
-#SBATCH --ntasks          16               # start 16 MPI tasks
-#SBATCH --mem             20G
-#SBATCH --hint            nomultithread
+#SBATCH --ntasks=8
+#SBATCH --cpus-per-task=4
+#SBATCH --job-name=my_VASP_job
+#SBATCH --time=01:00:00
+#SBATCH --mem-per-cpu=950
+#SBATCH --account=nesi99999
+#SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
+#SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
+#SBATCH --mem-bind=local
+#SBATCH --profile=task
+#SBATCH --acctg-freq=15
 
-module purge
-module load VASP/6.4.1-intel-2022a
+module purge 2> /dev/null
+module load VASP/6.4.2-foss-2023a
 
-# Use the -K switch so that, if any of the VASP processes exits with an
-# error, the entire job will stop instead of continuing to waste core
-# hours on a defunct run.
-srun -K1 vasp_std
+# update a VASP job log once the job starts running.
+echo "Job ${SLURM_JOB_ID} was submitted on $(date) from directory $(pwd)" >> ~/VASP_job_log.txt
+
+# Start two job steps, one that prints MPI process CPU binding and another that starts VASP.
+srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname). \n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+echo -e "\n====== Finished printing CPU binding information, now launching VASP ======\n"
+
+srun vasp_std
 ```
+
+Another, more complex `bash` script to submit a VASP job can be downloaded with the following:
+``` bash
+wget https://raw.githubusercontent.com/Johnryder23/job_submit_scripts/refs/heads/main/VASP/vasp_std_HPC3_submit.sh
+```
+
+This more involved script sets up a working directory and can be used to submit CPU or CPU/GPU jobs. In most cases, only the variables under "edit job allocation settings here" need to be adjusted.
+
+
+!!! note
+    There are not many reasons to specify a partition with `#SBATCH --partition` on the new (2025) HPC. Please only set this if you have a good reason to use Genoa or Milan nodes.
+
+VASP6 can parallelise its work using the MPI (set by `--ntasks`) and OpenMP (set by `--cpus-per-task`) protocols concurrently. VASP5 uses the MPI only.
+
+## Optimising the parallelisation and additional tips
+
+!!! note "A note on MPI and OpenMP nomenclature"
+    MPI has multiple terms which mean the same thing. A MPI *rank*, *task*, and *process* are synonymous. `#SBATCH --ntasks=n` spawns `n` MPI ranks for your job. Each of these ranks are an independent process that have [their own memory space](https://nesi.github.io/hpc-intro/064-parallel/index.html#distributed-memory-mpi). MPI ranks are *multithreaded* if each rank is given multiple OpenMP *threads*. The number of OpenMP threads is set by `#SBATCH --cpus-per-task`.
+
+VASP is a complex programme with a steep learning curve. The [VASP manual](https://www.vasp.at/wiki/index.php/The_VASP_Manual) is the best place to go for information on how to begin using VASP. The information here relates to running VASP the Mahuika cluster specifically.
+
+#### Theory
+
+!!! note
+    Recall the terms "wavefunction", "Kohn-Sham orbital" and "band" are equivalent in VASP as Kohn-Sham orbitals are single electron wavefunctions. The number of wavefunctions/Kohn-Sham orbitals is enumerated by `NBANDS` in the `OUTCAR`.
+
+Kohn-Sham orbitals are distributed over available MPI ranks in a round-robin fashion until all orbitals have a processor (equivalently, a PID) - or group of processors (under a single PID) if running a multithreaded calculation. In VASP5, the work of a single orbital can be parallelised over MPI ranks using the `NCORE` [flag](https://www.vasp.at/wiki/index.php/NCORE) in the `INCAR`. In VASP6, the work of a single orbital can be parallelised across OpenMP threads. In VASP6 The `NCORE` flag will be ignored.
+
+
+#### In summary
+
+VASP5
+
+- `NCORE` MPI processes share the work of individual Kohn-Sham orbitals.
+
+VASP6
+
+- `--cpus-per-task` OpenMP threads share the work of individual Kohn-Sham orbitals. Any `NCORE` setting will be ignored.
+
+It is critically important that processors sharing the work of an orbital are *near* each other on the processor die. To understand why this is a bit of theory must be understood.
+
+VASP uses a plane-wave basis set to represent the wavefunction. These plane-waves are naturally defined in reciprocal space. Some terms of the Hamiltonian are computed in this reciprocal space (also known as **k**-space) and other terms are computed in real-space. Converting the plane waves between real and reciprocal space requires Fast Fourier Transforms (FFTs). In fact, the computational expense of wavefunction optimisation is dominated by these FFTs. Processors sharing the work of the FFT (i.e., processors the wavefunction is parallelised over) must communicate frequently. In other words, these FFTs require frequent *all-to-all* communication.
+
+Not all processors have equivalent access to the RAM or local cache where the wavefunctions are stored. This processor/node design is called [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access), and is why the need for processor locality arises. Processor communication latency must be as low as possible for multithreaded VASP calculations to perform well. Under some conditions, VASP runs orders of magnitude slower if the processors are not pinned to be *near* each other. We pin processors in this way using Slurm options show in the example script above.
+
+The Slurm options show in the example script above ensure a few things which are important for good multithreaded performance.
+
+- bind threads working on a particular wavefunction to cores in the same NUMA domain.
+- There is 1 L3 cache per-NUMA-domain. If possible, assign MPI processes to NUMA domains that no other jobs are using so the entire L3 cache is available for wavefunction storage, since reading from cache is faster than reading from RAM.
+
+
+#### In summary
+- VASP expresses Kohn-Sham orbitals as plane waves, i.e., uses a plane-wave basis set.
+- Plane-waves are naturally defined in reciprocal space (discretised at special points, **k**).
+- Other terms of the Hamiltonian must be computed in real-space. Plane waves are transformed between real and reciprocal space using FFTs.
+- FFTs require frequent all-to-all communication. If the latency of this communication is high, VASP performance will be poor.
+
+### Not all VASP calculations benefit from multithreading
+Increasing `--cpus-per-task` (or `NCORE` for VASP5) will not speed up all calculations. Higher levels of theory and more complicated exchange correlation functionals bring with them more FFTs and more parallelisable work during the wavefunction optimisation. Therefore, if using hybrid functionals or doing high-precision electronic structure calculations, your calculation will likely benefit from multithreading.
+
+It's best to do some performance testing with a fixed number of electronic and ionic steps. This can be done with the following `INCAR` settings:
+``` sl
+EDIFFG = 0   # do not stop based on total energy
+NSW = 3      # number of ionic steps
+NELMIN = 3   # minimum number of electronic self-consistency steps
+NELM = 3     # maximum number of electronic self-consistency steps
+```
+Which will perform exactly 3 ionic and 3 electronic steps. Ensure the number of physical cores is constant while varrying the ratio of MPI ranks to OpenMP threads. For example, `--ntasks=4 --cpus-per-task=4`, `--ntasks=2 --cpus-per-task=8`, and `--ntasks=8 --cpus-per-task=2`, will all have 16 physical cores.
+
+VASP may be further parallelised by additional `INCAR` options. For example, if you have many **k**-points it would be wise to experiment with the `KPAR` setting.
+
+!!! warning
+    KPAR must divide evenly into the total number of MPI processes.
+
+For more information on other parallelisable quantities, see the following VASP documentation pages:
+
+[Basic parallisation](https://www.vasp.at/wiki/index.php/Category:Parallelization)
+
+[Optimising the parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
+
 
 ### Avoid hyperthreading
 
-We and several researchers have found that VASP doesn't behave well with
-hyperthreading, and will run at a third to a half of its expected speed.
-To disable hyperthreading, please use either
+We have found that VASP doesn't benefit from hyperthreading and often runs slower when hyperthreading is enabled. It's best to leave Hyperthreading off as is the case in the example Slurm script above.
 
-``` bash
-#SBATCH --hint nomultithread
-```
 
-or, equivalently,
+### GPU versions of VASP6
 
-``` bash
-#SBATCH --hint=nomultithread
-```
+VASP modules containing *\*-NVHPC-\** in the name have been built with GPU support.
 
-as shown in our example script above.
+<https://www.vasp.at/wiki/index.php/OpenACC_GPU_port_of_VASP>
 
-### How many cores should I request?
+VASP can run really well on GPUs, although how much you will benefit
+from GPUs largely depends on the specific simulation/calculation that
+you are running. As usual, it could be useful to run some smaller benchmarks with different GPU and CPU-only
+configurations in your Slurm scripts, before moving on to run larger
+production simulations. When considering which configuration to use for
+production you should take into account performance and compute unit
+cost.
 
-Unsurprisingly, the number of cores used in a VASP calculation
-significantly influences on how long the calculation takes to finish.
-The more cores a problem can parallelise over, the more it can do at
-once. However, this parallelisation carries with it some communication
-costs. Too many cores for too small a problem can decrease efficiency
-and speed (not to mention waste resources), as the cost of communicating
-tasks/threads becomes greater than the cost of the calculation itself.
+General information about using GPUs on NeSI can be found
+[here](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md)
+and details about the available GPUs on NeSI
+[here](../Batch_Jobs/Available_GPUs_on_NeSI.md).
 
-To determine an appropriate number of cores to request for a VASP
-calculation, it helps to know how VASP distributes its work. VASP
-parallelises its workload by allocating each KS orbital (enumerated by
-[`NBANDS`](https://www.vasp.at/wiki/index.php/NBANDS)) to the available
-cores in a round-robin fashion. In other words, each band is allocated
-to a single MPI task sequentially until all bands are assigned (more
-details on MPI are provided later). Each core must be allocated at least
-one orbital, and ideally will have “a small integer” (2-8) orbitals to
-work on. As a rule of thumb, requesting 1/8th the number of
-[`NBANDS`](https://www.vasp.at/wiki/index.php/NBANDS) is a reasonable
-starting point which hopefully achieves this 2 to 8 bands-per-core
-suggestion.
+Some additional notes specific to running VASP on GPUs:
 
-Requesting cores is best done with `--ntasks` in your Slurm script. To
-determine the value of
-[`NBANDS`](https://www.vasp.at/wiki/index.php/NBANDS) (and other
-parameters such as the number of **k**-points), you can perform a “dry
-run” of your calculation by setting `ALGO=None` in the `INCAR`. This
-will set up the calculation, but does not go into solving ionic or
-electronic loops. The calculation will finish quickly, and you can then
-pull the value of [`NBANDS`](https://www.vasp.at/wiki/index.php/NBANDS)
-from the `OUTCAR`.
-
-### Fill a node before working across nodes
-
-You may find that packing your entire job onto a single node will make
-it run faster. Distributing a job across multiple nodes may also put the
-job at greater risk of node failure. You can request a single node with
-`--nodes=1`for jobs of up to `--ntasks=128`, which is enough for most
-VASP calculations. If you would like help making a large job more
-efficient, please [contact our support
-team {% include "partials/support_request.html" %}.
-
-### VASP runs faster on Milan nodes
-
-[Milan compute
-nodes](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md)
-are not only our most powerful compute nodes, but often have shorter
-queues! These nodes are still opt-in at the moment, meaning you need to
-specify `--partition=milan` in your Slurm script, which we strongly
-encourage everyone to do!
-
-### MPI and OpenMP with VASP
-
-VASP6 can now parallelise work using the message passing interface (MPI)
-*and* OpenMP at the same time. Where MPI parallelises on a per-orbital
-basis, OpenMP can create multiple threads of work nested within an MPI
-task, and so is a lower level, intra-node, form of communication. In
-other words, OpenMP parallelises/distributes the work of a single
-orbital. If you have large functions (for example, many plane waves and
-a small number of bands), you may wish to experiment with assigning
-multiple threads to each MPI task. This can be done by setting
-`--cpus-per-task=2` - which will start 2 OpenMP threads for everyone 1
-MPI task.
-
-VASP may be further parallelised by treating **k**-points in parallel
-(controlled with [`KPAR`](https://www.vasp.at/wiki/index.php/KPAR)), and
-parallelisation the FFTs (controlled with
-[`NPAR`](https://www.vasp.at/wiki/index.php/NPAR) for VASP5 only). To
-optimise your VASP job parallelisation in these ways, see the following
-links:
-
-[Basic
-parallisation](https://www.vasp.at/wiki/index.php/Category:Parallelization)
-
-[Optimising the
-parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
-
-### Our VASP5 modules do not support OpenMP
-
-Our VASP5 modules do not support OpenMP and therefore cannot use OpenMP
-threading. VASP5 can perform an analogous form of parrellisation using
-the [`NPAR`](https://www.vasp.at/wiki/index.php/NPAR) tag in the
-`INCAR`, however. For more information on how to use
-[`NPAR`](https://www.vasp.at/wiki/index.php/NPAR) see VASP’s
-documentation page.
+- There is no longer a `vasp_gpu` executable. The VASP executables (`vasp_std`, `vasp_gam`, `vasp_ncl`) are all built with OpenACC GPU support.
+- Always select one MPI process (Slurm task) per GPU.
+- if you see memory errors like
+    `call to cuMemAlloc returned error 2: Out of memory` you
+    probably ran out of GPU memory. You could try requesting more
+    GPUs (so the total amount of available memory is higher) and/or
+    moving to GPUs with more memory (note: GPU memory is distinct
+    from the usual memory you have to request for your job via
+    `#SBATCH --mem` or similar; when you are allocated a GPU you get
+    access to all the GPU memory on that device)
 
 ### Visualisation with Atomic Simulation Environment's GUI
 
@@ -205,7 +194,7 @@ information on how to use ASE see their main page
 
 ## Which VASP environment module should I use?
 
-In general, unless you require otherwise for the sake of consistency
+In general, unless you require otherwise for the result consistency
 with earlier work or you rely on a removed feature, we recommend the
 most recent version for which you have a license.
 
@@ -214,184 +203,6 @@ indicate the presence of various VASP extensions, but are now moving
 away from that as the number of such extensions has grown and we have
 not found any disadvantage in always including them.
 
-### VASP5
+#### VASP extensions
 
-If you do not have a license to use VASP 6 then use either
-*VASP/5.4.4-CrayIntel-23.02-19-VTST-sol* on Māui, or
-*VASP/5.4.4-intel-2020a* on Mahuika. Despite the lack of a version
-suffix, this build  includes the BEEF, VTST and VASP-Sol extensions, and
-also CUDA versions of the VASP executables.
-
-Our testing suggests that OpenMP is not working in our VASP 5 builds,
-and so it doesn't pay to set `--cpus-per-task` greater than one.
-
-#### VASP 6
-
-For most purposes we recommend *VASP/6.3.2-intel-2022a* on Mahuika,
-which includes the BEEF, VTST, VASP-Sol, DFT-D4, LIBXC, and HDF5
-extensions, and has functioning OpenMP support.
-
-VASP6 has reimplemented its GPU support in such a way that it now makes
-sense to build the GPU version separately, so to try the latest GPU
-version of VASP, we have *VASP/6.3.2-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2*.
-
-On Māui our only VASP 6 environment module is
-*VASP/6.3.2-CrayIntel-23.02-19*.
-
-### Extensions
-
-There are a number of 3rd party extensions to VASP which we include.
-None of them affect VASP unless specified in your `INCAR` file.
-
-#### VTST
-
-The [VASP Transition State
-Tools](http://theory.cm.utexas.edu/vtsttools/), a third-party package
-for finding transition states and computing rate constants.
-
-#### BEEF
-
-Our recent non-CUDA VASP executables all include BEEF ([Bayesian Error
-Estimation
-Functionals](http://suncat.stanford.edu/#/theory/facility/software/functional/)).
-
-#### VASP-Sol
-
-[VASPsol](https://github.com/henniggroup/VASPsol) is an implicit
-solvation model that describes the effect of electrostatics, cavitation,
-aa dispersion on the interaction between a solute and solvent into the
-plane-wave DFT
-
-#### DFT-D4
-
-Building on the very popular D3 model, DFT-D4 is the newest update to
-the dispersion-corrected Dnsity Functional Theory (DFT-D4 Van der Waals
-functional. This method is available for VASP6 only and is applied by
-setting IVDW=13 in the INCAR. If dispersion forces are important in your
-calculation, DFT-D4 offers a good way of describing these.
-
-#### LIBXC
-
-LIBXC is a library which contains over 400 functionals from all rungs on
-Jacob's ladder. Each functional is assigned an integer number ID which
-can be found on
-[this](https://www.tddft.org/programs/libxc/functionals/) website.
-
-To use one of the LIBXC functionals, the following must be set in your
-`INCAR`
-
-GGA=LIBXC
-
-LIBXC1 = \[string\] or \[integer\]
-
-and sometimes,
-
-LIBXC2 = \[string\] or \[integer\]
-
-As per the VASP documentation, "LIBXC2can be used only if the functional
-specified
-with[LIBXC1](https://www.vasp.at/wiki/index.php/LIBXC1 "LIBXC1")
-corresponds to only exchange and not to exchange and correlation." For
-more information on correct usage of LIBXC please see[VASP's
-documentation](https://www.vasp.at/wiki/index.php/LIBXC1) on this.
-
-### Which VASP executable should I use?
-
-VASP is unusual among scientific software packages in that some of its
-execution options are controlled neither by the nature of the input
-data, nor by command line flags, but by the executable itself. We offer
-a range of VASP executables, each built with a different set of
-compile-time options so that the resulting binary is optimised for a
-particular sort of problem.
-
-The different VASP executables are as follows:
-
-|                |                                                                                                                                   |
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Name           | Description                                                                                                                       |
-| `vasp_ncl`     | The most demanding VASP executable, suitable for non-collinear calculations (i.e., with spin-orbit coupling)                      |
-| `vasp_std`     | A VASP executable with intermediate memory demands, suitable for collinear calculations without spin-orbit coupling               |
-| `vasp_gam`     | A VASP executable with low memory demands, suitable for gamma-point calculations                                                  |
-| `vasp_gpu`     | Like `vasp_std`, but with GPU support included. Only in VASP 5, because in VASP 6 the GPU build is a separate environment module. |
-| `vasp_gpu_ncl` | Like `vasp_ncl`, but with GPU support included. Only in VASP 5, because in VASP 6 the GPU build is a separate environment module. |
-
-### OpenACC GPU version of VASP6
-
-There is now an official OpenACC GPU version of VASP, replacing the
-older CUDA GPU version. See the official VASP documentation about the
-OpenACC version of VASP:
-
-<https://www.vasp.at/wiki/index.php/OpenACC_GPU_port_of_VASP>
-
-The *\*-NVHPC-\** versions of the VASP modules on mahuika have been
-built with OpenACC support.
-
-VASP can run really well on GPUs, although how much you will benefit
-from GPUs largely depends on the specific simulation/calculation that
-you are running (simulation type, parameters, number of atoms, etc).
-Therefore, it could be useful to run some smaller benchmarks (e.g.
-reduced number of time steps) with different GPU and CPU-only
-configurations in your Slurm scripts, before moving on to run larger
-production simulations. When considering which configuration to use for
-production you should take into account performance and compute unit
-cost.
-
-General information about using GPUs on NeSI can be found
-[here](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md)
-and details about the available GPUs on NeSI
-[here](../../Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI.md).
-
-Here are some additional notes specific to running VASP on GPUs on NeSI:
-
-- The command that you use to run VASP does not change - unlike
-    the previous CUDA version, which had a `vasp_gpu` executable,
-    with the OpenACC version the usual VASP executables (`vasp_std`,
-    `vasp_gam`, `vasp_ncl`) are all built with OpenACC GPU support
-    in the *\*-NVHPC-\** modules, so just use those as usual
-- Always select one MPI process (Slurm task) per GPU, for example:
-    - Running on 1 P100 GPU  
-
-            ``` sl
-            # snippet of Slurm script
-            #SBATCH --nodes=1
-            #SBATCH --ntasks-per-node=1  # 1 task per node as we set 1 GPU per node below
-            #SBATCH --cpus-per-task=1
-            #SBATCH --gpus-per-node=P100:1
-            # end snippet
-            ```
-
-    - Running on 4 HGX A100 GPUs on a single node  
-
-            ``` sl
-            # snippet of Slurm script
-            #SBATCH --nodes=1
-            #SBATCH --ntasks-per-node=4  # 4 tasks per node as we set 4 GPUs per node below
-            #SBATCH --cpus-per-task=1
-            #SBATCH --gpus-per-node=A100:4
-            #SBATCH --partition=hgx  # required to get the HGX A100s instead of PCI A100s
-            # end snippet
-            ```
-- Multiple threads per MPI process (`--cpus-per-task`) might be
-    beneficial for performance but you should start by setting this
-    to 1 to get a baseline
-- VASP will scale better across multiple GPUs when they are all on
-    the same node compared to across multiple nodes
-- if you see memory errors like
-    `call to cuMemAlloc returned error 2: Out of memory` you
-    probably ran out of GPU memory. You could try requesting more
-    GPUs (so the total amount of available memory is higher) and/or
-    moving to GPUs with more memory (note: GPU memory is distinct
-    from the usual memory you have to request for your job via
-    `#SBATCH --mem` or similar; when you are allocated a GPU you get
-    access to all the GPU memory on that device)
-    - P100 GPUs have 12 GB GPU memory and you can have a maximum
-            of 2 per node
-    - PCI A100 GPUs have 40 GB GPU memory and you can have a
-            maximum of 2 per node
-    - HGX A100 GPUs have 80 GB GPU memory and you can have a
-            maximum of 4 per node
-- the HGX GPUs have a faster interconnect between the GPUs within
-        a single node; if using multiple GPUs you may get better
-        performance with the HGX A100s than with the PCI A100s
-- A100 GPUs have more compute power than P100s so will perform
-        better if your simulation can take advantage of the extra power
+If you are wondering what extensions our VASP modules have been built with, please email the [Support Team](mailto:support@nesi.org.nz). You can also check what precompilier options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.

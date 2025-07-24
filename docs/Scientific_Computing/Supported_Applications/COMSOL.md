@@ -55,7 +55,7 @@ distribution.
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1512               # total mem
 
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -inputfile my_input.mph
     ```
 
@@ -68,7 +68,7 @@ distribution.
     #SBATCH --time          00:05:00        # Walltime
     #SBATCH --cpus-per-task 8
     #SBATCH --mem           4G              # total mem
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph 
     ```
 
@@ -83,7 +83,7 @@ distribution.
     #SBATCH --ntasks        8         
     #SBATCH --mem-per-cpu   1500                # mem per cpu
     
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph
     ```
 
@@ -98,7 +98,7 @@ distribution.
     #SBATCH --cpus-per-task    16
     #SBATCH --mem-per-cpu      1500B             # total mem
  
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     comsol batch -mpibootstrap slurm -inputfile my_input.mph
     ```
 
@@ -115,7 +115,7 @@ distribution.
  
     module purge
 
-    module load COMSOL/{{app.machines.mahuika.versions | last}}
+    module load COMSOL/{{app.default}}
     module load MATLAB/2021b
 
     comsol mphserver -silent &
@@ -149,7 +149,7 @@ comsol matlab -mlroot <path>
 
 Where `<mlpath>` is the root directory of the MATLAB version you are using (`dirname $(dirname $(which matlab))`).
 
-## Best Practice
+## Performance
 
 COMSOL is relatively smart with it's use of resources, if possible it is
 preferable to use `--cpus-per-task` over `--ntasks`
@@ -161,3 +161,11 @@ Multithreading will benefit jobs using less than
 
 *Performance is highly depended on the model used. The above should only be used as a rough guide.*
 ![Speedup](../../assets/images/speedup_smoothed.png)
+
+## Tmpdir
+
+If you find yourself receiving the error 'Disk quota exceeded', yet `nn_storage_quota` shows plenty of room in your filesystem, you may be running out of tmpdir.
+This can be fixed by using the `--tmpdir` flag in the comsol command line, e.g. `comsol --tmpdir /nesi/nobackup/nesi99991/comsoltmp`, or by exporting `TMPDIR` before running the command, e.g. `export TMPDIR=/nesi/nobackup/nesi99991/comsoltmp`.
+
+You may also want to set this at the Java level with `export _JAVA_OPTIONS=-Djava.io.tmpdir=/nesi/nobackup/nesi99991/comsoltmp`
+

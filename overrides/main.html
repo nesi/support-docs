@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block header %}
-{% include "partials/concept_banner.html" %}
-{{ super() }}
+{% block extrahead %}
+    <meta name="google-site-verification" content="hT0t7vC46uWT3twrVxIWgfI_JSgGIKTUHQyWoeWsqgo" />
+    {{ super() }}
 {% endblock %}
 {% block site_nav %}
     {% if nav %}
@@ -31,6 +31,12 @@
     {% endif %}
 {% endblock %}
 {% block content %}
+{% if page.meta and page.meta.status and page.meta.status == "deprecated" %}
+<div class="admonition deprecated">
+<p class="admonition-title">Page Deprecated</p>
+<p>Information you find on this page may be out of date and no longer accurate.</p>
+</div>
+{% endif %}
 {{ super() }}
 
 {% if git_page_authors %}

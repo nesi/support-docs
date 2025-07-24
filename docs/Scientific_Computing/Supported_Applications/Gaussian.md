@@ -3,19 +3,12 @@ created_at: '2015-07-29T23:31:02Z'
 tags:
 - mahuika
 - chemistry
-title: Gaussian
-vote_count: 5
-vote_sum: 1
-zendesk_article_id: 207127857
-zendesk_section_id: 360000040076
+description: How to run Gaussian on the NeSI HPC
 ---
 
-
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 ## Description
 
@@ -30,13 +23,7 @@ species and compounds which are difficult or impossible to observe
 experimentally (e.g., short-lived intermediates and transition
 structures).
 
-The Gaussian home page is at <http://www.gaussian.com>.
-
-## Availablity
-
-Gaussian is installed on the Mahuika cluster.
-
-## Licensing requirements
+## Licences
 
 Gaussian is made available to researchers under closed-source,
 commercial licence agreements with individuals, research groups or
@@ -46,9 +33,7 @@ you work or study.
 
 For the sake of compliance with Gaussian licence agreements, we maintain
 a special Gaussian UNIX group. Only members of this group may access and
-use Gaussian. You can ask to join the Gaussian group by emailing our
-support team at
- {% include "partials/support_request.html" %}.
+use Gaussian. {% include "partials/support_request.html" %} to join the Gaussian group.
 
 All University of Auckland staff and students are in the Gaussian group
 automatically. If you are not a staff member or student at the
@@ -60,108 +45,109 @@ institution. We may at any time remove you from the Gaussian group if we
 believe these conditions are no longer met.
 
 If you have any questions regarding your eligibility to access Gaussian
-or any particular version or installation of it, please contact [our
-support desk {% include "partials/support_request.html" %}.
+or any particular version or installation of it, please {% include "partials/support_request.html" %}.
 
 ## Example jobs
-
-### Example job submission script
 
 The following job submission script is intended for use on Mahuika.
 Please note that it has a memory requirement built in: at least 2 GB for
 Gaussian itself, plus a further 2 GB as a buffer zone, for a minimum
 request of 4 GB (4,096 MB).
 
-``` sl
-#!/bin/bash -e
-
-#SBATCH --job-name=H2O
-#SBATCH --account=nesi99999
-#SBATCH --time=00:01:00
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --hint=nomultithread
-#SBATCH --mem=4096MB
-#SBATCH --output=%x-%j.out
-#SBATCH --error=%x-%j.err
-
-echo "============ JOB SUBMISSION SCRIPT ============"
-cat $0
-echo "==============================================="
-echo ""
-echo ""
-
-module load Gaussian/09-D.01
-
-# System name
-system="H2O"
-
-# Get the current directory
-start_dir=$(pwd)
-gjf_template="${system}.gjf.template"
-
-# Prepare a job-specific nobackup directory and set GAUSS_SCRDIR accordingly
-if [[ -n "${SLURM_ARRAY_TASK_COUNT}" && "${SLURM_ARRAY_TASK_COUNT}" -gt 1 ]]
-then
-        job_code="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
-else
-        job_code="${SLURM_JOB_ID}"
-fi
-export GAUSS_SCRDIR="/nesi/nobackup/${SLURM_JOB_ACCOUNT}/mahuika_job_${job_code}"
-/usr/bin/mkdir -p "${GAUSS_SCRDIR}"
-
-# Calculate the number of CPUs to use within Gaussian
-if [[ -n "${SLURM_CPUS_PER_TASK}" ]]
-then
-        gaussian_ncpus="${SLURM_CPUS_PER_TASK}"
-else
-        gaussian_ncpus=1
-fi
-
-# Calculate the amount of memory to use within Gaussian
-# That is, amount of memory requested of Slurm minus 2 GB
-if [[ -n "${SLURM_MEM_PER_NODE}" && "${SLURM_MEM_PER_NODE}" -ge 4096 ]]
-then
-        gaussian_memory=$((${SLURM_MEM_PER_NODE} - 2048))
-else
-        /usr/bin/echo "Error: Not enough RAM requested (${SLURM_MEM_PER_NODE})." >&2
-        /usr/bin/echo "       Please set \"#SBATCH --mem\" to at least 4096 MB." >&2
-        exit 2
-fi
-
-gjf_working_copy="${GAUSS_SCRDIR}/${system}.gjf"
-gaussian_checkpoint="${GAUSS_SCRDIR}/${system}.chk"
-/usr/bin/sed -e "s/<<NUMBER_OF_CORES>>/${gaussian_ncpus}/" "${gjf_template}" | \
-        /usr/bin/sed -e "s/<<MEMORY>>/${gaussian_memory}/" | \
-        /usr/bin/sed -e "s:<<CHECKPOINT_FILE>>:${gaussian_checkpoint}:" > "${gjf_working_copy}"
-
-srun g09 < "${gjf_working_copy}"
-```
-
-### Example template input file
-
 Any Gaussian input file must end with a blank line. We also recommend
-specifying a checkpoint file using the %Chk directive, as a saved
+specifying a checkpoint file using the `%Chk` directive, as a saved
 checkpoint file facilitates recovery and restart if your Gaussian job
 fails or is killed by the scheduler. In this case, the value of the
 checkpoint file is a placeholder (as are the number of cores and the
 memory) and is replaced with a real value when the Slurm job starts.
 
-``` sh
-$RunGauss$
+### Shared Memory
 
-%NProcShared=<<NUMBER_OF_CORES>>
-%Mem=<<MEMORY>>MB
-%Chk=<<CHECKPOINT_FILE>>
+``` sl
+#!/bin/bash -e
 
-#P HF/STO-3G SP
+#SBATCH --job-name=H2O_shared_memory
+#SBATCH --account=nesi99999
+#SBATCH --time=00:15:00
+#SBATCH --cpus-per-task=8       # Note, Gaussian will use twice the number of CPUs specified by --cpus-per-task.
+#SBATCH --hint=nomultithread
+#SBATCH --mem=8G
 
-Single-point energy calculation on water
+module load Gaussian/09-D.01
+
+INPUT_FILE="H2O.gjf"
+
+GAUSSIAN_MEM="$((${SLURM_MEM_PER_NODE} - 2048))"
+
+# It is reconmended to prepare a job-specific scratch directory
+export GAUSS_SCRDIR="/nesi/nobackup/${SLURM_JOB_ACCOUNT}/gaussian_job_${SLURM_JOB_ID}"
+mkdir -p "${GAUSS_SCRDIR}"
+
+cat << EOF > $INPUT_FILE
+
+%CPU=$(taskset -cp $$ | awk -F':' '{print $2}')
+%Mem=${GAUSSIAN_MEM}MB
+%Chk=${INPUT_FILE}.chk
+
+# HF/6-31G(d) Opt=ModRedun Test
+
+water geo optimisation HF/6-31G(d)
 
 0 1
 H
 O 1 0.95
 H 2 0.95 1 109.0
+
+
+EOF
+
+srun g09 < "${INPUT_FILE}"
+
+```
+
+### Distributed Memory
+
+``` sl
+#!/bin/bash -e
+
+#SBATCH --job-name=H2O_distributed_memory
+#SBATCH --account=nesi99999
+#SBATCH --time=00:15:00
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=4
+#SBATCH --hint=nomultithread
+#SBATCH --mem=4G
+
+module load Gaussian/09-D.01
+
+INPUT_FILE="H2O.gjf"
+
+GAUSSIAN_MEM="$((${SLURM_MEM_PER_NODE} - 2048))"
+
+# It is reconmended to prepare a job-specific scratch directory
+export GAUSS_SCRDIR="/nesi/nobackup/${SLURM_JOB_ACCOUNT}/gaussian_job_${SLURM_JOB_ID}"
+mkdir -p "${GAUSS_SCRDIR}"
+
+cat << EOF > $INPUT_FILE
+
+%LindaWorkers=$(for n in $(srun hostname | sort -u);do printf "${n}:${SLURM_NPROCS},"; done)
+%Mem=${GAUSSIAN_MEM}MB
+%Chk=${INPUT_FILE}.chk
+
+# HF/6-31G(d) Opt=ModRedun Test
+
+water geo optimisation HF/6-31G(d)
+
+0 1
+H
+O 1 0.95
+H 2 0.95 1 109.0
+
+
+EOF
+
+srun g09 < "${INPUT_FILE}"
+
 ```
 
 ## Further notes
@@ -172,20 +158,19 @@ It is important to ensure that the memory and number of cores in the
 Gaussian input file itself are consistent with what you set in your job
 submission script.
 
-The key properties are `%NProcShared` and `%Mem`:
+The key properties are `%CPU` and `%Mem`:
 
-- `%NProcShared` should be set to the number of CPU cores you intend
+- `%CPU` should be set to the number of CPU cores you intend
     to use, matching the value of the `-c` or `--cpus-per-task`
-    directive in the Slurm job file.
+    directive in the Slurm job file. Because Slurm assigns which CPUs of the compute node your jobs lands on, the 'taskset' command is needed to identify what CPUs are available to your job.
 - `%Mem` should be set to the amount of memory you intend to use. It
-    should be about 2 GB (2,048 MB) less than the value of `--mem` in
-    the Slurm job submission script. Note that `--mem` is interpreted as
+    should be about 2 GB (2,048 MB) less than the value of `--mem` in
+    the Slurm job submission script. Note that `--mem` is interpreted as
     being in MB rather than GB unless otherwise specified (i.e., with a
     "G" on the end).
 
-If you use the example Slurm script and template gjf file provided above
-(with appropriate modifications for your chemical system and desired
-calculation), this should happen automatically.
+If you use the example Slurm script and template `.gjf` file provided above
+(with appropriate modifications for your chemical system and desired calculation), this should happen automatically.
 
 ### Saving temporary working files (for advanced users)
 
@@ -194,7 +179,7 @@ If you want Gaussian's temporary files (`*.inp`, `*.d2e`, `*.int`,
 achieve this by setting the `GAUSS_SCRDIR` environment variable in your
 job submission script, for instance:
 
-``` bash
+```bash
 export GAUSS_SCRDIR=/nesi/nobackup/nesi99999/mahuika_job_123456
 ```
 

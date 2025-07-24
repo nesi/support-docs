@@ -1,0 +1,14 @@
+- title: Getting Started
+  content: How to get started with NeSI's new HPC & AI platforms.
+  url: General/Announcements/HPC3.md
+  image: ./assets/icons/material/widget-red.svg
+
+- title: How-to videos
+  content: Answers to some of your platform questions.
+  url: Getting_Started/Getting_Help/Introductory_Material.md
+  image: ./assets/icons/material/help.svg
+
+- title: Latest platform news
+  content: Status updates about the migration process.
+  url: General/Announcements/platform_refresh_updates.md
+  image: ./assets/icons/material/update.svg

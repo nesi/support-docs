@@ -29,7 +29,7 @@ we may install it.
 module load ANSYS
 ```
 
-Will load the default version of ANSYS, in this case {{applications.ANSYS.machines.mahuika.default}}, however
+Will load the default version of ANSYS, in this case {{applications.ANSYS.default}}, however
 this may change.
 
 ``` sh

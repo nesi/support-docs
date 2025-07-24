@@ -1,14 +1,9 @@
 ---
 created_at: '2015-10-15T02:15:46Z'
 tags:
-- mahuika
-- application
 - engineering
-title: ANSYS
-vote_count: 3
-vote_sum: 3
-zendesk_article_id: 212642617
-zendesk_section_id: 360000040076
+- cfd
+- fea
 ---
 
 {% set app_name = page.title | trim %}
@@ -22,33 +17,33 @@ zendesk_section_id: 360000040076
 ## Available Modules
 
 {% include "partials/app/app_version.html" -%}
-
+<!-- 
 ## Licences
 
 The following network licence servers can be accessed from the NeSI cluster.
 
 {% include "partials/app/app_network_licence.html" -%}
 
-If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
+If you do not have access, or want a server connected {% include "partials/support_request.html" %}. -->
 
 ### License Types
 
 The three main ANSYS licenses are;
 
-- **ANSYS Teaching License** (aa\_t)
+- **ANSYS Teaching License** (`aa_t`)
 
     This is the default license type, it can be used on up to 6 CPUs on
     models with less than 512k nodes
 
-- **ANSYS Research license** (aa\_r)
+- **ANSYS Research license** (`aa_r`)
 
     No node restrictions. Can be used on up to 16 CPUs, for every
-    additional CPU over 16 you must request additional 'aa\_r\_hpc'
+    additional CPU over 16 you must request additional `aa_r_hpc`
     licenses.
 
-- **ANSYS HPC License** (aa\_r\_hpc)**  
-    **One of these is required for each CPU over 16 when using
-    a research license.
+- **ANSYS HPC License** (`aa_r_hpc`)  
+    One of these is required for each CPU over 16 when using
+    a research license.
 
 ### License Order
 
@@ -58,7 +53,7 @@ research license before submitting a job will **cause the job to fail**.
 
 The license order can be changed in workbench under tools &gt; license
 preferences (provided you have X11 forwarding set up), or by running
-either of the following (ANSYS module must be loaded first using
+either of the following (ANSYS module must be loaded first using
 `module load ANSYS`).
 
 ``` sh
@@ -90,11 +85,10 @@ Below is an example of this from a fluent script.
 #SBATCH --job-name      Fluent_Array
 #SBATCH --time          01:00:00          # Wall time
 #SBATCH --mem           512MB             # Memory per node
-#SBATCH --licenses      aa_r:1       # One license token per CPU, less 16
 #SBATCH --array         1-100 
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/{{app.machines.mahuika.versions | last}} 
+module load ANSYS/{{app.default}} 
 
 JOURNAL_FILE=fluent_${SLURM_JOB_ID}.in
 cat  ${JOURNAL_FILE}
@@ -106,18 +100,18 @@ EOF
 
 # Use one of the -v options 2d, 2ddp, 3d, or 3ddp
 fluent -v3ddp -g -i ${JOURNAL_FILE}
-rm ${JOURNAL_FILE}
+rm ${JOURNAL_FILE}
 ```
 
-`JOURNAL_FILE` is a variable holding the name of a file, the next line
+`JOURNAL_FILE` is a variable holding the name of a file, the next line
 `cat` creates the file then writes a block of text into it. The block of
 text written is everything between an arbitrary string (in this case
 `EOF`) and its next occurrence.
 
 In this case (assuming it is the first run of the array and the
-jobid=1234567), the file  `fluent_1234567.in` will be created:
+jobid=1234567), the file `fluent_1234567.in` will be created:
 
-``` bash
+``` fluent
 /file/read-case-data testCase1
 ; This will read testCase1.cas and testCase1.dat
 ; Inputs can be read separately with 'read-case' and 'read-data'
@@ -128,12 +122,12 @@ jobid=1234567), the file  `fluent_1234567.in` will be created:
 /file/write-case-data testCase1 ok
 ; Since our output name is the same as our input, we have to provide conformation to overwrite, 'ok' 
 
-exit yes
-; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).
+exit yes
+; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).
 ```
 
-then called as an input `fluent -v3ddp -g -i fluent_1234567.in`,  
-then deleted `rm fluent_1234567.in`
+then called as an input `fluent -v3ddp -g -i fluent_1234567.in`,  
+then deleted `rm fluent_1234567.in`
 
 This can be used with variable substitution to great effect as it allows
 the use of variables in what might otherwise be a fixed input.
@@ -169,43 +163,42 @@ Must have one of these flags.
     #!/bin/bash -e
 
     #SBATCH --job-name      Fluent-Serial
-    #SBATCH --licenses      aa_r@uoa_foe:1    #One research license.
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled
-    #SBATCH --mem           512MB             # total memory (per node)
+    #SBATCH --mem           512MB             # Total memory (per node)
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
 
     JOURNAL_FILE=/share/test/ansys/fluent/wing.in
     fluent 3ddp -g -i ${JOURNAL_FILE}
     ```
 
 === "Distributed Memory Job"
-    Multiple processes each with a single thread.
+    Multiple processes each with a single thread.
     Not limited to one node.
-    Model will be segmented into `-t` pieces which
-    should be equal to `--ntasks`.`
+    Model will be segmented into `-t` pieces which
+    should be equal to `--ntasks`.
     Each task could be running on a different node leading to increased
     communication overhead. Jobs can be limited to a single node by
-    adding `--nodes=1` however this will increase
-    your time in the queue as contiguous cpu's are harder to
+    adding `--nodes=1` however this will increase
+    your time in the queue as contiguous cpu's are harder to
     schedule.
 
-    ```slurm
+    ```sl
     #!/bin/bash -e
 
     #SBATCH --job-name          Fluent-Dis
+    #SBATCH --account           nesi99991
     #SBATCH --time              00:05:00          # Walltime
-    #SBATCH --licenses          aa_r@uoa_foe:1,aa_r_hpc@uoa_foe:20
-    ##One research license, (ntasks-16) hpc licenses
-    #SBATCH --nodes             1                 # Limit to n nodes (Optional)
+    #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            8                 # Number processes
     #SBATCH --cpus-per-task     1                 # Double if hyperthreading enabled
     #SBATCH --mem-per-cpu       1500              # Fine for small jobs; increase if needed
     #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     JOURNAL_FILE=/share/test/ansys/fluent/wing.in
     fluent 3ddp -g -t ${SLURM_NTASKS} -i ${JOURNAL_FILE}
     ```
@@ -216,13 +209,13 @@ While it will always be more time and resource efficient using a slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
 the login node, otherwise use of an [slurm interactive
-session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md)
+session](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md)
 is recommended.
 
 For example.
 
 ``` sh
-salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time 04:00:00
+salloc --job-name flUI --nodes 4 --ntasks-per-node 8 --mem-per-cpu 1500 --time 04:00:00
 ```
 
 Will return;
@@ -237,7 +230,7 @@ Will return;
 ```
 
 !!! tip
-     Include all the commands you would usually use in your slurm header
+     Include all the commands you would usually use in your Slurm header
      here.
 
 Once you have your allocation, run the command
@@ -251,7 +244,7 @@ then click launch.
 
 If everything has set up correctly you should see a printout of the
 hostnames with the resources requested. Note: 'host' should be
-mahuika0[1-2].
+login[1-2].
 
 ``` sh
 n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
@@ -270,11 +263,11 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 
 It is best practice when running long jobs to enable autosaves.
 
-``` sh
-/file/autosave/data-frequency 
+```fluent
+/file/autosave/data-frequency 500
 ```
 
-Where `` is the number of iterations to run before creating a save.
+Where `500` is the number of iterations to run before creating a save.
 
 In order to save disk space you may also want to include the line
 
@@ -283,7 +276,7 @@ In order to save disk space you may also want to include the line
 Including the following code at the top of your journal file will allow
 you to interrupt the job.
 
-``` sh
+```fluent
 (set! checkpoint/exit-filename "./exit-fluent")
 ```
 
@@ -294,7 +287,7 @@ simulation at that point.
 
 ### User Defined Functions
 
-When compiling code, make sure to `module load gimkl` in addition to the
+When compiling code, make sure to `module load foss` in addition to the
 ANSYS module.
 
 #### Case Definition
@@ -371,7 +364,7 @@ Error: chip-exec: function
 might be using interpreted func
 
 solution specify as relative path, or unload compiled lib before saving
-.cas file.
+`*.cas` file.
 
 ## CFX
 
@@ -381,40 +374,39 @@ solution specify as relative path, or unload compiled lib before saving
     Single *process* with a single *thread* (2 threads if hyperthreading enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
-    ```sh
+    ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name      CFX-serial
-    #SBATCH --licenses      aa_r@uoa_foe:1    #One research license
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
-    #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled
     #SBATCH --mem           512MB             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
 
     input="/share/test/ansys/cfx/pump.def"
     cfx5solve -batch -def ${input}
     ```
 
 === "Distributed Memory"
-    Multiple *processes* each with a single *thread*.
+    Multiple *processes* each with a single *thread*.
     Not limited to one node.
-    Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
-    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase you time in the queue as contiguous cpu's are harder to schedule.
+    Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
+    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase you time in the queue as contiguous cpu's are harder to schedule.
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name          ANSYS-Dis
-    #SBATCH --time              00:05:00          # Walltime
-    #SBATCH --licenses          aa_r@uoa_foe:1,aa_r_hpc@uoa_foe:20
-    ##One research license, (ntasks-16) hpc licenses
-    #SBATCH --nodes             1                 # Limit to n nodes (Optional)
+    #SBATCH --account           nesi99991
+    #SBATCH --time              01:00:00          # Walltime
+    #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            36                # Number processes
-    #SBATCH --cpus-per-task     1                 # Double if hyperthreading enabled
     #SBATCH --mem-per-cpu       512MB             # Standard for large partition
     #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     input="/share/test/ansys/mechanical/structural.dat" 
     cfx5solve -batch -def "${input} -part ${SLURM_NTASKS}
     ```
@@ -448,13 +440,14 @@ xvfb-run cfx5post input.cse
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name      ANSYS-serial
-    #SBATCH --licenses aa_r@uoa_foe:1
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1500M             # total mem
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -i "${input}
@@ -465,49 +458,50 @@ xvfb-run cfx5post input.cse
     Single *process* multiple *threads.
     All threads must be on the same node, limiting scalability.
 
-    Number of threads is set by `-np` and should be equal to`--cpus-per-task`.
-    Not recommended if using more than 8 cores (16 CPUs if hyperthreading enabled).
+    Number of threads is set by `-np` and should be equal to`--cpus-per-task`.
+    Not recommended if using more than 8 cores (16 CPUs if hyperthreading enabled).
 
     ```sl
     #!/bin/bash -e
+
     #SBATCH --job-name      ANSYS-Shared
-    #SBATCH --licenses aa_r@uoa_foe:1
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --cpus-per-task 8                 # Double if hyperthreading enabled
     #SBATCH --mem           12G               # 8 threads at 1500 MB per thread
     #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -np ${SLURM_CPUS_PER_TASK} -i ${input}
     ```
 
 === "Distributed Memory"
 
-    Multiple processes each with a single thread.
+    Multiple processes each with a single thread.
     Not limited to one node.
-    Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
+    Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
     Each task could be running on a different node leading to increased communication overhead.
-    Jobs can be limited to a single node by adding  `--nodes=1` however this will increase your time in the queue as contiguous cpu's are harder to schedule.
+    Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the queue as contiguous cpu's are harder to schedule.
     Distributed Memory Parallel is currently not supported on Māui.
 
     ```sl
     #!/bin/bash -e
 
     #SBATCH --job-name          ANSYS-Dis
-    #SBATCH --licenses aa_r@uoa_foe:1,aa_r_hpc@uoa_foe:4
+    #SBATCH --account           nesi99991
     #SBATCH --time              00:05:00          # Walltime
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            16                # Number processes
     #SBATCH --mem-per-cpu       1500
     #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
-    module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+    module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -dis -np ${SLURM_NTASKS} -i "${input}"
     ```
 
-    Not all MAPDL solvers work using distributed memory. 
+    Not all MAPDL solvers work using distributed memory. 
 
     |                           |     |
     |---------------------------|-----|
@@ -533,14 +527,16 @@ xvfb-run cfx5post input.cse
 
 ``` sl
 #!/bin/bash -e
+
 #SBATCH --job-name      LS-DYNA
-#SBATCH --account       nesi99999         # Project Account
+#SBATCH --account       nesi99991         # Project Account
 #SBATCH --time          01:00:00          # Walltime
+#SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   512MB             # Memory per cpu
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 input=3cars_shell2_150ms.k
 lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
 ```
@@ -565,7 +561,7 @@ The following FENSAP solvers are compatible with MPI
 #### With GUI
 
 If you have set up X-11 forwarding, you may launch the FENSAP ice using
-the command `fensapiceGUI` from within your FENSAP project directory.
+the command `fensapiceGUI` from within your FENSAP project directory.
 
 1. Launch the run and select the desired
 number of (physical) CPUs.
@@ -574,8 +570,9 @@ number of (physical) CPUs.
 3. Under 'Additional mpirun parameters' add
     your inline SLURM options. You should include at least.
 
-    ```sl
+    ```sh
     --job-name my_job
+    --account nesi99991
     --mem-per-cpu memory
     --time time
     --licenses 
@@ -596,7 +593,7 @@ opening the GUI within the project folder.
     may not be suitable in all cases.
     -   Closing the session or losing connection will prevent the next
         stage of the job starting (currently executing step will continue
-        to run).  It is a good idea to launch the GUI inside a tmux/screen
+        to run).  It is a good idea to launch the GUI inside a tmux/screen
         session then send the process to background to avoid this.
     -   Each individual step will be launched with the same parameters
         given in the GUI.
@@ -624,8 +621,8 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a slurm script or by [interactive
-session](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md).
+ANSYS-EM jobs can be submitted through a slurm script or by 
+[interactive session](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md).
 
 ### RSM
 
@@ -640,22 +637,24 @@ not working for you.
 ```sl
 #!/bin/bash -e
 
-#SBATCH --time                04:00:00
-#SBATCH --nodes               2
-#SBATCH --ntasks-per-node     36
-#SBATCH --mem-per-cpu         1500
+#SBATCH --job-name         EDT
+#SBATCH --account          nesi99991
+#SBATCH --time             04:00:00
+#SBATCH --nodes            2          # (OPTIONAL) Limit to n nodes
+#SBATCH --ntasks-per-node  36
+#SBATCH --mem-per-cpu      1500
 
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 INPUTNAME="Sim1.aedt"
 startRSM
 
-ansysedt -ng -batchsolve -distributed -machinelistfile=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool" $INPUTNAME
+ansysedt -ng -batchsolve -distributed -machinelistfile=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool" $INPUTNAME
 ```
 
 All batch options can be listed using
 
 ``` sh
-ansysedt -batchoptionhelp
+ansysedt -batchoptionhelp
 ```
 
 (Note, this requires a working X-server)
@@ -663,7 +662,7 @@ ansysedt -batchoptionhelp
 !!! info
      Each batch option must have it's own flag, e.g.
      ``` sh
-     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
+     -batchoptions "HFSS/HPCLicenseType=Pool" -batchoptions "Desktop/ProjectDirectory=$PWD" -batchoptions "HFSS/MPIVendor=Intel"
      ```
 
 ### EM Interactive
@@ -677,7 +676,7 @@ salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1
 Then load your desired version of ANSYS
 
 ``` sh
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 ```
 
 Run the script to start startRSM, this will start ANSYS remote solver on
@@ -690,7 +689,7 @@ startRSM
 Then launch ansys edt with the following flags
 
 ``` sh
-ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
+ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Pool HFSS/MPIVendor=Intel HFSS/UseLegacyElectronicsHPC=1"
 ```
 
 ## Multiphysics
@@ -701,13 +700,14 @@ ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=P
 #!/bin/bash -e
 
 #SBATCH --job-name      ANSYS_FSI
-#SBATCH --account       nesi99999         # Project Account
+#SBATCH --account       nesi99991         # Project Account
 #SBATCH --time          01:00:00          # Walltime
+#SBATCH --nodes             1             # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   2GB               # Memory per CPU
 #SBATCH --hint          nomultithread     # No hyperthreading
 
-module load ANSYS/{{ applications.ANSYS.machines.mahuika.versions | last }}
+module load ANSYS/{{ applications.ANSYS.default }}
 
 COMP_CPUS=$((SLURM_NTASKS-1))
 MECHANICAL_CPUS=1
@@ -795,20 +795,20 @@ submit batch jobs, but when interactivity is really needed alongside
 more CPU power and/or memory than is reasonable to take from a login
 node (maybe postprocessing a large output file) then an alternative
 which may work is to run the GUI frontend on a login node while the MPI
-tasks it launches run on a compute node. This requires using *salloc*
-instead of *sbatch*, for example:
+tasks it launches run on a compute node. This requires using `salloc`
+instead of `sbatch`, for example:
 
 ``` bash
-salloc -A nesi99999 -t 30 -n 16 -C avx --mem-per-cpu=512MB bash -c 'module load ANSYS; fluent -v3ddp -t$SLURM_NTASKS' 
+salloc -A nesi99991 -t 30 -n 16 -C avx --mem-per-cpu=512MB bash -c 'module load ANSYS; fluent -v3ddp -t$SLURM_NTASKS' 
 ```
 
 As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
---mail-type=BEGIN and --mail-user= options.
+--mail-type=BEGIN and --mail-user=<email address> options.
 
 ### Hyperthreading
 
-Utilising hyperthreading (ie: removing the "--hint=nomultithread" sbatch
+Utilising hyperthreading (i.e.: removing the "--hint=nomultithread" sbatch
 directive and doubling the number of tasks) will give a small speedup on
 most jobs with less than 8 cores, but also doubles the number of
 `aa_r_hpc` license tokens required.

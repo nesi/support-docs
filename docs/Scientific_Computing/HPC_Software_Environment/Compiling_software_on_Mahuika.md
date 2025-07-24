@@ -2,16 +2,13 @@
 created_at: '2018-07-12T03:48:47Z'
 tags: []
 title: "Compiling software: Mahuika"
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000329015
-zendesk_section_id: 360000040056
+status: deprecated
 ---
 
 ## Where to build
 
 You may compile (build) software on the Mahuika login nodes,
-`login.mahuika.nesi.org.nz`. Please be aware that these login nodes are
+`login.hpc.nesi.org.nz`. Please be aware that these login nodes are
 limited and shared resources. Please limit the amount of processes on
 these nodes. For example, use `make -j 5` instead of `make -j`. If you
 require many CPU cores or long run times for your build process, please
@@ -27,9 +24,9 @@ loading one of the toolchains:
 The GNU and Intel compilers can be accessed by loading one of the
 toolchains:
 
-- `module load gimkl/{% if applications.gimkl.machines.mahuika.default == 'latest' -%}{{  applications.gimkl.machines.mahuika.versions | last }}{% else -%}{{ applications.gimkl.machines.mahuika.versions.default }}{% endif -%}` - the default toolchain, providing GNU
+- `module load gimkl/{% if applications.gimkl.default == 'latest' -%}{{  applications.gimkl.default }}{% else -%}{{ applications.gimkl.versions.default }}{% endif -%}` - the default toolchain, providing GNU
     compilers (version 9.2.0), Intel MPI and Intel MKL
-- `module load intel/{% if applications.gimkl.machines.mahuika.default == 'latest' -%}{{  applications.gimkl.machines.mahuika.versions | last }}{% else -%}{{ applications.gimkl.machines.mahuika.versions.default }}{% endif -%}` - Intel compilers (version 2020.0.166),
+- `module load intel/{% if applications.gimkl.default == 'latest' -%}{{  applications.gimkl.default }}{% else -%}{{ applications.gimkl.versions.default }}{% endif -%}` - Intel compilers (version 2020.0.166),
     Intel MPI and Intel MKL
 
 There are also various smaller "sub-toolchains" which can be used in the

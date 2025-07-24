@@ -7,6 +7,8 @@ vote_count: 0
 vote_sum: 0
 zendesk_article_id: 9329030038543
 zendesk_section_id: 360001091155
+search:
+  boost: 0.1
 ---
 
 ## New and Improved
@@ -18,7 +20,7 @@ zendesk_section_id: 360001091155
     items under Accounts.
 - On the Project page and New Allocation Request page, tool tip text
     referring to
-    [nn\_corehour\_usage](../../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checking_your_projects_usage_using_nn_corehour_usage.md)
+    [nn\_corehour\_usage](../../../Scientific_Computing/Batch_Jobs/Checking_your_projects_usage_using_nn_corehour_usage.md)
     will appear when you hover over the Mahuika Compute Units
     information.
 

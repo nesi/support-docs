@@ -15,8 +15,7 @@ for a new project to carry on the same work.
 
 We currently offer two sorts of extensions:
 
-- A new allocation of computing resources (usually compute units on
-    Mahuika or node hours on Māui)
+- A new allocation of computing resources,  
 - A project extension without a new allocation of computing resources.
 
 ## Will my project qualify for an extension?
@@ -50,7 +49,7 @@ qualify for an extension:
 
 A request for a project extension should come from the project owner. If
 the project owner is a student, we will include the supervisor on the
-extension correspondence. The project supervisor may disallow an
+extension correspondence. The project supervisor may disallow an
 extension request.
 
 ## How do I request an extension?
@@ -105,6 +104,6 @@ project extension. Please note that we are unlikely to let a project
 continue without a compute allocation for more than six months at a
 time. If you expect that your project will be suspended for more than
 six months, we encourage you to enquire about our [Long-Term Storage
-Service](../../Storage/Nearline_long_term_storage/Nearline_Long_Term_Storage_Service.md) or
+Service](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md) or
 to move your research data off our facility and make arrangements with
 your project's host institution for long-term data storage.

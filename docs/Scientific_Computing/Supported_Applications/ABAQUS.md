@@ -7,11 +7,6 @@ tags:
 - mpi
 - omp
 - fea
-title: ABAQUS
-vote_count: 2
-vote_sum: 0
-zendesk_article_id: 212457807
-zendesk_section_id: 360000040076
 ---
 
 {% set app_name = page.title | trim %}
@@ -47,13 +42,13 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 
 !!! tip
      Required ABAQUS licences can be determined by this simple and
-     intuitive formula <code>⌊ 5 x N<sup>0.422</sup> ⌋</code> where `N` is number
+     intuitive formula <code>⌊ 5 x N<sup>0.422</sup> ⌋</code> where `N` is number
      of CPUs.
 
-[Hyperthreading](../../Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md)
+[Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md)
 can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
-be worth adding  `#SBATCH --hint nomultithread` to your slurm script if
+be worth adding `#SBATCH --hint nomultithread` to your slurm script if
 licence tokens are your main limiting factor.
 
 ## Solver Compatibility
@@ -62,7 +57,7 @@ Not all solvers are compatible with all types of parallelisation.
 
 |                   |                    |           |        |         |
 |-------------------|--------------------|-----------|--------|---------|
-|                   | Element operations | Iterative | Direct | Lanczos |
+|                   | Element operations | Iterative | Direct | Lanczos |
 | `mp_mode=threads` | ✖                  | ✔        | ✔     | ✔       |
 | `mp_mode=mpi`     | ✔                  | ✔        | ✖     | ✖       |
 
@@ -90,7 +85,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --time          00:05:00 # Walltime
     #SBATCH --cpus-per-task 1
     #SBATCH --mem           1500          # total mem
-    module load ABAQUS/{{app.machines.mahuika.versions | last}}
+    module load ABAQUS/{{app.default}}
     abaqus job="propeller_s4rs_c3d8r" verbose=2 interactive
     ```
 
@@ -109,7 +104,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           2G             # total mem
-    module load ABAQUS/{{app.machines.mahuika.versions}}
+    module load ABAQUS/{{app.default}}
     abaqus job="propeller_s4rs_c3d8r cpus=${SLURM_CPUS_PER_TASK} \
         mp_mode=threads verbose=2 interactive
     ```
@@ -128,19 +123,19 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --mem           2G         # total mem
 
     module load imkl
-    module  load ABAQUS/{{app.machines.mahuika.versions | last}}
+    module  load ABAQUS/{{app.default}}
     abaqus job="propeller_s4rs_c3d8r" user=my_udf.f90 \
         cpus=${SLURM_CPUS_PER_TASK} mp_mode=threads verbose=2 interactive
     ```
 
 === "Distributed Memory"
     `mp_mode=mpi`
-    Multiple processes each with a single *thread*. Not limited to one node.
-    Model will be segmented into `-np` pieces which
-    should be equal to `--ntasks`
+    Multiple processes each with a single *thread*. Not limited to one node.
+    Model will be segmented into `-np` pieces which
+    should be equal to `--ntasks`
     Each task could be running on a different node leading to increased
-    communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the
-    queue as contiguous cpu's are harder to schedule.
+    communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the
+    queue as contiguous cpu's are harder to schedule.
     This is the default method if `mp_mode` is left
     unspecified.
 
@@ -153,7 +148,7 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --mem-per-cpu   1500          # Each CPU needs it&#39;s own.
     #SBATCH --nodes         1
     
-    module load ABAQUS/{{app.machines.mahuika.versions | last}}
+    module load ABAQUS/{{app.default}}
     abaqus job="propeller_s4rs_c3d8r" cpus=${SLURM_NTASKS} mp_mode=mpi \
         verbose=2 interactive
     ```
@@ -171,8 +166,8 @@ Not all solvers are compatible with all types of parallelisation.
     #SBATCH --time          00:05:00       # Walltime</span></span>
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           4G         # total mem</span></span>
-    #SBATCH --gpus-per-node
-    module load ABAQUS/{{app.machines.mahuika.versions | last}}
+    #SBATCH --gpus-per-node 1
+    module load ABAQUS/{{app.default}}
     module load CUDA
     abaqus job="propeller_s4rs_c3d8r" cpus=${SLURM_CPUS_PER_TASK} \
     gpus=${SLURM_GPUS_PER_NODE} mp_mode=threads \
@@ -195,7 +190,7 @@ in your local `.env` file.
 ## Environment file
 
 The [ABAQUS environment
-file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
+file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
 a number of parameters that define how the your job will run, some of
 these you may with to change.
 
