@@ -1,11 +1,9 @@
 ---
 created_at: '2019-02-21T02:46:25Z'
-tags: []
-title: GROMACS
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360000792856
-zendesk_section_id: 360000040076
+tags: 
+  -  molecular dynamics
+  -  chemistry
+description: How to run GROMACS on the NeSI cluster
 ---
 
 
@@ -25,14 +23,13 @@ but since GROMACS is extremely fast at calculating the nonbonded
 interactions (that usually dominate simulations) many groups are also
 using it for research on non-biological systems, e.g. polymers.
 
-GROMACS is available to anyone at no cost under the terms of [the GNU
-Lesser General Public
-Licence](http://www.gnu.org/licenses/lgpl-2.1.html). Gromacs is a joint
-effort, with contributions from developers around the world: users agree
+GROMACS is available to anyone at no cost under the terms of 
+[the GNU Lesser General Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html). 
+Gromacs is a joint effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software.
 
-## Job submission
+## Performance
 
 GROMACS performance depends on several factors, such as usage (or lack
 thereof) of GPUs, the number of MPI tasks and OpenMP threads, the load
@@ -42,7 +39,7 @@ being performed, force field used and of course the simulated system.
 For a complete set of GROMACS options, please refer to GROMACS
 documentation.
 
-Within each GRMACS environment module we have two versions of GROMACS, 
+Within each GROMACS environment module we have two versions of GROMACS, 
 one built with with "thread-MPI", which is really just 
 multithreading, and one with real MPI which can run across multiple nodes in
 a distributed job, ie: with `--ntasks` > 1. 
@@ -64,11 +61,10 @@ off not using `gmx-mpi`. The GROMACS documentation says on this:
     does in some cases make mdrun run slightly faster than with MPI.
 
 !!! quote ""
-
     Thread-MPI is compatible with most mdrun features and parallelization schemes, 
     including OpenMP, GPUs; it is not compatible with MPI and multi-simulation runs.
 
-### GPU support
+## CUDA
 
 GROMACS is built with CUDA support, but that is optional to use - it will run without a GPU.
 
@@ -80,15 +76,11 @@ more efficient than MPI-only parallelisation.  With hybrid parallelisation, it i
 be the number of CPUs per task. You can make sure the value is correct
 by using `-ntomp ${SLURM_CPUS_PER_TASK}`. 
 
-If you use a GPU together with MPI, you may need to set CRAY_CUDA_MPS=1 to enable multiple tasks on 
-one node to access the same GPU device at the same time.
-
-### Checkpointing and restarting
+## Checkpointing
 
 The `-cpt 30` option instructs Gromacs to
 write a full checkpoint file every 30 minutes. You can restart from a
 checkpoint file using the `-cpi` flag, thus: `-cpi state.cpt`.
-
 
 ## Further Documentation
 
