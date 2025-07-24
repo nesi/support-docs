@@ -17,11 +17,11 @@ For more information see the [How-to guide](how_to_guide.md).
 
 A number of interactive applications can be accessed through NeSI OnDemand, including:
 
-- [JupyterLab](interactive_apps/JupyterLab/index.md)
-- [RStudio](interactive_apps/RStudio.md)
-- [Code server](interactive_apps/code_server.md)
-- [Virtual desktop](interactive_apps/virtual_desktop.md)
-- [MATLAB](interactive_apps/MATLAB.md) - currently under development, let us know if this is of interest
+- [JupyterLab](Apps/JupyterLab/index.md)
+- [RStudio](Apps/RStudio.md)
+- [Code server](Apps/code_server.md)
+- [Virtual desktop](Apps/virtual_desktop.md)
+- [MATLAB](Apps/MATLAB.md) - currently under development, let us know if this is of interest
 
 ## Release notes
 

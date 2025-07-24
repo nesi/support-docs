@@ -20,11 +20,6 @@ new projects is as follows:
     your project team is all assembled and has the skills needed to
     start using our systems (for example, basic familiarity with the
     Linux command line).  
-    If you are a NIWA researcher, we will also confirm with NIWA's
-    institutional point of contact that you have followed the
-    [NIWA internal documentation for gaining access to the HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services).
-    You will only be able to access the NIWA internal documentation if
-    you are currently behind the NIWA VPN or on NIWA's internal network.
 2. **Software check:** One of our technical experts looks at the
     software you say you want to use and determines whether it can run
     on any of our systems and whether you are likely to be legally
@@ -42,17 +37,13 @@ new projects is as follows:
     consultancy service.
 4. **Disk space check:** We decide how much disk space your project is
     likely to need in the persistent storage (project directory) and
-    scratch storage (nobackup directory). We may unfortunately have to
+    scratch storage (nobackup directory) and Tape storage (Freezer). We may unfortunately have to
     reject (or negotiate for less storage) if your disk space needs
     would interfere with our ability to provide good service to other
     research teams.
-5. **Facility:** Based on the information in your application, we
-    decide whether your workflow is best suited for Mahuika, Māui or
-    both, and also whether your project would benefit from an allocation
-    of GPU hours or access to ancillary nodes or virtual labs.
-6. **Decision and notification:** If we approve an initial allocation
+5. **Decision and notification:** If we approve an initial allocation
     for your project, we will typically award the project an
-    [allocation of Mahuika compute units, Māui node hours, or both, and also an online storage allocation](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md),
+    [allocation of compute units and also an online storage allocation](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md),
     from one of [our allocation classes](../../General/NeSI_Policies/Allocation_classes.md).
     In an case, we will send you an email telling you about our decision.
 
@@ -71,8 +62,8 @@ is simpler:
 2. **Amount and duration:** We will calculate the approximate amount of
     compute resources you are likely to need based on what kind of
     allocation you most recently received and your usage history. We may
-    suggest an allocation size (i.e. a number of Mahuika compute units
-    or Māui node hours) and a duration of up to 12 months, and give you
+    suggest an allocation size (i.e. a number of compute units)
+    and a duration of up to 12 months, and give you
     a chance to provide feedback if you think our suggested allocation
     would not meet your needs.
 3. **Choice of Class and Contention:** We will choose from which class

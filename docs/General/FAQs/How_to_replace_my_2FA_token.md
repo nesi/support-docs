@@ -3,17 +3,10 @@ created_at: '2019-01-07T20:34:07Z'
 tags:
 - 2fa
 - access
-- mfa
 - account
-- authentication
-title: How to replace my 2FA token
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000684635
-zendesk_section_id: 360000039036
+description: How to generate a new 2FA token.
 ---
 
-For Mahuika and Māui, log in to [my.nesi.org.nz](https://my.nesi.org.nz) and select the option
-'Contact Support'.  
+Currently there is no way to reset your 2FA through the NeSI portal.
 
-Provide a clear description of your issue. The support team will get back to you as soon as possible to assist you. 
+Please [raise a ticket with support](mailto:support@nesi.org.nz?subject=Please%20reset%20my%202FA%20token.&body=I%20have%20lost%20my%202FA%20token.%20%0APlease%20can%20you%20reset%20it%2C%20my%20username%20is%20%3Cusername%3E) and we will reset it for you.
