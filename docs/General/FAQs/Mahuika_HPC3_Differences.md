@@ -84,6 +84,10 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
   - A job which requests ≤ 4 GB/core will run on the  4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
   - A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
 
+### CPU cores per node
+
+Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs. If you have a particular need for a "round" number of cores on a full node (ie: 128 Milan cores or 168 Genoa cores) then please let us know, as it is likely that we will implement a way for such whole-node jobs to override the number of specialised cores, which could make sense for jobs with low I/O requirements. 
+
 ### Limits
 
 These are open for review if you find any of them unreasonable or inefficient.  
@@ -133,15 +137,15 @@ Node sizes are different, so multithreaded jobs will probably have different opt
 
 ### Milan nodes
 
-These are the same nodes as made up the Mahuika Extension. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores or 256 hyperthreaded CPUs.
+These are the same nodes as made up the Mahuika Extension. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores (or 256 hyperthreaded CPUs), of which 126 are available for Slurm jobs. 
 
 The memory available to Slurm jobs on most of the Milan nodes is 512 GB per node, so approximately 2 GB per CPU.
 
-At present there are **only two of these nodes** installed as the rest still need to be moved from Mahuika. There will eventually be 64 of these nodes available, 8 of which have twice as much memory, so 1 TB.  
+There are up to 64 of these nodes available, 8 of which have twice as much memory, so 1 TB.  
 
 ### Genoa nodes
 
-These nodes are new. Each Genoa node has 2 AMD Genoa 9634 CPUs, each with 12 "chiplets" of one L3 cache and 7 cores, so each node has a total of 168 cores or 336 hyperthreaded CPUs.
+These nodes are new. Each Genoa node has 2 AMD Genoa 9634 CPUs, each with 12 "chiplets" of one L3 cache and 7 cores, so each node has a total of 168 cores (or 336 hyperthreaded CPUs). We are currently transitioning these nodes from having all 168 cores available but slow I/O, to having only 166 cores available but fast I/O, and so currently there are some of them in each of those states.
 
 The memory available to Slurm jobs on most of the Genoa nodes is 358 GB per node, so approximately 1 GB per CPU. 
 There are 64 of these nodes available, 16 of which have 4 times as much memory, so 1.5 TB.
