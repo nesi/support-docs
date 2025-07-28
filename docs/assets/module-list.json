@@ -45,7 +45,7 @@
                 "server": "ABAQUS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.74,
+                "server_uptime": 0.76,
                 "server_version": "11.13.1",
                 "features": [
                     {
@@ -66,7 +66,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.93,
+                        "hourly_average": 0.94,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -80,7 +80,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.8,
+                        "hourly_average": 0.82,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -3274,7 +3274,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.74,
+                "server_uptime": 0.76,
                 "server_version": "11.16.2",
                 "features": [
                     {
@@ -3308,7 +3308,7 @@
                 "server": "COMSOL@uoa_idg",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.74,
+                "server_uptime": 0.76,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3342,14 +3342,14 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.74,
+                "server_uptime": 0.76,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.99,
+                        "hourly_average": 0.98,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3376,7 +3376,7 @@
                 "server": "COMSOL@uoa_foes",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.74,
+                "server_uptime": 0.76,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3410,14 +3410,14 @@
                 "server": "COMSOL@uoa_foe_des_rc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.74,
+                "server_uptime": 0.76,
                 "server_version": "11.15.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 55.75,
+                        "hourly_average": 49.92,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3431,7 +3431,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 41.29,
+                        "hourly_average": 36.99,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3499,7 +3499,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 546565056.2,
+                        "hourly_average": 502097283.09,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -11237,7 +11237,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.05,
+                "server_uptime": 0.13,
                 "server_version": "",
                 "features": []
             },
@@ -11256,7 +11256,7 @@
                 "server": "MATLAB@uoa",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.74,
+                "server_uptime": 0.76,
                 "server_version": "",
                 "features": []
             },
@@ -11275,7 +11275,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.5,
+                "server_uptime": 0.54,
                 "server_version": "",
                 "features": []
             },
@@ -11313,7 +11313,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.06,
+                "server_uptime": 0.13,
                 "server_version": "",
                 "features": []
             },
