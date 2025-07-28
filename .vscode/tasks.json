@@ -138,7 +138,7 @@
                 "showReuseMessage": false
             },
             "runOptions": {
-                "runOn": "folderOpen"
+                "runOn": "default"
             },
             "command": "bash .github/fetch_includes.sh",
             "problemMatcher": {
