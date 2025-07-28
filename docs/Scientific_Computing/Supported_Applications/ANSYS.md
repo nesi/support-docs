@@ -179,7 +179,7 @@ Must have one of these flags.
     Multiple processes each with a single thread.
     Not limited to one node.
     Model will be segmented into `-t` pieces which
-    should be equal to `--ntasks`.`
+    should be equal to `--ntasks`.
     Each task could be running on a different node leading to increased
     communication overhead. Jobs can be limited to a single node by
     adding `--nodes=1` however this will increase
@@ -190,7 +190,7 @@ Must have one of these flags.
     #!/bin/bash -e
 
     #SBATCH --job-name          Fluent-Dis
-    #SBATCH --account       nesi99991
+    #SBATCH --account           nesi99991
     #SBATCH --time              00:05:00          # Walltime
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            8                 # Number processes
@@ -244,7 +244,7 @@ then click launch.
 
 If everything has set up correctly you should see a printout of the
 hostnames with the resources requested. Note: 'host' should be
-mahuika0[1-2].
+login[1-2].
 
 ``` sh
 n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
@@ -799,12 +799,12 @@ tasks it launches run on a compute node. This requires using `salloc`
 instead of `sbatch`, for example:
 
 ``` bash
-salloc -A nesi99999 -t 30 -n 16 -C avx --mem-per-cpu=512MB bash -c 'module load ANSYS; fluent -v3ddp -t$SLURM_NTASKS' 
+salloc -A nesi99991 -t 30 -n 16 -C avx --mem-per-cpu=512MB bash -c 'module load ANSYS; fluent -v3ddp -t$SLURM_NTASKS' 
 ```
 
 As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
---mail-type=BEGIN and --mail-user= options.
+--mail-type=BEGIN and --mail-user=<email address> options.
 
 ### Hyperthreading
 

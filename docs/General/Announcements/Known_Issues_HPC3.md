@@ -12,8 +12,8 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 
 !!! info "Recently fixed"
-     - Globus Endpoint added - `NeSI HPC3 Storage`
-     - New `profile_plot` command is available, replacing `sh5util`.
+     - New login node "login03" fixes previous performance problems.
+     - The first 37 of the Milan compute nodes are now available, though not yet for multi-node jobs.
 
 ## Login
 Currently, when logging into the new platform using a proxy you will be prompted for authentication twice.
@@ -23,18 +23,15 @@ The session login process of MobaXterm is not compatible with Tuakiri 2-factor a
 
 ssh through a terminal will still be possible with MobaXterm, but it is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, file transfer (for files under 9.8 GB) and terminal access if you would normally have used MobaXterm. [Watch a demo of how to use MobaXterm on the new platform](https://youtu.be/EDBx24Aeel4?si=9uSHdajDG3qBuhUH).
 
-## Login nodes
-The initial login nodes are smaller than the Mahuika ones, have slower disk I/O, and may not yet have per-user CPU, memory, and `/tmp` disk limits.
-
 ## OnDemand (including Jupyter)
 The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
 Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz).
 
 ## Compute nodes
-So far there are all the new Genoa nodes but **only two** of the Milan nodes have been installed. So please only use the limited Milan resource for small benchmarking tests.  
-
 None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new Genoa nodes do have 1.5 TB of memory.
+
+Jobs in the milan partition are currently limited to one node and 7 days.
 
 ## GPUs
 The 16 80 GB A100 GPUs which were in the *hgx* partition are (along with their Milan nodes) not yet installed. The 8 PCIe 40 GB A100s are present however, along with the new L4 and H100 GPUs.
