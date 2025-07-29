@@ -13,13 +13,13 @@ If you have misplaced your 2FA authenticator, you may need to reset your 2FA cre
 ![Reset OPT Example](../../assets/images/resetotp_link.png).
 
 2. You will be redirected to a window for conformation. Your username should be prepopulated, if this is not the case, enter your username and click send.
+   ![Reset OPT Example2](../../assets/images/resetotp_ack.png)
 
-3. Check your emails (the one associated with your NeSI account).
-![Reset OPT Example2](../../assets/images/resetotp_ack.png)
-  You should find an email called 'Reset OTP'.
+4. Check your emails (the one associated with your NeSI account).
+   You should find an email called 'Reset OTP'.
 
-4. Follow the instructions to setup your new 2FA
+6. Follow the instructions to setup your new 2FA.
 
-!!! note Trusted Device
+!!! warning "Trusted Devices"
     If you perviously confirmed your device as 'Trusted', you will not be prompted for authentication.
     In order to see the option to reset, open the link in a private/incognito session.
