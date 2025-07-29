@@ -13,7 +13,7 @@ If you have misplaced your 2FA authenticator, you may need to reset your 2FA cre
 ![Reset OPT Example](../../assets/images/resetotp_link.png).
 
 2. You will be redirected to a window for conformation. Your username should be prepopulated, if this is not the case, enter your username and click send.
-   ![Reset OPT Example2](../../assets/images/resetotp_ack.png)
+![Reset OPT Example2](../../assets/images/resetotp_ack.png)
 
 4. Check your emails (the one associated with your NeSI account).
    You should find an email called 'Reset OTP'.
