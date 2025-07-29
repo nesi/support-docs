@@ -70,7 +70,7 @@ Clone this repository and create a Python virtual environment using:
 ```sh
 git clone https://github.com/nesi/support-docs.git
 cd support-docs
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip3 install -r requirements.txt
 ```
