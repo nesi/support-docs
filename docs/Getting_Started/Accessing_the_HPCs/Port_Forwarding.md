@@ -1,7 +1,8 @@
 ---
 created_at: '2020-05-12T01:43:30Z'
-tags: []
-status: deprecated
+tags: 
+    - access
+    
 ---
 
 !!! prerequisite
@@ -111,7 +112,7 @@ will be forwarded.
         ``` sh
         mkdir -P ~/.ssh/sockets
         ```
-
+<!--
 ## MobaXterm
 
 If you have Windows Subsystem for Linux installed, you can use the
@@ -139,6 +140,8 @@ The two tunnels should look like this.
 <span style="color:orange">■</span> remote port  
 <span style="color:red">■</span> must match  
 <span style="color:#FF00FF">■</span> doesn't matter
+
+-->
 
 ## sshuttle
 
