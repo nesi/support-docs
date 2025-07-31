@@ -58,15 +58,6 @@ Here are the explanations for each line of this snippet:
      snippet in your `~/.bashrc` file that will freeze the version of conda
      used, bypassing the environment module system.
 
-!!! note "Māui Ancillary Nodes"
-     On Māui Ancillary Nodes, you need to (re)load the `NeSI` module after
-     using `module purge`:
-     ``` sl
-     module purge && module load NeSI Miniforge3
-     source $(conda info --base)/etc/profile.d/conda.sh
-     export PYTHONNOUSERSITE=1
-     ```
-
 ## Prevent conda from using /home storage
 
 Conda environments and the conda packages cache can take a lot of
