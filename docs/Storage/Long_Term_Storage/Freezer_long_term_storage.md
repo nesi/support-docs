@@ -67,7 +67,7 @@ You will then be presented with a summary.
   Secret Key: Your Freezer Secret Key
   Default Region: akl-1
   S3 Endpoint: freezer.nesi.org.nz:7070
-  DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
+  DNS-style bucket+hostname:port template for accessing a bucket: 210.7.37.122:7070
   Encryption password:
   Path to GPG program: /usr/bin/gpg
   Use HTTPS protocol: True
