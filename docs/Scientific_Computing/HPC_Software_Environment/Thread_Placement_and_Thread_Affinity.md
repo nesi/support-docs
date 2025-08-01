@@ -116,7 +116,7 @@ int main()
 }
 ```
 
-On Mahuika or Māui Ancil, compile the program using the commands
+Compile the program using the commands
 
 ``` sh
 module load intel/2018b

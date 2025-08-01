@@ -2,10 +2,7 @@
 created_at: '2019-10-14T21:25:00Z'
 tags: []
 title: Synda
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360001208256
-zendesk_section_id: 360000040076
+status: depricated
 ---
 
 ## What is synda?
@@ -15,9 +12,6 @@ System Grid Federation ([ESGF](http://pcmdi.llnl.gov/)) archive. Synda
 is a useful tool if you need to download Climate Model Intercomparison
 Project Phase 6 (CMIP6) data in particular. Synda supports different
 download protocols (e.g. HTTPS) and can download files in parallel.
-
-We'll describe the steps to install and use synda on Mahuika or
-Maui\_ancil.
 
 ## How to install synda
 
