@@ -1,11 +1,9 @@
 ---
 created_at: '2020-01-05T21:43:18Z'
-tags: []
-title: Slurm Interactive Sessions
-vote_count: 8
-vote_sum: 2
-zendesk_article_id: 360001316356
-zendesk_section_id: 360000030876
+tags: 
+  - interactive
+  - scheduling
+description: How to run an interactive session on the NeSI cluster.
 ---
 
 A SLURM interactive session reserves resources on compute nodes allowing
@@ -34,7 +32,7 @@ For example;
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
 ```
 
- You will receive a message.
+You will receive a message.
 
 ```out
 srun: job 10256812 queued and waiting for resources
@@ -84,7 +82,7 @@ salloc: Granted job allocation 10256925
 Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
 
-For a full description of `srun` and its options, see
+For a full description of `srun` and its options, see
 [here](https://slurm.schedmd.com/salloc.html).
 
 ### Requesting a postponed start
@@ -146,7 +144,7 @@ disrupted while you're away.
      will permanently cancel that interactive session and remove it from
      the queue, whether it has started or not.
 
-1. Log in to a Mahuika, Māui or Māui-ancil login node.
+1. Connect to a login node.
 2. Start up `tmux` or `screen`.
 
 ## Modifying an existing interactive session
@@ -192,7 +190,7 @@ scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
 !!! warning
      Don't just set `StartTime=tomorrow` with no time specification unless
      you like the idea of your interactive session starting at midnight or
-     in the wee small hours of the morning.
+     in the wee hours of the morning.
 
 ### Bringing forward the start of an interactive job
 
@@ -207,8 +205,8 @@ scontrol update jobid=12345678 StartTime=now
 ### Other changes using `scontrol`
 
 There are many other changes you can make by means of `scontrol`. For
-further information, please see [the `scontrol`
-documentation](https://slurm.schedmd.com/scontrol.html).
+further information, please see 
+[the `scontrol` documentation](https://slurm.schedmd.com/scontrol.html).
 
 ## Modifying multiple interactive sessions at once
 
@@ -247,7 +245,7 @@ awk '{print $1}' | \
 xargs -I {} scontrol update jobid={} StartTime=tomorrowT09:30:00
 ```
 
-If you want to do this automatically every working day and you have a
+<!-- If you want to do this automatically every working day and you have a
 consistent element that you use in the name of all your interactive
 jobs, you can set up cron jobs on Māui, Mahuika and/or Māui-ancil login
 nodes. This is left as an exercise for the reader, having regard to the
@@ -267,7 +265,7 @@ following:
     morning, which is probably not what you want. Either your cron job
     detects the fact of a Friday and postpones jobs until Monday, or you
     have two cron jobs, one that runs on Mondays to Thursdays, and a
-    different cron job running on Fridays.
+    different cron job running on Fridays. -->
 
 ## Cancelling an interactive session
 
@@ -278,7 +276,7 @@ session, putting the job in the foreground (if necessary) and pressing
 To cancel all your queued interactive sessions on a cluster in one fell
 swoop, a command like the following should do the trick:
 
-``` sl
+```sh
 squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
 awk '{print $1}' | \
 xargs -I {} scancel {}

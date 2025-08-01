@@ -1,7 +1,5 @@
 ---
 created_at: '2023-07-21T04:10:04Z'
-hidden: false
-position: 0
 tags: []
 status: deprecated
 ---
@@ -10,15 +8,8 @@ Most programs which create temporary files will put those files in the
 directory specified by the environment variable `TMPDIR` if that is set,
 or `/tmp` otherwise.
 
-## Māui
-
-Since Māui nodes host only one job at a time, there is no problem with
-using `/tmp`, which gets emptied after every job.  
-
-## Mahuika
-
-On Mahuika it is best to avoid the `/tmp` directory since that is shared
-with other jobs and not automatically cleared. When a Mahuika Slurm job
+It is best to avoid the `/tmp` directory since that is shared
+with other jobs and not automatically cleared. When a Slurm job
 starts, `TMPDIR` is set to a directory created just for that job, which
 gets automatically deleted when the job finishes. 
 
@@ -47,7 +38,7 @@ yourself is shown below,
 
 `export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID`
 
-### Example of copying data into $TMPDIR for use mid-job
+## Example of copying data into $TMPDIR for use mid-job
 
 The per job temporary directory can also be used to store data that
 needs to be accessed as the job runs. For example you may wish to read
@@ -57,14 +48,14 @@ of `/opt`. To do this, request the NVMe SSD on `milan` as described
 above. Then, after loading the Kraken2 module in your Slurm script, copy
 the database onto the SSD,
 
-``` sl
+``` sh
 cp -r /opt/nesi/db/Kraken2/standard-2018-09/* $TMPDIR
 ```
 
 To get Kraken2 to read the DB from the SSDs (and not from `/opt`),
 change the `KRAKEN2_DEFAULT_DB` variable,
 
-``` bash
+``` sh
 export KRAKEN2_DEFAULT_DB=$TMPDIR
 ```
 
