@@ -1,6 +1,8 @@
 ---
 created_at: '2020-02-24T20:26:39Z'
-tags: []
+tags: 
+  - parallel 
+  - containers
 title: Configuring Dask-MPI jobs
 status: deprecated
 ---
@@ -36,10 +38,9 @@ MPI.
 
 While some of the MPI distributions should be compatible with each
 other, it is advisable to use the same MPI distribution as the host HPC
-system for reliability. The Mahuika and Māui Ancil clusters use Intel
-MPI.
+system for reliability (OpenMPI).
 
-## Using Dask-MPI on Mahuika
+## Using Dask-MPI
 
 Dask-MPI can be readily used with the more recent Python modules
 available on Mahuika that come with the mpi4py package, e.g.
@@ -74,6 +75,7 @@ dependencies:
   - intel::mpi4py
   - dask-mpi
 ```
+
 !!! info "See also"
      See the
      [Miniforge3](../../Scientific_Computing/Supported_Applications/Miniforge3.md)

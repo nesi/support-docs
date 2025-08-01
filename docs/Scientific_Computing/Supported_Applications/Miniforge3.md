@@ -2,6 +2,7 @@
 created_at: '2020-06-23T23:10:13Z'
 tags: []
 title: Miniforge3
+status: depricated
 ---
 
 
@@ -24,7 +25,6 @@ packages and no curation by the NeSI team.
      - If you only need access to Python and standard numerical libraries
          (numpy, scipy, matplotlib, etc.), you can use the 
          [Python environment module](../../Scientific_Computing/Supported_Applications/Python.md).
-
 
 ## Module loading and conda environments isolation
 
@@ -61,7 +61,7 @@ Here are the explanations for each line of this snippet:
 ## Prevent conda from using /home storage
 
 Conda environments and the conda packages cache can take a lot of
-storage space. By default, Conda use 
+storage space. By default, Conda use
 [/home](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),
 which is restricted to 20GB on NeSI. Here are some techniques to avoid
 running out of space when using Conda.
@@ -111,4 +111,3 @@ conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
      ``` sh
      conda config --set env_prompt '({name})'
      ```
-

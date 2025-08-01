@@ -4,6 +4,8 @@ tags:
 - engineering
 - cfd
 - fea
+status: depricated
+description: How to best use ANSYS products on the NeSI cluster.
 ---
 
 {% set app_name = page.title | trim %}
@@ -317,7 +319,7 @@ interpreted version.
 #### Compilation
 
 When running in a new environment for the first time (local machine,
-Mahuika, Māui), the C code will have to first be compiled. The compiled
+Mahuika), the C code will have to first be compiled. The compiled
 code will be placed in a directory with the name of the library (by
 default this will be `libudf/`.
 

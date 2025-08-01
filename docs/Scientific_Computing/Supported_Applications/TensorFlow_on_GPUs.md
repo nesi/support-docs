@@ -2,12 +2,7 @@
 created_at: '2019-06-03T23:54:50Z'
 tags:
 - gpu
-title: TensorFlow on GPUs
-vote_count: 2
-
-vote_sum: 2
-zendesk_article_id: 360000990436
-zendesk_section_id: 360000040076
+status: depricated
 ---
 
 {% set app_name = "TensorFlow" %}
@@ -36,8 +31,8 @@ running TensorFlow with GPU support.
 
 ## Use NeSI modules
 
-TensorFlow is available on Mahuika as an [environment
-module](../../Getting_Started/Next_Steps/The_HPC_environment.md)
+TensorFlow is available on Mahuika as an
+[environment module](../../Getting_Started/Next_Steps/The_HPC_environment.md)
 
 ``` sh
 module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
@@ -150,17 +145,6 @@ module spider cuDNN
 
 Please contact us at [support@nesi.org.nz](mailto:support@nesi.org.nz) if you need a version not
 available on the platform.
-
-!!! note "Māui Ancillary Nodes"
-     -   Load the Anaconda3 module instead of Miniconda3 to manipulate
-         conda environments:  
-         ``` sl
-         module load Anaconda3/2020.02-GCC-7.1.0
-         ```
-     -   Use `module avail` to list available versions of modules, e.g.
-         ``` sl
-         module avail cuDNN
-         ```
 
 Additionnally, depending your version of TensorFlow, you may need to
 take into consideration the following:

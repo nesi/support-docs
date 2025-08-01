@@ -1,11 +1,7 @@
 ---
 created_at: '2020-11-02T23:31:38Z'
 tags: []
-title: WRF
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360002109696
-zendesk_section_id: 360000040076
+status: depricated
 ---
 
 The Weather Research and Forecasting (WRF) Model is a next-generation
@@ -17,10 +13,12 @@ The model serves a wide range of meteorological applications across
 scales from tens of meters to thousands of kilometres.
 
 This guide is based on WRF 4.6.0 and WPS 4.6.0
+
 ## WRF on Mahuika
 ### Building WRF on Mahuika
 
 The following script will run through the complete install procedure of WRF on Mahuika. You can run the script with `bash` *script\_name.sh*:
+
 ``` sh
 #!/bin/bash
 

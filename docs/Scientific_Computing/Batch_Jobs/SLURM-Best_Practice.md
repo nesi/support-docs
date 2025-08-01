@@ -1,19 +1,18 @@
 ---
 created_at: '2019-01-18T01:56:15Z'
-tags: []
+tags: 
+    - slurm
+    - tips
 title: 'SLURM: Best Practice'
-vote_count: 4
-vote_sum: 2
-zendesk_article_id: 360000705196
-zendesk_section_id: 360000030876
+description: Some tips on how to get more out of the job sceduler.
 ---
 
 ## Bash Header
 
-We recommend using `#!/bin/bash -e` instead of plain `#!/bin/bash`, so
+We recommend using `#!/bin/bash -e` instead of plain `#!/bin/bash`, so
 that the failure of any command within the script will cause your job to
 stop immediately rather than attempting to continue on with an
-unexpected environment or erroneous intermediate data.  It also ensures
+unexpected environment or erroneous intermediate data. It also ensures
 that your failed jobs show a status of FAILED in `sacct` output.
 
 ## Resources
@@ -23,6 +22,8 @@ addition to using your core hours faster, resources intensive jobs will
 take longer to queue. Use the information provided at the completion of
 your job (e.g: via the `sacct` command) to better define resource
 requirements.
+
+<!-- insert link to scaling docs here -->
 
 ### Wall-time
 
@@ -58,10 +59,10 @@ for more information.
 ## Parallelism
 
 In general only MPI jobs should set `--ntasks` greater than 1 or use
-`srun`.  If you don't know whether your program supports MPI, it
+`srun`. If you don't know whether your program supports MPI, it
 probably doesn't.
 
-Only multithreaded jobs should set `--cpus-per-task`.  If you don't know
+Only multithreaded jobs should set `--cpus-per-task`. If you don't know
 whether your program supports multithreading, try benchmarking with 2
 CPUs and with 4 CPUs and see if there is a 2-fold difference in elapsed
 job time.
@@ -75,33 +76,5 @@ job array in a single command)
 ## Fairshare
 
 A low fairshare score will affect your jobs priority in the queue, learn
-more about how to effectively use your allocation
-[here](../../Scientific_Computing/Batch_Jobs/Fair_Share.md).
-
-## Cross machine submission
-
-Jobs can be submitted from one machine to another by using the
-`--cluster` option. E.g. submitting a job from Māui\_Ancil to Māui.
-
-By default the environment (modules and variables) will be inherited
-from the submitting shell into the job environment. But the environments
-vary between our different machines, including module names, location of
-slurm tools, etc., which could cause issues in this inheriting case. We
-suggest to use the environment variable `SBATCH_EXPORT=NONE` (do NOT us
-`--export=none` option) in the submitting shell. Therefore we suggest to
-submit a job, e.g. to Māui using:
-
-``` sh
-SBATCH_EXPORT=NONE sbatch --cluster=maui job.sl
-```
-
-Please note: Above we only discussed the transition from your submitting
-environment to the job environment. The latter is the one your job
-script is running in. There is another environment created for your
-parallel application (when called srun). There we want to inherit from
-the job environment to have PATHs and setting available. Therefore,
-avoid setting `SBATCH_EXPORT=NONE` in your job script or in .bashrc or
-.profile for all cases. The slurm `--export=none` option would prevent
-inhering environments in both transitions. Another note: Alternatively
-you can set `SLURM_EXPORT_ENV=ALL` in your job script to enable the
-environment forwarding to the srun environment.
+more about how to effectively use your allocation,
+[Fair Share](../../Scientific_Computing/Batch_Jobs/Fair_Share.md).

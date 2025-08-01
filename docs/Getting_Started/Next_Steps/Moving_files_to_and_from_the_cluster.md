@@ -60,7 +60,7 @@ scp mahuika:<path/filename> <path/filename>
 !!! note
     - This will only work if you have set up aliases as described in
       [Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
-    - As the terms 'maui' and 'mahuika' are defined locally, the above
+    - As the term 'mahuika' is defined locally, the above
       commands *only works when using a local terminal* (i.e. not on Mahuika).
     - If you are using Windows subsystem, the root paths are different
       as shown by Windows. e.g. `C:` is located at `/mnt/c/`

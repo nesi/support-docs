@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Node Diagram — Fully Styled with CSS</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .cpu {
+      cursor: pointer;
+      user-select: none;
+      fill: rgb(185, 0, 0);
+      stroke: darkslategray;
+    }
+
+    .cpu:hover {
+      filter: brightness(1.15);
+    }
+
+    .cpu.disabled {
+      fill: lightgray;
+    }
+
+    .line {
+      stroke: darkslategray;
+    }
+
+    .line.highlighted {
+      stroke: green;
+    }
+
+    .memory {
+      fill: rgb(0, 0, 189);
+      stroke: darkslategray;
+    }
+
+    .label {
+      fill: black;
+      font-family: sans-serif;
+      text-anchor: middle;
+      user-select: none;
+      pointer-events: none;
+
+    }
+
+    .cpu-label {
+      font-size: 12px;
+    }
+
+    .memory-label {
+      font-size: 18px;
+    }
+
+    .node-label {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <svg width="600" height="400"></svg>
+  <script>
+    const svg = d3.select("svg");
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
+
+    const cpuSize = 40;
+    const memoryWidth = cpuSize * 2;
+    const memoryHeight = cpuSize * 2;
+
+    const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+    const spacingBetweenNodes = 50;
+
+    // Define cluster centers
+    // These centers are positioned to create a 2x2 grid of nodes
+    const nodes = [
+      { x: 0, y: 0, cpus: [] },
+      { x: 0, y: 1, cpus: [] },
+      { x: 1, y: 0, cpus: [] },
+      { x: 1, y: 1, cpus: [] }
+    ];
+
+    // const nodes = clusterCenters.map(center => {
+    //   const left = center.x - 1.5 * cpuSize;
+    //   const right = center.x + 0.5 * cpuSize + memoryWidth;
+    //   const nodeCenterX = (left + right) / 2;
+    //   return {
+    //     centerX: nodeCenterX,
+    //     centerY: center.y,
+    //     top: center.y - 1.5 * cpuSize,
+    //     bottom: center.y + 0.5 * cpuSize,
+    //     cpus: []
+    //   };
+    // });
+
+    // const leftVertLine = svg.append("line").classed("line", true);
+    // const rightVertLine = svg.append("line").classed("line", true);
+    // const horizLine = svg.append("line").classed("line", true);
+
+    // function updateLines() {
+    //   leftVertLine
+    //     .attr("x1", nodes[0].centerX)
+    //     .attr("y1", nodes[0].bottom)
+    //     .attr("x2", nodes[2].centerX)
+    //     .attr("y2", nodes[2].top);
+
+    //   rightVertLine
+    //     .attr("x1", nodes[1].centerX)
+    //     .attr("y1", nodes[1].bottom)
+    //     .attr("x2", nodes[3].centerX)
+    //     .attr("y2", nodes[3].top);
+
+    //   const midY = ((nodes[0].bottom + nodes[2].top) / 2 + (nodes[1].bottom + nodes[3].top) / 2) / 2;
+
+    //   horizLine
+    //     .attr("x1", nodes[0].centerX)
+    //     .attr("y1", midY)
+    //     .attr("x2", nodes[1].centerX)
+    //     .attr("y2", midY);
+
+    //   function nodeEnabled(index) {
+    //     return nodes[index].cpus.some(cpu => cpu.enabled);
+    //   }
+
+    //   leftVertLine.classed("highlighted", nodeEnabled(0) && nodeEnabled(2));
+    //   rightVertLine.classed("highlighted", nodeEnabled(1) && nodeEnabled(3));
+    //   horizLine.classed("highlighted", nodeEnabled(0) && nodeEnabled(1));
+    // }
+
+    // updateLines();
+
+    nodes.forEach((node, nodeIndex) => {
+
+
+      cpus.forEach(offset => {
+        const cpuX = node.x + offset[0] - cpuSize / 2;
+        const cpuY = node.y + offset[1] - cpuSize / 2;
+
+        const cpuRect = svg.append("rect")
+          .attr("x", cpuX)
+          .attr("y", cpuY)
+          .attr("width", cpuSize)
+          .attr("height", cpuSize)
+          .classed("cpu", true);
+
+        svg.append("text")
+          .attr("x", cpuX + cpuSize / 2)
+          .attr("y", cpuY + cpuSize / 2 + 5)
+          .classed("label", true)
+          .classed("cpu-label", true)
+          .text("CPU");
+
+        const cpuObj = { rect: cpuRect, enabled: true };
+        node.cpus.push(cpuObj);
+
+        cpuRect.on("click", () => {
+          cpuObj.enabled = !cpuObj.enabled;
+          cpuRect.classed("disabled", !cpuObj.enabled);
+          updateLines();
+        });
+      });
+
+      const memX = center.x + cpuSize / 2;
+      const memY = center.y - cpuSize - cpuSize / 2;
+
+      svg.append("rect")
+        .attr("x", memX)
+        .attr("y", memY)
+        .attr("width", memoryWidth)
+        .attr("height", memoryHeight)
+        .classed("memory", true);
+
+      svg.append("text")
+        .attr("x", memX + memoryWidth / 2)
+        .attr("y", memY + memoryHeight / 2 + 6)
+        .classed("label", true)
+        .classed("memory-label", true)
+        .text("Memory");
+
+      svg.append("text")
+        .attr("x", center.x + cpuSize / 2)
+        .attr("y", memY - 10)
+        .classed("label", true)
+        .classed("node-label", true)
+        .text("Node");
+    });
+  </script>
+</body>
+</html>

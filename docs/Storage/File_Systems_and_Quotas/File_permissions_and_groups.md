@@ -3,10 +3,7 @@ created_at: '2018-05-21T05:14:00Z'
 tags:
 - nobackup
 - project
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000205435
-zendesk_section_id: 360000033936
+status: depricated
 ---
 
 
@@ -20,15 +17,14 @@ Each user has a private user group, of which that user is by default the
 only member. Each user is also a member of various other groups, such
 as:
 - A group for each active NeSI project of which that user is a member
-- Groups for all active users, all active Mahuika users, all active
-    Māui users, etc. as appropriate
+- Groups for all active users, all active Mahuika users as appropriate
 - A group representing all active NeSI users who are affiliated with
     the user's institution
 - Groups for specific licensed software to which that user has been
     granted access
 
 You can see which groups you are a member of at any time by running the
-following command on a Mahuika, Māui or Māui ancillary login node:
+following command:
 
 ```sh
 groups

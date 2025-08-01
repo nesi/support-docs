@@ -1,12 +1,7 @@
 ---
 created_at: '2019-06-14T05:35:45Z'
 tags: []
-title: TensorFlow on CPUs
-vote_count: 2
-
-vote_sum: 2
-zendesk_article_id: 360000997675
-zendesk_section_id: 360000040076
+status: depricated
 ---
 
 {% set app_name = "TensorFlow" %}
@@ -55,14 +50,6 @@ a CPU-optimised TensorFlow release on Mahuika, run
 
 ``` sh
 module load Miniconda3
-conda create -p /nesi/project/<project ID>/conda_envs/tf_cpu tensorflow-mkl
-source activate /nesi/project/<project ID>/conda_envs/tf_cpu
-```
-
-To install TensorFlow on Māui Ancil, run
-
-``` sh
-module load Anaconda3
 conda create -p /nesi/project/<project ID>/conda_envs/tf_cpu tensorflow-mkl
 source activate /nesi/project/<project ID>/conda_envs/tf_cpu
 ```

@@ -166,12 +166,9 @@ You can list the available versions using:
 module spider CUDA
 ```
 
-Please{% include "partials/support_request.html" %} if you need a version not
+Please {% include "partials/support_request.html" %} if you need a version not
 available on the platform.
 
-!!! note
-     On Māui Ancillary Nodes, use `module avail CUDA` to list available
-     versions.
 
 The CUDA module also provides access to additional command line tools:
 
