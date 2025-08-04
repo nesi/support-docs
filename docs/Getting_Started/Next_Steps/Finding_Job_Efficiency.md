@@ -2,10 +2,7 @@
 created_at: '2019-04-07T23:56:57Z'
 tags:
 - slurm
-vote_count: 8
-vote_sum: 8
-zendesk_article_id: 360000903776
-zendesk_section_id: 360000189716
+status: depricated
 ---
 
 ## On Job Completion
@@ -37,7 +34,7 @@ Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 ```
 
 Notice that the CPU efficiency was high but the memory efficiency was low and consideration should be given to reducing memory requests
-for similar jobs.  If in doubt, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz) for guidance.
+for similar jobs. If in doubt, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz) for guidance.
 
 ### Using `sacct`
 
@@ -130,8 +127,8 @@ the compute node where it it running.
 
 If 'nodelist' is not one of the fields in the output of your `sacct` or
 `squeue` commands you can find the node a job is running on using the
-command; `squeue -h -o %N   -j <jobid>` The node will look something
-like `wbn123` on Mahuika or `nid00123` on Māui
+command; `squeue -h -o %N   -j <jobid>` The node will look something
+like `wbn123`.
 
 !!! Note
      If your job is using MPI it may be running on multiple nodes

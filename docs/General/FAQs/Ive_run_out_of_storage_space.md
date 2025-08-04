@@ -3,10 +3,7 @@ created_at: '2019-08-26T00:02:24Z'
 tags:
 - disk quota exceeded
 title: I've run out of storage space
-vote_count: 3
-vote_sum: 1
-zendesk_article_id: 360001125996
-zendesk_section_id: 360000039036
+status: deprecated
 ---
 
 There are two tracked resources in the NeSI filesystem, *disk space* and
@@ -15,7 +12,7 @@ There are two tracked resources in the NeSI filesystem, *disk space* and
 Trying to write to a filesystem over its inode or disk quota will cause
 an error (and probably kill your job).
 
-Current file-count and disk space can be found using `nn_storage_quota`.
+Current file-count and disk space can be found using `nn_storage_quota`.
 
 ```sh
 Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
@@ -48,8 +45,7 @@ files as viable.
 
 Many files can be compressed into a single SquashFS archive. We have
 written a utility, `nn_archive_files`, to help with this process.
-This utility can be run on Māui or Mahuika, but not, as yet, on
-Māui-ancil; and it can submit the work as a Slurm job, which is
+This utility can submit the work as a Slurm job, which is
 preferred. `nn_archive_files` can take, as trailing options, the
 same options as `mksquashfs`, including choice of compression
 algorithm; see `man mksquashfs` for more details.  

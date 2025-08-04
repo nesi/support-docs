@@ -1,11 +1,9 @@
 ---
 created_at: '2020-11-02T03:07:06Z'
-tags: []
-title: CESM
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360002105076
-zendesk_section_id: 360000040076
+tags: 
+    - climate
+    - modelling
+status: deprecated
 ---
 
 The Community Earth System Model (CESM) is a coupled climate model for
@@ -103,7 +101,7 @@ git lfs version
 
 which should print something like:
 
-```
+```out
 git-lfs/3.5.1 (GitHub; linux amd64; go 1.21.7; git e237bb3a)
 ```
 

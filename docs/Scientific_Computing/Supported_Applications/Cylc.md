@@ -1,11 +1,7 @@
 ---
 created_at: '2022-08-03T21:35:50Z'
 tags: []
-title: Cylc
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 5254610390415
-zendesk_section_id: 360000040076
+status: depricated
 ---
 
 ## What is Cylc
@@ -61,11 +57,11 @@ being asked for a passphrase.
 
 ## How to select the Cylc version
 
-Cylc has been installed on Māui and Mahuika, there is no need to load
+Cylc has been installed on Mahuika, there is no need to load
 any module,
 
 ``` sh
-$ which cylc
+which cylc
 /opt/nesi/share/bin/cylc
 ```
 
@@ -74,7 +70,7 @@ $ which cylc
 Be aware that the default version
 
 ``` sh
-$ cylc version
+cylc version
 7.9.1
 ```
 
@@ -84,7 +80,7 @@ changed significantly at version 8.
 **New Cylc users should use version 8 or later**,
 
 ``` sh
-$ cylc list-versions
+cylc list-versions
 
 7.9.1 
 ...
@@ -96,8 +92,8 @@ You can select your Cylc version by setting the environment variable
 CYLC\_VERSION, for instance,
 
 ``` bash
-$ export CYLC_VERSION=8.0.1
-$ cylc version
+export CYLC_VERSION=8.0.1
+cylc version
 8.0.1
 ```
 
@@ -109,8 +105,8 @@ To demonstrate Cylc, let's start with a workflow, which we call
 "simple",
 
 ``` sh
-$ mkdir -p ~/cylc-src/simple
-$ cd ~/cylc-src/simple
+mkdir -p ~/cylc-src/simple
+cd ~/cylc-src/simple
 ```
 
 Create/edit the following **flow.cylc** file containing
@@ -151,13 +147,13 @@ to see a list of platforms. The SLURM settings for taskA are in the
 Cylc takes command lines. Type 
 
 ``` sh
-$ cylc help all
+cylc help all
 ```
 
 to see the available commands. Type 
 
 ``` sh
-$ cylc help install # or cylc install --help
+cylc help install # or cylc install --help
 ```
 
 to find out how to use a specific command (in this case "install").
@@ -170,7 +166,7 @@ has been configured to symlink the standard run directories to project
 directories, if $PROJECT is defined. Hence, you need to set
 
 ``` sh
-$ export PROJECT=nesi99999 # CHANGE
+export PROJECT=nesi99999 # CHANGE
 ```
 
 Then install the workflow with
@@ -184,7 +180,7 @@ cylc install simple
 It's a good idea to check that there are no syntax errors in flow.cylc,
 
 ``` sh
-$ cylc validate simple
+cylc validate simple
 Valid for cylc-8.0.1
 ```
 
@@ -193,7 +189,7 @@ Valid for cylc-8.0.1
 A useful command is
 
 ``` sh
-$ cylc graph simple
+cylc graph simple
 ```
 
 which will generate a png file, generally in the /tmp directory with a
@@ -201,7 +197,7 @@ name like /tmp/tmpzq3bjktw.PNG. Take note of the name of the png file.
 To visualise the file you can type
 
 ``` sh
-$ display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
+display  /tmp/tmpzq3bjktw.PNG # ADJUST the file name
 ```
 
 Here, we see that our workflow "simple" has a "taskC", which waits for
@@ -217,13 +213,13 @@ Every Cylc action can be executed via the command line. Alternatively,
 you can invoke each action through a **terminal user interface** (tui), 
 
 ``` sh
-$ cylc tui simple
+cylc tui simple
 ```
 
 Another alternative, is to use the **graphical user interface**
 
 ``` sh
-$ cylc gui
+cylc gui
 ```
 
 Read below on how access the web interface running on NeSI using your
@@ -245,12 +241,11 @@ First open ssh tunnelling, so that a given port on your local machine
 local machine, type
 
 ``` sh
-$ ssh -N -L PORT:localhost:PORT HOST
+ssh -N -L PORT:localhost:PORT HOST
 ```
 
-where **PORT** is a valid port number and **HOST** can be Māui or
-mahuika. See the [NeSI
-page](../../Getting_Started/Accessing_the_HPCs/Port_Forwarding.md) for
+where **PORT** is a valid port number and **HOST** is the cluster name.
+See the [NeSI page](../../Getting_Started/Accessing_the_HPCs/Port_Forwarding.md) for
 the range of allowed ports (currently 1024-49151). Choose any number in
 this range but make sure your port number is fairly unique to avoid
 clashing with other users. Option -N is optional: it opens the
@@ -259,7 +254,7 @@ connection without logging you into the shell.
 Then ssh to the host (e.g. mahuika)
 
 ``` sh
-$ ssh HOST
+ssh HOST
 ```
 
 and add the following to **$HOME/.cylc/uiserver/jupyter\_config.py** on
@@ -276,7 +271,7 @@ tunnel.
 You're now ready to fire up the web graphical interface
 
 ``` sh
-$ cylc gui
+cylc gui
 ```
 
 Just copy the URL that looks like
@@ -293,7 +288,7 @@ chosen above.)
 To execute the workflow type
 
 ``` sh
-$ cylc play --no-detach simple
+cylc play --no-detach simple
 ```
 
 The "--no-detach" option makes scheduler run in the foreground so you
@@ -303,7 +298,7 @@ can see its output in your terminal. Without this option it will
 Command
 
 ``` sh
-$ cylc scan
+cylc scan
 ```
 
 will list all running and installed workflows.
@@ -311,7 +306,7 @@ will list all running and installed workflows.
 ## Checking the output
 
 ``` sh
-$ cylc cat-log simple//1/taskA  # note // between workflow and task ID
+cylc cat-log simple//1/taskA  # note // between workflow and task ID
 ```
 
 of the first cycle of taskA. The "1" refers to the task iteration, or
@@ -321,7 +316,7 @@ the R1 graph above).
 ## How to clean or remove a workflow
 
 ``` sh
-$ cylc clean simple
+cylc clean simple
 ```
 
 will remove the file structure associated with workflow "simple".
@@ -333,7 +328,7 @@ of the runs will be stored in the project directory, with a symbolic
 link pointing from the user home directory to the project directory
 
 ``` sh
-$ ls -l $HOME/cylc-run/simple/run1
+ls -l $HOME/cylc-run/simple/run1
 lrwxrwxrwx 1 pletzera pletzera 54 Aug  5 03:19 /home/pletzera/cylc-run/simple/run1 -> /nesi/nobackup/nesi99999/pletzera/cylc-run/simple/run1
 ```
 

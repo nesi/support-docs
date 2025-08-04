@@ -2,10 +2,7 @@
 created_at: '2019-12-05T22:46:53Z'
 tags: []
 title: Download and share CMIP6 data (for NIWA researchers)
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360001287235
-zendesk_section_id: 360000040596
+status: depricated
 ---
 
 The [Coupled Model Intercomparison
@@ -32,7 +29,7 @@ then type similar commands to the ones below to test your configuration.
 
 ## Setup
 
-On `mahuika` or `w-mauivlab01.maui.nesi.org.nz`:
+On `mahuika`
 
 ```sh
 source /nesi/project/niwa02916/synda_env.sh

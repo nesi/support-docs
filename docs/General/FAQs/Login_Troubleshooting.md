@@ -10,28 +10,6 @@ status: deprecated
     - Most terminals do not give an indication of how many characters have been typed when entering a password.
     - Paste is not usually bound to `ctrl` + `V` and will vary based on your method of access.
 
-## Repeatedly asking for First and Second Factor
-
-In addition to using an incorrect First/Second factor there are several
-other issues that will cause a similar looking failure to log in.
-
-```sh
-Login Password:
-Login Password:
-Login Password:
-```
-
-OR
-
-```sh
-Login Password (First Factor): 
-Authenticator Code (Second Factor):
-Login Password (First Factor): 
-Authenticator Code (Second Factor):
-Login Password (First Factor): 
-Authenticator Code (Second Factor):
-```
-
 ### Try logging in to `lander` directly
 
 You can test what part of your connection has failed by first running:
@@ -56,7 +34,7 @@ ssh login.hpc.nesi.org.nz
 If you are not a member of an active project, or your project has no
 active allocation, you will not be able to log in. You should be able to
 find whether you have any active projects with active
-allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
+allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
 
 ### Confirm you are using the correct username and password
 
@@ -75,9 +53,9 @@ to invalidate the second factor code.
 If your device can't keep time properly for whatever reason, please
 contact the person or team responsible for supporting it.
 
-### Ensure you're not reusing the same 6-digit code from your token
+### Ensure you're not reusing the same 6-digit code from your token
 
-Login will fail if the same 6-digit code is used to access the Māui or
+Login will fail if the same 6-digit code is used to access the
 Mahuika login node after it has been used to access the lander node, or
 for consecutive login attempts to any node. If in doubt, wait 30 seconds
 for a new token to be generated.
@@ -91,7 +69,7 @@ people have multiple tokens and occasionally mix them up.
 
 Six failed login attempts within five minutes will trigger a four-hour
 lockout. Users experiencing login issues can inadvertently trigger the
-lockout, making diagnosing the original issue much more difficult.  
+lockout, making diagnosing the original issue much more difficult.
 
 ## Connection closed by .... (MobaXterm)
 
