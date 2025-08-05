@@ -1,11 +1,7 @@
 ---
 created_at: '2021-01-05T20:28:08Z'
 tags: []
-title: Lambda Stack
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360002558216
-zendesk_section_id: 360000040076
+status: depricated
 ---
 
 ## Introduction
@@ -21,7 +17,7 @@ have provided some prebuilt Singularity images (under
 */opt/nesi/containers/lambda-stack/*) or you can build your own (see the
 guide below). In the following sections, we will show you how to run
 Lambda Stack in a Slurm job or interactively via
-[JupyterLab](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md).
+[JupyterLab](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md).
 
 You can list the available Lambda Stack version on NeSI by running:
 

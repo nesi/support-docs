@@ -91,8 +91,9 @@ hc/en-gb/articles/360000625535.md: Scientific_Computing/Terminal_Setup/Standard_
 Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md: Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md
 hc/en-gb/articles/360000684396-Submitting-your-first-job.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
 hc/en-gb/articles/360000684396.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
-hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token.md: General/FAQs/How_to_replace_my_2FA_token.md
-hc/en-gb/articles/360000684635.md: General/FAQs/How_to_replace_my_2FA_token.md
+hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token.md: General/FAQs/How_to_replace_my_2FA.md
+hc/en-gb/articles/360000684635.md: General/FAQs/How_to_replace_my_2FA.md
+General/FAQs/How_to_replace_my_2FA_token.md: General/FAQs/How_to_replace_my_2FA.md
 hc/en-gb/articles/360000690275-Parallel-Execution.md: Getting_Started/Next_Steps/Parallel_Execution.md
 hc/en-gb/articles/360000690275.md: Getting_Started/Next_Steps/Parallel_Execution.md
 hc/en-gb/articles/360000691716-Slurm-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md
@@ -351,8 +352,6 @@ hc/en-gb/articles/7918332923023-How-do-I-run-my-Python-Notebook-through-SLURM.md
 hc/en-gb/articles/7918332923023.md: General/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md
 hc/en-gb/articles/8117557125391-Globus-Quick-Start-Guide.md: Storage/Data_Transfer_Services/Globus_Quick_Start_Guide.md
 hc/en-gb/articles/8117557125391.md: Storage/Data_Transfer_Services/Globus_Quick_Start_Guide.md
-hc/en-gb/articles/8202966997775-Status-page-subscription-notification-changes-.md: General/Announcements/Status_page_subscription_notification_changes.md
-hc/en-gb/articles/8202966997775.md: General/Announcements/Status_page_subscription_notification_changes.md
 hc/en-gb/articles/8252164326415-NeSI-wide-area-network-connectivity.md: Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md
 hc/en-gb/articles/8252164326415.md: Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md
 hc/en-gb/articles/8974326930319-Visual-Studio-Code-Remote-Latest-Version-Not-Supported-UPDATE.md: General/Announcements/Visual_Studio_Code_Remote-Latest_Version_Not_Supported_UPDATE.md
@@ -378,4 +377,4 @@ Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md: Sci
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md: Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice.md: Scientific_Computing/Batch_Jobs/SLURM-Best_Practice.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md: Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md
-Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md: Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md
+Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md: Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md

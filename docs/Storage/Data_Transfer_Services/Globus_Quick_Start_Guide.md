@@ -9,7 +9,7 @@ zendesk_section_id: 360000040596
 ---
 
 This is intended to be a quick-start guide, for more detailed
-information, please see our other Globus articles here: [Globus documentation](Data_Transfer_using_Globus_V5.md)
+information, please see our other Globus articles here: [Globus documentation](Data_Transfer_using_Globus.md)
 
 Globus is a third-party service for transferring large amounts of data
 between two Globus Data Transfer Nodes (DTNs). To use Globus to transfer

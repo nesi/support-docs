@@ -5,11 +5,6 @@ tags:
 - project
 - request_membership
 - mynesi
-title: Applying to join an existing NeSI project
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000693896
-zendesk_section_id: 360000196195
 ---
 
 !!! prerequisite
@@ -28,5 +23,4 @@ If you do not know your NeSI account username:
 
 !!! prerequisite "What Next?"
      -   The project owner will add your username to the project.
-     -   Once it is done, you will be able to [set your NeSI account
-         password](../../Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
+     -   Once it is done, you will be able to [login for the first time](../../Getting_Started/Accessing_the_HPCs/First_Time_Login.md).

@@ -20,4 +20,4 @@ description: How to add a new member to your NeSI project.
    ![Adding_Members.png](../../assets/images/Adding_Members.png)
 
 !!! prerequisite "What Next?"
-    - The new team member will now be able to access your project on NeSI, provided they have [set a NeSI account password](../Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md).
+    - The new team member will now be able to access your project on NeSI, provided they have also set up their NeSI account.

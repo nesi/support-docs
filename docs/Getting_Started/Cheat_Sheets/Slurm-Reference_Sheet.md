@@ -5,10 +5,6 @@ tags:
  - cheat sheet
 title: 'Slurm: Reference Sheet'
 description: Quick list of the most commonly used Slurm commands, flags, and environment variables.
-vote_count: 10
-vote_sum: 10
-zendesk_article_id: 360000691716
-zendesk_section_id: 360000278975
 ---
 
 If you are unsure about using our job scheduler Slurm, more details can
@@ -46,11 +42,11 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 
 | | | |
 | -- | -- | -- |
-| `--job-name`   | `#SBATCH --job-name=MyJob`              | The name that will appear when using squeue or sacct.                                                           |
+| `--job-name`   | `#SBATCH --job-name=MyJob`              | The name that will appear when using `squeue` or `sacct`.                                                           |
 | `--account`    | `#SBATCH --account=nesi99999`           | The account your core hours will be 'charged' to.                                                               |
 | `--time`       | `#SBATCH --time=DD-HH:MM:SS`            | Job max walltime.                                                                                               |
 | `--mem`        | `#SBATCH --mem=512MB`                   | Memory required per node.                                                                                       |
-| `--partition`  | `#SBATCH --partition=milan`              | Specified job[partition](../../Scientific_Computing/Batch_Jobs/Mahuika_Slurm_Partitions.md). |
+| `--partition`  | `#SBATCH --partition=milan`              | Specified job partition. |
 | `--output`     | `#SBATCH --output=%j_output.out`        | Path and name of standard output file.                                                                          |
 | `--mail-user`  | `#SBATCH --mail-user=user123@gmail.com` | Address to send mail notifications.                                                                             |
 | `--mail-type`  | `#SBATCH --mail-type=ALL`               | Will send a mail notification at `BEGIN END FAIL`.                                                            |

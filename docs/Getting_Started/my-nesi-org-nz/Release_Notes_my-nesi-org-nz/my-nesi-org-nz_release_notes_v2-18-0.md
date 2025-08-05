@@ -37,8 +37,8 @@ search:
     allocation requests to no further than one year in the future.
 - Changed which system components from NeSI's [System Status page](https://status.nesi.org.nz) are default notifications emailed
     to users. Users can customise their system status email
-    notifications at any time. [Read more about that
-    here](../../../General/Announcements/Status_page_subscription_notification_changes.md).
+    notifications at any time. Read more about that
+    somewhere.
 
 If you have any questions about any of the improvements or fixes, please
  {% include "partials/support_request.html" %}.
