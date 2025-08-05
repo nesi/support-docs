@@ -2,7 +2,6 @@
 created_at: '2023-01-12T20:45:15Z'
 tags: []
 title: Sync'ing files between NeSI and another computer with globus-automate
-status: deprecated
 ---
 
 It is common to generate large amounts of simulation data on NeSI and

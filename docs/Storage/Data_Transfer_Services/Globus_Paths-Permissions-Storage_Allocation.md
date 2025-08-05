@@ -2,7 +2,6 @@
 created_at: '2021-08-27T03:30:10Z'
 tags: []
 title: Globus Paths, Permissions, Storage Allocation
-status: deprecated
 ---
 
 ## Globus default directory

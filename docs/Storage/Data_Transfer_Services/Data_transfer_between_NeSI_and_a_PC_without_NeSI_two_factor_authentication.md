@@ -2,7 +2,6 @@
 created_at: '2023-01-12T02:42:17Z'
 tags: []
 title: Data transfer between NeSI and a PC without NeSI two-factor authentication
-status: deprecated
 ---
 
 This article shows how to transfer potentially large amounts of data

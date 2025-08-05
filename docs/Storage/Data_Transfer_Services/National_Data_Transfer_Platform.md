@@ -9,8 +9,6 @@ for transferring large amounts of data between Globus Data Transfer
 Nodes (DTNs). New Zealand DTNs facilitate the transfer of data to and
 from institutional storage. This service allows data to be accessible to
 any person who has a Globus account."
-status: deprecated
-
 ---
 
 {{description}}

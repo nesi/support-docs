@@ -2,7 +2,6 @@
 created_at: '2019-02-27T21:04:11Z'
 tags: []
 title: Initial Globus Sign-Up, and your Globus Identities
-status: deprecated
 ---
 
 Globus provides logins for NeSI users via their organisation, GitHub,
