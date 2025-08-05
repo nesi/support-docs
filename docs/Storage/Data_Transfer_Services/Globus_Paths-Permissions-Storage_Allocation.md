@@ -2,10 +2,7 @@
 created_at: '2021-08-27T03:30:10Z'
 tags: []
 title: Globus Paths, Permissions, Storage Allocation
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4405623499791
-zendesk_section_id: 360000040596
+status: deprecated
 ---
 
 ## Globus default directory

@@ -2,10 +2,7 @@
 created_at: '2023-01-12T20:45:15Z'
 tags: []
 title: Sync'ing files between NeSI and another computer with globus-automate
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6202743496591
-zendesk_section_id: 360000040596
+status: deprecated
 ---
 
 It is common to generate large amounts of simulation data on NeSI and

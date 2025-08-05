@@ -3,10 +3,8 @@ created_at: '2018-05-29T04:01:33Z'
 tags: 
 - globus
 title: Personal Globus Endpoint Configuration
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000217915
-zendesk_section_id: 360000040596
+status: deprecated
+
 ---
 
 Using Globus to transfer and share files from/to a personal computer

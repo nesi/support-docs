@@ -2,10 +2,7 @@
 created_at: '2021-08-27T03:18:13Z'
 tags: []
 title: Data Transfer using Globus
-vote_count: 5
-vote_sum: 3
-zendesk_article_id: 4405623380751
-zendesk_section_id: 360000040596
+status: deprecated
 ---
 
 ## Globus
