@@ -103,6 +103,8 @@ extra_css:
   - assets/stylesheets/footer.css
   - assets/stylesheets/custom_admonations.css
   - assets/stylesheets/theme.css
+  - assets/stylesheets/chat.css
 extra_javascript:
     - assets/javascripts/general.js
     - https://status.nesi.org.nz/embed/script.js
+    - assets/javascripts/chat.js
