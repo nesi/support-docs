@@ -2,10 +2,7 @@
 created_at: '2019-02-27T21:04:11Z'
 tags: []
 title: Initial Globus Sign-Up, and your Globus Identities
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000817476
-zendesk_section_id: 360000040596
+status: deprecated
 ---
 
 Globus provides logins for NeSI users via their organisation, GitHub,

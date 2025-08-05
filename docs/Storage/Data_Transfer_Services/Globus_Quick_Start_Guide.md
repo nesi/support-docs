@@ -2,10 +2,7 @@
 created_at: '2023-10-13T00:14:22Z'
 tags: []
 title: Globus Quick Start Guide
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 8117557125391
-zendesk_section_id: 360000040596
+status: deprecated
 ---
 
 This is intended to be a quick-start guide, for more detailed

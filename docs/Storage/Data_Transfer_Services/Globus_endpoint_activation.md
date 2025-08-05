@@ -3,6 +3,7 @@ created_at: '2021-08-27T03:41:37Z'
 tags: 
     - data
     - globus
+status: deprecated
 ---
 
 ## Activating an Endpoint
