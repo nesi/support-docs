@@ -2,7 +2,6 @@
 created_at: '2023-10-13T00:14:22Z'
 tags: []
 title: Globus Quick Start Guide
-status: deprecated
 ---
 
 This is intended to be a quick-start guide, for more detailed

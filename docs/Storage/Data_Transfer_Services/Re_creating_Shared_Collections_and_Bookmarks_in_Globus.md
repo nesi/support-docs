@@ -4,8 +4,6 @@ tags:
 - globus
 - data
 title: Re-creating Guest Collections and Bookmarks
-status: deprecated
-
 ---
 
 Guest Collections created in the previous NeSI endpoint **NeSI
