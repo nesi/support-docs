@@ -324,7 +324,7 @@ graphical interface.
      The `nsys-ui` and `ncu-ui` tools require access to a display server,
      either via
      [X11](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md) or a
-     [Virtual Desktop](../../Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md).
+     [Virtual Desktop](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/virtual_desktop.md).
      You also need to load the `PyQt` module beforehand:
 
      ```sh
@@ -339,7 +339,7 @@ The following pages provide additional information for supported
 applications:
 
 - [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS.md#examples)
-- [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md#nvidia-gpu-container)
+- [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md)
 - [Lambda Stack](../../Scientific_Computing/Supported_Applications/Lambda_Stack.md)
 - [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#using-gpus)
 - [TensorFlow on GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)

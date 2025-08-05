@@ -225,7 +225,7 @@ container on the HPC. For reliable and efficient execution it is best to
 use the same MPI distribution inside and outside the container. This
 restricts choices to Intel MPI on the Mahuika and Māui Ancil clusters;
 see section
-[Installing Dask-MPI with Conda](#installing-dask-mpi-with-conda-on-mahuika-and-maui-ancil)
+[Installing Dask-MPI with Conda](#installing-dask-mpi-with-conda)
 above for instructions.
 It will also reduce container portability between platforms that use
 different MPI distributions.

@@ -16,15 +16,14 @@ use.
 Examples of software environments on NeSI optimised for data science
 include:
 
-- [R](../../Scientific_Computing/Supported_Applications/R.md) and [Python](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md) users
+- [R](../../Scientific_Computing/Supported_Applications/R.md) and
+    [Python](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md) users
     can get right into using and exploring the several built-in packages
     or create custom code.
 
-- [Jupyter on NeSI
-    ](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)is
+- [Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md)is
     particularly well suited to artificial intelligence and machine
-    learning workloads. [R
-    Studio](../../Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md)
+    learning workloads. [RStudio](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/RStudio.md)
     and/or Conda can be accessed via Jupyter.
 
 - Commonly used data science environments and libraries such as

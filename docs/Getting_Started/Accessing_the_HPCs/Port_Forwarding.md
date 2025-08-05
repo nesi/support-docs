@@ -205,6 +205,4 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 ```
 
 !!! tip "What Next?"
-    -   Using
-        [JupyterLab](../../Scientific_Computing/Supported_Applications/JupyterLab.md) on the cluster.
-    -   [Paraview](../../Scientific_Computing/Supported_Applications/ParaView.md)
+    - [Paraview](../../Scientific_Computing/Supported_Applications/ParaView.md)

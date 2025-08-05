@@ -15,7 +15,7 @@ and workflows and much more.
 
 
 Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
-For more details see the [how-to guide](../../how_to_guide.md#how-to-launch-jupyterlab-rstudio).
+For more details see the [how-to guide](../../how_to_guide.md).
 
 ## Jupyter user interface
 

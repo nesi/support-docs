@@ -14,7 +14,7 @@ is particularly useful in the context of automated, or [scripted data
 transfers](../../Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md).
 
 The approach is based on using
-[Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md)
+[Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md)
 and a guest collection on the source side. **Globus** allows you to copy
 and synchronise files between NeSI's platforms and other computers,
 including your personal computer.
@@ -24,7 +24,7 @@ A ***collection*** is a directory whose content can be shared. A
 in your credentials each time your transfer files.
 
 See this [support
-page](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md)
+page](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md)
 on how to set up Globus. Here, we assume you have an account on NeSI and
 have registered and created an account on Globus.
 

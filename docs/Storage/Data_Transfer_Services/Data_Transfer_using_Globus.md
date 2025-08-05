@@ -125,7 +125,7 @@ path, then you could change the path to
 
 \(3\) project sub-directories of
 ***/nesi/nobackup/&lt;project\_code&gt;***  - see
-[Globus Paths,Permissions, Storage Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md).  
+[Globus Paths,Permissions, Storage Allocation](../../Storage/Data_Transfer_Services/Globus_Paths-Permissions-Storage_Allocation.md).  
   
 Navigate to your selected directory. e.g. the `nobackup` filesystem
 `/nesi/nobackup/<project_code>` and select the two-endpoint panel
@@ -161,13 +161,13 @@ To find other NeSI endpoints, type in "nesi#":
   on the top-right of the *File Manager* page.
 - Select the Endpoints you wish to move files between (start typing
   "nesi#" to see the list of NeSI endpoints to select from).
-  [Authenticate](../../Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md)
+  [Authenticate](../../Storage/Data_Transfer_Services/Globus_endpoint_activation.md)
   at both endpoints.
 - At Globus.org the endpoint **defaults to
   `/home/<username>` path** (represented by `~`) on the NeSI platform. We do not recommend uploading data to your home directory, as
   home directories are very small. Instead, navigate to an appropriate
   project directory under /nobackup (see
-  [Globus Paths, Permissions,  Storage  Allocation](../../Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md)).
+  [Globus Paths, Permissions,  Storage  Allocation](../../Storage/Data_Transfer_Services/Globus_Paths-Permissions-Storage_Allocation.md)).
 - Transfer the files by clicking the appropriate
   ![start.png](../../assets/images/Data_Transfer_using_Globus_V13.png){: style="height:1em;"} button
   depending on the direction of the transfer.

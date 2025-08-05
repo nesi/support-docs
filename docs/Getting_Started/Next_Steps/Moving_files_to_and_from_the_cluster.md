@@ -10,8 +10,6 @@ tags:
 - cp
 - move
 - moving
-vote_count: 11
-vote_sum: 3
 ---
 
 !!! prerequisite
@@ -19,24 +17,10 @@ vote_sum: 3
 
 Find more information on [the NeSI Filesystem](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
-## Using the Jupyter interface
+## OnDemand
 
-The [Jupyter interface](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md)
-useful for running code on NeSI requiring only a web browser; the instructions are same whether your are
-connecting from a Windows, Mac or a Linux computer.
-
-To upload a file, click on the
-
-![up arrow](../../assets/images/Moving_files_to_and_from_the_cluster.png)
-
-button, near the top left and generally under the Run button.
-
-To download a file, navigate the file browser on the left and
-right-click on the file to see the menu below,
-
-![right click menu](../../assets/images/Moving_files_to_and_from_the_cluster_0.png)
-
-The Download button is at the bottom.
+Requiring only a web browser the instructions are same whether your are connecting from a Windows, Mac or a Linux computer.
+See [NeSI_OnDemand how to guide](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md) for more info.
 
 ## Standard Terminal
 
@@ -125,7 +109,7 @@ authentication.
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.
 You can find more details in
-[Data_Transfer_using_Globus_V5](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md).
+[Data_Transfer_using_Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md).
 
 ## Rclone
 
