@@ -56,17 +56,20 @@ configurations.
     ```
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
+   
+   !!! warn
+    MobaXterm does not allow the user of sockets. If you are using MobaXterm please exclude the first four lines from your own ssh config.
 
-3. Ensure the permissions are correct by
+4. Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
 
-4. Run the command.
+5. Run the command.
 
     ```sh
     ssh nesi
     ```
 
-5. You will be prompted to approve host authenticity
+6. You will be prompted to approve host authenticity
 
     ```sh
     The authenticity of host 'lander.hpc.nesi.org.nz (163.7.144.68)' can't be established.
@@ -77,7 +80,7 @@ configurations.
 
     Type `yes` and <kbd>Enter</kbd>
 
-6. You will be presented with a link.
+7. You will be presented with a link.
 
     ```sh
     Authenticate at https://iam.nesi.org.nz/realms/public/device?user_code=XXXX-XXXX and press ENTER.
@@ -89,16 +92,16 @@ configurations.
         If you set up your `.ssh/config` as recommended you will be prompted to authenticate again.  
         We are working on fixing this.
 
-7. Select your institution, you will be prompted to provide your login details.
+8. Select your institution, you will be prompted to provide your login details.
 
-8. Click 'Yes' when prompted to trust this device. This will allow you to log in without 2FA for 7 days. The name can be anything.
+9. Click 'Yes' when prompted to trust this device. This will allow you to log in without 2FA for 7 days. The name can be anything.
     ![alt text](../../assets/images/Standard_Terminal_Setup_1.png).
 
-9. Scan the QR code with your authenticator app. Then enter the six digit code provided. You may give your device a name.
+10. Scan the QR code with your authenticator app. Then enter the six digit code provided. You may give your device a name.
 
     ![alt text](../../assets/images/Standard_Terminal_Setup_2.png)
 
-10. Return to your terminal, and press <kbd>enter</kbd>.
+11. Return to your terminal, and press <kbd>enter</kbd>.
 
 ## Subsequent log in
 
