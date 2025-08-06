@@ -1,7 +1,7 @@
 ---
 created_at: '2022-08-03T21:35:50Z'
 tags: []
-status: depricated
+status: deprecated
 ---
 
 ## What is Cylc

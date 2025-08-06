@@ -2,7 +2,7 @@
 created_at: '2019-12-05T22:46:53Z'
 tags: []
 title: Download and share CMIP6 data (for NIWA researchers)
-status: depricated
+status: deprecated
 ---
 
 The [Coupled Model Intercomparison

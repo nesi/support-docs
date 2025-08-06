@@ -2,7 +2,7 @@
 created_at: '2020-06-23T23:10:13Z'
 tags: []
 title: Miniforge3
-status: depricated
+status: deprecated
 ---
 
 

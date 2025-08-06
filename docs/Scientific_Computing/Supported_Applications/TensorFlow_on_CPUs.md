@@ -1,7 +1,7 @@
 ---
 created_at: '2019-06-14T05:35:45Z'
 tags: []
-status: depricated
+status: deprecated
 ---
 
 {% set app_name = "TensorFlow" %}

@@ -2,7 +2,7 @@
 created_at: '2019-04-07T23:56:57Z'
 tags:
 - slurm
-status: depricated
+status: deprecated
 ---
 
 ## On Job Completion
