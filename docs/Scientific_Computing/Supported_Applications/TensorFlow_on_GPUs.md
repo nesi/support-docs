@@ -2,7 +2,7 @@
 created_at: '2019-06-03T23:54:50Z'
 tags:
 - gpu
-status: depricated
+status: deprecated
 ---
 
 {% set app_name = "TensorFlow" %}

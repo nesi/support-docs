@@ -1,7 +1,7 @@
 ---
 created_at: '2020-11-02T23:31:38Z'
 tags: []
-status: depricated
+status: deprecated
 ---
 
 The Weather Research and Forecasting (WRF) Model is a next-generation

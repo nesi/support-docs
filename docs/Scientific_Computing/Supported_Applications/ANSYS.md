@@ -4,7 +4,7 @@ tags:
 - engineering
 - cfd
 - fea
-status: depricated
+status: deprecated
 description: How to best use ANSYS products on the NeSI cluster.
 ---
 

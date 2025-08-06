@@ -1,7 +1,7 @@
 ---
 created_at: '2021-01-05T20:28:08Z'
 tags: []
-status: depricated
+status: deprecated
 ---
 
 ## Introduction
