@@ -12,33 +12,35 @@ zendesk_article_id: 360000428676
 zendesk_section_id: 360000164635
 ---
 
-If you are new to NeSI, short introductory lectures are available on
+If you are new to using our advanced computing platforms, you can find introductory video tutorials available on
 YouTube [here](https://www.youtube.com/playlist?list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw)
-to help get you started on the systems. These videos are open to anyone
-interested in learning more about High Performance Computing (HPC) using
-NeSI, prior to [getting a NeSI account](https://www.nesi.org.nz/services/applyforaccess).
+to help get you started. 
 
-The recordings present an overview of NeSI systems and the HPC
-platforms' capabilities, available software and environment modules,
-best practice procedures, common commands for submitting jobs, and
-optimising your work on the system.
+The recordings share an overview of: 
+- our HPC platforms' capabilities,
+- available software and environment modules,
+- best practice procedures,
+- common commands for submitting jobs, and
+- optimising your work on the systems.
 
-Slides used in the lectures can be found [here](https://docs.google.com/presentation/d/11TCaJnpZO-s-s4NQ1P0a89flewT7HXmn2PHrW-3EPYg/edit?usp=sharing).
+Our latest recordings share tips for getting started on the new platforms:
 
-!!! warning
-    Please note that we are currently in the middle of a platform refresh so parts of these introductory materials may soon be out of date. Once they are out of date we will update this matieral and upload new, up to date, videos. You can find details on the platform refresh [here](https://www.nesi.org.nz/platform-refresh).
+- [Logging into OnDemand](https://youtu.be/wMkmO3lseow?si=x1of7xvn_KNK7uPV)
+- [Using MobaXterm](https://youtu.be/EDBx24Aeel4?si=hiCPQlnGd1J0f0gJ)
+
+
 
 ## Other ways to get 'Introductory' help
 
-In addition to the material mentioned above, you can also seek help at
-our weekly "Office Hours" or by attending a Workshop. Office hours are
-drop-in sessions hosted by the NeSI Support Team where any and all
-questions are welcome. **Our Office Hours schedule** can be found
+_YouTube Training Playlist_
+We have a more comprehensive playlist on YouTube with recordings of all past training workshops we've delivered. [You can browse the playlist](https://www.youtube.com/playlist?list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF) and watch them on your own time. {% include "partials/support_request.html" %} if you have any questions about the content. 
+
+_Online Office Hours_
+Our online Office hours are drop-in sessions hosted by our Researcher Support Team. Any and all questions are welcome. **Our Office Hours schedule** can be found
 [here](../../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md).
 
-NeSI also participates in and organises [Workshops](https://www.nesi.org.nz/services/training) covering a range of topics. Many of these workshops - and particularly "Introduction to HPC using NeSI", are designed for new users.
+_Training Workshops_
+We organise [Workshops](https://www.nesi.org.nz/services/training/training-service-catalogue) that build digital research skills across a range of topics. Many of these workshops are designed for new users.
 
-Finally, If you wish to schedule a live zoom introductory session
-covering introductory material (perhaps useful for research groups),
-please {% include "partials/support_request.html" %}
-and we can advise you on our availability.
+_One-on-one Sessions_
+We can also schedule one-on-one sessions for you or your research group that cover introductory material or another topic of your choice. Please {% include "partials/support_request.html" %} and we can find a time and format (eg. online or in-person) that works for you.
