@@ -45,7 +45,7 @@
                 "server": "ABAQUS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.73,
+                "server_uptime": 0.81,
                 "server_version": "11.13.1",
                 "features": [
                     {
@@ -66,7 +66,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.94,
+                        "hourly_average": 0.91,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -80,7 +80,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.82,
+                        "hourly_average": 0.85,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -3274,14 +3274,14 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.76,
+                "server_uptime": 0.81,
                 "server_version": "11.16.2",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.99,
+                        "hourly_average": 1.0,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
@@ -3308,7 +3308,7 @@
                 "server": "COMSOL@uoa_idg",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.73,
+                "server_uptime": 0.81,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3342,14 +3342,14 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.73,
+                "server_uptime": 0.81,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.98,
+                        "hourly_average": 0.94,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3376,7 +3376,7 @@
                 "server": "COMSOL@uoa_foes",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.76,
+                "server_uptime": 0.81,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3410,14 +3410,14 @@
                 "server": "COMSOL@uoa_foe_des_rc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.76,
+                "server_uptime": 0.81,
                 "server_version": "11.15.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 49.9,
+                        "hourly_average": 37.9,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3431,7 +3431,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 36.98,
+                        "hourly_average": 28.13,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3499,7 +3499,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 501965117.44,
+                        "hourly_average": 403249203.08,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -7344,7 +7344,8 @@
         "description": "\nGROMACS is a versatile package to perform molecular dynamics,\n i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.\n\nThis is a GPU enabled build, containing both MPI and threadMPI binaries.\n",
         "domains": [
             "bio",
-            "chemistry"
+            "chemistry",
+            "molecular dynamics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9005,7 +9006,7 @@
         ],
         "licence_type": "",
         "homepage": "https://pypi.org/project/jupyterlab/",
-        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/JupyterLab",
+        "support": "",
         "versions": [
             "2022.7.0-gimkl-2020a-3.4.3",
             "2023.1.0-gimkl-2022a-3.5.3",
@@ -11237,7 +11238,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.13,
+                "server_uptime": 0.3,
                 "server_version": "",
                 "features": []
             },
@@ -11256,7 +11257,7 @@
                 "server": "MATLAB@uoa",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.76,
+                "server_uptime": 0.81,
                 "server_version": "",
                 "features": []
             },
@@ -11275,7 +11276,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.54,
+                "server_uptime": 0.63,
                 "server_version": "",
                 "features": []
             },
@@ -11313,7 +11314,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.13,
+                "server_uptime": 0.3,
                 "server_version": "",
                 "features": []
             },
@@ -20904,7 +20905,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.turbovnc.org",
-        "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/TurboVNC",
+        "support": "",
         "versions": [
             "2.2.4-GCC-9.2.0"
         ],
