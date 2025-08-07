@@ -14,6 +14,7 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 !!! info "Recently fixed"
      - New login node "login03" fixes previous performance problems.
      - The first 37 of the Milan compute nodes are now available, though not yet for multi-node jobs.
+     - The 80GB A100 GPUs are now available. 
 
 ## Login
 Currently, when logging into the new platform using a proxy you will be prompted for authentication twice.
@@ -34,8 +35,6 @@ None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new 
 Jobs in the milan partition are currently limited to one node and 7 days.
 
 ## GPUs
-The 16 80 GB A100 GPUs which were in the *hgx* partition are (along with their Milan nodes) not yet installed. The 8 PCIe 40 GB A100s are present however, along with the new L4 and H100 GPUs.
-
 If you request a GPU without specifying which *type* of GPU, you will get a random one. So please always specify a GPU type. 
 
 ## Software
