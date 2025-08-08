@@ -8,26 +8,24 @@ zendesk_article_id: 360000751916
 zendesk_section_id: 360000164635
 ---
 
-NeSI's Consultancy service provides scientific and HPC-focussed
+Our Consultancy service provides scientific and HPC-focussed
 computational and data science support to research projects across a
 range of domains.
 
 ## Need support with your research project?
 
-If you would like to learn more about NeSI's Consultancy service and how
-you can work with NeSI's Research Software and Data Science Engineers on
+If you would like to learn more about our Consultancy service and how
+you can work with our Research Software Engineers on
 a project, please {% include "partials/support_request.html" %} to set up an
 initial meeting. We can discuss your needs and complete a Consultancy
 application form together.
 
-Researchers from NeSI collaborator institutions (University of Auckland,
-NIWA, University of Otago and Manaaki Whenua - Landcare Research) and
-those with Merit projects can usually access consultancy at no cost to
-themselves, based on their institution's or MBIE's investment into NeSI.
+Researchers with Merit (grant-funded) projects can usually access Consultancy support at no cost to
+themselves.
 
 ## What do we do?
 
-The NeSI team are available to help with any stage of your research
+Our team of experts are available to help with any stage of your research
 software development. We can get involved with designing and developing
 your software from scratch, or assist with improving software you have
 already written.
@@ -69,7 +67,7 @@ During a consultancy project we aim to provide:
 - A summary document outlining what has been achieved during the
     project
 - A case study published on our website after the project has been
-    completed, to showcase the work you are doing on NeSI
+    completed, to showcase the work you are doing on our platforms
 
 ## What is expected of you?
 
@@ -83,11 +81,11 @@ input is required on your part. You should be willing to:
 - Invest time to answer questions, provide code and data as necessary
     and make changes to your workflow if needed
 - [Acknowledge](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication)
-    NeSI in article and code publications that we have contributed to,
+    us in article and code publications that we have contributed to,
     which could include co-authorship if our contribution is deemed
     worthy
 - Accept full ownership/maintenance of the work after the project
-    completes (NeSI's involvement in the project is limited to the
+    completes (our involvement in the project is limited to the
     agreed timeline)
 
 ## Previous projects
