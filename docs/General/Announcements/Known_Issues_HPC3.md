@@ -13,8 +13,8 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 !!! info "Recently fixed"
      - New login node "login03" fixes previous performance problems.
-     - The first 37 of the Milan compute nodes are now available, though not yet for multi-node jobs.
-     - The 80GB A100 GPUs are now available. 
+     - Most of the Milan compute nodes are now available, though not yet for multi-node jobs. That includes the 4 nodes with the 80GB A100 GPUs.
+     - MaxRSS is now the same number as it was on the old cluster - just the ordinary (ie: "anon") memory use without caches etc.
 
 ## Login
 Currently, when logging into the new platform using a proxy you will be prompted for authentication twice.
@@ -50,17 +50,13 @@ Please let us know if you find any additional problems.
 
 ## Slurm
 
-### Recorded memory use
-
-The amount of memory use which Slurm reports via `sacct` (or indirectly via `nn_seff`, etc.), despite still being labeled as the MaxRSS (or AveRSS etc.) is no longer the [RSS](https://en.wikipedia.org/wiki/Resident_set_size) but is now the total memory use, which is a higher number as it also includes memory used by files in the memory-based `/tmp` filesystem and any file content which was cached in memory during ordinary I/O. For simple commands which don't fork off child processes, one way you can still discover the RSS (which is often a better measure of the minimum memory needed) is to prefix your commands with `/usr/bin/time --format='MaxRSS = %M kB'`.  
-
 ### $TMPDIR
 
 The size limit on this per-job in-memory directory is currently only 70 TB per node in total across all jobs. So if you need to use more than about 5 TB of it per node then please use `--gres=ssd` to get your job's $TMPDIR placed on a fast SSD instead.
 
 ### BadConstraints
 
-This can appear as a reason for a job pending in the `squeue` output when the job is submitted to both `milan` and `genoa` partitions (which is the default behaviour).  It does not appear to cause a serious problem and we think it is likely to be fixed in the next point release of Slurm.
+This uninformative message can appear as a reason for a job pending in the `squeue` output when the job is submitted to both `milan` and `genoa` partitions (which is the default behaviour). It does not appear to reflect a real problem though, just a side-effect of the mechanism we are using to target jobs to the right-sized node(s). 
 
 ## email
 Slurm option `--mail-type` is not yet effective.
@@ -69,4 +65,4 @@ Slurm option `--mail-type` is not yet effective.
 You cannot yet `ssh` into compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes.
 
 ## WEKA Filesystems 
-The filesystems on the new platform are not yet as fast as they will be.
+From most of the Genoa compute nodes, the cluster-wide filesystems (_/home_, _/nesi/project_, _/nesi/nobackup_, and _/opt/nesi_) are not yet as fast as they should be.
