@@ -1,11 +1,9 @@
 ---
 created_at: '2019-09-22T20:20:07Z'
-tags: []
-title: How can I see how busy the cluster is?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001176756
-zendesk_section_id: 360000039036
+tags:
+ - slurm
+title: How busy is the cluster?
+status: deprecated
 ---
 
 You can get the current status of all nodes on a cluster using the
@@ -50,8 +48,8 @@ The most common node states you are likely to see are:
 | `reserved`  | This node has been reserved, and is only available for some users (in the case of the igpu partition, please contact NeSI support if you wish to use it). |
 | `draining`  | Jobs are currently running on this node, but is not available for new jobs.                                                                               |
 
-A full list of node states can be found
-[here](https://slurm.schedmd.com/sinfo.html#lbAG).
+See the Slurm documentation for a
+[full list of node states](https://slurm.schedmd.com/archive/{{ config.extra.slurm }}/sinfo.html#lbAG).
 
 If you are interested in the state of one partition in particular you
 may want to use the command `squeue -p <partition>` to get the current
