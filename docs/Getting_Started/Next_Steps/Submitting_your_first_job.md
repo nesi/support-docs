@@ -17,14 +17,14 @@ For a full list of module commands run `man module`.
 
 | Command                      | Description                                                                                                                                                                                                           |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `module spider [ <string> ]` | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules. (only on Mahuika)                                                |
+| `module spider [ <string> ]` | List all modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all available modules.                                                                  |
 | `module show <string>`       | Show the contents of the module given by `<string>`. If only the module name (e.g. `Python`) is given, show the default module of that name. If both name and version are given, show that particular version module. |
 | `module load <string>`       | Load the module (name and version) given by `<string>`. If no version is given, load the default version.                                                                                                             |
 | `module list [ <string> ]`   | List all currently loaded modules whose names, including version strings, contain `<string>`. If the `<string>` argument is not supplied, list all currently loaded modules.                                          |
 
 ## Slurm
 
-Jobs on Mahuika and Māui are submitted in the form of a *batch script* containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
+Jobs on the HPC are submitted in the form of a *batch script* containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
 
 ## Creating a batch script
 
