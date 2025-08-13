@@ -2,11 +2,7 @@
 created_at: '2018-11-15T22:10:10Z'
 tags: []
 description: How to use simultaneous multithreading (hyper-threading) on NeSI.
-vote_count: 6
-vote_sum: -4
 status: deprecated
-zendesk_article_id: 360000568236
-zendesk_section_id: 360000030876
 ---
 
 As CPU technology advanced engineers realised that adapting CPU
@@ -161,7 +157,7 @@ CPUs according to the following image:
 </tbody>
 </table>
 
-Image adapted from [Slurm's documentation page](https://slurm.schedmd.com/cpu_management.html).
+Image adapted from [Slurm's documentation page](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/cpu_management.html).
 
 ## When to use Hyperthreading
 

@@ -132,7 +132,7 @@ request for projects that expect to use the cluster heavily on average,
 can predict when they will need their heaviest use with a high degree of
 confidence, and give us plenty of notice.
 
-See the [Slurm documentation](https://slurm.schedmd.com/priority_multifactor.html#fairshare) for full details on Slurm's Fair share mechanism
+See the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/priority_multifactor.html#fairshare) for full details on Slurm's Fair share mechanism
 
 ## How do I check my project's Fair Share score?
 

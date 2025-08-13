@@ -12,7 +12,7 @@ be found on [Submitting_your_first_job](../../Getting_Started/Next_Steps/Submitt
 
 ## Slurm Commands
 
-A complete list of Slurm commands can be found [in the full documentation](https://slurm.schedmd.com/man_index.html), or by entering `man slurm` into a terminal
+A complete list of Slurm commands can be found [in the full documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/man_index.html), or by entering `man slurm` into a terminal
 
 |           |                       |                                                                          |
 | --------- | --------------------- | ------------------------------------------------------------------------ |
@@ -31,7 +31,7 @@ A complete list of Slurm commands can be found [in the full documentation](https
 ## `sbatch` options
 
 A complete list of `sbatch` options can be found
-[in the full Slurm documentation](https://slurm.schedmd.com/sbatch.html), or by running `man sbatch`
+[in the full Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html), or by running `man sbatch`
 
 Options can be provided on the command line or in the batch file as an
 `#SBATCH` directive.  The option name and value can be separated using

@@ -4,6 +4,7 @@ tags:
   - interactive
   - scheduling
 description: How to run an interactive session on the NeSI cluster.
+status: deprecated
 ---
 
 A SLURM interactive session reserves resources on compute nodes allowing
@@ -49,7 +50,7 @@ Note the host name in the prompt has changed to the compute node
 `wbn079`.
 
 For a full description of `srun` and its options, see the
-[schedmd documentation](https://slurm.schedmd.com/srun.html).
+[schedmd documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/srun.html).
 
 ## Using `salloc`
 
@@ -83,7 +84,7 @@ Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
 
 For a full description of `srun` and its options, see
-[here](https://slurm.schedmd.com/salloc.html).
+[here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
 
 ### Requesting a postponed start
 
@@ -206,7 +207,7 @@ scontrol update jobid=12345678 StartTime=now
 
 There are many other changes you can make by means of `scontrol`. For
 further information, please see 
-[the `scontrol` documentation](https://slurm.schedmd.com/scontrol.html).
+[the `scontrol` documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scontrol.html).
 
 ## Modifying multiple interactive sessions at once
 
