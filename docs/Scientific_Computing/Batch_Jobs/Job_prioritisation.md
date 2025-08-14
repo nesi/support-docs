@@ -86,4 +86,4 @@ size score, it is our general experience that an ability to be
 backfilled is on the whole more useful when it comes to getting work
 done on the HPCs.
 
-See the [Slurm documentation](https://slurm.schedmd.com/sched_config.html) for more info on backfilling.
+See the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sched_config.html) for more info on backfilling.

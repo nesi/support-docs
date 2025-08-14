@@ -1,10 +1,8 @@
 ---
 created_at: '2019-01-10T03:02:11Z'
-tags: []
-vote_count: 7
-vote_sum: 5
-zendesk_article_id: 360000690275
-zendesk_section_id: 360000189716
+tags:
+  - parallel computing
+description: How to take advantage of multiple CPUs.
 ---
 
 Many scientific software applications are written to take advantage of multiple CPUs in some way. But often this must be specifically requested by the user at the time they run the program, rather than happening automatically.
@@ -34,6 +32,7 @@ Example script:
 
 ``` sl
 #!/bin/bash -e
+
 #SBATCH --job-name=MultithreadingTest    # job name (shows up in the queue)
 #SBATCH --time=00:01:00                  # Walltime (HH:MM:SS)
 #SBATCH --mem=2048MB                     # memory in MB 
@@ -63,6 +62,7 @@ Since the distribution of tasks across different nodes may be unpredictable, `-
 
 ``` sl
 #!/bin/bash -e
+
 #SBATCH --job-name=MPIJob       # job name (shows up in the queue)
 #SBATCH --time=00:01:00         # Walltime (HH:MM:SS)
 #SBATCH --mem-per-cpu=512MB     # memory/cpu in MB (half the actual required memory)
@@ -95,6 +95,7 @@ For example, the following code:
 
 ``` sl
 #!/bin/bash -e
+
 #SBATCH --job-name=ArrayJob             # job name (shows up in the queue)
 #SBATCH --time=00:01:00                 # Walltime (HH:MM:SS)
 #SBATCH --mem=512MB                     # Memory
@@ -254,4 +255,4 @@ mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   # Move and rename
 rm -r ../run_${SLURM_ARRAY_TASK_ID}                          # Clear directory
 ```
 
-The Slurm documentation on job arrays can be found [here](https://slurm.schedmd.com/job_array.html).
+See the Slurm documentation for more info on [job arrays](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/job_array.html).

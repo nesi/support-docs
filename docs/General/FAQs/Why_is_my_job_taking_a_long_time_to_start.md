@@ -1,7 +1,9 @@
 ---
 created_at: '2019-02-06T22:27:04Z'
-tags: []
+tags:
+ - slurm
 title: Why is my job taking a long time to start?
+status: deprecated
 ---
 
 If you think your job is taking unexpectedly long to start running,
@@ -58,7 +60,7 @@ delayed. Common answers include "Priority", "Resources", "Dependency",
     not exist.
 
 A more comprehensive list of job reason codes is available
-[in the SLURM documentation](https://slurm.schedmd.com/squeue.html#lbAF) (offsite). As noted
+[in the SLURM documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html#lbAF) (offsite). As noted
 on that page, if a job is waiting for execution for several reasons,
 only one reason will be displayed, and there is not a documented
 importance of reasons. For example, one job could say Priority and

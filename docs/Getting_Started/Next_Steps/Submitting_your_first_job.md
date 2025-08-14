@@ -32,6 +32,7 @@ Create a new file and open it with `nano myjob.sl`
 
 ```sl
 #!/bin/bash -e
+
 #SBATCH --job-name=SerialJob # job name (shows up in the queue)
 #SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
 #SBATCH --mem=512MB          # Memory in MB
@@ -74,7 +75,7 @@ Submitted batch job 1748836
 
 `sbatch` can take command line arguments similar to those used in the shell script through SBATCH pragmas
 
-You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/sbatch.html)
+You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html)
 
 ## Job Queue
 
@@ -96,7 +97,7 @@ You can also filter to just your jobs using
 squeue --me
 ```
 
-You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/squeue.html).
+You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html).
 
 You can check all jobs submitted by you in the past day using:
 
@@ -116,7 +117,7 @@ Each job will show as multiple lines, one line for the parent job and then addit
     - `sacct -X` Only show parent processes.
     - `sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT` Filter jobs by state.
 
-You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/sacct.html).
+You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html).
 
 ## Cancelling
 
@@ -127,7 +128,7 @@ You can obtain the job ID by using `sacct` or `squeue`.
     - `scancel -u [username]` Kill all jobs submitted by you.
     - `scancel {[n1]..[n2]}` Kill all jobs with an id between `[n1]` and `[n2]`.
 
-You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/scancel.html).
+You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scancel.html).
 
 ## Job Output
 

@@ -67,7 +67,7 @@ whether your program supports multithreading, try benchmarking with 2
 CPUs and with 4 CPUs and see if there is a 2-fold difference in elapsed
 job time.
 
-[Job arrays](https://slurm.schedmd.com/job_array.html) are an efficient
+[Job arrays](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/job_array.html) are an efficient
 mechanism of managing a collection of batch jobs with identical resource
 requirements. Most Slurm commands can manage job arrays either as
 individual elements (tasks) or as a single entity (e.g. delete an entire

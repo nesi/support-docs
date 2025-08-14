@@ -255,6 +255,9 @@ def click_here():
 
 
 def walk_toc():
+    """
+    Checks if toc is sensible.
+    """
     def _count_children(d):
         only_child = (len(d["children"]) == 1)
         for title, c in d["children"].items():
@@ -270,6 +273,15 @@ def walk_toc():
         for y in _count_children(d):
             yield y
 
+def dynamic_slurm_link():
+    """
+    Checks if slurm links point to right version of docs.
+    """
+    m1 = re.search(r".*\(https?:\/\/slurm.schedmd.com(?!\/archive\/{{\s*config\.extra\.slurm\s*}})(.*)\/(.*)\)", line, re.IGNORECASE)
+    if m1:
+        print(m1.group(1))
+        print(m1.group(2))
+        yield {"line": lineno,"message": f"Link '{m1.group(0)}', does not use dynamic slurm version. Use 'https://slurm.schedmd.com/archive/{{{{ config.extra.slurm }}}}/{m1.group(2)}"}
 
 # Define checks here
 # For checks to run on page as a whole
@@ -277,8 +289,7 @@ ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexp
              walk_toc]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here]
-
+WALKCHECKS = [click_here, dynamic_slurm_link]
 
 if __name__ == "__main__":
     main()

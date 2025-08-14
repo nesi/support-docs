@@ -455,6 +455,31 @@ For example a header `## This is my (nasty-Header)` can be linked to with the an
         View the [software homepage](https://www.example.com).
         ```
 
+### Links to schedmd docs
+
+Rather than linking the most up to date version of the Slurm docs, we want to link to the version used by our current Slurm.
+
+Instead of
+
+```md
+[sacct](https://slurm.schedmd.com/sacct.html#lbAI)
+```
+
+Use
+
+```md
+[sacct](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html#lbAI)
+```
+
+The current version of Slurm can be changed in the [`mkdocs.yml`](../mkdocs.yml) file.
+
+```yml
+extra:
+  slurm: slurm-24.11.6
+```
+
+Make sure the specified version is in [the archive](slurm.schedmd.com/archive) else you will _break every link_.
+
 ## Tooltips
 
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")

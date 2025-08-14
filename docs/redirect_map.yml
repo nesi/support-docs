@@ -189,8 +189,9 @@ hc/en-gb/articles/360001174055-Relion.md: Scientific_Computing/Supported_Applica
 hc/en-gb/articles/360001174055.md: Scientific_Computing/Supported_Applications/Relion.md
 hc/en-gb/articles/360001175895-Julia.md: Scientific_Computing/Supported_Applications/Julia.md
 hc/en-gb/articles/360001175895.md: Scientific_Computing/Supported_Applications/Julia.md
-hc/en-gb/articles/360001176756-How-can-I-see-how-busy-the-cluster-is.md: General/FAQs/How_can_I_see_how_busy_the_cluster_is.md
-hc/en-gb/articles/360001176756.md: General/FAQs/How_can_I_see_how_busy_the_cluster_is.md
+hc/en-gb/articles/360001176756-How-can-I-see-how-busy-the-cluster-is.md:  General/FAQs/How_busy_is_the_cluster.md
+hc/en-gb/articles/360001176756.md: General/FAQs/How_busy_is_the_cluster.md
+General/FAQs/How_can_I_see_how_busy_the_cluster_is.md: General/FAQs/How_busy_is_the_cluster.md
 hc/en-gb/articles/360001194536-What-are-my-bashrc-bash-profile-for.md: General/FAQs/What_are_my-bashrc_and-bash_profile_for.md
 hc/en-gb/articles/360001194536.md: General/FAQs/What_are_my-bashrc_and-bash_profile_for.md
 hc/en-gb/articles/360001208256-Synda.md: Scientific_Computing/Supported_Applications/Synda.md
