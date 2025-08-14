@@ -59,12 +59,7 @@ bar on the left.
 
 1. Next to "Collection", search for "NeSI HPC Storage", select
     it, then click "Continue".
-2. In the 'Username' field, enter your NeSI account username.
-3. In the 'Password' field, the password is
-    `Login Password (First Factor)` +
-    `Authenticator Code (Second Factor)` e.g. `password123456`. Please
-    **do not** save your password on "*Browser settings*" as it will
-    change every time due to the second-factor (2FA) requirement.
+2. Select your identity provider from the list to authenticate and continue.
 
 
 ## Transferring Data

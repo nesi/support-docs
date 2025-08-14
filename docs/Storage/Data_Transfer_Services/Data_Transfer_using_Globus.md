@@ -98,21 +98,10 @@ Choose **&lt;username&gt;@iam.nesi.org.nz**.
 - *Note:* 
 OpenID Connect (OIDC) in Globus is used to enable secure authentication and authorization for accessing resources within the Globus ecosystem, particularly on Globus Connect Server endpoints. If this is your first login, you may be asked to *bind* your primary identity to the OICD login, and you will need to allow that.
 
-The NeSI HPC Storage endpoint is protected by a second-factor
-authentication (2FA).  
-- In the
-'**Username'** field, enter your NeSI account username.
-- In the
-'**Password'** field, your `Password` will be equal to
-`Login Password (First Factor)` +
-`Authenticator Code (Second Factor)` e.g. `password123456`. 
-(***Do
-not*** use any additional characters or spaces between your password and
-the token number.) Note: Your NeSI username and password are
-case-sensitive.
+The NeSI HPC Storage endpoint is protected by Tuakiri
+authentication.  
 
-After the login, you will navigate to the default root(display as "/")
-path, then you could change the path to
+After the login, you will navigate to the default root (display as "/") path, then you could change the path to
 
 \(1\) your ***/home/&lt;username&gt;*** directory,
 
