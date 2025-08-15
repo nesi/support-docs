@@ -467,9 +467,9 @@ Instead of
 
 Use
 
-```md
-[sacct](https://slurm.schedmd.com/archive/{{{{config.extra.slurm}}}}/sacct.html#lbAI)
-```
+<pre><code>
+[sacct](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html#lbAI)
+</code></pre>
 
 The current version of Slurm can be changed in the [`mkdocs.yml`](../mkdocs.yml) file.
 
