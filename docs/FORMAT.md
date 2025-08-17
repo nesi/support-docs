@@ -478,7 +478,7 @@ extra:
   slurm: slurm-24.11.6
 ```
 
-Make sure the specified version is in [the archive](slurm.schedmd.com/archive) else you will _break every link_.
+Make sure the specified version is in [the archive](https://slurm.schedmd.comarchive) else you will _break every link_.
 
 ## Tooltips
 
