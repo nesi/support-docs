@@ -33,7 +33,6 @@ and cached between updates.
 | Usage  | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc. | Data created or used by compute jobs that is intended to be temporary | Medium- to long-term storage of research data, (past, present or planned projects) |
 | Capacity | 175 TB                                                                                | 1,590 TB                                                                                                        | 4,400 TB | - |
 | Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 120 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup file system for more information. | 180 days after the end of the project's last nearline storage allocation |
-| Data backup    | Daily<br>last 10 versions<br>up to 90 days.                     | Daily<br>Last 10 versions<br>up to 90 days.                                             | - | under development |
 | Snapshots      | Daily<br>7 days                                                               | Daily<br>7 days                                                                                        | - | - |
 | Speed          | Moderate | Moderate | Fast | Slow |
 | Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul> | <ul><li>Native mounts</li><li>SCP</li></ul> | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li> |<ul><li>Nearline commands</li></ul> |
@@ -55,7 +54,7 @@ possible to end up with more data or files in the fileset than the quota
 allows for. This outcome does not trigger deletion of any existing data,
 but will prevent creation of new data or files.
 
-#### **Notes:**
+#### Notes
 
 - You may request an increase in storage and inode quota if needed by
     a project. This may in turn be reduced as part of managing overall
