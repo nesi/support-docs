@@ -14,7 +14,6 @@ search:
 ## Fixed
 - Improved sentence formatting by adding missing spaces before brackets.
 - Freezer allocations are now correctly displayed when submitting requests to increase or extend storage allocations.
-- Enhanced default dashboard logic to better integrate with our new identity management system. 
 
 If you have any questions about any of the updates, please
 {% include "partials/support_request.html" %}.
