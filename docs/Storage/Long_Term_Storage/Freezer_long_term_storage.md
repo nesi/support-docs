@@ -130,6 +130,12 @@ s3cmd du -H s3://<freezer_bucket>
 
 `s3cmd du -H` without specifying a bucket is only available for NeSI project owners.
 
+!!! warning
+
+    If you have a large number files the `s3cmd du` will fail. If you wish to recieve information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
+    
+```sh
+
 ### Put objects
 
 To transfer files/folders to S3 gateway to be archived. CD into where the file/folder is on Mahuika and then use s3cmd put
