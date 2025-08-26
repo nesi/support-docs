@@ -55,7 +55,7 @@ Jobs in the milan partition are currently limited to one node and 7 days.
 If you request a GPU without specifying which *type* of GPU, you will get a random one. So please always specify a GPU type. 
 
 ### $TMPDIR
-On most of the Genoa nodes the size limit on this per-job in-memory directory is currently only 70 TB per node in total across all jobs. So if you need to use more than about 5 TB of it per node then please use `--partition=milan` to avoid the Genoa nodes or `--gres=ssd` to get your job's $TMPDIR placed on a fast SSD instead.
+On some of the Genoa nodes the size limit on this per-job in-memory directory is currently only 70 TB per node in total across all jobs. So if you need to use more than about 5 TB of it per node then please use `--partition=milan` to avoid the Genoa nodes or `--gres=ssd` to get your job's $TMPDIR placed on a fast SSD instead.
 
 ### BadConstraints
 This uninformative message can appear as a reason for a job pending in the `squeue` output when the job is submitted to both `milan` and `genoa` partitions (which is the default behaviour). It does not appear to reflect a real problem though, just a side-effect of the mechanism we are using to target jobs to the right-sized node(s). 
@@ -64,7 +64,7 @@ This uninformative message can appear as a reason for a job pending in the `sque
 Slurm option `--mail-type` is not yet effective.
 
 ### ssh into Slurm jobs
-You cannot yet `ssh` into most of the the Genoa compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes.
+You cannot yet `ssh` into some of the the Genoa compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes.
 
 ## WEKA Filesystems 
-From most of the Genoa compute nodes, the cluster-wide filesystems (_/home_, _/nesi/project_, _/nesi/nobackup_, and _/opt/nesi_) are not yet as fast as they should be.
+From some of the Genoa compute nodes, the cluster-wide filesystems (_/home_, _/nesi/project_, _/nesi/nobackup_, and _/opt/nesi_) are not yet as fast as they should be.
