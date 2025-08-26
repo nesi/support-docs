@@ -13,7 +13,7 @@ description: How to run GROMACS on the NeSI cluster
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-GROMACS (the GROningen MAchine for Chemical Simulations) is a versatile
+GROMACS (proper name, Not an acronym) is a versatile
 package to perform molecular dynamics, i.e. simulate the Newtonian
 equations of motion for systems with hundreds to millions of particles.
 
@@ -67,9 +67,21 @@ obtained with the Software.
     # Note: In version 2021.5 and older use `gmx-serial` instead of `gmx` 
     srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK} -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
+=== "Multi Node (Hybrid)"
+    Should only be used in the case you need more CPUs than available on a single node.
+    
+    ```sl
+    #!/bin/bash -e
 
-<!--
-COMMENTING OUT BECAUSE UNTESTED
+    #SBATCH --job-name      GROMACS-multi-node
+    #SBATCH --time          00:05:00     # Walltime
+    #SBATCH --account       nesi99991    # Your project ID
+    #SBATCH --nodes 2                    # wiLL use 2 nodes.
+    #SBATCH --mem           1500         # How much memory.
+    
+    module load GROMACS/{{app.default}}
+    srun gmx-mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
+
 === "GPU"
     For more information on using GPUs see [GPU use on NeSI](../Batch_Jobs/GPU_use_on_NeSI.md)
     ```sl
@@ -79,7 +91,7 @@ COMMENTING OUT BECAUSE UNTESTED
     #SBATCH --time          00:05:00     # Walltime
     #SBATCH --account       nesi99991    # Your project ID
     #SBATCH --gpus-per-node 1
-    #SBATCH --cpus-per-task 8            # Should CPUs be given in gpu job? IDK
+    #SBATCH --cpus-per-task 8            
     #SBATCH --mem           1500         # How much memory.
     
     module load GROMACS/{{app.default}}
@@ -87,23 +99,6 @@ COMMENTING OUT BECAUSE UNTESTED
     srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK} -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
     `
-
-=== "Multi Node"
-    Should only be used in the case you need more CPUs than available on a single node.
-    
-    ```sl
-    #!/bin/bash -e
-
-    #SBATCH --job-name      GROMACS-multi-node
-    #SBATCH --time          00:05:00     # Walltime
-    #SBATCH --account       nesi99991    # Your project ID
-    #SBATCH --nodes 2            # Will use 8 CPUs
-    #SBATCH --mem           1500         # How much memory.
-    
-    module load GROMACS/{{app.default}}
-    
-    srun gmx-mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
--->    ``
 
 
     
@@ -117,27 +112,13 @@ being performed, force field used and of course the simulated system.
 For a complete set of GROMACS options, please refer to GROMACS
 documentation.
 
-Within each GROMACS environment module we have two versions of GROMACS, 
-one built with with "thread-MPI", which is really just 
-multithreading, and one with real MPI which can run across multiple nodes in
-a distributed job, ie: with `--ntasks` > 1. 
-In `GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid` and more
-recent environment modules the two programs are named `gmx` and `gmx-mpi`.  
-In our older GROMACS environment modules `gmx` was renamed to `gmx-serial`. 
+Each GROMACS environment module contains two executables one built with shared memory parallelism `gmx`, 
+and one with distrubuted memorory parallelism (MPI) `gmx-mpi`. which can run across multiple nodes,
+ie: with `--ntasks` > 1. 
 
-Unless your problem is so large 
-that it does not fit on one whole compute node you are probably best 
-off not using `gmx-mpi`. The GROMACS documentation says on this:
-    
-> The thread-MPI library implements a subset of the MPI 1.1 specification, 
->  based on the system threading support. … Acting as a drop-in replacement 
->   for MPI, thread-MPI enables compiling and running mdrun on a single machine 
->   (i.e. not across a network) without MPI. Additionally, it not only provides 
->   a convenient way to use computers with multicore CPU(s), but thread-MPI 
->   does in some cases make mdrun run slightly faster than with MPI.
-
->   Thread-MPI is compatible with most mdrun features and parallelization schemes,
->   including OpenMP, GPUs; it is not compatible with MPI and multi-simulation runs.
+!!! warning
+  In versions of GROMACS older than `GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid`
+  the `gmx` executable is instead called `gmx-serial`.
 
 ## CUDA
 
