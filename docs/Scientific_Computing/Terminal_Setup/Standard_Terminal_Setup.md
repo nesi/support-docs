@@ -94,7 +94,13 @@ configurations.
 
 8. Select your institution, you will be prompted to provide your login details.
 
-9. Click 'Yes' when prompted to trust this device. This will allow you to log in without 2FA for 7 days. The name can be anything.
+9. You are now asked about your current device: do you trust it or not?  
+-  If this device is a shared computer (e.g. university computer where you have to delete cookies), please do not trust it: click No. This means that you will need to enter your OTP everytime you log.
+-  If this device is your own laptop and you are using your home secure non shared network, you can trust it: click Yes. This will allow you to log in without 2FA for 7 days.
+
+If you have trusted your device, you have to enter a name for this device. This name must be unique but can be anything you want.
+
+E.g. you cannot trust two devices the same day with the same name, this will fail.
     ![alt text](../../assets/images/Standard_Terminal_Setup_1.png).
 
 10. Scan the QR code with your authenticator app. Then enter the six digit code provided. You may give your device a name.

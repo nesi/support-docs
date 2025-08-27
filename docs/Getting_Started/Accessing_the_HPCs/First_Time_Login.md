@@ -22,13 +22,22 @@ tags:
 3. If it is your first time logging in, you will be asked to set up your 2FA (2-Factor Authentication) for NeSI. This is in addition to your institutional 2FA.
     ![alt text](../../assets/images/ondemand_login_2.png)
   
+Note: if your device is not trusted (step 6 ), you will be asked everytime to enter your OTP (one-time password) for NeSI.
+  
 4. Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the one-time code (6 digit number) along with a device name (e.g. my mobile) and Submit and you are good to go.
 
 5. Once you have already set up NeSI OTP, you will be shown the following screen instead of the one above, where you can enter the 6 digit number from your authenticator app.
     ![alt text](../../assets/images/ondemand_login_3.png)
 
-6. For the moment, you will be prompted again. Press yes.
+6. You are now asked about your current device: do you trust it or not?  
+-  If this device is a shared computer (e.g. university computer where you have to delete cookies), please do not trust it: click No. This means that you will need to enter your OTP everytime you log.
+-  If this device is your own laptop and you are using your home secure non shared network, you can trust it: click Yes. This will allow you to log in without 2FA for 7 days.
+![alt text](../../assets/images/ondemand_login_4.png). 
+
+If you have trusted your device, you have to enter a name for this device. This name must be unique. E.g. you cannot trust two devices the same day with the same name, this will fail. 
+
+7. For the moment, you will be prompted again. Press yes.
     ![alt text](../../assets/images/login_freeipaaccess.png)
 
-7. After successfully logging in, you will be presented with the following NeSI OnDemand screen.
+8. After successfully logging in, you will be presented with the following NeSI OnDemand screen.
     ![image-20240903-112029](../../assets/images/OOD_Desktop_08Jun2025.png)
