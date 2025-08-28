@@ -70,4 +70,4 @@ You cannot yet `ssh` into some of the the Genoa compute nodes, even if you are r
 From some of the Genoa compute nodes, the cluster-wide filesystems (_/home_, _/nesi/project_, _/nesi/nobackup_, and _/opt/nesi_) are not yet as fast as they should be.
 
 ## Freezer Filesystems
-If you have a large number files the `s3cmd du`command will fail. If you wish to recieve information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
+If you have a large number files the `s3cmd du`command will fail. If you wish to receive information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
