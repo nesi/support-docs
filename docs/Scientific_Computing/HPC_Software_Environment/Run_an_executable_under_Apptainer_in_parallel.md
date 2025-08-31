@@ -4,68 +4,49 @@ tags: []
 title: Run an executable under Apptainer in parallel
 ---
 
-This article describes how to run an [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface) program that was compiled in an [Apptainer](https://apptainer.org/) environment in parallel, using the host MPI library.
+This article describes how to run an [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface) program that was compiled in an [Apptainer](https://apptainer.org/) environment in parallel, using the host MPI library. While an Apptainer environment encapsulates the dependencies of an application, including MPI, it is often beneficial, to delegate the MPI calls within the container to the host to achieve best performance. 
 
-While an Apptainer environment encapsulates the dependencies of an application, including MPI, it is often beneficial, to delegate MPI calls within the container to the host. The advantages are:
+In general, the MPI version inside and outside of the container need to match. How to convince an application to use the host MPI depends on the MPI library and the level of integration with SLURM. Here we
+show how to channel the MPI calls of a containerised application built with Intel MPI to the host. We'll use the [fidibench](https://github.com/pletzer/fidibench) application as an example. 
 
-- You can let SLURM manage the resources for you
-- You can leverage the MPI library on the host, which has been configured for maximum performance
+## Intel MPI
 
- Note that for this to work, the MPI version inside the container must be compatible with that on the host. We'll illustrate this approach
- with an example.
-
-## Build the containerised executable
-
- This will need to take place on a Milan node. Hence, we need to submit a SLURM script that calls `apptainer build`:
-
+The definition file can be fetched from 
 ```sh
-git clone git@github.com:pletzer/fidibench.git
-cd fidibench
-sbatch fidibench_apptainer_build_intel.sl
+wget https://raw.githubusercontent.com/pletzer/fidibench/refs/heads/master/fidibench_intel.def
 ```
-
-When the job finishes (after 1+ hour), you will have a `fidibench_intel.sif` file in your directory.
-
-## Run the containerised executable
-
-You can check that the executable was built successfully by running a quick test, using the internal MPI
-
+You can build the container on most Linux platform with Apptainer installed
 ```sh
-apptainer exec fidibench_intel.sif mpiexec -n 4 /software/fidibench/bin/upwindMpiCxx -numCells 128 -numSteps 10
+apptainer build --force fidibench_intel.aif fidibench_intel.def
+```
+Test that the container is working with the command
+```sh
+apptainer exec fidibench_intel.aif mpiexec -n 4 /software/fidibench/bin/upwindMpiCxx
 Number of procs: 4
-```
-
-```out
-times min/max/avg: 3.33281/3.34092/3.3355 [seconds]
+global dimensions: 128 128 128
+...
 Check sum: 1
 ```
+So far we used the (Intel) MPI library inside the container.
 
-To submit the job via SLURM, write the following job script `fidibench_intel_apptainer.sl`:
-
-```sl
-#!/bin/bash -e
-#SBATCH --ntasks=64
-#SBATCH --partition=milan
-#SBATCH --job-name=fidibench_app
-
-module purge
-module load Apptainer
-module load intel        # load the Intel MPI
-export I_MPI_FABRICS=ofi # turn off shm to allow the code to run on multiple nodes
-
-# -B /opt/slurm/lib64/ binds this directory to the image when running on mahuika, 
-# it is required  for the image's MPI to find the libpmi2.so library. This path
-# may be different on a different host.
-srun apptainer exec -B /opt/slurm/lib64/ fidibench_intel.sif /software/fidibench/bin/upwindMpiCxx -numCells 512 -numSteps 10
-```
-
-and submit it
-
+To use the host MPI, create a SLURM script `fidibench_intel.sl` containing
 ```sh
-sbatch fidibench_intel_apptainer.sl
+#!/bin/bash -e
+#SBATCH --job-name=fidibench                                                          
+#SBATCH --time 00:05:00                                                                                                       
+#SBATCH --ntasks=8                                                                        
+#SBATCH --nodes=2                                                                                               
+module purge
+export I_MPI_ROOT=/opt/nesi/CS400_centos7_bdw/impi/2021.5.1-intel-compilers-2022.0.2/mpi/2021.5.1
+export PATH=$I_MPI_ROOT/bin:$PATH
+export LD_LIBRARY_PATH=$I_MPI_ROOT/lib:$LD_LIBRARY_PATH
+mpiexec -n ${SLURM_NTASKS} --bind-to none --map-by slot \
+        apptainer exec --bind $I_MPI_ROOT:$I_MPI_ROOT fidibench_intel.aif \
+        /software/fidibench/bin/upwindMpiCxx
+```
+and submit the script with
+```sh
+sbatch fidibench_intel.sl
 ```
 
-The above job can run on multiple nodes.
 
-Note that the host MPI is loaded with the `intel` module. The MPI libraries on the host and in the
-container need to be compatible. At the time of writing, the host MPI is `2021.5` and the MPI in the container is `2021.8`.
