@@ -5,9 +5,6 @@ tags:
     - access
 ---
 
-
-## What is a Trusted Device?
-
 A trusted device is a piece of hardware (like a phone, computer, or tablet) 
 that a user has authorised to access their accounts or an organisation's resources, 
 typically after a verification process such as Second Factor Authentication (2FA).
