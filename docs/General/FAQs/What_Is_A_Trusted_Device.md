@@ -27,7 +27,6 @@ You should trust a device when it meets several criteria, including:
 
 Using a trusted device will simplify your login process. For example, if a device is not trusted, 2FA needs to be used at every login. However, if you login using a trusted device, you will not have to use your 2FA for 7 days on the same device.
 
-
 ## What name shall I give to my trusted device?
 
 You should name your trusted device something that helps you identify it and differentiates it from your other devices. Each name should be unique (e.g. the process will fail if a name is used more than once). 
