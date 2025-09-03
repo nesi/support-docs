@@ -81,7 +81,7 @@ obtained with the Software.
     
     module load GROMACS/{{app.default}}
     srun gmx-mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
-
+    ```
 === "GPU"
     For more information on using GPUs see [GPU use on NeSI](../Batch_Jobs/GPU_use_on_NeSI.md)
     ```sl
@@ -98,10 +98,7 @@ obtained with the Software.
     # Note: In version 2021.5 and older use `gmx-serial` instead of `gmx` 
     srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK} -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
-    `
 
-
-    
 ## Performance
 
 GROMACS performance depends on several factors, such as usage (or lack
