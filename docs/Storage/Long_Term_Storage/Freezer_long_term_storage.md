@@ -1,19 +1,19 @@
 ---
 created_at: 2025-04-04
-description: "NeSI's Freezer service allows you to store your data on tape for long term storage."
+description: "Our Freezer service allows you to store your data on tape for long term storage."
 tags: 
   - Freezer
   - storage
 ---
 
-NeSI's Freezer service powered by Versity, is our completely redesigned long-term storage service to support research data. It consists of a staging area (disk) connected to a tape library. Users of this service gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use this service for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the freezer backend service and size of the data to be ingested or retrieved.
+Freezer, powered by Versity, is our completely redesigned long-term storage service to support research data. It consists of a staging area (disk) connected to a tape library. Users gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use Freezer for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the freezer backend service and size of the data to be ingested or retrieved.
 
-Due to the tape storage backend Freezer is intended for use with relatively large files and should not be used for a large number of small files. This service is a replacement for Nearline. Freezer is compatible with the common S3 cloud protocol and existing tools such as those used for accessing AWS S3 service.
+Due to the tape storage backend, Freezer is intended for use with relatively large files and should not be used for a large number of small files. Freezer is compatible with the common Amazon Web Services Simple Storage Service (AWS S3) cloud protocol and existing tools such as those used for accessing AWS S3 service.
 
 ## Getting started
 
 Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI](https://my.nesi.org.nz/).
-Once onboarded, you can start to use Freezer. Currently Freezer is only available via specific access points, HPC3 and Mahuika. We are currently completing security hardening prior to opening freezer to wider access.
+Once onboarded, you can start to use Freezer. Currently Freezer is only available via specific access points, HPC3 and Mahuika. We are currently completing security hardening prior to opening Freezer to wider access.
 
 ### Interacting with Freezer
 
@@ -37,14 +37,14 @@ Please copy and paste the sections in <span style="color:blue">blue</span>.
 
 <pre><code>Enter new values or accept defaults in brackets with Enter.
 Refer to user manual for detailed description of all options.
-Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
+Access key and Secret key are your identifiers for AWS S3. Leave them empty for using the env variables.
 Access Key: <span style="color:green"><b>User ID</b></span>
 Secret Key: <span style="color:green"><b>Your Freezer Secret Key</b></span>
 Default Region: <span style="color:blue"><b>akl-1</b></span>
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
 S3 Endpoint: <span style="color:blue"><b>freezer.nesi.org.nz:7070</b></span>
 
-Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(location)s" vars can be used
+Use "%(bucket)s.s3.amazonaws.com" to the target AWS S3. "%(bucket)s" and "%(location)s" vars can be used
 if the target S3 system supports dns based buckets.
 DNS-style bucket+hostname:port template for accessing a bucket:  <span style="color:blue"><b>210.7.37.122:7070</b></span>
 Encryption password is used to protect your files from reading
@@ -52,7 +52,7 @@ by unauthorized persons while in transfer to S3
 Encryption password: <span style="color:green"><b>Leave blank, </b>press &lt;Enter&gt;</span>
 Path to GPG program [/usr/bin/gpg]: <span style="color:green"><b>Leave blank, </b>press &lt;Enter&gt;</span>
 
-When using secure HTTPS protocol all communication with Amazon S3
+When using secure HTTPS protocol all communication with AWS S3
 servers is protected from 3rd party eavesdropping. This method is
 slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 Use HTTPS protocol: <span style="color:blue"><b>Yes</b></span>
@@ -90,13 +90,13 @@ Configuration saved to '/home/&lt;user_id&gt;/.s3cfg'
 
 ## Using s3cmd tool to interact with Freezer
 
-Freezer uses the S3 (Amazon Simple Storage Service) standard as a protocol for temporarily hosting data prior to writing it to tape.
+Freezer uses the AWS S3 standard as a protocol for temporarily hosting data prior to writing it to tape.
 All of the data is stored in buckets - this is similar to a folder in a file system, but designed for scalable storage.
 
 Freezer has two types of data storage classes:
 
 - Glacier: data that is on tape
-- Standard: data that is in the s3 bucket
+- Standard: data that is in the S3 bucket
 
 Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please <a href="mailto:support@nesi.org.nz?subject=Forgot%20my%20Freezer%20bucket%20name">email us</a> and let us know which project this is for.
 
@@ -115,7 +115,7 @@ This can also be used to list all the objects in path.
 
 ### List all buckets
 
-List all objects in all buckets (only for NeSI project owners)
+List all objects in all buckets (only for project owners)
 
 ```sh
 s3cmd la
@@ -128,7 +128,7 @@ s3cmd du -H s3://<freezer_bucket>
    7G      1781 objects s3://<freezer_bucket>/
 ```
 
-`s3cmd du -H` without specifying a bucket is only available for NeSI project owners.
+`s3cmd du -H` without specifying a bucket is only available for project owners.
 
 !!! warning
 
@@ -172,7 +172,7 @@ upload: 'yourfolder/your_file' -> 's3://<freezer_bucket>/your_directory/your_fol
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
 
-Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.
+Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the Freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.
 
 ### Large files and chunk size
 
@@ -256,7 +256,7 @@ restore: 's3://<freezer_bucket>/your_directory/your_folder/MY_TEST/raw_data/test
 restore: 's3://<freezer_bucket>/your_directory/your_folder/test.txt'
 ```
 
-By default files will remain in the s3 bucket for 1 day. If longer is required, this can be modified at the time of file restoration: 
+By default files will remain in the S3 bucket for 1 day. If longer is required, this can be modified at the time of file restoration: 
 
 ```sh
 s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/ --restore-days=1
