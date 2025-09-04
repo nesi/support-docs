@@ -57,8 +57,8 @@ configurations.
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
    
-   !!! warn
-    MobaXterm does not allow the user of sockets. If you are using MobaXterm please exclude the first four lines from your own ssh config.
+    !!! warn
+       MobaXterm does not allow the user of sockets. If you are using MobaXterm please exclude the first four lines from your own ssh config.
 
 4. Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
