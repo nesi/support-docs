@@ -13,7 +13,7 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 !!! info "Recently fixed"
      - New login node "login03" fixes previous performance problems.
-     - Most of the Milan compute nodes are now available, though not yet for multi-node jobs. That includes the 4 nodes with the 80GB A100 GPUs.
+     - The Milan compute nodes are now available, including the 4 nodes with the 80GB A100 GPUs.
      - MaxRSS is now the same number as it was on the old cluster - just the ordinary (ie: "anon") memory use without caches etc.
 
 ## Access
@@ -48,8 +48,6 @@ Please let us know if you find any additional problems.
 
 ### Compute nodes
 None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new Genoa nodes do have 1.5 TB of memory.
-
-Jobs in the milan partition are currently limited to one node and 7 days.
 
 ### GPUs
 If you request a GPU without specifying which *type* of GPU, you will get a random one. So please always specify a GPU type. 
