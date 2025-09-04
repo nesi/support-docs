@@ -26,7 +26,7 @@ tags:
 3. If you haven't logged into OnDemand or our HPC platforms before, you wil need to set up a new Second Factor Authentication (2FA). This is in addition to your institutional 2FA.
     ![alt text](../../assets/images/ondemand_login_2.png)
   
-    !!! Note:
+    !!! note
         If your device is not trusted (step 6 ), you will be asked every time to enter your one-time password (OTP) for our HPC platforms.
   
 5. Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the OTP (6 digit number) along with a device name (e.g. my mobile) and click 'Submit'.
