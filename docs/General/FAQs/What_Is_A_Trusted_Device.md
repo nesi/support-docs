@@ -1,5 +1,6 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
+title: What is a Trusted Device?
 tags: 
     - 2FA
     - access
