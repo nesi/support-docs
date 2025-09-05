@@ -114,8 +114,8 @@ and one with distrubuted memorory parallelism (MPI) `gmx-mpi`. which can run acr
 ie: with `--ntasks` > 1. 
 
 !!! warning
-  In versions of GROMACS older than `GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid`
-  the `gmx` executable is instead called `gmx-serial`.
+    In versions of GROMACS older than `GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid`
+    the `gmx` executable is instead called `gmx-serial`.
 
 ## CUDA
 
