@@ -5,7 +5,7 @@ hide: toc
 
 # Support Documentation
 
-Technical documentation for the REANNZ High Performance Computing (HPC) platforms.
+Technical documentation for our High Performance Computing (HPC) platforms.
 
 !!! note "REANNZ Integration"
     On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd. NeSI’s services and technologies are now hosted by REANNZ as a national [eResearch Infrastructure Platform](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/investment-funds/strategic-science-investment-fund/funded-infrastructure/eresearch-infrastructure-platform). Some of our tools (eg. my.nesi.org.nz) will retain a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.

@@ -86,7 +86,7 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
 
 ### CPU cores per node
 
-Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs. If you have a particular need for a "round" number of cores on a full node (ie: 128 Milan cores or 168 Genoa cores) then please let us know, as it is likely that we will implement a way for such whole-node jobs to override the number of specialised cores, which could make sense for jobs with low I/O requirements. 
+Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs. 
 
 ### Limits
 
@@ -118,8 +118,6 @@ Other consequences of this change include:
   - Incomplete profiles can be obtained while a job is still running.
   - Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
   - The raw profile data isn't so accessable - please let us know if you need it.
-
-Note that the memory usage shown in these profiles is currently affected by the known [RSS issue](../Announcements/Known_Issues_HPC3.md/#recorded-memory-use).
 
 ### Miscellaneous
 
