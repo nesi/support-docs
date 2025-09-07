@@ -1,0 +1,2183 @@
+{
+  "tags.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "updates.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "mermaid-test.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "GLOSSARY.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "index.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "NeSI_Service_Subscriptions/Service_Governance/Allocation_approvals.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "NeSI_Service_Subscriptions/Service_Governance/Service_Governance_contact.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:info@nesi.org.nz"
+    ]
+  },
+  "NeSI_Service_Subscriptions/Service_Governance/Subscriber_Monthly_Usage_Reports.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:info@nesi.org.nz"
+    ]
+  },
+  "NeSI_Service_Subscriptions/Contracts_and_billing_processes/Billing_process.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:info@nesi.org.nz"
+    ]
+  },
+  "NeSI_Service_Subscriptions/Contracts_and_billing_processes/Types_of_contracts.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/services/data-services",
+      "mailto:info@nesi.org.nz"
+    ]
+  },
+  "NeSI_Service_Subscriptions/Overview/Questions.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:info@nesi.org.nz",
+      "https://www.nesi.org.nz/services/high-performance-computing-and-data-analytics",
+      "https://www.nesi.org.nz/services/consultancy",
+      "https://www.nesi.org.nz/services/data-services",
+      "https://www.nesi.org.nz/services/training"
+    ]
+  },
+  "NeSI_Service_Subscriptions/Overview/What_is_a_Subscription.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:info@nesi.org.nz"
+    ]
+  },
+  "NeSI_Service_Subscriptions/Overview/Pricing.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/community/partners-pricing#subscriptions",
+      "mailto:info@nesi.org.nz"
+    ]
+  },
+  "General/FAQs/What_are_my-bashrc_and-bash_profile_for.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/How_can_I_see_how_busy_the_cluster_is.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://slurm.schedmd.com/sinfo.html#lbAG"
+    ]
+  },
+  "General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Fair_Share.md"
+    ],
+    "external_links": [
+      "#scheduled-maintenance",
+      "#delays-in-the-queue",
+      "#other-high-priority-jobs",
+      "#low-fair-share-score",
+      "#queue-congestion",
+      "#difficult-job",
+      "#other-problem",
+      "https://status.nesi.org.nz/",
+      "https://slurm.schedmd.com/squeue.html#lbAF"
+    ]
+  },
+  "General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md": {
+    "internal_links": [
+      "Storage/File_Systems_and_Quotas/File_permissions_and_groups.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/R.md",
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md",
+      "Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md",
+      "Scientific_Computing/Interactive_computing_using_Jupyter/RStudio_via_Jupyter_on_NeSI.md",
+      "Scientific_Computing/Supported_Applications/Keras.md",
+      "Scientific_Computing/Supported_Applications/Lambda_Stack.md",
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md",
+      "Scientific_Computing/Supported_Applications/index.md",
+      "General/NeSI_Policies/NeSI_Application_Support_Model.md"
+    ],
+    "external_links": [
+      "https://docs.conda.io/en/latest/"
+    ]
+  },
+  "General/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/Mahuika_HPC3_Differences.md": {
+    "internal_links": [
+      "Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md",
+      "General/Announcements/Known_Issues_HPC3.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Storage/File_Systems_and_Quotas/Data_Compression.md",
+      "Storage/Long_Term_Storage/Freezer_long_term_storage.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md",
+      "General/Announcements/Known_Issues_HPC3.md/#recorded-memory-use"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/Why_does_my_program_crash.md": {
+    "internal_links": [
+      "General/FAQs/What_does_oom_kill_mean.md"
+    ],
+    "external_links": [
+      "https://sourceware.org/gdb/download/onlinedocs/gdb/index.html",
+      "https://developer.arm.com/docs/101136/latest/ddt/getting-started"
+    ]
+  },
+  "General/FAQs/What_is_a_core_file.md": {
+    "internal_links": [
+      "Scientific_Computing/Profiling_and_Debugging/Debugging.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/How_do_I_request_memory.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/Login_Troubleshooting.md": {
+    "internal_links": [
+      "Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md",
+      "Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md",
+      "Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz/html/view_projects",
+      "https://my.nesi.org.nz/",
+      "https://my.nesi.org.nz/",
+      "#skip-password-prompts",
+      "https://my.nesi.org.nz/"
+    ]
+  },
+  "General/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/Python.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/Common_questions_about_the_platform_refresh.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/platform-refresh",
+      "https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/",
+      "https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/",
+      "https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely",
+      "https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely",
+      "mailto:support@nesi.org.nz",
+      "https://docs.nesi.org.nz/Scientific_Computing/Supported_Applications/",
+      "https://status.nesi.org.nz/incidents/3y3ttj57fts6",
+      "https://docs.nesi.org.nz/General/Announcements/HPC3/",
+      "https://docs.nesi.org.nz/General/FAQs/Mahuika_HPC3_Differences/",
+      "mailto:support@nesi.org.nz",
+      "https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/",
+      "mailto:support@nesi.org.nz",
+      "https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/",
+      "https://docs.nesi.org.nz/General/Announcements/update_to_nearline_service/",
+      "mailto:support@nesi.org.nz",
+      "https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/"
+    ]
+  },
+  "General/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md": {
+    "internal_links": [
+      "General/FAQs/What_are_my-bashrc_and-bash_profile_for.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/Ive_run_out_of_storage_space.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/How_do_I_fix_my_locale_and_language_settings.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/How_to_replace_my_2FA.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md": {
+    "internal_links": [
+      "Storage/File_Systems_and_Quotas/File_permissions_and_groups.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md": {
+    "internal_links": [
+      "Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md"
+    ],
+    "external_links": [
+      "https://github.com/libfuse/sshfs",
+      "https://osxfuse.github.io/"
+    ]
+  },
+  "General/FAQs/What_does_oom_kill_mean.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/How_can_I_view_images_generated_on_the_cluster.md": {
+    "internal_links": [
+      "Scientific_Computing/Terminal_Setup/X11_on_NeSI.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/How_do_I_find_out_the_size_of_a_directory.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/Two_Factor_Authentication_FAQ.md": {
+    "internal_links": [
+      "Getting_Started/Accessing_the_HPCs/First_Time_Login.md",
+      "General/FAQs/How_to_replace_my_2FA.md"
+    ],
+    "external_links": []
+  },
+  "General/FAQs/Where_should_I_store_my_data_on_NeSI_systems.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/FAQs/Why_am_I_seeing_Account_is_not_ready.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:support@nesi.org.nz?subject=Please%20confirm%20my%20My%20NeSI%20account%20and%20add%20me%20to%20a%20project%20team"
+    ]
+  },
+  "General/Release_Notes/index.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/index.md"
+    ],
+    "external_links": []
+  },
+  "General/NeSI_Policies/Postgraduate_allocations.md": {
+    "internal_links": [
+      "General/NeSI_Policies/How_we_review_applications.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md"
+    ],
+    "external_links": []
+  },
+  "General/NeSI_Policies/Acceptable_Use_Policy.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy"
+    ]
+  },
+  "General/NeSI_Policies/Proposal_Development_allocations.md": {
+    "internal_links": [
+      "General/NeSI_Policies/Allocation_classes.md",
+      "General/NeSI_Policies/How_we_review_applications.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md"
+    ],
+    "external_links": []
+  },
+  "General/NeSI_Policies/How_we_review_applications.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md",
+      "General/NeSI_Policies/Allocation_classes.md",
+      "General/NeSI_Policies/Merit_allocations.md",
+      "General/NeSI_Policies/Postgraduate_allocations.md",
+      "General/NeSI_Policies/Institutional_allocations.md",
+      "General/NeSI_Policies/Allocation_classes.md"
+    ],
+    "external_links": []
+  },
+  "General/NeSI_Policies/Institutional_allocations.md": {
+    "internal_links": [
+      "General/NeSI_Policies/Merit_allocations.md",
+      "General/NeSI_Policies/Postgraduate_allocations.md",
+      "General/NeSI_Policies/How_we_review_applications.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz/html/request_project/"
+    ]
+  },
+  "General/NeSI_Policies/NeSI_Licence_Policy.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/NeSI_Policies/Access_Policy.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/access-policy",
+      "https://www.nesi.org.nz/services/high-performance-computing/software",
+      "https://www.nesi.org.nz/about-us/who-we-are",
+      "https://www.nesi.org.nz/services/computational-science-team/workshops"
+    ]
+  },
+  "General/NeSI_Policies/Allocation_classes.md": {
+    "internal_links": [
+      "General/NeSI_Policies/How_we_review_applications.md"
+    ],
+    "external_links": [
+      "https://www.nesi.org.nz/community/partners-pricing#subscriptions"
+    ]
+  },
+  "General/NeSI_Policies/NeSI_Password_Policy.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/NeSI_Policies/NeSI_Privacy_Policy.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/NeSI_Policies/Total_HPC_Resources_Available.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members.md": {
+    "internal_links": [
+      "General/NeSI_Policies/Allocation_classes.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md"
+    ],
+    "external_links": [
+      "https://www.reannz.co.nz/products-and-services/tuakiri/join/",
+      "https://www.reannz.co.nz/products-and-services/tuakiri/",
+      "https://my.nesi.org.nz/register"
+    ]
+  },
+  "General/NeSI_Policies/NeSI_Application_Support_Model.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/NeSI_Policies/Merit_allocations.md": {
+    "internal_links": [
+      "General/NeSI_Policies/How_we_review_applications.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md"
+    ],
+    "external_links": [
+      "https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/",
+      "https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/"
+    ]
+  },
+  "General/NeSI_Policies/Acknowledgement-Citation_and_Publication.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication"
+    ]
+  },
+  "General/Announcements/Accessing_NeSI_Support_during_the_Easter_break.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/System_status.md"
+    ],
+    "external_links": [
+      "https://status.nesi.org.nz/",
+      "https://status.nesi.org.nz/ \"https://status.nesi.org.nz/\"",
+      "https://www.docs.nesi.org.nz",
+      "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp \"https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp\""
+    ]
+  },
+  "General/Announcements/Known_Issues_HPC3.md": {
+    "internal_links": [
+      "General/FAQs/Mahuika_HPC3_Differences.md"
+    ],
+    "external_links": [
+      "https://ondemand.nesi.org.nz/",
+      "https://youtu.be/EDBx24Aeel4?si=9uSHdajDG3qBuhUH",
+      "https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz",
+      "https://en.wikipedia.org/wiki/Resident_set_size"
+    ]
+  },
+  "General/Announcements/Mahuika-Core_Dumps_generation_now_disabled_as_default.md": {
+    "internal_links": [
+      "General/FAQs/What_is_a_core_file.md"
+    ],
+    "external_links": []
+  },
+  "General/Announcements/Accessing_NeSI_Support_during_the_holiday_break.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/System_status.md"
+    ],
+    "external_links": [
+      "https://status.nesi.org.nz/",
+      "https://status.nesi.org.nz/ \"https://status.nesi.org.nz/\"",
+      "https://www.docs.nesi.org.nz",
+      "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp \"https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp\""
+    ]
+  },
+  "General/Announcements/Visual_Studio_Code_Remote-Latest_Version_Not_Supported_UPDATE.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://code.visualstudio.com/updates/v1_85",
+      "https://github.com/microsoft/vscode/issues/204658",
+      "https://github.com/microsoft/vscode/releases/tag/1.86.1"
+    ]
+  },
+  "General/Announcements/Upcoming_changes_to_NeSI_documentation.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.docs.nesi.org.nz/?utm_source=announcement",
+      "https://support.nesi.org.nz",
+      "https://www.mkdocs.org/",
+      "https://support.nesi.org.nz",
+      "https://www.docs.nesi.org.nz/?utm_source=announcement",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdBNPmOEy-SqUmktZaoaMXs2VO31W3DaAh6Py_lNf1Td2VBfA/viewform?usp=sf_link"
+    ]
+  },
+  "General/Announcements/update_to_nearline_service.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md"
+    ],
+    "external_links": [
+      "https://www.nesi.org.nz/case-studies/deeper-dive-nesis-platform-refresh-part-1",
+      "mailto:support@nesi.org.nz",
+      "mailto:support@nesi.org.nz",
+      "mailto:support@nesi.org.nz",
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "General/Announcements/Status_page_subscription_notification_changes.md": {
+    "internal_links": [
+      "Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md"
+    ],
+    "external_links": [
+      "https://status.nesi.org.nz/"
+    ]
+  },
+  "General/Announcements/Identity_Changes_for_Crown_Research_Institutes.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://directory.tuakiri.ac.nz/discovery"
+    ]
+  },
+  "General/Announcements/Mahuikas_new_Milan_CPU_nodes_open_to_all_NeSI_users.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md",
+      "Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md"
+    ],
+    "external_links": [
+      "https://youtu.be/IWRZLl__uhg"
+    ]
+  },
+  "General/Announcements/Upcoming_webinar-Tips_for_making_the_most_of_Mahuikas_new_Milan_nodes.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md"
+    ],
+    "external_links": [
+      "https://www.eventbrite.co.nz/e/webinar-making-the-most-of-mahuikas-new-milan-nodes-registration-557428302057",
+      "https://www.eventbrite.co.nz/e/webinar-making-the-most-of-mahuikas-new-milan-nodes-registration-557428302057"
+    ]
+  },
+  "General/Announcements/NeSI_Support_is_changing_tools.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:support@nesi.org.nz",
+      "mailto:support@nesi.org.nz",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdvR-0kJxunSiKUYNtHsG6l7Ne9Q5KPeunCVJiSbMuTvGcS8A/viewform",
+      "mailto:support@nesi.org.nz",
+      "mailto:support@nesi.org.nz",
+      "https://docs.nesi.org.nz",
+      "https://docs.nesi.org.nz/General/Announcements/Upcoming_changes_to_NeSI_documentation/",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdBNPmOEy-SqUmktZaoaMXs2VO31W3DaAh6Py_lNf1Td2VBfA/viewform",
+      "mailto:support@nesi.org.nz",
+      "mailto:support@nesi.org.nz",
+      "https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/"
+    ]
+  },
+  "General/Announcements/Slurm_upgrade_to_version_21-8.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/Announcements/HPC3.md": {
+    "internal_links": [
+      "General/FAQs/Mahuika_HPC3_Differences.md",
+      "General/Announcements/Known_Issues_HPC3.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "General/FAQs/Common_questions_about_the_platform_refresh.md",
+      "General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform.md",
+      "General/Announcements/update_to_nearline_service.md"
+    ],
+    "external_links": [
+      "mailto:support@nesi.org.nz",
+      "https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/",
+      "https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/",
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "General/Announcements/platform_refresh_updates.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/news/2025/05/new-hpc-ai-platforms-open-nesi-users",
+      "https://docs.nesi.org.nz/General/Announcements/update_to_nearline_service/",
+      "https://www.nesi.org.nz/news/2025/04/laying-essential-groundwork-launching-nesis-new-platforms",
+      "https://www.nesi.org.nz/case-studies/deeper-dive-nesis-platform-refresh-part-1",
+      "https://www.nesi.org.nz/news/2024/11/sharing-latest-progress-nesi%E2%80%99s-platform-refresh",
+      "https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/",
+      "https://docs.nesi.org.nz/General/Announcements/Preparing_to_move_data_to_NeSI_long_term_storage/",
+      "https://docs.nesi.org.nz/General/Announcements/Early_access_opens_for_OnDemand/",
+      "https://docs.nesi.org.nz/General/Announcements/Preparing_your_code_for_use_on_NeSIs_new_HPC_platform/"
+    ]
+  },
+  "General/Announcements/Improved_data_management_and_efficient_use_of_NeSI_HPC_storage.md": {
+    "internal_links": [
+      "Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md",
+      "Storage/Long_Term_Storage/Freezer_long_term_storage.md",
+      "Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md",
+      "Storage/Data_Recovery/File_Recovery.md",
+      "General/FAQs/Ive_run_out_of_storage_space.md"
+    ],
+    "external_links": []
+  },
+  "General/Announcements/Visual_Studio_Code_Remote-Next_Release_Not_Supported.md": {
+    "internal_links": [
+      "General/Announcements/platform_refresh_updates.md"
+    ],
+    "external_links": [
+      "https://code.visualstudio.com/docs/remote/faq#_can-i-run-vs-code-server-on-older-linux-distributions",
+      "https://code.visualstudio.com/updates/v1_96"
+    ]
+  },
+  "General/Announcements/Early_access_opens_for_OnDemand.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "General/Announcements/New_capabilities_for_Machine_Learning_and_GPU_pricing_updates.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md",
+      "Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md"
+    ],
+    "external_links": [
+      "https://www.nvidia.com/en-us/data-center/tesla-p100/",
+      "https://www.nesi.org.nz/services/applyforaccess",
+      "https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/allocations-allocation-classes-review#window",
+      "https://www.nesi.org.nz/case-studies/tech-insights-behind-scenes-look-rolling-out-new-gpu-resources-nz-researchers"
+    ]
+  },
+  "General/Announcements/University_of_Auckland_ANSYS_users.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Training/Webinars.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.youtube.com/watch?v=H_UXkj9Nmoc&t=7s",
+      "https://www.youtube.com/watch?v=VVvEX3Q3kq8&t=2s",
+      "https://www.youtube.com/watch?v=Pb1M8Yyik4Y&t=3s",
+      "https://www.youtube.com/watch?v=uPwvVKhMfdA&t=1627s",
+      "https://www.youtube.com/watch?v=l0GD7ZxBhJ4&t=316s",
+      "https://www.youtube.com/watch?v=yDYXOntAlIk",
+      "https://www.youtube.com/watch?v=CqATGcNbipo&t=1s",
+      "https://www.youtube.com/watch?v=SmkWHjFDfQY&t=1808s",
+      "https://www.youtube.com/watch?v=1nkiM59QI7w",
+      "https://www.youtube.com/watch?v=0Y1fMz2eZpc&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=2&t=264s",
+      "https://www.youtube.com/watch?v=XTeCHUZ2H_w&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=7&t=5s",
+      "https://www.youtube.com/watch?v=MlxvmzFQeUA&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=8&t=27s",
+      "https://www.youtube.com/watch?v=ScMm8GAsF0c&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=9&t=446s",
+      "https://www.youtube.com/watch?v=PijLW7bpkUM&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=11&t=379s",
+      "https://www.youtube.com/watch?v=makHR0uf_y0&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=12&t=22s",
+      "https://www.youtube.com/watch?v=Hb-JeQ8FvdE&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=13&t=4s",
+      "https://www.youtube.com/watch?v=NFybV9CBeh0&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=14&t=80s",
+      "https://www.youtube.com/watch?v=MgoxmQNi7zU&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=15&t=28s",
+      "https://www.youtube.com/watch?v=j_xO8wAdrjk&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=16&t=9s",
+      "https://www.youtube.com/watch?v=ydeeOlGOC4U&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=17&t=91s",
+      "https://www.youtube.com/watch?v=EUw47Dfhs8w&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=18&t=9732s",
+      "https://www.youtube.com/watch?v=kp4OfRSUSl4&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=19&t=28s",
+      "https://www.youtube.com/watch?v=SzYx2t67w84&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=20",
+      "https://www.youtube.com/watch?v=l0GD7ZxBhJ4&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=21&t=316s",
+      "https://www.youtube.com/watch?v=uPwvVKhMfdA&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=22&t=1627s",
+      "https://www.youtube.com/watch?v=Pb1M8Yyik4Y&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=23&t=3s",
+      "https://www.youtube.com/watch?v=VVvEX3Q3kq8&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=24&t=2s",
+      "https://www.youtube.com/watch?v=yDYXOntAlIk&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=26",
+      "https://www.youtube.com/watch?v=nLfgnQPLgWk&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=27&t=875s",
+      "https://www.youtube.com/watch?v=ttEW6QvgAHM&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=28&t=35s",
+      "https://www.youtube.com/watch?v=SmkWHjFDfQY&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=29&t=1808s",
+      "https://www.youtube.com/watch?v=CqATGcNbipo&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=30&t=3s",
+      "https://www.youtube.com/watch?v=b1cpCeksWXw&list=PLvbRzoDQPkuG_YGNgFnc0RaGW7wazDzIF&index=32&t=93s"
+    ]
+  },
+  "Scientific_Computing/Training/Workshops.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.genomics-aotearoa.org.nz/training",
+      "https://github.com/GenomicsAotearoa/RNA-seq-workshop",
+      "https://github.com/gregomics/RNAseqWorkshop2018/",
+      "https://datacarpentry.org/genomics-workshop/",
+      "https://www.nesi.org.nz/news/2020/03/webinar-recording-available%E2%80%93-genomics-workflows-how-cwl-can-streamline-your-research",
+      "https://github.com/GenomicsAotearoa/metagenomics_summer_school",
+      "https://otagomohio.github.io/2019-06-11_GBS_EE/"
+    ]
+  },
+  "Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.youtube.com/watch?v=RrFAb8Atsc0&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw",
+      "https://www.youtube.com/watch?v=8TNcFZvXSao&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw&index=2",
+      "https://www.youtube.com/watch?v=0Vw4b7yY8o8&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw&index=3",
+      "https://www.youtube.com/watch?v=kXf6RkRQ6tU&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw&index=4"
+    ]
+  },
+  "Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC_YouTube_Recordings.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.youtube.com/watch?v=RrFAb8Atsc0&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw",
+      "https://www.youtube.com/watch?v=8TNcFZvXSao&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw&index=2",
+      "https://www.youtube.com/watch?v=0Vw4b7yY8o8&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw&index=3",
+      "https://www.youtube.com/watch?v=kXf6RkRQ6tU&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw&index=4"
+    ]
+  },
+  "Scientific_Computing/Terminal_Setup/Git_Bash_Windows.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md"
+    ],
+    "external_links": [
+      "https://git-scm.com/download/win"
+    ]
+  },
+  "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md",
+      "Scientific_Computing/Terminal_Setup/VSCode.md",
+      "Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md",
+      "Scientific_Computing/Terminal_Setup/X11_on_NeSI.md"
+    ],
+    "external_links": [
+      "https://www.youtube.com/embed/IKihbN-QlIA?si=N93PPPsi85jPYV7k"
+    ]
+  },
+  "Scientific_Computing/Terminal_Setup/VSCode.md": {
+    "internal_links": [
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Getting_Started/Next_Steps/Submitting_your_first_job.md#environment-modules"
+    ],
+    "external_links": [
+      "Standard_Terminal_Setup.md#first-time-setup",
+      "#killing-vscode",
+      "https://code.visualstudio.com/docs/python/environments",
+      "#environment-modules"
+    ]
+  },
+  "Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md": {
+    "internal_links": [
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md"
+    ],
+    "external_links": [
+      "https://learn.microsoft.com/en-us/windows/wsl/compare-versions",
+      "https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2"
+    ]
+  },
+  "Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md"
+    ],
+    "external_links": [
+      "https://ondemand.nesi.org.nz/",
+      "https://mobaxterm.mobatek.net/download-home-edition.html"
+    ]
+  },
+  "Scientific_Computing/Terminal_Setup/X11_on_NeSI.md": {
+    "internal_links": [
+      "Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md"
+    ],
+    "external_links": [
+      "https://www.xquartz.org/",
+      "https://www.x.org/wiki/Releases/Download/",
+      "https://sourceforge.net/projects/xming/"
+    ]
+  },
+  "Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md",
+      "Scientific_Computing/Terminal_Setup/X11_on_NeSI.md"
+    ],
+    "external_links": [
+      "https://winscp.net/eng/download.php",
+      "https://www.putty.org/",
+      "https://sourceforge.net/projects/xming/"
+    ]
+  },
+  "Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md": {
+    "internal_links": [
+      "assets/images/Profiler-ARM_MAP_1.png"
+    ],
+    "external_links": [
+      "#map-profile",
+      "https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge",
+      "#map-profile"
+    ]
+  },
+  "Scientific_Computing/Profiling_and_Debugging/Profiler-VTune.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html#gs.bjani9",
+      "https://software.intel.com/content/www/us/en/develop/articles/vtune-tutorials.html"
+    ]
+  },
+  "Scientific_Computing/Profiling_and_Debugging/Slurm_Native_Profiling.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://github.com/nesi/nesi-tools/blob/main/.nn_profile_plot.py",
+      "https://github.com/CallumWalley/slurm_native_h5_plotter"
+    ]
+  },
+  "Scientific_Computing/Profiling_and_Debugging/Debugging.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.gnu.org/software/gdb/documentation/",
+      "https://mand35.github.io/NeSI_docu_ext/ddt_sample.html",
+      "https://developer.arm.com/docs/101136/latest/ddt/offline-debugging",
+      "https://developer.arm.com/docs/101136/latest/ddt"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/Apptainer.md"
+    ],
+    "external_links": [
+      "https://catalog.ngc.nvidia.com/containers",
+      "https://ngc.nvidia.com/catalog/containers/hpc:namd"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/Run_an_executable_under_Apptainer_in_parallel.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://en.wikipedia.org/wiki/Message_Passing_Interface",
+      "https://apptainer.org/"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/Software_Version_Management.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/index.md"
+    ],
+    "external_links": []
+  },
+  "Scientific_Computing/HPC_Software_Environment/Temporary_directories.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/HPC_Software_Environment/Run_an_executable_under_Apptainer_on_gpu.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://apptainer.org/"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://software.intel.com/en-us/node/685016",
+      "https://software.intel.com/en-us/documentation/view-all?search_api_views_fulltext=&current_page=0&value=78151,83039;20813,80605,79893,20812,20902;20816;20802;20804",
+      "https://gcc.gnu.org/onlinedocs/"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md": {
+    "internal_links": [
+      "Getting_Started/Next_Steps/Parallel_Execution.md",
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md"
+    ],
+    "external_links": [
+      "https://en.wikipedia.org/wiki/CPU_socket",
+      "https://en.wikipedia.org/wiki/CPU_cache",
+      "https://en.wikipedia.org/wiki/Non-uniform_memory_access",
+      "https://software.intel.com/en-us/cpp-compiler-developer-guide-and-reference-thread-affinity-interface-linux-and-windows"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/OpenMP_settings.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md",
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md",
+      "Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md"
+    ],
+    "external_links": [
+      "https://en.wikipedia.org/wiki/OpenMP",
+      "https://github.com/pletzer/fidibench"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md",
+      "Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md"
+    ],
+    "external_links": [
+      "http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/Python.md",
+      "Scientific_Computing/Supported_Applications/R.md",
+      "Scientific_Computing/Supported_Applications/index.md"
+    ],
+    "external_links": []
+  },
+  "Scientific_Computing/HPC_Software_Environment/Configuring_Dask_MPI_jobs.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/Miniforge3.md",
+      "Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md",
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md",
+      "Scientific_Computing/Supported_Applications/Apptainer.md"
+    ],
+    "external_links": [
+      "https://docs.dask.org/en/stable/deploying-python.html",
+      "https://dask.org/",
+      "https://mpi.dask.org",
+      "https://en.wikipedia.org/wiki/Message_Passing_Interface",
+      "https://github.com/mpi4py/mpi4py",
+      "https://examples.dask.org",
+      "#installing-dask-mpi-with-conda-on-mahuika-and-maui-ancil",
+      "#configuring-slurm"
+    ]
+  },
+  "Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/ont-guppy-gpu.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/RAxML.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://github.com/stamatak/standard-RAxML/blob/master/gpl-3.0.txt",
+      "https://github.com/stamatak/standard-RAxML/tree/master/manual"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Trinity.md": {
+    "internal_links": [
+      "Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md"
+    ],
+    "external_links": [
+      "http://www.broadinstitute.org/",
+      "http://www.cs.huji.ac.il/",
+      "https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity",
+      "#benchmarks",
+      "https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity#optional-adapting-trinity-to-a-computing-grid-for-massively-parallel-processing-of-embarrassingly-parallel-steps"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/GROMACS.md": {
+    "internal_links": [],
+    "external_links": [
+      "http://www.gnu.org/licenses/lgpl-2.1.html",
+      "http://www.gromacs.org/",
+      "http://www.gromacs.org/Documentation/Manual"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/VirSorter.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/Lambda_Stack.md": {
+    "internal_links": [
+      "Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md",
+      "Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Tool_assisted_management.md"
+    ],
+    "external_links": [
+      "https://lambdalabs.com/lambda-stack-deep-learning-software",
+      "https://sylabs.io/guides/3.7/user-guide/",
+      "https://github.com/lambdal/lambda-stack-dockerfiles/",
+      "https://github.com/lambdal/lambda-stack-dockerfiles/",
+      "https://www.virtualbox.org/wiki/Downloads",
+      "https://docs.docker.com/get-docker/",
+      "https://sylabs.io/guides/3.7/user-guide/quick_start.html#quick-installation-steps",
+      "https://jupyter.nesi.org.nz/",
+      "https://huggingface.co/transformers/"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md",
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md",
+      "Getting_Started/Next_Steps/The_HPC_environment.md",
+      "Scientific_Computing/Supported_Applications/Apptainer.md",
+      "Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md"
+    ],
+    "external_links": [
+      "https://www.tensorflow.org/install/source#gpu",
+      "mailto:support@nesi.org.nz",
+      "https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow",
+      "https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow",
+      "https://github.com/tensorflow/hub/blob/r0.12/tensorflow_hub/tools/make_image_classifier/make_image_classifier.py",
+      "https://www.tensorflow.org/hub"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md",
+      "Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md",
+      "Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md"
+    ],
+    "external_links": [
+      "https://software.intel.com/en-us/articles/intel-optimization-for-tensorflow-installation-guide",
+      "https://github.com/oneapi-src/oneDNN",
+      "https://software.intel.com/en-us/articles/tensorflow-optimizations-on-modern-intel-architecture"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/GATK.md": {
+    "internal_links": [],
+    "external_links": [
+      "http://www.broadinstitute.org/",
+      "https://gatk.broadinstitute.org/hc/en-us"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Synda.md": {
+    "internal_links": [],
+    "external_links": [
+      "http://pcmdi.llnl.gov/"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Supernova.md": {
+    "internal_links": [
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md"
+    ],
+    "external_links": [
+      "https://bioinformatics.uconn.edu/genome-size-estimation-tutorial/#"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Gaussian.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/Python.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.python.org",
+      "https://wiki.python.org/moin/GlobalInterpreterLock",
+      "https://www.youtube.com/watch?v=PJ4t2U15ACo&list=PLeo1K3hjS3uub3PRhdoCTY8BxMKSW7RjN&index=1",
+      "https://docs.python.org/3/library/venv.html"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Miniforge3.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/Apptainer.md",
+      "Scientific_Computing/Supported_Applications/Python.md",
+      "Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md",
+      "Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md"
+    ],
+    "external_links": [
+      "https://docs.conda.io/projects/conda/en/latest/"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Apptainer.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/https:/github.com/apptainer/apptainer/blob/main/LICENSE.md"
+    ],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/FlexiBLAS.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.mpi-magdeburg.mpg.de/projects/flexiblas"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/ipyrad.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/Clair3.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://github.com/HKU-BAL/Clair3",
+      "https://github.com/HKU-BAL/Clair",
+      "https://github.com/aquaskyline/Clairvoyante",
+      "https://www.biorxiv.org/content/10.1101/2021.12.29.474431v1"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/ABAQUS.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md",
+      "Getting_Started/Next_Steps/Parallel_Execution.md#job-arrays",
+      "Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md"
+    ],
+    "external_links": [
+      "#environment-file",
+      "#environment-file",
+      "http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/ANSYS.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md",
+      "Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md"
+    ],
+    "external_links": [
+      "http://tldp.org/LDP/abs/html/here-docs.html",
+      "https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/ANSYS/fluent/writing-fluent-journal-files.html"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/FDS.md": {
+    "internal_links": [
+      "Getting_Started/Next_Steps/Parallel_Execution.md#mpi",
+      "Getting_Started/Next_Steps/Parallel_Execution.md#multi-threading"
+    ],
+    "external_links": [
+      "https://github.com/firemodels/fds/releases/download/FDS6.7.1/FDS_User_Guide.pdf"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/WRF.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.nesi.org.nz/Getting_Started/Cheat_Sheets/tmux-Reference_sheet/"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/OpenFOAM.md": {
+    "internal_links": [
+      "Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md"
+    ],
+    "external_links": [
+      "https://cfd.direct/openfoam/user-guide/v6-compiling-applications/"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Dorado.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://github.com/nanoporetech/pod5-file-format",
+      "http://nanoporetech.com/"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/OpenSees.md": {
+    "internal_links": [],
+    "external_links": [
+      "http://opensees.berkeley.edu/OpenSees/parallel/TNParallelProcessing.pdf"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/BRAKER.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://github.com/Gaius-Augustus/BRAKER#f1",
+      "https://github.com/Gaius-Augustus/BRAKER#f0",
+      "https://github.com/Gaius-Augustus/BRAKER#f2",
+      "https://github.com/Gaius-Augustus/BRAKER#f3",
+      "https://github.com/Gaius-Augustus/BRAKER#f4",
+      "https://github.com/Gaius-Augustus/BRAKER#f14",
+      "https://github.com/Gaius-Augustus/BRAKER#f15",
+      "https://github.com/Gaius-Augustus/BRAKER#f17",
+      "https://github.com/Gaius-Augustus/BRAKER#g1",
+      "https://github.com/Gaius-Augustus/BRAKER/tree/master/example"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/CESM.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://git-lfs.github.com/",
+      "https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html",
+      "http://esmci.github.io/cime/versions/master/html/what_cime/index.html",
+      "https://escomp.github.io/CESM/release-cesm2/quickstart.html",
+      "https://docs.archer2.ac.uk/research-software/cesm213_run/#making-changes-to-a-case",
+      "https://escomp.github.io/CESM/release-cesm2/quickstart.html#run-the-case",
+      "https://esmci.github.io/cime/versions/maint-5.6/html/users_guide/pes-threads.html",
+      "https://esmci.github.io/cime/versions/maint-5.6/html/users_guide/pes-threads.html"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/VTune.md": {
+    "internal_links": [
+      "Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md"
+    ],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/BLAST.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/NWChem.md": {
+    "internal_links": [],
+    "external_links": [
+      "http://opensource.org/licenses/ecl2.php"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Molpro.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:support@.nesi.org.nz",
+      "mailto:support@nesi.org.nz",
+      "#licence-tokens"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/VASP.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md",
+      "Scientific_Computing/Batch_Jobs/Available_GPUs_on_NeSI.md"
+    ],
+    "external_links": [
+      "https://www.vasp.at/info/about/",
+      "https://nesi.github.io/hpc-intro/064-parallel/index.html#distributed-memory-mpi",
+      "https://www.vasp.at/wiki/index.php/The_VASP_Manual",
+      "https://www.vasp.at/wiki/index.php/NCORE",
+      "https://en.wikipedia.org/wiki/Non-uniform_memory_access",
+      "https://www.vasp.at/wiki/index.php/Category:Parallelization",
+      "https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization",
+      "https://wiki.fysik.dtu.dk/ase/index.html",
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/AlphaFold.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://nesi.github.io/alphafold2-on-mahuika/",
+      "https://github.com/deepmind/alphafold#citing-this-work",
+      "https://doi.org/10.1038/s41586-021-03819-2",
+      "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf",
+      "https://hub.docker.com/r/catgumag/alphafold",
+      "https://github.com/deepmind/alphafold/issues/32"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/index.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://lmod.readthedocs.io/en/latest/010_user.html"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Keras.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md",
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md"
+    ],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/COMSOL.md": {
+    "internal_links": [
+      "Scientific_Computing/Terminal_Setup/X11_on_NeSI.md"
+    ],
+    "external_links": [
+      "https://www.comsol.com/support/knowledgebase/1001/",
+      "https://www.comsol.com/support/knowledgebase/1250/",
+      "https://www.comsol.com/support/knowledgebase/1096/"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Java.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/ParaView.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/snpEff.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/R.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.r-project.org/COPYING",
+      "https://cran.r-project.org/doc/manuals/R-intro.html#Device-drivers"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/FreeSurfer.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/ORCA.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://orcaforum.kofo.mpg.de",
+      "https://orcaforum.kofo.mpg.de/app.php/dlext/?view=detail&df_id=41"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Delft3D.md": {
+    "internal_links": [
+      "Getting_Started/Next_Steps/Parallel_Execution.md#job-arrays"
+    ],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/Cylc.md": {
+    "internal_links": [
+      "Getting_Started/Accessing_the_HPCs/Port_Forwarding.md"
+    ],
+    "external_links": [
+      "https://cylc.github.io/",
+      "https://snakemake-on-nesi.sschmeier.com/",
+      "https://cylc.github.io/documentation/",
+      "http://wbn003:8888/cylc?token=30d9e2b3dfe097318539cff02f69a24217f2967e8809f0a9",
+      "https://cylc.github.io/cylc-doc/nightly/html/tutorial/index.html"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/Julia.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.julialang.org/en/v1/manual/profile/",
+      "https://docs.julialang.org/en/v1/manual/profile/#External-Profiling-1",
+      "https://software.intel.com/en-us/vtune-amplifier-help"
+    ]
+  },
+  "Scientific_Computing/Supported_Applications/MAKER.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/Relion.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Supported_Applications/MATLAB.md": {
+    "internal_links": [
+      "Getting_Started/Next_Steps/Parallel_Execution.md",
+      "Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md",
+      "Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md"
+    ],
+    "external_links": [
+      "https://www.mathworks.com/help/matlab/ref/fullfile.html",
+      "https://au.mathworks.com/help/parallel-computing/parfor.html",
+      "https://au.mathworks.com/help/parallel-computing/parfeval.html",
+      "https://au.mathworks.com/help/parallel-computing/troubleshoot-variables-in-parfor-loops.html",
+      "https://au.mathworks.com/help/parallel-computing/run-matlab-functions-on-a-gpu.html",
+      "https://au.mathworks.com/hardware-support/nvidia-tesla.html",
+      "https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html",
+      "https://nl.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html",
+      "https://github.com/kyamagu/mexopencv",
+      "https://au.mathworks.com/help/matlab/ref/mex.html",
+      "https://au.mathworks.com/help/matlab/matlab_external/table-of-mex-file-source-code-files.html"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Available_GPUs_on_NeSI.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md",
+      "Getting_Started/Next_Steps/Submitting_your_first_job.md",
+      "Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md",
+      "Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md",
+      "Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md",
+      "Scientific_Computing/Supported_Applications/index.md",
+      "Scientific_Computing/Terminal_Setup/X11_on_NeSI.md",
+      "Scientific_Computing/Interactive_computing_using_Jupyter/Virtual_Desktop_via_Jupyter_on_NeSI.md",
+      "Scientific_Computing/Supported_Applications/ABAQUS.md#examples",
+      "Scientific_Computing/Supported_Applications/GROMACS.md#nvidia-gpu-container",
+      "Scientific_Computing/Supported_Applications/Lambda_Stack.md",
+      "Scientific_Computing/Supported_Applications/MATLAB.md#using-gpus",
+      "Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md",
+      "Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md",
+      "Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md",
+      "Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md"
+    ],
+    "external_links": [
+      "https://developer.nvidia.com/nvidia-system-management-interface",
+      "https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html",
+      "https://docs.nvidia.com/cuda/cuda-gdb/index.html",
+      "https://developer.nvidia.com/cudnn",
+      "https://developer.nvidia.com/nsight-systems",
+      "https://docs.nvidia.com/nsight-systems/UserGuide/index.html#cli-profiling",
+      "https://docs.nvidia.com/nsight-systems/UserGuide/index.html#gui-profiling",
+      "https://developer.nvidia.com/nsight-compute",
+      "https://docs.nvidia.com/nsight-compute/NsightComputeCli/",
+      "https://docs.nvidia.com/nsight-compute/NsightCompute/index.html"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md"
+    ],
+    "external_links": [
+      "https://developer.amd.com/amd-aocc/"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/SLURM-Best_Practice.md": {
+    "internal_links": [
+      "General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md",
+      "General/FAQs/How_do_I_request_memory.md",
+      "Scientific_Computing/Batch_Jobs/Fair_Share.md"
+    ],
+    "external_links": [
+      "https://slurm.schedmd.com/job_array.html"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md": {
+    "internal_links": [
+      "Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md"
+    ],
+    "external_links": [
+      "https://slurm.schedmd.com/srun.html",
+      "https://slurm.schedmd.com/salloc.html",
+      "https://slurm.schedmd.com/scontrol.html"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Fair_Share.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Job_prioritisation.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md"
+    ],
+    "external_links": [
+      "https://slurm.schedmd.com/priority_multifactor.html#fairshare"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Available_GPUs_on_NeSI.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nvidia.com/en-us/technologies/multi-instance-gpu/"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Job_Limits.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Batch_Jobs/Job_prioritisation.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Fair_Share.md"
+    ],
+    "external_links": [
+      "https://slurm.schedmd.com/sched_config.html"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Job_Checkpointing.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://en.wikipedia.org/wiki/Application_checkpointing"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Hyperthreading.md": {
+    "internal_links": [
+      "Scientific_Computing/HPC_Software_Environment/OpenMP_settings.md",
+      "General/FAQs/How_do_I_request_memory.md"
+    ],
+    "external_links": [
+      "https://en.wikipedia.org/wiki/Hyper-threading",
+      "https://slurm.schedmd.com/cpu_management.html"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Checksums.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://en.wikipedia.org/wiki/Hash_function"
+    ]
+  },
+  "Scientific_Computing/Batch_Jobs/Checking_your_projects_usage_using_nn_corehour_usage.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://ondemand.nesi.org.nz/",
+      "#how-to-access-your-project-or-nobackup-directory-from-the-interactive-file-explorer"
+    ]
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/ood_troubleshooting.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/changes_from_jupyter_on_nesi.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md": {
+    "internal_links": [
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/RStudio.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/code_server.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/virtual_desktop.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/MATLAB.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Release_Notes/index.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/changes_from_jupyter_on_nesi.md"
+    ],
+    "external_links": [
+      "https://www.nesi.org.nz/researchers/apply-access-our-services",
+      "https://ondemand.nesi.org.nz/",
+      "https://doi.org/10.21105/joss.00622"
+    ]
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/code_server.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/virtual_desktop.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/RStudio.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/MATLAB.md": {
+    "internal_links": [
+      "Scientific_Computing/Interactive_computing_using_Jupyter/MATLAB_via_Jupyter_on_NeSI.md"
+    ],
+    "external_links": [
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md": {
+    "internal_links": [
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/Jupyter_kernels_Manual_management.md"
+    ],
+    "external_links": [
+      "mailto:support@nesi.org.nz",
+      "https://jupyter.nesi.org.nz"
+    ]
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md": {
+    "internal_links": [
+      "Getting_Started/Next_Steps/Submitting_your_first_job.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md#how-to-launch-jupyterlab-rstudio",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/Jupyter_kernels_Manual_management.md"
+    ],
+    "external_links": [
+      "https://jupyter.org/",
+      "https://ondemand.nesi.org.nz/",
+      "https://jupyterlab.readthedocs.io/en/stable/",
+      "https://jupyterlab.readthedocs.io/en/stable/user/extensions.html",
+      "https://github.com/dask/dask-labextension#jupyterlab-4x",
+      "https://jupyter.readthedocs.io/en/latest/",
+      "https://jupyterlab.readthedocs.io/en/stable/"
+    ]
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/Jupyter_kernels_Manual_management.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/Python.md",
+      "Scientific_Computing/Supported_Applications/R.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md",
+      "Scientific_Computing/Supported_Applications/Lambda_Stack.md#lambda-stack-via-jupyter"
+    ],
+    "external_links": [
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Release_Notes/index.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://ondemand.nesi.org.nz/",
+      "https://ondemand.nesi.org.nz/",
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "assets/glossary/dictionary.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "assets/glossary/snippets.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "assets/glossary/README.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Storage/Data_Recovery/File_Recovery.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Storage/Long_Term_Storage/Freezer_long_term_storage.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://my.nesi.org.nz/",
+      "https://s3tools.org/usage"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Globus_Paths-Permissions-Storage_Allocation.md": {
+    "internal_links": [
+      "Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md"
+    ],
+    "external_links": []
+  },
+  "Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md": {
+    "internal_links": [
+      "Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md",
+      "Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md",
+      "Storage/Data_Transfer_Services/Globus_V5_endpoint_activation.md",
+      "Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md",
+      "Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md"
+    ],
+    "external_links": [
+      "https://transfer.nesi.org.nz/file-manager",
+      "https://www.globus.org/globus-connect-personal",
+      "https://docs.globus.org/how-to/share-files/",
+      "https://rclone.org/",
+      "https://aws.amazon.com/cli/",
+      "https://cloud.google.com/sdk/gcloud"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Re_creating_Shared_Collections_and_Bookmarks_in_Globus.md": {
+    "internal_links": [
+      "Storage/Data_Transfer_Services/Globus_V5_Paths-Permissions-Storage_Allocation.md"
+    ],
+    "external_links": [
+      "https://docs.globus.org/how-to/share-files/"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Globus_Quick_Start_Guide.md": {
+    "internal_links": [
+      "Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md",
+      "Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md",
+      "Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md",
+      "Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md"
+    ],
+    "external_links": [
+      "https://transfer.nesi.org.nz/"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.globus.org/how-to/",
+      "https://app.globus.org/endpoints?scope=administered-by-me",
+      "https://www.globus.org/subscriptions",
+      "https://app.globus.org/account/plus"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Globus_endpoint_activation.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.globus.org/app/console/endpoints"
+    ]
+  },
+  "Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md": {
+    "internal_links": [
+      "Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md",
+      "Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md"
+    ],
+    "external_links": [
+      "(https://docs.nesi.org.nz/Storage/Data_Transfer_Services/Globus_Quick_Start_Guide/",
+      "https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007",
+      "https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9",
+      "https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form",
+      "mailto:university@otago.ac.nz",
+      "mailto:researchdata@auckland.ac.nz",
+      "mailto:servicedesk@agresearch.co.nz",
+      "mailto:IToperations@landcareresearch.co.nz"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md": {
+    "internal_links": [
+      "Storage/Data_Transfer_Services/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.md"
+    ],
+    "external_links": [
+      "https://globus.org",
+      "https://docs.globus.org/api/transfer/task_submit/#transfer_specific_fields",
+      "https://app.globus.org/activity"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Download_and_share_CMIP6_data_for_NIWA_researchers.md": {
+    "internal_links": [
+      "Scientific_Computing/Supported_Applications/Synda.md",
+      "Scientific_Computing/Supported_Applications/Synda.md"
+    ],
+    "external_links": [
+      "https://www.wcrp-climate.org/wgcm-cmip",
+      "https://www.wcrp-climate.org/about-wcrp/wcrp-overview"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://transfer.nesi.org.nz/",
+      "https://docs.globus.org/how-to/link-to-existing/"
+    ]
+  },
+  "Storage/Data_Transfer_Services/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.md": {
+    "internal_links": [
+      "Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md",
+      "Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md",
+      "Storage/Data_Transfer_Services/Data_Transfer_using_Globus_V5.md",
+      "Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md"
+    ],
+    "external_links": [
+      "https://app.globus.org/collections"
+    ]
+  },
+  "Storage/File_Systems_and_Quotas/File_permissions_and_groups.md": {
+    "internal_links": [
+      "General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md",
+      "General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md",
+      "General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md",
+      "Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md"
+    ],
+    "external_links": []
+  },
+  "Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md": {
+    "internal_links": [
+      "Storage/Data_Recovery/File_Recovery.md",
+      "Storage/File_Systems_and_Quotas/File_permissions_and_groups.md",
+      "General/NeSI_Policies/How_we_review_applications.md",
+      "Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md",
+      "Storage/Data_Recovery/File_Recovery.md",
+      "Storage/File_Systems_and_Quotas/Data_Compression.md",
+      "Storage/File_Systems_and_Quotas/Data_Compression.md"
+    ],
+    "external_links": [
+      "#transparent-file-data-compression",
+      "https://my.nesi.org.nz/html/request_project"
+    ]
+  },
+  "Storage/File_Systems_and_Quotas/Data_Compression.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.ibm.com/docs/en/spectrum-scale/4.2.2?topic=systems-file-compression"
+    ]
+  },
+  "Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy",
+      "https://youtu.be/KPNNSwDJU7A",
+      "https://youtu.be/iVTdlsiBTB4",
+      "https://drive.google.com/file/d/1kLwghsj9es8oMqdWj-VhUvaklW6JkrwO/view?usp=sharing",
+      "https://drive.google.com/file/d/1tImzibZ3DcN7QOttZEZoYsR43mEiS5KJ/view?usp=sharing",
+      "https://drive.google.com/file/d/1OSb71hhZnjnU9xsRALcpYM485va7aUxK/view?usp=sharing"
+    ]
+  },
+  "Getting_Started/Getting_Help/Introductory_Material.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md"
+    ],
+    "external_links": [
+      "https://www.youtube.com/playlist?list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw",
+      "https://www.nesi.org.nz/services/applyforaccess",
+      "https://docs.google.com/presentation/d/11TCaJnpZO-s-s4NQ1P0a89flewT7HXmn2PHrW-3EPYg/edit?usp=sharing",
+      "https://www.nesi.org.nz/platform-refresh",
+      "https://www.nesi.org.nz/services/training"
+    ]
+  },
+  "Getting_Started/Getting_Help/System_status.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md",
+      "Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md"
+    ],
+    "external_links": [
+      "https://status.nesi.org.nz",
+      "https://support.nesi.org.nz",
+      "https://my.nesi.org.nz/account/preference",
+      "https://status.nesi.org.nz"
+    ]
+  },
+  "Getting_Started/Getting_Help/Job_efficiency_review.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/Consultancy.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/Getting_Help/Making_a_Helpful_Support_Request.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://hpc-uit.readthedocs.io/en/latest/help/writing-support-requests.html"
+    ]
+  },
+  "Getting_Started/Getting_Help/Consultancy.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.nesi.org.nz/services/high-performance-computing/guidelines/acknowledgement-and-publication",
+      "https://www.nesi.org.nz/case-studies/quantum-casino-helps-define-atoms-big-chill",
+      "https://www.nesi.org.nz/case-studies/using-statistical-models-help-new-zealand-prepare-large-earthquakes",
+      "https://www.nesi.org.nz/case-studies/improving-researchers-ability-access-and-analyse-climate-model-data-sets",
+      "https://www.nesi.org.nz/case-studies/speeding-post-processing-climate-model-data-pipeline",
+      "https://www.nesi.org.nz/case-studies/overcoming-data-processing-overload-scientific-web-mapping-software",
+      "https://www.nesi.org.nz/case-studies/visualising-ripple-effects-riverbed-sediment-transport",
+      "https://www.nesi.org.nz/case-studies/new-zealand%E2%80%99s-first-national-river-flow-forecasting-system-flooding-resilience",
+      "https://www.nesi.org.nz/case-studies/fast-model-predicting-floods-and-storm-damage",
+      "https://www.nesi.org.nz/case-studies/how-multithreading-and-vectorisation-can-speed-seismic-simulations-40",
+      "https://www.nesi.org.nz/case-studies/machine-learning-marine-mammals",
+      "https://www.nesi.org.nz/case-studies/parallel-processing-ocean-life",
+      "https://www.nesi.org.nz/case-studies/nesi-support-helps-keep-nz-rivers-healthy",
+      "https://www.nesi.org.nz/case-studies/heating-nanowires-hpc",
+      "https://www.nesi.org.nz/case-studies/development-next-generation-weather-and-climate-models-heating",
+      "https://www.nesi.org.nz/case-studies/understanding-behaviours-light",
+      "https://www.nesi.org.nz/case-studies/getting-closer-more-accurate-climate-predictions-new-zealand",
+      "https://www.nesi.org.nz/case-studies/fractal-analysis-brain-signals-autism-spectrum-disorder",
+      "https://www.nesi.org.nz/case-studies/optimising-tools-used-genetic-analysis",
+      "https://www.nesi.org.nz/case-studies/optimising-tools-used-genetic-analysis",
+      "https://www.nesi.org.nz/case-studies/tracking-coastal-precipitation-systems-tropics",
+      "https://www.nesi.org.nz/case-studies/powering-global-climate-simulations",
+      "https://www.nesi.org.nz/case-studies/optimising-tools-used-genetic-analysis",
+      "https://www.nesi.org.nz/case-studies/investigating-climate-sensitivity",
+      "https://www.nesi.org.nz/case-studies/improving-earthquake-forecasting-methods",
+      "https://www.nesi.org.nz/case-studies/modernising-models-diagnose-and-treat-disease-and-injury",
+      "https://www.nesi.org.nz/case-studies/cataloguing-nz%E2%80%99s-earthquake-activities",
+      "https://www.nesi.org.nz/case-studies/finite-element-modelling-biological-cells",
+      "https://www.nesi.org.nz/case-studies/preparing-new-zealand-adapt-climate-change",
+      "https://www.nesi.org.nz/case-studies/using-gpus-expand-our-understanding-solar-system",
+      "https://www.nesi.org.nz/case-studies/speeding-basilisk-gpgpus",
+      "https://www.nesi.org.nz/case-studies/helping-communities-anticipate-flood-events"
+    ]
+  },
+  "Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://www.reannz.co.nz/"
+    ]
+  },
+  "Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:training@nesi.org.nz",
+      "https://forms.gle/HELw73FpUQaTYBV6A"
+    ]
+  },
+  "Getting_Started/Cheat_Sheets/Git-Reference_Sheet.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://git-scm.com/docs/git",
+      "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent",
+      "https://ohshitgit.com/"
+    ]
+  },
+  "Getting_Started/Cheat_Sheets/Bash-Reference_Sheet.md": {
+    "internal_links": [],
+    "external_links": [
+      "http://swcarpentry.github.io/shell-novice/"
+    ]
+  },
+  "Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md": {
+    "internal_links": [
+      "Getting_Started/Next_Steps/Submitting_your_first_job.md",
+      "Scientific_Computing/Batch_Jobs/Mahuika_Slurm_Partitions.md",
+      "Getting_Started/Next_Steps/Parallel_Execution.md",
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md",
+      "General/FAQs/How_do_I_request_memory.md",
+      "Scientific_Computing/Profiling_and_Debugging/Slurm_Native_Profiling.md",
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md"
+    ],
+    "external_links": [
+      "https://slurm.schedmd.com/man_index.html",
+      "https://slurm.schedmd.com/sbatch.html"
+    ]
+  },
+  "Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://tmuxcheatsheet.com",
+      "https://linuxize.com/post/getting-started-with-tmux/"
+    ]
+  },
+  "Getting_Started/Next_Steps/The_HPC_environment.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://lmod.readthedocs.io/en/latest/010_user.html"
+    ]
+  },
+  "Getting_Started/Next_Steps/Parallel_Execution.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md"
+    ],
+    "external_links": [
+      "#multi-threading",
+      "#mpi",
+      "#job-arrays",
+      "https://slurm.schedmd.com/job_array.html"
+    ]
+  },
+  "Getting_Started/Next_Steps/MPI_Scaling_Example.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Hyperthreading.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md",
+      "Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_on_NeSI.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md",
+      "Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md",
+      "Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md",
+      "Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md",
+      "Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md"
+    ],
+    "external_links": [
+      "https://rclone.org/docs",
+      "https://download.samba.org/pub/rsync/rsync.1"
+    ]
+  },
+  "Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Fair_Share.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md",
+      "Getting_Started/Next_Steps/Multithreading_Scaling_Example.md",
+      "Getting_Started/Next_Steps/MPI_Scaling_Example.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/Next_Steps/Multithreading_Scaling_Example.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/Next_Steps/Finding_Job_Efficiency.md": {
+    "internal_links": [
+      "Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md"
+    ],
+    "external_links": [
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "Getting_Started/Next_Steps/Submitting_your_first_job.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://slurm.schedmd.com/sbatch.html",
+      "https://slurm.schedmd.com/squeue.html",
+      "https://slurm.schedmd.com/sacct.html",
+      "https://slurm.schedmd.com/scancel.html"
+    ]
+  },
+  "Getting_Started/Accessing_the_HPCs/Port_Forwarding.md": {
+    "internal_links": [
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Supported_Applications/JupyterLab.md",
+      "Scientific_Computing/Supported_Applications/ParaView.md"
+    ],
+    "external_links": [
+      "https://en.wikipedia.org/wiki/Port_forwarding",
+      "https://sshuttle.readthedocs.io/en/stable/"
+    ]
+  },
+  "Getting_Started/Accessing_the_HPCs/First_Time_Login.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md"
+    ],
+    "external_links": [
+      "https://ondemand.nesi.org.nz/"
+    ]
+  },
+  "Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md",
+      "Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md",
+      "Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md",
+      "Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md",
+      "Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md",
+      "Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md"
+    ],
+    "external_links": [
+      "https://ondemand.nesi.org.nz/",
+      "https://mobaxterm.mobatek.net/download-home-edition.html",
+      "https://www.virtualbox.org/wiki/Downloads",
+      "https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/",
+      "#linux-or-mac-os",
+      "https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/",
+      "https://git-scm.com/downloads"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz/projects/list"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Tuakiri_Attribute_Validator.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://attributes.tuakiri.ac.nz/snapshots/latest"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Navigating_the_my-nesi-org-nz_web_interface.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md": {
+    "internal_links": [
+      "Getting_Started/Getting_Help/System_status.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz/account/preference",
+      "https://my.nesi.org.nz/account/preference"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members.md"
+    ],
+    "external_links": [
+      "https://www.reannz.co.nz/products-and-services/tuakiri/join/",
+      "https://my.nesi.org.nz/html/request_nesi_account",
+      "https://attributes.tuakiri.ac.nz/snapshots/latest",
+      "https://attributes.tuakiri.ac.nz/snapshots/latest"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz/projects/apply"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-3-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-13-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-26-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-6-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-23-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-37-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-1.md": {
+    "internal_links": [
+      "Getting_Started/my-nesi-org-nz/Navigating_the_my-nesi-org-nz_web_interface.md",
+      "Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-11-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-20-0.md": {
+    "internal_links": [],
+    "external_links": [
+      "mailto:support@nesi.org.nz"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-24-0.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.nesi.org.nz/General/Announcements/NeSI_Support_is_changing_tools/"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-14-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-10-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-25-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-9-0.md": {
+    "internal_links": [
+      "Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-38-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-27-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-34-0.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.nesi.org.nz/General/Announcements/Accessing_NeSI_Support_during_the_Easter_break/"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-18-0.md": {
+    "internal_links": [
+      "General/Announcements/Status_page_subscription_notification_changes.md"
+    ],
+    "external_links": [
+      "https://www.nesi.org.nz/about-us/security-privacy/privacy-policy",
+      "https://status.nesi.org.nz"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-4-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-36-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-8-0.md": {
+    "internal_links": [
+      "Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md",
+      "Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-12-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-31-0.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.nesi.org.nz/General/Announcements/Accessing_NeSI_Support_during_the_holiday_break/"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-29-0.md": {
+    "internal_links": [],
+    "external_links": [
+      "https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/"
+    ]
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-2-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-17-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-28-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-35-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-21-0.md": {
+    "internal_links": [
+      "Scientific_Computing/Batch_Jobs/Checking_your_projects_usage_using_nn_corehour_usage.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-22-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-19-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-30-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-5-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-3.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-39-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-1-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-33-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-7-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-15-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-16-0.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Getting_Started/Getting_Help/Introductory_Material.md",
+      "General/NeSI_Policies/Allocation_classes.md",
+      "General/NeSI_Policies/Merit_allocations.md",
+      "General/NeSI_Policies/How_we_review_applications.md",
+      "Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md"
+    ],
+    "external_links": [
+      "https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services",
+      "https://swcarpentry.github.io/shell-novice/",
+      "https://my.nesi.org.nz/",
+      "https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services"
+    ]
+  },
+  "Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md": {
+    "internal_links": [
+      "General/NeSI_Policies/Allocation_classes.md",
+      "Scientific_Computing/Batch_Jobs/Fair_Share.md",
+      "Scientific_Computing/Batch_Jobs/Fair_Share.md"
+    ],
+    "external_links": []
+  },
+  "Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md": {
+    "internal_links": [
+      "Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md",
+      "Storage/Long_Term_Storage/Freezer_long_term_storage.md"
+    ],
+    "external_links": [
+      "https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations"
+    ]
+  },
+  "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md": {
+    "internal_links": [
+      "General/NeSI_Policies/Account_Requests_for_non_Tuakiri_Members.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz"
+    ]
+  },
+  "Getting_Started/Accounts-Projects_and_Allocations/Quarterly_allocation_periods.md": {
+    "internal_links": [],
+    "external_links": []
+  },
+  "Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz/"
+    ]
+  },
+  "Getting_Started/Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project.md": {
+    "internal_links": [
+      "Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md",
+      "Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md",
+      "Getting_Started/Accessing_the_HPCs/Setting_Up_and_Resetting_Your_Password.md"
+    ],
+    "external_links": [
+      "https://my.nesi.org.nz/"
+    ]
+  }
+}
