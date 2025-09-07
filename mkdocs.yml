@@ -69,6 +69,8 @@ extra:
   analytics:
     provider: google
     property: G-TVQR4R1F40
+  version:
+    provider: mike
 plugins:
   - search
   - open-in-new-tab
