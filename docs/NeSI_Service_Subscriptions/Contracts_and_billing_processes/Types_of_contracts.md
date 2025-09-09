@@ -12,7 +12,7 @@ Typically our Subscription contracts are based on one-year terms and
 invoiced on a quarterly basis.
 
 - HPC Platform:  
-    This is an inclusive package that provides access to all NeSI
+    This is an inclusive package that provides access to all HPC platform
     services (compute, storage, support, consultancy, etc.) in one
     Subscription so that you have the flexibility at any point during
     the term of the contract to use any service. You are only charged
@@ -20,10 +20,10 @@ invoiced on a quarterly basis.
 
 - National Data Transfer Platform - Membership & managed endpoint:  
     A National Data Transfer Platform is delivered through a
-    partnership between NeSI, REANNZ, Globus, and research institutions
+    partnership between REANNZ, Globus, and research institutions
     across the country. [Read more here](https://www.nesi.org.nz/services/data-services).
     As a managed endpoint, your institution can provide secure, reliable, and fast
-    data transfer to/from NeSI’s HPC Platform as well as to/from other
+    data transfer to/from our HPC Platform as well as to/from other
     Globus endpoints across New Zealand and internationally.
 
 We are also happy to discuss other custom options for things like our
