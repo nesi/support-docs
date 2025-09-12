@@ -176,8 +176,8 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 ### Large files and chunk size
 
-Large files will automatically be split into smaller "chunks" for ease of upload. By defualt these are set to 15 MB size. So for example for a file of ~500 GB chunk size should be increased to 1 GB. This can be done by adding the flag `--multipart-chunk-size-mb=1000` . Any chunk size can be specified, however only 10000 chunks can be created per file so if the chunk size is too small you will get the following error `ERROR: Parameter problem: Chunk size 15 MB results in more than 10,000 chunks. Please increase --multipart-chunk-size-mb`. 
-For very large files please use the rough calculation of file size/10,000 and then add an bit extra to determine the optimum chunk size.  
+Large files will automatically be split into smaller "chunks" for ease of upload. By default, these are set to 15 MB size. So, for example, for a file of ~500 GB, chunk size should be increased to 1 GB. This can be done by adding the flag `--multipart-chunk-size-mb=1000` . Any chunk size can be specified, however only 10000 chunks can be created per file. So, if the chunk size is too small you will get the following error `ERROR: Parameter problem: Chunk size 15 MB results in more than 10,000 chunks. Please increase --multipart-chunk-size-mb`. 
+For very large files, please use the rough calculation of file size/10,000, and then add an bit extra to determine the optimum chunk size.  
 
 ```sh
 s3cmd put --multipart-chunk-size-mb=1000 yourfile s3://<freezer_bucket>/your_directory/your_file/ --verbose
