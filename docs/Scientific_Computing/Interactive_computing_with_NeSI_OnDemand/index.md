@@ -2,20 +2,20 @@
 
 ## Overview
 
-NeSI OnDemand empowers students, researchers, and industry professionals with remote and interactive web access to NeSI.
+OnDemand empowers students, researchers, and industry professionals with remote and interactive web access to the HPC platforms.
 
-## Connecting to NeSI OnDemand
+## Connecting to OnDemand
 
 !!! prerequisite
-     Requires access to NeSI, [apply](https://www.nesi.org.nz/researchers/apply-access-our-services) before proceeding.
+     Requires [an account](https://www.nesi.org.nz/researchers/apply-access-our-services).
 
-Connect to NeSI OnDemand: [https://ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
+Connect to OnDemand: [https://ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
 For more information see the [How-to guide](how_to_guide.md).
 
 ## Interactive applications
 
-A number of interactive applications can be accessed through NeSI OnDemand, including:
+A number of interactive applications can be accessed through OnDemand, including:
 
 - [JupyterLab](Apps/JupyterLab/index.md)
 - [RStudio](Apps/RStudio.md)
@@ -32,7 +32,7 @@ A number of interactive applications can be accessed through NeSI OnDemand, incl
 
 | Limitation                                |  What are the missing functions/commands associated with this|
 --------------------------------------------|--------------------------------------------------------------|
-|1. OnDemand apps  are not exposed to HPC3 Slurm | Commands such as `sbatch`, `sacct`, `squeue` , `scancel` will not work from OnDemand apps|
+|1. OnDemand apps are not exposed to HPC3 Slurm | Commands such as `sbatch`, `sacct`, `squeue` , `scancel` will not work from OnDemand apps|
 |2. Missing user Namespaces in Kubernetes pods will interfere with some Apptainer operations| Although we can run `apptainer pull` command, `apptainer exec,run,shell` commands can not be executed due to missing user Namespaces|
 
 !!! info ""
@@ -48,6 +48,6 @@ compared to the current Jupyter on NeSI service are described [here](changes_fro
 
 ## Acknowledgements
 
-NeSI acknowledges the work of the Open OnDemand team in providing the underlying platform used for this service, as described in the following paper:
+We acknowledge the work of the Open OnDemand team in providing the underlying platform used for this service, as described in the following paper:
 
 [Hudak et al., (2018). Open OnDemand: A web-based client portal for HPC centers. Journal of Open Source Software, 3(25), 622, https://doi.org/10.21105/joss.00622](https://doi.org/10.21105/joss.00622)
