@@ -9,7 +9,7 @@ Using Globus to transfer and share files from/to a personal computer
 
 ## Install Globus Connect Personal on your workstation/laptop
 
-See the [Globus how to page](https://docs.globus.org/how-to/) on how to
+See the [Globus Connect Personal ](https://docs.globus.org/globus-connect-personal/) on how to
 install a personal Globus endpoint on your computer (OS-specific
 instructions).
 
