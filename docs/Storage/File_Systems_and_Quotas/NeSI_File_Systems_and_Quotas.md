@@ -8,10 +8,10 @@ status: deprecated
 ---
 
 !!! tip "Transparent File Compression"
-    We have recently started rolling out compression of inactive data on the NeSI Project filesystem.
+    We have recently started rolling out compression of inactive data on the Project filesystem.
     Please see the [documentation below](#transparent-file-data-compression) to learn more about how this works and what data will be compressed.
 
-The NeSI compute nodes, login nodes and OnDemand all share access to the same file systems.
+The HPC compute nodes, login nodes and OnDemand all share access to the same file systems.
 You may query your actual usage and disk allocations using the following
 command:
 
@@ -22,17 +22,16 @@ command:
 The values for `nn_storage_quota` are updated approximately every hour
 and cached between updates.
 
-![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.svg)
+![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.png)
 
 ## File System Specifications
 
-| Filesystem     | `/home`                                                                                | `/nesi/project`                                                                                                  | `/nesi/nobackup` | `/nesi/nearline` |
+| Filesystem     | `/home`                                                                                | `/nesi/project`                                                                                                  | `/nesi/nobackup` | `Freezer`        |
 | -------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Disk Quota     | 20 GB                                                                                 | 100 [110] GB                                                                                                    | 10 [12] TB | -                                                                                                       |
-| File Quota     | 1 [1.1] M files                                                                       | 100 [110] K files                                                                                               | 1 [1.1] M files | -                                                                                                       |
 | Usage  | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc. | Data created or used by compute jobs that is intended to be temporary | Medium- to long-term storage of research data, (past, present or planned projects) |
-| Capacity | 175 TB                                                                                | 1,590 TB                                                                                                        | 4,400 TB | - |
-| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 120 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup file system for more information. | 180 days after the end of the project's last nearline storage allocation |
+| Capacity | 28 TB                                                                                 | 910 TB                                                                                                         | 2,728 TB | - |
+| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup file system for more information.  | 180 days after the end of the project's last nearline storage allocation |
 | Snapshots      | Daily<br>7 days                                                               | Daily<br>7 days                                                                                        | - | - |
 | Speed          | Moderate | Moderate | Fast | Slow |
 | Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul> | <ul><li>Native mounts</li><li>SCP</li></ul> | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li> |<ul><li>Nearline commands</li></ul> |
@@ -101,8 +100,7 @@ It provides storage space for datasets, shared code or configuration
 scripts that need to be accessed by users within a project, and
 [potentially by other projects](../File_Systems_and_Quotas/File_permissions_and_groups.md).
 Read and write performance increases using larger files, therefore you should
-consider archiving small files with the `nn_archive_files` utility, or a
-similar archiving package such as `tar` .
+consider archiving small files with an archiving package such as `tar` .
 
 Each NeSI project receives quota allocations for
 `/nesi/project/<project_code>`, based on the requirements you tell us
@@ -137,23 +135,16 @@ the community of a shared resource.
 The purpose of this policy is to ensure that any user will be able to
 analyse datasets up to 1 PB in size.
 
-### /nesi/nearline
+### Freezer
 
-!!! note
-     The nearline service, including its associated file systems, is in an
-     Early Access phase, and allocations are by invitation. We appreciate
-     your patience as we develop, test and deploy this service. If you
-     would like to participate in the Early Access Programme, please
-     {% include "partials/support_request.html" %}.
-
-The `/nesi/nearline` filesystem is a data cache for the Hierarchical
+The Freezer filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
 files between high performance disk storage and magnetic tape storage in
-an Automatic Tape Library (ATL). Files will remain on `/nesi/nearline`
+an Automatic Tape Library (ATL). Files will remain on Freezer
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
-See more information about the long term storage service.
+See more information about the long term storage see our [documentation about the Freezer storage service](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md).
 
 ## Snapshots
 
