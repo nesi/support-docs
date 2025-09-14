@@ -35,7 +35,7 @@ tags:
     ![alt text](../../assets/images/ondemand_login_3.png)
 
 7. You are now asked about your current device: do you trust it or not?  
-    -  Do not trust shared computers (e.g. a university computer where you have to delete cookies): click No. This means that you will need to enter your OTP every time you log.
+    -  Do not trust shared computers (e.g. a university computer where you have to delete cookies) or if you are using incognito or private windows: click No. This means that you will need to enter your OTP every time you log.
     -  If the device is your personal laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without 2FA for 7 days.
     
     ![alt text](../../assets/images/ondemand_login_4.png). 

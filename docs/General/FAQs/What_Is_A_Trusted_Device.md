@@ -9,7 +9,9 @@ tags:
 A trusted device is a piece of hardware (like a phone, computer, or tablet) 
 that a user has authorised to access their accounts or an organisation's resources, 
 typically after a verification process such as Second Factor Authentication (2FA).
-Do not trust shared laptops or public computers. 
+
+Do not trust shared laptops or public computers. Additionally, if you're using a private or incognito window in your browser, 
+keep in mind that it's temporary and should **not** be considered a secure or permanent environment: then do not trust it.
 
 ## When should I trust a device?
 
