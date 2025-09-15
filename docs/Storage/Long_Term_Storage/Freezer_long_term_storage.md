@@ -24,7 +24,7 @@ We recommend using `s3cmd` for interacting with Freezer. The `s3cmd` tool is ava
 You will need to configure the `s3cmd` tool before you use it for the first time. Configuring the `s3cmd` allows for user credentials and default buckets to be remembered. This will only need to be done once.
 
 ```sh
-s3cmd --configure
+s3cmd --configure --multipart-chunk-size-mb=1024
 ```
 
 Enter the following details when prompted in the terminal:
@@ -176,8 +176,22 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 ### Large files and chunk size
 
-Large files will automatically be split into smaller "chunks" for ease of upload. By default, these are set to 15 MB size. So, for example, for a file of ~500 GB, chunk size should be increased to 1 GB. This can be done by adding the flag `--multipart-chunk-size-mb=1000` . Any chunk size can be specified, however only 10000 chunks can be created per file. So, if the chunk size is too small you will get the following error `ERROR: Parameter problem: Chunk size 15 MB results in more than 10,000 chunks. Please increase --multipart-chunk-size-mb`. 
-For very large files, please use the rough calculation of file size/10,000, and then add an bit extra to determine the optimum chunk size.  
+Large files will automatically be split into smaller "chunks" for ease of upload. 
+
+By default, if you have configured s3cmd with *s3cmd --configure --multipart-chunk-size-mb=1024*, 
+the chunks will have a default value of 1GB. Otherwise the default chunk value is 15MB, which is typically too small for large files and should be increased. 
+We recommend reconfiguring the S3 interface using the --multipart-chunk-size-mb parameter as above.
+
+Important considerations:
+- Any chunk size can be specified, however only *10,000* chunks can be created per file. 
+- if the chunk size is too small you will get the following error `ERROR: Parameter problem: Chunk size 15 MB results in more than 10,000 chunks. Please increase --multipart-chunk-size-mb`.  
+
+To determine an optimal chunk size for very large files, use the rough formula *file size/10000*. Add a buffer to ensure you're safely under the limit.  
+
+For instance, for a file of ~50TB, a chunk size of 5 GB is a minimum. 
+This can be set by using the flag `--multipart-chunk-size-mb=5120` to the command.  
+
+Example: 
 
 ```sh
 s3cmd put --multipart-chunk-size-mb=1000 yourfile s3://<freezer_bucket>/your_directory/your_file/ --verbose
