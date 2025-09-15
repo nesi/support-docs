@@ -178,15 +178,17 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 Large files will automatically be split into smaller "chunks" for ease of upload. 
 
-By default, if you have configured s3cmd with *gi*, 
-the chunks will have a default value of 1GB. Otherwise the default chunk value is 15MB, which is typically too small for large files and should be increased. 
+By default, if you have configured s3cmd with *--multipart-chunk-size-mb=1024*, 
+the chunks will have a default value of 1GB. Otherwise the default chunk value is 15MB, 
+which is typically too small for large files and should be increased. 
 We recommend reconfiguring the S3 interface using the --multipart-chunk-size-mb parameter as above.
 
 Important considerations:
 - Any chunk size can be specified, however only *10,000* chunks can be created per file. 
 - if the chunk size is too small you will get the following error `ERROR: Parameter problem: Chunk size 15 MB results in more than 10,000 chunks. Please increase --multipart-chunk-size-mb`.  
 
-To determine an optimal chunk size for very large files, use the rough formula *file size/10000*. Add a buffer to ensure you're safely under the limit.  
+To determine an optimal chunk size for very large files, use the rough formula *file size/10000*. 
+Add a buffer to ensure you're safely under the limit.  
 
 For instance, for a file of ~50TB, a chunk size of 5 GB is a minimum. 
 This can be set by using the flag `--multipart-chunk-size-mb=5120` to the command.  
