@@ -134,7 +134,6 @@ s3cmd du -H s3://<freezer_bucket>
 
     If you have a large number files the `s3cmd du` command will fail. If you wish to receive information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
     
-```sh
 
 ### Put objects
 
