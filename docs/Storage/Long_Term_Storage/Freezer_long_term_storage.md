@@ -178,7 +178,7 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 Large files will automatically be split into smaller "chunks" for ease of upload. 
 
-By default, if you have configured s3cmd with *s3cmd --configure --multipart-chunk-size-mb=1024*, 
+By default, if you have configured s3cmd with *gi*, 
 the chunks will have a default value of 1GB. Otherwise the default chunk value is 15MB, which is typically too small for large files and should be increased. 
 We recommend reconfiguring the S3 interface using the --multipart-chunk-size-mb parameter as above.
 
@@ -219,7 +219,7 @@ s3cmd sync yourfolder s3://<freezer_bucket>/your_directory/your_folder/
 
 Use any of the `s3cmd` options with `-n, --dry-run`to preview the action.
 
-Only shows what should be uploaded or downloaded but don't actually do it. May still perform S3 requests to get bucket listings and other information though (only for file transfer commands).
+Only shows what should be uploaded or downloaded but doesn't actually do it. May still perform S3 requests to get bucket listings and other information though (only for file transfer commands).
 
 ### List objects before restore
 
