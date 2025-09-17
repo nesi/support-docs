@@ -23,16 +23,16 @@ The following pricing table covers our core HPC Platform service offerings.
 
 | Service      | Public sector & not-for-profit | Commercial     |
 | :---        |    :---   |          :--- |
-| Research Software Expertise      |        |    |
+| *Research Software Expertise*      |        |    |
 | Computational science and data science Consultancy (per hour)   | $160.00        | $320.00      |
-| High Performance Computing (HPC) and Data Analytics   |         |       |
+| *High Performance Computing (HPC) and Data Analytics*   |         |       |
 | Mahuika Milan HPC core hours (per CPU core hour)   | $0.08        | $0.09      |
 | Mahuika Genoa HPC core hours (per CPU core hour)   | $0.08        | $0.09      |
 | P100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.35        | $0.40      |
 | A100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
 | H100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
 | L4 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
-| Research Data Management      |        |    |
+| *Research Data Management*      |        |    |
 | Freezer long-term storage (per Terabyte per year)   | $30.00        | $37.50      |
 | Persistent storage (>2 TB) (per Terabyte per year)   | $150.00        | $187.50      |
 | National Data Transfer Platform membership & managed endpoint (per year)   | $4,000.00        | $P.O.A      |
