@@ -15,16 +15,11 @@ We have two categories of pricing for Subscription services:
 
 Prices are reviewed annually and subject to change.
 
-## Current pricing
-
-### HPC Platform
+## HPC Platform
 
 The following pricing table covers our core HPC Platform service offerings.
 
 *(Last updated June 2025. Prices subject to change.)*
-
- 
-
 
 | Service      | Public sector & not-for-profit | Commercial     |
 | :---        |    :---   |          :--- |
@@ -43,10 +38,7 @@ The following pricing table covers our core HPC Platform service offerings.
 | National Data Transfer Platform membership & managed endpoint (per year)   | $4,000.00        | $P.O.A      |
 
 
-
-
-
-### Research Developer Cloud
+## Research Developer Cloud
 
 Billable services in the Research Developer Cloud include Virtual Machines (VMs), General Purpose Graphical Processing Units (GPUs), and Storage.
 
@@ -55,15 +47,11 @@ Pricing listed is for Public section & not-for-profit organisations. To discuss 
 
 *(Last updated September 2024. Prices are subject to change.)*
 
+### Virtual Machines (VMs)
 
-
-#### Virtual Machines (VMs)
-
-*Regular VMs*
 - The flavours available by default are the balanced VMs with 1 CPU to 2GB RAM ratio.
 - They are named balanced1.1cpu2ram and increment up to balanced1.32cpu64ram.
 - The price scales linearly with the number of cores in the VMs.
-
 
 | Flavours      | Price per hour ($) | Price per month ($ in approximation)     |
 | :---        |    :---   |          :--- |
@@ -74,9 +62,7 @@ Pricing listed is for Public section & not-for-profit organisations. To discuss 
 | balanced1.16cpu32ram   | 0.625        | 455.92      |
 | balanced1.32cpu64ram   | 1.249        | 911.85      |
 
-
-*High Memory & Development VMs*
-
+### High Memory & Development VMs
 
 The Research Developer Cloud also offers high memory flavours (memory1) and flavours designed for quick development and test purposes (devtest1): 
 
@@ -84,7 +70,6 @@ The Research Developer Cloud also offers high memory flavours (memory1) and flav
 - development focused flavours with 1 to 1 ratio
 
 [Please contact us](mailto:support@nesi.org.nz) if you would like to access these specialised compute flavours.
-
 
 | Flavours      | Price per hour ($) | Price per month ($ in approximation)     |
 | :---        |    :---   |          :--- |
@@ -98,20 +83,15 @@ The Research Developer Cloud also offers high memory flavours (memory1) and flav
 | devtest1.2cpu2ram   | 0.056        | 40.71      |
 | devtest1.4cpu4ram   | 0.112        | 81.42      |
 
-
-
-### General Purpose GPUs
+## General Purpose GPUs
 General Purpose GPUs are currently accessible as a whole node or half a node of A40 GPUs. The GPU flavour won’t be visible by default on your project. We will be working on making vGPU access available in smaller portions instead of the whole node. [Please contact us](mailto:support@nesi.org.nz) if you would like to access them.
-
 
 | Flavours      | Price per hour ($) | Price per month ($ in approximation)     |
 | :---        |    :---   |          :--- |
 | gpu1.44cpu240ram.a40.1g.48gb   | 3.672        | 2,680.43      |
 | gpu1.88cpu480ram.a40x2.1g.48gb   | 7.344        | 5,360.85      |
 
-
-
-### Storage
+## Storage
 
 | Flavours      | Price per hour ($) per GB | Price per month ($ in approximation) per GB     |
 | :---        |    :---   |          :--- |
