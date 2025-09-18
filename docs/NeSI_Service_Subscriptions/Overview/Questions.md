@@ -9,15 +9,16 @@ zendesk_section_id: 7348891753487
 ---
 
 If you have any questions about anything related to Subscriptions, don’t
-hesitate to [get in touch](mailto:info@nesi.org.nz).
+hesitate to [get in touch](mailto:support@nesi.org.nz).
 
-Visit our Services sections on the NeSI website for more details on the
-ways we're supporting New Zealand research communities through:
+Click through the links below for more details on the ways we're supporting New Zealand research communities through:
 
-- [High Performance Computing & Analytics](https://www.nesi.org.nz/services/high-performance-computing-and-data-analytics)
+- [High Performance Computing and data analytics](https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics)
 
-- [Consultancy](https://www.nesi.org.nz/services/consultancy)
+- [Consultancy](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Consultancy/)
 
-- [Data Services](https://www.nesi.org.nz/services/data-services)
+- [Data transfer using Globus](https://docs.nesi.org.nz/Storage/Data_Transfer_Services/Data_Transfer_using_Globus/)
 
-- [Training](https://www.nesi.org.nz/services/training)
+- [Training](https://www.reannz.co.nz/products-and-services/training)
+
+- [Network services](https://www.reannz.co.nz/products-and-services)
