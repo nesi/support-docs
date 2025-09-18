@@ -4,12 +4,7 @@ tags:
 - storage
 - quota
 title: NeSI File Systems and Quotas
-status: deprecated
 ---
-
-!!! tip "Transparent File Compression"
-    We have recently started rolling out compression of inactive data on the Project filesystem.
-    Please see the [documentation below](#transparent-file-data-compression) to learn more about how this works and what data will be compressed.
 
 The HPC compute nodes, login nodes and OnDemand all share access to the same file systems.
 You may query your actual usage and disk allocations using the following
@@ -30,11 +25,10 @@ and cached between updates.
 | -------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Disk Quota     | 20 GB                                                                                 | 100 [110] GB                                                                                                    | 10 [12] TB | -                                                                                                       |
 | Usage  | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc. | Data created or used by compute jobs that is intended to be temporary | Medium- to long-term storage of research data, (past, present or planned projects) |
-| Capacity | 28 TB                                                                                 | 910 TB                                                                                                         | 2,728 TB | - |
 | Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup file system for more information.  | 180 days after the end of the project's last nearline storage allocation |
 | Snapshots      | Daily<br>7 days                                                               | Daily<br>7 days                                                                                        | - | - |
-| Speed          | Moderate | Moderate | Fast | Slow |
-| Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul> | <ul><li>Native mounts</li><li>SCP</li></ul> | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li> |<ul><li>Nearline commands</li></ul> |
+| Speed          | Fast | Fast | Fast | Slow |
+| Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul> | <ul><li>Native mounts</li><li>SCP</li></ul> | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li> |<ul><li>s3cmd commands</li></ul> |
 
 ### **Soft versus hard quotas**
 
@@ -55,24 +49,16 @@ but will prevent creation of new data or files.
 
 #### Notes
 
-- You may request an increase in storage and inode quota if needed by
+- You may request an increase in storage quota if needed by
     a project. This may in turn be reduced as part of managing overall
     risk, where large amounts of quota aren't used for a long period (~6
     Months).
 - If you need to compile or install a software package that is large
     or is intended for use by a project team, please build it
     in `/nesi/project/<project_code>` rather than `/home/<username>`.
-- As the `/nesi/nobackup` file system provides the highest
-    performance, input files should be moved or copied to this file
-    system before starting any job that makes use of them. Likewise, job
-    scripts should be written so as to write output files to the
-    `/nesi/nobackup` file system. If you wish to keep your data for the
-    long term, you can include as a final part of your job script an
-    operation to copy or move the output data to the `/nesi/project`
-    file system.
 - Keep in mind that data on `/nesi/nobackup` is not backed up,
     therefore users are advised to move valuable data
-    to `/nesi/project/<project_code>`, or, if the data is seldom used,
+    to `/nesi/project/<project_code>` or Freezer, or, if the data is seldom used,
     to other storage such as an institutional storage facility, as soon
     as batch jobs are completed. Please do **not** use the `touch`
     command to prevent the cleaning policy from removing files, because
@@ -81,19 +67,16 @@ but will prevent creation of new data or files.
 ### /home
 
 This file system is accessible from login, compute and ancillary nodes.
-Users should **not** run jobs from this filesystem. All home directories
-are backed up daily, both via the Spectrum Protect backup system, which
-retains the last 10 versions of all files for up to 90 days, and via
-[Scale snapshots](../Data_Recovery/File_Recovery.md).
+Users should **not** run jobs from this filesystem. [Snapshots](../Data_Recovery/File_Recovery.md) are taken of all home directories
+daily.
 No cleaning policy will be applied to your home directory as long as
-your My NeSI account is active and you are a member of at least one
+your user account is active and you are a member of at least one
 active project.
 
 ### /nesi/project
 
 This filesystem is accessible from all login, compute and ancillary
-nodes. Contents are backed up daily, via the Spectrum Protect backup
-system, which retains the last 10 versions of all files for 90 days. No
+nodes. [Snapshots](../Data_Recovery/File_Recovery.md) are taken daily. No
 cleaning policy is applied.
 
 It provides storage space for datasets, shared code or configuration
@@ -102,7 +85,7 @@ scripts that need to be accessed by users within a project, and
 Read and write performance increases using larger files, therefore you should
 consider archiving small files with an archiving package such as `tar` .
 
-Each NeSI project receives quota allocations for
+Each project receives quota allocations for
 `/nesi/project/<project_code>`, based on the requirements you tell us
 about in your [application for a new NeSI
 project](https://my.nesi.org.nz/html/request_project), and separately
@@ -110,14 +93,12 @@ covering disk space and number of files.
 
 ### /nesi/nobackup
 
-The `/nesi/nobackup` file system has the highest performance of all NeSI
-file systems, with greater than 140 GB/s bandwidth from compute nodes to
-disk. It provides access to a large (4.4 PB) resource for
-short-term project usage.
+This filesystem is accessible from all login, compute and ancillary
+nodes. No snapshots or backups of this filesystem are guaranteed.
 
 To prevent project teams from inadvertently bringing the file system
 down for everyone by writing unexpectedly large amounts of data, we
-apply per-project quotas to both disk space and number of files on this
+apply per-project disk space quotas to projects on this
 file system. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
@@ -153,59 +134,3 @@ a [snapshot](../Data_Recovery/File_Recovery.md).
 Snapshots are taken daily of `home/` and `project` directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 {% include "partials/support_request.html" %}
-
-## Contributions of Small Files Towards Quotas
-
-The Scale file system makes use of a feature called *data-in-inode*.
-This feature will ensure that, once all of a (non-encrypted) file's
-required metadata has been written to our metadata storage, if all the
-file's data is able to fit within the file's remaining inode space (4
-KiB minus metadata), it will be written there instead of to the data
-storage.
-
-For files larger than 4 KiB (minus the space needed to store the file's
-metadata), the data written to disk will be stored in one or more
-sub-blocks of 256 KiB each (which are 1/32 of the filesystem Block
-Size), and the "size" allocated on disk will be rounded up to the
-nearest 256 KiB. Users or projects requiring many small files may find
-themselves using large amounts of disk space. Use of *data-in-inode*
-mitigates the effect of a large block size on such people and project
-teams.
-
-However, small files, as well as zero-size entities such as
-directories and symbolic links, still count towards the relevant
-fileset's inode quota. If therefore you expect you will need to store
-large numbers of small files in your home directory or in a
-project's persistent storage, please {% include "partials/support_request.html" %} to discuss your
-storage needs.
-
-## Transparent File Data Compression
-
-The Scale file system has the ability to transparently compress file
-data. That is, file contents/data can be compressed behind the scenes,
-taking up less space on disk, while appearing uncompressed to
-applications reading or altering the file. Scale automatically handles
-decompression before passing data to user-space applications. This
-in-line decompression may have a small IO performance/latency impact,
-though this is mitigated by space and bandwidth savings.
-
-Transparent file data compression can be controlled and applied by users
-via file attributes, you can find out more about using this method on
-our [Data Compression support page](../../Storage/File_Systems_and_Quotas/Data_Compression.md).
-File data compression can also be automatically applied by administrators
-through the Scale policy engine. We leverage this latter feature to
-regularly identify and compress inactive data on the `/nesi/project`
-file system.
-
-### What Project data is automatically compressed?
-
-Our current policy compresses files that have not been accessed (either
-read from or written to) within the last 365 days, i.e., very inactive
-cold data. We may decrease this in future.
-
-Additionally, we only automatically compress files in the range of 4kB -
-10GB in size. Files larger than this can be compressed by user
-interaction - see the instructions for the `mmchattr` command on
-the [Data Compression support page](../../Storage/File_Systems_and_Quotas/Data_Compression.md). Also
-note that the Scale filesystem will only store compressed blocks when
-the compression space saving is &gt;=10%.
