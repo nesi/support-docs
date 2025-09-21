@@ -83,7 +83,7 @@ PuTTY/Terminal client path.
 ## Usage
 
 Files can be dragged, dropped and modified in the WinSCP GUI just like
-in any windows file system.
+in any windows filesystem.
 
 ![WinSCP5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_5.png)
 

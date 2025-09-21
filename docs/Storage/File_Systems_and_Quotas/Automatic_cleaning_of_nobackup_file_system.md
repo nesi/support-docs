@@ -11,8 +11,8 @@ zendesk_section_id: 360000033936
 ---
 
 The automatic cleaning feature is a programme of regular deletion of
-selected files from project directories in our nobackup file system.
-We do this to optimise the availability of this file system for active
+selected files from project directories in our nobackup filesystem.
+We do this to optimise the availability of this filesystem for active
 research computing workloads and to ensure NeSI can reliably support
 large-scale compute and analytics workflows.
 

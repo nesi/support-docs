@@ -53,7 +53,7 @@ the file or is cancelled, the file will be marked as `illcompressed`.
 This state means that the file is only partially compressed.
 
 `ls` command will show files with their original sizes. However, `du`  
-commands will calculate the approximate usage of the file system as
+commands will calculate the approximate usage of the filesystem as
 opposed to the uncompressed usage. This will be the total counting
 against quotas as well. Therefore, if files are compressed, quota usage
 will decrease. And vice versa, if files are decompressed, fully or

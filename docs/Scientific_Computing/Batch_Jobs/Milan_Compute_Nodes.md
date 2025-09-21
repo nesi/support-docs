@@ -10,7 +10,7 @@ status: deprecated
 To use Mahuika's Milan nodes, you will need to explicitly specify the
 `milan` partition in your `sbatch` command line. Jobs are submitted from
 the same Mahuika login node that you currently use, and share the same
-file system as other cluster nodes.
+filesystem as other cluster nodes.
 
 ``` sh
 sbatch -p milan ...
