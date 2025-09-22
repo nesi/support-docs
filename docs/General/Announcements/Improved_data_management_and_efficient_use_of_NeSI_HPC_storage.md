@@ -88,7 +88,7 @@ levels, as that impacts their performance and availability for users. We
 also want to ensure our active storage filesystems aren't being used to
 store inactive data. This new data management feature
 for `/nesi/project/` directories will complement our existing programme
-of [automatic cleaning of the /nobackup file system](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
+of [automatic cleaning of the /nobackup filesystem](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
 
 ### Can I check how much storage I’m currently using on NeSI systems?
 
@@ -102,7 +102,7 @@ and cached between updates.
 
 ### Can I recover data that I accidentally delete from my `/project` directory?
 
-Perhaps. We regularly make read-only copies of the file system and save
+Perhaps. We regularly make read-only copies of the filesystem and save
 them for up to seven days. For more information,
 [refer to our File Recovery page](../../Storage/Data_Recovery/File_Recovery.md).
 

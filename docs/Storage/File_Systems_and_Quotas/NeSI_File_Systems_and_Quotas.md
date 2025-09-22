@@ -3,10 +3,10 @@ created_at: '2018-05-02T04:06:16Z'
 tags:
 - storage
 - quota
-title: NeSI File Systems and Quotas
+title: NeSI filesystems and Quotas
 ---
 
-The HPC compute nodes, login nodes and OnDemand all share access to the same file systems.
+The HPC compute nodes, login nodes and OnDemand all share access to the same filesystems.
 You may query your actual usage and disk allocations using the following
 command:
 
@@ -19,13 +19,13 @@ and cached between updates.
 
 ![neSI\_filetree.svg](../../assets/images/NeSI_File_Systems_and_Quotas.png)
 
-## File System Specifications
+## filesystem Specifications
 
 | Filesystem     | `/home`                                                                                | `/nesi/project`                                                                                                  | `/nesi/nobackup` | `Freezer`        |
 | -------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Disk Quota     | 20 GB                                                                                 | 100 [110] GB                                                                                                    | 10 [12] TB | -                                                                                                       |
 | Usage  | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc. | Data created or used by compute jobs that is intended to be temporary | Medium- to long-term storage of research data, (past, present or planned projects) |
-| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup file system for more information.  | 180 days after the end of the project's last nearline storage allocation |
+| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See Automatic cleaning of nobackup filesystem for more information.  | 180 days after the end of the project's last nearline storage allocation |
 | Snapshots      | Daily<br>7 days                                                               | Daily<br>7 days                                                                                        | - | - |
 | Speed          | Fast | Fast | Fast | Slow |
 | Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul> | <ul><li>Native mounts</li><li>SCP</li></ul> | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li> |<ul><li>s3cmd commands</li></ul> |
@@ -66,7 +66,7 @@ but will prevent creation of new data or files.
 
 ### /home
 
-This file system is accessible from login, compute and ancillary nodes.
+This filesystem is accessible from login, compute and ancillary nodes.
 Users should **not** run jobs from this filesystem. [Snapshots](../Data_Recovery/File_Recovery.md) are taken of all home directories
 daily.
 No cleaning policy will be applied to your home directory as long as
@@ -96,16 +96,16 @@ covering disk space and number of files.
 This filesystem is accessible from all login, compute and ancillary
 nodes. No snapshots or backups of this filesystem are guaranteed.
 
-To prevent project teams from inadvertently bringing the file system
+To prevent project teams from inadvertently bringing the filesystem
 down for everyone by writing unexpectedly large amounts of data, we
 apply per-project disk space quotas to projects on this
-file system. The default per-project quotas are as described in the
+filesystem. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
 requirements with us during [the project application process](../../General/NeSI_Policies/How_we_review_applications.md),
 or {% include "partials/support_request.html" %} at any time.
 
-To ensure this file system remains fit-for-purpose, we have a regular
+To ensure this filesystem remains fit-for-purpose, we have a regular
 cleaning policy as described in
 [Automatic cleaning of nobackup filesystem](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
 

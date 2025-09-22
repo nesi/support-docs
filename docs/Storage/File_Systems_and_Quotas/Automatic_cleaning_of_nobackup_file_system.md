@@ -4,10 +4,6 @@ description: Description of our automatic deletion of old data.
 tags:
 - nobackup
 - cleaning
-vote_count: 4
-vote_sum: 2
-zendesk_article_id: 360001162856
-zendesk_section_id: 360000033936
 ---
 
 The automatic cleaning feature is a programme of regular deletion of selected files from project directories in our scratch file system (/nesi/nobackup). 
