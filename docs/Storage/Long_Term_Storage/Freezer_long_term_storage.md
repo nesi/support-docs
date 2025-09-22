@@ -91,7 +91,7 @@ Configuration saved to '/home/&lt;user_id&gt;/.s3cfg'
 ## Using s3cmd tool to interact with Freezer
 
 Freezer uses the AWS S3 standard as a protocol for temporarily hosting data prior to writing it to tape.
-All of the data is stored in buckets - this is similar to a folder in a file system, but designed for scalable storage.
+All of the data is stored in buckets - this is similar to a folder in a filesystem, but designed for scalable storage.
 
 Freezer has two types of data storage classes:
 

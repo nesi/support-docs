@@ -6,7 +6,7 @@ This release updates Open OnDemand to version 4.0.1.
 
 ### Features
 
-- File system has been updated to use the production WEKA system, which is the same file system used with NeSI's new HPC cluster.
+- filesystem has been updated to use the production WEKA system, which is the same filesystem used with NeSI's new HPC cluster.
 - Two additional apps have been added: Visual Studio Code Server and Virtual Desktop.
 - Shell terminal has been added to the main menu that connects to the login node of the new HPC.
 - Minor UI/UX improvements

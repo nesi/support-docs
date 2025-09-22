@@ -25,7 +25,7 @@ For more details see the [how-to guide](../../how_to_guide.md).
 is the next generation of the Jupyter user interface and provides a way
 to use notebooks, text editor, terminals and custom components together.
 
-### File systems
+### filesystems
 
 Your JupyterLab session will start in your home directory the first time you launch it. On subsequent launches it may remember your previous working directory and start there.
 
