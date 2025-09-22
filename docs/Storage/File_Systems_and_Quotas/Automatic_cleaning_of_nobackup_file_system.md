@@ -6,9 +6,9 @@ tags:
 - cleaning
 ---
 
-The automatic cleaning feature is a programme of regular deletion of selected files from project directories in our scratch file system (/nesi/nobackup). 
+The automatic cleaning feature is a programme of regular deletion of selected files from project directories in our scratch filesystem (/nesi/nobackup). 
 
-We do this to optimise the availability of this file system for active research computing workloads and to ensure we can reliably support large-scale compute and analytics workflows.
+We do this to optimise the availability of this filesystem for active research computing workloads and to ensure we can reliably support large-scale compute and analytics workflows.
 
 ## How it works
 
@@ -21,7 +21,7 @@ Files are deleted if they meet **all** of the following criteria:
 
 The general process follows a schedule of:
 
-- Every fortnight on Tuesday morning, we review files stored in the scratch file system and identify candidates for expiry.
+- Every fortnight on Tuesday morning, we review files stored in the scratch filesystem and identify candidates for expiry.
 - Project teams will be notified by email if they have file candidates for deletion. Emails will be sent two weeks in advance of any deletion taking place.
 - Immediately after deletion is complete, a new set of candidate files will be identified for expiry during the next automated cleanup. These candidate files are all files within the project's scratch filesystem that have not been created, accessed or modified within the last 64 days.
 
@@ -55,7 +55,6 @@ If you have files identified as candidates for deletion that you need to keep be
 - Move or copy the file to a storage system at your institution. We expect most projects to do this for finalised output data and appreciate prompt egress of data once it is no longer used for processing.
 
 
-
 ## Where should I store my data?
 
 Generally: 
@@ -76,6 +75,7 @@ Generally:
 ## If I need a file that was deleted from nobackup, what should I do?
 
 Please [contact our Support Team](mailto:support@nesi.org.nz) as soon as possible after you find that the file is missing. We can’t guarantee that it can be recovered, but we will do our best to retrieve the data.
+
 
 ## I have research data on nobackup that I can't store in my project directory or at my institution right now. What should I do?
 
