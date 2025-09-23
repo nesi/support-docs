@@ -12,9 +12,8 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 
 !!! info "Recently fixed"
-     - New login node "login03" fixes previous performance problems.
-     - The Milan compute nodes are now available, including the 4 nodes with the 80GB A100 GPUs.
-     - MaxRSS is now the same number as it was on the old cluster - just the ordinary (ie: "anon") memory use without caches etc.
+     - All compute nodes now support the same large /tmp directories, ability to ssh into jobs, and fast access to the cluster filesystems.
+     - `module spider` is back up to its previous speed.
 
 ## Access
 
@@ -52,20 +51,11 @@ None of the 3 Mahuika hugemem nodes are present yet, but the largest of the new 
 ### GPUs
 If you request a GPU without specifying which *type* of GPU, you will get a random one. So please always specify a GPU type. 
 
-### $TMPDIR
-On some of the Genoa nodes the size limit on this per-job in-memory directory is currently only 70 TB per node in total across all jobs. So if you need to use more than about 5 TB of it per node then please use `--partition=milan` to avoid the Genoa nodes or `--gres=ssd` to get your job's $TMPDIR placed on a fast SSD instead.
-
 ### BadConstraints
 This uninformative message can appear as a reason for a job pending in the `squeue` output when the job is submitted to both `milan` and `genoa` partitions (which is the default behaviour). It does not appear to reflect a real problem though, just a side-effect of the mechanism we are using to target jobs to the right-sized node(s). 
 
 ### email
 Slurm option `--mail-type` is not yet effective.
-
-### ssh into Slurm jobs
-You cannot yet `ssh` into some of the the Genoa compute nodes, even if you are running jobs there.  That will break any software which depends on ssh to reach remote compute nodes.
-
-## WEKA Filesystems 
-From some of the Genoa compute nodes, the cluster-wide filesystems (_/home_, _/nesi/project_, _/nesi/nobackup_, and _/opt/nesi_) are not yet as fast as they should be.
 
 ## Freezer Filesystems
 If you have a large number files the `s3cmd du`command will fail. If you wish to receive information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
