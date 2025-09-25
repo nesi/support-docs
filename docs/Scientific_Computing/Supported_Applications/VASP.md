@@ -29,9 +29,9 @@ A VASP license is managed at the research group level. Which versions you have a
 If your research group has a valid licence, please {% include "partials/support_request.html" %} and CC the group leader. The Support Team will add the relevant permissions to your HPC UID which will allow you to access the VASP modules. You may be asked to provide proof of your license if you are not from a known group or if the license is new.
 
 ## Parallelising your VASP calculation
-Effectively parallelising your calculation is a particularly complicated aspect of VASP. Below is a basic Slurm batch script that can be used to submit a parallel VASP6 job.
+Effectively parallelising your calculation is a particularly complicated aspect of VASP. VASP6 can parallelise its work using the MPI (set by `--ntasks`) and OpenMP (set by `--cpus-per-task`) protocols concurrently. VASP5 uses the MPI only.
 
-### Example script
+### Example script for VASP 6
 
 ``` sl
 #!/bin/bash -e
@@ -41,12 +41,10 @@ Effectively parallelising your calculation is a particularly complicated aspect 
 #SBATCH --job-name=my_VASP_job
 #SBATCH --time=01:00:00
 #SBATCH --mem-per-cpu=950
-#SBATCH --account=nesi99999
 #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
 #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
 #SBATCH --mem-bind=local
 #SBATCH --profile=task
-#SBATCH --acctg-freq=15
 
 module purge 2> /dev/null
 module load VASP/6.4.2-foss-2023a
@@ -67,12 +65,6 @@ wget https://raw.githubusercontent.com/Johnryder23/job_submit_scripts/refs/heads
 ```
 
 This more involved script sets up a working directory and can be used to submit CPU or CPU/GPU jobs. In most cases, only the variables under "edit job allocation settings here" need to be adjusted.
-
-
-!!! note
-    There are not many reasons to specify a partition with `#SBATCH --partition` on the new (2025) HPC. Please only set this if you have a good reason to use Genoa or Milan nodes.
-
-VASP6 can parallelise its work using the MPI (set by `--ntasks`) and OpenMP (set by `--cpus-per-task`) protocols concurrently. VASP5 uses the MPI only.
 
 ## Optimising the parallelisation and additional tips
 

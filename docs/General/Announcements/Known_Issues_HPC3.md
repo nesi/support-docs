@@ -13,7 +13,6 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 !!! info "Recently fixed"
      - All compute nodes now support the same large /tmp directories, ability to ssh into jobs, and fast access to the cluster filesystems.
-     - `module spider` is back up to its previous speed.
 
 ## Access
 
