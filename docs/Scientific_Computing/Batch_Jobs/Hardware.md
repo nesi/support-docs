@@ -6,6 +6,10 @@ tags:
  - compute
 ---
 
+A list of the currently available hardware.
+
+If you are looking for information on maximum resource requests, see [Job Limits](Job_Limits.md).
+
 ## Compute Nodes
 
 Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio. For example in the Genoa partition:
@@ -75,43 +79,48 @@ You will always get the amount of memory you requested, even if running on a nod
 ## GPGPUs
 
 NeSI has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale.
+
 Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm),
 or Virtual Machines (VMs).
 
-The table below outlines the different types of GPUs,
-who can access them and how, and whether they are currently available or on the future roadmap.
+For information about how to request these GPUs in a Slurm job, see [Using GPUs](GPU_use_on_NeSI.md).
 
 <table>
     <tr>
         <td>Architecture</td>
         <td>Purpose/Note</td>
         <td>VRAM</td>
+        <td>GPUs on Node</td>
         <td colspan="2">Nodes</td>
     </tr>
     <tr>
         <td rowspan="2">NVIDIA A100</td>
         <td rowspan="2">Machine Learning</td>
         <td>80GB</td>
-        <td><a href="#gpu-milan-a100">4GPUs on a Milan node</a></td>
+        <td>4</td>
+        <td><a href="#gpu-milan-a100">Milan</a></td>
         <td>4</td>
     </tr>
     <tr>
         <td>40GB</td>
-        <td><a href="#gpu-genoa-a100">2 x on Genoa</a></td>
+        <td>2</td>
+        <td><a href="#gpu-genoa-a100">Genoa</a></td>
         <td>4</td>
     </tr>
     <tr>
         <td>NVIDIA H100</td>
         <td>Large-scale Machine Learning</td>
         <td>96GB</td>
-        <td><a href="#gpu-genoa-h100">2 x on Genoa</a></td>
+        <td>2</td>
+        <td><a href="#gpu-genoa-h100">Genoa</a></td>
         <td>4</td>
     </tr>
     <tr>
         <td>NVIDIA L4</td>
         <td>No fp64 double precision</td>
         <td>24GB</td>
-        <td><a href="#gpu-genoa-l4">4 x on Genoa</a></td>
+        <td>4</td>
+        <td><a href="#gpu-genoa-l4">Genoa</a></td>
         <td>4</td>
     </tr>
     <tr>
@@ -119,6 +128,7 @@ who can access them and how, and whether they are currently available or on the 
         <td>Teaching / training</td>
         <td>48GB</td>
         <td><a href="https://docs.nesi.org.nz/Scientific_Computing/Research_Developer_Cloud/User_Guides">RDC</a></td>
+        <td></td>
         <td>4</td>
     </tr>
 </table>
