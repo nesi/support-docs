@@ -9,7 +9,9 @@
   --nesi-green: #cce310;
 
   --reannz-blue : rgb(0,185, 228);
+  --reannz-blue--shade-negative1:rgb(0, 127, 156);
   --reannz-blue--dark: rgb(0,28, 54);
+  --reannz-blue--dark-shade1: #2c485d;
   --reannz-grey : rgb(195,200, 200);
   --reannz-black : rgb(25,25, 25);
   --reannz-green: rgb(190, 184, 6);
@@ -25,7 +27,7 @@
     /* --md-accent-bg-color:                rgb(210,227,235); */
   [data-md-color-scheme="slate"] {
     --md-primary-fg-color:               var(--reannz-blue--dark);
-    --md-accent-fg-color:                var(--reannz-green--dark);
+    --md-accent-fg-color:                var(--reannz-blue--darkish);
 
     .nt-card-image>img {
       filter: brightness(0) invert(1);
@@ -109,10 +111,10 @@
 
 /* e.g. inactive link text */ 
 .md-typeset a {
-   color: var(--reannz-green--dark);
+   color: var(--reannz-blue--shade-negative1);
 }
 .md-typeset a:hover {
-   color: var(--reannz-green);
+   color: var(--reannz-blue);
 }
 /* Make deprecated logo stand out */
 span.md-status.md-status--deprecated {
