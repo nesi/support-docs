@@ -44,8 +44,6 @@ hc/en-gb/articles/360000177256-NeSI-File-Systems-and-Quotas.md: Storage/File_Sys
 hc/en-gb/articles/360000177256.md: Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md
 hc/en-gb/articles/360000201636-Job-prioritisation.md: Scientific_Computing/Batch_Jobs/Job_prioritisation.md
 hc/en-gb/articles/360000201636.md: Scientific_Computing/Batch_Jobs/Job_prioritisation.md
-hc/en-gb/articles/360000201756-Total-HPC-Resources-Available.md: General/NeSI_Policies/Total_HPC_Resources_Available.md
-hc/en-gb/articles/360000201756.md: General/NeSI_Policies/Total_HPC_Resources_Available.md
 hc/en-gb/articles/360000202136-How-we-review-applications.md: General/NeSI_Policies/How_we_review_applications.md
 hc/en-gb/articles/360000202136.md: General/NeSI_Policies/How_we_review_applications.md
 hc/en-gb/articles/360000202196-Project-Extensions-and-New-Allocations-on-Existing-Projects.md: Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md
@@ -321,8 +319,6 @@ hc/en-gb/articles/6202743496591-Sync-ing-files-between-NeSI-and-another-computer
 hc/en-gb/articles/6202743496591.md: Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md
 hc/en-gb/articles/6359601973135-Data-Compression.md: Storage/File_Systems_and_Quotas/Data_Compression.md
 hc/en-gb/articles/6359601973135.md: Storage/File_Systems_and_Quotas/Data_Compression.md
-hc/en-gb/articles/6367209795471-Milan-Compute-Nodes.md: Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md
-hc/en-gb/articles/6367209795471.md: Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md
 hc/en-gb/articles/6443618773519-GATK.md: Scientific_Computing/Supported_Applications/GATK.md
 hc/en-gb/articles/6443618773519.md: Scientific_Computing/Supported_Applications/GATK.md
 hc/en-gb/articles/6529511928207-BRAKER.md: Scientific_Computing/Supported_Applications/BRAKER.md
@@ -375,7 +371,6 @@ Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md: Scient
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md: Scientific_Computing/Batch_Jobs/Hyperthreading.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_Checkpointing.md: Scientific_Computing/Batch_Jobs/Job_Checkpointing.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md: Scientific_Computing/Batch_Jobs/Job_prioritisation.md
-Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Milan_Compute_Nodes.md: Scientific_Computing/Batch_Jobs/Milan_Compute_Nodes.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice.md: Scientific_Computing/Batch_Jobs/SLURM-Best_Practice.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md: Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md
 Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md: Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md
