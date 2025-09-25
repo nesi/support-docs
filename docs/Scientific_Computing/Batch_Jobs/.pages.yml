@@ -1,10 +1,11 @@
 nav:
- - Checking_your_projects_usage_using_nn_corehour_usage.md
+ - Hardware.md
+ - Job_prioritisation.md
+ - SLURM-Best_Practice.md
  - GPU_use_on_NeSI.md
  - Job_Checkpointing.md
  - Slurm_Interactive_Sessions.md
  - Fair_Share.md
- - Job_prioritisation.md
- - SLURM-Best_Practice.md
  - Checksums.md
+ - Checking_your_projects_usage_using_nn_corehour_usage.md
  - ...

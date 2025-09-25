@@ -39,7 +39,7 @@ You will always get the amount of memory you requested, even if running on a nod
         <td>8</td>
     </tr>
     <tr id="gpu-milan-a100">
-        <td>4 x NVIDIA A100</td>
+        <td>4 x NVIDIA HGX A100</td>
         <td>4</td>
     </tr>
     <tr>
@@ -75,14 +75,11 @@ You will always get the amount of memory you requested, even if running on a nod
 ## GPGPUs
 
 NeSI has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale.
-Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm), interactively (using Jupyter on NeSI),
+Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm),
 or Virtual Machines (VMs).
 
 The table below outlines the different types of GPUs,
 who can access them and how, and whether they are currently available or on the future roadmap.
-
-If you have any questions about GPUs on NeSI or the status of anything listed in the table,
-{% include "partials/support_request.html" %}.
 
 <table>
     <tr>
@@ -94,11 +91,12 @@ If you have any questions about GPUs on NeSI or the status of anything listed in
     <tr>
         <td rowspan="2">NVIDIA A100</td>
         <td rowspan="2">Machine Learning</td>
-        <td rowspan="2">40GB</td>
-        <td><a href="#gpu-milan-a100">4 x on Milan</a></td>
+        <td>80GB</td>
+        <td><a href="#gpu-milan-a100">4GPUs on a Milan node</a></td>
         <td>4</td>
     </tr>
     <tr>
+        <td>40GB</td>
         <td><a href="#gpu-genoa-a100">2 x on Genoa</a></td>
         <td>4</td>
     </tr>
@@ -120,7 +118,10 @@ If you have any questions about GPUs on NeSI or the status of anything listed in
         <td>NVIDIA A40</td>
         <td>Teaching / training</td>
         <td>48GB</td>
-        <td><a>RDC</a></td>
+        <td><a href="https://docs.nesi.org.nz/Scientific_Computing/Research_Developer_Cloud/User_Guides">RDC</a></td>
         <td>4</td>
     </tr>
 </table>
+
+If you have any questions about hardware or the status of anything listed in the table,
+{% include "partials/support_request.html" %}.
