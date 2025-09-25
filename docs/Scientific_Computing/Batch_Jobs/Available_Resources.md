@@ -1,74 +1,74 @@
 ---
 created_at: '2022-06-13T04:54:38Z'
-description:  This page below outlines the different types of GPUs available on NeSI
+description:  This page below outlines the available hardware.
 tags:
  - gpu
+ - compute
 ---
 
 ## Compute Nodes
 
-Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio. For example in the genoa partition:
+Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio. For example in the Genoa partition:
 
-    A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes.
-    A job which requests ≤ 4 GB/core will run on the 4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
-    A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
+- A job requesting ≤ 2 GB/core will run on a 2 GB/core node, or if full, a 4 GB/core node.
+- A job requesting ≤ 4 GB/core will run on a 4 GB/core node, or if full, a 8 GB/core node.
+
+And so on.
+You will always get the amount of memory you requested, even if running on a node with a higher ratio.
 
 <table>
     <tr>
         <td>Architecture</td>
-        <td>Cores</td>
-        <td>Memory</td>
+        <td>Core</td>
+        <td colspan="2">Memory</td>
         <td>GPGPU</td>
         <td>Nodes</td>
     </tr>
     <tr>
-        <td rowspan="5">2 x AMD Milan 7713 CPU</br>└ 8 x Chiplets<br>&nbsp;&nbsp;&nbsp;&nbsp;└ 8 x Cores</td>
-        <td rowspan="5">126</td>
-        <td rowspan="4">512GB <em>(2GB / Core)</em></td>
+        <td rowspan="3">2 x AMD Milan 7713 CPU</br>└ 8 x Chiplets<br>&nbsp;&nbsp;&nbsp;&nbsp;└ 8 x Cores</td>
+        <td rowspan="3">126</td>
+        <td>512GB</td>
+        <td><em>(4GB / Core)</em></td>
         <td>-</td>
-        <td>48</td>
+        <td>54</td>
     </tr>
     <tr>
-        <td>1 x NVIDIA A100</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>2 x NVIDIA A100</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>4 x NVIDIA HGX A100</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>1024GB <em>(4GB / Core)<em></td>
+        <td rowspan="2">1024GB</td>
+        <td rowspan="2"><em>(8GB / Core)<em></td>
         <td>-</td>
-        <td>8<td>
+        <td>8</td>
+    </tr>
+    <tr id="gpu-milan-a100">
+        <td>4 x NVIDIA A100</td>
+        <td>4</td>
     </tr>
     <tr>
         <td rowspan="5">2 x AMD Genoa 9634 CPU</br>└ 12 x Chiplets</br>&nbsp;&nbsp;&nbsp;&nbsp;└ 7 x Cores</td>
         <td rowspan="5">166</td>
-        <td rowspan="3">358GB <em>(1GB / Core)</em></td>
+        <td>358GB</td>
+        <td><em>(1GB / Core)</em></td>
         <td>-</td>
-        <td>28</td>
+        <td>44</td>
+    </tr>
+    <tr id="gpu-genoa-a100">
+        <td>716GB</td>
+        <td><em>(2GB / Core)</em></td>
+        <td>2 x NVIDIA A100</td>
+        <td>4</td>
     </tr>
     <tr>
+        <td rowspan="3">1432GB</td>
+        <td rowspan="3"><em>(4GB / Core)</em></td>
+        <td>-</td>
+        <td>8</td>
+    </tr>
+    <tr id="gpu-genoa-h100">
         <td>2 x NVIDIA H100</td>
         <td>4</td>
     </tr>
-    <tr>
+    <tr id="gpu-genoa-l4">
         <td>4 x NVIDIA L4</td>
         <td>4</td>
-    </tr>
-    <tr>
-        <td>1024B <em>(2GB / Core)</em></td>
-        <td>-</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>1432GB <em>(4GB / Core)</em></td>
-        <td>-</td>
-        <td>16</td>
     </tr>
 </table>
 
@@ -89,52 +89,38 @@ If you have any questions about GPUs on NeSI or the status of anything listed in
         <td>Architecture</td>
         <td>Purpose/Note</td>
         <td>VRAM</td>
-        <td></td>
-        <td>SLURM</td>
-        <td></td>
+        <td colspan="2">Nodes</td>
     </tr>
     <tr>
-        <td rowspan="2">NVIDIA A100 PCIe cards</td>
-        <td rowspan="2">Machine Learning (ML) applications</td>
+        <td rowspan="2">NVIDIA A100</td>
+        <td rowspan="2">Machine Learning</td>
         <td rowspan="2">40GB</td>
-        <td><pre><code>--gpus-p A100:1</code><code>--gpus-per-node A100:1</code></pre></td>
+        <td><a href="#gpu-milan-a100">4 x on Milan</a></td>
         <td>4</td>
     </tr>
     <tr>
-        <td>Milan, 2 x A100</td>
-        <td><pre><code>--gpus-per-node A100:2</code></pre></td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>NVIDIA HGX A100</td>
-        <td>Large-scale Machine Learning applications</td>
-        <td>80GB</td>
-        <td>Milan, 4 x HGX A100</td>
-        <td><pre><code>--gpus-per-node A100:4</code></pre></td>
+        <td><a href="#gpu-genoa-a100">2 x on Genoa</a></td>
         <td>4</td>
     </tr>
     <tr>
         <td>NVIDIA H100</td>
-        <td>Large-scale Machine Learning (ML) applications</td>
+        <td>Large-scale Machine Learning</td>
         <td>96GB</td>
-        <td>Genoa, 2 x H100</td>
-        <td><pre><code>--gpus-per-node H100:2</code></pre></td>
-        <td>8</td>
+        <td><a href="#gpu-genoa-h100">2 x on Genoa</a></td>
+        <td>4</td>
     </tr>
     <tr>
         <td>NVIDIA L4</td>
-        <td>no fp64 double precision</td>
-        <td></td>
-        <td>Genoa, 4 x L4</td>
-        <td><pre><code>--gpus-per-node L4:4</code></pre></td>
-        <td>16</td>
+        <td>No fp64 double precision</td>
+        <td>24GB</td>
+        <td><a href="#gpu-genoa-l4">4 x on Genoa</a></td>
+        <td>4</td>
     </tr>
     <tr>
         <td>NVIDIA A40</td>
         <td>Teaching / training</td>
         <td>48GB</td>
-        <td>Flexible HPC</td>
-        <td>Not accessable by Slurm</td>
+        <td><a>RDC</a></td>
         <td>4</td>
     </tr>
 </table>
