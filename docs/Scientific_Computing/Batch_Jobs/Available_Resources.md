@@ -1,0 +1,140 @@
+---
+created_at: '2022-06-13T04:54:38Z'
+description:  This page below outlines the different types of GPUs available on NeSI
+tags:
+ - gpu
+---
+
+## Compute Nodes
+
+Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio. For example in the genoa partition:
+
+    A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes.
+    A job which requests ≤ 4 GB/core will run on the 4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
+    A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
+
+<table>
+    <tr>
+        <td>Architecture</td>
+        <td>Cores</td>
+        <td>Memory</td>
+        <td>GPGPU</td>
+        <td>Nodes</td>
+    </tr>
+    <tr>
+        <td rowspan="5">2 x AMD Milan 7713 CPU</br>└ 8 x Chiplets<br>&nbsp;&nbsp;&nbsp;&nbsp;└ 8 x Cores</td>
+        <td rowspan="5">126</td>
+        <td rowspan="4">512GB <em>(2GB / Core)</em></td>
+        <td>-</td>
+        <td>48</td>
+    </tr>
+    <tr>
+        <td>1 x NVIDIA A100</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>2 x NVIDIA A100</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>4 x NVIDIA HGX A100</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>1024GB <em>(4GB / Core)<em></td>
+        <td>-</td>
+        <td>8<td>
+    </tr>
+    <tr>
+        <td rowspan="5">2 x AMD Genoa 9634 CPU</br>└ 12 x Chiplets</br>&nbsp;&nbsp;&nbsp;&nbsp;└ 7 x Cores</td>
+        <td rowspan="5">166</td>
+        <td rowspan="3">358GB <em>(1GB / Core)</em></td>
+        <td>-</td>
+        <td>28</td>
+    </tr>
+    <tr>
+        <td>2 x NVIDIA H100</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>4 x NVIDIA L4</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>1024B <em>(2GB / Core)</em></td>
+        <td>-</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>1432GB <em>(4GB / Core)</em></td>
+        <td>-</td>
+        <td>16</td>
+    </tr>
+</table>
+
+## GPGPUs
+
+NeSI has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale.
+Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm), interactively (using Jupyter on NeSI),
+or Virtual Machines (VMs).
+
+The table below outlines the different types of GPUs,
+who can access them and how, and whether they are currently available or on the future roadmap.
+
+If you have any questions about GPUs on NeSI or the status of anything listed in the table,
+{% include "partials/support_request.html" %}.
+
+<table>
+    <tr>
+        <td>Architecture</td>
+        <td>Purpose/Note</td>
+        <td>VRAM</td>
+        <td></td>
+        <td>SLURM</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2">NVIDIA A100 PCIe cards</td>
+        <td rowspan="2">Machine Learning (ML) applications</td>
+        <td rowspan="2">40GB</td>
+        <td><pre><code>--gpus-p A100:1</code><code>--gpus-per-node A100:1</code></pre></td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Milan, 2 x A100</td>
+        <td><pre><code>--gpus-per-node A100:2</code></pre></td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>NVIDIA HGX A100</td>
+        <td>Large-scale Machine Learning applications</td>
+        <td>80GB</td>
+        <td>Milan, 4 x HGX A100</td>
+        <td><pre><code>--gpus-per-node A100:4</code></pre></td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>NVIDIA H100</td>
+        <td>Large-scale Machine Learning (ML) applications</td>
+        <td>96GB</td>
+        <td>Genoa, 2 x H100</td>
+        <td><pre><code>--gpus-per-node H100:2</code></pre></td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>NVIDIA L4</td>
+        <td>no fp64 double precision</td>
+        <td></td>
+        <td>Genoa, 4 x L4</td>
+        <td><pre><code>--gpus-per-node L4:4</code></pre></td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>NVIDIA A40</td>
+        <td>Teaching / training</td>
+        <td>48GB</td>
+        <td>Flexible HPC</td>
+        <td>Not accessable by Slurm</td>
+        <td>4</td>
+    </tr>
+</table>
