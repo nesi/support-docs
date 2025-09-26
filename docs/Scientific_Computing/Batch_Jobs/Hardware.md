@@ -83,7 +83,7 @@ NeSI has a range of Graphical Processing Units (GPUs) to accelerate compute-inte
 Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm),
 or Virtual Machines (VMs).
 
-For information about how to request these GPUs in a Slurm job, see [Using GPUs](GPU_use_on_NeSI.md).
+For information about how to request these GPUs in a Slurm job, see [Using GPUs](Using_GPUs.md).
 
 <table>
     <tr>

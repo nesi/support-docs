@@ -152,7 +152,7 @@ production simulations. When considering which configuration to use for
 production you should take into account performance and compute unit
 cost.
 
-See [Using GPUs](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md), for further instructions, and
+See [Using GPUs](../Batch_Jobs/Using_GPUs.md), for further instructions, and
 [Hardware](../Batch_Jobs/Hardware.md#gpgpus) for full GPU specifications.
 
 Some additional notes specific to running VASP on GPUs:
