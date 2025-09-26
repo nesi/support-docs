@@ -7,7 +7,7 @@ status: deprecated
 
 Many codes can be accelerated significantly by offloading computations
 to a GPU. Some NeSI [Mahuika nodes have GPUs attached to
-them](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md).
+them](../Batch_Jobs/Using_GPUs.md).
 If you want your code to run faster, if you're developing your own code
 or if you have access to the source code and you feel comfortable
 editing the code, read on.
