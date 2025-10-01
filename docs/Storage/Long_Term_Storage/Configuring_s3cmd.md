@@ -17,7 +17,7 @@ Currently Freezer is only available via specific access points, HPC3 and Mahuika
 You will need to configure the `s3cmd` tool before you use it for the first time. Configuring the `s3cmd` allows for user credentials and default buckets to be remembered. This will only need to be done once.
 
 ```sh
-s3cmd --configure --multipart-chunk-size-mb=1024
+s3cmd --configure
 ```
 
 Enter the following details when prompted in the terminal:
