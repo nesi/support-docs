@@ -12,7 +12,7 @@ tags:
 ## Using s3cmd tool to interact with Freezer
 
 Freezer uses the AWS S3 standard as a protocol for temporarily hosting data prior to writing it to tape.
-All of the data is stored in buckets - this is similar to a folder in a filesystem, but designed for scalable storage.
+All the data is stored in buckets temporarily before being written to tape - this is similar to a folder on a filesystem, but designed for scalable storage.
 
 Freezer has two types of data storage classes:
 
@@ -66,7 +66,7 @@ To transfer files/folders to S3 gateway to be archived. `cd` into where the file
 
 !!! warning
 
-    If you have large files you may need to change chunk size, please see next section for details
+    If you have files larger than 10TB you may need to change chunk size, please see the [Large files and Chunk Size](Other_Useful_Commands.md) section for details 
     
 ```sh
 s3cmd put --verbose your_file s3://<freezer_bucket>/your_directory/your_file
