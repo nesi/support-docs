@@ -13,8 +13,8 @@ Due to the tape storage backend, Freezer is intended for use with relatively lar
 ## Getting started
 
 Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI](https://my.nesi.org.nz/).
-Once onboarded, you can start to use Freezer. Currently Freezer is only available via specific access points, HPC3 and Mahuika. We are currently completing security hardening prior to opening Freezer to wider access.
+Once onboarded, you can start to use Freezer. Currently Freezer is only available via specific access points on Mahuika. We are currently completing security hardening prior to opening Freezer to wider access.
 
 ### Interacting with Freezer
 
-We recommend using `s3cmd` for interacting with Freezer. The `s3cmd` tool is available by default on HPC3 and Mahuika. It is not necessary to load any modules to use it.
+We recommend using `s3cmd` for interacting with Freezer. The `s3cmd` tool is available by default on Mahuika. It is not necessary to load any modules to use it.
