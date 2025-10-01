@@ -21,10 +21,7 @@ tar -xzf tarname.tar.gz
 
 Large files will automatically be split into smaller "chunks" for ease of upload. 
 
-By default, if you have configured s3cmd with *--multipart-chunk-size-mb=1024*, 
-the chunks will have a default value of 1GB. Otherwise the default chunk value is 15MB, 
-which is typically too small for large files and should be increased. 
-We recommend reconfiguring the S3 interface using the --multipart-chunk-size-mb parameter as above.
+The chunks will have a default value of 1GB which will work for the majority of typical files. For files 10TB and larger, please increase the chunk size. We recommend reconfiguring the S3 interface using the `--multipart-chunk-size-mb` parameter.
 
 Important considerations:
 - Any chunk size can be specified, however only *10,000* chunks can be created per file. 
