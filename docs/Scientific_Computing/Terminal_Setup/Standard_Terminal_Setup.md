@@ -56,7 +56,7 @@ configurations.
     ```
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
-    
+
     !!! warning
         MobaXterm does not allow the use of sockets.
         If you are using MobaXterm please exclude the first four lines from your own ssh config.
@@ -95,9 +95,10 @@ configurations.
 
 8. Select your institution, you will be prompted to provide your login details.
 
-9. You are now asked about your current device: do you trust it or not?  
--  If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your one-time password (OTP) every time you log.
--  If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without Second Factor Authentication (2FA) for 7 days.
+9. You are now asked about your current device: do you trust it or not?
+
+    - If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your one-time password (OTP) every time you log.
+    - If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without Second Factor Authentication (2FA) for 7 days.
 
 If you have trusted your device, you have to enter a name for this device. This name must be unique but can be anything you want.
 
@@ -110,6 +111,10 @@ Note: You cannot trust two devices the same day with the same name.
 
 11. Return to your terminal, and press <kbd>enter</kbd>.
 
+## Adding a SSH key (optional)
+
+
+
 ## Subsequent log in
 
 1. `ssh mahuika`
@@ -120,9 +125,6 @@ Note: You cannot trust two devices the same day with the same name.
 ## How-to Video
 
 [Watch a demo here](https://www.youtube.com/embed/IKihbN-QlIA?si=N93PPPsi85jPYV7k).
-
-
-
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
