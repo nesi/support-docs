@@ -36,16 +36,16 @@ This can be set by using the flag `--multipart-chunk-size-mb=5120` to the comman
 Example: 
 
 ```sh
-s3cmd put --multipart-chunk-size-mb=1000 yourfile s3://<freezer_bucket>/your_directory/your_file/ --verbose
+s3cmd put --multipart-chunk-size-mb=1000 yourfile s3://<freezer-bucket>/your_directory/your_file/ --verbose
 ```
 
 ``` out
-upload: 'your_file' -> 's3://<freezer_bucket>/your_directory/your_file/'  [part 1 of 23, 1000MB] [1 of 1]
+upload: 'your_file' -> 's3://<freezer-bucket>/your_directory/your_file/'  [part 1 of 23, 1000MB] [1 of 1]
  1048576000 of 1048576000   100% in   25s    39.62 MB/s  done
 
 ....
 
-upload: 'your_file' -> 's3://<freezer_bucket>/your_directory/your_file/'  [part 23 of 23, 169MB] [1 of 1]
+upload: 'your_file' -> 's3://<freezer-bucket>/your_directory/your_file/'  [part 23 of 23, 169MB] [1 of 1]
  177209344 of 177209344   100% in    4s    35.90 MB/s  done
 ```
 
@@ -53,22 +53,22 @@ upload: 'your_file' -> 's3://<freezer_bucket>/your_directory/your_file/'  [part 
 To move files within a bucket:
 
 ``` sh
-s3cmd mv s3://<freezer_bucket>/your_directory/your_file.txt s3://<freezer_bucket>/other_directory/your_file.txt
+s3cmd mv s3://<freezer-bucket>/your_directory/your_file.txt s3://<freezer-bucket>/other_directory/your_file.txt
 ```
 ``` out
 
-move: 's3://<freezer_bucket>/your_directory/your_file.txt' -> 's3://<freezer_bucket>/other_directory/your_file.txt'  [1 of 1]
+move: 's3://<freezer-bucket>/your_directory/your_file.txt' -> 's3://<freezer-bucket>/other_directory/your_file.txt'  [1 of 1]
 ```
 
 ## Copying files
 To make a copy of a file within a bucket to another location:
 
 ``` sh
-s3cmd cp s3://<freezer_bucket>/your_directory/your_file.txt s3://<freezer_bucket>/your_directory/your_file_copy.txt
+s3cmd cp s3://<freezer-bucket>/your_directory/your_file.txt s3://<freezer-bucket>/your_directory/your_file_copy.txt
 ```
 
 ``` out
-remote copy: 's3://<freezer_bucket>/your_directory/your_file.txt' -> 's3://<freezer_bucket>/your_directory/your_file_copy.txt'  [1 of 1]
+remote copy: 's3://<freezer-bucket>/your_directory/your_file.txt' -> 's3://<freezer-bucket>/your_directory/your_file_copy.txt'  [1 of 1]
 ```
 
 ## Deleting data
@@ -80,13 +80,13 @@ remote copy: 's3://<freezer_bucket>/your_directory/your_file.txt' -> 's3://<free
 Data can be deleted from both the bucket (cache) and from tape (thought this is a flag to overwrite, rather than actual deletion)
 
 ```sh
-s3cmd rm s3://<freezer_bucket>/your_directory/data_folder/
+s3cmd rm s3://<freezer-bucket>/your_directory/data_folder/
 ```
 
 This command can also be used recursively.
 
 ```sh
-s3cmd rm --recursive s3://<freezer_bucket>/your_directory/data_folder/
+s3cmd rm --recursive s3://<freezer-bucket>/your_directory/data_folder/
 ```
 
 ## s3cmd reference
