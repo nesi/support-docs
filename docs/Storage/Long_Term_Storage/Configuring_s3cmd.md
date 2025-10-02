@@ -22,7 +22,7 @@ s3cmd --configure
 
 Enter the following details when prompted in the terminal:
 
-`Access Key`: Your NeSI user ID
+`Access Key`: Your username
 
 `Secret Key`: This is the code from the 1-time link in your Freezer allocation email. Please let us know if you need to <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset this key</a>.
 
@@ -31,7 +31,7 @@ Please copy and paste the sections in <span style="color:blue">blue</span>.
 <pre><code>Enter new values or accept defaults in brackets with Enter.
 Refer to user manual for detailed description of all options.
 Access key and Secret key are your identifiers for AWS S3. Leave them empty for using the env variables.
-Access Key: <span style="color:green"><b>User ID</b></span>
+Access Key: <span style="color:green"><b>Your username</b></span>
 Secret Key: <span style="color:green"><b>Your Freezer Secret Key</b></span>
 Default Region: <span style="color:blue"><b>akl-1</b></span>
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.

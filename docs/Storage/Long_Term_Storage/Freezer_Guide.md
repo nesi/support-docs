@@ -30,7 +30,7 @@ Please note that your bucket has the same name as your Freezer allocation. If yo
 List all objects in a bucket.
 
 ```sh
-s3cmd ls -r -l -H s3://<freezer_bucket>/
+s3cmd ls -r -l -H s3://<freezer-bucket>/
 ```
 
 This can also be used to list all the objects in path.
@@ -49,8 +49,8 @@ s3cmd la
 ### Storage usage by specific bucket
 
 ```sh
-s3cmd du -H s3://<freezer_bucket>
-   7G      1781 objects s3://<freezer_bucket>/
+s3cmd du -H s3://<freezer-bucket>
+   7G      1781 objects s3://<freezer-bucket>/
 ```
 
 `s3cmd du -H` without specifying a bucket is only available for project owners.
@@ -66,10 +66,10 @@ To transfer files/folders to S3 gateway to be archived. `cd` into where the file
 
 !!! warning
 
-    If you have files larger than 10TB you may need to change chunk size, please see the [Large files and Chunk Size](Other_Useful_Commands.md) section for details 
+    If you have files larger than 10TB you may need to change chunk size, please see the [Large files and chunk size](Other_Useful_Commands.md#large-files-and-chunk-size) section for details 
     
 ```sh
-s3cmd put --verbose your_file s3://<freezer_bucket>/your_directory/your_file
+s3cmd put --verbose your_file s3://<freezer-bucket>/your_directory/your_file
 ```
 
 ``` out
@@ -77,14 +77,14 @@ INFO: Cache file not found or empty, creating/populating it.
 INFO: Compiling list of local files...
 INFO: Running stat() and reading/calculating MD5 values on 1 files, this may take some time...
 INFO: Summary: 1 local files to upload
-upload: 'your_file' -> 's3://<freezer_bucket>/your_directory/your_file'  [1 of 1]
+upload: 'your_file' -> 's3://<freezer-bucket>/your_directory/your_file'  [1 of 1]
  172202 of 172202   100% in    0s   920.89 KB/s  done
 ```
 
 or folders
 
 ```sh
-s3cmd put --recursive --verbose yourfolder s3://<freezer_bucket>/your_directory/your_folder/
+s3cmd put --recursive --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
 ``` out
@@ -92,7 +92,7 @@ INFO: Cache file not found or empty, creating/populating it.
 INFO: Compiling list of local files...
 INFO: Running stat() and reading/calculating MD5 values on 1 files, this may take some time...
 INFO: Summary: 1 local files to upload
-upload: 'yourfolder/your_file' -> 's3://<freezer_bucket>/your_directory/your_folder/yourfolder/yourfile'  [1 of 1]
+upload: 'yourfolder/your_file' -> 's3://<freezer-bucket>/your_directory/your_folder/yourfolder/yourfile'  [1 of 1]
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
 
@@ -105,7 +105,7 @@ Partially uploaded files will be deleted automatically.
 Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
 
 ```sh
-s3cmd sync yourfolder s3://<freezer_bucket>/your_directory/your_folder/
+s3cmd sync yourfolder s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
 ### Preview or dry-run
@@ -120,29 +120,29 @@ Only shows what should be uploaded or downloaded but doesn't actually do it. May
 List contained objects/files/folders:
 
 ```sh
-s3cmd ls -l -H s3://<freezer_bucket>/your_directory/your_folder/
+s3cmd ls -l -H s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
 ``` out
-                    DIR                                                    s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/
-2025-06-16 23:13    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_test.file
-2025-06-16 23:30    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_copy.file
-2025-06-17 01:26     0   d41d8cd98f00b204e9800998ecf8427e     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/1test.txt
+                    DIR                                                    s3://<freezer-bucket>/your_directory/your_folder/MY_TEST/
+2025-06-16 23:13    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer-bucket>/your_directory/your_folder/10G_test.file
+2025-06-16 23:30    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer-bucket>/your_directory/your_folder/10G_copy.file
+2025-06-17 01:26     0   d41d8cd98f00b204e9800998ecf8427e     STANDARD     s3://<freezer-bucket>/your_directory/your_folder/1test.txt
 ```
 
 or all objects recursive -r or --recursive
 
 ```sh
-s3cmd ls -r -l -H s3://<freezer_bucket>/your_directory/your_folder/
+s3cmd ls -r -l -H s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
 ``` out
-2025-06-16 23:13    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_test.file
-2025-06-16 23:30    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer_bucket>/your_directory/your_folder/10G_copy.file
-2025-06-17 01:31    14   95b28899a460dd8971705dfcd0f5f0d4     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/4/test3.txt
-2025-06-17 01:31    14   e76c3a8939fb031bab02a89f6fab520b     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/test2.txt
-2025-06-17 01:31    14   be2520c884c1be55bab187374a982b12     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/MY_TEST/raw_data/test1.txt
-2025-06-17 01:26     0   d41d8cd98f00b204e9800998ecf8427e     STANDARD     s3://<freezer_bucket>/your_directory/your_folder/test/test.txt
+2025-06-16 23:13    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer-bucket>/your_directory/your_folder/10G_test.file
+2025-06-16 23:30    10G  8add0bf4f023e3dbd36a329d1eae5bbd-684  STANDARD     s3://<freezer-bucket>/your_directory/your_folder/10G_copy.file
+2025-06-17 01:31    14   95b28899a460dd8971705dfcd0f5f0d4     STANDARD     s3://<freezer-bucket>/your_directory/your_folder/MY_TEST/annotations/3/4/test3.txt
+2025-06-17 01:31    14   e76c3a8939fb031bab02a89f6fab520b     STANDARD     s3://<freezer-bucket>/your_directory/your_folder/MY_TEST/annotations/3/test2.txt
+2025-06-17 01:31    14   be2520c884c1be55bab187374a982b12     STANDARD     s3://<freezer-bucket>/your_directory/your_folder/MY_TEST/raw_data/test1.txt
+2025-06-17 01:26     0   d41d8cd98f00b204e9800998ecf8427e     STANDARD     s3://<freezer-bucket>/your_directory/your_folder/test/test.txt
 ```
 
 ### Restore from tape
@@ -150,24 +150,24 @@ s3cmd ls -r -l -H s3://<freezer_bucket>/your_directory/your_folder/
 It is necessary to restore data from the tape (Glacier) prior to retrieving it. To restore file from Glacier storage:
 
 ```sh
-s3cmd restore --recursive --verbose s3://<freezer_bucket>/your_directory/data_folder/
+s3cmd restore --recursive --verbose s3://<freezer-bucket>/your_directory/data_folder/
 ```
 
 ``` out
-INFO: Retrieving list of remote files for s3://<freezer_bucket>/your_directory/your_folder/ ...
+INFO: Retrieving list of remote files for s3://<freezer-bucket>/your_directory/your_folder/ ...
 INFO: Summary: Restoring 6 remote files for 1 days at Standard priority
-restore: 's3://n<freezer_bucket>/your_directory/your_folder/10G.file'
-restore: 's3://<freezer_bucket>/your_directory/your_folder/10G_copy.file'
-restore: 's3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/4/test3.txt'
-restore: 's3://<freezer_bucket>/your_directory/your_folder/MY_TEST/annotations/3/test2.txt'
-restore: 's3://<freezer_bucket>/your_directory/your_folder/MY_TEST/raw_data/test1.txt'
-restore: 's3://<freezer_bucket>/your_directory/your_folder/test.txt'
+restore: 's3://n<freezer-bucket>/your_directory/your_folder/10G.file'
+restore: 's3://<freezer-bucket>/your_directory/your_folder/10G_copy.file'
+restore: 's3://<freezer-bucket>/your_directory/your_folder/MY_TEST/annotations/3/4/test3.txt'
+restore: 's3://<freezer-bucket>/your_directory/your_folder/MY_TEST/annotations/3/test2.txt'
+restore: 's3://<freezer-bucket>/your_directory/your_folder/MY_TEST/raw_data/test1.txt'
+restore: 's3://<freezer-bucket>/your_directory/your_folder/test.txt'
 ```
 
 By default files will remain in the S3 bucket for 1 day. If longer is required, this can be modified at the time of file restoration: 
 
 ```sh
-s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/ --restore-days=1
+s3cmd restore --recursive s3://<freezer-bucket>/your_directory/data_folder/ --restore-days=1
 ```
 
 ### Get objects after restore
@@ -178,7 +178,7 @@ s3cmd restore --recursive s3://<freezer_bucket>/your_directory/data_folder/ --re
 Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
 ```sh
-s3cmd get --recursive s3://<freezer_bucket>/your_directory/data_folder/
+s3cmd get --recursive s3://<freezer-bucket>/your_directory/data_folder/
 ```
 
 This will place the all files and subdirectories in the above `data_folder` into your current directory.
