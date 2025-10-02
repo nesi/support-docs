@@ -20,10 +20,10 @@ cd /nesi/nobackup/<project_id>/myproject
 # put data 'your_folder' into Freezer bucket
 s3cmd put --recursive --verbose your_folder s3://<freezer-bucket>/your_directory/your_folder
 ```
-To detatch from the current `tmux` session by:
+To detach from the current `tmux` session by:
 <kbd>ctrl</kbd> + <kbd>b</kbd>, then <kbd>d</kbd>
 
-Detatching the `tmux` session, allows you to close your primary terminal and logoff while the upload continues. 
+Detaching the `tmux` session, allows you to close your primary terminal and logoff while the upload continues. 
 
 To reattach to the session:
 
