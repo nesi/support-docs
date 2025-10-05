@@ -1,7 +1,7 @@
 ---
 created_at: '2018-05-18T03:56:37Z'
 tags:
-- 2fa
+- MFA
 - access
 - mfa
 - token
@@ -23,20 +23,20 @@ tags:
 2. Select your affiliated institution, and log in using your institutional account. Example below shows the University of Auckland login screen.
     ![alt text](../../assets/images/ondemand_login_1.png)
 
-3. If you haven't logged into OnDemand or our HPC platforms before, you wil need to set up a new Second Factor Authentication (2FA). This is in addition to your institutional 2FA.
+3. If you haven't logged into OnDemand or our HPC platforms before, you wil need to set up new authentication credentials. This is in addition to your institutional MFA process.
     ![alt text](../../assets/images/ondemand_login_2.png)
   
     !!! note
-        If your device is not trusted (step 6 ), you will be asked every time to enter your one-time password (OTP) for our HPC platforms.
+        If your device is not trusted (step 6 ), you will be asked every time to enter your 6-digit code (linked to your additional authentication credentials) for our HPC platforms.
   
-5. Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the OTP (6 digit number) along with a device name (e.g. my mobile) and click 'Submit'.
+5. Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the 6-digit code along with a device name (e.g. my mobile) and click 'Submit'.
 
-6. Once you have set up an OTP, you will be shown the following screen instead of the one above, where you can enter the 6 digit number from your authenticator app.
+6. Once you have set up your authentication credentials, you will be shown the following screen instead of the one above, where you can enter the 6-digit code from your authenticator app.
     ![alt text](../../assets/images/ondemand_login_3.png)
 
 7. You are now asked about your current device: do you trust it or not?  
-    -  Do not trust shared computers (e.g. a university computer where you have to delete cookies) or if you are using incognito or private windows: click No. This means that you will need to enter your OTP every time you log.
-    -  If the device is your personal laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without 2FA for 7 days.
+    -  Do not trust shared computers (e.g. a university computer where you have to delete cookies) or if you are using incognito or private windows: click No. This means that you will need to enter your 6-digit code every time you log.
+    -  If the device is your personal laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without additional authentication for 7 days.
     
     ![alt text](../../assets/images/ondemand_login_4.png). 
 

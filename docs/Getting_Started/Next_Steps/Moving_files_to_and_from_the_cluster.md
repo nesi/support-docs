@@ -101,7 +101,7 @@ is enabled).
 
 As WinSCP uses multiple tunnels for file transfer you will be required
 to authenticate again on your first file operation of the session. The
-second prompt for your 2FA can be skipped, just the same as with login
+second prompt for your second factor authentication can be skipped, just the same as with login
 authentication.
 
 ## Globus
