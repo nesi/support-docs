@@ -41,7 +41,7 @@ and reduced core hour usage when applying this approach to benchmark
 data, compared to running both phases in one multithreaded job (see the
 [Benchmarks](#benchmarks) section below).
 
-### File system considerations
+### filesystem considerations
 
 You should run Trinity within your [nobackup project
 directory](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),

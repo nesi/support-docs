@@ -73,7 +73,7 @@ An online storage allocation, unlike compute allocations, is more like a
 lease than a rate of consumption. It is an amount of disk space and,
 concurrently, a number of inodes (directory entries, i.e. files etc.)
 that have been made available for your project team to use on our online
-high-performance file system. An online storage allocation is typically
+high-performance filesystem. An online storage allocation is typically
 granted to your persistent project directory.
 
 We do not yet have a ratio of online storage disk space or inodes to

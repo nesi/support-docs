@@ -29,7 +29,7 @@ such as the latest versions of VSCode.
 
 ### Disk
 
-The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` file systems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
+The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` filesystems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
 One particular feature of WEKA is that it keeps recently accessed files in fast SSD storage while moving other files out to slower disk-based storage.
 
 We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression.md) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
@@ -86,7 +86,7 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
 
 ### CPU cores per node
 
-Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs. If you have a particular need for a "round" number of cores on a full node (ie: 128 Milan cores or 168 Genoa cores) then please let us know, as it is likely that we will implement a way for such whole-node jobs to override the number of specialised cores, which could make sense for jobs with low I/O requirements. 
+Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs. 
 
 ### Limits
 
@@ -118,8 +118,6 @@ Other consequences of this change include:
   - Incomplete profiles can be obtained while a job is still running.
   - Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
   - The raw profile data isn't so accessable - please let us know if you need it.
-
-Note that the memory usage shown in these profiles is currently affected by the known [RSS issue](../Announcements/Known_Issues_HPC3.md/#recorded-memory-use).
 
 ### Miscellaneous
 

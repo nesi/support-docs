@@ -28,10 +28,9 @@ A VASP license is managed at the research group level. Which versions you have a
 
 If your research group has a valid licence, please {% include "partials/support_request.html" %} and CC the group leader. The Support Team will add the relevant permissions to your HPC UID which will allow you to access the VASP modules. You may be asked to provide proof of your license if you are not from a known group or if the license is new.
 
-## Parallelising your VASP calculation
-Effectively parallelising your calculation is a particularly complicated aspect of VASP. Below is a basic Slurm batch script that can be used to submit a parallel VASP6 job.
+## Example script (VASP6)
 
-### Example script
+Effectively parallelising your calculation is a particularly complicated aspect of VASP. VASP6 can parallelise its work using the MPI (set by `--ntasks`) and OpenMP (set by `--cpus-per-task`) protocols concurrently. VASP5 uses the MPI only.
 
 ``` sl
 #!/bin/bash -e
@@ -41,12 +40,10 @@ Effectively parallelising your calculation is a particularly complicated aspect 
 #SBATCH --job-name=my_VASP_job
 #SBATCH --time=01:00:00
 #SBATCH --mem-per-cpu=950
-#SBATCH --account=nesi99999
 #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
 #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
 #SBATCH --mem-bind=local
 #SBATCH --profile=task
-#SBATCH --acctg-freq=15
 
 module purge 2> /dev/null
 module load VASP/6.4.2-foss-2023a
@@ -62,34 +59,28 @@ srun vasp_std
 ```
 
 Another, more complex `bash` script to submit a VASP job can be downloaded with the following:
+
 ``` bash
 wget https://raw.githubusercontent.com/Johnryder23/job_submit_scripts/refs/heads/main/VASP/vasp_std_HPC3_submit.sh
 ```
 
 This more involved script sets up a working directory and can be used to submit CPU or CPU/GPU jobs. In most cases, only the variables under "edit job allocation settings here" need to be adjusted.
 
-
-!!! note
-    There are not many reasons to specify a partition with `#SBATCH --partition` on the new (2025) HPC. Please only set this if you have a good reason to use Genoa or Milan nodes.
-
-VASP6 can parallelise its work using the MPI (set by `--ntasks`) and OpenMP (set by `--cpus-per-task`) protocols concurrently. VASP5 uses the MPI only.
-
-## Optimising the parallelisation and additional tips
+## Optimisation tips
 
 !!! note "A note on MPI and OpenMP nomenclature"
     MPI has multiple terms which mean the same thing. A MPI *rank*, *task*, and *process* are synonymous. `#SBATCH --ntasks=n` spawns `n` MPI ranks for your job. Each of these ranks are an independent process that have [their own memory space](https://nesi.github.io/hpc-intro/064-parallel/index.html#distributed-memory-mpi). MPI ranks are *multithreaded* if each rank is given multiple OpenMP *threads*. The number of OpenMP threads is set by `#SBATCH --cpus-per-task`.
 
 VASP is a complex programme with a steep learning curve. The [VASP manual](https://www.vasp.at/wiki/index.php/The_VASP_Manual) is the best place to go for information on how to begin using VASP. The information here relates to running VASP the Mahuika cluster specifically.
 
-#### Theory
+**Theory**
 
 !!! note
     Recall the terms "wavefunction", "Kohn-Sham orbital" and "band" are equivalent in VASP as Kohn-Sham orbitals are single electron wavefunctions. The number of wavefunctions/Kohn-Sham orbitals is enumerated by `NBANDS` in the `OUTCAR`.
 
 Kohn-Sham orbitals are distributed over available MPI ranks in a round-robin fashion until all orbitals have a processor (equivalently, a PID) - or group of processors (under a single PID) if running a multithreaded calculation. In VASP5, the work of a single orbital can be parallelised over MPI ranks using the `NCORE` [flag](https://www.vasp.at/wiki/index.php/NCORE) in the `INCAR`. In VASP6, the work of a single orbital can be parallelised across OpenMP threads. In VASP6 The `NCORE` flag will be ignored.
 
-
-#### In summary
+**In summary**
 
 VASP5
 
@@ -110,23 +101,26 @@ The Slurm options show in the example script above ensure a few things which are
 - bind threads working on a particular wavefunction to cores in the same NUMA domain.
 - There is 1 L3 cache per-NUMA-domain. If possible, assign MPI processes to NUMA domains that no other jobs are using so the entire L3 cache is available for wavefunction storage, since reading from cache is faster than reading from RAM.
 
+**In summary**
 
-#### In summary
 - VASP expresses Kohn-Sham orbitals as plane waves, i.e., uses a plane-wave basis set.
 - Plane-waves are naturally defined in reciprocal space (discretised at special points, **k**).
 - Other terms of the Hamiltonian must be computed in real-space. Plane waves are transformed between real and reciprocal space using FFTs.
 - FFTs require frequent all-to-all communication. If the latency of this communication is high, VASP performance will be poor.
 
 ### Not all VASP calculations benefit from multithreading
+
 Increasing `--cpus-per-task` (or `NCORE` for VASP5) will not speed up all calculations. Higher levels of theory and more complicated exchange correlation functionals bring with them more FFTs and more parallelisable work during the wavefunction optimisation. Therefore, if using hybrid functionals or doing high-precision electronic structure calculations, your calculation will likely benefit from multithreading.
 
 It's best to do some performance testing with a fixed number of electronic and ionic steps. This can be done with the following `INCAR` settings:
+
 ``` sl
 EDIFFG = 0   # do not stop based on total energy
 NSW = 3      # number of ionic steps
 NELMIN = 3   # minimum number of electronic self-consistency steps
 NELM = 3     # maximum number of electronic self-consistency steps
 ```
+
 Which will perform exactly 3 ionic and 3 electronic steps. Ensure the number of physical cores is constant while varrying the ratio of MPI ranks to OpenMP threads. For example, `--ntasks=4 --cpus-per-task=4`, `--ntasks=2 --cpus-per-task=8`, and `--ntasks=8 --cpus-per-task=2`, will all have 16 physical cores.
 
 VASP may be further parallelised by additional `INCAR` options. For example, if you have many **k**-points it would be wise to experiment with the `KPAR` setting.
@@ -140,11 +134,9 @@ For more information on other parallelisable quantities, see the following VASP 
 
 [Optimising the parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
 
-
 ### Avoid hyperthreading
 
 We have found that VASP doesn't benefit from hyperthreading and often runs slower when hyperthreading is enabled. It's best to leave Hyperthreading off as is the case in the example Slurm script above.
-
 
 ### GPU versions of VASP6
 
@@ -160,10 +152,8 @@ production simulations. When considering which configuration to use for
 production you should take into account performance and compute unit
 cost.
 
-General information about using GPUs on NeSI can be found
-[here](../../Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md)
-and details about the available GPUs on NeSI
-[here](../Batch_Jobs/Available_GPUs_on_NeSI.md).
+See [Using GPUs](../Batch_Jobs/Using_GPUs.md), for further instructions, and
+[Hardware](../Batch_Jobs/Hardware.md#gpgpus) for full GPU specifications.
 
 Some additional notes specific to running VASP on GPUs:
 
@@ -203,6 +193,6 @@ indicate the presence of various VASP extensions, but are now moving
 away from that as the number of such extensions has grown and we have
 not found any disadvantage in always including them.
 
-#### VASP extensions
+### VASP extensions
 
 If you are wondering what extensions our VASP modules have been built with, please email the [Support Team](mailto:support@nesi.org.nz). You can also check what precompilier options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.

@@ -2,10 +2,7 @@
 created_at: '2022-02-15T01:13:51Z'
 tags: []
 title: Checking your project's usage using nn_corehour_usage
-vote_count: 1
-vote_sum: -1
-zendesk_article_id: 4416692988047
-zendesk_section_id: 360000030876
+status: deprecated
 ---
 
 
