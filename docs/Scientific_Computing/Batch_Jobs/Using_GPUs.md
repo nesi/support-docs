@@ -2,21 +2,16 @@
 created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
+- slurm
 ---
 
-This page provides generic information about how to access NeSI's GPU
-cards.
-
-For application specific settings (e.g. OpenMP, Tensorflow on GPU, ...),
-please have a look at the dedicated pages listed at the end of this
-page.
+This page provides generic information about how to access GPUs through the Slurm scheduler.
 
 !!! warning
-     An overview of available GPU cards is available in the [Available GPUs on NeSI](./Available_GPUs_on_NeSI.md)
-     support page.
-     Details about pricing in terms of compute units can be found in the
-     [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
-     page.
+    Your first stop when looking into using GPUs should be the documentation
+    of the application you are using.  
+    Not every process can use a GPU, and how to use them effectively varies greatly!  
+    There is a list of commonly used GPU supporting software at the bottom of this page.
 
 !!! note
      Recall, memory associated with the GPUs is the VRAM, and is a separate resource from the RAM requested by Slurm. The memory values listed below are VRAM values.
@@ -24,7 +19,7 @@ page.
 ## Request GPU resources using Slurm
 
 To request a GPU for your [Slurm job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md), add
-the following option at the beginning of your submission script:
+the following option in the header of your submission script:
 
 ```sl
 #SBATCH --gpus-per-node=1
@@ -39,37 +34,54 @@ syntax
 
 It is recommended to specify the exact GPU type required; otherwise, the job may be allocated to any available GPU at the time of execution.
 
--  **A100**  (PCIe 40GB VRAM)
-
-    ``` sl
-    #SBATCH --partition=genoa
-    #SBATCH --gpus-per-node=A100:1
-    ```
-
--  **A100**  ( HGX 80GB VRAM) 
-
-    ``` sl
-    #SBATCH --partition=milan
-    #SBATCH --gpus-per-node=A100:1
-    ```
-
--  **H100**  ( 96GB VRAM)
-
-    ``` sl
-    #SBATCH --partition=genoa
-    #SBATCH --gpus-per-node=H100:1
-    ```
-
-- **L4** (24GB VRAM)
-
-    ``` sl
-    #SBATCH --partition=genoa
-    #SBATCH --gpus-per-node=L4:1
-    ```
-
+<table>
+    <tr>
+        <td>Architecture</td>
+        <td>VRAM</td>
+        <td>Max Request</td>
+        <td>Slurm Header</td>
+    </tr>
+    <tr>
+        <td>Any</td>
+        <td>24GB-80GB</td>
+        <td>4</td>
+        <td><pre>
+            <code>#SBATCH --gpus-per-node=1</code>
+        </pre></td>
+    </tr>
+    <tr>
+        <td rowspan="2">NVIDIA A100</td>
+        <td>80GB</td>
+        <td>4</td>
+        <td><pre>
+            <code>#SBATCH --partition=milan<br>#SBATCH --gpus-per-node=a100:1</code>
+        </pre></td>
+    </tr>
+    <tr>
+        <td>40GB</td>
+        <td>2</td>
+        <td><pre>#SBATCH --partition=genoa<br>#SBATCH --gpus-per-node=a100:1</pre></td>
+    </tr>
+    <tr>
+        <td>NVIDIA H100</td>
+        <td>96GB</td>
+        <td>2</td>
+        <td><pre>
+            <code>#SBATCH --gpus-per-node=h100:1</code>
+        </pre></td>
+    </tr>
+    <tr>
+        <td>NVIDIA L4</td>
+        <td>24GB</td>
+        <td>4</td>
+        <td><pre>
+            <code>#SBATCH --gpus-per-node=l4:1</code>
+        </pre></td>
+    </tr>
+</table>
 
 You can also use the `--gpus-per-node`option in
-[Slurm interactive sessions](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md),
+[Slurm interactive sessions](./Slurm_Interactive_Sessions.md),
 with the `srun` and `salloc` commands. For example:
 
 ``` sh
@@ -217,14 +229,14 @@ CUDA_VISIBLE_DEVICES=0
 The following pages provide additional information for supported
 applications:
 
-- [ABAQUS](../../Scientific_Computing/Supported_Applications/ABAQUS.md#examples)
-- [GROMACS](../../Scientific_Computing/Supported_Applications/GROMACS.md)
-- [Lambda Stack](../../Scientific_Computing/Supported_Applications/Lambda_Stack.md)
-- [Matlab](../../Scientific_Computing/Supported_Applications/MATLAB.md#using-gpus)
-- [TensorFlow on GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
+- [ABAQUS](../Supported_Applications/ABAQUS.md#examples)
+- [GROMACS](../Supported_Applications/GROMACS.md)
+- [Lambda Stack](../Supported_Applications/Lambda_Stack.md)
+- [Matlab](../Supported_Applications/MATLAB.md#using-gpus)
+- [TensorFlow on GPUs](../Supported_Applications/TensorFlow_on_GPUs.md)
 
 And programming toolkits:
 
-- [Offloading to GPU with OpenMP](../../Scientific_Computing/HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
+- [Offloading to GPU with OpenMP](../HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
 - [Offloading to GPU with OpenACC using the Cray compiler](../HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md)
-- [NVIDIA GPU Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)
+- [NVIDIA GPU Containers](../HPC_Software_Environment/NVIDIA_GPU_Containers.md)

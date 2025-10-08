@@ -39,7 +39,7 @@ configurations.
     following (replacing **`username`** with your username):
 
     ```sh
-    Host nesilander 
+    Host lander 
         User username 
         HostName lander.hpc.nesi.org.nz 
         ForwardX11 yes
@@ -48,10 +48,10 @@ configurations.
         ServerAliveCountMax 2
 
 
-    Host nesi
+    Host mahuika
         User username 
         Hostname login.hpc.nesi.org.nz
-        ProxyCommand ssh -W %h:%p nesilander
+        ProxyCommand ssh -W %h:%p lander
         ForwardX11 yes
         ForwardX11Trusted yes
         ServerAliveInterval 300
@@ -70,7 +70,7 @@ configurations.
 6. Run the command.
 
     ```sh
-    ssh nesi
+    ssh mahuika
     ```
 
 6. You will be prompted to approve host authenticity
@@ -115,7 +115,7 @@ Note: You cannot trust two devices the same day with the same name.
 
 ## Subsequent log in
 
-1. `ssh nesi`
+1. `ssh mahuika`
 2. Follow the link.
 3. You may be prompted for your 6 digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.

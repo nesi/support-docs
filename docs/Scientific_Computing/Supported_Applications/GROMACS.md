@@ -121,7 +121,7 @@ ie: with `--ntasks` > 1.
 
 GROMACS is built with CUDA support, but that is optional to use - it will run without a GPU.
 
-### MPI
+## MPI
 
 If you do elect to use `gmx-mpi`, note that hybrid parallelisation (i.e. with `--cpus-per-task` > `1`) can be
 more efficient than MPI-only parallelisation.  With hybrid parallelisation, it is important to run
