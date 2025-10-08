@@ -8,18 +8,26 @@
   --nesi-red:#ef315e;
   --nesi-green: #cce310;
 
+  --reannz-blue : rgb(0,185, 228);
+  --reannz-blue--shade-negative1:rgb(0, 127, 156);
+  --reannz-blue--dark: rgb(0,28, 54);
+  --reannz-blue--dark-shade1: #2c485d;
+  --reannz-grey : rgb(195,200, 200);
+  --reannz-black : rgb(25,25, 25);
+  --reannz-green: rgb(190, 184, 6);
+  --reannz-green--dark: rgb(0, 170, 136);
+  --reannz-orange: rgb(241, 128, 0);
+  --reannz-purple: rgb(132, 121, 183);
+
   [data-md-color-scheme="default"]{
-    --md-primary-fg-color:               var(--nesi-red);
-    
-    --md-accent-fg-color:                var(--nesi-orange);;
-    --md-accent-fg-color--transparent:   rgb(244, 121, 37, 0.25);
+    --md-primary-fg-color:               var(--reannz-blue--dark);
+    --md-accent-fg-color:                var(--reannz-blue);
   }
 
     /* --md-accent-bg-color:                rgb(210,227,235); */
   [data-md-color-scheme="slate"] {
-    --md-primary-fg-color:               var(--nesi-red);
-    --md-accent-fg-color:                var(--nesi-orange);;
-    --md-accent-fg-color--transparent:   rgb(244, 121, 37, 0.25);
+    --md-primary-fg-color:               var(--reannz-blue--dark);
+    --md-accent-fg-color:                var(--reannz-blue--darkish);
 
     .nt-card-image>img {
       filter: brightness(0) invert(1);
@@ -27,10 +35,11 @@
   }
 }
 /* Logo biggification */
-.md-header__button.md-logo img, .md-header__button.md-logo svg {
+/* COMMENTED OUT FOR REANNZ LOGO */
+/* .md-header__button.md-logo img, .md-header__button.md-logo svg {
   height: 4rem;
   margin: -2rem;
-}
+} */
 
 /* Version table stuff */
 .md-tag.md-tag-ver{
@@ -79,15 +88,15 @@
 
 .md-typeset .admonition.prerequisite,
 .md-typeset details.prerequisite {
-  border-color: rgb(170, 170, 60);
+  border-color: var(--reannz-green);
 }
 .md-typeset .prerequisite > .admonition-title,
 .md-typeset .prerequisite > summary {
-  background-color: rgba(170, 170, 60, 0.1);
+  background-color: rgba(190, 184, 6, 0.1); /*above color*/
 } 
 .md-typeset .prerequisite > .admonition-title::before,
 .md-typeset .prerequisite > summary::before {
-  background-color: rgb(170, 170, 60);
+  background-color:  var(--reannz-green);
   -webkit-mask-image: var(--md-admonition-icon--prerequisite);
           mask-image: var(--md-admonition-icon--prerequisite);
 }
@@ -97,34 +106,16 @@
   font-size: 12px;
   font-weight: 400;
   /* MB logo has black border */
-  background-color: #101010;
+  background-color: var(--reannz-black);
 }
 
-#partners {
-  height: auto;
-  background-color: #101010;
+/* e.g. inactive link text */ 
+.md-typeset a {
+   color: var(--reannz-blue--shade-negative1);
 }
-
-#partners #logos img {
-  height: 40px;
-  margin: 10px;
+.md-typeset a:hover {
+   color: var(--reannz-blue);
 }
-
-#partners #logos {
-  padding: 10px;
-  text-align: center;
-}
-
-#partners #logos .nesi-footer-logo img {
-  margin-right: 100px;
-  height: 60px;
-}
-
-#partners #logos img {
-  height: 40px;
-  margin: 10px;
-}
-
 /* Make deprecated logo stand out */
 span.md-status.md-status--deprecated {
     filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(330deg) brightness(70%) contrast(1000%);
