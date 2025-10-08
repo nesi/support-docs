@@ -17,7 +17,7 @@ Log in with your institutional credentials.
 
 ??? info "First Time Login"
 
-    If you haven't logged into OnDemand or our HPC platforms before, part of the login process will include a step to setup a new 2FA.
+    If you haven't logged into OnDemand or our HPC platforms before, part of the login process will include a step to setup additional authentication credentials.
 
     ![OnDemand login 1](../../assets/images/ondemand_login_0.png)
 
@@ -26,13 +26,13 @@ Log in with your institutional credentials.
 
     ![ondmenad login 2](../../assets/images/ondemand_login_1.png)
 
-    After logging in, you will be asked to set up an OTP (one-time password). This is an OTP in addition to your institutional 2FA. We are currently enforcing an additional security layer of OTP, as the institutions federated by Tuakiri all have different security policies.
+    After logging in, you will be asked to set up an 6-digit code. This is additional authentication in addition to your institutional MFA. We are currently enforcing an additional security layer, as the institutions federated by Tuakiri all have different security policies.
     
     ![OnDemand login 3](../../assets/images/ondemand_login_2.png)
 
-    Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the one-time code (6 digit number) along with a device name (e.g. my mobile) and Submit and you are good to go.
+    Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the 6-digit code along with a device name (e.g. my mobile) and Submit and you are good to go.
 
-    Once you have set up an OTP, you will be shown the following screen, where you can enter the 6 digit number from your authenticator app.
+    Once you have set up your additional authentication credentials, you will be shown the following screen, where you can enter the 6-digit code from your authenticator app.
 
     ![ondemand login 4](../../assets/images/ondemand_login_3.png)
 

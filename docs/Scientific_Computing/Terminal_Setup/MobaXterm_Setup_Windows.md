@@ -99,8 +99,8 @@ configurations.
 8. Select your institution, you will be prompted to provide your login details.
 
 9. You are now asked about your current device: do you trust it or not?  
--  If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your one-time password (OTP) every time you log.
--  If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without Second Factor Authentication (2FA) for 7 days.
+-  If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your 6-digit code every time you log.
+-  If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without additional authentication for 7 days.
 
 If you have trusted your device, you have to enter a name for this device. This name must be unique but can be anything you want.
 
