@@ -8,7 +8,7 @@ zendesk_article_id: 7349136678543
 zendesk_section_id: 7348925662223
 ---
 
-As part of NeSI’s service agreements, we provide Subscribers with
+As part of our Subscriber service agreements, we share
 monthly usage reports. They provide a monthly view of chargeable usage
 (as well as any Merit / non-chargeable usage) across all platform
 services:
@@ -19,14 +19,14 @@ services:
 
 - Storage - Persistent (active project storage)
 
-- Storage - Nearline (long-term storage)
+- Storage - Freezer (long-term storage)
 
-We send these usage report emails via our NeSI Support portal so that
+We send these usage report emails via our Support portal so that
 our team has better visibility internally of our monthly check-ins and
 we can more easily loop in others to answer technical questions or
 follow up on system-related requests.
 
-The monthly emails also include any timely updates on other NeSI news or
+The monthly emails also include any timely updates on other news or
 training events that would be of interest to your research community.
 
 ## How to read your Subscriber Usage Report
@@ -51,7 +51,7 @@ reference, and compare recent and past usage.
     chargeable costs that month. See the Pricing section above for more
     information on our service pricing.
 
-- To showcase full value delivered through NeSI services, our reports
+- To showcase full value delivered through our services, our reports
     will also show usage that is not chargeable (eg. Merit usage). This
     is shown simply for information purposes and is not included or
     reflected on invoices.

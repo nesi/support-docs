@@ -10,7 +10,7 @@ zendesk_section_id: 360000042215
 
 ## Snapshots
 
-Snapshots are read only copies of the file systems at a point in time. 
+Snapshots are read only copies of the filesystems at a point in time. 
 They are taken daily (or weekly for `/nesi/nobackup`) and retained for 
 at least seven days.  
   

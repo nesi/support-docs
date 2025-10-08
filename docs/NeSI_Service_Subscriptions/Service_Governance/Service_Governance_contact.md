@@ -8,8 +8,6 @@ zendesk_article_id: 7349082099343
 zendesk_section_id: 7348925662223
 ---
 
-{% include "partials/support_request.html" %}
-
 As part of our service agreements, we request you name a Service
 Governance Contact on behalf of your institution. The role of this
 person includes:
@@ -22,4 +20,4 @@ person includes:
 - Receiving and reviewing the Subscriber Monthly Usage Reports.
 
 If you have any questions about the role of a Service Governance
-contact, [get in touch](mailto:info@nesi.org.nz).
+contact, [get in touch](mailto:support@nesi.org.nz).

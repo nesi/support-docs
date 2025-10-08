@@ -8,12 +8,12 @@ zendesk_article_id: 7348919239695
 zendesk_section_id: 7348891753487
 ---
 
-NeSI has a range of options for research institutions and independent
+We have a range of options for research institutions and independent
 researchers to access our services to build your research capabilities.
 
-Subscribing to NeSI's services provides you with:
+Subscribing to our services provides you with:
 
-- Managed entitlements on NeSI's HPC platform for your research
+- Managed entitlements on our HPC platform for your research
     projects and programmes. This includes access to:
 
   - high-capacity CPUs, GPUs and high memory nodes
@@ -24,15 +24,13 @@ Subscribing to NeSI's services provides you with:
   - an extensive pre-built software library
 
   - data storage for compute, from the highest performance storage
-        on NeSI's HPC platform or via NeSI's long-term storage Nearline
-        Service
+        on our HPC platform or via our long-term storage service
 
-- Personalised support to assist your researchers across the breadth
-    of their NeSI experience, from applying for projects/allocations, to
-    getting their projects running on the platform, to general
+- Personalised support to assist your researchers, from helping get
+ their projects running on the platform, to general
     troubleshooting or experimenting with new tools or techniques
 
-- Secure, reliable, and fast data transfer to/from NeSI’s HPC Platform
+- Secure, reliable, and fast data transfer to/from our HPC Platform
     as well as to/from other Globus endpoints across New Zealand and
     internationally.
 
