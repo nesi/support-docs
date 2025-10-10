@@ -23,7 +23,7 @@ tags:
 2. Select your affiliated institution, and log in using your institutional account. Example below shows the University of Auckland login screen.
     ![alt text](../../assets/images/ondemand_login_1.png)
 
-3. If you haven't logged into OnDemand or our HPC platforms before, you wil need to set up a new Second Factor Authentication (2FA). This is in addition to your institutional 2FA.
+3. If you haven't logged in to OnDemand or our HPC platforms before, you will need to set up a new Second Factor Authentication (2FA). This is in addition to your institutional 2FA.
     ![alt text](../../assets/images/ondemand_login_2.png)
   
     !!! note
@@ -35,14 +35,14 @@ tags:
     ![alt text](../../assets/images/ondemand_login_3.png)
 
 6. You are now asked about your current device: do you trust it or not?  
-    -  Do not trust shared computers (e.g. a university computer where you have to delete cookies) or if you are using incognito or private windows: click No. This means that you will need to enter your OTP every time you log.
+    -  Do not trust shared computers (e.g. a university computer where you have to delete cookies) or if you are using incognito or private windows: click No. This means that you will need to enter your OTP every time you log in.
     -  If the device is your personal laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without 2FA for 7 days.
     
     ![alt text](../../assets/images/ondemand_login_4.png). 
 
     If you have trusted your device, you have to enter a name for this device. This name must be unique. E.g. you cannot trust two devices the same day with the same name. 
 
-7. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'yes' if you want to proceed with access. Click 'no' if you did not initiate this authentication process.
+7. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'Yes' if you want to proceed with access. Click 'No' if you did not initiate this authentication process.
 
     ![alt text](../../assets/images/login_grantaccess.png)
 
