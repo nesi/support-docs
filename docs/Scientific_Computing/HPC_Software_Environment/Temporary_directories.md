@@ -1,7 +1,7 @@
 ---
 created_at: '2023-07-21T04:10:04Z'
-tags: []
-status: deprecated
+tags: 
+  - storage
 ---
 
 Most programs which create temporary files will put those files in the
