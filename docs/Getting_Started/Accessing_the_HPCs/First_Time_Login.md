@@ -29,12 +29,12 @@ tags:
     !!! note
         If your device is not trusted (step 6 ), you will be asked every time to enter your one-time password (OTP) for our HPC platforms.
   
-5. Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the OTP (6 digit number) along with a device name (e.g. my mobile) and click 'Submit'.
+4. Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the OTP (6 digit number) along with a device name (e.g. my mobile) and click 'Submit'.
 
-6. Once you have set up an OTP, you will be shown the following screen instead of the one above, where you can enter the 6 digit number from your authenticator app.
+5. Once you have set up an OTP, you will be shown the following screen instead of the one above, where you can enter the 6 digit number from your authenticator app.
     ![alt text](../../assets/images/ondemand_login_3.png)
 
-7. You are now asked about your current device: do you trust it or not?  
+6. You are now asked about your current device: do you trust it or not?  
     -  Do not trust shared computers (e.g. a university computer where you have to delete cookies) or if you are using incognito or private windows: click No. This means that you will need to enter your OTP every time you log.
     -  If the device is your personal laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without 2FA for 7 days.
     
@@ -42,10 +42,10 @@ tags:
 
     If you have trusted your device, you have to enter a name for this device. This name must be unique. E.g. you cannot trust two devices the same day with the same name. 
 
-7. You will be prompted again. Click 'yes'.
+7. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'yes' if you want to proceed with access. Click 'no' if you did not initiate this authentication process.
 
-    ![alt text](../../assets/images/login_freeipaaccess.png)
+    ![alt text](../../assets/images/login_grantaccess.png)
 
-9. After successfully logging in, you will be presented with the following OnDemand screen.
+8. After successfully logging in, you will be presented with the following OnDemand screen.
 
     ![image-20240903-112029](../../assets/images/OOD_Desktop_08Jun2025.png)

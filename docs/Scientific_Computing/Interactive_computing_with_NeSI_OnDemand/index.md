@@ -37,7 +37,7 @@ A number of interactive applications can be accessed through OnDemand, including
 
 !!! info ""
 
-    🙋 If you to come across above limitations, please consider switching to a HPC3 login node via `Cluster` > `NeSI HPC Shell access` via OnDemand home page
+    🙋 If you to come across above limitations, please consider switching to the new HPC login node via `Cluster` > `NeSI HPC Shell access` via OnDemand home page
 
     [OnDemand how to access login shell.](../../assets/images/OOD_howtoaccesslogin_node_shell.png)
 
