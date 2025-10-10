@@ -108,7 +108,16 @@ configurations.
 
     ![alt text](../../assets/images/Standard_Terminal_Setup_2.png)
 
-10. Return to your terminal, and press <kbd>enter</kbd>.
+10. You are now asked to confirm that you initiated this authentication request. This step helps prevent remote phishing by ensuring the process was started by you.  
+
+    ![alt text](../../assets/images/login-grantaccess.png).
+
+    - **Click No:** if you did not request access to the advanced computing system.  
+    - **Click Yes:** if you have been following this process from the beginning.  
+
+You will be asked to confirm each time to ensure you initiated the sequence and to maintain your security.
+
+11. Return to your terminal, and press <kbd>enter</kbd>.
 
 !!! warning "Double Authentication"
     You will need to complete the authentication proccess twice, this can be avoided by following the steps outlined in [Adding an SSH Key](#adding-a-ssh-key-optional).

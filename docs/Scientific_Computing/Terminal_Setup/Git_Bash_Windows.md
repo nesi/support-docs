@@ -29,7 +29,7 @@ to the clusters directly using;
 ssh nesi
 ```
 
-You will be prompted twice for Authetication ![alt text](../../assets/images/gitbash_auth1.png)
+You will be prompted twice for Authentication ![alt text](../../assets/images/gitbash_auth1.png)
 Hit `ctrl` and click the link and then `enter` after the browser pop shows
 ![alt text](../../assets/images/gitbash_auth2.png)
 
