@@ -17,7 +17,7 @@ Currently Freezer is only available via specific access points, HPC3 and Mahuika
 You will need to configure the `s3cmd` tool before you use it for the first time. Configuring the `s3cmd` allows for user credentials and default buckets to be remembered. This will only need to be done once.
 
 ```sh
-s3cmd --configure
+s3cmd --configure --multipart-chunk-size-mb=1024
 ```
 
 Enter the following details when prompted in the terminal:
@@ -39,7 +39,7 @@ S3 Endpoint: <span style="color:blue"><b>freezer.nesi.org.nz:7070</b></span>
 
 Use "%(bucket)s.s3.amazonaws.com" to the target AWS S3. "%(bucket)s" and "%(location)s" vars can be used
 if the target S3 system supports dns based buckets.
-DNS-style bucket+hostname:port template for accessing a bucket:  <span style="color:blue"><b>210.7.37.122:7070</b></span>
+DNS-style bucket+hostname:port template for accessing a bucket:  <span style="color:blue"><b>freezer.nesi.org.nz:7070</b></span>
 Encryption password is used to protect your files from reading
 by unauthorized persons while in transfer to S3
 Encryption password: <span style="color:green"><b>Leave blank, </b>press &lt;Enter&gt;</span>
@@ -60,7 +60,7 @@ You will then be presented with a summary.
   Secret Key: Your Freezer Secret Key
   Default Region: akl-1
   S3 Endpoint: freezer.nesi.org.nz:7070
-  DNS-style bucket+hostname:port template for accessing a bucket: 210.7.37.122:7070
+  DNS-style bucket+hostname:port template for accessing a bucket: freezer.nesi.org.nz:7070
   Encryption password:
   Path to GPG program: /usr/bin/gpg
   Use HTTPS protocol: True
