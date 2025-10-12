@@ -44,7 +44,7 @@ tags:
 
 7. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'Yes' if you want to proceed with access. Click 'No' if you did not initiate this authentication process.
 
-    ![alt text](../../assets/images/login_grantaccess.png)
+    ![alt text](../../assets/images/login-grantaccess.png).
 
 8. After successfully logging in, you will be presented with the following OnDemand screen.
 
