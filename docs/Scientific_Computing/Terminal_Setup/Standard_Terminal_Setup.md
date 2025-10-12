@@ -115,7 +115,7 @@ configurations.
     - **Click No:** if you did not request access to the advanced computing system.  
     - **Click Yes:** if you have been following this process from the beginning.  
 
-You will be asked to confirm each time to ensure you initiated the sequence and to maintain your security.
+You will be asked to confirm each time to ensure you initiated the sequence and to maintain your security.  
 
 11. Return to your terminal, and press <kbd>enter</kbd>.
 
