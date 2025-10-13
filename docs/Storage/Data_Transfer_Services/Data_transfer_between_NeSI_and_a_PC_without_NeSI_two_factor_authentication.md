@@ -5,14 +5,14 @@ title: Data transfer between NeSI and a PC without NeSI two-factor authenticatio
 ---
 
 This article shows how to transfer potentially large amounts of data
-between NeSI and your personal computer, without requiring multi-factor authentication (MFA) each time you initiate the transfer.  This
+between NeSI and your personal computer, without requiring Multi-Factor Authentication (MFA) each time you initiate the transfer.  This
 is particularly useful in the context of automated, or [scripted data
 transfers](../../Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md).
 
 The approach is based on using
 [Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md)
 and a guest collection on the source side. **Globus** allows you to copy
-and synchronise files between NeSI's platforms and other computers,
+and synchronise files between our HPC platform and other computers,
 including your personal computer.
 
 A ***collection*** is a directory whose content can be shared. A
@@ -21,10 +21,10 @@ in your credentials each time your transfer files.
 
 See this [support
 page](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md)
-on how to set up Globus. Here, we assume you have an account on NeSI and
+on how to set up Globus. Here, we assume you have an account on our HPC platform and
 have registered and created an account on Globus.
 
-## Step 1: Create a guest collection on NeSI
+## Step 1: Create a guest collection on the HPC platform
 
 - Go to <https://app.globus.org/file-manager>
 - In the "Collection" search box type **NeSI HPC storage** and
@@ -39,7 +39,7 @@ have registered and created an account on Globus.
 - You should now see your new guest collection at
     <https://app.globus.org/collections?scope=administered-by-me>
 
-*Note: The example pictured below shows an old NeSI endpoint, now decommissioned. The new endpoint for NeSI HPC facilities is called "NeSI HPC storage".*  
+*Note: The example pictured below shows an old NeSI endpoint, now decommissioned. The new endpoint for our HPC facilities is called "NeSI HPC storage".*  
 
 ![mceclip0.png](../../assets/images/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.png)
 
