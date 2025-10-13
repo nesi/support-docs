@@ -180,6 +180,7 @@ COMSOL's
 COMSOL
 CONCOCT's
 CONCOCT
+CORS
 CP2K's
 CP2K
 CPE
@@ -981,6 +982,7 @@ SAMtools's
 SAMtools
 SCOTCH's
 SCOTCH
+ScoutAM
 SCP
 SCons's
 SCons
@@ -1152,6 +1154,7 @@ VCFtools's
 VCFtools
 VEP's
 VEP
+Versity
 VIBRANT's
 VIBRANT
 VMs's
