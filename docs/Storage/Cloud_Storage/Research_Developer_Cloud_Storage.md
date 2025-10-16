@@ -15,4 +15,4 @@ Our Research Developer Cloud offers two types of storage:
 
 Please visit [the Research Developer Cloud user guides](https://support.cloud.nesi.org.nz/user-guides/) to know more about how to use the platform.
 
-For information about pricing, details are available on the [Service Subscription page](https://docs.nesi.org.nz/NeSI_Service_Subscriptions/Overview/Pricing/#research-developer-cloud).
+For information about pricing, details are available on the [Service Subscription page](https://docs.nesi.org.nz/Service_Subscriptions/Overview/Pricing/#research-developer-cloud).

@@ -49,4 +49,4 @@ Billable services available via the Research Developer Cloud include:
 - Graphical Processing Units (GPUs)
 - Storage
 
-For more information, check [the Research Developer Cloud pricing](https://docs.nesi.org.nz/NeSI_Service_Subscriptions/Overview/Pricing/#research-developer-cloud).
+For more information, check [the Research Developer Cloud pricing](https://docs.nesi.org.nz/Service_Subscriptions/Overview/Pricing/#research-developer-cloud).
