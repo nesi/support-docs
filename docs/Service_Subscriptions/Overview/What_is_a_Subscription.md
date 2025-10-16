@@ -2,10 +2,6 @@
 created_at: '2023-07-05T23:18:57Z'
 tags: []
 title: What is a Subscription?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7348919239695
-zendesk_section_id: 7348891753487
 ---
 
 We have a range of options for research institutions and independent
@@ -16,14 +12,14 @@ Subscribing to our services provides you with:
 - Managed entitlements on our HPC platform for your research
     projects and programmes. This includes access to:
 
-  - high-capacity CPUs, GPUs and high memory nodes
+- high-capacity CPUs, GPUs and high memory nodes
 
-  - interactive computing via Jupyter Notebooks, containers, and
+- interactive computing via Jupyter Notebooks, containers, and
         virtual lab environments
 
-  - an extensive pre-built software library
+- an extensive pre-built software library
 
-  - data storage for compute, from the highest performance storage
+- data storage for compute, from the highest performance storage
         on our HPC platform or via our long-term storage service
 
 - Personalised support to assist your researchers, from helping get
