@@ -9,7 +9,7 @@ tags:
 
 !!! prerequisite
     -   Have working
-    [terminal](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md)
+    [terminal](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md)
     set up.
 
 X-11 is a protocol for rendering graphical user interfaces (GUIs) that

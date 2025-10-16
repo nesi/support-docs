@@ -8,7 +8,7 @@ title: WinSCP/PuTTY Setup (Windows)
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
+     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
      -   Be using the Windows operating system.
 
 WinSCP is an SCP client for windows implementing the SSH protocol from
