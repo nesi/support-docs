@@ -119,7 +119,7 @@ ${SINGULARITY} echo "Hello World"
 
 The following steps will create a custom Lambda Stack kernel that can be
 accessed via NeSI's Jupyter service (based on the instructions at 
-[Jupyter_on_NeSI](../../Scientific_Computing/Interactive_computing_using_Jupyter/Jupyter_kernels_Tool_assisted_management.md)).
+[Jupyter_on_NeSI](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md)).
 
 First, we need to create a kernel definition and wrapper that will
 launch the Singularity image. Run the following commands on the Mahuika
