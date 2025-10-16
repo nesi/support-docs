@@ -124,7 +124,7 @@ configurations.
 
 ## Adding a SSH key (optional)
 
-Generating a SSH key on the cluster removes one of the login prompts, this also works when opening a terminal through [OnDemand](../Interactive_computing_with_NeSI_OnDemand/index.md).
+Generating a SSH key on the cluster removes one of the login prompts, this also works when opening a terminal through [OnDemand](../Interactive_computing_with_OnDemand/index.md).
 
 1. In a terminal **on the HPC** (either through SSH or OnDemand), run the command;
 

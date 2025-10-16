@@ -47,7 +47,7 @@ There are snapshots for short-term recovery of deleted files, in `/home/.snapsho
 
 ## Access via Web browser
 
-[OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/index.md) has replaced JupyterHub.
+[OnDemand](../../Scientific_Computing/Interactive_computing_with_OnDemand/index.md) has replaced JupyterHub.
 OnDemand is more flexible and can deliver more GUI based apps.
 
 ## Software

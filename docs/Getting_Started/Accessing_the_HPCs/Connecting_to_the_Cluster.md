@@ -27,7 +27,7 @@ operating system and level of experience.
 
 !!! tip "What next?"
     -  More info on
-       [NeSI OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md)
+       [NeSI OnDemand](../../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md)
     -  Visit [ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
 ## Linux or Mac OS

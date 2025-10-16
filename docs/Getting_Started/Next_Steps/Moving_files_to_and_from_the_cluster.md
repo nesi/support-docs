@@ -20,7 +20,7 @@ Find more information on [the NeSI Filesystem](../../Storage/File_Systems_and_Qu
 ## OnDemand
 
 Requiring only a web browser the instructions are same whether your are connecting from a Windows, Mac or a Linux computer.
-See [NeSI_OnDemand how to guide](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md) for more info.
+See [OnDemand how to guide](../../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md) for more info.
 
 ## Standard Terminal
 

@@ -17,9 +17,9 @@ include:
     can get right into using and exploring the several built-in packages
     or create custom code.
 
-- [Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md)is
+- [Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/JupyterLab/index.md)is
     particularly well suited to artificial intelligence and machine
-    learning workloads. [RStudio](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/RStudio.md)
+    learning workloads. [RStudio](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/RStudio.md)
     and/or Conda can be accessed via Jupyter.
 
 - Commonly used data science environments and libraries such as
