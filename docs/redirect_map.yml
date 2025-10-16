@@ -202,7 +202,7 @@ hc/en-gb/articles/360001419576-MAKER.md: Scientific_Computing/Supported_Applicat
 hc/en-gb/articles/360001419576.md: Scientific_Computing/Supported_Applications/MAKER.md
 hc/en-gb/articles/360001471955-GPU-use-on-NeSI.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
 hc/en-gb/articles/360001471955.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
-Scientific_Computing/Batch_Jobs/GPU_use_on_NeSI.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
+Scientific_Computing/Batch_Jobs/Using_GPUs.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
 hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001500156.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001508515-Git-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Git-Reference_Sheet.md
@@ -334,7 +334,7 @@ hc/en-gb.md: index.md
 Storage/Freezer_long_term_storage.md : Storage/Long_Term_Storage/Freezer_long_term_storage.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Checksums.md: Scientific_Computing/Batch_Jobs/Checksums.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Fair_Share.md: Scientific_Computing/Batch_Jobs/Fair_Share.md
-Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/GPU_use_on_NeSI.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
+Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Using_GPUs.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading.md: Scientific_Computing/Batch_Jobs/Hyperthreading.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_Checkpointing.md: Scientific_Computing/Batch_Jobs/Job_Checkpointing.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md: Scientific_Computing/Batch_Jobs/Job_prioritisation.md

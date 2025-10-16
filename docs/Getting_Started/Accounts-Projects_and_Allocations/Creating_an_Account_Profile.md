@@ -24,6 +24,6 @@ tags:
     our records.
 
 !!! prerequisite "What next?"
-     - [Apply for Access](./Applying_for_a_new_NeSI_project.md),
+     - [Apply for Access](./Applying_for_a_new_project.md),
          either submit an application for a new project or
-         [join an existing project](./Applying_to_join_an_existing_NeSI_project.md).
+         [join an existing project](./Applying_to_join_a_project.md).

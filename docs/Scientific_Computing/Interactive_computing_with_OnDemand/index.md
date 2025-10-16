@@ -43,8 +43,7 @@ A number of interactive applications can be accessed through OnDemand, including
 
 ## Release notes
 
-Release notes can be found [here](Release_Notes/index.md) and the main differences
-compared to the current Jupyter on NeSI service are described [here](changes_from_jupyter_on_nesi.md).
+Release notes can be found [here](Release_Notes/index.md).
 
 ## Acknowledgements
 

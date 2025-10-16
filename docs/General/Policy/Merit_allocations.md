@@ -55,4 +55,4 @@ Read more about [how we review
 applications](../../General/Policy/How_we_review_applications.md).
 
 To learn more about NeSI Projects or to apply for a new project, please
-read our article [Applying for a NeSI Project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md).
+read our article [Applying for a NeSI Project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_project.md).
