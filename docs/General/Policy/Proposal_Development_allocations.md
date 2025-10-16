@@ -29,7 +29,7 @@ Proposal Development allocation.
 Once you have completed your Proposal Development allocation, you are
 welcome to apply for a further allocation. If you are successful, the
 project's next allocation will be from another of the
-[allocation classes](../../General/NeSI_Policies/Allocation_classes.md).
+[allocation classes](../../General/Policy/Allocation_classes.md).
 
 The [How Applications are Reviewed](How_we_review_applications.md) section
 provides additional important information for applicants.

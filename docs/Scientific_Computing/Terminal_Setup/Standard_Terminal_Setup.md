@@ -189,4 +189,4 @@ You should now be able to login with only a single authentication prompt.
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     -   Setting up an [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md) (optional).
+     -   Setting up an [X-Server](./X11.md) (optional).

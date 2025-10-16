@@ -130,4 +130,4 @@ for a single transfer'.
 
 !!! prerequisite "What Next?"
      -  [Moving files to and from the cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     -  [X11 on NeSI](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md)(optional).
+     -  [X11 on NeSI](./X11.md)(optional).

@@ -45,7 +45,7 @@ more broad terms such as "machine learning".
 For more information on NeSI's model and approach to application
 support, refer to our [policy for the management of scientific
 application
-software](../../General/NeSI_Policies/NeSI_Application_Support_Model.md).
+software](../../General/Policy/NeSI_Application_Support_Model.md).
 
 If you need help installing your software or would like to discuss your
 software needs with us, {% include "partials/support_request.html" %}.

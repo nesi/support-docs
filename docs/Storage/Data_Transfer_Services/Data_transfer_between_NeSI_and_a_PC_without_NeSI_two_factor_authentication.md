@@ -7,7 +7,7 @@ title: Data transfer between NeSI and a PC without NeSI two-factor authenticatio
 This article shows how to transfer potentially large amounts of data
 between NeSI and your personal computer, without requiring two-factor authentication (2FA) each time you initiate the transfer.  This
 is particularly useful in the context of automated, or [scripted data
-transfers](../../Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md).
+transfers](./Syncing_files_with_globus_automate.md).
 
 The approach is based on using
 [Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md)

@@ -1,7 +1,9 @@
 ---
 created_at: '2023-01-12T20:45:15Z'
-tags: []
-title: Sync'ing files between NeSI and another computer with globus-automate
+tags: 
+    - globus
+    - file transfer
+title: Sync'ing with globus-automate
 ---
 
 It is common to generate large amounts of simulation data on NeSI and
@@ -21,7 +23,7 @@ We'll assume that you have a NeSI account, you have registered at
 [https://globus.org](https://globus.org), and have created a guest collections on NeSI
 and a private mapped collection on the destination computer (follow the
 instructions at
-[Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication](../../Storage/Data_Transfer_Services/Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.md)).
+[Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication](./Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.md)).
 A guest collection is directory whose content is shared via Globus.
 
 ## Step 1: Write a JSON file describing the transfer
