@@ -8,7 +8,7 @@ title: WinSCP/PuTTY Setup (Windows)
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
+     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
      -   Be using the Windows operating system.
 
 WinSCP is an SCP client for windows implementing the SSH protocol from
@@ -130,4 +130,4 @@ for a single transfer'.
 
 !!! prerequisite "What Next?"
      -  [Moving files to and from the cluster](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     -  [X11 on NeSI](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md)(optional).
+     -  [X11 on NeSI](./X11.md)(optional).

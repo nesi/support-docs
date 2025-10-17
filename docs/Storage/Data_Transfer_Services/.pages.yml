@@ -8,5 +8,5 @@ nav:
   - Re-creating Shared Collections and Bookmarks in Globus: Re_creating_Shared_Collections_and_Bookmarks_in_Globus.md
   - Personal_Globus_Endpoint_Configuration.md
   - National_Data_Transfer_Platform.md
-  - Data transfer between NeSI and a PC without NeSI two-factor authentication: Data_transfer_between_NeSI_and_a_PC_without_NeSI_two_factor_authentication.md
-  - Sync'ing files between NeSI and another computer with globus-automate: Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md
+  - Syncing_files_with_globus_automate.md
+  - ...

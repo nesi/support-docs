@@ -1,11 +1,7 @@
 ---
 created_at: '2021-05-25T02:15:36Z'
 tags: []
-title: What software environments on NeSI are optimised for Machine Learning and data science?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360004558895
-zendesk_section_id: 360000039036
+title: What software environments are optimised for Machine Learning and data science?
 ---
 
 When using NeSI's HPC
@@ -21,9 +17,9 @@ include:
     can get right into using and exploring the several built-in packages
     or create custom code.
 
-- [Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/JupyterLab/index.md)is
+- [Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/JupyterLab/index.md)is
     particularly well suited to artificial intelligence and machine
-    learning workloads. [RStudio](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/Apps/RStudio.md)
+    learning workloads. [RStudio](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/RStudio.md)
     and/or Conda can be accessed via Jupyter.
 
 - Commonly used data science environments and libraries such as
@@ -42,10 +38,10 @@ more broad terms such as "machine learning".
 
 ![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
 
-For more information on NeSI's model and approach to application
+For more information on our model and approach to application
 support, refer to our [policy for the management of scientific
 application
-software](../../General/NeSI_Policies/NeSI_Application_Support_Model.md).
+software](../Policy/Application_Support_Model.md).
 
 If you need help installing your software or would like to discuss your
 software needs with us, {% include "partials/support_request.html" %}.

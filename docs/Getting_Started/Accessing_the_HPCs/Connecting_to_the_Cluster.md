@@ -8,7 +8,7 @@ tags:
 ---
 
 !!! prerequisite
-    -  Have an [active account and project](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
+    -  Have an [active account and project](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md).
 
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.
@@ -26,8 +26,8 @@ operating system and level of experience.
  NeSI OnDemand is a service providing access to Jupyter Notebooks,RStudio and VS code servers, a Virtual Desktop, and an SSH terminal, allowing you to utilise NeSI resources via the browser.
 
 !!! tip "What next?"
-    -  More info on 
-       [NeSI OnDemand](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md)
+    -  More info on
+       [NeSI OnDemand](../../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md)
     -  Visit [ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
 ## Linux or Mac OS

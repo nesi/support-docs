@@ -6,7 +6,7 @@ status: deprecated
 
 
 !!! prerequisite
-    - Please make sure you have followed the recommended setup. See [Choosing and Configuring Software for Connecting to the Clusters](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md) for more information.
+    - Please make sure you have followed the recommended setup. See [Choosing and Configuring Software for Connecting to the Clusters](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md) for more information.
     - Most terminals do not give an indication of how many characters have been typed when entering a password.
     - Paste is not usually bound to `ctrl` + `V` and will vary based on your method of access.
 
@@ -26,8 +26,8 @@ ssh login.hpc.nesi.org.nz
 
 **If this succeeds**:
 
-- If you are using a bash terminal, confirm your .ssh config is [set up correctly](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
-- If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](../../Getting_Started/Accessing_the_HPCs/Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md).
+- If you are using a bash terminal, confirm your .ssh config is [set up correctly](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
+- If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
 
 ### Check you are a member of an active project
 

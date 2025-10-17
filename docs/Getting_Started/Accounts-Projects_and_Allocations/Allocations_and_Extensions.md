@@ -58,7 +58,7 @@ You can submit a request for an extension using <https://my.nesi.org.nz>
 or by {% include "partials/support_request.html" %}.
 
 Please see [Requesting to renew an allocation via
-my.nesi.org.nz](../../Getting_Started/my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)
+my.nesi.org.nz](../my-nesi-org-nz/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.md)
 for more details.
 
 You will receive a series of automated emails inviting you to apply for

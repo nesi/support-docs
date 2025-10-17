@@ -16,7 +16,7 @@ different allocation criteria.
 An allocation will come from one of our allocation classes. We will
 decide what class of allocation is most suitable for you and your
 research programme, however you're welcome to review [our article on
-allocation classes](../../General/NeSI_Policies/Allocation_classes.md)
+allocation classes](../../General/Policy/Allocation_classes.md)
 to find out what class you're likely eligible for.
 
 ## An important note on CPU hour allocations

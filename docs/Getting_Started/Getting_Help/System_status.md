@@ -9,7 +9,7 @@ zendesk_section_id: 360000164635
 ---
 
 !!! note "See also"
-    [NeSI wide area network connectivity](../../Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md)
+    [NeSI wide area network connectivity](./Wide_Area_Network.md)
 
 ## NeSI system status related notifications
 

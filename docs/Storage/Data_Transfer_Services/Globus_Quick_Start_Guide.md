@@ -1,7 +1,6 @@
 ---
 created_at: '2023-10-13T00:14:22Z'
 tags: []
-title: Globus Quick Start Guide
 ---
 
 This is intended to be a quick-start guide, for more detailed
@@ -12,7 +11,7 @@ between two Globus Data Transfer Nodes (DTNs). To use Globus to transfer
 data to or from NeSI, you need:
 
 1. An active NeSI account (see
-  [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
+  [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md))
 2. A Globus account (see
   [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 3. Access to Globus DTNs or endpoints  
@@ -33,9 +32,8 @@ other methods.
 
 ![Globus\_login.png](../../assets/images/Globus_Quick_Start_Guide.png)
 
-For more detailed instructions please see [Initial Globus Sign-Up, and
-your Globus
-Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
+For more detailed instructions please see
+[Initial Globus Sign-Up, and your Globus Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
 
 ## Globus Endpoint Activation
 

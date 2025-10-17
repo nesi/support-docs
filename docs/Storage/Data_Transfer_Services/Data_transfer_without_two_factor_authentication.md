@@ -1,16 +1,15 @@
 ---
 created_at: '2023-01-12T02:42:17Z'
 tags: []
-title: Data transfer between NeSI and a PC without NeSI two-factor authentication
 ---
 
 This article shows how to transfer potentially large amounts of data
-between NeSI and your personal computer, without requiring two-factor authentication (2FA) each time you initiate the transfer.  This
+between REANNZ and your personal computer, without requiring two-factor authentication (2FA) each time you initiate the transfer.  This
 is particularly useful in the context of automated, or [scripted data
-transfers](../../Storage/Data_Transfer_Services/Syncing_files_between_NeSI_and_another_computer_with_globus_automate.md).
+transfers](./Syncing_files_with_globus_automate.md).
 
 The approach is based on using
-[Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md)
+[Globus](./Data_Transfer_using_Globus.md)
 and a guest collection on the source side. **Globus** allows you to copy
 and synchronise files between NeSI's platforms and other computers,
 including your personal computer.
@@ -20,7 +19,7 @@ A ***collection*** is a directory whose content can be shared. A
 in your credentials each time your transfer files.
 
 See this [support
-page](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md)
+page](./Data_Transfer_using_Globus.md)
 on how to set up Globus. Here, we assume you have an account on NeSI and
 have registered and created an account on Globus.
 
@@ -49,7 +48,7 @@ On your personal computer, download "Globus Connect Personal" from
 <https://app.globus.org/file-manager/gcp>. Versions exist for Mac,
 Windows and Linux. Follow the instructions to install and set up the
 software. Also see our support page about [Personal Globus Endpoint
-Configuration](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md).
+Configuration](./Personal_Globus_Endpoint_Configuration.md).
 
 ## Step 3: Share a directory on your personal computer
 

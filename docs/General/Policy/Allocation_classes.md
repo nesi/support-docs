@@ -23,7 +23,7 @@ services.
 <tbody>
 <tr class="odd">
 <td rowspan="4" style="width: 34.4%"><h3 id="prop"><a
-href="../../General/NeSI_Policies/Proposal_Development_allocations.md">Proposal
+href="../../General/Policy/Proposal_Development_allocations.md">Proposal
 Development</a></h3>
 <p>A short-term allocation available to researchers from any New Zealand
 research institution. During this allocation you will:</p>
@@ -63,7 +63,7 @@ from one of our other allocation classes.</em></p></td>
 </tr>
 <tr class="odd">
 <td rowspan="4" style="width: 34.4%"><h3 id="merit"><a
-href="../../General/NeSI_Policies/Merit_allocations.md">Merit</a></h3>
+href="../../General/Policy/Merit_allocations.md">Merit</a></h3>
 <p>Intended for highly skilled research teams carrying out high quality
 research funded via a peer review process that supports the <a
 href="http://www.mbie.govt.nz/info-services/science-innovation/funding-info-opportunities/document-image-library/NSSI%20Final%20Document%202015.pdf">New
@@ -114,7 +114,7 @@ allocations.</em></p></td>
 </tr>
 <tr class="odd">
 <td rowspan="4" style="width: 34.4%"><h3 id="postgrad"><a
-href="../../General/NeSI_Policies/Postgraduate_allocations.md">Postgraduate</a></h3>
+href="../../General/Policy/Postgraduate_allocations.md">Postgraduate</a></h3>
 <p>Standard allocation for anyone enrolled at a New Zealand
 degree-granting institution and working on a postgraduate research
 programme (e.g. PhD or Masters by research) approved by that
@@ -151,7 +151,7 @@ allocations.</em></p></td>
 </tr>
 <tr class="odd">
 <td rowspan="4" style="width: 34.4%"><h3 id="institutional"><a
-href="../../General/NeSI_Policies/Institutional_allocations.md">Institutional</a></h3>
+href="../../General/Policy/Institutional_allocations.md">Institutional</a></h3>
 <p>Available if you work for or study at one of the institutions that is
 a NeSI collaborator, or has a subscription to the relevant NeSI
 service.</p>
@@ -205,4 +205,4 @@ take a while to set up.
 Our team is happy to answer any questions you may have throughout the
 application process.
 
-For more information, see [how we review applications](../NeSI_Policies/How_we_review_applications.md).
+For more information, see [how we review applications](../Policy/How_we_review_applications.md).

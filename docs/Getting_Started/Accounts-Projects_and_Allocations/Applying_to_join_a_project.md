@@ -8,19 +8,18 @@ tags:
 ---
 
 !!! prerequisite
-     -   You must have a [NeSI
-         account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
+     -   You must have an [account](./Creating_an_Account_Profile.md).
 
-## How to join an existing project on NeSI
+## How to join a project
 
 You need to contact the owner of the project you would like to join, and provide your NeSI account Username.
 
 If you do not know your NeSI account username:
 
-1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.  
+1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.  
 2. In the left side panel, under Account, click My HPC Account. Your Username will appear at the top of the page.  
    ![authentication\_factor\_setup.png](../../assets/images/Setting_Up_and_Resetting_Your_Password.png)
 
 !!! prerequisite "What Next?"
      -   The project owner will add your username to the project.
-     -   Once it is done, you will be able to [login for the first time](../../Getting_Started/Accessing_the_HPCs/First_Time_Login.md).
+     -   Once it is done, you will be able to [login for the first time](../Accessing_the_HPCs/First_Time_Login.md).

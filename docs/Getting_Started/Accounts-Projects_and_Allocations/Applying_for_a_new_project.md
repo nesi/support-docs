@@ -4,15 +4,10 @@ tags:
 - info
 - project
 - mynesi
-title: Applying for a new NeSI project
-vote_count: 6
-vote_sum: 4
-zendesk_article_id: 360000174976
-zendesk_section_id: 360000196195
 ---
 
 !!! prerequisite
-    - Have a [NeSI Account profile](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md).
+    - Have a [Account profile](./Creating_an_Account_Profile.md).
     - NIWA researchers only: read and follow the
         [NIWA internal documentation for gaining access to the HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services)
         (this link is only valid from within the NIWA network or VPN).
@@ -28,7 +23,7 @@ zendesk_section_id: 360000196195
          introductory sessions (or watching the
          recording)](../../Getting_Started/Getting_Help/Introductory_Material.md),
          or having one or more of your project team members do so.
-    - Review our [allocation classes](../../General/NeSI_Policies/Allocation_classes.md). If
+    - Review our [allocation classes](../../General/Policy/Allocation_classes.md). If
          you don't think you currently qualify for any class other than
          Proposal Development, please {% include "partials/support_request.html" %} as soon as
          possible to discuss your options. Your institution may be in a
@@ -70,7 +65,7 @@ information:
     research programme's current or expected funding)
 - Details of how your project is funded (this will help determine
     whether you are eligible for an allocation from our
-    [Merit](../../General/NeSI_Policies/Merit_allocations.md) class)
+    [Merit](../../General/Policy/Merit_allocations.md) class)
 - Your previous HPC experience
 - Whether you would like expert scientific programming support on your
     project
@@ -82,7 +77,7 @@ is relevant.
 
 !!! prerequisite "What Next?"
      - Your NeSI Project proposal will be
-         [reviewed](../../General/NeSI_Policies/How_we_review_applications.md),
+         [reviewed](../../General/Policy/How_we_review_applications.md),
          after which you will be informed of the outcome.
      - We may contact you if further details are required.
      - When your project is approved you will be able to [login for the first time](../../Getting_Started/Accessing_the_HPCs/First_Time_Login.md).

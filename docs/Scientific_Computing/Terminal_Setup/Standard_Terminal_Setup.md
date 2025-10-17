@@ -7,7 +7,7 @@ description: How to setup your ssh config file in order to connect to the HPC cl
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
+     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
      -   Have one of:
          - Built in Linux/Mac terminal
          - [Windows Subsystem for Linux](Windows_Subsystem_for_Linux_WSL.md)
@@ -124,7 +124,7 @@ configurations.
 
 ## Adding a SSH key (optional)
 
-Generating a SSH key on the cluster removes one of the login prompts, this also works when opening a terminal through [OnDemand](../Interactive_computing_with_NeSI_OnDemand/index.md).
+Generating a SSH key on the cluster removes one of the login prompts, this also works when opening a terminal through [OnDemand](../Interactive_computing_with_OnDemand/index.md).
 
 1. In a terminal **on the HPC** (either through SSH or OnDemand), run the command;
 
@@ -189,4 +189,4 @@ You should now be able to login with only a single authentication prompt.
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     -   Setting up an [X-Server](../../Scientific_Computing/Terminal_Setup/X11_on_NeSI.md) (optional).
+     -   Setting up an [X-Server](./X11.md) (optional).

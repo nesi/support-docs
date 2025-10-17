@@ -13,14 +13,14 @@ tags:
 ---
 
 !!! prerequisite
-    Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md)
+    Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
 
 Find more information on [the NeSI Filesystem](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
 ## OnDemand
 
 Requiring only a web browser the instructions are same whether your are connecting from a Windows, Mac or a Linux computer.
-See [NeSI_OnDemand how to guide](../../Scientific_Computing/Interactive_computing_with_NeSI_OnDemand/how_to_guide.md) for more info.
+See [OnDemand how to guide](../../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md) for more info.
 
 ## Standard Terminal
 
