@@ -141,7 +141,7 @@ Generating a SSH key on the cluster removes one of the login prompts, this also 
 2. In a terminal **on your local machine** run the command;
 
     ```sh
-    scp mahuika:~/.ssh/mahuika_key.pub ~/.ssh/
+    scp mahuika:~/.ssh/mahuika_key ~/.ssh/
     ```
 
     This will copy the public key from the cluster to your local machine.
