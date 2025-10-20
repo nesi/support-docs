@@ -43,6 +43,9 @@ Here is an example to add a TensorFlow kernel, using NeSI’s module:
 nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 ```
 
+! warning
+    The name given to your kernal in `nesi-add-kernal KERNAL_NAME MODULE` must only include lowercase letters, underscores, and dashes. 
+
 and to share the kernel with other members of your NeSI project:
 
 ``` sh
