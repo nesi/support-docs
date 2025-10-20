@@ -50,7 +50,9 @@ configurations.
         ForwardX11Trusted yes
         ServerAliveInterval 300
         ServerAliveCountMax 2
-        IdentityFile ~/.ssh/mahuika_key  
+        # Note: The line below should only be commented out if
+        #       you have set up an SSH key pair `mahuika_key`.
+        # IdentityFile ~/.ssh/mahuika_key  
     ```
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
