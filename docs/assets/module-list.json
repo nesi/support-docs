@@ -45,14 +45,14 @@
                 "server": "ABAQUS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.81,
+                "server_uptime": 0.92,
                 "server_version": "11.13.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 1.0,
+                        "hourly_average": 0.98,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -66,7 +66,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.91,
+                        "hourly_average": 0.8,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -80,7 +80,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.85,
+                        "hourly_average": 0.71,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -802,7 +802,7 @@
         ],
         "default": "19.2",
         "default_type": "static",
-        "last_updated": 1750632605,
+        "last_updated": 1757912021,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANSYS/19.2.lua",
         "force_hide": "False",
@@ -3274,14 +3274,14 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.81,
+                "server_uptime": 0.9,
                 "server_version": "11.16.2",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 1.0,
+                        "hourly_average": 0.99,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
@@ -3308,14 +3308,14 @@
                 "server": "COMSOL@uoa_idg",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.81,
+                "server_uptime": 0.92,
                 "server_version": "11.15.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 1.0,
+                        "hourly_average": 0.8,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3342,7 +3342,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.81,
+                "server_uptime": 0.89,
                 "server_version": "",
                 "features": [
                     {
@@ -3376,7 +3376,7 @@
                 "server": "COMSOL@uoa_foes",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.81,
+                "server_uptime": 0.92,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3410,14 +3410,14 @@
                 "server": "COMSOL@uoa_foe_des_rc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.81,
+                "server_uptime": 0.92,
                 "server_version": "11.15.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 37.9,
+                        "hourly_average": 15.13,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3431,7 +3431,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 28.13,
+                        "hourly_average": 11.35,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3499,7 +3499,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 403249203.08,
+                        "hourly_average": 176440181.77,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -3514,7 +3514,7 @@
         ],
         "default": "6.1",
         "default_type": "latest",
-        "last_updated": 1740138212,
+        "last_updated": 1758519355,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/COMSOL/6.1.lua",
         "force_hide": "False",
@@ -10957,7 +10957,11 @@
         "versions": [
             "23.1.0-1"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "23.1.0-1": "Mamba and Miniconda3 modules are deprecated.Please use Miniforge3 as per https://docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Miniforge3/"
+            }
+        ],
         "network_licences": [],
         "default": "23.1.0-1",
         "default_type": "latest",
@@ -11238,7 +11242,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.3,
+                "server_uptime": 0.69,
                 "server_version": "",
                 "features": []
             },
@@ -11257,7 +11261,7 @@
                 "server": "MATLAB@uoa",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.81,
+                "server_uptime": 0.92,
                 "server_version": "",
                 "features": []
             },
@@ -11276,7 +11280,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.63,
+                "server_uptime": 0.84,
                 "server_version": "",
                 "features": []
             },
@@ -11314,7 +11318,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.3,
+                "server_uptime": 0.7,
                 "server_version": "",
                 "features": []
             },
@@ -12523,15 +12527,16 @@
         "homepage": "https://www.mpcci.de/",
         "support": "",
         "versions": [
-            "4.7.1"
+            "4.7.1",
+            "4.8.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.7.1",
+        "default": "4.8.1",
         "default_type": "latest",
-        "last_updated": 1747602680,
+        "last_updated": 1757389285,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/mpcci/4.7.1.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/mpcci/4.8.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14487,11 +14492,15 @@
         "versions": [
             "1.3.0-gimkl-2022a-Python-3.10.5"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "1.3.0-gimkl-2022a-Python-3.10.5": "Warning: this environment module now depends on a new prokka environment module. Please let us know if it works."
+            }
+        ],
         "network_licences": [],
         "default": "1.3.0-gimkl-2022a-Python-3.10.5",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1758760005,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/panaroo/1.3.0-gimkl-2022a-Python-3.10.5.lua",
         "force_hide": "False",
@@ -15736,7 +15745,14 @@
             "1.14.5-GCC-11.3.0",
             "1.14.5-GCC-9.2.0"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "1.14.5-GCC-9.2.0": "Warning: This Prokka environment module uses a copy of tbl2asn which is no longer working. If it is still of any use to you then please let support@nesi.org.nz know. An alternative is \"apptainer exec /opt/nesi/containers/prokka/prokka-1.14.6.aif prokka\"."
+            },
+            {
+                "1.14.5-GCC-11.3.0": "Warning: This Prokka environment module uses a copy of tbl2asn which is no longer working. If it is still of any use to you then please let support@nesi.org.nz know. An alternative is \"apptainer exec /opt/nesi/containers/prokka/prokka-1.14.6.aif prokka\"."
+            }
+        ],
         "network_licences": [],
         "default": "1.14.5-GCC-9.2.0",
         "default_type": "latest",
@@ -16373,7 +16389,7 @@
         "network_licences": [],
         "default": "6.0.2-mpi",
         "default_type": "latest",
-        "last_updated": 1747602678,
+        "last_updated": 1759273072,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/QChem/6.0.2-mpi.lua",
         "force_hide": "False",
