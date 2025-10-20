@@ -124,29 +124,27 @@ configurations.
 
 ## Adding a SSH key (optional)
 
-Generating a SSH key on the cluster removes one of the login prompts, this also works when opening a terminal through [OnDemand](../Interactive_computing_with_OnDemand/index.md).
+Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
 
 1. In a terminal **on the HPC** (either through SSH or OnDemand), run the command;
 
     ```sh
-    mkdir -p ~/.ssh && ssh-keygen -qf ~/.ssh/mahuika_key -N "" && cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys
+    mkdir -p ~/.ssh
     ```
 
-    This will generate an ssh key named `mahuika_key`, and add it to the list of authorised keys.
-
-    !!! note "OnDemand users"
-        If you only plan on connecting to the cluster via OnDemand, you can stop here.
-        The following steps are only relevent if using ssh on a local machine.
-
-2. In a terminal **on your local machine** run the command;
+2. In a terminal **on your local machine**, run the command; 
 
     ```sh
-    scp mahuika:~/.ssh/mahuika_key ~/.ssh/
+    mkdir -p ~/.ssh && ssh-keygen -qf ~/.ssh/mahuika_key -N "" && scp ~/.ssh/mahuika_key.pub mahuika:~/.ssh/
+    ```
+    
+3. In a terminal **on the HPC** (either through SSH or OnDemand), run the command;
+
+    ```sh
+    cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys && rm ~/.ssh/mahuika_key.pub
     ```
 
-    This will copy the public key from the cluster to your local machine.
-
-3. If you set up your ssh config recently, you may already have this line added.
+4. If you set up your ssh config recently, you may already have this line added.
 
     Open the file `~/.ssh/config` **on your local machine**, for example;
 
