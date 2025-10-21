@@ -52,7 +52,7 @@ OnDemand is more flexible and can deliver more GUI based apps.
 
 ## Software
 
-Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have been depreciated - just use the system versions of these tools instead.
+Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have been deprecated - just use the system versions of these tools instead.
 
 The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, eg: `gm display ...`.
 
