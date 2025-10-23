@@ -2,7 +2,7 @@ nav:
  - Hardware.md
  - Job_prioritisation.md
  - SLURM-Best_Practice.md
- - GPU_Use.md
+ - Using_GPUs.md
  - Job_Checkpointing.md
  - Slurm_Interactive_Sessions.md
  - Fair_Share.md
