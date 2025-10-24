@@ -31,7 +31,7 @@ tags:
   
 5. Scan the barcode with your preferred authenticator app (e.g. Google Authenticator), and enter the 6-digit code along with a device name (e.g. my mobile) and click 'Submit'.
 
-6. Once you have set up your authentication credentials, you will be shown the following screen instead of the one above, where you can enter the 6-digit code from your authenticator app.
+6. Once you have set up your additional authentication credentials, you will be shown the following screen instead of the one above, where you can enter the 6-digit code from your authenticator app.
     ![alt text](../../assets/images/ondemand_login_3.png)
 
 7. You are now asked about your current device: do you trust it or not?  
