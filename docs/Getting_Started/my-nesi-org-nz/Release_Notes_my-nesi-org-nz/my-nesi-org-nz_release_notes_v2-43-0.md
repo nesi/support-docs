@@ -18,6 +18,7 @@ search:
   - The application now features a new REANNZ favicon.
   - Additional rebranding updates include renaming NeSI references to REANNZ throughout the application.
   - The newsletter section has been refreshed. The latest REANNZ edition from September can be found at https://www.reannz.co.nz/news-and-events/news-from-reannz-september.
+  - The terms and conditions section has been updated to align with REANNZ branding and policies. Please review the updated terms to ensure compliance.
 
 ## Fixed
 - Persistent Storage Usage Display: in the project view, the persistent storage usage now shows the actual value in GB, rather than a percentage..
