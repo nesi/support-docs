@@ -10,11 +10,11 @@ tags:
 !!! prerequisite
     Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
 
-Find more information on [the NeSI Filesystem](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
+Find more information on [our filesystem](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
 
 ## OnDemand
 
-Requiring only a web browser the instructions are same whether your are connecting from a Windows, Mac or a Linux computer.
+Requiring only a web browser, the instructions are same whether your are connecting from a Windows, Mac or a Linux computer.
 See [OnDemand how to guide](../../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md) for more info.
 
 ## Standard Terminal
@@ -86,7 +86,7 @@ See [Standard Terminal]](Moving_files_to_and_from_the_cluster.md#standard-termin
 
 As WinSCP uses multiple tunnels for file transfer you will be required
 to authenticate again on your first file operation of the session. The
-second prompt for your 2FA can be skipped, just the same as with login
+second prompt for your second factor authentication can be skipped, just the same as with login
 authentication.
 
 ## Globus

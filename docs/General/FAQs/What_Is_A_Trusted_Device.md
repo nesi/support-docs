@@ -2,13 +2,13 @@
 created_at: '2018-05-28T03:40:42Z'
 title: What is a Trusted Device?
 tags: 
-    - 2FA
+    - MFA
     - access
 ---
 
 A trusted device is a piece of hardware (like a phone, computer, or tablet) 
 that a user has authorised to access their accounts or an organisation's resources, 
-typically after a verification process such as Second Factor Authentication (2FA).
+typically after a verification process such as the Multi-Factor Authentication (MFA).
 
 Do not trust shared laptops or public computers. Additionally, if you're using a private or incognito window in your browser, 
 keep in mind that it's temporary and should **not** be considered a secure or permanent environment: then do not trust it.
@@ -25,7 +25,7 @@ You should trust a device when it meets several criteria, including:
 
 ## What are the benefits to have a trusted device?
 
-Using a trusted device will simplify your login process. For example, if a device is not trusted, 2FA needs to be used at every login. However, if you login using a trusted device, you will not have to use your 2FA for 7 days on the same device.
+Using a trusted device will simplify your login process. For example, if a device is not trusted, additional authentication credentials need to be used at every login. However, if you login using a trusted device, you will not have to use your additional authentication credentials for 7 days on the same device.
 
 ## What name shall I give to my trusted device?
 
