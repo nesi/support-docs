@@ -1,4 +1,11 @@
-# Jupyter kernels - Tool-assisted management
+---
+title: Jupyter kernels - Tool-assisted management
+description: 
+tags: 
+    - JupyterHub
+    - Python
+    - R
+---
 
 !!! warning
 
