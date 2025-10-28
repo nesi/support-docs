@@ -1,15 +1,10 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
+description: How to upload files from your local machine to the cluster.
 tags:
-- scp
 - transfer
 - copying
 - download
-- upload
-- mv
-- cp
-- move
-- moving
 ---
 
 !!! prerequisite
