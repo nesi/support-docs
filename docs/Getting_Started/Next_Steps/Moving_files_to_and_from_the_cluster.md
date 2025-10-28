@@ -1,15 +1,10 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
+description: How to upload files from your local machine to the cluster.
 tags:
-- scp
 - transfer
 - copying
 - download
-- upload
-- mv
-- cp
-- move
-- moving
 ---
 
 !!! prerequisite
@@ -82,17 +77,7 @@ If your default file manager does not support mounting over SFTP, see
 !!! prerequisite
     [MobaXterm Setup Windows](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
 
-Clicking the "*Scp*" tab (located on the left-hand side of the  
-window) opens up a graphical user interface that can be used for basic
-file operations. You can drag and drop files in the file explorer or use
-the up and down arrows on the toolbar to upload and download files.
-
-![moba terminal](../../assets/images/Moving_files_to_and_from_the_cluster_2.png)
-
-You may also transfer files as described under 'Standard Terminal'
-(provided
-[Windows_Subsystem_for_Linux](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-is enabled).
+See [Standard Terminal]](Moving_files_to_and_from_the_cluster.md#standard-terminal), [Rclone]](Moving_files_to_and_from_the_cluster.md#rclone), or [Rsync]](Moving_files_to_and_from_the_cluster.md#rsync) for information on how to move files to and from the HPC in the terminal.
 
 ## WinSCP
 
