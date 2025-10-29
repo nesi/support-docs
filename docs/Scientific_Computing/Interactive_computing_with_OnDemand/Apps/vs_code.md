@@ -10,13 +10,13 @@ VS Code can be a useful tool for developing code with support for many languages
 ## Accessing VSCode on NeSI
 
 
-VS Code at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the code-server application there.
+VS Code at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the VS Code application there.
 
 
 ## VS Code user interface
 
 
-The code-server application allows you to access interactive computing with NeSI via [VS Code for Web](https://code.visualstudio.com/docs/setup/vscode-web). This provides a browser based VS Code experience including the use of most extensions and debugging tools.
+The VS Code application allows you to access interactive computing with NeSI via [VS Code for Web](https://code.visualstudio.com/docs/setup/vscode-web). This provides a browser based VS Code experience including the use of most extensions and debugging tools.
 
 ### filesystems
 
