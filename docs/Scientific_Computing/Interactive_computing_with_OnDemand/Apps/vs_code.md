@@ -36,6 +36,8 @@ If you wish to not have this folder recreated upon login then please place the f
 
 VS Code has an extensive library of extensions available to improve language support, debugging and more.
 
+Some extensions do not work in VS Code for Web and will be marked as unavailable in the Extensions view. For more details please see the [VS Code for Web docs](https://code.visualstudio.com/docs/setup/vscode-web#_extensions).
+
 
 ## External documentation
 - [VS Code](https://code.visualstudio.com/docs)
