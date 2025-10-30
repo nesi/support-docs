@@ -132,7 +132,7 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
 
     ```sh
     mkdir -p ~/.ssh
-    [ -f .ssh/id_rsa ] ssh-key -t rsa -q -N ""
+    [ -f .ssh/id_rsa ] || ssh-key -t rsa -q -N ""
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
     ```
 
