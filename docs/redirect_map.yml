@@ -44,8 +44,7 @@ hc/en-gb/articles/360000205435-File-permissions-and-groups.md: Storage/File_Syst
 hc/en-gb/articles/360000205435.md: Storage/File_Systems_and_Quotas/File_permissions_and_groups.md
 hc/en-gb/articles/360000207315-File-Recovery.md: Storage/Data_Recovery/File_Recovery.md
 hc/en-gb/articles/360000207315.md: Storage/Data_Recovery/File_Recovery.md
-hc/en-gb/articles/360000214036-Two-Factor-Authentication-FAQ.md: General/FAQs/Two_Factor_Authentication_FAQ.md
-hc/en-gb/articles/360000214036.md: General/FAQs/Two_Factor_Authentication_FAQ.md
+General/FAQs/Two_Factor_Authentication_FAQ.md : General/FAQs/What_is_Multiple_Factor_Authentication_MFA.md
 hc/en-gb/articles/360000216035-Account-Requests-for-non-Tuakiri-Members.md: General/Policy/Account_Requests_for_non_Tuakiri_Members.md
 hc/en-gb/articles/360000216035.md: General/Policy/Account_Requests_for_non_Tuakiri_Members.md
 hc/en-gb/articles/360000217915-Personal-Globus-Endpoint-Configuration.md: Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md
@@ -79,9 +78,8 @@ hc/en-gb/articles/360000625535.md: Scientific_Computing/Terminal_Setup/Standard_
 Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md: Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md
 hc/en-gb/articles/360000684396-Submitting-your-first-job.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
 hc/en-gb/articles/360000684396.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
-hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token.md: General/FAQs/How_to_replace_my_2FA.md
-hc/en-gb/articles/360000684635.md: General/FAQs/How_to_replace_my_2FA.md
-General/FAQs/How_to_replace_my_2FA_token.md: General/FAQs/How_to_replace_my_2FA.md
+General/FAQs/How_to_replace_my_2FA_token.md: General/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md
+General/FAQs/How_to_replace_my_2FA.md: General/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md
 hc/en-gb/articles/360000690275-Parallel-Execution.md: Getting_Started/Next_Steps/Parallel_Execution.md
 hc/en-gb/articles/360000690275.md: Getting_Started/Next_Steps/Parallel_Execution.md
 hc/en-gb/articles/360000691716-Slurm-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md
@@ -202,7 +200,7 @@ hc/en-gb/articles/360001419576-MAKER.md: Scientific_Computing/Supported_Applicat
 hc/en-gb/articles/360001419576.md: Scientific_Computing/Supported_Applications/MAKER.md
 hc/en-gb/articles/360001471955-GPU-use-on-NeSI.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
 hc/en-gb/articles/360001471955.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
-Scientific_Computing/Batch_Jobs/Using_GPUs.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
+# Scientific_Computing/Batch_Jobs/Using_GPUs.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
 hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001500156.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001508515-Git-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Git-Reference_Sheet.md
@@ -296,8 +294,6 @@ hc/en-gb/articles/6529511928207-BRAKER.md: Scientific_Computing/Supported_Applic
 hc/en-gb/articles/6529511928207.md: Scientific_Computing/Supported_Applications/BRAKER.md
 hc/en-gb/articles/6623692647951-Dorado.md: Scientific_Computing/Supported_Applications/Dorado.md
 hc/en-gb/articles/6623692647951.md: Scientific_Computing/Supported_Applications/Dorado.md
-hc/en-gb/articles/7348919239695-What-is-a-Subscription.md: Service_Subscriptions/Overview/What_is_a_Subscription.md
-hc/en-gb/articles/7348919239695.md: Service_Subscriptions/Overview/What_is_a_Subscription.md
 hc/en-gb/articles/7348950467343-Types-of-contracts.md: Service_Subscriptions/Contracts_and_billing_processes/Types_of_contracts.md
 hc/en-gb/articles/7348950467343.md: Service_Subscriptions/Contracts_and_billing_processes/Types_of_contracts.md
 hc/en-gb/articles/7349082099343-Service-Governance-contact.md: Service_Subscriptions/Service_Governance/Service_Governance_contact.md
@@ -306,10 +302,6 @@ hc/en-gb/articles/7349135008783-Allocation-approvals.md: Service_Subscriptions/S
 hc/en-gb/articles/7349135008783.md: Service_Subscriptions/Service_Governance/Allocation_approvals.md
 hc/en-gb/articles/7349136678543-Subscriber-Monthly-Usage-Reports.md: Service_Subscriptions/Service_Governance/Subscriber_Monthly_Usage_Reports.md
 hc/en-gb/articles/7349136678543.md: Service_Subscriptions/Service_Governance/Subscriber_Monthly_Usage_Reports.md
-hc/en-gb/articles/7349177261455-Pricing.md: Service_Subscriptions/Overview/Pricing.md
-hc/en-gb/articles/7349177261455.md: Service_Subscriptions/Overview/Pricing.md
-hc/en-gb/articles/7349178188943-Questions.md: Service_Subscriptions/Overview/Questions.md
-hc/en-gb/articles/7349178188943.md: Service_Subscriptions/Overview/Questions.md
 hc/en-gb/articles/7352114813455-Billing-process.md: Service_Subscriptions/Contracts_and_billing_processes/Billing_process.md
 hc/en-gb/articles/7352114813455.md: Service_Subscriptions/Contracts_and_billing_processes/Billing_process.md
 hc/en-gb/articles/7403361932431-snpEff.md: Scientific_Computing/Supported_Applications/snpEff.md
