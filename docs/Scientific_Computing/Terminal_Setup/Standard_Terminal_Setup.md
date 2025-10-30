@@ -128,25 +128,21 @@ configurations.
 
 Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
 
-1. In a terminal **on the HPC** (either through SSH or OnDemand), run the command;
+1. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
 
     ```sh
     mkdir -p ~/.ssh
+    [ -f .ssh/id_rsa ] ssh-key -t rsa -q -N ""
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
     ```
 
 2. In a terminal **on your local machine**, run the command; 
 
     ```sh
-    mkdir -p ~/.ssh && ssh-keygen -qf ~/.ssh/mahuika_key -N "" && scp ~/.ssh/mahuika_key.pub mahuika:~/.ssh/
-    ```
-    
-3. In a terminal **on the HPC** (either through SSH or OnDemand), run the command;
-
-    ```sh
-    cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys && rm ~/.ssh/mahuika_key.pub
+    scp mahuika:~/.ssh/id_rsa ~/.ssh/mahuika_key 
     ```
 
-4. If you set up your ssh config recently, you may already have this line added.
+3. If you set up your ssh config recently, you may already have this line added.
 
     Open the file `~/.ssh/config` **on your local machine**, for example;
 
