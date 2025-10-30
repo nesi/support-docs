@@ -57,7 +57,7 @@ Branch deployments can be shared
 
 Sharing this address will allow other people to view your deployment, so long as your codespace is running.
 
-## Local Development Environment (RECCOMENDED)
+## Local Development Environment (Recommended)
 
 A local development environment is not required to make doc edits, but if you are making lots of changes, the real time rendering can be quite helpful.
 
