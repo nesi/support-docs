@@ -59,7 +59,7 @@ pip install -r requirements.txt
 Make sure to test it on a GitHub runner (not just locally), as this is the actual build environment. To run locally:
 
 ```sh
-mkdocs serve
+mkdocs serve -c
 ```
 
 ## Migration
