@@ -6,7 +6,9 @@ on:
               type: boolean
               description: Force even if no changes.
   schedule:
-    - cron: '00 12 * * *' # Should run 1 hour after module list update.
+    - cron: '20 * * * *' # Should run 1 hour after module list update.
+    #- cron: '00 12 * * *' # Should run 1 hour after module list update.
+
 env:
   MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
   MODULES_UPDATE_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
