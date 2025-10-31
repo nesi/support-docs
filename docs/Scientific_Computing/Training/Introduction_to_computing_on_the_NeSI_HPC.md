@@ -1,5 +1,6 @@
 ---
 created_at: '2022-07-26T21:43:02Z'
+description: Links to NeSIs training videos on YouTube.
 tags: 
   - ondemand
   - login
