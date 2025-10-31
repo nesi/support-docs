@@ -14,7 +14,7 @@ There are two commands that GUFI provides:
 * `gufi_du`: For obtaining the size of files and folders
 
 !!! warning
-    This method uses a database that is updated on a weekly basis. It may not find or measure the size of files that were created or moved about mahuika within a week of them being created or moved. 
+    This method uses a database that is updated on a weekly basis. It may not find or measure the size of files that were created or moved around Mahuika within the last week. 
 
 !!! note
     The filesystems that `gufi_find` and `gufi_du` work on are:
@@ -29,15 +29,13 @@ There are two commands that GUFI provides:
     * `/nesi/nobackup/nesi12345/a_folder`, `nesi12345/a_folder`, or `./nesi12345/a_folder` will not work. 
 
 
-## Prerequisite: Must Load `gufi` Module 
+## Prerequisite: Must Load `gufi` Module
 
-To use `gufi_find` and `gufi_du`, you must load them by entering in the following command in mahuika:
+To use `gufi_find` and `gufi_du`, you must load them by entering in the following command in Mahuika:
 
 ```sh
 module load .gufi
 ```
-
-Without this, `gufi_find` and `gufi_du` will not be loaded. 
 
 
 ## Finding Files and Folders using GUFI
@@ -45,26 +43,26 @@ Without this, `gufi_find` and `gufi_du` will not be loaded.
 The usual method for searching for a file using the terminal is:
 
 ```sh
-find path/to/folder/to/search -name "*NameOfFileToSearchFor*"
+find path/to/folder/to/search -name <your_file>
 ```
 
 In GUFI, you provide the same arguments to `gufi_find` as you do with `find` (but starting with either `home`, `projects`, or `nobackup`):
 
 ```sh
-gufi_find path/to/folder/to/search -name "*NameOfFileToSearchFor*"
+gufi_find path/to/folder/to/search -name <your_file>
 ```
 
 !!! example
     If you want to find `.bashrc` in your home directory:
     
     ```sh
-    gufi_find home/USERNAME -name .bashrc
+    gufi_find home/$USER -name .bashrc
     ```
 
     If you want to find the largest file in your folder:
 
     ```sh
-    gufi_find home/USERNAME -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
+    gufi_find home/$USER -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     gufi_find project/nesi12345 -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     gufi_find nobackup/nesi12345 -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     ```
@@ -89,13 +87,13 @@ For more options, see `gufi_du --help`
     If you want to find the size of your in your home directory:
     
     ```sh
-    gufi_du -hs home/USERNAME
+    gufi_du -hs home/$USER
     ```
 
     If you want to find the size of your `.bashrc` in your home directory:
     
     ```sh
-    gufi_du -hs home/USERNAME/.bashrc
+    gufi_du -hs home/$USER/.bashrc
     ```
 
     If you want to find the size of your project folder in `projects` or `nobackup`:
