@@ -6,12 +6,15 @@ vote_count: 0
 vote_sum: 0
 ---
 
-GUFI (Grand Unified File Index) is a file system metadata indexing tool designed for large-scale data centers to enable fast, secure, and comprehensive searches of files and directories. It works by creating a hierarchical index that preserves file access permissions, allowing users to efficiently find and characterize data across multiple, potentially disparate file systems. This results in significantly faster search times compared to traditional methods.
+GUFI (Grand Unified File Index) is a file system metadata indexing tool designed for large-scale data centers to enable fast, secure, and comprehensive searches of files and directories. It works by creating a hierarchical index that preserves file access permissions, allowing users to efficiently find and characterize data across multiple, potentially disparate file systems. This results in significantly faster search times and lessens impact/load on parallel filesystems compared to traditional methods.
 
 There are two commands that GUFI provides:
 
 * `gufi_find`: For finding files and subfolders in a directory
 * `gufi_du`: For obtaining the size of files and folders
+
+!!! warning
+    This method uses a database that is updated on a weekly basis. It may not find or measure the size of files that were created or moved about mahuika within a week of them being created or moved. 
 
 !!! note
     The filesystems that `gufi_find` and `gufi_du` work on are:
@@ -25,8 +28,6 @@ There are two commands that GUFI provides:
     * `nobackup/nesi12345/a_folder` and `/nobackup/nesi12345/a_folder` are acceptible, but 
     * `/nesi/nobackup/nesi12345/a_folder`, `nesi12345/a_folder`, or `./nesi12345/a_folder` will not work. 
 
-!!! warning
-    This method uses a database that is updated on a weekly basis. It may not find or measure the size of files that were created or moved about mahuika within a week of them being created or moved. 
 
 ## Prerequisite: Must Load `gufi` Module 
 
