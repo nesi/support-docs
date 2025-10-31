@@ -9,7 +9,7 @@ description: Enabling WSL allows utilising Linux tools on Windows.
 ---
 
 !!! prerequisite
-     -   Windows 10 (version 1903) or later.
+     -   Windows 10 (version 2004) or later.
 
 Windows Subsystem for Linux is a feature that allows you to utilise some
 Linux commands and command line tools.
@@ -20,22 +20,19 @@ WSL is enabled by default on later versions of Windows 10.
      WSL1 has been superseded by WSL2, which is an
      [improvement in several areas](https://learn.microsoft.com/en-us/windows/wsl/compare-versions).
   
-     You can what version is installed by opening 'Windows PowerShell'
+     You can see what version is installed by opening 'Windows PowerShell'
      and typing `wsl --version`.
   
      If you are still using WSL1, see
      [Upgrade version from WSL1 to WSL2](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2)
 
-## Enabling WSL
+## Installing WSL
 
-1. Open 'Turn Windows features on or off'  
-    ![WSL1.png](../../assets/images/Windows_Subsystem_for_Linux_WSL.png)
-2. Scroll down and tick the 'Windows Subsystem for Linux' option.  
-    ![WSL2.png](../../assets/images/Windows_Subsystem_for_Linux_WSL_0.png)
-  
-    And click OK
+Microsoft provides [setup instructions](https://learn.microsoft.com/en-us/windows/wsl/install) for installing both WSL and a WSL distribution.
+You will need administrative access on your computer if WSL was not preinstalled.
 
-3. Wait for the installation to finish then restart your computer.
+To check if WSL is already installed on your Windows PC, open Windows Command Prompt, Terminal, or Powershell and run `wsl --list --online`.
+This should return a list of available WSL distributions.
 
 ## Installing a Distribution
 
