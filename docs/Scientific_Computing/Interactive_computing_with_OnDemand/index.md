@@ -19,7 +19,7 @@ A number of interactive applications can be accessed through OnDemand, including
 
 - [JupyterLab](Apps/JupyterLab/index.md)
 - [RStudio](Apps/RStudio.md)
-- [Code server](Apps/code_server.md)
+- [VS Code](Apps/VSCode.md)
 - [Virtual desktop](Apps/virtual_desktop.md)
 - [MATLAB](Apps/MATLAB.md) - currently under development, let us know if this is of interest
 
