@@ -29,11 +29,10 @@ The VS Code terminal acts like the Shell Access terminal also available via OnDe
 
 ## Installing VS Code extensions
 
-VS Code has an [extensive library of extensions](https://marketplace.visualstudio.com/VSCode) available to improve language support, debugging, and more.
-
-Some extensions do not work in VS Code for Web and will be marked as unavailable in the Extensions view within the OnDemand VS Code app. For more details please see the [VS Code for Web docs](https://code.visualstudio.com/docs/setup/vscode-web#_extensions).
+The NeSI OnDemand deployment of VS Code does not support all VS Code extensions. Supported extensions can be found in the [Open VSX Registry](https://open-vsx.org/?sortBy=relevance&sortOrder=desc).
 
 ## External documentation
 
 - [VS Code](https://code.visualstudio.com/docs)
 - [VS Code for Web](https://code.visualstudio.com/docs/setup/vscode-web)
+- [Open VSX Registry](https://open-vsx.org/?sortBy=relevance&sortOrder=desc)
