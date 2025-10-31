@@ -3,3 +3,4 @@ production/*
 **.pyc
 .venv/*
 dictionary.dic
+.DS_Store
