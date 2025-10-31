@@ -16,20 +16,20 @@ Technical documentation for our High Performance Computing (HPC) platforms.
 
 <div class="grid cards">
 <a href="/Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
-    <h3>Accounts</h3>
     <img alt="account details" src="assets/icons/material/account-details.svg">
+    <h3>Accounts</h3>
     <hr>
     <p>How to get started with accounts, projects and allocations.</p>
 </a>
 <a href="/Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
-    <h3>SSH Setup</h3>
     <img alt="account details" src="assets/icons/material/lan-connect.svg">
+    <h3>SSH Setup</h3>
     <hr>
     <p>How to set up a connection to the cluster from your terminal.</p>
 </a>
 <a href="/Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
+    <img alt="account details" src="assets/icons/material/compass-outline.svg">
     <h3>OnDemand</h3>
-    <img alt="account details" src="assets/icons/material/account-details.svg">
     <hr>
     <p>Access the cluster Via the OnDemand web application.</p>
 </a>
