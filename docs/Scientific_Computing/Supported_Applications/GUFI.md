@@ -108,3 +108,37 @@ For more options, see `gufi_du --help`
     ```sh
     gufi_du --inodes -s nobackup/nesi12345/a_folder
     ```
+
+## Troubleshooting
+
+### My file or folder exists, but `GUFI` does not include it during its search
+
+If your file or folder exists but `GUFI` does not find it, it is likely that your folder has not been indexed by `GUFI` yet. You will need to wait until the end of the week for those files and folders to be indexed by `GUFI`. 
+
+* In the meantime, you can either use `find` or `du` instead of `gufi_find` or `gufi_du` as alternatives for these functions. 
+
+### I get the message: `Does "XYZ" have treesummary data?`
+
+If you get a message like this:
+
+```sh
+gufi_du --inodes -s nobackup/nesi99991
+Error: Skipping directory "/search/nobackup/nesi99991": Permission denied (13)
+0 nobackup/nesi99991
+Warning: Did not get any results from gufi_query.
+Does "nobackup/nesi99991" have treesummary data?
+```
+
+This means that `gufi_find` or `gufi_du` was not able to find any information about the path you gave it to search. This could be because:
+
+1. The folder you are search in doesn't exist, 
+2. You don't have permissions to look at the files and folders that you were trying to search in, or 
+3. Your files and folders were created before they were included in the `GUFI` database. 
+
+If 3 applies to you, you will need to wait until the end of the week for those files and folders to be indexed by `GUFI`.
+
+### I get the message: `Error: Skipping directory "nobackup/XYZ": Permission denied (13)`
+
+If you see this error, this is because you do not have the correct permissions to view this directory. 
+
+* If you want to use `GUFI` on this directory, you will need to get read permissions from the person who created this directory. 
