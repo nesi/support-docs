@@ -14,8 +14,8 @@ We do this to optimise the availability of this filesystem for active research c
 
 Files are deleted if they meet **all** of the following criteria:
 
-- The file was first created more than 90 days ago
-- The file has not been accessed, and neither its data nor its metadata has been modified, for at least 90 days
+- The file was first created more than 60 days ago
+- The file has not been accessed, and neither its data nor its metadata has been modified, for at least 60 days
 - The file was identified as a candidate for deletion two weeks previously (and as such is listed in the project's nobackup `.policy` directory)
 
 
@@ -23,20 +23,23 @@ The general process follows a schedule of:
 
 - Every fortnight on Tuesday morning, we review files stored in the scratch filesystem and identify candidates for expiry.
 - Project teams will be notified by email if they have file candidates for deletion. Emails will be sent two weeks in advance of any deletion taking place.
-- Immediately after deletion is complete, a new set of candidate files will be identified for expiry during the next automated cleanup. These candidate files are all files within the project's scratch filesystem that have not been created, accessed or modified within the last 64 days.
+- Immediately after deletion is complete, a new set of candidate files will be identified for expiry during the next automated cleanup. These candidate files are all files within the project's scratch filesystem that have not been created, accessed or modified within the last 36 days.
 
-In summary, we **notify** at 64 days (2 weeks advance notice) and then **delete** at 90 days.
+In summary, we **notify** at 36 days (2 weeks advance notice) and then **delete** at 60 days.
 
-There will be ***no exclusions*** to this auto-deletion process. If you need to store data for longer than 90 days, [get in touch with our Support Team](mailto:support@nesi.org.nz).
+There will be ***no exclusions*** to this auto-deletion process. If you need to store data for longer than 60 days, [get in touch with our Support Team](mailto:support@nesi.org.nz).
 
 !!! tip
-     At any time you can check for and delete files older than 90 days (replace <project code> with the project code of interest, e.g. “nesi99999”):
+     At any time you can check for and delete files older than 60 days (replace <project code> with the project code of interest, e.g. “nesi99999”):
 
-    - To list all files (and their owners) not accessed within 90 days, run the following command (you may want to redirect the output to a file): 
-    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'
+    - To list all files (and their owners) not accessed within 60 days, run the following command (you may want to redirect the output to a file): 
+    ```find /nesi/nobackup/<project code> -type f -atime +60 -ctime +60 -printf '%u : %p\n'```
+
+    - To direct this to a file: 
+    ```find /nesi/nobackup/<project code> -type f -atime +60 -ctime +60 -printf '%u : %p\n' > files_that_will_be_deleted.txt```
 
     - To delete those files, run this command:
-    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete
+    ```find /nesi/nobackup/<project code> -type f -atime +60 -ctime +60 -delete```
 
 
 Objects other than files, such as directories and symbolic links, are not deleted under this policy, even if at deletion time they are empty, broken, or otherwise redundant. These entities typically take up no disk space apart from a small amount of metadata, but still count towards the project's inode (file count) quota.
