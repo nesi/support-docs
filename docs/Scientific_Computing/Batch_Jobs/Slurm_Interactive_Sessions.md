@@ -213,7 +213,7 @@ Then, in your browser, type in the URL from before
 http://127.0.0.1:PORT/lab?token=TOKEN
 
 # For example:
-http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
+# http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
 ```
 
 You will now be able to see and work wih Python+JupyterLab in your web browser. 
@@ -295,7 +295,7 @@ Then, in your browser, type in the URL from before
 http://0.0.0.0:PORT/?secret=SECRET
 
 # For example:
-http://0.0.0.0:9627/?secret=mXmq6659
+# http://0.0.0.0:9627/?secret=mXmq6659
 ```
 
 You will now be able to see and work wih Julia+Pluto in your web browser. 
