@@ -137,10 +137,10 @@ disrupted while you're away.
 
 ## Running Python+JupyterLab in Interactive Mode
 
-!!! Warning
-  If you are using a windows computer, this method has currently 
-  been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
-  tested it yet in Putty or Mobaxterm
+!!! warning
+     If you are using a windows computer, this method has currently 
+     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+     tested it yet in Putty or Mobaxterm
 
 To run Python+JupyterLab in interactive mode, first we need to load 
 your interactive session:
@@ -221,10 +221,10 @@ You will now be able to see and work wih Python+JupyterLab in your web browser.
 
 ## Running Julia+Pluto.ji in Interactive Mode
 
-!!! Warning
-  If you are using a windows computer, this method has currently 
-  been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
-  tested it yet in Putty or Mobaxterm
+!!! warning
+     If you are using a windows computer, this method has currently 
+     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+     tested it yet in Putty or Mobaxterm
 
 To run Julia+Pluto.ji in interactive mode, first we need to load 
 your interactive session:
