@@ -72,13 +72,13 @@ gufi_find path/to/folder/to/search -name <your_file>
 The usual method for obtaining the size of a file or folder using the terminal is:
 
 ```sh
-du -hs path/to/file/or/folder
+du -s path/to/file/or/folder
 ```
 
 In GUFI, you provide the same arguments to `gufi_du` as you do with `du` (but starting with either `home`, `projects`, or `nobackup`):
 
 ```sh
-gufi_du -hs path/to/file/or/folder
+gufi_du -s path/to/file/or/folder
 ```
 
 For more options, see `gufi_du --help`
@@ -87,20 +87,20 @@ For more options, see `gufi_du --help`
     If you want to find the size of your in your home directory:
     
     ```sh
-    gufi_du -hs home/$USER
+    gufi_du -s home/$USER
     ```
 
     If you want to find the size of your `.bashrc` in your home directory:
     
     ```sh
-    gufi_du -hs home/$USER/.bashrc
+    gufi_du -s home/$USER/.bashrc
     ```
 
     If you want to find the size of your project folder in `projects` or `nobackup`:
     
     ```sh
-    gufi_du -hs project/nesi12345
-    gufi_du -hs nobackup/nesi12345
+    gufi_du -s project/nesi12345
+    gufi_du -s nobackup/nesi12345
     ```
 
     If you want to obtain the number of files in a folder, such as `nobackup/nesi12345/a_folder`, you would do the following:
@@ -116,6 +116,13 @@ For more options, see `gufi_du --help`
 If your file or folder exists but `GUFI` does not find it, it is likely that your folder has not been indexed by `GUFI` yet. You will need to wait until the end of the week for those files and folders to be indexed by `GUFI`. 
 
 * In the meantime, you can either use `find` or `du` instead of `gufi_find` or `gufi_du` as alternatives for these functions. 
+
+!!! example
+
+    ```sh
+    john.doe@login03:~$ gufi_find home/new_folder
+    Could not get realpath of "/search/home/new_folder": No such file or directory (2)
+    ```
 
 ### I get the message: `Does "XYZ" have treesummary data?`
 
@@ -142,3 +149,14 @@ If 3 applies to you, you will need to wait until the end of the week for those f
 If you see this error, this is because you do not have the correct permissions to view this directory. 
 
 * If you want to use `GUFI` on this directory, you will need to get read permissions from the person who created this directory. 
+
+!!! example
+
+    ```sh
+    john.doe@login03:/nesi/nobackup/nesi12345$ gufi_du nobackup/nesi12345/test.txt
+    Error: Skipping directory "nobackup/nesi12345/test.txt": Permission denied (13)
+    ```
+
+### I can not use tab to autocomplete, and sometimes autocompleting using tab logs me out of my Mahuika login
+
+This is a known problem. We are currently looking for a fix for this. 
