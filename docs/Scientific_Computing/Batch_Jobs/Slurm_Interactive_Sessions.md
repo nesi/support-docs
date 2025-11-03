@@ -137,6 +137,11 @@ disrupted while you're away.
 
 ## Running Python+JupyterLab in Interactive Mode
 
+!!! Warning
+  If you are using a windows computer, this method has currently 
+  been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+  tested it yet in Putty or Mobaxterm
+
 To run Python+JupyterLab in interactive mode, first we need to load 
 your interactive session:
 
@@ -216,6 +221,11 @@ You will now be able to see and work wih Python+JupyterLab in your web browser.
 
 ## Running Julia+Pluto.ji in Interactive Mode
 
+!!! Warning
+  If you are using a windows computer, this method has currently 
+  been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+  tested it yet in Putty or Mobaxterm
+
 To run Julia+Pluto.ji in interactive mode, first we need to load 
 your interactive session:
 
@@ -269,8 +279,8 @@ Take a note of the information given for the URL
 Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access 
 Pluto. 
 
-In a second terminal on your local machine (or a second screen in tmux or screen),
-type the following:
+Next, open up a second terminal on your local machine (or a second screen 
+in tmux or screen), and type the following:
 
 ```sh
 ssh -L PORT:HOSTNAME:PORT mahuika
