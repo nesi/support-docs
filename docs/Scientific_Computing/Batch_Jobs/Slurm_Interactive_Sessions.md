@@ -144,7 +144,8 @@ your interactive session:
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
 ```
 
-Then, we need to start up JupyterLab:
+Then, we need to start up Python, install JupyterLab if you dont have it 
+yet, and obtain the hostname and the port:
 
 ```sh
 # Load Python
@@ -165,20 +166,24 @@ PORT=$(shuf -i8000-9999 -n1)
 # see it at the start of your prompt
 hostname | cut -d'.' -f1 # <-- This is the hostname
 echo $PORT               # <-- This is the port
+```
 
+Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
+and `echo $PORT` commands. Then, we need to start up JupyterLab:
+
+```sh
 # Start Jupyter. This might take a minute
 jupyter lab --no-browser --ip=0.0.0.0 --port=$PORT
 ```
 
-Make a node of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Also make a note of the second URL given by 
-JupyterLab once it launches. For instance: 
+Make a note of the second URL given by JupyterLab once it launches. 
+For instance: 
 
 ```sh
 [C 2025-11-03 14:34:31.797 ServerApp] 
     
     To access the server, open this file in a browser:
-        file:///home/geoff.weal/.local/share/jupyter/runtime/jpserver-2965439-open.html
+        file:///home/john.doe/.local/share/jupyter/runtime/jpserver-2965439-open.html
     Or copy and paste one of these URLs:
         http://c003.hpc.nesi.org.nz:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
         http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
@@ -217,7 +222,7 @@ your interactive session:
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
 ```
 
-Then, we need to start up Pluto.ji:
+Then, we need to start up Julia and obtain the hostname and the port:
 
 ```sh
 # Load Julia
@@ -233,7 +238,13 @@ echo $PORT               # <-- This is the port
 
 # Export port to a variable name
 export pluto_port=${PORT}
+```
 
+Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
+and `echo $PORT` commands. Then, we need to start up Julia, install and 
+run Pluto.ji:
+
+```sh
 #Start Julia
 julia
 
