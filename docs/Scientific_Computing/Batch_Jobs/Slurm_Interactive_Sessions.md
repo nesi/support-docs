@@ -192,7 +192,8 @@ For instance:
 The `http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117`
 address in this case will be our url that we will use to launch JupyterLabs
 
-In a second terminal, type the following:
+In a second terminal on your local machine (or a second screen in tmux or screen),
+type the following:
 
 ```sh
 ssh -L PORT:HOSTNAME:PORT mahuika
@@ -268,7 +269,8 @@ Take a note of the information given for the URL
 Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access 
 Pluto. 
 
-In a second terminal, type the following:
+In a second terminal on your local machine (or a second screen in tmux or screen),
+type the following:
 
 ```sh
 ssh -L PORT:HOSTNAME:PORT mahuika
