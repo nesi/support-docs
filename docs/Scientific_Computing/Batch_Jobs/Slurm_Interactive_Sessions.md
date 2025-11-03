@@ -4,7 +4,6 @@ tags:
   - interactive
   - scheduling
 description: How to run an interactive session on the NeSI cluster.
-status: deprecated
 ---
 
 A SLURM interactive session reserves resources on compute nodes allowing
@@ -83,7 +82,7 @@ salloc: Granted job allocation 10256925
 Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
 
-For a full description of `srun` and its options, see
+For a full description of `salloc` and its options, see
 [here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
 
 ### Requesting a postponed start
@@ -217,22 +216,18 @@ single command. To do so, you will first need to identify them, hence
 the earlier suggestion to something specific to interactive jobs in the
 job name.
 
-For example, if all your interactive job names start with the text "IJ",
+For example, if all your interactive job names start with the text "InteractiveJob",
 you could do this:
 
 ```sh
 # -u $(whoami) restricts the search to my jobs only.
 # The --states=PD option restricts the search to pending jobs only.
 #
-# Each <tab> string should be replaced with a literal tab character. If you
-# can't insert one by pressing the tab key on your keyboard, you should be
-# able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
-#
-squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ"
+squeue -u $(whoami) --states=PD -o "%A %j" | grep "InteractiveJob"
 ```
 
 The above command will return a list of your jobs whose names *start*
-with the text "IJ". In this respect, it's more flexible than the `-n`
+with the text "InteractiveJob". In this respect, it's more flexible than the `-n`
 option to `squeue`, which requires the entire job name string in order
 to identify a match.
 
@@ -241,7 +236,7 @@ for the job ID, so let's use `awk` to do this, and send the output to
 `scontrol` via `xargs`:
 
 ```sh
-squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
+squeue -u $(whoami) --states=PD -o "%A %j" | grep "InteractiveJob" | \
 awk '{print $1}' | \
 xargs -I {} scontrol update jobid={} StartTime=tomorrowT09:30:00
 ```
@@ -278,7 +273,16 @@ To cancel all your queued interactive sessions on a cluster in one fell
 swoop, a command like the following should do the trick:
 
 ```sh
-squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
+squeue -u $(whoami) --states=PD -o "%A %j" | grep "InteractiveJob" | \
+awk '{print $1}' | \
+xargs -I {} scancel {}
+```
+
+To cancel all your running interactive sessions on a cluster in one fell
+swoop, a command like the following should do the trick:
+
+```sh
+squeue -u $(whoami) --states=R -o "%A %j" | grep "InteractiveJob" | \
 awk '{print $1}' | \
 xargs -I {} scancel {}
 ```
