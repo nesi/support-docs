@@ -21,14 +21,14 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <hr>
     <p>How to get started with accounts, projects and allocations.</p>
 </a>
-<a href="/Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
-    <img alt="account details" src="assets/icons/material/lan-connect.svg">
-    <h3>SSH Setup</h3>
+<a href="/Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster/">
+    <img alt="ssh setup" src="assets/icons/material/lan-connect.svg">
+    <h3>Connecting to the Cluster</h3>
     <hr>
-    <p>How to set up a connection to the cluster from your terminal.</p>
+    <p>How to set up a connection to the cluster.</p>
 </a>
-<a href="/Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
-    <img alt="account details" src="assets/icons/material/compass-outline.svg">
+<a href="https://ondemand.nesi.org.nz/public/">
+    <img alt="ondemand" src="assets/icons/material/compass-outline.svg">
     <h3>OnDemand</h3>
     <hr>
     <p>Access the cluster Via the OnDemand web application.</p>
