@@ -1,16 +1,20 @@
 ---
 created_at: '2020-06-23T23:10:13Z'
-tags: []
-title: Miniforge3
-status: deprecated
+tags: 
+  - python
+  - environments
 ---
 
+!!! note "Preferred Alternatives"
+     - If you want a more reproducible and isolated environment, we
+         recommend using the [Apptainer containers](../../Scientific_Computing/Supported_Applications/Apptainer.md).
+     - If you only need access to Python and standard numerical libraries
+         (numpy, scipy, matplotlib, etc.), you can use the 
+         [Python environment module](../../Scientific_Computing/Supported_Applications/Python.md).
 
-[//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
 
 The `Miniforge3` environment module provides the
 [Conda](https://docs.conda.io/projects/conda/en/latest/) package and
@@ -18,13 +22,6 @@ environment manager. Conda lets you install packages and their
 dependencies in dedicated environment, giving you more freedom to
 install software yourself at the expense of possibly less optimized
 packages and no curation by the NeSI team.
-
-!!! note "Alternatives"
-     - If you want a more reproducible and isolated environment, we
-         recommend using the [Singularity containers](../../Scientific_Computing/Supported_Applications/Apptainer.md).
-     - If you only need access to Python and standard numerical libraries
-         (numpy, scipy, matplotlib, etc.), you can use the 
-         [Python environment module](../../Scientific_Computing/Supported_Applications/Python.md).
 
 ## Module loading and conda environments isolation
 
@@ -58,6 +55,17 @@ Here are the explanations for each line of this snippet:
      snippet in your `~/.bashrc` file that will freeze the version of conda
      used, bypassing the environment module system.
 
+!!! warning "Defaults Channel"
+     If you are using a `environment.yml` file, you will have to remove the
+     `defaults` channel, or you will receive an error.
+     
+     ``` out
+     Failed to create Conda environment
+     The channel is not accessible or is invalid.
+     ``` 
+     
+     The `defaults` channel is blocked due to Anaconda's licensing requirements.
+     
 ## Prevent conda from using /home storage
 
 Conda environments and the conda packages cache can take a lot of
