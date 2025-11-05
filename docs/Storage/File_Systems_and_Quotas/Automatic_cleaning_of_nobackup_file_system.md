@@ -21,11 +21,11 @@ Files are deleted if they meet **all** of the following criteria:
 
 The general process follows a schedule of:
 
-- Every fortnight on Tuesday morning, we review files stored in the scratch filesystem and identify candidates for expiry.
+- Every week on Tuesday morning, we review files stored in the scratch filesystem and identify candidates for expiry.
 - Project teams will be notified by email if they have file candidates for deletion. Emails will be sent two weeks in advance of any deletion taking place.
 - Immediately after deletion is complete, a new set of candidate files will be identified for expiry during the next automated cleanup. These candidate files are all files within the project's scratch filesystem that have not been created, accessed or modified within the last 64 days.
 
-In summary, we **notify** at 64 days (2 weeks advance notice) and then **delete** at 90 days.
+In summary, we **notify** at 76 days (2 weeks advance notice) and then **delete** at 90 days.
 
 There will be ***no exclusions*** to this auto-deletion process. If you need to store data for longer than 90 days, [get in touch with our Support Team](mailto:support@nesi.org.nz).
 
