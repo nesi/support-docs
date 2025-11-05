@@ -15,7 +15,7 @@ As part of the science system reforms, effective 01 July the *Crown Research Ins
 
 - **Bioeconomy**: A merger of AgResearch, Manaaki Whenua - Landcare Research, Plant & Food Research, and Scion.
 - **Earth Science**: A merger of NIWA, GNS Science, MetService, and Measurement Standards Laboratory of New Zealand.
-- **Health and Forensic Science**: A repurpose of ESR.
+- **Public Health and Forensic Science**: A repurpose of the Institute of Environmental Science and Research (ESR).
 
 All researchers and staff of these new PROs will have new emails affiliated with their new organisation.
 
