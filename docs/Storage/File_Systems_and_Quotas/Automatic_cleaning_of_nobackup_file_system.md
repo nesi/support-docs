@@ -21,7 +21,7 @@ Files are deleted if they meet **all** of the following criteria:
 
 The general process follows a schedule of:
 
-- Every week on Tuesday morning, we review files stored in the scratch filesystem and identify candidates for expiry.
+- Every week, we review files stored in the scratch filesystem and identify candidates for expiry.
 - Project teams will be notified by email if they have file candidates for deletion. Emails will be sent two weeks in advance of any deletion taking place.
 - Immediately after deletion is complete, a new set of candidate files will be identified for expiry during the next automated cleanup. These candidate files are all files within the project's scratch filesystem that have not been created, accessed or modified within the last 64 days.
 
