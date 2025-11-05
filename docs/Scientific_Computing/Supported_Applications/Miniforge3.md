@@ -64,7 +64,7 @@ Here are the explanations for each line of this snippet:
      The channel is not accessible or is invalid.
      ``` 
      
-     The `defaults` channel is blocked due to Anacondas licencing requirements.
+     The `defaults` channel is blocked due to Anaconda's licensing requirements.
      
 ## Prevent conda from using /home storage
 
