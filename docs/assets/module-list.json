@@ -66,7 +66,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.65,
+                        "hourly_average": 0.64,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -3377,7 +3377,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9,
+                "server_uptime": 0.91,
                 "server_version": "",
                 "features": [
                     {
@@ -3452,7 +3452,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 12.26,
+                        "hourly_average": 12.13,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3466,7 +3466,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 9.25,
+                        "hourly_average": 9.15,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3534,7 +3534,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 143101117.11,
+                        "hourly_average": 141508272.98,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4807,13 +4807,13 @@
         "force_show": "False"
     },
     "EasyBuild": {
-        "description": "",
+        "description": "EasyBuild is a software build and installation framework\n written in Python that allows you to install software in a structured,\n repeatable and robust way.",
         "domains": [
             "tools"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "",
+        "homepage": "https://easybuilders.github.io/easybuild",
         "support": "",
         "versions": [
             "4.4.1",
@@ -4826,15 +4826,16 @@
             "4.9.0",
             "4.9.2",
             "4.9.2",
-            "4.9.2"
+            "4.9.2",
+            "5.1.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.9.2",
+        "default": "5.1.2",
         "default_type": "latest",
-        "last_updated": 1744964564,
+        "last_updated": 1762390280,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/EasyBuild/4.9.2",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/EasyBuild/5.1.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11367,7 +11368,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.67,
+                "server_uptime": 0.68,
                 "server_version": "",
                 "features": []
             },
@@ -11424,7 +11425,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.16,
+                "server_uptime": 0.17,
                 "server_version": "",
                 "features": []
             },
@@ -11443,7 +11444,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.75,
+                "server_uptime": 0.76,
                 "server_version": "",
                 "features": []
             },
@@ -12205,7 +12206,9 @@
     "Miniforge3": {
         "description": "Community-led recipes, infrastructure and distributions for conda.",
         "domains": [
-            "lang"
+            "lang",
+            "python",
+            "environments"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13263,17 +13266,18 @@
             "2.10.3-CUDA-11.4.1",
             "2.16.5-CUDA-11.8.0",
             "2.17.1-CUDA-12.0.0",
+            "2.27.7-GCCcore-12.3.0-CUDA-12.2.2",
             "2.4.7-CUDA-10.1.243",
             "2.6.4-CUDA-10.2.89",
             "2.7.8-CUDA-11.0.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.17.1-CUDA-12.0.0",
+        "default": "2.27.7-GCCcore-12.3.0-CUDA-12.2.2",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1762394051,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/NCCL/2.17.1-CUDA-12.0.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/NCCL/2.27.7-GCCcore-12.3.0-CUDA-12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14004,6 +14008,7 @@
             "21.9-GCC-11.3.0-CUDA-11.4.1",
             "22.3-GCC-11.3.0-CUDA-11.6.2",
             "23.5-CUDA-12.1.1",
+            "23.9-CUDA-12.2.2",
             "24.3-CUDA-12.2.2"
         ],
         "admin_list": [],
@@ -14309,6 +14314,7 @@
             "4.1.3-GCC-11.3.0",
             "4.1.3-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
             "4.1.5-GCC-12.3.0",
+            "4.1.5-GCC-12.3.0-CUDA-12.2.2",
             "4.1.5-intel-compilers-2023.2.1"
         ],
         "admin_list": [
@@ -21188,6 +21194,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "UCC-CUDA": {
+        "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and\nfeature-rich for current and emerging programming models and runtimes.\n\nThis module adds the UCC CUDA support.\n",
+        "domains": [
+            "lib"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.openucx.org/",
+        "support": "",
+        "versions": [
+            "1.3.0-GCCcore-12.3.0-CUDA-12.2.2"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.3.0-GCCcore-12.3.0-CUDA-12.2.2",
+        "default_type": "latest",
+        "last_updated": 1762394232,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/UCC-CUDA/1.3.0-GCCcore-12.3.0-CUDA-12.2.2.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "UCX": {
         "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications\n",
         "domains": [
@@ -21213,6 +21241,28 @@
         "last_updated": 1746660024,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/UCX/1.18.1-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "UCX-CUDA": {
+        "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications\n\nThis module adds the UCX CUDA support.\n",
+        "domains": [
+            "lib"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "http://www.openucx.org/",
+        "support": "",
+        "versions": [
+            "1.18.1-GCCcore-12.3.0-CUDA-12.2.2"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.18.1-GCCcore-12.3.0-CUDA-12.2.2",
+        "default_type": "latest",
+        "last_updated": 1762393566,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/UCX-CUDA/1.18.1-GCCcore-12.3.0-CUDA-12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
