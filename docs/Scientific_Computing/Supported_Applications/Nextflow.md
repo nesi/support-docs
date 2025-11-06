@@ -5,8 +5,6 @@
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-[Nextflow](https://www.nextflow.io/) is a workflow system for creating scalable, portable, and reproducible workflows. It uses a dataflow programming model that simplifies writing parallel and distributed pipelines by allowing you to focus on data flow and computation. Nextflow can deploy workflows on a variety of execution platforms, including your local machine, HPC schedulers, and cloud. Additionally, Nextflow supports a range of compute environments, software container runtimes, and package managers, allowing workflows to be executed in reproducible and isolated environments.
-
 ## Running Nextflow in an interactive Slurm session
 
 ## Submitting a Nextflow workflow as a batch job
@@ -61,16 +59,42 @@ profiles {
     local {
         executor                = 'local'
     }
-    slurm {
-        executor                = 'slurm'
-        executor.queue          = 'genoa,milan'
-        executor.queueSize      = 100
-    }
 }
 
 cleanup                         = true
 ```
 
+## Time/compute intensive processes
+
+If any of your individual processes regularly take longer than 30 minutes, you can flag them to be submitted as additional Slurm jobs separate from the head job. To do this, give these processes a [label](https://www.nextflow.io/docs/latest/reference/process.html#label) such as `'slurm_array'` and add the following to your `nextflow.config` file:
+
+```json
+process {
+        withLabel: slurm_array {
+            executor            = 'slurm'
+            queue               = 'genoa,milan'
+            queueSize           = 10
+            jobName             = { "$task.name - $task.hash" }
+            slurm_array         = 100
+        }
+}
+```
+
+This will allow the main Nextflow Slurm job to submit this process to Slurm as separate tasks. `queueSize` limits the number of these additional Slurm jobs that can be queued simultaneously, while `array` tells Nextflow to group up to 100 processes with label and submit them as a job array. You can provide more specific labels and set up the configuration to request different resources for different processes.
+
+!!! warning "Avoid many short jobs"
+    This will put a major burden on the Slurm scheduler for no improvement in your computational speed. Do not use the Nextflow `slurm` executor for jobs which take less than 30 minutes to complete.
+    
+
+
+## Improving efficiency
+
+Nextflow provides tools that can assist you in making efficient use of the HPC resources. Running a pipeline with the CLI option `-with-report` will produce [a HTML execution report containing CPU and memory utilization information](https://www.nextflow.io/docs/latest/reports.html#execution-report) for each individual process as well as each process type. This information can be used to ensure processes are only getting the resources they need.
+
 ## Community pipelines - nf-core
 
 [nf-core](https://nf-co.re/) is a global community collaborating to build open-source Nextflow components and pipelines. Many standard pipelines and tools have nf-core pipelines or modules which allow you to skip straight to running the pipeline.
+
+!!! warning "Nextflow plugins"
+    nf-core pipelines expect to use nf-plugins in their base configuration. If you want to use these plugins, you will need to manually download them and store them in a plugin cache directory that you can specify with the `NXF_PLUGINS_DIR` environmental variable (as in the example `.sl` above)
+    
