@@ -46,6 +46,9 @@ Objects other than files, such as directories and symbolic links, are not delete
 
 Prior to data being deleted, we’ll send you an email identifying what has been marked for deletion. These email notifications are optional so if you do not want to receive them, you can ‘unsubscribe’ through my.nesi.org.nz.
 
+## How can I check which files have been already deleted or are scheduled for deletion?
+
+You can manually check at any time if you have any data that's already been deleted or is scheduled for deletion. A file containing the list of candidates for deletion during the next cleanup, along with the date of the next cleanup, will be created in a directory called `.policy/to_delete` inside your project's scratch directory.
 
 ## What should I do with expiring data on the nobackup filesystem?
 
