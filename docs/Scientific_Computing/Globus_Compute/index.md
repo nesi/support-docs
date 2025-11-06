@@ -65,10 +65,8 @@ Limitations and known problems related to our current implementation are listed 
 If these are impacting your ability to use this service, please [let us know](mailto:support@nesi.org.nz).
 
 - Currently limited to a single CPU
-- You must use Python 3.11 on the remote end
-  - we are exploring options to execute functions in containers, which could use different versions of Python
-- You can only import Python packages that are available in the `Python/3.11.6-foss-2023a` environment module
-  - containerisation will help here too
+- You must use Python 3.11 (we are exploring options to execute functions in containers, which will enable use of different Python versions)
+- You can only import Python packages that are available in the `Python/3.11.6-foss-2023a` environment module (containerisation will help here too)
 - Globus Compute version 3.x
 
 ## Other notes
