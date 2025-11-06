@@ -1,12 +1,12 @@
 ---
 created_at: '2018-11-16T01:13:47Z'
 tags: []
-status: deprecated
+status: 
 ---
 
 
 !!! prerequisite
-    - Please make sure you have followed the recommended setup. See [Choosing and Configuring Software for Connecting to the Clusters](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md) for more information.
+    - Please make sure you have followed the recommended setup. See [Connecting to the Clusters](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md) for more information.
     - Most terminals do not give an indication of how many characters have been typed when entering a password.
     - Paste is not usually bound to `ctrl` + `V` and will vary based on your method of access.
 
