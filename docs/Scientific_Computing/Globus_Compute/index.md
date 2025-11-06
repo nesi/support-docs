@@ -92,7 +92,7 @@ This endpoint submits work in Slurm jobs. The following configuration options ar
    python test.py
    ```
 
-## Limitation and known problems
+## Limitations and known problems
 
 Limitations and known problems related to our current implementation are listed here.
 If these are impacting your ability to use this service, please [let us know](mailto:support@nesi.org.nz).
