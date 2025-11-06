@@ -20,8 +20,8 @@ running a monolithic, parallel executable is that each task will require
 less resources that the complete problem, it is thus easier for each
 task to slip into the queue and start running.
 
-See the NeSI  [Snakemake](https://snakemake-on-nesi.sschmeier.com/) page
-for another, possible choice.
+See the NeSI [Snakemake](https://snakemake-on-nesi.sschmeier.com/) and [Nextflow](https://nextflow.io/) pages
+for other possible choices.
 
 In this article, we show how you can create a simple workflow and run it
 on NeSI's platform. Consult the [Cylc
@@ -42,7 +42,7 @@ filesystem, so this is easy):
 - run **`ssh-keygen`** to generate a public/private key pair with **no
     passphrase** (when it asks for a passphrase, just hit enter)
 - add your own public key to your authorized keys
-    file: **`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`** 
+    file: **`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`**
 - check that your **keys, authorized\_keys file, ssh
     directory, **and** home directory** all have sufficiently secure
     file permissions. If not, `ssh` will silently revert to requiring
@@ -57,39 +57,50 @@ being asked for a passphrase.
 ## How to install Cylc
 
 Create a new conda environment and install Cylc with the commands:
+
 ``` sh
 module purge
 module load Miniforge3
 export CYLC_HOME=/nesi/project/nesi99999/$USER/environment/cylc-env
 conda create --prefix $CYLC_HOME python=3.12
 ```
-where `CYLC_HOME` points to the installation path of your choice. Adjust `nesi99999` to fit your project number. It is not recommended to install in your home directory. 
+
+where `CYLC_HOME` points to the installation path of your choice. Adjust `nesi99999` to fit your project number. It is not recommended to install in your home directory.
 
 Then type
+
 ``` sh
 conda init
 ```
+
 Close and start a new shell.
 
 Now activate the new environment
+
 ``` sh
 module purge && module load Miniforge3
 conda activate /nesi/project/nesi99999/$USER/environment/cylc-env # or whereever you installed cylc-env
 conda install -c conda-forge cylc-flow
 ```
+
 Check that `cylc` was successfully installed
+
 ``` sh
 cylc --version
 ```
-should return 
+
+should return
+
 ``` output
 8.6.0
 ```
+
 or a later version.
 
 ## Create a cylc wrapper script
 
 In order to allow `cylc` to be invoked through `SLURM` the following steps are required
+
 ``` sh
 mkdir $CYLC_HOME/wrapper
 cylc get-resources cylc $CYLC_HOME/wrapper
@@ -99,20 +110,23 @@ sed -i "s|CYLC_HOME_ROOT=\"\${CYLC_HOME_ROOT:-/opt}\"|CYLC_HOME_ROOT=\"\${CYLC_H
 ```
 
 Make sure the wrapper script is found when opening a new shell
+
 ``` sh
 export CYLC_HOME=/nesi/project/nesi99999/$USER/environment/cylc-env # adapt
 export PATH=$CYLC_HOME/wrapper:$PATH
 ```
 
-
 ## Setting up Cylc on Mahuika
 
 In order to allow Cylc to submit tasks to the SLURM scheduler, we need to configure platforms. Edit (or create) your global configuration file:
+
 ``` sh
 mkdir -p ~/.cylc/flow/
 vim ~/.cylc/flow/global.cylc
 ```
+
 or use the editor of your choice, and add the following lines
+
 ``` sh
 [platforms]
     [[mahuika-slurm]]
@@ -131,15 +145,20 @@ cylc vip .
 ```
 
 This will submit a job to SLURM
+
 ``` sh
 squeue --me
 ```
-should return 
+
+should return
+
 ``` output
 JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
 2974409       pletzera nesi99999 a.1.slurm/ru   1    512M milan,g N/A                 1:00 PENDING  (Priority)
 ```
+
 You casn also monitor the tasks with the command
+
 ``` sh
 cylc tui slurm
 ```
