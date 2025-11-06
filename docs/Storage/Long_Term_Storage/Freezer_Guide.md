@@ -8,9 +8,6 @@ tags:
 !!! info s3cmd configuration required
     Please ensure you have [configured](Configuring_s3cmd.md) the s3cmd tool.
 
-!!! tip "Webinar - Getting started with Freezer: Long-term storage for your research"
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/UgnTD8K2MVI?si=ujfMUgsZ8zGqxstl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ## Using s3cmd tool to interact with Freezer
 
 Freezer uses the AWS S3 standard as a protocol for temporarily hosting data prior to writing it to tape.
