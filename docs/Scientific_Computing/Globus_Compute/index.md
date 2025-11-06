@@ -59,6 +59,39 @@ This endpoint submits work in Slurm jobs. The following configuration options ar
 - `MEM_PER_CPU` (optional, defaults to `2G`): amount of memory to be requested in the Slurm job
 - `GPUS_PER_NODE` (optional, defaults to no GPU): request GPUs for the Slurm job
 
+## Simple example
+
+1. Install Python 3.11 and create a virtual environment
+   ```
+   python -m venv venv
+   source venv/bin/activate
+   ```
+2. Install Globus Compute
+   ```
+   pip install "globus_compute_sdk>=3,<4"
+   ```
+3. Create a simple Python script (replacing `<your_project_code>` with your project code)
+   ```
+   # test.py
+   from globus_compute_sdk import Executor
+
+   def hello_from_node():
+       import os
+       import getpass
+       return f"Hello, this function ran as {getpass.getuser()} on {os.uname().nodename}"
+
+   mep_id = "abf152c8-ad9b-453f-bcc8-3424284344f3"
+   with Executor() as ex:
+       ex.endpoint_id = mep_id
+       ex.user_endpoint_config = {"ACCOUNT_ID": "<your_project_code>"}
+       f = ex.submit(hello_from_node)
+       print(f.result())
+   ```
+4. Run the test
+   ```
+   python test.py
+   ```
+
 ## Limitation and known problems
 
 Limitations and known problems related to our current implementation are listed here.
@@ -67,6 +100,7 @@ If these are impacting your ability to use this service, please [let us know](ma
 - Currently limited to a single CPU
 - You must use Python 3.11 (we are exploring options to execute functions in containers, which will enable use of different Python versions)
 - You can only import Python packages that are available in the `Python/3.11.6-foss-2023a` environment module (containerisation will help here too)
+- There can be a lag of around 1 minute to run a function if you have not used the endpoint recently
 - Globus Compute version 3.x
 
 ## Other notes
