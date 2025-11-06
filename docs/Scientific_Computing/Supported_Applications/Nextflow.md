@@ -38,7 +38,7 @@ cleanup                         = true
 
 Running Nextflow in an interactive session can be especially helpful when setting up or debugging a pipeline. To do so, request an interactive session with appropriate resources for the pipeline:
 
-```
+```bash
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
 ```
 
@@ -46,7 +46,7 @@ Once your interactive session has launched, load the Nextflow module with `modul
 
 There are several environmental variables that can be helpful to avoid loading containers and plugins into your persistent project space:
 
-```
+```bash
 export NXF_APPTAINER_CACHEDIR=/nesi/nobackup/nesi12345/apptainer_cache
 export NXF_PLUGINS_DIR=/nesi/project/nesi12345/user/PROJECT_DIR/.nextflow/plugins
 ```
@@ -101,8 +101,6 @@ This will allow the main Nextflow Slurm job to submit this process to Slurm as s
 
 !!! warning "Avoid many short jobs"
     This will put a major burden on the Slurm scheduler for no improvement in your computational speed. Do not use the Nextflow `slurm` executor for jobs which take less than 30 minutes to complete.
-    
-
 
 ## Improving efficiency
 
@@ -114,4 +112,3 @@ Nextflow provides tools that can assist you in making efficient use of the HPC r
 
 !!! warning "Nextflow plugins"
     nf-core pipelines expect to use nf-plugins in their base configuration. If you want to use these plugins, you will need to manually download them and store them in a plugin cache directory that you can specify with the `NXF_PLUGINS_DIR` environmental variable (as in the example `.sl` above)
-    
