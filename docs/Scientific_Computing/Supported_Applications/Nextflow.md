@@ -5,36 +5,6 @@
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-## Running Nextflow in an interactive Slurm session
-
-## Submitting a Nextflow workflow as a batch job
-
-The following `sbatch` will submit a Nextflow workflow as a Slurm job. All of the Nextflow processes will run on the same compute node, so request enough resources to run the most intensive process in the workflow and enough time for the entire workflow to complete.
-
-```sl
-#!/bin/bash -e
-
-#SBATCH --job-name        my job
-#SBATCH --account         nesi12345
-#SBATCH --time            01:00:00
-#SBATCH --mem             2G
-
-# load Nextflow and set environmental variables
-module load Nextflow/25.10.0
-export NXF_APPTAINER_CACHEDIR=/nesi/nobackup/nesi12345/apptainer_cache
-export NXF_OFFLINE='true'
-export NXF_PLUGINS_DIR=/nesi/project/nesi12345/user/PROJECT_DIR/.nextflow/plugins
-
-# run nextflow
-nextflow run NEXTFLOW_WORKFLOW \
-    -profile local,apptainer \
-    --outdir /nesi/project/nesi12345/user/PROJECT_DIR/NEXTFLOW_WORKFLOW/out \
-    -w /nesi/nobackup/nesi12345/user/PROJECT_DIR/NEXTFLOW_WORKFLOW/work \
-    -with-trace \
-    -with-report \
-    -with-dag
-```
-
 ## Configurations
 
 Below is an example `nextflow.config` file with some configuration settings that will help when running Nextflow via NeSI.
@@ -62,6 +32,53 @@ profiles {
 }
 
 cleanup                         = true
+```
+
+## Running Nextflow in an interactive Slurm session
+
+Running Nextflow in an interactive session can be especially helpful when setting up or debugging a pipeline. To do so, request an interactive session with appropriate resources for the pipeline:
+
+```
+srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
+```
+
+Once your interactive session has launched, load the Nextflow module with `module load Nextflow/25.10.1` (or your required version) and proceed. Parallelization of Nextflow processes will occur within this job.
+
+There are several environmental variables that can be helpful to avoid loading containers and plugins into your persistent project space:
+
+```
+export NXF_APPTAINER_CACHEDIR=/nesi/nobackup/nesi12345/apptainer_cache
+export NXF_PLUGINS_DIR=/nesi/project/nesi12345/user/PROJECT_DIR/.nextflow/plugins
+```
+
+You can confirm that Nextflow is loaded and ready using the `nextflow run hello` command to test Nextflow's Hello World pipeline.
+
+## Submitting a Nextflow workflow as a batch job
+
+The following `sbatch` will submit a Nextflow workflow as a Slurm job. All of the Nextflow processes will run on the same compute node, so request enough resources to run the most intensive process in the workflow and enough time for the entire workflow to complete.
+
+```sl
+#!/bin/bash -e
+
+#SBATCH --job-name        my job
+#SBATCH --account         nesi12345
+#SBATCH --time            01:00:00
+#SBATCH --mem             2G
+
+# load Nextflow and set environmental variables
+module load Nextflow/25.10.0
+export NXF_APPTAINER_CACHEDIR=/nesi/nobackup/nesi12345/apptainer_cache
+export NXF_OFFLINE='true'
+export NXF_PLUGINS_DIR=/nesi/project/nesi12345/user/PROJECT_DIR/.nextflow/plugins
+
+# run nextflow
+nextflow run NEXTFLOW_WORKFLOW \
+    -profile local,apptainer \
+    --outdir /nesi/project/nesi12345/user/PROJECT_DIR/NEXTFLOW_WORKFLOW/out \
+    -w /nesi/nobackup/nesi12345/user/PROJECT_DIR/NEXTFLOW_WORKFLOW/work \
+    -with-trace \
+    -with-report \
+    -with-dag
 ```
 
 ## Time/compute intensive processes
