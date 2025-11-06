@@ -24,8 +24,7 @@
         "configured": "cpu=512,mem=978748M,node=2,billing=1773"
       },
       "cluster": "",
-      "select_type": [
-      ],
+      "select_type": [],
       "cpus": {
         "task_binding": 0,
         "total": 512
@@ -80,8 +79,7 @@
         "shares": 1,
         "oversubscribe": {
           "jobs": 1,
-          "flags": [
-          ]
+          "flags": []
         },
         "time": {
           "set": true,
@@ -150,8 +148,7 @@
         "configured": "cpu=20832,mem=41856144M,node=62,billing=115707,gres\/gpu=24,gres\/gpu:h100=8,gres\/gpu:l4=16"
       },
       "cluster": "",
-      "select_type": [
-      ],
+      "select_type": [],
       "cpus": {
         "task_binding": 0,
         "total": 20832
@@ -206,8 +203,7 @@
         "shares": 1,
         "oversubscribe": {
           "jobs": 1,
-          "flags": [
-          ]
+          "flags": []
         },
         "time": {
           "set": true,
@@ -276,8 +272,7 @@
         "configured": "cpu=21344,mem=42834892M,node=64,gres\/gpu=24,gres\/gpu:h100=8,gres\/gpu:l4=16"
       },
       "cluster": "",
-      "select_type": [
-      ],
+      "select_type": [],
       "cpus": {
         "task_binding": 0,
         "total": 21344
@@ -332,8 +327,7 @@
         "shares": 1,
         "oversubscribe": {
           "jobs": 1,
-          "flags": [
-          ]
+          "flags": []
         },
         "time": {
           "set": false,

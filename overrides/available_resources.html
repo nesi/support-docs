@@ -1,0 +1,29 @@
+{% extends "base.html" -%}
+{% block libs %}
+    {{ super() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ base_url }}/assets/javascripts/availableResources.js"></script>
+    <!-- Would be good if we could remove dependency on jq -->
+{% endblock -%}
+{% block styles %}
+{{ super() }}
+<!-- <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/supportedApplications.css"> -->
+{% endblock -%}
+
+{% block content -%}
+    {{ super() }}
+  <h1>Partitions</h1>
+  <table id="partitions">
+    <thead>
+      <tr>
+        <th>partition name</th>
+        <th>cores per node</th>
+        <th>memory per node</th>
+        <th>memory per core</th>
+        <th>gpus</th>
+        <th>number nodes</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+{% endblock %}
