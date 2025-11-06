@@ -171,10 +171,10 @@ cmd=sbatch --partition=large,bigmem --mem=5G --ntasks=1 --cpus-per-task=1 --time
 #############################################################################
 
 # number of grid submissions to be maintained at steady state by the Trinity submission system
-max_nodes=100
+max_nodes=10
 
 # number of commands that are batched into a single grid submission job.
-cmds_per_node=100
+cmds_per_node=50
 ```
 
  The important details are:
@@ -220,6 +220,15 @@ srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
 - The options `--CPU` and `--max_memory` aren't used by Trinity in
   "grid mode" but are still required to be set (i.e. it shouldn't
   matter what you set them to)
+
+!!! note "FarmIT error"
+     Issues with HPC GridRunner `max_nodes` and `cpus_per_node` may cause the job to fail with an error reading:
+     ``` out
+     FARMIT failed to accept job: sbatch --partition=genoa,milan --mem=5G --ntasks=1 --cpus-per-task=1 --time=01:00:00 <...>
+     (ret 256)
+     FARMIT failed to accept job.  Will try again shortly.
+     ```
+
 
 ## Benchmarks
 
