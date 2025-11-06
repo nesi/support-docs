@@ -44,8 +44,7 @@ hc/en-gb/articles/360000205435-File-permissions-and-groups.md: Storage/File_Syst
 hc/en-gb/articles/360000205435.md: Storage/File_Systems_and_Quotas/File_permissions_and_groups.md
 hc/en-gb/articles/360000207315-File-Recovery.md: Storage/Data_Recovery/File_Recovery.md
 hc/en-gb/articles/360000207315.md: Storage/Data_Recovery/File_Recovery.md
-hc/en-gb/articles/360000214036-Two-Factor-Authentication-FAQ.md: General/FAQs/Two_Factor_Authentication_FAQ.md
-hc/en-gb/articles/360000214036.md: General/FAQs/Two_Factor_Authentication_FAQ.md
+General/FAQs/Two_Factor_Authentication_FAQ.md : General/FAQs/What_is_Multiple_Factor_Authentication_MFA.md
 hc/en-gb/articles/360000216035-Account-Requests-for-non-Tuakiri-Members.md: General/Policy/Account_Requests_for_non_Tuakiri_Members.md
 hc/en-gb/articles/360000216035.md: General/Policy/Account_Requests_for_non_Tuakiri_Members.md
 hc/en-gb/articles/360000217915-Personal-Globus-Endpoint-Configuration.md: Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md
@@ -79,9 +78,8 @@ hc/en-gb/articles/360000625535.md: Scientific_Computing/Terminal_Setup/Standard_
 Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup_HPC3.md: Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md
 hc/en-gb/articles/360000684396-Submitting-your-first-job.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
 hc/en-gb/articles/360000684396.md: Getting_Started/Next_Steps/Submitting_your_first_job.md
-hc/en-gb/articles/360000684635-How-to-replace-my-2FA-token.md: General/FAQs/How_to_replace_my_2FA.md
-hc/en-gb/articles/360000684635.md: General/FAQs/How_to_replace_my_2FA.md
-General/FAQs/How_to_replace_my_2FA_token.md: General/FAQs/How_to_replace_my_2FA.md
+General/FAQs/How_to_replace_my_2FA_token.md: General/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md
+General/FAQs/How_to_replace_my_2FA.md: General/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md
 hc/en-gb/articles/360000690275-Parallel-Execution.md: Getting_Started/Next_Steps/Parallel_Execution.md
 hc/en-gb/articles/360000690275.md: Getting_Started/Next_Steps/Parallel_Execution.md
 hc/en-gb/articles/360000691716-Slurm-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md
@@ -202,7 +200,7 @@ hc/en-gb/articles/360001419576-MAKER.md: Scientific_Computing/Supported_Applicat
 hc/en-gb/articles/360001419576.md: Scientific_Computing/Supported_Applications/MAKER.md
 hc/en-gb/articles/360001471955-GPU-use-on-NeSI.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
 hc/en-gb/articles/360001471955.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
-Scientific_Computing/Batch_Jobs/Using_GPUs.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
+# Scientific_Computing/Batch_Jobs/Using_GPUs.md: Scientific_Computing/Batch_Jobs/Using_GPUs.md
 hc/en-gb/articles/360001500156-NVIDIA-GPU-Containers.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001500156.md: Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md
 hc/en-gb/articles/360001508515-Git-Reference-Sheet.md: Getting_Started/Cheat_Sheets/Git-Reference_Sheet.md

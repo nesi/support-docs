@@ -7,6 +7,7 @@ on:
               description: Force even if no changes.
   schedule:
     - cron: '00 12 * * *' # Should run 1 hour after module list update.
+
 env:
   MODULES_LIST_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
   MODULES_UPDATE_URL: "https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
@@ -38,7 +39,7 @@ jobs:
         id: commit
         run: |
             body_message="This Merge Request was triggered by an update to $(git diff --name-only ${GITHUB_REF} | tr '\n' ', ')."
-            if [[ $(git log ${GITHUB_REF}..HEAD) ||  ${{ github.event.inputs.force }} == 'true' ]]; then
+            if [[ $(git log ${GITHUB_REF}..HEAD) ||  '${{ github.event.inputs.force }}' == 'true' ]]; then
                 git push origin ${BRANCH_NAME}
                 gh pr create -B ${GITHUB_REF} -H ${BRANCH_NAME} --title "Automatic Asset Update - $(date +'%Y-%m-%d')" --body "${body_message}" -l auto_merge
                 gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"

@@ -4,7 +4,6 @@ tags:
   - interactive
   - scheduling
 description: How to run an interactive session on the NeSI cluster.
-status: deprecated
 ---
 
 A SLURM interactive session reserves resources on compute nodes allowing
@@ -83,7 +82,7 @@ salloc: Granted job allocation 10256925
 Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
 
-For a full description of `srun` and its options, see
+For a full description of `salloc` and its options, see
 [here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
 
 ### Requesting a postponed start
@@ -135,6 +134,172 @@ the `tmux` or `screen` session. In fact, we recommend detaching whenever
 you leave your workstation unattended for a while, in case your computer
 turns off or goes to sleep or its connection to the internet is
 disrupted while you're away.
+
+## Running Python+JupyterLab in Interactive Mode
+
+!!! warning
+     If you are using a windows computer, this method has currently 
+     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+     tested it yet in Putty or Mobaxterm
+
+To run Python+JupyterLab in interactive mode, first we need to load 
+your interactive session:
+
+```sh
+srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
+```
+
+Then, we need to start up Python, install JupyterLab if you dont have it 
+yet, and obtain the hostname and the port:
+
+```sh
+# Load Python
+module load Python
+
+# Install and activate a python virtual environment (or activate your
+# current virtual environment). 
+python3 -m venv venv
+source venv/bin/activate
+
+# Install JupyterLab
+pip3 install JupyterLab
+
+# Select a random port
+PORT=$(shuf -i8000-9999 -n1)
+
+# Check the hostname and port - we will need this later, you can also 
+# see it at the start of your prompt
+hostname | cut -d'.' -f1 # <-- This is the hostname
+echo $PORT               # <-- This is the port
+```
+
+Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
+and `echo $PORT` commands. Then, we need to start up JupyterLab:
+
+```sh
+# Start Jupyter. This might take a minute
+jupyter lab --no-browser --ip=0.0.0.0 --port=$PORT
+```
+
+Make a note of the second URL given by JupyterLab once it launches. 
+For instance: 
+
+```sh
+[C 2025-11-03 14:34:31.797 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/john.doe/.local/share/jupyter/runtime/jpserver-2965439-open.html
+    Or copy and paste one of these URLs:
+        http://c003.hpc.nesi.org.nz:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
+        http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
+```
+
+The `http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117`
+address in this case will be our url that we will use to launch JupyterLabs
+
+In a second terminal on your local machine (or a second screen in tmux or screen),
+type the following:
+
+```sh
+ssh -L PORT:HOSTNAME:PORT mahuika
+
+#For example:
+#ssh -L 9339:c003:9339 mahuika
+```
+
+Then, in your browser, type in the URL from before
+
+```sh
+http://127.0.0.1:PORT/lab?token=TOKEN
+
+# For example:
+# http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
+```
+
+You will now be able to see and work wih Python+JupyterLab in your web browser. 
+
+
+## Running Julia+Pluto.ji in Interactive Mode
+
+!!! warning
+     If you are using a windows computer, this method has currently 
+     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+     tested it yet in Putty or Mobaxterm
+
+To run Julia+Pluto.ji in interactive mode, first we need to load 
+your interactive session:
+
+```sh
+srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
+```
+
+Then, we need to start up Julia and obtain the hostname and the port:
+
+```sh
+# Load Julia
+module load Julia 
+
+# Select a random port
+PORT=$(shuf -i8000-9999 -n1)
+
+# Check the hostname and port - we will need this later, you can also 
+# see it at the start of your prompt
+hostname | cut -d'.' -f1 # <-- This is the hostname
+echo $PORT               # <-- This is the port
+
+# Export port to a variable name
+export pluto_port=${PORT}
+```
+
+Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
+and `echo $PORT` commands. Then, we need to start up Julia, install and 
+run Pluto.ji:
+
+```sh
+#Start Julia
+julia
+
+# Install Pluto.ji. This might take a minute
+import Pkg; Pkg.add("Pluto")
+
+# Start Pluto. This might take a minute
+using Pluto
+Pluto.run(host="0.0.0.0",port=parse(Int, ENV["pluto_port"]),launch_browser=false)
+```
+
+Take a note of the information given for the URL
+
+```sh
+[ Info: Loading...
+┌ Info: 
+│ Go to http://0.0.0.0:9627/?secret=mXmq6659 in your browser to start writing ~ have fun!
+└ 
+```
+
+Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access 
+Pluto. 
+
+Next, open up a second terminal on your local machine (or a second screen 
+in tmux or screen), and type the following:
+
+```sh
+ssh -L PORT:HOSTNAME:PORT mahuika
+
+#For example:
+#ssh -L 9627:mc081:9627 mahuika
+```
+
+Then, in your browser, type in the URL from before
+
+```sh
+http://0.0.0.0:PORT/?secret=SECRET
+
+# For example:
+# http://0.0.0.0:9627/?secret=mXmq6659
+```
+
+You will now be able to see and work wih Julia+Pluto in your web browser. 
+
 
 ## Setting up a detachable terminal
 
@@ -217,22 +382,18 @@ single command. To do so, you will first need to identify them, hence
 the earlier suggestion to something specific to interactive jobs in the
 job name.
 
-For example, if all your interactive job names start with the text "IJ",
+For example, if all your interactive job names start with the text "InteractiveJob",
 you could do this:
 
 ```sh
 # -u $(whoami) restricts the search to my jobs only.
 # The --states=PD option restricts the search to pending jobs only.
 #
-# Each <tab> string should be replaced with a literal tab character. If you
-# can't insert one by pressing the tab key on your keyboard, you should be
-# able to insert one by pressing Ctrl-V followed immediately by Ctrl-I.
-#
-squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ"
+squeue -u $(whoami) --states=PD -o "%A %j" | grep "InteractiveJob"
 ```
 
 The above command will return a list of your jobs whose names *start*
-with the text "IJ". In this respect, it's more flexible than the `-n`
+with the text "InteractiveJob". In this respect, it's more flexible than the `-n`
 option to `squeue`, which requires the entire job name string in order
 to identify a match.
 
@@ -241,7 +402,7 @@ for the job ID, so let's use `awk` to do this, and send the output to
 `scontrol` via `xargs`:
 
 ```sh
-squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
+squeue -u $(whoami) --states=PD -o "%A %j" | grep "InteractiveJob" | \
 awk '{print $1}' | \
 xargs -I {} scontrol update jobid={} StartTime=tomorrowT09:30:00
 ```
@@ -278,7 +439,16 @@ To cancel all your queued interactive sessions on a cluster in one fell
 swoop, a command like the following should do the trick:
 
 ```sh
-squeue -u $(whoami) --states=PD -o "%A<tab>%j" | grep "<tab>IJ" | \
+squeue -u $(whoami) --states=PD -o "%A %j" | grep "InteractiveJob" | \
+awk '{print $1}' | \
+xargs -I {} scancel {}
+```
+
+To cancel all your running interactive sessions on a cluster in one fell
+swoop, a command like the following should do the trick:
+
+```sh
+squeue -u $(whoami) --states=R -o "%A %j" | grep "InteractiveJob" | \
 awk '{print $1}' | \
 xargs -I {} scancel {}
 ```
