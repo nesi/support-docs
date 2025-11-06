@@ -45,7 +45,7 @@
                 "server": "ABAQUS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.92,
+                "server_uptime": 0.93,
                 "server_version": "11.13.1",
                 "features": [
                     {
@@ -66,7 +66,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.8,
+                        "hourly_average": 0.65,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -80,7 +80,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.71,
+                        "hourly_average": 0.66,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -1024,7 +1024,7 @@
         "network_licences": [],
         "default": "1.2.5",
         "default_type": "static",
-        "last_updated": 1747602665,
+        "last_updated": 1761524521,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Apptainer/1.2.5.lua",
         "force_hide": "False",
@@ -1379,15 +1379,16 @@
             "3.3.3-gimkl-2020a",
             "3.4.0-gimkl-2020a",
             "3.4.0-gimkl-2022a",
-            "3.5.0-gimkl-2022a"
+            "3.5.0-gimkl-2022a",
+            "3.5.0-gimkl-2022a-patch1"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "3.5.0-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1740132626,
+        "last_updated": 1753661594,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/AUGUSTUS/3.5.0-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/AUGUSTUS/3.5.0-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1559,15 +1560,16 @@
         "homepage": "basilisk.fr",
         "support": "",
         "versions": [
-            "20220324-gimpi-2020a"
+            "20220324-gimpi-2020a",
+            "20250612-gompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "20220324-gimpi-2020a",
+        "default": "20250612-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1752103255,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Basilisk/20220324-gimpi-2020a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Basilisk/20250612-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1625,15 +1627,16 @@
         "homepage": "http://www1.montpellier.inra.fr/CBGP/software/baypass/index.html",
         "support": "",
         "versions": [
-            "2.31-intel-2022a"
+            "2.31-intel-2022a",
+            "3.0-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.31-intel-2022a",
+        "default": "3.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1752141926,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BayPass/2.31-intel-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/BayPass/3.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1681,6 +1684,7 @@
             "1.15.1-GCC-11.3.0",
             "1.16-GCC-11.3.0",
             "1.19-GCC-11.3.0",
+            "1.22-GCC-12.3.0",
             "1.9-GCC-7.4.0"
         ],
         "admin_list": [
@@ -1689,11 +1693,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.19-GCC-11.3.0",
+        "default": "1.22-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132626,
+        "last_updated": 1754169077,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BCFtools/1.19-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/BCFtools/1.22-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1951,15 +1955,17 @@
         "homepage": "https://bigscape-corason.secondarymetabolites.org/index.html",
         "support": "",
         "versions": [
-            "1.1.5-gimkl-2022a-Python-3.11.3"
+            "1.1.5-gimkl-2022a-Python-3.11.3",
+            "1.1.9-gimkl-2022a-Python-3.11.3",
+            "2.0.0-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.1.5-gimkl-2022a-Python-3.11.3",
+        "default": "2.0.0-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1760651350,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BiG-SCAPE/1.1.5-gimkl-2022a-Python-3.11.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/BiG-SCAPE/2.0.0-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2250,24 +2256,29 @@
         "force_show": "False"
     },
     "BOLT-LMM": {
-        "description": "The BOLT-LMM algorithm for mixed model association testing, \nand the BOLT-REML algorithm for variance components analysis",
+        "description": "The BOLT-LMM algorithm computes statistics for testing association between phenotype\n and genotypes using a linear mixed model (LMM) [1]. By default, BOLT-LMM assumes a Bayesian\n mixture-of-normals prior for the random effect attributed to SNPs other than the one being tested.\n This model generalizes the standard \"infinitesimal\" mixed model used by previous mixed model\n association methods (e.g., EMMAX, FaST-LMM, GEMMA, GRAMMAR-Gamma, GCTA-LOCO), providing an\n opportunity for increased power to detect associations while controlling false\n positives. Additionally, BOLT-LMM applies algorithmic advances to compute mixed model association\n statistics much faster than eigendecomposition-based methods, both when using the Bayesian mixture\n model and when specialized to standard mixed model association.",
         "domains": [
             "bio"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html",
+        "homepage": "https://storage.googleapis.com/broad-alkesgroup-public/BOLT-LMM/BOLT-LMM_manual.html",
         "support": "",
         "versions": [
-            "2.4"
+            "2.4",
+            "2.5-foss-2023a"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "2.4": "Warning: BOLT-LMM/2.4 hangs on our new AMD nodes and so is marked for deletion. Please use the newer BOLT-LMM/2.5-foss-2023a or if necessary ask us to install BOLT-LMM/2.4-foss-2023a."
+            }
+        ],
         "network_licences": [],
-        "default": "2.4",
+        "default": "2.5-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1760498511,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BOLT-LMM/2.4.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/BOLT-LMM/2.5-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2298,9 +2309,9 @@
         "network_licences": [],
         "default": "1.83.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1747952816,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Boost/1.83.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Boost/1.83.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2969,6 +2980,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "cimfomfa": {
+        "description": "library supports both MCL, a cluster algorithm for graphs, and zoem, a\nmacro/DSL language",
+        "domains": [
+            "lib"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/micans/cimfomfa",
+        "support": "",
+        "versions": [
+            "22.273"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "22.273",
+        "default_type": "latest",
+        "last_updated": 1753425968,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/cimfomfa/22.273.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Circlator": {
         "description": "A tool to circularize genome assemblies",
         "domains": [
@@ -3109,13 +3142,13 @@
         "force_show": "False"
     },
     "CMake": {
-        "description": "CMake, the cross-platform, open-source build system.\n CMake is a family of tools designed to build, test and package software.",
+        "description": "\n CMake, the cross-platform, open-source build system.  CMake is a family of\n tools designed to build, test and package software.\n",
         "domains": [
             "devel"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.cmake.org",
+        "homepage": "https://www.cmake.org",
         "support": "",
         "versions": [
             "3.14.1",
@@ -3125,15 +3158,16 @@
             "3.20.5",
             "3.22.1",
             "3.27.7",
+            "3.31.8",
             "3.9.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.27.7",
+        "default": "3.31.8",
         "default_type": "latest",
-        "last_updated": 1747602665,
+        "last_updated": 1752026049,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CMake/3.27.7.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CMake/3.31.8.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3197,15 +3231,16 @@
         "homepage": "https://github.com/coder/code-server",
         "support": "",
         "versions": [
+            "4.100.2",
             "4.92.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.92.2",
+        "default": "4.100.2",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1747877977,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/code-server/4.92.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/code-server/4.100.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3274,7 +3309,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.9,
+                "server_uptime": 0.91,
                 "server_version": "11.16.2",
                 "features": [
                     {
@@ -3308,14 +3343,14 @@
                 "server": "COMSOL@uoa_idg",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.92,
+                "server_uptime": 0.93,
                 "server_version": "11.15.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.8,
+                        "hourly_average": 0.7,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3342,14 +3377,14 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.89,
+                "server_uptime": 0.9,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.94,
+                        "hourly_average": 0.95,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3376,7 +3411,7 @@
                 "server": "COMSOL@uoa_foes",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.92,
+                "server_uptime": 0.93,
                 "server_version": "11.15.1",
                 "features": [
                     {
@@ -3410,14 +3445,14 @@
                 "server": "COMSOL@uoa_foe_des_rc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.92,
+                "server_uptime": 0.93,
                 "server_version": "11.15.1",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 15.13,
+                        "hourly_average": 12.26,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3431,7 +3466,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 11.35,
+                        "hourly_average": 9.25,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3499,7 +3534,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 176440181.77,
+                        "hourly_average": 143101117.11,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -3570,7 +3605,7 @@
         "force_show": "False"
     },
     "CP2K": {
-        "description": "CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular\n simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different\n methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and\n classical pair and many-body potentials.",
+        "description": "CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular\n simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different\n methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and\n classical pair and many-body potentials. ",
         "domains": [
             "chem",
             "chemistry"
@@ -3580,16 +3615,17 @@
         "homepage": "https://www.cp2k.org/",
         "support": "",
         "versions": [
+            "2023.1-foss-2023a",
             "8.2-intel-2022a-PLUMED-2.7.2",
             "8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2",
+        "default": "2023.1-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1755566383,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/CP2K/8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CP2K/2023.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3720,15 +3756,16 @@
         "versions": [
             "51-Java-1.8.0_144",
             "64-Java-1.8.0_144",
-            "84-Java-1.8.0_144"
+            "84-Java-1.8.0_144",
+            "90-Java-17"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "84-Java-1.8.0_144",
+        "default": "90-Java-17",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1751867085,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/cromwell/84-Java-1.8.0_144.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/cromwell/90-Java-17.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4458,15 +4495,16 @@
         "support": "",
         "versions": [
             "3.5.0-foss-2023a",
-            "3.5.0-intel-2022a"
+            "3.5.0-intel-2022a",
+            "3.7.0-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.5.0-intel-2022a",
+        "default": "3.7.0-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1753325240,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/DFT-D4/3.5.0-intel-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DFT-D4/3.7.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4489,16 +4527,17 @@
             "2.0.9-GCC-9.2.0",
             "2.1.1-GCC-11.3.0",
             "2.1.10-GCC-12.3.0",
+            "2.1.14-GCC-12.3.0",
             "2.1.6-GCC-11.3.0",
             "2.1.9-GCC-11.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.10-GCC-12.3.0",
+        "default": "2.1.14-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1758472921,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/DIAMOND/2.1.10-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/DIAMOND/2.1.14-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4527,7 +4566,9 @@
             "0.8.0",
             "0.8.3",
             "0.9.0",
-            "0.9.1"
+            "0.9.1",
+            "1.0.2",
+            "1.1.1"
         ],
         "admin_list": [
             {
@@ -4541,11 +4582,11 @@
             }
         ],
         "network_licences": [],
-        "default": "0.9.1",
+        "default": "1.1.1",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1757655584,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Dorado/0.9.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/Dorado/1.1.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4810,15 +4851,16 @@
             "2.12.0-gimpi-2018b",
             "2.17.0-gimpi-2020a",
             "2.26.0-gimpi-2022a",
-            "2.30.0-gimpi-2022a"
+            "2.30.0-gimpi-2022a",
+            "2.42.0-gompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.30.0-gimpi-2022a",
+        "default": "2.42.0-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1756890159,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/ecCodes/2.30.0-gimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ecCodes/2.42.0-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5384,15 +5426,16 @@
         "support": "",
         "versions": [
             "2.1.6.1-gimkl-2018b",
-            "2.1.6.2-GCC-9.2.0"
+            "2.1.6.2-GCC-9.2.0",
+            "2.1.6.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.6.2-GCC-9.2.0",
+        "default": "2.1.6.3",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1753426585,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/FastME/2.1.6.2-GCC-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/FastME/2.1.6.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5467,6 +5510,28 @@
         "last_updated": 1740132629,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/FastQC/0.12.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Fastsimcoal2": {
+        "description": "While preserving all the simulation flexibility of simcoal2, fastsimcoal is now implemented under a faster continous-time sequential Markovian coalescent approximation, allowing it to efficiently generate genetic diversity for different types of markers along large genomic regions, for both present or ancient samples. It includes a parameter sampler allowing its integration into Bayesian or likelihood parameter estimation procedure.\n fastsimcoal can handle very complex evolutionary scenarios including an arbitrary migration matrix between samples, historical events allowing for population resize, population fusion and fission, admixture events, changes in migration matrix, or changes in population growth rates. The time of sampling can be specified independently for each sample, allowing for serial sampling in the same or in different populations.",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "http://cmpg.unibe.ch/software/fastsimcoal2/",
+        "support": "",
+        "versions": [
+            "2.8"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.8",
+        "default_type": "latest",
+        "last_updated": 1755121033,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/Fastsimcoal2/2.8.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5813,6 +5878,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "fineRADstructure": {
+        "description": "A package for population structure inference from RAD-seq data",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "http://cichlid.gurdon.cam.ac.uk/fineRADstructure.html",
+        "support": "",
+        "versions": [
+            "20210514-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "20210514-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1753483935,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/fineRADstructure/20210514-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "fineSTRUCTURE": {
         "description": "Population assignment using large numbers of densely sampled genomes, including both SNP chips and sequence dat",
         "domains": [
@@ -5981,6 +6068,28 @@
         "last_updated": 1740132636,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/fmt/7.1.3-GCCcore-9.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Foldseek": {
+        "description": "Foldseek enables fast and sensitive comparisons of large protein structure sets, \nsupporting monomer and multimer searches, as well as clustering.",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/steineggerlab/foldseek",
+        "support": "",
+        "versions": [
+            "10-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "10-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1761007179,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/Foldseek/10-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6777,6 +6886,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "gfatools": {
+        "description": "Tools for manipulating sequence graphs in the GFA and rGFA formats",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/lh3/gfatools",
+        "support": "",
+        "versions": [
+            "0.5"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.5",
+        "default_type": "latest",
+        "last_updated": 1751226468,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/gfatools/0.5.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "gffread": {
         "description": "GFF/GTF parsing utility providing format conversions,\nregion filtering, FASTA sequence extraction and more.",
         "domains": [
@@ -6950,17 +7081,18 @@
             "colorama-0.4.6",
             "cryptography-42.0.5",
             "dill-0.3.9",
-            "globus_compute_common-0.5.0",
-            "globus_compute_endpoint-3.4.0",
-            "globus_compute_sdk-3.4.0",
+            "exceptiongroup-1.3.0",
+            "globus_compute_common-0.7.1",
+            "globus_compute_endpoint-3.12.0",
+            "globus_compute_sdk-3.12.0",
             "globus_identity_mapping-0.4.0",
-            "globus_sdk-3.53.0",
+            "globus_sdk-3.62.0",
             "jinja2-3.1.6",
             "jsonschema-4.23.0",
             "marshmallow-3.20.2",
             "marshmallow_oneofschema-3.1.1",
             "paramiko-3.4.0",
-            "parsl-2025.3.17",
+            "parsl-2025.3.31",
             "pika-1.3.2",
             "py-1.11.0",
             "pydantic-2.8.2",
@@ -6971,7 +7103,7 @@
             "python_daemon-2.3.2",
             "pyzmq-26.1.0",
             "retry-0.9.2",
-            "rich-13.7.1",
+            "rich-13.9.4",
             "setproctitle-1.3.3",
             "tblib-1.7.0",
             "texttable-1.7.0",
@@ -6994,16 +7126,18 @@
             "2.27.1-foss-2023a-Python-3.11.6",
             "2.3.2-gimkl-2022a-Python-3.10.5",
             "2.30.1-foss-2023a-Python-3.11.6",
+            "3.12.0-foss-2023a-Python-3.11.6",
             "3.2.0-foss-2023a-Python-3.11.6",
-            "3.4.0-foss-2023a-Python-3.11.6"
+            "3.4.0-foss-2023a-Python-3.11.6",
+            "3.7.0-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.4.0-foss-2023a-Python-3.11.6",
+        "default": "3.12.0-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1743387073,
+        "last_updated": 1756164974,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.4.0-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/globus-compute-endpoint/3.12.0-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7077,6 +7211,28 @@
         "last_updated": 1740132637,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/gmsh/2.0.2-Miniconda3.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "GMT": {
+        "description": "GMT is an open source collection of about 80 command-line tools for manipulating\n geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting,\n etc.) and producing PostScript illustrations ranging from simple x-y plots via contour maps\n to artificially illuminated surfaces and 3D perspective views; the GMT supplements add another\n 40 more specialized and discipline-specific tools. ",
+        "domains": [
+            "geo"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.generic-mapping-tools.org/",
+        "support": "",
+        "versions": [
+            "6.6.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "6.6.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1754867508,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/GMT/6.6.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7296,7 +7452,8 @@
         "support": "",
         "versions": [
             "7.6.1-gimkl-2018b-Python-2.7.16",
-            "8.2.1-gimkl-2022a"
+            "8.2.1-gimkl-2022a",
+            "8.4.1-foss-2023a"
         ],
         "admin_list": [
             {
@@ -7304,11 +7461,11 @@
             }
         ],
         "network_licences": [],
-        "default": "8.2.1-gimkl-2022a",
+        "default": "8.4.1-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1756899410,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/geo/GRASS/8.2.1-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/GRASS/8.4.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7357,15 +7514,17 @@
             "2020.6-gimkl-2020a-cuda-11.3.1-hybrid-PLUMED-2.8.0",
             "2020.6-intel-2020a-cuda-11.3.1-hybrid",
             "2021.5-gimkl-2022a-cuda-11.6.2-hybrid",
-            "2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0"
+            "2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0",
+            "2024.5-foss-2023a-cuda-12.2.2-hybrid",
+            "2025.2-foss-2023a-cuda-12.5.0-hybrid"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0",
+        "default": "2025.2-foss-2023a-cuda-12.5.0-hybrid",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1752029142,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GROMACS/2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7913,16 +8072,17 @@
             "1.19-GCC-11.3.0",
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
+            "1.22-GCC-12.3.0",
             "1.8-gimkl-2018b",
             "1.9-GCC-7.4.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.21-GCC-12.3.0",
+        "default": "1.22-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1744964564,
+        "last_updated": 1754168753,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.21-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/HTSlib/1.22-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8102,16 +8262,17 @@
         "support": "",
         "versions": [
             "2.16.1",
+            "2.19.4",
             "2.5.0",
             "2.9.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.16.1",
+        "default": "2.19.4",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1754620103,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/IGV/2.16.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/IGV/2.19.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8769,6 +8930,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "json-fortran": {
+        "description": "JSON-Fortran: A Modern Fortran JSON API",
+        "domains": [
+            "lib"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/jacobwilliams/json-fortran",
+        "support": "",
+        "versions": [
+            "9.0.2-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "9.0.2-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1753397850,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.0.2-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "JsonCpp": {
         "description": " JsonCpp is a C++ library that allows manipulating JSON values,\n including serialization and deserialization to and from strings. It can also preserve existing comment in\n unserialization/serialization steps, making it a convenient format to store user input files. ",
         "domains": [
@@ -8834,175 +9017,115 @@
         ],
         "extensions": [
             "aiofiles-24.1.0",
-            "aiohappyeyeballs-2.4.6",
-            "aiohttp-3.11.12",
+            "aiohappyeyeballs-2.6.1",
+            "aiohttp-3.11.18",
             "aiosignal-1.3.2",
             "aiosqlite-0.21.0",
-            "annotated_types-0.7.0",
             "ansicolors-1.1.8",
             "ansiwrap-0.8.4",
-            "anthropic-0.47.2",
-            "anyio-4.8.0",
+            "anyio-4.9.0",
             "argon2-cffi-bindings-21.2.0",
             "argon2_cffi-23.1.0",
-            "async-lru-2.0.4",
-            "async_lru-2.0.4",
+            "async_lru-2.0.5",
+            "async_lru-2.0.5",
             "async_timeout-5.0.1",
             "autopep8-2.3.2",
             "babel-2.17.0",
             "bash_kernel-0.10.0",
-            "beautifulsoup4-4.13.3",
-            "boto3-1.37.2",
-            "botocore-1.37.2",
-            "charset_normalizer-3.4.1",
-            "cohere-5.13.12",
+            "beautifulsoup4-4.13.4",
+            "charset_normalizer-3.4.2",
             "colorama-0.4.6",
-            "cython-3.0.12",
-            "dataclasses_json-0.6.7",
-            "debugpy-1.8.12",
-            "deepmerge-2.0",
+            "cython-3.1.1",
+            "debugpy-1.8.14",
             "defusedxml-0.7.1",
             "deprecation-2.1.0",
-            "distro-1.9.0",
             "editables-0.5",
             "entrypoints-0.4",
-            "expandvars-0.12.0",
-            "faiss-cpu-1.10.0",
-            "fastavro-1.10.0",
+            "expandvars-1.0.0",
             "fastjsonschema-2.21.1",
             "filetype-1.2.0",
-            "flake8-7.1.2",
-            "frozenlist-1.5.0",
-            "google_ai_generativelanguage-0.6.16",
-            "google_api_core-2.24.1",
-            "google_auth-2.38.0",
-            "googleapis_common_protos-1.68.0",
-            "grpcio-1.70.0",
-            "h11-0.14.0",
+            "flake8-7.2.0",
+            "frozenlist-1.6.0",
+            "h11-0.16.0",
             "hatch_jupyter_builder-0.9.1",
             "hatch_nodejs_version-0.3.2",
-            "hatchling-1.25.0",
-            "httpcore-1.0.7",
+            "hatchling-1.27.0",
+            "httpcore-1.0.9",
             "httpx-0.28.1",
-            "httpx_sse-0.4.0",
-            "huggingface_hub-0.29.1",
             "ipykernel-6.29.5",
-            "ipympl-0.9.6",
+            "ipympl-0.9.7",
             "ipython_genutils-0.2.0",
-            "ipywidgets-8.1.5",
-            "jiter-0.8.2",
-            "jmespath-1.0.1",
-            "json5-0.10.0",
-            "jsonpatch-1.33",
-            "jsonpath_ng-1.7.0",
-            "jsonpointer-3.0.0",
+            "ipywidgets-8.1.7",
+            "json5-0.12.0",
             "jupyter-lsp-2.2.5",
-            "jupyter_ai-2.29.1",
-            "jupyter_ai_magics-2.29.1",
             "jupyter_client-8.6.3",
             "jupyter_core-5.7.2",
             "jupyter_events-0.12.0",
             "jupyter_lsp-2.2.5",
             "jupyter_packaging-0.12.3",
-            "jupyter_server-2.15.0",
+            "jupyter_server-2.16.0",
             "jupyter_server_fileid-0.9.3",
             "jupyter_server_mathjax-0.2.6",
             "jupyter_server_proxy-4.4.0",
             "jupyter_server_terminals-0.5.3",
             "jupyter_server_ydoc-1.1.0",
-            "jupyter_ydoc-3.0.3",
-            "JupyterLab-4.3.5",
-            "jupyterlab_git-0.51.0",
+            "jupyter_ydoc-3.0.5",
+            "JupyterLab-4.4.2",
+            "jupyterlab_git-0.51.1",
             "jupyterlab_pygments-0.3.0",
             "jupyterlab_server-2.27.3",
-            "jupyterlab_theme_toggler-1.0.0",
-            "jupyterlab_widgets-3.0.13",
-            "langchain-0.3.19",
-            "langchain_anthropic-0.3.8",
-            "langchain_aws-0.2.13",
-            "langchain_cohere-0.4.2",
-            "langchain_community-0.3.18",
-            "langchain_core-0.3.40",
-            "langchain_google_genai-2.0.11",
-            "langchain_mistralai-0.2.7",
-            "langchain_nvidia_ai_endpoints-0.3.9",
-            "langchain_ollama-0.2.3",
-            "langchain_openai-0.3.7",
-            "langchain_text_splitters-0.3.6",
-            "langsmith-0.3.11",
-            "marshmallow-3.26.1",
-            "meson-1.7.0",
-            "meson_python-0.17.1",
-            "mistune-3.1.2",
-            "multidict-6.1.0",
-            "narwhals-1.28.0",
-            "nbclassic-1.2.0",
+            "jupyterlab_theme_toggler-1.1.0",
+            "jupyterlab_widgets-3.0.15",
+            "mistune-3.1.3",
+            "multidict-6.4.4",
+            "narwhals-1.40.0",
+            "nbclassic-1.3.1",
             "nbclient-0.10.2",
             "nbconvert-7.16.6",
             "nbdime-4.0.2",
             "nbformat-5.10.4",
             "nbqa-1.9.1",
-            "nesi_jupyter_helpers-0.4.0",
+            "nesi_jupyter_helpers-0.5.0",
             "nest_asyncio-1.6.0",
             "nest_asyncio-1.6.0",
-            "notebook-7.3.2",
+            "notebook-7.4.2",
             "notebook_shim-0.2.4",
-            "numpy-1.26.4",
-            "ollama-0.4.7",
-            "openai-1.64.0",
-            "orjson-3.10.15",
             "overrides-7.7.0",
+            "packaging-24.2",
             "pandocfilters-1.5.1",
             "papermill-2.6.0",
             "plotly-5.24.1",
-            "prometheus_client-0.21.1",
-            "propcache-0.3.0",
-            "proto_plus-1.26.0",
-            "pyasn1-0.6.1",
-            "pyasn1_modules-0.4.1",
-            "pycodestyle-2.12.1",
-            "pycrdt-0.12.8",
+            "prometheus_client-0.22.0",
+            "propcache-0.3.1",
+            "pycodestyle-2.13.0",
+            "pycrdt-0.12.20",
             "pycrdt_websocket-0.15.4",
-            "pydantic-2.10.6",
-            "pydantic_core-2.27.2",
-            "pydantic_settings-2.8.0",
-            "pyflakes-3.2.0",
-            "python_dotenv-1.0.1",
-            "python_json_logger-3.2.1",
+            "pyflakes-3.3.2",
+            "python_json_logger-3.3.0",
             "pyviz_comms-3.0.4",
             "pyzmq-26.2.1",
-            "regex-2024.11.6",
-            "requests-unixsocket-0.3.0",
-            "requests_toolbelt-1.0.0",
+            "requests_unixsocket-0.4.1",
             "rfc3339_validator-0.1.4",
             "rfc3986_validator-0.1.1",
-            "rsa-4.9",
-            "s3transfer-0.11.3",
-            "scikit_build_core-0.10.7",
+            "scikit_build_core-0.11.3",
             "Send2Trash-1.8.3",
             "simpervisor-1.0.0",
             "sniffio-1.3.1",
-            "soupsieve-2.6",
+            "soupsieve-2.7",
             "sqlite_anyio-0.2.3",
+            "streamlit-1.45.1",
             "terminado-0.18.1",
             "textwrap3-0.9.2",
-            "tiktoken-0.9.0",
             "tinycss2-1.4.0",
             "tokenize_rt-6.1.0",
-            "tokenizers-0.21.0",
             "tomli-2.2.1",
             "tomlkit-0.13.2",
-            "trove_classifiers-2025.2.18.16",
-            "types-requests-2.32.0.20241016",
-            "types_pyyaml-6.0.12.20241230",
-            "typing_extensions-4.12.2",
-            "typing_inspect-0.9.0",
+            "trove_classifiers-2025.5.9.12",
             "websocket_client-1.8.0",
-            "widgetsnbextension-4.0.13",
+            "widgetsnbextension-4.0.14",
             "y_py-0.6.2",
-            "yarl-1.18.3",
-            "ypy_websocket-0.12.4",
-            "zstandard-0.23.0"
+            "yarl-1.20.0",
+            "ypy_websocket-0.12.4"
         ],
         "licence_type": "",
         "homepage": "https://pypi.org/project/jupyterlab/",
@@ -9013,15 +9136,16 @@
             "2023.11.0-gimkl-2022a-3.6.3",
             "2024.08.0-foss-2023a-4.2.4",
             "2024.08.2-foss-2023a-4.2.4",
-            "2025.3.0-foss-2023a-4.3.5"
+            "2025.3.0-foss-2023a-4.3.5",
+            "2025.5.0-foss-2023a-4.4.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2025.3.0-foss-2023a-4.3.5",
+        "default": "2025.5.0-foss-2023a-4.4.2",
         "default_type": "latest",
-        "last_updated": 1741245521,
+        "last_updated": 1748220483,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/JupyterLab/2025.3.0-foss-2023a-4.3.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/JupyterLab/2025.5.0-foss-2023a-4.4.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9312,15 +9436,16 @@
             "2.1.1-GCC-9.2.0",
             "2.1.2-GCC-11.3.0",
             "2.1.2-GCC-9.2.0",
-            "2.1.3-GCC-11.3.0"
+            "2.1.3-GCC-11.3.0",
+            "2.1.6-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.3-GCC-11.3.0",
+        "default": "2.1.6-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1754467564,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Kraken2/2.1.3-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/Kraken2/2.1.6-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9390,7 +9515,7 @@
         "network_licences": [],
         "default": "23Jun2022-gimkl-2022a-kokkos",
         "default_type": "static",
-        "last_updated": 1747602667,
+        "last_updated": 1747795160,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/LAMMPS/23Jun2022-gimkl-2022a-kokkos.lua",
         "force_hide": "False",
@@ -10098,7 +10223,7 @@
         "network_licences": [],
         "default": "1",
         "default_type": "static",
-        "last_updated": "0",
+        "last_updated": 1745812516,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libpmi/1.lua",
         "force_hide": "False",
@@ -11242,7 +11367,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.69,
+                "server_uptime": 0.67,
                 "server_version": "",
                 "features": []
             },
@@ -11261,7 +11386,7 @@
                 "server": "MATLAB@uoa",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.92,
+                "server_uptime": 0.93,
                 "server_version": "",
                 "features": []
             },
@@ -11280,7 +11405,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.84,
+                "server_uptime": 0.87,
                 "server_version": "",
                 "features": []
             },
@@ -11299,7 +11424,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.0,
+                "server_uptime": 0.16,
                 "server_version": "",
                 "features": []
             },
@@ -11318,7 +11443,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.7,
+                "server_uptime": 0.75,
                 "server_version": "",
                 "features": []
             },
@@ -11382,7 +11507,7 @@
             "cryptography-43.0.1",
             "frozenlist-1.5.0",
             "importlib_resources-6.4.5",
-            "matlab-proxy-0.23.1",
+            "matlab-proxy-0.27.1",
             "multidict-6.1.0",
             "propcache-0.2.0",
             "yarl-1.17.1"
@@ -11391,15 +11516,16 @@
         "homepage": "https://github.com/mathworks/matlab-proxy",
         "support": "",
         "versions": [
-            "0.23.1-foss-2023a"
+            "0.23.1-foss-2023a",
+            "0.27.1-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.23.1-foss-2023a",
+        "default": "0.27.1-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1758597278,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/math/matlab-proxy/0.23.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/math/matlab-proxy/0.27.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11462,15 +11588,16 @@
         "support": "",
         "versions": [
             "14.137-gimkl-2018b",
-            "14.137-gimkl-2020a"
+            "14.137-gimkl-2020a",
+            "22.282"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "14.137-gimkl-2018b",
+        "default": "22.282",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1753426152,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/MCL/14.137-gimkl-2018b.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/MCL/22.282.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11511,6 +11638,28 @@
         "last_updated": 1740145797,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MCR/2023b.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "mctc-lib": {
+        "description": "Common tool chain for working with molecular structure data in various\napplications. This library provides a unified way to perform operations on\nmolecular structure data, like reading and writing to common geometry file\nformats.",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://grimme-lab.github.io/mctc-lib",
+        "support": "",
+        "versions": [
+            "0.3.1-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.3.1-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1753397876,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.3.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12063,15 +12212,39 @@
         "homepage": "https://conda-forge.org",
         "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/Miniforge3",
         "versions": [
-            "24.3.0-0"
+            "24.3.0-0",
+            "25.3.0-3",
+            "25.3.1-0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "24.3.0-0",
+        "default": "25.3.1-0",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1757395088,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Miniforge3/24.3.0-0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Miniforge3/25.3.1-0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "minigraph": {
+        "description": "Sequence-to-graph mapper and graph generator",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/lh3/minigraph",
+        "support": "",
+        "versions": [
+            "0.21"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.21",
+        "default_type": "latest",
+        "last_updated": 1751226845,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/minigraph/0.21.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12357,15 +12530,16 @@
         "support": "",
         "versions": [
             "0.2.5-GCC-12.3.0",
-            "0.4.1-GCC-12.3.0"
+            "0.4.1-GCC-12.3.0",
+            "0.5.0-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.4.1-GCC-12.3.0",
+        "default": "0.5.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1759289467,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/modkit/0.4.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/modkit/0.5.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13441,15 +13615,16 @@
             "23.04.1",
             "23.10.0",
             "24.04.4",
-            "24.10.5"
+            "24.10.5",
+            "25.10.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "24.10.5",
+        "default": "25.10.0",
         "default_type": "latest",
-        "last_updated": 1744964564,
+        "last_updated": 1761694703,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.10.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Nextflow/25.10.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14013,11 +14188,11 @@
             }
         ],
         "network_licences": [],
-        "default": "0.3.23-intel-compilers-2023.2.1",
+        "default": "0.3.23-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1746564216,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/numlib/OpenBLAS/0.3.23-intel-compilers-2023.2.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/OpenBLAS/0.3.23-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14145,11 +14320,11 @@
             }
         ],
         "network_licences": [],
-        "default": "4.1.5-intel-compilers-2023.2.1",
+        "default": "4.1.5-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1746708561,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/mpi/OpenMPI/4.1.5-intel-compilers-2023.2.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/mpi/OpenMPI/4.1.5-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14266,15 +14441,16 @@
         "versions": [
             "5.0.3-OpenMPI-4.1.1",
             "5.0.4-OpenMPI-4.1.5",
-            "6.0.1-OpenMPI-4.1.5"
+            "6.0.1-OpenMPI-4.1.5",
+            "6.1.0-f.0-OpenMPI-4.1.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.0.1-OpenMPI-4.1.5",
+        "default": "6.1.0-f.0-OpenMPI-4.1.5",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1753225313,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/ORCA/6.0.1-OpenMPI-4.1.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ORCA/6.1.0-f.0-OpenMPI-4.1.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14289,15 +14465,16 @@
         "support": "",
         "versions": [
             "2.3.3-gimkl-2018b-Python-2.7.16",
-            "2.5.2-gimkl-2020a-Python-3.8.2"
+            "2.5.2-gimkl-2020a-Python-3.8.2",
+            "2.5.5-gimkl-2022a-Python-3.11.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.5.2-gimkl-2020a-Python-3.8.2",
+        "default": "2.5.5-gimkl-2022a-Python-3.11.3",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1753427104,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/OrthoFinder/2.5.2-gimkl-2020a-Python-3.8.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/OrthoFinder/2.5.5-gimkl-2022a-Python-3.11.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14800,6 +14977,28 @@
         "last_updated": 1740132632,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PCRE2/10.42-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "PDAL": {
+        "description": "PDAL is Point Data Abstraction Library. It is a C/C++ open source library and applications for\n translating and processing point cloud data. It is not limited to LiDAR data, although the focus and impetus\n for many of the tools in the library have their origins in LiDAR.",
+        "domains": [
+            "data"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://pdal.io/",
+        "support": "",
+        "versions": [
+            "2.8.4-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.8.4-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1756885871,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/PDAL/2.8.4-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15421,6 +15620,7 @@
         "homepage": "http://www.plumed-code.org",
         "support": "",
         "versions": [
+            "2.10.0-foss-2023a",
             "2.6.2-gimkl-2020a",
             "2.7.2-intel-2022a",
             "2.8.0-gimkl-2022a",
@@ -15428,11 +15628,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.8.0-gimkl-2022a",
+        "default": "2.10.0-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1761086482,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/PLUMED/2.8.0-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PLUMED/2.10.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15467,11 +15667,11 @@
         ],
         "extensions": [
             "iso8601-2.1.0",
-            "lib-pod5-0.3.2",
+            "lib-pod5-0.3.28",
             "more_itertools-10.1.0",
-            "pod5-0.3.2",
+            "pod5-0.3.28",
             "polars-0.19.19",
-            "pyarrow-14.0.2",
+            "pyarrow-21.0.0",
             "vbz_h5py_plugin-1.0.1"
         ],
         "licence_type": "",
@@ -15479,15 +15679,16 @@
         "support": "",
         "versions": [
             "0.2.4-gimkl-2022a",
-            "0.3.2-gimkl-2022a"
+            "0.3.2-gimkl-2022a",
+            "0.3.28-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.3.2-gimkl-2022a",
+        "default": "0.3.28-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1754965855,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/pod5/0.3.2-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/pod5/0.3.28-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15734,16 +15935,14 @@
             "bio",
             "base"
         ],
-        "extensions": [
-            "Bio::SearchIO::hmmer-1.7.3",
-            "BioPerl-1.7.7"
-        ],
+        "extensions": [],
         "licence_type": "",
         "homepage": "http://www.vicbioinformatics.com/software.prokka.shtml",
         "support": "",
         "versions": [
             "1.14.5-GCC-11.3.0",
-            "1.14.5-GCC-9.2.0"
+            "1.14.5-GCC-9.2.0",
+            "1.14.6-apptainer"
         ],
         "admin_list": [
             {
@@ -15754,11 +15953,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.14.5-GCC-9.2.0",
+        "default": "1.14.6-apptainer",
         "default_type": "latest",
-        "last_updated": 1747602680,
+        "last_updated": 1758760243,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/prokka/1.14.5-GCC-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/prokka/1.14.6-apptainer.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15898,7 +16097,8 @@
         "support": "",
         "versions": [
             "3.70-GCCcore-7.4.0",
-            "3.75-GCCcore-9.2.0"
+            "3.75-GCCcore-9.2.0",
+            "4.02-GCCcore-12.3.0"
         ],
         "admin_list": [
             {
@@ -15906,11 +16106,11 @@
             }
         ],
         "network_licences": [],
-        "default": "3.75-GCCcore-9.2.0",
+        "default": "4.02-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1752017734,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/pstoedit/3.75-GCCcore-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/pstoedit/4.02-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16289,9 +16489,10 @@
             "eccodes-1.5.2",
             "findlibs-0.0.2",
             "Fiona-1.9.3",
-            "GDAL-3.6.3",
+            "GDAL-3.6.4",
             "geopandas-0.12.2",
             "munch-2.5.0",
+            "pdal-3.4.5",
             "pygeos-0.14",
             "pygrib-2.1.4",
             "pyogrio-0.5.1",
@@ -16307,6 +16508,7 @@
             "2.7.16-gimkl-2018b",
             "3.10.5-gimkl-2022a",
             "3.11.3-gimkl-2022a",
+            "3.11.6-foss-2023a",
             "3.7.3-gimkl-2018b",
             "3.8.2-gimkl-2020a",
             "3.9.5-gimkl-2020a",
@@ -16314,11 +16516,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.11.3-gimkl-2022a",
+        "default": "3.11.6-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1756898515,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/geo/Python-Geo/3.11.3-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Python-Geo/3.11.6-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16408,15 +16610,16 @@
         "versions": [
             "2022.2",
             "2023.5",
-            "2024.2-shotgun"
+            "2024.2-shotgun",
+            "2025.4-amplicon"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2024.2-shotgun",
+        "default": "2025.4-amplicon",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1754876764,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/QIIME2/2024.2-shotgun.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/QIIME2/2025.4-amplicon.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16951,9 +17154,9 @@
         "network_licences": [],
         "default": "4.3.2-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1748324838,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/R/4.3.2-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/base/R/4.3.2-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18364,15 +18567,16 @@
             "1.66.1-GCC-11.3.0",
             "1.73.0-GCC-12.3.0",
             "1.76.0-GCC-12.3.0",
-            "1.80.1-GCC-12.3.0"
+            "1.80.1-GCC-12.3.0",
+            "1.90.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.80.1-GCC-12.3.0",
+        "default": "1.90.0",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1759276755,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Rust/1.80.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Rust/1.90.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18527,16 +18731,17 @@
             "1.16.1-GCC-11.3.0",
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
+            "1.22-GCC-12.3.0",
             "1.8-gimkl-2018b",
             "1.9-GCC-7.4.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.21-GCC-12.3.0",
+        "default": "1.22-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1744964566,
+        "last_updated": 1754169242,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.21-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/SAMtools/1.22-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19255,15 +19460,16 @@
         "homepage": "https://hasindu2008.github.io/slow5tools",
         "support": "",
         "versions": [
-            "0.8.0-gimpi-2022a"
+            "0.8.0-gimpi-2022a",
+            "1.3.0-gompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.8.0-gimpi-2022a",
+        "default": "1.3.0-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1748041004,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/data/slow5tools/0.8.0-gimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/slow5tools/1.3.0-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19393,22 +19599,23 @@
             "bio"
         ],
         "extensions": [
-            "sniffles-2.3.3"
+            "Sniffles-2.6.3"
         ],
         "licence_type": "",
         "homepage": "https://github.com/fritzsedlazeck/Sniffles",
         "support": "",
         "versions": [
             "2.0.7-gimkl-2022a-Python-3.10.5",
-            "2.3.3-gimkl-2022a-Python-3.10.5"
+            "2.3.3-gimkl-2022a-Python-3.10.5",
+            "2.6.3-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.3.3-gimkl-2022a-Python-3.10.5",
+        "default": "2.6.3-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1740132634,
+        "last_updated": 1760048204,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Sniffles/2.3.3-gimkl-2022a-Python-3.10.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/Sniffles/2.6.3-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19768,7 +19975,7 @@
         "force_show": "False"
     },
     "SqueezeMeta": {
-        "description": "fully automated metagenomics pipeline, from reads to bins.",
+        "description": "Fully automated metagenomics pipeline, from reads to bins.",
         "domains": [
             "bio"
         ],
@@ -19778,15 +19985,16 @@
         "support": "",
         "versions": [
             "1.5.2-Miniconda3",
-            "1.6.0-Miniconda3"
+            "1.6.0-Miniconda3",
+            "1.7.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.6.0-Miniconda3",
+        "default": "1.7.2",
         "default_type": "latest",
-        "last_updated": 1740132634,
+        "last_updated": 1757395816,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SqueezeMeta/1.6.0-Miniconda3.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/SqueezeMeta/1.7.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20329,9 +20537,9 @@
         "network_licences": [],
         "default": "20230926",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1748232767,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/tbl2asn/20230926.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/tbl2asn/20230926.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20958,7 +21166,7 @@
         "force_show": "False"
     },
     "UCC": {
-        "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and \nfeature-rich for current and emerging programming models and runtimes.\n",
+        "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and\nfeature-rich for current and emerging programming models and runtimes.\n",
         "domains": [
             "lib"
         ],
@@ -20967,15 +21175,16 @@
         "homepage": "https://www.openucx.org/",
         "support": "",
         "versions": [
-            "1.2.0-GCCcore-12.3.0"
+            "1.2.0-GCCcore-12.3.0",
+            "1.3.0-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.2.0-GCCcore-12.3.0",
+        "default": "1.3.0-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132634,
+        "last_updated": 1746704327,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/UCC/1.2.0-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/UCC/1.3.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20993,15 +21202,17 @@
             "1.12.1-GCC-11.3.0",
             "1.12.1-GCC-11.3.0-CUDA-11.6.2",
             "1.12.1-intel-compilers-2022.0.2",
-            "1.14.1-GCCcore-12.3.0"
+            "1.14.1-GCCcore-12.3.0",
+            "1.18.1-GCC-11.3.0",
+            "1.18.1-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.14.1-GCCcore-12.3.0",
+        "default": "1.18.1-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1746660024,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/UCX/1.14.1-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/UCX/1.18.1-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21165,7 +21376,8 @@
         "versions": [
             "3.14.0-GCC-7.4.0",
             "3.16.1-GCC-9.2.0",
-            "3.19.0-GCC-11.3.0"
+            "3.19.0-GCC-11.3.0",
+            "3.25.0-GCC-12.3.0"
         ],
         "admin_list": [
             {
@@ -21173,11 +21385,11 @@
             }
         ],
         "network_licences": [],
-        "default": "3.19.0-GCC-11.3.0",
+        "default": "3.25.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1752017607,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/debugger/Valgrind/3.19.0-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/debugger/Valgrind/3.25.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21224,20 +21436,25 @@
             "6.2.1-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
             "6.2.1-intel-2022a-NOOMP",
             "6.3.2-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
+            "6.3.2-foss-2023a-cp",
             "6.3.2-intel-2022a",
             "6.4.1-intel-2022a",
             "6.4.2-foss-2023a",
-            "6.4.2-intel-2022a"
+            "6.4.2-intel-2022a",
+            "6.4.3-foss-2023a"
         ],
         "admin_list": [
             {
                 "6.2.1-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2": "Warning: VASP/6.2.1-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2 is old and marked for deletion. Please select a more recent version (try 'module spider VASP') or let us know that you still need it."
+            },
+            {
+                "6.3.2-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2": "Warning: Our NVHPC builds of VASP are not currently working. Please let us know if you want us to try and fix them, or build a new one."
             }
         ],
         "network_licences": [],
         "default": "6.4.2-intel-2022a",
         "default_type": "static",
-        "last_updated": 1745951967,
+        "last_updated": 1755137199,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VASP/6.4.2-intel-2022a.lua",
         "force_hide": "False",
@@ -21643,15 +21860,16 @@
         "support": "https://www.docs.nesi.org.nz/Scientific_Computing/Supported_Applications/VTune",
         "versions": [
             "2019_update8",
-            "2023.1.0"
+            "2023.1.0",
+            "2025.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2023.1.0",
+        "default": "2025.6",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1760479609,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/VTune/2023.1.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/VTune/2025.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21951,6 +22169,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "xPore": {
+        "description": "A Python package for identification and quantification of differential RNA modifications from direct RNA sequencing",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/GoekeLab/xpore",
+        "support": "",
+        "versions": [
+            "2.1-foss-2023a-Python-3.11.6"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.1-foss-2023a-Python-3.11.6",
+        "default_type": "latest",
+        "last_updated": 1756086049,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/xPore/2.1-foss-2023a-Python-3.11.6.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "xtb": {
         "description": " xtb - An extended tight-binding semi-empirical program package. ",
         "domains": [
@@ -21994,9 +22234,9 @@
         "network_licences": [],
         "default": "5.4.2-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1747950819,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/XZ/5.4.2-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/XZ/5.4.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },

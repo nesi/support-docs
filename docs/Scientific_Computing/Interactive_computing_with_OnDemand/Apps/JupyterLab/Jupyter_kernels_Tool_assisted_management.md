@@ -1,9 +1,11 @@
-# Jupyter kernels - Tool-assisted management
-
-!!! warning
-
-    NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
+---
+title: Jupyter kernels - Tool-assisted management
+description: 
+tags: 
+    - JupyterHub
+    - Python
+    - R
+---
 
 ## Introduction
 
@@ -42,6 +44,9 @@ Here is an example to add a TensorFlow kernel, using NeSI’s module:
 ``` sh
 nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 ```
+
+!!! warning
+    The name given to your kernel in `nesi-add-kernel KERNEL_NAME MODULE` must only include lowercase letters, underscores, and dashes. 
 
 and to share the kernel with other members of your NeSI project:
 
