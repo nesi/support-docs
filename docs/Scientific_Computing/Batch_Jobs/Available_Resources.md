@@ -9,9 +9,9 @@ tags:
 
 Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio. For example in the genoa partition:
 
-    A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes.
-    A job which requests ≤ 4 GB/core will run on the 4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
-    A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
+- A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes.
+- A job which requests ≤ 4 GB/core will run on the 4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
+- A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
 
 <table>
     <tr>

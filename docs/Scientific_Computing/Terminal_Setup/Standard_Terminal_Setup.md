@@ -50,7 +50,9 @@ configurations.
         ForwardX11Trusted yes
         ServerAliveInterval 300
         ServerAliveCountMax 2
-        IdentityFile ~/.ssh/mahuika_key  
+        # Note: The line below should only be commented out if
+        #       you have set up an SSH key pair `mahuika_key`.
+        # IdentityFile ~/.ssh/mahuika_key  
     ```
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
@@ -124,27 +126,21 @@ configurations.
 
 ## Adding a SSH key (optional)
 
-Generating a SSH key on the cluster removes one of the login prompts, this also works when opening a terminal through [OnDemand](../Interactive_computing_with_OnDemand/index.md).
+Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
 
-1. In a terminal **on the HPC** (either through SSH or OnDemand), run the command;
-
-    ```sh
-    mkdir -p ~/.ssh && ssh-keygen -qf ~/.ssh/mahuika_key -N "" && cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys
-    ```
-
-    This will generate an ssh key named `mahuika_key`, and add it to the list of authorised keys.
-
-    !!! note "OnDemand users"
-        If you only plan on connecting to the cluster via OnDemand, you can stop here.
-        The following steps are only relevent if using ssh on a local machine.
-
-2. In a terminal **on your local machine** run the command;
+1. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
 
     ```sh
-    scp mahuika:~/.ssh/mahuika_key.pub ~/.ssh/
+    mkdir -p ~/.ssh
+    [ -f .ssh/id_rsa ] || ssh-keygen -t rsa -q -N ""
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
     ```
 
-    This will copy the public key from the cluster to your local machine.
+2. In a terminal **on your local machine**, run the command; 
+
+    ```sh
+    scp mahuika:~/.ssh/id_rsa ~/.ssh/mahuika_key 
+    ```
 
 3. If you set up your ssh config recently, you may already have this line added.
 
