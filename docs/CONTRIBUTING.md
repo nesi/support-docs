@@ -134,7 +134,9 @@ Will give three levels of output, **Errors** (serious issues that will prevent m
 
 The `main` branch is protected, changes can be made via a pull request.
 
-Make a pull request for your development branch into `main`.
+### Making a Merge Request
+
+Make a merge request (pull request) for your development branch into `main`.
 
 If you are using a local development environment,
 
@@ -153,18 +155,24 @@ Might be worth having a quick look at these before making a pull request.
 
 Make a pull [request](https://github.com/nesi/support-docs/pulls)
 
-After a few minutes, a preview of the source branch will be deployed, a bot will post a link in the comments with the relevent pages.
+If you do not want anyone reviewing and merging the branch yet,
+make sure to select 'Create Draft Pull Request' instead.
 
-![image](https://github.com/user-attachments/assets/3d48137b-2b2a-440c-b617-23c075261b07)
+![alt text](assets/images/contrubuting_draft_pr.png)
+
+If you accidentally make a pull request, instead of a draft pull request, you can convert it at any time by pressing the 'convert to draft' link at the bottom of the page.
+
+![alt text](assets/images/contrubuting_convert_draft.png)
+
+After a few minutes, a preview of the source branch will be deployed, a bot will post a link in the comments with the relevant pages.
+
+![test deploy](assets/images/contributing_test_deploy.png)
 
 Assign a reviewer if you wish.
 
-If you want someone else to check and merge, add the <a id="label-5d55e2" href="https://github.com/nesi/support-docs/labels/review_merge" data-name="review_merge" style="--label-r:132;--label-g:27;--label-b:28;--label-h:359;--label-s:66;--label-l:31;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-ac05ccf2-9ff7-4214-ba9b-244f26120659">
-  review_merge</a> tag.
+Adding the tag <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-466464af-99fc-4bc8-87c9-f5d794783843"> will cause the request to be merged at midnight, if all checks passed.
 
-Adding the tag  <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-466464af-99fc-4bc8-87c9-f5d794783843"> will cause the request to be merged at midnight, if all checks passed.
-
-## Reviewing A Merge Request
+### Reviewing A Merge Request
 
 Under the 'pull requests' tab, open one of the pending requests.
 
@@ -176,7 +184,7 @@ If some of the CI checks failed (make sure they are not important ones), you wil
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
-## Updating A Merge Request
+### Updating A Merge Request
 
 If the main branch has changed since your feature branch diverged from main, an 'Update' button will appear where the merge button would usually be.
 Updating will pull in any new changes from the main branch into your feature branch.
@@ -186,18 +194,13 @@ You might want to consider updating it if you think there may be a clash with th
 i.e. someone has made changes to a page you have also changed. 
 This will allow you to fix any merge conflicts in your feature branch, before merging into main.
 
+### Merge Etiquette
 
-## Merge Etiquette
+Do not merge draft pull requests!
+Do not merge pull requests with someone else assigned as reviewer!
 
-Just because a merge request has been opened, doesn't mean anyone should merge it.
-
-| Has Tag | Should I review it? | Should I merge it? |
-| - | - | - |
-| <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-466464af-99fc-4bc8-87c9-f5d794783843">
-  auto_merge</a> | **Sure**  | **Sure**<br>It will be merged at midnight anyway.<br>Remove this label if you think further checking is required.  |
-| <a id="label-5d55e2" href="https://github.com/nesi/support-docs/labels/review_merge" data-name="review_merge" style="--label-r:132;--label-g:27;--label-b:28;--label-h:359;--label-s:66;--label-l:31;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline" aria-describedby="tooltip-ac05ccf2-9ff7-4214-ba9b-244f26120659">
-  review_merge</a> | **Yes Please!** <br> Someone is wanting this page reviewed!<br>Feel free to start a conversation if you don't think it is up to scratch. | Once you have reviewed, **Yes** |
-| neither, above | **Sure**<br>It might be appreciated. | Unless you were assigned as reviewer **No!** <br> Another person or team may still be working on this issue. Leave it alone!  |
+Do review open pull requests!
+Do merge pull requests you've reviewed, unless someone else is assinged.
 
 ## Update Remote Assets
 
