@@ -3,7 +3,7 @@ created_at: '2018-05-02T04:06:16Z'
 tags:
 - storage
 - quota
-title: NeSI filesystems and Quotas
+title: Filesystems and Quotas
 ---
 
 The HPC compute nodes, login nodes and OnDemand all share access to the same filesystems.
@@ -25,7 +25,7 @@ and cached between updates.
 | -------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Disk Quota     | 20 GB                                                                                 | 100 [110] GB                                                                                                    | 10 [12] TB | -                                                                                                       |
 | Usage  | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc. | Data created or used by compute jobs that is intended to be temporary | Medium- to long-term storage of research data, (past, present or planned projects) |
-| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See [Automatic cleaning of nobackup filesystem](../File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md ) for more information.  | 180 days after the end of the project's Freezer storage allocation |
+| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See [Automatic cleaning of nobackup filesystem](./Automatic_cleaning_of_nobackup_file_system.md ) for more information.  | 180 days after the end of the project's Freezer storage allocation |
 | Snapshots      | Daily<br>7 days                                                               | Daily<br>7 days                                                                                        | - | - |
 | Speed          | Fast | Fast | Fast | Slow |
 | Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul> | <ul><li>Native mounts</li><li>SCP</li></ul> | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li> |<ul><li>s3cmd commands</li></ul> |
@@ -81,7 +81,7 @@ cleaning policy is applied.
 
 It provides storage space for datasets, shared code or configuration
 scripts that need to be accessed by users within a project, and
-[potentially by other projects](../File_Systems_and_Quotas/File_permissions_and_groups.md).
+[potentially by other projects](./File_permissions_and_groups.md).
 Read and write performance increases using larger files, therefore you should
 consider archiving small files with an archiving package such as `tar` .
 
@@ -107,7 +107,7 @@ or {% include "partials/support_request.html" %} at any time.
 
 To ensure this filesystem remains fit-for-purpose, we have a regular
 cleaning policy as described in
-[Automatic cleaning of nobackup filesystem](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md).
+[Automatic cleaning of nobackup filesystem](./Automatic_cleaning_of_nobackup_file_system.md).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
@@ -125,7 +125,7 @@ an Automatic Tape Library (ATL). Files will remain on Freezer
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
-See more information about the long term storage see our [documentation about the Freezer storage service](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md).
+See more information about the long term storage see our [documentation about the Freezer storage service](../Long_Term_Storage/Freezer_long_term_storage.md).
 
 ## Snapshots
 
