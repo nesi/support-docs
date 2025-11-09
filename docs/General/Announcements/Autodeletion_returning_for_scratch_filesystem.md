@@ -11,7 +11,7 @@ We’re making some important updates to how your project’s temporary data is 
 
 ## What is changing?
 
-- Data stored in our scratch filesystem (`/nesi/nobackup`) that is not touched for 90 days or more will be automatically deleted. This is a change from our previous timeframe of 120 days.
+- Data stored in our scratch filesystem (`/nesi/nobackup`) that is not accessed for 90 days or more will be automatically deleted. This is a change from our previous timeframe of 120 days.
 - Scans and deletions will now happen on a weekly basis. You will still be provided two weeks notice before any data is deleted.
 - There will be no exclusions to the 90-day auto-deletion process. If you need to store data for longer than 90 days, [get in touch with our Support Team](mailto:support@nesi.org.nz).
 
