@@ -112,3 +112,21 @@ Nextflow provides tools that can assist you in making efficient use of the HPC r
 
 !!! warning "Nextflow plugins"
     nf-core pipelines expect to use nf-plugins in their base configuration. If you want to use these plugins, you will need to manually download them and store them in a plugin cache directory that you can specify with the `NXF_PLUGINS_DIR` environmental variable (as in the example `.sl` above)
+
+## UNTESTED Running with MPI
+
+There is a Nextflow plugin called nf-ignite which might be helpful for splitting large pipelines that only have small tasks. [More information here.](https://github.com/nextflow-io/nf-ignite?tab=readme-ov-file#slurm)
+
+## Comparison of submission methods
+
+!!! note "Small test run"
+    The following data come from a very small pipeline execution and needs to be repeated with a larger dataset for better information.
+    
+
+The nf-core rnaseq pipeline (v3.21.0) was run using the `test_full` dataset (v3.10) with three methods: a single Slurm job, a Slurm job capable of launching additional jobs, and a Slurm job split 4 ways by MPI.
+
+| Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Total CPU     |
+|-----------------------|------------------------------------------|------------------------------|--------------------------------|
+| Single Slurm job | 4 cores                                 | 00:05:37                     | 16:42.462                            |
+| Slurm job with additional | max\_nodes=1; cmds\_per\_node=4       | 00:06:13                     | 17:16.920                            |
+| Slurm job with MPI | max\_nodes=3; cmds\_per\_node=4       | 00:09:41                     | 42:18.727                            |
