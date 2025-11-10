@@ -1,6 +1,6 @@
 ---
 created_at: 2025-11-10
-description: Snakemake docs page
+title: snakemake
 tags: []
 ---
 
@@ -53,6 +53,7 @@ This plugin supports the use of MPI jobs.
 There are two main repositories for reuseable Snakemake rules and workflows.
 [Snakemake Wrappers](https://snakemake-wrappers.readthedocs.io/en/stable/) provide version controlled rules to conduct common steps in workflows.
 [Snakemake Workflows](https://snakemake.github.io/snakemake-workflow-catalog/index.html) are entire Snakemake workflows for common pipelines.
+
 
 ## External references
 - [Snakemake Docs](https://snakemake.readthedocs.io/en/stable/)
