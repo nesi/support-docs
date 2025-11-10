@@ -2,7 +2,7 @@
 created_at: '2018-11-27T23:55:26Z'
 tags: []
 title: Can I use SSHFS to mount the cluster filesystem on my local machine?
-status: deprecated
+status: []
 ---
 
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
@@ -61,3 +61,7 @@ umount ~/nesi-home
 !!! note
      Newer MacOS does not come with SSHFS pre installed. You will have to
      install FUSE as SSHFS from [here](https://osxfuse.github.io/).
+
+## Windows
+
+Windows Subsystem for Linux 2 (WSL2) provides FUSE support which means that the Linux method described above works from within a WSL2 distribution, although you may need to install `sshfs` before proceeding. If you want to be able to interact with the mounted files directly from your Windows user filesystem, you may need admin access to enable `user_other_allow` in the WSL `/etc/fuse.conf` and use the `-o allow_other` `sshfs` command option.
