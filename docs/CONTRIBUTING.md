@@ -204,7 +204,8 @@ Do merge pull requests you've reviewed, unless someone else is assigned.
 
 ## Update Remote Assets
 
-*Still haven't found a way to do this properly 😔*
+!!! note ""
+  Still haven't found a way to do this properly 😔
 
 Certain files need to be fetched from other repos for up to date info. This will be automated, but for now the process is manual.
 
@@ -223,11 +224,18 @@ If the CI is failing the spellcheck phase, and you believe the identified words 
 
 ## Raise an issue
 
-*Not documented at the moment (TODO)*
+GitHub makes it easy to flag issues for either you or someone else to fix at a later point.
+To do this, go to the [`Issues` tab](https://github.com/nesi/support-docs/issues) and click the big green `New issue` button in the top right.
+You can select a specific type of issue or simply create a blank issue and then fill in the details with as much information as you are able.
+
+![alt text](assets/images/Github_create_issue_2.png)
+
+!!! tip "Details matter!"
+  Try to add as many details as you can when creating an issue. Even if you plan to be the person who fixes the issue, writing down what is needed will help future you remember everything.
 
 ## The 'Supported Apps' Page
 
-Quite a lot of data-sources come together to make this page:
+Quite a lot of data sources come together to make this page:
 
 - mkdocs article titles
 - lmod info scraped from all clusters
@@ -257,7 +265,7 @@ Pulled from lmod admin.lists file
 
 #### Network Licence Details
 
-Ask cal, or read the readme at `/opt/nesi/nesi-apps-admin/LicConfig/`
+Ask Cal, or read the readme at `/opt/nesi/nesi-apps-admin/LicConfig/`
 
 ### Everything Else
 
