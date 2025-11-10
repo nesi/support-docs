@@ -28,7 +28,10 @@ You can also manually check at any time if you have any data scheduled for delet
 ## More information
 
 Our Support Documentation has more details on how our auto-deletion cleaner works as well as advice for where to store different types of data on our HPC platform:
+
 - [Automatic cleaning of nobackup file system](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system/) 
+
 - [Where should I store my data on NeSI systems?](https://docs.nesi.org.nz/General/FAQs/Where_should_I_store_my_data_on_NeSI_systems/) 
+
 
 If you have any questions or would like to discuss your data storage needs in more detail, come to one of our [Weekly Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) or [email our Support Team](mailto:support@nesi.org.nz). 
