@@ -6,6 +6,8 @@ vote_count: 0
 vote_sum: 0
 ---
 
+test
+
 GUFI (Grand Unified File Index) is a file system metadata indexing tool designed for large-scale data centers to enable fast, secure, and comprehensive searches of files and directories. It works by creating a hierarchical index that preserves file access permissions, allowing users to efficiently find and characterize data across multiple, potentially disparate file systems. This results in significantly faster search times and lessens impact/load on parallel filesystems compared to traditional methods.
 
 There are two commands that GUFI provides:
