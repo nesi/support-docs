@@ -3,7 +3,7 @@ created_at: '2019-02-06T22:27:04Z'
 tags:
  - slurm
 title: Why is my job taking a long time to start?
-status: deprecated
+status: []
 ---
 
 If you think your job is taking unexpectedly long to start running,
