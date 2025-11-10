@@ -2,6 +2,8 @@
 title: Contributing
 search:
   exclude: true
+description: Documentation of how to contribute to the documentation
+tags: []
 ---
 
 **[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs/CONTRIBUTING)**{ .hidden }
@@ -134,8 +136,6 @@ Will give three levels of output, **Errors** (serious issues that will prevent m
 
 The `main` branch is protected, changes can be made via a pull request.
 
-### Making a Merge Request
-
 Make a merge request (pull request) for your development branch into `main`.
 
 If you are using a local development environment,
@@ -191,7 +191,7 @@ Updating will pull in any new changes from the main branch into your feature bra
 
 Choosing whether to update is optional, and should not block a merge.
 You might want to consider updating it if you think there may be a clash with the main branch,
-i.e. someone has made changes to a page you have also changed. 
+i.e. someone has made changes to a page you have also changed.
 This will allow you to fix any merge conflicts in your feature branch, before merging into main.
 
 ### Merge Etiquette
@@ -200,7 +200,7 @@ Do not merge draft pull requests!
 Do not merge pull requests with someone else assigned as reviewer!
 
 Do review open pull requests!
-Do merge pull requests you've reviewed, unless someone else is assinged.
+Do merge pull requests you've reviewed, unless someone else is assigned.
 
 ## Update Remote Assets
 
