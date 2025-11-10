@@ -2,7 +2,7 @@
 created_at: '2018-11-27T23:55:26Z'
 tags: []
 title: Can I use SSHFS to mount the cluster filesystem on my local machine?
-status: deprecated
+status: []
 ---
 
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
