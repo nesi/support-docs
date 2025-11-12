@@ -20,7 +20,7 @@ running a monolithic, parallel executable is that each task will require
 less resources that the complete problem, it is thus easier for each
 task to slip into the queue and start running.
 
-See the [Snakemake](https://snakemake-on-nesi.sschmeier.com/) and [Nextflow](https://nextflow.io/) for other possible choices.
+See [Snakemake](https://snakemake-on-nesi.sschmeier.com/) and [Nextflow](https://nextflow.io/) for other possible choices.
 
 In this article, we show how you can create a simple workflow and run it
 on NeSI's platform. Consult the [Cylc

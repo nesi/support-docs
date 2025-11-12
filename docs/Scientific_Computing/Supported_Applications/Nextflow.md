@@ -5,6 +5,8 @@
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
+See [Snakemake](https://snakemake-on-nesi.sschmeier.com/) and [Cylc](https://cylc.github.io/) for other possible choices.
+
 ## Configurations
 
 Below is an example `nextflow.config` file with some configuration settings that will help when running Nextflow via NeSI.
