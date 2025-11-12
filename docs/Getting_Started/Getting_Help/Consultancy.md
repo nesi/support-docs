@@ -9,7 +9,7 @@ Our Consultancy service provides scientific and HPC-focused
 computational and data science support to research projects across a
 range of domains.
 
-![Consultancy](../../assets/images/consultancy.png){ width=75% }
+![Consultancy](../../assets/images/consultancy.png){ width=50% }
 
 ## Need support with your research project?
 
