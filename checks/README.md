@@ -35,7 +35,7 @@ Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json
 
 ### Markdown Lint
 
-Checks markdown for complience against general [best practice rules](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md).
+Checks markdown for compliance against general [best practice rules](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md).
 
 Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlint.json)
 
@@ -46,12 +46,14 @@ Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlin
 Catch-all for custom checks.
 Currently defined checks are:
 
-- title_redundant,
-- title_length,
-- meta_missing_description,
-- meta_unexpected_key,
-- minimum_tags,
-- walk_toc.
+- title_redundant
+- title_length
+- meta_missing_description
+- meta_unexpected_key
+- minimum_tags
+- walk_toc
+- click_here
+- dynamic_slurm_link
 
 ### Test Build
 
