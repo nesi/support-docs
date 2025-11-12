@@ -1,6 +1,6 @@
 ---
 description: Common questions researchers have about NeSI's platform refresh.
-status: new
+status:
 tags: 
   - refresh
   - hpc3
