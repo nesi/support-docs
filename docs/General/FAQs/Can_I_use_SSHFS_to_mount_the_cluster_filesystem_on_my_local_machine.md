@@ -1,14 +1,13 @@
 ---
 created_at: '2018-11-27T23:55:26Z'
 tags: []
-title: Can I use SSHFS to mount the cluster filesystem on my local machine?
+description: Information on how to use SSHFS on different local systems
 status: []
 ---
 
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
 filesystem on your local machine. SSHFS relies on SSH underneath, so you
-should follow the "Recommended logon procedure" instructions
-[here](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md) to configure SSH
+should follow the ["Recommended logon procedure" instructions](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md) to configure SSH
 first.
 
 ## Linux
@@ -60,7 +59,7 @@ umount ~/nesi-home
 
 !!! note
      Newer MacOS does not come with SSHFS pre installed. You will have to
-     install FUSE as SSHFS from [here](https://osxfuse.github.io/).
+     [install FUSE as SSHFS](https://osxfuse.github.io/).
 
 ## Windows
 

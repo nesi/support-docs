@@ -3,7 +3,7 @@ created_at: '2020-06-25T01:10:40Z'
 tags:
 - corefile
 - troubleshooting
-title: What is a '.core' file?
+description: Explanation of .core files
 ---
 
 `.core` files are created when a program fails in a way that can't be

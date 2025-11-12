@@ -2,16 +2,12 @@
 created_at: '2018-10-25T02:22:02Z'
 tags:
 - faq
-title: What does "oom-kill" mean?
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360000532595
-zendesk_section_id: 360000039036
+description: Explanation of the "oom-kill" error
 ---
 
 OOM stands for "Out Of Memory", and so an error such as this:
 
-```sl
+```bash
 slurmstepd: error: Detected 1 oom-kill event(s) in step 370626.batch cgroup
 ```
 
