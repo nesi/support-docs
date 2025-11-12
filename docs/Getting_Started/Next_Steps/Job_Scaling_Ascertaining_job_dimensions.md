@@ -1,12 +1,9 @@
 ---
 created_at: '2019-01-31T01:17:22Z'
 tags:
-- scaling
+     - scaling
 title: Job Scaling - Ascertaining job dimensions
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000728016
-zendesk_section_id: 360000189716
+description: Instructions on finding the resources needed to run a job
 ---
 
 When you run software in an interactive environment such as your
@@ -79,3 +76,6 @@ beforehand.
 !!! example
      - [Multithreading Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
      - [MPI Scaling](../../Getting_Started/Next_Steps/MPI_Scaling_Example.md)
+
+!!! tip "Webinar: How to estimate CPU, memory & time needs"
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/9h8eacBmSgw?si=zzOkx-k4hJbwLNaF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
