@@ -3,11 +3,7 @@ created_at: '2019-01-27T23:11:01Z'
 tags:
 - mahuika
 - biology
-title: Supernova
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000718515
-zendesk_section_id: 360000040076
+description: Documentation of Supernova module
 ---
 
 {% set app_name = page.title | trim %}
@@ -35,7 +31,7 @@ for post-processing:
     barcodes to effectively resolve this assembly to K ≈ 100,000. The
     final step pulls apart homologous chromosomes into phase blocks,
     which are often several megabases in length.
--   `supernova mkoutput` takes Supernova's graph-based assemblies
+- `supernova mkoutput` takes Supernova's graph-based assemblies
     and produces several styles of FASTA suitable for downstream
     processing and analysis.
 
@@ -56,11 +52,13 @@ own licensing agreement.
 
 <https://support.10xgenomics.com/de-novo-assembly/software/downloads/latest>
 
-## Example script``
+## Example script
 
 ``` sl
-#SBATCH -J mySupernovajob
-#SBATCH --partition=hugemem
+#!/bin/bash -e
+
+#SBATCH --job-name=mySupernovajob
+#SBATCH --account=nesi12345
 #SBATCH --ntasks=1
 #SBATCH --mem=460G
 #SBATCH --cpus-per-task=16
@@ -120,7 +118,7 @@ The link assumes the form..
 - &lt;node&gt; Taken from above code snippet is wbh001
 - &lt;port&gt; Taken from above code snippet is 37982
 - &lt;auth&gt; Taken from above code snippet is
-    Bx2ccMZmJxaIfRNBOZ\_XO\_mQd1njNGL3rZry\_eNI1yU 
+    Bx2ccMZmJxaIfRNBOZ\_XO\_mQd1njNGL3rZry\_eNI1yU
 
 In a new local terminal window open an ssh tunnel to the node. This
 takes the following general form

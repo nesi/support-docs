@@ -32,7 +32,7 @@ such as the latest versions of VSCode.
 The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` filesystems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
 One particular feature of WEKA is that it keeps recently accessed files in fast SSD storage while moving other files out to slower disk-based storage.
 
-We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression.md) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised. 
+We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression.md) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised.
 
 Storage (byte) quotas in WEKA work the same way, but there are no inode (file) quotas.
 
@@ -56,7 +56,7 @@ Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have
 
 The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, eg: `gm display ...`.
 
-## External IP address for outbound connections 
+## External IP address for outbound connections
 
 Internet connections made from NeSI (eg: to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
 
@@ -70,23 +70,23 @@ with the restriction that different tasks would never share a core, so by defaul
 
 On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
 
-Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a mutiple of two or also use the slurm option `--tasks-per-core`. 
+Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a mutiple of two or also use the slurm option `--tasks-per-core`.
 
 ### Partitions
 
 These have changed.  
 
-As on Mahuika, the default partition selection should generally be OK. There is no need to set `--partition` unless you need the `hugemem` partition or have a specific reason to choose the microarchitecture, in which case you can specify either the `genoa` or `milan` partition. 
+As on Mahuika, the default partition selection should generally be OK. There is no need to set `--partition` unless you need the `hugemem` partition or have a specific reason to choose the microarchitecture, in which case you can specify either the `genoa` or `milan` partition.
 
 Nodes with different amounts of RAM do not have their own partitions, except in the special case of `hugemem`. Your jobs will land on appropriately sized nodes automatically based on your CPU to memory ratio.  For example in the `genoa` partition:
 
-  - A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes. 
-  - A job which requests ≤ 4 GB/core will run on the  4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
-  - A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
+- A job which requests ≤ 2 GB/core will run on the 44 Genoa nodes which have 2 GB/core, or if those are full, the 4 GB/core nodes.
+- A job which requests ≤ 4 GB/core will run on the  4 Genoa nodes which have 4 GB/core, or if those are full, the 8 GB/core nodes.
+- A job which requests > 4 GB/core will run on the 16 Genoa nodes which have 8 GB/core.
 
 ### CPU cores per node
 
-Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs. 
+Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs.
 
 ### Limits
 
@@ -94,15 +94,15 @@ These are open for review if you find any of them unreasonable or inefficient.
 
 #### Per Job
 
- - 10 nodes
- - 21 node-days (so 1 node for 3 weeks, or 3 nodes for 1 week, or 10 nodes for 2 days)
- - 21 days (but less on `milan` until more of those nodes arrive)
+- 10 nodes
+- 21 node-days (so 1 node for 3 weeks, or 3 nodes for 1 week, or 10 nodes for 2 days)
+- 21 days (but less on `milan` until more of those nodes arrive)
 
 #### Per User
 
- - 1344 CPU cores occupied (8 full Genoa nodes or 10 full Milan nodes), 3528 core-days booked by running jobs (so 3 weeks of one full node).
- - 6 TB of memory occupied (4 full 1.5 TB nodes), 30 TB-days booked by running jobs (so 3 weeks of one full 1.5 TB node).
- - 6 GPUs occupied, 14 GPU-days booked by running jobs (so 2 GPUs for 1 week).
+- 1344 CPU cores occupied (8 full Genoa nodes or 10 full Milan nodes), 3528 core-days booked by running jobs (so 3 weeks of one full node).
+- 6 TB of memory occupied (4 full 1.5 TB nodes), 30 TB-days booked by running jobs (so 3 weeks of one full 1.5 TB node).
+- 6 GPUs occupied, 14 GPU-days booked by running jobs (so 2 GPUs for 1 week).
 
 ### Prioritisation
 
@@ -112,12 +112,12 @@ Whole-node jobs and others with a similarly high count of cores-per-node will ge
 
 We have moved away from the use of HDF5 files for Slurm's built-in job profiling. So instead of using Slurm's `sh5util` command to get the result files and then plotting those in a second step, you now directly get a plot - try `profile_plot --help` for instructions.  
 
-Other consequences of this change include: 
+Other consequences of this change include:
 
-  - Job profiles are not private.
-  - Incomplete profiles can be obtained while a job is still running.
-  - Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
-  - The raw profile data isn't so accessable - please let us know if you need it.
+- Job profiles are not private.
+- Incomplete profiles can be obtained while a job is still running.
+- Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
+- The raw profile data isn't so accessable - please let us know if you need it.
 
 ### Miscellaneous
 
@@ -135,7 +135,7 @@ Node sizes are different, so multithreaded jobs will probably have different opt
 
 ### Milan nodes
 
-These are the same nodes as made up the Mahuika Extension. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores (or 256 hyperthreaded CPUs), of which 126 are available for Slurm jobs. 
+These are the same nodes as made up the Mahuika Extension. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores (or 256 hyperthreaded CPUs), of which 126 are available for Slurm jobs.
 
 The memory available to Slurm jobs on most of the Milan nodes is 512 GB per node, so approximately 2 GB per CPU.
 
@@ -145,7 +145,7 @@ There are up to 64 of these nodes available, 8 of which have twice as much memor
 
 These nodes are new. Each Genoa node has 2 AMD Genoa 9634 CPUs, each with 12 "chiplets" of one L3 cache and 7 cores, so each node has a total of 168 cores (or 336 hyperthreaded CPUs). We are currently transitioning these nodes from having all 168 cores available but slow I/O, to having only 166 cores available but fast I/O, and so currently there are some of them in each of those states.
 
-The memory available to Slurm jobs on most of the Genoa nodes is 358 GB per node, so approximately 1 GB per CPU. 
+The memory available to Slurm jobs on most of the Genoa nodes is 358 GB per node, so approximately 1 GB per CPU.
 There are 64 of these nodes available, 16 of which have 4 times as much memory, so 1.5 TB.
 
 ### GPUs
