@@ -102,6 +102,31 @@ This will allow the main Nextflow Slurm job to submit this process to Slurm as s
 !!! warning "Avoid many short jobs"
     This will put a major burden on the Slurm scheduler for no improvement in your computational speed. Do not use the Nextflow `slurm` executor for jobs which take less than 30 minutes to complete.
 
+## Running with MPI
+
+In addition to being able to use Nextflow to submit job arrays, you can also [run Nextflow across several nodes using MPI (Message-Passing Interface)](https://github.com/nextflow-io/nf-ignite?tab=readme-ov-file#slurm).
+
+```sl
+#!/bin/bash -e
+
+#SBATCH --job-name=nextflow-mpi
+#SBATCH --time=24:00:00
+#SBATCH --ntasks=3
+#SBATCH --cpus-per-task=12
+#SBATCH --tasks-per-node=1
+#SBATCH --mem=200GB
+#SBATCH --account=nesi12345
+#SBATCH --output="%x-%j.out"
+
+# load nextflow
+module load Nextflow/25.10.0
+export NXF_CLUSTER_SEED=$(shuf -i 0-16777216 -n 1)
+
+# run nextflow
+srun nextflow run <workflow> \
+    -with-mpi
+```
+
 ## Improving efficiency
 
 Nextflow provides tools that can assist you in making efficient use of the HPC resources. Running a pipeline with the CLI option `-with-report` will produce [a HTML execution report containing CPU and memory utilization information](https://www.nextflow.io/docs/latest/reports.html#execution-report) for each individual process as well as each process type. This information can be used to ensure processes are only getting the resources they need.
@@ -113,20 +138,61 @@ Nextflow provides tools that can assist you in making efficient use of the HPC r
 !!! warning "Nextflow plugins"
     nf-core pipelines expect to use nf-plugins in their base configuration. If you want to use these plugins, you will need to manually download them and store them in a plugin cache directory that you can specify with the `NXF_PLUGINS_DIR` environmental variable (as in the example `.sl` above)
 
-## UNTESTED Running with MPI
-
-There is a Nextflow plugin called nf-ignite which might be helpful for splitting large pipelines that only have small tasks. [More information here.](https://github.com/nextflow-io/nf-ignite?tab=readme-ov-file#slurm)
-
 ## Comparison of submission methods
 
-!!! note "Small test run"
-    The following data come from a very small pipeline execution and needs to be repeated with a larger dataset for better information.
-    
-
-The nf-core rnaseq pipeline (v3.21.0) was run using the `test_full` dataset (v3.10) with three methods: a single Slurm job, a Slurm job capable of launching additional jobs, and a Slurm job split 4 ways by MPI.
+The [nf-core rnaseq pipeline (v3.21.0)](https://nf-co.re/rnaseq/3.21.0) was run using the `test_full` dataset (v3.10) with three methods: a single Slurm job, a Slurm job capable of launching additional jobs, and a Slurm job split 4 ways by MPI.
 
 | Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Total CPU     |
 |-----------------------|------------------------------------------|------------------------------|--------------------------------|
 | Single Slurm job | 4 cores                                 | 00:05:37                     | 16:42.462                            |
 | Slurm job with additional | max\_nodes=1; cmds\_per\_node=4       | 00:06:13                     | 17:16.920                            |
 | Slurm job with MPI | max\_nodes=3; cmds\_per\_node=4       | 00:09:41                     | 42:18.727                            |
+
+### Local only
+
+Requested 1 task, 200GB memory, 16 CPUs per task, 12 hours
+Duration    : 11h 16m 47s
+CPU hours   : 319.6
+
+```bash
+nn_seff <job-id>
+Cluster: hpc
+Job ID: 3034402
+State: ['COMPLETED']
+Cores: 16
+Tasks: 1
+Nodes: 1
+Job Wall-time:   94.0%  11:17:04 of 12:00:00 time limit
+CPU Efficiency:  76.6%  5-18:19:39 of 7-12:33:04 core-walltime
+Mem Efficiency:  53.8%  107.69 GB of 200.00 GB
+```
+
+### MPI
+
+Requested 3 tasks, 200GB memory, 12 CPUs per task, 24 hours.
+
+### Labeled processes
+
+Requested 1 task, 72GB memory, 12 CPUs per task, 12 hours.
+Duration    : 5h 19m 46s
+CPU hours   : 381.9 (1.4% failed)
+
+Labeled processes (list below) could submit via slurm array requesting 12 CPUs, 72GB memory with a max queue size of 10.
+
+- `TRIMMGALORE`
+- `STAR_ALIGN_IGENOMES`
+- `PICARD_MARKDUPLICATES`
+- `QUALIMAP_RNASEQ`
+
+```bash
+nn_seff <job-id>
+Cluster: hpc
+Job ID: 3059728
+State: ['OUT_OF_MEMORY']
+Cores: 12
+Tasks: 1
+Nodes: 1
+Job Wall-time:   44.4%  05:20:01 of 12:00:00 time limit
+CPU Efficiency:  79.4%  2-02:47:46 of 2-16:00:12 core-walltime
+Mem Efficiency:  61.9%  44.55 GB of 72.00 GB
+```
