@@ -246,9 +246,9 @@ def click_here():
     if in_code_block:
         return
 
-    m1 = re.search(r"\[.*\s?here\s?.*\]\(.*\)", line, re.IGNORECASE)
+    m1 = re.search(r"(\[.*\s?|\[)here\s?.*\]\(.*\)", line, re.IGNORECASE)
     if m1:
-        yield {"line": lineno, "col": m1.start()+1, "endColumn": m1.end()-1, "message": "Don't use 'here' for link text, impedes accessability."}
+        yield {"line": lineno, "col": m1.start()+1, "endColumn": m1.end()-1, "message": "Don't use 'here' for link text, impedes accessibility."}
 
     # Impliment check for html links when I can be fd.
     # m2 = re.search(r"\[here\]\(.*\)", line)
