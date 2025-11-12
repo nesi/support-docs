@@ -1,6 +1,6 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
-title: What is Multiple Factor Authentication (MFA)
+description: Explanation of Multiple Factor Authentication (MFA)
 tags: 
     - MFA
     - access

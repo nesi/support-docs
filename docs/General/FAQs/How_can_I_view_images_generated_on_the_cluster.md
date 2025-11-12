@@ -5,11 +5,7 @@ tags:
 - image
 - x11
 - view
-title: How can I view images generated on the cluster?
-vote_count: 4
-vote_sum: 2
-zendesk_article_id: 360001514795
-zendesk_section_id: 360000039036
+description: Instructions for viewing images generated on the cluster
 ---
 
 If for any reason downloading images is impractical you can view them on

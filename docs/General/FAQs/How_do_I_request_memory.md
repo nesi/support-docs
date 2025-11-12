@@ -1,11 +1,7 @@
 ---
 created_at: '2019-08-14T05:49:00Z'
 tags: []
-title: How do I request memory?
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360001108756
-zendesk_section_id: 360000039036
+description: Instructions for requesting memory
 ---
 
 - `--mem`: Memory per node

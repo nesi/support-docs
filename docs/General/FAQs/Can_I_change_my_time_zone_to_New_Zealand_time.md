@@ -1,11 +1,7 @@
 ---
 created_at: '2018-09-20T23:52:07Z'
 tags: []
-title: Can I change my time zone to New Zealand time?
-vote_count: 6
-vote_sum: -4
-zendesk_article_id: 360000473256
-zendesk_section_id: 360000039036
+description: Information on the system timezone and how to make changes
 ---
 
 The time displayed in your shell is controlled by a system variable
