@@ -8,9 +8,11 @@ zendesk_article_id: 360000751916
 zendesk_section_id: 360000164635
 ---
 
-Our Consultancy service provides scientific and HPC-focussed
+Our Consultancy service provides scientific and HPC-focused
 computational and data science support to research projects across a
 range of domains.
+
+![Consultancy](../../assets/images/consultancy.png)
 
 ## Need support with your research project?
 
