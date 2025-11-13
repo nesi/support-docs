@@ -43,4 +43,5 @@ scp <path/filename> nesi:~/
 For more info visit [data transfer](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md).
 
 !!! prerequisite "What Next?"
-   - [Standard Terminal Setup](Standard_Terminal_Setup.md)
+
+- [Standard Terminal Setup](Standard_Terminal_Setup.md)

@@ -126,7 +126,7 @@ configurations.
 
 ## Adding a SSH key (optional)
 
-Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
+Generating a SSH key on the cluster removes one of the login prompts when using SSH.
 
 1. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
 
@@ -136,7 +136,7 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
     ```
 
-2. In a terminal **on your local machine**, run the command; 
+2. In a terminal **on your local machine**, run the command;
 
     ```sh
     scp mahuika:~/.ssh/id_rsa ~/.ssh/mahuika_key 

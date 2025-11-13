@@ -23,8 +23,8 @@ description: How to set up cluster access using MobaXterm
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
-     
-The interactive login configuration for MobaXterm is not compatable with the current web-based authentication method. If you wish to use MobaXterm as your SSH client you therefore need to use a non-interactive setup.
+
+The interactive login configuration for MobaXterm is not compatible with the current web-based authentication method. If you wish to use MobaXterm as your SSH client you therefore need to use a non-interactive setup.
 This can be done by following a modified version of the instructions for setting up the [the standard terminal setup described on this support page](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
 
 ## First time setup
@@ -61,7 +61,7 @@ configurations.
     ```
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
-    
+
 4. Run the command `mv config.txt ~/.ssh/config`
 
 5. Ensure the permissions are correct by
@@ -99,8 +99,9 @@ configurations.
 8. Select your institution, you will be prompted to provide your login details.
 
 9. You are now asked about your current device: do you trust it or not?  
--  If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your 6-digit code every time you log.
--  If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without additional authentication for 7 days.
+
+- If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your 6-digit code every time you log.
+- If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without additional authentication for 7 days.
 
 If you have trusted your device, you have to enter a name for this device. This name must be unique but can be anything you want.
 

@@ -30,7 +30,7 @@ PuTTY.
     slow or flaky Internet connection, you may find that SFTP performs
     better than SCP. Feel free to try both and see which works best for
     you.
-   
+
 ![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
 5. Open Advanced Settings.
@@ -39,7 +39,7 @@ PuTTY.
 
 6. Navigate to *Connection & Tunnel* and set:
     - Enable "Connect through SSH tunnel".
-    - Under "Host name:" enter lander.hpc.nesi.org.nz
+    - Under "Host name:" enter `lander.hpc.nesi.org.nz`
     - Under "User name:" enter your username.
 7. *OK &gt; Save*
 
@@ -104,8 +104,6 @@ type in).
 
 ![winBook.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
 current directory.
-
-### Troubleshooting
 
 #### Repeated Authentication Prompts
 
