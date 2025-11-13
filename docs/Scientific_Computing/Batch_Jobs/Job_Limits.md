@@ -4,6 +4,8 @@ description: What limits are there on running jobs.
 tags: 
     - Slurm
     - accounting
+    - cpu
+    - gpu
 ---
 
 These are open for review if you find any of them unreasonable or inefficient.  

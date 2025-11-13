@@ -1,6 +1,9 @@
 ---
 created_at: '2018-11-15T22:10:10Z'
-tags: []
+tags:
+- multithreading
+- cpu
+- Slurm
 description: How to use simultaneous multithreading (hyper-threading) on NeSI.
 status: deprecated
 ---

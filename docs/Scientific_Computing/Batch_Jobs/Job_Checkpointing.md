@@ -1,11 +1,7 @@
 ---
 created_at: '2020-03-08T20:06:48Z'
 tags: []
-title: Job Checkpointing
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360001413096
-zendesk_section_id: 360000030876
+description: Information on job checkpointing
 ---
 
 
@@ -28,7 +24,11 @@ Below is an example of submitting the same job again, if previous has
 run successfully.
 
 ``` sl
-# Slurm header #SBATCH etc etc
+#!/bin/bash -e
+
+#SBATCH --account           nesi12345
+#SBATCH --job-name          checkpointing
+#SBATCH --time              00:10:00
 
 sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" 
 # "$0" is equal to the name of this script.
@@ -41,7 +41,11 @@ This job will resubmit itself forever until stopped.
 Another example for a job requiring explicit step inputs.
 
 ```sl
-# Slurm header '#SBATCH etc etc
+#!/bin/bash -e
+
+#SBATCH --account           nesi12345
+#SBATCH --job-name          checkpointing
+#SBATCH --time              00:10:00
 
 n_steps=1000
 starting_step=${1:-0} # Will be equal to first argument, or '0' if unset.

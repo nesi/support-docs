@@ -4,6 +4,7 @@ description: What factors are used to determine a jobs prioroty.
 tags: 
  - Slurm
  - accounting
+ - Fair Share
 ---
 
 Each queued job has a priority score. Jobs start when sufficient

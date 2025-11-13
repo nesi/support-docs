@@ -3,6 +3,9 @@ created_at: '2019-02-05T03:58:21Z'
 tags:
   - accounting
   - Slurm
+  - Fair Share
+  - allocation
+  - project
 description: How balancing your workload lets you make the most of your allocation.
 status: deprecated
 ---
@@ -136,10 +139,10 @@ See the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.s
 
 ## How do I check my project's Fair Share score?
 
--The command `nn_corehour_usage <project_code>`, on a Mahuika or Māui
+- The command `nn_corehour_usage <project_code>`, on a Mahuika or Māui
     login node, will show, along with other information, the current
     fair share score and ranking of the specified project.
--The `sshare` command, on a Mahuika login node, will show the fair
+- The `sshare` command, on a Mahuika login node, will show the fair
     share tree. A related command, `nn_sshare_sorted`, will show
     projects in order from the highest fair share score to the lowest.
 

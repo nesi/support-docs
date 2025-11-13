@@ -3,6 +3,7 @@ created_at: '2020-01-05T21:43:18Z'
 tags: 
   - interactive
   - scheduling
+  - Slurm
 description: How to run an interactive session on the NeSI cluster.
 ---
 
@@ -82,8 +83,7 @@ salloc: Granted job allocation 10256925
 Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
 
-For a full description of `salloc` and its options, see
-[here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
+[See the Slurm `salloc` documentation for more details](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
 
 ### Requesting a postponed start
 
@@ -138,18 +138,18 @@ disrupted while you're away.
 ## Running Python+JupyterLab in Interactive Mode
 
 !!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
-     tested it yet in Putty or Mobaxterm
+     If you are using a windows computer, this method has currently
+     been tested in VSCode, WSL PowerShell, and WSL Ubuntu. We have not
+     tested it yet in Putty or MobaXterm
 
-To run Python+JupyterLab in interactive mode, first we need to load 
+To run Python+JupyterLab in interactive mode, first we need to load
 your interactive session:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
 ```
 
-Then, we need to start up Python, install JupyterLab if you dont have it 
+Then, we need to start up Python, install JupyterLab if you don't have it
 yet, and obtain the hostname and the port:
 
 ```sh
@@ -181,8 +181,8 @@ and `echo $PORT` commands. Then, we need to start up JupyterLab:
 jupyter lab --no-browser --ip=0.0.0.0 --port=$PORT
 ```
 
-Make a note of the second URL given by JupyterLab once it launches. 
-For instance: 
+Make a note of the second URL given by JupyterLab once it launches.
+For instance:
 
 ```sh
 [C 2025-11-03 14:34:31.797 ServerApp] 
@@ -216,17 +216,16 @@ http://127.0.0.1:PORT/lab?token=TOKEN
 # http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
 ```
 
-You will now be able to see and work wih Python+JupyterLab in your web browser. 
-
+You will now be able to see and work wih Python+JupyterLab in your web browser.
 
 ## Running Julia+Pluto.ji in Interactive Mode
 
 !!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+     If you are using a windows computer, this method has currently
+     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not
      tested it yet in Putty or Mobaxterm
 
-To run Julia+Pluto.ji in interactive mode, first we need to load 
+To run Julia+Pluto.ji in interactive mode, first we need to load
 your interactive session:
 
 ```sh
@@ -252,7 +251,7 @@ export pluto_port=${PORT}
 ```
 
 Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Then, we need to start up Julia, install and 
+and `echo $PORT` commands. Then, we need to start up Julia, install and
 run Pluto.ji:
 
 ```sh
@@ -276,10 +275,10 @@ Take a note of the information given for the URL
 └ 
 ```
 
-Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access 
-Pluto. 
+Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access
+Pluto.
 
-Next, open up a second terminal on your local machine (or a second screen 
+Next, open up a second terminal on your local machine (or a second screen
 in tmux or screen), and type the following:
 
 ```sh
@@ -298,8 +297,7 @@ http://0.0.0.0:PORT/?secret=SECRET
 # http://0.0.0.0:9627/?secret=mXmq6659
 ```
 
-You will now be able to see and work wih Julia+Pluto in your web browser. 
-
+You will now be able to see and work wih Julia+Pluto in your web browser.
 
 ## Setting up a detachable terminal
 
@@ -371,7 +369,7 @@ scontrol update jobid=12345678 StartTime=now
 ### Other changes using `scontrol`
 
 There are many other changes you can make by means of `scontrol`. For
-further information, please see 
+further information, please see
 [the `scontrol` documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scontrol.html).
 
 ## Modifying multiple interactive sessions at once

@@ -4,6 +4,7 @@ description:  This page below outlines the available hardware.
 tags:
  - gpu
  - compute
+ - cpu
 ---
 
 A list of the currently available hardware.
