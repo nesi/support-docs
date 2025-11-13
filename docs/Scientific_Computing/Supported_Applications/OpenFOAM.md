@@ -5,8 +5,7 @@ tags:
 - cfd
 - cae
 - fea
-vote_count: 0
-vote_sum: 0
+description: Supported applications page for OpenFOAM
 ---
 
 
@@ -36,11 +35,12 @@ source $FOAM_BASH
 ```sl
 #!/bin/bash -e
 
+#SBATCH --account           nesi12345
 #SBATCH --time              04:00:00
 #SBATCH --job-name          OF_16CORES
 #SBATCH --output            %x.output   #set output to job name
 #SBATCH --ntasks            16
-#SBATCH --mem-per-cpu               512MB
+#SBATCH --mem-per-cpu       512MB
 
 #Working directory always needs to contain 'system', 'constant', and '0'
 
@@ -82,20 +82,20 @@ There are a few ways to mitigate this
     disk space limits.
 
 - **ControlDict Settings**  
-  - `WriteInterval`  
+    - `WriteInterval`  
         Using a high write interval reduce number of output files and
         I/O load.
-  - `deltaT`  
+    - `deltaT`  
         Consider carefully an appropriate time-step, use adjustTimeStep
         if suitable.
-    - `purgeWrite`  
+        - `purgeWrite`  
         Not applicable for many jobs, this keeps only the last n steps,
         e.g. purgeWrite 5 will keep the last 5 time-steps, with the
         directories being constantly overwritten.
-    - `runTimeModifiable`  
+        - `runTimeModifiable`  
         When true, dictionaries will be re-read at the start of every
         time step. Setting this to false will decrease I/O load.
-    - `writeFormat`  
+        - `writeFormat`  
         Setting this to binary as opposed to ascii will decrease disk
         use and I/O load.
 

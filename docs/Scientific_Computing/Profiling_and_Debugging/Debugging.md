@@ -1,10 +1,9 @@
 ---
 created_at: '2019-06-16T21:30:28Z'
-tags: []
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360001008136
-zendesk_section_id: 360000278935
+tags:
+    - corefile
+    - Slurm
+description: Instructions for debugging
 ---
 
 There are many reasons why a program might crash. Some Slurm job states

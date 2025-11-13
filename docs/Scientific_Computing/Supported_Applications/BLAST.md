@@ -3,11 +3,7 @@ created_at: '2015-08-27T04:44:00Z'
 tags:
 - mahuika
 - biology
-title: BLAST
-vote_count: 1
-vote_sum: -1
-zendesk_article_id: 208619807
-zendesk_section_id: 360000040076
+description: Supported applications page for BLAST
 ---
 
 
@@ -49,7 +45,7 @@ approach first and see if it takes too long.
 
 ### Single Thread
 
-For jobs which need less than 24 CPU-hours, eg: those that use small
+For jobs which need less than 24 CPU-hours, e.g.: those that use small
 databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
 or fast BLAST programs such as *blastn* with its default (megablast)
 settings.  
@@ -57,6 +53,7 @@ settings.  
 ``` sl
 #!/bin/bash -e
 
+#SBATCH --account       nesi12345
 #SBATCH --job-name      BLAST
 #SBATCH --time          00:30:00  # ~10 CPU minutes / MB blastn query vs nt
 #SBATCH --mem           30G
@@ -93,6 +90,7 @@ allowed for in the memory requested by the job.  As of mid 2023 that is
 ``` sl
 #!/bin/bash -e
 
+#SBATCH --account       nesi12345
 #SBATCH --job-name      BLAST
 #SBATCH --time          02:30:00
 #SBATCH --mem           120G  # 30 GB plus the database

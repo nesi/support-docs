@@ -6,6 +6,7 @@ tags:
  - particle modelling
  - water quality testing
  - wave modelling
+description: Supported applications page for Delft3D
 ---
 
 {% set app_name = page.title | trim %}
@@ -21,6 +22,7 @@ tags:
     ```sl
     #!/bin/bash -e
 
+    #SBATCH --account       nesi12345
     #SBATCH --job-name      Delft3D
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem           512M           # Total Memory
@@ -37,6 +39,7 @@ tags:
     ```sl
     #!/bin/bash -e
     
+    #SBATCH --account       nesi12345
     #SBATCH --job-name      Delft3D
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --cpus-per-task 4
@@ -71,6 +74,7 @@ tags:
     ```sl
     #!/bin/bash -e
 
+    #SBATCH --account       nesi12345
     #SBATCH --job-name      Delft3D_distributed
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem-per-cpu   1G             

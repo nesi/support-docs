@@ -4,6 +4,7 @@ tags:
     - climate
     - modelling
 status: deprecated
+description: Supported applications page on CESM
 ---
 
 The Community Earth System Model (CESM) is a coupled climate model for
@@ -23,7 +24,7 @@ both Māui and Mahuika.
 
 On Mahuika only, load a module with a more recent version of git than the default one:
 
-```
+```bash
 module load git
 ```
 
@@ -49,7 +50,7 @@ later on in this guide.
 On Māui only, you may need to install the Perl *XML::LibXML* module,
 especially if you encounter errors like:
 
-```
+```bash
 err=Can't locate XML/LibXML.pm in @INC (you may need to install the XML::LibXML module)
 ```
 
@@ -79,8 +80,7 @@ fi
 ### Mahuika and Māui
 
 Git Large File Storage seems to be required to download some of the CESM
-components. Download the Git-LFS archive from
-[here](https://git-lfs.github.com/) and install it into your home directory.
+components. Download the [Git-LFS archive](https://git-lfs.github.com/) and install it into your home directory.
 Finally, add that directory to *PATH* in your ~/.bashrc file.
 The following commands will achieve this:
 
@@ -229,7 +229,7 @@ Next, set up the case and preview the run:
 
 Check that everything looks correct in the preview. On Mahuika you should see that the case is setup to run on 192 total tasks:
 
-```
+```sh
 CASE INFO:
   nodes: 6
   total tasks: 192
@@ -276,9 +276,8 @@ The above link lists some of the common configurations, such as fully
 sequential or fully sequential except the ocean running concurrently.
 
 One approach to load balancing (i.e. optimising processor layout) is
-documented on the above page in the section "One approach to load
-balancing"
-[here](https://esmci.github.io/cime/versions/maint-5.6/html/users_guide/pes-threads.html).
+documented on the above ESMCI page in the section "One approach to load
+balancing".
 It involves performing a number of short model runs to determine which
 components are most expensive and how the individual components scale.
 That information can then be used to determine an optimal load balance.

@@ -1,11 +1,8 @@
 ---
 created_at: '2019-09-23T11:11:16Z'
-tags: []
-title: Julia
-vote_count: 3
-vote_sum: 3
-zendesk_article_id: 360001175895
-zendesk_section_id: 360000040076
+tags:
+- software
+description: Supported applications page for Julia
 ---
 
 
@@ -17,7 +14,7 @@ zendesk_section_id: 360000040076
 
 Julia is a flexible dynamic language, appropriate for scientific and
 numerical computing, with performance comparable to traditional
-statically-typed languages. The Julia home page is
+statically typed languages. The Julia home page is
 at <https://julialang.org/>.
 
 ## Licensing requirements
@@ -167,7 +164,7 @@ There are several ways to add a directory to `LOAD_PATH`, but almost
 certainly the easiest is to do the following in your environment:
 
 ``` sh
-$ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
+export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
 ```
 
 !!! tip
@@ -184,7 +181,7 @@ $ export JULIA_LOAD_PATH="/nesi/project/nesi12345/julia:${JULIA_LOAD_PATH}"
      ```
 !!! tip
      To revert to the default load path, just unset `JULIA_LOAD_PATH`:
-     ``` sl
+     ``` sh
      $ unset JULIA_LOAD_PATH
      $ export JULIA_LOAD_PATH
      ```

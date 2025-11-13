@@ -20,7 +20,6 @@ Two bugs that have been an ongoing issue for the users have been fixed.
 
 (This release is on Open OnDemand version 3.1.10)
 
-
 ## 0.3.1 - High memory option available in ondemand
 
 This release enables high memory node to be selected by the users. Currently we support up to 32GB instance on the app launch.
@@ -46,29 +45,28 @@ This is our first release to a group of early access users for feedback around N
 
 - As a new step forward from Jupyter.NeSI, we have a new interactive environment NeSI OnDemand where you can launch NeSI apps for your research.
 
-    * Currently accessible via [https://ondemand.nesi.org.nz/](https://ondemand.nesi.org.nz/)
+    - Currently accessible via [https://ondemand.nesi.org.nz/](https://ondemand.nesi.org.nz/)
 
 - Apps currently supported
 
-    * JupyterLab with the following kernels: Python 3.8.2 (gimkl-2020a), Python 3.9.5 (gimkl-2020a), Python 3.10.5 (gimkl-2022a), and Python 3.11.3 (gimkl-2022a) 
-    * RStudio
+    - JupyterLab with the following kernels: Python 3.8.2 (gimkl-2020a), Python 3.9.5 (gimkl-2020a), Python 3.10.5 (gimkl-2022a), and Python 3.11.3 (gimkl-2022a)
+    - RStudio
 
 - Additional Apps (under development)
 
-    * In addition to the two core apps above, we have the following applications accessible, but are still under development, and are unsupported. We will update you with more information in the future releases as they stabilise.
-    * Virtual desktop
-    * Matlab
-    * VS Code-Server
+    - In addition to the two core apps above, we have the following applications accessible, but are still under development, and are unsupported. We will update you with more information in the future releases as they stabilise.
+    - Virtual desktop
+    - Matlab
+    - VS Code-Server
 
 - New login process for the NeSI systems going forward
 
-    * NeSI is adopting a new Tuakiri based single sign on process for logging in to all NeSI services. This will mean that you won’t have to set up a separate NeSI account and password in order to be able to access NeSI services in the future.
-    * To ensure the security of our system, we have an additional OTP (one-time password) that is enforced on top of your institutional login. Over time, we will smooth out the user experience for setting this up and the frequency of having to enter the OTP.
+    - NeSI is adopting a new Tuakiri based single sign on process for logging in to all NeSI services. This will mean that you won’t have to set up a separate NeSI account and password in order to be able to access NeSI services in the future.
+    - To ensure the security of our system, we have an additional OTP (one-time password) that is enforced on top of your institutional login. Over time, we will smooth out the user experience for setting this up and the frequency of having to enter the OTP.
 
 !!! Note
 
     We are in the early process of iterating and improving NeSI OnDemand. If you see any issues or suggestions, please let us know.
 
-    - Please e-mail us on [support@nesi.org.nz](mailto:support@nesi.org.nz) with NeSI OnDemand as a part of the subject line and we will get back to you ASAP
-    - Given that this is an early release, the SLA will not follow NeSI standard SLA (9am-5pm working days), and the environment may not be as stable as the production environment. We will support you with the best effort.
-
+    - Please e-mail us on [support@nesi.org.nz](mailto:support@nesi.org.nz) with NeSI OnDemand as a part of the subject line and we will get back to you as soon as possible
+    - Given that this is an early release, the SLA will not follow NeSI standard SLA (9 AM-5 PM working days), and the environment may not be as stable as the production environment. We will support you with the best effort.

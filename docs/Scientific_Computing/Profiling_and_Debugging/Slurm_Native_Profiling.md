@@ -3,6 +3,7 @@ created_at: '2019-02-24T23:26:19Z'
 tags:
 - slurm
 - profiling
+description: Information on Slurm native profiling
 ---
 
 Job resource usage can be determined on job completion by checking the

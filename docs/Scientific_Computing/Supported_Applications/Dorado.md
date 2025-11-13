@@ -1,11 +1,9 @@
 ---
 created_at: '2023-03-21T09:33:04Z'
-tags: []
-title: Dorado
-vote_count: 5
-vote_sum: 3
-zendesk_article_id: 6623692647951
-zendesk_section_id: 360000040076
+tags:
+- software
+- biology
+description: Supported applications page for Dorado
 ---
 
 
@@ -49,7 +47,7 @@ at [http://nanoporetech.com](http://nanoporetech.com/)
 - The following Slurm script is a template to run Basecalling on the
     NVIDIA A100 GPUs. We do not recommend running Dorado jobs on CPUs.
 - `--device 'cuda:all'` will automatically pick up the GPU over CPU
-- We are not providing the models as part of the module yet. 
+- We are not providing the models as part of the module yet.
 
 ``` sl
 #!/bin/bash -e

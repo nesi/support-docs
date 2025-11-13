@@ -1,6 +1,6 @@
 ---
 created_at: '2025-09-24T21:33:58Z'
-title: User Guides
+description: Information about Research Developer Cloud
 tags:
  - rdc
  - cloud
@@ -15,7 +15,6 @@ Research teams can use this platform to develop novel solutions that enable rese
 - *Programmable infrastructure:* Applying DevOps practices enabled by Infrastructure as Code (IaC) to automate, measure, collaborate, and learn.
 - *Partnership-led approaches:* Collaborating with our DevOps specialists to build a platform or tools that can benefit your research community.
 
-
 ## Features
 
 Our platform's cloud building blocks include:
@@ -29,7 +28,6 @@ Our platform's cloud building blocks include:
 
 Visit [the Research Developer Cloud user guides](https://support.cloud.nesi.org.nz/user-guides/) to learn more about these resources and capabilities.
 
-
 ## Get started
 
 We invite you to apply for access if you are:
@@ -39,7 +37,6 @@ We invite you to apply for access if you are:
 - Interested in partnering with us to apply DevOps approaches and best practice to your research activities
 
 [Send us an email to request access](https://docs.google.com/forms/d/e/1FAIpQLScYsLxe1HswOW9DFUNuhyTcYhdWY7-SZqTF3RpeBpFcyNdhUA/viewform).
-
 
 ## Pricing
 

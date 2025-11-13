@@ -3,11 +3,7 @@ created_at: '2019-02-14T23:33:05Z'
 tags:
 - mahuika
 - engineering
-title: FDS
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000759275
-zendesk_section_id: 360000040076
+description: Supported applications page for FDS
 ---
 
 
@@ -22,8 +18,7 @@ Standards and Technology (NIST) for large-eddy simulation (LES) of
 low-speed flows, with an emphasis on smoke and heat transport from
 fires.
 
-General documentation can be found
-[here](https://github.com/firemodels/fds/releases/download/FDS6.7.1/FDS_User_Guide.pdf).
+[See the FDS documentation for more details](https://github.com/firemodels/fds/releases/download/FDS6.7.1/FDS_User_Guide.pdf).
 
 FDS can utilise both
 [MPI](../../Getting_Started/Next_Steps/Parallel_Execution.md#mpi)
@@ -35,6 +30,8 @@ and
 ``` sl
 #!/bin/bash -e
 
+#SBATCH --account       nesi12345
+#SBATCH --job-name      FDS
 #SBATCH --time           02:00:00       #Walltime
 #SBATCH --ntasks         4              #One task per mesh, NO MORE
 #SBATCH --cpus-per-task  2              #More than 4 cpus/task not recommended.
@@ -64,8 +61,8 @@ srun fds ${input}
 
 ### Scaling with MPI
 
-![FDS scaling distrubuted mem](../../assets/images/FDS.png)
+![FDS scaling distributed memory](../../assets/images/FDS.png)
 
 ### Scaling with oMP
 
-![FDS scaling shared mem](../../assets/images/FDS_0.png)
+![FDS scaling shared memory](../../assets/images/FDS_0.png)

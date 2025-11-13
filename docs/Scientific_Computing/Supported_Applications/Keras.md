@@ -1,11 +1,7 @@
 ---
 created_at: '2019-07-24T04:30:33Z'
 tags: []
-title: Keras
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001075936
-zendesk_section_id: 360000040076
+description: Supported applications page for Keras
 ---
 
 Keras is a modular and extendable API for building neural networks in
@@ -100,13 +96,16 @@ We're now ready to train and test our model:
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name keras-dots
-#SBATCH --partition gpu
-#SBATCH --gres gpu:1
-#SBATCH --ntasks 1
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      keras-dots
+#SBATCH --partition     gpu
+#SBATCH --gres          gpu:1
+#SBATCH --ntasks        1
 #SBATCH --cpus-per-task 1
-#SBATCH --time 00:10:00
-#SBATCH --mem 512MB
+#SBATCH --time          00:10:00
+#SBATCH --mem           512MB
+
 module load TensorFlow/1.10.1-gimkl-2017a-Python-3.6.3
 python classify.py --testDir=test --trainDir=train --save=someResults.png
 ```

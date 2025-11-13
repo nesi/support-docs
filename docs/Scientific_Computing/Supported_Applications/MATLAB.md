@@ -150,7 +150,7 @@ end
 
 `fetchOutputs` is used to retrieve the values.
 
-More info on 
+More info on
 [parfeval](https://au.mathworks.com/help/parallel-computing/parfeval.html).
 
 !!! tip
@@ -159,7 +159,7 @@ More info on
      and not necessarily cause to raise total memory requested.
 
 Determining which of
-[parfor variable categories](https://au.mathworks.com/help/parallel-computing/troubleshoot-variables-in-parfor-loops.html) 
+[parfor variable categories](https://au.mathworks.com/help/parallel-computing/troubleshoot-variables-in-parfor-loops.html)
 your variables fall under is a good place to start when attempting to
 parallelise your code.
 

@@ -3,11 +3,7 @@ created_at: '2019-08-15T05:48:41Z'
 tags:
 - geo
 - earthquake
-title: OpenSees
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001111156
-zendesk_section_id: 360000040076
+description: Supported applications page for OpenSees
 ---
 
 

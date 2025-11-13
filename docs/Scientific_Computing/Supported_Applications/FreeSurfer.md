@@ -1,19 +1,24 @@
+---
+created_at: '2024-02-15T03:27:38Z'
+tags:
+- software
+description: Supported applications page for FreeSurfer
+---
+
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 [//]: <> (APPS PAGE BOILERPLATE END)
-
 
 ## Prerequisites
 
 !!! quote ""
 
     * You will be required to obtain a license (it's free) from http://surfer.nmr.mgh.harvard.edu/registration.html
-    * Once obtained, save it as *license.txt* ( original filename ) and save it anywhere in the filesystem. ( ideally, home or project directory)
-
+    * Once obtained, save it as `license.txt` ( original filename ) and save it anywhere in the filesystem ( ideally, home or project directory)
 
 ## Slurm template to run FreeSurfer
 
-* FreeSurfer container/s is/are stored in `/opt/nesi/container/FreeSurfer` ( this is an image pulled from https://hub.docker.com/r/freesurfer/freesurfer)
+* FreeSurfer container/s is/are stored in `/opt/nesi/container/FreeSurfer` ( this is an image pulled from <https://hub.docker.com/r/freesurfer/freesurfer>)
 * We provide a sample dataset which can be used for a test run. This is stored in `/opt/nesi/container/FreeSurfer/data`
 
 !!! quote ""

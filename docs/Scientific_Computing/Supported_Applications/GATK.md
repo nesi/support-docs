@@ -1,11 +1,9 @@
 ---
 created_at: '2023-02-21T21:21:50Z'
-tags: []
-title: GATK
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6443618773519
-zendesk_section_id: 360000040076
+tags:
+- software
+- biology
+description: Supported applicaitons page for GATK
 ---
 
 
@@ -18,11 +16,10 @@ zendesk_section_id: 360000040076
 The Genome Analysis Toolkit (GATK), developed at the [Broad
 Institute](http://www.broadinstitute.org/), provides a wide variety of
 tools focusing primarily on variant discovery and genotyping. It is
-regarded as the industry standard for identifying SNPS and indels in
+regarded as the industry standard for identifying SNPs and indels in
 germline DNA and RNAseq data.
 
-General documentation for running GATK can be found at their website
-[here.](https://gatk.broadinstitute.org/hc/en-us)
+[See the GATK documentation for more details.](https://gatk.broadinstitute.org/hc/en-us)
 
 ## Running GATK
 
@@ -37,12 +34,13 @@ need to load a Java module separately.
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name=MarkDuplicates
-#SBATCH --output=%x_%j.out     # log file
-#SBATCH --error=%x_%j.err      # error log file
-#SBATCH --account=nesi12345    # your NeSI project code
-#SBATCH --time=2:00:00         # maximum run time hh:mm:ss
-#SBATCH --mem=30G              # maximum memory available to GATK
+
+#SBATCH --job-name     MarkDuplicates
+#SBATCH --output       %x_%j.out     # log file
+#SBATCH --error        %x_%j.err      # error log file
+#SBATCH --account      nesi12345    # your NeSI project code
+#SBATCH --time         2:00:00         # maximum run time hh:mm:ss
+#SBATCH --mem          30G              # maximum memory available to GATK
 
 # create temporary directory for Java so it does not fill up /tmp
 TMPDIR=/nesi/nobackup/<project_ID>/GATK_tmp/
@@ -66,11 +64,11 @@ GATK versions 4.0 or higher all contains a copy of the Picard toolkit,
 you will not need to separately load the Picard module. To run
 GATK-picard commands, use:  
 
-``` sl
+``` sh
 gatk <picard function> <options>
 ```
 
-This is different what what is currently written on the GATK
+This is different to what is currently written on the GATK
 documentation, you do not need to call "java -jar picard.jar
 &lt;Picard-function&gt;". Simply replace the Java parts with "gatk" and
 the function of interest.

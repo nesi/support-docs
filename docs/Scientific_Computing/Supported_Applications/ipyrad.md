@@ -1,11 +1,9 @@
 ---
 created_at: '2022-09-26T08:09:35Z'
-tags: []
-title: ipyrad
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 5565081844623
-zendesk_section_id: 360000040076
+tags:
+- biology
+- software
+description: Supported applications page for ipyrad
 ---
 
 
@@ -22,7 +20,7 @@ restriction-site associated DNA (RAD-seq) and related data types. Please
 explore the documentation to find out more about the features of
 ipyrad.\\
 
-Home page is at https://ipyrad.readthedocs.io/en/latest/index.html
+Home page is at <https://ipyrad.readthedocs.io/en/latest/index.html>
 
 ### Cite the Manuscript
 
@@ -36,8 +34,8 @@ GPLv3
 ## Getting Started
 
 Following **example** uses  rad\_example which can be downloaded as per
-instructions on 
-<https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html> 
+instructions on
+<https://ipyrad.readthedocs.io/en/latest/tutorial_advanced_cli.html>
 
 ``` sh
 curl -LkO https://eaton-lab.org/data/ipsimdata.tar.gz
@@ -63,7 +61,7 @@ data, barcode paths,etc.
 ### Slurm Script for Using Multiple CPUs a Single Compute Node
 
 ``` sl
-#!/bin/bash
+#!/bin/bash -e
 
 #SBATCH --account       nesi12345
 #SBATCH --job-name      ipyrad

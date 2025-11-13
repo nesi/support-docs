@@ -3,11 +3,7 @@ created_at: '2015-08-18T02:30:33Z'
 tags:
 - mahuika
 - general
-title: Java
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 207765367
-zendesk_section_id: 360000040076
+description: Supported applications page for Java
 ---
 
 
@@ -44,6 +40,8 @@ found by following the directions in `${JAVA_HOME}/LICENSE`.
 
 ``` sl
 #!/bin/bash -e
+
+#SBATCH --account       nesi12345
 #SBATCH --job-name      MyMultithreadedJavaJob
 #SBATCH --time          1:00:00          # 1 hour walltime limit
 #SBATCH --cpus-per-task 8                # 8 CPU cores for 8 Java threads

@@ -12,7 +12,7 @@ tags:
 
 ### `Error -- can't find user for`
 
-If you see this message after logging in, It is an indication the account associated with your username was not provisioned correctly or doesn't exist. 
+If you see this message after logging in, It is an indication the account associated with your username was not provisioned correctly or doesn't exist.
 
 Please {% include "partials/support_request.html" %} and we will be able to fix this problem.
 

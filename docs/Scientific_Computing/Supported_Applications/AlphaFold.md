@@ -1,11 +1,10 @@
 ---
 created_at: '2021-08-17T03:13:55Z'
-tags: []
-title: AlphaFold
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 4405170961039
-zendesk_section_id: 360000040076
+tags:
+- software
+- biology
+- chemistry
+description: Supported applications page for Alphafold
 ---
 
 
@@ -86,7 +85,7 @@ AlphaFold2 databases
 ```
 
 Loading a module will set the `$AF2DB` variable which is pointing to
-the  selected version of the database. For an example. 
+the  selected version of the database. For an example.
 
 ``` sh
 $ module load AlphaFold2DB/2023-04

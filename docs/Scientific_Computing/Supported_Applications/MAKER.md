@@ -1,11 +1,7 @@
 ---
 created_at: '2020-03-13T03:23:18Z'
 tags: []
-title: MAKER
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001419576
-zendesk_section_id: 360000040076
+description: Supported applications page for MAKER
 ---
 
 
@@ -19,7 +15,7 @@ zendesk_section_id: 360000040076
 
 Since the MAKER control file *maker\_exe.ctl* is just an annoyance in an
 environment module based system we have patched MAKER to make that
-optional. If it is absent then the defaults will be used directly. 
+optional. If it is absent then the defaults will be used directly.
 
 ## Parallelism
 
@@ -29,9 +25,14 @@ across multiple nodes. So we recommend running large MAKER jobs with up
 to 36 tasks on one node (ie: one full regular node), eg:
 
 ``` sl
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=36
-#SBATCH --mem-per-cpu=1500
+#!/bin/bash -e
+
+#SBATCH --account           nesi12345
+#SBATCH --job-name          MAKER
+#SBATCH --nodes             1
+#SBATCH --ntasks-per-node   36
+#SBATCH --mem-per-cpu       1500
+#SBATCH --time              01:00:00
 
 module load MAKER/2.31.9-gimkl-2020a
 srun maker -q

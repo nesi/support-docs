@@ -595,7 +595,7 @@ opening the GUI within the project folder.
     may not be suitable in all cases.
     -   Closing the session or losing connection will prevent the next
         stage of the job starting (currently executing step will continue
-        to run).  It is a good idea to launch the GUI inside a tmux/screen
+        to run). It is a good idea to launch the GUI inside a tmux/screen
         session then send the process to background to avoid this.
     -   Each individual step will be launched with the same parameters
         given in the GUI.
@@ -623,7 +623,7 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a slurm script or by 
+ANSYS-EM jobs can be submitted through a slurm script or by
 [interactive session](../../Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md).
 
 ### RSM

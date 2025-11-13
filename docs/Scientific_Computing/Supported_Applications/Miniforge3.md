@@ -3,13 +3,14 @@ created_at: '2020-06-23T23:10:13Z'
 tags: 
   - python
   - environments
+description: Supported applications page for Miniforge3
 ---
 
 !!! note "Preferred Alternatives"
      - If you want a more reproducible and isolated environment, we
          recommend using the [Apptainer containers](../../Scientific_Computing/Supported_Applications/Apptainer.md).
      - If you only need access to Python and standard numerical libraries
-         (numpy, scipy, matplotlib, etc.), you can use the 
+         (numpy, scipy, matplotlib, etc.), you can use the
          [Python environment module](../../Scientific_Computing/Supported_Applications/Python.md).
 
 {% set app_name = page.title | trim %}
@@ -58,7 +59,7 @@ Here are the explanations for each line of this snippet:
 !!! warning "Defaults Channel"
      If you are using a `environment.yml` file, you will have to remove the
      `defaults` channel, or you will receive an error.
-     
+
      ``` out
      Failed to create Conda environment
      The channel is not accessible or is invalid.

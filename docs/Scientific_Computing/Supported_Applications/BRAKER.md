@@ -1,10 +1,9 @@
 ---
 created_at: '2023-03-06T19:04:56Z'
-tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6529511928207
-zendesk_section_id: 360000040076
+tags:
+- biology
+- software
+description: Supported applications page for BRAKER
 ---
 
 {% set app_name = page.title | trim %}
@@ -19,7 +18,7 @@ we have developed
 BRAKER1<sup>[R1](https://github.com/Gaius-Augustus/BRAKER#f1)[R0](https://github.com/Gaius-Augustus/BRAKER#f0)</sup>,
 a combination of
 GeneMark-ET <sup>[R2](https://github.com/Gaius-Augustus/BRAKER#f2)</sup> and
-AUGUSTUS <sup>[R3, ](https://github.com/Gaius-Augustus/BRAKER#f3)[R4](https://github.com/Gaius-Augustus/BRAKER#f4)</sup>,
+AUGUSTUS <sup>[R3,](https://github.com/Gaius-Augustus/BRAKER#f3)[R4](https://github.com/Gaius-Augustus/BRAKER#f4)</sup>,
 that uses genomic and RNA-Seq data to automatically generate full gene
 structure annotations in novel genome.
 
@@ -29,21 +28,21 @@ available, at all.
 
 BRAKER2 is an extension of BRAKER1 which allows for **fully automated
 training** of the gene prediction tools
-GeneMark-EX <sup>[R14, ](https://github.com/Gaius-Augustus/BRAKER#f14)[R15, ](https://github.com/Gaius-Augustus/BRAKER#f15)[R17, ](https://github.com/Gaius-Augustus/BRAKER#f17)[F1](https://github.com/Gaius-Augustus/BRAKER#g1)</sup> and
+GeneMark-EX <sup>[R14,](https://github.com/Gaius-Augustus/BRAKER#f14)[R15,](https://github.com/Gaius-Augustus/BRAKER#f15)[R17,](https://github.com/Gaius-Augustus/BRAKER#f17)[F1](https://github.com/Gaius-Augustus/BRAKER#g1)</sup> and
 AUGUSTUS from RNA-Seq and/or protein homology information, and that
 integrates the extrinsic evidence from RNA-Seq and protein homology
 information into the **prediction**.
 
 In contrast to other available methods that rely on protein homology
 information, BRAKER2 reaches high gene prediction accuracy even in the
-absence of the annotation of very closely related species and in the
+absence of the annotation of closely related species and in the
 absence of RNA-Seq data.
 
 BRAKER3 is the latest pipeline in the BRAKER suite. It enables the usage
 of RNA-seq **and** protein data in a fully automated pipeline to train
 and predict highly reliable genes with GeneMark-ETP and AUGUSTUS. The
 result of the pipeline is the combined gene set of both gene prediction
-tools, which only contains genes with very high support from extrinsic
+tools, which only contains genes with high support from extrinsic
 evidence.
 
 Home page : <https://github.com/Gaius-Augustus/BRAKER>
@@ -96,7 +95,7 @@ srun braker.pl --threads=${SLURM_CPUS_PER_TASK} --genome=genome.fa --prot_seq=pr
 This will generate the output directory named **braker** in the current
 working directory with content similar to below
 
-``` sl
+``` bash
 augustus.hints.aa              braker.gtf   genemark_evidence.gff  prothint.gff
 augustus.hints.codingseq       braker.log   genemark_hintsfile.gff seed_proteins.faa
 augustus.hints.gtf             cmd.log      genome_header.map      species/

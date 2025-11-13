@@ -66,12 +66,12 @@ memory) and is replaced with a real value when the Slurm job starts.
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=H2O_shared_memory
-#SBATCH --account=nesi99999
-#SBATCH --time=00:15:00
-#SBATCH --cpus-per-task=8       # Note, Gaussian will use twice the number of CPUs specified by --cpus-per-task.
-#SBATCH --hint=nomultithread
-#SBATCH --mem=8G
+#SBATCH --job-name      H2O_shared_memory
+#SBATCH --account       nesi12345
+#SBATCH --time          00:15:00
+#SBATCH --cpus-per-task 8       # Note, Gaussian will use twice the number of CPUs specified by --cpus-per-task.
+#SBATCH --hint          nomultithread
+#SBATCH --mem           8G
 
 module load Gaussian/09-D.01
 
@@ -110,13 +110,13 @@ srun g09 < "${INPUT_FILE}"
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=H2O_distributed_memory
-#SBATCH --account=nesi99999
-#SBATCH --time=00:15:00
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=4
-#SBATCH --hint=nomultithread
-#SBATCH --mem=4G
+#SBATCH --job-name          H2O_distributed_memory
+#SBATCH --account           nesi12345
+#SBATCH --time              00:15:00
+#SBATCH --nodes             2
+#SBATCH --ntasks-per-node   4
+#SBATCH --hint              nomultithread
+#SBATCH --mem               4G
 
 module load Gaussian/09-D.01
 
@@ -180,7 +180,7 @@ achieve this by setting the `GAUSS_SCRDIR` environment variable in your
 job submission script, for instance:
 
 ```bash
-export GAUSS_SCRDIR=/nesi/nobackup/nesi99999/mahuika_job_123456
+export GAUSS_SCRDIR=/nesi/nobackup/nesi12345/mahuika_job_123456
 ```
 
 This should happen automatically if you use an appropriately modified

@@ -19,16 +19,15 @@ equations of motion for systems with hundreds to millions of particles.
 
 It is primarily designed for biochemical molecules like proteins, lipids
 and nucleic acids that have a lot of complicated bonded interactions,
-but since GROMACS is extremely fast at calculating the nonbonded
+but since GROMACS is extremely fast at calculating the non-bonded
 interactions (that usually dominate simulations) many groups are also
 using it for research on non-biological systems, e.g. polymers.
 
-GROMACS is available to anyone at no cost under the terms of 
-[the GNU Lesser General Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html). 
+GROMACS is available to anyone at no cost under the terms of
+[the GNU Lesser General Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html).
 Gromacs is a joint effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software.
-
 
 ## Examples
 
@@ -52,7 +51,7 @@ obtained with the Software.
 
 === "Shared Memory"
     Uses a nodes shared memory for communication.
-    
+
     ```sl
     #!/bin/bash -e
 
@@ -69,7 +68,7 @@ obtained with the Software.
     ```
 === "Multi Node (Hybrid)"
     Should only be used in the case you need more CPUs than available on a single node.
-    
+
     ```sl
     #!/bin/bash -e
 
@@ -109,9 +108,9 @@ being performed, force field used and of course the simulated system.
 For a complete set of GROMACS options, please refer to GROMACS
 documentation.
 
-Each GROMACS environment module contains two executables one built with shared memory parallelism `gmx`, 
+Each GROMACS environment module contains two executables one built with shared memory parallelism `gmx`,
 and one with distrubuted memorory parallelism (MPI) `gmx-mpi`. which can run across multiple nodes,
-ie: with `--ntasks` > 1. 
+ie: with `--ntasks` > 1.
 
 !!! warning
     In versions of GROMACS older than `GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid`
@@ -127,7 +126,7 @@ If you do elect to use `gmx-mpi`, note that hybrid parallelisation (i.e. with `-
 more efficient than MPI-only parallelisation.  With hybrid parallelisation, it is important to run
 `mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
 be the number of CPUs per task. You can make sure the value is correct
-by using `-ntomp ${SLURM_CPUS_PER_TASK}`. 
+by using `-ntomp ${SLURM_CPUS_PER_TASK}`.
 
 ## Checkpointing
 

@@ -1,11 +1,9 @@
 ---
 created_at: '2019-04-30T00:21:48Z'
-tags: []
-title: 'Profiler: ARM MAP'
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000930396
-zendesk_section_id: 360000278935
+tags:
+    - profiling
+    - scaling
+description: 'Details on the ARM MAP profiler'
 ---
 
 ARM (previously known as Allinea) provides a module called *forge*,
@@ -18,9 +16,9 @@ during run time. This can be time, memory, or MPI communication. One
 main goal is to understand in which parts of your code most of the time is
 being spent. Depending on the profiler and the applied methods, data can
 be gathered for functions, loops within functions, or source
-code lines. 
+code lines.
 
-Profiling is important as it allows you to focus your efforts on improving 
+Profiling is important as it allows you to focus your efforts on improving
 the parts of the code that can return the biggest performance gains.
 
 ## Profiling test cases
@@ -65,10 +63,12 @@ from remote (not described in detail here).
 To use MAP we need to load the *forge* module in our batch script and
 add `map --profile` in front of the parallel run statements. For
 example:
-```
+
+```bash
 module load forge
 map --profile srun python scatter.py
 ```
+
 Upon execution, a `.map` file will be generated. The results can be
 viewed, for instance, with
 
@@ -81,6 +81,7 @@ The GUI can be started after loading `module load forge` and launching
 ```sh
 map
 ```
+
 Then click on “PROFILE”.
 
 ![MAP\_profile\_python.PNG](../../assets/images/Profiler-ARM_MAP.png)

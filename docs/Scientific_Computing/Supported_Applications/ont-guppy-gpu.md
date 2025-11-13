@@ -1,11 +1,10 @@
 ---
 created_at: '2022-03-22T07:46:51Z'
-tags: []
-title: ont-guppy-gpu
-vote_count: 5
-vote_sum: 3
-zendesk_article_id: 4546820344079
-zendesk_section_id: 360000040076
+tags:
+- biology
+- gpu
+- software
+description: Supported applications page for Guppy
 ---
 
 
@@ -17,7 +16,7 @@ zendesk_section_id: 360000040076
 
 ## Description
 
-Guppy,  is a data processing toolkit that contains Oxford Nanopore’s
+Guppy, is a data processing toolkit that contains Oxford Nanopore’s
 (<https://nanoporetech.com/>) basecalling algorithms, and several
 bioinformatic post-processing features, such as
 barcoding/demultiplexing, adapter trimming, and alignment. The Guppy
@@ -36,7 +35,7 @@ Data to Biological Data, as may be made available to Customers by
 Oxford, whether free of charge or for a fee.
 
 Guppy is available to ONT customers via their community website
-https://community.nanoporetech.com/
+<https://community.nanoporetech.com/>
 
 ### Example Slurm script
 
@@ -48,7 +47,7 @@ https://community.nanoporetech.com/
     and above. This can be requested with
     `#SBATCH --gpus-per-node A100:1` variable
 - Config files are stored in
-    ***/opt/nesi/CS400\_centos7\_bdw/ont-guppy-gpu/(version)/data/ ***
+    ***/opt/nesi/CS400\_centos7\_bdw/ont-guppy-gpu/(version)/data/***
     with read permissions to all researchers (replace ***(version)***
     with the version of the module)
 

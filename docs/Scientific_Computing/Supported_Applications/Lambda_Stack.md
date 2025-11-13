@@ -2,6 +2,7 @@
 created_at: '2021-01-05T20:28:08Z'
 tags: []
 status: deprecated
+description: Supported applications page for Lambda Stack
 ---
 
 ## Introduction
@@ -93,12 +94,14 @@ The following Slurm script can be used as a template for running jobs
 using Lambda Stack.
 
 ``` sl
-#!/bin/bash
-#SBATCH --job-name=lambdastack
-#SBATCH --time=00:15:00     # required walltime
-#SBATCH --ntasks=1          # number of MPI tasks
-#SBATCH --cpus-per-task=1   # number of threads per MPI task
-#SBATCH --gpus-per-task=1   # optional, only if a GPU is required
+#!/bin/bash -e
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      lambdastack
+#SBATCH --time          00:15:00     # required walltime
+#SBATCH --ntasks        1          # number of MPI tasks
+#SBATCH --cpus-per-task 1   # number of threads per MPI task
+#SBATCH --gpus-per-task 1   # optional, only if a GPU is required
 
 # path to the singularity image file (optionally replace with your own)
 SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
@@ -118,7 +121,7 @@ ${SINGULARITY} echo "Hello World"
 ## Lambda Stack via Jupyter
 
 The following steps will create a custom Lambda Stack kernel that can be
-accessed via NeSI's Jupyter service (based on the instructions at 
+accessed via NeSI's Jupyter service (based on the instructions at
 [Jupyter_on_NeSI](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md)).
 
 First, we need to create a kernel definition and wrapper that will
@@ -273,13 +276,15 @@ Now create a Slurm script that will launch the job, names
 *run-benchmark-torch.sl*:
 
 ``` sl
-#!/bin/bash
-#SBATCH --job-name=lambdastack
-#SBATCH --time=00:30:00
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --gpus-per-task=1
-#SBATCH --mem=12G
+#!/bin/bash -e
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      lambdastack
+#SBATCH --time          00:30:00
+#SBATCH --ntasks        1
+#SBATCH --cpus-per-task 1
+#SBATCH --gpus-per-task 1
+#SBATCH --mem           12G
 
 # path to the singularity image file (optionally replace with your own)
 SIF=/opt/nesi/containers/lambda-stack/lambda-stack-focal-latest.sif
