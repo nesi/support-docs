@@ -47,6 +47,7 @@ Congratulations! You are ready to move to the next step.
 The inbuilt 'remotes' plugin allows connecting to remote hosts.
 If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md),
 VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab.
+VSCode can also be used with WSL.
 
 ## Windows
 
@@ -71,10 +72,6 @@ different options, listed in order of preference.
     -  Enabling
        [WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
     -  Setting up the [Ubuntu Terminal](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-
-### VSCode
-
-VSCode can be used with WSL or without.
 
 ### MobaXterm
 

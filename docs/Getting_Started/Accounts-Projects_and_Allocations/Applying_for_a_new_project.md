@@ -4,6 +4,7 @@ tags:
 - info
 - project
 - mynesi
+description: Instructions for applying for a new project
 ---
 
 !!! prerequisite

@@ -1,10 +1,8 @@
 ---
 created_at: '2020-12-17T20:12:46Z'
-tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360002327275
-zendesk_section_id: 360000164635
+tags:
+- help
+description: Information about job effieciency review service
 ---
 
 ## Introduction

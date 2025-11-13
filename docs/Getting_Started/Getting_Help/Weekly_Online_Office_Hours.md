@@ -1,10 +1,6 @@
 ---
 created_at: '2022-05-18T03:38:21Z'
-tags: [intro, hpc]
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4830713922063
-zendesk_section_id: 360000164635
+tags: [intro, hpc, help]
 description: |
     Have questions about our HPC, data analytics, or other eResearch services?  
     Looking for tips on how to optimise your HPC jobs?  
@@ -16,7 +12,6 @@ description: |
 ---
 
 {{ description }}
-   
 
 ## Office Hours Dates
 

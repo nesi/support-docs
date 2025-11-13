@@ -5,18 +5,14 @@ tags:
 - github
 - version control
 - repository
-title: 'Git: Reference Sheet'
-vote_count: 13
-vote_sum: 13
-zendesk_article_id: 360001508515
-zendesk_section_id: 360000278975
+description: Reference sheet for Git
 ---
 
 Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub and GitLab for
 developing, managing and distributing code.
 
-Full Git documentation can be found [here](https://git-scm.com/docs/git), or using `man git`.
+[See the Git documentation for more details](https://git-scm.com/docs/git), or use `man git`.
 
 ![Git\_Diagram.svg](../../assets/images/Git-Reference_Sheet.svg)
 
@@ -28,8 +24,6 @@ need to authenticate yourself on the cluster.
 !!! warning "Password authentication"
      GitHub removed support for password authentication on August 13, 2021.
      Using a SSH key is now the easiest way to set up authentication.
-
-### SSH Authentication (GitHub)
 
 More information can be found in the [GitHub
 documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).

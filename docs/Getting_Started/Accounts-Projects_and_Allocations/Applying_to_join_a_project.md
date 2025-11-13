@@ -5,6 +5,7 @@ tags:
 - project
 - request_membership
 - mynesi
+description: Instructions for joining a project
 ---
 
 !!! prerequisite

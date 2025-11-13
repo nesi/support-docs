@@ -1,11 +1,8 @@
 ---
 created_at: '2020-02-25T02:45:24Z'
-tags: []
-title: 'Bash: Reference Sheet'
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360001393596
-zendesk_section_id: 360000278975
+tags:
+- bash
+description: Reference sheet for Bash
 ---
 
 Regardless of the operating system on your personal computer you will
@@ -41,7 +38,7 @@ Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
 
 !!! tip
      Pressing the 'tab' key once will automatically complete the line if it
-     is the only option. e.g. 
+     is the only option. e.g.
      ![complete1.gif](../../assets/images/Unix_Shell-Reference_Sheet.gif)
      If there are more than one possible completions, pressing tab again
      will show all those options.

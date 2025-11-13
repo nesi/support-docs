@@ -1,11 +1,11 @@
 ---
 created_at: '2021-03-01T21:23:33Z'
-tags: []
-title: Logging in to my.nesi.org.nz
-vote_count: 2
-vote_sum: -2
-zendesk_article_id: 360003584515
-zendesk_section_id: 360001059296
+tags:
+- login
+- account
+- tuakiri
+- mynesi
+description: Information about logging in to my.nesi.org.nz
 ---
 
 ## Login credentials
@@ -60,7 +60,7 @@ department about unless you need a particular Optional Attribute to be
 correctly set for a specific purpose.
 
 To access the Tuakiri Attribute Validator, browse to this page:
-[https://attributes.tuakiri.ac.nz/snapshots/latest﻿](https://attributes.tuakiri.ac.nz/snapshots/latest)
+[https://attributes.tuakiri.ac.nz/snapshots/latest](https://attributes.tuakiri.ac.nz/snapshots/latest)
 
 The primary identifier NeSI consumes is the
 attribute **auEduPersonSharedToken**. This is a so-called, "Tuakiri Core

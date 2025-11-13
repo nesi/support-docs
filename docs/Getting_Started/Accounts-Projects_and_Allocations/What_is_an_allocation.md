@@ -4,7 +4,7 @@ tags:
     - Allocation
     - Allocations
     - Compute
-title: What is an allocation?
+description: Explanation of allocations
 ---
 
 Because NeSI's resources are limited, we manage access to our resources

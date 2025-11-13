@@ -1,22 +1,20 @@
 ---
 created_at: '2022-03-24T20:50:10Z'
-tags: []
-title: Managing notification preferences
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4563294188687
-zendesk_section_id: 360001059296
+tags:
+- account
+- mynesi
+description: Information on managing notification preferences
 ---
 
 ## Overview
 
-NeSI aims to keep users informed via various communication channels. 
+NeSI aims to keep users informed via various communication channels.
 
 ## Checking and setting your preferences
 
 Within [my.nesi.org.nz](https://my.nesi.org.nz/account/preference) you
 can find a summary of the current subscriptions under NeSI Notification
-Preferences. 
+Preferences.
 
 In order to manage your subscription to notifications, either log into
 [my.nesi](https://my.nesi.org.nz/account/preference) or use the link

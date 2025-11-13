@@ -1,10 +1,7 @@
 ---
 created_at: '2023-10-30T22:11:19Z'
 tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 8252164326415
-zendesk_section_id: 360000164635
+description: Information about the REANNZ network
 ---
 
 NeSI's national platform facilities are connected to the [REANNZ](https://www.reannz.co.nz/) network, Aotearoa's high-performance national digital network (or NREN).

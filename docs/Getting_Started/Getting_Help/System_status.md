@@ -2,10 +2,7 @@
 created_at: '2019-02-07T20:31:36Z'
 tags:
 - help
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000751636
-zendesk_section_id: 360000164635
+description: How to find out information about the status of the REANNZ system
 ---
 
 !!! note "See also"
