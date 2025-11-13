@@ -1,7 +1,10 @@
 ---
 created_at: '2019-06-14T05:35:45Z'
-tags: []
+tags:
+- cpu
+- machine learning
 status: deprecated
+description: Information about using TensorFlow on CPUs
 ---
 
 {% set app_name = "TensorFlow" %}
@@ -10,7 +13,7 @@ status: deprecated
 
 TensorFlow is a popular software library for machine learning
 applications, see our
-[TensorFlow](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
+[TensorFlow on GPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
 article for further information. It is often used with GPUs, as runtimes
 of the computationally demanding training and inference steps are often
 shorter compared to multicore CPUs. However, running TensorFlow on CPUs
@@ -20,8 +23,7 @@ can nonetheless be attractive for projects where:
     GPUs does not provide much advantage with respect to overall runtime
     and core-hour charges
 - The workflow can benefit from parallel execution on many nodes with
-    large aggregated IO bandwidth (e.g., running an inference task on a
-    very large dataset, or training a large ensemble of models)
+    large aggregated IO bandwidth (e.g., running an inference task on a large dataset, or training a large ensemble of models)
 
 Tests with a machine learning application based on the Inception v3
 network for image classification  using a Nvidia P100 GPU and 18 Intel
@@ -36,7 +38,7 @@ application - they are only intended as an example.
 
 ## Choosing the right Python package
 
-It is very important to choose the right TensorFlow package for optimal
+It is important to choose the right TensorFlow package for optimal
 performance. Intel provide [optimised TensorFlow
 packages](https://software.intel.com/en-us/articles/intel-optimization-for-tensorflow-installation-guide)
 with [Intel oneDNN](https://github.com/oneapi-src/oneDNN) (previously
@@ -78,15 +80,15 @@ TensorFlow job on a single Mahuika node:
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=tensorflow
-#SBATCH --account=<your NeSI account ID>
-#SBATCH --time=<overall runtime estimate>
-#SBATCH --mem=<overall memory consumption>
-#SBATCH --partition=long
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=<number of threads>
-#SBATCH --hint=nomultithread                    # No hyperthreading
+#SBATCH --job-name          tensorflow
+#SBATCH --account           nesi12345
+#SBATCH --time              <overall runtime estimate>
+#SBATCH --mem               <overall memory consumption>
+#SBATCH --partition         long
+#SBATCH --nodes             1
+#SBATCH --ntasks            1
+#SBATCH --cpus-per-task     <number of threads>
+#SBATCH --hint              nomultithread                    # No hyperthreading
 
 # Allow threads to transition quickly
 export KMP_BLOCKTIME=0

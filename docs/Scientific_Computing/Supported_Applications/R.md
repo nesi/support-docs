@@ -3,10 +3,7 @@ created_at: '2015-09-07T00:34:30Z'
 tags:
 - mahuika
 - R
-vote_count: 7
-vote_sum: 3
-zendesk_article_id: 209338087
-zendesk_section_id: 360000040076
+description: Supported applications page for R
 ---
 
 ## Description
@@ -21,7 +18,7 @@ much code written for S runs unaltered under R.
 R provides a wide variety of statistical (linear and nonlinear
 modelling, classical statistical tests, time-series analysis,
 classification, clustering, and so forth) and graphical techniques, and
-is highly extensible. The S language is often the vehicle of choice for
+is highly extendable. The S language is often the vehicle of choice for
 research in statistical methodology, and R provides an Open Source route
 to participation in that activity.
 
@@ -156,11 +153,12 @@ packages.
     ``` sl
     #!/bin/bash -e
 
-    #SBATCH --job-name    MySerialRJob
-    #SBATCH --time        01:00:00
-    #SBATCH --mem         512MB
-    #SBATCH --output      MySerialRJob.%j.out # Include the job ID in the names of
-    #SBATCH --error       MySerialRJob.%j.err # the output and error files
+    #SBATCH --job-name      MySerialRJob
+    #SBATCH --account       nesi12345
+    #SBATCH --time          01:00:00
+    #SBATCH --mem           512MB
+    #SBATCH --output        MySerialRJob.%j.out # Include the job ID in the names of
+    #SBATCH --error         MySerialRJob.%j.err # the output and error files
 
     module load 4.2.1-gimkl-2022a
 
@@ -176,12 +174,13 @@ packages.
     ``` sl
     #!/bin/bash -e
 
-    #SBATCH --job-name    MyArrayRJob
-    #SBATCH --time        01:00:00
-    #SBATCH --array       1-10
-    #SBATCH --mem         512MB
-    #SBATCH --output      MyArrayRJob.%j.out # Include the job ID in the names of
-    #SBATCH --error       MyArrayRJob.%j.err # the output and error files
+    #SBATCH --job-name      MyArrayRJob
+    #SBATCH --account       nesi12345
+    #SBATCH --time          01:00:00
+    #SBATCH --array         1-10
+    #SBATCH --mem           512MB
+    #SBATCH --output        MyArrayRJob.%j.out # Include the job ID in the names of
+    #SBATCH --error         MyArrayRJob.%j.err # the output and error files
 
     module load R/4.2.1-gimkl-2022a
 
@@ -198,6 +197,7 @@ packages.
     #!/bin/bash -e
 
     #SBATCH --job-name      MyMPIRJob
+    #SBATCH --account       nesi12345
     #SBATCH --time          01:00:00
     #SBATCH --ntasks        12
     #SBATCH --cpus-per-task 1
@@ -435,7 +435,7 @@ Options:
 
 Running functions from the INLA package may results in GLib versions not found. Installing a specific version and binary for the package as below has worked.
 
-```
+```sh
 module load R-bundle-Bioconductor/3.17-gimkl-2022a-R-4.3.1 
 R 
 

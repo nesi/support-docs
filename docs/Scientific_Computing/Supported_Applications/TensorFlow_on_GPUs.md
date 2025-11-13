@@ -2,7 +2,9 @@
 created_at: '2019-06-03T23:54:50Z'
 tags:
 - gpu
+- machine learning
 status: deprecated
+description: Information on using TensorFlow on GPUs
 ---
 
 {% set app_name = "TensorFlow" %}
@@ -225,7 +227,7 @@ make it classify pictures of flowers. This type of task is known as
     photos of flowers (daisies, dandelions, roses, sunflowers and
     tulips):
 
-    ``` sl
+    ``` sh
     wget http://download.tensorflow.org/example_images/flower_photos.tgz -O - | tar -xz
     ```
 
@@ -234,11 +236,13 @@ make it classify pictures of flowers. This type of task is known as
 
     ``` sl
     #!/bin/bash -e
-    #SBATCH --job-name=flowers-example
-    #SBATCH --gpus-per-node=1
-    #SBATCH --cpus-per-task=2
-    #SBATCH --time 00:10:00
-    #SBATCH --mem 4G
+
+    #SBATCH --account           nesi12345
+    #SBATCH --job-name          flowers-example
+    #SBATCH --gpus-per-node     1
+    #SBATCH --cpus-per-task     2
+    #SBATCH --time              00:10:00
+    #SBATCH --mem               4G
 
     # load TensorFlow module and activate the virtual environment
     module purge
@@ -273,7 +277,7 @@ file, named `slurm-JOBID.out` by default.
 !!! tip
      While your job is running, you can monitor the progress of model
      training using `tail -f` on the Slurm output file:
-     ``` sl
+     ``` sh
      tail -f slurm-JOBID.out  # replace JOBID with an actual number
      ```
      Press CTRL+C to get the bash prompt back.

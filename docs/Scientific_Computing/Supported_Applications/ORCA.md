@@ -3,11 +3,7 @@ created_at: '2015-11-09T21:20:24Z'
 tags:
 - mahuika
 - chemistry
-title: ORCA
-vote_count: 6
-vote_sum: 4
-zendesk_article_id: 213718027
-zendesk_section_id: 360000040076
+description: Supported applications page for ORCA
 ---
 
 
@@ -20,7 +16,7 @@ zendesk_section_id: 360000040076
 ORCA is a flexible, efficient and easy-to-use general purpose tool for
 quantum chemistry with specific emphasis on spectroscopic properties of
 open-shell molecules. It features a wide variety of standard quantum
-chemical methods ranging from semiempirical methods to DFT to single-
+chemical methods ranging from semi-empirical methods to DFT to single-
 and multireference correlated *ab initio* methods. It can also treat
 environmental and relativistic effects.
 
@@ -41,6 +37,8 @@ particular version of it, please  {% include "partials/support_request.html" %}.
 
 ``` sl
 #!/bin/bash -e
+
+#SBATCH --account       nesi12345
 #SBATCH --job-name      ORCA_job
 #SBATCH --time          01:00:00
 #SBATCH --ntasks        16

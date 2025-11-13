@@ -1,13 +1,10 @@
 ---
 created_at: '2023-07-13T01:04:38Z'
-tags: []
-title: snpEff
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7403361932431
-zendesk_section_id: 360000040076
+tags:
+- software
+- biology
+description: Supported applications page for snpEff
 ---
-
 
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}

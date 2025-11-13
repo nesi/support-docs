@@ -3,7 +3,7 @@ created_at: '2015-08-18T05:16:01Z'
 tags:
 - ml
 - language
-title: Python
+description: Supported applications page for Python
 ---
 
 
@@ -60,11 +60,11 @@ Our most recent Python environment modules have:
     ```sl
     #!/bin/bash -e
 
-    #SBATCH --job-name=PythonMPI
-    #SBATCH --account     nesi99999
-    #SBATCH --ntasks=2          # Number of MPI tasks
-    #SBATCH --time=00:30:00
-    #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+    #SBATCH --job-name      PythonMPI
+    #SBATCH --account       nesi12345
+    #SBATCH --ntasks        2          # Number of MPI tasks
+    #SBATCH --time          00:30:00
+    #SBATCH --mem-per-cpu   512MB # Memory per logical CPU
     
     module load Python
     srun python PythonMPI.py   # Executes ntasks copies of the script

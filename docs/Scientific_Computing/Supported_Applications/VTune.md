@@ -1,13 +1,9 @@
 ---
 created_at: '2020-01-15T21:56:01Z'
-tags: []
-title: VTune
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001332675
-zendesk_section_id: 360000040076
+tags:
+- profiling
+description: Supported applications page for VTune
 ---
-
 
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
@@ -21,14 +17,14 @@ VTune is a tool that allows you to quickly identify where most of the
 execution time of a program is spent. This is known as profiling. It is
 good practice to profile a code before attempting to modify the code to
 improve its performance. VTune collects key profiling data and presents
-them in an intuitive way.  Another tool that provides similar
-information is [ARM
+them in an intuitive way. Another tool that provides similar
+information is [ARM
 MAP](../../Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md).
 
 ## How to use VTune
 
 We'll show how to profile a C++ code with VTune - feel free to choose
-your own code instead. Start with 
+your own code instead. Start with
 
 ``` sh
 git clone https://github.com/pletzer/fidibench
@@ -47,7 +43,7 @@ make
 
 This will compile a number of executables. Note that VTune does not
 require one to apply a special compiler switch to profile. You can
-profile an existing executable if you like. We choose "upwindCxx" as the
+profile an existing executable if you like. We choose `upwindCxx` as the
 executable to profile. It is under upwind/cxx, so
 
 ``` sh
@@ -86,7 +82,7 @@ indicating that the vast majority of time is spent in the "advect"
 method (26s), with significant amounts of time spent allocating (6.5s)
 and deallocating (9.2s) memory.
 
-##  Drilling further into the code
+## Drilling further into the code
 
 Often this is enough to give you a feel for where the code can be
 improved. To explore further you can fire up

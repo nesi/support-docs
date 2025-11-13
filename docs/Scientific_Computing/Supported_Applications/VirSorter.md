@@ -1,13 +1,8 @@
 ---
 created_at: '2021-02-23T02:54:11Z'
 tags: []
-title: VirSorter
-vote_count: 1
-vote_sum: -1
-zendesk_article_id: 360003472036
-zendesk_section_id: 360000040076
+description: Supported applications page for VirSorter
 ---
-
 
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
@@ -35,7 +30,7 @@ configuration, so can be set at the end of the *virsorter* command line.
 So an example which uses the SLURM\_CPUS\_PER\_TASK and TMPDIR values
 provided to Slurm jobs would be:
 
-``` sl
+``` sh
 module load VirSorter/2.1-gimkl-2020a-Python-3.8.2
 virsorter run \
     --seqfile test.fasta \

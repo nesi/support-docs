@@ -6,7 +6,6 @@ tags:
 description: Supported applications page for OpenSees
 ---
 
-
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
@@ -16,11 +15,10 @@ description: Supported applications page for OpenSees
 There are three commands with which a OpenSees job can be launched.
 
 - `OpenSees`: For running a job in serial (single CPU).
-- `OpenSeesSP`: Intended for the single analysis of very large models.
+- `OpenSeesSP`: Intended for the single analysis of large models.
 - `OpenSeesMP`: For advanced parametric studies.
 
-More info can be found about running OpenSees in parallel
-[here](http://opensees.berkeley.edu/OpenSees/parallel/TNParallelProcessing.pdf).
+[See the OpenSees documentation for more details on running in parallel](http://opensees.berkeley.edu/OpenSees/parallel/TNParallelProcessing.pdf).
 
 === "SerialJob"
 
@@ -32,6 +30,7 @@ sweeps.
     #!/bin/bash -e
     
     #SBATCH --job-name      OpenSees-Serial
+    #SBATCH --account       nesi12345
     #SBATCH --time          00:05:00          # Walltime</span></span>
     #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled.
     #SBATCH --mem           512MB             # total mem

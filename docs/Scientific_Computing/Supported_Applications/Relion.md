@@ -5,11 +5,8 @@ tags:
 - no_lic
 - no_desc
 - no_ver
-title: Relion
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001174055
-zendesk_section_id: 360000040076
+- x11
+description: Supported applications page for Relion
 ---
 
 
@@ -20,7 +17,7 @@ zendesk_section_id: 360000040076
 [//]: <> (APPS PAGE BOILERPLATE END)
 
 Getting started with Relion is most easily done via its X11 GUI, which
-is launched with the command "relion".  
+is launched with the command "relion".
 
 ``` sh
 module load Relion

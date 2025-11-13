@@ -1,6 +1,8 @@
 ---
 created_at: '2020-11-02T23:31:38Z'
-tags: []
+tags:
+- software
+description: Supported applications page for WRF
 status: deprecated
 ---
 
@@ -46,6 +48,7 @@ export J="-j 12"
 ./compile em_real >& wrf_build.log
 
 ```
+
 !!! Note
     Please select option 34 (dmpar gfortran/gccGNU) when asked `Please select from among the following Linux x86_64 options`.
 
@@ -57,11 +60,13 @@ An example Slurm job script for WRF on Mahuika is given below. The job can be su
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name=wrf
-#SBATCH --time=01:00:00
-#SBATCH --ntasks=36
-#SBATCH --hint=nomultithread
-#SBATCH --partition=milan
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      wrf
+#SBATCH --time          01:00:00
+#SBATCH --ntasks        36
+#SBATCH --hint          nomultithread
+#SBATCH --partition     milan
 
 module purge 2> /dev/null
 module load netCDF-Fortran/4.6.1-gompi-2023a
@@ -78,8 +83,8 @@ The `srun` argument `--kill-on-bad-exit` should ensure the entire job is killed
 if any individual task fails. Without this option, the WRF job will stay alive
 until the wall limit is reached but won't actually do anything.
 
-
 ## Building and running WPS
+
 The following script will build WPS. Like the WRF build process, this will ask you to specify a compiler from the list of options:
 
 ```sh
@@ -132,6 +137,5 @@ export WRF_DIR='path/to/WRF/build'
 ./geogrid.exe
 
 ```
+
 Note, just as in the Slurm script above, you will need netCDF and JasPer modules in your environment if you wish to run WPS programmes from the login node.
-
-

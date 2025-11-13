@@ -5,7 +5,7 @@ tags:
 - Density Functional Theory
 - Molecular Dynamics
 - Computational Chemistry
-title: VASP
+description: Supported applications page for VASP
 ---
 
 [//]: <> (APPS PAGE BOILERPLATE START)
@@ -35,15 +35,16 @@ Effectively parallelising your calculation is a particularly complicated aspect 
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --ntasks=8
-#SBATCH --cpus-per-task=4
-#SBATCH --job-name=my_VASP_job
-#SBATCH --time=01:00:00
-#SBATCH --mem-per-cpu=950
-#SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
-#SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
-#SBATCH --mem-bind=local
-#SBATCH --profile=task
+#SBATCH --account           nesi12345
+#SBATCH --ntasks            8
+#SBATCH --cpus-per-task     4
+#SBATCH --job-name          my_VASP_job
+#SBATCH --time              01:00:00
+#SBATCH --mem-per-cpu       950
+#SBATCH --extra-node-info   1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
+#SBATCH --distribution      *:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
+#SBATCH --mem-bind          local
+#SBATCH --profile           task
 
 module purge 2> /dev/null
 module load VASP/6.4.2-foss-2023a
@@ -73,14 +74,12 @@ This more involved script sets up a working directory and can be used to submit 
 
 VASP is a complex programme with a steep learning curve. The [VASP manual](https://www.vasp.at/wiki/index.php/The_VASP_Manual) is the best place to go for information on how to begin using VASP. The information here relates to running VASP the Mahuika cluster specifically.
 
-**Theory**
+### Theory
 
 !!! note
     Recall the terms "wavefunction", "Kohn-Sham orbital" and "band" are equivalent in VASP as Kohn-Sham orbitals are single electron wavefunctions. The number of wavefunctions/Kohn-Sham orbitals is enumerated by `NBANDS` in the `OUTCAR`.
 
 Kohn-Sham orbitals are distributed over available MPI ranks in a round-robin fashion until all orbitals have a processor (equivalently, a PID) - or group of processors (under a single PID) if running a multithreaded calculation. In VASP5, the work of a single orbital can be parallelised over MPI ranks using the `NCORE` [flag](https://www.vasp.at/wiki/index.php/NCORE) in the `INCAR`. In VASP6, the work of a single orbital can be parallelised across OpenMP threads. In VASP6 The `NCORE` flag will be ignored.
-
-**In summary**
 
 VASP5
 
@@ -101,7 +100,7 @@ The Slurm options show in the example script above ensure a few things which are
 - bind threads working on a particular wavefunction to cores in the same NUMA domain.
 - There is 1 L3 cache per-NUMA-domain. If possible, assign MPI processes to NUMA domains that no other jobs are using so the entire L3 cache is available for wavefunction storage, since reading from cache is faster than reading from RAM.
 
-**In summary**
+### In summary
 
 - VASP expresses Kohn-Sham orbitals as plane waves, i.e., uses a plane-wave basis set.
 - Plane-waves are naturally defined in reciprocal space (discretised at special points, **k**).
@@ -114,7 +113,7 @@ Increasing `--cpus-per-task` (or `NCORE` for VASP5) will not speed up all calcul
 
 It's best to do some performance testing with a fixed number of electronic and ionic steps. This can be done with the following `INCAR` settings:
 
-``` sl
+``` sh
 EDIFFG = 0   # do not stop based on total energy
 NSW = 3      # number of ionic steps
 NELMIN = 3   # minimum number of electronic self-consistency steps
@@ -178,9 +177,7 @@ particular ASE's GUI can help visualise structures, set-up supercells,
 move atoms, generate `POSCAR`s, and much more. To use the GUI simply add
 our latest Python version to your environment with `module load Python`.
 Then, call the GUI with `ase-gui` (for a new structure), or
-`ase-gui <structure_file>` to open an existing structure. For more
-information on how to use ASE see their main page
-[here](https://wiki.fysik.dtu.dk/ase/index.html).
+`ase-gui <structure_file>` to open an existing structure. [See the ASE main page for more details](https://wiki.fysik.dtu.dk/ase/index.html).
 
 ## Which VASP environment module should I use?
 
