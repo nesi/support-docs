@@ -1,7 +1,8 @@
 ---
-template: main.html
+template: home.html
 hide: toc
 ---
+
 
 Technical documentation for our High Performance Computing (HPC) platforms.
 
