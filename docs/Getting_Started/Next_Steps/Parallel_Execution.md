@@ -2,6 +2,8 @@
 created_at: '2019-01-10T03:02:11Z'
 tags:
   - parallel computing
+  - cpu
+  - multithreading
 description: How to take advantage of multiple CPUs.
 ---
 
@@ -19,7 +21,7 @@ See [our article on hyperthreading](../../Scientific_Computing/Batch_Jobs/Hypert
 
 ## Multi-threading
 
-Multi-threading is a method of parallelisation whereby the initial single thread of a process forks into a number of parallel threads, generally *via* a library such as OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or pthread (POSIX threads).
+Multi-threading is a method of parallelisation whereby the initial single thread of a process forks into a number of parallel threads, generally *via* a library such as OpenMP (Open Multi-Processing), TBB (Threading Building Blocks), or pthread (POSIX threads).
 
 ![serial](../../assets/images/parallel_execution_serial.png)  
 
@@ -33,10 +35,11 @@ Example script:
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=MultithreadingTest    # job name (shows up in the queue)
-#SBATCH --time=00:01:00                  # Walltime (HH:MM:SS)
-#SBATCH --mem=2048MB                     # memory in MB 
-#SBATCH --cpus-per-task=4                # 2 physical cores per task.
+#SBATCH --account           nesi12345
+#SBATCH --job-name          MultithreadingTest    # job name (shows up in the queue)
+#SBATCH --time              00:01:00                  # Walltime (HH:MM:SS)
+#SBATCH --mem               2048MB                     # memory in MB 
+#SBATCH --cpus-per-task     4                # 2 physical cores per task.
 
 taskset -c -p $$                         #Prints which CPUs it can use
 ```
@@ -63,16 +66,17 @@ Since the distribution of tasks across different nodes may be unpredictable, `-
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=MPIJob       # job name (shows up in the queue)
-#SBATCH --time=00:01:00         # Walltime (HH:MM:SS)
-#SBATCH --mem-per-cpu=512MB     # memory/cpu in MB (half the actual required memory)
-#SBATCH --cpus-per-task=4       # 2 Physical cores per task.
-#SBATCH --ntasks=2              # number of tasks (e.g. MPI)
+#SBATCH --account       nesi12345
+#SBATCH --job-name      MPIJob       # job name (shows up in the queue)
+#SBATCH --time          00:01:00         # Walltime (HH:MM:SS)
+#SBATCH --mem-per-cpu   512MB     # memory/cpu in MB (half the actual required memory)
+#SBATCH --cpus-per-task 4       # 2 Physical cores per task.
+#SBATCH --ntasks        2              # number of tasks (e.g. MPI)
 
 srun pwd                        # Prints  working directory
 ```
 
-The expected output being
+The expected output being:
 
 ```txt
 /home/user001/demo
@@ -96,10 +100,11 @@ For example, the following code:
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=ArrayJob             # job name (shows up in the queue)
-#SBATCH --time=00:01:00                 # Walltime (HH:MM:SS)
-#SBATCH --mem=512MB                     # Memory
-#SBATCH --array=1-2                     # Array jobs
+#SBATCH --account   nesi12345
+#SBATCH --job-name  ArrayJob             # job name (shows up in the queue)
+#SBATCH --time      00:01:00                 # Walltime (HH:MM:SS)
+#SBATCH --mem       512MB                     # Memory
+#SBATCH --array     1-2                     # Array jobs
 
 pwd
 echo "This is result ${SLURM_ARRAY_TASK_ID}"
@@ -113,34 +118,34 @@ Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the recommended met
 
 - As a direct input to a function.  
 
-    ``` sl
+    ``` sh
     matlab -nodisplay -r "myFunction(${SLURM_ARRAY_TASK_ID})"
     ```
 
 - As an index to an array.  
 
-    ``` sl
+    ``` sh
     inArray=(1 2 4 8 16 32 64 128)
     input=${inArray[$SLURM_ARRAY_TASK_ID]}
     ```
 
 - For selecting input files.  
 
-    ``` sl
+    ``` sh
     input=inputs/mesh_${SLURM_ARRAY_TASK_ID}.stl
     ```
 
 - As a seed for a pseudo-random number.  
     - In R
 
-        ``` sl
+        ``` sh
         task_id = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
         set.seed(task_id)
         ```
 
     - In MATLAB
 
-        ``` sl
+        ``` sh
         task_id = str2num(getenv('SLURM_ARRAY_TASK_ID'))
         rng(task_id)
         ```
@@ -148,9 +153,9 @@ Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the recommended met
     *Using a seed is important, otherwise multiple jobs may receive the
     same pseudo-random numbers.*
 
-- As an index to an array of filenames. 
+- As an index to an array of filenames.
 
-    ``` sl
+    ``` sh
     files=( inputs/*.dat )
     input=${files[SLURM_ARRAY_TASK_ID]}
     # If there are 5 '.dat' files in 'inputs/' you will want to use '#SBATCH --array=0-4' 
@@ -164,8 +169,8 @@ of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.
 
 ``` sl
-#SBATCH --output=outputs/run_%a/slurm_output.out
-#SBATCH --output=outputs/run_%a/slurm_error.err
+#SBATCH --output        outputs/run_%a/slurm_output.out
+#SBATCH --output        outputs/run_%a/slurm_error.err
 ```
 
 #### As an index to an array
@@ -213,12 +218,11 @@ This example will submit a job array with each job using a .dat file in 'inputs'
 #### Multidimensional array example
 
 ``` sl
-{% raw %}
 #!/bin/bash -e
 
-#SBATCH --open-mode append
-#SBATCH --output week_times.out
-#SBATCH --array 0-167 #This needs to be equal to combinations (in this case 7*24), and zero based.
+#SBATCH --open-mode     append
+#SBATCH --output        week_times.out
+#SBATCH --array         0-167 #This needs to be equal to combinations (in this case 7*24), and zero based.
 
 # Define your dimensions in bash arrays.
 arr_time=({00..23})

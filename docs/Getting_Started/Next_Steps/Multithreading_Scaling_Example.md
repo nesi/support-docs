@@ -1,10 +1,9 @@
 ---
 created_at: '2019-09-22T21:07:48Z'
-tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001173895
-zendesk_section_id: 360000189716
+tags:
+- multithreading
+- scaling
+description: Example of how to perform multithreading scaling tests
 ---
 
 In the example below we will use R scripts to demonstrate how you might
@@ -31,7 +30,7 @@ context, it will take the sum of *z* random numbers derived from a
 normal distribution with a mean of 0 and a standard deviation of 1
 (where is *z* is a value from 1,000,000 to 1,060,000, meaning 60,000
 iterations). The script will take the number of CPUs per task from the
-environment and and run it in parallel with that many threads. We
+environment and run it in parallel with that many threads. We
 unfortunately do not know how many CPUs, how much memory (RAM), or how
 much time to request for this script to complete. This means the first
 thing we need to do is run a small scale test and see how long that runs
@@ -70,16 +69,18 @@ completes.
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name=Scaling5k
-#SBATCH --time=00:10:00
-#SBATCH --mem=512MB
-#SBATCH --cpus-per-task=4
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      Scaling5k
+#SBATCH --time          00:10:00
+#SBATCH --mem           512MB
+#SBATCH --cpus-per-task 4
 
 module load R
 Rscript scaling.R
 ```
 
-Let's run our Slurm script with sbatch and look at our output from
+Let's run our Slurm script with `sbatch` and look at our output from
 `sacct`.
 
 ```txt
@@ -139,7 +140,7 @@ of iterations. However, peak memory usage appears unchanged.
 Extrapolating from this data, we can estimate the full 60,000 iterations
 will take 12 times longer than 5,000 iterations or about 40 minutes.
 
-But suppose we need a result more quickly than that. We are currently
+Suppose we need a result more quickly than that. We are currently
 using 4 CPU cores, but what if we used more? Could we speed up our job
 by that means?
 
@@ -200,12 +201,12 @@ Law, and reflects the fact that there is a fixed part of the computation
 that is inherently serial, that is, some operations can't be started
 until others have already finished.
 
-Indeed, the difference in speed between 14 and 16 CPU cores is very
+Indeed, the difference in speed between 14 and 16 CPU cores is
 small. We could try running our script with more than 16 CPU cores,
 however, in the case of this script we start to have a pretty
 significant drop in marginal speed-up after eight CPU cores.
 
-![](../../assets/images/Multithreading_Scaling_Example_3.png)
+![Plot of CPUs versus memory for 5000 iterations](../../assets/images/Multithreading_Scaling_Example_3.png)
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase
@@ -244,17 +245,18 @@ GB of memory. To be on the safe side, let's request 1 GB of memory and
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --account=nesi99999
-#SBATCH --job-name=Scaling60k # Job name (shows up in the queue)
-#SBATCH --time=00:30:00       # Walltime (HH:MM:SS)
-#SBATCH --mem=512MB           # Memory per node
-#SBATCH --cpus-per-task=8     # Number of cores per task (e.g. OpenMP)
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      Scaling60k # Job name (shows up in the queue)
+#SBATCH --time          00:30:00       # Walltime (HH:MM:SS)
+#SBATCH --mem           512MB           # Memory per node
+#SBATCH --cpus-per-task 8     # Number of cores per task (e.g. OpenMP)
 
 module load R
 Rscript scaling.R
 ```
 
-Checking on our job with `sacct` 
+Checking on our job with `sacct`
 
 ```txt
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 

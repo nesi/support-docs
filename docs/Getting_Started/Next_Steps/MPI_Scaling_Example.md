@@ -1,10 +1,10 @@
 ---
 created_at: '2019-09-22T21:07:28Z'
-tags: []
-vote_count: 2
-vote_sum: 0
-zendesk_article_id: 360001173875
-zendesk_section_id: 360000189716
+tags:
+- scaling
+- mpi
+- Slurm
+description: Example of how to perform scaling tests with MPI
 ---
 
 <!-- TODO review the scripts, it looks like there is a missing word after $ -->
@@ -150,16 +150,18 @@ completes.
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name=MPIScaling2
-#SBATCH --ntasks=2
-#SBATCH --time=00:30:00
-#SBATCH --mem-per-cpu=512MB
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      MPIScaling2
+#SBATCH --ntasks        2
+#SBATCH --time          00:30:00
+#SBATCH --mem-per-cpu   512MB
 
 module load Python
 srun python MPIscaling.py
 ```
 
-Let's run our Slurm script with sbatch and look at our output from
+Let's run our Slurm script with `sbatch` and look at our output from
 `sacct`.
 
 ```txt
@@ -267,7 +269,7 @@ physical CPUs.
 
 Now that we have determined that 5 physical CPUs is the optimal number
 of CPUs for our jobs we will use this as we will submit three more jobs,
-using 10,000 15,000 and 20,000 seeds. 
+using 10,000 15,000 and 20,000 seeds.
 
 ```txt
          JobID      JobName     Elapsed     TotalCPU Alloc   MaxRSS      State 
@@ -325,11 +327,12 @@ request 1 GB of memory and 2 hours.
 
 ```sl
 #!/bin/bash -e
-#SBATCH --account=nesi99999
-#SBATCH --job-name=MPIScaling60k
-#SBATCH --time=02:00:00
-#SBATCH --mem-per-task=512MB
-#SBATCH --ntasks=5
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      MPIScaling60k
+#SBATCH --time          02:00:00
+#SBATCH --mem-per-task  512MB
+#SBATCH --ntasks        5
 
 module load Python
 srun python scaling.R

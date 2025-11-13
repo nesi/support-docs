@@ -3,10 +3,7 @@ created_at: '2019-01-07T01:10:28Z'
 tags:
 - slurm
 - scheduler
-vote_count: 8
-vote_sum: 8
-zendesk_article_id: 360000684396
-zendesk_section_id: 360000189716
+description: Information for submitting your first Slurm job
 ---
 
 ## Environment Modules
@@ -33,10 +30,11 @@ Create a new file and open it with `nano myjob.sl`
 ```sl
 #!/bin/bash -e
 
-#SBATCH --job-name=SerialJob # job name (shows up in the queue)
-#SBATCH --time=00:01:00      # Walltime (HH:MM:SS)
-#SBATCH --mem=512MB          # Memory in MB
-#SBATCH --qos=debug          # debug QOS for high priority job tests
+#SBATCH --account           nesi12345       # account
+#SBATCH --job-name          SerialJob       # job name (shows up in the queue)
+#SBATCH --time              00:01:00        # Walltime (HH:MM:SS)
+#SBATCH --mem               512MB           # Memory in MB
+#SBATCH --qos               debug           # debug QOS for high priority job tests
 
 pwd # Prints working directory
 ```
@@ -48,7 +46,7 @@ Note: `#!/bin/bash` is expected by Slurm.
 Note: if you are a member of multiple accounts you should add the line
 
 ```sl
-#SBATCH --account=<projectcode>
+#SBATCH --account          <projectcode>
 ```
 
 ## Testing

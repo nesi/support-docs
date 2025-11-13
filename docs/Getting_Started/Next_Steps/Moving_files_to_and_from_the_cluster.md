@@ -5,6 +5,7 @@ tags:
 - transfer
 - copying
 - download
+- storage
 ---
 
 !!! prerequisite
@@ -77,7 +78,7 @@ If your default file manager does not support mounting over SFTP, see
 !!! prerequisite
     [MobaXterm Setup Windows](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
 
-See [Standard Terminal]](Moving_files_to_and_from_the_cluster.md#standard-terminal), [Rclone]](Moving_files_to_and_from_the_cluster.md#rclone), or [Rsync]](Moving_files_to_and_from_the_cluster.md#rsync) for information on how to move files to and from the HPC in the terminal.
+See [Standard Terminal](Moving_files_to_and_from_the_cluster.md#standard-terminal), [Rclone](Moving_files_to_and_from_the_cluster.md#rclone), or [Rsync](Moving_files_to_and_from_the_cluster.md#rsync) for information on how to move files to and from the HPC in the terminal.
 
 ## WinSCP
 

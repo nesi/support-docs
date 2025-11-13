@@ -1,18 +1,16 @@
 ---
 created_at: '2019-08-16T01:22:03Z'
-tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001113076
-zendesk_section_id: 360000189716
+tags:
+- software
+description: Information about the modules available
 ---
 
 ## Environment Modules
 
-Modules are a convenient  way to provide access to applications  on the cluster.
+Modules are a convenient way to provide access to applications on the cluster.
 They prepare the environment you need to run an application.
 
-For a full list of module commands run `man module` or visit the [lmod documentation](https://lmod.readthedocs.io/en/latest/010_user.html).
+For a full list of module commands run `man module` or visit the [`lmod` documentation](https://lmod.readthedocs.io/en/latest/010_user.html).
 
 |  Command                      | Description                                                   |
 |-------------------------------|---------------------------------------------------------------|
