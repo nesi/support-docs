@@ -8,7 +8,8 @@ Technical documentation for our High Performance Computing (HPC) platforms.
 !!! note "REANNZ Integration"
     On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd. NeSI’s services and technologies are now hosted by REANNZ as a national [eResearch Infrastructure Platform](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/investment-funds/strategic-science-investment-fund/funded-infrastructure/eresearch-infrastructure-platform). Some of our tools (eg. my.nesi.org.nz) will retain a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
 
-    All NeSI services and support – including these Support Documentation pages and team monitoring the support@nesi.org.nz email – are continuing as you’ve known them. Also, the principles of our policies (Access, Acceptable Use, Security & Privacy, etc.) are carrying over and remain in effect. We'll be in touch if anything changes. If you have any questions about the NeSI-REANNZ integration, {% include "partials/support_request.html" %}
+    All NeSI services and support – including these Support Documentation pages and team monitoring the support@nesi.org.nz email – are continuing as you’ve known them. Also, the principles of our policies (Access, Acceptable Use, Security & Privacy, etc.) are carrying over and remain in effect. We'll be in touch if anything changes. If you have any questions about the NeSI-REANNZ integration, 
+    {% include "partials/support_request.html" %}
 
 ## Quickstart
 
@@ -28,11 +29,6 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <h3>OnDemand ↗</h3>
     <p>Access the cluster Via the OnDemand web application.</p>
 </a>
-</div>
-
-## Services
-
-<div class="grid cards">
 <a href="/Scientific_Computing/Batch_Jobs/Available_Resources">
     <img alt="account details" src="assets/icons/material/widget-small.svg">
     <h3>Resources</h3>
@@ -55,7 +51,7 @@ Technical documentation for our High Performance Computing (HPC) platforms.
 <div class="grid cards">
 <a href="https://www.reannz.co.nz/products-and-services/training/training-calendar">
     <h3>Training Calendar ↗</h3>
-    <p>We offer regular workshops for a range of new HP C users.</p>
+    <p>We offer regular workshops for a range of new HPC users.</p>
 </a>
 <a href="Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">
     <h3>Online Office Hours</h3>
