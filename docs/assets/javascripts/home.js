@@ -6,11 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const parent = img.parentElement;
         if (!parent) return;
         
-        // preload hover image
-        const pre = new Image();
-        pre.src = hoverSrc;
-        
-        // attach listeners immediately (don't wait for onload)
         parent.addEventListener('mouseenter', () => img.setAttribute('src', hoverSrc));
         parent.addEventListener('mouseleave', () => img.setAttribute('src', originalSrc));
     });
