@@ -1,7 +1,7 @@
 ---
 created_at: '2021-05-25T02:15:36Z'
 tags: []
-title: What software environments are optimised for Machine Learning and data science?
+description: Information on software environments that are optimized for machine learning and data science
 ---
 
 When using NeSI's HPC

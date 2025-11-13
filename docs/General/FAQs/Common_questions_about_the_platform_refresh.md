@@ -1,6 +1,6 @@
 ---
 description: Common questions researchers have about NeSI's platform refresh.
-status: new
+status:
 tags: 
   - refresh
   - hpc3
@@ -16,7 +16,7 @@ Along the way, we'll use this page to share answers to some of the most common q
 
 We have copied your `/home` and `/project` directories to our new high-performance WEKA storage on the new platforms.
 To keep the WEKA copy of your data as fresh as possible, we are repeatedly syncing your directories from GPFS to WEKA until you have fully migrated.
-More details for understanding what data gets migrated can be [read here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/).
+More details for understanding what data gets migrated can be read on the [Moving to the new filesystem](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/) page.
 
 ## What project data is being moved?
 
@@ -30,7 +30,7 @@ Once you are happy that all your data has been successfully copied to WEKA and y
 
 ## Why does my new data on the new platforms keep disappearing?
 
-Have you stopped the data synchronisation with Mahuika? That might be the reason, as anything copied over from Mahuika as part of the synchronisation process will overwrite your data on the new platforms. To stop the data synchronisation, [follow our instructions here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely). If you've completed that step and your data on the new platforms is still disappearing, [send us an email](mailto:support@nesi.org.nz) and we'll work with you to troubleshoot the issue.
+Have you stopped the data synchronisation with Mahuika? That might be the reason, as anything copied over from Mahuika as part of the synchronisation process will overwrite your data on the new platforms. To stop the data synchronisation, [follow these instructions](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely). If you've completed that step and your data on the new platforms is still disappearing, [send us an email](mailto:support@nesi.org.nz) and we'll work with you to troubleshoot the issue.
 
 ## Will the software package I use be available on the new platforms?
 
@@ -39,7 +39,7 @@ All software that was supported on Mahuika's Milan nodes is available on the new
 
 ## Will a long system outage be required as part of the migration of data and projects?
 
-Overall, we're running the migration in stages to avoid any lengthy outages and to maintain a smooth user experience. We've scheduled an outage for June 3-5 that will affect login on the new platforms. Jobs already running will not be affected. For details, [view and subscribe for system updates here](https://status.nesi.org.nz/incidents/3y3ttj57fts6).
+Overall, we're running the migration in stages to avoid any lengthy outages and to maintain a smooth user experience. We've scheduled an outage for June 3-5 that will affect login on the new platforms. Jobs already running will not be affected. For details, [view and subscribe for system updates](https://status.nesi.org.nz/incidents/3y3ttj57fts6).
 
 ## Do I need to create a user account?
 
@@ -47,8 +47,7 @@ All existing NeSI users will be migrated to the new systems. Your existing user 
 
 ## When can I start running jobs on the new platform?
 
-Existing NeSI users can login now. [View our guide here to get started](https://docs.nesi.org.nz/General/Announcements/HPC3/). The earlier you migrate the smoother your transition will be. We love working alongside you and resolving issues together. To keep doing that well, we need to work with you _now_ so we’re not troubleshooting under pressure later. We're aiming to onboard new users, projects and allocations in early June. 
-
+Existing NeSI users can login now. [View this guide to get started](https://docs.nesi.org.nz/General/Announcements/HPC3/). The earlier you migrate the smoother your transition will be. We love working alongside you and resolving issues together. To keep doing that well, we need to work with you _now_ so we’re not troubleshooting under pressure later. We're aiming to onboard new users, projects and allocations in early June.
 
 ## Compared to Mahuika, what's different on the new platforms?
 
@@ -58,7 +57,7 @@ Existing NeSI users can login now. [View our guide here to get started](https://
 
 For all NIWA-owned projects, Māui access remains until NIWA decommissions the platform (date TBC).
 For any NIWA-owned projects with current Mahuika allocations, NeSI will email you directly to discuss migration plans.  
-If you have any immediate questions or concerns about how migration will work for your project, please reach out to support@nesi.org.nz. If you are not sure if you are migrating or have questions about how the new platforms differ from Māui, [send us an email](mailto:support@nesi.org.nz) or come along to our [online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
+If you have any immediate questions or concerns about how migration will work for your project, please reach out to <support@nesi.org.nz>. If you are not sure if you are migrating or have questions about how the new platforms differ from Māui, [send us an email](mailto:support@nesi.org.nz) or come along to our [online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
 
 ## Does this affect Nearline?
 
@@ -72,4 +71,3 @@ We’re currently migrating your data from Nearline to Freezer so that it is rea
 
 Reach out anytime - no question is too small. We are ready to respond - email us at [support@nesi.org.nz](mailto:support@nesi.org.nz)
 and we also invite you to join our [Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) to chat with us one-to-one.
-
