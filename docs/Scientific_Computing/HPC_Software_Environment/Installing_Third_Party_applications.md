@@ -1,11 +1,10 @@
 ---
 created_at: '2018-09-24T01:51:32Z'
-tags: []
-title: Installing (Third Party) applications
-vote_count: 3
-vote_sum: 3
-zendesk_article_id: 360000474535
-zendesk_section_id: 360000040056
+tags:
+- software
+- containers
+- compilers
+description: Instructions on installing (Third Party) applications
 ---
 
 NeSI provides a long list of various applications on its systems.
@@ -22,7 +21,7 @@ called package), we distinguish:
 
 In any case, if you have issues, do not hesitate to {% include "partials/support_request.html" %}.
 
-## Additional Packages for Python, R, etc.
+## Additional Packages for Python, R, etc
 
 See [Python](../../Scientific_Computing/Supported_Applications/Python.md) or [R](../../Scientific_Computing/Supported_Applications/R.md),
 or for other languages check if we have additional documentation for it
@@ -76,7 +75,7 @@ There are common environment variables like:
 - *CONDA\_ENVS\_PATH* for providing Conda environments,
 - etc.
 
-And others which are very application specific.
+And others which are application specific.
 
 To use the module (or all in that directory and sub-directories) we need
 to register that directory to the module environment. This can be done

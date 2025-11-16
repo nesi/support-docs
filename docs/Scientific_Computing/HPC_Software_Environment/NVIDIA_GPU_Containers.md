@@ -1,11 +1,9 @@
 ---
 created_at: '2020-04-30T01:28:34Z'
-tags: []
-title: NVIDIA GPU Containers
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360001500156
-zendesk_section_id: 360000040056
+tags:
+- containers
+- gpu
+description: Information about NVIDIA GPU Containers
 ---
 
 NVIDIA provides access to GPU accelerated software through their
@@ -25,8 +23,7 @@ requirements for each container, i.e. whether it will run on our Pascal
 There are instructions for converting their Docker images to Apptainer
 images on the NVIDIA site but some small changes are required to these
 instructions on NeSI. As an example, here we show the steps required for
-running the NAMD image on NeSI, based on the NVIDIA instructions
-[here](https://ngc.nvidia.com/catalog/containers/hpc:namd).
+running the NAMD image on NeSI, based on the [NVIDIA instructions](https://ngc.nvidia.com/catalog/containers/hpc:namd).
 
 1. Download the APOA1 benchmark data:
 
@@ -58,12 +55,14 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
 
     ```sl
     #!/bin/bash -e
-    #SBATCH --job-name=namdgpu
-    #SBATCH --time=00:10:00
-    #SBATCH --ntasks=1
-    #SBATCH --cpus-per-task=8
-    #SBATCH --gpus-per-node P100:1
-    #SBATCH --mem=1G
+
+    #SBATCH --account           nesi12345
+    #SBATCH --job-name          namdgpu
+    #SBATCH --time              00:10:00
+    #SBATCH --ntasks            1
+    #SBATCH --cpus-per-task     8
+    #SBATCH --gpus-per-node     P100:1
+    #SBATCH --mem               1G
 
     module purge
     module load Apptainer

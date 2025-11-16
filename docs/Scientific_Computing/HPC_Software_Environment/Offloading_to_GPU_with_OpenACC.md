@@ -1,7 +1,9 @@
 ---
 created_at: '2019-08-28T01:48:30Z'
-tags: []
-title: Offloading to GPU with OpenACC
+tags:
+- gpu
+- compilers
+description: Information about offloading to GPU with OpenACC
 status: deprecated
 ---
 
@@ -19,8 +21,7 @@ source code changes are generally small and your code remains portable,
 i.e. it will run on both CPU and GPU. The main disadvantage of OpenACC
 is that only a few compilers support it.
 
-More information about OpenACC can be found
-[here](http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf).
+More information about OpenACC can be found in [this instructional PDF](http://www.icl.utk.edu/~luszczek/teaching/courses/fall2016/cosc462/pdf/OpenACC_Fundamentals.pdf).
 
 ## Example
 

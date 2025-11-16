@@ -1,13 +1,16 @@
 ---
 created_at: '2019-07-22T03:46:24Z'
-tags: []
+tags:
+- cpu
+- mpi
+description: Information about using OpenMP on Mahuika
 ---
 
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application
 programming interface that lets you write parallel programs on shared
 memory platforms. In a parallel section, OpenMP code can create multiple
 threads that run on separate CPU cores, executing their shares of the total
-workload concurrently. 
+workload concurrently.
 
 The environment variable that controls the number of threads is
 `OMP_NUM_THREADS`. At the start of a Slurm job we automatically set
@@ -37,13 +40,13 @@ If you use hyperthreading, you will be charged for the number of physical cores 
 you requested - the second logical CPU on a physical CPU core is free,
 although Slurm always reports both CPUs.  The older option `--hint=multithread` is also equivalent to `--threads-per-core=2`.
 
-3. `OMP_PROC_BIND`. Set this environment variable to "true" to pin the threads down during
+2. `OMP_PROC_BIND`. Set this environment variable to "true" to pin the threads down during
 program execution. By default, threads may migrate from one core to
 another, depending on the load on the node. In an HPC setting, it is
 generally advisable to pin the threads to avoid delays caused by thread
 migration.
 
-4. `OMP_PLACES`. Set this to "cores" if you want to pin the threads to
+3. `OMP_PLACES`. Set this to "cores" if you want to pin the threads to
 physical cores, or to "threads" if you want to use hyperthreading.
 
 The effect of each setting is illustrated below. In this experiment we

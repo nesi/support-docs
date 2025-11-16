@@ -1,7 +1,9 @@
 ---
 created_at: '2019-08-26T23:41:11Z'
-tags: []
-title: 'Offloading to GPU with OpenMP '
+tags:
+- gpu
+- compiler
+description: Information about offloading to GPU with OpenMP 
 status: deprecated
 ---
 
@@ -39,7 +41,7 @@ Note the pragma
 ```
 
 which moves variables `total` and `n` to the GPU and creates teams of
-threads to perform the sum operation in parallel. 
+threads to perform the sum operation in parallel.
 
 ## Compile
 

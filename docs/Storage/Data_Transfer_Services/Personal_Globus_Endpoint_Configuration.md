@@ -2,14 +2,15 @@
 created_at: '2018-05-29T04:01:33Z'
 tags: 
 - globus
-title: Personal Globus Endpoint Configuration
+- storage
+description: Information on using a Personal Globus Endpoint Configuration
 ---
 
 Using Globus to transfer and share files from/to a personal computer
 
 ## Install Globus Connect Personal on your workstation/laptop
 
-See the [Globus Connect Personal ](https://docs.globus.org/globus-connect-personal/) on how to
+See the [Globus Connect Personal](https://docs.globus.org/globus-connect-personal/) on how to
 install a personal Globus endpoint on your computer (OS-specific
 instructions).
 

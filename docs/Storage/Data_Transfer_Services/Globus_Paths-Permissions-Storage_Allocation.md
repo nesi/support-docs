@@ -1,6 +1,9 @@
 ---
 created_at: '2021-08-27T03:30:10Z'
-tags: []
+tags:
+- globus
+- storage
+description: Information about Globus paths, permissions and storage allocation
 title: Globus Paths, Permissions, Storage Allocation
 ---
 
@@ -10,7 +13,7 @@ If you point Globus File Manager to an endpoint collection where you
 have an account/access, it will open a single panel pointing to the root
 path directory, displayed as '`/home/<username>`'.
 
-*Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.* 
+*Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.*
 
 ![mceclip0.png](../../assets/images/Globus_V5_Paths-Permissions-Storage_Allocation.png)
 

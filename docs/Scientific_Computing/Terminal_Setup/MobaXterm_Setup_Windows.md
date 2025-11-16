@@ -60,7 +60,7 @@ configurations.
         
     ```
 
-    Close and save with `ctrl x`, `ctrl y`, `Enter`
+3. Close and save with `ctrl x`, `ctrl y`, `Enter`
 
 4. Run the command `mv config.txt ~/.ssh/config`
 
@@ -73,7 +73,7 @@ configurations.
     ssh mahuika
     ```
 
-6. You will be prompted to approve host authenticity
+7. You will be prompted to approve host authenticity
 
     ```sh
     The authenticity of host 'lander.hpc.nesi.org.nz (163.7.144.68)' can't be established.
@@ -84,7 +84,7 @@ configurations.
 
     Type `yes` and <kbd>Enter</kbd>
 
-7. You will be presented with a link.
+8. You will be presented with a link.
 
     ```sh
     Authenticate at https://iam.nesi.org.nz/realms/public/device?user_code=XXXX-XXXX and press ENTER.
@@ -96,9 +96,9 @@ configurations.
         If you set up your `.ssh/config` as recommended you will be prompted to authenticate again.  
         We are working on fixing this.
 
-8. Select your institution, you will be prompted to provide your login details.
+9. Select your institution, you will be prompted to provide your login details.
 
-9. You are now asked about your current device: do you trust it or not?  
+10. You are now asked about your current device: do you trust it or not?  
 
 - If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your 6-digit code every time you log.
 - If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without additional authentication for 7 days.
@@ -108,11 +108,11 @@ If you have trusted your device, you have to enter a name for this device. This 
 Note: You cannot trust two devices the same day with the same name.
     ![alt text](../../assets/images/Standard_Terminal_Setup_1.png).
 
-10. Scan the QR code with your authenticator app. Then enter the 6-digit code provided. You may give your device a name.
+11. Scan the QR code with your authenticator app. Then enter the 6-digit code provided. You may give your device a name.
 
     ![alt text](../../assets/images/Standard_Terminal_Setup_2.png)
 
-11. Return to your terminal, and press <kbd>enter</kbd>.
+12. Return to your terminal, and press <kbd>enter</kbd>.
 
 ## Subsequent log in
 

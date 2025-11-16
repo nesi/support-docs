@@ -47,7 +47,7 @@ In either case, the analysis of the profiling data will be undertaken in
 the MAP GUI. This conveniently provides access to different metrics and
 allows the user to navigate through different levels of details,
 browsing through the code, and focusing on specific functions, loops and
-source lines.  See section [MAP profile](#map-profile) below.
+source lines. See section [MAP profile](#map-profile) below.
 
 There is also an [Arm Forge Client](https://developer.arm.com/tools-and-software/server-and-hpc/arm-architecture-tools/downloads/download-arm-forge)
 you can download to your local machine. Therewith you can browse through

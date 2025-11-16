@@ -5,6 +5,7 @@ tags:
     - notebook
     - ondemand
     - rstudio
+    - vscode
 description: Getting Started With NeSI onDemand
 title: NeSI OnDemand how-to guide
 ---

@@ -5,6 +5,7 @@ tags:
   - Freezer
   - storage
 ---
+
 !!! info s3cmd configuration required
     Please ensure you have [configured](Configuring_s3cmd.md) the s3cmd tool.
 
@@ -19,8 +20,6 @@ Freezer has two types of data storage classes:
 - Standard: data that is in the S3 bucket
 
 Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please <a href="mailto:support@nesi.org.nz?subject=Forgot%20my%20Freezer%20bucket%20name">email us</a> and let us know which project this is for.
-
-
 
 ## List contents and buckets
 
@@ -59,6 +58,7 @@ s3cmd du -H s3://<freezer-bucket>
     If you have a large number files the `s3cmd du` command will fail. If you wish to receive information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
     
 ## Uploading objects
+
 ### Put objects
 
 To transfer files/folders to S3 gateway to be archived. `cd` into where the file/folder is on Mahuika and then use `s3cmd put`.
@@ -114,6 +114,7 @@ Use any of the `s3cmd` options with `-n, --dry-run`to preview the action.
 Only shows what should be uploaded or downloaded but doesn't actually do it. May still perform S3 requests to get bucket listings and other information though (only for file transfer commands).
 
 ## Restoring objects
+
 ### List objects before restore
 
 List contained objects/files/folders:
@@ -163,7 +164,7 @@ restore: 's3://<freezer-bucket>/your_directory/your_folder/MY_TEST/raw_data/test
 restore: 's3://<freezer-bucket>/your_directory/your_folder/test.txt'
 ```
 
-By default files will remain in the S3 bucket for 1 day. If longer is required, this can be modified at the time of file restoration: 
+By default files will remain in the S3 bucket for 1 day. If longer is required, this can be modified at the time of file restoration:
 
 ```sh
 s3cmd restore --recursive s3://<freezer-bucket>/your_directory/data_folder/ --restore-days=1
@@ -181,7 +182,6 @@ s3cmd get --recursive s3://<freezer-bucket>/your_directory/data_folder/
 ```
 
 This will place the all files and subdirectories in the above `data_folder` into your current directory.
-
 
 ## s3cmd reference
 

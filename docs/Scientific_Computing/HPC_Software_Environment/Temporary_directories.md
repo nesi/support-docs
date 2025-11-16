@@ -2,6 +2,8 @@
 created_at: '2023-07-21T04:10:04Z'
 tags: 
   - storage
+  - nobackup
+description: Information about temporary files and directories
 ---
 
 Most programs which create temporary files will put those files in the
@@ -11,7 +13,7 @@ or `/tmp` otherwise.
 It is best to avoid the `/tmp` directory since that is shared
 with other jobs and not automatically cleared. When a Slurm job
 starts, `TMPDIR` is set to a directory created just for that job, which
-gets automatically deleted when the job finishes. 
+gets automatically deleted when the job finishes.
 
 By default, this job-specific temporary directory is placed in
 `/dev/shm`, which is a “tmpfs” filesystem and so actually sits in
@@ -23,7 +25,7 @@ On the `milan` and `hgx` partitions you have the option of specifying
 1.5 TB NVMe SSD attached to the node rather than in RAM. When
 `--gres=ssd` is set your job’s memory request *does not* need to include
 enough to cover the size of any temporary files (as this is a separate
-resource). These SSDs give the job a slower but very much larger
+resource). These SSDs give the job a slower but much larger
 temporary directory. They are allocated exclusively to jobs, so there
 can only be one such job per node at a time. This gives the job all the
 available bandwidth of the SSD device but does limit the number of such

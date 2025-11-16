@@ -1,13 +1,16 @@
 ---
 created_at: '2021-08-27T03:18:13Z'
-tags: []
-title: Data Transfer using Globus
+tags:
+- globus
+- upload
+- storage
+description: Information about data transfer using Globus
 ---
 
 ## Globus
 
 Globus is a third-party service for transferring large amounts of data
-between Globus Data Transfer Nodes (DTNs). 
+between Globus Data Transfer Nodes (DTNs).
 
 While NeSI supports use of other data transfer tools and protocols such
 as `scp`, Globus provides the most comprehensive, efficient, and easy to
@@ -35,19 +38,18 @@ To use Globus to transfer data to/from NeSI platforms, you need:
 
 Both your accounts (NeSI and Globus) must exist before you try to use the NeSI DTN.
 
-
 ## Types of Globus endpoints or Data Transfer Nodes
 
 Globus data transfers take place between *endpoints*. An endpoint is
 nothing more than an operating system (Windows, Linux, etc) that has the
-Globus endpoint software installed on it. 
+Globus endpoint software installed on it.
 
 Endpoints come in two kinds:
+
 - personal
 - server
 
 Within an endpoint users can access data via collections, with specific permissions settings for sharing with others.
-
 
 ## The NeSI Data Transfer Node
 
@@ -88,14 +90,14 @@ file storage (another managed server endpoint):
 
 Find the NeSI endpoint by typing in "NeSI HPC Storage". Select the
 endpoint "NeSI HPC Storage" from the list, and you will be asked
-to authenticate your access to the endpoint. 
+to authenticate your access to the endpoint.
 
 Click Continue to the next step.
 
-You'll be asked to select an identity to continue. 
+You'll be asked to select an identity to continue.
 Choose **&lt;username&gt;@iam.nesi.org.nz**.
 
-- *Note:* 
+- *Note:*
 OpenID Connect (OIDC) in Globus is used to enable secure authentication and authorization for accessing resources within the Globus ecosystem, particularly on Globus Connect Server endpoints. If this is your first login, you may be asked to *bind* your primary identity to the OICD login, and you will need to allow that.
 
 The NeSI HPC Storage endpoint is protected by Tuakiri
@@ -150,7 +152,7 @@ To find other NeSI endpoints, type in "nesi#":
   at both endpoints.
 - At Globus.org the endpoint **defaults to
   `/home/<username>` path** (represented by `~`) on the NeSI platform. We do not recommend uploading data to your home directory, as
-  home directories are very small. Instead, navigate to an appropriate
+  home directories are small. Instead, navigate to an appropriate
   project directory under /nobackup (see
   [Globus Paths, Permissions,  Storage  Allocation](../../Storage/Data_Transfer_Services/Globus_Paths-Permissions-Storage_Allocation.md)).
 - Transfer the files by clicking the appropriate

@@ -1,11 +1,9 @@
 ---
 created_at: '2018-07-31T10:59:09Z'
-tags: []
-title: Software Installation Request
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000361675
-zendesk_section_id: 360000040076
+tags:
+- software
+- help
+description: Instructions on submitting a software installation request
 ---
 
 To request that we install a scientific application (either a new
@@ -24,7 +22,7 @@ your message, please provide the following information:
 - What is the web site or home web page of the package? If you don't
     know this information or the package doesn't have a web site, who is
     the author or lead developer? In some cases, there exist two or more
-    packages with the same or very similar names. If we know the web
+    packages with the same or similar names. If we know the web
     site we can be sure that we are installing the same package that you
     are requesting.
 - How is the package installed? For example, compiled from source,

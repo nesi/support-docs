@@ -1,6 +1,6 @@
 ---
 title: Jupyter kernels - Tool-assisted management
-description: 
+description: Information about tool-assisted management of Jupyter kernels
 tags: 
     - JupyterHub
     - Python
@@ -46,7 +46,7 @@ nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 ```
 
 !!! warning
-    The name given to your kernel in `nesi-add-kernel KERNEL_NAME MODULE` must only include lowercase letters, underscores, and dashes. 
+    The name given to your kernel in `nesi-add-kernel KERNEL_NAME MODULE` must only include lowercase letters, underscores, and dashes.
 
 and to share the kernel with other members of your NeSI project:
 

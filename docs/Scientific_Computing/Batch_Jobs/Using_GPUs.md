@@ -3,6 +3,7 @@ created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
 - slurm
+description: Instructions for accessing GPUs through Slurm
 ---
 
 This page provides generic information about how to access GPUs through the Slurm scheduler.

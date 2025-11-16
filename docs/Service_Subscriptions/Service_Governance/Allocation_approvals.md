@@ -1,11 +1,11 @@
 ---
 created_at: '2023-07-05T23:49:27Z'
-tags: []
-title: Allocation approvals
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7349135008783
-zendesk_section_id: 7348925662223
+tags:
+- allocation
+- assessment
+- project
+- account
+description: Information about allocation approvals
 ---
 
 Access to our HPC platform resources is managed through

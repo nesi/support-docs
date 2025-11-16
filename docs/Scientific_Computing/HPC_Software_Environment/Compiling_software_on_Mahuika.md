@@ -85,7 +85,7 @@ should give you an impression which steps you usually need to consider:
 ## Compilers
 
 Compilers are provided for Fortran, C, and C++. For MPI-parallelised
-code, MPI compiler wrappers typically need to be used. 
+code, MPI compiler wrappers typically need to be used.
 
 | Language      | Intel    | GNU      |
 | ------------- | -------- | -------- |

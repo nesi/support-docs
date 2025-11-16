@@ -1,6 +1,9 @@
 ---
 created_at: '2023-01-12T02:42:17Z'
-tags: []
+tags:
+- storage
+- upload
+description: Information about transferring data to/from your personal computer
 ---
 
 This article shows how to transfer potentially large amounts of data

@@ -3,11 +3,7 @@ created_at: '2019-07-04T20:48:57Z'
 tags:
 - software
 - versions
-title: Software Version Management
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001045096
-zendesk_section_id: 360000040056
+description: Information about software version management
 ---
 
 Much of the software installed on the NeSI cluster have multiple

@@ -1,6 +1,10 @@
 ---
 created_at: '2023-10-13T00:14:22Z'
-tags: []
+tags:
+- globus
+- introduction
+- storage
+description: Quick start guide to Globus
 ---
 
 This is intended to be a quick-start guide, for more detailed
@@ -12,7 +16,7 @@ data to or from NeSI, you need:
 
 1. An active NeSI account (see
   [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md))
-2. A Globus account (see
+2. A Globus account (see  
   [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 3. Access to Globus DTNs or endpoints  
     - Access to a DTN (e.g., at your home institution)
@@ -38,7 +42,7 @@ For more detailed instructions please see
 ## Globus Endpoint Activation
 
 A NeSI account is required in addition to a Globus account to transfer
-data to or from NeSI HPC and storage facilities. 
+data to or from NeSI HPC and storage facilities.
 
 To transfer data between two sites (for example, NeSI platforms and the University of Otago central file storage), you need to have access to the DTN or
 endpoint at each location. You will also need the appropriate read and write permissions from where you're
@@ -58,7 +62,6 @@ bar on the left.
 1. Next to "Collection", search for "NeSI HPC Storage", select
     it, then click "Continue".
 2. Select your identity provider from the list to authenticate and continue.
-
 
 ## Transferring Data
 

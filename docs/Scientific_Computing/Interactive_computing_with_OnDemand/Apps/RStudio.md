@@ -3,6 +3,8 @@ created_at: 2025-08-05
 description: Details on the RStudio OnDemand app
 tags:
 - ondemand
+- R
+- interactive
 ---
 
 # RStudio via OnDemand

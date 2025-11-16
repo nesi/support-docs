@@ -1,19 +1,20 @@
 ---
 created_at: '2023-07-05T23:56:56Z'
-tags: []
-title: Pricing
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7349177261455
-zendesk_section_id: 7348891753487
+tags:
+- account
+- project
+- allocation
+- storage
+- gpu
+- rdc
+description: Information about pricing
 ---
 
 
 !!! note "REANNZ Integration"
-    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd. NeSI’s services and technologies are now hosted by REANNZ as a national [eResearch Infrastructure Platform](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/investment-funds/strategic-science-investment-fund/funded-infrastructure/eresearch-infrastructure-platform). Some of our tools (eg. my.nesi.org.nz) and emails (eg. support@nesi.org.nz) will retain a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
+    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd. NeSI’s services and technologies are now hosted by REANNZ as a national [eResearch Infrastructure Platform](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/investment-funds/strategic-science-investment-fund/funded-infrastructure/eresearch-infrastructure-platform). Some of our tools (eg. my.nesi.org.nz) and emails (eg. <support@nesi.org.nz>) will retain a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
 
     All NeSI services and support – including these Support Documentation pages and team monitoring the support@nesi.org.nz email – are continuing as you’ve known them. Also, the principles of our policies (Access, Acceptable Use, Security & Privacy, etc.) are carrying over and remain in effect. We'll be in touch if anything changes. If you have any questions about the NeSI-REANNZ integration, {% include "partials/support_request.html" %}
-
 
 We have two categories of pricing for Subscription services:
 
@@ -44,15 +45,13 @@ The following pricing table covers our core HPC Platform service offerings.
 | Persistent storage (>2 TB) (per Terabyte per year)   | $150.00        | $187.50      |
 | National Data Transfer Platform membership & managed endpoint (per year)   | $4,000.00        | $P.O.A      |
 
-
 ## Research Developer Cloud
+
+*(Last updated September 2024. Prices are subject to change.)*
 
 Billable services in the Research Developer Cloud include Virtual Machines (VMs), General Purpose Graphical Processing Units (GPUs), and Storage.
 
 Pricing listed is for Public section & not-for-profit organisations. To discuss commercial pricing, [please get in touch](mailto:support@nesi.org.nz).
-
-
-*(Last updated September 2024. Prices are subject to change.)*
 
 ### Virtual Machines (VMs)
 
@@ -71,7 +70,7 @@ Pricing listed is for Public section & not-for-profit organisations. To discuss 
 
 ### High Memory & Development VMs
 
-The Research Developer Cloud also offers high memory flavours (memory1) and flavours designed for quick development and test purposes (devtest1): 
+The Research Developer Cloud also offers high memory flavours (memory1) and flavours designed for quick development and test purposes (devtest1):
 
 - high memory flavours having 1 to 4 ratio of CPU per GB of RAM
 - development focused flavours with 1 to 1 ratio
@@ -91,6 +90,7 @@ The Research Developer Cloud also offers high memory flavours (memory1) and flav
 | devtest1.4cpu4ram   | 0.112        | 81.42      |
 
 ## General Purpose GPUs
+
 General Purpose GPUs are currently accessible as a whole node or half a node of A40 GPUs. The GPU flavour won’t be visible by default on your project. We will be working on making vGPU access available in smaller portions instead of the whole node. [Please contact us](mailto:support@nesi.org.nz) if you would like to access them.
 
 | Flavours      | Price per hour ($) | Price per month ($ in approximation)     |
@@ -104,9 +104,3 @@ General Purpose GPUs are currently accessible as a whole node or half a node of 
 | :---        |    :---   |          :--- |
 | Flash   | 0.0005        | 0.37      |
 | Spinning disk   | 0.0002        | 0.12      |
-
-
-
-
-
-

@@ -1,11 +1,10 @@
 ---
 created_at: '2022-07-26T21:43:02Z'
-tags: []
+tags:
+- webinar
+- introduction
+description: Links to the Introduction to computing on the NeSI HPC webinars
 title: Introduction to computing on the NeSI HPC (YouTube Recordings)
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 5209502688655
-zendesk_section_id: 5203123172239
 ---
 
 - [Introduction to computing on the NeSI HPC (Part 1)](https://www.youtube.com/watch?v=RrFAb8Atsc0&list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw)

@@ -3,7 +3,7 @@ created_at: '2020-02-24T20:26:39Z'
 tags: 
   - parallel 
   - containers
-title: Configuring Dask-MPI jobs
+description: Information on configuring Dask MPI jobs
 status: deprecated
 ---
 
@@ -121,11 +121,14 @@ a workload with 1 scheduler rank and 6 worker ranks. Each rank will be
 given 1 GB of memory and a single (logical) core.
 
 ```sl
-#!/bin/bash
-#SBATCH --time=01:00:00
-#SBATCH --ntasks=6
-#SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=1G
+#!/bin/bash -e
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      daskjob
+#SBATCH --time          01:00:00
+#SBATCH --ntasks        6
+#SBATCH --cpus-per-task 1
+#SBATCH --mem-per-cpu   1G
 
 module purge
 module load Python/3.9.9-gimkl-2020a
@@ -142,11 +145,14 @@ and first worker rank will be given 1 GB of memory and a single
 GB = 12 GB of memory and 4 (logical) cores per rank.
 
 ```sl
-#!/bin/bash
-#SBATCH --time=01:00:00
-#SBATCH --ntasks=2 --mem-per-cpu=1G --cpus-per-task=1
+#!/bin/bash -e
+
+#SBATCH --account     nesi12345
+#SBATCH --job-name    workers
+#SBATCH --time        01:00:00
+#SBATCH --ntasks      2 --mem-per-cpu=1G --cpus-per-task=1
 #SBATCH hetjob
-#SBATCH --ntasks=3 --mem-per-cpu=3G --cpus-per-task=4
+#SBATCH --ntasks      3 --mem-per-cpu=3G --cpus-per-task=4
 
 module purge
 module load Python/3.9.9-gimkl-2020a
@@ -197,12 +203,14 @@ command to submit this Slurm script and run the test code on 3 MPI
 ranks:
 
 ```sl
-#!/bin/bash
-#SBATCH --account=PROJECTID
-#SBATCH --time=00:01:00
-#SBATCH --ntasks=3
-#SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=512M
+#!/bin/bash -e
+
+#SBATCH --account       PROJECTID
+#SBATCH --job-name      daskexample
+#SBATCH --time          00:01:00
+#SBATCH --ntasks        3
+#SBATCH --cpus-per-task 1
+#SBATCH --mem-per-cpu   512M
 
 module purge
 module load Python/3.9.9-gimkl-2020a
@@ -213,7 +221,7 @@ srun python dask_example.py
 The Slurm output file should contain some status information from
 Dask-MPI, along with program output
 
-```
+```sh
 Dask result: 5
 Local result: 5
 ```

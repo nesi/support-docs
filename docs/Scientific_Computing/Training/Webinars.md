@@ -1,12 +1,9 @@
 ---
 created_at: '2022-07-25T21:32:47Z'
-tags: []
-title: Webinars
-vote_count: 0
+tags:
+- webinar
+description: Links to NeSI webinars
 status: deprecated
-vote_sum: 0
-zendesk_article_id: 5203144566415
-zendesk_section_id: 5203123172239
 ---
 
 

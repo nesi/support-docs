@@ -4,6 +4,7 @@ tags:
     - globus
     - file transfer
 title: Sync'ing with globus-automate
+description: Information about programmatically syncing data with Globus
 ---
 
 It is common to generate large amounts of simulation data on NeSI and

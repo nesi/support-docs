@@ -7,11 +7,8 @@ tags:
 - data compression
 - zlib
 - z library
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6359601973135
-zendesk_section_id: 360000033936
 ---
+
 Spectrum Scale filesystems (previously GPFS) allow users to compress
 data (but not metadata) transparently on demand without the need to
 change metadata (file creation and modification dates, etc). This means
@@ -223,7 +220,7 @@ data to, becomes automatically `illcompressed` and either needs to be
 re-compressed using the `mmchattr --compression yes` command or the
 `mmrestripefile -z` one (because it's already tagged for compression).
 
-### The different states
+The different states:
 
 - `Uncompressed` and `untagged` for compression (default) - as
     shown for the file `FileA.txt` above.

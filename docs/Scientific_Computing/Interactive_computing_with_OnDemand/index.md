@@ -43,7 +43,7 @@ A number of interactive applications can be accessed through OnDemand, including
 
 ## Release notes
 
-Release notes can be found [here](Release_Notes/index.md).
+[See release notes](Release_Notes/index.md).
 
 ## Acknowledgements
 

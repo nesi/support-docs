@@ -1,11 +1,9 @@
 ---
 created_at: '2023-07-05T23:23:28Z'
-tags: []
-title: Types of contracts
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7348950467343
-zendesk_section_id: 7348936006031
+tags:
+- contract
+- account
+description: Details on the types of contracts
 ---
 
 Typically our Subscription contracts are based on one-year terms and
@@ -26,11 +24,9 @@ invoiced on a monthly basis.
     data transfer to/from our HPC Platform as well as to/from other
     Globus endpoints across New Zealand and internationally.
 
-
 !!! note
     National Data Transfer Platform service agreements are invoiced upon
     contract signing, as the fee is a one-time, annual, up-front fee.
-
 
 We are also happy to discuss other custom options for things like our
 [Training service](https://www.reannz.co.nz/products-and-services/training).

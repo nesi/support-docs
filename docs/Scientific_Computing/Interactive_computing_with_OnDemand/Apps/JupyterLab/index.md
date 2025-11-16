@@ -1,6 +1,5 @@
 # JupyterLab via OnDemand
 
-
 ## Introduction
 
 NeSI supports the use of [Jupyter](https://jupyter.org/) for interactive computing.
@@ -12,7 +11,6 @@ learning, numerical simulation, managing
 and workflows and much more.
 
 ## Accessing Jupyter on NeSI
-
 
 Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
 For more details see the [how-to guide](../../how_to_guide.md).
@@ -58,9 +56,8 @@ NeSI we package some extensions into the default JupyterLab environment.
 Keep reading if you need to install extensions yourself.
 
 Note, there were some changes related to extensions in JupyterLab 3.0
-and there are now multiple methods to install extensions. More details
-about JupyterLab extensions can be found
-[here](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
+and there are now multiple methods to install extensions.
+See the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html) for more details
 Check the extension's documentation to find out the supported
 installation method for that particular extension.
 

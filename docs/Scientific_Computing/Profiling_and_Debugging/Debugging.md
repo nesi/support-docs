@@ -84,7 +84,7 @@ statements without touching the code.
 
 ![DDT-offline-example.PNG](../../assets/images/Debugging.PNG)
 
-[See full example page here.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
+[See full example page.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
 
 For more detailed information see [DDT manual](https://developer.arm.com/docs/101136/latest/ddt/offline-debugging).
 

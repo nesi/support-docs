@@ -1,3 +1,12 @@
+---
+created_at: 2025-08-05
+description: Details on the VS Code OnDemand app
+tags:
+- ondemand
+- interactive
+- vscode
+---
+
 # VS Code via OnDemand
 
 ## Introduction

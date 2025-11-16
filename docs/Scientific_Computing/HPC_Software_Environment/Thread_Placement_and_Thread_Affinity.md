@@ -1,7 +1,9 @@
 ---
 created_at: '2019-06-13T04:08:43Z'
-tags: []
-title: Thread Placement and Thread Affinity
+tags:
+- mpi
+- Slurm
+description: Information about thread placement and thread affinity
 status: deprecated
 ---
 
@@ -37,7 +39,7 @@ technology called
 [Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md)).
 
 A processor also includes caches - a
-[cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory
+[cache](https://en.wikipedia.org/wiki/CPU_cache) is fast memory
 that stores data that will be needed for the next computations, which
 avoids that the processor has to wait for data coming from the much
 slower RAM.
@@ -50,7 +52,7 @@ before).
 
 ![NodeSocketCore.png](../../assets/images/Thread_Placement_and_Thread_Affinity.png)
 
-It is very important to note the following:
+It is important to note the following:
 
 - Each socket only has access to its own RAM - it will need to ask the
     processor in the other socket if it wants to access that RAM space,
@@ -64,7 +66,7 @@ It is very important to note the following:
 For a thread that runs on a given core, this means:
 
 - Data is "local" when it is stored in RAM or cache close to that core
-    and can be accessed very quickly
+    and can be accessed quickly
 - Data is "remote" when it is stored elsewhere and takes extra time to
     access
 
@@ -144,12 +146,14 @@ process with 3 threads using only physical cores (no hyperthreading):
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name=threads
-#SBATCH --time=00:00:30
-#SBATCH --nodes=1
-#SBATCH --ntasks=1               # We will run on a single process
-#SBATCH --cpus-per-task=3        # ... and with 3 threads
-#SBATCH --hint=nomultithread     # No hyperthreading
+
+#SBATCH --account           nesi12345
+#SBATCH --job-name          threads
+#SBATCH --time              00:00:30
+#SBATCH --nodes             1
+#SBATCH --ntasks            1                   # We will run on a single process
+#SBATCH --cpus-per-task     3                   # ... and with 3 threads
+#SBATCH --hint              nomultithread       # No hyperthreading
 
 export KMP_AFFINITY=verbose      # Get detailed output
 module load intel/2018b
@@ -239,12 +243,14 @@ Let us start with the following setup:
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name=thread_placement_affinity
-#SBATCH --time=00:00:30
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --hint=multithread
+
+#SBATCH --account               nesi12345
+#SBATCH --job-name              thread_placement_affinity
+#SBATCH --time                  00:00:30
+#SBATCH --nodes                 1
+#SBATCH --ntasks                1
+#SBATCH --cpus-per-task         4
+#SBATCH --hint                  multithread
 
 export KMP_AFFINITY=verbose,granularity=core,compact,0,0
 module load intel/2018b

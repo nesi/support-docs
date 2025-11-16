@@ -220,9 +220,12 @@ This example will submit a job array with each job using a .dat file in 'inputs'
 ``` sl
 #!/bin/bash -e
 
+#SBATCH --account       nesi12345
+#SBATCH --job-name      multidim
+#SBATCH --time          00:10:00
 #SBATCH --open-mode     append
 #SBATCH --output        week_times.out
-#SBATCH --array         0-167 #This needs to be equal to combinations (in this case 7*24), and zero based.
+#SBATCH --array         0-167 # This needs to be equal to combinations (in this case 7*24), and zero based.
 
 # Define your dimensions in bash arrays.
 arr_time=({00..23})

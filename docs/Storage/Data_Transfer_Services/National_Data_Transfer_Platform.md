@@ -4,6 +4,7 @@ hide:
   - toc
 tags: 
   - globus
+  - storage
 description: "The National Data Transfer Platform uses Globus, a third-party service
 for transferring large amounts of data between Globus Data Transfer
 Nodes (DTNs). New Zealand DTNs facilitate the transfer of data to and

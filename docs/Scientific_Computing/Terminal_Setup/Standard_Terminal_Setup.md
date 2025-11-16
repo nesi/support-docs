@@ -3,6 +3,7 @@ created_at: '2018-11-30T00:34:14Z'
 tags:
 - ssh
 - howto
+- terminal
 description: How to setup your ssh config file in order to connect to the HPC cluster.
 ---
 

@@ -1,7 +1,9 @@
 ---
 created_at: '2019-02-27T21:04:11Z'
-tags: []
-title: Initial Globus Sign-Up, and your Globus Identities
+tags:
+- globus
+- storage
+description: Information about initial Globus sign-up, and your Globus identities
 ---
 
 Globus provides logins for NeSI users via their organisation, GitHub,

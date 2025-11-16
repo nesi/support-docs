@@ -1,11 +1,10 @@
 ---
 created_at: '2023-07-05T23:50:46Z'
-tags: []
-title: Subscriber Monthly Usage Reports
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7349136678543
-zendesk_section_id: 7348925662223
+tags:
+- usage
+- allocation
+- project
+description: Information about Subscriber Monthly Usage Reports
 ---
 
 As part of our Subscriber service agreements, we share
@@ -36,11 +35,11 @@ reference, and compare recent and past usage.
 
 - At the top of each tab is a summary of the contract, indicating the:
 
-  - Term of agreement (contract start and end dates)
+    - Term of agreement (contract start and end dates)
 
-    - Maximum contracted value
+        - Maximum contracted value
 
-    - Value of services utilised to date
+        - Value of services utilised to date
 
 - Usage for each service is shown in the corresponding sections below
 

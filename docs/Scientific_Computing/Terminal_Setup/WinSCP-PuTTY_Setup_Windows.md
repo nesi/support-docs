@@ -4,7 +4,9 @@ tags:
   - windows
   - winscp
   - putty
+  - terminal
 title: WinSCP/PuTTY Setup (Windows)
+description: Instructions for setting up WinSCP/PuTTY for Windows
 ---
 
 !!! prerequisite
@@ -33,22 +35,22 @@ PuTTY.
 
 ![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
-5. Open Advanced Settings.
+4. Open Advanced Settings.
 
     ![WinSCP3.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
 
-6. Navigate to *Connection & Tunnel* and set:
+5. Navigate to *Connection & Tunnel* and set:
     - Enable "Connect through SSH tunnel".
     - Under "Host name:" enter `lander.hpc.nesi.org.nz`
     - Under "User name:" enter your username.
-7. *OK &gt; Save*
+6. *OK &gt; Save*
 
 !!! note
     When logging in to the cluster using WinSCP the authentication link is clickable. You do not need to enter anything in the text box under the authentication link.
 
 ## Setup for PuTTY Terminal
 
-The default WinSCP terminal is very basic. We
+The default WinSCP terminal is basic. We
 recommend you use the PuTTY terminal instead.
 
 1. [Download PuTTY](https://www.putty.org/) and install.
@@ -64,8 +66,8 @@ password and pass it to PuTTY*
 
 ## Setup for Xming (Optional)
 
-Xming is an X server for Windows allowing graphical interface with the
-HPC. [Xming can be downloaded here](https://sourceforge.net/projects/xming/).
+[Xming is an X server for Windows allowing graphical interface with the
+HPC](https://sourceforge.net/projects/xming/).
 
 1\. Install Xming following the prompts. (Make sure 'Normal PuTTY Link
 SSH Client' is selected).
@@ -105,7 +107,7 @@ type in).
 ![winBook.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
 current directory.
 
-#### Repeated Authentication Prompts
+### Repeated Authentication Prompts
 
 By default, WinSCP will create multiple tunnels for file transfers.
 Occasionally this can lead to an excessive number of prompts. Limiting
