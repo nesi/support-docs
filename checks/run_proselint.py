@@ -20,7 +20,7 @@ if __name__ == "__main__":
     count_notices = 0
 
     # Load defaults from config.
-    config_custom = tools.load_options(
+    config_custom = proselint.tools.load_options(
         config_file_path=".proselint.json", conf_default=config.default
     )
 
