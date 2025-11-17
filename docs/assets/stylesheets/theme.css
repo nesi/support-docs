@@ -150,7 +150,7 @@ span.md-status.md-status--deprecated {
   filter: brightness(0);
 }
 
-.cards>a>img:hover {
+.cards>a:hover>img {
   filter: none;
 }
 
