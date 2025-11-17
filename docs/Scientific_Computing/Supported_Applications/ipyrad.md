@@ -4,6 +4,7 @@ tags:
 - biology
 - software
 description: Supported applications page for ipyrad
+title: ipyrad
 ---
 
 
