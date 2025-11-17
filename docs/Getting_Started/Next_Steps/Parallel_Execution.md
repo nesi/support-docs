@@ -32,7 +32,7 @@ Multi-threading is limited in that it requires shared memory, so all CPU cores 
 
 Example script:
 
-``` sl
+```sl
 #!/bin/bash -e
 
 #SBATCH --account           nesi12345
@@ -46,7 +46,7 @@ taskset -c -p $$                         #Prints which CPUs it can use
 
 The expected output being
 
-```txt
+```sh
 pid 13538's current affinity list: 7,9,43,45
 ```
 
@@ -63,22 +63,25 @@ On Slurm systems like ours, the preferred launcher is `srun` rather than `mpi-r
 
 Since the distribution of tasks across different nodes may be unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
 
-``` sl
+{% raw %}
+
+```sl
 #!/bin/bash -e
 
 #SBATCH --account       nesi12345
-#SBATCH --job-name      MPIJob       # job name (shows up in the queue)
-#SBATCH --time          00:01:00         # Walltime (HH:MM:SS)
-#SBATCH --mem-per-cpu   512MB     # memory/cpu in MB (half the actual required memory)
-#SBATCH --cpus-per-task 4       # 2 Physical cores per task.
-#SBATCH --ntasks        2              # number of tasks (e.g. MPI)
+#SBATCH --job-name      MPIJob       {# job name (shows up in the queue)}
+#SBATCH --time          00:01:00         {# Walltime (HH:MM:SS)}
+#SBATCH --mem-per-cpu   512MB     {# memory/cpu in MB (half the actual required memory)}
+#SBATCH --cpus-per-task 4       {# 2 Physical cores per task.}
+#SBATCH --ntasks        2              {# number of tasks (e.g. MPI)}
 
-srun pwd                        # Prints  working directory
+srun pwd
+# Prints  working directory
 ```
 
 The expected output being:
 
-```txt
+```sh
 /home/user001/demo
 /home/user001/demo
 ```
@@ -168,7 +171,7 @@ Environment variables *will not work* in the Slurm header. In place
 of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
 useful for sorting your output files e.g.
 
-``` sl
+```sl
 #SBATCH --output        outputs/run_%a/slurm_output.out
 #SBATCH --output        outputs/run_%a/slurm_error.err
 ```
