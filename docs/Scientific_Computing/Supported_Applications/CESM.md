@@ -7,7 +7,7 @@ status: deprecated
 description: Supported applications page on CESM
 ---
 
-The Community Earth System Model (CESM) is a coupled climate model for
+The [Community Earth System Model (CESM)](https://www.cesm.ucar.edu/) is a coupled climate model for
 simulating Earth’s climate system. Composed of separate models
 simultaneously simulating the Earth’s atmosphere, ocean, land, river
 run-off, land-ice, and sea-ice, plus one central coupler/moderator
@@ -44,38 +44,6 @@ later on in this guide.
     ```
 
     This will ensure the `module load git` command only runs on Mahuika.
-
-### Māui only
-
-On Māui only, you may need to install the Perl *XML::LibXML* module,
-especially if you encounter errors like:
-
-```bash
-err=Can't locate XML/LibXML.pm in @INC (you may need to install the XML::LibXML module)
-```
-
-You can install the module with the following:
-
-```sh
-curl -L https://cpanmin.us/ | perl - App::cpanminus
-~/perl5/bin/cpanm XML::LibXML
-```
-
-Then export the path the module was installed to so that it is picked up by Perl:
-
-```sh
-export PERL5LIB=~/perl5/lib/perl5/x86_64-linux-thread-multi
-```
-
-The export command above could be added to your *~/.bashrc* file to make it persistent but make sure
-you wrap it in a block that ensures the environment variable is only set on Māui (if you are likely
-to use Mahuika too), for example:
-
-```sh
-if [[ "${SYSTEM_STRING}" == "XC50" ]]; then
-    export PERL5LIB=~/perl5/lib/perl5/x86_64-linux-thread-multi
-fi
-```
 
 ### Mahuika and Māui
 
@@ -114,7 +82,7 @@ in the commands below (replacing *&lt;your\_project\_code&gt;* with your project
 export PROJECT_CODE=<your_project_code>
 ```
 
-These instructions are based on the [upstream documentation](https://escomp.github.io/CESM/release-cesm2/downloading_cesm.html).
+These instructions are based on the [upstream documentation](https://escomp.github.io/CESM/versions/cesm2.1/html/downloading_cesm.html).
 First switch to your project directory (or wherever else you would like
 the CESM source to live) and then run the commands to download CESM:
 
@@ -138,8 +106,8 @@ Make sure you still have the environment variable set with your project code:
 export PROJECT_CODE=<your_project_code>
 ```
 
-Clone the repo containing NeSI specific CIME configuration
-([CIME](http://esmci.github.io/cime/versions/master/html/what_cime/index.html)
+Clone the [repo containing NeSI specific CIME configuration](https://github.com/nesi/nesi-cesm-config).
+([CIME](https://esmci.github.io/cime/versions/master/html/index.html)
 provides a case control system for configuring, building and executing
 Earth system models) and copy the config files to *~/.cime* (this will overwrite
 any current configuration your have in *~/.cime*):
@@ -174,7 +142,7 @@ export PROJECT_CODE=<your_project_code>
 ```
 
 Here we will run the test described in the CESM [quick start
-guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html). The
+guide](https://escomp.github.io/CESM/versions/cesm2.1/html/quickstart.html). The
 following are basic instructions to create and run the case, see the
 above link for more information.
 
@@ -204,7 +172,7 @@ Change to the new case directory that you just created:
 cd /nesi/nobackup/${PROJECT_CODE}/$USER/cesm/output/b.e20.B1850.f19_g17.test
 ```
 
-**On Mahuika only**: we will now adjust the number of processors (tasks) the simulation will run on. This case is configured to run on 6 full nodes by default but we're just running a short test, so let's reduce the maximum number of tasks per node, keeping the layout between different components the same:
+We will now adjust the number of processors (tasks) the simulation will run on. This case is configured to run on 6 full nodes by default but we're just running a short test, so let's reduce the maximum number of tasks per node, keeping the layout between different components the same:
 
 ```sh
 ./xmlchange MAX_TASKS_PER_NODE=32
@@ -237,8 +205,6 @@ CASE INFO:
   thread count: 1
 ```
 
-On Māui this should show 240 total tasks and 40 tasks per node, unless you changed those above.
-
 Now build the case (this could take a while if it needs to download input data):
 
 ``` sh
@@ -270,10 +236,8 @@ sea ice, etc.). Many different configurations are possible, although
 there are some hard coded constraints, and this is well documented in
 CIME (the case control system used by CESM):
 
-[https://esmci.github.io/cime/versions/maint-5.6/html/users\_guide/pes-threads.html](https://esmci.github.io/cime/versions/maint-5.6/html/users_guide/pes-threads.html)
-
-The above link lists some of the common configurations, such as fully
-sequential or fully sequential except the ocean running concurrently.
+[CIME provides information about some of the common configurations, such as fully
+sequential or fully sequential except the ocean running concurrently.](https://esmci.github.io/cime/versions/master/html/ccs/model-configuration/variables/pes.html)
 
 One approach to load balancing (i.e. optimising processor layout) is
 documented on the above ESMCI page in the section "One approach to load
