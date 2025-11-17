@@ -147,6 +147,11 @@ span.md-status.md-status--deprecated {
   width: 50%;
   margin: auto;
   display: block;
+  filter: brightness(0);
+}
+
+.cards>a>img:hover {
+  filter: none;
 }
 
 .cards {
