@@ -2,8 +2,8 @@
 created_at: '2019-02-06T22:27:04Z'
 tags:
  - slurm
-title: Why is my job taking a long time to start?
-status: deprecated
+status: []
+description: Information about investigating long running jobs
 ---
 
 If you think your job is taking unexpectedly long to start running,
@@ -40,7 +40,7 @@ looking something like this:
 ```sh
 $ nn_my_queued_jobs 
 ACCOUNT                JOBID NAME                 SUBMIT_TIME         QOS    NODE CPUS MIN_MEMORY PRIORITY START_TIME          REASON
-nesi99999           12345678 SomeRandomJob        2019-01-01T12:00:00 collab    1    8         2G     1553        N/A          QOSMaxCpuPerJobLimit
+nesi12345           12345678 SomeRandomJob        2019-01-01T12:00:00 collab    1    8         2G     1553        N/A          QOSMaxCpuPerJobLimit
 ```
 
 One of the most useful columns to look at, far over on the right hand

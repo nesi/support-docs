@@ -1,23 +1,22 @@
 ---
 created_at: '2019-02-07T21:55:45Z'
+description: How to get further help with your computational science.
 tags:
-- help
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000751916
-zendesk_section_id: 360000164635
+- consultancy
 ---
 
-Our Consultancy service provides scientific and HPC-focussed
+Our Consultancy service provides scientific and HPC-focused
 computational and data science support to research projects across a
 range of domains.
+
+![Consultancy](../../assets/images/consultancy.png){ width=75% }
 
 ## Need support with your research project?
 
 If you would like to learn more about our Consultancy service and how
 you can work with our Research Software Engineers on
 a project, please {% include "partials/support_request.html" %} to set up an
-initial meeting. We can discuss your needs and complete a Consultancy
+initial meeting. We can discuss your needs and complete a Consultancy
 application form together.
 
 Researchers with Merit (grant-funded) projects can usually access Consultancy support at no cost to

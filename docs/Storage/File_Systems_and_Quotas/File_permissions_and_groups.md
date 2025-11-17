@@ -3,7 +3,6 @@ created_at: '2018-05-21T05:14:00Z'
 tags:
 - nobackup
 - project
-status: deprecated
 ---
 
 
@@ -16,9 +15,9 @@ Default permissions differ from filesystem to filesystem.
 Each user has a private user group, of which that user is by default the
 only member. Each user is also a member of various other groups, such
 as:
-- A group for each active NeSI project of which that user is a member
+- A group for each active project of which that user is a member
 - Groups for all active users, all active Mahuika users as appropriate
-- A group representing all active NeSI users who are affiliated with
+- A group representing all active users who are affiliated with
     the user's institution
 - Groups for specific licensed software to which that user has been
     granted access
@@ -33,8 +32,7 @@ groups
 ## Files in home directories
 
 Your home directory is owned by you, and its group is usually your
-personal group. (For historical reasons, some NIWA users' home
-directories have `niwa_nesi_users` or `niwa_unix_users` as the group.)
+personal group.
 By default, files and directories that are created in your home
 directory, or copied to your home directory from another network or file
 system, inherit this ownership scheme. You can override these defaults
@@ -63,7 +61,7 @@ Home directories and their contents do not have any ACLs by default.
 ## Files in project directories
 
 Every new project almost always gets two directories, namely a
-persistent directory in `/nesi/project` and a scratch directory in
+persistent directory in `/nesi/project` and a scratch directory in
 `/nesi/nobackup`. Both these directories are group directories. Both top
 level project directories are owned by root (i.e. the super-user) and
 their group is the project group. Files and directories that are created
@@ -85,9 +83,8 @@ project group.
      set, meaning that files and subdirectories later created within that
      directory will inherit neither the group nor the setgid bit.
      You probably don't want this to happen. For instructions on how to
-     prevent it, please see our article: [How can I let my fellow project
-     team members read or write my
-     files?](../../General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
+     prevent it, please see our article: 
+     [How can I let my fellow project team members read or write my files?](../../General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
 
 By default, the world, i.e. people not in the project team, have no
 privileges in respect of a project directory, with certain exceptions.
@@ -144,4 +141,4 @@ suitable permissions model.
 !!! prerequisite "See also"
      -   [How can I let my fellow project team members read or write my files?](../../General/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
      -   [How can I give read-only team members access to my files?](../../General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md)
-     -   [NeSI filesystems and quotas](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md)
+     -   [filesystems and quotas](./Filesystems_and_Quotas.md)

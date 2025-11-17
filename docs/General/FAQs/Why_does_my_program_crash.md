@@ -1,7 +1,7 @@
 ---
 created_at: '2019-05-05T23:39:05Z'
 tags: []
-title: Why does my program crash?
+description: Potential causes of program crashes
 ---
 
 There are many different reasons why an application could crash. We

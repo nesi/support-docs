@@ -132,3 +132,49 @@ span.md-status.md-status--deprecated {
     color: yellow;
     cursor: default;
 }
+
+
+/* Make cards look right */
+.md-typeset .grid.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cards>a>img {
+  width: 50%;
+  margin: auto;
+  display: block;
+  filter: brightness(0);
+}
+
+.cards>a:hover>img {
+  filter: none;
+}
+
+.cards {
+  color: var(--md-typeset-color);
+}
+
+.cards>a {
+  border: .05rem solid var(--md-default-fg-color--lightest);
+  border-radius: .1rem;
+  display: block;
+  padding: .8rem;
+  transition: border .25s, box-shadow .25s;
+}
+
+.cards>a:hover {
+  border-color: #0000;
+  box-shadow: var(--md-shadow-z2);
+}
+
+.cards>a>hr,
+.cards>a>h3,
+.grid.cards>a>h3,
+.grid.cards>a>p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.87);
+}

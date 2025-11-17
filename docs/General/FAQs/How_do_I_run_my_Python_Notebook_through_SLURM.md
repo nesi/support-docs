@@ -1,11 +1,7 @@
 ---
 created_at: '2023-09-17T23:51:43Z'
 tags: []
-title: How do I run my Python Notebook through SLURM?
-vote_count: 1
-vote_sum: -1
-zendesk_article_id: 7918332923023
-zendesk_section_id: 360000039036
+description: Instructions for running a Python notebook through Slurm
 ---
 
 The first thing you will need to do is to convert your `.ipynb`
@@ -24,7 +20,7 @@ jupyter nbconvert --to script my_notebook.ipynb
 
 will create a new python script called `my_notebook.py`.
 
-### Export Notebook
+## Export Notebook
 
 With your notebook open, select *File* -> *Save and Export Notebook
 As...* -> *Executable Script*
