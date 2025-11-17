@@ -16,32 +16,32 @@ Technical documentation for our High Performance Computing (HPC) platforms.
 
 <div class="grid cards">
 <a href="/Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
-    <img class="hover" alt="account details" src="assets/icons/material/account-details.svg">
+    <img alt="account details" src="assets/icons/material/account-details.svg">
     <h3>Accounts</h3>
     <p>How to get started with accounts, projects and allocations.</p>
 </a>
 <a href="/Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster/">
-    <img class="hover" alt="ssh setup" src="assets/icons/material/lan-connect.svg">
+    <img alt="ssh setup" src="assets/icons/material/lan-connect.svg">
     <h3>Connecting to the Cluster</h3>
     <p>How to set up a connection to the cluster.</p>
 </a>
 <a href="https://ondemand.nesi.org.nz/public/">
-    <img class="hover" alt="ondemand" src="assets/icons/logo_ondemand_black.png">
+    <img alt="ondemand" src="assets/icons/logo_ondemand_black.png">
     <h3>OnDemand ↗</h3>
     <p>Access the cluster Via the OnDemand web application.</p>
 </a>
 <a href="/Scientific_Computing/Batch_Jobs/Hardware">
-    <img class="hover" alt="account details" src="assets/icons/material/widget-small.svg">
+    <img alt="account details" src="assets/icons/material/widget-small.svg">
     <h3>Resources</h3>
     <p>What CPUs and GPUs are available on the REANNZ Cluster.</p>
 </a>
 <a href="/Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster">
-    <img class="hover" alt="ssh setup" src="./assets/icons/material/file-arrow-up-down.svg">
+    <img alt="ssh setup" src="./assets/icons/material/file-arrow-up-down.svg">
     <h3>File Transfer</h3>
     <p>Getting your data on and off the cluster.</p>
 </a>
 <a href="Getting_Started/Next_Steps/Submitting_your_first_job#slurm">
-    <img class="hover" alt="ondemand" src="assets/icons/material/tray-full.svg">
+    <img alt="ondemand" src="assets/icons/material/tray-full.svg">
     <h3>Job Scheduler</h3>
     <p>How to use our job scheduler, Slurm.</p>
 </a>
