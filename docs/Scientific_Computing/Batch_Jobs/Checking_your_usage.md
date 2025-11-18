@@ -1,13 +1,9 @@
 ---
 created_at: '2022-02-15T01:13:51Z'
-tags: []
-title: Checking your project's usage using nn_corehour_usage
-status: deprecated
+tags:
+  - slurm
+  - accounting
 ---
-
-
-!!! warning
-    This command is currently not working on the new HPC.
 
 To check your project's usage of Slurm-managed resources, you can use
 the command `nn_corehour_usage`. This command displays usage of cluster
