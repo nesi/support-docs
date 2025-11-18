@@ -70,7 +70,7 @@ Here are the explanations for each line of this snippet:
 
 Conda environments and the conda packages cache can take a lot of
 storage space. By default, Conda use
-[/home](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md),
+[/home](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md),
 which is restricted to 20GB on NeSI. Here are some techniques to avoid
 running out of space when using Conda.
 

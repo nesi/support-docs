@@ -1,21 +1,21 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
-title: What is a Trusted Device?
+description: Explanation of trusted devices
 tags: 
     - MFA
     - access
 ---
 
-A trusted device is a piece of hardware (like a phone, computer, or tablet) 
-that a user has authorised to access their accounts or an organisation's resources, 
+A trusted device is a piece of hardware (like a phone, computer, or tablet)
+that a user has authorised to access their accounts or an organisation's resources,
 typically after a verification process such as the Multi-Factor Authentication (MFA).
 
-Do not trust shared laptops or public computers. Additionally, if you're using a private or incognito window in your browser, 
+Do not trust shared laptops or public computers. Additionally, if you're using a private or incognito window in your browser,
 keep in mind that it's temporary and should **not** be considered a secure or permanent environment: then do not trust it.
 
 ## When should I trust a device?
 
-You should trust a device when it meets several criteria, including: 
+You should trust a device when it meets several criteria, including:
 
 - strong security measures,
 - an updated operating system,
@@ -29,6 +29,6 @@ Using a trusted device will simplify your login process. For example, if a devic
 
 ## What name shall I give to my trusted device?
 
-You should name your trusted device something that helps you identify it and differentiates it from your other devices. Each name should be unique (e.g. the process will fail if a name is used more than once). 
-Good names are descriptive but also personal, such as "My Personal Laptop" or "Sarah's iPhone." 
-Avoid names such as "My Favorite Device", as that could make it harder to manage if you have multiple trusted devices for the same account. 
+You should name your trusted device something that helps you identify it and differentiates it from your other devices. Each name should be unique (e.g. the process will fail if a name is used more than once).
+Good names are descriptive but also personal, such as "My Personal Laptop" or "Sarah's iPhone."
+Avoid names such as "My Favorite Device", as that could make it harder to manage if you have multiple trusted devices for the same account.

@@ -3,10 +3,17 @@ created_at: '2020-11-02T03:07:06Z'
 tags: 
     - climate
     - modelling
-status: deprecated
+description: Supported applications page on CESM
+hide:
+    - toc
 ---
 
-The Community Earth System Model (CESM) is a coupled climate model for
+!!! warning
+    This page has information from before the June 2025 migration.
+    If you need to use CESM, take these instructions with a grain of salt
+    and feel free to {% include "partials/support_request.html" %}.
+
+The [Community Earth System Model (CESM)](https://www.cesm.ucar.edu/) is a coupled climate model for
 simulating Earth’s climate system. Composed of separate models
 simultaneously simulating the Earth’s atmosphere, ocean, land, river
 run-off, land-ice, and sea-ice, plus one central coupler/moderator
