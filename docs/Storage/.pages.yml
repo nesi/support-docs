@@ -4,4 +4,4 @@ nav:
   - Data_Transfer_Services
   - Long_Term_Storage
   - Cloud_Storage
-  - ...
+  - "*"

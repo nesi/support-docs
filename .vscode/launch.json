@@ -18,7 +18,7 @@
             "type": "debugpy",
             "request": "launch",
             "program": "checks/run_meta_check.py",
-            "args": ["docs/fail_checks.md"],
+            "args": ["checks/fail_checks.md"],
             "console": "integratedTerminal",
             "justMyCode": true
         },
