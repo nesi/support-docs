@@ -1,11 +1,7 @@
 ---
 created_at: '2022-02-09T01:40:51Z'
 tags: []
-title: How do I find out the size of a directory?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4415563282959
-zendesk_section_id: 360000039036
+description: Instructions for finding the size of a directory?
 ---
 
 To simplify this process, we have written a script, `nn_dir_contents`.

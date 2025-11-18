@@ -159,7 +159,7 @@ def malformed_delimiter():
     delim = match_header_line.group(3)
     if delim == "=":
         uses_equals_delim = True
-        yield {"level": "notice", "message": "Whitespace is preffered SLURM header delimiter."}
+        yield {"level": "notice", "message": "Whitespace is preferred SLURM header delimiter."}
     elif delim.isspace():
         uses_whitespace_delim = True
     else:
@@ -174,7 +174,7 @@ def inconsistant_delimiter():
 def short_option():
     if not match_header_line.group(2)[:2] == "--":
         yield {"level": "notice", "col": 8, "endColumn": 8 + len(match_header_line.group(2)), 
-               "message": f"Using short form flag '{match_header_line.group(2)}'. Long form is prefered."}
+               "message": f"Using short form flag '{match_header_line.group(2)}'. Long form is preferred."}
 
 
 def minimum_options():

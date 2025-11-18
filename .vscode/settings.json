@@ -63,5 +63,8 @@
         "editor.suggest.preview": true,
         "editor.suggest.showUsers": false,
     },
-    "terminal.integrated.env.linux": {"PATH": ".venv/bin:${env:PATH}"},
+    "terminal.integrated.env.linux": {
+        "PATH": ".venv/bin:${env:PATH}"
+    },
+    "python.defaultInterpreterPath": ".venv/bin/python",
 }

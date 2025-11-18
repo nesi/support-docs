@@ -60,8 +60,6 @@ markdown_extensions:
     # - docs/assets/glossary/snippets.md  # Causes massive slowdown. Also, bad.
   - attr_list
   - abbr
-  - neoteroi.cards
-  - neoteroi.timeline
   - footnotes
   - def_list
 extra:
@@ -86,7 +84,7 @@ plugins:
         rss_updated: page_update.xml
   - redirects:
       map_file: docs/redirect_map.yml
-  - awesome-pages:
+  - awesome-nav:
       filename: .pages.yml
  # - git-authors
   - tags:
@@ -100,7 +98,6 @@ plugins:
       module_name: macro_hooks
       include_dir: overrides
 extra_css:
-  - assets/stylesheets/neoteroi-mkdocs.css
   - assets/stylesheets/footer.css
   - assets/stylesheets/custom_admonations.css
   - assets/stylesheets/theme.css

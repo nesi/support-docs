@@ -4,11 +4,7 @@ tags:
 - access
 - account
 - mynesi
-title: Why am I seeing 'Account is not ready'?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000550416
-zendesk_section_id: 360000039036
+description: Instructions for Account is not ready error
 ---
 
 If you don’t see the ‘Set Password’ button, it means your information on

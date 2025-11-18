@@ -2,6 +2,8 @@
 title: Contributing
 search:
   exclude: true
+description: Documentation of how to contribute to the documentation
+tags: []
 ---
 
 **[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs/CONTRIBUTING)**{ .hidden }
@@ -134,8 +136,6 @@ Will give three levels of output, **Errors** (serious issues that will prevent m
 
 The `main` branch is protected, changes can be made via a pull request.
 
-### Making a Merge Request
-
 Make a merge request (pull request) for your development branch into `main`.
 
 If you are using a local development environment,
@@ -191,7 +191,7 @@ Updating will pull in any new changes from the main branch into your feature bra
 
 Choosing whether to update is optional, and should not block a merge.
 You might want to consider updating it if you think there may be a clash with the main branch,
-i.e. someone has made changes to a page you have also changed. 
+i.e. someone has made changes to a page you have also changed.
 This will allow you to fix any merge conflicts in your feature branch, before merging into main.
 
 ### Merge Etiquette
@@ -200,11 +200,12 @@ Do not merge draft pull requests!
 Do not merge pull requests with someone else assigned as reviewer!
 
 Do review open pull requests!
-Do merge pull requests you've reviewed, unless someone else is assinged.
+Do merge pull requests you've reviewed, unless someone else is assigned.
 
 ## Update Remote Assets
 
-*Still haven't found a way to do this properly 😔*
+!!! note ""
+  Still haven't found a way to do this properly 😔
 
 Certain files need to be fetched from other repos for up to date info. This will be automated, but for now the process is manual.
 
@@ -223,11 +224,18 @@ If the CI is failing the spellcheck phase, and you believe the identified words 
 
 ## Raise an issue
 
-*Not documented at the moment (TODO)*
+GitHub makes it easy to flag issues for either you or someone else to fix at a later point.
+To do this, go to the [`Issues` tab](https://github.com/nesi/support-docs/issues) and click the big green `New issue` button in the top right.
+You can select a specific type of issue or simply create a blank issue and then fill in the details with as much information as you are able.
+
+![alt text](assets/images/Github_create_issue_2.png)
+
+!!! tip "Details matter!"
+  Try to add as many details as you can when creating an issue. Even if you plan to be the person who fixes the issue, writing down what is needed will help future you remember everything.
 
 ## The 'Supported Apps' Page
 
-Quite a lot of data-sources come together to make this page:
+Quite a lot of data sources come together to make this page:
 
 - mkdocs article titles
 - lmod info scraped from all clusters
@@ -245,7 +253,13 @@ Fix the information in the module file.
 
 #### NeSI Documentation Link
 
-Is there a child page with the same title as the module? (case sensitive).
+Is there a child page with the same title as the module? This is case sensitive, specifically in the front matter YAML:
+```yaml
+---
+created_at: 2025-11-10
+title: cAsE_sEnSiTiVe
+---
+```
 
 #### Domain, Licence Type
 
@@ -257,7 +271,7 @@ Pulled from lmod admin.lists file
 
 #### Network Licence Details
 
-Ask cal, or read the readme at `/opt/nesi/nesi-apps-admin/LicConfig/`
+Ask Cal, or read the readme at `/opt/nesi/nesi-apps-admin/LicConfig/`
 
 ### Everything Else
 

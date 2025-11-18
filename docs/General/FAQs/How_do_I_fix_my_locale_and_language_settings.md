@@ -1,11 +1,7 @@
 ---
 created_at: '2022-02-15T04:10:09Z'
 tags: []
-title: How do I fix my locale and language settings?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4416829135887
-zendesk_section_id: 360000039036
+description: Instructions for changing locale and language settings
 ---
 
 When logging in to NeSI from some systems, such as Windows Subsystem for

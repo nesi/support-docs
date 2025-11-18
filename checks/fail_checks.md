@@ -29,6 +29,10 @@ Typos should [be ignored](https://www.docs.nesi.org.nz)
 Typos should [be ignored](../docs/General/FAQs/How_do_I_request_memory.md)
 
 
+links shouldn't be called [here](../docs/General/FAQs/How_do_I_request_memory.md)
+but can be called [where](../docs/General/FAQs/How_do_I_request_memory.md)
+
+
 
 Bad formatting for markdownlint 
 
