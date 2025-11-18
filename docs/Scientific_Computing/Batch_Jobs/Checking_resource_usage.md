@@ -10,9 +10,9 @@ the command `nn_corehour_usage`. This command displays usage of cluster
 resources by a specific project, computed from the Slurm program
 `sreport`.
 
-You can also view your project's usage in compute units on my.nesi.org.nz.
+You can also view your project's usage in compute units on [my.nesi.org.nz](http://my.nesi.org.nz).
 Note that the values may differ, as the units are not the same.
-Additionally, the usage shown on my.nesi.org.nz includes other compute
+Additionally, the usage shown on [my.nesi.org.nz](http://my.nesi.org.nz) includes other compute
 and memory usage, such as that from OnDemand sessions.
 
 ## Synopsis
