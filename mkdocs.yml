@@ -84,7 +84,7 @@ plugins:
         rss_updated: page_update.xml
   - redirects:
       map_file: docs/redirect_map.yml
-  - awesome-pages:
+  - awesome-nav:
       filename: .pages.yml
  # - git-authors
   - tags:
