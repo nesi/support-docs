@@ -28,7 +28,7 @@ The general process follows a schedule of:
 In summary, we **notify** at 76 days (2 weeks advance notice) and then **delete** at 90 days.
 There will be ***no exclusions*** to this auto-deletion process. If you need to store data for longer than 90 days, [get in touch with our Support Team](mailto:support@nesi.org.nz).
 
-![Auto cleaning cycle](assets/images/AutocleanerProcess.png)
+![Auto cleaning cycle](../../assets/images/AutocleanerProcess.png)
 
 !!! tip
      At any time you can check for and delete files older than 90 days (replace <project code> with the project code of interest, e.g. “nesi99999”):
