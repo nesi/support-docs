@@ -10,6 +10,8 @@ import time
 
 import proselint
 from proselint import config, tools
+from proselint.checks import __register__
+from proselint.registry import CheckRegistry
 
 ALLOWABLE_NOTICES = 5
 
@@ -20,18 +22,17 @@ if __name__ == "__main__":
     count_notices = 0
 
     # Load defaults from config.
-    config_custom = tools.load_options(
-        config_file_path=".proselint.json", conf_default=config.default
-    )
 
+    config_custom = config.load_from(Path(".proselint.json"))
+    CheckRegistry().register_many(__register__)
     for file in files:
         print(f"::DEBUG file={file},line=0,col=0,endColumn=0,title=file:: Running proselint on '{file}'")
         content = Path(file).read_text(encoding="utf8")
-        for notice in proselint.tools.lint(content, config=config_custom):
+        for notice in tools.LintFile(file, content=content).lint(config_custom):
             print(
-                f"::{notice[7]} file={file},line={notice[2]+1},"
-                f"col={notice[3]+2},endColumn={notice[2]+notice[6]+1},"
-                f"title={notice[0]}::'{notice[1]}'",
+                f"::warning file={file},line={notice.pos[0]},"
+                f"col={notice.check_result.span[0]},endColumn={notice.check_result.span[1]},"
+                f"title={notice.check_result.check_path}::'{notice.check_result.message}'",
                 flush=True
             )
             count_notices += 1
