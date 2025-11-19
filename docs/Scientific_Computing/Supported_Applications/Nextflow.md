@@ -256,9 +256,9 @@ The [nf-core rnaseq pipeline (v3.21.0)](https://nf-co.re/rnaseq/3.21.0) was run 
 
 | Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Total CPU     |
 |-----------------------|------------------------------------------|------------------------------|--------------------------------|
-| [Batch job](#batch-job) |                                  | 00:05:37                     | 16:42.462                            |
-| [Head job](#head-job) | max\_nodes=1; cmds\_per\_node=4       | 00:06:13                     | 17:16.920                            |
-| [Labeled processes](#labeled-processes) | max\_nodes=3; cmds\_per\_node=4       | 00:09:41                     | 42:18.727                            |
+| [Batch job](#batch-job) |                                  |                      |                             |
+| [Head job](#head-job) |        |                      |                             |
+| [Labeled processes](#labeled-processes) |        |                      |                          |
 
 ### Batch job
 
@@ -271,7 +271,7 @@ Duration    : 11h 16m 47s
 CPU hours   : 319.6
 
 ```bash
-nn_seff <job-id>
+> nn_seff <job-id>
 Cluster: hpc
 Job ID: 3034402
 State: ['COMPLETED']
