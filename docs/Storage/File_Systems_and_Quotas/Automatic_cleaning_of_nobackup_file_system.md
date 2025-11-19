@@ -1,5 +1,6 @@
 ---
 created_at: '2019-09-15T23:36:59Z'
+title: Automatic cleaning of scratch filesystem
 description: Description of our automatic deletion of old data.
 tags:
 - nobackup
@@ -16,7 +17,7 @@ Files are deleted if they meet **all** of the following criteria:
 
 - The file was first created more than 90 days ago
 - The file has not been accessed, and neither its data nor its metadata has been modified, for at least 90 days
-- The file was identified as a candidate for deletion two weeks previously ------- To update ------ (and as such is listed in the project's nobackup `.policy` directory)
+- The file was identified as a candidate for deletion two weeks previously (and as such is listed by the command nn_doomed_list)
 
 
 The general process follows a schedule of:
@@ -33,7 +34,7 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 !!! tip
      At any time you can check for and delete files older than 90 days (replace <project code> with the project code of interest, e.g. “nesi99999”):
 
-    - To list all files (and their owners) not accessed within 60 days, run the following command (you may want to redirect the output to a file): 
+    - To list all files (and their owners) not accessed within 90 days, run the following command (you may want to redirect the output to a file): 
     ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'```
 
     - To direct this to a file: 
@@ -52,7 +53,30 @@ Prior to data being deleted, we’ll send you an email identifying what has been
 
 ## How can I check which files have been already deleted or are scheduled for deletion?
 
-You can manually check at any time if you have any data that's already been deleted or is scheduled for deletion.  ------- To update  ------A file containing the list of candidates for deletion during the next cleanup, along with the date of the next cleanup, will be created in a directory called `.policy/to_delete` inside your project's scratch directory.
+You can manually check at any time if you have any data that's already been deleted or is scheduled for deletion. 
+When you are connected to the HPCs via ssh, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
+
+```sh
+$ nn_doomed_list --project nesi12345 
+/nesi/nobackup/nesi12345/
+  .file1
+  file2.log
+  .directory1/ - 94232 files
+  directory2/ - 464151 files
+  directory3/
+    file3.log
+    file4/ - 263 files
+    file5/ - 299 files
+```
+
+By default, the output produced contains 40 lines. 
+If you want a full list of the files, run ```nn_doomed_list --unlimited --project <yourprojectcode>```.
+In order to control the output summary length and level, use the --limited option eg. ```nn_doomed_list --limited 100 --project <yourprojectcode>```
+
+If you are trying to access a project you do not have access to, the script will fail and on the last line of the output you will get
+```
+PermissionError: [Errno 13] Permission denied: '/search/autocleaner/filelists/<projectcode>.gz'
+```
 
 ## What should I do with expiring data on the nobackup filesystem?
 
