@@ -10,25 +10,16 @@ zendesk_section_id: 360001059296
 
 ## Overview
 
-NeSI aims to keep users informed via various communication channels. 
+We use email as a communications channel for many types of notifications. These notifications can range from system-related updates to broader scope newsletters about our organisational activities and events.
 
 ## Checking and setting your preferences
 
-Within [my.nesi.org.nz](https://my.nesi.org.nz/account/preference) you
-can find a summary of the current subscriptions under NeSI Notification
-Preferences. 
+Within [my.nesi.org.nz](https://my.nesi.org.nz/account/preference) you can view and edit your current Notification subscriptions. Start by clicking Account in the left-side navigation menu, and then click My Preferences from the sub-section options. This brings you to a page where you can change and set what emails you will receive from us. 
 
-In order to manage your subscription to notifications, either log into
-[my.nesi](https://my.nesi.org.nz/account/preference) or use the link
-included at the bottom of the notification email message "Manage your
-subscription" or "Unsubscribe" to manage your preferences.
-
-Use the 'Manage' button provided to open the externally hosted
-preferences or the checkboxes for the NeSI Project-related
-notifications.
+Use the 'Manage' and 'Subscribe' buttons to open externally hosted preferences for notifications about newsletters, system status and other project-related notifications.
 
 ![2022-04-12\_16-46-56.png](../../assets/images/Managing_notification_preferences.png)
 
 ### See also
 
-Our support article on the NeSI [System status.](../../Getting_Started/Getting_Help/System_status.md)
+Our support article on [System status.](../../Getting_Started/Getting_Help/System_status.md)

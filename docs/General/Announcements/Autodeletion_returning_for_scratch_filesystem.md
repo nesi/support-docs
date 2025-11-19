@@ -12,17 +12,17 @@ We’re making some important updates to how your project’s temporary data is 
 ## What is changing?
 
 - Data stored in our scratch filesystem (`/nesi/nobackup`) that is not accessed for 90 days or more will be automatically deleted. This is a change from our previous timeframe of 120 days.
-- Scans and deletions will now happen on a weekly basis. You will still be provided two weeks notice before any data is deleted.
+- Scans and deletions will now happen on a fortnightly basis. You will still be provided two weeks notice before any data is deleted.
 - There will be no exclusions to the 90-day auto-deletion process. If you need to store data for longer than 90 days, [get in touch with our Support Team](mailto:support@nesi.org.nz).
 
 ## When will this happen?
 
-This new data management process will launch in late November / early December 2025. 
-Keep an eye on our [Status Page (HPC Storage system)](https://status.nesi.org.nz/) for updates.
+Update: This new policy has come into effect as of Wednesday 19 November. Our first scan was run to identify candidate files and project members with flagged files were notified by email (Subject to their my.nesi.org.nz notification preferences. Instructions for managing those can be [found here](https://docs.nesi.org.nz/Getting_Started/my-nesi-org-nz/Managing_notification_preferences/)).
 
 ## How will I know if my data is flagged for deletion?
 
-Prior to data being deleted, we’ll send you an email that identifies what has been marked for deletion. You can unsubscribe from receiving these notifications through my.nesi 
+Prior to data being deleted, we’ll send you an email that identifies what has been marked for deletion. You can subscribe to or unsubscribe from receiving these notifications through my.nesi.org.nz. 
+
 You can also manually check at any time if you have any data scheduled for deletion. [Instructions for that can be found here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system/#how-can-i-check-which-files-have-been-already-deleted-or-are-scheduled-for-deletion).
 
 ## More information
