@@ -10,12 +10,12 @@ zendesk_section_id: 360001059296
 
 ## Overview
 
-NeSI aims to keep users informed via various communication channels. 
+We aim to keep our HPC Platform and data storage service users informed via various communication channels. 
 
 ## Checking and setting your preferences
 
 Within [my.nesi.org.nz](https://my.nesi.org.nz/account/preference) you
-can find a summary of the current subscriptions under NeSI Notification
+can find a summary of the current subscriptions under Notification
 Preferences. 
 
 In order to manage your subscription to notifications, either log into
@@ -24,11 +24,11 @@ included at the bottom of the notification email message "Manage your
 subscription" or "Unsubscribe" to manage your preferences.
 
 Use the 'Manage' button provided to open the externally hosted
-preferences or the checkboxes for the NeSI Project-related
+preferences or the checkboxes for Project-related
 notifications.
 
 ![2022-04-12\_16-46-56.png](../../assets/images/Managing_notification_preferences.png)
 
 ### See also
 
-Our support article on the NeSI [System status.](../../Getting_Started/Getting_Help/System_status.md)
+Our support article on [System status.](../../Getting_Started/Getting_Help/System_status.md)
