@@ -56,11 +56,11 @@ You can manually check at any time if you have any data that's already been dele
 
 ## What should I do with expiring data on the nobackup filesystem?
 
-If you have files identified as candidates for deletion that you need to keep beyond the scheduled expiry date, you have two options:
+If you have files identified as candidates for deletion that you need to keep beyond the scheduled expiry date, you have the following options:
 
-- Move the file to your persistent project directory, e.g., /nesi/project/nesi12345. You may need to request more disk space in your persistent project directory before you can do this. Contact our Support Team. We assess such requests on a case-by-case basis.  Note:  You can save space by compressing data.  Standard tools such as gzipbzip2 etc are available.
-- Move or copy the file to a storage system at your institution. We expect most projects to do this for finalised output data and appreciate prompt egress of data once it is no longer used for processing.
-- Freezer, our long-term storage service, can also be used for storing data that are access occasionally. Contact our Support Team or request a new Freezer allocation from my.nesi.co.nz.
+- Move the file(s) to your project directory, e.g., /nesi/project/nesi12345. You may need to request more disk space in your project directory before you can do this. [Contact our Support Team](mailto:support@nesi.org.nz). We assess such requests on a case-by-case basis. Note: You can save space by [compressing data](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Data_Compression/). Standard tools such as gzipbzip2 etc are available.
+- Move the file(s) to Freezer, our [long-term storage service](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/). Note: Freezer is intended for use with relatively large files and should not be used for a large number of small files. To apply for a Freezer allocation, [contact our Support Team](mailto:support@nesi.org.nz) or request a new Freezer allocation in [my.nesi.co.nz](https://my.nesi.org.nz/login).
+- Move or copy the file to a storage system at your institution. We expect projects to do this for finalised output data and appreciate prompt egress of data once it is no longer used for processing.
 
 
 ## Where should I store my data?
@@ -68,7 +68,7 @@ If you have files identified as candidates for deletion that you need to keep be
 Generally: 
 -  the project directory should be used for reference data, tools, and job submission and management scripts.
 -  the scratch filesystem should be used for holding large reference working datasets (e.g., an extraction of compressed input data) and as a destination for writing and modifying temporary data. It can also be used to build and edit code, provided that the code is under version control and changes are regularly checked into upstream revision control systems.
--  Freezer, our long-term storage service should be used for larger datasets that you only access occasionally and do not need to change in situ.
+-  Freezer, our [long-term storage service](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), should be used for larger datasets that you only access occasionally and do not need to change in situ.
 
 
 
