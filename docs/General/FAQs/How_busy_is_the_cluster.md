@@ -3,7 +3,10 @@ created_at: '2019-09-22T20:20:07Z'
 tags:
  - slurm
 title: How busy is the cluster?
-status: []
+status: [deprecated]
+hide:
+ - toc
+ - navigation
 ---
 
 You can get the current status of all nodes on a cluster using the
