@@ -39,3 +39,5 @@ For fastStructure, no header row is required, but the first 6 columns of the fil
 ```
 
 To use this, use the `--format=str` flag and include the file **without** the file extension `--input=input` or fastStructure will append an extra `.str` to the filename.
+
+Shout out to a [rather old blog post](https://flowersoftheocean.wordpress.com/2018/04/15/running-faststructure-and-associated-difficulties/) for solving this issue!
