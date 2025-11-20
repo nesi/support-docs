@@ -24,11 +24,20 @@ module load fastStructure/1.0-gimkl-2020a-Python-2.7.18
 structure.py -K 3 --input=<infile> --output=<outfile>
 ```
 
+The `distruct.py` module may cause issues due to the module wanting to open a new window to view the plot. You may be able to work around this by telling `matplotlib` to write the plot to a file:
+
+```bash
+env MPLBACKEND='svg'
+distruct.py --output myplot.svg
+```
+
+Thanks to our friends at Purdue for [their documentation about these issues](https://www.rcac.purdue.edu/software/faststructure).
+
 ## fastStructure `.str` format
 
 fastStructure can take inputs in the form of a `.bed` file or an `.str` format
 Despite using the same `.str` suffix, the format required for fastStructure differs from that required for Structure.
-For fastStructure, no header row is required, but the first 6 columns of the file are ignored. Below is an example input (`input.str`) that will work with fastStructure:
+For fastStructure, no header row is required, but the first 6 columns of the file are ignored and there must be two lines per sample. Below is an example input (`input.str`) that will work with fastStructure:
 
 ```input.str
 #	#	#	#	Smpl_ID	Pop_ID	Locus_1	Locus_2	Locus_3	Locus_4	Locus_5	Locus_6	Locus_7	Locus_8	Locus_9	Locus_10
@@ -41,3 +50,5 @@ For fastStructure, no header row is required, but the first 6 columns of the fil
 To use this, use the `--format=str` flag and include the file **without** the file extension `--input=input` or fastStructure will append an extra `.str` to the filename.
 
 Shout out to a [rather old blog post](https://flowersoftheocean.wordpress.com/2018/04/15/running-faststructure-and-associated-difficulties/) for solving this issue!
+
+The `.str` files output by [ipyrad](../../Scientific_Computing/Supported_Applications/ipyrad.md) should work without issue. Otherwise you may want to convert `.vcf` files to `.bed` files using another tool and proceed with fastStructure using the `.bed` files.
