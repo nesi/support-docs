@@ -3,7 +3,7 @@ created_at: '2022-12-05T00:50:41Z'
 status: new
 tags:
 - announcement
-title: December holiday service restrictions and office closure 
+title: December holiday support restrictions and office closure 
 vote_count: 0
 vote_sum: 0
 search:
@@ -13,7 +13,7 @@ search:
 
 With Christmas and the New Year period fast approaching, we wanted to outline our support restrictions and office closure period.
 
-During this time, our [Network and HPC Platform services](https://www.reannz.co.nz/products-and-services) remain fully available, however urgent / critical requests will be addressed on a best effort basis. Any changes to the HPC Platform's status will be reported via our [System Status page](https://status.nesi.org.nz/). Non-urgent support requests will be addressed once the REANNZ Office reopens. 
+During this time, our [Network and HPC Platform services](https://www.reannz.co.nz/products-and-services) remain fully available, however urgent / critical support requests will be addressed on a best effort basis. Any changes to the HPC Platform's status will be reported via our [System Status page](https://status.nesi.org.nz/). Non-urgent support requests will be addressed once the REANNZ Office reopens. 
 
 **REANNZ Office shut down** 
 
