@@ -2,6 +2,7 @@
 created_at: '2021-05-25T02:15:36Z'
 tags: []
 description: Information on software environments that are optimized for machine learning and data science
+status: deprecated
 ---
 
 When using NeSI's HPC
@@ -36,12 +37,10 @@ As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using
 more broad terms such as "machine learning".
 
-![MachineLearningSoftwareEnvironments-May2021.png](../../assets/images/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
+![](../../assets/images/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
 
 For more information on our model and approach to application
-support, refer to our [policy for the management of scientific
-application
-software](../Policy/Application_Support_Model.md).
+support, refer to our [policy for the management of scientific application software](../Policy/Application_Support_Model.md).
 
 If you need help installing your software or would like to discuss your
 software needs with us, {% include "partials/support_request.html" %}.
