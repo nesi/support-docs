@@ -13,7 +13,7 @@ With Christmas and the New Year period fast approaching, we wanted to outline ou
 
 During this time, our [Network and HPC Platform services](https://www.reannz.co.nz/products-and-services) remain fully available, however urgent / critical support requests will be addressed on a best effort basis. Any changes to the HPC Platform's status will be reported via our [System Status page](https://status.nesi.org.nz/). Non-urgent support requests will be addressed once the REANNZ Office reopens.
 
-**REANNZ Office shut down**
+## REANNZ Office shut down
 
 START: 5:00pm 23 December 2025
 
