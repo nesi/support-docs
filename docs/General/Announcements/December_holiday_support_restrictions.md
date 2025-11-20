@@ -3,9 +3,7 @@ created_at: '2022-12-05T00:50:41Z'
 status: new
 tags:
 - announcement
-title: December holiday support restrictions and office closure 
-vote_count: 0
-vote_sum: 0
+description: December holiday support restrictions and office closure
 search:
   boost: 0.1
 ---
