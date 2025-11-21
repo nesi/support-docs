@@ -176,7 +176,16 @@ s3cmd restore --recursive s3://<freezer-bucket>/your_directory/data_folder/ --re
 
 Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
-```sh
+1. Create the `data_folder` you want to retrieve in file, and change directory into `data_folder`.
+
+  ```sh
+mkdir -p data_folder
+cd data_folder
+```
+
+2. Retrieve the data from Freezer
+
+  ```sh
 s3cmd get --recursive s3://<freezer-bucket>/your_directory/data_folder/
 ```
 
