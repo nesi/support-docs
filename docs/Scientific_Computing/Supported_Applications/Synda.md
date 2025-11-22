@@ -1,9 +1,15 @@
 ---
 created_at: '2019-10-14T21:25:00Z'
-tags: []
+tags:
+- software
+- geo
 title: Synda
 status: deprecated
 ---
+
+!!! warning "Tool deprecation"
+    Synda has been deprecated and replaced by [ESGF Downloader](https://github.com/ESGF/esgf-download)
+    
 
 ## What is synda?
 
