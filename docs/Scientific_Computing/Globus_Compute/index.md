@@ -39,22 +39,22 @@ highlight the specifics of working with the Mahuika endpoints.
 
 ## Requirements
 
-You must have a NeSI account, Globus account and have linked an identity from your Globus account to the NeSI Keycloak. This can be achieved by
+You must have a REANNZ HPC account, Globus account and have linked an identity from your Globus account to the NeSI Keycloak. This can be achieved by
 navigating to the [NeSI HPC Storage](https://app.globus.org/file-manager?origin_id=763d50ee-e814-4080-878b-6a8be5cf7570) in the Globus
-web app and ensuring you can see your NeSI files.
+web app and ensuring you can see your REANNZ HPC files.
 
 ## Endpoints
 
-| Name       | Endpoint ID                            | Purpose                                                      |
-|------------|----------------------------------------|--------------------------------------------------------------|
-| nesi-login | `63c0b682-43d1-4b97-bf23-6a676dfdd8bd` | Lighweight tasks that are suitable to be run on a login node, such as submitting Slurm jobs, checking job status, etc. |
-| nesi-slurm | `abf152c8-ad9b-453f-bcc8-3424284344f3` | Resource intensive tasks; work sent to this endpoint will run in a Slurm job |
+| Name         | Endpoint ID                            | Purpose                                                      |
+|--------------|----------------------------------------|--------------------------------------------------------------|
+| reannz-login | `63c0b682-43d1-4b97-bf23-6a676dfdd8bd` | Lighweight tasks that are suitable to be run on a login node, such as submitting Slurm jobs, checking job status, etc. |
+| reannz-slurm | `abf152c8-ad9b-453f-bcc8-3424284344f3` | Resource intensive tasks; work sent to this endpoint will run in a Slurm job |
 
-## `nesi-slurm` endpoint
+## `reannz-slurm` endpoint
 
 This endpoint submits work in Slurm jobs. The following configuration options are available via [`user_endpoint_config`](https://globus-compute.readthedocs.io/en/v2.20.1/reference/executor.html#globus_compute_sdk.Executor.user_endpoint_config):
 
-- `ACCOUNT_ID` (required): your NeSI project code
+- `ACCOUNT_ID` (required): your REANNZ HPC project code
 - `WALL_TIME` (optional, defaults to `00:05:00`): the wall time for the Slurm job that gets submitted (must be enough time for your function to complete)
 - `MEM_PER_CPU` (optional, defaults to `2G`): amount of memory to be requested in the Slurm job
 - `GPUS_PER_NODE` (optional, defaults to no GPU): request GPUs for the Slurm job
