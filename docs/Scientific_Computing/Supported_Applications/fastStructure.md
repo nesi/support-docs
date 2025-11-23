@@ -6,6 +6,10 @@ tags:
     - software
 ---
 
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
+
 ## Using fastStructure executables
 
 While the modules are python scripts, they must be run as executables, not python scripts, as in the following `sbatch`.
