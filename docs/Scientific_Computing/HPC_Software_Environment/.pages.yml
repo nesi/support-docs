@@ -1,7 +1,5 @@
 nav:
  - OpenMP_settings.md
- - Offloading_to_GPU_with_OpenMP.md
- - Offloading_to_GPU_with_OpenACC.md
  - NVIDIA_GPU_Containers.md
  - Configuring_Dask_MPI_jobs.md
  - Software_Version_Management.md
