@@ -237,6 +237,4 @@ applications:
 
 And programming toolkits:
 
-- [Offloading to GPU with OpenMP](../HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
-- [Offloading to GPU with OpenACC using the Cray compiler](../HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md)
 - [NVIDIA GPU Containers](../HPC_Software_Environment/NVIDIA_GPU_Containers.md)
