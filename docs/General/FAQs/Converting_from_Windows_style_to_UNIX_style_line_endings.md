@@ -1,11 +1,7 @@
 ---
 created_at: '2016-03-14T01:52:06Z'
 tags: []
-title: Converting from Windows-style to UNIX-style line endings
-vote_count: 47
-vote_sum: 13
-zendesk_article_id: 218032857
-zendesk_section_id: 360000039036
+description: Instructions for converting from Windows-style to UNIX-style line endings
 ---
 
 In a plain text file, to tell the computer that a line of text doesn't

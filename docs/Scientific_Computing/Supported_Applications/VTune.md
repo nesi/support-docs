@@ -52,18 +52,19 @@ executable to profile. It is under upwind/cxx, so
 
 ``` sh
 cd upwind/cxx
+make
 ```
 
 Run the executable with
 
 ``` sh
 module load VTune
-srun --ntasks=1 --cpus-per-task=2 --hint=nomultithread amplxe-cl -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
+srun --ntasks=1 --cpus-per-task=2 --hint=nomultithread vtune -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
 ```
 
 Executable "upwindCxx" takes arguments "-numCells 256" (the number of
 cells in each dimension) and  "-numSteps 10" (the number of time
-steps). Note the command "amplxe-cl -collect hotspots -result-dir" which
+steps). Note the command "vtune -collect hotspots -result-dir" which
 was inserted before the executable. The output may look like
 
 Top Hotspots
@@ -91,11 +92,10 @@ Often this is enough to give you a feel for where the code can be
 improved. To explore further you can fire up
 
 ``` sh
-amplxe-gui &
+vtune-gui <result_dir>
 ```
 
-Go to the bottom and select "Open Result...", choose the directory where
-the profiling results are saved and click on the .amplxe file. The
+where "<result_dir>" is the directory that stores the profiling results. The
 summary will look similar to the above table. However, you can now dive
 into selected functions to get more information. Below we see that 16.5
 out of 26 seconds were spent starting the two OpenMP threads.

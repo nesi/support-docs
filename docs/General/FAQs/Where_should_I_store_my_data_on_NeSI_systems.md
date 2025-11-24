@@ -1,11 +1,7 @@
 ---
 created_at: '2022-06-15T00:53:58Z'
 tags: []
-title: Where should I store my data on NeSI systems?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4975669783951
-zendesk_section_id: 360000039036
+description: Information on where to store data in the NeSI systems
 ---
 
 | Frequency of data being read | Frequency of data being written        | Recommended option                                                                                                            |
@@ -24,3 +20,5 @@ control and changes are regularly checked into upstream revision control
 systems. The **long-term storage service** should be used for larger
 datasets that you only access occasionally and do not need to change in
 situ.
+
+For more information, please see our [Filesystems and Quotas](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md) page.

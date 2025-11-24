@@ -2,6 +2,7 @@
 created_at: '2018-11-16T01:13:47Z'
 tags: []
 status: 
+description: Troubleshooting instructions for logging in
 ---
 
 
@@ -127,7 +128,7 @@ Helpful things to include:
     etc.).
 - The nature of the problem, including the precise text of any error
     message you have been receiving.
-  - Did you start out having one login problem and are now getting a
+    - Did you start out having one login problem and are now getting a
         different one? If so, when did the change happen, and were you
         doing anything in particular related to logging in at the time
         things changed?
@@ -135,14 +136,14 @@ Helpful things to include:
     time you successfully logged in, and to what NeSI cluster?
 - Has anything administrative and relevant to NeSI access changed
     since you last logged in? For example:
-  - Have you opened or joined any new NeSI projects, or have any of
+    - Have you opened or joined any new NeSI projects, or have any of
         your existing NeSI projects closed?
-    - Have any of your NeSI projects been granted new allocations, had
+        - Have any of your NeSI projects been granted new allocations, had
         a previously granted new allocation actually start, or had an
         existing allocation modified?
-    - Have any of your NeSI projects' existing allocations ended?
-    - Have any of your NeSI projects had a disk space quota change?
-    - Have you changed your institutional username and password, moved
+        - Have any of your NeSI projects' existing allocations ended?
+        - Have any of your NeSI projects had a disk space quota change?
+        - Have you changed your institutional username and password, moved
         to a different institution, or started a new job at an
         institution while also keeping your position at your old
         institution? Might NeSI know about any of these changes?

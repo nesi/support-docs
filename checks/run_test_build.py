@@ -7,7 +7,7 @@ import logging
 import sys
 import re
 import time
-import mkdocs_awesome_pages_plugin.navigation as nav
+import mkdocs_awesome_nav.nav as nav
 
 
 """ 
