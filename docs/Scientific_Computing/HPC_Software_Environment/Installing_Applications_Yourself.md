@@ -81,7 +81,7 @@ The documentation of the software you are installing will be the best place to l
 
 - If there is a `Makefile` in the source directory, you can call the command `make`, or `make all`.
 - If there is a `CmakeLists.txt` file you will need to;
-    
+ 
     ```sh
     module load CMake
     mkdir build && cd build
@@ -127,7 +127,7 @@ e.g. `-L$EBROOT<library name in upper case>/lib` and `-I$EBROOT<header name in u
 To run your newly installed application, the process may look something like,
 
 ```sh
-module load foss/{{ applications["foss"].latest }} FFTW
+module load foss/{{ applications["foss"].versions | last }} FFTW
 /nesi/project/nesi99991/myApplication/bin/launchApplication
 ```
 
@@ -145,7 +145,7 @@ source ~/.bash_profile
 You will then be able to launch your application with
 
 ```sh
-module load foss/{{ applications["foss"].latest }} FFTW
+module load foss/{{ applications["foss"].versions | last }} FFTW
 /nesi/project/nesi99991/myApplication/bin/launchApplication
 ```
 
