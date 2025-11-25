@@ -1,5 +1,6 @@
 ---
 created_at: '2018-09-24T01:51:32Z'
+description: How to configure, compile and install software on the cluster. 
 tags: 
   - software
 ---
@@ -19,9 +20,12 @@ See [Software Installation Request](Software_Installation_Request.md) for guidel
 
 How to add package to an existing module will vary based on the language in question.
 
-See [Python](../Supported_Applications/Python.md)
-or [R](../Supported_Applications/R.md),
-or for other languages check if we have additional documentation for it
+- [Python](../Supported_Applications/Python.md#python-packages)
+- [R](../Supported_Applications/R.md#dealing-with-packages),
+- [Julia](../Supported_Applications/Julia.md#installing-julia-packages)
+- [MATLAB](../Supported_Applications/MATLAB.md#adding-support-packages)
+
+For other languages check if we have additional documentation for it
 in our [application documentation](../Supported_Applications/index.md).
 
 ## Other Applications
