@@ -60,7 +60,7 @@ It is recommended to specify the exact GPU type required; otherwise, the job may
     <tr>
         <td>40GB</td>
         <td>2</td>
-        <td><pre><code>#SBATCH --partition=genoa</code><br><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
+        <td><pre><code>#SBATCH --partition=genoa<br>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA H100</td>
