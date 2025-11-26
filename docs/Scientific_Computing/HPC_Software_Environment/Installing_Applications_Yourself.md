@@ -7,11 +7,11 @@ tags:
 
 Before installing your own applications, first check;
 
-- The software you want it is not already installed. `module spider <appname>` can be used to search software,
+- The software you want is not already installed. `module spider <appname>` can be used to search software,
 or see [Supported Applications](../Supported_Applications/index.md).
 - If you are looking for a new version of existing software,
 {% include "partials/support_request.html" %} and we will install the new version.
-- If you would like us to install something for you or help you install something yourself {% include "partials/support_request.html" %}. If the software popular, We may decide to install it centrally, in which case there will be no additional steps for you. Otherwise the software will be installed in your project directory, in which case it is your responsibility to maintain.
+- If you would like us to install something for you or help you install something yourself {% include "partials/support_request.html" %}. If the software is popular, We may decide to install it centrally, in which case there will be no additional steps for you. Otherwise the software will be installed in your project directory, in which case it is your responsibility to maintain.
 
 In any case, if you have issues, do not hesitate to
 {% include "partials/support_request.html" %}.
@@ -23,7 +23,7 @@ See [Software Installation Request](Software_Installation_Request.md) for guidel
 How to add package to an existing module will vary based on the language in question.
 
 - [Python](../Supported_Applications/Python.md#python-packages)
-- [R](../Supported_Applications/R.md#dealing-with-packages),
+- [R](../Supported_Applications/R.md#dealing-with-packages)
 - [Julia](../Supported_Applications/Julia.md#installing-julia-packages)
 - [MATLAB](../Supported_Applications/MATLAB.md#adding-support-packages)
 
@@ -32,14 +32,12 @@ in our [application documentation](../Supported_Applications/index.md).
 
 ## Other Applications
 
-Installation instruction vary from application to application, we suggest you read the provided installing instructions.
-
-Nevertheless, the following should give you an impression which steps
+Installation instructions vary from application to application, we suggest you read the provided installing instructions. Nevertheless, the following should give you an impression which steps
 you usually need to consider.
 
 ### Install Directory
 
-You will need to decide on where you want to install you application.
+You will need to decide on where you want to install your application.
 We recommend using your `project` directory i.e `/nesi/project/<projectID>`,
 that way the install can be easily shared with any collaborators.
 Move to the desired location and create a directory to work from `mkdir <appname>`.
