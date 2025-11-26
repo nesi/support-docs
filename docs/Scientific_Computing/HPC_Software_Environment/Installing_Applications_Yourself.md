@@ -7,12 +7,14 @@ tags:
 
 Before installing your own applications, first check;
 
-- The software you want it is not already installed. `module spider <appname>` can be used to search software, or see [Supported Applications](../Supported_Applications/index.md).
+- The software you want it is not already installed. `module spider <appname>` can be used to search software,
+or see [Supported Applications](../Supported_Applications/index.md).
 - If you are looking for a new version of existing software,
 {% include "partials/support_request.html" %} and we will install the new version.
 - If you would like us to install something for you or help you install something yourself {% include "partials/support_request.html" %}. If the software popular, We may decide to install it centrally, in which case there will be no additional steps for you. Otherwise the software will be installed in your project directory, in which case it is your responsibility to maintain.
 
-In any case, if you have issues, do not hesitate to {% include "partials/support_request.html" %}.
+In any case, if you have issues, do not hesitate to
+{% include "partials/support_request.html" %}.
 
 See [Software Installation Request](Software_Installation_Request.md) for guidelines on what information you should include.
 
@@ -30,10 +32,10 @@ in our [application documentation](../Supported_Applications/index.md).
 
 ## Other Applications
 
-Installation instruction vary from application to application. In any
-case we suggest to read the provided installing instructions.
+Installation instruction vary from application to application, we suggest you read the provided installing instructions.
+
 Nevertheless, the following should give you an impression which steps
-you usually need to consider:
+you usually need to consider.
 
 ### Install Directory
 
@@ -55,10 +57,11 @@ You will probably want to build your application against some of the existing Ne
 Almost certainly, this will include a toolchain.
 
 ```sh
-module load foss/{{ applications["foss"].latest }}
+module load foss/{{ applications["foss"].versions | last }}
 ```
 
-You can read more about the toolchains used in the [EasyBuild Documentation](https://docs.easybuild.io/common-toolchains/).
+You can read more about the toolchains used in the
+[EasyBuild Documentation](https://docs.easybuild.io/common-toolchains/).
 
 Make sure to take a note of the modules used when installing,
 as there is a high chance you will need those same modules to be loaded at runtime.
@@ -81,7 +84,7 @@ The documentation of the software you are installing will be the best place to l
 
 - If there is a `Makefile` in the source directory, you can call the command `make`, or `make all`.
 - If there is a `CmakeLists.txt` file you will need to;
- 
+  
     ```sh
     module load CMake
     mkdir build && cd build
@@ -106,21 +109,19 @@ one must specify:
     the link line is `-lfoo`.
 
 Thus the linker expects to find the include headers in the
-`/path/to/headers` and the library at `/path/to/lib/lib.so` (we assume
-dynamic linking).
+`/path/to/headers` and the library at `/path/to/lib/lib.so`
+(we assume dynamic linking).
 
-Note that you may need to list several libraries to link successfully,
-e.g., `-lA -lB` for linking against libraries "A" and "B". The order in
-which you list libraries matters, as the linker will go through the list
-in order of appearance. If library "A" depends on library "B",
-specifying `-lA -lB` will work. If library "B" depends on "A", use
-`-lB -lA`. If they depend on each other, use `-lA -lB -lA` (although
-such cases are quite rare).
+The order in which you list libraries matters, as the linker will go through the list
+in order of appearance. If library "A" depends on library "B", you will need to specify `-lA -lB` first.
 
 Often you will want to link against libraries included in an easybuild module.
 The path to loaded easybuilt libraries are defined in the environment variable
-`$EBROOT<library name in upper case>`. You would include these when linking
-e.g. `-L$EBROOT<library name in upper case>/lib` and `-I$EBROOT<header name in upper case>/include`
+`$EBROOT<library name in upper case>`.
+
+You would include these when linking
+e.g. `-L$EBROOT<library name in upper case>/lib`
+and `-I$EBROOT<header name in upper case>/include`
 
 ### Add to Path
 
@@ -151,7 +152,7 @@ module load foss/{{ applications["foss"].versions | last }} FFTW
 
 ## Common Issues
 
-### missing symbols
+### Missing Symbols
 
 This occurs when the linker could not find a function used
 in your program or in one of the libraries that you linked against. To
