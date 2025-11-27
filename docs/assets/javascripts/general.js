@@ -32,13 +32,13 @@ function toggle(id) {
 }
 
 async function showCalendarBanner() {
-    const text = await fetch("docs/assets/training_calendar.ics")
+    const text = await fetch("assets/training_calendar.ics")
         .then(r => r.ok ? r.text() : "");
     if (!text) { console.warn("failed to load calendar ") };
 
     // Get all VEVENT blocks in the simplest way
 
-    for (const t in text.matchAll(/DTSTART.*:(\d+)/)) {
+    for (const t in text.matchAll(/DTSTART.*:(\d+)/g)) {
         if (!t) continue;
 
         d = new Date(t);
@@ -63,12 +63,12 @@ async function showCalendarBanner() {
             }
 
         }
-        // If not in future skip.
-        if (now.getUTCDate() > d.getUTCDate()) { 
-            //console.log("no office hours today");
-            continue;
-            //#break; 
-        }
+        // // If not in future skip.
+        // if (now.getUTCDate() > d.getUTCDate()) { 
+        //     //console.log("no office hours today");
+        //     continue;
+        //     //#break; 
+        // }
     }
 }
 
