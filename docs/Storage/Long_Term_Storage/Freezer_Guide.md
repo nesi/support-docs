@@ -95,12 +95,6 @@ upload: 'yourfolder/your_file' -> 's3://<freezer-bucket>/your_directory/your_fol
  172202 of 172202   100% in    0s  1691.71 KB/s  done
 ```
 
-If you have already tried to `put` files but were intrrupted, you can use the `--skip-existing` to skip putting files into your freezer that have already been transferred:
-
-```sh
-s3cmd put --recursive --skip-existing --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
-```
-
 Once the upload is successful, as signalled by the 'done' your files/folders stored as objects will automatically be archived to tape by the Freezer service. No further user action is needed. Do not delete your files from the bucket unless you do not wish for them to be archived to tape. They will remain in the bucket at least until they are copied to tape and likely for some time afterwards until the cache becomes too full and older files are removed.
 
 Partially uploaded files will be deleted automatically.
@@ -111,6 +105,12 @@ Synchronize a directory tree to S3 (checks files freshness using size and md5 ch
 
 ```sh
 s3cmd sync --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
+```
+
+If you have already tried use `put` or `sync` but were interrupted, you can use the `--skip-existing` to skip putting files into your freezer that have already been transferred:
+
+```sh
+s3cmd sync --skip-existing --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
 ### Preview or dry-run
