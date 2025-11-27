@@ -35,13 +35,11 @@ function toggle(id) {
 async function showCalendarBanner() {
     const text = await fetch("assets/training_calendar.ics")
         .then(r => r.ok ? r.text() : "");
-
     if (!text) return;
 
     // Get all VEVENT blocks in the simplest way
     const events = [];
     const blocks = text.split("BEGIN:VEVENT").slice(1);
-
     const now = new Date();
 
     for (const b of blocks) {
@@ -60,11 +58,11 @@ async function showCalendarBanner() {
                 // if not started
                 if (now < d) {
                     console.log("Office hours later today");
-                    addBanner(`Office Hours later today ${d.toLocaleTimeString()}`);
+                    addBanner(`Office Hours later today ${d.toLocaleTimeString()} <a href="https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09">Join Zoom Meeting Now</a>`);
 
                 } else {
                     console.log("Office hours NOW");
-                    addBanner(`Office hours on now.`);
+                    addBanner(`Office hours on now. <a href="https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09">Join Zoom Meeting Now</a>`);
                 }
             }
 
