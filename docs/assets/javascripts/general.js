@@ -12,9 +12,9 @@ function changeVersion(app, version, warn = false) {
     } else {
         document.getElementById("mod_" + app.toLowerCase() + "_warn").style.display = "none";
     }
-
     // ew. so gross
 }
+
 function toggle(id) {
     var item = document.getElementById(id);
     console.log(id);
@@ -29,27 +29,23 @@ function toggle(id) {
     } else {
         console.log(item)
     }
-
 }
 
 async function showCalendarBanner() {
-    const text = await fetch("assets/training_calendar.ics")
+    const text = await fetch("docs/assets/training_calendar.ics")
         .then(r => r.ok ? r.text() : "");
-    if (!text) return;
+    if (!text) { console.warn("failed to load calendar ") };
 
     // Get all VEVENT blocks in the simplest way
-    const events = [];
-    const blocks = text.split("BEGIN:VEVENT").slice(1);
-    const now = new Date();
 
-    for (const b of blocks) {
-        const start = (b.match(/DTSTART.*:(\d+)/) || [])[1];
-        if (!start) continue;
+    for (const t in text.matchAll(/DTSTART.*:(\d+)/)) {
+        if (!t) continue;
 
+        d = new Date(t);
         // Parse date of event.
-        const d = new Date(
-            `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}T${start.slice(9, 11) || "00"}:${start.slice(11, 13) || "00"}:${start.slice(13, 15) || "00"}`
-        );
+        // const d = new Date(
+        //     `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}T${start.slice(9, 11) || "00"}:${start.slice(11, 13) || "00"}:${start.slice(13, 15) || "00"}`
+        // );
 
         // if today
         if (now.getUTCDate() == d.getUTCDate()) {
@@ -69,8 +65,9 @@ async function showCalendarBanner() {
         }
         // If not in future skip.
         if (now.getUTCDate() > d.getUTCDate()) { 
-            console.log("no office hours today");
-            break; 
+            //console.log("no office hours today");
+            continue;
+            //#break; 
         }
     }
 }
@@ -78,7 +75,7 @@ async function showCalendarBanner() {
 function addBanner(msg) {
     const banner = document.createElement("div");
     banner.id = "calendar-banner";
-    banner.textContent = msg;
+    banner.innerHTML = msg;
 
     const btn = document.createElement("button");
     btn.textContent = "×";
