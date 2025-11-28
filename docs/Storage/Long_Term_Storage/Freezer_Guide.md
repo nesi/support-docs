@@ -99,12 +99,22 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 Partially uploaded files will be deleted automatically.
 
+!!! warning
+
+If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](Freezer_Guide.md#Synchronise-data) for more information. 
+
 ### Synchronise data
 
 Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
 
 ```sh
-s3cmd sync yourfolder s3://<freezer-bucket>/your_directory/your_folder/
+s3cmd sync --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
+```
+
+If you have already tried use `put` or `sync` but were interrupted, you can use the `--skip-existing` to skip putting files into your freezer that have already been transferred:
+
+```sh
+s3cmd sync --skip-existing --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
 ### Preview or dry-run
