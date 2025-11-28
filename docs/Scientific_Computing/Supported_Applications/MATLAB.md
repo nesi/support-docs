@@ -245,8 +245,6 @@ Fortunately MATLAB lets programmers extend their scripts with C/C++ or
 Fortran, which is referred to as
 [mexing](https://au.mathworks.com/help/matlab/ref/mex.html).
 
-more info about [compiling software on NeSI](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md).
-
 ### Writing mex functions
 
   This involves the following steps (using C++ as an example):
