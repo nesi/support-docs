@@ -5,6 +5,13 @@ MODULES_UPDATE_URL="https://raw.githubusercontent.com/nesi/modules-list/main/rss
 GLOSSARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
 DICTIONARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
 SNIPPETS_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
+ICAL_URL="https://calendar.google.com/calendar/ical/c_hen6rr02et39kat2hmuamidots@group.calendar.google.com/public/basic.ics"
+
+wget -O docs/assets/training_calendar.ics ${ICAL_URL}
+
+git add docs/assets/training_calendar.ics
+git commit -m "update cal"
+
 
 wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
 wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
