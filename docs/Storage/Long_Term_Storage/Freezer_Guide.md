@@ -99,6 +99,10 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 
 Partially uploaded files will be deleted automatically.
 
+!!! warning
+
+If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](Freezer_Guide.md#Synchronise-data) for more information. 
+
 ### Synchronise data
 
 Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
