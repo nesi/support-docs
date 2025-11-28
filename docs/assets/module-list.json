@@ -3535,7 +3535,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 10.64,
+                        "hourly_average": 10.57,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3549,7 +3549,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 8.06,
+                        "hourly_average": 8.0,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3617,7 +3617,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 123893287.95,
+                        "hourly_average": 123125354.36,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -11742,7 +11742,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.27,
+                "server_uptime": 0.28,
                 "server_version": "",
                 "features": []
             },
@@ -13748,7 +13748,7 @@
         "force_show": "False"
     },
     "ncview": {
-        "description": "Visual browser for netCDF format files.",
+        "description": "Ncview is a visual browser for netCDF format files.\nTypically you would use ncview to get a quick and easy, push-button\nlook at your netCDF files. You can view simple movies of the data,\nview along various dimensions, take a look at the actual data values,\nchange color maps, invert the data, etc.",
         "domains": [
             "vis"
         ],
@@ -13757,16 +13757,17 @@
         "homepage": "http://meteora.ucsd.edu/~pierce/ncview_home_page.html",
         "support": "",
         "versions": [
+            "2.1.11-gompi-2023a",
             "2.1.7-gimkl-2018b",
             "2.1.7-gimpi-2020a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.7-gimpi-2020a",
+        "default": "2.1.11-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1764190703,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/ncview/2.1.7-gimpi-2020a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ncview/2.1.11-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
