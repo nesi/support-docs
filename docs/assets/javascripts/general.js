@@ -36,24 +36,20 @@ async function showCalendarBanner() {
         .then(r => r.ok ? r.text() : "");
     if (!text) { console.warn("failed to load calendar ") };
 
-    // Get all VEVENT blocks in the simplest way
 
-    for (const t in text.matchAll(/DTSTART.*:(\d+)/g)) {
+    const now = new Date();
+    let allmatch = text.matchAll(/DTSTART:(\d+T\d+Z)/g);
+    // Extract all dates.
+    for (const t of allmatch) {
         if (!t) continue;
-
-        d = new Date(t);
-        // Parse date of event.
-        // const d = new Date(
-        //     `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}T${start.slice(9, 11) || "00"}:${start.slice(11, 13) || "00"}:${start.slice(13, 15) || "00"}`
-        // );
-
+        let d = format8601(t[1]);
         // if today
-        if (now.getUTCDate() == d.getUTCDate()) {
+        if (now.toDateString() == d.toDateString()) {
             // if not finished.
-            if (new Date(now + 3600000) < d) {
+            if (now.getTime()  < d.getTime() + 3600000) {
                 // if not started
                 if (now < d) {
-                    console.log("Office hours later today");
+                    console.log("Office hours later today");inOneHour
                     addBanner(`Office Hours later today ${d.toLocaleTimeString()} <a href="https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09">Join Zoom Meeting Now</a>`);
 
                 } else {
@@ -61,14 +57,8 @@ async function showCalendarBanner() {
                     addBanner(`Office hours on now. <a href="https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09">Join Zoom Meeting Now</a>`);
                 }
             }
-
+            break;
         }
-        // // If not in future skip.
-        // if (now.getUTCDate() > d.getUTCDate()) { 
-        //     //console.log("no office hours today");
-        //     continue;
-        //     //#break; 
-        // }
     }
 }
 
@@ -85,4 +75,17 @@ function addBanner(msg) {
     document.body.prepend(banner);
 }
 
+// Formats ISO standard date string into Date object.
+function format8601(str){
+    const dateStringFormatted = 
+        str.substring(0, 4) + '-' +
+        str.substring(4, 6) + '-' +
+        str.substring(6, 8) + 
+        str.substring(8, 9) +
+        str.substring(9, 11) + ':' + 
+        str.substring(11, 13) + ':' +
+        str.substring(13, 15) + 
+        str.substring(15, 16);
+    return new Date(dateStringFormatted);
+}
 showCalendarBanner();
