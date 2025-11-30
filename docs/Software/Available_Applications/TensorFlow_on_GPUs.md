@@ -183,7 +183,7 @@ For TensorFlow, we recommend using the [official container provided by
 NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow).
 More information about using Apptainer with GPU enabled containers is
 available on the [NVIDIA GPU
-Containers](../../Scientific_Computing/HPC_Software_Environment/NVIDIA_GPU_Containers.md)
+Containers](../Containers/NVIDIA_GPU_Containers.md)
 support page.
 
 ## Specific versions for A100

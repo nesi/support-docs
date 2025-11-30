@@ -9,11 +9,11 @@ zendesk_section_id: 360000040076
 ---
 
 
-[//]: <> (APPS PAGE BOILERPLATE START)
+[//]:AlphaFold.md> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
+[//]:AlphaFold.md> (APPS PAGE BOILERPLATE END)
 
 !!! prerequisite Tips
      An extended version of AlphaFold2 on NeSI Mahuika cluster which

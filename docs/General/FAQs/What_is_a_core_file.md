@@ -18,7 +18,7 @@ see [Finding Job_Efficiency](../../Getting_Started/Next_Steps/Finding_Job_Effici
 
 `.core` files are a record of the working memory at time of failure, and
 can be used for
-[debugging](../../Scientific_Computing/Profiling_and_Debugging/Debugging.md).
+[debugging](../../Software/Profiling_and_Debugging/Debugging.md).
 MPI jobs will usually create a `.core` file for each task.
 
 The creation of a `.core` file is called a 'core dump' is files is **disabled by default**,

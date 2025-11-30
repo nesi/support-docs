@@ -34,7 +34,7 @@ once your job starts you will have twice the number of CPUs as `ntasks`.
 If you set `--cpus-per-task=n`, Slurm will request `n` logical CPUs per
 task, i.e., will set `n` threads for the job. Your code must be capable
 of running Hyperthreaded (for example using
-[OpenMP](../../Scientific_Computing/HPC_Software_Environment/OpenMP_settings.md))
+[OpenMP](../HPC_Software_Environment/OpenMP_settings.md))
 if `--cpus-per-task > 1`.
 
 Setting `--hint=nomultithread` with `srun` or `sbatch` causes Slurm to

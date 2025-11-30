@@ -71,7 +71,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 |    |    |    |
 | -- | -- | -- |
 | `--qos` | `#SBATCH --qos=debug` | Adding this line gives your job a high priority. *Limited to one job at a time, max 15 minutes*. |
-| `--profile` | `#SBATCH --profile=ALL` | Allows generation of a .h5 file containing job profile information. See [Slurm Native Profiling](../../Scientific_Computing/Profiling_and_Debugging/Slurm_Native_Profiling.md) |
+| `--profile` | `#SBATCH --profile=ALL` | Allows generation of a .h5 file containing job profile information. See [Slurm Native Profiling](../../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md) |
 | `--dependency` | `#SBATCH --dependency=afterok:123456789` | Will only start after the job 123456789 has completed. |
 | `--hint` | `#SBATCH --hint=nomultithread` | Disables [hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md), be aware that this will significantly change how your job is defined. |
 

@@ -8,7 +8,7 @@ tags:
 Before installing your own applications, first check;
 
 - The software you want is not already installed. `module spider <appname>` can be used to search software,
-or see [Supported Applications](../Supported_Applications/index.md).
+or see [Supported Applications](../Scientific_Computing/Supported_Applications/index.md).
 - If you are looking for a new version of existing software,
 {% include "partials/support_request.html" %} and we will install the new version.
 - If you would like us to install something for you or help you install something yourself {% include "partials/support_request.html" %}. If the software is popular, We may decide to install it centrally, in which case there will be no additional steps for you. Otherwise the software will be installed in your project directory, in which case it is your responsibility to maintain.
@@ -22,13 +22,13 @@ See [Software Installation Request](Software_Installation_Request.md) for guidel
 
 How to add package to an existing module will vary based on the language in question.
 
-- [Python](../Supported_Applications/Python.md#python-packages)
-- [R](../Supported_Applications/R.md#dealing-with-packages)
-- [Julia](../Supported_Applications/Julia.md#installing-julia-packages)
-- [MATLAB](../Supported_Applications/MATLAB.md#adding-support-packages)
+- [Python](../Scientific_Computing/Supported_Applications/Python.md#python-packages)
+- [R](../Scientific_Computing/Supported_Applications/R.md#dealing-with-packages)
+- [Julia](../Scientific_Computing/Supported_Applications/Julia.md#installing-julia-packages)
+- [MATLAB](../Scientific_Computing/Supported_Applications/MATLAB.md#adding-support-packages)
 
 For other languages check if we have additional documentation for it
-in our [application documentation](../Supported_Applications/index.md).
+in our [application documentation](../Scientific_Computing/Supported_Applications/index.md).
 
 ## Other Applications
 

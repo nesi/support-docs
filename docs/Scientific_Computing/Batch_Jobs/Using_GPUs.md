@@ -111,7 +111,7 @@ duration of 30 minutes.
 ## Load CUDA and cuDNN modules
 
 To use an Nvidia GPU card with your application, you need to load the
-driver and the CUDA toolkit via the [environment modules](../Supported_Applications/index.md)
+driver and the CUDA toolkit via the [environment modules](../../Software/Available_Applications/index.md)
 mechanism:
 
 ``` sh
@@ -229,12 +229,12 @@ CUDA_VISIBLE_DEVICES=0
 The following pages provide additional information for supported
 applications:
 
-- [ABAQUS](../Supported_Applications/ABAQUS.md#examples)
-- [GROMACS](../Supported_Applications/GROMACS.md)
-- [Lambda Stack](../Supported_Applications/Lambda_Stack.md)
-- [Matlab](../Supported_Applications/MATLAB.md#using-gpus)
-- [TensorFlow on GPUs](../Supported_Applications/TensorFlow_on_GPUs.md)
+- [ABAQUS](../../Software/Available_Applications/ABAQUS.md#examples)
+- [GROMACS](../../Software/Available_Applications/GROMACS.md)
+- [Lambda Stack](../../Software/Available_Applications/Lambda_Stack.md)
+- [Matlab](../../Software/Available_Applications/MATLAB.md#using-gpus)
+- [TensorFlow on GPUs](../../Software/Available_Applications/TensorFlow_on_GPUs.md)
 
 And programming toolkits:
 
-- [NVIDIA GPU Containers](../HPC_Software_Environment/NVIDIA_GPU_Containers.md)
+- [NVIDIA GPU Containers](../../Software/Containers/NVIDIA_GPU_Containers.md)

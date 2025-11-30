@@ -23,7 +23,7 @@ good practice to profile a code before attempting to modify the code to
 improve its performance. VTune collects key profiling data and presents
 them in an intuitive way.  Another tool that provides similar
 information is [ARM
-MAP](../../Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md).
+MAP](../Profiling_and_Debugging/Profiler-ARM_MAP.md).
 
 ## How to use VTune
 

@@ -78,7 +78,7 @@ dependencies:
 
 !!! info "See also"
      See the
-     [Miniforge3](../../Scientific_Computing/Supported_Applications/Miniforge3.md)
+     [Miniforge3](../Supported_Applications/Miniforge3.md)
      page for more information on how to create and manage Miniconda
      environments on NeSI.
 
@@ -97,7 +97,7 @@ then assigns different roles to the different ranks:
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
 ranks!** Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-[Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md)
+[Hyperthreading](../Batch_Jobs/Hyperthreading.md)
 to place these two ranks onto a single physical core. Ensure that
 activating hyperthreading does not slow down the worker ranks by running
 a short test workload with and without hyperthreading.
