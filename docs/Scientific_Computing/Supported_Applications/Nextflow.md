@@ -250,7 +250,7 @@ trace {
 !!! warning "Nextflow plugins"
     nf-core pipelines expect to use nf-plugins in their base configuration. If you want to use these plugins, you will need to manually download them and store them in a plugin cache directory that you can specify with the `NXF_PLUGINS_DIR` environmental variable (as in the example `.sl` above)
 
-## Comparison of submission methods
+<!-- ## Comparison of submission methods
 
 The [nf-core rnaseq pipeline (v3.21.0)](https://nf-co.re/rnaseq/3.21.0) was run using the `test_full` dataset (v3.10) with three methods: a batch job, a head job, and a batch job with specific processes flagged for submission to Slurm.
 
@@ -316,7 +316,7 @@ Nodes: 1
 Job Wall-time:   44.4%  05:20:01 of 12:00:00 time limit
 CPU Efficiency:  79.4%  2-02:47:46 of 2-16:00:12 core-walltime
 Mem Efficiency:  61.9%  44.55 GB of 72.00 GB
-```
+``` -->
 <!-- 
 ### MPI
 
