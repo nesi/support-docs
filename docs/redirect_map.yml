@@ -4,8 +4,6 @@ General/FAQs/How_to_replace_my_2FA_token.md: General/FAQs/How_do_I_replace_my_Ad
 General/FAQs/How_to_replace_my_2FA.md: General/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md
 Scientific_Computing/Terminal_Setup/Ubuntu_LTS_terminal_Windows.md: Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md
 General/FAQs/How_can_I_see_how_busy_the_cluster_is.md: General/FAQs/How_busy_is_the_cluster.md
-Scientific_Computing/Supported_Applications/Miniconda3.md: Scientific_Computing/Supported_Applications/Miniforge3.md
-Scientific_Computing/HPC_Software_Environment/Finding_Software.md : Scientific_Computing/Supported_Applications/index.md
 hc.md: index.md
 hc/en-gb.md: index.md
 Storage/Freezer_long_term_storage.md : Storage/Long_Term_Storage/Freezer_long_term_storage.md
@@ -17,7 +15,7 @@ Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_Checkpointing.md: Scie
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md: Scientific_Computing/Batch_Jobs/Job_prioritisation.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice.md: Scientific_Computing/Batch_Jobs/SLURM-Best_Practice.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md: Scientific_Computing/Batch_Jobs/Slurm_Interactive_Sessions.md
-Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md : Scientific_Computing/HPC_Software_Environment/Installing_Applications_Yourself.md
+Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md : Software/Installing_Applications_Yourself.md
 Scientific_Computing/Supported_Applications/ABAQUS.md : Software/Available_Applications/ABAQUS.md
 Scientific_Computing/Supported_Applications/AlphaFold.md : Software/Available_Applications/AlphaFold.md
 Scientific_Computing/Supported_Applications/ANSYS.md : Software/Available_Applications/ANSYS.md
