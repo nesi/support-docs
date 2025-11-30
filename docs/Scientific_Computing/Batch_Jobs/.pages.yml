@@ -4,7 +4,6 @@ nav:
  - SLURM-Best_Practice.md
  - Using_GPUs.md
  - Job_Checkpointing.md
- - Slurm_Interactive_Sessions.md
  - Fair_Share.md
  - Checksums.md
  - "*"
