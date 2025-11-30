@@ -109,8 +109,6 @@ IMPORTANT: This version of Anaconda Python comes with Intel MKL support to speed
            of cores. The number of threads can be increased for large problems, please
            refer to the Intel MKL documentation for guidance.
 
-*[Apptainer's]: Apptainer is a portable application stack packaging and runtime utility.
-*[Apptainer]: Apptainer is a portable application stack packaging and runtime utility.
 *[Armadillo's]: C++ linear algebra library (matrix maths) aiming towards a good balance between speed and ease of use.
 *[Armadillo]: C++ linear algebra library (matrix maths) aiming towards a good balance between speed and ease of use.
 *[Arrow's]: Apache Arrow, a cross-language development platform for in-memory data.
@@ -135,6 +133,10 @@ multiple compute units.
 *[BBMap]: BBMap short read aligner, and other bioinformatic tools.
 *[BCFtools's]: Manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF.
 *[BCFtools]: Manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF.
+*[BCL-Convert's]: Converts per cycle binary data output by Illumina sequencers containing basecall
+files and quality scores to per read FASTQ files
+*[BCL-Convert]: Converts per cycle binary data output by Illumina sequencers containing basecall
+files and quality scores to per read FASTQ files
 *[BEAST's]: Bayesian MCMC phylogenetic analysis of molecular sequences for reconstructing 
  phylogenies and testing evolutionary hypotheses.
 *[BEAST]: Bayesian MCMC phylogenetic analysis of molecular sequences for reconstructing 
@@ -175,10 +177,24 @@ http://dx.doi.org/10.1103/PhysRevB.85.235149
 BLAS-like dense linear algebra libraries.
 *[BLIS]: BLIS is a portable software framework for instantiating high-performance
 BLAS-like dense linear algebra libraries.
-*[BOLT-LMM's]: The BOLT-LMM algorithm for mixed model association testing, 
-and the BOLT-REML algorithm for variance components analysis
-*[BOLT-LMM]: The BOLT-LMM algorithm for mixed model association testing, 
-and the BOLT-REML algorithm for variance components analysis
+*[BOLT-LMM's]: The BOLT-LMM algorithm computes statistics for testing association between phenotype
+ and genotypes using a linear mixed model (LMM) [1]. By default, BOLT-LMM assumes a Bayesian
+ mixture-of-normals prior for the random effect attributed to SNPs other than the one being tested.
+ This model generalizes the standard "infinitesimal" mixed model used by previous mixed model
+ association methods (e.g., EMMAX, FaST-LMM, GEMMA, GRAMMAR-Gamma, GCTA-LOCO), providing an
+ opportunity for increased power to detect associations while controlling false
+ positives. Additionally, BOLT-LMM applies algorithmic advances to compute mixed model association
+ statistics much faster than eigendecomposition-based methods, both when using the Bayesian mixture
+ model and when specialized to standard mixed model association.
+*[BOLT-LMM]: The BOLT-LMM algorithm computes statistics for testing association between phenotype
+ and genotypes using a linear mixed model (LMM) [1]. By default, BOLT-LMM assumes a Bayesian
+ mixture-of-normals prior for the random effect attributed to SNPs other than the one being tested.
+ This model generalizes the standard "infinitesimal" mixed model used by previous mixed model
+ association methods (e.g., EMMAX, FaST-LMM, GEMMA, GRAMMAR-Gamma, GCTA-LOCO), providing an
+ opportunity for increased power to detect associations while controlling false
+ positives. Additionally, BOLT-LMM applies algorithmic advances to compute mixed model association
+ statistics much faster than eigendecomposition-based methods, both when using the Bayesian mixture
+ model and when specialized to standard mixed model association.
 *[BRAKER's]: Pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET
  and AUGUSTUS in novel eukaryotic genomes.
 *[BRAKER]: Pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET
@@ -261,10 +277,14 @@ FITS (Flexible Image Transport System) data format.
  and reliable geometric algorithms in the form of a C++ library.
 *[CGAL]: The goal of the CGAL Open Source Project is to provide easy access to efficient 
  and reliable geometric algorithms in the form of a C++ library.
-*[CMake's]: CMake, the cross-platform, open-source build system.
- CMake is a family of tools designed to build, test and package software.
-*[CMake]: CMake, the cross-platform, open-source build system.
- CMake is a family of tools designed to build, test and package software.
+*[CMake's]: 
+ CMake, the cross-platform, open-source build system.  CMake is a family of
+ tools designed to build, test and package software.
+
+*[CMake]: 
+ CMake, the cross-platform, open-source build system.  CMake is a family of
+ tools designed to build, test and package software.
+
 *[CNVnator's]: Copy Number Variation discovery and genotyping from depth of read mapping.
 *[CNVnator]: Copy Number Variation discovery and genotyping from depth of read mapping.
 *[CNVpytor's]: Python package and command line tool for CNV/CNA analysis from depth-of-coverage by mapped read
@@ -278,11 +298,11 @@ coverage data in multiple samples and linkage data from paired end reads.
 *[CP2K's]: CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular
  simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different
  methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and
- classical pair and many-body potentials.
+ classical pair and many-body potentials. 
 *[CP2K]: CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular
  simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different
  methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and
- classical pair and many-body potentials.
+ classical pair and many-body potentials. 
 *[CPMD's]: The CPMD code is a parallelized plane wave / pseudopotential implementation of DFT,
  particularly designed for ab-initio molecular dynamics.
 *[CPMD]: The CPMD code is a parallelized plane wave / pseudopotential implementation of DFT,
@@ -369,8 +389,6 @@ coverage data in multiple samples and linkage data from paired end reads.
 
 *[CubeWriter's]: Cube high-performance C writer library component.
 *[CubeWriter]: Cube high-performance C writer library component.
-*[Cufflinks's]: Transcript assembly, differential expression, and differential regulation for RNA-Seq
-*[Cufflinks]: Transcript assembly, differential expression, and differential regulation for RNA-Seq
 *[Cytoscape's]: Cytoscape is an open source software platform for visualizing molecular interaction networks and
  biological pathways and integrating these networks with annotations, gene expression profiles and other state data.
 *[Cytoscape]: Cytoscape is an open source software platform for visualizing molecular interaction networks and
@@ -410,6 +428,8 @@ coverage data in multiple samples and linkage data from paired end reads.
                   from genomic and metagenomic datasets.
 *[DeconSeq]:  A tool that can be used to automatically detect and efficiently remove sequence contaminations 
                   from genomic and metagenomic datasets.
+*[DeePMD-plugin's]: Deep learning-based models of interatomic potential energy and force field, as a LAMMPS plugin.
+*[DeePMD-plugin]: Deep learning-based models of interatomic potential energy and force field, as a LAMMPS plugin.
 *[DeepLabCut's]: Efficient method for 3D markerless pose estimation based on transfer learning with deep neural networks.
 *[DeepLabCut]: Efficient method for 3D markerless pose estimation based on transfer learning with deep neural networks.
 *[Delft3D's]: Integrated simulation of sediment transport and morphology, waves, water quality and ecology.
@@ -456,12 +476,14 @@ package has a built-in plotting script and supports multiple file formats and qu
 *[EMBOSS]: EMBOSS is 'The European Molecular Biology Open Software Suite'.
  EMBOSS is a free Open Source software analysis package specially developed for
  the needs of the molecular biology (e.g. EMBnet) user community.
-*[ESMF's]: The Earth System Modeling Framework (ESMF) is software for building and coupling weather,
- climate, and related models.
-*[ESMF]: The Earth System Modeling Framework (ESMF) is software for building and coupling weather,
- climate, and related models.
 *[ETE's]: A Python framework for the analysis and visualization of phylogenetic trees
 *[ETE]: A Python framework for the analysis and visualization of phylogenetic trees
+*[EasyBuild's]: EasyBuild is a software build and installation framework
+ written in Python that allows you to install software in a structured,
+ repeatable and robust way.
+*[EasyBuild]: EasyBuild is a software build and installation framework
+ written in Python that allows you to install software in a structured,
+ repeatable and robust way.
 *[Eigen's]: Eigen is a C++ template library for linear algebra:
  matrices, vectors, numerical solvers, and related algorithms.
 *[Eigen]: Eigen is a C++ template library for linear algebra:
@@ -552,6 +574,10 @@ Faiss is a library for efficient similarity search and clustering of dense
 *[FastTree]: FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide
  or protein sequences. FastTree can handle alignments with up to a million of sequences in a reasonable amount of
  time and memory. 
+*[Fastsimcoal2's]: While preserving all the simulation flexibility of simcoal2, fastsimcoal is now implemented under a faster continous-time sequential Markovian coalescent approximation, allowing it to efficiently generate genetic diversity for different types of markers along large genomic regions, for both present or ancient samples. It includes a parameter sampler allowing its integration into Bayesian or likelihood parameter estimation procedure.
+ fastsimcoal can handle very complex evolutionary scenarios including an arbitrary migration matrix between samples, historical events allowing for population resize, population fusion and fission, admixture events, changes in migration matrix, or changes in population growth rates. The time of sampling can be specified independently for each sample, allowing for serial sampling in the same or in different populations.
+*[Fastsimcoal2]: While preserving all the simulation flexibility of simcoal2, fastsimcoal is now implemented under a faster continous-time sequential Markovian coalescent approximation, allowing it to efficiently generate genetic diversity for different types of markers along large genomic regions, for both present or ancient samples. It includes a parameter sampler allowing its integration into Bayesian or likelihood parameter estimation procedure.
+ fastsimcoal can handle very complex evolutionary scenarios including an arbitrary migration matrix between samples, historical events allowing for population resize, population fusion and fission, admixture events, changes in migration matrix, or changes in population growth rates. The time of sampling can be specified independently for each sample, allowing for serial sampling in the same or in different populations.
 *[File-Rename's]: A Perl version of the rename utility, with support for regular expressions.
 *[File-Rename]: A Perl version of the rename utility, with support for regular expressions.
 *[FileSender's]: Send large files quickly and securely using REANNZ FileSender.
@@ -568,6 +594,10 @@ used by a program without recompiling or relinking it.
  and Oxford Nanopore Technologies.
 *[Flye]: Flye is a de novo assembler for long and noisy reads, such as those produced by PacBio
  and Oxford Nanopore Technologies.
+*[Foldseek's]: Foldseek enables fast and sensitive comparisons of large protein structure sets, 
+supporting monomer and multimer searches, as well as clustering.
+*[Foldseek]: Foldseek enables fast and sensitive comparisons of large protein structure sets, 
+supporting monomer and multimer searches, as well as clustering.
 *[FragGeneScan's]: FragGeneScan is an application for finding (fragmented) genes in short reads.
 *[FragGeneScan]: FragGeneScan is an application for finding (fragmented) genes in short reads.
 *[FreeBayes's]: Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.
@@ -638,6 +668,16 @@ FreeSurfer contains a fully automatic structural imaging stream for processing c
 operating on signed integers, rational numbers, and floating point numbers. 
 *[GMP]: GMP is a free library for arbitrary precision arithmetic, 
 operating on signed integers, rational numbers, and floating point numbers. 
+*[GMT's]: GMT is an open source collection of about 80 command-line tools for manipulating
+ geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting,
+ etc.) and producing PostScript illustrations ranging from simple x-y plots via contour maps
+ to artificially illuminated surfaces and 3D perspective views; the GMT supplements add another
+ 40 more specialized and discipline-specific tools. 
+*[GMT]: GMT is an open source collection of about 80 command-line tools for manipulating
+ geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting,
+ etc.) and producing PostScript illustrations ranging from simple x-y plots via contour maps
+ to artificially illuminated surfaces and 3D perspective views; the GMT supplements add another
+ 40 more specialized and discipline-specific tools. 
 *[GOLD's]: A genetic algorithm for docking flexible ligands into protein binding sites
 *[GOLD]: A genetic algorithm for docking flexible ligands into protein binding sites
 *[GPAW's]: GPAW is a density-functional theory (DFT) Python code based on the projector-augmented wave (PAW)
@@ -718,6 +758,10 @@ Assembly-free construction of UTRs from short read RNA-Seq data on the basis of 
 *[GetOrganelle]: Toolkit to assemble organelle genome from genomic skimming data.
 *[GlimmerHMM's]: Gene finder based on a Generalized Hidden Markov Model.
 *[GlimmerHMM]: Gene finder based on a Generalized Hidden Markov Model.
+*[Globus-CLI's]: A Command Line Wrapper over the Globus SDK for Python, which provides an interface to Globus services
+ from the shell, and is suited to both interactive and simple scripting use cases.
+*[Globus-CLI]: A Command Line Wrapper over the Globus SDK for Python, which provides an interface to Globus services
+ from the shell, and is suited to both interactive and simple scripting use cases.
 *[Go's]: An open source programming language
 *[Go]: An open source programming language
 *[Graphviz's]: Graphviz is open source graph visualization software. Graph visualization
@@ -824,26 +868,8 @@ Assembly-free construction of UTRs from short read RNA-Seq data on the basis of 
 *[IQ-TREE]: Efficient phylogenomic software by maximum likelihood
 *[IRkernel's]: R packages for providing R kernel for Jupyter.
 *[IRkernel]: R packages for providing R kernel for Jupyter.
-*[ISA-L's]: 
-ISA-L is a collection of optimized low-level functions targeting storage applications. 
-  ISA-L includes:
-   *Erasure codes - Fast block Reed-Solomon type erasure codes for any encode/decode matrix in GF(2^8).
-   *CRC - Fast implementations of cyclic redundancy check. Six different polynomials supported.
-          iscsi32, ieee32, t10dif, ecma64, iso64, jones64.
-   *Raid - calculate and operate on XOR and P+Q parity found in common RAID implementations.
-   *Compression - Fast deflate-compatible data compression, includes igzip.
-   *De-compression - Fast inflate-compatible data compression. 
-
-*[ISA-L]: 
-ISA-L is a collection of optimized low-level functions targeting storage applications. 
-  ISA-L includes:
-   *Erasure codes - Fast block Reed-Solomon type erasure codes for any encode/decode matrix in GF(2^8).
-   *CRC - Fast implementations of cyclic redundancy check. Six different polynomials supported.
-          iscsi32, ieee32, t10dif, ecma64, iso64, jones64.
-   *Raid - calculate and operate on XOR and P+Q parity found in common RAID implementations.
-   *Compression - Fast deflate-compatible data compression, includes igzip.
-   *De-compression - Fast inflate-compatible data compression. 
-
+*[ISA-L's]: Intelligent Storage Acceleration Library
+*[ISA-L]: Intelligent Storage Acceleration Library
 *[ImageMagick's]: Create, edit, compose, or convert bitmap images
 *[ImageMagick]: Create, edit, compose, or convert bitmap images
 *[Infernal's]: Infernal ('INFERence of RNA ALignment') is for searching DNA sequence databases
@@ -1016,6 +1042,28 @@ and scalable unsupervised cluster algorithm for graphs (also known as networks) 
 on simulation of (stochastic) flow in graphs. 
 *[MCR's]: The Matlab Compiler Runtime is required for running compiled MATLAB executables without MATLAB itself.
 *[MCR]: The Matlab Compiler Runtime is required for running compiled MATLAB executables without MATLAB itself.
+*[MDI's]: The MolSSI Driver Interface (MDI) project provides a
+standardized API for fast, on-the-fly communication between computational
+chemistry codes. This greatly simplifies the process of implementing
+methods that require the cooperation of multiple software packages and
+enables developers to write a single implementation that works across
+many different codes. The API is sufficiently general to support a wide
+variety of techniques, including QM/MM, ab initio MD, machine learning,
+advanced sampling, and path integral MD, while also being straightforwardly
+extensible. Communication between codes is handled by the MDI Library, which
+enables tight coupling between codes using either the MPI or TCP/IP methods.
+
+*[MDI]: The MolSSI Driver Interface (MDI) project provides a
+standardized API for fast, on-the-fly communication between computational
+chemistry codes. This greatly simplifies the process of implementing
+methods that require the cooperation of multiple software packages and
+enables developers to write a single implementation that works across
+many different codes. The API is sufficiently general to support a wide
+variety of techniques, including QM/MM, ab initio MD, machine learning,
+advanced sampling, and path integral MD, while also being straightforwardly
+extensible. Communication between codes is handled by the MDI Library, which
+enables tight coupling between codes using either the MPI or TCP/IP methods.
+
 *[MEGAHIT's]: An ultra-fast single-node solution for large and complex
  metagenomics assembly via succinct de Bruijn graph
 *[MEGAHIT]: An ultra-fast single-node solution for large and complex
@@ -1397,6 +1445,12 @@ read whole-slide images (also known as virtual slides).
  The PCRE library is a set of functions that implement regular expression pattern matching using the same syntax
  and semantics as Perl 5.
 
+*[PDAL's]: PDAL is Point Data Abstraction Library. It is a C/C++ open source library and applications for
+ translating and processing point cloud data. It is not limited to LiDAR data, although the focus and impetus
+ for many of the tools in the library have their origins in LiDAR.
+*[PDAL]: PDAL is Point Data Abstraction Library. It is a C/C++ open source library and applications for
+ translating and processing point cloud data. It is not limited to LiDAR data, although the focus and impetus
+ for many of the tools in the library have their origins in LiDAR.
 *[PEAR's]: Memory-efficient,fully parallelized and highly accurate pair-end read merger.
 *[PEAR]: Memory-efficient,fully parallelized and highly accurate pair-end read merger.
 *[PETSc's]: PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the
@@ -1653,6 +1707,8 @@ static mapping, and sparse matrix block ordering, and sequential mesh and hyperg
 *[SCOTCH]: Software package and libraries for sequential and parallel graph partitioning,
 static mapping, and sparse matrix block ordering, and sequential mesh and hypergraph partitioning.
 *[SCP]: Means of securely transferring files between over an SSH connection.
+*[SCons's]: SCons is a software construction tool.
+*[SCons]: SCons is a software construction tool.
 *[SDL2's]: Simple DirectMedia Layer, a cross-platform multimedia library
 *[SDL2]: Simple DirectMedia Layer, a cross-platform multimedia library
 *[SEPP's]: SATe-enabled Phylogenetic Placement. Phylogenetic placement of short reads into reference alignments and trees.
@@ -1744,8 +1800,6 @@ NanoMethPhase - Phase long reads and CpG methylations from Oxford Nanopore Techn
 in  amino acid  sequences  from  different organisms
 *[SignalP]: SignalP predicts the presence  and  location of signal peptide  cleavage sites
 in  amino acid  sequences  from  different organisms
-*[Singularity's]: Singularity is a portable application stack packaging and runtime utility.
-*[Singularity]: Singularity is a portable application stack packaging and runtime utility.
 *[Sniffles's]: A fast structural variant caller for long-read sequencing.
 *[Sniffles]: A fast structural variant caller for long-read sequencing.
 *[SortMeRNA's]: SortMeRNA is a biological sequence analysis tool for filtering, mapping and OTU-picking NGS reads.
@@ -1766,8 +1820,8 @@ in  amino acid  sequences  from  different organisms
 *[SpectrA]: C++ library for large scale eigenvalue problems, built on top of Eigen, an open source linear algebra library.
 *[Spectrum Scale's]: High-performance clustered file system software developed by IBM.
 *[Spectrum Scale]: High-performance clustered file system software developed by IBM.
-*[SqueezeMeta's]: fully automated metagenomics pipeline, from reads to bins.
-*[SqueezeMeta]: fully automated metagenomics pipeline, from reads to bins.
+*[SqueezeMeta's]: Fully automated metagenomics pipeline, from reads to bins.
+*[SqueezeMeta]: Fully automated metagenomics pipeline, from reads to bins.
 *[Stacks's]: Stacks is a software pipeline for building loci from short-read sequences, such as those generated on
  the Illumina platform. Stacks was developed to work with restriction enzyme-based data, such as RAD-seq, for the purpose
  of building genetic maps and conducting population genomics and phylogeography.
@@ -1871,12 +1925,24 @@ positions for RRBS sequence files
 *[TurboVNC]: TurboVNC is a derivative of VNC (Virtual Network Computing) that is tuned to provide
  peak performance for 3D and video workloads.
 *[UCC's]: UCC (Unified Collective Communication) is a collective
-communication operations API and library that is flexible, complete, and 
+communication operations API and library that is flexible, complete, and
 feature-rich for current and emerging programming models and runtimes.
 
 *[UCC]: UCC (Unified Collective Communication) is a collective
-communication operations API and library that is flexible, complete, and 
+communication operations API and library that is flexible, complete, and
 feature-rich for current and emerging programming models and runtimes.
+
+*[UCC-CUDA's]: UCC (Unified Collective Communication) is a collective
+communication operations API and library that is flexible, complete, and
+feature-rich for current and emerging programming models and runtimes.
+
+This module adds the UCC CUDA support.
+
+*[UCC-CUDA]: UCC (Unified Collective Communication) is a collective
+communication operations API and library that is flexible, complete, and
+feature-rich for current and emerging programming models and runtimes.
+
+This module adds the UCC CUDA support.
 
 *[UCX's]: Unified Communication X
 An open-source production grade communication framework for data centric
@@ -1885,6 +1951,18 @@ and high-performance applications
 *[UCX]: Unified Communication X
 An open-source production grade communication framework for data centric
 and high-performance applications
+
+*[UCX-CUDA's]: Unified Communication X
+An open-source production grade communication framework for data centric
+and high-performance applications
+
+This module adds the UCX CUDA support.
+
+*[UCX-CUDA]: Unified Communication X
+An open-source production grade communication framework for data centric
+and high-performance applications
+
+This module adds the UCX CUDA support.
 
 *[UDUNITS's]: UDUNITS supports conversion of unit specifications between formatted and binary forms,
  arithmetic manipulation of units, and conversion of values between compatible scales of measurement.
@@ -1969,6 +2047,16 @@ stand-alone programs for the prediction and comparison of RNA secondary structur
 *[VirHostMatcher]: Tools for computing various oligonucleotide frequency (ONF) based distance/dissimialrity measures.
 *[VirSorter's]: VirSorter: mining viral signal from microbial genomic data.
 *[VirSorter]: VirSorter: mining viral signal from microbial genomic data.
+*[Voro++'s]: Voro++ is a software library for carrying out three-dimensional computations of the Voronoi
+tessellation. A distinguishing feature of the Voro++ library is that it carries out cell-based calculations,
+computing the Voronoi cell for each particle individually. It is particularly well-suited for applications that
+rely on cell-based statistics, where features of Voronoi cells (eg. volume, centroid, number of faces) can be used
+to analyze a system of particles.
+*[Voro++]: Voro++ is a software library for carrying out three-dimensional computations of the Voronoi
+tessellation. A distinguishing feature of the Voro++ library is that it carries out cell-based calculations,
+computing the Voronoi cell for each particle individually. It is particularly well-suited for applications that
+rely on cell-based statistics, where features of Voronoi cells (eg. volume, centroid, number of faces) can be used
+to analyze a system of particles.
 *[WAAFLE's]: Workflow to Annotate Assemblies and Find LGT Events.
 *[WAAFLE]: Workflow to Annotate Assemblies and Find LGT Events.
 *[WhatsHap's]: Tool for phasing genomic variants using DNA sequencing reads, also called read-based phasing or haplotype assembly.
@@ -1996,8 +2084,6 @@ manipulating, and validating XML documents using the DOM, SAX, and SAX2
 APIs.
 *[YAXT's]: Yet Another eXchange Tool
 *[YAXT]: Yet Another eXchange Tool
-*[Yasm's]: Yasm: Complete rewrite of the NASM assembler with BSD license
-*[Yasm]: Yasm: Complete rewrite of the NASM assembler with BSD license
 *[Z3's]: A theorem prover from Microsoft Research.
 *[Z3]: A theorem prover from Microsoft Research.
 *[ZeroMQ's]: ZeroMQ looks like an embeddable networking library but acts like a concurrency framework.
@@ -2062,13 +2148,11 @@ have been portability and other-than-MSDOS functionality
  Illumina sequencing systems to standard FASTQ file formats for downstream analysis.
 *[bcl2fastq2]: bcl2fastq Conversion Software both demultiplexes data and converts BCL files generated by
  Illumina sequencing systems to standard FASTQ file formats for downstream analysis.
-*[beagle-lib's]: 
-beagle-lib is a high-performance library that can perform the core
+*[beagle-lib's]: beagle-lib is a high-performance library that can perform the core
 calculations at the heart of most Bayesian and Maximum Likelihood
 phylogenetics packages.
 
-*[beagle-lib]: 
-beagle-lib is a high-performance library that can perform the core
+*[beagle-lib]: beagle-lib is a high-performance library that can perform the core
 calculations at the heart of most Bayesian and Maximum Likelihood
 phylogenetics packages.
 
@@ -2126,6 +2210,10 @@ phylogenetics packages.
 *[chewBBACA]: A complete suite for gene-by-gene schema creation and strain identification..
 *[chopper's]: Rust implementation of NanoFilt+NanoLyse
 *[chopper]: Rust implementation of NanoFilt+NanoLyse
+*[cimfomfa's]: library supports both MCL, a cluster algorithm for graphs, and zoem, a
+macro/DSL language
+*[cimfomfa]: library supports both MCL, a cluster algorithm for graphs, and zoem, a
+macro/DSL language
 *[code-server's]: code-server for OpenOnDemand
 *[code-server]: code-server for OpenOnDemand
 *[compleasm's]: faster and more accurate reimplementation of BUSCO.
@@ -2220,12 +2308,10 @@ such as publication, sequence, structure, gene, variation, expression, etc.
 *[fastStructure]: fastStructure is an algorithm for inferring population structure from large SNP genotype data. It is based on a variational Bayesian framework for posterior inference and is written in Python2.x.
 *[fastp's]: A tool designed to provide fast all-in-one preprocessing for FastQ files.
 *[fastp]: A tool designed to provide fast all-in-one preprocessing for FastQ files.
-*[fastq-tools's]:  A collection of small and efficient programs for performing some common and 
- uncommon tasks with FASTQ files. 
-*[fastq-tools]:  A collection of small and efficient programs for performing some common and 
- uncommon tasks with FASTQ files. 
 *[fgbio's]: A set of tools to analyze genomic data with a focus on Next Generation Sequencing.
 *[fgbio]: A set of tools to analyze genomic data with a focus on Next Generation Sequencing.
+*[fineRADstructure's]: A package for population structure inference from RAD-seq data
+*[fineRADstructure]: A package for population structure inference from RAD-seq data
 *[fineSTRUCTURE's]: Population assignment using large numbers of densely sampled genomes, including both SNP chips and sequence dat
 *[fineSTRUCTURE]: Population assignment using large numbers of densely sampled genomes, including both SNP chips and sequence dat
 *[flatbuffers's]: FlatBuffers: Memory Efficient Serialization Library
@@ -2282,8 +2368,6 @@ such as publication, sequence, structure, gene, variation, expression, etc.
  that computer.
 *[g2clib's]: Library contains GRIB2 encoder/decoder ('C' version).
 *[g2clib]: Library contains GRIB2 encoder/decoder ('C' version).
-*[g2lib's]: Library contains GRIB2 encoder/decoder and search/indexing routines.
-*[g2lib]: Library contains GRIB2 encoder/decoder and search/indexing routines.
 *[gcloud's]: Libraries and tools for interacting with Google Cloud products and services.
 *[gcloud]: Libraries and tools for interacting with Google Cloud products and services.
 *[gemmforge's]: GPU-GEMM generator for the Discontinuous Galerkin method.
@@ -2300,6 +2384,8 @@ build many other steps. This package offers to programmers, translators, and eve
 and documentation
 *[gfastats's]: single fast and exhaustive tool for summary statistics and simultaneous *fa* (fasta, fastq, gfa [.gz]) genome assembly file manipulation.
 *[gfastats]: single fast and exhaustive tool for summary statistics and simultaneous *fa* (fasta, fastq, gfa [.gz]) genome assembly file manipulation.
+*[gfatools's]: Tools for manipulating sequence graphs in the GFA and rGFA formats
+*[gfatools]: Tools for manipulating sequence graphs in the GFA and rGFA formats
 *[gffread's]: GFF/GTF parsing utility providing format conversions,
 region filtering, FASTA sequence extraction and more.
 *[gffread]: GFF/GTF parsing utility providing format conversions,
@@ -2332,8 +2418,6 @@ to handle everything from small to very large projects with speed and efficiency
  that computer.
 *[gmsh's]: Gmsh is a 3D finite element grid generator with a build-in CAD engine and post-processor..
 *[gmsh]: Gmsh is a 3D finite element grid generator with a build-in CAD engine and post-processor..
-*[gnuplot's]: Portable interactive, function plotting utility
-*[gnuplot]: Portable interactive, function plotting utility
 *[gompi's]: GNU Compiler Collection (GCC) based compiler toolchain,
  including OpenMPI for MPI support.
 *[gompi]: GNU Compiler Collection (GCC) based compiler toolchain,
@@ -2372,12 +2456,8 @@ to handle everything from small to very large projects with speed and efficiency
  aims at helping applications with gathering information about modern computing
  hardware so as to exploit it accordingly and efficiently.
 
-*[icc's]: Intel C and C++ compilers
-*[icc]: Intel C and C++ compilers
 *[iccifort's]: Intel C, C++ & Fortran compilers
 *[iccifort]: Intel C, C++ & Fortran compilers
-*[ifort's]: Intel Fortran compiler
-*[ifort]: Intel Fortran compiler
 *[iimpi's]: Intel C/C++ and Fortran compilers, alongside Intel MPI.
 *[iimpi]: Intel C/C++ and Fortran compilers, alongside Intel MPI.
 *[imkl's]: Intel oneAPI Math Kernel Library
@@ -2420,6 +2500,8 @@ objects.
 *[json-c]: JSON-C implements a reference counting object model that allows you to easily construct JSON objects
  in C, output them as JSON formatted strings and parse JSON formatted strings back into the C representation of JSON
 objects.
+*[json-fortran's]: JSON-Fortran: A Modern Fortran JSON API
+*[json-fortran]: JSON-Fortran: A Modern Fortran JSON API
 *[jvarkit's]: Java utilities for Bioinformatics
 *[jvarkit]: Java utilities for Bioinformatics
 *[kalign2's]: Kalign is a fast multiple sequence alignment program for biological sequences.
@@ -2454,6 +2536,8 @@ providing much of the functionality present in LAPACK.
 
 *[libcircle's]: API for distributing embarrassingly parallel workloads using self-stabilization.
 *[libcircle]: API for distributing embarrassingly parallel workloads using self-stabilization.
+*[libdeepmd's]: Deep learning-based models of interatomic potential energy and force field
+*[libdeepmd]: Deep learning-based models of interatomic potential energy and force field
 *[libdeflate's]: Heavily optimized library for DEFLATE/zlib/gzip compression and decompression.
 *[libdeflate]: Heavily optimized library for DEFLATE/zlib/gzip compression and decompression.
 *[libdrm's]: Direct Rendering Manager runtime library.
@@ -2592,6 +2676,14 @@ DNA sequencing reads generated by Next-Generation Sequencing platforms.
 DNA sequencing reads generated by Next-Generation Sequencing platforms.
 *[matlab-proxy's]: Python package which enables you to launch MATLAB and access it from a web browser.
 *[matlab-proxy]: Python package which enables you to launch MATLAB and access it from a web browser.
+*[mctc-lib's]: Common tool chain for working with molecular structure data in various
+applications. This library provides a unified way to perform operations on
+molecular structure data, like reading and writing to common geometry file
+formats.
+*[mctc-lib]: Common tool chain for working with molecular structure data in various
+applications. This library provides a unified way to perform operations on
+molecular structure data, like reading and writing to common geometry file
+formats.
 *[medaka's]: Medaka is a tool to create a consensus sequence from nanopore sequencing data.
 *[medaka]: Medaka is a tool to create a consensus sequence from nanopore sequencing data.
 *[megalodon's]: Tool to extract high accuracy modified base and sequence variant calls from raw nanopore reads 
@@ -2606,6 +2698,8 @@ by anchoring the information rich basecalling neural network output to a referen
 *[miniBUSCO]: faster and more accurate reimplementation of BUSCO.
 *[miniasm's]: Fast OLC-based de novo assembler for noisy long reads.
 *[miniasm]: Fast OLC-based de novo assembler for noisy long reads.
+*[minigraph's]: Sequence-to-graph mapper and graph generator
+*[minigraph]: Sequence-to-graph mapper and graph generator
 *[minimap2's]: Minimap2 is a fast sequence mapping and alignment
 program that can find overlaps between long noisy reads, or map long
 reads or their assemblies to a reference genome optionally with detailed
@@ -2660,8 +2754,16 @@ expression into bytecode and precalculating constant parts of the expression.
  color and multiple highlights and forms characters and function-key mapping,
  and has all the other SYSV-curses enhancements over BSD Curses.
 
-*[ncview's]: Visual browser for netCDF format files.
-*[ncview]: Visual browser for netCDF format files.
+*[ncview's]: Ncview is a visual browser for netCDF format files.
+Typically you would use ncview to get a quick and easy, push-button
+look at your netCDF files. You can view simple movies of the data,
+view along various dimensions, take a look at the actual data values,
+change color maps, invert the data, etc.
+*[ncview]: Ncview is a visual browser for netCDF format files.
+Typically you would use ncview to get a quick and easy, push-button
+look at your netCDF files. You can view simple movies of the data,
+view along various dimensions, take a look at the actual data values,
+change color maps, invert the data, etc.
 *[ne's]: ne is a free (GPL'd) text editor based on the POSIX standard
 that runs (we hope) on almost any UN*X machine. ne is easy to use for the
 beginner, but powerful and fully configurable for the wizard, and most sparing
@@ -2820,8 +2922,6 @@ traditional table-driven approach, re2c encodes the generated finite state autom
 of conditional jumps and comparisons.
 *[rnaQUAST's]: Tool for evaluating RNA-Seq assemblies using reference genome and gene database
 *[rnaQUAST]: Tool for evaluating RNA-Seq assemblies using reference genome and gene database
-*[s3cmd's]: Command line tool for managing S3 compatible storage services
-*[s3cmd]: Command line tool for managing S3 compatible storage services
 *[samblaster's]: samblaster is a fast and flexible program for marking duplicates in read-id grouped paired-end SAM files. 
 It can also optionally output discordant read pairs and/or split read mappings to separate SAM files, and/or unmapped/clipped 
 reads to a separate FASTQ file. When marking duplicates, samblaster will require approximately 20MB of memory per 1M read pairs.
@@ -2972,6 +3072,8 @@ alignment.
  into the H.265 AVC compression format, and is released under the terms of
  the GNU GPL.
 
+*[xPore's]: A Python package for identification and quantification of differential RNA modifications from direct RNA sequencing
+*[xPore]: A Python package for identification and quantification of differential RNA modifications from direct RNA sequencing
 *[xkbcommon's]: keyboard keymap compiler and support library
 *[xkbcommon]: keyboard keymap compiler and support library
 *[xtb's]:  xtb - An extended tight-binding semi-empirical program package. 
@@ -2984,16 +3086,12 @@ alignment.
 *[yak]: Yet another k-mer analyzer
 *[yaml-cpp's]: YAML parser and emitter in C++
 *[yaml-cpp]: YAML parser and emitter in C++
-*[zlib's]: 
- zlib is designed to be a free, general-purpose, legally unencumbered -- that
- is, not covered by any patents -- lossless data-compression library for use
- on virtually any computer hardware and operating system.
-
-*[zlib]: 
- zlib is designed to be a free, general-purpose, legally unencumbered -- that
- is, not covered by any patents -- lossless data-compression library for use
- on virtually any computer hardware and operating system.
-
+*[zlib's]: zlib is designed to be a free, general-purpose, legally unencumbered -- that is,
+ not covered by any patents -- lossless data-compression library for use on virtually any
+ computer hardware and operating system.
+*[zlib]: zlib is designed to be a free, general-purpose, legally unencumbered -- that is,
+ not covered by any patents -- lossless data-compression library for use on virtually any
+ computer hardware and operating system.
 *[zstd's]: Zstandard is a real-time compression algorithm, providing high compression ratios.
  It offers a very wide range of compression/speed trade-off, while being backed by a very fast decoder.
  It also offers a special mode for small data, called dictionary compression, and can create dictionaries

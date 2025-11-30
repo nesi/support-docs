@@ -11,7 +11,7 @@ zendesk_article_id: 360000175635
 zendesk_section_id: 360000224835
 ---
 
-This is the highest award given for use of NeSI services. A Merit
+This is the highest award given for use of REANNZ HPC services. A Merit
 allocation is intended for highly skilled research teams carrying out
 high quality research funded via a peer review process that supports the
 [New Zealand Government's Science
@@ -22,7 +22,7 @@ Consultancy services.
 To be eligible for consideration for a Merit allocation, the application
 must meet the following criteria:
 
-- The underpinning research programme (that requires access to NeSI
+- The underpinning research programme (that requires access to REANNZ
     HPC services to achieve the objectives of the research) must support
     the [Government’s Science
     Goals](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/national-statement-of-science-investment/).
@@ -45,7 +45,7 @@ must meet the following criteria:
         - Privately funded research
         - Research funded by a foreign government
 - The research grant or contract must cover the entire period for
-    which an allocation of NeSI resources is sought.
+    which an allocation of REANNZ HPC resources is sought.
 - The applicant must be a named investigator on the peer reviewed
     research grant or contract. If you are a student, we may at our
     discretion consider your application for a Merit award if your
@@ -54,5 +54,5 @@ must meet the following criteria:
 Read more about [how we review
 applications](../../General/Policy/How_we_review_applications.md).
 
-To learn more about NeSI Projects or to apply for a new project, please
-read our article [Applying for a NeSI Project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_project.md).
+To learn more about REANNZ HPC Projects or to apply for a new project, please
+read our article [Applying for a REANNZ HPC Project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_project.md).

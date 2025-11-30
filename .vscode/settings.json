@@ -52,9 +52,13 @@
         "https://json.schemastore.org/github-workflow.json": "file:///workspaces/support-docs/.github/workflows/deploy.yml"
     },
     "markdown.copyFiles.destination": {
-        "docs/**/*": "/docs/assets/images/"
+        "docs/**/*": "/docs/assets/images/${documentBaseName}_${fileName}"
     },
-    "markdown.updateLinksOnFileMove.enabled":"prompt",
+    "markdown.updateLinksOnFileMove.enabled":"always",
+    "markdown.updateLinksOnFileMove.include": [
+        "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+        "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}"
+    ],
     "[markdown]": {
         "editor.unicodeHighlight.ambiguousCharacters": true,
         "editor.unicodeHighlight.invisibleCharacters": true,
@@ -67,4 +71,7 @@
         "PATH": ".venv/bin:${env:PATH}"
     },
     "python.defaultInterpreterPath": ".venv/bin/python",
+    "markdownAutoRedirects.mapFile": "docs/redirect_map.yml",
+    "markdownAutoRedirects.relativeTo": "docs",
+    "markdown.validate.fileLinks.enabled": "error",
 }

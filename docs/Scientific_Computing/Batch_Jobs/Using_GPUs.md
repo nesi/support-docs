@@ -60,7 +60,7 @@ It is recommended to specify the exact GPU type required; otherwise, the job may
     <tr>
         <td>40GB</td>
         <td>2</td>
-        <td><pre>#SBATCH --partition=genoa<br>#SBATCH --gpus-per-node=a100:1</pre></td>
+        <td><pre><code>#SBATCH --partition=genoa<br>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA H100</td>
@@ -161,12 +161,13 @@ GPU:
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=GPUJob        # job name (shows up in the queue)
-#SBATCH --time=00-00:10:00       # Walltime (DD-HH:MM:SS)
-#SBATCH --partition=genoa        # This means the job will land on A100 with 40GB VRAM
-#SBATCH --gpus-per-node=A100:1   # GPU resources required per node
-#SBATCH --cpus-per-task=2        # number of CPUs per task (1 by default)
-#SBATCH --mem=512MB              # amount of memory per node (1 by default)
+#SBATCH --job-name       GPUJob      # job name (shows up in the queue)
+#SBATCH --account        nesi99991   # Your account
+#SBATCH --time           00-00:10:00 # Walltime (DD-HH:MM:SS)
+#SBATCH --partition      genoa       # This means the job will land on A100 with 40GB VRAM
+#SBATCH --gpus-per-node  A100:1      # GPU resources required per node
+#SBATCH --cpus-per-task  2           # number of CPUs per task (1 by default)
+#SBATCH --mem            512MB       # amount of memory per node (1 by default)
 
 # load CUDA module
 module purge
@@ -223,7 +224,6 @@ CUDA_VISIBLE_DEVICES=0
     `CUDA_VISIBLE_DEVICES=0` indicates that this job was allocated to CUDA
      GPU index 0 on this node. It is not a count of allocated GPUs.
 
-
 ## Application and toolbox specific support pages
 
 The following pages provide additional information for supported
@@ -237,6 +237,4 @@ applications:
 
 And programming toolkits:
 
-- [Offloading to GPU with OpenMP](../HPC_Software_Environment/Offloading_to_GPU_with_OpenMP.md)
-- [Offloading to GPU with OpenACC using the Cray compiler](../HPC_Software_Environment/Offloading_to_GPU_with_OpenACC.md)
 - [NVIDIA GPU Containers](../HPC_Software_Environment/NVIDIA_GPU_Containers.md)
