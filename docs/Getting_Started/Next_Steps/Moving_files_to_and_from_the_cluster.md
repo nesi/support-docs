@@ -10,7 +10,7 @@ tags:
 !!! prerequisite
     Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
 
-Find more information on [our filesystem](../../Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas.md).
+Find more information on [our filesystem](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 
 ## OnDemand
 
@@ -100,6 +100,12 @@ You can find more details in
 
 Rclone is available for those that need to transfer data from cloud
 storage services like Google drive or OneDrive.
+
+To use Rclone on Mahuika, you first need to module load it:
+
+```bash
+module load rclone
+```
 
 The basic command syntax of Rclone:
 

@@ -5,4 +5,4 @@ nav:
   - MATLAB: MATLAB.md
   - Code server: code_server.md
   - Virtual desktop: virtual_desktop.md
-  - ...
+  - "*"

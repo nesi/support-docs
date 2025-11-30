@@ -14,13 +14,18 @@ import time
 from pathlib import Path
 
 # Ignore files if they match this regex
-EXCLUDED_FROM_CHECKS = [r"docs/assets/.*", r".*/index\.html",  r".*/index\.md", r".*\.pages\.yml"]
+EXCLUDED_FROM_CHECKS = [
+    r"docs/assets/.*",
+    r".*/index\.html",
+    r".*/index\.md",
+    r".*\.pages\.yml",
+]
 
 msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 
 # Constants for use in checks.
 
-MAX_TITLE_LENGTH = 28   # As font isn't monospace, this is only approx
+MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 2
 RANGE_SIBLING = [4, 8]
@@ -35,9 +40,9 @@ EXPECTED_PARAMETERS = {
     "status": ["new", "deprecated"],
     "prereq": "",
     "postreq": "",
-    "suggested": "",    # Add info here when implimented.
+    "suggested": "",  # Add info here when implimented.
     "created_at": "",
-    "tags": "",         # Add info here when implimented.
+    "tags": "",  # Add info here when implimented.
     "search": "",
     "hide": ["toc", "nav", "tags"],
 }
@@ -45,10 +50,23 @@ EXPECTED_PARAMETERS = {
 
 def main():
     # Per file variables
-    global input_path, title_from_h1, title_from_filename, title, meta, contents, input_path
+    global \
+        input_path, \
+        title_from_h1, \
+        title_from_filename, \
+        title, \
+        meta, \
+        contents, \
+        input_path
 
     # Walk variables
-    global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
+    global \
+        lineno, \
+        line, \
+        in_code_block, \
+        last_header_level, \
+        last_header_lineno, \
+        sibling_headers
 
     global toc, toc_parents, header
 
@@ -60,20 +78,39 @@ def main():
             continue
         _nav_check()
         with open(input_path, "r") as f:
-            _emit("", {"level": "debug", "file":  input_path, "message": f"Checking meta for {f.name}"})
+            _emit(
+                "",
+                {
+                    "level": "debug",
+                    "file": input_path,
+                    "message": f"Checking meta for {f.name}",
+                },
+            )
             try:
                 contents = f.read()
                 match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
                 if not match:
-                    _emit("meta.parse", {"file": input_path, "col": 0, "endColumn": 99, "line": 1,
-                          "message": "Meta block missing or malformed."})
+                    _emit(
+                        "meta.parse",
+                        {
+                            "file": input_path,
+                            "col": 0,
+                            "endColumn": 99,
+                            "line": 1,
+                            "message": "Meta block missing or malformed.",
+                        },
+                    )
                     meta = {}
                 else:
                     meta = yaml.safe_load(match.group(1))
 
                 title_from_filename = _title_from_filename()
                 title_from_h1 = _title_from_h1()
-                title = meta["title"] if "title" in meta else "" or title_from_h1 or title_from_filename
+                title = (
+                    meta["title"]
+                    if "title" in meta
+                    else "" or title_from_h1 or title_from_filename
+                )
                 # global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
 
                 header = ""
@@ -85,7 +122,11 @@ def main():
                 for line in contents.split("\n"):
                     lineno += 1
                     for check in WALKCHECKS:
-                        in_code_block = not in_code_block if re.match(r"^\s*```\s?\w*$", line) else in_code_block
+                        in_code_block = (
+                            not in_code_block
+                            if re.match(r"^\s*```\s?\w*$", line)
+                            else in_code_block
+                        )
                         _get_nav_tree()
                         _run_check(check)
                 for check in ENDCHECKS:
@@ -100,9 +141,11 @@ def _run_check(f):
 
 
 def _emit(f, r):
-    msg_count[r.get('level', 'warning')] += 1
-    print(f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},\
-endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}")
+    msg_count[r.get("level", "warning")] += 1
+    print(
+        f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},\
+endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}"
+    )
     sys.stdout.flush()
     time.sleep(0.01)
 
@@ -157,14 +200,24 @@ def _get_nav_tree():
             toc = {header_name: {"lineno": lineno, "children": {}}}
             toc_parents = [header_name]
 
-        while header_level < len(toc_parents)+1:
+        while header_level < len(toc_parents) + 1:
             toc_parents.pop(-1)
 
-        _unpack(toc, toc_parents)["children"][header_name] = {"level": header_level, "lineno": lineno, "children": {}}
+        _unpack(toc, toc_parents)["children"][header_name] = {
+            "level": header_level,
+            "lineno": lineno,
+            "children": {},
+        }
         toc_parents += [header_name]
     except Exception:
-        _emit("misc.nav", {"level": "error", "file": input_path,
-              "message": "Failed to parse Nav tree. Something is very wrong."})
+        _emit(
+            "misc.nav",
+            {
+                "level": "error",
+                "file": input_path,
+                "message": "Failed to parse Nav tree. Something is very wrong.",
+            },
+        )
 
 
 def _nav_check():
@@ -174,43 +227,82 @@ def _nav_check():
         for i in range(1, len(rel_path.parts)):
             num_siblings = 0
             for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
-                if not any(re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS):
+                if not any(
+                    re.match(pattern, file_name) for pattern in EXCLUDED_FROM_CHECKS
+                ):
                     num_siblings += 1
             if num_siblings < RANGE_SIBLING[0]:
-                _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
-    '{rel_path.parts[i-1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
-    items here to justify it's existence."})
+                _emit(
+                    "meta.siblings",
+                    {
+                        "file": input_path,
+                        "message": f"Parent category \
+    '{rel_path.parts[i - 1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
+    items here to justify it's existence.",
+                    },
+                )
             elif num_siblings > RANGE_SIBLING[1]:
-                _emit("meta.siblings", {"file": input_path, "message": f"Parent category \
-    '{rel_path.parts[i-1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
-    under '{RANGE_SIBLING[1]}', maybe add some new categories?"})
+                _emit(
+                    "meta.siblings",
+                    {
+                        "file": input_path,
+                        "message": f"Parent category \
+    '{rel_path.parts[i - 1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
+    under '{RANGE_SIBLING[1]}', maybe add some new categories?",
+                    },
+                )
     except ValueError as e:
-        _emit("meta.nav", {"file": input_path, "level": "error", "message": f"{e}. Nav checks will be skipped"})
+        _emit(
+            "meta.nav",
+            {
+                "file": input_path,
+                "level": "error",
+                "message": f"{e}. Nav checks will be skipped",
+            },
+        )
 
 
 def title_redundant():
     lineno = _get_lineno(r"^title:.*$")
     if "title" in meta.keys() and title_from_filename == meta["title"]:
-        yield {"level": "notice", "line": lineno, "message": "Title set in meta is redundant as it is already set in filename."}
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": "Title set in meta is redundant as it is already set in filename.",
+        }
     if "title" in meta.keys() and title_from_h1 == meta["title"]:
-        yield {"level": "notice", "line": lineno, "message": "Title set in h1 is redundant as it is already set in filename."}
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": "Title set in h1 is redundant as it is already set in filename.",
+        }
     if title_from_filename == title_from_h1:
-        yield {"level": "notice", "line": lineno, "message": "Title set in meta is redundant as it is already set in h1."}
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": "Title set in meta is redundant as it is already set in h1.",
+        }
 
 
 def meta_unexpected_key():
     """
     Check for unexpected keys.
     """
+
     def _test(v):
         if v not in EXPECTED_PARAMETERS[key]:
-            yield {"level": "error", "line": _get_lineno(f"^{key}:.*$"),
-                   "message": f"'{value}' is not valid for {key}. [{','.join(EXPECTED_PARAMETERS[key])}]"}
+            yield {
+                "level": "error",
+                "line": _get_lineno(f"^{key}:.*$"),
+                "message": f"'{value}' is not valid for {key}. [{','.join(EXPECTED_PARAMETERS[key])}]",
+            }
 
     for key, value in meta.items():
         if key not in EXPECTED_PARAMETERS.keys():
-            yield {"line": _get_lineno(r"^" + key + r":.*$"),
-                   "message": f"Unexpected parameter in front-matter '{key}'"}
+            yield {
+                "line": _get_lineno(r"^" + key + r":.*$"),
+                "message": f"Unexpected parameter in front-matter '{key}'",
+            }
         elif EXPECTED_PARAMETERS[key]:
             if isinstance(value, list):
                 for v in value:
@@ -226,17 +318,22 @@ def meta_missing_description():
 
 def title_length():
     if len(title) > MAX_TITLE_LENGTH:
-        yield {"line": _get_lineno(r"^title:.*$"),
-               "message": f"Title '{title}' is too long. \
-Try to keep it under {MAX_TITLE_LENGTH} characters to avoid word wrapping in the nav."}
+        yield {
+            "line": _get_lineno(r"^title:.*$"),
+            "message": f"Title '{title}' is too long. \
+Try to keep it under {MAX_TITLE_LENGTH} characters to avoid word wrapping in the nav.",
+        }
 
 
 def minimum_tags():
     if "tags" not in meta or not isinstance(meta["tags"], list):
         yield {"message": "'tags' property in meta is missing or malformed."}
     elif len(meta["tags"]) < MIN_TAGS:
-        yield {"line": _get_lineno(r"^tags:.*$"), "message": "Try to include at least 2 'tags'\
-(helps with search optimisation)."}
+        yield {
+            "line": _get_lineno(r"^tags:.*$"),
+            "message": "Try to include at least 2 'tags'\
+(helps with search optimisation).",
+        }
 
 
 def click_here():
@@ -246,9 +343,14 @@ def click_here():
     if in_code_block:
         return
 
-    m1 = re.search(r"\[.*\s?here\s?.*\]\(.*\)", line, re.IGNORECASE)
+    m1 = re.search(r"(\[.*\s?|\[)here\s?.*\]\(.*\)", line, re.IGNORECASE)
     if m1:
-        yield {"line": lineno, "col": m1.start()+1, "endColumn": m1.end()-1, "message": "Don't use 'here' for link text, impedes accessability."}
+        yield {
+            "line": lineno,
+            "col": m1.start() + 1,
+            "endColumn": m1.end() - 1,
+            "message": "Don't use 'here' for link text, impedes accessibility.",
+        }
 
     # Impliment check for html links when I can be fd.
     # m2 = re.search(r"\[here\]\(.*\)", line)
@@ -258,35 +360,58 @@ def walk_toc():
     """
     Checks if toc is sensible.
     """
+
     def _count_children(d):
-        only_child = (len(d["children"]) == 1)
+        only_child = len(d["children"]) == 1
         for title, c in d["children"].items():
             if only_child:
-                yield {"line": c['lineno'], "message": f"Header '{title}' is a useless only-child. Give it siblings or remove it."}
+                yield {
+                    "line": c["lineno"],
+                    "message": f"Header '{title}' is a useless only-child. Give it siblings or remove it.",
+                }
             # As header gets deeper nested, it will have less horizontal room in toc.
-            if len(title) > (MAX_HEADER_LENGTH - (2*c["level"])):
-                yield {"line": c['lineno'], "message": f"Header '{title}' is too long. \
- Try to keep it under {MAX_HEADER_LENGTH} characters to avoid word wrapping in the toc."}
+            if len(title) > (MAX_HEADER_LENGTH - (2 * c["level"])):
+                yield {
+                    "line": c["lineno"],
+                    "message": f"Header '{title}' is too long. \
+ Try to keep it under {MAX_HEADER_LENGTH} characters to avoid word wrapping in the toc.",
+                }
             for y in _count_children(c):
                 yield y
+
     for d in toc.values():
         for y in _count_children(d):
             yield y
+
 
 def dynamic_slurm_link():
     """
     Checks if slurm links point to right version of docs.
     """
-    m1 = re.search(r".*\(https?:\/\/slurm.schedmd.com(?!\/archive\/{{\s*config\.extra\.slurm\s*}})(.*)\/(.*)\)", line, re.IGNORECASE)
+    m1 = re.search(
+        r".*\(https?:\/\/slurm.schedmd.com(?!\/archive\/{{\s*config\.extra\.slurm\s*}})(.*)\/(.*)\)",
+        line,
+        re.IGNORECASE,
+    )
     if m1:
         print(m1.group(1))
         print(m1.group(2))
-        yield {"line": lineno,"message": f"Link '{m1.group(0)}', does not use dynamic slurm version. Use 'https://slurm.schedmd.com/archive/{{{{ config.extra.slurm }}}}/{m1.group(2)}"}
+        yield {
+            "line": lineno,
+            "message": f"Link '{m1.group(0)}', does not use dynamic slurm version. Use 'https://slurm.schedmd.com/archive/{{{{ config.extra.slurm }}}}/{m1.group(2)}",
+        }
+
 
 # Define checks here
 # For checks to run on page as a whole
-ENDCHECKS = [title_redundant, title_length, meta_missing_description, meta_unexpected_key, minimum_tags,
-             walk_toc]
+ENDCHECKS = [
+    title_redundant,
+    title_length,
+    meta_missing_description,
+    meta_unexpected_key,
+    minimum_tags,
+    walk_toc,
+]
 
 # Checks to be run on each line
 WALKCHECKS = [click_here, dynamic_slurm_link]

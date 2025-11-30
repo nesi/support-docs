@@ -5,6 +5,9 @@ tags:
 - access
 - mfa
 - token
+- ondemand
+- login
+- mynesi
 ---
 
 !!! prerequisite
@@ -17,13 +20,15 @@ tags:
     NeSI’s services and technologies are now hosted by REANNZ as a national eResearch Infrastructure Platform.
     Some of our tools (as pictured in the screenshot below) will retain a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
 
-1. Go to [**OnDemand**](https://ondemand.nesi.org.nz/). It will automatically take you to the Tuakiri login screen.
+1. Log into [my.nesi](my.nesi.org.nz)
+
+2. Go to [**OnDemand**](https://ondemand.nesi.org.nz/). It will automatically take you to the Tuakiri login screen.
     ![alt text](../../assets/images/ondemand_login_0.png)
 
-2. Select your affiliated institution, and log in using your institutional account. Example below shows the University of Auckland login screen.
+3. Select your affiliated institution, and log in using your institutional account. Example below shows the University of Auckland login screen.
     ![alt text](../../assets/images/ondemand_login_1.png)
 
-3. If you haven't logged into OnDemand or our HPC platforms before, you wil need to set up new authentication credentials. This is in addition to your institutional MFA process.
+4. If you haven't logged into OnDemand or our HPC platforms before, you wil need to set up new authentication credentials. This is in addition to your institutional MFA process.
     ![alt text](../../assets/images/ondemand_login_2.png)
   
     !!! note
@@ -42,10 +47,10 @@ tags:
 
     If you have trusted your device, you have to enter a name for this device. This name must be unique. E.g. you cannot trust two devices the same day with the same name.
 
-7. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'Yes' if you want to proceed with access. Click 'No' if you did not initiate this authentication process.
+8. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'Yes' if you want to proceed with access. Click 'No' if you did not initiate this authentication process.
 
     ![alt text](../../assets/images/login-grantaccess.png).
 
-8. After successfully logging in, you will be presented with the following OnDemand screen.
+9. After successfully logging in, you will be presented with the following OnDemand screen.
 
     ![image-20240903-112029](../../assets/images/OOD_Desktop_08Jun2025.png)

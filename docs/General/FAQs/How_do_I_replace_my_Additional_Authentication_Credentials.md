@@ -15,9 +15,9 @@ If you have no longer access to your authenticator application (e.g. change of d
 !!! warning "Not seeing this page?"
    If you perviously confirmed your device as 'Trusted', you will not be prompted for further authentication.
    In order to see the option to reset, open the link in a private/incognito session.
-   
+
 2. You will be redirected to a window for confirmation. Your username should be pre-populated, if this is not the case, enter your username and click send. Yooun may have to re-authenticate via Tuakiri.
-   A confirmation message will be displayed that instructions are emailed to you. 
+   A confirmation message will be displayed that instructions are emailed to you.
    ![Reset Code Confirmation Example](../../assets/images/resetcode_confirmation.png).
 
 3. Check your emails (the account associated with your HPC account).

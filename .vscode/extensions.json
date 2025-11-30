@@ -9,7 +9,8 @@
 		"jebbs.markdown-extended",
 		"Gruntfuggly.triggertaskonsave",
 		"carlthome.git-line-blame",
-		"ms-python.python"
+		"ms-python.python",
+		"calreannz.markdown-auto-redirects"
 	],
 }
 

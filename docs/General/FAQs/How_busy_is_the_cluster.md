@@ -3,7 +3,10 @@ created_at: '2019-09-22T20:20:07Z'
 tags:
  - slurm
 title: How busy is the cluster?
-status: deprecated
+status: [deprecated]
+hide:
+ - toc
+ - navigation
 ---
 
 You can get the current status of all nodes on a cluster using the
@@ -12,23 +15,11 @@ command `sinfo`, you will get a printout like the following.
 *The nodelist column has been truncated for readability*
 
 ```sh
-PARTITION AVAIL JOB_SIZE TIMELIMIT    CPUS S:C:T    NODES   STATE    NODELIST
-large*    up    1-infini 3-00:00:00     72 2:18:2       1   down*      wbn128
-large*    up    1-infini 3-00:00:00     72 2:18:2     133   mixed      wbn[009-020...
-large*    up    1-infini 3-00:00:00     72 2:18:2       7   allocated  wbn[031,038
-large*    up    1-infini 3-00:00:00     72 2:18:2      85   idle       wbn[021,037...
-long      up    1-infini 21-00:00:0     72 2:18:2      64   mixed      wbn[009-020...
-long      up    1-infini 21-00:00:0     72 2:18:2       5   allocated  wbn[031,077...
-gpu       up    1-infini 3-00:00:00      8  8:1:1       1   reserved   vgpuwbg004
-gpu       up    1-infini 3-00:00:00      8  8:1:1       3   idle       vgpuwbg[001-003]
-igpu      up    1-infini 3-00:00:00      8  8:1:1       1   reserved   vgpuwbg004
-prepost   up    1-infini    3:00:00     72 2:18:2       2   down*      wbl[003,005]
-prepost   up    1-infini    3:00:00     72 2:18:2       2   mixed      wbl[002,010]
-prepost   up    1-infini    3:00:00     72 2:18:2       5   allocated  wbl[001,004...
-bigmem    up    1-infini 7-00:00:00     72 2:18:2       1   down*      wbl003
-bigmem    up    1-infini 7-00:00:00     72 2:18:2       2   mixed      wbl[002,010]
-bigmem    up    1-infini 7-00:00:00     72 2:18:2       5   allocated  wbl[001,004...
-hugemem   up    1-infini 7-00:00:00    128 4:16:2       1   mixed      wbh001
+PARTITION     AVAIL   TIMELIMIT    S:C:T MEMORY   NODES(A/I) NODELIST
+genoa         up    21-00:00:00   2:84:2 366694+  62/0       c[001-044],g[01-12],l[01-08]
+milan         up    21-00:00:00  4+:16:2 491520+  52/3       mc[046-091,093-100],mg[13-16],ml[10-16]
+hugemem       up    21-00:00:00   4:22:2 6100000  1/0        cl17
+maintenance   up    21-00:00:00 2+:16+:2 366694+  115/3      c[001-044],cl17,g[01-12],l[01-08],mc[046-091,093-100],mg[13-16],ml[10-16]
 ```
 
 Each partition has a row for every state it's nodes are currently in.

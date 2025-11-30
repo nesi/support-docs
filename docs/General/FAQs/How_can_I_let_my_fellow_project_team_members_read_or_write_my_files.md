@@ -1,11 +1,7 @@
 ---
 created_at: '2019-11-07T04:11:03Z'
 tags: []
-title: How can I let my fellow project team members read or write my files?
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001237915
-zendesk_section_id: 360000039036
+description: Instructions for giving project team members read or write access to files?
 ---
 
 !!! tip "See also"
@@ -19,15 +15,15 @@ together with its contents, as the case may be, will keep its original
 ownership, group and permissions.
 
 So, supposing Joe Bloggs moves a file from his home directory to the
-project directory `/nesi/project/nesi99999`, his fellow team members
+project directory `/nesi/project/nesi12345`, his fellow team members
 won't be able to write to it:
 
 ```sh
 $ ls -l README
 -rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 README
-$ mv README /nesi/project/nesi99999/bloggsj/README
-$ ls -l /nesi/project/nesi99999/bloggsj/README
--rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 /nesi/project/nesi99999/bloggsj/README
+$ mv README /nesi/project/nesi12345/bloggsj/README
+$ ls -l /nesi/project/nesi12345/bloggsj/README
+-rw-r--r-- 1 bloggsj bloggsj 235 Mar 14  2014 /nesi/project/nesi12345/bloggsj/README
 ```
 
 As you can see, the file stays in the group `bloggsj`, that is Joe

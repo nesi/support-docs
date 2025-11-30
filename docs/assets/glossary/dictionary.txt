@@ -90,6 +90,8 @@ BBMap's
 BBMap
 BCFtools's
 BCFtools
+BCL-Convert's
+BCL-Convert
 BEAST's
 BEAST
 BEDOPS's
@@ -239,8 +241,6 @@ CubeLib's
 CubeLib
 CubeWriter's
 CubeWriter
-Cufflinks's
-Cufflinks
 Cylc
 Cytoscape's
 Cytoscape
@@ -270,6 +270,8 @@ DeconSeq's
 DeconSeq
 DeePMD-kit's
 DeePMD-kit
+DeePMD-plugin's
+DeePMD-plugin
 DeepLabCut's
 DeepLabCut
 Delft3D's
@@ -296,8 +298,6 @@ EMAN2
 EMBOSS's
 EMBOSS
 EOL
-ESMF's
-ESMF
 ETE's
 ETE
 EasyBuild's
@@ -350,6 +350,8 @@ FastQ_Screen's
 FastQ_Screen
 FastTree's
 FastTree
+Fastsimcoal2's
+Fastsimcoal2
 File-Rename's
 File-Rename
 FileSender's
@@ -362,6 +364,8 @@ FlexiBLAS's
 FlexiBLAS
 Flye's
 Flye
+Foldseek's
+Foldseek
 Fortran
 FragGeneScan's
 FragGeneScan
@@ -399,6 +403,8 @@ GMAP-GSNAP's
 GMAP-GSNAP
 GMP's
 GMP
+GMT's
+GMT
 GNU
 GOLD's
 GOLD
@@ -454,6 +460,8 @@ Glib
 GlimmerHMM's
 GlimmerHMM
 Globus
+Globus-CLI's
+Globus-CLI
 GlobusID
 Go's
 Go
@@ -613,6 +621,8 @@ MCL
 MCR's
 MCR
 MD5
+MDI's
+MDI
 MEGAHIT's
 MEGAHIT
 METABOLIC's
@@ -830,6 +840,8 @@ PCRE's
 PCRE
 PCRE2's
 PCRE2
+PDAL's
+PDAL
 PEAR's
 PEAR
 PETSc's
@@ -1045,8 +1057,6 @@ Siesta's
 Siesta
 SignalP's
 SignalP
-Singularity's
-Singularity
 Skylake
 Slurm
 Sniffles's
@@ -1129,8 +1139,12 @@ TurboVNC's
 TurboVNC
 UCC's
 UCC
+UCC-CUDA's
+UCC-CUDA
 UCX's
 UCX
+UCX-CUDA's
+UCX-CUDA
 UDF
 UDUNITS's
 UDUNITS
@@ -1183,6 +1197,8 @@ VirHostMatcher's
 VirHostMatcher
 VirSorter's
 VirSorter
+Voro++'s
+Voro++
 WAAFLE's
 WAAFLE
 WCRP
@@ -1211,8 +1227,6 @@ Xquartz
 YAML
 YAXT's
 YAXT
-Yasm's
-Yasm
 Z3's
 Z3
 Zealander
@@ -1298,6 +1312,8 @@ chewBBACA
 chiplets
 chopper's
 chopper
+cimfomfa's
+cimfomfa
 code-server's
 code-server
 collapsable
@@ -1378,8 +1394,6 @@ fastStructure's
 fastStructure
 fastp's
 fastp
-fastq-tools's
-fastq-tools
 fgbio's
 fgbio
 filesets
@@ -1387,6 +1401,8 @@ fileset
 filesystems
 filesystem
 findable
+fineRADstructure's
+fineRADstructure
 fineSTRUCTURE's
 fineSTRUCTURE
 flatbuffers's
@@ -1407,8 +1423,6 @@ funcx-endpoint's
 funcx-endpoint
 g2clib's
 g2clib
-g2lib's
-g2lib
 gcloud's
 gcloud
 geany's
@@ -1426,8 +1440,11 @@ gettext's
 gettext
 gfastats's
 gfastats
+gfatools's
+gfatools
 gffread's
 gffread
+gfortran
 giflib's
 giflib
 gimkl's
@@ -1465,12 +1482,8 @@ hwloc's
 hwloc
 hyperthreaded
 hyperthreading
-icc's
-icc
 iccifort's
 iccifort
-ifort's
-ifort
 iimpi's
 iimpi
 imkl's
@@ -1507,6 +1520,8 @@ jq's
 jq
 json-c's
 json-c
+json-fortran's
+json-fortran
 jvarkit's
 jvarkit
 kaitiaki
@@ -1534,6 +1549,10 @@ libarchive's
 libarchive
 libcircle's
 libcircle
+libcuda-stub's
+libcuda-stub
+libdeepmd's
+libdeepmd
 libdeflate's
 libdeflate
 libdrm's
@@ -1621,6 +1640,8 @@ mapDamage's
 mapDamage
 matlab-proxy's
 matlab-proxy
+mctc-lib's
+mctc-lib
 md
 medaka's
 medaka
@@ -1638,6 +1659,8 @@ miniBUSCO's
 miniBUSCO
 miniasm's
 miniasm
+minigraph's
+minigraph
 minimap2's
 minimap2
 miniprot's
@@ -1748,6 +1771,7 @@ pplacer
 precompiled
 prepend
 prepending
+preprocessor
 preseq's
 preseq
 procurements
@@ -1936,6 +1960,8 @@ x264's
 x264
 x265's
 x265
+xPore's
+xPore
 xkbcommon's
 xkbcommon
 xtb's

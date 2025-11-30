@@ -1,22 +1,18 @@
 ---
 created_at: '2022-02-15T01:13:51Z'
-tags: []
-title: Checking your project's usage using nn_corehour_usage
-status: deprecated
+tags:
+  - slurm
+  - accounting
 ---
-
-
-!!! warning
-    This command is currently not working on the new HPC.
 
 To check your project's usage of Slurm-managed resources, you can use
 the command `nn_corehour_usage`. This command displays usage of cluster
 resources by a specific project, computed from the Slurm program
 `sreport`.
 
-You can also view your project's usage in compute units on my.nesi.org.nz.
+You can also view your project's usage in compute units on [my.nesi.org.nz](http://my.nesi.org.nz).
 Note that the values may differ, as the units are not the same.
-Additionally, the usage shown on my.nesi.org.nz includes other compute
+Additionally, the usage shown on [my.nesi.org.nz](http://my.nesi.org.nz) includes other compute
 and memory usage, such as that from OnDemand sessions.
 
 ## Synopsis
