@@ -52,7 +52,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.98,
+                        "hourly_average": 0.99,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -66,7 +66,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.61,
+                        "hourly_average": 0.6,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -80,7 +80,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.66,
+                        "hourly_average": 0.63,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -142,7 +142,8 @@
     "ABRicate": {
         "description": "Mass screening of contigs for antimicrobial and virulence genes",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -164,7 +165,8 @@
     "abritamr": {
         "description": "AMR gene detection pipeline that runs AMRFinderPlus on a single (or list ) of given isolates",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "abritamr-1.0.14"
@@ -255,7 +257,8 @@
     "AdapterRemoval": {
         "description": "Ssearches for and removes remnant adapter sequences\nfrom High-Throughput Sequencing  data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -321,7 +324,8 @@
     "AGAT": {
         "description": " Suite of tools to handle gene annotations in any GTF/GFF format. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "AGAT-1.0.0",
@@ -355,7 +359,8 @@
     "AGE": {
         "description": "Alignment of sequences with structural variants.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -381,7 +386,9 @@
     "AlphaFold": {
         "description": "AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -404,7 +411,10 @@
     },
     "AlphaFold2DB": {
         "description": "AlphaFold2 databases",
-        "domains": [],
+        "domains": [
+            "biology",
+            "chemistry"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
@@ -425,7 +435,10 @@
     },
     "AlphaFold3DB": {
         "description": "AlphaFold3 databases",
-        "domains": [],
+        "domains": [
+            "biology",
+            "chemistry"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
@@ -468,7 +481,8 @@
     "AMOS": {
         "description": "Collection of tools for genome assembly",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -490,7 +504,8 @@
     "AMRFinderPlus": {
         "description": "NCBI Antimicrobial Resistance Gene Finder Plus",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -562,7 +577,8 @@
     "ANIcalculator": {
         "description": "Calculate the bidirectional average nucleotide identity (gANI) and \nAlignment Fraction (AF) between two genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -584,7 +600,8 @@
     "ANNOVAR": {
         "description": " Efficient software tool to utilize update-to-date information to functionally \nannotate genetic variants detected from diverse genomes .",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -839,7 +856,8 @@
     "antiSMASH": {
         "description": "antiSMASH allows the rapid genome-wide identification, annotation and analysis of secondary\n metabolite biosynthesis gene clusters in bacterial and fungal genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "antiSMASH-6.0.1",
@@ -891,6 +909,7 @@
     "any2fasta": {
         "description": "Convert various sequence formats to FASTA",
         "domains": [
+            "biology",
             "tools"
         ],
         "extensions": [],
@@ -1126,7 +1145,8 @@
     "ARIBA": {
         "description": "Antimicrobial Resistance Identification By Assembly",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "ariba-2.14.6",
@@ -1158,6 +1178,7 @@
     "Armadillo": {
         "description": "C++ linear algebra library (matrix maths) aiming towards a good balance between speed and ease of use.",
         "domains": [
+            "mathematics",
             "numlib"
         ],
         "extensions": [],
@@ -1230,7 +1251,8 @@
     "ASAGI": {
         "description": "a pArallel Server for Adaptive GeoInformation",
         "domains": [
-            "devel"
+            "devel",
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1487,7 +1509,8 @@
     "bamUtil": {
         "description": "Repository that contains several programs\n  that perform operations on SAM/BAM files.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1509,7 +1532,8 @@
     "Bandage": {
         "description": "Bandage is a program for visualising de novo assembly graphs",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1531,7 +1555,8 @@
     "barrnap": {
         "description": "Barrnap predicts the location of ribosomal RNA genes in genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1553,6 +1578,7 @@
     "Basilisk": {
         "description": "Basilisk is a Free Software program for the solution of partial differential equations on adaptive Cartesian meshes.",
         "domains": [
+            "mathematics",
             "tools"
         ],
         "extensions": [],
@@ -1576,7 +1602,8 @@
     "BayesAss": {
         "description": "Program for inference of recent immigration rates between populations using unlinked multilocus genotypes",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1598,7 +1625,8 @@
     "BayeScan": {
         "description": "Identify candidate loci under natural selection from genetic data,\n using differences in allele frequencies between populations.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1620,7 +1648,8 @@
     "BayPass": {
         "description": "Genome-Wide Scan for Adaptive Differentiation and Association Analysis with population-specific covariables",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1701,6 +1730,29 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "BCL-Convert": {
+        "description": "Converts per cycle binary data output by Illumina sequencers containing basecall\nfiles and quality scores to per read FASTQ files",
+        "domains": [
+            "bio",
+            "biology"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://support.illumina.com/sequencing/sequencing_software/bcl-convert.html",
+        "support": "",
+        "versions": [
+            "4.2.4"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "4.2.4",
+        "default_type": "latest",
+        "last_updated": 1763348802,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/BCL-Convert/4.2.4.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "bcl2fastq2": {
         "description": "bcl2fastq Conversion Software both demultiplexes data and converts BCL files generated by\n Illumina sequencing systems to standard FASTQ file formats for downstream analysis.",
         "domains": [
@@ -1727,8 +1779,9 @@
     "Beagle": {
         "description": "Package for phasing genotypes and for imputing ungenotyped markers.",
         "domains": [
+            "base",
             "bio",
-            "base"
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1752,7 +1805,8 @@
     "beagle-lib": {
         "description": "beagle-lib is a high-performance library that can perform the core\ncalculations at the heart of most Bayesian and Maximum Likelihood\nphylogenetics packages.\n",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1882,7 +1936,8 @@
     "best": {
         "description": "Bam Error Stats Tool (best): analysis of error types in aligned reads",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1904,7 +1959,8 @@
     "BGC-Bayesian-genomic-clines": {
         "description": "Collection of code for Bayesian genomic cline analyses.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1926,7 +1982,8 @@
     "Bifrost": {
         "description": "Highly parallel construction, indexing and querying of colored and compacted de Bruijn graphs.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1948,7 +2005,8 @@
     "BiG-SCAPE": {
         "description": "Constructs sequence similarity networks of Biosynthetic Gene Clusters (BGCs) and groups them into Gene Cluster Families (GCFs).",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2004,7 +2062,8 @@
     "Bio-DB-BigFile": {
         "description": "Read BigWig and BigBed genome feature databases",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2027,7 +2086,8 @@
     "Bio-DB-HTS": {
         "description": "Read files using HTSlib including BAM/CRAM, Tabix and BCF database files",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2050,7 +2110,8 @@
     "bioawk": {
         "description": "An extension to awk, adding the support of several common biological data formats ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2072,7 +2133,8 @@
     "BioPP": {
         "description": "\nBio++ is a set of C++ libraries for Bioinformatics, including sequence\nanalysis, phylogenetics, molecular evolution and population genetics. Bio++ is\nObject Oriented and is designed to be both easy to use and computer efficient.\nBio++ intends to help programmers to write computer expensive programs, by\nproviding them a set of re-usable tools.\n",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2178,7 +2240,9 @@
     },
     "BLASTDB": {
         "description": "BLAST databases downloaded from NCBI.",
-        "domains": [],
+        "domains": [
+            "biology"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
@@ -2234,6 +2298,7 @@
     "BLIS": {
         "description": "BLIS is a portable software framework for instantiating high-performance\nBLAS-like dense linear algebra libraries.",
         "domains": [
+            "mathematics",
             "numlib"
         ],
         "extensions": [],
@@ -2258,7 +2323,8 @@
     "BOLT-LMM": {
         "description": "The BOLT-LMM algorithm computes statistics for testing association between phenotype\n and genotypes using a linear mixed model (LMM) [1]. By default, BOLT-LMM assumes a Bayesian\n mixture-of-normals prior for the random effect attributed to SNPs other than the one being tested.\n This model generalizes the standard \"infinitesimal\" mixed model used by previous mixed model\n association methods (e.g., EMMAX, FaST-LMM, GEMMA, GRAMMAR-Gamma, GCTA-LOCO), providing an\n opportunity for increased power to detect associations while controlling false\n positives. Additionally, BOLT-LMM applies algorithmic advances to compute mixed model association\n statistics much faster than eigendecomposition-based methods, both when using the Bayesian mixture\n model and when specialized to standard mixed model association.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2375,7 +2441,8 @@
     "Bracken": {
         "description": "Hghly accurate statistical method that computes the abundance of \nspecies in DNA sequences from a metagenomics sample.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2402,7 +2469,8 @@
     "BRAKER": {
         "description": "Pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET\n and AUGUSTUS in novel eukaryotic genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Sub::Quote-2.006008",
@@ -2430,7 +2498,8 @@
     "breseq": {
         "description": "breseq is a computational pipeline for the analysis of short-read re-sequencing data",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2556,7 +2625,8 @@
     "cairo": {
         "description": "Cairo is a 2D graphics library with support for multiple output devices.\n Currently supported output targets include the X Window System (via both Xlib and XCB), Quartz, Win32, image buffers,\n PostScript, PDF, and SVG file output. Experimental backends include OpenGL, BeOS, OS/2, and DirectFB",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2656,7 +2726,8 @@
     "cdbfasta": {
         "description": "Fasta file indexing and retrival tool",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2687,22 +2758,24 @@
         "support": "",
         "versions": [
             "1.9.8-gimpi-2020a",
-            "2.1.1-gimpi-2022a"
+            "2.1.1-gimpi-2022a",
+            "2.5.3-gompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.1-gimpi-2022a",
+        "default": "2.5.3-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1764276235,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/data/CDO/2.1.1-gimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CDO/2.5.3-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "CellRanger": {
         "description": "Cell Ranger is a set of analysis pipelines that process Chromium\n single-cell RNA-seq output to align reads, generate gene-cell matrices and perform\n clustering and gene expression analysis.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2729,7 +2802,8 @@
     "Centrifuge": {
         "description": "Classifier for metagenomic sequences",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2851,7 +2925,8 @@
     "CheckM": {
         "description": "CheckM provides a set of tools for assessing the quality of genomes recovered from isolates,\n single cells, or metagenomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2879,7 +2954,8 @@
     "CheckM2": {
         "description": "Rapid assessment of genome bin quality using machine learning",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2901,7 +2977,8 @@
     "CheckV": {
         "description": "Assess the quality of metagenome-assembled viral genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "checkv-1.0.1",
@@ -2932,7 +3009,8 @@
     "chewBBACA": {
         "description": "A complete suite for gene-by-gene schema creation and strain identification..",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "chewBBACA-3.1.2",
@@ -2959,7 +3037,8 @@
     "chopper": {
         "description": "Rust implementation of NanoFilt+NanoLyse",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3005,7 +3084,8 @@
     "Circlator": {
         "description": "A tool to circularize genome assemblies",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "circlator-1.5.5",
@@ -3054,7 +3134,8 @@
     "Clair3": {
         "description": "Syumphonizing pileup and full-alignment for high-performance long-read variant calling.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3122,7 +3203,8 @@
     "ClustalW2": {
         "description": "ClustalW2 is a general purpose multiple sequence alignment program for DNA or proteins.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3197,7 +3279,8 @@
     "CNVpytor": {
         "description": "Python package and command line tool for CNV/CNA analysis from depth-of-coverage by mapped read",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "CNVpytor-1.3.1",
@@ -3247,7 +3330,8 @@
     "compleasm": {
         "description": "faster and more accurate reimplementation of BUSCO.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3316,7 +3400,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.99,
+                        "hourly_average": 1.0,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
@@ -3350,7 +3434,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.72,
+                        "hourly_average": 0.75,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3377,14 +3461,14 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.91,
+                "server_uptime": 0.92,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.95,
+                        "hourly_average": 0.96,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3452,7 +3536,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 11.57,
+                        "hourly_average": 10.5,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3466,7 +3550,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 8.74,
+                        "hourly_average": 7.95,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3534,7 +3618,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 134796457.71,
+                        "hourly_average": 122366881.95,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -3558,7 +3642,8 @@
     "CONCOCT": {
         "description": "Program for unsupervised binning of metagenomic contigs by using nucleotide composition,\ncoverage data in multiple samples and linkage data from paired end reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3585,7 +3670,8 @@
     "CoverM": {
         "description": "DNA read coverage and relative abundance calculator focused on metagenomics applications",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3632,7 +3718,8 @@
     "CPMD": {
         "description": "The CPMD code is a parallelized plane wave / pseudopotential implementation of DFT,\n particularly designed for ab-initio molecular dynamics.",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3680,7 +3767,8 @@
     "CRABS": {
         "description": "Creating Reference databases for Amplicon-Based Sequencing.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3702,7 +3790,8 @@
     "CRAMINO": {
         "description": "A tool for quick quality assessment of cram and bam files, intended for long read sequencing",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3724,7 +3813,8 @@
     "CREST": {
         "description": "CREST is an utility/driver program for the xtb program. Originally it was designed\n as conformer sampling program, hence the abbreviation Conformer\u2013Rotamer Ensemble Sampling Tool,\n but now offers also some utility functions for calculations with the GFNn\u2013xTB methods. Generally\n the program functions as an IO based OMP scheduler (i.e., calculations are performed by the xtb\n program) and tool for the creation and analysation of structure ensembles.\n",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4025,7 +4115,8 @@
     "cuteSV": {
         "description": "Fast and scalable long-read-based SV detection",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "beautifulsoup4-4.12.0",
@@ -4078,7 +4169,8 @@
     "cyvcf2": {
         "description": "cython + htslib == fast VCF and BCF processing",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "cigar-0.1.3",
@@ -4109,7 +4201,8 @@
     "D-Genies": {
         "description": "D-Genies also allows to display dot plots from other aligners by uploading their PAF or MAF alignment file.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "argparse-1.4.0",
@@ -4154,7 +4247,8 @@
     "dadi": {
         "description": "Diffusion Approximation for Demographic Inference",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "appdirs-1.4.4",
@@ -4185,7 +4279,8 @@
     "DAS_Tool": {
         "description": "DAS Tool is an automated method that integrates the results of a flexible number of binning\n algorithms to calculate an optimized, non-redundant set of bins from a single assembly.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4208,7 +4303,8 @@
     "datasets": {
         "description": "Tool to gather data from across NCBI databases",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4275,7 +4371,8 @@
     "DeconSeq": {
         "description": " A tool that can be used to automatically detect and efficiently remove sequence contaminations \n                  from genomic and metagenomic datasets.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4297,7 +4394,8 @@
     "DeepLabCut": {
         "description": "Efficient method for 3D markerless pose estimation based on transfer learning with deep neural networks.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4319,7 +4417,9 @@
     },
     "DeePMD-kit": {
         "description": "",
-        "domains": [],
+        "domains": [
+            "chemistry"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://docs.deepmodeling.com/projects/deepmd/en/master/",
@@ -4337,10 +4437,33 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "DeePMD-plugin": {
+        "description": "Deep learning-based models of interatomic potential energy and force field, as a LAMMPS plugin.",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://docs.deepmodeling.com/projects/deepmd",
+        "support": "",
+        "versions": [
+            "3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2",
+        "default_type": "latest",
+        "last_updated": 1764050006,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/DeePMD-plugin/3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "deepTools": {
         "description": "deepTools is a suite of python tools particularly developed for the efficient analysis of\n high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "deepTools-3.2.1",
@@ -4367,6 +4490,7 @@
     "Delft3D": {
         "description": "Integrated simulation of sediment transport and morphology, waves, water quality and ecology.",
         "domains": [
+            "earth_science",
             "geo",
             "hydrodynamics",
             "morphodynamics",
@@ -4396,6 +4520,7 @@
     "Delft3D_FM": {
         "description": "3D modeling suite to investigate hydrodynamics, sediment transport and morphology and water quality for fluvial, estuarine and coastal environments",
         "domains": [
+            "earth_science",
             "geo"
         ],
         "extensions": [],
@@ -4421,7 +4546,8 @@
     "Delly": {
         "description": "Structural variant discovery by integrated paired-end and split-read analysis",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4487,7 +4613,8 @@
     "DFT-D4": {
         "description": "Generally Applicable Atomic-Charge Dependent London Dispersion Correction.",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4544,7 +4671,8 @@
     "Dorado": {
         "description": "High-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4638,7 +4766,8 @@
     "DRAM": {
         "description": "Tool for annotating metagenomic assembled genomes and VirSorter identified viral contigs..",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4660,7 +4789,8 @@
     "drep": {
         "description": "Rapid and accurate comparison and de-replication of microbial genomes",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "drep-3.4.2"
@@ -4685,7 +4815,8 @@
     "Dsuite": {
         "description": "Fast calculation of the ABBA-BABA statistics across many populations/species",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4733,7 +4864,8 @@
     "duphold": {
         "description": "uphold your DUP and DEL calls",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4755,7 +4887,8 @@
     "duplex-tools": {
         "description": "Range of tools to support operations on Duplex Sequencing read pairs.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "duplex_tools-0.2.20",
@@ -4787,7 +4920,8 @@
     "easi": {
         "description": "easi is a library for the Easy Initialization of models in three (or less or more) dimensional domains.",
         "domains": [
-            "devel"
+            "devel",
+            "mathematics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4868,7 +5002,8 @@
     "edlib": {
         "description": "Lightweight, super fast library for sequence alignment using edit (Levenshtein) distance.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4890,7 +5025,8 @@
     "eDNA": {
         "description": " A suite of tools to conduct metabarcoding analyses targeting any group of organisms. Includes utilities \nfor preprocessing raw data and building your own custom reference database. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "tqdm-4.59.0"
@@ -4914,7 +5050,8 @@
     "EDTA": {
         "description": "Automated whole-genome de-novo TE annotation and benchmarking the annotation performance of TE libraries.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4941,7 +5078,8 @@
     "eggnog-mapper": {
         "description": "Tool for fast functional annotation of novel sequences (genes or proteins)\n using precomputed eggNOG-based orthology assignments",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "XlsxWriter-3.1.8"
@@ -4993,7 +5131,8 @@
     "EIGENSOFT": {
         "description": "The EIGENSOFT package combines functionality from our population genetics methods (Patterson et al. \n2006)  and our EIGENSTRAT stratification correction method (Price et al. 2006). The EIGENSTRAT method uses principal \ncomponents  analysis to explicitly model ancestry differences between cases and controls along continuous axes of \nvariation;  the resulting correction is specific to a candidate marker\u2019s variation in frequency across ancestral \npopulations,  minimizing spurious associations while maximizing power to detect true associations. The EIGENSOFT \npackage has a built-in plotting script and supports multiple file formats and quantitative phenotypes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5015,6 +5154,7 @@
     "ELPA": {
         "description": "Eigenvalue SoLvers for Petaflop-Applications .",
         "domains": [
+            "astronomy",
             "math"
         ],
         "extensions": [],
@@ -5038,7 +5178,10 @@
     },
     "EMAN2": {
         "description": "Greyscale scientific image processing suite with a primary focus on processing data from transmission electron microscopes",
-        "domains": [],
+        "domains": [
+            "biology",
+            "chemistry"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://blake.bcm.edu/emanwiki/EMAN2/",
@@ -5083,6 +5226,7 @@
     "Embree": {
         "description": "\nEmbree is a collection of high-performance ray tracing kernels, developed at Intel.\nThe target users of Embree are graphics application engineers who want to improve\nthe performance of their photo-realistic rendering application by leveraging Embree's\nperformance-optimized ray tracing kernels.\n",
         "domains": [
+            "engineering",
             "vis"
         ],
         "extensions": [],
@@ -5106,7 +5250,8 @@
     "emmtyper": {
         "description": "Tool for emm-typing of Streptococcus pyogenes using a de novo or complete assembly",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "emmtyper-0.2.0",
@@ -5131,7 +5276,8 @@
     "Emu": {
         "description": " species-level taxonomic abundance for full-length 16S reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5153,6 +5299,7 @@
     "ensmallen": {
         "description": "C++ header-only library for numerical optimization",
         "domains": [
+            "mathematics",
             "numlib"
         ],
         "extensions": [],
@@ -5179,7 +5326,8 @@
     "entrez-direct": {
         "description": "an advanced method for accessing the NCBI's set of interconnected databases \nsuch as publication, sequence, structure, gene, variation, expression, etc.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5201,6 +5349,7 @@
     "ETE": {
         "description": "A Python framework for the analysis and visualization of phylogenetic trees",
         "domains": [
+            "biology",
             "vis"
         ],
         "extensions": [],
@@ -5226,7 +5375,8 @@
     "EukRep-EukCC": {
         "description": "Completeness and contamination estimator for metagenomic assembled microbial eukaryotic genomes.\nAlso condatains smetana, carveme and memote .",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5320,7 +5470,8 @@
     "ExpansionHunter": {
         "description": "Tool for estimating repeat sizes",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5367,6 +5518,7 @@
     "Faiss": {
         "description": "\nFaiss is a library for efficient similarity search and clustering of dense\n vectors. It contains algorithms that search in sets of vectors of any size, up\n to ones that possibly do not fit in RAM. It also contains supporting code for\n evaluation and parameter tuning. Faiss is written in C++ with complete\n wrappers for Python/numpy. Some of the most useful algorithms are implemented\n on the GPU. It is developed primarily at Meta's Fundamental AI Research group.\n",
         "domains": [
+            "mathematics",
             "tools"
         ],
         "extensions": [],
@@ -5389,7 +5541,8 @@
     "FastANI": {
         "description": "Tool for fast alignment-free computation of\n whole-genome Average Nucleotide Identity (ANI).",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5419,7 +5572,8 @@
     "FastME": {
         "description": "FastME: a comprehensive, accurate and fast distance-based phylogeny inference program.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5443,7 +5597,8 @@
     "fastp": {
         "description": "A tool designed to provide fast all-in-one preprocessing for FastQ files.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5467,7 +5622,8 @@
     "FastQ_Screen": {
         "description": "FastQ Screen allows you to screen a library of sequences in FastQ\n format against a set of sequence databases so you can see if the composition of the\n library matches with what you expect.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "GD::Graph-1.54",
@@ -5517,7 +5673,8 @@
     "Fastsimcoal2": {
         "description": "While preserving all the simulation flexibility of simcoal2, fastsimcoal is now implemented under a faster continous-time sequential Markovian coalescent approximation, allowing it to efficiently generate genetic diversity for different types of markers along large genomic regions, for both present or ancient samples. It includes a parameter sampler allowing its integration into Bayesian or likelihood parameter estimation procedure.\n fastsimcoal can handle very complex evolutionary scenarios including an arbitrary migration matrix between samples, historical events allowing for population resize, population fusion and fission, admixture events, changes in migration matrix, or changes in population growth rates. The time of sampling can be specified independently for each sample, allowing for serial sampling in the same or in different populations.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5663,7 +5820,8 @@
     "FFmpeg": {
         "description": "A complete, cross-platform solution to record, convert and stream audio and video.",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5687,6 +5845,7 @@
     "FFTW": {
         "description": "FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)\nin one or more dimensions, of arbitrary input size, and of both real and complex data.",
         "domains": [
+            "mathematics",
             "numlib"
         ],
         "extensions": [],
@@ -5713,6 +5872,7 @@
     "FFTW.MPI": {
         "description": "FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)\nin one or more dimensions, of arbitrary input size, and of both real and complex data.",
         "domains": [
+            "mathematics",
             "numlib"
         ],
         "extensions": [],
@@ -5736,7 +5896,8 @@
     "fgbio": {
         "description": "A set of tools to analyze genomic data with a focus on Next Generation Sequencing.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5762,7 +5923,8 @@
     "FIGARO": {
         "description": "An efficient and objective tool for optimizing microbiome rRNA gene trimming parameters.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5830,7 +5992,8 @@
     "Filtlong": {
         "description": "Tool for filtering long reads by quality.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5852,7 +6015,8 @@
     "FimTyper": {
         "description": "Identifies the FimH type in total or partial sequenced isolates of E. coli..",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Bio::SeqIO-1.7.8",
@@ -5882,7 +6046,8 @@
     "fineRADstructure": {
         "description": "A package for population structure inference from RAD-seq data",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5904,7 +6069,8 @@
     "fineSTRUCTURE": {
         "description": "Population assignment using large numbers of densely sampled genomes, including both SNP chips and sequence dat",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "paran-1.5.2",
@@ -6075,7 +6241,9 @@
     "Foldseek": {
         "description": "Foldseek enables fast and sensitive comparisons of large protein structure sets, \nsupporting monomer and multimer searches, as well as clustering.",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6171,7 +6339,8 @@
     "FragGeneScan": {
         "description": "FragGeneScan is an application for finding (fragmented) genes in short reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6222,7 +6391,8 @@
     "FreeFEM": {
         "description": "FreeFEM offers a fast interpolation algorithm and a language for the manipulation\n of data on multiple meshes.",
         "domains": [
-            "cae"
+            "cae",
+            "mathematics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6244,7 +6414,8 @@
     "FreeSurfer": {
         "description": "FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.\nFreeSurfer contains a fully automatic structural imaging stream for processing cross sectional and longitudinal data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6266,7 +6437,8 @@
     "freetype": {
         "description": "\n FreeType 2 is a software font engine that is designed to be small, efficient,\n highly customizable, and portable while capable of producing high-quality\n output (glyph images). It can be used in graphics libraries, display servers,\n font conversion tools, text image generation tools, and many other products\n as well.\n",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6550,7 +6722,8 @@
     "GD": {
         "description": "Interface to Gd Graphics Library",
         "domains": [
-            "bio"
+            "bio",
+            "visualisation"
         ],
         "extensions": [
             "ExtUtils::PkgConfig-1.16",
@@ -6656,7 +6829,8 @@
     "GEMMA": {
         "description": "Genome-wide Efficient Mixed Model Association",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6700,7 +6874,8 @@
     "GeneMark-ES": {
         "description": "Eukaryotic gene prediction suite with automatic training",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Clone::Choose-0.010",
@@ -6727,7 +6902,8 @@
     "GenomeThreader": {
         "description": "GenomeThreader is a software tool to compute gene structure predictions.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6749,7 +6925,8 @@
     "genometools": {
         "description": "GenomeTools: A Comprehensive Software Library for Efficient Processing of\n  Structured Genome Annotations.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6772,7 +6949,8 @@
     "GenoVi": {
         "description": "Generates circular genome representations for complete, draft, and multiple bacterial and archaeal genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6821,7 +6999,8 @@
     "GetOrganelle": {
         "description": "Toolkit to assemble organelle genome from genomic skimming data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6868,7 +7047,8 @@
     "gfastats": {
         "description": "single fast and exhaustive tool for summary statistics and simultaneous *fa* (fasta, fastq, gfa [.gz]) genome assembly file manipulation.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6890,7 +7070,8 @@
     "gfatools": {
         "description": "Tools for manipulating sequence graphs in the GFA and rGFA formats",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6912,7 +7093,8 @@
     "gffread": {
         "description": "GFF/GTF parsing utility providing format conversions,\nregion filtering, FASTA sequence extraction and more.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6934,7 +7116,8 @@
     "giflib": {
         "description": "giflib is a library for reading and writing gif images.\nIt is API and ABI compatible with libungif which was in wide use while\nthe LZW compression algorithm was patented.",
         "domains": [
-            "lib"
+            "lib",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7050,7 +7233,8 @@
     "GlimmerHMM": {
         "description": "Gene finder based on a Generalized Hidden Markov Model.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7067,6 +7251,34 @@
         "last_updated": 1740132629,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GlimmerHMM/3.0.4c-GCC-9.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Globus-CLI": {
+        "description": "A Command Line Wrapper over the Globus SDK for Python, which provides an interface to Globus services\n from the shell, and is suited to both interactive and simple scripting use cases.",
+        "domains": [
+            "data"
+        ],
+        "extensions": [
+            "cryptography-43.0.1",
+            "globus-cli-3.16.0",
+            "globus-sdk-3.25.0",
+            "jmespath-1.0.1",
+            "PyJWT-2.8.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://docs.globus.org/cli/",
+        "support": "",
+        "versions": [
+            "3.16.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.16.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1764034841,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Globus-CLI/3.16.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7196,7 +7408,8 @@
     "gmsh": {
         "description": "Gmsh is a 3D finite element grid generator with a build-in CAD engine and post-processor..",
         "domains": [
-            "bio"
+            "bio",
+            "engineering"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7218,7 +7431,8 @@
     "GMT": {
         "description": "GMT is an open source collection of about 80 command-line tools for manipulating\n geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting,\n etc.) and producing PostScript illustrations ranging from simple x-y plots via contour maps\n to artificially illuminated surfaces and 3D perspective views; the GMT supplements add another\n 40 more specialized and discipline-specific tools. ",
         "domains": [
-            "geo"
+            "geo",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7240,7 +7454,8 @@
     "gnuplot": {
         "description": "",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7262,7 +7477,8 @@
     "Go": {
         "description": "An open source programming language",
         "domains": [
-            "compiler"
+            "compiler",
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7285,7 +7501,9 @@
     "GOLD": {
         "description": "A genetic algorithm for docking flexible ligands into protein binding sites",
         "domains": [
-            "chem"
+            "biology",
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -7376,7 +7594,8 @@
     "GPAW": {
         "description": "GPAW is a density-functional theory (DFT) Python code based on the projector-augmented wave (PAW)\n method and the atomic simulation environment (ASE). It uses real-space uniform grids and multigrid methods or\n atom-centered basis-functions.",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7421,7 +7640,8 @@
     "Graphviz": {
         "description": "Graphviz is open source graph visualization software. Graph visualization\n is a way of representing structural information as diagrams of\n abstract graphs and networks. It has important applications in networking,\n bioinformatics,  software engineering, database and web design, machine learning,\n and in visual interfaces for other technical domains.",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7473,7 +7693,8 @@
     "GRIDSS": {
         "description": "GRIDSS is a module software suite containing tools useful for the detection of genomic rearrangements.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "argparse-2.1.3",
@@ -7566,7 +7787,8 @@
     "GST-plugins-base": {
         "description": "GStreamer plug-ins and elements.",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7588,7 +7810,8 @@
     "GStreamer": {
         "description": "library for constructing graphs of media-handling components..",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7610,7 +7833,8 @@
     "GTDB-Tk": {
         "description": "A toolkit for assigning objective taxonomic classifications to bacterial and archaeal genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "annotated-types-0.5.0",
@@ -7716,7 +7940,8 @@
     "GUSHR": {
         "description": "\nAssembly-free construction of UTRs from short read RNA-Seq data on the basis of coding sequence annotation.\n",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7761,7 +7986,8 @@
     "haplocheck": {
         "description": "Detects in-sample contamination in mtDNA or WGS sequencing studies by analyzing the mitchondrial content",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7863,7 +8089,8 @@
     "hifiasm": {
         "description": "Hifiasm: a haplotype-resolved assembler for accurate Hifi reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7919,7 +8146,8 @@
         "description": "HMMER is used for searching sequence databases for homologs of protein sequences,\n and for making protein sequence alignments. It implements methods using probabilistic models\n called profile hidden Markov models (profile HMMs).  Compared to BLAST, FASTA, and other\n sequence alignment and database search tools based on older scoring methodology,\n HMMER aims to be significantly more accurate and more able to detect remote homologs\n because of the strength of its underlying mathematical models. In the past, this strength\n came at significant computational expense, but in the new HMMER3 project, HMMER is now\n essentially as fast as BLAST.",
         "domains": [
             "bio",
-            "biology"
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7948,7 +8176,9 @@
     "HMMER2": {
         "description": "HMMER is used for searching sequence databases for homologs of protein sequences,\n and for making protein sequence alignments. It implements methods using probabilistic models\n called profile hidden Markov models (profile HMMs).  Compared to BLAST, FASTA, and other\n sequence alignment and database search tools based on older scoring methodology,\n HMMER aims to be significantly more accurate and more able to detect remote homologs\n because of the strength of its underlying mathematical models. In the past, this strength\n came at significant computational expense, but in the new HMMER3 project, HMMER is now\n essentially as fast as BLAST.",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8033,7 +8263,8 @@
     "HTSeq": {
         "description": "HTSeq is a Python library to facilitate processing and analysis\n of data from high-throughput sequencing (HTS) experiments.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8090,7 +8321,8 @@
     "Humann": {
         "description": "Pipeline for efficiently and accurately determining the coverage and abundance of microbial pathways in a community from metagenomic data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8137,7 +8369,8 @@
     "HybPiper": {
         "description": "Extracting Coding Sequence and Introns for Phylogenetics from High-Throughput Sequencing Reads Using Target Enrichment.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8230,7 +8463,8 @@
     "IDBA-UD": {
         "description": " IDBA-UD is a iterative De Bruijn Graph De Novo Assembler for Short Reads\n Sequencing data with Highly Uneven Sequencing Depth.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8303,7 +8537,8 @@
     "ImageMagick": {
         "description": "Create, edit, compose, or convert bitmap images",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8517,7 +8752,9 @@
     "InterProScan": {
         "description": "Sequence analysis application (nucleotide and protein sequences) that combines\n different protein signature recognition methods into one resource.",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8588,7 +8825,8 @@
     "ipyrad": {
         "description": "ipyrad is an interactive toolkit for assembly and analysis of restriction-site associated genomic\n data sets (e.g., RAD, ddRAD, GBS) for population genetic and phylogenetic studies.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "editables-0.3",
@@ -8617,7 +8855,8 @@
     "IQ-TREE": {
         "description": "Efficient phylogenomic software by maximum likelihood",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8799,7 +9038,8 @@
     "jcvi": {
         "description": "Collection of Python libraries to parse bioinformatics files, or perform computation related to assembly, annotation, and comparative genomics.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "deap-1.3.1",
@@ -8978,7 +9218,8 @@
     "Julia": {
         "description": "A high-level, high-performance dynamic language for technical computing.\n\nThis version was compiled from source with USE_INTEL_JITEVENTS=1 to enable profiling with VTune.",
         "domains": [
-            "lang"
+            "lang",
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9153,7 +9394,8 @@
     "jvarkit": {
         "description": "Java utilities for Bioinformatics",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9175,7 +9417,8 @@
     "Kaiju": {
         "description": "Kaiju is a program for sensitive taxonomic classification of high-throughput\nsequencing reads from metagenomic whole genome sequencing experiments",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9197,7 +9440,8 @@
     "kalign2": {
         "description": "Kalign is a fast multiple sequence alignment program for biological sequences.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9242,7 +9486,8 @@
     "KAT": {
         "description": "The K-mer Analysis Toolkit (KAT) contains a number of tools that analyse and compare K-mer spectra.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9290,7 +9535,8 @@
     "Kent_tools": {
         "description": "Collection of tools used by the UCSC genome browser.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9334,7 +9580,8 @@
     "kma": {
         "description": "KMA is a mapping method designed to map raw reads directly against redundant databases, \nin an ultra-fast manner using seed and extend.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9357,7 +9604,8 @@
     "KMC": {
         "description": "Disk-based programm for counting k-mers from (possibly gzipped) FASTQ/FASTA files.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9379,7 +9627,8 @@
     "KmerGenie": {
         "description": "KmerGenie estimates the best k-mer length for genome de novo assembly.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9401,7 +9650,8 @@
     "KorfSNAP": {
         "description": "Semi-HMM-based Nucleic Acid Parser",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9453,7 +9703,8 @@
     "KronaTools": {
         "description": "Krona Tools is a set of scripts to create Krona charts from \nseveral Bioinformatics tools as well as from text and XML files.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9508,6 +9759,7 @@
         "homepage": "http://lammps.sandia.gov/",
         "support": "",
         "versions": [
+            "22Jul2025-foss-2023a-kokkos",
             "23Jun2022-gimkl-2022a-kokkos",
             "23Jun2022-gimkl-2022a-kokkos-EChemDID",
             "31Aug2021-gimkl-2022a-kokkos-EChemDID"
@@ -9525,7 +9777,8 @@
     "LAST": {
         "description": "LAST finds similar regions between sequences.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9603,7 +9856,8 @@
     "LEfSe": {
         "description": "Determines the features most likely to explain differences between classes by coupling standard tests for statistical significance \n\t\twith additional tests encoding biological consistency and effect relevance",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "coin-1.4-2",
@@ -9716,6 +9970,49 @@
         "last_updated": 1740132637,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/libcircle/0.3-iimpi-2020a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "libcuda-stub": {
+        "description": "",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "",
+        "support": "",
+        "versions": [
+            "12.2.2",
+            "12.5.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "12.5.0",
+        "default_type": "latest",
+        "last_updated": 1763707869,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/libcuda-stub/12.5.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "libdeepmd": {
+        "description": "Deep learning-based models of interatomic potential energy and force field",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://docs.deepmodeling.com/projects/deepmd",
+        "support": "",
+        "versions": [
+            "3.1.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.1.1",
+        "default_type": "latest",
+        "last_updated": 1764049872,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/libdeepmd/3.1.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9925,6 +10222,7 @@
     "libgeotiff": {
         "description": "Library for reading and writing coordinate system information from/to GeoTIFF files",
         "domains": [
+            "earth_science",
             "lib"
         ],
         "extensions": [],
@@ -10139,7 +10437,8 @@
     "libjpeg-turbo": {
         "description": "libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG\ncompression and decompression. libjpeg is a library that implements JPEG image encoding, decoding and transcoding.\n",
         "domains": [
-            "lib"
+            "lib",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10233,7 +10532,8 @@
     "libpng": {
         "description": "libpng is the official PNG reference library",
         "domains": [
-            "lib"
+            "lib",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10330,7 +10630,8 @@
     "libStatGen": {
         "description": "Set of classes for creating statistical genetic programs.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10352,7 +10653,8 @@
     "LibTIFF": {
         "description": "tiff: Library and tools for reading and writing TIFF data files",
         "domains": [
-            "lib"
+            "lib",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10422,7 +10724,8 @@
     "libvdwxc": {
         "description": "libvdwxc is a general library for evaluating energy and potential for\nexchange-correlation (XC) functionals from the vdW-DF family that can be used with various\nof density functional theory (DFT) codes.",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10570,7 +10873,8 @@
     "Liftoff": {
         "description": "Tool that accurately maps annotations in GFF or GTF between assemblies of the same, or closely-related species.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "gffutils-0.11.1",
@@ -10643,7 +10947,8 @@
     "LINKS": {
         "description": "Alignment-free scaffolding of genome assembly drafts with long reads",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10671,7 +10976,8 @@
     "LittleCMS": {
         "description": "Color management engine.",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10769,7 +11075,8 @@
     "LongStitch": {
         "description": "A genome assembly correction and scaffolding pipeline using long reads",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10817,7 +11124,8 @@
     "LSD2": {
         "description": "Least-squares methods to estimate rates and dates from phylogenies",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10840,7 +11148,8 @@
     "LTR_retriever": {
         "description": "Highly accurate and sensitive program for identification of LTR retrotransposons; The LTR Assembly Index (LAI) is also included in this package.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10862,7 +11171,8 @@
     "LUMPY": {
         "description": "A probabilistic framework for structural variant discovery.\n",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10977,7 +11287,8 @@
     "maf_stream": {
         "description": "Collection of utilities to manipulate multiple alignments in the Multiple Alignment Format",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11025,7 +11336,8 @@
     "magma": {
         "description": "The MAGMA project aims to develop a dense linear algebra library similar to\n LAPACK but for heterogeneous/hybrid architectures, starting with current Multicore+GPU systems.",
         "domains": [
-            "math"
+            "math",
+            "mathematics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11047,7 +11359,8 @@
     "MAKER": {
         "description": "Genome annotation pipeline",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11100,7 +11413,8 @@
     "manta": {
         "description": "Manta calls structural variants (SVs) and indels from mapped paired-end sequencing reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11122,7 +11436,8 @@
     "mapDamage": {
         "description": "tracks and quantifies DNA damage patterns among ancient \nDNA sequencing reads generated by Next-Generation Sequencing platforms.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11144,7 +11459,8 @@
     "Mash": {
         "description": "Fast genome and metagenome distance estimation using MinHash",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11170,7 +11486,8 @@
     "MashMap": {
         "description": "Implements a fast and approximate algorithm for computing local alignment boundaries between long DNA sequences",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11192,7 +11509,8 @@
     "Mashtree": {
         "description": "Create a tree using Mash distances.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Bio::Sketch-0.3",
@@ -11368,7 +11686,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.69,
+                "server_uptime": 0.72,
                 "server_version": "",
                 "features": []
             },
@@ -11406,7 +11724,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.88,
+                "server_uptime": 0.89,
                 "server_version": "",
                 "features": []
             },
@@ -11425,7 +11743,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.21,
+                "server_uptime": 0.28,
                 "server_version": "",
                 "features": []
             },
@@ -11444,7 +11762,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.77,
+                "server_uptime": 0.79,
                 "server_version": "",
                 "features": []
             },
@@ -11498,7 +11816,9 @@
     "matlab-proxy": {
         "description": "Python package which enables you to launch MATLAB and access it from a web browser.",
         "domains": [
-            "math"
+            "engineering",
+            "math",
+            "mathematics"
         ],
         "extensions": [
             "aiohappyeyeballs-2.4.3",
@@ -11555,7 +11875,8 @@
     "MaxBin": {
         "description": "MaxBin is software for binning assembled metagenomic sequences based on\n an Expectation-Maximization algorithm.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "HTTP::Status-6.44",
@@ -11581,7 +11902,9 @@
     "MCL": {
         "description": "The MCL algorithm is short for the Markov Cluster Algorithm, a fast\nand scalable unsupervised cluster algorithm for graphs (also known as networks) based\non simulation of (stochastic) flow in graphs. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "mathematics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11604,7 +11927,10 @@
     },
     "MCR": {
         "description": "The Matlab Compiler Runtime is required for running compiled MATLAB executables without MATLAB itself.",
-        "domains": [],
+        "domains": [
+            "engineering",
+            "mathematics"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.mathworks.com/products/compiler/mcr.html",
@@ -11645,6 +11971,7 @@
     "mctc-lib": {
         "description": "Common tool chain for working with molecular structure data in various\napplications. This library provides a unified way to perform operations on\nmolecular structure data, like reading and writing to common geometry file\nformats.",
         "domains": [
+            "biology",
             "chem"
         ],
         "extensions": [],
@@ -11664,10 +11991,33 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "MDI": {
+        "description": "The MolSSI Driver Interface (MDI) project provides a\nstandardized API for fast, on-the-fly communication between computational\nchemistry codes. This greatly simplifies the process of implementing\nmethods that require the cooperation of multiple software packages and\nenables developers to write a single implementation that works across\nmany different codes. The API is sufficiently general to support a wide\nvariety of techniques, including QM/MM, ab initio MD, machine learning,\nadvanced sampling, and path integral MD, while also being straightforwardly\nextensible. Communication between codes is handled by the MDI Library, which\nenables tight coupling between codes using either the MPI or TCP/IP methods.\n",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/MolSSI-MDI/MDI_Library",
+        "support": "",
+        "versions": [
+            "1.4.26-foss-2023a-Python-3.11.6"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.4.26-foss-2023a-Python-3.11.6",
+        "default_type": "latest",
+        "last_updated": 1764018673,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/MDI/1.4.26-foss-2023a-Python-3.11.6.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "medaka": {
         "description": "Medaka is a tool to create a consensus sequence from nanopore sequencing data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11692,7 +12042,8 @@
     "MEGAHIT": {
         "description": "An ultra-fast single-node solution for large and complex\n metagenomics assembly via succinct de Bruijn graph",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11714,7 +12065,8 @@
     "megalodon": {
         "description": "Tool to extract high accuracy modified base and sequence variant calls from raw nanopore reads \nby anchoring the information rich basecalling neural network output to a reference genome/transcriptome.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "coloredlogs-15.0.1",
@@ -11762,7 +12114,8 @@
     "Merqury": {
         "description": "Evaluate genome assemblies with k-mers and more",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11830,7 +12183,8 @@
     "MetaBAT": {
         "description": "An efficient tool for accurately reconstructing single genomes from complex microbial communities",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11854,7 +12208,8 @@
     "METABOLIC": {
         "description": "Metabolic And Biogeochemistry anaLyses In microbes",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11876,7 +12231,8 @@
     "MetaEuk": {
         "description": "MetaEuk is a modular toolkit designed for large-scale gene discovery and annotation in eukaryotic\n metagenomic contigs.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11900,7 +12256,8 @@
     "MetaGeneAnnotator": {
         "description": "MetaGeneAnnotator is a gene-finding program for prokaryote and phage.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11922,7 +12279,8 @@
     "MetaPhlAn": {
         "description": "MetaPhlAn is a computational tool for profiling the composition of microbial\n communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing\n data (i.e. not 16S) with species-level. With the newly added StrainPhlAn module, it is now\n possible to perform accurate strain-level microbial profiling.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "bcbio-gff-0.7.1",
@@ -11951,7 +12309,8 @@
     "MetaPhlAn2": {
         "description": "MetaPhlAn is a computational tool for profiling the composition of microbial\n communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing\n data (i.e. not 16S) with species-level. With the newly added StrainPhlAn module, it is now\n possible to perform accurate strain-level microbial profiling.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11973,7 +12332,8 @@
     "MetaSV": {
         "description": "Structural-variant caller",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "MetaSV-0.5.4",
@@ -12003,7 +12363,8 @@
     "metaWRAP": {
         "description": "Flexible pipeline for genome-resolved metagenomic data analysis.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12078,7 +12439,8 @@
     "MiMiC": {
         "description": " \nMiMiC: A Framework for Multiscale Modeling in Computational Chemistry\n\nThis package includes mimicpy\n",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12100,7 +12462,8 @@
     "MiMiC-CommLib": {
         "description": " \n The MiMiC communication library (MCL) enables communication between external programs \n coupled through the MiMiC framework.\n",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12122,7 +12485,8 @@
     "miniasm": {
         "description": "Fast OLC-based de novo assembler for noisy long reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12144,7 +12508,8 @@
     "miniBUSCO": {
         "description": "faster and more accurate reimplementation of BUSCO.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12232,7 +12597,8 @@
     "minigraph": {
         "description": "Sequence-to-graph mapper and graph generator",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12254,7 +12620,8 @@
     "Minimac3": {
         "description": "Low memory and more computationally efficient implementation of the genotype imputation algorithms.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12276,7 +12643,8 @@
     "Minimac4": {
         "description": "Low memory and more computationally efficient implementation of the genotype imputation algorithms.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12298,7 +12666,8 @@
     "minimap2": {
         "description": "Minimap2 is a fast sequence mapping and alignment\nprogram that can find overlaps between long noisy reads, or map long\nreads or their assemblies to a reference genome optionally with detailed\nalignment (i.e. CIGAR). At present, it works efficiently with query\nsequences from a few kilobases to ~100 megabases in length at an error\nrate ~15%. .",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12334,7 +12703,8 @@
     "miniprot": {
         "description": "Aligns a protein sequence against a genome with affine gap penalty, splicing and frameshift..",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12356,7 +12726,8 @@
     "miRDeep2": {
         "description": " Completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12378,7 +12749,8 @@
     "MitoZ": {
         "description": "Toolkit which aims to automatically filter pair-end raw data,\n assemble genome, search for mitogenome sequences from the genome assembly result, annotate mitogenome,\n and mitogenome visualization.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12423,7 +12795,8 @@
     "MMseqs2": {
         "description": "MMseqs2: ultra fast and sensitive search and clustering suite",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12449,7 +12822,8 @@
     "modbam2bed": {
         "description": "A program to aggregate modified base counts stored in a modified-base BAM file to a bedMethyl file.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12471,7 +12845,8 @@
     "ModDotPlot": {
         "description": "Novel dot plot visualization tool used to view tandem repeats",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "dash-2.11.0",
@@ -12503,7 +12878,8 @@
     "ModelTest-NG": {
         "description": "Tool for selecting the best-fit model of evolution for DNA and protein alignments.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12525,7 +12901,8 @@
     "modkit": {
         "description": "Tool for working with modified bases from Oxford Nanopore",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12595,7 +12972,8 @@
     "Monocle3": {
         "description": " An analysis toolkit for single-cell RNA-seq. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "furrr-0.2.2",
@@ -12649,7 +13027,8 @@
     "mosdepth": {
         "description": "Fast BAM/CRAM depth calculation for WGS, exome, or targeted sequencing",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12698,7 +13077,9 @@
     },
     "mpcci": {
         "description": "MpCCI is a vendor neutral and application independent interface for co-simulation. MpCCI offers advanced and proven features for multiphysics modelling.",
-        "domains": [],
+        "domains": [
+            "physics"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.mpcci.de/",
@@ -12975,7 +13356,8 @@
     "NanoComp": {
         "description": "Comparing runs of Oxford Nanopore sequencing data and alignments",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "joypy-0.2.6",
@@ -13000,7 +13382,8 @@
     "nanofilt": {
         "description": "Filtering and trimming of long read sequencing data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13022,7 +13405,8 @@
     "nanoget": {
         "description": "Functions to extract information from Oxford Nanopore sequencing data and alignments",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13045,7 +13429,8 @@
     "NanoLyse": {
         "description": "Removing reads mapping to the lambda genome.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "mappy-2.22",
@@ -13071,7 +13456,8 @@
     "nanomath": {
         "description": "A few simple math function for other Oxford Nanopore processing scripts",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "nanomath-1.2.1",
@@ -13102,7 +13488,8 @@
     "NanoPlot": {
         "description": "Plotting suite for Oxford Nanopore sequencing data and alignments.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "kaleido-0.2.1",
@@ -13131,7 +13518,8 @@
     "nanopolish": {
         "description": "Software package for signal-level analysis of Oxford Nanopore sequencing data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13154,7 +13542,8 @@
     "nanoQC": {
         "description": "Create fastQC-like plots for Oxford Nanopore sequencing data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "nanoQC-0.9.4"
@@ -13183,7 +13572,8 @@
     "NanoStat": {
         "description": "Tool for phasing genomic variants using DNA sequencing reads, also called read-based phasing or haplotype assembly.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13359,7 +13749,7 @@
         "force_show": "False"
     },
     "ncview": {
-        "description": "Visual browser for netCDF format files.",
+        "description": "Ncview is a visual browser for netCDF format files.\nTypically you would use ncview to get a quick and easy, push-button\nlook at your netCDF files. You can view simple movies of the data,\nview along various dimensions, take a look at the actual data values,\nchange color maps, invert the data, etc.",
         "domains": [
             "vis"
         ],
@@ -13368,16 +13758,17 @@
         "homepage": "http://meteora.ucsd.edu/~pierce/ncview_home_page.html",
         "support": "",
         "versions": [
+            "2.1.11-gompi-2023a",
             "2.1.7-gimkl-2018b",
             "2.1.7-gimpi-2020a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.7-gimpi-2020a",
+        "default": "2.1.11-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1764190703,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/ncview/2.1.7-gimpi-2020a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ncview/2.1.11-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13431,7 +13822,8 @@
     "NECAT": {
         "description": "Rrror correction and de-novo assembly tool for Nanopore long noisy reads",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13556,7 +13948,8 @@
     "NewHybrids": {
         "description": "This implements a Gibbs sampler to estimate the posterior probability that genetically sampled\nindividuals fall into each of a set of user-defined hybrid categories.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13578,8 +13971,9 @@
     "Newton-X": {
         "description": "NX is a general-purpose program package for simulating the dynamics of electronically excited molecules and molecular assemblies.",
         "domains": [
-            "phys",
-            "chem"
+            "chem",
+            "chemistry",
+            "phys"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13635,7 +14029,8 @@
     "NextPolish2": {
         "description": "a fast and efficient genome polishing tool for long-read assembly",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Paralleltask-0.2.3"
@@ -13684,7 +14079,8 @@
     "Nim": {
         "description": "Nim is a systems and applications programming language.",
         "domains": [
-            "lang"
+            "lang",
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13947,7 +14343,8 @@
     "nullarbor": {
         "description": "Reads to report pipeline for bacterial isolate NGS data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14103,7 +14500,8 @@
     "ont-guppy-gpu": {
         "description": "Data processing toolkit that contains the Oxford Nanopore Technologies' basecalling algorithms,\nand several bioinformatic post-processing features",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14329,7 +14727,7 @@
         "network_licences": [],
         "default": "4.1.5-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1746708561,
+        "last_updated": 1763521863,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/mpi/OpenMPI/4.1.5-GCC-12.3.0.lua",
         "force_hide": "False",
@@ -14367,7 +14765,9 @@
     "OpenSeesPy": {
         "description": "Wraps OpenSees for Python.  Load an OpenSees module as well.",
         "domains": [
-            "cae"
+            "cae",
+            "earth_science",
+            "engineering"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14390,6 +14790,7 @@
     "OpenSlide": {
         "description": "OpenSlide is a C library that provides a simple interface to\nread whole-slide images (also known as virtual slides).",
         "domains": [
+            "biology",
             "vis"
         ],
         "extensions": [],
@@ -14464,7 +14865,8 @@
     "OrthoFinder": {
         "description": "OrthoFinder is a fast, accurate and comprehensive platform for comparative genomics",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14558,7 +14960,8 @@
     "padloc": {
         "description": "Prokaryotic Antiviral Defence LOCator",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14581,7 +14984,8 @@
     "pairtools": {
         "description": "CLI tools to process mapped Hi-C data",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "bioframe-0.4.1",
@@ -14606,7 +15010,8 @@
     "PALEOMIX": {
         "description": "pipelines and tools designed to aid the rapid processing of High-Throughput Sequencing (HTS) data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14628,7 +15033,8 @@
     "PAML": {
         "description": "PAML is a package of programs for phylogenetic \n analyses of DNA or protein sequences using maximum likelihood.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14651,7 +15057,8 @@
     "panaroo": {
         "description": "A pangenome analysis pipeline.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "argcomplete-2.0.0",
@@ -14795,7 +15202,8 @@
     "parallel-fastq-dump": {
         "description": "parallel fastq-dump wrapper",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14915,7 +15323,8 @@
     "pauvre": {
         "description": "Tools for plotting Oxford Nanopore and other long-read data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "pauvre-0.2.3"
@@ -14990,7 +15399,9 @@
     "PDAL": {
         "description": "PDAL is Point Data Abstraction Library. It is a C/C++ open source library and applications for\n translating and processing point cloud data. It is not limited to LiDAR data, although the focus and impetus\n for many of the tools in the library have their origins in LiDAR.",
         "domains": [
-            "data"
+            "climate_science",
+            "data",
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15012,7 +15423,8 @@
     "PEAR": {
         "description": "Memory-efficient,fully parallelized and highly accurate pair-end read merger.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15346,7 +15758,8 @@
     "pggb": {
         "description": "PanGenome Graph Builder(pggb)",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15368,7 +15781,8 @@
     "pgge": {
         "description": "pangenome graph evaluator",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15390,7 +15804,8 @@
     "phonopy": {
         "description": "Phonopy is an open source package of phonon calculations based on the supercell approach.",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [
             "hatchling-1.25.0",
@@ -15421,7 +15836,8 @@
     "PhyloPhlAn": {
         "description": "Integrated pipeline for large-scale phylogenetic profiling of genomes and metagenomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15467,7 +15883,8 @@
     "phyx": {
         "description": "phyx performs phylogenetics analyses on trees and sequences.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15567,7 +15984,8 @@
     "pixman": {
         "description": "Pixman is a low-level software library for pixel manipulation, providing features such as image\ncompositing and trapezoid rasterization. Important users of pixman are the cairo graphics library and the X server.",
         "domains": [
-            "vis"
+            "vis",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15670,7 +16088,8 @@
     "pod5": {
         "description": "File format for storing nanopore dna data in an easily accessible way.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "iso8601-2.1.0",
@@ -15727,7 +16146,8 @@
     "Porechop_ABI": {
         "description": "Extension of Porechop whose purpose is to process adapter sequences in ONT reads",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15797,7 +16217,8 @@
     "PRANK": {
         "description": " Probabilistic multiple alignment program for DNA, codon and amino-acid sequences. .",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15820,7 +16241,8 @@
     "preseq": {
         "description": "Software for predicting library complexity and genome coverage in high-throughput sequencing.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15842,7 +16264,8 @@
     "Prodigal": {
         "description": "Prodigal (Prokaryotic Dynamic Programming Genefinding Algorithm) \n   is a microbial (bacterial and archaeal) gene finding program developed \n   at Oak Ridge National Laboratory and the University of Tennessee.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15864,7 +16287,8 @@
     "prodigal": {
         "description": "Prodigal (Prokaryotic Dynamic Programming Genefinding Algorithm) \n   is a microbial (bacterial and archaeal) gene finding program developed \n   at Oak Ridge National Laboratory and the University of Tennessee.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15889,7 +16313,8 @@
     "prodigal-gv": {
         "description": "A fork of Prodigal meant to improve gene calling \nfor giant viruses and viruses that use alternative genetic codes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15911,6 +16336,7 @@
     "PROJ": {
         "description": "Program proj is a standard Unix filter function which converts \ngeographic longitude and latitude coordinates into cartesian coordinates",
         "domains": [
+            "earth_science",
             "lib"
         ],
         "extensions": [],
@@ -15939,8 +16365,9 @@
     "prokka": {
         "description": "Prokka is a software tool for the rapid annotation of prokaryotic genomes.",
         "domains": [
+            "base",
             "bio",
-            "base"
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15993,7 +16420,8 @@
     "ProtHint": {
         "description": "Pipeline for predicting and scoring hints (in the form of introns, start and\n stop codons) in the genome of interest by mapping and spliced aligning predicted genes to a database of\n reference protein sequences.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "File::HomeDir-1.006",
@@ -16052,7 +16480,8 @@
     "psmc": {
         "description": "Infers population size history from a diploid sequence using the PSMC model.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -16124,7 +16553,8 @@
     "pullseq": {
         "description": "Utility program for extracting sequences from a fasta/fastq file",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -16169,7 +16599,8 @@
     "purge_dups": {
         "description": "purge haplotigs and overlaps in an assembly based on read depth",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "runner-20191220"
@@ -16193,7 +16624,8 @@
     "purge_haplotigs": {
         "description": "Pipeline to help with curating heterozygous diploid genome assemblies",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Time::Piece-1.3401"
@@ -16239,7 +16671,8 @@
     "pyani": {
         "description": "Whole-genome classification using Average Nucleotide Identity",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "namedlist-1.8",
@@ -16265,7 +16698,8 @@
     "pycoQC": {
         "description": "Computes metrics and generates interactive QC plots for Oxford Nanopore technologies sequencing data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "pycoQC-2.5.2",
@@ -16290,7 +16724,9 @@
     "pymol-open-source": {
         "description": "PyMOL (open source version) molecular visualization system.",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry",
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "",
@@ -16558,7 +16994,8 @@
     "qcat": {
         "description": "Command-line tool for demultiplexing Oxford Nanopore reads from FASTQ files",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "parasail-1.2.2"
@@ -16710,7 +17147,8 @@
     "QuickTree": {
         "description": "Efficient implementation of the Neighbor-Joining algorithm, capable of reconstructing phylogenies from huge alignments .",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17170,7 +17608,8 @@
     "R-bundle-Bioconductor": {
         "description": "Bioconductor provides tools for the analysis and comprehension\n of high-throughput genomic data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "adegenet-2.1.7",
@@ -17587,6 +18026,7 @@
     "R-Geo": {
         "description": "R packages for Geometric and Geospatial data which depend \non GEOS and/or GDAL.",
         "domains": [
+            "earth_science",
             "geo"
         ],
         "extensions": [
@@ -17635,7 +18075,8 @@
     "Racon": {
         "description": "Ultrafast consensus module for raw de novo genome assembly of long uncorrected reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17659,7 +18100,8 @@
     "Ragout": {
         "description": "Tool for chromosome assembly using multiple references.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17685,7 +18127,9 @@
     "randfold": {
         "description": "Minimum free energy of folding randomization test software",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17729,7 +18173,8 @@
     "RapidNJ": {
         "description": "An algorithmic engineered implementation of canonical neighbour-joining.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17751,7 +18196,8 @@
     "rasusa": {
         "description": "Randomly subsample sequencing reads to a specified coverage.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17773,7 +18219,8 @@
     "Ratatosk": {
         "description": "Phased hybrid error correction of long reads using colored de Bruijn graphs",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17795,7 +18242,8 @@
     "Raven": {
         "description": "De novo genome assembler for long uncorrected reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17842,7 +18290,8 @@
     "RAxML-NG": {
         "description": "RAxML-NG is a phylogenetic tree inference tool which uses maximum-likelihood (ML)\n optimality criterion. Its search heuristic is based on iteratively performing a series of Subtree\n Pruning and Regrafting (SPR) moves, which allows to quickly navigate to the best-known ML tree.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17888,7 +18337,8 @@
     "Rcorrector": {
         "description": "kmer-based error correction method for RNA-seq data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17910,7 +18360,8 @@
     "RDP-Classifier": {
         "description": "The RDP Classifier is a naive Bayesian classifier that can rapidly and accurately provides taxonomic\n assignments from domain to genus, with confidence estimates for each assignment.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -18076,7 +18527,8 @@
     "RepeatModeler": {
         "description": "De novo transposable element (TE) family identification and modeling package. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Devel::Size-0.83"
@@ -18125,7 +18577,8 @@
     "REViewer": {
         "description": "Tool for visualizing alignments of reads in regions containing tandem repeats",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -18147,7 +18600,9 @@
     "RFdiffusion": {
         "description": "Structure generation, with or without conditional information (a motif, target etc) It can perform a whole range of protein design challenges as we have outlined \nin the RFdiffusion paper.",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [
             "antlr4-python3-runtime-4.9.3",
@@ -18196,7 +18651,8 @@
     "RFPlasmid": {
         "description": "Predicting plasmid contigs from assemblies",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "RFPlasmid-0.0.18"
@@ -18220,6 +18676,7 @@
     "Riskscape": {
         "description": "RiskScape is an open-source spatial data processing application used for multi-hazard risk analysis. RiskScape is highly customisable, letting modellers tailor the risk analysis to suit the problem domain and input data being modelled.",
         "domains": [
+            "earth_science",
             "geo"
         ],
         "extensions": [],
@@ -18289,7 +18746,8 @@
     "RNAmmer": {
         "description": "consistent and rapid annotation of ribosomal RNA genes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -18312,7 +18770,8 @@
     "rnaQUAST": {
         "description": "Tool for evaluating RNA-Seq assemblies using reference genome and gene database",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "argcomplete-1.12.2",
@@ -18340,7 +18799,8 @@
     "Roary": {
         "description": "Rapid large-scale prokaryote pan genome analysis",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             " Digest::MD5::File-0.08",
@@ -18400,7 +18860,9 @@
     "Rosetta": {
         "description": "Rosetta is the premier software suite for modeling macromolecular structures. As a flexible,\nmulti-purpose application, it includes tools for structure prediction, design, and remodeling of proteins and\nnucleic acids.",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -18563,7 +19025,8 @@
     "Rust": {
         "description": "Systems programming language that runs blazingly fast, prevents segfaults,\n and guarantees thread safety.",
         "domains": [
-            "lang"
+            "lang",
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
@@ -18612,7 +19075,8 @@
     "SAGE": {
         "description": "Ppackage containing programs for use in the genetic analysis of\nfamily, pedigree and individual data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -18781,7 +19245,8 @@
     "sc-RNA": {
         "description": "Bioconductor bundle for single-cell RNA-Seq Data analysis",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "BiocParallel-1.34.2",
@@ -18948,7 +19413,8 @@
     "screen_assembly": {
         "description": "Pipeline that screens for presence of genes of interest (GOI) in bacterial assemblies.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "screen_assembly-1.2.8"
@@ -18994,6 +19460,7 @@
     "SeisSol": {
         "description": "SeisSol is a software package for simulating wave propagation and dynamic rupture based on the arbitrary high-order accurate derivative discontinuous Galerkin method (ADER-DG).",
         "domains": [
+            "earth_science",
             "geo"
         ],
         "extensions": [],
@@ -19016,7 +19483,8 @@
     "SEPP": {
         "description": "SATe-enabled Phylogenetic Placement. Phylogenetic placement of short reads into reference alignments and trees.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19041,7 +19509,8 @@
     "SeqAn": {
         "description": "\n SeqAn is an open source C++ library of efficient algorithms and data structures\n for the analysis of sequences with the focus on biological data.\n",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19063,7 +19532,8 @@
     "SeqAn3": {
         "description": "C++ library of efficient algorithms and data structures for the \n analysis of sequences with the focus on biological data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19090,7 +19560,8 @@
     "SeqKit": {
         "description": "Ultrafast toolkit for FASTA/Q file manipulation",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19165,7 +19636,8 @@
     "SHAPEIT4": {
         "description": "Estimation of haplotypes (aka phasing) \nfor SNP array and high coverage sequencing data.\n",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19209,7 +19681,8 @@
     "SiBELia": {
         "description": "A comparative genomics tool for analysing genomic variations that correlate with pathogens, or  \n  microorganisms adapt in different environments.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19261,7 +19734,8 @@
     "SignalP": {
         "description": "SignalP predicts the presence  and  location of signal peptide  cleavage sites\nin  amino acid  sequences  from  different organisms",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "torch-1.12.1"
@@ -19286,7 +19760,8 @@
     "simuG": {
         "description": "A general-purpose genome simulator",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19352,7 +19827,8 @@
     "sismonr": {
         "description": "Simulation of In Silico Multi-Omic Networks R package.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "corrplot-0.90",
@@ -19394,7 +19870,8 @@
     "skani": {
         "description": "accurate, fast nucleotide identity calculation for MAGs, genomes, and databases",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19416,7 +19893,8 @@
     "SKESA": {
         "description": "SKESA is a de-novo sequence read assembler for cultured single isolate genomes based on DeBruijn graphs.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19483,7 +19961,8 @@
     "smoove": {
         "description": "simplifies and speeds calling and genotyping SVs for short reads.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19505,7 +19984,8 @@
     "SMRT-Link": {
         "description": "PacBio\u2019s open-source software suite is designed for use with Single Molecule, \n Real-Time (SMRT) Sequencing data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19603,7 +20083,8 @@
     "Sniffles": {
         "description": "A fast structural variant caller for long-read sequencing.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Sniffles-2.6.3"
@@ -19629,7 +20110,8 @@
     "snp-sites": {
         "description": "Finds SNP sites from a multi-FASTA alignment file.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19675,7 +20157,8 @@
     "SNVoter-NanoMethPhase": {
         "description": "SNVoter - A top up tool to enhance SNV calling from Nanopore sequencing data & \nNanoMethPhase - Phase long reads and CpG methylations from Oxford Nanopore Technologies.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19697,7 +20180,8 @@
     "somalier": {
         "description": "extract informative sites, evaluate relatedness, and \nperform quality-control on BAM/CRAM/BCF/VCF/GVCF",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19818,7 +20302,8 @@
     "spaln": {
         "description": "Stand-alone program that maps and aligns a set of cDNA or protein sequences onto a whole genomic sequence in a single job.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19931,7 +20416,8 @@
     "spoa": {
         "description": "c++ implementation of the partial order alignment (POA) algorithm\n which is used to generate consensus sequences",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19984,7 +20470,8 @@
     "SqueezeMeta": {
         "description": "Fully automated metagenomics pipeline, from reads to bins.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20051,7 +20538,8 @@
     "SSAHA2": {
         "description": "Pairwise sequence alignment program designed for the efficient mapping of sequencing \n reads onto genomic reference sequences.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20141,7 +20629,8 @@
     "StringTie": {
         "description": "StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20167,7 +20656,8 @@
     "Structure": {
         "description": "The program structure is a free software package for using multi-locus genotype data to investigate\n population structure.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20363,7 +20853,8 @@
     "SURVIVOR": {
         "description": "Tool set for simulating/evaluating SVs, merging and comparing SVs within and among samples,\n and includes various methods to reformat or summarize SVs.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20458,7 +20949,8 @@
     "tabix": {
         "description": " Generic indexer for TAB-delimited genome position files ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20481,7 +20973,8 @@
     "tabixpp": {
         "description": "C++ wrapper to tabix indexer",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20531,7 +21024,8 @@
     "tbl2asn": {
         "description": "Command-line program that automates the creation of\n sequence records for submission to GenBank",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20670,7 +21164,8 @@
     "TEtranscripts": {
         "description": "Takes RNA-seq (and similar data) and annotates reads\nto both genes & transposable elements.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "TEtranscripts-2.2.3"
@@ -20719,7 +21214,9 @@
     "TMHMM": {
         "description": "Prediction of transmembrane helices in proteins",
         "domains": [
-            "bio"
+            "bio",
+            "biology",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20763,7 +21260,8 @@
     "TOGA": {
         "description": "Implements a novel machine learning based paradigm to infer orthologous \ngenes between related species and to accurately distinguish orthologs from paralogs or processed pseudogenes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "joblib-1.2.0",
@@ -20789,6 +21287,7 @@
     "tomo": {
         "description": "This code computes 2D Travel Time Tomography using the Reversible Jump\nalgorithm with a Voronoi cell parameterisation.",
         "domains": [
+            "earth_science",
             "math"
         ],
         "extensions": [],
@@ -20811,7 +21310,8 @@
     "TransDecoder": {
         "description": "TransDecoder identifies candidate coding regions within transcript sequences.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20834,7 +21334,8 @@
     "TreeMix": {
         "description": "TreeMix is a method for inferring the patterns of population splits and mixtures in the history of a\n set of populations.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20880,7 +21381,8 @@
     "trimAl": {
         "description": "Tool for automated alignment trimming in large-scale phylogenetic analyses",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20928,7 +21430,8 @@
     "Trimmomatic": {
         "description": "Trimmomatic performs a variety of useful trimming tasks for illumina \n paired-end and single ended data.The selection of trimming steps and their associated \n parameters are supplied on the command line. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20986,7 +21489,8 @@
     "Trinotate": {
         "description": "C++ library of efficient algorithms and data structures for the\n analysis of sequences with the focus on biological data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "HTML::Template-2.97"
@@ -21012,7 +21516,8 @@
     "tRNAscan-SE": {
         "description": "Transfer RNA detection",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21034,7 +21539,8 @@
     "Trycycler": {
         "description": "Tool for generating consensus long-read assemblies for bacterial genomes.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "edlib-1.3.9"
@@ -21060,7 +21566,8 @@
     "TSEBRA": {
         "description": "Transcript Selector for BRAKER",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21109,7 +21616,8 @@
     "TURBOMOLE": {
         "description": "Program Package For Electronic Structure Calculations.",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21153,7 +21661,8 @@
     "TWL-NINJA": {
         "description": "Nearly Infinite Neighbor Joining Application.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21296,7 +21805,8 @@
     "Unicycler": {
         "description": " Assembly pipeline for bacterial genomes. It can assemble Illumina-only read sets\n where it functions as a SPAdes-optimiser. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21323,7 +21833,8 @@
     "unimap": {
         "description": "Fork of minimap2 optimized for assembly-to-reference\nalignment.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21371,7 +21882,8 @@
     "USEARCH": {
         "description": "USEARCH is a unique sequence analysis tool which offers search and clustering algorithms that are\n often orders of magnitude faster than BLAST.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21448,7 +21960,8 @@
     "VarScan": {
         "description": "Variant calling and somatic mutation/CNV detection for next-generation sequencing data",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21515,6 +22028,7 @@
     "VBZ-Compression": {
         "description": "VBZ compression HDF5 plugin for nanopolish",
         "domains": [
+            "biology",
             "lib"
         ],
         "extensions": [],
@@ -21537,7 +22051,8 @@
     "VCF-kit": {
         "description": "VCF-kit is a command-line based collection of utilities for performing analysis on\n Variant Call Format (VCF) files.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "awesome-slugify-1.6.5",
@@ -21569,7 +22084,8 @@
     "vcflib": {
         "description": "Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21638,7 +22154,8 @@
     "VelvetOptimiser": {
         "description": "Perl script for optimising the three primary parameter options of the Velvet de novo sequence assembler.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21660,7 +22177,8 @@
     "VEP": {
         "description": "Variant Effect Predictor (VEP) determines the effect of your\n variants (SNPs, insertions, deletions, CNVs or structural variants) on genes,\n transcripts, and protein sequence, as well as regulatory regions.\n Includes EnsEMBL-XS, which provides pre-compiled replacements for frequently\n used routines in VEP.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "Bio::EnsEMBL::XS-2.3.2"
@@ -21687,7 +22205,8 @@
     "verkko": {
         "description": "Hybrid genome assembly pipeline developed for telomere-to-telomere assembly of PacBio HiFi and Oxford Nanopore reads",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21711,7 +22230,8 @@
     "vg": {
         "description": "variation graph data structures, interchange formats, alignment, genotyping, and variant calling methods",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21733,7 +22253,8 @@
     "VIBRANT": {
         "description": "Virus Identification By iteRative ANnoTation",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "scikit-learn-0.21.3"
@@ -21802,7 +22323,8 @@
     "VirHostMatcher": {
         "description": "Tools for computing various oligonucleotide frequency (ONF) based distance/dissimialrity measures.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21824,7 +22346,8 @@
     "VirSorter": {
         "description": "VirSorter: mining viral signal from microbial genomic data.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "bz2file-0.98",
@@ -21857,7 +22380,9 @@
     "VMD": {
         "description": "VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular\n systems using 3-D graphics and built-in scripting.",
         "domains": [
-            "chem"
+            "biology",
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21873,6 +22398,28 @@
         "last_updated": 1740132635,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/VMD/1.9.3-gimkl-2020a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Voro++": {
+        "description": "Voro++ is a software library for carrying out three-dimensional computations of the Voronoi\ntessellation. A distinguishing feature of the Voro++ library is that it carries out cell-based calculations,\ncomputing the Voronoi cell for each particle individually. It is particularly well-suited for applications that\nrely on cell-based statistics, where features of Voronoi cells (eg. volume, centroid, number of faces) can be used\nto analyze a system of particles.",
+        "domains": [
+            "math"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "http://math.lbl.gov/voro++/",
+        "support": "",
+        "versions": [
+            "0.4.6-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.4.6-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1764018411,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/math/Voro++/0.4.6-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21928,7 +22475,8 @@
     "WAAFLE": {
         "description": "Workflow to Annotate Assemblies and Find LGT Events.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21950,6 +22498,7 @@
     "wannier90": {
         "description": "Wannier90 is an open-source code for generating maximally-localized Wannier functions and using them to compute advanced electronic properties of materials with high efficiency and accuracy.",
         "domains": [
+            "biology",
             "chem"
         ],
         "extensions": [],
@@ -21972,7 +22521,8 @@
     "wgsim": {
         "description": "Wgsim is a small tool for simulating sequence reads from a reference genome.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21994,7 +22544,8 @@
     "WhatsHap": {
         "description": "Tool for phasing genomic variants using DNA sequencing reads, also called read-based phasing or haplotype assembly.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [
             "isal-1.1.0",
@@ -22043,7 +22594,8 @@
     "Winnowmap": {
         "description": "Winnowmap is a long-read mapping algorithm, and a result of our exploration\n into superior minimizer sampling techniques.",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22088,7 +22640,8 @@
     "wtdbg": {
         "description": "de novo sequence assembler for long noisy reads produced by PacBio or Oxford Nanopore Technologies. ",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22224,7 +22777,8 @@
     "xPore": {
         "description": "A Python package for identification and quantification of differential RNA modifications from direct RNA sequencing",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22246,7 +22800,8 @@
     "xtb": {
         "description": " xtb - An extended tight-binding semi-empirical program package. ",
         "domains": [
-            "chem"
+            "chem",
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22295,7 +22850,8 @@
     "yacrd": {
         "description": "Chimeric Read Detector for long reads",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22343,7 +22899,8 @@
     "yak": {
         "description": "Yet another k-mer analyzer",
         "domains": [
-            "bio"
+            "bio",
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",

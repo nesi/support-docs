@@ -1,7 +1,6 @@
 ---
 created_at: '2015-10-12T00:28:38Z'
 tags:
-- mahuika
 - engineering
 - gpu
 - mpi
@@ -183,9 +182,7 @@ source code.
 Extra compiler options can be set in your local `abaqus_v6.env` [file](#environment-file).
 
 The default compile commands are for `imkl`, other compilers can be
-loaded with `module load`, you may have to change the [compile
-commands](../../Scientific_Computing/HPC_Software_Environment/Compiling_software_on_Mahuika.md)
-in your local `.env` file.
+loaded with `module load`, you may have to change the compile commands in your local `.env` file.
 
 ## Environment file
 
