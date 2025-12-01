@@ -34,10 +34,19 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 !!! tip
      At any time you can check for and delete files older than 90 days (replace <project code> with the project code of interest, e.g. “nesi99999”):
 
-    - To list all files (and their owners) not accessed within 90 days, run the following command (you may want to redirect the output to a file): 
+    - (FAST) To list all files that will be deleted, you can unzip and read the list of files that have been marked for deletion:
+    ```bash
+    export $PROJECTNAME=Your_Project_Name
+    gzip -d /search/autocleaner/filelists/$PROJECTNAME.gz > doomed_list_$PROJECTNAME.txt
+    nano doomed_list_$PROJECTNAME.txt
+    ```
+    
+    - (FAST) To search through for files in PROJECTNAME.gz that contain the keyword KEYWORD: ```zgrep KEYWORD /search/autocleaner/filelists/PROJECTNAME.gz```
+
+    - (SLOW) To list all files (and their owners) not accessed within 90 days, run the following command (you may want to redirect the output to a file): 
     ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'```
 
-    - To direct this to a file: 
+    - (SLOW) To direct this to a file: 
     ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n' > files_that_will_be_deleted.txt```
 
     - To delete those files, run this command:
