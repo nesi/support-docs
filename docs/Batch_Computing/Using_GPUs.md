@@ -28,7 +28,7 @@ the following option in the header of your submission script:
 You can specify the type and number of GPU you need using the following
 syntax
 
-``` sl
+```sl
 #SBATCH --gpus-per-node=<gpu_type>:<gpu_number>
 ```
 
@@ -81,7 +81,7 @@ It is recommended to specify the exact GPU type required; otherwise, the job may
 </table>
 
 You can also use the `--gpus-per-node`option in
-[Slurm interactive sessions](./Slurm_Interactive_Sessions.md),
+[Slurm interactive sessions](../Interactive_Computing/Slurm_Interactive_Sessions.md),
 with the `srun` and `salloc` commands. For example:
 
 ``` sh
@@ -111,7 +111,7 @@ duration of 30 minutes.
 ## Load CUDA and cuDNN modules
 
 To use an Nvidia GPU card with your application, you need to load the
-driver and the CUDA toolkit via the [environment modules](../../Software/Available_Applications/index.md)
+driver and the CUDA toolkit via the [environment modules](../Software/Available_Applications/index.md)
 mechanism:
 
 ``` sh
@@ -232,7 +232,7 @@ applications:
 - [ABAQUS](../Software/Available_Applications/ABAQUS.md#examples)
 - [GROMACS](../Software/Available_Applications/GROMACS.md)
 - [Lambda Stack](../Software/Available_Applications/Lambda_Stack.md)
-- [Matlab](../../Software/Available_Applications/MATLAB.md#using-gpus)
+- [Matlab](../Software/Available_Applications/MATLAB.md#using-gpus)
 - [TensorFlow on GPUs](../Software/Available_Applications/TensorFlow_on_GPUs.md)
 
 And programming toolkits:

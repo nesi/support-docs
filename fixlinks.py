@@ -1,6 +1,4 @@
-# python
-
-
+# Tries to replace all internal broken links with less broken ones.
 # Note: Partially AI generated. Not to be trusted.
 import argparse, os, re, sys
 from pathlib import Path
@@ -11,23 +9,18 @@ LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 def all_md_files(root):
     return [p for p in root.rglob("*.md")]
 
-def resolve_target(base_md, target):
+def resolve_path(base_md, target):
     # separate anchor
     target_path, *anchor = target.split('#',1)
     anchor = ('#' + anchor[0]) if anchor else ''
     if not target_path:
-        return target, False  # anchor-only
+        return False  # anchor-only
     # if target is directory index usually index.md?
     cand = (base_md.parent / target_path).resolve()
     # try direct existence
     if cand.exists():
-        return os.path.relpath(cand, base_md.parent) + anchor, True
-    # try adding .md
-    if not target_path.endswith(".md"):
-        cand2 = (base_md.parent / (target_path + ".md")).resolve()
-        if cand2.exists():
-            return os.path.relpath(cand2, base_md.parent) + anchor, True
-    return None, False
+        return True
+    return False
 
 def find_candidates(basename, root):
     return [p for p in root.rglob("*.md") if p.name == basename]
@@ -39,17 +32,10 @@ def main(dry_run):
         text = md.read_text(encoding="utf8")
         changed = text
         for m in LINK_RE.finditer(text):
-            link_text = m.group(1)
             target = m.group(2).strip()
-            if target.startswith(("http://","https://","mailto:")): 
+            if target.startswith(("http://","https://","mailto:","/")): 
                 continue
-            if target.startswith("/"): 
-                # absolute path inside site — leave for manual review
-                continue
-            # try to resolve relative target
-            newrel, ok = resolve_target(md, target)
-            if ok:
-                # target exists as given relative path - nothing to do
+            if resolve_path(md, target):
                 continue
             # not found: try to find file by basename
             base = os.path.basename(target.split('#',1)[0])
@@ -71,10 +57,6 @@ def main(dry_run):
             else:
                 print("NO CANDIDATE:", md, target)
         if fixes and not dry_run:
-            # backup then write
-            bak = md.with_suffix(md.suffix + ".bak")
-            if not bak.exists():
-                bak.write_bytes(text.encode("utf8"))
             md.write_text(changed, encoding="utf8")
     # report
     if fixes:
@@ -86,6 +68,6 @@ def main(dry_run):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--apply", action="store_true", help="apply fixes")
+    parser.add_argument("--apply", action="store_true", help="will not write out unless present")
     args = parser.parse_args()
     main(dry_run=not args.apply)

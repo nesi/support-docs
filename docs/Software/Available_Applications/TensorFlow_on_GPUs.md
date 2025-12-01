@@ -20,19 +20,17 @@ running TensorFlow with GPU support.
 
 !!! tip "See also"
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
-         see the [GPU use on
-         NeSI](../../Batch_Computing/Using_GPUs.md)
+         see the [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
-         [TensorFlow on
-         CPUs](TensorFlow_on_CPUs.md)
+         [TensorFlow on CPUs](TensorFlow_on_CPUs.md)
          for tips on how to configure TensorFlow and Slurm for optimal
          performance.
 
 ## Use NeSI modules
 
 TensorFlow is available on Mahuika as an
-[environment module](../../Getting_Started/Next_Steps/The_HPC_environment.md)
+[environment module](index.md)
 
 ``` sh
 module load TensorFlow/2.4.1-gimkl-2020a-Python-3.8.2
@@ -182,16 +180,15 @@ Apptainer containers.
 For TensorFlow, we recommend using the [official container provided by
 NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow).
 More information about using Apptainer with GPU enabled containers is
-available on the [NVIDIA GPU
-Containers](../Containers/NVIDIA_GPU_Containers.md)
+available on the [NVIDIA GPU Containers](../Containers/NVIDIA_GPU_Containers.md)
 support page.
 
 ## Specific versions for A100
 
 Here are the recommended options to run TensorFlow on the A100 GPUs:
 
-- If you use TensorFlow 1, use the TF1 [container provided by
-    NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow),
+- If you use TensorFlow 1, use the TF1
+    [container provided by NVIDIA](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow),
     which comes with a version of TensorFlow 1.15 compiled specifically
     to support the A100 GPUs (Ampere architecture). Other official
     Python packages won't support the A100, triggering various crashes
