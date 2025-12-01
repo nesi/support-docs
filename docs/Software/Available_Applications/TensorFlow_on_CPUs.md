@@ -109,7 +109,7 @@ threading behaviour of the Intel oneDNN library. While these settings
 should work well for a lot of applications, it is worth trying out
 different setups (e.g., longer blocktimes) and compare runtimes. Please
 see our article on [Thread Placement and Thread
-Affinity](../../Scientific_Computing/HPC_Software_Environment/Thread_Placement_and_Thread_Affinity.md)
+Affinity](../Thread_Placement_and_Thread_Affinity.md)
 as well as this [Intel
 article](https://software.intel.com/en-us/articles/tensorflow-optimizations-on-modern-intel-architecture)
 for further information and tips for improving peformance on CPUs.
