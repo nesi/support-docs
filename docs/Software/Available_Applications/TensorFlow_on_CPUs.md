@@ -10,7 +10,7 @@ status: deprecated
 
 TensorFlow is a popular software library for machine learning
 applications, see our
-[TensorFlow](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
+[TensorFlow](TensorFlow_on_GPUs.md)
 article for further information. It is often used with GPUs, as runtimes
 of the computationally demanding training and inference steps are often
 shorter compared to multicore CPUs. However, running TensorFlow on CPUs
@@ -100,7 +100,7 @@ srun python my_tensorflow_program.py
 
 If you are unsure about setting up the memory and runtime parameters,
 have a look at our article [Ascertaining job
-dimensions](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md).
+dimensions](../Profiling_and_Debugging/Job_Scaling_Ascertaining_job_dimensions.md).
 Please also read the section on operator parallelisation below before
 you choose a number of CPUs.
 

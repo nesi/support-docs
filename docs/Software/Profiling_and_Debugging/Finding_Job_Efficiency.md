@@ -182,7 +182,7 @@ time* the CPUs are in use. This is not enough to get a picture of
 overall job efficiency, as required CPU time *may vary by number of
 CPU*s.
 
-The only way to get the full context, is to compare walltime performance between jobs at different scale. See [Job Scaling](../../Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md) for more details.
+The only way to get the full context, is to compare walltime performance between jobs at different scale. See [Job Scaling](Job_Scaling_Ascertaining_job_dimensions.md) for more details.
 
 ### Example
 

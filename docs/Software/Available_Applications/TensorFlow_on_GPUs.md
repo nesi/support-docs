@@ -21,7 +21,7 @@ running TensorFlow with GPU support.
 !!! tip "See also"
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
          see the [GPU use on
-         NeSI](../Batch_Jobs/Using_GPUs.md)
+         NeSI](../../Batch_Computing/Using_GPUs.md)
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
          [TensorFlow on
@@ -174,7 +174,7 @@ take into consideration the following:
 
 You can use containers to run your application on the NeSI platform. We
 provide support for
-[Apptainer](../../Scientific_Computing/Supported_Applications/Apptainer.md)
+[Apptainer](Apptainer.md)
 containers, that can be run by users without requiring additional
 privileges. Note that Docker containers can be converted into
 Apptainer containers.

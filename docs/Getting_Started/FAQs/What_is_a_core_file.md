@@ -14,7 +14,7 @@ Your application may crash with an error like, `Segmentation fault (core dumped)
 These failures are memory-related, such as the program asking for more memory than allocated or
 for memory it can't legally access.
 Your first step in troubleshooting should be checking if this is the case,
-see [Finding Job_Efficiency](../../Getting_Started/Next_Steps/Finding_Job_Efficiency.md)
+see [Finding Job_Efficiency](../../Software/Profiling_and_Debugging/Finding_Job_Efficiency.md)
 
 `.core` files are a record of the working memory at time of failure, and
 can be used for

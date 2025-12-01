@@ -14,7 +14,7 @@ status: []
 Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
 AI software stack from Lambda containing PyTorch, TensorFlow, CUDA,
 cuDNN and more. On the HPC you can run Lambda Stack via
-[Apptainer](../../Scientific_Computing/Supported_Applications/Apptainer.md) (based on the
+[Apptainer](Apptainer.md) (based on the
 official
 [Dockerfiles](https://github.com/lambdal/lambda-stack-dockerfiles/)). We
 have provided some pre-built container images (under
@@ -70,7 +70,7 @@ ${CONTAINER} echo "Hello World"
 
 The following steps will create a custom Lambda Stack kernel that can be
 accessed via NeSI's Jupyter service (based on the instructions at
-[Jupyter_on_NeSI](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md)).
+[Jupyter_on_NeSI](../../Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md)).
 
 First, we need to create a kernel definition and wrapper that will
 launch the container image. Run the following commands on the Mahuika

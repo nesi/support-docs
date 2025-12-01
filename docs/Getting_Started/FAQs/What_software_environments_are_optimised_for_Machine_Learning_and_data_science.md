@@ -13,20 +13,20 @@ use.
 Examples of software environments on NeSI optimised for data science
 include:
 
-- [R](../../Scientific_Computing/Supported_Applications/R.md) and
-    [Python](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md) users
+- [R](../../Software/Available_Applications/R.md) and
+    [Python](../../Software/Available_Applications/TensorFlow_on_GPUs.md) users
     can get right into using and exploring the several built-in packages
     or create custom code.
 
 - [Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/JupyterLab/index.md)is
     particularly well suited to artificial intelligence and machine
-    learning workloads. [RStudio](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/RStudio.md)
+    learning workloads. [RStudio](../../Interactive_Computing/OnDemand/Apps/RStudio.md)
     and/or Conda can be accessed via Jupyter.
 
 - Commonly used data science environments and libraries such as
-    [Keras](../../Scientific_Computing/Supported_Applications/Keras.md),
-    [LambdaStack](../../Scientific_Computing/Supported_Applications/Lambda_Stack.md),
-    [Tensorflow](../../Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md)
+    [Keras](../../Software/Available_Applications/Keras.md),
+    [LambdaStack](../../Software/Available_Applications/Lambda_Stack.md),
+    [Tensorflow](../../Software/Available_Applications/TensorFlow_on_GPUs.md)
     and [Conda](https://docs.conda.io/en/latest/) are available to
     create comprehensive workflows.
 

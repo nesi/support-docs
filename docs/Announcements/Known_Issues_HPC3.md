@@ -8,7 +8,7 @@ tags:
 
 Below is a list issues that we're actively working on. We hope to have these resolved soon. This is intended to be a temporary page.
 
-For differences between the new platforms and Mahuika, see the more permanent [differences from Mahuika](../General/FAQs/Mahuika_HPC3_Differences.md).
+For differences between the new platforms and Mahuika, see the more permanent [differences from Mahuika](../Getting_Started/FAQs/Mahuika_HPC3_Differences.md).
 
 
 !!! info "Recently fixed"

@@ -34,7 +34,7 @@ profile.](https://my.nesi.org.nz/html/request_nesi_account) NeSI will
 (if approved) provision a so-called "virtual home account" on Tuakiri.
 
 See also [Account Requests for non-Tuakiri
-Members](../../General/Policy/Account_Requests_for_non_Tuakiri_Members.md)
+Members](../Policy/Account_Requests_for_non_Tuakiri_Members.md)
 
 ## Troubleshooting login issues
 

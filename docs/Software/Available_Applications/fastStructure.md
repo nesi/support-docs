@@ -55,4 +55,4 @@ To use this, use the `--format=str` flag and include the file **without** the fi
 
 Shout out to a [rather old blog post](https://flowersoftheocean.wordpress.com/2018/04/15/running-faststructure-and-associated-difficulties/) for solving this issue!
 
-The `.str` files output by [ipyrad](../../Scientific_Computing/Supported_Applications/ipyrad.md) should work without issue. Otherwise you may want to convert `.vcf` files to `.bed` files using another tool and proceed with fastStructure using the `.bed` files.
+The `.str` files output by [ipyrad](ipyrad.md) should work without issue. Otherwise you may want to convert `.vcf` files to `.bed` files using another tool and proceed with fastStructure using the `.bed` files.

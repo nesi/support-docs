@@ -126,7 +126,7 @@ takes the following general form
 `ssh -L <d>:<node>:<port> -N <server>`
 
 - &lt;d&gt; An integer
-- &lt;server&gt; see: [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+- &lt;server&gt; see: [Standard Terminal Setup](../../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md)
 
 When details are added to the general form from the specifics in the
 snippet above, the following could be run..

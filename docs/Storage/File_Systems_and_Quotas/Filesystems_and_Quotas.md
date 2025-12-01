@@ -103,7 +103,7 @@ filesystem. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
 requirements with us during
-[the project application process](../../General/Policy/How_we_review_applications.md),
+[the project application process](../../Getting_Started/Policy/How_we_review_applications.md),
 or {% include "partials/support_request.html" %} at any time.
 
 To ensure this filesystem remains fit-for-purpose, we have a regular

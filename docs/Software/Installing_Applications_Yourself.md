@@ -22,9 +22,9 @@ See [Software Installation Request](Software_Installation_Request.md) for guidel
 
 How to add package to an existing module will vary based on the language in question.
 
-- [Python](../Scientific_Computing/Supported_Applications/Python.md#python-packages)
-- [R](../Scientific_Computing/Supported_Applications/R.md#dealing-with-packages)
-- [Julia](../Scientific_Computing/Supported_Applications/Julia.md#installing-julia-packages)
+- [Python](Available_Applications/Python.md#python-packages)
+- [R](Available_Applications/R.md#dealing-with-packages)
+- [Julia](Available_Applications/Julia.md#installing-julia-packages)
 - [MATLAB](../Scientific_Computing/Supported_Applications/MATLAB.md#adding-support-packages)
 
 For other languages check if we have additional documentation for it

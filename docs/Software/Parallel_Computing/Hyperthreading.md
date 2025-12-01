@@ -34,7 +34,7 @@ once your job starts you will have twice the number of CPUs as `ntasks`.
 If you set `--cpus-per-task=n`, Slurm will request `n` logical CPUs per
 task, i.e., will set `n` threads for the job. Your code must be capable
 of running Hyperthreaded (for example using
-[OpenMP](../../HPC_Software_Environment/OpenMP_settings.md))
+[OpenMP](OpenMP_settings.md))
 if `--cpus-per-task > 1`.
 
 Setting `--hint=nomultithread` with `srun` or `sbatch` causes Slurm to
@@ -187,7 +187,7 @@ considered a bonus.
     for MPI jobs that request the same number of tasks on every node, we
     recommend to specify `--mem` (i.e. memory per node) instead. See
     [How to request memory
-    (RAM)](../../../General/FAQs/How_do_I_request_memory.md) for more
+    (RAM)](../../Getting_Started/FAQs/How_do_I_request_memory.md) for more
     information.
 - Non-MPI jobs which specify `--cpus-per-task` and use **srun** should
     also set `--ntasks=1`, otherwise the program will be run twice in

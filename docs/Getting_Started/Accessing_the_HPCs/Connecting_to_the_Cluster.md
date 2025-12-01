@@ -27,7 +27,7 @@ operating system and level of experience.
 
 !!! tip "What next?"
     -  More info on
-       [NeSI OnDemand](../../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md)
+       [NeSI OnDemand](../../Interactive_Computing/OnDemand/how_to_guide.md)
     -  Visit [ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
 ## Linux or Mac OS
@@ -40,12 +40,12 @@ installed, usually called, "Terminal." To find it, simply search for
 Congratulations! You are ready to move to the next step.
 
 !!! prerequisite "What next?"
-    Setting up your [Default Terminal](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Setting up your [Default Terminal](Standard_Terminal_Setup.md)
 
 ### VSCode
 
 The inbuilt 'remotes' plugin allows connecting to remote hosts.
-If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md),
+If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](Standard_Terminal_Setup.md),
 VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab.
 
 ## Windows
@@ -69,8 +69,8 @@ different options, listed in order of preference.
 
 !!! tip "What next?"
     -  Enabling
-       [WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
-    -  Setting up the [Ubuntu Terminal](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md)
+       [WSL](Windows_Subsystem_for_Linux_WSL.md)
+    -  Setting up the [Ubuntu Terminal](Windows_Subsystem_for_Linux_WSL.md)
 
 ### VSCode
 
@@ -91,7 +91,7 @@ VSCode can be used with WSL or without.
  institution's IT team supports MobaXTerm.
 !!! tip "What next?"
     -  Setting up
-       [MobaXterm](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
+       [MobaXterm](MobaXterm_Setup_Windows.md)
 
 ### Using a Virtual Machine
 
@@ -123,7 +123,7 @@ for new users.
 
 !!! tip "What next?"
     -  Setting up
-       [WinSCP](../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
+       [WinSCP](WinSCP-PuTTY_Setup_Windows.md)
 
 ### Git Bash
 
@@ -141,7 +141,7 @@ primary terminal.
 All Windows computers have PowerShell installed, however it will
 only be useful to you if Windows Subsystem for Linux (WSL) is also
 enabled, instructions can be found at
-[Windows_Subsystem_for_Linux_WSL](../../Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md).
+[Windows_Subsystem_for_Linux_WSL](Windows_Subsystem_for_Linux_WSL.md).
 
 Like Git Bash, PowerShell is perfectly adequate for testing your
 login or setting up your password, but lacks many of the features of

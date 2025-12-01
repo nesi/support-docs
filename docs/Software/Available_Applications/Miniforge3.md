@@ -7,10 +7,10 @@ tags:
 
 !!! note "Preferred Alternatives"
      - If you want a more reproducible and isolated environment, we
-         recommend using the [Apptainer containers](../../Scientific_Computing/Supported_Applications/Apptainer.md).
+         recommend using the [Apptainer containers](Apptainer.md).
      - If you only need access to Python and standard numerical libraries
          (numpy, scipy, matplotlib, etc.), you can use the 
-         [Python environment module](../../Scientific_Computing/Supported_Applications/Python.md).
+         [Python environment module](Python.md).
 
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}

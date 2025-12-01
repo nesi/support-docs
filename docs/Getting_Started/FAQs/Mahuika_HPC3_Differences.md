@@ -15,7 +15,7 @@ This page should be read in conjunction with the [Known Issues](../../Announceme
 
 ## Login
 
-We are now using Tuakiri to provide second-factor authentication, and this changes the login experience.  See [Standard Terminal Setup HPC3](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md) for the full details.
+We are now using Tuakiri to provide second-factor authentication, and this changes the login experience.  See [Standard Terminal Setup HPC3](../Accessing_the_HPCs/Standard_Terminal_Setup.md) for the full details.
 
 ## Operating System
 

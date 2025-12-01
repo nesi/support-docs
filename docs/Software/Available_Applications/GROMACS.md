@@ -83,7 +83,7 @@ obtained with the Software.
     srun gmx-mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
 === "GPU"
-    For more information on using GPUs see [GPU use on NeSI](../Batch_Jobs/Using_GPUs.md)
+    For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
     ```sl
     #!/bin/bash -e
 

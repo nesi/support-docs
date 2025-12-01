@@ -16,4 +16,4 @@ gm display myImage.png
 ```
 
 This requires a [working X-11
-server](../../Scientific_Computing/Terminal_Setup/X11.md).
+server](../Accessing_the_HPCs/X11.md).

@@ -128,7 +128,7 @@ distribution.
 
 ## Interactive Use
 
-Providing you have [set up X11](../Terminal_Setup/X11.md), you can
+Providing you have [set up X11](../../Getting_Started/Accessing_the_HPCs/X11.md), you can
 open the COMSOL GUI by running the command `comsol`.
 
 Large jobs should not be run on the login node.

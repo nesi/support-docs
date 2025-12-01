@@ -15,7 +15,7 @@ The are three types of parallel execution we will cover are [Multi-Threading](#
     - `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
     - If `--hint=nomultithread` is used then `--cpus-per-task` will now refer to physical cores, but `--mem-per-cpu=512MB` still refers to logical cores.
 
-See [our article on hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md) for more information.
+See [our article on hyperthreading](Hyperthreading.md) for more information.
 
 ## Multi-threading
 

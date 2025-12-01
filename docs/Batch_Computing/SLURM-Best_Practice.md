@@ -44,7 +44,7 @@ etc).
 ### Memory (RAM)
 
 If you request more memory (RAM) than you need for your job, it
-[will wait longer in the queue and will be more expensive when it runs](../../General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md).
+[will wait longer in the queue and will be more expensive when it runs](../Getting_Started/FAQs/Why_is_my_job_taking_a_long_time_to_start.md).
 On the other hand, if you don't request enough memory, the job may be
 killed for attempting to exceed its allocated memory limits.
 
@@ -53,7 +53,7 @@ your program will need at peak memory usage.
 
 We also recommend using `--mem` instead of `--mem-per-cpu` in most
 cases. There are a few kinds of jobs for which `--mem-per-cpu` is more
-suitable. See [our article on how to request memory](../../General/FAQs/How_do_I_request_memory.md)
+suitable. See [our article on how to request memory](../Getting_Started/FAQs/How_do_I_request_memory.md)
 for more information.
 
 ## Parallelism
@@ -77,4 +77,4 @@ job array in a single command)
 
 A low fairshare score will affect your jobs priority in the queue, learn
 more about how to effectively use your allocation,
-[Fair Share](../../Scientific_Computing/Batch_Jobs/Fair_Share.md).
+[Fair Share](Fair_Share.md).

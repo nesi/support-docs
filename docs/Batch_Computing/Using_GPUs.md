@@ -18,7 +18,7 @@ This page provides generic information about how to access GPUs through the Slur
 
 ## Request GPU resources using Slurm
 
-To request a GPU for your [Slurm job](../../Getting_Started/Next_Steps/Submitting_your_first_job.md), add
+To request a GPU for your [Slurm job](Submitting_your_first_job.md), add
 the following option in the header of your submission script:
 
 ```sl
@@ -229,12 +229,12 @@ CUDA_VISIBLE_DEVICES=0
 The following pages provide additional information for supported
 applications:
 
-- [ABAQUS](../../Software/Available_Applications/ABAQUS.md#examples)
-- [GROMACS](../../Software/Available_Applications/GROMACS.md)
-- [Lambda Stack](../../Software/Available_Applications/Lambda_Stack.md)
+- [ABAQUS](../Software/Available_Applications/ABAQUS.md#examples)
+- [GROMACS](../Software/Available_Applications/GROMACS.md)
+- [Lambda Stack](../Software/Available_Applications/Lambda_Stack.md)
 - [Matlab](../../Software/Available_Applications/MATLAB.md#using-gpus)
-- [TensorFlow on GPUs](../../Software/Available_Applications/TensorFlow_on_GPUs.md)
+- [TensorFlow on GPUs](../Software/Available_Applications/TensorFlow_on_GPUs.md)
 
 And programming toolkits:
 
-- [NVIDIA GPU Containers](../../Software/Containers/NVIDIA_GPU_Containers.md)
+- [NVIDIA GPU Containers](../Software/Containers/NVIDIA_GPU_Containers.md)
