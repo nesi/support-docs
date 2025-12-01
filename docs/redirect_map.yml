@@ -153,3 +153,4 @@ Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC_YouTube_
 Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC.md : Getting_Started/Getting_Help/Introduction_to_computing_on_the_NeSI_HPC.md
 Scientific_Computing/Training/Webinars.md : Getting_Started/Getting_Help/Webinars.md
 Scientific_Computing/Training/Workshops.md : Getting_Started/Getting_Help/Workshops.md
+Batch_Computing/Hyperthreading.md : Software/Parallel_Computing/Hyperthreading.md
