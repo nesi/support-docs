@@ -36,8 +36,8 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 
     - (FAST) To list all files that will be deleted, you can unzip and read the list of files that have been marked for deletion:
     ```bash
-    gunzip -c /search/autocleaner/filelists/<project code>.gz > doomed_list_<project code>.txt
-    nano doomed_list_<project code>.txt
+    gunzip -c /search/autocleaner/filelists/<project code>.gz > list_to_delete_<project code>.txt
+    nano list_to_delete_<project code>.txt
     ```
     
     - (FAST) To search through for files in <project code>.gz that contain the keyword KEYWORD (you may want to redirect the output to a file): 
