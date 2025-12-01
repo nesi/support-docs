@@ -29,8 +29,8 @@ END: 9:00am 5 January 2026
     <td>Self-service support<br><i>Available 24/7</i></td>
   </tr>
   <tr>
-    <td>Email: <a href="support@nesi.org.nz">support@nesi.org.nz</a></td>
-    <td>- <a href="../../Getting_Started/Getting_Help/System_status.md">Sign up for system status updates</a> for advance warning of any system updates or unplanned outages.<br>- <a href="https://www.docs.nesi.org.nz">Consult our User Documentation</a> pages for instructions and guidelines for using the systems.<br>- <a href="https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp">Visit our YouTube channel</a>  for introductory training webinars.</td>
+    <td>Email: <a href="../General/Announcements/support@nesi.org.nz">support@nesi.org.nz</a></td>
+    <td>- <a href="../Getting_Started/Getting_Help/System_status.md">Sign up for system status updates</a> for advance warning of any system updates or unplanned outages.<br>- <a href="https://www.docs.nesi.org.nz">Consult our User Documentation</a> pages for instructions and guidelines for using the systems.<br>- <a href="https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp">Visit our YouTube channel</a>  for introductory training webinars.</td>
   </tr>
   </tbody>
   </table>
@@ -45,7 +45,7 @@ END: 9:00am 5 January 2026
     <td>Self-service support<br><i>Available 24/7</i></td>
   </tr>
   <tr>
-    <td>Phone: 0508 466 466<br>Email: <a href="help@reannz.co.nz">help@reannz.co.nz</a></td>
+    <td>Phone: 0508 466 466<br>Email: <a href="../General/Announcements/help@reannz.co.nz">help@reannz.co.nz</a></td>
     <td>- <a href="https://reannz.status.io">Sign up for system status updates</a> for advance warning of any system updates or unplanned outages.<br>- <a href="https://weathermap.reannz.co.nz">Check the REANNZ weathermap</a> for a real-time view of network operations.</td>
   </tr>
 </tbody>
