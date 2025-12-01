@@ -19,7 +19,7 @@ be located under Storage, Long-Term Storage
 
 ## 3rd party applications
 
-3rd party applications listed under [Supported Applications](../../Scientific_Computing/Supported_Applications/index.md)
+3rd party applications listed under [Supported Applications](../../Software/Available_Applications/index.md)
 have child pages with details about the available versions on NeSI, and
 a reference to the vendor release notes or documentation.
 

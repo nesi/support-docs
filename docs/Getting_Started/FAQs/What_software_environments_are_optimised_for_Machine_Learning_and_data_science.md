@@ -18,7 +18,7 @@ include:
     can get right into using and exploring the several built-in packages
     or create custom code.
 
-- [Jupyter on NeSI](../../Scientific_Computing/Interactive_computing_with_OnDemand/Apps/JupyterLab/index.md)is
+- [Jupyter on NeSI](../../Interactive_Computing/OnDemand/Apps/JupyterLab/index.md) is
     particularly well suited to artificial intelligence and machine
     learning workloads. [RStudio](../../Interactive_Computing/OnDemand/Apps/RStudio.md)
     and/or Conda can be accessed via Jupyter.
@@ -31,7 +31,7 @@ include:
     create comprehensive workflows.
 
 For more information about available software and applications, you
-can [browse our catalogue](../../Scientific_Computing/Supported_Applications/index.md).
+can [browse our catalogue](../../Software/Available_Applications/index.md).
 
 As pictured in the screenshot below, you can type keywords into the
 catalogue's search field to browse by a specific software name or using

@@ -1,4 +1,7 @@
 # python
+
+
+# Note: Partially AI generated. Not to be trusted.
 import argparse, os, re, sys
 from pathlib import Path
 
