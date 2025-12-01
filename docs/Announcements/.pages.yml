@@ -1,5 +1,6 @@
 ---
 nav:
+  - Release Notes: Release_Notes
   - Autodeletion_returning_for_scratch_filesystem.md
   - December_holiday_support_restrictions.md
   - Identity_Changes_for_Crown_Research_Institutes.md
