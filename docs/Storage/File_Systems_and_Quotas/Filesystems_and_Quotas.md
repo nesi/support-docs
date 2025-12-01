@@ -102,7 +102,8 @@ apply per-project disk space quotas to projects on this
 filesystem. The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
-requirements with us during [the project application process](../../General/Policy/How_we_review_applications.md),
+requirements with us during
+[the project application process](../../General/Policy/How_we_review_applications.md),
 or {% include "partials/support_request.html" %} at any time.
 
 To ensure this filesystem remains fit-for-purpose, we have a regular
@@ -125,7 +126,8 @@ an Automatic Tape Library (ATL). Files will remain on Freezer
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
-See more information about the long term storage see our [documentation about the Freezer storage service](../Long_Term_Storage/Freezer_long_term_storage.md).
+See more information about the long term storage see our
+[documentation about the Freezer storage service](../Long_Term_Storage/Freezer_long_term_storage.md).
 
 ## Snapshots
 
