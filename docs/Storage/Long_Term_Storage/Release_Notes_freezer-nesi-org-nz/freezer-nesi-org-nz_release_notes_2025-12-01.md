@@ -1,9 +1,9 @@
 ---
-created_at: '2025-08-26T03:42:47Z'
+created_at: '2025-12-01T10:00:00Z'
 tags:
 - freezer
 - release notes
-title: 2025/08/26
+title: 2025/12/01
 description: Freezer upgrade release notes
 search:
   boost: 0.1
