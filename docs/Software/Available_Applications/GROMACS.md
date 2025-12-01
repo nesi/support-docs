@@ -34,7 +34,7 @@ obtained with the Software.
 
 === "Serial"
     For when only one CPU is required, generally as part of
-    a [job array](../../Getting_Started/Next_Steps/Parallel_Execution.md#job-arrays)
+    a [job array](../Parallel_Computing/Parallel_Execution.md#job-arrays)
 
     ```sl
     #!/bin/bash -e

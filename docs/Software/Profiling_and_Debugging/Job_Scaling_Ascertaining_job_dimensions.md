@@ -74,8 +74,8 @@ will not have waited for hours or days in the queue
 beforehand.
 
 !!! example
-     - [Multithreading Scaling](../../Getting_Started/Next_Steps/Multithreading_Scaling_Example.md)
-     - [MPI Scaling](../../Getting_Started/Next_Steps/MPI_Scaling_Example.md)
+     - [Multithreading Scaling](../../Software/Parallel_Computing/Multithreading_Scaling_Example.md)
+     - [MPI Scaling](../../Software/Parallel_Computing/MPI_Scaling_Example.md)
 
 !!! tip "Webinar: How to estimate CPU, memory & time needs"
      <iframe width="560" height="315" src="https://www.youtube.com/embed/9h8eacBmSgw?si=zzOkx-k4hJbwLNaF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

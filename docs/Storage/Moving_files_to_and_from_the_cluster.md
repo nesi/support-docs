@@ -8,19 +8,19 @@ tags:
 ---
 
 !!! prerequisite
-    Have an [active account and project.](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
+    Have an [active account and project.](../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
 
-Find more information on [our filesystem](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
+Find more information on [our filesystem](./File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 
 ## OnDemand
 
 Requiring only a web browser, the instructions are same whether your are connecting from a Windows, Mac or a Linux computer.
-See [OnDemand how to guide](../../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md) for more info.
+See [OnDemand how to guide](../Scientific_Computing/Interactive_computing_with_OnDemand/how_to_guide.md) for more info.
 
 ## Standard Terminal
 
 !!! prerequisite
-    Have SSH setup as described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Have SSH setup as described in [Standard Terminal Setup](../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 In a local terminal the following commands can be used to:
 
@@ -38,7 +38,7 @@ scp mahuika:<path/filename> <path/filename>
 
 !!! note
     - This will only work if you have set up aliases as described in
-      [Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+      [Terminal Setup](../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
     - As the term 'mahuika' is defined locally, the above
       commands *only works when using a local terminal* (i.e. not on Mahuika).
     - If you are using Windows subsystem, the root paths are different
@@ -54,7 +54,7 @@ your password.
 ## File Managers
 
 !!! prerequisite
-    Have SSH setup as described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
+    Have SSH setup as described in [Standard Terminal Setup](../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md)
 
 Most file managers can be used to connect to a remote directory simply
 by typing in the address bar provided your have an active connection to
@@ -67,22 +67,22 @@ This **does not** work for File Explorer (Windows default)
 
 This **does not** work for Finder (Mac default)
 
-![files](../../assets/images/Moving_files_to_and_from_the_cluster_1.png)
+![files](../assets/images/Moving_files_to_and_from_the_cluster_1.png)
 
 If your default file manager does not support mounting over SFTP, see
-[Can I use SSHFS to mount the cluster filesystem on my local machine?](../../General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md).
+[Can I use SSHFS to mount the cluster filesystem on my local machine?](../General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md).
 
 ## MobaXterm
 
 !!! prerequisite
-    [MobaXterm Setup Windows](../../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
+    [MobaXterm Setup Windows](../Scientific_Computing/Terminal_Setup/MobaXterm_Setup_Windows.md)
 
 See [Standard Terminal]](Moving_files_to_and_from_the_cluster.md#standard-terminal), [Rclone]](Moving_files_to_and_from_the_cluster.md#rclone), or [Rsync]](Moving_files_to_and_from_the_cluster.md#rsync) for information on how to move files to and from the HPC in the terminal.
 
 ## WinSCP
 
 !!! prerequisite
-    [WinSCP-PuTTY Setup Windows](../../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
+    [WinSCP-PuTTY Setup Windows](../Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md)
 
 As WinSCP uses multiple tunnels for file transfer you will be required
 to authenticate again on your first file operation of the session. The
@@ -94,7 +94,7 @@ authentication.
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.
 You can find more details in
-[Data_Transfer_using_Globus](../../Storage/Data_Transfer_Services/Data_Transfer_using_Globus.md).
+[Data_Transfer_using_Globus](./Data_Transfer_Services/Data_Transfer_using_Globus.md).
 
 ## Rclone
 

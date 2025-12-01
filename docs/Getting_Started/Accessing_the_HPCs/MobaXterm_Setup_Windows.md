@@ -22,7 +22,7 @@ description: How to set up cluster access using MobaXterm
     - Otherwise, choose freely the Portable or Installer Edition.
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a cluster.](../../Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md)
+     -   [Moving files to/from a cluster.](../../Storage/Moving_files_to_and_from_the_cluster.md)
      
 The interactive login configuration for MobaXterm is not compatable with the current web-based authentication method. If you wish to use MobaXterm as your SSH client you therefore need to use a non-interactive setup.
 This can be done by following a modified version of the instructions for setting up the [the standard terminal setup described on this support page](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).

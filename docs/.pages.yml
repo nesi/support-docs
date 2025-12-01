@@ -1,9 +1,8 @@
 nav:
     - Announcements
     - Getting_Started
-    - General
     - Software
-    - Scientific_Computing
+    - Batch_Computing
     - Interactive_Computing
     - Storage
     - Service_Subscriptions

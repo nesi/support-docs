@@ -78,14 +78,14 @@ dependencies:
 
 !!! info "See also"
      See the
-     [Miniforge3](../Scientific_Computing/Supported_Applications/Miniforge3.md)
+     [Miniforge3](../../Scientific_Computing/Supported_Applications/Miniforge3.md)
      page for more information on how to create and manage Miniconda
      environments on NeSI.
 
 ## Configuring Slurm
 
 At runtime, Slurm will launch a number of Python processes as requested
-in the [Slurm configuration script](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md).
+in the [Slurm configuration script](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md).
 Each process is given an ID (or "rank") starting at rank 0. Dask-MPI
 then assigns different roles to the different ranks:
 
@@ -97,7 +97,7 @@ then assigns different roles to the different ranks:
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
 ranks!** Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-[Hyperthreading](../Scientific_Computing/Batch_Jobs/Hyperthreading.md)
+[Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md)
 to place these two ranks onto a single physical core. Ensure that
 activating hyperthreading does not slow down the worker ranks by running
 a short test workload with and without hyperthreading.
@@ -261,7 +261,7 @@ where the `%runscript` section ensures that the Python script passed to
 Conda environment inside the container.
 
 !!! note Tips
-     You can build this container on NeSI,following the instructions from the [dedicated supportpage](../Scientific_Computing/Supported_Applications/Apptainer.md)
+     You can build this container on NeSI,following the instructions from the [dedicated supportpage](../../Scientific_Computing/Supported_Applications/Apptainer.md)
 
 ### Slurm configuration
 

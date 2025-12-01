@@ -75,7 +75,7 @@ Not all solvers are compatible with all types of parallelisation.
 
 === "Serial"
     For when only one CPU is required, generally as part of
-    a [job array](../../Getting_Started/Next_Steps/Parallel_Execution.md#job-arrays)
+    a [job array](../Parallel_Computing/Parallel_Execution.md#job-arrays)
 
     ```sl
     #!/bin/bash -e
@@ -186,8 +186,7 @@ loaded with `module load`, you may have to change the compile commands in your l
 
 ## Environment file
 
-The [ABAQUS environment
-file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
+The [ABAQUS environment file](http://media.3ds.com/support/simulia/public/v613/installation-and-licensing-guides/books/sgb/default.htm?startat=ch04s01.html) contains
 a number of parameters that define how the your job will run, some of
 these you may with to change.
 

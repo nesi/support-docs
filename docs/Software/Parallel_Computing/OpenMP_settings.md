@@ -20,7 +20,7 @@ all that is necessary to get 16 OpenMP threads is:
 
 in your Slurm script - although this can sometimes be more complicated,
 e.g., with
-[TensorFlow on CPUs](../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md).
+[TensorFlow on CPUs](../../Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md).
 
 In order to achieve good and consistent parallel scaling, additional
 settings may be required. This is particularly true on Mahuika where
@@ -30,7 +30,7 @@ consistent, additional information can be found in our article
 [Thread Placement and Thread Affinity](./Thread_Placement_and_Thread_Affinity.md).
 
 1. `--threads-per-core=2`. Use this option to tell srun or sbatch to
-that you want to use [Hyperthreading](../Scientific_Computing/Batch_Jobs/Hyperthreading.md),
+that you want to use [Hyperthreading](../../Scientific_Computing/Batch_Jobs/Hyperthreading.md),
 so use both of the virual CPUs available on each physical core,
 halving the number of physical cores you occupy.
 If you use hyperthreading, you will be charged for the number of physical cores that

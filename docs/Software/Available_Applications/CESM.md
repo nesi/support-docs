@@ -30,7 +30,7 @@ both Māui and Mahuika.
 
 On Mahuika only, load a module with a more recent version of git than the default one:
 
-```
+```sl
 module load git
 ```
 

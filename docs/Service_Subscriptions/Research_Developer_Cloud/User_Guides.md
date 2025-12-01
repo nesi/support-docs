@@ -15,7 +15,6 @@ Research teams can use this platform to develop novel solutions that enable rese
 - *Programmable infrastructure:* Applying DevOps practices enabled by Infrastructure as Code (IaC) to automate, measure, collaborate, and learn.
 - *Partnership-led approaches:* Collaborating with our DevOps specialists to build a platform or tools that can benefit your research community.
 
-
 ## Features
 
 Our platform's cloud building blocks include:

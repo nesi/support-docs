@@ -46,8 +46,7 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
    directly, which does not require root access:
 
     !!! note
-        Please do refer [Build Environment
-        Variables](../../Scientific_Computing/Supported_Applications/Apptainer.md)
+        Please do refer [Build Environment Variables](../../Software/Available_Applications/Apptainer.md)
         prior to running the following `pull` command.
 
     ```sh
