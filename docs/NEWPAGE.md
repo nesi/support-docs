@@ -92,6 +92,8 @@ By default, the filename will be use as title of the article/category.
 Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav,
 this usually happens around 24-ish characters however this will vary depending on the letters being used.
 
+Use [Title Case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case), pretty much every word should be capitalised except for the little ones.
+
 !!! tip "File Name hygiene"
     Regular 'snake_case' naming conventions should be used for articles/categories, i.e. no non-alphanumeric characters (except `_` and `-`).
 
