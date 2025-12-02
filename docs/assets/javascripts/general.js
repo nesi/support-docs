@@ -1,5 +1,5 @@
 const CALENDAR_ID = "c_hen6rr02et39kat2hmuamidots@group.calendar.google.com";
-
+const MEETING_LINK = "https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09";
 
 function changeVersion(app, version, warn = false) {
     // Sets the module load example to use the selected version
@@ -32,7 +32,7 @@ function toggle(id) {
 }
 
 async function showCalendarBanner() {
-    const text = await fetch("assets/training_calendar.ics")
+    const text = await fetch("/assets/training_calendar.ics")
         .then(r => r.ok ? r.text() : "");
     if (!text) { console.warn("failed to load calendar ") };
 
@@ -49,12 +49,10 @@ async function showCalendarBanner() {
             if (now.getTime()  < d.getTime() + 3600000) {
                 // if not started
                 if (now < d) {
-                    console.log("Office hours later today");inOneHour
-                    addBanner(`Office Hours later today ${d.toLocaleTimeString()} <a href="https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09">Join Zoom Meeting Now</a>`);
+                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`);
 
                 } else {
-                    console.log("Office hours NOW");
-                    addBanner(`Office hours on now. <a href="https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09">Join Zoom Meeting Now</a>`);
+                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`);
                 }
             }
             break;
@@ -65,6 +63,7 @@ async function showCalendarBanner() {
 function addBanner(msg) {
     const banner = document.createElement("div");
     banner.id = "calendar-banner";
+    banner.classList += "md-typeset"
     banner.innerHTML = msg;
 
     const btn = document.createElement("button");

@@ -179,25 +179,21 @@ span.md-status.md-status--deprecated {
   color: rgba(0, 0, 0, 0.87);
 }
 
+
 #calendar-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   background: #fffae6;
   border-bottom: 1px solid #ccc;
-  padding: 8px 30px 8px 8px;
+  font-size: 1.2em;
   text-align: center;
-  font-family: sans-serif;
   z-index: 9999;
 }
+
+
 
 #calendar-banner button {
   position: absolute;
   top: 4px;
   right: 6px;
-  border: none;
-  background: none;
-  font-size: 16px;
+  font-size: 2em;
   cursor: pointer;
 }
