@@ -6,7 +6,7 @@ tags:
 ---
 
 !!! prerequisite
-    Have your [connection to the NeSI cluster](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md) configured
+    Have your [connection to the NeSI cluster](Standard_Terminal_Setup.md) configured
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
@@ -24,12 +24,12 @@ to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 
 **Host Alias:** An alias for the socket of your main connection to the
 cluster, `nesi` if you have set up your ssh config file as
-described in [Standard Terminal Setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+described in [Standard Terminal Setup](Standard_Terminal_Setup.md).
 
 **Remote Port:** The port number you will use on the remote machine (in
 this case the NeSI cluster)
 !!! note
-    The following examples use aliases as set up in [standard terminal setup](../../Scientific_Computing/Terminal_Setup/Standard_Terminal_Setup.md).
+    The following examples use aliases as set up in [standard terminal setup](Standard_Terminal_Setup.md).
     This allows the forwarding from your local machine to the NeSI
     cluster, without having to re-tunnel through the lander node.
 
@@ -205,4 +205,4 @@ ssh -Nf -R 6676:localhost:6676 ${SLURM_SUBMIT_HOST}
 ```
 
 !!! tip "What Next?"
-    - [Paraview](../../Scientific_Computing/Supported_Applications/ParaView.md)
+    - [Paraview](../../Software/Available_Applications/ParaView.md)
