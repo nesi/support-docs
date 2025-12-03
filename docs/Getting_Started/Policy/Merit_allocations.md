@@ -55,4 +55,4 @@ Read more about [how we review
 applications](How_we_review_applications.md).
 
 To learn more about REANNZ HPC Projects or to apply for a new project, please
-read our article [Applying for a REANNZ HPC Project](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_project.md).
+read our article [Applying for a REANNZ HPC Project](../Projects/Applying_for_a_New_Project.md).

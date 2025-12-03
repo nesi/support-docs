@@ -8,7 +8,7 @@ tags:
 ---
 
 !!! prerequisite
-    -  Have an [active account and project](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md).
+    -  Have an [active account and project](../Creating_an_Account.md).
 
 Before you can start submitting work you will need some way of
 connecting to the NeSI clusters.

@@ -186,7 +186,7 @@ support page.
 
 !!! tip "GPU cost"
      A GPU device-hour costs more than a core-hour, depending on the type
-     of GPU. You can find a comparison table in our [What is an allocation?](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md)
+     of GPU. You can find a comparison table in our [What is an allocation?](../../Getting_Started/Allocations/What_is_an_allocation.md)
      support page.
 
 ### GPU Example

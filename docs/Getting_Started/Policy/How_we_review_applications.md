@@ -43,7 +43,7 @@ new projects is as follows:
     research teams.
 5. **Decision and notification:** If we approve an initial allocation
     for your project, we will typically award the project an
-    [allocation of compute units and also an online storage allocation](../../Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md),
+    [allocation of compute units and also an online storage allocation](../Allocations/What_is_an_allocation.md),
     from one of [our allocation classes](Allocation_classes.md).
     In an case, we will send you an email telling you about our decision.
 

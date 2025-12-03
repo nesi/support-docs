@@ -11,8 +11,8 @@ tags:
 ---
 
 !!! prerequisite
-    -  Have an [account](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md).  
-    -  Be a member of an [active project](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md).  
+    -  Have an [account](../Creating_an_Account.md).  
+    -  Be a member of an [active project](../Creating_an_Account.md).  
     -  Have a device with an authentication app.
 
 !!! note

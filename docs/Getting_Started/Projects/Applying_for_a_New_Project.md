@@ -7,7 +7,7 @@ tags:
 ---
 
 !!! prerequisite
-    - Have a [Account profile](./Creating_an_Account_Profile.md).
+    - Have a [Account profile](../Creating_an_Account.md).
     - NIWA researchers only: read and follow the
         [NIWA internal documentation for gaining access to the HPCs](https://one.niwa.co.nz/display/ONE/High+Performance+Computing+Facility+Services)
         (this link is only valid from within the NIWA network or VPN).
@@ -21,7 +21,7 @@ tags:
     - Become familiar with foundational HPC skills, for example by
          attending a NeSI introductory workshop, one of our [weekly
          introductory sessions (or watching the
-         recording)](../../Getting_Started/Getting_Help/Introductory_Material.md),
+         recording)](../Getting_Help/Introductory_Material.md),
          or having one or more of your project team members do so.
     - Review our [allocation classes](../Policy/Allocation_classes.md). If
          you don't think you currently qualify for any class other than
@@ -80,4 +80,4 @@ is relevant.
          [reviewed](../Policy/How_we_review_applications.md),
          after which you will be informed of the outcome.
      - We may contact you if further details are required.
-     - When your project is approved you will be able to [login for the first time](../../Getting_Started/Accessing_the_HPCs/First_Time_Login.md).
+     - When your project is approved you will be able to [login for the first time](../Accessing_the_HPCs/First_Time_Login.md).

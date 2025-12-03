@@ -9,8 +9,8 @@ description: How to add a new member to your project.
 ---
 
 !!! prerequisite
-    - Have a [Account profile](./Creating_an_Account_Profile.md).
-    - Be the **owner** of a [project](./Applying_for_a_new_project.md).
+    - Have a [Account profile](../Creating_an_Account.md).
+    - Be the **owner** of a [project](./Applying_for_a_New_Project.md).
 
 1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.
 2. Under **List Projects**, click on the project you want to add members to.

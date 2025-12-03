@@ -1,11 +1,8 @@
 ---
 created_at: '2021-09-14T03:20:56Z'
-tags: []
-title: Quarterly allocation periods
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4406437522703
-zendesk_section_id: 360000196195
+tags: 
+- allocations
+title: Quarterly Allocation Periods
 ---
 
 Applications for new allocations on existing projects are accepted and

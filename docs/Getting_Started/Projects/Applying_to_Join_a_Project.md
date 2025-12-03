@@ -8,7 +8,7 @@ tags:
 ---
 
 !!! prerequisite
-     -   You must have an [account](./Creating_an_Account_Profile.md).
+     -   You must have an [account](../Creating_an_Account.md).
 
 ## How to join a project
 

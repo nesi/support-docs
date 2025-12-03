@@ -1,10 +1,9 @@
 ---
 created_at: '2020-02-25T02:35:13Z'
 tags: 
-    - Allocation
     - Allocations
     - Compute
-title: What is an allocation?
+title: What is an Allocation?
 ---
 
 Because NeSI's resources are limited, we manage access to our resources

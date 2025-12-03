@@ -10,7 +10,7 @@ tags:
 
 !!! prerequisite
      Either an active login at a Tuakiri member institution, or 
-     [a Tuakiri Virtual Home account in respect of your current place of work or study](../Policy/Account_Requests_for_non_Tuakiri_Members.md).
+     [a Tuakiri Virtual Home account in respect of your current place of work or study](./Policy/Account_Requests_for_non_Tuakiri_Members.md).
 
 1. Access [my.nesi.org.nz](https://my.nesi.org.nz) via your browser and
     log in with either your institutional credentials, or your Tuakiri
@@ -24,6 +24,6 @@ tags:
     our records.
 
 !!! prerequisite "What next?"
-     - [Apply for Access](./Applying_for_a_new_project.md),
+     - [Apply for Access](./Projects/Applying_for_a_New_Project.md),
          either submit an application for a new project or
-         [join an existing project](./Applying_to_join_a_project.md).
+         [join an existing project](./Projects/Applying_to_Join_a_Project.md).

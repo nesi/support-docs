@@ -12,7 +12,7 @@ zendesk_section_id: 360001059296
 
 We allow students, academics, alumni and researchers to securely login
 and create a [NeSI account
-profile](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
+profile](../Creating_an_Account.md)
 using the credentials granted by their home organisation via Tuakiri.
 
 ### Tuakiri - federated identity and access management
@@ -24,7 +24,7 @@ but many other institutions, including private sector organisations and
 most central and local government agencies, are not.
 
 See also [Creating a NeSI Account
-Profile](../Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
+Profile](../Creating_an_Account.md)
 
 ### Support for users outside the Tuakiri federation
 
