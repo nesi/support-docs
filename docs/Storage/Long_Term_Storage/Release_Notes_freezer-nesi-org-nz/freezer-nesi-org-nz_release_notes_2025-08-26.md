@@ -11,6 +11,6 @@ search:
 
 ## New and Improved
 
-- Upgraded ScoutAM to the latest version 3.2.4 (Note: The Versity Gateway remains on its previous version and was not included in this upgrade.).
+- Various bug fixes and performance optimizations
 
 If you have any questions about any of the fixes, please [contact NeSI Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").

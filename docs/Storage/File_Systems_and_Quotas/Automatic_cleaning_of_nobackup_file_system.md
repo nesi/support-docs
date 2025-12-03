@@ -32,13 +32,31 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 ![Auto cleaning cycle](../../assets/images/AutocleanerProcess.png)
 
 !!! tip
-     At any time you can check for and delete files older than 90 days (replace <project code> with the project code of interest, e.g. “nesi99999”):
+     At any time you can check for and delete files older than 90 days (replace <project code> with the project code of interest, e.g. “nesi99999”).
 
-    - To list all files (and their owners) not accessed within 90 days, run the following command (you may want to redirect the output to a file): 
+     If you have just discovered you have files to delete or you have not moved or removed files: 
+
+    - (FAST) To list all files that will be deleted, you can unzip and read the list of files that have been marked for deletion:
+    ```bash
+    gunzip -c /search/autocleaner/filelists/current/<project code>.gz > list_to_delete_<project code>.txt
+    nano list_to_delete_<project code>.txt
+    ```
+    
+    - (FAST) To search through for files in <project code>.gz that contain the keyword KEYWORD (you may want to redirect the output to a file): 
+    ```zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz```
+
+    - (FAST) To direct this to a file: 
+    ```zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz > files_that_will_be_deleted.txt```
+
+    If you have moved or removed files that have been given in `/search/autocleaner/filelists/current/<project code>.gz` and you would like an updated list of files that will be removed:
+
+    - (SLOWER) To list all files (and their owners) not accessed within 90 days, run the following command (you may want to redirect the output to a file): 
     ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'```
 
-    - To direct this to a file: 
+    - (SLOWER) To direct this to a file: 
     ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n' > files_that_will_be_deleted.txt```
+
+    If you would like to delete the files that have been marked for deletion:
 
     - To delete those files, run this command:
     ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete```
@@ -72,6 +90,11 @@ $ nn_doomed_list --project nesi12345
 By default, the output produced contains 40 lines. 
 If you want a full list of the files, run ```nn_doomed_list --unlimited --project <yourprojectcode>```.
 In order to control the output summary length and level, use the --limited option eg. ```nn_doomed_list --limited 100 --project <yourprojectcode>```
+
+If you would like to see what was contained in your previous fortnight's ```nn_doomed_list```:
+```bash
+nn_doomed_list --project nesi99999 --cycle last
+```
 
 If you are trying to access a project you do not have access to, the script will fail and on the last line of the output you will get
 ```

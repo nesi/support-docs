@@ -11,13 +11,10 @@ search:
 
 ## New and Improved
 
-- Upgraded Versity ScoutAM to the latest version 3.3.0
-    - Various bug fixes, security fixes and performance optimizations
-- Upgraded Versity Gateway to the latest version 1.0.18
-    - Fixed an issue where the bucket location was not reported correctly
-    - Fixed an issue where bucket content lists and usage could not be determined for buckets that contained particular combinations of files and directories
-    - Various bug fixes, security fixes and performance optimizations
-    - Implement Cross-origin resource sharing (CORS) restrictions for buckets
+- Various bug fixes and performance optimizations
+- Fixed an issue where the bucket location was not reported correctly
+- Fixed an issue where bucket content lists and usage could not be determined for buckets that contained particular combinations of files and directories
+- Implement Cross-origin resource sharing (CORS) restrictions for buckets
 - Rotate internally used secret
 
 If you have any questions about any of the fixes, please [contact NeSI Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
