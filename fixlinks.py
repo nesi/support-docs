@@ -7,7 +7,7 @@ MD_ROOT = Path("docs")
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
 def all_md_files(root):
-    return [p for p in root.rglob("*.md")]
+    return [p for p in root.rglob("**/*.md")]
 
 def resolve_path(base_md, target):
     # separate anchor
@@ -22,8 +22,21 @@ def resolve_path(base_md, target):
         return True
     return False
 
-def find_candidates(basename, root):
+def find_exact_candidates(basename, root):
     return [p for p in root.rglob("*.md") if p.name == basename]
+
+def find_similar_candidates(basename, root):
+    return [p for p in root.rglob("*.md") if jaccard_similarity(p.name, basename) > 0.5] 
+
+
+def jaccard_similarity(s1, s2):
+        set1 = set(s1.split(".")[0].lower().split("_")) # Split into words
+        set2 = set(s2.split(".")[0].lower().split("_"))
+        intersection = len(set1.intersection(set2))
+        union = len(set1.union(set2))
+        if (intersection / union) > 0:
+            print(f"{s2}:{s1} {intersection / union}")
+        return intersection / union
 
 def main(dry_run):
     md_files = all_md_files(MD_ROOT)
@@ -41,10 +54,11 @@ def main(dry_run):
             base = os.path.basename(target.split('#',1)[0])
             if not base:
                 continue
-            candidates = find_candidates(base, MD_ROOT)
+            candidates = find_exact_candidates(base, MD_ROOT)
+            if ~len(candidates):
+                candidates = find_similar_candidates(base, MD_ROOT)
             if len(candidates) == 1:
-                cand = candidates[0]
-                rel = os.path.relpath(cand, md.parent)
+                rel = os.path.relpath(candidates[0], md.parent)
                 # preserve anchor
                 anchor = ''
                 if '#' in target:
