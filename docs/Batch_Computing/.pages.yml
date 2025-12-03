@@ -1,0 +1,10 @@
+nav:
+ - Submitting_your_first_job.md
+ - Hardware.md
+ - Job_prioritisation.md
+ - SLURM-Best_Practice.md
+ - Using_GPUs.md
+ - Job_Checkpointing.md
+ - Fair_Share.md
+ - Checksums.md
+ - "*"

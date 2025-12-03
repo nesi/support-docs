@@ -139,6 +139,7 @@ jobs:
       - if: ${{needs.get.outputs.filelist}}
         name: Check markdown meta.
         run: |
+          pip3 install titlecase
           shopt -s globstar extglob
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
   slurmcheck:

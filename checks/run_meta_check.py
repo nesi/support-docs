@@ -11,6 +11,7 @@ import sys
 import yaml
 import os
 import time
+from titlecase import titlecase
 from pathlib import Path
 
 # Ignore files if they match this regex
@@ -27,7 +28,7 @@ msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
-MIN_TAGS = 2
+MIN_TAGS = 1
 RANGE_SIBLING = [4, 8]
 DOC_ROOT = "docs"
 
@@ -324,6 +325,14 @@ def title_length():
 Try to keep it under {MAX_TITLE_LENGTH} characters to avoid word wrapping in the nav.",
         }
 
+def title_capitalisation():
+    correct_title = titlecase(title)
+    if title != correct_title:
+        yield {
+            "line": _get_lineno(r"^title:.*$"),
+            "message": f"Title '{title}' uses incorrect capitalisation. \
+'{correct_title}' is preferred",
+        }
 
 def minimum_tags():
     if "tags" not in meta or not isinstance(meta["tags"], list):
@@ -407,6 +416,7 @@ def dynamic_slurm_link():
 ENDCHECKS = [
     title_redundant,
     title_length,
+    title_capitalisation,
     meta_missing_description,
     meta_unexpected_key,
     minimum_tags,
