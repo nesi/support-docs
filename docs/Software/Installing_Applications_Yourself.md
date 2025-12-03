@@ -28,7 +28,7 @@ How to add package to an existing module will vary based on the language in ques
 - [MATLAB](Available_Applications/MATLAB.md#adding-support-packages)
 
 For other languages check if we have additional documentation for it
-in our [application documentation](../Scientific_Computing/Supported_Applications/index.md).
+in our [application documentation](Available_Applications/index.md).
 
 ## Other Applications
 
