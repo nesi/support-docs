@@ -7,7 +7,7 @@ description: How to setup your ssh config file in order to connect to the HPC cl
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
+     -   Have an [active account and project.](../Creating_an_Account.md)
      -   Have one of:
          - Built in Linux/Mac terminal
          - [Windows Subsystem for Linux](Windows_Subsystem_for_Linux_WSL.md)

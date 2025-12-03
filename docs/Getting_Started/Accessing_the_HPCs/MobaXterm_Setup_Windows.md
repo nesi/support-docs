@@ -12,7 +12,7 @@ description: How to set up cluster access using MobaXterm
     It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
 
 !!! prerequisite
-     -   Have an [active account and project.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
+     -   Have an [active account and project.](../Creating_an_Account.md)
      - [Download MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)
      - Followed the steps in [Standard Terminal](Standard_Terminal_Setup.md).
 

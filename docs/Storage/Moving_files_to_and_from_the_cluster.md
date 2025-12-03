@@ -8,7 +8,7 @@ tags:
 ---
 
 !!! prerequisite
-    Have an [active account and project.](../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md)
+    Have an [active account and project.](../Getting_Started/Creating_an_Account.md)
 
 Find more information on [our filesystem](./File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 

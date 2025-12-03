@@ -12,7 +12,7 @@ zendesk_section_id: 360000040056
 
 Much of the software installed on the NeSI cluster have multiple
 versions available as shown on the
-[supported applications page](index.md)
+[supported applications page](./index.md)
 or by using the `module avail` or `module spider` commands.
 
 If only the application name is given a default version will be chosen,

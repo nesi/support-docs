@@ -9,8 +9,8 @@ title: Git Bash (Windows)
 ---
 
 !!! prerequisite
-     -   Have a [NeSI account.](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md).
-     -   Be a member of an [active project.](../../Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_a_project.md)
+     -   Have a [NeSI account.](../Creating_an_Account.md).
+     -   Be a member of an [active project.](../Projects/Applying_to_Join_a_Project.md)
 
 ## First time setup
 

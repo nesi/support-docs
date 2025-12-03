@@ -1,8 +1,5 @@
 ---
 nav:
-  - JupyterLab: JupyterLab
-  - RStudio: RStudio.md
-  - MATLAB: MATLAB.md
   - VS Code: VSCode.md
   - Virtual desktop: virtual_desktop.md
   - "*"
