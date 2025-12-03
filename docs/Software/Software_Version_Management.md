@@ -4,15 +4,11 @@ tags:
 - software
 - versions
 title: Software Version Management
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001045096
-zendesk_section_id: 360000040056
 ---
 
 Much of the software installed on the NeSI cluster have multiple
 versions available as shown on the
-[supported applications page](./index.md)
+[supported applications page](Available_Applications/index.md)
 or by using the `module avail` or `module spider` commands.
 
 If only the application name is given a default version will be chosen,
