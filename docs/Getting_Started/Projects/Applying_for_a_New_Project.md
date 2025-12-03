@@ -19,9 +19,7 @@ tags:
          Carpentry](https://swcarpentry.github.io/shell-novice/), to help
          you and your project team gain the necessary skills.
     - Become familiar with foundational HPC skills, for example by
-         attending a NeSI introductory workshop, one of our [weekly
-         introductory sessions (or watching the
-         recording)](../Getting_Help/Introductory_Material.md),
+         attending a NeSI introductory workshop, [watching the recorded introductory webinars](../Getting_Help/Introduction_to_computing_on_the_NeSI_HPC.md),
          or having one or more of your project team members do so.
     - Review our [allocation classes](../Policy/Allocation_classes.md). If
          you don't think you currently qualify for any class other than
