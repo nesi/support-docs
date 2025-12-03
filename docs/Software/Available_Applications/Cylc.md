@@ -3,6 +3,9 @@ created_at: '2022-08-03T21:35:50Z'
 tags: []
 ---
 
+!!! note "Alternatives"
+    See [Snakemake](snakemake.md) and [Nextflow](Nextflow.md) for other possible choices of workflow engine.
+
 ## What is Cylc
 
 [Cylc](https://cylc.github.io/) is a **general purpose workflow engine**
@@ -19,8 +22,6 @@ available resources on the platform. One advantage of this approach over
 running a monolithic, parallel executable is that each task will require
 less resources that the complete problem, it is thus easier for each
 task to slip into the queue and start running.
-
-See [Snakemake](https://snakemake-on-nesi.sschmeier.com/) and [Nextflow](https://nextflow.io/) for other possible choices.
 
 In this article, we show how you can create a simple workflow and run it
 on NeSI's platform. Consult the [Cylc
