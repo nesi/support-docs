@@ -5,14 +5,15 @@ tags:
 - consultancy
 ---
 
-!!! success "Case studies"
-    [See our case studies page for examples of projects we have contributed to](https://www.reannz.co.nz/case-studies)
-
 Our Consultancy service provides scientific and HPC-focused
 computational and data science support to research projects across a
 range of domains.
 
 ![Consultancy](../../assets/images/consultancy.png){ width=75% }
+
+!!! success "Case studies"
+    [See our case studies page for examples of projects our Consultancy service has supported](https://www.reannz.co.nz/case-studies).
+
 
 ## Need support with your research project?
 
