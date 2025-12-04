@@ -7,7 +7,7 @@ tags:
 - cleaning
 ---
 
-The automatic cleaning feature is a programme of regular deletion of selected files from project directories in our scratch filesystem (/nesi/nobackup). 
+The automatic cleaning feature is a programme to regularly delete selected files from project directories in our scratch filesystem (`/nesi/nobackup`). 
 
 We do this to optimise the availability of this filesystem for active research computing workloads and to ensure we can reliably support large-scale compute and analytics workflows.
 
@@ -17,7 +17,7 @@ Files are deleted if they meet **all** of the following criteria:
 
 - The file was first created more than 90 days ago
 - The file has not been accessed, and neither its data nor its metadata has been modified, for at least 90 days
-- The file was identified as a candidate for deletion two weeks previously (and as such is listed by the command nn_doomed_list)
+- The file was identified as a candidate for deletion two weeks previously (and as such is listed by the command `nn_doomed_list`)
 
 
 The general process follows a schedule of:
@@ -31,47 +31,15 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 
 ![Auto cleaning cycle](../../assets/images/AutocleanerProcess.png)
 
-!!! tip
-     At any time you can check for and delete files older than 90 days (replace <project code> with the project code of interest, e.g. “nesi99999”).
-
-     If you have just discovered you have files to delete or you have not moved or removed files: 
-
-    - (FAST) To list all files that will be deleted, you can unzip and read the list of files that have been marked for deletion:
-    ```bash
-    gunzip -c /search/autocleaner/filelists/current/<project code>.gz > list_to_delete_<project code>.txt
-    nano list_to_delete_<project code>.txt
-    ```
-    
-    - (FAST) To search through for files in <project code>.gz that contain the keyword KEYWORD (you may want to redirect the output to a file): 
-    ```zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz```
-
-    - (FAST) To direct this to a file: 
-    ```zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz > files_that_will_be_deleted.txt```
-
-    If you have moved or removed files that have been given in `/search/autocleaner/filelists/current/<project code>.gz` and you would like an updated list of files that will be removed:
-
-    - (SLOWER) To list all files (and their owners) not accessed within 90 days, run the following command (you may want to redirect the output to a file): 
-    ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'```
-
-    - (SLOWER) To direct this to a file: 
-    ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n' > files_that_will_be_deleted.txt```
-
-    If you would like to delete the files that have been marked for deletion:
-
-    - To delete those files, run this command:
-    ```find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete```
-
-
 Objects other than files, such as directories and symbolic links, are not yet deleted under this policy (we will be reviewing the directory deletion policy in the next few months), even if at deletion time they are empty, broken, or otherwise redundant. These entities typically take up no disk space apart from a small amount of metadata, but still count towards the project's inode (file count) quota.
-
 
 ## How will I be notified that my data is a candidate for deletion?
 
-Prior to data being deleted, we’ll send you an email identifying what has been marked for deletion. These email notifications are optional so if you do not want to receive them, you can ‘unsubscribe’ through my.nesi.org.nz.
+Prior to data being deleted, we’ll send you an email identifying what has been marked for deletion. These email notifications are optional so if you do not want to receive them, you can ‘unsubscribe’ through [my.nesi.org.nz](my.nesi.org.nz).
 
-## How can I check which files have been already deleted or are scheduled for deletion?
+## How can I check which files are scheduled for deletion?
 
-You can manually check at any time if you have any data that's already been deleted or is scheduled for deletion. 
+You can manually check at any time if you have any data that's scheduled for deletion. 
 When you are connected to the HPCs via ssh, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
 
 ```sh
@@ -91,14 +59,45 @@ By default, the output produced contains 40 lines.
 If you want a full list of the files, run ```nn_doomed_list --unlimited --project <yourprojectcode>```.
 In order to control the output summary length and level, use the --limited option eg. ```nn_doomed_list --limited 100 --project <yourprojectcode>```
 
-If you would like to see what was contained in your previous fortnight's ```nn_doomed_list```:
-```bash
-nn_doomed_list --project nesi99999 --cycle last
-```
-
 If you are trying to access a project you do not have access to, the script will fail and on the last line of the output you will get
 ```
 PermissionError: [Errno 13] Permission denied: '/search/autocleaner/filelists/<projectcode>.gz'
+```
+
+### How do I get a txtfile of everything scheduled for deletion?
+
+Use this command, where you swap `<project code>` for your project code: 
+```bash
+gunzip -c /search/autocleaner/filelists/current/<project code>.gz > list_to_delete_<project code>.txt
+```
+
+### How can I find files with keywords in them that are scheduled for deletion?
+
+Use this command, where you swap `<project code>` for your project code: 
+```bash
+zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz > files_that_will_be_deleted.txt
+```
+
+## I have just deleted a file from the ```nn_doomed_list``` list, but it still appears in ```nn_doomed_list```
+
+If you have already deleted or moved some of these files, they will still appear in ```nn_doomed_list```. This is because 
+```nn_doomed_list``` reads from a file (`/search/autocleaner/filelists/<projectcode>.gz`) for speed. 
+
+If you would like to get an updated list of files for autodeletion (because they are 90 days old or more):
+```bash
+find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'
+```
+
+To direct this to a file (you will not see the output of this as it runs): 
+```bash
+find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n > files_that_will_be_deleted.txt'
+```
+
+## How can I check which files have been deleted in the last deletion cycle?
+
+If you would like to see what was contained in your previous fortnight's ```nn_doomed_list```:
+```bash
+nn_doomed_list --project nesi99999 --cycle last
 ```
 
 ## What should I do with expiring data on the nobackup filesystem?
@@ -109,7 +108,6 @@ If you have files identified as candidates for deletion that you need to keep be
 - Move the file(s) to Freezer, our [long-term storage service](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/). Note: Freezer is intended for use with relatively large files and should not be used for a large number of small files. To apply for a Freezer allocation, [contact our Support Team](mailto:support@nesi.org.nz) or request a new Freezer allocation in [my.nesi.co.nz](https://my.nesi.org.nz/login).
 - Move or copy the file to a storage system at your institution. We expect projects to do this for finalised output data and appreciate prompt egress of data once it is no longer used for processing.
 
-
 ## Where should I store my data?
 
 Generally: 
@@ -117,25 +115,27 @@ Generally:
 -  the scratch filesystem should be used for holding large reference working datasets (e.g., an extraction of compressed input data) and as a destination for writing and modifying temporary data. It can also be used to build and edit code, provided that the code is under version control and changes are regularly checked into upstream revision control systems.
 -  Freezer, our [long-term storage service](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), should be used for larger datasets that you only access occasionally and do not need to change in situ.
 
-
-
 | Frequency of data being read | Frequency of data being written | Recommended option                                                                                         |
 | -------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Often                                                    | Often (at least once every two months)                   | Store in your /nobackup/<projectcode> directory (but ensure key result data is copied to the persistent project directory) |
 | Often                                                    | Seldom                                                   | Store in your /project/<projectcode> directory                                                                    |
 | Seldom                                                   | Seldom                                                   | Apply for an allocation to use Freezer or store the data elsewhere (e.g. at your institution)                                                        |
 
-
-
 ## If I need a file that was deleted from nobackup, what should I do?
 
 Please [contact our Support Team](mailto:support@nesi.org.nz) as soon as possible after you find that the file is missing. We can’t guarantee that it can be recovered, but we will do our best to retrieve the data.
-
 
 ## I have research data on nobackup that I can't store in my project directory or at my institution right now. What should I do?
 
 Please [contact our Support Team](mailto:support@nesi.org.nz) so we can discuss your short-, medium- and long-term data storage needs. 
 
+## I would like to delete the data that is up for autocleaning
+
+If you would like to delete the files that have been marked for deletion, run this command:
+    
+```bash
+find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete
+```
 
 ## More information
 
