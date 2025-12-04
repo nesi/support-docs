@@ -23,7 +23,7 @@ To use Globus to transfer data to/from NeSI platforms, you need:
 1. A Globus account (see
   [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 2. An active NeSI account (see
-  [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md))
+  [Creating a NeSI Account](../../Getting_Started/Creating_an_Account.md))
 3. Access privileges to the Globus endpoint/collection you
    plan on transferring data from or to. This endpoint/collection
    could be a personal one on your workstation, or it could be managed

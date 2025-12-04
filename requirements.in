@@ -12,7 +12,7 @@ mkdocs-open-in-new-tab
 mkdocs-git-authors-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_file
-mkdocs-awesome-pages-plugin
+mkdocs-awesome-nav
 
 # checkers
 neoteroi-mkdocs
@@ -22,6 +22,7 @@ linkcheckmd
 symspellpy
 pyspelling
 flashtext
+titlecase
 
 # additional tools
 pip-tools

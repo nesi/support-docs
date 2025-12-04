@@ -6,10 +6,6 @@ tags:
 - workshop
 - introductory
 - office hours
-vote_count: 5
-vote_sum: 5
-zendesk_article_id: 360000428676
-zendesk_section_id: 360000164635
 ---
 
 If you are new to using our advanced computing platforms, you can find introductory video tutorials available on [our YouTube channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuFsIzAWaIiYgs-kConq-Hjw) to help get you started. 

@@ -20,7 +20,7 @@ search:
     items under Accounts.
 - On the Project page and New Allocation Request page, tool tip text
     referring to
-    [nn\_corehour\_usage](../../../Scientific_Computing/Batch_Jobs/Checking_your_projects_usage_using_nn_corehour_usage.md)
+    [nn\_corehour\_usage](../../../Batch_Computing/Checking_resource_usage.md)
     will appear when you hover over the Mahuika Compute Units
     information.
 

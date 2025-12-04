@@ -1,6 +1,8 @@
 nav:
+    - Announcements
     - Getting_Started
-    - General
-    - Scientific_Computing
+    - Software
+    - Batch_Computing
+    - Interactive_Computing
     - Storage
-    - NeSI_Service_Subscriptions
+    - Service_Subscriptions

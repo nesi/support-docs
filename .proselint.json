@@ -2,6 +2,7 @@
     "checks":{
     "hyperbole.misc": false,
     "typography.exclamation": false,
+    "typography.punctuation.hyperbole": false,
     "typography.symbols": false,
     "links.broken": false
 }}

@@ -1,9 +1,10 @@
 ---
 nav:
- - Accounts, Projects and Allocations : Accounts-Projects_and_Allocations
+ - Creating_an_Account.md
+ - Projects 
+ - Allocations
  - Accessing_the_HPCs
- - Next_Steps
  - Getting_Help
  - Cheat_Sheets
- - ...
+ - "*"
  - my.nesi.org.nz: my-nesi-org-nz

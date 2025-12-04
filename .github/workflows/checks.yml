@@ -76,7 +76,8 @@ jobs:
         name: Install dependencies
         run: |
           sudo apt install -y aspell
-          pip3 install pyspelling flashtext
+          pip3 install $(grep ^pyspelling requirements.txt)
+          pip3 install $(grep ^flashtext requirements.txt)
       - if: ${{needs.get.outputs.filelist}}
         name: Run pyspelling
         run: |
@@ -96,7 +97,7 @@ jobs:
         uses: actions/checkout@v4
       - if: ${{needs.get.outputs.filelist}}
         name: Install dependencies
-        run: pip3 install proselint
+        run: pip3 install $(grep ^proselint requirements.txt)
       - if: ${{needs.get.outputs.filelist}}
         name: Run proselint
         run: |
@@ -138,6 +139,7 @@ jobs:
       - if: ${{needs.get.outputs.filelist}}
         name: Check markdown meta.
         run: |
+          pip3 install titlecase
           shopt -s globstar extglob
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
   slurmcheck:

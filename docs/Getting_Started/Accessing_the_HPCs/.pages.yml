@@ -1,6 +1,6 @@
 ---
 nav:
-  - Choosing_and_Configuring_Software_for_Connecting_to_the_Clusters.md
+  - Connecting_to_the_Cluster.md
   - First_Time_Login.md
   - Port_Forwarding.md
-  - ...
+  - "*"

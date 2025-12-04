@@ -3,6 +3,5 @@ nav:
   - Configuring_s3cmd.md
   - Freezer_Guide.md
   - Other_Useful_Commands.md
-  - Troubleshooting.md
-  - ...
+  - "*"
   - Release Notes freezer.nesi.org.nz: Release_Notes_freezer-nesi-org-nz
