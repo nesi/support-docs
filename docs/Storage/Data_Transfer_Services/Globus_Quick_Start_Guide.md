@@ -11,7 +11,7 @@ between two Globus Data Transfer Nodes (DTNs). To use Globus to transfer
 data to or from NeSI, you need:
 
 1. An active NeSI account (see
-  [Creating a NeSI Account](../../Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile.md))
+  [Creating a NeSI Account](../../Getting_Started/Creating_an_Account.md))
 2. A Globus account (see
   [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 3. Access to Globus DTNs or endpoints  

@@ -4,7 +4,6 @@
         "domains": [
             "cae",
             "engineering",
-            "mahuika",
             "gpu",
             "mpi",
             "omp",
@@ -66,7 +65,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.62,
+                        "hourly_average": 0.59,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -80,7 +79,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.65,
+                        "hourly_average": 0.63,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -2758,15 +2757,16 @@
         "support": "",
         "versions": [
             "1.9.8-gimpi-2020a",
-            "2.1.1-gimpi-2022a"
+            "2.1.1-gimpi-2022a",
+            "2.5.3-gompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.1-gimpi-2022a",
+        "default": "2.5.3-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1764276235,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/data/CDO/2.1.1-gimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CDO/2.5.3-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3399,7 +3399,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.99,
+                        "hourly_average": 1.0,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
@@ -3433,7 +3433,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.73,
+                        "hourly_average": 0.75,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3460,14 +3460,14 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.91,
+                "server_uptime": 0.92,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.95,
+                        "hourly_average": 0.96,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3535,7 +3535,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 11.23,
+                        "hourly_average": 10.33,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3549,7 +3549,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 8.49,
+                        "hourly_average": 7.82,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3617,7 +3617,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 130784273.2,
+                        "hourly_average": 120518579.82,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4433,6 +4433,28 @@
         "last_updated": 1740132628,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/DeePMD-kit/2.1.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "DeePMD-plugin": {
+        "description": "Deep learning-based models of interatomic potential energy and force field, as a LAMMPS plugin.",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://docs.deepmodeling.com/projects/deepmd",
+        "support": "",
+        "versions": [
+            "3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2",
+        "default_type": "latest",
+        "last_updated": 1764050006,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/DeePMD-plugin/3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7231,6 +7253,34 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Globus-CLI": {
+        "description": "A Command Line Wrapper over the Globus SDK for Python, which provides an interface to Globus services\n from the shell, and is suited to both interactive and simple scripting use cases.",
+        "domains": [
+            "data"
+        ],
+        "extensions": [
+            "cryptography-43.0.1",
+            "globus-cli-3.16.0",
+            "globus-sdk-3.25.0",
+            "jmespath-1.0.1",
+            "PyJWT-2.8.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://docs.globus.org/cli/",
+        "support": "",
+        "versions": [
+            "3.16.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.16.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1764034841,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Globus-CLI/3.16.0-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "globus-compute-endpoint": {
         "description": "Globus Compute is a distributed Function as a Service (FaaS) platform that enables flexible,\n scalable, and high performance remote function execution. Unlike centralized FaaS platforms,\n Globus Compute allows users to execute functions on heterogeneous remote computers, from laptops to\n campus clusters, clouds, and supercomputers. A Globus Compute endpoint is a persistent service\n launched by the user on a compute system to serve as a conduit for executing functions on\n that computer.",
         "domains": [
@@ -9708,6 +9758,7 @@
         "homepage": "http://lammps.sandia.gov/",
         "support": "",
         "versions": [
+            "22Jul2025-foss-2023a-kokkos",
             "23Jun2022-gimkl-2022a-kokkos",
             "23Jun2022-gimkl-2022a-kokkos-EChemDID",
             "31Aug2021-gimkl-2022a-kokkos-EChemDID"
@@ -9936,9 +9987,31 @@
         "network_licences": [],
         "default": "12.5.0",
         "default_type": "latest",
-        "last_updated": 1763340197,
+        "last_updated": 1763707869,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/libcuda-stub/12.5.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "libdeepmd": {
+        "description": "Deep learning-based models of interatomic potential energy and force field",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://docs.deepmodeling.com/projects/deepmd",
+        "support": "",
+        "versions": [
+            "3.1.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.1.1",
+        "default_type": "latest",
+        "last_updated": 1764049872,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/libdeepmd/3.1.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11612,7 +11685,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.7,
+                "server_uptime": 0.73,
                 "server_version": "",
                 "features": []
             },
@@ -11650,7 +11723,7 @@
                 "server": "MATLAB@uoo",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.88,
+                "server_uptime": 0.89,
                 "server_version": "",
                 "features": []
             },
@@ -11669,7 +11742,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.23,
+                "server_uptime": 0.29,
                 "server_version": "",
                 "features": []
             },
@@ -11688,7 +11761,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.77,
+                "server_uptime": 0.79,
                 "server_version": "",
                 "features": []
             },
@@ -11914,6 +11987,28 @@
         "last_updated": 1753397876,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.3.1-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "MDI": {
+        "description": "The MolSSI Driver Interface (MDI) project provides a\nstandardized API for fast, on-the-fly communication between computational\nchemistry codes. This greatly simplifies the process of implementing\nmethods that require the cooperation of multiple software packages and\nenables developers to write a single implementation that works across\nmany different codes. The API is sufficiently general to support a wide\nvariety of techniques, including QM/MM, ab initio MD, machine learning,\nadvanced sampling, and path integral MD, while also being straightforwardly\nextensible. Communication between codes is handled by the MDI Library, which\nenables tight coupling between codes using either the MPI or TCP/IP methods.\n",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/MolSSI-MDI/MDI_Library",
+        "support": "",
+        "versions": [
+            "1.4.26-foss-2023a-Python-3.11.6"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.4.26-foss-2023a-Python-3.11.6",
+        "default_type": "latest",
+        "last_updated": 1764018673,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/MDI/1.4.26-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13653,7 +13748,7 @@
         "force_show": "False"
     },
     "ncview": {
-        "description": "Visual browser for netCDF format files.",
+        "description": "Ncview is a visual browser for netCDF format files.\nTypically you would use ncview to get a quick and easy, push-button\nlook at your netCDF files. You can view simple movies of the data,\nview along various dimensions, take a look at the actual data values,\nchange color maps, invert the data, etc.",
         "domains": [
             "vis"
         ],
@@ -13662,16 +13757,17 @@
         "homepage": "http://meteora.ucsd.edu/~pierce/ncview_home_page.html",
         "support": "",
         "versions": [
+            "2.1.11-gompi-2023a",
             "2.1.7-gimkl-2018b",
             "2.1.7-gimpi-2020a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.7-gimpi-2020a",
+        "default": "2.1.11-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1764190703,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/ncview/2.1.7-gimpi-2020a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ncview/2.1.11-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14630,7 +14726,7 @@
         "network_licences": [],
         "default": "4.1.5-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1746708561,
+        "last_updated": 1763521863,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/mpi/OpenMPI/4.1.5-GCC-12.3.0.lua",
         "force_hide": "False",
@@ -22301,6 +22397,28 @@
         "last_updated": 1740132635,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/VMD/1.9.3-gimkl-2020a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Voro++": {
+        "description": "Voro++ is a software library for carrying out three-dimensional computations of the Voronoi\ntessellation. A distinguishing feature of the Voro++ library is that it carries out cell-based calculations,\ncomputing the Voronoi cell for each particle individually. It is particularly well-suited for applications that\nrely on cell-based statistics, where features of Voronoi cells (eg. volume, centroid, number of faces) can be used\nto analyze a system of particles.",
+        "domains": [
+            "math"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "http://math.lbl.gov/voro++/",
+        "support": "",
+        "versions": [
+            "0.4.6-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.4.6-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1764018411,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/math/Voro++/0.4.6-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
