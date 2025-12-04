@@ -28,6 +28,7 @@ keypoints:
 - "Directory names in a path are separated with `/` on Unix, but `\\` on Windows."
 - "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
 ---
+
 > ## The Unix Shell
 >
 > This episode will be a quick introduction to the Unix shell, only the bare minimum required to use the cluster.

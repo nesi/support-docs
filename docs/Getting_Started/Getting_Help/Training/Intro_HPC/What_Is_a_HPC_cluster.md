@@ -1,23 +1,7 @@
 ---
-title: "Working on a remote HPC system"
-# teaching: 10
-teaching: 20
-exercises: 0
-questions:
-- "What is an HPC system?"
-- "How does an HPC system work?"
-- "How do I log in to a remote HPC system?"
-objectives:
-- "Connect to a remote HPC system."
-- "Understand the general HPC system architecture."
-keypoints:
-- "An HPC system is a set of networked machines."
-- "HPC systems typically provide login nodes and a set of compute nodes."
-- "The resources found on independent (compute) nodes can vary in volume and
-  type (amount of RAM, processor architecture, availability of network mounted
-  filesystems, etc.)."
-- "Files saved on shared storage are available on all nodes."
-- "The login node is a shared machine: be considerate of other users."
+description: Introduction to basic terminology and principles of High Performance Computing
+tags:
+  - training
 ---
 
 ## What Is an HPC System?
