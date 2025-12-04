@@ -64,34 +64,34 @@ If you are trying to access a project you do not have access to, the script will
 PermissionError: [Errno 13] Permission denied: '/search/autocleaner/filelists/<projectcode>.gz'
 ```
 
-### How do I get a txtfile of everything scheduled for deletion?
+!!! tip
+    
+    How do I get a txtfile of everything scheduled for deletion? Use this command, where you swap `<project code>` for your project code: 
+    ```bash
+    gunzip -c /search/autocleaner/filelists/current/<project code>.gz > list_to_delete_<project code>.txt
+    ```
+    
+    How can I find files with keywords in them that are scheduled for deletion? Use this command, where you swap `<project code>` for your project code: 
+    ```bash
+    zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz > files_that_will_be_deleted.txt
+    ```
 
-Use this command, where you swap `<project code>` for your project code: 
-```bash
-gunzip -c /search/autocleaner/filelists/current/<project code>.gz > list_to_delete_<project code>.txt
-```
+## I have just deleted a file from ```nn_doomed_list```, but it still appears in ```nn_doomed_list```?
 
-### How can I find files with keywords in them that are scheduled for deletion?
-
-Use this command, where you swap `<project code>` for your project code: 
-```bash
-zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz > files_that_will_be_deleted.txt
-```
-
-## I have just deleted a file from the ```nn_doomed_list``` list, but it still appears in ```nn_doomed_list```
-
-If you have already deleted or moved some of these files, they will still appear in ```nn_doomed_list```. This is because 
+If you have already deleted or moved files that appeared in ```nn_doomed_list```, they will still appear in ```nn_doomed_list```. This is because 
 ```nn_doomed_list``` reads from a file (`/search/autocleaner/filelists/<projectcode>.gz`) for speed. 
 
-If you would like to get an updated list of files for autodeletion (because they are 90 days old or more):
-```bash
-find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'
-```
-
-To direct this to a file (you will not see the output of this as it runs): 
-```bash
-find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n > files_that_will_be_deleted.txt'
-```
+!!! tip
+    
+    If you would like to get an updated list of files for autodeletion (because they are 90 days old or more):
+    ```bash
+    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'
+    ```
+    
+    To direct this to a file (you will not see the output of this as it runs): 
+    ```bash
+    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n > files_that_will_be_deleted.txt'
+    ```
 
 ## How can I check which files have been deleted in the last deletion cycle?
 
