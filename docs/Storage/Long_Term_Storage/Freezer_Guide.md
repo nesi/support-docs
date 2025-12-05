@@ -116,7 +116,7 @@ Partially uploaded files will be deleted automatically.
 
 !!! warning
 
-  If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](Freezer_Guide.md#Synchronise-data) for more information. 
+  If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
 
 ### Preview or dry-run
 
