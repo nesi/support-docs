@@ -66,12 +66,12 @@ PermissionError: [Errno 13] Permission denied: '/search/autocleaner/filelists/<p
 
 !!! tip
     
-    How do I get a txtfile of everything scheduled for deletion? Use this command, where you swap `<project code>` for your project code: 
+    Use this command to get a txtfile of everything scheduled for deletion: 
     ```bash
     gunzip -c /search/autocleaner/filelists/current/<project code>.gz > list_to_delete_<project code>.txt
     ```
     
-    How can I find files with keywords in them that are scheduled for deletion? Use this command, where you swap `<project code>` for your project code: 
+    Use this command to find files with keywords in them that are scheduled for deletion: 
     ```bash
     zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz > files_that_will_be_deleted.txt
     ```
