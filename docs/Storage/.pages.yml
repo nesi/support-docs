@@ -1,4 +1,5 @@
 nav:
+  - Storage_best_practices.md
   - File_Systems_and_Quotas
   - Data_Recovery
   - Data_Transfer_Services

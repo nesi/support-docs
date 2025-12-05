@@ -35,7 +35,7 @@ Objects other than files, such as directories and symbolic links, are not yet de
 
 ## How will I be notified that my data is a candidate for deletion?
 
-Prior to data being deleted, we’ll send you an email identifying what has been marked for deletion. These email notifications are optional so if you do not want to receive them, you can ‘unsubscribe’ through [my.nesi.org.nz](my.nesi.org.nz).
+Prior to data being deleted, we’ll send you an email identifying what has been marked for deletion. These email notifications are optional so if you do not want to receive them, you can ‘unsubscribe’ through [my.nesi.org.nz](https://my.nesi.org.nz/login).
 
 ## How can I check which files are scheduled for deletion?
 
