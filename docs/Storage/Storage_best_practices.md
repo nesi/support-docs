@@ -7,7 +7,7 @@ This page will guide you through best practices for storing your data on Mahuika
 The 3,2,1 rule is a best practise of backing up data to minimise lose of mission critical data. The rule is
 
 * **3 Copies**: Keep your original data plus two backups.
-* **2 Media Types**: Store backups on different media (e.g., internal drive, external HDDs, cloud, NAS).
+* **2 Media Types**: Store backups on different media (e.g., Internal Hard Drive, External Hard Drives, Cloud, Network Attached Device, High Capacity Storage).
 * **1 Offsite**: Keep one copy physically separate (e.g., cloud, offsite drive) to survive local disasters.
 
 ## What are `home`, `project` and `nobackup` directories for?
