@@ -83,7 +83,7 @@ LAMMPS is distributed as an open source code under the terms of the GPLv2. The m
     export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
     
     # srun handles the MPI placement based on the choices in the job script file
-    srun lmp -in lj.in -sf gpu -pk gpu 1
+    srun lmp -in in.lammps -k on g 1 -pk kokkos -sf kk -pk omp $OMP_NUM_THREADS
     ```
 
 ## Parallelisation Using OpenMP and MPI
