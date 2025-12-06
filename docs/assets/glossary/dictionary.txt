@@ -1341,6 +1341,7 @@ cutadapt's
 cutadapt
 cuteSV's
 cuteSV
+cylc
 cyvcf2's
 cyvcf2
 dadi's
