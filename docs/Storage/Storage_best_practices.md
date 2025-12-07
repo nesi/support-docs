@@ -55,6 +55,6 @@ High capacity storage are offer by various intitutes around New Zealand. Here ar
 
 ### Network Attached Storage (NAS) Devices and Hard Drives
 
-Based on your groups resources, it may be an option to purchase a Network Attached Storage (NAS) device or Hard drives to locally store data onsite. 
+Based on your group's resources, it may be an option to purchase a Network Attached Storage (NAS) device or hard drives to store data onsite. 
 
 
