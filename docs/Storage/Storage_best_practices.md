@@ -40,7 +40,7 @@ If you are working at a New Zealand university, the following links provide info
 * Massey University: https://www.massey.ac.nz/study/library/researcher-support/research-data-management/store-your-research-data/
 * University of Waikato (Check): https://www.waikato.ac.nz/students/support-services/student-ict/storage/
 * Victoria University of Wellington: https://libguides.victoria.ac.nz/research-data-management/store
-* Canterbury University: https://www.canterbury.ac.nz/research/eresearch-at-canterbury/research-data-storage
+* University of Canterbury: https://www.canterbury.ac.nz/research/eresearch-at-canterbury/research-data-storage
 * Lincoln University (Check): 
 * University of Otago: https://ask.otago.ac.nz/knowledgebase/article/KA-10003729/en-us
 
