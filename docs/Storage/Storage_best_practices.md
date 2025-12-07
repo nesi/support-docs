@@ -25,7 +25,7 @@ It is best practice to perform calculations in the following order:
 1. Perform your calculations in `nobackup`. `nobackup` is a large storage space (usually on the order of TBs) that gives you space to perform your calculations. 
 2. After analysis, any data you want to keep for further analysis and that you will access regularly should be kept in `project`.
 3. If you have GBs or TBs of data that you need to keep on Mahuika but don't have enough space on `project` and do not access regularly, you should consider moving this data onto Freezer. Freezer is designed to keep mass amounts of data on that you will only need to access every few months. [Click here for more information about Freezer](Long_Term_Storage/Freezer_long_term_storage.md). 
-4. `project` is limited in space, so any data you can move off of Mahuika should be when you are either done with the data, or you can do analysis of the data on your own computer. See [I would like to move data off Mahuika. What are my options?](#i-would-like-to-move-data-off-mahuika-what-are-my-options)
+4. `project` is limited in space, so any data you can move off Mahuika should be when you are either done with the data, or you can do analysis of the data on your own computer. See [I would like to move data off Mahuika. What are my options?](#i-would-like-to-move-data-off-mahuika-what-are-my-options)
 
 ## I would like to move data off Mahuika. What are my options?
 
