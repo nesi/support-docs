@@ -21,12 +21,11 @@ LAMMPS runs on single processors or in parallel using message-passing techniques
 
 LAMMPS is distributed as an open source code under the terms of the GPLv2. The main authors of LAMMPS can be contacted via email to [developers@lammps.org](mailto:developers@lammps.org).
 
-
 ## Examples
 
 === "Serial"
     For when only one CPU is required, generally as part of
-    a [job array](../../Getting_Started/Next_Steps/Parallel_Execution.md#job-arrays)
+    a [job array](../Parallel_Computing/Parallel_Execution.md#job-arrays)
 
     ```sl
     #!/bin/bash -e
@@ -65,7 +64,8 @@ LAMMPS is distributed as an open source code under the terms of the GPLv2. The m
     ```
 
 === "GPU"
-    For more information on using GPUs see [GPU use on NeSI](../Batch_Jobs/Using_GPUs.md)
+    For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+
     ```sl
     #!/bin/bash -e
 
@@ -88,30 +88,30 @@ LAMMPS is distributed as an open source code under the terms of the GPLv2. The m
 
 ## Parallelisation Using OpenMP and MPI
 
-Parallisation is used to increase the speed of a LAMMPS simulations. 
-LAMMPS does this by breaking up a simulation cell into multiple tasks. 
+Parallisation is used to increase the speed of a LAMMPS simulations.
+LAMMPS does this by breaking up a simulation cell into multiple tasks.
 LAMMPS has two strategies for breaking a cell of particles into multiple
-tasks. 
+tasks.
 
-* Domain Decomposition: In this approach, the global domain is divided 
+* Domain Decomposition: In this approach, the global domain is divided
   into many sub-domains and then each sub-domain is assigned to a processor.
-* Particle Decomposition: In this approach, each atom/particle is assigned 
-  a processor to calculate everything that is needed for that atom/particle. 
+* Particle Decomposition: In this approach, each atom/particle is assigned
+  a processor to calculate everything that is needed for that atom/particle.
 
-Both domain and particle decomposition strategies can be used together. 
+Both domain and particle decomposition strategies can be used together.
 Domain decomposition is accomplished by MPI, while particle decomposition
-is performed by OpenMP. These methods and their consequences to the 
+is performed by OpenMP. These methods and their consequences to the
 performance of your LAMMPS simulations can vary, so testing is key
 to optimising your LAMMPS simulation. However, in general terms:
 
-* For dense, homogeneous, well behaved system with a sufficient 
-  number of atoms, so that the MPI parallelization can be at its 
+* For dense, homogeneous, well behaved system with a sufficient
+  number of atoms, so that the MPI parallelization can be at its
   most efficient.
-* In inhomogeneous systems where there could be lots of empty spaces 
+* In inhomogeneous systems where there could be lots of empty spaces
   in the simulation cell, a sensible mix of MPI and OpenMP could be
-  used. 
+  used.
 
-See here for more of a discussion on how MPI and OpenMP are used by 
+See here for more of a discussion on how MPI and OpenMP are used by
 LAMMPS and under what simulation conditions each strategy is best used
 for: [MPI vs OpenMP](https://www.hpc-carpentry.org/tuning_lammps/04-lammps-bottlenecks/index.html)
 
