@@ -468,8 +468,9 @@ Instead of
 Use
 
 <pre><code>
-[sacct](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html#lbAI)
+{% raw %}[sacct](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html#lbAI){% endraw %}
 </code></pre>
+
 
 The current version of Slurm can be changed in the [`mkdocs.yml`](https://github.com/nesi/support-docs/blob/181a3d96716795a04e2c1084be8d1d9b7b45cacf/mkdocs.yml#L67) file.
 
@@ -627,11 +628,15 @@ There are a few includes you may want to use.
 
 Here is an example using dynamically using the module version information.
 
-`module load ANSYS/{{ applications.ANSYS.default }}`
+```sh
+module load ANSYS/{{ applications.ANSYS.default }}
+```
 
 ```md
 {% raw %}
-`module load ANSYS/{{ applications.ANSYS.default }}`
+```sh
+module load ANSYS/{{ applications.ANSYS.default }}
+```
 {% endraw %}
 ```
 

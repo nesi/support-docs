@@ -46,7 +46,7 @@ obtained with the Software.
     
     module load GROMACS/{{app.default}}
     
-    # Note: In version 2021.5 and older use `gmx-serial` instead of `gmx` 
+    # Note: In version 2021.5 and older use `gmx_serial` instead of `gmx` 
     srun gmx mdrun -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
 
@@ -64,7 +64,7 @@ obtained with the Software.
     
     module load GROMACS/{{app.default}}
     
-    # Note: In version 2021.5 and older use `gmx-serial` instead of `gmx` 
+    # Note: In version 2021.5 and older use `gmx_serial` instead of `gmx` 
     srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK} -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
 === "Multi Node (Hybrid)"
@@ -80,7 +80,7 @@ obtained with the Software.
     #SBATCH --mem           1500         # How much memory.
     
     module load GROMACS/{{app.default}}
-    srun gmx-mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
+    srun gmx_mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
 === "GPU"
     For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
@@ -95,7 +95,7 @@ obtained with the Software.
     #SBATCH --mem           1500         # How much memory.
     
     module load GROMACS/{{app.default}}
-    # Note: In version 2021.5 and older use `gmx-serial` instead of `gmx` 
+    # Note: In version 2021.5 and older use `gmx_serial` instead of `gmx` 
     srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK} -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
 
@@ -110,12 +110,12 @@ For a complete set of GROMACS options, please refer to GROMACS
 documentation.
 
 Each GROMACS environment module contains two executables one built with shared memory parallelism `gmx`, 
-and one with distrubuted memorory parallelism (MPI) `gmx-mpi`. which can run across multiple nodes,
+and one with distrubuted memory parallelism (MPI) `gmx_mpi`. which can run across multiple nodes,
 ie: with `--ntasks` > 1. 
 
 !!! warning
     In versions of GROMACS older than `GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid`
-    the `gmx` executable is instead called `gmx-serial`.
+    the `gmx` executable is instead called `gmx_serial`.
 
 ## CUDA
 
@@ -123,7 +123,7 @@ GROMACS is built with CUDA support, but that is optional to use - it will run wi
 
 ## MPI
 
-If you do elect to use `gmx-mpi`, note that hybrid parallelisation (i.e. with `--cpus-per-task` > `1`) can be
+If you do elect to use `gmx_mpi`, note that hybrid parallelisation (i.e. with `--cpus-per-task` > `1`) can be
 more efficient than MPI-only parallelisation.  With hybrid parallelisation, it is important to run
 `mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
 be the number of CPUs per task. You can make sure the value is correct

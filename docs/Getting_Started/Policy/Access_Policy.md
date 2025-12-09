@@ -1,18 +1,18 @@
 ---
 created_at: '2021-01-13T00:17:34Z'
 tags: []
-status: deprecated
+status: 
 ---
 
-See [Access Policy](https://www.nesi.org.nz/services/high-performance-computing-and-analytics/guidelines/access-policy) for
-the current version of the NeSI Access Policy.
+Following the integration of NeSI and REANNZ, all aspects of NeSI delivery, including the previous Access Policy, are now the responsibility of REANNZ. If you have questions about this, [please get in touch](mailto:support@nesi.org.nz). 
 
-Our Access Policy provides essential information for researchers
-accessing the following NeSI services:
+Our current version of the Access Policy [can be viewed here](https://www.nesi.org.nz/sites/default/files/media/NeSI%20Access%20Policy%203.0.pdf).
 
-- HPC Compute and Analytics - provides access to
-    HPC platforms that host a broad range of high-performance
-    [software applications and libraries](https://www.nesi.org.nz/services/high-performance-computing/software).
-- Consultancy and Training – provides access to
-    [expert scientific software programmers](https://www.nesi.org.nz/about-us/who-we-are) and
-    [training workshops](https://www.nesi.org.nz/services/computational-science-team/workshops) respectively.
+## What does this cover?
+
+Our Access Policy provides essential information for researchers accessing the following services:
+
+- [HPC and data analytics](https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics) - a mix of traditional HPC offerings alongside cloud environments, programmable infrastructure, and specialised data science capabilities.
+- [Consultancy](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Consultancy/) - scientific and HPC-focused computational and data science support provided to research projects across a range of domains.
+- [Training](https://www.reannz.co.nz/products-and-services/training) – strengthening computational capability and sharing training expertise across New Zealand’s research communities.
+
