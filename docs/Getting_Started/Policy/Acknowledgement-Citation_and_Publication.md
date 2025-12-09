@@ -2,10 +2,6 @@
 created_at: '2021-01-13T00:24:35Z'
 tags: []
 title: Acknowledgement, Citation and Publication
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360002667676
-zendesk_section_id: 360000224835
 ---
 
 Sharing your research outputs helps us demonstrate the impacts and benefits delivered and supported by our infrastructure, services, and team members.  
@@ -33,6 +29,8 @@ Research outputs can fall into any of the following categories:
 
 Please note: As of 01 July, the infrastructure, services, and support of NeSI was integrated with REANNZ. As such, please include the following acknowledgement in your research outputs:
 
-_The author(s) wish to acknowledge use of the eResearch Infrastructure Platform hosted by the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd., and funded by the Ministry of Business, Innovation & Employment. URL: https://www.reannz.co.nz_
+```txt
+The author(s) wish to acknowledge use of the eResearch Infrastructure Platform hosted by the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd., and funded by the Ministry of Business, Innovation & Employment. URL: https://www.reannz.co.nz
+```
 
-If you have questions regarding how to acknowledge REANNZ infrastructure or support, please [get in touch](support@nesi.org.nz).
+If you have questions regarding how to acknowledge REANNZ infrastructure or support, please {% include "partials/support_request.html" %}.
