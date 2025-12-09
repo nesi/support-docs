@@ -10,7 +10,7 @@ These are open for review if you find any of them unreasonable or inefficient.
 
 ## Per Job
 
-![job limits](../assets/images/job_limits.png){ align=right width=60% }
+![job limits](../assets/images/job_limits.png){ align=right width=75% }
 
 - 10 nodes
 - 21 node-days
