@@ -26,9 +26,9 @@ General documentation can be found
 [here](https://github.com/firemodels/fds/releases/download/FDS6.7.1/FDS_User_Guide.pdf).
 
 FDS can utilise both
-[MPI](../Parallel_Computing/Parallel_Execution.md#mpi)
+[MPI](../Parallel_Computing/Parallel_Computing.md#mpi)
 and
-[OpenMP](../Parallel_Computing/Parallel_Execution.md#multi-threading)
+[OpenMP](../Parallel_Computing/Parallel_Computing.md#multi-threading)
 
 ## Example Script
 

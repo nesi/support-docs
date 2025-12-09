@@ -7,8 +7,7 @@ status: deprecated
 
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
-article on [Parallel
-Execution](Parallel_Execution.md) for
+article on [Parallel Execution](Parallel_Computing.md) for
 an introduction). Care needs to be taken when running multiple threads
 on the HPC to achieve best performance - getting it wrong can easily
 increase compute times by tens of percents, sometimes even more. This is

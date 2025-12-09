@@ -7,13 +7,13 @@ description: How to take advantage of multiple CPUs.
 
 Many scientific software applications are written to take advantage of multiple CPUs in some way. But often this must be specifically requested by the user at the time they run the program, rather than happening automatically.
 
-The are three types of parallel execution we will cover are [Multi-Threading](#multi-threading), [Distributed (MPI)](#mpi) and [Job Arrays](#job-arrays).
+The are three types of parallel execution we will cover are [Multi-Threading](#multi-threading), [Distributed (MPI)](#mpi) and [Job Arrays](#job-arrays).
 
 !!! note
     Whenever Slurm mentions CPUs it is referring to *logical* CPU's (**2** *logical* CPU's = **1** *physical* core).  
     - `--cpus-per-task=4` will give you 4 *logical* cores.
     - `--mem-per-cpu=512MB` will give 512 MB of RAM per *logical* core.
-    - If `--hint=nomultithread` is used then `--cpus-per-task` will now refer to physical cores, but `--mem-per-cpu=512MB` still refers to logical cores.
+    - If `--hint=nomultithread` is used then `--cpus-per-task` will now refer to physical cores, but `--mem-per-cpu=512MB` still refers to logical cores.
 
 See [our article on hyperthreading](Hyperthreading.md) for more information.
 
@@ -49,16 +49,16 @@ pid 13538's current affinity list: 7,9,43,45
 
 ## MPI
 
-MPI stands for *Message Passing Interface*, and is a communication protocol used to achieve distributed parallel computation.
+MPI stands for *Message Passing Interface*, and is a communication protocol used to achieve distributed parallel computation.
 
 Similar in some ways to multi-threading, MPI does not have the limitation of requiring shared memory and thus can be used across multiple nodes, but has higher communication and memory overheads.
 
 For MPI jobs you need to set `--ntasks` to a value larger than 1, or if you want all nodes to run the same number of tasks, set `--ntasks-per-node` and `--nodes` instead.
 
 MPI programs require a launcher to start the *ntasks* processes on multiple CPUs, which may belong to different nodes.
-On Slurm systems like ours, the preferred launcher is `srun` rather than `mpi-run`.
+On Slurm systems like ours, the preferred launcher is `srun` rather than `mpi-run`.
 
-Since the distribution of tasks across different nodes may be unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
+Since the distribution of tasks across different nodes may be unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
 
 ``` sl
 #!/bin/bash -e
