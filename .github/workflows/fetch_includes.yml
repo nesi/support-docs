@@ -56,4 +56,4 @@ jobs:
                 echo "no changes"
             fi
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.NESI_PAT }}
