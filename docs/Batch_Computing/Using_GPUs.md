@@ -37,20 +37,14 @@ It is recommended to specify the exact GPU type required; otherwise, the job may
 <table>
     <tr>
         <td>Architecture</td>
+        <td>Note</td>
         <td>VRAM</td>
         <td>Max Request</td>
         <td>Slurm Header</td>
     </tr>
     <tr>
-        <td>Any</td>
-        <td>24GB-80GB</td>
-        <td>4</td>
-        <td><pre>
-            <code>#SBATCH --gpus-per-node=1</code>
-        </pre></td>
-    </tr>
-    <tr>
         <td rowspan="2">NVIDIA A100</td>
+        <td rowspan="2"></td>
         <td>80GB</td>
         <td>4</td>
         <td><pre>
@@ -64,6 +58,7 @@ It is recommended to specify the exact GPU type required; otherwise, the job may
     </tr>
     <tr>
         <td>NVIDIA H100</td>
+        <td></td>
         <td>96GB</td>
         <td>2</td>
         <td><pre>
@@ -72,6 +67,7 @@ It is recommended to specify the exact GPU type required; otherwise, the job may
     </tr>
     <tr>
         <td>NVIDIA L4</td>
+        <td>No double precision floating point (fp64)</td>
         <td>24GB</td>
         <td>4</td>
         <td><pre>
