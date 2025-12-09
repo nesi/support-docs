@@ -64,7 +64,7 @@ High capacity storage are offered by various institutes around New Zealand. Here
 Depending on your Data Policy and your university, the following cloud options may provide you space for storing data
 
 * Google Drive: https://drive.google.com
-* Microsoft OneDrive: https://onedrive.live.com/
-* Dropbox: https://www.dropbox.com/
+* Microsoft OneDrive: https://onedrive.live.com
+* Dropbox: https://www.dropbox.com
 
-You can move data directly onto these clouds from Mahuika using rclone. See [the Rclone documentation](https://rclone.org/docs/) for more information about how to copy data directly to a cloud provider in the terminal.
+You can move data directly onto these clouds from Mahuika using rclone. See [the rclone documentation](https://rclone.org/docs/) for more information about how to copy data directly to a cloud provider in the terminal.
