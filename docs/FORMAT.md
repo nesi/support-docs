@@ -628,11 +628,15 @@ There are a few includes you may want to use.
 
 Here is an example using dynamically using the module version information.
 
-`module load ANSYS/{{ applications.ANSYS.default }}`
+```sh
+module load ANSYS/{{ applications.ANSYS.default }}
+```
 
 ```md
 {% raw %}
-`module load ANSYS/{{ applications.ANSYS.default }}`
+```sh
+module load ANSYS/{{ applications.ANSYS.default }}
+```
 {% endraw %}
 ```
 
