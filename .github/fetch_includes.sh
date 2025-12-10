@@ -7,24 +7,14 @@ DICTIONARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/output
 SNIPPETS_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
 ICAL_URL="https://calendar.google.com/calendar/ical/c_hen6rr02et39kat2hmuamidots@group.calendar.google.com/public/basic.ics"
 
-wget -O docs/assets/training_calendar.ics ${ICAL_URL}
+mkdir -p docs/assets/glossary
 
-git add docs/assets/training_calendar.ics
-git commit -m "update cal"
+wget -q -O docs/assets/training_calendar.ics "${ICAL_URL}"
+wget -q -O docs/assets/module-list.json "${MODULES_LIST_URL}"
+wget -q -O docs/software_updates.xml "${MODULES_UPDATE_URL}"
 
-
-wget -O docs/assets/module-list.json ${MODULES_LIST_URL}
-wget -O docs/software_updates.xml ${MODULES_UPDATE_URL}
 python3 .github/workflows/link_apps_pages.py
-git add docs/assets/module-list.json docs/software_updates.xml
-git commit -m "Updated Module List" || (echo "No Changes";exit 0)
 
-echo "Fetch Wordlist"
-
-wget -O overrides/partials/glossary.html ${GLOSSARY_URL}
-wget -O docs/assets/glossary/dictionary.txt ${DICTIONARY_URL}
-wget -O docs/assets/glossary/snippets.md ${SNIPPETS_URL}
-git add overrides/partials/glossary.html docs/assets/glossary/dictionary.txt docs/assets/glossary/snippets.md
-git commit -m "Updated Glossary" || (echo "No Changes";exit 0)
-
-sleep 1
+wget -q -O overrides/partials/glossary.html "${GLOSSARY_URL}"
+wget -q -O docs/assets/glossary/dictionary.txt "${DICTIONARY_URL}"
+wget -q -O docs/assets/glossary/snippets.md "${SNIPPETS_URL}"
