@@ -44,7 +44,7 @@ If you are working at a New Zealand university, the following links provide info
 * University of Auckland: https://research-hub.auckland.ac.nz/managing-research-data/research-data-storage/choosing-data-storage
 * Auckland University of Technology: https://www.aut.ac.nz/student-life/studying/it-services/saving-your-files
 * Massey University: https://www.massey.ac.nz/study/library/researcher-support/research-data-management/store-your-research-data/
-* University of Waikato (Check): https://www.waikato.ac.nz/students/support-services/student-ict/storage/, also you and your supervisor can request storage via your Kuhukuhu portal. 
+* University of Waikato: https://www.waikato.ac.nz/students/support-services/student-ict/storage/, also you and your supervisor can request storage via your Kuhukuhu portal. 
 * Victoria University of Wellington: https://libguides.victoria.ac.nz/research-data-management/store
 * University of Canterbury: https://www.canterbury.ac.nz/research/eresearch-at-canterbury/research-data-storage and https://ucservicesprod.service-now.com/uc?id=sc_cat_item&sys_id=8fcef1d4db5e0510e447f561f3961932&table=sc_cat_item&searchTerm=storage
 * Lincoln University (Check): 
