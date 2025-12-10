@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+
+# Makes a silly lil' plot.
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
