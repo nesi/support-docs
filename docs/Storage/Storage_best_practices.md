@@ -1,6 +1,6 @@
 # Storage Best Practises
 
-This page will guide you through best practices for storing your data on Mahuika
+This page will guide you through best practices for storing your data on Mahuika. 
 
 ## What are `home`, `project` and `scratch` directories for?
 
@@ -35,7 +35,7 @@ Freezer is a tape storage system that is designed to hold large amounts of data 
 
 ## I would like to move data off Mahuika. What are my options?
 
-This will depend on what resources your group can budget for and what high capacity storage (HCS) your university offers. 
+This will depend on what resources your group can budget for and what high capacity storage (HCS) your university offers. See [Moving files to and from the cluster](Moving_files_to_and_from_the_cluster.md) for more information about transfering data from Mahuika. 
 
 ### Storage options for Universities around New Zealand
 
@@ -68,3 +68,5 @@ Depending on your Data Policy and your university, the following cloud options m
 * Dropbox: https://www.dropbox.com
 
 You can move data directly onto these clouds from Mahuika using rclone. See [the rclone documentation](https://rclone.org/docs/) for more information about how to copy data directly to a cloud provider in the terminal.
+
+ 
