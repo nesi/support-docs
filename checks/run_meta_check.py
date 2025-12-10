@@ -122,12 +122,13 @@ def main():
 
                 for line in contents.split("\n"):
                     lineno += 1
-                    for check in WALKCHECKS:
-                        in_code_block = (
+                    in_code_block = (
                             not in_code_block
                             if re.match(r"^\s*```\s?\w*$", line)
                             else in_code_block
                         )
+                    for check in WALKCHECKS:
+
                         _get_nav_tree()
                         _run_check(check)
                 for check in ENDCHECKS:
@@ -184,7 +185,6 @@ def _get_nav_tree():
         if len(a) < 2:
             return toc[a[0]]
         return _unpack(toc[a[0]]["children"], a[1:])
-
     try:
         if in_code_block:
             return
