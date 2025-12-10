@@ -95,7 +95,7 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
     </tr>
     <tr>
         <td rowspan="2">NVIDIA A100</td>
-        <td rowspan="2">Machine Learning</td>
+        <td rowspan="2"></td>
         <td>80GB</td>
         <td>4</td>
         <td><a href="#gpu-milan-a100">Milan</a></td>
@@ -109,7 +109,7 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
     </tr>
     <tr>
         <td>NVIDIA H100</td>
-        <td>Large-scale Machine Learning</td>
+        <td></td>
         <td>96GB</td>
         <td>2</td>
         <td><a href="#gpu-genoa-h100">Genoa</a></td>
@@ -117,7 +117,7 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
     </tr>
     <tr>
         <td>NVIDIA L4</td>
-        <td>No fp64 double precision</td>
+        <td>No double precision floating point (fp64)</td>
         <td>24GB</td>
         <td>4</td>
         <td><a href="#gpu-genoa-l4">Genoa</a></td>
