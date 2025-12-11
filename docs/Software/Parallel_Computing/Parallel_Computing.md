@@ -2,88 +2,197 @@
 created_at: '2019-01-10T03:02:11Z'
 tags:
   - parallel
-description: How to take advantage of multiple CPUs.
+description: How to take advantage of multiple CPUs in high performance computing.
 ---
 
-In order to properly make use of the high performance computing hardware, you will need some way of using multiple CPUs.
-Many scientific software applications are written to take advantage of multiple CPUs in some way.
-But often this must be specifically requested by the user at the time they run the program, rather than happening automatically.
+To properly utilise high performance computing hardware, you need to be able to utilise multiple CPUs.
+Many scientific software applications support parallel execution,
+but this often requires explicit configuration rather than happening automatically.
 
-The are three types of parallel execution we will cover are [Multi-Threading](#multi-threading), [Distributed (MPI)](#mpi) and [Job Arrays](../../Batch_Computing/Job_Arrays.md).
+Some definitions that will help you understand this page.
 
-## Multi-threading
+- **CPU**: The hardware that performs computations
+- **Task**: One or more CPUs that share memory
+- **Node**: The physical hardware; defines the upper limit of CPUs per task
+- **Shared Memory**: Multiple CPUs used within a single task
+- **Distributed Memory**: Multiple tasks used across nodes
 
-Multi-threading is a method of parallelisation whereby the initial single thread of a process forks into a number of parallel threads, generally *via* a library such as OpenMP (Open MultiProcessing), TBB (Threading Building Blocks), or pthread (POSIX threads).
+## Utilizing Multiple CPUs
+
+Requesting resources through Slurm doesn't guarantee your program will use them.
+
+Parallelism is either:
+
+- **Implicit**: Software handles parallelization automatically.
+- **Explicit**: User must configure parallel execution.
+
+### Scientific Software
+
+Always consult the software specific documentation first when trying to determine what types of parallel computing to use.
+Software may:
+
+- Claim implicit multi-core support (verify this works)
+- Require explicit core specification (e.g., `-n 8`, `-np 16`)
+- Need parallelization type specified (e.g., `-dis`, `-mpi=intelmpi`)
+- Require input file regeneration for different CPU configurations, (partitioning into same number of domains as tasks, etc)
+
+### Writing Custom Code
+
+Some languages offer built-in parallel functions:
+
+However, significant performance gains typically require explicit parallelization in your code.
+
+## Quick Reference
+
+| Method | Also Called | Slurm Options | Usage |
+|--------|------------------|---------------|-------------------|
+| [Shared Memory](#shared-memory) | Multithreading, SMP | `--cpus-per-task` | Limited to single node; efficient memory use |
+| [Distributed Memory](#distributed-memory) | MPI, OpenMPI | `--ntasks` + `srun` | Scales across nodes; higher overhead |
+| [Hybrid](#hybrid-parallel) | - | `--ntasks` + `--cpus-per-task` + `srun` | Combines both approaches |
+| [Job Array](#job-arrays) | - | `--array` | Best for independent tasks |
+| [GPU](#gpus) | GPGPU | `--gpus-per-node` | Specialized hardware for matrix operations |
+
+## Shared Memory
+
+Multi-threading parallelizes by forking a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
 ![serial](../../assets/images/parallel_execution_serial.png)  
-
 ![parallel](../../assets/images/Parallel_Execution.png)  
-Multi-threading involves dividing the process into multiple 'threads' which can be run across multiple cores.
 
-Multi-threading is limited in that it requires shared memory, so all CPU cores used must be on the same node. However, because all the CPUs share the same memory environment things only need to be loaded into memory once, meaning that memory requirements will usually not increase proportionally to the number of CPUs.
+- Requires shared memory (all CPUs on same node)
+- Memory requirements don't scale proportionally with CPU count
+- Limited by node capacity (e.g., Mahuika nodes have 72 CPUs)
+- Also called *Shared-Memory Parallelism* or *SMP*
+- Use `--cpus-per-task` to specify thread count
 
-Example script:
-
-`ntasks`
+### Example Shared Memory Script
 
 ```sl
 #!/bin/bash -e
 
-#SBATCH --job-name       MultithreadingTest    # job name (shows up in the queue)
-#SBATCH --account        nesi99991             # 
-#SBATCH --time           00:01:00              # Walltime (HH:MM:SS)
-#SBATCH --mem            2048MB                # memory in MB 
-#SBATCH --cpus-per-task  4                     # 2 physical cores per task.
+#SBATCH --job-name       MultithreadingTest
+#SBATCH --account        nesi99991
+#SBATCH --time           00:01:00
+#SBATCH --mem            2048MB
+#SBATCH --cpus-per-task  4
 
-taskset -c -p $$                               #Prints which CPUs it can use
+taskset -c -p $$  # Prints available CPUs
 ```
 
-The expected output being
+!!! note "See also"
+    - [Multiththreading](Multithreading_Scaling_Example.md)
+    - [Python Multiprocessing](https://docs.python.org/3/library/multiprocessing.html) (not `threading`, which isn't truly parallel).
+    - [MATLAB Parpool](https://au.mathworks.com/help/parallel-computing/parpool.html)
 
-```txt
-pid 13538's current affinity list: 7,9,43,45
-```
+## Distributed Memory
 
-## MPI
+Distributed memory parellelism or Message Passing Interface (MPI) enables distributed parallel computation across multiple nodes through inter-process communication.
 
-MPI stands for *Message Passing Interface*, and is a communication protocol used to achieve distributed parallel computation.
+- No shared memory requirement; scales across multiple nodes
+- Higher communication and memory overhead than multi-threading
+- Each task has exclusive memory
+- Memory requirements typically scale with CPU count
+- Predates shared-memory parallelism; common in classical HPC applications
 
-Similar in some ways to multi-threading, MPI does not have the limitation of requiring shared memory and thus can be used across multiple nodes, but has higher communication and memory overheads.
+- Use `--ntasks` (>1) or `--ntasks-per-node` with `--nodes`
+- Use `--mem-per-cpu` instead of `--mem` (task distribution is unpredictable)
+- Launch with `srun` (alternative to `mpirun` on Slurm systems)
+- Leaving `--cpus-per-task` unspecified typically defaults to 2
 
-For MPI jobs you need to set `--ntasks` to a value larger than 1, or if you want all nodes to run the same number of tasks, set `--ntasks-per-node` and `--nodes` instead.
+### Example Distributed Memory Script
 
-MPI programs require a launcher to start the `ntasks` processes on multiple CPUs, which may belong to different nodes.
-On Slurm systems like ours, the preferred launcher is `srun` rather than `mpi-run`.
-
-Since the distribution of tasks across different nodes may be unpredictable, `--mem-per-cpu` should be used instead of `--mem`.
-
-``` sl
+```sl
 #!/bin/bash -e
 
-#SBATCH --job-name=MPIJob       # job name (shows up in the queue)
-#SBATCH --time=00:01:00         # Walltime (HH:MM:SS)
-#SBATCH --mem-per-cpu=512MB     # memory/cpu in MB (half the actual required memory)
-#SBATCH --cpus-per-task=4       # 2 Physical cores per task.
-#SBATCH --ntasks=2              # number of tasks (e.g. MPI)
+#SBATCH --job-name       MPIJob
+#SBATCH --account        nesi99991
+#SBATCH --time           00:01:00
+#SBATCH --mem-per-cpu    512MB
+#SBATCH --ntasks         4
 
-srun pwd                        # Prints  working directory
-```
-
-The expected output being
-
-```txt
-/home/user001/demo
-/home/user001/demo
+srun pwd  # Prints working directory
 ```
 
 !!! warning
     For non-MPI programs, either set `--ntasks=1` or do not use `srun` at all.
     Using `srun` in conjunction with `--cpus-per-task=1` will cause `--ntasks` to default to 2.
 
+!!! note "See also"
+    - [MPI Scaling Example](MPI_Scaling_Example.md)
+
+## Hybrid Parallel
+
+Combining `--ntasks` and `--cpus-per-task` using both shared and distributed memory, with the advatages of both.
+Not commonly supported.
+
+### Example Hybrid Memory Script
+
+```sl
+#!/bin/bash -e
+
+#SBATCH --job-name       HybridJob
+#SBATCH --account        nesi99991
+#SBATCH --time           00:01:00
+#SBATCH --mem-per-cpu    512MB
+#SBATCH --cpus-per-task  4
+#SBATCH --ntasks         2
+
+srun pwd  # Prints working directory
+```
+
 ## Job Arrays
 
-Job arrays are best used for tasks that are completely independent, such as parameter sweeps, permutation analysis or simulation, that could be executed in any order and don't have to run at the same time.
-This kind of work is often described as *embarrassingly parallel*.  
-An embarrassingly parallel problem is one that requires no communication or dependency between the tasks (unlike distributed computing problems that need communication between tasks).
+Job arrays execute independent tasks simultaneously—ideal for *embarrassingly parallel* problems with no inter-task dependencies.
 
-A job array will submit the same script repeatedly over a designated index using the SBATCH command `#SBATCH --array`
+- Best for parameter sweeps, permutation analysis, or simulations
+- Tasks can execute in any order
+- Runs multiple serial jobs simultaneously rather than parallelizing a single job
+- Scales without efficiency loss.
+- The best choice when applicable
+- Use `--array` to specify index range
+
+### Example Job Array Script
+
+``` sl
+#!/bin/bash -e
+
+#SBATCH --job-name       ArrayJob     # job name (shows up in the queue)
+#SBATCH --account        nesi99991    # Project to bill
+#SBATCH --time           00:01:00     # Walltime (HH:MM:SS)
+#SBATCH --mem            512MB        # Memory
+#SBATCH --array          1-2          # Array jobs
+
+pwd
+echo "This is result ${SLURM_ARRAY_TASK_ID}"
+```
+
+!!! note "See also"
+    - For more info see the page on [Job Arrays](./Job_Arrays.md)
+
+## GPUs
+
+GPUs excel at large-scale parallel operations on matrices, making them ideal for graphics processing and similar computational tasks.
+
+- Specialized hardware requested in addition to CPUs and memory
+- Well-suited for matrix operations and graphics processing
+- See `` for available hardware
+- Use `--gpus-per-node=<gpu_type>:<gpu_number>`
+
+!!! note "See also"
+    - [Using GPUs](../../Batch_Computing/Using_GPUs.md) for more in depth documentation about GPUs.
+    - [Hardware](../../Batch_Computing/Hardware.md) for a full list of available GPUs.
+
+### Example Script
+
+```bash
+#!/bin/bash -e
+
+#SBATCH --job-name        gpu-job
+#SBATCH --account         nesi99991
+#SBATCH --output          %x.out
+#SBATCH --mem-per-cpu     2G
+#SBATCH --gpus-per-node   P100:1
+
+module load CUDA
+nvidia-smi
+```
