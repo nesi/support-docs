@@ -100,6 +100,18 @@ If you would like to see what was contained in your previous fortnight's ```nn_d
 nn_doomed_list --project nesi99999 --cycle last
 ```
 
+!!! tip
+    
+    Use this command to get a txtfile of everything that was deleted in the last auto-clean: 
+    ```bash
+    gunzip -c /search/autocleaner/filelists/last/<project code>.gz > last_autoclean_list_<project code>.txt
+    ```
+    
+    Use this command to find files with keywords in them that were deleted in the last auto-clean: 
+    ```bash
+    zgrep KEYWORD /search/autocleaner/filelists/last/<project code>.gz > files_that_were_deleted_with_keyword.txt
+    ```
+
 ## What should I do with expiring data on the nobackup filesystem?
 
 If you have files identified as candidates for deletion that you need to keep beyond the scheduled expiry date, you have the following options:
