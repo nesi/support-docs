@@ -32,6 +32,12 @@ List all objects in a bucket.
 s3cmd ls -r -l -H s3://<freezer-bucket>/
 ```
 
+To just list the files and folders in a directory in your bucket:
+
+```sh
+s3cmd ls -l -H s3://<freezer-bucket>/path_to_your_directory
+```
+
 This can also be used to list all the objects in path.
 
 !!! warning
@@ -116,7 +122,7 @@ Partially uploaded files will be deleted automatically.
 
 !!! warning
 
-  If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](Freezer_Guide.md#Synchronise-data) for more information. 
+  If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
 
 ### Preview or dry-run
 

@@ -2,7 +2,6 @@
 created_at: '2019-06-13T04:08:43Z'
 tags: []
 title: Thread Placement and Thread Affinity
-status: deprecated
 ---
 
 Multithreading with OpenMP and other threading libraries is an important
@@ -43,13 +42,13 @@ slower RAM.
 
 The picture below shows a simplified view of a two-socket node with two
 cores per socket. Most HPC nodes will have two sockets, but a lot more
-cores (our current HPCs have 18 to 20 cores). Each core can also be
+cores (Mahuika compute nodes have 64 or 84 cores per socket). Each core can also be
 further divided into two logical cores (or hyperthreads, as mentioned
 before).
 
 ![NodeSocketCore.png](../../assets/images/Thread_Placement_and_Thread_Affinity.png)
 
-It is very important to note the following:
+It is important to note the following:
 
 - Each socket only has access to its own RAM - it will need to ask the
     processor in the other socket if it wants to access that RAM space,
@@ -70,7 +69,7 @@ For a thread that runs on a given core, this means:
 ## Thread Placement and Affinity
 
 Given the arrangement of node, sockets, and cores, with different access
-to RAM and caches, we need to to make sure that our threads are located
+to RAM and caches, we want to to make sure that our threads are located
 as close as possible to their data, and as close as possible to each
 other if they need to work on the same piece of data. Threads can even
 share the data in a cache for maximum performance.
@@ -139,7 +138,7 @@ Hello World from Thread 1!
 The Slurm scheduler reserves resources on compute nodes according to our
 requests. Unless we ask for a full node, we will get a subset of the
 available logical cores. Let us start by asking for 1 node, and 1
-process with 3 threads using only physical cores (no hyperthreading):
+process with 3 threads:
 
 ``` sl
 #!/bin/bash -e
@@ -148,7 +147,6 @@ process with 3 threads using only physical cores (no hyperthreading):
 #SBATCH --nodes=1
 #SBATCH --ntasks=1               # We will run on a single process
 #SBATCH --cpus-per-task=3        # ... and with 3 threads
-#SBATCH --hint=nomultithread     # No hyperthreading
 
 export KMP_AFFINITY=verbose      # Get detailed output
 module load intel/2018b
@@ -157,8 +155,7 @@ srun hello_world.x
 
 Running the script should present you with output similar to this,
 although the number of "packages" (sockets) and cores may deviate if
-Slurm allocates cores on more than one socket (note also that "threads"
-means what we called logical cores earlier on):
+Slurm allocates cores on more than one socket:
 
 ``` out
 OMP: Info #209: KMP_AFFINITY: decoding x2APIC ids.
@@ -208,7 +205,8 @@ Hello World from Thread 2!
     logical core on the second physical core, even though that logical
     core will not be given to other jobs)
 - Notice that we now get logical core IDs 6, 8, 46 - IDs 6 and 46 are
-    the first and second logical core inside the first physical core,
+    the first and second logical core inside the first physical core
+    (this was on a machine with 40 cores per socket),
     while ID 8 is a logical core in the second physical core
 
 ## Setting up thread placement and affinity
@@ -218,10 +216,10 @@ to these cores, so that they can no longer move to another core during
 execution.
 
 !!! warning
-    Slurm does NOT guarantee that all
+    By default Slurm does NOT guarantee that all
     threads will be placed on the same socket even if our job would fit
-    entirely within one socket. This needs to be taken into account when
-    optimising threading setup.
+    entirely within one socket. However see also the [--extra-node-into](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html#OPT_extra-node-info)
+    option. 
 
 Let us start with the following setup:
 
@@ -346,11 +344,10 @@ held up by other jobs or system processes. It is therefore worth trying
 out different affinity setups to see which one works best for your
 program.
 
-It is usually a good idea to start without hyperthreading and activate
+It is usually a good idea to start without hyperthreading, and to activate
 thread affinity by choosing:
 
 ``` sl
-#SBATCH --hint=nomultithread
 export KMP_AFFINITY=granularity=fine,compact,0,0
 ```
 

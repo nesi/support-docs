@@ -196,11 +196,11 @@ This will allow you to fix any merge conflicts in your feature branch, before me
 
 ### Merge Etiquette
 
-Do not merge draft pull requests!
-Do not merge pull requests with someone else assigned as reviewer!
-
-Do review open pull requests!
-Do merge pull requests you've reviewed, unless someone else is assigned.
+<span style="color:red;">×</span> Do **Not** merge draft pull requests!  
+<span style="color:red;">×</span> Do **Not** merge pull requests with someone else assigned as reviewer!  
+  
+<span style="color:green;">✔</span> **Do** review open pull requests!  
+<span style="color:green;">✔</span> **Do** merge pull requests you've reviewed, unless someone else is assigned.  
 
 ## Update Remote Assets
 

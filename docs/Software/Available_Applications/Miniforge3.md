@@ -56,15 +56,23 @@ Here are the explanations for each line of this snippet:
      used, bypassing the environment module system.
 
 !!! warning "Defaults Channel"
-     If you are using a `environment.yml` file, you will have to remove the
-     `defaults` channel, or you will receive an error.
+     The `defaults` channel is blocked due to Anaconda's licensing requirements.
+     If this channel is listed in either the `environment.yml` or your conda configuration you will receive an error:
      
      ``` out
      Failed to create Conda environment
      The channel is not accessible or is invalid.
      ``` 
+
+     If your conda config includes the defaults channel you can remove it with:
+
+     ```sh
+     conda config --remove channels defaults
+     ```
+
+     If you are using a `environment.yml` file, you will have to remove
+     `defaults` from the list of channels.
      
-     The `defaults` channel is blocked due to Anaconda's licensing requirements.
      
 ## Prevent conda from using /home storage
 

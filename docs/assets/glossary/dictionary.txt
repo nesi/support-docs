@@ -657,6 +657,7 @@ MashMap's
 MashMap
 Mashtree's
 Mashtree
+Matplotlib
 Maven's
 Maven
 MaxBin's
@@ -782,6 +783,7 @@ Nsight-Compute's
 Nsight-Compute
 Nsight-Systems's
 Nsight-Systems
+NumPy
 Nvidia
 OBITools's
 OBITools
@@ -1043,6 +1045,7 @@ ScaLAPAC
 ScaLAPACK's
 ScaLAPACK
 Schrödinger
+SciPy
 SeisSol's
 SeisSol
 SeqAn's
@@ -1335,6 +1338,7 @@ ctffind
 ctrl
 cuDNN's
 cuDNN
+curation
 customisable
 customisations
 cutadapt's

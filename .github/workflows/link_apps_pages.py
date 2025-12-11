@@ -17,7 +17,7 @@ MODULE_LIST_PATH = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 
 # Relative to doc directory.
 DOC_ROOT = os.getenv("DOC_ROOT", "docs")
-APPS_PAGES_PATH = os.getenv("APPS_PAGES_PATH", "Scientific_Computing/Supported_Applications")
+APPS_PAGES_PATH = os.getenv("APPS_PAGES_PATH", "Software/Available_Applications")
 BASE_URL = os.getenv("BASE_URL", "https://www.docs.nesi.org.nz")
 
 module_list = json.load(open(MODULE_LIST_PATH))

@@ -35,7 +35,7 @@ Objects other than files, such as directories and symbolic links, are not yet de
 
 ## How will I be notified that my data is a candidate for deletion?
 
-Prior to data being deleted, we’ll send you an email identifying what has been marked for deletion. These email notifications are optional so if you do not want to receive them, you can ‘unsubscribe’ through [my.nesi.org.nz](my.nesi.org.nz).
+Prior to data being deleted, we’ll send you an email identifying what has been marked for deletion. These email notifications are optional so if you do not want to receive them, you can ‘unsubscribe’ through [my.nesi.org.nz](https://my.nesi.org.nz/login).
 
 ## How can I check which files are scheduled for deletion?
 
@@ -99,6 +99,18 @@ If you would like to see what was contained in your previous fortnight's ```nn_d
 ```bash
 nn_doomed_list --project nesi99999 --cycle last
 ```
+
+!!! tip
+    
+    Use this command to get a txtfile of everything that was deleted in the last auto-clean: 
+    ```bash
+    gunzip -c /search/autocleaner/filelists/last/<project code>.gz > last_autoclean_list_<project code>.txt
+    ```
+    
+    Use this command to find files with keywords in them that were deleted in the last auto-clean: 
+    ```bash
+    zgrep KEYWORD /search/autocleaner/filelists/last/<project code>.gz > files_that_were_deleted_with_keyword.txt
+    ```
 
 ## What should I do with expiring data on the nobackup filesystem?
 
