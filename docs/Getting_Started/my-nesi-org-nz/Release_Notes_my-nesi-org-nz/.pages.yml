@@ -1,4 +1,5 @@
 ---
-sort_type: natural
-order: desc
+sort: 
+  type: natural
+  direction: desc
 
