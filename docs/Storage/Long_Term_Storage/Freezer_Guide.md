@@ -32,6 +32,12 @@ List all objects in a bucket.
 s3cmd ls -r -l -H s3://<freezer-bucket>/
 ```
 
+To just list the files and folders in a directory in your bucket:
+
+```sh
+s3cmd ls -l -H s3://<freezer-bucket>/path_to_your_directory
+```
+
 This can also be used to list all the objects in path.
 
 !!! warning
