@@ -49,7 +49,7 @@ Software may:
 
 ## Shared Memory
 
-Multi-threading parallelizes by forking a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
+Shared Memory Parallelism, or multi-threading parallelizes by forking a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
 ![serial](../../assets/images/parallel_execution_serial.png)  
 ![parallel](../../assets/images/Parallel_Execution.png)  
@@ -57,7 +57,6 @@ Multi-threading parallelizes by forking a single process into multiple parallel 
 - Requires shared memory (all CPUs on same node)
 - Memory requirements don't scale proportionally with CPU count
 - Limited by node capacity (e.g., Mahuika nodes have 72 CPUs)
-- Also called *Shared-Memory Parallelism* or *SMP*
 - Use `--cpus-per-task` to specify thread count
 
 ### Example Script
@@ -117,7 +116,7 @@ srun pwd  # Prints working directory
 
 ## Hybrid Parallel
 
-Combining `--ntasks` and `--cpus-per-task` using both shared and distributed memory, with the advatages of both.
+Combining `--ntasks` and `--cpus-per-task` using both shared and distributed memory, with the advantages of both.
 Not commonly supported.
 
 ### Example Script
@@ -171,10 +170,6 @@ GPUs excel at large-scale parallel operations on matrices, making them ideal for
 - Well-suited for large matrix operations and machine learning.
 - Use `--gpus-per-node=<gpu_type>:<gpu_number>`
 
-!!! note "See also"
-    - [Using GPUs](../../Batch_Computing/Using_GPUs.md) for more in depth documentation about GPUs.
-    - [Hardware](../../Batch_Computing/Hardware.md) for a full list of available GPUs.
-
 ### Example Script
 
 ```bash
@@ -189,3 +184,10 @@ GPUs excel at large-scale parallel operations on matrices, making them ideal for
 module load CUDA
 nvidia-smi
 ```
+
+Should print out a summary of GPU utilisation.
+
+!!! note "See also"
+    - [Using GPUs](../../Batch_Computing/Using_GPUs.md) for more in depth documentation about GPUs.
+    - [Hardware](../../Batch_Computing/Hardware.md) for a full list of available GPUs.
+
