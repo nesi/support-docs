@@ -89,7 +89,7 @@ plugins:
  # - git-authors
   - tags:
       tags: false  # This will keep tags for the purpose of indexing, but not display on page.
-      # tags_file: tags.md # Causes A warning now? idk
+      tags_file: tags.md # Causes A warning now? idk
   - git-revision-date-localized:
       enable_creation_date: false
   - macros:

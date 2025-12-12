@@ -7,7 +7,7 @@ tags: []
 programming interface that lets you write parallel programs on shared
 memory platforms. In a parallel section, OpenMP code can create multiple
 threads that run on separate CPU cores, executing their shares of the total
-workload concurrently. 
+workload concurrently.
 
 The environment variable that controls the number of threads is
 `OMP_NUM_THREADS`. At the start of a Slurm job we automatically set
