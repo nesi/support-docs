@@ -9,11 +9,11 @@ To properly utilise high performance computing hardware, you need to be able to 
 Many scientific software applications support parallel execution,
 but this often requires explicit configuration rather than happening automatically.
 
-Some definitions that will help you understand this page.
+Some definitions that will help you understand this page: 
 
 - **CPU**: The hardware that performs computations
-- **Task**: One or more CPUs that share memory
-- **Node**: The physical hardware; defines the upper limit of CPUs per task
+- **Task**: An independent process that is run using one or more CPUs. All CPUs assigned to a task share the same memory.
+- **Node**: The physical hardware. A node contains an upper limit of CPUs per task possible. 
 - **Shared Memory**: Multiple CPUs used within a single task
 - **Distributed Memory**: Multiple tasks used across nodes
 
@@ -47,17 +47,21 @@ Software may:
 | [Job Array](#job-arrays) | - | `--array` | Best for independent tasks |
 | [GPU](#gpus) | GPGPU | `--gpus-per-node` | Specialized hardware for matrix operations |
 
-## Shared Memory
+## Shared Memory Parallelisation
 
-Shared Memory Parallelism, or multi-threading parallelizes by forking a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
+Shared Memory Parallelism, or multi-threading, parallelizes itself by forking (copying) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
+A non-parallalised (series) program works like this:
 ![serial](../../assets/images/parallel_execution_serial.png)  
+
+In contrast, a shared memory parallelised program works like this:
 ![parallel](../../assets/images/Parallel_Execution.png)  
 
-- Requires shared memory (all CPUs on same node)
-- Memory requirements don't scale proportionally with CPU count
-- Limited by node capacity (e.g., Mahuika nodes have 72 CPUs)
-- Use `--cpus-per-task` to specify thread count
+A shared memory parallelised program:
+- Requires shared memory (all CPUs must be using the same memory on same node)
+- Memory requirements don't scale proportionally with CPU count (i.e. use the same amount of memory regardless of the number of CPUs requested)
+- Limited by node capacity (e.g., Mahuika nodes have 72 CPUs, therefore the maximum number of CPUs that can be requested for a shared memory parallisation job is 72)
+- Uses `--cpus-per-task` to specify thread count
 
 ### Example Script
 
@@ -80,10 +84,11 @@ taskset -c -p $$  # Prints available CPUs
 
 ## Distributed Memory
 
-Distributed memory parellelism or Message Passing Interface (MPI) enables distributed parallel computation across multiple nodes through inter-process communication.
+Distributed memory parellelism, or Message Passing Interface (MPI), enables distributed parallel computation across multiple nodes through inter-process communication.
 
-- No shared memory requirement; scales across multiple nodes
-- Higher communication and memory overhead than multi-threading
+A distributed memory parallelisation program: 
+- Has no shared memory requirement; scales across multiple nodes
+- Has higher communication and memory overhead than multi-threading
 - Each task has exclusive memory
 - Memory requirements typically scale with CPU count
 - Predates shared-memory parallelism; common in classical HPC applications
