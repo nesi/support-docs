@@ -52,9 +52,11 @@ Software may:
 Shared Memory Parallelism, or multi-threading, parallelizes itself by forking (copying) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
 A non-parallalised (series) program works like this:
+
 ![serial](../../assets/images/parallel_execution_serial.png)  
 
 In contrast, a shared memory parallelised program works like this:
+
 ![parallel](../../assets/images/Parallel_Execution.png)  
 
 A shared memory parallelised program:
