@@ -58,10 +58,41 @@ You can send multiple files by tarballing the files up:
 tar -cvf tarball_file.tar folder_to_tarball
 ```
 
+To untar the tarball:
+
+```bash
+tar -xvf tarball_file.tar
+```
+
 ### Receiving Data using the FileSender API in the Terminal
+
+1. Go to your emails where you should have been sent an email from FileSender. 
+2. Click on the **Download link** in the email link. This will take you to a FileSender website where you can download your files.
+3. You will be presented a list of the files that you can download. Right-click on the <img src="../../assets/images/filesender_download_icon.png" alt="FileSender Download Icon" width="20"/> icon and click **Copy Link Address**
+4. In your terminal (in either your local machine or Mahuika), type:
+
+    ```bash
+    curl -O -J -L -R "<copied_website>"
+    ```
+
+    NOTE: replace **<copied_website>** with the path you copied. Keep the double quotation "" marks as these are needed. 
+
+5. You will see your file download to through your terminal. 
 
 ## Using FileSender: Web-based GUI
 
 ### Sending Data using the FileSender Web-based GUI
 
+1. Go to https://filesender.reannz.co.nz
+2. If asked, click **Login** and Sign-in through your Tuakiri login. You may not need to do this if you have already signed into FileSender before.
+3. You can then drag & drop or click to select a file to transfer or you can select an entire directory to upload to FileSender
+
 ### Receiving Data using the FileSender Web-based GUI
+
+1. Go to your emails where you should have been sent an email from FileSender. 
+2. Click on the **Download link** in the email link. This will take you to a FileSender website where you can download your files.
+3. You will be presented a list of the files that you can download. Click on the <img src="../../assets/images/filesender_download_icon.png" alt="FileSender Download Icon" width="20"/> icon. This will download your file to you downloands folder on your computer.
+
+If you would like to download all files together in a tar or zip file, you can do this by clicking on the **Download as single (.zip) file** or the **Download as single (.tar) file** button. 
+
+
