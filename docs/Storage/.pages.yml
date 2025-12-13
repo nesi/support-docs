@@ -4,7 +4,4 @@ nav:
   - Data_Recovery
   - Long_Term_Storage
   - Cloud_Storage
-  - Moving_files_to_and_from_the_cluster.md
-  - FileSender.md
-  - Globus
   - "*"
