@@ -189,5 +189,5 @@ You should now be able to login with only a single authentication prompt.
 [Watch a demo](https://www.youtube.com/embed/IKihbN-QlIA?si=N93PPPsi85jPYV7k).
 
 !!! prerequisite "What Next?"
-     -   [Moving files to/from a cluster.](../../Storage/Moving_files_to_and_from_the_cluster.md)
+     -   [Moving files to/from a cluster.](../../File_Transfer/Moving_files_to_and_from_the_cluster.md)
      -   Setting up an [X-Server](./X11.md) (optional).
