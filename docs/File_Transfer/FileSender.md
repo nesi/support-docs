@@ -68,6 +68,8 @@ where:
 * `person-to-send-to@emailserver.edu`: This is the email address of the persion that you would like to send your data to. This can be any email address, not necessarily an educational email address. This can also be your own email address if you are wanting move data between your local machine and mahuika.
 * `research-data-file.txt` This is the file you would like to send. This can be any file.
 
+You can file more options for `filesender.py` at [https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage](https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage)
+
 !!! warning
 
     This may take some time if you are uploading a big file.
