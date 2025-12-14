@@ -132,7 +132,6 @@ General/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md : Gett
 General/FAQs/How_do_I_request_memory.md : Getting_Started/FAQs/How_do_I_request_memory.md
 General/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md : Getting_Started/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md
 General/FAQs/Ive_run_out_of_storage_space.md : Getting_Started/FAQs/Ive_run_out_of_storage_space.md
-General/FAQs/Login_Troubleshooting.md : Getting_Started/FAQs/Login_Troubleshooting.md
 General/FAQs/Mahuika_HPC3_Differences.md : Getting_Started/FAQs/Mahuika_HPC3_Differences.md
 General/FAQs/What_are_my-bashrc_and-bash_profile_for.md : Getting_Started/FAQs/What_are_my-bashrc_and-bash_profile_for.md
 General/FAQs/What_does_oom_kill_mean.md : Getting_Started/FAQs/What_does_oom_kill_mean.md

@@ -11,6 +11,15 @@ description: Troubleshooting instructions for logging in
     - Most terminals do not give an indication of how many characters have been typed when entering a password.
     - Paste is not usually bound to `ctrl` + `V` and will vary based on your method of access.
 
+## I got a `65535` Error
+
+There are many reasons you could get this error. Things to check are:
+
+* You have an active project (see if you have an active project at [my.nesi.org.nz](https://my.nesi.org.nz/)),
+* You may have not a socket folder, `mkdir -p ~/.ssh/sockets` (see [First time setup](./Standard_Terminal_Setup.md#first-time-setup) for more information)
+
+## Other Common Login Problems
+
 ### Try logging in to `lander` directly
 
 You can test what part of your connection has failed by first running:
@@ -27,8 +36,8 @@ ssh login.hpc.nesi.org.nz
 
 **If this succeeds**:
 
-- If you are using a bash terminal, confirm your .ssh config is [set up correctly](./Connecting_to_the_Cluster.md).
-- If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](./Connecting_to_the_Cluster.md).
+* If you are using a bash terminal, confirm your .ssh config is [set up correctly](./Connecting_to_the_Cluster.md).
+* If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](./Connecting_to_the_Cluster.md).
 
 ### Check you are a member of an active project
 
@@ -109,14 +118,14 @@ MobaXterm can be updated through: 'help&gt;check for updates'
 
 ### Check password status
 
-Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
+Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
 
 ### See [above](#skip-password-prompts)
 
 ## Authentication token manipulation error
 
 This occurs when your authentication token is out of sync. You will have
-to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
+to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 ## Nothing here has helped?
 
@@ -124,28 +133,28 @@ to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 Helpful things to include:
 
-- The client you are using (WSL, MobaXterm, Mac terminal, Linux,
+* The client you are using (WSL, MobaXterm, Mac terminal, Linux,
     etc.).
-- The nature of the problem, including the precise text of any error
+* The nature of the problem, including the precise text of any error
     message you have been receiving.
-    - Did you start out having one login problem and are now getting a
+    * Did you start out having one login problem and are now getting a
         different one? If so, when did the change happen, and were you
         doing anything in particular related to logging in at the time
         things changed?
-- Have you successfully logged in in the past? if so when was the last
+* Have you successfully logged in in the past? if so when was the last
     time you successfully logged in, and to what NeSI cluster?
-- Has anything administrative and relevant to NeSI access changed
+* Has anything administrative and relevant to NeSI access changed
     since you last logged in? For example:
-    - Have you opened or joined any new NeSI projects, or have any of
+    * Have you opened or joined any new NeSI projects, or have any of
         your existing NeSI projects closed?
-        - Have any of your NeSI projects been granted new allocations, had
+        * Have any of your NeSI projects been granted new allocations, had
         a previously granted new allocation actually start, or had an
         existing allocation modified?
-        - Have any of your NeSI projects' existing allocations ended?
-        - Have any of your NeSI projects had a disk space quota change?
-        - Have you changed your institutional username and password, moved
+        * Have any of your NeSI projects' existing allocations ended?
+        * Have any of your NeSI projects had a disk space quota change?
+        * Have you changed your institutional username and password, moved
         to a different institution, or started a new job at an
         institution while also keeping your position at your old
         institution? Might NeSI know about any of these changes?
-- What have you tried so far?
-- Are you on the NIWA network, the NIWA VPN, or neither?
+* What have you tried so far?
+* Are you on the NIWA network, the NIWA VPN, or neither?
