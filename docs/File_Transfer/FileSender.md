@@ -22,7 +22,10 @@ If you would like to download all files together in a tar or zip file, you can d
 
 ### Sending Data using the FileSender API in the Terminal
 
-To send data to your FileSender account using the FileSender API, we first have to download the FileSender API and set it up:
+#### Initialising your FileSender API
+
+To send data to your FileSender account using the FileSender API, we first have to setup FileSender on your local machine or
+Mahuika. You only need to do this once.
 
 1. Go to [https://filesender.reannz.co.nz](https://filesender.reannz.co.nz)
 2. If asked, click **Login** and Sign-in through your Tuakiri login. You may not need to do this if you have already signed into FileSender before.
@@ -31,16 +34,10 @@ To send data to your FileSender account using the FileSender API, we first have 
 5. In the terminal on the machine you would like to send/receive data from, type:
 
     ```sh
-    curl -o ~/filesender.py https://raw.githubusercontent.com/filesender/filesender/master3/scripts/client/filesender.py
-    ```
-
-6. In the terminal on the machine you would like to send/receive data from, type:
-
-    ```sh
     mkdir -p ~/.filesender
     ```
 
-7. Open the `filesender.py.ini` file (e.g. `nano ~/.filesender/filesender.py.ini` to open with the text editor `nano`) and add the following, where you need to replace:
+6. Open the `filesender.py.ini` file (e.g. `nano ~/.filesender/filesender.py.ini` to open with the text editor `nano`) and add the following, where you need to replace:
 
     * `TUAKIRI_LOGIN_EMAIL` with your Tuakiri login email (This is your university or industrial email)
     * `FILESENDER_API_KEY` with the new authenticator secret key from step 4.
@@ -57,10 +54,13 @@ To send data to your FileSender account using the FileSender API, we first have 
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
 
-After setting up the FileSender API, you can upload files to FileSender by typing into the terminal (where you downloaded `filesender.py` into):
+#### Sending Data
+
+Once you have setup up your FileSender settings, you can upload files to FileSender by typing into the terminal (where you downloaded `filesender.py` into):
 
 ```bash
-python3 ~/filesender.py -p -r person-to-send-to@emailserver.edu research-data-file.txt
+module load FileSender
+filesender -p -r person-to-send-to@emailserver.edu research-data-file.txt
 ```
 
 where:
