@@ -31,7 +31,7 @@ To send data to your FileSender account using the FileSender API, we first have 
 5. In the terminal on the machine you would like to send/receive data from, type:
 
     ```sh
-    curl -O https://raw.githubusercontent.com/filesender/filesender/master3/scripts/client/filesender.py
+    curl -o ~/filesender.py https://raw.githubusercontent.com/filesender/filesender/master3/scripts/client/filesender.py
     ```
 
 6. In the terminal on the machine you would like to send/receive data from, type:
@@ -60,13 +60,17 @@ To send data to your FileSender account using the FileSender API, we first have 
 After setting up the FileSender API, you can upload files to FileSender by typing into the terminal (where you downloaded `filesender.py` into):
 
 ```bash
-python3 filesender.py -r person-to-send-to@emailserver.edu research-data-file.txt
+python3 ~/filesender.py -p -r person-to-send-to@emailserver.edu research-data-file.txt
 ```
 
 where:
 
-* `person-to-send-to@emailserver.edu`: This is the email address of the persion that you would like to send your data to. This can be any email address, not necessarily an educational email address.
+* `person-to-send-to@emailserver.edu`: This is the email address of the persion that you would like to send your data to. This can be any email address, not necessarily an educational email address. This can also be your own email address if you are wanting move data between your local machine and mahuika.
 * `research-data-file.txt` This is the file you would like to send. This can be any file.
+
+!!! warning
+
+    This may take some time if you are uploading a big file.
 
 You can send multiple files by tarballing the files up:
 
