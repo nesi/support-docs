@@ -23,7 +23,7 @@ In summary:
 
   ![globus14.jpg](../../assets/images/Re_creating_Shared_Collections_and_Bookmarks_in_Globus_V5.jpg)  
 
-2. Enter the [file path](../../Storage/Data_Transfer_Services/Globus_Paths-Permissions-Storage_Allocation.md)
+2. Enter the [file path](./Globus_Paths-Permissions-Storage_Allocation.md)
     of the directory to be shared.
 
 *Note: The example pictured below uses an old endpoint for the NeSI platforms. The current endpoint (launched June 2025) is called 'NeSI HPC storage'.*
