@@ -8,7 +8,7 @@ mkdocs-simple-hooks
 mkdocs-rss-plugin
 mkdocs-macros-plugin
 mkdocs-rss-plugin
-mkdocs-open-in-new-tab
+mkdocs-open-in-new-tab @ git+https://github.com/DingJunyao/mkdocs-open-in-new-tab@main
 mkdocs-git-authors-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_file

@@ -69,7 +69,10 @@ extra:
     property: G-TVQR4R1F40
 plugins:
   - search
-  - open-in-new-tab
+  - open-in-new-tab:
+      add_icon: true
+      exclude_hosts: 
+        - ""
   - rss:
       categories:
       - tags

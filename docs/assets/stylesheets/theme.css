@@ -197,3 +197,6 @@ span.md-status.md-status--deprecated {
   font-size: 2em;
   cursor: pointer;
 }
+.cards .md-main a[target="_blank"]::after, .cards .document a[target="_blank"]::after {
+   content: none;
+}
