@@ -35,7 +35,7 @@ Freezer is a tape storage system that is designed to hold large amounts of data 
 
 ## I would like to move data off Mahuika. What are my options?
 
-This will depend on what resources your group can budget for and what high capacity storage (HCS) your university offers. See [Moving files to and from the cluster](Moving_files_to_and_from_the_cluster.md) for more information about transfering data from Mahuika.
+This will depend on what resources your group can budget for and what high capacity storage (HCS) your university offers. See [Moving files to and from the cluster](../File_Transfer/Moving_files_to_and_from_the_cluster.md) for more information about transfering data from Mahuika. 
 
 ### Storage options for Universities around New Zealand
 
