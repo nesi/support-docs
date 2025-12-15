@@ -13,7 +13,7 @@ Some definitions that will help you understand this page:
 
 - **CPU**: The hardware that performs computations
 - **Task**: An independent process that is run using one or more CPUs. All CPUs assigned to a task share the same memory.
-- **Node**: The physical hardware. A node contains an upper limit of CPUs per task possible. 
+- **Node**: The physical hardware. A node contains an upper limit of CPUs per task possible.
 - **Shared Memory**: Multiple CPUs used within a single task
 - **Distributed Memory**: Multiple tasks used across nodes
 
@@ -49,7 +49,7 @@ Software may:
 
 ## Shared Memory Parallelisation
 
-Shared Memory Parallelism, or multi-threading, parallelizes itself by forking (copying) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
+Shared Memory Parallelism, or multi-threading, parallelises itself by forking (copying) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
 A non-parallalised (series) program works like this:
 
@@ -88,10 +88,11 @@ taskset -c -p $$  # Prints available CPUs
 
 Distributed memory parellelism, or Message Passing Interface (MPI), enables distributed parallel computation across multiple nodes through inter-process communication.
 
-A distributed memory parallelisation program: 
-- Has no shared memory requirement; scales across multiple nodes
+A distributed memory parallelisation program:
+
+- Does not require shared memory (Each task has its own memory).
+- Can utilise multiple nodes.
 - Has higher communication and memory overhead than multi-threading
-- Each task has exclusive memory
 - Memory requirements typically scale with CPU count
 - Predates shared-memory parallelism; common in classical HPC applications
 
