@@ -13,7 +13,7 @@ data to or from NeSI, you need:
 1. An active NeSI account (see
   [Creating a NeSI Account](../../Getting_Started/Creating_an_Account.md))
 2. A Globus account (see
-  [Initial Globus Sign-Up and Globus ID](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
+  [Initial Globus Sign-Up and Globus ID](./Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
 3. Access to Globus DTNs or endpoints  
     - Access to a DTN (e.g., at your home institution)
     - Personal endpoint if no DTN is available
@@ -33,7 +33,7 @@ other methods.
 ![Globus\_login.png](../../assets/images/Globus_Quick_Start_Guide.png)
 
 For more detailed instructions please see
-[Initial Globus Sign-Up, and your Globus Identities](../../Storage/Data_Transfer_Services/Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
+[Initial Globus Sign-Up, and your Globus Identities](./Initial_Globus_Sign_Up-and_your_Globus_Identities.md).
 
 ## Globus Endpoint Activation
 
@@ -45,9 +45,9 @@ endpoint at each location. You will also need the appropriate read and write per
 copying to and from. Please note that the NeSI `project` directory is read only, and `nobackup` is read and write.
 
 A list of some Institutional endpoints can be found here:
-[National-Data-Transfer-Platform](../../Storage/Data_Transfer_Services/National_Data_Transfer_Platform.md).
+[National-Data-Transfer-Platform](./National_Data_Transfer_Platform.md).
 You can also set up your own [personal
-endpoint](../../Storage/Data_Transfer_Services/Personal_Globus_Endpoint_Configuration.md)
+endpoint](./Personal_Globus_Endpoint_Configuration.md)
 to transfer data to or from your personal computer, however,
 administrative access to your computer is required.
 

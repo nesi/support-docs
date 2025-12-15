@@ -10,7 +10,7 @@ tags:
 !!! prerequisite
     Have an [active account and project.](../Getting_Started/Creating_an_Account.md)
 
-Find more information on [our filesystem](./File_Systems_and_Quotas/Filesystems_and_Quotas.md).
+Find more information on [our filesystem](../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 
 ## OnDemand
 
@@ -94,7 +94,7 @@ authentication.
 Globus is available for those with large amounts of data, security
 concerns, or connection consistency issues.
 You can find more details in
-[Data_Transfer_using_Globus](./Data_Transfer_Services/Data_Transfer_using_Globus.md).
+[Data_Transfer_using_Globus](./Globus/Data_Transfer_using_Globus.md).
 
 ## Rclone
 
