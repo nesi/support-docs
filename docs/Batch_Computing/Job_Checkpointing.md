@@ -25,7 +25,7 @@ The application specific documentation should be the first place you look when t
 
 Before implementing checkpointing consider
 
-- Possible additional runtime.
+- Additional runtime added by checkpointing.
 - Length of the job being checkpointed.
 - Time taken to implement checkpointing.
 - How many times you will reuse this method.
