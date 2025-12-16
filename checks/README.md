@@ -2,6 +2,8 @@
 
 This directory contains QA tests for the documentation.
 
+All these checks are intended to run on the markdown files, not rendered files.
+
 Tests should be made as Python scripts to allow flexibility of use. Currently these checks are run two ways:
 
 - [GitHub Actions](https://docs.github.com/en/actions) as defined in [workflows](../.github/workflows/),
@@ -44,16 +46,8 @@ Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlin
 *This linter is defined in [run_meta_check.py](run_meta_check.py) script.*
 
 Catch-all for custom checks.
-Currently defined checks are:
 
-- title_redundant
-- title_length
-- meta_missing_description
-- meta_unexpected_key
-- minimum_tags
-- walk_toc
-- click_here
-- dynamic_slurm_link
+See script for details.
 
 ### Test Build
 
@@ -66,3 +60,12 @@ Each type of test has a debug job in VSCode.
 Most will run on the [fail_checks](fail_checks.md) page
 
 ![alt text](../docs/assets/images/debug_menu.png)
+
+## Tags
+
+Tags are used to help search indexing, but can also be used to search by topic.
+
+We don't want a large number of similar/duplicate tag topics, as this is visually messy and reduces the utility of being able to sort by one.
+There is a list of 'approved' tags [.approved_tags.yml](./.approved_tags.yml), feel free to add to it.
+
+Tags are checked in [run_meta_check.py](run_meta_check.py).
