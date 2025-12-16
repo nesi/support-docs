@@ -72,7 +72,8 @@ plugins:
   - open-in-new-tab:
       add_icon: true
       exclude_hosts: 
-        - ""
+        - 
+        - github.com
   - rss:
       categories:
       - tags
