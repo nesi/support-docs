@@ -67,7 +67,7 @@ but will prevent creation of new data or files.
 ### /home
 
 This filesystem is accessible from login, compute and ancillary nodes.
-Users should **not** run jobs from this filesystem. [Snapshots](../Data_Recovery/File_Recovery.md) are taken of all home directories
+Users should **not** run jobs from this filesystem. [Snapshots](../File_Recovery.md) are taken of all home directories
 daily.
 No cleaning policy will be applied to your home directory as long as
 your user account is active and you are a member of at least one
@@ -76,7 +76,7 @@ active project.
 ### /nesi/project
 
 This filesystem is accessible from all login, compute and ancillary
-nodes. [Snapshots](../Data_Recovery/File_Recovery.md) are taken daily. No
+nodes. [Snapshots](../File_Recovery.md) are taken daily. No
 cleaning policy is applied.
 
 It provides storage space for datasets, shared code or configuration
@@ -132,7 +132,7 @@ See more information about the long term storage see our
 ## Snapshots
 
 If you have accidentally deleted data you can recover it from
-a [snapshot](../Data_Recovery/File_Recovery.md).
+a [snapshot](../File_Recovery.md).
 Snapshots are taken daily of `home/` and `project` directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 {% include "partials/support_request.html" %}
