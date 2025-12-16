@@ -33,34 +33,6 @@
     font-family: "Material Icons";
   	margin-right: 0.2em;
 }
-.btn-cluster {
-    padding: 0.4em 0.4em 0.4em 0.4em;
-    margin: 0 0.2em 0 0.2em;
-    border-radius: .25rem;
-    border: 1px var(--md-default-fg-color--light) solid;
-}
-.btn-cluster:before {
-    content: " \f233 ";
-    font-family: "FontAwesome";
-  	margin-right: 0.2em;
-}
-.btn-cluster-maui {
-  	color: #3c816e;
-    border-color: #3c816e;
-}
-.btn-cluster-mahuika {
-    color: #972220;
-    border-color: #972220;
-}
-.active.btn-cluster-maui {
-    color:  var(--md-primary-bg-color);
-  	background-color: #3c816e;
-}
-.active.btn-cluster-mahuika {
-    color:  var(--md-primary-bg-color);
-    background-color: #972220;
-}
-
 .grid.flex-card-parent {
     display: flex;
     flex-direction: row;
@@ -136,6 +108,7 @@ div#tier2 {
 li {
     list-style: none;
 }
+
 /*badges*/
 .badge{
     margin: 0 0.5em 0 0.5em;
@@ -146,6 +119,7 @@ li {
     padding: 0.2em;
     border-radius: 1pt;
 }
+
 .badge-closeable > button {
     background-color: transparent;
     border: 0;
@@ -154,91 +128,115 @@ li {
     padding: 0.4em 0.3em 0.3em 0.6em;
     margin: -0.3em;
 }
+
 .badge-closeable > button::after {
     content: " \f057";
     font-family: "FontAwesome";
 }
+
 .badge-closeable {
     cursor: default;
 }
+
 .badge-cluster {
     float: right;
     border-style: double; 
 }
+
 .badge-cluster-maui {
     background-color: #3c816e;
 }
+
 .badge-cluster-maui_ancil {
     background-color: #3600b3;
 }
+
 .badge-cluster-mahuika {
    background-color: #972220;
 }
+
 .badge-domain-biology{
     background-color: #28a745;
 }
+
 .badge-domain-chemistry {
     background-color: #ff07d8;
 }
+
 .badge-domain-earth_science {
     background-color: #794e00;
 }
+
 .badge-domain-engineering{
     background-color: #ff7737;
 }
+
 .badge-domain-mathematics {
     background-color: #9935dc;
 }
+
 .badge-domain-medical_science {
     background-color: #d10000;
 }
+
 .badge-domain-physics {
     background-color: #6495ed;
 }
+
 .badge-domain-social_science {
     background-color: #a11d3e;
 }
+
 .badge-domain-machine_learning {
     background-color: #ffdd00;
     color: dimgrey;
 }
+
 .badge-domain-data_analytics {
     background-color: #feff00;
     color: dimgrey;
 }
+
 .badge-domain-social_science {
     background-color: #1797ad;
 }
+
 .badge-domain-visualisation {
     display:none;
     box-shadow: 0px 0px 0px 1px #495057 inset;
     background-color: #fea;
 }
+
 .badge-domain-language {
     box-shadow: 0px 0px 0px 1px #495057 inset;
     background-color: #eceff1;
     display:none;
 }
+
 .badge-licence{
     padding: 0;
     color: red;
     cursor: default;
 }
+
 .badge-largeinator{
     padding: 0.4em;
     margin: -0.4em;
     cursor: pointer;
 }  
+
 @media (max-width: 560px){
     .badge-domain{
         display:none;
     }
 }
+
 @media (max-width: 800px){
     .cardbody-licence{
         display:none;
     }
 }
+
 div#updated {
     display: flex;
     font-style: italic;
@@ -259,12 +257,15 @@ div#updated {
     width: 100%;
     padding: 0 0 1rem 0;
 }
+
 .md-search-aux__inner {
     width: 100%
 }
+
 .md-search__icon.md-search-aux__icon{
     color: var(--md-default-fg-color--light);
 }
+
 .md-search-aux__input{
     box-shadow: 0 0 0.6rem #0000;
     height: 1.8rem;
@@ -272,12 +273,14 @@ div#updated {
     transition: color .25s,background-color .25s;
     z-index: 2;
 }
+
 .md-search__icon[for=__search-aux] {
     position: absolute;
     top: .3rem;
     left: 0.5rem;
     z-index: 2
 }
+
 .md-search-aux__form{
     background-color: var(--md-default-bg-color);
     border-radius: 0.1rem;
