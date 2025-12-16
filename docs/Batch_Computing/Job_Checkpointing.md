@@ -34,7 +34,7 @@ The application specific documentation should be the first place you look when t
 
 Checkpointing code has the added advantage that it allows you to split
 your work into smaller jobs, allowing them to move through the queue
-faster, and allows you to run work for longer than the job maximum time limit.
+faster, and **allows you to run work for longer than the job maximum time limit**.
 
 This can be most easily implemented by splitting the work into smaller chunks,
 then in your script loading and saving to disk at the start and end of the job respectively.
