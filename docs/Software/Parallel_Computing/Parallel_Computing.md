@@ -13,21 +13,13 @@ Some definitions that will help you understand this page:
 
 - **CPU**: The hardware that performs computations
 - **Task**: An independent process that is run using one or more CPUs. All CPUs assigned to a task share the same memory.
-- **Node**: The physical hardware. A node contains an upper limit of CPUs per task possible.
+- **Node**: The physical hardware. Each node contains memory and a number of CPUs.
 - **Shared Memory**: Multiple CPUs used within a single task
 - **Distributed Memory**: Multiple tasks used across nodes
 
 ## Utilizing Multiple CPUs
 
-Requesting resources through Slurm doesn't guarantee your program will use them.
-
-Parallelism is either:
-
-- **Implicit**: Software handles parallelization automatically.
-- **Explicit**: User must configure parallel execution.
-
-### Scientific Software
-
+Requesting extra resources through Slurm doesn't guarantee your program will use them. 
 Always consult the software specific documentation first when trying to determine what types of parallel computing to use (and how).
 Software may:
 
@@ -42,14 +34,14 @@ Software may:
 | Method | Also Called | Slurm Options | Usage |
 |--------|------------------|---------------|-------------------|
 | [Shared Memory](#shared-memory) | Multithreading, SMP | `--cpus-per-task` | Limited to single node; efficient memory use |
-| [Distributed Memory](#distributed-memory) | MPI, OpenMPI | `--ntasks` + `srun` | Scales across nodes; higher overhead |
-| [Hybrid](#hybrid-parallel) | - | `--ntasks` + `--cpus-per-task` + `srun` | Combines both approaches |
+| [Distributed Memory](#distributed-memory) | MPI | `--ntasks` | Scales across nodes; higher overhead |
+| [Hybrid](#hybrid-parallel) | - | `--ntasks` + `--cpus-per-task` | Combines both approaches |
 | [Job Array](#job-arrays) | - | `--array` | Best for independent tasks |
 | [GPU](#gpus) | GPGPU | `--gpus-per-node` | Specialized hardware for matrix operations |
 
 ## Shared Memory Parallelisation
 
-Shared Memory Parallelism, or multi-threading, parallelises itself by forking (copying) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
+Shared Memory Parallelism, or multi-threading, parallelises itself by forking (duplicating) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
 A non-parallalised (series) program works like this:
 
@@ -60,9 +52,8 @@ In contrast, a shared memory parallelised program works like this:
 ![parallel](../../assets/images/Parallel_Execution.png)  
 
 A shared memory parallelised program:
-- Requires shared memory (all CPUs must be using the same memory on same node)
-- Memory requirements don't scale proportionally with CPU count (i.e. use the same amount of memory regardless of the number of CPUs requested)
-- Limited by node capacity (e.g., Mahuika nodes have 72 CPUs, therefore the maximum number of CPUs that can be requested for a shared memory parallisation job is 72)
+- Requires shared memory (so all CPUs must be on same node)
+- Limited by node capacity (e.g., On Mahuika the maximum number of CPUs that can be requested for a shared memory job is 166 (or twice that with hyperthreading))
 - Uses `--cpus-per-task` to specify thread count
 
 ### Example Script
@@ -81,12 +72,12 @@ taskset -c -p $$  # Prints available CPUs
 
 !!! note "See also"
     - [Multiththreading](Multithreading_Scaling_Example.md)
-    - [Python Multiprocessing](https://docs.python.org/3/library/multiprocessing.html) (not `threading`, which isn't truly parallel).
+    - [Python Multiprocessing](https://docs.python.org/3/library/multiprocessing.html) (not `threading`, which isn't truly parallel in Python).
     - [MATLAB Parpool](https://au.mathworks.com/help/parallel-computing/parpool.html)
 
 ## Distributed Memory
 
-Distributed memory parellelism, or Message Passing Interface (MPI), enables distributed parallel computation across multiple nodes through inter-process communication.
+Distributed memory parellelism, generally implemented with the Message Passing Interface (MPI), enables distributed parallel computation across multiple nodes through inter-process communication.
 
 A distributed memory parallelisation program:
 
@@ -96,10 +87,9 @@ A distributed memory parallelisation program:
 - Memory requirements typically scale with CPU count
 - Predates shared-memory parallelism; common in classical HPC applications
 
-- Use `--ntasks` (>1) or `--ntasks-per-node` with `--nodes`
-- Use `--mem-per-cpu` instead of `--mem` ensures consistent memory regardless of how Slurm packs tasks onto nodes.
-- Launch with `srun` (alternative to `mpirun` on Slurm systems)
-- Leaving `--cpus-per-task` unspecified typically defaults to 2
+- Use `--ntasks` (>1), or `--ntasks-per-node` together with `--nodes`
+- Use `--mem-per-cpu` instead of `--mem` to ensure consistent memory regardless of how Slurm packs tasks onto nodes.
+- Launched via `mpirun` or preferably Slurm's `srun`.
 
 ### Example Script
 
@@ -112,7 +102,7 @@ A distributed memory parallelisation program:
 #SBATCH --mem-per-cpu    512MB
 #SBATCH --ntasks         4
 
-srun pwd  # Prints working directory
+srun bash -c 'taskset -c -p $$'  # Prints CPU available to each task
 ```
 
 !!! warning
@@ -124,7 +114,7 @@ srun pwd  # Prints working directory
 
 ## Hybrid Parallel
 
-Combining `--ntasks` and `--cpus-per-task` using both shared and distributed memory, with the advantages of both.
+Combining `--ntasks` and `--cpus-per-task` for distributed tasks each of which is multi-threaded. 
 Not commonly supported.
 
 ### Example Script
@@ -139,7 +129,7 @@ Not commonly supported.
 #SBATCH --cpus-per-task  4
 #SBATCH --ntasks         2
 
-srun pwd  # Prints working directory
+srun bash -c 'taskset -c -p $$'  # Prints CPUs available to each task
 ```
 
 ## Job Arrays
@@ -149,7 +139,6 @@ Job arrays execute independent tasks simultaneously—ideal for *embarrassingly 
 - Tasks can execute in any order.
 - Efficient way to run multiple serial jobs simultaneously rather than applying multiple CPUs to a single job.
 - Scales without efficiency loss.
-- The best choice when applicable
 - Use `--array` to specify index range
 
 ### Example Script
@@ -163,7 +152,6 @@ Job arrays execute independent tasks simultaneously—ideal for *embarrassingly 
 #SBATCH --mem            512MB        # Memory
 #SBATCH --array          1-2          # Array jobs
 
-pwd
 echo "This is result ${SLURM_ARRAY_TASK_ID}"
 ```
 
@@ -172,7 +160,7 @@ echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
 ## GPUs
 
-GPUs excel at large-scale parallel operations on matrices, making them ideal for graphics processing and similar computational tasks.
+GPUs excel at large-scale parallel operations on matrices, making them ideal for machine learning, graphics processing and simulating many kinds of physical systems.
 
 - Specialized hardware requested in addition to CPUs and memory.
 - Well-suited for large matrix operations and machine learning.
