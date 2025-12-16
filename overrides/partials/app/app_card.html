@@ -1,6 +1,8 @@
 <details class="software list-group-item-action list-group-item list-group-item-application 
     {% for domain in app.domains -%}list-group-item-application-{{ domain }}{% endfor -%}
-    ">
+    "
+    data-domains="{% for domain in app.domains -%}{{ domain }},{% endfor -%}"
+    >
     <summary class="card-clickable collapsed" data-toggle="collapse" data-parent="#mainList" 
         data-target="#collapse-{{ app_name | lower }}" aria-expanded="true">
         <h4 class="app-list-header">{{ app_name }}</h4>

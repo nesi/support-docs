@@ -1,114 +1,148 @@
-// Copied from module list repo.
-CLUSTER_WHITELIST=["mahuika", "maui", "maui_ancil"]
-DOMAIN_WHITELIST=["astronomy","biology","chemistry", "data_analytics", "earth_science", "engineering", "language", "machine_learning", 
-"mathematics","medical_science","physics","social_science","visualisation","climate_science","workflow_management"]
+const DOMAIN_WHITELIST = [
+  "astronomy", "biology", "chemistry", "data_analytics",
+  "earth_science", "engineering", "language", "machine_learning",
+  "mathematics", "medical_science", "physics", "social_science",
+  "visualisation", "climate_science", "workflow_management"
+];
 
-$(document).ready(function() {
 
-    params = new URL(document.location).searchParams;
-    search_string = params.get("search");
-    cluster_tags = (params.get("cluster") ?? "").split(",").filter(Boolean);
-    domain_tags = (params.get("domain") ?? "").split(",").filter(Boolean);  
+const state = {
+  search: "",
+  domain: null // string | null
+};
 
-    cluster_tags.forEach((tag)=>addBadge(tag, "cluster"));
-    domain_tags.forEach((tag)=>addBadge(tag, "domain"));
+function syncURL() {
+  const params = new URLSearchParams();
 
-    if (search_string){
-        $('#__search-aux')[0].value = search_string;
-    }
-    filterSearch(); 
-})
+  if (state.search) {
+    params.set("search", state.search);
+  }
 
-function addBadge(tag, filter_type){ 
-    $(`#srchbar-badge-party-${filter_type}s`).append(() => {
-    return `<span class="badge badge-closeable badge-${filter_type} badge-${filter_type}-${tag}">${tag.charAt(0).toUpperCase() + tag.replace('_', ' ').slice(1)}<button type="button" onclick="${filter_type}ToggleFilter(\'${tag}\')" data-dismiss="alert" aria-label="Close"></button></span>`;
-})
+  if (state.domain) {
+    params.set("domain", state.domain);
+  }
+
+  history.pushState(null, "", `?${params.toString()}`);
 }
 
-function removeBadge(tag, filter_type){
-    $(`#srchbar-badge-party-${filter_type}s > .badge-${filter_type}-${tag}`).remove(); // Remove tag class from DOM
+function renderDomainBadge() {
+  const container = document.getElementById("srchbar-badge-party-domains");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  if (!state.domain) return;
+
+  const badge = document.createElement("span");
+
+  badge.className = `badge badge-closeable badge-domain badge-domain-${state.domain}`;
+  badge.dataset.domain = state.domain;
+
+  badge.textContent =
+    state.domain.charAt(0).toUpperCase() +
+    state.domain.replace("_", " ").slice(1);
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.setAttribute("aria-label", "Close");
+
+  badge.appendChild(button);
+  container.appendChild(badge);
 }
 
-function addTag(tag, filter_type){
-    addBadge(tag, filter_type);
-    params.set(filter_type, (params.get(filter_type) ?? "").split(",").filter(Boolean).concat(tag).join());
-    history.pushState(null, '', window.location.pathname + '?' + params.toString());
+function render() {
+  renderDomainBadge();
+  filterSearch();
 }
 
-function removeTag(tag, filter_type){
-    removeBadge(tag, filter_type);
-    params.set(filter_type, (params.get(filter_type) ?? "").split(",").filter(Boolean).filter(e => e !== tag).join()); // Remove tag class from search string
-    history.pushState(null, '', window.location.pathname + '?' + params.toString()); // push to search history for live update.
-}
+/* ============================================================================
+ * Filtering
+ * ========================================================================== */
 
-function domainToggleFilter(domain) {
-    if (DOMAIN_WHITELIST.includes(domain)){
-        if ($(`#srchbar-badge-party-domains > .badge-domain-${domain}`).length < 1) {
-            addTag(domain, "domain");
-        } else {
-            removeTag(domain, "domain");
-        }
-        filterSearch();
-    }
-}
-
-function clusterToggleFilter(cluster) {
-    if (CLUSTER_WHITELIST.includes(cluster)){
-        if ($(`#srchbar-badge-party-clusters > .badge-cluster-${cluster}`).length < 1) {
-            addTag(cluster, "cluster");
-        } else {
-            removeTag(cluster, "cluster");
-        }
-        filterSearch(); 
-    }
-}
-
-
-function srchFunc(event) {
-    // Function called whenever search field edited.
-    // Consider replacing with Fuse, if fuzzy or faster search needed.
-    // Check if search string matches canon domain.
-    search_string = $('#__search-aux')[0].value;
-    params.set("search", search_string);
-    // Rather that add to url, edit history.
-    history.pushState(null, '', window.location.pathname + '?' + params.toString());
-    filterSearch()
-}
-
-//Goes through each app and shows/hides accordingly.
 function filterSearch() {
-    function matchClasses(element, inarray) {
-        // Only doing this as extreme DRY
-        if (inarray.length < 1) {
-            return true
-        }
-        for (i = 0; i < inarray.length; i++) {
-            if (element.hasClass(`list-group-item-application-${inarray[i]}`)) {
-                return true
-            }
-        }
-        return false
+  const items = document.querySelectorAll(".list-group-item-application");
+
+  items.forEach(item => {
+    let visible = true;
+
+    const text = item.textContent.toLowerCase();
+
+    const itemDomains =
+      item.dataset.domains?.split(",") ?? [];
+
+    if (state.domain) {
+      visible &&= itemDomains.includes(state.domain);
     }
 
-    function matchSearch(comptxt){
-        if (search_string){
-            return (comptxt.indexOf(search_string) > -1)
-        }
-        return true
+    if (state.search) {
+      visible &&= text.includes(state.search.toLowerCase());
     }
 
-    $('.list-group-item-application').each(function() { // Get list members.
-        element = $(this)
-        comptxt = (element.text() ?? "").toLowerCase(); // Flatten content
-        $(element).removeClass('hide_search'); //Show all element    
-        // If element matches all contitions, leave visible and skip to next element
-        if (matchClasses(element, domain_tags) && matchClasses(element, cluster_tags) && matchSearch(comptxt)) {
-            return true
-        }
-        element.addClass('hide_search'); //Hides element
-    });
+    item.classList.toggle("hide_search", !visible);
+  });
 }
-//Stop propigation of clicks to their parent elements.
-$(".badge-largeinator").click(function(event) {
+
+function toggleDomain(domain) {
+  if (!DOMAIN_WHITELIST.includes(domain)) return;
+
+  // Clicking the active domain clears it
+  // Clicking a different domain replaces it
+  state.domain = state.domain === domain ? null : domain;
+
+  syncURL();
+  render();
+}
+
+
+// Debounce input
+let searchDebounceTimer = null;
+
+function onSearchInput(event) {
+  clearTimeout(searchDebounceTimer);
+
+  searchDebounceTimer = setTimeout(() => {
+    state.search = event.target.value ?? "";
+    syncURL();
+    filterSearch();
+  }, 150);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+
+  state.search = params.get("search") ?? "";
+  state.domain = params.get("domain");
+
+  // Validate domain from URL
+  if (!DOMAIN_WHITELIST.includes(state.domain)) {
+    state.domain = null;
+  }
+
+  const searchInput = document.getElementById("__search-aux");
+  if (searchInput) {
+    searchInput.value = state.search;
+    searchInput.addEventListener("input", onSearchInput);
+  }
+
+  // Badge close handling
+  document.addEventListener("click", event => {
+    const badge = event.target.closest(".badge-domain");
+    if (!badge) return;
+
+    toggleDomain(badge.dataset.domain);
     event.stopPropagation();
-})
+  });
+
+  // Prevent bubbling from badge container
+  document.querySelectorAll(".badge-largeinator").forEach(el => {
+    el.addEventListener("click", e => e.stopPropagation());
+  });
+
+  render();
+});
+
+/* ============================================================================
+ * Public API (for existing onclick hooks)
+ * ========================================================================== */
+
+window.domainToggleFilter = toggleDomain;

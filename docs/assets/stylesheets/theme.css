@@ -74,8 +74,6 @@
 .md-nav--primary > .md-nav__title {
     display: none;
 }
-/* fix neotiri card colors */
-
   /* Make button more buttony */
 .md-button--primary {
   box-shadow: grey 2px 2px 2px;
@@ -133,7 +131,6 @@ span.md-status.md-status--deprecated {
     cursor: default;
 }
 
-
 /* Make cards look right */
 .md-typeset .grid.cards {
     display: grid;
@@ -179,7 +176,6 @@ span.md-status.md-status--deprecated {
   color: rgba(0, 0, 0, 0.87);
 }
 
-
 #calendar-banner {
   background: #fffae6;
   border-bottom: 1px solid #ccc;
@@ -187,8 +183,6 @@ span.md-status.md-status--deprecated {
   text-align: center;
   z-index: 9999;
 }
-
-
 
 #calendar-banner button {
   position: absolute;
