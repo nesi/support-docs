@@ -98,7 +98,6 @@ plugins:
       module_name: macro_hooks
       include_dir: overrides
 extra_css:
-  - assets/stylesheets/footer.css
   - assets/stylesheets/custom_admonations.css
   - assets/stylesheets/theme.css
 extra_javascript:
