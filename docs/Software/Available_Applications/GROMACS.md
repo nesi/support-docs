@@ -131,6 +131,9 @@ by using `-ntomp ${SLURM_CPUS_PER_TASK}`.
 
 ## Checkpointing
 
+!!! warn "checkpointing"
+     We strongly recommend the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a few hours.
+
 The `-cpt 30` option instructs Gromacs to
 write a full checkpoint file every 30 minutes.
 
