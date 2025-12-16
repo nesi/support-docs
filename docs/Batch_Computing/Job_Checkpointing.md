@@ -18,7 +18,7 @@ How checkpointing can be implemented depends on the application/code
 being used, some will have inbuilt methods whereas others might require
 some scripting.
 
-!!! warn
+!!! warning
     Checkpointing may add to the runtime of a job, especially if you are using large amounts of memory.
 
 Before implementing checkpointing consider
