@@ -72,7 +72,7 @@ requested from the scheduler.
 
 ### Checkpointing
 
-!!! warn "checkpointing"
+!!! warning "Checkpointing"
      We strongly recommend the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a few hours.
 
 ORCA provides for saving of checkpoint data, especially molecular
