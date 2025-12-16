@@ -262,7 +262,7 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 ### Checkpointing
 
 !!! warning "Checkpointing"
-     We strongly recommend the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a few hours.
+     We strongly the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
 
 It is best practice when running long jobs to enable autosaves.
 

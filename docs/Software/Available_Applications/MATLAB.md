@@ -345,7 +345,7 @@ For example, adding OpenMP flags for a fortran compile:
 ## Checkpointing
 
 !!! warning "Checkpointing"
-     We strongly recommend the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a few hours.
+     We strongly the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
 
 ``` m
 % If checkpoint file, load from there.
