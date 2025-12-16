@@ -13,6 +13,7 @@ import os
 import time
 from titlecase import titlecase
 from pathlib import Path
+from difflib import SequenceMatcher
 
 # Ignore files if they match this regex
 EXCLUDED_FROM_CHECKS = [
@@ -28,10 +29,10 @@ msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
-MIN_TAGS = 1
+RANGE_TAGS = [1, 5]
 RANGE_SIBLING = [4, 8]
 DOC_ROOT = "docs"
-
+APPROVED_TAGS = "checks/.approved_tags.yml"
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
     "title": "",
@@ -43,7 +44,7 @@ EXPECTED_PARAMETERS = {
     "postreq": "",
     "suggested": "",  # Add info here when implimented.
     "created_at": "",
-    "tags": "",  # Add info here when implimented.
+    "tags": yaml.safe_load(open(APPROVED_TAGS, 'r')),
     "search": "",
     "hide": ["toc", "nav", "tags"],
 }
@@ -263,6 +264,25 @@ def _nav_check():
         )
 
 
+def _jaccard_index(s1, s2):
+    set1 = set(s1.lower()) # Split into words
+    set2 = set(s2.lower())
+    intersection = len(set1.intersection(set2))
+    union = len(set1.union(set2))
+    return intersection / union
+
+def _sim_index(str1, str2):
+    return SequenceMatcher(None, str1, str2).ratio()
+
+def _most_similar(s1, op):
+    bestval = 0
+    bestword = ""
+    for o in op:
+        ji = _jaccard_index(s1, o)
+        if ji > bestval:
+            bestval = ji
+            bestword = o
+    return bestword, bestval
 def title_redundant():
     lineno = _get_lineno(r"^title:.*$")
     if "title" in meta.keys() and title_from_filename == meta["title"]:
@@ -300,9 +320,10 @@ def meta_unexpected_key():
 
     for key, value in meta.items():
         if key not in EXPECTED_PARAMETERS.keys():
+            similar, ji = _most_similar(key, EXPECTED_PARAMETERS.keys())
             yield {
                 "line": _get_lineno(r"^" + key + r":.*$"),
-                "message": f"Unexpected parameter in front-matter '{key}'",
+                "message": f"Unexpected parameter in front-matter '{key}'{', did you mean \'' + similar + "\'?" if ji > 0.4 else ""} .",
             }
         elif EXPECTED_PARAMETERS[key]:
             if isinstance(value, list):
@@ -334,16 +355,31 @@ def title_capitalisation():
 '{correct_title}' is preferred",
         }
 
-def minimum_tags():
+def number_tags():
     if "tags" not in meta or not isinstance(meta["tags"], list):
         yield {"message": "'tags' property in meta is missing or malformed."}
-    elif len(meta["tags"]) < MIN_TAGS:
+    elif len(meta["tags"]) < RANGE_TAGS[0]:
         yield {
             "line": _get_lineno(r"^tags:.*$"),
-            "message": "Try to include at least 2 'tags'\
+            "message": f"Try to include at least {RANGE_TAGS[0]} 'tags'\
 (helps with search optimisation).",
         }
+    elif len(meta["tags"]) > RANGE_TAGS[1]:
+        yield {
+            "line": _get_lineno(r"^tags:.*$"),
+            "message": f"{RANGE_TAGS[1]} is a lot of 'tags', are you sure they are all useful?",
+        }
 
+def approved_tags():
+    if "tags" not in meta or not isinstance(meta["tags"], list):
+        return
+    for tag in meta["tags"]:
+        if tag not in EXPECTED_PARAMETERS["tags"]:
+            similar, ji = _most_similar(tag, EXPECTED_PARAMETERS["tags"])
+            yield {
+                "line": _get_lineno(rf".*{tag}.*"),
+                "message": f"Tag '{tag}' is not an approved tag, {'did you mean \'' + similar + "\'?" if ji > 0.4 else 'See \'' + APPROVED_TAGS + '\'.'}",
+            }
 
 def click_here():
     """
@@ -419,7 +455,8 @@ ENDCHECKS = [
     title_capitalisation,
     meta_missing_description,
     meta_unexpected_key,
-    minimum_tags,
+    number_tags,
+    approved_tags,
     walk_toc,
 ]
 
