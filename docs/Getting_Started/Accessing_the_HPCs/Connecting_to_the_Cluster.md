@@ -42,7 +42,7 @@ Congratulations! You are ready to move to the next step.
 !!! prerequisite "What next?"
     Setting up your [Default Terminal](Standard_Terminal_Setup.md)
 
-### VSCode
+### VSCode (on Linux/Mac OS)
 
 The inbuilt 'remotes' plugin allows connecting to remote hosts.
 If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](Standard_Terminal_Setup.md),
@@ -72,7 +72,7 @@ different options, listed in order of preference.
        [WSL](Windows_Subsystem_for_Linux_WSL.md)
     -  Setting up the [Ubuntu Terminal](Windows_Subsystem_for_Linux_WSL.md)
 
-### VSCode
+### VSCode (on Windows)
 
 VSCode can be used with WSL or without.
 
