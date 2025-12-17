@@ -32,7 +32,7 @@ MacOS & Linux have a default terminal emulator installed. On both it is called: 
 !!! prerequisite "What next?"
     Setting up your [Default Terminal](Standard_Terminal_Setup.md)
 
-### VSCode 
+### VSCode
 
 The 'remotes' plugin allows connecting to remote hosts using SSH.
 If you have set up your `~/.ssh/config` as described in [Standard_Terminal_Setup](Standard_Terminal_Setup.md),
@@ -40,19 +40,22 @@ VSCode will detect this and show configured hosts in the 'Remote Explorer' Tab.
 
 ## MS Windows
 
-There are several options for connecting to the cluster using SSH from Windows. Below are our recommendations in order: 
+There are several options for connecting to the cluster using SSH from Windows. Below are our recommendations in order:
 
 ### Windows Subsystem for Linux (WSL)
 
- The Windows Subsystem for Linux is our top recommendation since it will provide the most functionality.  WSL may require administrative privileges to enable and install.  If you are not allowed to enable and install, contact your local IT team. If your institution will not allow WSL to be installed, consider using another option see below.
+ The Windows Subsystem for Linux is our top recommendation since it will provide the most functionality. WSL may require administrative privileges to enable and install. If you are not allowed to enable and install, contact your local IT team. If your institution will not allow WSL to be installed, consider using another option see below.
 
 !!! tip "What next?"
-    Setting up [WSL](Windows_Subsystem_for_Linux_WSL.md) 
+    Setting up [WSL](Windows_Subsystem_for_Linux_WSL.md)
 
-### VSCode 
+### VSCode
 
-The 'remotes' plugin allows connecting to remote hosts. A detailed description and options for VSCode Remote development can be found [on this website](https://code.visualstudio.com/docs/remote/ssh) 
-VSCode can be used with WSL but WSL is not a requirement. 
+The 'remotes' plugin allows connecting to remote hosts. A detailed description and options for VSCode Remote development can be found [on this website](https://code.visualstudio.com/docs/remote/ssh).
+VSCode can be used with WSL but WSL is not a requirement.
+
+!!! tip "What next?"
+    Setting up [VSCode](VSCode.md)
 
 ### MobaXterm
 
@@ -64,7 +67,7 @@ VSCode can be used with WSL but WSL is not a requirement.
  [mobaxterm.mobatek.net](https://mobaxterm.mobatek.net/download-home-edition.html).
  The portable edition will allow you to use MobaXterm without needing
  administrator privileges, however it introduces several bugs so we
- *highly* recommend using the installer edition if you have
+ _highly_ recommend using the installer edition if you have
  administrator privileges on your workstation or if your
  institution's IT team supports MobaXTerm.
 !!! tip "What next?"
@@ -93,4 +96,3 @@ for new users.
 !!! tip "What next?"
     -  Setting up
        [WinSCP](WinSCP-PuTTY_Setup_Windows.md)
-
