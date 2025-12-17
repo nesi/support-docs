@@ -56,7 +56,7 @@ High capacity storage are offered by various institutes around New Zealand. Here
 
 * University of Auckland: [https://research-hub.auckland.ac.nz/managing-research-data/research-data-storage/research-drive](https://research-hub.auckland.ac.nz/managing-research-data/research-data-storage/research-drive)
 * Massey University: See 'Network disk space allocation at Massey' in [https://www.massey.ac.nz/study/library/researcher-support/research-data-management/store-your-research-data](https://www.massey.ac.nz/study/library/researcher-support/research-data-management/store-your-research-data)
-* Waikato University: You can request Storage with your Supervisor _via_ your Kuhukuhu portal.
+* Waikato University: You can request Storage with your Supervisor _via_ your Kuhukuhu portal at [https://kuhukuhu.waikato.ac.nz](https://kuhukuhu.waikato.ac.nz).
 * Victoria University of Wellington: [https://intranet.wgtn.ac.nz/services-resources/digital-solutions/research-services/solar](https://intranet.wgtn.ac.nz/services-resources/digital-solutions/research-services/solar)
 * University of Canterbury: You can request Storage _via_ [https://ucservicesprod.service-now.com/uc?id=sc_cat_item&sys_id=8fcef1d4db5e0510e447f561f3961932&table=sc_cat_item&searchTerm=storage](https://ucservicesprod.service-now.com/uc?id=sc_cat_item&sys_id=8fcef1d4db5e0510e447f561f3961932&table=sc_cat_item&searchTerm=storage)
 * University of Otago: [https://www.otago.ac.nz/its/services/file-storage-and-server-services/high-capacity-central-file-storage-hcs](https://www.otago.ac.nz/its/services/file-storage-and-server-services/high-capacity-central-file-storage-hcs)
