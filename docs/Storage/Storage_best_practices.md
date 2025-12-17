@@ -4,11 +4,11 @@ This page will guide you through best practices for storing your data on Mahuika
 
 ## What are `home`, `project` and `scratch` directories for?
 
-`home`: This directory is for storing files that are central for performing your simulations and calculations on Mahuika. This includes program installations, conda environments and other virtual environments.
+`home`: This directory is for storing files that are central for performing your simulations and calculations on Mahuika. This includes program installations, conda environments and other virtual environments. Home directories (folders) are available in the `/home` volume.
 
-`project`: This directory is for storing files that you want to keep for long periods of time that you access regularly. This includes important research files you do not want deleted and you access regularly, and can include conda environments and other virtual environments that are too large for `home`.
+`project`: This directory is for storing files that you want to keep for long periods of time that you access regularly. This includes important research files you do not want deleted and you access regularly, and can include conda environments and other virtual environments that are too large for `home`. Project space is available as the `/nesi/project` storage volume.
 
-`scratch`: This directory is for storing raw data and larger files that are temporary. In this case, temporary may be for short (seconds) to long (90 days) amounts of time. Examples include `temp` files, files that you only need for less than 3 months at a time, OTHER EXAMPLES.
+`scratch`: This directory is for storing raw data and larger files that are temporary. In this case, temporary may be for short (seconds) to long (90 days) amounts of time. Examples include `temp` files, files that you only need for less than 3 months at a time. Scratch space is available as the `/nesi/nobackup` storage volume.
 
 You can find more information about these directories in the [Filesystems and Quotas page](File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 
@@ -16,7 +16,7 @@ You can find more information about these directories in the [Filesystems and Qu
 
 It is best practice to perform your calculations/simulations in the following order:
 
-1. Perform your calculations/simulations in `scratch`. `scratch` is a large storage space (usually on the order of TBs) that gives you space to perform your calculations/simulations.
+1. Perform your calculations/simulations in `scratch`. `scratch` is a large storage space that gives you space to perform your calculations/simulations.
 2. After analysis, any data you want to keep for further analysis and that you will access regularly should be kept in `project`.
 3. If you have GBs or TBs of data that you need to keep on Mahuika but don't have enough space on `project` and do not access regularly, you should consider moving this data onto Freezer. Freezer is designed to keep mass amounts of data on that you will only need to access every few months. [Click here for more information about Freezer](Long_Term_Storage/Freezer_long_term_storage.md).
 4. `project` is limited in space, so any data you can move off Mahuika should be when you are either done with the data, or you can do analysis of the data on your own computer. See [I would like to move data off Mahuika. What are my options?](#i-would-like-to-move-data-off-mahuika-what-are-my-options)
@@ -29,9 +29,9 @@ It is vital that files that are important to your work are backed up after you h
 * **2 Media Types**: Store backups on different media (e.g., internal hard drive, external hard drives, cloud, network attached storage device, high capacity storage, freezer).
 * **1 Offsite**: Keep one copy physically separate (e.g., cloud, freezer, high capacity storage, offsite drive) to survive local disasters.
 
-## What is Freezer (Storaging massive files on Mahuika long-term without auto-deletion)?
+## What is Freezer (Storing files on Mahuika long-term without auto-deletion)?
 
-Freezer is a tape storage system that is designed to hold large amounts of data that are accessed infrequently. Freezer is a great way to keep large files (or a collection of large files) on Mahuika. See [Freezer long term storage](Long_Term_Storage/Freezer_long_term_storage.md) for more information about Freezer.
+Freezer is a tape storage system that employs the S3 protocol and is designed to hold large amounts of data that are accessed infrequently. Freezer is a great solution to prevent data being lost by our fortnightly auto-deletion policy or to run those quarterly, semi-annual or annual workflows. See [Freezer long term storage](Long_Term_Storage/Freezer_long_term_storage.md) for more information.
 
 ## I would like to move data off Mahuika. What are my options?
 
