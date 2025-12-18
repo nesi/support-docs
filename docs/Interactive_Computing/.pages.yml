@@ -1,4 +1,5 @@
 ---
 nav:
   - Slurm interactive sessions: Slurm_Interactive_Sessions.md
+  - "*"
   - Interactive computing with OnDemand: OnDemand
