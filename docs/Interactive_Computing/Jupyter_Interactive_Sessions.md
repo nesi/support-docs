@@ -9,18 +9,18 @@ description: How to run an JupyterLab interactive session on the NeSI cluster.
 # JupyterLab interactive sessions
 
 !!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+     If you are using a windows computer, this method has currently
+     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not
      tested it yet in Putty or Mobaxterm
 
-To run Python+JupyterLab in interactive mode, first we need to load 
+To run Python+JupyterLab in interactive mode, first we need to load
 your interactive session:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
 ```
 
-Then, we need to start up Python, install JupyterLab if you dont have it 
+Then, we need to start up Python, install JupyterLab if you dont have it
 yet, and obtain the hostname and the port:
 
 ```sh
@@ -52,8 +52,8 @@ and `echo $PORT` commands. Then, we need to start up JupyterLab:
 jupyter lab --no-browser --ip=0.0.0.0 --port=$PORT
 ```
 
-Make a note of the second URL given by JupyterLab once it launches. 
-For instance: 
+Make a note of the second URL given by JupyterLab once it launches.
+For instance:
 
 ```sh
 [C 2025-11-03 14:34:31.797 ServerApp] 

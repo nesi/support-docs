@@ -9,11 +9,11 @@ description: How to run a Pluto interactive session on the NeSI cluster.
 # Pluto.ji interactive sessions
 
 !!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
+     If you are using a windows computer, this method has currently
+     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not
      tested it yet in Putty or Mobaxterm
 
-To run Julia+Pluto.ji in interactive mode, first we need to load 
+To run Julia+Pluto.ji in interactive mode, first we need to load
 your interactive session:
 
 ```sh
@@ -39,7 +39,7 @@ export pluto_port=${PORT}
 ```
 
 Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Then, we need to start up Julia, install and 
+and `echo $PORT` commands. Then, we need to start up Julia, install and
 run Pluto.ji:
 
 ```sh
@@ -63,10 +63,10 @@ Take a note of the information given for the URL
 └ 
 ```
 
-Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access 
-Pluto. 
+Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access
+Pluto.
 
-Next, open up a second terminal on your local machine (or a second screen 
+Next, open up a second terminal on your local machine (or a second screen
 in tmux or screen), and type the following:
 
 ```sh
