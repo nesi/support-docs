@@ -126,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Badge close handling
   document.addEventListener("click", event => {
-    const badge = event.target.closest(".badge-domain");
+    const badge = event.target.closest(".list-group-item-application");
+    console.log(target);
     if (!badge) return;
 
     toggleDomain(badge.dataset.domain);
