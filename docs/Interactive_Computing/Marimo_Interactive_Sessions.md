@@ -6,7 +6,7 @@ tags:
 description: How to run a Marino interactive session on the NeSI cluster.
 ---
 
-# Running Python+Marino in Interactive Mode (In Construction)
+# Marimo interactive sessions (In Construction)
 
 !!! warning
      If you are using a windows computer, this method has currently 

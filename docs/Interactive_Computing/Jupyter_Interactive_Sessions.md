@@ -6,7 +6,7 @@ tags:
 description: How to run an JupyterLab interactive session on the NeSI cluster.
 ---
 
-# Running Python+JupyterLab in Interactive Mode
+# JupyterLab interactive sessions
 
 !!! warning
      If you are using a windows computer, this method has currently 

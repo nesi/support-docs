@@ -6,7 +6,7 @@ tags:
 description: How to run a Pluto interactive session on the NeSI cluster.
 ---
 
-# Running Julia+Pluto.ji in Interactive Mode
+# Pluto.ji interactive sessions
 
 !!! warning
      If you are using a windows computer, this method has currently 
