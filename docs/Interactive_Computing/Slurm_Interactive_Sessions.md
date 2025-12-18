@@ -48,12 +48,12 @@ srun: job 10256812 has been allocated resources
 Note the host name in the prompt has changed to the compute node
 `wbn079`.
 
-For a full description of `srun` and its options, see the
+For a full description of `srun` and its options, see the
 [schedmd documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/srun.html).
 
 ## Using `salloc`
 
-`salloc` functions similarly `srun --pty bash` in that it will add your
+`salloc` functions similarly `srun --pty bash` in that it will add your
 resource request to the queue. However the allocation starts, a new bash
 session will start up on **the login node.** This is useful for running
 a GUI on the login node, but your processes on the compute nodes.
@@ -79,11 +79,11 @@ salloc: Granted job allocation 10256925
 [mahuika01~ SUCCESS ]$
 ```
 
-Note the that you are still on the login node `mahuika01`, however you
+Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
 
 For a full description of `salloc` and its options, see
-[here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
+[information about salloc here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
 
 ### Requesting a postponed start
 
@@ -205,7 +205,7 @@ scontrol update jobid=12345678 StartTime=now
 ### Other changes using `scontrol`
 
 There are many other changes you can make by means of `scontrol`. For
-further information, please see 
+further information, please see
 [the `scontrol` documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scontrol.html).
 
 ## Modifying multiple interactive sessions at once
