@@ -52,7 +52,7 @@ and `echo $PORT` commands. Then, we need to start up Marino:
 marimo edit --headless --host 0.0.0.0 --port $PORT
 ```
 
-Make a note of the second URL given by Marino once it launches.
+Make a note of the first URL given by Marino once it launches.
 For instance:
 
 ```sh
@@ -63,7 +63,7 @@ Create or edit notebooks in your browser 📝
 ```
 
 The `http://0.0.0.0:9929?access_token=Q2QwZyLs8kJP8eHLcNv13A`
-address in this case will be our url that we will use to launch Marino
+address in this case will be our URL that we will use to launch Marino
 
 In a second terminal on your local machine (or a second screen in tmux or screen),
 type the following:
