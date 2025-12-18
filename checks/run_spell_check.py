@@ -16,7 +16,7 @@ if __name__ == "__main__":
     count_typos = 0
 
     for file in sys.argv[1:]:
-        print(f"::DEBUG file={file},line=0,col=0,endColumn=0,title=file:: Running proselint on '{file}'")
+        print(f"::DEBUG file={file},line=0,col=0,endColumn=0,title=file:: Running pyspelling on '{file}'")
 
         results = spellcheck(
             ".spellcheck.yml",
