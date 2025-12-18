@@ -172,3 +172,5 @@ Getting_Started/Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_pr
 Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md : Getting_Started/Allocations/Allocations_and_Extensions.md
 Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md : Getting_Started/Creating_an_Account.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
+Storage/Cloud_Storage/Research_Developer_Cloud_Storage.md : Storage/Research_Developer_Cloud_Storage.md
+Storage/Data_Recovery/File_Recovery.md : Storage/File_Recovery.md
