@@ -119,24 +119,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const searchInput = document.getElementById("__search-aux");
-  if (searchInput) {
-    searchInput.value = state.search;
-    searchInput.addEventListener("input", onSearchInput);
-  }
+  searchInput.value = state.search;
+  searchInput.addEventListener("input", onkeyup);
 
-  // Badge close handling
-  document.addEventListener("click", event => {
-    const badge = event.target.closest(".list-group-item-application");
-    console.log(target);
-    if (!badge) return;
+  // // Badge close handling
+  // document.addEventListener("click", event => {
 
-    toggleDomain(badge.dataset.domain);
-    event.stopPropagation();
-  });
+  //   //event.stopPropagation();
+  // });
 
   // Prevent bubbling from badge container
   document.querySelectorAll(".badge-largeinator").forEach(el => {
-    el.addEventListener("click", e => e.stopPropagation());
+    el.addEventListener("click", event => 
+    {
+      event.stopPropagation();
+      console.log(event);
+      const badge = event.target.closest(".badge-largeinator");
+      console.log(badge.dataset.domain);
+      if (!badge) return;
+      toggleDomain(badge.dataset.domain);
+    }, true);
   });
 
   render();
