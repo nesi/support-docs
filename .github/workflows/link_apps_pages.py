@@ -14,12 +14,14 @@ valid_eb_tags = ['base', 'ai', 'astro', 'bio', 'cae', 'chem', 'compiler', 'data'
 
 
 MODULE_LIST_PATH = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
+APPROVED_TAGS =  "checks/.approved_tags.yml"
 
 # Relative to doc directory.
 DOC_ROOT = os.getenv("DOC_ROOT", "docs")
 APPS_PAGES_PATH = os.getenv("APPS_PAGES_PATH", "Software/Available_Applications")
 BASE_URL = os.getenv("BASE_URL", "https://www.docs.nesi.org.nz")
 
+approved_tags = yaml.safe_load(open(APPROVED_TAGS, 'r'))
 module_list = json.load(open(MODULE_LIST_PATH))
 
 for input_file in os.listdir(os.path.join(DOC_ROOT, APPS_PAGES_PATH)):
@@ -52,6 +54,12 @@ title=docpath.change:: Support doc reference for {app} changed from '{module_lis
                 for tag in meta["tags"]:
                     if tag not in module_list[app]["domains"]:
                         module_list[app]["domains"] += [tag]
+            # Drop unsupported tags.
+            for tag in module_list[app]["domains"]:
+                if tag not in approved_tags:
+                    print(f"::warning file={MODULE_LIST_PATH},\
+title=tags.bad:: Tag '{tag}' not in approved list. Dropped")
+                    module_list[app]["domains"].remove(tag)
         else:
             print(
                 f"::warning file={os.path.join(DOC_ROOT, APPS_PAGES_PATH, input_file)},\
