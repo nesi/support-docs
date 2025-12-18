@@ -1,6 +1,6 @@
 # FileSender
 
-FileSender is a service that allows users to send vast amounts of data easily and securely. It is possible to send and receive data _via_ a web-based graphical user interface (GUI) as well as _via_ an API. These instructions show how to use both the web-based GUI and API to send and receive data using FileSender.
+FileSender is a service that allows users to send data easily and securely. It is possible to send and receive data _via_ a web-based graphical user interface (GUI) as well as a Command Line Interface (CLI) using the Filesender API. These instructions show how to use both the web-based GUI and command line to send and receive data using FileSender.
 
 ## Using FileSender: Web-based GUI
 
@@ -18,14 +18,13 @@ FileSender is a service that allows users to send vast amounts of data easily an
 
 If you would like to download all files together in a tar or zip file, you can do this by clicking on the **Download as single (.zip) file** or the **Download as single (.tar) file** button.
 
-## Using the FileSender API in the Terminal
+## Using FileSender: API-based Command Line Interface
 
-### Sending Data using the FileSender API in the Terminal
+### Sending Data using the `filesender` utility
 
-#### Initialising your FileSender API
+#### Initialising your FileSender Configuration
 
-To send data to your FileSender account using the FileSender API, we first have to setup FileSender on your local machine or
-Mahuika. You only need to do this once.
+To send data to your FileSender account using the FileSender API, we first have to configure FileSender  You only need to do this once.
 
 1. Go to [https://filesender.reannz.co.nz](https://filesender.reannz.co.nz)
 2. If asked, click **Login** and Sign-in through your Tuakiri login. You may not need to do this if you have already signed into FileSender before.
@@ -54,9 +53,9 @@ Mahuika. You only need to do this once.
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
 
-#### Sending Data
+#### Sending data using the command line
 
-Once you have setup up your FileSender settings, you can upload files to FileSender by typing into the terminal (where you downloaded `filesender.py` into):
+Once you have completed your FileSender configuration, you can upload files to FileSender by typing into the terminal:
 
 ```bash
 module load FileSender
@@ -68,7 +67,7 @@ where:
 * `person-to-send-to@emailserver.edu`: This is the email address of the persion that you would like to send your data to. This can be any email address, not necessarily an educational email address. This can also be your own email address if you are wanting move data between your local machine and mahuika.
 * `research-data-file.txt` This is the file you would like to send. This can be any file.
 
-You can file more options for `filesender.py` at [https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage](https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage)
+You can find more options for `filesender` by running `filesender --help` in the terminal or at [https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage](https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage) 
 
 !!! warning
 
@@ -86,9 +85,8 @@ To untar the tarball:
 tar -xvf tarball_file.tar
 ```
 
-### Receiving Data using the FileSender API in the Terminal
-
-1. Go to your emails where you should have been sent an email from FileSender.
+### Receiving data using the command line
+1. Look for an email from _REANNZ FileSender_, or possibly another FilSender provider such as _AARNet_.
 2. Click on the **Download link** in the email link. This will take you to a FileSender website where you can download your files.
 3. You will be presented a list of the files that you can download. Right-click on the <img src="../../assets/images/filesender_download_icon.png" alt="FileSender Download Icon" width="20"/> icon and click **Copy Link Address**
 4. In your terminal (in either your local machine or Mahuika), type:
