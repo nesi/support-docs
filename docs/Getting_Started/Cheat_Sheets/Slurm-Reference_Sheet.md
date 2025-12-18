@@ -58,7 +58,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 |                       |                                  |                                                                                                                         |
 | --------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `--nodes`           | ``#SBATCH --nodes=2``            | Will request tasks be run across 2 nodes.                                                                               |
-| `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2 [MPI](../../Software/Parallel_Computing/Parallel_Execution.md) tasks.                                           |
+| `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2 [MPI](../../Software/Parallel_Computing/Parallel_Computing.md) tasks.                                           |
 | `--ntasks-per-node` | `#SBATCH --ntasks-per-node=1` | Will start 1 task per requested node.                                                                                   |
 | `--cpus-per-task`   | `#SBATCH --cpus-per-task=10`  | Will request 10 [*logical* CPUs](../../Software/Parallel_Computing/Hyperthreading.md) per task. |
 | `--mem-per-cpu`     | `#SBATCH --mem-per-cpu=512MB` | Memory Per *logical* CPU. `--mem`  Should be used if shared memory job. See [How do I request memory?](../FAQs/How_do_I_request_memory.md) |

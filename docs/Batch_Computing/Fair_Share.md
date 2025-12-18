@@ -3,8 +3,13 @@ created_at: '2019-02-05T03:58:21Z'
 tags:
   - accounting
   - Slurm
+  - Fairshare
+  - Fair Share
+  - Job priority
+  - Long queue time
+  - Queing
+  - long wait time
 description: How balancing your workload lets you make the most of your allocation.
-status: deprecated
 ---
 
 The fair-share system is designed to encourage users to balance their
@@ -20,18 +25,7 @@ queue.
 
 A project is given an [allocation of compute units](../Getting_Started/Allocations/What_is_an_allocation.md)
 over a given **period**. An institution also has a percentage **Fair Share entitlement**
-of each machine's deliverable capacity over that same period.
-
-!!! note
-     Although we use the term "Fair Share entitlement" in this article, it
-     bears only a loose relationship to an institution's contractual
-     entitlement to receive allocations from the NeSI HPC Compute &
-     Analytics service. The Fair Share entitlement is managed separately
-     for each cluster, and is adjusted as needed by NeSI staff so that each
-     institution can receive, as nearly as possible, its contractual
-     entitlement to the service as a whole, as well as a mix of cluster
-     hours that corresponds closely to the needs of that institution's
-     various project teams.
+of the cluster's deliverable capacity over that same period.
 
 - **Your project's expected rate of use** = (**your institution's Fair
     Share entitlement** × **your project's allocation**) / (**sum of
@@ -65,8 +59,8 @@ capacity.
 
 A project's expected rate of use is based on that project's
 percentage share of all then-current allocations awarded to that
-project's institution on that cluster. This percentage share is in turn
-derived from the sizes (in compute units or nodes) and duration (in
+project's institution on the cluster. This percentage share is in turn
+derived from the sizes (in compute units) and duration (in
 days) — and thus the expected rates of use of those same allocations.
 
 Therefore:
@@ -84,7 +78,7 @@ Therefore:
 - If the cluster gets larger (e.g. we purchase and install more
     computing capacity), your project's share of the cluster will not
     change, but that share of the cluster will correspond to a higher
-    rate of core hour usage. This situation will only last until more
+    rate of compute usage. This situation will only last until more
     allocations are issued, or existing allocations are made larger, to
     take advantage of the increased capacity. The opposite will occur if
     the cluster shrinks, though cluster shrinkage is not expected to
@@ -136,10 +130,7 @@ See the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.s
 
 ## How do I check my project's Fair Share score?
 
--The command `nn_corehour_usage <project_code>`, on a Mahuika or Māui
-    login node, will show, along with other information, the current
-    fair share score and ranking of the specified project.
--The `sshare` command, on a Mahuika login node, will show the fair
+The `sshare` command, on a Mahuika login node, will show the fair
     share tree. A related command, `nn_sshare_sorted`, will show
     projects in order from the highest fair share score to the lowest.
 
@@ -153,9 +144,7 @@ share score will naturally be lowered for a while, and should come back
 to normal after a few days.
 
 If, on the other hand, you have more work to do than expected, please
-{% include "partials/support_request.html" %} to apply for a larger allocation. Project
-teams may request a larger allocation on Mahuika or on the Māui XC
-cluster, though not on the Māui ancillary nodes.
+{% include "partials/support_request.html" %} to apply for an early allocation increase.
 
 If you believe your project's fair share score has become corrupted, or
 your ability to get work done is affected by a low Fair Share

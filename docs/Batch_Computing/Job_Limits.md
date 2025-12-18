@@ -8,13 +8,17 @@ tags:
 
 These are open for review if you find any of them unreasonable or inefficient.  
 
-#### Per Job
+## Per Job
+
+![job limits](../assets/images/job_limits.png){ align=right width=75% }
 
 - 10 nodes
-- 21 node-days (so 1 node for 3 weeks, or 3 nodes for 1 week, or 10 nodes for 2 days)
+- 21 node-days
 - 21 days
 
-#### Per User
+<hr width=100%>
+
+## Per User
 
 - 1344 CPU cores occupied (so 8 full Genoa nodes, or 10.5 Milan nodes),
 - 3528 core-days booked by running jobs (so 3 weeks of one full node).

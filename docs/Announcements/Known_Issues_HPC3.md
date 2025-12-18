@@ -12,7 +12,7 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 
 !!! info "Recently fixed"
-     - All compute nodes now support the same large /tmp directories, ability to ssh into jobs, and fast access to the cluster filesystems.
+     - Emails can now be sent by Slurm when you set `--mail-user`.
 
 ## Access
 
@@ -38,5 +38,3 @@ If you request a GPU without specifying which *type* of GPU, you will get a rand
 ### BadConstraints
 This uninformative message can appear as a reason for a job pending in the `squeue` output when the job is submitted to both `milan` and `genoa` partitions (which is the default behaviour). It does not appear to reflect a real problem though, just a side-effect of the mechanism we are using to target jobs to the right-sized node(s). 
 
-### email
-Slurm option `--mail-type` is not yet effective.

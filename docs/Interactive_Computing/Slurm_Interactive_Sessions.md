@@ -48,12 +48,12 @@ srun: job 10256812 has been allocated resources
 Note the host name in the prompt has changed to the compute node
 `wbn079`.
 
-For a full description of `srun` and its options, see the
+For a full description of `srun` and its options, see the
 [schedmd documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/srun.html).
 
 ## Using `salloc`
 
-`salloc` functions similarly `srun --pty bash` in that it will add your
+`salloc` functions similarly `srun --pty bash` in that it will add your
 resource request to the queue. However the allocation starts, a new bash
 session will start up on **the login node.** This is useful for running
 a GUI on the login node, but your processes on the compute nodes.
@@ -79,11 +79,11 @@ salloc: Granted job allocation 10256925
 [mahuika01~ SUCCESS ]$
 ```
 
-Note the that you are still on the login node `mahuika01`, however you
+Note the that you are still on the login node `mahuika01`, however you
 will now have permission to `ssh` to any node you have a session on .
 
 For a full description of `salloc` and its options, see
-[here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
+[information about salloc here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
 
 ### Requesting a postponed start
 
@@ -134,172 +134,6 @@ the `tmux` or `screen` session. In fact, we recommend detaching whenever
 you leave your workstation unattended for a while, in case your computer
 turns off or goes to sleep or its connection to the internet is
 disrupted while you're away.
-
-## Running Python+JupyterLab in Interactive Mode
-
-!!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
-     tested it yet in Putty or Mobaxterm
-
-To run Python+JupyterLab in interactive mode, first we need to load 
-your interactive session:
-
-```sh
-srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
-```
-
-Then, we need to start up Python, install JupyterLab if you dont have it 
-yet, and obtain the hostname and the port:
-
-```sh
-# Load Python
-module load Python
-
-# Install and activate a python virtual environment (or activate your
-# current virtual environment). 
-python3 -m venv venv
-source venv/bin/activate
-
-# Install JupyterLab
-pip3 install JupyterLab
-
-# Select a random port
-PORT=$(shuf -i8000-9999 -n1)
-
-# Check the hostname and port - we will need this later, you can also 
-# see it at the start of your prompt
-hostname | cut -d'.' -f1 # <-- This is the hostname
-echo $PORT               # <-- This is the port
-```
-
-Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Then, we need to start up JupyterLab:
-
-```sh
-# Start Jupyter. This might take a minute
-jupyter lab --no-browser --ip=0.0.0.0 --port=$PORT
-```
-
-Make a note of the second URL given by JupyterLab once it launches. 
-For instance: 
-
-```sh
-[C 2025-11-03 14:34:31.797 ServerApp] 
-    
-    To access the server, open this file in a browser:
-        file:///home/john.doe/.local/share/jupyter/runtime/jpserver-2965439-open.html
-    Or copy and paste one of these URLs:
-        http://c003.hpc.nesi.org.nz:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
-        http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
-```
-
-The `http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117`
-address in this case will be our url that we will use to launch JupyterLabs
-
-In a second terminal on your local machine (or a second screen in tmux or screen),
-type the following:
-
-```sh
-ssh -L PORT:HOSTNAME:PORT mahuika
-
-#For example:
-#ssh -L 9339:c003:9339 mahuika
-```
-
-Then, in your browser, type in the URL from before
-
-```sh
-http://127.0.0.1:PORT/lab?token=TOKEN
-
-# For example:
-# http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
-```
-
-You will now be able to see and work wih Python+JupyterLab in your web browser. 
-
-
-## Running Julia+Pluto.ji in Interactive Mode
-
-!!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
-     tested it yet in Putty or Mobaxterm
-
-To run Julia+Pluto.ji in interactive mode, first we need to load 
-your interactive session:
-
-```sh
-srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
-```
-
-Then, we need to start up Julia and obtain the hostname and the port:
-
-```sh
-# Load Julia
-module load Julia 
-
-# Select a random port
-PORT=$(shuf -i8000-9999 -n1)
-
-# Check the hostname and port - we will need this later, you can also 
-# see it at the start of your prompt
-hostname | cut -d'.' -f1 # <-- This is the hostname
-echo $PORT               # <-- This is the port
-
-# Export port to a variable name
-export pluto_port=${PORT}
-```
-
-Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Then, we need to start up Julia, install and 
-run Pluto.ji:
-
-```sh
-#Start Julia
-julia
-
-# Install Pluto.ji. This might take a minute
-import Pkg; Pkg.add("Pluto")
-
-# Start Pluto. This might take a minute
-using Pluto
-Pluto.run(host="0.0.0.0",port=parse(Int, ENV["pluto_port"]),launch_browser=false)
-```
-
-Take a note of the information given for the URL
-
-```sh
-[ Info: Loading...
-┌ Info: 
-│ Go to http://0.0.0.0:9627/?secret=mXmq6659 in your browser to start writing ~ have fun!
-└ 
-```
-
-Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access 
-Pluto. 
-
-Next, open up a second terminal on your local machine (or a second screen 
-in tmux or screen), and type the following:
-
-```sh
-ssh -L PORT:HOSTNAME:PORT mahuika
-
-#For example:
-#ssh -L 9627:mc081:9627 mahuika
-```
-
-Then, in your browser, type in the URL from before
-
-```sh
-http://0.0.0.0:PORT/?secret=SECRET
-
-# For example:
-# http://0.0.0.0:9627/?secret=mXmq6659
-```
-
-You will now be able to see and work wih Julia+Pluto in your web browser. 
-
 
 ## Setting up a detachable terminal
 
@@ -371,7 +205,7 @@ scontrol update jobid=12345678 StartTime=now
 ### Other changes using `scontrol`
 
 There are many other changes you can make by means of `scontrol`. For
-further information, please see 
+further information, please see
 [the `scontrol` documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scontrol.html).
 
 ## Modifying multiple interactive sessions at once
