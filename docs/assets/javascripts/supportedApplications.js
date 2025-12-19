@@ -42,11 +42,11 @@ function renderDomainBadge() {
     state.domain.charAt(0).toUpperCase() +
     state.domain.replace("_", " ").slice(1);
 
-  const button = document.createElement("button");
-  button.type = "button";
-  button.setAttribute("aria-label", "Close");
+  const close = document.createElement("span");
+  
+  close.textContent = "✖"
 
-  badge.appendChild(button);
+  badge.appendChild(close);
   container.appendChild(badge);
 }
 
