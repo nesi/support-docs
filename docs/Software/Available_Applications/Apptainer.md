@@ -4,10 +4,11 @@ tags:
     - apptainer
     - container
     - docker
+    - portable
     - reproducibility
 ---
 
-Apptainer simplifies the creation and execution of containers on compute clusters, ensuring software components are encapsulated for portability and reproducibility.  Apptainer is an open-source fork of the Singularity project and shares much of the same functionailty.  Apptainer is now the default on many HPCs worldwide.
+Apptainer simplifies the creation and execution of containers on compute clusters, ensuring software components are portable and reproducible.  Apptainer is an open-source fork of the Singularity project and shares much of the same functionality.  Apptainer is now the default on many HPCs worldwide.
 Apptainer is distributed under the [BSD License](https://github.com/apptainer/apptainer/blob/main/LICENSE.md).
 
 ---
