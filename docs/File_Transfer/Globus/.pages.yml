@@ -1,7 +1,9 @@
 ---
 nav:
-  - Globus_Quick_Start_Guide.md
+  - First_Time_Setup.md
   - Data_Transfer_using_Globus.md
+  - Add_Your_Computer_To_Globus.md
+  - Globus_Quick_Start_Guide.md
   - Globus_endpoint_activation.md
   - Globus Paths, Permissions, Storage_Allocation: Globus_Paths-Permissions-Storage_Allocation.md
   - Initial Globus Sign-Up, and your Globus Identities: Initial_Globus_Sign_Up-and_your_Globus_Identities.md

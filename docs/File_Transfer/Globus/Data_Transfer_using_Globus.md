@@ -4,79 +4,50 @@ tags: []
 title: Data Transfer using Globus
 ---
 
-## Globus
+To move files and folders between `Endpoints` (such as between Mahuika and another computer or server):
 
-Globus is a third-party service for transferring large amounts of data
-between Globus Data Transfer Nodes (DTNs).
+1. Go to the File Manager tab of [your Globus page](https://app.globus.org/file-manager?two_pane=true).
+    Give yourself two panels by clicking the `Two Panel` button:
+    ![Globus_Move_File_Double_Panel.png](../../assets/images/Globus_Move_File_Double_Panel.png)
 
-While NeSI supports use of other data transfer tools and protocols such
-as `scp`, Globus provides the most comprehensive, efficient, and easy to
-use service for NeSI users who need to move large data sets (more than a
-few gigabytes at a time).
+2. Click on the left-hand side `Collection` field, specifically on the Search icon.
+    ![Globus_Move_File_Search_Icon.png](../../assets/images/Globus_Move_File_Search_Icon.png)
 
-Using Globus, you can transfer
-data between the NeSI HPC platform and a Globus endpoint created on your personal workstation or at your institution. With Globus, high
-data transfer rates are achievable.
+3. In the Search bar, type `NeSI HPC Storage`. Below the search bar, click on the `NeSI HPC Storage` icon.
+    ![Globus_Move_FIle_NeSI_HPC_Storage.png](../../assets/images/Globus_Move_FIle_NeSI_HPC_Storage.png)
 
-To use Globus to transfer data to/from NeSI platforms, you need:
+4. This will take you back to the main page, where you will need to authenticate yourself with the 
+    `NeSI HPC Storage` Globus endpoint. 
+    ![Globus_Move_FIle_NeSI_HPC_Storage_Continue.png](../../assets/images/Globus_Move_FIle_NeSI_HPC_Storage_Continue.png)
 
-1. A Globus account (see
-  [Initial Globus Sign-Up and Globus ID](./Initial_Globus_Sign_Up-and_your_Globus_Identities.md))
-2. An active NeSI account (see
-  [Creating a NeSI Account](../../Getting_Started/Creating_an_Account.md))
-3. Access privileges to the Globus endpoint/collection you
-   plan on transferring data from or to. This endpoint/collection
-   could be a personal one on your workstation, or it could be managed
-   by your institution or a third party.
+5. You will be shown a globus page requiring you to sign in to NeSI. Click on `Use my username@iam.nesi.org.nz identity` text.
+    ![Globus_Move_FIle_NeSI_HPC_Storage_Identity.png](../../assets/images/Globus_Move_FIle_NeSI_HPC_Storage_Identity.png)
 
-    - *Note: A NeSI user account does not create a Globus account, and
-        similarly a Globus account does not create a NeSI user account. Nor
-        can you, as the end user, link the two through any website.*
+6. Once you have logged in, you will be sent back to the Globus transfer page. By default you will be placed to your
+    `home` directory. 
 
-Both your accounts (NeSI and Globus) must exist before you try to use the NeSI DTN.
+\(1\) your ***/home/&lt;username&gt;*** directory,
 
-## Types of Globus endpoints or Data Transfer Nodes
+\(2\) project directory (read-only)
+***/nesi/project/&lt;project\_code&gt;***
 
-Globus data transfers take place between *endpoints*. An endpoint is
-nothing more than an operating system (Windows, Linux, etc) that has the
-Globus endpoint software installed on it.
+\(3\) project sub-directories of
+***/nesi/nobackup/&lt;project\_code&gt;*** - see
+[Globus Paths,Permissions, Storage Allocation](./Globus_Paths-Permissions-Storage_Allocation.md).  
 
-Endpoints come in two kinds:
 
-- personal
-- server
 
-Within an endpoint users can access data via collections, with specific permissions settings for sharing with others.
 
-## The NeSI Data Transfer Node
 
-The Data Transfer Node (DTN) for the NeSI platforms is called 'NeSI HPC Storage'. This endpoint acts as an interface between our HPC
-facility storage and a worldwide network of Globus endpoints.
 
-The NeSI HPC Storage endpoint is an example of a *server endpoint*. These types of
-endpoints are usually configured to access large capacity and
-high-performance parallel filesystems. Endpoints can be unmanaged or
-managed by a subscription. NeSI DTN is a server type, managed endpoint
-(by NeSI subscription) which allows authorised users to provide data
-transfer and data sharing services on behalf of their Globus accounts.
+    ![Globus_Move_FIle_NeSI_HPC_Storage_Path.png](../../assets/images/Globus_Move_FIle_NeSI_HPC_Storage_Path.png)
 
-Your institution may have its own managed server endpoint, and if so we
-encourage you to use that endpoint for your data transfers between your
-institution and NeSI. You may need to apply to the person or group
-administering the managed server endpoint, most likely your IT team, to
-get access to the endpoint. Your institution may even have several
-endpoints, in which case we recommend that you consider which one would
-be best suited for your data transfer requirements. If you need any help,
-{% include "partials/support_request.html" %} or
-consult your institution's IT team.
 
-If your institution doesn't have a managed server endpoint, you can set
-up a personal endpoint using software provided by Globus (see below).
-Please be aware that even if you set up a personal endpoint, you may
-still need to consult your IT team in order to make it usable,
-especially if your institution has an aggressive firewall.
 
-## Transferring data using a managed endpoint
+
+
+
+
 
 As an example, to move files between the NeSI HPC Storage endpoint and the Otago University high-capacity central
 file storage (another managed server endpoint):
