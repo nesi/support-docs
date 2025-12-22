@@ -3,6 +3,5 @@ nav:
   - First_Time_Setup.md
   - Add_Your_Computer_To_Globus.md
   - Data_Transfer_using_Globus.md
-
-  - Syncing_files_with_globus_automate.md
-  - "*"
+  - Globus_CLI.md
+  

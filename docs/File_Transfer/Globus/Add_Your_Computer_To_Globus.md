@@ -24,12 +24,28 @@ onto your computer.
 
 4. Back in your Globus Connect Personal Setup screen, give a name for your computer
     in the `Collection Name` field and click save. This is your computer's `Endpoint`
-    ![Globus\_Connect\_Personal\_Collection\_Name.png](../../assets/images/Globus_Connect_Personal_4.png)
+    ![Globus_Connect_Personal_4.png](../../assets/images/Globus_Connect_Personal_4.png)
 
 5. Your computer will now be saved in Globus as a Globus endpoint. Back in the Globus
     website, you will see that your computer's `Endpoint` has been added to your
     `Collections`. On the `Collections` tab, click the `Administrated By You` button
     to see your computer's `Endpoint` on Globus.
-    ![Globus\_Connect\_Personal\_Collection\_on\_Site.png](../../assets/images/Globus_Connect_Personal_5.png)
+    ![Globus_Connect_Personal_5.png](../../assets/images/Globus_Connect_Personal_5.png)
 
 Notes: [docs.globus.org/globus-connect-personal](https://docs.globus.org/globus-connect-personal)
+
+## Add paths and external hard drives to your Globus Collect Personal
+
+To add paths (including external hard drives) to your Globus Collect Personal:
+
+1. Open your Globus Collect Personal program and click on `Perferences`.
+    ![Globus_Connect_Personal_6.png](../../assets/images/Globus_Connect_Personal_6.png)
+
+2. Click on the `Access` tab and click the `+` button.
+    ![Globus_Connect_Personal_7.png](../../assets/images/Globus_Connect_Personal_7.png)
+
+3. Find the path you want to add to Globus Connect Personal, highlight it, and click `Open`.
+    ![Globus_Connect_Personal_8.png](../../assets/images/Globus_Connect_Personal_8.png)
+
+4. You will need to tick the `Writable` box so that you can write files to your folder
+    ![Globus_Connect_Personal_9.png](../../assets/images/Globus_Connect_Personal_9.png)

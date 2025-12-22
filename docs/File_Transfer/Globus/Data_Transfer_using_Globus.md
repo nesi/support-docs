@@ -1,8 +1,12 @@
 ---
 created_at: '2021-08-27T03:18:13Z'
-tags: []
+tags: 
+    - globus
+    - file transfer
 title: Data Transfer
 ---
+
+Globus is useful for transferring files between Mahuika and your computer or server and can make it easy to transfer files due to its GUI web-based interface, as well as being able to resume transfers even if disrupted.
 
 ## Transferring data using Globus
 
@@ -62,6 +66,16 @@ To move files and folders between `endpoints` (such as between Mahuika and anoth
     ![Globus_Transfer_9_1.png](../../assets/images/Globus_Transfer_9_1.png)
     ![Globus_Transfer_9_2.png](../../assets/images/Globus_Transfer_9_2.png)
     ![Globus_Transfer_9_3.png](../../assets/images/Globus_Transfer_9_3.png)
+
+## Globus Restrictions
+
+There are a few restrictions on the amount of data that can be transfer at any one time:
+
+* 100 million files in a single transfer task
+* 5 million files in a single directory
+* 100,000 files for a directory listing / `ls` operation
+* 3 active trasfer tasks per user
+* 100 pending transfer tasks per use
 
 ## Data Transfer Nodes throughout New Zealand
 
