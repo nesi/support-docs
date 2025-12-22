@@ -25,7 +25,7 @@ For example;
 srun --account nesi12345 --pty bash
 ```
 
-This is the minimum required to start and interactive job.  The `--pty` requests a terminal session be created, omitting this will simply run bash in the background and will not be interactive.  Be aware that the above command requests minimal resources, which may not be sufficient for your needs.  Request the proper amount of CPU, memory and time for your job.  Once you have typed the above command, you will receive a message similar to this:
+This is the minimum required to start an interactive job.  The `--pty` requests a terminal session be created, omitting this will simply run bash in the background and will not be interactive.  Be aware that the above command requests minimal resources, which may not be sufficient for your needs.  Request the proper amount of CPU, memory and time for your job.  Once you have typed the above command, you will receive a message similar to this:
 
 ```out
 srun: job 10256812 queued and waiting for resources
@@ -35,7 +35,7 @@ Depending on the resources requested and the load on the cluster, it may take so
 
 ```out
 srun: job 10256812 has been allocated resources
-[c004 ~ SUCCESS ]$
+[c004 ~ ]$
 ```
 
 You can see from the prompt you are running on a different host as it is showing:
@@ -70,7 +70,8 @@ And when the job starts;
 salloc: job 10256925 has been allocated resources
 salloc: Granted job allocation 10256925 
 salloc: Nodes c038 are ready for job
-[login03 ~ SUCCESS ]$
+
+[login03 ~ ]$
 ```
 
 Note the that you are still on the login node `login03`, however you
