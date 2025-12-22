@@ -1,11 +1,9 @@
 ---
 created_at: '2018-07-31T10:59:09Z'
-tags: []
+tags: 
+    - software
+    - install
 title: Software Installation Request
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000361675
-zendesk_section_id: 360000040076
 ---
 
 To request that we install a scientific application (either a new
@@ -18,8 +16,6 @@ your message, please provide the following information:
     repository, what tag or release do you need? Please be aware that we
     usually require a stable release version of a piece of software
     before we will install it for all users.
-- Do you have a preference about which platform (Mahuika or Māui) we
-    install it on?
 - Why would you like us to install this software package?
 - What is the web site or home web page of the package? If you don't
     know this information or the package doesn't have a web site, who is
@@ -34,14 +30,14 @@ your message, please provide the following information:
     cases you have in mind (like the ability to read and write a
     specific file format).
 - Have you (or another member of your project team) tried to install
-    it yourself on a NeSI system? If so, were you successful?
+    it yourself? If so, were you successful?
 - If you or your institution doesn't own the copyright in the
     software, under what licence are you permitted to use it? Does that
-    licence allow you to install and run it on a NeSI system? (Hint:
+    licence allow you to install and run it on this cluster? (Note:
     Most free, open-source software licences will allow you to do this.)
-- Who else do you know of who wants to use that software on a NeSI
+- Who else do you know of who wants to use that software on the
     system? Please provide their names, institutional affiliations, and
-    NeSI project codes (if you know them).
+    project codes (if you know them).
 - What tests do you have that will allow us to verify that the
     software is performing correctly and at an acceptable speed?
 
