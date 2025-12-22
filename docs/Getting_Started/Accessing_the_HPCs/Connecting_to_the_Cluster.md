@@ -44,10 +44,10 @@ There are several options for connecting to the cluster using SSH from Windows. 
 
 ### Windows Subsystem for Linux (WSL)
 
- The Windows Subsystem for Linux is our top recommendation since it will provide the most functionality. WSL may require administrative privileges to enable and install. If you are not allowed to enable and install, contact your local IT team. If your institution will not allow WSL to be installed, consider using another option see below.
+ The Windows Subsystem for Linux is our top recommendation since it will provide the most functionality. WSL may require administrative privileges to enable and install. If you are not allowed to enable and install, contact your local IT team. If your institution will not allow WSL to be installed, consider using another option below.
 
 !!! tip "What next?"
-    Setting up [WSL](Windows_Subsystem_for_Linux_WSL.md)
+    Configuring [WSL](Windows_Subsystem_for_Linux_WSL.md)
 
 ### VSCode
 
@@ -55,7 +55,7 @@ The 'remotes' plugin allows connecting to remote hosts. A detailed description a
 VSCode can be used with WSL but WSL is not a requirement.
 
 !!! tip "What next?"
-    Setting up [VSCode](VSCode.md)
+    Configuring [VSCode](VSCode.md)
 
 ### MobaXterm
 
@@ -71,7 +71,7 @@ VSCode can be used with WSL but WSL is not a requirement.
  administrator privileges on your workstation or if your
  institution's IT team supports MobaXTerm.
 !!! tip "What next?"
-    -  Setting up
+    -  Configuring
        [MobaXterm](MobaXterm_Setup_Windows.md)
 
 ### Git Bash
@@ -80,8 +80,7 @@ If you are using Git for version control you may already have Git
 Bash installed. If not it can be downloaded
 from [git-scm.com](https://git-scm.com/downloads).
 
-Git Bash is perfectly adequate for testing your login or setting up
-your password, but lacks many of the features of MobaXterm or a
+Git Bash is sufficient for login and basic command line usage but lacks many of the features of MobaXterm or a
 native Unix-Like terminal. Therefore we do not recommend it as your
 primary terminal.
 
@@ -94,5 +93,5 @@ more involved than with MobaXterm, therefore we do not recommend it
 for new users.
 
 !!! tip "What next?"
-    -  Setting up
+    -  Configuring
        [WinSCP](WinSCP-PuTTY_Setup_Windows.md)
