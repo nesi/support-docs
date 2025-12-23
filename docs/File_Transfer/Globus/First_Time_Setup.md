@@ -14,7 +14,7 @@ You can learn about setting up your personal Globus endpoint on your computer on
 
 ## Setting up your Globus account
 
-1. Either go to [globus.org](https://www.globus.org) and click the `LOG IN` button, to go to
+1. Either go to [globus.org](https://www.globus.org) and click the `LOG IN` button, or go to
     [transfer.nesi.org.nz](https://transfer.nesi.org.nz/).
     ![Globus\_main\_page.png](../../assets/images/Globus_main_page.png)
 2. Look up your institution in the drop-down box, or sign in using your github, google, or
