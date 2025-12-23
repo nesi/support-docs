@@ -1,6 +1,7 @@
 ---
 created_at: '2019-02-27T21:04:11Z'
-tags: []
+tags: 
+    - globus
 title: First Time Setup
 ---
 
@@ -8,7 +9,8 @@ This guide will show you how to setup globus for the first time. This page inclu
 
 * [Setting up your Globus account](#setting-up-your-globus-account)
 * [Link other accounts to your Globus account](#link-other-accounts-to-your-globus-account)
-* Setting up your personal Globus endpoint on your computer.
+
+You can learn about setting up your personal Globus endpoint on your computer on the [Add your Computer to Globus](./Add_Your_Computer_To_Globus.md) section.
 
 ## Setting up your Globus account
 

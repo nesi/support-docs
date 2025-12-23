@@ -77,6 +77,6 @@ onto your computer (you will need to give full paths):
 
 ```sh
 export Globus_Mahuika_Endpoint="763d50ee-e814-4080-878b-6a8be5cf7570"
-export Globus_My_Computer_Endpoint="821f00b4-d5f1-11e5-820c-22000b92c6ec"
+export Globus_My_Computer_Endpoint="00000000-0000-0000-0000-000000000000"
 globus transfer "$Globus_Mahuika_Endpoint:/nesi/nobackup/nesi99999/Globus_Example" "$Globus_My_Computer_Endpoint:home/username" --recursive --label "CLI single folder"
 ```

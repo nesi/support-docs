@@ -32,14 +32,12 @@ To move files and folders between `endpoints` (such as between Mahuika and anoth
 6. Once you have logged in, you will be sent back to the Globus transfer page. By default you will be placed to your
     `home` directory. Enter the directory you would like to access in `Path`:
 
-    | Name       | Path                            | Globus usage              | Permissions           |
-    |------------|---------------------------------|---------------------------|-----------------------|
-    | `home`     |`/home/<username>`               | possible, not recommended | read and write access |
-    | `nobackup` | `/nesi/nobackup/<project_code>` | yes                       | read and write access |
-    | `project`  | `/nesi/project/<project_code>`  | yes                       | **read only** access  |
+    * `home`: `/home/<username>`
+    * `project`: `/nesi/project/<project_code>`
+    * `nobackup`: `/nesi/nobackup/<project_code>`
 
     !!! warning
-        You will **not** find `project` and `nobackup` in `00_nesi_projects` (Symlinks do not work in Globus).
+        You will **not** find `project` and `nobackup` in `00_nesi_projects` (Symlinks do not work in Globus). Please enter the full file path in the `Path` section (e.g. `/nesi/nobackup/<project_code>`)
 
     ![Globus_Transfer_6.png](../../assets/images/Globus_Transfer_6.png)
 
