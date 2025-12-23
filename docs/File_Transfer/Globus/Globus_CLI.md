@@ -42,7 +42,7 @@ want to enter into the terminal.
 ![Globus_CLI_5.png](../../assets/images/Globus_CLI_5.png)
 ![Globus_CLI_6.png](../../assets/images/Globus_CLI_6.png)
 
-## Transfer files/folders using Globus CLI
+## Transfer files/folders using Globus CLI [NOT WORKING]
 
 To transfer a files/folders using Globus CLI, you need to obtain the `Endpoint` id for each of the
 endpoints you want to transfer data to and from.
@@ -69,7 +69,7 @@ Next, you will need to authorise Mahuika to allow your transfer. Do this by typi
 globus session update --all
 ```
 
-This will take you to a website where you can authenticate yourself across mahuika, as well as all your 
+This will take you to a website where you can authenticate yourself across mahuika, as well as all your
 devices and institutional infrastructure (servers) you are using
 
 Then, you can then transfer a file using `globus transfer` in the terminal. To transfer a folder off of mahuika

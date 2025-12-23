@@ -29,12 +29,13 @@ for Mahuika users.
 
     ![Globus_Between_Computers_4.png](../../assets/images/Globus_Between_Computers_4.png)
 
-5. You will see a message saying that `Membership is Pending`. Our support team will submit your request
+5. You will see a message saying that `Membership is Pending`. Our support team will submit your request and
+   email you back once you have been accepted into the subscription.
 
     ![Globus_Between_Computers_5.png](../../assets/images/Globus_Between_Computers_5.png)
 
 ## Transferring files between two computers
 
-Follow the [Transferring data using Globus](./Data_Transfer_using_Globus.md#transferring-data-using-globus) page
+Once you have been accept. follow the [Transferring data using Globus](./Data_Transfer_using_Globus.md#transferring-data-using-globus) page
 to learn how to transfer data between two computers, where instead of transferring data between your `endpoint`
 and mahuika, you transfer data between your two computers/servers (your two `endpoints`).
