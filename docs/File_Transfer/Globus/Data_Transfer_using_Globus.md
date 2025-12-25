@@ -8,6 +8,9 @@ title: Data Transfer
 
 Globus is useful for transferring files between Mahuika and your computer or server and can make it easy to transfer files due to its GUI web-based interface, as well as being able to resume transfers even if disrupted.
 
+!!! tip
+    The name of the Mahuika `endpoint` is `NeSI HPC Storage`
+
 ## Transferring data using Globus
 
 To move files and folders between `endpoints` (such as between Mahuika and another computer or server):

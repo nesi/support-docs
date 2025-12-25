@@ -10,6 +10,9 @@ It is possible to copy files between two computers/servers (two `endpoints`) usi
 Globus. However, first you need to sign up with a Globus Subscription. **This is free**
 for Mahuika users.
 
+!!! tip
+    The name of the Mahuika subscription is `New Zealand eScience Infrastructure Standard`
+
 ## Signing into your **Free** Globus Subscription
 
 1. Click the Search Tab and click on `Find a Subscription`:

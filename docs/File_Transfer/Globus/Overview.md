@@ -38,4 +38,3 @@ Globus allows users to transfer data between systems. Some advantages of using G
 
 * Name of NeSI endpoint: `NeSI HPC Storage`
 * Name of NeSI Subscription: `New Zealand eScience Infrastructure Standard`
-* Workflows - Syncing files with Globus Automate
