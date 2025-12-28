@@ -144,7 +144,6 @@ General/FAQs/Why_am_I_seeing_Account_is_not_ready.md : Getting_Started/FAQs/Why_
 General/FAQs/Why_does_my_program_crash.md : Getting_Started/FAQs/Why_does_my_program_crash.md
 General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md : Getting_Started/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
 Getting_Started/Next_Steps/Submitting_your_first_job.md : Batch_Computing/Submitting_your_first_job.md
-Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md : File_Transfer/Moving_files_to_and_from_the_cluster.md
 Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC.md : Getting_Started/Getting_Help/Introduction_to_computing_on_the_NeSI_HPC.md
 Scientific_Computing/Training/Webinars.md : Getting_Started/Getting_Help/Webinars.md
 Scientific_Computing/Training/Workshops.md : Getting_Started/Getting_Help/Workshops.md
@@ -173,7 +172,4 @@ Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_All
 Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md : Getting_Started/Creating_an_Account.md
 Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Computing.md
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
-Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.mdData_Transfer/OnDemand : Data_Transfer/OnDemand.md
-Data_Transfer/Moving_files_to_and_from_the_cluster.md : Data_Transfer/Introduction.md
-Data_Transfer/Data_Transfer_Using_MobaXterm : Data_Transfer/Data_Transfer_Using_MobaXterm.md
-Data_Transfer/Data_Transfer_Using_WinSCP : Data_Transfer/Data_Transfer_Using_WinSCP.md
+Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md

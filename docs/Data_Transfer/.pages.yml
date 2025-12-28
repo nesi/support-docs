@@ -3,6 +3,7 @@ nav:
   - Introduction.md
   - Data_Transfer_Best_Practices.md
   - OnDemand.md
+  - File_Managers.md
   - scp.md
   - Rsync.md
   - RClone.md
