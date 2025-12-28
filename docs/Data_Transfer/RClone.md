@@ -1,4 +1,4 @@
-# Rclone
+# RClone
 
 Rclone is available for those that need to transfer data from cloud
 storage services like Google drive or OneDrive.

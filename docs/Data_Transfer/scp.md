@@ -1,4 +1,4 @@
-## SCP (Secure Copy)
+# SCP (Secure Copy)
 
 !!! prerequisite
     Have SSH setup as described in [Standard Terminal Setup](../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md)
