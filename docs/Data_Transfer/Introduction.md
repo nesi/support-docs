@@ -10,7 +10,7 @@ title: Introduction to Data Transferring
 !!! prerequisite
     Have an [active account and project.](../Getting_Started/Creating_an_Account.md)
 
-**Recommended Read**: [data transfer best practises](./Data_Transfer_Best_Practices.md) whenever you are moving data to and from mahuika
+**Recommended Read**: [data transfer best practises](./Data_Transfer_Best_Practices.md) whenever you move data to and from Mahuika.
 
 There are several ways to transfer your data between the Mahuika Supercomputer and your computer or server.
 
