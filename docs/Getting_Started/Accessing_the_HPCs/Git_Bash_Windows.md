@@ -40,7 +40,7 @@ credentials every time you open a new terminal or try to move a file.*
 scp <path/filename> nesi:~/
 ```
 
-For more info visit [data transfer](../../Data_Transfer/Moving_files_to_and_from_the_cluster.md).
+For more info visit [data transfer](../../Data_Transfer/Introduction.md).
 
 !!! prerequisite "What Next?"
    - [Standard Terminal Setup](Standard_Terminal_Setup.md)

@@ -1,5 +1,12 @@
 ---
 nav:
-  - Moving_files_to_and_from_the_cluster.md
+  - Introduction.md
+  - Data_Transfer_Best_Practices.md
+  - OnDemand.md
+  - scp.md
+  - Rsync.md
+  - RClone.md
   - FileSender.md
   - Globus
+  - Data_Transfer_Using_MobaXterm.md
+  - Data_Transfer_Using_WinSCP.md

@@ -1,6 +1,0 @@
-# MobaXterm
-
-!!! prerequisite
-    [MobaXterm Setup Windows](../Getting_Started/Accessing_the_HPCs/MobaXterm_Setup_Windows.md)
-
-See [Standard Terminal](Moving_files_to_and_from_the_cluster.md#standard-terminal), [Rclone](Moving_files_to_and_from_the_cluster.md#rclone), or [Rsync](Moving_files_to_and_from_the_cluster.md#rsync) for information on how to move files to and from the HPC in the terminal.
