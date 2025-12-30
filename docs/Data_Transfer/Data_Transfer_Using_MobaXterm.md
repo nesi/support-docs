@@ -1,4 +1,4 @@
-# MobaXterm
+# MobaXterm (Windows)
 
 !!! prerequisite
     [MobaXterm Setup Windows](../Getting_Started/Accessing_the_HPCs/MobaXterm_Setup_Windows.md)

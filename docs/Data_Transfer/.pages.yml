@@ -4,7 +4,6 @@ nav:
   - Data_Transfer_Best_Practices.md
   - OnDemand.md
   - VSCode.md
-  - File_Managers.md
   - scp.md
   - Rsync.md
   - RClone.md
@@ -12,3 +11,5 @@ nav:
   - Globus
   - Data_Transfer_Using_MobaXterm.md
   - Data_Transfer_Using_WinSCP.md
+  - File_Managers.md
+

@@ -18,7 +18,6 @@ For simple, graphical user interface options, see:
 
 * [Moving data with OnDemand](./OnDemand.md)
 * [Navigating Mahuika using VSCode](./VSCode.md)
-* [Setting up a File Manager on your computer](./File_Managers.md)
 
 For file transfer methods that use the terminal, see:
 
@@ -33,7 +32,8 @@ If you are transferring large files or a large amount of files, see:
 
 For transferring data using specific tools, see:
 
-* [File transferring using MobaXterm](./Data_Transfer_Using_MobaXterm.md)
-* [File transferring using WinSCP](./Data_Transfer_Using_WinSCP.md)
+* [File transferring using MobaXterm (Windows)](./Data_Transfer_Using_MobaXterm.md)
+* [File transferring using WinSCP (Windows)](./Data_Transfer_Using_WinSCP.md)
+* [Setting up a File Manager on your computer (Ubuntu)](./File_Managers.md)
 
 Find more information on [our filesystem](../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).

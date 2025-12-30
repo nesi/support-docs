@@ -1,4 +1,4 @@
-# WinSCP
+# WinSCP (Windows)
 
 !!! prerequisite
     [WinSCP-PuTTY Setup Windows](../Getting_Started/Accessing_the_HPCs/WinSCP-PuTTY_Setup_Windows.md)
