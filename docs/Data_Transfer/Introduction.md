@@ -17,6 +17,7 @@ There are several ways to transfer your data between the Mahuika Supercomputer a
 For simple, graphical user interface options, see:
 
 * [Moving data with OnDemand](./OnDemand.md)
+* [Navigating Mahuika using VSCode](./VSCode.md)
 * [Setting up a File Manager on your computer](./File_Managers.md)
 
 For file transfer methods that use the terminal, see:
