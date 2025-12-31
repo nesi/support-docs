@@ -21,6 +21,16 @@ It is best practice to perform your calculations/simulations in the following or
 3. If you have GBs or TBs of data that you need to keep on Mahuika but don't have enough space on `project` and do not access regularly, you should consider moving this data onto Freezer. Freezer is designed to keep mass amounts of data on that you will only need to access every few months. [Click here for more information about Freezer](Long_Term_Storage/Freezer_long_term_storage.md).
 4. `project` is limited in space, so any data you can move off Mahuika should be when you are either done with the data, or you can do analysis of the data on your own computer. See [I would like to move data off Mahuika. What are my options?](#i-would-like-to-move-data-off-mahuika-what-are-my-options)
 
+## What are temporary files and do I need them?
+
+Many programs create temporary files that are created by a program *temporarily* (as the name implies). Programs create temporary files because they would take up too much space in RAM or provide a way to checkpoint so that if the program crashes or times out it can be resumed.
+
+Temporary files can be a problem to store long term because they can take up a large amount of space and create many files (use a lot of inodes). This second point can be very problematic as many of the services running behind the scenes in mahuika are affected by the number of files on our systems.
+
+It is recommended that if your program creates temporary files that you guide that program to write those temporary files to the ``nobackup`` directory.
+
+Temporary files are not needed once the program has finished. Once your program has finished successfully, **you can delete all temporary files**. This is recommended as it will minimise the amount of space that you use ``nobackup``
+
 ## How should I store important data?: The 3,2,1 Rule
 
 It is vital that files that are important to your work are backed up after you have processed them and want to move them off Mahuika. The 3,2,1 rule is best practise for storing and backing up files to minimise lose of mission critical data. The rule is:
@@ -56,9 +66,9 @@ High capacity storage are offered by various institutes around New Zealand. Here
 
 * University of Auckland: [https://research-hub.auckland.ac.nz/managing-research-data/research-data-storage/research-drive](https://research-hub.auckland.ac.nz/managing-research-data/research-data-storage/research-drive)
 * Massey University: See 'Network disk space allocation at Massey' in [https://www.massey.ac.nz/study/library/researcher-support/research-data-management/store-your-research-data](https://www.massey.ac.nz/study/library/researcher-support/research-data-management/store-your-research-data)
-* Waikato University: You can request Storage with your Supervisor _via_ your Kuhukuhu portal at [https://kuhukuhu.waikato.ac.nz](https://kuhukuhu.waikato.ac.nz).
+* Waikato University: You can request Storage with your Supervisor *via* your Kuhukuhu portal at [https://kuhukuhu.waikato.ac.nz](https://kuhukuhu.waikato.ac.nz).
 * Victoria University of Wellington: [https://intranet.wgtn.ac.nz/services-resources/digital-solutions/research-services/solar](https://intranet.wgtn.ac.nz/services-resources/digital-solutions/research-services/solar)
-* University of Canterbury: You can request Storage _via_ [https://ucservicesprod.service-now.com/uc?id=sc_cat_item&sys_id=8fcef1d4db5e0510e447f561f3961932&table=sc_cat_item&searchTerm=storage](https://ucservicesprod.service-now.com/uc?id=sc_cat_item&sys_id=8fcef1d4db5e0510e447f561f3961932&table=sc_cat_item&searchTerm=storage)
+* University of Canterbury: You can request Storage *via* [https://ucservicesprod.service-now.com/uc?id=sc_cat_item&sys_id=8fcef1d4db5e0510e447f561f3961932&table=sc_cat_item&searchTerm=storage](https://ucservicesprod.service-now.com/uc?id=sc_cat_item&sys_id=8fcef1d4db5e0510e447f561f3961932&table=sc_cat_item&searchTerm=storage)
 * University of Otago: [https://www.otago.ac.nz/its/services/file-storage-and-server-services/high-capacity-central-file-storage-hcs](https://www.otago.ac.nz/its/services/file-storage-and-server-services/high-capacity-central-file-storage-hcs)
 
 ### Cloud Storage options
