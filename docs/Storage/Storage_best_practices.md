@@ -45,7 +45,7 @@ Freezer is a tape storage system that employs the S3 protocol and is designed to
 
 ## I would like to move data off Mahuika. What are my options?
 
-This will depend on what resources your group can budget for and what high capacity storage (HCS) your university offers. See [Moving files to and from the cluster](../Data_Transfer/Introduction.md) for more information about transferring data from Mahuika.
+This will depend on what resources your group can budget for and what high capacity storage (HCS) your university offers. See [Moving files to and from the cluster](../Data_Transfer/Data_Transfer_Overview.md) for more information about transferring data from Mahuika.
 
 ### Storage options for Universities around New Zealand
 

@@ -1,4 +1,8 @@
-# scp (Secure Copy)
+---
+created_at: 2026-01-05
+title: SCP (Secure Copy)
+description: How to transfer data on the REANNZ HPC using SCP.
+---
 
 !!! prerequisite
     Have SSH setup as described in [Standard Terminal Setup](../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md)
