@@ -12,9 +12,48 @@ tags:
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-## General usage notes
-
 uv will manage Python packages including determining dependencies to create virtual environments.
+There are two primary approaches to using uv: [for individual scripts](#using-uv-for-scripts) and [for projects or groups of scripts](#using-uv-for-projects).
+
+## Using uv for scripts
+
+[uv can initialize and run a script using a virtual environment based on the `import` statements in a Python file.](https://docs.astral.sh/uv/guides/scripts/#running-a-script-with-dependencies)
+Given the following Python script (`cities.py`):
+
+```py
+import pandas
+
+# Data provided as a dictionary
+data = {
+    "City": ["Tokyo", "Delhi", "Shanghai", "Sao Paulo"],
+    "Country": ["Japan", "India", "China", "Brazil"],
+    "Population_Millions": [37.3, 32.0, 28.5, 22.4]
+}
+
+# Load the data into a DataFrame object
+df = pd.DataFrame(data)
+
+# Print the DataFrame
+print(df)
+```
+
+uv can add requirements directly to the Python file using `uv add --script cities.py 'pandas'`.
+This will add a `script` section to the top of the `cities.py` containing TOML.
+
+```py
+# /// script
+# requires-python = ">=3.9"
+# dependencies = [
+#     "pandas>=2.3.3",
+# ]
+# ///
+```
+
+Now when you use `uv run cities.py` the environment setup will be handled for you and the script will be run in an environment matching the specifications.
+You can manually edit this TOML section as needed to update the script dependencies.
+
+## Using uv for projects
+
 To set up a uv-managed Python project run `uv init` in the desired location.
 You can then add needed packages with `uv add <package>`.
 You can also specify packages by editing the `pyproject.toml` file that is created by `uv init`.
@@ -24,3 +63,24 @@ Versions can be specified in both the command line and `pyproject.toml`.
 
 uv will always use a cache, using a temporary cache directory when the `--no-cache` flag is used.
 To avoid filling your `/home/` directory space, you can add `export UV_CACHE_DIR=/nesi/nobackup/<projectid>/uv_cache` to your `~/.bashrc` to set a cache directory.
+
+## Sharing, importing, and exporting uv environments
+
+There are two files that allow for uv environments to be shared:
+
+- the dependency file: `pyproject.toml`
+- the lockfile: `uv.lock`
+
+Sharing just the `pyproject.toml` will simply share the specifications of the environment.
+Sharing the `uv.lock` file will share the exact set of packages and dependencies used to create the project.
+This will allow uv to create an identical virtual environment.
+
+To create a virtual environment using an existing `uv.lock`, you simply need to run `uv sync` in the directory containing the dependency and lock files.
+
+In addition to importing and exporting uv environments to be shared with other uv users, you can also import and export dependency specifications from other package managers.
+After initializing the uv project, you can [import from a `requirements.txt`](https://docs.astral.sh/uv/guides/migration/pip-to-project/) using `uv add -r requirements.txt`.
+uv also supports [exporting to multiple formats](https://docs.astral.sh/uv/concepts/projects/export/) using `uv export --format <format> --output-file <filename>` where `<format>` can be one of: `requirements.txt`, `pylock.toml`, or `cyclonedx1.5`.
+
+## External resources
+
+The [uv documentation](https://docs.astral.sh/uv/) is the best source for additional information about using uv.
