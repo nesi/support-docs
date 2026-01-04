@@ -1,14 +1,13 @@
 ---
 created_at: '2018-11-27T23:55:26Z'
-tags: []
 description: Information on how to use SSHFS on different local systems
-status: []
 ---
 
+!!! prerequisite
+    SSHFS utilises SSH, make sure you have set up your connection as described in [Standard Terminal Setup](../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md).
+
 [SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
-filesystem on your local machine. SSHFS relies on SSH underneath, so you
-should follow the ["Recommended logon procedure" instructions](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md) to configure SSH
-first.
+filesystem on your local machine.
 
 ## Linux
 
@@ -58,7 +57,7 @@ umount ~/nesi-home
 ```
 
 !!! note
-     Newer MacOS does not come with SSHFS pre installed. You will have to
+     Newer MacOS does not come with SSHFS pre-installed. You will have to
      [install FUSE as SSHFS](https://osxfuse.github.io/).
 
 ## Windows

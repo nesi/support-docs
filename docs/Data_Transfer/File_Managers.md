@@ -8,10 +8,7 @@ created_at: 2026-01-05
 ## Windows and Mac
 
 If your default file manager does not support mounting over SFTP, see
-[Can I use SSHFS to mount the cluster filesystem on my local machine?](../Getting_Started/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md).
-
-!!! warning
-    Not sure if the windows and mac version works anymore
+[Can I use SSHFS to mount the cluster filesystem on my local machine?](./Filesytem_Mounts_using_SSHFS.md).
 
 ## Ubuntu
 
