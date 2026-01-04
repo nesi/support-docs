@@ -1,6 +1,5 @@
 ---
 created_at: '2018-11-20T22:41:32Z'
-title: Introduction to Data Transferring
 ---
 
 !!! prerequisite
@@ -8,32 +7,33 @@ title: Introduction to Data Transferring
 
 There are several ways to transfer your data between the Mahuika Supercomputer and your computer or server.
 
-!!! tip
-    **Read [data transfer best practises](./Data_Transfer_Best_Practices.md) before moving data to and from Mahuika.**
-
-For simple, graphical user interface options, see:
+For simple, graphical user interface options without requiring additional setup, see:
 
 * [Moving data with OnDemand](./Data_Transfer_Using_OnDemand.md)
-* [Moving data using VSCode](./VSCode.md)
+
+!!! warning
+    OnDemand interface is not suitable for large data transfers or automated workflows.
 
 For file transfer methods that use the terminal, see:
 
-* [scp (Secure Copy)](./SCP.md)
-* [rsync](./Rsync.md)
-* [RClone](./RClone.md)
+* [SCP (Secure Copy)](./SCP.md), the default method.
+* [Rsync](./Rsync.md), for larger and more complex data moving operations providing many additional features over SCP.
 
-If you are transferring large files or a large amount of files, see:
+For transferring files from other remote endpoints (i.e. not your local computer), see:
 
-* [FileSender](./FileSender.md)
-* [Globus](./Globus/Overview.md)
+* [RClone](./RClone.md), for accessing
+* [FileSender](./FileSender.md) <WHY USE THIS OVER RClone>
+* [Globus](./Globus/Overview.md) <WHY USE THIS OVER FILESENDER>
 
 For transferring data using specific tools, see:
 
-* [File transferring using MobaXterm (Windows)](./Data_Transfer_Using_MobaXterm.md)
-* [File transferring using WinSCP (Windows)](./Data_Transfer_Using_WinSCP.md)
-* [Setting up a File Manager on your computer (Ubuntu)](./File_Managers.md)
+* [File transfer using MobaXterm (Windows)](./Data_Transfer_Using_MobaXterm.md)
+* [File transfer using WinSCP (Windows)](./Data_Transfer_Using_WinSCP.md)
+* [Connecting with the default file manager (Ubuntu)](./File_Managers.md)
+* [Moving data using VSCode](./VSCode.md)
 
-Find more information on [our filesystem](../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
+!!! info
+    Find more information on [our filesystem](../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 
 ## Best Practice
 ### Avoid Transferring Temporary Files
