@@ -173,3 +173,8 @@ Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profil
 Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Computing.md
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
+Data_Transfer/OnDemand.md : Data_Transfer/File Transfer using OnDemand.md
+Data_Transfer/File Transfer using OnDemand.md : Data_Transfer/Data_Transfer_Using_OnDemand.md
+Data_Transfer/scp.md : Data_Transfer/SCP.md
+Data_Transfer/Introduction.md : Data_Transfer/Data_Transfer_Overview.md
+Batch_Computing/Checksums.md : Data_Transfer/Checksums.md
