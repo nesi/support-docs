@@ -16,14 +16,14 @@ For simple, graphical user interface options without requiring additional setup,
 
 For file transfer methods that use the terminal, see:
 
-* [SCP (Secure Copy)](./SCP.md), the default method.
-* [Rsync](./Rsync.md), for larger and more complex data moving operations providing many additional features over SCP.
+* [SCP (Secure Copy)](./SCP.md), the default method, SCP is pre-installed on all versions of Mac, Linux and WSL.
+* [Rsync](./Rsync.md), for larger and more complex data moving operations providing additional features over SCP.
 
 For transferring files from other remote endpoints (i.e. not your local computer), see:
 
-* [RClone](./RClone.md), for accessing
-* [FileSender](./FileSender.md) <WHY USE THIS OVER RClone>
-* [Globus](./Globus/Overview.md) <WHY USE THIS OVER FILESENDER>
+* [RClone](./RClone.md),
+* [FileSender](./FileSender.md) <WHY USE THIS OVER RClone??>
+* [Globus](./Globus/Overview.md) <WHY USE THIS OVER FILESENDER??>
 
 For transferring data using specific tools, see:
 
@@ -37,6 +37,8 @@ For transferring data using specific tools, see:
 
 ## Best Practice
 ### Avoid Transferring Temporary Files
+
+<ELABORATE ON WHAT ARE TEMPORARY FILES>
 
 It is best to avoid transferring temporary files. This is because temporary files:
 
@@ -52,5 +54,7 @@ Transferring lots of files using Globus can also have detrimental effects on thi
 Write something here
 
 ### Use Checksums
+
+Write something here
 
 [checksums](Checksums.md)
