@@ -22,17 +22,17 @@ Below are some tips, tricks and best practice to help get you started.
 
 ### Conda/Mamba Environments
 
-TODO: find and point to existing conda
+Conda environments are supported via the [Miniforge3](../Software/Available_Applications/Miniforge3.md) module.
 
 ### Python Virtual Environments
 
 TODO: find and point to venv
 
-## New Tools for Creating Reproducible Environments
+## New Tools for Reproducible Environments
 
-### UV
+### uv
 
-TODO: I think Jen created a page for this
+The [uv](../Software/Available_Applications/uv.md) package manager is available as module.
 
 ### pixi
 
@@ -43,10 +43,8 @@ TODO: new page
 
 ## Containerisation
 
-TODO: Point to Apptainer
-
+Containers are supported on Mahuika via [Apptainer](Available_Applications/Apptainer.md).
 
 ## Compiled Software
 
-TODO: point to modules and maybe add something about retrieving modules and dependencies alsong with info about
-    the OS and other pertinent info
+In addition to the ability to search available modules using `module spider <search-term>`, all installed modules and available versions can be found in [this table](Available_Applications/index.md).
