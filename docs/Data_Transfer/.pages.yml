@@ -4,7 +4,6 @@ nav:
   - Data_Transfer_Overview.md
   - Checksums.md
   - Data_Transfer_Using_OnDemand.md
-  - VSCode.md
   - SCP.md
   - Rsync.md
   - RClone.md
@@ -13,5 +12,6 @@ nav:
   - Data_Transfer_Using_MobaXterm.md
   - Data_Transfer_Using_WinSCP.md
   - File_Managers.md
+  - VSCode.md
   - Filesystem_Mounts_using_SSHFS.md
 
