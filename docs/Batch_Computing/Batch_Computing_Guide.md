@@ -16,27 +16,33 @@ Depending on the needs of your batch jobs, you may need to specify the partition
 
 ## Slurm job basics
 
-Please see [Submitting your first job](Submitting_your_first_job.md) for detailed instructions and examples.
+Please see [Submitting your first job](Submitting_your_first_job.md) for a detailed tutorial with instructions and examples.
 
-### Batch script formatting
+### Batch scripts
 
-Jobs on the HPC are submitted in the form of a *batch script* containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
+Jobs on the HPC are submitted in the form of a *batch script* (`.sl`) containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
+
+The following is a template batch script with both the minimum requirements and some additional best practice options included.
 
 ```sl
 #!/bin/bash -e
 
+#SBATCH --account       <projectcode>   # needed for members of multiple projects
 #SBATCH --job-name      SerialJob       # job name (shows up in the queue)
 #SBATCH --time          00:01:00        # Walltime (HH:MM:SS)
 #SBATCH --mem           512MB           # Memory in MB
 #SBATCH --cpus-per-task 1               # CPUs
+#SBATCH --output        log/%x.%j.out   # saves the output as <job-id>.<job-name>.out
+#SBATCH --error         log/%x.%j.err   # saves the error output as <job-id>.<job-name>.err
+
+# print the contents of the batch script at the top of the output file for reference
+cat $0
+
+# purge and load needed modules
+module purge
+module load <module-name>
 
 <code to be run goes here>
-```
-
-Note: if you are a member of multiple accounts you should add the line
-
-```sl
-#SBATCH --account=<projectcode>
 ```
 
 ### Submitting
@@ -47,7 +53,7 @@ Jobs are submitted to the scheduler using:
 sbatch myjob.sl
 ```
 
-You should receive an output
+You should receive an output:
 
 ```bash
 Submitted batch job 1748836
@@ -55,7 +61,7 @@ Submitted batch job 1748836
 
 `sbatch` can take command line arguments similar to those used in the shell script through SBATCH pragmas.
 
-You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html)
+You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html).
 
 ## Managing and reviewing your Slurm jobs
 
