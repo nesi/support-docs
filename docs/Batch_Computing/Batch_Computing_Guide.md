@@ -119,3 +119,32 @@ You can obtain the job ID by using `sacct` or `squeue`.
     - `scancel {[n1]..[n2]}` Kill all jobs with an id between `[n1]` and `[n2]`.
 
 You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scancel.html).
+
+### Checking job efficiency
+
+After a job has completed you can get the basic usage information using `nn_seff <job-id>`.
+This will return an output as below:
+
+``` bash
+Cluster: hpc
+Job ID: 1234567
+State: FAILED
+Cores: 48
+Tasks: 1
+Nodes: 1
+Job Wall-time:     0.6%  00:00:04 of 00:12:00 time limit
+CPU Utilisation:   1.0%  00:00:02 of 00:03:12 core-walltime
+Mem Utilisation:   0.0%  0.00 MB of 260.00 GB
+```
+
+The CPU utilisation represents the average utilisation over the course of the job.
+The Mem utilisation represents the maximum memory utilisation over the course of the job.
+
+To get a better sense of how your job uses the resources allocated, you can use [Slurm Native Profiling](../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md). Add the following to your batch script before running:
+
+``` sl
+#SBATCH --profile           task
+#SBATCH --acctg-freq        30    # sampling frequency in seconds
+```
+
+After the job finishes running you can get plots of the resource utilisation by running `profile_plot <jobid>`.
