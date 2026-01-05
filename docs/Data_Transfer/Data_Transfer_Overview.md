@@ -36,6 +36,7 @@ For transferring data using specific tools, see:
     Find more information on [our filesystem](../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 
 ## Best Practice
+
 ### Avoid Transferring Temporary Files
 
 <ELABORATE ON WHAT ARE TEMPORARY FILES>

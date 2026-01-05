@@ -1,10 +1,11 @@
 ---
 nav:
   - Introduction.md
-  - Data_Transfer_Best_Practices.md
-  - OnDemand.md
+  - Data_Transfer_Overview.md
+  - Checksums.md
+  - Data_Transfer_Using_OnDemand.md
   - VSCode.md
-  - scp.md
+  - SCP.md
   - Rsync.md
   - RClone.md
   - FileSender.md
@@ -12,4 +13,5 @@ nav:
   - Data_Transfer_Using_MobaXterm.md
   - Data_Transfer_Using_WinSCP.md
   - File_Managers.md
+  - Filesystem_Mounts_using_SSHFS.md
 
