@@ -22,14 +22,9 @@ when profiling a job of less than 1 hour it would be OK to sample every
 second by adding `#SBATCH --acctg-freq=1`.
 
 The `profile_plot` command can then be used to generate an image with the results.
-`profile_plot <jobid>` will produce `<jobid>_profile.png`.
+`profile_plot <jobid>` will produce `<jobid>_profile.png`.  
+See `profile_plot --help` for its options.
 
-See `profile_plot --help` for more info.
+We keep the profile data for at least 30 days. Profiles older than that may 
+be deleted or incomplete.
 
-Alternatively you could use one of the following scripts.
-
-- [Python](https://github.com/nesi/nesi-tools/blob/main/.nn_profile_plot.py)
-- [MATLAB](https://github.com/CallumWalley/slurm_native_h5_plotter)
-
-Any GPU usage will also be recorded in the profile, so long as the
-process was executed via `srun`.
