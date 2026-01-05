@@ -89,6 +89,24 @@ source .venv/bin/activate
 python script.py
 ```
 
+## Package sources
+
+The default index used by uv is the [Python Package Index (PyPI)](https://pypi.org/).
+Additional indexes can be defined in the `pyproject.toml` by adding an index to the `[[tool.uv.index]]` entry.
+
+You can also specify the source for a package either in the `[tool.uv.sources]` entry or when adding a package via the command line using `uv add "my-package @ git+https://github.com/my/package"`.
+
+```toml
+[tool.uv.sources]
+my-package = { git = "https://github.com/my/package" }
+
+[[tool.uv.index]]
+name = "my-index"
+url = "https://link.to.my-index"
+```
+
+For more detailed information on package indices and specifying sources, see the [uv documentation page](https://docs.astral.sh/uv/concepts/indexes/).
+
 ## Caching
 
 uv will always use a cache, using a temporary cache directory when the `--no-cache` flag is used.
