@@ -28,7 +28,7 @@ The following is a template batch script with both the minimum requirements and 
 #!/bin/bash -e
 
 #SBATCH --account       <projectcode>   # needed for members of multiple projects
-#SBATCH --job-name      SerialJob       # job name (shows up in the queue)
+#SBATCH --job-name      BatchJob       # job name (shows up in the queue)
 #SBATCH --time          00:01:00        # Walltime (HH:MM:SS)
 #SBATCH --mem           512MB           # Memory in MB
 #SBATCH --cpus-per-task 1               # CPUs
@@ -56,7 +56,7 @@ sbatch myjob.sl
 You should receive an output:
 
 ```bash
-Submitted batch job 1748836
+Submitted batch job 1234567
 ```
 
 `sbatch` can take command line arguments similar to those used in the shell script through SBATCH pragmas.
@@ -67,7 +67,7 @@ You can find more details on its use on the [Slurm Documentation](https://slurm.
 
 ### Job Queue
 
-The currently queued jobs can be checked using
+All currently queued jobs can be checked using
 
 ```bash
 squeue
@@ -76,7 +76,7 @@ squeue
 You can filter to just your jobs by adding the flag
 
 ```bash
-squeue -u usr9999
+squeue -u usr1234
 ```
 
 You can also filter to just your jobs using
@@ -86,6 +86,8 @@ squeue --me
 ```
 
 You can find more details on its use on the [Slurm Documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html).
+
+### Completed jobs
 
 You can check all jobs submitted by you in the past day using:
 
