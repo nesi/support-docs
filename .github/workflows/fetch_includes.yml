@@ -38,7 +38,7 @@ jobs:
       - name: Commit changes to new branch
         if: steps.changes.outputs.no_changes == 'false'
         run: |
-          BRANCH="automation/fetch-includes-$(date +'%Y%m%d')"
+          BRANCH="asset-update"
           git checkout -b $BRANCH
           git config user.name "nesi-service-bot"
           git config user.email "service-bot@nesi.org.nz"
