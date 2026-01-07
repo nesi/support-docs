@@ -3,12 +3,16 @@
         "description": "Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.",
         "domains": [
             "cae",
-            "engineering"
+            "engineering",
+            "gpu",
+            "mpi",
+            "omp",
+            "fea"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.simulia.com/products/abaqus_fea.html",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ABAQUS",
         "versions": [
             "2017",
             "2018",
@@ -52,7 +56,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
                         "slurm_track": true,
-                        "total": 1,
+                        "total": 0,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -66,7 +70,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
                         "slurm_track": true,
-                        "total": 4,
+                        "total": 0,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -80,7 +84,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
                         "slurm_track": true,
-                        "total": 40,
+                        "total": 0,
                         "usage_formula": "({cpu}**0.422)*5",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -388,7 +392,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/deepmind/alphafold",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/AlphaFold",
         "versions": [
             "2.3.2",
             "3.0.0",
@@ -470,6 +474,28 @@
         "last_updated": 1740132626,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/numlib/AlwaysIntelMKL/1.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Amber": {
+        "description": "Amber (originally Assisted Model Building with Energy Refinement) is software for performing\n molecular dynamics and structure prediction.",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "proprietary",
+        "homepage": "https://ambermd.org/amber.html",
+        "support": "",
+        "versions": [
+            "24.0-foss-2023a-AmberTools-25.0-CUDA-12.5.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "24.0-foss-2023a-AmberTools-25.0-CUDA-12.5.0",
+        "default_type": "latest",
+        "last_updated": 1766122185,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Amber/24.0-foss-2023a-AmberTools-25.0-CUDA-12.5.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -619,12 +645,14 @@
         "description": "A bundle of computer-aided engineering software including Fluent and CFX.",
         "domains": [
             "engineering",
-            "visualisation"
+            "visualisation",
+            "cfd",
+            "fea"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.ansys.com",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ANSYS",
         "versions": [
             "19.1",
             "19.2",
@@ -2205,12 +2233,13 @@
         "description": "Basic Local Alignment Search Tool, or BLAST, is an algorithm\n for comparing primary biological sequence information, such as the amino-acid\n sequences of different proteins or the nucleotides of DNA sequences.",
         "domains": [
             "bio",
-            "biology"
+            "biology",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://blast.ncbi.nlm.nih.gov/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/BLAST",
         "versions": [
             "2.10.0-GCC-9.2.0",
             "2.12.0-GCC-9.2.0",
@@ -2470,7 +2499,7 @@
         ],
         "licence_type": "",
         "homepage": "https://github.com/Gaius-Augustus/BRAKER",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/BRAKER",
         "versions": [
             "2.1.6-gimkl-2022a-Perl-5.34.1",
             "3.0.2-gimkl-2022a-Perl-5.34.1",
@@ -3132,7 +3161,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/HKU-BAL/Clair3",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Clair3",
         "versions": [
             "0.1.12-Miniconda3",
             "1.0.0-Miniconda3",
@@ -3350,12 +3379,16 @@
         "domains": [
             "chemistry",
             "engineering",
-            "physics"
+            "physics",
+            "cae",
+            "multiphysics",
+            "cfd",
+            "fea"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.comsol.com/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/COMSOL",
         "versions": [
             "5.3",
             "5.4",
@@ -3393,7 +3426,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
                         "slurm_track": true,
-                        "total": 2,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "By booking only. Version not greater than 6.2.",
                         "visible_on_docs": true
@@ -3427,7 +3460,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
                         "slurm_track": true,
-                        "total": 1,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 5.4",
                         "visible_on_docs": true
@@ -3461,7 +3494,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
                         "slurm_track": true,
-                        "total": 6,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 5.5",
                         "visible_on_docs": true
@@ -3495,7 +3528,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
                         "slurm_track": true,
-                        "total": 3,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.2",
                         "visible_on_docs": true
@@ -3529,7 +3562,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
                         "slurm_track": true,
-                        "total": 1,
+                        "total": 0,
                         "usage_formula": "1",
                         "use_conditions": "Version not greater than 5.6",
                         "visible_on_docs": true
@@ -3543,7 +3576,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
                         "slurm_track": true,
-                        "total": 1,
+                        "total": 0,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -3611,7 +3644,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 5,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.2",
                         "visible_on_docs": true
@@ -4404,7 +4437,7 @@
         "force_show": "False"
     },
     "DeePMD-kit": {
-        "description": "",
+        "description": "credentials-1.3.2, devtools-2.4.4, downlit-0.4.2, gert-1.9.1, gh-1.3.1, gitcreds-0.1.2, ini-0.3.1, openssl-2.0.3, pkgdown-2.0.6, ragg-1.2.3, rcmdcheck-1.4.0, remotes-2.4.2, rmarkdown-2.16, roxygen2-7.2.1, rversions-2.1.2, sessioninfo-1.2.2, systemfonts-1.0.4, textshaping-0.3.6, tinytex-0.42, urlchecker-1.0.1, usethis-2.1.6, whisker-0.4, xopen-1.0.0",
         "domains": [
             "chemistry"
         ],
@@ -4479,12 +4512,17 @@
         "description": "Integrated simulation of sediment transport and morphology, waves, water quality and ecology.",
         "domains": [
             "earth_science",
-            "geo"
+            "geo",
+            "hydrodynamics",
+            "morphodynamics",
+            "particle modelling",
+            "water quality testing",
+            "wave modelling"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://oss.deltares.nl/web/delft3d",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Delft3D",
         "versions": [
             "141732-intel-2022a",
             "64418-intel-2022a",
@@ -4660,7 +4698,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nanoporetech.com/products/minit",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Dorado",
         "versions": [
             "0.3.2",
             "0.3.4",
@@ -5780,12 +5818,13 @@
         "domains": [
             "engineering",
             "phys",
-            "physics"
+            "physics",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://pages.nist.gov/fds-smv/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FDS",
         "versions": [
             "6.7.9-intel-2022a"
         ],
@@ -6131,7 +6170,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FlexiBLAS",
         "versions": [
             "3.1.3-GCC-11.3.0",
             "3.3.1-GCC-12.3.0",
@@ -6354,6 +6393,7 @@
         "support": "",
         "versions": [
             "1.3.1-GCC-7.4.0",
+            "1.3.10-GCC-12.3.0",
             "1.3.2-GCC-9.2.0"
         ],
         "admin_list": [
@@ -6362,11 +6402,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.3.2-GCC-9.2.0",
+        "default": "1.3.10-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1765487499,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/FreeBayes/1.3.2-GCC-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/FreeBayes/1.3.10-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6402,7 +6442,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://surfer.nmr.mgh.harvard.edu/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FreeSurfer",
         "versions": [
             "7.2.0-centos7_x86_64"
         ],
@@ -6572,7 +6612,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.broadinstitute.org/gatk/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/GATK",
         "versions": [
             "3.5-Java-1.8.0_144",
             "3.5-Java-15.0.2",
@@ -6585,15 +6625,16 @@
             "4.3.0.0-gimkl-2022a",
             "4.4.0.0-gimkl-2022a",
             "4.5.0.0-gimkl-2022a",
-            "4.6.1.0-gimkl-2022a"
+            "4.6.1.0-gimkl-2022a",
+            "4.6.2.0-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.6.1.0-gimkl-2022a",
+        "default": "4.6.2.0-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1765486479,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GATK/4.6.1.0-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/GATK/4.6.2.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6601,12 +6642,13 @@
         "description": "",
         "domains": [
             "chem",
-            "chemistry"
+            "chemistry",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Gaussian",
         "versions": [
             "09-D.01",
             "09-D.01"
@@ -7704,12 +7746,13 @@
         "description": "\nGROMACS is a versatile package to perform molecular dynamics,\n i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.\n\nThis is a GPU enabled build, containing both MPI and threadMPI binaries.\n",
         "domains": [
             "bio",
-            "chemistry"
+            "chemistry",
+            "molecular dynamics"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.gromacs.org",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/GROMACS",
         "versions": [
             "2020.4-gimkl-2020a-cuda-11.3.1-hybrid-PLUMED-2.6.2",
             "2020.5-intel-2020a-cuda-11.0.2-hybrid",
@@ -8478,16 +8521,17 @@
         "versions": [
             "2.16.1",
             "2.19.4",
+            "2.19.7",
             "2.5.0",
             "2.9.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.19.4",
+        "default": "2.19.7",
         "default_type": "latest",
-        "last_updated": 1754620103,
+        "last_updated": 1765492524,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/IGV/2.19.4.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/IGV/2.19.7.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8818,7 +8862,7 @@
         ],
         "licence_type": "",
         "homepage": "https://ipyrad.readthedocs.io",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ipyrad",
         "versions": [
             "0.9.85-gimkl-2022a-Python-3.10.5"
         ],
@@ -8966,12 +9010,14 @@
         "description": "\n Java Platform, Standard Edition (Java SE) lets you develop and deploy\n Java applications on desktops and servers.\n",
         "domains": [
             "lang",
-            "language"
+            "language",
+            "mahuika",
+            "general"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://java.com/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Java",
         "versions": [
             "1.7.0_51",
             "1.8.0_144",
@@ -9202,7 +9248,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://julialang.org/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Julia",
         "versions": [
             "1.11.3-GCC-12.3.0-VTune",
             "1.2.0-gimkl-2018b-VTune",
@@ -9730,14 +9776,16 @@
         "domains": [
             "biology",
             "chem",
-            "chemistry"
+            "chemistry",
+            "molecular dynamics"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://lammps.sandia.gov/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/LAMMPS",
         "versions": [
             "22Jul2025-foss-2023a-kokkos",
+            "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
             "23Jun2022-gimkl-2022a-kokkos",
             "23Jun2022-gimkl-2022a-kokkos-EChemDID",
             "31Aug2021-gimkl-2022a-kokkos-EChemDID"
@@ -9952,7 +10000,7 @@
         "force_show": "False"
     },
     "libcuda-stub": {
-        "description": "",
+        "description": "http://www.plumed-code.org",
         "domains": [],
         "extensions": [],
         "licence_type": "",
@@ -11343,7 +11391,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.yandell-lab.org/software/maker.html",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/MAKER",
         "versions": [
             "2.31.9-gimkl-2018b",
             "2.31.9-gimkl-2020a"
@@ -11542,12 +11590,14 @@
             "devel",
             "engineering",
             "mathematics",
-            "visualisation"
+            "visualisation",
+            "ml",
+            "matlab"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.mathworks.com/products/matlab",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/MATLAB",
         "versions": [
             "2017b",
             "2018b",
@@ -11558,7 +11608,8 @@
             "2022a",
             "2022b",
             "2023a",
-            "2023b"
+            "2023b",
+            "2025b"
         ],
         "admin_list": [
             {
@@ -11919,7 +11970,8 @@
             "2022a",
             "2022b",
             "2023a",
-            "2023b"
+            "2023b",
+            "2025b"
         ],
         "admin_list": [
             {
@@ -11936,11 +11988,11 @@
             }
         ],
         "network_licences": [],
-        "default": "2023b",
+        "default": "2025b",
         "default_type": "latest",
         "last_updated": 1740145797,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MCR/2023b.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MCR/2025b.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12547,12 +12599,14 @@
     "Miniforge3": {
         "description": "Community-led recipes, infrastructure and distributions for conda.",
         "domains": [
-            "lang"
+            "lang",
+            "python",
+            "environments"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://conda-forge.org",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Miniforge3",
         "versions": [
             "24.3.0-0",
             "25.3.0-3",
@@ -12901,12 +12955,13 @@
         "description": "Molpro is a complete system of ab initio programs for molecular electronic structure calculations.",
         "domains": [
             "chem",
-            "chemistry"
+            "chemistry",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://molpro.net",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Molpro",
         "versions": [
             "mpp-2019.2.2.linux_x86_64_openmp"
         ],
@@ -13970,12 +14025,13 @@
         "description": "Nextflow is a reactive workflow framework and a programming DSL\n that eases writing computational pipelines with complex data",
         "domains": [
             "tools",
-            "workflow_management"
+            "workflow_management",
+            "workflow"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.nextflow.io/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Nextflow",
         "versions": [
             "19.04.0",
             "21.04.3",
@@ -13987,15 +14043,16 @@
             "23.10.0",
             "24.04.4",
             "24.10.5",
-            "25.10.0"
+            "25.10.0",
+            "25.10.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "25.10.0",
+        "default": "25.10.2",
         "default_type": "latest",
-        "last_updated": 1761694703,
+        "last_updated": 1765486498,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Nextflow/25.10.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Nextflow/25.10.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14385,9 +14442,9 @@
         "network_licences": [],
         "default": "24.3-CUDA-12.2.2",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1767556929,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/NVHPC/24.3-CUDA-12.2.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/NVHPC/24.3-CUDA-12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14396,12 +14453,13 @@
         "domains": [
             "biology",
             "chem",
-            "chemistry"
+            "chemistry",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nwchemgit.github.io/ ",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/NWChem",
         "versions": [
             "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16"
         ],
@@ -14478,7 +14536,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nanoporetech.com/products/minit",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ont-guppy-gpu",
         "versions": [
             "6.0.1",
             "6.2.1",
@@ -14601,12 +14659,14 @@
         "domains": [
             "cae",
             "chemistry",
-            "engineering"
+            "engineering",
+            "cfd",
+            "fea"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.openfoam.com/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/OpenFOAM",
         "versions": [
             "10-gimkl-2022a",
             "2.4.0-gimkl-2018b",
@@ -14708,12 +14768,14 @@
         "domains": [
             "cae",
             "earth_science",
-            "engineering"
+            "engineering",
+            "geo",
+            "earthquake"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://opensees.berkeley.edu",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/OpenSees",
         "versions": [
             "20220411-gimkl-2020a",
             "3.2.0-gimkl-2020a",
@@ -14807,12 +14869,13 @@
         "description": "ORCA is a flexible, efficient and easy-to-use general purpose tool for quantum chemistry\n with specific emphasis on spectroscopic properties of open-shell molecules.\n  It features a wide variety of standard quantum chemical methods ranging from semiempirical methods to DFT to single-\n and multireference correlated ab initio methods.\n It can also treat environmental and relativistic effects.",
         "domains": [
             "chem",
-            "chemistry"
+            "chemistry",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://orcaforum.kofo.mpg.de",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ORCA",
         "versions": [
             "5.0.3-OpenMPI-4.1.1",
             "5.0.4-OpenMPI-4.1.5",
@@ -15221,7 +15284,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.paraview.org",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ParaView",
         "versions": [
             "5.4.1-gimkl-2018b-Python-2.7.16",
             "5.4.1-gimpi-2018b",
@@ -15948,6 +16011,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "pixi": {
+        "description": "pixi is a cross-platform, multi-language package manager and workflow tool built on the foundation of the conda ecosystem",
+        "domains": [
+            "base"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/prefix-dev/pixi",
+        "support": "",
+        "versions": [
+            "0.61.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.61.0",
+        "default_type": "latest",
+        "last_updated": 1765931321,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/base/pixi/0.61.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "pixman": {
         "description": "Pixman is a low-level software library for pixel manipulation, providing features such as image\ncompositing and trapezoid rasterization. Important users of pixman are the cairo graphics library and the X server.",
         "domains": [
@@ -16662,6 +16747,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "pybind11": {
+        "description": "pybind11 is a lightweight header-only library that exposes C++ types in Python and vice versa,\n mainly to create Python bindings of existing C++ code.",
+        "domains": [
+            "lib"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://pybind11.readthedocs.io",
+        "support": "",
+        "versions": [
+            "2.9.2-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.9.2-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1765486779,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/pybind11/2.9.2-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "pycoQC": {
         "description": "Computes metrics and generates interactive QC plots for Oxford Nanopore technologies sequencing data.",
         "domains": [
@@ -16742,7 +16849,8 @@
             "lang",
             "language",
             "machine_learning",
-            "visualisation"
+            "visualisation",
+            "ml"
         ],
         "extensions": [
             "altair-5.1.2",
@@ -16862,7 +16970,7 @@
         ],
         "licence_type": "",
         "homepage": "http://python.org/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Python",
         "versions": [
             "2.7.16-gimkl-2018b",
             "2.7.18-gimkl-2020a",
@@ -17147,7 +17255,9 @@
             "lang",
             "language",
             "machine_learning",
-            "visualisation"
+            "visualisation",
+            "mahuika",
+            "R"
         ],
         "extensions": [
             "abind-1.4-5",
@@ -17546,7 +17656,7 @@
         ],
         "licence_type": "",
         "homepage": "http://www.r-project.org/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/R",
         "versions": [
             "3.5.3-gimkl-2018b",
             "3.6.1-gimkl-2018b",
@@ -18230,12 +18340,13 @@
         "description": "RAxML search algorithm for maximum likelihood based inference of phylogenetic trees.",
         "domains": [
             "bio",
-            "biology"
+            "biology",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/stamatak/standard-RAxML",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/RAxML",
         "versions": [
             "8.2.12-gimkl-2020a",
             "8.2.12-gimkl-2022a"
@@ -18439,12 +18550,16 @@
         "description": "RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) \n    is a stand-alone computer program that employs an empirical Bayesian \n    approach to refinement of (multiple) 3D reconstructions or 2D class \n    averages in electron cryo-microscopy (cryo-EM). ",
         "domains": [
             "bio",
-            "biology"
+            "biology",
+            "no_toc",
+            "no_lic",
+            "no_desc",
+            "no_ver"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Relion",
         "versions": [
             "4.0.1-gimkl-2020a"
         ],
@@ -20098,7 +20213,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://pcingola.github.io/SnpEff/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/snpEff",
         "versions": [
             "4.2",
             "5.0-Java-11.0.4"
@@ -20789,12 +20904,13 @@
         "description": "Supernova is a software package for de novo assembly from Chromium Linked-Reads\n that are made from a single whole-genome library from an individual DNA source",
         "domains": [
             "bio",
-            "biology"
+            "biology",
+            "mahuika"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://support.10xgenomics.com/de-novo-assembly/software/overview/latest/welcome",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Supernova",
         "versions": [
             "2.1.1"
         ],
@@ -20936,18 +21052,19 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://github.com/ekg/tabixpp",
+        "homepage": "https://github.com/vcflib/tabixpp",
         "support": "",
         "versions": [
-            "1.1.2-GCC-11.3.0"
+            "1.1.2-GCC-11.3.0",
+            "1.1.2-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.1.2-GCC-11.3.0",
+        "default": "1.1.2-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1765487462,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/tabixpp/1.1.2-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/tabixpp/1.1.2-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21418,7 +21535,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://trinityrnaseq.github.io",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Trinity",
         "versions": [
             "2.11.0-gimkl-2020a",
             "2.13.2-gimkl-2020a",
@@ -21886,6 +22003,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "uv": {
+        "description": "An extremely fast Python package installer and resolver, written in Rust.",
+        "domains": [
+            "tools"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/astral-sh/uv",
+        "support": "",
+        "versions": [
+            "0.9.17-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.9.17-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1765853285,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/uv/0.9.17-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Valgrind": {
         "description": "Valgrind: Debugging and profiling tools",
         "domains": [
@@ -21943,12 +22082,15 @@
         "domains": [
             "base",
             "chem",
-            "chemistry"
+            "chemistry",
+            "Density Functional Theory",
+            "Molecular Dynamics",
+            "Computational Chemistry"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.vasp.at",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VASP",
         "versions": [
             "4.6-gimkl-2020a",
             "5.4.4-gimkl-2022a",
@@ -22037,25 +22179,26 @@
         "force_show": "False"
     },
     "vcflib": {
-        "description": "Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.",
+        "description": "vcflib provides methods to manipulate and interpret sequence variation as it can be\n described by VCF. The Variant Call Format (VCF) is a flat-file, tab-delimited textual format intended\n to concisely describe reference-indexed genetic variations between individuals.",
         "domains": [
             "bio",
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://github.com/ekg/freebayes/blob/master/README.md",
+        "homepage": "https://github.com/vcflib/vcflib",
         "support": "",
         "versions": [
-            "1.0.1-GCC-9.2.0"
+            "1.0.1-GCC-9.2.0",
+            "1.0.14-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.0.1-GCC-9.2.0",
+        "default": "1.0.14-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132640,
+        "last_updated": 1765487205,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/vcflib/1.0.1-GCC-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/vcflib/1.0.14-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22316,7 +22459,7 @@
         ],
         "licence_type": "",
         "homepage": "https://github.com/jiarong/VirSorter2",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VirSorter",
         "versions": [
             "1.0.6-gimkl-2020a-Perl-5.30.1",
             "2.1-gimkl-2020a-Python-3.8.2",
@@ -22411,7 +22554,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://software.intel.com/en-us/vtune",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VTune",
         "versions": [
             "2019_update8",
             "2023.1.0",
@@ -22470,6 +22613,28 @@
         "last_updated": 1740132640,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/wannier90/3.1.0-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "WFA2": {
+        "description": "The wavefront alignment (WFA) algorithm is an exact\n gap-affine algorithm that takes advantage of homologous regions\n between the sequences to accelerate the alignment process.",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/smarco/WFA2-lib",
+        "support": "",
+        "versions": [
+            "2.3.4-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.3.4-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1765487436,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/WFA2/2.3.4-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22939,6 +23104,28 @@
         "last_updated": 1740132635,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Z3/4.12.2-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "zellij": {
+        "description": "zellij is the terminal multiplexer and workspace with batteries included",
+        "domains": [
+            "base"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://zellij.dev/",
+        "support": "",
+        "versions": [
+            "0.43.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.43.1",
+        "default_type": "latest",
+        "last_updated": 1766450653,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/base/zellij/0.43.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
