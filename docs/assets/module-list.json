@@ -56,7 +56,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 1,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -70,7 +70,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 4,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -84,7 +84,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 40,
                         "usage_formula": "({cpu}**0.422)*5",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -3426,9 +3426,9 @@
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 2,
                         "usage_formula": "{node}",
-                        "use_conditions": "By booking only. Version not greater than 6.2.",
+                        "use_conditions": "By booking only. Version \u2264 5.4",
                         "visible_on_docs": true
                     }
                 ]
@@ -3450,6 +3450,7 @@
                 "server_type": "FLEXlm",
                 "server_uptime": 0.94,
                 "server_version": "11.15.1",
+                "software_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
@@ -3460,9 +3461,9 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 1,
                         "usage_formula": "{node}",
-                        "use_conditions": "Version not greater than 5.4",
+                        "use_conditions": "Version \u2264 5.4",
                         "visible_on_docs": true
                     }
                 ]
@@ -3494,7 +3495,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 6,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 5.5",
                         "visible_on_docs": true
@@ -3528,7 +3529,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 3,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.2",
                         "visible_on_docs": true
@@ -3557,12 +3558,12 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 10.33,
+                        "hourly_average": 10.32,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 1,
                         "usage_formula": "1",
                         "use_conditions": "Version not greater than 5.6",
                         "visible_on_docs": true
@@ -3571,12 +3572,12 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 7.82,
+                        "hourly_average": 7.81,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 1,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -3639,14 +3640,14 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 120518579.82,
+                        "hourly_average": 120381635.54,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 0,
+                        "total": 5,
                         "usage_formula": "{node}",
-                        "use_conditions": "Version not greater than 6.2",
+                        "use_conditions": "Version not greater than 6.3",
                         "visible_on_docs": true
                     }
                 ]
