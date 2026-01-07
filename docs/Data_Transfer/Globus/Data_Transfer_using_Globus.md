@@ -88,7 +88,7 @@ any person who has a Globus account.
 
 | Endpoint Name | Description | Recommended Use | Apply for Use | Contact |
 | ------------- | ----------- | --------------- | ------------- | ------- |
-|[NeSI HPC storage]| NeSI Globus Endpoint, located at Tamaki Data Centre | File-sharing and transferring files to/from NESI HPC and storage facilities. | [Quickstart guide](Globus_Quick_Start_Guide.md) | {% include "partials/support_request.html" %} |
+|[NeSI HPC storage]| NeSI Globus Endpoint, located at Tamaki Data Centre | File-sharing and transferring files to/from NESI HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
 | [University of Otago - HCS](https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007), [University of Otago - CHC HCS](https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9) | Endpoint for the High Capacity Research Storage Cluster, Dunedin Campus, University of Otago and Endpoint for the High Capacity Research Storage Cluster, Christchurch Campus, University of Otago | Primary endpoint for Otago Dunedin; uses local service accounts or Globus sharing. | [Access Form](https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form) | [university@otago.ac.nz](mailto:university@otago.ac.nz) |
 | University of Auckland Research Data Collection | Endpoint provides access to UoA research data. | Transferring files between UoA research drives and Mahuika | Apply by email | [researchdata@auckland.ac.nz](mailto:researchdata@auckland.ac.nz) |
 | AgResearch DTN01 | A Globus endpoint attached to AgResearch's institutional Linux storage platform | Sharing large datasets with external collaborators and moving large datasets between NeSI's facility and AgResearch's internal storage platform | Apply by email | [servicedesk@agresearch.co.nz](mailto:servicedesk@agresearch.co.nz) |
@@ -96,8 +96,6 @@ any person who has a Globus account.
 | MWLR PN-DTN-username | Customised endpoints for users to transfer data between MWLR and NeSI, or to share data with third-party collaborators | Generally for internal users, but also for sharing large datasets with collaborators | Contact the MWLR person you are wanting to share data with. | [IToperations@landcareresearch.co.nz](mailto:IToperations@landcareresearch.co.nz) |
 | Scion Data | Endpoint provides access to Scion research data | Sharing large datasets with external collaborators and moving large datasets between NeSI's facility and Scion's internal storage platform | Contact the Scion person you are wanting to share data with. |  |
 | ESR Endpoint | Endpoint provides access to ESR data | Generally for internal users, but also for sharing large datasets with collaborators | Contact the ESR person you are wanting to share data with. |  |
-| NeSI Wellington DTN | Old NeSI Globus Endpoint, being decommissioned 2021-12-08 | Transferring files to Mahuika, and file-sharing. |  [Conditions](./Data_Transfer_using_Globus.md)  | {% include "partials/support_request.html" %} |
-|NeSI Wellington DTN V5 | Old NeSI Globus Endpoint Version 5, located at NIWA Wellington (Greta Point) - being decommissioned 2025-09-27 | Transferring files to/from Mahuika, and file-sharing. | [Conditions](Data_Transfer_using_Globus.md) | {% include "partials/support_request.html" %} |
 
 !!! tip "How to establish a new node"
     {% include "partials/support_request.html" %} for details on how to
