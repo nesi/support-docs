@@ -21,7 +21,7 @@ For file transfer methods that use the terminal, see:
 
 For transferring files from other remote endpoints (i.e. not your local computer), see:
 
-* [RClone](./RClone.md),
+* [RClone](./RClone.md)
 * [FileSender](./FileSender.md) <WHY USE THIS OVER RClone??>
 * [Globus](./Globus/Overview.md) <WHY USE THIS OVER FILESENDER??>
 
@@ -77,9 +77,9 @@ To do this:
    ```
 
 !!! tip
-   To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
+    To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
 
-   If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
+    If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
 
 ### Compress Large Files
 
@@ -102,9 +102,9 @@ To compress one or more large files:
    ```
 
 !!! tip
-   To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
+    To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
 
-   If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
+    If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
 
 ### Use Checksums
 
