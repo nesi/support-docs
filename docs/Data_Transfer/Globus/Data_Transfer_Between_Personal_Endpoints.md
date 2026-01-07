@@ -28,7 +28,7 @@ Here is a break down of what you need to do:
     ![Globus_Transfer_2.png](../../assets/images/Globus_Transfer_2.png)
 
 3. Click on the `Your Collections` tab and click on the first computer/endpoint you want to transfer data to/from.
-    ![Globus_Transfer_7_2.png](../../assets/images/Globus_Transfer_7_2.png)
+    ![Globus_Transfer_Comp_3.png](../../assets/images/Globus_Transfer_Comp_3.png)
 
 4. This will take you back to the `File Manager` webpage. Repeat steps 2-3 for the right-hand side `Collection` field,
    selecting the second computer/endpoint you want to transfer data from/to.
@@ -40,11 +40,11 @@ Here is a break down of what you need to do:
     * In the other device's panel, enter in the path you want to copy your file to.
     * Above the first device's panel, click on the `Start` button to begin copying your file.
 
-    ![Globus_Transfer_8.png](../../assets/images/Globus_Transfer_8.png)
+    ![Globus_Transfer_Comp_4.png](../../assets/images/Globus_Transfer_Comp_4.png)
 
 6. You will see a green box at the top right corner of your Globus webpage that says `Transfer request submitted sucessfully`. This indicates that Globus is in the process of transferring your data between Mahuika and your computer/server.
     * You can click on the `Transfer` tab to get more details about how your transfer is doing.
 
-    ![Globus_Transfer_9_1.png](../../assets/images/Globus_Transfer_9_1.png)
-    ![Globus_Transfer_9_2.png](../../assets/images/Globus_Transfer_9_2.png)
-    ![Globus_Transfer_9_3.png](../../assets/images/Globus_Transfer_9_3.png)
+    ![Globus_Transfer_Comp_5.png](../../assets/images/Globus_Transfer_Comp_5.png)
+    ![Globus_Transfer_Comp_6.png](../../assets/images/Globus_Transfer_Comp_6.png)
+    ![Globus_Transfer_Comp_7.png](../../assets/images/Globus_Transfer_Comp_7.png)
