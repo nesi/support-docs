@@ -31,7 +31,7 @@ jobs:
       - name: Commit if Changes
         id: changes
         run: |
-          if git diff --quiet; then
+          if git diff --quiet -- . ':(exclude)*.ics'; then
             echo "no changes"
           else
             git add -A
