@@ -35,6 +35,6 @@ jobs:
             echo "no changes"
           else
             git add -A
-            git commit -m "Automatic asset update ($(date +'%Y-%m-%d'))"
+            git commit -m "Automatic asset update ($(date +'%c'))"
             git push origin main
           fi
