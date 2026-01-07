@@ -15,6 +15,8 @@ description: Tutorial on how to submit your first Slurm job
 
 ## Submitting your first batch script
 
+`sbatch`
+
 ## Checking the queue
 
 All users have the ability to view the entire queue for the cluster by running the command `squeue`.
@@ -27,7 +29,13 @@ This will return information on only the jobs that you have in the queue.
 
 By default, `squeue` will return X columns of information, but you can request additional fields.
 
+## Interacting with running jobs
+
+`scancel`
+
 ## Checking on previous jobs
+
+`sacct`
 
 ## Useful Slurm commands
 
@@ -35,20 +43,6 @@ There are two good sources for quick references on using Slurm:
 
 - our [Slurm Reference Sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
 - the official [Slurm documentation](https://slurm.schedmd.com/) and [cheatsheet](https://slurm.schedmd.com/pdfs/summary.pdf)
-
-Below is a summary of the commands you are likely to use on a regular basis while using Mahuika.
-
-### `sbatch`
-
-### `srun`
-
-### `salloc`
-
-### `squeue`
-
-### `sacct`
-
-### `scancel`
 
 ## Next steps
 
