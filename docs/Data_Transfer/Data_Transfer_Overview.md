@@ -35,27 +35,77 @@ For transferring data using specific tools, see:
 !!! info
     Find more information on [our filesystem](../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
 
-## Best Practice
+## Data Transfer Best Practices
 
 ### Avoid Transferring Temporary Files
 
-<ELABORATE ON WHAT ARE TEMPORARY FILES>
+Temporary files are files that created by a program while it is running. This may be to hold information that may be needed later, is too big to hold in memory (RAM), or are used for checkpointing. Temporary files are only needed by a program while it is running. Once a program has finished successfully, they can be removed. These may have file names ending with `.tmp` or `.temp`.
 
 It is best to avoid transferring temporary files. This is because temporary files:
 
 1. Can take up a large amount of space and contain a huge number of files.
-2. Are only used *temporarily* by the program that creates it and then not used again, so are not needed.
+2. Are only used *temporarily* by the program that creates it and then not used again, so are not needed ever again.
 
 It is recommended that before you transfer files that you either **delete all temporary files** or **avoid transferring temporary files**, it will take longer for your files to transfer and take up unnecessary space on your host drive.
 
 Transferring lots of files using Globus can also have detrimental effects on this service. Avoid transferring temporary files when using Globus.
 
+### Avoid Transferring lots of Small Files
+
+Whenever you transfer a file, a small amount of time is required to prepare the file for transfer. This is fine if you are only transferring a small number of files, or are transferring large data files where most of the time will be spent actually transferring the file. However, if you transfer a large number of small files, this preparation time grows significantly, hindering the speed of your transfer.
+
+If you need to transfer lots of small files, it is best practice to **first tarball or zip your files before transferring them**. This will collect all your files into one file that is easier for file transfer.
+
+To do this:
+
+1. Tarball the folder containing your files to transfer (you can compress the tarball or leave it uncompressed):
+
+   ```sh
+   tar -cvf tarball_file.tar folder_to_tarball # Uncompressed Mode
+   # or
+   tar -czvf tarball_file.tar folder_to_tarball # Compressed Mode
+   ```
+
+2. Transfer the tarball file using a file transfer method.
+
+3. Untarball the tarball containing your files:
+
+   ```sh
+   tar -xvf tarball_file.tar # Uncompressed Mode
+   # or
+   tar -xzvf tarball_file.tar # Compressed Mode
+   ```
+
+!!! tip
+   To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
+
+   If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
+
 ### Compress Large Files
 
-Write something here
+Large files can take a long time to transfer. In some cases these large files can be compressed, minimising the amount of data needed to be stored.
+
+To compress one or more large files:
+
+1. Tarball the folder containing your files to transfer (you can compress the tarball or leave it uncompressed):
+
+   ```sh
+   tar -czvf tarball_file.tar folder_to_tarball # Compressed Mode
+   ```
+
+2. Transfer the tarball file using a file transfer method.
+
+3. Untarball the tarball containing your files:
+
+   ```sh
+   tar -xzvf tarball_file.tar # Compressed Mode
+   ```
+
+!!! tip
+   To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
+
+   If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
 
 ### Use Checksums
 
-Write something here
-
-[checksums](Checksums.md)
+A checksum is a way to verify if a file you have copied has fully and successfully copied from one place to another. See the [Checksums](Checksums.md) page for more information about how checksums work and how to use them to verify your file transfers.
