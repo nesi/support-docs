@@ -51,9 +51,9 @@ PuTTY.
 The default WinSCP terminal is very basic. We
 recommend you use the PuTTY terminal instead.
 
-1. [Download PuTTY](https://www.putty.org/) and install.
+1. [Download PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and install.
 
-2. In WinSCP open 'Tools &gt; Preferences'
+2. In WinSCP open 'Options &gt; Preferences'
 
 ![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
 
