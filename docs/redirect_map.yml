@@ -98,7 +98,7 @@ Scientific_Computing/Terminal_Setup/VSCode.md : Getting_Started/Accessing_the_HP
 Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md : Getting_Started/Accessing_the_HPCs/Windows_Subsystem_for_Linux_WSL.md
 Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md : Getting_Started/Accessing_the_HPCs/WinSCP-PuTTY_Setup_Windows.md
 Scientific_Computing/Terminal_Setup/X11.md : Getting_Started/Accessing_the_HPCs/X11.md
-Getting_Started/Next_Steps/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Execution.md
+Getting_Started/Next_Steps/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Computing.md
 Getting_Started/Next_Steps/Multithreading_Scaling_Example.md : Software/Parallel_Computing/Multithreading_Scaling_Example.md
 Getting_Started/Next_Steps/MPI_Scaling_Example.md : Software/Parallel_Computing/MPI_Scaling_Example.md
 Getting_Started/Next_Steps/Finding_Job_Efficiency.md : Software/Profiling_and_Debugging/Finding_Job_Efficiency.md
@@ -174,3 +174,4 @@ Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profil
 Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Computing.md
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
+Batch_Computing/Batch_Computing_ : Batch_Computing/Batch_Computing_Guide.md

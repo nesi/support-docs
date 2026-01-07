@@ -3,11 +3,12 @@ name: Fetch Remote Assets
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 12 * * *'
+    - cron: '00 * * * *'
 
 permissions:
   contents: write
-
+env:
+  BRANCH: fetch-includes 
 jobs:
   fetch:
     runs-on: ubuntu-24.04
@@ -17,23 +18,23 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true 
-#          token: ${{ secrets.NESI_PAT }}
+          token: ${{ secrets.NESI_PAT }}
 
       - name: Configure Git
         run: |
-          git config user.name "automation"
-          git config user.email "automation@users.noreply.github.com"
+          git config user.name "nesi-mkdocs-bot"
+          git config user.email "bots-mkdocs@nesi.org.nz"
 
       - name: Fetch remote assets
         run: bash .github/fetch_includes.sh
 
-      - name: Commit changes (if any)
+      - name: Commit if Changes
+        id: changes
         run: |
-          if ! git diff --quiet; then
-            git add -A
-            git commit -m "Automatic asset update ($(date +'%Y-%m-%d'))"
-            git push origin main
-            echo "Changes committed."
+          if git diff --quiet -- . ':(exclude)*.ics'; then
+            echo "no changes"
           else
-            echo "No changes detected."
+            git add -A
+            git commit -m "Automatic asset update ($(date +'%c'))"
+            git push origin main
           fi

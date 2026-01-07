@@ -1,12 +1,12 @@
 ---
 nav:
-  - Globus_Quick_Start_Guide.md
+  - Overview.md
+  - First_Time_Setup.md
+  - Signing_Up_To_Globus_Subscription.md
+  - Add_Your_Computer_To_Globus.md
   - Data_Transfer_using_Globus.md
-  - Globus_endpoint_activation.md
-  - Globus Paths, Permissions, Storage_Allocation: Globus_Paths-Permissions-Storage_Allocation.md
-  - Initial Globus Sign-Up, and your Globus Identities: Initial_Globus_Sign_Up-and_your_Globus_Identities.md
-  - Re-creating Shared Collections and Bookmarks in Globus: Re_creating_Shared_Collections_and_Bookmarks_in_Globus.md
-  - Personal_Globus_Endpoint_Configuration.md
-  - National_Data_Transfer_Platform.md
+  - Data_Transfer_Between_Personal_Endpoints.md
+  - Bookmarks.md
+  - Share_Collections.md
   - Syncing_files_with_globus_automate.md
-  - "*"
+  - Globus_CLI.md
