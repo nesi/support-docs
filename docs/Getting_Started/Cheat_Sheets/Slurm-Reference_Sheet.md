@@ -8,7 +8,7 @@ description: Quick list of the most commonly used Slurm commands, flags, and env
 ---
 
 If you are unsure about using our job scheduler Slurm, more details can
-be found on [Submitting_your_first_job](../../Batch_Computing/Submitting_your_first_job.md).
+be found on [Batch Computing Guide](../../Batch_Computing/Batch_Computing_Guide.md) and we have a self-paced tutorial on [Submitting your first job](../../Batch_Computing/Submitting_your_first_job.md).
 
 ## Slurm Commands
 
