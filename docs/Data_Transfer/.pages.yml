@@ -1,6 +1,5 @@
 ---
 nav:
-  - Introduction.md
   - Data_Transfer_Overview.md
   - Checksums.md
   - Data_Transfer_Using_OnDemand.md
