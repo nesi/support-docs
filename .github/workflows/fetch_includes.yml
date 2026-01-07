@@ -28,11 +28,11 @@ jobs:
       - name: Fetch remote assets
         run: bash .github/fetch_includes.sh
 
-      - name: Detect changes
+      - name: Commit if Changes
         id: changes
         run: |
           if git diff --quiet; then
-            echo "no_changes"
+            echo "no changes"
           else
             git add -A
             git commit -m "Automatic asset update ($(date +'%Y-%m-%d'))"
