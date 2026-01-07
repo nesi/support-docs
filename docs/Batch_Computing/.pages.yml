@@ -7,5 +7,4 @@ nav:
  - Using_GPUs.md
  - Job_Checkpointing.md
  - Fair_Share.md
- - Checksums.md
  - "*"
