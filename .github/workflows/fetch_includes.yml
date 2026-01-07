@@ -7,7 +7,8 @@ on:
 
 permissions:
   contents: write
-
+env:
+  BRANCH: fetch-includes 
 jobs:
   fetch:
     runs-on: ubuntu-24.04
@@ -17,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true 
-#          token: ${{ secrets.NESI_PAT }}
+          token: ${{ secrets.NESI_PAT }}
 
       - name: Configure Git
         run: |
@@ -27,13 +28,46 @@ jobs:
       - name: Fetch remote assets
         run: bash .github/fetch_includes.sh
 
-      - name: Commit changes (if any)
+      - name: Detect changes
+        id: changes
         run: |
-          if ! git diff --quiet; then
-            git add -A
-            git commit -m "Automatic asset update ($(date +'%Y-%m-%d'))"
-            git push origin main
-            echo "Changes committed."
+          if git diff --quiet; then
+            echo "no_changes=true" >> $GITHUB_OUTPUT
           else
-            echo "No changes detected."
+            echo "no_changes=false" >> $GITHUB_OUTPUT
           fi
+      - name: Commit changes
+        if: steps.changes.outputs.no_changes == 'false'
+        run: |
+          git config user.name "nesi-service-bot"
+          git config user.email "service-bot@nesi.org.nz"
+          git add -A
+          git commit -m "Automatic asset update ($(date +'%Y-%m-%d'))"
+      - name: Push automation branch
+        if: steps.changes.outputs.no_changes == 'false'
+        run: |
+          git checkout -B $BRANCH
+          git push --force origin $BRANCH
+      - name: Create Pull Request
+        if: steps.changes.outputs.no_changes == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.NESI_PAT }}
+        run: |
+          # Only create PR if it doesn't exist
+          EXISTS=$(gh pr list --head $BRANCH --json number -q '.[0].number')
+          if [ "$EXISTS" = "null" ] || [ -z "$EXISTS" ]; then
+            gh pr create \
+              --title "Automatic asset update ($(date +'%Y-%m-%d'))" \
+              --body "Daily fetch update" \
+              --base main \
+              --head $BRANCH \
+              --assignee "@me"
+          fi
+      - name: Merge Pull Request
+        if: steps.changes.outputs.no_changes == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.NESI_PAT }}
+        run: |
+          PR_NUMBER=$(gh pr list --head $BRANCH --json number -q '.[0].number')
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr merge $PR_NUMBER --merge --admin

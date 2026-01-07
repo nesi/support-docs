@@ -11,6 +11,10 @@ Globus is a data transfer service that can be used to move data between Mahuika 
 The following guide shows how to:
 
 * [How to set up globus for the first time](./First_Time_Setup.md)
+<<<<<<< HEAD:docs/Data_Transfer/Globus/Overview.md
+=======
+* [How to set up your **free** Globus Subscription with NeSI](./Signing_Up_To_Globus_Subscription.md)
+>>>>>>> f50ae154d495f68085f911f01d483cb31bca0497:docs/File_Transfer/Globus/Overview.md
 * [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
 * [How to transfer data between Mahuika and your computer/server/HSC](./Data_Transfer_using_Globus.md)
 * [How to transfer data between two computer/server/HSC (rather than between Mahuika and your computer/server/HSC)](./Data_Transfer_Between_Personal_Endpoints.md)
