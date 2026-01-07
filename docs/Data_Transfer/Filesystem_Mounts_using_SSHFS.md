@@ -1,0 +1,65 @@
+---
+created_at: '2018-11-27T23:55:26Z'
+description: Information on how to use SSHFS on different local systems
+---
+
+!!! prerequisite
+    SSHFS utilises SSH, make sure you have set up your connection as described in [Standard Terminal Setup](../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md).
+
+[SSHFS](https://github.com/libfuse/sshfs) allows you to mount a remote
+filesystem on your local machine.
+
+## Linux
+
+Use the following commands to mount your home directory from Mahuika on
+your local machine:
+
+```sh
+# create a mount point and connect
+mkdir -p ~/nesi-home
+sshfs -oauto_cache,follow_symlinks nesi: ~/nesi-home
+```
+
+Now you should be able to navigate to "~/nesi-home" on your local
+machine to access your home directory on Mahuika. To unmount the
+directory run:
+
+```sh
+fusermount -u ~/nesi-home
+```
+
+To mount a project directory, you could run:
+
+```sh
+# create a mount point and connect
+mkdir -p ~/mahuika-project
+sshfs -oauto_cache,follow_symlinks nesi:/nesi/project/nesiXXXXX ~/mahuika-project
+```
+
+## MacOS
+
+We recommend using some extra options with MacOS. The following commands
+will mount your home directory, make it show up under devices in Finder
+and give the volume a sensible name:
+
+```sh
+# create a mount point and connect
+mkdir -p ~/nesi-home
+sshfs mahuika: ~/nesi-home \
+    -oauto_cache,follow_symlinks \
+    -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
+```
+
+To unmount the directory on MacOS, either eject from Finder or run:
+
+```sh
+umount ~/nesi-home
+```
+
+!!! note
+     Newer MacOS does not come with SSHFS pre-installed. You will have to
+     [install FUSE as SSHFS](https://osxfuse.github.io/).
+
+## Windows
+
+Windows Subsystem for Linux 2 (WSL2) provides FUSE support which means that the Linux method described above works from within a WSL2 distribution, although you may need to install `sshfs` before proceeding. If you want to be able to interact with the mounted files directly from your Windows user filesystem, you may need admin access to enable `user_other_allow` in the WSL `/etc/fuse.conf` and use the `-o allow_other` `sshfs` command option.

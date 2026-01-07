@@ -64,7 +64,6 @@ Scientific_Computing/HPC_Software_Environment/Software_Version_Management.md : S
 Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md : Software/Software_Installation_Request.md
 Scientific_Computing/HPC_Software_Environment/Installing_Applications_Yourself.md : Software/Installing_Applications_Yourself.md
 Scientific_Computing/Batch_Jobs/Checking_resource_usage.md : Batch_Computing/Checking_resource_usage.md
-Scientific_Computing/Batch_Jobs/Checksums.md : Batch_Computing/Checksums.md
 Scientific_Computing/Batch_Jobs/Fair_Share.md : Batch_Computing/Fair_Share.md
 Scientific_Computing/Batch_Jobs/Hardware.md : Batch_Computing/Hardware.md
 Scientific_Computing/Batch_Jobs/Job_Checkpointing.md : Batch_Computing/Job_Checkpointing.md
@@ -98,7 +97,7 @@ Scientific_Computing/Terminal_Setup/VSCode.md : Getting_Started/Accessing_the_HP
 Scientific_Computing/Terminal_Setup/Windows_Subsystem_for_Linux_WSL.md : Getting_Started/Accessing_the_HPCs/Windows_Subsystem_for_Linux_WSL.md
 Scientific_Computing/Terminal_Setup/WinSCP-PuTTY_Setup_Windows.md : Getting_Started/Accessing_the_HPCs/WinSCP-PuTTY_Setup_Windows.md
 Scientific_Computing/Terminal_Setup/X11.md : Getting_Started/Accessing_the_HPCs/X11.md
-Getting_Started/Next_Steps/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Execution.md
+Getting_Started/Next_Steps/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Computing.md
 Getting_Started/Next_Steps/Multithreading_Scaling_Example.md : Software/Parallel_Computing/Multithreading_Scaling_Example.md
 Getting_Started/Next_Steps/MPI_Scaling_Example.md : Software/Parallel_Computing/MPI_Scaling_Example.md
 Getting_Started/Next_Steps/Finding_Job_Efficiency.md : Software/Profiling_and_Debugging/Finding_Job_Efficiency.md
@@ -119,7 +118,6 @@ General/Policy/Postgraduate_allocations.md : Getting_Started/Policy/Postgraduate
 General/Policy/Privacy_Policy.md : Getting_Started/Policy/Privacy_Policy.md
 General/Policy/Proposal_Development_allocations.md : Getting_Started/Policy/Proposal_Development_allocations.md
 General/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md : Getting_Started/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md
-General/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md : Getting_Started/FAQs/Can_I_use_SSHFS_to_mount_the_cluster_filesystem_on_my_local_machine.md
 General/FAQs/Common_questions_about_the_platform_refresh.md : Getting_Started/FAQs/Common_questions_about_the_platform_refresh.md
 General/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md : Getting_Started/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md
 General/FAQs/How_busy_is_the_cluster.md : Getting_Started/FAQs/How_busy_is_the_cluster.md
@@ -144,7 +142,6 @@ General/FAQs/Why_am_I_seeing_Account_is_not_ready.md : Getting_Started/FAQs/Why_
 General/FAQs/Why_does_my_program_crash.md : Getting_Started/FAQs/Why_does_my_program_crash.md
 General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md : Getting_Started/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
 Getting_Started/Next_Steps/Submitting_your_first_job.md : Batch_Computing/Submitting_your_first_job.md
-Getting_Started/Next_Steps/Moving_files_to_and_from_the_cluster.md : File_Transfer/Moving_files_to_and_from_the_cluster.md
 Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC.md : Getting_Started/Getting_Help/Introduction_to_computing_on_the_NeSI_HPC.md
 Scientific_Computing/Training/Webinars.md : Getting_Started/Getting_Help/Webinars.md
 Scientific_Computing/Training/Workshops.md : Getting_Started/Getting_Help/Workshops.md
@@ -174,3 +171,4 @@ Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profil
 Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Computing.md
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
+Data_Transfer/Filesytem_Mounts_using_SSHFS.md : Data_Transfer/Filesystem_Mounts_using_SSHFS.md
