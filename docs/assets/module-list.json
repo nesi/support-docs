@@ -10008,6 +10008,7 @@
         "homepage": "",
         "support": "",
         "versions": [
+            "11.8.0",
             "12.2.2",
             "12.5.0"
         ],
@@ -13684,6 +13685,7 @@
         "versions": [
             "2.10.3-CUDA-11.4.1",
             "2.16.5-CUDA-11.8.0",
+            "2.16.5-GCCcore-11.3.0-CUDA-11.8.0",
             "2.17.1-CUDA-12.0.0",
             "2.27.7-GCCcore-12.3.0-CUDA-12.2.2",
             "2.4.7-CUDA-10.1.243",
@@ -21769,6 +21771,7 @@
         "support": "",
         "versions": [
             "1.2.0-GCCcore-12.3.0",
+            "1.3.0-GCCcore-11.3.0",
             "1.3.0-GCCcore-12.3.0"
         ],
         "admin_list": [],
@@ -21791,15 +21794,16 @@
         "homepage": "https://www.openucx.org/",
         "support": "",
         "versions": [
+            "1.3.0-GCCcore-11.3.0-CUDA-11.8.0",
             "1.3.0-GCCcore-12.3.0-CUDA-12.2.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.3.0-GCCcore-12.3.0-CUDA-12.2.2",
+        "default": "1.3.0-GCCcore-11.3.0-CUDA-11.8.0",
         "default_type": "latest",
-        "last_updated": 1762394232,
+        "last_updated": 1767912583,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/UCC-CUDA/1.3.0-GCCcore-12.3.0-CUDA-12.2.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/UCC-CUDA/1.3.0-GCCcore-11.3.0-CUDA-11.8.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21819,6 +21823,7 @@
             "1.12.1-intel-compilers-2022.0.2",
             "1.14.1-GCCcore-12.3.0",
             "1.18.1-GCC-11.3.0",
+            "1.18.1-GCCcore-11.3.0",
             "1.18.1-GCCcore-12.3.0"
         ],
         "admin_list": [],
@@ -21841,6 +21846,7 @@
         "homepage": "http://www.openucx.org/",
         "support": "",
         "versions": [
+            "1.18.1-GCCcore-11.3.0-CUDA-11.8.0",
             "1.18.1-GCCcore-12.3.0-CUDA-12.2.2"
         ],
         "admin_list": [],
