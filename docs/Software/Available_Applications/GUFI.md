@@ -23,13 +23,15 @@ There are two commands that GUFI provides:
 !!! note
     The filesystems that `gufi_find` and `gufi_du` work on are:
     
-    * `home`
-    * `projects`
-    * `nobackup`
+    * `/home`
+    * `/nesi/projects`
+    * `/nesi/nobackup`
 
-    For `gufi_find` and `gufi_du` to work, you must give the path name beginning from `/nesi/project` or `/nesi/nobackup`. Local addresses starting with `.` will also not work. For example:
+    For `gufi_find` and `gufi_du` to work, you must give the path name beginning from `/home`, `/nesi/project` or `/nesi/nobackup`. Local addresses starting with `.` will also not work. For example:
 
-    * `/nesi/nobackup/nesi12345/a_folder` and `/nesi/nobackup/nesi12345/a_folder` will work
+    * `/home/$USER/a_folder`
+    * `/nesi/nobackup/nesi12345/a_folder`
+    * `/nesi/nobackup/nesi12345/a_folder`
 
 
 ## Prerequisite: Must Load `gufi` Module
@@ -59,13 +61,13 @@ gufi_find full/path/to/folder/to/search -name <your_file>
     If you want to find `.bashrc` in your home directory:
     
     ```sh
-    gufi_find /nesi/home/$USER -name .bashrc
+    gufi_find /home/$USER -name .bashrc
     ```
 
     If you want to find the largest file in your folder:
 
     ```sh
-    gufi_find /nesi/home/$USER -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
+    gufi_find /home/$USER -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     gufi_find /nesi/project/nesi12345 -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     gufi_find /nesi/nobackup/nesi12345 -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     ```
@@ -90,13 +92,13 @@ For more options, see `gufi_du --help`
     If you want to find the size of your in your home directory:
     
     ```sh
-    gufi_du -s /nesi/home/$USER
+    gufi_du -s /home/$USER
     ```
 
     If you want to find the size of your `.bashrc` in your home directory:
     
     ```sh
-    gufi_du -s /nesi/home/$USER/.bashrc
+    gufi_du -s /home/$USER/.bashrc
     ```
 
     If you want to find the size of your project folder in `projects` or `nobackup`:
@@ -123,8 +125,8 @@ If your file or folder exists but `GUFI` does not find it, it is likely that you
 !!! example
 
     ```sh
-    john.doe@login03:~$ gufi_find /nesi/home/new_folder
-    Could not get realpath of "/search/nesi/home/new_folder": No such file or directory (2)
+    john.doe@login03:~$ gufi_find /home/new_folder
+    Could not get realpath of "/search/home/new_folder": No such file or directory (2)
     ```
 
 ### I get the message: `Does "XYZ" have treesummary data?`
@@ -132,7 +134,7 @@ If your file or folder exists but `GUFI` does not find it, it is likely that you
 If you get a message like this:
 
 ```sh
-gufi_du --inodes -s nesi/nobackup/nesi99991
+gufi_du --inodes -s /nesi/nobackup/nesi99991
 Error: Skipping directory "/search/nesi/nobackup/nesi99991": Permission denied (13)
 0 nesi/nobackup/nesi99991
 Warning: Did not get any results from gufi_query.
