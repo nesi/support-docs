@@ -95,9 +95,7 @@ If you have already deleted or moved files that appeared in ```nn_doomed_list```
     find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%u : %p\n'
     ```
 
-    where `<TIME>` is 90 days minus the number of days until autocleanup. For example, if there are 8 days until the autocleaning date, `<TIME>` should equal 90 - 8 = 82. 
-
-    Please refer to the autocleaning email to determine the autocleaning date. 
+    where `<TIME>` is 90 days minus the number of days until autocleanup. For example, if there are 8 days until the autocleaning date, `<TIME>` should equal 90 - 8 = 82. Please refer to the autocleaning email to determine the autocleaning date. 
     
     To direct this to a file (you will not see the output of this as it runs): 
     ```bash
