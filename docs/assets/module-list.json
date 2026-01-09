@@ -5537,6 +5537,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "f90wrap": {
+        "description": "f90wrap is a tool to automatically generate Python extension modules which\ninterface to Fortran code that makes use of derived types. It builds on the\ncapabilities of the popular f2py utility by generating a simpler Fortran 90\ninterface to the original Fortran code which is then suitable for wrapping with\nf2py, together with a higher-level Pythonic wrapper that makes the existance of\nan additional layer transparent to the final user.",
+        "domains": [
+            "devel"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/jameskermode/f90wrap",
+        "support": "",
+        "versions": [
+            "0.2.13-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.2.13-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1767915712,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/f90wrap/0.2.13-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Faiss": {
         "description": "\nFaiss is a library for efficient similarity search and clustering of dense\n vectors. It contains algorithms that search in sets of vectors of any size, up\n to ones that possibly do not fit in RAM. It also contains supporting code for\n evaluation and parameter tuning. Faiss is written in C++ with complete\n wrappers for Python/numpy. Some of the most useful algorithms are implemented\n on the GPU. It is developed primarily at Meta's Fundamental AI Research group.\n",
         "domains": [
