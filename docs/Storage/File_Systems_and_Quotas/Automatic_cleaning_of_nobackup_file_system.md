@@ -153,8 +153,12 @@ Please [contact our Support Team](mailto:support@nesi.org.nz) so we can discuss 
 If you would like to delete the files that have been marked for deletion, run this command:
     
 ```bash
-find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete
+find /nesi/nobackup/<project code> -type f -atime +TIME -ctime +TIME -delete
 ```
+
+where `TIME` is 90 days minus number of days until autocleanup. For example, if there is 8 days until the autocleaning date, `TIME` should equal 90 - 8 = 82. 
+
+Please refer to the autocleaning email to determine the autocleaning date. 
 
 ## More information
 
