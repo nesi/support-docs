@@ -1,6 +1,5 @@
 nav:
  - Batch_Computing_Guide.md
- - Submitting_your_first_job.md
  - Hardware.md
  - Job_prioritisation.md
  - SLURM-Best_Practice.md
@@ -8,4 +7,5 @@ nav:
  - Job_Checkpointing.md
  - Fair_Share.md
  - Checksums.md
+ - Tutorial:_Submitting_your_first_job.md
  - "*"
