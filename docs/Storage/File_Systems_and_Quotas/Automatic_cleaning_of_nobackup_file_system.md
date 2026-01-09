@@ -160,6 +160,7 @@ find /nesi/nobackup/<project code> -type f -atime +TIME -ctime +TIME -delete
 where `TIME` is 90 days minus number of days until autocleanup. 
 
 !!! example
+
     For example, if there is 8 days until the autocleaning date, `TIME` should equal 90 - 8 = 82. 
 
 Please refer to the autocleaning email to determine the autocleaning date. 
