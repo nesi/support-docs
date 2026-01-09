@@ -149,6 +149,12 @@ If you would like to delete the files that have been marked for deletion, run th
 find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete
 ```
 
+## How does the Autocleaner works?
+
+The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are order than 90 days and have not been accessed within 90 days. 
+
+GUFI performs indexing every weekend. Therefore if you have already deleted a file that was in your `nn_doomed_list` list, it will still appear in `nn_doomed_list` until the next week (when GUFI will re-index the files in `nobackup`. 
+
 ## More information
 
 If you have any questions or would like to discuss our storage facilities and policies in more detail, come to one of our [weekly Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) or [email our Support Team](mailto:support@nesi.org.nz) . 
