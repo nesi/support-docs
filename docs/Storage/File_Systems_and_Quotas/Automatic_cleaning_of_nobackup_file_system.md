@@ -130,6 +130,7 @@ If you have files identified as candidates for deletion that you need to keep be
 ## Where should I store my data?
 
 Generally: 
+
 -  the project directory should be used for reference data, tools, and job submission and management scripts.
 -  the scratch filesystem should be used for holding large reference working datasets (e.g., an extraction of compressed input data) and as a destination for writing and modifying temporary data. It can also be used to build and edit code, provided that the code is under version control and changes are regularly checked into upstream revision control systems.
 -  Freezer, our [long-term storage service](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), should be used for larger datasets that you only access occasionally and do not need to change in situ.
