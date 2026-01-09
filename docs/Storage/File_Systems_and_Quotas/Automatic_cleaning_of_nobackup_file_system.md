@@ -90,7 +90,7 @@ If you have already deleted or moved files that appeared in ```nn_doomed_list```
 
 !!! tip
     
-    If you would like to get an updated list of files for autodeletion (because they are 90 days old or more):
+    If you would like to get an updated list of files for autodeletion:
     ```bash
     find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%u : %p\n'
     ```
