@@ -32,7 +32,7 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 
 Objects other than files, such as directories and symbolic links, are not yet deleted under this policy (we will be reviewing the directory deletion policy in the next few months), even if at deletion time they are empty, broken, or otherwise redundant. These entities typically take up no disk space apart from a small amount of metadata, but still count towards the project's inode (file count) quota.
 
-### GUFI: The engine behind the Autocleaner
+### GUFI: The Engine behind the Autocleaner
 
 The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are order than 90 days and have not been accessed within 90 days. 
 
