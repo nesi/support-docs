@@ -19,7 +19,6 @@ Files are deleted if they meet **all** of the following criteria:
 - The file has not been accessed, and neither its data nor its metadata has been modified, for at least 90 days
 - The file was identified as a candidate for deletion two weeks previously (and as such is listed by the command `nn_doomed_list`)
 
-
 The general process follows a schedule of:
 
 - Fortnightly, we review files stored in the scratch filesystem and identify candidates for expiry.
@@ -32,6 +31,14 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 ![Auto cleaning cycle](../../assets/images/AutocleanerProcess.png)
 
 Objects other than files, such as directories and symbolic links, are not yet deleted under this policy (we will be reviewing the directory deletion policy in the next few months), even if at deletion time they are empty, broken, or otherwise redundant. These entities typically take up no disk space apart from a small amount of metadata, but still count towards the project's inode (file count) quota.
+
+### GUFI: The Engine behind the Autocleaner
+
+The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are order than 90 days and have not been accessed within 90 days. 
+
+GUFI performs indexing every weekend. Therefore if you have already deleted a file that was in your `nn_doomed_list` list, it will still appear in `nn_doomed_list` until the next week (when GUFI will re-index the files in `nobackup`. 
+
+See [the GUFI manual page](../../Software/Available_Applications/GUFI.md) for more information about GUFI.
 
 ## How will I be notified that my data is a candidate for deletion?
 
@@ -83,14 +90,16 @@ If you have already deleted or moved files that appeared in ```nn_doomed_list```
 
 !!! tip
     
-    If you would like to get an updated list of files for autodeletion (because they are 90 days old or more):
+    If you would like to get an updated list of files for autodeletion:
     ```bash
-    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'
+    find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%u : %p\n'
     ```
+
+    where `<TIME>` is 90 days minus the number of days until autocleanup. For example, if there are 8 days until the autocleaning date, `<TIME>` should equal 90 - 8 = 82. Please refer to the autocleaning email to determine the autocleaning date. 
     
     To direct this to a file (you will not see the output of this as it runs): 
     ```bash
-    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n > files_that_will_be_deleted.txt'
+    find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%u : %p\n > files_that_will_be_deleted.txt'
     ```
 
 ## How can I check which files have been deleted in the last deletion cycle?
@@ -123,6 +132,7 @@ If you have files identified as candidates for deletion that you need to keep be
 ## Where should I store my data?
 
 Generally: 
+
 -  the project directory should be used for reference data, tools, and job submission and management scripts.
 -  the scratch filesystem should be used for holding large reference working datasets (e.g., an extraction of compressed input data) and as a destination for writing and modifying temporary data. It can also be used to build and edit code, provided that the code is under version control and changes are regularly checked into upstream revision control systems.
 -  Freezer, our [long-term storage service](https://docs.nesi.org.nz/Storage/Long_Term_Storage/Freezer_long_term_storage/), should be used for larger datasets that you only access occasionally and do not need to change in situ.
@@ -146,8 +156,16 @@ Please [contact our Support Team](mailto:support@nesi.org.nz) so we can discuss 
 If you would like to delete the files that have been marked for deletion, run this command:
     
 ```bash
-find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete
+find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -delete
 ```
+
+where `<TIME>` is 90 days minus the number of days until autocleanup. 
+
+!!! example
+
+    If there are 8 days until the autocleaning date, `<TIME>` should equal 90 - 8 = 82. 
+
+Please refer to the autocleaning email to determine the autocleaning date. 
 
 ## More information
 
