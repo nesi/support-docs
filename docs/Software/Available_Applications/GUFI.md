@@ -17,18 +17,19 @@ There are two commands that GUFI provides:
 
 !!! warning
     This method uses a database that is updated on a weekly basis. It may not find or measure the size of files that were created or moved around Mahuika within the last week. 
+    
+    * We do indexing of GUFI at the weekend. 
 
 !!! note
     The filesystems that `gufi_find` and `gufi_du` work on are:
     
-    * `\home`
-    * `\projects`
-    * `\nobackup`
+    * `home`
+    * `projects`
+    * `nobackup`
 
-    For `gufi_find` and `gufi_du` to work, you must give the path name beginning from `project` or `nobackup`. Local addresses starting with `.` will also not work. For example:
+    For `gufi_find` and `gufi_du` to work, you must give the path name beginning from `/nesi/project` or `/nesi/nobackup`. Local addresses starting with `.` will also not work. For example:
 
-    * `nobackup/nesi12345/a_folder` and `/nobackup/nesi12345/a_folder` are acceptible, but 
-    * `/nesi/nobackup/nesi12345/a_folder`, `nesi12345/a_folder`, or `./nesi12345/a_folder` will not work. 
+    * `/nesi/nobackup/nesi12345/a_folder` and `/nesi/nobackup/nesi12345/a_folder` will work
 
 
 ## Prerequisite: Must Load `gufi` Module
@@ -45,13 +46,13 @@ module load .gufi
 The usual method for searching for a file using the terminal is:
 
 ```sh
-find path/to/folder/to/search -name <your_file>
+find full/path/to/folder/to/search -name <your_file>
 ```
 
-In GUFI, you provide the same arguments to `gufi_find` as you do with `find` (but starting with either `home`, `projects`, or `nobackup`):
+In GUFI, you provide the same arguments to `gufi_find` as you do with `find`:
 
 ```sh
-gufi_find /nesi/path/to/folder/to/search -name <your_file>
+gufi_find full/path/to/folder/to/search -name <your_file>
 ```
 
 !!! example
@@ -74,13 +75,13 @@ gufi_find /nesi/path/to/folder/to/search -name <your_file>
 The usual method for obtaining the size of a file or folder using the terminal is:
 
 ```sh
-du -s path/to/file/or/folder
+du -s full/path/to/file/or/folder
 ```
 
 In GUFI, you provide the same arguments to `gufi_du` as you do with `du` (but starting with either `home`, `projects`, or `nobackup`):
 
 ```sh
-gufi_du -s /nesi/path/to/file/or/folder
+gufi_du -s full/path/to/file/or/folder
 ```
 
 For more options, see `gufi_du --help`
@@ -133,7 +134,7 @@ If you get a message like this:
 ```sh
 gufi_du --inodes -s nesi/nobackup/nesi99991
 Error: Skipping directory "/search/nesi/nobackup/nesi99991": Permission denied (13)
-0 nobackup/nesi99991
+0 nesi/nobackup/nesi99991
 Warning: Did not get any results from gufi_query.
 Does "nesi/nobackup/nesi99991" have treesummary data?
 ```
@@ -144,7 +145,7 @@ This means that `gufi_find` or `gufi_du` was not able to find any information ab
 2. You don't have permissions to look at the files and folders that you were trying to search in, or 
 3. Your files and folders were created before they were included in the `GUFI` database. 
 
-If 3 applies to you, you will need to wait until the end of the week for those files and folders to be indexed by `GUFI`.
+If 3 applies to you, you will need to wait until the end of the weekend for those files and folders to be indexed by `GUFI`.
 
 ### I get the message: `Error: Skipping directory "nesi/nobackup/XYZ": Permission denied (13)`
 
