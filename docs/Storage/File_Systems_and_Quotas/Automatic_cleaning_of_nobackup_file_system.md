@@ -92,12 +92,16 @@ If you have already deleted or moved files that appeared in ```nn_doomed_list```
     
     If you would like to get an updated list of files for autodeletion (because they are 90 days old or more):
     ```bash
-    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n'
+    find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%u : %p\n'
     ```
+
+    where `<TIME>` is 90 days minus the number of days until autocleanup. For example, if there are 8 days until the autocleaning date, `<TIME>` should equal 90 - 8 = 82. 
+
+Please refer to the autocleaning email to determine the autocleaning date. 
     
     To direct this to a file (you will not see the output of this as it runs): 
     ```bash
-    find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -printf '%u : %p\n > files_that_will_be_deleted.txt'
+    find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%u : %p\n > files_that_will_be_deleted.txt'
     ```
 
 ## How can I check which files have been deleted in the last deletion cycle?
@@ -161,7 +165,7 @@ where `<TIME>` is 90 days minus the number of days until autocleanup.
 
 !!! example
 
-    If there is 8 days until the autocleaning date, `<TIME>` should equal 90 - 8 = 82. 
+    If there are 8 days until the autocleaning date, `<TIME>` should equal 90 - 8 = 82. 
 
 Please refer to the autocleaning email to determine the autocleaning date. 
 
