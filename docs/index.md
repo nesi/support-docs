@@ -35,7 +35,7 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <h3>Resources</h3>
     <p>What CPUs and GPUs are available on the REANNZ Cluster.</p>
 </a>
-<a href="Data_Transfer/Introduction/">
+<a href="Data_Transfer/Data_Transfer_Overview/">
     <img alt="ssh setup" src="./assets/icons/material/file-arrow-up-down.svg">
     <h3>Data Transfer</h3>
     <p>Getting your data on and off the cluster.</p>
