@@ -157,7 +157,7 @@ If you would like to delete the files that have been marked for deletion, run th
 find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -delete
 ```
 
-where `<TIME>` is 90 days minus number of days until autocleanup. 
+where `<TIME>` is 90 days minus the number of days until autocleanup. 
 
 !!! example
 
