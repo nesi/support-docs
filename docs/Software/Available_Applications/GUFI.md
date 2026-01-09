@@ -23,13 +23,13 @@ There are two commands that GUFI provides:
 !!! note
     The filesystems that `gufi_find` and `gufi_du` work on are:
     
-    * `/home`
+    * `/nesi/home`
     * `/nesi/projects`
     * `/nesi/nobackup`
 
-    For `gufi_find` and `gufi_du` to work, you must give the path name beginning from `/home`, `/nesi/project` or `/nesi/nobackup`. Local addresses starting with `.` will also not work. For example:
+    For `gufi_find` and `gufi_du` to work, you must give the path name beginning with `/nesi/home`, `/nesi/project` or `/nesi/nobackup`. Local addresses starting with `.` will also not work. For example:
 
-    * `/home/$USER/a_folder`
+    * `/nesi/home/$USER/a_folder`
     * `/nesi/nobackup/nesi12345/a_folder`
     * `/nesi/nobackup/nesi12345/a_folder`
 
@@ -54,20 +54,20 @@ find full/path/to/folder/to/search -name <your_file>
 In GUFI, you provide the same arguments to `gufi_find` as you do with `find`:
 
 ```sh
-gufi_find full/path/to/folder/to/search -name <your_file>
+gufi_find /nesi/full/path/to/folder/to/search -name <your_file>
 ```
 
 !!! example
     If you want to find `.bashrc` in your home directory:
     
     ```sh
-    gufi_find /home/$USER -name .bashrc
+    gufi_find /nesi/home/$USER -name .bashrc
     ```
 
     If you want to find the largest file in your folder:
 
     ```sh
-    gufi_find /home/$USER -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
+    gufi_find /nesi/home/$USER -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     gufi_find /nesi/project/nesi12345 -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     gufi_find /nesi/nobackup/nesi12345 -type f -printf '%s %p\n' 2>/dev/null | sort -nr | head -n 1
     ```
@@ -83,7 +83,7 @@ du -s full/path/to/file/or/folder
 In GUFI, you provide the same arguments to `gufi_du` as you do with `du` (but starting with either `home`, `projects`, or `nobackup`):
 
 ```sh
-gufi_du -s full/path/to/file/or/folder
+gufi_du -s /nesi/full/path/to/file/or/folder
 ```
 
 For more options, see `gufi_du --help`
@@ -92,13 +92,13 @@ For more options, see `gufi_du --help`
     If you want to find the size of your in your home directory:
     
     ```sh
-    gufi_du -s /home/$USER
+    gufi_du -s /nesi/home/$USER
     ```
 
     If you want to find the size of your `.bashrc` in your home directory:
     
     ```sh
-    gufi_du -s /home/$USER/.bashrc
+    gufi_du -s /nesi/home/$USER/.bashrc
     ```
 
     If you want to find the size of your project folder in `projects` or `nobackup`:
@@ -125,8 +125,8 @@ If your file or folder exists but `GUFI` does not find it, it is likely that you
 !!! example
 
     ```sh
-    john.doe@login03:~$ gufi_find /home/new_folder
-    Could not get realpath of "/search/home/new_folder": No such file or directory (2)
+    john.doe@login03:~$ gufi_find /nesi/home/new_folder
+    Could not get realpath of "/search/nesi/home/new_folder": No such file or directory (2)
     ```
 
 ### I get the message: `Does "XYZ" have treesummary data?`
