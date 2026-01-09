@@ -19,7 +19,6 @@ Files are deleted if they meet **all** of the following criteria:
 - The file has not been accessed, and neither its data nor its metadata has been modified, for at least 90 days
 - The file was identified as a candidate for deletion two weeks previously (and as such is listed by the command `nn_doomed_list`)
 
-
 The general process follows a schedule of:
 
 - Fortnightly, we review files stored in the scratch filesystem and identify candidates for expiry.
@@ -32,6 +31,14 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 ![Auto cleaning cycle](../../assets/images/AutocleanerProcess.png)
 
 Objects other than files, such as directories and symbolic links, are not yet deleted under this policy (we will be reviewing the directory deletion policy in the next few months), even if at deletion time they are empty, broken, or otherwise redundant. These entities typically take up no disk space apart from a small amount of metadata, but still count towards the project's inode (file count) quota.
+
+### GUFI: The engine behind the Autocleaner
+
+The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are order than 90 days and have not been accessed within 90 days. 
+
+GUFI performs indexing every weekend. Therefore if you have already deleted a file that was in your `nn_doomed_list` list, it will still appear in `nn_doomed_list` until the next week (when GUFI will re-index the files in `nobackup`. 
+
+See [the GUFI manual page](../../Software/Available_Applications/GUFI.md) for more information about GUFI.
 
 ## How will I be notified that my data is a candidate for deletion?
 
@@ -148,12 +155,6 @@ If you would like to delete the files that have been marked for deletion, run th
 ```bash
 find /nesi/nobackup/<project code> -type f -atime +90 -ctime +90 -delete
 ```
-
-## How does the Autocleaner works?
-
-The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are order than 90 days and have not been accessed within 90 days. 
-
-GUFI performs indexing every weekend. Therefore if you have already deleted a file that was in your `nn_doomed_list` list, it will still appear in `nn_doomed_list` until the next week (when GUFI will re-index the files in `nobackup`. 
 
 ## More information
 
