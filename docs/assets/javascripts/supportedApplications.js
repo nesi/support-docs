@@ -130,16 +130,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Prevent bubbling from badge container
   document.querySelectorAll(".badge-largeinator").forEach(el => {
-    el.addEventListener("click", event => 
+    el.addEventListener(("click"), event => 
     {
-      event.stopPropagation();
+
       console.log(event);
       const badge = event.target.closest(".badge-largeinator");
       console.log(badge.dataset.domain);
       if (!badge) return;
       toggleDomain(badge.dataset.domain);
-    }, true);
+    });
+    el.addEventListener("toggle", event => {
+      event.stopPropagation();
+      event.preventDefault();
+    })
   });
+
+
 
   render();
 });
@@ -149,3 +155,5 @@ document.addEventListener("DOMContentLoaded", () => {
  * ========================================================================== */
 
 window.domainToggleFilter = toggleDomain;
+window.onSearchInput = onSearchInput;
+

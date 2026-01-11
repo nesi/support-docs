@@ -115,44 +115,18 @@ li {
     color: #fff;
     line-height: 100%;
     vertical-align: middle;
-    cursor: pointer;
     padding: 0.2em;
     border-radius: 1pt;
-}
-
-.badge-closeable > button {
-    background-color: transparent;
-    border: 0;
-    float: right;
     cursor: pointer;
-    padding: 0.4em 0.3em 0.3em 0.6em;
-    margin: -0.3em;
-}
-
-.badge-closeable > button::after {
-    content: " \f057";
-    font-family: "FontAwesome";
+    pointer-events: all;
 }
 
 .badge-closeable {
-    cursor: default;
-}
-
-.badge-cluster {
+    background-color: transparent;
+    border: 0;
     float: right;
-    border-style: double; 
-}
-
-.badge-cluster-maui {
-    background-color: #3c816e;
-}
-
-.badge-cluster-maui_ancil {
-    background-color: #3600b3;
-}
-
-.badge-cluster-mahuika {
-   background-color: #972220;
+    padding: 0.4em 0.3em 0.3em 0.6em;
+    margin: -0.3em;
 }
 
 .badge-domain-biology{
@@ -222,7 +196,6 @@ li {
 .badge-largeinator{
     padding: 0.4em;
     margin: -0.4em;
-    cursor: pointer;
 }  
 
 @media (max-width: 560px){
