@@ -11,23 +11,23 @@ description: Tutorial on how to submit your first Slurm job
     This tutorial assumes basic familiarity with bash and the terminal.
     The first three lessons of the [Software Carpentry Unix Shell lessons](https://swcarpentry.github.io/shell-novice/) covers the information needed.
 
-# Overview
+## Overview
 
 The exercises in this tutorial should take approximately 10 minutes to complete.
 
-## Questions
+### Questions
 
 - What is a scheduler and why does a cluster need one?
 - How do I launch a program to run on a compute node in the cluster?
 - How do I capture the output of a program that is run on a node in the cluster?
 
-## Objectives
+### Objectives
 
 - Run a simple script through the scheduler
 - Use the batch system command line tools to monitor the execution of your job
 - Inspect the output and error files of your jobs
 
-# What is a job scheduler?
+## What is a job scheduler?
 
 An HPC system might have thousands of nodes and thousands of users.
 How do we decide who gets what and when?
@@ -44,7 +44,7 @@ The scheduler used in this lesson is [Slurm](https://slurm.schedmd.com/).
 Although Slurm is not used everywhere, running jobs is quite similar regardless of what software is being used.
 The exact syntax might change, but the concepts remain the same.
 
-# What is a batch job?
+## What is a batch job?
 
 Typically, when we enter a command into our terminal, we receive a response immediately in the same terminal.
 This is what we call an *interactive session*.
@@ -55,7 +55,7 @@ Or what if we want to repeat a series of command again later?
 This is where *batch* processing becomes useful, this is where instead of entering commands directly to the terminal we write them down in a text file or script.
 Then, the script can be executed by calling it with bash.
 
-## Writing your first batch script
+### Writing your first batch script
 
 Let's try this now, create and open a new file in your current directory called `example_job.sh`.
 (If you prefer another text editor than `nano`, feel free to use that)
@@ -113,7 +113,7 @@ You will get the output printed to your terminal as if you had just run those co
     If you just want your terminal back, but want the task to continue running you can ‘background’ it by pressing `ctrl + v`.
     Note, a backgrounded task is still attached to your terminal session, and will be killed when you close the terminal (if you need to keep running a task after you log out, have a look at [tmux](https://github.com/tmux/tmux/wiki)).
 
-## Scheduling your batch job
+### Scheduling your batch job
 
 Up until now the scheduler has not been involved, our scripts were run directly on the login node.
 
@@ -184,7 +184,7 @@ Submitted batch job 360064
 And that’s all we need to do to submit a job.
 Our work is done – now the scheduler takes over and tries to run the job for us.
 
-## Checking your running/pending jobs
+### Checking your running/pending jobs
 
 While the job is waiting to run, it goes into a list of jobs called the queue.
 To check on our job’s status, we check the queue using the command `squeue` (**s**lurm **queue**).
@@ -210,7 +210,7 @@ We can see many details about our job, most importantly is it’s STATE, the mos
 - `TIMEOUT`: Your job has running for longer than your `--time` and was killed.
 - `OUT_OF_MEMORY`: Your job tried to use more memory that it is allocated (`--mem`) and was killed.
 
-## Cancelling queued or running jobs
+### Cancelling queued or running jobs
 
 Sometimes we’ll make a mistake and need to cancel a job.
 This can be done with the `scancel` command.
@@ -259,7 +259,7 @@ JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  T
     ```
     
 
-## Checking finished jobs
+### Checking finished jobs
 
 There is another command `sacct` (**s**lurm **acc**oun**t**) that includes jobs that have finished.
 By default `sacct` only includes jobs submitted by you, so no need to include additional commands at this point.
@@ -322,7 +322,7 @@ This can be suppressed using the flag `-X`.
     echo ${SLURM_SUBMIT_DIR}
     ```
 
-# Key points
+## Key points
 
 - The scheduler handles how compute resources are shared between users
 - A job is just a shell script
