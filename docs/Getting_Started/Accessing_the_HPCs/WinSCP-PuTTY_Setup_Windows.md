@@ -51,9 +51,9 @@ PuTTY.
 The default WinSCP terminal is very basic. We
 recommend you use the PuTTY terminal instead.
 
-1. [Download PuTTY](https://www.putty.org/) and install.
+1. [Download PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and install.
 
-2. In WinSCP open 'Tools &gt; Preferences'
+2. In WinSCP open 'Options &gt; Preferences'
 
 ![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
 
@@ -129,5 +129,5 @@ for a single transfer'.
      with login authentication.
 
 !!! prerequisite "What Next?"
-     -  [Moving files to and from the cluster](../../File_Transfer/Moving_files_to_and_from_the_cluster.md)
+     -  [Moving files to and from the cluster](../../Data_Transfer/Data_Transfer_Overview.md)
      -  [X11 on NeSI](./X11.md)(optional).

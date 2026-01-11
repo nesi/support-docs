@@ -15,12 +15,12 @@ Technical documentation for our High Performance Computing (HPC) platforms.
 ## Quickstart
 
 <div class="grid cards">
-<a href="/Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
+<a href="Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
     <img alt="account details" src="assets/icons/material/account-details.svg">
     <h3>Accounts</h3>
     <p>How to get started with accounts, projects and allocations.</p>
 </a>
-<a href="/Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster/">
+<a href="Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster/">
     <img alt="ssh setup" src="assets/icons/material/lan-connect.svg">
     <h3>Connecting to the Cluster</h3>
     <p>How to set up a connection to the cluster.</p>
@@ -30,14 +30,14 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <h3>OnDemand ↗</h3>
     <p>Access the cluster Via the OnDemand web application.</p>
 </a>
-<a href="/Scientific_Computing/Batch_Jobs/Hardware">
+<a href="Scientific_Computing/Batch_Jobs/Hardware/">
     <img alt="account details" src="assets/icons/material/widget-small.svg">
     <h3>Resources</h3>
     <p>What CPUs and GPUs are available on the REANNZ Cluster.</p>
 </a>
-<a href="/File_Transfer/Moving_files_to_and_from_the_cluster">
+<a href="Data_Transfer/Data_Transfer_Overview/">
     <img alt="ssh setup" src="./assets/icons/material/file-arrow-up-down.svg">
-    <h3>File Transfer</h3>
+    <h3>Data Transfer</h3>
     <p>Getting your data on and off the cluster.</p>
 </a>
 <a href="Getting_Started/Next_Steps/Submitting_your_first_job#slurm">

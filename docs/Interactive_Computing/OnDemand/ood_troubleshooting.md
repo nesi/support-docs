@@ -26,7 +26,7 @@ The solution for this is to clear up some space in the home directory. You can s
 
 ### `No space left on device`
 
-This error indicates that your home drive is full. You will probably see an image like this:
+This error indicates that your home drive is full. Your `home` directory quota needs to be under 20GB. You will probably see an image like this:
 
 ![NeSI_OnDemand_No_Space_Left_1.png](../../assets/images/NeSI_OnDemand_No_Space_Left_1.png)
 
@@ -49,10 +49,10 @@ To resolve this issue:
 
     ```sh
     cd
-    du -hs $(ls -A)
+    du -hs $(ls -A) | sort -hr
     ```
 
-5. The `du -hs $(ls -A)` command will list the size of the files and folders that your `home` directory contains. You will need to move/remove files and folders off the `home` directory. 
+5. The `du -hs $(ls -A) | sort -hr` command will list the size of the files and folders that your `home` directory contains, from biggest to smallest. You will need to move/remove files and folders off the `home` directory. 
 6. Once you have space free in your `home` directory, try using your OnDemand Apps again. 
 
 ## App Initialisation
