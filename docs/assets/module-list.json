@@ -9810,7 +9810,7 @@
             "22Jul2025-foss-2023a-kokkos",
             "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
             "23Jun2022-gimkl-2022a-kokkos",
-            "23Jun2022-gimkl-2022a-kokkos-CUDA-11.8.0-ECHEMDID",
+            "23Jun2022-gimkl-2022a-kokkos-ECHEMDID-CUDA-11.8.0",
             "23Jun2022-gimkl-2022a-kokkos-EChemDID",
             "31Aug2021-gimkl-2022a-kokkos-EChemDID"
         ],
