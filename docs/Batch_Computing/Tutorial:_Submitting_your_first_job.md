@@ -186,28 +186,141 @@ Our work is done – now the scheduler takes over and tries to run the job for u
 
 ## Checking your running/pending jobs
 
-All users have the ability to view the entire queue for the cluster by running the command `squeue`.
-This will list all jobs running or waiting to run on Mahuika, which can be quite a large number.
+While the job is waiting to run, it goes into a list of jobs called the queue.
+To check on our job’s status, we check the queue using the command `squeue` (**s**lurm **queue**).
+We will need to filter to see only our jobs, by including either the flag `--user <username>` or `--me`.
 
-It is often far more useful to look at the status of running or queued jobs that you submitted, and there is a shortcut to help with this: `squeue --me`.
-This will return information on only the jobs that you have in the queue.
+```sh
+10:00:00 login01 $ squeue --me
+```
 
-By default, `squeue` will return X columns of information, but you can request additional fields.
+```sh
+JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  TIME_LEFT STATE    NODELIST(REASON)
+231964  yourUsername nesi12345 example_job.sl 1    300M     large   N/A        1:00     PENDING  (Priority)
+```
 
-## Interacting with running jobs
 
-`scancel`
+We can see many details about our job, most importantly is it’s STATE, the most common states you might see are..
 
-## Checking on finished jobs
+- `PENDING`: The job is waiting in the queue, likely waiting for resources to free up or higher priority jobs to run.
+- `RUNNING`: The job has been sent to a compute node and it is processing our commands.
+- `COMPLETED`: Your commands completed successfully as far as Slurm can tell (e.g. `exit 0`).
+- `FAILED`: (e.g. `exit` not `0`).
+- `CANCELLED`: See the next section
+- `TIMEOUT`: Your job has running for longer than your `--time` and was killed.
+- `OUT_OF_MEMORY`: Your job tried to use more memory that it is allocated (`--mem`) and was killed.
 
-`sacct`
+## Cancelling queued or running jobs
 
-## References for Slurm commands
+Sometimes we’ll make a mistake and need to cancel a job.
+This can be done with the `scancel` command.
 
-There are two good sources for quick references on using Slurm:
+In order to cancel the job, we will first need its `JobId`, this can be found in the output of `squeue --me`.
 
-- our [Slurm Reference Sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
-- the official [Slurm documentation](https://slurm.schedmd.com/) and [cheatsheet](https://slurm.schedmd.com/pdfs/summary.pdf)
+```sh
+10:00:00 login01 $ scancel 231964
+```
+
+A clean return of your command prompt indicates that the request to cancel the job was successful.
+
+Now checking `squeue` again, the job should be gone.
+
+```sh
+10:00:00 login01 $ squeue --me
+```
+
+```sh
+JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  TIME_LEFT STATE    NODELIST(REASON)
+```
+
+(If it isn’t wait a few seconds and try again).
+
+!!! question "Cancelling multiple jobs"
+    We can also cancel all of our jobs at once using the `-u` option.
+    This will delete all jobs for a specific user (in this case, yourself).
+    Note that you can only delete your own jobs.
+
+    Try submitting multiple jobs and then cancelling them all.
+
+    Solution:
+
+    First submit a trio of jobs:
+
+    ```sh
+    10:00:00 login01 $ sbatch  example_job.sl
+    10:00:00 login01 $ sbatch  example_job.sl
+    10:00:00 login01 $ sbatch  example_job.sl
+    ```
+
+    Then cancel all of them:
+
+    ```sh
+    10:00:00 login01 $ scancel --user yourUsername
+    ```
+    
+
+## Checking finished jobs
+
+There is another command `sacct` (**s**lurm **acc**oun**t**) that includes jobs that have finished.
+By default `sacct` only includes jobs submitted by you, so no need to include additional commands at this point.
+
+```sh
+10:00:00 login01 $ sacct
+```
+
+```sh
+JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State      
+--------------- ---------------- ----- ----------- ------------ ------- -------- ---------- 
+31060451        example_job.sl       2    00:00:48    00:33.548      1G          CANCELLED  
+31060451.batch  batch                2    00:00:48    00:33.547          102048K CANCELLED  
+31060451.extern extern               2    00:00:48     00:00:00                0 CANCELLED  
+```
+
+Note that despite the fact that we have only run one job, there are three lines shown, this because each job step is also shown.
+This can be suppressed using the flag `-X`.
+
+!!! info "Where's the output?"
+    On the login node, when we ran the bash script, the output was printed to the terminal.
+    Slurm batch job output is typically redirected to a file, by default this will be a file named `slurm-<job-id>.out` in the directory where the job was submitted, this can be changed with the slurm parameter `--output`.
+    
+
+!!! tip "More info on Slurm"
+    You can use the manual pages for Slurm utilities to find more about their capabilities.
+    On the command line, these are accessed through the man utility: run `man <program-name>`.
+    You can find the same information online by searching: 'man <program-name>".
+    
+    ```sh
+    10:00:00 login01 $ man sbatch
+    ```
+
+    There are two additional good sources for quick references on using Slurm:
+
+    - our [Slurm Reference Sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
+    - the official [Slurm documentation](https://slurm.schedmd.com/) and [cheatsheet](https://slurm.schedmd.com/pdfs/summary.pdf)
+
+!!! question "Job environment variables"
+    When Slurm runs a job, it sets a number of environment variables for the job.
+    One of these will let us check what directory our job script was submitted from.
+    The `SLURM_SUBMIT_DIR` variable is set to the directory from which our job was submitted.
+    Using the `SLURM_SUBMIT_DIR` variable, modify your job so that it prints out the location from which the job was submitted.
+
+    Solution:
+
+    ```sh
+    10:00:00 login01 $ nano example_job.sh
+    10:00:00 login01 $ cat example_job.sh
+    ```
+
+    ```sh
+    #!/bin/bash -e
+    #SBATCH --time 00:00:30
+
+    echo -n "This script is running on "
+    hostname
+
+    echo "This job was launched in the following directory:"
+    echo ${SLURM_SUBMIT_DIR}
+    ```
 
 # Key points
 
