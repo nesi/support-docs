@@ -39,7 +39,7 @@ On an HPC system, the scheduler manages which jobs run where and when.
 The following illustration compares these tasks of a job scheduler to a waiter in a restaurant.
 If you can relate to an instance where you had to wait for a while in a queue to get in to a popular restaurant, then you may now understand why sometimes your job do not start instantly as in your laptop.
 
-![]()
+![Queue manager](../assets/images/restaurant_queue_manager.svg)
 
 The scheduler used in this lesson is [Slurm](https://slurm.schedmd.com/).
 Although Slurm is not used everywhere, running jobs is quite similar regardless of what software is being used.
