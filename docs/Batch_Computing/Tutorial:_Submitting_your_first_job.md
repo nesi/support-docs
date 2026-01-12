@@ -61,7 +61,7 @@ Let's try this now, create and open a new file in your current directory called 
 (If you prefer another text editor than `nano`, feel free to use that)
 
 ```sh
-10:00:00 login01 $ nano example_job.sh
+nano example_job.sh
 ```
 
 <!-- TODO: change this script to not require another file -->
@@ -85,10 +85,10 @@ echo "Done!"
 We can now run this script using
 
 ```sh
-10:00:00 login01 $ bash example_job.sh
+bash example_job.sh
 ```
 <!-- TODO: correct output based on update to the script -->
-```sh
+```out
 The following modules were not unloaded:
   (Use "module --force purge" to unload all):
 
@@ -174,10 +174,10 @@ We’ll talk more about how to make sure that you’re using resources effective
 Now, rather than running our script with `bash` we submit it to the scheduler using the command `sbatch` (**s**lurm **batch**).
 
 ```sh
-10:00:00 login01 $ sbatch example_job.sl
+sbatch example_job.sl
 ```
 
-```sh
+```out
 Submitted batch job 360064
 ```
 
@@ -191,7 +191,7 @@ To check on our job’s status, we check the queue using the command `squeue` (*
 We will need to filter to see only our jobs, by including either the flag `--user <username>` or `--me`.
 
 ```sh
-10:00:00 login01 $ squeue --me
+squeue --me
 ```
 
 ```sh
@@ -218,7 +218,7 @@ This can be done with the `scancel` command.
 In order to cancel the job, we will first need its `JobId`, this can be found in the output of `squeue --me`.
 
 ```sh
-10:00:00 login01 $ scancel 231964
+scancel 231964
 ```
 
 A clean return of your command prompt indicates that the request to cancel the job was successful.
@@ -226,10 +226,10 @@ A clean return of your command prompt indicates that the request to cancel the j
 Now checking `squeue` again, the job should be gone.
 
 ```sh
-10:00:00 login01 $ squeue --me
+squeue --me
 ```
 
-```sh
+```out
 JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  TIME_LEFT STATE    NODELIST(REASON)
 ```
 
@@ -247,15 +247,15 @@ JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  T
     First submit a trio of jobs:
 
     ```sh
-    10:00:00 login01 $ sbatch  example_job.sl
-    10:00:00 login01 $ sbatch  example_job.sl
-    10:00:00 login01 $ sbatch  example_job.sl
+    sbatch  example_job.sl
+    sbatch  example_job.sl
+    sbatch  example_job.sl
     ```
 
     Then cancel all of them:
 
     ```sh
-    10:00:00 login01 $ scancel --user yourUsername
+    scancel --user yourUsername
     ```
     
 
@@ -265,10 +265,10 @@ There is another command `sacct` (**s**lurm **acc**oun**t**) that includes jobs 
 By default `sacct` only includes jobs submitted by you, so no need to include additional commands at this point.
 
 ```sh
-10:00:00 login01 $ sacct
+sacct
 ```
 
-```sh
+```out
 JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State      
 --------------- ---------------- ----- ----------- ------------ ------- -------- ---------- 
 31060451        example_job.sl       2    00:00:48    00:33.548      1G          CANCELLED  
@@ -290,7 +290,7 @@ This can be suppressed using the flag `-X`.
     You can find the same information online by searching: 'man <program-name>".
     
     ```sh
-    10:00:00 login01 $ man sbatch
+    man sbatch
     ```
 
     There are two additional good sources for quick references on using Slurm:
@@ -307,8 +307,8 @@ This can be suppressed using the flag `-X`.
     Solution:
 
     ```sh
-    10:00:00 login01 $ nano example_job.sh
-    10:00:00 login01 $ cat example_job.sh
+    nano example_job.sh
+    cat example_job.sh
     ```
 
     ```sh
