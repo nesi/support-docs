@@ -12329,6 +12329,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "MetalWalls": {
+        "description": "MetalWalls (MW) is a molecular dynamics code dedicated to the modelling of electrochemical systems.\nIts main originality is the inclusion of a series of methods allowing to apply a constant potential within the\nelectrode materials.",
+        "domains": [
+            "chem"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://gitlab.com/ampere2/metalwalls",
+        "support": "",
+        "versions": [
+            "21.06.1-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "21.06.1-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1768174445,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/MetalWalls/21.06.1-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "MetaPhlAn": {
         "description": "MetaPhlAn is a computational tool for profiling the composition of microbial\n communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing\n data (i.e. not 16S) with species-level. With the newly added StrainPhlAn module, it is now\n possible to perform accurate strain-level microbial profiling.",
         "domains": [
