@@ -33,13 +33,21 @@
       filter: brightness(0) invert(1);
     }
   }
+
+  --md-status--tutorial: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"> <path d="M 12.02213,22.351816 4.4667277,18.181642 V 11.597159 L 0.14935611,9.182849 12.02213,2.5983658 23.894902,9.182849 v 8.779312 h -2.158685 v -7.572156 l -2.158686,1.207154 v 6.584483 z m 0,-9.108535 L 19.415628,9.182849 12.02213,5.122418 4.6286292,9.182849 Z m 0,6.611918 5.396715,-2.963017 V 12.749445 L 12.02213,15.767333 6.6254139,12.749445 v 4.142737 z m 0,-6.611918 z m 0,2.469181 z m 0,0 z" style="stroke-width:0.0272085" /></svg>')
 }
-/* Logo biggification */
-/* COMMENTED OUT FOR REANNZ LOGO */
+  /* Logo biggification */
+  /* COMMENTED OUT FOR REANNZ LOGO */
 /* .md-header__button.md-logo img, .md-header__button.md-logo svg {
   height: 4rem;
   margin: -2rem;
 } */
+
+
+.md-status--tutorial::after {
+  mask-image: var(--md-status--tutorial);
+  -webkit-mask-image: var(--md-status--tutorial);
+}
 
 /* Version table stuff */
 .md-tag.md-tag-ver{
@@ -185,6 +193,7 @@ span.md-status.md-status--deprecated {
   border-bottom: 1px solid #ccc;
   font-size: 1.2em;
   text-align: center;
+
   z-index: 9999;
 }
 

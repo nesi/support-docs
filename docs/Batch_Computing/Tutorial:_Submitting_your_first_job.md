@@ -5,6 +5,7 @@ tags:
 - scheduler
 - tutorial
 description: Tutorial on how to submit your first Slurm job
+status: tutorial
 ---
 
 !!! prerequisite ""
