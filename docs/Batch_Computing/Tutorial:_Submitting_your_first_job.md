@@ -137,7 +137,7 @@ In order for the job scheduler to do its job we need to provide a bit more infor
 This is done by specifying Slurm parameters in our batch script.
 Each of these parameters must be preceded by the special token `#SBATCH` and placed after the shebang, but before the content of the rest of your script.
 
-![]()
+![](../assets/images/parts_slurm_script.svg)
 
 These parameters tell Slurm things around how the script should be run, like memory, cores and time required.
 
