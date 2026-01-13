@@ -7720,7 +7720,7 @@
         "network_licences": [],
         "default": "4.7-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1768293898,
+        "last_updated": 1768341023,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/GPUMD/4.7-foss-2023a.lua",
         "force_hide": "False",
