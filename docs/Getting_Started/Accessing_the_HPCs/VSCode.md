@@ -83,7 +83,7 @@ Clicking on these will open a connection to that machine, you will then be promp
 
 You may find that VSCode is not utilising your preferred versions of software (e.g. when debugging or linting your Python code).
 
-As the NeSI cluster utilises [Environment Modules](../../Batch_Computing/Tutorial:_Submitting_your_first_job.md#environment-modules), changing the executable used is not just a matter of changing the path in VSCode configuration, as the libraries required will not be loaded.
+As the NeSI cluster utilises [Environment Modules](../../Batch_Computing/Ako_Submitting_Your_First_Job.md#environment-modules), changing the executable used is not just a matter of changing the path in VSCode configuration, as the libraries required will not be loaded.
 
 The only way to make sure that VSCode has access to a suitable environment, is to load the required modules in your `~/.bashrc`
 
