@@ -5,16 +5,17 @@ description: How do we load and unload software packages?
 tags: 
     - software
 status: tutorial
-time: 20
-objectives:
+---
+
+
+!!! time "Time: 20 Minutes"
+
+!!! prerequisites
+    - Page Link
+
+!!! objectives
     - "Load and use a software package."
     - "Explain how the shell environment changes when the module mechanism loads or unloads packages."
-keypoints:
-- "Load software with `module load softwareName`."
-- "Unload software with `module unload`"
-- "The module system handles software versioning and package conflicts for you
-  automatically."
----
 
 On a high-performance computing system, it is seldom the case that the software
 we want to use is available when we log in. It is installed, but we will need
@@ -181,7 +182,7 @@ Use "module keyword key1 key2 ..." to search for all possible modules matching a
 ### Listing Currently Loaded Modules
 
 You can use the `module list` command to see which modules you currently have
-loaded in your environment. On {{ site.remote.name }} you will have a few default modules loaded when you login.  
+loaded in your environment. On Mahuika you will have a few default modules loaded when you login.  
 
 ```sh
 module list
@@ -462,3 +463,12 @@ Currently Loaded Modules:
   8) gimpi/2020a                      17) libjpeg-turbo/2.0.2-GCCcore-9.2.0  26) SQLite/3.31.1-GCCcore-9.2.0
   9) imkl/2020.0.166-gimpi-2020a      18) ncurses/6.1-GCCcore-9.2.0          27) METIS/5.1.0-GCCcore-9.2.0
 ```
+
+!!! keypoints
+    - "Load software with `module load softwareName`."
+    - "Unload software with `module unload`"
+    - "The module system handles software versioning and package conflicts for you
+    automatically."
+
+!!! postrequisite
+    - Link to next page

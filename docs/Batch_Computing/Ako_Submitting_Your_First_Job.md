@@ -8,26 +8,16 @@ description: Tutorial on how to submit your first Slurm job
 title: Ako:_Submitting Your_First_Job
 status: tutorial
 ---
+!!! time "10 Minutes"
 
 !!! prerequisite ""
     This tutorial assumes basic familiarity with bash and the terminal.
     The first three lessons of the [Software Carpentry Unix Shell lessons](https://swcarpentry.github.io/shell-novice/) covers the information needed.
 
-## Overview
-
-The exercises in this tutorial should take approximately 10 minutes to complete.
-
-### Questions
-
-- What is a scheduler and why does a cluster need one?
-- How do I launch a program to run on a compute node in the cluster?
-- How do I capture the output of a program that is run on a node in the cluster?
-
-### Objectives
-
-- Run a simple script through the scheduler
-- Use the batch system command line tools to monitor the execution of your job
-- Inspect the output and error files of your jobs
+!!! objectives
+    - Run a simple script through the scheduler
+    - Use the batch system command line tools to monitor the execution of your job
+    - Inspect the output and error files of your jobs
 
 ## What is a job scheduler?
 
@@ -324,8 +314,10 @@ This can be suppressed using the flag `-X`.
     echo ${SLURM_SUBMIT_DIR}
     ```
 
-## Key points
-
-- The scheduler handles how compute resources are shared between users
-- A job is just a shell script
-- Request *slightly* more resources than you need
+!!! keypoints
+    - The scheduler handles how compute resources are shared between users
+    - A job is just a shell script
+    - Request *slightly* more resources than you need
+    
+!!! postrequisite
+    - Link to next page
