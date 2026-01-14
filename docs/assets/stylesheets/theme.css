@@ -35,6 +35,9 @@
   }
 
   --md-status--tutorial: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"> <path d="M 12.02213,22.351816 4.4667277,18.181642 V 11.597159 L 0.14935611,9.182849 12.02213,2.5983658 23.894902,9.182849 v 8.779312 h -2.158685 v -7.572156 l -2.158686,1.207154 v 6.584483 z m 0,-9.108535 L 19.415628,9.182849 12.02213,5.122418 4.6286292,9.182849 Z m 0,6.611918 5.396715,-2.963017 V 12.749445 L 12.02213,15.767333 6.6254139,12.749445 v 4.142737 z m 0,-6.611918 z m 0,2.469181 z m 0,0 z" style="stroke-width:0.0272085" /></svg>')
+  --md-admonition-icon--prerequisite: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 9H7V7h10m0 6H7v-2h10m-3 6H7v-2h7M12 3a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m7 0h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg>') 
+  --md-admonition-icon--time: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>') 
+
 }
   /* Logo biggification */
   /* COMMENTED OUT FOR REANNZ LOGO */
@@ -187,6 +190,20 @@ span.md-status.md-status--deprecated {
   color: rgba(0, 0, 0, 0.87);
 }
 
+/* Turirial deader */
+.tutorial-banner {
+  background: aquamarine;
+  color: blueviolet;
+  font-family: inherit;
+  padding: 0.01em;
+  margin: 0;
+  border-radius: 0.8em;
+}
+.tutorial-banner > p {
+  margin: 0;
+  padding: 0.2em 0.5em;
+}
+/* Calendar */
 
 #calendar-banner {
   background: #fffae6;
@@ -206,3 +223,95 @@ span.md-status.md-status--deprecated {
   font-size: 2em;
   cursor: pointer;
 }
+
+/* custom admonition */
+/* prereq */
+  .md-typeset .admonition.prerequisite,
+  .md-typeset details.prerequisite {
+    border-color: rgb(170, 170, 60);
+  }
+  .md-typeset .prerequisite > .admonition-title,
+  .md-typeset .prerequisite > summary {
+    background-color: rgba(170, 170, 60, 0.1);
+  } 
+  .md-typeset .prerequisite > .admonition-title::before,
+  .md-typeset .prerequisite > summary::before {
+    background-color: rgb(170, 170, 60);
+    -webkit-mask-image: var(--md-admonition-icon--prerequisite);
+            mask-image: var(--md-admonition-icon--prerequisite);
+  }
+  /* postreq */
+  .md-typeset .admonition.postrequisite,
+  .md-typeset details.postrequisite {
+    border-color: rgb(170, 170, 60);
+  }
+  .md-typeset .postrequisite > .admonition-title,
+  .md-typeset .postrequisite > summary {
+    background-color: rgba(170, 170, 60, 0.1);
+  } 
+  .md-typeset .postrequisite > .admonition-title::before,
+  .md-typeset .postrequisite > summary::before {
+    background-color: rgb(170, 170, 60);
+    -webkit-mask-image: var(--md-admonition-icon--postrequisite);
+            mask-image: var(--md-admonition-icon--postrequisite);
+  }
+/* deprecated */
+  .md-typeset .admonition.deprecated,
+  .md-typeset details.deprecated {
+    border-color: #ff1744;
+  }
+  .md-typeset .deprecated > .admonition-title,
+  .md-typeset .deprecated > summary {
+    background-color: #ff17441a;
+  } 
+  .md-typeset .deprecated > .admonition-title::before,
+  .md-typeset .deprecated > summary::before {
+    background-color: #ff1744;
+    -webkit-mask-image: var(--md-status--deprecated);
+            mask-image: var(--md-status--deprecated);
+  }
+/* time */
+  .md-typeset .admonition.time,
+  .md-typeset details.time {
+    border-color: #610088;
+  }
+  .md-typeset .time > .admonition-title,
+  .md-typeset .time > summary {
+    background-color: #b700cf1a;
+  } 
+  .md-typeset .time > .admonition-title::before,
+  .md-typeset .time > summary::before {
+    background-color: #ff3f66;
+    -webkit-mask-image: var(--md-admonition-icon--time);
+            mask-image: var(--md-admonition-icon--time);
+  }
+/* objective */
+  .md-typeset .admonition.time,
+  .md-typeset details.time {
+    border-color: #765981;
+  }
+  .md-typeset .time > .admonition-title,
+  .md-typeset .time > summary {
+    background-color: #5e9b2d1a;
+  } 
+  .md-typeset .time > .admonition-title::before,
+  .md-typeset .time > summary::before {
+    background-color: #0e0b0b;
+    -webkit-mask-image: var(--md-admonition-icon--time);
+            mask-image: var(--md-admonition-icon--time);
+  }
+/* key[ppoint */
+  .md-typeset .admonition.keypoints,
+  .md-typeset details.keypoints {
+    border-color: #000000;
+  }
+  .md-typeset .keypoints > .admonition-title,
+  .md-typeset .keypoints > summary {
+    background-color: #e990f51a;
+  } 
+  .md-typeset .keypoints > .admonition-title::before,
+  .md-typeset .keypoints > summary::before {
+    background-color: #3fffff;
+    -webkit-mask-image: var(--md-admonition-icon--keypoints);
+            mask-image: var(--md-admonition-icon--keypoints);
+  }
