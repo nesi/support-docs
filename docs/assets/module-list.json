@@ -8072,6 +8072,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "HAL": {
+        "description": "HAL is a structure to efficiently store and index multiple genome alignments\nand ancestral reconstructions. HAL is a graph-based representation which\nprovides several advantages over matrix/block-based formats such as MAF, such as\nimproved scalability and the ability to perform queries with respect to an\narbitrary reference or subtree.\n\nThis package includes the HAL API and several analysis and conversion tools\nwhich are described below. HAL files are presently stored in either HDF5 or mmap\nformat, but we note that the tools and most of the API are format-independent,\nso other databases could be implemented in the future.\n",
+        "domains": [
+            "bio"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/ComparativeGenomicsToolkit/hal",
+        "support": "",
+        "versions": [
+            "2.3-gompi-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.3-gompi-2023a",
+        "default_type": "latest",
+        "last_updated": 1768432481,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/bio/HAL/2.3-gompi-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "haplocheck": {
         "description": "Detects in-sample contamination in mtDNA or WGS sequencing studies by analyzing the mitchondrial content",
         "domains": [
