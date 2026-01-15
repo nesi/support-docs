@@ -108,7 +108,7 @@ To compress one or more large files:
 
 ### Use either `cp`, `mv`, `RClone`, or `Rsync` to transfer files within Mahuika
 
-It is recommended that if you are wanting to transfer files within or between your `home`, `project`, and `nobackup` directories that you use either copy (`cp`), move (`mv`), `RClone` or `Rsync` to achieve this. 
+It is recommended that if you are wanting to transfer files within or between your `home`, `project`, and `nobackup` directories that you use either copy (`cp`), move (`mv`), [`RClone`](./RClone.md)) or [`Rsync`](./Rsync.md) to achieve this. 
 
 ### Only use Globus to transfer data onto and off of Mahuika from an outside source
 
