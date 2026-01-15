@@ -1,0 +1,9 @@
+---
+nav:
+ - What is a_HPC_cluster
+ - Bash_Shell
+ - Environment_And_Modules
+ - Submitting_Your_First_Job
+ - Resources
+ - Scaling
+ - "*"

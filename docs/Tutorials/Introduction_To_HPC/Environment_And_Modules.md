@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-13
-title: "Ako: Environment & Modules"
+title: "Environment & Modules"
 description: How do we load and unload software packages?
 tags: 
     - software
@@ -10,7 +10,7 @@ status: tutorial
 
 !!! time "Time: 20 Minutes"
 
-!!! prerequisites
+!!! prerequisite
     - Page Link
 
 !!! objectives

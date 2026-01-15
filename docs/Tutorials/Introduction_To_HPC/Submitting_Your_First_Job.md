@@ -5,7 +5,6 @@ tags:
 - scheduler
 - tutorial
 description: Tutorial on how to submit your first Slurm job
-title: Ako:_Submitting Your_First_Job
 status: tutorial
 ---
 !!! time "10 Minutes"
@@ -30,7 +29,7 @@ On an HPC system, the scheduler manages which jobs run where and when.
 The following illustration compares these tasks of a job scheduler to a waiter in a restaurant.
 If you can relate to an instance where you had to wait for a while in a queue to get in to a popular restaurant, then you may now understand why sometimes your job do not start instantly as in your laptop.
 
-![Queue manager](../assets/images/restaurant_queue_manager.svg)
+![Queue manager](../../assets/images/restaurant_queue_manager.svg)
 
 The scheduler used in this lesson is [Slurm](https://slurm.schedmd.com/).
 Although Slurm is not used everywhere, running jobs is quite similar regardless of what software is being used.
@@ -128,7 +127,7 @@ In order for the job scheduler to do its job we need to provide a bit more infor
 This is done by specifying Slurm parameters in our batch script.
 Each of these parameters must be preceded by the special token `#SBATCH` and placed after the shebang, but before the content of the rest of your script.
 
-![](../assets/images/parts_slurm_script.svg)
+![](../../assets/images/parts_slurm_script.svg)
 
 These parameters tell Slurm things around how the script should be run, like memory, cores and time required.
 
@@ -287,7 +286,7 @@ This can be suppressed using the flag `-X`.
 
     There are two additional good sources for quick references on using Slurm:
 
-    - our [Slurm Reference Sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
+    - our [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
     - the official [Slurm documentation](https://slurm.schedmd.com/) and [cheatsheet](https://slurm.schedmd.com/pdfs/summary.pdf)
 
 !!! question "Job environment variables"
@@ -318,6 +317,6 @@ This can be suppressed using the flag `-X`.
     - The scheduler handles how compute resources are shared between users
     - A job is just a shell script
     - Request *slightly* more resources than you need
-    
+
 !!! postrequisite
     - Link to next page

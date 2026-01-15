@@ -23,7 +23,7 @@ In order to establish an understanding of the scaling properties we may have to 
 
 Most computational tasks will have a certain amount of work that must be computed serially.
 
-![Larger fractions of parallel code will have closer to linear scaling performance.](../fig/AmdahlsLaw2.svg)
+![Larger fractions of parallel code will have closer to linear scaling performance.](../../Getting_Started/Getting_Help/Training/fig/AmdahlsLaw2.svg)
 
 Eventually your performance gains will plateau.
 
@@ -49,7 +49,7 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
 > 4. Watch the job with `squeue --me` or `watch squeue --me`.
 > 5. On completion of job, use `nn_seff <job-id>`.
 > 6. Record the jobs "Elapsed", "TotalCPU", and "Memory" values in the spreadsheet. (Hint: They are the first 
-> numbers after the percentage efficiency in output of `nn_seff`). Make sure you have entered the values in the correct format and there is a tick next to each entry. ![Correctly entered data in spreadsheet.](../fig/correct-spreadsheet-entry.png)
+> numbers after the percentage efficiency in output of `nn_seff`). Make sure you have entered the values in the correct format and there is a tick next to each entry. ![Correctly entered data in spreadsheet.](../../Getting_Started/Getting_Help/Training/fig/correct-spreadsheet-entry.png)
 >
 > > ## Solution
 > >

@@ -19,7 +19,7 @@ that are provisioned to users on demand or as needed.
 
 *Cluster* is a more specific term describing a type of supercomputer comprised of multiple smaller computers (nodes) working together. Almost all supercomputers are clusters.
 
-![NeSI-HPC-Facility](../fig/NeSI-HPC-Facility.jpg)
+![NeSI-HPC-Facility](../../Getting_Started/Getting_Help/Training/fig/NeSI-HPC-Facility.jpg)
 
 ## Access
 

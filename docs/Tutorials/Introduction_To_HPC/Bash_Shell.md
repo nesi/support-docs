@@ -49,7 +49,7 @@ Understanding how to navigate the file system using command line is essential fo
 The NeSI filesystem looks something like this:
 
 ![The file system is made up of a root directory that contains sub-directories
-titled home, nesi, and system files](../fig/NesiFiletree.svg)
+titled home, nesi, and system files](../../Getting_Started/Getting_Help/Training/fig/NesiFiletree.svg)
 
 The directories that are relevant to us are.
 
@@ -198,7 +198,7 @@ You should see a directory called `{{ site.working_dir[1]  }}`, and possibly sev
 directories "backup" and "thing"; "/Users/backup" contains "original",
 "pnas_final" and "pnas_sub"; "/Users/thing" contains "backup"; and
 "/Users/thing/backup" contains "2012-12-01", "2013-01-08" and
-"2013-01-27"](../fig/filesystem-challenge.svg)
+"2013-01-27"](../../Getting_Started/Getting_Help/Training/fig/filesystem-challenge.svg)
 >
 > 1. `ls pwd`
 > 2. `ls backup`
@@ -288,7 +288,7 @@ We can see that the `-l` option has modified the command and now our output has 
 It also includes information about the file size, time of its last modification, and permission and ownership information.
 
 Most unix commands follow this basic structure.
-![Structure of a Unix command](../fig/Unix_Command_Struc.svg)
+![Structure of a Unix command](../../Getting_Started/Getting_Help/Training/fig/Unix_Command_Struc.svg)
 
 The **prompt** tells us that the terminal is accepting inputs, prompts can be customised to show all sorts of info.
 
@@ -492,7 +492,7 @@ Check that we've moved to the right place by running `pwd`.
 directories "backup" and "thing"; "/Users/backup" contains "original",
 "pnas_final" and "pnas_sub"; "/Users/thing" contains "backup"; and
 "/Users/thing/backup" contains "2012-12-01", "2013-01-08" and
-"2013-01-27"](../fig/filesystem-challenge.svg)
+"2013-01-27"](../../Getting_Started/Getting_Help/Training/fig/filesystem-challenge.svg)
 >
 > > ## Solution
 > >
@@ -701,7 +701,7 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
 
 <div style="width:80%; margin: auto;"><img alt="screenshot of nano text editor in action"
-src="../fig/nano-screenshot.png"></div>
+src="../../Getting_Started/Getting_Help/Training/fig/nano-screenshot.png"></div>
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
 return to the shell.
