@@ -1,25 +1,4 @@
 {
-    ".Spack.old": {
-        "description": "Spack is a package manager for supercomputers, Linux, and macOS. It makes installing scientific\n software easy. With Spack, you can build a package with multiple versions, configurations, platforms, and compilers,\n and all of these builds can coexist on the same machine.",
-        "domains": [],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://spack.io/",
-        "support": "",
-        "versions": [
-            "0.17.0",
-            "0.17.2"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.17.2",
-        "default_type": "latest",
-        "last_updated": 1740132634,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/.Spack.old/0.17.2.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "ABAQUS": {
         "description": "Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.",
         "domains": [
