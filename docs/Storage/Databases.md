@@ -15,53 +15,47 @@ Some databases are readable for all users on Mahuika.
 These databases can be found at `/opt/nesi/db`.
 Some environmental modules depend on these databases and connect to these directories automatically.
 
-``` sh
-ls -la /opt/nesi/db
-```
-
-```sh
--rw-rw-r--  1 nesi-apps-admin nesi-apps-admin  457 Jun 16  2025 2_dram_preparedatabases.slurm
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Dec  1  2024 alphafold_db
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Oct 29 19:14 blast
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Sep 10  2021 cartopy
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jan 13  2020 centrifuge
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jan 30  2023 CheckM2_DB
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jul 21  2019 CheckM_DB
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 May  7  2020 checkv-db-v0.6
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Feb 20  2021 dammit_db
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Oct 17  2022 DAS_DB
-drwxr-xr-x+ 1 nesi-apps-admin nesi-apps-admin    0 Nov 12 07:36 dfam_3.9
--rw-rw-r--  1 nesi-apps-admin nesi-apps-admin 2400 Apr 18  2022 down_pdb_mmcif.sh
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Sep 27  2022 DRAM_1.3.5
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Oct 17  2023 eggnog_db
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jun 16  2024 FCS-GX
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jul 19  2021 gtdbtk_202
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 May  9  2022 gtdbtk_207_v2
-drwxr-xr-x  1 nesi-apps-admin nesi-apps-admin    0 Apr 27  2023 gtdbtk_214
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Apr 10  2024 gtdbtk_220
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Mar 13  2022 Humann
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Mar  5  2022 Kaiju
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Mar 31  2025 Kraken2
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Feb 26  2021 megaX
-drwxr-xr-x  1 nesi-apps-admin nesi-apps-admin    0 Feb 21  2025 nesi-apps-admin
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jan 27  2021 nullarbor_db
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Nov  7  2023 Pfam
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Mar  4  2022 PhyloPhlAn
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jul 15  2019 prokka
-drwxr-xr-x  1 nesi-apps-admin nesi-apps-admin    0 Aug 18  2023 ProteinDataBank
-dr-xr-xr-x  1 nesi-apps-admin nesi-apps-admin    0 Jan 24  2020 RQCFilterData
-drwxrwxr-x+ 1 nesi-apps-admin nesi-apps-admin    0 Feb  4  2021 sortmerna_db
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Sep  8 12:17 SqueezeMeta
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Mar 16  2020 StrVCTVRE
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Mar 29  2023 TEST
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Feb 26  2021 Trinotate
-drwxr-xr-x  1 nesi-apps-admin nesi-apps-admin    0 Sep 22 08:43 Uniprot
--rw-------  1 nesi-apps-admin nesi-apps-admin  379 Jul 19  2021 UniRef30_2021_06.md5sums
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jul  5  2021 VariantEffectPredictor
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Nov  2  2020 VIBRANT_v1.2.1_databases
-drwxrwxr-x  1 nesi-apps-admin apps-team          0 Feb 10  2021 VirSorter
-drwxrwxr-x  1 nesi-apps-admin nesi-apps-admin    0 Jul 27  2022 waafle
-```
+Name | Path |
+|--|--|
+alphafold_db |`/opt/nesi/db/alphafold_db`
+blast |`/opt/nesi/db/blast`
+cartopy |`/opt/nesi/db/cartopy`
+centrifuge |`/opt/nesi/db/centrifuge`
+CheckM2_DB |`/opt/nesi/db/CheckM2_DB`
+CheckM_DB |`/opt/nesi/db/CheckM_DB`
+checkv-db-v0.6 |`/opt/nesi/db/checkv-db-v0.6`
+dammit_db |`/opt/nesi/db/dammit_db`
+DAS_DB |`/opt/nesi/db/DAS_DB`
+db/ |`/opt/nesi/db/db/`
+dfam_3.9 |`/opt/nesi/db/dfam_3.9`
+DRAM_1.3.5 |`/opt/nesi/db/DRAM_1.3.5`
+eggnog_db |`/opt/nesi/db/eggnog_db`
+FCS-GX |`/opt/nesi/db/FCS-GX`
+gtdbtk_202 |`/opt/nesi/db/gtdbtk_202`
+gtdbtk_207_v2 |`/opt/nesi/db/gtdbtk_207_v2`
+gtdbtk_214 |`/opt/nesi/db/gtdbtk_214`
+gtdbtk_220 |`/opt/nesi/db/gtdbtk_220`
+Humann |`/opt/nesi/db/Humann`
+Kaiju |`/opt/nesi/db/Kaiju`
+Kraken2 |`/opt/nesi/db/Kraken2`
+megaX |`/opt/nesi/db/megaX`
+nesi-apps-admin |`/opt/nesi/db/nesi-apps-admin`
+nullarbor_db |`/opt/nesi/db/nullarbor_db`
+Pfam |`/opt/nesi/db/Pfam`
+PhyloPhlAn |`/opt/nesi/db/PhyloPhlAn`
+prokka |`/opt/nesi/db/prokka`
+ProteinDataBank |`/opt/nesi/db/ProteinDataBank`
+RQCFilterData |`/opt/nesi/db/RQCFilterData`
+sortmerna_db |`/opt/nesi/db/sortmerna_db`
+SqueezeMeta |`/opt/nesi/db/SqueezeMeta`
+StrVCTVRE |`/opt/nesi/db/StrVCTVRE`
+TEST |`/opt/nesi/db/TEST`
+Trinotate |`/opt/nesi/db/Trinotate`
+Uniprot |`/opt/nesi/db/Uniprot`
+VariantEffectPredictor |`/opt/nesi/db/VariantEffectPredictor`
+VIBRANT_v1.2.1_databases |`/opt/nesi/db/VIBRANT_v1.2.1_databases`
+VirSorter |`/opt/nesi/db/VirSorter`
+waafle |`/opt/nesi/db/waafle`
 
 !!! note "Requesting new or updated databases"
     If there is a database you think may be useful to many Mahuika users, or if you would like an updated version of one of the maintained databases, please {% include "partials/support_request.html" %} with details about the source and version of the database of interest.
