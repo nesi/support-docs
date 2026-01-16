@@ -3,10 +3,7 @@ created_at: '2019-08-07T03:50:45Z'
 tags: []
 ---
 
-With very few exceptions, NeSI does not hold software licences of its
-own. If you wish to use any of the proprietary software installed on the
-NeSI cluster, you, or more likely your institution or department, will
-need to have an appropriate licence.
+With very few exceptions, we do not hold software licences of our own. If you wish to use any of the proprietary software installed on Mahuika, you, or more likely your institution or department, will need to have an appropriate licence.
 
 !!! Warning
      Slurm and many other applications use the American spelling of the
@@ -17,9 +14,9 @@ need to have an appropriate licence.
 The most common method of licence control is using 'floating' network
 licences hosted on an external server. In order for a user on a NeSI
 cluster to check out a licence, the address of that server must be
-known, and a firewall exception made for NeSI IP addresses (see below).
+known, and a firewall exception made for our IP addresses (see below).
 
-NeSI's public-facing IP addresses are:
+REANNZ's public-facing IP addresses are:
 
 ``` sl
 202.36.29.252
@@ -31,7 +28,7 @@ NeSI's public-facing IP addresses are:
 ### Institutional Licences
 
 A list of already established licence server connections can be found in
-the NeSI support documentation for the relevant software. Provided you
+our support documentation for the relevant software. Provided you
 are a member of the listed institution or faculty you should be able to
 use the software without any set-up.
 
@@ -72,15 +69,15 @@ systems (servers, files, etc.). The owners of these packages rely on us
 as the system administrators to prevent unauthorised use.
 
 Access to such a piece of software is usually by adding people to a
-NeSI-maintained group of authorised users, which we refer to as a
-"software group". Among NeSI users, only members of the software group
+REANNZ-maintained group of authorised users, which we refer to as a
+"software group". Among REANNZ HPC users, only members of the software group
 for that particular package will be permitted to see or interact with
 the package.
 
 Before adding any particular person to a software group, we may ask to
 see a licence agreement allowing that person to use the software. We may
 also check to see whether the licence agreement forbids the person from
-using the software on NeSI.
+using the software on Mahuika.
 !!! prerequisite Warning
      Some licence agreements are quite restrictive in terms of where, or on
      what sort of machine, a licensee may run the program. For example, the
@@ -95,7 +92,7 @@ using the software on NeSI.
      we're not intellectual property lawyers. Just because we grant you
      access to a piece of software it doesn't necessarily mean you're
      authorised to use it in the way you intend. **It is your
-     responsibility to ensure that your use of the software on NeSI
+     responsibility to ensure that your use of the software on our HPC Platform
      complies with the terms of your licence or is otherwise permitted by
      law.**
 
