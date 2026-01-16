@@ -21,11 +21,7 @@ There are two commands that GUFI provides:
 !!! warning
     GUFI will only work on `login03`. If you find that GUFI does not return anything, or indicates it can not find a file or folder where it should, cleack that you are logged in to `login03` and **not** `login01` or `login02`.
 
-    * To find out which login node you are on, type into Mahuika:
-    
-      ```bash
-      hostname
-      ```
+    * To find out which login node you are on, type into Mahuika: ``'hostname```
 
 !!! note
     The filesystems that `gufi_find` and `gufi_du` work on are:
