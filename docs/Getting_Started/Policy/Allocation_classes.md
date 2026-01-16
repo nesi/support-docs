@@ -8,11 +8,7 @@ zendesk_article_id: 360000925176
 zendesk_section_id: 360000224835
 ---
 
-The NeSI access policy, agreed by representatives of the Crown and
-NeSI's partner institutions, establishes several allocation classes. In
-general terms, the allocation class granted to your project is used to
-decide who pays for that aspect of your project's consumption of NeSI
-services.
+The allocation class granted to your project is used to decide who pays for that aspect of your project's consumption of REANNZ HPC services.
 
 <table style="width: 80%;">
 <colgroup>
@@ -70,18 +66,13 @@ href="http://www.mbie.govt.nz/info-services/science-innovation/funding-info-oppo
 Zealand Government's Science Goals</a>.</p>
 <p>A named investigator on a peer reviewed research grant or contract
 covering the entire allocation period. Students under the supervision of
-a named investigator are eligible at NeSI's discretion.</p>
-<p>If your institution is a NeSI Collaborator, your project's
-allocation, if approved, will be provided out of your institution's
-entitlement.</p>
+a named investigator are eligible at our discretion.</p>
 <p>Examples likely to qualify:</p>
 <ul>
 <li>MBIE managed research funds</li>
 <li>Health Research Council funding</li>
 <li>Royal Society of New Zealand funding, e.g. Marsden grants</li>
 <li>SSIF programme funding (previously known as CRI Core funding)</li>
-<li>Research programmes forming part of a National Science
-Challenge</li>
 <li>Research programmes forming part of a Centre of Research Excellence
 (CoRE)</li>
 </ul>
@@ -118,9 +109,7 @@ href="../../General/Policy/Postgraduate_allocations.md">Postgraduate</a></h3>
 <p>Standard allocation for anyone enrolled at a New Zealand
 degree-granting institution and working on a postgraduate research
 programme (e.g. PhD or Masters by research) approved by that
-institution. If your institution is a NeSI Collaborator, your project's
-allocation, if approved, will be provided out of your institution's
-entitlement.</p>
+institution.</p>
 <p><em>Applicants in undergraduate programmes (including Honours
 programmes) or graduate programmes based on coursework are not eligible
 for Postgraduate allocations.</em></p></td>
@@ -152,22 +141,22 @@ allocations.</em></p></td>
 <tr class="odd">
 <td rowspan="4" style="width: 34.4%"><h3 id="institutional"><a
 href="../../General/Policy/Institutional_allocations.md">Institutional</a></h3>
-<p>Available if you work for or study at one of the institutions that is
-a NeSI collaborator, or has a subscription to the relevant NeSI
-service.</p>
+<p>Available if you work for or study at one of the institutions that was
+a NeSI Collaborator, or has a [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) to our
+services.</p>
 <blockquote>
 <h3 id="prerequisites">Warning</h3>
 <p>If you are employed by and/or study at multiple institutions, it is
 your responsibility to find out which of those institutions is
-supporting your proposed work with NeSI. Whether and how your research
-is eligible to receive allocations of NeSI resources depends on its host
+supporting your proposed work. Whether and how your research
+is eligible to receive allocations of REANNZ HPC resources depends on its host
 institution.</p>
 </blockquote>
 <p>Allocations from an institution's entitlement are subject to approval
 by that institution. Some institutions require pre-approval or recover
-costs for their NeSI usage through internal charging.</p>
+costs for their REANNZ HPC usage through internal charging.</p>
 <p>If you are applying in your capacity as a staff member or student at
-a NeSI collaborator, your project will be considered for an
+an institution that was a NeSI Collaborator, your project will be considered for an
 Institutional allocation rather than a Merit or Postgraduate
 allocation.</p></td>
 <td style="width: 20.0%">Allocations Granted: </td>
@@ -199,7 +188,7 @@ please {% include "partials/support_request.html" %} before applying for a
 new project. Our Engagement Team is happy to talk to you and
 representatives of your institution about [Subscription
 options](https://www.nesi.org.nz/community/partners-pricing#subscriptions).
-It's best to start talking to us early as Subscription contracts can
+It's best to start talking to us early as [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) contracts can
 take a while to set up.
 
 Our team is happy to answer any questions you may have throughout the
