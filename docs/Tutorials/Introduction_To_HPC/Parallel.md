@@ -1,27 +1,18 @@
 ---
-title: "What is Parallel Computing"
-teaching: 20
-exercises: 10
-questions:
-- "How do we execute a task in parallel?"
-- "What benefits arise from parallel execution?"
-- "What are the limits of gains from execution in parallel?"
-- "What is the difference between implicit and explicit parallelisation."
-objectives:
-- "Prepare a job submission script for the parallel executable."
-keypoints:
-- "Parallel programming allows applications to take advantage of
-  parallel hardware; serial code will not 'just work.'"
-- "There are multiple ways you can run "
+created_at: 2026-01-16
 ---
+
+
+!!! time "30 minutes"
+
+!!! objectives
+  - "Prepare a job submission script for the parallel executable."
 
 ## Methods of Parallel Computing
 
 To understand the different types of Parallel Computing we first need to clarify some terms.
 
-{% include figure.html url="" max-width="40%"
-   file="/fig/clusterDiagram.png"
-   alt="Node anatomy" caption="" %}
+![alt text](../../assets/images/clusterDiagram.png)
 
 **CPU**: Unit that does the computations.
 
@@ -43,7 +34,7 @@ Often called *Multithreading*.
 
 This means that all CPUs must be on the same node, most Mahuika nodes have 72 CPUs.
 
-Shared memory parallelism is used in our example script `{{ site.example.script }}`.
+Shared memory parallelism is used in our example script `{{ config.extra.example_script }}`.
 
 Number of threads to use is specified by the Slurm option `--cpus-per-task`.
 
@@ -75,64 +66,56 @@ GPUs can be requested using `--gpus-per-node=<gpu_type>:<gpu_number>`
 
 Depending on the GPU type, we *may* also need to specify a partition using `--partition`.
 
-> ## GPU Job Example
->
-> Create a new script called `gpu-job.sl`
->
-> ```
-> #!/bin/bash -e
->
-> #SBATCH --job-name        gpu-job
-> #SBATCH --account         {{site.sched.projectcode}} 
-> #SBATCH --output          %x.out
-> #SBATCH --mem-per-cpu     2G
-> #SBATCH --gpu-per-node    P100:1
-> 
-> module load CUDA
-> nvidia-smi  
-> ```
-> {: .language-bash}
->
-> then submit with
->
-> ```
-> {{ site.remote.prompt }} sbatch gpu-job.sl
-> ```
-> {: .language-bash}
->
-> > ## Solution
-> >
-> > ```
-> > {{ site.remote.prompt }} cat gpu-job.out
-> >
-> > ```
-> > {: .language-bash}
-> >
-> > ```
-> > Tue Mar 12 19:40:51 2024       
-> > +-----------------------------------------------------------------------------+
-> > | NVIDIA-SMI 525.85.12    Driver Version: 525.85.12    CUDA Version: 12.0     |
-> > |-------------------------------+----------------------+----------------------+
-> > | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-> > | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-> > |                               |                      |               MIG M. |
-> > |===============================+======================+======================|
-> > |   0  Tesla P100-PCIE...  On   | 00000000:05:00.0 Off |                    0 |
-> > | N/A   28C    P0    24W / 250W |      0MiB / 12288MiB |      0%      Default |
-> > |                               |                      |                  N/A |
-> > +-------------------------------+----------------------+----------------------+
-> >                                                                                
-> > +-----------------------------------------------------------------------------+
-> > | Processes:                                                                  |
-> > |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-> > |        ID   ID                                                   Usage      |
-> > |=============================================================================|
-> > |  No running processes found                                                 |
-> > +-----------------------------------------------------------------------------+
-> > ```
-> > {: .output}
-> {: .solution}
-{: .challenge}
+## GPU Job Example
+
+Create a new script called `gpu-job.sl`
+
+```sl
+#!/bin/bash -e
+#SBATCH --job-name        gpu-job
+#SBATCH --account         {{config.extra.project_code}} 
+#SBATCH --output          %x.out
+#SBATCH --mem-per-cpu     2G
+#SBATCH --gpu-per-node    P100:1
+
+module load CUDA
+nvidia-smi  
+```
+
+then submit with
+
+```sh
+ sbatch gpu-job.sl
+```
+
+??? question Solution
+  
+  ```out
+  cat gpu-job.out
+  ```
+
+  ```out
+  Tue Mar 12 19:40:51 2024       
+  +-----------------------------------------------------------------------------+
+  | NVIDIA-SMI 525.85.12    Driver Version: 525.85.12    CUDA Version: 12.0     |
+  |-------------------------------+----------------------+----------------------+
+  | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+  | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+  |                               |                      |               MIG M. |
+  |===============================+======================+======================|
+  |   0  Tesla P100-PCIE...  On   | 00000000:05:00.0 Off |                    0 |
+  | N/A   28C    P0    24W / 250W |      0MiB / 12288MiB |      0%      Default |
+  |                               |                      |                  N/A |
+  +-------------------------------+----------------------+----------------------+
+                                                                                  
+  +-----------------------------------------------------------------------------+
+  | Processes:                                                                  |
+  |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+  |        ID   ID                                                   Usage      |
+  |=============================================================================|
+  |  No running processes found                                                 |
+  +-----------------------------------------------------------------------------+
+  ```
 
 ### Job Array
 
@@ -187,16 +170,8 @@ However, unless that function is where the majority of time is spent, this is un
 | Job Array | | `--array` | |
 | General Purpose GPU | | `--gpus-per-node`  | |
 
-> ## Running a Parallel Job.
->
-> Pick one of the method of Paralellism mentioned above, and modify your `example.sl` script to use this method.
->
->
-> > ## Solution
-> >
-> > What does the printout say at the start of your job about number and location of node.
-> > {: .output}
-> {: .solution}
-{: .challenge}
 
-{% include links.md %}
+!!! keypoints
+  - "Parallel programming allows applications to take advantage of
+  parallel hardware; serial code will not 'just work.'"
+  - "There are multiple ways you can run "

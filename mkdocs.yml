@@ -64,6 +64,9 @@ markdown_extensions:
   - def_list
 extra:
   slurm: slurm-24.11.6
+  project_code: nesi99991
+  working_directory: ["nesi", "nobackup", "nesi99991", "introhpc2603"]
+  example_script: "example script"
   status: 
   - deprecated
   - new
