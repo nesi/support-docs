@@ -18,6 +18,9 @@ There are two commands that GUFI provides:
     
     * We do indexing of GUFI at the weekend. 
 
+!!! warning
+    GUFI will only work on `login03`. If you find that GUFI does not return anything, or indicates it can not find a file or folder where it should, cleack that you are logged in to `login03` and **not** `login01` or `login02`.
+
 !!! note
     The filesystems that `gufi_find` and `gufi_du` work on are:
     
