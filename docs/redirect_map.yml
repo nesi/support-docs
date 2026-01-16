@@ -172,3 +172,16 @@ Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
 Data_Transfer/Filesytem_Mounts_using_SSHFS.md : Data_Transfer/Filesystem_Mounts_using_SSHFS.md
+Getting_Started/Policy/Acceptable_Use_Policy.md : Policy/Acceptable_Use_Policy.md
+Getting_Started/Policy/Access_Policy.md : Policy/Access_Policy.md
+Getting_Started/Policy/Account_Requests_for_non_Tuakiri_Members.md : Policy/Account_Requests_for_non_Tuakiri_Members.md
+Getting_Started/Policy/Acknowledgement-Citation_and_Publication.md : Policy/Acknowledgement-Citation_and_Publication.md
+Getting_Started/Policy/Allocation_classes.md : Policy/Allocation_classes.md
+Getting_Started/Policy/Application_Support_Model.md : Policy/Application_Support_Model.md
+Getting_Started/Policy/How_we_review_applications.md : Policy/How_we_review_applications.md
+Getting_Started/Policy/Institutional_allocations.md : Policy/Institutional_allocations.md
+Getting_Started/Policy/Licence_Policy.md : Policy/Licence_Policy.md
+Getting_Started/Policy/Merit_allocations.md : Policy/Merit_allocations.md
+Getting_Started/Policy/Postgraduate_allocations.md : Policy/Postgraduate_allocations.md
+Getting_Started/Policy/Privacy_Policy.md : Policy/Privacy_Policy.md
+Getting_Started/Policy/Proposal_Development_allocations.md : Policy/Allocation_classes.md
