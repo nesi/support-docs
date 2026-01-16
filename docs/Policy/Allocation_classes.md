@@ -1,26 +1,20 @@
 ---
 created_at: '2019-04-25T22:26:56Z'
-tags: []
-title: Allocation classes
-vote_count: 1
-vote_sum: 1
-zendesk_article_id: 360000925176
-zendesk_section_id: 360000224835
+hide:
+  - toc
 ---
 
 The allocation class granted to your project is used to decide who pays for that aspect of your project's consumption of REANNZ HPC services.
 
 <table >
 <colgroup>
-<col  />
-<col  />
-<col  />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <tbody>
 <tr >
-<td rowspan="4" ><a
-href="../General/Policy/Proposal_Development_allocations.md">Proposal
-Development</a></h3>
+<td rowspan="4" ><h2>Proposal Development</h2>
 <p>A short-term allocation available to researchers from any New Zealand
 research institution. During this allocation you will:</p>
 <ul>
@@ -54,12 +48,11 @@ from one of our other allocation classes.</em></p></td>
 </ul></td>
 </tr>
 <tr >
-<td ><p>Priority: </p></td>
+<td ><p>Priority:</p></td>
 <td >Moderate</td>
 </tr>
 <tr >
-<td rowspan="4" ><a
-href="../General/Policy/Merit_allocations.md">Merit</a></h3>
+<td rowspan="4" ><h2>Merit</h2>
 <p>Intended for highly skilled research teams carrying out high quality
 research funded via a peer review process that supports the <a
 href="http://www.mbie.govt.nz/info-services/science-innovation/funding-info-opportunities/document-image-library/NSSI%20Final%20Document%202015.pdf">New
@@ -81,7 +74,7 @@ a foreign government are unlikely to qualify.</em></p></td>
 <td >Allocations Granted:</td>
 <td ><p><a
 href="https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations">Quarterly</a></p>
-<p> </p>
+<p></p>
 <p><em>A new project's initial allocation may be awarded from this class
 at any time, but subject to the limits of Proposal Development
 allocations.</em></p></td>
@@ -104,8 +97,7 @@ allocations.</em></p></td>
 <td >Highest</td>
 </tr>
 <tr >
-<td rowspan="4" ><a
-href="../General/Policy/Postgraduate_allocations.md">Postgraduate</a></h3>
+<td rowspan="4" ><h2>Postgraduate</h2>
 <p>Standard allocation for anyone enrolled at a New Zealand
 degree-granting institution and working on a postgraduate research
 programme (e.g. PhD or Masters by research) approved by that
@@ -116,7 +108,7 @@ for Postgraduate allocations.</em></p></td>
 <td >Allocations Granted:</td>
 <td ><p><a
 href="https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations">Quarterly</a></p>
-<p> </p>
+<p></p>
 <p><em>A new project's initial allocation may be awarded from this class
 at any time, but subject to the limits of Proposal Development
 allocations.</em></p></td>
@@ -135,17 +127,16 @@ allocations.</em></p></td>
 </ul></td>
 </tr>
 <tr >
-<td > </td>
+<td ></td>
 <td >Low</td>
 </tr>
 <tr >
-<td rowspan="4" ><a
-href="../General/Policy/Institutional_allocations.md">Institutional</a></h3>
-<p>Available if you work for or study at one of the institutions that was
-a NeSI Collaborator, or has a [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) to our
-services.</p>
+<td rowspan="4" ><h2>Institutional</h2>
+<p>Available if you work for or study at one of the institutions that was a NeSI Collaborator,
+or has a [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/)
+to our services.</p>
 <blockquote>
-<h3 id="prerequisites">Warning</h3>
+<h2 id="warning">Warning</h2>
 <p>If you are employed by and/or study at multiple institutions, it is
 your responsibility to find out which of those institutions is
 supporting your proposed work. Whether and how your research
@@ -159,9 +150,9 @@ costs for their REANNZ HPC usage through internal charging.</p>
 an institution that was a NeSI Collaborator, your project will be considered for an
 Institutional allocation rather than a Merit or Postgraduate
 allocation.</p></td>
-<td >Allocations Granted: </td>
+<td >Allocations Granted:</td>
 <td ><p>Any time</p>
-<p> </p>
+<p></p>
 <p><em>A new project's initial allocation may be awarded from this
 class, but subject to the limits of Proposal Development
 allocations.</em></p></td>
@@ -184,11 +175,11 @@ entitlements and institutional resource allocation decisions</td>
 </table>
 
 If you only qualify for a Proposal Development allocation right now,
-please {% include "partials/support_request.html" %} before applying for a
-new project. Our Engagement Team is happy to talk to you and
-representatives of your institution about [Subscription
-options](https://www.nesi.org.nz/community/partners-pricing#subscriptions).
-It's best to start talking to us early as [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) contracts can
+please {% include "partials/support_request.html" %} before applying for a new project.
+Our Engagement Team is happy to talk to you and representatives of your institution about
+[Subscription options](https://www.nesi.org.nz/community/partners-pricing#subscriptions).
+It's best to start talking to us early as
+[Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) contracts can
 take a while to set up.
 
 Our team is happy to answer any questions you may have throughout the

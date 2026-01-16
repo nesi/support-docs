@@ -5,10 +5,6 @@ tags:
 - tuakiri
 - mynesi
 title: Account Requests for non-Tuakiri Members
-vote_count: 6
-vote_sum: -2
-zendesk_article_id: 360000216035
-zendesk_section_id: 360000224835
 ---
 
 Most New Zealand universities and Crown Research Institutes are members
