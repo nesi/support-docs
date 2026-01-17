@@ -67,6 +67,8 @@ Some notes:
 * `STATE`: most of the time you can ignore this. But if this message is `down` or `draining`, this indicates the node is unavailable for use.
 * `GRES` and `GRES_USED`: Compare these to see how many internal SSDs and GPUs are available for use. For example, `g10` `GRES` indicates this node contains 4 L4 GPUs in total, while `g10` `GRES_USED` indicates that only 1 L4 GPU is being used for `g10`. This means there are 3 L4 GPUs available on `g10`. In the example above, as long as your job requires less than 18 cores (36 divided by 2) and 107368 MBs (104 GBs) RAM, your job should go on (however, this will still be based on your priority)
 
+## What Jobs are Running on a Particular Node
+
 If you would like to know more about what jobs are running on a node and what resources they are using, such as:
 
 * `JOBID`: The job id for the slurm job
