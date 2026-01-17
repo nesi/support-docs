@@ -6,7 +6,13 @@ tags:
 title: How busy is the cluster?
 ---
 
-You can get information about all nodes on Mhauika using the command `sinfo`. If you want to get information about:
+You can get information about all nodes on Mahuika using the command `sinfo`. Type the following into Mahuika
+
+```bash
+sinfo -N --Format=nodelist:10,StateLong:15,cpusState:20,Memory:15,FreeMem:15,Gres:30,GresUsed:30
+```
+
+where:
 
 * `NODELIST`: The name of the node
 * `STATE`: The state of the node
@@ -15,12 +21,6 @@ You can get information about all nodes on Mhauika using the command `sinfo`. If
 * `FREE_MEM`: The amount of memory free on the node (in MBs)
 * `GRES`: The total amount of resources available on each node
 * `GRES_USED`: The amount of resources that are currently being used on each node
-
-Use the following in the Mahuika terminal:
-
-```bash
-sinfo -N --Format=nodelist:10,StateLong:15,cpusState:20,Memory:15,FreeMem:15,Gres:30,GresUsed:30
-```
 
 This will give the following information:
 
@@ -69,7 +69,13 @@ Some notes:
 
 ## What Jobs are Running on a Particular Node
 
-If you would like to know more about what jobs are running on a node and what resources they are using, such as:
+If you would like to know more about what jobs are running on a node and what resources they are using, type into Mahuika:
+
+```bash
+squeue -w <NODE_NAME> -O "JobID,UserName,State,NumCPUs,MinMemory,GRES,TimeLeft"
+```
+
+where `<NODE_NAME>` is the name of the node, and where:
 
 * `JOBID`: The job id for the slurm job
 * `USER`: The username of the slurm job
@@ -79,13 +85,7 @@ If you would like to know more about what jobs are running on a node and what re
 * `TRES_PER_NODE`: The resources that the job is using, such as the numbver of GPUs and internal SSDs that are being used.
 * `TIME_LEFT`: The time left on the job before it timesout
 
-type the following into the Mahuika terminal:
-
-```bash
-squeue -w <NODE_NAME> -O "JobID,UserName,State,NumCPUs,MinMemory,GRES,TimeLeft"
-```
-
-where `<NODE_NAME>` is the name of the node. An example of what this looks like is shown below
+An example of what this looks like is shown below
 
 ```bash
 geoff.weal@login03:~$ squeue -w g09 -O "JobID,UserName,State,NumCPUs,MinMemory,GRES,TimeLeft"
