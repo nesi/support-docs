@@ -54,8 +54,7 @@ from one of our other allocation classes.</em></p></td>
 <tr >
 <td rowspan="4" ><h2>Merit</h2>
 <p>Intended for highly skilled research teams carrying out high quality
-research funded via a peer review process that supports the <a
-href="http://www.mbie.govt.nz/info-services/science-innovation/funding-info-opportunities/document-image-library/NSSI%20Final%20Document%202015.pdf">New
+research funded via a peer review process that supports the New
 Zealand Government's Science Goals</a>.</p>
 <p>A named investigator on a peer reviewed research grant or contract
 covering the entire allocation period. Students under the supervision of
@@ -75,6 +74,10 @@ a foreign government are unlikely to qualify.</em></p></td>
 <td ><p><a
 href="https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations">Quarterly</a></p>
 <p></p>
+<td style="width: 20.0%">Allocations Granted:</td>
+<td style="width: 25.6%"><p><a
+href="https://docs.nesi.org.nz/Getting_Started/Allocations/Quarterly_allocation_periods/">Quarterly</a></p>
+<p> </p>
 <p><em>A new project's initial allocation may be awarded from this class
 at any time, but subject to the limits of Proposal Development
 allocations.</em></p></td>
@@ -109,6 +112,10 @@ for Postgraduate allocations.</em></p></td>
 <td ><p><a
 href="https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations">Quarterly</a></p>
 <p></p>
+<td style="width: 20.0%">Allocations Granted:</td>
+<td style="width: 25.6%"><p><a
+href="https://docs.nesi.org.nz/Getting_Started/Allocations/Quarterly_allocation_periods/">Quarterly</a></p>
+<p> </p>
 <p><em>A new project's initial allocation may be awarded from this class
 at any time, but subject to the limits of Proposal Development
 allocations.</em></p></td>

@@ -167,6 +167,12 @@ where `<TIME>` is 90 days minus the number of days until autocleanup.
 
 Please refer to the autocleaning email to determine the autocleaning date. 
 
+## I ran ```nn_doomed_list```, but got the message `file list not found`
+
+You are getting this message because GUFI, the engine behind ```nn_doomed_list```, can not be mounted. This maybe because you have logged on to `login01` or `login02`. You need to be on `login03` to work. 
+
+* To find out which login node you are on, type into Mahuika: ```hostname```
+
 ## More information
 
 If you have any questions or would like to discuss our storage facilities and policies in more detail, come to one of our [weekly Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) or [email our Support Team](mailto:support@nesi.org.nz) . 

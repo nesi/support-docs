@@ -2273,7 +2273,17 @@
             "2024-10",
             "2025-01"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "2024-07": "Warning: BLASTDB/2024-07 is old and so marked for deletion. Please switch to using a newer version or let us know that you still need 2024-07."
+            },
+            {
+                "2024-10": "Warning: BLASTDB/2024-10 is old and so marked for deletion. Please switch to using a newer version or let us know that you still need 2024-10."
+            },
+            {
+                "2025-01": "Warning: BLASTDB/2025-01 is now over a year old. Please switch to using a newer version or let us know that you still need 2025-01."
+            }
+        ],
         "network_licences": [],
         "default": "2025-01",
         "default_type": "latest",
