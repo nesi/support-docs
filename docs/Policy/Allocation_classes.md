@@ -7,14 +7,9 @@ hide:
 The allocation class granted to your project is used to decide who pays for that aspect of your project's consumption of REANNZ HPC services.
 
 <table >
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr >
-<td rowspan="4" ><h2>Proposal Development</h2>
+<td rowspan="4"><h2 id="proposal-development">Proposal Development</h2>
 <p>A short-term allocation available to researchers from any New Zealand
 research institution. During this allocation you will:</p>
 <ul>
@@ -52,7 +47,7 @@ from one of our other allocation classes.</em></p></td>
 <td >Moderate</td>
 </tr>
 <tr >
-<td rowspan="4" ><h2>Merit</h2>
+<td rowspan="4" ><h2 id=merit>Merit</h2>
 <p>Intended for highly skilled research teams carrying out high quality
 research funded via a peer review process that supports the New
 Zealand Government's Science Goals</a>.</p>
@@ -70,12 +65,8 @@ a named investigator are eligible at our discretion.</p>
 </ul>
 <p><em>Those engaged in privately funded research or research funded by
 a foreign government are unlikely to qualify.</em></p></td>
-<td >Allocations Granted:</td>
-<td ><p><a
-href="https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations">Quarterly</a></p>
-<p></p>
-<td style="width: 20.0%">Allocations Granted:</td>
-<td style="width: 25.6%"><p><a
+<td>Allocations Granted:</td>
+<td><p><a
 href="https://docs.nesi.org.nz/Getting_Started/Allocations/Quarterly_allocation_periods/">Quarterly</a></p>
 <p> </p>
 <p><em>A new project's initial allocation may be awarded from this class
@@ -100,7 +91,7 @@ allocations.</em></p></td>
 <td >Highest</td>
 </tr>
 <tr >
-<td rowspan="4" ><h2>Postgraduate</h2>
+<td rowspan="4" ><h2 id=postraduate>Postgraduate</h2>
 <p>Standard allocation for anyone enrolled at a New Zealand
 degree-granting institution and working on a postgraduate research
 programme (e.g. PhD or Masters by research) approved by that
@@ -108,12 +99,8 @@ institution.</p>
 <p><em>Applicants in undergraduate programmes (including Honours
 programmes) or graduate programmes based on coursework are not eligible
 for Postgraduate allocations.</em></p></td>
-<td >Allocations Granted:</td>
-<td ><p><a
-href="https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations">Quarterly</a></p>
-<p></p>
-<td style="width: 20.0%">Allocations Granted:</td>
-<td style="width: 25.6%"><p><a
+<td>Allocations Granted:</td>
+<td><p><a
 href="https://docs.nesi.org.nz/Getting_Started/Allocations/Quarterly_allocation_periods/">Quarterly</a></p>
 <p> </p>
 <p><em>A new project's initial allocation may be awarded from this class
@@ -138,7 +125,7 @@ allocations.</em></p></td>
 <td >Low</td>
 </tr>
 <tr >
-<td rowspan="4" ><h2>Institutional</h2>
+<td rowspan="4" ><h2 id=institutional>Institutional</h2>
 <p>Available if you work for or study at one of the institutions that was a NeSI Collaborator,
 or has a [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/)
 to our services.</p>
@@ -192,4 +179,5 @@ take a while to set up.
 Our team is happy to answer any questions you may have throughout the
 application process.
 
-For more information, see [how we review applications](./How_we_review_applications.md).
+For more information, see
+[how we review applications](./How_we_review_applications.md).

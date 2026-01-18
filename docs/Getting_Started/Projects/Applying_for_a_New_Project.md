@@ -63,7 +63,7 @@ information:
     research programme's current or expected funding)
 - Details of how your project is funded (this will help determine
     whether you are eligible for an allocation from our
-    [Merit](../../Policy/Merit_allocations.md) class)
+    [Merit](../../Policy/Allocation_classes.md#merit) class)
 - Your previous HPC experience
 - Whether you would like expert scientific programming support on your
     project

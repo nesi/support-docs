@@ -53,10 +53,10 @@ is simpler:
 1. **Eligibility check:** We look at the information you have given us
     (and may ask you more questions) to find out which of our regular
     allocation classes
-    ([Merit](Merit_allocations.md),
-    [Postgraduate](Postgraduate_allocations.md)
+    ([Merit](Allocation_classes.md#meritd),
+    [Postgraduate](Allocation_classes.md#postgraduate)
     or
-    [Institutional](Institutional_allocations.md))
+    [Institutional](Allocation_classes.md#institutional))
     this research programme is eligible to receive. Your research
     programme may be eligible for more than one allocation class.
 2. **Amount and duration:** We will calculate the approximate amount of
