@@ -1,14 +1,9 @@
 ---
 created_at: '2021-01-13T00:20:08Z'
 tags: []
-title: Acceptable Use Policy
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360002751455
-zendesk_section_id: 360000224835
 ---
 
-On 1 July 2025, the roles, services and technologies of New Zealand eScience Infrastructure (NeSI) were integrated into the crown-owned company, Research and Education Advanced Network New Zealand (REANNZ). 
+On 1 July 2025, the roles, services and technologies of New Zealand eScience Infrastructure (NeSI) were integrated into the crown-owned company, Research and Education Advanced Network New Zealand (REANNZ).
 
 All aspects of NeSI delivery, including the [Acceptable Use Policy](https://www.nesi.org.nz/services/high-performance-computing/guidelines/acceptable-use-policy), are now the responsibility of REANNZ.
 

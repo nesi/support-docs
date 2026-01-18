@@ -43,7 +43,7 @@ new projects is as follows:
     research teams.
 5. **Decision and notification:** If we approve an initial allocation
     for your project, we will typically award the project an
-    [allocation of compute units and also an online storage allocation](../Allocations/What_is_an_allocation.md),
+    [allocation of compute units and also an online storage allocation](../Getting_Started/Allocations/What_is_an_allocation.md),
     from one of [our allocation classes](Allocation_classes.md).
     In an case, we will send you an email telling you about our decision.
 
@@ -53,10 +53,10 @@ is simpler:
 1. **Eligibility check:** We look at the information you have given us
     (and may ask you more questions) to find out which of our regular
     allocation classes
-    ([Merit](Merit_allocations.md),
-    [Postgraduate](Postgraduate_allocations.md)
+    ([Merit](Allocation_classes.md#meritd),
+    [Postgraduate](Allocation_classes.md#postgraduate)
     or
-    [Institutional](Institutional_allocations.md))
+    [Institutional](Allocation_classes.md#institutional))
     this research programme is eligible to receive. Your research
     programme may be eligible for more than one allocation class.
 2. **Amount and duration:** We will calculate the approximate amount of

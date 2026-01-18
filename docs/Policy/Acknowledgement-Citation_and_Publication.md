@@ -8,7 +8,8 @@ Sharing your research outputs helps us demonstrate the impacts and benefits deli
 
 ## Reporting research outputs
 
-To report your research outputs, log into the [https://my.nesi.org.nz](https://my.nesi.org.nz) portal, select the relevant project, and enter details in the Research Output section. 
+To report your research outputs, log into the [https://my.nesi.org.nz](https://my.nesi.org.nz) portal,
+select the relevant project, and enter details in the Research Output section.
 
 Research outputs can fall into any of the following categories:
 
