@@ -7,7 +7,7 @@ tags:
 title: Account Requests for non-Tuakiri Members
 ---
 
-Most New Zealand universities and Crown Research Institutes are members
+Most New Zealand universities and Public Research Organisations are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
 but many other institutions, including private sector organisations and
