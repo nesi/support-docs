@@ -1,8 +1,9 @@
 ---
 description: Introduction to basic terminology and principles of High Performance Computing
-tags:
-  - training
+status: tutorial
 ---
+
+!!! time "5 Minutes"
 
 ## What Is an HPC System?
 
@@ -19,7 +20,7 @@ that are provisioned to users on demand or as needed.
 
 *Cluster* is a more specific term describing a type of supercomputer comprised of multiple smaller computers (nodes) working together. Almost all supercomputers are clusters.
 
-![NeSI-HPC-Facility](../../Getting_Started/Getting_Help/Training/fig/NeSI-HPC-Facility.jpg)
+![NeSI HPC](../../assets/images/NeSI-HPC-Facility.jpg)
 
 ## Access
 
@@ -48,30 +49,26 @@ or hard tasks that require a lot of computational resources.
 A node is similar in makeup to a regular desktop or laptop, composed of *CPUs* (sometimes also called *processors* or *cores*), *memory*
 (or *RAM*), and *disk* space. Although, where your laptop might have 8 CPUs and 16GB of memory, a compute node will have hundreds of cores and GB of memory.
 
-* **CPUs** are a computer's tool for running programs and calculations. 
+- **CPUs** are a computer's tool for running programs and calculations.
 
-* **Memory** is for short term storage, containing the information currently being operated on by the CPUs.
+- **Memory** is for short term storage, containing the information currently being operated on by the CPUs.
 
-* **Disk** is for long term storage, data stored here is permanent, i.e. still there even if the computer has been restarted. 
+- **Disk** is for long term storage, data stored here is permanent, i.e. still there even if the computer has been restarted. 
 It is common for nodes to connect to a shared, remote disk.
 
-{% include figure.html url="" max-width="40%"
-   file="/fig/clusterDiagram.png"
-   alt="Node anatomy" caption="" %}
+![cluster diagram](../../assets/images/clusterDiagram.png)
 
-> ## Differences Between Nodes
->
-> Many HPC clusters have a variety of nodes optimized for particular workloads.
-> Some nodes may have larger amount of memory, or specialized resources such as
-> Graphical Processing Units (GPUs).
-{: .callout}
+!!! info "Differences Between Nodes"
+  Many HPC clusters have a variety of nodes optimized for particular workloads.
+  Some nodes may have larger amount of memory, or specialized resources such as
+  Graphical Processing Units (GPUs).
 
-> ## Dedicated Transfer Nodes
->
-> If you want to transfer larger amounts of data to or from the cluster, NeSI
-> offers dedicated transfer nodes using the Globus service.  More information on using Globus for large data transfer to and from 
-> the cluster can be found here: [Globus Transfer Service](https://docs.nesi.org.nz/Storage/Data_Transfer_Services/Globus_Quick_Start_Guide/)
-{: .callout}
+!!! info "Dedicated Transfer Nodes"
+  If you want to transfer larger amounts of data to or from the cluster, NeSI
+  offers dedicated transfer nodes using the Globus service.  More information on using Globus for large data transfer to and from 
+  the cluster can be found here: [Globus Transfer Service](https://docs.nesi.org.nz/Storage/Data_Transfer_Services/Globus_Quick_Start_Guide/)
 
-{% include links.md %}
-[fshs]: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+!!! keypoints
+
+!!! postrequisites "What Next"
+  - [Bash Shell](Bash_Shell.md)
