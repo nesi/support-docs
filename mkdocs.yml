@@ -67,6 +67,7 @@ extra:
   project_code: nesi99991
   working_directory: ["nesi", "nobackup", "nesi99991", "introhpc2603"]
   example_script: "example script"
+  exercise: "https://docs.google.com/spreadsheets/d/1D5PnhE6iJOB3ZKkDCiBHnk5CNZlhmj_gS-IXKGkkVoI/edit?usp=sharing"
   status: 
   - deprecated
   - new
