@@ -6,33 +6,32 @@ tags:
 title: Overview of Globus
 ---
 
-Globus is a data transfer service that can be used to move data between Mahuika and your computer, a server, or your institute's high capacity storage system (HSC).
+Globus is a data transfer service that can be used to move a large amount of data between Mahuika and another system such as your computer, a server, or your institute's high capacity storage system.
 
 The following guide shows how to:
 
 * [How to set up globus for the first time](./First_Time_Setup.md)
-* [How to set up your **free** Globus Subscription with NeSI](./Signing_Up_To_Globus_Subscription.md)
+* [How to set up a **free** Globus Subscription](./Signing_Up_To_Globus_Subscription.md)
 * [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
-* [How to transfer data between Mahuika and your computer/server/HSC](./Data_Transfer_using_Globus.md)
-* [How to transfer data between two computer/server/HSC (rather than between Mahuika and your computer/server/HSC)](./Data_Transfer_Between_Personal_Endpoints.md)
+* [How to transfer data to/from Mahuika](./Data_Transfer_using_Globus.md)
+* [How to transfer data between endpoints other than Mahuika](./Data_Transfer_Between_Personal_Endpoints.md)
 
-This page also contains other useful information how to use Globus, including:
+This page also contains other useful information on how to use Globus, including:
 
 * [Adding Bookmarks](./Bookmarks.md)
 * [Sharing Data with colleagues using Globus](./Share_Collections.md)
-* [Automate Globus](./Syncing_files_with_globus_automate.md)
-* [Using the Globus CLI to transfer data](./Globus_CLI.md)
+* [Automating Globus](./Syncing_files_with_globus_automate.md)
+* [Using the Globus Command Line Interface (CLI) to transfer data](./Globus_CLI.md)
 
 ## When should I use Globus?
 
-Globus has been set up for transferring data to/from Mahuika to the outside world. **You should only use Globus if you are wanting to move a large amount of data to/from Mahuika to the outside world**. 
+Globus has been set up for transferring large amounts of data to/from Mahuika to the outside world. 
 
-* Do not use Globus if you are wanting to move data within Mahuika (i.e. between or within your `home`, `project`, and `nobackup` directories).
-* If you want to move data within Mahuika, consider using copy (`cp`), move (`mv`), [RClone](../RClone.md), or [Rsync](../Rsync.md). 
+* Do not use Globus if you are wanting to move data _within_ Mahuika (i.e. between or within your `home`, `project`, and `nobackup` directories). If you want to move data within Mahuika, consider using copy (`cp`), move (`mv`), [RClone](../RClone.md), or [Rsync](../Rsync.md). 
 
 ## Advantages of Globus
 
-Globus allows users to transfer data between systems. Some advantages of using Globus are that:
+Globus allows users to transfer large amounts of data between systems. Some advantages of using Globus are that:
 
 * It uses a web-based graphical user interface to help users navigate through file systems and transfer data.
 * Globus will perform data transfers in the background, allowing you to shutdown your computer while the transfer continues (as long as you are not transferring data to your computer)
@@ -40,9 +39,9 @@ Globus allows users to transfer data between systems. Some advantages of using G
 
 ## Glossary
 
-* Endpoints: Globus refers to computers, servers, high capacity storage systems as endpoints.
+* Endpoints: Globus refers to computers, servers, and high capacity storage systems as endpoints.
 
 ## Quick Information
 
-* Name of NeSI endpoint: `NeSI HPC Storage`
+* Name of Mahuika endpoint: `NeSI HPC Storage` (_Note: This name was chosen for the endpoint prior NeSI's integration with REANNZ in 2025._)
 * Name of NeSI Subscription: `New Zealand eScience Infrastructure Standard`
