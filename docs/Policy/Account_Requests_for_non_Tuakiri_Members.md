@@ -5,13 +5,9 @@ tags:
 - tuakiri
 - mynesi
 title: Account Requests for non-Tuakiri Members
-vote_count: 6
-vote_sum: -2
-zendesk_article_id: 360000216035
-zendesk_section_id: 360000224835
 ---
 
-Most New Zealand universities and Crown Research Institutes are members
+Most New Zealand universities and Public Research Organisations are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
 but many other institutions, including private sector organisations and
@@ -21,7 +17,7 @@ affiliated with an organisation supported by the
 federation, you can request access via
 [my.nesi.org.nz/register](https://my.nesi.org.nz/register).
 
-![mceclip0.png](../../assets/images/Account_Requests_for_non_Tuakiri_Members.png)
+![mceclip0.png](../assets/images/Account_Requests_for_non_Tuakiri_Members.png)
 
 !!! prerequisite
      The email address you use on your application must be your
@@ -44,5 +40,5 @@ my.nesi.org.nz.
 
 !!! note "What next?"
      -   [Project Eligibility](Allocation_classes.md)
-     -   [Applying for a new project.](../Projects/Applying_for_a_New_Project.md)
-     -   [Applying to join an existing project](../Projects/Applying_to_Join_a_Project.md).
+     -   [Applying for a new project.](../Getting_Started/Projects/Applying_for_a_New_Project.md)
+     -   [Applying to join an existing project](../Getting_Started/Projects/Applying_to_Join_a_Project.md).

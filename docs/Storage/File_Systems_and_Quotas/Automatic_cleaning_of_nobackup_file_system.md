@@ -83,6 +83,19 @@ PermissionError: [Errno 13] Permission denied: '/search/autocleaner/filelists/<p
     zgrep KEYWORD /search/autocleaner/filelists/current/<project code>.gz > files_that_will_be_deleted.txt
     ```
 
+    To get the size of the files listed in `<project code>.gz` (if they still exist), where files are listed from smallest to largest size:
+    ```bash
+    gunzip -c /search/autocleaner/filelists/current/<project code>.gz | xargs -d '\n' du -sh | sort -h
+    ```
+
+    To get the total size of files list in `<project code>.gz` (for those files that still exist):
+    ```bash
+     gunzip -c /search/autocleaner/filelists/current/<project code>.gz | xargs -d '\n' ls -l | awk '{sum+=$5} END {print sum/1024/1024/1024 " GB"}'
+    ```
+
+    NOTE: These commands will not exclude files that you have accessed recently. See below for what to do if you have made any modifications to files or deleted files from this list. 
+    
+
 ## I have just deleted a file from ```nn_doomed_list```, but it still appears in ```nn_doomed_list```?
 
 If you have already deleted or moved files that appeared in ```nn_doomed_list```, they will still appear in ```nn_doomed_list```. This is because 
@@ -102,6 +115,21 @@ If you have already deleted or moved files that appeared in ```nn_doomed_list```
     find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%u : %p\n > files_that_will_be_deleted.txt'
     ```
 
+    To determine the total size of the files for autodeletion:
+    ```bash
+    find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%s\n' | awk '{s+=$1} END {print s}' | numfmt --to=iec
+    ```
+
+    To list the size of all files: 
+    ```bash
+    find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%s\t%u : %p\n' | numfmt --to=iec --field=1
+    ```
+
+    To list the size of all files, and sort them from smallest to largest file: 
+    ```bash
+    find /nesi/nobackup/<project code> -type f -atime +<TIME> -ctime +<TIME> -printf '%s\t%u : %p\n' | numfmt --to=iec --field=1 | sort -h
+    ```
+    
 ## How can I check which files have been deleted in the last deletion cycle?
 
 If you would like to see what was contained in your previous fortnight's ```nn_doomed_list```:

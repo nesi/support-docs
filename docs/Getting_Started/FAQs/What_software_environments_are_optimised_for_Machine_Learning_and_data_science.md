@@ -40,7 +40,7 @@ more broad terms such as "machine learning".
 ![](../../assets/images/What_software_environments_on_NeSI_are_optimised_for_Machine_Learning_and_data_science.png)
 
 For more information on our model and approach to application
-support, refer to our [policy for the management of scientific application software](../Policy/Application_Support_Model.md).
+support, refer to our [policy for the management of scientific application software](../../Policy/Application_Support_Model.md).
 
 If you need help installing your software or would like to discuss your
 software needs with us, {% include "partials/support_request.html" %}.
