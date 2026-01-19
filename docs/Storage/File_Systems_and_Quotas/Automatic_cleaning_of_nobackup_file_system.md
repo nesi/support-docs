@@ -90,7 +90,7 @@ PermissionError: [Errno 13] Permission denied: '/search/autocleaner/filelists/<p
 
     To get the total size of files list in `<project code>.gz` (for those files that still exist):
     ```bash
-    gunzip -c /search/autocleaner/filelists/current/<project code>.gz | xargs -d '\n' du -ch | tail -n 1
+     gunzip -c /search/autocleaner/filelists/current/<project code>.gz | xargs -d '\n' ls -l | awk '{sum+=$5} END {print sum/1024/1024/1024 " GB"}'
     ```
 
     NOTE: These commands will not exclude files that you have accessed recently. See below for what to do if you have made any modifications to files or deleted files from this list. 
