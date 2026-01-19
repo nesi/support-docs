@@ -119,7 +119,7 @@ configurations.
 
      You will be asked to confirm each time to ensure you initiated the sequence and to maintain your security.  
 
-11. Return to your terminal, and press <kbd>enter</kbd>. You will need to complete the authentication proccess twice (e.g. you will be provided another link to follow as shown in step 6, complete the browser-based authentication, confirming whether you trust the device again if you didn't trust it the first time, return to your terminal again, and press <kbd>enter</kbd>. this second authentication in future logins can be avoided by following the steps outlined in [Adding an SSH Key](#adding-a-ssh-key-optional).
+11. Return to your terminal, and press <kbd>enter</kbd>. You will need to complete the authentication proccess twice (e.g. you will be provided another link to follow as shown in step 6 to complete the browser-based authentication, confirming whether you trust the device again if you didn't trust it the first time, then you will return to your terminal again, and press <kbd>enter</kbd>). this second authentication in future logins can be avoided by following the steps outlined in [Adding an SSH Key](#adding-a-ssh-key-optional).
 
     
 ## Adding a SSH key (optional)
