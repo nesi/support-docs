@@ -89,7 +89,7 @@ where `<NODE_NAME>` is the name of the node, and where:
 An example of what this looks like is shown below
 
 ```bash
-geoff.weal@login03:~$ squeue -w g09 -O "JobID,UserName,State,NumCPUs,MinMemory,GRES,TimeLeft"
+username@login03:~$ squeue -w g09 -O "JobID,UserName,State,NumCPUs,MinMemory,GRES,TimeLeft"
 JOBID               USER                STATE               CPUS                MIN_MEMORY          TRES_PER_NODE       TIME_LEFT           
 4153353             user1              RUNNING             2                   8G                  N/A                 1-17:13:53          
 4120303             user2              RUNNING             2                   5G                  N/A                 2-21:32:52          
