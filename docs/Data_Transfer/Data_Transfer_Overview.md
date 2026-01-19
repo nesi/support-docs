@@ -76,11 +76,6 @@ To do this:
     tar -xzvf tarball_file.tar # Compressed Mode
     ```
 
-!!! tip
-    To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
-
-    If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
-
 ### Compress Large Files
 
 Large files can take a long time to transfer. In some cases these large files can be compressed, minimising the amount of data needed to be transferred.

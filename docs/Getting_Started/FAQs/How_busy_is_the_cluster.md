@@ -63,10 +63,10 @@ g12       mixed-         308/28/0/336        1469837        548433         gpu:l
 
 Some notes:
 
-* Note that 2 cpus from above are unavailable (one for slurm, and one for WEKA).
+* Each node the maximum available CPUs is T-4 as two CPUs are reserved for Slurm and WEKA
 * `STATE`: most of the time you can ignore this. But if this message is `down` or `draining`, this indicates the node is unavailable for use.
 * `GRES` and `GRES_USED`: Compare these to see how many internal SSDs and GPUs are available for use. For example, `g10` `GRES` indicates this node contains 4 L4 GPUs in total, while `g10` `GRES_USED` indicates that only 1 L4 GPU is being used for `g10`. This means there are 3 L4 GPUs available on `g10`. In the example above, as long as your job requires less than 18 cores (36 divided by 2) and 107368 MBs (104 GBs) RAM, your job should go on (however, this will still be based on your priority)
-* Each node appears twice in this command. This is because each node is apart of the `genoa`/`milan` partition as well as being apart of the `maintanance` partition. 
+* Each node appears twice in this command. This is because each node is apart of the `genoa`/`milan` partition as well as being apart of the `maintanance` partition.
 
 ## What Jobs are Running on a Particular Node
 
