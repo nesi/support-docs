@@ -3,14 +3,16 @@ created_at: '2021-08-27T03:18:13Z'
 tags: 
     - globus
     - file transfer
-title: Overview of Globus
 ---
+
+!!! note
+    For other data transfer methods, see [Data_Transfer_Overiew](../Data_Transfer_Overview.md)
 
 Globus is a data transfer service that can be used to move a large amount of data between Mahuika and another system such as your computer, a server, or your institute's high capacity storage system.
 
 The following guide shows how to:
 
-* [How to set up globus for the first time](./First_Time_Setup.md)
+* [How to set up Globus for the first time](./First_Time_Setup.md)
 * [How to set up a **free** Globus Subscription](./Signing_Up_To_Globus_Subscription.md)
 * [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
 * [How to transfer data to/from Mahuika](./Data_Transfer_using_Globus.md)

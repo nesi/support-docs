@@ -23,7 +23,7 @@ For transferring files from other remote endpoints (i.e. not your local computer
 
 * [RClone](./RClone.md)
 * [FileSender](./FileSender.md): Use when you are transferring very large files.
-* [Globus](./Globus/Overview.md): Use when you are transferring very large files, and you want to use a GUI to interact with your data.
+* [Globus](./Globus/Globus_Overview.md): Use when you are transferring very large files, and you want to use a GUI to interact with your data.
 
 For transferring data using specific tools, see:
 
