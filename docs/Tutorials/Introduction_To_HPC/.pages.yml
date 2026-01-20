@@ -1,9 +1,9 @@
 ---
 nav:
- - What is a_HPC_cluster
- - Bash_Shell
- - Environment_And_Modules
- - Submitting_Your_First_Job
- - Resources
- - Scaling
+ - What is a_HPC_cluster.md
+ - Bash_Shell.md
+ - Environment_And_Modules.md
+ - Submitting_Your_First_Job.md
+ - Resources.md
+ - Scaling.md
  - "*"

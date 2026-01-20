@@ -5,22 +5,18 @@ status: tutorial
 ---
 
 
+!!! time "50 Minutes"
+
 !!! objectives
-  
-  - "Create, edit, manipulate and remove files from command line"
-  - "Translate an absolute path into a relative path and vice versa."
-  - "Use options and arguments to change the behaviour of a shell command."
-  - "Demonstrate the use of tab completion and explain its advantages."
+    - Create, edit, manipulate and remove files from command line
+    - Translate an absolute path into a relative path and vice versa.
+    - Use options and arguments to change the behaviour of a shell command.
+    - Demonstrate the use of tab completion and explain its advantages.
 
-!!! info The Unix Shell
+!!! info "The Unix Shell"
+    This episode will be a quick introduction to the Unix shell, only the bare minimum required to use the cluster.
+    The Software Carpentry '[Unix Shell](https://swcarpentry.github.io/shell-novice/)' lesson covers the subject in more depth, we recommend you check it out.
   
-   This episode will be a quick introduction to the Unix shell, only the bare minimum required to use the cluster.
-   The Software Carpentry '[Unix Shell](https://swcarpentry.github.io/shell-novice/)' lesson covers the subject in more depth, we recommend you check it out.
-  
-{% set working_dir = ['nesi', 'nobackup', 'example']  %}
-{% set projectcode = "nesi99991" %}
-{% set example_script = "sum_array.r" %}
-
 The part of the operating system responsible for managing files and directories
 is called the **file system**.
 It organizes our data into files,
@@ -32,44 +28,43 @@ Understanding how to navigate the file system using command line is essential fo
 
 The NeSI filesystem looks something like this:
 
-![The file system is made up of a root directory that contains sub-directories
-titled home, nesi, and system files](../../Getting_Started/Getting_Help/Training/fig/NesiFiletree.svg)
+![The file system is made up of a root directory that contains sub-directories](../../assets/images/NeSI_Filesystem_Simplified.svg)
 
 The directories that are relevant to us are.
 
-<table style="width: 100%; height: 90px;">
+<table>
 <tbody>
 <tr>
-<td style="width: 300px;"></td>
-<td style="width: 250px;">Location</td>
-<td style="width: 167.562px;">Default Storage</td>
-<td style="width: 142.734px;">Default Files</td>
-<td style="width: 89.3594px;">Backup</td>
-<td style="width: 155.188px;">Access Speed</td>
+<td></td>
+<td>Location</td>
+<td>Default Storage</td>
+<td>Default Files</td>
+<td>Backup</td>
+<td>Access Speed</td>
 </tr>
 <tr>
-<td style="width: 300px;"><strong>Home</strong> is for user-specific files such as configuration files, environment setup, source code, etc.</td>
-<td style="width: 250px;"><code>/home/&lt;username&gt;</code></td>
-<td style="width: 167.562px;">20GB</td>
-<td style="width: 142.734px;">1,000,000</td>
-<td style="width: 89.3594px;">Daily</td>
-<td style="width: 155.188px;">Normal</td>
+<td><strong>Home</strong> is for user-specific files such as configuration files, environment setup, source code, etc.</td>
+<td><code>/home/&lt;username&gt;</code></td>
+<td>20GB</td>
+<td>1,000,000</td>
+<td>Daily</td>
+<td>Normal</td>
 </tr>
 <tr>
-<td style="width: 300px;"><strong>Project</strong> is for persistent project-related data, project-related software, etc.</td>
-<td style="width: 250px;"><code>/nesi/project/&lt;projectcode&gt;</code></td>
-<td style="width: 167.562px;">100GB</td>
-<td style="width: 142.734px;">100,000</td>
-<td style="width: 89.3594px;">Daily</td>
-<td style="width: 155.188px;">Normal</td>
+<td><strong>Project</strong> is for persistent project-related data, project-related software, etc.</td>
+<td><code>/nesi/project/&lt;projectcode&gt;</code></td>
+<td>100GB</td>
+<td>100,000</td>
+<td>Daily</td>
+<td>Normal</td>
 </tr>
 <tr>
-<td style="width: 300px;"><strong>Nobackup</strong> is a 'scratch space', for data you don't need to keep long term. Old data is periodically deleted from nobackup</td>
-<td style="width: 250px;"><code>/nesi/nobackup/&lt;projectcode&gt;</code></td>
-<td style="width: 167.562px;">10TB</td>
-<td style="width: 142.734px;">1,000,000</td>
-<td style="width: 89.3594px;">None</td>
-<td style="width: 155.188px;">Fast</td>
+<td><strong>Nobackup</strong> is a 'scratch space', for data you don't need to keep long term. Old data is periodically deleted from nobackup</td>
+<td><code>/nesi/nobackup/&lt;projectcode&gt;</code></td>
+<td>10TB</td>
+<td>1,000,000</td>
+<td>None</td>
+<td>Fast</td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +74,7 @@ The directories that are relevant to us are.
 NeSI performs backups of the `/home` and `/nesi/project` (persistent) filesystems.  However, backups are only captured once per day.  So, if you edit or change code or data and then immediately delete it, it likely cannot be recovered.  Note, as the name suggests, NeSI does **not** backup the `/nesi/nobackup` filesystem.
 
 Protecting critical data from corruption or deletion is primarily your
-responsibility. Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.  Also important is managing your storage quota.  To check your quotas, use the `nn_storage_quota` command, eg
+responsibility. Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.  Also important is managing your storage quota.  To check your quotas, use the `nn_storage_quota` command, e.g
 
 ```out
 Quota_Location                          AvailableGiB           UsedGiB Use%
@@ -94,7 +89,6 @@ Notice that the project space for this user is over quota and has been locked, m
 
 For more details on our persistent and nobackup storage systems, including data retention and the nobackup autodelete schedule,
 please see our [Filesystem and Quota](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/) documentation.
-
 
 Directories are like *places* — at any time
 while we are using the shell, we are in exactly one place called
@@ -126,11 +120,11 @@ Next is `home`, as it is the next part of the path we know it is inside the root
 we also know that home is another directory as the path continues.
 Finally, stored inside `home` is the directory with your username.
 
-!!! note Slashes
-    Notice that there are two meanings for the `/` character.
-    When it appears at the front of a file or directory name,
-    it refers to the root directory. When it appears *inside* a path,
-    it's just a separator.
+!!! info Slashes
+  Notice that there are two meanings for the `/` character.
+  When it appears at the front of a file or directory name,
+  it refers to the root directory. When it appears *inside* a path,
+  it's just a separator.
 
 As you may now see, using a bash shell is strongly dependent on the idea that
 your files are organized in a hierarchical file system.
@@ -147,39 +141,45 @@ We will now list the contents of the directory we we will be working from. We ca
 use the following command to do this:
 
 ```sh
- ls {{ working_dir[0] }}
+ ls {{ config.extra.working_directory[0] }}
 ```
 
 ```out
-{{ working_dir[1] }}
+{{ config.extra.working_directory[1] }}
 ```
 
-You should see a directory called `{{ working_dir[1] }}`, and possibly several other directories.
-For the purposes of this workshop you will be working within `{{ working_dir|join('/') }}`.
+You should see a directory called `{{ config.extra.working_directory[1] }}`, and possibly several other directories.
+For the purposes of this workshop you will be working within `{{ config.extra.working_directory|join('/') }}`.
 
 !!! tip "Command History"
-  You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
-  A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
+    You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
+    A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
-??? question "`ls` Reading Comprehension"
-  What command would you type to get the following output
+![](../../assets/images/tutorial_bash_shell_ex1.svg)
 
-  ```out
-  original pnas_final pnas_sub
-  ```
+
+### 2.0: `ls` Reading Comprihension
+<quiz>
+What command would you type to get the following output
   
-  ![](../../Getting_Started/Getting_Help/Training/fig/filesystem-challenge.svg)
+```out
+original pnas_final pnas_sub
+```
 
-  1. `ls pwd`
-  2. `ls backup`
-  3. `ls /Users/backup`
-  4. `ls /backup`
 
-  ??? Solution
+- [ ] `ls pwd`
+- [ ] `ls backup`
+- [X] `ls /Users/backup`
+- [ ] `ls /backup`
+
+This uses the absolute path explicitly.
+</quiz>
+  
+  <!-- ??? solution
     1. No: `pwd` is not the name of a directory.
     2. Possibly: It depends on your current directory (we will explore this more shortly).
-    3. Yes: uses the absolute path explicitly.
-    4. No: There is no such directory.
+    3. Yes: u
+    4. No: There is no such directory. -->
 
 ## Moving about
 
@@ -192,7 +192,7 @@ The `cd` command is akin to double clicking a folder in a graphical interface.
 We will use the following command:
 
 ```sh
- cd {{ working_dir|join('/')  }}
+ cd {{ config.extra.working_directory|join('/') }}
 ```
 
 ```out
@@ -206,9 +206,8 @@ We can check we are in the right place by running `pwd`.
  pwd
 ```
 
-
 ```out
-{{ working_dir|join('/') }}
+{{ config.extra.working_directory|join('/') }}
 ```
 
 
@@ -226,11 +225,11 @@ As previously mentioned, it is general useful to organise your work in a hierarc
 You should then be able to see your new directory is there using `ls`.
 
 ```sh
- ls {{ working_dir|join('/') }}
+ ls {{ config.extra.working_directory|join('/') }}
 ```
 
 ```sh
- {{ example_script }}   usr123  usr345
+ {{ config.extra.example_script }}   usr123  usr345
 ```
 
 ## General Syntax of a Shell Command
@@ -239,25 +238,23 @@ We are now going to use `ls` again but with a twist, this time we will also use 
 These options modify the way that the command works, for this example we will add the flag `-l` for "long listing format".
 
 ```sh
- ls -l {{ working_dir|join('/') }}
+ ls -l {{ config.extra.working_directory|join('/') }}
 ```
 
-{: .language-bash}
-
 ```out
--rw-r-----+ 1 usr9999 {{projectcode}}  460 Nov 18 17:03 
--rw-r-----+ 1 usr9999 {{projectcode}}  460 Nov 18 17:03 {{ example_script }} 
-drwxr-sr-x+ 3 usr9999 {{projectcode}} 4096 22 Sep 08:40 birds
-drwxrws---+ 2 usr123  {{projectcode}} 4096 Nov 15 09:01 usr123
-drwxrws---+ 2 usr345  {{projectcode}} 4096 Nov 15 09:01 usr345
+-rw-r-----+ 1 usr9999 {{config.extra.project_code}}  460 Nov 18 17:03 
+-rw-r-----+ 1 usr9999 {{config.extra.project_code}}  460 Nov 18 17:03 {{ example_script }} 
+drwxr-sr-x+ 3 usr9999 {{config.extra.project_code}} 4096 22 Sep 08:40 birds
+drwxrws---+ 2 usr123  {{config.extra.project_code}} 4096 Nov 15 09:01 usr123
+drwxrws---+ 2 usr345  {{config.extra.project_code}} 4096 Nov 15 09:01 usr345
 ```
 
 We can see that the `-l` option has modified the command and now our output has listed all the files in alphanumeric order, which can make finding a specific file easier.
 It also includes information about the file size, time of its last modification, and permission and ownership information.
 
 Most Unix commands follow this basic structure.
-![Structure of a Unix command](../../Getting_Started/Getting_Help/Training/fig/Unix_Command_Struc.svg)
 
+![Structure of a unix command](../../assets/images/Unix_Command_Struc.svg)
 The **prompt** tells us that the terminal is accepting inputs, prompts can be customised to show all sorts of info.
 
 The **command**, what are we trying to do.
@@ -282,11 +279,11 @@ Another useful option for `ls` is the `-a` option, lets try using this option to
 
 
 ```out
-drwxrws---+  4 usr001  {{projectcode}}   4096 Nov 15 09:00 .
-drwxrws---+ 12 root    {{projectcode}} 262144 Nov 15 09:23 ..
--rw-r-----+  1 cwal219 {{projectcode}}    460 Nov 18 17:03 {{ example_script }} 
-drwxrws---+  2 usr123  {{projectcode}}   4096 Nov 15 09:01 usr123
-drwxrws---+  2 usr345  {{projectcode}}   4096 Nov 15 09:01 usr345
+drwxrws---+  4 usr001  {{config.extra.project_code}}   4096 Nov 15 09:00 .
+drwxrws---+ 12 root    {{config.extra.project_code}} 262144 Nov 15 09:23 ..
+-rw-r-----+  1 cwal219 {{config.extra.project_code}}    460 Nov 18 17:03 {{ config.extra.example_script }} 
+drwxrws---+  2 usr123  {{config.extra.project_code}}   4096 Nov 15 09:01 usr123
+drwxrws---+  2 usr345  {{config.extra.project_code}}   4096 Nov 15 09:01 usr345
 ```
 
 Single letter options don't usually need to be separate. In this case `ls -la` is performing the same function as if we had typed `ls -l -a`.
@@ -339,7 +336,7 @@ We will now navigate to the parent directory, the simplest way do this is to use
  cd ..
 ```
 
-We should now be back in `{{ working_dir[0] }}`.
+We should now be back in `{{ config.extra.working_directory[0] }}`.
 
 ```sh
  pwd
@@ -347,7 +344,7 @@ We should now be back in `{{ working_dir[0] }}`.
 
 
 ```out
-{{ working_dir[0] }}
+{{ config.extra.working_directory[0] }}
 ```
 
 
@@ -361,14 +358,14 @@ We should now be back in `{{ working_dir[0] }}`.
 For example, if you type:
 
 ```sh
- cd {{ working_dir|last|slice(0,3) }}
+ cd {{ config.extra.working_directory|last|slice(0,3) }}
 ```
 
 and then press <kbd>Tab</kbd> (the tab key on your keyboard),
 the shell automatically completes the directory name for you (since there is only one possible match):
 
 ```sh
- cd {{ working_dir|last }}/
+ cd {{ config.extra.working_directory|last }}/
 ```
 
  However, you want to move to your personal working directory. If you hit <kbd>Tab</kbd> once you will
@@ -384,13 +381,13 @@ Now entering in the first few characters of the path (just enough that the possi
  Now press <kbd>Enter</kbd> to execute the command.
 
 ```sh
- cd {{ working_dir|last }}/<username>
+ cd {{ config.extra.working_directory|last }}/<username>
 ```
 
 Check that we've moved to the right place by running `pwd`.
 
 ```out
-{{ working_dir|join('/') }}/<username>
+{{ config.extra.working_directory|join('/') }}/<username>
 ```
 
   !!! tip "Two More Shortcuts"
@@ -449,8 +446,8 @@ Check that we've moved to the right place by running `pwd`.
   2. `2012-12-01 2013-01-08 2013-01-27`
   3. `original pnas_final pnas_sub`
   
-  ![](../../Getting_Started/Getting_Help/Training/fig/filesystem-challenge.svg)
-  
+  ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
+
   ??? question Solution
     1. No: there *is* a directory `backup` in `/Users`.
     2. No: this is the content of `Users/thing/backup`,
@@ -487,10 +484,10 @@ Check that we've moved to the right place by running `pwd`.
   
    `*` is a **wildcard**, which matches zero or more characters.
   
-   Inside the `{{ working_dir|join('/') }}` directory there is a directory called `birds`
+   Inside the `{{ config.extra.working_directory|join('/') }}` directory there is a directory called `birds`
   
   ```sh
-   cd {{ working_dir|join('/') }}/birds
+   cd {{ config.extra.working_directory|join('/') }}/birds
    ls
   ```
   
@@ -632,7 +629,7 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 (we'll be asked what file we want to save this to:
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
 
-<div style="width:80%; margin: auto;"><img alt="screenshot of nano text editor in action"
+<div
 src="../../Getting_Started/Getting_Help/Training/fig/nano-screenshot.png"></div>
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
@@ -669,10 +666,10 @@ draft.txt
 
 ## Copying files and directories
 
-In a future lesson, we will be running the R script ```{{ working_dir|join('/') }}/{{ example_script }}```, but as we can't all work on the same file at once you will need to take your own copy. This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created. We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`.
+In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}```, but as we can't all work on the same file at once you will need to take your own copy. This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created. We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`.
 
 ```sh
- cp {{ working_dir|join('/') }}/{{ example_script }}  .
+ cp {{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}  .
 ```
 
 We can check that it did the right thing using `ls`

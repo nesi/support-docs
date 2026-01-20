@@ -172,5 +172,5 @@ Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
 Batch_Computing/Batch_Computing_ : Batch_Computing/Batch_Computing_Guide.md
-Batch_Computing/Submitting_your_first_job.md : Batch_Computing/Tutorial:_Submitting_your_first_job.md
 Data_Transfer/Filesytem_Mounts_using_SSHFS.md : Data_Transfer/Filesystem_Mounts_using_SSHFS.md
+Tutorials/Introduction_To_HPC/What_Is_a_HPC_cluster.md : Tutorials/Introduction_To_HPC/Introduction.md
