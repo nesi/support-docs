@@ -36,7 +36,7 @@ You will get an output like this:
 
 ```sh
 username@login03:~$ s3cmd info s3://<freezer-bucket>
-s3://mattb-freezer-10551/ (bucket):
+s3://<freezer-bucket> (bucket):
    Location:  akl-1
    Payer:     none
    Ownership: none
@@ -50,8 +50,8 @@ s3://mattb-freezer-10551/ (bucket):
 
 Useful information that you can pull from this:
 
-"Principal": This provides information about all users who can access this bucket
-ACL: Indicates the owner of the bucket
+* `"Principal"`: This provides information about all users who can access this bucket
+* `ACL`: Indicates the owner of the bucket
 
 ### List contents of a bucket
 
