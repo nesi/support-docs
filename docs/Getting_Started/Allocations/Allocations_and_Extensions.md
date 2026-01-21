@@ -30,8 +30,8 @@ qualify for an extension:
 - If the project team is no longer eligible to receive computing
     resources from the HPC platform. For example, the grant funding the research
     programme has come to an end and the host institution does not wish
-    to purchase computing resources from NeSI (or allocate computing
-    resources from its subscription or collaborator share if it has
+    to purchase computing resources from REANNZ (or allocate computing
+    resources from its [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) or Collaborator share if it has
     one).
 - If the project's host institution has changed (or is about to
     change).
@@ -40,8 +40,8 @@ qualify for an extension:
     institution who has agreed to take over project ownership
     responsibilities.
 - If the project's owner (or supervisor if the project has one) is not
-    authorised to access NeSI facilities due to a refusal to accept or
-    failure to abide by the NeSI Acceptable Use Policy.
+    authorised to access Mahuika due to a refusal to accept or
+    failure to abide by our Acceptable Use Policy.
 
 ## Who may request a project extension?
 
@@ -64,7 +64,7 @@ a new allocation (or, alternatively, clean up your project data) in the
 following circumstances:
 
 - In the lead-up to the end of the [call
-    window](https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations)
+    window](https://docs.nesi.org.nz/Getting_Started/Allocations/Quarterly_allocation_periods/)
     immediately before your currently active allocation is scheduled to
     end.
 - In the lead-up to the end of your allocation.
