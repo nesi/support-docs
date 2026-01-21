@@ -74,11 +74,18 @@ more appropriate walltime.
 #### Memory
 
 The `MaxRSS` field shows the maximum memory used by each of the job
-steps, so in this case 13 GB. For our next run we may want to set:
+steps (excluding file caches), so in this case 13 GB. For our next run we may want to set:
 
 ``` sl
 #SBATCH --mem=15G
 ```
+
+Most simple HPC jobs read some inputs sequentially, do some computation, and then write out results
+sequentially. For those, RSS is a decent measure of their memory needs. However RSS only includes the 
+main (or "anonymous") memory of the running program, so jobs which create
+large temporary files in memory (eg: in _/tmp_) will also need to request memory for those, and jobs which
+repeatedly re-read the same file (or parts of one, as when querying an indexed database) may benefit from
+requesting enough additional memory to let the Operating System cache that in memory for them.
 
 #### CPUs
 
@@ -93,30 +100,6 @@ however bear in mind there are other factors that affect CPU efficiency.
 ``` sl
 #SBATCH --cpus-per-task=10
 ```
-
-Note: When using sacct to determine the amount of memory your job used -
-in order to reduce memory wastage - please keep in mind that Slurm
-reports the figure as RSS (Resident Set Size) when in fact the metric
-being displayed is PSS (Proportional Set Size). This is an issue with
-Slurm and cannot currently be fixed. PSS is a more accurate measure of
-memory usage than RSS - RSS shows the sum of memory used including
-shared libraries, therefore this gives a figure that is more often than
-not greater than the actual amount of memory used by your job. PSS
-provides a more accurate measure.
-
-Further technical notes for those interested in commonly used memory
-usage metrics on linux systems:
-
-**VSS** &gt;= **RSS** &gt;= **PSS** &gt;= **USS**  
-**VSS-Virtual Set Size** - Virtual memory consumption (contains memory
-consumed by shared libraries)  
-**RSS-Resident Set Size** - Used physical memory (contains memory
-consumed by shared libraries)  
-**PSS-Proportional Set Size** - Actual physical memory used
-(proportional allocation of memory consumed by shared libraries)  
-**USS-Unique Set Size** - Process consumed physical memory alone (does
-not contain the memory occupied by the shared library)  
-`PSS = USS + (RSS/# shared processes)`
 
 ## During Runtime
 
