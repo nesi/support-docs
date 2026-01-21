@@ -6,7 +6,7 @@ tags:
 title: Allocations & Extensions
 ---
 
-NeSI recognises that research programmes often continue over several
+We recognise that research programmes often continue over several
 years before coming to an end. To reduce administrative overhead, we
 allow most project teams to extend their projects rather than applying
 for a new project to carry on the same work.
@@ -28,7 +28,7 @@ qualify for an extension:
     the project work, such that we decide a new technical assessment is
     warranted.
 - If the project team is no longer eligible to receive computing
-    resources from NeSI. For example, the grant funding the research
+    resources from the HPC platform. For example, the grant funding the research
     programme has come to an end and the host institution does not wish
     to purchase computing resources from NeSI (or allocate computing
     resources from its subscription or collaborator share if it has
@@ -82,7 +82,7 @@ differ from our forecast.
 
 Please be aware that:
 
-- First and subsequent allocations are subject to the NeSI allocation
+- First and subsequent allocations are subject to the allocation
     size and duration limits in force at the time they are considered by
     our reviewers.
 - An allocation from an institution's entitlement is subject to
