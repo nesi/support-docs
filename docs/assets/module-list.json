@@ -4115,12 +4115,20 @@
             "biology"
         ],
         "extensions": [
-            "cutadapt-4.4",
-            "dnaio-0.10.0",
-            "isal-1.0.1",
-            "setuptools_scm-7.0.5",
-            "tomli-2.0.1",
-            "xopen-1.7.0"
+            "cachetools-6.2.5",
+            "cutadapt-5.2",
+            "cython-3.2.4",
+            "dnaio-1.2.4",
+            "flit_core-3.12.0",
+            "isal-1.8.0",
+            "packaging-26.0",
+            "setuptools-80.10.2",
+            "setuptools_scm-9.2.2",
+            "streamlit-1.53.1",
+            "tomli-2.4.0",
+            "typing_extensions-4.15.0",
+            "xopen-2.0.2",
+            "zlib_ng-1.0.0"
         ],
         "licence_type": "",
         "homepage": "https://opensource.scilifelab.se/projects/cutadapt/",
@@ -4132,15 +4140,16 @@
             "3.3-gimkl-2020a-Python-3.8.2",
             "3.5-gimkl-2020a-Python-3.8.2",
             "4.1-gimkl-2022a-Python-3.10.5",
-            "4.4-gimkl-2022a-Python-3.11.3"
+            "4.4-gimkl-2022a-Python-3.11.3",
+            "5.2-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.4-gimkl-2022a-Python-3.11.3",
+        "default": "5.2-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1769460713,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/cutadapt/4.4-gimkl-2022a-Python-3.11.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/bio/cutadapt/5.2-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
