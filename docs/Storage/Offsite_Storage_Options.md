@@ -2,8 +2,7 @@
 created_at: 2026-01-27
 description: 
 tags: 
-    - 
-    - 
+- data storage
 ---
 
 There are many other places you can store your data, which is most suitable will depend on what resources your group can budget for and what high capacity storage (HCS) your university offers.
