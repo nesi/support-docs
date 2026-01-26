@@ -169,3 +169,8 @@ Getting_Started/Policy/Proposal_Development_allocations.md : Policy/Allocation_c
 Getting_Started/Policy/Postgraduate_allocations.md : Policy/Allocation_classes.md#postgraduate
 Getting_Started/Policy/Merit_allocations.md : Policy/Allocation_classes.md#merit
 Getting_Started/Policy/Institutional_allocations.md : Policy/Allocation_classes.md#institutional
+Storage/Data_Recovery/File_Recovery.md : Storage/Data_Recovery.md
+Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md : Storage/Automatic_cleaning_of_nobackup_file_system.md
+Storage/File_Systems_and_Quotas/File_permissions_and_groups.md : Storage/File_permissions_and_groups.md
+Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md : Storage/Filesystems_and_Quotas.md
+Storage/Automatic_cleaning_of_nobackup_file_system.md : Storage/Automatic_cleaning_of_nobackup.md
