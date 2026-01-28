@@ -159,13 +159,13 @@ For the purposes of this workshop you will be working within `{{ config.extra.wo
 
 
 ### 2.0: `ls` Reading Comprihension
+
 <quiz>
 What command would you type to get the following output
   
 ```out
 original pnas_final pnas_sub
 ```
-
 
 - [ ] `ls pwd`
 - [ ] `ls backup`

@@ -1,6 +1,6 @@
 ---
 nav:
- - What is a_HPC_cluster.md
+ - Introduction.md
  - Bash_Shell.md
  - Environment_And_Modules.md
  - Submitting_Your_First_Job.md
