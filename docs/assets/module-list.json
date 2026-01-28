@@ -18102,7 +18102,7 @@
         "network_licences": [],
         "default": "0.0.18-gimkl-2022a-Python-3.10.5",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1769558972,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/RFPlasmid/0.0.18-gimkl-2022a-Python-3.10.5.lua",
         "force_hide": "False",
