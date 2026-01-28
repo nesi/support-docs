@@ -22,8 +22,8 @@ For file transfer methods that use the terminal, see:
 For transferring files from other remote endpoints (i.e. not your local computer), see:
 
 * [RClone](./RClone.md)
-* [FileSender](./FileSender.md) <WHY USE THIS OVER RClone??>
-* [Globus](./Globus/Overview.md) <WHY USE THIS OVER FILESENDER??>
+* [FileSender](./FileSender.md): Use when you are transferring very large files.
+* [Globus](./Globus/Globus_Overview.md): Use when you are transferring very large files, and you want to use a GUI to interact with your data.
 
 For transferring data using specific tools, see:
 
@@ -76,11 +76,6 @@ To do this:
     tar -xzvf tarball_file.tar # Compressed Mode
     ```
 
-!!! tip
-    To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
-
-    If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
-
 ### Compress Large Files
 
 Large files can take a long time to transfer. In some cases these large files can be compressed, minimising the amount of data needed to be transferred.
@@ -105,6 +100,14 @@ To compress one or more large files:
     To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
 
     If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
+
+### Use either `cp`, `mv`, `RClone`, or `Rsync` to transfer files within Mahuika
+
+It is recommended that if you are wanting to transfer files within or between your `home`, `project`, and `nobackup` directories that you use either copy (`cp`), move (`mv`), [RClone](./RClone.md) or [Rsync](./Rsync.md) to achieve this.
+
+### Only use Globus to transfer data onto and off of Mahuika from an outside source
+
+**Do not use Globus for transferring files from place to place within Mahuika**.
 
 ### Use Checksums
 

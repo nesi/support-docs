@@ -12,7 +12,7 @@ description: How to request a NeSI allocation renewal.
 
     - At least annually, you will need to renew your compute resources and associated resources for your projects. You should receive emails ahead of time warning you of any expiring allocation.  
     - Additionally, you can request a new allocation early in order to have your compute allocation increased before the current allocation expires, if you find that the current compute allocation is no longer meeting your needs.  
-    - If you made a mistake in your allocation request, please respond to the confirmation email will receive after submitting your request with the details of the changes you wish to make to your renewal request.  
+    - If you made a mistake in your allocation request, please respond to the confirmation email you will receive after submitting your request with the details of the changes you wish to make to your renewal request.  
 
     Choose the default option **"New/Increase Compute Allocation Request (replacing any existing allocation for this project)"**.  
     Indicate the number of compute units or CPU core hours, the persistent and temporary storage limits, and the start and end dates of the proposed allocation. Add any comments to describe the platform, the intended usage (e.g. "Will use mostly JupyterLab") to help tune the allocation.  
@@ -33,7 +33,7 @@ description: How to request a NeSI allocation renewal.
 
 4. Storage Update Requests:
 
-    - Biennially, Freezer allocations need to be extended. You must raise a request to update the storage of an existing allocation for this purpose. You should receive emails ahead of time warning you of any expiring allocation.  
+    - Biennially, Freezer allocations need to be extended. You must raise a request to update the storage of an existing allocation for this purpose. You should receive emails ahead of time warning you of any expiring allocations.  
 
     Choose the option **"Increase/Extend Storage allocation (adding/replacing any current storage allocation for this project)"**.  
     Indicate the long-term storage space, its current name, and the new end date.
@@ -64,7 +64,7 @@ differ from our forecast.
 
 Please be aware that:
 
-- First and subsequent allocations are subject to the NeSI allocation
+- First and subsequent allocations are subject to the allocation
     size and duration limits in force at the time they are considered by
     our reviewers.
 - An allocation from an institution's entitlement is subject to
