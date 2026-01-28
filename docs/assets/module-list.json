@@ -299,7 +299,7 @@
         "force_show": "False"
     },
     "Advisor": {
-        "description": "Vectorization Optimization and Thread Prototyping\n - Vectorize & thread code or performance \u201cdies\u201d\n - Easy workflow + data + tips = faster code faster\n - Prioritize, Prototype & Predict performance gain\n ",
+        "description": "Vectorization Optimization and Thread Prototyping\n - Vectorize & thread code or performance \u201cdies\u201d\n - Easy workflow + data + tips = faster code faster\n - Prioritize, Prototype & Predict performance gain",
         "domains": [
             "perf"
         ],
@@ -321,7 +321,7 @@
         "force_show": "False"
     },
     "AGAT": {
-        "description": " Suite of tools to handle gene annotations in any GTF/GFF format. ",
+        "description": "Suite of tools to handle gene annotations in any GTF/GFF format.",
         "domains": [
             "bio",
             "biology"
@@ -477,28 +477,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "Amber": {
-        "description": "Amber (originally Assisted Model Building with Energy Refinement) is software for performing\n molecular dynamics and structure prediction.",
-        "domains": [
-            "chem"
-        ],
-        "extensions": [],
-        "licence_type": "proprietary",
-        "homepage": "https://ambermd.org/amber.html",
-        "support": "",
-        "versions": [
-            "24.0-foss-2023a-AmberTools-25.0-CUDA-12.5.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "24.0-foss-2023a-AmberTools-25.0-CUDA-12.5.0",
-        "default_type": "latest",
-        "last_updated": 1766122185,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Amber/24.0-foss-2023a-AmberTools-25.0-CUDA-12.5.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "AMOS": {
         "description": "Collection of tools for genome assembly",
         "domains": [
@@ -546,7 +524,7 @@
         "force_show": "False"
     },
     "Anaconda3": {
-        "description": "Built to complement the rich, open source Python community,\nthe Anaconda platform provides an enterprise-ready data analytics platform \nthat empowers companies to adopt a modern open data science analytics architecture.\n\nIMPORTANT: This version of Anaconda Python comes with Intel MKL support to speed up\n           certain types of mathematical computations, such as linear algebra or FFT.\n           The module sets\n\n           MKL_NUM_THREADS=1\n\n           to run MKL on a single thread by default, avoiding accidental oversubscription\n           of cores. The number of threads can be increased for large problems, please\n           refer to the Intel MKL documentation for guidance.\n",
+        "description": "Built to complement the rich, open source Python community,\nthe Anaconda platform provides an enterprise-ready data analytics platform \nthat empowers companies to adopt a modern open data science analytics architecture.\n\nIMPORTANT: This version of Anaconda Python comes with Intel MKL support to speed up\n           certain types of mathematical computations, such as linear algebra or FFT.\n           The module sets\n\n           MKL_NUM_THREADS=1\n\n           to run MKL on a single thread by default, avoiding accidental oversubscription\n           of cores. The number of threads can be increased for large problems, please\n           refer to the Intel MKL documentation for guidance.",
         "domains": [
             "lang",
             "machine_learning"
@@ -619,7 +597,7 @@
         "force_show": "False"
     },
     "ANNOVAR": {
-        "description": " Efficient software tool to utilize update-to-date information to functionally \nannotate genetic variants detected from diverse genomes .",
+        "description": "Efficient software tool to utilize update-to-date information to functionally \nannotate genetic variants detected from diverse genomes .",
         "domains": [
             "bio",
             "biology"
@@ -1119,7 +1097,7 @@
         "force_show": "False"
     },
     "argtable": {
-        "description": " Argtable is an ANSI C library for parsing GNU style\n command line options with a minimum of fuss. ",
+        "description": "Argtable is an ANSI C library for parsing GNU style\n command line options with a minimum of fuss.",
         "domains": [
             "lib"
         ],
@@ -1337,7 +1315,7 @@
         "force_show": "False"
     },
     "at-spi2-core": {
-        "description": "\n Assistive Technology Service Provider Interface.\n",
+        "description": "Assistive Technology Service Provider Interface.",
         "domains": [
             "vis"
         ],
@@ -1422,16 +1400,15 @@
             "3.3.3-gimkl-2020a",
             "3.4.0-gimkl-2020a",
             "3.4.0-gimkl-2022a",
-            "3.5.0-gimkl-2022a",
-            "3.5.0-gimkl-2022a-patch1"
+            "3.5.0-gimkl-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "3.5.0-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1753661594,
+        "last_updated": 1740132626,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/AUGUSTUS/3.5.0-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/AUGUSTUS/3.5.0-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1458,7 +1435,7 @@
         "force_show": "False"
     },
     "AutoDock_Vina": {
-        "description": " AutoDock Vina is an open-source program for doing molecular docking. ",
+        "description": "AutoDock Vina is an open-source program for doing molecular docking.",
         "domains": [
             "bio"
         ],
@@ -1607,16 +1584,15 @@
         "homepage": "basilisk.fr",
         "support": "",
         "versions": [
-            "20220324-gimpi-2020a",
-            "20250612-gompi-2023a"
+            "20220324-gimpi-2020a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "20250612-gompi-2023a",
+        "default": "20220324-gimpi-2020a",
         "default_type": "latest",
-        "last_updated": 1752103255,
+        "last_updated": 1740132627,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Basilisk/20250612-gompi-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Basilisk/20220324-gimpi-2020a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1677,16 +1653,15 @@
         "homepage": "http://www1.montpellier.inra.fr/CBGP/software/baypass/index.html",
         "support": "",
         "versions": [
-            "2.31-intel-2022a",
-            "3.0-GCC-12.3.0"
+            "2.31-intel-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.0-GCC-12.3.0",
+        "default": "2.31-intel-2022a",
         "default_type": "latest",
-        "last_updated": 1752141926,
+        "last_updated": 1740132627,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/BayPass/3.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BayPass/2.31-intel-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1734,7 +1709,6 @@
             "1.15.1-GCC-11.3.0",
             "1.16-GCC-11.3.0",
             "1.19-GCC-11.3.0",
-            "1.22-GCC-12.3.0",
             "1.9-GCC-7.4.0"
         ],
         "admin_list": [
@@ -1743,34 +1717,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.22-GCC-12.3.0",
+        "default": "1.19-GCC-11.3.0",
         "default_type": "latest",
-        "last_updated": 1754169077,
+        "last_updated": 1740132626,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/BCFtools/1.22-GCC-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "BCL-Convert": {
-        "description": "Converts per cycle binary data output by Illumina sequencers containing basecall\nfiles and quality scores to per read FASTQ files",
-        "domains": [
-            "bio",
-            "biology"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://support.illumina.com/sequencing/sequencing_software/bcl-convert.html",
-        "support": "",
-        "versions": [
-            "4.2.4"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "4.2.4",
-        "default_type": "latest",
-        "last_updated": 1763348802,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/BCL-Convert/4.2.4.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BCFtools/1.19-GCC-11.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1824,7 +1775,7 @@
         "force_show": "False"
     },
     "beagle-lib": {
-        "description": "beagle-lib is a high-performance library that can perform the core\ncalculations at the heart of most Bayesian and Maximum Likelihood\nphylogenetics packages.\n",
+        "description": "beagle-lib is a high-performance library that can perform the core\ncalculations at the heart of most Bayesian and Maximum Likelihood\nphylogenetics packages.",
         "domains": [
             "bio",
             "biology"
@@ -1879,7 +1830,7 @@
         "force_show": "False"
     },
     "BEDOPS": {
-        "description": " BEDOPS is an open-source command-line toolkit that performs highly \n efficient and scalable Boolean and other set operations, statistical calculations, \n archiving, conversion and other management of genomic data of arbitrary scale.",
+        "description": "BEDOPS is an open-source command-line toolkit that performs highly \n efficient and scalable Boolean and other set operations, statistical calculations, \n archiving, conversion and other management of genomic data of arbitrary scale.",
         "domains": [
             "bio",
             "biology"
@@ -1929,7 +1880,7 @@
         "force_show": "False"
     },
     "BEEF": {
-        "description": " BEEF is a library implementing the Bayesian Error\nEstimation Functional, a description of which can be found here:\n\nhttp://dx.doi.org/10.1103/PhysRevB.85.235149",
+        "description": "BEEF is a library implementing the Bayesian Error\nEstimation Functional, a description of which can be found here:\n\nhttp://dx.doi.org/10.1103/PhysRevB.85.235149",
         "domains": [
             "chem",
             "chemistry"
@@ -2034,17 +1985,15 @@
         "homepage": "https://bigscape-corason.secondarymetabolites.org/index.html",
         "support": "",
         "versions": [
-            "1.1.5-gimkl-2022a-Python-3.11.3",
-            "1.1.9-gimkl-2022a-Python-3.11.3",
-            "2.0.0-foss-2023a-Python-3.11.6"
+            "1.1.5-gimkl-2022a-Python-3.11.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.0.0-foss-2023a-Python-3.11.6",
+        "default": "1.1.5-gimkl-2022a-Python-3.11.3",
         "default_type": "latest",
-        "last_updated": 1760651350,
+        "last_updated": 1740132627,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/BiG-SCAPE/2.0.0-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BiG-SCAPE/1.1.5-gimkl-2022a-Python-3.11.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2129,7 +2078,7 @@
         "force_show": "False"
     },
     "bioawk": {
-        "description": "An extension to awk, adding the support of several common biological data formats ",
+        "description": "An extension to awk, adding the support of several common biological data formats",
         "domains": [
             "bio",
             "biology"
@@ -2152,7 +2101,7 @@
         "force_show": "False"
     },
     "BioPP": {
-        "description": "\nBio++ is a set of C++ libraries for Bioinformatics, including sequence\nanalysis, phylogenetics, molecular evolution and population genetics. Bio++ is\nObject Oriented and is designed to be both easy to use and computer efficient.\nBio++ intends to help programmers to write computer expensive programs, by\nproviding them a set of re-usable tools.\n",
+        "description": "Bio++ is a set of C++ libraries for Bioinformatics, including sequence\nanalysis, phylogenetics, molecular evolution and population genetics. Bio++ is\nObject Oriented and is designed to be both easy to use and computer efficient.\nBio++ intends to help programmers to write computer expensive programs, by\nproviding them a set of re-usable tools.",
         "domains": [
             "bio",
             "biology"
@@ -2352,18 +2301,17 @@
         "force_show": "False"
     },
     "BOLT-LMM": {
-        "description": "The BOLT-LMM algorithm computes statistics for testing association between phenotype\n and genotypes using a linear mixed model (LMM) [1]. By default, BOLT-LMM assumes a Bayesian\n mixture-of-normals prior for the random effect attributed to SNPs other than the one being tested.\n This model generalizes the standard \"infinitesimal\" mixed model used by previous mixed model\n association methods (e.g., EMMAX, FaST-LMM, GEMMA, GRAMMAR-Gamma, GCTA-LOCO), providing an\n opportunity for increased power to detect associations while controlling false\n positives. Additionally, BOLT-LMM applies algorithmic advances to compute mixed model association\n statistics much faster than eigendecomposition-based methods, both when using the Bayesian mixture\n model and when specialized to standard mixed model association.",
+        "description": "The BOLT-LMM algorithm for mixed model association testing, \nand the BOLT-REML algorithm for variance components analysis",
         "domains": [
             "bio",
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://storage.googleapis.com/broad-alkesgroup-public/BOLT-LMM/BOLT-LMM_manual.html",
+        "homepage": "https://alkesgroup.broadinstitute.org/BOLT-LMM/BOLT-LMM_manual.html",
         "support": "",
         "versions": [
-            "2.4",
-            "2.5-foss-2023a"
+            "2.4"
         ],
         "admin_list": [
             {
@@ -2371,11 +2319,11 @@
             }
         ],
         "network_licences": [],
-        "default": "2.5-foss-2023a",
+        "default": "2.4",
         "default_type": "latest",
-        "last_updated": 1760498511,
+        "last_updated": 1740132627,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/BOLT-LMM/2.5-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/BOLT-LMM/2.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2406,9 +2354,9 @@
         "network_licences": [],
         "default": "1.83.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1747952816,
+        "last_updated": 1740132627,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Boost/1.83.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Boost/1.83.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2607,7 +2555,7 @@
         "force_show": "False"
     },
     "bzip2": {
-        "description": "\n bzip2 is a freely available, patent free, high-quality data compressor. It\n typically compresses files to within 10% to 15% of the best available\n techniques (the PPM family of statistical compressors), whilst being around\n twice as fast at compression and six times faster at decompression.\n",
+        "description": "bzip2 is a freely available, patent free, high-quality data compressor. It\n typically compresses files to within 10% to 15% of the best available\n techniques (the PPM family of statistical compressors), whilst being around\n twice as fast at compression and six times faster at decompression.",
         "domains": [
             "tools"
         ],
@@ -2731,7 +2679,7 @@
         "force_show": "False"
     },
     "CD-HIT": {
-        "description": " CD-HIT is a very widely used program for clustering and\n comparing protein or nucleotide sequences.",
+        "description": "CD-HIT is a very widely used program for clustering and\n comparing protein or nucleotide sequences.",
         "domains": [
             "bio",
             "biology"
@@ -2789,16 +2737,15 @@
         "support": "",
         "versions": [
             "1.9.8-gimpi-2020a",
-            "2.1.1-gimpi-2022a",
-            "2.5.3-gompi-2023a"
+            "2.1.1-gimpi-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.5.3-gompi-2023a",
+        "default": "2.1.1-gimpi-2022a",
         "default_type": "latest",
-        "last_updated": 1764276235,
+        "last_updated": 1740132627,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/CDO/2.5.3-gompi-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/data/CDO/2.1.1-gimpi-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3090,28 +3037,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "cimfomfa": {
-        "description": "library supports both MCL, a cluster algorithm for graphs, and zoem, a\nmacro/DSL language",
-        "domains": [
-            "lib"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/micans/cimfomfa",
-        "support": "",
-        "versions": [
-            "22.273"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "22.273",
-        "default_type": "latest",
-        "last_updated": 1753425968,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/cimfomfa/22.273.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "Circlator": {
         "description": "A tool to circularize genome assemblies",
         "domains": [
@@ -3208,7 +3133,7 @@
         "force_show": "False"
     },
     "Clustal-Omega": {
-        "description": " Clustal Omega is a multiple sequence alignment\n program for proteins. It produces biologically meaningful multiple\n sequence alignments of divergent sequences. Evolutionary relationships\n can be seen via viewing Cladograms or Phylograms ",
+        "description": "Clustal Omega is a multiple sequence alignment\n program for proteins. It produces biologically meaningful multiple\n sequence alignments of divergent sequences. Evolutionary relationships\n can be seen via viewing Cladograms or Phylograms",
         "domains": [
             "bio",
             "biology"
@@ -3255,13 +3180,13 @@
         "force_show": "False"
     },
     "CMake": {
-        "description": "\n CMake, the cross-platform, open-source build system.  CMake is a family of\n tools designed to build, test and package software.\n",
+        "description": "CMake, the cross-platform, open-source build system.\n CMake is a family of tools designed to build, test and package software.",
         "domains": [
             "devel"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://www.cmake.org",
+        "homepage": "http://www.cmake.org",
         "support": "",
         "versions": [
             "3.14.1",
@@ -3271,16 +3196,15 @@
             "3.20.5",
             "3.22.1",
             "3.27.7",
-            "3.31.8",
             "3.9.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.31.8",
+        "default": "3.27.7",
         "default_type": "latest",
-        "last_updated": 1752026049,
+        "last_updated": 1747602665,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/CMake/3.31.8.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CMake/3.27.7.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3345,16 +3269,15 @@
         "homepage": "https://github.com/coder/code-server",
         "support": "",
         "versions": [
-            "4.100.2",
             "4.92.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.100.2",
+        "default": "4.92.2",
         "default_type": "latest",
-        "last_updated": 1747877977,
+        "last_updated": 1740132636,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/code-server/4.100.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/code-server/4.92.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3723,7 +3646,7 @@
         "force_show": "False"
     },
     "CP2K": {
-        "description": "CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular\n simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different\n methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and\n classical pair and many-body potentials. ",
+        "description": "CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular\n simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different\n methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and\n classical pair and many-body potentials.",
         "domains": [
             "chem",
             "chemistry"
@@ -3733,17 +3656,16 @@
         "homepage": "https://www.cp2k.org/",
         "support": "",
         "versions": [
-            "2023.1-foss-2023a",
             "8.2-intel-2022a-PLUMED-2.7.2",
             "8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2023.1-foss-2023a",
+        "default": "8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2",
         "default_type": "latest",
-        "last_updated": 1755566383,
+        "last_updated": 1740132628,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/CP2K/2023.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/CP2K/8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3843,7 +3765,7 @@
         "force_show": "False"
     },
     "CREST": {
-        "description": "CREST is an utility/driver program for the xtb program. Originally it was designed\n as conformer sampling program, hence the abbreviation Conformer\u2013Rotamer Ensemble Sampling Tool,\n but now offers also some utility functions for calculations with the GFNn\u2013xTB methods. Generally\n the program functions as an IO based OMP scheduler (i.e., calculations are performed by the xtb\n program) and tool for the creation and analysation of structure ensembles.\n",
+        "description": "CREST is an utility/driver program for the xtb program. Originally it was designed\n as conformer sampling program, hence the abbreviation Conformer\u2013Rotamer Ensemble Sampling Tool,\n but now offers also some utility functions for calculations with the GFNn\u2013xTB methods. Generally\n the program functions as an IO based OMP scheduler (i.e., calculations are performed by the xtb\n program) and tool for the creation and analysation of structure ensembles.",
         "domains": [
             "chem",
             "chemistry"
@@ -3878,16 +3800,15 @@
         "versions": [
             "51-Java-1.8.0_144",
             "64-Java-1.8.0_144",
-            "84-Java-1.8.0_144",
-            "90-Java-17"
+            "84-Java-1.8.0_144"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "90-Java-17",
+        "default": "84-Java-1.8.0_144",
         "default_type": "latest",
-        "last_updated": 1751867085,
+        "last_updated": 1740132636,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/cromwell/90-Java-17.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/cromwell/84-Java-1.8.0_144.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3963,7 +3884,7 @@
         "force_show": "False"
     },
     "CubeLib": {
-        "description": "Cube general purpose C++ library component and command-line tools.\n",
+        "description": "Cube general purpose C++ library component and command-line tools.",
         "domains": [
             "perf"
         ],
@@ -4084,7 +4005,7 @@
         "force_show": "False"
     },
     "cURL": {
-        "description": "\n libcurl is a free and easy-to-use client-side URL transfer library,\n supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP,\n LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP.\n libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP\n form based upload, proxies, cookies, user+password authentication (Basic,\n Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling\n and more.\n",
+        "description": "libcurl is a free and easy-to-use client-side URL transfer library,\n supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP,\n LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP.\n libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP\n form based upload, proxies, cookies, user+password authentication (Basic,\n Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling\n and more.",
         "domains": [
             "tools"
         ],
@@ -4109,26 +4030,18 @@
         "force_show": "False"
     },
     "cutadapt": {
-        "description": " cutadapt removes adapter sequences\n from high-throughput sequencing data. This is usually\n necessary when the read length of the sequencing machine\n is longer than the molecule that is sequenced, for\n example when sequencing microRNAs.  ",
+        "description": "cutadapt removes adapter sequences\n from high-throughput sequencing data. This is usually\n necessary when the read length of the sequencing machine\n is longer than the molecule that is sequenced, for\n example when sequencing microRNAs.",
         "domains": [
             "bio",
             "biology"
         ],
         "extensions": [
-            "cachetools-6.2.5",
-            "cutadapt-5.2",
-            "cython-3.2.4",
-            "dnaio-1.2.4",
-            "flit_core-3.12.0",
-            "isal-1.8.0",
-            "packaging-26.0",
-            "setuptools-80.10.2",
-            "setuptools_scm-9.2.2",
-            "streamlit-1.53.1",
-            "tomli-2.4.0",
-            "typing_extensions-4.15.0",
-            "xopen-2.0.2",
-            "zlib_ng-1.0.0"
+            "cutadapt-4.4",
+            "dnaio-0.10.0",
+            "isal-1.0.1",
+            "setuptools_scm-7.0.5",
+            "tomli-2.0.1",
+            "xopen-1.7.0"
         ],
         "licence_type": "",
         "homepage": "https://opensource.scilifelab.se/projects/cutadapt/",
@@ -4140,16 +4053,15 @@
             "3.3-gimkl-2020a-Python-3.8.2",
             "3.5-gimkl-2020a-Python-3.8.2",
             "4.1-gimkl-2022a-Python-3.10.5",
-            "4.4-gimkl-2022a-Python-3.11.3",
-            "5.2-foss-2023a-Python-3.11.6"
+            "4.4-gimkl-2022a-Python-3.11.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.2-foss-2023a-Python-3.11.6",
+        "default": "4.4-gimkl-2022a-Python-3.11.3",
         "default_type": "latest",
-        "last_updated": 1769460713,
+        "last_updated": 1740132636,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/cutadapt/5.2-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/cutadapt/4.4-gimkl-2022a-Python-3.11.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4387,7 +4299,7 @@
         "force_show": "False"
     },
     "DBus": {
-        "description": "\n D-Bus is a message bus system, a simple way for applications to talk\n to one another.  In addition to interprocess communication, D-Bus helps\n coordinate process lifecycle; it makes it simple and reliable to code\n a \"single instance\" application or daemon, and to launch applications\n and daemons on demand when their services are needed.\n",
+        "description": "D-Bus is a message bus system, a simple way for applications to talk\n to one another.  In addition to interprocess communication, D-Bus helps\n coordinate process lifecycle; it makes it simple and reliable to code\n a \"single instance\" application or daemon, and to launch applications\n and daemons on demand when their services are needed.",
         "domains": [
             "devel"
         ],
@@ -4410,14 +4322,14 @@
         "force_show": "False"
     },
     "DeconSeq": {
-        "description": " A tool that can be used to automatically detect and efficiently remove sequence contaminations \n                  from genomic and metagenomic datasets.",
+        "description": "A tool that can be used to automatically detect and efficiently remove sequence contaminations \n                  from genomic and metagenomic datasets.",
         "domains": [
             "bio",
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": " http://deconseq.sourceforge.net/ ",
+        "homepage": "http://deconseq.sourceforge.net/",
         "support": "",
         "versions": [
             "0.4.3"
@@ -4457,7 +4369,7 @@
         "force_show": "False"
     },
     "DeePMD-kit": {
-        "description": "credentials-1.3.2, devtools-2.4.4, downlit-0.4.2, gert-1.9.1, gh-1.3.1, gitcreds-0.1.2, ini-0.3.1, openssl-2.0.3, pkgdown-2.0.6, ragg-1.2.3, rcmdcheck-1.4.0, remotes-2.4.2, rmarkdown-2.16, roxygen2-7.2.1, rversions-2.1.2, sessioninfo-1.2.2, systemfonts-1.0.4, textshaping-0.3.6, tinytex-0.42, urlchecker-1.0.1, usethis-2.1.6, whisker-0.4, xopen-1.0.0",
+        "description": "Package written in Python/C++, designed to minimize the effort required to build deep learning-based models of interatomic potential energy and force field and to perform molecular dynamics.",
         "domains": [
             "chemistry"
         ],
@@ -4475,28 +4387,6 @@
         "last_updated": 1740132628,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/DeePMD-kit/2.1.1.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "DeePMD-plugin": {
-        "description": "Deep learning-based models of interatomic potential energy and force field, as a LAMMPS plugin.",
-        "domains": [
-            "chem"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://docs.deepmodeling.com/projects/deepmd",
-        "support": "",
-        "versions": [
-            "3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2",
-        "default_type": "latest",
-        "last_updated": 1764050006,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DeePMD-plugin/3.1.1-foss-2023a-LAMMPS-22Jul2025-CUDA-12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4663,16 +4553,15 @@
         "support": "",
         "versions": [
             "3.5.0-foss-2023a",
-            "3.5.0-intel-2022a",
-            "3.7.0-foss-2023a"
+            "3.5.0-intel-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.7.0-foss-2023a",
+        "default": "3.5.0-intel-2022a",
         "default_type": "latest",
-        "last_updated": 1753325240,
+        "last_updated": 1740132628,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DFT-D4/3.7.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/DFT-D4/3.5.0-intel-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4695,17 +4584,16 @@
             "2.0.9-GCC-9.2.0",
             "2.1.1-GCC-11.3.0",
             "2.1.10-GCC-12.3.0",
-            "2.1.14-GCC-12.3.0",
             "2.1.6-GCC-11.3.0",
             "2.1.9-GCC-11.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.14-GCC-12.3.0",
+        "default": "2.1.10-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1758472921,
+        "last_updated": 1740132628,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/DIAMOND/2.1.14-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/DIAMOND/2.1.10-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4735,9 +4623,7 @@
             "0.8.0",
             "0.8.3",
             "0.9.0",
-            "0.9.1",
-            "1.0.2",
-            "1.1.1"
+            "0.9.1"
         ],
         "admin_list": [
             {
@@ -4751,11 +4637,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.1.1",
+        "default": "0.9.1",
         "default_type": "latest",
-        "last_updated": 1757655584,
+        "last_updated": 1740132628,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/Dorado/1.1.1.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Dorado/0.9.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4783,7 +4669,7 @@
         "force_show": "False"
     },
     "Doxygen": {
-        "description": "\n Doxygen is a documentation system for C++, C, Java, Objective-C, Python,\n IDL (Corba and Microsoft flavors), Fortran, VHDL, PHP, C#, and to some\n extent D.\n",
+        "description": "Doxygen is a documentation system for C++, C, Java, Objective-C, Python,\n IDL (Corba and Microsoft flavors), Fortran, VHDL, PHP, C#, and to some\n extent D.",
         "domains": [
             "devel"
         ],
@@ -4991,16 +4877,6 @@
         "homepage": "https://easybuilders.github.io/easybuild",
         "support": "",
         "versions": [
-            "4.4.1",
-            "4.7.0",
-            "4.7.1",
-            "4.8.1",
-            "4.8.2",
-            "4.8.2",
-            "4.9.0",
-            "4.9.0",
-            "4.9.2",
-            "4.9.2",
             "4.9.2",
             "5.1.2"
         ],
@@ -5027,16 +4903,15 @@
             "2.12.0-gimpi-2018b",
             "2.17.0-gimpi-2020a",
             "2.26.0-gimpi-2022a",
-            "2.30.0-gimpi-2022a",
-            "2.42.0-gompi-2023a"
+            "2.30.0-gimpi-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.42.0-gompi-2023a",
+        "default": "2.30.0-gimpi-2022a",
         "default_type": "latest",
-        "last_updated": 1756890159,
+        "last_updated": 1740132636,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/ecCodes/2.42.0-gompi-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/ecCodes/2.30.0-gimpi-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5064,7 +4939,7 @@
         "force_show": "False"
     },
     "eDNA": {
-        "description": " A suite of tools to conduct metabarcoding analyses targeting any group of organisms. Includes utilities \nfor preprocessing raw data and building your own custom reference database. ",
+        "description": "A suite of tools to conduct metabarcoding analyses targeting any group of organisms. Includes utilities \nfor preprocessing raw data and building your own custom reference database.",
         "domains": [
             "bio",
             "biology"
@@ -5265,7 +5140,7 @@
         "force_show": "False"
     },
     "Embree": {
-        "description": "\nEmbree is a collection of high-performance ray tracing kernels, developed at Intel.\nThe target users of Embree are graphics application engineers who want to improve\nthe performance of their photo-realistic rendering application by leveraging Embree's\nperformance-optimized ray tracing kernels.\n",
+        "description": "Embree is a collection of high-performance ray tracing kernels, developed at Intel.\nThe target users of Embree are graphics application engineers who want to improve\nthe performance of their photo-realistic rendering application by leveraging Embree's\nperformance-optimized ray tracing kernels.",
         "domains": [
             "engineering",
             "vis"
@@ -5315,7 +5190,7 @@
         "force_show": "False"
     },
     "Emu": {
-        "description": " species-level taxonomic abundance for full-length 16S reads.",
+        "description": "species-level taxonomic abundance for full-length 16S reads.",
         "domains": [
             "bio",
             "biology"
@@ -5532,7 +5407,7 @@
         "force_show": "False"
     },
     "expat": {
-        "description": "\n Expat is an XML parser library written in C. It is a stream-oriented parser\n in which an application registers handlers for things the parser might find\n in the XML document (like start tags)\n",
+        "description": "Expat is an XML parser library written in C. It is a stream-oriented parser\n in which an application registers handlers for things the parser might find\n in the XML document (like start tags)",
         "domains": [
             "tools"
         ],
@@ -5556,30 +5431,8 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "f90wrap": {
-        "description": "f90wrap is a tool to automatically generate Python extension modules which\ninterface to Fortran code that makes use of derived types. It builds on the\ncapabilities of the popular f2py utility by generating a simpler Fortran 90\ninterface to the original Fortran code which is then suitable for wrapping with\nf2py, together with a higher-level Pythonic wrapper that makes the existance of\nan additional layer transparent to the final user.",
-        "domains": [
-            "devel"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/jameskermode/f90wrap",
-        "support": "",
-        "versions": [
-            "0.2.13-foss-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.2.13-foss-2023a",
-        "default_type": "latest",
-        "last_updated": 1767915712,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/f90wrap/0.2.13-foss-2023a.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "Faiss": {
-        "description": "\nFaiss is a library for efficient similarity search and clustering of dense\n vectors. It contains algorithms that search in sets of vectors of any size, up\n to ones that possibly do not fit in RAM. It also contains supporting code for\n evaluation and parameter tuning. Faiss is written in C++ with complete\n wrappers for Python/numpy. Some of the most useful algorithms are implemented\n on the GPU. It is developed primarily at Meta's Fundamental AI Research group.\n",
+        "description": "Faiss is a library for efficient similarity search and clustering of dense\n vectors. It contains algorithms that search in sets of vectors of any size, up\n to ones that possibly do not fit in RAM. It also contains supporting code for\n evaluation and parameter tuning. Faiss is written in C++ with complete\n wrappers for Python/numpy. Some of the most useful algorithms are implemented\n on the GPU. It is developed primarily at Meta's Fundamental AI Research group.",
         "domains": [
             "mathematics",
             "tools"
@@ -5644,16 +5497,15 @@
         "support": "",
         "versions": [
             "2.1.6.1-gimkl-2018b",
-            "2.1.6.2-GCC-9.2.0",
-            "2.1.6.3"
+            "2.1.6.2-GCC-9.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.6.3",
+        "default": "2.1.6.2-GCC-9.2.0",
         "default_type": "latest",
-        "last_updated": 1753426585,
+        "last_updated": 1740132629,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/FastME/2.1.6.3.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/FastME/2.1.6.2-GCC-9.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5733,29 +5585,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "Fastsimcoal2": {
-        "description": "While preserving all the simulation flexibility of simcoal2, fastsimcoal is now implemented under a faster continous-time sequential Markovian coalescent approximation, allowing it to efficiently generate genetic diversity for different types of markers along large genomic regions, for both present or ancient samples. It includes a parameter sampler allowing its integration into Bayesian or likelihood parameter estimation procedure.\n fastsimcoal can handle very complex evolutionary scenarios including an arbitrary migration matrix between samples, historical events allowing for population resize, population fusion and fission, admixture events, changes in migration matrix, or changes in population growth rates. The time of sampling can be specified independently for each sample, allowing for serial sampling in the same or in different populations.",
-        "domains": [
-            "bio",
-            "biology"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "http://cmpg.unibe.ch/software/fastsimcoal2/",
-        "support": "",
-        "versions": [
-            "2.8"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "2.8",
-        "default_type": "latest",
-        "last_updated": 1755121033,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/Fastsimcoal2/2.8.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "fastStructure": {
         "description": "fastStructure is an algorithm for inferring population structure from large SNP genotype data. It is based on a variational Bayesian framework for posterior inference and is written in Python2.x.",
         "domains": [
@@ -5780,7 +5609,7 @@
         "force_show": "False"
     },
     "FastTree": {
-        "description": "FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide\n or protein sequences. FastTree can handle alignments with up to a million of sequences in a reasonable amount of\n time and memory. ",
+        "description": "FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide\n or protein sequences. FastTree can handle alignments with up to a million of sequences in a reasonable amount of\n time and memory.",
         "domains": [
             "bio",
             "biology"
@@ -6106,29 +5935,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "fineRADstructure": {
-        "description": "A package for population structure inference from RAD-seq data",
-        "domains": [
-            "bio",
-            "biology"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "http://cichlid.gurdon.cam.ac.uk/fineRADstructure.html",
-        "support": "",
-        "versions": [
-            "20210514-GCC-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "20210514-GCC-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1753483935,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/fineRADstructure/20210514-GCC-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "fineSTRUCTURE": {
         "description": "Population assignment using large numbers of densely sampled genomes, including both SNP chips and sequence dat",
         "domains": [
@@ -6178,7 +5984,7 @@
         "force_show": "False"
     },
     "flex": {
-        "description": "\n Flex (Fast Lexical Analyzer) is a tool for generating scanners. A scanner, \n sometimes called a tokenizer, is a program which recognizes lexical patterns\n in text.\n",
+        "description": "Flex (Fast Lexical Analyzer) is a tool for generating scanners. A scanner, \n sometimes called a tokenizer, is a program which recognizes lexical patterns\n in text.",
         "domains": [
             "lang",
             "social_science"
@@ -6301,32 +6107,8 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "Foldseek": {
-        "description": "Foldseek enables fast and sensitive comparisons of large protein structure sets, \nsupporting monomer and multimer searches, as well as clustering.",
-        "domains": [
-            "bio",
-            "biology",
-            "chemistry"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/steineggerlab/foldseek",
-        "support": "",
-        "versions": [
-            "10-foss-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "10-foss-2023a",
-        "default_type": "latest",
-        "last_updated": 1761007179,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/Foldseek/10-foss-2023a.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "fontconfig": {
-        "description": "\n Fontconfig is a library designed to provide system-wide font configuration,\n customization and application access.\n",
+        "description": "Fontconfig is a library designed to provide system-wide font configuration,\n customization and application access.",
         "domains": [
             "vis"
         ],
@@ -6347,32 +6129,6 @@
         "last_updated": 1740132636,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/fontconfig/2.14.2-GCCcore-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "forge": {
-        "description": "",
-        "domains": [
-            "tools"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "21.1.3",
-            "21.1.3",
-            "21.1.3",
-            "22.1.2",
-            "22.1.2"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "22.1.2",
-        "default_type": "latest",
-        "last_updated": 1740489640,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/forge/22.1.2",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6435,7 +6191,6 @@
         "support": "",
         "versions": [
             "1.3.1-GCC-7.4.0",
-            "1.3.10-GCC-12.3.0",
             "1.3.2-GCC-9.2.0"
         ],
         "admin_list": [
@@ -6444,11 +6199,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.3.10-GCC-12.3.0",
+        "default": "1.3.2-GCC-9.2.0",
         "default_type": "latest",
-        "last_updated": 1765487499,
+        "last_updated": 1740132629,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/FreeBayes/1.3.10-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/FreeBayes/1.3.2-GCC-9.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6499,7 +6254,7 @@
         "force_show": "False"
     },
     "freetype": {
-        "description": "\n FreeType 2 is a software font engine that is designed to be small, efficient,\n highly customizable, and portable while capable of producing high-quality\n output (glyph images). It can be used in graphics libraries, display servers,\n font conversion tools, text image generation tools, and many other products\n as well.\n",
+        "description": "FreeType 2 is a software font engine that is designed to be small, efficient,\n highly customizable, and portable while capable of producing high-quality\n output (glyph images). It can be used in graphics libraries, display servers,\n font conversion tools, text image generation tools, and many other products\n as well.",
         "domains": [
             "vis",
             "visualisation"
@@ -6525,7 +6280,7 @@
         "force_show": "False"
     },
     "FreeXL": {
-        "description": "\n FreeXL is an open source library to extract valid data from within an\n Excel (.xls) spreadsheet.\n",
+        "description": "FreeXL is an open source library to extract valid data from within an\n Excel (.xls) spreadsheet.",
         "domains": [
             "lib"
         ],
@@ -6667,16 +6422,15 @@
             "4.3.0.0-gimkl-2022a",
             "4.4.0.0-gimkl-2022a",
             "4.5.0.0-gimkl-2022a",
-            "4.6.1.0-gimkl-2022a",
-            "4.6.2.0-foss-2023a"
+            "4.6.1.0-gimkl-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.6.2.0-foss-2023a",
+        "default": "4.6.1.0-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1765486479,
+        "last_updated": 1740132629,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/GATK/4.6.2.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GATK/4.6.1.0-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6815,7 +6569,7 @@
         "force_show": "False"
     },
     "GDAL": {
-        "description": "GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style\n Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model\n to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for\n data translation and processing.\n NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), \n which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) \n after loading the GDAL module. ",
+        "description": "GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style\n Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model\n to the calling application for all supported formats. It also comes with a variety of useful command-line utilities for\n data translation and processing.\n NOTE: The GDAL IO cache by default uses 5% of total memory. This seems not necessary. This module sets GDAL_CACHEMAX=256 (256MB), \n which should have no performance impact. Feel free to change if necessary, using 'export GDAL_CACHEMAX=xxx' (in your job script) \n after loading the GDAL module.",
         "domains": [
             "data",
             "earth_science",
@@ -6846,7 +6600,7 @@
         "force_show": "False"
     },
     "Gdk-Pixbuf": {
-        "description": "\n The Gdk Pixbuf is a toolkit for image loading and pixel buffer manipulation.\n It is used by GTK+ 2 and GTK+ 3 to load and manipulate images. In the past it\n was distributed as part of GTK+ 2 but it was split off into a separate package\n in preparation for the change to GTK+ 3.\n",
+        "description": "The Gdk Pixbuf is a toolkit for image loading and pixel buffer manipulation.\n It is used by GTK+ 2 and GTK+ 3 to load and manipulate images. In the past it\n was distributed as part of GTK+ 2 but it was split off into a separate package\n in preparation for the change to GTK+ 3.",
         "domains": [
             "vis"
         ],
@@ -6865,29 +6619,6 @@
         "last_updated": 1740132629,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/Gdk-Pixbuf/2.42.8-GCC-11.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "geany": {
-        "description": "",
-        "domains": [
-            "devel"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "1.35",
-            "1.35"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.35",
-        "default_type": "latest",
-        "last_updated": 1740489640,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/geany/1.35",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7132,29 +6863,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "gfatools": {
-        "description": "Tools for manipulating sequence graphs in the GFA and rGFA formats",
-        "domains": [
-            "bio",
-            "biology"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/lh3/gfatools",
-        "support": "",
-        "versions": [
-            "0.5"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.5",
-        "default_type": "latest",
-        "last_updated": 1751226468,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/gfatools/0.5.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "gffread": {
         "description": "GFF/GTF parsing utility providing format conversions,\nregion filtering, FASTA sequence extraction and more.",
         "domains": [
@@ -7319,34 +7027,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "Globus-CLI": {
-        "description": "A Command Line Wrapper over the Globus SDK for Python, which provides an interface to Globus services\n from the shell, and is suited to both interactive and simple scripting use cases.",
-        "domains": [
-            "data"
-        ],
-        "extensions": [
-            "cryptography-43.0.1",
-            "globus-cli-3.16.0",
-            "globus-sdk-3.25.0",
-            "jmespath-1.0.1",
-            "PyJWT-2.8.0"
-        ],
-        "licence_type": "",
-        "homepage": "https://docs.globus.org/cli/",
-        "support": "",
-        "versions": [
-            "3.16.0-foss-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "3.16.0-foss-2023a",
-        "default_type": "latest",
-        "last_updated": 1764034841,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Globus-CLI/3.16.0-foss-2023a.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "globus-compute-endpoint": {
         "description": "Globus Compute is a distributed Function as a Service (FaaS) platform that enables flexible,\n scalable, and high performance remote function execution. Unlike centralized FaaS platforms,\n Globus Compute allows users to execute functions on heterogeneous remote computers, from laptops to\n campus clusters, clouds, and supercomputers. A Globus Compute endpoint is a persistent service\n launched by the user on a compute system to serve as a conduit for executing functions on\n that computer.",
         "domains": [
@@ -7359,18 +7039,17 @@
             "colorama-0.4.6",
             "cryptography-42.0.5",
             "dill-0.3.9",
-            "exceptiongroup-1.3.0",
-            "globus_compute_common-0.7.1",
-            "globus_compute_endpoint-3.12.0",
-            "globus_compute_sdk-3.12.0",
+            "globus_compute_common-0.5.0",
+            "globus_compute_endpoint-3.4.0",
+            "globus_compute_sdk-3.4.0",
             "globus_identity_mapping-0.4.0",
-            "globus_sdk-3.62.0",
+            "globus_sdk-3.53.0",
             "jinja2-3.1.6",
             "jsonschema-4.23.0",
             "marshmallow-3.20.2",
             "marshmallow_oneofschema-3.1.1",
             "paramiko-3.4.0",
-            "parsl-2025.3.31",
+            "parsl-2025.3.17",
             "pika-1.3.2",
             "py-1.11.0",
             "pydantic-2.8.2",
@@ -7381,7 +7060,7 @@
             "python_daemon-2.3.2",
             "pyzmq-26.1.0",
             "retry-0.9.2",
-            "rich-13.9.4",
+            "rich-13.7.1",
             "setproctitle-1.3.3",
             "tblib-1.7.0",
             "texttable-1.7.0",
@@ -7404,18 +7083,16 @@
             "2.27.1-foss-2023a-Python-3.11.6",
             "2.3.2-gimkl-2022a-Python-3.10.5",
             "2.30.1-foss-2023a-Python-3.11.6",
-            "3.12.0-foss-2023a-Python-3.11.6",
             "3.2.0-foss-2023a-Python-3.11.6",
-            "3.4.0-foss-2023a-Python-3.11.6",
-            "3.7.0-foss-2023a-Python-3.11.6"
+            "3.4.0-foss-2023a-Python-3.11.6"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.12.0-foss-2023a-Python-3.11.6",
+        "default": "3.4.0-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1756164974,
+        "last_updated": 1743387073,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/globus-compute-endpoint/3.12.0-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/globus-compute-endpoint/3.4.0-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7443,7 +7120,7 @@
         "force_show": "False"
     },
     "GMP": {
-        "description": "GMP is a free library for arbitrary precision arithmetic, \noperating on signed integers, rational numbers, and floating point numbers. ",
+        "description": "GMP is a free library for arbitrary precision arithmetic, \noperating on signed integers, rational numbers, and floating point numbers.",
         "domains": [
             "math",
             "mathematics"
@@ -7490,29 +7167,6 @@
         "last_updated": 1740132637,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/gmsh/2.0.2-Miniconda3.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "GMT": {
-        "description": "GMT is an open source collection of about 80 command-line tools for manipulating\n geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting,\n etc.) and producing PostScript illustrations ranging from simple x-y plots via contour maps\n to artificially illuminated surfaces and 3D perspective views; the GMT supplements add another\n 40 more specialized and discipline-specific tools. ",
-        "domains": [
-            "geo",
-            "visualisation"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://www.generic-mapping-tools.org/",
-        "support": "",
-        "versions": [
-            "6.6.0-foss-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "6.6.0-foss-2023a",
-        "default_type": "latest",
-        "last_updated": 1754867508,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/GMT/6.6.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7702,28 +7356,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "GPUMD": {
-        "description": "GPUMD stands for Graphics Processing Units Molecular Dynamics.\nIt is a general-purpose molecular dynamics (MD) package fully implemented on graphics processing units.\n",
-        "domains": [
-            "chem"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://gpumd.org/",
-        "support": "",
-        "versions": [
-            "4.7-foss-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "4.7-foss-2023a",
-        "default_type": "latest",
-        "last_updated": 1768341023,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/GPUMD/4.7-foss-2023a.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "Graphviz": {
         "description": "Graphviz is open source graph visualization software. Graph visualization\n is a way of representing structural information as diagrams of\n abstract graphs and networks. It has important applications in networking,\n bioinformatics,  software engineering, database and web design, machine learning,\n and in visual interfaces for other technical domains.",
         "domains": [
@@ -7760,8 +7392,7 @@
         "support": "",
         "versions": [
             "7.6.1-gimkl-2018b-Python-2.7.16",
-            "8.2.1-gimkl-2022a",
-            "8.4.1-foss-2023a"
+            "8.2.1-gimkl-2022a"
         ],
         "admin_list": [
             {
@@ -7769,11 +7400,11 @@
             }
         ],
         "network_licences": [],
-        "default": "8.4.1-foss-2023a",
+        "default": "8.2.1-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1756899410,
+        "last_updated": 1740132629,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/GRASS/8.4.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/geo/GRASS/8.2.1-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7807,7 +7438,7 @@
         "force_show": "False"
     },
     "GROMACS": {
-        "description": "\nGROMACS is a versatile package to perform molecular dynamics,\n i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.\n\nThis is a GPU enabled build, containing both MPI and threadMPI binaries.\n",
+        "description": "GROMACS is a versatile package to perform molecular dynamics,\n i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.\n\nThis is a GPU enabled build, containing both MPI and threadMPI binaries.",
         "domains": [
             "bio",
             "chemistry",
@@ -7823,22 +7454,20 @@
             "2020.6-gimkl-2020a-cuda-11.3.1-hybrid-PLUMED-2.8.0",
             "2020.6-intel-2020a-cuda-11.3.1-hybrid",
             "2021.5-gimkl-2022a-cuda-11.6.2-hybrid",
-            "2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0",
-            "2024.5-foss-2023a-cuda-12.2.2-hybrid",
-            "2025.2-foss-2023a-cuda-12.5.0-hybrid"
+            "2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2025.2-foss-2023a-cuda-12.5.0-hybrid",
+        "default": "2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0",
         "default_type": "latest",
-        "last_updated": 1752029142,
+        "last_updated": 1740132629,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/GROMACS/2021.6-gimkl-2020a-cuda-11.6.2-hybrid-PLUMED-2.8.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "GSL": {
-        "description": "\n The GNU Scientific Library (GSL) is a numerical library for C and C++\n programmers.  The library provides a wide range of mathematical routines\n such as random number generators, special functions and least-squares fitting.\n",
+        "description": "The GNU Scientific Library (GSL) is a numerical library for C and C++\n programmers.  The library provides a wide range of mathematical routines\n such as random number generators, special functions and least-squares fitting.",
         "domains": [
             "mathematics",
             "numlib"
@@ -8025,7 +7654,7 @@
         "force_show": "False"
     },
     "GUSHR": {
-        "description": "\nAssembly-free construction of UTRs from short read RNA-Seq data on the basis of coding sequence annotation.\n",
+        "description": "Assembly-free construction of UTRs from short read RNA-Seq data on the basis of coding sequence annotation.",
         "domains": [
             "bio",
             "biology"
@@ -8067,28 +7696,6 @@
         "last_updated": 1740132637,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/h5pp/1.9.0-gimpi-2020a.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "HAL": {
-        "description": "HAL is a structure to efficiently store and index multiple genome alignments\nand ancestral reconstructions. HAL is a graph-based representation which\nprovides several advantages over matrix/block-based formats such as MAF, such as\nimproved scalability and the ability to perform queries with respect to an\narbitrary reference or subtree.\n\nThis package includes the HAL API and several analysis and conversion tools\nwhich are described below. HAL files are presently stored in either HDF5 or mmap\nformat, but we note that the tools and most of the API are format-independent,\nso other databases could be implemented in the future.\n",
-        "domains": [
-            "bio"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/ComparativeGenomicsToolkit/hal",
-        "support": "",
-        "versions": [
-            "2.3-gompi-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "2.3-gompi-2023a",
-        "default_type": "latest",
-        "last_updated": 1768432481,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/HAL/2.3-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8140,7 +7747,7 @@
         "force_show": "False"
     },
     "HDF": {
-        "description": "\n HDF (also known as HDF4) is a library and multi-object file format for\n storing and managing data between machines.\n",
+        "description": "HDF (also known as HDF4) is a library and multi-object file format for\n storing and managing data between machines.",
         "domains": [
             "data"
         ],
@@ -8307,45 +7914,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "hooks": {
-        "description": "",
-        "domains": [
-            ".git"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "applypatch-msg.sample",
-            "applypatch-msg.sample",
-            "commit-msg.sample",
-            "commit-msg.sample",
-            "post-update.sample",
-            "post-update.sample",
-            "pre-applypatch.sample",
-            "pre-applypatch.sample",
-            "pre-commit.sample",
-            "pre-commit.sample",
-            "pre-push.sample",
-            "pre-push.sample",
-            "pre-rebase.sample",
-            "pre-rebase.sample",
-            "prepare-commit-msg.sample",
-            "prepare-commit-msg.sample",
-            "update.sample",
-            "update.sample"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "update.sample",
-        "default_type": "latest",
-        "last_updated": 1740132624,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/.git/hooks/update.sample",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "HpcGridRunner": {
         "description": "HPC GridRunner is a simple command-line interface to high throughput computing using a variety of different grid computing platforms, including LSF, SGE, SLURM, and PBS.",
         "domains": [
@@ -8393,7 +7961,7 @@
         "force_show": "False"
     },
     "HTSlib": {
-        "description": " A C library for reading/writing high-throughput sequencing data.\n This package includes the utilities bgzip and tabix ",
+        "description": "A C library for reading/writing high-throughput sequencing data.\n This package includes the utilities bgzip and tabix",
         "domains": [
             "bio",
             "biology"
@@ -8413,17 +7981,16 @@
             "1.19-GCC-11.3.0",
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
-            "1.22-GCC-12.3.0",
             "1.8-gimkl-2018b",
             "1.9-GCC-7.4.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.22-GCC-12.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1754168753,
+        "last_updated": 1744964564,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/HTSlib/1.22-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/HTSlib/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8451,7 +8018,7 @@
         "force_show": "False"
     },
     "hwloc": {
-        "description": "\n The Portable Hardware Locality (hwloc) software package provides a portable\n abstraction (across OS, versions, architectures, ...) of the hierarchical\n topology of modern architectures, including NUMA memory nodes, sockets, shared\n caches, cores and simultaneous multithreading. It also gathers various system\n attributes such as cache and memory information as well as the locality of I/O\n devices such as network interfaces, InfiniBand HCAs or GPUs. It primarily\n aims at helping applications with gathering information about modern computing\n hardware so as to exploit it accordingly and efficiently.\n",
+        "description": "The Portable Hardware Locality (hwloc) software package provides a portable\n abstraction (across OS, versions, architectures, ...) of the hierarchical\n topology of modern architectures, including NUMA memory nodes, sockets, shared\n caches, cores and simultaneous multithreading. It also gathers various system\n attributes such as cache and memory information as well as the locality of I/O\n devices such as network interfaces, InfiniBand HCAs or GPUs. It primarily\n aims at helping applications with gathering information about modern computing\n hardware so as to exploit it accordingly and efficiently.",
         "domains": [
             "system"
         ],
@@ -8570,7 +8137,7 @@
         "force_show": "False"
     },
     "IDBA-UD": {
-        "description": " IDBA-UD is a iterative De Bruijn Graph De Novo Assembler for Short Reads\n Sequencing data with Highly Uneven Sequencing Depth.",
+        "description": "IDBA-UD is a iterative De Bruijn Graph De Novo Assembler for Short Reads\n Sequencing data with Highly Uneven Sequencing Depth.",
         "domains": [
             "bio",
             "biology"
@@ -8594,7 +8161,7 @@
         "force_show": "False"
     },
     "IGV": {
-        "description": " The Integrative Genomics Viewer (IGV) is a high-performance visualization \n tool for interactive exploration of large, integrated genomic datasets. It supports a wide \n variety of data types, including array-based and next-generation sequence data ",
+        "description": "The Integrative Genomics Viewer (IGV) is a high-performance visualization \n tool for interactive exploration of large, integrated genomic datasets. It supports a wide \n variety of data types, including array-based and next-generation sequence data",
         "domains": [
             "bio",
             "biology",
@@ -8606,18 +8173,16 @@
         "support": "",
         "versions": [
             "2.16.1",
-            "2.19.4",
-            "2.19.7",
             "2.5.0",
             "2.9.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.19.7",
+        "default": "2.16.1",
         "default_type": "latest",
-        "last_updated": 1765492524,
+        "last_updated": 1740132630,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/IGV/2.19.7.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/IGV/2.16.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8791,28 +8356,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "info": {
-        "description": "",
-        "domains": [
-            ".git"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "exclude"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "exclude",
-        "default_type": "latest",
-        "last_updated": 1740132624,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/.git/info/exclude",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "intel": {
         "description": "Compiler toolchain including Intel compilers, Intel MPI and Intel Math Kernel Library (MKL).",
         "domains": [
@@ -8939,38 +8482,26 @@
             "biology"
         ],
         "extensions": [
-            "cython-3.2.4",
-            "editables-0.5",
-            "exceptiongroup-1.3.1",
-            "flit_core-3.12.0",
-            "flit_scm-1.7.0",
-            "hatch_vcs-0.3.0",
-            "hatchling-1.28.0",
-            "ipyparallel-9.0.2",
-            "ipyrad-0.9.102",
-            "packaging-25.0",
-            "pathspec-1.0.3",
-            "pyzmq-27.1.0",
-            "scikit_build_core-0.11.6",
-            "setuptools-62.6.0",
-            "setuptools_scm-7.1.0",
-            "trove_classifiers-2024.10.16",
-            "typing_extensions-4.15.0"
+            "editables-0.3",
+            "hatchling-1.10.0",
+            "ipyparallel-8.4.1",
+            "ipyrad-0.9.85",
+            "packaging-21.3",
+            "pathspec-0.10.1"
         ],
         "licence_type": "",
         "homepage": "https://ipyrad.readthedocs.io",
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ipyrad",
         "versions": [
-            "0.9.102-gimkl-2022a-Python-3.10.5",
             "0.9.85-gimkl-2022a-Python-3.10.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.9.102-gimkl-2022a-Python-3.10.5",
+        "default": "0.9.85-gimkl-2022a-Python-3.10.5",
         "default_type": "latest",
-        "last_updated": 1769030700,
+        "last_updated": 1740132637,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/ipyrad/0.9.102-gimkl-2022a-Python-3.10.5.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/ipyrad/0.9.85-gimkl-2022a-Python-3.10.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9105,7 +8636,7 @@
         "force_show": "False"
     },
     "Java": {
-        "description": "\n Java Platform, Standard Edition (Java SE) lets you develop and deploy\n Java applications on desktops and servers.\n",
+        "description": "Java Platform, Standard Edition (Java SE) lets you develop and deploy\n Java applications on desktops and servers.",
         "domains": [
             "lang",
             "language",
@@ -9136,7 +8667,7 @@
         "force_show": "False"
     },
     "jbigkit": {
-        "description": "JBIG-KIT is a software implementation of the JBIG1 data compression standard ",
+        "description": "JBIG-KIT is a software implementation of the JBIG1 data compression standard",
         "domains": [
             "vis"
         ],
@@ -9188,7 +8719,7 @@
         "force_show": "False"
     },
     "Jellyfish": {
-        "description": " Jellyfish is a tool for fast, memory-efficient counting of k-mers in DNA.",
+        "description": "Jellyfish is a tool for fast, memory-efficient counting of k-mers in DNA.",
         "domains": [
             "bio",
             "biology"
@@ -9293,30 +8824,8 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "json-fortran": {
-        "description": "JSON-Fortran: A Modern Fortran JSON API",
-        "domains": [
-            "lib"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/jacobwilliams/json-fortran",
-        "support": "",
-        "versions": [
-            "9.0.2-GCC-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "9.0.2-GCC-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1753397850,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.0.2-GCC-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "JsonCpp": {
-        "description": " JsonCpp is a C++ library that allows manipulating JSON values,\n including serialization and deserialization to and from strings. It can also preserve existing comment in\n unserialization/serialization steps, making it a convenient format to store user input files. ",
+        "description": "JsonCpp is a C++ library that allows manipulating JSON values,\n including serialization and deserialization to and from strings. It can also preserve existing comment in\n unserialization/serialization steps, making it a convenient format to store user input files.",
         "domains": [
             "lib"
         ],
@@ -9381,115 +8890,175 @@
         ],
         "extensions": [
             "aiofiles-24.1.0",
-            "aiohappyeyeballs-2.6.1",
-            "aiohttp-3.11.18",
+            "aiohappyeyeballs-2.4.6",
+            "aiohttp-3.11.12",
             "aiosignal-1.3.2",
             "aiosqlite-0.21.0",
+            "annotated_types-0.7.0",
             "ansicolors-1.1.8",
             "ansiwrap-0.8.4",
-            "anyio-4.9.0",
+            "anthropic-0.47.2",
+            "anyio-4.8.0",
             "argon2-cffi-bindings-21.2.0",
             "argon2_cffi-23.1.0",
-            "async_lru-2.0.5",
-            "async_lru-2.0.5",
+            "async-lru-2.0.4",
+            "async_lru-2.0.4",
             "async_timeout-5.0.1",
             "autopep8-2.3.2",
             "babel-2.17.0",
             "bash_kernel-0.10.0",
-            "beautifulsoup4-4.13.4",
-            "charset_normalizer-3.4.2",
+            "beautifulsoup4-4.13.3",
+            "boto3-1.37.2",
+            "botocore-1.37.2",
+            "charset_normalizer-3.4.1",
+            "cohere-5.13.12",
             "colorama-0.4.6",
-            "cython-3.1.1",
-            "debugpy-1.8.14",
+            "cython-3.0.12",
+            "dataclasses_json-0.6.7",
+            "debugpy-1.8.12",
+            "deepmerge-2.0",
             "defusedxml-0.7.1",
             "deprecation-2.1.0",
+            "distro-1.9.0",
             "editables-0.5",
             "entrypoints-0.4",
-            "expandvars-1.0.0",
+            "expandvars-0.12.0",
+            "faiss-cpu-1.10.0",
+            "fastavro-1.10.0",
             "fastjsonschema-2.21.1",
             "filetype-1.2.0",
-            "flake8-7.2.0",
-            "frozenlist-1.6.0",
-            "h11-0.16.0",
+            "flake8-7.1.2",
+            "frozenlist-1.5.0",
+            "google_ai_generativelanguage-0.6.16",
+            "google_api_core-2.24.1",
+            "google_auth-2.38.0",
+            "googleapis_common_protos-1.68.0",
+            "grpcio-1.70.0",
+            "h11-0.14.0",
             "hatch_jupyter_builder-0.9.1",
             "hatch_nodejs_version-0.3.2",
-            "hatchling-1.27.0",
-            "httpcore-1.0.9",
+            "hatchling-1.25.0",
+            "httpcore-1.0.7",
             "httpx-0.28.1",
+            "httpx_sse-0.4.0",
+            "huggingface_hub-0.29.1",
             "ipykernel-6.29.5",
-            "ipympl-0.9.7",
+            "ipympl-0.9.6",
             "ipython_genutils-0.2.0",
-            "ipywidgets-8.1.7",
-            "json5-0.12.0",
+            "ipywidgets-8.1.5",
+            "jiter-0.8.2",
+            "jmespath-1.0.1",
+            "json5-0.10.0",
+            "jsonpatch-1.33",
+            "jsonpath_ng-1.7.0",
+            "jsonpointer-3.0.0",
             "jupyter-lsp-2.2.5",
+            "jupyter_ai-2.29.1",
+            "jupyter_ai_magics-2.29.1",
             "jupyter_client-8.6.3",
             "jupyter_core-5.7.2",
             "jupyter_events-0.12.0",
             "jupyter_lsp-2.2.5",
             "jupyter_packaging-0.12.3",
-            "jupyter_server-2.16.0",
+            "jupyter_server-2.15.0",
             "jupyter_server_fileid-0.9.3",
             "jupyter_server_mathjax-0.2.6",
             "jupyter_server_proxy-4.4.0",
             "jupyter_server_terminals-0.5.3",
             "jupyter_server_ydoc-1.1.0",
-            "jupyter_ydoc-3.0.5",
-            "JupyterLab-4.4.2",
-            "jupyterlab_git-0.51.1",
+            "jupyter_ydoc-3.0.3",
+            "JupyterLab-4.3.5",
+            "jupyterlab_git-0.51.0",
             "jupyterlab_pygments-0.3.0",
             "jupyterlab_server-2.27.3",
-            "jupyterlab_theme_toggler-1.1.0",
-            "jupyterlab_widgets-3.0.15",
-            "mistune-3.1.3",
-            "multidict-6.4.4",
-            "narwhals-1.40.0",
-            "nbclassic-1.3.1",
+            "jupyterlab_theme_toggler-1.0.0",
+            "jupyterlab_widgets-3.0.13",
+            "langchain-0.3.19",
+            "langchain_anthropic-0.3.8",
+            "langchain_aws-0.2.13",
+            "langchain_cohere-0.4.2",
+            "langchain_community-0.3.18",
+            "langchain_core-0.3.40",
+            "langchain_google_genai-2.0.11",
+            "langchain_mistralai-0.2.7",
+            "langchain_nvidia_ai_endpoints-0.3.9",
+            "langchain_ollama-0.2.3",
+            "langchain_openai-0.3.7",
+            "langchain_text_splitters-0.3.6",
+            "langsmith-0.3.11",
+            "marshmallow-3.26.1",
+            "meson-1.7.0",
+            "meson_python-0.17.1",
+            "mistune-3.1.2",
+            "multidict-6.1.0",
+            "narwhals-1.28.0",
+            "nbclassic-1.2.0",
             "nbclient-0.10.2",
             "nbconvert-7.16.6",
             "nbdime-4.0.2",
             "nbformat-5.10.4",
             "nbqa-1.9.1",
-            "nesi_jupyter_helpers-0.5.0",
+            "nesi_jupyter_helpers-0.4.0",
             "nest_asyncio-1.6.0",
             "nest_asyncio-1.6.0",
-            "notebook-7.4.2",
+            "notebook-7.3.2",
             "notebook_shim-0.2.4",
+            "numpy-1.26.4",
+            "ollama-0.4.7",
+            "openai-1.64.0",
+            "orjson-3.10.15",
             "overrides-7.7.0",
-            "packaging-24.2",
             "pandocfilters-1.5.1",
             "papermill-2.6.0",
             "plotly-5.24.1",
-            "prometheus_client-0.22.0",
-            "propcache-0.3.1",
-            "pycodestyle-2.13.0",
-            "pycrdt-0.12.20",
+            "prometheus_client-0.21.1",
+            "propcache-0.3.0",
+            "proto_plus-1.26.0",
+            "pyasn1-0.6.1",
+            "pyasn1_modules-0.4.1",
+            "pycodestyle-2.12.1",
+            "pycrdt-0.12.8",
             "pycrdt_websocket-0.15.4",
-            "pyflakes-3.3.2",
-            "python_json_logger-3.3.0",
+            "pydantic-2.10.6",
+            "pydantic_core-2.27.2",
+            "pydantic_settings-2.8.0",
+            "pyflakes-3.2.0",
+            "python_dotenv-1.0.1",
+            "python_json_logger-3.2.1",
             "pyviz_comms-3.0.4",
             "pyzmq-26.2.1",
-            "requests_unixsocket-0.4.1",
+            "regex-2024.11.6",
+            "requests-unixsocket-0.3.0",
+            "requests_toolbelt-1.0.0",
             "rfc3339_validator-0.1.4",
             "rfc3986_validator-0.1.1",
-            "scikit_build_core-0.11.3",
+            "rsa-4.9",
+            "s3transfer-0.11.3",
+            "scikit_build_core-0.10.7",
             "Send2Trash-1.8.3",
             "simpervisor-1.0.0",
             "sniffio-1.3.1",
-            "soupsieve-2.7",
+            "soupsieve-2.6",
             "sqlite_anyio-0.2.3",
-            "streamlit-1.45.1",
             "terminado-0.18.1",
             "textwrap3-0.9.2",
+            "tiktoken-0.9.0",
             "tinycss2-1.4.0",
             "tokenize_rt-6.1.0",
+            "tokenizers-0.21.0",
             "tomli-2.2.1",
             "tomlkit-0.13.2",
-            "trove_classifiers-2025.5.9.12",
+            "trove_classifiers-2025.2.18.16",
+            "types-requests-2.32.0.20241016",
+            "types_pyyaml-6.0.12.20241230",
+            "typing_extensions-4.12.2",
+            "typing_inspect-0.9.0",
             "websocket_client-1.8.0",
-            "widgetsnbextension-4.0.14",
+            "widgetsnbextension-4.0.13",
             "y_py-0.6.2",
-            "yarl-1.20.0",
-            "ypy_websocket-0.12.4"
+            "yarl-1.18.3",
+            "ypy_websocket-0.12.4",
+            "zstandard-0.23.0"
         ],
         "licence_type": "",
         "homepage": "https://pypi.org/project/jupyterlab/",
@@ -9500,16 +9069,15 @@
             "2023.11.0-gimkl-2022a-3.6.3",
             "2024.08.0-foss-2023a-4.2.4",
             "2024.08.2-foss-2023a-4.2.4",
-            "2025.3.0-foss-2023a-4.3.5",
-            "2025.5.0-foss-2023a-4.4.2"
+            "2025.3.0-foss-2023a-4.3.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2025.5.0-foss-2023a-4.4.2",
+        "default": "2025.3.0-foss-2023a-4.3.5",
         "default_type": "latest",
-        "last_updated": 1748220483,
+        "last_updated": 1741245521,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/JupyterLab/2025.5.0-foss-2023a-4.4.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/JupyterLab/2025.3.0-foss-2023a-4.3.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9809,16 +9377,15 @@
             "2.1.1-GCC-9.2.0",
             "2.1.2-GCC-11.3.0",
             "2.1.2-GCC-9.2.0",
-            "2.1.3-GCC-11.3.0",
-            "2.1.6-GCC-12.3.0"
+            "2.1.3-GCC-11.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.6-GCC-12.3.0",
+        "default": "2.1.3-GCC-11.3.0",
         "default_type": "latest",
-        "last_updated": 1754467564,
+        "last_updated": 1740132631,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/Kraken2/2.1.6-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Kraken2/2.1.3-GCC-11.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9882,10 +9449,7 @@
         "homepage": "http://lammps.sandia.gov/",
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/LAMMPS",
         "versions": [
-            "22Jul2025-foss-2023a-kokkos",
-            "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
             "23Jun2022-gimkl-2022a-kokkos",
-            "23Jun2022-gimkl-2022a-kokkos-ECHEMDID-CUDA-11.8.0",
             "23Jun2022-gimkl-2022a-kokkos-EChemDID",
             "31Aug2021-gimkl-2022a-kokkos-EChemDID"
         ],
@@ -9893,7 +9457,7 @@
         "network_licences": [],
         "default": "23Jun2022-gimkl-2022a-kokkos",
         "default_type": "static",
-        "last_updated": 1747795160,
+        "last_updated": 1747602667,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/LAMMPS/23Jun2022-gimkl-2022a-kokkos.lua",
         "force_hide": "False",
@@ -10050,7 +9614,7 @@
         "force_show": "False"
     },
     "libarchive": {
-        "description": "\n Multi-format archive and compression library\n",
+        "description": "Multi-format archive and compression library",
         "domains": [
             "tools"
         ],
@@ -10099,46 +9663,22 @@
         "force_show": "False"
     },
     "libcuda-stub": {
-        "description": "http://www.plumed-code.org",
+        "description": "Dummy libcuda and libnvidia libraries for compiling CUDA programs on non-GPU nodes",
         "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
         "support": "",
         "versions": [
-            "11.8.0",
-            "12.2.2",
-            "12.5.0"
+            "12.2.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "12.5.0",
+        "default": "12.2.2",
         "default_type": "latest",
-        "last_updated": 1763707869,
+        "last_updated": 1763707830,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/libcuda-stub/12.5.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "libdeepmd": {
-        "description": "Deep learning-based models of interatomic potential energy and force field",
-        "domains": [
-            "chem"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://docs.deepmodeling.com/projects/deepmd",
-        "support": "",
-        "versions": [
-            "3.1.1"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "3.1.1",
-        "default_type": "latest",
-        "last_updated": 1764049872,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/libdeepmd/3.1.1.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libcuda-stub/12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10397,7 +9937,7 @@
         "force_show": "False"
     },
     "libGLU": {
-        "description": "The OpenGL Utility Library (GLU) is a computer graphics library for OpenGL. ",
+        "description": "The OpenGL Utility Library (GLU) is a computer graphics library for OpenGL.",
         "domains": [
             "vis"
         ],
@@ -10561,7 +10101,7 @@
         "force_show": "False"
     },
     "libjpeg-turbo": {
-        "description": "libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG\ncompression and decompression. libjpeg is a library that implements JPEG image encoding, decoding and transcoding.\n",
+        "description": "libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG\ncompression and decompression. libjpeg is a library that implements JPEG image encoding, decoding and transcoding.",
         "domains": [
             "lib",
             "visualisation"
@@ -10587,7 +10127,7 @@
         "force_show": "False"
     },
     "libKML": {
-        "description": " Reference implementation of OGC KML 2.2 ",
+        "description": "Reference implementation of OGC KML 2.2",
         "domains": [
             "lib"
         ],
@@ -10649,7 +10189,7 @@
         "network_licences": [],
         "default": "1",
         "default_type": "static",
-        "last_updated": 1745812516,
+        "last_updated": "0",
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libpmi/1.lua",
         "force_hide": "False",
@@ -10683,7 +10223,7 @@
         "force_show": "False"
     },
     "libreadline": {
-        "description": "\n The GNU Readline library provides a set of functions for use by applications\n that allow users to edit command lines as they are typed in. Both Emacs and\n vi editing modes are available. The Readline library includes additional\n functions to maintain a list of previously-entered command lines, to recall\n and perhaps reedit those lines, and perform csh-like history expansion on\n previous commands.\n",
+        "description": "The GNU Readline library provides a set of functions for use by applications\n that allow users to edit command lines as they are typed in. Both Emacs and\n vi editing modes are available. The Readline library includes additional\n functions to maintain a list of previously-entered command lines, to recall\n and perhaps reedit those lines, and perform csh-like history expansion on\n previous commands.",
         "domains": [
             "lib"
         ],
@@ -10826,7 +10366,7 @@
         "force_show": "False"
     },
     "libunwind": {
-        "description": "Define a portable and efficient C programming API to determine the call-chain of a program. ",
+        "description": "Define a portable and efficient C programming API to determine the call-chain of a program.",
         "domains": [
             "lib"
         ],
@@ -10897,7 +10437,7 @@
         "force_show": "False"
     },
     "libxml2": {
-        "description": "\n Libxml2 is the XML C parser and toolchain developed for the Gnome project\n (but usable outside of the Gnome platform).\n",
+        "description": "Libxml2 is the XML C parser and toolchain developed for the Gnome project\n (but usable outside of the Gnome platform).",
         "domains": [
             "lib"
         ],
@@ -11175,29 +10715,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "logs": {
-        "description": "",
-        "domains": [
-            ".git"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "HEAD",
-            "refs"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "refs",
-        "default_type": "latest",
-        "last_updated": 1740132625,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/.git/logs/refs",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "LongStitch": {
         "description": "A genome assembly correction and scaffolding pipeline using long reads",
         "domains": [
@@ -11295,7 +10812,7 @@
         "force_show": "False"
     },
     "LUMPY": {
-        "description": "A probabilistic framework for structural variant discovery.\n",
+        "description": "A probabilistic framework for structural variant discovery.",
         "domains": [
             "bio",
             "biology"
@@ -11955,7 +11472,7 @@
             "cryptography-43.0.1",
             "frozenlist-1.5.0",
             "importlib_resources-6.4.5",
-            "matlab-proxy-0.27.1",
+            "matlab-proxy-0.23.1",
             "multidict-6.1.0",
             "propcache-0.2.0",
             "yarl-1.17.1"
@@ -11964,21 +11481,20 @@
         "homepage": "https://github.com/mathworks/matlab-proxy",
         "support": "",
         "versions": [
-            "0.23.1-foss-2023a",
-            "0.27.1-foss-2023a"
+            "0.23.1-foss-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.27.1-foss-2023a",
+        "default": "0.23.1-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1758597278,
+        "last_updated": 1740132638,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/math/matlab-proxy/0.27.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/math/matlab-proxy/0.23.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "Maven": {
-        "description": "Binary maven install, Apache Maven is a software project management and comprehension tool. Based on\nthe concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a\ncentral piece of information.\n",
+        "description": "Binary maven install, Apache Maven is a software project management and comprehension tool. Based on\nthe concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a\ncentral piece of information.",
         "domains": [
             "devel"
         ],
@@ -12027,7 +11543,7 @@
         "force_show": "False"
     },
     "MCL": {
-        "description": "The MCL algorithm is short for the Markov Cluster Algorithm, a fast\nand scalable unsupervised cluster algorithm for graphs (also known as networks) based\non simulation of (stochastic) flow in graphs. ",
+        "description": "The MCL algorithm is short for the Markov Cluster Algorithm, a fast\nand scalable unsupervised cluster algorithm for graphs (also known as networks) based\non simulation of (stochastic) flow in graphs.",
         "domains": [
             "bio",
             "biology",
@@ -12039,16 +11555,15 @@
         "support": "",
         "versions": [
             "14.137-gimkl-2018b",
-            "14.137-gimkl-2020a",
-            "22.282"
+            "14.137-gimkl-2020a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "22.282",
+        "default": "14.137-gimkl-2018b",
         "default_type": "latest",
-        "last_updated": 1753426152,
+        "last_updated": 1740132631,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/MCL/22.282.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/MCL/14.137-gimkl-2018b.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12093,51 +11608,6 @@
         "last_updated": 1740145797,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MCR/2025b.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "mctc-lib": {
-        "description": "Common tool chain for working with molecular structure data in various\napplications. This library provides a unified way to perform operations on\nmolecular structure data, like reading and writing to common geometry file\nformats.",
-        "domains": [
-            "biology",
-            "chem"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://grimme-lab.github.io/mctc-lib",
-        "support": "",
-        "versions": [
-            "0.3.1-GCC-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.3.1-GCC-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1753397876,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.3.1-GCC-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "MDI": {
-        "description": "The MolSSI Driver Interface (MDI) project provides a\nstandardized API for fast, on-the-fly communication between computational\nchemistry codes. This greatly simplifies the process of implementing\nmethods that require the cooperation of multiple software packages and\nenables developers to write a single implementation that works across\nmany different codes. The API is sufficiently general to support a wide\nvariety of techniques, including QM/MM, ab initio MD, machine learning,\nadvanced sampling, and path integral MD, while also being straightforwardly\nextensible. Communication between codes is handled by the MDI Library, which\nenables tight coupling between codes using either the MPI or TCP/IP methods.\n",
-        "domains": [
-            "chem"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/MolSSI-MDI/MDI_Library",
-        "support": "",
-        "versions": [
-            "1.4.26-foss-2023a-Python-3.11.6"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.4.26-foss-2023a-Python-3.11.6",
-        "default_type": "latest",
-        "last_updated": 1764018673,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/MDI/1.4.26-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12263,7 +11733,7 @@
         "force_show": "False"
     },
     "Mesa": {
-        "description": "\n Mesa is an open-source implementation of the OpenGL specification -\n a system for rendering interactive 3D graphics.\n\n Note that this build enables CPU-based rendering with OpenSWR and LLVM.\n The module is intended to be used with visualisation software, such as\n ParaView, on nodes where no GPU hardware is available.\n\n Both on-screen and off-screen rendering are supported.\n",
+        "description": "Mesa is an open-source implementation of the OpenGL specification -\n a system for rendering interactive 3D graphics.\n\n Note that this build enables CPU-based rendering with OpenSWR and LLVM.\n The module is intended to be used with visualisation software, such as\n ParaView, on nodes where no GPU hardware is available.\n\n Both on-screen and off-screen rendering are supported.",
         "domains": [
             "vis",
             "visualisation"
@@ -12401,28 +11871,6 @@
         "last_updated": 1740132631,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/MetaGeneAnnotator/20080819-x86-64.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "MetalWalls": {
-        "description": "MetalWalls (MW) is a molecular dynamics code dedicated to the modelling of electrochemical systems.\nIts main originality is the inclusion of a series of methods allowing to apply a constant potential within the\nelectrode materials.",
-        "domains": [
-            "chem"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://gitlab.com/ampere2/metalwalls",
-        "support": "",
-        "versions": [
-            "21.06.1-foss-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "21.06.1-foss-2023a",
-        "default_type": "latest",
-        "last_updated": 1768174445,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/MetalWalls/21.06.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12587,7 +12035,7 @@
         "force_show": "False"
     },
     "MiMiC": {
-        "description": " \nMiMiC: A Framework for Multiscale Modeling in Computational Chemistry\n\nThis package includes mimicpy\n",
+        "description": "MiMiC: A Framework for Multiscale Modeling in Computational Chemistry\n\nThis package includes mimicpy",
         "domains": [
             "chem",
             "chemistry"
@@ -12610,7 +12058,7 @@
         "force_show": "False"
     },
     "MiMiC-CommLib": {
-        "description": " \n The MiMiC communication library (MCL) enables communication between external programs \n coupled through the MiMiC framework.\n",
+        "description": "The MiMiC communication library (MCL) enables communication between external programs \n coupled through the MiMiC framework.",
         "domains": [
             "chem",
             "chemistry"
@@ -12730,40 +12178,15 @@
         "homepage": "https://conda-forge.org",
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Miniforge3",
         "versions": [
-            "24.3.0-0",
-            "25.3.0-3",
-            "25.3.1-0"
+            "24.3.0-0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "25.3.1-0",
+        "default": "24.3.0-0",
         "default_type": "latest",
-        "last_updated": 1757395088,
+        "last_updated": 1740132631,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Miniforge3/25.3.1-0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "minigraph": {
-        "description": "Sequence-to-graph mapper and graph generator",
-        "domains": [
-            "bio",
-            "biology"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/lh3/minigraph",
-        "support": "",
-        "versions": [
-            "0.21"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.21",
-        "default_type": "latest",
-        "last_updated": 1751226845,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/minigraph/0.21.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Miniforge3/24.3.0-0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12874,7 +12297,7 @@
         "force_show": "False"
     },
     "miRDeep2": {
-        "description": " Completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs ",
+        "description": "Completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs",
         "domains": [
             "bio",
             "biology"
@@ -12921,7 +12344,7 @@
         "force_show": "False"
     },
     "Mmg": {
-        "description": "\nMmg is an open source software for simplicial remeshing. It provides 3 applications and 4 libraries:\nthe mmg2d application and the libmmg2d library: adaptation and optimization of a two-dimensional\ntriangulation and generation of a triangulation from a set of points or from given boundary edges\nthe mmgs application and the libmmgs library: adaptation and optimization of a surface triangulation\nand isovalue discretization the mmg3d application and the libmmg3d library: adaptation and optimization\nof a tetrahedral mesh and implicit domain meshing the libmmg library gathering the libmmg2d,\nlibmmgs and libmmg3d libraries.",
+        "description": "Mmg is an open source software for simplicial remeshing. It provides 3 applications and 4 libraries:\nthe mmg2d application and the libmmg2d library: adaptation and optimization of a two-dimensional\ntriangulation and generation of a triangulation from a set of points or from given boundary edges\nthe mmgs application and the libmmgs library: adaptation and optimization of a surface triangulation\nand isovalue discretization the mmg3d application and the libmmg3d library: adaptation and optimization\nof a tetrahedral mesh and implicit domain meshing the libmmg library gathering the libmmg2d,\nlibmmgs and libmmg3d libraries.",
         "domains": [
             "math"
         ],
@@ -13060,16 +12483,15 @@
         "support": "",
         "versions": [
             "0.2.5-GCC-12.3.0",
-            "0.4.1-GCC-12.3.0",
-            "0.5.0-GCC-12.3.0"
+            "0.4.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.5.0-GCC-12.3.0",
+        "default": "0.4.1-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1759289467,
+        "last_updated": 1740132638,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/modkit/0.5.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/modkit/0.4.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13120,7 +12542,7 @@
         "force_show": "False"
     },
     "Monocle3": {
-        "description": " An analysis toolkit for single-cell RNA-seq. ",
+        "description": "An analysis toolkit for single-cell RNA-seq.",
         "domains": [
             "bio",
             "biology"
@@ -13482,15 +12904,12 @@
     },
     "nano": {
         "description": "",
-        "domains": [
-            "lang"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
         "support": "",
         "versions": [
-            "3.1",
             "3.1"
         ],
         "admin_list": [],
@@ -13805,20 +13224,18 @@
         "versions": [
             "2.10.3-CUDA-11.4.1",
             "2.16.5-CUDA-11.8.0",
-            "2.16.5-GCCcore-11.3.0-CUDA-11.8.0",
             "2.17.1-CUDA-12.0.0",
-            "2.27.7-GCCcore-12.3.0-CUDA-12.2.2",
             "2.4.7-CUDA-10.1.243",
             "2.6.4-CUDA-10.2.89",
             "2.7.8-CUDA-11.0.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.27.7-GCCcore-12.3.0-CUDA-12.2.2",
+        "default": "2.17.1-CUDA-12.0.0",
         "default_type": "latest",
-        "last_updated": 1762394051,
+        "last_updated": 1740132631,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/NCCL/2.27.7-GCCcore-12.3.0-CUDA-12.2.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/NCCL/2.17.1-CUDA-12.0.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13869,7 +13286,7 @@
         "force_show": "False"
     },
     "ncurses": {
-        "description": "\n The Ncurses (new curses) library is a free software emulation of curses in\n System V Release 4.0, and more. It uses Terminfo format, supports pads and\n color and multiple highlights and forms characters and function-key mapping,\n and has all the other SYSV-curses enhancements over BSD Curses.\n",
+        "description": "The Ncurses (new curses) library is a free software emulation of curses in\n System V Release 4.0, and more. It uses Terminfo format, supports pads and\n color and multiple highlights and forms characters and function-key mapping,\n and has all the other SYSV-curses enhancements over BSD Curses.",
         "domains": [
             "devel"
         ],
@@ -13900,7 +13317,7 @@
         "force_show": "False"
     },
     "ncview": {
-        "description": "Ncview is a visual browser for netCDF format files.\nTypically you would use ncview to get a quick and easy, push-button\nlook at your netCDF files. You can view simple movies of the data,\nview along various dimensions, take a look at the actual data values,\nchange color maps, invert the data, etc.",
+        "description": "Visual browser for netCDF format files.",
         "domains": [
             "vis"
         ],
@@ -13909,17 +13326,16 @@
         "homepage": "http://meteora.ucsd.edu/~pierce/ncview_home_page.html",
         "support": "",
         "versions": [
-            "2.1.11-gompi-2023a",
             "2.1.7-gimkl-2018b",
             "2.1.7-gimpi-2020a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.11-gompi-2023a",
+        "default": "2.1.7-gimpi-2020a",
         "default_type": "latest",
-        "last_updated": 1764190703,
+        "last_updated": 1740132638,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/ncview/2.1.11-gompi-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/vis/ncview/2.1.7-gimpi-2020a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13942,31 +13358,6 @@
         "last_updated": 1740132638,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/ne/3.0.1.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "nearline": {
-        "description": "",
-        "domains": [
-            "tools"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "1.1.0.21",
-            "1.1.0.21",
-            "1.1.0.22",
-            "1.1.0.22"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.1.0.22",
-        "default_type": "latest",
-        "last_updated": 1740489641,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/nearline/1.1.0.22",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14165,17 +13556,15 @@
             "23.04.1",
             "23.10.0",
             "24.04.4",
-            "24.10.5",
-            "25.10.0",
-            "25.10.2"
+            "24.10.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "25.10.2",
+        "default": "24.10.5",
         "default_type": "latest",
-        "last_updated": 1765486498,
+        "last_updated": 1744964564,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Nextflow/25.10.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Nextflow/24.10.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14518,7 +13907,7 @@
         "force_show": "False"
     },
     "numactl": {
-        "description": "\n The numactl program allows you to run your application program on specific\n cpu's and memory nodes. It does this by supplying a NUMA memory policy to\n the operating system before running your program. The libnuma library provides\n convenient ways for you to add NUMA memory policies into your own program.\n",
+        "description": "The numactl program allows you to run your application program on specific\n cpu's and memory nodes. It does this by supplying a NUMA memory policy to\n the operating system before running your program. The libnuma library provides\n convenient ways for you to add NUMA memory policies into your own program.",
         "domains": [
             "tools"
         ],
@@ -14529,7 +13918,6 @@
         "versions": [
             "2.0.13",
             "2.0.14-GCC-11.3.0",
-            "2.0.14-GCCcore-11.3.0",
             "2.0.14-GCCcore-9.2.0",
             "2.0.14-intel-compilers-2022.0.2",
             "2.0.16-GCCcore-12.3.0"
@@ -14559,16 +13947,15 @@
             "21.9-GCC-11.3.0-CUDA-11.4.1",
             "22.3-GCC-11.3.0-CUDA-11.6.2",
             "23.5-CUDA-12.1.1",
-            "23.9-CUDA-12.2.2",
             "24.3-CUDA-12.2.2"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "24.3-CUDA-12.2.2",
         "default_type": "latest",
-        "last_updated": 1767556929,
+        "last_updated": 1740132632,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/NVHPC/24.3-CUDA-12.2.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/NVHPC/24.3-CUDA-12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14582,7 +13969,7 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://nwchemgit.github.io/ ",
+        "homepage": "https://nwchemgit.github.io/",
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/NWChem",
         "versions": [
             "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16"
@@ -14620,34 +14007,6 @@
         "last_updated": 1740132632,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/OBITools/1.2.13.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "objects": {
-        "description": "",
-        "domains": [
-            ".git"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "16",
-            "68",
-            "6b",
-            "a9",
-            "ba",
-            "info",
-            "pack"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "pack",
-        "default_type": "latest",
-        "last_updated": 1740132616,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/.git/objects/pack",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14745,11 +14104,11 @@
             }
         ],
         "network_licences": [],
-        "default": "0.3.23-GCC-12.3.0",
+        "default": "0.3.23-intel-compilers-2023.2.1",
         "default_type": "latest",
-        "last_updated": 1746564216,
+        "last_updated": 1740132632,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/OpenBLAS/0.3.23-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/numlib/OpenBLAS/0.3.23-intel-compilers-2023.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14866,8 +14225,6 @@
             "4.1.3-GCC-11.3.0",
             "4.1.3-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
             "4.1.5-GCC-12.3.0",
-            "4.1.5-GCC-12.3.0-CUDA-12.2.2",
-            "4.1.5-NVHPC-23.9-CUDA-12.2.2-CUDA-12.2.2",
             "4.1.5-intel-compilers-2023.2.1"
         ],
         "admin_list": [
@@ -14879,11 +14236,11 @@
             }
         ],
         "network_licences": [],
-        "default": "4.1.5-GCC-12.3.0",
+        "default": "4.1.5-intel-compilers-2023.2.1",
         "default_type": "latest",
-        "last_updated": 1763521863,
+        "last_updated": 1740132632,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/mpi/OpenMPI/4.1.5-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/mpi/OpenMPI/4.1.5-intel-compilers-2023.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14965,7 +14322,7 @@
         "force_show": "False"
     },
     "OpenSSL": {
-        "description": "The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured,\n and Open Source toolchain implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) \n protocols as well as a full-strength general purpose cryptography library. ",
+        "description": "The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured,\n and Open Source toolchain implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) \n protocols as well as a full-strength general purpose cryptography library.",
         "domains": [
             "system"
         ],
@@ -15003,16 +14360,15 @@
         "versions": [
             "5.0.3-OpenMPI-4.1.1",
             "5.0.4-OpenMPI-4.1.5",
-            "6.0.1-OpenMPI-4.1.5",
-            "6.1.0-f.0-OpenMPI-4.1.5"
+            "6.0.1-OpenMPI-4.1.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.1.0-f.0-OpenMPI-4.1.5",
+        "default": "6.0.1-OpenMPI-4.1.5",
         "default_type": "latest",
-        "last_updated": 1753225313,
+        "last_updated": 1740132632,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/ORCA/6.1.0-f.0-OpenMPI-4.1.5.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/ORCA/6.0.1-OpenMPI-4.1.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15028,21 +14384,20 @@
         "support": "",
         "versions": [
             "2.3.3-gimkl-2018b-Python-2.7.16",
-            "2.5.2-gimkl-2020a-Python-3.8.2",
-            "2.5.5-gimkl-2022a-Python-3.11.3"
+            "2.5.2-gimkl-2020a-Python-3.8.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.5.5-gimkl-2022a-Python-3.11.3",
+        "default": "2.5.2-gimkl-2020a-Python-3.8.2",
         "default_type": "latest",
-        "last_updated": 1753427104,
+        "last_updated": 1740132632,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/OrthoFinder/2.5.5-gimkl-2022a-Python-3.11.3.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/OrthoFinder/2.5.2-gimkl-2020a-Python-3.8.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "OSPRay": {
-        "description": "\nOSPRay features interactive CPU rendering capabilities geared towards\nScientific Visualization applications. Advanced shading effects such\nas Ambient Occlusion, shadows, and transparency can be rendered\ninteractively, enabling new insights into data exploration.\n",
+        "description": "OSPRay features interactive CPU rendering capabilities geared towards\nScientific Visualization applications. Advanced shading effects such\nas Ambient Occlusion, shadows, and transparency can be rendered\ninteractively, enabling new insights into data exploration.",
         "domains": [
             "vis",
             "visualisation"
@@ -15090,7 +14445,7 @@
         "force_show": "False"
     },
     "OTF2": {
-        "description": "\n The Open Trace Format 2 is a highly scalable, memory efficient event trace data format plus support library",
+        "description": "The Open Trace Format 2 is a highly scalable, memory efficient event trace data format plus support library",
         "domains": [
             "perf"
         ],
@@ -15502,7 +14857,7 @@
         "force_show": "False"
     },
     "PCRE": {
-        "description": "\n The PCRE library is a set of functions that implement regular expression\n pattern matching using the same syntax and semantics as Perl 5.\n",
+        "description": "The PCRE library is a set of functions that implement regular expression\n pattern matching using the same syntax and semantics as Perl 5.",
         "domains": [
             "devel"
         ],
@@ -15527,7 +14882,7 @@
         "force_show": "False"
     },
     "PCRE2": {
-        "description": "\n The PCRE library is a set of functions that implement regular expression pattern matching using the same syntax\n and semantics as Perl 5.\n",
+        "description": "The PCRE library is a set of functions that implement regular expression pattern matching using the same syntax\n and semantics as Perl 5.",
         "domains": [
             "devel"
         ],
@@ -15547,30 +14902,6 @@
         "last_updated": 1740132632,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PCRE2/10.42-GCCcore-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "PDAL": {
-        "description": "PDAL is Point Data Abstraction Library. It is a C/C++ open source library and applications for\n translating and processing point cloud data. It is not limited to LiDAR data, although the focus and impetus\n for many of the tools in the library have their origins in LiDAR.",
-        "domains": [
-            "climate_science",
-            "data",
-            "earth_science"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://pdal.io/",
-        "support": "",
-        "versions": [
-            "2.8.4-foss-2023a"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "2.8.4-foss-2023a",
-        "default_type": "latest",
-        "last_updated": 1756885871,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/PDAL/2.8.4-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16088,7 +15419,7 @@
         "force_show": "False"
     },
     "pigz": {
-        "description": "\n parallel implementation of gzip,",
+        "description": "parallel implementation of gzip,",
         "domains": [
             "tools"
         ],
@@ -16112,7 +15443,7 @@
         "force_show": "False"
     },
     "Pilon": {
-        "description": " Pilon is an automated genome assembly improvement and variant detection tool",
+        "description": "Pilon is an automated genome assembly improvement and variant detection tool",
         "domains": [
             "bio",
             "biology"
@@ -16132,28 +15463,6 @@
         "last_updated": 1740132632,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Pilon/1.24-Java-15.0.2.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "pixi": {
-        "description": "pixi is a cross-platform, multi-language package manager and workflow tool built on the foundation of the conda ecosystem",
-        "domains": [
-            "base"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/prefix-dev/pixi",
-        "support": "",
-        "versions": [
-            "0.61.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.61.0",
-        "default_type": "latest",
-        "last_updated": 1765931321,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/base/pixi/0.61.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16184,7 +15493,7 @@
         "force_show": "False"
     },
     "PLINK": {
-        "description": " PLINK is a free, open-source whole genome association analysis toolset, \n designed to perform a range of basic, large-scale analyses in a computationally efficient manner.\n The focus of PLINK is purely on analysis of genotype/phenotype data, so there is no support for \n steps prior to this (e.g. study design and planning, generating genotype or CNV calls from raw data). \n Through integration with gPLINK and Haploview, there is some support for the subsequent visualization, \n annotation and storage of results. ",
+        "description": "PLINK is a free, open-source whole genome association analysis toolset, \n designed to perform a range of basic, large-scale analyses in a computationally efficient manner.\n The focus of PLINK is purely on analysis of genotype/phenotype data, so there is no support for \n steps prior to this (e.g. study design and planning, generating genotype or CNV calls from raw data). \n Through integration with gPLINK and Haploview, there is some support for the subsequent visualization, \n annotation and storage of results.",
         "domains": [
             "bio",
             "biology"
@@ -16210,7 +15519,7 @@
         "force_show": "False"
     },
     "PLUMED": {
-        "description": "PLUMED is an open source library for free energy calculations in molecular systems which\n works together with some of the most popular molecular dynamics engines. Free energy calculations can be\n performed as a function of many order parameters with a particular  focus on biological problems, using\n state of the art methods such as metadynamics, umbrella sampling and Jarzynski-equation based steered MD.\n The software, written in C++, can be easily interfaced with both fortran and C/C++ codes.\n",
+        "description": "PLUMED is an open source library for free energy calculations in molecular systems which\n works together with some of the most popular molecular dynamics engines. Free energy calculations can be\n performed as a function of many order parameters with a particular  focus on biological problems, using\n state of the art methods such as metadynamics, umbrella sampling and Jarzynski-equation based steered MD.\n The software, written in C++, can be easily interfaced with both fortran and C/C++ codes.",
         "domains": [
             "biology",
             "chem",
@@ -16221,7 +15530,6 @@
         "homepage": "http://www.plumed-code.org",
         "support": "",
         "versions": [
-            "2.10.0-foss-2023a",
             "2.6.2-gimkl-2020a",
             "2.7.2-intel-2022a",
             "2.8.0-gimkl-2022a",
@@ -16229,11 +15537,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.10.0-foss-2023a",
+        "default": "2.8.0-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1761086482,
+        "last_updated": 1740132632,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/PLUMED/2.10.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/PLUMED/2.8.0-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16269,11 +15577,11 @@
         ],
         "extensions": [
             "iso8601-2.1.0",
-            "lib-pod5-0.3.28",
+            "lib-pod5-0.3.2",
             "more_itertools-10.1.0",
-            "pod5-0.3.28",
+            "pod5-0.3.2",
             "polars-0.19.19",
-            "pyarrow-21.0.0",
+            "pyarrow-14.0.2",
             "vbz_h5py_plugin-1.0.1"
         ],
         "licence_type": "",
@@ -16281,16 +15589,15 @@
         "support": "",
         "versions": [
             "0.2.4-gimkl-2022a",
-            "0.3.2-gimkl-2022a",
-            "0.3.28-foss-2023a"
+            "0.3.2-gimkl-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.3.28-foss-2023a",
+        "default": "0.3.2-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1754965855,
+        "last_updated": 1740132639,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/pod5/0.3.28-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/pod5/0.3.2-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16391,7 +15698,7 @@
         "force_show": "False"
     },
     "PRANK": {
-        "description": " Probabilistic multiple alignment program for DNA, codon and amino-acid sequences. .",
+        "description": "Probabilistic multiple alignment program for DNA, codon and amino-acid sequences. .",
         "domains": [
             "bio",
             "biology"
@@ -16545,14 +15852,16 @@
             "bio",
             "biology"
         ],
-        "extensions": [],
+        "extensions": [
+            "Bio::SearchIO::hmmer-1.7.3",
+            "BioPerl-1.7.7"
+        ],
         "licence_type": "",
         "homepage": "http://www.vicbioinformatics.com/software.prokka.shtml",
         "support": "",
         "versions": [
             "1.14.5-GCC-11.3.0",
-            "1.14.5-GCC-9.2.0",
-            "1.14.6-apptainer"
+            "1.14.5-GCC-9.2.0"
         ],
         "admin_list": [
             {
@@ -16563,11 +15872,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.14.6-apptainer",
+        "default": "1.14.5-GCC-9.2.0",
         "default_type": "latest",
-        "last_updated": 1758760243,
+        "last_updated": 1747602680,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/prokka/1.14.6-apptainer.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/prokka/1.14.5-GCC-9.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16709,8 +16018,7 @@
         "support": "",
         "versions": [
             "3.70-GCCcore-7.4.0",
-            "3.75-GCCcore-9.2.0",
-            "4.02-GCCcore-12.3.0"
+            "3.75-GCCcore-9.2.0"
         ],
         "admin_list": [
             {
@@ -16718,11 +16026,11 @@
             }
         ],
         "network_licences": [],
-        "default": "4.02-GCCcore-12.3.0",
+        "default": "3.75-GCCcore-9.2.0",
         "default_type": "latest",
-        "last_updated": 1752017734,
+        "last_updated": 1740132639,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/pstoedit/4.02-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/pstoedit/3.75-GCCcore-9.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16868,28 +16176,6 @@
         "last_updated": 1740132639,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/pyani/0.2.12-gimkl-2022a-Python-3.10.5.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "pybind11": {
-        "description": "pybind11 is a lightweight header-only library that exposes C++ types in Python and vice versa,\n mainly to create Python bindings of existing C++ code.",
-        "domains": [
-            "lib"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://pybind11.readthedocs.io",
-        "support": "",
-        "versions": [
-            "2.9.2-GCCcore-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "2.9.2-GCCcore-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1765486779,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/pybind11/2.9.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -17130,10 +16416,9 @@
             "eccodes-1.5.2",
             "findlibs-0.0.2",
             "Fiona-1.9.3",
-            "GDAL-3.6.4",
+            "GDAL-3.6.3",
             "geopandas-0.12.2",
             "munch-2.5.0",
-            "pdal-3.4.5",
             "pygeos-0.14",
             "pygrib-2.1.4",
             "pyogrio-0.5.1",
@@ -17149,7 +16434,6 @@
             "2.7.16-gimkl-2018b",
             "3.10.5-gimkl-2022a",
             "3.11.3-gimkl-2022a",
-            "3.11.6-foss-2023a",
             "3.7.3-gimkl-2018b",
             "3.8.2-gimkl-2020a",
             "3.9.5-gimkl-2020a",
@@ -17157,11 +16441,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.11.6-foss-2023a",
+        "default": "3.11.3-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1756898515,
+        "last_updated": 1740132633,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Python-Geo/3.11.6-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/geo/Python-Geo/3.11.3-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -17252,16 +16536,15 @@
         "versions": [
             "2022.2",
             "2023.5",
-            "2024.2-shotgun",
-            "2025.4-amplicon"
+            "2024.2-shotgun"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2025.4-amplicon",
+        "default": "2024.2-shotgun",
         "default_type": "latest",
-        "last_updated": 1754876764,
+        "last_updated": 1740132633,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/QIIME2/2025.4-amplicon.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/QIIME2/2024.2-shotgun.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -17291,7 +16574,7 @@
         "force_show": "False"
     },
     "QuantumESPRESSO": {
-        "description": "Quantum ESPRESSO  is an integrated suite of computer codes\nfor electronic-structure calculations and materials modeling at the nanoscale.\nIt is based on density-functional theory, plane waves, and pseudopotentials\n(both norm-conserving and ultrasoft).\n",
+        "description": "Quantum ESPRESSO  is an integrated suite of computer codes\nfor electronic-structure calculations and materials modeling at the nanoscale.\nIt is based on density-functional theory, plane waves, and pseudopotentials\n(both norm-conserving and ultrasoft).",
         "domains": [
             "chem",
             "chemistry"
@@ -17797,9 +17080,9 @@
         "network_licences": [],
         "default": "4.3.2-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1748324838,
+        "last_updated": 1740132633,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/base/R/4.3.2-foss-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/R/4.3.2-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18346,28 +17629,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "RANGS-GSHHS": {
-        "description": "",
-        "domains": [
-            "data"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "20171003"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "20171003",
-        "default_type": "latest",
-        "last_updated": 1740489640,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/data/RANGS-GSHHS/20171003",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "RapidNJ": {
         "description": "An algorithmic engineered implementation of canonical neighbour-joining.",
         "domains": [
@@ -18509,7 +17770,7 @@
         "force_show": "False"
     },
     "rclone": {
-        "description": "\n Rclone is a command line program to sync files and directories to and from\n a variety of online storage services\n",
+        "description": "Rclone is a command line program to sync files and directories to and from\n a variety of online storage services",
         "domains": [
             "tools"
         ],
@@ -18580,7 +17841,7 @@
         "force_show": "False"
     },
     "RE2": {
-        "description": "fast, safe, thread-friendly alternative to backtracking regular\n                expression engines like those used in PCRE, Perl, and Python. It is a C++library. ",
+        "description": "fast, safe, thread-friendly alternative to backtracking regular\n                expression engines like those used in PCRE, Perl, and Python. It is a C++library.",
         "domains": [
             "lib"
         ],
@@ -18646,32 +17907,8 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "refs": {
-        "description": "",
-        "domains": [
-            ".git"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "heads",
-            "remotes",
-            "tags"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "tags",
-        "default_type": "latest",
-        "last_updated": 1740132616,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/.git/refs/tags",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "Relion": {
-        "description": "RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) \n    is a stand-alone computer program that employs an empirical Bayesian \n    approach to refinement of (multiple) 3D reconstructions or 2D class \n    averages in electron cryo-microscopy (cryo-EM). ",
+        "description": "RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) \n    is a stand-alone computer program that employs an empirical Bayesian \n    approach to refinement of (multiple) 3D reconstructions or 2D class \n    averages in electron cryo-microscopy (cryo-EM).",
         "domains": [
             "bio",
             "biology",
@@ -18723,7 +17960,7 @@
         "force_show": "False"
     },
     "RepeatModeler": {
-        "description": "De novo transposable element (TE) family identification and modeling package. ",
+        "description": "De novo transposable element (TE) family identification and modeling package.",
         "domains": [
             "bio",
             "biology"
@@ -19001,7 +18238,7 @@
             "biology"
         ],
         "extensions": [
-            " Digest::MD5::File-0.08",
+            "Digest::MD5::File-0.08",
             " File::Grep-0.02",
             " Text::CSV-2.00",
             "Array::Utils-0.5",
@@ -19235,16 +18472,15 @@
             "1.66.1-GCC-11.3.0",
             "1.73.0-GCC-12.3.0",
             "1.76.0-GCC-12.3.0",
-            "1.80.1-GCC-12.3.0",
-            "1.90.0"
+            "1.80.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.90.0",
+        "default": "1.80.1-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1759276755,
+        "last_updated": 1740132633,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Rust/1.90.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Rust/1.80.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19353,7 +18589,7 @@
         "force_show": "False"
     },
     "samblaster": {
-        "description": "samblaster is a fast and flexible program for marking duplicates in read-id grouped paired-end SAM files. \nIt can also optionally output discordant read pairs and/or split read mappings to separate SAM files, and/or unmapped/clipped \nreads to a separate FASTQ file. When marking duplicates, samblaster will require approximately 20MB of memory per 1M read pairs.\n",
+        "description": "samblaster is a fast and flexible program for marking duplicates in read-id grouped paired-end SAM files. \nIt can also optionally output discordant read pairs and/or split read mappings to separate SAM files, and/or unmapped/clipped \nreads to a separate FASTQ file. When marking duplicates, samblaster will require approximately 20MB of memory per 1M read pairs.",
         "domains": [
             "bio",
             "biology"
@@ -19400,17 +18636,16 @@
             "1.16.1-GCC-11.3.0",
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
-            "1.22-GCC-12.3.0",
             "1.8-gimkl-2018b",
             "1.9-GCC-7.4.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.22-GCC-12.3.0",
+        "default": "1.21-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1754169242,
+        "last_updated": 1744964566,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/SAMtools/1.22-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SAMtools/1.21-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19555,30 +18790,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "SCons": {
-        "description": "SCons is a software construction tool.",
-        "domains": [
-            "devel"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "http://www.scons.org/",
-        "support": "",
-        "versions": [
-            "3.0.1",
-            "3.0.1",
-            "3.0.1"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "3.0.1",
-        "default_type": "latest",
-        "last_updated": 1740489640,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/SCons/3.0.1.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "SCOTCH": {
         "description": "Software package and libraries for sequential and parallel graph partitioning,\nstatic mapping, and sparse matrix block ordering, and sequential mesh and hypergraph partitioning.",
         "domains": [
@@ -19705,7 +18916,7 @@
         "force_show": "False"
     },
     "SeqAn": {
-        "description": "\n SeqAn is an open source C++ library of efficient algorithms and data structures\n for the analysis of sequences with the focus on biological data.\n",
+        "description": "SeqAn is an open source C++ library of efficient algorithms and data structures\n for the analysis of sequences with the focus on biological data.",
         "domains": [
             "bio",
             "biology"
@@ -19782,7 +18993,7 @@
         "force_show": "False"
     },
     "seqmagick": {
-        "description": " Seqmagick is a utility built in the spirit of imagemagick to expose the\n file format conversion in Biopython in a convenient way. Instead of having a\n big mess of scripts, there is one that takes arguments.",
+        "description": "Seqmagick is a utility built in the spirit of imagemagick to expose the\n file format conversion in Biopython in a convenient way. Instead of having a\n big mess of scripts, there is one that takes arguments.",
         "domains": [
             "bio",
             "biology"
@@ -19832,7 +19043,7 @@
         "force_show": "False"
     },
     "SHAPEIT4": {
-        "description": "Estimation of haplotypes (aka phasing) \nfor SNP array and high coverage sequencing data.\n",
+        "description": "Estimation of haplotypes (aka phasing) \nfor SNP array and high coverage sequencing data.",
         "domains": [
             "bio",
             "biology"
@@ -20143,16 +19354,15 @@
         "homepage": "https://hasindu2008.github.io/slow5tools",
         "support": "",
         "versions": [
-            "0.8.0-gimpi-2022a",
-            "1.3.0-gompi-2023a"
+            "0.8.0-gimpi-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.3.0-gompi-2023a",
+        "default": "0.8.0-gimpi-2022a",
         "default_type": "latest",
-        "last_updated": 1748041004,
+        "last_updated": 1740132639,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/slow5tools/1.3.0-gompi-2023a.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/data/slow5tools/0.8.0-gimpi-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20285,23 +19495,22 @@
             "biology"
         ],
         "extensions": [
-            "Sniffles-2.6.3"
+            "sniffles-2.3.3"
         ],
         "licence_type": "",
         "homepage": "https://github.com/fritzsedlazeck/Sniffles",
         "support": "",
         "versions": [
             "2.0.7-gimkl-2022a-Python-3.10.5",
-            "2.3.3-gimkl-2022a-Python-3.10.5",
-            "2.6.3-foss-2023a-Python-3.11.6"
+            "2.3.3-gimkl-2022a-Python-3.10.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.6.3-foss-2023a-Python-3.11.6",
+        "default": "2.3.3-gimkl-2022a-Python-3.10.5",
         "default_type": "latest",
-        "last_updated": 1760048204,
+        "last_updated": 1740132634,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/Sniffles/2.6.3-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/Sniffles/2.3.3-gimkl-2022a-Python-3.10.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20446,7 +19655,7 @@
         "force_show": "False"
     },
     "SPAdes": {
-        "description": " Genome assembler for single-cell and isolates data sets ",
+        "description": "Genome assembler for single-cell and isolates data sets",
         "domains": [
             "bio",
             "biology"
@@ -20565,29 +19774,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "splat": {
-        "description": "",
-        "domains": [
-            "tools"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "1.0.5",
-            "1.0.5"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.0.5",
-        "default_type": "latest",
-        "last_updated": 1740489641,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/splat/1.0.5",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "spoa": {
         "description": "c++ implementation of the partial order alignment (POA) algorithm\n which is used to generate consensus sequences",
         "domains": [
@@ -20643,7 +19829,7 @@
         "force_show": "False"
     },
     "SqueezeMeta": {
-        "description": "Fully automated metagenomics pipeline, from reads to bins.",
+        "description": "fully automated metagenomics pipeline, from reads to bins.",
         "domains": [
             "bio",
             "biology"
@@ -20654,16 +19840,15 @@
         "support": "",
         "versions": [
             "1.5.2-Miniconda3",
-            "1.6.0-Miniconda3",
-            "1.7.2"
+            "1.6.0-Miniconda3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.7.2",
+        "default": "1.6.0-Miniconda3",
         "default_type": "latest",
-        "last_updated": 1757395816,
+        "last_updated": 1740132634,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/SqueezeMeta/1.7.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/SqueezeMeta/1.6.0-Miniconda3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20687,26 +19872,6 @@
         "last_updated": 1747602680,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/sratoolkit/3.0.2.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "srun-wrapper": {
-        "description": "",
-        "domains": [],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "1.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.0",
-        "default_type": "latest",
-        "last_updated": 1740489641,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/srun-wrapper/1.0",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20734,7 +19899,7 @@
         "force_show": "False"
     },
     "Stacks": {
-        "description": "Stacks is a software pipeline for building loci from short-read sequences, such as those generated on\n the Illumina platform. Stacks was developed to work with restriction enzyme-based data, such as RAD-seq, for the purpose\n of building genetic maps and conducting population genomics and phylogeography.\n",
+        "description": "Stacks is a software pipeline for building loci from short-read sequences, such as those generated on\n the Illumina platform. Stacks was developed to work with restriction enzyme-based data, such as RAD-seq, for the purpose\n of building genetic maps and conducting population genomics and phylogeography.",
         "domains": [
             "bio",
             "biology"
@@ -20852,28 +20017,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "sublime": {
-        "description": "",
-        "domains": [
-            "tools"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "",
-        "support": "",
-        "versions": [
-            "3"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "3",
-        "default_type": "latest",
-        "last_updated": 1740489641,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/share/modules/all/sublime/3",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "Subread": {
         "description": "High performance read alignment, quantification and mutation discovery",
         "domains": [
@@ -20901,7 +20044,7 @@
         "force_show": "False"
     },
     "Subversion": {
-        "description": "\nSubversion is an open source version control system. Subversion exists to be universally recognized and adopted as an open-source, centralized version control system characterized by its reliability as a safe haven for valuable data; the simplicity of its model and usage; and its ability to support the needs of a wide variety of users and projects, from individuals to large-scale enterprise operations.\n",
+        "description": "Subversion is an open source version control system. Subversion exists to be universally recognized and adopted as an open-source, centralized version control system characterized by its reliability as a safe haven for valuable data; the simplicity of its model and usage; and its ability to support the needs of a wide variety of users and projects, from individuals to large-scale enterprise operations.",
         "domains": [
             "tools"
         ],
@@ -21097,7 +20240,7 @@
         "force_show": "False"
     },
     "Szip": {
-        "description": "\n Szip compression software, providing lossless compression of scientific data\n",
+        "description": "Szip compression software, providing lossless compression of scientific data",
         "domains": [
             "tools"
         ],
@@ -21122,7 +20265,7 @@
         "force_show": "False"
     },
     "tabix": {
-        "description": " Generic indexer for TAB-delimited genome position files ",
+        "description": "Generic indexer for TAB-delimited genome position files",
         "domains": [
             "bio",
             "biology"
@@ -21153,19 +20296,18 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://github.com/vcflib/tabixpp",
+        "homepage": "https://github.com/ekg/tabixpp",
         "support": "",
         "versions": [
-            "1.1.2-GCC-11.3.0",
-            "1.1.2-GCC-12.3.0"
+            "1.1.2-GCC-11.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.1.2-GCC-12.3.0",
+        "default": "1.1.2-GCC-11.3.0",
         "default_type": "latest",
-        "last_updated": 1765487462,
+        "last_updated": 1740132639,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/tabixpp/1.1.2-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/tabixpp/1.1.2-GCC-11.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21214,9 +20356,9 @@
         "network_licences": [],
         "default": "20230926",
         "default_type": "latest",
-        "last_updated": 1748232767,
+        "last_updated": 1740132639,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/tbl2asn/20230926.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/tbl2asn/20230926.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21604,7 +20746,7 @@
         "force_show": "False"
     },
     "Trimmomatic": {
-        "description": "Trimmomatic performs a variety of useful trimming tasks for illumina \n paired-end and single ended data.The selection of trimming steps and their associated \n parameters are supplied on the command line. ",
+        "description": "Trimmomatic performs a variety of useful trimming tasks for illumina \n paired-end and single ended data.The selection of trimming steps and their associated \n parameters are supplied on the command line.",
         "domains": [
             "bio",
             "biology"
@@ -21858,7 +21000,7 @@
         "force_show": "False"
     },
     "UCC": {
-        "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and\nfeature-rich for current and emerging programming models and runtimes.\n",
+        "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and \nfeature-rich for current and emerging programming models and runtimes.",
         "domains": [
             "lib"
         ],
@@ -21867,45 +21009,20 @@
         "homepage": "https://www.openucx.org/",
         "support": "",
         "versions": [
-            "1.2.0-GCCcore-12.3.0",
-            "1.3.0-GCCcore-11.3.0",
-            "1.3.0-GCCcore-12.3.0"
+            "1.2.0-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.3.0-GCCcore-12.3.0",
+        "default": "1.2.0-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1746704327,
+        "last_updated": 1740132634,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/UCC/1.3.0-GCCcore-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "UCC-CUDA": {
-        "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and\nfeature-rich for current and emerging programming models and runtimes.\n\nThis module adds the UCC CUDA support.\n",
-        "domains": [
-            "lib"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://www.openucx.org/",
-        "support": "",
-        "versions": [
-            "1.3.0-GCCcore-11.3.0-CUDA-11.8.0",
-            "1.3.0-GCCcore-12.3.0-CUDA-12.2.2"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.3.0-GCCcore-11.3.0-CUDA-11.8.0",
-        "default_type": "latest",
-        "last_updated": 1767912583,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/UCC-CUDA/1.3.0-GCCcore-11.3.0-CUDA-11.8.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/UCC/1.2.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "UCX": {
-        "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications\n",
+        "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications",
         "domains": [
             "lib"
         ],
@@ -21918,41 +21035,15 @@
             "1.12.1-GCC-11.3.0",
             "1.12.1-GCC-11.3.0-CUDA-11.6.2",
             "1.12.1-intel-compilers-2022.0.2",
-            "1.14.1-GCCcore-12.3.0",
-            "1.18.1-GCC-11.3.0",
-            "1.18.1-GCCcore-11.3.0",
-            "1.18.1-GCCcore-12.3.0"
+            "1.14.1-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.18.1-GCCcore-12.3.0",
+        "default": "1.14.1-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1746660024,
+        "last_updated": 1740132635,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/UCX/1.18.1-GCCcore-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "UCX-CUDA": {
-        "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications\n\nThis module adds the UCX CUDA support.\n",
-        "domains": [
-            "lib"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "http://www.openucx.org/",
-        "support": "",
-        "versions": [
-            "1.18.1-GCCcore-11.3.0-CUDA-11.8.0",
-            "1.18.1-GCCcore-12.3.0-CUDA-12.2.2"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.18.1-GCCcore-12.3.0-CUDA-12.2.2",
-        "default_type": "latest",
-        "last_updated": 1762393566,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/UCX-CUDA/1.18.1-GCCcore-12.3.0-CUDA-12.2.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/lib/UCX/1.14.1-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21983,7 +21074,7 @@
         "force_show": "False"
     },
     "Unicycler": {
-        "description": " Assembly pipeline for bacterial genomes. It can assemble Illumina-only read sets\n where it functions as a SPAdes-optimiser. ",
+        "description": "Assembly pipeline for bacterial genomes. It can assemble Illumina-only read sets\n where it functions as a SPAdes-optimiser.",
         "domains": [
             "bio",
             "biology"
@@ -22095,40 +21186,15 @@
         "versions": [
             "2.33-GCCcore-7.4.0",
             "2.33-GCCcore-9.2.0",
-            "2.38",
-            "2.41"
+            "2.38"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.41",
+        "default": "2.38",
         "default_type": "latest",
-        "last_updated": 1762996118,
+        "last_updated": 1740132639,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/util-linux/2.41.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "uv": {
-        "description": "An extremely fast Python package installer and resolver, written in Rust.",
-        "domains": [
-            "tools",
-            "python",
-            "software"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/astral-sh/uv",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/uv",
-        "versions": [
-            "0.9.17-GCC-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.9.17-GCC-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1765853285,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/uv/0.9.17-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/util-linux/2.38.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22144,8 +21210,7 @@
         "versions": [
             "3.14.0-GCC-7.4.0",
             "3.16.1-GCC-9.2.0",
-            "3.19.0-GCC-11.3.0",
-            "3.25.0-GCC-12.3.0"
+            "3.19.0-GCC-11.3.0"
         ],
         "admin_list": [
             {
@@ -22153,11 +21218,11 @@
             }
         ],
         "network_licences": [],
-        "default": "3.25.0-GCC-12.3.0",
+        "default": "3.19.0-GCC-11.3.0",
         "default_type": "latest",
-        "last_updated": 1752017607,
+        "last_updated": 1740132635,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/debugger/Valgrind/3.25.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/debugger/Valgrind/3.19.0-GCC-11.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22205,12 +21270,10 @@
             "6.2.1-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
             "6.2.1-intel-2022a-NOOMP",
             "6.3.2-NVHPC-22.3-GCC-11.3.0-CUDA-11.6.2",
-            "6.3.2-foss-2023a-cp",
             "6.3.2-intel-2022a",
             "6.4.1-intel-2022a",
             "6.4.2-foss-2023a",
-            "6.4.2-intel-2022a",
-            "6.4.3-foss-2023a"
+            "6.4.2-intel-2022a"
         ],
         "admin_list": [
             {
@@ -22223,7 +21286,7 @@
         "network_licences": [],
         "default": "6.4.2-intel-2022a",
         "default_type": "static",
-        "last_updated": 1755137199,
+        "last_updated": 1745951967,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VASP/6.4.2-intel-2022a.lua",
         "force_hide": "False",
@@ -22286,31 +21349,30 @@
         "force_show": "False"
     },
     "vcflib": {
-        "description": "vcflib provides methods to manipulate and interpret sequence variation as it can be\n described by VCF. The Variant Call Format (VCF) is a flat-file, tab-delimited textual format intended\n to concisely describe reference-indexed genetic variations between individuals.",
+        "description": "Genetic variant detector designed to find polymorphisms smaller than the length of a short-read sequencing alignment.",
         "domains": [
             "bio",
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://github.com/vcflib/vcflib",
+        "homepage": "https://github.com/ekg/freebayes/blob/master/README.md",
         "support": "",
         "versions": [
-            "1.0.1-GCC-9.2.0",
-            "1.0.14-GCC-12.3.0"
+            "1.0.1-GCC-9.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.0.14-GCC-12.3.0",
+        "default": "1.0.1-GCC-9.2.0",
         "default_type": "latest",
-        "last_updated": 1765487205,
+        "last_updated": 1740132640,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/vcflib/1.0.14-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/bio/vcflib/1.0.1-GCC-9.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "VCFtools": {
-        "description": "The aim of VCFtools is to provide \n methods for working with VCF files: validating, \n merging, comparing and calculate some basic population\n genetic statistics. ",
+        "description": "The aim of VCFtools is to provide \n methods for working with VCF files: validating, \n merging, comparing and calculate some basic population\n genetic statistics.",
         "domains": [
             "bio",
             "biology"
@@ -22504,7 +21566,7 @@
         "force_show": "False"
     },
     "Vim": {
-        "description": " Vim is an advanced text editor that seeks to provide the power \n of the de-facto Unix editor 'Vi', with a more complete feature set. ",
+        "description": "Vim is an advanced text editor that seeks to provide the power \n of the de-facto Unix editor 'Vi', with a more complete feature set.",
         "domains": [
             "tools"
         ],
@@ -22606,28 +21668,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "Voro++": {
-        "description": "Voro++ is a software library for carrying out three-dimensional computations of the Voronoi\ntessellation. A distinguishing feature of the Voro++ library is that it carries out cell-based calculations,\ncomputing the Voronoi cell for each particle individually. It is particularly well-suited for applications that\nrely on cell-based statistics, where features of Voronoi cells (eg. volume, centroid, number of faces) can be used\nto analyze a system of particles.",
-        "domains": [
-            "math"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "http://math.lbl.gov/voro++/",
-        "support": "",
-        "versions": [
-            "0.4.6-GCC-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.4.6-GCC-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1764018411,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/math/Voro++/0.4.6-GCC-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "VSEARCH": {
         "description": "An open source alternative to the metagenomics tool USEARCH.\n\nPerforms chimera detection, clustering, full-length and prefix dereplication, rereplication, masking, \nall-vs-all pairwise global alignment, exact and global alignment searching, shuffling, subsampling \nand sorting. It also supports FASTQ file analysis, filtering, conversion and merging of paired-end reads.",
         "domains": [
@@ -22664,16 +21704,15 @@
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VTune",
         "versions": [
             "2019_update8",
-            "2023.1.0",
-            "2025.6"
+            "2023.1.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2025.6",
+        "default": "2023.1.0",
         "default_type": "latest",
-        "last_updated": 1760479609,
+        "last_updated": 1740132635,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/VTune/2025.6.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/VTune/2023.1.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22720,28 +21759,6 @@
         "last_updated": 1740132640,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/chem/wannier90/3.1.0-foss-2023a.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "WFA2": {
-        "description": "The wavefront alignment (WFA) algorithm is an exact\n gap-affine algorithm that takes advantage of homologous regions\n between the sequences to accelerate the alignment process.",
-        "domains": [
-            "bio"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/smarco/WFA2-lib",
-        "support": "",
-        "versions": [
-            "2.3.4-GCCcore-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "2.3.4-GCCcore-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1765487436,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/WFA2/2.3.4-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22865,14 +21882,14 @@
         "force_show": "False"
     },
     "wtdbg": {
-        "description": "de novo sequence assembler for long noisy reads produced by PacBio or Oxford Nanopore Technologies. ",
+        "description": "de novo sequence assembler for long noisy reads produced by PacBio or Oxford Nanopore Technologies.",
         "domains": [
             "bio",
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://github.com/ruanjue/wtdbg2 ",
+        "homepage": "https://github.com/ruanjue/wtdbg2",
         "support": "",
         "versions": [
             "2.5-GCC-9.2.0"
@@ -22910,7 +21927,7 @@
         "force_show": "False"
     },
     "x264": {
-        "description": "\n x264 is a free software library and application for encoding video streams\n into the H.264/MPEG-4 AVC compression format, and is released under the\n terms of the GNU GPL.\n",
+        "description": "x264 is a free software library and application for encoding video streams\n into the H.264/MPEG-4 AVC compression format, and is released under the\n terms of the GNU GPL.",
         "domains": [
             "vis"
         ],
@@ -22934,7 +21951,7 @@
         "force_show": "False"
     },
     "x265": {
-        "description": "\n x265 is a free software library and application for encoding video streams\n into the H.265 AVC compression format, and is released under the terms of\n the GNU GPL.\n",
+        "description": "x265 is a free software library and application for encoding video streams\n into the H.265 AVC compression format, and is released under the terms of\n the GNU GPL.",
         "domains": [
             "vis"
         ],
@@ -23001,31 +22018,8 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "xPore": {
-        "description": "A Python package for identification and quantification of differential RNA modifications from direct RNA sequencing",
-        "domains": [
-            "bio",
-            "biology"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://github.com/GoekeLab/xpore",
-        "support": "",
-        "versions": [
-            "2.1-foss-2023a-Python-3.11.6"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "2.1-foss-2023a-Python-3.11.6",
-        "default_type": "latest",
-        "last_updated": 1756086049,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/bio/xPore/2.1-foss-2023a-Python-3.11.6.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "xtb": {
-        "description": " xtb - An extended tight-binding semi-empirical program package. ",
+        "description": "xtb - An extended tight-binding semi-empirical program package.",
         "domains": [
             "chem",
             "chemistry"
@@ -23068,9 +22062,9 @@
         "network_licences": [],
         "default": "5.4.2-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1747950819,
+        "last_updated": 1740132635,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/XZ/5.4.2-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/XZ/5.4.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -23211,28 +22205,6 @@
         "last_updated": 1740132635,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/tools/Z3/4.12.2-GCCcore-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "zellij": {
-        "description": "zellij is the terminal multiplexer and workspace with batteries included",
-        "domains": [
-            "base"
-        ],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://zellij.dev/",
-        "support": "",
-        "versions": [
-            "0.43.1"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.43.1",
-        "default_type": "latest",
-        "last_updated": 1766450653,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/base/zellij/0.43.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
