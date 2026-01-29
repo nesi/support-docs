@@ -3,25 +3,24 @@ created_at: '2020-06-23T23:10:13Z'
 tags: 
   - python
   - environments
+  - conda
+  - anaconda
+  - miniconda
+  - mamba
 ---
-
-!!! note "Preferred Alternatives"
-     - If you want a more reproducible and isolated environment, we
-         recommend using the [Apptainer containers](Apptainer.md).
-     - If you only need access to Python and standard numerical libraries
-         (numpy, scipy, matplotlib, etc.), you can use the 
-         [Python environment module](Python.md).
 
 {% set app_name = page.title | trim %}
 {% set app = applications[app_name] %}
 {% include "partials/app_header.html" %}
 
 The `Miniforge3` environment module provides the
-[Conda](https://docs.conda.io/projects/conda/en/latest/) package and
-environment manager. Conda lets you install packages and their
-dependencies in dedicated environment, giving you more freedom to
-install software yourself at the expense of possibly less optimized
-packages and no curation by the NeSI team.
+[Conda](https://docs.conda.io/projects/conda/en/latest/) and [Mamba](https://mamba.readthedocs.io/en/latest/) package and
+environment managers. Miniforge is a replacement for Miniconda and the Anaconda _defaults_ channel which is now [licence encumbered](https://www.anaconda.com/legal).
+
+`conda` and `mamba` provide the tools that allow you to install packages and their
+dependencies in a dedicated environment. This gives you more freedom to
+install software yourself.  Note this may come at the expense of less optimized
+packages and no curation by the REANNZ team.
 
 ## Module loading and conda environments isolation
 
@@ -50,10 +49,10 @@ Here are the explanations for each line of this snippet:
     `X.Y` is the Python version, e.g. 3.8) by `pip install --user` are
     excluded from your conda environments.
 
-!!! warning
-     We **strongly** recommend against using `conda init`. It inserts a
+!!! warning "conda init"
+     Please *do not* run `conda init`. It inserts a
      snippet in your `~/.bashrc` file that will freeze the version of conda
-     used, bypassing the environment module system.
+     used, bypassing the environment module system. It is also known to cause other issues with your account.
 
 !!! warning "Defaults Channel"
      The `defaults` channel is blocked due to Anaconda's licensing requirements.
@@ -126,4 +125,12 @@ conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
      following configuration:
      ``` sh
      conda config --set env_prompt '({name})'
-     ```
+    ```
+
+!!! note "Preferred Alternatives"
+     - If you want a more reproducible and isolated environment, we
+         recommend using [Apptainer containers](Apptainer.md).
+     - If you only need access to Python and standard numerical libraries
+         (numpy, scipy, matplotlib, etc.), you can use our 
+         [Python environment module](Python.md).
+
