@@ -11966,7 +11966,11 @@
         "description": "Community-led recipes, infrastructure and distributions for conda.",
         "domains": [
             "python",
-            "environments"
+            "environments",
+            "conda",
+            "anaconda",
+            "miniconda",
+            "mamba"
         ],
         "extensions": [],
         "licence_type": "",
