@@ -181,7 +181,7 @@ The following sections detail the most usual entries.
 | - | - | - | - |
 | `description` | Used for internal and external search indexing. This will appear as the page preview when searching in Google. Try not to include words and information here that is not in the body of the article. | string | `description: A short summary.` |
 | `icon`        | Page icon.                                                    | Path |  |
-| `status`      | Will display a symbol on nav                                  | `new` or `deprecated` | |
+| `status`      | Will display a symbol on nav                                  | `new`, `deprecated` or `tutorial` | |
 | `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
 | `tags`        | Used for internal and external search indexing                | String[] | `tags: [ "slurm", "containers" ]` |
 | `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
@@ -191,7 +191,7 @@ The following sections detail the most usual entries.
 
 The following fields were imported from Zendesk Page:
 
-- `vote_count` 
+- `vote_count`
 - `vote_sum`
 - `zendesk_article_id`
 - `zendesk_section_id`
@@ -219,7 +219,114 @@ If you want to draw attention to a page (for any reason), you may give it the `n
 status: new
 ```
 
-This will show a little exclaimation mark next to the page title in the nav.
+This will show a little exclamation mark next to the page title in the nav.
+
+### Tutorial
+
+Indicates a tutorial page.
+
+```yaml
+status: tutorial
+```
+
+Will add a tutorial banner to the top of the page, and a hat icon next to page title in nav.
+
+## Tutorial Page
+
+There are a couple of extra things you should try to include in a tutorial page.
+
+### Time
+
+Right at the top try to include a time block.
+
+```md
+!!! time "30 Minutes"
+```
+
+!!! time "30 Minutes"
+
+### Objectives
+
+Then include an 'objectives' admonition.
+
+```md
+!!! objectives
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+```
+
+!!! objectives
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+
+This helps set expectations and allows people to determine if this lesson is relevant to them.
+
+### Prerequisites
+
+A 'prerequisites' admonition, to point to the previous lesson.
+
+```md
+!!! prerequisites
+    - [Link to Previous Page](../previous_page.md)
+```
+
+!!! prerequisites
+    - [Link to Previous Page](../previous_page.md)
+
+### Quiz
+
+Try to have one quiz per learning objective.
+
+```md
+<quiz>
+Question goes here.
+  
+```out
+Can include code blocks and pictures.
+```
+
+Answers are in the form of a checkbox list.
+
+- [ ] A Wrong Answer
+- [ ] Another Wrong Answer
+- [X] The Correct Answer
+- [ ] Can be multiple correct answers.
+
+This text will show after giving an answer (correct or incorrect unfortunately)
+</quiz>
+```
+
+### Keypoints
+
+Second to last is a keypoints admonition.
+
+```md
+!!! keypoints
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+```
+
+!!! keypoints
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+
+This should be a short summary of the key topics covered,
+and answer the 'questions' posed in the objectives.
+
+### Next
+
+Finally a `next` admonition pointing to the next page.
+
+!!! next
+    [Next Page](next_page.md)
+
+### Rule of Three
+
+Repeat things three + times (objective, lesson, quiz, keypoints).
 
 ## Accessibility Standards
 

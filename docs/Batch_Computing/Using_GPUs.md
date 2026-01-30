@@ -18,7 +18,7 @@ This page provides generic information about how to access GPUs through the Slur
 
 ## Request GPU resources using Slurm
 
-To request a GPU for your [Slurm job](Submitting_your_first_job.md), add
+To request a GPU for your [Slurm job](Tutorial:_Submitting_your_first_job.md), add
 the following option in the header of your submission script:
 
 ```sl
