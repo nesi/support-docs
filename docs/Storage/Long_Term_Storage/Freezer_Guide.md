@@ -24,6 +24,35 @@ Please note that your bucket has the same name as your Freezer allocation. If yo
 
 ## List contents and buckets
 
+### Get information about a Freezer bucket
+
+To determine all the users that have access to a freezer bucket, type into the terminal:
+
+```sh
+s3cmd info s3://<freezer-bucket>/
+```
+
+You will get an output like this:
+
+```sh
+username@login03:~$ s3cmd info s3://<freezer-bucket>
+s3://<freezer-bucket> (bucket):
+   Location:  akl-1
+   Payer:     none
+   Ownership: none
+   Versioning:none
+   Expiration rule: none
+   Block Public Access: none
+   Policy:    {"Version": "2012-10-17", "Statement": [{"Sid": "FullS3AccessWithRestore", "Effect": "Allow", "Principal": ["username1", "username2", "username3"], "Action": ["s3:AbortMultipartUpload", "s3:DeleteObject", "s3:DeleteObjectTagging", "s3:GetBucketAcl", "s3:GetBucketCORS", "s3:GetBucketLocation", "s3:GetBucketPolicy", "s3:GetBucketTagging", "s3:GetObject", "s3:GetObjectAcl", "s3:GetObjectAttributes", "s3:GetObjectRetention", "s3:GetObjectTagging", "s3:ListBucket", "s3:ListBucketMultipartUploads", "s3:ListMultipartUploadParts", "s3:PutBucketTagging", "s3:PutObject", "s3:PutObjectRetention", "s3:PutObjectTagging", "s3:RestoreObject"], "Resource": ["arn:aws:s3:::<freezer-bucket>", "arn:aws:s3:::<freezer-bucket>/*"]}]}
+   CORS:      none
+   ACL:       username1: FULL_CONTROL
+```
+
+Useful information that you can pull from this:
+
+* `"Principal"`: This provides information about all users who can access this bucket
+* `ACL`: Indicates the owner of the bucket
+
 ### List contents of a bucket
 
 List all objects in a bucket.
