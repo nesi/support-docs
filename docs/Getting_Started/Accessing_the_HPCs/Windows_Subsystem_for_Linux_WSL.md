@@ -19,14 +19,12 @@ WSL is enabled by default on Windows (since later releases of Windows 10).  Howe
 
 ## Installing WSL
 
-Microsoft provides [setup instructions](https://learn.microsoft.com/en-us/windows/wsl/install) for installing both WSL and a Linux distribution.
+Microsoft provides [setup instructions](https://learn.microsoft.com/en-us/windows/wsl/install) for installing both WSL and a Linux distribution (also known as a distro) .
 
-To check if WSL is already installed on your Windows PC, open Windows Command Prompt, Terminal, or Powershell and run `wsl --list --online`.
-This should return a list of available Linux distributions that you can install.  We will be using the Ubuntu distribution in out examples below as it is the most commonly used distro in WSL.  However, if you have a preferred distro, you are welcome to use it instead. 
+To check if WSL is already installed on your Windows PC, open Windows Command Prompt, Terminal, or PowerShell and run `wsl --list --online`.
+This should return a list of available Linux distros that you can install.  We will be using the Ubuntu distro in our examples below as it is the most commonly used in WSL.  However, if you have a preferred distro, you are welcome to use it instead. 
 
 ## Installing a Linux Distribution
-
-In order to make use of WSL features, you will also need to install a Linux distribution (also referred to as a distro).
 
 Distros can be obtained through the Microsoft Store, or using command line.
 
