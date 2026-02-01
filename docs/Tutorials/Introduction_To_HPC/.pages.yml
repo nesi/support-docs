@@ -1,6 +1,6 @@
 ---
 nav:
- - Introduction.md
+ - What_is_an_HPC.md
  - Bash_Shell.md
  - Environment_And_Modules.md
  - Submitting_Your_First_Job.md

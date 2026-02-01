@@ -26,11 +26,12 @@ that are provisioned to users on demand or as needed.
 *Cluster* is a more specific term describing a type of supercomputer comprised of multiple smaller computers (nodes) working together.
 Almost all supercomputers are clusters.
 
-![NeSI HPC](../../assets/images/NeSI-HPC-Facility.jpg)
+![The REANNZ HPCs](../../assets/images/NeSI-HPC-Facility.jpg)
+*The REANNZ High Performance Computers*
 
 ## Access
 
-You will connect to a cluster over the internet either with a web client (Jupyter) or with SSH (**S**ecure **Sh**ell).
+You will connect to a cluster over the internet either with a web client (OnDemand) or with SSH (**S**ecure **Sh**ell).
 Your main interface with the cluster will be using command line.
 
 ## Nodes
@@ -41,8 +42,9 @@ types of tasks. The node where you are now will be different depending on
 how you accessed the cluster.
 
 Most of you (using JupyterHub) will be on an interactive *compute node*.
-This is because Jupyter sessions are launched as a job.  If you are using SSH to connect to the cluster, you will be on a
-*login node*. Both JupyterHub and SSH login nodes serve as an access point to the cluster.
+This is because Jupyter sessions are launched as a job.  If you are using SSH to connect to the cluster, you will be on a *login node*.
+
+Both OnDemand and SSH login nodes serve as an access point to the cluster.
 
 The real work on a cluster gets done by the *compute nodes*.
 Compute nodes come in many shapes and sizes, but generally are dedicated to long
@@ -69,8 +71,9 @@ It is common for nodes to connect to a shared, remote disk.
 
 !!! info "Dedicated Transfer Nodes"
     If you want to transfer larger amounts of data to or from the cluster, NeSI
-    offers dedicated transfer nodes using the Globus service.  More information on using Globus for large data transfer to and from 
-    the cluster can be found here: [Globus Transfer Service](https://docs.nesi.org.nz/Storage/Data_Transfer_Services/Globus_Quick_Start_Guide/)
+    offers dedicated transfer nodes using the Globus service.  
+    More information on using Globus for large data transfer to and from the cluster can be found on the
+    [Globus Transfer Service](../../Data_Transfer/Globus/Globus_Overview.md) page.
 
 <quiz>
 I think it would be good to have a question here to introduce the concept of the 'quiz'
@@ -84,7 +87,7 @@ Correct! It would be a good idea.
 !!! keypoints
     - A 'cluster' describes a particular architecture of HPC.
     - Remote hardware must be accessed via SSH, or a dedicated web client.
-    - Clusters have specialised nodes fo different tasks.
+    - Clusters have specialised nodes for different tasks.
 
 !!! postrequisites "What Next"
     - [Bash Shell](Bash_Shell.md)
