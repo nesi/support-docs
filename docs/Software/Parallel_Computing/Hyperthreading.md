@@ -1,9 +1,20 @@
 ---
 created_at: '2018-11-15T22:10:10Z'
-tags: []
+tags:
+  - hyperthreading
+  - hyper-threading
+  - smp
+  - symmetric multiprocessing
+  - simultaneous multithreading
+  - shared-memory multiprocessing
 description: How to use simultaneous multithreading (hyper-threading) on NeSI.
-status: deprecated
 ---
+
+!!! warning
+    The presence of hyperthreading on the HPC results in Slurm falsely detecting twice the number of 
+    CPUs being assigned to all jobs than is actually assigned, even when hyperthreading is disabled,
+    this can seen in the outputs of commands such as `sacct`. However, your jobs are still only being
+    charged for the acutal number of assigned CPUs.
 
 As CPU technology advanced engineers realised that adapting CPU
 architecture to include *logical* *processors* within the physical core
@@ -20,26 +31,39 @@ and physical cores is that logical cores are not full stand-alone CPUs,
 and share some hardware with nearby logical cores. Physical cores are
 made up of two logical cores.
 
-Hyperthreading is enabled by default on NeSI machines, meaning, by
-default, Slurm will allocate two threads to each physical core.
+Hyperthreading is disabled by default on REANNZ HPC, meaning, by
+default, Slurm will allocate one thread to each physical core.
+However, it can be enabled by adding `--threads-per-core=2` to your 
+Slurm script, which will result in Slurm allocating two threads to 
+each physical core.
 
 ## Hyperthreading with Slurm
 
-When Slurm request a CPU, it is **requesting logical cores,** which, as
+When Slurm requests a CPU, it is **requesting logical cores,** which, as
 mentioned above, there are two of per physical core. If you use
 `--ntasks=n` to request CPUs, Slurm will start `n` MPI tasks which are
 each assigned to one physical core. Since Slurm "sees" logical cores,
-once your job starts you will have twice the number of CPUs as `ntasks`.
+once your job starts you will have twice the number of cores as `ntasks`,
+even when hyperthreading is disabled. If hyperthreading is disabled only
+one thread of work will be allocated physical core, meaning one logical core
+on each physical core will remain idle.
 
-If you set `--cpus-per-task=n`, Slurm will request `n` logical CPUs per
-task, i.e., will set `n` threads for the job. Your code must be capable
-of running Hyperthreaded (for example using
+With hyperthreading disabled, if you set `--cpus-per-task=n`, Slurm will 
+request `n` physical core per task, but because each physical core consists
+of two logical cores you will be allocated 2n logical cores but only one
+thread of work will be allocated physical core, meaning one logical core
+on each physical core will remain idle.
+
+If you set `--cpus-per-task=n`while hyperthreading is enabled, Slurm will
+request `n` logical cores per task, i.e., will set `n` threads for the job.
+Your code must be capable of running Hyperthreaded (for example using
 [OpenMP](OpenMP_settings.md))
 if `--cpus-per-task > 1`.
 
-Setting `--hint=nomultithread` with `srun` or `sbatch` causes Slurm to
-allocate only one thread from each core to this job". This will allocate
-CPUs according to the following image:
+Below you can find a table of a hypothetical node. Regardless of whether you have
+hyperthreading enabled or disabled your jobs will always be assigned full physical
+cores and the corresponding logical cores. If hyperthreading is disabled your jobs
+will only use one of the available logical core on each physical core.
 <table style="height: 132px;" border="1" width="591" cellspacing="0" cellpadding="3">
 <tbody>
 <tr style="height: 22px;">
@@ -164,29 +188,31 @@ Image adapted from [Slurm's documentation page](https://slurm.schedmd.com/archiv
 Hyperthreading increases the efficiency of some jobs, but the fact that
 Slurm is counting in logical CPUs makes aspects of running
 non-Hyperthreaded jobs confusing, even when Hyperthreading is turned off
-in the job with `--hint=nomultithread`. To determine if the code you are
+in the job. To determine if the code you are
 running is capable of running Hyperthreaded, visit the manual pages for
 the software.
 
 Alternatively, it is possible to perform an ad-hoc test to determine if
 your code is capable of making use of Hyperthreading. First run a job
-that has requested 2 threads per physical core as described above. Then,
+that has requested `--cpus-per-task=2` and `--threads-per-core=2`. Then,
 use the `nn_seff` command to check the jobs CPU efficiency. If CPU
 efficiency is greater than 100%, then your code is making use of
-Hyperthreading, and gaining performance from it. If your job gives an
+Hyperthreading, and may be gaining performance from it. If your job gives an
 error or stays at 100% efficiency, it is likely you can not run your
 code Hyperthreaded. 200% CPU efficiency would be the maximally efficient
 job, however, this is rarely observed and anything over 100% should be
-considered a bonus.
+considered a bonus. Additioanlly, a job may appear to be getting a
+performance boost from hyperthreading, but to confirm this boost you will 
+need to compare the runtime of this job to another job with the same number
+of physical cores but without having hyperthreading enabled.
 
 ## How to use Hyperthreading
 
-- Non-hyperthreaded jobs which use  `--mem-per-cpu` requests should
-    halve their memory requests as those are based on memory per logical
-    CPU, not per the number of threads or tasks.  For non-MPI jobs, or
-    for MPI jobs that request the same number of tasks on every node, we
-    recommend to specify `--mem` (i.e. memory per node) instead. See
-    [How to request memory
+- In non-hyperthreaded jobs `cpu` as in `--mem-per-cpu` or `cpus-per-task` requests should
+    refers to the physical core. However, if hyperthreading is enabled `cpu` now refers to
+    the logical core.  For non-MPI jobs, or for MPI jobs that request the same number of
+    tasks on every node, we recommend to specify `--mem` (i.e. memory per node) instead.
+    See [How to request memory
     (RAM)](../../Getting_Started/FAQs/How_do_I_request_memory.md) for more
     information.
 - Non-MPI jobs which specify `--cpus-per-task` and use **srun** should
@@ -242,7 +268,7 @@ configuration</th>
 <li><code class="sl">--cpus-per-task</code> is not used</li>
 </ul></td>
 <td>The job gets,
-and is charged for, two logical CPUs. <code class="sl">--hint=nomultithread</code> is irrelevant.</td>
+and is charged for, two logical CPUs. <code class="sl">--threads-per-core=2</code> is irrelevant.</td>
 <td>The job
 gets one logical CPU, but is charged for 80.<br />
 <code class="sl">--hint=nomultithread</code> is irrelevant.
@@ -254,7 +280,7 @@ instead.</span></td>
 <td><ul>
 <li>Only one task</li>
 <li><code class="sl">--cpus-per-task=</code><em>N</em></li>
-<li><code class="sl">--hint=nomultithread</code> is not used</li>
+<li><code class="sl">--threads-per-cpu=2</code> is used</li>
 </ul></td>
 <td>The job
 gets, and is charged for, <em>N</em> logical CPUs, rounded up to the
@@ -268,7 +294,7 @@ Set <em>N</em> to 80 if possible.</td>
 <td><ul>
 <li>Only one task</li>
 <li><code class="sl">--cpus-per-task=</code><em>N</em></li>
-<li><code class="sl">--hint=nomultithread</code> is used</li>
+<li><code class="sl">--threads-per-cpu=2</code> is not used</li>
 </ul></td>
 <td>The job gets,
 and is charged for, 2<em>N</em> logical CPUs.</td>
@@ -280,10 +306,10 @@ Set <em>N</em> to 40 if possible.</td>
 <td><ul>
 <li>More than one task on one or more nodes</li>
 <li><code class="sl">--cpus-per-task</code> is not used</li>
-<li><code class="sl">--hint=nomultithread</code> is not used</li>
+<li><code class="sl">--threads-per-cpu=2</code> is used</li>
 </ul></td>
 <td rowspan="2">Each task gets two logical CPUs. The job is
-charged for two logical CPUs per task. <code class="sl">--hint=nomultithread</code> is irrelevant.</td>
+charged for two logical CPUs per task. <code class="sl">--threads-per-cpu=2</code> is irrelevant.</td>
 <td>Each task
 gets one logical CPU. The job is charged for 80 logical CPUs per
 allocated node. If possible, set the number of tasks per node to 80.</td>
@@ -292,7 +318,7 @@ allocated node. If possible, set the number of tasks per node to 80.</td>
 <td><ul>
 <li>More than one task on one or more nodes</li>
 <li><code class="sl">--cpus-per-task</code> is not used</li>
-<li><code class="sl">--hint=nomultithread</code> is used</li>
+<li><code class="sl">--threads-per-cpu=2</code> is not used</li>
 </ul></td>
 <td>Each task
 gets two logical CPUs. The job is charged for 80 logical CPUs per
@@ -304,7 +330,7 @@ If possible, set the number of tasks per node to
 <td><ul>
 <li>More than one task on one or more nodes</li>
 <li><code class="sl">--cpus-per-task=</code><em>N</em></li>
-<li><code class="sl">--hint=nomultithread</code> is not used</li>
+<li><code class="sl">--threads-per-cpu=2</code> is used</li>
 </ul></td>
 <td>Each task
 gets <em>N</em> logical CPUs, rounded up to the nearest even number. The
@@ -321,7 +347,7 @@ such that <em>N</em> × (tasks per node) = 80.</td>
 <td><ul>
 <li>More than one task on one or more nodes</li>
 <li><code class="sl">--cpus-per-task=</code><em>N</em></li>
-<li><code class="sl">--hint=nomultithread</code> is used</li>
+<li><code class="sl">--threads-per-cpu=2</code> is not used</li>
 </ul></td>
 <td>Each task
 gets 2<em>N</em> logical CPUs. The job is charged for 2<em>N</em>
