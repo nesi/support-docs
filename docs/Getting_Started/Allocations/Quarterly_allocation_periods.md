@@ -36,7 +36,8 @@ graphic below).
 If you have an existing allocation, you will be reminded about the
 upcoming call by email during the second month before your project
 expires. For example, if your allocation expires at the end of May, you
-will receive email reminders during the month of April.
+will receive email reminders during the month of April. This applies 
+to Compute and Freezer allocations.
 
 We aggregate requests and deal with them in batches during the review
 month.
@@ -51,4 +52,4 @@ month.
     wait for the following call before your request is considered.
 
 If you have questions about the review cycles or other steps involved
-with getting access to NeSI, {% include "partials/support_request.html" %}
+with getting access to our HPC platform, {% include "partials/support_request.html" %}

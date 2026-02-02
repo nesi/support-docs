@@ -156,6 +156,7 @@ Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
 Data_Transfer/Filesytem_Mounts_using_SSHFS.md : Data_Transfer/Filesystem_Mounts_using_SSHFS.md
+Data_Transfer/Globus/Overview.md : Data_Transfer/Globus/Globus_Overview.md
 Getting_Started/Policy/Acceptable_Use_Policy.md : Policy/Acceptable_Use_Policy.md
 Getting_Started/Policy/Access_Policy.md : Policy/Access_Policy.md
 Getting_Started/Policy/Account_Requests_for_non_Tuakiri_Members.md : Policy/Account_Requests_for_non_Tuakiri_Members.md
