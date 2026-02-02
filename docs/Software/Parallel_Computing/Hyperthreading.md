@@ -10,6 +10,10 @@ tags:
 description: How to use simultaneous multithreading (hyper-threading) on NeSI.
 ---
 
+!!! note
+    'Hyperthreading' is the name of the Intel proprietory implimentation of [Simultaneous Multithreading](https://en.wikipedia.org/wiki/Simultaneous_multithreading) (SMP).
+    For consistancy, and because it is better recognised we use the 
+
 !!! warning
     The presence of hyperthreading on the HPC results in Slurm falsely detecting twice the number of 
     CPUs being assigned to all jobs than is actually assigned, even when hyperthreading is disabled,
