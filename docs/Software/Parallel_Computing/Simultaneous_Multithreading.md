@@ -54,6 +54,25 @@ add `--threads-per-core=2`. If the performance is better than 50% of what it was
 (or better than 100% when also doubling `--threads-per-task` to get back
 to the same quantity of physical hardware) then you are benefiting from SMT.
 
+## Memory Usage
+
+Enabling SMT changes the outcome of the flag `--mem-per-cpu`, if SMT is disabled `--mem-per-cpu` is memory per physical core, if SMT is enabled `--mem-per-cpu` is memory per thread, i.e. double the memory.
+
+```sh
+#SBATCH --ntasks       1
+#SBATCH --mem-per-cpu  1G
+```
+
+Will get you 1G of memory.
+
+```sh
+#SBATCH --ntasks       1
+#SBATCH --mem-per-cpu  1G
+#SBATCH --hint         multithread
+```
+
+Will get you 2G of memory.
+
 ## Licences
 
 Sometimes enabling SMT will make software that requires licences on a per core basis to require twice as many.
