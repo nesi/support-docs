@@ -20,8 +20,6 @@ Freezer has two types of data storage classes:
 
 Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please <a href="mailto:support@nesi.org.nz?subject=Forgot%20my%20Freezer%20bucket%20name">email us</a> and let us know which project this is for.
 
-
-
 ## List contents and buckets
 
 ### Get information about a Freezer bucket
@@ -90,7 +88,6 @@ s3cmd du -H s3://<freezer-bucket>
 `s3cmd du -H` without specifying a bucket is only available for project owners.
 
 !!! warning
-
     If you have a large number files the `s3cmd du` command will fail. If you wish to receive information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
     
 ## Uploading objects
@@ -150,8 +147,7 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 Partially uploaded files will be deleted automatically.
 
 !!! warning
-
-  If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
+    If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
 
 ### Preview or dry-run
 
