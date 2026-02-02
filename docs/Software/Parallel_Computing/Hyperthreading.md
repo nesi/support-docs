@@ -1,6 +1,11 @@
 ---
 created_at: '2018-11-15T22:10:10Z'
-tags: []
+tags: 
+   - hyperthreading
+   - hyper-threading
+   - multithreading
+   - simultaneous
+   - SMT
 description: How to use simultaneous multithreading (hyper-threading) on NeSI.
 ---
 
