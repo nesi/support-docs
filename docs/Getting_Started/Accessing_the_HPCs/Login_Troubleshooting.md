@@ -1,6 +1,5 @@
 ---
 created_at: '2018-11-16T01:13:47Z'
-tags: []
 status: 
 description: Troubleshooting instructions for logging in
 ---
@@ -11,29 +10,27 @@ description: Troubleshooting instructions for logging in
     - Most terminals do not give an indication of how many characters have been typed when entering a password.
     - Paste is not usually bound to `ctrl` + `V` and will vary based on your method of access.
 
-## I got a `65535` Error
+## Common errors and solutions
+
+### I receive a `65535` Error
 
 There are many reasons you could get this error. Things to check are:
 
 * You have an active project (see if you have an active project at [my.nesi.org.nz](https://my.nesi.org.nz/)),
 * You may have not a socket folder, `mkdir -p ~/.ssh/sockets` (see [First time setup](./Standard_Terminal_Setup.md#first-time-setup) for more information)
+* Your computer may have a firewall enabled and blocking port 22, which is the default port for SSH.
 
-## Other Common Login Problems
 
 ### Try logging in to `lander` directly
 
 You can test what part of your connection has failed by first running:
-
 ```sh
 ssh lander.hpc.nesi.org.nz
 ```
-
 **If this succeeds**: Run the following:
-
 ```sh
 ssh login.hpc.nesi.org.nz
 ```
-
 **If this succeeds**:
 
 * If you are using a bash terminal, confirm your .ssh config is [set up correctly](./Connecting_to_the_Cluster.md).
@@ -46,12 +43,10 @@ active allocation, you will not be able to log in. You should be able to
 find whether you have any active projects with active
 allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
 
-### Confirm you are using the correct username and password
-
+### Confirm your username and your keycloak authentication are configured properly
 The most common cause of login failure is using incorrect login details.
-Make sure you are using your NeSI Username and the password you set when
-first logging into the Lander node. See
-[my.nesi.org.nz](https://my.nesi.org.nz/).
+Make sure you are using your NeSI Username and keycloak/2FA are setup. See
+[First Time Login](https://docs.nesi.org.nz/Getting_Started/Accessing_the_HPCs/First_Time_Login/)
 
 ### Check the time on your device
 
@@ -81,7 +76,7 @@ Six failed login attempts within five minutes will trigger a four-hour
 lockout. Users experiencing login issues can inadvertently trigger the
 lockout, making diagnosing the original issue much more difficult.
 
-## Connection closed by .... (MobaXterm)
+## MobaXterm errors
 
 ### Skip password prompts
 
