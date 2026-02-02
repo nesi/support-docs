@@ -32,3 +32,9 @@ Using a trusted device will simplify your login process. For example, if a devic
 You should name your trusted device something that helps you identify it and differentiates it from your other devices. Each name should be unique (e.g. the process will fail if a name is used more than once).
 Good names are descriptive but also personal, such as "My Personal Laptop" or "Sarah's iPhone."
 Avoid names such as "My Favorite Device", as that could make it harder to manage if you have multiple trusted devices for the same account.
+
+## How can I manage my trusted devices?
+
+The list of all your trusted devices is available in [my.nesi.org.nz](https://my.nesi.org.nz) under Account -> [My Preferences](https://my.nesi.org.nz/account/preference) where you can delete any or all trusted devices as needed.
+
+It is important to regularly review your list of trusted devices and remove any that are no longer in use. Old or obsolete devices—such as a laptop you no longer own or a device that has been replaced—may still appear as trusted and could pose a security risk. Removing these ensures that only your current, secure, and actively used devices can access your account without additional verification. Keeping your trusted devices list up to date helps protect your account from unauthorised access and maintains good security hygiene.
