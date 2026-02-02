@@ -25,8 +25,8 @@ tags:
     #SBATCH --job-name      Delft3D
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem           512M           # Total Memory
-    #SBATCH --hint          nomultithread  # Hyperthreading disabled
     module load Delft3D/{{app.default}}
+
     d_hydro test_input.xml
     ```
 
@@ -42,7 +42,6 @@ tags:
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           2G             # Total Memory
-    #SBATCH --hint         nomultithread  # Hyperthreading disabled
     
     module load Delft3D/{{app.default}}
     
@@ -75,7 +74,6 @@ tags:
     #SBATCH --job-name      Delft3D_distributed
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem-per-cpu   1G             
-    #SBATCH --hint          nomultithread  # Hyperthreading disabled
 
     module load Delft3D/{{app.default}}
     srun d_hydro test_input.xml

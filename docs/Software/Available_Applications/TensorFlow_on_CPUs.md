@@ -86,7 +86,6 @@ TensorFlow job on a single Mahuika node:
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=<number of threads>
-#SBATCH --hint=nomultithread                    # No hyperthreading
 
 # Allow threads to transition quickly
 export KMP_BLOCKTIME=0

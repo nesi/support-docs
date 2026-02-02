@@ -39,7 +39,6 @@ and
 #SBATCH --ntasks         4              #One task per mesh, NO MORE
 #SBATCH --cpus-per-task  2              #More than 4 cpus/task not recommended.
 #SBATCH --output         %x.out     #Name output file according to job name
-#SBATCH --hint           nomultithread  #Hyperthreading decreases efficiency.
 
 module load FDS/6.7.1-intel-2017a
 

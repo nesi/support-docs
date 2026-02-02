@@ -96,10 +96,10 @@ then assigns different roles to the different ranks:
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
 ranks!** Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-[Hyperthreading](Hyperthreading.md)
+[Simultaneous Multithreading (SMP)](Simultaneous_Multithreading.md)
 to place these two ranks onto a single physical core. Ensure that
-activating hyperthreading does not slow down the worker ranks by running
-a short test workload with and without hyperthreading.
+activating SMP does not slow down the worker ranks by running
+a short test workload with and without SMP.
 
 In the following, two cases will be discussed:
 

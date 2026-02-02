@@ -44,7 +44,7 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
      intuitive formula <code>⌊ 5 x N<sup>0.422</sup> ⌋</code> where `N` is number
      of CPUs.
 
-[Hyperthreading](../Parallel_Computing/Hyperthreading.md)
+[Simultaneous Multithreading](../Parallel_Computing/Simultaneous_Multithreading.md)
 can provide significant speedup to your computations, however
 hyperthreaded CPUs will use twice the number of licence tokens. It may
 be worth adding `#SBATCH --hint nomultithread` to your slurm script if
@@ -93,7 +93,7 @@ Not all solvers are compatible with all types of parallelisation.
     Uses a nodes shared memory for communication.
     May have a small speedup compared to MPI when using a low number of
     CPUs, scales poorly. Needs significantly less memory than MPI.
-    Hyperthreading may be enabled if using shared memory but it is not
+    simultaneous multithreading (SMP) may be enabled if using shared memory but it is not
     recommended.
 
     ```sl
@@ -217,7 +217,7 @@ rm "abaqus_v6.env"
 
 ![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
 
-*Note: Hyperthreading off, testing done on small mechanical FEA model.
+*Note: simultaneous multithreading (SMP) off, testing done on small mechanical FEA model.
 Results highly model dependant. Do your own tests.*
 
 ## Common Issues
