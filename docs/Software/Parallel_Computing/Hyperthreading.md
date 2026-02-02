@@ -27,7 +27,7 @@ use only one thread per physical core by default.
 
 ## SMT with Slurm
 
-A Slurm job which requests --ntasks=N` and `--cpus-per-task=C` 
+A Slurm job which requests `--ntasks=N` and `--cpus-per-task=C` 
 (both of which default to 1) will run a total of N ✕ C threads and so need that number of logical cores.  
 Slurm has another option `--threads-per-core` which we have set to default to 1. 
 and so jobs will by default use only one of the two logical processors
