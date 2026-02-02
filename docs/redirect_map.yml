@@ -170,3 +170,4 @@ Getting_Started/Policy/Proposal_Development_allocations.md : Policy/Allocation_c
 Getting_Started/Policy/Postgraduate_allocations.md : Policy/Allocation_classes.md#postgraduate
 Getting_Started/Policy/Merit_allocations.md : Policy/Allocation_classes.md#merit
 Getting_Started/Policy/Institutional_allocations.md : Policy/Allocation_classes.md#institutional
+Software/Parallel_Computing/Hyperthreading.md : Software/Parallel_Computing/Simultaneous_Multithreading.md
