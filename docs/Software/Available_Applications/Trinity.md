@@ -85,7 +85,6 @@ The following Slurm script is a template for running Trinity Phase 1
 #SBATCH --ntasks=1            # always 1
 #SBATCH --cpus-per-task=16    # number of threads to use for Trinity
 #SBATCH --mem=220G            # maximum memory available to Trinity
-#SBATCH --hint=nomultithread  # disable hyper-threading
 
 # load a Trinity module
 module load Trinity/2.14.0-gimkl-2022a

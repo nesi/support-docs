@@ -570,7 +570,6 @@ number of (physical) CPUs.
     --mem-per-cpu memory
     --time time
     --licenses 
-    --hint nomultithread
     ```
 
     Note: All these parameters will be applied to each individual
@@ -799,9 +798,7 @@ As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
 --mail-type=BEGIN and --mail-user=<email address> options.
 
-### simultaneous multithreading (SMP)
+### Simultaneous Multithreading
 
-Utilising simultaneous multithreading (SMP) (i.e.: removing the "--hint=nomultithread" sbatch
-directive and doubling the number of tasks) will give a small speedup on
-most jobs with less than 8 cores, but also doubles the number of
+Utilising [simultaneous multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (i.e.: adding the `--hint=multithread` sbatch directive and doubling the number of tasks) will give a small speedup on most jobs with less than 8 cores, but also doubles the number of
 `aa_r_hpc` license tokens required.

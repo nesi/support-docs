@@ -60,7 +60,6 @@ An example Slurm job script for WRF on Mahuika is given below. The job can be su
 #SBATCH --job-name=wrf
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=36
-#SBATCH --hint=nomultithread
 #SBATCH --partition=milan
 
 module purge 2> /dev/null
@@ -120,7 +119,6 @@ WPS will compile much faster than WRF. Most WPS jobs can be run from the command
 #SBATCH --job-name=wps
 #SBATCH --time=01:00:00
 #SBATCH --cpus-per-task=1
-#SBATCH --hint=nomultithread
 
 module purge 2> /dev/null
 module load netCDF-Fortran/4.6.1-gompi-2023a
@@ -132,6 +130,8 @@ export WRF_DIR='path/to/WRF/build'
 ./geogrid.exe
 
 ```
-Note, just as in the Slurm script above, you will need netCDF and JasPer modules in your environment if you wish to run WPS programmes from the login node.
+
+!!! note "Modules"
+    Just as in the Slurm script above, you will need netCDF and JasPer modules in your environment if you wish to run WPS programmes from the login node.
 
 

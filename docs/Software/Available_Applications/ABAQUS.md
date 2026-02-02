@@ -44,11 +44,9 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
      intuitive formula <code>⌊ 5 x N<sup>0.422</sup> ⌋</code> where `N` is number
      of CPUs.
 
-[Simultaneous Multithreading](../Parallel_Computing/Simultaneous_Multithreading.md)
+[Simultaneous Multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (adding `#SBATCH --hint multithread`)
 can provide significant speedup to your computations, however
-hyperthreaded CPUs will use twice the number of licence tokens. It may
-be worth adding `#SBATCH --hint nomultithread` to your slurm script if
-licence tokens are your main limiting factor.
+hyperthreaded CPUs will use twice the number of licence tokens.
 
 ## Solver Compatibility
 

@@ -63,7 +63,6 @@ own licensing agreement.
 #SBATCH --mem=460G
 #SBATCH --cpus-per-task=16
 #SBATCH --time=168:00:00
-#SBATCH --hint=nomultithread
 
 module load Supernova/2.1.1
 
