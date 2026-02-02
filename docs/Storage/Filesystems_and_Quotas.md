@@ -20,7 +20,7 @@ and cached between updates.
 
 ## filesystem Specifications
 
-| Filesystem     | `/home`                                                                               | `/nesi/project`                                                                                                 | `/nesi/nobackup`                                                                                                                                                                                          | `Freezer`                                                                          |
+| Filesystem     | [`/home`](#home)                                                                      | [`/nesi/project`](#nesiproject)                                                                                 | [`/nesi/nobackup`](#nesinobackup-scratch)                                                                                                                                                                 | [`Freezer`](#freezer)                                                              |
 | -------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | Disk Quota     | 20 GB                                                                                 | 100 [110] GB                                                                                                    | 10 [12] TB                                                                                                                                                                                                | -                                                                                  |
 | Usage          | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc.                                                                 | Data created or used by compute jobs that is intended to be temporary                                                                                                                                     | Medium- to long-term storage of research data, (past, present or planned projects) |
@@ -31,7 +31,7 @@ and cached between updates.
 
 ### Soft and hard quotas
 
-We use Scale soft and hard quotas for both disk space and inodes.
+We use soft and hard quotas for disk space.
 
 - Once you exceed a fileset's soft quota, a one-week countdown timer
     starts. When that timer runs out, you will no longer be able to
@@ -53,10 +53,10 @@ but will prevent creation of new data or files.
         Months).
     - If you need to compile or install a software package that is large
         or is intended for use by a project team, please build it
-        in `/nesi/project/<project_code>` rather than `/home/<username>`.
+        in `/nesi/project/<project_code>` rather than `/home/<username>`.
     - Keep in mind that data on `/nesi/nobackup` is not backed up,
         therefore users are advised to move valuable data
-        to `/nesi/project/<project_code>` or Freezer, or, if the data is seldom used,
+        to `/nesi/project/<project_code>` or Freezer, or, if the data is seldom used,
         to other storage such as an institutional storage facility, as soon
         as batch jobs are completed. Please do **not** use the `touch`
         command to prevent the cleaning policy from removing files, because
@@ -85,32 +85,33 @@ It provides storage space for datasets, shared code or configuration
 scripts that need to be accessed by users within a project, and
 [potentially by other projects](./File_permissions_and_groups.md).
 Read and write performance increases using larger files, therefore you should
-consider archiving small files with an archiving package such as `tar` .
+consider archiving small files with an archiving package such as `tar` .
 
 Each project receives quota allocations for
 `/nesi/project/<project_code>`, based on the requirements you tell us
-about in your [application for a new NeSI
-project](https://my.nesi.org.nz/html/request_project), and separately
-covering disk space and number of files.
+about in your [application for a new NeSI project](https://my.nesi.org.nz/html/request_project),
+and separately covering disk space and number of files.
 
 ### `/nesi/nobackup` (scratch)
 
-For storing raw data and larger files that are temporary. In this case, temporary may be for short (seconds) to long (90 days) amounts of time. Examples include `temp` files, files that you only need for less than 3 months at a time. Scratch space is available as the `/nesi/nobackup` storage volume.
+For storing raw data and larger files that are temporary. In this case, temporary may be for short (seconds) to long (90 days) amounts of time.
+Examples include `temp` files, files that you only need for less than 3 months at a time.
+Scratch space is available as the `/nesi/nobackup` storage volume.
 
 This filesystem is accessible from all login, compute and ancillary
 nodes. No snapshots or backups of this filesystem are guaranteed.
 
 To prevent project teams from inadvertently bringing the filesystem
 down for everyone by writing unexpectedly large amounts of data, we
-apply per-project disk space quotas to projects on this
-filesystem. The default per-project quotas are as described in the
+apply per-project disk space quotas to projects on this filesystem.
+The default per-project quotas are as described in the
 above table; if you require more temporary (scratch) space for your
 project than the default quota allows for, you can discuss your
 requirements with us during
 [the project application process](../Policy/How_we_review_applications.md),
 or {% include "partials/support_request.html" %} at any time.
 
-To ensure this filesystem remains fit-for-purpose, we have a regular
+We also have a regular
 cleaning policy as described in
 [Automatic cleaning of nobackup filesystem](./Automatic_cleaning_of_nobackup.md).
 
@@ -123,7 +124,10 @@ analyse datasets up to 1 PB in size.
 
 ### Freezer
 
-Freezer is a tape storage system that employs the S3 protocol and is designed to hold large amounts of data that are accessed infrequently. Freezer is a great solution to prevent data being lost by our fortnightly auto-deletion policy or to run those quarterly, semi-annual or annual workflows. See [Freezer long term storage](Long_Term_Storage/Freezer_long_term_storage.md) for more information.
+Freezer is a tape storage system that employs the S3 protocol and is designed to hold large amounts of data that are accessed infrequently.
+Freezer is a great solution to prevent data being lost by our fortnightly auto-deletion policy or to run those quarterly, semi-annual or annual workflows.
+
+See [Freezer long term storage](Long_Term_Storage/Freezer_long_term_storage.md) for more information.
 
 The Freezer filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
@@ -138,7 +142,7 @@ See more information about the long term storage see our
 ## Snapshots
 
 If you have accidentally deleted data you can recover it from
-a [snapshot](../Data_Recovery.md).
+a [snapshot](../Data_Recovery.md).
 Snapshots are taken daily of `home/` and `project` directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 {% include "partials/support_request.html" %}
@@ -151,9 +155,9 @@ Many programs create temporary files that are created by a program *temporarily*
 
 Temporary files can be a problem to store long term because they can take up a large amount of space and create many files (use a lot of inodes). This second point can be problematic as many of the services running behind the scenes in Mahuika are affected by the number of files on our systems.
 
-It is recommended that if your program creates temporary files that you guide that program to write those temporary files to the ``nobackup`` directory.
+It is recommended that if your program creates temporary files that you guide that program to write those temporary files to the `nobackup` directory.
 
-Temporary files are not needed once the program has finished. Once your program has finished successfully, **you can delete all temporary files**. This is recommended as it will minimise the amount of space that you use ``nobackup``
+Temporary files are not needed once the program has finished. Once your program has finished successfully, **you can delete all temporary files**. This is recommended as it will minimise the amount of space that you use `nobackup`.
 
 ## Best Practices
 
