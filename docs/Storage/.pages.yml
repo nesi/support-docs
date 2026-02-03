@@ -1,6 +1,6 @@
 nav:
-  - Storage_best_practices.md
-  - File_Systems_and_Quotas
-  - Data_Recovery
-  - Long_Term_Storage
-  - Cloud_Storage
+  - Filesystems_and_Quotas.md
+  - File_permissions_and_groups.md
+  - Data_Recovery.md
+  - Offsite_Storage_Options.md
+  - "*"
