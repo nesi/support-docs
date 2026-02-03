@@ -1,5 +1,6 @@
 ---
 created_at: '2018-05-21T05:14:00Z'
+description: How to manage file access on the REANNZ HPC filesystems.
 tags:
 - nobackup
 - project
@@ -15,6 +16,7 @@ Default permissions differ from filesystem to filesystem.
 Each user has a private user group, of which that user is by default the
 only member. Each user is also a member of various other groups, such
 as:
+
 - A group for each active project of which that user is a member
 - Groups for all active users, all active Mahuika users as appropriate
 - A group representing all active users who are affiliated with
@@ -83,7 +85,7 @@ project group.
      set, meaning that files and subdirectories later created within that
      directory will inherit neither the group nor the setgid bit.
      You probably don't want this to happen. For instructions on how to
-     prevent it, please see our article: 
+     prevent it, please see our article:
      [How can I let my fellow project team members read or write my files?](../../Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
 
 By default, the world, i.e. people not in the project team, have no
@@ -139,6 +141,6 @@ If we agree to set up a special-purpose directory for you, we will discuss and a
 suitable permissions model.
 
 !!! prerequisite "See also"
-     -   [How can I let my fellow project team members read or write my files?](../../Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
-     -   [How can I give read-only team members access to my files?](../../Getting_Started/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md)
+     -   [How can I let my fellow project team members read or write my files?](../Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
+     -   [How can I give read-only team members access to my files?](../Getting_Started/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md)
      -   [filesystems and quotas](./Filesystems_and_Quotas.md)
