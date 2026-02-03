@@ -2,62 +2,71 @@
 created_at: '2023-07-21T04:10:04Z'
 tags: 
   - storage
+  - tmpdir
+  - tmp
+  - temp
+  - localscratch
 ---
 
+Temporary files are those which get created during a job and are not needed after the 
+job has completed.  Keeping such files (particularly small ones) in a fast local 
+filesystem can improve performance and guarantee their deletion at the end of the job.
+
+### In memory
+Each job gets is own private `/tmp` directory which is removed when the job ends.  
+This job-specific directory is in a “tmpfs” filesystem and so actually sits in 
+ordinary RAM.  As a consequence, your job’s memory request should include enough to 
+cover the size of any files it puts there.
+
+### On (solid state) disk
+If you need more space for temporary files then you have the option
+of getting a slower but very much larger temporary directory by 
+specifying `#SBATCH --gres=ssd` in your job script, which
+will create a directory for the job on a 1.5 TB NVMe SSD attached to the 
+compute node and set the environment variables `JOB_SCRATCH_DIR` and `TMPDIR` to its path.
+As that is not in RAM your job’s memory request *does not* need to cover 
+the size of the files your job puts there. Each node's SSD is allocated 
+exclusively to one job at a time, so there can only be one such job per node. 
+This gives the job all the available bandwidth of the SSD device 
+but does limit the number of such jobs.
+
+### TMPDIR and getting temporary files to the right directory.
 Most programs which create temporary files will put those files in the
 directory specified by the environment variable `TMPDIR` if that is set,
-or `/tmp` otherwise.
+or `/tmp` otherwise.  So for convenience, unless you have already set it
+differently, we set `TMPDIR` in Slurm jobs to `$JOB_SCRATCH_DIR` if `--gres=ssd`
+is used, and otherwise to `/tmp`.  That is enough to get many programs 
+to put their temporary files in the desired location, but some ignore
+`TMPDIR`, and some need to be told via their command lines or their own 
+custom environment variables.
 
-It is best to avoid the `/tmp` directory since that is shared
-with other jobs and not automatically cleared. When a Slurm job
-starts, `TMPDIR` is set to a directory created just for that job, which
-gets automatically deleted when the job finishes. 
+### Scope and multi-node jobs
+The `/tmp` and `$JOB_SCRATCH_DIR` directories are local to each node, shared by the 
+tasks of a the job on that node, but not not shared across the nodes of a multi-node job.
 
-By default, this job-specific temporary directory is placed in
-`/dev/shm`, which is a “tmpfs” filesystem and so actually sits in
-ordinary RAM.  As a consequence, your job’s memory request should
-include enough to cover the size of any temporary files.
-
-On the `milan` and `hgx` partitions you have the option of specifying
-`#SBATCH --gres=ssd` in your job script which will place `TMPDIR` on a
-1.5 TB NVMe SSD attached to the node rather than in RAM. When
-`--gres=ssd` is set your job’s memory request *does not* need to include
-enough to cover the size of any temporary files (as this is a separate
-resource). These SSDs give the job a slower but very much larger
-temporary directory. They are allocated exclusively to jobs, so there
-can only be one such job per node at a time. This gives the job all the
-available bandwidth of the SSD device but does limit the number of such
-jobs.
-
-Alternatively you can ignore the provided directory and set `TMPDIR`
-yourself, typically to a location in `/nesi/nobackup`.  This will be the
-slowest option with the largest capacity. Also if set to `nobackup` the
-files will remain after the job finishes, so be weary of how much space
-your jobs temporary files use. An example of how `TMPDIR` may be set
-yourself is shown below,
-
-`export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID`
-
-## Example of copying data into $TMPDIR for use mid-job
-
-The per job temporary directory can also be used to store data that
-needs to be accessed as the job runs. For example you may wish to read
-the standard database of Kraken2 (located in
-`/opt/nesi/db/Kraken2/standard-2018-09`) from the `milan` SSDs instead
-of `/opt`. To do this, request the NVMe SSD on `milan` as described
-above. Then, after loading the Kraken2 module in your Slurm script, copy
-the database onto the SSD,
+### In WEKA scratch
+You can ignore the provided `/tmp` directory and use a location 
+within `/nesi/nobackup`. This will generally be the slowest option, 
+particularly if there are thousands of small files involved. Also the
+files will remain after the job finishes, so be wary of how much space
+they take and how many of them there are. An example of how `TMPDIR` may be set
+yourself is shown below.
 
 ``` sh
-cp -r /opt/nesi/db/Kraken2/standard-2018-09/* $TMPDIR
+export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID
 ```
 
-To get Kraken2 to read the DB from the SSDs (and not from `/opt`),
-change the `KRAKEN2_DEFAULT_DB` variable,
+## Example of copying input data into $TMPDIR
+
+A per job temporary directory can also be used to store data that
+needs to be accessed repeatedly as the job runs. For example you may wish to read
+the standard database of Kraken2 from the local SSDs instead
+of the WEKA filesystem mounted at `/opt/nesi`. To do this, request the NVMe SSD as described
+above. Then, after loading the Kraken2 module in your Slurm script, copy
+the database onto the SSD and tell Kraken2 to use that copy,
 
 ``` sh
+module load Kraken2
+cp -pr $KRAKEN2_DEFAULT_DB/* $TMPDIR
 export KRAKEN2_DEFAULT_DB=$TMPDIR
 ```
-
-The variable `KRAKEN2_DEFAULT_DB` simply points to the database and is
-found by `module show Kraken2`.
