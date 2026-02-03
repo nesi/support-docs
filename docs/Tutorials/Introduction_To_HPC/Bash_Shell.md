@@ -155,12 +155,16 @@ For the purposes of this workshop you will be working within `{{ config.extra.wo
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
-![](../../assets/images/tutorial_bash_shell_ex1.svg)
 
 
 ### 2.0: `ls` Reading Comprihension
 
 <quiz>
+
+Given the below file tree.
+
+![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
+
 What command would you type to get the following output
   
 ```out
