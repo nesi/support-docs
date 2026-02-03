@@ -14,7 +14,7 @@ As CPU technology advanced engineers realised that including multiple *logical* 
 The name for this technology is [Simultaneous Multithreading](https://en.wikipedia.org/wiki/Simultaneous_multithreading) (SMT).
 
 !!! note "Hyper-Threading"
-    *Hyper-Threading* is Intel's proprietary implementation of Simultaneous Multithreading (SMT).
+    *Hyper-Threading* is Intel's proprietary implementation of Simultaneous Multithreading (SMT).  
     The term is often used informally to refer to SMT in general,
     even though Intel's is not the only implementation of SMT.
 
@@ -26,7 +26,7 @@ keeping their shared floating-point hardware full and so may be no faster overal
 thread would be. On the other hand, if the threads are spending most of their time waiting for data to
 arrive from memory, then two threads may well get twice as much work done as one.
 
-SMT is enabled on NeSI machines, however our Slurm is configured to
+SMT is enabled on Mahuika, however our Slurm is configured to
 use only one thread per physical core by default.
 
 ## SMT with Slurm
@@ -56,19 +56,21 @@ to the same quantity of physical hardware) then you are benefiting from SMT.
 
 ## Memory Usage
 
-Enabling SMT changes the outcome of the flag `--mem-per-cpu`, if SMT is disabled `--mem-per-cpu` is memory per physical core, if SMT is enabled `--mem-per-cpu` is memory per thread, i.e. double the memory.
+Enabling SMT changes the outcome of the flag `--mem-per-cpu`,  
+if SMT is *disabled* `--mem-per-cpu` is memory per physical core,  
+if SMT is *enabled* `--mem-per-cpu` is memory per thread, i.e. double the memory.
 
 ```sh
-#SBATCH --ntasks       1
-#SBATCH --mem-per-cpu  1G
+#SBATCH --cpus-per-task      1
+#SBATCH --mem-per-cpu        1G
 ```
 
 Will get you 1G of memory.
 
 ```sh
-#SBATCH --ntasks       1
-#SBATCH --mem-per-cpu  1G
-#SBATCH --hint         multithread
+#SBATCH --cpus-per-task       1
+#SBATCH --mem-per-cpu         1G
+#SBATCH --hint                multithread
 ```
 
 Will get you 2G of memory.
