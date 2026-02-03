@@ -21,4 +21,4 @@ systems. The **long-term storage service** should be used for larger
 datasets that you only access occasionally and do not need to change in
 situ.
 
-For more information, please see our [Filesystems and Quotas](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md) page.
+For more information, please see our [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md) page.
