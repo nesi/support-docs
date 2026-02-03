@@ -2,6 +2,10 @@
 created_at: '2023-07-21T04:10:04Z'
 tags: 
   - storage
+  - tmpdir
+  - tmp
+  - temp
+  - localscratch
 description: How temporary files are utilised on the REANNZ cluster.
 ---
 
