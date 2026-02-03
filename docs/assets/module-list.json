@@ -11422,15 +11422,16 @@
             "1.11.1-Miniconda3-22.11.1-1",
             "1.6.0-Miniconda3-4.12.0",
             "1.7.2-Miniconda3-22.11.1-1",
-            "1.8.0-Miniconda3-22.11.1-1"
+            "1.8.0-Miniconda3-22.11.1-1",
+            "2.2.0-Miniforge3-25.3.1-0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.11.1-Miniconda3-22.11.1-1",
+        "default": "2.2.0-Miniforge3-25.3.1-0",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1769985482,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/medaka/1.11.1-Miniconda3-22.11.1-1.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/medaka/2.2.0-Miniforge3-25.3.1-0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11966,7 +11967,11 @@
         "description": "Community-led recipes, infrastructure and distributions for conda.",
         "domains": [
             "python",
-            "environments"
+            "environments",
+            "conda",
+            "anaconda",
+            "miniconda",
+            "mamba"
         ],
         "extensions": [],
         "licence_type": "",
