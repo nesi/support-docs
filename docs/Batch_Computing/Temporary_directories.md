@@ -2,6 +2,10 @@
 created_at: '2023-07-21T04:10:04Z'
 tags: 
   - storage
+  - tmpdir
+  - tmp
+  - temp
+  - localscratch
 ---
 
 Temporary files are those which get created during a job and are not needed after the 
@@ -44,7 +48,7 @@ tasks of a the job on that node, but not not shared across the nodes of a multi-
 You can ignore the provided `/tmp` directory and use a location 
 within `/nesi/nobackup`. This will generally be the slowest option, 
 particularly if there are thousands of small files involved. Also the
-files will remain after the job finishes, so be weary of how much space
+files will remain after the job finishes, so be wary of how much space
 they take and how many of them there are. An example of how `TMPDIR` may be set
 yourself is shown below.
 
