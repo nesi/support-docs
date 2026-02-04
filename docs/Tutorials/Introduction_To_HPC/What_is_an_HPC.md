@@ -31,7 +31,7 @@ Almost all supercomputers are clusters.
 
 ## Access
 
-You will connect to a cluster over the internet either with a web client (OnDemand) or with SSH (**S**ecure **Sh**ell).
+You will connect to a cluster over the internet either with a web client ([OnDemand](../../Interactive_Computing/OnDemand/index.md)) or with [SSH (**S**ecure **Sh**ell)](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
 Your main interface with the cluster will be using command line.
 
 ## Nodes
@@ -69,7 +69,7 @@ It is common for nodes to connect to a shared, remote disk.
     Graphical Processing Units (GPUs).
 
 !!! info "Dedicated Transfer Nodes"
-    If you want to transfer larger amounts of data to or from the cluster, NeSI
+    If you want to transfer larger amounts of data to or from the cluster, REANNZ
     offers dedicated transfer nodes using the Globus service.  
     More information on using Globus for large data transfer to and from the cluster can be found on the
     [Globus Transfer Service](../../Data_Transfer/Globus/Globus_Overview.md) page.

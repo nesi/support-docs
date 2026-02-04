@@ -14,8 +14,8 @@ status: tutorial
     - Page Link
 
 !!! objectives
-    - "Load and use a software package."
-    - "Explain how the shell environment changes when the module mechanism loads or unloads packages."
+    - Load and use a software package.
+    - Explain how the shell environment changes when the module mechanism loads or unloads packages.
 
 On a high-performance computing system, it is seldom the case that the software
 we want to use is available when we log in. It is installed, but we will need

@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-15
-description: Using the bash shell for file operations on NeSI
+description: Using the bash shell for file operations on Mahuika
 status: tutorial
 ---
 
@@ -26,11 +26,11 @@ which hold files or other directories.
 
 Understanding how to navigate the file system using command line is essential for using an HPC.
 
-The NeSI filesystem looks something like this:
+The Mahuika filesystem looks something like this:
 
 ![The file system is made up of a root directory that contains sub-directories](../../assets/images/NeSI_Filesystem_Simplified.svg)
 
-The directories that are relevant to us are.
+The directories that are relevant to us are:
 
 <table>
 <tbody>
@@ -71,10 +71,19 @@ The directories that are relevant to us are.
 
 ### Managing your data and storage (backups and quotas)
 
-NeSI performs backups of the `/home` and `/nesi/project` (persistent) filesystems.  However, backups are only captured once per day.  So, if you edit or change code or data and then immediately delete it, it likely cannot be recovered.  Note, as the name suggests, NeSI does **not** backup the `/nesi/nobackup` filesystem.
+Mahuika performs backups of the `/home` and `/nesi/project` (persistent) filesystems.
+However, backups are only captured once per day.
+So, if you edit or change code or data and then immediately delete it, it likely cannot be recovered.
+Note, as the name suggests, Mahuika does **not** backup the `/nesi/nobackup` filesystem.
 
-Protecting critical data from corruption or deletion is primarily your
-responsibility. Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.  Also important is managing your storage quota.  To check your quotas, use the `nn_storage_quota` command, e.g
+Protecting critical data from corruption or deletion is primarily your responsibility.
+Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.
+Also important is managing your storage quota.
+To check your quotas, use the `nn_storage_quota` command, e.g
+
+```sh
+nn_storage_quota -u <username>
+```
 
 ```out
 Quota_Location                          AvailableGiB           UsedGiB Use%
@@ -85,7 +94,12 @@ home_cwal219                                      20                13   65
 
 As well as disk space, 'inodes' are also tracked, this is the *number* of files.
 
-Notice that the project space for this user is over quota and has been locked, meaning no more data can be added.  When your space is locked you will need to move or remove data.  Also note that none of the nobackup space is being used.  Likely data from project can be moved to nobackup. `nn_storage_quota` uses cached data, and so will no immediately show changes to storage use.
+<!-- TODO fix this paragraph -->
+Notice that the project space for this user is over quota and has been locked, meaning no more data can be added.
+When your space is locked you will need to move or remove data.
+Also note that none of the nobackup space is being used.
+Likely data from project can be moved to nobackup.
+`nn_storage_quota` uses cached data, and so will no immediately show changes to storage use.
 
 For more details on our persistent and nobackup storage systems, including data retention and the nobackup autodelete schedule,
 please see our [Filesystem and Quota](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/) documentation.
@@ -120,11 +134,11 @@ Next is `home`, as it is the next part of the path we know it is inside the root
 we also know that home is another directory as the path continues.
 Finally, stored inside `home` is the directory with your username.
 
-!!! info Slashes
-  Notice that there are two meanings for the `/` character.
-  When it appears at the front of a file or directory name,
-  it refers to the root directory. When it appears *inside* a path,
-  it's just a separator.
+!!! info "Slashes"
+    Notice that there are two meanings for the `/` character.
+    When it appears at the front of a file or directory name,
+    it refers to the root directory. When it appears *inside* a path,
+    it's just a separator.
 
 As you may now see, using a bash shell is strongly dependent on the idea that
 your files are organized in a hierarchical file system.
@@ -137,11 +151,11 @@ but it's a self-defeating strategy.
 
 To **l**i**s**t the contents of a directory, we use the command `ls` followed by the path to the directory whose contents we want listed.
 
-We will now list the contents of the directory we we will be working from. We can
-use the following command to do this:
+We will now list the contents of the directory we will be working from.
+We can use the following command to do this:
 
 ```sh
- ls {{ config.extra.working_directory[0] }}
+ls /nesi
 ```
 
 ```out
@@ -149,15 +163,13 @@ use the following command to do this:
 ```
 
 You should see a directory called `{{ config.extra.working_directory[1] }}`, and possibly several other directories.
-For the purposes of this workshop you will be working within `{{ config.extra.working_directory|join('/') }}`.
+For the purposes of this tutorial you will be working within `/nesi/nobackup/<projectcode>`.
 
 !!! tip "Command History"
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
-
-
-### 2.0: `ls` Reading Comprihension
+### 2.0: `ls` Reading Comprehension
 
 <quiz>
 
@@ -165,7 +177,7 @@ Given the below file tree.
 
 ![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
 
-What command would you type to get the following output
+What command would you type to get the following output?
   
 ```out
 original pnas_final pnas_sub
@@ -179,7 +191,7 @@ original pnas_final pnas_sub
 This uses the absolute path explicitly.
 </quiz>
   
-  <!-- ??? solution
+  <!-- !!! solution
     1. No: `pwd` is not the name of a directory.
     2. Possibly: It depends on your current directory (we will explore this more shortly).
     3. Yes: u
@@ -196,45 +208,50 @@ The `cd` command is akin to double clicking a folder in a graphical interface.
 We will use the following command:
 
 ```sh
- cd {{ config.extra.working_directory|join('/') }}
+ cd /nesi/nobackup/<projectcode>
 ```
 
 ```out
     
 ```
 
-You will notice that `cd` doesn't print anything. This is normal. Many shell commands will not output anything to the screen when successfully executed.
+You will notice that `cd` doesn't print anything.
+This is normal.
+Many shell commands will not output anything to the screen when successfully executed.
 We can check we are in the right place by running `pwd`.
 
 ```sh
- pwd
+pwd
 ```
 
 ```out
-{{ config.extra.working_directory|join('/') }}
+/nesi/nobackup/<projectcode>
 ```
-
 
 ## Creating directories
 
-<!-- NOTE: This bit uses relative paths even though the convept hasn't been introduced yet. -->
+<!-- NOTE: This bit uses relative paths even though the concept hasn't been introduced yet. -->
 
-As previously mentioned, it is general useful to organise your work in a hierarchical file structure to make managing and finding files easier. It is also is especially important when working within a shared directory with colleagues, such as a project, to minimise the chance of accidentally affecting your colleagues work. So for this workshop you will each make a directory using the `mkdir` command within the workshops directory for you to personally work from.
+As previously mentioned, it is general useful to organise your work in a hierarchical file structure to make managing and finding files easier.
+It is also is especially important when working within a shared directory with colleagues, such as a project, to minimise the chance of accidentally affecting your colleagues work.
+So for this tutorial you will each make a directory using the `mkdir` command within your project's nobackup directory for you to personally work from.
 
 ```sh
- mkdir <username>
+mkdir <username>
 ```
-
 
 You should then be able to see your new directory is there using `ls`.
 
 ```sh
- ls {{ config.extra.working_directory|join('/') }}
+ls /nesi/nobackup/<projectcode>
 ```
 
-```sh
- {{ config.extra.example_script }}   usr123  usr345
+```out
+{{ example_script }} birds usr123 <username>
 ```
+
+!!! note "YMMV"
+  There may already be files and subdirectories in your project's nobackup directory if it isn't a brand new project.
 
 ## General Syntax of a Shell Command
 
@@ -242,15 +259,15 @@ We are now going to use `ls` again but with a twist, this time we will also use 
 These options modify the way that the command works, for this example we will add the flag `-l` for "long listing format".
 
 ```sh
- ls -l {{ config.extra.working_directory|join('/') }}
+ls -l /nesi/nobackup/<projectcode>
 ```
 
 ```out
--rw-r-----+ 1 usr9999 {{config.extra.project_code}}  460 Nov 18 17:03 
--rw-r-----+ 1 usr9999 {{config.extra.project_code}}  460 Nov 18 17:03 {{ example_script }} 
-drwxr-sr-x+ 3 usr9999 {{config.extra.project_code}} 4096 22 Sep 08:40 birds
-drwxrws---+ 2 usr123  {{config.extra.project_code}} 4096 Nov 15 09:01 usr123
-drwxrws---+ 2 usr345  {{config.extra.project_code}} 4096 Nov 15 09:01 usr345
+-rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 
+-rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 {{ example_script }} 
+drwxr-sr-x+ 3 usr9999 <projectcode> 4096 22 Sep 08:40 birds
+drwxrws---+ 2 usr123  <projectcode> 4096 Nov 15 09:01 usr123
+drwxrws---+ 2 <username>  <projectcode> 4096 Nov 15 09:01 <username>
 ```
 
 We can see that the `-l` option has modified the command and now our output has listed all the files in alphanumeric order, which can make finding a specific file easier.
@@ -259,6 +276,7 @@ It also includes information about the file size, time of its last modification,
 Most Unix commands follow this basic structure.
 
 ![Structure of a unix command](../../assets/images/Unix_Command_Struc.svg)
+
 The **prompt** tells us that the terminal is accepting inputs, prompts can be customised to show all sorts of info.
 
 The **command**, what are we trying to do.
@@ -278,16 +296,15 @@ while `ls -S` will sort the files and directories by size.
 Another useful option for `ls` is the `-a` option, lets try using this option together with the `-l` option:
 
 ```sh
- ls -la
+ls -la
 ```
 
-
 ```out
-drwxrws---+  4 usr001  {{config.extra.project_code}}   4096 Nov 15 09:00 .
-drwxrws---+ 12 root    {{config.extra.project_code}} 262144 Nov 15 09:23 ..
--rw-r-----+  1 cwal219 {{config.extra.project_code}}    460 Nov 18 17:03 {{ config.extra.example_script }} 
-drwxrws---+  2 usr123  {{config.extra.project_code}}   4096 Nov 15 09:01 usr123
-drwxrws---+  2 usr345  {{config.extra.project_code}}   4096 Nov 15 09:01 usr345
+drwxrws---+  4 usr001  <projectcode>   4096 Nov 15 09:00 .
+drwxrws---+ 12 root    <projectcode> 262144 Nov 15 09:23 ..
+-rw-r-----+  1 cwal219 <projectcode>    460 Nov 18 17:03 {{ config.extra.example_script }} 
+drwxrws---+  2 usr123  <projectcode>   4096 Nov 15 09:01 usr123
+drwxrws---+  2 <username>  <projectcode>   4096 Nov 15 09:01 <username>
 ```
 
 Single letter options don't usually need to be separate. In this case `ls -la` is performing the same function as if we had typed `ls -l -a`.
@@ -296,8 +313,7 @@ You might notice that we now have two extra lines for directories `.` and `..`. 
 
 These two specific hidden directories are special as they will exist hidden inside every directory, with the `.` hidden directory representing your current directory and the `..` hidden directory representing the **parent** directory above your current directory.
 
-  ??? question "Exploring More `ls` Flags"
-  
+!!! question "Exploring More `ls` Flags"
    You can also use two options at the same time. What does the command `ls` do when used
    with the `-l` option? What about if you use both the `-l` and the `-h` option?
   
@@ -305,8 +321,7 @@ These two specific hidden directories are special as they will exist hidden insi
    as file permissions and ownership), but the rest should be useful
    nevertheless.
   
-  ??? question Solution
-    
+!!! question "Solution"
     The `-l` option makes `ls` use a **l**ong listing format, showing not only
     the file/directory names but also additional information, such as the file size
     and the time of its last modification. If you use both the `-h` option and the `-l` option,
@@ -334,23 +349,21 @@ rather than from the root of the file system.
 In the previous command, since we did not specify an **absolute path** it ran the command on the relative path from our current directory
 (implicitly using the `.` hidden directory), and so listed the contents of our current directory.
 
-We will now navigate to the parent directory, the simplest way do this is to use the relative path `..`.
+We will now navigate to the parent directory, the simplest way do this is to use the relative path `..`
 
 ```sh
- cd ..
+cd ..
 ```
 
-We should now be back in `{{ config.extra.working_directory[0] }}`.
+We should now be back in `/nesi/nobackup`.
 
 ```sh
- pwd
+pwd
 ```
-
 
 ```out
 {{ config.extra.working_directory[0] }}
 ```
-
 
 ## Tab completion
 
@@ -362,40 +375,39 @@ We should now be back in `{{ config.extra.working_directory[0] }}`.
 For example, if you type:
 
 ```sh
- cd {{ config.extra.working_directory|last|slice(0,3) }}
+cd /nesi/noba
 ```
 
 and then press <kbd>Tab</kbd> (the tab key on your keyboard),
 the shell automatically completes the directory name for you (since there is only one possible match):
 
 ```sh
- cd {{ config.extra.working_directory|last }}/
+cd /nesi/nobackup
 ```
 
- However, you want to move to your personal working directory. If you hit <kbd>Tab</kbd> once you will
+ However, you want to move to your project's directory. If you hit <kbd>Tab</kbd> once you will
  likely see nothing change, as there are more than one possible options. Hitting <kbd>Tab</kbd>
  a second time will print all possible autocomplete options.
 
 ```out
-cwal219/    riom/    harrellw/
+nesi99991 nesi99999 <projectcode>
 ```
 
 Now entering in the first few characters of the path (just enough that the possible options are no longer ambiguous) and pressing <kbd>Tab</kbd> again, should complete the path.
 
- Now press <kbd>Enter</kbd> to execute the command.
+Now press <kbd>Enter</kbd> to execute the command.
 
 ```sh
- cd {{ config.extra.working_directory|last }}/<username>
+cd /nesi/nobackup/<projectcode>
 ```
 
 Check that we've moved to the right place by running `pwd`.
 
 ```out
-{{ config.extra.working_directory|join('/') }}/<username>
+/nesi/nobackup/<projectcode>
 ```
 
-  !!! tip "Two More Shortcuts"
-  
+!!! tip "Two More Shortcuts"
   The shell interprets a tilde (`~`) character at the start of a path to
   mean "the current user's home directory". For example, if Nelle's home
   directory is `/home/nelle`, then `~/data` is equivalent to
@@ -411,8 +423,7 @@ Check that we've moved to the right place by running `pwd`.
   The difference between `cd ..` and `cd -` is
   that the former brings you *up*, while the latter brings you *back*.
   
-  ??? question "Absolute vs Relative Paths"
-  
+!!! question "Absolute vs Relative Paths"
    Starting from `/home/amanda/data`,
    which of the following commands could Amanda use to navigate to her home directory,
    which is `/home/amanda`?
@@ -427,8 +438,7 @@ Check that we've moved to the right place by running `pwd`.
    8. `cd`
    9. `cd ..`
   
-    ## Solution
-    
+!!! question "Solution"
     1. No: `.` stands for the current directory.
     2. No: `/` stands for the root directory.
     3. No: Amanda's home directory is `/home/amanda`.
@@ -442,7 +452,6 @@ Check that we've moved to the right place by running `pwd`.
 {: .challenge}
 
 !!! question "Relative Path Resolution"
-  
   Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
   what will `ls ../backup` display?
   
@@ -452,20 +461,18 @@ Check that we've moved to the right place by running `pwd`.
   
   ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
 
-  ??? question Solution
+!!! question Solution
     1. No: there *is* a directory `backup` in `/Users`.
     2. No: this is the content of `Users/thing/backup`,
        but with `..`, we asked for one level further up.
     3. Yes: `../backup/` refers to `/Users/backup/`.
 
 !!! tip "Clearing your terminal"
-  
   If your screen gets too cluttered, you can clear your terminal using the
   `clear` command. You can still access previous commands using <kbd>↑</kbd>
   and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
 
 !!! question "Listing in Reverse Chronological Order"
-  
   By default, `ls` lists the contents of a directory in alphabetical
   order by name. The command `ls -t` lists items by time of last
   change instead of alphabetically. The command `ls -r` lists the
@@ -474,97 +481,94 @@ Check that we've moved to the right place by running `pwd`.
   Hint: You may need to use the `-l` flag to see the
   last changed dates.
   
-   ??? question "Solution"
-    
+!!! question "Solution"
     The most recently changed file is listed last when using `-rt`. This
     can be very useful for finding your most recent edits or checking to
     see if a new output file was written.
 
-  ??? question "Globbing"
+## Globbing
+One of the most powerful features of bash is *filename expansion*, otherwise known as *globbing*.
+This allows you to use *patterns* to match a file name (or multiple files),
+which will then be operated on as if you had typed out all of the matches.
 
-  One of the most powerful features of bash is *filename expansion*, otherwise known as *globbing*.
-  This allows you to use *patterns* to match a file name (or multiple files),
-  which will then be operated on as if you had typed out all of the matches.
-  
-   `*` is a **wildcard**, which matches zero or more characters.
-  
-   Inside the `{{ config.extra.working_directory|join('/') }}` directory there is a directory called `birds`
-  
-  ```sh
-   cd {{ config.extra.working_directory|join('/') }}/birds
-   ls
-  ```
-  
-   ```out
-   kaka.txt  kakapo.jpeg  kea.txt  kiwi.jpeg  pukeko.jpeg
-   ```
-  
-   In this example there aren't many files, but it is easy to imagine a situation where you have hundreds or thousads of files you need to filter through, and globbing is the perfect tool for this. Using the wildcard character the command
-  
-  ```sh
-   ls ka*
-  ```
-  
-   Will return:
-  
-  ```out
-  kaka.txt  kakapo.jpeg
-  ```
-  
-   Since the pattern `ka*` will match `kaka.txt`and `kakapo.jpeg` as these both start with "ka". While the command:
-  
-  ```sh
-   ls *.jpeg
-  ```
-  
-   Will return:
-  
-  ```out
-  kakapo.jpeg  kiwi.jpeg  pukeko.jpeg
-  ```
-  
-   As `*.jpeg` will match  `kakapo.jpeg`, `kiwi.jpeg` and `pukeko.jpeg` as they all end in `.jpeg`
-   You can use multiple wildcards as well with the command:
-  
-  ```sh
-  ls k*a.*
-  ```
-  
-  Returning:
-  
-  ```out
-  kaka.txt  kea.txt
-  ```
-  
-   As `k*a.*` will match just `kaka.txt` and `kea.txt`
-  
-   `?` is also a wildcard, but it matches exactly one character. So the command:
-  
-  ```sh
-   ls ????.*
-  ```
-  
-  Would return:
+`*` is a **wildcard**, which matches zero or more characters.
 
-  ```out
-  kaka.txt  kiwi.jpeg
-  ```
-  
-  As `kaka.txt` and `kiwi.jpeg` the only files which have four characters, followed by a `.` then any number and combination of characters.
-  
-  When the shell sees a wildcard, it expands the wildcard to create a
-  list of matching filenames *before* running the command that was
-  asked for. As an exception, if a wildcard expression does not match
-  any file, Bash will pass the expression as an argument to the command
-  as it is.
-  However, generally commands like `wc` and `ls` see the lists of
-  file names matching these expressions, but not the wildcards
-  themselves. It is the shell, not the other programs, that deals with
-  expanding wildcards.
+<!-- TODO fix this section given no shared directory -->
+Inside the `{{ config.extra.working_directory|join('/') }}` directory there is a directory called `birds`
 
+```sh
+cd {{ config.extra.working_directory|join('/') }}/birds
+ls
+```
 
-??? question "List filenames matching a pattern"
-  
+```out
+kaka.txt  kakapo.jpeg  kea.txt  kiwi.jpeg  pukeko.jpeg
+```
+
+In this example there aren't many files, but it is easy to imagine a situation where you have hundreds or thousads of files you need to filter through, and globbing is the perfect tool for this. Using the wildcard character the command
+
+```sh
+ls ka*
+```
+
+Will return:
+
+```out
+kaka.txt  kakapo.jpeg
+```
+
+Since the pattern `ka*` will match `kaka.txt`and `kakapo.jpeg` as these both start with "ka". While the command:
+
+```sh
+ls *.jpeg
+```
+
+Will return:
+
+```out
+kakapo.jpeg  kiwi.jpeg  pukeko.jpeg
+```
+
+As `*.jpeg` will match  `kakapo.jpeg`, `kiwi.jpeg` and `pukeko.jpeg` as they all end in `.jpeg`
+You can use multiple wildcards as well with the command:
+
+```sh
+ls k*a.*
+```
+
+Returning:
+
+```out
+kaka.txt  kea.txt
+```
+
+As `k*a.*` will match just `kaka.txt` and `kea.txt`
+
+`?` is also a wildcard, but it matches exactly one character. So the command:
+
+```sh
+ls !!!?.*
+```
+
+Would return:
+
+```out
+kaka.txt  kiwi.jpeg
+```
+
+As `kaka.txt` and `kiwi.jpeg` the only files which have four characters, followed by a `.` then any number and combination of characters.
+
+When the shell sees a wildcard, it expands the wildcard to create a
+list of matching filenames *before* running the command that was
+asked for. As an exception, if a wildcard expression does not match
+any file, Bash will pass the expression as an argument to the command
+as it is.
+However, generally commands like `wc` and `ls` see the lists of
+file names matching these expressions, but not the wildcards
+themselves. It is the shell, not the other programs, that deals with
+expanding wildcards.
+
+!!! question "List filenames matching a pattern"
   Running `ls` in a directory gives the output
   `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
   
@@ -578,8 +582,8 @@ Check that we've moved to the right place by running `pwd`.
   3. `ls *t??ne.pdb`
   4. `ls ethane.*`
   
-  ??? question Solution
-    The solution is `3.`
+!!! question "Solution"
+  The solution is `3.`
     `1.` shows all files whose names contain zero or more characters (`*`)
   followed by the letter `t`,
   then zero or more characters (`*`) followed by `ane.pdb`.
@@ -593,24 +597,23 @@ Check that we've moved to the right place by running `pwd`.
   This is the solution.
     `4.` only shows files starting with `ethane.`.
 
-include in terminal excersise (delete slurm files later on maybe?)
+<!-- TODO: include in terminal excersise (delete slurm files later on maybe?) -->
 
 ## Create a text file
 
 Now let's create a file. To do this we will use a text editor called Nano to create a file called `draft.txt`:
 
 ```sh
- nano draft.txt
+nano draft.txt
 ```
 
-??? note "Which Editor?"
-  
+!!! note "Which Editor?"
    When we say, '`nano` is a text editor' we really do mean 'text': it can
    only work with plain character data, not tables, images, or any other
    human-friendly media. We use it in examples because it is one of the
    least complex text editors. However, because of this trait, it may
    not be powerful enough or flexible enough for the work you need to do
-   after this workshop. On Unix systems (such as Linux and macOS),
+   after this tutorial. On Unix systems (such as Linux and macOS),
    many programmers use [Emacs](http://www.gnu.org/software/emacs/) or
    [Vim](http://www.vim.org/) (both of which require more time to learn),
    or a graphical editor such as
@@ -633,35 +636,33 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 (we'll be asked what file we want to save this to:
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
 
-<div
-src="../../Getting_Started/Getting_Help/Training/fig/nano-screenshot.png"></div>
+<div>src="../../Getting_Started/Getting_Help/Training/fig/nano-screenshot.png"></div>
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
 return to the shell.
 
-??? tip "Control, Ctrl, or ^ Key"
-  
+!!! tip "Control, Ctrl, or ^ Key"
    The Control key is also called the 'Ctrl' key. There are various ways
    in which using the Control key may be described. For example, you may
    see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
    press the <kbd>X</kbd> key, described as any of:
+
+  - `Control-X`
+  - `Control+X`
+  - `Ctrl-X`
+  - `Ctrl+X`
+  - `^X`
+  - `C-x`
   
-   * `Control-X`
-   * `Control+X`
-   * `Ctrl-X`
-   * `Ctrl+X`
-   * `^X`
-   * `C-x`
-  
-   In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
-   This means that you can use `Control-G` to get help and `Control-O` to save your
-   file.
+  In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
+  This means that you can use `Control-G` to get help and `Control-O` to save your
+  file.
 
 `nano` doesn't leave any output on the screen after it exits,
 but `ls` now shows that we have created a file called `draft.txt`:
 
 ```sh
- ls
+ls
 ```
 
 ```out
@@ -669,17 +670,19 @@ draft.txt
 ```
 
 ## Copying files and directories
-
-In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}```, but as we can't all work on the same file at once you will need to take your own copy. This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created. We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`.
+<!-- TODO: R script!!! -->
+In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}```, but as we can't all work on the same file at once you will need to take your own copy.
+This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created.
+We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`
 
 ```sh
- cp {{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}  .
+cp {{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}  .
 ```
 
 We can check that it did the right thing using `ls`
 
 ```sh
- ls
+ls
 ```
 
 ```out
@@ -688,9 +691,14 @@ draft.txt   {{ example_script }}
 
 ## Other File operations
 
-`cat` stands for concatenate, meaning to link or merge things together. It is primarily used for printing the contents of one or more files to the standard output.
-`head` and `tail` will print the first or last lines (head or tail) of the specified file(s). By default it will print 10 lines, but a specific number of lines can be specified with the `-n`  option.
+`cat` stands for concatenate, meaning to link or merge things together.
+It is primarily used for printing the contents of one or more files to the standard output.
+
+`head` and `tail` will print the first or last lines (head or tail) of the specified file(s).
+By default it will print 10 lines, but a specific number of lines can be specified with the `-n`  option.
+
 `mv` to **m**o**v**e move a file, is used similarly to `cp` taking a source argument(s) and a destination argument.
+
 `rm` will **r**e**m**ove move a file and only needs one argument.
 
 The `mv` command is also used to rename a file, for example `mv my_fiel my_file`. This is because as far as the computer is concerned *moving and renaming a file are the same operation*.
@@ -733,11 +741,9 @@ The same is true when deleting directories with `rm`
 For `mv` and `cp` if the destination path (final argument) is an existing directory the file will be placed inside that directory with the same name as the source.
 
 !!! question "Moving vs Copying"
+    When using the `cp` or `rm` commands on a directory the 'recursive' flag `-r` must be used, but `mv` *does not* require it?
 
- When using the `cp` or `rm` commands on a directory the 'recursive' flag `-r` must be used, but `mv` *does not* require it?
-
-  ??? note Solution
-
+!!! note Solution
   We mentioned previously that as far the computer is concerned, *renaming* is the same operation as *moving*.
   Contrary to what the commands name implies, *all moving is actually renaming*.
   The data on the hard drive stays in the same place,
@@ -757,7 +763,7 @@ will usually print an error message similar to:
 ```sh
 ls -j
 ```
- 
+
 ```out
 ls: invalid option -- 'j'
 Try 'ls --help' for more information.
@@ -768,7 +774,7 @@ Try 'ls --help' for more information.
 Commands will often have many **options**. Most commands have a `--help` flag, as can be seen in the error above.  You can also use the manual pages (aka manpages) by using the `man` command. The manual page provides you with all the available options and their use in more detail. For example, for thr `ls` command:
 
 ```sh
- man ls
+man ls
 ```
 
 ```out
@@ -818,20 +824,19 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
   [core GNU utilities](http://www.gnu.org/software/coreutils/manual/coreutils.html),
   which covers many commands introduced within this lesson.
 
-
 !!! keypoints
-  - "The file system is responsible for managing information on the disk."
-  - "Information is stored in files, which are stored in directories (folders)."
-  - "Directories can also store other directories, which then form a directory tree."
-  - "`cd [path]` changes the current working directory."
-  - "`ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
-  - "`pwd` prints the user's current working directory."
-  - "`cp [file] [path]` copies [file] to [path]"
-  - "`mv [file] [path]` moves [file] to [path]"
-  - "`rm [file]` deletes [file]"
-  - "`/` on its own is the root directory of the whole file system."
-  - "Most commands take options (flags) that begin with a `-`."
-  - "A relative path specifies a location starting from the current location."
-  - "An absolute path specifies a location from the root of the file system."
-  - "Directory names in a path are separated with `/` on Unix, but `\\` on Windows."
-  - "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
+- "The file system is responsible for managing information on the disk."
+- "Information is stored in files, which are stored in directories (folders)."
+- "Directories can also store other directories, which then form a directory tree."
+- "`cd [path]` changes the current working directory."
+- "`ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
+- "`pwd` prints the user's current working directory."
+- "`cp [file] [path]` copies [file] to [path]"
+- "`mv [file] [path]` moves [file] to [path]"
+- "`rm [file]` deletes [file]"
+- "`/` on its own is the root directory of the whole file system."
+- "Most commands take options (flags) that begin with a `-`."
+- "A relative path specifies a location starting from the current location."
+- "An absolute path specifies a location from the root of the file system."
+- "Directory names in a path are separated with `/` on Unix, but `\\` on Windows."
+- "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
