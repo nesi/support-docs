@@ -273,13 +273,13 @@ This can be suppressed using the flag `-X`.
 !!! info "Where's the output?"
     On the login node, when we ran the bash script, the output was printed to the terminal.
     Slurm batch job output is typically redirected to a file, by default this will be a file named `slurm-<job-id>.out` in the directory where the job was submitted, this can be changed with the slurm parameter `--output`.
-    
+
 
 !!! tip "More info on Slurm"
     You can use the manual pages for Slurm utilities to find more about their capabilities.
     On the command line, these are accessed through the man utility: run `man <program-name>`.
     You can find the same information online by searching: 'man <program-name>".
-    
+
     ```sh
     man sbatch
     ```

@@ -41,8 +41,7 @@ On a cluster, there are different types of nodes for different
 types of tasks. The node where you are now will be different depending on
 how you accessed the cluster.
 
-Most of you (using JupyterHub) will be on an interactive *compute node*.
-This is because Jupyter sessions are launched as a job.  If you are using SSH to connect to the cluster, you will be on a *login node*.
+You will be on a *login node*.
 
 Both OnDemand and SSH login nodes serve as an access point to the cluster.
 

@@ -4,13 +4,10 @@ created_at: 2026-01-16
 
 !!! time "30 Minutes"
 
-<!--
-- scaling testing involves running jobs with increasing resources and measuring the efficiency in order to establish a pattern informed decisions about future job submissions.-->
-
 !!! objectives
-  - "Understand how to look up job statistics and profile code."
-  - "Understand job size implications."
-  - "Understand problems and limitations involved in using multiple CPUs."
+    - "Understand how to look up job statistics and profile code."
+    - "Understand job size implications."
+    - "Understand problems and limitations involved in using multiple CPUs."
 
 ## What Resources?
 
@@ -63,14 +60,15 @@ Submitted batch job 23137702
 ```
 
 !!! tip Watch
-  We can prepend any command with `watch` in order to periodically (default 2 seconds) run a command. e.g. `watch
-  squeue --me` will give us up to date information on our running jobs.
-  Care should be used when using `watch` as repeatedly running a command can have adverse effects.
-  Exit `watch` with <kbd>ctrl</kbd> + <kbd>c</kbd>.
+    We can prepend any command with `watch` in order to periodically (default 2 seconds) run a command. e.g. `watch
+    squeue --me` will give us up to date information on our running jobs.
+    Care should be used when using `watch` as repeatedly running a command can have adverse effects.
+    Exit `watch` with <kbd>ctrl</kbd> + <kbd>c</kbd>.
 
 Note in squeue, the number under cpus, should be '4'.
 
 Checking on our job with `sacct`.
+
 Oh no!
 
 ```out
@@ -129,16 +127,16 @@ If we check the status of our finished job using the `sacct` command we learned 
 ```
 
 ```sh
-JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State      
---------------- ---------------- ----- ----------- ------------ ------- -------- ---------- 
-31060451        example_job.sl       2    00:00:48    00:33.548      1G          CANCELLED  
-31060451.batch  batch                2    00:00:48    00:33.547          102048K CANCELLED  
-31060451.extern extern               2    00:00:48     00:00:00                0 CANCELLED  
+JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
+--------------- ---------------- ----- ----------- ------------ ------- -------- ----------
+31060451        example_job.sl       2    00:00:48    00:33.548      1G          CANCELLED
+31060451.batch  batch                2    00:00:48    00:33.547          102048K CANCELLED
+31060451.extern extern               2    00:00:48     00:00:00                0 CANCELLED
 ```
 
 With this information, we may determine a couple of things.
 
-Memory efficiency can be determined by comparing <strong>ReqMem</strong> (requested memory) with <strong>MaxRSS</strong> (maximum used memory), MaxRSS is  given in KB, so a unit conversion is usually required.
+Memory efficiency can be determined by comparing _ReqMem_ (requested memory) with _MaxRSS_ (maximum used memory), MaxRSS is  given in KB, so a unit conversion is usually required.
 
 <br>
 
@@ -146,27 +144,21 @@ $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
 
 <br>
 
-So for the above example we see that <strong>0.1GB</strong> (102048K) of our requested <strong>1GB</strong> meaning the memory efficincy was about <strong>10%</strong>.
+So for the above example we see that _0.1GB_ (102048K) of our requested _1GB_ meaning the memory efficincy was about _10%_.
 
-CPU efficiency can be determined by comparing <strong>TotalCPU</strong>(CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to <strong>Alloc</strong> (number of allocated CPUs) multiplied by <strong>Elapsed</strong> (Walltime, actual time passed).
+CPU efficiency can be determined by comparing _TotalCPU_ (CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to _Alloc_ (number of allocated CPUs) multiplied by _Elapsed_ (Walltime, actual time passed).
 
 $$ {Efficiency_{cpu} = { TotalCPU \over {Elapsed \times Alloc}}} $$
 
-<br>
+For the above example _33 seconds_ of computation was done,
 
-For the above example <strong>33 seconds</strong> of computation was done,
+where the maximum possible computation time was **96 seconds** (_2 CPUs_ multiplied by _48 seconds_), meaning the CPU efficiency was about _35%_.
 
-where the maximum possible computation time was **96 seconds** (<strong>2 CPUs</strong> multiplied by <strong>48 seconds</strong>), meaning the CPU efficiency was about <strong>35%</strong>.
-
-Time Efficiency is simply the <strong>Elapsed Time</strong> divided by <strong>Time Requested</strong>.
-
-<br>
+Time Efficiency is simply the _Elapsed Time_ divided by _Time Requested_.
 
 $$ {Efficiency_{time} = { Elapsed \over Requested }} $$
 
-<br>
-
-<strong>48 seconcds</strong> out of <strong>15 minutes</strong> requested give a time efficiency of about <strong>5%</strong>
+_48 seconcds_ out of _15 minutes_ requested give a time efficiency of about _5%_
 
 !!! question "Efficiency Exercise"
   Calculate for the job shown below,
@@ -228,32 +220,14 @@ sbatch example_job.sl
 
 Hopefully we will have better luck with this one!
 
-### A quick description of Simultaneous Multithreading - SMT (aka Hyperthreading)
+### Simultaneous Multithreading (SMT)
 
 Modern CPU cores have 2 threads of operation that can execute independently of one
 another. SMT is the technology that allows the 2 threads within one physical core to present
 as multiple logical cores, sometimes referred to as virtual CPUS (vCPUS).
 
-Note:  _Hyperthreading_ is Intel's marketing name for SMT.  Both Intel and AMD
-CPUs have SMT technology.
-
-Some types of processes can take advantage of multiple threads, and can gain a
-performance boost.  Some software is
-specifically written as multi-threaded. You will need to check or test if your
-code can take advantage of threads (we can help with this).
-
-However, because each thread shares resources on the physical core,
-there can be conflicts for resources such as onboard cache.
-This is why not all processes get a performance boost from SMT and in fact can
-run slower.  These types of jobs should be run without multithreading.  There
-is a Slurm parameter for this:  `--hint=nomultithread`
-
-SMT is why you are provided 2 CPUs instead of 1 as we do not allow
-2 different jobs to share a core.  This also explains why you will sometimes
-see CPU efficiency above 100%, since CPU efficiency is based on core and not thread.
-
 For more details please see our
-[documentation on Hyperthreading](https://docs.nesi.org.nz/Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Hyperthreading/)
+[documentation on SMT](../../Software/Parallel_Computing/Simultaneous_Multithreading.md)
 
 ## Measuring the System Load From Currently Running Tasks
 
@@ -270,7 +244,7 @@ Before we can check on our job, we need to find out where it is running.
 We can do this with the command `squeue --me`, and looking under the 'NODELIST' column.
 
 ```sh
- squeue --me
+squeue --me
 ```
 
 ```out
@@ -341,10 +315,10 @@ Running this command as is will show us information on tasks running on the logi
 ## Running Test Jobs
 
 As you may have to run several iterations before you get it right, you should choose your test job carefully.
-A test job should not run for more than 15 mins. This could involve using a smaller input, coarser parameters or using a subset of the calculations.
+A test job should not run for more than 15 minutes. This could involve using a smaller input, coarser parameters or using a subset of the calculations.
 As well as being quick to run, you want your test job to be quick to start (e.g. get through queue quickly), the best way to ensure this is keep the resources requested (memory, CPUs, time) small.
 Similar as possible to actual jobs e.g. same functions etc.
-Use same workflow. (most issues are caused by small issues, typos, missing files etc, your test job is a jood chance to sort out these issues.).
+Use same workflow. (most issues are caused by small issues, typos, missing files etc, your test job is a good chance to sort out these issues.).
 Make sure outputs are going somewhere you can see them.
 
 !!! tip "Serial Test"
@@ -360,19 +334,19 @@ Testing allows you to become more more precise with your resource requests. We w
 
 Before submitting a large job, first submit one as a test to make
 sure everything works as expected. Often, users discover typos in their submit
-scripts, incorrect module names or possibly an incorrect pathname after their job
+scripts, incorrect module names or possibly an incorrect path name after their job
 has queued for many hours. Be aware that your job is not fully scanned for
 correctness when you submit the job. While you may get an immediate error if your
-SBATCH directives are malformed, it is not until the job starts to run that the
+`#SBATCH` directives are malformed, it is not until the job starts to run that the
 interpreter starts to process the batch script.
 NeSI has an easy way for you to test your job submission.  One can employ the debug
 QOS to get a short, high priority test job. Debug jobs have to run within 15
 minutes and cannot use more that 2 nodes. To use debug QOS, add or change the
 following in your batch submit script
 
-``sh
-SBATCH --qos=debug
-SBATCH --time=15:00
+```sh
+#SBATCH --qos=debug
+#SBATCH --time=15:00
 ```
 
 Adding these SBATCH directives will provide your job with the highest priority
@@ -397,12 +371,12 @@ If you know someone who has used the software before, they may be able to give y
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
 !!! postrequisite "Next Steps"
-  You can use this knowledge to set up the
-  next job with a closer estimate of its load on the system.
-  A good general rule
-  is to ask the scheduler for **30%** more time and memory than you expect the
-  job to need.
+    You can use this knowledge to set up the
+    next job with a closer estimate of its load on the system.
+    A good general rule
+    is to ask the scheduler for **30%** more time and memory than you expect the
+    job to need.
 
 !!! keypoints
-  - "As your task gets larger, so does the potential for inefficiencies."
-  - "The smaller your job (time, CPUs, memory, etc), the faster it will schedule."
+    - As your task gets larger, so does the potential for inefficiencies.
+    - The smaller your job (time, CPUs, memory, etc), the faster it will schedule.

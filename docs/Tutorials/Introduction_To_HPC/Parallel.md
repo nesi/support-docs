@@ -6,7 +6,7 @@ created_at: 2026-01-16
 !!! time "30 minutes"
 
 !!! objectives
-  - "Prepare a job submission script for the parallel executable."
+    - "Prepare a job submission script for the parallel executable."
 
 ## Methods of Parallel Computing
 
@@ -60,13 +60,13 @@ GPUs compute large number of simple operations in parallel, making them well sui
 
 On NeSI, GPU's are specialised pieces of hardware that you request in addition to your CPUs and memory.
 
-You can find an up-to-date(ish) list of GPUs available on NeSI in our [Support Documentation](https://docs.nesi.org.nz/Scientific_Computing/The_NeSI_High_Performance_Computers/Available_GPUs_on_NeSI/)
+You can find an up-to-date(ish) list of GPUs available on NeSI in our [Support Documentation](../../Batch_Computing/Hardware.md)
 
 GPUs can be requested using `--gpus-per-node=<gpu_type>:<gpu_number>`
 
 Depending on the GPU type, we *may* also need to specify a partition using `--partition`.
 
-## GPU Job Example
+#### GPU Job Example
 
 Create a new script called `gpu-job.sl`
 
@@ -170,8 +170,7 @@ However, unless that function is where the majority of time is spent, this is un
 | Job Array | | `--array` | |
 | General Purpose GPU | | `--gpus-per-node`  | |
 
-
 !!! keypoints
-  - "Parallel programming allows applications to take advantage of
+    - "Parallel programming allows applications to take advantage of
   parallel hardware; serial code will not 'just work.'"
-  - "There are multiple ways you can run "
+    - "There are multiple ways you can run "
