@@ -59,7 +59,7 @@ Run the executable with
 
 ``` sh
 module load VTune
-srun --ntasks=1 --cpus-per-task=2 --hint=nomultithread vtune -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
+srun --ntasks=1 --cpus-per-task=2 vtune -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
 ```
 
 Executable "upwindCxx" takes arguments "-numCells 256" (the number of

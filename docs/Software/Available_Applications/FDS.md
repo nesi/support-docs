@@ -52,7 +52,7 @@ srun fds ${input}
     are meshes will cause an error.
 - Multi-threading efficiency drops off significantly after 4 physical
     cores. `--cpus-per-task 4`
-- Hyper-threading is not recommended. Set `--hint nomultithread`
+- Simultaneous multithreading is not recommended. Do not set `--hint multithread`
 
 ### Scaling with MPI
 

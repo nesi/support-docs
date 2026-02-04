@@ -134,9 +134,9 @@ For more information on other parallelisable quantities, see the following VASP 
 
 [Optimising the parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
 
-### Avoid hyperthreading
+### Avoid simultaneous multithreading (SMP)
 
-We have found that VASP doesn't benefit from hyperthreading and often runs slower when hyperthreading is enabled. It's best to leave Hyperthreading off as is the case in the example Slurm script above.
+We have found that VASP doesn't benefit from SMP and often runs slower when SMP is enabled. It's best to leave SMP off as is the case in the example Slurm script above (not setting `--hint=multithread`).
 
 ### GPU versions of VASP6
 

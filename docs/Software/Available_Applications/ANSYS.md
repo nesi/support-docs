@@ -88,7 +88,6 @@ Below is an example of this from a fluent script.
 #SBATCH --time          01:00:00          # Wall time
 #SBATCH --mem           512MB             # Memory per node
 #SBATCH --array         1-100 
-#SBATCH --hint          nomultithread     # No hyperthreading
 
 module load ANSYS/{{app.default}} 
 
@@ -156,7 +155,7 @@ Must have one of these flags.
 | `3ddp` | 3D solver, double point precision. |
 
 === "Serial Job"
-    Single process with a single thread (2 threads if hyperthreading enabled).
+    Single process with a single thread (2 threads if simultaneous multithreading (SMP) enabled).
 
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
@@ -166,9 +165,8 @@ Must have one of these flags.
     #SBATCH --job-name      Fluent-Serial
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
-    #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled
+    #SBATCH --cpus-per-task 1                 #
     #SBATCH --mem           512MB             # Total memory (per node)
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
 
@@ -195,9 +193,8 @@ Must have one of these flags.
     #SBATCH --time              00:05:00          # Walltime
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            8                 # Number processes
-    #SBATCH --cpus-per-task     1                 # Double if hyperthreading enabled
+    #SBATCH --cpus-per-task     1                 #
     #SBATCH --mem-per-cpu       1500              # Fine for small jobs; increase if needed
-    #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
     JOURNAL_FILE=/share/test/ansys/fluent/wing.in
@@ -374,7 +371,7 @@ solution specify as relative path, or unload compiled lib before saving
 `cfx5solve -help` for a list of commands.
 
 === "Serial"
-    Single *process* with a single *thread* (2 threads if hyperthreading enabled).
+    Single *process* with a single *thread* (2 threads if simultaneous multithreading (SMP) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -384,7 +381,6 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           512MB             # total mem
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
 
@@ -407,7 +403,6 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            36                # Number processes
     #SBATCH --mem-per-cpu       512MB             # Standard for large partition
-    #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
     input="/share/test/ansys/mechanical/structural.dat" 
@@ -438,7 +433,7 @@ xvfb-run cfx5post input.cse
 
 === "Serial"
 
-    Single *process* with a single *thread (2 threads if hyperthreading enabled).
+    Single *process* with a single *thread (2 threads if simultaneous multithreading (SMP) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -448,7 +443,6 @@ xvfb-run cfx5post input.cse
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1500M             # total mem
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
 
@@ -462,7 +456,7 @@ xvfb-run cfx5post input.cse
     All threads must be on the same node, limiting scalability.
 
     Number of threads is set by `-np` and should be equal to`--cpus-per-task`.
-    Not recommended if using more than 8 cores (16 CPUs if hyperthreading enabled).
+    Not recommended if using more than 8 cores (16 CPUs if simultaneous multithreading (SMP) enabled).
 
     ```sl
     #!/bin/bash -e
@@ -470,9 +464,8 @@ xvfb-run cfx5post input.cse
     #SBATCH --job-name      ANSYS-Shared
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
-    #SBATCH --cpus-per-task 8                 # Double if hyperthreading enabled
+    #SBATCH --cpus-per-task 8                 #
     #SBATCH --mem           12G               # 8 threads at 1500 MB per thread
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
@@ -497,7 +490,6 @@ xvfb-run cfx5post input.cse
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            16                # Number processes
     #SBATCH --mem-per-cpu       1500
-    #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
@@ -537,7 +529,6 @@ xvfb-run cfx5post input.cse
 #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   512MB             # Memory per cpu
-#SBATCH --hint          nomultithread     # No hyperthreading
 
 module load ANSYS/{{ applications.ANSYS.default }}
 input=3cars_shell2_150ms.k
@@ -579,7 +570,6 @@ number of (physical) CPUs.
     --mem-per-cpu memory
     --time time
     --licenses 
-    --hint nomultithread
     ```
 
     Note: All these parameters will be applied to each individual
@@ -708,7 +698,6 @@ ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Poo
 #SBATCH --nodes             1             # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   2GB               # Memory per CPU
-#SBATCH --hint          nomultithread     # No hyperthreading
 
 module load ANSYS/{{ applications.ANSYS.default }}
 
@@ -809,9 +798,7 @@ As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
 --mail-type=BEGIN and --mail-user=<email address> options.
 
-### Hyperthreading
+### Simultaneous Multithreading
 
-Utilising hyperthreading (i.e.: removing the "--hint=nomultithread" sbatch
-directive and doubling the number of tasks) will give a small speedup on
-most jobs with less than 8 cores, but also doubles the number of
+Utilising [simultaneous multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (i.e.: adding the `--hint=multithread` sbatch directive and doubling the number of tasks) will give a small speedup on most jobs with less than 8 cores, but also doubles the number of
 `aa_r_hpc` license tokens required.
