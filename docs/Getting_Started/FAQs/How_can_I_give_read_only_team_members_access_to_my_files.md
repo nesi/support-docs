@@ -6,7 +6,7 @@ description: Instructions for giving read-only team members access to files
 
 !!! tip "See also"
      [File permissions and
-     groups](../../Storage/File_Systems_and_Quotas/File_permissions_and_groups.md)
+     groups](../../Storage/File_permissions_and_groups.md)
 
 Not all projects have read-only groups created by default. If your
 project has a read-only group created after the project itself was

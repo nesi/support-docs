@@ -44,7 +44,7 @@ data, compared to running both phases in one multithreaded job (see the
 ### filesystem considerations
 
 You should run Trinity within your [nobackup project
-directory](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md),
+directory](../../Storage/Filesystems_and_Quotas.md),
 which has no limit on disk space usage but does have a file count quota.
 Trinity creates a large number of files, particularly in the
 "read\_partitions" directory, thus it is important that you {% include "partials/support_request.html" %} before running Trinity on NeSI, as we

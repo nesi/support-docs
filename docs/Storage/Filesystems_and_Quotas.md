@@ -137,12 +137,12 @@ temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
 See more information about the long term storage see our
-[documentation about the Freezer storage service](../Long_Term_Storage/Freezer_long_term_storage.md).
+[documentation about the Freezer storage service](Long_Term_Storage/Freezer_long_term_storage.md).
 
 ## Snapshots
 
 If you have accidentally deleted data you can recover it from
-a [snapshot](../Data_Recovery.md).
+a [snapshot](Data_Recovery.md).
 Snapshots are taken daily of `home/` and `project` directories If you
 cannot find it in a snapshot, please ask us to recover it for you by
 {% include "partials/support_request.html" %}

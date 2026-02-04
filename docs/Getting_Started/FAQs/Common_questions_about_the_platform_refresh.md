@@ -16,21 +16,21 @@ Along the way, we'll use this page to share answers to some of the most common q
 
 We have copied your `/home` and `/project` directories to our new high-performance WEKA storage on the new platforms.
 To keep the WEKA copy of your data as fresh as possible, we are repeatedly syncing your directories from GPFS to WEKA until you have fully migrated.
-More details for understanding what data gets migrated can be read on the [Moving to the new filesystem](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/) page.
+More details for understanding what data gets migrated can be read on the [Moving to the new filesystem](https://docs.nesi.org.nz/Storage/Moving_to_the_new_filesystem/) page.
 
 ## What project data is being moved?
 
 - `/home` and `/project` directories are already copied to the new storage and are being continuously updated to capture any changes you’re making.
 - By default, `/nesi/nobackup` is not migrated. If you want any of this data, you can override the default and force data to be copied.
-[Follow the instructions here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/) so that you have everything you need to work on the new platforms. {% include "partials/support_request.html" %} if you need help.
+[Follow the instructions here](https://docs.nesi.org.nz/Storage/Moving_to_the_new_filesystem/) so that you have everything you need to work on the new platforms. {% include "partials/support_request.html" %} if you need help.
 
 ## How do I stop the automatic data synchronisation with Mahuika?
 
-Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, please place a file named .GOODBYE_GPFS in the top directory of each of your three GPFS filesets (home, project, and nobackup) on Mahuika. [Read our instructions here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely).
+Once you are happy that all your data has been successfully copied to WEKA and you are ready to move to working entirely the new platform, please place a file named .GOODBYE_GPFS in the top directory of each of your three GPFS filesets (home, project, and nobackup) on Mahuika. [Read our instructions here](https://docs.nesi.org.nz/Storage/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely).
 
 ## Why does my new data on the new platforms keep disappearing?
 
-Have you stopped the data synchronisation with Mahuika? That might be the reason, as anything copied over from Mahuika as part of the synchronisation process will overwrite your data on the new platforms. To stop the data synchronisation, [follow these instructions](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely). If you've completed that step and your data on the new platforms is still disappearing, [send us an email](mailto:support@nesi.org.nz) and we'll work with you to troubleshoot the issue.
+Have you stopped the data synchronisation with Mahuika? That might be the reason, as anything copied over from Mahuika as part of the synchronisation process will overwrite your data on the new platforms. To stop the data synchronisation, [follow these instructions](https://docs.nesi.org.nz/Storage/Moving_to_the_new_filesystem/#halting-the-synchronisation-from-gpfs-entirely). If you've completed that step and your data on the new platforms is still disappearing, [send us an email](mailto:support@nesi.org.nz) and we'll work with you to troubleshoot the issue.
 
 ## Will the software package I use be available on the new platforms?
 

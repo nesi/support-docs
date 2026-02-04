@@ -3,7 +3,6 @@ created_at: '2021-08-27T03:18:13Z'
 tags: 
     - globus
     - file transfer
-title: Data Transfer
 ---
 
 Globus is useful for transferring files between Mahuika and your computer or server and can make it easy to transfer files due to its GUI web-based interface, as well as being able to resume transfers even if disrupted.
