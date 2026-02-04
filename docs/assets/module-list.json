@@ -21018,15 +21018,16 @@
         "support": "",
         "versions": [
             "0.1.14-gimkl-2018b-Perl-5.28.1",
-            "0.1.15-GCC-9.2.0-Perl-5.30.1"
+            "0.1.15-GCC-9.2.0-Perl-5.30.1",
+            "0.1.17-GCC-12.3.0-Perl-5.38.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.1.15-GCC-9.2.0-Perl-5.30.1",
+        "default": "0.1.17-GCC-12.3.0-Perl-5.38.2",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1770164095,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VCFtools/0.1.15-GCC-9.2.0-Perl-5.30.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/VCFtools/0.1.17-GCC-12.3.0-Perl-5.38.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
