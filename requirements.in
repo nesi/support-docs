@@ -13,6 +13,7 @@ mkdocs-git-authors-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_file
 mkdocs-awesome-nav
+mkdocs_quiz
 
 # checkers
 neoteroi-mkdocs
