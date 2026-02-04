@@ -24,13 +24,13 @@ Update: This new policy has come into effect as of Wednesday 19 November. Our fi
 
 Prior to data being deleted, we’ll send you an email that identifies what has been marked for deletion. You can subscribe to or unsubscribe from receiving these notifications through my.nesi.org.nz. 
 
-You can also manually check at any time if you have any data scheduled for deletion. [Instructions for that can be found here](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system/#how-can-i-check-which-files-have-been-already-deleted-or-are-scheduled-for-deletion).
+You can also manually check at any time if you have any data scheduled for deletion. [Instructions for that can be found here](https://docs.nesi.org.nz/Storage/Automatic_cleaning_of_nobackup_file_system/#how-can-i-check-which-files-have-been-already-deleted-or-are-scheduled-for-deletion).
 
 ## More information
 
 Our Support Documentation has more details on how our auto-deletion cleaner works as well as advice for where to store different types of data on our HPC platform:
 
-- [Automatic cleaning of nobackup file system](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system/) 
+- [Automatic cleaning of nobackup file system](https://docs.nesi.org.nz/Storage/Automatic_cleaning_of_nobackup_file_system/) 
 
 - [Where should I store my data on NeSI systems?](https://docs.nesi.org.nz/General/FAQs/Where_should_I_store_my_data_on_NeSI_systems/) 
 
