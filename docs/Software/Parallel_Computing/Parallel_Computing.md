@@ -39,7 +39,7 @@ Software may:
 | [Job Array](#job-arrays) | - | `--array` | Best for independent tasks |
 | [GPU](#gpus) | GPGPU | `--gpus-per-node` | Specialized hardware for matrix operations |
 
-## Shared Memory Parallelisation
+## Shared Memory
 
 Shared Memory Parallelism, or multi-threading, parallelises itself by forking (duplicating) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
@@ -52,6 +52,7 @@ In contrast, a shared memory parallelised program works like this:
 ![parallel](../../assets/images/Parallel_Execution.png)  
 
 A shared memory parallelised program:
+
 - Requires shared memory (so all CPUs must be on same node)
 - Limited by node capacity (e.g., On Mahuika the maximum number of CPUs that can be requested for a shared memory job is 166 (or twice that with simultaneous multithreading (SMP)))
 - Uses `--cpus-per-task` to specify thread count

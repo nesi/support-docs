@@ -1,4 +1,10 @@
-# WinSCP (Windows)
+---
+created_at: 2026-02-04
+description: How to copy files to the REANNZ HPC using WinSCP.
+tags: 
+    - data transfer
+title:  WinSCP (Windows)
+---
 
 !!! prerequisite
     [WinSCP-PuTTY Setup Windows](../Getting_Started/Accessing_the_HPCs/WinSCP-PuTTY_Setup_Windows.md)

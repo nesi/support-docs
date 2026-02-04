@@ -16,9 +16,9 @@ low-speed flows, with an emphasis on smoke and heat transport from
 fires.
 
 FDS can utilise both
-[MPI](../Parallel_Computing/Parallel_Computing.md#mpi)
+[MPI](../Parallel_Computing/Parallel_Computing.md)
 and
-[OpenMP](../Parallel_Computing/Parallel_Computing.md#multi-threading)
+[OpenMP](../Parallel_Computing/Parallel_Computing.md)
 
 ## Example Script
 

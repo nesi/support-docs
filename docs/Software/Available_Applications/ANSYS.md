@@ -19,14 +19,14 @@ description: How to best use ANSYS products on the NeSI cluster.
 ## Available Modules
 
 {% include "partials/app/app_version.html" -%}
-<!-- 
+
 ## Licences
 
 The following network licence servers can be accessed from the NeSI cluster.
 
 {% include "partials/app/app_network_licence.html" -%}
 
-If you do not have access, or want a server connected {% include "partials/support_request.html" %}. -->
+If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
 
 ### License Types
 

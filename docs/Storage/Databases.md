@@ -70,7 +70,7 @@ There are also some versioned databases which are accessible through environment
 The [Joint Genome Institute](https://jgi.doe.gov/) has many databases and data portals available.
 To download/access files from JGI you will need to register for an account.
 We recommend you utilize the [Globus endpoint provided by JGI](https://genome.jgi.doe.gov/portal/help/download.jsf#/globus) to directly transfer files from the JGI servers to Mahuika.
-For more information about using Globus on Mahuika see [the Globus docs section](../Data_Transfer/Globus/Overview.md).
+For more information about using Globus on Mahuika see [the Globus docs section](../Data_Transfer/Globus/Globus_Overview.md).
 
 ### NCBI
 

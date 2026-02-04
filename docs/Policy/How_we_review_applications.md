@@ -53,7 +53,7 @@ is simpler:
 1. **Eligibility check:** We look at the information you have given us
     (and may ask you more questions) to find out which of our regular
     allocation classes
-    ([Merit](Allocation_classes.md#meritd),
+    ([Merit](Allocation_classes.md#merit),
     [Postgraduate](Allocation_classes.md#postgraduate)
     or
     [Institutional](Allocation_classes.md#institutional))

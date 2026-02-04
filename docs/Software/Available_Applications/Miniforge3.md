@@ -92,7 +92,7 @@ where `<project_code>` should be replace with your project code. This
 setting is saved in your `~/.condarc` configuration file.
 !!! prerequisite Note
      Your package cache will be subject to the nobackup autodelete process
-     (details available in the [Nobackup autodelete](../../Storage/Automatic_cleaning_of_nobackup_file_system.md)
+     (details available in the [Nobackup autodelete](../../Storage/Automatic_cleaning_of_nobackup.md)
      support page). The package cache folder is for temporary storage so it
      is safe if files within the cache folder are removed.
 

@@ -22,7 +22,6 @@ File transfer methods from the terminal:
 * [RClone](./RClone.md): Best tool for transferring to cloud storage services or parallelising transfer from command line.
 * [SCP (Secure Copy)](./SCP.md): SCP is pre-installed on all versions of MacOS, Linux and WSL and is a good tool for data transfer.
 
-
 For transferring data using specific tools, see:
 
 * [File transfer using MobaXterm (Windows)](./Data_Transfer_Using_MobaXterm.md)
