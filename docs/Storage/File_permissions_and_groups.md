@@ -86,7 +86,7 @@ project group.
      directory will inherit neither the group nor the setgid bit.
      You probably don't want this to happen. For instructions on how to
      prevent it, please see our article:
-     [How can I let my fellow project team members read or write my files?](../../Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
+     [How can I let my fellow project team members read or write my files?](../Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
 
 By default, the world, i.e. people not in the project team, have no
 privileges in respect of a project directory, with certain exceptions.

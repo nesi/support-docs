@@ -70,7 +70,6 @@ memory) and is replaced with a real value when the Slurm job starts.
 #SBATCH --account=nesi99999
 #SBATCH --time=00:15:00
 #SBATCH --cpus-per-task=8       # Note, Gaussian will use twice the number of CPUs specified by --cpus-per-task.
-#SBATCH --hint=nomultithread
 #SBATCH --mem=8G
 
 module load Gaussian/09-D.01
@@ -115,7 +114,6 @@ srun g09 < "${INPUT_FILE}"
 #SBATCH --time=00:15:00
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=4
-#SBATCH --hint=nomultithread
 #SBATCH --mem=4G
 
 module load Gaussian/09-D.01

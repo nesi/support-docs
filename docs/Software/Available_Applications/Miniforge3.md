@@ -77,7 +77,7 @@ Here are the explanations for each line of this snippet:
 
 Conda environments and the conda packages cache can take a lot of
 storage space. By default, Conda use
-[/home](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md),
+[/home](../../Storage/Filesystems_and_Quotas.md),
 which is restricted to 20GB on NeSI. Here are some techniques to avoid
 running out of space when using Conda.
 
@@ -92,7 +92,7 @@ where `<project_code>` should be replace with your project code. This
 setting is saved in your `~/.condarc` configuration file.
 !!! prerequisite Note
      Your package cache will be subject to the nobackup autodelete process
-     (details available in the [Nobackup autodelete](../../Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md)
+     (details available in the [Nobackup autodelete](../../Storage/Automatic_cleaning_of_nobackup.md)
      support page). The package cache folder is for temporary storage so it
      is safe if files within the cache folder are removed.
 

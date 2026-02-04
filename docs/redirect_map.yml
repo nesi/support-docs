@@ -54,7 +54,6 @@ Scientific_Computing/Supported_Applications/VirSorter.md : Software/Available_Ap
 Scientific_Computing/Supported_Applications/VTune.md : Software/Available_Applications/VTune.md
 Scientific_Computing/Supported_Applications/WRF.md : Software/Available_Applications/WRF.md
 Scientific_Computing/Profiling_and_Debugging/Debugging.md : Software/Profiling_and_Debugging/Debugging.md
-Scientific_Computing/Profiling_and_Debugging/Profiler-ARM_MAP.md : Software/Profiling_and_Debugging/Profiler-ARM_MAP.md
 Scientific_Computing/Profiling_and_Debugging/Profiler-VTune.md : Software/Profiling_and_Debugging/Profiler-VTune.md
 Scientific_Computing/Profiling_and_Debugging/Slurm_Native_Profiling.md : Software/Profiling_and_Debugging/Slurm_Native_Profiling.md
 Scientific_Computing/HPC_Software_Environment/Run_an_executable_under_Apptainer_on_gpu.md : Software/Containers/Run_an_executable_under_Apptainer_on_gpu.md
@@ -129,7 +128,6 @@ General/FAQs/Why_am_I_seeing_Account_is_not_ready.md : Getting_Started/FAQs/Why_
 General/FAQs/Why_does_my_program_crash.md : Getting_Started/FAQs/Why_does_my_program_crash.md
 General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md : Getting_Started/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
 Getting_Started/Next_Steps/Submitting_your_first_job.md : Batch_Computing/Submitting_your_first_job.md
-Scientific_Computing/Training/Introduction_to_computing_on_the_NeSI_HPC.md : Getting_Started/Getting_Help/Introduction_to_computing_on_the_NeSI_HPC.md
 Scientific_Computing/Training/Webinars.md : Getting_Started/Getting_Help/Webinars.md
 Scientific_Computing/Training/Workshops.md : Getting_Started/Getting_Help/Workshops.md
 Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md: Getting_Started/Projects/Applying_for_a_New_Project.md
@@ -148,7 +146,7 @@ Getting_Started/Accounts-Projects_and_Allocations/Allocations_and_Extensions.md 
 Getting_Started/Accounts-Projects_and_Allocations/Quarterly_allocation_periods.md : Getting_Started/Allocations/Quarterly_allocation_periods.md
 Getting_Started/Accounts-Projects_and_Allocations/What_is_an_allocation.md : Getting_Started/Allocations/What_is_an_allocation.md
 Getting_Started/Creating_an_Account_Profile.md : Getting_Started/Creating_an_Account.md
-Storage/Storage-best-practices.md : Storage/Storage_best_practices.md
+Storage/Storage-best-practices.md : Storage/Filesystems_and_Quotas.md
 Getting_Started/Accounts-Projects_and_Allocations/Adding_members_to_your_NeSI_project.md: Getting_Started/Projects/Adding_Members_to_your_Project.md
 Getting_Started/Accounts-Projects_and_Allocations/Project_Extensions_and_New_Allocations_on_Existing_Projects.md : Getting_Started/Allocations/Allocations_and_Extensions.md
 Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profile.md : Getting_Started/Creating_an_Account.md
@@ -172,8 +170,8 @@ Getting_Started/Policy/Proposal_Development_allocations.md : Policy/Allocation_c
 Getting_Started/Policy/Postgraduate_allocations.md : Policy/Allocation_classes.md#postgraduate
 Getting_Started/Policy/Merit_allocations.md : Policy/Allocation_classes.md#merit
 Getting_Started/Policy/Institutional_allocations.md : Policy/Allocation_classes.md#institutional
+Software/Parallel_Computing/Hyperthreading.md : Software/Parallel_Computing/Simultaneous_Multithreading.md
 Storage/Data_Recovery/File_Recovery.md : Storage/Data_Recovery.md
-Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md : Storage/Automatic_cleaning_of_nobackup_file_system.md
 Storage/File_Systems_and_Quotas/File_permissions_and_groups.md : Storage/File_permissions_and_groups.md
 Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md : Storage/Filesystems_and_Quotas.md
-Storage/Automatic_cleaning_of_nobackup_file_system.md : Storage/Automatic_cleaning_of_nobackup.md
+Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md : Storage/Automatic_cleaning_of_nobackup.md

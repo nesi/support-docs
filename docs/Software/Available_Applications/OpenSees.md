@@ -37,9 +37,8 @@ sweeps.
     
     #SBATCH --job-name      OpenSees-Serial
     #SBATCH --time          00:05:00          # Walltime</span></span>
-    #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled.
+    #SBATCH --cpus-per-task 1                 #
     #SBATCH --mem           512MB             # total mem
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
     
     module load OpenSees/{{app.default}}
     OpenSees "frame.tcl"

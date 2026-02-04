@@ -1,11 +1,6 @@
 ---
 created_at: '2020-01-15T21:56:01Z'
 tags: []
-title: VTune
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001332675
-zendesk_section_id: 360000040076
 ---
 
 
@@ -21,14 +16,12 @@ VTune is a tool that allows you to quickly identify where most of the
 execution time of a program is spent. This is known as profiling. It is
 good practice to profile a code before attempting to modify the code to
 improve its performance. VTune collects key profiling data and presents
-them in an intuitive way.  Another tool that provides similar
-information is [ARM
-MAP](../Profiling_and_Debugging/Profiler-ARM_MAP.md).
+them in an intuitive way.
 
 ## How to use VTune
 
 We'll show how to profile a C++ code with VTune - feel free to choose
-your own code instead. Start with 
+your own code instead. Start with
 
 ``` sh
 git clone https://github.com/pletzer/fidibench
@@ -59,7 +52,7 @@ Run the executable with
 
 ``` sh
 module load VTune
-srun --ntasks=1 --cpus-per-task=2 --hint=nomultithread vtune -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
+srun --ntasks=1 --cpus-per-task=2 vtune -collect hotspots -result-dir vtune-res ./upwindCxx -numCells 256 -numSteps 10
 ```
 
 Executable "upwindCxx" takes arguments "-numCells 256" (the number of

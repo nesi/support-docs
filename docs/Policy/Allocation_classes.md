@@ -91,7 +91,7 @@ allocations.</em></p></td>
 <td >Highest</td>
 </tr>
 <tr >
-<td rowspan="4" ><h2 id=postraduate>Postgraduate</h2>
+<td rowspan="4" ><h2 id=postgraduate>Postgraduate</h2>
 <p>Standard allocation for anyone enrolled at a New Zealand
 degree-granting institution and working on a postgraduate research
 programme (e.g. PhD or Masters by research) approved by that
