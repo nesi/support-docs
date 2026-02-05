@@ -12589,15 +12589,16 @@
             "3.23-GCC-9.2.0",
             "3.23-gimkl-2018b",
             "4.0.0rc1-GCCcore-11.3.0",
-            "4.0.0rc1-GCCcore-9.2.0"
+            "4.0.0rc1-GCCcore-9.2.0",
+            "4.0.1-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.0.0rc1-GCCcore-9.2.0",
+        "default": "4.0.1-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1770250705,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MUMmer/4.0.0rc1-GCCcore-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MUMmer/4.0.1-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12654,25 +12655,26 @@
         "force_show": "False"
     },
     "MUSCLE": {
-        "description": "MUSCLE is a program for creating multiple alignments of amino acid or nucleotide\nsequences. A range of options is provided that give you the choice of optimizing accuracy, speed,\nor some compromise between the two.",
+        "description": "MUSCLE is one of the best-performing multiple alignment programs\n according to published benchmark tests, with accuracy and speed that are consistently\n better than CLUSTALW. MUSCLE can align hundreds of sequences in seconds. Most users\n learn everything they need to know about MUSCLE in a few minutes-only a handful of\n command-line options are needed to perform common alignment tasks.",
         "domains": [
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://drive5.com/muscle/",
+        "homepage": "https://drive5.com/muscle/",
         "support": "",
         "versions": [
             "3.8.1551",
-            "3.8.31"
+            "3.8.31",
+            "5.1.0-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.8.1551",
+        "default": "5.1.0-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1770250741,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MUSCLE/3.8.1551.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MUSCLE/5.1.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15158,15 +15160,16 @@
         "versions": [
             "2.1.0",
             "2.21.8-Java-11.0.4",
-            "2.26.10-Java-11.0.4"
+            "2.26.10-Java-11.0.4",
+            "3.4.0-Java-21.0.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.26.10-Java-11.0.4",
+        "default": "3.4.0-Java-21.0.5",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1770250796,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/picard/2.26.10-Java-11.0.4.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/picard/3.4.0-Java-21.0.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18655,16 +18658,17 @@
         "versions": [
             "0.15.0",
             "2.1.0",
+            "2.12.0",
             "2.2.0",
             "2.4.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.4.0",
+        "default": "2.12.0",
         "default_type": "latest",
-        "last_updated": 1740132634,
+        "last_updated": 1770250902,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/SeqKit/2.4.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/SeqKit/2.12.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18703,15 +18707,16 @@
         "versions": [
             "1.3-GCC-11.3.0",
             "1.3-gimkl-2018b",
-            "1.4-GCC-11.3.0"
+            "1.4-GCC-11.3.0",
+            "1.5-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.4-GCC-11.3.0",
+        "default": "1.5-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1770250925,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/seqtk/1.4-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/seqtk/1.5-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
