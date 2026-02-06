@@ -10680,22 +10680,24 @@
         "force_show": "False"
     },
     "M4": {
-        "description": "GNU M4 is an implementation of the traditional Unix macro processor. It is mostly SVR4 compatible\n  although it has some extensions (for example, handling more than 9 positional parameters to macros).\n GNU M4 also has built-in functions for including files, running shell commands, doing arithmetic, etc.",
+        "description": "GNU M4 is an implementation of the traditional Unix macro processor. It is\n mostly SVR4 compatible although it has some extensions (for example, handling\n more than 9 positional parameters to macros). GNU M4 also has built-in\n functions for including files, running shell commands, doing arithmetic, etc.",
         "domains": [],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.gnu.org/software/m4/m4.html",
+        "homepage": "https://www.gnu.org/software/m4/m4.html",
         "support": "",
         "versions": [
-            "1.4.18-GCCcore-7.4.0"
+            "1.4.18-GCCcore-7.4.0",
+            "1.4.19",
+            "1.4.19-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.4.18-GCCcore-7.4.0",
+        "default": "1.4.19",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1770350230,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/M4/1.4.18-GCCcore-7.4.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/M4/1.4.19.lua",
         "force_hide": "False",
         "force_show": "False"
     },
