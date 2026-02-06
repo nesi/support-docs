@@ -907,15 +907,16 @@
         "support": "",
         "versions": [
             "0.4.2-GCC-11.3.0",
-            "0.4.2-GCC-9.2.0"
+            "0.4.2-GCC-9.2.0",
+            "0.4.2-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.4.2-GCC-11.3.0",
+        "default": "0.4.2-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1770358218,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/any2fasta/0.4.2-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/any2fasta/0.4.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1367,6 +1368,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Autoconf": {
+        "description": "Autoconf is an extensible package of M4 macros that produce shell scripts\n to automatically configure software source code packages. These scripts can\n adapt the packages to many kinds of UNIX-like systems without manual user\n intervention. Autoconf creates a configuration script for a package from a\n template file that lists the operating system features that the package can\n use, in the form of M4 macro calls.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.gnu.org/software/autoconf/",
+        "support": "",
+        "versions": [
+            "2.72-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.72-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1770357682,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Autoconf/2.72-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "AutoDock-GPU": {
         "description": "OpenCL and Cuda accelerated version of AutoDock. It leverages its embarrasingly\nparallelizable LGA by processing ligand-receptor poses in parallel over\nmultiple compute units.",
         "domains": [],
@@ -1404,6 +1425,46 @@
         "last_updated": 1740132626,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AutoDock_Vina/1.1.2_linux_x86.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Automake": {
+        "description": "Automake: GNU Standards-compliant Makefile generator",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.gnu.org/software/automake/automake.html",
+        "support": "",
+        "versions": [
+            "1.18.1-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.18.1-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1770357835,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Automake/1.18.1-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Autotools": {
+        "description": "This bundle collect the standard GNU build tools: Autoconf, Automake\n and libtool",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://autotools.io",
+        "support": "",
+        "versions": [
+            "20250626-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "20250626-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1770357843,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Autotools/20250626-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2836,6 +2897,26 @@
         "last_updated": 1740132636,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/chainforge/0.0.3-foss-2023a-Python-3.11.6.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Check": {
+        "description": "Check is a unit testing framework for C. It features a simple interface for\ndefining unit tests, putting little in the way of the developer. Tests are\nrun in a separate address space, so both assertion failures and code errors\nthat cause segmentation faults or other signals can be caught. Test results\nare reportable in the following: Subunit, TAP, XML, and a generic logging\nformat.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://libcheck.github.io/check/",
+        "support": "",
+        "versions": [
+            "0.15.2-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.15.2-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1770358049,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Check/0.15.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10260,22 +10341,23 @@
         "force_show": "False"
     },
     "libtool": {
-        "description": "GNU libtool is a generic library support script. Libtool hides the complexity of using shared libraries\n behind a consistent, portable interface.",
+        "description": "GNU libtool is a generic library support script. Libtool hides the complexity\n of using shared libraries behind a consistent, portable interface.",
         "domains": [],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.gnu.org/software/libtool",
+        "homepage": "https://www.gnu.org/software/libtool",
         "support": "",
         "versions": [
-            "2.4.6"
+            "2.4.6",
+            "2.5.4-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.4.6",
+        "default": "2.5.4-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1747602679,
+        "last_updated": 1770357777,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libtool/2.4.6.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libtool/2.5.4-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14547,6 +14629,26 @@
         "last_updated": 1740132632,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PAPI/6.0.0-GCCcore-9.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "parallel": {
+        "description": "parallel: Build and execute shell commands in parallel",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://savannah.gnu.org/projects/parallel/",
+        "support": "",
+        "versions": [
+            "20250922-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "20250922-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1770358692,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/parallel/20250922-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19523,6 +19625,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "snippy": {
+        "description": "Rapid haploid variant calling and core genome alignment",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/tseemann/snippy",
+        "support": "",
+        "versions": [
+            "4.6.0-foss-2023a-R-4.3.2"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "4.6.0-foss-2023a-R-4.3.2",
+        "default_type": "latest",
+        "last_updated": 1770358766,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/snippy/4.6.0-foss-2023a-R-4.3.2.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "snp-sites": {
         "description": "Finds SNP sites from a multi-FASTA alignment file.",
         "domains": [
@@ -19533,20 +19655,21 @@
         "homepage": "https://sanger-pathogens.github.io/snp-sites/",
         "support": "",
         "versions": [
-            "2.5.1-GCC-11.3.0"
+            "2.5.1-GCC-11.3.0",
+            "2.5.1-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.5.1-GCC-11.3.0",
+        "default": "2.5.1-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1770358195,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/snp-sites/2.5.1-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/snp-sites/2.5.1-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "snpEff": {
-        "description": "SnpEff is a variant annotation and effect prediction tool. \n It annotates and predicts the effects of genetic variants (such as amino acid changes).",
+        "description": "SnpEff is a variant annotation and effect prediction tool.\n It annotates and predicts the effects of genetic variants (such as amino acid changes).",
         "domains": [
             "biology"
         ],
@@ -19556,15 +19679,16 @@
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/snpEff",
         "versions": [
             "4.2",
-            "5.0-Java-11.0.4"
+            "5.0-Java-11.0.4",
+            "5.2c-GCCcore-12.3.0-Java-21.0.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.0-Java-11.0.4",
+        "default": "5.2c-GCCcore-12.3.0-Java-21.0.5",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1770358668,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/snpEff/5.0-Java-11.0.4.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/snpEff/5.2c-GCCcore-12.3.0-Java-21.0.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21714,6 +21838,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "vt": {
+        "description": "A tool set for short variant discovery in genetic sequence data.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://genome.sph.umich.edu/wiki/Vt",
+        "support": "",
+        "versions": [
+            "0.57721-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.57721-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1770357667,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/vt/0.57721-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "VTune": {
         "description": "Intel VTune Amplifier XE is the premier performance profiler for C, C++, C#, Fortran,\n Assembly and Java.",
         "domains": [],
@@ -21810,15 +21954,16 @@
         "homepage": "https://github.com/lh3/wgsim/",
         "support": "",
         "versions": [
-            "20111017-GCC-11.3.0"
+            "20111017-GCC-11.3.0",
+            "20111017-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "20111017-GCC-11.3.0",
+        "default": "20111017-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132640,
+        "last_updated": 1770358238,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/wgsim/20111017-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/wgsim/20111017-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
