@@ -17,12 +17,8 @@ status: tutorial
     This episode will be a quick introduction to the Unix shell, only the bare minimum required to use the cluster.
     The Software Carpentry '[Unix Shell](https://swcarpentry.github.io/shell-novice/)' lesson covers the subject in more depth, we recommend you check it out.
   
-The part of the operating system responsible for managing files and directories
-is called the **file system**.
-It organizes our data into files,
-which hold information,
-and directories (also called 'folders'),
-which hold files or other directories.
+The part of the operating system responsible for managing files and directories is called the **file system**.
+It organizes our data into files, which hold information, and directories (also called 'folders'), which hold files or other directories.
 
 Understanding how to navigate the file system using command line is essential for using an HPC.
 
@@ -104,12 +100,8 @@ Likely data from project can be moved to nobackup.
 For more details on our persistent and nobackup storage systems, including data retention and the nobackup autodelete schedule,
 please see our [Filesystem and Quota](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/) documentation.
 
-Directories are like *places* — at any time
-while we are using the shell, we are in exactly one place called
-our **current working directory**.
-Commands mostly read and write files in the
-current working directory, i.e. 'here', so knowing where you are before running
-a command is important.
+Directories are like *places* — at any time while we are using the shell, we are in exactly one place called our **current working directory**.
+Commands mostly read and write files in the current working directory, i.e. 'here', so knowing where you are before running a command is important.
 
 First, let's find out where we are by running the command `pwd` for '**p**rint **w**orking **d**irectory'.
 
@@ -124,14 +116,12 @@ First, let's find out where we are by running the command `pwd` for '**p**rint *
 The output we see is what is known as a 'path'.
 The path can be thought of as a series of directions given to navigate the file system.
 
-At the top is the **root directory**
-that holds all the files in a filesystem.
+At the top is the **root directory** that holds all the files in a filesystem.
 
 We refer to it using a slash character, `/`, on its own.
 This is what the leading slash in `/home/<username>` is referring to, it is telling us our path starts at the root directory.
 
-Next is `home`, as it is the next part of the path we know it is inside the root directory,
-we also know that home is another directory as the path continues.
+Next is `home`, as it is the next part of the path we know it is inside the root directory, we also know that home is another directory as the path continues.
 Finally, stored inside `home` is the directory with your username.
 
 !!! info "Slashes"
@@ -140,12 +130,8 @@ Finally, stored inside `home` is the directory with your username.
     it refers to the root directory. When it appears *inside* a path,
     it's just a separator.
 
-As you may now see, using a bash shell is strongly dependent on the idea that
-your files are organized in a hierarchical file system.
-Organizing things hierarchically in this way helps us keep track of our work:
-it's possible to put hundreds of files in our home directory,
-just as it's possible to pile hundreds of printed papers on our desk,
-but it's a self-defeating strategy.
+As you may now see, using a bash shell is strongly dependent on the idea that your files are organized in a hierarchical file system.
+Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
 ## Listing the contents of directories
 
@@ -251,7 +237,7 @@ ls /nesi/nobackup/<projectcode>
 ```
 
 !!! note "YMMV"
-  There may already be files and subdirectories in your project's nobackup directory if it isn't a brand new project.
+    There may already be files and subdirectories in your project's nobackup directory if it isn't a brand new project.
 
 ## General Syntax of a Shell Command
 
@@ -314,12 +300,12 @@ You might notice that we now have two extra lines for directories `.` and `..`. 
 These two specific hidden directories are special as they will exist hidden inside every directory, with the `.` hidden directory representing your current directory and the `..` hidden directory representing the **parent** directory above your current directory.
 
 !!! question "Exploring More `ls` Flags"
-   You can also use two options at the same time. What does the command `ls` do when used
-   with the `-l` option? What about if you use both the `-l` and the `-h` option?
+    You can also use two options at the same time. What does the command `ls` do when used
+    with the `-l` option? What about if you use both the `-l` and the `-h` option?
   
-   Some of its output is about properties that we do not cover in this lesson (such
-   as file permissions and ownership), but the rest should be useful
-   nevertheless.
+    Some of its output is about properties that we do not cover in this lesson (such
+    as file permissions and ownership), but the rest should be useful
+    nevertheless.
   
 !!! question "Solution"
     The `-l` option makes `ls` use a **l**ong listing format, showing not only
@@ -367,10 +353,10 @@ pwd
 
 ## Tab completion
 
- Sometimes file paths and file names can be very long, making typing out the path tedious.
- One trick you can use to save yourself time is to use something called **tab completion**.
- If you start typing the path in a command and there is only one possible match,
- if you hit tab the path will autocomplete (until there are more than one possible matches).
+Sometimes file paths and file names can be very long, making typing out the path tedious.
+One trick you can use to save yourself time is to use something called **tab completion**.
+If you start typing the path in a command and there is only one possible match,
+if you hit tab the path will autocomplete (until there are more than one possible matches).
 
 For example, if you type:
 
@@ -385,9 +371,9 @@ the shell automatically completes the directory name for you (since there is onl
 cd /nesi/nobackup
 ```
 
- However, you want to move to your project's directory. If you hit <kbd>Tab</kbd> once you will
- likely see nothing change, as there are more than one possible options. Hitting <kbd>Tab</kbd>
- a second time will print all possible autocomplete options.
+However, you want to move to your project's directory. If you hit <kbd>Tab</kbd> once you will
+likely see nothing change, as there are more than one possible options. Hitting <kbd>Tab</kbd>
+a second time will print all possible autocomplete options.
 
 ```out
 nesi99991 nesi99999 <projectcode>
@@ -408,35 +394,35 @@ Check that we've moved to the right place by running `pwd`.
 ```
 
 !!! tip "Two More Shortcuts"
-  The shell interprets a tilde (`~`) character at the start of a path to
-  mean "the current user's home directory". For example, if Nelle's home
-  directory is `/home/nelle`, then `~/data` is equivalent to
-  `/home/nelle/data`. This only works if it is the first character in the
-  path: `here/there/~/elsewhere` is *not* `here/there//home/nelle/elsewhere`.
+    The shell interprets a tilde (`~`) character at the start of a path to
+    mean "the current user's home directory". For example, if Nelle's home
+    directory is `/home/nelle`, then `~/data` is equivalent to
+    `/home/nelle/data`. This only works if it is the first character in the
+    path: `here/there/~/elsewhere` is *not* `here/there//home/nelle/elsewhere`.
 
-  Another shortcut is the `-` (dash) character. `cd` will translate `-` into
-  *the previous directory I was in*, which is faster than having to remember,
-  then type, the full path.  This is a *very* efficient way of moving
-  *back and forth between two directories* -- i.e. if you execute `cd -` twice,
-  you end up back in the starting directory.
+    Another shortcut is the `-` (dash) character. `cd` will translate `-` into
+    *the previous directory I was in*, which is faster than having to remember,
+    then type, the full path.  This is a *very* efficient way of moving
+    *back and forth between two directories* -- i.e. if you execute `cd -` twice,
+    you end up back in the starting directory.
 
-  The difference between `cd ..` and `cd -` is
-  that the former brings you *up*, while the latter brings you *back*.
+    The difference between `cd ..` and `cd -` is
+    that the former brings you *up*, while the latter brings you *back*.
   
 !!! question "Absolute vs Relative Paths"
-   Starting from `/home/amanda/data`,
-   which of the following commands could Amanda use to navigate to her home directory,
-   which is `/home/amanda`?
+    Starting from `/home/amanda/data`,
+    which of the following commands could Amanda use to navigate to her home directory,
+    which is `/home/amanda`?
   
-   1. `cd .`
-   2. `cd /`
-   3. `cd home/amanda`
-   4. `cd ../..`
-   5. `cd ~`
-   6. `cd home`
-   7. `cd ~/data/..`
-   8. `cd`
-   9. `cd ..`
+    1. `cd .`
+    2. `cd /`
+    3. `cd home/amanda`
+    4. `cd ../..`
+    5. `cd ~`
+    6. `cd home`
+    7. `cd ~/data/..`
+    8. `cd`
+    9. `cd ..`
   
 !!! question "Solution"
     1. No: `.` stands for the current directory.
@@ -452,14 +438,14 @@ Check that we've moved to the right place by running `pwd`.
 {: .challenge}
 
 !!! question "Relative Path Resolution"
-  Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
-  what will `ls ../backup` display?
+    Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
+    what will `ls ../backup` display?
   
-  1. `../backup: No such file or directory`
-  2. `2012-12-01 2013-01-08 2013-01-27`
-  3. `original pnas_final pnas_sub`
+    1. `../backup: No such file or directory`
+    2. `2012-12-01 2013-01-08 2013-01-27`
+    3. `original pnas_final pnas_sub`
   
-  ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
+    ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
 
 !!! question Solution
     1. No: there *is* a directory `backup` in `/Users`.
@@ -468,18 +454,18 @@ Check that we've moved to the right place by running `pwd`.
     3. Yes: `../backup/` refers to `/Users/backup/`.
 
 !!! tip "Clearing your terminal"
-  If your screen gets too cluttered, you can clear your terminal using the
-  `clear` command. You can still access previous commands using <kbd>↑</kbd>
-  and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
+    If your screen gets too cluttered, you can clear your terminal using the
+    `clear` command. You can still access previous commands using <kbd>↑</kbd>
+    and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
 
 !!! question "Listing in Reverse Chronological Order"
-  By default, `ls` lists the contents of a directory in alphabetical
-  order by name. The command `ls -t` lists items by time of last
-  change instead of alphabetically. The command `ls -r` lists the
-  contents of a directory in reverse order.
-  Which file is displayed last when you combine the `-t` and `-r` flags?
-  Hint: You may need to use the `-l` flag to see the
-  last changed dates.
+    By default, `ls` lists the contents of a directory in alphabetical
+    order by name. The command `ls -t` lists items by time of last
+    change instead of alphabetically. The command `ls -r` lists the
+    contents of a directory in reverse order.
+    Which file is displayed last when you combine the `-t` and `-r` flags?
+    Hint: You may need to use the `-l` flag to see the
+    last changed dates.
   
 !!! question "Solution"
     The most recently changed file is listed last when using `-rt`. This
@@ -569,32 +555,32 @@ themselves. It is the shell, not the other programs, that deals with
 expanding wildcards.
 
 !!! question "List filenames matching a pattern"
-  Running `ls` in a directory gives the output
-  `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
+    Running `ls` in a directory gives the output
+    `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
   
-  Which `ls` command(s) will
-  produce this output?
+    Which `ls` command(s) will
+    produce this output?
   
-  `ethane.pdb   methane.pdb`
+    `ethane.pdb   methane.pdb`
   
-  1. `ls *t*ane.pdb`
-  2. `ls *t?ne.*`
-  3. `ls *t??ne.pdb`
-  4. `ls ethane.*`
+    1. `ls *t*ane.pdb`
+    2. `ls *t?ne.*`
+    3. `ls *t??ne.pdb`
+    4. `ls ethane.*`
   
 !!! question "Solution"
-  The solution is `3.`
+    The solution is `3.`
     `1.` shows all files whose names contain zero or more characters (`*`)
-  followed by the letter `t`,
-  then zero or more characters (`*`) followed by `ane.pdb`.
-  This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`.
+    followed by the letter `t`,
+    then zero or more characters (`*`) followed by `ane.pdb`.
+    This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`.
     `2.` shows all files whose names start with zero or more characters (`*`) followed by
-  the letter `t`,
-  then a single character (`?`), then `ne.` followed by zero or more characters (`*`).
-  This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything
-  which ends in `thane.pdb`.
+    the letter `t`,
+    then a single character (`?`), then `ne.` followed by zero or more characters (`*`).
+    This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything
+    which ends in `thane.pdb`.
     `3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
-  This is the solution.
+    This is the solution.
     `4.` only shows files starting with `ethane.`.
 
 <!-- TODO: include in terminal excersise (delete slurm files later on maybe?) -->
@@ -608,26 +594,26 @@ nano draft.txt
 ```
 
 !!! note "Which Editor?"
-   When we say, '`nano` is a text editor' we really do mean 'text': it can
-   only work with plain character data, not tables, images, or any other
-   human-friendly media. We use it in examples because it is one of the
-   least complex text editors. However, because of this trait, it may
-   not be powerful enough or flexible enough for the work you need to do
-   after this tutorial. On Unix systems (such as Linux and macOS),
-   many programmers use [Emacs](http://www.gnu.org/software/emacs/) or
-   [Vim](http://www.vim.org/) (both of which require more time to learn),
-   or a graphical editor such as
-   [Gedit](http://projects.gnome.org/gedit/). On Windows, you may wish to
-   use [Notepad++](http://notepad-plus-plus.org/).  Windows also has a built-in
-   editor called `notepad` that can be run from the command line in the same
-   way as `nano` for the purposes of this lesson.
+    When we say, '`nano` is a text editor' we really do mean 'text': it can
+    only work with plain character data, not tables, images, or any other
+    human-friendly media. We use it in examples because it is one of the
+    least complex text editors. However, because of this trait, it may
+    not be powerful enough or flexible enough for the work you need to do
+    after this tutorial. On Unix systems (such as Linux and macOS),
+    many programmers use [Emacs](http://www.gnu.org/software/emacs/) or
+    [Vim](http://www.vim.org/) (both of which require more time to learn),
+    or a graphical editor such as
+    [Gedit](http://projects.gnome.org/gedit/). On Windows, you may wish to
+    use [Notepad++](http://notepad-plus-plus.org/).  Windows also has a built-in
+    editor called `notepad` that can be run from the command line in the same
+    way as `nano` for the purposes of this lesson.
   
-   No matter what editor you use, you will need to know where it searches
-   for and saves files. If you start it from the shell, it will (probably)
-   use your current working directory as its default location. If you use
-   your computer's start menu, it may want to save files in your desktop or
-   documents directory instead. You can change this by navigating to
-   another directory the first time you 'Save As...'
+    No matter what editor you use, you will need to know where it searches
+    for and saves files. If you start it from the shell, it will (probably)
+    use your current working directory as its default location. If you use
+    your computer's start menu, it may want to save files in your desktop or
+    documents directory instead. You can change this by navigating to
+    another directory the first time you 'Save As...'
 
 Let's type in a few lines of text.
 Once we're happy with our text, we can press <kbd>Ctrl</kbd>+<kbd>O</kbd>
@@ -642,21 +628,21 @@ Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the edit
 return to the shell.
 
 !!! tip "Control, Ctrl, or ^ Key"
-   The Control key is also called the 'Ctrl' key. There are various ways
-   in which using the Control key may be described. For example, you may
-   see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
-   press the <kbd>X</kbd> key, described as any of:
+    The Control key is also called the 'Ctrl' key. There are various ways
+    in which using the Control key may be described. For example, you may
+    see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
+    press the <kbd>X</kbd> key, described as any of:
 
-  - `Control-X`
-  - `Control+X`
-  - `Ctrl-X`
-  - `Ctrl+X`
-  - `^X`
-  - `C-x`
+    - `Control-X`
+    - `Control+X`
+    - `Ctrl-X`
+    - `Ctrl+X`
+    - `^X`
+    - `C-x`
   
-  In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
-  This means that you can use `Control-G` to get help and `Control-O` to save your
-  file.
+    In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
+    This means that you can use `Control-G` to get help and `Control-O` to save your
+    file.
 
 `nano` doesn't leave any output on the screen after it exits,
 but `ls` now shows that we have created a file called `draft.txt`:
@@ -744,16 +730,16 @@ For `mv` and `cp` if the destination path (final argument) is an existing direct
     When using the `cp` or `rm` commands on a directory the 'recursive' flag `-r` must be used, but `mv` *does not* require it?
 
 !!! note Solution
-  We mentioned previously that as far the computer is concerned, *renaming* is the same operation as *moving*.
-  Contrary to what the commands name implies, *all moving is actually renaming*.
-  The data on the hard drive stays in the same place,
-  only the label applied to that block of memory is changed.
-  To copy a directory, each *individual file* inside that directory must be read, and then written to the copy destination.
-  To delete a directory, each *individual file* in the directory must be marked for deletion,
-  however when moving a directory the files inside are the data inside the directory is not interacted with,
-  only the parent directory is "renamed" to a different place.
+    We mentioned previously that as far the computer is concerned, *renaming* is the same operation as *moving*.
+    Contrary to what the commands name implies, *all moving is actually renaming*.
+    The data on the hard drive stays in the same place,
+    only the label applied to that block of memory is changed.
+    To copy a directory, each *individual file* inside that directory must be read, and then written to the copy destination.
+    To delete a directory, each *individual file* in the directory must be marked for deletion,
+    however when moving a directory the files inside are the data inside the directory is not interacted with,
+    only the parent directory is "renamed" to a different place.
 
-  This is also why `mv` is faster than `cp` as no reading of the files is required.
+    This is also why `mv` is faster than `cp` as no reading of the files is required.
 
 ## Unsupported command-line options
   
@@ -815,28 +801,28 @@ Sometimes a search will result in multiple hits. If so, you can move between hit
 To **quit** the `man` pages, press <kbd>Q</kbd>.
 
 !!! info "Manual pages on the web"
-  Of course, there is a third way to access help for commands:
-  searching the internet via your web browser.
-  When using internet search, including the phrase `unix man page` in your search
-  query will help to find relevant results.
-  GNU provides links to its
-  [manuals](http://www.gnu.org/manual/manual.html) including the
-  [core GNU utilities](http://www.gnu.org/software/coreutils/manual/coreutils.html),
-  which covers many commands introduced within this lesson.
+    Of course, there is a third way to access help for commands:
+    searching the internet via your web browser.
+    When using internet search, including the phrase `unix man page` in your search
+    query will help to find relevant results.
+    GNU provides links to its
+    [manuals](http://www.gnu.org/manual/manual.html) including the
+    [core GNU utilities](http://www.gnu.org/software/coreutils/manual/coreutils.html),
+    which covers many commands introduced within this lesson.
 
 !!! keypoints
-- "The file system is responsible for managing information on the disk."
-- "Information is stored in files, which are stored in directories (folders)."
-- "Directories can also store other directories, which then form a directory tree."
-- "`cd [path]` changes the current working directory."
-- "`ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
-- "`pwd` prints the user's current working directory."
-- "`cp [file] [path]` copies [file] to [path]"
-- "`mv [file] [path]` moves [file] to [path]"
-- "`rm [file]` deletes [file]"
-- "`/` on its own is the root directory of the whole file system."
-- "Most commands take options (flags) that begin with a `-`."
-- "A relative path specifies a location starting from the current location."
-- "An absolute path specifies a location from the root of the file system."
-- "Directory names in a path are separated with `/` on Unix, but `\\` on Windows."
-- "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
+    - "The file system is responsible for managing information on the disk."
+    - "Information is stored in files, which are stored in directories (folders)."
+    - "Directories can also store other directories, which then form a directory tree."
+    - "`cd [path]` changes the current working directory."
+    - "`ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
+    - "`pwd` prints the user's current working directory."
+    - "`cp [file] [path]` copies [file] to [path]"
+    - "`mv [file] [path]` moves [file] to [path]"
+    - "`rm [file]` deletes [file]"
+    - "`/` on its own is the root directory of the whole file system."
+    - "Most commands take options (flags) that begin with a `-`."
+    - "A relative path specifies a location starting from the current location."
+    - "An absolute path specifies a location from the root of the file system."
+    - "Directory names in a path are separated with `/` on Unix, but `\\` on Windows."
+    - "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
