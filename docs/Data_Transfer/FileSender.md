@@ -5,6 +5,9 @@ description: How to transfer data on the REANNZ HPC using FileSender.
 
 FileSender is a service that allows users to send data easily and securely. It is possible to send and receive data _via_ a web-based graphical user interface (GUI) as well as a Command Line Interface (CLI) using the Filesender API. These instructions show how to use both the web-based GUI and command line to send and receive data using FileSender.
 
+
+> Be aware that some types of files cannot be transferred to Filesender.  For example, files with the extension `.exe`.  It is also known that extensions containing an underscore `_` are not allowed. 
+
 ## Using FileSender: Web-based GUI
 
 ### Sending Data using the FileSender Web-based GUI
