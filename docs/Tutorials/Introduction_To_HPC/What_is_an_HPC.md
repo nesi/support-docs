@@ -69,7 +69,7 @@ It is common for nodes to connect to a shared, remote disk.
     Graphical Processing Units (GPUs).
 
 !!! info "Dedicated Transfer Nodes"
-    If you want to transfer larger amounts of data to or from the cluster, NeSI
+    If you want to transfer larger amounts of data to or from the cluster, REANNZ
     offers dedicated transfer nodes using the Globus service.  
     More information on using Globus for large data transfer to and from the cluster can be found on the
     [Globus Transfer Service](../../Data_Transfer/Globus/Globus_Overview.md) page.

@@ -74,7 +74,11 @@ The directories that are relevant to us are.
 NeSI performs backups of the `/home` and `/nesi/project` (persistent) filesystems.  However, backups are only captured once per day.  So, if you edit or change code or data and then immediately delete it, it likely cannot be recovered.  Note, as the name suggests, NeSI does **not** backup the `/nesi/nobackup` filesystem.
 
 Protecting critical data from corruption or deletion is primarily your
-responsibility. Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.  Also important is managing your storage quota.  To check your quotas, use the `nn_storage_quota` command, e.g
+responsibility. Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.  Also important is managing your storage quota.  To check your quotas, use the `nn_storage_quota` command, e.g;
+
+```sh
+nn_storage_quota
+```
 
 ```out
 Quota_Location                          AvailableGiB           UsedGiB Use%
@@ -100,7 +104,7 @@ a command is important.
 First, let's find out where we are by running the command `pwd` for '**p**rint **w**orking **d**irectory'.
 
 ```sh
- pwd
+pwd
 ```
 
 ```out
@@ -121,10 +125,10 @@ we also know that home is another directory as the path continues.
 Finally, stored inside `home` is the directory with your username.
 
 !!! info Slashes
-  Notice that there are two meanings for the `/` character.
-  When it appears at the front of a file or directory name,
-  it refers to the root directory. When it appears *inside* a path,
-  it's just a separator.
+    Notice that there are two meanings for the `/` character.
+    When it appears at the front of a file or directory name,
+    it refers to the root directory. When it appears *inside* a path,
+    it's just a separator.
 
 As you may now see, using a bash shell is strongly dependent on the idea that
 your files are organized in a hierarchical file system.
@@ -141,7 +145,7 @@ We will now list the contents of the directory we we will be working from. We ca
 use the following command to do this:
 
 ```sh
- ls {{ config.extra.working_directory[0] }}
+ls {{ config.extra.working_directory[0] }}
 ```
 
 ```out
@@ -156,14 +160,16 @@ For the purposes of this workshop you will be working within `{{ config.extra.wo
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
 
-
 ### 2.0: `ls` Reading Comprihension
+
+
+![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
 
 <quiz>
 
 Given the below file tree.
 
-![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
+![filetree](../../assets/images/ABAQUS.png)
 
 What command would you type to get the following output
   
@@ -207,13 +213,12 @@ You will notice that `cd` doesn't print anything. This is normal. Many shell com
 We can check we are in the right place by running `pwd`.
 
 ```sh
- pwd
+pwd
 ```
 
 ```out
 {{ config.extra.working_directory|join('/') }}
 ```
-
 
 ## Creating directories
 
@@ -222,18 +227,18 @@ We can check we are in the right place by running `pwd`.
 As previously mentioned, it is general useful to organise your work in a hierarchical file structure to make managing and finding files easier. It is also is especially important when working within a shared directory with colleagues, such as a project, to minimise the chance of accidentally affecting your colleagues work. So for this workshop you will each make a directory using the `mkdir` command within the workshops directory for you to personally work from.
 
 ```sh
- mkdir <username>
+mkdir <username>
 ```
 
 
 You should then be able to see your new directory is there using `ls`.
 
 ```sh
- ls {{ config.extra.working_directory|join('/') }}
+ls {{ config.extra.working_directory|join('/') }}
 ```
 
 ```sh
- {{ config.extra.example_script }}   usr123  usr345
+{{ config.extra.example_script }}   usr123  usr345
 ```
 
 ## General Syntax of a Shell Command
@@ -242,7 +247,7 @@ We are now going to use `ls` again but with a twist, this time we will also use 
 These options modify the way that the command works, for this example we will add the flag `-l` for "long listing format".
 
 ```sh
- ls -l {{ config.extra.working_directory|join('/') }}
+ls -l {{ config.extra.working_directory|join('/') }}
 ```
 
 ```out
@@ -259,6 +264,7 @@ It also includes information about the file size, time of its last modification,
 Most Unix commands follow this basic structure.
 
 ![Structure of a unix command](../../assets/images/Unix_Command_Struc.svg)
+
 The **prompt** tells us that the terminal is accepting inputs, prompts can be customised to show all sorts of info.
 
 The **command**, what are we trying to do.
@@ -278,9 +284,8 @@ while `ls -S` will sort the files and directories by size.
 Another useful option for `ls` is the `-a` option, lets try using this option together with the `-l` option:
 
 ```sh
- ls -la
+ls -la
 ```
-
 
 ```out
 drwxrws---+  4 usr001  {{config.extra.project_code}}   4096 Nov 15 09:00 .
@@ -296,22 +301,28 @@ You might notice that we now have two extra lines for directories `.` and `..`. 
 
 These two specific hidden directories are special as they will exist hidden inside every directory, with the `.` hidden directory representing your current directory and the `..` hidden directory representing the **parent** directory above your current directory.
 
-  ??? question "Exploring More `ls` Flags"
+<quiz>
+
+### question "Exploring More `ls` Flags"
   
-   You can also use two options at the same time. What does the command `ls` do when used
-   with the `-l` option? What about if you use both the `-l` and the `-h` option?
+You can also use two options at the same time. What does the command `ls` do when used
+with the `-l` option? What about if you use both the `-l` and the `-h` option?
   
-   Some of its output is about properties that we do not cover in this lesson (such
-   as file permissions and ownership), but the rest should be useful
-   nevertheless.
-  
-  ??? question Solution
-    
+Some of its output is about properties that we do not cover in this lesson (such
+as file permissions and ownership), but the rest should be useful
+nevertheless.
+
+- [X] Long-List
+- [X] Human readable.
+- [] Show Symlinks.
+- [] Show Help page.
+
     The `-l` option makes `ls` use a **l**ong listing format, showing not only
     the file/directory names but also additional information, such as the file size
     and the time of its last modification. If you use both the `-h` option and the `-l` option,
     this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
     instead of `5369`.
+</quiz>
 
 ## Relative paths
 
@@ -337,13 +348,13 @@ In the previous command, since we did not specify an **absolute path** it ran th
 We will now navigate to the parent directory, the simplest way do this is to use the relative path `..`.
 
 ```sh
- cd ..
+cd ..
 ```
 
 We should now be back in `{{ config.extra.working_directory[0] }}`.
 
 ```sh
- pwd
+pwd
 ```
 
 
@@ -362,14 +373,14 @@ We should now be back in `{{ config.extra.working_directory[0] }}`.
 For example, if you type:
 
 ```sh
- cd {{ config.extra.working_directory|last|slice(0,3) }}
+cd {{ config.extra.working_directory|last|slice(0,3) }}
 ```
 
 and then press <kbd>Tab</kbd> (the tab key on your keyboard),
 the shell automatically completes the directory name for you (since there is only one possible match):
 
 ```sh
- cd {{ config.extra.working_directory|last }}/
+cd {{ config.extra.working_directory|last }}/
 ```
 
  However, you want to move to your personal working directory. If you hit <kbd>Tab</kbd> once you will
@@ -514,7 +525,7 @@ Check that we've moved to the right place by running `pwd`.
    Since the pattern `ka*` will match `kaka.txt`and `kakapo.jpeg` as these both start with "ka". While the command:
   
   ```sh
-   ls *.jpeg
+  ls *.jpeg
   ```
   
    Will return:
@@ -541,7 +552,7 @@ Check that we've moved to the right place by running `pwd`.
    `?` is also a wildcard, but it matches exactly one character. So the command:
   
   ```sh
-   ls ????.*
+  ls ????.*
   ```
   
   Would return:
@@ -600,7 +611,7 @@ include in terminal excersise (delete slurm files later on maybe?)
 Now let's create a file. To do this we will use a text editor called Nano to create a file called `draft.txt`:
 
 ```sh
- nano draft.txt
+nano draft.txt
 ```
 
 ??? note "Which Editor?"
@@ -633,8 +644,7 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 (we'll be asked what file we want to save this to:
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
 
-<div
-src="../../Getting_Started/Getting_Help/Training/fig/nano-screenshot.png"></div>
+[](../../assets/images/nano-screenshot.png)
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
 return to the shell.
@@ -661,7 +671,7 @@ return to the shell.
 but `ls` now shows that we have created a file called `draft.txt`:
 
 ```sh
- ls
+ls
 ```
 
 ```out
@@ -673,13 +683,13 @@ draft.txt
 In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}```, but as we can't all work on the same file at once you will need to take your own copy. This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created. We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`.
 
 ```sh
- cp {{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}  .
+cp {{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}  .
 ```
 
 We can check that it did the right thing using `ls`
 
 ```sh
- ls
+ls
 ```
 
 ```out
@@ -768,7 +778,7 @@ Try 'ls --help' for more information.
 Commands will often have many **options**. Most commands have a `--help` flag, as can be seen in the error above.  You can also use the manual pages (aka manpages) by using the `man` command. The manual page provides you with all the available options and their use in more detail. For example, for thr `ls` command:
 
 ```sh
- man ls
+man ls
 ```
 
 ```out
