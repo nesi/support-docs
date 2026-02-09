@@ -2262,7 +2262,7 @@
                 "2024-10": "Warning: BLASTDB/2024-10 is old and so marked for deletion. Please switch to using a newer version or let us know that you still need 2024-10."
             },
             {
-                "2025-01": "Warning: BLASTDB/2025-01 is now over a year old. Please switch to using a newer version or let us know that you still need 2025-01."
+                "2025-01": "Warning: BLASTDB/2025-01 is now over a year old and so marked for deletion. Please switch to using a newer version or let us know that you still need 2025-01."
             }
         ],
         "network_licences": [],
