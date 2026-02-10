@@ -317,11 +317,11 @@ nevertheless.
 - [] Show Symlinks.
 - [] Show Help page.
 
-    The `-l` option makes `ls` use a **l**ong listing format, showing not only
-    the file/directory names but also additional information, such as the file size
-    and the time of its last modification. If you use both the `-h` option and the `-l` option,
-    this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
-    instead of `5369`.
+The `-l` option makes `ls` use a **l**ong listing format, showing not only
+the file/directory names but also additional information, such as the file size
+and the time of its last modification. If you use both the `-h` option and the `-l` option,
+this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
+instead of `5369`.
 </quiz>
 
 ## Relative paths
@@ -357,11 +357,9 @@ We should now be back in `{{ config.extra.working_directory[0] }}`.
 pwd
 ```
 
-
 ```out
 {{ config.extra.working_directory[0] }}
 ```
-
 
 ## Tab completion
 
@@ -405,40 +403,42 @@ Check that we've moved to the right place by running `pwd`.
 {{ config.extra.working_directory|join('/') }}/<username>
 ```
 
-  !!! tip "Two More Shortcuts"
+!!! tip "Two More Shortcuts"
   
-  The shell interprets a tilde (`~`) character at the start of a path to
-  mean "the current user's home directory". For example, if Nelle's home
-  directory is `/home/nelle`, then `~/data` is equivalent to
-  `/home/nelle/data`. This only works if it is the first character in the
-  path: `here/there/~/elsewhere` is *not* `here/there//home/nelle/elsewhere`.
+    The shell interprets a tilde (`~`) character at the start of a path to
+    mean "the current user's home directory". For example, if Nelle's home
+    directory is `/home/nelle`, then `~/data` is equivalent to
+    `/home/nelle/data`. This only works if it is the first character in the
+    path: `here/there/~/elsewhere` is *not* `here/there//home/nelle/elsewhere`.
 
-  Another shortcut is the `-` (dash) character. `cd` will translate `-` into
-  *the previous directory I was in*, which is faster than having to remember,
-  then type, the full path.  This is a *very* efficient way of moving
-  *back and forth between two directories* -- i.e. if you execute `cd -` twice,
-  you end up back in the starting directory.
+    Another shortcut is the `-` (dash) character. `cd` will translate `-` into
+    *the previous directory I was in*, which is faster than having to remember,
+    then type, the full path.  This is a *very* efficient way of moving
+    *back and forth between two directories* -- i.e. if you execute `cd -` twice,
+    you end up back in the starting directory.
 
-  The difference between `cd ..` and `cd -` is
-  that the former brings you *up*, while the latter brings you *back*.
+    The difference between `cd ..` and `cd -` is
+    that the former brings you *up*, while the latter brings you *back*.
   
-  ??? question "Absolute vs Relative Paths"
   
-   Starting from `/home/amanda/data`,
-   which of the following commands could Amanda use to navigate to her home directory,
-   which is `/home/amanda`?
+<quiz >
+
+### question "Absolute vs Relative Paths"
   
-   1. `cd .`
-   2. `cd /`
-   3. `cd home/amanda`
-   4. `cd ../..`
-   5. `cd ~`
-   6. `cd home`
-   7. `cd ~/data/..`
-   8. `cd`
-   9. `cd ..`
+Starting from `/home/amanda/data`,
+which of the following commands could Amanda use to navigate to her home directory,
+which is `/home/amanda`?
   
-    ## Solution
+- [] `cd .`
+- [] `cd /`
+- [] `cd home/amanda`
+- [] `cd ../..`
+- [X] `cd ~`
+- [] `cd home`
+- [X] `cd ~/data/..`
+- [X] `cd`
+- [X] `cd ..`
+  
     
     1. No: `.` stands for the current directory.
     2. No: `/` stands for the root directory.
@@ -449,21 +449,20 @@ Check that we've moved to the right place by running `pwd`.
     7. Yes: unnecessarily complicated, but correct.
     8. Yes: shortcut to go back to the user's home directory.
     9. Yes: goes up one level.
-   {: .solution}
-{: .challenge}
+</quiz>
 
-!!! question "Relative Path Resolution"
+<quiz>
+### Relative Path Resolution
   
   Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
   what will `ls ../backup` display?
-  
-  1. `../backup: No such file or directory`
-  2. `2012-12-01 2013-01-08 2013-01-27`
-  3. `original pnas_final pnas_sub`
-  
+
   ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
 
-  ??? question Solution
+- [] `../backup: No such file or directory`
+- [] `2012-12-01 2013-01-08 2013-01-27`
+- [X] `original pnas_final pnas_sub`
+  
     1. No: there *is* a directory `backup` in `/Users`.
     2. No: this is the content of `Users/thing/backup`,
        but with `..`, we asked for one level further up.
@@ -471,9 +470,9 @@ Check that we've moved to the right place by running `pwd`.
 
 !!! tip "Clearing your terminal"
   
-  If your screen gets too cluttered, you can clear your terminal using the
-  `clear` command. You can still access previous commands using <kbd>↑</kbd>
-  and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
+    If your screen gets too cluttered, you can clear your terminal using the
+    `clear` command. You can still access previous commands using <kbd>↑</kbd>
+    and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
 
 !!! question "Listing in Reverse Chronological Order"
   
