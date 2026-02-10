@@ -261,7 +261,7 @@ It also includes information about the file size, time of its last modification,
 
 Most Unix commands follow this basic structure.
 
-![Structure of a unix command](../../assets/images/Unix_Command_Struc.svg)
+![Structure of a Unix command](../../assets/images/Unix_Command_Struc.svg)
 
 The **prompt** tells us that the terminal is accepting inputs, prompts can be customised to show all sorts of info.
 
@@ -473,6 +473,7 @@ Check that we've moved to the right place by running `pwd`.
     see if a new output file was written.
 
 ## Globbing
+
 One of the most powerful features of bash is *filename expansion*, otherwise known as *globbing*.
 This allows you to use *patterns* to match a file name (or multiple files),
 which will then be operated on as if you had typed out all of the matches.
