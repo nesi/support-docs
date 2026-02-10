@@ -163,6 +163,10 @@ Use "module spider" to find all possible modules and extensions.
 Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 ```
 
+!!! tip "module spider"
+    `module avail` is very picky about capitalisation and spelling.
+    If you are struggling to find a module, you can try using `module spider <package_name>` which will search the available modules without case sensitivity and return descriptions of the available modules.
+
 ### Listing Currently Loaded Modules
 
 You can use the `module list` command to see which modules you currently have loaded in your environment.
@@ -380,10 +384,6 @@ Use "module spider" to find all possible modules.
 Use "module keyword key1 key2 ..." to search for all possible modules matching any of the
 "keys".
 ```
-
-!!! tip "module spider"
-    `module avail` is very picky about capitalisation and spelling.
-    If you are struggling to find a module, you can try using `module spider <package_name>` which will search the available modules without case sensitivity and return descriptions of the available modules.
 
 Let's take a closer look at the `Python` modules.
 There are many applications that are run using Python and may fail to run if the wrong version is loaded.
