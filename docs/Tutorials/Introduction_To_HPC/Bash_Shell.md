@@ -106,7 +106,7 @@ Commands mostly read and write files in the current working directory, i.e. 'her
 First, let's find out where we are by running the command `pwd` for '**p**rint **w**orking **d**irectory'.
 
 ```sh
- pwd
+pwd
 ```
 
 ```out
@@ -141,7 +141,7 @@ We will now list the contents of the directory we will be working from.
 We can use the following command to do this:
 
 ```sh
-ls /nesi
+ls {{ config.extra.working_directory[0] }}
 ```
 
 ```out
@@ -157,11 +157,14 @@ For the purposes of this tutorial you will be working within `/nesi/nobackup/<pr
 
 ### 2.0: `ls` Reading Comprehension
 
+
+![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
+
 <quiz>
 
 Given the below file tree.
 
-![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
+![filetree](../../assets/images/ABAQUS.png)
 
 What command would you type to get the following output?
   
@@ -299,20 +302,28 @@ You might notice that we now have two extra lines for directories `.` and `..`. 
 
 These two specific hidden directories are special as they will exist hidden inside every directory, with the `.` hidden directory representing your current directory and the `..` hidden directory representing the **parent** directory above your current directory.
 
-!!! question "Exploring More `ls` Flags"
-    You can also use two options at the same time. What does the command `ls` do when used
-    with the `-l` option? What about if you use both the `-l` and the `-h` option?
+<quiz>
+
+### question "Exploring More `ls` Flags"
   
-    Some of its output is about properties that we do not cover in this lesson (such
-    as file permissions and ownership), but the rest should be useful
-    nevertheless.
+You can also use two options at the same time. What does the command `ls` do when used
+with the `-l` option? What about if you use both the `-l` and the `-h` option?
   
-??? question "Solution"
-    The `-l` option makes `ls` use a **l**ong listing format, showing not only
-    the file/directory names but also additional information, such as the file size
-    and the time of its last modification. If you use both the `-h` option and the `-l` option,
-    this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
-    instead of `5369`.
+Some of its output is about properties that we do not cover in this lesson (such
+as file permissions and ownership), but the rest should be useful
+nevertheless.
+
+- [X] Long-List
+- [X] Human readable.
+- [] Show Symlinks.
+- [] Show Help page.
+
+The `-l` option makes `ls` use a **l**ong listing format, showing not only
+the file/directory names but also additional information, such as the file size
+and the time of its last modification. If you use both the `-h` option and the `-l` option,
+this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
+instead of `5369`.
+</quiz>
 
 ## Relative paths
 
@@ -409,22 +420,26 @@ Check that we've moved to the right place by running `pwd`.
     The difference between `cd ..` and `cd -` is
     that the former brings you *up*, while the latter brings you *back*.
   
-!!! question "Absolute vs Relative Paths"
-    Starting from `/home/amanda/data`,
-    which of the following commands could Amanda use to navigate to her home directory,
-    which is `/home/amanda`?
   
-    1. `cd .`
-    2. `cd /`
-    3. `cd home/amanda`
-    4. `cd ../..`
-    5. `cd ~`
-    6. `cd home`
-    7. `cd ~/data/..`
-    8. `cd`
-    9. `cd ..`
+<quiz >
+
+### question "Absolute vs Relative Paths"
   
-??? question "Solution"
+Starting from `/home/amanda/data`,
+which of the following commands could Amanda use to navigate to her home directory,
+which is `/home/amanda`?
+  
+- [] `cd .`
+- [] `cd /`
+- [] `cd home/amanda`
+- [] `cd ../..`
+- [X] `cd ~`
+- [] `cd home`
+- [X] `cd ~/data/..`
+- [X] `cd`
+- [X] `cd ..`
+  
+    
     1. No: `.` stands for the current directory.
     2. No: `/` stands for the root directory.
     3. No: Amanda's home directory is `/home/amanda`.
@@ -434,20 +449,20 @@ Check that we've moved to the right place by running `pwd`.
     7. Yes: unnecessarily complicated, but correct.
     8. Yes: shortcut to go back to the user's home directory.
     9. Yes: goes up one level.
-   {: .solution}
-{: .challenge}
+</quiz>
 
-!!! question "Relative Path Resolution"
-    Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
-    what will `ls ../backup` display?
+<quiz>
+### Relative Path Resolution
   
-    1. `../backup: No such file or directory`
-    2. `2012-12-01 2013-01-08 2013-01-27`
-    3. `original pnas_final pnas_sub`
-  
-    ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
+  Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
+  what will `ls ../backup` display?
 
-??? question Solution
+  ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
+
+- [] `../backup: No such file or directory`
+- [] `2012-12-01 2013-01-08 2013-01-27`
+- [X] `original pnas_final pnas_sub`
+  
     1. No: there *is* a directory `backup` in `/Users`.
     2. No: this is the content of `Users/thing/backup`,
        but with `..`, we asked for one level further up.
@@ -623,7 +638,7 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 (we'll be asked what file we want to save this to:
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
 
-<div>src="../../Getting_Started/Getting_Help/Training/fig/nano-screenshot.png"></div>
+[](../../assets/images/nano-screenshot.png)
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
 return to the shell.
