@@ -307,7 +307,7 @@ These two specific hidden directories are special as they will exist hidden insi
     as file permissions and ownership), but the rest should be useful
     nevertheless.
   
-!!! question "Solution"
+??? question "Solution"
     The `-l` option makes `ls` use a **l**ong listing format, showing not only
     the file/directory names but also additional information, such as the file size
     and the time of its last modification. If you use both the `-h` option and the `-l` option,
@@ -424,7 +424,7 @@ Check that we've moved to the right place by running `pwd`.
     8. `cd`
     9. `cd ..`
   
-!!! question "Solution"
+??? question "Solution"
     1. No: `.` stands for the current directory.
     2. No: `/` stands for the root directory.
     3. No: Amanda's home directory is `/home/amanda`.
@@ -447,7 +447,7 @@ Check that we've moved to the right place by running `pwd`.
   
     ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
 
-!!! question Solution
+??? question Solution
     1. No: there *is* a directory `backup` in `/Users`.
     2. No: this is the content of `Users/thing/backup`,
        but with `..`, we asked for one level further up.
@@ -467,7 +467,7 @@ Check that we've moved to the right place by running `pwd`.
     Hint: You may need to use the `-l` flag to see the
     last changed dates.
   
-!!! question "Solution"
+??? question "Solution"
     The most recently changed file is listed last when using `-rt`. This
     can be very useful for finding your most recent edits or checking to
     see if a new output file was written.
@@ -569,7 +569,7 @@ expanding wildcards.
     3. `ls *t??ne.pdb`
     4. `ls ethane.*`
   
-!!! question "Solution"
+??? question "Solution"
     The solution is `3.`
     `1.` shows all files whose names contain zero or more characters (`*`)
     followed by the letter `t`,
@@ -730,7 +730,7 @@ For `mv` and `cp` if the destination path (final argument) is an existing direct
 !!! question "Moving vs Copying"
     When using the `cp` or `rm` commands on a directory the 'recursive' flag `-r` must be used, but `mv` *does not* require it?
 
-!!! note Solution
+??? note Solution
     We mentioned previously that as far the computer is concerned, *renaming* is the same operation as *moving*.
     Contrary to what the commands name implies, *all moving is actually renaming*.
     The data on the hard drive stays in the same place,
