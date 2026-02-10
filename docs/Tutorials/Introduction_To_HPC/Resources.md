@@ -5,9 +5,9 @@ created_at: 2026-01-16
 !!! time "30 Minutes"
 
 !!! objectives
-    - "Understand how to look up job statistics and profile code."
-    - "Understand job size implications."
-    - "Understand problems and limitations involved in using multiple CPUs."
+    - Understand how to look up job statistics and profile code.
+    - Understand job size implications.
+    - Understand problems and limitations involved in using multiple CPUs.
 
 ## What Resources?
 
@@ -27,7 +27,7 @@ As a reminder, our Slurm script `example_job.sl` currently looks like this.
 module purge
 module load R/4.3.1-gimkl-2022a
 Rscript sum_matrix.r
-echo "Done!"```
+echo "Done!"
 ```
 
 We will now submit the same job again with more CPUs.
@@ -138,17 +138,15 @@ With this information, we may determine a couple of things.
 
 Memory efficiency can be determined by comparing _ReqMem_ (requested memory) with _MaxRSS_ (maximum used memory), MaxRSS is  given in KB, so a unit conversion is usually required.
 
-<br>
-
 $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
-
-<br>
 
 So for the above example we see that _0.1GB_ (102048K) of our requested _1GB_ meaning the memory efficincy was about _10%_.
 
 CPU efficiency can be determined by comparing _TotalCPU_ (CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to _Alloc_ (number of allocated CPUs) multiplied by _Elapsed_ (Walltime, actual time passed).
 
-$$ {Efficiency_{cpu} = { TotalCPU \over {Elapsed \times Alloc}}} $$
+$$
+{Efficiency_{cpu} = { TotalCPU \over {Elapsed \times Alloc}}}
+$$
 
 For the above example _33 seconds_ of computation was done,
 
@@ -158,27 +156,27 @@ Time Efficiency is simply the _Elapsed Time_ divided by _Time Requested_.
 
 $$ {Efficiency_{time} = { Elapsed \over Requested }} $$
 
-_48 seconcds_ out of _15 minutes_ requested give a time efficiency of about _5%_
+_48 seconds_ used out of _15 minutes_ requested give a time efficiency of about _5%_
 
 !!! question "Efficiency Exercise"
-  Calculate for the job shown below,
+    Calculate for the job shown below,
 
-  ```out
-  JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
-  --------------- ---------------- ----- ----------- ------------ ------- -------- ----------
-  37171050        Example-job          8    00:06:03     00:23:04     32G           FAILED
-  37171050.batch  batch                8    00:06:03    23:03.999         14082672k FAILED
-  37171050.extern extern               8    00:06:03    00:00.001                0  COMPLETED
-  ```
+    ```out
+    JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
+    --------------- ---------------- ----- ----------- ------------ ------- -------- ----------
+    37171050        Example-job          8    00:06:03     00:23:04     32G           FAILED
+    37171050.batch  batch                8    00:06:03    23:03.999         14082672k FAILED
+    37171050.extern extern               8    00:06:03    00:00.001                0  COMPLETED
+    ```
 
-  a. CPU efficiency.
-  b. Memory efficiency.
+    a. CPU efficiency.
+    b. Memory efficiency.
 
-  ??? question Solution
+??? question "Solution"
     a. CPU efficiency is `( 23 / ( 8 * 6 ) ) x 100` or around **48%**.
     b. Memory efficiency is `( 14 / 32 ) x 100` or around **43%**.
 
-For convenience, NeSI has provided the command `nn_seff <jobid>` to calculate **S**lurm **Eff**iciency (all NeSI commands start with `nn_`, for **N**eSI **N**IWA).
+For convenience, Mahuika has provided the command `nn_seff <jobid>` to calculate **S**lurm **Eff**iciency (all Mahuika commands start with `nn_`, for **N**eSI **N**IWA).
 
 ```sh
  nn_seff <jobid>
@@ -315,54 +313,50 @@ Running this command as is will show us information on tasks running on the logi
 ## Running Test Jobs
 
 As you may have to run several iterations before you get it right, you should choose your test job carefully.
-A test job should not run for more than 15 minutes. This could involve using a smaller input, coarser parameters or using a subset of the calculations.
+A test job should not run for more than 15 minutes.
+This could involve using a smaller input, coarser parameters or using a subset of the calculations.
 As well as being quick to run, you want your test job to be quick to start (e.g. get through queue quickly), the best way to ensure this is keep the resources requested (memory, CPUs, time) small.
 Similar as possible to actual jobs e.g. same functions etc.
 Use same workflow. (most issues are caused by small issues, typos, missing files etc, your test job is a good chance to sort out these issues.).
 Make sure outputs are going somewhere you can see them.
 
 !!! tip "Serial Test"
-  Often a good first test to run, is to execute your job _serially_ e.g. using only 1 CPU.
-  This not only saves you time by being fast to start, but serial jobs can often be easier to debug.
-  If you confirm your job works in its most simple state you can identify problems caused by
-  paralellistaion much more easily.
+    Often a good first test to run, is to execute your job _serially_ e.g. using only 1 CPU.
+    This not only saves you time by being fast to start, but serial jobs can often be easier to debug.
+    If you confirm your job works in its most simple state you can identify problems caused by
+    paralellisation much more easily.
 
 You generally should ask for 20% to 30% more time and memory than you think the job will use.
-Testing allows you to become more more precise with your resource requests. We will cover a bit more on running tests in the last lesson.
+Testing allows you to become more more precise with your resource requests.
+We will cover a bit more on running tests in the last lesson.
 
 ## Efficient way to run tests jobs using debug QOS (Quality of Service)
 
-Before submitting a large job, first submit one as a test to make
-sure everything works as expected. Often, users discover typos in their submit
-scripts, incorrect module names or possibly an incorrect path name after their job
-has queued for many hours. Be aware that your job is not fully scanned for
-correctness when you submit the job. While you may get an immediate error if your
-`#SBATCH` directives are malformed, it is not until the job starts to run that the
-interpreter starts to process the batch script.
-NeSI has an easy way for you to test your job submission.  One can employ the debug
-QOS to get a short, high priority test job. Debug jobs have to run within 15
-minutes and cannot use more that 2 nodes. To use debug QOS, add or change the
-following in your batch submit script
+Before submitting a large job, first submit one as a test to make sure everything works as expected.
+Often, users discover typos in their submit scripts, incorrect module names or possibly an incorrect path name after their job has queued for many hours.
+Be aware that your job is not fully scanned for correctness when you submit the job.
+While you may get an immediate error if your `#SBATCH` directives are malformed, it is not until the job starts to run that the interpreter starts to process the batch script.
+Mahuika has an easy way for you to test your job submission.
+One can employ the debug QOS to get a short, high priority test job.
+Debug jobs have to run within 15 minutes and cannot use more that 2 nodes.
+To use debug QOS, add or change the following in your batch submit script:
 
 ```sh
 #SBATCH --qos=debug
 #SBATCH --time=15:00
 ```
 
-Adding these SBATCH directives will provide your job with the highest priority
-possible, meaning it should start to run within a few minutes, provided
-your resource request is not too large.
+Adding these SBATCH directives will provide your job with the highest priority possible, meaning it should start to run within a few minutes, provided your resource request is not too large.
 
 ## Initial Resource Requirements
 
-As we have just discussed, the best and most reliable method of determining resource requirements is from testing,
-but before we run our first test there are a couple of things you can do to start yourself off in the right area.
+As we have just discussed, the best and most reliable method of determining resource requirements is from testing, but before we run our first test there are a couple of things you can do to start yourself off in the right area.
 
 ### Read the Documentation
 
-NeSI maintains documentation  that does have some guidance on using resources for some software
-However, as you noticed in the Modules lessons, we have a lot of software.  So it is also advised to search
-the web for others that may have written up guidance for getting the most out of your specific software.
+REANNZ maintains documentation that does have some guidance on using resources for some software.
+However, as you noticed in the [Environment and Modules lesson](Environment_And_Modules.md), we have a lot of software.
+So it is also advised to search the web for others that may have written up guidance for getting the most out of your specific software.
 
 ### Ask Other Users
 
@@ -371,11 +365,8 @@ If you know someone who has used the software before, they may be able to give y
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
 !!! postrequisite "Next Steps"
-    You can use this knowledge to set up the
-    next job with a closer estimate of its load on the system.
-    A good general rule
-    is to ask the scheduler for **30%** more time and memory than you expect the
-    job to need.
+    You can use this knowledge to set up the next job with a closer estimate of its load on the system.
+    A good general rule is to ask the scheduler for **30%** more time and memory than you expect the job to need.
 
 !!! keypoints
     - As your task gets larger, so does the potential for inefficiencies.
