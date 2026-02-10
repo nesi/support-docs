@@ -20,8 +20,6 @@ Freezer has two types of data storage classes:
 
 Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please <a href="mailto:support@nesi.org.nz?subject=Forgot%20my%20Freezer%20bucket%20name">email us</a> and let us know which project this is for.
 
-
-
 ## List contents and buckets
 
 ### Get information about a Freezer bucket
@@ -90,12 +88,29 @@ s3cmd du -H s3://<freezer-bucket>
 `s3cmd du -H` without specifying a bucket is only available for project owners.
 
 !!! warning
-
     If you have a large number files the `s3cmd du` command will fail. If you wish to receive information from `s3cmd du` we advise using a compression command such as `tar` to reduce the total number of files before adding them to Freezer.
     
 ## Uploading objects
 
-### Synchronise data
+### Step 1: Tarballing files
+
+If you have lots of small files (less than 1 GB each), it is recommended that you tarball your files before uploading them to Freezer. This is because uploading many small files take a long time to upload and download from Freezer. Tarballing allows you to copy all your files into one big file that is much easier to handle by Freezer.
+
+To tarball your files, type into mahuika:
+
+```sh
+tar -cvf <name of tarball>.tar <name of folder to tarball>
+```
+
+where:
+
+    * `<name of tarball>`: Replace this with the name you want to give to the tarball
+    * `<name of folder to tarball>`: Replace this with the name of the folder containing all the small files you want to tarball.
+
+!!! tip
+    If you are not sure about if you need to tarball your files, feel free to [contact Mahuika Support](mailto:support@nesi.org.nz). We can talk you though what files and folders are best to tarball.
+
+### Step 2a: Synchronise data
 
 Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
 
@@ -109,7 +124,7 @@ If you have already tried use `put` or `sync` but were interrupted, you can use 
 s3cmd sync --skip-existing --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
-### Put objects
+### Step 2b: Put objects
 
 To transfer files/folders to S3 gateway to be archived. `cd` into where the file/folder is on Mahuika and then use `s3cmd put`.
 
@@ -150,8 +165,7 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 Partially uploaded files will be deleted automatically.
 
 !!! warning
-
-  If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
+    If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
 
 ### Preview or dry-run
 
@@ -160,7 +174,8 @@ Use any of the `s3cmd` options with `-n, --dry-run`to preview the action.
 Only shows what should be uploaded or downloaded but doesn't actually do it. May still perform S3 requests to get bucket listings and other information though (only for file transfer commands).
 
 ## Restoring objects
-### List objects before restore
+
+### Step 1: List objects before restore
 
 List contained objects/files/folders:
 
@@ -190,7 +205,7 @@ s3cmd ls -r -l -H s3://<freezer-bucket>/your_directory/your_folder/
 2025-06-17 01:26     0   d41d8cd98f00b204e9800998ecf8427e     STANDARD     s3://<freezer-bucket>/your_directory/your_folder/test/test.txt
 ```
 
-### Restore from tape
+### Step 2a: Restore from tape
 
 It is necessary to restore data from the tape (Glacier) prior to retrieving it. To restore file from Glacier storage:
 
@@ -215,26 +230,27 @@ By default files will remain in the S3 bucket for 1 day. If longer is required, 
 s3cmd restore --recursive s3://<freezer-bucket>/your_directory/data_folder/ --restore-days=1
 ```
 
-### Get objects after restore
+### Step 2b: Get objects after restore
 
 !!! info
     Data needs to be restored (to storage class `STANDARD`) from the tape (storage class `GLACIER`), before it can be retrieved.
 
 Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
-1. Create the `data_folder` you want to retrieve in file, and change directory into `data_folder`.
-  ```sh
-  mkdir -p data_folder
-  cd data_folder
-  ```
+    1. Create the `data_folder` you want to retrieve in file, and change directory into `data_folder`.
+        ```sh
+        mkdir -p data_folder
+        cd data_folder
+        ```
 
-2. Retrieve the data from Freezer
-  ```sh
-  s3cmd get --recursive s3://<freezer-bucket>/your_directory/data_folder/
-  ```
+    2. Retrieve the data from Freezer
+        ```sh
+        s3cmd get --recursive s3://<freezer-bucket>/your_directory/data_folder/
+        ```
 
 This will place the all files and subdirectories in the above `data_folder` into your current directory.
 
+### Step 3: untarball your tar
 
 ## s3cmd reference
 
