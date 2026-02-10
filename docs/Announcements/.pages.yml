@@ -1,7 +1,8 @@
 ---
 nav:
-  - Autodeletion_returning_for_scratch_filesystem.md
-  - Identity_Changes_for_Crown_Research_Institutes.md
+  - Autodeletion_returning_for_Scratch_Filesystem.md
+  - Slurm_Job_email.md
   - Known_Issues_HPC3.md
+  - Identity_Changes_for_Crown_Research_Institutes.md
   - Release_Notes
 

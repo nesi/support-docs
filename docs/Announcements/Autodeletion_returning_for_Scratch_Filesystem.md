@@ -1,6 +1,6 @@
 ---
 created_at: 2025-11-07
-title: Autodeletion returning of scratch filesystem
+title: Autodeletion of scratch filesystem
 description: A page sharing the details of changes to scratch filesystem deletion policy
 status: new
 tags: [announcement]
