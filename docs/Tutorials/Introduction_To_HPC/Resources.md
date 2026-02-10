@@ -316,9 +316,11 @@ As you may have to run several iterations before you get it right, you should ch
 A test job should not run for more than 15 minutes.
 This could involve using a smaller input, coarser parameters or using a subset of the calculations.
 As well as being quick to run, you want your test job to be quick to start (e.g. get through queue quickly), the best way to ensure this is keep the resources requested (memory, CPUs, time) small.
-Similar as possible to actual jobs e.g. same functions etc.
-Use same workflow. (most issues are caused by small issues, typos, missing files etc, your test job is a good chance to sort out these issues.).
-Make sure outputs are going somewhere you can see them.
+Some best practices for test jobs:
+
+- Keep the test as similar as possible to actual jobs e.g. same functions etc.
+- Use the same workflow, most issues are caused by small issues, typos, missing files etc. Your test job is a good chance to sort out these issues.
+- Make sure outputs, logs and error files are going somewhere you can see them.
 
 !!! tip "Serial Test"
     Often a good first test to run, is to execute your job _serially_ e.g. using only 1 CPU.
@@ -330,7 +332,12 @@ You generally should ask for 20% to 30% more time and memory than you think the 
 Testing allows you to become more more precise with your resource requests.
 We will cover a bit more on running tests in the last lesson.
 
-## Efficient way to run tests jobs using debug QOS (Quality of Service)
+!!! tip "Example inputs"
+    Mahuika has a shared directory (`/opt/nesi/examples`) with some small input files of commonly used types for use in testing.
+    If you have requests or example files to contribute to this directory, please {% include "partials/support_request.html" %}.
+    
+
+### Run tests jobs using debug QOS (Quality of Service)
 
 Before submitting a large job, first submit one as a test to make sure everything works as expected.
 Often, users discover typos in their submit scripts, incorrect module names or possibly an incorrect path name after their job has queued for many hours.
@@ -348,7 +355,7 @@ To use debug QOS, add or change the following in your batch submit script:
 
 Adding these SBATCH directives will provide your job with the highest priority possible, meaning it should start to run within a few minutes, provided your resource request is not too large.
 
-## Initial Resource Requirements
+## Determining initial resource requirements
 
 As we have just discussed, the best and most reliable method of determining resource requirements is from testing, but before we run our first test there are a couple of things you can do to start yourself off in the right area.
 
