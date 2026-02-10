@@ -1,18 +1,15 @@
 ---
 created_at: 2025-04-28
-description: List of features currently missing from HPC3.
+description: List of features currently missing from Mahuika (HPC3).
 tags: 
     - hpc3
     - refresh
+    - mahuika
 ---
 
 Below is a list issues that we're actively working on. We hope to have these resolved soon. This is intended to be a temporary page.
 
 For differences between the new platforms and Mahuika, see the more permanent [differences from Mahuika](../Getting_Started/FAQs/Mahuika_HPC3_Differences.md).
-
-
-!!! info "Recently fixed"
-     - Emails can now be sent by Slurm when you set `--mail-user`.
 
 ## Access
 
