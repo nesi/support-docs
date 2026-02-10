@@ -1,12 +1,13 @@
 ---
 created_at: 2026-01-16
+status: tutorial
 ---
 
 
 !!! time "30 minutes"
 
 !!! objectives
-    - "Prepare a job submission script for the parallel executable."
+    - Prepare a job submission script for the parallel executable.
 
 ## Methods of Parallel Computing
 
@@ -54,7 +55,7 @@ Tasks cannot share cores, this means in most circumstances leaving `--cpus-per-t
 
 Using a combination of Shared and Distributed memory is called _Hybrid Parallel_.
 
-### GPGPU's
+### GPUs
 
 GPUs compute large number of simple operations in parallel, making them well suited for Graphics Processing (hence the name), or any other large matrix operations.
 
@@ -66,12 +67,13 @@ GPUs can be requested using `--gpus-per-node=<gpu_type>:<gpu_number>`
 
 Depending on the GPU type, we *may* also need to specify a partition using `--partition`.
 
-#### GPU Job Example
+#### GPU job example
 
 Create a new script called `gpu-job.sl`
 
 ```sl
 #!/bin/bash -e
+
 #SBATCH --job-name        gpu-job
 #SBATCH --account         {{config.extra.project_code}} 
 #SBATCH --output          %x.out
@@ -88,56 +90,57 @@ then submit with
  sbatch gpu-job.sl
 ```
 
-??? question Solution
+??? question "Solution"
   
-  ```out
-  cat gpu-job.out
-  ```
+    ```out
+    cat gpu-job.out
+    ```
 
-  ```out
-  Tue Mar 12 19:40:51 2024       
-  +-----------------------------------------------------------------------------+
-  | NVIDIA-SMI 525.85.12    Driver Version: 525.85.12    CUDA Version: 12.0     |
-  |-------------------------------+----------------------+----------------------+
-  | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-  | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-  |                               |                      |               MIG M. |
-  |===============================+======================+======================|
-  |   0  Tesla P100-PCIE...  On   | 00000000:05:00.0 Off |                    0 |
-  | N/A   28C    P0    24W / 250W |      0MiB / 12288MiB |      0%      Default |
-  |                               |                      |                  N/A |
-  +-------------------------------+----------------------+----------------------+
-                                                                                  
-  +-----------------------------------------------------------------------------+
-  | Processes:                                                                  |
-  |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-  |        ID   ID                                                   Usage      |
-  |=============================================================================|
-  |  No running processes found                                                 |
-  +-----------------------------------------------------------------------------+
-  ```
+    ```out
+    Tue Mar 12 19:40:51 2024       
+    +-----------------------------------------------------------------------------+
+    | NVIDIA-SMI 525.85.12    Driver Version: 525.85.12    CUDA Version: 12.0     |
+    |-------------------------------+----------------------+----------------------+
+    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+    |                               |                      |               MIG M. |
+    |===============================+======================+======================|
+    |   0  Tesla P100-PCIE...  On   | 00000000:05:00.0 Off |                    0 |
+    | N/A   28C    P0    24W / 250W |      0MiB / 12288MiB |      0%      Default |
+    |                               |                      |                  N/A |
+    +-------------------------------+----------------------+----------------------+
+                                                                                    
+    +-----------------------------------------------------------------------------+
+    | Processes:                                                                  |
+    |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+    |        ID   ID                                                   Usage      |
+    |=============================================================================|
+    |  No running processes found                                                 |
+    +-----------------------------------------------------------------------------+
+    ```
 
-### Job Array
+### Job arrays
 
-Job arrays are not "multiproccessing" in the same way as the previous two methods.
-Ideal for _embarrassingly parallel_ problems, where there are little to no dependencies between the different jobs.
+Job arrays are not "multiprocessing" in the same way as the previous two methods.
+Job arrays are ideal for _embarrassingly parallel_ problems, where there are little to no dependencies between the different jobs.
 
-Can be thought of less as running a single job in parallel and more about running multiple serial-jobs simultaneously.
+Arrays can be thought of less as running a single job in parallel and more about running multiple serial-jobs simultaneously.
 Often this will involve running the same process on multiple inputs.
 
-Embarrassingly parallel jobs should be able to scale without any loss of efficiency. If this type of parallelisation is an option, it will almost certainly be the best choice.
+Embarrassingly parallel jobs should be able to scale without any loss of efficiency.
+If this type of parallelisation is an option, it will almost certainly be the best choice.
 
 A job array can be specified using `--array`
 
 If you are writing your own code, then this is something you will probably have to specify yourself.
 
-## How to Utilise Multiple CPUs
+## How to utilise Multiple CPUs
 
 Requesting extra resources through Slurm only means that more resources will be available, it does not guarantee your program will be able to make use of them.
 
 Generally speaking, Parallelism is either _implicit_ where the software figures out everything behind the scenes, or _explicit_ where the software requires extra direction from the user.
 
-### Scientific Software
+### Scientific software
 
 The first step when looking to run particular software should always be to read the documentation.
 On one end of the scale, some software may claim to make use of multiple cores implicitly, but this should be verified as the methods used to determine available resources are not guaranteed to work.
@@ -146,7 +149,7 @@ Some software will require you to specify number of cores (e.g. `-n 8` or `-np 1
 
 Occasionally your input files may require rewriting/regenerating for every new CPU combintation (e.g. domain based parallelism without automatic partitioning).
 
-### Writing Code
+### Writing code
 
 Occasionally requesting more CPUs in your Slurm job is all that is required and whatever program you are running will automagically take advantage of the additional resources.
 However, it's more likely to require some amount of effort on your behalf.
@@ -171,6 +174,5 @@ However, unless that function is where the majority of time is spent, this is un
 | General Purpose GPU | | `--gpus-per-node`  | |
 
 !!! keypoints
-    - "Parallel programming allows applications to take advantage of
-  parallel hardware; serial code will not 'just work.'"
-    - "There are multiple ways you can run "
+    - Parallel programming allows applications to take advantage of parallel hardware; serial code will not 'just work.'
+    - There are multiple ways you can run processes in parallel

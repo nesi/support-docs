@@ -1,5 +1,6 @@
 ---
 created_at: 2026-01-16
+status: tutorial
 ---
 
 !!! time "30 Minutes"

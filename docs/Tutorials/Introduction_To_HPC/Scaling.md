@@ -7,7 +7,7 @@ status: tutorial
 !!! time "45 Minutes"
 
 !!! objectives
-    - "Understand scaling procedure."
+    - Understand scaling procedure.
 
 The aim of these tests will be to establish how a jobs requirements change with size (CPUs, inputs) and ultimately figure out the best way to run your jobs.
 Unfortunately we cannot assume speedup will be linear (e.g. double CPUs won't usually half runtime, doubling the size of your input data won't necessarily double runtime) therefore more testing is required. This is called *scaling testing*.
@@ -49,9 +49,8 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     Make sure you have entered the values in the correct format and there is a tick next to each entry.
     ![Correctly entered data in spreadsheet](../../assets/images/correct-spreadsheet-entry.png)
 
-    ??? question  Solution
-
-        [spreadsheet]({{ config.extra.exercise }})
+??? question  Solution
+    [spreadsheet]({{ config.extra.exercise }})
 
 !!! keypoints
     - Start small.
