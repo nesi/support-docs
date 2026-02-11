@@ -20,7 +20,7 @@ In order to establish an understanding of the scaling properties we may have to 
 
 Most computational tasks will have a certain amount of work that must be computed serially.
 
-![Larger fractions of parallel code will have closer to linear scaling performance.](../../assets/images/AmdahlsLaw2.svg)
+![A graph illustrating Amdahl's law with number of processors on the x axis ranging from 1 to 65,536 and speedup on the y axis ranging from 0 to 20. There are 4 lines indicating parallel portions of 50%, 75%, 90%, and 95%. Larger fractions of parallel code will have closer to linear scaling performance.](../../assets/images/AmdahlsLaw2.svg)
 
 Eventually your performance gains will plateau.
 

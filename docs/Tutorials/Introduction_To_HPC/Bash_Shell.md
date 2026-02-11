@@ -157,7 +157,6 @@ For the purposes of this tutorial you will be working within `/nesi/nobackup/<pr
 
 ### 2.0: `ls` Reading Comprehension
 
-
 ![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
 
 <quiz>
@@ -264,7 +263,7 @@ It also includes information about the file size, time of its last modification,
 
 Most Unix commands follow this basic structure.
 
-![Structure of a Unix command](../../assets/images/Unix_Command_Struc.svg)
+![A diagram showing the structure of a Unix command. The first section is the prompt and in the example reads `[yourUsername@mahuika] ~`. The second section is the command and the example reads `ls`. The third section is the option which is `-l` in the example. The last section is the argument which is `/nesi/project/project_nesi99991` in the example.](../../assets/images/Unix_Command_Struc.svg)
 
 The **prompt** tells us that the terminal is accepting inputs, prompts can be customised to show all sorts of info.
 
@@ -638,7 +637,7 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 (we'll be asked what file we want to save this to:
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
 
-[](../../assets/images/nano-screenshot.png)
+[A screenshot of the nano text editor. The file open is called `draft.txt` and contains two lines of text reading "It's not publish or perish any more, it's share and thrive."](../../assets/images/nano-screenshot.png)
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
 return to the shell.

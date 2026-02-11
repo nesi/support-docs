@@ -29,7 +29,7 @@ On an HPC system, the scheduler manages which jobs run where and when.
 The following illustration compares these tasks of a job scheduler to a waiter in a restaurant.
 If you can relate to an instance where you had to wait for a while in a queue to get in to a popular restaurant, then you may now understand why sometimes your job do not start instantly as in your laptop.
 
-![Queue manager](../../assets/images/restaurant_queue_manager.svg)
+![A cartoon representing the queue manager as the host of a restaurant. The restaurant has four tables. One table has six empty chairs and is labeled as an idle compute node with six cores. The second table has four empty chairs and a reserved sign on it and is labeled as a reserved compute node with four cores. The third table has five chairs with users sitting in them and is labeled as a busy compute node with five cores. The final table has four chairs, two with users sitting in them, one empty, and one with a user going to sit in it. This table is labeled as a compute node with four cores.](../../assets/images/restaurant_queue_manager.svg)
 
 The scheduler used in this lesson is [Slurm](https://slurm.schedmd.com/).
 Although Slurm is not used everywhere, running jobs is quite similar regardless of what software is being used.
@@ -127,7 +127,7 @@ In order for the job scheduler to do its job we need to provide a bit more infor
 This is done by specifying Slurm parameters in our batch script.
 Each of these parameters must be preceded by the special token `#SBATCH` and placed after the shebang, but before the content of the rest of your script.
 
-![](../../assets/images/parts_slurm_script.svg)
+![A marked up screenshot of a slurm bash script. The first line is labeled as the shebang and contains `#! /bin/bash -e`. The next section has four lines labeled as the Slurm header. There are three parts to each of these Slurm header lines. The first is the keyword which is `#SBATCH` for all lines. The second part is the option which all start with `--` and include the account and time. The third part is the value which corresponds to the option for that line. The final section of the script is labeled as bash commands and contains a series of example bash commands.](../../assets/images/parts_slurm_script.svg)
 
 These parameters tell Slurm things around how the script should be run, like memory, cores and time required.
 

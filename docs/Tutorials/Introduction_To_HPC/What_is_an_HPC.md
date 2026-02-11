@@ -26,7 +26,7 @@ that are provisioned to users on demand or as needed.
 *Cluster* is a more specific term describing a type of supercomputer comprised of multiple smaller computers (nodes) working together.
 Almost all supercomputers are clusters.
 
-![The REANNZ HPCs](../../assets/images/NeSI-HPC-Facility.jpg)
+![An image of the REANNZ HPCs](../../assets/images/NeSI-HPC-Facility.jpg)
 *The REANNZ High Performance Computers*
 
 ## Access
@@ -61,7 +61,7 @@ A node is similar in makeup to a regular desktop or laptop, composed of *CPUs* (
 - **Disk** is for long term storage, data stored here is permanent, i.e. still there even if the computer has been restarted.
 It is common for nodes to connect to a shared, remote disk.
 
-![cluster diagram](../../assets/images/clusterDiagram.png)
+![A diagram representing the cluster. There are four identical sections connected to one another. Each section is split into two parts. The first part is the memory. The second part is further subdivided into four CPUs.](../../assets/images/clusterDiagram.png)
 
 !!! info "Differences Between Nodes"
     Many HPC clusters have a variety of nodes optimized for particular workloads.
