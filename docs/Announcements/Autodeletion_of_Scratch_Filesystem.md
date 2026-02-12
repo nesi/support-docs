@@ -1,5 +1,6 @@
 ---
 created_at: 2025-11-07
+Title: Autodelete of Scratch Filesystem
 description: A page sharing the details of changes to scratch filesystem deletion policy
 status: new
 tags: [announcement]
@@ -23,7 +24,7 @@ Update: This new policy has come into effect as of Wednesday 19 November. Our fi
 
 Prior to data being deleted, we’ll send you an email that identifies what has been marked for deletion. You can subscribe to or unsubscribe from receiving these notifications through [my.nesi.org.nz](https://my.nesi.org.nz).
 
-You can also manually check at any time if you have any data scheduled for deletion. [Instructions for that can be found here](../Storage/Automatic_cleaning_of_nobackup.md#how-can-i-check-which-files-have-been-already-deleted-or-are-scheduled-for-deletion).
+You can also manually check at any time if you have any data scheduled for deletion. [Instructions for that can be found here](../Storage/Automatic_cleaning_of_nobackup.md)
 
 ## More information
 
