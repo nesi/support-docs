@@ -2,7 +2,6 @@
 created_at: '2020-05-07T02:51:35Z'
 tags:
 - git
-- github
 - version control
 - repository
 title: 'Git: Reference Sheet'
@@ -13,81 +12,13 @@ zendesk_section_id: 360000278975
 ---
 
 Git is the most universally adopted version control software and is
-often used alongside remote repositories like GitHub and GitLab for
+often used alongside remote repositories like GitHub, GitLab, Bitbucket or Gitea for
 developing, managing and distributing code.
 
 Full Git documentation can be found [here](https://git-scm.com/docs/git), or using `man git`.
 
 ![Git\_Diagram.svg](../../assets/images/Git-Reference_Sheet.svg)
 
-## Authentication
-
-In order to pull from a private repo, or push changes to a remote, you
-need to authenticate yourself on the cluster.
-
-!!! warning "Password authentication"
-     GitHub removed support for password authentication on August 13, 2021.
-     Using a SSH key is now the easiest way to set up authentication.
-
-### SSH Authentication (GitHub)
-
-More information can be found in the [GitHub
-documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
-
-- On the NeSI cluster, run the command
-
-    ```sh
-    ssh-keygen -t ed25519 -C "your_github_account@example.com"
-    ```
-
-- When prompted for a file name, press `enter`. When prompted for a password, press enter twice more.
-
-- Open up the newly created .pub key with the command
-
-    ```sh
-    cat ~/.ssh/id_ed25519.pub
-    ```
-
-    (or whatever you named the key). It should look something like:
-
-    ```sh
-    ssh-ed25519 ABCDEFGKSAfjksjafkjsaLJfakjJF your_github_account@example.com
-    ```
-
-    Copy the whole key.
-
-- Now log in to your GitHub account. In the upper-right corner of any
-    page, click your profile photo click **Settings**.
-
-    ![Settings icon in the user bar](../../assets/images/Git-Reference_Sheet.png)
-
-- In the "Access" section of the sidebar, click **SSH and GPG keys**.
-
-- Click **New SSH key** or **Add SSH key**.
-
-    ![SSH Key button](../../assets/images/Git-Reference_Sheet_0.png)
-
-- In the "Title" field, put "Mahuika" or "NeSI".
-
-- Paste your key into the "Key" field.
-
-    ![The key field](../../assets/images/Git-Reference_Sheet_1.png)
-
-- Click **Add SSH key**.
-
-- Switching back to your terminal on the cluster, you can test your
-    connection with the command
-
-    ``` sh
-    ssh -T git@github.com
-    ```
-
-    You may be prompted to authenticate, if so type 'yes'  
-    If everything is working, you should see the message
-
-    ```out
-    Hi User! You've successfully authenticated, but GitHub does not provide shell access.
-    ```
 
 ## Basics
 
