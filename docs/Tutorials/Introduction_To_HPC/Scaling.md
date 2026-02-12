@@ -1,0 +1,58 @@
+---
+created_at: 2026-01-19
+description: Best Practice for getting your job to use multiple CPUs
+status: tutorial
+---
+
+!!! time "45 Minutes"
+
+!!! objectives
+    - Understand scaling procedure.
+
+The aim of these tests will be to establish how a jobs requirements change with size (CPUs, inputs) and ultimately figure out the best way to run your jobs.
+Unfortunately we cannot assume speedup will be linear (e.g. double CPUs won't usually half runtime, doubling the size of your input data won't necessarily double runtime) therefore more testing is required. This is called *scaling testing*.
+
+In order to establish an understanding of the scaling properties we may have to repeat this test several times, giving more resources each iteration.
+
+## Scaling Behavior
+
+### Amdahl's Law
+
+Most computational tasks will have a certain amount of work that must be computed serially.
+
+![A graph illustrating Amdahl's law with number of processors on the x axis ranging from 1 to 65,536 and speedup on the y axis ranging from 0 to 20. There are 4 lines indicating parallel portions of 50%, 75%, 90%, and 95%. Larger fractions of parallel code will have closer to linear scaling performance.](../../assets/images/AmdahlsLaw2.svg)
+
+Eventually your performance gains will plateau.
+
+The fraction of the task that can be run in parallel determines the point of this plateau.
+Code that has no serial components is said to be "embarrassingly parallel".
+
+It is worth noting that Amdahl's law assumes all other elements of scaling are happening with 100% efficient, in reality there are additional computational and communication overheads.
+
+??? question "Scaling Exercise"
+    1. Find your name in the [spreadsheet]({{ config.extra.exercise }}) and modify your `example_job.sl` to request
+    "x" `--cpus-per-task`. 
+    For example `#SBATCH --cpus-per-task 10`.
+    2. Estimate memory requirement based on our previous runs and the cpus requested, memory
+    is specified with the `--mem ` flag, it does not accept decimal values, however you may
+    specify a unit (`K`|`M`|`G`), if no unit is specified it is assumed to be `M`.
+    For example `#SBATCH --mem 1200`.
+    3. Now submit your job, we will include an extra argument `--acctg-freq 1`.
+    By default SLURM records job data every 30 seconds.
+    This means any job running for less than 30
+    seconds will not have it's memory use recorded.
+    Submit the job with `sbatch --acctg-freq 1 example_job.sl`.
+    4. Watch the job with `squeue --me` or `watch squeue --me`.
+    5. On completion of job, use `nn_seff <job-id>`.
+    6. Record the jobs "Elapsed", "TotalCPU", and "Memory" values in the spreadsheet.
+    (Hint: They are the first numbers after the percentage efficiency in output of `nn_seff`).
+    Make sure you have entered the values in the correct format and there is a tick next to each entry.
+    ![Correctly entered data in spreadsheet](../../assets/images/correct-spreadsheet-entry.png)
+
+??? question  Solution
+    [spreadsheet]({{ config.extra.exercise }})
+
+!!! keypoints
+    - Start small.
+    - Test one thing at a time (unit tests).
+    - Record everything.

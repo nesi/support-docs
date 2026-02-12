@@ -62,12 +62,25 @@ markdown_extensions:
   - abbr
   - footnotes
   - def_list
+  - pymdownx.arithmatex:
+      generic: true
 extra:
   slurm: slurm-25.05.6
+  project_code: nesi99991
+  working_directory: ["nesi", "nobackup", "nesi99991", "introhpc2603"]
+  example_script: "example script"
+  exercise: "https://docs.google.com/spreadsheets/d/1D5PnhE6iJOB3ZKkDCiBHnk5CNZlhmj_gS-IXKGkkVoI/edit?usp=sharing"
+  status: 
+  - deprecated
+  - new
+  - tutorial
   analytics:
     provider: google
     property: G-TVQR4R1F40
 plugins:
+  - mkdocs_quiz:
+      disable_after_submit: false
+      shuffle_answers: true
   - search
   - open-in-new-tab
   - rss:
@@ -98,9 +111,9 @@ plugins:
       module_name: macro_hooks
       include_dir: overrides
 extra_css:
-  - assets/stylesheets/footer.css
-  - assets/stylesheets/custom_admonations.css
   - assets/stylesheets/theme.css
 extra_javascript:
     - assets/javascripts/general.js
     - https://status.nesi.org.nz/embed/script.js
+    - assets/javascripts/mathjax.js
+    - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
