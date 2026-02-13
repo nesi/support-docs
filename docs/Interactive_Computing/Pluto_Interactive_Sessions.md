@@ -3,18 +3,19 @@ created_at: '2020-01-05T21:43:18Z'
 tags: 
   - interactive
   - Pluto
+  - Julia
+  - notebook
 description: How to run a Pluto interactive session on the NeSI cluster.
 ---
 
 # Pluto.ji interactive sessions
 
-!!! warning
-     If you are using a windows computer, this method has currently
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not
-     tested it yet in Putty or Mobaxterm
+For new users we recommend running Pluto from our [OnDemand Service](https://docs.nesi.org.nz/Interactive_Computing/OnDemand/).  However,
+many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
-To run Julia+Pluto.ji in interactive mode, first we need to load
-your interactive session:
+>If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
+
+To run Pluto.ji in interactive mode, first we need to load your interactive session:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
