@@ -2,25 +2,24 @@
 created_at: '2020-01-05T21:43:18Z'
 tags: 
   - interactive
-  - Marino
-description: How to run a Marino interactive session on the NeSI cluster.
+  - Marimo
+  - python
+  - notebook
+description: How to run a Marimo interactive session on the NeSI cluster.
 ---
 
 # Marimo interactive sessions
 
-!!! warning
-     If you are using a windows computer, this method has currently
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not
-     tested it yet in Putty or Mobaxterm
+>If you are using a windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
 
-To run Python+Marino in interactive mode, first we need to load
+To run Marimo in interactive mode, first we need to load
 your interactive session:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
 ```
 
-Then, we need to start up Python, install Marino if you dont have it
+Then, we need to start up Python, install Marimo if you dont have it
 yet, and obtain the hostname and the port:
 
 ```sh
@@ -32,7 +31,7 @@ module load Python
 python3 -m venv venv
 source venv/bin/activate
 
-# Install Marino
+# Install Marimo
 pip3 install marimo
 
 # Select a random port
@@ -45,14 +44,14 @@ echo $PORT               # <-- This is the port
 ```
 
 Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Then, we need to start up Marino:
+and `echo $PORT` commands. Then, we need to start up Marimo:
 
 ```sh
-# Start Marino. This might take a minute
+# Start Marimo. This might take a minute
 marimo edit --headless --host 0.0.0.0 --port $PORT
 ```
 
-Make a note of the first URL given by Marino once it launches.
+Make a note of the first URL given by Marimo once it launches.
 For instance:
 
 ```sh
@@ -63,7 +62,7 @@ Create or edit notebooks in your browser 📝
 ```
 
 The `http://0.0.0.0:9929?access_token=Q2QwZyLs8kJP8eHLcNv13A`
-address in this case will be our URL that we will use to launch Marino
+address in this case will be our URL that we will use to launch Marimo
 
 In a second terminal on your local machine (or a second screen in tmux or screen),
 type the following:
@@ -84,4 +83,4 @@ http://0.0.0.0:PORT?access_token=TOKEN
 # http://0.0.0.0:9929?access_token=Q2QwZyLs8kJP8eHLcNv13A
 ```
 
-You will now be able to see and work wih Python+Marino in your web browser.
+You will now be able to see and work wih Marimo in your web browser.
