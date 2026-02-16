@@ -157,34 +157,28 @@ For the purposes of this tutorial you will be working within `/nesi/nobackup/<pr
 
 ### 2.0: `ls` Reading Comprehension
 
-![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
-
 <quiz>
 
 Given the below file tree.
 
-![filetree](../../assets/images/ABAQUS.png)
+![filetree](../../assets/images/tutorial_bash_shell_ex1.svg)
 
 What command would you type to get the following output?
-  
+
 ```out
 original pnas_final pnas_sub
 ```
 
 - [ ] `ls pwd`
-- [ ] `ls backup`
+> `pwd` is not the name of a directory.
+- [] `ls backup`
+> `ls backup` depends on your current directory.
 - [X] `ls /Users/backup`
 - [ ] `ls /backup`
+> There is no such directory.
 
-This uses the absolute path explicitly.
 </quiz>
   
-  <!-- !!! solution
-    1. No: `pwd` is not the name of a directory.
-    2. Possibly: It depends on your current directory (we will explore this more shortly).
-    3. Yes: u
-    4. No: There is no such directory. -->
-
 ## Moving about
 
 Currently we are still in our home directory, we want to move into the`project` directory from the previous command.
