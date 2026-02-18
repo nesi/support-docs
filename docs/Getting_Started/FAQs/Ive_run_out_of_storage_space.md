@@ -14,10 +14,10 @@ an error (and probably kill your job).
 Current file-count and disk space can be found using `nn_storage_quota`.
 
 ```sh
-Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
-home_user123             20G    1.957G    9.79%      92160     21052    22.84%
-project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
-nobackup_nesi99999              6.833T            10000000    2691383   26.91%
+Quota_Location    AvailableGiB   UsedGiB     Use%
+home_user123               20G    1.957G    9.79%
+project_nesi99999           2T      798G   38.96%
+nobackup_nesi99999      6.833T
 ```
 
 !!! note
@@ -29,8 +29,7 @@ There are a few ways to deal with file count problems
 
 ### Use the nobackup filesystem
 
-Your nobackup directories `/nesi/nobackup/<projectcode>` has a significantly higher inode count and no disk space limits.
-Files here are not backed up, so best used for intermediary or replaceable data.
+Your nobackup directories `/nesi/nobackup/<projectcode>` has a significantly disk space limits.
 
 ### Delete unnecessary files
 
