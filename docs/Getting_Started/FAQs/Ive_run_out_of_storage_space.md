@@ -3,7 +3,6 @@ created_at: '2019-08-26T00:02:24Z'
 tags:
 - disk quota exceeded
 title: I've run out of storage space
-status: deprecated
 ---
 
 There are two tracked resources in the NeSI filesystem, *disk space* and
