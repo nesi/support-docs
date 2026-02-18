@@ -58,7 +58,7 @@ You can ignore the provided `/tmp` directory and use a location
 within `/nesi/nobackup`. This will generally be the slowest option,
 particularly if there are thousands of small files involved. Also the
 files will remain after the job finishes and will need to be manually deleted,
-so be weary of how much space they take and how many of them there are.
+so be wary of how much space they take and how many of them there are.
 
 For example;
 
