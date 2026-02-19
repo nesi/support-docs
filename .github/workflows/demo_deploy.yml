@@ -69,8 +69,8 @@ jobs:
               msg="<strong>Test deployment successful!!</strong> (${finished})<br>Preview available at \
               <a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}\">${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}</a>"
               # Get diff of main branch and feature branch.
-              changed_pages=$(gh api repos/${GITHUB_REPOSITORY}/compare/${{ github.event.pull_request.base.sha }}...\
-              ${{ github.event.pull_request.head.sha }} --jq '.files[] | select(.filename | endswith(".md")) | .filename')
+              changed_pages=$(gh api repos/${GITHUB_REPOSITORY}/compare/${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}\
+              --jq '.files[] | select(.filename | endswith(".md")) | .filename')
               # If changes append to message.
               if [ -n "${changed_pages}" ]; then
                   msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
