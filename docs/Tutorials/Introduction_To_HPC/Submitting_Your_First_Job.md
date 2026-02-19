@@ -147,7 +147,7 @@ All the parameters available can be found by checking `man sbatch` or on the onl
     Comments in UNIX shell scripts (denoted by `#`) are ignored by the bash interpreter.
     Why is it that we start our Slurm parameters with `#` if it is going to be ignored?
 
-    Solution:
+??? question "Solution"
 
     Commented lines are ignored by the bash interpreter, but they are *not* ignored by Slurm.
     The `#SBATCH` parameters are read by Slurm when we *submit* the job.
@@ -189,7 +189,6 @@ squeue --me
 JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  TIME_LEFT STATE    NODELIST(REASON)
 231964  yourUsername nesi12345 example_job.sl 1    300M     large   N/A        1:00     PENDING  (Priority)
 ```
-
 
 We can see many details about our job, most importantly is it’s STATE, the most common states you might see are..
 
@@ -233,10 +232,9 @@ JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  T
 
     Try submitting multiple jobs and then cancelling them all.
 
-    Solution:
+??? question "Solution"
 
     First submit a trio of jobs:
-
     ```sh
     sbatch  example_job.sl
     sbatch  example_job.sl
@@ -295,7 +293,7 @@ This can be suppressed using the flag `-X`.
     The `SLURM_SUBMIT_DIR` variable is set to the directory from which our job was submitted.
     Using the `SLURM_SUBMIT_DIR` variable, modify your job so that it prints out the location from which the job was submitted.
 
-    Solution:
+??? question "Solution"
 
     ```sh
     nano example_job.sh
