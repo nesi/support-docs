@@ -32,7 +32,7 @@ jobs:
         id: comment
         run: |
           msg="Deployment in progress...<br><br>Waiting for test environment to finish building."
-          comment_id=$(gh pr comment ${HEAD} --body "${msg}" --json id -q .id)
+          comment_id=$(gh api repos/${GITHUB_REPOSITORY}/issues/${{ github.event.pull_request.number }}/comments -f body="${msg}" --jq '.id')        
           echo "comment_id=${comment_id}" >> $GITHUB_OUTPUT
       - name: Checkout repository
         uses: actions/checkout@v4
