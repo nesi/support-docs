@@ -36,16 +36,12 @@ jobs:
           alt='a cool spinny thing'><br><br>Waiting for test environment to finish building, please be patient ☺️"
           comment_id=$(gh api repos/${GITHUB_REPOSITORY}/issues/${{ github.event.pull_request.number }}/comments -f body="${msg}" --jq '.id')        
           echo "comment_id=${comment_id}" >> $GITHUB_OUTPUT
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: Wait for target workflow to complete
         continue-on-error: true
         id: wait
         run: |
           echo "Polling for workflow completion..."
-      
+
           while true; do
             run_json=$(gh api \
               repos/${TARGET_OWNER}/${TARGET_REPO}/actions/workflows/${WORKFLOW_ID}/runs \
@@ -74,7 +70,10 @@ jobs:
             if [ "$conclusion" = "success" ]; then
               msg="<strong>Test deployment successful!!</strong> (${finished})<br>Preview available at \
               <a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}\">${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}</a>"
-              changed_pages="$(git diff --name-only origin/main -- '*.md')"
+              # Get diff of main branch and feature branch.
+              changed_pages=$(gh api repos/${GITHUB_REPOSITORY}/compare/${{ github.event.pull_request.base.sha }}...\
+              ${{ github.event.pull_request.head.sha }} --jq '.files[] | select(.filename | endswith(".md")) | .filename')
+              # If changes append to message.
               if [ -n "${changed_pages}" ]; then
                   msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                   for f in ${changed_pages};do
@@ -82,10 +81,12 @@ jobs:
                       msg="${msg}<li><a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
                   done
                   msg="${msg}</ul>"
+                  echo "::info title=Deploy Succeeded::${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}" 
               fi
               msg="${msg}<br><br><em><a href="${DEPLOY_URL}">See all deployed demo sites</a></em>"
             else
               msg="Deployment failed (${conclusion})"
+              echo "::error title=Deploy failed::${conclusion}" 
             fi
-            (gh pr comment ${HEAD} --edit-last --body "${msg}") || (gh pr comment ${HEAD} --body "${msg}")
-            #echo "::info title=Deploy successful::${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}" 
+            # Update message in pull request.
+            (gh api repos/${GITHUB_REPOSITORY}/issues/comments/${{ steps.comment.outputs.comment_id }} -X PATCH -f body="${msg}") || (gh pr comment ${HEAD} --body "${msg}")
