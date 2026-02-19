@@ -9,6 +9,7 @@ env:
   WORKFLOW_ID: "deploy.yml"
   DEPLOY_URL: "https://callumwalley.github.io/mkdocs-demo-deploy"
   HEAD: ${{ github.event.pull_request.head.ref }}
+  GH_REPO: ${{ github.repository }}
 permissions: write-all
 jobs:
   demo-deploy:
