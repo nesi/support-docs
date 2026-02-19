@@ -85,4 +85,4 @@ jobs:
               echo "::error title=Deploy failed::${conclusion}" 
             fi
             # Update message in pull request.
-            gh pr comment ${HEAD} --edit-last --body "${msg}"
+            gh pr comment --edit-last --body "${msg}"
