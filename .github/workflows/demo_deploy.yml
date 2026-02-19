@@ -28,53 +28,61 @@ jobs:
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/dispatches \
             -d "{\"event_type\":\"deploy\",\"client_payload\":{\"targets\":\"${GITHUB_REPOSITORY}:${HEAD}\", \"use-cache\":\"true\"}}"
-            
-      # This would be better if it worked
-      # - name: Run 'deploy.yml' Workflow
-      #   uses: convictional/trigger-workflow-and-wait@v1.6.1
-      #   with:
-      #     owner: ${TARGET_OWNER}
-      #     repo: ${TARGET_REPO}
-      #     github_token: ${{ secrets.PAT }}
-      #     workflow_file_name: deploy.yml
-      #     client_payload: '{"targets":"${GITHUB_REPOSITORY}:${HEAD}", "use-cache":"true"}'
-      # - name: Wait for Workflow Action
-      #   run: |
-      #     curl -L \
-      #         -X POST \
-      #         -H "Accept: application/vnd.github+json" \
-      #         -H "Authorization: Bearer ${{ secrets.PAT }}" \
-      #         -H "X-GitHub-Api-Version: 2022-11-28" \
-      #         https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/actions/runs/deploy.yml
-      - name: Wait for Workflow Action
+      - name: Post initial loading comment
+        id: comment
         run: |
-          # Just give a minute or so to deploy
-            sleep 90
+          msg="Deployment in progress...<br><br>Waiting for test environment to finish building."
+          comment_id=$(gh pr comment ${HEAD} --body "${msg}" --json id -q .id)
+          echo "comment_id=${comment_id}" >> $GITHUB_OUTPUT
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Wait for target workflow to complete
+        continue-on-error: true
+        id: wait
+        run: |
+          echo "Polling for workflow completion..."
+      
+          while true; do
+            run_json=$(gh api \
+              repos/${TARGET_OWNER}/${TARGET_REPO}/actions/workflows/${WORKFLOW_ID}/runs \
+              --jq '.workflow_runs[0]')
+      
+            status=$(echo "$run_json" | jq -r '.status')
+            conclusion=$(echo "$run_json" | jq -r '.conclusion')
+      
+            echo "Status: $status"
+      
+            if [ "$status" = "completed" ]; then
+              echo "conclusion=$conclusion" >> $GITHUB_OUTPUT
+              echo "completed_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_OUTPUT
+              break
+            fi
+      
+            sleep 15
+          done
+        
       - name: Post messages open requests
         continue-on-error: true
         run: |
-            msg="Test deployment available at <a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}\">${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}</a>"
-            changed_pages="$(git diff --name-only origin/main -- '*.md')"
-            # Logic for truncating out long sections commented out.
-            # maxlines=-5
-            if [ -n "${changed_pages}" ]; then
-                msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
-                for f in ${changed_pages};do
-                    # maxlines=((maxlines+1))
-                    #if [ ${maxlines} -lt 1 ]; then
-                    g=${f#*/}; h=${g%.*}
-                    msg="${msg}<li><a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
-                    #fi
-                done
-                # if [ ${maxlines} -gt 0 ];then
-                #     msg="${msg}<li>   ... and ${maxlines} more.</li>"
-                # fi
-                msg="${msg}</ul>"
+            conclusion="${{ steps.wait.outputs.conclusion }}"
+            finished="${{ steps.wait.outputs.completed_at }}"
+        
+            if [ "$conclusion" = "success" ]; then
+              msg="Test deployment successful <strong>(${finished})</strong><br>Available at <a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}\">${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}</a>"
+              changed_pages="$(git diff --name-only origin/main -- '*.md')"
+              if [ -n "${changed_pages}" ]; then
+                  msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
+                  for f in ${changed_pages};do
+                      g=${f#*/}; h=${g%.*}
+                      msg="${msg}<li><a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
+                  done
+                  msg="${msg}</ul>"
+              fi
+              msg="${msg}<br><br><em><a href="${DEPLOY_URL}">See all deployed demo sites</a></em>"
+            else
+              msg="Deployment failed (${conclusion})"
             fi
-            msg="${msg}<br><br><em><a href="${DEPLOY_URL}">See all deployed demo sites</a></em>"
             (gh pr comment ${HEAD} --edit-last --body "${msg}") || (gh pr comment ${HEAD} --body "${msg}")
-            echo "::info title=Deploy successful::${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}" 
+            #echo "::info title=Deploy successful::${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}" 
