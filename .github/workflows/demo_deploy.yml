@@ -12,15 +12,12 @@ env:
 permissions: write-all
 jobs:
   demo-deploy:
-    continue-on-error: true
     name: Trigger test deployments
     runs-on: ubuntu-24.04
     steps:
       - name: Trigger Workflow in Another Repository
-        continue-on-error: true 
         run: |
           set -x
-          set -o xtrace 
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
@@ -31,9 +28,10 @@ jobs:
       - name: Post initial loading comment
         id: comment
         run: |
-          msg="Deployment in progress...<br><br> \ 
-          <img src='https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif' \
+          msg="Deployment in progress...<br><br>\
+          <img src='https://commons.wikimedia.org/wiki/Category:Throbbers#/media/File:Ajax_loader_metal_512.gif' max-width=20%\
           alt='a cool spinny thing'><br><br>Waiting for test environment to finish building, please be patient ☺️"
+          # Get id for later editing
           comment_id=$(gh api repos/${GITHUB_REPOSITORY}/issues/${{ github.event.pull_request.number }}/comments -f body="${msg}" --jq '.id')        
           echo "comment_id=${comment_id}" >> $GITHUB_OUTPUT
       - name: Wait for target workflow to complete
@@ -62,7 +60,6 @@ jobs:
           done
         
       - name: Post messages open requests
-        continue-on-error: true
         run: |
             conclusion="${{ steps.wait.outputs.conclusion }}"
             finished="${{ steps.wait.outputs.completed_at }}"
