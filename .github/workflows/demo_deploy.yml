@@ -30,8 +30,8 @@ jobs:
         id: comment
         run: |
           msg="Deployment in progress...<br><br>\
-          <img src='https://commons.wikimedia.org/wiki/Category:Throbbers#/media/File:Ajax_loader_metal_512.gif' max-width=20% \
-          alt='a cool spinny thing'><br><br>Waiting for test environment to finish building, please be patient ☺️"
+          <img src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Ajax_loader_metal_512.gif' max-width=20% \
+          alt='a cool spinny thing' style='max-width=20%'><br><br>Waiting for test environment to finish building, please be patient ☺️"
           gh pr comment ${HEAD} --edit-last --body "${msg}"
       - name: Wait for target workflow to complete
         continue-on-error: true
