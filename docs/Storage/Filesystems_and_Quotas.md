@@ -152,7 +152,7 @@ This page will guide you through best practices for storing your data on Mahuika
 
 Some programs create files that are not needed after the process has finished. If these are not automatically cleaned up by the program they can take up a large amount of space or just become very numerous, which can be problematic as many of the services running behind the scenes in Mahuika are affected by the number of files on our systems.
 
-Within batch jobs it is best to place any temporary files into a [temporary directory](../../Batch_Computing/Temporary_direcories.md), which can be in memory or in fast storage local to the compute node. These directories are automatically removed at the end of the job.
+Within batch jobs it is best to place any temporary files into a [temporary directory](../Batch_Computing/Temporary_directories.md), which can be in memory or in fast storage local to the compute node. These directories are automatically removed at the end of the job.
 
 On login nodes there is a fast `/tmp` filesystem for very transient files, and if you need something larger then `nobackup` (scratch) is the best choice. In either case, please **delete all temporary files** as soon as is practical.
 
