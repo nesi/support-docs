@@ -32,7 +32,7 @@ jobs:
           msg="Deployment in progress...<br><br>\
           <img src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Ajax_loader_metal_512.gif' max-width=20% \
           alt='a cool spinny thing' style='max-width=20%'><br><br>Waiting for test environment to finish building, please be patient ☺️"
-          gh pr comment ${HEAD} --edit-last --body "${msg}"
+          gh pr comment "${HEAD}" --edit-last --create-if-none --body "${msg}"
       - name: Wait for target workflow to complete
         continue-on-error: true
         id: wait
@@ -60,6 +60,8 @@ jobs:
         
       - name: Post messages open requests
         run: |
+            set -x
+            echo $0
             conclusion="${{ steps.wait.outputs.conclusion }}"
             finished="${{ steps.wait.outputs.completed_at }}"
         
@@ -85,4 +87,4 @@ jobs:
               echo "::error title=Deploy failed::${conclusion}" 
             fi
             # Update message in pull request.
-            gh pr comment --edit-last --body "${msg}"
+            gh pr comment "${HEAD}" --edit-last --create-if-none --body "${msg}"
