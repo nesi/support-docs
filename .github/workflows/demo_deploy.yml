@@ -32,8 +32,8 @@ jobs:
         id: comment
         run: |
           msg="Deployment in progress...<br><br> \ 
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif" \
-          alt="a cool spinny thing"><br><br>Waiting for test environment to finish building, please be patient ☺️"
+          <img src='https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif' \
+          alt='a cool spinny thing'><br><br>Waiting for test environment to finish building, please be patient ☺️"
           comment_id=$(gh api repos/${GITHUB_REPOSITORY}/issues/${{ github.event.pull_request.number }}/comments -f body="${msg}" --jq '.id')        
           echo "comment_id=${comment_id}" >> $GITHUB_OUTPUT
       - name: Checkout repository
