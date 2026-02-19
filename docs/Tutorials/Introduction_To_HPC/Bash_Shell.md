@@ -297,7 +297,7 @@ These two specific hidden directories are special as they will exist hidden insi
 
 <quiz>
 
-### question "Exploring More `ls` Flags"
+### Exploring More `ls` Flags
   
 You can also use two options at the same time. What does the command `ls` do when used
 with the `-l` option? What about if you use both the `-l` and the `-h` option?
@@ -412,39 +412,39 @@ Check that we've moved to the right place by running `pwd`.
 
     The difference between `cd ..` and `cd -` is
     that the former brings you *up*, while the latter brings you *back*.
-  
-  
-<quiz >
 
-### question "Absolute vs Relative Paths"
-  
-Starting from `/home/amanda/data`,
-which of the following commands could Amanda use to navigate to her home directory,
-which is `/home/amanda`?
-  
+<quiz>
+
+### Absolute vs Relative Paths
+
+  Starting from `/home/amanda/data`, which of the following commands could Amanda use to navigate to her home directory, which is `/home/amanda`?
+
 - [] `cd .`
+> No: `.` stands for the current directory.
 - [] `cd /`
+> No: `/` stands for the root directory.
 - [] `cd home/amanda`
+> No: Amanda's home directory is `/home/amanda`.
 - [] `cd ../..`
+> No: this command goes up two levels, i.e. ends in `/home`.
 - [X] `cd ~`
+> This is one correct option.
 - [] `cd home`
+> No: this command would navigate into a directory `home` in the current directory if it exists.
 - [X] `cd ~/data/..`
+> This is one correct option.
 - [X] `cd`
+> This is one correct option.
 - [X] `cd ..`
-  
-    
-    1. No: `.` stands for the current directory.
-    2. No: `/` stands for the root directory.
-    3. No: Amanda's home directory is `/home/amanda`.
-    4. No: this command goes up two levels, i.e. ends in `/home`.
-    5. Yes: `~` stands for the user's home directory, in this case `/home/amanda`.
-    6. No: this command would navigate into a directory `home` in the current directory if it exists.
-    7. Yes: unnecessarily complicated, but correct.
-    8. Yes: shortcut to go back to the user's home directory.
-    9. Yes: goes up one level.
+> This is one correct option.
+
+`cd ~`, `cd ..` and `cd` are all simple methods to navigate back to Amanda's home directory.
+`cd ~/data/..` also works but is overly complicated.
+
 </quiz>
 
 <quiz>
+
 ### Relative Path Resolution
   
   Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
@@ -453,13 +453,13 @@ which is `/home/amanda`?
   ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
 
 - [] `../backup: No such file or directory`
+> No: there *is* a directory `backup` in `/Users`.
 - [] `2012-12-01 2013-01-08 2013-01-27`
+> No: this is the content of `Users/thing/backup`, but with `..`, we asked for one level further up.
 - [X] `original pnas_final pnas_sub`
-  
-    1. No: there *is* a directory `backup` in `/Users`.
-    2. No: this is the content of `Users/thing/backup`,
-       but with `..`, we asked for one level further up.
-    3. Yes: `../backup/` refers to `/Users/backup/`.
+> Yes: `../backup/` refers to `/Users/backup/`.
+
+</quiz>
 
 !!! tip "Clearing your terminal"
     If your screen gets too cluttered, you can clear your terminal using the
@@ -563,34 +563,25 @@ file names matching these expressions, but not the wildcards
 themselves. It is the shell, not the other programs, that deals with
 expanding wildcards.
 
-!!! question "List filenames matching a pattern"
-    Running `ls` in a directory gives the output
-    `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
+<quiz>
+
+### List filenames matching a pattern
+Running `ls` in a directory gives the output `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
+
+Which `ls` command(s) will produce this output?
   
-    Which `ls` command(s) will
-    produce this output?
+`ethane.pdb   methane.pdb`
   
-    `ethane.pdb   methane.pdb`
-  
-    1. `ls *t*ane.pdb`
-    2. `ls *t?ne.*`
-    3. `ls *t??ne.pdb`
-    4. `ls ethane.*`
-  
-??? question "Solution"
-    The solution is `3.`
-    `1.` shows all files whose names contain zero or more characters (`*`)
-    followed by the letter `t`,
-    then zero or more characters (`*`) followed by `ane.pdb`.
-    This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`.
-    `2.` shows all files whose names start with zero or more characters (`*`) followed by
-    the letter `t`,
-    then a single character (`?`), then `ne.` followed by zero or more characters (`*`).
-    This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything
-    which ends in `thane.pdb`.
-    `3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
-    This is the solution.
-    `4.` only shows files starting with `ethane.`.
+- [ ] `ls *t*ane.pdb`
+> This shows all files whose names contain zero or more characters (`*`) followed by the letter `t`, then zero or more characters (`*`) followed by `ane.pdb`. This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`
+- [ ] `ls *t?ne.*`
+> This shows all files whose names start with zero or more characters (`*`) followed by the letter `t`, then a single character (`?`), then `ne.` followed by zero or more characters (`*`). This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything which ends in `thane.pdb`.
+- [X] `ls *t??ne.pdb`
+> This is the solution. It fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
+- [ ] `ls ethane.*`
+> This only shows files starting with `ethane.`.
+
+</quiz>
 
 <!-- TODO: include in terminal excersise (delete slurm files later on maybe?) -->
 
