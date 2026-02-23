@@ -70,7 +70,7 @@ to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 ### Close Window and try logging in again
 
-## Troubleshooting
+## General Troubleshooting
 
 If you are unsure what the issue is, try the following troubleshooting steps.
 
