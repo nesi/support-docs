@@ -278,7 +278,7 @@ span.md-status.md-status--deprecated {
 
 .md-typeset .time>.admonition-title,
 .md-typeset .time>summary {
-  background-color: rgb(0, 170, 136, 0.1);
+  background-color: rgba(0, 170, 136, 0.1);
 }
 
 .md-typeset .time>.admonition-title::before,
@@ -314,7 +314,7 @@ span.md-status.md-status--deprecated {
 
 .md-typeset .keypoints>.admonition-title,
 .md-typeset .keypoints>summary {
-  background-color: (195, 200, 200, 0.1);
+  background-color: rgba(195, 200, 200, 0.1);
 }
 
 .md-typeset .keypoints>.admonition-title::before,
@@ -324,11 +324,9 @@ span.md-status.md-status--deprecated {
   mask-image: var(--md-admonition-icon--prerequisite);
 }
 
-
 /* Quiz formatting */
 /* Duplicate admonition thmem */
 div.quiz {
-  background-color: (241, 128, 0, 0.1);
   border: .075rem solid var(--reannz-orange);
   border-radius: .2rem;
   box-shadow: var(--md-shadow-z1);
@@ -340,9 +338,27 @@ div.quiz {
   page-break-inside: avoid;
   transition: box-shadow 125ms;
 }
+
 .quiz-reset-button{
   display: none;
 }
+
+.quiz-question > .admonition-title{
+  background-color: rgba(241, 128, 0, 0.1);
+}
+
 .quiz-question > .admonition-title::before{
   mask-image: var(--md-admonition-icon--example);
+  background-color: var(--reannz-orange);
+}
+
+div.quiz-feedback {
+  margin: 0 -0.6rem -10px -0.6rem;
+  border-radius: 0 0 .2rem .2rem;
+  border-style: none;
+}
+
+/* Formattig a bit broke. hide for now */
+.quiz-header-link{
+  display: none;
 }
