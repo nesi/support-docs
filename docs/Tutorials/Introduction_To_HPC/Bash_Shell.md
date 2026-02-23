@@ -155,9 +155,9 @@ For the purposes of this tutorial you will be working within `/nesi/nobackup/<pr
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
-### 2.0: `ls` Reading Comprehension
 
 <quiz>
+<p class=admonition-title>Path Resolution</p>
 
 Given the below file tree.
 
@@ -178,7 +178,8 @@ original pnas_final pnas_sub
 > There is no such directory.
 
 </quiz>
-  
+
+
 ## Moving about
 
 Currently we are still in our home directory, we want to move into the`project` directory from the previous command.
@@ -566,6 +567,7 @@ expanding wildcards.
 <quiz>
 
 ### List filenames matching a pattern
+
 Running `ls` in a directory gives the output `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
 
 Which `ls` command(s) will produce this output?

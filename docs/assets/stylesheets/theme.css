@@ -181,8 +181,8 @@ span.md-status.md-status--deprecated {
 
 /* Turirial deader */
 .tutorial-banner {
-  background: aquamarine;
-  color: blueviolet;
+  background: var(--reannz-green);
+  color: var(--reannz-green--dark);
   font-family: inherit;
   padding: 0.01em;
   margin: 0;
@@ -273,17 +273,17 @@ span.md-status.md-status--deprecated {
 /* time */
 .md-typeset .admonition.time,
 .md-typeset details.time {
-  border-color: #610088;
+  border-color: var(--reannz-green--dark);
 }
 
 .md-typeset .time>.admonition-title,
 .md-typeset .time>summary {
-  background-color: #b700cf1a;
+  background-color: rgb(0, 170, 136, 0.1);
 }
 
 .md-typeset .time>.admonition-title::before,
 .md-typeset .time>summary::before {
-  background-color: #ff3f66;
+  background-color:  var(--reannz-green--dark);
   -webkit-mask-image: var(--md-admonition-icon--time);
   mask-image: var(--md-admonition-icon--time);
 }
@@ -291,17 +291,17 @@ span.md-status.md-status--deprecated {
 /* objectivess */
 .md-typeset .admonition.objectives,
 .md-typeset details.time {
-  border-color: #765981;
+  border-color: var(--reannz-purple)
 }
 
 .md-typeset .objectives>.admonition-title,
 .md-typeset .objectives>summary {
-  background-color: #5e9b2d1a;
+  background-color: (132, 121, 183, 0.1);
 }
 
 .md-typeset .objectives>.admonition-title::before,
 .md-typeset .objectives>summary::before {
-  background-color: #0e0b0b;
+  background-color: var(--reannz-purple);
   -webkit-mask-image: var(--md-admonition-icon--prerequisite);
   mask-image: var(--md-admonition-icon--prerequisite);
 }
@@ -309,17 +309,40 @@ span.md-status.md-status--deprecated {
 /* key[ppoint */
 .md-typeset .admonition.keypoints,
 .md-typeset details.keypoints {
-  border-color: #000000;
+  border-color: var(--reannz-grey);
 }
 
 .md-typeset .keypoints>.admonition-title,
 .md-typeset .keypoints>summary {
-  background-color: #e990f51a;
+  background-color: (195, 200, 200, 0.1);
 }
 
 .md-typeset .keypoints>.admonition-title::before,
 .md-typeset .keypoints>summary::before {
-  background-color: #3fffff;
+  background-color: var(--reannz-grey);
   -webkit-mask-image: var(--md-admonition-icon--prerequisite);
   mask-image: var(--md-admonition-icon--prerequisite);
+}
+
+
+/* Quiz formatting */
+/* Duplicate admonition thmem */
+div.quiz {
+  background-color: (241, 128, 0, 0.1);
+  border: .075rem solid var(--reannz-orange);
+  border-radius: .2rem;
+  box-shadow: var(--md-shadow-z1);
+  color: var(--md-admonition-fg-color);
+  display: flow-root;
+  font-size: .64rem;
+  margin: 1.5625em 0;
+  padding: 0 .6rem;
+  page-break-inside: avoid;
+  transition: box-shadow 125ms;
+}
+.quiz-reset-button{
+  display: none;
+}
+.quiz-question > .admonition-title::before{
+  mask-image: var(--md-admonition-icon--example);
 }
