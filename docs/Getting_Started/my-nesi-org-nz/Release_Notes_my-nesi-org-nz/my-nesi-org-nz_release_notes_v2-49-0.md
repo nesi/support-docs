@@ -8,8 +8,8 @@ search:
 ---
 
 ## New and Improved
-- You can now view your Researcher Developer Cloud (RDC) projects directly in my.nesi.
-- Compute allocation request prediction dates have been improved to reflect only your current compute allocations, resulting in more accurate estimates.
+- You can now view your Research Developer Cloud (RDC) projects directly in my.nesi.
+- Compute allocation request prediction dates now reflect only your current compute allocations, resulting in more accurate estimates.
 
 If you have any questions about any of the updates, please
 {% include "partials/support_request.html" %}.
