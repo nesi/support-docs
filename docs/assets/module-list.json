@@ -687,7 +687,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.13,
+                "server_uptime": 0.14,
                 "server_version": "",
                 "features": [
                     {
@@ -721,7 +721,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.13,
+                "server_uptime": 0.14,
                 "server_version": "",
                 "features": []
             },
@@ -2187,9 +2187,6 @@
         "homepage": "",
         "support": "",
         "versions": [
-            "2024-07",
-            "2024-10",
-            "2025-01",
             "2025-08",
             "2026-01"
         ],
@@ -3386,7 +3383,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.97,
+                        "hourly_average": 0.96,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3454,7 +3451,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 7.87,
+                        "hourly_average": 7.84,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3468,7 +3465,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.96,
+                        "hourly_average": 5.94,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3536,7 +3533,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 92918456.88,
+                        "hourly_average": 92485837.84,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
