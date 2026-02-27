@@ -1,8 +1,8 @@
 ---
 created_at: '2018-11-16T01:13:47Z'
-tags: []
-status: 
-description: Troubleshooting instructions for logging in
+tags:
+- login
+description: Troubleshooting instructions for logging in to the REANNZ cluster
 ---
 
 
@@ -11,14 +11,70 @@ description: Troubleshooting instructions for logging in
     - Most terminals do not give an indication of how many characters have been typed when entering a password.
     - Paste is not usually bound to `ctrl` + `V` and will vary based on your method of access.
 
-## I got a `65535` Error
+## `65535` Error
 
 There are many reasons you could get this error. Things to check are:
 
 * You have an active project (see if you have an active project at [my.nesi.org.nz](https://my.nesi.org.nz/)),
 * You may have not a socket folder, `mkdir -p ~/.ssh/sockets` (see [First time setup](./Standard_Terminal_Setup.md#first-time-setup) for more information)
 
-## Other Common Login Problems
+## Connection closed by .... (MobaXterm)
+
+### Skip password prompts
+
+There is a known MobaXterm bug in which a user who has set a second
+factor and is trying to log in to the lander node will be prompted
+multiple times for 'Password' before being prompted for 'First Factor'.
+(On the lander node, you should only be prompted for a 'password' if you
+have no Second Factor set up.)
+
+These initial prompts can be skipped through by pressing 'Enter'. Any
+input before pressing Enter will cause the login to fail.
+
+The expected processes is as follows:
+
+```sh
+ssh <user>@lander.nesi.org.nz 
+<user>@lander.nesi.org.nz's password: <Enter>
+<user>@lander.nesi.org.nz's password: <Enter>
+<user>@lander.nesi.org.nz's password: <Enter>
+Login Password (First Factor): 
+Authenticator Code (Second Factor):
+```
+
+*Note: Sometimes MobaXterm will prompt with a dialogue box.*
+
+### Update your MobaXterm client
+
+Occasionally an outdated client can cause errors.
+MobaXterm can be updated through: 'help&gt;check for updates'
+
+### Reinstall your MobaXterm client
+
+## Asked for 'Password' instead of 'First Factor'
+
+### Check password status
+
+Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
+
+### See [above](#skip-password-prompts)
+
+## Authentication token manipulation error
+
+This occurs when your authentication token is out of sync. You will have
+to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
+
+## Link Expired
+
+![alt text](../../assets/images/Login_Troubleshooting_image.png)
+
+### Close Window and try logging in again
+
+Either your link has expired, or it was copied incorrectly.
+
+## General Troubleshooting
+
+If you are unsure what the issue is, try the following troubleshooting steps.
 
 ### Try logging in to `lander` directly
 
@@ -81,80 +137,32 @@ Six failed login attempts within five minutes will trigger a four-hour
 lockout. Users experiencing login issues can inadvertently trigger the
 lockout, making diagnosing the original issue much more difficult.
 
-## Connection closed by .... (MobaXterm)
-
-### Skip password prompts
-
-There is a known MobaXterm bug in which a user who has set a second
-factor and is trying to log in to the lander node will be prompted
-multiple times for 'Password' before being prompted for 'First Factor'.
-(On the lander node, you should only be prompted for a 'password' if you
-have no Second Factor set up.)
-
-These initial prompts can be skipped through by pressing 'Enter'. Any
-input before pressing Enter will cause the login to fail.
-
-The expected processes is as follows:
-
-```sh
-ssh <user>@lander.nesi.org.nz 
-<user>@lander.nesi.org.nz's password: <Enter>
-<user>@lander.nesi.org.nz's password: <Enter>
-<user>@lander.nesi.org.nz's password: <Enter>
-Login Password (First Factor): 
-Authenticator Code (Second Factor):
-```
-
-*Note: Sometimes MobaXterm will prompt with a dialogue box.*
-
-### Update your MobaXterm client
-
-Occasionally an outdated client can cause errors.
-MobaXterm can be updated through: 'help&gt;check for updates'
-
-### Reinstall your MobaXterm client
-
-## Asked for 'Password' instead of 'First Factor'
-
-### Check password status
-
-Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
-
-### See [above](#skip-password-prompts)
-
-## Authentication token manipulation error
-
-This occurs when your authentication token is out of sync. You will have
-to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
-
 ## Nothing here has helped?
 
  {% include "partials/support_request.html" %}.
 
 Helpful things to include:
 
-* The client you are using (WSL, MobaXterm, Mac terminal, Linux,
-    etc.).
+* The client you are using (WSL, MobaXterm, Mac terminal, Linux, etc.).
 * The nature of the problem, including the precise text of any error
     message you have been receiving.
     * Did you start out having one login problem and are now getting a
-        different one? If so, when did the change happen, and were you
-        doing anything in particular related to logging in at the time
-        things changed?
-* Have you successfully logged in in the past? if so when was the last
-    time you successfully logged in, and to what NeSI cluster?
-* Has anything administrative and relevant to NeSI access changed
+      different one? If so, when did the change happen, and were you
+      doing anything in particular related to logging in at the time
+      things changed?
+* Have you successfully logged in before? if so when was the last
+  time you successfully logged in?
+* Has anything administrative and relevant to Mahuika access changed
     since you last logged in? For example:
-    * Have you opened or joined any new NeSI projects, or have any of
-        your existing NeSI projects closed?
-        * Have any of your NeSI projects been granted new allocations, had
+    * Have you opened or joined any new Mahuika projects, or have any of
+        your existing Mahuika projects closed?
+        * Have any of your Mahuika projects been granted new allocations, had
         a previously granted new allocation actually start, or had an
         existing allocation modified?
-        * Have any of your NeSI projects' existing allocations ended?
-        * Have any of your NeSI projects had a disk space quota change?
+        * Have any of your Mahuika projects' existing allocations ended?
+        * Have any of your Mahuika projects had a disk space quota change?
         * Have you changed your institutional username and password, moved
         to a different institution, or started a new job at an
         institution while also keeping your position at your old
-        institution? Might NeSI know about any of these changes?
+        institution? Might Mahuika know about any of these changes?
 * What have you tried so far?
-* Are you on the NIWA network, the NIWA VPN, or neither?
