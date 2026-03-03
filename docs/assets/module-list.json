@@ -669,7 +669,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.15,
+                "server_uptime": 0.16,
                 "server_version": "",
                 "features": []
             },
@@ -688,7 +688,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.15,
+                "server_uptime": 0.16,
                 "server_version": "",
                 "features": [
                     {
@@ -722,7 +722,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.15,
+                "server_uptime": 0.16,
                 "server_version": "",
                 "features": []
             },
@@ -908,15 +908,16 @@
         "support": "",
         "versions": [
             "0.4.2-GCC-11.3.0",
-            "0.4.2-GCC-9.2.0"
+            "0.4.2-GCC-9.2.0",
+            "0.8.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.4.2-GCC-11.3.0",
+        "default": "0.8.1-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1772425433,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/any2fasta/0.4.2-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/any2fasta/0.8.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2101,30 +2102,6 @@
         "force_hide": "False",
         "force_show": "False"
     },
-    "BioPerl": {
-        "description": "Bioperl is the product of a community effort to produce Perl code which is useful in biology.\n Examples include Sequence objects, Alignment objects and database searching objects.",
-        "domains": [],
-        "extensions": [
-            "Bio::Procedural-1.7.4",
-            "BioPerl-1.7.8",
-            "XML::Writer-0.900"
-        ],
-        "licence_type": "",
-        "homepage": "https://bioperl.org/",
-        "support": "",
-        "versions": [
-            "1.7.8-GCCcore-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.7.8-GCCcore-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1770356323,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/BioPerl/1.7.8-GCCcore-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
     "BioPP": {
         "description": "Bio++ is a set of C++ libraries for Bioinformatics, including sequence\nanalysis, phylogenetics, molecular evolution and population genetics. Bio++ is\nObject Oriented and is designed to be both easy to use and computer efficient.\nBio++ intends to help programmers to write computer expensive programs, by\nproviding them a set of re-usable tools.",
         "domains": [
@@ -2896,15 +2873,15 @@
         "homepage": "https://libcheck.github.io/check/",
         "support": "",
         "versions": [
-            "0.15.2-GCCcore-12.3.0"
+            "0.15.2-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.15.2-GCCcore-12.3.0",
+        "default": "0.15.2-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1770358049,
+        "last_updated": 1772425063,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Check/0.15.2-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Check/0.15.2-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3503,7 +3480,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 7.7,
+                        "hourly_average": 7.67,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3517,7 +3494,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.84,
+                        "hourly_average": 5.82,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3585,7 +3562,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 90794909.8,
+                        "hourly_average": 90381794.9,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4295,15 +4272,16 @@
         "homepage": "https://perldoc.perl.org/DB_File.html",
         "support": "",
         "versions": [
-            "1.859-GCCcore-12.3.0"
+            "1.859-GCCcore-12.3.0",
+            "1.860-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.859-GCCcore-12.3.0",
+        "default": "1.860-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1770356279,
+        "last_updated": 1772421579,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DB_File/1.859-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DB_File/1.860-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9662,15 +9640,15 @@
         "support": "",
         "versions": [
             "1.10",
-            "1.24-GCCcore-12.3.0"
+            "1.25"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.24-GCCcore-12.3.0",
+        "default": "1.25",
         "default_type": "latest",
-        "last_updated": 1770357607,
+        "last_updated": 1772421742,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/libdeflate/1.24-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libdeflate/1.25.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10186,15 +10164,15 @@
         "homepage": "https://cran.r-project.org/doc/manuals/r-release/R-admin.html#The-standalone-Rmath-library",
         "support": "",
         "versions": [
-            "4.5.1-GCCcore-12.3.0"
+            "4.5.2-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.5.1-GCCcore-12.3.0",
+        "default": "4.5.2-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1770357144,
+        "last_updated": 1772423732,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/libRmath/4.5.1-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libRmath/4.5.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14629,15 +14607,16 @@
             "20200522",
             "20210422",
             "20220322",
-            "20220922"
+            "20220922",
+            "20250922"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "20220922",
+        "default": "20250922",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1772425796,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Parallel/20220922.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Parallel/20250922.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15676,26 +15655,6 @@
         "last_updated": 1740132639,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/pixman/0.42.2-GCC-12.3.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "pkg-config": {
-        "description": "pkg-config is a helper tool used when compiling applications and libraries.\n It helps you insert the correct compiler options on the command line so an\n application can use gcc -o test test.c `pkg-config --libs --cflags glib-2.0`\n for instance, rather than hard-coding values on where to find glib (or other\n libraries).",
-        "domains": [],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://www.freedesktop.org/wiki/Software/pkg-config/",
-        "support": "",
-        "versions": [
-            "0.29.2-GCCcore-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "0.29.2-GCCcore-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1770356750,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/pkg-config/0.29.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18750,15 +18709,15 @@
         "homepage": "https://github.com/tseemann/samclip",
         "support": "",
         "versions": [
-            "0.4.0-GCCcore-12.3.0"
+            "0.4.0-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.4.0-GCCcore-12.3.0",
+        "default": "0.4.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1770357172,
+        "last_updated": 1772424994,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/samclip/0.4.0-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/samclip/0.4.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19641,7 +19600,7 @@
         "network_licences": [],
         "default": "4.6.0-foss-2023a-R-4.3.2",
         "default_type": "latest",
-        "last_updated": 1770358766,
+        "last_updated": 1772425875,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/snippy/4.6.0-foss-2023a-R-4.3.2.lua",
         "force_hide": "False",
@@ -19657,20 +19616,21 @@
         "homepage": "https://sanger-pathogens.github.io/snp-sites/",
         "support": "",
         "versions": [
-            "2.5.1-GCC-11.3.0"
+            "2.5.1-GCC-11.3.0",
+            "2.5.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.5.1-GCC-11.3.0",
+        "default": "2.5.1-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1772425231,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/snp-sites/2.5.1-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/snp-sites/2.5.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
     "snpEff": {
-        "description": "SnpEff is a variant annotation and effect prediction tool.\n It annotates and predicts the effects of genetic variants (such as amino acid changes).",
+        "description": "SnpEff is a variant annotation and effect prediction tool. \n It annotates and predicts the effects of genetic variants (such as amino acid changes).",
         "domains": [
             "biology"
         ],
@@ -19681,15 +19641,15 @@
         "versions": [
             "4.2",
             "5.0-Java-11.0.4",
-            "5.2c-GCCcore-12.3.0-Java-21.0.5"
+            "5.4b-Java-21.0.5"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.2c-GCCcore-12.3.0-Java-21.0.5",
+        "default": "5.4b-Java-21.0.5",
         "default_type": "latest",
-        "last_updated": 1770358668,
+        "last_updated": 1772425771,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/snpEff/5.2c-GCCcore-12.3.0-Java-21.0.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/snpEff/5.4b-Java-21.0.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21854,7 +21814,7 @@
         "network_licences": [],
         "default": "0.57721-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1770357667,
+        "last_updated": 1772424741,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/vt/0.57721-GCC-12.3.0.lua",
         "force_hide": "False",
@@ -21963,7 +21923,7 @@
         "network_licences": [],
         "default": "20111017-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1770358238,
+        "last_updated": 1772425737,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/wgsim/20111017-GCC-12.3.0.lua",
         "force_hide": "False",
@@ -22183,33 +22143,6 @@
         "last_updated": 1740132640,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/xkbcommon/0.10.0-GCCcore-9.2.0.lua",
-        "force_hide": "False",
-        "force_show": "False"
-    },
-    "XML-LibXML": {
-        "description": "Perl binding for libxml2",
-        "domains": [],
-        "extensions": [
-            "Alien::Base-2.83",
-            "Alien::Build::Plugin::Download::GitLab-0.01",
-            "Alien::Libxml2-0.19",
-            "FFI::CheckLib-0.31",
-            "File::chdir-0.1011",
-            "XML::LibXML-2.0210"
-        ],
-        "licence_type": "",
-        "homepage": "https://metacpan.org/pod/distribution/XML-LibXML/LibXML.pod",
-        "support": "",
-        "versions": [
-            "2.0210-GCCcore-12.3.0"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "2.0210-GCCcore-12.3.0",
-        "default_type": "latest",
-        "last_updated": 1770356109,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/XML-LibXML/2.0210-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
