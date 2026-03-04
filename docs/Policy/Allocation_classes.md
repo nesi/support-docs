@@ -127,7 +127,7 @@ allocations.</em></p></td>
 <tr >
 <td rowspan="4" ><h2 id=institutional>Institutional</h2>
 <p>Available if you work for or study at one of the institutions that was a NeSI Collaborator,
-or has a [Subscription](../Service_Subscriptions/What_is_a_Subscription.md)
+or has a <a href="https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/">Subscription</a>
 to our services.</p>
 <p>If you are employed by and/or study at multiple institutions, it is
 your responsibility to find out which of those institutions is
