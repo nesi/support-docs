@@ -75,12 +75,17 @@ It is common for nodes to connect to a shared, remote disk.
     [Globus Transfer Service](../../Data_Transfer/Globus/Globus_Overview.md) page.
 
 <quiz>
-I think it would be good to have a question here to introduce the concept of the 'quiz'
+Mahuika is...
 
-- [x] Yes, agreed
-- [] No, I don't think so.
-
-Correct! It would be a good idea.
+- [x] A 'High Performance Computer'.
+- [x] A 'Cluster'
+- [] A 'Cloud'
+> Mahuika is not a cloud resource, however [RDC](../../Service_Subscriptions/Research_Developer_Cloud/User_Guides.md) is.
+- [x] A 'Remote Server'
+> Technically Mahuika is a server, but not the most useful description.
+- [] A 'Node'
+> Mahuika is composed of many nodes.
+- [] A 'Computer'
 </quiz>
 
 !!! keypoints

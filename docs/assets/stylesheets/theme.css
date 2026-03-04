@@ -339,15 +339,20 @@ div.quiz {
   transition: box-shadow 125ms;
 }
 
-.quiz-reset-button{
-  display: none;
+.quiz-button{
+position: absolute;
+  right: auto;
+  bottom: -1.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  left: 0.5rem;
+  right: auto;
 }
-
 .quiz-question > .admonition-title{
   background-color: rgba(241, 128, 0, 0.1);
 }
 
-.quiz-question > .admonition-title::before{
+.quiz-question > .admonition-titl e::before{
   mask-image: var(--md-admonition-icon--example);
   background-color: var(--reannz-orange);
 }

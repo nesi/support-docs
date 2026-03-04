@@ -34,33 +34,25 @@ The directories that are relevant to us are:
 <td></td>
 <td>Location</td>
 <td>Default Storage</td>
-<td>Default Files</td>
-<td>Backup</td>
-<td>Access Speed</td>
+<td>Snapshot</td>
 </tr>
 <tr>
 <td><strong>Home</strong> is for user-specific files such as configuration files, environment setup, source code, etc.</td>
 <td><code>/home/&lt;username&gt;</code></td>
 <td>20GB</td>
-<td>1,000,000</td>
 <td>Daily</td>
-<td>Normal</td>
 </tr>
 <tr>
 <td><strong>Project</strong> is for persistent project-related data, project-related software, etc.</td>
 <td><code>/nesi/project/&lt;projectcode&gt;</code></td>
 <td>100GB</td>
-<td>100,000</td>
 <td>Daily</td>
-<td>Normal</td>
 </tr>
 <tr>
 <td><strong>Nobackup</strong> is a 'scratch space', for data you don't need to keep long term. Old data is periodically deleted from nobackup</td>
 <td><code>/nesi/nobackup/&lt;projectcode&gt;</code></td>
 <td>10TB</td>
-<td>1,000,000</td>
-<td>None</td>
-<td>Fast</td>
+<td>Weekly</td>
 </tr>
 </tbody>
 </table>
@@ -88,8 +80,6 @@ nobackup_nesi99991                             30720             16189   53
 home_cwal219                                      20                13   65
 ```
 
-As well as disk space, 'inodes' are also tracked, this is the *number* of files.
-
 <!-- TODO fix this paragraph -->
 Notice that the project space for this user is over quota and has been locked, meaning no more data can be added.
 When your space is locked you will need to move or remove data.
@@ -97,7 +87,7 @@ Also note that none of the nobackup space is being used.
 Likely data from project can be moved to nobackup.
 `nn_storage_quota` uses cached data, and so will no immediately show changes to storage use.
 
-For more details on our persistent and nobackup storage systems, including data retention and the nobackup autodelete schedule,
+For more details on our persistent and nobackup storage systems, including data retention and the nobackup auto-delete schedule,
 please see our [Filesystem and Quota](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/) documentation.
 
 Directories are like *places* — at any time while we are using the shell, we are in exactly one place called our **current working directory**.
@@ -155,7 +145,6 @@ For the purposes of this tutorial you will be working within `/nesi/nobackup/<pr
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
-
 <quiz>
 <p class=admonition-title>Path Resolution</p>
 
@@ -172,13 +161,12 @@ original pnas_final pnas_sub
 - [ ] `ls pwd`
 > `pwd` is not the name of a directory.
 - [] `ls backup`
-> `ls backup` depends on your current directory.
+> `ls backup` depends on your current directory. This would be correct only if your current working directory is `Users`.
 - [X] `ls /Users/backup`
 - [ ] `ls /backup`
 > There is no such directory.
 
 </quiz>
-
 
 ## Moving about
 
@@ -297,26 +285,19 @@ You might notice that we now have two extra lines for directories `.` and `..`. 
 These two specific hidden directories are special as they will exist hidden inside every directory, with the `.` hidden directory representing your current directory and the `..` hidden directory representing the **parent** directory above your current directory.
 
 <quiz>
+<p class=admonition-title>More <code>ls</code> flags.</p>
 
-### Exploring More `ls` Flags
-  
 You can also use two options at the same time. What does the command `ls` do when used
-with the `-l` option? What about if you use both the `-l` and the `-h` option?
-  
-Some of its output is about properties that we do not cover in this lesson (such
-as file permissions and ownership), but the rest should be useful
-nevertheless.
+with the `-l` option? What about if you use both the `-l` and the `-h` option (`ls -lh`)?
 
-- [X] Long-List
+- [X] Long-List.
+> `-l` option makes `ls` use a **l**ong listing format, showing not only the file/directory names but also additional information,
+> such as the file size and the time of its last modification.
 - [X] Human readable.
-- [] Show Symlinks.
+> `-h` means **h**uman readable', i.e. displaying something like `5.3K` instead of `5369`.
+- [] Sort by file size.
+> `-S` will sort by file size.
 - [] Show Help page.
-
-The `-l` option makes `ls` use a **l**ong listing format, showing not only
-the file/directory names but also additional information, such as the file size
-and the time of its last modification. If you use both the `-h` option and the `-l` option,
-this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
-instead of `5369`.
 </quiz>
 
 ## Relative paths
@@ -415,50 +396,42 @@ Check that we've moved to the right place by running `pwd`.
     that the former brings you *up*, while the latter brings you *back*.
 
 <quiz>
+<p class=admonition-title>Absolute vs Relative Paths</p>
 
-### Absolute vs Relative Paths
-
-  Starting from `/home/amanda/data`, which of the following commands could Amanda use to navigate to her home directory, which is `/home/amanda`?
+  Starting from `/home/amanda/data`, which of the following commands could Amanda use to navigate to her home directory (`/home/amanda`)?
 
 - [] `cd .`
-> No: `.` stands for the current directory.
+> `.` stands for the current directory.
 - [] `cd /`
-> No: `/` stands for the root directory.
+> `/` stands for the root directory.
 - [] `cd home/amanda`
-> No: Amanda's home directory is `/home/amanda`.
+> Amanda's home directory is `/home/amanda` (note the leading slash).
 - [] `cd ../..`
-> No: this command goes up two levels, i.e. ends in `/home`.
+> `../..` will take you up two levels, i.e. ends in `/home`.
 - [X] `cd ~`
-> This is one correct option.
 - [] `cd home`
-> No: this command would navigate into a directory `home` in the current directory if it exists.
+> `cd home` would navigate into a directory `home` in the current directory if it exists.
 - [X] `cd ~/data/..`
-> This is one correct option.
+>  `cd ~/data/..` is correct, but more complex than needed.
 - [X] `cd`
-> This is one correct option.
 - [X] `cd ..`
-> This is one correct option.
-
-`cd ~`, `cd ..` and `cd` are all simple methods to navigate back to Amanda's home directory.
-`cd ~/data/..` also works but is overly complicated.
 
 </quiz>
 
 <quiz>
+<p class=admonition-title>Relative Path Resolution</p>
 
-### Relative Path Resolution
-  
-  Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
-  what will `ls ../backup` display?
+Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
+what will `ls ../backup` display?
 
-  ![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
+![alt text](../../assets/images/tutorial_bash_shell_ex1.svg)
 
 - [] `../backup: No such file or directory`
-> No: there *is* a directory `backup` in `/Users`.
+> There *is* a directory `backup` in `/Users`.
 - [] `2012-12-01 2013-01-08 2013-01-27`
-> No: this is the content of `Users/thing/backup`, but with `..`, we asked for one level further up.
+> Is the content of `Users/thing/backup`, but with `..`, we asked for one level further up.
 - [X] `original pnas_final pnas_sub`
-> Yes: `../backup/` refers to `/Users/backup/`.
+> `../backup/` refers to `/Users/backup/`.
 
 </quiz>
 
@@ -466,6 +439,16 @@ Check that we've moved to the right place by running `pwd`.
     If your screen gets too cluttered, you can clear your terminal using the
     `clear` command. You can still access previous commands using <kbd>↑</kbd>
     and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
+
+
+<quiz>
+<p class=admonition-title>Listing in Reverse Chronological Order</p>
+
+What command would you use in order to list files in reverse chronological order (newest first).
+
+`ls -[[lrt]]`
+
+</quiz>
 
 !!! question "Listing in Reverse Chronological Order"
     By default, `ls` lists the contents of a directory in alphabetical
@@ -565,8 +548,7 @@ themselves. It is the shell, not the other programs, that deals with
 expanding wildcards.
 
 <quiz>
-
-### List filenames matching a pattern
+<p class=admonition-title>Matching files with a Pattern</p>
 
 Running `ls` in a directory gives the output `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
 
@@ -624,7 +606,7 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 (we'll be asked what file we want to save this to:
 press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
 
-[A screenshot of the nano text editor. The file open is called `draft.txt` and contains two lines of text reading "It's not publish or perish any more, it's share and thrive."](../../assets/images/nano-screenshot.png)
+![A screenshot of the nano text editor. The file open is called `draft.txt` and contains two lines of text reading "It's not publish or perish any more, it's share and thrive."](../../assets/images/nano-screenshot.png)
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
 return to the shell.
@@ -658,6 +640,7 @@ draft.txt
 ```
 
 ## Copying files and directories
+
 <!-- TODO: R script!!! -->
 In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}```, but as we can't all work on the same file at once you will need to take your own copy.
 This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created.
@@ -795,7 +778,7 @@ Mandatory arguments to long options are mandatory for short options, too.
 
 To navigate through the `man` pages,
 you may use <kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line,
-or try <kbd>B</kbd> and <kbd>Spacebar</kbd> to skip up and down by a full page.
+or try <kbd>B</kbd> and <kbd>spacebar</kbd> to skip up and down by a full page.
 To search for a character or word in the `man` pages,
 use <kbd>/</kbd> followed by the character or word you are searching for.
 Sometimes a search will result in multiple hits. If so, you can move between hits using <kbd>N</kbd> (for moving forward) and <kbd>Shift</kbd>+<kbd>N</kbd> (for moving backward).
@@ -813,18 +796,19 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
     which covers many commands introduced within this lesson.
 
 !!! keypoints
-    - "The file system is responsible for managing information on the disk."
-    - "Information is stored in files, which are stored in directories (folders)."
-    - "Directories can also store other directories, which then form a directory tree."
-    - "`cd [path]` changes the current working directory."
-    - "`ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
-    - "`pwd` prints the user's current working directory."
-    - "`cp [file] [path]` copies [file] to [path]"
-    - "`mv [file] [path]` moves [file] to [path]"
-    - "`rm [file]` deletes [file]"
-    - "`/` on its own is the root directory of the whole file system."
-    - "Most commands take options (flags) that begin with a `-`."
-    - "A relative path specifies a location starting from the current location."
-    - "An absolute path specifies a location from the root of the file system."
-    - "Directory names in a path are separated with `/` on Unix, but `\\` on Windows."
-    - "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
+    - The file system is responsible for managing information on the disk.
+    - Information is stored in files, which are stored in directories (folders).
+    - Directories can also store other directories, which then form a directory tree.
+    - `cd <path>` changes the current working directory to `<path>`.
+    - `ls <path>` prints a listing of a specific file or directory (`<path>`).
+    - `ls` on its own lists the current working directory.
+    - `pwd` prints the user's current working directory.
+    - `cp <file> <path>` copies `<file>` to `<path>`
+    - `mv <file> <path>` moves `<file>` to `<path>`.
+    - `rm <file>` deletes `<file>` (_permanently_, with no prompt.).
+    - `/` on its own is the root directory of the whole file system.
+    - Most commands take options (flags) that begin with a `-`.
+    - A relative path specifies a location starting from the current location.
+    - An absolute path specifies a location from the root of the file system.
+    - Directory names in a path are separated with `/` on Unix, but `\\` on Windows.
+    - `..` means 'the directory above the current one'; `.` on its own means 'the current directory'.
