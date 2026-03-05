@@ -669,7 +669,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.16,
+                "server_uptime": 0.17,
                 "server_version": "",
                 "features": []
             },
@@ -688,14 +688,14 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.16,
+                "server_uptime": 0.17,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "cfd_solve_level2",
-                        "hourly_average": 0.95,
+                        "hourly_average": 0.96,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "",
@@ -722,7 +722,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.16,
+                "server_uptime": 0.17,
                 "server_version": "",
                 "features": []
             },
@@ -3480,7 +3480,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 7.64,
+                        "hourly_average": 7.61,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3494,7 +3494,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.8,
+                        "hourly_average": 5.77,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3562,7 +3562,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 89972422.3,
+                        "hourly_average": 89566741.37,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -3643,16 +3643,17 @@
         "support": "",
         "versions": [
             "2023.1-foss-2023a",
+            "2025.2-foss-2023a",
             "8.2-intel-2022a-PLUMED-2.7.2",
             "8.2-intel-2022a-cuda-11.4.1-hybrid-PLUMED-2.7.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2023.1-foss-2023a",
+        "default": "2025.2-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1755566383,
+        "last_updated": 1772585440,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/CP2K/2023.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CP2K/2025.2-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10349,6 +10350,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "libvori": {
+        "description": "C++ library implementing the Voronoi integration as well as the compressed bqb\nfile format. The present version of libvori is a very early development\nversion, which is hard-coded to work with the CP2k program package.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://brehm-research.de/libvori.php",
+        "support": "",
+        "versions": [
+            "220621-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "220621-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1772584297,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/libvori/220621-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "libxc": {
         "description": "Libxc is a library of exchange-correlation functionals for density-functional theory.\n The aim is to provide a portable, well tested and reliable set of exchange and correlation functionals.",
         "domains": [
@@ -14160,6 +14181,7 @@
             "4.1.5-GCC-12.3.0",
             "4.1.5-GCC-12.3.0-CUDA-12.2.2",
             "4.1.5-NVHPC-23.9-CUDA-12.2.2-CUDA-12.2.2",
+            "4.1.5-NVHPC-23.9-GCC-12.3.0-CUDA-12.2.2",
             "4.1.5-intel-compilers-2023.2.1"
         ],
         "admin_list": [
