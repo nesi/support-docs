@@ -9,11 +9,6 @@ tags:
 
 # Jupyter kernels - Manual management
 
-!!! warning
-
-    NeSI OnDemand is in development and accessible to early access users only.
-    If you are interested in helping us test it please [contact us](mailto:support@nesi.org.nz).
-
 ## Introduction
 
 Jupyter kernels execute the code that you write. NeSI provides a number of
@@ -25,7 +20,7 @@ and these can be extended further as described on the
 [R](../../../../Software/Available_Applications/R.md) support
 pages.
 
-## Adding a custom Python kernel
+## Adding a Custom Python kernel
 
 !!! note "see also"
      See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
@@ -37,16 +32,23 @@ You can configure custom Python kernels for running your Jupyter
 notebooks. This could be necessary and/or recommended in some
 situations, including:
 
-- if you wish to load a different combination of environment modules
+- If you wish to load a different combination of environment modules
     than those we load in our default kernels
-- if you would like to activate a virtual environment or conda
+- If you would like to activate a virtual environment or conda
     environment before launching the kernel
 
 The following example will create a custom kernel based on the
 Miniconda3 environment module (but applies to other environment modules
 too).
 
-In a terminal run the following commands to load a Miniconda environment
+First, change directory into the path that you would like to place your
+conda environment.
+
+- If you would like to share this environment with other users, change directory
+into your project folder using `cd /nesi/project/<project-code>`. Do not use the path
+that includes `00_nesi_projects` or `home` in the name as this causes issues.
+
+Second, in a terminal run the following commands to load a Miniconda environment
 module:
 
 ``` sh
@@ -54,37 +56,27 @@ module purge
 module load Miniconda3
 ```
 
-Now create a conda environment named "my-conda-env" using Python 3.6.
+Now create a conda environment named "my-conda-env" using Python 3.11.
 The *ipykernel* Python package is required but you can change the names
 of the environment, version of Python and install other Python packages
 as required.
 
 ``` sh
-conda create --name my-conda-env python=3.11
+conda create --prefix ./my-conda-env python=3.11
 source $(conda info --base)/etc/profile.d/conda.sh
-conda activate my-conda-env
+conda activate ./my-conda-env
 conda install ipykernel
 # you can pip/conda install other packages here too
 ```
 
-Now create a Jupyter kernel based on your new conda environment:
+Third, we will create a wrapper for your conda environment.
+Change directory into your `my-conda-env` folder:
 
-``` sh
-python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
+```sh
+cd my-conda-env
 ```
 
-We must now edit the kernel to load the required NeSI environment
-modules before the kernel is launched. Change to the directory the
-kernelspec was installed to
-`~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
-`--name my-conda-env` in the above command):
-
-``` sh
-cd ~/.local/share/jupyter/kernels/my-conda-env
-```
-
-Now create a wrapper script, called `wrapper.sh`, with the following
-contents:
+And add the following as `wrapper.sh` into your `my-conda-env` folder:
 
 ``` sh
 #!/usr/bin/env bash
@@ -108,14 +100,30 @@ Make the wrapper script executable:
 chmod +x wrapper.sh
 ```
 
-Next edit the *kernel.json* to change the first element of the argv list
+Fourth, create a Jupyter kernel based on your new conda environment:
+
+``` sh
+python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
+```
+
+We must now edit the kernel to load the required NeSI environment
+modules before the kernel is launched. Change to the directory the
+kernelspec was installed to
+`~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
+`--name my-conda-env` in the above command):
+
+``` sh
+cd ~/.local/share/jupyter/kernels/my-conda-env
+```
+
+and edit the *kernel.json* to change the first element of the argv list
 to point to the wrapper script we just created. The file should look
-like this (change &lt;username&gt; to your NeSI username):
+like this:
 
 ```json
 {
  "argv": [
- "/home/<username>/.local/share/jupyter/kernels/my-conda-env/wrapper.sh",
+ "<full_path_to_your_wrapper_file>/wrapper.sh",
  "-m",
  "ipykernel_launcher",
  "-f",
@@ -129,84 +137,67 @@ like this (change &lt;username&gt; to your NeSI username):
 After refreshing JupyterLab your new kernel should show up in the
 Launcher as "My Conda Env".
 
-## Sharing a Python kernel with your project team members
+## Sharing your custom kernal with your project team members
 
 You can also configure a shared Python kernel that others with access to
-the same NeSI project will be able to load. If this kernel is based on a
-Python virtual environment, Conda environment or similar, you must make
-sure it also exists in a shared location (other users cannot see your
-home directory).
+the same NeSI project will be able to load.
 
-The example below shows creating a shared Python kernel based on the
-`Python/3.8.2-gimkl-2020a` module and also loads the
-`ETE/3.1.1-gimkl-2020a-Python-3.8.2` module.
+* To do this, you must make sure it also exists in a shared location
+(other users cannot see your home directory).
 
-In a terminal run the following commands to load the Python and ETE
-environment modules:
+First, **you** need to perform the steps in [Adding a Custom Python kernel](#adding-a-custom-python-kernel)
+
+Second, **your team members** need to run the following commands in the terminal:
 
 ``` sh
+# change directory into the path that contains your conda environment
+cd <full_path_to_your_conda_environment>
+
+# load Miniconda3
 module purge
-module load Python/3.8.2-gimkl-2020a
-module load ETE/3.1.1-gimkl-2020a-Python-3.8.2
+module load Miniconda3
+
+# Activate your shared conda environment
+source $(conda info --base)/etc/profile.d/conda.sh
+conda activate ./my-conda-env
 ```
 
-Now create a Jupyter kernel within your project directory, based on your
-new virtual environment:
+Third, get **your team members** to create a Jupyter kernel based on your python/conda environment:
 
 ``` sh
-python -m ipykernel install --prefix=/nesi/project/<project_code>/.jupyter --name shared-ete-env --display-name="Shared ETE Env"
+python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
 ```
 
-Next change to the kernel directory, which for the above command would
-be:
+**Your project members** must now edit the kernel in their home directories
+to load the required NeSI environment modules before the kernel is launched.
+Change to the directory the kernelspec was installed to
+`~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
+`--name my-conda-env` in the above command):
 
 ``` sh
-cd /nesi/project/<project_code>/.jupyter/share/jupyter/kernels/shared-ete-env
+cd ~/.local/share/jupyter/kernels/my-conda-env
 ```
 
-Create a wrapper script, *wrapper.sh*, with the following contents:
-
-``` sh
-#!/usr/bin/env bash
-
-# load necessary modules here
-module purge
-module load Python/3.8.2-gimkl-2020a
-module load ETE/3.1.1-gimkl-2020a-Python-3.8.2
-
-# run the kernel
-exec python $@
-```
-
-Note we also load the ETE module so that we can use that from our
-kernel.
-
-Make the wrapper script executable:
-
-``` sh
-chmod +x wrapper.sh
-```
-
-Next, edit the *kernel.json* to change the first element of the argv
-list to point to the wrapper script we just created. The file should
-look like this (change &lt;project\_code&gt; to your NeSI project code):
+and edit the *kernel.json* to change the first element of the argv list
+to point to the wrapper script we just created. The file should look
+like this:
 
 ```json
 {
  "argv": [
- "/nesi/project/<project_code>/.jupyter/share/jupyter/kernels/shared-ete-env/wrapper.sh",
+ "<full_path_to_your_wrapper_file>/wrapper.sh",
  "-m",
  "ipykernel_launcher",
  "-f",
  "{connection_file}"
  ],
- "display_name": "Shared Conda Env",
+ "display_name": "My Conda Env",
  "language": "python"
 }
 ```
 
 After refreshing JupyterLab your new kernel should show up in the
-Launcher as "Shared Virtual Env".
+Launcher as "My Conda Env".
 
 ## Custom kernel in a Singularity container
 
