@@ -31,7 +31,7 @@ function toggle(id) {
     }
 }
 
-async function showCalendarBanner() {
+async function showOfficeBanner() {
     const text = await fetch("/assets/training_calendar.ics")
         .then(r => r.ok ? r.text() : "");
     if (!text) { console.warn("failed to load calendar ") };
@@ -49,10 +49,10 @@ async function showCalendarBanner() {
             if (now.getTime()  < d.getTime() + 3600000) {
                 // if not started
                 if (now < d) {
-                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`);
+                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`, "calendar-banner");
 
                 } else {
-                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`);
+                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`, "calendar-banner");
                 }
             }
             break;
@@ -60,10 +60,12 @@ async function showCalendarBanner() {
     }
 }
 
-function addBanner(msg) {
+
+function addBanner(msg, id) {
     const banner = document.createElement("div");
-    banner.id = "calendar-banner";
-    banner.classList += "md-typeset"
+    banner.id = id;
+    banner.classList += "md-typeset ";
+    banner.classList += "md-event-banner "
     banner.innerHTML = msg;
 
     const btn = document.createElement("button");
@@ -87,4 +89,8 @@ function format8601(str){
         str.substring(15, 16);
     return new Date(dateStringFormatted);
 }
-showCalendarBanner();
+// Remove me later
+showOfficeBanner();
+if (!document.getElementById("calendar-banner")){
+    addBanner(`<p>Registrations now open for <a href=https://www.eventbrite.co.nz/e/introduction-to-high-performance-computing-hpc-carpentry-tickets-1984247473608>Introduction to HPC Carpentry Workshop</a> on 24th March from 10am to 3pm.</p>`, 'workshop-banner');
+}
