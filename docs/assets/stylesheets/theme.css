@@ -180,7 +180,7 @@ span.md-status.md-status--deprecated {
 }
 
 
-#calendar-banner {
+.md-event-banner {
   background: #fffae6;
   border-bottom: 1px solid #ccc;
   font-size: 1.2em;
@@ -188,9 +188,7 @@ span.md-status.md-status--deprecated {
   z-index: 9999;
 }
 
-
-
-#calendar-banner button {
+.md-event-banner button {
   position: absolute;
   top: 4px;
   right: 6px;
