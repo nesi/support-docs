@@ -252,6 +252,11 @@ This will place the all files and subdirectories in the above `data_folder` into
 
 ### Step 3: untarball your tar
 
+After retrieving your tarball, you can extract its contents with the following command:
+
+```sh
+tar -xzvf <name of tarball>.tar.gz
+
 ## s3cmd reference
 
 [s3cmd tool](https://s3tools.org/usage)
