@@ -20,7 +20,7 @@ description: |
 
 ## Office Hours Dates
 
-Click on the links below to add the date & Zoom link to your calendar:
+Click on the links below to view the upcoming office hours:
 
 <iframe src="https://outlook.office365.com/owa/calendar/3d4e3c7b28ca4549803470b109cba86a@reannz.co.nz/0830583db389420aaa843dc231af48d810099982634588501079/calendar.html" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
