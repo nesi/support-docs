@@ -108,7 +108,7 @@ where:
     * `<name of folder to tarball>`: Replace this with the name of the folder containing all the small files you want to tarball.
 
 !!! tip
-    If you are not sure about if you need to tarball your files, feel free to [contact Mahuika Support](mailto:support@nesi.org.nz). We can talk you though what files and folders are best to tarball.
+    If you are not sure about if you need to tarball your files, feel free to {% include "partials/support_request.html" %}. We can talk you though what files and folders are best to tarball.
 
 ### Step 2a: Synchronise data
 
