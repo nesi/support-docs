@@ -8,7 +8,8 @@ tags:
 
 These are open for review if you find any of them unreasonable or inefficient.
 
-This page is about *hard limits* applied to jobs and users for more information about *per project* usage limitation see [Fair Share](Fair_Share.md)
+!!! info
+    This page is about *hard limits* applied to jobs and users. For more information about *per project* usage limitations, see our page on [Fair Share](Fair_Share.md).
 
 ## Per Job
 
