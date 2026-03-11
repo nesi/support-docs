@@ -6,7 +6,10 @@ tags:
     - accounting
 ---
 
-These are open for review if you find any of them unreasonable or inefficient.  
+These are open for review if you find any of them unreasonable or inefficient.
+
+!!! info
+    This page is about *hard limits* applied to jobs and users. For more information about *per project* usage limitations, see our page on [Fair Share](Fair_Share.md).
 
 ## Per Job
 
