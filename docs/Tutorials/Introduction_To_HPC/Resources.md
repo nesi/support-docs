@@ -372,7 +372,7 @@ If you know someone who has used the software before, they may be able to give y
 
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
-!!! postrequisite "Next Steps"
+!!! next "Next Steps"
     You can use this knowledge to set up the next job with a closer estimate of its load on the system.
     A good general rule is to ask the scheduler for **30%** more time and memory than you expect the job to need.
 
