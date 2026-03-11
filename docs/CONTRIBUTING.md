@@ -35,37 +35,13 @@ Any changes made should be merged via a pull request.
   ![GitHub pull request form](assets/images/example_pr_github.png)
 
 ## Major edits through GitHub
-
-### Codespace Environment
-
-This repository has been configured to be usable with [GitHub Codespaces](https://github.com/features/codespaces).
-It allows accessing a full featured pre-configured development environment remotely, without installing anything on your local machine.
-
-Clicking on the following link will open a VS Code instance ready to be used with the latest version of the documentation files.
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs?quickstart=1)
-
-### Sharing Codespace Deployment
-
-Branch deployments can be shared
-
-1. Open 'PORTS' Tab.
-
-2. Right click on the port and select in the menu, 'Port Visiblity' -> 'Public'.
-
-3. Copy forwarded address (<kbd>ctrl</kbd> + <kbd>c</kbd>)
-
-![share codespace](assets/images/shareCodespaceDeployment.png)
-
-Sharing this address will allow other people to view your deployment, so long as your codespace is running.
-
 ## Local Development Environment (Recommended)
 
 A local development environment is not required to make doc edits, but if you are making lots of changes, the real time rendering can be quite helpful.
 
 ### First Time Setup
 
-You will need to have Python **3.10** or later installed on your computer.
+You will need to have Python **3.10** or later and git installed on your computer.
 
 Clone this repository and create a Python virtual environment using:
 
@@ -131,6 +107,30 @@ Whenever a change is committed, or a merge request opened, a series of automatic
 From a pull request, the status of these checks can be seen in the 'Checks' tab, or inline under the 'Files Changed' Tab.
 
 Will give three levels of output, **Errors** (serious issues that will prevent merging into main), **Warnings** (non-critical suggestions for improvement) and **Info** (pedantry).
+
+
+### Codespace Environment
+
+This repository has been configured to be usable with [GitHub Codespaces](https://github.com/features/codespaces).
+It allows accessing a full featured pre-configured development environment remotely, without installing anything on your local machine.
+
+Clicking on the following link will open a VS Code instance ready to be used with the latest version of the documentation files.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs?quickstart=1)
+
+### Sharing Codespace Deployment
+
+Branch deployments can be shared
+
+1. Open 'PORTS' Tab.
+
+2. Right click on the port and select in the menu, 'Port Visiblity' -> 'Public'.
+
+3. Copy forwarded address (<kbd>ctrl</kbd> + <kbd>c</kbd>)
+
+![share codespace](assets/images/shareCodespaceDeployment.png)
+
+Sharing this address will allow other people to view your deployment, so long as your codespace is running.
 
 ## Making a Merge Request
 
@@ -204,12 +204,10 @@ This will allow you to fix any merge conflicts in your feature branch, before me
 
 ## Update Remote Assets
 
-!!! note ""
-  Still haven't found a way to do this properly 😔
-
-Certain files need to be fetched from other repos for up to date info. This will be automated, but for now the process is manual.
-
-For local builds, run `bash .github/fetch_includes.sh`, this should be run automatically on workspace open if you use VSCode.
+Certain files need to be fetched from other repos for up to date info.
+The script `.github/fetch_includes.sh` pulls in all the updates from various sources. This happens by default before deployment.
+As redundancy, and also to make changes to be visible, there is also a workflow that runs daily that will run `.github/fetch_includes.sh` and commit the changes.
+Anything in the repo will be overwritten by the most up to date version on deployment.
 
 1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
 2. A branch `new-assets` will be created, which can be merged into main.

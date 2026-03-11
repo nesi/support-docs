@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: '00 12 * * *' # Should run 1 hour after module list update.
 env:
-  PYTHON_VERSION: 3.x
+  PYTHON_VERSION: 3.14.2
   GH_TOKEN: ${{ github.token }}
 permissions:
   contents: write

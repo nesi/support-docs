@@ -127,16 +127,13 @@ allocations.</em></p></td>
 <tr >
 <td rowspan="4" ><h2 id=institutional>Institutional</h2>
 <p>Available if you work for or study at one of the institutions that was a NeSI Collaborator,
-or has a [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/)
+or has a <a href="https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/">Subscription</a>
 to our services.</p>
-<blockquote>
-<h2 id="warning">Warning</h2>
 <p>If you are employed by and/or study at multiple institutions, it is
 your responsibility to find out which of those institutions is
 supporting your proposed work. Whether and how your research
 is eligible to receive allocations of REANNZ HPC resources depends on its host
 institution.</p>
-</blockquote>
 <p>Allocations from an institution's entitlement are subject to approval
 by that institution. Some institutions require pre-approval or recover
 costs for their REANNZ HPC usage through internal charging.</p>
@@ -173,7 +170,7 @@ please {% include "partials/support_request.html" %} before applying for a new p
 Our Engagement Team is happy to talk to you and representatives of your institution about
 [Subscription options](https://www.nesi.org.nz/community/partners-pricing#subscriptions).
 It's best to start talking to us early as
-[Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) contracts can
+[Subscription](../Service_Subscriptions/What_is_a_Subscription.md) contracts can
 take a while to set up.
 
 Our team is happy to answer any questions you may have throughout the
