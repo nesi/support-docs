@@ -452,5 +452,5 @@ Currently Loaded Modules:
     - Unload software with `module unload`
     - The module system handles software versioning and package conflicts for you automatically.
 
-!!! postrequisite
+!!! next
     - Link to next page
