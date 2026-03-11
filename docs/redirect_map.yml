@@ -153,7 +153,9 @@ Getting_Started/Accounts-Projects_and_Allocations/Creating_a_NeSI_Account_Profil
 Software/Parallel_Computing/Parallel_Execution.md : Software/Parallel_Computing/Parallel_Computing.md
 Software/Parallel_Computing/Job_Arrays.md : Batch_Computing/Job_Arrays.md
 Getting_Started/FAQs/Login_Troubleshooting.md : Getting_Started/Accessing_the_HPCs/Login_Troubleshooting.md
+Batch_Computing/Batch_Computing_ : Batch_Computing/Batch_Computing_Guide.md
 Data_Transfer/Filesytem_Mounts_using_SSHFS.md : Data_Transfer/Filesystem_Mounts_using_SSHFS.md
+Tutorials/Introduction_To_HPC/What_Is_a_HPC_cluster.md : Tutorials/Introduction_To_HPC/Introduction.md
 Data_Transfer/Globus/Overview.md : Data_Transfer/Globus/Globus_Overview.md
 Getting_Started/Policy/Acceptable_Use_Policy.md : Policy/Acceptable_Use_Policy.md
 Getting_Started/Policy/Access_Policy.md : Policy/Access_Policy.md

@@ -47,6 +47,15 @@
             "args": ["checks/fail_checks.md"],
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "Debug General",
+            "type": "debugpy",
+            "request": "launch",
+            "program": ".venv/bin/mkdocs",
+            "args": ["build"],
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }
