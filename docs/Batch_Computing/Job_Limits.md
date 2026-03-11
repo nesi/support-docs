@@ -23,7 +23,7 @@ These are open for review if you find any of them unreasonable or inefficient.
 
 ## Per User
 
-- 1344 CPU cores occupied (so 8 full Genoa nodes, or 10.5 Milan nodes),
+- 2688 CPU cores occupied (so 16 full Genoa nodes, or 21 Milan nodes),
 - 3528 core-days booked by running jobs (so 3 weeks of one full node).
 - 6 TB of memory occupied (4 full 1.5 TB nodes)
 - 30 TB-days booked by running jobs (so 3 weeks of one full 1.5 TB node).
