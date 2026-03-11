@@ -296,7 +296,7 @@ span.md-status.md-status--deprecated {
 
 .md-typeset .objectives>.admonition-title,
 .md-typeset .objectives>summary {
-  background-color: (132, 121, 183, 0.1);
+  background-color: rgba(132, 121, 183, 0.1);
 }
 
 .md-typeset .objectives>.admonition-title::before,
