@@ -34,6 +34,7 @@ Dataset | Path | Licence Status | Notes
 [gtdbtk_214](https://gtdb.ecogenomic.org/) | /opt/nesi/db/gtdbtk_214 | CC-BY-SA 4.0 | Genome Taxonomy Database release 214 used by GTDB-Tk module
 [gtdbtk_220](https://gtdb.ecogenomic.org/) | /opt/nesi/db/gtdbtk_220 | CC-BY-SA 4.0 | Genome Taxonomy Database release 220 used by GTDB-Tk module
 [HUMAnN](https://huttenhower.sph.harvard.edu/humann/) | /opt/nesi/db/Humann | MIT | Databases for HUMAnN module
+[JGI IMG](https://img.jgi.doe.gov/) | /opt/nesi/db/JGI-IMG | Public | JGI IMG/M databases
 [Kaiju](https://github.com/bioinformatics-centre/kaiju) | /opt/nesi/db/Kaiju | GPL-3.0 | Database index for Kaiju module
 [Kraken2](https://github.com/DerrickWood/kraken2) | /opt/nesi/db/Kraken2 | MIT | Databases for Kraken2 module
 [megaX](https://www.megasoftware.net/) | /opt/nesi/db/megaX | Free for academics | Evolutionary analysis reference data for MegaX module
