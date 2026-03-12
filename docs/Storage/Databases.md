@@ -51,6 +51,7 @@ Dataset | Path | Licence Status | Notes
 [VEP](https://www.ensembl.org/info/docs/tools/vep/) | /opt/nesi/db/VariantEffectPredictor | No restrictions | Ensembl annotation data for variant effect prediction
 [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) | /opt/nesi/db/VIBRANT_v1.2.1_databases | GPL-3.0 | Viral genome and HMM databases used by VIBRANT environmental module
 [VirSorter](https://github.com/simroux/VirSorter) | /opt/nesi/db/VirSorter | GPL-2.0 | Viral hallmark gene and profile databases
+[VOGDB](https://vogdb.org/) | /opt/nesi/db/VOGDB | Public | The Virus Orthologous Groups Database (VOGDB) is a multi-layer database that progressively groups viral genes into groups connected by increasingly remote homology.
 [waafle](https://github.com/biobakery/waafle) | /opt/nesi/db/waafle | MIT | Reference sets for gene neighborhood analysis for waafle environmental module
 [checkv](https://bitbucket.org/berkeleylab/checkv) | /opt/nesi/db/checkv-db-v0.6 | [BSD 3-Clause-style](https://bitbucket.org/berkeleylab/checkv/src/master/LICENSE.txt) | Viral genome completeness and contamination database for CheckV environmental module
 
