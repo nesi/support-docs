@@ -76,15 +76,15 @@ make install
 ```
 Add TAU to your environment:
 ```bash
-export PATH=$TAU_HOME/bin:$PATH
+export PATH=$TAU_HOME/x86_64/bin:$PATH
 ```
 Locate the TAU MPI makefile:
 ```bash
-ls $HOME/tau/lib/Makefile.tau*
+ls $TAU_HOME/x86_64/lib/Makefile.tau*
 ```
 Set the environment variable:
 ```bash
-export TAU_MAKEFILE=$HOME/tau/lib/Makefile.tau-mpi-pdt
+export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-mpi-pdt-profile-trace
 ```
 Verify the TAU compiler wrappers are available:
 ```bash
