@@ -99,6 +99,8 @@ git clone https://github.com/pletzer/fidibench.git
 cd fidibench
 mkdir build-tau
 cd build-tau
+# required otherwise cmake hangs 
+export TAU_OPTIONS="-optNoRevert -optVerbose -optCompInst"
 CXX=tau_cxx.sh MPI_CXX=tau_cxx.sh cmake ..
 ```
 The MPI example used in this guide is the executable `upwindMpiCxx`
@@ -112,7 +114,13 @@ make CXX=tau_cxx.sh VERBOSE=1 upwindMpiCxx
 ```bash
 export TAU_TRACE=1
 export TAU_PROFILE=0
-export TAU_TRACE_DIR=traces
-mkdir -p $TAU_TRACE_DIR
+export TRACEDIR=traces
+mkdir -p $TRACEDIR
 mpiexec -n 4 ./upwindMpiCxx
+cd $TRACEDIR
+tau_treemerge.pl
+rm -f tau.trc tau.edf
+tau_treemerge.pl
+tau2slog2 tau.trc tau.edf -o upwindMpiCxx.slog2
+jumpshot upwindMpiCxx.slog2
 ```
