@@ -21,14 +21,14 @@ The workflow consists of four steps:
 3. Run the application with tracing enabled.
 4. Inspect the results with TAU analysis tools.
 
-## Prerequisites
+## 1. Build TAU on Mahuika
 
 Load the required modules for the compiler toolchain and MPI. TAU should be compiled against the same compiler and MPI toolchain that will be used to build and run the application. Here we use `foss/2023a`, adapt as required.
 
 
 ```bash
 module purge
-module load foss/2023a CMake
+module load gimkl/2022a CMake
 ```
 
 Confirm the versions:
@@ -37,54 +37,13 @@ g++ --version
 mpicxx --version
 ```
 
-## 1. Build TAU on Mahuika
-
-Download TAU:
+We'll use `spack` to install TAU. Refer to https://spack.readthedocs.io/en/latest/getting_started.html on how to install `spack`. We recommend that you intall `spack` in your project directory. Once installed:
 ```bash
-wget http://tau.uoregon.edu/tau.tgz
-tar xf tau.tgz
-cd tau-*
-wget http://tau.uoregon.edu/ext.tgz
-tar xf ext.tgz
-wget http://tau.uoregon.edu/pdt_lite.tar.gz
-tar xf pdt_lite.tar.gz
-cd pdtoolkit*
-make && make install
-cd ..
+spack install tau@2.34.1 %gcc@11.3.0
 ```
-Set `TAU_HOME`, the location where TAU will be installed (change!), e.g.:
+then load your environment
 ```bash
-export TAU_HOME=/nesi/project/nesi99999/$USER/tau
-```
-
-Configure TAU for MPI tracing using the GNU toolchain:
-```bash
-./configure \
-  -pdt=$PWD/pdtoolkit-3.25.2 \
-  -bfd=download -dwarf=download -unwind=download -iowrapper \
-  -prefix=$TAU_HOME \
-  -mpi \
-  -TRACE \
-  -PROFILE \
-  -cc=gcc \
-  -c++=g++ \
-  -fortran=gfortran
-```
-Build and install:
-```bash
-make install
-```
-Add TAU to your environment:
-```bash
-export PATH=$TAU_HOME/x86_64/bin:$PATH
-```
-Locate the TAU MPI makefile:
-```bash
-ls $TAU_HOME/x86_64/lib/Makefile.tau*
-```
-Set the environment variable:
-```bash
-export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-mpi-pdt-profile-trace
+spack load tau@2.34.1
 ```
 Verify the TAU compiler wrappers are available:
 ```bash
