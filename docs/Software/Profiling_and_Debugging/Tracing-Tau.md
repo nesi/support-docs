@@ -28,7 +28,7 @@ Load the required modules for the compiler toolchain and MPI. TAU should be comp
 
 ```bash
 module purge
-module load foss/2023a
+module load foss/2023a CMake
 ```
 
 Confirm the versions:
@@ -42,17 +42,25 @@ mpicxx --version
 Download TAU:
 ```bash
 wget http://tau.uoregon.edu/tau.tgz
-tar -xzf tau.tgz
-wget http://tau.uoregon.edu/pdt_lite.tar.gz
-tar -xzf pdt_lite.tar.gz
-ln -s pdtoolkit-* pdtoolkit
+tar xf tau.tgz
 cd tau-*
+wget http://tau.uoregon.edu/ext.tgz
+tar xf ext.tgz
+wget http://tau.uoregon.edu/pdt_lite.tar.gz
+tar xf pdt_lite.tar.gz
+cd pdtoolkit*
+make && make install
+cd ..
 ```
-Configure TAU for MPI tracing using the GNU toolchain:
+Set `TAU_HOME`, the location where TAU will be installed (change!), e.g.:
 ```bash
 export TAU_HOME=/nesi/project/nesi99999/$USER/tau
+```
+
+Configure TAU for MPI tracing using the GNU toolchain:
+```bash
 ./configure \
-  -pdt=$PWD/../pdtoolkit \
+  -pdt=$PWD/pdtoolkit-3.25.2 \
   -bfd=download -dwarf=download -unwind=download -iowrapper \
   -prefix=$TAU_HOME \
   -mpi \
@@ -91,7 +99,6 @@ git clone https://github.com/pletzer/fidibench.git
 cd fidibench
 mkdir build-tau
 cd build-tau
-module load CMake
 CXX=tau_cxx.sh MPI_CXX=tau_cxx.sh cmake ..
 ```
 The MPI example used in this guide is the executable `upwindMpiCxx`
