@@ -14,6 +14,8 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 ## Access
 
 ### OnDemand Apps
+* Firefox Browser will fail to render the _HPC Shell Access_ app correctly.  Please switch to a Chrome or Safari browser until the vendor provides a fix.
+
 * The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
 
 * Slurm `sbatch` jobs can be submitted directly from your apps, such as the terminal in Jupyterlab, RSudio or code-server.  However, interactive jobs (`srun` or `salloc`) can only run from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz).
