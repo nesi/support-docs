@@ -66,7 +66,7 @@ jobs:
         run: exit 0
       - if: ${{needs.get.outputs.filelist}}
         name: Check out repo.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - if: ${{needs.get.outputs.filelist}}
         name: Install dependencies
         run: |
@@ -89,7 +89,7 @@ jobs:
         run: exit 0
       - if: ${{needs.get.outputs.filelist}}
         name: Check out repo.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - if: ${{needs.get.outputs.filelist}}
         name: Install dependencies
         run: pip3 install $(grep ^proselint requirements.txt)
@@ -109,7 +109,7 @@ jobs:
         run: exit 0
       - if: ${{needs.get.outputs.filelist}}
         name: Check out repo.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - if: ${{needs.get.outputs.filelist}}
         name: Install dependencies
         run: npm install -g markdownlint-cli
@@ -130,7 +130,7 @@ jobs:
         run: exit 0
       - if: ${{needs.get.outputs.filelist}}
         name: Check out repo.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - if: ${{needs.get.outputs.filelist}}
         name: Check markdown meta.
         run: |
@@ -148,7 +148,7 @@ jobs:
         run: exit 0
       - if: ${{needs.get.outputs.filelist}}
         name: Check out repo.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - if: ${{needs.get.outputs.filelist}}
         name: Check markdown meta.
         run: |
@@ -160,7 +160,7 @@ jobs:
     runs-on: ubuntu-24.04
     needs: get
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - run: pip3 install -r requirements.txt
