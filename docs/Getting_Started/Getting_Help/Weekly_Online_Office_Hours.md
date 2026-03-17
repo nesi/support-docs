@@ -20,9 +20,9 @@ description: |
 
 ## Office Hours Dates
 
-Click on the links below to add the date & Zoom link to your calendar:
+Click on the links below to view the upcoming office hours:
 
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Pacific%2FAuckland&bgcolor=%23ffffff&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=Y19oZW42cnIwMmV0MzlrYXQyaG11YW1pZG90c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://outlook.office365.com/owa/calendar/3d4e3c7b28ca4549803470b109cba86a@reannz.co.nz/0830583db389420aaa843dc231af48d810099982634588501079/calendar.html" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 If you are unable to add an Office Hour session to your calendar through
 these links, please email us at [training@reannz.co.nz](mailto:training@reannz.co.nz) and we can send a

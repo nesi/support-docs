@@ -1,7 +1,7 @@
 ---
 created_at: '2020-11-02T23:31:38Z'
+description: How to compile and run WRF on the REANNZ cluster
 tags: []
-status: deprecated
 ---
 
 The Weather Research and Forecasting (WRF) Model is a next-generation
@@ -39,28 +39,30 @@ git clone --recurse-submodule https://github.com/wrf-model/WRF.git --depth 1 --b
 
 cd WRF
 echo -e "\n\n\033[31m============If you are on Mahuika please select option 34 below============\033[0m"
-./configure
+./configure 
 
 echo -e "\n\n\033[31m============Done with configure step. Now compiling WRF. Build log in './WRF/wrf_build.log'============\033[0m"
 export J="-j 12"
 ./compile em_real >& wrf_build.log
 
 ```
-!!! Note
+
+!!! note
     Please select option 34 (dmpar gfortran/gccGNU) when asked `Please select from among the following Linux x86_64 options`.
 
-It will take some time for WRF to compile (~30 minutes). You may wish to run this from a [tmux](https://docs.nesi.org.nz/Getting_Started/Cheat_Sheets/tmux-Reference_sheet/) session to minimise the risk of disconnecting. Check the `wrf_build.log` file for any error or warning messages when finished.
+It will take some time for WRF to compile (~30 minutes). You may wish to run this from a [tmux](../../Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md) session to minimise the risk of disconnecting. Check the `wrf_build.log` file for any error or warning messages when finished.
 
 ## Running WRF
 
-An example Slurm job script for WRF on Mahuika is given below. The job can be submitted with `sbatch` *name\_of\_script.sl*
+An example Slurm job script for WRF on Mahuika is given below. The job can be submitted with `sbatch <name_of_script.sl>`
 
 ``` sl
 #!/bin/bash -e
-#SBATCH --job-name=wrf
-#SBATCH --time=01:00:00
-#SBATCH --ntasks=36
-#SBATCH --partition=milan
+
+#SBATCH --job-name    wrf
+#SBATCH --account     nesi99991
+#SBATCH --time        01:00:00
+#SBATCH --ntasks      36
 
 module purge 2> /dev/null
 module load netCDF-Fortran/4.6.1-gompi-2023a
@@ -77,8 +79,8 @@ The `srun` argument `--kill-on-bad-exit` should ensure the entire job is killed
 if any individual task fails. Without this option, the WRF job will stay alive
 until the wall limit is reached but won't actually do anything.
 
-
 ## Building and running WPS
+
 The following script will build WPS. Like the WRF build process, this will ask you to specify a compiler from the list of options:
 
 ```sh
@@ -110,7 +112,7 @@ echo -e "\n\033[31m=============Now compiling WPS. log file is './WPS-4.6.0/WPS_
 ```
 
 !!! Note
-    Change the `WRF_DIR` directory to the *full path* where you built WRF. Please **choose option 1** (`Linux x86_64, gfortran    (serial)`) to build serial (non MPI) WPS programmes, **choose option 3** (`Linux x86_64, gfortran    (dmpar)` for parallel WPS programmes.
+    Change the `WRF_DIR` directory to the *full path* where you built WRF. Please **choose option 1** (`Linux x86_64, gfortran    (serial)`) to build serial (non MPI) WPS programmes, **choose option 3** (`Linux x86_64, gfortran    (dmpar)`) for parallel WPS programmes.
 
 WPS will compile much faster than WRF. Most WPS jobs can be run from the command line on the login node. If you wish to submit a WPS job (`geogrid.exe` for example) to a compute node, it can be done via the following Slurm script:
 
@@ -133,5 +135,3 @@ export WRF_DIR='path/to/WRF/build'
 
 !!! note "Modules"
     Just as in the Slurm script above, you will need netCDF and JasPer modules in your environment if you wish to run WPS programmes from the login node.
-
-

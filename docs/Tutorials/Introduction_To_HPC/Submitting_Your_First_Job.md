@@ -190,7 +190,7 @@ JOBID   USER         ACCOUNT   NAME           CPUS MIN_MEM PARTITI START_TIME  T
 231964  yourUsername nesi12345 example_job.sl 1    300M     large   N/A        1:00     PENDING  (Priority)
 ```
 
-We can see many details about our job, most importantly is it’s STATE, the most common states you might see are..
+We can see many details about our job, most importantly is its STATE, the most common states you might see are..
 
 - `PENDING`: The job is waiting in the queue, likely waiting for resources to free up or higher priority jobs to run.
 - `RUNNING`: The job has been sent to a compute node and it is processing our commands.
@@ -316,5 +316,5 @@ This can be suppressed using the flag `-X`.
     - A job is just a shell script
     - Request *slightly* more resources than you need
 
-!!! postrequisite
+!!! next
     - Link to next page

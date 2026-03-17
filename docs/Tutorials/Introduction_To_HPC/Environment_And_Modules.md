@@ -279,7 +279,7 @@ You'll notice a similarity to the output of the `which` command.
 However, in this case, there are a lot more directories at the beginning.
 When we ran the `module load` command, it added many directories to the beginning of our `$PATH`.
 
-Looking at the first line: `/opt/nesi/CS400_centos7_bdw/R/4.2.1-gimkl-2022a/bin`
+Looking at the first line: `/opt/nesi/zen3/R/4.3.2-foss-2023a/bin`
 
 Let's examine what's there:
 
@@ -452,5 +452,5 @@ Currently Loaded Modules:
     - Unload software with `module unload`
     - The module system handles software versioning and package conflicts for you automatically.
 
-!!! postrequisite
+!!! next
     - Link to next page

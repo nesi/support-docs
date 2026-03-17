@@ -196,7 +196,7 @@ span.md-status.md-status--deprecated {
 
 /* Calendar */
 
-#calendar-banner {
+.md-event-banner {
   background: #fffae6;
   border-bottom: 1px solid #ccc;
   font-size: 1.2em;
@@ -205,7 +205,7 @@ span.md-status.md-status--deprecated {
   z-index: 9999;
 }
 
-#calendar-banner button {
+.md-event-banner button {
   position: absolute;
   top: 4px;
   right: 6px;
@@ -296,7 +296,7 @@ span.md-status.md-status--deprecated {
 
 .md-typeset .objectives>.admonition-title,
 .md-typeset .objectives>summary {
-  background-color: (132, 121, 183, 0.1);
+  background-color: rgba(132, 121, 183, 0.1);
 }
 
 .md-typeset .objectives>.admonition-title::before,

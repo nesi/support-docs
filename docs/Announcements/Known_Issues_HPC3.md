@@ -1,25 +1,27 @@
 ---
 created_at: 2025-04-28
-description: List of features currently missing from HPC3.
+description: List of features currently missing from Mahuika (HPC3).
 tags: 
     - hpc3
     - refresh
+    - mahuika
 ---
 
 Below is a list issues that we're actively working on. We hope to have these resolved soon. This is intended to be a temporary page.
 
 For differences between the new platforms and Mahuika, see the more permanent [differences from Mahuika](../Getting_Started/FAQs/Mahuika_HPC3_Differences.md).
 
-
-!!! info "Recently fixed"
-     - Emails can now be sent by Slurm when you set `--mail-user`.
-
 ## Access
 
-### OnDemand (including Jupyter)
-The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
+### OnDemand Apps
+* Firefox Browser will fail to render the _HPC Shell Access_ app correctly.  Please switch to a Chrome or Safari browser until the vendor provides a fix.
 
-Slurm jobs can be submitted, but only from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz).
+* The resources dedicated to interactive work via a web browser are smaller, and so computations requiring large amounts of memory or many CPU cores are not yet supported. 
+
+* Slurm `sbatch` jobs can be submitted directly from your apps, such as the terminal in Jupyterlab, RSudio or code-server.  However, interactive jobs (`srun` or `salloc`) can only run from the `Clusters > NeSI HPC SHell Access` dropdown menu which opens a standard terminal window in the browser. [Watch a demo here](https://youtu.be/bkq6tpRrAwc?si=kS2KBifnCf4d6tWz).
+
+* Missing user Namespaces in Kubernetes pods will interfere with most Apptainer operations.  One can run `apptainer pull` command, `apptainer exec,run,shell` commands can not be executed.
+
 
 ## Software
 As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.

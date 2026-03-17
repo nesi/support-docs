@@ -20,7 +20,7 @@ There are two commands that GUFI provides:
 * `gufi_find`: For finding files and subdirectories in a directory
 * `gufi_du`: For obtaining the size of files and directories
 
-For `gufi_find` and `gufi_du` to work, you must provide the full indexed pathname. Please note that `/nesi/home` is required in place of `/home` for the GUFI search index. For example:
+For `gufi_find` and `gufi_du` to work, you must provide the full indexed pathname (e.g. `.` won't work). Please note that `/nesi/home` is required in place of `/home` for the GUFI search index. For example:
 
     * /nesi/home/$USER/foo
     * /nesi/nobackup/nesi12345/bar
@@ -36,7 +36,7 @@ module load gufi
 
 ## Finding Files and Directories using GUFI
 
-In GUFI, you provide the same arguments to `gufi_find` as you do with the `find` command.
+In GUFI, you provide the same arguments to `gufi_find` as you do with the `find` command (but with the full pathname specified: `.` or `~` won't be effective).
 For example, if you want to find a dataset in your scratch directory:
     
 ```sh

@@ -3,18 +3,20 @@ created_at: '2020-01-05T21:43:18Z'
 tags: 
   - interactive
   - JupyterLab
+  - notebook
+  - ipython
+  - python
 description: How to run an JupyterLab interactive session on the NeSI cluster.
 ---
 
 # JupyterLab interactive sessions
 
-!!! warning
-     If you are using a windows computer, this method has currently
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not
-     tested it yet in Putty or Mobaxterm
+For new users we recommend running Jupyterlab from our [OnDemand Service](https://docs.nesi.org.nz/Interactive_Computing/OnDemand/).  However,
+many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
-To run Python+JupyterLab in interactive mode, first we need to load
-your interactive session:
+>If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
+
+To run JupyterLab in Slurm interactive mode, first we need to load your interactive session:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
@@ -88,3 +90,4 @@ http://127.0.0.1:PORT/lab?token=TOKEN
 ```
 
 You will now be able to see and work wih Python+JupyterLab in your web browser.
+

@@ -141,7 +141,7 @@ Memory efficiency can be determined by comparing _ReqMem_ (requested memory) wit
 
 $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
 
-So for the above example we see that _0.1GB_ (102048K) of our requested _1GB_ meaning the memory efficincy was about _10%_.
+So for the above example we see that _0.1GB_ (102048K) of our requested _1GB_ meaning the memory efficiency was about _10%_.
 
 CPU efficiency can be determined by comparing _TotalCPU_ (CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to _Alloc_ (number of allocated CPUs) multiplied by _Elapsed_ (Walltime, actual time passed).
 
@@ -372,7 +372,7 @@ If you know someone who has used the software before, they may be able to give y
 
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
-!!! postrequisite "Next Steps"
+!!! next "Next Steps"
     You can use this knowledge to set up the next job with a closer estimate of its load on the system.
     A good general rule is to ask the scheduler for **30%** more time and memory than you expect the job to need.
 

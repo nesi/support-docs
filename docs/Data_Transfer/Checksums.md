@@ -1,9 +1,14 @@
 ---
 created_at: '2020-01-14T22:10:50Z'
-tags: []
+tags: 
+    - checksum
+    - md5
+    - sha
+    - hash
+    - digest
 ---
 
-Applying a *checksum function* to a file will return its *checksum*.
+Applying a *checksum function* to a file will return its *message digest* (also simply referred to as a _checksum_), which is akin to a digital fingerprint.
 Checksum functions are a type of [hash function](https://en.wikipedia.org/wiki/Hash_function),
 and will always return the same hash for any particular file contents, making them
 useful for file validation. There are many different checksum functions.
@@ -23,7 +28,7 @@ introduced into a dataset. For example:
 While not necessary to do in every case, every time, file integrity
 should be one of the first things you check when troubleshooting.
 
-## Example
+### Example
 
 The file `corrupt.bin` has had 1 byte changed, yet on inspection would
 appear identical.
@@ -43,16 +48,10 @@ ef749eb4110c2a3b3c747390095d0b76 corrupt.bin
 002c33835b3921d92d8074f3b392ef65 original.bin
 ```
 
-Note that filename, path, permissions or any other metadata does not
-affect the checksum.
+>The filename, path, permissions and other metadata _do not_ affect the checksum.
 
-!!! note
-     Checksum functions are designed so that similar files *will not*
-     produce similar hashes.
-     You will only need to compare a few characters of the string to
-     confirm validity.
 
-## Commands
+### Commands
 
 The checksum for file '*filename.txt*' can be found with the following
 commands.
@@ -62,3 +61,6 @@ commands.
 | SHA-1   | `sha1sum filename.txt`   | `certUtil -hashfile filename.txt`        | `shasum filename.txt`        |
 | SHA-256 | `sha256sum filename.txt` | `certUtil -hashfile filename.txt sha256` | `shasum -a 256 filename.txt` |
 | MD5     | `md5sum filename.txt`    | `certUtil -hashfile filename.txt md5`    | `md5 filename.txt`           |
+
+
+>Older hash functions such as SHA-1 and MD5 are deprecated for most high-security uses.  However, they are usually sufficient for the purposes mentioned in this document.  Newer hashes such as SHA-256 and SHA-512 are still widely used for cryptographic purposes.
