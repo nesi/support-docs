@@ -5,7 +5,8 @@ MODULES_UPDATE_URL="https://raw.githubusercontent.com/nesi/modules-list/main/rss
 GLOSSARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
 DICTIONARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
 SNIPPETS_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
-ICAL_URL="https://calendar.google.com/calendar/ical/c_hen6rr02et39kat2hmuamidots@group.calendar.google.com/public/basic.ics"
+#ICAL_URL="https://calendar.google.com/calendar/ical/c_hen6rr02et39kat2hmuamidots@group.calendar.google.com/public/basic.ics"
+ICAL_URL="https://outlook.office365.com/owa/calendar/3d4e3c7b28ca4549803470b109cba86a@reannz.co.nz/0830583db389420aaa843dc231af48d810099982634588501079/calendar.ics"
 
 mkdir -p docs/assets/glossary
 

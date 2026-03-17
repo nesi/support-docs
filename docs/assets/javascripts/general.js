@@ -38,7 +38,7 @@ async function showOfficeBanner() {
 
 
     const now = new Date();
-    let allmatch = text.matchAll(/DTSTART:(\d+T\d+Z)/g);
+    let allmatch = text.matchAll(/DTSTAMP:(\d+T\d+Z)/gm);
     // Extract all dates.
     for (const t of allmatch) {
         if (!t) continue;

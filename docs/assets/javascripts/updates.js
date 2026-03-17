@@ -158,3 +158,39 @@ function slugify(str) {
              .replace(/-+/g, '-');
     return str;
 }
+
+
+async function fetchIcalData(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.text();
+}
+async function getEventsFromIcalUrl(url) {
+    const icalString = await fetchIcalData(url);
+
+    // Parse the iCal data into a jCal object
+    const jcalData = ICAL.parse(icalString);
+
+    // Create a Component from the jCal data
+    const comp = new ICAL.Component(jcalData);
+
+    // Get all VEVENT subcomponents (individual events)
+    const events = comp.getAllSubcomponents('vevent');
+
+    // Process each event
+    const eventDetails = events.map(vevent => {
+        const event = new ICAL.Event(vevent);
+        return {
+            summary: event.summary,
+            description: event.description,
+            start: event.startDate.toJSDate(), // Convert ICAL.Time to JavaScript Date
+            end: event.endDate.toJSDate(),
+            location: vevent.getFirstPropertyValue('location')
+        };
+    });
+
+    return eventDetails;
+}
+document.gefiu = getEventsFromIcalUrl;
