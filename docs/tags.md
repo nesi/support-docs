@@ -4,3 +4,5 @@ description: Index showing all tags.
 ---
 
 {{description}}
+
+<!-- material/tags -->
