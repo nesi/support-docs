@@ -39,7 +39,7 @@ mpicxx --version
 
 We'll use `spack` to install TAU. Refer to https://spack.readthedocs.io/en/latest/getting_started.html on how to install `spack`. We recommend that you intall `spack` in your project directory. Once installed:
 ```bash
-spack install tau@2.34.1 %gcc@11.3.0
+spack install tau@2.34.1%gcc@11.3.0
 ```
 then load your environment
 ```bash
