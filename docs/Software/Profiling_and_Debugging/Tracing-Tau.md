@@ -23,12 +23,12 @@ The workflow consists of four steps:
 
 ## Prerequisites
 
-Load the required modules for the compiler toolchain and MPI. TAU should be compiled against the same compiler and MPI toolchain that will be used to build and run the application. Here we use `foss/2023a`, adapt as required.
+Load the required modules for the compiler toolchain and MPI. TAU should be compiled against the same compiler and MPI toolchain that will be used to build and run the application. Here we use `gimkl/2022a`, adapt as required.
 
 
 ```bash
 module purge
-module load foss/2023a CMake
+module load gimkl/2022a CMake
 ```
 
 Confirm the versions:
@@ -49,6 +49,7 @@ tar xf ext.tgz
 wget http://tau.uoregon.edu/pdt_lite.tar.gz
 tar xf pdt_lite.tar.gz
 cd pdtoolkit*
+./configure
 make && make install
 cd ..
 ```
@@ -60,15 +61,11 @@ export TAU_HOME=/nesi/project/nesi99999/$USER/tau
 Configure TAU for MPI tracing using the GNU toolchain:
 ```bash
 ./configure \
+  -mpi -ompt \
   -pdt=$PWD/pdtoolkit-3.25.2 \
   -bfd=download -dwarf=download -unwind=download -iowrapper \
-  -prefix=$TAU_HOME \
-  -mpi \
-  -TRACE \
-  -PROFILE \
-  -cc=gcc \
-  -c++=g++ \
-  -fortran=gfortran
+  -otf=download \
+  -prefix=$TAU_HOME
 ```
 Build and install:
 ```bash
@@ -84,7 +81,7 @@ ls $TAU_HOME/x86_64/lib/Makefile.tau*
 ```
 Set the environment variable:
 ```bash
-export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-mpi-pdt-profile-trace
+export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-ompt-mpi-pdt-openmp
 ```
 Verify the TAU compiler wrappers are available:
 ```bash
@@ -101,7 +98,7 @@ mkdir build-tau
 cd build-tau
 # required otherwise cmake hangs 
 export TAU_OPTIONS="-optNoRevert -optVerbose -optCompInst"
-CXX=tau_cxx.sh MPI_CXX=tau_cxx.sh cmake ..
+CXX=tau_cxx.sh MPI_CXX=tau_cxx.sh cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 ```
 The MPI example used in this guide is the executable `upwindMpiCxx`
 ```bash
@@ -118,9 +115,13 @@ export TRACEDIR=traces
 mkdir -p $TRACEDIR
 mpiexec -n 4 ./upwindMpiCxx
 cd $TRACEDIR
-tau_treemerge.pl
 rm -f tau.trc tau.edf
 tau_treemerge.pl
 tau2slog2 tau.trc tau.edf -o upwindMpiCxx.slog2
 jumpshot upwindMpiCxx.slog2
 ```
+Note: if you are connecting from a Mac you may need to invoke
+```bash
+jumpshot -fix-xquartz upwindMpiCxx.slog2
+```
+to avoid the black window issue. 
