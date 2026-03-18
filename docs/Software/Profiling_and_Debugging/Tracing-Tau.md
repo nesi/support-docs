@@ -1,5 +1,5 @@
 ---
-created_at: '2024-07-26'
+created_at: '2026-03-18'
 description: "A guide on how to use the TAU Performance System to trace an MPI-based C++ application on the Mahuika HPC cluster."
 tags:
     - profiling
