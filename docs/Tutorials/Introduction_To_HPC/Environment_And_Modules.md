@@ -10,9 +10,6 @@ status: tutorial
 
 !!! time "Time: 20 Minutes"
 
-!!! prerequisite
-    - Page Link
-
 !!! objectives
     - Load and use a software package.
     - Explain how the shell environment changes when the module mechanism loads or unloads packages.
@@ -138,6 +135,10 @@ We are able to unload individual modules, unfortunately within the NeSI system i
 `module purge` is a useful tool for ensuring repeatable research by guaranteeing that the environment that you build your software stack from is always the same.
 This is important since some modules have the potential to silently effect your results if they are loaded (or not loaded).
 
+!!! warning "Think before you copy/paste code"
+    Just because you see a command, you don't have to run it.
+    Removing `NeSI/zen3` will break your environment. You _do not_ want to run `module --force purge`
+
 ### Listing Available Modules
 
 To see available software modules, use `module avail`:
@@ -242,7 +243,9 @@ echo $PATH | tr ":" "\n"
 ```
 
 ??? info "Wait, what did I just run??"
-    mention pipe and stuff. point to intro bash.
+    The `|` is called a pipe and sends the output of one command as the input to a subsequent command.
+    So here we passed the output of `echo $PATH` to the command `tr` (translate) and told it to replace any `:` with a new line (`\n`).
+    For more information about pipes and command line operations, check out the [Unix Shell workshop materials](https://swcarpentry.github.io/shell-novice/index.html).
 
 ```out
 /opt/nesi/zen3/R/4.3.2-foss-2023a/bin
@@ -326,10 +329,6 @@ The following modules were not unloaded:
 
   1) NeSI/zen3
 ```
-
-!!! warning "Thinking"
-    Just because you see a command, you don't have to run it.
-    Removing `NeSI/zen3` will break your environment. You _do not_ want to run `module --force purge`
 
 ## Software Versioning
 
@@ -451,6 +450,3 @@ Currently Loaded Modules:
     - Load software with `module load softwareName`.
     - Unload software with `module unload`
     - The module system handles software versioning and package conflicts for you automatically.
-
-!!! next
-    - Link to next page

@@ -171,10 +171,12 @@ _48 seconds_ used out of _15 minutes_ requested give a time efficiency of about 
     ```
 
     a. CPU efficiency.
+
     b. Memory efficiency.
 
 ??? question "Solution"
     a. CPU efficiency is `( 23 / ( 8 * 6 ) ) x 100` or around **48%**.
+
     b. Memory efficiency is `( 14 / 32 ) x 100` or around **43%**.
 
 For convenience, Mahuika has provided the command `nn_seff <jobid>` to calculate **S**lurm **Eff**iciency (all Mahuika commands start with `nn_`, for **N**eSI **N**IWA).
@@ -196,7 +198,7 @@ CPU Efficiency: 141.30%  00:01:05 of 00:00:46 core-walltime
 Mem Efficiency: 93.31%  233.29 MB of 250.00 MB
 ```
 
-Knowing what we do now about job efficiency, lets submit the previous job again but with more appropriate resources.
+Knowing what we do now about job efficiency, let's submit the previous job again but with more appropriate resources.
 
 ```sl
 #!/bin/bash -e

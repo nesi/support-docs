@@ -75,8 +75,8 @@ nn_storage_quota -u <username>
 
 ```out
 Quota_Location                          AvailableGiB           UsedGiB Use%
-project_nesi99991                                800               496   62
-nobackup_nesi99991                             30720             16189   53
+project_nesi99991                                800               800   100
+nobackup_nesi99991                             30720              4608   15
 home_cwal219                                      20                13   65
 ```
 
@@ -216,10 +216,10 @@ ls /nesi/nobackup/<projectcode>
 ```
 
 ```out
-{{ example_script }} birds usr123 <username>
+{{ example_script.R }} birds usr123 <username>
 ```
 
-!!! note "YMMV"
+!!! note "Your Mileage May Vary"
     There may already be files and subdirectories in your project's nobackup directory if it isn't a brand new project.
 
 ## General Syntax of a Shell Command
@@ -233,7 +233,7 @@ ls -l /nesi/nobackup/<projectcode>
 
 ```out
 -rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 
--rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 {{ example_script }} 
+-rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 {{ example_script.R }} 
 drwxr-sr-x+ 3 usr9999 <projectcode> 4096 22 Sep 08:40 birds
 drwxrws---+ 2 usr123  <projectcode> 4096 Nov 15 09:01 usr123
 drwxrws---+ 2 <username>  <projectcode> 4096 Nov 15 09:01 <username>
@@ -271,7 +271,7 @@ ls -la
 ```out
 drwxrws---+  4 usr001  <projectcode>   4096 Nov 15 09:00 .
 drwxrws---+ 12 root    <projectcode> 262144 Nov 15 09:23 ..
--rw-r-----+  1 cwal219 <projectcode>    460 Nov 18 17:03 {{ config.extra.example_script }} 
+-rw-r-----+  1 cwal219 <projectcode>    460 Nov 18 17:03 example_script.R 
 drwxrws---+  2 usr123  <projectcode>   4096 Nov 15 09:01 usr123
 drwxrws---+  2 <username>  <projectcode>   4096 Nov 15 09:01 <username>
 ```
@@ -640,12 +640,12 @@ draft.txt
 ## Copying files and directories
 
 <!-- TODO: R script!!! -->
-In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}```, but as we can't all work on the same file at once you will need to take your own copy.
+In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/example_script.R```, but as we can't all work on the same file at once you will need to take your own copy.
 This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created.
 We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`
 
 ```sh
-cp {{ config.extra.working_directory|join('/') }}/{{ config.extra.example_script }}  .
+cp {{ config.extra.working_directory|join('/') }}/example_script.R  .
 ```
 
 We can check that it did the right thing using `ls`
@@ -655,7 +655,7 @@ ls
 ```
 
 ```out
-draft.txt   {{ example_script }} 
+draft.txt   example_script.R 
 ```
 
 ## Other File operations
