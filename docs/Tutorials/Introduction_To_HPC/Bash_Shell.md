@@ -80,15 +80,13 @@ nobackup_nesi99991                             30720             16189   53
 home_cwal219                                      20                13   65
 ```
 
-<!-- TODO fix this paragraph -->
 Notice that the project space for this user is over quota and has been locked, meaning no more data can be added.
 When your space is locked you will need to move or remove data.
-Also note that none of the nobackup space is being used.
-Likely data from project can be moved to nobackup.
+Also note that none of the nobackup space is being used, a smart idea would be to move data from `project` to `nobackup`.
 `nn_storage_quota` uses cached data, and so will no immediately show changes to storage use.
 
 For more details on our persistent and nobackup storage systems, including data retention and the nobackup auto-delete schedule,
-please see our [Filesystem and Quota](https://docs.nesi.org.nz/Storage/File_Systems_and_Quotas/NeSI_File_Systems_and_Quotas/) documentation.
+please see our [Filesystem and Quota](../../Storage/Filesystems_and_Quotas.md) documentation.
 
 Directories are like *places* — at any time while we are using the shell, we are in exactly one place called our **current working directory**.
 Commands mostly read and write files in the current working directory, i.e. 'here', so knowing where you are before running a command is important.
@@ -123,7 +121,7 @@ Finally, stored inside `home` is the directory with your username.
 As you may now see, using a bash shell is strongly dependent on the idea that your files are organized in a hierarchical file system.
 Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
-## Listing the contents of directories
+## Listing contents of directories
 
 To **l**i**s**t the contents of a directory, we use the command `ls` followed by the path to the directory whose contents we want listed.
 
