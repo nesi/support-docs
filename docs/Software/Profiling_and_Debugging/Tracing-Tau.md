@@ -1,5 +1,6 @@
 ---
-created_at: 'Tue 17 Mar 2026 10:52:33 NZDT'
+created_at: '2024-07-26'
+description: "A guide on how to use the TAU Performance System to trace an MPI-based C++ application on the Mahuika HPC cluster."
 tags:
     - profiling
     - MPI
@@ -13,7 +14,7 @@ zendesk_section_id: 360000278935
 
 
 This guide shows how to use the **TAU Performance System** to trace an MPI-based C++ application on the Mahuika HPC cluster. Tracing 
-records a time-ordered sequence of events during program execution. Each event is timestamped and written to a trace file so that the exact runtime behaviour of the program can be reconstructed. Events may include entry and exit of functions, MPI communication calls and synchronization events (barriers, waits). Tracing is particularly for identifying load imbalance, communication bottlencks and idle time in appications.
+records a time-ordered sequence of events during program execution. Each event is timestamped and written to a trace file so that the exact runtime behaviour of the program can be reconstructed. Events may include entry and exit of functions, MPI communication calls and synchronization events (barriers, waits). Tracing is particularly for identifying load imbalance, communication bottlenecks and idle time in applications.
 
 The example uses the **fidibench** benchmark and its `upwindMpiCxx` executable.
 
@@ -127,4 +128,4 @@ jumpshot -fix-xquartz upwindMpiCxx.slog2
 ```
 to avoid the black window issue.
 
-![Tau\_trace.png](../../assets/images/Tau_trace.png)
+![Example Tau trace in Jumpshot](../../assets/images/Tau_trace.png)
