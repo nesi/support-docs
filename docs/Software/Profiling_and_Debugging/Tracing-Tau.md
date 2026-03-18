@@ -1,19 +1,17 @@
 ---
-created_at: 'Tue 17 Mar 2026 10:52:33 NZDT'
+created_at: '2024-07-26'
+description: "A guide on how to use the TAU Performance System to trace an MPI-based C++ application on the Mahuika HPC cluster."
 tags:
     - profiling
     - MPI
-    - trace
-title: 'Tau For MPI Tracing'
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4405523725583
-zendesk_section_id: 360000278935
+title: 'Tau for MPI Tracing'
 ---
 
-
-This guide shows how to use the **TAU Performance System** to trace an MPI-based C++ application on the Mahuika HPC cluster. Tracing 
-records a time-ordered sequence of events during program execution. Each event is timestamped and written to a trace file so that the exact runtime behaviour of the program can be reconstructed. Events may include entry and exit of functions, MPI communication calls and synchronization events (barriers, waits). Tracing is particularly for identifying load imbalance, communication bottlencks and idle time in appications.
+This guide shows how to use the **TAU Performance System** to trace an MPI-based C++ application on the Mahuika HPC cluster.
+Tracing records a time-ordered sequence of events during program execution.
+Each event is timestamped and written to a trace file so that the exact runtime behaviour of the program can be reconstructed.
+Events may include entry and exit of functions, MPI communication calls and synchronization events (barriers, waits).
+Tracing is particularly for identifying load imbalance, communication bottlenecks and idle time in applications.
 
 The example uses the **fidibench** benchmark and its `upwindMpiCxx` executable.
 
@@ -28,13 +26,13 @@ The workflow consists of four steps:
 
 Load the required modules for the compiler toolchain and MPI. TAU should be compiled against the same compiler and MPI toolchain that will be used to build and run the application. Here we use `gimkl/2022a`, adapt as required.
 
-
 ```bash
 module purge
 module load gimkl/2022a CMake
 ```
 
 Confirm the versions:
+
 ```bash
 g++ --version
 mpicxx --version
@@ -50,6 +48,7 @@ PDT_VERSION=3.25.2
 Adpat as required.
 
 Download TAU:
+
 ```bash
 wget http://tau.uoregon.edu/tau.tgz
 tar xf tau.tgz
@@ -82,12 +81,15 @@ Build and install TAU:
 ```bash
 make install
 ```
+
 Add TAU to your environment:
+
 ```bash
 export PATH=$TAU_HOME/x86_64/bin:$PATH
 ```
-Verify that the Makefile has been properly installed and set the environment variable:
+Verify that the Makefile has been properly installed and set the environment variable to it:
 ```bash
+ls $TAU_HOME/x86_64/lib/Makefile.tau-ompt-mpi-pdt-openmp
 export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-ompt-mpi-pdt-openmp
 ```
 
@@ -123,10 +125,13 @@ To view the traces:
 ```bash
 jumpshot upwindMpiCxx.slog2
 ```
-Note: if you are connecting from a Mac you may need to invoke
-```bash
-jumpshot -fix-xquartz upwindMpiCxx.slog2
-```
-to avoid the black window issue.
 
-![Tau\_trace.png](../../assets/images/Tau_trace.png)
+!!! note "Mac Users"
+    If you are connecting from a Mac you may need to invoke
+
+    ```bash
+    jumpshot -fix-xquartz upwindMpiCxx.slog2
+    ```
+    to avoid the black window issue.
+
+![Example Tau trace in Jumpshot](../../assets/images/Tau_trace.png)
