@@ -1,9 +1,12 @@
 ---
 created_at: 'Tue 17 Mar 2026 10:52:33 NZDT'
-tags: []
-title: 'Tracing MPI applications with Tau'
-vote_count: 1
-vote_sum: -1
+tags:
+    - profiling
+    - MPI
+    - trace
+title: 'Tau For MPI Tracing'
+vote_count: 0
+vote_sum: 0
 zendesk_article_id: 4405523725583
 zendesk_section_id: 360000278935
 ---
@@ -88,22 +91,20 @@ Verify the TAU compiler wrappers are available:
 which tau_cxx.sh
 ```
 
-## 2. Obtain the example code (fidibench)
+## 2. Obtain the example code (fidibench) and compile it
 
 Clone the fidibench benchmark repository:
 ```bash
 git clone https://github.com/pletzer/fidibench.git
 cd fidibench
-mkdir build-tau
-cd build-tau
-# required otherwise cmake hangs 
-export TAU_OPTIONS="-optNoRevert -optVerbose -optCompInst"
-CXX=tau_cxx.sh MPI_CXX=tau_cxx.sh cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 ```
 The MPI example used in this guide is the executable `upwindMpiCxx`
 ```bash
 cd upwind/cxx
-make CXX=tau_cxx.sh VERBOSE=1 upwindMpiCxx
+make upwindMpiCxx
 ```
 
 ## 3. Run the application and analyse the results
@@ -113,7 +114,7 @@ export TAU_TRACE=1
 export TAU_PROFILE=0
 export TRACEDIR=traces
 mkdir -p $TRACEDIR
-mpiexec -n 4 ./upwindMpiCxx
+srun --ntasks=32 tau_exec ./upwindMpiCxx -numCells 512 -numSteps 5
 cd $TRACEDIR
 rm -f tau.trc tau.edf
 tau_treemerge.pl
@@ -124,4 +125,6 @@ Note: if you are connecting from a Mac you may need to invoke
 ```bash
 jumpshot -fix-xquartz upwindMpiCxx.slog2
 ```
-to avoid the black window issue. 
+to avoid the black window issue.
+
+![Tau\_trace.png](../../assets/images/Tau_trace.png)
