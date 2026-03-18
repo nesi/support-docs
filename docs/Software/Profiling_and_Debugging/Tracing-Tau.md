@@ -8,19 +8,20 @@ title: 'Tau for MPI Tracing'
 ---
 
 This guide shows how to use the **TAU Performance System** to trace an MPI-based C++ application on the Mahuika HPC cluster.
+
 Tracing records a time-ordered sequence of events during program execution.
 Each event is timestamped and written to a trace file so that the exact runtime behaviour of the program can be reconstructed.
 Events may include entry and exit of functions, MPI communication calls and synchronization events (barriers, waits).
-Tracing is particularly for identifying load imbalance, communication bottlenecks and idle time in applications.
+
+Tracing is particularly useful for identifying load imbalance, communication bottlenecks and idle time in applications.
 
 The example uses the **fidibench** benchmark and its `upwindMpiCxx` executable.
 
 The workflow consists of four steps:
 
-1. Build TAU for the desired compiler toolchain.
-2. Compile the application using TAU compiler wrappers.
-3. Run the application with tracing enabled.
-4. Inspect the results with TAU analysis tools.
+1. Build TAU for the desired compiler toolchain
+3. Build your application
+4. Inspect the results with TAU analysis tools
 
 ## Prerequisites
 
@@ -45,9 +46,9 @@ The instructions have been tested for
 TAU_VERSION=2.35.1
 PDT_VERSION=3.25.2
 ```
-Adpat as required.
+Adapt as required.
 
-Download TAU:
+Download and build its dependencies:
 
 ```bash
 wget http://tau.uoregon.edu/tau.tgz
@@ -82,10 +83,11 @@ Build and install TAU:
 make install
 ```
 
-Add TAU to your environment:
+Add TAU to your environment and check the `tau_exec` can be found:
 
 ```bash
 export PATH=$TAU_HOME/x86_64/bin:$PATH
+which tau_exec
 ```
 Verify that the Makefile has been properly installed and set the environment variable to it:
 ```bash
@@ -95,7 +97,6 @@ export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-ompt-mpi-pdt-openmp
 
 ## 2. Obtain the example code (fidibench) and compile it
 
-Clone the fidibench benchmark repository and build the code:
 ```bash
 git clone https://github.com/pletzer/fidibench.git
 cd fidibench
@@ -104,12 +105,12 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 make
 ```
-(The code does not need to be modified to instrument the MPI calls.)
+(The code does not need to be modified to instrument MPI calls.)
 
 
 ## 3. Run the application and analyse the results
 
-Run with `tau_exec` in front of the executable:
+Run with `tau_exec` in front of the executable after setting `TAU_TRACE=1`:
 ```bash
 export TAU_TRACE=1
 export TAU_PROFILE=0
