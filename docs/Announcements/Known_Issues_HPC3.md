@@ -24,11 +24,12 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 
 ## Software
-As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
 
-**Delft3D_FM** wasn't working in Mahuika's Milan partition so probably needs rebuilding.
+* FileSender - If you modify the `default_transfer_days_valid` parameter in your `~/.filesender/filesender.py.ini` to > 20 it will cause the transfer to fail with a 500 error code.  Please do not modify this parameter.
 
-**MPI** software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. 
+* Legacy Code - As was already the case on the Milan nodes in Mahuika (where they had a Rocky 8 OS), some of our environment modules cause system software to stop working, e.g: load `module load Perl` and `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
+    * Delft3D_FM -  wasn't working in Mahuika's Milan partition so probably needs rebuilding.
+    * MPI software using 2020 or earlier toolchains eg intel-2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended eg intel-2022a. 
 
 Please let us know if you find any additional problems.
 
