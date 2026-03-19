@@ -25,6 +25,13 @@ Multi-node MPI jobs may fail on the four nodes mg[13-16] with errors like `UCX E
 ## Core dump files
 Contrary to what is stated in [our documentation on core files](../Getting_Started/FAQs/What_is_a_core_file.md), these are not currently available, even if `ulimit -c unlimited` is set.
 
+## Software
+* FileSender - If you modify the `default_transfer_days_valid` parameter in your `~/.filesender/filesender.py.ini` to > 20 it will cause the transfer to fail with a 500 error code.  Please do not modify this parameter.
+
+* Legacy Code - Some of our environment modules cause system software to stop working, e.g: do `module load Perl/5.38.2-GCC-12.3.0` and find that `svn` stops working. This is usually the case if they load `LegacySystem/7` as a dependency. The solutions are to ask us to re-build the problem environment module, or just don't have it loaded while doing other things.
+ 
+* MPI software using 2020 or earlier toolchains eg intel/2020a, may not work correctly across nodes. Trying with more recent toolchains is recommended. 
+
 ## Slurm
 
 ### Requesting GPUs
