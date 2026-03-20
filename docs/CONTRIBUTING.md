@@ -108,6 +108,9 @@ From a pull request, the status of these checks can be seen in the 'Checks' tab,
 
 Will give three levels of output, **Errors** (serious issues that will prevent merging into main), **Warnings** (non-critical suggestions for improvement) and **Info** (pedantry).
 
+### ARIA and accessibility checks
+
+The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. If this check fails, the PR will show an error in the 'Checks' tab and the broken ARIA reference will be indicated.
 
 ### Codespace Environment
 
