@@ -9,17 +9,16 @@ Our Consultancy service provides scientific and HPC-focused
 computational and data science support to research projects across a
 range of domains.
 
-![Consultancy](../../assets/images/consultancy.png){ width=75% }
+![Consultancy](../assets/images/consultancy.png){ width=75% }
 
 !!! success "Case studies"
     [See our case studies page for examples of projects our Consultancy service has supported](https://www.reannz.co.nz/case-studies).
-
 
 ## Need support with your research project?
 
 If you would like to learn more about our Consultancy service and how
 you can work with our Research Software Engineers on
-a project, please {% include "partials/support_request.html" %} to set up an
+a project, please {% include "partials/support_request.html" %} to set up an
 initial meeting. We can discuss your needs and complete a Consultancy
 application form together.
 
