@@ -1,6 +1,3 @@
-{#-
-    This file was automatically generated - do not edit
-  -#}
   {% set class = "md-header" %}
   {% if "navigation.tabs.sticky" in features %}
     {% set class = class ~ " md-header--shadow md-header--lifted" %}
@@ -9,10 +6,10 @@
   {% endif %}
   <header class="{{ class }}" data-md-component="header">
     <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
-      <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="Formerly 'New Zealand eScience Infrastructure'" class="md-header__button md-logo" aria-label="Formerly 'New Zealand eScience Infrastructure'" data-md-component="logo">
+      <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="REANNZ" class="md-header__button md-logo" aria-label="REANNZ" data-md-component="logo">
         {% include "partials/logo.html" %}
       </a>
-      <label class="md-header__button md-icon" for="__drawer">
+      <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation menu">
         {% set icon = config.theme.icon.menu or "material/menu" %}
         {% include ".icons/" ~ icon ~ ".svg" %}
       </label>
@@ -46,7 +43,7 @@
         {% include "partials/alternate.html" %}
       {% endif %}
       {% if "material/search" in config.plugins %}
-        <label class="md-header__button md-icon" for="__search">
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
           {% set icon = config.theme.icon.search or "material/magnify" %}
           {% include ".icons/" ~ icon ~ ".svg" %}
         </label>
