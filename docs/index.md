@@ -31,17 +31,17 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <p>Access the cluster Via the OnDemand web application.</p>
 </a>
 <a href="Scientific_Computing/Batch_Jobs/Hardware/">
-    <img alt="account details" src="assets/icons/material/widget-small.svg">
+    <img alt="HPC resources" src="assets/icons/material/widget-small.svg">
     <h3>Resources</h3>
     <p>What CPUs and GPUs are available on the REANNZ Cluster.</p>
 </a>
 <a href="Data_Transfer/Data_Transfer_Overview/">
-    <img alt="ssh setup" src="./assets/icons/material/file-arrow-up-down.svg">
+    <img alt="Data transer" src="./assets/icons/material/file-arrow-up-down.svg">
     <h3>Data Transfer</h3>
     <p>Getting your data on and off the cluster.</p>
 </a>
 <a href="Getting_Started/Next_Steps/Submitting_your_first_job#slurm">
-    <img alt="ondemand" src="assets/icons/material/tray-full.svg">
+    <img alt="Job scheduler" src="assets/icons/material/tray-full.svg">
     <h3>Job Scheduler</h3>
     <p>How to use our job scheduler, Slurm.</p>
 </a>
