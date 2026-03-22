@@ -86,6 +86,7 @@ Mahuika is...
 - [] A 'Node'
 > Mahuika is composed of many nodes.
 - [] A 'Computer'
+- [] A way of being.
 </quiz>
 
 !!! keypoints

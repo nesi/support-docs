@@ -67,10 +67,10 @@ Note, as the name suggests, Mahuika does **not** backup the `/nesi/nobackup` fil
 Protecting critical data from corruption or deletion is primarily your responsibility.
 Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.
 Also important is managing your storage quota.
-To check your quotas, use the `nn_storage_quota` command, e.g
+To check your quotas, use the `storage_quota` command, e.g
 
 ```sh
-nn_storage_quota -u <username>
+storage_quota
 ```
 
 ```out
@@ -82,8 +82,10 @@ home_cwal219                                      20                13   65
 
 Notice that the project space for this user is over quota and has been locked, meaning no more data can be added.
 When your space is locked you will need to move or remove data.
-Also note that none of the nobackup space is being used, a smart idea would be to move data from `project` to `nobackup`.
-`nn_storage_quota` uses cached data, and so will no immediately show changes to storage use.
+Also note that none of the nobackup space is being used, a smart idea would be to move data from `project` to `nobackup`.  
+
+!!! note
+    `nn_storage_quota` uses cached data, and so will not immediately show changes to storage use.  
 
 For more details on our persistent and nobackup storage systems, including data retention and the nobackup auto-delete schedule,
 please see our [Filesystem and Quota](../../Storage/Filesystems_and_Quotas.md) documentation.
@@ -129,17 +131,17 @@ We will now list the contents of the directory we will be working from.
 We can use the following command to do this:
 
 ```sh
-ls {{ config.extra.working_directory[0] }}
+ls /nesi/nobackup/<project>
 ```
 
 ```out
-{{ config.extra.working_directory[1] }}
+introhpc
 ```
 
-You should see a directory called `{{ config.extra.working_directory[1] }}`, and possibly several other directories.
-For the purposes of this tutorial you will be working within `/nesi/nobackup/<projectcode>`.
+You should see a directory called `introhpc`, and possibly several other directories.
+For the purposes of this tutorial you will be working within `/nesi/nobackup/<projectcode>/introhpc`.
 
-!!! tip "Command History"
+!!! tip "Command History
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
@@ -177,7 +179,7 @@ The `cd` command is akin to double clicking a folder in a graphical interface.
 We will use the following command:
 
 ```sh
- cd /nesi/nobackup/<projectcode>
+ cd /nesi/nobackup/<projectcode>/introhpc
 ```
 
 ```out
@@ -194,7 +196,7 @@ pwd
 ```
 
 ```out
-/nesi/nobackup/<projectcode>
+/nesi/nobackup/<projectcode>/introhpc
 ```
 
 ## Creating directories
@@ -216,7 +218,7 @@ ls /nesi/nobackup/<projectcode>
 ```
 
 ```out
-{{ example_script.R }} birds usr123 <username>
+array_sum.R birds usr123 <username>
 ```
 
 !!! note "Your Mileage May Vary"
@@ -332,7 +334,7 @@ pwd
 ```
 
 ```out
-{{ config.extra.working_directory[0] }}
+/nesi/nobackup
 ```
 
 ## Tab completion
@@ -474,7 +476,7 @@ which will then be operated on as if you had typed out all of the matches.
 Inside the `{{ config.extra.working_directory|join('/') }}` directory there is a directory called `birds`
 
 ```sh
-cd {{ config.extra.working_directory|join('/') }}/birds
+cd /nesi/nobackup/<projectcode>/birds
 ls
 ```
 
