@@ -128,8 +128,6 @@ General/FAQs/Why_am_I_seeing_Account_is_not_ready.md : Getting_Started/FAQs/Why_
 General/FAQs/Why_does_my_program_crash.md : Getting_Started/FAQs/Why_does_my_program_crash.md
 General/FAQs/Why_is_my_job_taking_a_long_time_to_start.md : Getting_Started/FAQs/Why_is_my_job_taking_a_long_time_to_start.md
 Getting_Started/Next_Steps/Submitting_your_first_job.md : Batch_Computing/Submitting_your_first_job.md
-Scientific_Computing/Training/Webinars.md : Getting_Started/Getting_Help/Webinars.md
-Scientific_Computing/Training/Workshops.md : Getting_Started/Getting_Help/Workshops.md
 Getting_Started/Accounts-Projects_and_Allocations/Applying_for_a_new_NeSI_project.md: Getting_Started/Projects/Applying_for_a_New_Project.md
 Getting_Started/Accounts-Projects_and_Allocations/Applying_to_join_an_existing_NeSI_project.md: Getting_Started/Projects/Applying_to_Join_a_Project.md
 General/Announcements/HPC3.md: Getting_Started/Creating_an_Account.md
@@ -176,3 +174,8 @@ Storage/File_Systems_and_Quotas/File_permissions_and_groups.md : Storage/File_pe
 Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md : Storage/Filesystems_and_Quotas.md
 Storage/File_Systems_and_Quotas/Automatic_cleaning_of_nobackup_file_system.md : Storage/Automatic_cleaning_of_nobackup.md
 Software/Available_Applications/VASP copy.md : Software/Available_Applications/CP2K.md
+Getting_Started/Getting_Help/Consultancy.md : Getting_Started/Consultancy.md
+Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md : Getting_Started/Weekly_Online_Office_Hours.md
+Getting_Started/Getting_Help/System_status.md : Getting_Started/System_status.md
+Getting_Started/Getting_Help/Job_efficiency_review.md : Getting_Started/Job_efficiency_review.md
+Getting_Started/Getting_Help/Making_a_Helpful_Support_Request.md : Getting_Started/Making_a_Helpful_Support_Request.md

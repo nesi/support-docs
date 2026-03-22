@@ -90,9 +90,9 @@ function format8601(str){
     return new Date(dateStringFormatted);
 }
 // Remove me later
-showOfficeBanner().then(() => {
-    if (!document.getElementById("calendar-banner")){
-        addBanner(`<p>Registrations now open for <a href=https://www.eventbrite.co.nz/e/introduction-to-high-performance-computing-hpc-carpentry-tickets-1984247473608>Introduction to HPC Carpentry Workshop</a> on 24th March from 10am to 3pm.</p>`, 'workshop-banner');
-    }
-});
+// showOfficeBanner().then(() => {
+//     if (!document.getElementById("calendar-banner")){
+//         addBanner(`<p>Registrations now open for <a href=https://www.eventbrite.co.nz/e/introduction-to-high-performance-computing-hpc-carpentry-tickets-1984247473608>Introduction to HPC Carpentry Workshop</a> on 24th March from 10am to 3pm.</p>`, 'workshop-banner');
+//     }
+// });
 

@@ -50,7 +50,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.98,
+                        "hourly_average": 0.97,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -64,7 +64,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.63,
+                        "hourly_average": 0.62,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -669,7 +669,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.21,
+                "server_uptime": 0.23,
                 "server_version": "",
                 "features": []
             },
@@ -688,7 +688,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.21,
+                "server_uptime": 0.23,
                 "server_version": "",
                 "features": [
                     {
@@ -722,7 +722,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.21,
+                "server_uptime": 0.23,
                 "server_version": "",
                 "features": []
             },
@@ -1426,6 +1426,26 @@
         "last_updated": 1740132626,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AutoDock_Vina/1.1.2_linux_x86.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Avogadro2": {
+        "description": "Avogadro is an advanced molecule editor and visualizer designed for cross-platform\n    use in computational chemistry, molecular modeling, bioinformatics, materials science,\n    and related areas.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://two.avogadro.cc/index.html",
+        "support": "",
+        "versions": [
+            "1.97.0-linux-x86_64"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.97.0-linux-x86_64",
+        "default_type": "latest",
+        "last_updated": 1773887176,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Avogadro2/1.97.0-linux-x86_64.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3380,7 +3400,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.76,
+                        "hourly_average": 0.77,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3407,7 +3427,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.94,
+                "server_uptime": 0.93,
                 "server_version": "",
                 "features": [
                     {
@@ -3482,7 +3502,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 7.26,
+                        "hourly_average": 7.11,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3496,7 +3516,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.52,
+                        "hourly_average": 5.41,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3564,7 +3584,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 85136188.7,
+                        "hourly_average": 83350036.75,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4468,6 +4488,7 @@
         "versions": [
             "140221-foss-2023a",
             "142431-intel-2022a",
+            "2026.01-iofbf-2023a",
             "68673-intel-2020a",
             "68819-intel-2020a"
         ],
@@ -5745,15 +5766,16 @@
         "versions": [
             "3.4.5-GCCcore-7.4.0",
             "4.2.2-GCCcore-9.2.0",
-            "5.1.1-GCC-11.3.0"
+            "5.1.1-GCC-11.3.0",
+            "7.1.2-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.1.1-GCC-11.3.0",
+        "default": "7.1.2-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1773885256,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FFmpeg/5.1.1-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FFmpeg/7.1.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10621,22 +10643,23 @@
         "force_show": "False"
     },
     "LISFLOOD-FP": {
-        "description": "The LISFLOOD-FP is a raster-based hydrodynamic model originally developed by\nthe University of Bristol. It has undergone extensive development since\nconception and includes a collection of numerical schemes implemented to solve\na variety of mathematical approximations of the 2D shallow water equations of\ndifferent complexity.\nThe local inertia solver, known as the ACC solver, is widely used to simulate\nfloods with gradually-varying, subcritical flow over sufficiently rough\nsurfaces with Manning's coefficient of at least 0.03. It has a version with\nCPU-specific optimisations and enhanced with a subgrid channel model.\nLISFLOOD-FP also includes second-order discontinuous Galerkin (DG2) and\nfirst-order finite volume (FV1) solvers of the full shallow water equations for\nmodelling a wide range of flows, including rapidly-propagating, supercritical\nflows, shock waves, or flows over very smooth surfaces. The DG2/FV1 solvers are\nparallelised for the multi-core CPU architecture, but do not integrate with the\nsubgrid channel model nor with the CPU-specific optimisations.",
+        "description": "The LISFLOOD-FP is a raster-based hydrodynamic model originally developed by\nthe University of Bristol. It has undergone extensive development since\nconception and includes a collection of numerical schemes implemented to solve\na variety of mathematical approximations of the 2D shallow water equations of\ndifferent complexity.\nThe local inertia solver, known as the ACC solver, is widely used to simulate\nfloods with gradually-varying, subcritical flow over sufficiently rough\nsurfaces with Manning\u2019s coefficient of at least 0.03. It has a version with\nCPU-specific optimisations and enhanced with a subgrid channel model.\nLISFLOOD-FP also includes second-order discontinuous Galerkin (DG2) and\nfirst-order finite volume (FV1) solvers of the full shallow water equations for\nmodelling a wide range of flows, including rapidly-propagating, supercritical\nflows, shock waves, or flows over very smooth surfaces. The DG2/FV1 solvers are\nparallelised for the multi-core CPU architecture, but do not integrate with the\nsubgrid channel model nor with the CPU-specific optimisations.",
         "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.seamlesswave.com/LISFLOOD8.0.html",
         "support": "",
         "versions": [
-            "8.1-gompi-2023a"
+            "8.1-gompi-2023a",
+            "8.1-gompi-2023a-CUDA-12.6.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "8.1-gompi-2023a",
+        "default": "8.1-gompi-2023a-CUDA-12.6.3",
         "default_type": "latest",
-        "last_updated": 1771537680,
+        "last_updated": 1773709830,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/LISFLOOD-FP/8.1-gompi-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/LISFLOOD-FP/8.1-gompi-2023a-CUDA-12.6.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11393,7 +11416,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.5,
+                "server_uptime": 0.51,
                 "server_version": "",
                 "features": []
             },
@@ -11412,7 +11435,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.85,
+                "server_uptime": 0.86,
                 "server_version": "",
                 "features": []
             },
@@ -14785,7 +14808,7 @@
         "network_licences": [],
         "default": "6.0.1-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1771472339,
+        "last_updated": 1773897271,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/ParaView/6.0.1-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
@@ -15466,15 +15489,16 @@
             "3.18.4-intel-2022a",
             "3.19-foss-2023a",
             "3.19-gimkl-2022a",
+            "3.19-iofbf-2023a",
             "3.9.3-gimkl-2018b"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.19-foss-2023a",
+        "default": "3.19-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1773779015,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PETSc/3.19-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PETSc/3.19-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20329,6 +20353,7 @@
             "4.5.4-gimkl-2018b",
             "5.13.0-foss-2023a",
             "5.13.0-gimkl-2022a",
+            "5.13.0-iofbf-2023a",
             "5.4.0-gimkl-2018b-METIS-5.1.0",
             "5.6.0-gimkl-2020a-METIS-5.1.0",
             "5.6.0-intel-2020a-METIS-5.1.0",
