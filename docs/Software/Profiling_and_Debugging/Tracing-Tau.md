@@ -37,6 +37,7 @@ Confirm the versions:
 ```bash
 g++ --version
 mpicxx --version
+cmake --version
 ```
 
 ## 1. Build TAU on Mahuika
@@ -75,7 +76,6 @@ Configure TAU for MPI and OpenMP (check the TAU documentation for CUDA support):
   -pdt=$PWD/pdtoolkit-${PDT_VERSION} \
   -bfd=download -dwarf=download -unwind=download -iowrapper \
   -otf=download \
-  -c++=mpicxx \
   -prefix=$TAU_HOME
 ```
 Build and install TAU:
@@ -89,7 +89,7 @@ Add TAU to your environment and check the `tau_exec` can be found:
 export PATH=$TAU_HOME/x86_64/bin:$PATH
 which tau_exec
 ```
-Verify that the Makefile has been properly installed and set the environment variable to it:
+Verify that the Makefile has been properly installed and set `TAU_MAKEFILE` to it:
 ```bash
 ls $TAU_HOME/x86_64/lib/Makefile.tau-ompt-mpi-pdt-openmp
 export TAU_MAKEFILE=$TAU_HOME/x86_64/lib/Makefile.tau-ompt-mpi-pdt-openmp
@@ -126,6 +126,8 @@ To view the traces:
 ```bash
 jumpshot upwindMpiCxx.slog2
 ```
+The Java `jumpshot` application and its `jumpshot.jar` file can be copied to another platform to view the traces. For maximum interactivity, we 
+recommend to copy the `slog2` file to your local computer and run `jumpshot` there.
 
 !!! note "Mac Users"
     If you are connecting from a Mac you may need to invoke
