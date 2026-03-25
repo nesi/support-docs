@@ -78,7 +78,7 @@ Create a new script called `gpu-job.sl`
 #SBATCH --account         {{config.extra.project_code}} 
 #SBATCH --output          %x.out
 #SBATCH --mem-per-cpu     2G
-#SBATCH --gpu-per-node    P100:1
+#SBATCH --gpu-per-node    A100:1
 
 module load CUDA
 nvidia-smi  
@@ -97,26 +97,25 @@ then submit with
     ```
 
     ```out
-    Tue Mar 12 19:40:51 2024       
-    +-----------------------------------------------------------------------------+
-    | NVIDIA-SMI 525.85.12    Driver Version: 525.85.12    CUDA Version: 12.0     |
-    |-------------------------------+----------------------+----------------------+
-    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-    |                               |                      |               MIG M. |
-    |===============================+======================+======================|
-    |   0  Tesla P100-PCIE...  On   | 00000000:05:00.0 Off |                    0 |
-    | N/A   28C    P0    24W / 250W |      0MiB / 12288MiB |      0%      Default |
-    |                               |                      |                  N/A |
-    +-------------------------------+----------------------+----------------------+
-                                                                                    
-    +-----------------------------------------------------------------------------+
-    | Processes:                                                                  |
-    |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-    |        ID   ID                                                   Usage      |
-    |=============================================================================|
-    |  No running processes found                                                 |
-    +-----------------------------------------------------------------------------+
+    hu Mar 26 12:47:29 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:C7:00.0 Off |                    0 |
+| N/A   31C    P0             61W /  400W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
     ```
 
 ### Job arrays

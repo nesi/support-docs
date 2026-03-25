@@ -61,7 +61,7 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
     #SBATCH --time=00:10:00
     #SBATCH --ntasks=1
     #SBATCH --cpus-per-task=8
-    #SBATCH --gpus-per-node P100:1
+    #SBATCH --gpus-per-node A100:1
     #SBATCH --mem=1G
 
     module purge
