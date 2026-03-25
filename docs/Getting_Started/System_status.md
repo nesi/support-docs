@@ -4,9 +4,6 @@ tags:
 - help
 ---
 
-!!! note "See also"
-    [NeSI wide area network connectivity](./Getting_Help/Wide_Area_Network.md)
-
 ## NeSI system status related notifications
 
 All new NeSI users will be automatically subscribed to receive system notifications for all components listed on [status.nesi.org.nz](https://status.nesi.org.nz) (with the option to
