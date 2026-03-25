@@ -181,6 +181,7 @@ span.md-status.md-status--deprecated {
 
 /* Turirial deader */
 .tutorial-banner {
+  display: none;
   background: var(--reannz-green);
   color: var(--reannz-green--dark);
   font-family: inherit;
