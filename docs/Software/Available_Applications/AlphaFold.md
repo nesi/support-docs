@@ -112,7 +112,7 @@ Input *fasta* used in following example  is 3RGK
 #SBATCH --job-name      af-2.3.2-monomer
 #SBATCH --mem           24G
 #SBATCH --cpus-per-task 8
-#SBATCH --gpus-per-node P100:1
+#SBATCH --gpus-per-node 1
 #SBATCH --time          02:00:00
 #SBATCH --output        %j.out
 
@@ -157,7 +157,7 @@ MAAHKGAEHHHKAAEHHEQAAKHHHAAAEHHEKGEHEQAAHHADTAYAHHKHAEEHAAQAAKHDAEHHAPKPH
 #SBATCH --job-name      af-2.3.2-multimer
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 4
-#SBATCH --gpus-per-node P100:1
+#SBATCH --gpus-per-node 1
 #SBATCH --time          01:45:00
 #SBATCH --output        slurmout.%j.out
 
@@ -207,7 +207,7 @@ modifications. Image (.*simg*) and the corresponding definition file
 #SBATCH --job-name      alphafold2_monomer_example
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 6
-#SBATCH --gpus-per-node P100:1 
+#SBATCH --gpus-per-node 1 
 #SBATCH --time          02:00:00
 #SBATCH --output        slurmout.%j.out
 
@@ -246,7 +246,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 #SBATCH --job-name      alphafold2_monomer_example
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 6
-#SBATCH --gpus-per-node P100:1 
+#SBATCH --gpus-per-node 1 
 #SBATCH --time          02:00:00
 #SBATCH --output        slurmout.%j.out
 
@@ -284,7 +284,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
     are for *3RGK.fasta*. Adjust them accordingly
 2. We have tested this on both P100 and A100 GPUs where the runtimes
     were identical. Therefore, the above example was set to former
-    via `P100:1`
+    via `1`
 3. The `--nv` flag enables GPU support.
 4. `--pwd /app/alphafold` is to workaround this [existing
     issue](https://github.com/deepmind/alphafold/issues/32)
