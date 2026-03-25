@@ -29,7 +29,7 @@ Tuakiri Virtual Home account for you, which you can use to login to
 my.nesi.org.nz. Once we have done so, the Tuakiri system will send you
 an automatically generated email inviting you to activate your account.
 You will need to activate your account before you can log in to
-my.nesi.org.nz.
+[MyNeSI](https://my.nesi.org.nz).
 
 !!! warning "What if I don't get the account activation email?"
      Some organisations' email servers are known to block Tuakiri's account
