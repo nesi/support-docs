@@ -35,7 +35,6 @@ The following pricing table covers our core HPC Platform service offerings.
 | ***High Performance Computing (HPC) and Data Analytics***   |         |       |
 | Mahuika Milan HPC core hours (per CPU core hour)   | $0.08        | $0.09      |
 | Mahuika Genoa HPC core hours (per CPU core hour)   | $0.08        | $0.09      |
-| P100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.35        | $0.40      |
 | A100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
 | H100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
 | L4 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |

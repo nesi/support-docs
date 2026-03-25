@@ -16,7 +16,6 @@ description: |
 ---
 
 {{ description }}
-   
 
 ## Office Hours Dates
 
@@ -35,7 +34,7 @@ pop in at any point during the hour and stay for as long or as little as
 you'd like.
 
 Also, don't worry if you have a question or challenge that can't be
-solved on the spot.  
+solved on the spot.
 We can always use the Office Hours to collect some basic information
 about your issue and then reconnect with you at a later time to
 troubleshoot things further.

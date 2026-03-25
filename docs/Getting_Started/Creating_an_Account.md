@@ -2,21 +2,20 @@
 created_at: '2018-04-18T23:56:10Z'
 tags:
 - onboarding
-- howto
-- access
 - mynesi
+description: How to create a REANNZ HPC account.
 ---
 
 
 !!! prerequisite
-     Either an active login at a Tuakiri member institution, or 
+     Either an active login at a Tuakiri member institution, or
      [a Tuakiri Virtual Home account in respect of your current place of work or study](../Policy/Account_Requests_for_non_Tuakiri_Members.md).
 
 1. Access [my.nesi.org.nz](https://my.nesi.org.nz) via your browser and
     log in with either your institutional credentials, or your Tuakiri
     Virtual Home account, whichever applies.
 
-2. If this is your first time logging in to my.nesi and you do not have
+2. If this is your first time logging in to `my.nesi` and you do not have
     an entry in our database (you have not previously had a NeSI
     account) you will be asked to fill out some fields, such as your
     role at your institution and contact telephone number, and submit
