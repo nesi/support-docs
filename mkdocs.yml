@@ -12,16 +12,16 @@ theme:
   language: en
   logo: assets/icons/logo_reannz.svg
   palette:
-    - primary: custom
-      scheme: default
+    - scheme: default
       toggle:
         icon: material/lightbulb
         name: Switch to dark mode
-    - primary: custom
-      scheme: slate
+      primary: custom
+    - scheme: slate
       toggle:
         icon: material/lightbulb-outline
         name: Switch to light mode
+      primary: custom
   features:
     - navigation.indexes
     - navigation.instant          # Single Page Application
