@@ -48,4 +48,4 @@ Some users may not be able to ssh from the login node into compute nodes that ar
 srun --pty --overlap --jobid <jobid> bash
 ```
 
-where `<jobid>` is the jobid for the job of interest
+where `<jobid>` is the jobid for the job of interest.
