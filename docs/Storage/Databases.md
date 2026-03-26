@@ -34,6 +34,7 @@ Dataset | Path | Licence Status | Notes
 [gtdbtk_214](https://gtdb.ecogenomic.org/) | /opt/nesi/db/gtdbtk_214 | CC-BY-SA 4.0 | Genome Taxonomy Database release 214 used by GTDB-Tk module
 [gtdbtk_220](https://gtdb.ecogenomic.org/) | /opt/nesi/db/gtdbtk_220 | CC-BY-SA 4.0 | Genome Taxonomy Database release 220 used by GTDB-Tk module
 [HUMAnN](https://huttenhower.sph.harvard.edu/humann/) | /opt/nesi/db/Humann | MIT | Databases for HUMAnN module
+[JGI IMG](https://img.jgi.doe.gov/) | /opt/nesi/db/JGI-IMG | Public | JGI IMG/M databases
 [Kaiju](https://github.com/bioinformatics-centre/kaiju) | /opt/nesi/db/Kaiju | GPL-3.0 | Database index for Kaiju module
 [Kraken2](https://github.com/DerrickWood/kraken2) | /opt/nesi/db/Kraken2 | MIT | Databases for Kraken2 module
 [megaX](https://www.megasoftware.net/) | /opt/nesi/db/megaX | Free for academics | Evolutionary analysis reference data for MegaX module
@@ -51,6 +52,7 @@ Dataset | Path | Licence Status | Notes
 [VEP](https://www.ensembl.org/info/docs/tools/vep/) | /opt/nesi/db/VariantEffectPredictor | No restrictions | Ensembl annotation data for variant effect prediction
 [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) | /opt/nesi/db/VIBRANT_v1.2.1_databases | GPL-3.0 | Viral genome and HMM databases used by VIBRANT environmental module
 [VirSorter](https://github.com/simroux/VirSorter) | /opt/nesi/db/VirSorter | GPL-2.0 | Viral hallmark gene and profile databases
+[VOGDB](https://vogdb.org/) | /opt/nesi/db/VOGDB | Public | The Virus Orthologous Groups Database (VOGDB) is a multi-layer database that progressively groups viral genes into groups connected by increasingly remote homology.
 [waafle](https://github.com/biobakery/waafle) | /opt/nesi/db/waafle | MIT | Reference sets for gene neighborhood analysis for waafle environmental module
 [checkv](https://bitbucket.org/berkeleylab/checkv) | /opt/nesi/db/checkv-db-v0.6 | [BSD 3-Clause-style](https://bitbucket.org/berkeleylab/checkv/src/master/LICENSE.txt) | Viral genome completeness and contamination database for CheckV environmental module
 
