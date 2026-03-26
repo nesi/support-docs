@@ -28,7 +28,7 @@ We will use GitHub as the example but the basic setup should be similar in other
 | [GitLab](https://docs.gitlab.com/user/ssh/)
 | [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/set-up-personal-ssh-keys-on-linux/)
 
-- On the NeSI cluster, run the command
+- On the Mahuika cluster, run the command
 
     ```sh
     ssh-keygen -t ed25519 -C "your_github_account@example.com"
@@ -61,7 +61,7 @@ We will use GitHub as the example but the basic setup should be similar in other
 
     ![SSH Key button](../../assets/images/Git-Reference_Sheet_0.png)
 
-- In the "Title" field, put "Mahuika" or "NeSI".
+- In the "Title" field, put "Mahuika" or "REANNZ HPC".
 
 - Paste your key into the "Key" field.
 

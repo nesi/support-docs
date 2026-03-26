@@ -3,7 +3,7 @@ created_at: '2020-01-05T21:43:18Z'
 tags: 
   - interactive
   - scheduling
-description: How to run an interactive session on the NeSI cluster.
+description: How to run an interactive session on the REANNZ HPC cluster.
 ---
 
 A SLURM interactive session reserves resources on compute nodes allowing

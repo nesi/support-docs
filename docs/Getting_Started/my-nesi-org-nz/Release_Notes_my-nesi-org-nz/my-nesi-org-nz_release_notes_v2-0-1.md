@@ -20,7 +20,7 @@ search:
     in the sidebar and links to important functions
 
 -   Improved [project application
-    form](../../../Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md)
+    form](../Project_Request_Form.md)
     with automatic draft state so you can continue the application at a
     later stage without the need to re-enter details
 

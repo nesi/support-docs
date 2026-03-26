@@ -11,7 +11,7 @@ Mahuika OnDemand only a web browser to use. The instructions to use it are the s
 
 * See [OnDemand how to guide](../Interactive_Computing/OnDemand/how_to_guide.md) for more information about how to use OnDemand.
 
-Once you have launched NeSI OnDemand on your web browser, click on the `Files` top tab and then click on `Home Directory`.
+Once you have launched REANNZ HPC OnDemand on your web browser, click on the `Files` top tab and then click on `Home Directory`.
 
 ![OnDemand_File_directory.png](../assets/images/OnDemand_File_directory.png)
 

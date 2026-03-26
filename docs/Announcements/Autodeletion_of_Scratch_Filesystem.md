@@ -32,7 +32,7 @@ Our Support Documentation has more details on how our auto-deletion cleaner work
 
 - [Automatic cleaning of nobackup file system](../Storage/Automatic_cleaning_of_nobackup.md)
 
-- [Where should I store my data on NeSI systems?](../Getting_Started/FAQs/Where_should_I_store_my_data_on_NeSI_systems.md)
+- [Where should I store my data](../Getting_Started/FAQs/Where_should_I_store_my_data.md)
 
 
 If you have any questions or would like to discuss your data storage needs in more detail, come to one of our [Weekly Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/) or {% include "partials/support_request.html" %}.

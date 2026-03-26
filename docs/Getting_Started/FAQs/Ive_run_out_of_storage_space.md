@@ -5,7 +5,7 @@ tags:
 title: I've run out of storage space
 ---
 
-There are two tracked resources in the NeSI filesystem, *disk space* and
+There are two tracked resources in the Mahuika filesystem, *disk space* and
 *inodes (number of files)*.
 
 Trying to write to a filesystem over its inode or disk quota will cause

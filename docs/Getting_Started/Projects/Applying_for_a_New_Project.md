@@ -44,7 +44,7 @@ information:
     describing your project's goals
 - The scientific domain and field of study (i.e. subdomain) your
     project belongs to
-- The date on which you plan to start your computational work on NeSI
+- The date on which you plan to start your computational work on REANNZ HPC
     (not the start date of the research programme as a whole, or of the
     research programme's current or expected funding)
 - Details of how your project is funded (this will help determine
