@@ -132,11 +132,19 @@ jobs:
         name: Check out repo.
         uses: actions/checkout@v6
       - if: ${{needs.get.outputs.filelist}}
+        name: Install dependencies
+        run: pip3 install titlecase
+      - if: ${{needs.get.outputs.filelist}}
         name: Check markdown meta.
         run: |
-          pip3 install titlecase
           shopt -s globstar extglob
           python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
+      - if: ${{needs.get.outputs.filelist}}
+        name: Run ARIA reference check (meta checks)
+        run: |
+          pip3 install -r requirements.txt
+          mkdocs build
+          python3 checks/run_aria_check.py
   slurmcheck:
     name: Check slurm scripts
     if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkSlurm}}
@@ -165,3 +173,4 @@ jobs:
           fetch-depth: 0
       - run: pip3 install -r requirements.txt
       - run: ./checks/run_test_build.py
+      - run: python3 checks/run_aria_check.py
