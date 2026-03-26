@@ -30,7 +30,7 @@ END: 9:00am 5 January 2026
   </tr>
   <tr>
     <td>Email: <a href="../General/Announcements/support@nesi.org.nz">support@nesi.org.nz</a></td>
-    <td>- <a href="../Getting_Started/Getting_Help/System_status.md">Sign up for system status updates</a> for advance warning of any system updates or unplanned outages.<br>- <a href="https://www.docs.nesi.org.nz">Consult our User Documentation</a> pages for instructions and guidelines for using the systems.<br>- <a href="https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp">Visit our YouTube channel</a>  for introductory training webinars.</td>
+    <td>- <a href="../Getting_Started/System_status.md">Sign up for system status updates</a> for advance warning of any system updates or unplanned outages.<br>- <a href="https://www.docs.nesi.org.nz">Consult our User Documentation</a> pages for instructions and guidelines for using the systems.<br>- <a href="https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp">Visit our YouTube channel</a>  for introductory training webinars.</td>
   </tr>
   </tbody>
   </table>

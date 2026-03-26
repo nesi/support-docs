@@ -30,7 +30,7 @@ A number of interactive applications can be accessed through OnDemand, including
 
 ## Known Issues
 
-A list of known issues and limitations with OnDemand, can be found on [this page](../../Announcements/Known_Issues_HPC3/#conneting-to-ondemand)
+A list of known issues and limitations with OnDemand, can be found on [this page](../../Announcements/Known_Issues_HPC3.md/#ondemand-apps)
 
 ## Release notes
 

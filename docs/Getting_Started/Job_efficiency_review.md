@@ -9,13 +9,13 @@ zendesk_section_id: 360000164635
 
 ## Introduction
 
-At NeSI we want to help you run your work as efficiently as possible on
+At REANNZ we want to help you run your work as efficiently as possible on
 our platforms, so that you obtain your results in a timely manner and so
 that we can fit in as much work as possible, hopefully reducing queue
 times for all users.
 
 With this aim in mind, we may ask to perform a "job efficiency review"
-of your work on NeSI, particularly if you have been granted, or are
+of your work on our platform, particularly if you have been granted, or are
 requesting, a large compute allocation. See below for more details about
 what to expect during this process. If you are interested in us looking
 into your job efficiency for potential improvements, please {% include "partials/support_request.html" %}.
@@ -31,7 +31,7 @@ following outcomes:
     - For "quick wins" we may be able to achieve these improvements
         within the scope of the job efficiency review
     - For larger pieces of work, we would assist you in applying for a
-        [NeSI Consultancy](../../Getting_Started/Getting_Help/Consultancy.md)
+        [REANNZ Consultancy](./Consultancy.md)
         project, where we would work with you on a longer term project
         to implement any agreed changes
 
@@ -40,7 +40,7 @@ following outcomes:
 During a job efficiency review you can expect that we will:
 
 - Spend some time (typically up to 10-20 hours) to investigate your
-    software and workflows that you are running on NeSI, to determine
+    software and workflows that you are running on our HPC platform, to determine
     whether there is an opportunity for optimisation or efficiency
     improvements
 - Communicate clearly and pass on any suggestions for improvements

@@ -31,11 +31,12 @@
     {% endif %}
 {% endblock %}
 {% block content %}
-{% if page.meta and page.meta.status and page.meta.status == "deprecated" %}
-<div class="admonition deprecated">
-<p class="admonition-title">Page Deprecated</p>
-<p>Information you find on this page may be out of date and no longer accurate.</p>
-</div>
+{% if page.meta and page.meta.status %}
+    {% if page.meta.status == "deprecated" %}
+        {% include "partials/status_deprecated_header.html" %}
+    {% elif page.meta.status == "tutorial" %}
+        {% include "partials/status_tutorial_header.html" %}
+    {% endif %}
 {% endif %}
 {{ super() }}
 

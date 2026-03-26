@@ -50,7 +50,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.98,
+                        "hourly_average": 0.97,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -64,7 +64,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.63,
+                        "hourly_average": 0.62,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -78,7 +78,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.58,
+                        "hourly_average": 0.57,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -669,7 +669,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.19,
+                "server_uptime": 0.24,
                 "server_version": "",
                 "features": []
             },
@@ -688,14 +688,14 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.19,
+                "server_uptime": 0.24,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "cfd_solve_level2",
-                        "hourly_average": 0.95,
+                        "hourly_average": 0.94,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "",
@@ -722,7 +722,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.19,
+                "server_uptime": 0.24,
                 "server_version": "",
                 "features": []
             },
@@ -1426,6 +1426,26 @@
         "last_updated": 1740132626,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AutoDock_Vina/1.1.2_linux_x86.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Avogadro2": {
+        "description": "Avogadro is an advanced molecule editor and visualizer designed for cross-platform\n    use in computational chemistry, molecular modeling, bioinformatics, materials science,\n    and related areas.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://two.avogadro.cc/index.html",
+        "support": "",
+        "versions": [
+            "1.97.0-linux-x86_64"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.97.0-linux-x86_64",
+        "default_type": "latest",
+        "last_updated": 1773887176,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Avogadro2/1.97.0-linux-x86_64.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2337,7 +2357,8 @@
             "1.71.0-GCCcore-9.2.0",
             "1.76.0-intel-2022a",
             "1.77.0-GCC-11.3.0",
-            "1.83.0-GCC-12.3.0"
+            "1.83.0-GCC-12.3.0",
+            "1.83.0-GCCcore-12.3.0"
         ],
         "admin_list": [
             {
@@ -2345,11 +2366,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.83.0-GCC-12.3.0",
+        "default": "1.83.0-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1747952816,
+        "last_updated": 1773651704,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Boost/1.83.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Boost/1.83.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2450,15 +2471,16 @@
             "2.1.6-gimkl-2022a-Perl-5.34.1",
             "3.0.2-gimkl-2022a-Perl-5.34.1",
             "3.0.3-gimkl-2022a-Perl-5.34.1",
+            "3.0.8-GCC-12.3.0-Perl-5.40.3",
             "3.0.8-gimkl-2022a-Perl-5.34.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.0.8-gimkl-2022a-Perl-5.34.1",
+        "default": "3.0.8-GCC-12.3.0-Perl-5.40.3",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1774227875,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/BRAKER/3.0.8-gimkl-2022a-Perl-5.34.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/BRAKER/3.0.8-GCC-12.3.0-Perl-5.40.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2536,6 +2558,26 @@
         "last_updated": 1740132627,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/BWA/0.7.18-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "bwa-mem2": {
+        "description": "The tool bwa-mem2 is the next version of the bwa-mem algorithm in bwa. It\nproduces alignment identical to bwa and is ~1.3-3.1x faster depending on the\nuse-case, dataset and the running machine.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/bwa-mem2/bwa-mem2",
+        "support": "",
+        "versions": [
+            "2.3-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.3-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1774211682,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/bwa-mem2/2.3-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2688,15 +2730,16 @@
         "homepage": "https://sourceforge.net/projects/cdbfasta",
         "support": "",
         "versions": [
-            "0.99-GCC-11.3.0"
+            "0.99-GCC-11.3.0",
+            "0.99-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.99-GCC-11.3.0",
+        "default": "0.99-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1774227766,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/cdbfasta/0.99-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/cdbfasta/0.99-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3003,6 +3046,7 @@
         "homepage": "https://github.com/wdecoster/chopper",
         "support": "",
         "versions": [
+            "0.12.0b-GCC-12.3.0",
             "0.2.0-GCC-11.3.0",
             "0.5.0-GCC-11.3.0",
             "0.9.0-GCC-12.3.0"
@@ -3290,9 +3334,9 @@
         "network_licences": [],
         "default": "0.2.7-gimkl-2022a",
         "default_type": "latest",
-        "last_updated": 1744964566,
+        "last_updated": 1773618385,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/compleasm/0.2.7-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/compleasm/0.2.7-gimkl-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3378,7 +3422,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.78,
+                        "hourly_average": 0.77,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3405,14 +3449,14 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.94,
+                "server_uptime": 0.93,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.96,
+                        "hourly_average": 0.95,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3446,7 +3490,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.97,
+                        "hourly_average": 0.95,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
@@ -3480,7 +3524,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 7.43,
+                        "hourly_average": 6.99,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3494,7 +3538,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.64,
+                        "hourly_average": 5.32,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3562,7 +3606,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 87207458.3,
+                        "hourly_average": 81974186.09,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4466,6 +4510,7 @@
         "versions": [
             "140221-foss-2023a",
             "142431-intel-2022a",
+            "2026.01-iofbf-2023a",
             "68673-intel-2020a",
             "68819-intel-2020a"
         ],
@@ -5239,6 +5284,29 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "ESMF": {
+        "description": "The Earth System Modeling Framework (ESMF) is a suite of software tools for developing\n high-performance, multi-component Earth science modeling applications.",
+        "domains": [
+            "climate_science",
+            "earth_science"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.earthsystemcog.org/projects/esmf/",
+        "support": "",
+        "versions": [
+            "8.4.2-iofbf-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "8.4.2-iofbf-2023a",
+        "default_type": "latest",
+        "last_updated": 1773676089,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/ESMF/8.4.2-iofbf-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "ETE": {
         "description": "A Python framework for the analysis and visualization of phylogenetic trees",
         "domains": [
@@ -5327,6 +5395,26 @@
         "last_updated": 1740132628,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ExaML/3.0.22-gimkl-2020a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Exonerate": {
+        "description": "Exonerate is a generic tool for pairwise sequence comparison.\n It allows you to align sequences using a many alignment models, using either\n exhaustive dynamic programming, or a variety of heuristics.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate",
+        "support": "",
+        "versions": [
+            "2.4.0-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.4.0-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1774227717,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Exonerate/2.4.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5720,15 +5808,16 @@
         "versions": [
             "3.4.5-GCCcore-7.4.0",
             "4.2.2-GCCcore-9.2.0",
-            "5.1.1-GCC-11.3.0"
+            "5.1.1-GCC-11.3.0",
+            "7.1.2-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.1.1-GCC-11.3.0",
+        "default": "7.1.2-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1773885256,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FFmpeg/5.1.1-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FFmpeg/7.1.2-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6582,15 +6671,16 @@
             "3.4.1-gimkl-2020a",
             "3.5.1-gimpi-2022a",
             "3.6.3-gimpi-2022a",
-            "3.6.4-gompi-2023a"
+            "3.6.4-gompi-2023a",
+            "3.9.0-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.6.4-gompi-2023a",
+        "default": "3.9.0-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1773654148,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GDAL/3.6.4-gompi-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/GDAL/3.9.0-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6681,6 +6771,26 @@
         "last_updated": 1740132629,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GeneMark-ES/4.71-GCC-11.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "GeneMark-ET": {
+        "description": "Eukaryotic gene prediction suite with automatic training",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "http://exon.gatech.edu/GeneMark",
+        "support": "",
+        "versions": [
+            "4.72-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "4.72-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1774226128,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/GeneMark-ET/4.72-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6875,15 +6985,16 @@
         "homepage": "https://ccb.jhu.edu/software/stringtie/gff.shtml#gffread",
         "support": "",
         "versions": [
-            "0.12.7-GCC-11.3.0"
+            "0.12.7-GCC-11.3.0",
+            "0.12.7-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.12.7-GCC-11.3.0",
+        "default": "0.12.7-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132637,
+        "last_updated": 1774227794,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/gffread/0.12.7-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/gffread/0.12.7-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6978,20 +7089,21 @@
         "domains": [],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.gtk.org/",
+        "homepage": "https://www.gtk.org/",
         "support": "",
         "versions": [
             "2.53.7-GCCcore-7.4.0",
             "2.64.0-GCCcore-9.2.0",
-            "2.72.1-GCC-11.3.0"
+            "2.72.1-GCC-11.3.0",
+            "2.77.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.72.1-GCC-11.3.0",
+        "default": "2.77.1-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1774226945,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GLib/2.72.1-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/GLib/2.77.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7327,15 +7439,16 @@
         "homepage": "https://github.com/google/googletest",
         "support": "",
         "versions": [
-            "1.10.0-GCCcore-9.2.0"
+            "1.10.0-GCCcore-9.2.0",
+            "1.17.0-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.10.0-GCCcore-9.2.0",
+        "default": "1.17.0-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132637,
+        "last_updated": 1773374197,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/googletest/1.10.0-GCCcore-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/googletest/1.17.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7861,15 +7974,16 @@
             "0.15.5-GCC-9.2.0",
             "0.19.5-GCC-11.3.0",
             "0.19.7-GCC-11.3.0",
-            "0.24.0-GCC-12.3.0"
+            "0.24.0-GCC-12.3.0",
+            "0.25.0-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.24.0-GCC-12.3.0",
+        "default": "0.25.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740367015,
+        "last_updated": 1773693790,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/hifiasm/0.24.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/hifiasm/0.25.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8111,15 +8225,16 @@
             "2.18.2-gimkl-2018b",
             "2.21.0-gimkl-2022a",
             "2.24.0-intel-2022a",
-            "2.28.0-foss-2023a"
+            "2.28.0-foss-2023a",
+            "2.28.0-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.28.0-foss-2023a",
+        "default": "2.28.0-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1773650420,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Hypre/2.28.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Hypre/2.28.0-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9160,15 +9275,16 @@
             "1.4.15-gimpi-2022a",
             "1.4.6-gimpi-2018b",
             "1.5.0-gimpi-2022a",
-            "1.5.2-gompi-2023a"
+            "1.5.2-gompi-2023a",
+            "1.5.2-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.5.2-gompi-2023a",
+        "default": "1.5.2-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1773648980,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/KEALib/1.5.2-gompi-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/KEALib/1.5.2-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9837,15 +9953,16 @@
             "1.5.1-GCCcore-9.2.0",
             "1.7.1-GCC-11.3.0-PROJ-9.2.0",
             "1.7.1-GCC-12.3.0-PROJ-9.3.0",
-            "1.7.1-GCCcore-11.3.0"
+            "1.7.1-GCCcore-11.3.0",
+            "1.7.1-GCCcore-12.3.0-PROJ-9.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.7.1-GCC-11.3.0-PROJ-9.2.0",
+        "default": "1.7.1-GCCcore-12.3.0-PROJ-9.3.0",
         "default_type": "latest",
-        "last_updated": 1740132637,
+        "last_updated": 1773648983,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libgeotiff/1.7.1-GCC-11.3.0-PROJ-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libgeotiff/1.7.1-GCCcore-12.3.0-PROJ-9.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10590,22 +10707,23 @@
         "force_show": "False"
     },
     "LISFLOOD-FP": {
-        "description": "The LISFLOOD-FP is a raster-based hydrodynamic model originally developed by\nthe University of Bristol. It has undergone extensive development since\nconception and includes a collection of numerical schemes implemented to solve\na variety of mathematical approximations of the 2D shallow water equations of\ndifferent complexity.\nThe local inertia solver, known as the ACC solver, is widely used to simulate\nfloods with gradually-varying, subcritical flow over sufficiently rough\nsurfaces with Manning's coefficient of at least 0.03. It has a version with\nCPU-specific optimisations and enhanced with a subgrid channel model.\nLISFLOOD-FP also includes second-order discontinuous Galerkin (DG2) and\nfirst-order finite volume (FV1) solvers of the full shallow water equations for\nmodelling a wide range of flows, including rapidly-propagating, supercritical\nflows, shock waves, or flows over very smooth surfaces. The DG2/FV1 solvers are\nparallelised for the multi-core CPU architecture, but do not integrate with the\nsubgrid channel model nor with the CPU-specific optimisations.",
+        "description": "The LISFLOOD-FP is a raster-based hydrodynamic model originally developed by\nthe University of Bristol. It has undergone extensive development since\nconception and includes a collection of numerical schemes implemented to solve\na variety of mathematical approximations of the 2D shallow water equations of\ndifferent complexity.\nThe local inertia solver, known as the ACC solver, is widely used to simulate\nfloods with gradually-varying, subcritical flow over sufficiently rough\nsurfaces with Manning\u2019s coefficient of at least 0.03. It has a version with\nCPU-specific optimisations and enhanced with a subgrid channel model.\nLISFLOOD-FP also includes second-order discontinuous Galerkin (DG2) and\nfirst-order finite volume (FV1) solvers of the full shallow water equations for\nmodelling a wide range of flows, including rapidly-propagating, supercritical\nflows, shock waves, or flows over very smooth surfaces. The DG2/FV1 solvers are\nparallelised for the multi-core CPU architecture, but do not integrate with the\nsubgrid channel model nor with the CPU-specific optimisations.",
         "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.seamlesswave.com/LISFLOOD8.0.html",
         "support": "",
         "versions": [
-            "8.1-gompi-2023a"
+            "8.1-gompi-2023a",
+            "8.1-gompi-2023a-CUDA-12.6.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "8.1-gompi-2023a",
+        "default": "8.1-gompi-2023a-CUDA-12.6.3",
         "default_type": "latest",
-        "last_updated": 1771537680,
+        "last_updated": 1773709830,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/LISFLOOD-FP/8.1-gompi-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/LISFLOOD-FP/8.1-gompi-2023a-CUDA-12.6.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11043,6 +11161,42 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Marimo": {
+        "description": "Marimo is a reactive Python notebook and app framework:\nreproducible, git-friendly, with SQL and AI tooling; runs as scripts or apps.\nStored as pure Python and deployable via ASGI.",
+        "domains": [],
+        "extensions": [
+            "anyio-4.12.1",
+            "h11-0.16.0",
+            "itsdangerous-2.2.0",
+            "loro-1.10.3",
+            "marimo-0.20.3",
+            "Markdown-3.10.2",
+            "msgspec-0.20.0",
+            "narwhals-2.18.0",
+            "Pygments-2.19.2",
+            "pymdown-extensions-10.21",
+            "starlette-0.52.1",
+            "tomlkit-0.13.2",
+            "typing_extensions-4.12.2",
+            "uvicorn-0.41.0",
+            "websockets-16.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://pypi.org/project/marimo/",
+        "support": "",
+        "versions": [
+            "0.20.3-foss-2023a-Python-3.11.6"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.20.3-foss-2023a-Python-3.11.6",
+        "default_type": "latest",
+        "last_updated": 1773604484,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Marimo/0.20.3-foss-2023a-Python-3.11.6.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Mash": {
         "description": "Fast genome and metagenome distance estimation using MinHash",
         "domains": [
@@ -11129,15 +11283,16 @@
         "support": "",
         "versions": [
             "4.0.9-gimkl-2020a",
-            "4.1.0-GCC-11.3.0"
+            "4.1.0-GCC-11.3.0",
+            "4.1.4-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.1.0-GCC-11.3.0",
+        "default": "4.1.4-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1774413197,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MaSuRCA/4.1.0-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MaSuRCA/4.1.4-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11269,7 +11424,7 @@
                 "server": "MATLAB@massey",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.8,
+                "server_uptime": 0.81,
                 "server_version": "",
                 "features": []
             },
@@ -11326,7 +11481,7 @@
                 "server": "MATLAB@vuw",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.48,
+                "server_uptime": 0.51,
                 "server_version": "",
                 "features": []
             },
@@ -11345,7 +11500,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.85,
+                "server_uptime": 0.86,
                 "server_version": "",
                 "features": []
             },
@@ -12004,15 +12159,16 @@
             "5.1.0-GCC-7.4.0",
             "5.1.0-GCCcore-9.2.0",
             "5.1.0-intel-2020a",
-            "5.1.0-intel-2022a"
+            "5.1.0-intel-2022a",
+            "5.1.0-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.1.0-GCCcore-9.2.0",
+        "default": "5.1.0-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1773374477,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/METIS/5.1.0-GCCcore-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/METIS/5.1.0-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12349,15 +12505,16 @@
         "homepage": "https://www.mmgtools.org/",
         "support": "",
         "versions": [
-            "5.7.2-foss-2023a"
+            "5.7.2-foss-2023a",
+            "5.7.2-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.7.2-foss-2023a",
+        "default": "5.7.2-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1773691917,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Mmg/5.7.2-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Mmg/5.7.2-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12669,15 +12826,16 @@
             "4.0.2-GCCcore-7.4.0",
             "4.0.2-GCCcore-9.2.0",
             "4.1.0-GCC-11.3.0",
-            "4.2.1-GCC-12.3.0"
+            "4.2.1-GCC-12.3.0",
+            "4.2.1-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.2.1-GCC-12.3.0",
+        "default": "4.2.1-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1773649973,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MPFR/4.2.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MPFR/4.2.1-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12789,7 +12947,7 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://mumps-solver.org/",
+        "homepage": "https://graal.ens-lyon.fr/MUMPS/",
         "support": "",
         "versions": [
             "4.10.0-gimkl-2020a",
@@ -12798,15 +12956,16 @@
             "5.5.0-gimkl-2022a",
             "5.6.1-foss-2023a",
             "5.6.1-foss-2023a-plain",
-            "5.6.1-intel-2022a"
+            "5.6.1-intel-2022a",
+            "5.6.1-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.6.1-foss-2023a",
+        "default": "5.6.1-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1773659678,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MUMPS/5.6.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MUMPS/5.6.1-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13401,15 +13560,16 @@
             "4.7.3-iimpi-2020a",
             "4.8.1-gimpi-2022a",
             "4.8.1-iimpi-2022a",
-            "4.9.2-gompi-2023a"
+            "4.9.2-gompi-2023a",
+            "4.9.2-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.9.2-gompi-2023a",
+        "default": "4.9.2-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1773644269,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/netCDF/4.9.2-gompi-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/netCDF/4.9.2-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13442,7 +13602,8 @@
         "support": "",
         "versions": [
             "4.3.1-gimpi-2020a",
-            "4.3.1-iimpi-2020a"
+            "4.3.1-iimpi-2020a",
+            "4.3.1-iofbf-2023a"
         ],
         "admin_list": [
             {
@@ -13450,11 +13611,11 @@
             }
         ],
         "network_licences": [],
-        "default": "4.3.1-gimpi-2020a",
+        "default": "4.3.1-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1773649290,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/netCDF-C++4/4.3.1-gimpi-2020a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/netCDF-C++4/4.3.1-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13471,15 +13632,16 @@
             "4.5.2-iimpi-2020a",
             "4.6.0-gimpi-2022a",
             "4.6.0-iimpi-2022a",
-            "4.6.1-gompi-2023a"
+            "4.6.1-gompi-2023a",
+            "4.6.1-iofbf-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.6.1-gompi-2023a",
+        "default": "4.6.1-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1773650413,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/netCDF-Fortran/4.6.1-gompi-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/netCDF-Fortran/4.6.1-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14711,7 +14873,7 @@
         "network_licences": [],
         "default": "6.0.1-foss-2023a-Python-3.11.6",
         "default_type": "latest",
-        "last_updated": 1771472339,
+        "last_updated": 1773897271,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/ParaView/6.0.1-foss-2023a-Python-3.11.6.lua",
         "force_hide": "False",
@@ -15392,15 +15554,16 @@
             "3.18.4-intel-2022a",
             "3.19-foss-2023a",
             "3.19-gimkl-2022a",
+            "3.19-iofbf-2023a",
             "3.9.3-gimkl-2018b"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.19-foss-2023a",
+        "default": "3.19-iofbf-2023a",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1773779015,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PETSc/3.19-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PETSc/3.19-iofbf-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15740,20 +15903,60 @@
     "Pluto": {
         "description": "Simple, reactive programming environment for the Julia Language.",
         "domains": [],
-        "extensions": [],
+        "extensions": [
+            "BitFlags-0.1.9",
+            "CodecZlib-0.7.8",
+            "Compat-4.18.1",
+            "ConcurrentUtilities-2.5.1",
+            "Configurations-0.17.6",
+            "DataAPI-1.16.0",
+            "DataValueInterfaces-1.0.0",
+            "ExceptionUnwrapping-0.1.11",
+            "ExpressionExplorer-1.1.4",
+            "ExproniconLite-0.10.14",
+            "GracefulPkg-2.4.3",
+            "HTTP-1.11.0",
+            "HypertextLiteral-1.0.0",
+            "IteratorInterfaceExtensions-1.0.0",
+            "JLLWrappers-1.7.1",
+            "LazilyInitializedFields-1.3.0",
+            "LoggingExtras-1.2.0",
+            "LRUCache-1.6.2",
+            "Malt-1.4.0",
+            "MbedTLS-1.1.9",
+            "MIMEs-1.1.0",
+            "MsgPack-1.2.1",
+            "OpenSSL-1.6.1",
+            "OpenSSL_jll-3.5.5+0",
+            "OrderedCollections-1.8.1",
+            "Pluto-0.20.24",
+            "PlutoDependencyExplorer-1.2.2",
+            "PrecompileSignatures-3.0.3",
+            "PrecompileTools-1.2.1",
+            "Preferences-1.5.2",
+            "RegistryInstances-0.1.0",
+            "RelocatableFolders-1.0.1",
+            "Scratch-1.3.0",
+            "SimpleBufferStream-1.2.0",
+            "Tables-1.12.1",
+            "TableTraits-1.0.1",
+            "TranscodingStreams-0.11.3",
+            "Tricks-0.1.13",
+            "URIs-1.6.1"
+        ],
         "licence_type": "",
         "homepage": "https://plutojl.org/",
         "support": "",
         "versions": [
-            "0.20.23-Julia-1.11.3-GCC-12.3.0-VTune"
+            "0.20.24-Julia-1.11.3-GCC-12.3.0-VTune"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.20.23-Julia-1.11.3-GCC-12.3.0-VTune",
+        "default": "0.20.24-Julia-1.11.3-GCC-12.3.0-VTune",
         "default_type": "latest",
-        "last_updated": 1773100616,
+        "last_updated": 1773358076,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Pluto/0.20.23-Julia-1.11.3-GCC-12.3.0-VTune.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Pluto/0.20.24-Julia-1.11.3-GCC-12.3.0-VTune.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16032,15 +16235,16 @@
             "6.3.1-GCCcore-9.2.0",
             "7.2.1-GCCcore-11.3.0",
             "9.2.0-GCC-11.3.0",
-            "9.3.0-GCC-12.3.0"
+            "9.3.0-GCC-12.3.0",
+            "9.3.0-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "9.3.0-GCC-12.3.0",
+        "default": "9.3.0-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1773643623,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PROJ/9.3.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PROJ/9.3.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18646,6 +18850,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "safestringlib": {
+        "description": "The Secure Development Lifecycle (SDL) recommends banning certain C Library\nfunctions because they directly contribute to security vulnerabilities such as\nbuffer overflows. However routines for the manipulation of strings and memory\nbuffers are common in software and firmware, and are essential to accomplish\ncertain programming tasks. Safer replacements for these functions that avoid or\nprevent serious security vulnerabilities (e.g. buffer overflows, string format\nattacks, conversion overflows/underflows, etc.) are available in the SafeString\nLibrary.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/intel/safestringlib",
+        "support": "",
+        "versions": [
+            "20250325-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "20250325-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1774211634,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/safestringlib/20250325-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "SAGE": {
         "description": "Ppackage containing programs for use in the genetic analysis of\nfamily, pedigree and individual data.",
         "domains": [
@@ -18957,15 +19181,16 @@
             "6.1.2-gimpi-2022a",
             "6.1.2-iimpi-2022a",
             "7.0.3-gimpi-2022a",
-            "7.0.4-foss-2023a"
+            "7.0.4-foss-2023a",
+            "7.0.4-iompi-2023a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "7.0.4-foss-2023a",
+        "default": "7.0.4-iompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132634,
+        "last_updated": 1773650778,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/SCOTCH/7.0.4-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/SCOTCH/7.0.4-iompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19840,7 +20065,7 @@
         "force_show": "False"
     },
     "spaln": {
-        "description": "Stand-alone program that maps and aligns a set of cDNA or protein sequences onto a whole genomic sequence in a single job.",
+        "description": "Spaln (space-efficient spliced alignment) is a stand-alone program that maps\n and aligns a set of cDNA or protein sequences onto a whole genomic sequence in a single job.",
         "domains": [
             "biology"
         ],
@@ -19850,15 +20075,16 @@
         "support": "",
         "versions": [
             "2.4.13f-GCC-11.3.0",
-            "2.4.5-GCC-9.2.0"
+            "2.4.5-GCC-9.2.0",
+            "3.0.6b-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.4.5-GCC-9.2.0",
+        "default": "3.0.6b-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1774226167,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/spaln/2.4.5-GCC-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/spaln/3.0.6b-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20213,6 +20439,7 @@
             "4.5.4-gimkl-2018b",
             "5.13.0-foss-2023a",
             "5.13.0-gimkl-2022a",
+            "5.13.0-iofbf-2023a",
             "5.4.0-gimkl-2018b-METIS-5.1.0",
             "5.6.0-gimkl-2020a-METIS-5.1.0",
             "5.6.0-intel-2020a-METIS-5.1.0",
@@ -22180,18 +22407,19 @@
         "domains": [],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://xerces.apache.org/xerces-c/",
+        "homepage": "https://xerces.apache.org/xerces-c/",
         "support": "",
         "versions": [
-            "3.2.2-GCCcore-7.4.0"
+            "3.2.2-GCCcore-7.4.0",
+            "3.3.0-GCCcore-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.2.2-GCCcore-7.4.0",
+        "default": "3.3.0-GCCcore-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1773650206,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Xerces-C++/3.2.2-GCCcore-7.4.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Xerces-C++/3.3.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },

@@ -12,27 +12,27 @@ aiosignal==1.4.0
     # via aiohttp
 annotated-types==0.7.0
     # via pydantic
-anyio==4.12.1
+anyio==4.13.0
     # via httpx
-attrs==25.4.0
+attrs==26.1.0
     # via aiohttp
 babel==2.18.0
     # via
     #   mkdocs-git-revision-date-localized-plugin
     #   mkdocs-material
-backrefs==6.1
+backrefs==6.2
     # via mkdocs-material
 beautifulsoup4==4.14.3
     # via pyspelling
 bracex==2.6
     # via wcmatch
-build==1.4.0
+build==1.4.2
     # via pip-tools
 cachecontrol[filecache]==0.14.4
     # via
     #   cachecontrol
     #   mkdocs-rss-plugin
-certifi==2026.1.4
+certifi==2026.2.25
     # via
     #   httpcore
     #   httpx
@@ -41,26 +41,28 @@ cffi==2.0.0
     # via
     #   cryptography
     #   pynacl
-charset-normalizer==3.4.4
+charset-normalizer==3.4.6
     # via requests
 click==8.3.1
     # via
     #   mkdocs
     #   neoteroi-mkdocs
     #   pip-tools
-codespell==2.4.1
+    #   properdocs
+    #   rich-click
+codespell==2.4.2
     # via -r requirements.in
 colorama==0.4.6
     # via mkdocs-material
 cryptography==46.0.5
     # via pyjwt
-editdistpy==0.1.6
+editdistpy==0.2.0
     # via symspellpy
 essentials==1.1.9
     # via essentials-openapi
-essentials-openapi==1.3.0
+essentials-openapi==1.4.0
     # via neoteroi-mkdocs
-filelock==3.21.0
+filelock==3.25.2
     # via cachecontrol
 flashtext==2.7
     # via -r requirements.in
@@ -69,7 +71,9 @@ frozenlist==1.8.0
     #   aiohttp
     #   aiosignal
 ghp-import==2.1.0
-    # via mkdocs
+    # via
+    #   mkdocs
+    #   properdocs
 gitdb==4.0.12
     # via gitpython
 gitpython==3.1.46
@@ -106,6 +110,7 @@ jinja2==3.1.6
     #   mkdocs-macros-plugin
     #   mkdocs-material
     #   neoteroi-mkdocs
+    #   properdocs
 linkcheckmd==1.4.0
     # via -r requirements.in
 lxml==6.0.2
@@ -114,6 +119,7 @@ markdown==3.10.2
     # via
     #   mkdocs
     #   mkdocs-material
+    #   properdocs
     #   pymdown-extensions
     #   pyspelling
 markdown-it-py==4.0.0
@@ -123,6 +129,7 @@ markupsafe==3.0.3
     #   essentials-openapi
     #   jinja2
     #   mkdocs
+    #   properdocs
 mdurl==0.1.2
     # via markdown-it-py
 mergedeep==1.3.4
@@ -140,6 +147,7 @@ mkdocs==1.6.1
     #   mkdocs-macros-plugin
     #   mkdocs-material
     #   mkdocs-open-in-new-tab
+    #   mkdocs-quiz
     #   mkdocs-redirects
     #   mkdocs-rss-plugin
     #   mkdocs-section-index
@@ -150,7 +158,7 @@ mkdocs-awesome-nav==3.3.0
     # via -r requirements.in
 mkdocs-bootstrap4==0.1.5
     # via -r requirements.in
-mkdocs-get-deps==0.2.0
+mkdocs-get-deps==0.2.2
     # via mkdocs
 mkdocs-git-authors-plugin==0.10.0
     # via -r requirements.in
@@ -160,17 +168,19 @@ mkdocs-git-revision-date-localized-plugin==1.5.1
     # via -r requirements.in
 mkdocs-macros-plugin==1.5.0
     # via -r requirements.in
-mkdocs-material==9.7.1
+mkdocs-material==9.7.6
     # via -r requirements.in
 mkdocs-material-extensions==1.3.1
     # via mkdocs-material
 mkdocs-open-in-new-tab==1.0.8
     # via -r requirements.in
+mkdocs-quiz @ git+https://github.com/CallumWalley/mkdocs-quiz.git@fix-template-override
+    # via -r requirements.in
 mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_file
     # via -r requirements.in
 mkdocs-rss-plugin==1.17.9
     # via -r requirements.in
-mkdocs-section-index==0.3.10
+mkdocs-section-index==0.3.11
     # via -r requirements.in
 mkdocs-simple-hooks==0.1.5
     # via -r requirements.in
@@ -191,6 +201,7 @@ packaging==26.0
     #   build
     #   mkdocs
     #   mkdocs-macros-plugin
+    #   properdocs
     #   wheel
 paginate==0.5.7
     # via mkdocs-material
@@ -198,14 +209,23 @@ pathspec==1.0.4
     # via
     #   mkdocs
     #   mkdocs-macros-plugin
+    #   properdocs
 pip-tools==7.5.3
     # via -r requirements.in
-platformdirs==4.6.0
-    # via mkdocs-get-deps
+platformdirs==4.9.4
+    # via
+    #   mkdocs-get-deps
+    #   properdocs
+polib==1.2.0
+    # via mkdocs-quiz
+prompt-toolkit==3.0.52
+    # via questionary
 propcache==0.4.1
     # via
     #   aiohttp
     #   yarl
+properdocs==1.6.7
+    # via mkdocs-section-index
 proselint==0.16.0
     # via -r requirements.in
 pycparser==3.0
@@ -214,15 +234,15 @@ pydantic==2.12.5
     # via mkdocs-awesome-nav
 pydantic-core==2.41.5
     # via pydantic
-pygithub==2.8.1
+pygithub==2.9.0
     # via mkdocs-git-committers-plugin
 pygments==2.19.2
     # via
     #   mkdocs-material
     #   rich
-pyjwt[crypto]==2.11.0
+pyjwt[crypto]==2.12.1
     # via pygithub
-pymdown-extensions==10.20.1
+pymdown-extensions==10.21
     # via mkdocs-material
 pynacl==1.6.2
     # via pygithub
@@ -243,25 +263,35 @@ pyyaml==6.0.3
     #   mkdocs
     #   mkdocs-get-deps
     #   mkdocs-macros-plugin
+    #   properdocs
     #   pymdown-extensions
     #   pyspelling
     #   pyyaml-env-tag
 pyyaml-env-tag==1.1
-    # via mkdocs
-requests==2.32.5
+    # via
+    #   mkdocs
+    #   properdocs
+questionary==2.1.1
+    # via mkdocs-quiz
+requests==2.33.0
     # via
     #   cachecontrol
     #   mkdocs-macros-plugin
     #   mkdocs-material
+    #   mkdocs-quiz
     #   mkdocs-rss-plugin
     #   pygithub
-rich==14.3.2
-    # via neoteroi-mkdocs
+rich==14.3.3
+    # via
+    #   neoteroi-mkdocs
+    #   rich-click
+rich-click==1.9.7
+    # via mkdocs-quiz
 six==1.17.0
     # via
     #   html5lib
     #   python-dateutil
-smmap==5.0.2
+smmap==5.0.3
     # via gitdb
 soupsieve==2.8.3
     # via
@@ -291,22 +321,24 @@ urllib3==2.6.3
     #   pygithub
     #   requests
 watchdog==6.0.0
-    # via mkdocs
+    # via
+    #   mkdocs
+    #   properdocs
 wcmatch==10.1
     # via
     #   mkdocs-awesome-nav
     #   pyspelling
+wcwidth==0.6.0
+    # via prompt-toolkit
 webencodings==0.5.1
     # via html5lib
 wheel==0.46.3
     # via pip-tools
-yarl==1.22.0
+yarl==1.23.0
     # via aiohttp
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==26.0.1
     # via pip-tools
-setuptools==82.0.0
-    # via
-    #   -r requirements.in
-    #   pip-tools
+setuptools==82.0.1
+    # via pip-tools
