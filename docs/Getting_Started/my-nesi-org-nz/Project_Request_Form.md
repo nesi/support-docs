@@ -1,14 +1,9 @@
 ---
 created_at: '2021-03-11T21:59:07Z'
 tags: []
-title: The NeSI Project Request Form
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360003648716
-zendesk_section_id: 360001059296
 ---
 
-See [Applying for a NeSI project](../Projects/Applying_for_a_New_Project.md) 
+See [Applying for a project](../Projects/Applying_for_a_New_Project.md) 
 for how to access the form.
 
 ## Preparing a request to use NeSI resources
@@ -45,4 +40,4 @@ save a draft.
 The request can only be successfully submitted once all mandatory data
 has been entered. The final section in the form 'Summary' will highlight
 missing data and allow you to navigate back to the relevant section.
- 
+
