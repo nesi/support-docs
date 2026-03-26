@@ -78,7 +78,7 @@ Create a new script called `gpu-job.sl`
 #SBATCH --account         {{config.extra.project_code}} 
 #SBATCH --output          %x.out
 #SBATCH --mem-per-cpu     2G
-#SBATCH --gpu-per-node    P100:1
+#SBATCH --gpu-per-node    A100:1
 
 module load CUDA
 nvidia-smi  

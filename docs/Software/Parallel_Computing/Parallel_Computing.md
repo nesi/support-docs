@@ -176,7 +176,7 @@ GPUs excel at large-scale parallel operations on matrices, making them ideal for
 #SBATCH --account         nesi99991
 #SBATCH --output          %x.out
 #SBATCH --mem-per-cpu     2G
-#SBATCH --gpus-per-node   P100:1
+#SBATCH --gpus-per-node   A100:1
 
 module load CUDA
 nvidia-smi
