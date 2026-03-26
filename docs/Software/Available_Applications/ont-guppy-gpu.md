@@ -41,12 +41,8 @@ https://community.nanoporetech.com/
 ### Example Slurm script
 
 - Following Slurm script is a template to run Basecalling on NVIDIA
-    A100 GPUs.( We do not recommend running Guppy jobs on CPUs )
+    A100 GPUs. (We do not recommend running Guppy jobs on CPUs.)
 - `--device auto` will automatically pick up the GPU over CPU
-- Also,  NeSI Mahuika cluster can provide A100 GPUs  which can be 5-6
-    times faster than A100 GPUs for Guppy Basecalling with  version. 5
-    and above. This can be requested with
-    `#SBATCH --gpus-per-node A100:1` variable
 - Config files are stored in
     ***/opt/nesi/CS400\_centos7\_bdw/ont-guppy-gpu/(version)/data/ ***
     with read permissions to all researchers (replace ***(version)***
