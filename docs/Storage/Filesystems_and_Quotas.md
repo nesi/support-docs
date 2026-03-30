@@ -29,39 +29,6 @@ and cached between updates.
 | Speed          | Fast                                                                                  | Fast                                                                                                            | Fast                                                                                                                                                                                                      | Slow                                                                               |
 | Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul>                             | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul>                                                                      | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li>                                                                                                                                                     | <ul><li>s3cmd commands</li></ul>                                                   |
 
-### Soft and hard quotas
-
-We use soft and hard quotas for disk space.
-
-- Once you exceed a fileset's soft quota, a one-week countdown timer
-    starts. When that timer runs out, you will no longer be able to
-    create new files or write more data in that fileset. You can reset
-    the countdown timer by dropping down to under the soft quota limit.
-- You will not be permitted to exceed a fileset's hard quota at all.
-    Any attempt to try will produce an error; the precise error will
-    depend on how your software responds to running out of disk space.
-
-When quotas are first applied to a fileset, or are reduced, it is
-possible to end up with more data or files in the fileset than the quota
-allows for. This outcome does not trigger deletion of any existing data,
-but will prevent creation of new data or files.
-
-!!! note
-    - You may request an increase in storage quota if needed by
-        a project. This may in turn be reduced as part of managing overall
-        risk, where large amounts of quota aren't used for a long period (~6
-        Months).
-    - If you need to compile or install a software package that is large
-        or is intended for use by a project team, please build it
-        in `/nesi/project/<project_code>` rather than `/home/<username>`.
-    - Keep in mind that data on `/nesi/nobackup` is not backed up,
-        therefore users are advised to move valuable data
-        to `/nesi/project/<project_code>` or Freezer, or, if the data is seldom used,
-        to other storage such as an institutional storage facility, as soon
-        as batch jobs are completed. Please do **not** use the `touch`
-        command to prevent the cleaning policy from removing files, because
-        this behaviour would deprive the community of a shared resource.
-
 ### `/home`
 
 For storing files that are central for performing your simulations and calculations on Mahuika. This includes program installations, conda environments and other virtual environments. Home directories (folders) are available in the `/home` volume.
