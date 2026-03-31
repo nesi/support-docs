@@ -3524,7 +3524,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 6.87,
+                        "hourly_average": 6.84,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3538,7 +3538,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.23,
+                        "hourly_average": 5.21,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3606,7 +3606,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 80643019.89,
+                        "hourly_average": 80316956.21,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -7994,13 +7994,14 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://ccb.jhu.edu/software/hisat2/index.shtml",
+        "homepage": "https://daehwankimlab.github.io/hisat2",
         "support": "",
         "versions": [
             "2.1.0-gimkl-2018b",
             "2.2.0-gimkl-2020a",
             "2.2.1-gimkl-2020a",
-            "2.2.1-gimpi-2022a"
+            "2.2.1-gimpi-2022a",
+            "2.2.1-gompi-2023a"
         ],
         "admin_list": [
             {
@@ -8008,11 +8009,11 @@
             }
         ],
         "network_licences": [],
-        "default": "2.2.1-gimpi-2022a",
+        "default": "2.2.1-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1774910092,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HISAT2/2.2.1-gimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/HISAT2/2.2.1-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13329,15 +13330,16 @@
         "versions": [
             "2.10.5-gimkl-2020a",
             "2.11.2-gimpi-2022a",
+            "2.11.2-gompi-2023a",
             "2.9.3-gimkl-2018b"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.11.2-gimpi-2022a",
+        "default": "2.11.2-gompi-2023a",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1774909973,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ncbi-vdb/2.11.2-gimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ncbi-vdb/2.11.2-gompi-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13760,15 +13762,16 @@
         "versions": [
             "1.3.0-gimkl-2018b",
             "2.10.5-gimkl-2020a",
-            "2.11.2-GCC-11.3.0"
+            "2.11.2-GCC-11.3.0",
+            "2.11.2-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.11.2-GCC-11.3.0",
+        "default": "2.11.2-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1774909407,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/NGS/2.11.2-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/NGS/2.11.2-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
