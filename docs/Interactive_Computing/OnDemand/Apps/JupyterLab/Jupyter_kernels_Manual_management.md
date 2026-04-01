@@ -1,6 +1,6 @@
 ---
 created_at: 2025-01-24
-description: How to set up your own custom kernals for use on NeSI JupyterHub
+description: How to set up your own custom kernals for use on Mahuika JupyterHub
 tags: 
     - JupyterHub
     - Python
@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-Jupyter kernels execute the code that you write. NeSI provides a number of
+Jupyter kernels execute the code that you write. Mahuika provides a number of
 Python and R kernels by default, which can be selected from the Launcher.
 
 Many packages are preinstalled in our default Python and R environments
@@ -106,7 +106,7 @@ Fourth, create a Jupyter kernel based on your new conda environment:
 python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
 ```
 
-We must now edit the kernel to load the required NeSI environment
+We must now edit the kernel to load the required environment
 modules before the kernel is launched. Change to the directory the
 kernelspec was installed to
 `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
@@ -140,7 +140,7 @@ Launcher as "My Conda Env".
 ## Sharing your custom kernal with your project team members
 
 You can also configure a shared Python kernel that others with access to
-the same NeSI project will be able to load.
+the same project will be able to load.
 
 * To do this, you must make sure it also exists in a shared location
 (other users cannot see your home directory).
@@ -169,7 +169,7 @@ python -m ipykernel install --user --name my-conda-env --display-name="My Conda 
 ```
 
 **Your project members** must now edit the kernel in their home directories
-to load the required NeSI environment modules before the kernel is launched.
+to load the required environment modules before the kernel is launched.
 Change to the directory the kernelspec was installed to
 `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
 `--name my-conda-env` in the above command):
@@ -231,7 +231,7 @@ Now create an R Jupyter kernel based on your new conda environment:
 R -e "IRkernel::installspec(name='myrwithmpfr', displayname = 'R with MPFR', user = TRUE)"
 ```
 
-We must now to edit the kernel to load the required NeSI environment
+We must now to edit the kernel to load the required environment
 modules when the kernel is launched. Change to the directory the
 kernelspec was installed to
 (~/.local/share/jupyter/kernels/myrwithmpfr, assuming you kept `--name

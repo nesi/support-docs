@@ -3,7 +3,7 @@
 
 ## Introduction
 
-NeSI supports the use of [Jupyter](https://jupyter.org/) for interactive computing.
+Mahuika supports the use of [Jupyter](https://jupyter.org/) for interactive computing.
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
 Jupyter, including data cleaning, analytics and visualisation, machine
@@ -11,10 +11,9 @@ learning, numerical simulation, managing
 [Slurm job submissions](../../../../Tutorials/Introduction_To_HPC/Submitting_Your_First_Job.md)
 and workflows and much more.
 
-## Accessing Jupyter on NeSI
+## Accessing Jupyter on Mahuika
 
-
-Jupyter at NeSI can be accessed via [NeSI OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
+Jupyter at Mahuika can be accessed via [Mahuika OnDemand](https://ondemand.nesi.org.nz/) and launching the JupyterLab application there.
 For more details see the [how-to guide](../../how_to_guide.md).
 
 ## Jupyter user interface
@@ -29,15 +28,15 @@ to use notebooks, text editor, terminals and custom components together.
 
 Your JupyterLab session will start in your home directory the first time you launch it. On subsequent launches it may remember your previous working directory and start there.
 
-NeSI will auto generate a directory within your home folder called `00_nesi_projects`, you will find symbolic links to projects and nobackup directories of your active projects. We do not recommend that you store files in this initial directory because next time you log into OnDemand the directory will be repopulated based on your user groups, instead switch to your home, project or nobackup directories first.
+Mahuika will auto generate a directory within your home folder called `00_nesi_projects`, you will find symbolic links to projects and nobackup directories of your active projects. We do not recommend that you store files in this initial directory because next time you log into OnDemand the directory will be repopulated based on your user groups, instead switch to your home, project or nobackup directories first.
 
 If you wish to not have this folder recreated upon login then please place the following file in your HOME directory `.00_nesi_projects.stop` and this will stop the folder from being recreated upon login.
 
 ### Jupyter kernels
 
-NeSI provides some default Python and R kernels that are available to all users and are based on some
+Mahuika provides some default Python and R kernels that are available to all users and are based on some
 of environment modules. It's also possible to create additional kernels that are visible only to
-you (they can optionally be made visible to other members of a specific NeSI project that you belong to). See:
+you (they can optionally be made visible to other members of a specific project that you belong to). See:
 
 - [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md) (recommended)
 - [Jupyter kernels - Manual management](./Jupyter_kernels_Manual_management.md)
@@ -53,8 +52,7 @@ Some things to note about the JupyterLab terminal are:
 
 ## Installing JupyterLab extensions
 
-JupyterLab supports many extensions that enhance its functionality. At
-NeSI we package some extensions into the default JupyterLab environment.
+JupyterLab supports many extensions that enhance its functionality. On Mahuika we package some extensions into the default JupyterLab environment.
 Keep reading if you need to install extensions yourself.
 
 Note, there were some changes related to extensions in JupyterLab 3.0
@@ -64,7 +62,7 @@ about JupyterLab extensions can be found
 Check the extension's documentation to find out the supported
 installation method for that particular extension.
 
-On NeSI OnDemand we support installing prebuilt extensions (i.e. pip installable
+On Mahuika OnDemand we support installing prebuilt extensions (i.e. pip installable
 packages) from the terminal application.
 First ensure you have the latest JupyterLab module loaded:
 

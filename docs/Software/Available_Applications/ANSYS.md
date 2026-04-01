@@ -4,7 +4,7 @@ tags:
 - engineering
 - cfd
 - fea
-description: How to best use ANSYS products on the NeSI cluster.
+description: How to best use ANSYS products on the Mahuika cluster.
 ---
 
 {% set app_name = page.title | trim %}
@@ -21,7 +21,7 @@ description: How to best use ANSYS products on the NeSI cluster.
 
 ## Licences
 
-The following network licence servers can be accessed from the NeSI cluster.
+The following network licence servers can be accessed from the Mahuika cluster.
 
 {% include "partials/app/app_network_licence.html" -%}
 
@@ -621,7 +621,7 @@ ANSYS-EM jobs can be submitted through a slurm script or by
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
 manager) running on all nodes. The command `startRSM` has been written
 to facilitate this and needs to be run *after* starting the slurm job
-but *before* running edt. Please contact NeSI support if the command is
+but *before* running edt. Please contact REANNZ support if the command is
 not working for you.
 
 ### Example Slurm Script

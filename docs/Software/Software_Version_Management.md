@@ -10,7 +10,7 @@ title: Software Version Management
 
 ## Software Versions
 
-Much of the software installed on the NeSI cluster have multiple
+Much of the software installed on the Mahuika cluster have multiple
 versions available as shown on the
 [supported applications page](Available_Applications/index.md)
 or by using the `module avail` or `module spider` commands.

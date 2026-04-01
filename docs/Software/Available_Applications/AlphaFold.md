@@ -16,7 +16,7 @@ zendesk_section_id: 360000040076
 [//]:AlphaFold.md> (APPS PAGE BOILERPLATE END)
 
 !!! prerequisite Tips
-     An extended version of AlphaFold2 on NeSI Mahuika cluster which
+     An extended version of AlphaFold2 on Mahuika cluster which
      contains additional information such as visualisation of AlphaFold
      outputs, etc [can be found
      here](https://nesi.github.io/alphafold2-on-mahuika/)
