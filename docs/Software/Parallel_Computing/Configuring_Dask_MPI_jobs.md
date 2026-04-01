@@ -260,7 +260,7 @@ where the `%runscript` section ensures that the Python script passed to
 Conda environment inside the container.
 
 !!! note Tips
-     You can build this container on Mahuika,following the instructions from the [dedicated supportpage](../Available_Applications/Apptainer.md)
+     You can build this container on Mahuika, following the instructions from the [dedicated support page](../Available_Applications/Apptainer.md)
 
 ### Slurm configuration
 
