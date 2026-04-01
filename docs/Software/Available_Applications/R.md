@@ -30,7 +30,7 @@ to participation in that activity.
 R is made available at no cost under the terms of version 2 of the [GNU
 General Public Licence](https://www.r-project.org/COPYING).
 
-## NeSI Customisations
+## Mahuika Customisations
 
 - We patch the *snow* package so that there is no need to use RMPISNOW
   when using it over MPI.
@@ -263,7 +263,7 @@ or just use the module command:
 module show R/4.2.1-gimkl-2022a
 ```
 
-Please note that different installations of R, even on the same NeSI
+Please note that different installations of R, even on the same Mahuika
 cluster, may contain different collections of packages. Furthermore, if
 you have your own packages in a directory that R can automatically
 detect, these will also be shown in a separate section.
@@ -290,7 +290,7 @@ For R/4.2.1 the command `.libPaths()` will return the following:
 
 When using the `library()` function R will first look to your
 Home/Personal library for the package and then to the Systems Library
-provided by NeSI. This can be used in conjuction with
+provided by Mahuika. This can be used in conjuction with
 `installed.packages()` to see what is available in a specific library.
 eg:
 
