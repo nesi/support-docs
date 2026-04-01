@@ -290,7 +290,7 @@ For R/4.2.1 the command `.libPaths()` will return the following:
 
 When using the `library()` function R will first look to your
 Home/Personal library for the package and then to the Systems Library
-provided by Mahuika. This can be used in conjuction with
+provided by Mahuika. This can be used in conjunction with
 `installed.packages()` to see what is available in a specific library.
 eg:
 
