@@ -179,7 +179,7 @@ _48 seconds_ used out of _15 minutes_ requested give a time efficiency of about 
 
     b. Memory efficiency is `( 14 / 32 ) x 100` or around **43%**.
 
-For convenience, Mahuika has provided the command `seff <jobid>` to calculate **S**lurm **Eff**iciency (all Mahuika commands start with `nn_`, for **N**eSI **N**IWA).
+For convenience, Mahuika has provided the command `seff <jobid>` to calculate **S**lurm **Eff**iciency.
 
 ```sh
  seff <jobid>
