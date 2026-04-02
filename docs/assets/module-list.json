@@ -3449,7 +3449,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.96,
+                "server_uptime": 0.95,
                 "server_version": "",
                 "features": [
                     {
@@ -3524,7 +3524,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 6.81,
+                        "hourly_average": 6.79,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3538,7 +3538,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.19,
+                        "hourly_average": 5.16,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3606,7 +3606,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 79993518.66,
+                        "hourly_average": 79672675.64,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -5596,15 +5596,16 @@
         "versions": [
             "0.20.0-GCCcore-7.4.0",
             "0.23.2-GCC-11.3.0",
-            "0.23.4-GCC-11.3.0"
+            "0.23.4-GCC-11.3.0",
+            "1.1.0-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.23.4-GCC-11.3.0",
+        "default": "1.1.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1775007889,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/fastp/0.23.4-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/fastp/1.1.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
