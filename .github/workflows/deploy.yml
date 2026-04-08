@@ -8,6 +8,8 @@ on:
 env:
   PYTHON_VERSION: 3.14.2
   GH_TOKEN: ${{ github.token }}
+  NO_MKDOCS_2_WARNING: "1"
+
 permissions:
   contents: write
   pull-requests:  write
