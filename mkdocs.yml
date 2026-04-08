@@ -126,4 +126,4 @@ extra_javascript:
     - https://status.nesi.org.nz/embed/script.js
     - assets/javascripts/mathjax.js
     - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-    - https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.3.0/ical.min.js

@@ -1,4 +1,3 @@
-const CALENDAR_ID = "c_hen6rr02et39kat2hmuamidots@group.calendar.google.com";
 const MEETING_LINK = "https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09";
 
 function changeVersion(app, version, warn = false) {
@@ -59,23 +58,7 @@ async function showOfficeBanner() {
             }
         }
     } catch (error) {
-        console.warn("ICAL parsing failed, falling back to regex:", error);
-        // Fallback to regex
-        let allmatch = text.matchAll(/DTSTART;TZID=New Zealand Standard Time:(\d+T\d+)/g);
-        for (const t of allmatch) {
-            if (!t) continue;
-            let d = format8601(t[1]);
-            if (now.toDateString() == d.toDateString()) {
-                if (now.getTime() < d.getTime() + 3600000) {
-                    if (now < d) {
-                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`, "calendar-banner");
-                    } else {
-                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`, "calendar-banner");
-                    }
-                }
-                break;
-            }
-        }
+        console.warn("ICAL parsing failed", error);
     }
 }
 
