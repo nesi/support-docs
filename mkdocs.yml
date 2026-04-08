@@ -122,8 +122,9 @@ plugins:
 extra_css:
   - assets/stylesheets/theme.css
 extra_javascript:
-    - assets/javascripts/general.js
+    - https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.3.0/ical.min.js
     - https://status.nesi.org.nz/embed/script.js
     - assets/javascripts/mathjax.js
     - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-    - https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.3.0/ical.min.js
+    - assets/javascripts/general.js
+
