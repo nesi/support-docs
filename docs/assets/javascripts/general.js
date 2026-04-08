@@ -86,7 +86,7 @@ function format8601(str){
         str.substring(6, 8) + 'T' +
         str.substring(9, 11) + ':' + 
         str.substring(11, 13) + ':' +
-        str.substring(13, 15) + '+12:00';
+        str.substring(13, 15);
     return new Date(dateStringFormatted);
 }
 
