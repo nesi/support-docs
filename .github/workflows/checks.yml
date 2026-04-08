@@ -173,4 +173,4 @@ jobs:
           fetch-depth: 0
       - run: pip3 install -r requirements.txt
       - run: ./checks/run_test_build.py
-      - run: python3 checks/run_aria_check.py
+      - run: export NO_MKDOCS_2_WARNING="1"; python3 checks/run_aria_check.py

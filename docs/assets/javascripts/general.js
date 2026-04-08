@@ -36,26 +36,45 @@ async function showOfficeBanner() {
         .then(r => r.ok ? r.text() : "");
     if (!text) { console.warn("failed to load calendar ") };
 
-
     const now = new Date();
-    let allmatch = text.matchAll(/DTSTART:(\d+T\d+Z)/g);
-    // Extract all dates.
-    for (const t of allmatch) {
-        if (!t) continue;
-        let d = format8601(t[1]);
-        // if today
-        if (now.toDateString() == d.toDateString()) {
-            // if not finished.
-            if (now.getTime()  < d.getTime() + 3600000) {
-                // if not started
-                if (now < d) {
-                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`, "calendar-banner");
-
-                } else {
-                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`, "calendar-banner");
+    try {
+        const jcal = ICAL.parse(text);
+        const comp = new ICAL.Component(jcal);
+        const vevents = comp.getAllSubcomponents('vevent');
+        for (const vevent of vevents) {
+            const dtstart = vevent.getFirstPropertyValue('dtstart');
+            const date = dtstart.toJSDate();
+            // if today
+            if (now.toDateString() == date.toDateString()) {
+                // if not finished.
+                if (now.getTime() < date.getTime() + 3600000) {
+                    // if not started
+                    if (now < date) {
+                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`, "calendar-banner");
+                    } else {
+                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`, "calendar-banner");
+                    }
                 }
+                break;
             }
-            break;
+        }
+    } catch (error) {
+        console.warn("ICAL parsing failed, falling back to regex:", error);
+        // Fallback to regex
+        let allmatch = text.matchAll(/DTSTART;TZID=New Zealand Standard Time:(\d+T\d+)/g);
+        for (const t of allmatch) {
+            if (!t) continue;
+            let d = format8601(t[1]);
+            if (now.toDateString() == d.toDateString()) {
+                if (now.getTime() < d.getTime() + 3600000) {
+                    if (now < d) {
+                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`, "calendar-banner");
+                    } else {
+                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`, "calendar-banner");
+                    }
+                }
+                break;
+            }
         }
     }
 }
@@ -81,14 +100,15 @@ function format8601(str){
     const dateStringFormatted = 
         str.substring(0, 4) + '-' +
         str.substring(4, 6) + '-' +
-        str.substring(6, 8) + 
-        str.substring(8, 9) +
+        str.substring(6, 8) + 'T' +
         str.substring(9, 11) + ':' + 
         str.substring(11, 13) + ':' +
-        str.substring(13, 15) + 
-        str.substring(15, 16);
+        str.substring(13, 15) + '+12:00';
     return new Date(dateStringFormatted);
 }
+
+showOfficeBanner();
+
 // Remove me later
 // showOfficeBanner().then(() => {
 //     if (!document.getElementById("calendar-banner")){
