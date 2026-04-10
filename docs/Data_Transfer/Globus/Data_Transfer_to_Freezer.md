@@ -38,8 +38,9 @@ We are currently trialing the transfer of data to and from Freezer using Globus.
 
     ![Globus_Freezer_Credentials.png](../../assets/images/Globus_Freezer_Credentials.png)
 
-
     Please click `Save` after you have entered your details. You will then be shown this page here if it is successful.
+
+    ![Globus_Freezer_Credentials_Completed.png](../../assets/images/Globus_Freezer_Credentials_Completed.png)
 
 ## Freezer Endpoint
 
