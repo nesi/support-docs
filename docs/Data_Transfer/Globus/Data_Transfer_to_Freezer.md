@@ -10,12 +10,12 @@ search:
 !!! note
     This service is still in the testing phase
 
-We are currently trialing the transfer of data to and from Freezer using Globus. We currently have a new Glous Endpoint to Freezer `NeSI Freezer`. You will need to authenticate using your Freezer credentials. Please let us know if you would like some assistance or are having any difficulties with this service.
+We are currently trialing the transfer of data to and from Freezer using Globus. We currently have a new Globus Collection to Freezer called: `NeSI Freezer`. You will need to authenticate using your Freezer (S3) credentials. Please let us know if you would like some assistance or are having any difficulties with this service.
 
 ## Setting up Freezer Credentials
 
 1. Go to the File Manager tab of [your Globus page](https://app.globus.org/file-manager?two_pane=true) in the left hand menu bar.
-    Under the `Collection` field, search for and select the `NeSI Freezer` endpoint, then click the blue `Continue` button.
+    Under the `Collection` field, search for and select the `NeSI Freezer` collection, then click the blue `Continue` button.
     ![Globus_Freezer_Collection.png](../../assets/images/Globus_Freezer_Collection.png)
 
 
