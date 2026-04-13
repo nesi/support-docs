@@ -50,7 +50,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.97,
+                        "hourly_average": 0.96,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -64,7 +64,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.61,
+                        "hourly_average": 0.6,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -669,7 +669,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.77,
+                "server_uptime": 0.84,
                 "server_version": "",
                 "features": []
             },
@@ -688,7 +688,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.77,
+                "server_uptime": 0.84,
                 "server_version": "",
                 "features": [
                     {
@@ -722,7 +722,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.77,
+                "server_uptime": 0.84,
                 "server_version": "",
                 "features": []
             },
@@ -2088,6 +2088,7 @@
         "support": "",
         "versions": [
             "3.01-GCC-11.3.0-Perl-5.34.1",
+            "3.01-GCC-12.3.0-Perl-5.40.3",
             "3.01-GCC-9.2.0-Perl-5.30.1-mt"
         ],
         "admin_list": [],
@@ -3422,7 +3423,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.78,
+                        "hourly_average": 0.79,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3456,7 +3457,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.95,
+                        "hourly_average": 0.94,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3524,7 +3525,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 6.68,
+                        "hourly_average": 6.49,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3538,7 +3539,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 5.08,
+                        "hourly_average": 4.94,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3606,7 +3607,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 78414634.3,
+                        "hourly_average": 76312197.04,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4331,6 +4332,26 @@
         "last_updated": 1772421579,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/DB_File/1.860-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "DBD-mysql": {
+        "description": "Perl binding for MySQL",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://metacpan.org/pod/distribution/DBD-mysql/lib/DBD/mysql.pm",
+        "support": "",
+        "versions": [
+            "4.050-GCC-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "4.050-GCC-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1775791046,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/DBD-mysql/4.050-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7309,6 +7330,7 @@
         "homepage": "https://www.generic-mapping-tools.org/",
         "support": "",
         "versions": [
+            "6.3.0-foss-2023a",
             "6.6.0-foss-2023a"
         ],
         "admin_list": [],
