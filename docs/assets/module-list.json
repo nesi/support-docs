@@ -669,7 +669,7 @@
                 "server": "ANSYS@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.83,
+                "server_uptime": 0.84,
                 "server_version": "",
                 "features": []
             },
@@ -688,7 +688,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.83,
+                "server_uptime": 0.84,
                 "server_version": "",
                 "features": [
                     {
@@ -722,7 +722,7 @@
                 "server": "ANSYS@aut_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.83,
+                "server_uptime": 0.84,
                 "server_version": "",
                 "features": []
             },
@@ -3525,7 +3525,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 6.52,
+                        "hourly_average": 6.49,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3539,7 +3539,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsoluser",
-                        "hourly_average": 4.96,
+                        "hourly_average": 4.94,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsoluser@uoa_foe_des_rc",
@@ -3607,7 +3607,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 76606495.47,
+                        "hourly_average": 76312197.04,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -7330,6 +7330,7 @@
         "homepage": "https://www.generic-mapping-tools.org/",
         "support": "",
         "versions": [
+            "6.3.0-foss-2023a",
             "6.6.0-foss-2023a"
         ],
         "admin_list": [],
