@@ -100,7 +100,7 @@ plugins:
       json_feed_enabled: false
       pretty_print: true
       match_path: .*.md
-      feed_title: NeSI Support Docs Updates
+      feed_title: Mahuika Support Docs Updates
       length: 100
       feeds_filenames:
         rss_created: page_creation.xml

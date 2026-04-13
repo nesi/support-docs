@@ -3,7 +3,7 @@ created_at: '2019-02-21T02:46:25Z'
 tags: 
   -  molecular dynamics
   -  chemistry
-description: How to run GROMACS on the NeSI cluster
+description: How to run GROMACS on the Mahuika cluster
 ---
 
 
@@ -83,7 +83,7 @@ obtained with the Software.
     srun gmx_mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
 === "GPU"
-    For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+    For more information on using GPUs see [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
     ```sl
     #!/bin/bash -e
 

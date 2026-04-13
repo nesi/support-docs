@@ -18,14 +18,14 @@ care of the plumbing, NGC enables users to focus on building lean
 models, producing optimal solutions and gathering faster insights.
 
 Many of these containers are able to run under Apptainer, which is
-supported on the NeSI platform. NVIDIA also specifies the GPU
+supported on the Mahuika platform. NVIDIA also specifies the GPU
 requirements for each container, i.e. whether it will run on our Pascal
 (sm60) GPUs.
 
 There are instructions for converting their Docker images to Apptainer
 images on the NVIDIA site but some small changes are required to these
-instructions on NeSI. As an example, here we show the steps required for
-running the NAMD image on NeSI, based on the NVIDIA instructions
+instructions on Mahuika. As an example, here we show the steps required for
+running the NAMD image on Mahuika, based on the NVIDIA instructions
 [here](https://ngc.nvidia.com/catalog/containers/hpc:namd).
 
 1. Download the APOA1 benchmark data:

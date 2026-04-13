@@ -20,14 +20,14 @@ running TensorFlow with GPU support.
 
 !!! tip "See also"
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
-         see the [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+         see the [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
          [TensorFlow on CPUs](TensorFlow_on_CPUs.md)
          for tips on how to configure TensorFlow and Slurm for optimal
          performance.
 
-## Use NeSI modules
+## Use Mahuika modules
 
 TensorFlow is available on Mahuika as an
 [environment module](index.md)
@@ -170,7 +170,7 @@ take into consideration the following:
 
 ## Apptainer containers
 
-You can use containers to run your application on the NeSI platform. We
+You can use containers to run your application on the Mahuika platform. We
 provide support for
 [Apptainer](Apptainer.md)
 containers, that can be run by users without requiring additional

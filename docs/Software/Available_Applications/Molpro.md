@@ -28,12 +28,12 @@ agreements with individuals, research groups or institutions. Whether
 you have access to Molpro, which versions you have access to, and under
 what conditions, will vary depending on where you work or study. You
 will only be permitted to access and use any given version of Molpro on
-any NeSI cluster if you have a valid licence to use that version of
+Mahuika if you have a valid licence to use that version of
 Molpro at your place of work or study, and if the terms of your licence
 permit cluster use.
 
 If you are unsure whether you are eligible to access Molpro or any
-particular version of it on a NeSI cluster, please speak to your
+particular version of it on Mahuika, please speak to your
 supervisor, or the person with responsibility for your institution or
 department's software procurement. Alternatively, you can contact [our
 support desk](mailto:support@.nesi.org.nz).
@@ -49,7 +49,7 @@ tokens, it is necessary for you, as the user, to supply your own licence
 key file whenever you run Molpro. To obtain a copy of your licence key,
 contact the person responsible for the Molpro licence you are using. As
 noted above, this person will normally be either your supervisor or a
-procurement officer. NeSI does not provide copies of Molpro licence keys
+procurement officer. REANNZ does not provide copies of Molpro licence keys
 to individual users.
 
 Some builds of Molpro may allow for a custom path to a licence token on
@@ -72,7 +72,7 @@ you will need to update the key file manually from time to time.
 
 If you are provided with a Molpro licence key file but cannot read the
 file or access the directory in which it resides due to UNIX
-permissions, please email [the NeSI support
+permissions, please email [the Mahuika support
 desk](mailto:support@nesi.org.nz).
 
 ## Example Slurm script

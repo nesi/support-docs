@@ -47,7 +47,7 @@ Download latest release from 10xGenomics.
 ## License
 
 The developer grants a Limited License to all users. If you intend to
-use Supernova on NeSI operated infrastructure please read the developers
+use Supernova on REANNZ operated infrastructure please read the developers
 own licensing agreement.
 
 <https://support.10xgenomics.com/de-novo-assembly/software/downloads/latest>

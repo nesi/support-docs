@@ -5,7 +5,7 @@ tags:
   - Pluto
   - Julia
   - notebook
-description: How to run a Pluto interactive session on the NeSI cluster.
+description: How to run a Pluto interactive session on the Mahuika cluster.
 ---
 
 # Pluto.ji interactive sessions
