@@ -19,9 +19,6 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 * Missing user Namespaces in Kubernetes pods will interfere with most Apptainer operations.  One can run `apptainer pull` command, `apptainer exec,run,shell` commands can not be executed.
 
-## UCX ERROR
-Multi-node MPI jobs may fail on the four nodes mg[13-16] with errors like `UCX ERROR: no active messages transport`. If you encounter this, add the sbatch option `-x mg[13-16]` to avoid those nodes. Single-task jobs are not affected.
-
 ## Core dump files
 Contrary to what is stated in [our documentation on core files](../Getting_Started/FAQs/What_is_a_core_file.md), these are not currently available, even if `ulimit -c unlimited` is set.
 
