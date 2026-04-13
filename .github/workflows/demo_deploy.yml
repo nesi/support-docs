@@ -1,7 +1,7 @@
 name: Deploy PR branches
 on: 
   pull_request:
-    branches-ignore: "assets-update"
+    branches-ignore: ["assets-update"]
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   TARGET_REPO: "mkdocs-demo-deploy"
@@ -10,6 +10,7 @@ env:
   DEPLOY_URL: "https://callumwalley.github.io/mkdocs-demo-deploy"
   HEAD: ${{ github.event.pull_request.head.ref }}
   GH_REPO: ${{ github.repository }}
+  NO_MKDOCS_2_WARNING: "1"
 permissions: write-all
 jobs:
   demo-deploy:

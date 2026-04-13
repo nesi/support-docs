@@ -44,7 +44,7 @@ too).
 First, change directory into the path that you would like to place your
 conda environment.
 
-- If you would like to share this environment with other users, change directory
+- **If you would like to share this environment with other users**, change directory
 into your project folder using `cd /nesi/project/<project-code>`. Do not use the path
 that includes `00_nesi_projects` or `home` in the name as this causes issues.
 
