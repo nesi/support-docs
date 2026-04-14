@@ -26,10 +26,13 @@ We are currently trialing the transfer of data to and from Freezer using Globus.
 3. In the next window, click `Allow`.
     ![Globus_Freezer_Manage_Data.png](../../assets/images/Globus_Freezer_Manage_Data.png)
 
+    !!! info
+        Steps 4 & 5 may not be required
+
 4. To set up your credentials, please click `Continue`
     ![Globus_Freezer_Require_Credentials.png](../../assets/images/Globus_Freezer_Require_Credentials.png)
 
-5. Fill in your Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. We can reset this, but you will also need to reset your Freezer config on Mahuika (support@nesi.org.nz).
+5. Fill in your Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. We can  <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset your Freezer key</a>, but you will also need to reset your Freezer config on Mahuika.
 
     In the following sections, please enter:
 
@@ -44,8 +47,10 @@ We are currently trialing the transfer of data to and from Freezer using Globus.
 
 ## Freezer Endpoint
 
-1. Go to the File Manager on the left hand menu and search for the collection “NeSI Freezer” .
+1. Go to the File Manager on the left hand menu and search for the collection `NeSI Freezer` .
     ![Globus_Freezer_EP.png](../../assets/images/Globus_Freezer_EP.png)
 
 2. Under 'Path', type in your Freezer bucket e.g., `nesi99991-12345` and press <kbd>Enter</kbd>. you should now see the contents of your bucket.
 ![Globus_Freezer_Load_Bucket.png](../../assets/images/Globus_Freezer_Load_Bucket.png)
+
+If you initiate a transfer of offline data (only on tape - Glacier) from Freezer, the data will be automatically staged from tape before the transfer begins.
