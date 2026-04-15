@@ -22,8 +22,6 @@ EXCLUDED_FROM_CHECKS = [
     r".*\.pages\.yml",
 ]
 
-msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
-
 # Constants for use in checks.
 
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
@@ -58,7 +56,6 @@ def main():
         title, \
         meta, \
         contents, \
-        input_path
 
     # Walk variables
     global \
@@ -127,9 +124,8 @@ def main():
                             if re.match(r"^\s*```\s?\w*$", line)
                             else in_code_block
                         )
+                    _get_nav_tree()
                     for check in WALKCHECKS:
-
-                        _get_nav_tree()
                         _run_check(check)
                 for check in ENDCHECKS:
                     _run_check(check)
@@ -143,7 +139,6 @@ def _run_check(f):
 
 
 def _emit(f, r):
-    msg_count[r.get("level", "warning")] += 1
     print(
         f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},\
 endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}"
@@ -340,7 +335,7 @@ def minimum_tags():
     elif len(meta["tags"]) < MIN_TAGS:
         yield {
             "line": _get_lineno(r"^tags:.*$"),
-            "message": "Try to include at least 2 'tags'\
+            "message": f"Try to include at least {MIN_TAGS} 'tags'\
 (helps with search optimisation).",
         }
 
@@ -432,7 +427,3 @@ if __name__ == "__main__":
     # FIXME terrible hack to make VSCode in codespace capture the error messages
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
-
-    # Arbitrary weighting whether to fail check or not
-
-    # exit((100 * (len(sys.argv)-1)) < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))

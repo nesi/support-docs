@@ -398,7 +398,7 @@ position: absolute;
   background-color: rgba(241, 128, 0, 0.1);
 }
 
-.quiz-question > .admonition-titl e::before{
+.quiz-question > .admonition-title::before{
   mask-image: var(--md-admonition-icon--example);
   background-color: var(--reannz-orange);
 }

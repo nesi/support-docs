@@ -13,8 +13,6 @@ from proselint import config, tools
 from proselint.checks import __register__
 from proselint.registry import CheckRegistry
 
-ALLOWABLE_NOTICES = 5
-
 if __name__ == "__main__":
 
     files = sys.argv[1:]
@@ -37,5 +35,3 @@ if __name__ == "__main__":
             )
             count_notices += 1
             time.sleep(0.01)
-
-    # exit(count_notices >= ALLOWABLE_NOTICES*(len(sys.argv)-1))
