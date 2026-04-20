@@ -134,6 +134,11 @@
   box-shadow: grey 2px 2px 2px;
 }
 
+/* Fix Contact Support button color in dark mode */
+[data-md-color-scheme="slate"] .md-button-support {
+  background-color: var(--reannz-blue--dark-shade1);
+}
+
 /* Footer */
 #new-footer {
   font-family: Lato;
