@@ -103,11 +103,11 @@ source <path_to_virtual_environment>/bin/activate
 
 As an alternative, you can also create *conda* environments to install a
 specific version of Python, TensorFlow and any additional packages
-required for your project. On Mahuika, use the Miniconda3 module:
+required for your project. On Mahuika, use the Miniforge3 module:
 
 ``` sh
 export PYTHONNOUSERSITE=1
-module load Miniconda3/4.9.2
+module load Miniforge3/25.3.1-0
 conda create -p my_conda_venv python=3.8
 ```
 
@@ -156,13 +156,13 @@ take into consideration the following:
     TensorFlow relies on GCC 4.8 (TensorFlow &lt; 1.15).
 
 !!! tip
-     Make sure to use `module purge` before loading Miniconda3, to ensure
+     Make sure to use `module purge` before loading Miniforge3, to ensure
      that no other Python module is loaded and could interfere with your
      conda environment.
 
     ``` sh
     module purge
-    module load Miniconda3/4.9.2
+    module load Miniforge3/25.3.1-0
     export PYTHONNOUSERSITE=1
     source $(conda info --base)/etc/profile.d/conda.sh  # if you didn't use "conda init" to set your .bashrc
     conda ...  # any conda commands (create, activate, install...)
