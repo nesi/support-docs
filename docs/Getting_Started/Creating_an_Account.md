@@ -22,7 +22,7 @@ description: How to create a REANNZ HPC account.
     the online form to us. We will complete your personal profile for
     our records.
 
-![Globus_Freezer_Credentials_Completed.png](../assets/images/New_Account_Submit.png)
+![Form for submitting a new account request](../assets/images/New_Account_Submit.png)
 
 !!! prerequisite "What next?"
      - [Apply for Access](./Projects/Applying_for_a_New_Project.md),
