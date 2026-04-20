@@ -57,7 +57,7 @@ your downloaded profiling data or even start your profiling/debug tasks
 from remote (not described in detail here).
 
 !!! note
-    If you want to use the GUI on the NeSI systems, please
+    If you want to use the GUI on the Mahuika systems, please
     remember to start your ssh session using X11 forwarding (e.g. using the `ssh -Y` option).
 
 ## MAP “Express Launch”

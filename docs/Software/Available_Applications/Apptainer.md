@@ -53,7 +53,7 @@ Apptainer is distributed under the [BSD License](https://github.com/apptainer/ap
     Although we do not have a dedicated sandbox to build containers at the moment, `fakeroot` is enabled in both the login nodes and compute nodes allowing researchers to build containers as needed 
 
     * Since some container builds can consume a reasonable amount of CPU and memory, our recommendation is to do this via a Slurm job ( interactive or batch queue). We will demonstrate this via the latter option
-    * To illustrate this functionality, create an example container definition file *my_container.def* from a shell session on NeSI as follows:
+    * To illustrate this functionality, create an example container definition file *my_container.def* from a shell session on Mahuika as follows:
 
     ```bash
     cat << EOF > my_container.def
@@ -164,7 +164,7 @@ Apptainer is distributed under the [BSD License](https://github.com/apptainer/ap
 
 ??? container "5.  Accessing a GPU via Apptainer"
 
-    * If your Slurm job has requested access to an NVIDIA GPU (see GPU use on NeSI to learn how to request a GPU), an Apptainer container can transparently access it using the --nv flag:
+    * If your Slurm job has requested access to an NVIDIA GPU (see GPU use on Mahuika to learn how to request a GPU), an Apptainer container can transparently access it using the --nv flag:
 
         ```bash
         apptainer exec --nv my_container.sif

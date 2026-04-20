@@ -5,7 +5,7 @@ tags:
   - Marimo
   - python
   - notebook
-description: How to run a Marimo interactive session on the NeSI cluster.
+description: How to run a Marimo interactive session on the Mahuika cluster.
 ---
 
 # Marimo interactive sessions

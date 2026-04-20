@@ -15,15 +15,15 @@ While FileSender can be used as a file transfer service, it's real strength is f
 
 > Be aware that some types of files cannot be transferred to Filesender.  For example, files with the extension `.exe`.  It is also known that extensions containing an underscore `_` are not allowed. 
 
-## Using FileSender: Web-based GUI
+## FileSender: Web-based GUI
 
-### Sending Data using the FileSender Web-based GUI
+### Sending Data using the REANNZ FileSender Website
 
 1. Go to [https://filesender.reannz.co.nz](https://filesender.reannz.co.nz)
 2. If asked, click **Login** and Sign-in through your Tuakiri login. You may not need to do this if you have already signed into FileSender before.
 3. You can then drag & drop or click to select a file to transfer or you can select an entire directory to upload to FileSender
 
-### Receiving Data using the FileSender Web-based GUI
+### Receiving Data using the REANNZ FileSender Website
 
 1. Go to your emails where you should have been sent an email from FileSender.
 2. Click on the **Download link** in the email link. This will take you to a FileSender website where you can download your files.
@@ -31,13 +31,13 @@ While FileSender can be used as a file transfer service, it's real strength is f
 
 If you would like to download all files together in a tar or zip file, you can do this by clicking on the **Download as single (.zip) file** or the **Download as single (.tar) file** button.
 
-## Using FileSender: API-based Command Line Interface
+## FileSender: Command Line
 
-### Sending Data using the `filesender` utility
+### Sending Data using the `filesender` command line utility
 
 #### Initialising your FileSender Configuration
 
-To send data to your FileSender account using the FileSender API, we first have to configure FileSender  You only need to do this once.
+To send data to your FileSender account using the command line, we first have to configure FileSender  You only need to do this once.
 
 1. Go to [https://filesender.reannz.co.nz](https://filesender.reannz.co.nz)
 2. If asked, click **Login** and Sign-in through your Tuakiri login. You may not need to do this if you have already signed into FileSender before.
@@ -63,6 +63,8 @@ To send data to your FileSender account using the FileSender API, we first have 
     username = TUAKIRI_LOGIN_EMAIL
     apikey = FILESENDER_API_KEY
     ```
+    
+    Note: _Do not_ modify the `default_transfer_days_valid` parameter.  Doing so can cause the transfer to fail with a 500 error.
 
     Close and save with `ctrl x`, `ctrl y`, `Enter`
 
@@ -72,43 +74,38 @@ Once you have completed your FileSender configuration, you can upload files to F
 
 ```bash
 module load FileSender
-filesender -p -r person-to-send-to@emailserver.edu research-data-file.txt
+filesender -p -r recipient@email.co.nz research-data-file.txt
 ```
 
 where:
 
-* `person-to-send-to@emailserver.edu`: This is the email address of the persion that you would like to send your data to. This can be any email address, not necessarily an educational email address. This can also be your own email address if you are wanting move data between your local machine and mahuika.
-* `research-data-file.txt` This is the file you would like to send. This can be any file.
+* `recipient@email.co.nz`: This is the email address of the person to send your data. This can also be your own email address if you are wanting move data between your local machine and mahuika.
+* `research-data-file.txt` This is the file you would like to send. This can be any file, except files with excluded extensions mentioned at the top of this page (eg. `exe` files)  
 
-You can find more options for `filesender` by running `filesender --help` in the terminal or at [https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage](https://github.com/NFAcz/filesender-python-uploader?tab=readme-ov-file#usage)
+You can find more options for `filesender` by running `filesender --help` 
 
-!!! warning
-
-    This may take some time if you are uploading a big file.
-
-You can send multiple files by tarballing the files up:
+We recommend sending multiple files by making an archive (also known as a tarball):
 
 ```bash
-tar -cvf tarball_file.tar folder_to_tarball
+tar cvf mydata.tar file1 file2 file3
+# or an entire directory
+tar cvf mydata.tar directory1
 ```
 
 To untar the tarball:
 
 ```bash
-tar -xvf tarball_file.tar
+tar xvf mydata.tar
 ```
 
 ### Receiving data using the command line
 
-1. Look for an email from _REANNZ FileSender_, or possibly another FileSender provider such as _AARNet_.
-2. Click on the **Download link** in the email link. This will take you to a FileSender website where you can download your files.
-3. You will be presented a list of the files that you can download. Right-click on the <img src="../../assets/images/filesender_download_icon.png" alt="FileSender Download Icon" width="20"/> icon and click **Copy Link Address**
-4. In your terminal (in either your local machine or Mahuika), type:
+1. Click on the **Download link** in the FileSender email. This will take you to a FileSender website where you can download your files.
+2. Right-click on the <img src="../../assets/images/filesender_download_icon.png" alt="FileSender Download Icon" width="20"/> icon and choose **Copy Link Address**
+3. In your terminal (in either your local machine or Mahuika), run the following command:
 
     ```bash
-    curl -O -J -L -R "<copied_website>"
+    curl -O -J -L -R "<copied_link>"
     ```
 
-    NOTE: replace **<copied_website>** with the path you copied. Keep the double quotation "" marks as these are needed.
-
-5. You will see your file download to through your terminal.
+    NOTE: replace **<copied_link>** with the path you copied. Keep the double quotation "" marks as these are needed.

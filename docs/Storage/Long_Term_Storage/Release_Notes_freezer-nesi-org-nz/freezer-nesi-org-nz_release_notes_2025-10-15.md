@@ -17,4 +17,4 @@ search:
 - Implement Cross-origin resource sharing (CORS) restrictions for buckets
 - Rotate internally used secret
 
-If you have any questions about any of the fixes, please [contact NeSI Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+If you have any questions about any of the fixes, please [contact Mahuika Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").

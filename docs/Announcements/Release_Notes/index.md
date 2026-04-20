@@ -26,4 +26,4 @@ a reference to the vendor release notes or documentation.
 ## REANNZ HPC services
 
 OpenOnDemand is a recent example of a service composed of multiple
-components and dependencies that NeSI maintains.
+components and dependencies that REANNZ maintains.

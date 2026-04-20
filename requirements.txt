@@ -6,7 +6,7 @@
 #
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.13.3
+aiohttp==3.13.5
     # via linkcheckmd
 aiosignal==1.4.0
     # via aiohttp
@@ -41,9 +41,9 @@ cffi==2.0.0
     # via
     #   cryptography
     #   pynacl
-charset-normalizer==3.4.6
+charset-normalizer==3.4.7
     # via requests
-click==8.3.1
+click==8.3.2
     # via
     #   mkdocs
     #   neoteroi-mkdocs
@@ -54,7 +54,7 @@ codespell==2.4.2
     # via -r requirements.in
 colorama==0.4.6
     # via mkdocs-material
-cryptography==46.0.5
+cryptography==46.0.7
     # via pyjwt
 editdistpy==0.2.0
     # via symspellpy
@@ -98,6 +98,8 @@ httpcore==1.0.9
     # via httpx
 httpx==0.28.1
     # via neoteroi-mkdocs
+icalendar==7.0.3
+    # via -r requirements.in
 idna==3.11
     # via
     #   anyio
@@ -236,13 +238,13 @@ pydantic-core==2.41.5
     # via pydantic
 pygithub==2.9.0
     # via mkdocs-git-committers-plugin
-pygments==2.19.2
+pygments==2.20.0
     # via
     #   mkdocs-material
     #   rich
 pyjwt[crypto]==2.12.1
     # via pygithub
-pymdown-extensions==10.21
+pymdown-extensions==10.21.2
     # via mkdocs-material
 pynacl==1.6.2
     # via pygithub
@@ -255,6 +257,7 @@ pyspelling==2.12.1
 python-dateutil==2.9.0.post0
     # via
     #   ghp-import
+    #   icalendar
     #   mkdocs-macros-plugin
 pyyaml==6.0.3
     # via
@@ -273,8 +276,9 @@ pyyaml-env-tag==1.1
     #   properdocs
 questionary==2.1.1
     # via mkdocs-quiz
-requests==2.33.0
+requests==2.33.1
     # via
+    #   -r requirements.in
     #   cachecontrol
     #   mkdocs-macros-plugin
     #   mkdocs-material
@@ -310,12 +314,15 @@ typing-extensions==4.15.0
     #   aiosignal
     #   anyio
     #   beautifulsoup4
+    #   icalendar
     #   pydantic
     #   pydantic-core
     #   pygithub
     #   typing-inspection
 typing-inspection==0.4.2
     # via pydantic
+tzdata==2026.1
+    # via icalendar
 urllib3==2.6.3
     # via
     #   pygithub

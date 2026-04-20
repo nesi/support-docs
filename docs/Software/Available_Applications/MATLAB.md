@@ -4,7 +4,7 @@ tags:
 - engineering
 - ml
 - matlab
-description: Examples and tips on how to use MATLAB on the NeSI platform.
+description: Examples and tips on how to use MATLAB on the Mahuika platform.
 ---
 
 {% set app_name = page.title | trim %}
@@ -176,7 +176,7 @@ CUDA modules and select the appropriate one. For example, for MATLAB
 R2021a, use `module load CUDA/11.0.2` before launching MATLAB.
 
 If you want to know more about how to access the different type of
-available GPUs on NeSI, check the [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+available GPUs on Mahuika, check the [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
 support page.
 
 !!! tip "Support for A100 GPUs"
@@ -320,7 +320,7 @@ MATLAB supports the following compilers.
 | C       | up to GCC 6.3.x          |
 | FORTRAN | up to GNU gfortran 6.3.x |
 
-The most up to date compilers supported by MATLAB can be loaded on NeSI
+The most up to date compilers supported by MATLAB can be loaded on Mahuika
 using `module load gimkl/2017a`
 
 If no GCC module is loaded, the default system version of these

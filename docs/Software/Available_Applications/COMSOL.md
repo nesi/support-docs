@@ -6,7 +6,7 @@ tags:
 - multiphysics
 - cfd
 - fea
-description: Running COMSOL multiphysics on the NeSI cluster.
+description: Running COMSOL multiphysics on the Mahuika cluster.
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360000871556

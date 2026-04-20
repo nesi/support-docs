@@ -130,7 +130,7 @@ The following modules were not unloaded:
 Note that `module purge` is informative.
 It lets us know that all but a minimal default set of packages have been unloaded (and how to actually unload these if we truly so desired).
 
-We are able to unload individual modules, unfortunately within the NeSI system it does not always unload it's dependencies, therefore we recommend `module purge` to bring you back to a state where only those modules needed to perform your normal work on the cluster.
+We are able to unload individual modules, unfortunately within the Mahuika system it does not always unload it's dependencies, therefore we recommend `module purge` to bring you back to a state where only those modules needed to perform your normal work on the cluster.
 
 `module purge` is a useful tool for ensuring repeatable research by guaranteeing that the environment that you build your software stack from is always the same.
 This is important since some modules have the potential to silently effect your results if they are loaded (or not loaded).

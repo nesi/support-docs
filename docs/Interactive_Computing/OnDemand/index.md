@@ -1,4 +1,4 @@
-# Interactive computing with NeSI OnDemand
+# Interactive computing with Mahuika OnDemand
 
 ## Overview
 
@@ -23,7 +23,7 @@ A number of interactive applications can be accessed through OnDemand, including
 - [Virtual desktop](Apps/virtual_desktop.md)
 - [MATLAB](Apps/MATLAB.md) - currently under development, let us know if this is of interest
 
-## Changes from Jupyter on NeSI
+## Changes from Jupyter on Mahuika
 
 - JupyterLab is no longer the main user interface but is just another application to be launched via the OnDemand interface
 - RStudio, MATLAB and Virtual Desktop applications are accessed directly from OnDemand instead of via JupyterLab

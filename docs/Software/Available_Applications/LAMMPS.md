@@ -64,7 +64,7 @@ LAMMPS is distributed as an open source code under the terms of the GPLv2. The m
     ```
 
 === "GPU"
-    For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+    For more information on using GPUs see [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
 
     ```sl
     #!/bin/bash -e

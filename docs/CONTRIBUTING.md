@@ -19,7 +19,7 @@ tags: []
     - [How to make small contributions and an introduction to pull requests](https://www.youtube.com/watch?v=ltgpwHSO2NM)
     - [How to use CodeSpace for bigger changes](https://www.youtube.com/watch?v=2bHOLf2hxaA)
 
-    The primary target audience is the NeSI team.
+    The primary target audience is the Mahuika team.
 
 Any changes made should be merged via a pull request.
 
@@ -252,7 +252,7 @@ Most of these are collected together in the [modules list repo](https://github.c
 
 Fix the information in the module file.
 
-#### NeSI Documentation Link
+#### Documentation Link
 
 Is there a child page with the same title as the module? This is case sensitive, specifically in the front matter YAML:
 

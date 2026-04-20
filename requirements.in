@@ -1,5 +1,5 @@
 # documentation generation
-mkdocs
+mkdocs < 2.0 # See https://fpgmaas.com/blog/collapse-of-mkdocs/
 mkdocs-section-index
 mkdocs-bootstrap4
 mkdocs-material
@@ -18,6 +18,10 @@ mkdocs_quiz @ git+https://github.com/CallumWalley/mkdocs-quiz.git@fix-template-o
 # checkers
 neoteroi-mkdocs
 codespell
+
+# calendar fetching
+requests
+icalendar
 proselint
 linkcheckmd
 symspellpy

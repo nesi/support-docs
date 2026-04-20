@@ -19,9 +19,11 @@ description: |
 
 ## Office Hours Dates
 
-Click on the links below to view the upcoming office hours:
-
-<iframe src="https://outlook.office365.com/owa/calendar/3d4e3c7b28ca4549803470b109cba86a@reannz.co.nz/0830583db389420aaa843dc231af48d810099982634588501079/calendar.html" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<link rel="stylesheet" href='/assets/stylesheets/office-hours-calendar.css'>
+<div id="office-hours-calendar">
+    <p id="office-hours-calendar-message">Loading Calendar...</p>
+</div>
+<script src='/assets/javascripts/officeHours.js'></script>
 
 If you are unable to add an Office Hour session to your calendar through
 these links, please email us at [training@reannz.co.nz](mailto:training@reannz.co.nz) and we can send a

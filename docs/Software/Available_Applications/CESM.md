@@ -21,7 +21,7 @@ component, CESM allows researchers to conduct fundamental research into
 the Earth’s past, present, and future climate states.
 
 Here we provide a guide for downloading, building and running a CESM
-test case yourself on NeSI. This guide is based on CESM 2.1 and should work on
+test case yourself on Mahuika. This guide is based on CESM 2.1 and should work on
 both Māui and Mahuika.
 
 ## Prerequisites
@@ -114,7 +114,7 @@ git-lfs/3.5.1 (GitHub; linux amd64; go 1.21.7; git e237bb3a)
 
 ## Download CESM
 
-First, set an environment with your NeSI project code to make replacing our default one easier
+First, set an environment with your project code to make replacing our default one easier
 in the commands below (replacing *&lt;your\_project\_code&gt;* with your project code):
 
 ```sh
@@ -137,7 +137,7 @@ documentation linked above for how to check). You may need to rerun the
 command until it is successful, especially if it asks you to accept a
 certificate.
 
-## NeSI specific CIME configuration
+## Mahuika specific CIME configuration
 
 Make sure you still have the environment variable set with your project code:
 
@@ -145,7 +145,7 @@ Make sure you still have the environment variable set with your project code:
 export PROJECT_CODE=<your_project_code>
 ```
 
-Clone the repo containing NeSI specific CIME configuration
+Clone the repo containing Mahuika specific CIME configuration
 ([CIME](http://esmci.github.io/cime/versions/master/html/what_cime/index.html)
 provides a case control system for configuring, building and executing
 Earth system models) and copy the config files to *~/.cime* (this will overwrite

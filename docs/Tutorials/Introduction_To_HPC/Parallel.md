@@ -59,9 +59,9 @@ Using a combination of Shared and Distributed memory is called _Hybrid Parallel_
 
 GPUs compute large number of simple operations in parallel, making them well suited for Graphics Processing (hence the name), or any other large matrix operations.
 
-On NeSI, GPU's are specialised pieces of hardware that you request in addition to your CPUs and memory.
+On Mahuika, GPU's are specialised pieces of hardware that you request in addition to your CPUs and memory.
 
-You can find an up-to-date(ish) list of GPUs available on NeSI in our [Support Documentation](../../Batch_Computing/Hardware.md)
+You can find an up-to-date(ish) list of GPUs available on Mahuika in our [Support Documentation](../../Batch_Computing/Hardware.md)
 
 GPUs can be requested using `--gpus-per-node=<gpu_type>:<gpu_number>`
 
