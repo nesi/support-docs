@@ -136,7 +136,11 @@
 
 /* Fix Contact Support button color in dark mode */
 [data-md-color-scheme="slate"] .md-button-support {
-  background-color: var(--reannz-blue--dark-shade1);
+  background-color: var(--reannz-blue--shade-negative1);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button-support {
+  color: white;
 }
 
 /* Footer */
