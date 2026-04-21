@@ -1,11 +1,12 @@
 .md-button.md-button--addcal {
   margin: auto;
   font-size: medium;
-  padding: 0.5em;
 }
 .md-button.md-button--addcal > svg {
     height: 24px;
      margin: auto;
     vertical-align: middle;
 }
-
+#office-hours-buttons {
+  display: flex;
+}
