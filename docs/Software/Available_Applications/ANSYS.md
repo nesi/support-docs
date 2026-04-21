@@ -540,10 +540,10 @@ Input files are typically LS-DYNA keyword decks such as `.k` files.
 #SBATCH --time          01:00:00          # Walltime
 #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
-#SBATCH --mem-per-cpu   512MB             # Memory per cpu
+#SBATCH --mem-per-cpu   1G             # Memory per cpu
 
 module load ANSYS/{{ applications.ANSYS.default }}
-lsdyna -dis -np $SLURM_NTASKS i=3cars_shell2_150ms.k memory=$(($SLURM_MEM_PER_CPU/8))M
+lsdyna -dis -np $SLURM_NTASKS i=3cars_shell2_150ms.k memory2=1G
 ```
 
 !!! tip
