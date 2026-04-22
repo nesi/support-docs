@@ -10,10 +10,10 @@ You may query your actual usage and disk allocations using the following
 command:
 
 ```sh
- nn_storage_quota
+ storage_quota
 ```
 
-The values for `nn_storage_quota` are updated approximately every hour
+The values for `storage_quota` are updated approximately every hour
 and cached between updates.
 
 ![neSI\_filetree.svg](../assets/images/NeSI_File_Systems_and_Quotas.png)

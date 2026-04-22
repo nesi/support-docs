@@ -122,7 +122,7 @@ You can find more details on its use on the [Slurm Documentation](https://slurm.
 
 ### Checking job efficiency
 
-After a job has completed you can get the basic usage information using `nn_seff <job-id>`.
+After a job has completed you can get the basic usage information using `seff <job-id>`.
 This will return an output as below:
 
 ``` out
