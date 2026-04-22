@@ -23,6 +23,8 @@ description: |
 <div id="office-hours-calendar">
     <p id="office-hours-calendar-message">Loading Calendar...</p>
 </div>
+<div id="office-hours-buttons">
+</div>
 <script src='/assets/javascripts/officeHours.js'></script>
 
 If you are unable to add an Office Hour session to your calendar through
