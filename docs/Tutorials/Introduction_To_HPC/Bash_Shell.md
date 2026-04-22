@@ -85,7 +85,7 @@ When your space is locked you will need to move or remove data.
 Also note that none of the nobackup space is being used, a smart idea would be to move data from `project` to `nobackup`.  
 
 !!! note
-    `nn_storage_quota` uses cached data, and so will not immediately show changes to storage use.  
+    `storage_quota` uses cached data, and so will not immediately show changes to storage use.  
 
 For more details on our persistent and nobackup storage systems, including data retention and the nobackup auto-delete schedule,
 please see our [Filesystem and Quota](../../Storage/Filesystems_and_Quotas.md) documentation.
