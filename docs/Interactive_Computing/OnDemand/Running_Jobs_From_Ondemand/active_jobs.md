@@ -1,16 +1,20 @@
 # Viewing Active Jobs: `Active Jobs`
 
-The `Active Jobs` section allows you to see what jobs are running. This section queries `squeue` and `scontrol` and reports information from these slurm command to this dashboard.
+The `Active Jobs` page allows you to see what jobs are running. This page queries `squeue` and `scontrol` and reports information from these slurm command to this dashboard. To access the `Active Jobs` page, click the `Jobs` tab at the top left of the Ondemand screen, then click on `Active Jobs`.
 
-![Main face of Active Jobs](../../../assets/images/Jobs_OnDemand_2.png)
+![Direction to Jobs Section of Mahuika OnDemand](../../../assets/images/running_jobs_from_ondemand_Jobs_OnDemand_1.png)
 
-There are two buttons of interest:
+## The `Active Jobs` page
+
+There are three point of interest on this page:
 
 1. The Information Button: Show you more information about that specific job.
 2. The Status Icon: Tells you what state your job is in (such as `Queued`, `Running`, and `Completed`).
 3. The Trash Button: Allow you to cancel a specific job.
 
-## The Information Button
+![Main face of Active Jobs](../../../assets/images/Jobs_OnDemand_2.png)
+
+### The Information Button
 
 Clicking this button will allow you to see more information about this job:
 
@@ -22,7 +26,7 @@ This information tab contains three further buttons at the bottom left hand of t
 2. The Terminal Button: Clicking this button will take you to the terminal, where you will be placed in the directory for this job.
 3. The Trash Button: Allow you to cancel a specific job.
 
-## The Status Icon
+### The Status Icon
 
 This can be seen as `Queued`, `Running`, or `Completed`.
 
@@ -34,7 +38,7 @@ This can be seen as `Queued`, `Running`, or `Completed`.
 ![Running](../../../assets/images/Jobs_OnDemand_4.png)
 ![Completed](../../../assets/images/Jobs_OnDemand_5.png)
 
-## The Trash Button
+### The Trash Button
 
 You will get a pop-up indicating if you want to cancel a job before it is cancelled. Click `OK` to cancel your job.
 

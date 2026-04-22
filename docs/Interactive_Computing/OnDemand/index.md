@@ -25,13 +25,7 @@ A number of interactive applications can be accessed through OnDemand, including
 
 ## Running Jobs from OnDemand
 
-It is possible to submit jobs to slurm interactively from Mahuika using the `Jobs` section of Mahuika OnDemand.
-
-This section will explain how to submit and run jobs directly and interactively using the Mahuika OnDemand platform.
-
-### Finding the `Jobs` Section of Mahuika OnDemand
-
-The `Jobs` section of Mahuika OnDemand can be found in the top right of the screen, as circled in red in the image below. There are two subsections that you can choose to use:
+It is possible to create and submit jobs to slurm interactively from Mahuika using the `Jobs` section of Mahuika OnDemand. The `Jobs` section of Mahuika OnDemand can be found in the top right of the screen, as circled in red in the image below. There are two subsections that you can choose to use:
 
 - [`Active Jobs`](Running_Jobs_From_Ondemand/active_jobs.md): This allows you to see and interactive with your active jobs.
 - [`Job Composer`](Running_Jobs_From_Ondemand/job_composer.md): This allows you to craft submit scripts for submitting to slurm.

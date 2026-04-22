@@ -1,11 +1,17 @@
 # Creating New Jobs: `Job Composer`
 
-The `Job Composer` allows you to set up your submit script and files for a job from within the Mahuika OnDemand platform. When you click on this tab you will see two options at the top of this page:
+The `Job Composer` page allows you to set up your submit script and files for a job from within the Mahuika OnDemand platform. To access the `Job Composer` page, click the `Jobs` tab at the top left of the Ondemand screen, then click on `Job Composer`. This will open a new tab in your browser, showing the `Job Composer`
 
-1. `Jobs`: Create and run jobs
-2. `Template`: Create a slurm submit template to use.
+![Direction to Jobs Section of Mahuika OnDemand](../../../assets/images/running_jobs_from_ondemand_Jobs_OnDemand_1.png)
 
-![Job Composter](../../../assets/images/Jobs_OnDemand_7.png)
+## The `Job Composer` page
+
+There are two tabs at the top of this page:
+
+1. [`Jobs`](#the-jobs-page): Create and run jobs
+2. [`Template`](#the-template-page): Create a slurm submit template to use.
+
+![Job Composer](../../../assets/images/Jobs_OnDemand_7.png)
 
 ## The `Jobs` Page
 
@@ -20,3 +26,7 @@ This will open allow you to select new buttons in the left hand screen. Clicking
 ![Job Composter](../../../assets/images/Jobs_OnDemand_10.png)
 
 **Second**, to edit the location of your 
+
+## The `Template` Page
+
+
