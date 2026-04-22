@@ -91,7 +91,7 @@ Below is an example of this from a fluent script.
 module load ANSYS/{{app.default}} 
 
 JOURNAL_FILE=fluent_${SLURM_JOB_ID}.in
-cat  ${JOURNAL_FILE}
+cat << EOF > ${JOURNAL_FILE}
 /file/read-case-data testCase${SLURM_ARRAY_TASK_ID}.cas
 /solve/dual-time-iterate 10
 /file/write-case-data testOut${SLURM_ARRAY_TASK_ID}.cas
@@ -258,7 +258,7 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 ### Checkpointing
 
 !!! warning "Checkpointing"
-     We strongly the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
+    We recommend [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
 
 It is best practice when running long jobs to enable autosaves.
 
@@ -267,8 +267,6 @@ It is best practice when running long jobs to enable autosaves.
 ```
 
 Where `500` is the number of iterations to run before creating a save.
-
-In order to save disk space you may also want to include the line
 
 ### Interrupting
 
@@ -405,7 +403,7 @@ solution specify as relative path, or unload compiled lib before saving
 
     module load ANSYS/{{ applications.ANSYS.default }}
     input="/share/test/ansys/mechanical/structural.dat" 
-    cfx5solve -batch -def "${input} -part ${SLURM_NTASKS}
+    cfx5solve -batch -def "${input}" -part ${SLURM_NTASKS}
     ```
 
     !!! tip
@@ -446,7 +444,7 @@ xvfb-run cfx5post input.cse
     module load ANSYS/{{ applications.ANSYS.default }}
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
-    mapdl -b -i "${input}
+    mapdl -b -i "${input}"
     ```
 
 === "Shared Memory"
@@ -517,7 +515,20 @@ xvfb-run cfx5post input.cse
 
 ## LS-DYNA
 
-### Fluid-Structure Example
+LS-DYNA specialises in highly non-linear, transient dynamic finite element analysis.
+
+### Command line options
+
+| Flag    | Purpose                                    | Example                       |
+| ------- | ------------------------------------------ | ----------------------------- |
+| -i      | The input file argument                    | `-i "MyInput.k"`              |
+| NCPUS   | SMP ranks                                  | `ncpus=-$SLURM_CPUS_PER_TASK` |
+| MEMORY  | How much memory to assign to the head node | `MEMORY=2G`                   |
+| MEMORY2 | How much memory to subsiquent nodes        | `MEMORY2=2G`                  |
+
+Input files are typically LS-DYNA keyword decks such as `.k` files.
+
+### Shared Memory Example
 
 ``` sl
 #!/bin/bash -e
@@ -525,14 +536,19 @@ xvfb-run cfx5post input.cse
 #SBATCH --job-name      LS-DYNA
 #SBATCH --account       nesi99991         # Project Account
 #SBATCH --time          01:00:00          # Walltime
-#SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
-#SBATCH --ntasks        16                # Number of CPUs to use
-#SBATCH --mem-per-cpu   512MB             # Memory per cpu
+#SBATCH --cpus-per-task 16                # Number of CPUs to use
+#SBATCH --mem-per-cpu   1G                # Memory per cpu
 
 module load ANSYS/{{ applications.ANSYS.default }}
-input=3cars_shell2_150ms.k
-lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
+lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
 ```
+
+!!! tip
+    - Keep large transient LS-DYNA output in larger
+    storage such as `nobackup`, not your home directory.
+    - Use restart/[checkpointing](../../Batch_Computing/Job_Checkpointing.md) workflows for long runs so work can continue across multiple scheduled jobs.
+    - Avoid writing frequent output unless needed, as excessive I/O can reduce performance at scale.
+    - Adding a `-` in front of your requested number of CPUs, e.g. `ncpu=-64` will force tasks to execute in a deterministic way, decreasing performance but ensuring repeatability.
 
 ## FENSAP-ICE
 
@@ -613,7 +629,7 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a slurm script or by 
+ANSYS-EM jobs can be submitted through a slurm script or by
 [interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).
 
 ### RSM
