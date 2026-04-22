@@ -33,8 +33,8 @@ This section will explain how to submit and run jobs directly and interactively 
 
 The `Jobs` section of Mahuika OnDemand can be found in the top right of the screen, as circled in red in the image below. There are two subsections that you can choose to use:
 
-- `Active Jobs`: This allows you to see and interactive with your active jobs
-- `Job Composer`: This allows you to craft submit scripts for submitting to slurm.
+- [`Active Jobs`](Running_Jobs_From_Ondemand/active_jobs.md): This allows you to see and interactive with your active jobs.
+- [`Job Composer`](Running_Jobs_From_Ondemand/job_composer.md): This allows you to craft submit scripts for submitting to slurm.
 
 ![Direction to Jobs Section of Mahuika OnDemand](../../assets/images/running_jobs_from_ondemand_Jobs_OnDemand_1.png)
 

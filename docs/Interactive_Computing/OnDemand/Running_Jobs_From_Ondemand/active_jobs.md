@@ -2,7 +2,7 @@
 
 The `Active Jobs` section allows you to see what jobs are running. This section queries `squeue` and `scontrol` and reports information from these slurm command to this dashboard.
 
-![Main face of Active Jobs](../../assets/images/Jobs_OnDemand_2.png)
+![Main face of Active Jobs](../../../assets/images/Jobs_OnDemand_2.png)
 
 There are two buttons of interest:
 
@@ -14,7 +14,7 @@ There are two buttons of interest:
 
 Clicking this button will allow you to see more information about this job:
 
-![Information on this Job](../../assets/images/Jobs_OnDemand_3.png)
+![Information on this Job](../../../assets/images/Jobs_OnDemand_3.png)
 
 This information tab contains three further buttons at the bottom left hand of the tab:
 
@@ -30,12 +30,12 @@ This can be seen as `Queued`, `Running`, or `Completed`.
 
     This does not auto-refresh, so you may need to refresh your screen for up to date information.
 
-![Queued](../../assets/images/Jobs_OnDemand_2.png)
-![Running](../../assets/images/Jobs_OnDemand_4.png)
-![Completed](../../assets/images/Jobs_OnDemand_5.png)
+![Queued](../../../assets/images/Jobs_OnDemand_2.png)
+![Running](../../../assets/images/Jobs_OnDemand_4.png)
+![Completed](../../../assets/images/Jobs_OnDemand_5.png)
 
 ## The Trash Button
 
 You will get a pop-up indicating if you want to cancel a job before it is cancelled. Click `OK` to cancel your job.
 
-![Pop-Up about Cancelling Job](../../assets/images/Jobs_OnDemand_6.png)
+![Pop-Up about Cancelling Job](../../../assets/images/Jobs_OnDemand_6.png)
