@@ -1,6 +1,6 @@
-# The `Active Jobs` Section
+# Viewing Active Jobs: `Active Jobs`
 
-The `Active Jobs` section allows you to see what jobs are running. This section queries `squeue` and `scontrol` and reports information from these slurm command to this dashboard. 
+The `Active Jobs` section allows you to see what jobs are running. This section queries `squeue` and `scontrol` and reports information from these slurm command to this dashboard.
 
 ![Main face of Active Jobs](../../assets/images/Jobs_OnDemand_2.png)
 
@@ -12,7 +12,7 @@ There are two buttons of interest:
 
 ## The Information Button
 
-Clicking this button will allow you to see more information about this job: 
+Clicking this button will allow you to see more information about this job:
 
 ![Information on this Job](../../assets/images/Jobs_OnDemand_3.png)
 
@@ -24,7 +24,7 @@ This information tab contains three further buttons at the bottom left hand of t
 
 ## The Status Icon
 
-This can be seen as `Queued`, `Running`, or `Completed`. 
+This can be seen as `Queued`, `Running`, or `Completed`.
 
 !!! note
 

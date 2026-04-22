@@ -84,7 +84,7 @@ Once the session is ready, you will see a button labeled <kbd>Connect to Jupyter
 
 ## Interactive file explorer
 
-If you would like to access your project or nobackup filesystem via the Interactive file explorer ( not the terminal), 
+If you would like to access your project or nobackup filesystem via the Interactive file explorer ( not the terminal),
 please use the <kbd>00_nesi_project</kbd> parent directory which contains symlinks to all filesystems you have access to.
 
 ### OnDemand App

@@ -1,4 +1,4 @@
-# The `Job Composer` Section
+# Creating New Jobs: `Job Composer`
 
 The `Job Composer` allows you to set up your submit script and files for a job from within the Mahuika OnDemand platform. When you click on this tab you will see two options at the top of this page:
 
