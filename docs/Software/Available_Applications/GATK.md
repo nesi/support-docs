@@ -40,7 +40,7 @@ need to load a Java module separately.
 #SBATCH --job-name=MarkDuplicates
 #SBATCH --output=%x_%j.out     # log file
 #SBATCH --error=%x_%j.err      # error log file
-#SBATCH --account=nesi12345    # your NeSI project code
+#SBATCH --account=nesi12345    # your project code
 #SBATCH --time=2:00:00         # maximum run time hh:mm:ss
 #SBATCH --mem=30G              # maximum memory available to GATK
 

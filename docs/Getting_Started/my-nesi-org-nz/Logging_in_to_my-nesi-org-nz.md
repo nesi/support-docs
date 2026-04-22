@@ -30,7 +30,7 @@ Profile](../Creating_an_Account.md)
 
 In case your organisation is not part of the Tuakiri federated identity
 management service, a user can still [request a REANNZ HPC Account
-profile.](https://my.nesi.org.nz/html/request_nesi_account) NeSI will
+profile.](https://my.nesi.org.nz/html/request_nesi_account) REANNZ will
 (if approved) provision a so-called "virtual home account" on Tuakiri.
 
 See also [Account Requests for non-Tuakiri

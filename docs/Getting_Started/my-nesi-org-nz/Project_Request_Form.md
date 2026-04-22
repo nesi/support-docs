@@ -6,7 +6,7 @@ tags: []
 See [Applying for a project](../Projects/Applying_for_a_New_Project.md) 
 for how to access the form.
 
-## Preparing a request to use NeSI resources
+## Preparing a request to use Mahuika resources
 
 The procedures for starting a request for a new NeSI project and editing
 an in-progress request (draft) that you previously started are described

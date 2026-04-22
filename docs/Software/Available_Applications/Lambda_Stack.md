@@ -22,7 +22,7 @@ have provided some pre-built container images (under
 Lambda Stack in a Slurm job or interactively via
 [JupyterLab](../../Interactive_Computing//OnDemand/Apps/JupyterLab/index.md).
 
-You can list the available Lambda Stack version on NeSI by running:
+You can list the available Lambda Stack version on Mahuika by running:
 
 ``` sh
 $ ls /opt/nesi/containers/lambda-stack
@@ -69,8 +69,8 @@ ${CONTAINER} echo "Hello World"
 ## Lambda Stack via Jupyter
 
 The following steps will create a custom Lambda Stack kernel that can be
-accessed via NeSI's Jupyter service (based on the instructions at
-[Jupyter_on_NeSI](../../Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md)).
+accessed via Mahuika's Jupyter service (based on the instructions at
+[Jupyter_on_Mahuika](../../Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md)).
 
 First, we need to create a kernel definition and wrapper that will
 launch the container image. Run the following commands on the Mahuika
@@ -125,7 +125,7 @@ chmod +x wrapper.sh
 
 Next, edit the *kernel.json* to change the first element of the `argv`
 list to point to the wrapper script we just created. The file should
-look like this (change &lt;username&gt; to your NeSI username):
+look like this (change &lt;username&gt; to your username):
 
 ``` json
 {
@@ -141,7 +141,7 @@ look like this (change &lt;username&gt; to your NeSI username):
 }
 ```
 
-After refreshing the [NeSI JupyterLab](https://jupyter.nesi.org.nz/)
+After refreshing the [Mahuika JupyterLab](https://jupyter.nesi.org.nz/)
 your Lambda Stack Python kernel should show up as "Lambda Stack Python
 3".
 

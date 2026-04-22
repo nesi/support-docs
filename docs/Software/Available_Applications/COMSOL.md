@@ -6,7 +6,7 @@ tags:
 - multiphysics
 - cfd
 - fea
-description: Running COMSOL multiphysics on the NeSI cluster.
+description: Running COMSOL multiphysics on the Mahuika cluster.
 vote_count: 1
 vote_sum: 1
 zendesk_article_id: 360000871556
@@ -164,7 +164,7 @@ Multithreading will benefit jobs using less than
 
 ## Tmpdir
 
-If you find yourself receiving the error 'Disk quota exceeded', yet `nn_storage_quota` shows plenty of room in your filesystem, you may be running out of tmpdir.
+If you find yourself receiving the error 'Disk quota exceeded', yet `storage_quota` shows plenty of room in your filesystem, you may be running out of tmpdir.
 This can be fixed by using the `--tmpdir` flag in the comsol command line, e.g. `comsol --tmpdir /nesi/nobackup/nesi99991/comsoltmp`, or by exporting `TMPDIR` before running the command, e.g. `export TMPDIR=/nesi/nobackup/nesi99991/comsoltmp`.
 
 You may also want to set this at the Java level with `export _JAVA_OPTIONS=-Djava.io.tmpdir=/nesi/nobackup/nesi99991/comsoltmp`

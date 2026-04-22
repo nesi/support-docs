@@ -29,7 +29,7 @@ tags:
 
 ## Licences
 
-The following network licence servers can be accessed from the NeSI cluster.
+The following network licence servers can be accessed from the Mahuika cluster.
 
 {% include "partials/app/app_network_licence.html" -%}
 
@@ -190,7 +190,7 @@ these you may with to change.
 
 These parameters are read in the following order of preference,
 
-`../ABAQUS/SMA/site/abaqus_v6.env` Set by NeSI and cannot be changed.
+`../ABAQUS/SMA/site/abaqus_v6.env` Set by Mahuika and cannot be changed.
 
 `~/abaqus_v6.env` (your home directory) If exists, will be used in all
 jobs submitted by you.

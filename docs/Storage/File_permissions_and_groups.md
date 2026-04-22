@@ -7,7 +7,7 @@ tags:
 ---
 
 
-Access to data (i.e. files and directories) on NeSI is controlled by
+Access to data (i.e. files and directories) on Mahuika is controlled by
 POSIX permissions, supplemented with Access Control Lists (ACLs).
 Default permissions differ from filesystem to filesystem.
 
@@ -45,7 +45,7 @@ consult the documentation for your copying program.
      If you choose to preserve the original owner and group, but that owner
      and group (name or numeric ID) don't both exist at the destination,
      your files may end up with odd permissions that you can't fix, for
-     example if you're copying from your workstation to NeSI.
+     example if you're copying from your workstation to Mahuika.
 
 The default permissions mode for new home directories is as follows:
 
@@ -98,7 +98,7 @@ default ACL for a project directory is as follows:
     and modify the ACL of that file or directory
 - Every member of the file or directory's group is allowed to read,
     write and execute the file or directory, but not modify its ACL
-- Members of NeSI's support team are allowed to read and execute the
+- Members of Mahuika's support team are allowed to read and execute the
     file or directory, but not change it or modify its ACL
 
 Some projects also have read and execute privileges granted to a group
@@ -129,7 +129,7 @@ default (heritable) ACL.
      especially if they together amount to a lot of disk space, can strain
      our backup system. Please consider carefully before doing a recursive
      ACL change, and if possible make the change early on in the life of
-     the project on NeSI, so that only a few files are affected.
+     the project on Mahuika, so that only a few files are affected.
 
 ## Other directories
 
