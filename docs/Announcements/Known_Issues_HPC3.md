@@ -19,9 +19,6 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 
 * Missing user Namespaces in Kubernetes pods will interfere with most Apptainer operations.  One can run `apptainer pull` command, `apptainer exec,run,shell` commands can not be executed.
 
-## UCX ERROR
-Multi-node MPI jobs may fail on the four nodes mg[13-16] with errors like `UCX ERROR: no active messages transport`. If you encounter this, add the sbatch option `-x mg[13-16]` to avoid those nodes. Single-task jobs are not affected.
-
 ## Core dump files
 Contrary to what is stated in [our documentation on core files](../Getting_Started/FAQs/What_is_a_core_file.md), these are not currently available, even if `ulimit -c unlimited` is set.
 
@@ -39,3 +36,13 @@ If you request a GPU without specifying which *type* of GPU, you will get a rand
 
 ### BadConstraints
 This uninformative message can appear in the `squeue` output as the reason for a job pending. It does not always reflect a real problem though, just a side-effect of the mechanism we are using to target jobs to the right-sized node(s) together with a small bug in Slurm. If it causes your job to be put on hold (ie: its priority gets appears as zero in output from `squeue --me  -S -p  --Format=jobid:10,partition:13,reason:22,numnodes:.6,prioritylong:.6`) then please try `scontrol release <jobid>` or {% include "partials/support_request.html" %} if the issue persists.
+
+## SSHing into compute nodes
+
+Some users may not be able to ssh from the login node into compute nodes that are running their jobs. The temporary solution for this is to use the command (once your job is running):
+
+```sh
+srun --pty --overlap --jobid <jobid> bash
+```
+
+where `<jobid>` is the jobid for the job of interest.

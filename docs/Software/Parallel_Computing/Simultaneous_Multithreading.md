@@ -6,7 +6,7 @@ tags:
    - multithreading
    - simultaneous
    - SMT
-description: How to use simultaneous multithreading (hyper-threading) on NeSI.
+description: How to use simultaneous multithreading (hyper-threading) on Mahuika.
 ---
 
 As CPU technology advanced engineers realised that including multiple *logical* *processors* within each physical CPU core

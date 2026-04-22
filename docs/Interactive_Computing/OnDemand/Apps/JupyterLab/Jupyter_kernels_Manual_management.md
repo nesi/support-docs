@@ -1,6 +1,6 @@
 ---
 created_at: 2025-01-24
-description: How to set up your own custom kernals for use on NeSI JupyterHub
+description: How to set up your own custom kernels for use on Mahuika JupyterHub
 tags: 
     - JupyterHub
     - Python
@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-Jupyter kernels execute the code that you write. NeSI provides a number of
+Jupyter kernels execute the code that you write. Mahuika provides a number of
 Python and R kernels by default, which can be selected from the Launcher.
 
 Many packages are preinstalled in our default Python and R environments
@@ -38,22 +38,22 @@ situations, including:
     environment before launching the kernel
 
 The following example will create a custom kernel based on the
-Miniconda3 environment module (but applies to other environment modules
+Miniforge3 environment module (but applies to other environment modules
 too).
 
 First, change directory into the path that you would like to place your
 conda environment.
 
-- If you would like to share this environment with other users, change directory
+- **If you would like to share this environment with other users**, change directory
 into your project folder using `cd /nesi/project/<project-code>`. Do not use the path
 that includes `00_nesi_projects` or `home` in the name as this causes issues.
 
-Second, in a terminal run the following commands to load a Miniconda environment
+Second, in a terminal run the following commands to load a Miniforge environment
 module:
 
 ``` sh
 module purge
-module load Miniconda3
+module load Miniforge3
 ```
 
 Now create a conda environment named "my-conda-env" using Python 3.11.
@@ -83,7 +83,7 @@ And add the following as `wrapper.sh` into your `my-conda-env` folder:
 
 # load required modules here
 module purge
-module load Miniconda3
+module load Miniforge3
 
 # activate conda environment
 source $(conda info --base)/etc/profile.d/conda.sh 
@@ -106,7 +106,7 @@ Fourth, create a Jupyter kernel based on your new conda environment:
 python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
 ```
 
-We must now edit the kernel to load the required NeSI environment
+We must now edit the kernel to load the required environment
 modules before the kernel is launched. Change to the directory the
 kernelspec was installed to
 `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
@@ -140,7 +140,7 @@ Launcher as "My Conda Env".
 ## Sharing your custom kernal with your project team members
 
 You can also configure a shared Python kernel that others with access to
-the same NeSI project will be able to load.
+the same project will be able to load.
 
 * To do this, you must make sure it also exists in a shared location
 (other users cannot see your home directory).
@@ -153,9 +153,9 @@ Second, **your team members** need to run the following commands in the terminal
 # change directory into the path that contains your conda environment
 cd <full_path_to_your_conda_environment>
 
-# load Miniconda3
+# load Miniforge3
 module purge
-module load Miniconda3
+module load Miniforge3
 
 # Activate your shared conda environment
 source $(conda info --base)/etc/profile.d/conda.sh
@@ -169,7 +169,7 @@ python -m ipykernel install --user --name my-conda-env --display-name="My Conda 
 ```
 
 **Your project members** must now edit the kernel in their home directories
-to load the required NeSI environment modules before the kernel is launched.
+to load the required environment modules before the kernel is launched.
 Change to the directory the kernelspec was installed to
 `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
 `--name my-conda-env` in the above command):
@@ -231,7 +231,7 @@ Now create an R Jupyter kernel based on your new conda environment:
 R -e "IRkernel::installspec(name='myrwithmpfr', displayname = 'R with MPFR', user = TRUE)"
 ```
 
-We must now to edit the kernel to load the required NeSI environment
+We must now to edit the kernel to load the required environment
 modules when the kernel is launched. Change to the directory the
 kernelspec was installed to
 (~/.local/share/jupyter/kernels/myrwithmpfr, assuming you kept `--name

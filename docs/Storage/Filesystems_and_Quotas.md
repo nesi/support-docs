@@ -10,10 +10,10 @@ You may query your actual usage and disk allocations using the following
 command:
 
 ```sh
- nn_storage_quota
+ storage_quota
 ```
 
-The values for `nn_storage_quota` are updated approximately every hour
+The values for `storage_quota` are updated approximately every hour
 and cached between updates.
 
 ![neSI\_filetree.svg](../assets/images/NeSI_File_Systems_and_Quotas.png)
@@ -25,42 +25,9 @@ and cached between updates.
 | Disk Quota     | 20 GB                                                                                 | 100 [110] GB                                                                                                    | 10 [12] TB                                                                                                                                                                                                | -                                                                                  |
 | Usage          | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc.                                                                 | Data created or used by compute jobs that is intended to be temporary                                                                                                                                     | Medium- to long-term storage of research data, (past, present or planned projects) |
 | Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See [Automatic cleaning of nobackup filesystem](./Automatic_cleaning_of_nobackup.md ) for more information. | 180 days after the end of the project's Freezer storage allocation                 |
-| Snapshots      | Daily<br>7 days                                                                       | Daily<br>7 days                                                                                                 | -                                                                                                                                                                                                         | -                                                                                  |
+| Snapshots      | Daily<br>7 days                                                                       | Daily<br>7 days                                                                                                 | Weekly (every Friday at 6am)<br>3 weeks                                                                                                                                                                                                         | -                                                                                  |
 | Speed          | Fast                                                                                  | Fast                                                                                                            | Fast                                                                                                                                                                                                      | Slow                                                                               |
 | Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul>                             | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul>                                                                      | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li>                                                                                                                                                     | <ul><li>s3cmd commands</li></ul>                                                   |
-
-### Soft and hard quotas
-
-We use soft and hard quotas for disk space.
-
-- Once you exceed a fileset's soft quota, a one-week countdown timer
-    starts. When that timer runs out, you will no longer be able to
-    create new files or write more data in that fileset. You can reset
-    the countdown timer by dropping down to under the soft quota limit.
-- You will not be permitted to exceed a fileset's hard quota at all.
-    Any attempt to try will produce an error; the precise error will
-    depend on how your software responds to running out of disk space.
-
-When quotas are first applied to a fileset, or are reduced, it is
-possible to end up with more data or files in the fileset than the quota
-allows for. This outcome does not trigger deletion of any existing data,
-but will prevent creation of new data or files.
-
-!!! note
-    - You may request an increase in storage quota if needed by
-        a project. This may in turn be reduced as part of managing overall
-        risk, where large amounts of quota aren't used for a long period (~6
-        Months).
-    - If you need to compile or install a software package that is large
-        or is intended for use by a project team, please build it
-        in `/nesi/project/<project_code>` rather than `/home/<username>`.
-    - Keep in mind that data on `/nesi/nobackup` is not backed up,
-        therefore users are advised to move valuable data
-        to `/nesi/project/<project_code>` or Freezer, or, if the data is seldom used,
-        to other storage such as an institutional storage facility, as soon
-        as batch jobs are completed. Please do **not** use the `touch`
-        command to prevent the cleaning policy from removing files, because
-        this behaviour would deprive the community of a shared resource.
 
 ### `/home`
 

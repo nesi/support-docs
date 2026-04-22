@@ -1,6 +1,6 @@
 ---
 created_at: 2024-08-05
-description: How to set up Visual Studio Code to access the NeSI cluster
+description: How to set up Visual Studio Code to access the Mahuika cluster
 tags: 
     - ide
     - vscode
@@ -8,7 +8,7 @@ tags:
 ---
 
 'Visual Studio Code' (not to be confused with 'Visual Studio') or 'VSCode', is a popular editor/IDE with many useful extensions.
-The 'Remote' extension allows you to connect to a remote computer (like NeSI).
+The 'Remote' extension allows you to connect to a remote computer (like Mahuika).
 
 ## Setup
 
@@ -67,7 +67,7 @@ The 'Remote' extension allows you to connect to a remote computer (like NeSI).
 
 ## Connecting
 
-Under the 'Remote Explorer' Tab on the left, you should now see the NeSI machines (as well as any other machines configured in your `~/.ssh/config` file)
+Under the 'Remote Explorer' Tab on the left, you should now see the Mahuika machines (as well as any other machines configured in your `~/.ssh/config` file)
 
 ![vscode explorer](../../assets/images/vscode-explorer.png)
 
@@ -83,7 +83,7 @@ Clicking on these will open a connection to that machine, you will then be promp
 
 You may find that VSCode is not utilising your preferred versions of software (e.g. when debugging or linting your Python code).
 
-As the NeSI cluster utilises [Environment Modules](../../Tutorials/Introduction_To_HPC/Environment_And_Modules.md), changing the executable used is not just a matter of changing the path in VSCode configuration, as the libraries required will not be loaded.
+As the Mahuika cluster utilises [Environment Modules](../../Tutorials/Introduction_To_HPC/Environment_And_Modules.md), changing the executable used is not just a matter of changing the path in VSCode configuration, as the libraries required will not be loaded.
 
 The only way to make sure that VSCode has access to a suitable environment, is to load the required modules in your `~/.bashrc`
 

@@ -100,9 +100,9 @@ There are a few ways to mitigate this
         use and I/O load.
 
 - **Monitor Filesystem**  
-    The command `nn_storage_quota` should be used to track filesystem
+    The command `storage_quota` should be used to track filesystem
     usage. There is a delay between making changes to a filesystem and
-    seeing it on `nn_storage_quota`.
+    seeing it on `storage_quota`.
 
     ```sh
     Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%

@@ -5,13 +5,13 @@ tags:
 title: I've run out of storage space
 ---
 
-There are two tracked resources in the NeSI filesystem, *disk space* and
+There are two tracked resources in the Mahuika filesystem, *disk space* and
 *inodes (number of files)*.
 
 Trying to write to a filesystem over its inode or disk quota will cause
 an error (and probably kill your job).
 
-Current file-count and disk space can be found using `nn_storage_quota`.
+Current file-count and disk space can be found using `storage_quota`.
 
 ```sh
 Quota_Location    AvailableGiB   UsedGiB     Use%
@@ -22,7 +22,7 @@ nobackup_nesi99999      6.833T
 
 !!! note
      There is a delay between making changes to a filesystem and seeing the
-     change in `nn_storage_quota`, immediate file count and disk space can
+     change in `storage_quota`, immediate file count and disk space can
      be found using the commands `du --inodes` and `du -h` respectively.
 
 There are a few ways to deal with file count problems

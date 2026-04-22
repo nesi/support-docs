@@ -25,7 +25,7 @@ less resources that the complete problem, it is thus easier for each
 task to slip into the queue and start running.
 
 In this article, we show how you can create a simple workflow and run it
-on NeSI's platform. Consult the [Cylc
+on Mahuika's platform. Consult the [Cylc
 documentation](https://cylc.github.io/documentation/) for more elaborate
 examples, including some with a cycling (repeated) graph pattern. One of
 the strengths of Cylc is that simple workflows can be executed simply

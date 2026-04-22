@@ -4,13 +4,13 @@ created_at: '2024-03-20T01:58:22Z'
 tags:
     - easter
     - holidays
-title: Accessing NeSI Support during the Easter and ANZAC holidays
+title: Accessing REANNZ HPC Support during the Easter and ANZAC holidays
 search:
   boost: 0.1
 ---
 
 During the Easter break (18-21 April 2025) and ANZAC Day (25 April 2025), 
-[NeSI platform services](https://status.nesi.org.nz/) will be online and available, but
+[REANNZ HPC platform services](https://status.nesi.org.nz/) will be online and available, but
 urgent / critical requests received during these times will be addressed on a best effort
 basis. 
 
@@ -24,11 +24,11 @@ sources of self-service support:
 - [Consult our User Documentation](https://www.docs.nesi.org.nz) pages
     for instructions and guidelines for using the systems.
 
-- [Visit NeSI’s YouTube channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
+- [Visit REANNZ HPC’s YouTube channel](https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp "https://www.youtube.com/playlist?list=PLvbRzoDQPkuGMWazx5LPA6y8Ji6tyl0Sp") for
     introductory training webinars.
 
 - {% include "partials/support_request.html" %} (Note:
     non-emergency requests will be addressed after the Easter and ANZAC breaks listed above)
 
-On behalf of the entire NeSI team, we wish you a safe and relaxing
+On behalf of the entire REANNZ HPC team, we wish you a safe and relaxing
 break.

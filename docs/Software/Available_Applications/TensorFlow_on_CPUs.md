@@ -49,7 +49,7 @@ All TensorFlow modules on Mahuika are GPU-optimised releases. To install
 a CPU-optimised TensorFlow release on Mahuika, run
 
 ``` sh
-module load Miniconda3
+module load Miniforge3
 conda create -p /nesi/project/<project ID>/conda_envs/tf_cpu tensorflow-mkl
 source activate /nesi/project/<project ID>/conda_envs/tf_cpu
 ```
@@ -92,7 +92,7 @@ export KMP_BLOCKTIME=0
 # Bind threads to cores
 export KMP_AFFINITY=granularity=fine,compact,0,0
 
-module load Miniconda3
+module load Miniforge3
 source activate /nesi/project/<project ID>/conda_envs/tf_cpu
 srun python my_tensorflow_program.py
 ```

@@ -1,0 +1,29 @@
+<form class="md-header__option" data-md-component="palette">
+  {% set palettes = config.theme.palette or [] %}
+  {% for palette in palettes %}
+    {% set i = loop.index0 %}
+    {% set next_id = "__palette_" ~ ((i + 1) % palettes|length) %}
+    <input class="md-option"
+      data-md-color-media="{{ palette.media or "" }}"
+      data-md-color-scheme="{{ palette.scheme or "" }}"
+      data-md-color-primary="{{ palette.primary or "" }}"
+      data-md-color-accent="{{ palette.accent or "" }}"
+      aria-label="{{ palette.toggle.name if palette.toggle and palette.toggle.name else "Switch color mode" }}"
+      type="radio"
+      name="__palette"
+      id="__palette_{{ i }}">
+    <label
+      class="md-header__button md-icon"
+      title="{{ palette.toggle.name if palette.toggle and palette.toggle.name else "Switch color mode" }}"
+      aria-label="{{ palette.toggle.name if palette.toggle and palette.toggle.name else "Switch color mode" }}"
+      for="{{ next_id }}"
+      hidden>
+      {% if palette.toggle and palette.toggle.icon %}
+        {% include ".icons/" ~ palette.toggle.icon ~ ".svg" %}
+      {% else %}
+        {% set icon = "material/lightbulb" if palette.scheme != "slate" else "material/lightbulb-outline" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      {% endif %}
+    </label>
+  {% endfor %}
+</form>

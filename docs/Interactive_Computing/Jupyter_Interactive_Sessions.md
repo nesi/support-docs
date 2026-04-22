@@ -6,7 +6,7 @@ tags:
   - notebook
   - ipython
   - python
-description: How to run an JupyterLab interactive session on the NeSI cluster.
+description: How to run an JupyterLab interactive session on the Mahuika cluster.
 ---
 
 # JupyterLab interactive sessions

@@ -4,8 +4,8 @@ tags: []
 description: Instructions for changing locale and language settings
 ---
 
-When logging in to NeSI from some systems, such as Windows Subsystem for
-Linux, you might get messages like the following while using NeSI (the
+When logging in to Mahuika from some systems, such as Windows Subsystem for
+Linux, you might get messages like the following while using Mahuika (the
 following message is obtained when running `man`):
 
 ```sh

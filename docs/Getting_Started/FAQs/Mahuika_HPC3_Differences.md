@@ -5,6 +5,7 @@ status:
 tags: 
     - hpc3
     - refresh
+status: deprecated
 ---
 
 This article presents an overview comparison of the differences between the NeSI Mahuika cluster and the new cluster (often referred to in documentation under the provisional name HPC3).

@@ -1,14 +1,16 @@
 ---
 created_at: '2022-06-15T00:53:58Z'
-tags: []
-description: Information on where to store data in the NeSI systems
+title: Where Should I Store My Data?
+tags:
+- storage
+description: Information on where to store data in the REANNZ HPC systems
 ---
 
 | Frequency of data being read | Frequency of data being written        | Recommended option                                                                                                            |
 | ---------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Often                        | Often (at least once every two months) | Store in your `/nobackup/<projectcode>` directory (but ensure key result data is copied to the persistent project directory). |
-| Often                        | Seldom                                 | Store in your `/project/<projectcode>` directory.                                                                             |
-| Seldom                       | Seldom                                 | Apply for an allocation to use NeSI’s long-term storage service or store elsewhere (e.g. at your institution).                |
+| Often                        | Often (at least once every two months) | Store in your `/nesi/nobackup/<projectcode>` directory (but ensure key result data is copied to the persistent project directory). |
+| Often                        | Seldom                                 | Store in your `/nesi/project/<projectcode>` directory.                                                                             |
+| Seldom                       | Seldom                                 | Apply for an allocation to use the long-term storage service or store elsewhere (e.g. at your institution).                |
 
 In general, the **project directory** should be used for reference data,
 tools, and job submission and management scripts. The **nobackup

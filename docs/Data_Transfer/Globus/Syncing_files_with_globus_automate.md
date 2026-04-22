@@ -6,11 +6,11 @@ tags:
 title: Sync'ing with globus-automate
 ---
 
-It is common to generate large amounts of simulation data on NeSI and
+It is common to generate large amounts of simulation data on Mahuika and
 then having to migrate the files to another computer for storage or
 post-processing.
 
-Here we show how to transfer data from NeSI to another computer
+Here we show how to transfer data from Mahuika to another computer
 ***programmatically***, that is without using a web graphical user
 interface and ***without typing your credentials each time you initiate
 the transfer***.
@@ -28,7 +28,7 @@ A guest collection is directory whose content is shared via Globus.
 
 ## Step 1: Write a JSON file describing the transfer
 
-On NeSI, create a file named `transfer_input.json` with the following
+On Mahuika, create a file named `transfer_input.json` with the following
 content:
 
 ``` sh

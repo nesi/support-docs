@@ -78,8 +78,8 @@ dependencies:
 !!! info "See also"
      See the
      [Miniforge3](../Available_Applications/Miniforge3.md)
-     page for more information on how to create and manage Miniconda
-     environments on NeSI.
+     page for more information on how to create and manage Miniforge
+     environments on Mahuika.
 
 ## Configuring Slurm
 
@@ -260,7 +260,7 @@ where the `%runscript` section ensures that the Python script passed to
 Conda environment inside the container.
 
 !!! note Tips
-     You can build this container on NeSI,following the instructions from the [dedicated supportpage](../Available_Applications/Apptainer.md)
+     You can build this container on Mahuika, following the instructions from the [dedicated support page](../Available_Applications/Apptainer.md)
 
 ### Slurm configuration
 

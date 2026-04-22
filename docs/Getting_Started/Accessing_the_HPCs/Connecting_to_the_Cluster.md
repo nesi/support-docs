@@ -14,13 +14,13 @@ Before you can start submitting work you will need to connect to the cluster. Th
 
 ## Web Browser (Recommended)
 
-### NeSI OnDemand
+### Mahuika OnDemand
 
 __OnDemand__ is a service providing access to Jupyter Notebooks, RStudio, VSCode, a Virtual Desktop, a terminal and other applications, allowing you to utilise cluster resources via the browser.
 
 !!! tip "What next?"
     -  More info on
-       [NeSI OnDemand](../../Interactive_Computing/OnDemand/how_to_guide.md)
+       [Mahuika OnDemand](../../Interactive_Computing/OnDemand/how_to_guide.md)
     -  Visit [ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
 ## Linux or MacOS

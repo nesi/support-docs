@@ -23,14 +23,14 @@ federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
 but many other institutions, including private sector organisations and
 most central and local government agencies, are not.
 
-See also [Creating a NeSI Account
+See also [Creating a REANNZ HPC Account
 Profile](../Creating_an_Account.md)
 
 ### Support for users outside the Tuakiri federation
 
 In case your organisation is not part of the Tuakiri federated identity
-management service, a user can still [request a NeSI Account
-profile.](https://my.nesi.org.nz/html/request_nesi_account) NeSI will
+management service, a user can still [request a REANNZ HPC Account
+profile.](https://my.nesi.org.nz/html/request_nesi_account) REANNZ will
 (if approved) provision a so-called "virtual home account" on Tuakiri.
 
 See also [Account Requests for non-Tuakiri
@@ -62,15 +62,15 @@ correctly set for a specific purpose.
 To access the Tuakiri Attribute Validator, browse to this page:
 [https://attributes.tuakiri.ac.nz/snapshots/latest﻿](https://attributes.tuakiri.ac.nz/snapshots/latest)
 
-The primary identifier NeSI consumes is the
+The primary identifier REANNZ HPC consumes is the
 attribute **auEduPersonSharedToken**. This is a so-called, "Tuakiri Core
 Attribute," expected to exist for every account.
 
 If your institution has issued you an empty or invalid
 auEduPersonSharedToken (rare), or if there is a difference between the
 value of your auEduPersonSharedToken as proffered by your institution's
-identity provision service and its value as recorded in the NeSI
-database (more common), you will not be able to log in to My NeSI. If
+identity provision service and its value as recorded in the REANNZ HPC
+database (more common), you will not be able to log in to My REANNZ HPC. If
 you cannot log in, please raise a support ticket with your institutions
 IT support.  
 For troubleshooting the support team may ask you for a PDF of your
