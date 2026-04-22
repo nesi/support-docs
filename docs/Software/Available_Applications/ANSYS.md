@@ -515,22 +515,20 @@ xvfb-run cfx5post input.cse
 
 ## LS-DYNA
 
-LS-DYNA is available through the ANSYS module on Mahuika.
+LS-DYNA specialises in highly non-linear, transient dynamic finite element analysis.
 
-The example below shows a distributed-memory submission using a single
-node.
-Keep `--ntasks` aligned with `-np` so the number of Slurm tasks matches
-the number of LS-DYNA ranks.
+### Command line options
+
+| Flag    | Purpose                                    | Example                       |
+| ------- | ------------------------------------------ | ----------------------------- |
+| -i      | The input file argument                    | `-i "MyInput.k"`              |
+| NCPUS   | SMP ranks                                  | `ncpus=-$SLURM_CPUS_PER_TASK` |
+| MEMORY  | How much memory to assign to the head node | `MEMORY=2G`                   |
+| MEMORY2 | How much memory to subsiquent nodes        | `MEMORY2=2G`                  |
 
 Input files are typically LS-DYNA keyword decks such as `.k` files.
 
-!!! tip
-    - Keep large transient LS-DYNA output in larger
-    storage such as `nobackup`, not your home directory.
-    - Use restart/[checkpointing](../../Batch_Computing/Job_Checkpointing.md) workflows for long runs so work can continue across multiple scheduled jobs.
-    - Avoid writing frequent output unless needed, as excessive I/O can reduce performance at scale.
-
-### Distributed Memory Example
+### Shared Memory Example
 
 ``` sl
 #!/bin/bash -e
@@ -538,17 +536,19 @@ Input files are typically LS-DYNA keyword decks such as `.k` files.
 #SBATCH --job-name      LS-DYNA
 #SBATCH --account       nesi99991         # Project Account
 #SBATCH --time          01:00:00          # Walltime
-#SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
-#SBATCH --ntasks        16                # Number of CPUs to use
-#SBATCH --mem-per-cpu   1G             # Memory per cpu
+#SBATCH --cpus-per-task 16                # Number of CPUs to use
+#SBATCH --mem-per-cpu   1G                # Memory per cpu
 
 module load ANSYS/{{ applications.ANSYS.default }}
-lsdyna -dis -np $SLURM_NTASKS i=3cars_shell2_150ms.k memory2=1G
+lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
 ```
 
 !!! tip
-    If you change the Slurm memory directives in your script, make sure
-    you also review the `memory=` value passed to `lsdyna`.
+    - Keep large transient LS-DYNA output in larger
+    storage such as `nobackup`, not your home directory.
+    - Use restart/[checkpointing](../../Batch_Computing/Job_Checkpointing.md) workflows for long runs so work can continue across multiple scheduled jobs.
+    - Avoid writing frequent output unless needed, as excessive I/O can reduce performance at scale.
+    - Adding a `-` in front of your requested number of CPUs, e.g. `ncpu=-64` will force tasks to execute in a deterministic way, decreasing performance but ensuring repeatability.
 
 ## FENSAP-ICE
 
@@ -629,7 +629,7 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a slurm script or by 
+ANSYS-EM jobs can be submitted through a slurm script or by
 [interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).
 
 ### RSM
