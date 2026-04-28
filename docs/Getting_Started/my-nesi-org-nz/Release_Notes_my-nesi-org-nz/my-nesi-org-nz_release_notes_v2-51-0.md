@@ -8,7 +8,7 @@ search:
 ---
 
 ## New and Improved
-- The Compute Information section in Apply for Access now provides clearer and more detailed information about trial allocations.
+- The Compute Information section in the Apply for Access form now explains that a trial allocation (also known as a Proposal Development allocation) can be used to test the suitability of our resources and better understand a project's compute and storage requirements. This will help users who are new to our HPC platform start with an allocation type suited to their needs. 
 
 
 If you have any questions about any of the updates, please
