@@ -88,6 +88,7 @@ Below is an example of this from a fluent script.
 #SBATCH --mem           512MB             # Memory per node
 #SBATCH --array         1-100 
 
+module purge
 module load ANSYS/{{app.default}} 
 
 JOURNAL_FILE=fluent_${SLURM_JOB_ID}.in
