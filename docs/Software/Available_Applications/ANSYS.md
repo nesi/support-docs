@@ -404,7 +404,8 @@ solution specify as relative path, or unload compiled lib before saving
 
     module load ANSYS/{{ applications.ANSYS.default }}
     input="/share/test/ansys/mechanical/structural.dat" 
-    cfx5solve -batch -def "${input}" -part ${SLURM_NTASKS}
+    module purge
+    module load ANSYS/{{ applications.ANSYS.default }}
     ```
 
     !!! tip
