@@ -542,6 +542,7 @@ Input files are typically LS-DYNA keyword decks such as `.k` files.
 #SBATCH --cpus-per-task 16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   1G                # Memory per cpu
 
+module purge
 module load ANSYS/{{ applications.ANSYS.default }}
 lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
 ```
