@@ -443,6 +443,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1500M             # total mem
 
+    module purge
     module load ANSYS/{{ applications.ANSYS.default }}
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
