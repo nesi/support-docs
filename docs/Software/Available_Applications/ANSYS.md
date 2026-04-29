@@ -550,7 +550,7 @@ lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
     storage such as `nobackup`, not your home directory.
     - Use restart/[checkpointing](../../Batch_Computing/Job_Checkpointing.md) workflows for long runs so work can continue across multiple scheduled jobs.
     - Avoid writing frequent output unless needed, as excessive I/O can reduce performance at scale.
-    - Adding a `-` in front of your requested number of CPUs, e.g. `ncpu=-64` will force tasks to execute in a deterministic way, decreasing performance but ensuring repeatability.
+    - Adding a `-` in front of your requested number of CPUs, e.g. `NCPUS=-64` will force tasks to execute in a deterministic way, decreasing performance but ensuring repeatability.
 
 ## FENSAP-ICE
 
