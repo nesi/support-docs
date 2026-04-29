@@ -38,7 +38,7 @@ situations, including:
     environment before launching the kernel
 
 The following example will create a custom kernel based on the
-Miniconda3 environment module (but applies to other environment modules
+Miniforge3 environment module (but applies to other environment modules
 too).
 
 First, change directory into the path that you would like to place your
@@ -48,12 +48,12 @@ conda environment.
 into your project folder using `cd /nesi/project/<project-code>`. Do not use the path
 that includes `00_nesi_projects` or `home` in the name as this causes issues.
 
-Second, in a terminal run the following commands to load a Miniconda environment
+Second, in a terminal run the following commands to load a Miniforge environment
 module:
 
 ``` sh
 module purge
-module load Miniconda3
+module load Miniforge3
 ```
 
 Now create a conda environment named "my-conda-env" using Python 3.11.
@@ -83,7 +83,7 @@ And add the following as `wrapper.sh` into your `my-conda-env` folder:
 
 # load required modules here
 module purge
-module load Miniconda3
+module load Miniforge3
 
 # activate conda environment
 source $(conda info --base)/etc/profile.d/conda.sh 
@@ -153,9 +153,9 @@ Second, **your team members** need to run the following commands in the terminal
 # change directory into the path that contains your conda environment
 cd <full_path_to_your_conda_environment>
 
-# load Miniconda3
+# load Miniforge3
 module purge
-module load Miniconda3
+module load Miniforge3
 
 # Activate your shared conda environment
 source $(conda info --base)/etc/profile.d/conda.sh

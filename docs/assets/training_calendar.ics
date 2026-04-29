@@ -50,7 +50,7 @@ DTSTART;TZID=New Zealand Standard Time:20260311T150000
 DTEND;TZID=New Zealand Standard Time:20260311T160000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -102,7 +102,7 @@ DTSTART;TZID=New Zealand Standard Time:20260318T090000
 DTEND;TZID=New Zealand Standard Time:20260318T100000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -154,7 +154,7 @@ DTSTART;TZID=New Zealand Standard Time:20260325T150000
 DTEND;TZID=New Zealand Standard Time:20260325T160000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -206,7 +206,7 @@ DTSTART;TZID=New Zealand Standard Time:20260401T090000
 DTEND;TZID=New Zealand Standard Time:20260401T100000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -258,7 +258,7 @@ DTSTART;TZID=New Zealand Standard Time:20260408T150000
 DTEND;TZID=New Zealand Standard Time:20260408T160000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -310,7 +310,7 @@ DTSTART;TZID=New Zealand Standard Time:20260415T090000
 DTEND;TZID=New Zealand Standard Time:20260415T100000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -362,7 +362,7 @@ DTSTART;TZID=New Zealand Standard Time:20260422T150000
 DTEND;TZID=New Zealand Standard Time:20260422T160000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0
@@ -414,7 +414,215 @@ DTSTART;TZID=New Zealand Standard Time:20260429T090000
 DTEND;TZID=New Zealand Standard Time:20260429T100000
 CLASS:PUBLIC
 PRIORITY:5
-DTSTAMP:20260417T002232Z
+DTSTAMP:20260429T002802Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION:https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFY
+ rUT09
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:FALSE
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:REANNZ is inviting you to a scheduled Zoom meeting.\n\nTopic: R
+ EANNZ weekly office hour\n\nJoin Zoom Meeting\nhttps://nesi.zoom.us/j/8398
+ 7449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09<https://www.google.com/url?q=
+ https://nesi.zoom.us/j/83987449505?pwd%3DTzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09&
+ sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw0Y1lNBaWnj-PfxgMmx76EE
+ >\n\nMeeting ID: 839 8744 9505\nPasscode: 913114\nOne tap mobile\n+1669900
+ 6833\,\,83987449505# US (San Jose)\n+16892781000\,\,83987449505# US\n\nDia
+ l by your location\n        +1 669 900 6833 US (San Jose)\n        +1 689 
+ 278 1000 US\n        +1 719 359 4580 US\n        +1 253 205 0468 US\n     
+    +1 253 215 8782 US (Tacoma)\n        +1 301 715 8592 US (Washington DC)
+ \n        +1 305 224 1968 US\n        +1 309 205 3325 US\n        +1 312 6
+ 26 6799 US (Chicago)\n        +1 346 248 7799 US (Houston)\n        +1 360
+  209 5623 US\n        +1 386 347 5053 US\n        +1 507 473 4847 US\n    
+     +1 564 217 2000 US\n        +1 646 558 8656 US (New York)\n        +1 
+ 646 931 3860 US\n        +1 669 444 9171 US\nMeeting ID: 839 8744 9505\nFi
+ nd your local number: https://nesi.zoom.us/u/kcbdPkUgRY<https://www.google
+ .com/url?q=https://nesi.zoom.us/u/kcbdPkUgRY&sa=D&source=calendar&ust=1773
+ 104755157324&usg=AOvVaw134KLfR86mFBFzyazyZogj>\n\nJoin by SIP\n83987449505
+ @zoomcrc.com<mailto:83987449505@zoomcrc.com>\n\nJoin by H.323\n162.255.37.
+ 11 (US West)\n162.255.36.11 (US East)\n103.122.166.55 (Australia Sydney)\n
+ 103.122.167.55 (Australia Melbourne)\n149.137.40.110 (Singapore)\n69.174.5
+ 7.160 (Canada Toronto)\n65.39.152.160 (Canada Vancouver)\n207.226.132.110 
+ (Japan Tokyo)\n149.137.24.110 (Japan Osaka)\nMeeting ID: 839 8744 9505\nPa
+ sscode: 913114\n\nJoin by Skype for Business\nhttps://nesi.zoom.us/skype/8
+ 3987449505<https://www.google.com/url?q=https://nesi.zoom.us/skype/8398744
+ 9505&sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw3f4A60p_Z0ksQodH4
+ -SIKq>\n\n\n
+UID:040000008200E00074C5B7101A82E008000000007D3AED6DB6D2DC01000000000000000
+ 0100000004473FF816535B14FB29A5731F80335DD
+SUMMARY:Weekly office hour
+DTSTART;TZID=New Zealand Standard Time:20260506T090000
+DTEND;TZID=New Zealand Standard Time:20260506T100000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260429T002802Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION:https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFY
+ rUT09
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:FALSE
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:REANNZ is inviting you to a scheduled Zoom meeting.\n\nTopic: R
+ EANNZ weekly office hour\n\nJoin Zoom Meeting\nhttps://nesi.zoom.us/j/8398
+ 7449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09<https://www.google.com/url?q=
+ https://nesi.zoom.us/j/83987449505?pwd%3DTzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09&
+ sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw0Y1lNBaWnj-PfxgMmx76EE
+ >\n\nMeeting ID: 839 8744 9505\nPasscode: 913114\nOne tap mobile\n+1669900
+ 6833\,\,83987449505# US (San Jose)\n+16892781000\,\,83987449505# US\n\nDia
+ l by your location\n        +1 669 900 6833 US (San Jose)\n        +1 689 
+ 278 1000 US\n        +1 719 359 4580 US\n        +1 253 205 0468 US\n     
+    +1 253 215 8782 US (Tacoma)\n        +1 301 715 8592 US (Washington DC)
+ \n        +1 305 224 1968 US\n        +1 309 205 3325 US\n        +1 312 6
+ 26 6799 US (Chicago)\n        +1 346 248 7799 US (Houston)\n        +1 360
+  209 5623 US\n        +1 386 347 5053 US\n        +1 507 473 4847 US\n    
+     +1 564 217 2000 US\n        +1 646 558 8656 US (New York)\n        +1 
+ 646 931 3860 US\n        +1 669 444 9171 US\nMeeting ID: 839 8744 9505\nFi
+ nd your local number: https://nesi.zoom.us/u/kcbdPkUgRY<https://www.google
+ .com/url?q=https://nesi.zoom.us/u/kcbdPkUgRY&sa=D&source=calendar&ust=1773
+ 104755157324&usg=AOvVaw134KLfR86mFBFzyazyZogj>\n\nJoin by SIP\n83987449505
+ @zoomcrc.com<mailto:83987449505@zoomcrc.com>\n\nJoin by H.323\n162.255.37.
+ 11 (US West)\n162.255.36.11 (US East)\n103.122.166.55 (Australia Sydney)\n
+ 103.122.167.55 (Australia Melbourne)\n149.137.40.110 (Singapore)\n69.174.5
+ 7.160 (Canada Toronto)\n65.39.152.160 (Canada Vancouver)\n207.226.132.110 
+ (Japan Tokyo)\n149.137.24.110 (Japan Osaka)\nMeeting ID: 839 8744 9505\nPa
+ sscode: 913114\n\nJoin by Skype for Business\nhttps://nesi.zoom.us/skype/8
+ 3987449505<https://www.google.com/url?q=https://nesi.zoom.us/skype/8398744
+ 9505&sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw3f4A60p_Z0ksQodH4
+ -SIKq>\n\n\n\n
+UID:040000008200E00074C5B7101A82E00800000000B567B58CB6D2DC01000000000000000
+ 01000000036877A0FFF3A404DAE42AA60310A1285
+SUMMARY:Weekly office hour
+DTSTART;TZID=New Zealand Standard Time:20260513T150000
+DTEND;TZID=New Zealand Standard Time:20260513T160000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260429T002802Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION:https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFY
+ rUT09
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:FALSE
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:REANNZ is inviting you to a scheduled Zoom meeting.\n\nTopic: R
+ EANNZ weekly office hour\n\nJoin Zoom Meeting\nhttps://nesi.zoom.us/j/8398
+ 7449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09<https://www.google.com/url?q=
+ https://nesi.zoom.us/j/83987449505?pwd%3DTzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09&
+ sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw0Y1lNBaWnj-PfxgMmx76EE
+ >\n\nMeeting ID: 839 8744 9505\nPasscode: 913114\nOne tap mobile\n+1669900
+ 6833\,\,83987449505# US (San Jose)\n+16892781000\,\,83987449505# US\n\nDia
+ l by your location\n        +1 669 900 6833 US (San Jose)\n        +1 689 
+ 278 1000 US\n        +1 719 359 4580 US\n        +1 253 205 0468 US\n     
+    +1 253 215 8782 US (Tacoma)\n        +1 301 715 8592 US (Washington DC)
+ \n        +1 305 224 1968 US\n        +1 309 205 3325 US\n        +1 312 6
+ 26 6799 US (Chicago)\n        +1 346 248 7799 US (Houston)\n        +1 360
+  209 5623 US\n        +1 386 347 5053 US\n        +1 507 473 4847 US\n    
+     +1 564 217 2000 US\n        +1 646 558 8656 US (New York)\n        +1 
+ 646 931 3860 US\n        +1 669 444 9171 US\nMeeting ID: 839 8744 9505\nFi
+ nd your local number: https://nesi.zoom.us/u/kcbdPkUgRY<https://www.google
+ .com/url?q=https://nesi.zoom.us/u/kcbdPkUgRY&sa=D&source=calendar&ust=1773
+ 104755157324&usg=AOvVaw134KLfR86mFBFzyazyZogj>\n\nJoin by SIP\n83987449505
+ @zoomcrc.com<mailto:83987449505@zoomcrc.com>\n\nJoin by H.323\n162.255.37.
+ 11 (US West)\n162.255.36.11 (US East)\n103.122.166.55 (Australia Sydney)\n
+ 103.122.167.55 (Australia Melbourne)\n149.137.40.110 (Singapore)\n69.174.5
+ 7.160 (Canada Toronto)\n65.39.152.160 (Canada Vancouver)\n207.226.132.110 
+ (Japan Tokyo)\n149.137.24.110 (Japan Osaka)\nMeeting ID: 839 8744 9505\nPa
+ sscode: 913114\n\nJoin by Skype for Business\nhttps://nesi.zoom.us/skype/8
+ 3987449505<https://www.google.com/url?q=https://nesi.zoom.us/skype/8398744
+ 9505&sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw3f4A60p_Z0ksQodH4
+ -SIKq>\n\n\n\n\n
+UID:040000008200E00074C5B7101A82E00800000000588055AFB6D2DC01000000000000000
+ 0100000006DC0F29767664A4AA7DBF68C06EC64BF
+SUMMARY:Weekly office hour
+DTSTART;TZID=New Zealand Standard Time:20260520T090000
+DTEND;TZID=New Zealand Standard Time:20260520T100000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260429T002802Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION:https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFY
+ rUT09
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:FALSE
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:REANNZ is inviting you to a scheduled Zoom meeting.\n\nTopic: R
+ EANNZ weekly office hour\n\nJoin Zoom Meeting\nhttps://nesi.zoom.us/j/8398
+ 7449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09<https://www.google.com/url?q=
+ https://nesi.zoom.us/j/83987449505?pwd%3DTzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09&
+ sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw0Y1lNBaWnj-PfxgMmx76EE
+ >\n\nMeeting ID: 839 8744 9505\nPasscode: 913114\nOne tap mobile\n+1669900
+ 6833\,\,83987449505# US (San Jose)\n+16892781000\,\,83987449505# US\n\nDia
+ l by your location\n        +1 669 900 6833 US (San Jose)\n        +1 689 
+ 278 1000 US\n        +1 719 359 4580 US\n        +1 253 205 0468 US\n     
+    +1 253 215 8782 US (Tacoma)\n        +1 301 715 8592 US (Washington DC)
+ \n        +1 305 224 1968 US\n        +1 309 205 3325 US\n        +1 312 6
+ 26 6799 US (Chicago)\n        +1 346 248 7799 US (Houston)\n        +1 360
+  209 5623 US\n        +1 386 347 5053 US\n        +1 507 473 4847 US\n    
+     +1 564 217 2000 US\n        +1 646 558 8656 US (New York)\n        +1 
+ 646 931 3860 US\n        +1 669 444 9171 US\nMeeting ID: 839 8744 9505\nFi
+ nd your local number: https://nesi.zoom.us/u/kcbdPkUgRY<https://www.google
+ .com/url?q=https://nesi.zoom.us/u/kcbdPkUgRY&sa=D&source=calendar&ust=1773
+ 104755157324&usg=AOvVaw134KLfR86mFBFzyazyZogj>\n\nJoin by SIP\n83987449505
+ @zoomcrc.com<mailto:83987449505@zoomcrc.com>\n\nJoin by H.323\n162.255.37.
+ 11 (US West)\n162.255.36.11 (US East)\n103.122.166.55 (Australia Sydney)\n
+ 103.122.167.55 (Australia Melbourne)\n149.137.40.110 (Singapore)\n69.174.5
+ 7.160 (Canada Toronto)\n65.39.152.160 (Canada Vancouver)\n207.226.132.110 
+ (Japan Tokyo)\n149.137.24.110 (Japan Osaka)\nMeeting ID: 839 8744 9505\nPa
+ sscode: 913114\n\nJoin by Skype for Business\nhttps://nesi.zoom.us/skype/8
+ 3987449505<https://www.google.com/url?q=https://nesi.zoom.us/skype/8398744
+ 9505&sa=D&source=calendar&ust=1773104755157324&usg=AOvVaw3f4A60p_Z0ksQodH4
+ -SIKq>\n\n\n\n\n\n
+UID:040000008200E00074C5B7101A82E008000000007C55DCCAB6D2DC01000000000000000
+ 0100000009EEA9AA7D2381445A1C184F96AAF6743
+SUMMARY:Weekly office hour
+DTSTART;TZID=New Zealand Standard Time:20260527T150000
+DTEND;TZID=New Zealand Standard Time:20260527T160000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260429T002802Z
 TRANSP:OPAQUE
 STATUS:CONFIRMED
 SEQUENCE:0

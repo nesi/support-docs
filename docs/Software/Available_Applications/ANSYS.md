@@ -402,10 +402,11 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --ntasks            36                # Number processes
     #SBATCH --mem-per-cpu       512MB             # Standard for large partition
 
-    module load ANSYS/{{ applications.ANSYS.default }}
-    input="/share/test/ansys/mechanical/structural.dat" 
     module purge
     module load ANSYS/{{ applications.ANSYS.default }}
+    input="/share/test/ansys/mechanical/structural.dat" 
+
+    cfx5solve -batch -def "${input}" -part ${SLURM_NTASKS}
     ```
 
     !!! tip
@@ -525,9 +526,9 @@ LS-DYNA specialises in highly non-linear, transient dynamic finite element analy
 | Flag    | Purpose                                    | Example                       |
 | ------- | ------------------------------------------ | ----------------------------- |
 | -i      | The input file argument                    | `-i "MyInput.k"`              |
-| NCPUS   | SMP cores                                  | `NCPUS=$SLURM_CPUS_PER_TASK` |
+| NCPUS   | SMP ranks                                  | `ncpus=-$SLURM_CPUS_PER_TASK` |
 | MEMORY  | How much memory to assign to the head node | `MEMORY=2G`                   |
-| MEMORY2 | How much memory to subsequent nodes        | `MEMORY2=2G`                  |
+| MEMORY2 | How much memory to subsiquent nodes        | `MEMORY2=2G`                  |
 
 Input files are typically LS-DYNA keyword decks such as `.k` files.
 
@@ -552,7 +553,7 @@ lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
     storage such as `nobackup`, not your home directory.
     - Use restart/[checkpointing](../../Batch_Computing/Job_Checkpointing.md) workflows for long runs so work can continue across multiple scheduled jobs.
     - Avoid writing frequent output unless needed, as excessive I/O can reduce performance at scale.
-    - Adding a `-` in front of your requested number of CPUs, e.g. `NCPUS=-64` will force tasks to execute in a deterministic way, decreasing performance but ensuring repeatability.
+    - Adding a `-` in front of your requested number of CPUs, e.g. `ncpu=-64` will force tasks to execute in a deterministic way, decreasing performance but ensuring repeatability.
 
 ## FENSAP-ICE
 

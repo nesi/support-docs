@@ -78,7 +78,7 @@ dependencies:
 !!! info "See also"
      See the
      [Miniforge3](../Available_Applications/Miniforge3.md)
-     page for more information on how to create and manage Miniconda
+     page for more information on how to create and manage Miniforge
      environments on Mahuika.
 
 ## Configuring Slurm
