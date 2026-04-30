@@ -214,6 +214,174 @@ CUDA_VISIBLE_DEVICES=0
     `CUDA_VISIBLE_DEVICES=0` indicates that this job was allocated to CUDA
      GPU index 0 on this node. It is not a count of allocated GPUs.
 
+## Live monitoring your job's GPU(s)
+
+It is possible to visually inspect your job's GPU usage live. To do this:
+
+1. Obtain the job id for your job of interest by typing `squeue --me` into the terminal.
+
+    ```bash
+    user.name@login03:$ squeue --me
+    JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
+    5826164       user.nam nesi99999 Example_GPU_   8     24G genoa   Apr 30 17:36  9-23:58:08 RUNNING  g09               
+    ```
+
+2. Jump onto the node your job is running by typing `jump_into <JobId>`, where you replace `<JobId>` with your Job of interest.
+
+    ```bash
+    user.name@login03:$ jump_into 5826164
+    Jumping to node: g09 (job 5826164)    
+    ```
+
+3. Type into the terminal `nvtop`. This will open an interface that will allow you to inspect how your job run on the GPU.
+
+    ![nvtop](../assets/images/GPU_nvtop.png){ width="800" }
+
+## Look up the GPU availability and queue
+
+It is possible to check how many GPUs are available and what the GPU queue looks like using the `gpu_avail` command
+
+```bash
+gpu_avail
+```
+
+This will show the total number of free GPUs at any one time
+
+```bash
+user.name@login03:$ gpu_avail
+Cluster GPU summary
+  - A100 (40GB): free 0 / total 8 (used 8, unavailable 0)
+  - A100 (80GB): free 0 / total 16 (used 16, unavailable 0)
+  - H100 (96GB): free 0 / total 8 (used 8, unavailable 0)
+  - L4 (24GB): free 0 / total 16 (used 16, unavailable 0)
+```
+
+You can also find out how many jobs are in the queue by typing into the terminal:
+
+```bash
+gpu_avail -q
+```
+
+This will show the number of jobs running and pending in the queue (along with the number of GPUs requested in total in brackets) and the estimated time when at least one GPU will be next available.
+
+```bash
+user.name@login03:$ gpu_avail -q
+GPU queue summary (per GPU type)
+
+  H100
+    Running jobs: 7   (GPUs: 8)
+    Pending jobs: 8   (GPUs: 8)
+    Estimated availability for 1 H100 GPU: 2026-05-02 00:11:41 NZST
+
+  A100 (80GB)
+    Running jobs: 9   (GPUs: 16)
+    Pending jobs: 10   (GPUs: 17)
+    Estimated availability for 1 A100 (80GB) GPU: 2026-04-30 18:49:01 NZST
+
+  A100 (40GB)
+    Running jobs: 8   (GPUs: 8)
+    Pending jobs: 2   (GPUs: 2)
+    Estimated availability for 1 A100 (40GB) GPU: 2026-04-30 18:55:37 NZST
+
+  A100 (VRAM has not been specified)
+    Running jobs: 0   (GPUs: 0)
+    Pending jobs: 5   (GPUs: 8)
+
+  L4
+    Running jobs: 16   (GPUs: 16)
+    Pending jobs: 1   (GPUs: 1)
+    Estimated availability for 1 L4 GPU: 2026-04-30 18:40:36 NZST
+
+  GPU (GPU has not been specified)
+    Running jobs: 0   (GPUs: 0)
+    Pending jobs: 3   (GPUs: 6)
+
+Note: availability assumes suitable CPU and RAM will be available on the node.
+```
+
+You can see more detail about what jobs are in the queue by typing into the terminal:
+
+```bash
+gpu_avail -q -d
+```
+
+This will show all jobs that have requested GPUs, and give you a better idea of the availability of GPUs
+
+```bash
+geoff.weal@login03:/nesi/project/nesi99999/geoffreyweal/show_gpu_availability$ ./gpu_avail -q -d
+GPU queue detailed report (per GPU type)
+A100 (40GB)
+  Running jobs: 8 (GPUs: 8)
+  Pending jobs: 2 (GPUs: 2)
+  Estimated availability for 1 A100 (40GB) GPU: 2026-04-30 18:55:36 NZST
+  Running jobs:
+    JOBID        USER       PART         NODE             CPU    Memory     START               LEFT         TRES                                                    
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    1234567      abcd123    genoa        g02              16     8 GB       Apr 29 08:04        13:37:14     gres/gpu:a100:1                                         
+    1234568      abcd123    genoa        g04              16     4 GB       Apr 29 20:44        2:17:13      gres/gpu:a100:1                                         
+    1234569      abcd123    genoa        g03              16     4 GB       Apr 30 09:15        14:47:41     gres/gpu:a100:1                                         
+    1234570      abcd123    genoa        g03              16     4 GB       Apr 30 09:15        14:48:11     gres/gpu:a100:1                                         
+    1234571      abcd123    genoa        g01              4      16 GB      Apr 30 16:55        27:59        gres/gpu:a100:1                                         
+    1234572      abcd123    genoa        g01              8      32 GB      Apr 30 16:56        29:15        gres/gpu:a100:1                                         
+    1234573      abcd123    genoa        g04              4      32 GB      Apr 30 17:20        9:23:01      gres/gpu:a100:1                                         
+    1234574      abcd123    genoa        g02              8      32 GB      Apr 30 17:25        58:03        gres/gpu:a100:1                                         
+  Pending jobs:
+    JOBID        USER       PART         CPU    Memory     START               LIMIT        TRES                                                     REASON                
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    1234575      abcd123    genoa        1      20 GB      May 06 11:45        4:45:00      gres/gpu:a100:1                                          (Priority)            
+    1234576      abcd123    genoa        1      20 GB      May 06 16:30        4:45:00      gres/gpu:a100:1                                          (Priority)            
+
+A100 (80GB)
+...
+```
+
+Note that there might be your or other peoples jobs pending in the queue, even if there is a free GPU available. This may be because a GPU node might not have enough CPUs or memory resources available. 
+
+To see the CPU and memory resources available on each of the GPU nodes, type into the terminal:
+
+```bash
+gpu_avail -d
+```
+
+This will show all the resources available for each GPU node, ordered by GPU type:
+
+```bash
+user.name@login03$ gpu_avail -d
+Cluster GPU summary
+  - A100 (40GB): free 0 / total 8 (used 8, unavailable 0)
+  - A100 (80GB): free 0 / total 16 (used 16, unavailable 0)
+  - H100 (96GB): free 0 / total 8 (used 8, unavailable 0)
+  - L4 (24GB): free 0 / total 16 (used 16, unavailable 0)
+
+GPU nodes report
+
+=== A100 (40GB) ===
+
+- Node:          g01   State: mixed-
+  CPU idle/total: 6/164 (alloc 162, other 0)
+  Mem free/total: 113.0 GB / 717.2 GB
+  GPUs: A100 (40GB): free 0 / total 2 (used 2)
+
+- Node:          g02   State: allocated
+  CPU idle/total: 2/164 (alloc 166, other 0)
+  Mem free/total: 74.9 GB / 717.2 GB
+  GPUs: A100 (40GB): free 0 / total 2 (used 2)
+
+- Node:          g03   State: allocated
+  CPU idle/total: 2/164 (alloc 166, other 0)
+  Mem free/total: 385.5 GB / 717.2 GB
+  GPUs: A100 (40GB): free 0 / total 2 (used 2)
+
+- Node:          g04   State: mixed-
+  CPU idle/total: 8/164 (alloc 160, other 0)
+  Mem free/total: 112.1 GB / 717.2 GB
+  GPUs: A100 (40GB): free 0 / total 2 (used 2)
+
+=== A100 (80GB) ===
+...
+```
+
+
 ## Application and toolbox specific support pages
 
 The following pages provide additional information for supported
