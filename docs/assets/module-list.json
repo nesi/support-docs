@@ -3365,7 +3365,10 @@
             "5.5",
             "5.6",
             "6.0",
-            "6.1"
+            "6.1",
+            "6.2",
+            "6.3",
+            "6.4"
         ],
         "admin_list": [],
         "network_licences": [
@@ -3398,7 +3401,7 @@
                         "slurm_track": true,
                         "total": 2,
                         "usage_formula": "{node}",
-                        "use_conditions": "By booking only. Version not greater than 5.4",
+                        "use_conditions": "By booking only. Version not greater than 6.2",
                         "visible_on_docs": true
                     }
                 ]
@@ -3501,7 +3504,7 @@
                         "slurm_track": true,
                         "total": 3,
                         "usage_formula": "{node}",
-                        "use_conditions": "Version not greater than 6.2",
+                        "use_conditions": "Version not greater than 6.4",
                         "visible_on_docs": true
                     }
                 ]
@@ -3528,7 +3531,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 6.12,
+                        "hourly_average": 6.1,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3536,20 +3539,6 @@
                         "total": 1,
                         "usage_formula": "1",
                         "use_conditions": "Version not greater than 5.6",
-                        "visible_on_docs": true
-                    },
-                    {
-                        "buffer_constant": 1,
-                        "buffer_constant_other": 0,
-                        "feature_name": "comsoluser",
-                        "hourly_average": 4.66,
-                        "slurm_block": false,
-                        "slurm_soak": true,
-                        "slurm_token_name": "comsoluser@uoa_foe_des_rc",
-                        "slurm_track": true,
-                        "total": 1,
-                        "usage_formula": "1",
-                        "use_conditions": "",
                         "visible_on_docs": true
                     }
                 ]
@@ -3610,7 +3599,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 71633878.99,
+                        "hourly_average": 71376482.87,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -3623,11 +3612,11 @@
                 ]
             }
         ],
-        "default": "6.1",
+        "default": "6.4",
         "default_type": "latest",
         "last_updated": 1758519355,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/COMSOL/6.1.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/COMSOL/6.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6304,15 +6293,16 @@
         "support": "",
         "versions": [
             "1.31-GCC-11.3.0",
-            "1.31-gimkl-2018b"
+            "1.31-gimkl-2018b",
+            "1.32-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.31-gimkl-2018b",
+        "default": "1.32-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1777582134,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FragGeneScan/1.31-gimkl-2018b.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FragGeneScan/1.32-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7255,6 +7245,26 @@
         "last_updated": 1770158135,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/globus-compute-endpoint/4.5.0-foss-2023a-Python-3.11.6.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "GLPK": {
+        "description": "The GLPK (GNU Linear Programming Kit) package is intended for\n solving large-scale linear programming (LP),\n mixed integer programming (MIP), and other related problems.\n It is a set of routines written in ANSI C\n and organized in the form of a callable library.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.gnu.org/software/glpk/",
+        "support": "",
+        "versions": [
+            "5.0-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "5.0-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1777582257,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/GLPK/5.0-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8356,6 +8366,26 @@
         "last_updated": 1740132630,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/IDBA-UD/1.1.3-gimkl-2018b.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "igraph": {
+        "description": "igraph is a collection of network analysis tools with the emphasis on\nefficiency, portability and ease of use. igraph is open source and free. igraph can be\nprogrammed in R, Python and C/C++.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://igraph.org",
+        "support": "",
+        "versions": [
+            "1.0.1-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.0.1-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777583594,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/igraph/1.0.1-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9702,6 +9732,29 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "leidenalg": {
+        "description": "Implementation of the Leiden algorithm for various quality\nfunctions to be used with igraph in Python.",
+        "domains": [],
+        "extensions": [
+            "ddt-1.7.2",
+            "leidenalg-0.11.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/vtraag/leidenalg",
+        "support": "",
+        "versions": [
+            "0.11.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.11.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777584420,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/leidenalg/0.11.0-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "libaec": {
         "description": "Libaec provides fast lossless compression of 1 up to 32 bit wide signed or unsigned integers (samples)",
         "domains": [],
@@ -10241,6 +10294,26 @@
         "last_updated": 1740132637,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libKML/1.3.0.2017-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "libleidenalg": {
+        "description": "Implements the Leiden algorithm in C++",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/vtraag/libleidenalg",
+        "support": "",
+        "versions": [
+            "0.12.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.12.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777584273,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/libleidenalg/0.12.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16931,6 +17004,30 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "python-igraph": {
+        "description": "Python interface to the igraph high performance graph library, primarily aimed at complex network\n research and analysis.",
+        "domains": [],
+        "extensions": [
+            "cairocffi-1.7.1",
+            "igraph-1.0.0",
+            "texttable-1.7.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://igraph.org/python",
+        "support": "",
+        "versions": [
+            "1.0.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.0.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777583981,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/python-igraph/1.0.0-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "PyTorch": {
         "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration.\nPyTorch is a deep learning framework that puts Python first.",
         "domains": [],
@@ -19802,6 +19899,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "slow5-dorado": {
+        "description": "Fork of nanopore's Dorado which supports S/BLOW5.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/hiruna72/slow5-dorado",
+        "support": "",
+        "versions": [
+            "1.1.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.1.1",
+        "default_type": "latest",
+        "last_updated": 1777512888,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/slow5-dorado/1.1.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "slow5tools": {
         "description": "Toolkit for converting (FAST5 <-> SLOW5), compressing, viewing, indexing\n and manipulating data in SLOW5 format.",
         "domains": [],
@@ -22227,6 +22344,26 @@
         "last_updated": 1760479609,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/VTune/2025.6.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Vulkan": {
+        "description": "Vulkan headers, ICDs, and tools",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/KhronosGroup",
+        "support": "",
+        "versions": [
+            "1.4.328-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.4.328-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1777519410,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Vulkan/1.4.328-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
