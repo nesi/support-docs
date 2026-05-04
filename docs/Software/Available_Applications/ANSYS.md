@@ -88,6 +88,7 @@ Below is an example of this from a fluent script.
 #SBATCH --mem           512MB             # Memory per node
 #SBATCH --array         1-100 
 
+module purge
 module load ANSYS/{{app.default}} 
 
 JOURNAL_FILE=fluent_${SLURM_JOB_ID}.in
@@ -401,8 +402,10 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --ntasks            36                # Number processes
     #SBATCH --mem-per-cpu       512MB             # Standard for large partition
 
+    module purge
     module load ANSYS/{{ applications.ANSYS.default }}
     input="/share/test/ansys/mechanical/structural.dat" 
+
     cfx5solve -batch -def "${input}" -part ${SLURM_NTASKS}
     ```
 
@@ -441,6 +444,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1500M             # total mem
 
+    module purge
     module load ANSYS/{{ applications.ANSYS.default }}
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
@@ -539,6 +543,7 @@ Input files are typically LS-DYNA keyword decks such as `.k` files.
 #SBATCH --cpus-per-task 16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   1G                # Memory per cpu
 
+module purge
 module load ANSYS/{{ applications.ANSYS.default }}
 lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
 ```
