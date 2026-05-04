@@ -5,13 +5,6 @@ tags:
     - llm
 ---
 
-
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-
-{{ app.description }}
-
-
 ## Starting ollama in a Slurm job
 
 !!! warn
