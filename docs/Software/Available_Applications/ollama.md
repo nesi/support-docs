@@ -28,7 +28,7 @@ tags:
 #SBATCH --mem 10G
 #SBATCH --gpus-per-node l4:1
 
-PORT=16000
+PORT=16000 # please choose your own port number between 1024 and 49151
 
 module load ollama
 export OLLAMA_HOST=${HOSTNAME}:${PORT}
