@@ -14,7 +14,7 @@ tags:
 
 ## Starting ollama in a Slurm job
 
-! warn
+!!! warn
     We don't reccomend running ollama like this except for small test jobs.
     It is a very inefficient use of GPUs.
 
@@ -22,14 +22,15 @@ tags:
 ```sl
 #!/bin/bash -e
 
-#SBATCH --account nesi99991
-#SBATCH --job-name ollama test
-#SBATCH --time 01:00:00
-#SBATCH --mem 10G
-#SBATCH --gpus-per-node l4:1
+#SBATCH --account        nesi99991
+#SBATCH --job-name       ollama test
+#SBATCH --time           01:00:00
+#SBATCH --mem            10G
+#SBATCH --gpus-per-node  l4:1
 
 PORT=16000 # please choose your own port number between 1024 and 49151
 
+module purge
 module load ollama
 export OLLAMA_HOST=${HOSTNAME}:${PORT}
 ssh -NfR ${PORT}:${HOSTNAME}:${PORT} ${SLURM_SUBMIT_HOST}
@@ -40,7 +41,8 @@ ollama serve
 Then on the login node run,
 
 ```sh
-module  load ollama
+module purge
+module load ollama
 export OLLAMA_HOST=<nodename>:<port>
 ollama
 ```
