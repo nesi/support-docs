@@ -2,6 +2,7 @@
     "ABAQUS": {
         "description": "Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.",
         "domains": [
+            "GPU",
             "engineering",
             "gpu",
             "mpi",
@@ -50,7 +51,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.94,
+                        "hourly_average": 0.93,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -64,7 +65,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.58,
+                        "hourly_average": 0.57,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -78,7 +79,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.55,
+                        "hourly_average": 0.54,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -269,7 +270,9 @@
     },
     "AdaptiveCpp": {
         "description": "AdaptiveCpp (formerly hipSYCL) is a SYCL implementation targeting CPUs and\nGPUs, with a focus on leveraging existing toolchains such as CUDA or HIP",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/illuhad/hipSYCL",
@@ -370,6 +373,7 @@
     "AlphaFold": {
         "description": "AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known",
         "domains": [
+            "GPU",
             "biology",
             "chemistry"
         ],
@@ -461,7 +465,9 @@
     },
     "Amber": {
         "description": "Amber (originally Assisted Model Building with Energy Refinement) is software for performing\n molecular dynamics and structure prediction.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://ambermd.org/amber.html",
@@ -1392,7 +1398,9 @@
     },
     "AutoDock-GPU": {
         "description": "OpenCL and Cuda accelerated version of AutoDock. It leverages its embarrasingly\nparallelizable LGA by processing ligand-receptor poses in parallel over\nmultiple compute units.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/ccsb-scripps/AutoDock-GPU",
@@ -1812,6 +1820,7 @@
     "beagle-lib": {
         "description": "beagle-lib is a high-performance library that can perform the core\ncalculations at the heart of most Bayesian and Maximum Likelihood\nphylogenetics packages.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -1836,6 +1845,7 @@
     "BEAST": {
         "description": "Bayesian MCMC phylogenetic analysis of molecular sequences for reconstructing \n phylogenies and testing evolutionary hypotheses.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -3157,7 +3167,9 @@
     },
     "Clang": {
         "description": "C, C++, Objective-C compiler, based on LLVM.  Does not\n include C++ standard library -- use libstdc++ from GCC.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://clang.llvm.org/",
@@ -3365,7 +3377,10 @@
             "5.5",
             "5.6",
             "6.0",
-            "6.1"
+            "6.1",
+            "6.2",
+            "6.3",
+            "6.4"
         ],
         "admin_list": [],
         "network_licences": [
@@ -3398,7 +3413,7 @@
                         "slurm_track": true,
                         "total": 2,
                         "usage_formula": "{node}",
-                        "use_conditions": "By booking only. Version not greater than 5.4",
+                        "use_conditions": "By booking only. Version not greater than 6.2",
                         "visible_on_docs": true
                     }
                 ]
@@ -3460,7 +3475,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.94,
+                        "hourly_average": 0.93,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -3501,7 +3516,7 @@
                         "slurm_track": true,
                         "total": 3,
                         "usage_formula": "{node}",
-                        "use_conditions": "Version not greater than 6.2",
+                        "use_conditions": "Version not greater than 6.4",
                         "visible_on_docs": true
                     }
                 ]
@@ -3528,7 +3543,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 6.14,
+                        "hourly_average": 6.04,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3536,20 +3551,6 @@
                         "total": 1,
                         "usage_formula": "1",
                         "use_conditions": "Version not greater than 5.6",
-                        "visible_on_docs": true
-                    },
-                    {
-                        "buffer_constant": 1,
-                        "buffer_constant_other": 0,
-                        "feature_name": "comsoluser",
-                        "hourly_average": 4.68,
-                        "slurm_block": false,
-                        "slurm_soak": true,
-                        "slurm_token_name": "comsoluser@uoa_foe_des_rc",
-                        "slurm_track": true,
-                        "total": 1,
-                        "usage_formula": "1",
-                        "use_conditions": "",
                         "visible_on_docs": true
                     }
                 ]
@@ -3610,7 +3611,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 71893138.27,
+                        "hourly_average": 70625735.82,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -3623,11 +3624,11 @@
                 ]
             }
         ],
-        "default": "6.1",
+        "default": "6.4",
         "default_type": "latest",
         "last_updated": 1758519355,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/COMSOL/6.1.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/COMSOL/6.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3683,6 +3684,7 @@
     "CP2K": {
         "description": "CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular\n simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different\n methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and\n classical pair and many-body potentials.",
         "domains": [
+            "GPU",
             "chemistry",
             "Density Functional Theory",
             "Molecular Dynamics",
@@ -3954,7 +3956,9 @@
     },
     "CUDA": {
         "description": "CUDA (formerly Compute Unified Device Architecture) is a parallel\n computing platform and programming model created by NVIDIA and implemented by the\n graphics processing units (GPUs) that they produce. CUDA gives developers access\n to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://developer.nvidia.com/cuda-toolkit",
@@ -3994,7 +3998,9 @@
     },
     "cuDNN": {
         "description": "The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://developer.nvidia.com/cudnn",
@@ -4225,6 +4231,7 @@
     "dadi": {
         "description": "Diffusion Approximation for Demographic Inference",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [
@@ -4407,6 +4414,7 @@
     "DeepLabCut": {
         "description": "Efficient method for 3D markerless pose estimation based on transfer learning with deep neural networks.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -4451,7 +4459,9 @@
     },
     "DeePMD-plugin": {
         "description": "Deep learning-based models of interatomic potential energy and force field, as a LAMMPS plugin.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://docs.deepmodeling.com/projects/deepmd",
@@ -4676,6 +4686,7 @@
     "Dorado": {
         "description": "High-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -5153,6 +5164,7 @@
     "EMAN2": {
         "description": "Greyscale scientific image processing suite with a primary focus on processing data from transmission electron microscopes",
         "domains": [
+            "GPU",
             "biology",
             "chemistry"
         ],
@@ -6304,15 +6316,16 @@
         "support": "",
         "versions": [
             "1.31-GCC-11.3.0",
-            "1.31-gimkl-2018b"
+            "1.31-gimkl-2018b",
+            "1.32-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.31-gimkl-2018b",
+        "default": "1.32-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1777582134,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FragGeneScan/1.31-gimkl-2018b.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FragGeneScan/1.32-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7258,6 +7271,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "GLPK": {
+        "description": "The GLPK (GNU Linear Programming Kit) package is intended for\n solving large-scale linear programming (LP),\n mixed integer programming (MIP), and other related problems.\n It is a set of routines written in ANSI C\n and organized in the form of a callable library.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.gnu.org/software/glpk/",
+        "support": "",
+        "versions": [
+            "5.0-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "5.0-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1777582257,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/GLPK/5.0-GCCcore-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "GMAP-GSNAP": {
         "description": "GMAP: A Genomic Mapping and Alignment Program for mRNA and EST Sequences\n GSNAP: Genomic Short-read Nucleotide Alignment Program",
         "domains": [
@@ -7529,7 +7562,9 @@
     },
     "GPUMD": {
         "description": "GPUMD stands for Graphics Processing Units Molecular Dynamics.\nIt is a general-purpose molecular dynamics (MD) package fully implemented on graphics processing units.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://gpumd.org/",
@@ -7629,6 +7664,7 @@
     "GROMACS": {
         "description": "GROMACS is a versatile package to perform molecular dynamics,\n i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.\n\nThis is a GPU enabled build, containing both MPI and threadMPI binaries.",
         "domains": [
+            "GPU",
             "chemistry",
             "molecular dynamics"
         ],
@@ -8359,6 +8395,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "igraph": {
+        "description": "igraph is a collection of network analysis tools with the emphasis on\nefficiency, portability and ease of use. igraph is open source and free. igraph can be\nprogrammed in R, Python and C/C++.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://igraph.org",
+        "support": "",
+        "versions": [
+            "1.0.1-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.0.1-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777583594,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/igraph/1.0.1-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "IGV": {
         "description": "The Integrative Genomics Viewer (IGV) is a high-performance visualization \n tool for interactive exploration of large, integrated genomic datasets. It supports a wide \n variety of data types, including array-based and next-generation sequence data",
         "domains": [
@@ -8497,7 +8553,9 @@
     },
     "impi": {
         "description": "Intel MPI Library, compatible with MPICH ABI",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://software.intel.com/content/www/us/en/develop/tools/mpi-library.html",
@@ -9552,6 +9610,7 @@
     "LAMMPS": {
         "description": "LAMMPS is a classical molecular dynamics code, and an acronym\nfor Large-scale Atomic/Molecular Massively Parallel Simulator. LAMMPS has\npotentials for solid-state materials (metals, semiconductors) and soft matter\n(biomolecules, polymers) and coarse-grained or mesoscopic systems. It can be\nused to model atoms or, more generically, as a parallel particle simulator at\nthe atomic, meso, or continuum scale. LAMMPS runs on single processors or in\nparallel using message-passing techniques and a spatial-decomposition of the\nsimulation domain. The code is designed to be easy to modify or extend with new\nfunctionality.",
         "domains": [
+            "GPU",
             "biology",
             "chemistry",
             "molecular dynamics"
@@ -9702,6 +9761,29 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "leidenalg": {
+        "description": "Implementation of the Leiden algorithm for various quality\nfunctions to be used with igraph in Python.",
+        "domains": [],
+        "extensions": [
+            "ddt-1.7.2",
+            "leidenalg-0.11.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/vtraag/leidenalg",
+        "support": "",
+        "versions": [
+            "0.11.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.11.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777584420,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/leidenalg/0.11.0-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "libaec": {
         "description": "Libaec provides fast lossless compression of 1 up to 32 bit wide signed or unsigned integers (samples)",
         "domains": [],
@@ -9769,7 +9851,9 @@
     },
     "libcuda-stub": {
         "description": "Dummy libcuda and libnvidia libraries for compiling CUDA programs on non-GPU nodes",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
@@ -10114,6 +10198,7 @@
     "libgpuarray": {
         "description": "Arrays on GPU device memory, for Theano",
         "domains": [
+            "GPU",
             "mathematics"
         ],
         "extensions": [],
@@ -10241,6 +10326,26 @@
         "last_updated": 1740132637,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libKML/1.3.0.2017-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "libleidenalg": {
+        "description": "Implements the Leiden algorithm in C++",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/vtraag/libleidenalg",
+        "support": "",
+        "versions": [
+            "0.12.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.12.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777584273,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/libleidenalg/0.12.0-foss-2023a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10766,7 +10871,9 @@
     },
     "LISFLOOD-FP": {
         "description": "The LISFLOOD-FP is a raster-based hydrodynamic model originally developed by\nthe University of Bristol. It has undergone extensive development since\nconception and includes a collection of numerical schemes implemented to solve\na variety of mathematical approximations of the 2D shallow water equations of\ndifferent complexity.\nThe local inertia solver, known as the ACC solver, is widely used to simulate\nfloods with gradually-varying, subcritical flow over sufficiently rough\nsurfaces with Manning\u2019s coefficient of at least 0.03. It has a version with\nCPU-specific optimisations and enhanced with a subgrid channel model.\nLISFLOOD-FP also includes second-order discontinuous Galerkin (DG2) and\nfirst-order finite volume (FV1) solvers of the full shallow water equations for\nmodelling a wide range of flows, including rapidly-propagating, supercritical\nflows, shock waves, or flows over very smooth surfaces. The DG2/FV1 solvers are\nparallelised for the multi-core CPU architecture, but do not integrate with the\nsubgrid channel model nor with the CPU-specific optimisations.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.seamlesswave.com/LISFLOOD8.0.html",
@@ -11107,6 +11214,7 @@
     "magma": {
         "description": "The MAGMA project aims to develop a dense linear algebra library similar to\n LAPACK but for heterogeneous/hybrid architectures, starting with current Multicore+GPU systems.",
         "domains": [
+            "GPU",
             "mathematics"
         ],
         "extensions": [],
@@ -11359,6 +11467,7 @@
     "MATLAB": {
         "description": "A high-level language and interactive environment for numerical computing.",
         "domains": [
+            "GPU",
             "engineering",
             "mathematics",
             "visualisation",
@@ -11807,6 +11916,7 @@
     "medaka": {
         "description": "Medaka is a tool to create a consensus sequence from nanopore sequencing data.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -11855,6 +11965,7 @@
     "megalodon": {
         "description": "Tool to extract high accuracy modified base and sequence variant calls from raw nanopore reads \nby anchoring the information rich basecalling neural network output to a reference genome/transcriptome.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [
@@ -12235,6 +12346,7 @@
     "MiMiC": {
         "description": "MiMiC: A Framework for Multiscale Modeling in Computational Chemistry\n\nThis package includes mimicpy",
         "domains": [
+            "GPU",
             "chemistry"
         ],
         "extensions": [],
@@ -12904,6 +13016,7 @@
     "MrBayes": {
         "description": "MrBayes is a program for the Bayesian estimation of phylogeny.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -13083,6 +13196,7 @@
     "NAMD": {
         "description": "NAMD is a parallel molecular dynamics code designed for high-performance simulation of\n large biomolecular systems.",
         "domains": [
+            "GPU",
             "biology",
             "chemistry"
         ],
@@ -13406,7 +13520,9 @@
     },
     "NCCL": {
         "description": "The NVIDIA Collective Communications Library (NCCL) implements multi-GPU and multi-node collective\ncommunication primitives that are performance optimized for NVIDIA GPUs.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://developer.nvidia.com/nccl",
@@ -14133,7 +14249,9 @@
     },
     "NVHPC": {
         "description": "C, C++ and Fortran compilers included with the NVIDIA HPC SDK (previously: PGI)",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://developer.nvidia.com/hpc-sdk/",
@@ -14208,6 +14326,7 @@
     "ont-guppy-gpu": {
         "description": "Data processing toolkit that contains the Oxford Nanopore Technologies' basecalling algorithms,\nand several bioinformatic post-processing features",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -14394,7 +14513,9 @@
     },
     "OpenMPI": {
         "description": "The Open MPI Project is an open source MPI-3 implementation. This version is built with CUDA support enabled.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.open-mpi.org/",
@@ -16931,9 +17052,35 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "python-igraph": {
+        "description": "Python interface to the igraph high performance graph library, primarily aimed at complex network\n research and analysis.",
+        "domains": [],
+        "extensions": [
+            "cairocffi-1.7.1",
+            "igraph-1.0.0",
+            "texttable-1.7.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://igraph.org/python",
+        "support": "",
+        "versions": [
+            "1.0.0-foss-2023a"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.0.0-foss-2023a",
+        "default_type": "latest",
+        "last_updated": 1777583981,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/python-igraph/1.0.0-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "PyTorch": {
         "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration.\nPyTorch is a deep learning framework that puts Python first.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [
             "skorch-0.12.1"
         ],
@@ -18027,6 +18174,7 @@
     "Racon": {
         "description": "Ultrafast consensus module for raw de novo genome assembly of long uncorrected reads.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -18363,6 +18511,7 @@
     "Relion": {
         "description": "RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) \n    is a stand-alone computer program that employs an empirical Bayesian \n    approach to refinement of (multiple) 3D reconstructions or 2D class \n    averages in electron cryo-microscopy (cryo-EM).",
         "domains": [
+            "GPU",
             "biology",
             "no_toc",
             "no_lic",
@@ -18484,6 +18633,7 @@
     "RFdiffusion": {
         "description": "Structure generation, with or without conditional information (a motif, target etc) It can perform a whole range of protein design challenges as we have outlined \nin the RFdiffusion paper.",
         "domains": [
+            "GPU",
             "biology",
             "chemistry"
         ],
@@ -19328,6 +19478,7 @@
     "SeisSol": {
         "description": "SeisSol is a software package for simulating wave propagation and dynamic rupture based on the arbitrary high-order accurate derivative discontinuous Galerkin method (ADER-DG).",
         "domains": [
+            "GPU",
             "earth_science"
         ],
         "extensions": [],
@@ -19799,6 +19950,28 @@
         "last_updated": 1740132634,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/SLEPc/3.19.0-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "slow5-dorado": {
+        "description": "Fork of nanopore's Dorado which supports S/BLOW5.",
+        "domains": [
+            "GPU"
+        ],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/hiruna72/slow5-dorado",
+        "support": "",
+        "versions": [
+            "1.1.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.1.1",
+        "default_type": "latest",
+        "last_updated": 1777512888,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/slow5-dorado/1.1.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20847,6 +21020,7 @@
     "TensorFlow": {
         "description": "An open-source software library for Machine Intelligence",
         "domains": [
+            "GPU",
             "machine_learning"
         ],
         "extensions": [
@@ -20909,7 +21083,9 @@
     },
     "TensorRT": {
         "description": "NVIDIA TensorRT is a platform for high-performance deep learning inference",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://developer.nvidia.com/tensorrt",
@@ -21454,7 +21630,9 @@
     },
     "UCC-CUDA": {
         "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and\nfeature-rich for current and emerging programming models and runtimes.\n\nThis module adds the UCC CUDA support.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.openucx.org/",
@@ -21475,7 +21653,9 @@
     },
     "UCX": {
         "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.openucx.org/",
@@ -21502,7 +21682,9 @@
     },
     "UCX-CUDA": {
         "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications\n\nThis module adds the UCX CUDA support.",
-        "domains": [],
+        "domains": [
+            "GPU"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.openucx.org/",
@@ -21549,6 +21731,7 @@
     "Unicycler": {
         "description": "Assembly pipeline for bacterial genomes. It can assemble Illumina-only read sets\n where it functions as a SPAdes-optimiser.",
         "domains": [
+            "GPU",
             "biology"
         ],
         "extensions": [],
@@ -21741,6 +21924,7 @@
     "VASP": {
         "description": "The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale\nmaterials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics,\nfrom first principles.",
         "domains": [
+            "GPU",
             "chemistry",
             "Density Functional Theory",
             "Molecular Dynamics",
@@ -22227,6 +22411,26 @@
         "last_updated": 1760479609,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/VTune/2025.6.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Vulkan": {
+        "description": "Vulkan headers, ICDs, and tools",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/KhronosGroup",
+        "support": "",
+        "versions": [
+            "1.4.328-GCCcore-12.3.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.4.328-GCCcore-12.3.0",
+        "default_type": "latest",
+        "last_updated": 1777519410,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Vulkan/1.4.328-GCCcore-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
