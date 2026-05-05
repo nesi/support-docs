@@ -83,10 +83,11 @@ This Security Policy will be reviewed annually and amendments may be submitted t
 ## 7. Supporting Documents
 
 This policy and the supporting Controls are aligned with the rationale and objectives of the following:
+
 1. REANNZ recognises the relationship between the Crown, and hapū, iwi, and Māori citizens, which is governed by Te Tiriti o Waitangi. The articles of Te Tiriti provide for: 
-    1. kāwanatanga – the governing of Aotearoa New Zealand by the Crown (Article 1)
-    2. tino rangatiratanga – Māori, hapū and iwi having control over their resources, culture and communities (Article 2). (We use tino rangatiratanga to refer to hapū and iwi who were co-signatories of Te Tiriti with the Crown.)
-    3. ōritetanga – Māori having equal rights, as citizens of Aotearoa New Zealand (Article 3). 
+    1. **kāwanatanga** – the governing of Aotearoa New Zealand by the Crown (Article 1)
+    2. **tino rangatiratanga** – Māori, hapū and iwi having control over their resources, culture and communities (Article 2). (We use tino rangatiratanga to refer to hapū and iwi who were co-signatories of Te Tiriti with the Crown.)
+    3. **ōritetanga** – Māori having equal rights, as citizens of Aotearoa New Zealand (Article 3). 
 2. New Zealand Privacy Act 2020
 3. REANNZ Privacy Policy
 4. New Zealand Information Security Manual NZISM
