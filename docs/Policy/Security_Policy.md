@@ -8,10 +8,12 @@ tags: []
 
 This Security Policy outlines the security principles for the HPC Platform of Research and Education Advanced Network New Zealand (REANNZ). It governs the design, operation, and delivery of all REANNZ HPC services and capabilities. REANNZ is committed to delivering secure, high-performing, and flexible eResearch computing and data services. 
 
-## 2. Scope 
-This policy applies to all REANNZ staff, users, third parties (including, but not limited to contractors, consultants, and volunteers), or anyone using REANNZ HPC systems, services, or infrastructure. It applies to all REANNZ information and those who create, access, process, transmit, or store REANNZ Information. 
+## 2. Scope
 
-## 3. Definitions 
+This policy applies to all REANNZ staff, users, third parties (including, but not limited to contractors, consultants, and volunteers), or anyone using REANNZ HPC systems, services, or infrastructure. It applies to all REANNZ information and those who create, access, process, transmit, or store REANNZ Information.
+
+## 3. Definitions
+
 - _Controls_ - Any policies, procedures, practices, devices, configurations, and other measures designed to safeguard information security and mitigate potential loss
 - _Incident_ - Any breach, event, exposure, loss, or compromise of REANNZ Information, REANNZ HPC System, or User Information.
 - _Information Security_ - the assurance that the confidentiality, integrity, and availability of all REANNZ Information, User Information, and REANNZ HPC Systems are maintained to the appropriate degree and are only accessible by authorised users
@@ -22,7 +24,8 @@ This policy applies to all REANNZ staff, users, third parties (including, but no
 - _User_ - An individual who accesses a REANNZ HPC System
 - _User Information_ - Information provided by the user and hosted on a REANNZ HPC System 
 
-## 4. Security Principles 
+## 4. Security Principles
+
 1. This policy is guided by the following security principles:
     1. Information Security is the responsibility of all members of the REANNZ community that access REANNZ HPC Systems.
     2. All Users are responsible for protecting their REANNZ HPC credentials against unauthorised use.
@@ -43,10 +46,12 @@ This policy applies to all REANNZ staff, users, third parties (including, but no
     17. Any actual or suspected loss, theft, or improper use of or access to, REANNZ Information, REANNZ HPC systems, or User Information must be reported.
     18. REANNZ will take a collaborative and iterative approach to the rapidly changing and evolving Information Security landscape. 
 
-## 5. Governance 
+## 5. Governance
+
 This Security Policy will be reviewed annually and amendments may be submitted to the Board of Directors for approval from time to time by the REANNZ Cyber Security Manager. 
 
-## 6. Roles and Responsibilities 
+## 6. Roles and Responsibilities
+
 1. REANNZ User Responsibilities: 
     1. Agree to and adhere to the REANNZ HPC Platform Acceptable Use Policy and follow relevant supporting procedures and guidelines.
     2. Access User Information they have a legitimate need to and not knowingly attempt to gain access to other information.
@@ -65,9 +70,9 @@ This Security Policy will be reviewed annually and amendments may be submitted t
     3. Evaluating and accepting Information Security risks.
     4. Demonstrate commitment and promote Information Security best practices in their communications and behaviours
     5. Ensure resources are available for implementation of people, process, and tooling to uphold the Information Security practices in place to comply with this Policy. 
-5. REANNZ Cyber Security Manager  Responsibilities 
+5. REANNZ Cyber Security Manager Responsibilities 
     1. Drafting and maintaining this and other relevant Security Policies.
-    2. Promoting the importance of Information Security to REANNNZ staff, REANNZ users, and the broader community. 
+    2. Promoting the importance of Information Security to REANNZ staff, REANNZ users, and the broader community. 
 6. REANNZ Chief Executive  Responsibilities 
     1. Has overall accountability for Information Security and is responsible for representing Information Security risks to the Board of Directors, with support from the Cyber Security Manager where appropriate.
     2. May delegate, in writing, to another person any of the responsibilities but retains overall accountability for REANNZ Information Security.
@@ -75,8 +80,9 @@ This Security Policy will be reviewed annually and amendments may be submitted t
 7. REANNZ Board of Directors 
     1. Approving and providing guidance on this and other REANNZ policies. 
 
-## 7. Supporting Documents 
-This policy and the supporting Controls are aligned with the rationale and objectives of the following;  
+## 7. Supporting Documents
+
+This policy and the supporting Controls are aligned with the rationale and objectives of the following:
 1. REANNZ recognises the relationship between the Crown, and hapū, iwi, and Māori citizens, which is governed by Te Tiriti o Waitangi. The articles of Te Tiriti provide for: 
     1. kāwanatanga – the governing of Aotearoa New Zealand by the Crown (Article 1)
     2. tino rangatiratanga – Māori, hapū and iwi having control over their resources, culture and communities (Article 2). (We use tino rangatiratanga to refer to hapū and iwi who were co-signatories of Te Tiriti with the Crown.)
