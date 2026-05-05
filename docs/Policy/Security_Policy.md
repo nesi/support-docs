@@ -1,5 +1,6 @@
 ---
 created_at: '2026-05-06'
+description: "Security principles and governance for the REANNZ HPC Platform."
 tags: []
 ---
 
