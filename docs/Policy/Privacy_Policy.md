@@ -16,7 +16,7 @@ This Privacy Policy may be amended from time to time by REANNZ. When this occurs
 
 ## 2. Collection of Information 
 
-_**Computing and data analytics services**_
+### Computing and data analytics services
 
 We collect and process Personal Information about our users through registration and project request forms. This may include: 
 - legal name along with (optionally) your preferred name
@@ -32,7 +32,7 @@ We collect and process Personal Information about our users through registration
 
 We also gather certain information and store it in log files when you interact with our services. This information may include job history, file/directory ownership, as well as IP addresses, browser type, internet service provider, URLs of referring/exit pages, operating system, date/time stamp, information you search for, locale and language preferences, identification numbers associated with your devices, and system configuration information. 
 
-_**Websites**_
+### Websites
 
 REANNZ also collects and processes Personal Information about users of our websites for the primary purposes of delivering any services or functionality requested by users and for improving the online experience for our users. We make use of "cookies” on www.reannz.co.nz to track usage patterns and to compile data in an aggregated and anonymised manner enabling us to improve our website for future visitors. If you do not want information collected through the use of cookies, there is a simple procedure in most browsers that allows you to deny or accept the cookie feature. 
  
@@ -48,8 +48,9 @@ These include:
 - access is monitored and traceable via logs
 - information is backed up regularly, and backups are held in secure storage facilities 
 
-A national or overseas third-party provider may be used to manage and store the personal and other information collected, and REANNZ will ensure that any such provider has sufficient security measures in place to protect Personal Information. 
-REANNZ will promptly notify customers as we become aware of a data breach that affects them, take all reasonable efforts to ascertain the nature, causes, and effects of the incident, and share the results of those investigations. REANNZ staff will report known privacy breaches in accordance with the Privacy Act 2020. 
+A national or overseas third-party provider may be used to manage and store the personal and other information collected, and REANNZ will ensure that any such provider has sufficient security measures in place to protect Personal Information.
+
+REANNZ will promptly notify customers as we become aware of a data breach that affects them, take all reasonable efforts to ascertain the nature, causes, and effects of the incident, and share the results of those investigations. REANNZ staff will report known privacy breaches in accordance with the Privacy Act 2020.
  
 ## 4. Use of Information 
 
@@ -63,7 +64,7 @@ REANNZ may use Personal Information for the following purposes:
 - For administering the REANNZ Access Policy
 - To meet our obligations under the REANNZ Crown Funding Agreement, REANNZ Service Agreements and licensing/contractual compliance.
 - To implement and maintain security
-- To carry out maintenance and fault investigation of  REANNZ infrastructure
+- To carry out maintenance and fault investigation of REANNZ infrastructure
 - To manage information stored on REANNZ infrastructure
 
 
