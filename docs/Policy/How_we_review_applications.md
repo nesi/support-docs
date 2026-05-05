@@ -23,7 +23,7 @@ new projects is as follows:
 2. **Software check:** One of our technical experts looks at the
     software you say you want to use and determines whether it can run
     on any of our systems and whether you are likely to be legally
-    allowed to run the software on NeSI. This check is intended to cover
+    allowed to run the software on the HPC Platform. This check is intended to cover
     both compatibility and licensing matters, as well as whether you are
     able and willing to compile or install the software yourself if
     necessary.
@@ -37,7 +37,7 @@ new projects is as follows:
     consultancy service.
 4. **Disk space check:** We decide how much disk space your project is
     likely to need in the persistent storage (project directory) and
-    scratch storage (nobackup directory) and Tape storage (Freezer). We may unfortunately have to
+    scratch storage (nobackup directory) and long-term storage (Freezer). We may unfortunately have to
     reject (or negotiate for less storage) if your disk space needs
     would interfere with our ability to provide good service to other
     research teams.
@@ -72,8 +72,7 @@ is simpler:
     allocation would exceed [any class-based allocation limits](Allocation_classes.md).
     We may change this choice depending on which classes, if any, are
     under contention.
-4. **Approval:** If we decide that your project should be considered
-    for an Institutional allocation, the request may need to be approved
+4. **Approval:** Your request may need to be approved
     by a representative of the project's host institution, which is the
     institution where the project owner works or studies.
 5. **Decision and notification:** We will send you an email telling you
