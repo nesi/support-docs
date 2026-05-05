@@ -105,8 +105,8 @@ If your JupyterLab notebook "jumps" or skips pages unexpectedly, the cause is li
 
 #### The Solution: Adjust Windowing Mode
 To fix erratic scrolling, change the Windowing Mode setting to one of the following:
-* defer: Waits for idle CPU cycles to render cells outside the viewport. This typically stops the jumping while maintaining good performance.
-* none: Renders all cells immediately. This is the most stable option for scrolling but may slow down very large notebooks.
+* `defer`: Waits for idle CPU cycles to render cells outside the viewport. This typically stops the jumping while maintaining good performance.
+* `none`: Renders all cells immediately. This is the most stable option for scrolling but may slow down very large notebooks.
 
 #### Step-by-Step Instructions
 1. Open Settings: Go to Settings → Settings Editor in the top menu.
