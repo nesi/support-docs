@@ -27,7 +27,7 @@ To access HPC Compute and Analytics, users apply online for an “Allocation”,
 
 2. **Institution:** 
     1. Research Institutions (organisations or consortia) and commercial organisations can acquire access to a block allocation of HPC Compute and Analytics, and Consultancy, which they may apply to projects of importance to their Institution.
-    2. To do so, institutions  can pay an annual subscription.
+    2. To do so, institutions can pay an annual subscription.
     3. Investigators at the institution can then make an application for access at any time. 
  
 3. **Proposal Development:** 
@@ -64,7 +64,7 @@ The following may impact researchers accessing REANNZ’s services:
 
 ## Terms and Conditions 
 
-- Users must conform to REANNZ’s [Acceptable Use Policy](https://docs.nesi.org.nz/Policy/Acceptable_Use_Policy/)
+- Users must conform to REANNZ’s [Acceptable Use Policy](./Acceptable_Use_Policy.md)
 - REANNZ must be acknowledged in all publications arising from any allocation, specifically:  
 
 ```txt
