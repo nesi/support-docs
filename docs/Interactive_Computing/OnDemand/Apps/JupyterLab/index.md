@@ -98,6 +98,23 @@ the link in the session card under "My Interactive Sessions" in the NeSI
 OnDemand web interface. The log file is named *session.log* within the session
 directory.
 
+## Troubleshooting
+
+### Erratic Scrolling in JupyterLab
+If your JupyterLab notebook "jumps" or skips pages unexpectedly, the cause is likely Windowing Mode. This feature improves performance by only rendering cells currently in view, but it can cause the scrollbar to behave unpredictably in long notebooks.
+
+#### The Solution: Adjust Windowing Mode
+To fix erratic scrolling, change the Windowing Mode setting to one of the following:
+* defer: Waits for idle CPU cycles to render cells outside the viewport. This typically stops the jumping while maintaining good performance.
+* none: Renders all cells immediately. This is the most stable option for scrolling but may slow down very large notebooks.
+
+#### Step-by-Step Instructions
+1. Open Settings: Go to Settings → Settings Editor in the top menu.
+2. Navigate to Notebook: Click Notebook in the left-hand sidebar.
+3. Find Windowing Mode: Scroll down to the Windowing mode dropdown menu.
+4. Update Value: Change the setting from full to defer (or none if the issue persists).
+5. Verify: Return to your notebook to ensure scrolling is now smooth and predictable.
+
 ## External documentation
 
 - [Jupyter](https://jupyter.readthedocs.io/en/latest/)
