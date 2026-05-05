@@ -112,7 +112,7 @@ To fix erratic scrolling, change the Windowing Mode setting to one of the follow
 1. Open Settings: Go to Settings → Settings Editor in the top menu.
 2. Navigate to Notebook: Click Notebook in the left-hand sidebar.
 3. Find Windowing Mode: Scroll down to the Windowing mode dropdown menu.
-4. Update Value: Change the setting from full to defer (or none if the issue persists).
+4. Update Value: Change the setting from `full` to `defer` (or `none` if the issue persists).
 5. Verify: Return to your notebook to ensure scrolling is now smooth and predictable.
 
 ## External documentation
