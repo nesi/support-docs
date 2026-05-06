@@ -72,7 +72,7 @@ is simpler:
     allocation would exceed [any class-based allocation limits](Allocation_classes.md).
     We may change this choice depending on which classes, if any, are
     under contention.
-4. **Approval:** Your request may need to be approved
+4. **Approval:** If we decide that your project should be considered for an Institutional allocation, the request may need to be approved
     by a representative of the project's host institution, which is the
     institution where the project owner works or studies.
 5. **Decision and notification:** We will send you an email telling you
