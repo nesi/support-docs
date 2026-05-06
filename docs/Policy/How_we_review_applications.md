@@ -23,7 +23,7 @@ new projects is as follows:
 2. **Software check:** One of our technical experts looks at the
     software you say you want to use and determines whether it can run
     on any of our systems and whether you are likely to be legally
-    allowed to run the software on the HPC Platform. This check is intended to cover
+    allowed to run the software on the HPC platform. This check is intended to cover
     both compatibility and licensing matters, as well as whether you are
     able and willing to compile or install the software yourself if
     necessary.
