@@ -527,7 +527,7 @@ LS-DYNA specialises in highly non-linear, transient dynamic finite element analy
 | --------- | ------------------------------------------ | ----------------------------- |
 | `-i`      | The input file argument                    | `-i "MyInput.k"`              |
 | `-dp`     | Enable double precision                    | `-dp`                         |
-| `NCPUS`   | SMP ranks                                  | `ncpus=-$SLURM_CPUS_PER_TASK` |
+| `NCPUS`   | SMP ranks                                  | `NCPUS=-$SLURM_CPUS_PER_TASK` |
 | `MEMORY`  | How much memory to assign to the head node | `MEMORY=2G`                   |
 | `MEMORY2` | How much memory to subsiquent nodes        | `MEMORY2=2G`                  |
 
