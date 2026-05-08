@@ -23,4 +23,6 @@ hide:
 
 For a full list of module commands run `man module` or visit the [lmod documentation](https://lmod.readthedocs.io/en/latest/010_user.html).
 
+If the application you are looking for is not here you can make [software installation request](Software/Software_Installation_Request.md) or [try compiling it yourself](Software/Installing_Applications_Yourself.md).
+
 Below is a complete list of software available through the `module` command.
