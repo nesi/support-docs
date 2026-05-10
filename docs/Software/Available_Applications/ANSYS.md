@@ -523,12 +523,13 @@ LS-DYNA specialises in highly non-linear, transient dynamic finite element analy
 
 ### Command line options
 
-| Flag    | Purpose                                    | Example                       |
-| ------- | ------------------------------------------ | ----------------------------- |
-| -i      | The input file argument                    | `-i "MyInput.k"`              |
-| NCPUS   | SMP ranks                                  | `ncpus=-$SLURM_CPUS_PER_TASK` |
-| MEMORY  | How much memory to assign to the head node | `MEMORY=2G`                   |
-| MEMORY2 | How much memory to subsiquent nodes        | `MEMORY2=2G`                  |
+| Flag      | Purpose                                    | Example                       |
+| --------- | ------------------------------------------ | ----------------------------- |
+| `-i`      | The input file argument                    | `-i "MyInput.k"`              |
+| `-dp`     | Enable double precision                    | `-dp`                         |
+| `NCPUS`   | SMP ranks                                  | `NCPUS=-$SLURM_CPUS_PER_TASK` |
+| `MEMORY`  | How much memory to assign to the head node | `MEMORY=2G`                   |
+| `MEMORY2` | How much memory to subsequent nodes        | `MEMORY2=2G`                  |
 
 Input files are typically LS-DYNA keyword decks such as `.k` files.
 
