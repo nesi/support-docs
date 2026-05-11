@@ -9,21 +9,9 @@ tags:
     - reproducibility
 ---
 
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-{% set app = applications[app_name] %}
-{% include "partials/app_header.html" %}
-[//]: <> (APPS PAGE BOILERPLATE END)
-
 Apptainer simplifies the creation and execution of containers on compute clusters, ensuring software components are portable and reproducible. It is an open-source fork of the Singularity project and shares much of the same functionality. Apptainer is distributed under the [BSD License](https://github.com/apptainer/apptainer/blob/main/LICENSE.md).
 
 ## Configure your environment
-
-Load the Apptainer module before use:
-
-```bash
-module load Apptainer/{{app.default}}
-```
 
 By default, Apptainer uses your home directory for all storage, creating a hidden directory `~/.apptainer`. Since home directories are limited in size, we recommend changing this to one of your project directories:
 
@@ -67,6 +55,7 @@ From: ubuntu:20.04
 %post
     apt-get -y update
     apt-get install -y wget
+    mkdir -p /opt/nesi
 EOF
 ```
 
@@ -81,11 +70,6 @@ Then submit the following script to build the container:
 #SBATCH --cpus-per-task 2
 #SBATCH --account       nesi12345
 
-module load Apptainer/{{app.default}}
-
-# recent Apptainer modules set APPTAINER_BIND, which can break builds
-unset APPTAINER_BIND
-
 export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
 mkdir -p ${APPTAINER_CACHEDIR}
@@ -94,12 +78,14 @@ apptainer build --force --fakeroot my_container.sif my_container.def
 ```
 
 !!! note
-    The `fakeroot` build method does not work for all container types. If you encounter issues, contact [support@nesi.org.nz](mailto:support@nesi.org.nz).
+    NeSI systems bind `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error. Adding `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
 
     If you see the following error, it is likely caused by a bad upstream image on Docker Hub. Try an older version or a different base image:
     ```
     error fetching image to cache: while building SIF from layers: conveyor failed to get: unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
     ```
+
+    The `fakeroot` build method does not work for all container types. If you encounter other issues, contact [support@nesi.org.nz](mailto:support@nesi.org.nz).
 
 ## Running a container
 
@@ -146,8 +132,6 @@ apptainer run tensorflow.sif
 #SBATCH --cpus-per-task 4
 #SBATCH --account       nesi12345
 
-module load Apptainer/{{app.default}}
-
 apptainer exec tensorflow.sif python my_script.py
 ```
 
@@ -187,8 +171,6 @@ If your Slurm job has requested a GPU (see [GPU use on Mahuika](../../Batch_Comp
 #SBATCH --cpus-per-task 4
 #SBATCH --gpus-per-node 1
 #SBATCH --account       nesi12345
-
-module load Apptainer/{{app.default}}
 
 apptainer exec --nv --bind /nesi/project/nesi12345:/project \
     tensorflow-latest-gpu.sif python /project/my_script.py
