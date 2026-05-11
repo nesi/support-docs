@@ -70,6 +70,8 @@ Then submit the following script to build the container:
 #SBATCH --cpus-per-task 2
 #SBATCH --account       nesi12345
 
+unset APPTAINER_BINDPATH
+
 export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
 mkdir -p ${APPTAINER_CACHEDIR}
@@ -77,7 +79,7 @@ mkdir -p ${APPTAINER_CACHEDIR}
 apptainer build --force --fakeroot my_container.sif my_container.def
 ```
 
-!!! warn
+!!! warning
     NeSI systems bind `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error. Adding `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
 
     If you see the following error, it is likely caused by a bad upstream image on Docker Hub. Try an older version or a different base image:
