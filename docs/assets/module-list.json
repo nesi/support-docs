@@ -384,15 +384,16 @@
         "versions": [
             "2.3.2",
             "3.0.0",
-            "3.0.1"
+            "3.0.1",
+            "3.0.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.0.1",
+        "default": "3.0.2",
         "default_type": "latest",
-        "last_updated": 1740132626,
+        "last_updated": 1778446579,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AlphaFold/3.0.1.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/AlphaFold/3.0.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3566,7 +3567,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.93,
+                        "hourly_average": 5.92,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3634,7 +3635,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 69140549.41,
+                        "hourly_average": 68900729.61,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -5289,15 +5290,16 @@
         "homepage": "https://gitlab.com/treangenlab/emu",
         "support": "",
         "versions": [
-            "3.5.0"
+            "3.5.0",
+            "3.6.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.5.0",
+        "default": "3.6.2",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1778451339,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Emu/3.5.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Emu/3.6.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
