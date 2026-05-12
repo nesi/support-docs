@@ -80,11 +80,14 @@ apptainer build --force --fakeroot my_container.sif my_container.def
 ```
 
 !!! warning
-    NeSI systems bind `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error. Adding `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
+    NeSI systems bind `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error.
+    We reccomend `unset APPTAINER_BINDPATH` before you build. Alternatively you can add `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
 
     If you see the following error, it is likely caused by a bad upstream image on Docker Hub. Try an older version or a different base image:
-    ```
-    error fetching image to cache: while building SIF from layers: conveyor failed to get: unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
+
+    ```stderr
+    error fetching image to cache: while building SIF from layers: conveyor failed to get: 
+    unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
     ```
 
     The `fakeroot` build method does not work for all container types. If you encounter other issues, contact [support@nesi.org.nz](mailto:support@nesi.org.nz).
