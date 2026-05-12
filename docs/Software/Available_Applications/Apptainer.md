@@ -81,7 +81,7 @@ apptainer build --force --fakeroot my_container.sif my_container.def
 
 !!! warning
     NeSI systems bind `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error.
-    We reccomend `unset APPTAINER_BINDPATH` before you build. Alternatively you can add `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
+    We recommend `unset APPTAINER_BINDPATH` before you build. Alternatively you can add `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
 
     If you see the following error, it is likely caused by a bad upstream image on Docker Hub. Try an older version or a different base image:
 
@@ -90,7 +90,7 @@ apptainer build --force --fakeroot my_container.sif my_container.def
     unsupported image-specific operation on artifact with type "application/vnd.docker.container.image.v1+json"
     ```
 
-    The `fakeroot` build method does not work for all container types. If you encounter other issues, contact [support@nesi.org.nz](mailto:support@nesi.org.nz).
+    The `fakeroot` build method does not work for all container types. If you encounter other issues, {% include "partials/support_request.html" %}.
 
 ## Running a container
 
@@ -165,6 +165,8 @@ export APPTAINER_BIND="/nesi/project/nesi12345:/project,/nesi/nobackup/nesi12345
 
 ## GPU access
 
+### Running on GPU
+
 If your Slurm job has requested a GPU (see [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)), pass the `--nv` flag to give the container transparent access to it:
 
 ```sl
@@ -180,6 +182,55 @@ If your Slurm job has requested a GPU (see [GPU use on Mahuika](../../Batch_Comp
 apptainer exec --nv --bind /nesi/project/nesi12345:/project \
     tensorflow-latest-gpu.sif python /project/my_script.py
 ```
+
+### Building with GPU compilers
+
+To compile code using GPU compilers inside a container, start an interactive shell with the `--nv` flag to expose the GPU hardware:
+
+```bash
+apptainer shell --nv tensorflow-latest-gpu.sif
+```
+
+GPU compilers such as `nvc++` are then available inside the container:
+
+```bash
+Apptainer> CXX=nvc++ cmake -DOPENACC=1 ..
+Apptainer> make
+Apptainer> exit
+```
+
+The compiled binary can be run via a GPU Slurm job:
+
+```bash
+srun --gpus-per-node=1 apptainer exec --nv \
+    tensorflow-latest-gpu.sif ./my_application
+```
+
+## MPI
+
+Running MPI applications inside a container requires the MPI implementation inside the container to match the host MPI version. For best performance, the host MPI library is bound into the container and the job is launched by the host's `mpiexec`.
+
+The following example uses Intel MPI. Set `I_MPI_ROOT` to the path of the Intel MPI installation on the host, then bind it into the container:
+
+```sl
+#!/bin/bash -e
+
+#SBATCH --job-name      mpi-container-job
+#SBATCH --time          00:05:00
+#SBATCH --ntasks        8
+#SBATCH --nodes         2
+#SBATCH --account       nesi12345
+
+module purge
+module load impi
+
+mpiexec -n ${SLURM_NTASKS} --bind-to none --map-by slot \
+    apptainer exec --bind $I_MPI_ROOT:$I_MPI_ROOT my_mpi_app.sif \
+    /path/to/my_application
+```
+
+!!! note
+    The MPI version inside the container must be compatible with the host MPI. {% include "partials/support_request.html" %} if you need help identifying the correct host MPI path.
 
 ## Tips and best practices
 
